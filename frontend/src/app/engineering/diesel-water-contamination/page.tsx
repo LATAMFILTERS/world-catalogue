@@ -417,7 +417,7 @@ function DieselWaterContaminationContent() {
             marginBottom: '1.5rem', textAlign: 'justify',
           }}>
             Product selection follows technology selection. TURBOCORE™ for water separation,
-            SYNTAPORE™ for HPCR injector protection, TURBOCORE™ for three-stage systems.
+            SYNTAPORE™ for HPCR injector protection.
             Equipment make and model determine the correct element dimensions, thread specification,
             and bypass pressure rating.
           </p>
@@ -532,7 +532,7 @@ function DieselWaterContaminationContent() {
           },
           mentions: {
             standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
-            technologies: ['TURBOCORE', 'SYNTAPORE', 'TURBOCORE'],
+            technologies: ['TURBOCORE', 'SYNTAPORE'],
             contaminationModes: ['water ingress', 'microbial growth', 'filter plugging', 'injector erosion'],
           },
           url: 'https://elimfilters.com/engineering/diesel-water-contamination',

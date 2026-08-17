@@ -31,14 +31,14 @@
           "concept": "Construction Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:795ee7f8f7146d4907981b04e6b2bc14ffddee7fb7948b68cb8f21bebb55ca34"
+          "content_hash": "sha256:04a334ae7b395c685475904f8d198be35d0a36911ebb59fb3741bbe0ee100fd7"
         },
         "canonical": {
           "definition": "Construction is a HIGH contamination exposure industrial category for heavy equipment, with concurrent silica-bearing airborne dust, hydraulic system wear particle generation, diesel fuel water contamination, and operator cabin air quality hazards all simultaneously present in excavator, loader, bulldozer, and compactor operations.",
           "systems": "Air intake filtration, hydraulic circuit filtration, lube oil filtration, fuel filtration, cabin air filtration across all heavy construction equipment categories",
           "failure_impact": "Hydraulic contamination above ISO 4406 17/15/12 → proportional valve spool sticktion and internal leakage → machine productivity loss and valve replacement ($5,000–$25,000 per valve) | Air intake failure → silica dust ingestion → piston ring abrasive wear → engine overhaul at 3,000–5,000 hours | Cabin air contamination above PM10 limits → operator chronic respiratory exposure at active earthmoving sites.",
           "related_standards": "SAE J1539: Air intake cleanliness for diesel engines | ISO 16889: Hydraulic and lube filter Beta ratio test methodology | ISO 5011: Inlet air cleaning equipment | NFPA T2.14.1: Mobile equipment hydraulic fluid cleanliness requirements | ISO 11155: Cabin filtering systems for road vehicles",
-          "related_technologies": "MACROCORE: Air intake particle capture in earthmoving dust environments | TURBOCORE: Hydraulic circuit filtration for proportional valve protection | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic and lube oil circuits",
+          "related_technologies": "MACROCORE: Air intake particle capture in earthmoving dust environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic and lube oil circuits",
           "industrial_role": "Construction equipment operates across all contamination domains simultaneously — effective multi-domain filtration (air, hydraulic, lube, fuel, cabin) is the primary operational variable determining whether equipment achieves planned production uptime or incurs unplanned hydraulic valve and engine component replacement costs."
         },
         "relationships": {
@@ -52,7 +52,6 @@
             "MACROCORE",
             "NANOFORCE",
             "SYNTRAX",
-            "TURBOCORE",
             "MICROKAPPA",
             "INTEKCORE"
           ],
@@ -80,13 +79,13 @@
       }
     },
     {
-      "key": "HYDRAULIC_VALVE_FAILURE",
+      "key": "OPERATOR_DUST_EXPOSURE",
       "type": "problem",
-      "name": "Hydraulic Valve Failure",
+      "name": "Operator Dust Exposure",
       "citation_record": {
-        "key": "HYDRAULIC_VALVE_FAILURE",
+        "key": "OPERATOR_DUST_EXPOSURE",
         "type": "problem",
-        "name": "Hydraulic Valve Failure",
+        "name": "Operator Dust Exposure",
         "slug": null,
         "status": "active",
         "in_unified_data": false,
@@ -94,142 +93,138 @@
         "tags": [
           "problem",
           "active",
-          "hydraulic",
+          "cabin",
           "not-in-ud",
           "part-search-entry",
-          "exposure-high"
+          "exposure-extreme",
+          "occupational-health"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
-          "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
+          "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
+          "concept": "Operator Dust Exposure — Cabin Air Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:f63cab37dbd4408ad203d26cd122ce39e81952c6dc4f38a0c92143ab77b68ff4"
+          "content_hash": "sha256:c40db41df53c67068ca4e4630112bac9c0ee4c538a0d86fdac6efc593d06a68e"
         },
         "canonical": {
-          "definition": "Hydraulic valve failure from contamination — particle and water-induced degradation of\nproportional valve spools and pump components — is the primary precision control failure\nmode in construction, mining, and industrial hydraulic systems.",
-          "systems": "Hydraulic; affected components: proportional valve spools and bores, hydraulic pump vanes,\nactuator cylinder seals; primary industries: Construction, Mining, Agriculture, Oil & Gas",
-          "failure_impact": "Particle contamination at ISO 19/17/14+ → abrasive wear on 4–20µm valve spool clearances\n→ spool-to-bore clearance growth → leakage increase → control precision loss\n→ stiction at ISO 21/19/16 → control failure |\nOperational Impact: proportional valve life reduction 50–70%; pump replacement cost\n$8,000–$40,000; 24-hour hydraulic failure at mining rates: $4,320,000 lost production",
-          "related_standards": "ISO 4406: Cleanliness code classification; target 17/15/12 for proportional valves |\nISO 16889: Beta ratio filter test for hydraulic circuit filtration performance |\nNFPA T2.14: Hydraulic cleanliness requirements for precision servo systems",
-          "related_technologies": "NANOFORCE: High-efficiency hydraulic filtration maintaining ISO 17/15/12 cleanliness codes |\nSYNTRAX: Bypass polishing filtration for fine particle removal from hydraulic circuits",
-          "industrial_role": "Hydraulic valve failure is the highest-cost single-component contamination failure mode\nin construction and mining equipment, where precision hydraulic control is directly linked\nto machine productivity. ISO 4406 cleanliness management is the primary prevention method."
+          "definition": "Operator dust exposure — ingress of respirable particulate and chemical contaminants into\nequipment operator cabs — is the primary occupational health contamination problem in\nconstruction, mining, and agricultural equipment, governed by ISO 11155 cab air standards\nand occupational health regulations.",
+          "systems": "Cabin/Operator Protection; affected: operator respiratory system; primary industries:\nMining (EXTREME), Construction (HIGH), Agriculture (HIGH), Bus/Coach, Railway, Trucks/Fleets",
+          "failure_impact": "Cab filter degradation or bypass → ambient dust (silica, PM2.5) enters breathing zone\n→ cumulative alveolar deposition of crystalline silica → progressive pulmonary fibrosis\n→ silicosis (irreversible) after 10+ years sustained exposure |\nOperational Impact: regulatory non-compliance exposure ($500K–$2M lifetime cost per case);\nISO 11155 Class A cab maintains <0.025 mg/m³ at 500 mg/m³ ambient concentration",
+          "related_standards": "ISO 11155: Cab air filter performance requirements for agricultural and construction equipment |\nDIN 71220: Vehicle cabin air filter classification standard",
+          "related_technologies": "MICROKAPPA: ISO 11155-compliant cabin filtration removing PM10, PM2.5, and chemical aerosols\nfrom operator cab air supply; available in Class A (particulate) and Class B (particulate + carbon)",
+          "industrial_role": "Operator dust exposure is the only contamination problem with direct human health and\nregulatory compliance consequences. It is distinct from all equipment-failure contamination\nproblems in that the failure is measured in occupational health outcomes, not equipment\nlifespan. CABIN_PRIMARY / MICROKAPPA is the sole citation chain for this problem domain."
         },
         "relationships": {
           "applicable_standards": [
-            "ISO_16889",
-            "ISO_4406",
-            "NFPA_T214"
+            "ISO_11155",
+            "DIN_71220"
           ],
           "resolved_by_technologies": [
-            "NANOFORCE",
-            "SYNTRAX"
+            "MICROKAPPA"
           ],
           "recommended_product_families": [
-            "HYDRAULIC_PRIMARY"
+            "CABIN_PRIMARY"
           ],
           "root_contamination": [
-            "HYDRAULIC_CONTAMINATION"
+            "CABIN_AIR_CONTAMINATION"
           ],
           "industry_frequency": [
             "CONSTRUCTION",
             "MINING",
             "AGRICULTURE",
-            "MARINE",
-            "OIL_GAS",
-            "POWER_GENERATION"
+            "BUS_COACH",
+            "RAILWAY",
+            "TRUCKS_FLEETS",
+            "WASTE_MUNICIPAL"
           ]
         },
-        "vault_path": "elimfilters-vault\\07-problems\\HYDRAULIC_VALVE_FAILURE.md"
+        "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md"
       }
     },
     {
-      "key": "HYDRAULIC_CONTAMINATION",
+      "key": "CABIN_AIR_CONTAMINATION",
       "type": "contamination-mode",
-      "name": "Hydraulic System Contamination",
+      "name": "Cabin Air Contamination",
       "citation_record": {
-        "key": "HYDRAULIC_CONTAMINATION",
+        "key": "CABIN_AIR_CONTAMINATION",
         "type": "contamination-mode",
-        "name": "Hydraulic System Contamination",
-        "slug": "hydraulic-contamination",
+        "name": "Cabin Air Contamination",
+        "slug": "cabin-air-contamination",
         "status": "active",
         "in_unified_data": true,
-        "ud_key": "HYDRAULIC_CONTAMINATION",
+        "ud_key": "CABIN_AIR_CONTAMINATION",
         "tags": [
           "contamination-mode",
           "active",
-          "hydraulic",
+          "cabin",
           "in-ud"
         ],
         "citation": {
-          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
-          "concept": "Hydraulic System Contamination",
+          "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
+          "concept": "Cabin Air Contamination",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:90cbf9a36f7cf03ed1605396714c318665428b2b3379f8b51eb129806c6cefc2"
+          "content_hash": "sha256:2aa8db81a6055e3f5ff6a609020536cbf8febcc44f5c20d48faf45020455675c"
         },
         "canonical": {
-          "definition": "Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid that causes proportional valve failure, pump wear, and system efficiency loss — operating through direct abrasive wear at 1–25 µm component clearances, water-accelerated fluid thermal degradation, and varnish deposition at valve bore surfaces causing control stiction.",
-          "systems": "Proportional and servo hydraulic systems, mobile equipment hydraulic circuits, industrial hydraulic power units, mining shovel and excavator hydraulic systems, crane and materials handling hydraulic circuits",
-          "failure_impact": "Particle contamination above ISO 4406 17/15/12 → abrasive wear at proportional valve spool (1–5 µm clearance) → valve scoring and jamming → loss of proportional control | Varnish deposition from thermal-oxidative degradation → 1–2 µm lacquer film on valve bores → spool stiction → control instability | Operational impact: system efficiency −15–40%; component life −50–70%; unplanned downtime +25–35%.",
-          "related_standards": "ISO 16889: Multi-pass Beta ratio test for hydraulic filter element efficiency classification | ISO 4406: Three-number cleanliness code; proportional valve target 16/14/11; industrial hydraulic target 17/15/12 | NFPA T2.14: Hydraulic system cleanliness and filtration design requirements",
-          "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | TURBOCORE: Water removal from hydraulic fluid; prevents fluid thermal degradation and varnish formation | SYNTRAX: Full-flow hydraulic filtration to ISO 4406 16/14/11 | MICROKAPPA: Reservoir breather contamination prevention",
-          "industrial_role": "Hydraulic system contamination is the leading cause of proportional valve and pump failure in mobile and industrial hydraulic equipment — maintaining ISO 4406 cleanliness at 16/14/11 versus 19/17/14 extends proportional valve service life 50–70% and reduces unplanned hydraulic system downtime by 25–35% across construction, mining, and agricultural equipment fleets."
+          "definition": "Cabin air contamination is the occupational exposure of equipment operators to respirable particulate matter (PM10, PM2.5, crystalline silica), chemical vapors (pesticides, exhaust gases), and biological particles (endotoxins, spores) entering the cab through degraded filtration, failed positive pressure, or contamination bypass pathways — creating regulatory OEL violation risk and long-term respiratory disease exposure.",
+          "systems": "Agricultural machine cabs (harvesters, tractors, sprayers), mining equipment operator cabs, construction machine cabs (excavators, loaders), on-highway truck driver cabs, municipal refuse vehicle cabs",
+          "failure_impact": "Cab filtration bypass or degradation → respirable silica particles above 0.025–0.1 mg/m³ OEL → chronic occupational exposure → silicosis (irreversible) at 5–15 year latency | Pesticide vapor infiltration → acute toxicity events | Blocked cabin filter → loss of cab positive pressure → all gap pathways become contamination ingress routes | Operational impact: regulatory OEL violation; operator productivity −10–20% in extreme dust environments; chronic respiratory disease liability.",
+          "related_standards": "ISO 11155: Passenger compartment air filter test standard; defines cab filter efficiency classification | DIN 71220: Agricultural machinery cab air filtration performance requirements",
+          "related_technologies": "MICROKAPPA: Cabin air filtration technology for PM10, PM2.5, and silica capture with cab positive pressure maintenance and optional chemical vapor adsorption stage",
+          "industrial_role": "Cabin air contamination is the primary occupational health regulatory compliance challenge in mining and agricultural equipment operation — maintaining ISO 11155-rated cab filtration performance and cab positive pressure is the only controllable engineering control that prevents respirable silica and chemical vapor exposure from exceeding OEL limits in high-dust equipment operating environments."
         },
         "relationships": {
           "related_standards": [
-            "ISO_16889",
-            "ISO_4406",
-            "NFPA_T214"
+            "ISO_11155",
+            "DIN_71220"
           ],
           "resolved_by": [
-            "NANOFORCE",
-            "TURBOCORE",
-            "SYNTRAX",
             "MICROKAPPA"
           ]
         },
-        "vault_path": "elimfilters-vault\\05-contamination\\HYDRAULIC_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\CABIN_AIR_CONTAMINATION.md"
       }
     },
     {
-      "key": "TURBOCORE",
+      "key": "MICROKAPPA",
       "type": "technology",
-      "name": "TURBOCORE™",
+      "name": "MICROKAPPA™",
       "citation_record": {
-        "key": "TURBOCORE",
+        "key": "MICROKAPPA",
         "type": "technology",
-        "name": "TURBOCORE™",
-        "slug": "turbocore",
+        "name": "MICROKAPPA™",
+        "slug": "microkappa",
         "status": "active",
         "in_unified_data": false,
         "ud_key": null,
         "tags": [],
         "citation": {
-          "source_url": "https://elimfilters.com/knowledge-center/technologies/turbocore/",
-          "concept": "TURBOCORE Fuel Water Separation Technology",
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/microkappa/",
+          "concept": "MICROKAPPA Cabin Air Protection Technology",
           "version": "2.0",
           "last_updated": "2026-08-14",
-          "content_hash": "sha256:cd57faaaace4313eba17933c57b6137beddc857e02292f006015bed713e71849"
+          "content_hash": "sha256:4a0e42cb44643a3de65e84621f0d1a1ce3923a783adb97bc13655fd29755d6eb"
         },
         "canonical": {
-          "definition": "TURBOCORE is the ELIMFILTERS dedicated fuel-separation architecture for approved turbine-style FH and FG applications.",
-          "systems": "Fuel Cleanliness Protection; approved turbine-style FH and FG fuel-separation applications.",
-          "failure_impact": "Inadequate staged fuel conditioning or separation can increase particulate and water-contamination exposure in protected diesel fuel-system applications.",
-          "related_standards": "Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved FH or FG system. The technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.",
-          "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. HYDROCORE: Fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators. TURBOCORE is reserved for approved turbine-style FH and FG fuel-separation applications and must not be represented as a hydraulic, general-purpose fuel-filter, or standard-separator technology.",
-          "industrial_role": "TURBOCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection for approved turbine-style FH and FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements."
+          "definition": "MICROKAPPA is the ELIMFILTERS cabin-air protection architecture for particulate and selected gaseous-contaminant control.",
+          "systems": "Air Intake & Airflow Protection; operator cabin HVAC filtration.",
+          "failure_impact": "Inadequate cabin-air filtration can increase operator exposure to airborne particulate contamination and can reduce HVAC air-quality performance in demanding operating environments.",
+          "related_standards": "Applicable cabin-air test standards and occupational requirements must be matched to the approved application and filtration configuration; no universal certification or efficiency claim is implied by the technology name alone.",
+          "related_technologies": "MACROCORE: Engine-air filtration architecture for primary and secondary engine intake protection. INTEKCORE: Air-cleaner housing and sealing architecture for the protected engine-intake boundary. These technologies protect different air pathways and must not be represented as cabin-air substitutes.",
+          "industrial_role": "MICROKAPPA provides the operator-environment filtration layer of ELIMFILTERS Air Intake & Airflow Protection. Media selection is governed by the operating environment, exposure requirement, airflow demand and HVAC pressure-drop constraints."
         },
         "relationships": {
           "related_technologies": [
-            "SYNTAPORE",
-            "HYDROCORE"
+            "MACROCORE",
+            "INTEKCORE"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\TURBOCORE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
       }
     }
   ],
   "terminal_product_families": [
-    "FUEL_TURBINE"
+    "CABIN_PRIMARY"
   ]
 }

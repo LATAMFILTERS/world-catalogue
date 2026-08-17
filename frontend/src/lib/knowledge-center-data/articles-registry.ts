@@ -2225,10 +2225,9 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Technology Mapping: Hydraulic System Protection',
-        body: 'NANOFORCE™ provides high-Beta hydraulic filtration with sub-micron particle capture at β₁₀(c) ≥ 1000. Protects proportional valve spools at 1–5 µm critical clearances in circuits targeting ISO 4406 16/14/11 to 17/15/12. SYNTRAX™ delivers high dirt-capacity synthetic media for high-volume hydraulic circuit loops, maintaining ISO 4406 cleanliness in circuits with high internally generated wear particle loads from piston pumps and motor wear. TURBOCORE™ coalescing media removes free and emulsified water from hydraulic fluid, preventing water-accelerated fluid oxidation and varnish precursor formation; applied in reservoir return-line housings. MICROKAPPA™ filters at the reservoir air exchange interface, preventing ingress contamination entering through breather ports during reservoir level changes — addressing the built-in contamination pathway during operation.',
+        body: 'NANOFORCE™ provides high-Beta hydraulic filtration with sub-micron particle capture at β₁₀(c) ≥ 1000. Protects proportional valve spools at 1–5 µm critical clearances in circuits targeting ISO 4406 16/14/11 to 17/15/12. SYNTRAX™ delivers high dirt-capacity synthetic media for high-volume hydraulic circuit loops, maintaining ISO 4406 cleanliness in circuits with high internally generated wear particle loads from piston pumps and motor wear. MICROKAPPA™ filters at the reservoir air exchange interface, preventing ingress contamination entering through breather ports during reservoir level changes — addressing the built-in contamination pathway during operation.',
         callout: [
           { label: 'NANOFORCE™ rating', value: 'β₁₀(c) ≥ 1000; servo/proportional valve circuits' },
-          { label: 'TURBOCORE™ application', value: 'Water separation in reservoir return-line housings' },
           { label: 'MICROKAPPA™ application', value: 'Reservoir breather ingress prevention' },
         ],
       },
@@ -2244,7 +2243,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Kidney-loop flow rate', value: '5–15% system volume/min' },
     ],
     relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171'],
-    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'TURBOCORE™', 'MICROKAPPA™'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'MICROKAPPA™'],
     relatedSystems: ['Hydraulic Protection'],
     keywords: ['hydraulic contamination', 'servo valve silting', 'component clearance', 'contamination sensitivity', 'ISO 4406', 'abrasive wear', 'kidney loop', 'varnish formation', 'contamination pathways'],
     commonMistakes: [
@@ -2931,7 +2930,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'What is the water separation efficiency requirement for diesel fuel-water separators?',
-        answer: 'Water separation efficiency for diesel fuel-water separators is measured per ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) or SAE J1488 (Emulsified Water/Fuel Separation Test). Required separation efficiency for HPCR applications is ≥95% of emulsified water (droplets 0.5–5 µm) at rated flow rate and 40°C fuel temperature. TURBOCORE coalescing media achieves ≥98% water separation efficiency under these test conditions. The ISO 4020 test uses water-in-fuel emulsion at a defined droplet size distribution and measures downstream water content by Karl Fischer titration. Elements failing to meet 95% water separation allow free water accumulation at the common rail pump inlet — the primary mechanism for injector needle corrosion and fuel system microbial contamination propagation.',
+        answer: 'Water separation efficiency for diesel fuel-water separators is measured per ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) or SAE J1488 (Emulsified Water/Fuel Separation Test). Required separation efficiency for HPCR applications depends on the approved element and application; TURBOCORE coalescing media is rated for the required separation performance under these test conditions. The ISO 4020 test uses water-in-fuel emulsion at a defined droplet size distribution and measures downstream water content by Karl Fischer titration. Elements failing to meet the required rating allow free water accumulation at the common rail pump inlet — the primary mechanism for injector needle corrosion and fuel system microbial contamination propagation.',
       },
       {
         question: 'What is the effect of low-temperature wax crystal formation on fuel filter performance?',
@@ -4005,7 +4004,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'How does the surface energy of filter media fiber affect water separation in fuel and hydraulic systems?',
-        answer: 'Fiber surface energy determines whether water droplets wet the fiber surface (hydrophilic) or bead off (hydrophobic). Hydrophilic media — cellulose, untreated glass fiber — absorbs water from petroleum fluid and allows water to coat fiber surfaces; this can cause elevated pressure drop in the presence of free water without effective water-oil separation. Hydrophobic media — polyester, polypropylene, PTFE-treated glass fiber — causes water droplets from fuel/oil emulsions to coalesce at fiber contacts, growing into larger droplets that settle under gravity to the water bowl. TURBOCORE coalescing media uses a hydrophobic surface treatment that achieves >98% free water separation efficiency from diesel fuel emulsions at 0.5–5 µm droplet size range, as tested per ISO 4020. Surface hydrophobicity is verified by contact angle measurement: >90° contact angle (water droplet beads on surface) confirms hydrophobic treatment; <30° (water spreads on surface) confirms hydrophilic.',
+        answer: 'Fiber surface energy determines whether water droplets wet the fiber surface (hydrophilic) or bead off (hydrophobic). Hydrophilic media — cellulose, untreated glass fiber — absorbs water from petroleum fluid and allows water to coat fiber surfaces; this can cause elevated pressure drop in the presence of free water without effective water-oil separation. Hydrophobic media — polyester, polypropylene, PTFE-treated glass fiber — causes water droplets from fuel/oil emulsions to coalesce at fiber contacts, growing into larger droplets that settle under gravity to the water bowl. TURBOCORE coalescing media uses a hydrophobic surface treatment engineered for free water separation from diesel fuel emulsions, tested per ISO 4020 against the required rating for the approved application. Surface hydrophobicity is verified by contact angle measurement: >90° contact angle (water droplet beads on surface) confirms hydrophobic treatment; <30° (water spreads on surface) confirms hydrophilic.',
       },
       {
         question: 'What is the significance of fiber orientation in filter media performance?',

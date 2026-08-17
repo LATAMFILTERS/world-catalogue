@@ -484,7 +484,7 @@ export default function DieselWaterContaminationPage() {
             <p style={{ marginTop: '1rem' }}>
               <strong>CONTROL TECHNOLOGIES</strong>
               <br />
-              TURBOCORE: Water separator coalescent media, 95%+ water capture efficiency | SYNTAPORE: Synthetic diesel-fuel particulate filtration media | Kidney-loop offline: Continuous low-flow fuel cleaning, maintains target purity indefinitely
+              TURBOCORE: Water separator coalescent media, rated for the approved application | SYNTAPORE: Synthetic diesel-fuel particulate filtration media | Kidney-loop offline: Continuous low-flow fuel cleaning, maintains target purity indefinitely
             </p>
 
             <p style={{ marginTop: '1rem' }}>

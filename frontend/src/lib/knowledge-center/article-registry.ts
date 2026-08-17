@@ -361,7 +361,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
       },
       {
         heading: 'Detection and Prevention Strategy',
-        body: 'Injector wear detection: (1) ISO 4406 fuel analysis for particle counts (target <4 µm particles for HPCR); (2) Karl Fischer testing for water content (critical threshold >200 ppm); (3) Injector performance testing — modern OBD-II systems detect injection timing variance (>50 microseconds); rough idle and white smoke indicate stiction/blockage. Prevention requires staged fuel protection: (1) SYNTAPORE particulate fuel filtration capturing particulates before fuel rail; (2) TURBOCORE water separator (99% water removal to <50 ppm) preventing corrosion; (3) TURBOCORE 3-stage fuel polishing for proactive tank treatment. Regular Karl Fischer testing (monthly during rainy season, quarterly otherwise) allows early detection of water ingress before corroded fuel reaches injectors.',
+        body: 'Injector wear detection: (1) ISO 4406 fuel analysis for particle counts (target <4 µm particles for HPCR); (2) Karl Fischer testing for water content (critical threshold >200 ppm); (3) Injector performance testing — modern OBD-II systems detect injection timing variance (>50 microseconds); rough idle and white smoke indicate stiction/blockage. Prevention requires staged fuel protection: (1) SYNTAPORE particulate fuel filtration capturing particulates before fuel rail; (2) TURBOCORE water separator preventing corrosion; (3) regular fuel polishing for proactive tank treatment. Regular Karl Fischer testing (monthly during rainy season, quarterly otherwise) allows early detection of water ingress before corroded fuel reaches injectors.',
       },
       {
         heading: 'Real-World Case Study: Commercial Fleet Fuel System Protection',
@@ -438,7 +438,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
       },
       {
         heading: 'Prevention: Multi-Layer Water Control',
-        body: 'Water ingress prevention requires blocking entry routes and removing ingressed water: (1) Desiccant breathers (silica-gel type) replace standard air breathers, absorbing atmospheric moisture before humid air enters tank—reduces ingression 50–70%; (2) Water separator filters (TURBOCORE technology with coalescing media) capture free water at fuel filter stage, gravity-draining 95%+ of separated water before reaching injectors; (3) Fuel polishing units (portable or skid-mounted) with 3-micron particulate filter + water separator for proactive tank treatment; (4) Sealed fuel caps and inspection covers to minimize tank opening and moisture entry; (5) Regular tank cleaning every 2–3 years in humid climates, removing accumulated microbiota and sediment. Combined approach: desiccant breather + water separator filter + quarterly Karl Fischer testing reduces water-related failures to near zero.',
+        body: 'Water ingress prevention requires blocking entry routes and removing ingressed water: (1) Desiccant breathers (silica-gel type) replace standard air breathers, absorbing atmospheric moisture before humid air enters tank—reduces ingression 50–70%; (2) Water separator filters (TURBOCORE technology with coalescing media) capture free water at fuel filter stage, gravity-draining separated water before reaching injectors; (3) Fuel polishing units (portable or skid-mounted) with 3-micron particulate filter + water separator for proactive tank treatment; (4) Sealed fuel caps and inspection covers to minimize tank opening and moisture entry; (5) Regular tank cleaning every 2–3 years in humid climates, removing accumulated microbiota and sediment. Combined approach: desiccant breather + water separator filter + quarterly Karl Fischer testing reduces water-related failures to near zero.',
       },
       {
         heading: 'Tropical Fleet Operations Case Study',
@@ -460,7 +460,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
       },
       {
         question: 'Can water separators remove all water from contaminated fuel?',
-        answer: 'Water separator filters (coalescing media type like TURBOCORE) capture 95–98% of free and emulsified water. Dissolved water (molecular water in fuel solution, <50 ppm) passes through. For heavily contaminated fuel (>500 ppm water), a two-stage approach works best: (1) Primary water separator removes bulk free water, (2) Fuel polishing unit (portable filtration + water separation) removes remaining emulsion and dissolved water over several circulation cycles.',
+        answer: 'Water separator filters (coalescing media type like TURBOCORE) capture free and emulsified water at the rated performance of the approved element. Dissolved water (molecular water in fuel solution, <50 ppm) passes through. For heavily contaminated fuel (>500 ppm water), a two-stage approach works best: (1) Primary water separator removes bulk free water, (2) Fuel polishing unit (portable filtration + water separation) removes remaining emulsion and dissolved water over several circulation cycles.',
       },
       {
         question: 'Why do tropical regions experience more water ingress failures?',
@@ -527,7 +527,7 @@ export const PROBLEM_STUBS: ProblemStub[] = [
       },
       {
         question: 'How do water separators prevent injector water damage?',
-        answer: 'Coalescing water separator filters (TURBOCORE technology) use oleophobic (water-attracting) media that allows diesel to pass while capturing water droplets. Captured water droplets coalesce into larger drops that sink and drain by gravity at the bottom of the filter bowl. This removes 90–95% of free water before fuel reaches the HPCR fuel rail. Emulsified water (tiny droplets dispersed throughout fuel) requires additional fuel polishing via portable tank treatment systems.',
+        answer: 'Coalescing water separator filters (TURBOCORE technology) use oleophobic (water-attracting) media that allows diesel to pass while capturing water droplets. Captured water droplets coalesce into larger drops that sink and drain by gravity at the bottom of the filter bowl, removing free water before fuel reaches the HPCR fuel rail at the rated performance of the approved element. Emulsified water (tiny droplets dispersed throughout fuel) requires additional fuel polishing via portable tank treatment systems.',
       },
       {
         question: 'What is the critical water level that causes HPCR injector corrosion?',
@@ -1494,14 +1494,14 @@ export const CONTAMINATION_CASE_STUDIES: ContaminationCaseStudy[] = [
         effectiveness: 'Reduces water ingression 50-80%. Prevents seasonal condensation buildup (1-5 L per tank → <0.1 L per tank annually). Cost: €50-100 filter element, replaceable annually or every 50,000 km.',
       },
       {
-        technology: 'TURBOCORE Water Separator (3 µm + water absorption)',
-        mechanism: 'Dual-stage fuel filter: (1) 10 µm particulate removal; (2) water absorption cartridge (super-absorbent polymer) captures free and emulsified water up to 100 mL capacity. Positioned between fuel tank and injection pump.',
-        effectiveness: 'Removes 99% of water entering fuel system. Protects HPCR injectors from water emulsion corrosion. Extends injector service life 3-5×. Cost: €400-600 separator assembly + €150-200 cartridge per service (every 30,000-50,000 km).',
+        technology: 'TURBOCORE Water Separator',
+        mechanism: 'Coalescing water separator element positioned between fuel tank and injection pump; removes free and emulsified water from the fuel stream. Rating and capacity must be matched to the approved application.',
+        effectiveness: 'Protects HPCR injectors from water emulsion corrosion. Cost: €400-600 separator assembly + €150-200 element per service (interval per approved application).',
       },
       {
-        technology: 'TURBOCORE Biocide Treatment (Preventive)',
-        mechanism: 'Biocide additive (2-5 ppm concentration) inhibits bacterial metabolism, preventing biofilm formation. Applied to contaminated fuel or as preventive injection into fuel tank.',
-        effectiveness: 'Kills existing bacterial colonies (<1,000,000 CFU/mL treatable in-tank) within 24-48 hours. Prevents recurrence if water content remains <50 ppm. Cost: €50-100 per treatment, recommended quarterly for high-humidity climates.',
+        technology: 'Biocide Treatment (Preventive)',
+        mechanism: 'Biocide additive inhibits bacterial metabolism, preventing biofilm formation. Applied to contaminated fuel or as preventive injection into fuel tank.',
+        effectiveness: 'Reduces existing bacterial colonization within the treatment product\'s specified dwell time. Prevents recurrence when water content is controlled. Cost: €50-100 per treatment, recommended quarterly for high-humidity climates.',
       },
       {
         technology: 'Fuel Polishing Service (Off-Site Purification)',

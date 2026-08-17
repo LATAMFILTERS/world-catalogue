@@ -19,7 +19,6 @@ applicable_technologies:
   - "[[MACROCORE]]"
   - "[[NANOFORCE]]"
   - "[[SYNTRAX]]"
-  - "[[TURBOCORE]]"
   - "[[MICROKAPPA]]"
   - "[[INTEKCORE]]"
 applicable_standards:
@@ -65,7 +64,6 @@ Hydraulic system contamination is particularly critical in construction equipmen
 - [[MACROCORE|MACROCORE — Air intake particle capture for excavators and loaders operating in earthmoving dust environments]]
 - [[NANOFORCE|NANOFORCE — Sub-micron lube oil polishing for engine and hydraulic circuit particle control]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration maintaining ISO 4406 16/14/11 in construction equipment engine lube circuits]]
-- [[TURBOCORE|TURBOCORE — Hydraulic circuit filtration achieving ISO 4406 17/15/12 or better for proportional valve protection in excavator circuits]]
 - [[MICROKAPPA|MICROKAPPA — Cabin air filtration protecting operator health from PM10 diesel particulate and silica dust at construction sites]]
 - [[INTEKCORE|INTEKCORE — Zero-bypass radial seal housing for air intake systems on excavators and bulldozers in high-vibration earthmoving environments]]
 
@@ -94,7 +92,7 @@ RELATED_STANDARDS
 SAE J1539: Air intake cleanliness for diesel engines | ISO 16889: Hydraulic and lube filter Beta ratio test methodology | ISO 5011: Inlet air cleaning equipment | NFPA T2.14.1: Mobile equipment hydraulic fluid cleanliness requirements | ISO 11155: Cabin filtering systems for road vehicles
 
 RELATED_TECHNOLOGIES
-MACROCORE: Air intake particle capture in earthmoving dust environments | TURBOCORE: Hydraulic circuit filtration for proportional valve protection | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic and lube oil circuits
+MACROCORE: Air intake particle capture in earthmoving dust environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic and lube oil circuits
 
 INDUSTRIAL_ROLE
 Construction equipment operates across all contamination domains simultaneously — effective multi-domain filtration (air, hydraulic, lube, fuel, cabin) is the primary operational variable determining whether equipment achieves planned production uptime or incurs unplanned hydraulic valve and engine component replacement costs.

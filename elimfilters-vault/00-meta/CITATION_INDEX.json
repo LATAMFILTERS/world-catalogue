@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-08-17T07:59:09.481Z",
+    "generated": "2026-08-17T08:46:11.004Z",
     "note_count": 67,
     "scanned_note_count": 81,
     "skipped_non_entity_count": 14,
@@ -356,14 +356,14 @@
         "concept": "Agriculture Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:ab8cc0350447447076bfb387567e25f01804963c43733a80e6cb873bb56be194"
+        "content_hash": "sha256:2ca39f4bc0dc708210bc6842c63c04ce91c4e11ff85d1997dbd6bf8ed02e2d31"
       },
       "canonical": {
         "definition": "Agriculture is a HIGH contamination exposure industrial category for diesel-powered equipment, characterized by airborne dust concentrations above 100 mg/m³ during harvest operations, outdoor fuel storage water contamination risks, and seasonal intensive-operation periods that accumulate high contamination loads without daily maintenance oversight.",
         "systems": "Air intake filtration, lube oil filtration, hydraulic filtration, fuel filtration across combines, tractors, and harvesters",
         "failure_impact": "Harvest-season dust ingestion >100 mg/m³ with degraded intake filtration → silica particle entry into combustion chambers → piston ring and cylinder bore abrasive wear → compression loss 10–25%; engine overhaul at 3,000–5,000 hours instead of 15,000–25,000 hours | Compounded by water-contaminated diesel fuel → injector stiction and corrosion → fuel system failure.",
         "related_standards": "ISO 5011: Air intake filtration performance standard | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Hydraulic and lube oil filter Beta ratio test standard | ASTM D6304: Water content in diesel fuel test method",
-        "related_technologies": "MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 for engine bearing protection | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | TURBOCORE: Hydraulic circuit filtration for harvester hydraulic systems | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation",
+        "related_technologies": "MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 for engine bearing protection | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation",
         "industrial_role": "Agriculture represents one of the highest contamination exposure environments for diesel engines globally — the combination of extreme seasonal dust loads, outdoor fuel storage, and intensive operation cycles makes multi-domain filtration system performance (air, fuel, lube, hydraulic) a primary determinant of whether equipment completes a harvest season without unplanned downtime."
       },
       "relationships": {
@@ -375,7 +375,6 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "TURBOCORE",
           "INTEKCORE"
         ],
         "applicable_standards": [
@@ -534,14 +533,14 @@
         "concept": "Construction Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:795ee7f8f7146d4907981b04e6b2bc14ffddee7fb7948b68cb8f21bebb55ca34"
+        "content_hash": "sha256:04a334ae7b395c685475904f8d198be35d0a36911ebb59fb3741bbe0ee100fd7"
       },
       "canonical": {
         "definition": "Construction is a HIGH contamination exposure industrial category for heavy equipment, with concurrent silica-bearing airborne dust, hydraulic system wear particle generation, diesel fuel water contamination, and operator cabin air quality hazards all simultaneously present in excavator, loader, bulldozer, and compactor operations.",
         "systems": "Air intake filtration, hydraulic circuit filtration, lube oil filtration, fuel filtration, cabin air filtration across all heavy construction equipment categories",
         "failure_impact": "Hydraulic contamination above ISO 4406 17/15/12 → proportional valve spool sticktion and internal leakage → machine productivity loss and valve replacement ($5,000–$25,000 per valve) | Air intake failure → silica dust ingestion → piston ring abrasive wear → engine overhaul at 3,000–5,000 hours | Cabin air contamination above PM10 limits → operator chronic respiratory exposure at active earthmoving sites.",
         "related_standards": "SAE J1539: Air intake cleanliness for diesel engines | ISO 16889: Hydraulic and lube filter Beta ratio test methodology | ISO 5011: Inlet air cleaning equipment | NFPA T2.14.1: Mobile equipment hydraulic fluid cleanliness requirements | ISO 11155: Cabin filtering systems for road vehicles",
-        "related_technologies": "MACROCORE: Air intake particle capture in earthmoving dust environments | TURBOCORE: Hydraulic circuit filtration for proportional valve protection | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic and lube oil circuits",
+        "related_technologies": "MACROCORE: Air intake particle capture in earthmoving dust environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic and lube oil circuits",
         "industrial_role": "Construction equipment operates across all contamination domains simultaneously — effective multi-domain filtration (air, hydraulic, lube, fuel, cabin) is the primary operational variable determining whether equipment achieves planned production uptime or incurs unplanned hydraulic valve and engine component replacement costs."
       },
       "relationships": {
@@ -555,7 +554,6 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "TURBOCORE",
           "MICROKAPPA",
           "INTEKCORE"
         ],
@@ -1379,14 +1377,14 @@
         "concept": "FUEL — Fuel Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
-        "content_hash": "sha256:c1e2def9a1a5d9ca31fe75bc8f11dc204fe15b44542d7ef36cd46c733733cdc2"
+        "content_hash": "sha256:9a815847a0ea1017984fb3409f813cfa9a11461b83b1a7d37c9f9eabefe3beac"
       },
       "canonical": {
         "definition": "The fuel filtration domain covers diesel fuel cleanliness and water removal systems protecting high-pressure common-rail injectors and fuel pumps from particle wear and corrosion caused by particulate and water contamination.",
         "systems": "HPCR diesel injection systems, fuel transfer circuits, bulk fuel storage systems across on-highway trucks, off-highway equipment, marine engines, and stationary power generation",
         "failure_impact": "Water contamination → injector corrosion and microbial growth → injector stiction → misfires | Particle contamination above 4 µm → injector nozzle erosion → fuel spray pattern degradation → incomplete combustion → engine damage | HPCR injector replacement cost: $800–$2,500 per injector.",
         "related_standards": "ASTM D6304: Water content measurement in petroleum products (Karl Fischer coulometric titration) | ISO 12937: Water determination in petroleum products by Karl Fischer reagent",
-        "related_technologies": "SYNTAPORE: Diesel-fuel particulate filtration elements for primary, secondary and cartridge fuel-filter applications | TURBOCORE: Coalescing water separator elements for free and emulsified water removal | TURBOCORE: Three-stage fuel filtration for high-contamination environments",
+        "related_technologies": "SYNTAPORE: Diesel-fuel particulate filtration elements for primary, secondary and cartridge fuel-filter applications | TURBOCORE: Coalescing water separator elements for free and emulsified water removal",
         "industrial_role": "Fuel filtration is the primary protection system for HPCR injection equipment operating above 1,800 bar — injector clearances of 2–4 µm require sub-4 µm particle control to prevent accelerated nozzle wear and injection system failure."
       },
       "relationships": {
@@ -1662,14 +1660,14 @@
         "concept": "ISO 12937 Water in Petroleum Products",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:f5cb4c097c2ceee9fae251c41f4b4314d8334b8921c9f75c1ccaf19dcbca0cfd"
+        "content_hash": "sha256:0f9fdff834b0093f30390b559f4addea6ed153dcf7233d1af9a1cd51dead8b75"
       },
       "canonical": {
         "definition": "ISO 12937 is the international coulometric Karl Fischer titration standard for measuring water content in petroleum products as mg/kg (ppm), functionally equivalent to ASTM D6304 and serving as the European and international market reference method for EN 590 diesel fuel water content compliance and ISO 8217 marine fuel water management.",
         "systems": "Diesel fuel bulk storage quality monitoring, marine fuel management, power generation facility fuel quality verification, and international fleet fuel compliance programs in markets where EN 590 and ISO 8217 apply",
         "failure_impact": "Diesel fuel exceeding ISO 12937 EN 590 limit of 200 mg/kg total water → free water droplet formation above dissolved saturation (50–100 mg/kg) → free water entering common-rail injection at 1,800–2,500 bar → cavitation erosion of injector nozzle tip and needle seat geometry → spray pattern degradation and combustion inefficiency | In marine applications, water-contaminated fuel above 200 mg/kg triggers microbial growth in marine diesel tanks between voyages | Operational Impact: injector replacement $800–$4,000/unit; marine fuel tank microbial contamination causes complete fuel polishing events costing $10,000–$50,000 per vessel.",
         "related_standards": "ASTM D6304: North American equivalent coulometric Karl Fischer method; same electrochemical principle, equivalent results; cross-reference acknowledged in both standards; cited in North American vs European regulatory contexts for identical contamination scenarios",
-        "related_technologies": "TURBOCORE: Coalescing water-separating fuel filtration; ISO 12937 inlet/outlet comparison is the performance validation protocol for TURBOCORE water separation efficiency claims in European and international markets",
+        "related_technologies": "TURBOCORE: Coalescing water-separating fuel filtration; ISO 12937 inlet/outlet water content comparison is a field verification method for separator performance in European and international markets. Applicable separation ratings must be tied to the specific approved element and test basis, not presented as a universal efficiency claim.",
         "industrial_role": "ISO 12937 is the European and international market measurement standard enabling diesel fuel water contamination control — fleet operators and fuel system engineers in EN 590 and ISO 8217 jurisdictions depend on ISO 12937 testing to detect water accumulation before it exceeds injector protection thresholds and to validate that water-separating filtration is performing to specification."
       },
       "relationships": {
@@ -2036,14 +2034,14 @@
         "concept": "Hydraulic System Contamination",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:90cbf9a36f7cf03ed1605396714c318665428b2b3379f8b51eb129806c6cefc2"
+        "content_hash": "sha256:2ae37be2046e34b5cb67d940387c7814cb664736beea782b7e1b6c0ed2b488ad"
       },
       "canonical": {
         "definition": "Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid that causes proportional valve failure, pump wear, and system efficiency loss — operating through direct abrasive wear at 1–25 µm component clearances, water-accelerated fluid thermal degradation, and varnish deposition at valve bore surfaces causing control stiction.",
         "systems": "Proportional and servo hydraulic systems, mobile equipment hydraulic circuits, industrial hydraulic power units, mining shovel and excavator hydraulic systems, crane and materials handling hydraulic circuits",
         "failure_impact": "Particle contamination above ISO 4406 17/15/12 → abrasive wear at proportional valve spool (1–5 µm clearance) → valve scoring and jamming → loss of proportional control | Varnish deposition from thermal-oxidative degradation → 1–2 µm lacquer film on valve bores → spool stiction → control instability | Operational impact: system efficiency −15–40%; component life −50–70%; unplanned downtime +25–35%.",
         "related_standards": "ISO 16889: Multi-pass Beta ratio test for hydraulic filter element efficiency classification | ISO 4406: Three-number cleanliness code; proportional valve target 16/14/11; industrial hydraulic target 17/15/12 | NFPA T2.14: Hydraulic system cleanliness and filtration design requirements",
-        "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | TURBOCORE: Water removal from hydraulic fluid; prevents fluid thermal degradation and varnish formation | SYNTRAX: Full-flow hydraulic filtration to ISO 4406 16/14/11 | MICROKAPPA: Reservoir breather contamination prevention",
+        "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | SYNTRAX: Full-flow hydraulic filtration to ISO 4406 16/14/11 | MICROKAPPA: Reservoir breather contamination prevention",
         "industrial_role": "Hydraulic system contamination is the leading cause of proportional valve and pump failure in mobile and industrial hydraulic equipment — maintaining ISO 4406 cleanliness at 16/14/11 versus 19/17/14 extends proportional valve service life 50–70% and reduces unplanned hydraulic system downtime by 25–35% across construction, mining, and agricultural equipment fleets."
       },
       "relationships": {
@@ -2054,7 +2052,6 @@
         ],
         "resolved_by": [
           "NANOFORCE",
-          "TURBOCORE",
           "SYNTRAX",
           "MICROKAPPA"
         ]
@@ -2987,14 +2984,14 @@
         "concept": "Primary Hydraulic Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:de8bf3e20c7ed8d8e52c2ae17502d152bb938361c9e78e108b601ca0ac365565"
+        "content_hash": "sha256:a599e2d59675409004627dbab8869bf82fc7198e98c70f8e5a68393d59877f83"
       },
       "canonical": {
         "definition": "Primary Hydraulic Protection — the NANOFORCE™-technology filter element family for\nprecision particle control in hydraulic systems, covering approximately 95 SKUs rated\nBeta(x[c]) ≥ 1000 at 5 µm per ISO 16889, targeting ISO 4406 16/14/11 cleanliness\nacross agriculture, construction, mining, oil/gas, and power generation applications.",
         "systems": "Hydraulic filtration domain; belongs to HYDRAULIC product-line system; implements\nNANOFORCE™ nanofibre-layered glass media technology",
         "failure_impact": "Incorrect element selection (wrong Beta ratio class or wrong collapse pressure rating)\nor extended service interval → particle contamination exceeds ISO 18/16/13 threshold →\nproportional valve spool erosion → valve stiction and position error → hydraulic\nactuator failure; pump bearing wear reduces service life from 10,000 hours to 2,000–3,000\nhours",
         "related_standards": "ISO 16889: Multi-pass Beta ratio test — all elements in this family rated Beta(x[c]) ≥\n1000 at 5 µm | ISO 4406: Cleanliness code classification used to define system targets |\nNFPA T2.14: Collapse pressure rating standard for element structural integrity",
-        "related_technologies": "NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio) |\nSYNTRAX: Alternative family for lube-hydraulic shared circuits (not in this family) |\nTURBOCORE: Water removal from hydraulic systems where water contamination co-exists\n(separate family)",
+        "related_technologies": "NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio) |\nSYNTRAX: Alternative family for lube-hydraulic shared circuits (not in this family)",
         "industrial_role": "This product family is the principal contamination control implementation for hydraulic\nparticle contamination — the single largest cause of proportional valve and piston pump\nfailure in mobile construction, mining, and agricultural equipment operating precision\nhydraulic circuits above 200 bar."
       },
       "relationships": {
@@ -3309,11 +3306,6 @@
       },
       {
         "from": "AGRICULTURE",
-        "to": "TURBOCORE",
-        "relation": "applicable_technologies"
-      },
-      {
-        "from": "AGRICULTURE",
         "to": "INTEKCORE",
         "relation": "applicable_technologies"
       },
@@ -3550,11 +3542,6 @@
       {
         "from": "CONSTRUCTION",
         "to": "SYNTRAX",
-        "relation": "applicable_technologies"
-      },
-      {
-        "from": "CONSTRUCTION",
-        "to": "TURBOCORE",
         "relation": "applicable_technologies"
       },
       {
@@ -5020,11 +5007,6 @@
       {
         "from": "HYDRAULIC_CONTAMINATION",
         "to": "NANOFORCE",
-        "relation": "resolved_by"
-      },
-      {
-        "from": "HYDRAULIC_CONTAMINATION",
-        "to": "TURBOCORE",
         "relation": "resolved_by"
       },
       {

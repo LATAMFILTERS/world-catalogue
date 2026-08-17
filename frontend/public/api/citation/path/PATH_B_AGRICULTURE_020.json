@@ -30,14 +30,14 @@
           "concept": "Agriculture Industry Filtration Requirements",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:ab8cc0350447447076bfb387567e25f01804963c43733a80e6cb873bb56be194"
+          "content_hash": "sha256:2ca39f4bc0dc708210bc6842c63c04ce91c4e11ff85d1997dbd6bf8ed02e2d31"
         },
         "canonical": {
           "definition": "Agriculture is a HIGH contamination exposure industrial category for diesel-powered equipment, characterized by airborne dust concentrations above 100 mg/m³ during harvest operations, outdoor fuel storage water contamination risks, and seasonal intensive-operation periods that accumulate high contamination loads without daily maintenance oversight.",
           "systems": "Air intake filtration, lube oil filtration, hydraulic filtration, fuel filtration across combines, tractors, and harvesters",
           "failure_impact": "Harvest-season dust ingestion >100 mg/m³ with degraded intake filtration → silica particle entry into combustion chambers → piston ring and cylinder bore abrasive wear → compression loss 10–25%; engine overhaul at 3,000–5,000 hours instead of 15,000–25,000 hours | Compounded by water-contaminated diesel fuel → injector stiction and corrosion → fuel system failure.",
           "related_standards": "ISO 5011: Air intake filtration performance standard | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Hydraulic and lube oil filter Beta ratio test standard | ASTM D6304: Water content in diesel fuel test method",
-          "related_technologies": "MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 for engine bearing protection | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | TURBOCORE: Hydraulic circuit filtration for harvester hydraulic systems | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation",
+          "related_technologies": "MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 for engine bearing protection | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation",
           "industrial_role": "Agriculture represents one of the highest contamination exposure environments for diesel engines globally — the combination of extreme seasonal dust loads, outdoor fuel storage, and intensive operation cycles makes multi-domain filtration system performance (air, fuel, lube, hydraulic) a primary determinant of whether equipment completes a harvest season without unplanned downtime."
         },
         "relationships": {
@@ -49,7 +49,6 @@
             "MACROCORE",
             "NANOFORCE",
             "SYNTRAX",
-            "TURBOCORE",
             "INTEKCORE"
           ],
           "applicable_standards": [
@@ -183,44 +182,44 @@
       }
     },
     {
-      "key": "HYDROCORE",
+      "key": "TURBOCORE",
       "type": "technology",
-      "name": "HYDROCORE™",
+      "name": "TURBOCORE™",
       "citation_record": {
-        "key": "HYDROCORE",
+        "key": "TURBOCORE",
         "type": "technology",
-        "name": "HYDROCORE™",
-        "slug": "hydrocore",
+        "name": "TURBOCORE™",
+        "slug": "turbocore",
         "status": "active",
         "in_unified_data": false,
         "ud_key": null,
         "tags": [],
         "citation": {
-          "source_url": "https://elimfilters.com/knowledge-center/technologies/hydrocore/",
-          "concept": "HYDROCORE Fuel Water Separation Technology",
-          "version": "1.0",
-          "last_updated": "2026-08-15",
-          "content_hash": "sha256:da013411952f48852f7f70b7b852b165505f9421996d66d9003e3e9295754252"
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/turbocore/",
+          "concept": "TURBOCORE Fuel Water Separation Technology",
+          "version": "2.0",
+          "last_updated": "2026-08-14",
+          "content_hash": "sha256:cd57faaaace4313eba17933c57b6137beddc857e02292f006015bed713e71849"
         },
         "canonical": {
-          "definition": "HYDROCORE is the ELIMFILTERS fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators.",
-          "systems": "Fuel Cleanliness Protection; standard spin-on and cartridge fuel/water separator applications outside the Turbine Series FH/FG architecture.",
-          "failure_impact": "Inadequate water separation can allow free or emulsified water to reach downstream injectors and high-pressure pumps, increasing erosion, corrosion and cavitation risk.",
-          "related_standards": "Applicable fuel-water separation test methods, water-holding capacity and application requirements must be selected for the approved separator. The technology name alone does not imply a universal separation efficiency or certification claim.",
-          "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection -- SYNTAPORE is scoped to plain fuel filtration and does not perform the water-separation function reserved for HYDROCORE. TURBOCORE: Dedicated fuel-separation architecture reserved for approved turbine-style FH and FG applications -- HYDROCORE is reserved for standard (non-turbine) separator housings and must not be represented as a Turbine Series FH/FG technology.",
-          "industrial_role": "HYDROCORE provides the standard (non-turbine) fuel/water separation layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by flow, water-holding capacity, element rating, installation and maintenance requirements."
+          "definition": "TURBOCORE is the ELIMFILTERS dedicated fuel-separation architecture for approved turbine-style FH and FG applications.",
+          "systems": "Fuel Cleanliness Protection; approved turbine-style FH and FG fuel-separation applications.",
+          "failure_impact": "Inadequate staged fuel conditioning or separation can increase particulate and water-contamination exposure in protected diesel fuel-system applications.",
+          "related_standards": "Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved FH or FG system. The technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.",
+          "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. HYDROCORE: Fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators. TURBOCORE is reserved for approved turbine-style FH and FG fuel-separation applications and must not be represented as a hydraulic, general-purpose fuel-filter, or standard-separator technology.",
+          "industrial_role": "TURBOCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection for approved turbine-style FH and FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements."
         },
         "relationships": {
           "related_technologies": [
             "SYNTAPORE",
-            "TURBOCORE"
+            "HYDROCORE"
           ]
         },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md"
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\TURBOCORE.md"
       }
     }
   ],
   "terminal_product_families": [
-    "FUEL_WATER_SEPARATOR"
+    "FUEL_TURBINE"
   ]
 }

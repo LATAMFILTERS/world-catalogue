@@ -1323,7 +1323,7 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 
 **ELIMFILTERS® engineering response:**
 - Air: MACROCORE™ with INTEKCORE™ pre-cleaner; restriction monitoring mandatory; 2–4× standard interval reduction in extreme dust
-- Fuel: Three-stage SYNTAPORE™ + TURBOCORE™ + TURBOCORE™ with water-in-fuel alarm
+- Fuel: SYNTAPORE™ particulate filtration + TURBOCORE™ water separation with water-in-fuel alarm
 - Hydraulic: NANOFORCE™ with offline kidney loop to ISO 15/13/10; bypass indicator monitoring
 - Cabin: MICROKAPPA™ H13-class; pressurization system inspection quarterly
 

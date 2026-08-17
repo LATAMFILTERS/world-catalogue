@@ -17,14 +17,14 @@
     "concept": "Hydraulic System Contamination",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:90cbf9a36f7cf03ed1605396714c318665428b2b3379f8b51eb129806c6cefc2"
+    "content_hash": "sha256:2ae37be2046e34b5cb67d940387c7814cb664736beea782b7e1b6c0ed2b488ad"
   },
   "canonical": {
     "definition": "Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid that causes proportional valve failure, pump wear, and system efficiency loss — operating through direct abrasive wear at 1–25 µm component clearances, water-accelerated fluid thermal degradation, and varnish deposition at valve bore surfaces causing control stiction.",
     "systems": "Proportional and servo hydraulic systems, mobile equipment hydraulic circuits, industrial hydraulic power units, mining shovel and excavator hydraulic systems, crane and materials handling hydraulic circuits",
     "failure_impact": "Particle contamination above ISO 4406 17/15/12 → abrasive wear at proportional valve spool (1–5 µm clearance) → valve scoring and jamming → loss of proportional control | Varnish deposition from thermal-oxidative degradation → 1–2 µm lacquer film on valve bores → spool stiction → control instability | Operational impact: system efficiency −15–40%; component life −50–70%; unplanned downtime +25–35%.",
     "related_standards": "ISO 16889: Multi-pass Beta ratio test for hydraulic filter element efficiency classification | ISO 4406: Three-number cleanliness code; proportional valve target 16/14/11; industrial hydraulic target 17/15/12 | NFPA T2.14: Hydraulic system cleanliness and filtration design requirements",
-    "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | TURBOCORE: Water removal from hydraulic fluid; prevents fluid thermal degradation and varnish formation | SYNTRAX: Full-flow hydraulic filtration to ISO 4406 16/14/11 | MICROKAPPA: Reservoir breather contamination prevention",
+    "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances | SYNTRAX: Full-flow hydraulic filtration to ISO 4406 16/14/11 | MICROKAPPA: Reservoir breather contamination prevention",
     "industrial_role": "Hydraulic system contamination is the leading cause of proportional valve and pump failure in mobile and industrial hydraulic equipment — maintaining ISO 4406 cleanliness at 16/14/11 versus 19/17/14 extends proportional valve service life 50–70% and reduces unplanned hydraulic system downtime by 25–35% across construction, mining, and agricultural equipment fleets."
   },
   "relationships": {
@@ -35,7 +35,6 @@
     ],
     "resolved_by": [
       "NANOFORCE",
-      "TURBOCORE",
       "SYNTRAX",
       "MICROKAPPA"
     ]
@@ -64,11 +63,6 @@
         "key": "NANOFORCE",
         "relation": "resolved_by",
         "href": "/api/citation/NANOFORCE.json"
-      },
-      {
-        "key": "TURBOCORE",
-        "relation": "resolved_by",
-        "href": "/api/citation/TURBOCORE.json"
       },
       {
         "key": "SYNTRAX",

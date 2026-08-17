@@ -117,7 +117,7 @@ export function FuelSeparatorPage() {
                 fontStyle: 'italic',
               }}
             >
-              Advanced multi-stage coalescence removing free, emulsified and dissolved water from diesel fuel circuits. Anti-corrosion rated to ISO 16332 — the last barrier between contaminated fuel and high-pressure injection systems.
+              Staged coalescence removing free and emulsified water from diesel fuel circuits in approved Turbine Series FH/FG applications — the last barrier between contaminated fuel and high-pressure injection systems.
             </motion.p>
           </div>
         </section>
@@ -169,7 +169,7 @@ export function FuelSeparatorPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  Water in diesel fuel is not a rare event — it enters through condensation in storage tanks, contaminated deliveries and seal ingress during transport. ELIMFILTERS fuel separators deploy a three-stage TURBOCORE™ asset protection system: the first defense layer captures sediment and large contaminants, the second protection stage forces microscopic water droplets to merge and fall into the collection chamber, and the TURBOCORE™ hydrophobic final barrier blocks any residual water from reaching the injection circuit. ISO 16332 certified — the international standard for diesel fuel water separation performance.
+                  Water in diesel fuel is not a rare event — it enters through condensation in storage tanks, contaminated deliveries and seal ingress during transport. ELIMFILTERS TURBOCORE™ deploys a staged asset protection system: an inertial defense layer captures sediment and large contaminants, a coalescing stage forces microscopic water droplets to merge and fall into the collection chamber, and the TURBOCORE™ hydrophobic final barrier blocks residual water from reaching the injection circuit. Tested per ISO 16332, the water separation test method for diesel fuel filters.
                 </p>
 
                 <div
@@ -349,34 +349,34 @@ export function FuelSeparatorPage() {
                   ISO 16332
                 </h3>
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                  WATER SEPARATOR CERTIFICATION
+                  WATER SEPARATION TEST METHOD
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
-                  International standard for diesel fuel filter and water separator performance — free and emulsified water removal verified
+                  Test methodology referenced for diesel fuel filter and water separator performance evaluation; applicable ratings are tied to the specific approved element
                 </p>
               </motion.div>
 
               <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
-                  3
+                  Staged
                 </h3>
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                  SEPARATION STAGES
+                  SEPARATION ARCHITECTURE
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
-                  Sediment pre-filter, coalescing media and hydrophobic final barrier — water removed in all three forms
+                  Sediment pre-filter, coalescing media and hydrophobic final barrier — matched to the approved application
                 </p>
               </motion.div>
 
               <motion.div variants={itemVariants} style={{ border: '1px solid rgba(255,241,45,0.2)', borderRadius: '12px', padding: '2.5rem', background: '#000' }}>
                 <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF12D', margin: '0 0 1rem 0', fontFamily: 'Montserrat, sans-serif' }}>
-                  0ppm
+                  Final
                 </h3>
                 <p style={{ fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.05em', color: 'rgba(255,255,255,0.9)', margin: 0 }}>
-                  FREE WATER TO INJECTORS
+                  BARRIER STAGE
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
-                  Hydrophobic final stage blocks residual water from passing into the high-pressure injection circuit
+                  Hydrophobic final stage engineered to block residual water from passing into the high-pressure injection circuit
                 </p>
               </motion.div>
             </StaggerContainer>
@@ -384,7 +384,7 @@ export function FuelSeparatorPage() {
             <AnimateIn>
               <div style={{ textAlign: 'center' }}>
                 <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', fontStyle: 'italic', lineHeight: 1.65, maxWidth: '800px', margin: '0 auto' }}>
-                  Results verified in heavy transport, marine, power generation and agriculture operations exposed to condensation-prone fuel storage and variable-quality diesel supply.
+                  Deployed in heavy transport, marine, power generation and agriculture operations exposed to condensation-prone fuel storage and variable-quality diesel supply.
                 </p>
               </div>
             </AnimateIn>

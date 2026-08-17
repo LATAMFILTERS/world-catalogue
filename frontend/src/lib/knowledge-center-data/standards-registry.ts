@@ -1321,7 +1321,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What water content limit does EN 590 specify for European diesel fuel, and why does it matter for HPCR?',
-        answer: 'EN 590 (European specification for automotive diesel fuel) specifies a maximum water content of 200 mg/kg (200 ppm by mass) as determined by ISO 12937. This limit is set to protect high-pressure common rail (HPCR) injection systems with fuel injection pressures of 1,800–2,500 bar and injector spool clearances of ≤1 µm. Water above 200 ppm in diesel fuel at HPCR operating conditions causes injector seat corrosion at the metal-to-metal seal surfaces, micro-pitting of needle valve surfaces, and stiction — where injector needles partially adhere to seats after injection events, causing irregular spray pattern, poor combustion efficiency, and ultimately injector failure. TURBOCORE™ coalescing separator elements are specified to achieve outlet water below 50 mg/kg, providing a 4× safety margin below the EN 590 limit.',
+        answer: 'EN 590 (European specification for automotive diesel fuel) specifies a maximum water content of 200 mg/kg (200 ppm by mass) as determined by ISO 12937. This limit is set to protect high-pressure common rail (HPCR) injection systems with fuel injection pressures of 1,800–2,500 bar and injector spool clearances of ≤1 µm. Water above 200 ppm in diesel fuel at HPCR operating conditions causes injector seat corrosion at the metal-to-metal seal surfaces, micro-pitting of needle valve surfaces, and stiction — where injector needles partially adhere to seats after injection events, causing irregular spray pattern, poor combustion efficiency, and ultimately injector failure. TURBOCORE™ coalescing separator elements are specified against the required outlet water target for the approved application, providing margin below the EN 590 limit.',
       },
       {
         question: 'What is the measurement range of ISO 12937 and when is it not appropriate?',
@@ -1345,7 +1345,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What microbial growth risk is associated with water contamination detected by ISO 12937?',
-        answer: 'Water content above 200 ppm in diesel fuel creates conditions for microbial contamination at the fuel-water interface in tank bottom accumulations. Sulphate-reducing bacteria (Pseudomonas aeruginosa, Desulfovibrio spp.) and fungi (Hormoconis resinae, known as the "kerosene fungus") colonize the water-fuel interface, producing acidic metabolites (sulphides, organic acids) that corrode tank walls and form biomass mats that block fuel filters. ISO 12937 water content testing provides early warning of conditions favouring microbial growth, but detecting established microbiological contamination requires additional testing: ATP bioluminescence, ASTM D6974 (microorganism enumeration in fuel), or culture-based colony count methods. TURBOCORE™ water separation below 50 mg/kg reduces free water accumulation at tank bottoms, limiting microbial colonization sites.',
+        answer: 'Water content above 200 ppm in diesel fuel creates conditions for microbial contamination at the fuel-water interface in tank bottom accumulations. Sulphate-reducing bacteria (Pseudomonas aeruginosa, Desulfovibrio spp.) and fungi (Hormoconis resinae, known as the "kerosene fungus") colonize the water-fuel interface, producing acidic metabolites (sulphides, organic acids) that corrode tank walls and form biomass mats that block fuel filters. ISO 12937 water content testing provides early warning of conditions favouring microbial growth, but detecting established microbiological contamination requires additional testing: ATP bioluminescence, ASTM D6974 (microorganism enumeration in fuel), or culture-based colony count methods. TURBOCORE™ water separation reduces free water accumulation at tank bottoms, limiting microbial colonization sites.',
       },
       {
         question: 'Can ISO 12937 be used for marine fuel (HFO/LSFO) water content testing?',
@@ -1398,7 +1398,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'Fuel and Lube Oil Applications',
-        body: 'In fuel applications, ASTM D6304 verifies diesel fuel water content below the 200 mg/kg threshold critical for HPCR injector protection. In lubricating oil applications, water above 0.1% indicates coolant leak (head gasket or liner failure); above 0.5%, water accelerates oil oxidation, promotes bacterial growth in biodegradable oils, and reduces oil film strength at bearing surfaces. TURBOCORE™ performance is validated by comparing ASTM D6304 inlet versus outlet water concentrations, with target outlet below 50–100 mg/kg dissolved saturation.',
+        body: 'In fuel applications, ASTM D6304 verifies diesel fuel water content below the 200 mg/kg threshold critical for HPCR injector protection. In lubricating oil applications, water above 0.1% indicates coolant leak (head gasket or liner failure); above 0.5%, water accelerates oil oxidation, promotes bacterial growth in biodegradable oils, and reduces oil film strength at bearing surfaces. TURBOCORE™ performance is validated by comparing ASTM D6304 inlet versus outlet water concentrations against the outlet target for the specific approved application.',
       },
     ],
     keyParams: [
@@ -1430,7 +1430,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'How is ASTM D6304 used to verify TURBOCORE™ water separator performance?',
-        answer: 'TURBOCORE™ water separator performance is verified by comparing ASTM D6304 water content measurements of fuel samples taken simultaneously at the separator inlet and outlet under operating flow conditions. Water separation efficiency = (Inlet water – Outlet water) / Inlet water × 100%. For TURBOCORE™ elements achieving ≥96% water separation efficiency per ISO 16332, inlet water of 500 mg/kg would produce outlet water of ≤20 mg/kg. Field verification using ASTM D6304 at sampler ports installed upstream and downstream of the separator validates that the installed system achieves the ISO 16332-rated performance under actual fuel temperature, flow rate, and fuel composition conditions. Results below 96% efficiency may indicate element degradation, bypass leakage, or operation at above-rated flow rates.',
+        answer: 'TURBOCORE™ water separator performance is verified by comparing ASTM D6304 water content measurements of fuel samples taken simultaneously at the separator inlet and outlet under operating flow conditions. Water separation efficiency = (Inlet water – Outlet water) / Inlet water × 100%. Field verification using ASTM D6304 at sampler ports installed upstream and downstream of the separator validates that the installed system achieves the rated performance for the specific approved element under actual fuel temperature, flow rate, and fuel composition conditions. Results below the approved rating may indicate element degradation, bypass leakage, or operation at above-rated flow rates.',
       },
       {
         question: 'What does ASTM D6304 measure in lubricating oil condition monitoring applications?',
@@ -1499,11 +1499,11 @@ export const KC_STANDARDS: KCStandard[] = [
     sections: [
       {
         heading: 'Water Separation Efficiency Test',
-        body: 'ISO 16332 defines the standardized test methodology for measuring the water separation efficiency of diesel fuel filters, including coalescing filter elements. The test circulates diesel fuel containing a controlled water concentration through the filter element under specified flow and temperature conditions, measuring water concentration upstream and downstream using analytical methods (Karl Fischer titration per ISO 12937 or ASTM D6304). Water separation efficiency is expressed as the percentage of input water concentration removed by the filter element. TURBOCORE™ coalescing water separator elements achieve ≥96% water separation efficiency under ISO 16332 test conditions.',
+        body: 'ISO 16332 defines the standardized test methodology for measuring the water separation efficiency of diesel fuel filters, including coalescing filter elements. The test circulates diesel fuel containing a controlled water concentration through the filter element under specified flow and temperature conditions, measuring water concentration upstream and downstream using analytical methods (Karl Fischer titration per ISO 12937 or ASTM D6304). Water separation efficiency is expressed as the percentage of input water concentration removed by the filter element. Applicable separation ratings must be tied to the specific approved element and test basis, not presented as a universal certification claim.',
       },
       {
         heading: 'HPCR Fuel System Application',
-        body: 'ISO 16332 is the performance standard for the water separation stage of HPCR fuel protection systems. In the ELIMFILTERS fuel protection strategy, TURBOCORE™ (water separation, ISO 16332 rated) operates in sequence with SYNTAPORE™ (primary particle removal) to achieve HPCR fuel cleanliness at ISO 12/10/8. ISO 16332 water separation test performance is the primary qualification criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection.',
+        body: 'ISO 16332 is a performance standard relevant to the water separation stage of HPCR fuel protection systems. In the ELIMFILTERS fuel protection strategy, TURBOCORE™ (water separation) operates in sequence with SYNTAPORE™ (primary particle removal). ISO 16332 water separation test performance is one criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection; the applicable rating must be tied to the specific approved element.',
       },
       {
         heading: 'Relationship to Fuel Water Standards',
@@ -1511,7 +1511,6 @@ export const KC_STANDARDS: KCStandard[] = [
       },
     ],
     keyParams: [
-      { label: 'TURBOCORE™ water separation', value: '≥96% (ISO 16332)' },
       { label: 'Test method for water content', value: 'ISO 12937 / ASTM D6304' },
       { label: 'HPCR fuel protection threshold', value: '<200 mg/kg water' },
     ],
@@ -1537,16 +1536,12 @@ export const KC_STANDARDS: KCStandard[] = [
         answer: 'ISO 16332 measures overall water separation efficiency based on Karl Fischer titration (ISO 12937 or ASTM D6304) of fuel samples at the filter inlet and outlet — it measures total water reduction regardless of water phase. However, the standard also includes provisions for testing with both free water challenge (bulk water-diesel mixture) and emulsified water challenge (surfactant-stabilized fine water droplet emulsion) separately, because coalescing filter performance differs significantly between these water states. Free water (droplets >50 µm) is readily separated by bulk coalescence; emulsified water (droplets 1–50 µm stabilized by fuel oxidation products or biodiesel contamination) requires high-efficiency glass fibre coalescer media and extended dwell time in the separation chamber.',
       },
       {
-        question: 'What water separation efficiency does TURBOCORE™ achieve under ISO 16332?',
-        answer: 'TURBOCORE™ coalescing water separator elements achieve ≥96% water separation efficiency under ISO 16332 standardized test conditions. At a fuel inlet water concentration of 500 mg/kg, ≥96% efficiency produces an outlet concentration of ≤20 mg/kg — well below the EN 590 200 mg/kg limit and below the HPCR injector protection threshold. In field conditions, water inlet concentrations vary from 50 mg/kg (normal dissolved water near saturation at 20°C) to 5,000+ mg/kg during contamination events (condensation from inadequate tank venting, water pooling in tank bottoms). TURBOCORE™ 96% efficiency maintains outlet concentrations below 200 mg/kg across this full range of inlet water conditions.',
-      },
-      {
         question: 'How does fuel flow rate affect ISO 16332 water separation efficiency?',
         answer: 'Water separation efficiency decreases significantly with increasing flow rate in coalescing filter elements, because coalescence is a time-dependent process requiring residence time in the fibrous media for small droplets to collide, merge, and grow to droplet sizes large enough for gravitational separation. ISO 16332 requires testing at rated flow and at 150% of rated flow to characterize this flow-dependent efficiency reduction. A coalescing separator rated at 96% efficiency at rated flow may achieve only 75–85% efficiency at 150% rated flow — relevant for fuel system designs where variable injection demand or lift pump surge creates transient flow rates above the separator\'s rated capacity. Filter selection must account for maximum instantaneous flow rates, not just average consumption rates.',
       },
       {
         question: 'How does biodiesel blending affect ISO 16332 water separator performance?',
-        answer: 'Biodiesel (FAME, fatty acid methyl esters) has significantly higher water solubility than petroleum diesel — approximately 1,000–1,500 mg/kg at saturation versus 50–150 mg/kg for petroleum diesel. B10 and B20 blends (10% and 20% biodiesel) correspondingly increase fuel water saturation capacity. Two effects on coalescing separator performance result: (1) Increased dissolved water load on the separator as the high-FAME fuel carries more dissolved water; (2) Potential surfactant effect from FAME oxidation products, which act as emulsifiers that stabilize fine water droplets and reduce coalescer efficiency below the ISO 16332 reference test value (performed with petroleum diesel). TURBOCORE™ elements tested under ISO 16332 with B10 and B20 fuel blends maintain ≥93% water separation efficiency — but filter replacement intervals in high-FAME operations may require reduction compared to petroleum diesel service.',
+        answer: 'Biodiesel (FAME, fatty acid methyl esters) has significantly higher water solubility than petroleum diesel — approximately 1,000–1,500 mg/kg at saturation versus 50–150 mg/kg for petroleum diesel. B10 and B20 blends (10% and 20% biodiesel) correspondingly increase fuel water saturation capacity. Two effects on coalescing separator performance result: (1) Increased dissolved water load on the separator as the high-FAME fuel carries more dissolved water; (2) Potential surfactant effect from FAME oxidation products, which act as emulsifiers that stabilize fine water droplets and reduce coalescer efficiency below the ISO 16332 reference test value (performed with petroleum diesel). Applicable water-separation performance for any coalescing element in B10/B20 service must be verified for the specific approved fuel blend — filter replacement intervals in high-FAME operations may require reduction compared to petroleum diesel service.',
       },
       {
         question: 'What is the role of the water separation bowl in an ISO 16332-rated fuel filter/water separator?',
@@ -1554,15 +1549,11 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'How frequently should ISO 16332-rated fuel water separators be serviced?',
-        answer: 'ISO 16332 does not specify service intervals — these are determined by fuel water ingestion rate and separator bowl volume. For heavy equipment operating in high-humidity environments (tropical construction, marine applications) with 500 m³/h fuel consumption at 150 mg/kg average fuel water content: water ingestion rate = 500 L/h × 0.15 g/L ≈ 75 g/h (accounting for diesel density ≈0.84 kg/L). A TURBOCORE™ separator with 96% efficiency removes 72 g/h into the collection bowl. A bowl capacity of 500 mL fills in approximately 6.9 hours of operation. Under these conditions, daily bowl draining is required. For drier conditions (temperate climate, covered storage, 50 mg/kg average water), bowl filling takes 21+ hours — weekly draining may be sufficient.',
+        answer: 'ISO 16332 does not specify service intervals — these are determined by fuel water ingestion rate and separator bowl volume. For heavy equipment operating in high-humidity environments (tropical construction, marine applications) with 500 m³/h fuel consumption at 150 mg/kg average fuel water content: water ingestion rate = 500 L/h × 0.15 g/L ≈ 75 g/h (accounting for diesel density ≈0.84 kg/L). At the approved separation rating for the specific element, most of that ingested water is removed into the collection bowl per operating hour; bowl volume and fill rate for the specific approved element determine the drain interval. Under high-ingestion conditions, daily bowl draining is often required. For drier conditions (temperate climate, covered storage, 50 mg/kg average water), bowl filling takes 21+ hours — weekly draining may be sufficient.',
       },
       {
         question: 'Does ISO 16332 test performance change with filter element age?',
         answer: 'ISO 16332 tests are conducted on new (unused) filter elements under standardized conditions. In field service, filter element performance typically improves initially as the glass fibre coalescer media loads with fine particles that create additional coalescing nucleation sites — efficiency can increase from 96% to >98% during the first 100–200 hours of service. As the element approaches end of life (increasing differential pressure), fuel flow velocity through the loaded media increases above the rated design velocity, reducing coalescing contact time and potentially decreasing water separation efficiency below the ISO 16332-rated value. For critical HPCR fuel systems, water separation performance verification (outlet water content by ASTM D6304) at element replacement intervals provides confirmation that efficiency is maintained.',
-      },
-      {
-        question: 'How does ISO 16332 relate to the three-stage TURBOCORE™ fuel filtration system?',
-        answer: 'TURBOCORE™ represents the complete three-stage HPCR fuel protection system: stage 1 (primary particle filtration with SYNTAPORE™), stage 2 (water coalescence and separation with TURBOCORE™, ISO 16332 rated), and stage 3 (final polishing filtration). ISO 16332 water separation performance applies specifically to stage 2 — the TURBOCORE™ coalescing element. The ISO 16332 efficiency test measures stage 2 water removal from the fuel stream after initial particulate removal. Stage 3 provides final water polishing and particle removal to achieve the HPCR injection system target cleanliness of ISO 12/10/8. The three-stage sequence is required because water removal efficiency of coalescing media is impaired by heavy particulate contamination, which is why particle pre-filtration in stage 1 precedes water separation in stage 2.',
       },
       {
         question: 'What is the test duration for an ISO 16332 water separation efficiency test?',
@@ -1573,7 +1564,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva',
-        relevance: 'Primary performance test standard for diesel fuel coalescing water separators; defines test methodology for water separation efficiency measurement used in TURBOCORE™ element qualification and field performance verification.',
+        relevance: 'Primary performance test standard for diesel fuel coalescing water separators; defines test methodology for water separation efficiency measurement relevant to TURBOCORE™ field performance verification.',
       },
       {
         category: 'standard',
@@ -1583,7 +1574,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods, CEN Brussels',
-        relevance: 'European diesel fuel specification establishing the 200 mg/kg maximum water content that TURBOCORE™ ISO 16332-rated separators must achieve as HPCR fuel protection baseline.',
+        relevance: 'European diesel fuel specification establishing the 200 mg/kg maximum water content that TURBOCORE™ water separators must achieve as HPCR fuel protection baseline.',
       },
       {
         category: 'standard',
@@ -1996,7 +1987,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What is the relationship between ISO 19438 and ISO 16332 in a complete diesel fuel protection system?',
-        answer: 'ISO 19438 and ISO 16332 address complementary but separate protection functions in the diesel fuel system. ISO 19438 qualifies particle filtration efficiency at the HPCR-critical 4–6 µm size range — protecting injection system precision components from abrasive wear by solid particles. ISO 16332 qualifies water separation efficiency — protecting injection system metallic surfaces from corrosion, micro-pitting, and stiction caused by water above 200 ppm. Both standards apply simultaneously in a correctly designed HPCR fuel protection system: particle filtration (ISO 19438 qualified) and water separation (ISO 16332 qualified, TURBOCORE™) each address one dimension of the dual-threat contamination challenge for HPCR injection systems.',
+        answer: 'ISO 19438 and ISO 16332 address complementary but separate protection functions in the diesel fuel system. ISO 19438 qualifies particle filtration efficiency at the HPCR-critical 4–6 µm size range — protecting injection system precision components from abrasive wear by solid particles. ISO 16332 qualifies water separation efficiency — protecting injection system metallic surfaces from corrosion, micro-pitting, and stiction caused by water above 200 ppm. Both standards apply simultaneously in a correctly designed HPCR fuel protection system: particle filtration (ISO 19438) and water separation (ISO 16332, TURBOCORE™) each address one dimension of the dual-threat contamination challenge for HPCR injection systems.',
       },
       {
         question: 'How does ISO 19438 treat test dust selection for fuel filter qualification?',
