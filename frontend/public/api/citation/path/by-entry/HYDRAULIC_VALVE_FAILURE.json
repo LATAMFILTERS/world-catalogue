@@ -1,6 +1,6 @@
 {
   "entry_key": "HYDRAULIC_VALVE_FAILURE",
-  "path_count": 3,
+  "path_count": 2,
   "paths": [
     {
       "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_009",
@@ -22,21 +22,9 @@
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_010.json"
-    },
-    {
-      "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_011",
-      "path_type": "A",
-      "entry_node": "HYDRAULIC_VALVE_FAILURE",
-      "entry_type": "problem",
-      "industry": null,
-      "valid": true,
-      "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_011.json"
+      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_010.json"
     }
   ]
 }

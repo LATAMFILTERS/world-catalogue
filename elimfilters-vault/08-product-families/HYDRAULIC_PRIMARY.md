@@ -115,8 +115,7 @@ ISO 16889: Multi-pass Beta ratio test — all elements in this family rated Beta
 NFPA T2.14: Collapse pressure rating standard for element structural integrity
 
 RELATED_TECHNOLOGIES
-NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio) |
-SYNTRAX: Alternative family for lube-hydraulic shared circuits (not in this family)
+NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio)
 
 INDUSTRIAL_ROLE
 This product family is the principal contamination control implementation for hydraulic

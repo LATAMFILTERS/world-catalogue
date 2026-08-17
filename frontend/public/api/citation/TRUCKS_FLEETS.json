@@ -17,14 +17,14 @@
     "concept": "Trucks & Fleets Industry Filtration Requirements",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:9c3bebb55c833b6c0a447066d7cbde24e6948e02684789f839ffc5939dd3c33d"
+    "content_hash": "sha256:4866d9f800314569bc289f793fd78d239983f2bbb540bc55a00c5ef56a10e973"
   },
   "canonical": {
     "definition": "Trucks & Fleets is a MODERATE contamination exposure industrial category for on-highway diesel vehicles — long-haul trucks, distribution vehicles, delivery vans, bus fleets — where EGR soot contamination in Euro VI lube circuits, fuel quality variation across fleet fuelling networks, and fleet-scale procurement standardisation across multiple OEM brands create the primary filtration engineering and economic challenges.",
     "systems": "Long-haul truck diesel engine air intake and lube circuits, fleet fuel storage and delivery filtration, EGR-equipped engine lube oil management, truck driver cab air quality filtration across 100–5,000 vehicle managed fleets",
     "failure_impact": "EGR soot above 2% by weight in lube oil → soot-induced viscosity increase → oil film thinning at journal bearings → accelerated bearing wear → engine rebuild at 300,000–500,000 km instead of 1,000,000+ km | Fleet fuel water contamination → common-rail injector erosion at 1,600–2,500 bar → injector replacement $800–$4,000/unit across fleet | Fleet standardisation gap → unplanned engine downtime 10–18% higher than optimised fleets.",
     "related_standards": "ISO 5011: Air filtration performance test across truck OEM specifications | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Lube and hydraulic filtration Beta ratio test for truck engine fluid systems | ISO 11155: Cabin air filter test standard for truck driver health compliance",
-    "related_technologies": "MACROCORE: Air intake filtration for long-haul trucks with extended drain interval dirt-holding capacity | SYNTRAX: Full-flow lube filtration for EGR-equipped Euro VI engines with soot capture above 2% by weight | INTEKCORE: Zero-bypass housing for reliable on-highway air filtration sealing | TURBOCORE: Fuel water separation for fleet fuel quality management | MICROKAPPA: Driver cab air filtration for ISO 11155 occupational health compliance",
+    "related_technologies": "MACROCORE: Air intake filtration for long-haul trucks with extended drain interval dirt-holding capacity | SYNTRAX: Full-flow lube filtration for EGR-equipped Euro VI engines with high soot agglomerate capture capability | INTEKCORE: Zero-bypass housing for reliable on-highway air filtration sealing | TURBOCORE: Fuel water separation for fleet fuel quality management | MICROKAPPA: Driver cab air filtration for ISO 11155 occupational health compliance",
     "industrial_role": "Trucks & Fleets filtration is primarily an economic optimisation problem at fleet scale — the aggregate financial impact of standardising filtration across 100+ vehicle fleets (15–25% procurement cost reduction; 10–18% unplanned downtime reduction) creates measurable ROI from system-level filtration investment that commodity product selection approaches cannot capture."
   },
   "relationships": {

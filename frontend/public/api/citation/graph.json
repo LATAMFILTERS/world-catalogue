@@ -1,5 +1,5 @@
 {
-  "edge_count": 551,
+  "edge_count": 549,
   "node_count": 67,
   "dangling_keys": [],
   "edges": [
@@ -1805,11 +1805,6 @@
     },
     {
       "from": "HYDRAULIC_CONTAMINATION",
-      "to": "SYNTRAX",
-      "relation": "resolved_by"
-    },
-    {
-      "from": "HYDRAULIC_CONTAMINATION",
       "to": "MICROKAPPA",
       "relation": "resolved_by"
     },
@@ -2146,11 +2141,6 @@
     {
       "from": "HYDRAULIC_VALVE_FAILURE",
       "to": "NANOFORCE",
-      "relation": "resolved_by_technologies"
-    },
-    {
-      "from": "HYDRAULIC_VALVE_FAILURE",
-      "to": "SYNTRAX",
       "relation": "resolved_by_technologies"
     },
     {

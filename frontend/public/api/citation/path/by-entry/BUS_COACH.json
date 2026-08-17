@@ -3,7 +3,7 @@
   "path_count": 4,
   "paths": [
     {
-      "path_id": "PATH_B_BUS_COACH_030",
+      "path_id": "PATH_B_BUS_COACH_028",
       "path_type": "B",
       "entry_node": "BUS_COACH",
       "entry_type": "industry",
@@ -11,6 +11,30 @@
       "valid": true,
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_BUS_COACH_028.json"
+    },
+    {
+      "path_id": "PATH_B_BUS_COACH_029",
+      "path_type": "B",
+      "entry_node": "BUS_COACH",
+      "entry_type": "industry",
+      "industry": "BUS_COACH",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_BUS_COACH_029.json"
+    },
+    {
+      "path_id": "PATH_B_BUS_COACH_030",
+      "path_type": "B",
+      "entry_node": "BUS_COACH",
+      "entry_type": "industry",
+      "industry": "BUS_COACH",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_BUS_COACH_030.json"
     },
@@ -22,33 +46,9 @@
       "industry": "BUS_COACH",
       "valid": true,
       "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_031.json"
-    },
-    {
-      "path_id": "PATH_B_BUS_COACH_032",
-      "path_type": "B",
-      "entry_node": "BUS_COACH",
-      "entry_type": "industry",
-      "industry": "BUS_COACH",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_032.json"
-    },
-    {
-      "path_id": "PATH_B_BUS_COACH_033",
-      "path_type": "B",
-      "entry_node": "BUS_COACH",
-      "entry_type": "industry",
-      "industry": "BUS_COACH",
-      "valid": true,
-      "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_033.json"
+      "href": "/api/citation/path/PATH_B_BUS_COACH_031.json"
     }
   ]
 }

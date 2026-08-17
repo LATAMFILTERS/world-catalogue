@@ -1201,9 +1201,7 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 **Target contamination:** Metallic wear particles (iron, copper, lead), silica ingress particles, carbon soot agglomerates, oxidation products in engine lube oil.
 
 **Performance targets:**
-- β₁₀(c) ≥ 200 (ISO 16889)
-- DHC: ≥150% of baseline cellulose grade
-- Rated service interval: 2× minimum standard OEM interval with oil analysis support
+- Beta ratio, dirt-holding capacity, and rated service interval are selected per the ISO 16889/ISO 4406/ISO 4548-12 targets specified for the approved application; no universal cleanliness code, Beta ratio, or service-life multiplier is implied by the SYNTRAX™ name alone.
 
 **Applicable standards:** ISO 16889, ISO 4406, ISO 4548-12
 
@@ -1412,7 +1410,7 @@ HEPA filtration (H13+) in cabin air applications provides protection against sub
 - DPF (Diesel Particulate Filter): not a lube oil filter; but DPF regeneration causes oil dilution from post-injection fuel
 - Oil dilution by fuel: reduces viscosity; increases fire risk; conventional cellulose filter insufficient for fuel-diluted oil filtration efficiency targets
 
-**SYNTRAX™ extended drain program:** Synthetic media with oil analysis program enables 50,000–100,000 km oil change intervals on modern Euro VI long-haul platforms. Requires oil analysis confirmation at mid-interval.
+**SYNTRAX™ extended drain program:** Synthetic media combined with an oil analysis program can support an extended oil change interval on modern Euro VI long-haul platforms beyond the standard OEM interval; the specific interval must be validated for the approved application and confirmed by oil analysis at mid-interval.
 
 ### 17.7 Oil & Gas
 

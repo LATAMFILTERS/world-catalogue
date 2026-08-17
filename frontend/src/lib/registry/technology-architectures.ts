@@ -239,7 +239,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       'Applies to engine crankcase lubrication systems in diesel and gasoline engines across all duty classes. Protects: main bearings, connecting rod bearings, crankshaft journals, camshaft bearings, piston pins, and turbocharger journal bearings — all components that depend on oil film integrity for protection from metal-to-metal contact. Operating temperature range: 80–140°C engine oil temperature.',
 
     industrialRole:
-      'Engine bearing lifespan is the primary determinant of planned engine overhaul interval. Particle contamination in engine oil is the largest controllable variable in bearing wear rate. SYNTRAX maintains the oil cleanliness target required for the designed bearing lifespan: ISO 16/14/11 to ISO 17/15/12 depending on engine specification. Failure to maintain this target accelerates the abrasive wear cycle and reduces bearing life by 3–5×.',
+      'Engine bearing lifespan is the primary determinant of planned engine overhaul interval. Particle contamination in engine oil is the largest controllable variable in bearing wear rate. SYNTRAX maintains the oil cleanliness target specified for the designed bearing lifespan and engine specification of the approved application. Failure to maintain the target accelerates the abrasive wear cycle and shortens bearing life.',
 
     // Component Class 1: Protection Media
     protectionMedia: [
@@ -356,13 +356,13 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         contaminantClass: 'Metallic wear particles (Fe, Al, Cu)',
         mechanism: 'Inertial impaction + depth interception across progressive density zones',
-        efficiency: 'β10(c) ≥ 200 per ISO 16889',
+        efficiency: 'Rated per ISO 16889 for the approved application',
         particleSizeRange: '1–40 µm',
       },
       {
         contaminantClass: 'Carbon agglomerates',
         mechanism: 'Interception at outer macro-particle zone',
-        efficiency: 'β40(c) ≥ 75 per ISO 16889',
+        efficiency: 'Rated per ISO 16889 for the approved application',
         particleSizeRange: '>40 µm',
       },
       {
@@ -374,22 +374,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
 
     // Component Class 7: Performance Profile
-    performanceProfile: [
-      {
-        metric: 'Beta ratio at 10 µm (β10(c))',
-        value: '≥200',
-        unit: 'dimensionless',
-        evidenceSource: 'ISO 16889 multi-pass test with ISO medium test dust',
-        standardRef: 'ISO 16889',
-      },
-      {
-        metric: 'Oil cleanliness achievable',
-        value: 'ISO 16/14/11',
-        unit: 'ISO 4406 code',
-        evidenceSource: 'Field measurement in engine lube circuit with SYNTRAX at nominal service interval',
-        standardRef: 'ISO 4406',
-      },
-    ],
+    performanceProfile: [],
 
     // Component Class 8: Failure Modes addressed
     failureModes: [
@@ -398,9 +383,9 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         rootCauseChain:
           'Particle contamination > ISO 4406 target → abrasive wear particles transit bearing clearances → micro-cutting of bearing surface → bearing clearance increase → oil film breakdown at high load → bearing seizure',
         measuredConsequence:
-          'ISO 19/17/14 (commodity filter) versus ISO 16/14/11 (SYNTRAX): bearing life reduction of 3–5× documented in controlled engine test programs',
+          'Bearing life is sensitive to sustained ISO 4406 cleanliness code; the specific life reduction for a given cleanliness shortfall must be established from the approved application and OEM bearing specification rather than assumed universally.',
         operationalImpact:
-          'Engine overhaul interval at optimal cleanliness (16/14/11): 15,000–25,000 hours. At poor cleanliness (19/17/14): 3,000–5,000 hours. Difference is the value of the filtration system, not the filter purchase price.',
+          'Engine overhaul interval is strongly influenced by sustained lube oil cleanliness relative to the OEM-specified target for the application. Maintaining that target is a primary lever for maximizing overhaul interval; the specific interval achieved must be confirmed by oil analysis and OEM guidance rather than assumed.',
         preventedByThisTechnology: true,
       },
     ],

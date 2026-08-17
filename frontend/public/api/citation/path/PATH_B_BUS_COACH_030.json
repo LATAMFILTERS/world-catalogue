@@ -191,46 +191,39 @@
       }
     },
     {
-      "key": "MACROCORE",
+      "key": "SYNTRAX",
       "type": "technology",
-      "name": "MACROCORE™",
+      "name": "SYNTRAX™",
       "citation_record": {
-        "key": "MACROCORE",
+        "key": "SYNTRAX",
         "type": "technology",
-        "name": "MACROCORE™",
-        "slug": "macrocore",
+        "name": "SYNTRAX™",
+        "slug": "syntrax",
         "status": "active",
         "in_unified_data": false,
         "ud_key": null,
         "tags": [],
         "citation": {
-          "source_url": "https://elimfilters.com/knowledge-center/technologies/macrocore/",
-          "concept": "MACROCORE Engine Air Filtration Technology",
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/syntrax/",
+          "concept": "SYNTRAX Lubrication Filtration Technology",
           "version": "2.0",
           "last_updated": "2026-08-14",
-          "content_hash": "sha256:42f42ede3a47c788a446fc6a07fc5f5d3f1fa9219ef3cbc562e5bfb0dd082697"
+          "content_hash": "sha256:c97225eb00550ebe6f835f7ff3d4a41aaae47d9f5a1f309a105517d4b16800c6"
         },
         "canonical": {
-          "definition": "MACROCORE is the ELIMFILTERS engine air filtration architecture for primary and secondary intake protection.",
-          "systems": "Air Intake & Airflow Protection.",
-          "failure_impact": "Inadequate intake contamination control can expose cylinders, piston rings, turbochargers and other protected engine components to airborne particulate contamination.",
-          "related_standards": "ISO 5011: Air-cleaner performance testing relevant to approved engine air-filtration applications.",
-          "related_technologies": "INTEKCORE: Air-cleaner housing and sealing architecture used to preserve the protected intake boundary and support controlled airflow.",
-          "industrial_role": "MACROCORE provides the engine-air filtration layer of ELIMFILTERS Air Intake & Airflow Protection. Media configuration, sealing integrity, airflow management and service interval must be matched to the intended intake duty cycle and contamination load."
+          "definition": "SYNTRAX is the ELIMFILTERS lubrication filtration architecture for controlling wear debris and lubricant contamination.",
+          "systems": "Lubrication Protection; approved engine and equipment lubricant filtration applications.",
+          "failure_impact": "Uncontrolled lubricant contamination can accelerate wear of bearings, journals and other lubricated components and can reduce the stability of the protected lubrication system across the service interval.",
+          "related_standards": "Applicable cleanliness and filter-performance standards must be selected for the approved lubricant system and application. The technology name alone does not imply a universal cleanliness code, Beta ratio, service-life extension or certification claim.",
+          "related_technologies": "NANOFORCE protects hydraulic fluid-power systems and must not be represented as an auxiliary or polishing stage of SYNTRAX unless an approved application explicitly establishes that relationship.",
+          "industrial_role": "SYNTRAX provides the lubricant-contamination control layer of ELIMFILTERS Lubrication Protection. Filtration performance and service interval are matched to engine duty, lubricant condition, contaminant load and the requirements of the protected components."
         },
-        "relationships": {
-          "related_standards": [
-            "ISO_5011"
-          ],
-          "related_technologies": [
-            "INTEKCORE"
-          ]
-        },
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
+        "relationships": {},
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
       }
     }
   ],
   "terminal_product_families": [
-    "AIRFILTER_PRIMARY"
+    "LUBE_PRIMARY"
   ]
 }

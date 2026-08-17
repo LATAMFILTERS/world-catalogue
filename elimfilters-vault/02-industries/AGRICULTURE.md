@@ -55,7 +55,7 @@ The seasonal operating pattern of agricultural equipment creates compounding con
 ### Applicable Technologies
 - [[MACROCORE|MACROCORE — Primary air intake particle capture for combines and tractors operating in high-dust harvest environments]]
 - [[NANOFORCE|NANOFORCE — Sub-micron lube oil polishing for engine protection in high-contamination seasonal operation]]
-- [[SYNTRAX|SYNTRAX — Full-flow lube filtration maintaining ISO 4406 16/14/11 in tractor and harvester engine lube circuits]]
+- [[SYNTRAX|SYNTRAX — Full-flow lube filtration maintaining the ISO 4406 cleanliness target specified for the approved application in tractor and harvester engine lube circuits]]
 - [[INTEKCORE|INTEKCORE — Zero-bypass radial seal housing for air intake systems on combines and tractors with frequent filter service intervals]]
 
 ### Applicable Standards
@@ -85,7 +85,7 @@ RELATED_STANDARDS
 ISO 5011: Air intake filtration performance standard | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Hydraulic and lube oil filter Beta ratio test standard | ASTM D6304: Water content in diesel fuel test method
 
 RELATED_TECHNOLOGIES
-MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 for engine bearing protection | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation
+MACROCORE: Primary air intake particle capture for high-dust harvest environments | SYNTRAX: Full-flow lube protection for engine bearing protection at the ISO 4406 target specified for the approved application | INTEKCORE: Zero-bypass housing for reliable intake sealing under frequent agricultural service cycles | NANOFORCE: Sub-micron lube polishing for engines with high seasonal contamination accumulation
 
 INDUSTRIAL_ROLE
 Agriculture represents one of the highest contamination exposure environments for diesel engines globally — the combination of extreme seasonal dust loads, outdoor fuel storage, and intensive operation cycles makes multi-domain filtration system performance (air, fuel, lube, hydraulic) a primary determinant of whether equipment completes a harvest season without unplanned downtime.

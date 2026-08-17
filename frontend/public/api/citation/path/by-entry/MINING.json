@@ -1,7 +1,55 @@
 {
   "entry_key": "MINING",
-  "path_count": 12,
+  "path_count": 11,
   "paths": [
+    {
+      "path_id": "PATH_B_MINING_048",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_048.json"
+    },
+    {
+      "path_id": "PATH_B_MINING_049",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "HYDRAULIC_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_049.json"
+    },
+    {
+      "path_id": "PATH_B_MINING_050",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_050.json"
+    },
+    {
+      "path_id": "PATH_B_MINING_051",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_051.json"
+    },
     {
       "path_id": "PATH_B_MINING_052",
       "path_type": "B",
@@ -10,7 +58,7 @@
       "industry": "MINING",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "HYDRAULIC_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_MINING_052.json"
     },
@@ -22,7 +70,7 @@
       "industry": "MINING",
       "valid": true,
       "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
+        "LUBE_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_MINING_053.json"
     },
@@ -34,7 +82,7 @@
       "industry": "MINING",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_MINING_054.json"
     },
@@ -46,7 +94,7 @@
       "industry": "MINING",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "FUEL_TURBINE"
       ],
       "href": "/api/citation/path/PATH_B_MINING_055.json"
     },
@@ -70,7 +118,7 @@
       "industry": "MINING",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "CABIN_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_MINING_057.json"
     },
@@ -82,69 +130,9 @@
       "industry": "MINING",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_WATER_SEPARATOR"
+        "CABIN_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_MINING_058.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_059",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_059.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_060",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_060.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_061",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_061.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_062",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_062.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_063",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_063.json"
     }
   ]
 }

@@ -528,7 +528,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'Relevance to Filtration Media Compatibility',
-        body: 'Filtration media must be chemically compatible with DIN 51524 fluids — particularly the additive packages in HLP and HVLP class oils. Incompatible media can cause additive stripping (depleting anti-wear protection) or media degradation (reducing filtration efficiency over the service interval). SYNTRAX™ lube oil filter elements are qualified for compatibility with DIN 51524 HLP and HVLP class fluids, ensuring no media degradation or additive interaction under normal operating conditions. Compatibility verification is required when switching lubricant brands or formulations within the DIN 51524 classification system.',
+        body: 'Filtration media must be chemically compatible with DIN 51524 fluids — particularly the additive packages in HLP and HVLP class oils. Incompatible media can cause additive stripping (depleting anti-wear protection) or media degradation (reducing filtration efficiency over the service interval). NANOFORCE™ hydraulic filter elements are qualified for compatibility with DIN 51524 HLP and HVLP class fluids, ensuring no media degradation or additive interaction under normal operating conditions. Compatibility verification is required when switching lubricant brands or formulations within the DIN 51524 classification system.',
       },
       {
         heading: 'Relationship to ISO Cleanliness Standards',
@@ -541,10 +541,10 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'HVLP class', value: 'High-viscosity index — wide temperature range applications' },
       { label: 'Compatibility check', value: 'Required when changing lubricant brand or formulation' },
     ],
-    applicableSystems: ['hydraulic-protection', 'lubrication-protection'],
+    applicableSystems: ['hydraulic-protection'],
     relatedGlossaryTerms: ['TERM-VISCOSITY', 'TERM-VISCOSITY-INDEX', 'TERM-OXIDATIVE-DEGRADATION', 'TERM-ISO-CLEANLINESS-CODE'],
     relatedTopics: ['fluid-cleanliness', 'contamination-control'],
-    relatedTechnologies: ['SYNTRAX™', 'NANOFORCE™'],
+    relatedTechnologies: ['NANOFORCE™'],
     relatedArticles: ['lubrication-system-filtration', 'contamination-control', 'fluid-cleanliness'],
     commonMistakes: [
       'Selecting HLP grade mineral oil for hydraulic systems requiring HM specification. HM fluids add anti-wear additives for high-pressure pump protection — substituting HLP in HM-specified systems increases pump wear.',
@@ -566,7 +566,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What compatibility requirements does DIN 51524 impose on filtration media?',
-        answer: 'DIN 51524 Part 2 (HLP) and Part 3 (HVLP) oils contain anti-wear additive packages — typically zinc dialkyldithiophosphate (ZDDP) or ashless phosphate ester AW chemistry. Filtration media in contact with these fluids must be chemically inert to the additive package to avoid additive stripping (depletion of AW protection during filter passage) or media degradation (loss of structural integrity and filtration efficiency). Synthetic microglass media used in SYNTRAX™ lube oil elements is qualified for DIN 51524 HLP and HVLP compatibility. Cellulose media may show additive adsorption at elevated temperature (>80°C) with certain AW additive chemistries — a risk factor for operators using extended drain intervals.',
+        answer: 'DIN 51524 Part 2 (HLP) and Part 3 (HVLP) oils contain anti-wear additive packages — typically zinc dialkyldithiophosphate (ZDDP) or ashless phosphate ester AW chemistry. Filtration media in contact with these fluids must be chemically inert to the additive package to avoid additive stripping (depletion of AW protection during filter passage) or media degradation (loss of structural integrity and filtration efficiency). Synthetic microglass media used in NANOFORCE™ hydraulic elements is qualified for DIN 51524 HLP and HVLP compatibility. Cellulose media may show additive adsorption at elevated temperature (>80°C) with certain AW additive chemistries — a risk factor for operators using extended drain intervals.',
       },
       {
         question: 'Why is HVLP (DIN 51524 Part 3) important for mobile equipment operating in extreme climates?',
@@ -1750,7 +1750,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What media efficiency requirement does SAE J1858 specify for extended drain service?',
-        answer: 'SAE J1858 extended drain service filters require synthetic or synthetic-blend filtration media with efficiency rated by ISO 4548 multi-pass test methodology. The standard does not prescribe a specific Beta ratio value universally, but OEM application requirements typically specify β₁₀(c) ≥ 50–200 for engine lube oil full-flow filters — with tighter efficiency requirements for turbocharged engines and engines with oil-cooled pistons where oil cleanliness directly affects piston cooling jet orifice reliability. SYNTRAX™ elements achieve β₁₀(c) ≥ 200 for extended drain applications, maintaining engine cleanliness targets at oil drain intervals of 500+ hours.',
+        answer: 'SAE J1858 extended drain service filters require synthetic or synthetic-blend filtration media with efficiency rated by ISO 4548 multi-pass test methodology. The standard does not prescribe a specific Beta ratio value universally, but OEM application requirements typically specify β₁₀(c) ≥ 50–200 for engine lube oil full-flow filters — with tighter efficiency requirements for turbocharged engines and engines with oil-cooled pistons where oil cleanliness directly affects piston cooling jet orifice reliability. SYNTRAX™ elements are selected to the Beta ratio and cleanliness target specified for the approved extended-drain application.',
       },
       {
         question: 'How is SAE J1858 test methodology linked to ISO 4548?',
@@ -1758,7 +1758,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What dirt holding capacity is typically required for SAE J1858 extended drain full-flow filters?',
-        answer: 'Dirt holding capacity (DHC) for SAE J1858 extended drain lube oil filters depends on engine displacement, oil volume, and the oil change interval. For a 12 L diesel engine with 40 L sump capacity changing at 500 hours under moderate duty: ingestion rate of 0.1 g/hour of blowby-sourced carbonaceous particles, seal wear debris, and combustion soot equivalent ≈ 50 g over 500 hours. Extended drain filters require DHC of at least 50–80 g (with 50–60% margin above estimated ingestion) to prevent early element loading to bypass pressure before the drain interval expires. SYNTRAX™ elements for extended drain applications have DHC of 60–100 g depending on element size, determined by ISO 4548 multi-pass testing.',
+        answer: 'Dirt holding capacity (DHC) for SAE J1858 extended drain lube oil filters depends on engine displacement, oil volume, and the oil change interval. For a 12 L diesel engine with 40 L sump capacity changing at 500 hours under moderate duty: ingestion rate of 0.1 g/hour of blowby-sourced carbonaceous particles, seal wear debris, and combustion soot equivalent ≈ 50 g over 500 hours. Extended drain filters require DHC of at least 50–80 g (with 50–60% margin above estimated ingestion) to prevent early element loading to bypass pressure before the drain interval expires. SYNTRAX™ elements for extended drain applications are sized to the DHC required for the approved application, per ISO 4548 multi-pass testing.',
       },
       {
         question: 'How does SAE J1858 address spin-on filter seal integrity and dimensional requirements?',
@@ -1770,11 +1770,11 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'Does SAE J1858 specify collapse pressure requirements for full-flow lube oil filter elements?',
-        answer: 'SAE J1858 addresses filter element structural integrity in terms of both bypass valve opening pressure and collapse resistance. The element must not structurally collapse (media-to-end-cap delamination or support tube buckling) at differential pressures up to the bypass valve opening pressure plus an appropriate safety margin. Collapse at or below bypass valve opening pressure would result in contamination release into the engine oil circuit at the moment protection is most needed — during cold start or end-of-life bypass. ISO 4548 and SAE J1858 together specify structural integrity testing to verify that collapse margin exceeds the bypass valve setting — SYNTRAX™ elements maintain collapse pressure margin ≥3× the standard 1.0 bar bypass valve opening pressure.',
+        answer: 'SAE J1858 addresses filter element structural integrity in terms of both bypass valve opening pressure and collapse resistance. The element must not structurally collapse (media-to-end-cap delamination or support tube buckling) at differential pressures up to the bypass valve opening pressure plus an appropriate safety margin. Collapse at or below bypass valve opening pressure would result in contamination release into the engine oil circuit at the moment protection is most needed — during cold start or end-of-life bypass. ISO 4548 and SAE J1858 together specify structural integrity testing to verify that collapse margin exceeds the bypass valve setting — SYNTRAX™ elements are qualified to a collapse pressure margin verified against the bypass valve opening pressure specified for the approved application.',
       },
       {
         question: 'How does synthetic media in SAE J1858 extended drain filters compare to cellulose media?',
-        answer: 'Cellulose media (used in standard service J1858 filters) is made from plant-derived wood pulp fibres with irregular diameter distribution (5–50 µm) and high water absorption. Synthetic media (melt-blown polypropylene, polyester, or glass fibre microfibers, 1–10 µm diameter in SYNTRAX™ construction) provides superior performance in four areas: (1) Higher efficiency at equivalent restriction — β₁₀(c) ≥ 200 vs. β₁₀(c) ≈ 10–50 for cellulose. (2) Higher DHC — 40–80% more dirt capacity at the same element volume. (3) Thermal stability — maintains efficiency at oil temperatures to 135°C where cellulose softens and loses structural integrity. (4) Chemical stability — no water absorption swelling that reduces media pore geometry stability in high-humidity or water-contaminated oil conditions.',
+        answer: 'Cellulose media (used in standard service J1858 filters) is made from plant-derived wood pulp fibres with irregular diameter distribution (5–50 µm) and high water absorption. Synthetic media (melt-blown polypropylene, polyester, or glass fibre microfibers, 1–10 µm diameter in SYNTRAX™ construction) provides superior performance in four areas: (1) Higher efficiency at equivalent restriction than cellulose media, rated per the Beta ratio specified for the approved application. (2) Higher DHC — more dirt capacity at the same element volume than cellulose media, per element datasheet. (3) Thermal stability — maintains efficiency at oil temperatures to 135°C where cellulose softens and loses structural integrity. (4) Chemical stability — no water absorption swelling that reduces media pore geometry stability in high-humidity or water-contaminated oil conditions.',
       },
     ],
     engineeringReferences: [
@@ -1821,7 +1821,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'Collapse Prevention Engineering',
-        body: 'Filter element collapse is a catastrophic failure mode: a collapsed element releases all accumulated contamination directly into the downstream circuit. The primary structural determinants of collapse resistance are: pleated media support layer construction (inner and outer support tubes), end cap bonding strength, and pleat geometry under compressive load. ELIMFILTERS NANOFORCE™ and SYNTRAX™ elements use steel inner and outer support cages with bonded end caps, achieving collapse load margins of 10–20× above typical bypass valve settings (3–6 bar).',
+        body: 'Filter element collapse is a catastrophic failure mode: a collapsed element releases all accumulated contamination directly into the downstream circuit. The primary structural determinants of collapse resistance are: pleated media support layer construction (inner and outer support tubes), end cap bonding strength, and pleat geometry under compressive load. ELIMFILTERS NANOFORCE™ elements use steel inner and outer support cages with bonded end caps, achieving collapse load margins of 10–20× above typical bypass valve settings (3–6 bar).',
       },
       {
         heading: 'Complementary Standards',
@@ -1857,7 +1857,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What safety margin above bypass valve opening pressure does ISO 3723 require?',
-        answer: 'ISO 3723 does not specify a universal safety margin — the collapse load rating must provide an adequate structural margin above the maximum credible differential pressure the element will experience in service. Industry practice, reinforced by OEM specifications, requires collapse pressure ≥10× the rated bypass valve opening pressure. For a 3 bar bypass valve, this means a minimum collapse pressure of 30 bar. NANOFORCE™ and SYNTRAX™ elements with steel inner and outer support cages achieve collapse pressure ratings of 30–60 bar for standard 3 bar bypass valve systems — providing 10–20× structural safety margin. Elements without steel support cages (polypropylene or cardboard centres) may achieve only 5–8 bar collapse pressure — inadequate for high-pressure hydraulic applications.',
+        answer: 'ISO 3723 does not specify a universal safety margin — the collapse load rating must provide an adequate structural margin above the maximum credible differential pressure the element will experience in service. Industry practice, reinforced by OEM specifications, requires collapse pressure ≥10× the rated bypass valve opening pressure. For a 3 bar bypass valve, this means a minimum collapse pressure of 30 bar. NANOFORCE™ elements with steel inner and outer support cages achieve collapse pressure ratings of 30–60 bar for standard 3 bar bypass valve systems — providing 10–20× structural safety margin. Elements without steel support cages (polypropylene or cardboard centres) may achieve only 5–8 bar collapse pressure — inadequate for high-pressure hydraulic applications.',
       },
       {
         question: 'How does ISO 3723 differ from NFPA T2.14 and ISO 2941 for hydraulic filter element collapse testing?',
@@ -1881,7 +1881,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'Are ISO 3723 collapse tests performed on new or used elements?',
-        answer: 'ISO 3723 tests are performed on new (unused, clean) elements unless the specific application requires aged element testing. New element collapse testing verifies the as-manufactured structural integrity — the minimum performance baseline. For critical applications where element degradation from chemical exposure or thermal cycling may reduce collapse resistance during service, some OEM specifications require collapse load testing after exposure conditioning: elements are soaked in hydraulic fluid at 85°C for 500 hours and then tested per ISO 3723 to verify that collapse load margin is maintained throughout the service interval. NANOFORCE™ and SYNTRAX™ elements retain ≥90% of initial collapse load after 1,000-hour thermal exposure testing.',
+        answer: 'ISO 3723 tests are performed on new (unused, clean) elements unless the specific application requires aged element testing. New element collapse testing verifies the as-manufactured structural integrity — the minimum performance baseline. For critical applications where element degradation from chemical exposure or thermal cycling may reduce collapse resistance during service, some OEM specifications require collapse load testing after exposure conditioning: elements are soaked in hydraulic fluid at 85°C for 500 hours and then tested per ISO 3723 to verify that collapse load margin is maintained throughout the service interval. NANOFORCE™ elements retain a majority of initial collapse load after extended thermal exposure testing.',
       },
       {
         question: 'How does ISO 3723 contribute to the overall filter element structural qualification alongside ISO 16889?',

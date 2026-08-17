@@ -90,7 +90,7 @@ ISO 4406 defines particle count per millilitre at three cut sizes (4µm, 6µm, 1
 - [[AUTOMOTIVE|Automotive]] (MEDIUM — highway PM2.5 and blow-by particle accumulation in passenger diesel engines)
 
 ### Solution Technologies
-- [[SYNTRAX|SYNTRAX™ — Active Synthetic Lube Oil Protection]] (primary: full-flow filtration maintaining ISO 4406 16/14/11 target)
+- [[SYNTRAX|SYNTRAX™ — Active Synthetic Lube Oil Protection]] (primary: full-flow filtration maintaining the ISO 4406 target specified for the approved application)
 - [[NANOFORCE|NANOFORCE™ — Sub-Micron Particle Removal]] (secondary: bypass kidney-loop polishing for sub-micron particle removal)
 
 ### Governing Standards
