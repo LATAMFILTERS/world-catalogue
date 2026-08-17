@@ -132,7 +132,7 @@ multi-pass test | SAE J1539: Air intake contamination classification for diesel 
 
 RELATED_TECHNOLOGIES
 MACROCORE: Engine air filtration for primary and secondary intake protection |
-NANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 16/14/11) |
+NANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 target per approved application) |
 SYNTRAX: Full-flow lube oil protection (extended drain intervals) |
 TURBOCORE: Fuel water separation (condensation and bulk fuel contamination control)
 

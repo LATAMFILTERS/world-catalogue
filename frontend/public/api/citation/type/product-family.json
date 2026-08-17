@@ -22,14 +22,14 @@
         "concept": "Primary Intake Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:dc8e07bc45b99c677b7f6de63b8871f060ea7bbe560e458d365291a6f68a5e2c"
+        "content_hash": "sha256:0ecff9eaa78ea902a5007adc783da6cb89fdce2e000cf76c66bf0006bc96572b"
       },
       "canonical": {
         "definition": "Primary Intake Protection — the MACROCORE™-technology filter element family for\nprimary-duty air intake applications in heavy-duty diesel engines, covering approximately\n120 SKUs across mining, agricultural, construction, and commercial transport\nconfigurations, all tested to ISO 5011.",
         "systems": "Air Intake domain; belongs to AIRFILTER product-line system; implements MACROCORE™\nengine air filtration technology",
         "failure_impact": "Selecting incorrect element from this family (wrong size, wrong efficiency class) or\nexceeding service interval → reduced filtration performance → dust ingestion → engine\noverhaul interval compression (see DUST_INGESTION)",
         "related_standards": "ISO 5011: All elements in this family are tested to this standard |\nSAE J1539: Contamination classification standard confirming element specification suitability",
-        "related_technologies": "MACROCORE: Primary intake filtration element technology |\nSYNTAPORE: Alternative family for humid/marine environments (not in this family)",
+        "related_technologies": "MACROCORE: Primary intake filtration element technology",
         "industrial_role": "This product family is the principal contamination control implementation for the most\ncommon filtration requirement in heavy-duty equipment — air intake protection. It connects\nthe MACROCORE™ technology specification to the specific SKU that fits a given engine\nmake and model."
       },
       "relationships": {
@@ -129,10 +129,10 @@
         "concept": "Primary Cabin Air Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:ba3d01a8c6c6b7ebaf6a6e05198221da5522e3596e010cc9916947661559c8b8"
+        "content_hash": "sha256:7151a9ae6d97b9d81a7116c55dc6c6dda184cd91e8af11e64d80d864708800f8"
       },
       "canonical": {
-        "definition": "Primary Cabin Air Protection — the MICROKAPPA™-technology cabin air filter element\nfamily for operator health protection in heavy-duty equipment cabs, covering approximately\n65 SKUs across agricultural, construction, mining, bus/coach, railway, and waste\nmanagement applications, ISO 11155-1 certified to >95% PM10 and >85% PM2.5 efficiency.",
+        "definition": "Primary Cabin Air Protection — the MICROKAPPA™-technology cabin air filter element\nfamily for operator health protection in heavy-duty equipment cabs, covering approximately\n65 SKUs across agricultural, construction, mining, bus/coach, railway, and waste\nmanagement applications, rated to the PM10 and PM2.5 efficiency target specified for\nthe approved application per ISO 11155-1.",
         "systems": "Cabin air filtration domain; belongs to CABIN product-line system; implements MICROKAPPA™\nelectrostatically-charged synthetic media technology; activated carbon variants implement\ngas-phase contaminant removal per DIN 71220",
         "failure_impact": "Incorrect element selection (wrong dimensions, wrong efficiency class, omitting\nactivated carbon variant in chemical vapor environments) or exceeding service interval\n→ particulate bypass increases PM10 operator exposure above 4 mg/m³ threshold →\nchronic silicosis and occupational dust disease risk in mining and agricultural operators;\nin chemical vapor environments, omitting activated carbon → pesticide or H₂S exposure",
         "related_standards": "ISO 11155: Cabin air filter PM10/PM2.5 efficiency classification and certification\nstandard | DIN 71220: Gas-phase (activated carbon) cabin filter performance standard for\nchemical vapor removal",
@@ -440,14 +440,14 @@
         "concept": "Primary Hydraulic Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:de8bf3e20c7ed8d8e52c2ae17502d152bb938361c9e78e108b601ca0ac365565"
+        "content_hash": "sha256:fe00fbcfdca4d04319e4c5df8f9bca453e46f102e94e5cf3142c9f6aa73d2ec7"
       },
       "canonical": {
-        "definition": "Primary Hydraulic Protection — the NANOFORCE™-technology filter element family for\nprecision particle control in hydraulic systems, covering approximately 95 SKUs rated\nBeta(x[c]) ≥ 1000 at 5 µm per ISO 16889, targeting ISO 4406 16/14/11 cleanliness\nacross agriculture, construction, mining, oil/gas, and power generation applications.",
+        "definition": "Primary Hydraulic Protection — the NANOFORCE™-technology filter element family for\nprecision particle control in hydraulic systems, covering approximately 95 SKUs rated\nper ISO 16889 and selected to the ISO 4406 cleanliness target specified for the approved\napplication across agriculture, construction, mining, oil/gas, and power generation\napplications.",
         "systems": "Hydraulic filtration domain; belongs to HYDRAULIC product-line system; implements\nNANOFORCE™ nanofibre-layered glass media technology",
         "failure_impact": "Incorrect element selection (wrong Beta ratio class or wrong collapse pressure rating)\nor extended service interval → particle contamination exceeds ISO 18/16/13 threshold →\nproportional valve spool erosion → valve stiction and position error → hydraulic\nactuator failure; pump bearing wear reduces service life from 10,000 hours to 2,000–3,000\nhours",
-        "related_standards": "ISO 16889: Multi-pass Beta ratio test — all elements in this family rated Beta(x[c]) ≥\n1000 at 5 µm | ISO 4406: Cleanliness code classification used to define system targets |\nNFPA T2.14: Collapse pressure rating standard for element structural integrity",
-        "related_technologies": "NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio) |\nSYNTRAX: Alternative family for lube-hydraulic shared circuits (not in this family) |\nTURBOCORE: Water removal from hydraulic systems where water contamination co-exists\n(separate family)",
+        "related_standards": "ISO 16889: Multi-pass Beta ratio test — elements in this family rated to the Beta ratio\nspecified for the approved application | ISO 4406: Cleanliness code classification used\nto define system targets | NFPA T2.14: Collapse pressure rating standard for element\nstructural integrity",
+        "related_technologies": "NANOFORCE: Primary element technology (nanofibre glass layer, high Beta ratio)",
         "industrial_role": "This product family is the principal contamination control implementation for hydraulic\nparticle contamination — the single largest cause of proportional valve and piston pump\nfailure in mobile construction, mining, and agricultural equipment operating precision\nhydraulic circuits above 200 bar."
       },
       "relationships": {
@@ -495,15 +495,15 @@
         "concept": "Primary Lube Oil Protection Product Family",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:b18e2928a5a7795737301e1c8eb345c5b8075e6b288a0a148f67d685d96cf7ea"
+        "content_hash": "sha256:7e2476130a5bd5beca696d2b467f43ffb4ec94e5f3ddb0eed3c317eef270e146"
       },
       "canonical": {
-        "definition": "Primary Lube Oil Protection — the SYNTRAX™-technology lube oil filter element family\nfor full-flow engine and transmission oil filtration, covering approximately 110 SKUs\ntargeting ISO 4406 16/14/11 cleanliness across all major diesel engine families in\nmining, agriculture, construction, transport, marine, and power generation applications.",
+        "definition": "Primary Lube Oil Protection — the SYNTRAX™-technology lube oil filter element family\nfor full-flow engine and transmission oil filtration, covering approximately 110 SKUs\nselected to the ISO 4406 cleanliness target specified for the approved application across\nmining, agriculture, construction, transport, marine, and power generation applications.",
         "systems": "Lube oil filtration domain; belongs to OIL product-line system; implements SYNTRAX™\nactive synthetic media technology; full-flow primary filtration for engine, transmission,\nand final drive oil circuits",
         "failure_impact": "Incorrect element selection (wrong bypass valve setting, wrong dirt capacity for\nservice interval) or exceeding service interval → media loading causes premature bypass\nvalve opening → contaminated oil bypasses filter → particle concentration rises above\nISO 4406 19/17/14 → abrasive bearing wear accelerates → bearing clearance reduction →\nincreased friction → localized temperature spikes → bearing seizure; bearing life\ncompression from 15,000+ hours to 2,000–3,000 hours",
-        "related_standards": "ISO 16889: Multi-pass Beta ratio test — elements rated to Beta(x[c]) ≥ 200 at 10 µm\nfor full-flow lube circuits | ISO 4406: Particle cleanliness code classification —\ntarget 16/14/11 for engine bearing protection",
-        "related_technologies": "SYNTRAX: Primary element technology (active synthetic media, high dirt capacity,\nextended service intervals) | NANOFORCE: Supplementary kidney-loop polishing for\nultra-clean lube circuits requiring 15/13/10 cleanliness (separate family)",
-        "industrial_role": "This product family is the principal contamination control implementation for the most\ncommon failure mode in diesel engine maintenance — particle accumulation in lube oil\ncausing abrasive bearing wear. Correct selection from this family determines whether\nengine bearings reach 15,000+ hours (system-optimized) or require replacement at\n2,000–3,000 hours (commodity approach)."
+        "related_standards": "ISO 16889: Multi-pass Beta ratio test — elements rated to the Beta ratio specified for\nthe approved application in full-flow lube circuits | ISO 4406: Particle cleanliness code\nclassification — target selected per the approved application for engine bearing protection",
+        "related_technologies": "SYNTRAX: Primary element technology (active synthetic media, high dirt capacity,\nextended service intervals)",
+        "industrial_role": "This product family is the principal contamination control implementation for the most\ncommon failure mode in diesel engine maintenance — particle accumulation in lube oil\ncausing abrasive bearing wear. Correct element selection from this family, matched to\nthe ISO 4406 cleanliness target and service interval specified for the approved\napplication, is a primary factor in engine bearing service life."
       },
       "relationships": {
         "meets_standards": [

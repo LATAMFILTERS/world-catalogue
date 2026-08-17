@@ -1,9 +1,9 @@
 {
   "entry_key": "AUTOMOTIVE",
-  "path_count": 5,
+  "path_count": 4,
   "paths": [
     {
-      "path_id": "PATH_B_AUTOMOTIVE_027",
+      "path_id": "PATH_B_AUTOMOTIVE_017",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -12,22 +12,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_027.json"
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_017.json"
     },
     {
-      "path_id": "PATH_B_AUTOMOTIVE_028",
-      "path_type": "B",
-      "entry_node": "AUTOMOTIVE",
-      "entry_type": "industry",
-      "industry": "AUTOMOTIVE",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_028.json"
-    },
-    {
-      "path_id": "PATH_B_AUTOMOTIVE_029",
+      "path_id": "PATH_B_AUTOMOTIVE_018",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -36,10 +24,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_029.json"
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_018.json"
     },
     {
-      "path_id": "PATH_B_AUTOMOTIVE_030",
+      "path_id": "PATH_B_AUTOMOTIVE_019",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -48,10 +36,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_030.json"
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_019.json"
     },
     {
-      "path_id": "PATH_B_AUTOMOTIVE_031",
+      "path_id": "PATH_B_AUTOMOTIVE_020",
       "path_type": "B",
       "entry_node": "AUTOMOTIVE",
       "entry_type": "industry",
@@ -60,7 +48,7 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_031.json"
+      "href": "/api/citation/path/PATH_B_AUTOMOTIVE_020.json"
     }
   ]
 }

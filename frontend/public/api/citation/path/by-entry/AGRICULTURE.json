@@ -1,7 +1,67 @@
 {
   "entry_key": "AGRICULTURE",
-  "path_count": 13,
+  "path_count": 8,
   "paths": [
+    {
+      "path_id": "PATH_B_AGRICULTURE_009",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_009.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_010",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_010.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_011",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_011.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_012",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_012.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_013",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "FUEL_WATER_SEPARATOR"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_013.json"
+    },
     {
       "path_id": "PATH_B_AGRICULTURE_014",
       "path_type": "B",
@@ -10,7 +70,7 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "FUEL_TURBINE"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_014.json"
     },
@@ -34,129 +94,9 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "CABIN_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_016.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_017",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_017.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_018",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_018.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_019",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_019.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_020",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_WATER_SEPARATOR"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_020.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_021",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_021.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_022",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_022.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_023",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_023.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_024",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_024.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_025",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_025.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_026",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_026.json"
     }
   ]
 }

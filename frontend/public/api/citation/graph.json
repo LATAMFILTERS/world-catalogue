@@ -1,5 +1,5 @@
 {
-  "edge_count": 562,
+  "edge_count": 543,
   "node_count": 67,
   "dangling_keys": [],
   "edges": [
@@ -100,11 +100,6 @@
     },
     {
       "from": "AGRICULTURE",
-      "to": "TURBOCORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "AGRICULTURE",
       "to": "INTEKCORE",
       "relation": "applicable_technologies"
     },
@@ -186,11 +181,6 @@
     {
       "from": "AUTOMOTIVE",
       "to": "SYNTRAX",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "AUTOMOTIVE",
-      "to": "NANOFORCE",
       "relation": "applicable_technologies"
     },
     {
@@ -341,11 +331,6 @@
     {
       "from": "CONSTRUCTION",
       "to": "SYNTRAX",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "CONSTRUCTION",
-      "to": "TURBOCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -530,11 +515,6 @@
     },
     {
       "from": "MARINE",
-      "to": "SYNTAPORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "MARINE",
       "to": "NANOFORCE",
       "relation": "applicable_technologies"
     },
@@ -735,11 +715,6 @@
     },
     {
       "from": "OIL_GAS",
-      "to": "SYNTAPORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "OIL_GAS",
       "to": "ISO_5011",
       "relation": "applicable_standards"
     },
@@ -820,11 +795,6 @@
     },
     {
       "from": "POWER_GENERATION",
-      "to": "SYNTAPORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "POWER_GENERATION",
       "to": "ISO_5011",
       "relation": "applicable_standards"
     },
@@ -886,11 +856,6 @@
     {
       "from": "RAILWAY",
       "to": "MACROCORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "RAILWAY",
-      "to": "SYNTAPORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1181,11 +1146,6 @@
     {
       "from": "AIR_INTAKE_PROTECTION",
       "to": "INTEKCORE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "AIR_INTAKE_PROTECTION",
-      "to": "SYNTAPORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1435,11 +1395,6 @@
     },
     {
       "from": "LUBRICATION_PROTECTION",
-      "to": "NANOFORCE",
-      "relation": "applicable_technologies"
-    },
-    {
-      "from": "LUBRICATION_PROTECTION",
       "to": "ISO_16889",
       "relation": "applicable_standards"
     },
@@ -1700,11 +1655,6 @@
     },
     {
       "from": "ISO_5011",
-      "to": "SYNTAPORE",
-      "relation": "applicable_to_technologies"
-    },
-    {
-      "from": "ISO_5011",
       "to": "INTEKCORE",
       "relation": "applicable_to_technologies"
     },
@@ -1785,11 +1735,6 @@
     },
     {
       "from": "SAE_J1539",
-      "to": "SYNTAPORE",
-      "relation": "applicable_to_technologies"
-    },
-    {
-      "from": "SAE_J1539",
       "to": "PARTICLE_WEAR",
       "relation": "related_contamination"
     },
@@ -1849,21 +1794,6 @@
       "relation": "resolved_by"
     },
     {
-      "from": "HYDRAULIC_CONTAMINATION",
-      "to": "TURBOCORE",
-      "relation": "resolved_by"
-    },
-    {
-      "from": "HYDRAULIC_CONTAMINATION",
-      "to": "SYNTRAX",
-      "relation": "resolved_by"
-    },
-    {
-      "from": "HYDRAULIC_CONTAMINATION",
-      "to": "MICROKAPPA",
-      "relation": "resolved_by"
-    },
-    {
       "from": "PARTICLE_WEAR",
       "to": "ISO_16889",
       "relation": "related_standards"
@@ -1885,22 +1815,12 @@
     },
     {
       "from": "PARTICLE_WEAR",
-      "to": "NANOFORCE",
-      "relation": "resolved_by"
-    },
-    {
-      "from": "PARTICLE_WEAR",
       "to": "SYNTRAX",
       "relation": "resolved_by"
     },
     {
       "from": "ENGINE_BEARING_JOURNAL",
       "to": "SYNTRAX",
-      "relation": "protected_by_technologies"
-    },
-    {
-      "from": "ENGINE_BEARING_JOURNAL",
-      "to": "NANOFORCE",
       "relation": "protected_by_technologies"
     },
     {
@@ -1985,11 +1905,6 @@
     },
     {
       "from": "DUST_INGESTION",
-      "to": "SYNTAPORE",
-      "relation": "resolved_by_technologies"
-    },
-    {
-      "from": "DUST_INGESTION",
       "to": "INTEKCORE",
       "relation": "resolved_by_technologies"
     },
@@ -2041,11 +1956,6 @@
     {
       "from": "ENGINE_OIL_CONTAMINATION",
       "to": "SYNTRAX",
-      "relation": "resolved_by_technologies"
-    },
-    {
-      "from": "ENGINE_OIL_CONTAMINATION",
-      "to": "NANOFORCE",
       "relation": "resolved_by_technologies"
     },
     {
@@ -2201,11 +2111,6 @@
     {
       "from": "HYDRAULIC_VALVE_FAILURE",
       "to": "NANOFORCE",
-      "relation": "resolved_by_technologies"
-    },
-    {
-      "from": "HYDRAULIC_VALVE_FAILURE",
-      "to": "SYNTRAX",
       "relation": "resolved_by_technologies"
     },
     {

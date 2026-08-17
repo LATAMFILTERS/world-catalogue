@@ -48,14 +48,14 @@
         "concept": "FUEL — Fuel Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
-        "content_hash": "sha256:892d0ef7339dfb17958eb3c212db1283bb91b06006b68ccc69f1a5a3c2f78b15"
+        "content_hash": "sha256:9a815847a0ea1017984fb3409f813cfa9a11461b83b1a7d37c9f9eabefe3beac"
       },
       "canonical": {
         "definition": "The fuel filtration domain covers diesel fuel cleanliness and water removal systems protecting high-pressure common-rail injectors and fuel pumps from particle wear and corrosion caused by particulate and water contamination.",
         "systems": "HPCR diesel injection systems, fuel transfer circuits, bulk fuel storage systems across on-highway trucks, off-highway equipment, marine engines, and stationary power generation",
         "failure_impact": "Water contamination → injector corrosion and microbial growth → injector stiction → misfires | Particle contamination above 4 µm → injector nozzle erosion → fuel spray pattern degradation → incomplete combustion → engine damage | HPCR injector replacement cost: $800–$2,500 per injector.",
         "related_standards": "ASTM D6304: Water content measurement in petroleum products (Karl Fischer coulometric titration) | ISO 12937: Water determination in petroleum products by Karl Fischer reagent",
-        "related_technologies": "SYNTAPORE: HPCR-rated fuel filter elements for sub-4 µm particle removal | TURBOCORE: Coalescing water separator elements for free and emulsified water removal | TURBOCORE: Three-stage fuel filtration for high-contamination environments",
+        "related_technologies": "SYNTAPORE: Diesel-fuel particulate filtration elements for primary, secondary and cartridge fuel-filter applications | TURBOCORE: Coalescing water separator elements for free and emulsified water removal",
         "industrial_role": "Fuel filtration is the primary protection system for HPCR injection equipment operating above 1,800 bar — injector clearances of 2–4 µm require sub-4 µm particle control to prevent accelerated nozzle wear and injection system failure."
       },
       "relationships": {

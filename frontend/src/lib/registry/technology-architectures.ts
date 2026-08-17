@@ -15,8 +15,8 @@
  *   MACROCORE   → Air Intake              (ISO 5011, SAE J726)
  *   SYNTRAX     → Engine Lube Oil         (ISO 16889, ISO 4406)
  *   NANOFORCE   → Hydraulic               (ISO 16889, NFPA T2.14)
- *   SYNTAPORE   → Fuel HPCR               (ASTM D6304, ISO 12937)
- *   TURBOCORE   → Fuel Water Separation   (ASTM D6304)
+ *   SYNTAPORE   → Fuel HPCR               (application-specific — no universal certification standard)
+ *   TURBOCORE   → Fuel Water Separation   (application-specific — no universal certification standard)
 
  *   THERMACORE  → Cooling System          (ASTM D3306)
  *   INTEKCORE   → Filter Housing Systems
@@ -239,7 +239,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       'Applies to engine crankcase lubrication systems in diesel and gasoline engines across all duty classes. Protects: main bearings, connecting rod bearings, crankshaft journals, camshaft bearings, piston pins, and turbocharger journal bearings — all components that depend on oil film integrity for protection from metal-to-metal contact. Operating temperature range: 80–140°C engine oil temperature.',
 
     industrialRole:
-      'Engine bearing lifespan is the primary determinant of planned engine overhaul interval. Particle contamination in engine oil is the largest controllable variable in bearing wear rate. SYNTRAX maintains the oil cleanliness target required for the designed bearing lifespan: ISO 16/14/11 to ISO 17/15/12 depending on engine specification. Failure to maintain this target accelerates the abrasive wear cycle and reduces bearing life by 3–5×.',
+      'Engine bearing lifespan is the primary determinant of planned engine overhaul interval. Particle contamination in engine oil is the largest controllable variable in bearing wear rate. SYNTRAX maintains the oil cleanliness target specified for the designed bearing lifespan and engine specification of the approved application. Failure to maintain the target accelerates the abrasive wear cycle and shortens bearing life.',
 
     // Component Class 1: Protection Media
     protectionMedia: [
@@ -356,13 +356,13 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         contaminantClass: 'Metallic wear particles (Fe, Al, Cu)',
         mechanism: 'Inertial impaction + depth interception across progressive density zones',
-        efficiency: 'β10(c) ≥ 200 per ISO 16889',
+        efficiency: 'Rated per ISO 16889 for the approved application',
         particleSizeRange: '1–40 µm',
       },
       {
         contaminantClass: 'Carbon agglomerates',
         mechanism: 'Interception at outer macro-particle zone',
-        efficiency: 'β40(c) ≥ 75 per ISO 16889',
+        efficiency: 'Rated per ISO 16889 for the approved application',
         particleSizeRange: '>40 µm',
       },
       {
@@ -374,22 +374,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
 
     // Component Class 7: Performance Profile
-    performanceProfile: [
-      {
-        metric: 'Beta ratio at 10 µm (β10(c))',
-        value: '≥200',
-        unit: 'dimensionless',
-        evidenceSource: 'ISO 16889 multi-pass test with ISO medium test dust',
-        standardRef: 'ISO 16889',
-      },
-      {
-        metric: 'Oil cleanliness achievable',
-        value: 'ISO 16/14/11',
-        unit: 'ISO 4406 code',
-        evidenceSource: 'Field measurement in engine lube circuit with SYNTRAX at nominal service interval',
-        standardRef: 'ISO 4406',
-      },
-    ],
+    performanceProfile: [],
 
     // Component Class 8: Failure Modes addressed
     failureModes: [
@@ -398,9 +383,9 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         rootCauseChain:
           'Particle contamination > ISO 4406 target → abrasive wear particles transit bearing clearances → micro-cutting of bearing surface → bearing clearance increase → oil film breakdown at high load → bearing seizure',
         measuredConsequence:
-          'ISO 19/17/14 (commodity filter) versus ISO 16/14/11 (SYNTRAX): bearing life reduction of 3–5× documented in controlled engine test programs',
+          'Bearing life is sensitive to sustained ISO 4406 cleanliness code; the specific life reduction for a given cleanliness shortfall must be established from the approved application and OEM bearing specification rather than assumed universally.',
         operationalImpact:
-          'Engine overhaul interval at optimal cleanliness (16/14/11): 15,000–25,000 hours. At poor cleanliness (19/17/14): 3,000–5,000 hours. Difference is the value of the filtration system, not the filter purchase price.',
+          'Engine overhaul interval is strongly influenced by sustained lube oil cleanliness relative to the OEM-specified target for the application. Maintaining that target is a primary lever for maximizing overhaul interval; the specific interval achieved must be confirmed by oil analysis and OEM guidance rather than assumed.',
         preventedByThisTechnology: true,
       },
     ],
@@ -429,7 +414,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'NANOFORCE is the hydraulic system filtration technology implementing high-efficiency depth filtration with nanofiber-enhanced media to achieve ISO 17/15/12 or tighter cleanliness targets in hydraulic circuits. It protects proportional valves, servo valves, and hydraulic pump components that operate with bore clearances of 1–5 µm — clearances where individual particles above 5 µm cause immediate functional damage.',
+      'NANOFORCE is the hydraulic system filtration technology implementing high-efficiency depth filtration with nanofiber-enhanced media, selected to the ISO 4406 cleanliness target specified for the approved hydraulic circuit. It protects proportional valves, servo valves, and hydraulic pump components that operate with bore clearances of 1–5 µm — clearances where individual particles above 5 µm cause immediate functional damage.',
 
     systemContext:
       'Applies to high-pressure hydraulic systems in mobile machinery and industrial equipment: load-sensing proportional valve systems, electrohydraulic servo systems, variable-displacement axial piston pumps, and any hydraulic circuit controlling precision motion. Operating pressure: 150–450 bar. Oil temperature: 40–80°C operating range.',
@@ -442,7 +427,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         type: 'Nanofiber-enhanced depth medium',
         description:
-          'Glass microfiber substrate with electrospun nanofiber layer achieving absolute filtration rating at 3–10 µm with β ratios >200.',
+          'Glass microfiber substrate with electrospun nanofiber layer, rated to the absolute filtration size and Beta ratio specified for the approved application.',
         micronRating: '3 µm absolute',
         mediaConstruction: 'Borosilicate glass microfiber + polyamide nanofiber overlay',
       },
@@ -532,13 +517,13 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         contaminantClass: 'Metallic particles (>3 µm)',
         mechanism: 'Nanofiber surface capture + depth interception',
-        efficiency: 'β3(c) ≥ 200 per ISO 16889',
+        efficiency: 'Rated per ISO 16889 for the approved application',
         particleSizeRange: '3–50 µm',
       },
       {
         contaminantClass: 'Silica ingress particles',
         mechanism: 'Depth filtration through glass microfiber matrix',
-        efficiency: 'β10(c) ≥ 1000 per ISO 16889',
+        efficiency: 'Rated per ISO 16889 for the approved application',
         particleSizeRange: '10–50 µm',
       },
       {
@@ -550,22 +535,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
 
     // Component Class 7: Performance Profile
-    performanceProfile: [
-      {
-        metric: 'Beta ratio at 3 µm (β3(c))',
-        value: '≥200',
-        unit: 'dimensionless',
-        evidenceSource: 'ISO 16889 multi-pass test',
-        standardRef: 'ISO 16889',
-      },
-      {
-        metric: 'Achievable system cleanliness',
-        value: 'ISO 17/15/12',
-        unit: 'ISO 4406 code',
-        evidenceSource: 'System cleanliness measurement in mobile hydraulic application with kidney-loop NANOFORCE filtration',
-        standardRef: 'ISO 4406',
-      },
-    ],
+    performanceProfile: [],
 
     // Component Class 8: Failure Modes addressed
     failureModes: [
@@ -574,9 +544,9 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         rootCauseChain:
           'Particle contamination > ISO 4406 target → particles transit proportional valve bore clearance → micro-scoring of spool surface → internal leakage increase → position control error → valve seizure',
         measuredConsequence:
-          'ISO 4406 17/15/12 versus 19/17/14: proportional valve service life 3–8× longer at target cleanliness. Servo valve manufacturers specify rejection of systems operating above ISO 16/14/11.',
+          'Proportional valve service life is sensitive to sustained ISO 4406 cleanliness code; the specific life difference for a given cleanliness shortfall must be established from the approved application and OEM valve specification rather than assumed universally. Servo valve manufacturers specify a maximum acceptable operating cleanliness code for warranty and rated service life.',
         operationalImpact:
-          'Proportional valve replacement at USD 800–5,000 per valve. Multi-valve hydraulic systems experiencing uncontrolled contamination may require 3–5 valve replacements per machine per year. NANOFORCE-maintained cleanliness reduces valve replacement frequency to 0–1 events per machine per planned maintenance cycle.',
+          'Proportional valve replacement cost varies by valve class and application. Multi-valve hydraulic systems experiencing uncontrolled contamination face elevated valve replacement frequency; maintaining the cleanliness target specified for the approved application is a primary lever for reducing that frequency, with the specific reduction confirmed by field data rather than assumed.',
         preventedByThisTechnology: true,
       },
     ],
@@ -593,189 +563,97 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
   },
 
   // ── TURBOCORE — Fuel Water Separation ────────────────────────────────
-  // ── TURBOCORE — Three-Stage Fuel Filtration / Water Separation ──────────
 
   'TECH-TURBOCORE': {
     entityType: 'TECHNOLOGY_ARCHITECTURE',
     id: 'TECH-TURBOCORE',
     technologyName: 'TURBOCORE',
     commercialName: 'TURBOCORE™',
-    systemDomain: 'Fuel 3-Stage',
-    primaryStandards: ['ISO 16332', 'ASTM D6304', 'ISO 12937'],
+    systemDomain: 'Fuel Water Separation',
+    primaryStandards: [],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'TURBOCORE is the three-stage heavy-duty fuel filter and water separator technology addressing the complete diesel fuel contamination spectrum in sequence: Stage 1 applies inertial separation (TURBOCORE™ rotation principle) for coarse particle capture and initial free water separation; Stage 2 applies coalescing medium for emulsified water aggregation and gravity separation; Stage 3 applies a hydrophobic barrier preventing any water carry-over to the HPCR injection circuit. Designed for high-flow-rate diesel systems (90–180 GPH) in power generation, mining, agriculture, and heavy transport.',
+      'TURBOCORE is the ELIMFILTERS dedicated fuel-separation architecture for approved turbine-style FH and FG applications within Fuel Cleanliness Protection. Its engineering role is to coordinate staged fuel conditioning and separation around the required flow, separation duty, element rating, installation and maintenance access of each approved FH or FG application. Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved system; the technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.',
 
     systemContext:
-      'Applies to heavy-duty diesel fuel supply systems where single-stage filtration is insufficient for the contamination load. Primary installation in: high-capacity standby power generation sets, mining haul trucks and drilling rigs, large agricultural equipment with high-flow Common Rail fuel systems, and commercial marine auxiliary diesel. Flow rates 90–180 GPH distinguish TURBOCORE applications from single-stage TURBOCORE installations (typically <40 GPH).',
+      'Applies to the approved Turbine Series FH and FG fuel-separation housings and their dedicated replacement elements. Flow, separation duty and element rating must be matched to the specific approved FH or FG application rather than assumed universally.',
 
     industrialRole:
-      'High-flow diesel systems operating in contaminated environments (mining dust, stored fuel with water accumulation, high-humidity marine environments) subject the fuel supply to simultaneous particle and water contamination at rates that exceed single-stage filter capacity. TURBOCORE three-stage architecture distributes the contamination load: Stage 1 removes coarse particles and bulk free water (protecting Stage 2 from overloading); Stage 2 resolves emulsified water the inertial stage cannot separate; Stage 3 provides a final absolute water barrier. The staged approach extends service life of each stage relative to a single combined element.',
+      'TURBOCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection for approved turbine-style FH and FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements specific to each approved application.',
 
     protectionMedia: [
       {
-        type: 'Inertial separation stage (Stage 1)',
+        type: 'Staged fuel-conditioning and separation media',
         description:
-          'Rotational turbine housing geometry imparting centrifugal acceleration to fuel flow, separating heavy particles and free water droplets radially outward by density differential.',
-        micronRating: 'Coarse — >100 µm particles and bulk free water',
-        mediaConstruction: 'Metal turbine geometry — no filter medium required (separation by flow path geometry)',
-      },
-      {
-        type: 'Coalescing medium (Stage 2)',
-        description:
-          'High-surface-area hydrophilic fiber matrix providing repeated droplet contact. Dispersed water droplets (5–50 µm) contact fibers and merge into settleable droplets (>100 µm) that fall to the collection sump.',
-        micronRating: '10 µm fuel particulate co-filtration',
-        mediaConstruction: 'Borosilicate glass microfiber, hydrophilic surface treatment',
-      },
-      {
-        type: 'Hydrophobic barrier (Stage 3)',
-        description:
-          'Final hydrophobic membrane — PTFE surface energy below water surface tension — preventing any water carry-over from Stage 2 to the injection rail.',
-        micronRating: '2–10 µm absolute final barrier',
-        mediaConstruction: 'PTFE-coated glass fiber, hydrophobic surface treatment',
+          'Media construction and staging are matched to the required flow, separation duty and element rating of the approved FH or FG application.',
+        micronRating: 'Application-specific — no universal rating',
+        mediaConstruction: 'Application-specific per approved FH/FG element',
       },
     ],
 
-    engineeringPrincipleIds: ['EP-SEP-003', 'EP-PHS-001', 'EP-PHS-002', 'EP-SEP-001'],
+    engineeringPrincipleIds: ['EP-SEP-001'],
 
     materials: [
       {
-        component: 'Turbine housing (Stage 1)',
-        material: 'Anodized aluminum or stainless steel',
+        component: 'Separator housing and media',
+        material: 'Application-specific per approved FH/FG element specification',
         justification:
-          'Fuel-compatible, pressure-rated for high-flow operation. Turbine geometry is precision-formed to produce consistent rotational velocity at rated flow.',
+          'Material selection is governed by the approved FH or FG housing and element specification for the target fuel system.',
       },
       {
-        component: 'Coalescing element (Stage 2)',
-        material: 'Borosilicate glass microfiber with hydrophilic treatment',
+        component: 'Water collection bowl',
+        material: 'Application-specific',
         justification:
-          'Hydrophilic surface treatment maximizes water droplet contact and coalescence efficiency in the 5–50 µm droplet range that survives Stage 1 inertial separation.',
-      },
-      {
-        component: 'Hydrophobic barrier layer (Stage 3)',
-        material: 'PTFE-coated borosilicate glass fiber',
-        justification:
-          'PTFE surface energy ~18 mN/m — well below water surface tension (72 mN/m) — providing absolute water rejection at operating differential pressures.',
-      },
-      {
-        component: 'Transparent water collection bowl',
-        material: 'Polysulfone',
-        justification:
-          'Visual water level monitoring. Diesel-compatible and UV-stable. Sump drain valve (manual or automatic) for periodic separated water discharge.',
+          'Provides collection volume for separated water; drain arrangement depends on the approved application.',
       },
     ],
 
     construction: [
       {
-        feature: 'Three-stage sequential contamination control',
+        feature: 'Staged fuel conditioning and separation',
         description:
-          'Inertia → coalescence → barrier. Each stage is optimized for a specific contamination challenge; later stages are protected by earlier stages from contamination loads beyond their design envelope.',
+          'Fuel conditioning and separation are coordinated in stages matched to the approved FH or FG application.',
         engineeringBasis:
-          'Single-stage water separators cannot simultaneously remove bulk free water, emulsified water, and fine particulate at high flow rates without medium overloading or pressure-drop accumulation. Staged architecture distributes the load, extending service intervals and maintaining efficiency throughout.',
+          'Water and particulate contamination present distinct removal challenges; staged conditioning allows each to be addressed within the approved application envelope rather than by a single fixed-specification element.',
       },
       {
-        feature: 'Flow-rate-independent water separation',
+        feature: 'Water-in-fuel (WIF) monitoring provision',
         description:
-          'The three-stage architecture maintains separation efficiency across the rated flow range (90–180 GPH).',
+          'Where the approved application specifies it, a WIF sensor port provides operator warning when separated water reaches service level.',
         engineeringBasis:
-          'Stage 1 (inertial) efficiency varies with rotational velocity (flow dependent). Stage 2 (coalescence) is partially flow-sensitive. Stage 3 (hydrophobic barrier) is flow-independent. The combination maintains overall water separation ≥99% across the design flow range.',
-      },
-      {
-        feature: 'Integrated water-in-fuel (WIF) sensor port',
-        description:
-          'Electrical port for capacitance WIF sensor providing operator dashboard warning when separated water reaches service level.',
-        engineeringBasis:
-          'ISO 4020 WIF warning compliance. Converts mechanical separator into a condition-monitoring device — operator receives service alert before the bowl overflows and water re-enters the fuel circuit.',
+          'Condition-based service alerts before separated water can re-enter the fuel circuit, where the application requires this provision.',
       },
     ],
 
     flowDynamics: [
       {
-        parameter: 'Rated fuel flow range',
-        value: '90–180',
-        unit: 'GPH at rated fuel temperature',
-        standardRef: 'ISO 16332',
-      },
-      {
-        parameter: 'Water separation efficiency (three-stage)',
-        value: '≥99',
-        unit: '% free and emulsified water',
-        standardRef: 'ISO 16332',
-      },
-      {
-        parameter: 'Stage 2 particulate rating',
-        value: '10',
-        unit: 'µm (co-filtration)',
-        standardRef: 'ASTM D6304',
+        parameter: 'Rated fuel flow',
+        value: 'Application-specific',
+        unit: 'per approved FH/FG element rating',
       },
     ],
 
     captureMechanisms: [
       {
-        contaminantClass: 'Coarse particles and bulk free water (Stage 1)',
-        mechanism: 'Inertial centrifugal separation by turbine rotation — density differential',
-        efficiency: '>95% for particles >100 µm and bulk free water',
-        particleSizeRange: '>100 µm',
-      },
-      {
-        contaminantClass: 'Emulsified water (Stage 2)',
-        mechanism: 'Coalescence — droplet contact on hydrophilic fiber surface → gravitational settling of merged droplets',
-        efficiency: '>95% per ISO 16332 test conditions',
-        particleSizeRange: '5–100 µm water droplets',
-      },
-      {
-        contaminantClass: 'Water carry-over prevention (Stage 3)',
-        mechanism: 'Hydrophobic repulsion — PTFE surface energy <30 mN/m prevents water transit',
-        efficiency: 'Absolute barrier at design differential pressure',
-        particleSizeRange: 'All water droplet sizes',
+        contaminantClass: 'Free and emulsified water',
+        mechanism: 'Staged separation matched to the approved FH/FG application',
+        particleSizeRange: 'Application-specific — no universal rating',
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Overall water separation efficiency',
-        value: '≥99',
-        unit: '% (three-stage combined)',
-        evidenceSource: 'ISO 16332 fuel/water separator test protocol',
-        standardRef: 'ISO 16332',
-      },
-      {
-        metric: 'Fuel water content delivered to injection rail',
-        value: '<50',
-        unit: 'ppm (target)',
-        evidenceSource: 'ASTM D6304 Karl Fischer titration post-Stage 3',
-        standardRef: 'ASTM D6304',
-      },
-      {
-        metric: 'Rated flow range',
-        value: '90–180',
-        unit: 'GPH',
-        evidenceSource: 'Product specification — FH 900FH · FH 1000FH series',
-        standardRef: 'ISO 16332',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {
         id: 'FM-FUEL-001',
         rootCauseChain:
-          'High-flow diesel fuel with water contamination > 200 ppm → water reaches HPCR injection rail at 1,800+ bar → hydraulic fracture of injector tip → injection pattern distortion → combustion failure and injector replacement',
+          'Water contamination in fuel reaching the HPCR injection rail → hydraulic damage at the injector tip → injection pattern distortion → combustion failure and injector replacement',
         measuredConsequence:
-          'HPCR injector failure in high-flow power generation or mining equipment: USD 800–4,000 per injector. 6–12 cylinder engines: USD 5,000–48,000 per contamination event. Plus unscheduled downtime: typically 3–7 days for parts sourcing in remote mining applications.',
+          'HPCR injector replacement cost: USD 800–4,000 per injector, depending on engine and application.',
         operationalImpact:
-          'Mining and power generation operations with inadequate fuel filtration at high-flow rates report injector failure rates of 1–3 per 2,000 operating hours. TURBOCORE three-stage protection reduces this to <1 per 10,000 hours in documented fleet programs.',
-        preventedByThisTechnology: true,
-      },
-      {
-        id: 'FM-HPCR-001',
-        rootCauseChain:
-          'Water + particulate in fuel → injector stiction from water-induced lacquer formation + abrasive particle micro-scoring of needle and seat → injection quantity drift → combustion control loss → engine derating',
-        measuredConsequence:
-          'Injector stiction causes injection quantity error up to ±15% before detection. Early detection via fuel consumption monitoring or exhaust opacity; late detection at injector replacement.',
-        operationalImpact:
-          'Heavy-duty diesel engines in high-cycle applications (mining haul trucks, power generation) operating 20–24 h/day have zero tolerance for planned maintenance delays. TURBOCORE prevents the contamination mode responsible for the majority of unscheduled injection system failures in these applications.',
+          'Inadequate fuel water separation in turbine-style FH/FG applications increases injector failure risk; the correct approved element and service interval must be maintained for the target application.',
         preventedByThisTechnology: true,
       },
     ],
@@ -804,7 +682,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'MICROKAPPA is the cabin air filtration technology implementing multi-layer particulate and chemical filtration for operator health protection in industrial equipment cabs. It intercepts airborne PM10, PM2.5, and respirable crystalline silica (RCS) from the cab air supply, with optional activated carbon layer for chemical vapor protection. The governing design objective is operator respiratory health, not equipment protection.',
+      'MICROKAPPA is the cabin air filtration technology implementing multi-layer particulate and chemical filtration for operator health protection in industrial equipment cabs. It intercepts airborne PM10, PM2.5, and respirable crystalline silica (RCS) from the cab air supply, with optional activated carbon layer for chemical vapor protection. The governing design objective is operator respiratory health, not equipment protection. Applicable cabin-air test standards and occupational requirements must be matched to the approved application and filtration configuration; no universal certification or efficiency claim is implied by the technology name alone.',
 
     systemContext:
       'Applies to operator cabs in mining equipment, agricultural machinery, construction equipment, and any industrial vehicle where the operator is exposed to elevated ambient particulate concentrations. Regulatory context: occupational silica exposure limits (0.05 mg/m³ in most jurisdictions) are enforced at the operator breathing zone — the cab air supply post-filter is the enforcement point.',
@@ -888,13 +766,13 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         contaminantClass: 'PM10 (≤10 µm aerodynamic diameter)',
         mechanism: 'Mechanical depth filtration + electrostatic attraction',
-        efficiency: '>95% at PM10 per ISO 11155-1',
+        efficiency: 'Rated per ISO 11155-1 for the approved application',
         particleSizeRange: '2.5–10 µm',
       },
       {
         contaminantClass: 'PM2.5 / Respirable crystalline silica (0.5–2.5 µm)',
         mechanism: 'Electrostatic capture + diffusion in melt-blown matrix',
-        efficiency: '>80% at 0.4 µm (Class E per ISO 11155-1)',
+        efficiency: 'Rated per ISO 11155-1 for the approved application',
         particleSizeRange: '0.1–2.5 µm',
       },
       {
@@ -905,22 +783,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Particulate efficiency at 0.4 µm',
-        value: '>80 (Class E)',
-        unit: '% per ISO 11155-1',
-        evidenceSource: 'ISO 11155-1 test protocol using DEHS aerosol at 0.4 µm',
-        standardRef: 'ISO 11155-1',
-      },
-      {
-        metric: 'Service interval',
-        value: '1,000–2,000',
-        unit: 'operating hours (environment dependent)',
-        evidenceSource: 'Field measurement of pressure drop vs. service hours in high-dust applications',
-        standardRef: 'ISO 11155-2',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {
@@ -954,37 +817,30 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     technologyName: 'SYNTAPORE',
     commercialName: 'SYNTAPORE™',
     systemDomain: 'Fuel HPCR',
-    primaryStandards: ['ASTM D6304', 'ISO 12937', 'ISO 19438'],
+    primaryStandards: [],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'SYNTAPORE is the fuel filtration technology for High-Pressure Common Rail (HPCR) injection systems, implementing absolute-rated synthetic media filtration to achieve sub-4 µm fuel cleanliness targets required by HPCR injector manufacturers. It addresses both particulate contamination and residual water contamination in the secondary fuel filtration stage — between the primary water separator and the high-pressure injection pump inlet.',
+      'SYNTAPORE is the ELIMFILTERS diesel-fuel filtration architecture for primary, secondary and cartridge fuel-filter applications within Fuel Cleanliness Protection. It stages particulate-contamination control before fuel reaches pumps and injectors. It does not perform a water-separation function; applicable fuel-filter test methods and application requirements must be selected for the approved system, and the technology name alone does not imply a universal micron rating, efficiency, capacity or certification claim.',
 
     systemContext:
-      'Applies to the secondary fuel filtration position in HPCR diesel fuel systems operating at injection pressures of 1,600–2,500 bar. HPCR injector plunger-barrel clearances of 1–3 µm define the contamination sensitivity: particles above 4 µm cause immediate plunger scoring at the operating pressure. Critical in: Euro IV/V/VI trucks, Tier 4 Final agricultural engines, modern construction equipment with electronic injection management.',
+      'Applies to primary, secondary and cartridge fuel filtration positions in diesel fuel systems, including High-Pressure Common Rail (HPCR) applications operating at injection pressures of 1,600–2,500 bar, where HPCR injector plunger-barrel clearances of 1–3 µm define general contamination sensitivity for the fuel circuit. Critical in: Euro IV/V/VI trucks, Tier 4 Final agricultural engines, modern construction equipment with electronic injection management.',
 
     industrialRole:
-      'HPCR injection precision is the operational basis for Tier 4 Final emissions compliance and fuel efficiency. Injector wear from particulate contamination degrades injection timing and spray pattern, directly increasing NOx emissions and fuel consumption. SYNTAPORE maintains the sub-4 µm fuel cleanliness code (ISO 4406 equivalent: 12/10/7 or tighter) specified by HPCR injector manufacturers for rated injector service life of 10,000–15,000 hours.',
+      'HPCR injection precision is the operational basis for Tier 4 Final emissions compliance and fuel efficiency. Injector wear from particulate contamination degrades injection timing and spray pattern, directly increasing NOx emissions and fuel consumption. SYNTAPORE provides the staged particulate-contamination control layer supporting injector service life; efficiency, capacity, flow and pressure-drop performance must be matched to each approved fuel-filtration stage rather than assumed from the technology name.',
 
     protectionMedia: [
       {
-        type: 'Absolute-rated synthetic medium',
+        type: 'Synthetic particulate medium',
         description:
-          'Synthetic microfiber medium with absolute rating at 4 µm, providing consistent sub-micron cleanliness from installation through end of service life.',
-        micronRating: '4 µm absolute',
-        mediaConstruction: 'Synthetic polyester microfiber, wet-laid, absolute-rated',
-      },
-      {
-        type: 'Water-scavenging layer',
-        description:
-          'Integrated coalescing layer captures residual dissolved water below the primary water separator threshold, protecting against moisture-induced injector tip corrosion.',
-        micronRating: 'N/A — water scavenging',
-        mediaConstruction: 'Hydrophilic glass microfiber with water coalescence treatment',
+          'Synthetic microfiber medium providing staged particulate-contamination control for diesel fuel; efficiency and capacity are matched to the approved fuel-filtration stage rather than a universal rating.',
+        micronRating: 'Application-specific — no universal rating',
+        mediaConstruction: 'Synthetic polyester microfiber, wet-laid',
       },
     ],
 
-    engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-002', 'EP-INS-001', 'EP-CHE-002'],
+    engineeringPrincipleIds: ['EP-SEP-001', 'EP-INS-001'],
 
     materials: [
       {
@@ -1009,18 +865,11 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
 
     construction: [
       {
-        feature: 'Absolute-rated media construction',
+        feature: 'Synthetic media construction',
         description:
-          'Wet-laid synthetic fiber provides consistent absolute rating throughout service life, unlike depth media where effective rating changes as media loads.',
+          'Wet-laid synthetic fiber provides consistent filtration performance throughout service life, matched to the approved fuel-filtration stage rather than a universal rating.',
         engineeringBasis:
-          'HPCR injector damage is caused by individual particle events at the plunger-barrel interface. Nominal ratings that allow particles above the injector clearance to transit represent functional non-compliance with the injector manufacturer cleanliness specification.',
-      },
-      {
-        feature: 'Integrated water scavenging stage',
-        description:
-          'Secondary water scavenging after primary water separator catches residual dissolved water not removed by coalescence.',
-        engineeringBasis:
-          'Primary water separators (TURBOCORE) remove free and emulsified water. Dissolved water at 100–500 ppm passes through primary separation unchanged. SYNTAPORE integrated scavenging removes residual dissolved water phase, protecting injectors from the acid corrosion mechanism.',
+          'HPCR injector damage is caused by individual particle events at the plunger-barrel interface. Filtration performance must be specified for the approved application rather than assumed from the technology name alone.',
       },
     ],
 
@@ -1029,47 +878,23 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         parameter: 'Rated fuel flow',
         value: 'Engine-specific',
         unit: 'L/h at maximum rated power',
-        standardRef: 'ISO 19438',
       },
       {
         parameter: 'Initial pressure drop (clean)',
-        value: '<0.1',
+        value: 'Application-specific',
         unit: 'bar at rated flow',
-        standardRef: 'ISO 19438',
       },
     ],
 
     captureMechanisms: [
       {
-        contaminantClass: 'Fuel particulate (>4 µm)',
-        mechanism: 'Absolute surface filtration on synthetic microfiber medium',
-        efficiency: 'β4(c) ≥ 200 (absolute rated)',
-        particleSizeRange: '>4 µm',
-      },
-      {
-        contaminantClass: 'Residual dissolved water',
-        mechanism: 'Coalescence in integrated water scavenging layer',
-        efficiency: '>70% dissolved water capture at rated flow',
-        particleSizeRange: 'Molecular / <1 µm',
+        contaminantClass: 'Fuel particulate',
+        mechanism: 'Surface filtration on synthetic microfiber medium',
+        particleSizeRange: 'Application-specific — no universal rating',
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Absolute filtration rating',
-        value: '4',
-        unit: 'µm (absolute)',
-        evidenceSource: 'ISO 19438 fuel contamination multi-pass test with AC Ultra Fine test dust',
-        standardRef: 'ISO 19438',
-      },
-      {
-        metric: 'Achievable fuel cleanliness',
-        value: 'ISO 4406 12/10/7',
-        unit: 'ISO 4406 code',
-        evidenceSource: 'Particle count measurement downstream of SYNTAPORE in HPCR fuel circuit',
-        standardRef: 'ISO 4406',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {
@@ -1077,7 +902,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         rootCauseChain:
           'Particle contamination > 4 µm in HPCR fuel circuit → particle transits injector plunger-barrel clearance at 2,000 bar → micro-scoring of plunger surface → internal leakage increase → injection quantity drift → emissions non-compliance and power loss → injector replacement',
         measuredConsequence:
-          'HPCR injector service life at correct cleanliness (ISO 12/10/7): 10,000–15,000 hours. At uncontrolled cleanliness (ISO 18/16/13): 2,000–4,000 hours. Injector replacement cost: USD 400–2,000 per injector × 6 cylinders.',
+          'HPCR injector service life at correctly specified fuel cleanliness is materially longer than at uncontrolled cleanliness. Injector replacement cost: USD 400–2,000 per injector × 6 cylinders.',
         operationalImpact:
           'Premature injector failure in Tier 4 Final engines triggers emissions system non-compliance warnings, requiring immediate engine shutdown in regulated jurisdictions. Off-service time: 2–5 days. SYNTAPORE fuel cleanliness maintenance prevents this failure mode.',
         preventedByThisTechnology: true,
@@ -1116,7 +941,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       'Applies to diesel engine cooling circuits in heavy-duty engines where cavitation erosion of wet cylinder liners is a failure mode. Wet liner engines (common in large diesel: >300 kW) require active SCA management throughout the coolant service interval. The THERMACORE element releases SCA additives into the coolant at a controlled rate, replacing depleted inhibitors without requiring drain-and-refill coolant changes.',
 
     industrialRole:
-      'Cavitation erosion of wet cylinder liners is caused by collapse of vapor bubbles formed at liner surfaces during combustion pressure pulses. The liner surface experiences repeated micro-explosive implosion events that remove metal at a rate that can perforate a liner wall in 500–1,000 hours without SCA protection. THERMACORE SCA management maintains the nitrite and molybdate inhibitor concentrations that form protective surface layers on liner surfaces, preventing vapor bubble nucleation. Correct SCA maintenance extends liner service life from 500 hours (unprotected) to engine design life (15,000–20,000 hours).',
+      'Cavitation erosion of wet cylinder liners is caused by collapse of vapor bubbles formed at liner surfaces during combustion pressure pulses. The liner surface experiences repeated micro-explosive implosion events that remove metal at a rate that can perforate a liner wall in well under engine design life without SCA protection. THERMACORE SCA management maintains the nitrite and molybdate inhibitor concentrations that form protective surface layers on liner surfaces, preventing vapor bubble nucleation. Maintaining SCA concentration within the specified range is a primary lever for extending liner life toward engine design life; the specific hours achieved must be confirmed by coolant condition monitoring for the approved application.',
 
     protectionMedia: [
       {
@@ -1194,7 +1019,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         contaminantClass: 'Coolant corrosion products (rust, scale)',
         mechanism: 'Depth filtration through cellulose layer',
-        efficiency: '>80% at 10 µm',
+        efficiency: 'Rated per the approved application',
         particleSizeRange: '10–500 µm',
       },
       {
@@ -1205,22 +1030,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Coolant SCA concentration maintenance',
-        value: '0.5–1.0',
-        unit: 'SCA units/L at end of service interval',
-        evidenceSource: 'ASTM D6210 coolant chemistry analysis at end-of-service',
-        standardRef: 'ASTM D6210',
-      },
-      {
-        metric: 'Liner cavitation protection duration',
-        value: '500–1,000',
-        unit: 'hours per element (circuit volume dependent)',
-        evidenceSource: 'SAE J1941 liner pitting test — coolant with maintained SCA vs. depleted SCA',
-        standardRef: 'SAE J1941',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {
@@ -1228,9 +1038,9 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         rootCauseChain:
           'SCA depletion below protective threshold → nitrite/molybdate inhibitor concentration insufficient for liner surface passivation → vapor bubble nucleation at liner surface during combustion pressure pulses → cavitation erosion of liner wall → liner perforation → coolant-oil mixing → engine seizure',
         measuredConsequence:
-          'Liner perforation rate without SCA: 500–1,000 hours in high-load diesel. Cost: wet liner replacement USD 5,000–25,000 per engine, plus 3–7 day off-service for overhaul.',
+          'Liner perforation rate without SCA protection can occur well short of engine design life in high-load diesel applications. Cost: wet liner replacement USD 5,000–25,000 per engine, plus 3–7 day off-service for overhaul.',
         operationalImpact:
-          'Fleet operators without THERMACORE SCA management in wet-liner engine fleets report liner perforation as the leading cause of catastrophic engine failure in engines operating beyond 2,000 hours. Correct THERMACORE use eliminates this failure mode to designed engine overhaul intervals.',
+          'Fleet operators without SCA management in wet-liner engine fleets report liner perforation as a leading cause of catastrophic engine failure. Maintaining SCA concentration within the specified range via THERMACORE is a primary lever for reducing this failure mode; the specific reduction achieved must be confirmed by fleet data rather than assumed.',
         preventedByThisTechnology: true,
       },
     ],
@@ -1260,153 +1070,85 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'DRYCORE is the compressed air filtration and drying technology implementing multi-stage purification of compressed air to achieve defined purity classes per ISO 8573-1. It removes solid particulate, liquid water aerosols, oil aerosols, and water vapor (dew point control) from compressed air supply lines feeding pneumatic actuators, air-operated tools, painting, food contact, and pharmaceutical process equipment.',
+      'DRYCORE is the ELIMFILTERS air-dryer filtration architecture for moisture control in pneumatic brake systems on heavy-duty commercial transport, construction, and mining equipment. It removes moisture from compressed air before condensation can affect pneumatic valves, actuators, and braking-system components. Applicable compressed-air and vehicle-system requirements must be selected for the approved application; the technology name alone does not imply a universal purity class or certification claim.',
 
     systemContext:
-      'Applies to compressed air distribution systems downstream of the air compressor. ISO 8573-1 defines purity classes for: solid particles (Class 1–9), water (dew point, Class 1–9), and oil content (Class 1–4). Application requirements define the target purity class, which determines the DRYCORE element configuration required. Critical applications: pneumatic valve actuators (Class 3/4/3), breathing air (ISO 8573-1 Class 1/2/1), painting (Class 2/4/2), food contact (Class 1/2/1).',
+      'Applies to pneumatic brake-system compressed-air circuits on heavy-duty commercial transport, construction, and mining equipment. Capacity, purge behavior, airflow, and replacement interval must be matched to compressor duty and ambient moisture exposure for the approved application.',
 
     industrialRole:
-      'Compressed air contamination is the primary cause of pneumatic valve actuator failure, paint defect generation, and compressed air line corrosion. Liquid water carryover in compressed air corrodes pneumatic actuator internals, washes lubricant from O-ring surfaces, and causes water hammer damage to downstream valves. Oil aerosol contamination in painting applications causes adhesion failure. DRYCORE maintains the compressed air purity class required for each downstream application, preventing contamination-induced process failures.',
+      'Inadequate moisture control in pneumatic brake-system compressed-air circuits allows condensation to affect valves, actuators, and other pneumatic components, reducing braking-system reliability. DRYCORE provides the moisture-control layer for pneumatic brake-system air within ELIMFILTERS Air Intake & Airflow Protection. Selection is governed by compressor duty, moisture exposure, airflow, purge behavior, capacity, and service interval specified for the approved application.',
 
     protectionMedia: [
       {
-        type: 'Coarse particulate pre-filter',
+        type: 'Air-dryer moisture-control media',
         description:
-          'First-stage removal of bulk liquid water, bulk oil droplets, and particles >5 µm. High dirt-holding capacity element protecting downstream precision stages from rapid loading.',
-        micronRating: '5 µm (nominal)',
-        mediaConstruction: 'Borosilicate glass microfiber, deep-bed construction',
-      },
-      {
-        type: 'Oil aerosol coalescing element',
-        description:
-          'Coalescing medium targeting oil aerosol droplets 0.01–5 µm and residual water aerosol. Achieves oil content <0.01 mg/m³ (ISO 8573-1 Class 1 oil).',
-        micronRating: '0.01 µm oil aerosol',
-        mediaConstruction: 'Borosilicate glass microfiber, fine fiber, horizontal coalescing orientation',
-      },
-      {
-        type: 'Activated carbon adsorber (oil vapor)',
-        description:
-          'Adsorption stage removing residual oil vapor and hydrocarbons not removed by coalescing. Required for food, pharmaceutical, and painting applications.',
-        micronRating: 'Molecular',
-        mediaConstruction: 'Activated carbon granules in annular cartridge',
-      },
-      {
-        type: 'Desiccant drying stage',
-        description:
-          'Pressure swing adsorption (PSA) or desiccant bed reducing pressure dew point to -40°C or -70°C for instrument air and breathing air applications.',
-        micronRating: 'N/A — vapor phase dew point control',
-        mediaConstruction: 'Silica gel or molecular sieve desiccant',
+          'Removes moisture from pneumatic brake-system compressed air before condensation can affect valves, actuators, and braking-system components. Media construction, capacity, and purge behavior are matched to compressor duty and ambient moisture exposure for the approved application.',
+        micronRating: 'N/A — moisture/vapor-phase control',
+        mediaConstruction: 'Desiccant media sized to the approved pneumatic brake-system application',
       },
     ],
 
-    engineeringPrincipleIds: ['EP-SEP-001', 'EP-PHS-001', 'EP-CHE-001'],
+    engineeringPrincipleIds: ['EP-SEP-001', 'EP-PHS-001'],
 
     materials: [
       {
-        component: 'Coalescing filter body',
-        material: 'Anodized aluminum or stainless steel (food/pharma)',
+        component: 'Air-dryer cartridge body',
+        material: 'Steel or aluminum, rated to pneumatic brake-system circuit pressure',
         justification:
-          'Compressed air systems operate at 7–15 bar. Aluminum housings rated to 16 bar for standard applications; stainless steel for food and pharmaceutical applications requiring steam sterilization.',
+          'Pneumatic brake-system air circuits operate at pressures specified by the vehicle and compressor manufacturer; housing material and pressure rating are selected for the approved application.',
       },
       {
         component: 'Desiccant material',
-        material: 'Silica gel (dew point to -40°C) or molecular sieve (dew point to -70°C)',
+        material: 'Selected per the moisture-control target specified for the approved application',
         justification:
-          'Silica gel achieves -40°C dew point adequate for most industrial instrument air. Molecular sieve required for breathing air and cryogenic applications requiring -70°C dew point.',
+          'Desiccant type and capacity are matched to compressor duty cycle and ambient moisture exposure rather than assumed universally.',
       },
       {
-        component: 'Drain valve',
-        material: 'Brass or stainless steel with fluoropolymer seats',
+        component: 'Purge/drain valve',
+        material: 'Brass or stainless steel with elastomer seats compatible with brake-system air',
         justification:
-          'Automatic drain valve removes accumulated liquid from filter bowls. Fluoropolymer seat compatibility with both water and oil condensate.',
+          'Purge valve removes accumulated moisture from the cartridge on a duty-cycle-appropriate schedule.',
       },
     ],
 
     construction: [
       {
-        feature: 'Multi-stage series architecture',
+        feature: 'Air-dryer cartridge matched to compressor duty',
         description:
-          'Stages in series: pre-filter → coalescing → carbon adsorber → desiccant. Each stage prepares the air for the next stage.',
+          'Cartridge capacity and purge behavior are specified for the compressor duty cycle and ambient moisture exposure of the approved pneumatic brake-system application.',
         engineeringBasis:
-          'Bulk liquid carryover that reaches a coalescing element defeats the fine-fiber coalescing mechanism. Pre-filtration removes bulk liquid before the precision coalescing stage. Carbon adsorber before desiccant prevents oil vapor poisoning the desiccant bed.',
-      },
-      {
-        feature: 'Automatic condensate drain',
-        description:
-          'Electronic or pneumatically operated drain valve evacuates accumulated condensate from filter bowls on timed or float-actuated cycles.',
-        engineeringBasis:
-          'Accumulated liquid in filter bowl eventually re-entrains into the air stream under high-velocity flow conditions. Automatic drain prevents bowl level from reaching re-entrainment depth, ensuring continuous separation effectiveness.',
+          'Under-sized capacity or incorrect purge timing allows moisture carryover into the brake-system air circuit, risking valve and actuator condensation damage.',
       },
     ],
 
     flowDynamics: [
       {
         parameter: 'Rated compressed air flow',
-        value: 'Model-dependent',
-        unit: 'Nm³/h at 7 bar inlet pressure',
-        standardRef: 'ISO 8573-1',
-      },
-      {
-        parameter: 'Pressure drop across filter train',
-        value: '<0.2',
-        unit: 'bar total (clean, multi-stage)',
-        standardRef: 'ISO 8573-2',
+        value: 'Compressor and application-dependent',
+        unit: 'per approved application',
       },
     ],
 
     captureMechanisms: [
       {
-        contaminantClass: 'Liquid water (droplets)',
-        mechanism: 'Coalescing + gravitational settling with automatic drain',
-        efficiency: '>99.9% liquid water removal per ISO 8573-2',
-        particleSizeRange: '>0.1 µm droplets',
-      },
-      {
-        contaminantClass: 'Oil aerosol (0.01–5 µm)',
-        mechanism: 'Coalescing in glass microfiber medium + gravitational drainage',
-        efficiency: 'Residual oil <0.01 mg/m³ (ISO 8573-1 Class 1)',
-        particleSizeRange: '0.01–5 µm',
-      },
-      {
-        contaminantClass: 'Oil vapor and hydrocarbon gases',
-        mechanism: 'Adsorption on activated carbon',
-        efficiency: 'Total oil vapor content <0.003 mg/m³ with carbon stage',
-        particleSizeRange: 'Molecular',
-      },
-      {
-        contaminantClass: 'Water vapor (humidity)',
-        mechanism: 'Adsorption by desiccant — pressure swing or thermal regeneration',
-        efficiency: 'Pressure dew point to -40°C (silica) or -70°C (molecular sieve)',
+        contaminantClass: 'Moisture / water vapor in pneumatic brake-system air',
+        mechanism: 'Desiccant moisture control with duty-cycle purge',
+        efficiency: 'Rated per the approved application',
         particleSizeRange: 'Vapor phase',
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Residual oil content (coalescing stage)',
-        value: '<0.01',
-        unit: 'mg/m³ (ISO 8573-1 Class 1)',
-        evidenceSource: 'ISO 8573-2 aerosol test — downstream oil measurement by photometric method',
-        standardRef: 'ISO 8573-2',
-      },
-      {
-        metric: 'Pressure dew point (desiccant stage)',
-        value: '-40 to -70',
-        unit: '°C pressure dew point',
-        evidenceSource: 'ISO 8573-3 dew point measurement at desiccant outlet',
-        standardRef: 'ISO 8573-3',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {
-        id: 'FM-AIR-COMP-001',
+        id: 'FM-AIR-BRAKE-001',
         rootCauseChain:
-          'Liquid water carryover past failed coalescing element → water enters pneumatic actuator → O-ring lubricant washout → actuator seal failure → valve control loss → process shutdown',
+          'Moisture carryover in pneumatic brake-system compressed air → condensation in valves and actuators → corrosion and/or freezing of pneumatic components → braking-system reliability reduction',
         measuredConsequence:
-          'Pneumatic actuator O-ring replacement: USD 50–500 per actuator. Plant shutdown during actuator replacement on critical process line: USD 10,000–100,000 per event depending on process.',
+          'Pneumatic valve and actuator condition is degraded by uncontrolled moisture exposure; the specific consequence and cost must be established from the approved application and OEM specification rather than assumed universally.',
         operationalImpact:
-          'Industrial plants with unmanaged compressed air quality report 15–30% of pneumatic maintenance events attributable to liquid water carryover. DRYCORE multi-stage filtration maintained at correct service intervals eliminates water-induced actuator failures.',
+          'Maintaining moisture control within the target specified for the approved application is a primary lever for pneumatic brake-system reliability; the specific reliability improvement must be confirmed by fleet maintenance data rather than assumed.',
         preventedByThisTechnology: true,
       },
     ],
@@ -1429,27 +1171,27 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     id: 'TECH-INTEKCORE',
     technologyName: 'INTEKCORE',
     commercialName: 'INTEKCORE™',
-    systemDomain: 'Filter Housing Systems',
-    primaryStandards: ['ISO 4021', 'ISO 23369', 'DIN 24550'],
+    systemDomain: 'Air Intake',
+    primaryStandards: ['ISO 5011'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'INTEKCORE is the filter housing systems technology providing the structural, hydraulic, and mechanical interface between filtration elements and equipment fluid circuits. It encompasses: high-pressure filter heads, modular filter housings, manifold assemblies, bypass valves, differential pressure indicators, and contamination monitoring integration points. INTEKCORE enables the installation, service, and monitoring of all ELIMFILTERS element technologies across fluid system applications.',
+      'INTEKCORE is the ELIMFILTERS air-cleaner housing and sealing architecture for controlled airflow and bypass prevention within Air Intake & Airflow Protection. Its engineering role is to preserve the protected intake boundary through housing geometry, structural integrity, element retention and seal loading. Housing sizing, inlet routing, restriction, element fit and sealing must be validated for the intended duty cycle; the technology name alone does not imply a universal performance or certification claim.',
 
     systemContext:
-      'Applies wherever a filtration element must interface with a fluid circuit at defined pressure, flow, and temperature conditions. INTEKCORE housings are the structural layer of the filtration system — the filter element performs the filtration; the housing holds the element in position, maintains seal integrity under operating pressure, routes fluid through the element, and provides service access for element replacement without system contamination.',
+      'Applies to engine air-cleaner housings on mobile and stationary diesel equipment. INTEKCORE governs the housing, retention, and sealing boundary for the air intake system — the air filter element (MACROCORE) performs the filtration; the housing holds the element in position, maintains seal integrity across the intake boundary, routes intake air through the element, and provides service access for element replacement without introducing an unfiltered-air bypass path.',
 
     industrialRole:
-      'A correctly specified filtration element installed in an incorrectly specified housing is functionally equivalent to no filtration: housing bypass valves calibrated incorrectly defeat element performance; housing seals rated below circuit temperature allow bypass leakage; housings without differential pressure indicators prevent condition-based maintenance. INTEKCORE housing specification is the mechanical prerequisite for element performance — it ensures the element operates within its design conditions and can be serviced without introducing contamination.',
+      'A correctly specified air filter element installed in an incorrectly specified housing is functionally equivalent to no filtration: housing seals loaded below spec allow unfiltered-air bypass at the element seating face, end caps, or housing joints — the single largest source of intake contamination ingress outside filter media failure. INTEKCORE housing specification is the mechanical prerequisite for air intake element performance; it ensures the element seats correctly, retains its seal under vibration and duty cycle, and can be serviced without introducing an ingress path.',
 
     protectionMedia: [
       {
         type: 'N/A — structural housing system',
         description:
-          'INTEKCORE is a housing and manifold system, not a filtration medium. It contains and interfaces the filtration elements of other ELIMFILTERS technologies (MACROCORE, SYNTRAX, NANOFORCE, TURBOCORE, SYNTAPORE).',
-        micronRating: 'Defined by installed element technology',
-        mediaConstruction: 'Cast aluminum, ductile iron, or stainless steel housing body',
+          'INTEKCORE is an air-cleaner housing and sealing system, not a filtration medium. It contains and interfaces the air filtration elements of MACROCORE.',
+        micronRating: 'Defined by installed MACROCORE element',
+        mediaConstruction: 'Cast aluminum, ductile iron, or engineered polymer housing body',
       },
     ],
 
@@ -1457,99 +1199,65 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
 
     materials: [
       {
-        component: 'Housing body (standard pressure)',
-        material: 'Anodized aluminum alloy or ductile cast iron',
+        component: 'Housing body',
+        material: 'Anodized aluminum alloy, engineered polymer, or ductile cast iron',
         justification:
-          'Aluminum: weight advantage for mobile applications (mining trucks, agricultural equipment) where housing mass is relevant. Cast iron: cost-effective for stationary industrial and high-pressure hydraulic applications.',
+          'Material selected per the approved application: aluminum or polymer for mobile applications (mining trucks, agricultural equipment) where housing mass is relevant; cast iron for stationary industrial applications.',
       },
       {
-        component: 'Housing body (high-pressure hydraulic)',
-        material: 'Billet aluminum or forged steel',
+        component: 'Element seal',
+        material: 'Radial or axial elastomer seal selected for the approved application',
         justification:
-          'Billet or forged construction for housings rated >420 bar (hydraulic line filter). Cast materials have porosity risk at extreme pressures that billet/forged materials do not.',
-      },
-      {
-        component: 'Bypass valve and differential pressure indicator',
-        material: 'Stainless steel spring, brass valve body, silicone or FKM O-ring',
-        justification:
-          'Bypass valve spring calibration is a safety-critical parameter — spring rate must be stable across the operating temperature range. Stainless steel spring provides temperature stability. FKM O-ring for compatibility across fluid types.',
+          'Seal geometry and material are matched to element retention design and duty-cycle vibration exposure to maintain the zero-bypass boundary across the service interval.',
       },
     ],
 
     construction: [
       {
-        feature: 'Calibrated bypass valve',
+        feature: 'Zero-bypass element retention and sealing',
         description:
-          'Spring-loaded bypass valve opens at defined differential pressure (typically 2–16 bar depending on application) to protect against element over-restriction.',
+          'Housing geometry, element seating face, end caps, and housing joints are engineered to eliminate unfiltered-air bypass paths around the element periphery.',
         engineeringBasis:
-          'Bypass valve opening pressure is the boundary between two failure modes: below opening pressure (filtration operating), above opening pressure (oil flow maintained but unfiltered). Calibration determines when the second failure mode activates — it must be set above normal operating differential pressure to avoid premature bypass.',
+          'Seal and gasket bypass at the element seating face is a leading source of intake contamination ingress outside filter media failure. Housing sizing, element fit, and seal loading must be validated for the intended duty cycle rather than assumed universally.',
       },
       {
-        feature: 'Differential pressure indicator',
+        feature: 'Service access for element replacement',
         description:
-          'Visual pop-up or electrical differential pressure switch indicating when element differential pressure has reached the service limit.',
+          'Housing design provides service access for element replacement without introducing contamination into the clean-air side of the housing.',
         engineeringBasis:
-          'Condition-based maintenance requires a signal at which maintenance is due. Calendar-based maintenance intervals cannot account for variable contamination loading rates. Differential pressure indication converts the filter housing into a condition-monitoring device.',
-      },
-      {
-        feature: 'Contamination sampling port',
-        description:
-          'Minimess or equivalent sampling valve port in housing body allows fluid sampling for particle count and cleanliness code analysis without opening the circuit.',
-        engineeringBasis:
-          'ISO 4406 cleanliness code verification requires fluid samples from the live system. Sampling ports allow representative samples without introducing contamination during the sampling procedure.',
+          'Element replacement is a recurring maintenance event; housing access design determines whether routine service introduces or prevents ingress contamination.',
       },
     ],
 
     flowDynamics: [
       {
-        parameter: 'Rated working pressure',
-        value: 'Application-specific (10–420 bar)',
-        unit: 'bar',
-        standardRef: 'ISO 23369',
-      },
-      {
-        parameter: 'Bypass valve calibration pressure',
-        value: 'Application-specific (2–16 bar)',
-        unit: 'bar differential',
-        standardRef: 'DIN 24550',
+        parameter: 'Rated intake airflow',
+        value: 'Application-specific',
+        unit: 'per approved application',
+        standardRef: 'ISO 5011',
       },
     ],
 
     captureMechanisms: [
       {
         contaminantClass: 'N/A — housing provides structural interface',
-        mechanism: 'Contamination capture performed by installed element technology',
-        efficiency: 'Defined by element technology (MACROCORE, SYNTRAX, NANOFORCE, etc.)',
-        particleSizeRange: 'Defined by element technology',
+        mechanism: 'Contamination capture performed by the installed MACROCORE element',
+        efficiency: 'Defined by the installed MACROCORE element technology',
+        particleSizeRange: 'Defined by the installed MACROCORE element technology',
       },
     ],
 
-    performanceProfile: [
-      {
-        metric: 'Housing rated working pressure',
-        value: '10–420',
-        unit: 'bar (model dependent)',
-        evidenceSource: 'Hydrostatic pressure test per ISO 23369',
-        standardRef: 'ISO 23369',
-      },
-      {
-        metric: 'Bypass valve calibration accuracy',
-        value: '±10',
-        unit: '% of rated opening pressure',
-        evidenceSource: 'Differential pressure test per DIN 24550 at ambient temperature',
-        standardRef: 'DIN 24550',
-      },
-    ],
+    performanceProfile: [],
 
     failureModes: [
       {
-        id: 'FM-HSG-001',
+        id: 'FM-HSG-AIR-001',
         rootCauseChain:
-          'Incorrect bypass valve calibration pressure (too low) → bypass opens at normal operating differential pressure → fluid bypasses element at normal flow → no filtration occurs despite element in place → cleanliness target not achieved → equipment component wear',
+          'Incorrect housing sizing, element fit, or seal loading → unfiltered-air bypass path at element seating face, end caps, or housing joints → airborne contamination reaches the intake manifold around the element periphery → abrasive wear downstream despite a correctly specified filter element',
         measuredConsequence:
-          'Incorrect bypass calibration is invisible in field inspection — filter appears installed correctly. Contamination damage accumulates at the rate equivalent to no filtration. Discovery occurs at component failure, not during routine inspection.',
+          'Housing bypass is invisible in field inspection — the filter element appears installed correctly. Contamination damage accumulates at a rate approaching unfiltered operation. Discovery typically occurs at downstream component wear, not during routine inspection.',
         operationalImpact:
-          'INTEKCORE housing specification includes bypass valve calibration verification as a commissioning step. Field-installed housings with incorrect bypass settings are a systemic contamination control failure with no external indicator until component damage occurs.',
+          'INTEKCORE housing specification and seal verification is a commissioning and service step for the approved application. Field-installed housings with bypass paths are a systemic contamination control failure with no external indicator until downstream component damage occurs.',
         preventedByThisTechnology: true,
       },
     ],
@@ -1590,7 +1298,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         type: 'Kit assembly — application-matched elements',
         description:
-          'Pre-packaged combination of MACROCORE (air), SYNTRAX (lube oil), NANOFORCE or SYNTAPORE (hydraulic/fuel), TURBOCORE (water separation), and MICROKAPPA (cabin air) elements in the correct specifications for the target equipment model.',
+          'Pre-packaged combination of MACROCORE (air), SYNTRAX (lube oil), NANOFORCE (hydraulic), SYNTAPORE (fuel), TURBOCORE (water separation), and MICROKAPPA (cabin air) elements in the correct specifications for the target equipment model.',
         micronRating: 'Defined by each element technology in the kit',
         mediaConstruction: 'Assembled kit with element compatibility verified against OEM service documentation',
       },

@@ -1,0 +1,45 @@
+{
+  "path_id": "PATH_C_DRYCORE_064",
+  "path_type": "C",
+  "entry_node": "DRYCORE",
+  "entry_type": "technology",
+  "industry": null,
+  "valid": true,
+  "steps": [
+    {
+      "key": "DRYCORE",
+      "type": "technology",
+      "name": "DRYCORE™",
+      "citation_record": {
+        "key": "DRYCORE",
+        "type": "technology",
+        "name": "DRYCORE™",
+        "slug": "drycore",
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [],
+        "citation": {
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/drycore/",
+          "concept": "DRYCORE Air Dryer Filtration Technology",
+          "version": "1.0",
+          "last_updated": "2026-08-14",
+          "content_hash": "sha256:ff8bb83d4e5625f018fbcfe15dd572b70b2e8415a544b053a3dd8c172bc81ccc"
+        },
+        "canonical": {
+          "definition": "DRYCORE is the ELIMFILTERS air-dryer filtration architecture for moisture control in pneumatic brake systems.",
+          "systems": "Air Intake & Airflow Protection; compressed-air and pneumatic brake-system protection.",
+          "failure_impact": "Inadequate moisture control in compressed-air circuits can allow condensation to affect valves, actuators and other pneumatic components, reducing braking-system reliability.",
+          "related_standards": "Applicable compressed-air and vehicle-system requirements must be selected for the approved application; no universal certification claim is implied by the technology name alone.",
+          "related_technologies": "DRYCORE protects a pneumatic compressed-air pathway and must not be represented as an engine-air or cabin-air filtration substitute.",
+          "industrial_role": "DRYCORE provides the moisture-control layer for pneumatic brake-system air within ELIMFILTERS Air Intake & Airflow Protection. Selection is governed by compressor duty, moisture exposure, airflow, purge behavior, capacity and service interval."
+        },
+        "relationships": {},
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\DRYCORE.md"
+      }
+    }
+  ],
+  "terminal_product_families": [
+    "COMPRESSED_AIR_PRIMARY"
+  ]
+}

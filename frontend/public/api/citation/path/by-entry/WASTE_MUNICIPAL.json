@@ -1,9 +1,9 @@
 {
   "entry_key": "WASTE_MUNICIPAL",
-  "path_count": 4,
+  "path_count": 3,
   "paths": [
     {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_097",
+      "path_id": "PATH_B_WASTE_MUNICIPAL_061",
       "path_type": "B",
       "entry_node": "WASTE_MUNICIPAL",
       "entry_type": "industry",
@@ -12,22 +12,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_097.json"
+      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_061.json"
     },
     {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_098",
-      "path_type": "B",
-      "entry_node": "WASTE_MUNICIPAL",
-      "entry_type": "industry",
-      "industry": "WASTE_MUNICIPAL",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_098.json"
-    },
-    {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_099",
+      "path_id": "PATH_B_WASTE_MUNICIPAL_062",
       "path_type": "B",
       "entry_node": "WASTE_MUNICIPAL",
       "entry_type": "industry",
@@ -36,10 +24,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_099.json"
+      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_062.json"
     },
     {
-      "path_id": "PATH_B_WASTE_MUNICIPAL_100",
+      "path_id": "PATH_B_WASTE_MUNICIPAL_063",
       "path_type": "B",
       "entry_node": "WASTE_MUNICIPAL",
       "entry_type": "industry",
@@ -48,7 +36,7 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_100.json"
+      "href": "/api/citation/path/PATH_B_WASTE_MUNICIPAL_063.json"
     }
   ]
 }

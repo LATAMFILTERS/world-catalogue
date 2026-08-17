@@ -1,9 +1,9 @@
 {
   "entry_key": "TRUCKS_FLEETS",
-  "path_count": 6,
+  "path_count": 5,
   "paths": [
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_091",
+      "path_id": "PATH_B_TRUCKS_FLEETS_056",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -12,22 +12,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_091.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_056.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_092",
-      "path_type": "B",
-      "entry_node": "TRUCKS_FLEETS",
-      "entry_type": "industry",
-      "industry": "TRUCKS_FLEETS",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_092.json"
-    },
-    {
-      "path_id": "PATH_B_TRUCKS_FLEETS_093",
+      "path_id": "PATH_B_TRUCKS_FLEETS_057",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -36,10 +24,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_093.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_057.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_094",
+      "path_id": "PATH_B_TRUCKS_FLEETS_058",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -48,10 +36,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_094.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_058.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_095",
+      "path_id": "PATH_B_TRUCKS_FLEETS_059",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -60,10 +48,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_095.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_059.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_096",
+      "path_id": "PATH_B_TRUCKS_FLEETS_060",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -72,7 +60,7 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_096.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_060.json"
     }
   ]
 }

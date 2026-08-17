@@ -30,8 +30,8 @@ export function buildRecommendation(params: {
     'NANOFORCE™': ['High Pressure Hydraulics'],
     'MICROKAPPA™': ['Cabin Air Filters'],
     'SYNTAPORE™': ['Advanced Fuel Filters'],
-    'SYNTRAX™': ['Air/Oil Separators'],
-    'INTEKCORE™': ['Standard Lube', 'Standard Fuel', 'Standard Air'],
+    'SYNTRAX™': ['Primary Lube Oil Protection'],
+    'INTEKCORE™': ['Standard Air'],
   };
 
   for (const tech of recommendedTechnologies) {

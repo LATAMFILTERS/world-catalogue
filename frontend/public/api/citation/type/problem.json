@@ -23,14 +23,14 @@
         "concept": "Dust Ingestion — Air Intake Problem",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:adb3acb27b3e8f632aa4bb34863826d0a35597155b87da9facf6bffa1273ebae"
+        "content_hash": "sha256:2f3aa0625265ec76b442a4bc5831bc2a81e02a748e2a0773dd9e2572cb48c47c"
       },
       "canonical": {
         "definition": "Dust ingestion — engine contamination via the air intake path — is the leading cause of\npremature abrasive wear in off-highway diesel engines, occurring when ambient particulate\nbypasses or passes through the air filtration system and enters the combustion chamber.",
         "systems": "Air Intake; affected components: turbocharger bearings, piston rings, cylinder walls;\nprimary industries: Mining (EXTREME), Construction (HIGH), Agriculture (HIGH)",
         "failure_impact": "Fine silica and hardrock particles → abrasive wear on piston rings and cylinder walls\n→ blow-by increase → oil contamination → ring sticking → compression loss 10–25%\n→ engine overhaul interval 3,000–5,000 hours vs. 15,000–25,000 hours managed |\nOperational Impact: $21M–$60M+ per event at mining downtime rates ($180,000/hour)",
         "related_standards": "ISO 5011: Air filter efficiency and dust-holding capacity test |\nSAE J1539: Air intake contamination classification defining acceptable limits",
-        "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection — primary prevention |\nINTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals |\nSYNTAPORE: All-synthetic element for humid environments where cellulose media degrades",
+        "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection — primary prevention |\nINTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals",
         "industrial_role": "Dust ingestion is the highest-frequency, highest-cost contamination event in mining and\nconstruction. It is a maintenance discipline failure as much as a product specification\nproblem — correct change interval compliance accounts for the majority of prevention."
       },
       "relationships": {
@@ -40,7 +40,6 @@
         ],
         "resolved_by_technologies": [
           "MACROCORE",
-          "SYNTAPORE",
           "INTEKCORE"
         ],
         "affects_components": [
@@ -84,14 +83,14 @@
         "concept": "Engine Oil Contamination — Lube Circuit Problem",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:4b8a3044d83f87619b563eb245228f6856be9b6690c8039108174307d6997b20"
+        "content_hash": "sha256:a3ea7be6df7e4004958da8a04281dd0ba429d4d22324d6dc5fab0d92cfdc4138"
       },
       "canonical": {
         "definition": "Engine oil contamination — accumulation of abrasive particles in diesel engine lube oil circuits\n— is the most universal contamination failure mode across all engine-powered industrial\nequipment, measurable and preventable via ISO 4406 particle cleanliness code management.",
         "systems": "Lube Oil; affected components: engine bearing journals, piston rings, cylinder walls;\napplies to all 11 industries operating diesel or gasoline-powered equipment",
         "failure_impact": "Particle accumulation in lube oil → abrasive wear on bearing journals and ring surfaces\n→ ISO 4406 code drift from 16/14/11 to 20/18/15+ → bearing clearance growth\n→ oil film pressure loss → metal-to-metal contact under load → thermal seizure |\nOperational Impact: bearing life reduction 50–80%; overhaul interval collapse from\n15,000–25,000 hours to 2,000–5,000 hours under unmanaged contamination",
         "related_standards": "ISO 4406: Particle cleanliness code classification for lube oil circuits (target 16/14/11) |\nISO 16889: Multi-pass Beta ratio filter efficiency test applicable to lube oil full-flow filters",
-        "related_technologies": "SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI |\nNANOFORCE: Sub-micron bypass kidney-loop polishing for fine particle removal from lube oil",
+        "related_technologies": "SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI",
         "industrial_role": "Engine oil contamination is the primary measurable contamination problem in all diesel\nengine applications — every lube circuit operating without ISO 4406 management degrades\npredictably toward bearing failure. It is the primary commercial target of LUBE_PRIMARY\nand the SYNTRAX technology platform, covering all 11 industries."
       },
       "relationships": {
@@ -100,8 +99,7 @@
           "ISO_4406"
         ],
         "resolved_by_technologies": [
-          "SYNTRAX",
-          "NANOFORCE"
+          "SYNTRAX"
         ],
         "affects_components": [
           "ENGINE_BEARING_JOURNAL",
@@ -207,14 +205,14 @@
         "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:f63cab37dbd4408ad203d26cd122ce39e81952c6dc4f38a0c92143ab77b68ff4"
+        "content_hash": "sha256:bd2c086829ce3d3aba670201b6e79d7cf06478267c8c8539bf81b5075b1acc7b"
       },
       "canonical": {
         "definition": "Hydraulic valve failure from contamination — particle and water-induced degradation of\nproportional valve spools and pump components — is the primary precision control failure\nmode in construction, mining, and industrial hydraulic systems.",
         "systems": "Hydraulic; affected components: proportional valve spools and bores, hydraulic pump vanes,\nactuator cylinder seals; primary industries: Construction, Mining, Agriculture, Oil & Gas",
         "failure_impact": "Particle contamination at ISO 19/17/14+ → abrasive wear on 4–20µm valve spool clearances\n→ spool-to-bore clearance growth → leakage increase → control precision loss\n→ stiction at ISO 21/19/16 → control failure |\nOperational Impact: proportional valve life reduction 50–70%; pump replacement cost\n$8,000–$40,000; 24-hour hydraulic failure at mining rates: $4,320,000 lost production",
         "related_standards": "ISO 4406: Cleanliness code classification; target 17/15/12 for proportional valves |\nISO 16889: Beta ratio filter test for hydraulic circuit filtration performance |\nNFPA T2.14: Hydraulic cleanliness requirements for precision servo systems",
-        "related_technologies": "NANOFORCE: High-efficiency hydraulic filtration maintaining ISO 17/15/12 cleanliness codes |\nSYNTRAX: Bypass polishing filtration for fine particle removal from hydraulic circuits",
+        "related_technologies": "NANOFORCE: High-efficiency hydraulic filtration maintaining ISO 17/15/12 cleanliness codes",
         "industrial_role": "Hydraulic valve failure is the highest-cost single-component contamination failure mode\nin construction and mining equipment, where precision hydraulic control is directly linked\nto machine productivity. ISO 4406 cleanliness management is the primary prevention method."
       },
       "relationships": {
@@ -224,8 +222,7 @@
           "NFPA_T214"
         ],
         "resolved_by_technologies": [
-          "NANOFORCE",
-          "SYNTRAX"
+          "NANOFORCE"
         ],
         "recommended_product_families": [
           "HYDRAULIC_PRIMARY"

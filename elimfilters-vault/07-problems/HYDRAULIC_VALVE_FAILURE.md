@@ -32,7 +32,6 @@ industry_frequency:
   - "[[POWER_GENERATION]]"
 resolved_by_technologies:
   - "[[NANOFORCE]]"
-  - "[[SYNTRAX]]"
 applicable_standards:
   - "[[ISO_16889]]"
   - "[[ISO_4406]]"
@@ -75,7 +74,6 @@ Water contamination adds a second failure mode: free water in hydraulic oil form
 
 ### Solution Technologies
 - [[NANOFORCE|NANOFORCE™ — Sub-Micron Particle Removal]] (primary: high-efficiency hydraulic filtration targeting ISO 17/15/12 cleanliness)
-- [[SYNTRAX|SYNTRAX™ — Active Synthetic Lube Oil Protection]] (secondary: bypass polishing to maintain fluid cleanliness codes)
 
 ### Governing Standards
 - [[ISO_16889|ISO 16889]] — multi-pass filter efficiency test (Beta ratio) for hydraulic filtration performance
@@ -94,7 +92,7 @@ HYDRAULIC_VALVE_FAILURE
     ↓ root_contamination
 HYDRAULIC_CONTAMINATION
     ↓ resolved_by
-NANOFORCE (primary), SYNTRAX (secondary)
+NANOFORCE
     ↓ ProductFamily lookup
 HYDRAULIC_PRIMARY (via NANOFORCE)
     ↓ Part Search API
@@ -131,8 +129,7 @@ ISO 16889: Beta ratio filter test for hydraulic circuit filtration performance |
 NFPA T2.14: Hydraulic cleanliness requirements for precision servo systems
 
 RELATED_TECHNOLOGIES
-NANOFORCE: High-efficiency hydraulic filtration maintaining ISO 17/15/12 cleanliness codes |
-SYNTRAX: Bypass polishing filtration for fine particle removal from hydraulic circuits
+NANOFORCE: High-efficiency hydraulic filtration maintaining ISO 17/15/12 cleanliness codes
 
 INDUSTRIAL_ROLE
 Hydraulic valve failure is the highest-cost single-component contamination failure mode

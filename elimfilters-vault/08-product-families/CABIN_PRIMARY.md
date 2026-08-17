@@ -4,7 +4,7 @@ status: active
 key: CABIN_PRIMARY
 label: "Primary Cabin Air Protection"
 slug: cabin-primary
-description: "MICROKAPPA™ cabin air filter elements for operator cab protection in agricultural, construction, mining, and commercial transport equipment. ISO 11155 certified for PM10/PM2.5 capture with activated carbon variants for chemical vapor environments."
+description: "MICROKAPPA™ cabin air filter elements for operator cab protection in agricultural, construction, mining, and commercial transport equipment. Elements are rated to the ISO 11155 PM10/PM2.5 efficiency target specified for the approved application, with activated carbon variants for chemical vapor environments."
 uses_technology: "[[MICROKAPPA]]"
 uses_tech_display: "MICROKAPPA™"
 belongs_to_domain: "[[CABIN]]"
@@ -12,7 +12,7 @@ belongs_to_product_system: "[[CABIN]]"
 meets_standards:
   - "[[ISO_11155]]"
   - "[[DIN_71220]]"
-performance_rating: ">95% PM10; >85% PM2.5 at rated airflow; ISO 11155-1 certified"
+performance_rating: "PM10/PM2.5 efficiency rated per ISO 11155-1 for the approved application; see element datasheet for specific values"
 target_industries:
   - "[[AGRICULTURE]]"
   - "[[BUS_COACH]]"
@@ -40,7 +40,7 @@ This family covers approximately 65 ELIMFILTERS® SKUs spanning:
 - High-flow panel elements for bus and coach HVAC recirculation systems
 - Compact panel elements for railway rolling stock cab ventilation
 
-All elements in this family use MICROKAPPA™ electrostatically-charged synthetic media construction and are ISO 11155-1 certified for PM10 filtration efficiency greater than 95% and PM2.5 efficiency greater than 85% at rated airflow. Activated carbon variants additionally comply with DIN 71220 for gas-phase contaminant (chemical vapor) removal. OEM cross-references cover John Deere, Case IH, AGCO, Caterpillar, Komatsu, Volvo CE, and major bus/coach OEMs.
+All elements in this family use MICROKAPPA™ electrostatically-charged synthetic media construction, rated to the PM10 and PM2.5 efficiency target specified for the approved application per ISO 11155-1. Activated carbon variants additionally comply with DIN 71220 for gas-phase contaminant (chemical vapor) removal. OEM cross-references cover John Deere, Case IH, AGCO, Caterpillar, Komatsu, Volvo CE, and major bus/coach OEMs.
 
 The family is the **terminal product node** in the cabin air Part Search traversal path: a user who presents contamination in the cabin/operator health domain, specifies industry `MINING` or `AGRICULTURE`, and selects technology `MICROKAPPA` will be directed to SKUs from this family.
 
@@ -98,7 +98,8 @@ DEFINITION
 Primary Cabin Air Protection — the MICROKAPPA™-technology cabin air filter element
 family for operator health protection in heavy-duty equipment cabs, covering approximately
 65 SKUs across agricultural, construction, mining, bus/coach, railway, and waste
-management applications, ISO 11155-1 certified to >95% PM10 and >85% PM2.5 efficiency.
+management applications, rated to the PM10 and PM2.5 efficiency target specified for
+the approved application per ISO 11155-1.
 
 SYSTEMS
 Cabin air filtration domain; belongs to CABIN product-line system; implements MICROKAPPA™

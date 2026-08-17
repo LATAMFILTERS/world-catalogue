@@ -21,14 +21,14 @@
     "concept": "ISO 16889 Filter Multi-Pass Test Method",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:bb0e49d4cd81c3a74b66b51d41fd0631e60e406084f1c5e995d4cbcf9077ed2e"
+    "content_hash": "sha256:693165d03bbaaec704737d2caefc81575ae4198160a53c8a1dc1560501710cee"
   },
   "canonical": {
     "definition": "ISO 16889 specifies the multi-pass test method for measuring filter element efficiency (Beta ratio) in hydraulic and lube oil systems, using ISO Medium Test Dust (ISO 12103-1 A3) to calculate particle capture efficiency across defined size classes (β₆, β₁₀, β₁₆, β₂₅).",
     "systems": "Hydraulic fluid power systems, engine lube oil circuits, fuel filtration systems",
     "failure_impact": "Filters without ISO 16889 certified Beta ratios cannot be verified for actual particle capture efficiency → assumed performance diverges from actual → ISO 4406 cleanliness targets are not met → particles above 10–15 µm remain in oil → abrasive bearing wear → clearance loss → seizure at 3,000–5,000 hours instead of 15,000–25,000 hours.",
     "related_standards": "ISO 4406: Three-number cleanliness code (≥4/≥6/≥14 µm) that ISO 16889 Beta ratio performance enables and validates | SAE J1539: Air intake cleanliness standard (parallel domain — air-side particle control)",
-    "related_technologies": "NANOFORCE: Sub-micron particle removal rated at Beta(x[c]) ≥ 1000 at 5 µm absolute under ISO 16889 multi-pass methodology | SYNTRAX: Full-flow lube filter ISO 16889 tested to achieve 16/14/11 cleanliness target",
+    "related_technologies": "NANOFORCE: Sub-micron hydraulic particle removal rated under ISO 16889 multi-pass methodology to the Beta ratio specified for the approved application | SYNTRAX: Full-flow lube filter ISO 16889 tested to the Beta ratio and cleanliness target specified for the approved application",
     "industrial_role": "ISO 16889 Beta ratio is the only quantitative performance metric that converts a filter product specification into a verifiable contamination control capability — it is the engineering basis for achieving and maintaining ISO 4406 cleanliness targets in hydraulic and lube systems."
   },
   "relationships": {

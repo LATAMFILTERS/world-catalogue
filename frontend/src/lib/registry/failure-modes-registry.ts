@@ -140,7 +140,7 @@ export const FAILURE_MODES_REGISTRY: Record<string, FailureModeRecord> = {
     causeChain:
       'SCA depletion below protective threshold (nitrite/molybdate inhibitor below 0.3 SCA units/L) → liner surface passivation layer lost → vapor bubbles form at liner outer surface during combustion pressure pulses → cavitation implosion at liner surface removes metal at 0.01–0.1 mm/1,000 hours → liner wall perforation → coolant-oil mixing → engine seizure',
     measurableConsequence:
-      'Liner perforation rate without SCA: 500–1,000 hours in high-load diesel. With maintained THERMACORE SCA: liner life to engine design life (15,000–20,000 hours). Perforation reduces liner wall from 8–12 mm to failure thickness.',
+      'Liner perforation rate without SCA protection can occur well short of engine design life in high-load diesel applications. Maintaining SCA concentration within the range specified for the approved application is a primary lever for extending liner life toward engine design life; the specific hours achieved must be confirmed by coolant condition monitoring rather than assumed. Perforation reduces liner wall from 8–12 mm to failure thickness.',
     industrialImpact:
       'Liner replacement per engine: USD 5,000–25,000 plus 3–7 day overhaul. Catastrophic coolant-oil mixing causes bearing seizure: additional USD 30,000–100,000 repair. Fleet operators without SCA management report liner cavitation as the leading cause of catastrophic engine failure beyond 2,000 hours.',
     relevantStandardRefs: ['ASTM D3306', 'ASTM D6210', 'SAE J1941'],

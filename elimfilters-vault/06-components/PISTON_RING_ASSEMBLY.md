@@ -45,7 +45,7 @@ Two-body and three-body particle wear mechanisms operate simultaneously at the r
 
 ### Protected By Technologies
 - [[MACROCORE|MACROCORE — Air intake particle capture prevents silica and environmental dust from entering combustion chamber and contacting ring-to-wall interface]]
-- [[SYNTRAX|SYNTRAX — Full-flow lube filtration at ISO 4406 16/14/11 reduces particle concentration in oil film at ring-to-wall interface, preventing abrasive micro-cutting]]
+- [[SYNTRAX|SYNTRAX — Full-flow lube filtration at the ISO 4406 target specified for the approved application reduces particle concentration in oil film at ring-to-wall interface, preventing abrasive micro-cutting]]
 
 ### Protection Standards
 - [[ISO_5011|ISO 5011 — Inlet air cleaning equipment test standard; performance criteria that determine particle ingestion rate reaching the ring-to-wall interface]]
@@ -75,7 +75,7 @@ RELATED_STANDARDS
 ISO 5011: Air intake filtration performance standard governing particle ingestion rate reaching ring-to-wall interface | ISO 4406: Lube oil cleanliness code governing particle concentration in oil film at cylinder bore
 
 RELATED_TECHNOLOGIES
-MACROCORE: Air intake particle capture preventing silica and environmental dust from entering combustion chamber | SYNTRAX: Full-flow lube filtration at ISO 4406 16/14/11 reducing abrasive particle concentration in oil film at ring-to-wall interface
+MACROCORE: Air intake particle capture preventing silica and environmental dust from entering combustion chamber | SYNTRAX: Full-flow lube filtration at the ISO 4406 target specified for the approved application, reducing abrasive particle concentration in oil film at ring-to-wall interface
 
 INDUSTRIAL_ROLE
 The piston ring assembly is the primary mechanical failure point converting air intake and lube oil contamination events into compression loss and blow-by — it is the component where air filtration and lube filtration system performance directly determines whether an engine operates 15,000+ hours or requires overhaul at 3,000–5,000 hours.

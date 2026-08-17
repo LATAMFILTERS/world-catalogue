@@ -1,9 +1,9 @@
 {
   "entry_key": "BUS_COACH",
-  "path_count": 4,
+  "path_count": 3,
   "paths": [
     {
-      "path_id": "PATH_B_BUS_COACH_032",
+      "path_id": "PATH_B_BUS_COACH_021",
       "path_type": "B",
       "entry_node": "BUS_COACH",
       "entry_type": "industry",
@@ -12,22 +12,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_032.json"
+      "href": "/api/citation/path/PATH_B_BUS_COACH_021.json"
     },
     {
-      "path_id": "PATH_B_BUS_COACH_033",
-      "path_type": "B",
-      "entry_node": "BUS_COACH",
-      "entry_type": "industry",
-      "industry": "BUS_COACH",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_033.json"
-    },
-    {
-      "path_id": "PATH_B_BUS_COACH_034",
+      "path_id": "PATH_B_BUS_COACH_022",
       "path_type": "B",
       "entry_node": "BUS_COACH",
       "entry_type": "industry",
@@ -36,10 +24,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_034.json"
+      "href": "/api/citation/path/PATH_B_BUS_COACH_022.json"
     },
     {
-      "path_id": "PATH_B_BUS_COACH_035",
+      "path_id": "PATH_B_BUS_COACH_023",
       "path_type": "B",
       "entry_node": "BUS_COACH",
       "entry_type": "industry",
@@ -48,7 +36,7 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_BUS_COACH_035.json"
+      "href": "/api/citation/path/PATH_B_BUS_COACH_023.json"
     }
   ]
 }

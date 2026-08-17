@@ -55,7 +55,7 @@ RELATED_STANDARDS
 ASTM D6304: Coulometric Karl Fischer water measurement in petroleum products | ISO 12937: International Karl Fischer method for water in petroleum products and diesel fuel cleanliness programs.
 
 RELATED_TECHNOLOGIES
-TURBOCORE: Water-separating fuel protection technology | SYNTAPORE: Synthetic fuel media supporting particle control and stable performance in fuel cleanliness systems.
+TURBOCORE: Water-separating fuel protection technology | SYNTAPORE: Diesel-fuel particulate filtration technology for primary, secondary and cartridge fuel-filter applications within fuel cleanliness systems.
 
 INDUSTRIAL_ROLE
 Fuel Cleanliness Protection determines whether stored or delivered diesel becomes a controlled energy source or a contamination pathway into injectors, pumps, generators, vessels, locomotives, trucks, and off-highway equipment.

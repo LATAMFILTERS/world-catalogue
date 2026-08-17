@@ -16,7 +16,6 @@ relevant_contamination:
   - "[[CABIN_AIR_CONTAMINATION]]"
 applicable_technologies:
   - "[[MACROCORE]]"
-  - "[[SYNTAPORE]]"
   - "[[SYNTRAX]]"
   - "[[INTEKCORE]]"
   - "[[MICROKAPPA]]"
@@ -45,7 +44,7 @@ Railway is a HIGH contamination exposure industry for diesel-powered locomotive 
 
 Maintenance of Way (MoW) vehicles — rail ballast regulators, tampers, track inspection vehicles, and rail-mounted cranes — operate in environments with continuous respirable crystalline silica exposure from ballast stone crushing and rail grinding operations. Locomotive cab crew on MoW equipment face elevated cumulative RCS exposure from ballast maintenance activities that generate fine silica dust exceeding occupational exposure limits without compliant ISO 11155-certified cabin air filtration. Diesel fuel water contamination in railway equipment is driven by the same condensation mechanism that affects other diesel applications — partially filled fuel tanks undergoing temperature cycling — amplified by the extended service intervals common in railway maintenance schedules, which allow water accumulation and microbial growth in tanks between fuel draw-down events.
 
-Hydraulic systems on rail-mounted cranes and track maintenance equipment require ISO 16889-compliant filtration to protect proportional valve control systems used in precision track alignment and ballast compaction operations. Contamination ingress via breather systems on equipment parked outdoors across wide temperature ranges is a documented failure mode in railway maintenance equipment hydraulic circuits. Air intake filtration for locomotive diesel engines must meet SAE J1539 air cleanliness specifications for high-displacement engines operating in dusty railway infrastructure environments; SYNTAPORE synthetic media maintains filtration efficiency across the high-humidity and low-humidity extremes encountered across railway operating territories.
+Hydraulic systems on rail-mounted cranes and track maintenance equipment require ISO 16889-compliant filtration to protect proportional valve control systems used in precision track alignment and ballast compaction operations. Contamination ingress via breather systems on equipment parked outdoors across wide temperature ranges is a documented failure mode in railway maintenance equipment hydraulic circuits. Air intake filtration for locomotive diesel engines must meet SAE J1539 air cleanliness specifications for high-displacement engines operating in dusty railway infrastructure environments across the high-humidity and low-humidity extremes encountered across railway operating territories.
 
 ## Relationships
 
@@ -56,10 +55,9 @@ Hydraulic systems on rail-mounted cranes and track maintenance equipment require
 
 ### Applicable Technologies
 - [[MACROCORE|MACROCORE — Heavy-duty air intake filtration for locomotive diesel engines operating in railway infrastructure dust environments with track ballast silica and urban particulate]]
-- [[SYNTAPORE|SYNTAPORE — Synthetic media air intake filtration for locomotive engines requiring humidity-resistant media performance across diverse railway operating territory climates]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration for locomotive diesel engine crankshaft bearing protection across extended high-load maintenance intervals]]
-- [[INTEKCORE|INTEKCORE — Hydraulic filtration for rail-mounted crane and track maintenance equipment proportional valve protection in outdoor contamination environments]]
-- [[MICROKAPPA|MICROKAPPA — ISO 11155-certified cabin air filtration for MoW vehicle crew protection from respirable crystalline silica and diesel particulate matter in ballast and rail grinding operations]]
+- [[INTEKCORE|INTEKCORE — Zero-bypass air-cleaner housing and sealing for locomotive air intake systems in high-vibration railway operating environments]]
+- [[MICROKAPPA|MICROKAPPA — Cabin air filtration for MoW vehicle crew protection from respirable crystalline silica and diesel particulate matter in ballast and rail grinding operations, rated to the ISO 11155 target specified for the approved application]]
 
 ### Applicable Standards
 - [[ISO_5011|ISO 5011 — Air filtration performance test standard; governs locomotive engine air filter selection for railway applications]]
@@ -85,7 +83,7 @@ RELATED_STANDARDS
 ISO 5011: Air filtration performance test for locomotive engine intake systems | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic filtration on rail-mounted equipment | ISO 11155: Cabin air filter test standard for MoW vehicle operator respiratory protection
 
 RELATED_TECHNOLOGIES
-SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at ISO 4406 16/14/11 | SYNTAPORE: Humidity-resistant synthetic media air intake filtration for locomotive engines | MICROKAPPA: ISO 11155-certified cabin filtration for MoW vehicle crew RCS protection | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Hydraulic filtration for rail-mounted equipment proportional valve protection
+SYNTRAX: Full-flow lube filtration for locomotive engine bearing protection at the ISO 4406 target specified for the approved application | MICROKAPPA: Cabin filtration for MoW vehicle crew RCS protection, rated to the ISO 11155 target specified for the approved application | MACROCORE: Heavy-duty pre-cleaner for locomotive air intake in high-dust railway environments | INTEKCORE: Zero-bypass air-cleaner housing and sealing for locomotive air intake systems
 
 INDUSTRIAL_ROLE
 Railway filtration engineering is dominated by locomotive overhaul economics — at $500,000–$2,000,000 per overhaul event, lube oil contamination control via ISO 4406-compliant full-flow filtration is the single highest-leverage maintenance investment available to railway fleet operators; simultaneously, MoW operator cabin filtration represents the primary occupational health compliance mechanism in ballast and rail grinding operations.

@@ -16,7 +16,6 @@ relevant_contamination:
 applicable_technologies:
   - "[[MACROCORE]]"
   - "[[SYNTRAX]]"
-  - "[[NANOFORCE]]"
 applicable_standards:
   - "[[ISO_5011]]"
   - "[[SAE_J1539]]"
@@ -53,7 +52,6 @@ Fleet management vehicles — company car pools, rental fleets, and utility vehi
 ### Applicable Technologies
 - [[MACROCORE|MACROCORE — Air intake filtration for passenger car and light commercial vehicle diesel engines; controls highway ambient particle ingestion (5–15 mg/m³) to maintain SAE J1539 air cleanliness for engine intake systems]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube oil filtration for passenger and light commercial vehicle diesel engines at ISO 16889 Beta efficiency; synthetic media maintains consistent particle capture across stop-start urban and highway thermal cycling]]
-- [[NANOFORCE|NANOFORCE — Sub-micron particle removal for high-performance diesel engine lube circuits where ultrafine particle accumulation at turbocharger shaft bearings and injector pilot nozzles is a primary wear mechanism]]
 
 ### Applicable Standards
 - [[ISO_5011|ISO 5011 — Air filtration performance test standard for passenger car and light commercial vehicle engine air intake filter qualification]]
@@ -79,7 +77,7 @@ RELATED_STANDARDS
 ISO 5011: Air intake filtration performance test for automotive diesel engine applications | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio lube filtration selection standard | ISO 4406: Particle cleanliness code classification for lube oil condition monitoring
 
 RELATED_TECHNOLOGIES
-MACROCORE: Air intake filtration for automotive diesel engines in highway ambient particle environments | SYNTRAX: Full-flow lube filtration at ISO 16889 Beta efficiency for automotive diesel bearing protection | NANOFORCE: Sub-micron lube particle removal for high-performance diesel turbocharger and injector protection
+MACROCORE: Air intake filtration for automotive diesel engines in highway ambient particle environments | SYNTRAX: Full-flow lube filtration at ISO 16889 Beta efficiency for automotive diesel bearing protection
 
 INDUSTRIAL_ROLE
 Automotive diesel engine contamination control is determined by the intersection of common-rail injection system sensitivity to particle and water contamination at high operating pressures (1,600–2,000 bar), turbocharger shaft bearing sensitivity to sub-micron particles in lube circuits, and fleet management economics where systematic ISO 4406-monitored lube filtration extends engine service intervals and reduces unplanned bearing failures across vehicle populations.

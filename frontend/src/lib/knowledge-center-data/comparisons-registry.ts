@@ -946,7 +946,7 @@ export const KC_COMPARISONS: KCComparison[] = [
     ],
 
     relatedStandards:    ['iso-16332', 'iso-12937', 'astm-d6304'],
-    relatedTechnologies: ['SYNTAPORE', 'TURBOCORE', 'TURBOCORE'],
+    relatedTechnologies: ['SYNTAPORE', 'HYDROCORE'],
     relatedSystems:      ['fuel'],
     relatedTerms:        ['water-contamination', 'filtration-efficiency', 'differential-pressure', 'beta-ratio'],
     relatedArticles:     ['diesel-fuel-filtration', 'hpcr-fuel-system-cleanliness', 'water-contamination-fuel', 'service-intervals'],

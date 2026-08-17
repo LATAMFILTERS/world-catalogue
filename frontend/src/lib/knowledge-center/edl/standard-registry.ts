@@ -160,7 +160,7 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
-    implementedByTechnologies: ['TECH-TURBOCORE', 'TECH-SYNTAPORE', 'TECH-TURBOCORE'],
+    implementedByTechnologies: ['TECH-TURBOCORE'],
     addressesProblems: ['PROB-WATER-INGRESS', 'PROB-FUEL-CONTAMINATION', 'PROB-MICROBIAL-GROWTH'],
   },
 
@@ -176,7 +176,7 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
-    implementedByTechnologies: ['TECH-TURBOCORE', 'TECH-SYNTAPORE', 'TECH-TURBOCORE'],
+    implementedByTechnologies: ['TECH-TURBOCORE'],
     addressesProblems: [
       'PROB-WATER-INGRESS',
       'PROB-FUEL-CONTAMINATION',
@@ -245,7 +245,7 @@ export const EDL_STANDARDS: EDLStandardRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
-    implementedByTechnologies: ['TECH-TURBOCORE', 'TECH-SYNTAPORE'],
+    implementedByTechnologies: ['TECH-TURBOCORE'],
     addressesProblems: ['PROB-FUEL-CONTAMINATION', 'PROB-INJECTOR-WEAR'],
   },
 

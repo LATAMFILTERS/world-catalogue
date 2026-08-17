@@ -309,7 +309,7 @@ function DustIngestionContent() {
               {
                 tech: 'MACROCORE™',
                 role: 'Primary air intake protection',
-                description: 'Progressive Density Gradient (PDG) filtration media achieving 99.9%–99.98% efficiency (ISO 5011) for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. Primary protection for mining-class and agricultural engine applications.',
+                description: 'Multi-layer filtration media rated per ISO 5011 for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. Primary protection for mining-class and agricultural engine applications.',
                 href: '/engineering/technologies/TECH-MACROCORE',
               },
               {

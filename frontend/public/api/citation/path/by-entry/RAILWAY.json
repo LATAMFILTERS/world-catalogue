@@ -1,9 +1,9 @@
 {
   "entry_key": "RAILWAY",
-  "path_count": 4,
+  "path_count": 3,
   "paths": [
     {
-      "path_id": "PATH_B_RAILWAY_087",
+      "path_id": "PATH_B_RAILWAY_053",
       "path_type": "B",
       "entry_node": "RAILWAY",
       "entry_type": "industry",
@@ -12,22 +12,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_RAILWAY_087.json"
+      "href": "/api/citation/path/PATH_B_RAILWAY_053.json"
     },
     {
-      "path_id": "PATH_B_RAILWAY_088",
-      "path_type": "B",
-      "entry_node": "RAILWAY",
-      "entry_type": "industry",
-      "industry": "RAILWAY",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_RAILWAY_088.json"
-    },
-    {
-      "path_id": "PATH_B_RAILWAY_089",
+      "path_id": "PATH_B_RAILWAY_054",
       "path_type": "B",
       "entry_node": "RAILWAY",
       "entry_type": "industry",
@@ -36,10 +24,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_RAILWAY_089.json"
+      "href": "/api/citation/path/PATH_B_RAILWAY_054.json"
     },
     {
-      "path_id": "PATH_B_RAILWAY_090",
+      "path_id": "PATH_B_RAILWAY_055",
       "path_type": "B",
       "entry_node": "RAILWAY",
       "entry_type": "industry",
@@ -48,7 +36,7 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_RAILWAY_090.json"
+      "href": "/api/citation/path/PATH_B_RAILWAY_055.json"
     }
   ]
 }

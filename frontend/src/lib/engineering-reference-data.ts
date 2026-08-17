@@ -728,7 +728,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       {
         term: 'Cabin air filtration',
         definition:
-          'Operator cabin filters protect personnel from ambient particulate (PM₂.₅, PM₁₀, silica dust, grain dust, bioaerosols) and gas-phase contamination. Mining and construction cabs may have silica concentrations exceeding 100× the OSHA PEL. MICROKAPPA™ elements provide H13-class PM₂.₅ efficiency per ISO 11155-2.',
+          'Operator cabin filters protect personnel from ambient particulate (PM₂.₅, PM₁₀, silica dust, grain dust, bioaerosols) and gas-phase contamination. Mining and construction cabs may have silica concentrations exceeding 100× the OSHA PEL. MICROKAPPA™ elements are rated to the PM₂.₅ efficiency class specified for the approved application per ISO 11155-2.',
       },
       {
         term: 'Dust concentration by industry',
@@ -738,13 +738,13 @@ export const ERL_SECTIONS: ERLSection[] = [
       {
         term: 'PM₂.₅ and PM₁₀',
         definition:
-          'Respirable particulate matter classifications: PM₁₀ = particles ≤10 µm aerodynamic diameter; PM₂.₅ = particles ≤2.5 µm. PM₂.₅ penetrates deepest into the respiratory tract. ISO 11155-2 measures cabin filter efficiency against PM₂.₅. MICROKAPPA™ achieves H13-class efficiency at PM₂.₅.',
+          'Respirable particulate matter classifications: PM₁₀ = particles ≤10 µm aerodynamic diameter; PM₂.₅ = particles ≤2.5 µm. PM₂.₅ penetrates deepest into the respiratory tract. ISO 11155-2 measures cabin filter efficiency against PM₂.₅. MICROKAPPA™ is rated to the PM₂.₅ efficiency class specified for the approved application, up to H13-class where required.',
       },
     ],
     engineeringMetrics: [
       { label: 'Mining dust concentration', value: '0.1–5 mg/m³' },
       { label: 'Harvest dust concentration', value: '500–2,000 mg/m³ (combine proximity)' },
-      { label: 'DRYCORE™ instrument air class', value: 'ISO 8573-1 Class 1:4:1', standard: 'ISO 8573-1' },
+      { label: 'DRYCORE™ moisture control', value: 'Per approved pneumatic brake-system application', standard: 'ISO 8573-1' },
       { label: 'NA engine restriction limit', value: '25 mbar / 10 inH₂O', standard: 'ISO 5011' },
       { label: 'Silica Mohs hardness', value: '7 (vs steel 5–6.5)' },
     ],

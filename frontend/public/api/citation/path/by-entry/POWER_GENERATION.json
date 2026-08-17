@@ -1,9 +1,9 @@
 {
   "entry_key": "POWER_GENERATION",
-  "path_count": 9,
+  "path_count": 5,
   "paths": [
     {
-      "path_id": "PATH_B_POWER_GENERATION_078",
+      "path_id": "PATH_B_POWER_GENERATION_048",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -12,22 +12,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_078.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_048.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_079",
-      "path_type": "B",
-      "entry_node": "POWER_GENERATION",
-      "entry_type": "industry",
-      "industry": "POWER_GENERATION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_079.json"
-    },
-    {
-      "path_id": "PATH_B_POWER_GENERATION_080",
+      "path_id": "PATH_B_POWER_GENERATION_049",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -36,10 +24,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_080.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_049.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_081",
+      "path_id": "PATH_B_POWER_GENERATION_050",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -48,10 +36,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_081.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_050.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_082",
+      "path_id": "PATH_B_POWER_GENERATION_051",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -60,10 +48,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_082.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_051.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_083",
+      "path_id": "PATH_B_POWER_GENERATION_052",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -72,43 +60,7 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_083.json"
-    },
-    {
-      "path_id": "PATH_B_POWER_GENERATION_084",
-      "path_type": "B",
-      "entry_node": "POWER_GENERATION",
-      "entry_type": "industry",
-      "industry": "POWER_GENERATION",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_084.json"
-    },
-    {
-      "path_id": "PATH_B_POWER_GENERATION_085",
-      "path_type": "B",
-      "entry_node": "POWER_GENERATION",
-      "entry_type": "industry",
-      "industry": "POWER_GENERATION",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_085.json"
-    },
-    {
-      "path_id": "PATH_B_POWER_GENERATION_086",
-      "path_type": "B",
-      "entry_node": "POWER_GENERATION",
-      "entry_type": "industry",
-      "industry": "POWER_GENERATION",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_086.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_052.json"
     }
   ]
 }
