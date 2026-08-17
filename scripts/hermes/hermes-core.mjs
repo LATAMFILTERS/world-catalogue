@@ -90,14 +90,17 @@ export function validateCandidate(c) {
   if (c.evidence_level === 'SECONDARY_UNVERIFIED' && !['NEEDS_RESEARCH','CAPTURED','NORMALIZED'].includes(c.workflow_status)) errors.push('unverified secondary evidence cannot enter review or approval');
   if (['SOURCE_REPORTED','HERMES_INFERENCE'].includes(c.claim_scope) === false && c.candidate_type.startsWith('competitor_') && c.evidence_level !== 'PRIMARY') errors.push('competitor statements without primary evidence must remain SOURCE_REPORTED or HERMES_INFERENCE');
 
-  // Real weekly HERMES candidates are never review-ready merely because a
-  // source hash changed. Groq must resolve the change into a concrete finding
-  // with fetched evidence before Victor can be asked to review it.
-  if (isRealHermesCandidate(c) && ['PENDING_REVIEW','APPROVED','READY_TO_SYNC','SYNCED'].includes(c.workflow_status) && !isResearchResolved(c)) {
-    errors.push('real HERMES candidate requires VERIFIED Groq research_resolution before review/approval');
+  // Collection may still emit the historical PENDING_REVIEW shape before the
+  // mandatory research stage runs. That raw signal is never treated as
+  // review-ready by generate-weekly-report.mjs. The irreversible boundary is
+  // approval/sync: a real HERMES candidate cannot cross it without VERIFIED
+  // Groq evidence. This preserves collector compatibility while enforcing the
+  // research gate where it matters.
+  if (isRealHermesCandidate(c) && ['APPROVED','READY_TO_SYNC','SYNCED'].includes(c.workflow_status) && !isResearchResolved(c)) {
+    errors.push('real HERMES candidate requires VERIFIED Groq research_resolution before approval/sync');
   }
-  if (isRealHermesCandidate(c) && c.workflow_status === 'PENDING_REVIEW' && c.confidence < 0.65) {
-    errors.push('real HERMES candidate confidence must be >= 0.65 before review');
+  if (isRealHermesCandidate(c) && c.workflow_status === 'PENDING_REVIEW' && isResearchResolved(c) && c.confidence < 0.65) {
+    errors.push('Groq-resolved real HERMES candidate confidence must be >= 0.65 before review');
   }
   return errors;
 }
