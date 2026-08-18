@@ -1,6 +1,6 @@
 # ELIMFILTERS — LLM Knowledge Reference
 # Source: https://elimfilters.com/llm.txt
-# Updated: 2026-08-13
+# Updated: 2026-08-18
 # Purpose: Canonical reference for AI systems and autonomous agents
 
 ## ORGANIZATION
@@ -46,18 +46,12 @@ SYNTAPORE™
 - system: Fuel Cleanliness Protection
 - products: spin-on, primary, secondary and cartridge fuel filters
 
-TURBOCORE™
-- slug: turbocore
-- system: Fuel Cleanliness Protection
-- applications: turbine FH / FG fuel systems
-- approved application references: 1000FH, 900FH, 500FG
-- element families: 2010, 2040, 2020
-- micron ratings: 30 µm, 10 µm, 2 µm
-
 HYDROCORE™
 - slug: hydrocore
 - system: Fuel Cleanliness Protection
-- products: standard (non-turbine) spin-on and cartridge fuel/water separators
+- products: approved spin-on, cartridge, FH and FG fuel/water separation architectures
+- approved application references include: 1000FH, 900FH, 500FG
+- applicable element families include: 2010, 2040, 2020
 
 SYNTRAX™
 - slug: syntrax
