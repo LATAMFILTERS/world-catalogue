@@ -6,7 +6,10 @@ function headers(values = {}) {
   return { get: (name) => values[name.toLowerCase()] ?? null };
 }
 
-test('429 uses retry-after/token reset and never treats request RPD reset as TPM delay', async () => {
+const init = { method: 'POST', body: JSON.stringify({ messages: [{ role: 'system', content: 'test' }] }) };
+const endpoint = 'https://api.groq.com/openai/v1/chat/completions';
+
+test('429 uses the longest relevant TPM recovery signal and ignores request RPD reset', async () => {
   let calls = 0;
   const sleeps = [];
   const baseFetch = async () => {
@@ -27,15 +30,61 @@ test('429 uses retry-after/token reset and never treats request RPD reset as TPM
     return { ok: true, status: 200, headers: headers({}) };
   };
 
-  const response = await createResilientFetch(baseFetch, async (ms) => { sleeps.push(ms); })(
-    'https://api.groq.com/openai/v1/chat/completions',
-    { method: 'POST', body: JSON.stringify({ messages: [{ role: 'system', content: 'test' }] }) }
-  );
+  const response = await createResilientFetch(baseFetch, async (ms) => { sleeps.push(ms); })(endpoint, init);
 
   assert.equal(response.ok, true);
   assert.equal(calls, 2);
-  assert.ok(sleeps.some((ms) => ms >= 3000 && ms < 10000));
-  assert.equal(sleeps.some((ms) => ms >= 90000), false);
+  assert.ok(sleeps.some((ms) => ms >= 11500 && ms < 120000));
+  assert.equal(sleeps.some((ms) => ms >= 12 * 60 * 60 * 1000), false);
+});
+
+test('short retry-after cannot override a longer token reset', async () => {
+  let calls = 0;
+  const sleeps = [];
+  const baseFetch = async () => {
+    calls += 1;
+    if (calls === 1) {
+      return {
+        ok: false,
+        status: 429,
+        headers: headers({
+          'retry-after': '0.6',
+          'x-ratelimit-remaining-requests': '1000',
+          'x-ratelimit-reset-tokens': '20s'
+        }),
+        text: async () => '{"error":{"message":"Please try again in 1.1s"}}'
+      };
+    }
+    return { ok: true, status: 200, headers: headers({}) };
+  };
+
+  const response = await createResilientFetch(baseFetch, async (ms) => { sleeps.push(ms); })(endpoint, init);
+  assert.equal(response.ok, true);
+  assert.equal(calls, 2);
+  assert.ok(sleeps.some((ms) => ms >= 21500));
+});
+
+test('repeated 429 is capped at three total calls per domain', async () => {
+  let calls = 0;
+  const sleeps = [];
+  const baseFetch = async () => {
+    calls += 1;
+    return {
+      ok: false,
+      status: 429,
+      headers: headers({
+        'retry-after': '1',
+        'x-ratelimit-remaining-requests': '1000',
+        'x-ratelimit-reset-tokens': '2s'
+      }),
+      text: async () => '{"error":{"message":"rate limit"}}'
+    };
+  };
+
+  const response = await createResilientFetch(baseFetch, async (ms) => { sleeps.push(ms); })(endpoint, init);
+  assert.equal(response.ok, false);
+  assert.equal(calls, 3);
+  assert.equal(sleeps.filter((ms) => ms >= 10000).length, 2);
 });
 
 test('successful low-token response triggers proactive pacing before next Groq call', async () => {
@@ -60,10 +109,9 @@ test('successful low-token response triggers proactive pacing before next Groq c
   };
 
   const resilient = createResilientFetch(baseFetch, async (ms) => { sleeps.push(ms); });
-  const init = { method: 'POST', body: JSON.stringify({ messages: [{ role: 'system', content: 'test' }] }) };
-  await resilient('https://api.groq.com/openai/v1/chat/completions', init);
-  await resilient('https://api.groq.com/openai/v1/chat/completions', init);
+  await resilient(endpoint, init);
+  await resilient(endpoint, init);
 
   assert.equal(calls, 2);
-  assert.ok(sleeps.some((ms) => ms >= 9000));
+  assert.ok(sleeps.some((ms) => ms >= 9500));
 });
