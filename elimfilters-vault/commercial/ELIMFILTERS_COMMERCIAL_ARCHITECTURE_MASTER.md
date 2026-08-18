@@ -1,12 +1,11 @@
 # ELIMFILTERS® COMMERCIAL ARCHITECTURE
 ## Master Doctrine — Permanent Reference
-### Version 2.0 | Effective: 2026-06-28 | Status: MASTER — Supersedes All Prior Versions
+### Version 2.1 | Effective: 2026-08-18 | Status: MASTER — Supersedes All Prior Versions
 
 ---
 
 > This document is the authoritative commercial doctrine of ELIMFILTERS®.
-> All prior commercial architecture documents are superseded by this version.
-> Do not amend without formal authorization and version control update.
+> Version 2.1 preserves the Heavy Duty / Light Duty architecture, Asset Protection positioning, distributor-first channel logic, and 80/20 resource allocation established in Version 2.0 while formally integrating the global engineering, manufacturing, validation, AI-assisted auditing, lean-operations, and partner-value model approved on 2026-08-18.
 
 ---
 
@@ -15,27 +14,39 @@
 | Field | Value |
 |---|---|
 | Document | ELIMFILTERS_COMMERCIAL_ARCHITECTURE_MASTER |
-| Version | 2.0 |
+| Version | 2.1 |
 | Status | Master — Permanent Doctrine |
-| Effective Date | 2026-06-28 |
+| Effective Date | 2026-08-18 |
 | Location | elimfilters-vault/commercial/ |
-| Supersedes | MARKET_ARCHITECTURE_AND_PROFITABILITY_STRATEGY v1.0 (elimfilters-vault/10-commercial/) |
+| Supersedes | Version 2.0 dated 2026-06-28 |
 | Authority | ELIMFILTERS® Commercial Leadership |
 | Amendment Rule | Requires explicit authorization and formal version increment |
+
+### Version 2.1 Amendment Scope
+
+This amendment does not replace the established commercial architecture. It strengthens it by adding the operating system that explains how ELIMFILTERS creates and preserves value from engineering through the commercial partner.
+
+The approved value chain is:
+
+**Engineering → Manufacturing → Validation → Intelligence → Lean Operations → Commercial Partner → Asset Protection**
+
+The commercial partner is not treated as an endpoint reseller. The partner is an integral value-creation layer in the ELIMFILTERS system.
 
 ---
 
 ## 1. Executive Summary
 
-ELIMFILTERS® operates as an industrial Asset Protection Company, not a filter supplier.
+ELIMFILTERS® operates as an Asset Protection Company, not a commodity filter supplier.
 
-The company develops, deploys, and supports contamination control technologies across critical mechanical systems in heavy industry, commercial fleets, and industrial operations worldwide.
+The company develops, deploys, and supports contamination-control technologies across critical mechanical systems in heavy industry, commercial fleets, equipment, and automotive applications worldwide.
 
-The commercial architecture of ELIMFILTERS® is organized around two strategic segments — Heavy Duty and Light Duty — with resources allocated in deliberate proportion to serve distinct strategic functions. Heavy Duty generates profitability and technical authority. Light Duty generates market reach and commercial intelligence.
+The commercial architecture is organized around two strategic segments — Heavy Duty and Light Duty — with resources allocated in deliberate proportion to serve distinct strategic functions. Heavy Duty generates profitability and technical authority. Light Duty, including automotive, generates market reach, recurring demand, distributor density, and commercial intelligence.
 
-The primary economic unit is the Protected Asset, not the filter product. Commercial success is measured by the breadth and depth of asset protection coverage across critical systems, industries, and geographies.
+The primary economic unit is the Protected Asset, not the filter product. Commercial success is measured by the breadth and depth of protection coverage across critical systems, industries, assets, and geographies.
 
-Distribution is built through regional partners selected for asset access, not purchase volume. Strategic accounts are developed for long-term integration, not transactional sales. Commercial Intelligence accumulated through every interaction is a permanent corporate asset.
+Distribution is built through regional partners selected for asset access, technical capability, local execution, and long-term market development rather than purchase volume alone. Strategic accounts are developed for long-term integration rather than transactional sales. Commercial Intelligence accumulated through every interaction is a permanent corporate asset.
+
+ELIMFILTERS combines global engineering, qualified manufacturing, physical validation, AI-assisted auditing, human quality oversight, product intelligence, and a lean technology-enabled operating structure. The purpose of this architecture is to direct more resources toward engineering, materials, manufacturing quality, technical intelligence, supply-chain efficiency, and partner value rather than unnecessary structural overhead.
 
 This doctrine governs all commercial decisions, strategies, and activities of the organization.
 
@@ -43,13 +54,13 @@ This doctrine governs all commercial decisions, strategies, and activities of th
 
 ## 2. Business Objective
 
-The primary objective of ELIMFILTERS® is to protect industrial and commercial assets through contamination control technologies.
+The primary objective of ELIMFILTERS® is to protect industrial, commercial, fleet, equipment, and automotive assets through contamination-control technologies.
 
-The company seeks profitable market participation, long-term customer retention, technical differentiation, and sustainable expansion across targeted industries and geographies.
+The company seeks profitable market participation, long-term customer retention, technical differentiation, distributor stability, and sustainable expansion across targeted industries and geographies.
 
-Growth shall never be pursued at the expense of profitability, technical credibility, or distributor stability.
+Growth shall never be pursued at the expense of profitability, technical credibility, product evidence, or partner stability.
 
-ELIMFILTERS® does not seek volume leadership. The company seeks to become the recognized Asset Protection reference in every market it enters — defined not by the number of products sold, but by the reliability of the assets it protects.
+ELIMFILTERS® does not seek volume leadership. The company seeks to become the recognized Asset Protection reference in every market it enters — defined not simply by products sold, but by the reliability, continuity, and economic value of the assets it protects.
 
 ---
 
@@ -57,17 +68,15 @@ ELIMFILTERS® does not seek volume leadership. The company seeks to become the r
 
 ELIMFILTERS® does not compete as a generic filter supplier.
 
-The company does not organize its business around products. The company organizes its business around assets, systems, technologies, and operational continuity.
+The company does not organize its business around products alone. The company organizes its business around assets, systems, technologies, contamination risks, intelligence, and operational continuity.
 
 **The position:**
 
 Products are components of the solution. Asset Protection is the business.
 
-Every commercial activity, every technical decision, every distribution relationship, and every customer interaction must reflect this position. ELIMFILTERS® is present in the field not to fill a product order, but to protect a machine.
+Every commercial activity, technical decision, distribution relationship, manufacturing relationship, quality process, and customer interaction must reflect this position.
 
-This distinction governs how the company defines its customers, selects its partners, allocates its resources, measures its performance, and builds its long-term market position.
-
-The company competes through value creation, technical credibility, operational reliability, and long-term customer outcomes.
+The company competes through value creation, technical credibility, disciplined product governance, operational reliability, intelligent distribution, and long-term customer outcomes.
 
 The company does not compete primarily through price.
 
@@ -75,18 +84,25 @@ The company does not compete primarily through price.
 
 ## 4. Market Positioning
 
-ELIMFILTERS® positions itself as the industrial standard for contamination control across critical asset systems.
+ELIMFILTERS® positions itself as an Asset Protection and contamination-control platform across critical filtration systems.
 
 The company differentiates through:
 
 - Asset Protection philosophy applied at system level, not product level
-- Contamination Control technologies engineered for measurable performance targets
-- Technology platforms designed around specific contamination mechanisms and failure modes
-- System-based architecture covering air intake, fuel, lubrication, hydraulic, cabin, and compressed air domains
-- Global Catalog Intelligence enabling precise cross-referencing and technical substitution
+- Contamination-control technologies engineered around defined performance targets
+- Technology platforms aligned with specific contamination mechanisms and failure modes
+- System-based architecture covering air intake, fuel, lubrication, hydraulic, cooling, cabin, compressed air, and related domains
+- Filtration-media development and engineering work in Germany
+- Qualified manufacturing capacity in the People’s Republic of China (PRC)
+- ELIMFILTERS-defined manufacturing specifications and quality governance
+- Physical validation protocols matched to product family and application
+- AI-assisted product auditing for consistency, deviations, anomalous patterns, traceability signals, and documentation control
+- Human oversight of manufacturing, quality assurance, release criteria, and critical technical decisions
+- Global Catalog Intelligence enabling disciplined cross-reference and application support
 - Commercial Intelligence accumulated through field operations and customer integration
-- Technical knowledge and engineering education delivered through the ELIMFILTERS® Knowledge System
-- Distribution network development that extends the organization's reach without diluting its standards
+- Technical knowledge delivered through the ELIMFILTERS® Knowledge System
+- A lean technology-enabled operating structure designed to reduce unnecessary administrative overhead
+- Distribution network development that extends reach without diluting technical or brand standards
 - Strategic account relationships built on long-term protection commitments
 
 ### Market Share Objectives
@@ -99,7 +115,7 @@ The objective is to establish ELIMFILTERS® as a recognized Asset Protection pro
 **Light Duty:**
 Target Participation: Minimum 8% regional market participation
 
-The objective is to maintain sufficient visibility, availability, and distribution coverage to support long-term growth.
+The objective is to maintain sufficient visibility, availability, distributor coverage, recurring demand, and commercial intelligence to support long-term growth.
 
 ELIMFILTERS® seeks profitable participation rather than volume leadership in both segments.
 
@@ -111,43 +127,55 @@ ELIMFILTERS® operates through two strategic business segments. Each segment ser
 
 ### Heavy Duty (HD)
 
-Heavy Duty is the primary profitability engine of the organization.
+Heavy Duty is the primary profitability engine and technical-strength center of the organization.
 
 Heavy Duty represents the highest concentration of asset value, contamination risk, technical differentiation opportunity, and long-term profitability available to the company.
 
-These sectors operate high-value assets where contamination directly affects reliability, maintenance costs, equipment life, productivity, and operational continuity. The cost of filtration failure in these environments is not a product inconvenience — it is an operational and financial event.
+These sectors operate high-value assets where contamination directly affects reliability, maintenance costs, equipment life, productivity, and operational continuity.
 
-Heavy Duty provides the greatest opportunity for technical differentiation, strategic account relationships, and long-term customer retention.
+Heavy Duty provides the greatest opportunity for technical differentiation, strategic account relationships, multi-system protection, and long-term customer retention.
 
-### Light Duty (LD)
+### Light Duty (LD) / Automotive
 
-Light Duty is the primary market participation engine of the organization.
+Light Duty is the primary market-participation engine of the organization.
 
-Light Duty strengthens regional presence, brand visibility, distributor development, recurring demand, and commercial intelligence generation.
+It includes passenger vehicles, pickup trucks, SUVs, vans, light commercial vehicles, corporate fleets, government fleets, automotive distribution networks, and service centers.
 
-Light Duty does not generate the same margin profile as Heavy Duty. It generates reach, network density, and recurring volume that supports distributor economics and regional intelligence accumulation.
+Automotive is an important complementary line within ELIMFILTERS. It is not the primary technical or profitability focus of the company, but it strengthens regional presence, brand visibility, distributor economics, recurring demand, catalog density, and commercial intelligence generation.
 
 ### Complementary Functions
 
-Heavy Duty and Light Duty perform different but complementary strategic functions within the ELIMFILTERS® growth model:
-
-| Function | Heavy Duty | Light Duty |
+| Function | Heavy Duty | Light Duty / Automotive |
 |---|---|---|
 | Primary Role | Profitability engine | Market participation engine |
 | Strategic Output | Technical depth | Geographic reach |
-| Relationship Type | Strategic accounts | Distribution networks |
-| Performance Metric | Margin, asset penetration | Coverage, intelligence, volume |
+| Relationship Type | Strategic accounts + distributors | Distribution networks |
+| Performance Metric | Margin, asset penetration | Coverage, intelligence, recurring volume |
 | Resource Allocation | 80% | 20% |
 
 Both segments are required for sustainable growth.
 
-Neither segment shall be evaluated using the same performance criteria.
+Neither segment shall be evaluated using identical performance criteria.
+
+### Integrated Value-Creation Chain
+
+The operating and commercial system follows this sequence:
+
+1. **Engineering** — filtration-media development, application requirements, product architecture, and defined performance targets.
+2. **Manufacturing** — qualified production capacity selected for specialization, scale, infrastructure, and supply-chain capability.
+3. **Validation** — physical testing and evidence matched to the product family, application, and claim.
+4. **Intelligence** — structured product data, cross-reference intelligence, application knowledge, technical knowledge, and traceability.
+5. **Lean Operations** — AI-enabled workflows and reduced unnecessary administrative layers with accountable human control.
+6. **Commercial Partner** — local inventory, relationships, technical sales, service, territory development, and customer continuity.
+7. **Asset Protection** — the final operational and economic outcome for the end customer.
+
+No layer shall be optimized in a way that destroys value in a later layer.
 
 ---
 
 ## 6. Customer Segmentation
 
-ELIMFILTERS® serves three distinct customer categories. Each category operates under different commercial logic and requires a different engagement model.
+ELIMFILTERS® serves three distinct customer categories.
 
 ### Strategic Corporate Accounts
 
@@ -162,27 +190,33 @@ Target accounts include:
 - Oil & Gas extraction, refining, and transport operators
 - Railway operators and locomotive maintenance organizations
 - Port authorities, terminal operators, and maritime logistics
-- Aviation ground support equipment (GSE) operators and maintenance contractors
+- Aviation ground support equipment operators and maintenance contractors
 - National and international transportation fleet operators
 - Industrial manufacturing groups with high-value production assets
 
-Strategic Corporate Accounts shall be developed through direct engagement, distributor collaboration, or hybrid commercial models depending on operational scale and geography.
+Strategic Corporate Accounts may be developed through distributor-led, ELIMFILTERS-led, or coordinated commercial models depending on territory, account scale, and channel agreements. The objective is always to protect the long-term role and economics of the authorized commercial partner where one is established.
 
 The objective is long-term asset protection integration, not transactional product sales.
 
-### Authorized Distributors
+### Authorized Commercial Partners
 
 Authorized Distributors are the primary commercial channel of ELIMFILTERS®.
 
-Distributors are not resellers. They are regional partners selected for their access to strategic industries and assets.
+They are regional commercial and technical partners, not simple resellers.
 
-The distributor relationship is defined by mutual commitment to asset protection outcomes, not product transaction volume.
+**ELIMFILTERS builds the platform. Our partners build the market.**
+
+ELIMFILTERS provides product architecture, engineering and quality governance, technical intelligence, application and cross-reference capability, structured data, brand governance, and scalable product access.
+
+Commercial partners provide local market knowledge, customer relationships, inventory strategy, technical sales, regional service, territory development, and account continuity.
+
+The relationship is designed to support sustainable partner economics, competitive landed cost, technical confidence, and long-term regional growth.
 
 ### End-User Markets
 
-End users in Light Duty segments — passenger vehicles, pickup trucks, vans, light commercial vehicles, corporate fleets, service centers, and government fleets — are served primarily through the distributor network.
+End users across Heavy Duty and Light Duty are served according to the commercial structure of the territory.
 
-These customers generate commercial intelligence, recurring demand, and regional brand presence.
+Light Duty and automotive end users are served primarily through distributor networks. These markets generate recurring demand, commercial intelligence, network density, and regional brand presence.
 
 ---
 
@@ -192,43 +226,27 @@ ELIMFILTERS® targets industries where contamination directly threatens asset re
 
 ### Primary Industries — Heavy Duty
 
-The following industries constitute the primary profitability targets of the organization:
+Priority markets include:
 
-**Mining**
-High contamination exposure from silica dust, abrasive particulates, and moisture. Equipment assets are high-value and difficult to replace. Downtime costs are extreme. Air intake, fuel, hydraulic, and lubrication systems are all critical.
+- Mining
+- Construction
+- Agriculture
+- Oil & Gas
+- Power Generation
+- Marine
+- Railway
+- Transportation & Fleet Operations
+- Waste & Municipal
+- Industrial Manufacturing
+- Other severe-duty and equipment applications where contamination materially affects asset reliability
 
-**Construction**
-Severe dust and debris environments. Equipment cycles are intensive. Air intake filtration is the primary failure point. Hydraulic and lubrication systems face high particle contamination loads.
+Heavy Duty remains the primary profitability and technical-authority focus of the company.
 
-**Agriculture**
-Seasonal but extreme contamination exposure from grain dust, chaff, and field debris. Air intake filter life is compressed. Cabin air filtration is critical for operator health. Fleet size drives recurring demand.
-
-**Oil & Gas**
-Volatile contamination environments with fuel quality variability, hydraulic system criticality, and extreme operating conditions. Technical specification compliance is mandatory.
-
-**Power Generation**
-High-value stationary assets operating in continuous cycles. Contamination affects long-term reliability and scheduled maintenance windows. Air intake, fuel, and lubrication systems are all protection targets.
-
-**Marine**
-Salt, humidity, and fuel water contamination are primary risks. Diesel fuel system protection and hydraulic system cleanliness are critical. The MARINECLEAN® ecosystem addresses marine-specific requirements.
-
-**Railway**
-Long-haul locomotive engines with high lube oil and air intake demands. Fleet standardization and extended service intervals drive demand for system-level filtration programs.
-
-**Transportation & Fleet Operations**
-National and regional fleet operators, including heavy truck operators, logistics companies, port terminal equipment fleets, and aviation Ground Support Equipment (GSE) maintenance operations. GSE assets — aircraft tugs, loaders, baggage handling systems, and ground power units — share contamination profiles with heavy industrial equipment and are served within fleet operations programs.
-
-**Waste & Municipal**
-High contamination exposure equipment operating in demanding cycles. Air intake and hydraulic protection are primary.
-
-**Industrial Manufacturing**
-Compressed air systems, hydraulic equipment, and precision machining environments. ISO 8573 compliance for compressed air quality is a key technical requirement.
-
-### Secondary Industries — Light Duty
+### Secondary Industries — Light Duty / Automotive
 
 Passenger vehicles, pickup trucks, SUVs, vans, light commercial vehicles, corporate fleets, government fleets, automotive distribution networks, and service centers constitute the Light Duty market.
 
-These segments are served primarily through distributor networks and generate recurring volume, regional intelligence, and brand presence rather than strategic account relationships.
+These segments are served primarily through distributor networks and support recurring volume, regional intelligence, catalog breadth, partner economics, and brand presence.
 
 ---
 
@@ -242,17 +260,19 @@ This principle — Asset Protection Penetration — is the primary commercial gr
 
 ### Priority Protection Systems
 
-| System | Primary Contamination Risk | Key Standards |
+| System | Primary Contamination Risk | Representative Standards / Methods |
 |---|---|---|
-| Air Intake Protection | Particulate ingestion, silica, dust | ISO 5011, SAE J1539 |
-| Fuel Cleanliness Protection | Water, microbial contamination, particle | ASTM D6304, ISO 12937 |
-| Lubrication Protection | Abrasive wear particles, oxidation | ISO 16889, ISO 4406 |
-| Hydraulic Protection | Particle contamination, cleanliness codes | ISO 16889, NFPA T2.14 |
-| Cooling System Protection | Silicate depletion, cavitation, scale | — |
-| Cabin Air Protection | Airborne particulates, operator health | ISO 11155, DIN 71220 |
-| Compressed Air Protection | Moisture, oil aerosols, particles | ISO 8573-1 |
+| Air Intake Protection | Particulate ingestion, silica, dust | ISO 5011 where applicable |
+| Fuel Cleanliness Protection | Water and particle contamination | Applicable fuel and separation methods |
+| Lubrication Protection | Abrasive wear particles and contamination | ISO 16889 / ISO 4406 where applicable |
+| Hydraulic Protection | Particle contamination and cleanliness | ISO 16889 / cleanliness-code methods where applicable |
+| Cooling System Protection | Cavitation, scale, fluid-condition risks | Application-specific methods |
+| Cabin Air Protection | Airborne particulates and cabin-air quality | Applicable cabin-filtration methods |
+| Compressed Air Protection | Moisture, oil aerosols, particles | ISO 8573 family where applicable |
 
-Higher penetration across critical systems increases customer retention, technical integration, switching costs, recurring demand, and long-term profitability.
+Standards may be referenced publicly only when the specific product, test method, and supporting evidence justify the claim.
+
+Higher penetration across critical systems increases customer retention, technical integration, recurring demand, and long-term profitability.
 
 Single-system customers are a starting point. Multi-system customers are the commercial objective.
 
@@ -260,91 +280,187 @@ Single-system customers are a starting point. Multi-system customers are the com
 
 ## 9. Technology Strategy
 
-ELIMFILTERS® technologies are developed and deployed as contamination control systems, not as product alternatives.
+ELIMFILTERS® technologies are developed and deployed as contamination-control systems, not as generic product alternatives.
 
-Each technology platform is engineered to address specific contamination mechanisms within defined operating conditions, measured against applicable ISO and ASTM standards.
+All public technology references must use the current canonical registry. Deprecated or forbidden technology names shall not appear in active commercial content, metadata, structured data, audits, public APIs, or Knowledge Center outputs.
 
 ### Core Technology Platforms
 
-| Technology | Primary Domain | Key Standards |
-|---|---|---|
-| MACROCORE™ | Air intake particulate capture | ISO 5011, SAE J726 |
-| SYNTRAX™ | Engine lubrication — synthetic media | ISO 16889, ISO 4406 |
-| NANOFORCE™ | Hydraulic cleanliness — sub-micron | ISO 16889, NFPA T2.14 |
-| SYNTAPORE™ | Fuel cleanliness — HPCR injector protection | — |
-| TURBOCORE™ | Fuel water separation (turbine-style FH/FG) | — |
-| THERMACORE™ | Cooling system SCA additive | — |
-| DRYCORE™ | Compressed air — pneumatic systems | ISO 8573-1/2/3 |
-| INTEKCORE™ | Filter housing systems | — |
-| MICROKAPPA™ | Cabin air — occupant health | ISO 11155, DIN 71220 |
-| DURATECH™ | Fleet maintenance master kit program | — |
-| MARINECLEAN™ | Marine diesel and hydraulic systems | IMO certified |
+| Technology | Primary Domain |
+|---|---|
+| MACROCORE™ | Air intake particulate control |
+| SYNTRAX™ | Engine lubrication |
+| NANOFORCE™ | Hydraulic cleanliness |
+| SYNTAPORE™ | Fuel cleanliness |
+| HYDROCORE™ | Fuel / water separation |
+| THERMACORE™ | Cooling-system protection |
+| DRYCORE™ | Compressed-air / pneumatic protection |
+| INTEKCORE™ | Filter housing systems |
+| MICROKAPPA™ | Cabin-air filtration |
+| DURACTECH™ | Severe-duty applications |
+| MARINECLEAN™ | Marine applications |
 
-Technology selection for any application follows the contamination control hierarchy:
+Technology selection follows the contamination-control hierarchy:
 
-1. Identify contamination source and target (what threatens the asset)
-2. Apply relevant measurement standards (ISO codes, Beta ratios, particle counts)
-3. Select technology platform that controls the measured contamination
-4. Implement through specific filtration product
+1. Identify contamination source and target.
+2. Determine the applicable operating requirement and measurement method.
+3. Select the technology platform appropriate to the contamination mechanism.
+4. Validate the specific product and application evidence.
+5. Implement through the appropriate filtration product.
 
 Product selection is the last step, not the first.
 
 ---
 
-## 10. Distribution Philosophy
+## 10. Global Engineering, Manufacturing & Quality Governance
+
+### Germany — Media Engineering & Development
+
+ELIMFILTERS formulated filtration media are developed in Germany around defined performance targets, application requirements, material behavior, durability objectives, and contamination-control requirements.
+
+This engineering origin does not authorize unsupported country-of-origin or performance claims. Public statements must accurately describe the scope of the work performed and the evidence available.
+
+### PRC — Qualified Manufacturing Partners
+
+Manufacturing is executed through qualified production partners in the People’s Republic of China (PRC).
+
+The PRC manufacturing base is selected for established industrial infrastructure, specialized filtration-manufacturing capability, scalable production capacity, and integration with mature automotive and heavy-duty supply chains.
+
+Manufacturing location does not independently define product quality. ELIMFILTERS-defined specifications, process requirements, quality controls, validation protocols, and technical governance define the product system.
+
+### Physical Product Validation
+
+Validation requirements are matched to product family and application. Where applicable and supported by documented protocols, testing may include:
+
+- Filtration efficiency
+- Pressure drop or restriction
+- Dust or contaminant holding capacity
+- Flow performance
+- Media tensile strength
+- Pleat integrity
+- Dimensional stability
+- Burst pressure
+- Collapse resistance
+- Cyclic pressure endurance
+- Seal and leakage integrity
+- Temperature resistance
+- Fluid and material compatibility
+- Water-separation performance
+- Visual and dimensional inspection
+
+A test or standard shall never be presented as universally applicable to every ELIMFILTERS product.
+
+### AI-Assisted Product Auditing
+
+AI-assisted systems may analyze production, quality, product, catalog, and traceability data to identify inconsistencies, deviations, anomalous patterns, and documentation gaps.
+
+AI does not certify product quality and does not replace physical validation.
+
+Qualified personnel retain accountability for manufacturing oversight, quality assurance, release criteria, evidence review, and critical technical decisions.
+
+### Traceability & Product Intelligence
+
+ELIMFILTERS seeks to connect product specification, application, reference relationships, manufacturing information, validation evidence, and technical documentation into an increasingly structured Product Intelligence system.
+
+Traceability and product intelligence are commercial assets because they reduce identification friction, support technical confidence, improve inventory decisions, and increase customer continuity.
+
+---
+
+## 11. Lean Operating Model & Partner Economics
+
+ELIMFILTERS uses a technology-enabled, horizontal operating structure designed to reduce unnecessary administrative layers and structural overhead.
+
+AI-enabled processes support:
+
+- Product intelligence
+- Catalog and cross-reference workflows
+- Technical knowledge management
+- Data governance
+- Quality-data review
+- Operational workflow coordination
+- Commercial intelligence
+- Documentation and anomaly detection
+
+Human accountability remains embedded in manufacturing, quality, commercial governance, and critical technical decisions.
+
+The purpose of the lean model is not merely to lower nominal product cost. It is to preserve value through the supply chain by directing a greater proportion of resources toward:
+
+- Engineering
+- Materials
+- Manufacturing quality
+- Validation
+- Technical intelligence
+- Supply-chain efficiency
+- Product availability
+- Partner support
+
+The desired commercial effect is:
+
+**Lower avoidable structural overhead → stronger product economics → competitive landed cost → sustainable distributor margin → stronger local market position.**
+
+ELIMFILTERS shall not use the lean model as justification for unsupported price, quality, or performance superiority claims.
+
+---
+
+## 12. Distribution Philosophy
 
 Authorized Distributors represent the primary growth channel of ELIMFILTERS®.
 
-Distributors are considered regional extensions of ELIMFILTERS®, representing our engineering standards, asset protection philosophy, and long-term commitment to every market they serve.
+Distributors are considered regional extensions of ELIMFILTERS®, representing the company's engineering standards, Asset Protection philosophy, product intelligence, and long-term market commitment.
 
-This is not a reseller relationship. Distributors are the operational presence of ELIMFILTERS® in their territory. Their capability to serve strategic assets, educate customers, maintain inventory, and develop markets is the direct expression of the company's values in the field.
+This is not a reseller-only relationship.
 
 ### Distributor Responsibilities
 
-Authorized Distributors are responsible for:
+Authorized partners are responsible for:
 
 - Local inventory management and availability
 - Regional market coverage and customer access
 - Technical customer support and application guidance
-- Market development and asset protection program promotion
+- Market development and Asset Protection program promotion
 - Commercial expansion within their authorized territory
-- Representation of ELIMFILTERS® engineering and asset protection standards
+- Representation of ELIMFILTERS® engineering, quality, and brand standards
+- Capture of useful field and asset intelligence
+- Customer and account continuity
 
 ### Selection Criteria
 
 Distributor selection shall not be based exclusively on purchase volume.
 
-Distributor selection shall prioritize:
+Selection shall prioritize:
 
 - Access to strategic industries and target assets
-- Technical capability to support industrial customers
-- Market coverage across the authorized territory
-- Inventory capacity to maintain service commitments
-- Long-term growth potential aligned with the organization's industry priorities
+- Technical capability
+- Market coverage
+- Inventory capacity
+- Customer relationships
+- Long-term growth potential
+- Ability to protect brand and technical governance
+- Alignment with sustainable partner economics
 
-A strategic distributor is defined by access to assets, not by the number of filters sold.
+A strategic distributor is defined by access to assets, execution capability, and long-term market value — not only by the number of filters purchased.
 
 ### Network Objectives
 
-The objective is not to maximize the number of distributors.
+The objective is not to maximize distributor count.
 
-The objective is to maximize market coverage, asset access, and protection quality across every authorized territory.
+The objective is to maximize market coverage, asset access, technical quality, partner stability, and customer continuity across every authorized territory.
 
-A smaller network of committed, capable, asset-connected distributors outperforms a large network of volume-only resellers.
+The partner is an integral part of the value architecture:
+
+**ELIMFILTERS builds the platform. Our partners build the market.**
 
 ---
 
-## 11. Resource Allocation
+## 13. Resource Allocation
 
-Strategic resources shall be allocated according to the following priorities and maintained as the default commercial posture of the organization.
-
-This allocation reflects the different economic functions of each segment and shall not be altered without formal doctrine amendment.
+The established strategic resource allocation remains unchanged.
 
 ### Heavy Duty — 80%
 
-Heavy Duty receives the majority of strategic resources because it generates the majority of organizational profitability and technical positioning.
+Heavy Duty receives the majority of strategic resources because it generates the majority of organizational profitability, technical positioning, and high-value Asset Protection opportunities.
 
-**Primary objectives:**
+Primary objectives:
 
 - Profitability and margin development
 - Strategic account acquisition and development
@@ -352,27 +468,44 @@ Heavy Duty receives the majority of strategic resources because it generates the
 - Asset Protection programs and multi-system penetration
 - Industrial market penetration in priority sectors
 
-### Light Duty — 20%
+### Light Duty / Automotive — 20%
 
-Light Duty receives a defined minority allocation because its primary function is market reach and intelligence, not margin generation.
+Light Duty receives a defined minority allocation because its primary function is market reach, distributor support, recurring demand, and intelligence generation rather than primary margin generation.
 
-**Primary objectives:**
+Primary objectives:
 
 - Regional market participation and brand presence
 - Distributor network expansion and economic support
-- Regional presence and competitive intelligence
+- Recurring market demand
 - Commercial intelligence generation
-- Brand visibility in high-frequency consumer channels
+- Catalog density and application intelligence
+- Brand visibility in high-frequency channels
 
 ### Allocation Integrity
 
-This 80/20 allocation is permanent doctrine and shall not be diluted by short-term volume opportunities, distributor pressure for Light Duty expansion, or revenue gap responses.
+The 80/20 allocation remains governing doctrine and shall not be diluted by short-term volume opportunities, distributor pressure for disproportionate Light Duty expansion, or temporary revenue-gap responses.
 
-If Light Duty begins consuming resources beyond its 20% allocation, a formal doctrine amendment is required.
+Any structural change to this allocation requires a formal doctrine amendment.
 
 ---
 
-## 12. Governance
+## 14. Lifecycle Value
+
+ELIMFILTERS does not define value only by acquisition price.
+
+For the end customer:
+
+**Product quality + correct application + availability + technical intelligence + competitive economics = lower total operating risk.**
+
+For the commercial partner:
+
+**Efficient structure + scalable product access + technical tools + local execution = sustainable margin and stronger market position.**
+
+The objective is to create economic value without reducing technical discipline.
+
+---
+
+## 15. Governance
 
 This document establishes the commercial architecture doctrine of ELIMFILTERS®.
 
@@ -383,29 +516,39 @@ The principles defined herein govern:
 - Distribution network development and partner selection
 - Strategic account acquisition and management
 - Commercial intelligence accumulation and use
+- Engineering / manufacturing narrative
+- Quality and validation claims
+- AI-assisted operational claims
 - Technology deployment against contamination targets
-- Profitability objectives and success metrics
+- Partner-value and profitability objectives
+- Public commercial content and structured data
+
+### Evidence Rule
+
+No public claim about engineering origin, manufacturing, certifications, testing, standards, performance, OEM requirements, durability, efficiency, or product superiority may exceed the evidence available for the specific product, process, or test.
+
+AI-assisted auditing shall never be described as replacing physical testing, certification, accountable quality control, or human technical responsibility.
+
+### Technology Nomenclature Rule
+
+All active outputs must use the current canonical technology registry. Deprecated names must not appear in public-facing ELIMFILTERS content or active commercial governance documents.
 
 ### Amendment Protocol
 
-Amendments to this document require:
+Amendments require:
 
-1. Identification of the principle to be amended
-2. Written justification with commercial rationale
-3. Explicit authorization from ELIMFILTERS® Commercial Leadership
-4. Formal version increment (e.g., 2.0 → 2.1)
-5. Distribution of amended document to all relevant stakeholders
-6. Update of all internal references within 30 days of amendment
-
-No amendment may be implemented informally or applied retroactively without the full protocol above.
+1. Identification of the principle to be amended.
+2. Written commercial or technical rationale.
+3. Explicit authorization from ELIMFILTERS® Commercial Leadership.
+4. Formal version increment.
+5. Distribution of the amended doctrine to relevant systems and stakeholders.
+6. Update of internal references and public-facing surfaces affected by the amendment.
 
 ### Supporting Systems
 
 This document defines principles. Supporting systems define execution.
 
-Supporting methodologies, implementation frameworks, operational procedures, technical standards, market intelligence, training programs, and strategic planning documentation shall be maintained within the ELIMFILTERS® Knowledge System and Knowledge Center.
-
-All commercial strategies, content, digital assets, and go-to-market activities of ELIMFILTERS® shall be consistent with the principles established in this doctrine.
+Supporting methodologies, operational procedures, technical standards, market intelligence, training programs, distributor systems, Product Intelligence, HERMES workflows, the Knowledge System, and the Knowledge Center shall remain consistent with this doctrine.
 
 ### Success Metrics
 
@@ -413,38 +556,47 @@ Strategic performance shall be evaluated using:
 
 - Revenue — Heavy Duty and Light Duty reported separately
 - Gross Margin
-- Heavy Duty Market Share by industry vertical
-- Light Duty Market Share by region
-- Protected Assets — total count of assets under ELIMFILTERS® protection programs
-- Asset Protection Penetration — average systems covered per protected asset
-- Strategic Accounts — active and pipeline
-- Distributor Coverage — territories with active authorized distributor
-- Customer Retention Rate
+- Heavy Duty market participation by industry vertical
+- Light Duty market participation by region
+- Protected Assets
+- Asset Protection Penetration
+- Strategic Accounts
+- Distributor Coverage
+- Partner Retention
+- Customer Retention
 - Inventory Turnover
-- Commercial Intelligence Coverage — completeness of asset, industry, and equipment data
-
-These indicators collectively define the health, growth, profitability, and sustainability of the organization.
+- Commercial Intelligence Coverage
+- Multi-System Penetration
+- Sustainable Partner Economics
 
 ---
 
-## 13. Strategic Conclusion
+## 16. Strategic Conclusion
 
-ELIMFILTERS® grows by protecting assets, expanding system penetration, strengthening distribution networks, acquiring strategic accounts, and accumulating commercial intelligence.
+ELIMFILTERS® grows by protecting assets, expanding system penetration, strengthening distribution networks, acquiring strategic accounts, improving product intelligence, and accumulating commercial intelligence.
 
-The company does not grow by discounting products, expanding distributor count indiscriminately, or pursuing revenue at the expense of margin.
+The company does not grow by discounting products indiscriminately, maximizing distributor count without regard to quality, or pursuing revenue at the expense of margin, evidence, or partner stability.
 
-Long-term success is measured by the ability to protect more assets across more systems in more industries — with each protected asset representing a deeper commitment to the customer's operational continuity and a stronger position in the market.
+The model is:
 
-Every distributor who represents our engineering standards extends the organization's reach without diluting its values.
+**Engineering → Manufacturing → Validation → Intelligence → Lean Operations → Commercial Partner → Asset Protection.**
 
-Every strategic account that integrates ELIMFILTERS® across multiple protection systems becomes a reference that opens the next account.
+Every qualified manufacturing relationship strengthens production capability.
 
-Every commercial intelligence data point accumulated through field operations improves the next decision.
+Every validated product strengthens technical confidence.
 
-This is the model. Asset Protection is the business. Contamination control is the method. Long-term market authority is the outcome.
+Every intelligence data point improves the next decision.
+
+Every efficient process preserves resources for product and partner value.
+
+Every commercial partner extends ELIMFILTERS into a local market without reducing the importance of local relationships.
+
+Every protected asset deepens the company's long-term market position.
+
+This is the model. Asset Protection is the business. Contamination control is the method. Intelligent, partner-centered execution is the growth system.
 
 ---
 
 *ELIMFILTERS® — Asset Protection Through Contamination Control*
 
-*This document is the governing commercial doctrine. All prior versions are superseded. All future commercial activities shall be consistent with the principles defined herein.*
+*This document is the governing commercial doctrine. Version 2.1 supersedes Version 2.0. All future commercial activities shall be consistent with the principles defined herein.*
