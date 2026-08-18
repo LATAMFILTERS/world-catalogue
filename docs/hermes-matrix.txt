@@ -1,0 +1,5 @@
+HERMES SEARCH MATRIX
+A CURRENT_APPLICATIONS
+B TECHNICAL_STANDARDS
+C ELIMFILTERS_KNOWLEDGE_GAP
+One mission domain per Groq Compound request. Maximum three material findings per domain. Any failed domain makes the sweep fail.
