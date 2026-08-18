@@ -8,21 +8,78 @@ process.env.HERMES_SWEEP_DOMAIN_BATCH ||= '1';
 
 const GROQ_ENDPOINT_FRAGMENT = 'api.groq.com/openai/v1/chat/completions';
 const MAX_RETRIES = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_RETRIES || 5));
-const MIN_GROQ_INTERVAL_MS = Math.max(0, Number(process.env.HERMES_SWEEP_MIN_INTERVAL_MS || 1800));
-const DEFAULT_BACKOFF_MS = Math.max(500, Number(process.env.HERMES_SWEEP_BACKOFF_MS || 2500));
+const MIN_GROQ_INTERVAL_MS = Math.max(0, Number(process.env.HERMES_SWEEP_MIN_INTERVAL_MS || 4000));
+const DEFAULT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_BACKOFF_MS || 5000));
+const MIN_RATE_LIMIT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_MIN_429_BACKOFF_MS || 5000));
+const MAX_BACKOFF_MS = Math.max(MIN_RATE_LIMIT_BACKOFF_MS, Number(process.env.HERMES_SWEEP_MAX_BACKOFF_MS || 90000));
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 let lastGroqRequestAt = 0;
 
-function retryDelayMs(response, bodyText, attempt) {
-  const header = response?.headers?.get?.('retry-after');
-  const headerSeconds = Number(header);
-  if (Number.isFinite(headerSeconds) && headerSeconds >= 0) return Math.ceil(headerSeconds * 1000) + 500;
+function durationToMs(value) {
+  const raw = String(value || '').trim().toLowerCase();
+  if (!raw) return null;
 
-  const match = String(bodyText || '').match(/try again in\s+([0-9.]+)s/i);
-  if (match) return Math.ceil(Number(match[1]) * 1000) + 500;
+  // Groq reset headers may be durations such as 1.25s, 2m3.5s, 1m or 250ms.
+  let total = 0;
+  let matched = false;
+  const regex = /([0-9]+(?:\.[0-9]+)?)\s*(ms|h|m|s)/g;
+  for (const match of raw.matchAll(regex)) {
+    matched = true;
+    const n = Number(match[1]);
+    if (match[2] === 'ms') total += n;
+    else if (match[2] === 's') total += n * 1000;
+    else if (match[2] === 'm') total += n * 60_000;
+    else if (match[2] === 'h') total += n * 3_600_000;
+  }
+  return matched && Number.isFinite(total) ? Math.ceil(total) : null;
+}
 
-  return Math.min(30000, DEFAULT_BACKOFF_MS * (2 ** Math.max(0, attempt - 1)));
+function retryAfterToMs(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return null;
+
+  const seconds = Number(raw);
+  if (Number.isFinite(seconds) && seconds >= 0) return Math.ceil(seconds * 1000);
+
+  const dateMs = Date.parse(raw);
+  if (Number.isFinite(dateMs)) return Math.max(0, dateMs - Date.now());
+  return durationToMs(raw);
+}
+
+function headerMs(response, name, parser = durationToMs) {
+  try {
+    return parser(response?.headers?.get?.(name));
+  } catch {
+    return null;
+  }
+}
+
+function retryDelayMs(response, bodyText, attempt, status) {
+  const candidates = [
+    headerMs(response, 'retry-after', retryAfterToMs),
+    headerMs(response, 'x-ratelimit-reset-tokens'),
+    headerMs(response, 'x-ratelimit-reset-requests')
+  ].filter((value) => Number.isFinite(value) && value >= 0);
+
+  const bodyMatch = String(bodyText || '').match(/try again in\s+([0-9.]+)\s*(ms|s|m)?/i);
+  if (bodyMatch) {
+    const unit = String(bodyMatch[2] || 's').toLowerCase();
+    const n = Number(bodyMatch[1]);
+    if (Number.isFinite(n)) {
+      const bodyMs = unit === 'ms' ? n : unit === 'm' ? n * 60_000 : n * 1000;
+      candidates.push(Math.ceil(bodyMs));
+    }
+  }
+
+  const exponential = DEFAULT_BACKOFF_MS * (2 ** Math.max(0, attempt - 1));
+  candidates.push(exponential);
+
+  let delay = Math.max(...candidates, DEFAULT_BACKOFF_MS);
+  if (status === 429) delay = Math.max(delay, MIN_RATE_LIMIT_BACKOFF_MS);
+
+  // Small cushion so the retry happens after the advertised reset, not exactly on its boundary.
+  return Math.min(MAX_BACKOFF_MS, Math.ceil(delay) + 750);
 }
 
 export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sleep) {
@@ -43,7 +100,7 @@ export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sle
       if (!retryable || attempt === MAX_RETRIES) return response;
 
       const bodyText = await response.text();
-      const delay = retryDelayMs(response, bodyText, attempt);
+      const delay = retryDelayMs(response, bodyText, attempt, status);
       console.warn(`[HERMES sweep] Groq HTTP ${status}; retry ${attempt}/${MAX_RETRIES} in ${delay}ms`);
       await sleeper(delay);
     }
