@@ -11,21 +11,17 @@ const MAX_RETRIES = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_RETRIES || 5
 const MIN_GROQ_INTERVAL_MS = Math.max(0, Number(process.env.HERMES_SWEEP_MIN_INTERVAL_MS || 4000));
 const DEFAULT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_BACKOFF_MS || 5000));
 const MIN_RATE_LIMIT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_MIN_429_BACKOFF_MS || 5000));
-const MAX_BACKOFF_MS = Math.max(MIN_RATE_LIMIT_BACKOFF_MS, Number(process.env.HERMES_SWEEP_MAX_BACKOFF_MS || 90000));
+const MAX_FALLBACK_BACKOFF_MS = Math.max(MIN_RATE_LIMIT_BACKOFF_MS, Number(process.env.HERMES_SWEEP_MAX_BACKOFF_MS || 90000));
+const QUOTA_CUSHION_MS = Math.max(250, Number(process.env.HERMES_SWEEP_QUOTA_CUSHION_MS || 1000));
+const TOKEN_LOW_WATER_RATIO = Math.min(0.5, Math.max(0.01, Number(process.env.HERMES_SWEEP_TOKEN_LOW_WATER_RATIO || 0.12)));
+const TOKEN_LOW_WATER_ABSOLUTE = Math.max(1000, Number(process.env.HERMES_SWEEP_TOKEN_LOW_WATER_ABSOLUTE || 12000));
 const MAX_FINDINGS_PER_DOMAIN = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN || 3));
 
-const MATRIX_INSTRUCTION = `
-
-HERMES OPERATIONAL SEARCH MATRIX — MANDATORY
-For the supplied domain, execute these three lanes using the domain topics as concrete search terms, never merely the macro-domain label:
-A. CURRENT_APPLICATIONS — concrete new/revised products, engines, equipment, applications, service parts, fitments, fluids, manufacturing capability or operational changes.
-B. TECHNICAL_STANDARDS — concrete material, performance, testing, standards, regulatory or research developments with filtration/asset-protection relevance.
-C. ELIMFILTERS_KNOWLEDGE_GAP — for every verified external development, compare against ELIMFILTERS public Knowledge Center/knowledge-system and classify CREATE_NEW, UPDATE_REINFORCE, NO_MATERIAL_CHANGE or INTERNAL_ONLY.
-Reject generic marketing, generic homepage changes and vague market commentary. Prefer primary evidence. Do not invent specifications or applications.
-OVERRIDE any earlier output-count instruction: return at most ${MAX_FINDINGS_PER_DOMAIN} highest-value material findings for this domain. Returning zero is correct when nothing material is verified.`;
+const MATRIX_INSTRUCTION = `\n\nHERMES OPERATIONAL SEARCH MATRIX — MANDATORY\nFor the supplied domain, execute these three lanes using the domain topics as concrete search terms, never merely the macro-domain label:\nA. CURRENT_APPLICATIONS — concrete new/revised products, engines, equipment, applications, service parts, fitments, fluids, manufacturing capability or operational changes.\nB. TECHNICAL_STANDARDS — concrete material, performance, testing, standards, regulatory or research developments with filtration/asset-protection relevance.\nC. ELIMFILTERS_KNOWLEDGE_GAP — for every verified external development, compare against ELIMFILTERS public Knowledge Center/knowledge-system and classify CREATE_NEW, UPDATE_REINFORCE, NO_MATERIAL_CHANGE or INTERNAL_ONLY.\nReject generic marketing, generic homepage changes and vague market commentary. Prefer primary evidence. Do not invent specifications or applications.\nOVERRIDE any earlier output-count instruction: return at most ${MAX_FINDINGS_PER_DOMAIN} highest-value material findings for this domain. Returning zero is correct when nothing material is verified.`;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 let lastGroqRequestAt = 0;
+let quotaState = null;
 
 function durationToMs(value) {
   const raw = String(value || '').trim().toLowerCase();
@@ -54,32 +50,85 @@ function retryAfterToMs(value) {
   return durationToMs(raw);
 }
 
-function headerMs(response, name, parser = durationToMs) {
+function headerValue(response, name) {
   try {
-    return parser(response?.headers?.get?.(name));
+    return response?.headers?.get?.(name) ?? null;
   } catch {
     return null;
   }
 }
 
-function retryDelayMs(response, bodyText, attempt, status) {
-  const candidates = [
-    headerMs(response, 'retry-after', retryAfterToMs),
-    headerMs(response, 'x-ratelimit-reset-tokens'),
-    headerMs(response, 'x-ratelimit-reset-requests')
-  ].filter((value) => Number.isFinite(value) && value >= 0);
+function headerNumber(response, name) {
+  const value = Number(headerValue(response, name));
+  return Number.isFinite(value) ? value : null;
+}
 
-  const bodyMatch = String(bodyText || '').match(/try again in\s+([0-9.]+)\s*(ms|s|m)?/i);
-  if (bodyMatch) {
-    const unit = String(bodyMatch[2] || 's').toLowerCase();
-    const n = Number(bodyMatch[1]);
-    if (Number.isFinite(n)) candidates.push(Math.ceil(unit === 'ms' ? n : unit === 'm' ? n * 60_000 : n * 1000));
+function headerMs(response, name, parser = durationToMs) {
+  try {
+    return parser(headerValue(response, name));
+  } catch {
+    return null;
+  }
+}
+
+function captureQuota(response) {
+  const limitTokens = headerNumber(response, 'x-ratelimit-limit-tokens');
+  const remainingTokens = headerNumber(response, 'x-ratelimit-remaining-tokens');
+  const remainingRequests = headerNumber(response, 'x-ratelimit-remaining-requests');
+  const resetTokensMs = headerMs(response, 'x-ratelimit-reset-tokens');
+  const resetRequestsMs = headerMs(response, 'x-ratelimit-reset-requests');
+  quotaState = { limitTokens, remainingTokens, remainingRequests, resetTokensMs, resetRequestsMs };
+  return quotaState;
+}
+
+function isDailyRequestQuotaExhausted(response) {
+  return headerNumber(response, 'x-ratelimit-remaining-requests') === 0;
+}
+
+function bodyRetryMs(bodyText) {
+  const match = String(bodyText || '').match(/try again in\s+([0-9.]+)\s*(ms|s|m)?/i);
+  if (!match) return null;
+  const unit = String(match[2] || 's').toLowerCase();
+  const n = Number(match[1]);
+  if (!Number.isFinite(n)) return null;
+  return Math.ceil(unit === 'ms' ? n : unit === 'm' ? n * 60_000 : n * 1000);
+}
+
+function retryDelayMs(response, bodyText, attempt, status) {
+  // Groq's retry-after is the authoritative delay for a 429. Use it first.
+  const retryAfterMs = headerMs(response, 'retry-after', retryAfterToMs);
+  if (Number.isFinite(retryAfterMs) && retryAfterMs >= 0) return retryAfterMs + QUOTA_CUSHION_MS;
+
+  // x-ratelimit-reset-tokens is TPM recovery. Do not mix in
+  // x-ratelimit-reset-requests: Groq documents that header as RPD reset.
+  const tokenResetMs = headerMs(response, 'x-ratelimit-reset-tokens');
+  if (status === 429 && Number.isFinite(tokenResetMs) && tokenResetMs >= 0) return tokenResetMs + QUOTA_CUSHION_MS;
+
+  const messageDelayMs = bodyRetryMs(bodyText);
+  if (Number.isFinite(messageDelayMs) && messageDelayMs >= 0) return messageDelayMs + QUOTA_CUSHION_MS;
+
+  const fallback = DEFAULT_BACKOFF_MS * (2 ** Math.max(0, attempt - 1));
+  const floored = status === 429 ? Math.max(fallback, MIN_RATE_LIMIT_BACKOFF_MS) : fallback;
+  return Math.min(MAX_FALLBACK_BACKOFF_MS, Math.ceil(floored)) + QUOTA_CUSHION_MS;
+}
+
+async function waitForQuotaIfNeeded(sleeper) {
+  if (!quotaState) return;
+  const { limitTokens, remainingTokens, resetTokensMs, remainingRequests } = quotaState;
+
+  if (remainingRequests === 0) {
+    throw new Error('GROQ_RPD_EXHAUSTED');
   }
 
-  candidates.push(DEFAULT_BACKOFF_MS * (2 ** Math.max(0, attempt - 1)));
-  let delay = Math.max(...candidates, DEFAULT_BACKOFF_MS);
-  if (status === 429) delay = Math.max(delay, MIN_RATE_LIMIT_BACKOFF_MS);
-  return Math.min(MAX_BACKOFF_MS, Math.ceil(delay) + 750);
+  if (!Number.isFinite(remainingTokens) || !Number.isFinite(resetTokensMs)) return;
+  const ratioThreshold = Number.isFinite(limitTokens) ? Math.ceil(limitTokens * TOKEN_LOW_WATER_RATIO) : 0;
+  const threshold = Math.max(TOKEN_LOW_WATER_ABSOLUTE, ratioThreshold);
+  if (remainingTokens > threshold) return;
+
+  const waitMs = Math.max(0, resetTokensMs) + QUOTA_CUSHION_MS;
+  console.warn(`[HERMES sweep] proactive TPM pacing remaining_tokens=${remainingTokens} threshold=${threshold}; waiting ${waitMs}ms before next domain`);
+  await sleeper(waitMs);
+  quotaState = null;
 }
 
 export function applySearchMatrix(init = {}) {
@@ -108,17 +157,25 @@ export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sle
     if (!isGroq) return baseFetch(url, init);
 
     const requestInit = applySearchMatrix(init);
+    await waitForQuotaIfNeeded(sleeper);
+
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt += 1) {
       const sinceLast = Date.now() - lastGroqRequestAt;
       if (sinceLast < MIN_GROQ_INTERVAL_MS) await sleeper(MIN_GROQ_INTERVAL_MS - sinceLast);
       lastGroqRequestAt = Date.now();
 
       const response = await baseFetch(url, requestInit);
+      captureQuota(response);
       if (response.ok) return response;
 
       const status = Number(response.status || 0);
       const retryable = status === 429 || status === 408 || status >= 500;
       if (!retryable || attempt === MAX_RETRIES) return response;
+
+      if (status === 429 && isDailyRequestQuotaExhausted(response)) {
+        console.error('[HERMES sweep] Groq daily request quota exhausted; not retrying inside this workflow run');
+        return response;
+      }
 
       const bodyText = await response.text();
       const delay = retryDelayMs(response, bodyText, attempt, status);
@@ -132,7 +189,7 @@ export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sle
 
 export async function runReliableSweep({ baseFetch = globalThis.fetch, sleeper = sleep } = {}) {
   const { runIndustrySweep } = await import('./industry-sweep-compound.mjs');
-  console.log(`[HERMES reliable sweep] matrix=3-lane domain_batch=1 max_findings_per_domain=${MAX_FINDINGS_PER_DOMAIN}`);
+  console.log(`[HERMES reliable sweep] matrix=3-lane domain_batch=1 max_findings_per_domain=${MAX_FINDINGS_PER_DOMAIN} scheduler=quota-aware`);
   const summary = await runIndustrySweep({ fetchImpl: createResilientFetch(baseFetch, sleeper) });
 
   const successfulBatches = Math.max(0, Number(summary.batches || 0) - Number(summary.failed_batches || 0));
