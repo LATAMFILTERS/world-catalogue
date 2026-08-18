@@ -65,3 +65,24 @@ test('stops further Groq traffic when fallback TPD is also exhausted', async () 
   );
   assert.equal(calls, 2, 'no additional Groq request after fatal TPD state');
 });
+
+test('retries HTTP 200 responses that contain no Groq message content', async () => {
+  let calls = 0;
+  const sleeps = [];
+  const baseFetch = async () => {
+    calls += 1;
+    const content = calls === 1 ? '' : '{"findings":[]}';
+    return new Response(JSON.stringify({ choices: [{ message: { content } }] }), {
+      status: 200,
+      headers: { 'content-type': 'application/json' }
+    });
+  };
+
+  const resilient = createResilientFetch(baseFetch, async (ms) => { sleeps.push(ms); });
+  const response = await resilient('https://api.groq.com/openai/v1/chat/completions', init('groq/compound-mini'));
+  const payload = await response.json();
+
+  assert.equal(calls, 2);
+  assert.equal(payload.choices[0].message.content, '{"findings":[]}');
+  assert.ok(sleeps.some((ms) => ms >= 10000), 'empty-content retry should use controlled backoff');
+});
