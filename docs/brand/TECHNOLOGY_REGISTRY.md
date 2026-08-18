@@ -41,29 +41,13 @@ Products:
 - Fuel Filter Cartridges
 Protection role: Fuel contamination control and fuel-system protection.
 
-## TURBOCORE™
-System: Fuel Cleanliness Protection
-Application architecture: Turbine-style fuel separation
-Applications:
-- 1000FH
-- 900FH
-- 500FG
-Elements:
-- 2010
-- 2040
-- 2020
-Micron ratings:
-- 30 µm
-- 10 µm
-- 2 µm
-Protection role: Fuel/water separation and turbine-style fuel-system protection.
-
 ## HYDROCORE™
 System: Fuel Cleanliness Protection
 Products:
 - Spin-on Fuel/Water Separators
 - Cartridge Fuel/Water Separators
-Protection role: Standard (non-turbine) fuel/water separation and fuel-system protection. Reserved for separator applications outside the Turbine-style FH/FG architecture governed by TURBOCORE™.
+- Approved FH and FG fuel-separation architectures
+Protection role: Fuel/water separation and fuel-system protection across approved separator applications.
 
 ## SYNTRAX™
 System: Lubrication Protection
