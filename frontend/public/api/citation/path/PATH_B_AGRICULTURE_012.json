@@ -25,6 +25,7 @@
           "off-highway",
           "in-ud"
         ],
+        "domain": null,
         "citation": {
           "source_url": "elimfilters.com/knowledge-center/industries/agriculture",
           "concept": "Agriculture Industry Filtration Requirements",
@@ -74,13 +75,13 @@
       }
     },
     {
-      "key": "ENGINE_OIL_CONTAMINATION",
+      "key": "OPERATOR_DUST_EXPOSURE",
       "type": "problem",
-      "name": "Engine Oil Contamination",
+      "name": "Operator Dust Exposure",
       "citation_record": {
-        "key": "ENGINE_OIL_CONTAMINATION",
+        "key": "OPERATOR_DUST_EXPOSURE",
         "type": "problem",
-        "name": "Engine Oil Contamination",
+        "name": "Operator Dust Exposure",
         "slug": null,
         "status": "active",
         "in_unified_data": false,
@@ -88,144 +89,141 @@
         "tags": [
           "problem",
           "active",
-          "lube-oil",
+          "cabin",
           "not-in-ud",
           "part-search-entry",
-          "exposure-high"
+          "exposure-extreme",
+          "occupational-health"
         ],
+        "domain": "cabin",
         "citation": {
-          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
-          "concept": "Engine Oil Contamination — Lube Circuit Problem",
+          "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
+          "concept": "Operator Dust Exposure — Cabin Air Problem",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:a3ea7be6df7e4004958da8a04281dd0ba429d4d22324d6dc5fab0d92cfdc4138"
+          "content_hash": "sha256:c40db41df53c67068ca4e4630112bac9c0ee4c538a0d86fdac6efc593d06a68e"
         },
         "canonical": {
-          "definition": "Engine oil contamination — accumulation of abrasive particles in diesel engine lube oil circuits\n— is the most universal contamination failure mode across all engine-powered industrial\nequipment, measurable and preventable via ISO 4406 particle cleanliness code management.",
-          "systems": "Lube Oil; affected components: engine bearing journals, piston rings, cylinder walls;\napplies to all 11 industries operating diesel or gasoline-powered equipment",
-          "failure_impact": "Particle accumulation in lube oil → abrasive wear on bearing journals and ring surfaces\n→ ISO 4406 code drift from 16/14/11 to 20/18/15+ → bearing clearance growth\n→ oil film pressure loss → metal-to-metal contact under load → thermal seizure |\nOperational Impact: bearing life reduction 50–80%; overhaul interval collapse from\n15,000–25,000 hours to 2,000–5,000 hours under unmanaged contamination",
-          "related_standards": "ISO 4406: Particle cleanliness code classification for lube oil circuits (target 16/14/11) |\nISO 16889: Multi-pass Beta ratio filter efficiency test applicable to lube oil full-flow filters",
-          "related_technologies": "SYNTRAX: Full-flow lube oil filtration maintaining ISO 4406 cleanliness targets across OCI",
-          "industrial_role": "Engine oil contamination is the primary measurable contamination problem in all diesel\nengine applications — every lube circuit operating without ISO 4406 management degrades\npredictably toward bearing failure. It is the primary commercial target of LUBE_PRIMARY\nand the SYNTRAX technology platform, covering all 11 industries."
+          "definition": "Operator dust exposure — ingress of respirable particulate and chemical contaminants into\nequipment operator cabs — is the primary occupational health contamination problem in\nconstruction, mining, and agricultural equipment, governed by ISO 11155 cab air standards\nand occupational health regulations.",
+          "systems": "Cabin/Operator Protection; affected: operator respiratory system; primary industries:\nMining (EXTREME), Construction (HIGH), Agriculture (HIGH), Bus/Coach, Railway, Trucks/Fleets",
+          "failure_impact": "Cab filter degradation or bypass → ambient dust (silica, PM2.5) enters breathing zone\n→ cumulative alveolar deposition of crystalline silica → progressive pulmonary fibrosis\n→ silicosis (irreversible) after 10+ years sustained exposure |\nOperational Impact: regulatory non-compliance exposure ($500K–$2M lifetime cost per case);\nISO 11155 Class A cab maintains <0.025 mg/m³ at 500 mg/m³ ambient concentration",
+          "related_standards": "ISO 11155: Cab air filter performance requirements for agricultural and construction equipment |\nDIN 71220: Vehicle cabin air filter classification standard",
+          "related_technologies": "MICROKAPPA: ISO 11155-compliant cabin filtration removing PM10, PM2.5, and chemical aerosols\nfrom operator cab air supply; available in Class A (particulate) and Class B (particulate + carbon)",
+          "industrial_role": "Operator dust exposure is the only contamination problem with direct human health and\nregulatory compliance consequences. It is distinct from all equipment-failure contamination\nproblems in that the failure is measured in occupational health outcomes, not equipment\nlifespan. CABIN_PRIMARY / MICROKAPPA is the sole citation chain for this problem domain."
         },
         "relationships": {
           "applicable_standards": [
-            "ISO_16889",
-            "ISO_4406"
+            "ISO_11155",
+            "DIN_71220"
           ],
           "resolved_by_technologies": [
-            "SYNTRAX"
-          ],
-          "affects_components": [
-            "ENGINE_BEARING_JOURNAL",
-            "PISTON_RING_ASSEMBLY"
+            "MICROKAPPA"
           ],
           "recommended_product_families": [
-            "LUBE_PRIMARY"
+            "CABIN_PRIMARY"
           ],
           "root_contamination": [
-            "PARTICLE_WEAR"
+            "CABIN_AIR_CONTAMINATION"
           ],
           "industry_frequency": [
-            "MINING",
             "CONSTRUCTION",
+            "MINING",
             "AGRICULTURE",
-            "TRUCKS_FLEETS",
-            "MARINE",
-            "OIL_GAS",
-            "POWER_GENERATION",
-            "RAILWAY",
             "BUS_COACH",
-            "WASTE_MUNICIPAL",
-            "AUTOMOTIVE"
+            "RAILWAY",
+            "TRUCKS_FLEETS",
+            "WASTE_MUNICIPAL"
           ]
         },
-        "vault_path": "elimfilters-vault\\07-problems\\ENGINE_OIL_CONTAMINATION.md"
+        "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md"
       }
     },
     {
-      "key": "PARTICLE_WEAR",
+      "key": "CABIN_AIR_CONTAMINATION",
       "type": "contamination-mode",
-      "name": "Particle Wear in Engines",
+      "name": "Cabin Air Contamination",
       "citation_record": {
-        "key": "PARTICLE_WEAR",
+        "key": "CABIN_AIR_CONTAMINATION",
         "type": "contamination-mode",
-        "name": "Particle Wear in Engines",
-        "slug": "particle-wear",
+        "name": "Cabin Air Contamination",
+        "slug": "cabin-air-contamination",
         "status": "active",
         "in_unified_data": true,
-        "ud_key": "PARTICLE_WEAR",
+        "ud_key": "CABIN_AIR_CONTAMINATION",
         "tags": [
           "contamination-mode",
           "active",
-          "air-intake",
-          "lube-oil",
-          "fuel",
+          "cabin",
           "in-ud"
         ],
+        "domain": null,
         "citation": {
-          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
-          "concept": "Particle Wear in Engines",
+          "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
+          "concept": "Cabin Air Contamination",
           "version": "1.0",
           "last_updated": "2026-06-03",
-          "content_hash": "sha256:1165fcc5f7b9ef7f0a561a0059cb7ca10bfcf6000cbe8e2933d19cf0f0c2c9af"
+          "content_hash": "sha256:2aa8db81a6055e3f5ff6a609020536cbf8febcc44f5c20d48faf45020455675c"
         },
         "canonical": {
-          "definition": "Particle wear is the abrasive degradation of precision engine surfaces — piston rings, cylinder walls, crankshaft journals, and fuel injector components — caused by hard particles (silica, metal oxides, combustion debris) entrained in oil, fuel, and air intake circuits through two-body, three-body, and adhesive wear mechanisms.",
-          "systems": "Engine lube circuits, air intake systems, fuel injection systems, turbocharger bearing circuits",
-          "failure_impact": "Hard particles enter oil circuit via intake ingestion or internal generation → abrasive micro-cutting at piston ring-to-wall interface (5–15 µm clearance) and journal bearings (15–50 µm film) → progressive clearance loss → oil consumption +15–40%; engine blow-by +5–10%; fuel economy −5–12%; compression drop −10–25%; equipment availability −15–25% | Bearing seizure at ISO 4406 >19/17/14 vs. stable operation at 16/14/11 target.",
-          "related_standards": "ISO 16889: Multi-pass Beta ratio test for filter efficiency classification | ISO 4406: Three-number fluid cleanliness code (≥4/≥6/≥14 µm particle counts per 100 mL) | SAE J1539: Air intake cleanliness specification for diesel engines",
-          "related_technologies": "MACROCORE: Particulate capture at 18 µm absolute in air intake and lube circuits | SYNTRAX: Full-flow lube protection targeting ISO 4406 16/14/11 cleanliness code",
-          "industrial_role": "Particle wear is the primary mechanism converting contamination events (dust ingestion, dirty fuel, oil degradation) into quantifiable engine lifespan reduction — controlling it from ISO 4406 19/17/14 to 16/14/11 extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours."
+          "definition": "Cabin air contamination is the occupational exposure of equipment operators to respirable particulate matter (PM10, PM2.5, crystalline silica), chemical vapors (pesticides, exhaust gases), and biological particles (endotoxins, spores) entering the cab through degraded filtration, failed positive pressure, or contamination bypass pathways — creating regulatory OEL violation risk and long-term respiratory disease exposure.",
+          "systems": "Agricultural machine cabs (harvesters, tractors, sprayers), mining equipment operator cabs, construction machine cabs (excavators, loaders), on-highway truck driver cabs, municipal refuse vehicle cabs",
+          "failure_impact": "Cab filtration bypass or degradation → respirable silica particles above 0.025–0.1 mg/m³ OEL → chronic occupational exposure → silicosis (irreversible) at 5–15 year latency | Pesticide vapor infiltration → acute toxicity events | Blocked cabin filter → loss of cab positive pressure → all gap pathways become contamination ingress routes | Operational impact: regulatory OEL violation; operator productivity −10–20% in extreme dust environments; chronic respiratory disease liability.",
+          "related_standards": "ISO 11155: Passenger compartment air filter test standard; defines cab filter efficiency classification | DIN 71220: Agricultural machinery cab air filtration performance requirements",
+          "related_technologies": "MICROKAPPA: Cabin air filtration technology for PM10, PM2.5, and silica capture with cab positive pressure maintenance and optional chemical vapor adsorption stage",
+          "industrial_role": "Cabin air contamination is the primary occupational health regulatory compliance challenge in mining and agricultural equipment operation — maintaining ISO 11155-rated cab filtration performance and cab positive pressure is the only controllable engineering control that prevents respirable silica and chemical vapor exposure from exceeding OEL limits in high-dust equipment operating environments."
         },
         "relationships": {
           "related_standards": [
-            "ISO_16889",
-            "ISO_4406",
-            "SAE_J1539"
+            "ISO_11155",
+            "DIN_71220"
           ],
           "resolved_by": [
-            "MACROCORE",
-            "SYNTRAX"
+            "MICROKAPPA"
           ]
         },
-        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\CABIN_AIR_CONTAMINATION.md"
       }
     },
     {
-      "key": "SYNTRAX",
+      "key": "MICROKAPPA",
       "type": "technology",
-      "name": "SYNTRAX™",
+      "name": "MICROKAPPA™",
       "citation_record": {
-        "key": "SYNTRAX",
+        "key": "MICROKAPPA",
         "type": "technology",
-        "name": "SYNTRAX™",
-        "slug": "syntrax",
+        "name": "MICROKAPPA™",
+        "slug": "microkappa",
         "status": "active",
         "in_unified_data": false,
         "ud_key": null,
         "tags": [],
+        "domain": "Cabin Air",
         "citation": {
-          "source_url": "https://elimfilters.com/knowledge-center/technologies/syntrax/",
-          "concept": "SYNTRAX Lubrication Filtration Technology",
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/microkappa/",
+          "concept": "MICROKAPPA Cabin Air Protection Technology",
           "version": "2.0",
           "last_updated": "2026-08-14",
-          "content_hash": "sha256:c97225eb00550ebe6f835f7ff3d4a41aaae47d9f5a1f309a105517d4b16800c6"
+          "content_hash": "sha256:4a0e42cb44643a3de65e84621f0d1a1ce3923a783adb97bc13655fd29755d6eb"
         },
         "canonical": {
-          "definition": "SYNTRAX is the ELIMFILTERS lubrication filtration architecture for controlling wear debris and lubricant contamination.",
-          "systems": "Lubrication Protection; approved engine and equipment lubricant filtration applications.",
-          "failure_impact": "Uncontrolled lubricant contamination can accelerate wear of bearings, journals and other lubricated components and can reduce the stability of the protected lubrication system across the service interval.",
-          "related_standards": "Applicable cleanliness and filter-performance standards must be selected for the approved lubricant system and application. The technology name alone does not imply a universal cleanliness code, Beta ratio, service-life extension or certification claim.",
-          "related_technologies": "NANOFORCE protects hydraulic fluid-power systems and must not be represented as an auxiliary or polishing stage of SYNTRAX unless an approved application explicitly establishes that relationship.",
-          "industrial_role": "SYNTRAX provides the lubricant-contamination control layer of ELIMFILTERS Lubrication Protection. Filtration performance and service interval are matched to engine duty, lubricant condition, contaminant load and the requirements of the protected components."
+          "definition": "MICROKAPPA is the ELIMFILTERS cabin-air protection architecture for particulate and selected gaseous-contaminant control.",
+          "systems": "Air Intake & Airflow Protection; operator cabin HVAC filtration.",
+          "failure_impact": "Inadequate cabin-air filtration can increase operator exposure to airborne particulate contamination and can reduce HVAC air-quality performance in demanding operating environments.",
+          "related_standards": "Applicable cabin-air test standards and occupational requirements must be matched to the approved application and filtration configuration; no universal certification or efficiency claim is implied by the technology name alone.",
+          "related_technologies": "MACROCORE: Engine-air filtration architecture for primary and secondary engine intake protection. INTEKCORE: Air-cleaner housing and sealing architecture for the protected engine-intake boundary. These technologies protect different air pathways and must not be represented as cabin-air substitutes.",
+          "industrial_role": "MICROKAPPA provides the operator-environment filtration layer of ELIMFILTERS Air Intake & Airflow Protection. Media selection is governed by the operating environment, exposure requirement, airflow demand and HVAC pressure-drop constraints."
         },
-        "relationships": {},
-        "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTRAX.md"
+        "relationships": {
+          "related_technologies": [
+            "MACROCORE",
+            "INTEKCORE"
+          ]
+        },
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MICROKAPPA.md"
       }
     }
   ],
   "terminal_product_families": [
-    "LUBE_PRIMARY"
+    "CABIN_PRIMARY"
   ]
 }

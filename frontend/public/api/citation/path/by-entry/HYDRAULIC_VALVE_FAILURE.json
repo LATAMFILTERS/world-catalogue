@@ -3,7 +3,7 @@
   "path_count": 1,
   "paths": [
     {
-      "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_007",
+      "path_id": "PATH_A_HYDRAULIC_VALVE_FAILURE_005",
       "path_type": "A",
       "entry_node": "HYDRAULIC_VALVE_FAILURE",
       "entry_type": "problem",
@@ -12,7 +12,7 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_007.json"
+      "href": "/api/citation/path/PATH_A_HYDRAULIC_VALVE_FAILURE_005.json"
     }
   ]
 }

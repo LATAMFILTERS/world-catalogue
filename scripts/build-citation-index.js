@@ -368,6 +368,7 @@ function buildCitationRecord(note) {
     in_unified_data,
     ud_key: yaml.ud_key || null,
     tags,
+    domain: typeof yaml.domain === 'string' ? yaml.domain : null,
     citation: {
       source_url: citation.source_url,
       concept: citation.concept,

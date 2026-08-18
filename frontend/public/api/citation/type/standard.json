@@ -18,6 +18,7 @@
         "test-method",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/astm-d6304",
         "concept": "ASTM D6304 Water in Petroleum Products",
@@ -63,6 +64,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
         "concept": "DIN 51524 — Hydraulic and Lube Oil Specification",
@@ -97,6 +99,7 @@
         "performance-test",
         "not-in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/din-71220",
         "concept": "DIN 71220 Cabin Air Filter Testing",
@@ -146,6 +149,7 @@
         "performance-test",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-11155",
         "concept": "ISO 11155 Cabin Air Filter Performance",
@@ -198,6 +202,7 @@
         "test-method",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-12937",
         "concept": "ISO 12937 Water in Petroleum Products",
@@ -249,6 +254,7 @@
         "primary",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-16889",
         "concept": "ISO 16889 Filter Multi-Pass Test Method",
@@ -300,6 +306,7 @@
         "primary",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-4406",
         "concept": "ISO 4406 Hydraulic Fluid Cleanliness Code",
@@ -345,6 +352,7 @@
         "test-method",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/air-intake-protection",
         "concept": "ISO 5011 — Air Filter Performance Test",
@@ -400,6 +408,7 @@
         "structural-test",
         "not-in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/nfpa-t214",
         "concept": "NFPA T2.14 Hydraulic Filter Collapse/Burst Resistance",
@@ -449,6 +458,7 @@
         "primary",
         "in-ud"
       ],
+      "domain": "Air Intake",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/sae-j1539",
         "concept": "SAE J1539 Air Intake Cleanliness",

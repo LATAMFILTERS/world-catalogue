@@ -1,7 +1,31 @@
 {
   "entry_key": "AGRICULTURE",
-  "path_count": 8,
+  "path_count": 6,
   "paths": [
+    {
+      "path_id": "PATH_B_AGRICULTURE_007",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_007.json"
+    },
+    {
+      "path_id": "PATH_B_AGRICULTURE_008",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_008.json"
+    },
     {
       "path_id": "PATH_B_AGRICULTURE_009",
       "path_type": "B",
@@ -10,7 +34,7 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_009.json"
     },
@@ -22,7 +46,7 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "FUEL_TURBINE"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_010.json"
     },
@@ -34,7 +58,7 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "HYDRAULIC_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_011.json"
     },
@@ -46,57 +70,9 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_012.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_013",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_WATER_SEPARATOR"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_013.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_014",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_014.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_015",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_015.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_016",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_016.json"
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_012.json"
     }
   ]
 }

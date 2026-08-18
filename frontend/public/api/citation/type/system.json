@@ -18,6 +18,7 @@
         "asset-protection",
         "in-ud"
       ],
+      "domain": "Air Intake",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/air-intake-protection",
         "concept": "Air Intake & Airflow Protection Systems",
@@ -74,6 +75,7 @@
         "asset-protection",
         "in-ud"
       ],
+      "domain": "Cooling",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/cooling-system-protection",
         "concept": "Cooling System Protection",
@@ -121,6 +123,7 @@
         "asset-protection",
         "in-ud"
       ],
+      "domain": "Fuel",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/fuel-cleanliness-protection",
         "concept": "Fuel Cleanliness Protection Systems",
@@ -175,6 +178,7 @@
         "asset-protection",
         "in-ud"
       ],
+      "domain": "Hydraulic",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/hydraulic-protection",
         "concept": "Hydraulic Systems",
@@ -229,6 +233,7 @@
         "asset-protection",
         "in-ud"
       ],
+      "domain": "Lube Oil",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
         "concept": "Lubrication Systems",

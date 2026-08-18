@@ -12,6 +12,7 @@ belongs_to_product_system: "[[FUEL]]"
 performance_rating: ">99% free water separation; >95% emulsified water removal; EN 590 compliant"
 target_industries:
   - "[[AGRICULTURE]]"
+  - "[[AUTOMOTIVE]]"
   - "[[MARINE]]"
   - "[[MINING]]"
   - "[[OIL_GAS]]"

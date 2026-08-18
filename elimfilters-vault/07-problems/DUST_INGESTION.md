@@ -5,7 +5,7 @@ key: DUST_INGESTION
 name: Dust Ingestion
 problem_statement: "Engine ingesting fine particulate through the air intake system, accelerating abrasive wear on pistons, rings, turbocharger bearings, and cylinder walls."
 domain: air-intake
-root_contamination: "[[PARTICLE_WEAR]]"
+root_contamination: "[[PARTICLE_WEAR_AIR_INTAKE]]"
 contributing_factors:
   - Damaged or improperly seated air filter element
   - Filter element saturation past service interval — high restriction forces bypass

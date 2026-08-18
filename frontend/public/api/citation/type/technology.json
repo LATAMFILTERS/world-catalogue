@@ -11,6 +11,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Air Dryer",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/drycore/",
         "concept": "DRYCORE Air Dryer Filtration Technology",
@@ -38,6 +39,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Fuel",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/hydrocore/",
         "concept": "HYDROCORE Fuel Water Separation Technology",
@@ -70,6 +72,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Air Intake",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/intekcore/",
         "concept": "INTEKCORE Air Cleaner Housing and Sealing Technology",
@@ -104,6 +107,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Air Intake",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/macrocore/",
         "concept": "MACROCORE Engine Air Filtration Technology",
@@ -138,6 +142,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Cabin Air",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/microkappa/",
         "concept": "MICROKAPPA Cabin Air Protection Technology",
@@ -170,6 +175,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Hydraulic",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/nanoforce/",
         "concept": "NANOFORCE Hydraulic Filtration Technology",
@@ -202,6 +208,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Fuel",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/syntapore/",
         "concept": "SYNTAPORE Fuel Filtration Technology",
@@ -234,6 +241,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Lubrication",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/syntrax/",
         "concept": "SYNTRAX Lubrication Filtration Technology",
@@ -261,6 +269,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Cooling",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/thermacore/",
         "concept": "THERMACORE Cooling System Protection Technology",
@@ -288,6 +297,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Fuel",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/turbocore/",
         "concept": "TURBOCORE Fuel Water Separation Technology",

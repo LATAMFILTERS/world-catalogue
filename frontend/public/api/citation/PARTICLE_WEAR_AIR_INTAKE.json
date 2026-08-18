@@ -1,0 +1,70 @@
+{
+  "key": "PARTICLE_WEAR_AIR_INTAKE",
+  "type": "contamination-mode",
+  "name": "Particle Wear — Air Intake Pathway",
+  "slug": "particle-wear-air-intake",
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "PARTICLE_WEAR_AIR_INTAKE",
+  "tags": [
+    "contamination-mode",
+    "active",
+    "air-intake",
+    "in-ud"
+  ],
+  "domain": null,
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+    "concept": "Particle Wear — Air Intake Pathway",
+    "version": "1.0",
+    "last_updated": "2026-08-18",
+    "content_hash": "sha256:f56207392348e2ef91fd952490ee63c0a8fecccdc60c492e93ff59f7aff0292e"
+  },
+  "canonical": {
+    "definition": "Particle wear via the air intake pathway is the abrasive degradation of piston ring, cylinder wall, and turbocharger bearing surfaces caused by hard particles (silica, environmental dust) entering the engine through air intake ingestion, operating through two-body and three-body wear mechanisms.",
+    "systems": "Engine air intake systems, piston ring and cylinder bore assemblies, turbocharger bearing circuits",
+    "failure_impact": "Hard particles bypass air intake filtration → abrasive micro-cutting at piston ring-to-cylinder wall interface (5–15 µm clearance) → progressive clearance loss → compression drop −10–25%; equipment availability −15–25%.",
+    "related_standards": "ISO 5011: Air-cleaner performance testing for engine air-intake applications | SAE J1539: Air intake cleanliness specification for diesel engines",
+    "related_technologies": "MACROCORE: Engine air intake filtration technology resolving the air-intake pathway of particle wear.",
+    "industrial_role": "This is the air-intake-specific specialization of the particle wear mechanism, isolated for resolution-pathway clarity: it is addressed exclusively by air-intake filtration technology, not by lubrication, fuel, hydraulic, or cabin-air technologies."
+  },
+  "relationships": {
+    "related_standards": [
+      "ISO_5011",
+      "SAE_J1539"
+    ],
+    "resolved_by": [
+      "MACROCORE"
+    ],
+    "related_contamination": [
+      "PARTICLE_WEAR"
+    ]
+  },
+  "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR_AIR_INTAKE.md",
+  "_links": {
+    "self": "/api/citation/PARTICLE_WEAR_AIR_INTAKE.json",
+    "type_index": "/api/citation/type/contamination-mode.json",
+    "related": [
+      {
+        "key": "ISO_5011",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_5011.json"
+      },
+      {
+        "key": "SAE_J1539",
+        "relation": "related_standards",
+        "href": "/api/citation/SAE_J1539.json"
+      },
+      {
+        "key": "MACROCORE",
+        "relation": "resolved_by",
+        "href": "/api/citation/MACROCORE.json"
+      },
+      {
+        "key": "PARTICLE_WEAR",
+        "relation": "related_contamination",
+        "href": "/api/citation/PARTICLE_WEAR.json"
+      }
+    ]
+  }
+}

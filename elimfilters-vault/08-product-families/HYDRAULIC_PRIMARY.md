@@ -17,6 +17,7 @@ performance_rating: "Beta ratio and ISO 4406 cleanliness target rated per approv
 target_industries:
   - "[[AGRICULTURE]]"
   - "[[CONSTRUCTION]]"
+  - "[[MARINE]]"
   - "[[MINING]]"
   - "[[OIL_GAS]]"
   - "[[POWER_GENERATION]]"
