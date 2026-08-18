@@ -46,7 +46,7 @@ The primary economic unit is the Protected Asset, not the filter product. Commer
 
 Distribution is built through regional partners selected for asset access, technical capability, local execution, and long-term market development rather than purchase volume alone. Strategic accounts are developed for long-term integration rather than transactional sales. Commercial Intelligence accumulated through every interaction is a permanent corporate asset.
 
-ELIMFILTERS combines global engineering, qualified manufacturing, physical validation, AI-assisted auditing, human quality oversight, product intelligence, and a lean technology-enabled operating structure. The purpose of this architecture is to direct more resources toward engineering, materials, manufacturing quality, technical intelligence, supply-chain efficiency, and partner value rather than unnecessary structural overhead.
+ELIMFILTERS combines global engineering, qualified manufacturing, physical validation, AI-assisted auditing, trained AI agents, periodic specialist engineering audits, human quality oversight, product intelligence, and a lean technology-enabled operating structure. The purpose of this architecture is to reduce repetitive structural work and direct more resources toward engineering, materials, manufacturing quality, technical intelligence, supply-chain efficiency, and partner value.
 
 This doctrine governs all commercial decisions, strategies, and activities of the organization.
 
@@ -97,11 +97,13 @@ The company differentiates through:
 - ELIMFILTERS-defined manufacturing specifications and quality governance
 - Physical validation protocols matched to product family and application
 - AI-assisted product auditing for consistency, deviations, anomalous patterns, traceability signals, and documentation control
-- Human oversight of manufacturing, quality assurance, release criteria, and critical technical decisions
+- Trained AI agents for repetitive, rules-based, and data-intensive operational work
+- Periodic audits of agent workflows and performance by industrial, mechanical, process, and systems engineers
+- Human accountability for manufacturing oversight, quality assurance, evidence review, release criteria, and critical decisions
 - Global Catalog Intelligence enabling disciplined cross-reference and application support
 - Commercial Intelligence accumulated through field operations and customer integration
 - Technical knowledge delivered through the ELIMFILTERS® Knowledge System
-- A lean technology-enabled operating structure designed to reduce unnecessary administrative overhead
+- A horizontal, technology-enabled operating structure designed to reduce unnecessary administrative overhead
 - Distribution network development that extends reach without diluting technical or brand standards
 - Strategic account relationships built on long-term protection commitments
 
@@ -165,7 +167,7 @@ The operating and commercial system follows this sequence:
 2. **Manufacturing** — qualified production capacity selected for specialization, scale, infrastructure, and supply-chain capability.
 3. **Validation** — physical testing and evidence matched to the product family, application, and claim.
 4. **Intelligence** — structured product data, cross-reference intelligence, application knowledge, technical knowledge, and traceability.
-5. **Lean Operations** — AI-enabled workflows and reduced unnecessary administrative layers with accountable human control.
+5. **Lean Operations** — trained AI agents execute repeatable work inside governed workflows, with periodic specialist engineering audits and accountable human control.
 6. **Commercial Partner** — local inventory, relationships, technical sales, service, territory development, and customer continuity.
 7. **Asset Protection** — the final operational and economic outcome for the end customer.
 
@@ -286,19 +288,19 @@ All public technology references must use the current canonical registry. Deprec
 
 ### Core Technology Platforms
 
+The active commercial doctrine must mirror the canonical technology registry rather than maintain a second independent list.
+
 | Technology | Primary Domain |
 |---|---|
 | MACROCORE™ | Air intake particulate control |
-| SYNTRAX™ | Engine lubrication |
-| NANOFORCE™ | Hydraulic cleanliness |
-| SYNTAPORE™ | Fuel cleanliness |
-| HYDROCORE™ | Fuel / water separation |
-| THERMACORE™ | Cooling-system protection |
-| DRYCORE™ | Compressed-air / pneumatic protection |
-| INTEKCORE™ | Filter housing systems |
 | MICROKAPPA™ | Cabin-air filtration |
-| DURACTECH™ | Severe-duty applications |
-| MARINECLEAN™ | Marine applications |
+| SYNTRAX™ | Engine lubrication |
+| SYNTAPORE™ | Fuel cleanliness |
+| NANOFORCE™ | Hydraulic cleanliness |
+| THERMACORE™ | Cooling-system protection |
+| INTEKCORE™ | Filter housing systems |
+| DRYCORE™ | Compressed-air / pneumatic protection |
+| HYDROCORE™ | Fuel / water separation |
 
 Technology selection follows the contamination-control hierarchy:
 
@@ -356,7 +358,9 @@ AI-assisted systems may analyze production, quality, product, catalog, and trace
 
 AI does not certify product quality and does not replace physical validation.
 
-Qualified personnel retain accountability for manufacturing oversight, quality assurance, release criteria, evidence review, and critical technical decisions.
+ELIMFILTERS AI agents operate inside defined workflows and are trained for the repetitive, rules-based, or data-intensive processes assigned to them. Their workflows, outputs, controls, and performance are subject to periodic professional audit by industrial, mechanical, process, and systems engineers according to the function being evaluated.
+
+Qualified personnel retain accountability for manufacturing oversight, quality assurance, release criteria, evidence review, technical governance, safety-relevant interpretation, and critical decisions.
 
 ### Traceability & Product Intelligence
 
@@ -366,11 +370,11 @@ Traceability and product intelligence are commercial assets because they reduce 
 
 ---
 
-## 11. Lean Operating Model & Partner Economics
+## 11. Horizontal Operating Model & Partner Economics
 
-ELIMFILTERS uses a technology-enabled, horizontal operating structure designed to reduce unnecessary administrative layers and structural overhead.
+ELIMFILTERS uses a technology-enabled, horizontal operating structure designed to reduce repetitive organizational work, unnecessary administrative layers, and the structural cost carried by a deeply vertical organization.
 
-AI-enabled processes support:
+AI agents support defined processes including:
 
 - Product intelligence
 - Catalog and cross-reference workflows
@@ -381,9 +385,11 @@ AI-enabled processes support:
 - Commercial intelligence
 - Documentation and anomaly detection
 
-Human accountability remains embedded in manufacturing, quality, commercial governance, and critical technical decisions.
+Agents are not an unmanaged substitute for technical personnel. They are trained for defined tasks, operate under documented governance, and are periodically audited by industrial, mechanical, process, and systems engineers. Qualified personnel retain responsibility for manufacturing, quality, engineering interpretation, commercial governance, evidence review, and critical decisions.
 
-The purpose of the lean model is not merely to lower nominal product cost. It is to preserve value through the supply chain by directing a greater proportion of resources toward:
+The economic distinction is structural rather than a low-price strategy. Automating repeatable work reduces the direct organizational cost embedded in product economics without lowering engineering, material, manufacturing, validation, or quality requirements.
+
+The purpose of the horizontal model is to preserve value through the supply chain by directing a greater proportion of resources toward:
 
 - Engineering
 - Materials
@@ -396,9 +402,9 @@ The purpose of the lean model is not merely to lower nominal product cost. It is
 
 The desired commercial effect is:
 
-**Lower avoidable structural overhead → stronger product economics → competitive landed cost → sustainable distributor margin → stronger local market position.**
+**Lower avoidable structural cost → stronger product economics → competitive landed cost → sustainable distributor margin → stronger local market position.**
 
-ELIMFILTERS shall not use the lean model as justification for unsupported price, quality, or performance superiority claims.
+ELIMFILTERS shall not use the horizontal model as justification for unsupported price, quality, or performance superiority claims.
 
 ---
 
@@ -529,9 +535,17 @@ No public claim about engineering origin, manufacturing, certifications, testing
 
 AI-assisted auditing shall never be described as replacing physical testing, certification, accountable quality control, or human technical responsibility.
 
+### Agent Governance Rule
+
+AI agents used in ELIMFILTERS operational workflows must be trained for defined tasks, operate under explicit process boundaries, and remain subject to periodic audit appropriate to their function. Audit disciplines may include industrial engineering, mechanical engineering, process engineering, and systems engineering.
+
+Agent automation may reduce repetitive structural work and organizational cost, but it does not transfer accountability for quality, safety, engineering interpretation, evidence, or critical decisions away from qualified personnel.
+
 ### Technology Nomenclature Rule
 
 All active outputs must use the current canonical technology registry. Deprecated names must not appear in public-facing ELIMFILTERS content or active commercial governance documents.
+
+The canonical registry is the source of truth. Commercial doctrine, metadata, structured data, Knowledge Center content, audits, and public APIs must not maintain independent technology-name variants.
 
 ### Amendment Protocol
 
