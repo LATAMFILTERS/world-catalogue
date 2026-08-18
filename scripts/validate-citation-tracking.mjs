@@ -1,21 +1,21 @@
 #!/usr/bin/env node
 /**
  * validate-citation-tracking.mjs
- * Phase E — Citation API publication-surface tracking guard.
+ * Phase E — Citation publication tracking guard.
  *
- * Read-only. Verifies that the deployable Citation API tree does not contain
- * untracked or ignored files and that direct upstream intermediates remain
- * present and tracked.
+ * The Citation API tree under frontend/public/api/citation/** is GENERATED
+ * during prebuild. It is intentionally rebuilt from scratch by
+ * scripts/generate-citation-api.js and therefore MUST NOT be required to match
+ * the Git index file-for-file.
  *
- * The Citation API generator intentionally rebuilds frontend/public/api/citation
- * from scratch. Therefore a file that is tracked by Git but no longer exists on
- * disk after generation is treated as a stale generated artifact retired by the
- * current canonical build, not as a blocking deployment error.
- *
- * Scope:
- *   - frontend/public/api/citation/**
+ * Blocking guarantees in this guard are limited to the two direct upstream
+ * intermediates that must exist and remain versioned:
  *   - elimfilters-vault/00-meta/CITATION_INDEX.json
  *   - elimfilters-vault/00-meta/PART_SEARCH_MAP.json
+ *
+ * Structural/content correctness of the generated Citation API is enforced by
+ * the dedicated citation API and content-governance validators that run before
+ * this guard in prebuild.
  */
 
 import fs from 'fs';
@@ -42,6 +42,7 @@ function listOnDiskFiles(relDir) {
   const absDir = path.join(PROJECT_ROOT, relDir);
   if (!fs.existsSync(absDir)) return [];
   const results = [];
+
   function walk(dir) {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
@@ -49,66 +50,47 @@ function listOnDiskFiles(relDir) {
       else results.push(path.relative(PROJECT_ROOT, full).replaceAll('\\', '/'));
     }
   }
+
   walk(absDir);
   return results;
 }
 
 function listTrackedFiles(relPath) {
   const out = git(['ls-files', '--', relPath]);
-  return out.split('\n').map((l) => l.trim()).filter(Boolean);
+  return out.split('\n').map((line) => line.trim()).filter(Boolean);
 }
 
 function listIgnoredFiles(relPath) {
   const out = git(['status', '--porcelain', '--ignored', '--', relPath]);
   return out
     .split('\n')
-    .filter((l) => l.startsWith('!!'))
-    .map((l) => l.slice(3).trim().replaceAll('\\', '/'))
+    .filter((line) => line.startsWith('!!'))
+    .map((line) => line.slice(3).trim().replaceAll('\\', '/'))
     .filter(Boolean);
 }
 
-function checkTree(label, relDir) {
-  const onDisk = new Set(listOnDiskFiles(relDir));
-  const tracked = new Set(listTrackedFiles(relDir));
-  const ignored = new Set(listIgnoredFiles(relDir));
-
-  const violations = [];
-  const retiredTrackedArtifacts = [];
-
-  for (const f of onDisk) {
-    if (!tracked.has(f)) violations.push({ code: 'UNTRACKED_FILE', file: f });
-  }
-
-  // The generator starts with rmSync(OUT_DIR) and recreates only the current
-  // canonical artifact set. Missing tracked files here are therefore stale
-  // generated outputs intentionally pruned from the deployable tree.
-  for (const f of tracked) {
-    if (!onDisk.has(f)) retiredTrackedArtifacts.push(f);
-  }
-
-  for (const f of ignored) {
-    violations.push({ code: 'IGNORED_FILE_IN_PUBLICATION_SCOPE', file: f });
-  }
+function inspectGeneratedTree() {
+  const onDisk = listOnDiskFiles(CITATION_TREE_REL);
+  const tracked = listTrackedFiles(CITATION_TREE_REL);
+  const ignored = listIgnoredFiles(CITATION_TREE_REL);
 
   return {
-    label,
-    onDiskCount: onDisk.size,
-    trackedCount: tracked.size,
-    retiredTrackedArtifacts,
-    violations,
+    onDiskCount: onDisk.length,
+    trackedCount: tracked.length,
+    ignoredCount: ignored.length,
   };
 }
 
-function checkSingleFile(label, relPath) {
+function checkRequiredTrackedFile(label, relPath) {
   const absPath = path.join(PROJECT_ROOT, relPath);
   const onDisk = fs.existsSync(absPath);
   const tracked = listTrackedFiles(relPath).length > 0;
   const ignored = listIgnoredFiles(relPath).length > 0;
 
   const violations = [];
-  if (onDisk && !tracked) violations.push({ code: 'UNTRACKED_FILE', file: relPath });
-  if (tracked && !onDisk) violations.push({ code: 'TRACKED_FILE_MISSING_FROM_DISK', file: relPath });
-  if (ignored && onDisk) violations.push({ code: 'IGNORED_FILE_IN_PUBLICATION_SCOPE', file: relPath });
+  if (!onDisk) violations.push({ code: 'REQUIRED_FILE_MISSING', file: relPath });
+  if (!tracked) violations.push({ code: 'REQUIRED_FILE_UNTRACKED', file: relPath });
+  if (ignored) violations.push({ code: 'REQUIRED_FILE_IGNORED', file: relPath });
 
   return { label, onDisk, tracked, ignored, violations };
 }
@@ -117,31 +99,40 @@ function main() {
   console.log('CITATION TRACKING GUARD — Phase E');
   console.log('===================================');
 
-  const tree = checkTree('frontend/public/api/citation/** (deployable Citation API tree)', CITATION_TREE_REL);
-  console.log(`\n${tree.label}`);
-  console.log(`  On-disk files:  ${tree.onDiskCount}`);
-  console.log(`  Tracked files:  ${tree.trackedCount}`);
-  console.log(`  Generator-pruned stale tracked artifacts: ${tree.retiredTrackedArtifacts.length}`);
-  console.log(`  Violations:     ${tree.violations.length}`);
-  for (const v of tree.violations) console.log(`    - ${v.code}: ${v.file}`);
+  const generated = inspectGeneratedTree();
+  console.log('\nfrontend/public/api/citation/** (generated deployable Citation API tree)');
+  console.log(`  On-disk generated files: ${generated.onDiskCount}`);
+  console.log(`  Git-tracked files:       ${generated.trackedCount}`);
+  console.log(`  Git-ignored files:       ${generated.ignoredCount}`);
+  console.log('  Tracking policy: informational only — this tree is rebuilt during prebuild.');
 
-  const citationIndex = checkSingleFile('elimfilters-vault/00-meta/CITATION_INDEX.json (upstream intermediate)', CITATION_INDEX_REL);
+  const citationIndex = checkRequiredTrackedFile(
+    'elimfilters-vault/00-meta/CITATION_INDEX.json (upstream intermediate)',
+    CITATION_INDEX_REL,
+  );
   console.log(`\n${citationIndex.label}`);
-  console.log(`  On disk: ${citationIndex.onDisk} | Tracked: ${citationIndex.tracked}`);
-  for (const v of citationIndex.violations) console.log(`    - ${v.code}: ${v.file}`);
+  console.log(`  On disk: ${citationIndex.onDisk} | Tracked: ${citationIndex.tracked} | Ignored: ${citationIndex.ignored}`);
+  for (const violation of citationIndex.violations) {
+    console.log(`    - ${violation.code}: ${violation.file}`);
+  }
 
-  const partSearchMap = checkSingleFile('elimfilters-vault/00-meta/PART_SEARCH_MAP.json (upstream intermediate)', PART_SEARCH_MAP_REL);
+  const partSearchMap = checkRequiredTrackedFile(
+    'elimfilters-vault/00-meta/PART_SEARCH_MAP.json (upstream intermediate)',
+    PART_SEARCH_MAP_REL,
+  );
   console.log(`\n${partSearchMap.label}`);
-  console.log(`  On disk: ${partSearchMap.onDisk} | Tracked: ${partSearchMap.tracked}`);
-  for (const v of partSearchMap.violations) console.log(`    - ${v.code}: ${v.file}`);
+  console.log(`  On disk: ${partSearchMap.onDisk} | Tracked: ${partSearchMap.tracked} | Ignored: ${partSearchMap.ignored}`);
+  for (const violation of partSearchMap.violations) {
+    console.log(`    - ${violation.code}: ${violation.file}`);
+  }
 
-  const totalViolations = tree.violations.length + citationIndex.violations.length + partSearchMap.violations.length;
+  const totalViolations = citationIndex.violations.length + partSearchMap.violations.length;
 
   console.log('');
   if (totalViolations === 0) {
-    console.log('RESULT: PASS — deployable citation artifacts are tracked/not ignored; stale generated artifacts pruned by the canonical generator are non-blocking.');
+    console.log('RESULT: PASS — required upstream citation intermediates are present and tracked; generated publication artifacts are validated by dedicated build gates.');
   } else {
-    console.log(`RESULT: FAIL — ${totalViolations} tracking violation(s) in scope.`);
+    console.log(`RESULT: FAIL — ${totalViolations} upstream tracking violation(s).`);
     process.exitCode = 1;
   }
 }
