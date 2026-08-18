@@ -8,46 +8,46 @@ type Props = {
 const OPERATING_CHAIN = [
   {
     step: '01',
-    eyebrow: 'ENGINEERING',
-    title: 'German-Developed Filtration Media',
-    body: 'ELIMFILTERS formulated filtration media are developed in Germany around defined performance targets, application requirements, material behavior, and contamination-control objectives.',
+    eyebrow: 'GERMANY',
+    title: 'Media Engineering & Development',
+    body: 'ELIMFILTERS formulated filtration media are developed in Germany around defined performance targets, application requirements, material behavior, durability objectives, and contamination-control needs.',
   },
   {
     step: '02',
-    eyebrow: 'MANUFACTURING',
-    title: 'Qualified PRC Production Capacity',
+    eyebrow: 'PRC',
+    title: 'Qualified Manufacturing Partners',
     body: 'Production is executed through selected manufacturing partners in the People’s Republic of China (PRC), chosen for specialized filtration capability, scalable industrial infrastructure, and integration with mature automotive and heavy-duty supply chains.',
   },
   {
     step: '03',
-    eyebrow: 'VALIDATION',
+    eyebrow: 'PHYSICAL VALIDATION',
     title: 'Performance, Resistance & Durability',
-    body: 'Validation is matched to product family and application. Where applicable, protocols may include efficiency, pressure drop, contaminant holding capacity, flow, media tensile strength, pleat integrity, dimensional stability, burst or collapse resistance, cyclic pressure endurance, seal integrity, temperature resistance, material compatibility, and water-separation performance.',
+    body: 'Validation is matched to product family and application. Where applicable, protocols may include efficiency, pressure drop, contaminant holding capacity, flow performance, media tensile strength, pleat integrity, dimensional stability, burst or collapse resistance, cyclic pressure endurance, seal integrity, temperature resistance, material compatibility, and water-separation performance.',
   },
   {
     step: '04',
-    eyebrow: 'INTELLIGENCE',
-    title: 'AI-Assisted Product Auditing',
-    body: 'AI-assisted systems review production and product data for inconsistencies, deviations, anomalous patterns, traceability signals, and documentation gaps. Physical validation and accountable human quality oversight remain mandatory.',
+    eyebrow: 'AI-ASSISTED AUDITING',
+    title: 'Consistency, Deviations & Traceability',
+    body: 'AI-assisted systems review production and product data for inconsistencies, deviations, anomalous patterns, traceability signals, and documentation gaps. Physical validation and accountable human quality oversight remain part of the control system.',
   },
   {
     step: '05',
-    eyebrow: 'EFFICIENCY',
-    title: 'A Leaner Operating Structure',
-    body: 'A technology-enabled, horizontal operating structure reduces unnecessary administrative layers and structural overhead so more resources can remain focused on engineering, materials, manufacturing quality, product intelligence, supply-chain efficiency, and partner value.',
+    eyebrow: 'LEAN OPERATING MODEL',
+    title: 'Technology-Enabled Horizontal Operations',
+    body: 'A lean, technology-enabled operating structure reduces unnecessary administrative layers and structural overhead so more resources can remain concentrated on engineering, materials, manufacturing quality, product intelligence, supply-chain efficiency, and execution.',
   },
   {
     step: '06',
-    eyebrow: 'PARTNERSHIP',
-    title: 'Value Reaches the Local Market',
+    eyebrow: 'COMMERCIAL PARTNER',
+    title: 'Value Transferred to the Market',
     body: 'Commercial partners contribute local relationships, inventory strategy, technical sales, regional service, and market knowledge. ELIMFILTERS contributes product architecture, quality governance, cross-reference intelligence, technical resources, and scalable product access.',
   },
 ];
 
 const PARTNER_OUTCOMES = [
-  ['Competitive Landed Economics', 'Efficiency is designed into the operating model so avoidable overhead does not unnecessarily inflate the product by the time it reaches the market.'],
-  ['Sustainable Partner Margin', 'The system is designed to preserve value through the supply chain rather than optimize only factory-level product cost.'],
-  ['Technical Confidence', 'Engineering, validation, traceability, and product intelligence give partners a stronger technical foundation for the sale.'],
+  ['Competitive Landed Economics', 'A deliberately efficient operating model helps prevent avoidable structural overhead from unnecessarily increasing landed product cost.'],
+  ['Sustainable Partner Margin', 'The system is designed to preserve economic value through the supply chain and strengthen the commercial position of authorized partners.'],
+  ['Technical Confidence', 'Engineering, validation, traceability, and product intelligence give partners a stronger technical foundation for customer decisions.'],
   ['Market Flexibility', 'Partners can serve industrial, heavy-duty, fleet, equipment, and complementary automotive / Light Duty demand according to their territory.'],
   ['Customer Continuity', 'Local relationships, availability, technical support, and asset knowledge are treated as long-term commercial assets.'],
   ['Lifecycle Value', 'Product quality, correct application, availability, technical intelligence, and competitive economics work together to reduce total operating risk.'],
@@ -60,14 +60,14 @@ export function GlobalCommercialModel({ variant = 'about' }: Props) {
     <>
       <section style={section}>
         <div style={wrap}>
-          <p style={eyebrow}>{isDistributor ? 'WHY THE ELIMFILTERS MODEL MATTERS TO PARTNERS' : 'A DIFFERENT INDUSTRIAL MODEL'}</p>
+          <p style={eyebrow}>{isDistributor ? 'THE ELIMFILTERS GLOBAL MODEL' : 'GLOBAL ENGINEERING & MANUFACTURING MODEL'}</p>
           <h2 style={title}>
             {isDistributor
-              ? 'Built to Put More Value Into the Product — and More Opportunity Into the Partnership.'
-              : 'A Global Operating Model Designed Around Product Quality, Efficiency and Partner Value.'}
+              ? 'Engineering, Manufacturing, Validation and Intelligence — Structured to Create More Value for the Partner.'
+              : 'German-Developed Media. Qualified PRC Manufacturing. ELIMFILTERS Quality Governance.'}
           </h2>
           <p style={lead}>
-            ELIMFILTERS is not organized around the idea that one manufacturing country defines product quality. The model separates each capability deliberately: media development, specialized manufacturing, physical validation, product intelligence, operational efficiency, and local commercial execution. Together, these layers are designed to create a stronger product and a stronger business proposition for our partners.
+            ELIMFILTERS was built around a deliberate global architecture. Filtration-media development is carried out in Germany. Manufacturing is executed through qualified partners in the PRC. Product performance is supported through defined physical validation protocols, while AI-assisted auditing strengthens consistency, traceability, and control. A lean operating structure then carries that efficiency forward to the commercial partner.
           </p>
 
           <div style={grid}>
@@ -85,11 +85,11 @@ export function GlobalCommercialModel({ variant = 'about' }: Props) {
 
           <div style={prcPanel}>
             <div>
-              <p style={eyebrow}>WHY PRC?</p>
-              <h3 style={panelTitle}>Because manufacturing capability matters more than geography alone.</h3>
+              <p style={eyebrow}>PRC MANUFACTURING STRATEGY</p>
+              <h3 style={panelTitle}>Specialized capacity, scale and industrial depth.</h3>
             </div>
             <p style={{ ...body, margin: 0 }}>
-              ELIMFILTERS selected qualified manufacturing partners in the People’s Republic of China for established industrial infrastructure, specialized filtration-manufacturing capability, scalable production capacity, and access to mature automotive and heavy-duty supply chains. The intent is not to manufacture at the lowest possible cost; it is to combine capable production with ELIMFILTERS-defined specifications, quality controls, validation requirements, and technical governance.
+              ELIMFILTERS selected qualified manufacturing partners in the People’s Republic of China for established industrial infrastructure, specialized filtration-manufacturing capability, scalable production capacity, and access to mature automotive and heavy-duty supply chains. Production operates within ELIMFILTERS-defined specifications, quality controls, validation requirements, and technical governance.
             </p>
           </div>
         </div>
@@ -97,17 +97,17 @@ export function GlobalCommercialModel({ variant = 'about' }: Props) {
 
       <section style={partnerSection}>
         <div style={wrap}>
-          <p style={eyebrow}>BUILT AROUND OUR PARTNERS</p>
+          <p style={eyebrow}>LEAN OPERATIONS · PARTNER VALUE</p>
           <div style={twoCol}>
             <div>
-              <h2 style={title}>The Efficiency of the Company Should Become Value for the Partner.</h2>
+              <h2 style={title}>Less Corporate Weight. More Value Where It Matters.</h2>
             </div>
             <div>
               <p style={lead}>
-                ELIMFILTERS uses AI-enabled processes and a lean organizational structure to reduce unnecessary administrative weight, not to remove accountability. Qualified personnel remain responsible for manufacturing oversight, quality assurance, evidence review, and critical technical decisions.
+                ELIMFILTERS uses AI-enabled processes and a horizontal operating structure to coordinate product intelligence, technical data, workflow control, quality-data review, and operational execution. Qualified personnel remain responsible for manufacturing oversight, quality assurance, evidence review, and critical technical decisions.
               </p>
               <p style={body}>
-                The commercial intention is clear: avoidable corporate overhead should not unnecessarily increase the landed cost of the product. Resources should remain concentrated on engineering, materials, manufacturing quality, intelligence, availability, and the commercial partner’s ability to compete and grow locally.
+                The purpose is direct: reduce unnecessary structural cost so resources remain concentrated on engineering, materials, manufacturing quality, intelligence, availability, and the ability of our commercial partners to compete, maintain healthy margins, and grow their markets.
               </p>
             </div>
           </div>
