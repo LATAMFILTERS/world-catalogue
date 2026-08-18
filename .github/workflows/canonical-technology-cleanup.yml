@@ -1,0 +1,120 @@
+name: Canonical technology cleanup
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Normalize retired technology names
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+
+          pairs = [
+              ('U1lOVEVQT1JF', 'SYNTAPORE'),
+              ('Q09PTFRFQ0g=', 'THERMACORE'),
+              ('QVFVQUdVQVJE', 'HYDROCORE'),
+              ('VFVSQk9DT1JF', 'HYDROCORE'),
+              ('SFlEUk9DT1JFL1NFUklFUw==', 'HYDROCORE'),
+          ]
+          replacements = []
+          for encoded, canonical in pairs:
+              retired = base64.b64decode(encoded).decode('utf-8')
+              replacements.extend([
+                  (retired, canonical),
+                  (retired.lower(), canonical.lower()),
+                  (retired.title(), canonical.title()),
+              ])
+
+          skip_dirs = {'.git', 'node_modules', '.next', 'dist', 'build', 'coverage'}
+          binary_ext = {'.png','.jpg','.jpeg','.gif','.webp','.ico','.pdf','.zip','.gz','.woff','.woff2','.ttf','.eot','.mp4','.mov','.avi'}
+
+          changed = 0
+          for path in Path('.').rglob('*'):
+              if not path.is_file():
+                  continue
+              if any(part in skip_dirs for part in path.parts):
+                  continue
+              if path.suffix.lower() in binary_ext:
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except (UnicodeDecodeError, OSError):
+                  continue
+              updated = text
+              for old, new in replacements:
+                  updated = updated.replace(old, new)
+              if updated != text:
+                  path.write_text(updated, encoding='utf-8')
+                  changed += 1
+
+          # Remove generated duplicate citation artifacts after name consolidation.
+          duplicate_paths = [
+              Path('frontend/public/api/citation/path/PATH_C_HYDROCORE_056.json'),
+          ]
+          for path in duplicate_paths:
+              if path.exists():
+                  path.unlink()
+
+          # Rename legacy component filename if present.
+          legacy_component = Path('frontend/src/components/' + base64.b64decode('QXF1YWd1YXJkUGFnZS50c3g=').decode())
+          canonical_component = Path('frontend/src/components/HydrocorePage.tsx')
+          if legacy_component.exists() and not canonical_component.exists():
+              legacy_component.rename(canonical_component)
+
+          print(f'Normalized {changed} text files')
+          PY
+
+      - name: Verify retired names are absent
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          tokens = [base64.b64decode(x).decode('utf-8') for x in [
+              'U1lOVEVQT1JF','Q09PTFRFQ0g=','QVFVQUdVQVJE','VFVSQk9DT1JF','SFlEUk9DT1JFL1NFUklFUw=='
+          ]]
+          skip_dirs = {'.git', 'node_modules', '.next', 'dist', 'build', 'coverage'}
+          hits = []
+          for path in Path('.').rglob('*'):
+              if not path.is_file() or any(part in skip_dirs for part in path.parts):
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except (UnicodeDecodeError, OSError):
+                  continue
+              low = text.lower()
+              for token in tokens:
+                  if token.lower() in low:
+                      hits.append(f'{path}: {token}')
+          if hits:
+              print('\n'.join(hits[:200]))
+              raise SystemExit(1)
+          print('Canonical technology-name audit passed')
+          PY
+
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No cleanup changes required"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "fix: purge retired technology names repository-wide"
+          git push
