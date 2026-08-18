@@ -104,7 +104,7 @@ export function GlobalCommercialModel({ variant = 'about' }: Props) {
             </div>
             <div>
               <p style={lead}>
-                Traditional organizations often carry multiple vertical layers to coordinate repetitive administrative and operational work. ELIMFILTERS uses AI agents to execute a significant portion of those repeatable processes, allowing the organization to remain more horizontal while qualified personnel supervise manufacturing, quality, technical governance, and critical decisions.
+                The so-called “industry dinosaurs” were built around deeply vertical organizations: multiple management layers, repetitive administrative functions, and structural costs accumulated throughout the organization. ELIMFILTERS was designed differently. AI agents execute a significant portion of repeatable, rules-based and data-intensive processes, allowing the organization to remain more horizontal while qualified personnel supervise manufacturing, quality, technical governance, and critical decisions.
               </p>
               <p style={body}>
                 The result is a structurally more efficient product cost. The difference does not come from lowering engineering standards, materials, manufacturing controls, or validation requirements. It comes from reducing the organizational cost attached to repetitive work and unnecessary vertical layers — allowing more of the economics to remain in the product, the supply chain, and the commercial partnership.
