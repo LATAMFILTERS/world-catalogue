@@ -13,19 +13,21 @@
  *   2) OEM only after verified MANN-FILTER absence and commercial OEM validation
  *
  * Critical safety rule:
- *   - If the current codigo_base already matches ANY reference from the required
- *     preferred manufacturer, it is canonical and MUST NOT be replaced by some
- *     other reference from the same manufacturer merely because that reference
- *     appears first in JSONB.
- *   - If multiple preferred-manufacturer references exist and the current base
- *     matches none of them, this script reports an ambiguity. It never picks the
- *     first code arbitrarily.
- *   - Missing references in current JSONB are never treated as proof that a
- *     preferred manufacturer does not make the part.
+ *   - A row is changed automatically ONLY when the current codigo_base is
+ *     explicitly identified in catalog evidence as belonging to a lower-priority
+ *     manufacturer AND there is exactly one preferred-manufacturer reference.
+ *   - If the current codigo_base is not represented in competitor_codes/oem_codes,
+ *     its manufacturer is unknown and the row is NOT changed automatically.
+ *   - If the current codigo_base already matches ANY preferred-manufacturer
+ *     reference, it is canonical and MUST NOT be replaced by another reference
+ *     from the same manufacturer.
+ *   - Multiple preferred-manufacturer references are always treated as ambiguous.
+ *   - Missing JSONB references are never proof that a preferred manufacturer does
+ *     not make the part.
  *
  * Usage:
  *   node scripts/migrations/run_067_enforce_codigo_base_priority.js          # dry run
- *   node scripts/migrations/run_067_enforce_codigo_base_priority.js --apply  # apply only unambiguous changes
+ *   node scripts/migrations/run_067_enforce_codigo_base_priority.js --apply  # apply only proven corrections
  */
 
 require('dotenv').config();
@@ -73,16 +75,22 @@ function byManufacturer(refs, manufacturers) {
   });
 }
 
+function refsForCurrentBase(row, refs) {
+  const current = normalizeCode(row.codigo_base);
+  if (!current) return [];
+  return refs.filter((ref) => ref.normalizedCode === current);
+}
+
 function decidePreferredAuthority(row, authority, refs, manufacturers) {
   const preferred = byManufacturer(refs, manufacturers);
   const current = normalizeCode(row.codigo_base);
 
   if (!preferred.length) return null;
 
-  const currentMatch = preferred.find((ref) => ref.normalizedCode === current);
-  if (currentMatch) {
+  const currentPreferredMatch = preferred.find((ref) => ref.normalizedCode === current);
+  if (currentPreferredMatch) {
     return {
-      code: currentMatch.code,
+      code: currentPreferredMatch.code,
       authority,
       safe: true,
       alreadyCanonical: true,
@@ -90,21 +98,47 @@ function decidePreferredAuthority(row, authority, refs, manufacturers) {
     };
   }
 
-  if (preferred.length === 1) {
+  if (preferred.length > 1) {
     return {
-      code: preferred[0].code,
+      safe: false,
       authority,
-      safe: true,
-      alreadyCanonical: false,
-      reason: 'Single unambiguous preferred-manufacturer reference',
+      reason: 'Multiple preferred-manufacturer references exist; primary codigo_base is ambiguous',
+      candidates: preferred.map((ref) => ref.code),
+    };
+  }
+
+  const currentEvidence = refsForCurrentBase(row, refs);
+  if (!currentEvidence.length) {
+    return {
+      safe: false,
+      authority,
+      reason: 'Current codigo_base manufacturer is not evidenced in catalog; replacement is not provable',
+      candidate: preferred[0].code,
+      candidates: preferred.map((ref) => ref.code),
+    };
+  }
+
+  const preferredManufacturers = new Set(manufacturers.map(normalizeManufacturer));
+  const currentAuthorities = [...new Set(currentEvidence.map((ref) => ref.manufacturer))];
+  const currentCouldBePreferred = currentAuthorities.some((m) => preferredManufacturers.has(m));
+
+  if (currentCouldBePreferred) {
+    return {
+      safe: false,
+      authority,
+      reason: 'Current codigo_base has conflicting preferred-manufacturer evidence',
+      candidate: preferred[0].code,
+      current_authorities: currentAuthorities,
     };
   }
 
   return {
-    safe: false,
+    code: preferred[0].code,
     authority,
-    reason: 'Multiple preferred-manufacturer references exist; primary codigo_base is ambiguous',
-    candidates: preferred.map((ref) => ref.code),
+    safe: true,
+    alreadyCanonical: false,
+    reason: 'Proven lower-priority current codigo_base with one unambiguous preferred-manufacturer replacement',
+    current_authorities: currentAuthorities,
   };
 }
 
@@ -170,6 +204,7 @@ async function main() {
           reason: decision.reason,
           candidate: decision.candidate || decision.code || null,
           candidates: decision.candidates || null,
+          current_authorities: decision.current_authorities || null,
         });
         continue;
       }
@@ -181,6 +216,7 @@ async function main() {
         to: decision.code,
         authority: decision.authority,
         reason: decision.reason,
+        current_authorities: decision.current_authorities || null,
       });
     }
 
@@ -203,7 +239,7 @@ async function main() {
     }
 
     if (!APPLY) {
-      console.log('\nDry run only. Re-run with --apply only after reviewing counts and ambiguities.');
+      console.log('\nDry run only. Re-run with --apply only after reviewing proven corrections.');
       return;
     }
 
@@ -216,8 +252,8 @@ async function main() {
     }
     await client.query('COMMIT');
 
-    console.log(`Applied ${safeChanges.length} unambiguous evidence-backed codigo_base changes.`);
-    console.log(`${unresolved.length} rows were intentionally left unchanged pending evidence or primary-reference resolution.`);
+    console.log(`Applied ${safeChanges.length} proven codigo_base corrections.`);
+    console.log(`${unresolved.length} rows were intentionally left unchanged pending evidence.`);
   } catch (error) {
     try { await client.query('ROLLBACK'); } catch (_) {}
     throw error;
@@ -234,4 +270,12 @@ if (require.main === module) {
   });
 }
 
-module.exports = { normalizeManufacturer, normalizeCode, refsFrom, byManufacturer, decidePreferredAuthority, choosePreferred };
+module.exports = {
+  normalizeManufacturer,
+  normalizeCode,
+  refsFrom,
+  byManufacturer,
+  refsForCurrentBase,
+  decidePreferredAuthority,
+  choosePreferred,
+};
