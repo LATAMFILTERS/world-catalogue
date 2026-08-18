@@ -11,9 +11,40 @@ function row(duty, competitor_codes = [], oem_codes = [], codigo_base = '') {
   const decision = choosePreferred(row('HEAVY_DUTY', [
     { manufacturer: 'FLEETGUARD', code: 'FF5320' },
     { manufacturer: 'DONALDSON', code: 'P551313' },
-  ]));
+  ], [], 'P551313'));
   assert.equal(decision.safe, true);
+  assert.equal(decision.alreadyCanonical, true);
   assert.equal(decision.authority, 'DONALDSON');
+  assert.equal(decision.code, 'P551313');
+}
+
+{
+  const decision = choosePreferred(row('HEAVY_DUTY', [
+    { manufacturer: 'DONALDSON', code: 'J8570601' },
+    { manufacturer: 'DONALDSON', code: 'P500125' },
+  ], [], 'P500125'));
+  assert.equal(decision.safe, true);
+  assert.equal(decision.alreadyCanonical, true);
+  assert.equal(decision.code, 'P500125');
+}
+
+{
+  const decision = choosePreferred(row('HEAVY_DUTY', [
+    { manufacturer: 'DONALDSON', code: 'J8570601' },
+    { manufacturer: 'DONALDSON', code: 'P500125' },
+  ], [], 'UNKNOWN'));
+  assert.equal(decision.safe, false);
+  assert.equal(decision.authority, 'DONALDSON');
+  assert.equal(decision.reason, 'Multiple preferred-manufacturer references exist; primary codigo_base is ambiguous');
+  assert.deepEqual(decision.candidates, ['J8570601', 'P500125']);
+}
+
+{
+  const decision = choosePreferred(row('HEAVY_DUTY', [
+    { manufacturer: 'DONALDSON', code: 'P551313' },
+  ], [], 'ST1313'));
+  assert.equal(decision.safe, true);
+  assert.equal(decision.alreadyCanonical, false);
   assert.equal(decision.code, 'P551313');
 }
 
@@ -23,16 +54,26 @@ function row(duty, competitor_codes = [], oem_codes = [], codigo_base = '') {
   ]));
   assert.equal(decision.safe, false);
   assert.equal(decision.authority, 'FLEETGUARD');
-  assert.equal(decision.code, 'FF5320');
+  assert.equal(decision.candidate, 'FF5320');
 }
 
 {
   const decision = choosePreferred(row('LIGHT_DUTY', [
     { manufacturer: 'MANN-FILTER', code: 'WK 820/17' },
-  ]));
+  ], [], 'WK 820/17'));
   assert.equal(decision.safe, true);
+  assert.equal(decision.alreadyCanonical, true);
   assert.equal(decision.authority, 'MANN_FILTER');
   assert.equal(decision.code, 'WK 820/17');
+}
+
+{
+  const decision = choosePreferred(row('LIGHT_DUTY', [
+    { manufacturer: 'MANN-FILTER', code: 'WK 820/17' },
+    { manufacturer: 'MANN', code: 'WK82017X' },
+  ], [], 'UNKNOWN'));
+  assert.equal(decision.safe, false);
+  assert.equal(decision.authority, 'MANN_FILTER');
 }
 
 {
