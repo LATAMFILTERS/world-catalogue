@@ -19,6 +19,7 @@ const MAX_FINDINGS_PER_DOMAIN = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_
 const PRIMARY_MODEL = process.env.HERMES_GROQ_MODEL || 'groq/compound';
 const FALLBACK_MODEL = process.env.HERMES_GROQ_FALLBACK_MODEL || 'groq/compound-mini';
 const ENABLE_TPD_FALLBACK = String(process.env.HERMES_GROQ_TPD_FALLBACK || 'true').toLowerCase() !== 'false';
+const MAX_DEGRADED_EMPTY_BATCHES = Math.max(0, Number(process.env.HERMES_SWEEP_MAX_DEGRADED_EMPTY_BATCHES || 1));
 
 const MATRIX_INSTRUCTION = `\n\nHERMES OPERATIONAL SEARCH MATRIX — MANDATORY\nFor the supplied domain, execute these three lanes using the domain topics as concrete search terms, never merely the macro-domain label:\nA. CURRENT_APPLICATIONS — concrete new/revised products, engines, equipment, applications, service parts, fitments, fluids, manufacturing capability or operational changes.\nB. TECHNICAL_STANDARDS — concrete material, performance, testing, standards, regulatory or research developments with filtration/asset-protection relevance.\nC. ELIMFILTERS_KNOWLEDGE_GAP — for every verified external development, compare against ELIMFILTERS public Knowledge Center/knowledge-system and classify CREATE_NEW, UPDATE_REINFORCE, NO_MATERIAL_CHANGE or INTERNAL_ONLY.\nReject generic marketing, generic homepage changes and vague market commentary. Prefer primary evidence. Do not invent specifications or applications.\nOVERRIDE any earlier output-count instruction: return at most ${MAX_FINDINGS_PER_DOMAIN} highest-value material findings for this domain. Returning zero is correct when nothing material is verified.`;
 
@@ -122,6 +123,17 @@ function currentModel(init) {
   try { return JSON.parse(String(init?.body || '{}')).model || PRIMARY_MODEL; } catch { return PRIMARY_MODEL; }
 }
 
+async function groqResponseHasContent(response) {
+  if (!response?.ok || typeof response.clone !== 'function') return true;
+  try {
+    const payload = await response.clone().json();
+    const content = payload?.choices?.[0]?.message?.content;
+    return typeof content === 'string' && content.trim().length > 0;
+  } catch {
+    return false;
+  }
+}
+
 function retryDelayMs(response, bodyText, attempt, status) {
   const retryAfterMs = headerMs(response, 'retry-after', retryAfterToMs);
   const tokenResetMs = headerMs(response, 'x-ratelimit-reset-tokens');
@@ -192,7 +204,20 @@ export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sle
 
       const response = await baseFetch(url, requestInit);
       captureQuota(response);
-      if (response.ok) return response;
+
+      if (response.ok) {
+        const hasContent = await groqResponseHasContent(response);
+        if (hasContent) return response;
+        if (attempt === MAX_RETRIES) {
+          console.error(`[HERMES sweep] Groq HTTP 200 returned empty content after ${MAX_RETRIES} attempt(s) model=${model}`);
+          return response;
+        }
+        const delay = Math.min(MAX_FALLBACK_BACKOFF_MS, DEFAULT_BACKOFF_MS * (2 ** Math.max(0, attempt - 1))) + QUOTA_CUSHION_MS;
+        console.warn(`[HERMES sweep] Groq HTTP 200 returned empty content; retry ${attempt}/${MAX_RETRIES} in ${delay}ms model=${model}`);
+        await sleeper(delay);
+        quotaState = null;
+        continue;
+      }
 
       const status = Number(response.status || 0);
       const retryable = status === 429 || status === 408 || status >= 500;
@@ -245,19 +270,31 @@ export async function runReliableSweep({ baseFetch = globalThis.fetch, sleeper =
   fatalDailyQuota = null;
   quotaState = null;
   const { runIndustrySweep } = await import('./industry-sweep-compound.mjs');
-  console.log(`[HERMES reliable sweep] matrix=3-lane domain_batch=1 max_findings_per_domain=${MAX_FINDINGS_PER_DOMAIN} scheduler=quota-aware-v3 retries=${MAX_RETRIES} fallback=${FALLBACK_MODEL}`);
+  console.log(`[HERMES reliable sweep] matrix=3-lane domain_batch=1 max_findings_per_domain=${MAX_FINDINGS_PER_DOMAIN} scheduler=quota-aware-v4 retries=${MAX_RETRIES} fallback=${FALLBACK_MODEL}`);
   const summary = await runIndustrySweep({ fetchImpl: createResilientFetch(baseFetch, sleeper) });
 
-  const successfulBatches = Math.max(0, Number(summary.batches || 0) - Number(summary.failed_batches || 0));
-  const operationalSuccess = !summary.error && Number(summary.failed_batches || 0) === 0 && successfulBatches > 0;
+  const failedBatches = Number(summary.failed_batches || 0);
+  const successfulBatches = Math.max(0, Number(summary.batches || 0) - failedBatches);
+  const emptyOnlyFailures = failedBatches > 0 && failedBatches <= MAX_DEGRADED_EMPTY_BATCHES && Array.isArray(summary.failures) && summary.failures.length === failedBatches && summary.failures.every((failure) => /Groq returned no content/i.test(String(failure?.error || '')));
+  const strictSuccess = !summary.error && !fatalDailyQuota && failedBatches === 0 && successfulBatches > 0;
+  const degradedSuccess = !summary.error && !fatalDailyQuota && successfulBatches > 0 && emptyOnlyFailures;
 
-  console.log(`[HERMES reliable sweep] successful_batches=${successfulBatches}/${summary.batches} failed_batches=${summary.failed_batches || 0}`);
-  if (!operationalSuccess) {
-    const reason = fatalDailyQuota || summary.error || `SWEEP_INCOMPLETE_${summary.failed_batches || 0}_FAILED_BATCHES`;
+  console.log(`[HERMES reliable sweep] successful_batches=${successfulBatches}/${summary.batches} failed_batches=${failedBatches}`);
+  if (degradedSuccess) {
+    summary.operational_status = 'DEGRADED';
+    summary.unresolved_domains = summary.failures.flatMap((failure) => failure.domains || []);
+    console.warn(`[HERMES reliable sweep] DEGRADED unresolved_domains=${summary.unresolved_domains.join(',')} reason=EMPTY_GROQ_RESPONSE_AFTER_RETRIES; preserving successful intelligence for report/review`);
+    return summary;
+  }
+
+  if (!strictSuccess) {
+    const reason = fatalDailyQuota || summary.error || `SWEEP_INCOMPLETE_${failedBatches}_FAILED_BATCHES`;
     const error = new Error(reason);
     error.summary = summary;
     throw error;
   }
+
+  summary.operational_status = 'SUCCESS';
   return summary;
 }
 
@@ -265,7 +302,7 @@ const isCli = process.argv[1] && import.meta.url === pathToFileURL(process.argv[
 if (isCli) {
   try {
     const summary = await runReliableSweep();
-    console.log(`[HERMES reliable sweep] SUCCESS domains=${summary.domains} batches=${summary.batches} findings=${summary.findings_seen} created=${summary.created}`);
+    console.log(`[HERMES reliable sweep] ${summary.operational_status || 'SUCCESS'} domains=${summary.domains} batches=${summary.batches} findings=${summary.findings_seen} created=${summary.created}`);
   } catch (error) {
     console.error(`[HERMES reliable sweep] FAILURE ${String(error?.message || error)}`);
     if (error?.summary?.failures?.length) {
