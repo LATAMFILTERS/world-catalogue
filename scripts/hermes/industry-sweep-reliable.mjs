@@ -3,7 +3,7 @@
 import process from 'node:process';
 import { pathToFileURL } from 'node:url';
 
-// Keep each Groq Compound request small enough to avoid 413 errors.
+// One domain per Compound call prevents oversized requests and makes failures attributable.
 process.env.HERMES_SWEEP_DOMAIN_BATCH ||= '1';
 
 const GROQ_ENDPOINT_FRAGMENT = 'api.groq.com/openai/v1/chat/completions';
@@ -12,6 +12,17 @@ const MIN_GROQ_INTERVAL_MS = Math.max(0, Number(process.env.HERMES_SWEEP_MIN_INT
 const DEFAULT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_BACKOFF_MS || 5000));
 const MIN_RATE_LIMIT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_MIN_429_BACKOFF_MS || 5000));
 const MAX_BACKOFF_MS = Math.max(MIN_RATE_LIMIT_BACKOFF_MS, Number(process.env.HERMES_SWEEP_MAX_BACKOFF_MS || 90000));
+const MAX_FINDINGS_PER_DOMAIN = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN || 3));
+
+const MATRIX_INSTRUCTION = `
+
+HERMES OPERATIONAL SEARCH MATRIX — MANDATORY
+For the supplied domain, execute these three lanes using the domain topics as concrete search terms, never merely the macro-domain label:
+A. CURRENT_APPLICATIONS — concrete new/revised products, engines, equipment, applications, service parts, fitments, fluids, manufacturing capability or operational changes.
+B. TECHNICAL_STANDARDS — concrete material, performance, testing, standards, regulatory or research developments with filtration/asset-protection relevance.
+C. ELIMFILTERS_KNOWLEDGE_GAP — for every verified external development, compare against ELIMFILTERS public Knowledge Center/knowledge-system and classify CREATE_NEW, UPDATE_REINFORCE, NO_MATERIAL_CHANGE or INTERNAL_ONLY.
+Reject generic marketing, generic homepage changes and vague market commentary. Prefer primary evidence. Do not invent specifications or applications.
+OVERRIDE any earlier output-count instruction: return at most ${MAX_FINDINGS_PER_DOMAIN} highest-value material findings for this domain. Returning zero is correct when nothing material is verified.`;
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 let lastGroqRequestAt = 0;
@@ -19,8 +30,6 @@ let lastGroqRequestAt = 0;
 function durationToMs(value) {
   const raw = String(value || '').trim().toLowerCase();
   if (!raw) return null;
-
-  // Groq reset headers may be durations such as 1.25s, 2m3.5s, 1m or 250ms.
   let total = 0;
   let matched = false;
   const regex = /([0-9]+(?:\.[0-9]+)?)\s*(ms|h|m|s)/g;
@@ -38,10 +47,8 @@ function durationToMs(value) {
 function retryAfterToMs(value) {
   const raw = String(value || '').trim();
   if (!raw) return null;
-
   const seconds = Number(raw);
   if (Number.isFinite(seconds) && seconds >= 0) return Math.ceil(seconds * 1000);
-
   const dateMs = Date.parse(raw);
   if (Number.isFinite(dateMs)) return Math.max(0, dateMs - Date.now());
   return durationToMs(raw);
@@ -66,20 +73,33 @@ function retryDelayMs(response, bodyText, attempt, status) {
   if (bodyMatch) {
     const unit = String(bodyMatch[2] || 's').toLowerCase();
     const n = Number(bodyMatch[1]);
-    if (Number.isFinite(n)) {
-      const bodyMs = unit === 'ms' ? n : unit === 'm' ? n * 60_000 : n * 1000;
-      candidates.push(Math.ceil(bodyMs));
-    }
+    if (Number.isFinite(n)) candidates.push(Math.ceil(unit === 'ms' ? n : unit === 'm' ? n * 60_000 : n * 1000));
   }
 
-  const exponential = DEFAULT_BACKOFF_MS * (2 ** Math.max(0, attempt - 1));
-  candidates.push(exponential);
-
+  candidates.push(DEFAULT_BACKOFF_MS * (2 ** Math.max(0, attempt - 1)));
   let delay = Math.max(...candidates, DEFAULT_BACKOFF_MS);
   if (status === 429) delay = Math.max(delay, MIN_RATE_LIMIT_BACKOFF_MS);
-
-  // Small cushion so the retry happens after the advertised reset, not exactly on its boundary.
   return Math.min(MAX_BACKOFF_MS, Math.ceil(delay) + 750);
+}
+
+export function applySearchMatrix(init = {}) {
+  if (!init?.body) return init;
+  try {
+    const payload = JSON.parse(String(init.body));
+    if (!Array.isArray(payload.messages)) return init;
+    let applied = false;
+    const messages = payload.messages.map((message) => {
+      if (!applied && message?.role === 'system' && typeof message.content === 'string') {
+        applied = true;
+        return { ...message, content: `${message.content}${MATRIX_INSTRUCTION}` };
+      }
+      return message;
+    });
+    if (!applied) return init;
+    return { ...init, body: JSON.stringify({ ...payload, messages }) };
+  } catch {
+    return init;
+  }
 }
 
 export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sleep) {
@@ -87,12 +107,13 @@ export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sle
     const isGroq = String(url).includes(GROQ_ENDPOINT_FRAGMENT);
     if (!isGroq) return baseFetch(url, init);
 
+    const requestInit = applySearchMatrix(init);
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt += 1) {
       const sinceLast = Date.now() - lastGroqRequestAt;
       if (sinceLast < MIN_GROQ_INTERVAL_MS) await sleeper(MIN_GROQ_INTERVAL_MS - sinceLast);
       lastGroqRequestAt = Date.now();
 
-      const response = await baseFetch(url, init);
+      const response = await baseFetch(url, requestInit);
       if (response.ok) return response;
 
       const status = Number(response.status || 0);
@@ -111,6 +132,7 @@ export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sle
 
 export async function runReliableSweep({ baseFetch = globalThis.fetch, sleeper = sleep } = {}) {
   const { runIndustrySweep } = await import('./industry-sweep-compound.mjs');
+  console.log(`[HERMES reliable sweep] matrix=3-lane domain_batch=1 max_findings_per_domain=${MAX_FINDINGS_PER_DOMAIN}`);
   const summary = await runIndustrySweep({ fetchImpl: createResilientFetch(baseFetch, sleeper) });
 
   const successfulBatches = Math.max(0, Number(summary.batches || 0) - Number(summary.failed_batches || 0));
