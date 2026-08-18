@@ -3,16 +3,16 @@
 import process from 'node:process';
 import { pathToFileURL } from 'node:url';
 
-// One domain per Compound call prevents oversized requests and makes failures attributable.
 process.env.HERMES_SWEEP_DOMAIN_BATCH ||= '1';
 
 const GROQ_ENDPOINT_FRAGMENT = 'api.groq.com/openai/v1/chat/completions';
-const MAX_RETRIES = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_RETRIES || 5));
-const MIN_GROQ_INTERVAL_MS = Math.max(0, Number(process.env.HERMES_SWEEP_MIN_INTERVAL_MS || 4000));
-const DEFAULT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_BACKOFF_MS || 5000));
-const MIN_RATE_LIMIT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_MIN_429_BACKOFF_MS || 5000));
+const MAX_RETRIES = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_RETRIES || 3));
+const MIN_GROQ_INTERVAL_MS = Math.max(0, Number(process.env.HERMES_SWEEP_MIN_INTERVAL_MS || 5000));
+const DEFAULT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_BACKOFF_MS || 10000));
+const MIN_RATE_LIMIT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_MIN_429_BACKOFF_MS || 10000));
 const MAX_FALLBACK_BACKOFF_MS = Math.max(MIN_RATE_LIMIT_BACKOFF_MS, Number(process.env.HERMES_SWEEP_MAX_BACKOFF_MS || 90000));
-const QUOTA_CUSHION_MS = Math.max(250, Number(process.env.HERMES_SWEEP_QUOTA_CUSHION_MS || 1000));
+const MAX_SERVER_WAIT_MS = Math.max(10000, Number(process.env.HERMES_SWEEP_MAX_SERVER_WAIT_MS || 120000));
+const QUOTA_CUSHION_MS = Math.max(250, Number(process.env.HERMES_SWEEP_QUOTA_CUSHION_MS || 1500));
 const TOKEN_LOW_WATER_RATIO = Math.min(0.5, Math.max(0.01, Number(process.env.HERMES_SWEEP_TOKEN_LOW_WATER_RATIO || 0.12)));
 const TOKEN_LOW_WATER_ABSOLUTE = Math.max(1000, Number(process.env.HERMES_SWEEP_TOKEN_LOW_WATER_ABSOLUTE || 12000));
 const MAX_FINDINGS_PER_DOMAIN = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN || 3));
@@ -95,37 +95,39 @@ function bodyRetryMs(bodyText) {
 }
 
 function retryDelayMs(response, bodyText, attempt, status) {
-  // Groq's retry-after is the authoritative delay for a 429. Use it first.
   const retryAfterMs = headerMs(response, 'retry-after', retryAfterToMs);
-  if (Number.isFinite(retryAfterMs) && retryAfterMs >= 0) return retryAfterMs + QUOTA_CUSHION_MS;
-
-  // x-ratelimit-reset-tokens is TPM recovery. Do not mix in
-  // x-ratelimit-reset-requests: Groq documents that header as RPD reset.
   const tokenResetMs = headerMs(response, 'x-ratelimit-reset-tokens');
-  if (status === 429 && Number.isFinite(tokenResetMs) && tokenResetMs >= 0) return tokenResetMs + QUOTA_CUSHION_MS;
-
   const messageDelayMs = bodyRetryMs(bodyText);
-  if (Number.isFinite(messageDelayMs) && messageDelayMs >= 0) return messageDelayMs + QUOTA_CUSHION_MS;
+  const fallback = Math.min(MAX_FALLBACK_BACKOFF_MS, DEFAULT_BACKOFF_MS * (2 ** Math.max(0, attempt - 1)));
 
-  const fallback = DEFAULT_BACKOFF_MS * (2 ** Math.max(0, attempt - 1));
-  const floored = status === 429 ? Math.max(fallback, MIN_RATE_LIMIT_BACKOFF_MS) : fallback;
-  return Math.min(MAX_FALLBACK_BACKOFF_MS, Math.ceil(floored)) + QUOTA_CUSHION_MS;
+  const candidates = [retryAfterMs, messageDelayMs, fallback].filter((value) => Number.isFinite(value) && value >= 0);
+  if (status === 429 && Number.isFinite(tokenResetMs) && tokenResetMs >= 0) candidates.push(tokenResetMs);
+
+  let delay = Math.max(...candidates, DEFAULT_BACKOFF_MS);
+  if (status === 429) delay = Math.max(delay, MIN_RATE_LIMIT_BACKOFF_MS);
+  return Math.ceil(delay) + QUOTA_CUSHION_MS;
+}
+
+function tokenThreshold({ limitTokens }) {
+  const ratioThreshold = Number.isFinite(limitTokens) ? Math.ceil(limitTokens * TOKEN_LOW_WATER_RATIO) : 0;
+  return Math.max(TOKEN_LOW_WATER_ABSOLUTE, ratioThreshold);
 }
 
 async function waitForQuotaIfNeeded(sleeper) {
   if (!quotaState) return;
-  const { limitTokens, remainingTokens, resetTokensMs, remainingRequests } = quotaState;
+  const { remainingTokens, resetTokensMs, remainingRequests } = quotaState;
 
-  if (remainingRequests === 0) {
-    throw new Error('GROQ_RPD_EXHAUSTED');
-  }
-
+  if (remainingRequests === 0) throw new Error('GROQ_RPD_EXHAUSTED');
   if (!Number.isFinite(remainingTokens) || !Number.isFinite(resetTokensMs)) return;
-  const ratioThreshold = Number.isFinite(limitTokens) ? Math.ceil(limitTokens * TOKEN_LOW_WATER_RATIO) : 0;
-  const threshold = Math.max(TOKEN_LOW_WATER_ABSOLUTE, ratioThreshold);
+
+  const threshold = tokenThreshold(quotaState);
   if (remainingTokens > threshold) return;
 
   const waitMs = Math.max(0, resetTokensMs) + QUOTA_CUSHION_MS;
+  if (waitMs > MAX_SERVER_WAIT_MS) {
+    throw new Error(`GROQ_TPM_RESET_TOO_LONG_${waitMs}MS`);
+  }
+
   console.warn(`[HERMES sweep] proactive TPM pacing remaining_tokens=${remainingTokens} threshold=${threshold}; waiting ${waitMs}ms before next domain`);
   await sleeper(waitMs);
   quotaState = null;
@@ -179,8 +181,15 @@ export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sle
 
       const bodyText = await response.text();
       const delay = retryDelayMs(response, bodyText, attempt, status);
-      console.warn(`[HERMES sweep] Groq HTTP ${status}; retry ${attempt}/${MAX_RETRIES} in ${delay}ms`);
+      if (status === 429 && delay > MAX_SERVER_WAIT_MS) {
+        console.error(`[HERMES sweep] Groq TPM reset requires ${delay}ms; exceeds workflow wait ceiling ${MAX_SERVER_WAIT_MS}ms, failing this batch instead of burning Actions minutes`);
+        return response;
+      }
+
+      const tokenResetMs = quotaState?.resetTokensMs;
+      console.warn(`[HERMES sweep] Groq HTTP ${status}; retry ${attempt}/${MAX_RETRIES} in ${delay}ms${Number.isFinite(tokenResetMs) ? ` token_reset=${tokenResetMs}ms` : ''}`);
       await sleeper(delay);
+      quotaState = null;
     }
 
     throw new Error('unreachable resilient Groq fetch state');
@@ -189,7 +198,7 @@ export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sle
 
 export async function runReliableSweep({ baseFetch = globalThis.fetch, sleeper = sleep } = {}) {
   const { runIndustrySweep } = await import('./industry-sweep-compound.mjs');
-  console.log(`[HERMES reliable sweep] matrix=3-lane domain_batch=1 max_findings_per_domain=${MAX_FINDINGS_PER_DOMAIN} scheduler=quota-aware`);
+  console.log(`[HERMES reliable sweep] matrix=3-lane domain_batch=1 max_findings_per_domain=${MAX_FINDINGS_PER_DOMAIN} scheduler=quota-aware-v2 retries=${MAX_RETRIES}`);
   const summary = await runIndustrySweep({ fetchImpl: createResilientFetch(baseFetch, sleeper) });
 
   const successfulBatches = Math.max(0, Number(summary.batches || 0) - Number(summary.failed_batches || 0));
