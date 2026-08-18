@@ -32,25 +32,25 @@ const OPERATING_CHAIN = [
   },
   {
     step: '05',
-    eyebrow: 'LEAN OPERATING MODEL',
-    title: 'Technology-Enabled Horizontal Operations',
-    body: 'A lean, technology-enabled operating structure reduces unnecessary administrative layers and structural overhead so more resources can remain concentrated on engineering, materials, manufacturing quality, product intelligence, supply-chain efficiency, and execution.',
+    eyebrow: 'HORIZONTAL OPERATING MODEL',
+    title: 'Agents Reduce Repetitive Structural Work',
+    body: 'ELIMFILTERS uses AI agents for repetitive, rules-based and data-intensive operational work that would traditionally require additional administrative layers. This creates a more horizontal organization and reduces structural cost without reducing engineering, material, manufacturing, validation, or quality requirements.',
   },
   {
     step: '06',
     eyebrow: 'COMMERCIAL PARTNER',
-    title: 'Value Transferred to the Market',
-    body: 'Commercial partners contribute local relationships, inventory strategy, technical sales, regional service, and market knowledge. ELIMFILTERS contributes product architecture, quality governance, cross-reference intelligence, technical resources, and scalable product access.',
+    title: 'Efficiency Becomes Commercial Value',
+    body: 'The efficiency created upstream is carried into the product economics and partner relationship. Commercial partners add local relationships, inventory strategy, technical sales, regional service, and market knowledge while ELIMFILTERS provides product architecture, quality governance, intelligence, and scalable product access.',
   },
 ];
 
 const PARTNER_OUTCOMES = [
-  ['Competitive Landed Economics', 'A deliberately efficient operating model helps prevent avoidable structural overhead from unnecessarily increasing landed product cost.'],
-  ['Sustainable Partner Margin', 'The system is designed to preserve economic value through the supply chain and strengthen the commercial position of authorized partners.'],
+  ['Structural Efficiency', 'The economic difference is created by a more horizontal operating structure, not by positioning ELIMFILTERS as a low-price product.'],
+  ['Sustainable Partner Margin', 'Lower repetitive-process and administrative burden reduces direct structural cost and helps preserve economic value for the authorized commercial partner.'],
   ['Technical Confidence', 'Engineering, validation, traceability, and product intelligence give partners a stronger technical foundation for customer decisions.'],
   ['Market Flexibility', 'Partners can serve industrial, heavy-duty, fleet, equipment, and complementary automotive / Light Duty demand according to their territory.'],
   ['Customer Continuity', 'Local relationships, availability, technical support, and asset knowledge are treated as long-term commercial assets.'],
-  ['Lifecycle Value', 'Product quality, correct application, availability, technical intelligence, and competitive economics work together to reduce total operating risk.'],
+  ['Lifecycle Value', 'Product quality, correct application, availability, technical intelligence, and sound economics work together to reduce total operating risk.'],
 ];
 
 export function GlobalCommercialModel({ variant = 'about' }: Props) {
@@ -67,7 +67,7 @@ export function GlobalCommercialModel({ variant = 'about' }: Props) {
               : 'German-Developed Media. Qualified PRC Manufacturing. ELIMFILTERS Quality Governance.'}
           </h2>
           <p style={lead}>
-            ELIMFILTERS was built around a deliberate global architecture. Filtration-media development is carried out in Germany. Manufacturing is executed through qualified partners in the PRC. Product performance is supported through defined physical validation protocols, while AI-assisted auditing strengthens consistency, traceability, and control. A lean operating structure then carries that efficiency forward to the commercial partner.
+            ELIMFILTERS was built around a deliberate global architecture. Filtration-media development is carried out in Germany. Manufacturing is executed through qualified partners in the PRC. Product performance is supported through defined physical validation protocols, while AI-assisted auditing strengthens consistency, traceability, and control. A horizontal operating structure uses AI agents to reduce repetitive organizational work and the structural cost attached to it.
           </p>
 
           <div style={grid}>
@@ -97,17 +97,17 @@ export function GlobalCommercialModel({ variant = 'about' }: Props) {
 
       <section style={partnerSection}>
         <div style={wrap}>
-          <p style={eyebrow}>LEAN OPERATIONS · PARTNER VALUE</p>
+          <p style={eyebrow}>HORIZONTAL OPERATIONS · PARTNER VALUE</p>
           <div style={twoCol}>
             <div>
-              <h2 style={title}>Less Corporate Weight. More Value Where It Matters.</h2>
+              <h2 style={title}>A Different Cost Structure — Not a Low-Price Strategy.</h2>
             </div>
             <div>
               <p style={lead}>
-                ELIMFILTERS uses AI-enabled processes and a horizontal operating structure to coordinate product intelligence, technical data, workflow control, quality-data review, and operational execution. Qualified personnel remain responsible for manufacturing oversight, quality assurance, evidence review, and critical technical decisions.
+                Traditional organizations often carry multiple vertical layers to coordinate repetitive administrative and operational work. ELIMFILTERS uses AI agents to execute a significant portion of those repeatable processes, allowing the organization to remain more horizontal while qualified personnel supervise manufacturing, quality, technical governance, and critical decisions.
               </p>
               <p style={body}>
-                The purpose is direct: reduce unnecessary structural cost so resources remain concentrated on engineering, materials, manufacturing quality, intelligence, availability, and the ability of our commercial partners to compete, maintain healthy margins, and grow their markets.
+                The result is a structurally more efficient product cost. The difference does not come from lowering engineering standards, materials, manufacturing controls, or validation requirements. It comes from reducing the organizational cost attached to repetitive work and unnecessary vertical layers — allowing more of the economics to remain in the product, the supply chain, and the commercial partnership.
               </p>
             </div>
           </div>
