@@ -68,13 +68,6 @@ const TECHNOLOGY_ENGINEERING: Record<TechnologySlug, CanonicalEngineeringDefinit
     controlStrategy: 'Match capacity, purge behavior, airflow and replacement interval to compressor duty and ambient moisture exposure.',
     operationalImpact: 'Dry compressed air helps protect valves, actuators and braking-system reliability.',
   },
-  turbocore: {
-    name: 'TURBOCORE™',
-    definition: 'A dedicated fuel-separation architecture for Turbine Series FH and FG applications.',
-    engineeringPrinciple: 'Turbine-style fuel conditioning combines staged separation and filtration within the approved FH and FG application architecture.',
-    controlStrategy: 'Configure the assembly around required flow, separation duty, element micron rating, installation and maintenance access.',
-    operationalImpact: 'Staged fuel conditioning reduces contamination exposure in demanding fuel-system applications.',
-  },
   hydrocore: {
     name: 'HYDROCORE™',
     definition: 'A fuel/water separation architecture for spin-on and cartridge separators outside the Turbine Series FH/FG application.',
