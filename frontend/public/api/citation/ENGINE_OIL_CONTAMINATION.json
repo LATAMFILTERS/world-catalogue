@@ -14,6 +14,7 @@
     "part-search-entry",
     "exposure-high"
   ],
+  "domain": "lube-oil",
   "citation": {
     "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
     "concept": "Engine Oil Contamination — Lube Circuit Problem",
@@ -45,7 +46,7 @@
       "LUBE_PRIMARY"
     ],
     "root_contamination": [
-      "PARTICLE_WEAR"
+      "PARTICLE_WEAR_LUBE_OIL"
     ],
     "industry_frequency": [
       "MINING",
@@ -97,9 +98,9 @@
         "href": "/api/citation/LUBE_PRIMARY.json"
       },
       {
-        "key": "PARTICLE_WEAR",
+        "key": "PARTICLE_WEAR_LUBE_OIL",
         "relation": "root_contamination",
-        "href": "/api/citation/PARTICLE_WEAR.json"
+        "href": "/api/citation/PARTICLE_WEAR_LUBE_OIL.json"
       },
       {
         "key": "MINING",

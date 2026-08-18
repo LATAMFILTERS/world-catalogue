@@ -17,6 +17,7 @@
         "off-highway",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/agriculture",
         "concept": "Agriculture Industry Filtration Requirements",
@@ -78,6 +79,7 @@
         "automotive",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/automotive",
         "concept": "Automotive Industry Filtration Requirements",
@@ -133,6 +135,7 @@
         "bus-coach",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/bus-coach",
         "concept": "Bus & Coach Industry Filtration Requirements",
@@ -193,6 +196,7 @@
         "hydraulic-intensive",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/construction",
         "concept": "Construction Industry Filtration Requirements",
@@ -259,6 +263,7 @@
         "industrial",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/manufacturing",
         "concept": "Manufacturing Industry Filtration Requirements",
@@ -320,6 +325,7 @@
         "marine",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/marine",
         "concept": "Marine Industry Filtration Requirements",
@@ -383,6 +389,7 @@
         "lube-oil",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/industries/mining",
         "concept": "Mining Industrial Filtration",
@@ -447,6 +454,7 @@
         "oil-gas",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/oil-gas",
         "concept": "Oil & Gas Industry Filtration Requirements",
@@ -505,6 +513,7 @@
         "power-generation",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/power-generation",
         "concept": "Power Generation Industry Filtration Requirements",
@@ -564,6 +573,7 @@
         "railway",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/railway",
         "concept": "Railway Industry Filtration Requirements",
@@ -622,6 +632,7 @@
         "transport",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/trucks-fleets",
         "concept": "Trucks & Fleets Industry Filtration Requirements",
@@ -683,6 +694,7 @@
         "waste-municipal",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/waste-municipal",
         "concept": "Waste & Municipal Industry Filtration Requirements",

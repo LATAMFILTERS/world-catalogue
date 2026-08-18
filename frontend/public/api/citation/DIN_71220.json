@@ -14,6 +14,7 @@
     "performance-test",
     "not-in-ud"
   ],
+  "domain": null,
   "citation": {
     "source_url": "elimfilters.com/knowledge-center/standards/din-71220",
     "concept": "DIN 71220 Cabin Air Filter Testing",

@@ -18,6 +18,7 @@
         "part-search-entry",
         "exposure-extreme"
       ],
+      "domain": "air-intake",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Dust Ingestion — Air Intake Problem",
@@ -52,7 +53,7 @@
           "AIRFILTER_PRIMARY"
         ],
         "root_contamination": [
-          "PARTICLE_WEAR"
+          "PARTICLE_WEAR_AIR_INTAKE"
         ],
         "industry_frequency": [
           "MINING",
@@ -78,6 +79,7 @@
         "part-search-entry",
         "exposure-high"
       ],
+      "domain": "lube-oil",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Engine Oil Contamination — Lube Circuit Problem",
@@ -109,7 +111,7 @@
           "LUBE_PRIMARY"
         ],
         "root_contamination": [
-          "PARTICLE_WEAR"
+          "PARTICLE_WEAR_LUBE_OIL"
         ],
         "industry_frequency": [
           "MINING",
@@ -143,6 +145,7 @@
         "part-search-entry",
         "exposure-medium"
       ],
+      "domain": "fuel",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
         "concept": "Fuel Filter Plugging — Fuel System Problem",
@@ -200,6 +203,7 @@
         "part-search-entry",
         "exposure-high"
       ],
+      "domain": "hydraulic",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
@@ -258,6 +262,7 @@
         "exposure-extreme",
         "occupational-health"
       ],
+      "domain": "cabin",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
         "concept": "Operator Dust Exposure — Cabin Air Problem",

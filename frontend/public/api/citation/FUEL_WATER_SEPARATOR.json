@@ -13,6 +13,7 @@
     "not-in-ud",
     "part-search-node"
   ],
+  "domain": null,
   "citation": {
     "source_url": "elimfilters.com/systems/fuel-water-separator",
     "concept": "Fuel Water Separation Product Family",
@@ -31,6 +32,7 @@
   "relationships": {
     "target_industries": [
       "AGRICULTURE",
+      "AUTOMOTIVE",
       "MARINE",
       "MINING",
       "OIL_GAS",
@@ -56,6 +58,11 @@
         "key": "AGRICULTURE",
         "relation": "target_industries",
         "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "AUTOMOTIVE",
+        "relation": "target_industries",
+        "href": "/api/citation/AUTOMOTIVE.json"
       },
       {
         "key": "MARINE",

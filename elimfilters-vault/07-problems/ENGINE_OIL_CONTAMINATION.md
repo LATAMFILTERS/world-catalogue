@@ -5,7 +5,7 @@ key: ENGINE_OIL_CONTAMINATION
 name: Engine Oil Contamination
 problem_statement: "Abrasive particle accumulation in engine lube oil accelerating bearing wear, reducing oil film stability, and shortening engine overhaul intervals across all diesel-powered equipment."
 domain: lube-oil
-root_contamination: "[[PARTICLE_WEAR]]"
+root_contamination: "[[PARTICLE_WEAR_LUBE_OIL]]"
 contributing_factors:
   - Extended oil change intervals allowing particle load to exceed ISO 4406 cleanliness targets
   - Filter element bypass during cold starts allowing unfiltered oil circulation

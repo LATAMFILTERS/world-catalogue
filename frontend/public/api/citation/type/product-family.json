@@ -17,6 +17,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/airfilter",
         "concept": "Primary Intake Protection Product Family",
@@ -71,6 +72,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/air-housing",
         "concept": "Air Cleaner Housings Product Family",
@@ -124,6 +126,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/cabin-primary",
         "concept": "Primary Cabin Air Protection Product Family",
@@ -180,6 +183,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/compressed-air-primary",
         "concept": "Pneumatic Air Dryer Protection Product Family",
@@ -228,6 +232,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/cooling-primary",
         "concept": "Cooling System Protection Product Family",
@@ -278,6 +283,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/fuel-primary",
         "concept": "Primary Fuel Protection Product Family",
@@ -329,6 +335,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/fuel-turbine",
         "concept": "Turbine Fuel Separation Product Family",
@@ -384,6 +391,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/fuel-water-separator",
         "concept": "Fuel Water Separation Product Family",
@@ -402,6 +410,7 @@
       "relationships": {
         "target_industries": [
           "AGRICULTURE",
+          "AUTOMOTIVE",
           "MARINE",
           "MINING",
           "OIL_GAS",
@@ -435,6 +444,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/hydraulic-primary",
         "concept": "Primary Hydraulic Protection Product Family",
@@ -459,6 +469,7 @@
         "target_industries": [
           "AGRICULTURE",
           "CONSTRUCTION",
+          "MARINE",
           "MINING",
           "OIL_GAS",
           "POWER_GENERATION"
@@ -490,6 +501,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/lube-primary",
         "concept": "Primary Lube Oil Protection Product Family",

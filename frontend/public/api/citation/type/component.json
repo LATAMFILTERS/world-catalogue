@@ -19,6 +19,7 @@
         "oil-film",
         "vault-only"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/glossary/engine-bearing-journal",
         "concept": "Engine Bearing Journal",
@@ -62,6 +63,7 @@
         "wear-surface",
         "vault-only"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/glossary/piston-ring-assembly",
         "concept": "Piston Ring Assembly",
@@ -110,6 +112,7 @@
         "lube-oil",
         "not-in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com (component reference — no dedicated page)",
         "concept": "Turbocharger Bearing Component",

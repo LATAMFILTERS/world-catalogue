@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-08-17T11:10:16.585Z",
-    "note_count": 67,
-    "scanned_note_count": 81,
+    "generated": "2026-08-18T07:06:02.166Z",
+    "note_count": 69,
+    "scanned_note_count": 83,
     "skipped_non_entity_count": 14,
     "retired_entity_keys": [
       "AIRFILTER",
@@ -36,6 +36,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Air Dryer",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/drycore/",
         "concept": "DRYCORE Air Dryer Filtration Technology",
@@ -63,6 +64,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Fuel",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/hydrocore/",
         "concept": "HYDROCORE Fuel Water Separation Technology",
@@ -95,6 +97,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Air Intake",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/intekcore/",
         "concept": "INTEKCORE Air Cleaner Housing and Sealing Technology",
@@ -129,6 +132,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Air Intake",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/macrocore/",
         "concept": "MACROCORE Engine Air Filtration Technology",
@@ -163,6 +167,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Cabin Air",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/microkappa/",
         "concept": "MICROKAPPA Cabin Air Protection Technology",
@@ -195,6 +200,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Hydraulic",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/nanoforce/",
         "concept": "NANOFORCE Hydraulic Filtration Technology",
@@ -227,6 +233,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Fuel",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/syntapore/",
         "concept": "SYNTAPORE Fuel Filtration Technology",
@@ -259,6 +266,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Lubrication",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/syntrax/",
         "concept": "SYNTRAX Lubrication Filtration Technology",
@@ -286,6 +294,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Cooling",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/thermacore/",
         "concept": "THERMACORE Cooling System Protection Technology",
@@ -313,6 +322,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": "Fuel",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/turbocore/",
         "concept": "TURBOCORE Fuel Water Separation Technology",
@@ -351,6 +361,7 @@
         "off-highway",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/agriculture",
         "concept": "Agriculture Industry Filtration Requirements",
@@ -412,6 +423,7 @@
         "automotive",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/automotive",
         "concept": "Automotive Industry Filtration Requirements",
@@ -467,6 +479,7 @@
         "bus-coach",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/bus-coach",
         "concept": "Bus & Coach Industry Filtration Requirements",
@@ -527,6 +540,7 @@
         "hydraulic-intensive",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/construction",
         "concept": "Construction Industry Filtration Requirements",
@@ -593,6 +607,7 @@
         "industrial",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/manufacturing",
         "concept": "Manufacturing Industry Filtration Requirements",
@@ -654,6 +669,7 @@
         "marine",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/marine",
         "concept": "Marine Industry Filtration Requirements",
@@ -717,6 +733,7 @@
         "lube-oil",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/industries/mining",
         "concept": "Mining Industrial Filtration",
@@ -781,6 +798,7 @@
         "oil-gas",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/oil-gas",
         "concept": "Oil & Gas Industry Filtration Requirements",
@@ -839,6 +857,7 @@
         "power-generation",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/power-generation",
         "concept": "Power Generation Industry Filtration Requirements",
@@ -898,6 +917,7 @@
         "railway",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/railway",
         "concept": "Railway Industry Filtration Requirements",
@@ -956,6 +976,7 @@
         "transport",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/trucks-fleets",
         "concept": "Trucks & Fleets Industry Filtration Requirements",
@@ -1017,6 +1038,7 @@
         "waste-municipal",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/industries/waste-municipal",
         "concept": "Waste & Municipal Industry Filtration Requirements",
@@ -1078,6 +1100,7 @@
         "asset-protection",
         "in-ud"
       ],
+      "domain": "Air Intake",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/air-intake-protection",
         "concept": "Air Intake & Airflow Protection Systems",
@@ -1134,6 +1157,7 @@
         "asset-protection",
         "in-ud"
       ],
+      "domain": "Cooling",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/cooling-system-protection",
         "concept": "Cooling System Protection",
@@ -1181,6 +1205,7 @@
         "asset-protection",
         "in-ud"
       ],
+      "domain": "Fuel",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/fuel-cleanliness-protection",
         "concept": "Fuel Cleanliness Protection Systems",
@@ -1235,6 +1260,7 @@
         "asset-protection",
         "in-ud"
       ],
+      "domain": "Hydraulic",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/hydraulic-protection",
         "concept": "Hydraulic Systems",
@@ -1289,6 +1315,7 @@
         "asset-protection",
         "in-ud"
       ],
+      "domain": "Lube Oil",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
         "concept": "Lubrication Systems",
@@ -1338,6 +1365,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
         "concept": "CABIN — Cabin Air Filtration Domain",
@@ -1370,6 +1398,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/fuel-cleanliness-protection",
         "concept": "FUEL — Fuel Filtration Domain",
@@ -1402,6 +1431,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/hydraulic-protection",
         "concept": "HYDRAULIC — Hydraulic Filtration Domain",
@@ -1434,6 +1464,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
         "concept": "OIL — Lube Oil Filtration Domain",
@@ -1473,6 +1504,7 @@
         "test-method",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/astm-d6304",
         "concept": "ASTM D6304 Water in Petroleum Products",
@@ -1518,6 +1550,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
         "concept": "DIN 51524 — Hydraulic and Lube Oil Specification",
@@ -1552,6 +1585,7 @@
         "performance-test",
         "not-in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/din-71220",
         "concept": "DIN 71220 Cabin Air Filter Testing",
@@ -1601,6 +1635,7 @@
         "performance-test",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-11155",
         "concept": "ISO 11155 Cabin Air Filter Performance",
@@ -1653,6 +1688,7 @@
         "test-method",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-12937",
         "concept": "ISO 12937 Water in Petroleum Products",
@@ -1704,6 +1740,7 @@
         "primary",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-16889",
         "concept": "ISO 16889 Filter Multi-Pass Test Method",
@@ -1755,6 +1792,7 @@
         "primary",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-4406",
         "concept": "ISO 4406 Hydraulic Fluid Cleanliness Code",
@@ -1800,6 +1838,7 @@
         "test-method",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/air-intake-protection",
         "concept": "ISO 5011 — Air Filter Performance Test",
@@ -1855,6 +1894,7 @@
         "structural-test",
         "not-in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/nfpa-t214",
         "concept": "NFPA T2.14 Hydraulic Filter Collapse/Burst Resistance",
@@ -1904,6 +1944,7 @@
         "primary",
         "in-ud"
       ],
+      "domain": "Air Intake",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/sae-j1539",
         "concept": "SAE J1539 Air Intake Cleanliness",
@@ -1946,6 +1987,7 @@
         "cabin",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
         "concept": "Cabin Air Contamination",
@@ -1986,6 +2028,7 @@
         "fuel",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
         "concept": "Diesel Water Contamination",
@@ -2027,6 +2070,7 @@
         "hydraulic",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Hydraulic System Contamination",
@@ -2065,25 +2109,28 @@
       "tags": [
         "contamination-mode",
         "active",
+        "parent-concept",
+        "not-traversal-resolver",
         "air-intake",
         "lube-oil",
         "fuel",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Particle Wear in Engines",
-        "version": "1.0",
-        "last_updated": "2026-06-03",
-        "content_hash": "sha256:1165fcc5f7b9ef7f0a561a0059cb7ca10bfcf6000cbe8e2933d19cf0f0c2c9af"
+        "version": "2.0",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:a9a429337d80cac3e0f99909d9e42bb2f44582fcc236410e08c15bc610e4a4f7"
       },
       "canonical": {
-        "definition": "Particle wear is the abrasive degradation of precision engine surfaces — piston rings, cylinder walls, crankshaft journals, and fuel injector components — caused by hard particles (silica, metal oxides, combustion debris) entrained in oil, fuel, and air intake circuits through two-body, three-body, and adhesive wear mechanisms.",
-        "systems": "Engine lube circuits, air intake systems, fuel injection systems, turbocharger bearing circuits",
-        "failure_impact": "Hard particles enter oil circuit via intake ingestion or internal generation → abrasive micro-cutting at piston ring-to-wall interface (5–15 µm clearance) and journal bearings (15–50 µm film) → progressive clearance loss → oil consumption +15–40%; engine blow-by +5–10%; fuel economy −5–12%; compression drop −10–25%; equipment availability −15–25% | Bearing seizure at ISO 4406 >19/17/14 vs. stable operation at 16/14/11 target.",
+        "definition": "Particle wear is the parent educational concept for abrasive degradation of precision engine surfaces — piston rings, cylinder walls, and crankshaft journals — caused by hard particles (silica, metal oxides, combustion debris) entrained through two distinct system pathways, air intake ingestion and lube oil circulation, through two-body, three-body, and adhesive wear mechanisms. This entity is not a traversal resolver; each pathway is governed by its own domain-specific contamination-mode entity (PARTICLE_WEAR_AIR_INTAKE, PARTICLE_WEAR_LUBE_OIL).",
+        "systems": "Engine lube circuits, air intake systems, turbocharger bearing circuits — as two distinct, separately-resolved pathways, not a single undifferentiated system.",
+        "failure_impact": "Hard particles enter the air intake or oil circuit → abrasive micro-cutting at piston ring-to-wall interface (5–15 µm clearance) and journal bearings (15–50 µm film) → progressive clearance loss. See PARTICLE_WEAR_AIR_INTAKE and PARTICLE_WEAR_LUBE_OIL for pathway-specific impact figures.",
         "related_standards": "ISO 16889: Multi-pass Beta ratio test for filter efficiency classification | ISO 4406: Three-number fluid cleanliness code (≥4/≥6/≥14 µm particle counts per 100 mL) | SAE J1539: Air intake cleanliness specification for diesel engines",
-        "related_technologies": "MACROCORE: Particulate capture at 18 µm absolute in air intake and lube circuits | SYNTRAX: Full-flow lube protection targeting ISO 4406 16/14/11 cleanliness code",
-        "industrial_role": "Particle wear is the primary mechanism converting contamination events (dust ingestion, dirty fuel, oil degradation) into quantifiable engine lifespan reduction — controlling it from ISO 4406 19/17/14 to 16/14/11 extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours."
+        "related_technologies": "Air-intake pathway is resolved by MACROCORE (engine air intake filtration) via PARTICLE_WEAR_AIR_INTAKE. Lube-oil pathway is resolved by SYNTRAX (full-flow lube oil filtration) via PARTICLE_WEAR_LUBE_OIL. These technologies operate in different systems and are not interchangeable.",
+        "industrial_role": "Particle wear is the primary mechanism converting contamination events (dust ingestion, oil degradation) into quantifiable engine lifespan reduction. As an educational parent concept it explains the shared physical wear mechanism; the governed, technology-specific resolution for each pathway is defined at PARTICLE_WEAR_AIR_INTAKE and PARTICLE_WEAR_LUBE_OIL respectively."
       },
       "relationships": {
         "related_standards": [
@@ -2091,12 +2138,100 @@
           "ISO_4406",
           "SAE_J1539"
         ],
-        "resolved_by": [
-          "MACROCORE",
-          "SYNTRAX"
+        "related_contamination": [
+          "PARTICLE_WEAR_AIR_INTAKE",
+          "PARTICLE_WEAR_LUBE_OIL"
         ]
       },
       "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
+    },
+    "PARTICLE_WEAR_AIR_INTAKE": {
+      "key": "PARTICLE_WEAR_AIR_INTAKE",
+      "type": "contamination-mode",
+      "name": "Particle Wear — Air Intake Pathway",
+      "slug": "particle-wear-air-intake",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "PARTICLE_WEAR_AIR_INTAKE",
+      "tags": [
+        "contamination-mode",
+        "active",
+        "air-intake",
+        "in-ud"
+      ],
+      "domain": null,
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+        "concept": "Particle Wear — Air Intake Pathway",
+        "version": "1.0",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:f56207392348e2ef91fd952490ee63c0a8fecccdc60c492e93ff59f7aff0292e"
+      },
+      "canonical": {
+        "definition": "Particle wear via the air intake pathway is the abrasive degradation of piston ring, cylinder wall, and turbocharger bearing surfaces caused by hard particles (silica, environmental dust) entering the engine through air intake ingestion, operating through two-body and three-body wear mechanisms.",
+        "systems": "Engine air intake systems, piston ring and cylinder bore assemblies, turbocharger bearing circuits",
+        "failure_impact": "Hard particles bypass air intake filtration → abrasive micro-cutting at piston ring-to-cylinder wall interface (5–15 µm clearance) → progressive clearance loss → compression drop −10–25%; equipment availability −15–25%.",
+        "related_standards": "ISO 5011: Air-cleaner performance testing for engine air-intake applications | SAE J1539: Air intake cleanliness specification for diesel engines",
+        "related_technologies": "MACROCORE: Engine air intake filtration technology resolving the air-intake pathway of particle wear.",
+        "industrial_role": "This is the air-intake-specific specialization of the particle wear mechanism, isolated for resolution-pathway clarity: it is addressed exclusively by air-intake filtration technology, not by lubrication, fuel, hydraulic, or cabin-air technologies."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_5011",
+          "SAE_J1539"
+        ],
+        "resolved_by": [
+          "MACROCORE"
+        ],
+        "related_contamination": [
+          "PARTICLE_WEAR"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR_AIR_INTAKE.md"
+    },
+    "PARTICLE_WEAR_LUBE_OIL": {
+      "key": "PARTICLE_WEAR_LUBE_OIL",
+      "type": "contamination-mode",
+      "name": "Particle Wear — Lube Oil Circulation Pathway",
+      "slug": "particle-wear-lube-oil",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "PARTICLE_WEAR_LUBE_OIL",
+      "tags": [
+        "contamination-mode",
+        "active",
+        "lube-oil",
+        "in-ud"
+      ],
+      "domain": null,
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+        "concept": "Particle Wear — Lube Oil Circulation Pathway",
+        "version": "1.0",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:17578bc3dc1d8e808ff503a13579d0f7b2d9007e8cfdaf22338b249a10066749"
+      },
+      "canonical": {
+        "definition": "Particle wear via the lube oil circulation pathway is the abrasive degradation of crankshaft journal bearings and internal engine surfaces caused by hard particles circulating in the engine lube oil circuit, operating through adhesive wear, bearing spalling, and ring sticking mechanisms.",
+        "systems": "Engine lube oil circuits, crankshaft journal bearing assemblies",
+        "failure_impact": "Hard particles circulate in the oil circuit via internal generation or ingress → adhesive wear at journal bearings (15–50 µm film) → progressive clearance loss and deposit accumulation → oil consumption +15–40%; engine blow-by +5–10%.",
+        "related_standards": "ISO 16889: Multi-pass Beta ratio test for filter efficiency classification | ISO 4406: Three-number fluid cleanliness code (≥4/≥6/≥14 µm particle counts per 100 mL)",
+        "related_technologies": "SYNTRAX: Full-flow engine lube oil filtration technology resolving the lube-circulation pathway of particle wear.",
+        "industrial_role": "This is the lube-oil-specific specialization of the particle wear mechanism, isolated for resolution-pathway clarity: it is addressed exclusively by lubrication filtration technology, not by air-intake, fuel, hydraulic, or cabin-air technologies."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_16889",
+          "ISO_4406"
+        ],
+        "resolved_by": [
+          "SYNTRAX"
+        ],
+        "related_contamination": [
+          "PARTICLE_WEAR"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR_LUBE_OIL.md"
     },
     "ENGINE_BEARING_JOURNAL": {
       "key": "ENGINE_BEARING_JOURNAL",
@@ -2115,6 +2250,7 @@
         "oil-film",
         "vault-only"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/glossary/engine-bearing-journal",
         "concept": "Engine Bearing Journal",
@@ -2158,6 +2294,7 @@
         "wear-surface",
         "vault-only"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/glossary/piston-ring-assembly",
         "concept": "Piston Ring Assembly",
@@ -2206,6 +2343,7 @@
         "lube-oil",
         "not-in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com (component reference — no dedicated page)",
         "concept": "Turbocharger Bearing Component",
@@ -2257,6 +2395,7 @@
         "part-search-entry",
         "exposure-extreme"
       ],
+      "domain": "air-intake",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Dust Ingestion — Air Intake Problem",
@@ -2291,7 +2430,7 @@
           "AIRFILTER_PRIMARY"
         ],
         "root_contamination": [
-          "PARTICLE_WEAR"
+          "PARTICLE_WEAR_AIR_INTAKE"
         ],
         "industry_frequency": [
           "MINING",
@@ -2317,6 +2456,7 @@
         "part-search-entry",
         "exposure-high"
       ],
+      "domain": "lube-oil",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Engine Oil Contamination — Lube Circuit Problem",
@@ -2348,7 +2488,7 @@
           "LUBE_PRIMARY"
         ],
         "root_contamination": [
-          "PARTICLE_WEAR"
+          "PARTICLE_WEAR_LUBE_OIL"
         ],
         "industry_frequency": [
           "MINING",
@@ -2382,6 +2522,7 @@
         "part-search-entry",
         "exposure-medium"
       ],
+      "domain": "fuel",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
         "concept": "Fuel Filter Plugging — Fuel System Problem",
@@ -2439,6 +2580,7 @@
         "part-search-entry",
         "exposure-high"
       ],
+      "domain": "hydraulic",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
         "concept": "Hydraulic Valve Failure — Hydraulic Circuit Problem",
@@ -2497,6 +2639,7 @@
         "exposure-extreme",
         "occupational-health"
       ],
+      "domain": "cabin",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
         "concept": "Operator Dust Exposure — Cabin Air Problem",
@@ -2553,6 +2696,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/airfilter",
         "concept": "Primary Intake Protection Product Family",
@@ -2607,6 +2751,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/air-housing",
         "concept": "Air Cleaner Housings Product Family",
@@ -2660,6 +2805,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/cabin-primary",
         "concept": "Primary Cabin Air Protection Product Family",
@@ -2716,6 +2862,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/compressed-air-primary",
         "concept": "Pneumatic Air Dryer Protection Product Family",
@@ -2764,6 +2911,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/cooling-primary",
         "concept": "Cooling System Protection Product Family",
@@ -2814,6 +2962,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/fuel-primary",
         "concept": "Primary Fuel Protection Product Family",
@@ -2865,6 +3014,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/fuel-turbine",
         "concept": "Turbine Fuel Separation Product Family",
@@ -2920,6 +3070,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/fuel-water-separator",
         "concept": "Fuel Water Separation Product Family",
@@ -2938,6 +3089,7 @@
       "relationships": {
         "target_industries": [
           "AGRICULTURE",
+          "AUTOMOTIVE",
           "MARINE",
           "MINING",
           "OIL_GAS",
@@ -2971,6 +3123,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/hydraulic-primary",
         "concept": "Primary Hydraulic Protection Product Family",
@@ -2995,6 +3148,7 @@
         "target_industries": [
           "AGRICULTURE",
           "CONSTRUCTION",
+          "MARINE",
           "MINING",
           "OIL_GAS",
           "POWER_GENERATION"
@@ -3026,6 +3180,7 @@
         "not-in-ud",
         "part-search-node"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/systems/lube-primary",
         "concept": "Primary Lube Oil Protection Product Family",
@@ -3085,6 +3240,7 @@
         "diagnostics",
         "metrology"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com",
         "concept": "ELIMFILTERS AI Reasoning Engine",
@@ -3117,6 +3273,7 @@
         "transport",
         "consolidation"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/technologies/duratech",
         "concept": "DURATECH Consolidated Filter Kit System",
@@ -3148,6 +3305,7 @@
         "consolidation",
         "fleet"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/technologies/marineclean",
         "concept": "MARINECLEAN Marine Filtration System",
@@ -3180,6 +3338,7 @@
         "part-numbers",
         "catalog"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com",
         "concept": "ELIMFILTERS SKU Nomenclature Architecture",
@@ -5008,13 +5167,53 @@
       },
       {
         "from": "PARTICLE_WEAR",
+        "to": "PARTICLE_WEAR_AIR_INTAKE",
+        "relation": "related_contamination"
+      },
+      {
+        "from": "PARTICLE_WEAR",
+        "to": "PARTICLE_WEAR_LUBE_OIL",
+        "relation": "related_contamination"
+      },
+      {
+        "from": "PARTICLE_WEAR_AIR_INTAKE",
+        "to": "ISO_5011",
+        "relation": "related_standards"
+      },
+      {
+        "from": "PARTICLE_WEAR_AIR_INTAKE",
+        "to": "SAE_J1539",
+        "relation": "related_standards"
+      },
+      {
+        "from": "PARTICLE_WEAR_AIR_INTAKE",
         "to": "MACROCORE",
         "relation": "resolved_by"
       },
       {
-        "from": "PARTICLE_WEAR",
+        "from": "PARTICLE_WEAR_AIR_INTAKE",
+        "to": "PARTICLE_WEAR",
+        "relation": "related_contamination"
+      },
+      {
+        "from": "PARTICLE_WEAR_LUBE_OIL",
+        "to": "ISO_16889",
+        "relation": "related_standards"
+      },
+      {
+        "from": "PARTICLE_WEAR_LUBE_OIL",
+        "to": "ISO_4406",
+        "relation": "related_standards"
+      },
+      {
+        "from": "PARTICLE_WEAR_LUBE_OIL",
         "to": "SYNTRAX",
         "relation": "resolved_by"
+      },
+      {
+        "from": "PARTICLE_WEAR_LUBE_OIL",
+        "to": "PARTICLE_WEAR",
+        "relation": "related_contamination"
       },
       {
         "from": "ENGINE_BEARING_JOURNAL",
@@ -5123,7 +5322,7 @@
       },
       {
         "from": "DUST_INGESTION",
-        "to": "PARTICLE_WEAR",
+        "to": "PARTICLE_WEAR_AIR_INTAKE",
         "relation": "root_contamination"
       },
       {
@@ -5173,7 +5372,7 @@
       },
       {
         "from": "ENGINE_OIL_CONTAMINATION",
-        "to": "PARTICLE_WEAR",
+        "to": "PARTICLE_WEAR_LUBE_OIL",
         "relation": "root_contamination"
       },
       {
@@ -5743,6 +5942,11 @@
       },
       {
         "from": "FUEL_WATER_SEPARATOR",
+        "to": "AUTOMOTIVE",
+        "relation": "target_industries"
+      },
+      {
+        "from": "FUEL_WATER_SEPARATOR",
         "to": "MARINE",
         "relation": "target_industries"
       },
@@ -5804,6 +6008,11 @@
       {
         "from": "HYDRAULIC_PRIMARY",
         "to": "CONSTRUCTION",
+        "relation": "target_industries"
+      },
+      {
+        "from": "HYDRAULIC_PRIMARY",
+        "to": "MARINE",
         "relation": "target_industries"
       },
       {

@@ -1,6 +1,6 @@
 {
-  "edge_count": 543,
-  "node_count": 67,
+  "edge_count": 553,
+  "node_count": 69,
   "dangling_keys": [],
   "edges": [
     {
@@ -1810,13 +1810,53 @@
     },
     {
       "from": "PARTICLE_WEAR",
+      "to": "PARTICLE_WEAR_AIR_INTAKE",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "PARTICLE_WEAR",
+      "to": "PARTICLE_WEAR_LUBE_OIL",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "PARTICLE_WEAR_AIR_INTAKE",
+      "to": "ISO_5011",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR_AIR_INTAKE",
+      "to": "SAE_J1539",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR_AIR_INTAKE",
       "to": "MACROCORE",
       "relation": "resolved_by"
     },
     {
-      "from": "PARTICLE_WEAR",
+      "from": "PARTICLE_WEAR_AIR_INTAKE",
+      "to": "PARTICLE_WEAR",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "PARTICLE_WEAR_LUBE_OIL",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR_LUBE_OIL",
+      "to": "ISO_4406",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR_LUBE_OIL",
       "to": "SYNTRAX",
       "relation": "resolved_by"
+    },
+    {
+      "from": "PARTICLE_WEAR_LUBE_OIL",
+      "to": "PARTICLE_WEAR",
+      "relation": "related_contamination"
     },
     {
       "from": "ENGINE_BEARING_JOURNAL",
@@ -1925,7 +1965,7 @@
     },
     {
       "from": "DUST_INGESTION",
-      "to": "PARTICLE_WEAR",
+      "to": "PARTICLE_WEAR_AIR_INTAKE",
       "relation": "root_contamination"
     },
     {
@@ -1975,7 +2015,7 @@
     },
     {
       "from": "ENGINE_OIL_CONTAMINATION",
-      "to": "PARTICLE_WEAR",
+      "to": "PARTICLE_WEAR_LUBE_OIL",
       "relation": "root_contamination"
     },
     {
@@ -2545,6 +2585,11 @@
     },
     {
       "from": "FUEL_WATER_SEPARATOR",
+      "to": "AUTOMOTIVE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
       "to": "MARINE",
       "relation": "target_industries"
     },
@@ -2606,6 +2651,11 @@
     {
       "from": "HYDRAULIC_PRIMARY",
       "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "MARINE",
       "relation": "target_industries"
     },
     {

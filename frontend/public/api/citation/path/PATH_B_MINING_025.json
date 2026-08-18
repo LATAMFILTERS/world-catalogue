@@ -1,0 +1,242 @@
+{
+  "path_id": "PATH_B_MINING_025",
+  "path_type": "B",
+  "entry_node": "MINING",
+  "entry_type": "industry",
+  "industry": "MINING",
+  "valid": true,
+  "steps": [
+    {
+      "key": "MINING",
+      "type": "industry",
+      "name": "Mining",
+      "citation_record": {
+        "key": "MINING",
+        "type": "industry",
+        "name": "Mining",
+        "slug": "mining",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "MINING",
+        "tags": [
+          "industry",
+          "active",
+          "exposure-extreme",
+          "air-intake",
+          "hydraulic",
+          "fuel",
+          "lube-oil",
+          "in-ud"
+        ],
+        "domain": null,
+        "citation": {
+          "source_url": "elimfilters.com/industries/mining",
+          "concept": "Mining Industrial Filtration",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:3252ce6f8a8556d4de6dc6472ebea34019796ea75fb34d202aed9b64a348f321"
+        },
+        "canonical": {
+          "definition": "Mining operations present EXTREME contamination exposure — silica and hardrock particulate\nconcentrations 50× above ISO 5011 test standards — requiring multi-system filtration\nprotection across air intake, hydraulic, lube oil, and fuel domains for 24/7 asset\nreliability.",
+          "systems": "Air Intake, Hydraulic, Lubrication, Fuel Cleanliness; primary equipment: haul trucks,\ndrill rigs, loaders, crushers operating in open-cut and underground environments",
+          "failure_impact": "Uncontrolled particle ingestion → engine overhaul interval reduced from 25,000 to\n3,000 hours → unplanned downtime at ~$180,000/hour per machine → cascading supply\nchain disruption | Hydraulic contamination → proportional valve stiction → haul truck\nhydraulic failure → production stoppage",
+          "related_standards": "ISO 5011: Air filter efficiency and restriction test | ISO 16889: Hydraulic cleanliness\nmulti-pass test | SAE J1539: Air intake contamination classification for diesel engines",
+          "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection |\nNANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 target per approved application) |\nSYNTRAX: Full-flow lube oil protection (extended drain intervals) |\nTURBOCORE: Fuel water separation (condensation and bulk fuel contamination control)",
+          "industrial_role": "Mining is the highest-consequence filtration environment — equipment downtime costs\nexceed $180,000/hour and component replacement costs reach $150,000+ per engine\noverhaul. Contamination control is a supply-chain continuity decision, not a\nmaintenance cost decision."
+        },
+        "relationships": {
+          "relevant_contamination": [
+            "PARTICLE_WEAR",
+            "HYDRAULIC_CONTAMINATION",
+            "DIESEL_WATER"
+          ],
+          "applicable_technologies": [
+            "MACROCORE",
+            "NANOFORCE",
+            "SYNTRAX",
+            "TURBOCORE",
+            "INTEKCORE"
+          ],
+          "applicable_standards": [
+            "ISO_16889",
+            "ISO_5011",
+            "SAE_J1539"
+          ],
+          "common_problems": [
+            "DUST_INGESTION",
+            "ENGINE_OIL_CONTAMINATION",
+            "HYDRAULIC_VALVE_FAILURE",
+            "FUEL_FILTER_PLUGGING",
+            "OPERATOR_DUST_EXPOSURE"
+          ],
+          "typical_product_families": [
+            "AIRFILTER_PRIMARY",
+            "LUBE_PRIMARY",
+            "HYDRAULIC_PRIMARY",
+            "FUEL_PRIMARY",
+            "CABIN_PRIMARY"
+          ]
+        },
+        "vault_path": "elimfilters-vault\\02-industries\\MINING.md"
+      }
+    },
+    {
+      "key": "DUST_INGESTION",
+      "type": "problem",
+      "name": "Dust Ingestion",
+      "citation_record": {
+        "key": "DUST_INGESTION",
+        "type": "problem",
+        "name": "Dust Ingestion",
+        "slug": null,
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [
+          "problem",
+          "active",
+          "air-intake",
+          "not-in-ud",
+          "part-search-entry",
+          "exposure-extreme"
+        ],
+        "domain": "air-intake",
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+          "concept": "Dust Ingestion — Air Intake Problem",
+          "version": "1.0",
+          "last_updated": "2026-06-03",
+          "content_hash": "sha256:2f3aa0625265ec76b442a4bc5831bc2a81e02a748e2a0773dd9e2572cb48c47c"
+        },
+        "canonical": {
+          "definition": "Dust ingestion — engine contamination via the air intake path — is the leading cause of\npremature abrasive wear in off-highway diesel engines, occurring when ambient particulate\nbypasses or passes through the air filtration system and enters the combustion chamber.",
+          "systems": "Air Intake; affected components: turbocharger bearings, piston rings, cylinder walls;\nprimary industries: Mining (EXTREME), Construction (HIGH), Agriculture (HIGH)",
+          "failure_impact": "Fine silica and hardrock particles → abrasive wear on piston rings and cylinder walls\n→ blow-by increase → oil contamination → ring sticking → compression loss 10–25%\n→ engine overhaul interval 3,000–5,000 hours vs. 15,000–25,000 hours managed |\nOperational Impact: $21M–$60M+ per event at mining downtime rates ($180,000/hour)",
+          "related_standards": "ISO 5011: Air filter efficiency and dust-holding capacity test |\nSAE J1539: Air intake contamination classification defining acceptable limits",
+          "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection — primary prevention |\nINTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals",
+          "industrial_role": "Dust ingestion is the highest-frequency, highest-cost contamination event in mining and\nconstruction. It is a maintenance discipline failure as much as a product specification\nproblem — correct change interval compliance accounts for the majority of prevention."
+        },
+        "relationships": {
+          "applicable_standards": [
+            "ISO_5011",
+            "SAE_J1539"
+          ],
+          "resolved_by_technologies": [
+            "MACROCORE",
+            "INTEKCORE"
+          ],
+          "affects_components": [
+            "TURBOCHARGER_BEARING"
+          ],
+          "affects_systems": [
+            "AIR_INTAKE_PROTECTION"
+          ],
+          "recommended_product_families": [
+            "AIRFILTER_PRIMARY"
+          ],
+          "root_contamination": [
+            "PARTICLE_WEAR_AIR_INTAKE"
+          ],
+          "industry_frequency": [
+            "MINING",
+            "CONSTRUCTION",
+            "AGRICULTURE"
+          ]
+        },
+        "vault_path": "elimfilters-vault\\07-problems\\DUST_INGESTION.md"
+      }
+    },
+    {
+      "key": "PARTICLE_WEAR_AIR_INTAKE",
+      "type": "contamination-mode",
+      "name": "Particle Wear — Air Intake Pathway",
+      "citation_record": {
+        "key": "PARTICLE_WEAR_AIR_INTAKE",
+        "type": "contamination-mode",
+        "name": "Particle Wear — Air Intake Pathway",
+        "slug": "particle-wear-air-intake",
+        "status": "active",
+        "in_unified_data": true,
+        "ud_key": "PARTICLE_WEAR_AIR_INTAKE",
+        "tags": [
+          "contamination-mode",
+          "active",
+          "air-intake",
+          "in-ud"
+        ],
+        "domain": null,
+        "citation": {
+          "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+          "concept": "Particle Wear — Air Intake Pathway",
+          "version": "1.0",
+          "last_updated": "2026-08-18",
+          "content_hash": "sha256:f56207392348e2ef91fd952490ee63c0a8fecccdc60c492e93ff59f7aff0292e"
+        },
+        "canonical": {
+          "definition": "Particle wear via the air intake pathway is the abrasive degradation of piston ring, cylinder wall, and turbocharger bearing surfaces caused by hard particles (silica, environmental dust) entering the engine through air intake ingestion, operating through two-body and three-body wear mechanisms.",
+          "systems": "Engine air intake systems, piston ring and cylinder bore assemblies, turbocharger bearing circuits",
+          "failure_impact": "Hard particles bypass air intake filtration → abrasive micro-cutting at piston ring-to-cylinder wall interface (5–15 µm clearance) → progressive clearance loss → compression drop −10–25%; equipment availability −15–25%.",
+          "related_standards": "ISO 5011: Air-cleaner performance testing for engine air-intake applications | SAE J1539: Air intake cleanliness specification for diesel engines",
+          "related_technologies": "MACROCORE: Engine air intake filtration technology resolving the air-intake pathway of particle wear.",
+          "industrial_role": "This is the air-intake-specific specialization of the particle wear mechanism, isolated for resolution-pathway clarity: it is addressed exclusively by air-intake filtration technology, not by lubrication, fuel, hydraulic, or cabin-air technologies."
+        },
+        "relationships": {
+          "related_standards": [
+            "ISO_5011",
+            "SAE_J1539"
+          ],
+          "resolved_by": [
+            "MACROCORE"
+          ],
+          "related_contamination": [
+            "PARTICLE_WEAR"
+          ]
+        },
+        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR_AIR_INTAKE.md"
+      }
+    },
+    {
+      "key": "MACROCORE",
+      "type": "technology",
+      "name": "MACROCORE™",
+      "citation_record": {
+        "key": "MACROCORE",
+        "type": "technology",
+        "name": "MACROCORE™",
+        "slug": "macrocore",
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [],
+        "domain": "Air Intake",
+        "citation": {
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/macrocore/",
+          "concept": "MACROCORE Engine Air Filtration Technology",
+          "version": "2.0",
+          "last_updated": "2026-08-14",
+          "content_hash": "sha256:42f42ede3a47c788a446fc6a07fc5f5d3f1fa9219ef3cbc562e5bfb0dd082697"
+        },
+        "canonical": {
+          "definition": "MACROCORE is the ELIMFILTERS engine air filtration architecture for primary and secondary intake protection.",
+          "systems": "Air Intake & Airflow Protection.",
+          "failure_impact": "Inadequate intake contamination control can expose cylinders, piston rings, turbochargers and other protected engine components to airborne particulate contamination.",
+          "related_standards": "ISO 5011: Air-cleaner performance testing relevant to approved engine air-filtration applications.",
+          "related_technologies": "INTEKCORE: Air-cleaner housing and sealing architecture used to preserve the protected intake boundary and support controlled airflow.",
+          "industrial_role": "MACROCORE provides the engine-air filtration layer of ELIMFILTERS Air Intake & Airflow Protection. Media configuration, sealing integrity, airflow management and service interval must be matched to the intended intake duty cycle and contamination load."
+        },
+        "relationships": {
+          "related_standards": [
+            "ISO_5011"
+          ],
+          "related_technologies": [
+            "INTEKCORE"
+          ]
+        },
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\MACROCORE.md"
+      }
+    }
+  ],
+  "terminal_product_families": [
+    "AIRFILTER_PRIMARY"
+  ]
+}

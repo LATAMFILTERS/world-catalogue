@@ -26,6 +26,7 @@
           "part-search-entry",
           "exposure-extreme"
         ],
+        "domain": "air-intake",
         "citation": {
           "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
           "concept": "Dust Ingestion — Air Intake Problem",
@@ -60,7 +61,7 @@
             "AIRFILTER_PRIMARY"
           ],
           "root_contamination": [
-            "PARTICLE_WEAR"
+            "PARTICLE_WEAR_AIR_INTAKE"
           ],
           "industry_frequency": [
             "MINING",
@@ -72,52 +73,52 @@
       }
     },
     {
-      "key": "PARTICLE_WEAR",
+      "key": "PARTICLE_WEAR_AIR_INTAKE",
       "type": "contamination-mode",
-      "name": "Particle Wear in Engines",
+      "name": "Particle Wear — Air Intake Pathway",
       "citation_record": {
-        "key": "PARTICLE_WEAR",
+        "key": "PARTICLE_WEAR_AIR_INTAKE",
         "type": "contamination-mode",
-        "name": "Particle Wear in Engines",
-        "slug": "particle-wear",
+        "name": "Particle Wear — Air Intake Pathway",
+        "slug": "particle-wear-air-intake",
         "status": "active",
         "in_unified_data": true,
-        "ud_key": "PARTICLE_WEAR",
+        "ud_key": "PARTICLE_WEAR_AIR_INTAKE",
         "tags": [
           "contamination-mode",
           "active",
           "air-intake",
-          "lube-oil",
-          "fuel",
           "in-ud"
         ],
+        "domain": null,
         "citation": {
           "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
-          "concept": "Particle Wear in Engines",
+          "concept": "Particle Wear — Air Intake Pathway",
           "version": "1.0",
-          "last_updated": "2026-06-03",
-          "content_hash": "sha256:1165fcc5f7b9ef7f0a561a0059cb7ca10bfcf6000cbe8e2933d19cf0f0c2c9af"
+          "last_updated": "2026-08-18",
+          "content_hash": "sha256:f56207392348e2ef91fd952490ee63c0a8fecccdc60c492e93ff59f7aff0292e"
         },
         "canonical": {
-          "definition": "Particle wear is the abrasive degradation of precision engine surfaces — piston rings, cylinder walls, crankshaft journals, and fuel injector components — caused by hard particles (silica, metal oxides, combustion debris) entrained in oil, fuel, and air intake circuits through two-body, three-body, and adhesive wear mechanisms.",
-          "systems": "Engine lube circuits, air intake systems, fuel injection systems, turbocharger bearing circuits",
-          "failure_impact": "Hard particles enter oil circuit via intake ingestion or internal generation → abrasive micro-cutting at piston ring-to-wall interface (5–15 µm clearance) and journal bearings (15–50 µm film) → progressive clearance loss → oil consumption +15–40%; engine blow-by +5–10%; fuel economy −5–12%; compression drop −10–25%; equipment availability −15–25% | Bearing seizure at ISO 4406 >19/17/14 vs. stable operation at 16/14/11 target.",
-          "related_standards": "ISO 16889: Multi-pass Beta ratio test for filter efficiency classification | ISO 4406: Three-number fluid cleanliness code (≥4/≥6/≥14 µm particle counts per 100 mL) | SAE J1539: Air intake cleanliness specification for diesel engines",
-          "related_technologies": "MACROCORE: Particulate capture at 18 µm absolute in air intake and lube circuits | SYNTRAX: Full-flow lube protection targeting ISO 4406 16/14/11 cleanliness code",
-          "industrial_role": "Particle wear is the primary mechanism converting contamination events (dust ingestion, dirty fuel, oil degradation) into quantifiable engine lifespan reduction — controlling it from ISO 4406 19/17/14 to 16/14/11 extends bearing life 3–5× and defers engine overhaul from 3,000–5,000 hours to 15,000–25,000 hours."
+          "definition": "Particle wear via the air intake pathway is the abrasive degradation of piston ring, cylinder wall, and turbocharger bearing surfaces caused by hard particles (silica, environmental dust) entering the engine through air intake ingestion, operating through two-body and three-body wear mechanisms.",
+          "systems": "Engine air intake systems, piston ring and cylinder bore assemblies, turbocharger bearing circuits",
+          "failure_impact": "Hard particles bypass air intake filtration → abrasive micro-cutting at piston ring-to-cylinder wall interface (5–15 µm clearance) → progressive clearance loss → compression drop −10–25%; equipment availability −15–25%.",
+          "related_standards": "ISO 5011: Air-cleaner performance testing for engine air-intake applications | SAE J1539: Air intake cleanliness specification for diesel engines",
+          "related_technologies": "MACROCORE: Engine air intake filtration technology resolving the air-intake pathway of particle wear.",
+          "industrial_role": "This is the air-intake-specific specialization of the particle wear mechanism, isolated for resolution-pathway clarity: it is addressed exclusively by air-intake filtration technology, not by lubrication, fuel, hydraulic, or cabin-air technologies."
         },
         "relationships": {
           "related_standards": [
-            "ISO_16889",
-            "ISO_4406",
+            "ISO_5011",
             "SAE_J1539"
           ],
           "resolved_by": [
-            "MACROCORE",
-            "SYNTRAX"
+            "MACROCORE"
+          ],
+          "related_contamination": [
+            "PARTICLE_WEAR"
           ]
         },
-        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
+        "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR_AIR_INTAKE.md"
       }
     },
     {
@@ -133,6 +134,7 @@
         "in_unified_data": false,
         "ud_key": null,
         "tags": [],
+        "domain": "Air Intake",
         "citation": {
           "source_url": "https://elimfilters.com/knowledge-center/technologies/macrocore/",
           "concept": "MACROCORE Engine Air Filtration Technology",

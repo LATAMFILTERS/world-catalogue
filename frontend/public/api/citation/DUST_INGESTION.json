@@ -14,6 +14,7 @@
     "part-search-entry",
     "exposure-extreme"
   ],
+  "domain": "air-intake",
   "citation": {
     "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
     "concept": "Dust Ingestion — Air Intake Problem",
@@ -48,7 +49,7 @@
       "AIRFILTER_PRIMARY"
     ],
     "root_contamination": [
-      "PARTICLE_WEAR"
+      "PARTICLE_WEAR_AIR_INTAKE"
     ],
     "industry_frequency": [
       "MINING",
@@ -97,9 +98,9 @@
         "href": "/api/citation/AIRFILTER_PRIMARY.json"
       },
       {
-        "key": "PARTICLE_WEAR",
+        "key": "PARTICLE_WEAR_AIR_INTAKE",
         "relation": "root_contamination",
-        "href": "/api/citation/PARTICLE_WEAR.json"
+        "href": "/api/citation/PARTICLE_WEAR_AIR_INTAKE.json"
       },
       {
         "key": "MINING",

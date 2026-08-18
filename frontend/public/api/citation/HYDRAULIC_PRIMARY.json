@@ -13,6 +13,7 @@
     "not-in-ud",
     "part-search-node"
   ],
+  "domain": null,
   "citation": {
     "source_url": "elimfilters.com/systems/hydraulic-primary",
     "concept": "Primary Hydraulic Protection Product Family",
@@ -37,6 +38,7 @@
     "target_industries": [
       "AGRICULTURE",
       "CONSTRUCTION",
+      "MARINE",
       "MINING",
       "OIL_GAS",
       "POWER_GENERATION"
@@ -80,6 +82,11 @@
         "key": "CONSTRUCTION",
         "relation": "target_industries",
         "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "MARINE",
+        "relation": "target_industries",
+        "href": "/api/citation/MARINE.json"
       },
       {
         "key": "MINING",

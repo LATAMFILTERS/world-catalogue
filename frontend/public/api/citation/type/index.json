@@ -18,7 +18,7 @@
     },
     {
       "type": "contamination-mode",
-      "count": 4,
+      "count": 6,
       "href": "/api/citation/type/contamination-mode.json"
     },
     {

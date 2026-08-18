@@ -1,21 +1,9 @@
 {
   "entry_key": "POWER_GENERATION",
-  "path_count": 5,
+  "path_count": 4,
   "paths": [
     {
-      "path_id": "PATH_B_POWER_GENERATION_048",
-      "path_type": "B",
-      "entry_node": "POWER_GENERATION",
-      "entry_type": "industry",
-      "industry": "POWER_GENERATION",
-      "valid": true,
-      "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_048.json"
-    },
-    {
-      "path_id": "PATH_B_POWER_GENERATION_049",
+      "path_id": "PATH_B_POWER_GENERATION_035",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -24,10 +12,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_049.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_035.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_050",
+      "path_id": "PATH_B_POWER_GENERATION_036",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -36,10 +24,10 @@
       "terminal_product_families": [
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_050.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_036.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_051",
+      "path_id": "PATH_B_POWER_GENERATION_037",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -48,10 +36,10 @@
       "terminal_product_families": [
         "FUEL_TURBINE"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_051.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_037.json"
     },
     {
-      "path_id": "PATH_B_POWER_GENERATION_052",
+      "path_id": "PATH_B_POWER_GENERATION_038",
       "path_type": "B",
       "entry_node": "POWER_GENERATION",
       "entry_type": "industry",
@@ -60,7 +48,7 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_POWER_GENERATION_052.json"
+      "href": "/api/citation/path/PATH_B_POWER_GENERATION_038.json"
     }
   ]
 }
