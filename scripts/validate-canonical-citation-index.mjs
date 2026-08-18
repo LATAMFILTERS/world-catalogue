@@ -14,11 +14,10 @@ const CORE_TECHNOLOGIES = [
   ['DRYCORE', 'drycore'],
   ['INTEKCORE', 'intekcore'],
   ['SYNTAPORE', 'syntapore'],
-  ['TURBOCORE', 'turbocore'],
+  ['HYDROCORE', 'hydrocore'],
   ['SYNTRAX', 'syntrax'],
   ['NANOFORCE', 'nanoforce'],
   ['THERMACORE', 'thermacore'],
-  ['HYDROCORE', 'hydrocore'],
 ];
 
 if (!fs.existsSync(INDEX_PATH)) {
