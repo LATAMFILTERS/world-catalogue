@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About ELIMFILTERS — Industrial Asset Protection Company',
-  description: 'ELIMFILTERS does not sell filters. It protects industrial assets through contamination control, proprietary filtration technologies, and system-level engineering across mining, agriculture, marine, construction, oil & gas, and 8 additional heavy industry sectors.',
+  title: 'About ELIMFILTERS — Global Asset Protection & Filtration Engineering',
+  description: 'Discover the ELIMFILTERS global operating model: filtration-media development in Germany, qualified PRC manufacturing, physical validation, AI-assisted product auditing, horizontal operations, and a partner-first B2B distribution architecture.',
   alternates: {
     canonical: 'https://elimfilters.com/about',
   },
   openGraph: {
-    title: 'About ELIMFILTERS — Industrial Asset Protection Company',
-    description: 'ELIMFILTERS protects industrial assets through contamination control and system-level filtration engineering. 10 proprietary technologies. 12 industrial sectors. One objective: asset protection.',
+    title: 'About ELIMFILTERS — Global Asset Protection & Filtration Engineering',
+    description: 'German-developed filtration media, qualified PRC manufacturing, physical validation, AI-assisted auditing, horizontal operations, and a commercial model built around authorized partners.',
     url: 'https://elimfilters.com/about',
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About ELIMFILTERS — Industrial Asset Protection Company',
-    description: 'We don\'t sell filters. We protect assets. Contamination control, proprietary technologies, and engineering frameworks for 12 industrial sectors.',
+    title: 'About ELIMFILTERS — Global Asset Protection & Filtration Engineering',
+    description: 'A global filtration model combining engineering, manufacturing, validation, AI-assisted auditing, horizontal operations, and authorized commercial partners.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };
