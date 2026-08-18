@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
+import { GlobalCommercialModel } from '@/components/GlobalCommercialModel';
 import '@/i18n';
 
 const ENGINEERING_METHOD = [
@@ -36,14 +37,16 @@ export default function AboutPage() {
     areaServed: 'Worldwide',
     slogan: 'Global Industrial Filtration Brand',
     description:
-      'ELIMFILTERS® is Kleo Technology LLC\'s global industrial filtration brand. We develop advanced contamination-control technologies through mathematical engineering models, AI-assisted simulation, controlled testing, and field validation. Products are available exclusively through authorized distributors.',
+      'ELIMFILTERS® is Kleo Technology LLC\'s global filtration brand for industrial, heavy-duty, fleet, equipment, and automotive applications. The company combines filtration-media development in Germany, qualified manufacturing partners in the People\'s Republic of China, physical validation, AI-assisted product auditing, product intelligence, and a distributor-first commercial model.',
     knowsAbout: [
       'Industrial asset protection',
       'Contamination control',
       'Filtration engineering',
       'AI-assisted engineering simulation',
+      'AI-assisted product auditing',
       'Particle and fluid behavior',
       'Severe-duty equipment reliability',
+      'Automotive filtration',
       'Field validation of filtration systems',
     ],
     address: {
@@ -60,9 +63,9 @@ export default function AboutPage() {
     '@type': 'AboutPage',
     '@id': 'https://elimfilters.com/about/#webpage',
     name: 'About ELIMFILTERS®',
-    headline: 'Industrial asset protection engineered from contamination risk',
+    headline: 'Industrial asset protection engineered through a global product system',
     description:
-      'ELIMFILTERS® explains its purpose, engineering methodology, use of mathematical and AI-assisted simulation, and requirement for real-world field validation.',
+      'ELIMFILTERS® explains its purpose, engineering methodology, global manufacturing model, physical validation, AI-assisted quality auditing, lean operating structure, and distributor-first commercial architecture.',
     url: 'https://elimfilters.com/about/',
     mainEntity: { '@id': 'https://elimfilters.com/#organization' },
     isPartOf: {
@@ -147,6 +150,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <GlobalCommercialModel variant="about" />
+
       <section style={principlesSection}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
           <h2 style={sectionTitle}>{t('about.section4Title')}</h2>
@@ -161,7 +166,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Kleo Technology & Distributors Section */}
       <section style={{ padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', borderTop: '1px solid rgba(255,241,45,0.15)', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 4vw, 3.5rem)' }}>
           <div>
@@ -174,7 +178,7 @@ export default function AboutPage() {
                 <strong style={{ color: '#FFF12D' }}>Legal Headquarters:</strong> Frisco, Texas, USA
               </li>
               <li style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.6 }}>
-                <strong style={{ color: '#FFF12D' }}>Operating Model:</strong> 100% distributor-based (no direct sales)
+                <strong style={{ color: '#FFF12D' }}>Operating Model:</strong> Distributor-first, technology-enabled global operations
               </li>
             </ul>
           </div>
@@ -182,20 +186,20 @@ export default function AboutPage() {
           <div>
             <p style={{ ...sectionTitle, marginBottom: '1.5rem' }}>Distributor Network</p>
             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.7, margin: '0 0 1rem 0' }}>
-              ELIMFILTERS products are available exclusively through authorized distributors across the Americas and other regions.
+              Authorized commercial partners extend ELIMFILTERS technical capability, product access, customer relationships, and market intelligence across their regions.
             </p>
             <Link href="/distributors" style={{ display: 'inline-block', color: '#FFF12D', textDecoration: 'none', fontWeight: 600, transition: 'opacity 0.2s' }}
               onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
               onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
-              Find a Distributor →
+              Explore Distributor Network →
             </Link>
           </div>
 
           <div>
             <p style={{ ...sectionTitle, marginBottom: '1.5rem' }}>Knowledge Resources</p>
             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.7, margin: '0 0 1rem 0' }}>
-              Comprehensive technical documentation on filtration standards, contamination control, and industrial applications.
+              Technical knowledge on filtration standards, contamination control, product intelligence, applications, and asset-protection principles.
             </p>
             <Link href="/knowledge-center/" style={{ display: 'inline-block', color: '#FFF12D', textDecoration: 'none', fontWeight: 600, transition: 'opacity 0.2s' }}
               onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
@@ -224,7 +228,6 @@ export default function AboutPage() {
     </main>
   );
 }
-
 
 const heroSection: React.CSSProperties = {
   minHeight: '92vh',

@@ -38,10 +38,49 @@ test('specialized solutions do not expand the canonical core taxonomy', () => {
   assert.match(source, /do not replace or expand the canonical core taxonomy/i);
 });
 
-test('specialized-solution metadata stays evidence-neutral', () => {
-  const source = read('frontend/src/app/commercial-lines/layout.tsx');
-  assert.doesNotMatch(source, /IMO certified/i);
-  assert.doesNotMatch(source, /salt resistant/i);
-  assert.doesNotMatch(source, /@elimfilters/i);
-  assert.match(source, /siteName: 'ELIMFILTERS'/);
+test('specialized-solution metadata stays evidence-neutral and correctly classified', () => {
+  const hub = read('frontend/src/app/commercial-lines/layout.tsx');
+  const duratech = read('frontend/src/app/commercial-lines/duratech/layout.tsx');
+  const marineclean = read('frontend/src/app/commercial-lines/marineclean/layout.tsx');
+
+  assert.doesNotMatch(hub, /IMO certified/i);
+  assert.doesNotMatch(hub, /salt resistant/i);
+  assert.doesNotMatch(hub, /@elimfilters/i);
+  assert.match(hub, /siteName: 'ELIMFILTERS'/);
+
+  assert.match(duratech, /Integrated Filter Kit Program/);
+  assert.match(duratech, /not a filtration technology/i);
+  assert.doesNotMatch(duratech, /OEM-interchangeable/i);
+
+  assert.match(marineclean, /Specialized Marine Filtration Solution/);
+  assert.match(marineclean, /not a filtration technology/i);
+  assert.doesNotMatch(marineclean, /IMO certified/i);
+  assert.doesNotMatch(marineclean, /epoxy/i);
+  assert.doesNotMatch(marineclean, /brine rejection/i);
+});
+
+test('SEO and GEO discovery surfaces classify DURATECH and MARINECLEAN outside technologies', () => {
+  const sitemap = read('frontend/public/sitemap.xml');
+  const aiSitemap = read('frontend/public/sitemap-ai.xml');
+  const llm = read('frontend/public/llm.txt');
+  const llms = read('frontend/public/llms.txt');
+  const brand = read('docs/brand/BRAND_ARCHITECTURE.md');
+
+  for (const source of [sitemap, aiSitemap]) {
+    assert.match(source, /commercial-lines\/duratech\//);
+    assert.match(source, /commercial-lines\/marineclean\//);
+    assert.doesNotMatch(source, /technologies\/duratech/i);
+    assert.doesNotMatch(source, /technologies\/marineclean/i);
+  }
+
+  for (const source of [llm, llms, brand]) {
+    assert.match(source, /DURATECH/i);
+    assert.match(source, /MARINECLEAN/i);
+    assert.match(source, /not a technology/i);
+  }
+});
+
+test('legacy knowledge entities cannot classify specialized solutions as technologies', () => {
+  assert.equal(fs.existsSync(path.join(root, 'knowledge/entities/technologies/duratech.md')), false);
+  assert.equal(fs.existsSync(path.join(root, 'knowledge/entities/technologies/marineclean.md')), false);
 });

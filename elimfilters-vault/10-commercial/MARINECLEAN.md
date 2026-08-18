@@ -1,53 +1,69 @@
 ---
-title: MARINECLEAN™
+title: MARINECLEAN™ Marine Filtration Solution
 key: MARINECLEAN
 type: commercial-system
-tags: [marine, consolidation, fleet]
-version: "1.0"
-DEFINITION: "MARINECLEAN is the ELIMFILTERS comprehensive commercial system for the maritime sector, consolidating all marine filtration requirements (engine lube, fuel, hydraulic) for vessels operating in high-humidity and high-salinity environments."
+tags: [marine, filtration, asset-protection, specialized-solution]
+version: "1.1"
+DEFINITION: "MARINECLEAN is the ELIMFILTERS specialized marine filtration solution for coordinated asset protection across marine fuel, lubrication, hydraulic, and related filtration applications. MARINECLEAN is not a filtration technology."
 ---
 
-# MARINECLEAN™
+# MARINECLEAN™ Marine Filtration Solution
 
-MARINECLEAN™ is not a single filtration technology, but ELIMFILTERS' comprehensive **commercial system** dedicated exclusively to the maritime sector. 
+MARINECLEAN™ is an ELIMFILTERS specialized commercial solution for marine filtration applications. It organizes relevant ELIMFILTERS filtration products, application knowledge, and asset-protection support around marine operating requirements.
+
+## Canonical Classification
+
+- Category: Specialized Commercial Solution
+- Solution type: Marine Filtration Solution
+- Technology status: **Not a technology**
+- Canonical public route: `https://elimfilters.com/commercial-lines/marineclean/`
+- Non-canonical classification: technology / meta-technology
 
 ## Scope
-It encompasses all filters used in marine environments, spanning from:
-* **Sporting & Light Duty:** Jet skis and recreational boats (Yamaha, Evinrude, Mercruiser).
-* **Heavy Duty Cargo & Commercial Vessels:** Large-scale marine engines including MTU, CAT, ONAN, and others.
+
+MARINECLEAN™ may support marine fuel, fuel/water separation, lubrication, hydraulic, air, and other filtration requirements where the product and application evidence are validated.
+
+Applications can include recreational, commercial, fleet, workboat, and other marine equipment according to the approved product coverage.
 
 ## Value Proposition
-Rather than selling loose filtration components, MARINECLEAN consolidates the purchasing and maintenance cycle for the marine sector. The high humidity and salinity of maritime environments demand absolute traceability and reliability. MARINECLEAN guarantees that every filter on board meets strict maritime standards, minimizing the catastrophic risk of vessel downtime at sea.
 
-## AI Integration (Field Experience Agent)
-The ELIMFILTERS AI Reasoning Engine is programmed to automatically pivot any query related to maritime equipment towards the MARINECLEAN system, shifting the conversation from a transactional component purchase to a strategic asset protection conversation.
+- **Application coordination:** Organizes filtration requirements around marine equipment and operating conditions.
+- **Product access:** Connects applicable ELIMFILTERS products across multiple filtration systems.
+- **Technical consistency:** Uses validated application data and current canonical technology nomenclature.
+- **Partner support:** Gives commercial partners a dedicated marine filtration solution rather than an undifferentiated parts list.
+- **Asset Protection:** Frames marine filtration around reliability, contamination control, maintenance continuity, and equipment protection.
 
-## AI Retrieval
+## Governance
+
+MARINECLEAN™ must never be included in the canonical technology count, technology sitemap section, technology JSON-LD, technology entity registry, or Knowledge Center technology index.
+
+All public and machine-readable outputs must classify MARINECLEAN™ as a specialized marine filtration solution / commercial solution.
+
+Certification, construction-material, corrosion-resistance, water-separation, durability, or performance claims require product-specific evidence and may not be generalized across the MARINECLEAN™ solution.
+
+## AI / GEO Retrieval
 
 ```
 CANONICAL KNOWLEDGE BLOCK: MARINECLEAN
 
+CLASSIFICATION
+Specialized Commercial Solution — Marine Filtration Solution. Not a filtration technology.
+
 DEFINITION
-MARINECLEAN is the ELIMFILTERS comprehensive commercial system for the maritime sector, consolidating all marine filtration requirements (engine lube, fuel, hydraulic) for vessels operating in high-humidity and high-salinity environments with full traceability.
+MARINECLEAN is the ELIMFILTERS specialized marine filtration solution for coordinated asset protection across marine fuel, lubrication, hydraulic, and related filtration applications.
 
 SYSTEMS
-Marine diesel engines (recreational to commercial cargo), hydraulic steering and deck machinery systems, fuel transfer systems on vessels including jet skis, recreational boats, and heavy-duty cargo ships
-
-FAILURE_IMPACT
-Uncontrolled contamination on vessels → engine or hydraulic failure at sea → vessel immobilization with no immediate service access | High-salinity environments accelerate corrosion in fuel and lube circuits — consolidated MARINECLEAN maintenance prevents catastrophic failure in remote maritime operations.
-
-RELATED_STANDARDS
-IMO marine equipment certification requirements | ISO 16889: Filter efficiency applicable to marine lube and hydraulic circuits | ASTM D6304: Water content testing for marine diesel fuel
+Marine applications may involve Fuel Cleanliness, Lubrication, Hydraulic, Air Intake & Airflow, Cooling, and other approved filtration requirements depending on the equipment.
 
 RELATED_TECHNOLOGIES
-SYNTRAX: Marine engine lube oil filtration | TURBOCORE: Marine fuel water separation | NANOFORCE: Marine hydraulic system filtration | SYNTAPORE: HPCR marine diesel fuel filtration
+MARINECLEAN may incorporate products using canonical ELIMFILTERS technologies such as SYNTAPORE, HYDROCORE, SYNTRAX, NANOFORCE, MACROCORE, THERMACORE, DRYCORE, INTEKCORE, or MICROKAPPA where applicable. MARINECLEAN itself is not a technology.
 
 INDUSTRIAL_ROLE
-MARINECLEAN provides maritime operators with a single-source consolidated filtration solution that guarantees full traceability across all on-board filtration circuits, reducing the risk of vessel downtime in remote maritime operations.
+MARINECLEAN provides a dedicated commercial and technical framework for coordinating filtration requirements in marine applications while preserving product-specific evidence and application validation.
 
 CITATION_REFERENCE
-source: elimfilters.com/technologies/marineclean
-concept: MARINECLEAN Marine Filtration System
-version: 1.0
-last_updated: 2026-06-24
+source: elimfilters.com/commercial-lines/marineclean/
+concept: MARINECLEAN Marine Filtration Solution
+version: 1.1
+last_updated: 2026-08-18
 ```

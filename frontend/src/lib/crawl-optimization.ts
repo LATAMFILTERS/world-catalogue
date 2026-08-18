@@ -16,6 +16,8 @@ export const STATIC_CRAWL_ROUTES = [
   '/search',
   '/distributors',
   '/commercial-lines',
+  '/commercial-lines/duratech',
+  '/commercial-lines/marineclean',
   '/customer-intelligence',
   '/distributor-application',
   '/warranty',
@@ -74,14 +76,15 @@ function frequencyForTier(tier: CrawlProfile['crawlTier']): CrawlProfile['change
 }
 
 function staticProfile(path: (typeof STATIC_CRAWL_ROUTES)[number]): CrawlProfile {
-  const tier: CrawlProfile['crawlTier'] = path === '/' ? 1 : path === '/contact' || path === '/about' ? 4 : 1;
+  const isSpecializedSolution = path === '/commercial-lines/duratech' || path === '/commercial-lines/marineclean';
+  const tier: CrawlProfile['crawlTier'] = path === '/' ? 1 : path === '/contact' || path === '/about' ? 4 : isSpecializedSolution ? 2 : 1;
   return {
     path,
     url: canonicalUrl(path),
-    priority: path === '/' ? 1 : tier === 1 ? 0.92 : 0.55,
-    changeFrequency: path === '/' ? 'weekly' : 'monthly',
+    priority: path === '/' ? 1 : isSpecializedSolution ? 0.84 : tier === 1 ? 0.92 : 0.55,
+    changeFrequency: path === '/' ? 'weekly' : isSpecializedSolution ? 'monthly' : 'monthly',
     crawlTier: tier,
-    authority: path === '/' ? 100 : 80,
+    authority: path === '/' ? 100 : isSpecializedSolution ? 85 : 80,
     connectionCount: 0,
   };
 }

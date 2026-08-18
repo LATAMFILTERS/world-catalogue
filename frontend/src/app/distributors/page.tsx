@@ -1,16 +1,17 @@
 import { PageHeader } from '@/components/PageHeader';
+import { GlobalCommercialModel } from '@/components/GlobalCommercialModel';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'ELIMFILTERS Authorized Distributor Network | Regional Coverage',
-  description: 'Find ELIMFILTERS authorized distributors in Dominican Republic, Colombia, and USA. Local industrial filtration expertise, regional support, and asset protection solutions.',
-  keywords: ['distributor network', 'industrial filtration', 'authorized distributors', 'regional coverage'],
+  title: 'ELIMFILTERS Authorized Distributor Network | Global B2B Partners',
+  description: 'Explore the ELIMFILTERS authorized distributor network and partner model for industrial, heavy-duty, fleet, equipment, and complementary automotive filtration markets.',
+  keywords: ['distributor network', 'industrial filtration', 'authorized distributors', 'heavy duty filtration', 'automotive filtration', 'B2B filtration partners'],
   alternates: { canonical: 'https://elimfilters.com/distributors/' },
   openGraph: {
-    title: 'ELIMFILTERS Authorized Distributor Network | Regional Coverage',
-    description: 'Find ELIMFILTERS authorized distributors — regional coverage, technical support, and asset protection expertise.',
+    title: 'ELIMFILTERS Authorized Distributor Network | Global B2B Partners',
+    description: 'Regional coverage, technical support, product intelligence, and a partner-first commercial model for industrial, heavy-duty, fleet, and automotive markets.',
     url: 'https://elimfilters.com/distributors/',
     type: 'website',
     siteName: 'ELIMFILTERS',
@@ -49,37 +50,37 @@ const DISTRIBUTORS = [
 
 const TAGS = [
   'Industrial Filtration',
-  'Asset Protection',
-  'Application Support',
-  'Regional Coverage',
-  'Technical Service',
+  'Heavy Duty',
   'Fleet Support',
+  'Automotive',
+  'Product Intelligence',
+  'Asset Protection',
 ];
 
 const PARTNER_VALUES = [
   {
     title: 'Technical Capability',
-    body: 'Partners must be able to support industrial filtration applications with disciplined product identification and application context.',
+    body: 'Partners support disciplined product identification and application context across industrial, heavy-duty, fleet, equipment, and relevant automotive requirements.',
   },
   {
     title: 'Territory Knowledge',
-    body: 'Local market knowledge helps match equipment, operating environments, and service requirements to the correct ELIMFILTERS protection system.',
+    body: 'Local market knowledge connects equipment populations, operating environments, customer relationships, and service requirements to the correct ELIMFILTERS protection approach.',
   },
   {
     title: 'Application Support',
-    body: 'Authorized distributors support customers with cross-reference intake, equipment context, and escalation of technical questions when required.',
+    body: 'Authorized partners use product intelligence, cross-reference intake, equipment context, and technical escalation to reduce identification friction and application risk.',
   },
   {
     title: 'Inventory Discipline',
-    body: 'Regional availability is managed around real fleet and industrial demand rather than undifferentiated commodity stocking.',
+    body: 'Regional availability is managed around installed-base demand, recurring service requirements, and intelligent stocking rather than undifferentiated commodity inventory.',
   },
   {
     title: 'Brand Governance',
-    body: 'Partners represent ELIMFILTERS using approved technical language, current product taxonomy, and consistent asset-protection positioning.',
+    body: 'Partners represent ELIMFILTERS using approved technical language, current product and technology taxonomy, evidence-based claims, and consistent Asset Protection positioning.',
   },
   {
     title: 'Customer Continuity',
-    body: 'The distribution model is designed to support repeatable service, equipment lifecycle protection, and long-term account continuity.',
+    body: 'The distribution model is designed around long-term accounts, regional service, sustainable partner economics, equipment lifecycle protection, and repeatable customer support.',
   },
 ];
 
@@ -125,9 +126,9 @@ export default function DistributorsPage() {
         <div style={heroOverlay} />
 
         <div style={heroInner}>
-          <h1 style={heroTitle}>Authorized Distribution Network</h1>
+          <h1 style={heroTitle}>Authorized Commercial Partner Network</h1>
           <p style={heroLead}>
-            ELIMFILTERS works with qualified regional distributors that support industrial filtration applications, asset protection strategy, and dependable product access in their markets.
+            ELIMFILTERS works with qualified regional partners that extend product access, technical capability, application intelligence, and long-term Asset Protection support into their markets.
           </p>
 
           <div style={tagRow}>
@@ -141,18 +142,20 @@ export default function DistributorsPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <h2 style={sectionTitle}>Regional Coverage. Technical Accountability.</h2>
+            <h2 style={sectionTitle}>Regional Coverage. Technical Accountability. Sustainable Partner Value.</h2>
           </div>
           <div>
             <p style={leadText}>
-              Authorized distributors extend ELIMFILTERS technical and commercial coverage while preserving one global product and technology language.
+              Authorized partners extend ELIMFILTERS technical and commercial coverage while preserving one global product, quality, intelligence, and brand-governance system.
             </p>
             <p style={bodyText}>
-              Each relationship is built around regional service capability, application knowledge, brand governance, and reliable support for fleets, industrial operators, and equipment owners.
+              ELIMFILTERS is structured to support the partner rather than reduce the relationship to a product transaction. Local customer relationships, inventory strategy, technical sales, service, and market knowledge are integral parts of the value chain.
             </p>
           </div>
         </div>
       </section>
+
+      <GlobalCommercialModel variant="distributors" />
 
       <section style={networkSection}>
         <div style={wrapWide}>
@@ -203,9 +206,9 @@ export default function DistributorsPage() {
       <section style={applicationCallout}>
         <div style={applicationInner}>
           <div>
-            <h2 style={sectionTitle}>Become an ELIMFILTERS Authorized Distributor</h2>
+            <h2 style={sectionTitle}>Become an ELIMFILTERS Authorized Commercial Partner</h2>
             <p style={{ ...bodyText, maxWidth: '740px', marginTop: '1.2rem' }}>
-              Submit your company profile, service territory, technical capabilities, and target industries for commercial review.
+              Submit your company profile, service territory, technical capabilities, target industries, automotive / Light Duty coverage where relevant, and market-development objectives for commercial review.
             </p>
           </div>
           <Link href="/distributor-application" style={yellowButton}>APPLY FOR REVIEW</Link>
@@ -215,7 +218,7 @@ export default function DistributorsPage() {
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Build Regional Coverage With ELIMFILTERS
+            Build Regional Market Strength With ELIMFILTERS
           </h2>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
             <Link href="/distributor-application" style={yellowButton}>APPLY FOR REVIEW</Link>
