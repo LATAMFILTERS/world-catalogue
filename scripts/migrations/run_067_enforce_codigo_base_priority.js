@@ -1,25 +1,31 @@
 'use strict';
 
 /**
- * Canonical codigo_base policy for elimfilters_catalog.
+ * Canonical codigo_base audit/correction for elimfilters_catalog.
  *
  * HEAVY_DUTY:
  *   1) DONALDSON
- *   2) FLEETGUARD when no Donaldson reference is present
- *   3) OEM fallback requires explicit/manual commercial-authority resolution
+ *   2) FLEETGUARD only after verified Donaldson absence
+ *   3) OEM only after verified Donaldson + Fleetguard absence and commercial OEM validation
  *
  * LIGHT_DUTY:
  *   1) MANN / MANN-FILTER
- *   2) OEM fallback requires explicit/manual commercial-authority resolution
+ *   2) OEM only after verified MANN-FILTER absence and commercial OEM validation
  *
- * Safety rule: this migration NEVER guesses that a preferred manufacturer does
- * not make a part merely because that reference is missing from current JSONB.
- * It only auto-updates rows when the preferred code is explicitly present in
- * competitor_codes or oem_codes. Unresolved rows are reported for enrichment.
+ * Critical safety rule:
+ *   - If the current codigo_base already matches ANY reference from the required
+ *     preferred manufacturer, it is canonical and MUST NOT be replaced by some
+ *     other reference from the same manufacturer merely because that reference
+ *     appears first in JSONB.
+ *   - If multiple preferred-manufacturer references exist and the current base
+ *     matches none of them, this script reports an ambiguity. It never picks the
+ *     first code arbitrarily.
+ *   - Missing references in current JSONB are never treated as proof that a
+ *     preferred manufacturer does not make the part.
  *
  * Usage:
  *   node scripts/migrations/run_067_enforce_codigo_base_priority.js          # dry run
- *   node scripts/migrations/run_067_enforce_codigo_base_priority.js --apply  # apply safe changes
+ *   node scripts/migrations/run_067_enforce_codigo_base_priority.js --apply  # apply only unambiguous changes
  */
 
 require('dotenv').config();
@@ -43,22 +49,63 @@ function normalizeManufacturer(value) {
 }
 
 function normalizeCode(value) {
-  return String(value || '').trim().toUpperCase();
+  return String(value || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
 }
 
 function refsFrom(value) {
   if (!Array.isArray(value)) return [];
   return value
     .map((item) => ({
-      code: normalizeCode(item && item.code),
-      manufacturer: normalizeManufacturer(item && (item.manufacturer || item.brand)),
+      code: String(item && item.code || '').trim(),
+      normalizedCode: normalizeCode(item && item.code),
+      manufacturer: normalizeManufacturer(item && (item.manufacturer || item.brand || item.oem)),
     }))
-    .filter((item) => item.code && item.manufacturer);
+    .filter((item) => item.code && item.normalizedCode && item.manufacturer);
 }
 
-function firstByManufacturer(refs, manufacturers) {
+function byManufacturer(refs, manufacturers) {
   const wanted = new Set(manufacturers.map(normalizeManufacturer));
-  return refs.find((r) => wanted.has(r.manufacturer)) || null;
+  const seen = new Set();
+  return refs.filter((ref) => {
+    if (!wanted.has(ref.manufacturer) || seen.has(ref.normalizedCode)) return false;
+    seen.add(ref.normalizedCode);
+    return true;
+  });
+}
+
+function decidePreferredAuthority(row, authority, refs, manufacturers) {
+  const preferred = byManufacturer(refs, manufacturers);
+  const current = normalizeCode(row.codigo_base);
+
+  if (!preferred.length) return null;
+
+  const currentMatch = preferred.find((ref) => ref.normalizedCode === current);
+  if (currentMatch) {
+    return {
+      code: currentMatch.code,
+      authority,
+      safe: true,
+      alreadyCanonical: true,
+      reason: 'Current codigo_base already matches preferred-manufacturer evidence',
+    };
+  }
+
+  if (preferred.length === 1) {
+    return {
+      code: preferred[0].code,
+      authority,
+      safe: true,
+      alreadyCanonical: false,
+      reason: 'Single unambiguous preferred-manufacturer reference',
+    };
+  }
+
+  return {
+    safe: false,
+    authority,
+    reason: 'Multiple preferred-manufacturer references exist; primary codigo_base is ambiguous',
+    candidates: preferred.map((ref) => ref.code),
+  };
 }
 
 function choosePreferred(row) {
@@ -66,16 +113,17 @@ function choosePreferred(row) {
   const duty = String(row.duty || '').toUpperCase();
 
   if (duty === 'HEAVY_DUTY') {
-    const donaldson = firstByManufacturer(refs, ['DONALDSON']);
-    if (donaldson) return { code: donaldson.code, authority: 'DONALDSON', safe: true };
+    const donaldson = decidePreferredAuthority(row, 'DONALDSON', refs, ['DONALDSON']);
+    if (donaldson) return donaldson;
 
-    const fleetguard = firstByManufacturer(refs, ['FLEETGUARD', 'CUMMINS FILTRATION']);
-    if (fleetguard) {
+    const fleetguard = byManufacturer(refs, ['FLEETGUARD', 'CUMMINS FILTRATION']);
+    if (fleetguard.length) {
       return {
-        code: fleetguard.code,
-        authority: 'FLEETGUARD',
         safe: false,
+        authority: 'FLEETGUARD',
         reason: 'Donaldson absence is not proven by current catalog evidence',
+        candidate: fleetguard.length === 1 ? fleetguard[0].code : null,
+        candidates: fleetguard.map((ref) => ref.code),
       };
     }
 
@@ -83,8 +131,8 @@ function choosePreferred(row) {
   }
 
   if (duty === 'LIGHT_DUTY') {
-    const mann = firstByManufacturer(refs, ['MANN', 'MANN FILTER', 'MANN-FILTER', 'MANNFILTER']);
-    if (mann) return { code: mann.code, authority: 'MANN_FILTER', safe: true };
+    const mann = decidePreferredAuthority(row, 'MANN_FILTER', refs, ['MANN', 'MANN FILTER', 'MANN-FILTER', 'MANNFILTER', 'MANN HUMMEL']);
+    if (mann) return mann;
 
     return { safe: false, authority: 'OEM', reason: 'Requires verified OEM commercial fallback' };
   }
@@ -107,6 +155,12 @@ async function main() {
 
     for (const row of rows) {
       const decision = choosePreferred(row);
+
+      if (decision.safe && decision.alreadyCanonical) {
+        alreadyCanonical.push(row.sku);
+        continue;
+      }
+
       if (!decision.safe || !decision.code) {
         unresolved.push({
           sku: row.sku,
@@ -114,13 +168,9 @@ async function main() {
           codigo_base: row.codigo_base,
           authority: decision.authority,
           reason: decision.reason,
-          candidate: decision.code || null,
+          candidate: decision.candidate || decision.code || null,
+          candidates: decision.candidates || null,
         });
-        continue;
-      }
-
-      if (normalizeCode(row.codigo_base) === normalizeCode(decision.code)) {
-        alreadyCanonical.push(row.sku);
         continue;
       }
 
@@ -130,6 +180,7 @@ async function main() {
         from: row.codigo_base,
         to: decision.code,
         authority: decision.authority,
+        reason: decision.reason,
       });
     }
 
@@ -152,7 +203,7 @@ async function main() {
     }
 
     if (!APPLY) {
-      console.log('\nDry run only. Re-run with --apply after reviewing counts.');
+      console.log('\nDry run only. Re-run with --apply only after reviewing counts and ambiguities.');
       return;
     }
 
@@ -165,8 +216,8 @@ async function main() {
     }
     await client.query('COMMIT');
 
-    console.log(`Applied ${safeChanges.length} evidence-backed codigo_base changes.`);
-    console.log(`${unresolved.length} rows were intentionally left unchanged pending manufacturer/OEM evidence.`);
+    console.log(`Applied ${safeChanges.length} unambiguous evidence-backed codigo_base changes.`);
+    console.log(`${unresolved.length} rows were intentionally left unchanged pending evidence or primary-reference resolution.`);
   } catch (error) {
     try { await client.query('ROLLBACK'); } catch (_) {}
     throw error;
@@ -183,4 +234,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { normalizeManufacturer, normalizeCode, refsFrom, choosePreferred };
+module.exports = { normalizeManufacturer, normalizeCode, refsFrom, byManufacturer, decidePreferredAuthority, choosePreferred };
