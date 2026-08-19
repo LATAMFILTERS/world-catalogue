@@ -145,7 +145,7 @@ export default function AboutPage() {
       <AboutStrategicModel />
 
       <section style={corporateSection}>
-        <div style={corporateGrid}>
+        <div style={corporateWrap}>
           <div>
             <p style={eyebrow}>{copy.structureTitle}</p>
             <ul style={structureList}>
@@ -155,16 +155,18 @@ export default function AboutPage() {
             </ul>
           </div>
 
-          <div>
-            <p style={eyebrow}>{copy.networkTitle}</p>
-            <p style={bodyText}>{copy.networkBody}</p>
-            <Link href="/distributors" style={textLink}>{copy.networkLink}</Link>
-          </div>
+          <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-12">
+            <div>
+              <p style={eyebrow}>{copy.networkTitle}</p>
+              <p style={bodyText}>{copy.networkBody}</p>
+              <Link href="/distributors" style={textLink}>{copy.networkLink}</Link>
+            </div>
 
-          <div>
-            <p style={eyebrow}>{copy.knowledgeTitle}</p>
-            <p style={bodyText}>{copy.knowledgeBody}</p>
-            <Link href="/knowledge-center/" style={textLink}>{copy.knowledgeLink}</Link>
+            <div>
+              <p style={eyebrow}>{copy.knowledgeTitle}</p>
+              <p style={bodyText}>{copy.knowledgeBody}</p>
+              <Link href="/knowledge-center/" style={textLink}>{copy.knowledgeLink}</Link>
+            </div>
           </div>
         </div>
       </section>
@@ -199,7 +201,7 @@ const partnersNumber: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--fon
 const partnersCardTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(1.45rem, 2.6vw, 2.4rem)', lineHeight: 1, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase' };
 const partnersBody: CSSProperties = { color: 'rgba(255,255,255,0.64)', fontSize: '1rem', lineHeight: 1.76, margin: 0 };
 const corporateSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', borderTop: '1px solid rgba(255,241,45,0.15)', borderBottom: '1px solid rgba(255,255,255,0.03)', background: '#050505' };
-const corporateGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(2rem, 4vw, 3.5rem)' };
+const corporateWrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const structureList: CSSProperties = { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem', color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.65 };
 const label: CSSProperties = { color: '#FFF12D' };
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.68)', fontSize: '1rem', lineHeight: 1.76, margin: '0 0 1rem' };
