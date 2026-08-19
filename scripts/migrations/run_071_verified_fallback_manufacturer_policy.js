@@ -10,11 +10,6 @@
 require('dotenv').config();
 const { Pool } = require('pg');
 
-const DATABASE_URL = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
-if (!DATABASE_URL) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
-
-const pool = new Pool({ connectionString: DATABASE_URL, ssl: { rejectUnauthorized: false } });
-
 const FUNCTION_SQL = String.raw`
 CREATE OR REPLACE FUNCTION enforce_elimfilters_codigo_base_policy()
 RETURNS trigger
@@ -190,19 +185,22 @@ FOR EACH ROW
 EXECUTE FUNCTION enforce_elimfilters_codigo_base_policy();
 `;
 
-async function main() {
+async function installPolicyV2() {
+  const databaseUrl = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
+  if (!databaseUrl) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
+  const pool = new Pool({ connectionString: databaseUrl, ssl: { rejectUnauthorized: false } });
   const client = await pool.connect();
   try {
     await client.query('BEGIN');
     await client.query(FUNCTION_SQL);
     await client.query(TRIGGER_SQL);
     await client.query('COMMIT');
-    console.log(JSON.stringify({
+    return {
       policy_version: '2026-08-19-v2',
       trigger: 'trg_elimfilters_codigo_base_policy',
       existing_catalog_mutations: 0,
       future_writes: 'DONALDSON_THEN_VERIFIED_MANUFACTURER_WITH_SOURCE_COLUMN_AND_LAST4_SUFFIX'
-    }, null, 2));
+    };
   } catch (error) {
     try { await client.query('ROLLBACK'); } catch (_) {}
     throw error;
@@ -212,7 +210,20 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+async function main() {
+  const result = await installPolicyV2();
+  console.log(JSON.stringify(result, null, 2));
+}
+
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}
+
+module.exports = {
+  FUNCTION_SQL,
+  TRIGGER_SQL,
+  installPolicyV2,
+};
