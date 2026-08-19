@@ -70,5 +70,13 @@
     "baseline_sha256": "c95e3894d70cb2d6f007ba8241cc5c686b27d53b16ebb81c365b936f99103182",
     "backup_created": "state/backups/source-baseline.2026-08-18T06-34-58-490Z.json",
     "previous_state_commit": "ba16aeef6c8486eb9d43243c68ed42af85114c6c"
+  },
+  {
+    "event": "PROMOTED",
+    "timestamp": "2026-08-19T13:01:11.188Z",
+    "sources_promoted": 10,
+    "baseline_sha256": "51d831df93928ad4e2e84336f5d839916374f65a8b0f9d8bac6a3b69eb5795ad",
+    "backup_created": "state/backups/source-baseline.2026-08-19T13-01-13-508Z.json",
+    "previous_state_commit": "031498053fe767666ecc70b01a9962d8db17743d"
   }
 ]

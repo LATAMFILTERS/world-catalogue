@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-08-18T06:34:57.373Z",
+  "generated_at": "2026-08-19T13:01:10.992Z",
   "sources": {
     "volvo_trucks__news": {
       "organization_id": "volvo_trucks",
       "endpoint_id": "volvo_trucks__news",
       "source_url": "https://www.volvotrucks.com/en-en/news.html",
       "normalized_hash": "faddc6428baadfc991cd2dc07c488a3298974cd2ad14417c4619e1d8d9797bf2",
-      "observed_at": "2026-08-18T06:34:53.189Z",
+      "observed_at": "2026-08-19T13:01:04.665Z",
       "content_length": 5008,
       "response_status": 200
     },
@@ -16,7 +16,7 @@
       "endpoint_id": "komatsu__newsroom",
       "source_url": "https://www.komatsu.com/en/",
       "normalized_hash": "ba0536d5cc41e31e68ba323526cef8e77e547f62ac608acbec1a48f1c2bf5bc7",
-      "observed_at": "2026-08-18T06:34:53.272Z",
+      "observed_at": "2026-08-19T13:01:04.768Z",
       "content_length": 5683,
       "response_status": 200
     },
@@ -24,9 +24,9 @@
       "organization_id": "donaldson",
       "endpoint_id": "donaldson__news",
       "source_url": "https://www.donaldson.com/en-us/about-us/news/",
-      "normalized_hash": "123df844ec2e0ecb5efeccb73d3bc0c16e6d5707b1bd32953a0d010bd7d07dda",
-      "observed_at": "2026-08-18T06:34:53.793Z",
-      "content_length": 5298,
+      "normalized_hash": "285ad28ebbddff7f92fa10de6ce1298470c3e288b251df507fbec998f948abea",
+      "observed_at": "2026-08-19T13:01:05.276Z",
+      "content_length": 5313,
       "response_status": 200
     },
     "mann_hummel__newsroom": {
@@ -34,7 +34,7 @@
       "endpoint_id": "mann_hummel__newsroom",
       "source_url": "https://www.mann-hummel.com/en/",
       "normalized_hash": "10044d00e3ad8d4d073f96b4ade9022168c66532c89dcafe37807f27cff1ead5",
-      "observed_at": "2026-08-18T06:34:54.387Z",
+      "observed_at": "2026-08-19T13:01:05.782Z",
       "content_length": 17159,
       "response_status": 200
     },
@@ -42,9 +42,9 @@
       "organization_id": "mahle",
       "endpoint_id": "mahle__press_releases",
       "source_url": "https://www.mahle.com/en/",
-      "normalized_hash": "22c9d44b1b03909828db81b0ad636e4ecc3a3be0105be02542f744589a3582b4",
-      "observed_at": "2026-08-18T06:34:54.935Z",
-      "content_length": 5348,
+      "normalized_hash": "3621eb6c096fe7b87c65d70d8043b9d3d5ac8567a2efd078667abc4b67ade84e",
+      "observed_at": "2026-08-19T13:01:06.606Z",
+      "content_length": 5380,
       "response_status": 200
     },
     "nfpa__news": {
@@ -52,7 +52,7 @@
       "endpoint_id": "nfpa__news",
       "source_url": "https://community.nfpa.org/news",
       "normalized_hash": "cbdbe45fd6c19f5b64292d5b451c697710f1e16798c630801afb56457c9ec59b",
-      "observed_at": "2026-08-18T06:34:55.517Z",
+      "observed_at": "2026-08-19T13:01:07.679Z",
       "content_length": 5627,
       "response_status": 200
     },
@@ -61,7 +61,7 @@
       "endpoint_id": "ahlstrom__newsroom",
       "source_url": "https://www.ahlstrom.com/",
       "normalized_hash": "97a47d466402f4b712e89bb2610879a7f5ca5eb8c739a5a18213136decd2f312",
-      "observed_at": "2026-08-18T06:34:55.886Z",
+      "observed_at": "2026-08-19T13:01:08.734Z",
       "content_length": 4812,
       "response_status": 200
     },
@@ -70,7 +70,7 @@
       "endpoint_id": "hollingsworth_vose__newsroom",
       "source_url": "https://www.hollingsworth-vose.com/",
       "normalized_hash": "01b2dd8b86581a766da26a177172aafe6b94d65991e3182645c5b4c356a66194",
-      "observed_at": "2026-08-18T06:34:56.234Z",
+      "observed_at": "2026-08-19T13:01:09.068Z",
       "content_length": 4928,
       "response_status": 200
     },
@@ -78,18 +78,18 @@
       "organization_id": "freudenberg_filtration",
       "endpoint_id": "freudenberg_filtration__newsroom",
       "source_url": "https://www.freudenberg-filter.com/en/",
-      "normalized_hash": "853d79e942f4bddd658ab03ca86a9c88916d677ccf5bd90087e059ea42b0709d",
-      "observed_at": "2026-08-18T06:34:57.008Z",
-      "content_length": 10645,
+      "normalized_hash": "b1204876f142e373953e266bef716da160d64ef3c1b8e392b7848c4e9656e40b",
+      "observed_at": "2026-08-19T13:01:10.078Z",
+      "content_length": 10648,
       "response_status": 200
     },
     "hydraulics_pneumatics__news": {
       "organization_id": "hydraulics_pneumatics",
       "endpoint_id": "hydraulics_pneumatics__news",
       "source_url": "https://www.hydraulicspneumatics.com/",
-      "normalized_hash": "ef8189e41effb851456495d74b8473abe5ca4c33488604dbc848516a48497575",
-      "observed_at": "2026-08-18T06:34:57.373Z",
-      "content_length": 12274,
+      "normalized_hash": "70e4d48ba7ee3f9424e519dacdc8ccc2d92621dccb9b64349d7a969ac6483d2e",
+      "observed_at": "2026-08-19T13:01:10.992Z",
+      "content_length": 12289,
       "response_status": 200
     }
   }
