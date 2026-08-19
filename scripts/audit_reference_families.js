@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 const { Pool } = require('pg');
-const { classifyReferenceFamily } = require('../lib/reference-family-audit-policy');
+const { classifyReferenceFamily, isPartNumberLike } = require('../lib/reference-family-audit-policy');
 
 const DATABASE_URL = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
 if (!DATABASE_URL) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
@@ -54,7 +54,11 @@ SELECT * FROM families ORDER BY sku_count DESC, reference ASC;
 
 async function main() {
   const { rows } = await pool.query(SQL);
-  const audited = rows.map(row => ({ ...row, ...classifyReferenceFamily(row) }));
+
+  const metadataContamination = rows.filter(row => !isPartNumberLike(row.reference));
+  const trueFamilies = rows.filter(row => isPartNumberLike(row.reference));
+  const audited = trueFamilies.map(row => ({ ...row, ...classifyReferenceFamily(row) }));
+
   const high = audited.filter(row => row.severity === 'HIGH');
   const medium = audited.filter(row => row.severity === 'MEDIUM');
   const review = audited.filter(row => row.severity === 'REVIEW');
@@ -66,9 +70,17 @@ async function main() {
   }
 
   console.log(JSON.stringify({
-    audit: 'CATALOG_REFERENCE_FAMILY_GOVERNANCE',
+    audit: 'CATALOG_REFERENCE_FAMILY_GOVERNANCE_V2',
     mode: 'READ_ONLY',
-    ambiguous_reference_families: audited.length,
+    all_shared_tokens: rows.length,
+    metadata_contamination_tokens: metadataContamination.length,
+    metadata_contamination_sample: metadataContamination.slice(0, 50).map(row => ({
+      reference: row.reference,
+      sku_count: row.sku_count,
+      duties: row.duties,
+      filter_types: row.filter_types
+    })),
+    ambiguous_part_number_families: audited.length,
     severity: { HIGH: high.length, MEDIUM: medium.length, REVIEW: review.length, LOW: low.length },
     flags: flagCounts,
     high_risk_sample: high.slice(0, 100).map(row => ({
