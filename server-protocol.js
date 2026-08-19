@@ -10,6 +10,13 @@ async function start() {
   const queue = await installHistoricalSanitationQueue();
   console.log('[catalog-historical-sanitation-queue]', JSON.stringify(queue));
 
+  // Apply only the small curated evidence batch whose exact official Donaldson
+  // product URLs were independently reviewed. This path exists because Donaldson
+  // returns HTTP 403 to Render-origin requests; 403 is never treated as absence.
+  const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
+  const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
+  console.log('[curated-official-evidence-batch1]', JSON.stringify(curatedEvidence));
+
   require('./server');
 
   setTimeout(() => {
@@ -23,20 +30,6 @@ async function start() {
     }
   }, 15000);
 
-  // Controlled evidence bridge: exact official Donaldson product URLs already
-  // independently resolved outside the Render runtime. The script re-fetches
-  // and validates each official page before marking anything verified.
-  setTimeout(() => {
-    try {
-      const { seedVerifiedPrimaryEvidenceBatch1 } = require('./scripts/migrations/run_075_seed_verified_primary_evidence_batch1');
-      seedVerifiedPrimaryEvidenceBatch1()
-        .then((result) => console.log('[verified-primary-evidence-batch1]', JSON.stringify(result)))
-        .catch((error) => console.error('[verified-primary-evidence-batch1] failed', error.message));
-    } catch (error) {
-      console.error('[verified-primary-evidence-batch1] startup load failed', error.message);
-    }
-  }, 30000);
-
   // Generic worker remains conservative: no inferred absence, no alternate-code
   // mutation, no SKU mutation, and no codigo_base change without official evidence.
   setTimeout(() => {
@@ -48,7 +41,7 @@ async function start() {
     } catch (error) {
       console.error('[historical-sanitation-batch] startup load failed', error.message);
     }
-  }, 60000);
+  }, 45000);
 }
 
 start().catch((error) => {
