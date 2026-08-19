@@ -1,0 +1,47 @@
+name: Catalog Governance
+
+on:
+  pull_request:
+    paths:
+      - 'lib/catalog-*.js'
+      - 'scripts/audit-catalog-governance-daily.js'
+      - 'scripts/catalog-historical-sanitation.js'
+      - 'scripts/migrations/run_07*.js'
+      - 'tests/catalog-*.test.js'
+      - 'import_donaldson.py'
+      - 'frontend/src/scripts/ingest-*-production.ts'
+      - '.github/CODEOWNERS'
+      - '.github/workflows/catalog-governance.yml'
+      - 'package.json'
+  push:
+    branches: [main]
+    paths:
+      - 'lib/catalog-*.js'
+      - 'scripts/audit-catalog-governance-daily.js'
+      - 'scripts/catalog-historical-sanitation.js'
+      - 'scripts/migrations/run_07*.js'
+      - 'tests/catalog-*.test.js'
+      - 'import_donaldson.py'
+      - 'frontend/src/scripts/ingest-*-production.ts'
+      - '.github/CODEOWNERS'
+      - '.github/workflows/catalog-governance.yml'
+      - 'package.json'
+
+permissions:
+  contents: read
+
+jobs:
+  governance-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Canonical catalog governance regressions
+        run: npm run catalog:governance:test
+      - name: Fail if forbidden direct catalog write patterns are introduced
+        run: node scripts/verify-catalog-write-boundaries.js
