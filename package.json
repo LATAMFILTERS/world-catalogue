@@ -10,6 +10,8 @@
     "start": "node server-protocol.js",
     "dev": "node server-protocol.js",
     "build": "cd frontend && npm ci && npm run build",
+    "catalog:governance:test": "node --test tests/catalog-write-gateway.test.js tests/catalog-codigo-base-governance.test.js tests/catalog-historical-sanitation.test.js",
+    "catalog:governance:audit": "node scripts/audit-catalog-governance-daily.js",
     "hermes:validate": "node scripts/hermes/validate-candidates.mjs hermes/test-candidates",
     "hermes:report": "node scripts/hermes/generate-weekly-report.mjs hermes/test-candidates hermes/reports",
     "hermes:email": "node scripts/hermes/send-weekly-email.mjs hermes/reports",
@@ -59,7 +61,7 @@
     "test:bot-e2e": "node --test tests/bot-protocol-e2e.test.js",
     "test:knowledge-governance": "node --test tests/knowledge-governance-authority-policy.test.js tests/knowledge-governance-technical-evidence.test.js tests/knowledge-governance-oem-maintenance.test.js tests/knowledge-governance-knowledge-gap.test.js tests/knowledge-governance-hermes-research.test.js tests/knowledge-governance-obsidian-publication.test.js tests/knowledge-governance-sku-authority.test.js tests/knowledge-governance-response-governance.test.js tests/knowledge-governance-orchestrator-integration.test.js",
     "test:knowledge-pipeline": "node --test tests/knowledge-pipeline-obsidian-client.test.js tests/knowledge-pipeline-knowledge-gap-store.test.js tests/knowledge-pipeline-hermes-client.test.js tests/knowledge-pipeline-oem-and-practices.test.js tests/knowledge-pipeline-category-recommender.test.js tests/knowledge-pipeline-sku-and-catalog.test.js tests/knowledge-pipeline-e2e-http.test.js",
-    "test": "npm run test:bot-protocol && npm run test:bot-e2e && npm run test:knowledge-governance && npm run test:knowledge-pipeline && npm run test:chatbot && npm run test:ebp",
+    "test": "npm run catalog:governance:test && npm run test:bot-protocol && npm run test:bot-e2e && npm run test:knowledge-governance && npm run test:knowledge-pipeline && npm run test:chatbot && npm run test:ebp",
     "hermes:catalogue:publication-plan": "node scripts/hermes/catalogue-publication-plan.mjs",
     "hermes:catalogue:publish-plan": "node scripts/hermes/publish-catalogue-plan.mjs",
     "hermes:catalogue:rollback": "node scripts/hermes/rollback-catalogue-publication.mjs"
