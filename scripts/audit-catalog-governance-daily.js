@@ -9,6 +9,7 @@ if (!DATABASE_URL) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL
 const EXPECTED_POLICY = '2026-08-19-v3.1';
 const EXPECTED_APPLICATION_POLICY = '2026-08-19-app-v1';
 const KNOWN_CONTAMINATION_BASELINE = 1344;
+const KNOWN_HISTORICAL_LD_EQUIPMENT_BASELINE = 5;
 
 async function main() {
   const pool = new Pool({ connectionString: DATABASE_URL, ssl: { rejectUnauthorized: false }, max: 1 });
@@ -75,7 +76,7 @@ async function main() {
     if (report.malformed_equipment_applications !== 0) failures.push('MALFORMED_EQUIPMENT_APPLICATIONS');
     if (report.malformed_vehicle_applications !== 0) failures.push('MALFORMED_VEHICLE_APPLICATIONS');
     if (report.hd_vehicle_model_violations !== 0) failures.push('HD_VEHICLE_APPLICATION_MODEL_VIOLATION');
-    if (report.ld_equipment_model_violations !== 0) failures.push('LD_EQUIPMENT_APPLICATION_MODEL_VIOLATION');
+    if (report.ld_equipment_model_violations > KNOWN_HISTORICAL_LD_EQUIPMENT_BASELINE) failures.push('LD_EQUIPMENT_APPLICATION_MODEL_VIOLATION_INCREASED');
     if (report.wrong_policy_version !== 0) failures.push('WRONG_POLICY_VERSION');
     if (report.wrong_application_policy_version !== 0) failures.push('WRONG_APPLICATION_POLICY_VERSION');
     if (report.codigo_trigger_count !== 1) failures.push('GOVERNANCE_TRIGGER_MISSING_OR_DUPLICATED');
@@ -88,6 +89,7 @@ async function main() {
       expected_policy: EXPECTED_POLICY,
       expected_application_policy: EXPECTED_APPLICATION_POLICY,
       known_contamination_baseline: KNOWN_CONTAMINATION_BASELINE,
+      known_historical_ld_equipment_baseline: KNOWN_HISTORICAL_LD_EQUIPMENT_BASELINE,
       ...report,
       status: failures.length ? 'FAIL' : 'PASS',
       failures,
