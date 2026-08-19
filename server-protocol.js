@@ -23,10 +23,22 @@ async function start() {
     }
   }, 15000);
 
-  // Process a deliberately small evidence-backed batch after startup. The worker
-  // never infers manufacturer absence, never changes alternate-code arrays, and
-  // only writes a codigo_base when official Donaldson evidence resolves exactly
-  // one authority path under V3.1.
+  // Controlled evidence bridge: exact official Donaldson product URLs already
+  // independently resolved outside the Render runtime. The script re-fetches
+  // and validates each official page before marking anything verified.
+  setTimeout(() => {
+    try {
+      const { seedVerifiedPrimaryEvidenceBatch1 } = require('./scripts/migrations/run_075_seed_verified_primary_evidence_batch1');
+      seedVerifiedPrimaryEvidenceBatch1()
+        .then((result) => console.log('[verified-primary-evidence-batch1]', JSON.stringify(result)))
+        .catch((error) => console.error('[verified-primary-evidence-batch1] failed', error.message));
+    } catch (error) {
+      console.error('[verified-primary-evidence-batch1] startup load failed', error.message);
+    }
+  }, 30000);
+
+  // Generic worker remains conservative: no inferred absence, no alternate-code
+  // mutation, no SKU mutation, and no codigo_base change without official evidence.
   setTimeout(() => {
     try {
       const { runHistoricalSanitationBatch } = require('./scripts/catalog-historical-sanitation');
@@ -36,7 +48,7 @@ async function start() {
     } catch (error) {
       console.error('[historical-sanitation-batch] startup load failed', error.message);
     }
-  }, 45000);
+  }, 60000);
 }
 
 start().catch((error) => {
