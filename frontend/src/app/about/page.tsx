@@ -37,17 +37,17 @@ export default function AboutPage() {
     areaServed: 'Worldwide',
     slogan: 'Global Industrial Filtration Brand',
     description:
-      'ELIMFILTERS® is Kleo Technology LLC\'s global filtration brand for industrial, heavy-duty, fleet, equipment, and automotive applications. The company combines filtration-media development in Germany, qualified manufacturing partners in the People\'s Republic of China, physical validation, AI-assisted product auditing, product intelligence, and a distributor-first commercial model.',
+      'ELIMFILTERS® is Kleo Technology LLC\'s global filtration brand for industrial, heavy-duty, fleet, equipment, and automotive applications. The company combines filtration-media development in Germany, qualified manufacturing partners in the People\'s Republic of China, physical validation, mathematical and computational engineering analysis, product intelligence, and a distributor-first commercial model.',
     knowsAbout: [
       'Industrial asset protection',
       'Contamination control',
       'Filtration engineering',
-      'AI-assisted engineering simulation',
-      'AI-assisted product auditing',
+      'Mathematical engineering modeling',
+      'Computational analysis of extreme operating conditions',
       'Particle and fluid behavior',
       'Severe-duty equipment reliability',
       'Automotive filtration',
-      'Field validation of filtration systems',
+      'Physical validation of filtration systems',
     ],
     address: {
       '@type': 'PostalAddress',
@@ -65,7 +65,7 @@ export default function AboutPage() {
     name: 'About ELIMFILTERS®',
     headline: 'Industrial asset protection engineered through a global product system',
     description:
-      'ELIMFILTERS® explains its purpose, engineering methodology, global manufacturing model, physical validation, AI-assisted quality auditing, lean operating structure, and distributor-first commercial architecture.',
+      'ELIMFILTERS® explains its engineering methodology, global manufacturing model, physical validation, mathematical modeling of demanding and extreme operating conditions, horizontal operating structure, and distributor-first commercial architecture.',
     url: 'https://elimfilters.com/about/',
     mainEntity: { '@id': 'https://elimfilters.com/#organization' },
     isPartOf: {

@@ -35,118 +35,118 @@ type Copy = {
 const COPY_EN: Copy = {
   sectionEyebrowAbout: 'GLOBAL ENGINEERING & MANUFACTURING MODEL',
   sectionEyebrowDistributors: 'THE ELIMFILTERS GLOBAL MODEL',
-  titleAbout: 'German-Developed Media. Qualified PRC Manufacturing. ELIMFILTERS Quality Governance.',
-  titleDistributors: 'Engineering, Manufacturing, Validation and Intelligence — Structured to Create More Value for the Partner.',
-  lead: 'ELIMFILTERS was built around a deliberate global architecture. Filtration-media development is carried out in Germany. Manufacturing is executed through qualified partners in the PRC. Product performance is supported through defined physical validation protocols, while AI-assisted auditing strengthens consistency, traceability, and control. A horizontal operating structure uses trained AI agents to reduce repetitive organizational work and the structural cost attached to it, with periodic specialist engineering audits built into the operating model.',
+  titleAbout: 'German-Developed Media. Qualified PRC Manufacturing. ELIMFILTERS Technical Governance.',
+  titleDistributors: 'Engineering, Manufacturing, Validation and Application Intelligence — Structured to Create More Value for the Partner.',
+  lead: 'ELIMFILTERS operates through an integrated engineering and manufacturing architecture. Filtration-media development is carried out in Germany around defined performance and material-behavior objectives. Manufacturing is executed through qualified production partners in the People’s Republic of China. Product validation is matched to the operating requirements of each product family and application, while mathematical and computational modeling supports engineering analysis of demanding and extreme service conditions.',
   prcEyebrow: 'PRC MANUFACTURING STRATEGY',
-  prcTitle: 'Specialized capacity, scale and industrial depth.',
-  prcBody: 'ELIMFILTERS selected qualified manufacturing partners in the People’s Republic of China for established industrial infrastructure, specialized filtration-manufacturing capability, scalable production capacity, and access to mature automotive and heavy-duty supply chains. Production operates within ELIMFILTERS-defined specifications, quality controls, validation requirements, and technical governance.',
+  prcTitle: 'Specialized capacity, process capability and industrial scale.',
+  prcBody: 'ELIMFILTERS selects qualified manufacturing partners in the People’s Republic of China for specialized filtration capability, established process infrastructure, scalable production capacity, and integration with mature heavy-duty and automotive supply chains. Production is governed by ELIMFILTERS-defined product specifications, dimensional requirements, quality controls, validation criteria, and technical documentation.',
   partnerEyebrow: 'HORIZONTAL OPERATIONS · PARTNER VALUE',
   partnerTitle: 'A Different Cost Structure — Not a Low-Price Strategy.',
-  partnerLead: 'Legacy vertical organizations — often described within the industry as the “industry dinosaurs” — were built around multiple management layers, repetitive administrative functions, and structural costs accumulated throughout the organization. ELIMFILTERS was designed differently. Trained AI agents execute a significant portion of repeatable, rules-based, and data-intensive processes, allowing the organization to remain more horizontal.',
-  partnerGovernance: 'Those agents do not operate outside professional governance. Their processes and performance are periodically audited by industrial, mechanical, process, and systems engineers, while qualified personnel retain responsibility for manufacturing oversight, quality assurance, technical governance, evidence review, and critical decisions.',
-  partnerResult: 'The result is a structurally more efficient product cost. The difference does not come from lowering engineering standards, materials, manufacturing controls, or validation requirements. It comes from reducing the organizational cost attached to repetitive work and unnecessary vertical layers — allowing more of the economics to remain in the product, the supply chain, and the commercial partnership.',
+  partnerLead: 'Legacy vertical organizations carry structural cost through multiple management layers, duplicated administrative functions, and repetitive processes. ELIMFILTERS is organized more horizontally, using standardized processes, disciplined data management, digital workflows, and direct technical governance to reduce avoidable organizational friction.',
+  partnerGovernance: 'That efficiency is not obtained by reducing engineering requirements, material specifications, manufacturing controls, physical validation, or technical responsibility. Those functions remain governed by defined requirements and accountable professional review.',
+  partnerResult: 'The economic distinction is structural. Lower avoidable overhead allows a greater proportion of resources to remain in engineering, materials, manufacturing quality, validation, product intelligence, availability, supply-chain execution, and support for the commercial partner.',
   marketEyebrow: 'MARKET SCOPE',
   marketTitle: 'Heavy Duty leads. Automotive expands commercial reach.',
   marketBody: 'ELIMFILTERS primarily focuses on industrial, heavy-duty, fleet, and equipment applications. Automotive / Light Duty remains an important complementary line that supports recurring demand, distributor economics, catalog breadth, regional reach, and commercial intelligence.',
   marketAllocation: 'The governing commercial architecture remains unchanged: Heavy Duty receives 80% of strategic resources and Light Duty / Automotive 20%.',
   partnershipEyebrow: 'COMMERCIAL PARTNERSHIP',
-  partnershipTitle: 'ELIMFILTERS builds the platform. Our partners build the market.',
+  partnershipTitle: 'ELIMFILTERS builds the technical platform. Our partners build the market.',
   apply: 'APPLY FOR REVIEW',
 };
 
 const COPY_ES: Copy = {
   sectionEyebrowAbout: 'MODELO GLOBAL DE INGENIERÍA Y MANUFACTURA',
   sectionEyebrowDistributors: 'EL MODELO GLOBAL ELIMFILTERS',
-  titleAbout: 'Medios desarrollados en Alemania. Manufactura calificada en la RPC. Gobernanza de calidad ELIMFILTERS.',
-  titleDistributors: 'Ingeniería, manufactura, validación e inteligencia — estructuradas para crear mayor valor para el socio.',
-  lead: 'ELIMFILTERS fue construida sobre una arquitectura global deliberada. El desarrollo de los medios filtrantes se realiza en Alemania. La manufactura se ejecuta mediante socios calificados en la República Popular China (RPC). El desempeño del producto se respalda mediante protocolos definidos de validación física, mientras las auditorías asistidas por IA fortalecen la consistencia, la trazabilidad y el control. Una estructura operativa horizontal utiliza agentes de IA entrenados para reducir trabajo organizativo repetitivo y el costo estructural asociado, con auditorías periódicas de especialistas en ingeniería integradas al modelo operativo.',
+  titleAbout: 'Medios desarrollados en Alemania. Manufactura calificada en la RPC. Gobernanza técnica ELIMFILTERS.',
+  titleDistributors: 'Ingeniería, manufactura, validación e inteligencia de aplicación — estructuradas para crear mayor valor para el socio.',
+  lead: 'ELIMFILTERS opera mediante una arquitectura integrada de ingeniería y manufactura. El desarrollo de los medios filtrantes se realiza en Alemania alrededor de objetivos definidos de desempeño y comportamiento de materiales. La manufactura se ejecuta mediante socios de producción calificados en la República Popular China. La validación se adapta a los requerimientos operativos de cada familia de producto y aplicación, mientras el modelado matemático y computacional apoya el análisis de ingeniería de condiciones de servicio exigentes y extremas.',
   prcEyebrow: 'ESTRATEGIA DE MANUFACTURA EN LA RPC',
-  prcTitle: 'Capacidad especializada, escala y profundidad industrial.',
-  prcBody: 'ELIMFILTERS seleccionó socios de manufactura calificados en la República Popular China por su infraestructura industrial consolidada, capacidad especializada en manufactura de filtración, escalabilidad productiva y acceso a cadenas maduras de suministro automotriz y de servicio pesado. La producción opera bajo especificaciones, controles de calidad, requisitos de validación y gobernanza técnica definidos por ELIMFILTERS.',
+  prcTitle: 'Capacidad especializada, capacidad de proceso y escala industrial.',
+  prcBody: 'ELIMFILTERS selecciona socios de manufactura calificados en la República Popular China por su especialización en filtración, infraestructura de procesos, capacidad productiva escalable e integración con cadenas maduras de suministro Heavy Duty y automotriz. La producción se rige por especificaciones de producto, requisitos dimensionales, controles de calidad, criterios de validación y documentación técnica definidos por ELIMFILTERS.',
   partnerEyebrow: 'OPERACIÓN HORIZONTAL · VALOR PARA EL SOCIO',
   partnerTitle: 'Una estructura de costos diferente — no una estrategia de bajo precio.',
-  partnerLead: 'Las organizaciones verticales heredadas — a menudo descritas dentro de la industria como los “dinosaurios de la industria” — fueron construidas con múltiples niveles de gestión, funciones administrativas repetitivas y costos estructurales acumulados a través de la organización. ELIMFILTERS fue diseñada de otra manera. Agentes de IA entrenados ejecutan una parte significativa de los procesos repetibles, basados en reglas e intensivos en datos, permitiendo una organización más horizontal.',
-  partnerGovernance: 'Esos agentes no operan fuera de la gobernanza profesional. Sus procesos y desempeño son auditados periódicamente por ingenieros industriales, mecánicos, de procesos y de sistemas, mientras personal calificado conserva la responsabilidad sobre supervisión de manufactura, aseguramiento de calidad, gobernanza técnica, revisión de evidencia y decisiones críticas.',
-  partnerResult: 'El resultado es un costo de producto estructuralmente más eficiente. La diferencia no proviene de reducir estándares de ingeniería, materiales, controles de manufactura o requisitos de validación. Proviene de reducir el costo organizativo asociado al trabajo repetitivo y a capas verticales innecesarias, permitiendo que una mayor parte de la economía permanezca en el producto, la cadena de suministro y la relación con el socio comercial.',
+  partnerLead: 'Las organizaciones verticales tradicionales trasladan costos estructurales a través de múltiples niveles de gestión, funciones administrativas duplicadas y procesos repetitivos. ELIMFILTERS opera con una estructura más horizontal, apoyada en procesos estandarizados, gestión disciplinada de datos, flujos digitales y gobernanza técnica directa para reducir fricción organizacional evitable.',
+  partnerGovernance: 'Esa eficiencia no se obtiene reduciendo requisitos de ingeniería, especificaciones de materiales, controles de manufactura, validación física ni responsabilidad técnica. Estas funciones permanecen sujetas a requisitos definidos y revisión profesional responsable.',
+  partnerResult: 'La diferencia económica es estructural. Un menor costo organizacional evitable permite conservar una mayor proporción de recursos para ingeniería, materiales, calidad de manufactura, validación, inteligencia de producto, disponibilidad, ejecución de la cadena de suministro y soporte al socio comercial.',
   marketEyebrow: 'ALCANCE DE MERCADO',
   marketTitle: 'Heavy Duty lidera. Automotive amplía el alcance comercial.',
   marketBody: 'ELIMFILTERS se enfoca principalmente en aplicaciones industriales, Heavy Duty, flotas y equipos. Automotive / Light Duty permanece como una línea complementaria importante que apoya la demanda recurrente, la economía del distribuidor, la amplitud del catálogo, el alcance regional y la inteligencia comercial.',
   marketAllocation: 'La arquitectura comercial vigente permanece sin cambios: Heavy Duty recibe 80% de los recursos estratégicos y Light Duty / Automotive 20%.',
   partnershipEyebrow: 'SOCIEDAD COMERCIAL',
-  partnershipTitle: 'ELIMFILTERS construye la plataforma. Nuestros socios construyen el mercado.',
+  partnershipTitle: 'ELIMFILTERS construye la plataforma técnica. Nuestros socios construyen el mercado.',
   apply: 'SOLICITAR EVALUACIÓN',
 };
 
 const OPERATING_CHAIN_EN = [
   {
     step: '01', eyebrow: 'GERMANY', title: 'Media Engineering & Development',
-    body: 'ELIMFILTERS formulated filtration media are developed in Germany around defined performance targets, application requirements, material behavior, durability objectives, and contamination-control needs.',
+    body: 'ELIMFILTERS filtration media are developed in Germany around defined targets for filtration behavior, contaminant capacity, resistance, dimensional stability, material response, and suitability for the intended operating environment.',
   },
   {
     step: '02', eyebrow: 'PRC', title: 'Qualified Manufacturing Partners',
-    body: 'Production is executed through selected manufacturing partners in the People’s Republic of China (PRC), chosen for specialized filtration capability, scalable industrial infrastructure, and integration with mature automotive and heavy-duty supply chains.',
+    body: 'Production is executed through selected manufacturing partners in the People’s Republic of China (PRC), chosen for specialized filtration capability, process capacity, scalable industrial infrastructure, and integration with mature heavy-duty and automotive supply chains.',
   },
   {
     step: '03', eyebrow: 'PHYSICAL VALIDATION', title: 'Performance, Resistance & Durability',
-    body: 'Validation is matched to product family and application. Where applicable, protocols may include efficiency, pressure drop, contaminant holding capacity, flow performance, media tensile strength, pleat integrity, dimensional stability, burst or collapse resistance, cyclic pressure endurance, seal integrity, temperature resistance, material compatibility, and water-separation performance.',
+    body: 'Validation is matched to product family and application. Where applicable and supported by evidence, protocols may include filtration efficiency, restriction, contaminant holding capacity, flow behavior, media tensile strength, pleat integrity, dimensional stability, burst or collapse resistance, cyclic pressure endurance, seal integrity, temperature exposure, material compatibility, and water-separation performance.',
   },
   {
-    step: '04', eyebrow: 'AI-ASSISTED AUDITING', title: 'Consistency, Deviations & Traceability',
-    body: 'AI-assisted systems review production and product data for inconsistencies, deviations, anomalous patterns, traceability signals, and documentation gaps. Physical validation and accountable human quality oversight remain part of the control system.',
+    step: '04', eyebrow: 'MATHEMATICAL MODELING', title: 'Extreme Operating-Condition Analysis',
+    body: 'Artificial intelligence is used only as a mathematical and computational engineering tool. Models can evaluate interactions among contaminant loading, flow rate, pressure differential, temperature, media behavior, material response, service duration, and operating severity to estimate system behavior as conditions move toward demanding or extreme ranges. Modeling supports engineering assessment and test planning; it does not replace physical validation or professional engineering judgment.',
   },
   {
-    step: '05', eyebrow: 'HORIZONTAL OPERATING MODEL', title: 'Trained Agents. Periodic Engineering Audits.',
-    body: 'ELIMFILTERS uses trained AI agents for repetitive, rules-based, and data-intensive operational work that would traditionally require additional administrative layers. Agent workflows are periodically audited by industrial, mechanical, process, and systems engineers.',
+    step: '05', eyebrow: 'HORIZONTAL OPERATING MODEL', title: 'Standardized Processes. Direct Technical Governance.',
+    body: 'ELIMFILTERS uses a more horizontal operating structure supported by standardized processes, disciplined data management, digital workflows, and direct technical governance. The objective is to reduce avoidable administrative burden while preserving resources for engineering, materials, manufacturing quality, validation, product intelligence, availability, and partner support.',
   },
   {
     step: '06', eyebrow: 'COMMERCIAL PARTNER', title: 'Efficiency Becomes Commercial Value',
-    body: 'The efficiency created upstream is carried into product economics and the partner relationship. Commercial partners add local relationships, inventory strategy, technical sales, regional service, and market knowledge while ELIMFILTERS provides product architecture, quality governance, intelligence, and scalable product access.',
+    body: 'The efficiency created upstream is carried into product economics and the partner relationship. Commercial partners add installed-base knowledge, local relationships, inventory strategy, technical sales, regional service, and market execution while ELIMFILTERS provides product architecture, technical governance, application intelligence, structured documentation, and scalable product access.',
   },
 ];
 
 const OPERATING_CHAIN_ES = [
   {
     step: '01', eyebrow: 'ALEMANIA', title: 'Ingeniería y desarrollo de medios',
-    body: 'Los medios filtrantes formulados por ELIMFILTERS se desarrollan en Alemania alrededor de objetivos definidos de desempeño, requisitos de aplicación, comportamiento de materiales, durabilidad y control de contaminación.',
+    body: 'Los medios filtrantes ELIMFILTERS se desarrollan en Alemania alrededor de objetivos definidos de comportamiento de filtración, capacidad de retención, resistencia, estabilidad dimensional, respuesta de materiales y adecuación al entorno operativo previsto.',
   },
   {
     step: '02', eyebrow: 'RPC', title: 'Socios de manufactura calificados',
-    body: 'La producción se ejecuta mediante socios seleccionados en la República Popular China (RPC), elegidos por su capacidad especializada en filtración, infraestructura industrial escalable e integración con cadenas maduras de suministro automotriz y Heavy Duty.',
+    body: 'La producción se ejecuta mediante socios seleccionados en la República Popular China (RPC), elegidos por su capacidad especializada en filtración, capacidad de proceso, infraestructura industrial escalable e integración con cadenas maduras de suministro Heavy Duty y automotriz.',
   },
   {
     step: '03', eyebrow: 'VALIDACIÓN FÍSICA', title: 'Desempeño, resistencia y durabilidad',
-    body: 'La validación se adapta a cada familia de producto y aplicación. Cuando corresponde, los protocolos pueden incluir eficiencia, caída de presión, capacidad de retención de contaminantes, flujo, resistencia del medio, integridad de pliegues, estabilidad dimensional, presión de ruptura o colapso, ciclos de presión, sellado, temperatura, compatibilidad de materiales y separación de agua.',
+    body: 'La validación se adapta a cada familia de producto y aplicación. Cuando corresponde y existe evidencia que lo sustente, los protocolos pueden incluir eficiencia de filtración, restricción, capacidad de retención de contaminantes, comportamiento de flujo, resistencia del medio, integridad de pliegues, estabilidad dimensional, resistencia a ruptura o colapso, ciclos de presión, integridad de sellado, exposición térmica, compatibilidad de materiales y separación de agua.',
   },
   {
-    step: '04', eyebrow: 'AUDITORÍA ASISTIDA POR IA', title: 'Consistencia, desviaciones y trazabilidad',
-    body: 'Los sistemas asistidos por IA revisan datos de producción y producto para detectar inconsistencias, desviaciones, patrones anómalos, señales de trazabilidad y vacíos documentales. La validación física y la responsabilidad humana de calidad permanecen dentro del sistema de control.',
+    step: '04', eyebrow: 'MODELADO MATEMÁTICO', title: 'Análisis de condiciones operativas extremas',
+    body: 'La inteligencia artificial se utiliza únicamente como herramienta matemática y computacional de apoyo a la ingeniería. Los modelos permiten evaluar la interacción entre carga contaminante, caudal, diferencial de presión, temperatura, comportamiento del medio filtrante, respuesta de materiales, duración de servicio y severidad operativa para estimar el comportamiento del sistema al aproximarse a rangos exigentes o extremos. El modelado apoya la evaluación de ingeniería y la planificación de ensayos; no sustituye la validación física ni el criterio profesional de ingeniería.',
   },
   {
-    step: '05', eyebrow: 'MODELO OPERATIVO HORIZONTAL', title: 'Agentes entrenados. Auditorías periódicas de ingeniería.',
-    body: 'ELIMFILTERS utiliza agentes de IA entrenados para trabajo operativo repetitivo, basado en reglas e intensivo en datos que tradicionalmente requeriría capas administrativas adicionales. Sus flujos son auditados periódicamente por ingenieros industriales, mecánicos, de procesos y de sistemas.',
+    step: '05', eyebrow: 'MODELO OPERATIVO HORIZONTAL', title: 'Procesos estandarizados. Gobernanza técnica directa.',
+    body: 'ELIMFILTERS utiliza una estructura operativa más horizontal apoyada en procesos estandarizados, gestión disciplinada de datos, flujos digitales y gobernanza técnica directa. El objetivo es reducir carga administrativa evitable y conservar recursos para ingeniería, materiales, calidad de manufactura, validación, inteligencia de producto, disponibilidad y soporte al socio comercial.',
   },
   {
     step: '06', eyebrow: 'SOCIO COMERCIAL', title: 'La eficiencia se convierte en valor comercial',
-    body: 'La eficiencia creada aguas arriba se traslada a la economía del producto y a la relación con el socio. Los socios comerciales aportan relaciones locales, estrategia de inventario, venta técnica, servicio regional y conocimiento del mercado; ELIMFILTERS aporta arquitectura de producto, gobernanza de calidad, inteligencia y acceso escalable al portafolio.',
+    body: 'La eficiencia creada aguas arriba se traslada a la economía del producto y a la relación con el socio. Los socios comerciales aportan conocimiento del parque instalado, relaciones locales, estrategia de inventario, venta técnica, servicio regional y ejecución de mercado; ELIMFILTERS aporta arquitectura de producto, gobernanza técnica, inteligencia de aplicación, documentación estructurada y acceso escalable al portafolio.',
   },
 ];
 
 const PARTNER_OUTCOMES_EN = [
   ['Structural Efficiency', 'The economic difference is created by a more horizontal operating structure, not by positioning ELIMFILTERS as a low-price product.'],
-  ['Sustainable Partner Margin', 'Lower repetitive-process and administrative burden reduces direct structural cost and helps preserve economic value for the authorized commercial partner.'],
-  ['Technical Confidence', 'Engineering, validation, traceability, periodic specialist audits, and product intelligence give partners a stronger technical foundation for customer decisions.'],
+  ['Sustainable Partner Margin', 'Lower avoidable administrative and process burden reduces structural cost and helps preserve economic value for the authorized commercial partner.'],
+  ['Technical Confidence', 'Engineering, physical validation, application intelligence, traceability, and evidence-based product governance give partners a stronger technical foundation for customer decisions.'],
   ['Market Flexibility', 'Partners can serve industrial, heavy-duty, fleet, equipment, and complementary automotive / Light Duty demand according to their territory.'],
-  ['Customer Continuity', 'Local relationships, availability, technical support, and asset knowledge are treated as long-term commercial assets.'],
+  ['Customer Continuity', 'Installed-base knowledge, local relationships, availability, technical support, and application discipline are treated as long-term commercial assets.'],
   ['Lifecycle Value', 'Product quality, correct application, availability, technical intelligence, and sound economics work together to reduce total operating risk.'],
 ];
 
 const PARTNER_OUTCOMES_ES = [
   ['Eficiencia estructural', 'La diferencia económica nace de una estructura operativa más horizontal, no de posicionar a ELIMFILTERS como un producto de bajo precio.'],
-  ['Margen sostenible para el socio', 'Menor carga de procesos repetitivos y administrativa reduce el costo estructural directo y ayuda a preservar valor económico para el socio comercial autorizado.'],
-  ['Confianza técnica', 'Ingeniería, validación, trazabilidad, auditorías periódicas de especialistas e inteligencia de producto dan al socio una base técnica más sólida para sus decisiones comerciales.'],
+  ['Margen sostenible para el socio', 'Una menor carga administrativa y de procesos evitables reduce el costo estructural y ayuda a preservar valor económico para el socio comercial autorizado.'],
+  ['Confianza técnica', 'Ingeniería, validación física, inteligencia de aplicación, trazabilidad y gobernanza de producto basada en evidencia dan al socio una base técnica más sólida para sus decisiones comerciales.'],
   ['Flexibilidad de mercado', 'Los socios pueden atender demanda industrial, Heavy Duty, flotas, equipos y Automotive / Light Duty complementaria según su territorio.'],
-  ['Continuidad del cliente', 'Las relaciones locales, disponibilidad, soporte técnico y conocimiento de activos se tratan como activos comerciales de largo plazo.'],
+  ['Continuidad del cliente', 'El conocimiento del parque instalado, las relaciones locales, disponibilidad, soporte técnico y disciplina de aplicación se tratan como activos comerciales de largo plazo.'],
   ['Valor de ciclo de vida', 'Calidad de producto, aplicación correcta, disponibilidad, inteligencia técnica y economía sólida trabajan juntas para reducir el riesgo operativo total.'],
 ];
 
