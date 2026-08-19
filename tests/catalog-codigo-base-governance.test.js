@@ -5,19 +5,32 @@ const assert = require('node:assert/strict');
 const { POLICY_VERSION, deriveCodigoBaseGovernance } = require('../lib/catalog-codigo-base-governance');
 const { evaluateCodigoBase } = require('../lib/catalog-codigo-base-policy');
 
-test('V3 policy version is active', () => {
-  assert.equal(POLICY_VERSION, '2026-08-19-v3');
+test('V3.1 policy version is active', () => {
+  assert.equal(POLICY_VERSION, '2026-08-19-v3.1');
 });
 
-test('HD evidenced Donaldson base is canonical', () => {
+test('HD observed Donaldson base is evidenced but not called verified without explicit authority', () => {
   const row = {
     duty: 'HEAVY_DUTY', sku: 'EF91313', codigo_base: 'P551313',
     competitor_codes: [{ manufacturer: 'DONALDSON', code: 'P551313' }],
   };
   const result = deriveCodigoBaseGovernance(row);
-  assert.equal(result.state, 'CANONICAL_VERIFIED');
-  assert.equal(result.required_authority, 'DONALDSON');
-  assert.equal(evaluateCodigoBase(row).valid, true);
+  assert.equal(result.state, 'CANONICAL_EVIDENCED_NOT_VERIFIED');
+  assert.equal(result.required_authority, 'VERIFY_DONALDSON_MANUFACTURING_AUTHORITY');
+  assert.equal(evaluateCodigoBase(row).valid, false);
+});
+
+test('HD explicitly verified Donaldson authority is canonical verified without duplicating codigo_base', () => {
+  const row = {
+    duty: 'HEAVY_DUTY', sku: 'EF91313', codigo_base: 'P551313', competitor_codes: [], oem_codes: [],
+    enrichment_data: { codigo_base_governance: {
+      primary_manufacturer_verified: true,
+      approved_manufacturer: 'DONALDSON',
+      approved_codigo_base: 'P551313',
+    } },
+  };
+  assert.equal(deriveCodigoBaseGovernance(row).state, 'CANONICAL_VERIFIED');
+  assert.equal(evaluateCodigoBase(row).authority, 'VERIFIED_DONALDSON');
 });
 
 test('HD Donaldson candidate cannot silently preserve a different base', () => {
@@ -92,13 +105,26 @@ test('HD fallback detects last-four SKU suffix mismatch', () => {
   assert.equal(evaluateCodigoBase(row).valid, false);
 });
 
-test('LD evidenced MANN-FILTER base is canonical', () => {
+test('LD observed MANN-FILTER base is evidenced but not verified without explicit authority', () => {
   const row = {
     duty: 'LIGHT_DUTY', sku: 'EF30842', codigo_base: 'WK842',
     competitor_codes: [{ manufacturer: 'MANN-FILTER', code: 'WK842' }],
   };
+  assert.equal(deriveCodigoBaseGovernance(row).state, 'CANONICAL_EVIDENCED_NOT_VERIFIED');
+  assert.equal(evaluateCodigoBase(row).valid, false);
+});
+
+test('LD explicitly verified MANN-FILTER authority is canonical verified', () => {
+  const row = {
+    duty: 'LIGHT_DUTY', sku: 'EF30842', codigo_base: 'WK842', competitor_codes: [], oem_codes: [],
+    enrichment_data: { codigo_base_governance: {
+      primary_manufacturer_verified: true,
+      approved_manufacturer: 'MANN-FILTER',
+      approved_codigo_base: 'WK842',
+    } },
+  };
   assert.equal(deriveCodigoBaseGovernance(row).state, 'CANONICAL_VERIFIED');
-  assert.equal(evaluateCodigoBase(row).authority, 'MANN_FILTER');
+  assert.equal(evaluateCodigoBase(row).authority, 'VERIFIED_MANN_FILTER');
 });
 
 test('LD missing MANN reference remains an absence-verification case', () => {
