@@ -5,9 +5,8 @@
  *
  * This worker NEVER infers manufacturer absence.
  * It only resolves rows when official manufacturer evidence is found.
- * Current implementation safely handles Donaldson-primary HD rows:
- *   - CANONICAL_EVIDENCED_NOT_VERIFIED: verifies current codigo_base on an official Donaldson product page.
- *   - REVIEW_PRIMARY_CANDIDATE: verifies exactly one Donaldson candidate by official cross-reference evidence.
+ * Search-engine HTML may be used only to DISCOVER the exact Donaldson product URL;
+ * the evidence itself must come from the official shop.donaldson.com product page.
  *
  * It does not touch OEM/competitor alternate arrays and it does not rename SKU.
  */
@@ -29,43 +28,81 @@ const limitArg = process.argv.find((v) => v.startsWith('--limit='));
 const LIMIT = limitArg ? Math.max(1, Math.min(100, Number(limitArg.split('=')[1]) || 25)) : 25;
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-async function fetchOfficialDonaldsonPage(code) {
-  const encoded = encodeURIComponent(String(code).trim());
-  const urls = [
-    `https://shop.donaldson.com/store/en-us/product/${encoded}`,
-    `https://shop.donaldson.com/store/fr-us/product/${encoded}`,
-  ];
+const FETCH_HEADERS = {
+  'user-agent': 'Mozilla/5.0 (compatible; ELIMFILTERS-Historical-Sanitation/1.1; +https://elimfilters.com)',
+  'accept-language': 'en-US,en;q=0.9',
+};
 
-  for (const url of urls) {
+function officialProductUrlRegex(code) {
+  const escaped = String(code).trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`https:\\/\\/shop\\.donaldson\\.com\\/store\\/(?:en|fr)-us\\/product\\/${escaped}\\/[A-Za-z0-9_-]+`, 'i');
+}
+
+async function discoverOfficialDonaldsonUrl(code) {
+  const query = encodeURIComponent(`site:shop.donaldson.com/store/en-us/product/ \"${String(code).trim()}\"`);
+  const discoveryUrls = [
+    `https://www.bing.com/search?q=${query}`,
+    `https://html.duckduckgo.com/html/?q=${query}`,
+  ];
+  const regex = officialProductUrlRegex(code);
+
+  for (const discoveryUrl of discoveryUrls) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 15000);
     try {
-      const response = await fetch(url, {
-        redirect: 'follow',
-        signal: controller.signal,
-        headers: {
-          'user-agent': 'ELIMFILTERS-Historical-Sanitation/1.0 (+https://elimfilters.com)',
-          'accept-language': 'en-US,en;q=0.9',
-        },
-      });
+      const response = await fetch(discoveryUrl, { redirect: 'follow', signal: controller.signal, headers: FETCH_HEADERS });
       if (!response.ok) continue;
-      const html = await response.text();
-      if (!normalizeCode(html).includes(normalizeCode(code))) continue;
-      return {
-        ok: true,
-        url: response.url || url,
-        html,
-        status: response.status,
-        hash: crypto.createHash('sha256').update(html).digest('hex'),
-      };
+      let html = await response.text();
+      html = html.replace(/&amp;/g, '&');
+      const direct = html.match(regex);
+      if (direct?.[0]) return direct[0];
+
+      const decoded = decodeURIComponent(html.replace(/%2F/gi, '/').replace(/%3A/gi, ':'));
+      const decodedMatch = decoded.match(regex);
+      if (decodedMatch?.[0]) return decodedMatch[0];
     } catch (_) {
-      // A network failure is never evidence of absence.
+      // Discovery failure is not manufacturer evidence and never becomes absence evidence.
     } finally {
       clearTimeout(timer);
     }
   }
+  return null;
+}
 
-  return { ok: false, url: null, html: '', status: null, hash: null };
+async function fetchOfficialDonaldsonPage(code) {
+  const discovered = await discoverOfficialDonaldsonUrl(code);
+  if (!discovered) {
+    return { ok: false, reason: 'OFFICIAL_URL_DISCOVERY_FAILED', url: null, html: '', status: null, hash: null };
+  }
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15000);
+  try {
+    const response = await fetch(discovered, {
+      redirect: 'follow',
+      signal: controller.signal,
+      headers: FETCH_HEADERS,
+    });
+    if (!response.ok) {
+      return { ok: false, reason: 'OFFICIAL_PRODUCT_FETCH_FAILED', url: discovered, html: '', status: response.status, hash: null };
+    }
+    const html = await response.text();
+    if (!pageSupportsOfficialProduct(html, code)) {
+      return { ok: false, reason: 'OFFICIAL_PRODUCT_PAGE_DID_NOT_VALIDATE', url: response.url || discovered, html, status: response.status, hash: null };
+    }
+    return {
+      ok: true,
+      reason: null,
+      url: response.url || discovered,
+      html,
+      status: response.status,
+      hash: crypto.createHash('sha256').update(html).digest('hex'),
+    };
+  } catch (_) {
+    return { ok: false, reason: 'OFFICIAL_PRODUCT_FETCH_FAILED', url: discovered, html: '', status: null, hash: null };
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 function governance(row) {
@@ -82,8 +119,8 @@ async function verifyRow(row) {
 
   if (state === 'CANONICAL_EVIDENCED_NOT_VERIFIED') {
     const page = await fetchOfficialDonaldsonPage(row.codigo_base);
-    if (!page.ok || !pageSupportsOfficialProduct(page.html, row.codigo_base)) {
-      return { resolved: false, reason: 'NO_OFFICIAL_DONALDSON_PRODUCT_EVIDENCE' };
+    if (!page.ok) {
+      return { resolved: false, reason: page.reason || 'OFFICIAL_PRODUCT_VERIFICATION_FAILED' };
     }
     return {
       resolved: true,
@@ -100,25 +137,23 @@ async function verifyRow(row) {
       ? [...new Set(gov.observed_primary_candidates.map(String).filter(Boolean))]
       : [];
     const matches = [];
+    let discoveryFailures = 0;
 
     for (const candidate of candidates) {
       const page = await fetchOfficialDonaldsonPage(candidate);
-      if (page.ok && pageSupportsCrossReference(page.html, candidate, row.codigo_base)) {
-        matches.push({
-          candidate,
-          url: page.url,
-          hash: page.hash,
-        });
+      if (!page.ok) {
+        if (page.reason === 'OFFICIAL_URL_DISCOVERY_FAILED') discoveryFailures += 1;
+      } else if (pageSupportsCrossReference(page.html, candidate, row.codigo_base)) {
+        matches.push({ candidate, url: page.url, hash: page.hash });
       }
       await sleep(250);
     }
 
     if (matches.length !== 1) {
-      return {
-        resolved: false,
-        reason: matches.length === 0 ? 'NO_OFFICIAL_CROSS_REFERENCE_MATCH' : 'MULTIPLE_OFFICIAL_CROSS_REFERENCE_MATCHES',
-        verifiedMatches: matches.map((m) => m.candidate),
-      };
+      let reason = 'NO_OFFICIAL_CROSS_REFERENCE_MATCH';
+      if (matches.length > 1) reason = 'MULTIPLE_OFFICIAL_CROSS_REFERENCE_MATCHES';
+      else if (candidates.length && discoveryFailures === candidates.length) reason = 'OFFICIAL_URL_DISCOVERY_FAILED';
+      return { resolved: false, reason, verifiedMatches: matches.map((m) => m.candidate) };
     }
 
     return {
@@ -215,10 +250,11 @@ async function runHistoricalSanitationBatch({ apply = APPLY, limit = LIMIT } = {
       FROM catalog_codigo_base_sanitation_queue q
       JOIN elimfilters_catalog c ON c.sku=q.sku
       WHERE q.status='PENDING'
+        AND q.attempts < 3
         AND c.duty='HEAVY_DUTY'
         AND c.enrichment_data->'codigo_base_governance'->>'state'
             IN ('CANONICAL_EVIDENCED_NOT_VERIFIED','REVIEW_PRIMARY_CANDIDATE')
-      ORDER BY q.priority, q.sku
+      ORDER BY q.priority, q.attempts, q.sku
       LIMIT $1
     `, [limit]);
 
@@ -287,6 +323,8 @@ if (require.main === module) {
 }
 
 module.exports = {
+  officialProductUrlRegex,
+  discoverOfficialDonaldsonUrl,
   fetchOfficialDonaldsonPage,
   verifyRow,
   runHistoricalSanitationBatch,
