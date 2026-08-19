@@ -1,9 +1,9 @@
 {
   "entry_key": "CONSTRUCTION",
-  "path_count": 11,
+  "path_count": 4,
   "paths": [
     {
-      "path_id": "PATH_B_CONSTRUCTION_033",
+      "path_id": "PATH_B_CONSTRUCTION_015",
       "path_type": "B",
       "entry_node": "CONSTRUCTION",
       "entry_type": "industry",
@@ -12,22 +12,10 @@
       "terminal_product_families": [
         "AIRFILTER_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_033.json"
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_015.json"
     },
     {
-      "path_id": "PATH_B_CONSTRUCTION_034",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_034.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_035",
+      "path_id": "PATH_B_CONSTRUCTION_016",
       "path_type": "B",
       "entry_node": "CONSTRUCTION",
       "entry_type": "industry",
@@ -36,22 +24,10 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_035.json"
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_016.json"
     },
     {
-      "path_id": "PATH_B_CONSTRUCTION_036",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_036.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_037",
+      "path_id": "PATH_B_CONSTRUCTION_017",
       "path_type": "B",
       "entry_node": "CONSTRUCTION",
       "entry_type": "industry",
@@ -60,58 +36,10 @@
       "terminal_product_families": [
         "HYDRAULIC_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_037.json"
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_017.json"
     },
     {
-      "path_id": "PATH_B_CONSTRUCTION_038",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_038.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_039",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_039.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_040",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_040.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_041",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_041.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_042",
+      "path_id": "PATH_B_CONSTRUCTION_018",
       "path_type": "B",
       "entry_node": "CONSTRUCTION",
       "entry_type": "industry",
@@ -120,19 +48,7 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_042.json"
-    },
-    {
-      "path_id": "PATH_B_CONSTRUCTION_043",
-      "path_type": "B",
-      "entry_node": "CONSTRUCTION",
-      "entry_type": "industry",
-      "industry": "CONSTRUCTION",
-      "valid": true,
-      "terminal_product_families": [
-        "CABIN_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_CONSTRUCTION_043.json"
+      "href": "/api/citation/path/PATH_B_CONSTRUCTION_018.json"
     }
   ]
 }

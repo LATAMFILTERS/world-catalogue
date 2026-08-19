@@ -13,15 +13,16 @@
     "not-in-ud",
     "part-search-node"
   ],
+  "domain": null,
   "citation": {
     "source_url": "elimfilters.com/systems/cabin-primary",
     "concept": "Primary Cabin Air Protection Product Family",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:ba3d01a8c6c6b7ebaf6a6e05198221da5522e3596e010cc9916947661559c8b8"
+    "content_hash": "sha256:7151a9ae6d97b9d81a7116c55dc6c6dda184cd91e8af11e64d80d864708800f8"
   },
   "canonical": {
-    "definition": "Primary Cabin Air Protection — the MICROKAPPA™-technology cabin air filter element\nfamily for operator health protection in heavy-duty equipment cabs, covering approximately\n65 SKUs across agricultural, construction, mining, bus/coach, railway, and waste\nmanagement applications, ISO 11155-1 certified to >95% PM10 and >85% PM2.5 efficiency.",
+    "definition": "Primary Cabin Air Protection — the MICROKAPPA™-technology cabin air filter element\nfamily for operator health protection in heavy-duty equipment cabs, covering approximately\n65 SKUs across agricultural, construction, mining, bus/coach, railway, and waste\nmanagement applications, rated to the PM10 and PM2.5 efficiency target specified for\nthe approved application per ISO 11155-1.",
     "systems": "Cabin air filtration domain; belongs to CABIN product-line system; implements MICROKAPPA™\nelectrostatically-charged synthetic media technology; activated carbon variants implement\ngas-phase contaminant removal per DIN 71220",
     "failure_impact": "Incorrect element selection (wrong dimensions, wrong efficiency class, omitting\nactivated carbon variant in chemical vapor environments) or exceeding service interval\n→ particulate bypass increases PM10 operator exposure above 4 mg/m³ threshold →\nchronic silicosis and occupational dust disease risk in mining and agricultural operators;\nin chemical vapor environments, omitting activated carbon → pesticide or H₂S exposure",
     "related_standards": "ISO 11155: Cabin air filter PM10/PM2.5 efficiency classification and certification\nstandard | DIN 71220: Gas-phase (activated carbon) cabin filter performance standard for\nchemical vapor removal",
@@ -52,7 +53,7 @@
       "CABIN"
     ]
   },
-  "vault_path": "elimfilters-vault/08-product-families/CABIN_PRIMARY.md",
+  "vault_path": "elimfilters-vault\\08-product-families\\CABIN_PRIMARY.md",
   "_links": {
     "self": "/api/citation/CABIN_PRIMARY.json",
     "type_index": "/api/citation/type/product-family.json",

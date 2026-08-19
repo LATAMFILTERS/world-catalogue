@@ -18,6 +18,7 @@
         "test-method",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/astm-d6304",
         "concept": "ASTM D6304 Water in Petroleum Products",
@@ -52,7 +53,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ASTM_D6304.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ASTM_D6304.md"
     },
     {
       "key": "DIN_51524",
@@ -63,6 +64,7 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
         "concept": "DIN 51524 — Hydraulic and Lube Oil Specification",
@@ -79,7 +81,7 @@
         "industrial_role": "DIN 51524 fluid compliance is the baseline compatibility requirement for all filtration media operating in lube oil and hydraulic circuits — ensuring filter media does not degrade or strip lubricant additives during service life."
       },
       "relationships": {},
-      "vault_path": "elimfilters-vault/04-standards/DIN_51524.md"
+      "vault_path": "elimfilters-vault\\04-standards\\DIN_51524.md"
     },
     {
       "key": "DIN_71220",
@@ -97,6 +99,7 @@
         "performance-test",
         "not-in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/din-71220",
         "concept": "DIN 71220 Cabin Air Filter Testing",
@@ -128,7 +131,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/DIN_71220.md"
+      "vault_path": "elimfilters-vault\\04-standards\\DIN_71220.md"
     },
     {
       "key": "ISO_11155",
@@ -146,19 +149,20 @@
         "performance-test",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-11155",
         "concept": "ISO 11155 Cabin Air Filter Performance",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:47a7c2a7734236b9d3b66e3b802adc68a5366b9457cc72e4c4fb92f0068f3ce7"
+        "content_hash": "sha256:6e710ba4294cf3fc292e69334abefd505285560b9c1ca3dcf2165ce445ca33b0"
       },
       "canonical": {
         "definition": "ISO 11155 is the two-part international performance standard for road vehicle cabin air filters: ISO 11155-1 measures particle filtration efficiency (PM10, PM2.5) and airflow resistance; ISO 11155-2 measures activated carbon layer gaseous contaminant removal — together providing the measurement framework for classifying cabin filters by their capacity to protect operators from health-relevant particle and chemical contamination.",
         "systems": "Operator cab and passenger compartment air filtration on road vehicles, agricultural equipment, construction equipment, and public transport vehicles; HVAC system first-protection layer against ambient particle and gaseous contaminants",
         "failure_impact": "Cabin filter below ISO 11155-1 PM2.5 efficiency threshold → in-cab PM2.5 concentration above WHO 15 µg/m³ 24-hour guideline during high-dust operations → long-term operator respiratory disease accumulation | In mining and construction environments with ambient PM2.5 at 150–500 µg/m³, non-compliant cabin filtration leaves operators exposed to 10–30× WHO guideline concentrations | Operational Impact: occupational respiratory disease liability; regulatory enforcement under mine safety and construction site health standards; worker compensation claims from PM2.5-related illness in fleet operators.",
         "related_standards": "DIN 71220: German predecessor cabin air filter test standard; harmonised into ISO 11155 methodology; still referenced in European OEM cabin filter qualification specifications",
-        "related_technologies": "MICROKAPPA: Cabin air filtration technology certified to ISO 11155-1 particle efficiency and ISO 11155-2 gaseous contaminant removal for heavy industrial operator cabin applications",
+        "related_technologies": "MICROKAPPA: Cabin air filtration technology rated to the ISO 11155-1 particle efficiency and ISO 11155-2 gaseous contaminant removal target specified for the approved application in heavy industrial operator cabin applications",
         "industrial_role": "ISO 11155 is the enabling measurement standard for operator health protection in heavy industry cabins — the PM10 and PM2.5 efficiency ratings it defines are the only quantitative performance criteria available to fleet operators and occupational health engineers for selecting cabin filters that demonstrably reduce operator respiratory disease risk in dust-intensive operations."
       },
       "relationships": {
@@ -180,7 +184,7 @@
           "CABIN_AIR_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_11155.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_11155.md"
     },
     {
       "key": "ISO_12937",
@@ -198,19 +202,20 @@
         "test-method",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-12937",
         "concept": "ISO 12937 Water in Petroleum Products",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:136e6fcc524ac15e1b4fd19797282a5d71232d86ab8d4132914a7452ee2dd4fc"
+        "content_hash": "sha256:a6f8b8ce12cfa0373b618c77b91ee873cd8cdc27a783422a31ab012b6408a3cd"
       },
       "canonical": {
         "definition": "ISO 12937 is the international coulometric Karl Fischer titration standard for measuring water content in petroleum products as mg/kg (ppm), functionally equivalent to ASTM D6304 and serving as the European and international market reference method for EN 590 diesel fuel water content compliance and ISO 8217 marine fuel water management.",
         "systems": "Diesel fuel bulk storage quality monitoring, marine fuel management, power generation facility fuel quality verification, and international fleet fuel compliance programs in markets where EN 590 and ISO 8217 apply",
         "failure_impact": "Diesel fuel exceeding ISO 12937 EN 590 limit of 200 mg/kg total water → free water droplet formation above dissolved saturation (50–100 mg/kg) → free water entering common-rail injection at 1,800–2,500 bar → cavitation erosion of injector nozzle tip and needle seat geometry → spray pattern degradation and combustion inefficiency | In marine applications, water-contaminated fuel above 200 mg/kg triggers microbial growth in marine diesel tanks between voyages | Operational Impact: injector replacement $800–$4,000/unit; marine fuel tank microbial contamination causes complete fuel polishing events costing $10,000–$50,000 per vessel.",
         "related_standards": "ASTM D6304: North American equivalent coulometric Karl Fischer method; same electrochemical principle, equivalent results; cross-reference acknowledged in both standards; cited in North American vs European regulatory contexts for identical contamination scenarios",
-        "related_technologies": "HYDROCORE: Coalescing water-separating fuel filtration; ISO 12937 inlet/outlet comparison is the performance validation protocol for HYDROCORE water separation efficiency claims in European and international markets",
+        "related_technologies": "HYDROCORE: Coalescing water-separating fuel filtration; ISO 12937 inlet/outlet water content comparison is a field verification method for separator performance in European and international markets. Applicable separation ratings must be tied to the specific approved element and test basis, not presented as a universal efficiency claim.",
         "industrial_role": "ISO 12937 is the European and international market measurement standard enabling diesel fuel water contamination control — fleet operators and fuel system engineers in EN 590 and ISO 8217 jurisdictions depend on ISO 12937 testing to detect water accumulation before it exceeds injector protection thresholds and to validate that water-separating filtration is performing to specification."
       },
       "relationships": {
@@ -229,7 +234,7 @@
           "DIESEL_WATER"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_12937.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_12937.md"
     },
     {
       "key": "ISO_16889",
@@ -249,19 +254,20 @@
         "primary",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-16889",
         "concept": "ISO 16889 Filter Multi-Pass Test Method",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:bb0e49d4cd81c3a74b66b51d41fd0631e60e406084f1c5e995d4cbcf9077ed2e"
+        "content_hash": "sha256:693165d03bbaaec704737d2caefc81575ae4198160a53c8a1dc1560501710cee"
       },
       "canonical": {
         "definition": "ISO 16889 specifies the multi-pass test method for measuring filter element efficiency (Beta ratio) in hydraulic and lube oil systems, using ISO Medium Test Dust (ISO 12103-1 A3) to calculate particle capture efficiency across defined size classes (β₆, β₁₀, β₁₆, β₂₅).",
         "systems": "Hydraulic fluid power systems, engine lube oil circuits, fuel filtration systems",
         "failure_impact": "Filters without ISO 16889 certified Beta ratios cannot be verified for actual particle capture efficiency → assumed performance diverges from actual → ISO 4406 cleanliness targets are not met → particles above 10–15 µm remain in oil → abrasive bearing wear → clearance loss → seizure at 3,000–5,000 hours instead of 15,000–25,000 hours.",
         "related_standards": "ISO 4406: Three-number cleanliness code (≥4/≥6/≥14 µm) that ISO 16889 Beta ratio performance enables and validates | SAE J1539: Air intake cleanliness standard (parallel domain — air-side particle control)",
-        "related_technologies": "NANOFORCE: Sub-micron particle removal rated at Beta(x[c]) ≥ 1000 at 5 µm absolute under ISO 16889 multi-pass methodology | SYNTRAX: Full-flow lube filter ISO 16889 tested to achieve 16/14/11 cleanliness target",
+        "related_technologies": "NANOFORCE: Sub-micron hydraulic particle removal rated under ISO 16889 multi-pass methodology to the Beta ratio specified for the approved application | SYNTRAX: Full-flow lube filter ISO 16889 tested to the Beta ratio and cleanliness target specified for the approved application",
         "industrial_role": "ISO 16889 Beta ratio is the only quantitative performance metric that converts a filter product specification into a verifiable contamination control capability — it is the engineering basis for achieving and maintaining ISO 4406 cleanliness targets in hydraulic and lube systems."
       },
       "relationships": {
@@ -280,7 +286,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_16889.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_16889.md"
     },
     {
       "key": "ISO_4406",
@@ -300,6 +306,7 @@
         "primary",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/iso-4406",
         "concept": "ISO 4406 Hydraulic Fluid Cleanliness Code",
@@ -327,7 +334,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_4406.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_4406.md"
     },
     {
       "key": "ISO_5011",
@@ -345,19 +352,20 @@
         "test-method",
         "in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/systems/air-intake-protection",
         "concept": "ISO 5011 — Air Filter Performance Test",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:32212b5f9d4aa2bd28b5471c7150771d466381940c7a8a04542774836d877a77"
+        "content_hash": "sha256:2377cd0fbb963e910466b8c23b77c1260394e8e0967329d169d7078820f6b684"
       },
       "canonical": {
         "definition": "ISO 5011 is the standardised laboratory test method for measuring air intake filter\nefficiency (%), flow restriction (kPa), and dust-holding capacity (g) for internal\ncombustion engine applications using ISO 12103-1 A2 fine test dust.",
-        "systems": "Air Intake domain; governs: MACROCORE™, SYNTEPORE™, INTEKCORE™; applicable to all\ndiesel engine air intake filter products",
+        "systems": "Air Intake domain; governs: MACROCORE™, INTEKCORE™; applicable to all\ndiesel engine air intake filter products",
         "failure_impact": "When ISO 5011 performance requirements are not met: insufficient particle capture →\nabrasive dust reaches combustion chamber → piston ring wear → cylinder scuffing →\nengine overhaul intervals reduced from 25,000 hours to 3,000–5,000 hours",
         "related_standards": "SAE J1539: Air intake contamination classification — companion standard defining\nacceptable dust concentration targets in intake air",
-        "related_technologies": "MACROCORE: 99.9%–99.98% efficiency at rated test dust | SYNTEPORE: ISO 5011 compliant\nsynthetic media | INTEKCORE: Zero-bypass housing ensuring no unfiltered air bypasses\nthe ISO 5011-certified element",
+        "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection | INTEKCORE: Zero-bypass housing ensuring no unfiltered air bypasses\nthe filtration element",
         "industrial_role": "ISO 5011 is the measurement framework that makes air filtration performance auditable.\nWithout ISO 5011 certification, filter performance claims are unverifiable — the test\nmethod defines the minimum evidence standard for responsible filtration specification\nin industrial, mining, and agricultural equipment."
       },
       "relationships": {
@@ -366,7 +374,6 @@
         ],
         "applicable_to_technologies": [
           "MACROCORE",
-          "SYNTEPORE",
           "INTEKCORE"
         ],
         "applicable_to_industries": [
@@ -383,7 +390,7 @@
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/ISO_5011.md"
+      "vault_path": "elimfilters-vault\\04-standards\\ISO_5011.md"
     },
     {
       "key": "NFPA_T214",
@@ -401,6 +408,7 @@
         "structural-test",
         "not-in-ud"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/nfpa-t214",
         "concept": "NFPA T2.14 Hydraulic Filter Collapse/Burst Resistance",
@@ -432,7 +440,7 @@
           "HYDRAULIC_CONTAMINATION"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/NFPA_T214.md"
+      "vault_path": "elimfilters-vault\\04-standards\\NFPA_T214.md"
     },
     {
       "key": "SAE_J1539",
@@ -450,19 +458,20 @@
         "primary",
         "in-ud"
       ],
+      "domain": "Air Intake",
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/standards/sae-j1539",
         "concept": "SAE J1539 Air Intake Cleanliness",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:7b9d850b22dcbacc487a5dacf57c9e7ff29b03864c50dfb1115631162d5e4094"
+        "content_hash": "sha256:9b884a39bba6f5627ee5d5389eec03808e502d1738b40baab5e77a38095d90cb"
       },
       "canonical": {
         "definition": "SAE J1539 is the Society of Automotive Engineers classification standard defining air intake cleanliness requirements and test protocols for diesel engines, using SAE Fine Test Dust (ISO 12103-1 A2) to evaluate filtration performance in terms of dust ingestion limits and particle size distribution.",
         "systems": "Diesel engine air intake systems across all on-highway and off-highway equipment categories",
         "failure_impact": "Non-compliant air cleaner performance under SAE J1539 criteria → elevated silica and environmental dust ingestion → particle entry into combustion chamber → piston ring and cylinder bore abrasive wear → compression loss 10–25% and engine overhaul at 3,000–5,000 hours instead of 15,000–25,000 hours.",
         "related_standards": "ISO 5011: ISO-framework equivalent test methodology for inlet air cleaning equipment | ISO 4406: Fluid cleanliness code used to measure downstream lube circuit contamination resulting from air ingestion failure",
-        "related_technologies": "MACROCORE: Air intake particulate capture technology rated to SAE J1539 dust challenge performance | SYNTEPORE: All-synthetic intake media maintaining SAE J1539 performance under high-humidity conditions",
+        "related_technologies": "MACROCORE: Air intake particulate capture technology rated to SAE J1539 dust challenge performance",
         "industrial_role": "SAE J1539 provides the measurable performance criterion for comparing and selecting air intake filtration elements — it is the quantitative link between filter specification and engine protection against particle wear in operating environments."
       },
       "relationships": {
@@ -470,14 +479,13 @@
           "ISO_5011"
         ],
         "applicable_to_technologies": [
-          "MACROCORE",
-          "SYNTEPORE"
+          "MACROCORE"
         ],
         "related_contamination": [
           "PARTICLE_WEAR"
         ]
       },
-      "vault_path": "elimfilters-vault/04-standards/SAE_J1539.md"
+      "vault_path": "elimfilters-vault\\04-standards\\SAE_J1539.md"
     }
   ]
 }

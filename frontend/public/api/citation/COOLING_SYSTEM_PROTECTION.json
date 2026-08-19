@@ -14,6 +14,7 @@
     "asset-protection",
     "in-ud"
   ],
+  "domain": "Cooling",
   "citation": {
     "source_url": "elimfilters.com/knowledge-center/systems/cooling-system-protection",
     "concept": "Cooling System Protection",
@@ -43,7 +44,7 @@
       "THERMACORE"
     ]
   },
-  "vault_path": "elimfilters-vault/03-systems/COOLING_SYSTEM_PROTECTION.md",
+  "vault_path": "elimfilters-vault\\03-systems\\COOLING_SYSTEM_PROTECTION.md",
   "_links": {
     "self": "/api/citation/COOLING_SYSTEM_PROTECTION.json",
     "type_index": "/api/citation/type/system.json",

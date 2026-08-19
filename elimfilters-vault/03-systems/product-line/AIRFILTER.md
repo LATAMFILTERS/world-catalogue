@@ -8,7 +8,6 @@ system_class: product-line
 domain: Air Intake
 primary_technology: "[[MACROCORE]]"
 supporting_technologies:
-  - "[[SYNTEPORE]]"
   - "[[INTEKCORE]]"
 related_standards:
   - "[[ISO_5011]]"
@@ -34,7 +33,7 @@ tags:
 
 The Air Filtration product system is the primary ELIMFILTERS® product line for air intake contamination control. It encompasses all filter elements, housings, and pre-cleaner assemblies designed to intercept particulate contamination before it reaches the combustion chamber, turbocharger, and intake manifold of diesel engines.
 
-The system's primary technology is [[MACROCORE|MACROCORE™]] — the Progressive Density Gradient multi-layer element. Synthetic-media variants use [[SYNTEPORE|SYNTEPORE™]] for high-humidity and marine environments. The housing architecture is provided by [[INTEKCORE|INTEKCORE™]] for zero-bypass sealing integrity.
+The system's primary technology is [[MACROCORE|MACROCORE™]] — the engine air filtration architecture for primary and secondary intake protection. The housing architecture is provided by [[INTEKCORE|INTEKCORE™]] for zero-bypass sealing integrity.
 
 Air filtration is the first line of defence in the contamination control hierarchy. A failure in this system — whether from element bypass, incorrect change interval, or wrong element specification — allows abrasive particles to reach every downstream system: engine lube oil, fuel injectors, and turbocharger bearings.
 
@@ -43,10 +42,9 @@ Air filtration is the first line of defence in the contamination control hierarc
 ## Relationships
 
 ### Primary Technology
-- [[MACROCORE|MACROCORE™ — Progressive Density Gradient Air Protection]] (primary)
+- [[MACROCORE|MACROCORE™ — Engine Air Filtration]] (primary)
 
 ### Supporting Technologies
-- [[SYNTEPORE|SYNTEPORE™ — All-Synthetic Intake for Humid and Marine Environments]]
 - [[INTEKCORE|INTEKCORE™ — Zero-Bypass Radial Seal Housing]]
 
 ### Standards
@@ -75,12 +73,12 @@ CANONICAL KNOWLEDGE BLOCK: Air Filtration System
 
 DEFINITION
 Air Filtration product system providing multi-layer particulate interception for diesel
-engine air intake paths, using MACROCORE™ Progressive Density Gradient elements achieving
-99.9%–99.98% efficiency under ISO 5011 certification.
+engine air intake paths, using MACROCORE™ engine air filtration for primary and secondary
+intake protection.
 
 SYSTEMS
 Air Intake domain (product-line class); primary technology: MACROCORE™; supporting:
-SYNTEPORE™ (humid/marine), INTEKCORE™ (housing integrity)
+INTEKCORE™ (housing integrity)
 
 FAILURE_IMPACT
 Air filter element bypass or saturation → abrasive particles enter combustion chamber →
@@ -92,8 +90,7 @@ ISO 5011: Air filter efficiency, restriction, and dust-holding capacity test |
 SAE J1539: Air intake contamination classification | ISO 16889: Multi-pass filter test
 
 RELATED_TECHNOLOGIES
-MACROCORE: PDG primary element | SYNTEPORE: Synthetic marine/humid variant |
-INTEKCORE: Zero-bypass housing
+MACROCORE: Primary intake filtration element | INTEKCORE: Zero-bypass housing
 
 INDUSTRIAL_ROLE
 First line of defence in the contamination hierarchy — all downstream engine systems

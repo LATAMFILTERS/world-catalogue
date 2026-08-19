@@ -18,7 +18,7 @@
     },
     {
       "type": "contamination-mode",
-      "count": 4,
+      "count": 6,
       "href": "/api/citation/type/contamination-mode.json"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "type": "product-family",
-      "count": 5,
+      "count": 10,
       "href": "/api/citation/type/product-family.json"
     },
     {
@@ -58,7 +58,7 @@
     },
     {
       "type": "technology",
-      "count": 8,
+      "count": 9,
       "href": "/api/citation/type/technology.json"
     }
   ]

@@ -16,10 +16,10 @@ export const STATIC_CRAWL_ROUTES = [
   '/search',
   '/distributors',
   '/commercial-lines',
-  '/product-experience',
+  '/commercial-lines/duratech',
+  '/commercial-lines/marineclean',
   '/customer-intelligence',
   '/distributor-application',
-  '/premium-preview',
   '/warranty',
 ] as const;
 
@@ -60,6 +60,11 @@ const CRAWL_TIER_BY_KIND: Record<Exclude<EntityKind, 'organization'>, 1 | 2 | 3 
   failure: 3,
 };
 
+function canonicalUrl(path: string): string {
+  const normalized = path === '/' ? '/' : `/${path.replace(/^\/+|\/+$/g, '')}/`;
+  return `${BASE_URL}${normalized}`;
+}
+
 function clampPriority(value: number): number {
   return Math.max(0.1, Math.min(1, Number(value.toFixed(2))));
 }
@@ -71,14 +76,15 @@ function frequencyForTier(tier: CrawlProfile['crawlTier']): CrawlProfile['change
 }
 
 function staticProfile(path: (typeof STATIC_CRAWL_ROUTES)[number]): CrawlProfile {
-  const tier: CrawlProfile['crawlTier'] = path === '/' ? 1 : path === '/contact' || path === '/about' ? 4 : 1;
+  const isSpecializedSolution = path === '/commercial-lines/duratech' || path === '/commercial-lines/marineclean';
+  const tier: CrawlProfile['crawlTier'] = path === '/' ? 1 : path === '/contact' || path === '/about' ? 4 : isSpecializedSolution ? 2 : 1;
   return {
     path,
-    url: `${BASE_URL}${path}`,
-    priority: path === '/' ? 1 : tier === 1 ? 0.92 : 0.55,
-    changeFrequency: path === '/' ? 'weekly' : 'monthly',
+    url: canonicalUrl(path),
+    priority: path === '/' ? 1 : isSpecializedSolution ? 0.84 : tier === 1 ? 0.92 : 0.55,
+    changeFrequency: path === '/' ? 'weekly' : isSpecializedSolution ? 'monthly' : 'monthly',
     crawlTier: tier,
-    authority: path === '/' ? 100 : 80,
+    authority: path === '/' ? 100 : isSpecializedSolution ? 85 : 80,
     connectionCount: 0,
   };
 }
@@ -97,7 +103,7 @@ export function getEntityCrawlProfile(entityId: string): CrawlProfile | undefine
 
   return {
     path: entity.href,
-    url: `${BASE_URL}${entity.href}`,
+    url: canonicalUrl(entity.href),
     priority,
     changeFrequency: frequencyForTier(crawlTier),
     crawlTier,
@@ -127,16 +133,20 @@ export function validateCrawlOptimization(): CrawlValidationResult {
   const profileUrlSet = new Set(urls);
   const entityUrls = ENTITY_NODES
     .filter((node) => node.kind !== 'organization')
-    .map((node) => `${BASE_URL}${node.href}`);
+    .map((node) => canonicalUrl(node.href));
   const missingEntityUrls = entityUrls.filter((url) => !profileUrlSet.has(url));
-  const invalidCanonicalUrls = urls.filter((url) => !url.startsWith(BASE_URL));
+  const invalidCanonicalUrls = urls.filter((url) => {
+    if (!url.startsWith(BASE_URL)) return true;
+    const pathname = url.slice(BASE_URL.length);
+    return pathname !== '/' && !pathname.endsWith('/');
+  });
   const invalidPriorities = profiles
     .filter((profile) => profile.priority < 0.1 || profile.priority > 1)
     .map((profile) => profile.url);
   const isolatedEntityUrls = ENTITY_NODES
     .filter((node) => node.kind !== 'organization')
     .filter((node) => getConnectedEntities(node.id).length === 0)
-    .map((node) => `${BASE_URL}${node.href}`);
+    .map((node) => canonicalUrl(node.href));
 
   return {
     duplicateUrls: Array.from(new Set(duplicateUrls)),

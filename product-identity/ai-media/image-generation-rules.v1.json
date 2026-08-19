@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.1",
+  "mode": "authority_locked_source_product_rebrand",
+  "purpose": "Generate ELIMFILTERS product imagery only from a verified real source-product image while preserving exact physical geometry and using repository/catalog authorities without visual invention.",
+  "authority_file": "data/product-identity/authorities/cylindrical-print-layout-authority.json",
+  "inputs_required": [
+    "verified_real_source_product_image",
+    "catalog_resolved_elimfilters_sku",
+    "product_master_json",
+    "cylindrical_print_layout_authority",
+    "frontend/public/assets/logo-elimfilters.png",
+    "authoritative_technology_asset"
+  ],
+  "source_image_policy": {
+    "real_manufacturer_image_required": true,
+    "simulated_screenshot_forbidden": true,
+    "synthetic_geometry_reference_forbidden": true,
+    "source_must_be_captured_or_downloaded_from_actual_product_page": true,
+    "preserve_original_view_and_mechanical_features": true,
+    "pilot_image_requires_explicit_user_approval_before_next_sku": true
+  },
+  "sku_policy": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "resolve_from_competitor_code": true,
+    "hardcoded_or_inferred_sku_forbidden": true,
+    "render_competitor_code_as_elimfilters_sku_forbidden": true,
+    "ambiguous_match_behavior": "STOP_AND_FLAG_FOR_REVIEW",
+    "missing_match_behavior": "STOP_AND_FLAG_FOR_REVIEW"
+  },
+  "geometry_policy": {
+    "lock": true,
+    "source": "verified_real_source_product_image",
+    "preserve": [
+      "overall_shape",
+      "height_to_diameter_ratio",
+      "thread_geometry",
+      "baseplate_geometry",
+      "hole_count",
+      "hole_shape",
+      "hole_positions",
+      "gasket_geometry",
+      "valves",
+      "seams",
+      "end_caps",
+      "construction_features",
+      "perspective"
+    ],
+    "regeneration_or_reinterpretation_forbidden": true,
+    "cross_sku_geometry_reuse_forbidden": true
+  },
+  "editable_surface": [
+    "container_paint_color",
+    "authorized_lithography",
+    "catalog_resolved_product_code",
+    "catalog_resolved_filter_type",
+    "authority_resolved_technology"
+  ],
+  "forbidden_content": [
+    "qr_graphic",
+    "oem_equivalence_text",
+    "technical_specification_panels",
+    "performance_claims_not_in_authority",
+    "extra_icons",
+    "secondary_brand_colors",
+    "invented_logo",
+    "invented_technology_artwork",
+    "competitor_branding",
+    "competitor_part_number_as_final_sku"
+  ],
+  "brand_asset_policy": {
+    "logo_asset": "frontend/public/assets/logo-elimfilters.png",
+    "logo_asset_usage": "USE_FILE_EXACTLY_DO_NOT_REDRAW",
+    "technology_assets_directory": "frontend/public/assets/",
+    "technology_asset_usage": "USE_EXISTING_AUTHORITY_ASSET_EXACTLY_DO_NOT_REDRAW"
+  },
+  "color_policy": {
+    "container": {"name": "ELIMFILTERS DARK CHARCOAL", "hex": "#414141"},
+    "lithography": {"name": "ELIMFILTERS LITHOGRAPHY SILVER", "hex": "#CBCBCB"},
+    "secondary_print_colors_forbidden": true
+  },
+  "data_policy": {
+    "technical_source": "world_catalogue_only",
+    "invent_missing_data": false,
+    "factory_ready_required_for_production_artwork": true,
+    "stop_on_conflict": true
+  },
+  "approval_policy": {
+    "pilot_mode": true,
+    "batch_automation_enabled": false,
+    "explicit_user_image_approval_required": true,
+    "next_sku_blocked_until_current_image_approved": true,
+    "no_auto_approval": true
+  },
+  "output_classes": [
+    "pilot_proof",
+    "catalog_master_after_explicit_approval"
+  ]
+}

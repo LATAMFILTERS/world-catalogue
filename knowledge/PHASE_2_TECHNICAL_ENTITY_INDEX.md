@@ -60,7 +60,7 @@ product-family:hydraulic-filters
 
 ```text
 product-family:fuel-water-separators
-  -> implements technology:hydrocore
+  -> implements technology:TURBOCORE
   -> controls contaminant:water
   -> mitigates failure-mode:corrosion
 ```

@@ -19,7 +19,7 @@ const TECHNOLOGIES = [
     imgUrl: "/images/fuellseparator-hero.avif",
     logoUrl: "/assets/HYDROCORE.avif",
     title: "Turbine-Stage Water Separation",
-    p1: "HYDROCORE removes free and emulsified water from diesel and turbine fuel systems at 99.8% efficiency — protecting precision HPCR injectors operating at 1,800 to 2,500 bar.",
+    p1: "HYDROCORE removes free and emulsified water from diesel and turbine fuel systems, protecting precision HPCR injectors operating at 1,800 to 2,500 bar.",
     p2: "Engineered for Common Rail and turbine fuel systems in mining, marine, power generation, and agriculture. Validates against ASTM D6304 and SAE J1488.",
     link: "/knowledge-system/standards/fuel-systems",
   },

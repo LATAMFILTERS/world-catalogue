@@ -66,7 +66,7 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
-    addressedByTechnologies: ['TECH-SYNTEPORE', 'TECH-HYDROCORE'],
+    addressedByTechnologies: ['TECH-SYNTAPORE', 'TECH-HYDROCORE'],
     measuredByStandards: ['STD-ASTM-D6304', 'STD-ISO-12937', 'STD-ISO-16332'],
   },
 
@@ -96,7 +96,7 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
-    addressedByTechnologies: ['TECH-HYDROCORE', 'TECH-SYNTEPORE', 'TECH-TURBOCORE', 'TECH-MARINECLEAN', 'TECH-DRYCORE'],
+    addressedByTechnologies: ['TECH-HYDROCORE', 'TECH-SYNTAPORE', 'TECH-HYDROCORE', 'TECH-MARINECLEAN', 'TECH-DRYCORE'],
     measuredByStandards: ['STD-ASTM-D6304', 'STD-ISO-12937', 'STD-ISO-8573-1'],
   },
 
@@ -111,7 +111,7 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
-    addressedByTechnologies: ['TECH-SYNTEPORE', 'TECH-HYDROCORE', 'TECH-TURBOCORE', 'TECH-MARINECLEAN'],
+    addressedByTechnologies: ['TECH-SYNTAPORE', 'TECH-HYDROCORE', 'TECH-HYDROCORE', 'TECH-MARINECLEAN'],
     measuredByStandards: ['STD-ASTM-D6304', 'STD-ISO-16332', 'STD-ISO-12937'],
   },
 
@@ -231,7 +231,7 @@ export const EDL_PROBLEMS: EDLProblemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
-    addressedByTechnologies: ['TECH-HYDROCORE', 'TECH-MARINECLEAN', 'TECH-TURBOCORE'],
+    addressedByTechnologies: ['TECH-HYDROCORE', 'TECH-MARINECLEAN', 'TECH-HYDROCORE'],
     measuredByStandards: ['STD-ASTM-D6304', 'STD-ISO-12937'],
   },
 

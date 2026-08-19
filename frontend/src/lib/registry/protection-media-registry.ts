@@ -72,7 +72,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
       'Biofuel blends B5–B20',
     ],
     employedByTechnologyIds: [
-      'TECH-SYNTEPORE',
+      'TECH-SYNTAPORE',
 
     ],
     implementsPrincipleIds: ['EP-SEP-001'],
@@ -135,7 +135,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
     ],
     employedByTechnologyIds: [
       'TECH-HYDROCORE',
-      'TECH-TURBOCORE',
+      'TECH-HYDROCORE',
       'TECH-MARINECLEAN',
     ],
     implementsPrincipleIds: ['EP-PHS-001'],
@@ -168,7 +168,7 @@ export const PROTECTION_MEDIA_REGISTRY: Record<string, ProtectionMediaRecord> = 
     ],
     employedByTechnologyIds: [
       'TECH-HYDROCORE',
-      'TECH-TURBOCORE',
+      'TECH-HYDROCORE',
       'TECH-MARINECLEAN',
     ],
     implementsPrincipleIds: ['EP-PHS-002'],

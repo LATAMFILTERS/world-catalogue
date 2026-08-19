@@ -84,8 +84,8 @@ curl -s http://localhost:3000/api/kg/technologies | jq '{success, count: (.data 
 **Verify technology slugs present:**
 ```bash
 curl -s http://localhost:3000/api/kg/technologies | jq '[.data[].slug]'
-# Must include: nanoforce, macrocore, syntrax, syntepore, intekcore, microkappa,
-#               duratech, aquaguard, cooltech, drycore, gasultra, marineclean, blueclean
+# Must include: nanoforce, macrocore, syntrax, SYNTAPORE, intekcore, microkappa,
+#               duratech, aquaguard, THERMACORE, drycore, gasultra, marineclean, blueclean
 ```
 
 #### A3: GET /api/kg/canonical?type=technology

@@ -1,6 +1,5 @@
 import type { SchemaEntityKind } from '@/lib/canonical-entity-schema';
 import { buildAICitationRecord } from '@/lib/ai-citation-layer';
-import { assertEnterpriseArchitecture } from '@/lib/enterprise-validation';
 import { buildRichResultsGraph } from '@/lib/rich-results-schema';
 
 interface Props {
@@ -8,17 +7,7 @@ interface Props {
   slug: string;
 }
 
-let enterpriseArchitectureValidated = false;
-
-function ensureEnterpriseArchitectureIsValid() {
-  if (enterpriseArchitectureValidated) return;
-  assertEnterpriseArchitecture();
-  enterpriseArchitectureValidated = true;
-}
-
 export function CanonicalEntitySchema({ kind, slug }: Props) {
-  ensureEnterpriseArchitectureIsValid();
-
   const schema = buildRichResultsGraph(kind, slug);
   const citation = buildAICitationRecord(kind, slug);
 

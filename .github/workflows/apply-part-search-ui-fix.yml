@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+    # This job only ever edits part-search/index.html -- it has no effect
+    # on a push that doesn't touch that directory, but was still spinning up
+    # a full runner + checkout on every push to main (~1,100 runs/month).
+    paths:
+      - 'part-search/**'
+      - '.github/workflows/apply-part-search-ui-fix.yml'
 
 permissions:
   contents: write

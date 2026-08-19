@@ -12,7 +12,7 @@ BEGIN;
 
 -- ── 1. product_family ────────────────────────────────────────────────────────
 -- A named commercial product line bound to a technology and filtration system.
--- One row per named series (e.g. HYDROCORE/SERIES™, NANOFORCE/SERIES™).
+-- One row per named series (e.g. TURBOCORE™, NANOFORCE/SERIES™).
 
 CREATE TABLE IF NOT EXISTS product_family (
   id            SERIAL        NOT NULL,
@@ -20,13 +20,13 @@ CREATE TABLE IF NOT EXISTS product_family (
 
   -- Identity
   family_code   TEXT          NOT NULL,
-  -- Canonical key, no trademark symbol. 'HYDROCORE/SERIES', 'NANOFORCE/SERIES'
+  -- Canonical key, no trademark symbol. 'TURBOCORE', 'NANOFORCE/SERIES'
   family_name   TEXT          NOT NULL,
-  -- Display name with mark. 'HYDROCORE/SERIES™'
+  -- Display name with mark. 'TURBOCORE™'
 
   -- Classification
   technology    TEXT          NOT NULL,
-  -- Must correspond to a value in TECH_NAMES: 'HYDROCORE', 'NANOFORCE', etc.
+  -- Must correspond to a value in TECH_NAMES: 'TURBOCORE', 'NANOFORCE', etc.
   system        TEXT          NOT NULL,
   -- 'Fuel Cleanliness', 'Hydraulic', 'Lube Oil', 'Air Intake',
   -- 'Cabin Air', 'Compressed Air', 'Coolant'
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS product_element (
   -- Filtration classification
   media_grade           TEXT,
   -- Technology-specific grade vocabulary:
-  -- HYDROCORE:  'SM' | 'TM' | 'PM'
+  -- TURBOCORE:  'SM' | 'TM' | 'PM'
   -- NANOFORCE:  'B6' | 'B10' | 'B25'
   -- MACROCORE:  'STD' | 'EXT' | 'ULT'
   -- MICROKAPPA: 'STD' | 'HEPA' | 'HEPA+AC'
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS product_element (
   -- 'OR' = O-ring, 'FS' = flat seal, 'TH' = threaded, 'PRF' = press-fit
 
   -- Filtration specifications — JSONB, schema varies per technology family.
-  -- HYDROCORE:  { micron_nominal, micron_absolute, beta_ratio,
+  -- TURBOCORE:  { micron_nominal, micron_absolute, beta_ratio,
   --               water_sep_free_pct, water_sep_emulsified_pct, dirt_capacity_g }
   -- NANOFORCE:  { micron_absolute, beta_ratio, iso_4406_target,
   --               collapse_pressure_bar, initial_restriction_kpa }
@@ -250,7 +250,7 @@ CREATE TABLE IF NOT EXISTS alternative_group (
 
   -- Identity
   group_code                  TEXT        NOT NULL,
-  -- 'HYDROCORE-2020', 'HYDROCORE-2040', 'NANOFORCE-HF250', 'SYNTRAX-CART-12'
+  -- 'TURBOCORE-2020', 'TURBOCORE-2040', 'NANOFORCE-HF250', 'SYNTRAX-CART-12'
   group_name                  TEXT        NOT NULL,
 
   -- Classification
@@ -261,7 +261,7 @@ CREATE TABLE IF NOT EXISTS alternative_group (
 
   -- What dimension differentiates members within this group
   differentiation_axis        TEXT        NOT NULL,
-  -- 'micron_rating + water_separation_efficiency'  (HYDROCORE)
+  -- 'micron_rating + water_separation_efficiency'  (TURBOCORE)
   -- 'beta_ratio + collapse_pressure'               (NANOFORCE)
   -- 'dust_efficiency + restriction_class'          (MACROCORE)
   -- 'sca_release_rate'                             (THERMACORE)
@@ -320,7 +320,7 @@ CREATE TABLE IF NOT EXISTS alternative_group_member (
 
   -- Protection level: ordinal rank within this group only.
   -- Has NO meaning across groups or technologies.
-  -- HYDROCORE-2020 level 5 ≠ NANOFORCE-HF250 level 5.
+  -- TURBOCORE-2020 level 5 ≠ NANOFORCE-HF250 level 5.
   protection_level      INTEGER     NOT NULL,
 
   -- Operational objective of this member

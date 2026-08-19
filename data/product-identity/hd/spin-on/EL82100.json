@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.3",
+  "recordType": "ELIMFILTERS_HD_PRODUCT_IDENTITY",
+  "sku": "EL82100",
+  "product": {
+    "brand": "ELIMFILTERS",
+    "filterType": "LUBE",
+    "productLabel": "Lube Filter",
+    "duty": "HD",
+    "installationType": "SPIN-ON",
+    "technology": "SINTRAX®",
+    "technologyDescriptor": "Powered Filtration",
+    "positioningLine": "TOTAL ASSET PROTECTION"
+  },
+  "crossReference": {
+    "physicalReference": {"manufacturer": "FLEETGUARD", "code": "LF3620"},
+    "catalogResolution": "LF3620 → EL82100"
+  },
+  "technicalData": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "status": "USE_DATABASE_RECORD",
+    "inheritFromApprovedCatalogRecord": true,
+    "doNotInferFromOtherSku": true
+  },
+  "artwork": {
+    "status": "FINAL_APPROVED",
+    "approvedOn": "2026-08-08",
+    "format": "DIRECT_CAN_PRINT",
+    "designation": "AUTHORIZED_PRODUCT_MASTER",
+    "print": ["OFFICIAL_ELIMFILTERS_LOGO","TOTAL ASSET PROTECTION","EL82100","Lube Filter","SINTRAX®","Powered Filtration"],
+    "visualLock": {
+      "bodyColorHex": "#414141",
+      "paintFinish": "SEMI_MATTE_INDUSTRIAL_COATING",
+      "printColorHex": "#CBCBCB",
+      "printFinish": "METALLIC_SILVER_SATIN",
+      "backgroundForMasterImage": "WHITE",
+      "geometryReference": "FLEETGUARD_LF3620",
+      "geometryLocked": true,
+      "paintLocked": true,
+      "lithographyLocked": true,
+      "skuLocked": true,
+      "legacyGermanQualityForbidden": true
+    },
+    "approvedRender": {
+      "pilotPosition": "4/20",
+      "genId": "7b73c420-cb44-4f56-9cf5-528e0fe90cd0",
+      "approvalState": "FINAL_APPROVED",
+      "approvedBy": "USER",
+      "qualityAssessment": "99_PERCENT_APPROVED"
+    }
+  },
+  "pipelineProvenance": {
+    "visualMasterPredatesStrictEditLineageEnforcement": true,
+    "userApprovalRemainsValid": true,
+    "doNotClaimV2_1RenderLineagePass": true,
+    "futureRegenerationMustUseCurrentPipeline": true,
+    "futureRegenerationRequiresEditOnly": true,
+    "futureRegenerationRequiresManifestPass": true,
+    "futureRegenerationRequiresLiveDatabaseLookup": true,
+    "futureRegenerationRequiresOfficialAssets": true
+  },
+  "workflow": {
+    "family": "HD",
+    "pilotSequence": "SPIN-ON",
+    "approvalState": "LOCKED_FOR_PRODUCTION_REFERENCE",
+    "notes": "Approved EL82100 visual master remains locked. Its user approval is preserved, while future regeneration must comply with the current fail-closed pipeline and strict edit lineage."
+  }
+}

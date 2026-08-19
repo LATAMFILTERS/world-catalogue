@@ -14,19 +14,20 @@
     "lube-oil",
     "not-in-ud"
   ],
+  "domain": null,
   "citation": {
     "source_url": "elimfilters.com (component reference — no dedicated page)",
     "concept": "Turbocharger Bearing Component",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:c014db7e6ccdf9fae27791c6558b426c015bb58ad799c4ab9c7a53ab3b651b51"
+    "content_hash": "sha256:b8d68db4c6cb1347beaaebc520d04b29429b55cc3302e71894f1b54e17c1cabb"
   },
   "canonical": {
     "definition": "Turbocharger bearing — floating-ring journal bearing with 10–25 µm clearance operating\nat 100,000–250,000 RPM — requires clean lube oil feed (ISO 4406 ≤ 19/17/14) and clean\nintake air (ISO 5011-certified filtration) to maintain the oil film thickness that\nprevents metal-to-metal contact and abrasive wear.",
     "systems": "Engine air intake and lubrication circuits; host equipment: turbocharged diesel engines in\nmining, agriculture, construction, commercial transport, and power generation",
     "failure_impact": "Particle contamination in intake air or lube oil → abrasive wear of journal bearing\nsurface → bearing clearance loss → oil film breakdown → bearing seizure →\nturbocharger failure → boost pressure loss → fuel consumption +15–25% → engine derate\n→ unplanned replacement $3,000–$15,000 per unit",
     "related_standards": "ISO 5011: Air filter efficiency test — defines protection standard for air-side\ncontamination reaching this component",
-    "related_technologies": "MACROCORE: Intake particle capture preventing air-side contamination (99.9%–99.98%\nefficiency) | SYNTRAX: Full-flow lube oil protection maintaining ISO 4406 16/14/11\ncleanliness at bearing oil feed",
+    "related_technologies": "MACROCORE: Intake particle capture preventing air-side contamination | SYNTRAX: Full-flow lube oil protection maintaining ISO 4406 16/14/11\ncleanliness at bearing oil feed",
     "industrial_role": "The turbocharger bearing is the highest-speed, smallest-clearance component in the diesel\nengine drivetrain — and therefore the most contamination-sensitive. Its protection defines\nthe performance specification for both air filtration and lube oil filtration systems."
   },
   "relationships": {
@@ -47,7 +48,7 @@
       "ISO_5011"
     ]
   },
-  "vault_path": "elimfilters-vault/06-components/TURBOCHARGER_BEARING.md",
+  "vault_path": "elimfilters-vault\\06-components\\TURBOCHARGER_BEARING.md",
   "_links": {
     "self": "/api/citation/TURBOCHARGER_BEARING.json",
     "type_index": "/api/citation/type/component.json",

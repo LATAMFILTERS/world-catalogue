@@ -1,86 +1,44 @@
-\# TECHNOLOGY\_REGISTRY
+# ELIMFILTERS CONSTITUTION
 
+Status: Active governance
 
+## Identity
 
-Status: Draft
+ELIMFILTERS is positioned as **Industrial Filtration Engineering** focused on **Asset Protection Systems**.
 
+**The filter is the means. Asset protection is the objective.**
 
+## Protection systems
 
-\## CORE TECHNOLOGIES
+1. Air Intake & Airflow Protection
+2. Fuel Cleanliness Protection
+3. Lubrication Protection
+4. Hydraulic Protection
+5. Cooling System Protection
 
+## Approved core technologies
 
+- MACROCORE™
+- MICROKAPPA™
+- DRYCORE™
+- INTEKCORE™
+- SYNTAPORE™
+- TURBOCORE™
+- SYNTRAX™
+- NANOFORCE™
+- THERMACORE™
 
-| Technology  | System                | Status |
+## Specialized solutions
 
-| ----------- | --------------------- | ------ |
+- MARINECLEAN™
+- DURATECH™
 
-| MACROCORE™  | Air Filtration        | Active |
+## DURATECH™ On-Road governance
 
-| MICROKAPPA™ | Cabin Air Filtration  | Active |
+For approved truck and commercial-vehicle applications, DURATECH™ may communicate a governed **15,000 km On-Road protection interval**, subject to ELIMFILTERS-approved application, installation and maintenance conditions.
 
-| DRYCORE™    | Air Dryer Systems     | Active |
+## Knowledge governance
 
-| INTEKCORE™  | Air Intake Housings   | Active |
+External information may validate generic industry facts internally. Public ELIMFILTERS outputs must use neutral ELIMFILTERS technical language and must not present third-party proprietary claims as ELIMFILTERS technology.
 
-| SYNTEPORE™  | Fuel Filtration       | Active |
-
-| HYDROCORE™  | Fuel Water Separation | Active |
-
-| SYNTRAX™    | Lubrication           | Active |
-
-| NANOFORCE™  | Hydraulic             | Active |
-
-| THERMACORE™ | Cooling Systems       | Active |
-
-
-
-\---
-
-
-
-\## META-TECHNOLOGIES
-
-
-
-\### MARINECLEAN™
-
-
-
-Status: Active
-
-
-
-Description:
-
-Marine Asset Protection Platform.
-
-
-
-\---
-
-
-
-\### DURATECH™
-
-
-
-Status: Active
-
-
-
-Structure:
-
-
-
-\* DURATECH™ ON ROAD
-
-\* DURATECH™ OFF ROAD
-
-
-
-Description:
-
-Severe Duty Asset Protection Platform.
-
-
-
+All public, structured-data, AI, catalogue and Knowledge Center surfaces must resolve technology names from the canonical registry.

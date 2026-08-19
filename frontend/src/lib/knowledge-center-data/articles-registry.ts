@@ -217,7 +217,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Gasket temperature range (NBR)', value: '−40 to 150°C' },
     ],
     relatedStandards: ['ISO 16889'],
-    relatedTechnologies: ['SYNTRAX™', 'DRYCORE™'],
+    relatedTechnologies: ['SYNTRAX™'],
     relatedSystems: ['Lubrication Protection', 'Hydraulic Protection'],
     keywords: ['seal integrity', 'gasket', 'bypass valve', 'anti-drain back', 'filter seal'],
   },
@@ -481,7 +481,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'What is multi-layer media construction, and what performance advantages does it provide?',
-        answer: 'Multi-layer media construction combines two or more layers of different fiber diameter and Beta efficiency into a single element. The upstream (coarse) layer captures large particles with high dirt holding capacity; the downstream (fine) layer provides the high Beta efficiency specification. This gradient structure achieves efficiency equivalent to a single fine-layer element while providing significantly higher dirt holding capacity — because large particles are arrested before reaching the fine layer. NANOFORCE multi-layer construction uses a meltblown polypropylene upstream layer (fiber diameter 5–10 µm) over a glass fiber downstream layer (fiber diameter 0.5–2 µm), achieving β10(c) ≥ 200 at 40 L/min with dirt holding capacity 2.5× higher than equivalent single-layer glass fiber elements.',
+        answer: 'Multi-layer media construction combines two or more layers of different fiber diameter and Beta efficiency into a single element. The upstream (coarse) layer captures large particles with high dirt holding capacity; the downstream (fine) layer provides the high Beta efficiency specification. This gradient structure achieves efficiency equivalent to a single fine-layer element while providing significantly higher dirt holding capacity — because large particles are arrested before reaching the fine layer. NANOFORCE multi-layer construction uses a meltblown polypropylene upstream layer (fiber diameter 5–10 µm) over a glass fiber downstream layer (fiber diameter 0.5–2 µm), rated to the Beta ratio and flow rate specified for the approved application, with higher dirt holding capacity than an equivalent single-layer glass fiber element.',
       },
     ],
     engineeringReferences: [
@@ -872,7 +872,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'How much can service intervals be extended by switching from cellulose to synthetic media?',
-        answer: 'Switching from cellulose to synthetic media enables service interval extension through two mechanisms: higher dirt holding capacity (DHC) per unit area (40–70% higher for synthetic meltblown vs cellulose at equal element volume) extends air filter intervals; and better compatibility with extended-drain oil formulations (API CK-4, ACEA E9) at high temperatures enables longer lube filter intervals. In field trials on mining haul trucks, switching to SYNTRAX synthetic lube filter elements at the same change interval reduces filter-induced bypass events by 60–80% (filter reaches terminal ΔP less frequently before the scheduled change), allowing drain interval extension from 500 to 750 hours when combined with oil analysis monitoring. Air filter intervals typically extend 30–50% with MACROCORE synthetic elements versus cellulose at the same restriction service limit.',
+        answer: 'Switching from cellulose to synthetic media enables service interval extension through two mechanisms: higher dirt holding capacity (DHC) per unit area (40–70% higher for synthetic meltblown vs cellulose at equal element volume) extends air filter intervals; and better compatibility with extended-drain oil formulations (API CK-4, ACEA E9) at high temperatures enables longer lube filter intervals. Switching to SYNTRAX synthetic lube filter elements at the same change interval can reduce filter-induced bypass events by extending the interval before terminal ΔP is reached; any specific drain-interval extension must be validated against the approved application and confirmed by oil analysis monitoring rather than assumed universally. Air filter intervals typically extend 30–50% with MACROCORE synthetic elements versus cellulose at the same restriction service limit.',
       },
       {
         question: 'What are the economic consequences of over-servicing filters in a large fleet?',
@@ -1385,7 +1385,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'What is the information architecture hierarchy that ELIMFILTERS uses to structure industrial asset protection?',
-        answer: 'The ELIMFILTERS information architecture hierarchy frames the complete engineering knowledge chain for industrial asset protection: (1) Contamination — identifying root contamination sources (silica from air intake, water from condensation, metallic wear particles, chemical degradation products); (2) Asset Degradation — mapping how each contamination type degrades specific components (abrasive wear of bearing surfaces, corrosion of valve seats, lacquer formation on servo spools); (3) Standards and Measurement — applying ISO 4406, ISO 5011, ISO 8573, and related standards to quantify contamination and set targets; (4) Protection Technologies — selecting ELIMFILTERS MACROCORE, SYNTRAX, NANOFORCE, SYNTEPORE, DRYCORE, and MICROKAPPA technologies matched to each contamination challenge; (5) Product Implementation — specifying the correct filter element for each circuit position; (6) Fleet Optimization — applying condition monitoring and interval optimization across the full asset fleet; (7) Sustainability Impact — quantifying contamination control contribution to equipment longevity, oil consumption reduction, and waste minimization.',
+        answer: 'The ELIMFILTERS information architecture hierarchy frames the complete engineering knowledge chain for industrial asset protection: (1) Contamination — identifying root contamination sources (silica from air intake, water from condensation, metallic wear particles, chemical degradation products); (2) Asset Degradation — mapping how each contamination type degrades specific components (abrasive wear of bearing surfaces, corrosion of valve seats, lacquer formation on servo spools); (3) Standards and Measurement — applying ISO 4406, ISO 5011, ISO 8573, and related standards to quantify contamination and set targets; (4) Protection Technologies — selecting ELIMFILTERS MACROCORE, SYNTRAX, NANOFORCE, SYNTAPORE, DRYCORE, and MICROKAPPA technologies matched to each contamination challenge; (5) Product Implementation — specifying the correct filter element for each circuit position; (6) Fleet Optimization — applying condition monitoring and interval optimization across the full asset fleet; (7) Sustainability Impact — quantifying contamination control contribution to equipment longevity, oil consumption reduction, and waste minimization.',
       },
       {
         question: 'How does a multi-circuit contamination failure cascade through a hydraulic mining excavator?',
@@ -1469,7 +1469,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Integrated program vs commodity', value: '3–5× lower downtime' },
     ],
     relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 5011'],
-    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™'],
+    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™'],
     relatedSystems: ['Air Intake Protection', 'Lubrication Protection', 'Hydraulic Protection', 'Fuel Cleanliness Protection'],
     keywords: ['asset protection', 'contamination budget', 'protection architecture', 'system design', 'contamination control'],
   },
@@ -2225,11 +2225,9 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Technology Mapping: Hydraulic System Protection',
-        body: 'NANOFORCE™ provides high-Beta hydraulic filtration with sub-micron particle capture at β₁₀(c) ≥ 1000. Protects proportional valve spools at 1–5 µm critical clearances in circuits targeting ISO 4406 16/14/11 to 17/15/12. SYNTRAX™ delivers high dirt-capacity synthetic media for high-volume hydraulic circuit loops, maintaining ISO 4406 cleanliness in circuits with high internally generated wear particle loads from piston pumps and motor wear. HYDROCORE™ coalescing media removes free and emulsified water from hydraulic fluid, preventing water-accelerated fluid oxidation and varnish precursor formation; applied in reservoir return-line housings. MICROKAPPA™ filters at the reservoir air exchange interface, preventing ingress contamination entering through breather ports during reservoir level changes — addressing the built-in contamination pathway during operation.',
+        body: 'NANOFORCE™ provides high-Beta hydraulic filtration with sub-micron particle capture at β₁₀(c) ≥ 1000. Protects proportional valve spools at 1–5 µm critical clearances in circuits targeting ISO 4406 16/14/11 to 17/15/12.',
         callout: [
           { label: 'NANOFORCE™ rating', value: 'β₁₀(c) ≥ 1000; servo/proportional valve circuits' },
-          { label: 'HYDROCORE™ application', value: 'Water separation in reservoir return-line housings' },
-          { label: 'MICROKAPPA™ application', value: 'Reservoir breather ingress prevention' },
         ],
       },
       {
@@ -2244,7 +2242,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Kidney-loop flow rate', value: '5–15% system volume/min' },
     ],
     relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171'],
-    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'HYDROCORE™', 'MICROKAPPA™'],
+    relatedTechnologies: ['NANOFORCE™', 'MICROKAPPA™'],
     relatedSystems: ['Hydraulic Protection'],
     keywords: ['hydraulic contamination', 'servo valve silting', 'component clearance', 'contamination sensitivity', 'ISO 4406', 'abrasive wear', 'kidney loop', 'varnish formation', 'contamination pathways'],
     commonMistakes: [
@@ -2495,7 +2493,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Microbial prevention threshold', value: '<50 ppm tank water' },
     ],
     relatedStandards: ['ASTM D6304', 'ISO 12937'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['water contamination', 'fuel systems', 'Karl Fischer', 'ASTM D6304', 'ISO 12937', 'HPCR', 'coalescing filter', 'microbial contamination'],
     commonMistakes: [
@@ -2620,7 +2618,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Filtration System Design for Quality Classes',
-        body: 'A compressed air treatment train is designed in stages, each addressing one contamination category at the conditions produced by the upstream stage. After-cooler + condensate separator: removes bulk liquid water and coarse aerosols (Stages 4–5 moisture, particle Class 4–5). General purpose coalescing filter (1 µm coalescence element): removes liquid aerosol oil to 0.1 mg/m³ and particles ≥1 µm (particle Class 2–3, oil Class 2–3). High-efficiency coalescing filter (0.01 µm coalescence element): reduces oil aerosol to 0.01 mg/m³ (oil Class 1). Activated carbon adsorber: removes oil vapour below 0.003 mg/m³ (oil Class 1). Desiccant dryer: achieves PDP ≤ −40°C (moisture Class 2). Final particulate filter (PTFE membrane or borosilicate fiber): ensures sterile or classified air downstream of all treatment stages (particle Class 1 or 2). DRYCORE™ filtration systems provide integrated particulate and coalescing elements for compressed air applications, reducing system footprint and pressure drop budget.',
+        body: 'A compressed air treatment train is designed in stages, each addressing one contamination category at the conditions produced by the upstream stage. After-cooler + condensate separator: removes bulk liquid water and coarse aerosols (Stages 4–5 moisture, particle Class 4–5). General purpose coalescing filter (1 µm coalescence element): removes liquid aerosol oil to 0.1 mg/m³ and particles ≥1 µm (particle Class 2–3, oil Class 2–3). High-efficiency coalescing filter (0.01 µm coalescence element): reduces oil aerosol to 0.01 mg/m³ (oil Class 1). Activated carbon adsorber: removes oil vapour below 0.003 mg/m³ (oil Class 1). Desiccant dryer: achieves PDP ≤ −40°C (moisture Class 2). Final particulate filter (PTFE membrane or borosilicate fiber): ensures sterile or classified air downstream of all treatment stages (particle Class 1 or 2).',
         callout: [
           { label: 'Coalescing filter achieves', value: 'Oil Class 2 (0.1 mg/m³)' },
           { label: 'High-efficiency coalescer', value: 'Oil Class 1 (0.01 mg/m³)' },
@@ -2635,7 +2633,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Refrigerant dryer PDP', value: '+2°C to +10°C' },
     ],
     relatedStandards: ['ISO 8573-1', 'ISO 29463'],
-    relatedTechnologies: ['DRYCORE™'],
+    relatedTechnologies: [],
     relatedSystems: ['Compressed Air Protection'],
     keywords: ['ISO 8573', 'compressed air purity', 'pressure dew point', 'oil aerosol', 'particle class', 'coalescing filter', 'desiccant dryer'],
     commonMistakes: [
@@ -2927,11 +2925,11 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     faqs: [
       {
         question: 'What are the particle cleanliness requirements for diesel fuel entering a common rail pump?',
-        answer: 'Common rail high-pressure fuel pumps (HPCR) require fuel cleanliness of ISO 4406 code 17/15/12 or better at the pump inlet (per Bosch Common Rail System service documentation and fuel filter qualification requirements). The pump plunger-barrel clearance is 1–3 µm; particles exceeding this size cause scoring wear on pump contact surfaces. Primary fuel filter elements for HPCR applications are rated at β10(c) ≥ 200 or better to achieve this cleanliness from typical supply fuel (ISO 18/16/13 from bulk storage). SYNTEPORE media achieves β7(c) ≥ 200, providing enhanced protection at the critical 7 µm particle size range where pump plunger wear is most sensitive.',
+        answer: 'Common rail high-pressure fuel pumps (HPCR) require fuel cleanliness of ISO 4406 code 17/15/12 or better at the pump inlet (per Bosch Common Rail System service documentation and fuel filter qualification requirements). The pump plunger-barrel clearance is 1–3 µm; particles exceeding this size cause scoring wear on pump contact surfaces. Applicable fuel-filter test methods and application requirements must be selected for the approved system — the technology name alone does not imply a universal micron rating, efficiency, capacity or certification claim. SYNTAPORE particulate media is engineered for the HPCR primary and secondary filtration role.',
       },
       {
         question: 'What is the water separation efficiency requirement for diesel fuel-water separators?',
-        answer: 'Water separation efficiency for diesel fuel-water separators is measured per ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) or SAE J1488 (Emulsified Water/Fuel Separation Test). Required separation efficiency for HPCR applications is ≥95% of emulsified water (droplets 0.5–5 µm) at rated flow rate and 40°C fuel temperature. HYDROCORE coalescing media achieves ≥98% water separation efficiency under these test conditions. The ISO 4020 test uses water-in-fuel emulsion at a defined droplet size distribution and measures downstream water content by Karl Fischer titration. Elements failing to meet 95% water separation allow free water accumulation at the common rail pump inlet — the primary mechanism for injector needle corrosion and fuel system microbial contamination propagation.',
+        answer: 'Water separation efficiency for diesel fuel-water separators is measured per ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) or SAE J1488 (Emulsified Water/Fuel Separation Test). Required separation efficiency for HPCR applications depends on the approved element and application; HYDROCORE coalescing media is rated for the required separation performance under these test conditions. The ISO 4020 test uses water-in-fuel emulsion at a defined droplet size distribution and measures downstream water content by Karl Fischer titration. Elements failing to meet the required rating allow free water accumulation at the common rail pump inlet — the primary mechanism for injector needle corrosion and fuel system microbial contamination propagation.',
       },
       {
         question: 'What is the effect of low-temperature wax crystal formation on fuel filter performance?',
@@ -3056,7 +3054,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Housing burst safety factor', value: '6× working pressure (ISO 4020)' },
     ],
     relatedStandards: ['ASTM D6304', 'ISO 12937'],
-    relatedTechnologies: ['SYNTEPORE™', 'HYDROCORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['SYNTAPORE™', 'HYDROCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['diesel fuel filtration', 'ISO 4020', 'HPCR', 'water separation', 'coalescing filter', 'fuel cleanliness', 'cold filter plugging point', 'EN 590'],
     fieldDiagnostics: {
@@ -3284,11 +3282,10 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Technology Selection for Operating Environment',
-        body: 'MACROCORE™ provides Progressive Density Gradient (PDG) filtration media achieving 99.9%–99.98% efficiency (ISO 5011) for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. MACROCORE™ is the primary protection for mining-class and agricultural engine applications. INTEKCORE™ is the filter housing system engineered to eliminate bypass air paths at element seating faces, end caps, and housing joints — addressing the single-largest source of ingress contamination outside filter media failure: seal and gasket bypass allowing unfiltered air to reach the intake manifold around the element periphery. SYNTEPORE™ all-synthetic intake filter media is applied in high-humidity environments where cellulose media is susceptible to moisture-induced strength loss and efficiency degradation — marine-adjacent, tropical, and coastal agricultural environments where conventional cellulose elements fail structurally before reaching rated dust capacity.',
+        body: 'MACROCORE™ provides multi-layer filtration media rated per ISO 5011 for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. MACROCORE™ is the primary protection for mining-class and agricultural engine applications. INTEKCORE™ is the filter housing system engineered to eliminate bypass air paths at element seating faces, end caps, and housing joints — addressing the single-largest source of ingress contamination outside filter media failure: seal and gasket bypass allowing unfiltered air to reach the intake manifold around the element periphery.',
         callout: [
           { label: 'MACROCORE™ efficiency', value: '99.9%–99.98% (ISO 5011) for off-highway engines' },
           { label: 'INTEKCORE™ function', value: 'Zero-bypass housing integrity at sealing interfaces' },
-          { label: 'SYNTEPORE™ application', value: 'High-humidity environments replacing cellulose media' },
         ],
       },
       {
@@ -3303,7 +3300,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Pre-cleaner life extension', value: '3–10× primary element life' },
     ],
     relatedStandards: ['ISO 5011', 'ISO 29463', 'SAE J1539'],
-    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™', 'SYNTEPORE™'],
+    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™'],
     relatedSystems: ['Air Intake Protection'],
     keywords: ['air intake system', 'pre-cleaner', 'primary element', 'safety element', 'service indicator', 'ISO 5011', 'airflow sizing', 'two-stage filtration', 'dust ingestion', 'abrasive wear'],
     fieldDiagnostics: {
@@ -3372,7 +3369,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     faqs: [
       {
         question: 'What is the recommended ISO 4406 cleanliness target for heavy-duty diesel engine lube oil?',
-        answer: 'ISO 4406 cleanliness targets for heavy-duty diesel engine lube oil are typically specified by engine manufacturers as ISO 4406 code 18/16/13 for main bearing oil supply — the bearing journal clearances (20–80 µm) are significantly larger than hydraulic component clearances, making lube systems tolerant of coarser contamination than hydraulic circuits. However, turbocharged engines with VGT (variable geometry turbocharger) actuators, variable valve timing systems, and fuel injection timing advance mechanisms have internal hydraulic actuators requiring cleanliness of 16/14/11 or better. Lube filtration targeting overall system cleanliness of 17/15/12 provides adequate protection for all engine subsystems including these precision actuators, using SYNTRAX media-equipped elements achieving β10(c) ≥ 200 at rated lube oil flow.',
+        answer: 'ISO 4406 cleanliness targets for heavy-duty diesel engine lube oil are typically specified by engine manufacturers as ISO 4406 code 18/16/13 for main bearing oil supply — the bearing journal clearances (20–80 µm) are significantly larger than hydraulic component clearances, making lube systems tolerant of coarser contamination than hydraulic circuits. However, turbocharged engines with VGT (variable geometry turbocharger) actuators, variable valve timing systems, and fuel injection timing advance mechanisms have internal hydraulic actuators requiring cleanliness of 16/14/11 or better. Lube filtration targeting overall system cleanliness of 17/15/12 provides adequate protection for all engine subsystems including these precision actuators, using SYNTRAX media-equipped elements selected to the Beta ratio and cleanliness code specified for the approved application.',
       },
       {
         question: 'What is the function of the centrifugal oil cleaner installed on some heavy-duty engines?',
@@ -3392,7 +3389,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'What type of filter media is optimal for varnish precursor removal from turbine and circulation lube systems?',
-        answer: 'Varnish precursor removal from high-temperature lube systems (gas turbines, large diesel generators) requires electrostatic or depth-loading fine fiber media rather than surface-loading media. Varnish precursors are polar molecules and oligomeric degradation products, typically 0.1–2 µm equivalent diameter. Electrostatic media (charged fiber, similar to HEPA electrospun media) captures these polar molecules via electrostatic attraction — charge is retained for 500–1,000 hours before neutralisation by polar oil degradation products. Alternatively, kidney-loop filtration with β2(c) ≥ 200 media (similar to SYNTRAX applied to lube oil circuits) plus a selective adsorption media (diatomite or activated alumina for polar species) reduces varnish potential (measured by MPC — Membrane Patch Colorimetry, ASTM D7843) from high-risk (MPC patch ΔE >40) to low-risk (ΔE <15) within 200–500 operating hours.',
+        answer: 'Varnish precursor removal from high-temperature lube systems (gas turbines, large diesel generators) requires electrostatic or depth-loading fine fiber media rather than surface-loading media. Varnish precursors are polar molecules and oligomeric degradation products, typically 0.1–2 µm equivalent diameter. Electrostatic media (charged fiber, similar to HEPA electrospun media) captures these polar molecules via electrostatic attraction — charge is retained for 500–1,000 hours before neutralisation by polar oil degradation products. Alternatively, kidney-loop filtration with high-efficiency depth-loading media (a configuration principle SYNTRAX architecture can support when applied to lube oil circuits) plus a selective adsorption media (diatomite or activated alumina for polar species) reduces varnish potential (measured by MPC — Membrane Patch Colorimetry, ASTM D7843) from high-risk (MPC patch ΔE >40) to low-risk (ΔE <15) within 200–500 operating hours.',
       },
       {
         question: 'How is lube filter housing seal integrity verified without disassembly?',
@@ -4006,7 +4003,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'How does the surface energy of filter media fiber affect water separation in fuel and hydraulic systems?',
-        answer: 'Fiber surface energy determines whether water droplets wet the fiber surface (hydrophilic) or bead off (hydrophobic). Hydrophilic media — cellulose, untreated glass fiber — absorbs water from petroleum fluid and allows water to coat fiber surfaces; this can cause elevated pressure drop in the presence of free water without effective water-oil separation. Hydrophobic media — polyester, polypropylene, PTFE-treated glass fiber — causes water droplets from fuel/oil emulsions to coalesce at fiber contacts, growing into larger droplets that settle under gravity to the water bowl. HYDROCORE coalescing media uses a hydrophobic surface treatment that achieves >98% free water separation efficiency from diesel fuel emulsions at 0.5–5 µm droplet size range, as tested per ISO 4020. Surface hydrophobicity is verified by contact angle measurement: >90° contact angle (water droplet beads on surface) confirms hydrophobic treatment; <30° (water spreads on surface) confirms hydrophilic.',
+        answer: 'Fiber surface energy determines whether water droplets wet the fiber surface (hydrophilic) or bead off (hydrophobic). Hydrophilic media — cellulose, untreated glass fiber — absorbs water from petroleum fluid and allows water to coat fiber surfaces; this can cause elevated pressure drop in the presence of free water without effective water-oil separation. Hydrophobic media — polyester, polypropylene, PTFE-treated glass fiber — causes water droplets from fuel/oil emulsions to coalesce at fiber contacts, growing into larger droplets that settle under gravity to the water bowl. HYDROCORE coalescing media uses a hydrophobic surface treatment engineered for free water separation from diesel fuel emulsions, tested per ISO 4020 against the required rating for the approved application. Surface hydrophobicity is verified by contact angle measurement: >90° contact angle (water droplet beads on surface) confirms hydrophobic treatment; <30° (water spreads on surface) confirms hydrophilic.',
       },
       {
         question: 'What is the significance of fiber orientation in filter media performance?',
@@ -4086,7 +4083,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Media Selection for Specific Filtration Domains',
-        body: 'Engine lube oil filtration: synthetic gradient media with β₁₅(c) ≥ 12 at minimum; extended drain applications require β₁₅(c) ≥ 50 and DHC ≥ 50 g (SYNTRAX™ architecture). Hydraulic filtration: glass fibre or high-efficiency synthetic, β₃(c) ≥ 200 for servo-valve protection; kidney-loop circuits: β₅(c) ≥ 75 (NANOFORCE™ architecture). Fuel filtration HPCR: coalescing-capable synthetic media with β₃(c) ≥ 200 for particles, plus water coalescing layer; ASTM D6304 water removal verification required (SYNTEPORE™ architecture). Air filtration: cellulose-glass composite or synthetic pleated media; ISO 5011 efficiency test; primary element β₃(c) per ISO 5011 at rated face velocity (MACROCORE™ architecture).',
+        body: 'Engine lube oil filtration: synthetic gradient media selected to the Beta ratio and dirt-holding capacity specified for the approved application and drain interval (SYNTRAX™ architecture). Hydraulic filtration: glass fibre or high-efficiency synthetic, rated to the Beta ratio specified for servo-valve protection and kidney-loop circuit requirements of the approved application (NANOFORCE™ architecture). Fuel filtration HPCR: particulate-capable synthetic media for primary and secondary particle removal (SYNTAPORE™ architecture); a separate coalescing water-separation stage handles free and emulsified water removal. Air filtration: cellulose-glass composite or synthetic pleated media; ISO 5011 efficiency test; primary element β₃(c) per ISO 5011 at rated face velocity (MACROCORE™ architecture).',
       },
       {
         heading: 'End-Cap and Sealing Engineering',
@@ -4105,7 +4102,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'ISO 2941 collapse test multiplier', value: '10× rated working Δp' },
     ],
     relatedStandards: ['ISO 16889', 'ISO 11171', 'ISO 2941', 'ISO 2942', 'ISO 3968', 'ISO 5011'],
-    relatedTechnologies: ['SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'MACROCORE™'],
+    relatedTechnologies: ['SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™', 'MACROCORE™'],
     relatedSystems: ['Lubrication Protection', 'Hydraulic Protection', 'Fuel Cleanliness Protection', 'Air Intake Protection'],
     keywords: [
       'filter media engineering', 'beta ratio', 'ISO 16889', 'dirt holding capacity', 'glass fibre media',
@@ -4176,7 +4173,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       version: '1.0',
       lastEngineeringReview: '2026-07-05',
       nextScheduledReview: '2027-01-05',
-      responsibleRegistry: 'EDL-TECHNOLOGIES (SYNTRAX, NANOFORCE, SYNTEPORE, MACROCORE)',
+      responsibleRegistry: 'EDL-TECHNOLOGIES (SYNTRAX, NANOFORCE, SYNTAPORE, MACROCORE)',
       evidenceStatus: 'ISO 16889:2022 verified; ISO 2941:2010 verified; ISO 2942:2014 verified; fibre diameter ranges from published media engineering literature; DHC estimates from ISO 16889 multi-pass test data',
     },
   },
@@ -4302,7 +4299,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Marine engine oil drain (large bore)', value: '2,000+ hours typical' },
     ],
     relatedStandards: ['ISO 8217', 'ASTM D6304', 'ISO 19438', 'ISO 4020', 'ISO 17359', 'ASTM D7468'],
-    relatedTechnologies: ['MARINECLEAN™', 'HYDROCORE™', 'SYNTEPORE™', 'SYNTRAX™'],
+    relatedTechnologies: ['MARINECLEAN™', 'HYDROCORE™', 'SYNTAPORE™', 'SYNTRAX™'],
     relatedSystems: ['Fuel Cleanliness Protection', 'Lubrication Protection'],
     keywords: [
       'marine diesel filtration', 'ISO 8217', 'MARPOL sulphur', 'saltwater contamination',
@@ -4833,7 +4830,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
     metaDescription: 'Engineering reference for filter housing system integration: housing material selection, ISO 3923 mounting thread specification, O-ring sealing and torque requirements, bypass valve installation, service access engineering, and INTEKCORE™ housing system architecture for industrial filtration applications.',
     category: 'engineering',
     readTime: '11 min',
-    intro: 'Filter housing engineering determines whether a correctly-specified filter element delivers its rated performance in service. Incorrect housing material selection, inadequate sealing, improper installation torque, and poor service access design are responsible for a significant proportion of field filtration failures — failures that produce no differential pressure signal and are often misidentified as element performance failures. INTEKCORE™ housing system architecture applies engineered housing solutions across hydraulic, lubrication, fuel, and compressed air filtration domains.',
+    intro: 'Filter housing engineering determines whether a correctly-specified filter element delivers its rated performance in service. Incorrect housing material selection, inadequate sealing, improper installation torque, and poor service access design are responsible for a significant proportion of field filtration failures — failures that produce no differential pressure signal and are often misidentified as element performance failures. INTEKCORE™ housing system architecture addresses this for air-cleaner housings, ensuring MACROCORE™ elements seat and seal correctly across the intake boundary.',
     sections: [
       {
         heading: 'Housing Material Selection',
@@ -5074,7 +5071,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Breather improvement factor', value: 'β₃ vs β₂₅: ~10³× ingression reduction' },
     ],
     relatedStandards: ['ISO 4406', 'ISO 16889', 'ISO 11171', 'ISO 16232', 'ISO 23309'],
-    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'MACROCORE™', 'SYNTEPORE™'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'MACROCORE™'],
     relatedSystems: ['Hydraulic Protection', 'Lubrication Protection', 'Air Intake Protection'],
     keywords: [
       'contamination ingression rate', 'cleanliness budget', 'ISO 4406 modelling', 'filter sizing',
@@ -5620,7 +5617,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Cabin Safety Application — ISO 11155',
-        body: 'ISO 11155-1 and -2 define the cabin air filtration system requirements for road vehicles and related equipment, referencing ISO 29463/EN 1822 filter efficiency classes. Minimum efficiency requirements for operator protection from fine particulate (PM₂.₅) in agricultural and construction environments: recirculation air filter: Class E11 (≥95% efficiency at MPPS); fresh air intake filter: Class E12 (≥99.5% efficiency at MPPS) where cabin is used for pesticide application protection; or Class H13 (≥99.95%) where carbon filter systems require high-efficiency pre-filter to prevent carbon bed bypass. PM₂.₅ penetrates deeply into alveolar lung tissue — particles 0.1–2.5 µm in diameter (which includes MPPS range) are the most damaging size range. A cabin pressurised with an E12-class filter at positive 10–30 Pa reduces operator PM₂.₅ exposure by ≥99.5% compared to ambient — the critical performance criterion for occupational health compliance. MICROKAPPA™ cabin filter architecture is designed to meet H13-class efficiency (≥99.95% at MPPS) for the highest-protection applications.',
+        body: 'ISO 11155-1 and -2 define the cabin air filtration system requirements for road vehicles and related equipment, referencing ISO 29463/EN 1822 filter efficiency classes. Minimum efficiency requirements for operator protection from fine particulate (PM₂.₅) in agricultural and construction environments: recirculation air filter: Class E11 (≥95% efficiency at MPPS); fresh air intake filter: Class E12 (≥99.5% efficiency at MPPS) where cabin is used for pesticide application protection; or Class H13 (≥99.95%) where carbon filter systems require high-efficiency pre-filter to prevent carbon bed bypass. PM₂.₅ penetrates deeply into alveolar lung tissue — particles 0.1–2.5 µm in diameter (which includes MPPS range) are the most damaging size range. A cabin pressurised with an E12-class filter at positive 10–30 Pa reduces operator PM₂.₅ exposure by ≥99.5% compared to ambient — the critical performance criterion for occupational health compliance. MICROKAPPA™ cabin filter architecture is designed to meet the efficiency class specified for the approved application, up to H13-class for the highest-protection applications.',
         callout: [
           { label: 'Minimum recirculation', value: 'E11 (≥95% at MPPS)' },
           { label: 'Pesticide protection', value: 'E12 (≥99.5% at MPPS)' },
@@ -5648,7 +5645,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'DEHS test aerosol', value: 'Di-ethyl-hexyl sebacate (ISO 29463-2)' },
     ],
     relatedStandards: ['ISO 29463', 'EN 1822', 'ISO 11155', 'ISO 14644', 'ISO 8573-1'],
-    relatedTechnologies: ['MICROKAPPA™', 'DRYCORE™'],
+    relatedTechnologies: ['MICROKAPPA™'],
     relatedSystems: ['Air Intake Protection'],
     keywords: [
       'ISO 29463', 'EN 1822', 'HEPA filter', 'ULPA filter', 'MPPS most penetrating particle size',
@@ -5934,7 +5931,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'How is lube filter efficiency verified at elevated temperatures per ISO 4548?',
-        answer: 'ISO 4548-5 specifies efficiency testing at 25±2°C test oil temperature, which does not represent engine operating conditions (80–120°C oil temperature). High-temperature efficiency testing is conducted as a supplementary test (not required by ISO 4548-5 but required by some OEM specifications) by heating the test oil to 80°C or 100°C and repeating the efficiency measurement. At elevated temperature, oil viscosity decreases from approximately 100 cSt (25°C) to 15–20 cSt (80°C), reducing inertial capture efficiency and increasing particle penetration through the media. Beta ratio at 80°C can be 20–40% lower than at 25°C for the same element. ELIMFILTERS SYNTRAX elements maintain Beta ratio within 15% across 25–100°C test range due to the combined inertial and electrostatic capture mechanisms in the synthetic media — cellulose elements show larger Beta ratio reductions with temperature.',
+        answer: 'ISO 4548-5 specifies efficiency testing at 25±2°C test oil temperature, which does not represent engine operating conditions (80–120°C oil temperature). High-temperature efficiency testing is conducted as a supplementary test (not required by ISO 4548-5 but required by some OEM specifications) by heating the test oil to 80°C or 100°C and repeating the efficiency measurement. At elevated temperature, oil viscosity decreases from approximately 100 cSt (25°C) to 15–20 cSt (80°C), reducing inertial capture efficiency and increasing particle penetration through the media. Beta ratio at 80°C can be 20–40% lower than at 25°C for the same element. ELIMFILTERS SYNTRAX synthetic media is engineered for reduced Beta ratio sensitivity to temperature relative to cellulose media across the ISO 4548-5 supplementary high-temperature test range; the actual Beta ratio retention for a given element must be verified against its qualification test report.',
       },
       {
         question: 'What is the ISO 4548-3 test for flow characteristics of by-pass valves?',
@@ -6586,7 +6583,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Pre-Filtration Requirements for Drying Systems',
-        body: 'All dryer types require upstream filtration to protect the dryer from oil and particulate contamination. Required pre-filtration sequence before a refrigeration or desiccant dryer: (1) bulk liquid separator (coalescing filter): removes bulk liquid water and oil droplets from compressor aftercooler discharge; rated efficiency ≥99.9% for liquid droplets at rated flow; (2) coalescing filter (pre-filter): removes oil aerosol to ISO 8573-1 Class 2 oil content (≤0.1 mg/m³) or better. After the dryer, post-filtration removes any desiccant particles (desiccant dryers) or downstream pipe contamination: (3) particulate filter: ISO 8573-1 Class 1 or 2 particle content. For point-of-use applications requiring oil-free air (pharmaceutical, food grade, electronics): (4) activated carbon filter: removes oil vapour to ≤0.003 mg/m³ (ISO 8573-1 Class 1 oil). DRYCORE™ filtration architecture addresses this pre- and post-dryer filtration requirement, combining high-efficiency coalescing (oil aerosol removal) with downstream particulate filtration in a single station design.',
+        body: 'All dryer types require upstream filtration to protect the dryer from oil and particulate contamination. Required pre-filtration sequence before a refrigeration or desiccant dryer: (1) bulk liquid separator (coalescing filter): removes bulk liquid water and oil droplets from compressor aftercooler discharge; rated efficiency ≥99.9% for liquid droplets at rated flow; (2) coalescing filter (pre-filter): removes oil aerosol to ISO 8573-1 Class 2 oil content (≤0.1 mg/m³) or better. After the dryer, post-filtration removes any desiccant particles (desiccant dryers) or downstream pipe contamination: (3) particulate filter: ISO 8573-1 Class 1 or 2 particle content. For point-of-use applications requiring oil-free air (pharmaceutical, food grade, electronics): (4) activated carbon filter: removes oil vapour to ≤0.003 mg/m³ (ISO 8573-1 Class 1 oil).',
       },
       {
         heading: 'Dew Point Monitoring — ISO 8573-3',
@@ -6605,7 +6602,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Chilled mirror dew point accuracy', value: '±0.1°C PDP (reference grade)' },
     ],
     relatedStandards: ['ISO 8573-1', 'ISO 8573-3', 'ISO 8573-2', 'ISO 12500-1'],
-    relatedTechnologies: ['DRYCORE™'],
+    relatedTechnologies: [],
     relatedSystems: ['Air Intake Protection'],
     keywords: [
       'compressed air dryer', 'ISO 8573-1', 'pressure dew point', 'refrigeration dryer',
@@ -7975,7 +7972,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'What is the DHC-to-rated-flow ratio used for filter selection in contamination budgets?',
-        answer: 'The DHC-to-rated-flow ratio provides a simple filter selection metric for contamination budget calculations: ratio = DHC (g) / Q_rated (L/min). Higher ratio = more contamination absorbed per unit flow rate = longer service intervals at a given ingression rate. Typical values: cellulose lube filter β10(c) ≈ 20: DHC/Q ratio 0.3–0.8 g/L; SYNTRAX synthetic lube filter β10(c) ≈ 200: DHC/Q ratio 1.5–4.0 g/L; NANOFORCE hydraulic filter β6(c) ≈ 200: DHC/Q ratio 0.5–2.0 g/L. For a contamination budget calculation with ingression rate I = 0.3 mg/hour and target 1,000-hour service interval: required DHC = 0.3 × 1,000/1,000 × rated flow rate (g). If rated flow = 40 L/min, required DHC = 12 g. Element with DHC/Q ratio = 0.5 g/L × 40 L/min = 20 g DHC provides 20/0.3 = 67 hours × rated flow ... the calculation illustrates that DHC/Q ratio directly scales service interval.',
+        answer: 'The DHC-to-rated-flow ratio provides a simple filter selection metric for contamination budget calculations: ratio = DHC (g) / Q_rated (L/min). Higher ratio = more contamination absorbed per unit flow rate = longer service intervals at a given ingression rate. Illustrative values: cellulose lube filter β10(c) ≈ 20: DHC/Q ratio 0.3–0.8 g/L; a high-efficiency synthetic lube filter element (such as SYNTRAX™ architecture, at the Beta ratio specified for the approved application) can achieve a substantially higher DHC/Q ratio; a NANOFORCE hydraulic filter element at the Beta ratio specified for the approved application can achieve a DHC/Q ratio in the range typical of high-efficiency synthetic hydraulic media. For a contamination budget calculation with ingression rate I = 0.3 mg/hour and target 1,000-hour service interval: required DHC = 0.3 × 1,000/1,000 × rated flow rate (g). If rated flow = 40 L/min, required DHC = 12 g. Element with DHC/Q ratio = 0.5 g/L × 40 L/min = 20 g DHC provides 20/0.3 = 67 hours × rated flow ... the calculation illustrates that DHC/Q ratio directly scales service interval.',
       },
       {
         question: 'What is the collapse pressure test in ISO 16889:2022, and how is it verified?',
@@ -8276,7 +8273,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Solid Particle Min Sample', value: '≥1,000 L gravimetric (ISO 8573-4)' },
     ],
     relatedStandards: ['ISO 8573-1', 'ISO 8573-2', 'ISO 8573-4', 'ISO 8573-7', 'ISO 11171'],
-    relatedTechnologies: ['DRYCORE™'],
+    relatedTechnologies: [],
     relatedSystems: ['Air Intake Protection'],
     keywords: ['compressed air quality', 'ISO 8573-4', 'ISO 8573-5', 'ISO 8573-7', 'ISO 8573-2', 'oil aerosol measurement', 'oil vapour GC-FID', 'microbiological contamination', 'CFU per cubic metre', 'isokinetic sampling', 'compressed air audit', 'ISO 8573-1 verification'],
     fieldDiagnostics: {
@@ -8467,7 +8464,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Biodiesel Max Blend', value: 'B7 (EN 590:2022)' },
     ],
     relatedStandards: ['ISO 23369', 'ISO 12156-1', 'ASTM D6304', 'EN 590', 'ASTM D975', 'ISO 12937'],
-    relatedTechnologies: ['SYNTEPORE™', 'HYDROCORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['SYNTAPORE™', 'HYDROCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['HPCR fuel system', 'common rail injection', 'ISO 23369', 'ISO 12156-1 HFRR', 'fuel filter beta ratio', 'fuel cleanliness', 'water contamination fuel', 'ASTM D6304', 'EN 590', 'ULSD lubricity', 'fuel injection cleanliness', 'diesel fuel specification'],
     fieldDiagnostics: {
@@ -8658,7 +8655,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Element Replacement Interval', value: '1,000–2,000 operating hours' },
     ],
     relatedStandards: ['SAE J1243', 'ISO 29463', 'ISO 5011'],
-    relatedTechnologies: ['MACROCORE™', 'DRYCORE™'],
+    relatedTechnologies: ['MACROCORE™'],
     relatedSystems: ['Air Intake Protection', 'Lubrication Protection'],
     keywords: ['crankcase ventilation', 'blow-by filtration', 'CCV separator', 'SAE J1243', 'oil aerosol separator', 'coalescing media', 'MPPS', 'crankcase pressure', 'closed CCV', 'EPA 40 CFR Part 86', 'oil carryover', 'coalescing filter'],
     fieldDiagnostics: {

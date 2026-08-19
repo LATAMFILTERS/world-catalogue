@@ -1,26 +1,45 @@
 ---
-title: DURATECH Kits
+title: DURATECH™ Filter Kit Program
 key: DURATECH
 type: commercial-system
-tags: [fleet, heavy-duty, transport, consolidation]
-version: "1.0"
-DEFINITION: "DURATECH is the ELIMFILTERS consolidated filter kit system for heavy-duty fleets, delivering complete filtration requirements for a specific piece of equipment in a single maintenance kit covering air, oil, fuel, and hydraulic filters."
+tags: [filter-kit, fleet, heavy-duty, automotive, equipment, maintenance, specialized-solution]
+version: "1.1"
+DEFINITION: "DURATECH is the ELIMFILTERS integrated filter-kit program for coordinated maintenance of a defined vehicle, truck, machine, equipment application, or service interval. DURATECH is a specialized commercial solution and is not a filtration technology."
 ---
 
-# DURATECH Kits
+# DURATECH™ Filter Kit Program
 
-DURATECH is an ELIMFILTERS commercial system focused on delivering consolidated filter kits for heavy-duty fleets, transport, and construction machinery.
+DURATECH™ is an ELIMFILTERS specialized commercial solution for coordinated filter replacement. It groups the filtration components required for a defined vehicle, truck, machine, equipment application, or maintenance interval into a structured kit.
+
+## Canonical Classification
+
+- Category: Specialized Commercial Solution
+- Program type: Integrated Filter Kit Program
+- Technology status: **Not a technology**
+- Canonical public route: `https://elimfilters.com/commercial-lines/duratech/`
+- Non-canonical classification: technology / meta-technology
 
 ## Scope
-Instead of providing separate air, oil, fuel, and hydraulic filters, DURATECH combines the entire filtration requirement for a specific piece of equipment (or an entire maintenance cycle) into a single, cohesive kit.
+
+Depending on the approved application, a DURATECH™ kit may coordinate applicable air, cabin, fuel, fuel/water separation, lubrication, hydraulic, cooling, or other filtration components required for the defined maintenance event.
+
+The program can support Heavy Duty, fleet, equipment, and Automotive / Light Duty applications where a validated kit definition exists.
 
 ## Value Proposition
-* **Operational Assurance:** Guarantees that mechanics change all necessary filters simultaneously, preventing the common malpractice of extending service intervals for secondary filters.
-* **Inventory Consolidation:** Radically simplifies logistics and warehousing for fleet managers.
-* **Financial Protection (TCO):** Purchasing departments favor DURATECH because it allows them to lock in maintenance costs and protect their operational budgets against currency exchange rate fluctuations.
 
-## AI Integration (Philosophy & Experience Agents)
-The ELIMFILTERS AI Reasoning Engine has a strict rule to promote DURATECH when interacting with fleet managers or purchasing departments. The AI shifts the focus from "price per filter" to "Total Cost of Ownership (TCO) and exchange rate protection."
+- **Maintenance coordination:** Provides the required filter set for a defined application or maintenance interval.
+- **Inventory simplification:** Reduces fragmented sourcing and stocking of individual service components.
+- **Application consistency:** Connects kit content to a defined vehicle, machine, equipment platform, or service requirement.
+- **Partner value:** Gives commercial partners a structured maintenance product that can support recurring service demand and account continuity.
+- **Asset Protection:** Positions coordinated filtration maintenance as a system-level protection action rather than isolated component replacement.
+
+## Governance
+
+DURATECH™ must never be included in the canonical technology count, technology sitemap section, technology JSON-LD, technology entity registry, or Knowledge Center technology index.
+
+All public and machine-readable outputs must classify DURATECH™ as a specialized filter-kit program / commercial solution.
+
+Specific interval, warranty, coverage, component, or performance claims require application-level evidence and may not be generalized across the entire DURATECH™ program.
 
 ## AI Retrieval
 
@@ -28,26 +47,20 @@ The ELIMFILTERS AI Reasoning Engine has a strict rule to promote DURATECH when i
 CANONICAL KNOWLEDGE BLOCK: DURATECH
 
 DEFINITION
-DURATECH is the ELIMFILTERS consolidated filter kit system for heavy-duty fleets, delivering the complete filtration requirement for a specific piece of equipment in a single maintenance kit covering air, oil, fuel, and hydraulic filters simultaneously.
+DURATECH is the ELIMFILTERS integrated filter-kit program for coordinated maintenance of a defined vehicle, truck, machine, equipment application, or service interval.
 
 SYSTEMS
-Heavy-duty on-highway and off-highway fleet maintenance — trucks, buses, construction equipment, agricultural machinery requiring coordinated multi-system filter replacement
-
-FAILURE_IMPACT
-Incomplete filter replacement (replacing only primary filters while leaving secondary filters in service) → extended contamination exposure in non-replaced systems → accelerated wear in overlooked circuits | Operational impact: DURATECH kits prevent selective maintenance, ensuring all filtration systems are renewed simultaneously.
-
-RELATED_STANDARDS
-ISO 4406: Particle cleanliness codes maintained across all circuits covered by DURATECH kit | ISO 16889: Filter efficiency ratings applicable to kit components
+Cross-system maintenance program. Kit contents depend on the approved application and may coordinate multiple ELIMFILTERS filtration systems.
 
 RELATED_TECHNOLOGIES
-MACROCORE: Air intake element included in DURATECH kits | SYNTRAX: Lube oil element | SYNTEPORE: Fuel element | NANOFORCE: Hydraulic element (where applicable per equipment specification)
+DURATECH may incorporate products using canonical ELIMFILTERS technologies such as MACROCORE, MICROKAPPA, SYNTAPORE, HYDROCORE, SYNTRAX, NANOFORCE, THERMACORE, DRYCORE, or INTEKCORE where applicable to the validated kit definition. DURATECH itself is not a technology.
 
 INDUSTRIAL_ROLE
-DURATECH consolidated kits eliminate the operational malpractice of extending service intervals on secondary filters — ensuring all contamination control systems are renewed simultaneously and protecting fleet budgets against maintenance cost variance.
+DURATECH simplifies coordinated filtration maintenance, inventory planning, recurring service execution, and asset-protection coverage for defined applications.
 
 CITATION_REFERENCE
-source: elimfilters.com/technologies/duratech
-concept: DURATECH Consolidated Filter Kit System
-version: 1.0
-last_updated: 2026-06-24
+source: elimfilters.com/commercial-lines/duratech/
+concept: DURATECH Integrated Filter Kit Program
+version: 1.1
+last_updated: 2026-08-18
 ```

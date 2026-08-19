@@ -4,133 +4,45 @@
   "name": "NANOFORCE™",
   "slug": "nanoforce",
   "status": "active",
-  "in_unified_data": true,
-  "ud_key": "NANOFORCE",
-  "tags": [
-    "technology",
-    "active",
-    "lube-oil",
-    "hydraulic",
-    "in-ud",
-    "part-search-node"
-  ],
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [],
+  "domain": "Hydraulic",
   "citation": {
-    "source_url": "elimfilters.com/knowledge-center/technologies/nanoforce",
-    "concept": "NANOFORCE Sub-Micron Lube and Hydraulic Filtration",
-    "version": "1.0",
-    "last_updated": "2026-06-03",
-    "content_hash": "sha256:860c35bc115c6fd1f2b282f6a667ecf76c27456a49ff90d505b570b16029f2f1"
+    "source_url": "https://elimfilters.com/knowledge-center/technologies/nanoforce/",
+    "concept": "NANOFORCE Hydraulic Filtration Technology",
+    "version": "2.0",
+    "last_updated": "2026-08-14",
+    "content_hash": "sha256:d0f0290c12397153447e0e80a47e56244aa8768895cfbd8681ad9b3a96dbb822"
   },
   "canonical": {
-    "definition": "NANOFORCE is a sub-micron lube oil and hydraulic fluid filtration technology deployed in kidney-loop or bypass circuit configurations, achieving ISO 4406 cleanliness codes of 15/13/10 or better through Beta(x[c]) ≥ 1000 efficiency at 5 µm absolute — targeting the 1–5 µm particle size range that conventional full-flow filters pass and that is the primary abrasive threat at precision bearing clearances.",
-    "systems": "Engine lube oil kidney-loop circuits, hydraulic fluid bypass circuits, transmission fluid polishing circuits across diesel-powered heavy equipment and industrial power systems",
-    "failure_impact": "Sub-micron particles (1–5 µm) bypass conventional full-flow filters and recirculate in oil → abrasive wear at journal bearing hydrodynamic film interfaces (15–50 µm clearance) → progressive clearance increase → oil film breakdown at load peaks → bearing fatigue and seizure | Operational impact: bearing life at ISO 4406 15/13/10 is 5–8× greater than commodity filtration at 19/17/14; proportional valve failure rate in hydraulics at 15/13/10 is 70–80% lower than at 17/15/12.",
-    "related_standards": "ISO 4406: Three-number cleanliness code; NANOFORCE targets 15/13/10 by removing sub-micron particle counts across ≥4/≥6/≥14 µm thresholds | ISO 16889: Multi-pass Beta ratio test; NANOFORCE rated Beta(x[c]) ≥ 1000 at 5 µm absolute",
-    "related_technologies": "SYNTRAX: Complementary full-flow lube technology providing primary particle capture above 10 µm; NANOFORCE polishes below this threshold | MACROCORE: Air-side intake protection reducing contamination load entering lube circuit via blow-by | HYDROCORE: Parallel technology for water contamination removal in hydraulic and fuel circuits",
-    "industrial_role": "NANOFORCE addresses the sub-micron particle fraction — the portion of oil contamination below conventional filter thresholds — that determines whether precision components (proportional valves, journal bearings, injection systems) achieve their designed service life or fail prematurely; at ISO 4406 15/13/10 versus 19/17/14, bearing life increases 5–8× and hydraulic valve reliability improves 70–80%."
+    "definition": "NANOFORCE is the ELIMFILTERS hydraulic filtration architecture for contamination control in fluid-power systems.",
+    "systems": "Hydraulic Protection; approved hydraulic fluid-power filtration applications.",
+    "failure_impact": "Uncontrolled hydraulic-fluid contamination can accelerate wear, contribute to valve stiction and reduce the precision and reliability of fluid-power components.",
+    "related_standards": "ISO 16889 provides a recognized multi-pass test method for hydraulic filter performance. ISO 4406 provides a recognized fluid-cleanliness coding framework. Application-specific targets and performance values must be established from approved engineering requirements; the technology name alone does not imply a universal Beta ratio or cleanliness code.",
+    "related_technologies": "SYNTRAX is the ELIMFILTERS lubrication technology and must not be represented as a NANOFORCE stage. HYDROCORE is a fuel-separation technology and must not be represented as a hydraulic technology.",
+    "industrial_role": "NANOFORCE provides the hydraulic-fluid contamination-control layer of ELIMFILTERS Hydraulic Protection. Selection is governed by the cleanliness requirement of the most sensitive component together with system flow, pressure, temperature, contaminant load and duty cycle."
   },
   "relationships": {
-    "applicable_industries": [
-      "AGRICULTURE",
-      "AUTOMOTIVE",
-      "BUS_COACH",
-      "CONSTRUCTION",
-      "MARINE",
-      "MINING",
-      "POWER_GENERATION",
-      "OIL_GAS",
-      "RAILWAY",
-      "TRUCKS_FLEETS",
-      "WASTE_MUNICIPAL"
-    ],
     "related_standards": [
-      "ISO_4406",
-      "ISO_16889"
-    ],
-    "addresses_contamination": [
-      "PARTICLE_WEAR",
-      "HYDRAULIC_CONTAMINATION"
+      "ISO_16889",
+      "ISO_4406"
     ]
   },
-  "vault_path": "elimfilters-vault/01-technologies/active/NANOFORCE.md",
+  "vault_path": "elimfilters-vault\\01-technologies\\active\\NANOFORCE.md",
   "_links": {
     "self": "/api/citation/NANOFORCE.json",
     "type_index": "/api/citation/type/technology.json",
     "related": [
-      {
-        "key": "AGRICULTURE",
-        "relation": "applicable_industries",
-        "href": "/api/citation/AGRICULTURE.json"
-      },
-      {
-        "key": "AUTOMOTIVE",
-        "relation": "applicable_industries",
-        "href": "/api/citation/AUTOMOTIVE.json"
-      },
-      {
-        "key": "BUS_COACH",
-        "relation": "applicable_industries",
-        "href": "/api/citation/BUS_COACH.json"
-      },
-      {
-        "key": "CONSTRUCTION",
-        "relation": "applicable_industries",
-        "href": "/api/citation/CONSTRUCTION.json"
-      },
-      {
-        "key": "MARINE",
-        "relation": "applicable_industries",
-        "href": "/api/citation/MARINE.json"
-      },
-      {
-        "key": "MINING",
-        "relation": "applicable_industries",
-        "href": "/api/citation/MINING.json"
-      },
-      {
-        "key": "POWER_GENERATION",
-        "relation": "applicable_industries",
-        "href": "/api/citation/POWER_GENERATION.json"
-      },
-      {
-        "key": "OIL_GAS",
-        "relation": "applicable_industries",
-        "href": "/api/citation/OIL_GAS.json"
-      },
-      {
-        "key": "RAILWAY",
-        "relation": "applicable_industries",
-        "href": "/api/citation/RAILWAY.json"
-      },
-      {
-        "key": "TRUCKS_FLEETS",
-        "relation": "applicable_industries",
-        "href": "/api/citation/TRUCKS_FLEETS.json"
-      },
-      {
-        "key": "WASTE_MUNICIPAL",
-        "relation": "applicable_industries",
-        "href": "/api/citation/WASTE_MUNICIPAL.json"
-      },
-      {
-        "key": "ISO_4406",
-        "relation": "related_standards",
-        "href": "/api/citation/ISO_4406.json"
-      },
       {
         "key": "ISO_16889",
         "relation": "related_standards",
         "href": "/api/citation/ISO_16889.json"
       },
       {
-        "key": "PARTICLE_WEAR",
-        "relation": "addresses_contamination",
-        "href": "/api/citation/PARTICLE_WEAR.json"
-      },
-      {
-        "key": "HYDRAULIC_CONTAMINATION",
-        "relation": "addresses_contamination",
-        "href": "/api/citation/HYDRAULIC_CONTAMINATION.json"
+        "key": "ISO_4406",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_4406.json"
       }
     ]
   }

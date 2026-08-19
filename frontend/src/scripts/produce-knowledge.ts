@@ -86,7 +86,7 @@ console.log('==================================================\n');
 // ============================================================================
 console.log('Processing Phase 1: Donaldson Ingestion...');
 const donBatch = runPipelineFromJson([
-  { id: 'don-p1', part_number: 'P550000', duty: 'HD', brand: 'Donaldson', category: 'Lube', technology: 'INTEKCORE' },
+  { id: 'don-p1', part_number: 'P550000', duty: 'HD', brand: 'Donaldson', category: 'Lube', technology: 'SYNTRAX' },
   { id: 'don-p2', part_number: 'P550123', duty: 'HD', brand: 'Donaldson', category: 'Air', technology: 'MACROCORE' },
 ], 'PRODUCT', 'donaldson-catalog');
 

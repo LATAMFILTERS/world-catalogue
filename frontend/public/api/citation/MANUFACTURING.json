@@ -13,6 +13,7 @@
     "industrial",
     "in-ud"
   ],
+  "domain": null,
   "citation": {
     "source_url": "elimfilters.com/knowledge-center/industries/manufacturing",
     "concept": "Manufacturing Industry Filtration Requirements",
@@ -58,7 +59,7 @@
       "CABIN_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault/02-industries/MANUFACTURING.md",
+  "vault_path": "elimfilters-vault\\02-industries\\MANUFACTURING.md",
   "_links": {
     "self": "/api/citation/MANUFACTURING.json",
     "type_index": "/api/citation/type/industry.json",

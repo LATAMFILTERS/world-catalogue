@@ -37,20 +37,92 @@ jobs:
           echo "Changed files:"
           cat changed-files.txt
 
-          FORBIDDEN_REGEX='^(frontend/out/|frontend/public/api/citation/|elimfilters-vault/00-meta/CITATION_INDEX\.json$|frontend/src/lib/jsonld-constants\.generated\.ts$)'
+          # Citation API artifacts and CITATION_INDEX.json are intentionally
+          # tracked under the canonical citation governance policy. They are
+          # validated by citation tracking/content/determinism gates and must
+          # remain visible in Git diffs. Only legacy build-only generated
+          # outputs remain forbidden here.
+          FORBIDDEN_REGEX='^(frontend/out/|frontend/src/lib/jsonld-constants\.generated\.ts$)'
 
           if grep -E "$FORBIDDEN_REGEX" changed-files.txt > forbidden-files.txt; then
-            echo "::error::This PR modifies generated artifacts that caused merge conflicts in the past. Do not commit generated output. Regenerate during build/deploy instead."
+            echo "::error::This PR modifies build-only generated artifacts that must not be committed."
             echo "Forbidden generated files:"
             cat forbidden-files.txt
             exit 1
           fi
 
-          echo "No forbidden generated artifacts changed."
+          echo "No forbidden build-only generated artifacts changed."
+
+  verify-generation-determinism:
+    name: Verify Citation API generation is deterministic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine changed files
+        id: changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git diff --name-only "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" > changed-files.txt
+          elif [ "${{ github.event_name }}" = "push" ] && [ -n "${{ github.event.before }}" ] && git cat-file -e "${{ github.event.before }}" 2>/dev/null; then
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" > changed-files.txt
+          else
+            # workflow_dispatch, or a push with no valid prior SHA (e.g. new
+            # branch/history) — treat as relevant so the check still runs.
+            printf 'elimfilters-vault/00-meta/CITATION_INDEX.json\n' > changed-files.txt
+          fi
+          echo "Changed files:"
+          cat changed-files.txt
+          RELEVANT_REGEX='^(elimfilters-vault/|scripts/build-citation-index\.js$|scripts/build-part-search-map\.js$|scripts/generate-citation-api\.js$|scripts/validate-generation-determinism\.mjs$)'
+          if grep -E "$RELEVANT_REGEX" changed-files.txt > /dev/null; then
+            echo "relevant=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "relevant=false" >> "$GITHUB_OUTPUT"
+            echo "No Citation API / vault / generator changes — skipping determinism check."
+          fi
+
+      - name: Setup Node.js
+        if: steps.changed.outputs.relevant == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: First generation
+        if: steps.changed.outputs.relevant == 'true'
+        run: |
+          node scripts/build-citation-index.js
+          node scripts/build-part-search-map.js
+          node scripts/generate-citation-api.js
+
+      - name: Snapshot first generation
+        if: steps.changed.outputs.relevant == 'true'
+        run: node scripts/validate-generation-determinism.mjs --snapshot "$RUNNER_TEMP/citation-manifest-1.json"
+
+      - name: Second generation
+        if: steps.changed.outputs.relevant == 'true'
+        run: |
+          node scripts/build-citation-index.js
+          node scripts/build-part-search-map.js
+          node scripts/generate-citation-api.js
+
+      - name: Compare against first generation
+        if: steps.changed.outputs.relevant == 'true'
+        run: node scripts/validate-generation-determinism.mjs --compare "$RUNNER_TEMP/citation-manifest-1.json"
 
   build:
     name: Build and type validation
     runs-on: ubuntu-latest
+    # guardian.yml's own validate+build jobs already type-check and build the
+    # frontend on every pull_request (running npm ci + build here again on
+    # the exact same diff doubled Actions minutes on every PR). This job's
+    # distinct value is validating that main itself still builds *after* a
+    # merge, so it only needs to run on push/workflow_dispatch.
+    if: github.event_name != 'pull_request'
     steps:
       - name: Checkout
         uses: actions/checkout@v4

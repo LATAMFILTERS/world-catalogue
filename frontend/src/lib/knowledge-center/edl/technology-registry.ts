@@ -2,7 +2,7 @@
  * edl/technology-registry.ts
  * Engineering Data Layer — Technology Entity Registry
  *
- * Governed entities for all 12 ELIMFILTERS filtration technologies.
+ * Governed entities for ELIMFILTERS filtration technologies.
  * Uses permanent TECH-xxx identifiers. Relationship arrays use permanent IDs.
  */
 
@@ -80,10 +80,10 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     usedInSystems: ['SYS-HYDRAULIC'],
   },
 
-  'TECH-SYNTEPORE': {
-    id: 'TECH-SYNTEPORE',
-    name: 'SYNTEPORE',
-    slug: 'syntepore',
+  'TECH-SYNTAPORE': {
+    id: 'TECH-SYNTAPORE',
+    name: 'SYNTAPORE',
+    slug: 'SYNTAPORE',
     domain: 'Fuel HPCR Filtration',
     contaminationTarget: ['particulate', 'fuel-borne-particles'],
     status: 'published',
@@ -103,37 +103,14 @@ export const EDL_TECHNOLOGIES: EDLTechnologyRegistry = {
     name: 'HYDROCORE',
     slug: 'hydrocore',
     domain: 'Fuel Water Separation',
-    contaminationTarget: ['free-water', 'emulsified-water'],
+    contaminationTarget: ['particulate', 'free-water', 'biological'],
     status: 'published',
     version: '1.0',
-    created: '2026-07-04',
-    lastModified: '2026-07-04',
+    created: '2026-08-18',
+    lastModified: '2026-08-18',
     contentPhase: 3,
-    tagline: 'Coalescing fuel-water separation',
-    engineeringPrinciple: 'Coalescing media achieving >95% free water removal per ASTM D6304',
-    implementsStandards: ['STD-ASTM-D6304', 'STD-ISO-12937'],
-    addressesProblems: [
-      'PROB-INJECTOR-WEAR',
-      'PROB-WATER-INGRESS',
-      'PROB-FUEL-CONTAMINATION',
-      'PROB-CAVITATION',
-      'PROB-MICROBIAL-GROWTH',
-    ],
-    usedInSystems: ['SYS-FUEL-CLEANLINESS'],
-  },
-
-  'TECH-TURBOCORE': {
-    id: 'TECH-TURBOCORE',
-    name: 'TURBOCORE',
-    slug: 'turbocore',
-    domain: 'Three-Stage Fuel Filtration',
-    contaminationTarget: ['particulate', 'free-water', 'biological'],
-    status: 'draft',
-    version: '0.1',
-    created: '2026-07-04',
-    lastModified: '2026-07-04',
-    contentPhase: 3,
-    tagline: 'Three-stage fuel filtration per ISO 16332',
+    tagline: 'Fuel/water separation across approved separator architectures',
+    engineeringPrinciple: 'Application-specific fuel/water separation for approved spin-on, cartridge, FH and FG systems',
     implementsStandards: ['STD-ISO-16332', 'STD-ASTM-D6304', 'STD-ISO-12937'],
     addressesProblems: ['PROB-WATER-INGRESS', 'PROB-FUEL-CONTAMINATION', 'PROB-MICROBIAL-GROWTH'],
     usedInSystems: ['SYS-FUEL-CLEANLINESS'],

@@ -7,28 +7,32 @@
   "in_unified_data": false,
   "ud_key": null,
   "tags": [
+    "filter-kit",
     "fleet",
     "heavy-duty",
-    "transport",
-    "consolidation"
+    "automotive",
+    "equipment",
+    "maintenance",
+    "specialized-solution"
   ],
+  "domain": null,
   "citation": {
-    "source_url": "elimfilters.com/technologies/duratech",
-    "concept": "DURATECH Consolidated Filter Kit System",
-    "version": "1.0",
-    "last_updated": "2026-06-24",
-    "content_hash": "sha256:4d2eaa8af3e2ed09fcc3528fb0adbe0fa958a0dedd8dda27808fae8e2d3e434a"
+    "source_url": "elimfilters.com/commercial-lines/duratech/",
+    "concept": "DURATECH Integrated Filter Kit Program",
+    "version": "1.1",
+    "last_updated": "2026-08-18",
+    "content_hash": "sha256:34e4017eab0c536e5a909044dd845c671d97dfff6d77a9a7bd5f912767cfe861"
   },
   "canonical": {
-    "definition": "DURATECH is the ELIMFILTERS consolidated filter kit system for heavy-duty fleets, delivering the complete filtration requirement for a specific piece of equipment in a single maintenance kit covering air, oil, fuel, and hydraulic filters simultaneously.",
-    "systems": "Heavy-duty on-highway and off-highway fleet maintenance — trucks, buses, construction equipment, agricultural machinery requiring coordinated multi-system filter replacement",
-    "failure_impact": "Incomplete filter replacement (replacing only primary filters while leaving secondary filters in service) → extended contamination exposure in non-replaced systems → accelerated wear in overlooked circuits | Operational impact: DURATECH kits prevent selective maintenance, ensuring all filtration systems are renewed simultaneously.",
-    "related_standards": "ISO 4406: Particle cleanliness codes maintained across all circuits covered by DURATECH kit | ISO 16889: Filter efficiency ratings applicable to kit components",
-    "related_technologies": "MACROCORE: Air intake element included in DURATECH kits | SYNTRAX: Lube oil element | SYNTEPORE: Fuel element | NANOFORCE: Hydraulic element (where applicable per equipment specification)",
-    "industrial_role": "DURATECH consolidated kits eliminate the operational malpractice of extending service intervals on secondary filters — ensuring all contamination control systems are renewed simultaneously and protecting fleet budgets against maintenance cost variance."
+    "definition": "DURATECH is the ELIMFILTERS integrated filter-kit program for coordinated maintenance of a defined vehicle, truck, machine, equipment application, or service interval.",
+    "systems": "Cross-system maintenance program. Kit contents depend on the approved application and may coordinate multiple ELIMFILTERS filtration systems.",
+    "failure_impact": null,
+    "related_standards": null,
+    "related_technologies": "DURATECH may incorporate products using canonical ELIMFILTERS technologies such as MACROCORE, MICROKAPPA, SYNTAPORE, HYDROCORE, SYNTRAX, NANOFORCE, THERMACORE, DRYCORE, or INTEKCORE where applicable to the validated kit definition. DURATECH itself is not a technology.",
+    "industrial_role": "DURATECH simplifies coordinated filtration maintenance, inventory planning, recurring service execution, and asset-protection coverage for defined applications."
   },
   "relationships": {},
-  "vault_path": "elimfilters-vault/10-commercial/DURATECH.md",
+  "vault_path": "elimfilters-vault\\10-commercial\\DURATECH.md",
   "_links": {
     "self": "/api/citation/DURATECH.json",
     "type_index": "/api/citation/type/commercial-system.json",

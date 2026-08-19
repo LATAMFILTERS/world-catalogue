@@ -36,7 +36,7 @@ const miningEnv: OperatingEnvironment = {
 const miningRec = evaluateAssetStrategy('ASSET-MINING-001', miningEnv);
 
 assert('Mining env triggers MACROCORE™ technology for dust', miningRec.recommendedTechnologies.includes('MACROCORE™'));
-assert('Mining env triggers SYNTEPORE™ technology for fuel', miningRec.recommendedTechnologies.includes('SYNTEPORE™'));
+assert('Mining env triggers SYNTAPORE™ technology for fuel', miningRec.recommendedTechnologies.includes('SYNTAPORE™'));
 assert('Mining env triggers MICROKAPPA™ technology for cabin air', miningRec.recommendedTechnologies.includes('MICROKAPPA™'));
 assert('Mining env triggers NANOFORCE™ technology for hydraulics', miningRec.recommendedTechnologies.includes('NANOFORCE™'));
 

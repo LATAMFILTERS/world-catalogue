@@ -1,0 +1,39 @@
+name: HERMES Phase 1 Validation
+
+on:
+  push:
+    paths:
+      - 'scripts/hermes/**'
+      - 'hermes/test-candidates/**'
+      - 'schemas/hermes-candidate.schema.json'
+      - 'package.json'
+      - '.github/workflows/hermes-phase1.yml'
+  pull_request:
+    paths:
+      - 'scripts/hermes/**'
+      - 'hermes/test-candidates/**'
+      - 'schemas/hermes-candidate.schema.json'
+      - 'package.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate HERMES candidates
+        run: npm run hermes:validate
+      - name: Generate weekly review package
+        run: npm run hermes:report
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hermes-weekly-review
+          path: hermes/reports/
+          if-no-files-found: error

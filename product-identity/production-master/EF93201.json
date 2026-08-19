@@ -1,0 +1,235 @@
+{
+  "sku": "EF93201",
+  "segment": "HD",
+  "family": "fuel_filter",
+  "construction": "spin_on",
+  "technology": "SYNTAPORE™",
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "height_mm": "219.30",
+    "outer_diameter_mm": "93.00",
+    "inner_diameter_mm": null,
+    "thread": "1-14 UN",
+    "gasket": {
+      "od_mm": "72.00",
+      "id_mm": "62.00"
+    },
+    "crossrefs": [
+      {
+        "brand": "AUSTOFT",
+        "code": "180873",
+        "verified": true
+      },
+      {
+        "brand": "CATERPILLAR",
+        "code": "1986378",
+        "verified": true
+      },
+      {
+        "brand": "DETROIT-DIESEL",
+        "code": "23530772",
+        "verified": true
+      },
+      {
+        "brand": "BOMAG",
+        "code": "31701061",
+        "verified": true
+      },
+      {
+        "brand": "CUMMINS",
+        "code": "3355904",
+        "verified": true
+      },
+      {
+        "brand": "IVECO",
+        "code": "5006002224",
+        "verified": true
+      },
+      {
+        "brand": "CASE/CASE IH",
+        "code": "87410186",
+        "verified": true
+      },
+      {
+        "brand": "EMULSIFIED WATER SEPARATION",
+        "code": "90%",
+        "verified": true
+      },
+      {
+        "brand": "EMULSIFIED WATER SEPARATION",
+        "code": "95%",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "95430",
+        "verified": true
+      },
+      {
+        "brand": "CARQUEST",
+        "code": "96277",
+        "verified": true
+      },
+      {
+        "brand": "FREIGHTLINER",
+        "code": "ABP32FRT01",
+        "verified": true
+      },
+      {
+        "brand": "ALLIANCE",
+        "code": "ABPN12232FRT01",
+        "verified": true
+      },
+      {
+        "brand": "FORD",
+        "code": "BF0X9155AA",
+        "verified": true
+      },
+      {
+        "brand": "MERCEDES-BENZ",
+        "code": "MB02211",
+        "verified": true
+      },
+      {
+        "brand": "STANDPIPE",
+        "code": "NO",
+        "verified": true
+      },
+      {
+        "brand": "TEST SPECIFICATION",
+        "code": "SAEJ905",
+        "verified": true
+      },
+      {
+        "brand": "HIFI",
+        "code": "SN1242",
+        "verified": true
+      },
+      {
+        "brand": "CHINA LOCAL",
+        "code": "STCX018A",
+        "verified": true
+      },
+      {
+        "brand": "GUD",
+        "code": "Z610",
+        "verified": true
+      },
+      {
+        "brand": "BIG A",
+        "code": "95441",
+        "verified": true
+      },
+      {
+        "brand": "UFI",
+        "code": "2447000",
+        "verified": true
+      },
+      {
+        "brand": "HENGST",
+        "code": "H566WKD556",
+        "verified": true
+      },
+      {
+        "brand": "LUBER-FINER",
+        "code": "LFF9013",
+        "verified": true
+      },
+      {
+        "brand": "FLEETGUARD",
+        "code": "FS1015",
+        "verified": true
+      },
+      {
+        "brand": "FLEETGUARD",
+        "code": "FS1015B",
+        "verified": true
+      },
+      {
+        "brand": "FLEETGUARD",
+        "code": "FS1242",
+        "verified": true
+      },
+      {
+        "brand": "WIX",
+        "code": "33985",
+        "verified": true
+      },
+      {
+        "brand": "BALDWIN",
+        "code": "BF7798SP",
+        "verified": true
+      },
+      {
+        "brand": "DONALDSON",
+        "code": "J8620242",
+        "verified": true
+      },
+      {
+        "brand": "MANN",
+        "code": "WK940",
+        "verified": true
+      }
+    ],
+    "standards": [
+      "SAE J1985"
+    ],
+    "filter_media": null,
+    "micron_rating": "10",
+    "bypass_valve_psi": null,
+    "burst_pressure_psi": null,
+    "collapse_pressure_psi": null,
+    "installation_type": "Spin-On",
+    "attachment_type": null,
+    "source_updated_at": "2026-08-08T00:55:05.426Z"
+  },
+  "production": {
+    "template_id": null,
+    "printable_area": {
+      "height_mm": null,
+      "circumference_mm": null
+    },
+    "qr_url": null,
+    "factory_ready": false,
+    "template_family": "HD_SPINON",
+    "size_class": null,
+    "template_assignment": {
+      "status": "family_assigned_size_pending_pilot_calibration",
+      "review_required": false,
+      "classification_metric": {
+        "kind": "envelope_proxy_mm2",
+        "value": 20394.9
+      }
+    }
+  },
+  "lithography": {
+    "front": [
+      "ELIMFILTERS",
+      "Total Asset Protection",
+      "EF93201",
+      "fuel",
+      "SYNTAPORE™"
+    ],
+    "rear": [
+      "E",
+      "QR",
+      "Equivalent to: up to 3 verified OEM references",
+      "applicable verified standards"
+    ]
+  },
+  "media": {
+    "geometry_locked": true,
+    "source_image_required": true,
+    "approved_master_image": null
+  },
+  "gate": {
+    "missing_for_factory_release": [
+      "printable_area.height_mm",
+      "qr_url",
+      "template_id",
+      "production.template_id"
+    ],
+    "factory_release_allowed": false
+  }
+}

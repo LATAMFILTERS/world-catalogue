@@ -1,19 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
-import './hero-responsive.css';
-import './home-emergency-restore.css';
-import './systems-cleanup.css';
-import './air-intake-hero-restore.css';
-import './air-intake-visible-cleanup.css';
-import './core-systems-editorial.css';
-import './air-intake-narrative-section-fix.css';
-import './industries-risk-title-tweak.css';
-import './commercial-knowledge-visibility-guard.css';
-import './mobile-aesthetic-polish.css';
-import './mobile-critical-fix.css';
-import './mobile-critical-layout-fixes.css';
-import './technologies-mobile-fix.css';
+import './phase4-site.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import { MiningHeroCleanup } from '@/components/MiningHeroCleanup';
 import { MobileInternalLayoutFix } from '@/components/MobileInternalLayoutFix';
@@ -23,7 +11,10 @@ import ConsentBanner from '@/components/ConsentBanner';
 import ChatBotRouteGuard from '@/components/ui/ChatBotRouteGuard';
 import WebVitalsTracker from '@/components/WebVitalsTracker';
 import VideoAnalytics from '@/components/VideoAnalytics';
-import AggregateRatingSchema from '@/components/AggregateRatingSchema';
+import PostHogAnalytics from '@/components/PostHogAnalytics';
+import UserRegistrationTracker from '@/components/UserRegistrationTracker';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import SkipNavigation from '@/components/SkipNavigation';
 
 const BASE_URL = 'https://elimfilters.com';
 const GA_ID = 'G-0XJP6FLV55';
@@ -58,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: BASE_URL,
+    url: `${BASE_URL}/`,
     siteName: 'ELIMFILTERS',
     title: BRAND_TITLE,
     description: BRAND_DESCRIPTION,
@@ -85,6 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <SchemaMarkup />
         <Script id="ga4-consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -111,7 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ClientProviders>
-          <AggregateRatingSchema />
+          <SkipNavigation />
           {children}
           <WebVitalsTracker />
           <VideoAnalytics />
@@ -119,6 +111,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <MobileInternalLayoutFix />
           <Analytics />
           <CommercialAnalytics />
+          <PostHogAnalytics />
+          <UserRegistrationTracker />
           <ConsentBanner />
           <ChatBotRouteGuard />
         </ClientProviders>

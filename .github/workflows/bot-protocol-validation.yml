@@ -1,0 +1,63 @@
+name: Bot Protocol Validation
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bot-protocol-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  protocol-tests:
+    name: Protocol Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.20.2'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Syntax check protected protocol modules
+        run: |
+          node --check lib/bot-protocol-catalog.js
+          node --check lib/bot-protocol-memory.js
+          node --check lib/bot-protocol-unified-orchestrator.js
+          node --check lib/bot-protocol-web-adapter.js
+          node --check lib/bot-conversation-orchestrator.js
+          node --check lib/install-bot-protocol.js
+          node --check lib/bot-protocol.js
+          node --check server-protocol.js
+
+      - name: Run protocol unit and regression tests
+        run: npm run test:bot-protocol
+
+      - name: Run protocol E2E tests
+        run: npm run test:bot-e2e
+
+      - name: Run chatbot routing integration
+        run: npm run test:chatbot
+
+  protocol-gate:
+    name: Protocol Gate
+    if: always()
+    needs: [protocol-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Block merge unless protocol validation passed
+        run: test "${{ needs.protocol-tests.result }}" = "success"

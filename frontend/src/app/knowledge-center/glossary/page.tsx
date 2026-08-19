@@ -230,6 +230,58 @@ export default function GlossaryPage() {
         })}
       </div>
 
+      {/* CTA Section: Go Deeper */}
+      <section style={{
+        padding: '3rem clamp(1.5rem, 5vw, 4rem)',
+        marginTop: '2rem',
+        background: 'rgba(255,241,45,0.05)',
+        borderTop: '1px solid rgba(255,241,45,0.2)',
+        borderBottom: '1px solid rgba(255,241,45,0.2)',
+      }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 style={{
+              fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+              fontSize: '1.2rem',
+              fontWeight: 700,
+              marginBottom: '1rem',
+              color: '#fff',
+              letterSpacing: '0.01em',
+            }}>
+              Go Deeper: Standards & Testing
+            </h3>
+            <p style={{
+              marginBottom: '1.5rem',
+              color: 'rgba(255,255,255,0.7)',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '1rem',
+              lineHeight: 1.6,
+            }}>
+              These definitions are used throughout our technical standards. Explore implementation methods, measurement techniques, and practical applications.
+            </p>
+            <Link href="/knowledge-center/engineering-reference/" style={{
+              display: 'inline-block',
+              padding: '0.75rem 1.5rem',
+              background: '#FFF12D',
+              color: '#000',
+              textDecoration: 'none',
+              fontWeight: 700,
+              fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
+              letterSpacing: '0.05em',
+              fontSize: '0.8rem',
+              textTransform: 'uppercase',
+            }}>
+              Explore ISO 16889 & Testing Standards →
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* JSON-LD */}
       <script
         type="application/ld+json"

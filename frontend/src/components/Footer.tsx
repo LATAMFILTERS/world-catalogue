@@ -2,6 +2,8 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
+
+// Deployment trigger - footer centered contact info section
 import '@/i18n';
 import { useTranslation } from 'react-i18next';
 
@@ -38,18 +40,18 @@ const getFooterNavigation = (t: any) => [
     title: t('footer.support', 'SUPPORT'),
     links: [
       { label: t('footer.technicalSupport', 'Technical Support'), href: '/contact', external: false },
-      { label: t('footer.knowledgeSystem', 'Knowledge System'), href: '/knowledge-system', external: false },
-      { label: t('footer.standardsLibrary', 'Standards Library'), href: '/knowledge-system/standards', external: false },
-      { label: t('footer.fleetOptimization', 'Fleet Optimization'), href: '/knowledge-system/fleet', external: false },
+      { label: t('footer.knowledgeSystem', 'Knowledge System'), href: '/knowledge-center/', external: false },
+      { label: t('footer.standardsLibrary', 'Standards Library'), href: '/knowledge-center/standards/', external: false },
+      { label: t('footer.fleetOptimization', 'Fleet Optimization'), href: '/knowledge-center/technical-library/', external: false },
     ],
   },
   {
     title: t('footer.knowledge', 'KNOWLEDGE'),
     links: [
-      { label: t('footer.contamination', 'Contamination'), href: '/knowledge-system/contamination', external: false },
-      { label: t('footer.compareSelect', 'Compare & Select'), href: '/knowledge-system/compare', external: false },
-      { label: t('footer.filtrationScience', 'Filtration Science'), href: '/knowledge-system/science', external: false },
-      { label: t('footer.industrialBridges', 'Industrial Bridges'), href: '/knowledge-system/bridges', external: false },
+      { label: t('footer.contamination', 'Contamination'), href: '/knowledge-center/engineering/', external: false },
+      { label: t('footer.compareSelect', 'Compare & Select'), href: '/knowledge-center/', external: false },
+      { label: t('footer.filtrationScience', 'Filtration Science'), href: '/knowledge-center/engineering/', external: false },
+      { label: t('footer.industrialBridges', 'Industrial Bridges'), href: '/knowledge-center/', external: false },
     ],
   },
   {
@@ -58,7 +60,6 @@ const getFooterNavigation = (t: any) => [
       { label: t('footer.termsOfService', 'Terms of Service'), href: '/legal/terms', external: false },
       { label: t('footer.privacyPolicy', 'Privacy Policy'), href: '/legal/privacy', external: false },
       { label: t('footer.aiPolicy', 'AI Use Policy'), href: '/legal/ai-policy', external: false },
-      { label: t('footer.copyright', 'Copyright & DMCA'), href: '/legal/copyright', external: false },
       { label: t('footer.crossReferencePolicy', 'Cross Reference Policy'), href: '/legal/cross-reference', external: false },
       { label: t('footer.legalDisclaimer', 'Legal Disclaimer'), href: '/legal/disclaimer', external: false },
     ],
@@ -70,9 +71,19 @@ export function Footer() {
   const navColumns = getFooterNavigation(t);
 
   return (
-    <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '64px clamp(1.25rem, 5vw, 48px) 0' }}>
-        <div className="footer-main-grid">
+    <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.05)' }} role="contentinfo" aria-label="Site footer">
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '64px clamp(1.25rem, 5vw, 48px) clamp(1.25rem, 5vw, 48px) 0' }}>
+        <div
+          className="footer-main-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(6, minmax(150px, 1fr))',
+            gap: 'clamp(2rem, 4vw, 4.5rem)',
+            alignItems: 'start',
+            paddingBottom: '48px',
+            borderBottom: '1px solid rgba(255,255,255,0.05)',
+          }}
+        >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', minWidth: 0 }}>
             <div>
               <img
@@ -80,6 +91,18 @@ export function Footer() {
                 alt="Kleo Technologies"
                 style={{ maxHeight: '40px', maxWidth: '130px', objectFit: 'contain', display: 'block' }}
               />
+              <div style={{ marginTop: '12px' }}>
+                <p style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '11px',
+                  color: 'rgba(255,255,255,0.5)',
+                  lineHeight: 1.4,
+                  maxWidth: '240px',
+                  margin: 0,
+                }}>
+                  {t('footer.elimfiltersCopyright', 'KLEO TECHNOLOGY LLC | Intelligence and Engineering in Filtration')}
+                </p>
+              </div>
             </div>
 
             <p style={{
@@ -93,58 +116,10 @@ export function Footer() {
               {t('footer.tagline', 'Asset protection through industrial contamination control.')}
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {[
-                { icon: '✉', text: 'info@elimfilters.com', href: 'mailto:info@elimfilters.com' },
-                { icon: '◎', text: 'Frisco, Texas — United States', href: null },
-                { icon: '◎', text: 'Caracas, Distrito Capital — Venezuela', href: null },
-              ].map((item, i) => (
-                <div key={i} style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                  <span style={{ fontSize: '12px', color: '#FFF12D', minWidth: '12px' }}>{item.icon}</span>
-                  {item.href ? (
-                    <a href={item.href} style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>
-                      {item.text}
-                    </a>
-                  ) : (
-                    <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)' }}>{item.text}</span>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
-              {SOCIAL.map((item) => (
-                <motion.a
-                  key={item.href}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '50%',
-                    background: 'rgba(255,255,255,0.05)',
-                    border: '1px solid rgba(255,241,45,0.15)',
-                    color: 'rgba(255,241,45,0.6)',
-                    fontSize: '11px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    fontFamily: 'JetBrains Mono, monospace',
-                  }}
-                  whileHover={{ background: 'rgba(255,241,45,0.1)', borderColor: 'rgba(255,241,45,0.3)' }}
-                >
-                  {item.letter}
-                </motion.a>
-              ))}
-            </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px 24px' }}>
-            {navColumns.map((col, i) => (
-              <div key={i}>
+          {navColumns.map((col, i) => (
+            <div key={i}>
                 <h3 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '11px',
@@ -196,38 +171,92 @@ export function Footer() {
                 </ul>
               </div>
             ))}
+        </div>
+
+        <div style={{
+          display: 'flex',
+          gap: '48px',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '100%',
+          paddingTop: '48px',
+          paddingBottom: '48px',
+          borderBottom: '1px solid rgba(255,255,255,0.05)',
+        }}>
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            {SOCIAL.map((item) => (
+              <motion.a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,241,45,0.15)',
+                  color: 'rgba(255,241,45,0.6)',
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  fontFamily: 'JetBrains Mono, monospace',
+                }}
+                whileHover={{ background: 'rgba(255,241,45,0.1)', borderColor: 'rgba(255,241,45,0.3)' }}
+              >
+                {item.letter}
+              </motion.a>
+            ))}
+          </div>
+
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center', fontSize: '12px', whiteSpace: 'nowrap' }}>
+            <a href="mailto:info@elimfilters.com" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
+            >
+              info@elimfilters.com
+            </a>
+            <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
+            <span style={{ color: 'rgba(255,255,255,0.5)' }}>Corporate Headquarters: Frisco, Texas</span>
+            <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
+            <span style={{ color: 'rgba(255,255,255,0.5)' }}>Global Operations</span>
           </div>
         </div>
 
         <div style={{
-          marginTop: '48px',
-          paddingTop: '24px',
-          borderTop: '1px solid rgba(255,255,255,0.05)',
+          marginTop: '0',
+          paddingTop: '32px',
           display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
+          flexDirection: 'column',
           gap: '16px',
+          width: '100%',
         }}>
-          <p style={{
-            fontSize: '12px',
-            color: 'rgba(255,255,255,0.3)',
-            margin: 0,
+          <div style={{
+            fontSize: '10px',
+            color: 'rgba(255,255,255,0.65)',
             fontFamily: 'var(--font-body)',
+            lineHeight: 1.5,
+            width: '100%',
+            textTransform: 'lowercase',
           }}>
-            © 2024 ELIMFILTERS®. All rights reserved.
-          </p>
+            <p style={{ margin: 0 }}>
+              © KLEO TECHNOLOGY LLC. ELIMFILTERS® is a registered trademark. Legal Headquarters: Frisco, Texas, USA. ELIMFILTERS operates through a distributor-first global commercial model with coordinated strategic-account capability.
+            </p>
+          </div>
           <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap' }}>
             <Link
               href="/legal/privacy"
               style={{
                 fontSize: '12px',
-                color: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.65)',
                 textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
             >
               Privacy
             </Link>
@@ -235,12 +264,12 @@ export function Footer() {
               href="/legal/terms"
               style={{
                 fontSize: '12px',
-                color: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.65)',
                 textDecoration: 'none',
                 transition: 'color 0.2s',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
             >
               Terms
             </Link>

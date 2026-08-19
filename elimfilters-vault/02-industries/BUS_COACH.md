@@ -57,7 +57,7 @@ Diesel fuel water contamination affects bus fleet operations through the same bu
 - [[MACROCORE|MACROCORE — Heavy-duty air intake pre-filtration for bus diesel engines operating in urban environments with diesel exhaust particulate and road dust; high dirt capacity media for extended service intervals in high-cycle urban operations]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube oil filtration for bus diesel engine crankshaft bearing protection at ISO 16889 Beta efficiency; synthetic media for consistent performance across stop-start thermal cycling in urban transit operations]]
 - [[HYDROCORE|HYDROCORE — Water-separating fuel filtration for bus fleet depot fuel systems and vehicle fuel inlets; coalescing barrier architecture removes free water from depot tank condensation before injector system entry]]
-- [[MICROKAPPA|MICROKAPPA — ISO 11155-certified cabin air filtration for bus passenger compartments and driver cabs; PM10 and PM2.5 efficiency meeting occupational and public health guidelines for urban transit operations]]
+- [[MICROKAPPA|MICROKAPPA — Cabin air filtration for bus passenger compartments and driver cabs, rated to the ISO 11155 PM10/PM2.5 target specified for the approved application]]
 
 ### Applicable Standards
 - [[ISO_5011|ISO 5011 — Air filtration performance test standard for bus engine air intake filter selection and qualification]]
@@ -83,7 +83,7 @@ RELATED_STANDARDS
 ISO 5011: Air intake filtration performance test | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio lube filtration selection standard | ISO 11155: Cabin air filter particle efficiency and gaseous contaminant removal standard for bus passenger compartment qualification
 
 RELATED_TECHNOLOGIES
-MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | HYDROCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: ISO 11155-certified cabin filtration for bus passenger compartment PM2.5 protection
+MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | HYDROCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: Cabin filtration for bus passenger compartment PM2.5 protection, rated to the ISO 11155 target specified for the approved application
 
 INDUSTRIAL_ROLE
 Bus & Coach fleet contamination control is driven by the intersection of high engine cycle counts accelerating lube oil soot loading, depot fuel condensation affecting entire fleets from shared storage, and passenger cabin air quality obligations that extend contamination control responsibility from occupational health frameworks into public health territory.

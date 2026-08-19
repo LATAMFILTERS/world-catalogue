@@ -34,7 +34,7 @@ SYNTAPORE™    |  500
 SYNTRAX™      |  351
 INTAKCORE™    |  243
 MICROKAPPA™   |  122
-COOLTECH™     |   59
+THERMACORE™     |   59
 AQUAGUARD™    |   16
 DRYCORE™      |    3
 (9 rows)     Total: 4622
@@ -236,12 +236,12 @@ SELECT slug, category, status FROM kg_technologies ORDER BY status DESC, slug;
 ```
 slug         | category                          | status
 drycore      | Air Dryer Technology              | ACTIVE
-hydrocore    | Fuel/Water Separation             | ACTIVE
+TURBOCORE    | Fuel/Water Separation             | ACTIVE
 intekcore    | Air Housing & Precleaner          | ACTIVE
 macrocore    | Air Intake Filtration             | ACTIVE
 microkappa   | Cabin Air Filtration              | ACTIVE
 nanoforce    | Hydraulic Filtration              | ACTIVE
-syntepore    | Fuel Filtration                   | ACTIVE
+SYNTAPORE    | Fuel Filtration                   | ACTIVE
 syntrax      | Lube / Engine Oil Filtration      | ACTIVE
 thermacore   | Coolant Filtration                | ACTIVE
 duratech     | Heavy-Duty Engine Oil Filtration  | PRE_LAUNCH

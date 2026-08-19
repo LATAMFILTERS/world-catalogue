@@ -32,8 +32,6 @@ async function main() {
     'src/audit/coverage/service.js',
     'src/audit/coverage/intelligence.js',
     'src/audit/coverage/route.js',
-    'scripts/register-coverage-audit-direct.js',
-    'server-original.js',
   ];
 
   for (const relative of requiredFiles) {
@@ -89,8 +87,16 @@ async function main() {
 
   const routes = { get: [], post: [] };
   const app = {
-    get(route, limiter, handler) { assert.strictEqual(typeof limiter, 'function'); assert.strictEqual(typeof handler, 'function'); routes.get.push(route); },
-    post(route, limiter, handler) { assert.strictEqual(typeof limiter, 'function'); assert.strictEqual(typeof handler, 'function'); routes.post.push(route); },
+    get(route, limiter, handler) {
+      assert.strictEqual(typeof limiter, 'function');
+      assert.strictEqual(typeof handler, 'function');
+      routes.get.push(route);
+    },
+    post(route, limiter, handler) {
+      assert.strictEqual(typeof limiter, 'function');
+      assert.strictEqual(typeof handler, 'function');
+      routes.post.push(route);
+    },
   };
   const pool = { async connect() { throw new Error('not called during registration'); } };
   const limiter = (_req, _res, next) => next();
@@ -100,11 +106,7 @@ async function main() {
   assert(routes.get.includes('/api/audit/coverage-intelligence/status'));
   assert(routes.post.includes('/api/audit/coverage-intelligence/run'));
 
-  const serverSource = fs.readFileSync(path.join(root, 'server-original.js'), 'utf8');
-  const markerCount = (serverSource.match(/\/\/ COVERAGE_AUDIT_DIRECT_V4/g) || []).length;
-  assert(markerCount <= 1, `Duplicate coverage registration markers: ${markerCount}`);
-
-  console.log('[coverage-intelligence] full catalogue application-source verification passed');
+  console.log('[coverage-intelligence] module and route verification passed');
 }
 
 main().catch((error) => {

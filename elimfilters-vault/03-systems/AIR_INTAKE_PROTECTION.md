@@ -11,7 +11,6 @@ primary_contamination:
 applicable_technologies:
   - "[[MACROCORE]]"
   - "[[INTEKCORE]]"
-  - "[[SYNTEPORE]]"
 applicable_standards:
   - "[[ISO_5011]]"
   - "[[SAE_J1539]]"
@@ -58,7 +57,7 @@ RELATED_STANDARDS
 ISO 5011: Inlet air cleaning equipment efficiency, restriction, and dust capacity testing | SAE J1539: Diesel engine air intake cleanliness and filtration performance classification.
 
 RELATED_TECHNOLOGIES
-MACROCORE: Progressive-density air media for particulate capture | INTEKCORE: Zero-bypass radial seal housing architecture | SYNTEPORE: Synthetic media for humidity-stable air intake filtration.
+MACROCORE: Progressive-density air media for particulate capture | INTEKCORE: Zero-bypass radial seal housing architecture
 
 INDUSTRIAL_ROLE
 Air Intake & Airflow Protection is the front-line contamination defense for diesel engines operating in mining, agriculture, construction, marine, railway, power generation, oil & gas, truck fleets, and municipal equipment. It protects the asset before contaminants enter the combustion system.

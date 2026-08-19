@@ -13,7 +13,7 @@ interface SystemPageClientProps {
 
 const systemCategories: Record<string, string[]> = {
   'Airfilter': ['Mining', 'Agriculture', 'Construction', 'Oil Gas'],
-  'Hydrocore Series': ['Oil Gas', 'Marine', 'Power Generation'],
+  'HYDROCORE': ['Oil Gas', 'Marine', 'Power Generation'],
   'Cabin': ['Automotive', 'Bus Coach', 'Trucks Fleets'],
   'Coolant': ['Automotive', 'Manufacturing', 'Power Generation'],
   'Dryer': ['Manufacturing', 'Power Generation', 'Railway'],

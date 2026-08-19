@@ -8,7 +8,7 @@
  * Mappings:
  * - Oil Filters  -> Technology: SYNTRAX™, Subtype: Cellulose (Genuine Media)
  * - Air Filters  -> Technology: MACROCORE™, Subtype: Cellulose (Genuine Media)
- * - Fuel Filters -> Technology: SYNTEPORE™, Subtype: Cellulose (Genuine Media)
+ * - Fuel Filters -> Technology: SYNTAPORE™, Subtype: Cellulose (Genuine Media)
  * - Cabin Filters-> Technology: MICROKAPPA™, Subtype: Cellulose (Genuine Media)
  */
 
@@ -50,57 +50,57 @@ async function main() {
 
   console.log('⏳ Updating Oil filters in Light Duty...');
   const resOil = await client.query(`
-    UPDATE elimfilters_catalog 
-    SET 
-      technology = 'SYNTRAX™', 
-      sub_type = 'Genuine Media' 
-    WHERE duty = 'LIGHT_DUTY' 
-      AND filter_type = 'oil' 
+    UPDATE elimfilters_catalog
+    SET
+      technology = 'SYNTRAX™',
+      sub_type = 'Genuine Media'
+    WHERE duty = 'LIGHT_DUTY'
+      AND filter_type = 'oil'
       AND technology IS NULL;
   `);
   console.log(`   → Updated ${resOil.rowCount} Oil filters.`);
 
   console.log('⏳ Updating Air filters in Light Duty...');
   const resAir = await client.query(`
-    UPDATE elimfilters_catalog 
-    SET 
-      technology = 'MACROCORE™', 
-      sub_type = 'Genuine Media' 
-    WHERE duty = 'LIGHT_DUTY' 
-      AND filter_type = 'air' 
+    UPDATE elimfilters_catalog
+    SET
+      technology = 'MACROCORE™',
+      sub_type = 'Genuine Media'
+    WHERE duty = 'LIGHT_DUTY'
+      AND filter_type = 'air'
       AND technology IS NULL;
   `);
   console.log(`   → Updated ${resAir.rowCount} Air filters.`);
 
   console.log('⏳ Updating Fuel filters in Light Duty...');
   const resFuel = await client.query(`
-    UPDATE elimfilters_catalog 
-    SET 
-      technology = 'SYNTEPORE™', 
-      sub_type = 'Genuine Media' 
-    WHERE duty = 'LIGHT_DUTY' 
-      AND filter_type = 'fuel' 
+    UPDATE elimfilters_catalog
+    SET
+      technology = 'SYNTAPORE™',
+      sub_type = 'Genuine Media'
+    WHERE duty = 'LIGHT_DUTY'
+      AND filter_type = 'fuel'
       AND technology IS NULL;
   `);
   console.log(`   → Updated ${resFuel.rowCount} Fuel filters.`);
 
   console.log('⏳ Updating Cabin filters in Light Duty...');
   const resCabin = await client.query(`
-    UPDATE elimfilters_catalog 
-    SET 
-      technology = 'MICROKAPPA™', 
-      sub_type = 'Genuine Media' 
-    WHERE duty = 'LIGHT_DUTY' 
-      AND filter_type = 'cabin' 
+    UPDATE elimfilters_catalog
+    SET
+      technology = 'MICROKAPPA™',
+      sub_type = 'Genuine Media'
+    WHERE duty = 'LIGHT_DUTY'
+      AND filter_type = 'cabin'
       AND technology IS NULL;
   `);
   console.log(`   → Updated ${resCabin.rowCount} Cabin filters.`);
 
   // Verify final counts
   const finalStats = await client.query(`
-    SELECT technology, sub_type, COUNT(*) 
-    FROM elimfilters_catalog 
-    WHERE duty = 'LIGHT_DUTY' 
+    SELECT technology, sub_type, COUNT(*)
+    FROM elimfilters_catalog
+    WHERE duty = 'LIGHT_DUTY'
     GROUP BY technology, sub_type;
   `);
   console.log('\n📊 Final Light Duty Technology Distribution:');

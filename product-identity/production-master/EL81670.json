@@ -1,0 +1,44 @@
+{
+  "sku": "EL81670",
+  "segment": "HD",
+  "family": "oil_filter",
+  "construction": "spin_on",
+  "technology": "SINTRAX®",
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "cross_reference": {
+      "manufacturer": "FLEETGUARD",
+      "code": "LF670"
+    }
+  },
+  "production": {
+    "template_authority": "data/product-identity/authorities/cylindrical-print-layout-authority.json",
+    "factory_ready": true
+  },
+  "lithography": {
+    "body_color_hex": "#414141",
+    "print_color_hex": "#CBCBCB",
+    "front": [
+      "OFFICIAL_ELIMFILTERS_LOGO",
+      "TOTAL ASSET PROTECTION",
+      "EL81670",
+      "Lube Filter",
+      "SINTRAX®",
+      "Powered Filtration"
+    ],
+    "rear": "SAME_AS_FRONT",
+    "extra_text_allowed": false
+  },
+  "media": {
+    "geometry_locked": true,
+    "geometry_reference": "FLEETGUARD_LF670",
+    "approved_master_gen_id": "8632c165-3c7a-468e-be92-c4bc869c537d",
+    "approval_state": "FINAL_APPROVED",
+    "pilot_position": "5/20"
+  },
+  "notes": [
+    "User-approved final master on 2026-08-08.",
+    "Physical geometry is unique to LF670/EL81670 and must not be reused for another SKU."
+  ]
+}

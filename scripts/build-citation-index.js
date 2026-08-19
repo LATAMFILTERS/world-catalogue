@@ -26,7 +26,6 @@ const OUTPUT_PATH = path.join(VAULT_DIR, '00-meta', 'CITATION_INDEX.json');
 const RETIRED_ENTITY_KEYS = new Set([
   'AIRFILTER',
   'AQUAGUARD',
-  'COOLTECH',
 ]);
 
 const MARKETING_TERMS = [
@@ -47,6 +46,7 @@ const RELATIONSHIP_FIELDS = [
   'applicable_industries',
   'related_standards',
   'addresses_contamination',
+  'related_technologies',
   'resolved_by',
   'applicable_to_technologies',
   'applicable_to_industries',
@@ -263,7 +263,7 @@ function extractAiRetrievalBlock(bodyText) {
 
 function parseNote(filePath) {
   let content = fs.readFileSync(filePath, 'utf8');
-  content = content.replace(/\r\n/g, '\n');
+  content = content.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
   const relPath = path.relative(PROJECT_ROOT, filePath);
 
   const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
@@ -368,6 +368,7 @@ function buildCitationRecord(note) {
     in_unified_data,
     ud_key: yaml.ud_key || null,
     tags,
+    domain: typeof yaml.domain === 'string' ? yaml.domain : null,
     citation: {
       source_url: citation.source_url,
       concept: citation.concept,

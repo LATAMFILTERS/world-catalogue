@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elimfilters.com/schemas/hermes-candidate.schema.json",
+  "title": "ELIMFILTERS HERMES Candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entity_type",
+    "entity_code",
+    "workflow_status",
+    "candidate_type",
+    "source_type",
+    "source_url",
+    "source_publisher",
+    "captured_at",
+    "confidence",
+    "evidence_level",
+    "claim_scope",
+    "affected_entities",
+    "proposed_action",
+    "proposed_target_folder",
+    "deduplication_key",
+    "approval_required",
+    "sync_status",
+    "source_hash"
+  ],
+  "properties": {
+    "entity_type": { "const": "intelligence_candidate" },
+    "entity_code": { "type": "string", "pattern": "^HERMES_[A-Z0-9_]+$" },
+    "research_bundle_id": { "type": "string", "pattern": "^HERMES_BUNDLE_[A-F0-9]{24}$", "description": "Stable link between a governed knowledge candidate and its catalogue candidate." },
+    "workflow_status": {
+      "enum": ["CAPTURED", "NORMALIZED", "PENDING_REVIEW", "NEEDS_RESEARCH", "APPROVED", "REJECTED", "READY_TO_SYNC", "SYNCED", "SYNC_FAILED", "SUPERSEDED"]
+    },
+    "candidate_type": {
+      "enum": ["equipment_update", "oem_update", "competitor_product_update", "competitor_technology_update", "filter_media_development", "supplier_development", "standard_update", "patent_update", "technical_bulletin", "application_update", "oem_reference_update", "coverage_gap"]
+    },
+    "source_type": { "type": "string", "minLength": 2 },
+    "source_url": { "type": "string", "format": "uri" },
+    "source_publisher": { "type": "string", "minLength": 2 },
+    "source_title": { "type": "string" },
+    "published_at": { "type": ["string", "null"], "format": "date-time" },
+    "captured_at": { "type": "string", "format": "date-time" },
+    "last_verified_at": { "type": ["string", "null"], "format": "date-time" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "evidence_level": { "enum": ["PRIMARY", "SECONDARY_VERIFIED", "SECONDARY_UNVERIFIED"] },
+    "claim_scope": { "enum": ["CONFIRMED_FACT", "SOURCE_REPORTED", "HERMES_INFERENCE", "INTERNAL_RECOMMENDATION"] },
+    "affected_entities": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+    "proposed_action": { "type": "string", "minLength": 5 },
+    "proposed_target_folder": { "type": "string", "pattern": "^(12-oems|13-equipment|14-intelligence|15-filter-media|16-suppliers|17-technology-watch|01-technologies|02-industries|03-systems|04-standards|05-contamination|06-components|07-problems|08-product-families|09-products|10-case-studies|11-articles)/?$" },
+    "proposed_target_entity": { "type": ["string", "null"] },
+    "deduplication_key": { "type": "string", "minLength": 8 },
+    "approval_required": { "const": true },
+    "approved_by": { "type": ["string", "null"] },
+    "approved_at": { "type": ["string", "null"], "format": "date-time" },
+    "rejection_reason": { "type": ["string", "null"] },
+    "sync_status": { "enum": ["NOT_READY", "READY", "SYNCED", "FAILED"] },
+    "sync_target": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "source_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "organization_id": { "type": "string", "description": "hermes/config/source-organizations.json id, present only for candidates produced from the governed source registry." },
+    "endpoint_id": { "type": "string", "description": "hermes/config/source-endpoints.json id, present only for candidates produced from the governed source registry." },
+    "category": { "type": "string", "description": "Source organization category (e.g. oem_heavy_duty, filtration_competitor, standards) copied from the source registry or the legacy real-sources.json entry." },
+    "region": { "type": "string", "description": "Source organization region, present only for candidates produced from the governed source registry." },
+    "trust_level": { "enum": ["high", "medium", "low"], "description": "Source trust_level copied from the source registry or the legacy real-sources.json entry." },
+    "extracted_snippet": { "type": "string", "description": "Short, literal excerpt of the changed page's normalized text, present only on a CHANGED candidate — never invented, never a summary." },
+    "change_classification": { "enum": ["CHANGE_DETECTED_REQUIRES_RESEARCH", "FIRST_SEMANTIC_HARVEST"], "description": "CHANGE_DETECTED_REQUIRES_RESEARCH: a whole-page hash diff proved content changed but HERMES could not identify the specific changed item. FIRST_SEMANTIC_HARVEST: no prior baseline existed for this source at all — this is HERMES's first-ever observation of it, not a change. Both cap confidence and require human research before treating the finding as confirmed." }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "workflow_status": { "enum": ["APPROVED", "READY_TO_SYNC", "SYNCED"] } } },
+      "then": {
+        "required": ["approved_by", "approved_at"],
+        "properties": {
+          "approved_by": { "const": "Victor Abreu" },
+          "approved_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "workflow_status": { "const": "REJECTED" } } },
+      "then": {
+        "required": ["rejection_reason"],
+        "properties": { "rejection_reason": { "type": "string", "minLength": 3 } }
+      }
+    }
+  ]
+}

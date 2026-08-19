@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "mission": "Continuously sweep the complete engine, vehicle, equipment and industrial filtration ecosystem; discover verifiable developments; compare them with ELIMFILTERS existing knowledge; and propose new knowledge or reinforcement of existing knowledge without duplication.",
+  "coverage_policy": "EXPANSIVE_NOT_CLOSED_LIST",
+  "lookback_days": 7,
+  "max_findings_per_group": 6,
+  "knowledge_actions": [
+    "CREATE_NEW",
+    "UPDATE_REINFORCE",
+    "NO_MATERIAL_CHANGE",
+    "INTERNAL_ONLY"
+  ],
+  "content_destinations": [
+    "CATALOGUE",
+    "KNOWLEDGE_CENTER",
+    "TECHNICAL_INTELLIGENCE",
+    "TECHNOLOGY_WATCH",
+    "STANDARDS",
+    "OEM_APPLICATION_INTELLIGENCE",
+    "INTERNAL_ONLY"
+  ],
+  "future_content_channels": [
+    "BLOG",
+    "WEEKLY_PODCAST",
+    "NEWSLETTER",
+    "SOCIAL",
+    "CUSTOMER_EMAIL",
+    "SALES_INTELLIGENCE"
+  ],
+  "domains": [
+    {
+      "id": "oem_engines_equipment",
+      "label": "OEM, engines and equipment",
+      "topics": ["engine manufacturers", "engine families", "diesel engines", "gasoline engines", "natural-gas engines", "hydrogen combustion engines", "generators", "heavy trucks", "buses", "construction equipment", "mining equipment", "agricultural equipment", "marine engines", "railway engines", "municipal equipment", "industrial machinery"]
+    },
+    {
+      "id": "aftermarket_filtration",
+      "label": "Aftermarket filtration and applications",
+      "topics": ["replacement filters", "new filter part numbers", "cross references", "supersessions", "new applications", "new fitments", "catalogue expansions", "service parts", "filter dimensions", "coverage additions"]
+    },
+    {
+      "id": "filter_manufacturing",
+      "label": "Filter manufacturing and components",
+      "topics": ["filter manufacturers", "filter housings", "end caps", "center tubes", "adhesives", "gaskets", "seals", "valves", "springs", "plastics", "metals", "filter assembly", "test equipment"]
+    },
+    {
+      "id": "filter_media_materials",
+      "label": "Filter paper, media and raw materials",
+      "topics": ["filter paper", "cellulose media", "synthetic filter media", "glass fiber", "microglass", "nanofibers", "meltblown", "nonwovens", "membranes", "resins", "binders", "coatings", "hydrophobic media", "coalescing media", "activated carbon", "adsorbents"]
+    },
+    {
+      "id": "air_filtration",
+      "label": "Air intake, cabin and compressed air",
+      "topics": ["engine air filtration", "air intake restriction", "dust loading", "precleaners", "cabin air filtration", "HEPA", "activated carbon cabin filters", "compressed air filtration", "air dryers", "desiccants"]
+    },
+    {
+      "id": "fuel_filtration",
+      "label": "Fuel systems and fuels",
+      "topics": ["diesel filtration", "gasoline filtration", "fuel water separation", "coalescence", "common rail cleanliness", "biodiesel", "renewable diesel", "HVO", "SAF", "ethanol", "methanol", "ammonia fuel", "hydrogen fuel", "fuel contamination", "microbial contamination", "fuel stability"]
+    },
+    {
+      "id": "lubrication_oil",
+      "label": "Lubrication, oils and tribology",
+      "topics": ["engine oil filtration", "lubricants", "synthetic oils", "base oils", "additives", "viscosity", "tribology", "wear metals", "oil analysis", "oxidation", "soot", "varnish", "bypass filtration", "centrifugal filtration"]
+    },
+    {
+      "id": "hydraulics_fluids",
+      "label": "Hydraulics, fluids and contamination control",
+      "topics": ["hydraulic filtration", "hydraulic fluids", "particle contamination", "water contamination", "ISO 4406", "ISO 16889", "beta ratio", "offline filtration", "kidney loop", "reservoir breathers", "fluid cleanliness", "electrostatic contamination"]
+    },
+    {
+      "id": "cooling_thermal",
+      "label": "Cooling and thermal management",
+      "topics": ["coolant filtration", "coolants", "glycol", "extended life coolant", "cooling systems", "heat exchangers", "thermal management", "corrosion", "cavitation", "battery thermal management"]
+    },
+    {
+      "id": "ev_new_powertrains",
+      "label": "Electric vehicles and new powertrains",
+      "topics": ["electric vehicle filtration", "EV cabin filters", "battery cooling filtration", "dielectric fluids", "e-axle lubrication", "transmission filtration", "fuel cells", "hydrogen filtration", "battery vent filtration", "thermal management fluids", "hybrid vehicles"]
+    },
+    {
+      "id": "solids_fluids_science",
+      "label": "Particle, solids and fluid mechanics",
+      "topics": ["particle mechanics", "solid-liquid separation", "solid-gas separation", "aerosols", "droplet separation", "coalescence", "sedimentation", "centrifugation", "porous media", "Darcy law", "pressure drop", "flow dynamics", "viscosity", "surface tension", "particle size distribution"]
+    },
+    {
+      "id": "standards_testing",
+      "label": "Standards, testing and metrology",
+      "topics": ["ISO filtration standards", "SAE filtration standards", "ASTM fuel and lubricant standards", "filter test methods", "particle counting", "multipass testing", "air filter testing", "water separation testing", "cleanliness codes", "laboratory methods"]
+    },
+    {
+      "id": "environment_regulation",
+      "label": "Environment, emissions and sustainability",
+      "topics": ["engine emissions", "environmental regulations", "particulate emissions", "clean fuels", "waste oil", "used filters", "filter recycling", "microplastics", "PFAS", "sustainable filter media", "bio-based media", "circular economy", "industrial pollution control", "water protection"]
+    },
+    {
+      "id": "reliability_maintenance",
+      "label": "Reliability and maintenance",
+      "topics": ["predictive maintenance", "condition monitoring", "oil analysis", "fuel analysis", "filter monitoring", "differential pressure", "IoT filtration", "sensors", "fleet maintenance", "downtime", "total cost of ownership", "asset reliability"]
+    },
+    {
+      "id": "industry_markets",
+      "label": "Filtration industry and market structure",
+      "topics": ["filtration industry expansions", "new filtration plants", "media production capacity", "manufacturing investments", "technical acquisitions", "distribution expansions", "new laboratories", "new testing capabilities", "supply chain developments"]
+    }
+  ],
+  "source_priority": [
+    "official OEM and engine manufacturer",
+    "official aftermarket/filter manufacturer",
+    "official filter-media/material manufacturer",
+    "official standards/regulatory body",
+    "peer-reviewed or recognized technical institution",
+    "recognized industry technical publication",
+    "other verifiable industry source"
+  ],
+  "public_governance": {
+    "preserve_external_provenance_internally": true,
+    "competitor_names_public": false,
+    "competitor_proprietary_technology_public": false,
+    "public_output_style": "neutral non-proprietary ELIMFILTERS technical language",
+    "automatic_canonical_publication": false,
+    "approval_authority": "Victor Abreu"
+  }
+}

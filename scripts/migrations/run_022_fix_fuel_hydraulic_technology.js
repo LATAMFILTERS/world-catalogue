@@ -13,15 +13,15 @@
  *   Fuel:       "S™Y™N™T™A™P™O™R™E™™"  (29 rows)
  *   Hydraulic:  "N™A™N™O™F™O™R™C™E™™"  (94 rows)
  * Stripping the ™ characters from these yields "SYNTAPORE" (a known typo of
- * SYNTEPORE) and "NANOFORCE" respectively — both already the CORRECT
+ * SYNTAPORE) and "NANOFORCE" respectively — both already the CORRECT
  * technology for their filter_type, so this step only decorrupts, no swap
  * needed for these rows.
  *
  * STEP 2 — the Fuel/Hydraulic technology swap. import_donaldson.py's
- * TECH_MAP had EF9 (Fuel) -> NANOFORCE™ and EH6 (Hydraulic) -> SYNTEPORE™,
+ * TECH_MAP had EF9 (Fuel) -> NANOFORCE™ and EH6 (Hydraulic) -> SYNTAPORE™,
  * backwards from the audited mapping in CLAUDE.md (NANOFORCE = Hydraulic,
- * SYNTEPORE = Fuel). Confirmed live: 564 Fuel rows on NANOFORCE™, 525
- * Hydraulic rows on SYNTEPORE™. TECH_MAP is already fixed in
+ * SYNTAPORE = Fuel). Confirmed live: 564 Fuel rows on NANOFORCE™, 525
+ * Hydraulic rows on SYNTAPORE™. TECH_MAP is already fixed in
  * import_donaldson.py so future imports are correct; this step fixes the
  * already-imported rows. Runs after STEP 1 so decorrupted rows are already
  * on their correct value and are not touched again here.
@@ -55,7 +55,7 @@ const client = new Client({
   `);
   console.log(`Rows found: ${corrupted.length}`);
 
-  const SPELLING_FIX = { SYNTAPORE: 'SYNTEPORE', INTAKCORE: 'INTEKCORE' };
+  const SPELLING_FIX = { SYNTAPORE: 'SYNTAPORE', INTAKCORE: 'INTEKCORE' };
   let step1Changed = 0;
 
   for (const r of corrupted) {
@@ -79,23 +79,23 @@ const client = new Client({
     SELECT sku FROM elimfilters_catalog
     WHERE duty = 'HEAVY_DUTY' AND filter_type ILIKE '%fuel%' AND technology = 'NANOFORCE™'
   `);
-  console.log(`Fuel rows NANOFORCE™ -> SYNTEPORE™: ${fuelWrong.length}`);
+  console.log(`Fuel rows NANOFORCE™ -> SYNTAPORE™: ${fuelWrong.length}`);
   if (APPLY) {
     await client.query(`
-      UPDATE elimfilters_catalog SET technology = 'SYNTEPORE™'
+      UPDATE elimfilters_catalog SET technology = 'SYNTAPORE™'
       WHERE duty = 'HEAVY_DUTY' AND filter_type ILIKE '%fuel%' AND technology = 'NANOFORCE™'
     `);
   }
 
   const { rows: hydWrong } = await client.query(`
     SELECT sku FROM elimfilters_catalog
-    WHERE duty = 'HEAVY_DUTY' AND filter_type ILIKE '%hydraulic%' AND technology = 'SYNTEPORE™'
+    WHERE duty = 'HEAVY_DUTY' AND filter_type ILIKE '%hydraulic%' AND technology = 'SYNTAPORE™'
   `);
-  console.log(`Hydraulic rows SYNTEPORE™ -> NANOFORCE™: ${hydWrong.length}`);
+  console.log(`Hydraulic rows SYNTAPORE™ -> NANOFORCE™: ${hydWrong.length}`);
   if (APPLY) {
     await client.query(`
       UPDATE elimfilters_catalog SET technology = 'NANOFORCE™'
-      WHERE duty = 'HEAVY_DUTY' AND filter_type ILIKE '%hydraulic%' AND technology = 'SYNTEPORE™'
+      WHERE duty = 'HEAVY_DUTY' AND filter_type ILIKE '%hydraulic%' AND technology = 'SYNTAPORE™'
     `);
   }
 

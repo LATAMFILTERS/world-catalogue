@@ -1,6 +1,9 @@
 'use client';
 
-// Country code → language code (only supported languages)
+// ELIMFILTERS public language policy.
+// English is the official/default language. A supported localized language is
+// selected only from the visitor's country. Unknown countries and any lookup
+// failure remain in English.
 const COUNTRY_LANG: Record<string, string> = {
   // English
   US: 'en', CA: 'en', GB: 'en', AU: 'en', NZ: 'en', IE: 'en', ZA: 'en',
@@ -35,13 +38,13 @@ const COUNTRY_LANG: Record<string, string> = {
   IR: 'fa',
 };
 
-// NO language switcher ever shown - language is determined ONLY by geolocation
-// NO user choice allowed
-
 const GEO_LANG_KEY = 'ef_geo_lang';
 const GEO_COUNTRY_KEY = 'ef_geo_country';
 const GEO_TS_KEY = 'ef_geo_ts';
-const TTL = 7 * 24 * 60 * 60 * 1000; // 7 days
+const TTL = 7 * 24 * 60 * 60 * 1000;
+const OFFICIAL_LANGUAGE = 'en';
+const OFFICIAL_COUNTRY = 'US';
+const GEO_ENDPOINT = 'https://ipwho.is/?fields=success,country_code';
 
 export interface GeoResult {
   language: string;
@@ -49,29 +52,43 @@ export interface GeoResult {
   showSwitcher: boolean;
 }
 
-export async function detectGeoLanguage(): Promise<GeoResult> {
-  if (typeof window === 'undefined') return { language: 'en', country: 'US', showSwitcher: false };
+function officialDefault(): GeoResult {
+  return { language: OFFICIAL_LANGUAGE, country: OFFICIAL_COUNTRY, showSwitcher: false };
+}
 
-  // Return cached result if fresh
+export async function detectGeoLanguage(): Promise<GeoResult> {
+  if (typeof window === 'undefined') return officialDefault();
+
   const ts = localStorage.getItem(GEO_TS_KEY);
   const cachedLang = localStorage.getItem(GEO_LANG_KEY);
   const cachedCountry = localStorage.getItem(GEO_COUNTRY_KEY);
-  if (ts && cachedLang && cachedCountry && Date.now() - parseInt(ts) < TTL) {
-    return {
-      language: cachedLang,
-      country: cachedCountry,
-      showSwitcher: false,
-    };
+  const parsedTs = ts ? Number.parseInt(ts, 10) : Number.NaN;
+
+  if (
+    Number.isFinite(parsedTs) &&
+    cachedLang &&
+    cachedCountry &&
+    Date.now() - parsedTs < TTL
+  ) {
+    return { language: cachedLang, country: cachedCountry, showSwitcher: false };
   }
 
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 3000);
-    const res = await fetch('https://ip-api.com/json/?fields=countryCode', { signal: controller.signal });
-    clearTimeout(timeout);
-    const data = await res.json();
-    const country: string = data.countryCode || 'US';
-    const language = COUNTRY_LANG[country] || 'en';
+    const timeout = window.setTimeout(() => controller.abort(), 3000);
+    const res = await fetch(GEO_ENDPOINT, {
+      signal: controller.signal,
+      headers: { Accept: 'application/json' },
+    });
+    window.clearTimeout(timeout);
+
+    if (!res.ok) return officialDefault();
+
+    const data = await res.json() as { success?: boolean; country_code?: string };
+    if (data.success === false) return officialDefault();
+
+    const country = String(data.country_code || OFFICIAL_COUNTRY).toUpperCase();
+    const language = COUNTRY_LANG[country] || OFFICIAL_LANGUAGE;
 
     localStorage.setItem(GEO_LANG_KEY, language);
     localStorage.setItem(GEO_COUNTRY_KEY, country);
@@ -79,6 +96,8 @@ export async function detectGeoLanguage(): Promise<GeoResult> {
 
     return { language, country, showSwitcher: false };
   } catch {
-    return { language: 'en', country: 'US', showSwitcher: false };
+    return officialDefault();
   }
 }
+
+export { COUNTRY_LANG, OFFICIAL_LANGUAGE };

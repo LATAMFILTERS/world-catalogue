@@ -109,11 +109,11 @@ curl -s "http://localhost:3000/api/kg/search?q=macrocore" | jq '.data.queryClass
 ```
 **Expected:** `2`
 
-#### Test 2.3: Legacy technology name (SYNTAPORE → syntepore)
+#### Test 2.3: Legacy technology name (SYNTAPORE → SYNTAPORE)
 ```bash
 curl -s "http://localhost:3000/api/kg/search?q=SYNTAPORE" | jq '.data.kgContext.matchedTechnology.slug'
 ```
-**Expected:** `"syntepore"` (resolved to canonical slug)
+**Expected:** `"SYNTAPORE"` (resolved to canonical slug)
 
 #### Test 2.4: Technology in phrase
 ```bash

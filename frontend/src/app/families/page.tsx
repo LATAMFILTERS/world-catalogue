@@ -9,24 +9,25 @@ const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 
 export const metadata: Metadata = {
-  title: 'Product Families | ELIMFILTERS',
+  title: 'Industrial Filter Product Families & Protection Systems | ELIMFILTERS',
   description:
-    'ELIMFILTERS product families organize industrial filtration products by protection system, duty class, technology architecture, and application role.',
-  alternates: { canonical: `${BASE_URL}/families` },
+    'Browse ELIMFILTERS product families organized by system, duty class, and application. Find the right filtration products for your asset protection strategy.',
+  alternates: { canonical: `${BASE_URL}/families/` },
 };
 
 export default function FamiliesPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
+    '@id': `${BASE_URL}/families/#collection`,
     name: 'ELIMFILTERS Product Families',
-    url: `${BASE_URL}/families`,
+    url: `${BASE_URL}/families/`,
     description: 'Industrial filtration product families organized by Protection System and Duty Class.',
-    publisher: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
+    publisher: { '@id': `${BASE_URL}/#organization` },
     hasPart: PRODUCT_FAMILY_LIST.map((family) => ({
       '@type': 'WebPage',
       name: family.name,
-      url: `${BASE_URL}/families/${family.slug}`,
+      url: `${BASE_URL}/families/${family.slug}/`,
       description: family.purpose.slice(0, 160),
     })),
   };
@@ -34,7 +35,7 @@ export default function FamiliesPage() {
   return (
     <main style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Link href="/products" style={backButton}>← PRODUCTS</Link>
+      <Link href="/products/" style={backButton}>← PRODUCTS</Link>
 
       <section style={hero}>
         <div style={{ ...heroImage, backgroundImage: 'url(/images/families-hero.avif)' }} />
@@ -84,13 +85,13 @@ export default function FamiliesPage() {
               return (
                 <section key={system.key} style={systemBlock}>
                   <div style={systemHeader}>
-                    <Link href={`/systems/${system.slug}`} style={systemLink}>{system.name}</Link>
+                    <Link href={`/systems/${system.slug}/`} style={systemLink}>{system.name}</Link>
                     <span style={systemCount}>{families.length} FAMILIES</span>
                   </div>
 
                   <div style={familyGrid}>
                     {families.map((family) => (
-                      <Link key={family.key} href={`/families/${family.slug}`} style={familyCard}>
+                      <Link key={family.key} href={`/families/${family.slug}/`} style={familyCard}>
                         <div style={badges}>
                           {family.hdPrefix && <span style={badgeYellow}>HD {family.hdPrefix}</span>}
                           {family.ldPrefix && <span style={badgeDark}>LD {family.ldPrefix}</span>}
@@ -114,9 +115,9 @@ export default function FamiliesPage() {
             Product families connect technical architecture to real field applications.
           </h2>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/systems" style={yellowButton}>EXPLORE SYSTEMS</Link>
-            <Link href="/technologies" style={darkButton}>EXPLORE TECHNOLOGIES</Link>
-            <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
+            <Link href="/systems/" style={yellowButton}>EXPLORE SYSTEMS</Link>
+            <Link href="/technologies/" style={darkButton}>EXPLORE TECHNOLOGIES</Link>
+            <Link href="/contact/" style={darkButton}>CONTACT ELIMFILTERS</Link>
           </div>
         </div>
       </section>

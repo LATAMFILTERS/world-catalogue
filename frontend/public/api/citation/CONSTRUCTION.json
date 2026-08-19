@@ -14,19 +14,20 @@
     "hydraulic-intensive",
     "in-ud"
   ],
+  "domain": null,
   "citation": {
     "source_url": "elimfilters.com/knowledge-center/industries/construction",
     "concept": "Construction Industry Filtration Requirements",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:769a5e1daeb005779b2c28a0b465fd59ece7fd8576604f771cd7288d17c3d5fe"
+    "content_hash": "sha256:0072877696cc8065af73c6a0ada0c18c5aaf51a00c110aef506a3008de708fea"
   },
   "canonical": {
     "definition": "Construction is a HIGH contamination exposure industrial category for heavy equipment, with concurrent silica-bearing airborne dust, hydraulic system wear particle generation, diesel fuel water contamination, and operator cabin air quality hazards all simultaneously present in excavator, loader, bulldozer, and compactor operations.",
     "systems": "Air intake filtration, hydraulic circuit filtration, lube oil filtration, fuel filtration, cabin air filtration across all heavy construction equipment categories",
     "failure_impact": "Hydraulic contamination above ISO 4406 17/15/12 → proportional valve spool sticktion and internal leakage → machine productivity loss and valve replacement ($5,000–$25,000 per valve) | Air intake failure → silica dust ingestion → piston ring abrasive wear → engine overhaul at 3,000–5,000 hours | Cabin air contamination above PM10 limits → operator chronic respiratory exposure at active earthmoving sites.",
     "related_standards": "SAE J1539: Air intake cleanliness for diesel engines | ISO 16889: Hydraulic and lube filter Beta ratio test methodology | ISO 5011: Inlet air cleaning equipment | NFPA T2.14.1: Mobile equipment hydraulic fluid cleanliness requirements | ISO 11155: Cabin filtering systems for road vehicles",
-    "related_technologies": "MACROCORE: Air intake particle capture in earthmoving dust environments | HYDROCORE: Hydraulic circuit filtration for proportional valve protection | SYNTRAX: Full-flow lube protection at ISO 4406 16/14/11 | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic and lube oil circuits",
+    "related_technologies": "MACROCORE: Air intake particle capture in earthmoving dust environments | SYNTRAX: Full-flow lube protection at the ISO 4406 target specified for the approved application | INTEKCORE: Zero-bypass housing for high-vibration earthmoving intake systems | MICROKAPPA: Cabin air filtration for operator diesel particulate and silica dust protection | NANOFORCE: Sub-micron polishing for hydraulic circuits",
     "industrial_role": "Construction equipment operates across all contamination domains simultaneously — effective multi-domain filtration (air, hydraulic, lube, fuel, cabin) is the primary operational variable determining whether equipment achieves planned production uptime or incurs unplanned hydraulic valve and engine component replacement costs."
   },
   "relationships": {
@@ -40,7 +41,6 @@
       "MACROCORE",
       "NANOFORCE",
       "SYNTRAX",
-      "HYDROCORE",
       "MICROKAPPA",
       "INTEKCORE"
     ],
@@ -64,7 +64,7 @@
       "CABIN_PRIMARY"
     ]
   },
-  "vault_path": "elimfilters-vault/02-industries/CONSTRUCTION.md",
+  "vault_path": "elimfilters-vault\\02-industries\\CONSTRUCTION.md",
   "_links": {
     "self": "/api/citation/CONSTRUCTION.json",
     "type_index": "/api/citation/type/industry.json",
@@ -103,11 +103,6 @@
         "key": "SYNTRAX",
         "relation": "applicable_technologies",
         "href": "/api/citation/SYNTRAX.json"
-      },
-      {
-        "key": "HYDROCORE",
-        "relation": "applicable_technologies",
-        "href": "/api/citation/HYDROCORE.json"
       },
       {
         "key": "MICROKAPPA",

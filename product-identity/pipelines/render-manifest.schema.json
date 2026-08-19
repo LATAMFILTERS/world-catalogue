@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elimfilters.com/schemas/render-manifest.schema.json",
+  "title": "ELIMFILTERS Product Image Render Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "phase", "competitor_brand", "competitor_code", "manufacturer_product_url",
+    "manufacturer_screenshot_path", "manufacturer_image_path", "source_real",
+    "resolved_sku", "resolved_from_database", "filter_type", "technology",
+    "technology_asset_path", "logo_asset_path", "container_color_hex",
+    "lithography_color_hex", "target_view", "protected_views", "allowed_changes",
+    "immutable_elements", "render_mode", "render_inputs_verified", "manifest_status"
+  ],
+  "properties": {
+    "phase": {"enum": ["PHASE_1", "PHASE_2", "PHASE_3"]},
+    "competitor_brand": {"type": "string", "minLength": 1},
+    "competitor_code": {"type": "string", "minLength": 1},
+    "manufacturer_product_url": {"type": "string", "minLength": 1},
+    "manufacturer_screenshot_path": {"type": "string", "minLength": 1},
+    "manufacturer_image_path": {"type": "string", "minLength": 1},
+    "source_real": {"const": true},
+    "resolved_sku": {"type": "string", "pattern": "^E[A-Z0-9]+$"},
+    "resolved_from_database": {"const": true},
+    "filter_type": {"type": "string", "minLength": 1},
+    "technology": {"type": "string", "minLength": 1},
+    "technology_asset_path": {"type": "string", "minLength": 1},
+    "logo_asset_path": {"const": "frontend/public/assets/logo-elimfilters.png"},
+    "container_color_hex": {"const": "#414141"},
+    "lithography_color_hex": {"const": "#CBCBCB"},
+    "target_view": {"enum": ["VERTICAL_ONLY", "HORIZONTAL_ONLY", "BOTH"]},
+    "protected_views": {"type": "array", "items": {"enum": ["VERTICAL_VIEW", "HORIZONTAL_VIEW"]}},
+    "geometry_master_path": {"type": ["string", "null"]},
+    "approved_master_path": {"type": ["string", "null"]},
+    "target_property": {"type": ["string", "null"]},
+    "allowed_changes": {"type": "array", "items": {"type": "string"}},
+    "immutable_elements": {"type": "array", "items": {"type": "string"}},
+    "render_mode": {"const": "EDIT_ONLY"},
+    "render_inputs_verified": {"const": true},
+    "manifest_status": {"const": "PASS"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"phase": {"enum": ["PHASE_2", "PHASE_3"]}}},
+      "then": {"required": ["geometry_master_path"]}
+    },
+    {
+      "if": {"properties": {"phase": {"const": "PHASE_3"}}},
+      "then": {"required": ["approved_master_path", "target_property"]}
+    }
+  ]
+}

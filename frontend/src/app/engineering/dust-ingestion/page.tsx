@@ -309,7 +309,7 @@ function DustIngestionContent() {
               {
                 tech: 'MACROCORE™',
                 role: 'Primary air intake protection',
-                description: 'Progressive Density Gradient (PDG) filtration media achieving 99.9%–99.98% efficiency (ISO 5011) for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. Primary protection for mining-class and agricultural engine applications.',
+                description: 'Multi-layer filtration media rated per ISO 5011 for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. Primary protection for mining-class and agricultural engine applications.',
                 href: '/engineering/technologies/TECH-MACROCORE',
               },
               {
@@ -319,10 +319,10 @@ function DustIngestionContent() {
                 href: '/engineering/technologies/TECH-INTEKCORE',
               },
               {
-                tech: 'SYNTEPORE™',
+                tech: 'SYNTAPORE™',
                 role: 'Humid environment intake',
                 description: 'All-synthetic intake filter media for high-humidity environments where cellulose media is susceptible to moisture-induced strength loss and efficiency degradation. Applied in marine-adjacent, tropical, and coastal agricultural environments where conventional cellulose elements fail structurally before reaching rated dust capacity.',
-                href: '/engineering/technologies/TECH-SYNTEPORE',
+                href: '/engineering/technologies/TECH-SYNTAPORE',
               },
             ].map((item) => (
               <Link key={item.tech} href={item.href} style={{ textDecoration: 'none' }}>
@@ -546,7 +546,7 @@ function DustIngestionContent() {
           },
           mentions: {
             standards: ['ISO 5011', 'SAE J1539'],
-            technologies: ['MACROCORE', 'INTEKCORE', 'SYNTEPORE'],
+            technologies: ['MACROCORE', 'INTEKCORE', 'SYNTAPORE'],
             contaminationModes: ['silica dust', 'abrasive wear', 'particle ingestion', 'blow-by contamination'],
             industries: ['Mining', 'Construction', 'Agriculture'],
           },

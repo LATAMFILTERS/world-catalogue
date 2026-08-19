@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, animate, useSpring, useScroll, useTransform } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { GlobalBrandSection } from '@/components/GlobalBrandSection';
 import '@/i18n';
 import { useTranslation } from 'react-i18next';
 import CinematicHero from '@/components/ui/CinematicHero';
@@ -12,14 +13,7 @@ import { EngineeringSearchBar } from '@/components/engineering';
 import type { CustomerIntent } from '@/components/conversion';
 import type { SearchResult } from '@/lib/services';
 
-// â”€â”€â”€ Static structural data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-const STATS_DATA = [
-  { value: null, display: '15k+', ring: 75 },
-  { value: null, display: '3-5 - ', ring: 65 },
-  { value: 80, prefix: '', suffix: '%', ring: 80 },
-  { value: null, display: '$62K', ring: 100 },
-];
+// ─── Static structural data ───────────────────────────────────────────────────
 
 const SLIDE_DURATION = 5000;
 
@@ -46,7 +40,7 @@ const INDUSTRY_COLORS: Record<string, string> = {
   'stationary-engines': 'rgba(233,30,99,0.12)',
 };
 
-// â”€â”€â”€ Counter â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Counter ──────────────────────────────────────────────────────────────────
 
 function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -68,7 +62,7 @@ function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string
   return <span ref={ref}>{prefix}{Number.isInteger(to) ? Math.round(to) : to.toFixed(1)}{suffix}</span>;
 }
 
-// â”€â”€â”€ Spotlight card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Spotlight card ──────────────────────────────────────────────────────────
 
 function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   children: React.ReactNode;
@@ -98,7 +92,7 @@ function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   );
 }
 
-// â”€â”€â”€ FloatingParticles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── FloatingParticles ───────────────────────────────────────────────────────
 
 function FloatingParticles({ count = 22 }: { count?: number }) {
   return (
@@ -114,7 +108,7 @@ function FloatingParticles({ count = 22 }: { count?: number }) {
   );
 }
 
-// â”€â”€â”€ StatRing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── StatRing ─────────────────────────────────────────────────────────────
 
 function StatRing({ percent, content, label }: { percent: number; content: React.ReactNode; label: string }) {
   const r = 38;
@@ -143,7 +137,7 @@ function StatRing({ percent, content, label }: { percent: number; content: React
   );
 }
 
-// â”€â”€â”€ IndustryCard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── IndustryCard ──────────────────────────────────────────────────────────
 
 function IndustryCard({ id, label, href }: { id: string; label: string; href: string }) {
   const [hovered, setHovered] = useState(false);
@@ -159,7 +153,7 @@ function IndustryCard({ id, label, href }: { id: string; label: string; href: st
   );
 }
 
-// â”€â”€â”€ Engineering Entry Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Engineering Entry Section ───────────────────────────────────────────────
 
 const JOURNEY_CARDS = [
   {
@@ -199,7 +193,7 @@ const JOURNEY_CARDS = [
     icon: '04',
     accent: 'rgba(125,211,252,0.06)',
     border: 'rgba(125,211,252,0.18)',
-    href: '/knowledge-system',
+    href: '/knowledge-center/',
     external: false,
   },
 ] as const;
@@ -254,7 +248,7 @@ function EngineeringEntrySection() {
           <EngineeringSearchBar onResult={handleResult} placeholder="Part number, symptom, failure mode, standard..." />
         </motion.div>
 
-        {/* Journey cards  -  2 - 2 grid */}
+        {/* Journey cards — 2x2 grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -287,13 +281,13 @@ function EngineeringEntrySection() {
                 {card.label}
               </div>
               <div style={{
-                color: 'rgba(255,255,255,0.45)', fontSize: '0.82rem', lineHeight: 1.6,
+                color: 'rgba(255,255,255,0.7)', fontSize: '0.82rem', lineHeight: 1.6,
               }}>
                 {card.description}
               </div>
               <div style={{
                 marginTop: '1rem', fontSize: '0.75rem',
-                color: 'rgba(255,255,255,0.25)',
+                color: 'rgba(255,255,255,0.65)',
               }}>
                 {card.external ? 'part-search.elimfilters.com ->' : 'Explore ->'}
               </div>
@@ -306,7 +300,7 @@ function EngineeringEntrySection() {
   );
 }
 
-// â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Page ─────────────────────────────────────────────────────────────────
 
 export default function Home() {
   const { t } = useTranslation();
@@ -351,16 +345,6 @@ export default function Home() {
     <ConversionProvider>
       <Navigation />
       <main style={{ fontFamily: 'Barlow, Arial, sans-serif' }}>
-        {/* â”€â”€ DIRECT ANSWER BLOCK (hidden from view, visible in HTML source for AI crawlers) â”€â”€ */}
-        <div style={{
-          display: 'none',
-          visibility: 'hidden',
-        }}>
-          <p>
-            ELIMFILTERS is an industrial asset protection filtration manufacturer based in Frisco, Texas, engineering heavy-duty air, fuel, hydraulic, oil, and cabin filtration systems for 12 industries including mining, agriculture, marine, and power generation. ELIMFILTERS products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications, backed by 25+ years of industrial field deployment.
-          </p>
-        </div>
-
         <style>{`
           @media (max-width: 768px) {
             .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -376,12 +360,15 @@ export default function Home() {
           }
         `}</style>
 
-        {/* â”€â”€ HERO â”€â”€ */}
+        {/* ── HERO ── */}
         <CinematicHero />
 
-        {/* â”€â”€ ENGINEERING ENTRY â”€â”€ */}
+        {/* ── GLOBAL BRAND SECTION ── */}
+        <GlobalBrandSection />
 
-        {/* â”€â”€ INDUSTRIES STRIP â”€â”€ */}
+        {/* ── ENGINEERING ENTRY ── */}
+
+        {/* ── INDUSTRIES STRIP ── */}
       <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
@@ -400,7 +387,7 @@ export default function Home() {
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem', marginBottom: '2.5rem', lineHeight: 1.75, fontFamily: 'Barlow, Arial, sans-serif' }}>
-                  {t('home.problemIntro', '80% of premature equipment failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components  -  bearing surfaces, injector orifices, hydraulic spools.')}
+                  {t('home.problemIntro', 'Up to 80% of premature hydraulic component failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.')}
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                   {(Array.isArray(failModes) ? failModes : []).map((item, idx) => (
@@ -423,14 +410,14 @@ export default function Home() {
                 <motion.div className="problem-badge" initial={{ opacity: 0, scale: 0.75 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   style={{ position: 'absolute', bottom: -20, right: -20, background: '#FFF12D', color: '#000', padding: '1.5rem', borderRadius: '2px', maxWidth: '180px', boxShadow: '0 8px 40px rgba(255,241,45,0.35)' }}>
                   <p style={{ fontSize: '1.75rem', fontWeight: 900, lineHeight: 1, fontFamily: 'Barlow, Arial, sans-serif' }}>{t('home.problemBadgeNum', '80%')}</p>
-                  <p style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', marginTop: '0.5rem', lineHeight: 1.4, fontFamily: 'Barlow, Arial, sans-serif' }}>{t('home.problemBadgeDesc', 'Of premature failures are caused by contamination.')}</p>
+                  <p style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase', marginTop: '0.5rem', lineHeight: 1.4, fontFamily: 'Barlow, Arial, sans-serif' }}>{t('home.problemBadgeDesc', 'Of premature hydraulic component failures are caused by contamination.')}</p>
                 </motion.div>
               </motion.div>
             </SpotlightCard>
           </div>
         </section>
 
-        {/* â”€â”€ REAL COST OF CONTAMINATION â”€â”€ */}
+        {/* ── REAL COST OF CONTAMINATION ── */}
         <section style={{ padding: '4.75rem 8%', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <motion.div
@@ -440,17 +427,20 @@ export default function Home() {
               viewport={{ once: true, margin: '-80px' }}
             >
 
-              <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.65rem)', textTransform: 'uppercase', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '2.5rem' }}>
+              <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.65rem)', textTransform: 'uppercase', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '1.25rem' }}>
                 One Contamination Event.<br />
-                <span style={{ color: '#FFF12D' }}>$62,000 In Losses.</span>
+                <span style={{ color: '#FFF12D' }}>A Cascade Of Losses.</span>
               </h2>
+              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, maxWidth: '760px', marginBottom: '2.5rem' }}>
+                A single contamination failure rarely stays contained. It escalates from a damaged component to a full assembly replacement, to fluid and system recertification, to unplanned downtime that stalls the whole operation — costs that compound far beyond the part that failed.
+              </p>
             </motion.div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
               {[
-                { label: 'Hydraulic Pump Replacement', cost: '$18,000-$32,000', icon: '05', desc: 'Particle contamination destroys spool valves and pump internals. Complete hydraulic assembly replacement required.' },
-                { label: 'System Flush + Fluid', cost: '$4,000-$6,000', icon: '06', desc: 'Contaminated oil must be fully purged. Lines flushed, fluid replaced, system recertified before return to service.' },
-                { label: 'Unplanned Downtime (5-8 days)', cost: '$40,000-$80,000', icon: '07', desc: 'Lost production on a 50-ton excavator: $5,000-$10,000/day. 5-8 days of downtime compounds cost rapidly.' },
+                { label: 'Component Damage', icon: '05', desc: 'Particle contamination destroys spool valves and pump internals, often requiring full assembly replacement rather than a simple part swap.' },
+                { label: 'System Recovery', icon: '06', desc: 'Contaminated fluid must be fully purged. Lines flushed, fluid replaced, system recertified before the equipment can safely return to service.' },
+                { label: 'Unplanned Downtime', icon: '07', desc: 'Every day an asset is out of service is lost production, missed commitments, and idle labor — the cost that compounds the fastest.' },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -461,9 +451,8 @@ export default function Home() {
                   style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.08)', padding: '2rem', borderRadius: '2px' }}
                 >
                   <p style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{item.icon}</p>
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', marginBottom: '0.4rem' }}>{item.label}</p>
-                  <p style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.4rem', color: '#f87171', marginBottom: '0.75rem' }}>{item.cost}</p>
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.65, textAlign: 'justify' }}>{item.desc}</p>
+                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.7)', marginBottom: '0.6rem' }}>{item.label}</p>
+                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.65, textAlign: 'left' }}>{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -473,23 +462,19 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true, margin: '-60px' }}
-              style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.2)', padding: '2rem 2.5rem', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}
+              style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.2)', padding: '2rem 2.5rem', borderRadius: '2px' }}
             >
-              <div>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.5rem', textTransform: 'uppercase' }}>Prevention cost  -  4x NANOFORCE™ Hydraulic Filters</p>
-                <p style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D' }}>~$232</p>
-              </div>
-              <div style={{ textAlign: 'right' }}>
-                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, textAlign: 'justify' }}>
-                  4 filters at $58 each. Less than 0.4% of a single contamination event.<br />
-                  <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost  -  it is the lowest-cost insurance available.</strong>
-                </p>
-              </div>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem', textTransform: 'uppercase' }}>Prevention vs. Failure</p>
+              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, maxWidth: '760px' }}>
+                Scheduled filter replacement is a routine maintenance line item. A contamination-driven failure is not.
+                <br />
+                <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost — it is the lowest-cost insurance available.</strong>
+              </p>
             </motion.div>
           </div>
         </section>
 
-        {/* â”€â”€ WHY ELIMFILTERS â”€â”€ */}
+        {/* ── WHY ELIMFILTERS ── */}
         <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.h2 initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -500,7 +485,7 @@ export default function Home() {
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                   style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1.75rem' }}>
-                  {t('home.whyP1', 'ELIMFILTERS is not a filter company. ELIMFILTERS is an ')}<strong style={{ color: '#FFF12D' }}>{t('home.whyP1hl', 'Asset Protection Technology')}</strong>{t('home.whyP1after', ' company  -  engineering systems that control contamination, prevent degradation and protect the value of critical industrial assets.')}
+                  {t('home.whyP1', 'ELIMFILTERS is not a filter company. ELIMFILTERS is an ')}<strong style={{ color: '#FFF12D' }}>{t('home.whyP1hl', 'Asset Protection Technology')}</strong>{t('home.whyP1after', ' company — engineering systems that control contamination, prevent degradation and protect the value of critical industrial assets.')}
                 </motion.p>
                 <motion.p variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
                   style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1.75rem' }}>
@@ -528,7 +513,7 @@ export default function Home() {
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {(Array.isArray(whyCardItems) ? whyCardItems : []).map((item, i) => (
                       <li key={i} style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', paddingLeft: '1.5rem', position: 'relative' }}>
-                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>â - †</span>
+                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>→</span>
                         {item}
                       </li>
                     ))}
@@ -539,7 +524,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* â”€â”€ ASSET PROTECTION NARRATIVE â”€â”€ */}
+        {/* ── ASSET PROTECTION NARRATIVE ── */}
         <section style={{ padding: '4.75rem 8%', background: 'linear-gradient(180deg, rgba(255,241,45,0.03) 0%, transparent 100%)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
             style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -553,7 +538,7 @@ export default function Home() {
                   {t('home.assetP1', 'ELIMFILTERS protects industrial assets by controlling contamination across critical systems. Our engineering approach focuses on preventing degradation, extending service life, improving reliability and reducing total cost of ownership.')}
                 </p>
                 <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, paddingLeft: '1.25rem', borderLeft: '3px solid #FFF12D' }}>
-                  {t('home.assetP2', 'Every technology we engineer addresses a specific contamination mechanism  -  particle wear, water ingestion, bypass failure, or thermal degradation  -  targeting the root cause of premature asset failure.')}
+                  {t('home.assetP2', 'Every technology we engineer addresses a specific contamination mechanism — particle wear, water ingestion, bypass failure, or thermal degradation — targeting the root cause of premature asset failure.')}
                 </p>
               </div>
               <div style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.15)', padding: '2.5rem' }}>
@@ -562,7 +547,7 @@ export default function Home() {
                   {[
                     { label: 'Identify Contamination', desc: 'Particles, water, heat, chemical byproducts' },
                     { label: 'Apply Engineering Standards', desc: 'ISO 4406 · ISO 16889 · ISO 5011 · ISO 19438' },
-                    { label: 'Deploy Protection Technology', desc: 'MACROCORE · SYNTRAX · NANOFORCE · SYNTEPORE' },
+                    { label: 'Deploy Protection Technology', desc: 'MACROCORE · SYNTRAX · NANOFORCE · SYNTAPORE' },
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                       <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#FFF12D', flexShrink: 0, marginTop: '0.52rem' }} />
@@ -578,7 +563,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* â”€â”€ SCIENTIFIC AUTHORITY â”€â”€ */}
+        {/* ── SCIENTIFIC AUTHORITY ── */}
         <section style={{ padding: '4.75rem 8%', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
@@ -605,7 +590,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* â”€â”€ TECHNOLOGY â”€â”€ */}
+        {/* ── TECHNOLOGY ── */}
         <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}>
@@ -633,7 +618,7 @@ export default function Home() {
 
 
 
-        {/* â”€â”€ CTA SLIDES â”€â”€ */}
+        {/* ── CTA SLIDES ── */}
         <div style={{ position: 'relative', background: '#000', borderTop: '1px solid #111', overflow: 'hidden' }}>
           {CTA_SLIDES.map((slide, i) => (
             <div key={i} style={{ position: i === activeSlide ? 'relative' : 'absolute', top: i === activeSlide ? undefined : 0, left: i === activeSlide ? undefined : 0, width: '100%', opacity: i === activeSlide ? 1 : 0, transition: 'opacity 0.8s ease', pointerEvents: i === activeSlide ? 'all' : 'none', padding: '4.75rem 8%' }}>
@@ -658,9 +643,9 @@ export default function Home() {
           <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: '#FFF12D', width: `${progress}%` }} />
         </div>
 
-        {/* â”€â”€ TESTIMONIALS â”€â”€ */}
+        {/* ── TESTIMONIALS ── */}
 
-        {/* â”€â”€ FAQ SECTION â”€â”€ */}
+        {/* ── FAQ SECTION ── */}
       </main>
       <Footer />
     </ConversionProvider>

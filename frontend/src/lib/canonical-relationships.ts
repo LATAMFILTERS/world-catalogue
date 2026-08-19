@@ -26,12 +26,19 @@ export const SYSTEM_RELATIONSHIPS = {
     primaryTechnologies: ['macrocore'] as TechnologySlug[],
     supportingTechnologies: ['intekcore', 'microkappa', 'drycore'] as TechnologySlug[],
     productFamilies: ['primary-air', 'secondary-air', 'air-cleaner-housings', 'cabin-filters', 'air-dryer-filters'],
-    standards: ['ISO 5011', 'SAE J1539', 'ISO 11155', 'ISO 8573-1', 'EU Dir. 2019/130'],
+    // Standards are intentionally not modeled at system level: air-intake spans
+    // sub-domains (engine intake, cabin air, pneumatic air-drying) with distinct,
+    // non-interchangeable standards. A system-level list lets the entity graph
+    // attribute any one standard to every technology sharing this system,
+    // regardless of which sub-domain it actually applies to. Standards are
+    // modeled per product family (FAMILY_RELATIONSHIPS below), each of which
+    // maps to exactly one technology.
+    standards: [] as string[],
     industries: ['mining', 'agriculture', 'construction', 'trucks-fleets', 'power-generation', 'marine', 'oil-gas', 'railway', 'bus-coach', 'manufacturing', 'waste-municipal'],
     relatedSystems: ['fuel-cleanliness', 'lubrication', 'cooling-system'],
   },
   'fuel-cleanliness': {
-    primaryTechnologies: ['syntepore', 'hydrocore', 'turbocore'] as TechnologySlug[],
+    primaryTechnologies: ['syntapore', 'hydrocore'] as TechnologySlug[],
     supportingTechnologies: [] as TechnologySlug[],
     productFamilies: ['primary-fuel', 'secondary-fuel', 'fuel-water-separators'],
     standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
@@ -65,12 +72,12 @@ export const SYSTEM_RELATIONSHIPS = {
 } as const;
 
 export const FAMILY_RELATIONSHIPS = {
-  'primary-air': { system: 'air-intake', technology: 'macrocore', standards: ['ISO 5011', 'SAE J1539'] },
+  'primary-air': { system: 'air-intake', technology: 'macrocore', standards: ['ISO 5011'] },
   'secondary-air': { system: 'air-intake', technology: 'macrocore', standards: ['ISO 5011'] },
   'air-cleaner-housings': { system: 'air-intake', technology: 'intekcore', standards: ['ISO 5011'] },
-  'primary-fuel': { system: 'fuel-cleanliness', technology: 'syntepore', standards: ['ASTM D6304', 'ISO 12937'] },
-  'secondary-fuel': { system: 'fuel-cleanliness', technology: 'syntepore', standards: ['ASTM D6304', 'ISO 12937'] },
-  'fuel-water-separators': { system: 'fuel-cleanliness', technology: 'hydrocore', standards: ['ISO 16332', 'ASTM D6304', 'ISO 12937'] },
+  'primary-fuel': { system: 'fuel-cleanliness', technology: 'syntapore', standards: ['ASTM D6304', 'ISO 12937'] },
+  'secondary-fuel': { system: 'fuel-cleanliness', technology: 'syntapore', standards: ['ASTM D6304', 'ISO 12937'] },
+  'fuel-water-separators': { system: 'fuel-cleanliness', technology: 'hydrocore', standards: ['ASTM D6304', 'ISO 12937'] },
   'oil-filters': { system: 'lubrication', technology: 'syntrax', standards: ['ISO 4406', 'ISO 16889'] },
   'hydraulic-filters': { system: 'hydraulic', technology: 'nanoforce', standards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14', 'DIN 51524'] },
   'coolant-filters': { system: 'cooling-system', technology: 'thermacore', standards: ['ASTM D6210'] },
@@ -86,13 +93,13 @@ export const FAILURE_RELATIONSHIPS = {
   },
   'particle-wear': {
     systems: ['air-intake', 'lubrication', 'hydraulic', 'fuel-cleanliness'],
-    technologies: ['macrocore', 'syntrax', 'nanoforce', 'syntepore'],
+    technologies: ['macrocore', 'syntrax', 'nanoforce', 'syntapore'],
     families: ['primary-air', 'secondary-air', 'oil-filters', 'hydraulic-filters', 'primary-fuel', 'secondary-fuel'],
     standards: ['iso-5011', 'iso-4406', 'iso-16889'],
     industries: ['mining', 'construction', 'agriculture', 'trucks-fleets', 'power-generation', 'marine'],
   },
   'diesel-water': {
-    systems: ['fuel-cleanliness'], technologies: ['syntepore', 'hydrocore', 'turbocore'],
+    systems: ['fuel-cleanliness'], technologies: ['syntapore', 'hydrocore'],
     families: ['primary-fuel', 'secondary-fuel', 'fuel-water-separators'],
     standards: ['astm-d6304', 'iso-12937', 'iso-16332'],
     industries: ['mining', 'agriculture', 'power-generation', 'marine', 'oil-gas', 'construction', 'trucks-fleets'],

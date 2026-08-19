@@ -5,17 +5,17 @@
  *
  * import_donaldson.py's TECH_MAP hardcodes:
  *   "EF9": "NANOFORCE™",   // Fuel filters
- *   "EH6": "SYNTEPORE™",   // Hydraulic filters
+ *   "EH6": "SYNTAPORE™",   // Hydraulic filters
  *
  * This contradicts the authoritative technology→system mapping documented
  * in CLAUDE.md (from the 2026-06-23 CORE-EEAT audit):
  *   NANOFORCE  -> Hydraulic (ISO 16889, NFPA T2.14)
- *   SYNTEPORE  -> Fuel / HPCR injectors (ASTM D6304, ISO 12937)
+ *   SYNTAPORE  -> Fuel / HPCR injectors (ASTM D6304, ISO 12937)
  *
  * i.e. the two are swapped for these two prefixes. If real, every HD Fuel
  * row imported via /api/import/donaldson would have technology=NANOFORCE™
- * (should be SYNTEPORE™) and every HD Hydraulic row would have
- * technology=SYNTEPORE™ (should be NANOFORCE™).
+ * (should be SYNTAPORE™) and every HD Hydraulic row would have
+ * technology=SYNTAPORE™ (should be NANOFORCE™).
  *
  * This script only counts and samples — it does not change anything.
  */
@@ -34,7 +34,7 @@ const client = new Client({
 (async () => {
   await client.connect();
 
-  console.log('\n=== Fuel rows with technology = NANOFORCE (expected: SYNTEPORE) ===');
+  console.log('\n=== Fuel rows with technology = NANOFORCE (expected: SYNTAPORE) ===');
   const fuelWrong = await client.query(`
     SELECT sku, filter_type, technology
     FROM elimfilters_catalog
@@ -47,23 +47,23 @@ const client = new Client({
   fuelWrong.rows.slice(0, 10).forEach(r => console.log(`  ${r.sku}  ${r.filter_type}  ${r.technology}`));
   if (fuelWrong.rows.length > 10) console.log(`  ... and ${fuelWrong.rows.length - 10} more`);
 
-  console.log('\n=== Hydraulic rows with technology = SYNTEPORE (expected: NANOFORCE) ===');
+  console.log('\n=== Hydraulic rows with technology = SYNTAPORE (expected: NANOFORCE) ===');
   const hydWrong = await client.query(`
     SELECT sku, filter_type, technology
     FROM elimfilters_catalog
     WHERE duty = 'HEAVY_DUTY'
       AND filter_type ILIKE '%hydraulic%'
-      AND technology ILIKE '%SYNTEPORE%'
+      AND technology ILIKE '%SYNTAPORE%'
     ORDER BY sku
   `);
   console.log(`Count: ${hydWrong.rows.length}`);
   hydWrong.rows.slice(0, 10).forEach(r => console.log(`  ${r.sku}  ${r.filter_type}  ${r.technology}`));
   if (hydWrong.rows.length > 10) console.log(`  ... and ${hydWrong.rows.length - 10} more`);
 
-  console.log('\n=== For comparison: Fuel rows already correctly on SYNTEPORE ===');
+  console.log('\n=== For comparison: Fuel rows already correctly on SYNTAPORE ===');
   const fuelRight = await client.query(`
     SELECT COUNT(*) FROM elimfilters_catalog
-    WHERE duty = 'HEAVY_DUTY' AND filter_type ILIKE '%fuel%' AND technology ILIKE '%SYNTEPORE%'
+    WHERE duty = 'HEAVY_DUTY' AND filter_type ILIKE '%fuel%' AND technology ILIKE '%SYNTAPORE%'
   `);
   console.log(`Count: ${fuelRight.rows[0].count}`);
 

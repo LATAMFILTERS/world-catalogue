@@ -20,7 +20,7 @@ ELIMFILTERS must protect not only products, but also technologies, knowledge, sy
 
 Protected assets include:
 
-- ELIMFILTERS®
+- ELIMFILTERSï¿½
 - Technology names
 - Product names
 - System names
@@ -39,16 +39,16 @@ Protected assets include:
 
 Examples:
 
-- ELIMFILTERS®
-- MACROCORE™
-- SYNTEPORE™
-- SYNTRAX™
-- NANOFORCE™
-- HYDROCORE™
-- THERMACORE™
-- MICROKAPPA™
-- DRYCORE™
-- INTEKCORE™
+- ELIMFILTERSï¿½
+- MACROCOREï¿½
+- SYNTAPOREï¿½
+- SYNTRAXï¿½
+- NANOFORCEï¿½
+- TURBOCOREï¿½
+- THERMACOREï¿½
+- MICROKAPPAï¿½
+- DRYCOREï¿½
+- INTEKCOREï¿½
 
 ---
 

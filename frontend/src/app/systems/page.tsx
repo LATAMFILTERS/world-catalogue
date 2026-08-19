@@ -12,49 +12,47 @@ const SYSTEM_IMAGES: Record<string, string> = {
   lubrication: '/images/oil-hand.avif',
   hydraulic: '/images/hidraulic.avif',
   'cooling-system': '/images/coolant-filters.avif',
-  'cabin-air': '/images/cabin-hero.avif',
-  'compressed-air': '/images/airdryer-hero.avif',
 };
 
 const SYSTEM_LINES: Record<string, string> = {
-  'air-intake': 'Dust ingestion control, airflow stability, restriction management, and engine protection.',
-  'fuel-cleanliness': 'Particle control, water separation, injector protection, and fuel system reliability.',
-  lubrication: 'Wear particle control, oil cleanliness, bearing protection, and engine life extension.',
-  hydraulic: 'Servo valve protection, pressure stability, pump protection, and ISO cleanliness discipline.',
-  'cooling-system': 'Coolant stability, additive control, corrosion reduction, and thermal reliability.',
-  'cabin-air': 'Operator exposure reduction, cabin air quality, dust control, and comfort protection.',
-  'compressed-air': 'Moisture control, dryer protection, pneumatic reliability, and air system cleanliness.',
+  'air-intake': 'Engine intake, cabin-air and pneumatic moisture-control functions organized within one airflow protection domain.',
+  'fuel-cleanliness': 'Particle control and approved fuel-water separation functions for fuel-system protection.',
+  lubrication: 'Lubricant contamination control for bearings, journals and other lubricated components.',
+  hydraulic: 'Fluid cleanliness control for pumps, valves, actuators and precision hydraulic components.',
+  'cooling-system': 'Coolant cleanliness and component protection within the approved cooling-system maintenance strategy.',
 };
 
 export const metadata: Metadata = {
-  title: 'Protection Systems | Asset Protection Platform',
+  title: 'Industrial Asset Protection Systems | Contamination Control | ELIMFILTERS',
   description:
-    'Five industrial protection systems engineered by ELIMFILTERS: air intake, fuel cleanliness, lubrication, hydraulic, and cooling system contamination control.',
+    'Explore five ELIMFILTERS protection systems for air intake, fuel, lubrication, hydraulic, and cooling system contamination control. Prevent equipment failure with engineered asset protection.',
   keywords: [
-    'industrial protection systems',
-    'air intake contamination control',
-    'fuel cleanliness protection',
-    'lubrication reliability engineering',
-    'hydraulic contamination control',
+    'asset protection systems',
+    'contamination control',
+    'air intake protection',
+    'fuel cleanliness',
+    'lubrication protection',
+    'hydraulic protection',
     'cooling system protection',
+    'industrial filtration',
     'ELIMFILTERS',
   ],
   alternates: { canonical: `${BASE_URL}/systems/` },
   openGraph: {
-    title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
+    title: 'Protection Systems | ELIMFILTERS',
     description:
-      'Five industrial protection systems engineered by ELIMFILTERS: air intake, fuel cleanliness, lubrication, hydraulic, and cooling system contamination control.',
+      'Five canonical ELIMFILTERS protection systems for system-level contamination control and asset protection.',
     url: `${BASE_URL}/systems/`,
     type: 'website',
-    siteName: 'ELIMFILTERS World Catalogue',
+    siteName: 'ELIMFILTERS',
     images: [{ url: `${BASE_URL}/images/sistems-hero.avif`, width: 1200, height: 630 }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Protection Systems | ELIMFILTERS Asset Protection Platform',
+    title: 'Protection Systems | ELIMFILTERS',
     description:
-      'Five industrial protection systems engineered by ELIMFILTERS: air intake, fuel cleanliness, lubrication, hydraulic, and cooling system contamination control.',
+      'Five canonical ELIMFILTERS protection systems for system-level contamination control and asset protection.',
     images: [`${BASE_URL}/images/sistems-hero.avif`],
   },
 };
@@ -63,8 +61,9 @@ export default function SystemsPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
+    '@id': `${BASE_URL}/systems/#systems`,
     name: 'ELIMFILTERS Protection Systems',
-    url: `${BASE_URL}/systems`,
+    url: `${BASE_URL}/systems/`,
     numberOfItems: PROTECTION_SYSTEM_LIST.length,
     itemListElement: PROTECTION_SYSTEM_LIST.map((system, index) => ({
       '@type': 'ListItem',
@@ -72,7 +71,7 @@ export default function SystemsPage() {
       item: {
         '@type': 'WebPage',
         name: system.name,
-        url: `${BASE_URL}/systems/${system.slug}`,
+        url: `${BASE_URL}/systems/${system.slug}/`,
         description: system.tagline,
       },
     })),
@@ -90,16 +89,16 @@ export default function SystemsPage() {
 
         <div style={heroInner}>
           <h1 style={heroTitle}>
-            Systems Built
+            Five Protection
             <br />
-            <span style={{ color: '#FFF12D' }}>Around Failure Risk</span>
+            <span style={{ color: '#FFF12D' }}>Systems. One Asset Strategy.</span>
           </h1>
           <p style={heroLead}>
-            ELIMFILTERS organizes filtration by the asset system being protected. Air, fuel, oil, hydraulic, coolant, cabin, and compressed air each demand a different contamination control strategy.
+            ELIMFILTERS organizes contamination control around five canonical protection systems. Cabin-air filtration and pneumatic air-dryer protection remain functions inside Air Intake & Airflow Protection rather than separate core systems.
           </p>
 
           <div style={tagRow}>
-            {['AIR', 'FUEL', 'LUBE', 'HYDRAULIC', 'COOLING', 'CABIN'].map((item) => (
+            {['AIR INTAKE & AIRFLOW', 'FUEL', 'LUBRICATION', 'HYDRAULIC', 'COOLING'].map((item) => (
               <span key={item} style={tag}>{item}</span>
             ))}
           </div>
@@ -109,14 +108,14 @@ export default function SystemsPage() {
       <section style={section}>
         <div style={twoCol}>
           <div>
-            <h2 style={whyTitle}>A filter is a part A system is the protection logic</h2>
+            <h2 style={whyTitle}>A filter is the means. The protected system defines the engineering logic.</h2>
           </div>
           <div>
             <p style={leadText}>
-              The same asset can fail through different contamination pathways: dust ingestion, water in fuel, abrasive wear particles, coolant instability, moisture in compressed air, or operator dust exposure.
+              The same asset can face different contamination pathways across air intake, fuel, lubrication, hydraulic and cooling circuits. Operator cabin protection and pneumatic moisture control are incorporated within the Air Intake & Airflow architecture.
             </p>
             <p style={bodyText}>
-              That is why ELIMFILTERS structures its platform around protection systems first, technologies second, product families third, and individual part numbers last.
+              ELIMFILTERS structures the platform around protection systems first, canonical technologies second, product families third, and individual part numbers last.
             </p>
           </div>
         </div>
@@ -125,7 +124,7 @@ export default function SystemsPage() {
       <section style={systemSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <h2 style={sectionTitle}>Select the system. Control the failure mode.</h2>
+            <h2 style={sectionTitle}>Select the protected system. Control the contamination pathway.</h2>
           </div>
 
           <div style={systemGrid}>
@@ -134,7 +133,7 @@ export default function SystemsPage() {
               const line = SYSTEM_LINES[system.slug] || system.tagline;
 
               return (
-                <Link key={system.key} href={`/systems/${system.slug}`} style={systemCard}>
+                <Link key={system.key} href={`/systems/${system.slug}/`} style={systemCard}>
                   <img src={image} alt={system.name} style={systemImage} />
                   <div style={systemOverlay} />
                   <div style={systemContent}>
@@ -154,7 +153,7 @@ export default function SystemsPage() {
           <div>
             <h2 style={sectionTitle}>From system domain to real part number.</h2>
             <p style={{ ...bodyText, maxWidth: '760px', marginTop: '1.2rem' }}>
-              Use ELIMFILTERS part search to connect OEM numbers, competitive references, dimensions, and application logic back to the correct protection system.
+              Use ELIMFILTERS Part Search to connect OEM numbers, cross-reference data, dimensions and application logic back to the correct protection system.
             </p>
           </div>
           <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={yellowButton}>
@@ -166,14 +165,26 @@ export default function SystemsPage() {
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Explore filters and components by product family.
+            Continue from system architecture to the applicable product family.
           </h2>
           <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>
-            Move from the protection system to the physical product family: primary air, secondary safety elements, housings, fuel, lubrication, hydraulic, coolant, cabin, and compressed air filtration.
+            Product families connect the five protection systems to physical filtration components and application-specific part identification.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-            <Link href="/families" style={yellowButton}>EXPLORE PRODUCT FAMILIES</Link>
+            <Link href="/families/" style={yellowButton}>EXPLORE PRODUCT FAMILIES</Link>
           </div>
+        </div>
+      </section>
+
+      <section style={{ padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,241,45,0.03)', borderTop: '1px solid rgba(255,241,45,0.1)' }}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+          <h2 style={{ ...sectionTitle, marginBottom: '1.5rem' }}>Deep Dive into System Architecture</h2>
+          <p style={{ ...bodyText, maxWidth: '720px', marginBottom: '1.5rem' }}>
+            Learn the engineering reference standards, testing methods, and technical strategies behind each protection system in our Knowledge Center.
+          </p>
+          <Link href="/knowledge-center/systems/" style={yellowButton}>
+            Read the Engineering Reference for Each System →
+          </Link>
         </div>
       </section>
     </main>
@@ -185,14 +196,6 @@ const bodyFont = 'var(--font-body)';
 const approvedDisplayFont = "'Chakra Petch', 'Arial Narrow', monospace";
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
-
-const homeButton: CSSProperties = {
-  position: 'fixed', top: '1.1rem', right: '1.35rem', zIndex: 50,
-  background: 'rgba(0,0,0,0.78)', border: '1px solid rgba(255,241,45,0.45)',
-  color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont,
-  fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.78rem',
-  padding: '0.8rem 1.15rem', backdropFilter: 'blur(14px)',
-};
 
 const hero: CSSProperties = {
   minHeight: '92vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center',
@@ -218,7 +221,7 @@ const heroTitle: CSSProperties = {
 };
 
 const heroLead: CSSProperties = {
-  marginTop: '2rem', maxWidth: '780px', color: 'rgba(255,255,255,0.76)',
+  marginTop: '2rem', maxWidth: '820px', color: 'rgba(255,255,255,0.76)',
   fontSize: 'clamp(1rem, 2vw, 1.25rem)', lineHeight: 1.65, fontWeight: 600,
 };
 
@@ -290,7 +293,7 @@ const systemTitle: CSSProperties = {
 
 const systemLine: CSSProperties = {
   color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem',
-  lineHeight: 1.55, margin: '1rem 0 0', maxWidth: '360px',
+  lineHeight: 1.55, margin: '1rem 0 0', maxWidth: '380px',
 };
 
 const explore: CSSProperties = {

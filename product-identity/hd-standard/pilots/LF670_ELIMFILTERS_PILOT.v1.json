@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.1",
+  "pilot_id": "FLEETGUARD_LUBE_SPINON_POSITION_05",
+  "status": "FINAL_APPROVED",
+  "batch_automation_enabled": false,
+  "source": {
+    "manufacturer": "FLEETGUARD",
+    "competitor_code": "LF670",
+    "product_page": "https://www.fleetguard.com/es/product/lf670/01t5x000008FCFGAA4",
+    "direct_image": "https://fleetguard.com/cdn-cgi/image/format=auto,onerror=redirect/https://atmus.widen.net/content/ndqjh23fem/original/LF670.jpg",
+    "source_type": "REAL_MANUFACTURER_PRODUCT_IMAGE",
+    "geometry_authority": true,
+    "synthetic_or_simulated_source_allowed": false
+  },
+  "mechanical_lock": {
+    "preserve_entire_geometry": true,
+    "preserve_perspective": true,
+    "preserve_baseplate": true,
+    "preserve_thread": true,
+    "preserve_gasket": true,
+    "visible_hole_count": 6,
+    "preserve_hole_count_shape_and_positions": true
+  },
+  "sku_resolution": {
+    "must_run": "product-identity/scripts/resolve-competitor-sku.mjs --code=LF670 --brand=FLEETGUARD --duty=HEAVY_DUTY",
+    "source": "world_catalogue.elimfilters_catalog",
+    "hardcoded_fallback_allowed": false,
+    "inferred_sku_allowed": false,
+    "resolved_sku": "EL81670",
+    "status": "CONFIRMED"
+  },
+  "artwork": {
+    "authority": "data/product-identity/authorities/cylindrical-print-layout-authority.json",
+    "official_logo": "frontend/public/assets/logo-elimfilters.png",
+    "container_color_hex": "#414141",
+    "lithography_color_hex": "#CBCBCB",
+    "brand_claim": "TOTAL ASSET PROTECTION",
+    "technology_for_lube_oil": "SINTRAX®",
+    "technology_descriptor": "Powered Filtration",
+    "sku_typography_reference": "EL83000_APPROVED_REFERENCE",
+    "extra_text_allowed": false,
+    "technical_spec_panel_allowed": false,
+    "oem_reference_text_allowed": false,
+    "qr_allowed": false,
+    "secondary_colors_allowed": false
+  },
+  "approved_render": {
+    "position": "5/20",
+    "sku": "EL81670",
+    "gen_id": "8632c165-3c7a-468e-be92-c4bc869c537d",
+    "geometry_status": "APPROVED",
+    "paint_status": "APPROVED",
+    "lithography_status": "APPROVED",
+    "final_status": "APPROVED",
+    "approved_by": "USER",
+    "approved_at": "2026-08-08T14:27:00-05:00",
+    "locked_as_reference": true,
+    "notes": "Final approved composition: vertical filter and horizontal filter locked. Preserve geometry, #414141 container paint, #CBCBCB lithography, approved placement, EL83000-referenced SKU typography, SINTRAX® and Powered Filtration. No element may be changed unless explicitly requested."
+  },
+  "approval_gate": {
+    "master_approval": "APPROVED",
+    "next_sku_allowed": true,
+    "batch_allowed": false,
+    "rule": "EL81670 is approved and locked. It may be used as a process/layout reference but its physical geometry must never be reused for another SKU."
+  }
+}

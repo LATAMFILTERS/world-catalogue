@@ -1,0 +1,50 @@
+{
+  "path_id": "PATH_C_SYNTAPORE_046",
+  "path_type": "C",
+  "entry_node": "SYNTAPORE",
+  "entry_type": "technology",
+  "industry": null,
+  "valid": true,
+  "steps": [
+    {
+      "key": "SYNTAPORE",
+      "type": "technology",
+      "name": "SYNTAPORE™",
+      "citation_record": {
+        "key": "SYNTAPORE",
+        "type": "technology",
+        "name": "SYNTAPORE™",
+        "slug": "syntapore",
+        "status": "active",
+        "in_unified_data": false,
+        "ud_key": null,
+        "tags": [],
+        "domain": "Fuel",
+        "citation": {
+          "source_url": "https://elimfilters.com/knowledge-center/technologies/syntapore/",
+          "concept": "SYNTAPORE Fuel Filtration Technology",
+          "version": "2.1",
+          "last_updated": "2026-08-18",
+          "content_hash": "sha256:7c3ac1653621abba294fc4d24b9b8b154d4623965bc31763a91c192cc8f20d56"
+        },
+        "canonical": {
+          "definition": "SYNTAPORE is the ELIMFILTERS diesel-fuel filtration architecture for primary, secondary and cartridge fuel-filter applications.",
+          "systems": "Fuel Cleanliness Protection; approved diesel-fuel filtration applications.",
+          "failure_impact": "Uncontrolled particulate contamination in diesel fuel can increase contamination exposure at pumps, injectors and other precision fuel-system components.",
+          "related_standards": "Applicable fuel-filter test methods and application requirements must be selected for the approved system. The technology name alone does not imply a universal micron rating, efficiency, capacity or certification claim.",
+          "related_technologies": "HYDROCORE: Fuel/water separation architecture for approved spin-on, cartridge, FH and FG separator applications. SYNTAPORE governs general staged diesel-fuel particulate filtration only -- it does not perform a water-separation function and must not be represented as an engine-air technology.",
+          "industrial_role": "SYNTAPORE provides the staged particulate-contamination control layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by the required filtration stage, efficiency, capacity, flow, pressure drop and protected fuel-system components."
+        },
+        "relationships": {
+          "related_technologies": [
+            "HYDROCORE"
+          ]
+        },
+        "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTAPORE.md"
+      }
+    }
+  ],
+  "terminal_product_families": [
+    "FUEL_PRIMARY"
+  ]
+}

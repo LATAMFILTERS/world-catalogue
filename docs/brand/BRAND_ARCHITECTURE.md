@@ -1,194 +1,65 @@
-\# BRAND\_ARCHITECTURE
+# ELIMFILTERS BRAND ARCHITECTURE
 
+Status: Canonical
 
+## Entity
 
-Version: 1.0 Draft
+ELIMFILTERS™
 
+Primary category: **Industrial Filtration Engineering**
+Strategic positioning: **Asset Protection Systems**
 
+Core principle: **The filter is the means. Asset protection is the objective.**
 
-\---
+## Architecture
 
+ELIMFILTERS
+→ Industrial Filtration Engineering
+→ Asset Protection Systems
+→ Protection Technologies
+→ Filtration Components
+→ Specialized Solutions
+→ Industrial Applications
+→ Protected Assets
+→ Reliability & Availability
 
+## Five protection systems
 
-\# ELIMFILTERS BRAND HIERARCHY
+1. Air Intake & Airflow Protection
+2. Fuel Cleanliness Protection
+3. Lubrication Protection
+4. Hydraulic Protection
+5. Cooling System Protection
 
+## Core technologies
 
+MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · HYDROCORE™ · SYNTRAX™ · NANOFORCE™ · THERMACORE™
 
-ELIMFILTERS®
+The canonical technology set contains **9 core technologies**. Specialized solutions must never be classified, indexed, serialized, published, or described as technologies.
 
+## Specialized solutions
 
+### DURATECH™
+Classification: **Integrated Filter Kit Program / Specialized Commercial Solution**
 
-Master Brand
+DURATECH™ is the ELIMFILTERS name for coordinated filter kits assembled for a defined vehicle, truck, machine, equipment application, or maintenance interval. It is not a filtration technology.
 
+Canonical public route: `https://elimfilters.com/commercial-lines/duratech/`
 
+### MARINECLEAN™
+Classification: **Marine Filtration Solution / Specialized Commercial Solution**
 
-↓
+MARINECLEAN™ organizes ELIMFILTERS filtration products and asset-protection support for marine applications. It is not a filtration technology.
 
+Canonical public route: `https://elimfilters.com/commercial-lines/marineclean/`
 
+## SEO / GEO classification rule
 
-Platforms
+All SEO metadata, GEO/AI retrieval surfaces, JSON-LD, llms files, citation output, Knowledge Center content, sitemaps, internal entity graphs, audits, and public APIs must preserve the distinction above:
 
+- DURATECH™ → specialized filter-kit program / commercial solution.
+- MARINECLEAN™ → specialized marine filtration solution / commercial solution.
+- Neither may appear under the canonical technology portfolio.
+- Legacy `/technologies/duratech` and `/technologies/marineclean` references are non-canonical and must not be emitted into active discovery surfaces.
 
-
-\* MARINECLEAN™
-
-\* DURATECH™
-
-
-
-↓
-
-
-
-Systems
-
-
-
-\* Air Intake \& Airflow Protection
-
-\* Fuel Cleanliness Protection
-
-\* Lubrication Protection
-
-\* Hydraulic Protection
-
-\* Cooling System Protection
-
-
-
-↓
-
-
-
-Technologies
-
-
-
-\* MACROCORE™
-
-\* MICROKAPPA™
-
-\* DRYCORE™
-
-\* INTEKCORE™
-
-\* SYNTEPORE™
-
-\* HYDROCORE™
-
-\* SYNTRAX™
-
-\* NANOFORCE™
-
-\* THERMACORE™
-
-
-
-↓
-
-
-
-Products
-
-
-
-\* Air Filters
-
-\* Cabin Air Filters
-
-\* Air Dryers
-
-\* Air Intake Housings
-
-\* Fuel Filters
-
-\* Fuel Water Separators
-
-\* FH Series
-
-\* FG Series
-
-\* Lube Filters
-
-\* Hydraulic Filters
-
-\* Coolant Filters
-
-
-
-\---
-
-
-
-\# BRAND RULES
-
-
-
-The ELIMFILTERS® brand always has priority over all sub-brands.
-
-
-
-Technologies never replace the ELIMFILTERS brand.
-
-
-
-Platforms never replace the ELIMFILTERS brand.
-
-
-
-Products never replace the ELIMFILTERS brand.
-
-
-
-All technologies must reinforce the ELIMFILTERS master brand.
-
-
-
-\---
-
-
-
-\# EXAMPLES
-
-
-
-Correct:
-
-
-
-ELIMFILTERS® SYNTEPORE™
-
-
-
-ELIMFILTERS® NANOFORCE™
-
-
-
-ELIMFILTERS® THERMACORE™
-
-
-
-ELIMFILTERS® DURATECH™
-
-
-
-ELIMFILTERS® MARINECLEAN™
-
-
-
-Incorrect:
-
-
-
-SYNTEPORE™ as a standalone corporate brand.
-
-
-
-NANOFORCE™ as a standalone company identity.
-
-
-
-THERMACORE™ replacing ELIMFILTERS branding.
-
-
-
+Public communication must subordinate individual filters to the system-level asset-protection objective.

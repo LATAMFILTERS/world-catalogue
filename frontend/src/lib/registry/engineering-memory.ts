@@ -405,13 +405,13 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
   {
     memoryId: 'MEM-2026-07-01-022',
     entityType: 'TECHNOLOGY_ARCHITECTURE',
-    entityId: 'TECH-SYNTEPORE',
+    entityId: 'TECH-SYNTAPORE',
     entityVersion: '1.0.0',
     archivedDate: '2026-07-01',
     archivedReason: 'VERSION_SNAPSHOT',
     snapshot: {
-      id: 'TECH-SYNTEPORE',
-      name: 'SYNTEPORE',
+      id: 'TECH-SYNTAPORE',
+      name: 'SYNTAPORE',
       systemDomain: 'Fuel HPCR',
       primaryStandards: ['ASTM D6304', 'ISO 12937', 'ISO 16889'],
       engineeringPrincipleIds: ['EP-SEP-001', 'EP-SEP-002', 'EP-PHS-001', 'EP-INS-001', 'EP-CHE-002'],
@@ -585,13 +585,13 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
   {
     memoryId: 'MEM-2026-07-05-001',
     entityType: 'TECHNOLOGY_ARCHITECTURE',
-    entityId: 'TECH-TURBOCORE',
+    entityId: 'TECH-HYDROCORE',
     entityVersion: '1.0.0',
     archivedDate: '2026-07-05',
     archivedReason: 'VERSION_SNAPSHOT',
     snapshot: {
-      id: 'TECH-TURBOCORE',
-      name: 'TURBOCORE',
+      id: 'TECH-HYDROCORE',
+      name: 'HYDROCORE',
       systemDomain: 'Fuel 3-Stage',
       primaryStandards: ['ISO 16332', 'ASTM D6304'],
       engineeringPrincipleIds: ['EP-SEP-003', 'EP-PHS-001', 'EP-PHS-002', 'EP-SEP-001'],

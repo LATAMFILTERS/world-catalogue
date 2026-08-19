@@ -1,0 +1,42 @@
+name: Part Search Regression Gate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'server-protocol.js'
+      - 'server.js'
+      - 'server-original.js'
+      - 'lib/part-search-runtime-hardening.js'
+      - 'scripts/migrations/run_066_add_bot_protocol_catalog_search_indexes.js'
+      - 'tests/part-search-regression.test.js'
+      - '.github/workflows/part-search-regression.yml'
+  pull_request:
+    paths:
+      - 'server-protocol.js'
+      - 'server.js'
+      - 'server-original.js'
+      - 'lib/part-search-runtime-hardening.js'
+      - 'scripts/migrations/run_066_add_bot_protocol_catalog_search_indexes.js'
+      - 'tests/part-search-regression.test.js'
+      - '.github/workflows/part-search-regression.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    name: Exact lookup + diagnostics contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Part Search regression suite
+        run: node --test tests/part-search-regression.test.js

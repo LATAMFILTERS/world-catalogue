@@ -36,7 +36,7 @@ const OUT_SITEMAP = path.join(OUT_DIR, 'sitemap.xml');
 const PUBLIC_SITEMAP = path.join(FRONTEND, 'public', 'sitemap.xml');
 const GENERATOR_SCRIPT = path.join(ROOT, 'scripts', 'generate-kc-sitemap.mjs');
 
-const RETIRED_URL_FRAGMENTS = ['hydrocore-series', 'aquaguard', 'cooltech'];
+const RETIRED_URL_FRAGMENTS = ['turbocore-series', 'aquaguard', 'THERMACORE'];
 const BUILD_TIMEOUT_MS = 10 * 60 * 1000;
 
 function countLocs(sitemapXml) {
@@ -128,10 +128,10 @@ function assertCycleResult(coreRouteCount, label) {
     assert.deepEqual(offenders, [], `[${label}] sitemap lists retired-technology URL(s) containing "${fragment}": ${offenders.join(', ')}`);
   }
 
-  const turbocoreCount = locs.filter((loc) => loc === 'https://elimfilters.com/technologies/turbocore').length;
   const hydrocoreCount = locs.filter((loc) => loc === 'https://elimfilters.com/technologies/hydrocore').length;
-  assert.equal(turbocoreCount, 1, `[${label}] /technologies/turbocore must appear exactly once, found ${turbocoreCount}`);
+  const turbocoreCount = locs.filter((loc) => loc.toLowerCase() === 'https://elimfilters.com/technologies/turbocore').length;
   assert.equal(hydrocoreCount, 1, `[${label}] /technologies/hydrocore must appear exactly once, found ${hydrocoreCount}`);
+  assert.equal(turbocoreCount, 0, `[${label}] retired /technologies/turbocore must not appear in the sitemap, found ${turbocoreCount}`);
 
   return { total: locs.length, kc: legitimateKcCount, core: coreRouteCount };
 }

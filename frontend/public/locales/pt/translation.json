@@ -111,7 +111,9 @@
     "standards": "Padrões",
     "fleetOpt": "Otimização de Frotas",
     "locationText": "Frisco, Texas",
-    "kleoText": "© 2015–2026 Kleo Technologies"
+    "kleoText": "© 2015–2026 Kleo Technologies",
+    "elimfiltersCopyright": "KLEO TECHNOLOGY LLC | Inteligência e Engenharia em Filtração",
+    "elimfiltersYear": "2015–2026"
   },
   "category": {
     "keyAdvantages": "PRINCIPAIS VANTAGENS",
@@ -162,9 +164,9 @@
     "problemTag": "// DIAGNÓSTICO DE RISCO OPERACIONAL",
     "problemH1": "O QUE VOCÊ NÃO CONSEGUE VER",
     "problemH2": "ESTÁ PARANDO SUA OPERAÇÃO.",
-    "problemIntro": "80% das falhas prematuras de equipamentos são causadas por contaminação. A filtração ineficiente permite que partículas invisíveis atuem como lixa dentro de componentes críticos — superfícies de rolamentos, orifícios de injetores, carretéis hidráulicos.",
+    "problemIntro": "Até 80% das falhas prematuras de componentes hidráulicos são causadas por contaminação. A filtração ineficiente permite que partículas invisíveis atuem como lixa dentro de componentes críticos — superfícies de rolamentos, orifícios de injetores, carretéis hidráulicos.",
     "problemBadgeNum": "80%",
-    "problemBadgeDesc": "Das falhas prematuras são causadas por contaminação.",
+    "problemBadgeDesc": "Das falhas prematuras de componentes hidráulicos são causadas por contaminação.",
     "failModes": [
       {
         "title": "Erosão do Injetor",

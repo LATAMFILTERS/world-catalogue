@@ -151,11 +151,11 @@ export const TECHNOLOGIES: TechnologyRecord = {
   },
 
   HYDROCORE: {
-    id: 'hydrocore',
+    id: 'HYDROCORE',
     name: 'HYDROCORE™',
     category: 'Water Removal Technology',
     tagline: 'Integrated Water Extraction System',
-    slug: 'hydrocore',
+    slug: 'HYDROCORE',
     relatedStandards: ['ISO_16889', 'ASTM_D6304', 'ISO_12937'],
     addressesContamination: ['DIESEL_WATER'],
     applicableIndustries: ['MARINE', 'AGRICULTURE', 'OUTDOOR_EQUIPMENT', 'POWER_GEN'],

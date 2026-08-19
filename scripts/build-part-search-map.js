@@ -101,6 +101,18 @@ function getProblemsForIndustry(industryKey) {
   return getEdgeSources(industryKey, 'industry_frequency');
 }
 
+/**
+ * Given a ProductFamily key, return its governed target_industries scope
+ * (ProductFamily → target_industries → Industry). An empty result means the
+ * ProductFamily has not declared a target_industries scope at all and is
+ * treated as unrestricted (no filter applied) rather than universally
+ * excluded, so ProductFamilies with no target_industries declared yet are
+ * not silently dropped from every Type B path.
+ */
+function getTargetIndustriesForProductFamily(pfKey) {
+  return getEdgeTargets(pfKey, 'target_industries');
+}
+
 // ---------------------------------------------------------------------------
 // 4. Build traversal paths
 // ---------------------------------------------------------------------------
@@ -246,8 +258,26 @@ for (const industry of industries) {
       for (const techKey of technologies) {
         const productFamilies = getProductFamiliesForTechnology(techKey);
 
+        // Semantic scope filter: a ProductFamily that declares a governed
+        // target_industries list only terminates a Type B path for
+        // industries in that list. ProductFamilies with no target_industries
+        // declared are unrestricted (see getTargetIndustriesForProductFamily).
+        const terminalPFs = productFamilies.filter((pfKey) => {
+          const allowed = getTargetIndustriesForProductFamily(pfKey);
+          return allowed.length === 0 || allowed.includes(indKey);
+        });
+
+        if (terminalPFs.length === 0) {
+          // Every candidate ProductFamily for this technology is out of
+          // governed scope for this industry — this is not a structural
+          // failure (V001-V004), it is a semantically out-of-scope
+          // combination. Do not emit a path for it at all, consistent with
+          // this program's standing rule of removing false relationships
+          // rather than recording them as stubs.
+          continue;
+        }
+
         const steps = [stepObj(indKey), stepObj(pKey), stepObj(cmKey), stepObj(techKey)];
-        const terminalPFs = productFamilies;
 
         const pathId = makePathId('B', indKey);
         const validationFailures = validatePath(steps, terminalPFs);

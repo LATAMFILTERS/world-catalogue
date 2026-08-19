@@ -17,7 +17,7 @@ app.get("/health", async (_req, res) => res.json({ok: true, dryRun: config.dryRu
 app.get("/ready", async (_req, res) => {
   try {
     const database = await store.status();
-    res.json({ready: true, dryRun: config.dryRun, checks: {pageId: true, accessToken: true, appSecret: true, verifyToken: true, database}});
+    res.json({ready: true, dryRun: config.dryRun, checks: {pageId: true, accessToken: true, appSecret: true, verifyToken: true, botProtocol: true, database}});
   } catch (error) {
     res.status(503).json({ready: false, error: error.message});
   }
@@ -54,7 +54,7 @@ app.post("/webhook", express.raw({type: "application/json", limit: "1mb"}), asyn
     for (const event of events) {
       try {
         if (!(await store.claim(event))) continue;
-        const reply = await generateReply(config, event.text);
+        const reply = await generateReply(config, event.text, event);
         if (!reply || reply.trim().toUpperCase() === "NO_REPLY") {
           await store.complete(event.eventId, reply || "", "ignored");
           continue;

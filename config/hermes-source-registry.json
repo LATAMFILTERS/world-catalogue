@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "status": "development",
+  "approval_owner": "Victor Abreu",
+  "collection_policy": {
+    "prefer_primary_sources": true,
+    "retain_source_evidence": true,
+    "respect_access_terms": true,
+    "database_writes_allowed": false,
+    "canonical_vault_writes_allowed": false
+  },
+  "domains": [
+    {
+      "id": "oem_equipment",
+      "label": "OEM and equipment launches",
+      "candidate_types": ["equipment_update", "oem_update", "application_update", "oem_reference_update"],
+      "examples": ["Volvo Trucks", "Caterpillar", "Ford", "Cummins", "John Deere", "Komatsu"],
+      "preferred_source_types": ["official_manufacturer", "official_pressroom", "official_product_page", "official_manual", "official_parts_catalog"]
+    },
+    {
+      "id": "competitor_intelligence",
+      "label": "Competitor products and technologies",
+      "candidate_types": ["competitor_product_update", "competitor_technology_update", "coverage_gap"],
+      "examples": ["Donaldson", "Fleetguard", "MANN-FILTER", "Baldwin", "WIX"],
+      "preferred_source_types": ["official_manufacturer", "official_pressroom", "official_product_page", "official_technical_document"]
+    },
+    {
+      "id": "filter_media",
+      "label": "Filter media and materials",
+      "candidate_types": ["filter_media_development", "supplier_development"],
+      "examples": ["filter paper mills", "synthetic media manufacturers", "membrane suppliers", "fiber and resin suppliers"],
+      "preferred_source_types": ["official_supplier", "official_technical_document", "patent_office", "standards_body"]
+    },
+    {
+      "id": "standards_patents",
+      "label": "Standards, patents and technical bulletins",
+      "candidate_types": ["standard_update", "patent_update", "technical_bulletin"],
+      "examples": ["ISO", "SAE", "patent offices", "OEM technical bulletins"],
+      "preferred_source_types": ["standards_body", "patent_office", "official_manufacturer", "regulator"]
+    }
+  ],
+  "source_statuses": ["PROPOSED", "APPROVED", "PAUSED", "REJECTED"],
+  "minimum_evidence_for_approval": "PRIMARY"
+}

@@ -1,4 +1,6 @@
 import type { CSSProperties } from 'react';
+import { SystemEditorialContent } from '@/components/SystemEditorial';
+import { getSystemEditorial } from '@/lib/system-editorial';
 
 type SystemSlug = 'air-intake' | 'fuel-cleanliness' | 'lubrication' | 'hydraulic' | 'cooling-system';
 
@@ -135,23 +137,27 @@ const copy: Record<SystemSlug, {
 
 export function CoreSystemProtectionNarrative({ slug }: Props) {
   const narrative = copy[slug as SystemSlug];
+  const editorial = getSystemEditorial(slug);
   if (!narrative) return null;
 
   return (
-    <section style={sectionStyle}>
-      <div style={shellStyle}>
-        <p style={eyebrowStyle}>Protection Architecture</p>
-        <h2 style={titleStyle}>{narrative.title}</h2>
-        <p style={paragraphStyle}>{narrative.lead}</p>
-        <div style={gridStyle}>
-          {narrative.cards.map((card) => (
-            <article key={card.title} style={cardStyle}>
-              <h3 style={cardTitleStyle}>{card.title}</h3>
-              <p style={cardParagraphStyle}>{card.body}</p>
-            </article>
-          ))}
+    <>
+      <section style={sectionStyle}>
+        <div style={shellStyle}>
+          <p style={eyebrowStyle}>Protection Architecture</p>
+          <h2 style={titleStyle}>{narrative.title}</h2>
+          <p style={paragraphStyle}>{narrative.lead}</p>
+          <div style={gridStyle}>
+            {narrative.cards.map((card) => (
+              <article key={card.title} style={cardStyle}>
+                <h3 style={cardTitleStyle}>{card.title}</h3>
+                <p style={cardParagraphStyle}>{card.body}</p>
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      {editorial && <SystemEditorialContent editorial={editorial} />}
+    </>
   );
 }

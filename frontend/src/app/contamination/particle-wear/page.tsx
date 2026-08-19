@@ -182,7 +182,7 @@ export default function ParticleWearPage() {
               {
                 tech: 'SYNTRAX',
                 role: 'Synthetic Lube Oil Media',
-                desc: 'Beta 1000 @ 10µm (vs 200 @ 25µm standard). High dirt capacity (+150%), maintains ISO objective longer.',
+                desc: 'Synthetic gradient media engineered for high dirt-holding capacity in engine lube oil circuits, supporting the cleanliness target specified for the approved application.',
               },
               {
                 tech: 'DURATECH',
@@ -238,7 +238,7 @@ export default function ParticleWearPage() {
             <p style={{ marginTop: '1rem' }}>
               <strong>RELATED_TECHNOLOGIES</strong>
               <br />
-              SYNTRAX: Synthetic media Beta 1000 @ 10µm, maintains ISO 16/14/11 indefinitely | MACROCORE: Air intake 99.9% @ 3-10µm, reduces particle source
+              SYNTRAX: Synthetic gradient lube oil media, supports the cleanliness target specified for the approved application | MACROCORE: Air intake filtration at 3-10µm, reduces particle source
             </p>
 
             <p

@@ -33,7 +33,7 @@ jobs:
           EXPECTED_TOTAL = 317
           EXPECTED_KC = 254
           REQUIRED_KC_HUB = "https://elimfilters.com/knowledge-center"
-          RETIRED_FRAGMENTS = ["hydrocore-series", "aquaguard", "cooltech"]
+          RETIRED_FRAGMENTS = ["TURBOCORE-series", "aquaguard", "THERMACORE"]
 
           failures = []
 
@@ -79,7 +79,7 @@ jobs:
           ]
           kc_count = len(kc_locs)
           turbocore_count = locs.count("https://elimfilters.com/technologies/turbocore")
-          hydrocore_count = locs.count("https://elimfilters.com/technologies/hydrocore")
+          TURBOCORE_count = locs.count("https://elimfilters.com/technologies/TURBOCORE")
           retired_counts = {
               fragment: sum(1 for loc in locs if fragment in loc.lower())
               for fragment in RETIRED_FRAGMENTS
@@ -90,7 +90,7 @@ jobs:
           print(f"Knowledge Center URLs: {kc_count}")
           print(f"Duplicate URLs: {duplicate_count}")
           print(f"/technologies/turbocore count: {turbocore_count}")
-          print(f"/technologies/hydrocore count: {hydrocore_count}")
+          print(f"/technologies/TURBOCORE count: {TURBOCORE_count}")
           for fragment, count in retired_counts.items():
               print(f"Retired '{fragment}' count: {count}")
 
@@ -116,8 +116,8 @@ jobs:
               if turbocore_count != 1:
                   fail(f"expected /technologies/turbocore exactly once, found {turbocore_count}")
 
-              if hydrocore_count != 1:
-                  fail(f"expected /technologies/hydrocore exactly once, found {hydrocore_count}")
+              if TURBOCORE_count != 1:
+                  fail(f"expected /technologies/TURBOCORE exactly once, found {TURBOCORE_count}")
 
               for fragment, count in retired_counts.items():
                   if count != 0:

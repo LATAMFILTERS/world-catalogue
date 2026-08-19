@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "segment": "HD",
+  "purpose": "Sequential pilot matrices used to calibrate production templates before catalogue-wide rollout.",
+  "rules": {
+    "pilot_size_per_family": 10,
+    "use_verified_world_catalogue_data_only": true,
+    "do_not_invent_dimensions": true,
+    "do_not_release_factory_artwork_until_pilot_is_validated": true
+  },
+  "sequence": [
+    {
+      "order": 1,
+      "pilot_id": "HD_PILOT_SPIN_ON_10",
+      "family": "spin_on",
+      "target_count": 10,
+      "status": "active",
+      "selection_goal": "Representative spread from smallest to largest HD spin-on geometry, including oil, fuel, coolant and hydraulic spin-on products when applicable."
+    },
+    {
+      "order": 2,
+      "pilot_id": "HD_PILOT_CARTRIDGE_10",
+      "family": "cartridge",
+      "target_count": 10,
+      "status": "queued"
+    },
+    {
+      "order": 3,
+      "pilot_id": "HD_PILOT_CABIN_10",
+      "family": "cabin_filter",
+      "target_count": 10,
+      "status": "queued"
+    },
+    {
+      "order": 4,
+      "pilot_id": "HD_PILOT_AIR_FILTER_10",
+      "family": "air_filter",
+      "target_count": 10,
+      "status": "queued"
+    },
+    {
+      "order": 5,
+      "pilot_id": "HD_PILOT_FUEL_SEPARATOR_NO_DRAIN_10",
+      "family": "fuel_water_separator",
+      "construction_variant": "without_drain_bowl_or_purger",
+      "target_count": 10,
+      "status": "queued"
+    },
+    {
+      "order": 6,
+      "pilot_id": "HD_PILOT_HOUSINGS_10",
+      "family": "housing",
+      "target_count": 10,
+      "status": "queued"
+    },
+    {
+      "order": 7,
+      "pilot_id": "HD_PILOT_TURBINE_10",
+      "family": "turbine_series",
+      "target_count": 10,
+      "status": "queued",
+      "notes": "TURBOCORE turbine-style assemblies are calibrated after housings because they combine body, bowl and element presentation constraints."
+    }
+  ]
+}

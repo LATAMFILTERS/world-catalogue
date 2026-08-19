@@ -1,0 +1,226 @@
+name: HERMES Weekly Intelligence Collection
+
+# GitHub Actions cron always runs in UTC and does not observe daylight
+# saving time. "8:00 AM America/Chicago" is 13:00 UTC during Central
+# Daylight Time (UTC-5, roughly mid-March to early November) and 14:00 UTC
+# during Central Standard Time (UTC-6, the rest of the year). Both crons are
+# scheduled below; the "Guard against DST duplicate run" step computes the
+# actual current America/Chicago local hour and skips the rest of the job
+# unless it is really 08:xx local time, so only one of the two scheduled
+# firings ever does real work. Manual workflow_dispatch runs always proceed
+# regardless of local time. Known limitation: in the single week where the
+# US DST transition itself happens, the two triggers can both land outside
+# 08:xx local (or, rarely, both land inside it) — see hermes/PHASE5-LITE.md.
+#
+# Durable state: GitHub Actions runners are ephemeral — nothing written only
+# to the runner's filesystem survives past the job. The governed source
+# baseline (hermes/baselines/source-baseline.json when checked out locally)
+# is therefore never the durable copy; the durable copy lives on the
+# dedicated `hermes-state` branch (state/source-baseline.json,
+# state/backups/*, state/promotion-audit.json), read and written only via
+# scripts/hermes/git-state-branch.mjs plumbing that never touches this
+# workflow's checkout of `main`. See hermes/OPERATIONAL-ACTIVATION-CHECKLIST.md
+# section H.
+on:
+  schedule:
+    - cron: '0 13 * * 1' # 08:00 America/Chicago during CDT (UTC-5)
+    - cron: '0 14 * * 1' # 08:00 America/Chicago during CST (UTC-6)
+  workflow_dispatch:
+    inputs:
+      promote_baseline:
+        description: 'Promote a freshly generated baseline preview onto the hermes-state branch. Manual-only — this input does not exist on the schedule trigger, so a scheduled run can never promote. Requires the HERMES_BASELINE_APPROVAL_TOKEN repository secret to be set correctly; the token itself is never entered here.'
+        type: boolean
+        default: false
+      rollback_backup_name:
+        description: 'Exact backup filename under state/backups/ on hermes-state to restore (e.g. source-baseline.2026-08-04T04-29-21-909Z.json). Leave blank unless you are rolling back. Requires the HERMES_BASELINE_APPROVAL_TOKEN repository secret.'
+        type: string
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hermes-weekly
+  cancel-in-progress: false
+
+jobs:
+  promote-baseline:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.promote_baseline == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: hermes-baseline-state
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Generate a fresh baseline preview
+        env:
+          HERMES_BASELINE_MODE: 'true'
+          HERMES_COLLECTION_DRY_RUN: 'true'
+        run: npm run hermes:collect
+      - name: Promote preview to hermes-state
+        id: promote
+        continue-on-error: true
+        env:
+          HERMES_BASELINE_MODE: 'true'
+          HERMES_BASELINE_PROMOTE: 'true'
+          HERMES_COLLECTION_DRY_RUN: 'true'
+          HERMES_BASELINE_APPROVAL_TOKEN: ${{ secrets.HERMES_BASELINE_APPROVAL_TOKEN }}
+        run: npm run hermes:baseline:promote
+      - name: Upload promotion artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hermes-baseline-promotion
+          path: hermes/baselines
+          if-no-files-found: warn
+
+  rollback-baseline:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.rollback_backup_name != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: hermes-baseline-state
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Roll back hermes-state baseline
+        env:
+          HERMES_BASELINE_APPROVAL_TOKEN: ${{ secrets.HERMES_BASELINE_APPROVAL_TOKEN }}
+        run: npm run hermes:baseline:rollback -- "${{ github.event.inputs.rollback_backup_name }}"
+
+  weekly-collection:
+    needs: [promote-baseline, rollback-baseline]
+    if: always()
+    runs-on: ubuntu-latest
+    # contents: write is required only for the two harvest-state sync steps
+    # below (state/source-observations.json on hermes-state) — a normal
+    # weekly run never writes anything else. The governed baseline
+    # (state/source-baseline.json, state/backups/**, state/promotion-audit.json)
+    # stays reachable ONLY through the promote-baseline/rollback-baseline
+    # jobs above, which remain gated behind HERMES_BASELINE_APPROVAL_TOKEN.
+    permissions:
+      contents: write
+    env:
+      HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
+      # A normal weekly run must never silently stay in baseline-only mode —
+      # baseline generation/refresh is the promote-baseline job's job
+      # (literally), which hardcodes HERMES_BASELINE_MODE=true for its own
+      # steps regardless of this variable. This default only governs the
+      # real-intelligence weekly-collection job, so it defaults to 'false':
+      # real intelligence collection is the safe, expected default here.
+      HERMES_BASELINE_MODE: ${{ vars.HERMES_BASELINE_MODE || 'false' }}
+      HERMES_MAX_SOURCES_PER_RUN: ${{ vars.HERMES_MAX_SOURCES_PER_RUN || '35' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Guard against DST duplicate run
+        id: guard
+        run: |
+          HOUR=$(node -e "console.log(new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'2-digit',hour12:false}).format(new Date()))")
+          echo "Current America/Chicago hour: $HOUR"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$HOUR" != "08" ]; then
+            echo "This is the DST-shifted cron firing outside the 08:xx America/Chicago window; skipping the rest of the job."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Restore baseline from hermes-state
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:baseline:restore
+
+      - name: Restore semantic-harvest state from hermes-state
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:harvest:restore
+
+      - name: Download promotion result (if this dispatch also promoted)
+        if: steps.guard.outputs.proceed == 'true' && needs.promote-baseline.result == 'success'
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: hermes-baseline-promotion
+          path: hermes/baselines
+
+      - name: Collect governed known sources
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:collect
+
+      - name: Persist semantic-harvest state to hermes-state
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:harvest:persist
+
+      # The source registry is not the mission boundary. HERMES also performs
+      # a mission-driven live-web sweep across the complete filtration
+      # ecosystem so new organizations/topics can be discovered even when no
+      # endpoint was previously registered.
+      - name: Sweep complete filtration industry with Groq
+        if: steps.guard.outputs.proceed == 'true' && env.HERMES_BASELINE_MODE != 'true'
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
+        run: npm run hermes:sweep
+
+      # A known-source hash change is only a signal. Groq must resolve it into
+      # concrete evidence before it is eligible for Victor's review.
+      - name: Resolve detected source changes with Groq
+        if: steps.guard.outputs.proceed == 'true' && env.HERMES_BASELINE_MODE != 'true'
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
+        run: npm run hermes:research
+
+      - name: Validate real candidates
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:validate:real
+
+      - name: Generate weekly review report
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:report:real
+
+      - name: Send weekly review email
+        if: steps.guard.outputs.proceed == 'true'
+        env:
+          HERMES_EMAIL_PROVIDER: outlook
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          HERMES_SENDER_EMAIL: ${{ secrets.HERMES_SENDER_EMAIL }}
+          HERMES_REVIEW_EMAIL: ${{ secrets.HERMES_REVIEW_EMAIL }}
+          HERMES_EMAIL_LIVE: ${{ vars.HERMES_EMAIL_LIVE || 'false' }}
+        run: npm run hermes:email:real
+
+      - name: Upload HERMES artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hermes-weekly-collection
+          path: |
+            hermes/real-candidates
+            hermes/real-candidates-previews
+            hermes/reports
+            hermes/source-cache
+            hermes/baselines
+            hermes/industry-sweep
+            elimfilters-vault/94-sync-log
+          if-no-files-found: warn

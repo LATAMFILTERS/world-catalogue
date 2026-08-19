@@ -29,9 +29,9 @@ export function buildRecommendation(params: {
     'HYDROCORE™': ['Water Separators', 'Fuel Coalescers'],
     'NANOFORCE™': ['High Pressure Hydraulics'],
     'MICROKAPPA™': ['Cabin Air Filters'],
-    'SYNTEPORE™': ['Advanced Fuel Filters'],
-    'SYNTRAX™': ['Air/Oil Separators'],
-    'INTEKCORE™': ['Standard Lube', 'Standard Fuel', 'Standard Air'],
+    'SYNTAPORE™': ['Advanced Fuel Filters'],
+    'SYNTRAX™': ['Primary Lube Oil Protection'],
+    'INTEKCORE™': ['Standard Air'],
   };
 
   for (const tech of recommendedTechnologies) {

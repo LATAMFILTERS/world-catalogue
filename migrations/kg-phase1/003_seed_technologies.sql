@@ -13,7 +13,7 @@
 --
 -- ACTIVE TECHNOLOGIES (9):
 --   macrocore, intekcore, drycore, syntrax, thermacore, nanoforce,
---   hydrocore, syntepore, microkappa
+--   TURBOCORE, SYNTAPORE, microkappa
 --
 -- PRE_LAUNCH TECHNOLOGIES (2):
 --   duratech   — Fleet maintenance kit system. Pages exist in techPagesData.ts.
@@ -88,7 +88,7 @@ FROM (VALUES
   ),
 
   -- ─── LUBE / OIL SYSTEMS ────────────────────────────────────────────────────
-  -- COOLTECH™ in DB maps to slug 'thermacore' (renamed from cooltech)
+  -- THERMACORE™ in DB maps to slug 'thermacore' (renamed from THERMACORE)
   -- NOTE: BLUECLEAN™ excluded from this section — no products, no technical
   -- content, placeholder only. See file header for exclusion rationale.
 
@@ -142,25 +142,25 @@ FROM (VALUES
   ),
 
   -- ─── FUEL SYSTEMS ─────────────────────────────────────────────────────────
-  -- AQUAGUARD™ in DB maps to slug 'hydrocore' (renamed from aquaguard)
+  -- AQUAGUARD™ in DB maps to slug 'TURBOCORE' (renamed from aquaguard)
   -- See 005_populate_product_technologies.sql for normalization CASE
 
   (
-    'hydrocore',
-    'HYDROCORE™',
+    'TURBOCORE',
+    'TURBOCORE™',
     'fuel',
     'Fuel/Water Separation',
     'Fuel/water separator technology removing free and emulsified water from diesel fuel. Spin-on and cartridge configurations. Addresses DIESEL_WATER contamination mode: prevents injector stiction, microbial growth, and fuel gum formation. Applied in agriculture, marine, automotive, and power generation.',
-    'logo-hydrocore.png',
+    'logo-TURBOCORE.png',
     'ACTIVE'
   ),
   (
-    'syntepore',
-    'SYNTEPORE™',
+    'SYNTAPORE',
+    'SYNTAPORE™',
     'fuel',
     'Fuel Filtration',
     'Synthetic media fuel filter technology removing particulates from diesel fuel systems. Inline, spin-on, and cartridge configurations. Controls fuel cleanliness to protect high-pressure common rail injector systems. Replaces deprecated SYNTAPORE designation.',
-    'logo-syntepore.png',
+    'logo-SYNTAPORE.png',
     'ACTIVE'
   ),
 
@@ -209,8 +209,8 @@ ORDER BY kt.status DESC, ks.sort_order, kt.slug;
 -- ACTIVE      | syntrax     | SYNTRAX™       | lube-oil       | Lube / Engine Oil Filtration
 -- ACTIVE      | thermacore  | THERMACORE™    | lube-oil       | Coolant Filtration
 -- ACTIVE      | nanoforce   | NANOFORCE™     | hydraulic      | Hydraulic Filtration
--- ACTIVE      | hydrocore   | HYDROCORE™     | fuel           | Fuel/Water Separation
--- ACTIVE      | syntepore   | SYNTEPORE™     | fuel           | Fuel Filtration
+-- ACTIVE      | TURBOCORE   | TURBOCORE™     | fuel           | Fuel/Water Separation
+-- ACTIVE      | SYNTAPORE   | SYNTAPORE™     | fuel           | Fuel Filtration
 -- ACTIVE      | microkappa  | MICROKAPPA™    | cabin          | Cabin Air Filtration
 -- PRE_LAUNCH  | duratech    | DURATECH™      | lube-oil       | Heavy-Duty Engine Oil Filtration
 -- PRE_LAUNCH  | marineclean | MARINECLEAN™   | lube-oil       | Marine Filtration

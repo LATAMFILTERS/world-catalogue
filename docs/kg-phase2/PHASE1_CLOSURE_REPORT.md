@@ -44,12 +44,12 @@
 | slug | status | category |
 |------|--------|----------|
 | drycore | ACTIVE | Air Dryer Technology |
-| hydrocore | ACTIVE | Fuel/Water Separation |
+| TURBOCORE | ACTIVE | Fuel/Water Separation |
 | intekcore | ACTIVE | Air Housing & Precleaner |
 | macrocore | ACTIVE | Air Intake Filtration |
 | microkappa | ACTIVE | Cabin Air Filtration |
 | nanoforce | ACTIVE | Hydraulic Filtration |
-| syntepore | ACTIVE | Fuel Filtration |
+| SYNTAPORE | ACTIVE | Fuel Filtration |
 | syntrax | ACTIVE | Lube / Engine Oil Filtration |
 | thermacore | ACTIVE | Coolant Filtration |
 | duratech | PRE_LAUNCH | Heavy-Duty Engine Oil Filtration |

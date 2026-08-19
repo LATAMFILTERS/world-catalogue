@@ -1,0 +1,155 @@
+name: Prepare Product Render Request
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'product-identity/render-requests/*.json'
+      - 'product-identity/geometry-evidence/*.json'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'product-identity/render-requests/*.json'
+      - 'product-identity/geometry-evidence/*.json'
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL_READONLY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install runtime
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+          python3 -m pip install pillow
+      - name: Resolve request
+        id: req
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "push" ]; then
+            changed=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}")
+            request=$(printf '%s\n' "$changed" | grep '^product-identity/render-requests/.*\.json$' | tail -n 1 || true)
+          fi
+          if [ -z "${request:-}" ]; then
+            request=$(find product-identity/render-requests -maxdepth 1 -type f -name '*.json' | sort | tail -n 1)
+          fi
+          test -n "$request"
+          echo "request=$request" >> "$GITHUB_OUTPUT"
+          node - "$request" >> "$GITHUB_OUTPUT" <<'NODE'
+          const fs=require('fs'); const j=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
+          const vals={
+            brand:String(j.brand||'').toUpperCase(), code:String(j.code||'').toUpperCase(),
+            product_url:j.product_url||'', catalog_url:j.catalog_url||'',
+            catalog_page:Number(j.catalog_page||0), catalog_position:Number(j.catalog_position||0),
+            geometry_evidence:j.geometry_evidence||`product-identity/geometry-evidence/${String(j.code||'').toUpperCase()}.json`
+          };
+          for (const [k,v] of Object.entries(vals)) console.log(`${k}=${v}`);
+          NODE
+      - name: Acquire fresh official source and screenshot
+        id: source
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p product-identity/render-results
+          code='${{ steps.req.outputs.code }}'
+          node product-identity/scripts/acquire-manufacturer-source.mjs \
+            "--brand=${{ steps.req.outputs.brand }}" \
+            "--code=${code}" \
+            "--product-url=${{ steps.req.outputs.product_url }}" \
+            2>&1 | tee "product-identity/render-results/${code}-source.log"
+      - name: Build compact visual evidence
+        if: steps.source.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          code='${{ steps.req.outputs.code }}'
+          evidence="product-identity/source-assets/${code}/${code}-source-evidence.json"
+          source_path=$(node -p "JSON.parse(require('fs').readFileSync('$evidence','utf8')).source_image_path")
+          screenshot_path=$(node -p "JSON.parse(require('fs').readFileSync('$evidence','utf8')).screenshot_path || ''")
+          python3 - "$source_path" "product-identity/render-results/${code}-official-source-preview.jpg" <<'PY'
+          from PIL import Image
+          import sys
+          im=Image.open(sys.argv[1]).convert('RGB'); im.thumbnail((1400,1400)); im.save(sys.argv[2],'JPEG',quality=90,optimize=True)
+          PY
+          base64 -w0 "product-identity/render-results/${code}-official-source-preview.jpg" > "product-identity/render-results/${code}-official-source-preview.b64"
+          if [ -n "$screenshot_path" ] && [ -f "$screenshot_path" ]; then
+            python3 - "$screenshot_path" "product-identity/render-results/${code}-official-page-preview.jpg" <<'PY'
+          from PIL import Image
+          import sys
+          im=Image.open(sys.argv[1]).convert('RGB'); im.thumbnail((1600,2200)); im.save(sys.argv[2],'JPEG',quality=82,optimize=True)
+          PY
+            base64 -w0 "product-identity/render-results/${code}-official-page-preview.jpg" > "product-identity/render-results/${code}-official-page-preview.b64"
+          fi
+      - name: Prepare authorized packet when geometry evidence exists
+        id: prepare
+        if: steps.source.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          code='${{ steps.req.outputs.code }}'
+          geom='${{ steps.req.outputs.geometry_evidence }}'
+          if [ ! -f "$geom" ]; then
+            echo 'STOP_GEOMETRY_EVIDENCE_MISSING' | tee "product-identity/render-results/${code}-prepare.log"
+            exit 3
+          fi
+          if [ -z "$DATABASE_URL" ]; then
+            echo 'DATABASE_URL_READONLY_MISSING' | tee "product-identity/render-results/${code}-prepare.log"
+            exit 2
+          fi
+          node product-identity/scripts/prepare-product-render.mjs \
+            "--brand=${{ steps.req.outputs.brand }}" \
+            "--code=${code}" \
+            "--product-url=${{ steps.req.outputs.product_url }}" \
+            "--catalog-url=${{ steps.req.outputs.catalog_url }}" \
+            "--catalog-page=${{ steps.req.outputs.catalog_page }}" \
+            "--catalog-position=${{ steps.req.outputs.catalog_position }}" \
+            "--geometry-evidence=${geom}" \
+            --phase=PHASE_2 2>&1 | tee "product-identity/render-results/${code}-prepare.log"
+      - name: Write status
+        if: always() && steps.req.outputs.code != ''
+        shell: bash
+        run: |
+          code='${{ steps.req.outputs.code }}'; mkdir -p product-identity/render-results
+          source_outcome='${{ steps.source.outcome }}'; prepare_outcome='${{ steps.prepare.outcome }}'
+          if [ "$source_outcome" != 'success' ]; then status='STOP_SOURCE';
+          elif [ "$prepare_outcome" = 'success' ]; then status='PASS';
+          else status='SOURCE_READY_WAIT_GEOMETRY'; fi
+          node - "$code" "$status" "$source_outcome" "$prepare_outcome" <<'NODE'
+          const fs=require('fs'); const [code,status,source_outcome,prepare_outcome]=process.argv.slice(2);
+          const s=`product-identity/render-results/${code}-source.log`, p=`product-identity/render-results/${code}-prepare.log`;
+          const packet=`product-identity/render-packets/${code}.phase_2.authorized.json`;
+          const obj={code,status,source_outcome,prepare_outcome,source_log:fs.existsSync(s)?fs.readFileSync(s,'utf8').slice(-6000):'',prepare_log:fs.existsSync(p)?fs.readFileSync(p,'utf8').slice(-6000):'',packet_path:fs.existsSync(packet)?packet:null,updated_at:new Date().toISOString()};
+          fs.writeFileSync(`product-identity/render-results/${code}-status.json`,JSON.stringify(obj,null,2)+'\n');
+          NODE
+      - name: Commit evidence and status
+        if: always() && github.event_name == 'push' && steps.req.outputs.code != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          code='${{ steps.req.outputs.code }}'
+          git config user.name 'ELIMFILTERS Render Prep Bot'; git config user.email 'actions@users.noreply.github.com'
+          git add "product-identity/render-results/${code}-status.json" || true
+          for f in \
+            "product-identity/source-assets/${code}/${code}-source-evidence.json" \
+            "product-identity/render-packets/${code}.phase_2.authorized.json" \
+            "product-identity/render-results/${code}-official-source-preview.b64" \
+            "product-identity/render-results/${code}-official-page-preview.b64"; do
+            [ -f "$f" ] && git add "$f"
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore(product-images): v4 render prep result ${code}"
+          git push

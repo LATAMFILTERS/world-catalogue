@@ -275,7 +275,7 @@ Engineering is not a cost center. It is the foundation.
 
 ### Pillar II — Technology
 
-The ELIMFILTERS® Technology Platform — MACROCORE™, SYNTRAX™, NANOFORCE™, SYNTEPORE™, HYDROCORE™, THERMACORE™, DRYCORE™, MICROKAPPA™, INTEKCORE™, TURBOCORE™, MARINECLEAN™, DURATECH™ — represents the physical implementation of contamination control engineering.
+The ELIMFILTERS® Technology Platform — MACROCORE™, SYNTRAX™, NANOFORCE™, SYNTAPORE™, HYDROCORE™, THERMACORE™, DRYCORE™, MICROKAPPA™, INTEKCORE™, MARINECLEAN™, DURATECH™ — represents the physical implementation of contamination control engineering.
 
 Each technology platform is defined by:
 - The contamination mechanism it controls

@@ -111,7 +111,9 @@
     "standards": "Standard",
     "fleetOpt": "Ottimizzazione della Flotta",
     "locationText": "Frisco, Texas",
-    "kleoText": "© 2015–2026 Kleo Technologies"
+    "kleoText": "© 2015–2026 Kleo Technologies",
+    "elimfiltersCopyright": "KLEO TECHNOLOGY LLC | Intelligenza e ingegneria nella filtrazione",
+    "elimfiltersYear": "2015–2026"
   },
   "category": {
     "keyAdvantages": "VANTAGGI CHIAVE",
@@ -162,9 +164,9 @@
     "problemTag": "// DIAGNOSI DEL RISCHIO OPERATIVO",
     "problemH1": "CIÒ CHE NON PUOI VEDERE",
     "problemH2": "STA FERMANDO LA TUA OPERAZIONE.",
-    "problemIntro": "L'80% dei guasti prematuri delle apparecchiature sono causati dalla contaminazione. La filtrazione inefficiente consente a particelle invisibili di agire come carta vetrata all'interno dei componenti critici — superfici dei cuscinetti, orifizi degli iniettori, bobine idrauliche.",
+    "problemIntro": "Fino all'80% dei guasti prematuri dei componenti idraulici sono causati dalla contaminazione. La filtrazione inefficiente consente a particelle invisibili di agire come carta vetrata all'interno dei componenti critici — superfici dei cuscinetti, orifizi degli iniettori, bobine idrauliche.",
     "problemBadgeNum": "80%",
-    "problemBadgeDesc": "Dei guasti prematuri sono causati dalla contaminazione.",
+    "problemBadgeDesc": "Dei guasti prematuri dei componenti idraulici sono causati dalla contaminazione.",
     "failModes": [
       {
         "title": "Erosione degli Iniettori",

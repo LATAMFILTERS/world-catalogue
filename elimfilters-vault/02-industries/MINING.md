@@ -52,7 +52,7 @@ features:
 benefits:
   - "High-tonnage asset protection for haul trucks, excavators, and drills"
   - "Sub-zero and extreme temperature rated for open-pit and underground operation"
-  - "99.9% particle capture prevents million-dollar component failures"
+  - "Engine air filtration helps prevent million-dollar component failures"
   - "Continuous operation without unplanned filtration-related stops"
   - "Dust ingestion prevention in high-exposure pit and crusher environments"
 statistic: "Sub-Saharan mine dust: 5,000–15,000 mg/m³; downtime ~$180,000/hour per machine"
@@ -86,7 +86,7 @@ Secondary threats are hydraulic contamination (high-precision proportional valve
 - [[DIESEL_WATER|Diesel Water Contamination]] — secondary; bulk fuel storage condensation
 
 ### Technologies
-- [[MACROCORE|MACROCORE™ — Progressive Density Gradient Air Protection]] (air intake — primary)
+- [[MACROCORE|MACROCORE™ — Engine Air Filtration]] (air intake — primary)
 - [[NANOFORCE|NANOFORCE™ — Sub-Micron Hydraulic Contamination Control]] (hydraulic)
 - [[SYNTRAX|SYNTRAX™ — Full-Flow Lube Protection]] (engine oil)
 - [[HYDROCORE|HYDROCORE™ — Turbine-Stage Fuel Water Separation]] (fuel)
@@ -131,8 +131,8 @@ ISO 5011: Air filter efficiency and restriction test | ISO 16889: Hydraulic clea
 multi-pass test | SAE J1539: Air intake contamination classification for diesel engines
 
 RELATED_TECHNOLOGIES
-MACROCORE: Progressive density gradient air intake protection (99.9%–99.98% efficiency) |
-NANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 16/14/11) |
+MACROCORE: Engine air filtration for primary and secondary intake protection |
+NANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 target per approved application) |
 SYNTRAX: Full-flow lube oil protection (extended drain intervals) |
 HYDROCORE: Fuel water separation (condensation and bulk fuel contamination control)
 

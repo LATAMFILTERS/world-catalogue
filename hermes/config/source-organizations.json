@@ -1,0 +1,4131 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Phase 5 Lite governed registry: broad, hand-curated coverage of organizations relevant to ELIMFILTERS filtration intelligence — not an exhaustive index of every OEM/competitor worldwide. Expand via the discovery-required backlog over time.",
+  "allowed_categories": [
+    "oem_light_duty",
+    "oem_heavy_duty",
+    "oem_agriculture",
+    "oem_construction",
+    "oem_mining",
+    "oem_power_generation",
+    "oem_marine",
+    "oem_railway",
+    "oem_bus_coach",
+    "oem_waste_municipal",
+    "filtration_competitor",
+    "filtration_components",
+    "filter_media",
+    "standards",
+    "regulation",
+    "technical_publication",
+    "strategic_supplier"
+  ],
+  "allowed_statuses": [
+    "ACTIVE",
+    "DISCOVERY_REQUIRED",
+    "PAUSED",
+    "UNSUPPORTED",
+    "REVIEW_REQUIRED"
+  ],
+  "organizations": [
+    {
+      "id": "toyota",
+      "name": "Toyota Motor Corporation",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.toyota.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "passenger_cars",
+        "light_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Largest global light-duty OEM by volume.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "honda",
+      "name": "Honda Motor Co.",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.honda.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "passenger_cars",
+        "light_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "ford",
+      "name": "Ford Motor Company",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.ford.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "passenger_cars",
+        "pickups",
+        "vans"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "gm",
+      "name": "General Motors",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.gm.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "passenger_cars",
+        "pickups",
+        "vans"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Chevrolet/GMC/Cadillac/Buick.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "stellantis",
+      "name": "Stellantis",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.stellantis.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "passenger_cars",
+        "pickups",
+        "vans"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Jeep/Ram/Chrysler/Dodge/Fiat/Peugeot/Citroen/Opel.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "volkswagen_group",
+      "name": "Volkswagen Group",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.volkswagenag.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "passenger_cars",
+        "light_commercial"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "VW/Audi/SEAT/Skoda/Porsche.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "nissan",
+      "name": "Nissan Motor Co.",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.nissan-global.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "passenger_cars",
+        "light_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "hyundai",
+      "name": "Hyundai Motor Company",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.hyundai.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "passenger_cars",
+        "light_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "kia",
+      "name": "Kia Corporation",
+      "category": "oem_light_duty",
+      "parent_company": "Hyundai Motor Group",
+      "region": "Global",
+      "official_domain": "https://www.kia.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "passenger_cars",
+        "light_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "mercedes_benz_cars",
+      "name": "Mercedes-Benz Group (Cars)",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.mercedes-benz.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "passenger_cars"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "bmw_group",
+      "name": "BMW Group",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.bmwgroup.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "passenger_cars"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "BMW/MINI.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "subaru",
+      "name": "Subaru Corporation",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Japan",
+      "official_domain": "https://www.subaru.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "passenger_cars"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "mazda",
+      "name": "Mazda Motor Corporation",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Japan",
+      "official_domain": "https://www.mazda.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "passenger_cars"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "suzuki",
+      "name": "Suzuki Motor Corporation",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "Japan",
+      "official_domain": "https://www.globalsuzuki.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "passenger_cars",
+        "light_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "byd",
+      "name": "BYD Company",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.byd.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "passenger_cars"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "geely",
+      "name": "Geely Auto Group",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.geelyauto.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "passenger_cars"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "great_wall_motors",
+      "name": "Great Wall Motors",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.gwm-global.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "passenger_cars",
+        "light_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "chery",
+      "name": "Chery Automobile",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.cheryinternational.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "passenger_cars"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "saic_motor",
+      "name": "SAIC Motor",
+      "category": "oem_light_duty",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.saicmotor.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "passenger_cars",
+        "light_commercial"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "tata_motors_ld",
+      "name": "Tata Motors (Passenger Vehicles)",
+      "category": "oem_light_duty",
+      "parent_company": "Tata Motors Limited",
+      "region": "India",
+      "official_domain": "https://www.tatamotors.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "passenger_cars",
+        "light_commercial"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Same corporate domain as Tata Motors heavy-duty; single OEM group.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "daimler_truck",
+      "name": "Daimler Truck AG",
+      "category": "oem_heavy_duty",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.daimlertruck.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "Parent of Mercedes-Benz Trucks, Freightliner, Western Star, BharatBenz.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "freightliner",
+      "name": "Freightliner Trucks",
+      "category": "oem_heavy_duty",
+      "parent_company": "Daimler Truck AG",
+      "region": "North America",
+      "official_domain": "https://www.freightliner.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "western_star",
+      "name": "Western Star Trucks",
+      "category": "oem_heavy_duty",
+      "parent_company": "Daimler Truck AG",
+      "region": "North America",
+      "official_domain": "https://www.westernstartrucks.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "volvo_trucks",
+      "name": "Volvo Trucks",
+      "category": "oem_heavy_duty",
+      "parent_company": "Volvo Group",
+      "region": "Global",
+      "official_domain": "https://www.volvotrucks.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "mack_trucks",
+      "name": "Mack Trucks",
+      "category": "oem_heavy_duty",
+      "parent_company": "Volvo Group",
+      "region": "North America",
+      "official_domain": "https://www.macktrucks.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "vocational_trucks",
+        "line_haul_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "scania",
+      "name": "Scania",
+      "category": "oem_heavy_duty",
+      "parent_company": "TRATON Group",
+      "region": "Europe",
+      "official_domain": "https://www.scania.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "line_haul_trucks",
+        "buses"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "man_truck_bus",
+      "name": "MAN Truck & Bus",
+      "category": "oem_heavy_duty",
+      "parent_company": "TRATON Group",
+      "region": "Europe",
+      "official_domain": "https://www.man.eu",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "line_haul_trucks",
+        "buses"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "navistar_international",
+      "name": "Navistar / International Trucks",
+      "category": "oem_heavy_duty",
+      "parent_company": "TRATON Group",
+      "region": "North America",
+      "official_domain": "https://www.internationaltrucks.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "paccar",
+      "name": "PACCAR Inc.",
+      "category": "oem_heavy_duty",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.paccar.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "Parent of Kenworth, Peterbilt, DAF.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "kenworth",
+      "name": "Kenworth Truck Company",
+      "category": "oem_heavy_duty",
+      "parent_company": "PACCAR Inc.",
+      "region": "North America",
+      "official_domain": "https://www.kenworth.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "peterbilt",
+      "name": "Peterbilt Motors Company",
+      "category": "oem_heavy_duty",
+      "parent_company": "PACCAR Inc.",
+      "region": "North America",
+      "official_domain": "https://www.peterbilt.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "daf_trucks",
+      "name": "DAF Trucks",
+      "category": "oem_heavy_duty",
+      "parent_company": "PACCAR Inc.",
+      "region": "Europe",
+      "official_domain": "https://www.daftrucks.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "iveco_group",
+      "name": "IVECO Group",
+      "category": "oem_heavy_duty",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.ivecogroup.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "hino_motors",
+      "name": "Hino Motors",
+      "category": "oem_heavy_duty",
+      "parent_company": "Toyota Motor Corporation",
+      "region": "Japan",
+      "official_domain": "https://www.hino-global.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "vocational_trucks",
+        "line_haul_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "isuzu",
+      "name": "Isuzu Motors",
+      "category": "oem_heavy_duty",
+      "parent_company": null,
+      "region": "Japan",
+      "official_domain": "https://www.isuzu.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "vocational_trucks",
+        "light_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "tata_motors_hd",
+      "name": "Tata Motors (Commercial Vehicles)",
+      "category": "oem_heavy_duty",
+      "parent_company": "Tata Motors Limited",
+      "region": "India",
+      "official_domain": "https://www.tatamotors.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "vocational_trucks",
+        "buses"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "Same corporate domain as Tata Motors light-duty; single OEM group.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "ashok_leyland",
+      "name": "Ashok Leyland",
+      "category": "oem_heavy_duty",
+      "parent_company": null,
+      "region": "India",
+      "official_domain": "https://www.ashokleyland.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "vocational_trucks",
+        "buses"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "faw_group",
+      "name": "FAW Group",
+      "category": "oem_heavy_duty",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.faw.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "dongfeng_motor",
+      "name": "Dongfeng Motor Corporation",
+      "category": "oem_heavy_duty",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.dongfeng-motor.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "sinotruk",
+      "name": "Sinotruk (CNHTC)",
+      "category": "oem_heavy_duty",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.sinotruk.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "line_haul_trucks",
+        "vocational_trucks"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "john_deere",
+      "name": "John Deere",
+      "category": "oem_agriculture",
+      "parent_company": "Deere & Company",
+      "region": "Global",
+      "official_domain": "https://www.deere.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "tractors",
+        "combines"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "Endpoint diagnosed as a client-side rendered React app (the entire deere.com domain, not just one page) with no server-rendered text — see hermes/config/source-endpoints.json. Excluded pending a server-rendered alternative.",
+      "status": "REVIEW_REQUIRED",
+      "discovery_required": false
+    },
+    {
+      "id": "cnh_industrial",
+      "name": "CNH Industrial",
+      "category": "oem_agriculture",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.cnhindustrial.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "tractors",
+        "combines"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "Parent of Case IH and New Holland Agriculture.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "case_ih",
+      "name": "Case IH",
+      "category": "oem_agriculture",
+      "parent_company": "CNH Industrial",
+      "region": "Global",
+      "official_domain": "https://www.caseih.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "tractors",
+        "combines"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "new_holland_ag",
+      "name": "New Holland Agriculture",
+      "category": "oem_agriculture",
+      "parent_company": "CNH Industrial",
+      "region": "Global",
+      "official_domain": "https://www.newholland.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "tractors",
+        "combines"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "agco",
+      "name": "AGCO Corporation",
+      "category": "oem_agriculture",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.agcocorp.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "tractors",
+        "combines"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "Parent of Massey Ferguson, Fendt, Valtra.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "massey_ferguson",
+      "name": "Massey Ferguson",
+      "category": "oem_agriculture",
+      "parent_company": "AGCO Corporation",
+      "region": "Global",
+      "official_domain": "https://www.masseyferguson.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "tractors"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "fendt",
+      "name": "Fendt",
+      "category": "oem_agriculture",
+      "parent_company": "AGCO Corporation",
+      "region": "Europe",
+      "official_domain": "https://www.fendt.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "tractors"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "kubota",
+      "name": "Kubota Corporation",
+      "category": "oem_agriculture",
+      "parent_company": null,
+      "region": "Japan",
+      "official_domain": "https://www.kubota.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "tractors",
+        "compact_equipment"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "claas",
+      "name": "CLAAS Group",
+      "category": "oem_agriculture",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.claas.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "combines",
+        "tractors"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "same_deutz_fahr",
+      "name": "SAME Deutz-Fahr Group",
+      "category": "oem_agriculture",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.sdfgroup.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "tractors"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "mahindra_agri",
+      "name": "Mahindra Agriculture",
+      "category": "oem_agriculture",
+      "parent_company": "Mahindra Group",
+      "region": "India",
+      "official_domain": "https://www.mahindra.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "tractors"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "caterpillar",
+      "name": "Caterpillar Inc.",
+      "category": "oem_construction",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.caterpillar.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "excavators",
+        "wheel_loaders",
+        "dozers"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "komatsu",
+      "name": "Komatsu Ltd.",
+      "category": "oem_construction",
+      "parent_company": null,
+      "region": "Japan",
+      "official_domain": "https://www.komatsu.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "excavators",
+        "wheel_loaders",
+        "dozers"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "volvo_ce",
+      "name": "Volvo Construction Equipment",
+      "category": "oem_construction",
+      "parent_company": "Volvo Group",
+      "region": "Global",
+      "official_domain": "https://www.volvoce.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "excavators",
+        "wheel_loaders"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "hitachi_construction",
+      "name": "Hitachi Construction Machinery",
+      "category": "oem_construction",
+      "parent_company": null,
+      "region": "Japan",
+      "official_domain": "https://www.hitachicm.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "excavators"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "liebherr",
+      "name": "Liebherr Group",
+      "category": "oem_construction",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.liebherr.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "excavators",
+        "cranes"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "jcb",
+      "name": "JCB",
+      "category": "oem_construction",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.jcb.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "excavators",
+        "backhoe_loaders"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "xcmg",
+      "name": "XCMG",
+      "category": "oem_construction",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.xcmg.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "excavators",
+        "cranes",
+        "wheel_loaders"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "sany_group",
+      "name": "SANY Group",
+      "category": "oem_construction",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.sanyglobal.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "excavators",
+        "cranes"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "zoomlion",
+      "name": "Zoomlion",
+      "category": "oem_construction",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.zoomlion.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "cranes",
+        "excavators"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "hd_hyundai_ce",
+      "name": "HD Hyundai Construction Equipment",
+      "category": "oem_construction",
+      "parent_company": null,
+      "region": "Korea",
+      "official_domain": "https://www.hd-hyundaice.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "excavators",
+        "wheel_loaders"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "terex",
+      "name": "Terex Corporation",
+      "category": "oem_construction",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.terex.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "cranes",
+        "material_handling"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "doosan_bobcat",
+      "name": "Doosan Bobcat",
+      "category": "oem_construction",
+      "parent_company": "Doosan Group",
+      "region": "Global",
+      "official_domain": "https://www.bobcat.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "compact_equipment"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "caterpillar_mining",
+      "name": "Caterpillar Mining",
+      "category": "oem_mining",
+      "parent_company": "Caterpillar Inc.",
+      "region": "North America",
+      "official_domain": "https://www.caterpillar.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "surface_mining",
+        "underground_mining"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Shares Caterpillar Inc. corporate domain.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "komatsu_mining",
+      "name": "Komatsu Mining Corp.",
+      "category": "oem_mining",
+      "parent_company": "Komatsu Ltd.",
+      "region": "Japan",
+      "official_domain": "https://www.komatsu.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "surface_mining",
+        "underground_mining"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Shares Komatsu Ltd. corporate domain.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "liebherr_mining",
+      "name": "Liebherr Mining",
+      "category": "oem_mining",
+      "parent_company": "Liebherr Group",
+      "region": "Europe",
+      "official_domain": "https://www.liebherr.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "surface_mining"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Shares Liebherr Group corporate domain.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "sandvik_mining",
+      "name": "Sandvik Mining and Rock Solutions",
+      "category": "oem_mining",
+      "parent_company": "Sandvik Group",
+      "region": "Europe",
+      "official_domain": "https://rocktechnology.sandvik.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "underground_mining"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "epiroc",
+      "name": "Epiroc",
+      "category": "oem_mining",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.epiroc.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "underground_mining",
+        "surface_mining"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "belaz",
+      "name": "BELAZ",
+      "category": "oem_mining",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.belaz.by",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "surface_mining"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "cat_power_generation",
+      "name": "Caterpillar Power Generation",
+      "category": "oem_power_generation",
+      "parent_company": "Caterpillar Inc.",
+      "region": "North America",
+      "official_domain": "https://www.caterpillar.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "diesel_generators",
+        "gas_generators"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "coolant_filters"
+      ],
+      "notes": "Shares Caterpillar Inc. corporate domain.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "cummins_power_generation",
+      "name": "Cummins Power Generation",
+      "category": "oem_power_generation",
+      "parent_company": "Cummins Inc.",
+      "region": "North America",
+      "official_domain": "https://www.cummins.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "diesel_generators"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "mtu_rolls_royce",
+      "name": "MTU / Rolls-Royce Power Systems",
+      "category": "oem_power_generation",
+      "parent_company": "Rolls-Royce Power Systems",
+      "region": "Europe",
+      "official_domain": "https://www.rolls-royce.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "diesel_generators"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "generac",
+      "name": "Generac Power Systems",
+      "category": "oem_power_generation",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.generac.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "standby_generators"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "kohler_power",
+      "name": "Kohler Power Systems",
+      "category": "oem_power_generation",
+      "parent_company": "Kohler Co.",
+      "region": "North America",
+      "official_domain": "https://www.kohlerpower.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "standby_generators"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "wartsila",
+      "name": "Wartsila",
+      "category": "oem_power_generation",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.wartsila.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "marine_power",
+        "stationary_power"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "perkins",
+      "name": "Perkins Engines",
+      "category": "oem_power_generation",
+      "parent_company": "Caterpillar Inc.",
+      "region": "Europe",
+      "official_domain": "https://www.perkins.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "diesel_generators"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "volvo_penta",
+      "name": "Volvo Penta",
+      "category": "oem_power_generation",
+      "parent_company": "Volvo Group",
+      "region": "Global",
+      "official_domain": "https://www.volvopenta.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "marine_power",
+        "industrial_power"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "coolant_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "volvo_penta_marine",
+      "name": "Volvo Penta Marine",
+      "category": "oem_marine",
+      "parent_company": "Volvo Group",
+      "region": "Global",
+      "official_domain": "https://www.volvopenta.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "recreational_marine",
+        "commercial_marine"
+      ],
+      "product_scope": [
+        "fuel_filters",
+        "fuel_water_separators",
+        "oil_filters",
+        "air_filters"
+      ],
+      "notes": "Shares Volvo Penta corporate domain.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "yanmar_marine",
+      "name": "Yanmar Marine",
+      "category": "oem_marine",
+      "parent_company": "Yanmar Holdings",
+      "region": "Japan",
+      "official_domain": "https://www.yanmar.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "recreational_marine",
+        "commercial_marine"
+      ],
+      "product_scope": [
+        "fuel_filters",
+        "fuel_water_separators",
+        "oil_filters",
+        "air_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "caterpillar_marine",
+      "name": "Caterpillar Marine",
+      "category": "oem_marine",
+      "parent_company": "Caterpillar Inc.",
+      "region": "North America",
+      "official_domain": "https://www.caterpillar.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "commercial_marine"
+      ],
+      "product_scope": [
+        "fuel_filters",
+        "fuel_water_separators",
+        "oil_filters",
+        "air_filters"
+      ],
+      "notes": "Shares Caterpillar Inc. corporate domain.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "cummins_marine",
+      "name": "Cummins Marine",
+      "category": "oem_marine",
+      "parent_company": "Cummins Inc.",
+      "region": "North America",
+      "official_domain": "https://www.cummins.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "commercial_marine",
+        "recreational_marine"
+      ],
+      "product_scope": [
+        "fuel_filters",
+        "fuel_water_separators",
+        "oil_filters",
+        "air_filters"
+      ],
+      "notes": "Shares Cummins Inc. corporate domain.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "man_energy_solutions",
+      "name": "MAN Energy Solutions (Marine)",
+      "category": "oem_marine",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.man-es.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "commercial_marine"
+      ],
+      "product_scope": [
+        "fuel_filters",
+        "fuel_water_separators",
+        "oil_filters",
+        "air_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "mercury_marine",
+      "name": "Mercury Marine",
+      "category": "oem_marine",
+      "parent_company": "Brunswick Corporation",
+      "region": "North America",
+      "official_domain": "https://www.mercurymarine.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "recreational_marine"
+      ],
+      "product_scope": [
+        "fuel_filters",
+        "fuel_water_separators",
+        "oil_filters",
+        "air_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "yamaha_marine",
+      "name": "Yamaha Marine",
+      "category": "oem_marine",
+      "parent_company": "Yamaha Motor Co.",
+      "region": "Global",
+      "official_domain": "https://www.yamahamarine.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "recreational_marine"
+      ],
+      "product_scope": [
+        "fuel_filters",
+        "fuel_water_separators",
+        "oil_filters",
+        "air_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "wabtec",
+      "name": "Wabtec Corporation",
+      "category": "oem_railway",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.wabteccorp.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "locomotives",
+        "rail_equipment"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "siemens_mobility",
+      "name": "Siemens Mobility",
+      "category": "oem_railway",
+      "parent_company": "Siemens AG",
+      "region": "Europe",
+      "official_domain": "https://mobility.siemens.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "locomotives",
+        "rail_equipment"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "alstom",
+      "name": "Alstom",
+      "category": "oem_railway",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.alstom.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "locomotives",
+        "rail_equipment"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "crrc",
+      "name": "CRRC Corporation",
+      "category": "oem_railway",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.crrcgc.cc",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "locomotives",
+        "rail_equipment"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "progress_rail",
+      "name": "Progress Rail",
+      "category": "oem_railway",
+      "parent_company": "Caterpillar Inc.",
+      "region": "North America",
+      "official_domain": "https://www.progressrail.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "locomotives"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "stadler_rail",
+      "name": "Stadler Rail",
+      "category": "oem_railway",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.stadlerrail.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "rail_equipment"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "volvo_buses",
+      "name": "Volvo Buses",
+      "category": "oem_bus_coach",
+      "parent_company": "Volvo Group",
+      "region": "Global",
+      "official_domain": "https://www.volvobuses.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "transit_buses",
+        "coaches"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "daimler_buses",
+      "name": "Daimler Buses (EvoBus/Setra)",
+      "category": "oem_bus_coach",
+      "parent_company": "Daimler Truck AG",
+      "region": "Europe",
+      "official_domain": "https://www.daimlerbuses.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "transit_buses",
+        "coaches"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "man_buses",
+      "name": "MAN Buses",
+      "category": "oem_bus_coach",
+      "parent_company": "TRATON Group",
+      "region": "Europe",
+      "official_domain": "https://bus.man.eu",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "transit_buses",
+        "coaches"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "yutong",
+      "name": "Yutong Bus",
+      "category": "oem_bus_coach",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.yutong.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "transit_buses",
+        "coaches"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "king_long",
+      "name": "King Long",
+      "category": "oem_bus_coach",
+      "parent_company": null,
+      "region": "China",
+      "official_domain": "https://www.king-long.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "transit_buses",
+        "coaches"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "byd_bus",
+      "name": "BYD Bus",
+      "category": "oem_bus_coach",
+      "parent_company": "BYD Company",
+      "region": "China",
+      "official_domain": "https://www.byd.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "electric_transit_buses"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "Shares BYD Company corporate domain; unverified.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "new_flyer",
+      "name": "New Flyer Industries",
+      "category": "oem_bus_coach",
+      "parent_company": "NFI Group",
+      "region": "North America",
+      "official_domain": "https://www.newflyer.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "transit_buses"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "cabin_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "mcneilus",
+      "name": "McNeilus Companies",
+      "category": "oem_waste_municipal",
+      "parent_company": "Oshkosh Corporation",
+      "region": "North America",
+      "official_domain": "https://www.mcneiluscompanies.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "refuse_collection_vehicles"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "heil_environmental",
+      "name": "Heil Environmental",
+      "category": "oem_waste_municipal",
+      "parent_company": "Dover Corporation",
+      "region": "North America",
+      "official_domain": "https://www.heil-inc.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "refuse_collection_vehicles"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "labrie_environmental",
+      "name": "Labrie Environmental Group",
+      "category": "oem_waste_municipal",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.labrie.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "refuse_collection_vehicles"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "terberg",
+      "name": "Terberg Group",
+      "category": "oem_waste_municipal",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.terberg.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "refuse_collection_vehicles",
+        "terminal_tractors"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "donaldson",
+      "name": "Donaldson Company",
+      "category": "filtration_competitor",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.donaldson.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "heavy_duty",
+        "off_highway",
+        "industrial"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "cummins_filtration",
+      "name": "Cummins Filtration (Fleetguard)",
+      "category": "filtration_competitor",
+      "parent_company": "Cummins Inc.",
+      "region": "North America",
+      "official_domain": "https://www.fleetguard.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "heavy_duty",
+        "off_highway"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "mann_hummel",
+      "name": "MANN+HUMMEL",
+      "category": "filtration_competitor",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.mann-hummel.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "light_duty",
+        "heavy_duty",
+        "industrial"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "Also owns WIX and Purolator aftermarket brands.",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "wix_filters",
+      "name": "WIX Filters",
+      "category": "filtration_competitor",
+      "parent_company": "MANN+HUMMEL",
+      "region": "North America",
+      "official_domain": "https://www.wixfilters.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "light_duty",
+        "heavy_duty"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "purolator",
+      "name": "Purolator Filters",
+      "category": "filtration_competitor",
+      "parent_company": "MANN+HUMMEL",
+      "region": "North America",
+      "official_domain": "https://www.purolatorautofilters.ca",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "light_duty"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "mahle",
+      "name": "MAHLE Aftermarket / Filtration",
+      "category": "filtration_competitor",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.mahle.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "light_duty",
+        "heavy_duty",
+        "industrial"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "parker_hannifin_filtration",
+      "name": "Parker Hannifin — Filtration Group",
+      "category": "filtration_competitor",
+      "parent_company": "Parker Hannifin Corporation",
+      "region": "North America",
+      "official_domain": "https://www.parker.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "heavy_duty",
+        "off_highway",
+        "industrial"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "Includes Racor, Village Marine, Balston.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "baldwin_filters",
+      "name": "Baldwin Filters",
+      "category": "filtration_competitor",
+      "parent_company": "Parker Hannifin",
+      "region": "North America",
+      "official_domain": "https://www.baldwinfilter.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "heavy_duty",
+        "off_highway"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "bosch_mobility_filtration",
+      "name": "Bosch Mobility — Filtration",
+      "category": "filtration_competitor",
+      "parent_company": "Robert Bosch GmbH",
+      "region": "Europe",
+      "official_domain": "https://www.bosch-mobility.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "light_duty",
+        "heavy_duty"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "sogefi",
+      "name": "Sogefi Group",
+      "category": "filtration_competitor",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.sogefigroup.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": [
+        "light_duty"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "Owns Purflux and Fram Europe brands.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "fram_group",
+      "name": "FRAM Group",
+      "category": "filtration_competitor",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.fram.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "light_duty"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "hengst",
+      "name": "Hengst Filtration",
+      "category": "filtration_competitor",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.hengst.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "light_duty",
+        "heavy_duty",
+        "industrial"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "ufi_filters",
+      "name": "UFI Filters Group",
+      "category": "filtration_competitor",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.ufifilters.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "light_duty",
+        "heavy_duty"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "k_n_engineering",
+      "name": "K&N Engineering",
+      "category": "filtration_competitor",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.knfilters.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "light_duty",
+        "performance"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "luber_finer",
+      "name": "Luber-finer",
+      "category": "filtration_competitor",
+      "parent_company": "Champion Laboratories",
+      "region": "North America",
+      "official_domain": "https://www.luberfiner.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": [
+        "heavy_duty"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "sakura_filter",
+      "name": "Sakura Filter",
+      "category": "filtration_competitor",
+      "parent_company": null,
+      "region": "Southeast Asia",
+      "official_domain": "https://www.sakuraworld.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": [
+        "light_duty",
+        "heavy_duty"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "parker_hannifin_components",
+      "name": "Parker Hannifin — Hydraulic Components",
+      "category": "filtration_components",
+      "parent_company": "Parker Hannifin Corporation",
+      "region": "North America",
+      "official_domain": "https://www.parker.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": null,
+      "product_scope": [
+        "housings",
+        "air_dryers",
+        "valves",
+        "turbine_air_systems"
+      ],
+      "notes": "Shares Parker Hannifin corporate domain.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "eaton_filtration",
+      "name": "Eaton — Hydraulics & Filtration",
+      "category": "filtration_components",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.eaton.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "housings",
+        "air_dryers",
+        "valves",
+        "turbine_air_systems"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "bendix_cvs",
+      "name": "Bendix Commercial Vehicle Systems",
+      "category": "filtration_components",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.bendix.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": null,
+      "product_scope": [
+        "air_dryers",
+        "air_systems"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "zf_wabco",
+      "name": "ZF Group (WABCO Air Systems)",
+      "category": "filtration_components",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.zf.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "air_dryers",
+        "air_systems"
+      ],
+      "notes": "WABCO was acquired by ZF in 2020.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "haldex",
+      "name": "Haldex",
+      "category": "filtration_components",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.haldex.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "air_systems",
+        "brake_systems"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "pall_corporation",
+      "name": "Pall Corporation",
+      "category": "filtration_components",
+      "parent_company": "Danaher Corporation",
+      "region": "North America",
+      "official_domain": "https://www.pall.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "industrial_filtration",
+        "aerospace_filtration"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "camfil",
+      "name": "Camfil",
+      "category": "filtration_components",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.camfil.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "industrial_air_filtration"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "ahlstrom",
+      "name": "Ahlstrom",
+      "category": "filter_media",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.ahlstrom.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": null,
+      "product_scope": [
+        "nonwoven_media",
+        "filter_paper",
+        "synthetic_media"
+      ],
+      "notes": "",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "hollingsworth_vose",
+      "name": "Hollingsworth & Vose",
+      "category": "filter_media",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.hollingsworth-vose.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": null,
+      "product_scope": [
+        "nonwoven_media",
+        "filter_paper",
+        "synthetic_media"
+      ],
+      "notes": "",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "freudenberg_filtration",
+      "name": "Freudenberg Filtration Technologies",
+      "category": "filter_media",
+      "parent_company": "Freudenberg Group",
+      "region": "Europe",
+      "official_domain": "https://www.freudenberg-filter.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": null,
+      "product_scope": [
+        "nonwoven_media",
+        "filter_paper",
+        "synthetic_media"
+      ],
+      "notes": "",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "johns_manville",
+      "name": "Johns Manville",
+      "category": "filter_media",
+      "parent_company": "Berkshire Hathaway",
+      "region": "North America",
+      "official_domain": "https://www.jm.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "nonwoven_media",
+        "filter_paper",
+        "synthetic_media"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "toray",
+      "name": "Toray Industries — Filtration Media",
+      "category": "filter_media",
+      "parent_company": null,
+      "region": "Japan",
+      "official_domain": "https://www.toray.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "nonwoven_media",
+        "filter_paper",
+        "synthetic_media"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "sandler_nonwovens",
+      "name": "Sandler Nonwovens",
+      "category": "filter_media",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.sandler.de",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": null,
+      "product_scope": [
+        "nonwoven_media",
+        "filter_paper",
+        "synthetic_media"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "glatfelter",
+      "name": "Glatfelter",
+      "category": "filter_media",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.glatfelter.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": null,
+      "product_scope": [
+        "nonwoven_media",
+        "filter_paper",
+        "synthetic_media"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "iso",
+      "name": "International Organization for Standardization",
+      "category": "standards",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.iso.org",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": null,
+      "product_scope": [
+        "iso_standards",
+        "test_methods",
+        "classification_codes"
+      ],
+      "notes": "Root domain has returned bot-protection HTTP 403 in manual checks.",
+      "status": "REVIEW_REQUIRED",
+      "discovery_required": false
+    },
+    {
+      "id": "sae_international",
+      "name": "SAE International",
+      "category": "standards",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.sae.org",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": null,
+      "product_scope": [
+        "iso_standards",
+        "test_methods",
+        "classification_codes"
+      ],
+      "notes": "Endpoint diagnosed as a client-side rendered Angular app (noscript block references a hashed Angular build asset) with no server-rendered article text — see hermes/config/source-endpoints.json. HERMES_COLLECTION_MIN_CONTENT_LENGTH was not lowered to force this through. Excluded pending a server-rendered alternative.",
+      "status": "REVIEW_REQUIRED",
+      "discovery_required": false
+    },
+    {
+      "id": "astm_international",
+      "name": "ASTM International",
+      "category": "standards",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.astm.org",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": null,
+      "product_scope": [
+        "iso_standards",
+        "test_methods",
+        "classification_codes"
+      ],
+      "notes": "Root domain has returned bot-protection HTTP 403 in manual checks.",
+      "status": "REVIEW_REQUIRED",
+      "discovery_required": false
+    },
+    {
+      "id": "nfpa",
+      "name": "National Fire Protection Association",
+      "category": "standards",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.nfpa.org",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "iso_standards",
+        "test_methods",
+        "classification_codes"
+      ],
+      "notes": "Publishes NFPA T2.14 hydraulic fluid power standards.",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "din",
+      "name": "DIN — German Institute for Standardization",
+      "category": "standards",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.din.de",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "iso_standards",
+        "test_methods",
+        "classification_codes"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "ansi",
+      "name": "American National Standards Institute",
+      "category": "standards",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.ansi.org",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "iso_standards",
+        "test_methods",
+        "classification_codes"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "jsa_jis",
+      "name": "Japanese Standards Association (JIS)",
+      "category": "standards",
+      "parent_company": null,
+      "region": "Japan",
+      "official_domain": "https://jsa.or.jp",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": null,
+      "product_scope": [
+        "iso_standards",
+        "test_methods",
+        "classification_codes"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "bsi",
+      "name": "British Standards Institution",
+      "category": "standards",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.bsigroup.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": null,
+      "product_scope": [
+        "iso_standards",
+        "test_methods",
+        "classification_codes"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "us_epa",
+      "name": "U.S. Environmental Protection Agency",
+      "category": "regulation",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.epa.gov",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": null,
+      "product_scope": [
+        "emissions_regulation",
+        "safety_regulation",
+        "vehicle_regulation"
+      ],
+      "notes": "Emissions and diesel exhaust regulation relevant to filtration specs.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "carb",
+      "name": "California Air Resources Board",
+      "category": "regulation",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://arb.ca.gov",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "emissions_regulation",
+        "safety_regulation",
+        "vehicle_regulation"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "nhtsa",
+      "name": "National Highway Traffic Safety Administration",
+      "category": "regulation",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.nhtsa.gov",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "emissions_regulation",
+        "safety_regulation",
+        "vehicle_regulation"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "osha",
+      "name": "Occupational Safety and Health Administration",
+      "category": "regulation",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.osha.gov",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": null,
+      "product_scope": [
+        "emissions_regulation",
+        "safety_regulation",
+        "vehicle_regulation"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "unece",
+      "name": "UNECE — Vehicle Regulations (WP.29)",
+      "category": "regulation",
+      "parent_company": null,
+      "region": "Global",
+      "official_domain": "https://www.unece.org",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "emissions_regulation",
+        "safety_regulation",
+        "vehicle_regulation"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "eu_environment",
+      "name": "European Commission — Environment/Emissions",
+      "category": "regulation",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://ec.europa.eu",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "emissions_regulation",
+        "safety_regulation",
+        "vehicle_regulation"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "hydraulics_pneumatics",
+      "name": "Hydraulics & Pneumatics",
+      "category": "technical_publication",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.hydraulicspneumatics.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": false,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "industry_news",
+        "technical_analysis"
+      ],
+      "notes": "",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "filtration_separation",
+      "name": "Filtration+Separation",
+      "category": "technical_publication",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.filtsep.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": true,
+      "official": false,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "industry_news",
+        "technical_analysis"
+      ],
+      "notes": "Root domain has returned bot-protection HTTP 403 in manual checks.",
+      "status": "REVIEW_REQUIRED",
+      "discovery_required": false
+    },
+    {
+      "id": "diesel_progress",
+      "name": "Diesel Progress",
+      "category": "technical_publication",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.dieselprogress.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": false,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": null,
+      "product_scope": [
+        "industry_news",
+        "technical_analysis"
+      ],
+      "notes": "Reachability not yet confirmed by manual check.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "fleet_owner",
+      "name": "FleetOwner",
+      "category": "technical_publication",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.fleetowner.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": false,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": null,
+      "product_scope": [
+        "industry_news",
+        "technical_analysis"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "heavy_duty_trucking",
+      "name": "Heavy Duty Trucking (HDT)",
+      "category": "technical_publication",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.truckinginfo.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": false,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": null,
+      "product_scope": [
+        "industry_news",
+        "technical_analysis"
+      ],
+      "notes": "Domain unverified — confirm before enabling.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "lubes_n_greases",
+      "name": "Lubes'n'Greases",
+      "category": "technical_publication",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.lubesngreases.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": false,
+      "trust_level": "medium",
+      "priority": 3,
+      "market_scope": null,
+      "product_scope": [
+        "industry_news",
+        "technical_analysis"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "basf",
+      "name": "BASF",
+      "category": "strategic_supplier",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.basf.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "resins",
+        "adhesives",
+        "raw_materials"
+      ],
+      "notes": "Resins/adhesives relevant to filter media construction.",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "dow",
+      "name": "Dow Inc.",
+      "category": "strategic_supplier",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.dow.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "resins",
+        "adhesives",
+        "raw_materials"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "henkel",
+      "name": "Henkel Adhesive Technologies",
+      "category": "strategic_supplier",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.henkel.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "resins",
+        "adhesives",
+        "raw_materials"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "3m",
+      "name": "3M — Nonwovens & Adhesives",
+      "category": "strategic_supplier",
+      "parent_company": null,
+      "region": "North America",
+      "official_domain": "https://www.3m.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "medium",
+      "priority": 2,
+      "market_scope": null,
+      "product_scope": [
+        "resins",
+        "adhesives",
+        "raw_materials"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    },
+    {
+      "id": "solvay",
+      "name": "Solvay",
+      "category": "strategic_supplier",
+      "parent_company": null,
+      "region": "Europe",
+      "official_domain": "https://www.solvay.com",
+      "monitored_urls": [],
+      "source_type": "html",
+      "enabled": false,
+      "official": true,
+      "trust_level": "low",
+      "priority": 3,
+      "market_scope": null,
+      "product_scope": [
+        "resins",
+        "adhesives",
+        "raw_materials"
+      ],
+      "notes": "",
+      "status": "DISCOVERY_REQUIRED",
+      "discovery_required": true
+    }
+  ]
+}

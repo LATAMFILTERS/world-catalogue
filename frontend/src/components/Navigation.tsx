@@ -9,13 +9,18 @@ import '@/i18n';
 const HEADER_DISPLAY_FONT = 'Chakra Petch, Arial Narrow, monospace';
 
 export function Navigation() {
+  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
   const { t } = useTranslation();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
+    // Check initial scroll position
+    handler();
     window.addEventListener('scroll', handler, { passive: true });
+    setMounted(true);
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
@@ -37,29 +42,48 @@ export function Navigation() {
         style={{
           maxWidth: '1400px',
           margin: '0 auto',
-          padding: '1.4rem 2rem 0.9rem',
+          padding: 'clamp(0.65rem, 2.4vw, 1.4rem) clamp(1rem, 4vw, 2rem) clamp(0.5rem, 1.7vw, 0.9rem)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
         }}
+        role="banner"
       >
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
-          <Link href="/" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
-            <img
-              src="/assets/logo-elimfilters.png"
-              alt="ELIMFILTERS"
-              className="nav-logo"
-              style={{ objectFit: 'contain', height: '52px', width: 'auto', filter: 'brightness(0) invert(1)' }}
-            />
+          <Link href="/" aria-label="ELIMFILTERS — home" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
+            {logoError ? (
+              <span
+                style={{
+                  fontFamily: HEADER_DISPLAY_FONT,
+                  fontWeight: 700,
+                  fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)',
+                  letterSpacing: '-0.01em',
+                  color: '#fff',
+                  textTransform: 'uppercase',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                ELIMFILTERS
+              </span>
+            ) : (
+              <img
+                src="/assets/Elimfilters_logo_oficial.avif"
+                alt="ELIMFILTERS — Total Asset Protection"
+                className="nav-logo"
+                width={1959}
+                height={528}
+                onError={() => setLogoError(true)}
+                style={{ objectFit: 'contain', height: 'clamp(36px, 7.8vw, 58px)', width: 'auto', display: 'block' }}
+              />
+            )}
           </Link>
         </motion.div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden-mobile">
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden-mobile" aria-label="Main navigation">
           <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
-          <NavLink href="/knowledge-system">{t('nav.knowledge', 'Knowledge')}</NavLink>
-          <NavLink href="/fleet-optimization">{t('nav.fleetOptimization', 'Fleet Optimization')}</NavLink>
+          <NavLink href="/knowledge-center/">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
           <NavLink href="/about">{t('nav.about', 'About')}</NavLink>
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
@@ -85,13 +109,14 @@ export function Navigation() {
           >
             {t('nav.findMyFilter', 'FIND MY FILTER')}
           </motion.a>
-        </div>
+        </nav>
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem', display: 'none' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.65rem', display: 'none' }}
           className="show-mobile"
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
         >
           <div style={{ width: '24px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
             {[0, 1, 2].map((i) => (
@@ -133,8 +158,7 @@ export function Navigation() {
                 { href: '/industries', label: t('nav.industries', 'Industries') },
                 { href: '/systems', label: t('nav.systems', 'Systems') },
                 { href: '/technologies', label: t('nav.technologies', 'Technologies') },
-                { href: '/knowledge-system', label: t('nav.knowledge', 'Knowledge') },
-                { href: '/fleet-optimization', label: t('nav.fleetOptimization', 'Fleet Optimization') },
+                { href: '/knowledge-center/', label: t('nav.knowledge', 'Knowledge') },
                 { href: '/about', label: t('nav.about', 'About') },
                 { href: '/contact', label: t('nav.contact', 'Contact') },
               ].map((item) => (

@@ -267,7 +267,7 @@ Shows which entities cluster around each ContaminationMode — the graph's natur
 graph LR
     subgraph AIR["Air Intake Cluster"]
         MACROCORE
-        SYNTEPORE
+        SYNTAPORE
         INTEKCORE
         SAE_J1539
         ISO_5011
@@ -275,7 +275,7 @@ graph LR
     end
 
     subgraph FUEL["Fuel / Water Cluster"]
-        HYDROCORE
+        TURBOCORE
         NANOFORCE_FUEL[NANOFORCE\nfuel path]
         DIESEL_WATER
         ASTM_D6304
@@ -390,7 +390,7 @@ Every Problem note MUST have exactly one `root_contamination`, at least one `ind
 
 #### Cardinality Notes
 - Problem → ContaminationMode (N:1): Each problem has exactly one root contamination mode. INJECTOR_STICTION roots to DIESEL_WATER. BEARING_PREMATURE_FAILURE roots to PARTICLE_WEAR. Multiple problems can share the same root contamination.
-- Problem → Technology (N:N derived): resolved_by_technologies should match ContaminationMode.resolved_by for the problem's root_contamination. INJECTOR_STICTION → DIESEL_WATER → [NANOFORCE, HYDROCORE, SYNTRAX].
+- Problem → Technology (N:N derived): resolved_by_technologies should match ContaminationMode.resolved_by for the problem's root_contamination. INJECTOR_STICTION → DIESEL_WATER → [NANOFORCE, TURBOCORE, SYNTRAX].
 
 #### Derivation Note
 `resolved_by_technologies` in Problem notes SHOULD be consistent with the `resolved_by` field of the linked ContaminationMode. The vault does not enforce this automatically — it is a manual consistency requirement. Phase 3D (if implemented) could add a Dataview query to flag mismatches.
@@ -427,8 +427,8 @@ Every ContaminationMode MUST define at least one `resolved_by` and at least one 
 | ContaminationMode Key | resolved_by |
 |----------------------|-------------|
 | PARTICLE_WEAR | MACROCORE, NANOFORCE, SYNTRAX |
-| DIESEL_WATER | NANOFORCE, HYDROCORE, SYNTRAX |
-| HYDRAULIC_CONTAMINATION | NANOFORCE, HYDROCORE, SYNTRAX, MICROKAPPA |
+| DIESEL_WATER | NANOFORCE, TURBOCORE, SYNTRAX |
+| HYDRAULIC_CONTAMINATION | NANOFORCE, TURBOCORE, SYNTRAX, MICROKAPPA |
 | COMPRESSED_AIR_MOISTURE | DRYCORE |
 | COOLANT_CONTAMINATION | THERMOCORE |
 | CABIN_AIR_CONTAMINATION | MICROKAPPA |
@@ -519,17 +519,17 @@ Every Component MUST link to at least one ContaminationMode (what damages it), o
 
 | SystemKey | primary_technology | supporting_technologies |
 |-----------|-------------------|------------------------|
-| AIRFILTER | MACROCORE | SYNTEPORE, INTEKCORE |
+| AIRFILTER | MACROCORE | SYNTAPORE, INTEKCORE |
 | OIL | SYNTRAX | NANOFORCE |
-| FUEL | HYDROCORE | NANOFORCE, SYNTRAX |
+| FUEL | TURBOCORE | NANOFORCE, SYNTRAX |
 | HYDRAULIC | NANOFORCE | SYNTRAX |
 | CABIN | MICROKAPPA | — |
 | COMPRESSED_AIR | DRYCORE | — |
 | COOLANT | THERMOCORE | — |
-| WATER | HYDROCORE | NANOFORCE |
+| WATER | TURBOCORE | NANOFORCE |
 | HOUSING | INTEKCORE | — |
 | DRYER | DRYCORE | — |
-| MARINE | SYNTEPORE | HYDROCORE |
+| MARINE | SYNTAPORE | TURBOCORE |
 
 ---
 
@@ -566,7 +566,7 @@ Every Component MUST link to at least one ContaminationMode (what damages it), o
 - **Deprecated technologies**: Must have `replaced_by` pointing to the active successor. The successor's note MUST include a `predecessor` comment in its body Relationships section.
 - **Ecosystem entries**: No strict outgoing requirements, but should reference related industries.
 
-#### HYDROCORE and THERMOCORE Note
+#### TURBOCORE and THERMOCORE Note
 Both active technologies carry `# TODO` flags in unified-data.ts for unverified key_metrics. Obsidian notes for these entities MUST carry the same annotation:
 ```yaml
 # TODO: key_metrics values unverified — do NOT invent specifications
@@ -579,14 +579,14 @@ These TODO flags are inherited from UD and must be preserved until verified.
 ```mermaid
 graph LR
     AQUAGUARD["AQUAGUARD™\n(deprecated)"]
-    COOLTECH["COOLTECH™\n(deprecated)"]
-    HYDROCORE["HYDROCORE™\n(active)"]
+    THERMACORE["THERMACORE™\n(deprecated)"]
+    TURBOCORE["TURBOCORE™\n(active)"]
     THERMOCORE["THERMOCORE™\n(active)"]
 
-    AQUAGUARD -->|replaced_by| HYDROCORE
-    COOLTECH -->|replaced_by| THERMOCORE
-    HYDROCORE -.->|predecessor backlink| AQUAGUARD
-    THERMOCORE -.->|predecessor backlink| COOLTECH
+    AQUAGUARD -->|replaced_by| TURBOCORE
+    THERMACORE -->|replaced_by| THERMOCORE
+    TURBOCORE -.->|predecessor backlink| AQUAGUARD
+    THERMOCORE -.->|predecessor backlink| THERMACORE
 ```
 
 ---
@@ -790,7 +790,7 @@ sequenceDiagram
     participant AGRICULTURE as AGRICULTURE note
     participant FI as FUEL_INJECTOR note
     participant DW as DIESEL_WATER note
-    participant HC as HYDROCORE™ note
+    participant HC as TURBOCORE™ note
     participant FC as FUEL_CLEANLINESS family note
     participant SKU as Part Search DB
 
@@ -800,16 +800,16 @@ sequenceDiagram
 
     FI->>DW: sensitive_to_contamination → DIESEL_WATER
     FI->>DW: sensitive_to_contamination → PARTICLE_WEAR (also)
-    DW->>HC: resolved_by → HYDROCORE, NANOFORCE, SYNTRAX
-    Note over DW,HC: three candidates; HYDROCORE is primary for fuel
+    DW->>HC: resolved_by → TURBOCORE, NANOFORCE, SYNTRAX
+    Note over DW,HC: three candidates; TURBOCORE is primary for fuel
 
-    HC->>FC: via ProductFamily.uses_technology = HYDROCORE
+    HC->>FC: via ProductFamily.uses_technology = TURBOCORE
     FC->>SKU: API call: part-search?family=FUEL_CLEANLINESS&industry=AGRICULTURE
     SKU-->>User: SKU list with compatibility score
 ```
 
 **Vault path in wikilinks**:
-`AGRICULTURE` → (applicable_technologies) → `HYDROCORE` → (via ProductFamily lookup) → `FUEL_CLEANLINESS` → Part Search DB
+`AGRICULTURE` → (applicable_technologies) → `TURBOCORE` → (via ProductFamily lookup) → `FUEL_CLEANLINESS` → Part Search DB
 
 ---
 
@@ -895,7 +895,7 @@ Multi-hop traversal combining Problem + Industry + System context:
 Entry: Problem=VALVE_SPOOL_STICKING, Industry=MINING, System=HYDRAULIC
 
 Step 1: VALVE_SPOOL_STICKING.root_contamination → HYDRAULIC_CONTAMINATION
-Step 2: HYDRAULIC_CONTAMINATION.resolved_by → [NANOFORCE, HYDROCORE, SYNTRAX, MICROKAPPA]
+Step 2: HYDRAULIC_CONTAMINATION.resolved_by → [NANOFORCE, TURBOCORE, SYNTRAX, MICROKAPPA]
 Step 3: Filter by MINING.applicable_technologies → NANOFORCE ✓ (in both lists)
 Step 4: HYDRAULIC (System).primary_technology → NANOFORCE ✓ (confirms)
 Step 5: NANOFORCE ProductFamily lookup → HYDRAULIC_CCU
@@ -931,7 +931,7 @@ Step 2 — Root cause resolution
   PARTICLE_WEAR.resolved_by → [MACROCORE, NANOFORCE, SYNTRAX]
 
 Step 3 — Industry filter
-  AGRICULTURE.applicable_technologies → [MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE, ...]
+  AGRICULTURE.applicable_technologies → [MACROCORE, SYNTRAX, NANOFORCE, TURBOCORE, ...]
   Intersection: [MACROCORE, NANOFORCE, SYNTRAX] ∩ [MACROCORE, SYNTRAX, NANOFORCE, ...] = [MACROCORE, SYNTRAX, NANOFORCE]
 
 Step 4 — Component context
@@ -980,7 +980,7 @@ Step 7 — Result enrichment
 
 ```
 Step 1 — Standard lookup
-  ISO_16889.applicable_to_technologies → [MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE, THERMOCORE]
+  ISO_16889.applicable_to_technologies → [MACROCORE, SYNTRAX, NANOFORCE, TURBOCORE, THERMOCORE]
 
 Step 2 — Technology → ProductFamily lookup
   Each technology → associated ProductFamilies that meet_standards includes ISO_16889
@@ -994,7 +994,7 @@ Step 4 — Result enrichment
 ```
 
 **Vault traversal**:
-`ISO_16889` → (applicable_to_technologies) → `[MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE, THERMOCORE]` → (ProductFamily lookup) → multiple families
+`ISO_16889` → (applicable_to_technologies) → `[MACROCORE, SYNTRAX, NANOFORCE, TURBOCORE, THERMOCORE]` → (ProductFamily lookup) → multiple families
 
 ---
 
@@ -1008,7 +1008,7 @@ Step 1 — Context extraction
   System: HYDRAULIC
 
 Step 2 — Industry filter
-  MARINE.applicable_technologies → [SYNTEPORE, MACROCORE, NANOFORCE, HYDROCORE, SYNTRAX, ...]
+  MARINE.applicable_technologies → [SYNTAPORE, MACROCORE, NANOFORCE, TURBOCORE, SYNTRAX, ...]
 
 Step 3 — System filter
   HYDRAULIC.primary_technology → NANOFORCE
@@ -1017,8 +1017,8 @@ Step 3 — System filter
 
 Step 4 — ContaminationMode path
   HYDRAULIC.related_contamination → HYDRAULIC_CONTAMINATION
-  HYDRAULIC_CONTAMINATION.resolved_by → [NANOFORCE, HYDROCORE, SYNTRAX, MICROKAPPA]
-  Filtered by MARINE context → NANOFORCE (hydraulic), HYDROCORE (fuel-adjacent)
+  HYDRAULIC_CONTAMINATION.resolved_by → [NANOFORCE, TURBOCORE, SYNTRAX, MICROKAPPA]
+  Filtered by MARINE context → NANOFORCE (hydraulic), TURBOCORE (fuel-adjacent)
 
 Step 5 — ProductFamily lookup
   NANOFORCE → HYDRAULIC_CCU (ProductFamily)
@@ -1082,7 +1082,7 @@ DIN 51524: Hydraulic oil specification
 
 RELATED_TECHNOLOGIES
 SYNTRAX: Lube oil protection complementing hydraulic contamination control |
-HYDROCORE: Fuel-system water separation (companion fuel domain technology)
+TURBOCORE: Fuel-system water separation (companion fuel domain technology)
 
 INDUSTRIAL_ROLE
 NANOFORCE™ controls hydraulic system contamination in heavy industrial machinery,
@@ -1144,7 +1144,7 @@ Entry: ContaminationMode=DIESEL_WATER
    rootCauses: [ATMOSPHERIC_BREATHING, CONDENSATION, STORAGE_CORROSION, TRANSFER_CONTAMINATION]
    failureModes: [INJECTOR_STICTION, FUEL_DELIVERY_CORROSION, MICROBIAL_GROWTH, FUEL_GUM_FORMATION]
    impacts: {hardStarting: "+5–15 seconds", fuelConsumption: "+3–8%", injectorCleaningFrequency: "2,000–3,000 hours"}
-   resolved_by: [NANOFORCE, HYDROCORE, SYNTRAX]
+   resolved_by: [NANOFORCE, TURBOCORE, SYNTRAX]
    related_standards: [ASTM_D6304, ISO_12937, ISO_4406]
 
 2. Follow to CaseStudy:
@@ -1344,7 +1344,7 @@ When creating any new note in the vault, verify before saving:
 - [ ] Note body includes `## Relationships` section
 - [ ] Note body includes `## AI Retrieval` section with canonical knowledge block skeleton
 - [ ] If deprecated technology: `replaced_by` is set AND replacement note has predecessor backlink
-- [ ] If HYDROCORE or THERMOCORE: `# TODO` annotations on unverified metric fields
+- [ ] If TURBOCORE or THERMOCORE: `# TODO` annotations on unverified metric fields
 - [ ] If CaseStudy with placeholder tokens: `has_placeholder_tokens: true` and `placeholder_tokens` list is populated
 - [ ] If Standard with `in_unified_data: false`: note includes "UD Migration Status: Pending" in body
 

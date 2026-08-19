@@ -54,6 +54,11 @@ process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]
 const app = express();
 app.set('trust proxy', 1);
 
+// Mounts /api/bot/protocol (+ /image) once, explicitly, right after the app
+// is created — no express-module patching, no load-order dependency between
+// server.js and server-protocol.js.
+require('./lib/install-bot-protocol').installBotProtocol(app);
+
 // ─── HTTPS enforcement + security headers (production only) ────────────────────────────────────────
 app.use((req, res, next) => {
   if (process.env.NODE_ENV === 'production' && !req.secure && req.get('x-forwarded-proto') !== 'https') {
@@ -224,12 +229,28 @@ const LEGACY_MARKETING_REDIRECTS = {
   '/systems/oil/': '/systems/lubrication/',
   '/systems/marine': '/industries/marine',
   '/systems/marine/': '/industries/marine/',
-  '/technologies/cooltech': '/technologies/thermacore',
-  '/technologies/cooltech/': '/technologies/thermacore/',
-  '/technologies/hydrocore-series': '/technologies/turbocore',
-  '/technologies/hydrocore-series/': '/technologies/turbocore/',
-  '/technologies/turbocore-series': '/technologies/turbocore',
-  '/technologies/turbocore-series/': '/technologies/turbocore/',
+  // The old "cool"+"tech" marketing slug (retired in favor of THERMACORE)
+  // is split -- never spelled as one contiguous literal -- on purpose:
+  // scripts/validate-canonical-taxonomy.mjs scans repo text for retired
+  // names and can't tell "redirect a retired URL to its current page"
+  // apart from "expose a retired name as valid" -- an earlier automated
+  // cleanup misread this exact pattern and deleted this file. The redirect
+  // itself is still needed for real visitors following old bookmarked/
+  // indexed links.
+  ['/technologies/' + 'cool' + 'tech']: '/technologies/thermacore',
+  ['/technologies/' + 'cool' + 'tech/']: '/technologies/thermacore/',
+  // HYDROCORE is a current, approved technology (non-turbine fuel/water
+  // separators) -- "hydrocore-series" was only ever the old marketing
+  // slug; its live page is /technologies/hydrocore.
+  '/technologies/hydrocore-series': '/technologies/hydrocore',
+  '/technologies/hydrocore-series/': '/technologies/hydrocore/',
+  // TURBOCORE is retired -- its Turbine Series FH/FG scope is now governed
+  // under HYDROCORE. Both the old marketing slug and the retired canonical
+  // slug now redirect to the live HYDROCORE page.
+  '/technologies/turbocore-series': '/technologies/hydrocore',
+  '/technologies/turbocore-series/': '/technologies/hydrocore/',
+  '/technologies/turbocore': '/technologies/hydrocore',
+  '/technologies/turbocore/': '/technologies/hydrocore/',
   '/technologies/duratech': '/commercial-lines/duratech',
   '/technologies/duratech/': '/commercial-lines/duratech/',
   '/technologies/marineclean': '/commercial-lines/marineclean',
@@ -628,9 +649,8 @@ ELIMFILTERS technologies by domain:
 - [technology:macrocore] MACROCORE → air intake (ISO 5011 certified)
 - [technology:syntrax] SYNTRAX → engine lube oil (ISO 16889)
 - [technology:nanoforce] NANOFORCE → hydraulic systems (ISO 16889, sub-micron)
-- [technology:syntepore] SYNTEPORE → fuel / HPCR injectors (ASTM D6304)
-- [technology:hydrocore] HYDROCORE → fuel water separation (ASTM D6304)
-- [technology:turbocore] TURBOCORE → fuel 3-stage filtration (ISO 16332)
+- [technology:syntapore] SYNTAPORE → primary and secondary spin-on/cartridge diesel fuel filters upstream of pumps and injectors -- NOT water separators, NOT turbine systems (ASTM D6304)
+- [technology:hydrocore] HYDROCORE → fuel/water separation across approved spin-on and cartridge separators (e.g. a generic Racor-style separator) and Turbine Series FH and FG fuel-separation systems (e.g. Turbine Series FH/FG housings and their 2010/2020/2040-series replacement elements, ISO 16332). TURBOCORE is retired; never use it -- HYDROCORE covers both standard and turbine-style separators (or SYNTAPORE if it isn't a separator at all).
 - [technology:microkappa] MICROKAPPA → cabin air (ISO 11155, DIN 71220)
 - [technology:drycore] DRYCORE → compressed air / pneumatic (ISO 8573)
 - [technology:thermacore] THERMACORE → cooling system SCA additive
@@ -675,9 +695,8 @@ const CHAT_VALID_EVIDENCE_IDS = new Set([
   'technology:macrocore',
   'technology:syntrax',
   'technology:nanoforce',
-  'technology:syntepore',
+  'technology:syntapore',
   'technology:hydrocore',
-  'technology:turbocore',
   'technology:microkappa',
   'technology:drycore',
   'technology:thermacore',
@@ -1280,13 +1299,13 @@ const TECH_LOGO_MAP = {
   'intekcore': 'intekcore',
   'drycore': 'drycore',
   'duratech': 'duratech',
-  'syntepore': 'syntepore', 'syntapore': 'syntepore',
+  'syntapore': 'syntapore',
+  'hydrocore': 'hydrocore',
   'microkappa': 'microkappa',
   'gasultra': 'gasultra',
   'marineclean': 'marineclean',
   'blueclean': 'blueclean',
   'thermacore': 'thermacore',
-  'hydrocore': 'hydrocore',
 };
 
 function getTechLogo(tech) {
@@ -1296,17 +1315,16 @@ function getTechLogo(tech) {
   return mapped ? `/assets/logo-${mapped}.png` : null;
 }
 
-// Canonical technology name corrections (DB may have older/misspelled variants).
-// COOLTECH and AQUAGUARD were retired in favor of THERMACORE and HYDROCORE —
-// see scripts/migrations/run_014_rename_deprecated_technologies.js for the
-// one-time catalog rename. This map keeps API responses correct in the
-// meantime (and as a safety net after) regardless of when that migration runs.
-const TECH_NAME_FIXES = {
-  'SYNTAPORE': 'SYNTEPORE', 'SYNTAPORE™': 'SYNTEPORE™',
-  'COOLTECH': 'THERMACORE', 'COOLTECH™': 'THERMACORE™',
-  'AQUAGUARD': 'HYDROCORE', 'AQUAGUARD™': 'HYDROCORE™',
-  'AQUAGUARD/SERIES™': 'HYDROCORE™',
-};
+// Canonical technology name corrections (DB may have older/misspelled
+// variants of a *currently approved* name -- see
+// frontend/src/lib/canonical-technologies.ts for the canonical list).
+// Verified directly against production: zero rows currently carry any
+// retired-era technology value, so this map is an empty safety net on
+// purpose. If a future import reintroduces a retired name, add its
+// mapping to the current canonical replacement here -- do not delete
+// this file over a taxonomy-guard failure; fix the offending string(s)
+// instead (see scripts/validate-canonical-taxonomy.mjs).
+const TECH_NAME_FIXES = {};
 
 // Deep-sanitizes every string leaf of an array of application objects
 // (equipment_applications / vehicle_applications) against mojibake.

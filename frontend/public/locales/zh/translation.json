@@ -111,7 +111,9 @@
     "standards": "标准",
     "fleetOpt": "车队优化",
     "locationText": "弗里斯科，德克萨斯州",
-    "kleoText": "© 2015–2026 Kleo Technologies"
+    "kleoText": "© 2015–2026 Kleo Technologies",
+    "elimfiltersCopyright": "KLEO TECHNOLOGY LLC | 过滤领域的智能与工程",
+    "elimfiltersYear": "2015–2026"
   },
   "category": {
     "keyAdvantages": "主要优势",
@@ -162,9 +164,9 @@
     "problemTag": "// 运营风险诊断",
     "problemH1": "您看不见的东西",
     "problemH2": "正在停止您的运营。",
-    "problemIntro": "80%的设备过早故障是由污染引起的。低效的过滤使不可见的颗粒像砂纸一样在关键部件内部发挥作用——轴承表面、喷油器孔、液压阀芯。",
+    "problemIntro": "高达80%的液压部件过早故障是由污染引起的。低效的过滤使不可见的颗粒像砂纸一样在关键部件内部发挥作用——轴承表面、喷油器孔、液压阀芯。",
     "problemBadgeNum": "80%",
-    "problemBadgeDesc": "过早故障是由污染引起的。",
+    "problemBadgeDesc": "液压部件过早故障是由污染引起的。",
     "failModes": [
       {
         "title": "喷油器腐蚀",

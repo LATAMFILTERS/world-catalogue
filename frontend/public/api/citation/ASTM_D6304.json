@@ -14,6 +14,7 @@
     "test-method",
     "in-ud"
   ],
+  "domain": null,
   "citation": {
     "source_url": "elimfilters.com/knowledge-center/standards/astm-d6304",
     "concept": "ASTM D6304 Water in Petroleum Products",
@@ -48,7 +49,7 @@
       "DIESEL_WATER"
     ]
   },
-  "vault_path": "elimfilters-vault/04-standards/ASTM_D6304.md",
+  "vault_path": "elimfilters-vault\\04-standards\\ASTM_D6304.md",
   "_links": {
     "self": "/api/citation/ASTM_D6304.json",
     "type_index": "/api/citation/type/standard.json",

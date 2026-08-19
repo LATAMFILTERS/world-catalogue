@@ -1,0 +1,131 @@
+{
+  "pilot_id": "HD_SPINON_PILOT_V1",
+  "status": "selected_from_world_catalogue",
+  "source": "postgresql.elimfilters_catalog",
+  "selection_rule": "10 verified HD spin-on SKUs spanning the dimensional range; no invented dimensions",
+  "generated_at": "2026-08-08T00:54:48.021Z",
+  "candidate_count": 686,
+  "sku_count": 10,
+  "skus": [
+    {
+      "sku": "EL83400",
+      "filter_type": "oil",
+      "technology": "SYNTRAX™",
+      "height_mm": "52.00",
+      "outer_diameter_mm": "76.00",
+      "thread_size": "M14 x 1.5",
+      "duty": "HEAVY_DUTY",
+      "construction": "spin_on",
+      "selection_reason": "size_quantile_0",
+      "source": "world_catalogue"
+    },
+    {
+      "sku": "EL80710",
+      "filter_type": "oil",
+      "technology": "SYNTRAX™",
+      "height_mm": "95.00",
+      "outer_diameter_mm": "94.00",
+      "thread_size": "1-12 UN",
+      "duty": "HEAVY_DUTY",
+      "construction": "spin_on",
+      "selection_reason": "size_quantile_10",
+      "source": "world_catalogue"
+    },
+    {
+      "sku": "EF91127",
+      "filter_type": "fuel",
+      "technology": "SYNTAPORE™",
+      "height_mm": "132.20",
+      "outer_diameter_mm": "93.00",
+      "thread_size": "15/16-16 UN",
+      "duty": "HEAVY_DUTY",
+      "construction": "spin_on",
+      "selection_reason": "size_quantile_22",
+      "source": "world_catalogue"
+    },
+    {
+      "sku": "EH66919",
+      "filter_type": "hydraulic",
+      "technology": "NANOFORCE™",
+      "height_mm": "146.81",
+      "outer_diameter_mm": "92.96",
+      "thread_size": "1 1/2-16 UN",
+      "duty": "HEAVY_DUTY",
+      "construction": "spin_on",
+      "selection_reason": "size_quantile_35",
+      "source": "world_catalogue"
+    },
+    {
+      "sku": "EF97440",
+      "filter_type": "fuel",
+      "technology": "SYNTAPORE™",
+      "height_mm": "174.00",
+      "outer_diameter_mm": "93.00",
+      "thread_size": "1-14 UN",
+      "duty": "HEAVY_DUTY",
+      "construction": "spin_on",
+      "selection_reason": "size_quantile_50",
+      "source": "world_catalogue"
+    },
+    {
+      "sku": "EF93201",
+      "filter_type": "fuel",
+      "technology": "SYNTAPORE™",
+      "height_mm": "219.30",
+      "outer_diameter_mm": "93.00",
+      "thread_size": "1-14 UN",
+      "duty": "HEAVY_DUTY",
+      "construction": "spin_on",
+      "selection_reason": "size_quantile_65",
+      "source": "world_catalogue"
+    },
+    {
+      "sku": "EL81604",
+      "filter_type": "oil",
+      "technology": "SYNTRAX™",
+      "height_mm": "232.00",
+      "outer_diameter_mm": "108.00",
+      "thread_size": "1-12 UN",
+      "duty": "HEAVY_DUTY",
+      "construction": "spin_on",
+      "selection_reason": "size_quantile_78",
+      "source": "world_catalogue"
+    },
+    {
+      "sku": "EH64737",
+      "filter_type": "hydraulic",
+      "technology": "NANOFORCE™",
+      "height_mm": "296.00",
+      "outer_diameter_mm": "116.40",
+      "thread_size": "1 3/8-12 UN",
+      "duty": "HEAVY_DUTY",
+      "construction": "spin_on",
+      "selection_reason": "size_quantile_90",
+      "source": "world_catalogue"
+    },
+    {
+      "sku": "EH64721",
+      "filter_type": "hydraulic",
+      "technology": "NANOFORCE™",
+      "height_mm": "367.90",
+      "outer_diameter_mm": "119.40",
+      "thread_size": "1 3/4-12 UN",
+      "duty": "HEAVY_DUTY",
+      "construction": "spin_on",
+      "selection_reason": "size_quantile_100",
+      "source": "world_catalogue"
+    },
+    {
+      "sku": "EH65185",
+      "filter_type": "hydraulic",
+      "technology": "NANOFORCE™",
+      "height_mm": "208.53",
+      "outer_diameter_mm": "151.00",
+      "thread_size": "1 3/8-12 UN",
+      "duty": "HEAVY_DUTY",
+      "construction": "spin_on",
+      "selection_reason": "widest_verified_spin_on",
+      "source": "world_catalogue"
+    }
+  ]
+}

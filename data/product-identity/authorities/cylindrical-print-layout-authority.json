@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "1.8",
+  "recordType": "ELIMFILTERS_CYLINDRICAL_PRINT_LAYOUT_AUTHORITY",
+  "authorityStatus": "ACTIVE",
+  "authorityName": "Approved Cylindrical Print Layout — Identical Artwork on Both Sides",
+  "scope": "All cylindrical direct-print ELIMFILTERS filters using this approved visual system",
+  "coreRule": {
+    "sameArtworkBothSides": true,
+    "onlyVariableFields": ["sku", "technology"],
+    "allOtherArtworkLocked": true
+  },
+  "brandArtworkAuthority": {
+    "repository": "LATAMFILTERS/world-catalogue",
+    "branch": "main",
+    "officialLogoAsset": "frontend/public/assets/logo-elimfilters.png",
+    "rule": "This file is the sole official ELIMFILTERS logo source for cylindrical print artwork. Use the asset exactly as provided; do not redraw, recreate, restyle, alter proportions, substitute typography, or infer a replacement logo."
+  },
+  "technologyArtworkAuthority": {
+    "repository": "LATAMFILTERS/world-catalogue",
+    "branch": "main",
+    "authoritativeDirectory": "frontend/public/assets/",
+    "rule": "Technology visual assets must be sourced exclusively from frontend/public/assets/. Do not recreate, redraw, restyle, substitute, or infer technology artwork when an authoritative asset exists there.",
+    "appliesTo": ["SINTRAX®", "SYNTAPORE®", "NANOFORCE®", "HYDRACORE®", "THERMACORE®", "DRYCORE®"]
+  },
+  "sourceGeometryAuthority": {
+    "required": true,
+    "sourceType": "REAL_MANUFACTURER_PRODUCT_IMAGE",
+    "rule": "Physical geometry must come from the actual product image for the exact competitor/source code being processed. A generated, simulated, reconstructed or visually approximated source image is never valid geometry authority.",
+    "captureRules": {
+      "actualProductPageOrDirectManufacturerImageRequired": true,
+      "simulatedScreenshotForbidden": true,
+      "syntheticReferenceForbidden": true,
+      "preserveOriginalPerspective": true,
+      "preserveBaseplate": true,
+      "preserveThread": true,
+      "preserveHoleCount": true,
+      "preserveHoleShape": true,
+      "preserveHolePositions": true,
+      "preserveGasket": true,
+      "preserveOverallProportions": true
+    },
+    "failureBehavior": "STOP_AND_FLAG_FOR_REVIEW"
+  },
+  "catalogSkuAuthority": {
+    "required": true,
+    "source": "world_catalogue.elimfilters_catalog",
+    "rule": "The final ELIMFILTERS SKU must be resolved from the catalogue database using the exact source/competitor code. Never derive an ELIMFILTERS SKU from the competitor code text and never print the competitor code as the ELIMFILTERS SKU.",
+    "ambiguityBehavior": "STOP_AND_FLAG_FOR_REVIEW",
+    "missingBehavior": "STOP_AND_FLAG_FOR_REVIEW",
+    "hardcodedFallbackForbidden": true,
+    "inferredFallbackForbidden": true
+  },
+  "containerColorAuthority": {
+    "status": "MASTER_LOCKED",
+    "officialName": "ELIMFILTERS DARK CHARCOAL",
+    "visualReference": "APPROVED_GRAY_FILTER_MASTER",
+    "digitalMaster": {"hex": "#414141", "rgb": [65, 65, 65]},
+    "finish": "SEMI_MATTE_INDUSTRIAL_COATING"
+  },
+  "lithographyColorAuthority": {
+    "status": "MASTER_LOCKED",
+    "officialName": "ELIMFILTERS LITHOGRAPHY SILVER",
+    "digitalMaster": {"hex": "#CBCBCB", "rgb": [203, 203, 203]},
+    "finish": "METALLIC_SILVER_SATIN",
+    "appliesTo": ["OFFICIAL_LOGO", "TOTAL_ASSET_PROTECTION", "SKU", "PRODUCT_DESCRIPTOR", "TECHNOLOGY_ARTWORK", "POWERED_FILTRATION", "INSTALLATION_ROTATION_DIRECTION_MARKS"],
+    "rules": {
+      "singleLithographyColorSystem": true,
+      "doNotUsePureWhite": true,
+      "doNotIntroduceSecondaryPrintColors": true,
+      "sameColorBothSides": true
+    }
+  },
+  "installationRotationDirectionMarks": {
+    "required": true,
+    "officialName": "Installation Rotation Direction Marks",
+    "location": "UPPER_PRINT_BAND_BELOW_METAL_RIM",
+    "status": "LOCKED_ARTWORK_ELEMENT",
+    "rules": {
+      "preserveApprovedArrowStyle": true,
+      "preserveRotationDirection": true,
+      "preserveRelativePosition": true,
+      "sameMarksBothSides": true,
+      "doNotReplaceWithGenericArrows": true,
+      "doNotAddUnapprovedCharacters": true
+    }
+  },
+  "containerAdaptiveLayout": {
+    "required": true,
+    "sourceDimensions": "EXACT_SKU_CONTAINER_DIMENSIONS",
+    "printableArea": "MANUFACTURER_OR_PRODUCTION_PRINTABLE_AREA",
+    "adaptation": {
+      "scaleArtworkToContainer": true,
+      "preserveAspectAndHierarchy": true,
+      "preserveRelativeElementPositions": true,
+      "preventClipping": true,
+      "preventOverlap": true,
+      "preventDistortion": true,
+      "allowProportionalScalingOnly": true,
+      "sameDistributionBothSides": true
+    }
+  },
+  "lockedArtwork": {
+    "brand": "Elimfilters®",
+    "brandLogoAsset": "frontend/public/assets/logo-elimfilters.png",
+    "brandClaim": "TOTAL ASSET PROTECTION",
+    "technologyDescriptor": "Powered Filtration",
+    "printColorHex": "#CBCBCB",
+    "canBaseColorHex": "#414141",
+    "duplicateArtworkOnOppositeSide": true,
+    "extraTextAllowed": false,
+    "qrAllowed": false,
+    "oemEquivalenceTextAllowed": false,
+    "technicalSpecificationPanelsAllowed": false,
+    "extraIconsAllowed": false
+  },
+  "technologyMatrix": {
+    "LUBE_OIL": {"technology": "SINTRAX®", "display": "SINTRAX®", "descriptor": "Powered Filtration"},
+    "FUEL": {"technology": "SYNTAPORE®", "display": "SYNTAPORE®", "descriptor": "Powered Filtration"},
+    "HYDRAULIC": {"technology": "NANOFORCE®", "display": "NANOFORCE®", "descriptor": "Powered Filtration"},
+    "FUEL_WATER_SEPARATOR": {"technology": "HYDRACORE®", "display": "HYDRACORE®", "descriptor": "Powered Filtration"},
+    "COOLANT": {"technology": "THERMACORE®", "display": "THERMACORE®", "descriptor": "Powered Filtration"},
+    "AIR_DRYER": {"technology": "DRYCORE®", "display": "DRYCORE®", "descriptor": "Powered Filtration"}
+  },
+  "pilotApprovalGate": {
+    "enabled": true,
+    "batchAutomationEnabled": false,
+    "explicitUserApprovalRequiredForEachPilotImage": true,
+    "nextSkuBlockedUntilCurrentImageApproved": true,
+    "noAutomaticApproval": true,
+    "rule": "During pilot validation no image advances to approved/master status and no next SKU is processed until the current image is explicitly approved by the user."
+  },
+  "unattendedExecutionPolicy": {
+    "required": true,
+    "mode": "AUTHORITY_DRIVEN",
+    "allowedAutomaticChanges": ["SKU_VALUE_FROM_DATABASE", "TECHNOLOGY_BY_CATEGORY", "PROPORTIONAL_SCALE_TO_EXACT_CONTAINER_PRINTABLE_AREA", "CONTAINER_RECOLOR_TO_MASTER"],
+    "forbiddenAutomaticChanges": ["SOURCE_GEOMETRY", "BASEPLATE", "THREAD", "HOLE_PATTERN", "GASKET", "LOGO", "BRAND_CLAIM", "COLOR_SYSTEM", "TECHNOLOGY_ARTWORK_SOURCE", "INSTALLATION_ROTATION_DIRECTION_MARKS", "ARTWORK_HIERARCHY"],
+    "validationBeforeRender": {
+      "realManufacturerSourceImageConfirmed": true,
+      "skuConfirmedInCatalogDatabase": true,
+      "exactPhysicalReferenceConfirmed": true,
+      "officialLogoAssetLoaded": true,
+      "officialTechnologyAssetLoaded": true
+    },
+    "validationBeforeRelease": {
+      "sourceGeometryUnchanged": true,
+      "skuMatchesCatalogResolution": true,
+      "technologyMatchesCategory": true,
+      "officialLogoAssetUsed": true,
+      "containerColorMatchesMaster": true,
+      "lithographyColorMatchesMaster": true,
+      "rotationMarksPresent": true,
+      "sameArtworkBothSides": true,
+      "noUnapprovedTextOrCharacters": true,
+      "explicitPilotApprovalPresent": true
+    },
+    "failureBehavior": "STOP_AND_FLAG_FOR_REVIEW",
+    "neverGuessMissingData": true,
+    "neverAutoApproveADeviation": true
+  },
+  "productionRules": {
+    "skuMustComeFromCatalogDatabase": true,
+    "technologyMustComeFromFilterCategory": true,
+    "officialLogoMustComeFromLockedAsset": true,
+    "physicalGeometryMustComeFromExactRealSourceImage": true,
+    "doNotReuseGeometryAcrossDifferentSkus": true,
+    "doNotAddTechnicalCharactersOrExtraText": true,
+    "doNotUseGermanQuality": true,
+    "brandClaimMustBe": "TOTAL ASSET PROTECTION",
+    "stopOnMissingOrConflictingSourceData": true
+  },
+  "workflow": {
+    "approvalState": "MASTER_AUTHORITY",
+    "purpose": "Single source of truth for cylindrical ELIMFILTERS direct-print artwork and controlled pilot execution",
+    "generatedSkuLayouts": "INHERIT_FROM_THIS_AUTHORITY",
+    "notes": "Real manufacturer imagery controls geometry. Catalogue database controls final ELIMFILTERS SKU. Repository assets control logo and technology artwork. During pilot validation every image remains blocked until explicit user approval."
+  }
+}

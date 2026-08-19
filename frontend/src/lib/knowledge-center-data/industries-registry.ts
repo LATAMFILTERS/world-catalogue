@@ -42,7 +42,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'MICROKAPPA™ required', value: 'Yes — silicosis risk' },
       { label: 'ISO 4406 hydraulic target', value: '16/14/11' },
     ],
-    technologies: ['MACROCORE™', 'INTEKCORE™', 'MICROKAPPA™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'HYDROCORE™'],
+    technologies: ['MACROCORE™', 'INTEKCORE™', 'MICROKAPPA™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™', 'HYDROCORE™'],
     standards: ['ISO 5011', 'ISO 4406', 'ISO 16889', 'ISO 11155-1'],
     systems: ['Air Intake Protection', 'Cabin Air Protection', 'Hydraulic Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection'],
     sections: [
@@ -56,7 +56,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       },
       {
         heading: 'Cabin Air Priority',
-        body: 'Operator silicosis risk in mining is classified as an occupational health emergency in most jurisdictions. Ambient respirable silica in active mining areas exceeds the OSHA PEL (0.025 mg/m³) by 100–1,000×. MICROKAPPA™ H13-class cabin filtration is mandatory from an occupational health standpoint — not optional equipment. Cab pressurization integrity must be verified at each major service to prevent unfiltered air ingress through door seals and cable penetrations.',
+        body: 'Operator silicosis risk in mining is classified as an occupational health emergency in most jurisdictions. Ambient respirable silica in active mining areas exceeds the OSHA PEL (0.025 mg/m³) by 100–1,000×. MICROKAPPA™ cabin filtration rated to the efficiency class specified for the approved application is mandatory from an occupational health standpoint — not optional equipment. Cab pressurization integrity must be verified at each major service to prevent unfiltered air ingress through door seals and cable penetrations.',
       },
     ],
   },
@@ -133,7 +133,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'Urban interval', value: '30,000–80,000 km' },
       { label: 'EGR soot contamination', value: 'Up to 5% soot in lube oil' },
     ],
-    technologies: ['MACROCORE™', 'SYNTRAX™', 'MICROKAPPA™', 'SYNTEPORE™'],
+    technologies: ['MACROCORE™', 'SYNTRAX™', 'MICROKAPPA™', 'SYNTAPORE™'],
     standards: ['ISO 5011', 'ISO 16889', 'SAE J1858'],
     systems: ['Air Intake Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection', 'Cabin Air Protection'],
     sections: [
@@ -162,7 +162,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'IMO compliance', value: 'Required for international voyages' },
       { label: 'MARINECLEAN™', value: 'IMO-certified ecosystem' },
     ],
-    technologies: ['SYNTEPORE™', 'HYDROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'MICROKAPPA™'],
+    technologies: ['SYNTAPORE™', 'HYDROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'MICROKAPPA™'],
     standards: ['ISO 12937', 'ASTM D6304', 'ISO 16889', 'ISO 4406'],
     systems: ['Fuel Cleanliness Protection', 'Lubrication Protection', 'Hydraulic Protection'],
     sections: [
@@ -191,7 +191,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'Instrument air class', value: 'ISO 8573-1 Class 1:4:1' },
       { label: 'Drilling dust type', value: 'Barite, silica, formation minerals' },
     ],
-    technologies: ['MACROCORE™', 'DRYCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'HYDROCORE™'],
+    technologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™', 'HYDROCORE™'],
     standards: ['ISO 5011', 'ISO 8573-1', 'ISO 16889', 'ISO 4406'],
     systems: ['Air Intake Protection', 'Lubrication Protection', 'Hydraulic Protection', 'Fuel Cleanliness Protection'],
     sections: [
@@ -201,7 +201,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       },
       {
         heading: 'Instrument Air Quality',
-        body: 'Process control instrumentation and pneumatic valve actuators in upstream and refinery applications require instrument-grade compressed air per ISO 8573-1. Contaminated instrument air causes instrument calibration drift, valve actuator stiction, and positioner failure — contributing to process upsets. DRYCORE™ multi-stage systems achieve Class 1:4:1 for precision instrument air applications.',
+        body: 'Process control instrumentation and pneumatic valve actuators in upstream and refinery applications require instrument-grade compressed air per ISO 8573-1. Contaminated instrument air causes instrument calibration drift, valve actuator stiction, and positioner failure — contributing to process upsets.',
       },
     ],
   },
@@ -219,17 +219,17 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'Hydraulic cleanliness target', value: 'ISO 15/13/10 for servo valves' },
       { label: 'CNC hydraulic sensitivity', value: 'Sub-5 µm particle damage' },
     ],
-    technologies: ['DRYCORE™', 'NANOFORCE™', 'SYNTRAX™'],
+    technologies: ['NANOFORCE™', 'SYNTRAX™'],
     standards: ['ISO 8573-1', 'ISO 16889', 'ISO 4406'],
     systems: ['Hydraulic Protection', 'Lubrication Protection'],
     sections: [
       {
         heading: 'Precision Manufacturing Requirements',
-        body: 'CNC machining centers, coordinate measuring machines, and industrial robots use hydraulic servo systems with clearances as small as 2–5 µm. At these tolerances, particles passing through conventional filters can cause servo position errors, hysteresis, and axis hunting. ISO 4406 15/13/10 target requires NANOFORCE™ precision-grade elements (β₄(c) ≥1000) and commissioning flush procedures.',
+        body: 'CNC machining centers, coordinate measuring machines, and industrial robots use hydraulic servo systems with clearances as small as 2–5 µm. At these tolerances, particles passing through conventional filters can cause servo position errors, hysteresis, and axis hunting. A tight ISO 4406 target of this kind requires NANOFORCE™ precision-grade elements rated to the Beta ratio specified for the approved application, along with commissioning flush procedures.',
       },
       {
         heading: 'Compressed Air Quality',
-        body: 'Pneumatic assembly tools, spray painting, pharmaceutical packaging, and food processing all require different compressed air purity classes per ISO 8573-1. DRYCORE™ multi-stage systems are configured for each application class. Class 1:4:1 (food/pharma) requires sub-0.1 mg/m³ particle concentration, pressure dewpoint ≤+3°C, and oil concentration ≤0.01 mg/m³.',
+        body: 'Pneumatic assembly tools, spray painting, pharmaceutical packaging, and food processing all require different compressed air purity classes per ISO 8573-1. Class 1:4:1 (food/pharma) requires sub-0.1 mg/m³ particle concentration, pressure dewpoint ≤+3°C, and oil concentration ≤0.01 mg/m³.',
       },
     ],
   },
@@ -248,7 +248,7 @@ export const KC_INDUSTRY_DETAILS: Record<string, KCIndustryDetail> = {
       { label: 'Standby diesel readiness', value: 'Fuel polishing required' },
       { label: 'Typical genset lube interval', value: '250–500 hrs or calendar' },
     ],
-    technologies: ['MACROCORE™', 'SYNTRAX™', 'SYNTEPORE™', 'HYDROCORE™', 'THERMACORE™'],
+    technologies: ['MACROCORE™', 'SYNTRAX™', 'SYNTAPORE™', 'HYDROCORE™', 'THERMACORE™'],
     standards: ['ISO 5011', 'ISO 16889', 'SAE J1858', 'ISO 12937', 'ASTM D6304'],
     systems: ['Air Intake Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection', 'Cooling System Protection'],
     sections: [

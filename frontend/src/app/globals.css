@@ -13,8 +13,8 @@
   --border: rgba(255, 255, 255, 0.08);
   --border-2: rgba(255, 255, 255, 0.12);
   --text: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.55);
-  --text-subtle: rgba(255, 255, 255, 0.35);
+  --text-muted: rgba(255, 255, 255, 0.9);
+  --text-subtle: rgba(255, 255, 255, 0.85);
 
   /* ELIMFILTERS APPROVED TYPOGRAPHY SYSTEM
    * ELIM Display Font = Chakra Petch
@@ -97,6 +97,34 @@ a[href="#content"]:focus,
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
   text-decoration: none !important;
+}
+
+/* WCAG AAA Focus Indicators */
+*:focus-visible {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.3);
+}
+
+/* Dark theme focus adjustment for ELIMFILTERS */
+body {
+  --focus-color: #FFF12D;
+  --focus-shadow: rgba(255, 241, 45, 0.2);
+}
+
+a:focus-visible:not([href="#main-content"]):not([href="#content"]),
+button:focus-visible {
+  outline-color: var(--focus-color);
+  box-shadow: 0 0 0 4px var(--focus-shadow);
 }
 
 /* Visual cleanup for a legacy encoded marker in the home asset-protection card. */
@@ -353,15 +381,27 @@ main [role="button"] {
   text-align: right;
 }
 
+/* Tablet: 4 columns (logo + 3 nav sections) */
 @media (max-width: 1200px) {
   .footer-main-grid {
-    grid-template-columns: minmax(220px, 1.2fr) repeat(3, minmax(140px, 1fr));
+    grid-template-columns: repeat(4, minmax(130px, 1fr));
+    gap: clamp(2rem, 4vw, 3.5rem);
   }
 }
 
+/* Mobile: 2 columns (logo + stacked nav) */
 @media (max-width: 760px) {
   .footer-main-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(130px, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+}
+
+/* Small mobile: 1 column */
+@media (max-width: 480px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 2vw, 1.5rem);
   }
 }
 

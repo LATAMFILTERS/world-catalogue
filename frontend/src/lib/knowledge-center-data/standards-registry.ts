@@ -528,7 +528,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'Relevance to Filtration Media Compatibility',
-        body: 'Filtration media must be chemically compatible with DIN 51524 fluids — particularly the additive packages in HLP and HVLP class oils. Incompatible media can cause additive stripping (depleting anti-wear protection) or media degradation (reducing filtration efficiency over the service interval). SYNTRAX™ lube oil filter elements are qualified for compatibility with DIN 51524 HLP and HVLP class fluids, ensuring no media degradation or additive interaction under normal operating conditions. Compatibility verification is required when switching lubricant brands or formulations within the DIN 51524 classification system.',
+        body: 'Filtration media must be chemically compatible with DIN 51524 fluids — particularly the additive packages in HLP and HVLP class oils. Incompatible media can cause additive stripping (depleting anti-wear protection) or media degradation (reducing filtration efficiency over the service interval). NANOFORCE™ hydraulic filter elements are qualified for compatibility with DIN 51524 HLP and HVLP class fluids, ensuring no media degradation or additive interaction under normal operating conditions. Compatibility verification is required when switching lubricant brands or formulations within the DIN 51524 classification system.',
       },
       {
         heading: 'Relationship to ISO Cleanliness Standards',
@@ -541,10 +541,10 @@ export const KC_STANDARDS: KCStandard[] = [
       { label: 'HVLP class', value: 'High-viscosity index — wide temperature range applications' },
       { label: 'Compatibility check', value: 'Required when changing lubricant brand or formulation' },
     ],
-    applicableSystems: ['hydraulic-protection', 'lubrication-protection'],
+    applicableSystems: ['hydraulic-protection'],
     relatedGlossaryTerms: ['TERM-VISCOSITY', 'TERM-VISCOSITY-INDEX', 'TERM-OXIDATIVE-DEGRADATION', 'TERM-ISO-CLEANLINESS-CODE'],
     relatedTopics: ['fluid-cleanliness', 'contamination-control'],
-    relatedTechnologies: ['SYNTRAX™', 'NANOFORCE™'],
+    relatedTechnologies: ['NANOFORCE™'],
     relatedArticles: ['lubrication-system-filtration', 'contamination-control', 'fluid-cleanliness'],
     commonMistakes: [
       'Selecting HLP grade mineral oil for hydraulic systems requiring HM specification. HM fluids add anti-wear additives for high-pressure pump protection — substituting HLP in HM-specified systems increases pump wear.',
@@ -566,7 +566,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What compatibility requirements does DIN 51524 impose on filtration media?',
-        answer: 'DIN 51524 Part 2 (HLP) and Part 3 (HVLP) oils contain anti-wear additive packages — typically zinc dialkyldithiophosphate (ZDDP) or ashless phosphate ester AW chemistry. Filtration media in contact with these fluids must be chemically inert to the additive package to avoid additive stripping (depletion of AW protection during filter passage) or media degradation (loss of structural integrity and filtration efficiency). Synthetic microglass media used in SYNTRAX™ lube oil elements is qualified for DIN 51524 HLP and HVLP compatibility. Cellulose media may show additive adsorption at elevated temperature (>80°C) with certain AW additive chemistries — a risk factor for operators using extended drain intervals.',
+        answer: 'DIN 51524 Part 2 (HLP) and Part 3 (HVLP) oils contain anti-wear additive packages — typically zinc dialkyldithiophosphate (ZDDP) or ashless phosphate ester AW chemistry. Filtration media in contact with these fluids must be chemically inert to the additive package to avoid additive stripping (depletion of AW protection during filter passage) or media degradation (loss of structural integrity and filtration efficiency). Synthetic microglass media used in NANOFORCE™ hydraulic elements is qualified for DIN 51524 HLP and HVLP compatibility. Cellulose media may show additive adsorption at elevated temperature (>80°C) with certain AW additive chemistries — a risk factor for operators using extended drain intervals.',
       },
       {
         question: 'Why is HVLP (DIN 51524 Part 3) important for mobile equipment operating in extreme climates?',
@@ -976,7 +976,7 @@ export const KC_STANDARDS: KCStandard[] = [
     sections: [
       {
         heading: 'Classification System',
-        body: 'ISO 29463 replaces EN 1822 for HEPA/ULPA classification in industrial applications. Filter classes are defined by minimum efficiency at the most penetrating particle size (MPPS): E10 = 85%, E11 = 95%, E12 = 99.5%, H13 = 99.95%, H14 = 99.995%, U15 = 99.9995%. ELIMFILTERS MICROKAPPA™ cabin air filters targeting occupational health protection in mining and construction applications are classified to H13 minimum for PM2.5 protection.',
+        body: 'ISO 29463 replaces EN 1822 for HEPA/ULPA classification in industrial applications. Filter classes are defined by minimum efficiency at the most penetrating particle size (MPPS): E10 = 85%, E11 = 95%, E12 = 99.5%, H13 = 99.95%, H14 = 99.995%, U15 = 99.9995%. ELIMFILTERS MICROKAPPA™ cabin air filters are classified to the ISO 29463 efficiency class specified for the approved application in occupational health protection use.',
       },
       {
         heading: 'MPPS Testing',
@@ -1078,7 +1078,7 @@ export const KC_STANDARDS: KCStandard[] = [
     sections: [
       {
         heading: 'Particle Efficiency Testing',
-        body: 'ISO 11155-1 measures particle capture efficiency at PM10 and PM2.5 fractions — the size ranges corresponding to inhalable and respirable health fractions per WHO air quality guidelines. Testing uses standardized airflow rates with synthetic dust challenge. Minimum performance targets for operator health protection are >80% PM10 efficiency and >60% PM2.5 efficiency. MICROKAPPA™ elements achieve ≥95% PM2.5 efficiency, exceeding the ISO 11155-1 minimum threshold for occupational exposure limit compliance in high-dust industrial environments.',
+        body: 'ISO 11155-1 measures particle capture efficiency at PM10 and PM2.5 fractions — the size ranges corresponding to inhalable and respirable health fractions per WHO air quality guidelines. Testing uses standardized airflow rates with synthetic dust challenge. Minimum performance targets for operator health protection are >80% PM10 efficiency and >60% PM2.5 efficiency. MICROKAPPA™ elements are rated to the PM2.5 efficiency target specified for the approved application, selected to exceed the ISO 11155-1 minimum threshold for occupational exposure limit compliance in high-dust industrial environments.',
       },
       {
         heading: 'ISO 11155-2 Complement',
@@ -1092,7 +1092,7 @@ export const KC_STANDARDS: KCStandard[] = [
     keyParams: [
       { label: 'PM10 efficiency minimum', value: '>80%' },
       { label: 'PM2.5 efficiency minimum', value: '>60%' },
-      { label: 'MICROKAPPA™ PM2.5', value: '≥95%' },
+      { label: 'MICROKAPPA™ PM2.5', value: 'Per approved application' },
       { label: 'Parts', value: 'Part 1: particles; Part 2: gas phase' },
     ],
     applicableSystems: ['cabin-air-protection'],
@@ -1112,7 +1112,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What are the minimum particle filtration efficiency thresholds specified in ISO 11155-1?',
-        answer: 'ISO 11155-1 specifies minimum particle filtration efficiency thresholds for cabin air filters: ≥80% efficiency for PM10 particles and ≥60% efficiency for PM2.5 particles measured under standardized airflow conditions using synthetic test dust. These are minimum baseline thresholds — MICROKAPPA™ elements achieve ≥95% PM2.5 efficiency and ≥98% PM10 efficiency under ISO 11155-1 test conditions, significantly exceeding the minimum, which is relevant for high-dust environments where even 40% PM2.5 pass-through at 500 µg/m³ ambient concentration produces unacceptable in-cab exposure.',
+        answer: 'ISO 11155-1 specifies minimum particle filtration efficiency thresholds for cabin air filters: ≥80% efficiency for PM10 particles and ≥60% efficiency for PM2.5 particles measured under standardized airflow conditions using synthetic test dust. These are minimum baseline thresholds — MICROKAPPA™ elements are selected to the PM2.5 and PM10 efficiency target specified for the approved application, exceeding the ISO 11155-1 minimum where the application requires it, which is relevant for high-dust environments where significant PM2.5 pass-through at elevated ambient concentration produces unacceptable in-cab exposure.',
       },
       {
         question: 'How does ISO 11155-2 complement ISO 11155-1 for complete cabin air protection?',
@@ -1214,7 +1214,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What filtration efficiency does DIN 71220 specify for cabin air particle filters?',
-        answer: 'DIN 71220 specifies particle filtration efficiency performance thresholds tested with standardized dust under defined HVAC airflow conditions. The standard requires a minimum particle filtration efficiency — the precise values for different particle size fractions are specified in the test protocol. For PM10 particle protection, DIN 71220 specifies ≥80% filtration efficiency, similar to ISO 11155-1 minimum thresholds. MICROKAPPA™ cabin air elements exceed the DIN 71220 minimum thresholds for both PM10 and PM2.5 efficiency, achieving ≥95% PM2.5 efficiency under both DIN 71220 and ISO 11155-1 test conditions.',
+        answer: 'DIN 71220 specifies particle filtration efficiency performance thresholds tested with standardized dust under defined HVAC airflow conditions. The standard requires a minimum particle filtration efficiency — the precise values for different particle size fractions are specified in the test protocol. For PM10 particle protection, DIN 71220 specifies ≥80% filtration efficiency, similar to ISO 11155-1 minimum thresholds. MICROKAPPA™ cabin air elements are selected to exceed the DIN 71220 minimum thresholds for both PM10 and PM2.5 efficiency, rated to the PM2.5 efficiency target specified for the approved application under both DIN 71220 and ISO 11155-1 test conditions.',
       },
       {
         question: 'Does DIN 71220 cover activated carbon layers for gaseous contaminant removal?',
@@ -1242,7 +1242,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What is the typical PM2.5 efficiency achievable with a DIN 71220-compliant cabin air filter for mining equipment?',
-        answer: 'Standard DIN 71220-compliant cabin air filters for road vehicles typically achieve PM2.5 efficiencies of 60–85% — above the standard minimum threshold but not in the HEPA performance range. For mining and construction equipment operator protection against respirable crystalline silica (which has a WHO-defined carcinogenic threshold below 25 µg/m³ silica-specific respirable dust), PM2.5 efficiency of ≥95% is required to reduce in-cab silica concentration below occupational exposure limits at mining ambient concentrations of 200–1,000 µg/m³. MICROKAPPA™ elements achieve ≥95% PM2.5 efficiency under DIN 71220 and ISO 11155-1 conditions — addressing the occupational health requirement beyond standard DIN 71220 minimum thresholds.',
+        answer: 'Standard DIN 71220-compliant cabin air filters for road vehicles typically achieve PM2.5 efficiencies of 60–85% — above the standard minimum threshold but not in the HEPA performance range. For mining and construction equipment operator protection against respirable crystalline silica (which has a WHO-defined carcinogenic threshold below 25 µg/m³ silica-specific respirable dust), PM2.5 efficiency of ≥95% is required to reduce in-cab silica concentration below occupational exposure limits at mining ambient concentrations of 200–1,000 µg/m³. MICROKAPPA™ elements are selected to the PM2.5 efficiency target specified for the approved application under DIN 71220 and ISO 11155-1 conditions — addressing the occupational health requirement beyond standard DIN 71220 minimum thresholds.',
       },
       {
         question: 'What activated carbon adsorption capacity does DIN 71220 require for combined particle/gas cabin air filters?',
@@ -1307,7 +1307,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-EMULSIFIED-WATER', 'TERM-HPCR', 'TERM-MICROBIAL-CONTAMINATION',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedArticles: ['fuel-water-contamination', 'oil-analysis-methods', 'hpcr-fuel-system-protection'],
     commonMistakes: [
       'Confusing free water and dissolved water in Karl Fischer results. ISO 12937 coulometric KF measures total water (dissolved + free + emulsified) — a result of 80 ppm in diesel does not mean free water is absent if phase separation has occurred.',
@@ -1321,7 +1321,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What water content limit does EN 590 specify for European diesel fuel, and why does it matter for HPCR?',
-        answer: 'EN 590 (European specification for automotive diesel fuel) specifies a maximum water content of 200 mg/kg (200 ppm by mass) as determined by ISO 12937. This limit is set to protect high-pressure common rail (HPCR) injection systems with fuel injection pressures of 1,800–2,500 bar and injector spool clearances of ≤1 µm. Water above 200 ppm in diesel fuel at HPCR operating conditions causes injector seat corrosion at the metal-to-metal seal surfaces, micro-pitting of needle valve surfaces, and stiction — where injector needles partially adhere to seats after injection events, causing irregular spray pattern, poor combustion efficiency, and ultimately injector failure. HYDROCORE™ coalescing separator elements are specified to achieve outlet water below 50 mg/kg, providing a 4× safety margin below the EN 590 limit.',
+        answer: 'EN 590 (European specification for automotive diesel fuel) specifies a maximum water content of 200 mg/kg (200 ppm by mass) as determined by ISO 12937. This limit is set to protect high-pressure common rail (HPCR) injection systems with fuel injection pressures of 1,800–2,500 bar and injector spool clearances of ≤1 µm. Water above 200 ppm in diesel fuel at HPCR operating conditions causes injector seat corrosion at the metal-to-metal seal surfaces, micro-pitting of needle valve surfaces, and stiction — where injector needles partially adhere to seats after injection events, causing irregular spray pattern, poor combustion efficiency, and ultimately injector failure. HYDROCORE™ coalescing separator elements are specified against the required outlet water target for the approved application, providing margin below the EN 590 limit.',
       },
       {
         question: 'What is the measurement range of ISO 12937 and when is it not appropriate?',
@@ -1345,7 +1345,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What microbial growth risk is associated with water contamination detected by ISO 12937?',
-        answer: 'Water content above 200 ppm in diesel fuel creates conditions for microbial contamination at the fuel-water interface in tank bottom accumulations. Sulphate-reducing bacteria (Pseudomonas aeruginosa, Desulfovibrio spp.) and fungi (Hormoconis resinae, known as the "kerosene fungus") colonize the water-fuel interface, producing acidic metabolites (sulphides, organic acids) that corrode tank walls and form biomass mats that block fuel filters. ISO 12937 water content testing provides early warning of conditions favouring microbial growth, but detecting established microbiological contamination requires additional testing: ATP bioluminescence, ASTM D6974 (microorganism enumeration in fuel), or culture-based colony count methods. HYDROCORE™ water separation below 50 mg/kg reduces free water accumulation at tank bottoms, limiting microbial colonization sites.',
+        answer: 'Water content above 200 ppm in diesel fuel creates conditions for microbial contamination at the fuel-water interface in tank bottom accumulations. Sulphate-reducing bacteria (Pseudomonas aeruginosa, Desulfovibrio spp.) and fungi (Hormoconis resinae, known as the "kerosene fungus") colonize the water-fuel interface, producing acidic metabolites (sulphides, organic acids) that corrode tank walls and form biomass mats that block fuel filters. ISO 12937 water content testing provides early warning of conditions favouring microbial growth, but detecting established microbiological contamination requires additional testing: ATP bioluminescence, ASTM D6974 (microorganism enumeration in fuel), or culture-based colony count methods. HYDROCORE™ water separation reduces free water accumulation at tank bottoms, limiting microbial colonization sites.',
       },
       {
         question: 'Can ISO 12937 be used for marine fuel (HFO/LSFO) water content testing?',
@@ -1398,7 +1398,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'Fuel and Lube Oil Applications',
-        body: 'In fuel applications, ASTM D6304 verifies diesel fuel water content below the 200 mg/kg threshold critical for HPCR injector protection. In lubricating oil applications, water above 0.1% indicates coolant leak (head gasket or liner failure); above 0.5%, water accelerates oil oxidation, promotes bacterial growth in biodegradable oils, and reduces oil film strength at bearing surfaces. HYDROCORE™ performance is validated by comparing ASTM D6304 inlet versus outlet water concentrations, with target outlet below 50–100 mg/kg dissolved saturation.',
+        body: 'In fuel applications, ASTM D6304 verifies diesel fuel water content below the 200 mg/kg threshold critical for HPCR injector protection. In lubricating oil applications, water above 0.1% indicates coolant leak (head gasket or liner failure); above 0.5%, water accelerates oil oxidation, promotes bacterial growth in biodegradable oils, and reduces oil film strength at bearing surfaces. HYDROCORE™ performance is validated by comparing ASTM D6304 inlet versus outlet water concentrations against the outlet target for the specific approved application.',
       },
     ],
     keyParams: [
@@ -1413,7 +1413,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-WATER-SEPARATION-EFFICIENCY', 'TERM-COALESCING', 'TERM-HPCR',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedArticles: ['fuel-water-contamination', 'oil-analysis-methods', 'hpcr-fuel-system-protection'],
     commonMistakes: [
       'Selecting coulometric Karl Fischer (ASTM D6304) for high-water-content samples (>1000 ppm). Coulometric KF is designed for low water content — volumetric KF (ASTM D1744) is more appropriate for high-water petroleum products.',
@@ -1430,7 +1430,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'How is ASTM D6304 used to verify HYDROCORE™ water separator performance?',
-        answer: 'HYDROCORE™ water separator performance is verified by comparing ASTM D6304 water content measurements of fuel samples taken simultaneously at the separator inlet and outlet under operating flow conditions. Water separation efficiency = (Inlet water – Outlet water) / Inlet water × 100%. For HYDROCORE™ elements achieving ≥96% water separation efficiency per ISO 16332, inlet water of 500 mg/kg would produce outlet water of ≤20 mg/kg. Field verification using ASTM D6304 at sampler ports installed upstream and downstream of the separator validates that the installed system achieves the ISO 16332-rated performance under actual fuel temperature, flow rate, and fuel composition conditions. Results below 96% efficiency may indicate element degradation, bypass leakage, or operation at above-rated flow rates.',
+        answer: 'HYDROCORE™ water separator performance is verified by comparing ASTM D6304 water content measurements of fuel samples taken simultaneously at the separator inlet and outlet under operating flow conditions. Water separation efficiency = (Inlet water – Outlet water) / Inlet water × 100%. Field verification using ASTM D6304 at sampler ports installed upstream and downstream of the separator validates that the installed system achieves the rated performance for the specific approved element under actual fuel temperature, flow rate, and fuel composition conditions. Results below the approved rating may indicate element degradation, bypass leakage, or operation at above-rated flow rates.',
       },
       {
         question: 'What does ASTM D6304 measure in lubricating oil condition monitoring applications?',
@@ -1499,11 +1499,11 @@ export const KC_STANDARDS: KCStandard[] = [
     sections: [
       {
         heading: 'Water Separation Efficiency Test',
-        body: 'ISO 16332 defines the standardized test methodology for measuring the water separation efficiency of diesel fuel filters, including coalescing filter elements. The test circulates diesel fuel containing a controlled water concentration through the filter element under specified flow and temperature conditions, measuring water concentration upstream and downstream using analytical methods (Karl Fischer titration per ISO 12937 or ASTM D6304). Water separation efficiency is expressed as the percentage of input water concentration removed by the filter element. HYDROCORE™ coalescing water separator elements achieve ≥96% water separation efficiency under ISO 16332 test conditions.',
+        body: 'ISO 16332 defines the standardized test methodology for measuring the water separation efficiency of diesel fuel filters, including coalescing filter elements. The test circulates diesel fuel containing a controlled water concentration through the filter element under specified flow and temperature conditions, measuring water concentration upstream and downstream using analytical methods (Karl Fischer titration per ISO 12937 or ASTM D6304). Water separation efficiency is expressed as the percentage of input water concentration removed by the filter element. Applicable separation ratings must be tied to the specific approved element and test basis, not presented as a universal certification claim.',
       },
       {
         heading: 'HPCR Fuel System Application',
-        body: 'ISO 16332 is the performance standard for the water separation stage of HPCR fuel protection systems. In the ELIMFILTERS fuel protection strategy, HYDROCORE™ (water separation, ISO 16332 rated) operates in sequence with SYNTEPORE™ (primary particle removal) to achieve HPCR fuel cleanliness at ISO 12/10/8. ISO 16332 water separation test performance is the primary qualification criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection.',
+        body: 'ISO 16332 is a performance standard relevant to the water separation stage of HPCR fuel protection systems. In the ELIMFILTERS fuel protection strategy, HYDROCORE™ (water separation) operates in sequence with SYNTAPORE™ (primary particle removal). ISO 16332 water separation test performance is one criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection; the applicable rating must be tied to the specific approved element.',
       },
       {
         heading: 'Relationship to Fuel Water Standards',
@@ -1511,7 +1511,6 @@ export const KC_STANDARDS: KCStandard[] = [
       },
     ],
     keyParams: [
-      { label: 'HYDROCORE™ water separation', value: '≥96% (ISO 16332)' },
       { label: 'Test method for water content', value: 'ISO 12937 / ASTM D6304' },
       { label: 'HPCR fuel protection threshold', value: '<200 mg/kg water' },
     ],
@@ -1521,7 +1520,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-EMULSIFIED-WATER', 'TERM-HPCR', 'TERM-INJECTOR-STICTION',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['HYDROCORE™', 'SYNTEPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedArticles: ['fuel-water-contamination', 'hpcr-fuel-system-protection', 'iso-16332'],
     commonMistakes: [
       'Specifying water separation efficiency at a single test flow rate as the only performance criterion. ISO 16332 water separation efficiency varies significantly with flow — a separator rated at 95% efficiency at rated flow may drop to 60% at 150% of rated flow.',
@@ -1537,16 +1536,12 @@ export const KC_STANDARDS: KCStandard[] = [
         answer: 'ISO 16332 measures overall water separation efficiency based on Karl Fischer titration (ISO 12937 or ASTM D6304) of fuel samples at the filter inlet and outlet — it measures total water reduction regardless of water phase. However, the standard also includes provisions for testing with both free water challenge (bulk water-diesel mixture) and emulsified water challenge (surfactant-stabilized fine water droplet emulsion) separately, because coalescing filter performance differs significantly between these water states. Free water (droplets >50 µm) is readily separated by bulk coalescence; emulsified water (droplets 1–50 µm stabilized by fuel oxidation products or biodiesel contamination) requires high-efficiency glass fibre coalescer media and extended dwell time in the separation chamber.',
       },
       {
-        question: 'What water separation efficiency does HYDROCORE™ achieve under ISO 16332?',
-        answer: 'HYDROCORE™ coalescing water separator elements achieve ≥96% water separation efficiency under ISO 16332 standardized test conditions. At a fuel inlet water concentration of 500 mg/kg, ≥96% efficiency produces an outlet concentration of ≤20 mg/kg — well below the EN 590 200 mg/kg limit and below the HPCR injector protection threshold. In field conditions, water inlet concentrations vary from 50 mg/kg (normal dissolved water near saturation at 20°C) to 5,000+ mg/kg during contamination events (condensation from inadequate tank venting, water pooling in tank bottoms). HYDROCORE™ 96% efficiency maintains outlet concentrations below 200 mg/kg across this full range of inlet water conditions.',
-      },
-      {
         question: 'How does fuel flow rate affect ISO 16332 water separation efficiency?',
         answer: 'Water separation efficiency decreases significantly with increasing flow rate in coalescing filter elements, because coalescence is a time-dependent process requiring residence time in the fibrous media for small droplets to collide, merge, and grow to droplet sizes large enough for gravitational separation. ISO 16332 requires testing at rated flow and at 150% of rated flow to characterize this flow-dependent efficiency reduction. A coalescing separator rated at 96% efficiency at rated flow may achieve only 75–85% efficiency at 150% rated flow — relevant for fuel system designs where variable injection demand or lift pump surge creates transient flow rates above the separator\'s rated capacity. Filter selection must account for maximum instantaneous flow rates, not just average consumption rates.',
       },
       {
         question: 'How does biodiesel blending affect ISO 16332 water separator performance?',
-        answer: 'Biodiesel (FAME, fatty acid methyl esters) has significantly higher water solubility than petroleum diesel — approximately 1,000–1,500 mg/kg at saturation versus 50–150 mg/kg for petroleum diesel. B10 and B20 blends (10% and 20% biodiesel) correspondingly increase fuel water saturation capacity. Two effects on coalescing separator performance result: (1) Increased dissolved water load on the separator as the high-FAME fuel carries more dissolved water; (2) Potential surfactant effect from FAME oxidation products, which act as emulsifiers that stabilize fine water droplets and reduce coalescer efficiency below the ISO 16332 reference test value (performed with petroleum diesel). HYDROCORE™ elements tested under ISO 16332 with B10 and B20 fuel blends maintain ≥93% water separation efficiency — but filter replacement intervals in high-FAME operations may require reduction compared to petroleum diesel service.',
+        answer: 'Biodiesel (FAME, fatty acid methyl esters) has significantly higher water solubility than petroleum diesel — approximately 1,000–1,500 mg/kg at saturation versus 50–150 mg/kg for petroleum diesel. B10 and B20 blends (10% and 20% biodiesel) correspondingly increase fuel water saturation capacity. Two effects on coalescing separator performance result: (1) Increased dissolved water load on the separator as the high-FAME fuel carries more dissolved water; (2) Potential surfactant effect from FAME oxidation products, which act as emulsifiers that stabilize fine water droplets and reduce coalescer efficiency below the ISO 16332 reference test value (performed with petroleum diesel). Applicable water-separation performance for any coalescing element in B10/B20 service must be verified for the specific approved fuel blend — filter replacement intervals in high-FAME operations may require reduction compared to petroleum diesel service.',
       },
       {
         question: 'What is the role of the water separation bowl in an ISO 16332-rated fuel filter/water separator?',
@@ -1554,15 +1549,11 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'How frequently should ISO 16332-rated fuel water separators be serviced?',
-        answer: 'ISO 16332 does not specify service intervals — these are determined by fuel water ingestion rate and separator bowl volume. For heavy equipment operating in high-humidity environments (tropical construction, marine applications) with 500 m³/h fuel consumption at 150 mg/kg average fuel water content: water ingestion rate = 500 L/h × 0.15 g/L ≈ 75 g/h (accounting for diesel density ≈0.84 kg/L). A HYDROCORE™ separator with 96% efficiency removes 72 g/h into the collection bowl. A bowl capacity of 500 mL fills in approximately 6.9 hours of operation. Under these conditions, daily bowl draining is required. For drier conditions (temperate climate, covered storage, 50 mg/kg average water), bowl filling takes 21+ hours — weekly draining may be sufficient.',
+        answer: 'ISO 16332 does not specify service intervals — these are determined by fuel water ingestion rate and separator bowl volume. For heavy equipment operating in high-humidity environments (tropical construction, marine applications) with 500 m³/h fuel consumption at 150 mg/kg average fuel water content: water ingestion rate = 500 L/h × 0.15 g/L ≈ 75 g/h (accounting for diesel density ≈0.84 kg/L). At the approved separation rating for the specific element, most of that ingested water is removed into the collection bowl per operating hour; bowl volume and fill rate for the specific approved element determine the drain interval. Under high-ingestion conditions, daily bowl draining is often required. For drier conditions (temperate climate, covered storage, 50 mg/kg average water), bowl filling takes 21+ hours — weekly draining may be sufficient.',
       },
       {
         question: 'Does ISO 16332 test performance change with filter element age?',
         answer: 'ISO 16332 tests are conducted on new (unused) filter elements under standardized conditions. In field service, filter element performance typically improves initially as the glass fibre coalescer media loads with fine particles that create additional coalescing nucleation sites — efficiency can increase from 96% to >98% during the first 100–200 hours of service. As the element approaches end of life (increasing differential pressure), fuel flow velocity through the loaded media increases above the rated design velocity, reducing coalescing contact time and potentially decreasing water separation efficiency below the ISO 16332-rated value. For critical HPCR fuel systems, water separation performance verification (outlet water content by ASTM D6304) at element replacement intervals provides confirmation that efficiency is maintained.',
-      },
-      {
-        question: 'How does ISO 16332 relate to the three-stage TURBOCORE™ fuel filtration system?',
-        answer: 'TURBOCORE™ represents the complete three-stage HPCR fuel protection system: stage 1 (primary particle filtration with SYNTEPORE™), stage 2 (water coalescence and separation with HYDROCORE™, ISO 16332 rated), and stage 3 (final polishing filtration). ISO 16332 water separation performance applies specifically to stage 2 — the HYDROCORE™ coalescing element. The ISO 16332 efficiency test measures stage 2 water removal from the fuel stream after initial particulate removal. Stage 3 provides final water polishing and particle removal to achieve the HPCR injection system target cleanliness of ISO 12/10/8. The three-stage sequence is required because water removal efficiency of coalescing media is impaired by heavy particulate contamination, which is why particle pre-filtration in stage 1 precedes water separation in stage 2.',
       },
       {
         question: 'What is the test duration for an ISO 16332 water separation efficiency test?',
@@ -1573,7 +1564,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva',
-        relevance: 'Primary performance test standard for diesel fuel coalescing water separators; defines test methodology for water separation efficiency measurement used in HYDROCORE™ element qualification and field performance verification.',
+        relevance: 'Primary performance test standard for diesel fuel coalescing water separators; defines test methodology for water separation efficiency measurement relevant to HYDROCORE™ field performance verification.',
       },
       {
         category: 'standard',
@@ -1583,12 +1574,12 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods, CEN Brussels',
-        relevance: 'European diesel fuel specification establishing the 200 mg/kg maximum water content that HYDROCORE™ ISO 16332-rated separators must achieve as HPCR fuel protection baseline.',
+        relevance: 'European diesel fuel specification establishing the 200 mg/kg maximum water content that HYDROCORE™ water separators must achieve as HPCR fuel protection baseline.',
       },
       {
         category: 'standard',
         citation: 'ISO 19438:2003, Diesel Fuel and Petrol Filters for Internal Combustion Engines — Filtration Efficiency Using Particle Counting and Contaminant Retention Capacity, ISO Geneva',
-        relevance: 'Complementary fuel particle filtration test standard applied to SYNTEPORE™ primary fuel filter elements; works alongside ISO 16332 water separation testing to characterize complete three-stage HPCR fuel protection system performance.',
+        relevance: 'Complementary fuel particle filtration test standard for HPCR fuel filter elements; works alongside ISO 16332 water separation testing to characterize complete HPCR fuel protection system performance.',
       },
     ],
   },
@@ -1605,15 +1596,15 @@ export const KC_STANDARDS: KCStandard[] = [
     revisionStatus: 'active',
     metaDescription: 'ISO 8573-1 defines purity classes for compressed air, specifying maximum concentrations of solid particles, water, and oil for industrial, food, pharmaceutical, and instrument air applications.',
     scope: 'Classification of compressed air purity by contamination class for solid particles, water (liquid and vapor), and total oil (liquid, aerosol, and vapor).',
-    engineeringPurpose: 'Establishes the compressed air purity classification system (Particle:Water:Oil classes) enabling specification of point-of-use air quality requirements for pneumatic equipment, instrumentation, and process applications — the primary framework for selecting and verifying DRYCORE™ compressed air treatment systems.',
+    engineeringPurpose: 'Establishes the compressed air purity classification system (Particle:Water:Oil classes) enabling specification of point-of-use air quality requirements for pneumatic equipment, instrumentation, and process applications. The water-class (pressure dewpoint) portion of this framework is relevant to DRYCORE™ pneumatic brake-system air-dryer selection.',
     sections: [
       {
         heading: 'Purity Class Structure',
-        body: 'ISO 8573-1 specifies compressed air purity using three independent class numbers in the format X:Y:Z — where X is the particle class (1–9 or 0), Y is the water class (1–9 or 0), and Z is the oil class (1–4 or 0). Lower numbers represent higher purity. Class 1:4:1 — achievable with DRYCORE™ multi-stage filtration — represents particle concentration <20,000 per m³ at ≥0.1 µm, pressure dewpoint ≤+3°C, and total oil <0.01 mg/m³. Class 0 (highest purity) is application-specific and defined by the equipment supplier and end user.',
+        body: 'ISO 8573-1 specifies compressed air purity using three independent class numbers in the format X:Y:Z — where X is the particle class (1–9 or 0), Y is the water class (1–9 or 0), and Z is the oil class (1–4 or 0). Lower numbers represent higher purity. Class 1:4:1 represents particle concentration <20,000 per m³ at ≥0.1 µm, pressure dewpoint ≤+3°C, and total oil <0.01 mg/m³. Class 0 (highest purity) is application-specific and defined by the equipment supplier and end user.',
       },
       {
         heading: 'Application Requirements',
-        body: 'Typical application requirements: pneumatic general service Class 5:4:3; instrument air Class 2:4:1; food contact Class 1:2:1; pharmaceutical filling Class 1:2:1. ISO 8573-1 is used in conjunction with ISO 8573-2 (particle measurement), ISO 8573-3 (humidity and water measurement), and ISO 12500 (coalescing filter test). DRYCORE™ compressed air systems are designed and certified against ISO 8573-1 class requirements.',
+        body: 'Typical application requirements: pneumatic general service Class 5:4:3; instrument air Class 2:4:1; food contact Class 1:2:1; pharmaceutical filling Class 1:2:1. ISO 8573-1 is used in conjunction with ISO 8573-2 (particle measurement), ISO 8573-3 (humidity and water measurement), and ISO 12500 (coalescing filter test). DRYCORE™ pneumatic brake-system air-dryers are selected against the water-class (pressure dewpoint) target specified for the approved vehicle application.',
       },
       {
         heading: 'Treatment Stage Requirements',
@@ -1623,7 +1614,6 @@ export const KC_STANDARDS: KCStandard[] = [
     keyParams: [
       { label: 'Format', value: 'Particle:Water:Oil class numbers' },
       { label: 'Instrument air minimum', value: 'Class 2:4:1' },
-      { label: 'DRYCORE™ achievable', value: 'Class 1:4:1' },
       { label: 'Class 1 particles', value: '<20,000/m³ at ≥0.1 µm' },
     ],
     applicableSystems: [],
@@ -1648,7 +1638,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What do the ISO 8573-1 water classes represent in terms of pressure dewpoint?',
-        answer: 'ISO 8573-1 water classes are defined by pressure dewpoint (PDP) — the temperature at which water vapour in compressed air at system pressure would begin to condense. Class 1: PDP ≤−70°C (ultra-dry, cryogenic dryer required). Class 2: PDP ≤−40°C (membrane or pressure-swing adsorption dryer). Class 3: PDP ≤−20°C (regenerative adsorption dryer). Class 4: PDP ≤+3°C (refrigeration dryer). Class 5: PDP ≤+7°C (refrigeration dryer at higher dew point). Class 6: liquid water content ≤5 g/m³ (partially dried or partially treated). For instrument air and pneumatic controls in environments where ambient temperature exceeds +3°C, Class 4 (PDP ≤+3°C) prevents condensation in distribution pipework. DRYCORE™ refrigeration drying achieves Class 4 water purity as standard.',
+        answer: 'ISO 8573-1 water classes are defined by pressure dewpoint (PDP) — the temperature at which water vapour in compressed air at system pressure would begin to condense. Class 1: PDP ≤−70°C (ultra-dry, cryogenic dryer required). Class 2: PDP ≤−40°C (membrane or pressure-swing adsorption dryer). Class 3: PDP ≤−20°C (regenerative adsorption dryer). Class 4: PDP ≤+3°C (refrigeration dryer). Class 5: PDP ≤+7°C (refrigeration dryer at higher dew point). Class 6: liquid water content ≤5 g/m³ (partially dried or partially treated). For instrument air and pneumatic controls in environments where ambient temperature exceeds +3°C, Class 4 (PDP ≤+3°C) prevents condensation in distribution pipework. DRYCORE™ pneumatic brake-system air-dryers are sized to the water-class target specified for the approved vehicle application.',
       },
       {
         question: 'What are the ISO 8573-1 oil classes and what sources of oil contamination do they address?',
@@ -1656,7 +1646,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What compressed air treatment train is required to achieve ISO 8573-1 Class 1:4:1?',
-        answer: 'Achieving ISO 8573-1 Class 1:4:1 requires a four-to-five stage treatment train downstream of the air compressor. Stage 1: Bulk separator (removes liquid water and oil aerosol >10 µm). Stage 2: Pre-filter with coalescing element (removes oil aerosol to ≤1 mg/m³, particles >1 µm). Stage 3: Refrigeration dryer (achieves PDP ≤+3°C, satisfying water Class 4). Stage 4: High-efficiency coalescing filter (removes oil aerosol to ≤0.01 mg/m³, satisfying oil Class 1). Stage 5: Activated carbon adsorber (removes oil vapour to ≤0.003 mg/m³). An optional dust/carbon fines filter after the adsorber removes activated carbon particulate to satisfy particle Class 1. DRYCORE™ compressed air filtration and drying systems are designed for this treatment train architecture.',
+        answer: 'Achieving ISO 8573-1 Class 1:4:1 requires a four-to-five stage treatment train downstream of the air compressor. Stage 1: Bulk separator (removes liquid water and oil aerosol >10 µm). Stage 2: Pre-filter with coalescing element (removes oil aerosol to ≤1 mg/m³, particles >1 µm). Stage 3: Refrigeration dryer (achieves PDP ≤+3°C, satisfying water Class 4). Stage 4: High-efficiency coalescing filter (removes oil aerosol to ≤0.01 mg/m³, satisfying oil Class 1). Stage 5: Activated carbon adsorber (removes oil vapour to ≤0.003 mg/m³). An optional dust/carbon fines filter after the adsorber removes activated carbon particulate to satisfy particle Class 1.',
       },
       {
         question: 'How does ISO 8573-2 complement ISO 8573-1 for particle measurement?',
@@ -1683,7 +1673,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes, ISO Geneva',
-        relevance: 'Primary compressed air purity classification standard defining particle, water (pressure dewpoint), and oil content classes; the framework for specifying DRYCORE™ compressed air treatment system requirements.',
+        relevance: 'Primary compressed air purity classification standard defining particle, water (pressure dewpoint), and oil content classes; the water-class portion of this framework is relevant to specifying DRYCORE™ pneumatic brake-system air-dryer requirements.',
       },
       {
         category: 'standard',
@@ -1759,7 +1749,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What media efficiency requirement does SAE J1858 specify for extended drain service?',
-        answer: 'SAE J1858 extended drain service filters require synthetic or synthetic-blend filtration media with efficiency rated by ISO 4548 multi-pass test methodology. The standard does not prescribe a specific Beta ratio value universally, but OEM application requirements typically specify β₁₀(c) ≥ 50–200 for engine lube oil full-flow filters — with tighter efficiency requirements for turbocharged engines and engines with oil-cooled pistons where oil cleanliness directly affects piston cooling jet orifice reliability. SYNTRAX™ elements achieve β₁₀(c) ≥ 200 for extended drain applications, maintaining engine cleanliness targets at oil drain intervals of 500+ hours.',
+        answer: 'SAE J1858 extended drain service filters require synthetic or synthetic-blend filtration media with efficiency rated by ISO 4548 multi-pass test methodology. The standard does not prescribe a specific Beta ratio value universally, but OEM application requirements typically specify β₁₀(c) ≥ 50–200 for engine lube oil full-flow filters — with tighter efficiency requirements for turbocharged engines and engines with oil-cooled pistons where oil cleanliness directly affects piston cooling jet orifice reliability. SYNTRAX™ elements are selected to the Beta ratio and cleanliness target specified for the approved extended-drain application.',
       },
       {
         question: 'How is SAE J1858 test methodology linked to ISO 4548?',
@@ -1767,7 +1757,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What dirt holding capacity is typically required for SAE J1858 extended drain full-flow filters?',
-        answer: 'Dirt holding capacity (DHC) for SAE J1858 extended drain lube oil filters depends on engine displacement, oil volume, and the oil change interval. For a 12 L diesel engine with 40 L sump capacity changing at 500 hours under moderate duty: ingestion rate of 0.1 g/hour of blowby-sourced carbonaceous particles, seal wear debris, and combustion soot equivalent ≈ 50 g over 500 hours. Extended drain filters require DHC of at least 50–80 g (with 50–60% margin above estimated ingestion) to prevent early element loading to bypass pressure before the drain interval expires. SYNTRAX™ elements for extended drain applications have DHC of 60–100 g depending on element size, determined by ISO 4548 multi-pass testing.',
+        answer: 'Dirt holding capacity (DHC) for SAE J1858 extended drain lube oil filters depends on engine displacement, oil volume, and the oil change interval. For a 12 L diesel engine with 40 L sump capacity changing at 500 hours under moderate duty: ingestion rate of 0.1 g/hour of blowby-sourced carbonaceous particles, seal wear debris, and combustion soot equivalent ≈ 50 g over 500 hours. Extended drain filters require DHC of at least 50–80 g (with 50–60% margin above estimated ingestion) to prevent early element loading to bypass pressure before the drain interval expires. SYNTRAX™ elements for extended drain applications are sized to the DHC required for the approved application, per ISO 4548 multi-pass testing.',
       },
       {
         question: 'How does SAE J1858 address spin-on filter seal integrity and dimensional requirements?',
@@ -1779,11 +1769,11 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'Does SAE J1858 specify collapse pressure requirements for full-flow lube oil filter elements?',
-        answer: 'SAE J1858 addresses filter element structural integrity in terms of both bypass valve opening pressure and collapse resistance. The element must not structurally collapse (media-to-end-cap delamination or support tube buckling) at differential pressures up to the bypass valve opening pressure plus an appropriate safety margin. Collapse at or below bypass valve opening pressure would result in contamination release into the engine oil circuit at the moment protection is most needed — during cold start or end-of-life bypass. ISO 4548 and SAE J1858 together specify structural integrity testing to verify that collapse margin exceeds the bypass valve setting — SYNTRAX™ elements maintain collapse pressure margin ≥3× the standard 1.0 bar bypass valve opening pressure.',
+        answer: 'SAE J1858 addresses filter element structural integrity in terms of both bypass valve opening pressure and collapse resistance. The element must not structurally collapse (media-to-end-cap delamination or support tube buckling) at differential pressures up to the bypass valve opening pressure plus an appropriate safety margin. Collapse at or below bypass valve opening pressure would result in contamination release into the engine oil circuit at the moment protection is most needed — during cold start or end-of-life bypass. ISO 4548 and SAE J1858 together specify structural integrity testing to verify that collapse margin exceeds the bypass valve setting — SYNTRAX™ elements are qualified to a collapse pressure margin verified against the bypass valve opening pressure specified for the approved application.',
       },
       {
         question: 'How does synthetic media in SAE J1858 extended drain filters compare to cellulose media?',
-        answer: 'Cellulose media (used in standard service J1858 filters) is made from plant-derived wood pulp fibres with irregular diameter distribution (5–50 µm) and high water absorption. Synthetic media (melt-blown polypropylene, polyester, or glass fibre microfibers, 1–10 µm diameter in SYNTRAX™ construction) provides superior performance in four areas: (1) Higher efficiency at equivalent restriction — β₁₀(c) ≥ 200 vs. β₁₀(c) ≈ 10–50 for cellulose. (2) Higher DHC — 40–80% more dirt capacity at the same element volume. (3) Thermal stability — maintains efficiency at oil temperatures to 135°C where cellulose softens and loses structural integrity. (4) Chemical stability — no water absorption swelling that reduces media pore geometry stability in high-humidity or water-contaminated oil conditions.',
+        answer: 'Cellulose media (used in standard service J1858 filters) is made from plant-derived wood pulp fibres with irregular diameter distribution (5–50 µm) and high water absorption. Synthetic media (melt-blown polypropylene, polyester, or glass fibre microfibers, 1–10 µm diameter in SYNTRAX™ construction) provides superior performance in four areas: (1) Higher efficiency at equivalent restriction than cellulose media, rated per the Beta ratio specified for the approved application. (2) Higher DHC — more dirt capacity at the same element volume than cellulose media, per element datasheet. (3) Thermal stability — maintains efficiency at oil temperatures to 135°C where cellulose softens and loses structural integrity. (4) Chemical stability — no water absorption swelling that reduces media pore geometry stability in high-humidity or water-contaminated oil conditions.',
       },
     ],
     engineeringReferences: [
@@ -1830,7 +1820,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'Collapse Prevention Engineering',
-        body: 'Filter element collapse is a catastrophic failure mode: a collapsed element releases all accumulated contamination directly into the downstream circuit. The primary structural determinants of collapse resistance are: pleated media support layer construction (inner and outer support tubes), end cap bonding strength, and pleat geometry under compressive load. ELIMFILTERS NANOFORCE™ and SYNTRAX™ elements use steel inner and outer support cages with bonded end caps, achieving collapse load margins of 10–20× above typical bypass valve settings (3–6 bar).',
+        body: 'Filter element collapse is a catastrophic failure mode: a collapsed element releases all accumulated contamination directly into the downstream circuit. The primary structural determinants of collapse resistance are: pleated media support layer construction (inner and outer support tubes), end cap bonding strength, and pleat geometry under compressive load. ELIMFILTERS NANOFORCE™ elements use steel inner and outer support cages with bonded end caps, providing a collapse load margin above the bypass valve setting specified for the approved application.',
       },
       {
         heading: 'Complementary Standards',
@@ -1866,7 +1856,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What safety margin above bypass valve opening pressure does ISO 3723 require?',
-        answer: 'ISO 3723 does not specify a universal safety margin — the collapse load rating must provide an adequate structural margin above the maximum credible differential pressure the element will experience in service. Industry practice, reinforced by OEM specifications, requires collapse pressure ≥10× the rated bypass valve opening pressure. For a 3 bar bypass valve, this means a minimum collapse pressure of 30 bar. NANOFORCE™ and SYNTRAX™ elements with steel inner and outer support cages achieve collapse pressure ratings of 30–60 bar for standard 3 bar bypass valve systems — providing 10–20× structural safety margin. Elements without steel support cages (polypropylene or cardboard centres) may achieve only 5–8 bar collapse pressure — inadequate for high-pressure hydraulic applications.',
+        answer: 'ISO 3723 does not specify a universal safety margin — the collapse load rating must provide an adequate structural margin above the maximum credible differential pressure the element will experience in service. Industry practice, reinforced by OEM specifications, requires collapse pressure ≥10× the rated bypass valve opening pressure. For a 3 bar bypass valve, this means a minimum collapse pressure of 30 bar. NANOFORCE™ elements with steel inner and outer support cages are qualified to a collapse pressure rating that provides an adequate structural margin above the bypass valve opening pressure specified for the approved application. Elements without steel support cages (polypropylene or cardboard centres) may achieve only 5–8 bar collapse pressure — inadequate for high-pressure hydraulic applications.',
       },
       {
         question: 'How does ISO 3723 differ from NFPA T2.14 and ISO 2941 for hydraulic filter element collapse testing?',
@@ -1874,7 +1864,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What design features determine filter element collapse resistance in ISO 3723 testing?',
-        answer: 'Four design features primarily determine ISO 3723 collapse resistance. (1) Inner support tube: a perforated steel tube inside the media prevents inward collapse — the tube must have sufficient wall thickness and perforation pattern to resist buckling under the axial collapse load. (2) Outer support tube or mesh: prevents outward deformation under burst conditions. (3) End cap bond: the adhesive joint between the media pack and end caps must withstand the combined axial and shear forces during collapse loading. (4) Media pleat geometry: pleat count, pleat depth, and media stiffness contribute to load distribution. NANOFORCE™ elements use 1.0 mm thick perforated steel inner tubes with 40% open area, providing collapse resistance optimized for both structural margin and flow capacity.',
+        answer: 'Four design features primarily determine ISO 3723 collapse resistance. (1) Inner support tube: a perforated steel tube inside the media prevents inward collapse — the tube must have sufficient wall thickness and perforation pattern to resist buckling under the axial collapse load. (2) Outer support tube or mesh: prevents outward deformation under burst conditions. (3) End cap bond: the adhesive joint between the media pack and end caps must withstand the combined axial and shear forces during collapse loading. (4) Media pleat geometry: pleat count, pleat depth, and media stiffness contribute to load distribution. NANOFORCE™ elements use perforated steel inner tubes sized to the wall thickness and open-area ratio specified for the approved application, providing collapse resistance optimized for both structural margin and flow capacity.',
       },
       {
         question: 'How is ISO 3723 used in incoming inspection of hydraulic filter elements?',
@@ -1890,7 +1880,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'Are ISO 3723 collapse tests performed on new or used elements?',
-        answer: 'ISO 3723 tests are performed on new (unused, clean) elements unless the specific application requires aged element testing. New element collapse testing verifies the as-manufactured structural integrity — the minimum performance baseline. For critical applications where element degradation from chemical exposure or thermal cycling may reduce collapse resistance during service, some OEM specifications require collapse load testing after exposure conditioning: elements are soaked in hydraulic fluid at 85°C for 500 hours and then tested per ISO 3723 to verify that collapse load margin is maintained throughout the service interval. NANOFORCE™ and SYNTRAX™ elements retain ≥90% of initial collapse load after 1,000-hour thermal exposure testing.',
+        answer: 'ISO 3723 tests are performed on new (unused, clean) elements unless the specific application requires aged element testing. New element collapse testing verifies the as-manufactured structural integrity — the minimum performance baseline. For critical applications where element degradation from chemical exposure or thermal cycling may reduce collapse resistance during service, some OEM specifications require collapse load testing after exposure conditioning: elements are soaked in hydraulic fluid at 85°C for 500 hours and then tested per ISO 3723 to verify that collapse load margin is maintained throughout the service interval. NANOFORCE™ elements retain a majority of initial collapse load after extended thermal exposure testing.',
       },
       {
         question: 'How does ISO 3723 contribute to the overall filter element structural qualification alongside ISO 16889?',
@@ -1943,7 +1933,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'HPCR Protection Specification',
-        body: 'For HPCR injection systems operating at 1,600–2,500 bar injection pressure, injector nozzle tip orifices of 100–150 µm diameter, and pump plunger clearances of 1–2 µm, particle contamination above 6 µm at the injector inlet causes abrasive wear of precision surfaces. ISO 19438 Beta ratio qualification at β₆(c) ≥ 200 is the minimum filtration performance required for HPCR injector protection. SYNTEPORE™ fuel filter elements are qualified to ISO 19438 at β₆(c) ≥ 200 for HPCR applications.',
+        body: 'For HPCR injection systems operating at 1,600–2,500 bar injection pressure, injector nozzle tip orifices of 100–150 µm diameter, and pump plunger clearances of 1–2 µm, particle contamination above 6 µm at the injector inlet causes abrasive wear of precision surfaces. ISO 19438 Beta ratio qualification at β₆(c) ≥ 200 is the minimum filtration performance required for HPCR injector protection.',
       },
     ],
     keyParams: [
@@ -1958,7 +1948,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-ABSOLUTE-EFFICIENCY', 'TERM-MULTI-PASS-TEST',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation', 'filter-media-science'],
-    relatedTechnologies: ['SYNTEPORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedArticles: ['hpcr-fuel-system-protection', 'fuel-water-contamination', 'beta-ratio', 'filter-media-engineering'],
     commonMistakes: [
       'Specifying fuel filter performance using ISO 4548 (lube oil filter method) when ISO 19438 is the applicable standard for fuel applications. Different test fluids, viscosities, and contaminant specifications make the tests non-comparable.',
@@ -1972,15 +1962,11 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What fuel cleanliness class does ISO 19438 target for HPCR injection system protection?',
-        answer: 'HPCR injection systems operating at 1,600–2,500 bar injection pressure require fuel cleanliness at ISO 4406 code 12/10/8 at the injector inlet — meaning fewer than 1,300 particles/mL ≥4 µm(c), fewer than 320 particles/mL ≥6 µm(c), and fewer than 20 particles/mL ≥14 µm(c). Achieving ISO 12/10/8 from typical diesel fuel storage quality of ISO 18/16/13 (one of the dirtiest practical fuel supply conditions) requires filtration with Beta ratio β₄(c) ≥ 4,000 at the 4 µm channel. SYNTEPORE™ elements achieving β₆(c) ≥ 200 under ISO 19438 test conditions reduce fuel cleanliness from ISO 18/16/13 supply quality to ISO 13/11/8 at the injection system inlet — within HPCR injector protection targets.',
+        answer: 'HPCR injection systems operating at 1,600–2,500 bar injection pressure require fuel cleanliness at ISO 4406 code 12/10/8 at the injector inlet — meaning fewer than 1,300 particles/mL ≥4 µm(c), fewer than 320 particles/mL ≥6 µm(c), and fewer than 20 particles/mL ≥14 µm(c). Achieving ISO 12/10/8 from typical diesel fuel storage quality of ISO 18/16/13 (one of the dirtiest practical fuel supply conditions) requires filtration with Beta ratio β₄(c) ≥ 4,000 at the 4 µm channel.',
       },
       {
         question: 'How does ISO 19438 test fluid differ from ISO 16889, and why does this matter?',
         answer: 'ISO 16889 uses ISO VG 15 hydraulic oil as the test fluid; ISO 19438 uses diesel fuel or ISO VG 15 mineral oil depending on the test protocol version. The viscosity difference is significant: diesel fuel at 20°C has a kinematic viscosity of approximately 2–4 cSt versus 15 cSt for ISO VG 15. At lower viscosity, particle transport through filter media is faster (lower drag forces on particles), which generally results in lower particle capture efficiency at the same media construction. Beta ratio results from ISO 19438 (fuel conditions) and ISO 16889 (hydraulic oil conditions) for nominally identical filter media are not numerically equivalent — fuel filter Beta ratios are typically 20–40% lower than equivalent hydraulic filter media tested under ISO 16889 conditions.',
-      },
-      {
-        question: 'What is the minimum ISO 19438 Beta ratio for SYNTEPORE™ HPCR fuel filter elements?',
-        answer: 'SYNTEPORE™ fuel filter elements for HPCR diesel injection protection are qualified at β₆(c) ≥ 200 under ISO 19438 test conditions, corresponding to ≥99.5% efficiency at the ≥6 µm(c) particle size. At typical fuel contamination levels entering the filter (ISO 18/16/13 supply quality), β₆(c) = 200 provides outlet fuel quality of approximately ISO 13/11/8. For stage 3 final polishing in the TURBOCORE™ three-stage fuel system, SYNTEPORE™ β₄(c) ≥ 200 qualification covers the critical 4 µm size range for HPCR injectors with the tightest clearances (≤2 µm spool clearance).',
       },
       {
         question: 'How does ISO 19438 address fuel compatibility with synthetic filter media?',
@@ -1988,7 +1974,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What contaminant retention capacity does ISO 19438 specify for diesel fuel filters?',
-        answer: 'ISO 19438 includes contaminant retention capacity (CRC) measurement alongside Beta ratio efficiency testing. CRC measures the total grams of ISO 12103-1 A2 Fine test dust the fuel filter retains before differential pressure rises to a specified terminal value — directly analogous to dust holding capacity (DHC) in ISO 16889 hydraulic filter testing. CRC provides the basis for fuel filter service interval estimation: dividing CRC by the field fuel contamination ingestion rate (grams per litre × litres per hour fuel consumption) gives predicted service interval in operating hours. For a 12 L diesel engine consuming 30 L/h at rated power and fuel with 1 mg/L particle contamination: particle ingestion rate = 0.03 g/h; a SYNTEPORE™ element with ISO 19438 CRC of 15 g would reach terminal restriction in 500 operating hours.',
+        answer: 'ISO 19438 includes contaminant retention capacity (CRC) measurement alongside Beta ratio efficiency testing. CRC measures the total grams of ISO 12103-1 A2 Fine test dust the fuel filter retains before differential pressure rises to a specified terminal value — directly analogous to dust holding capacity (DHC) in ISO 16889 hydraulic filter testing. CRC provides the basis for fuel filter service interval estimation: dividing CRC by the field fuel contamination ingestion rate (grams per litre × litres per hour fuel consumption) gives predicted service interval in operating hours. For a 12 L diesel engine consuming 30 L/h at rated power and fuel with 1 mg/L particle contamination: particle ingestion rate = 0.03 g/h; a fuel filter element with ISO 19438 CRC of 15 g would reach terminal restriction in 500 operating hours.',
       },
       {
         question: 'How does ISO 19438 particle counting relate to ISO 11171 APC calibration?',
@@ -1996,11 +1982,11 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'Why does ISO 19438 testing matter for aftermarket fuel filter selection?',
-        answer: 'Aftermarket diesel fuel filter selection by dimensional fit alone (thread size, bowl geometry, port dimensions) provides no assurance that the replacement element provides equivalent HPCR injection system protection. An aftermarket element with identical dimensions but without ISO 19438 Beta ratio testing may achieve β₆(c) = 5–20 (efficiency 80–95%) versus the OEM SYNTEPORE™ element\'s β₆(c) ≥ 200 (efficiency ≥99.5%). At the same fuel contamination level, the lower-efficiency aftermarket element allows 10–50× more particles into the injection system per unit volume — causing measurable HPCR injector wear increase detectable within 250–500 operating hours by elevated iron and chromium in fuel from wear debris.',
+        answer: 'Aftermarket diesel fuel filter selection by dimensional fit alone (thread size, bowl geometry, port dimensions) provides no assurance that the replacement element provides equivalent HPCR injection system protection. An aftermarket element with identical dimensions but without ISO 19438 Beta ratio testing may achieve substantially lower particle capture efficiency than a properly qualified OEM element. At the same fuel contamination level, the lower-efficiency aftermarket element allows 10–50× more particles into the injection system per unit volume — causing measurable HPCR injector wear increase detectable within 250–500 operating hours by elevated iron and chromium in fuel from wear debris.',
       },
       {
         question: 'What is the relationship between ISO 19438 and ISO 16332 in a complete diesel fuel protection system?',
-        answer: 'ISO 19438 and ISO 16332 address complementary but separate protection functions in the diesel fuel system. ISO 19438 qualifies particle filtration efficiency at the HPCR-critical 4–6 µm size range — protecting injection system precision components from abrasive wear by solid particles. ISO 16332 qualifies water separation efficiency — protecting injection system metallic surfaces from corrosion, micro-pitting, and stiction caused by water above 200 ppm. Both standards apply simultaneously in a correctly designed HPCR fuel protection system: SYNTEPORE™ (ISO 19438 qualified for particles) and HYDROCORE™ (ISO 16332 qualified for water) each address one dimension of the dual-threat contamination challenge for HPCR injection systems.',
+        answer: 'ISO 19438 and ISO 16332 address complementary but separate protection functions in the diesel fuel system. ISO 19438 qualifies particle filtration efficiency at the HPCR-critical 4–6 µm size range — protecting injection system precision components from abrasive wear by solid particles. ISO 16332 qualifies water separation efficiency — protecting injection system metallic surfaces from corrosion, micro-pitting, and stiction caused by water above 200 ppm. Both standards apply simultaneously in a correctly designed HPCR fuel protection system: particle filtration (ISO 19438) and water separation (ISO 16332, HYDROCORE™) each address one dimension of the dual-threat contamination challenge for HPCR injection systems.',
       },
       {
         question: 'How does ISO 19438 treat test dust selection for fuel filter qualification?',
@@ -2026,7 +2012,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva',
-        relevance: 'Complementary water separation test standard; ISO 19438 (particle filtration) and ISO 16332 (water separation) together provide complete HPCR fuel protection qualification for the SYNTEPORE™ + HYDROCORE™ fuel system.',
+        relevance: 'Complementary water separation test standard; ISO 19438 (particle filtration) and ISO 16332 (water separation, HYDROCORE™) together provide complete HPCR fuel protection qualification.',
       },
     ],
   },
@@ -2175,7 +2161,7 @@ export const KC_STANDARDS: KCStandard[] = [
     applicableSystems: [],
     relatedGlossaryTerms: ['TERM-COMPRESSED-AIR-PURITY', 'TERM-DEW-POINT', 'TERM-COALESCING'],
     relatedTopics: ['testing-and-validation', 'contamination-control'],
-    relatedTechnologies: ['DRYCORE™'],
+    relatedTechnologies: [],
     relatedArticles: ['compressed-air-systems', 'iso-8573-compressed-air-purity'],
     parentStandard: 'STD-ISO-8573-1',
     commonMistakes: [
@@ -2233,7 +2219,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 8573-1:2010, Compressed Air — Part 1: Contaminants and Purity Classes, ISO Geneva',
-        relevance: 'Parent classification standard defining oil content classes verified by ISO 8573-2 measurement; the purity class system that DRYCORE™ compressed air treatment systems are designed and certified against.',
+        relevance: 'Parent classification standard defining oil content classes verified by ISO 8573-2 measurement.',
       },
       {
         category: 'standard',

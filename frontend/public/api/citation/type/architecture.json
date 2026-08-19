@@ -16,6 +16,7 @@
         "diagnostics",
         "metrology"
       ],
+      "domain": null,
       "citation": {
         "source_url": "elimfilters.com",
         "concept": "ELIMFILTERS AI Reasoning Engine",
@@ -32,7 +33,7 @@
         "industrial_role": "The AI Reasoning Engine repositions the filtration selection conversation from product price comparison to contamination control system design — shifting customer decision criteria from commodity purchasing to asset protection engineering."
       },
       "relationships": {},
-      "vault_path": "elimfilters-vault/09-artificial-intelligence/AI_REASONING_ENGINE.md"
+      "vault_path": "elimfilters-vault\\09-artificial-intelligence\\AI_REASONING_ENGINE.md"
     }
   ]
 }

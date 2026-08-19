@@ -92,7 +92,7 @@ const client = new Client({
   `);
   console.log('\nExisting EF3 technology distribution:');
   techCounts.forEach(r => console.log(`  ${r.technology}  |  ${r.n}`));
-  const technology = techCounts[0]?.technology || 'SYNTEPORE™';
+  const technology = techCounts[0]?.technology || 'SYNTAPORE™';
   console.log(`\nUsing SKU: ${newSku}  |  technology: ${technology}`);
 
   if (APPLY) {

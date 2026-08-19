@@ -7,36 +7,36 @@ import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
 const STAGES = [
   {
     number: '01',
-    tag: 'STAGE 1',
+    tag: 'STAGE',
     title: 'INERTIAL INTERCEPTION',
-    body: 'HYDROCORE™ turbine rotation induces centrifugal momentum on incoming fuel, driving macro-particles and free water outward against the chamber wall by inertial force alone. No moving parts. Zero mechanical dependency. The intercepted mass accumulates in the sealed base chamber — permanently separated from the fuel path before the protection sequence even begins.',
-    stat: '100%',
-    statLabel: 'Macro-particle removal at entry',
+    body: 'HYDROCORE™ turbine rotation induces centrifugal momentum on incoming fuel, driving macro-particles and free water outward against the chamber wall by inertial force. The intercepted mass accumulates in the sealed base chamber, separated from the fuel path ahead of downstream conditioning stages.',
+    stat: 'Coarse',
+    statLabel: 'Entry-stage separation',
   },
   {
     number: '02',
-    tag: 'STAGE 2',
+    tag: 'STAGE',
     title: 'GRADUATED COALESCENCE',
-    body: 'Fuel transitions through a staggered graduated contact zone where microscopic water droplets — too small to separate by inertia alone — are forced into repeated surface contact. Each contact cycle causes droplets to merge, grow, and fall by gravity into the sealed collection chamber below. The graduated layer architecture ensures no water molecule bypasses this stage regardless of fuel pressure or flow rate.',
-    stat: '99%',
-    statLabel: 'Emulsified water eliminated',
+    body: 'Fuel transitions through a graduated contact zone where microscopic water droplets are forced into repeated surface contact. Each contact cycle causes droplets to merge, grow, and fall by gravity into the sealed collection chamber below.',
+    stat: 'Coalescing',
+    statLabel: 'Emulsified-water conditioning',
   },
   {
     number: '03',
-    tag: 'STAGE 3',
+    tag: 'STAGE',
     title: 'HYDROCORE™ PRECISION BARRIER',
-    body: 'The final HYDROCORE™ hydrophobic protection barrier intercepts sub-micron contamination and dissolved water before the fuel enters the high-pressure injection circuit. The barrier architecture repels water molecules at contact — they cannot pass through regardless of differential pressure. Available in 2, 10 and 30 micron defense ratings to match your injection system\'s exact protection requirement.',
-    stat: '2µm',
-    statLabel: 'Minimum precision barrier rating',
+    body: 'The final HYDROCORE™ hydrophobic protection barrier intercepts fine contamination and residual water before the fuel enters the high-pressure injection circuit. Element rating and staging are matched to the required flow, separation duty and installation of the approved FH or FG application.',
+    stat: 'Final',
+    statLabel: 'Application-matched barrier stage',
   },
 ];
 
 const SPECS = [
-  { label: 'MODEL 900FH', value: '90 GPH', sub: '340 LPH — Light to medium duty' },
-  { label: 'MODEL 1000FH', value: '180 GPH', sub: '681 LPH — Heavy duty operations' },
-  { label: 'PROTECTION RATING', value: '99%', sub: 'Water separation efficiency' },
-  { label: 'BARRIER OPTIONS', value: '3', sub: '2µm · 10µm · 30µm' },
-  { label: 'CERTIFICATION', value: 'ISO', sub: '16332 — Fuel/water separation standard' },
+  { label: 'MODEL 900FH', value: 'FH Series', sub: 'Light to medium duty' },
+  { label: 'MODEL 1000FH', value: 'FH Series', sub: 'Heavy duty operations' },
+  { label: 'PROTECTION SCOPE', value: 'Staged', sub: 'Water and particulate separation — application-specific rating' },
+  { label: 'BARRIER OPTIONS', value: 'Multiple', sub: 'Element rating matched to approved application' },
+  { label: 'APPLICATION', value: 'Turbine FH/FG', sub: 'Approved Turbine Series fuel-separation architecture' },
   { label: 'DRAIN SYSTEM', value: 'AUTO', sub: 'Integrated visual monitoring port' },
 ];
 
@@ -49,7 +49,7 @@ const APPLICATIONS = [
   { sector: 'RAILWAY', detail: 'Diesel locomotives and rolling stock requiring absolute fuel circuit integrity across extreme temperature and humidity ranges over extended service intervals.' },
 ];
 
-export function HydrocorePage() {
+export function HYDROCOREPage() {
   return (
     <>
       <Link href="/"
@@ -94,11 +94,11 @@ export function HydrocorePage() {
             </motion.h2>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
               style={{ fontSize: '1rem', maxWidth: '560px', lineHeight: 1.75, color: 'rgba(255,255,255,0.7)', fontFamily: 'Titillium Web, sans-serif', borderLeft: '3px solid #FFF12D', paddingLeft: '1.25rem' }}>
-              Three-stage graduated asset protection for high-pressure fuel injection systems. Water, sediment and sub-micron contamination intercepted before they reach the injection circuit.
+              Staged graduated asset protection for approved Turbine Series FH/FG fuel injection systems. Water, sediment and fine contamination intercepted before they reach the injection circuit.
             </motion.p>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.55 }}
               style={{ display: 'flex', gap: '2rem', marginTop: '2.5rem', flexWrap: 'wrap' }}>
-              {[['900FH', '90 GPH'], ['1000FH', '180 GPH'], ['ISO 16332', 'CERTIFIED']].map(([k, v]) => (
+              {[['900FH', 'FH Series'], ['1000FH', 'FH Series'], ['Application', 'Turbine FH/FG']].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontSize: '0.6rem', letterSpacing: '0.2em', color: 'rgba(255,255,255,0.4)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '0.25rem' }}>{k}</div>
                   <div style={{ fontSize: '1rem', fontWeight: 700, color: '#FFF12D', fontFamily: 'Titillium Web, sans-serif' }}>{v}</div>
@@ -120,13 +120,13 @@ export function HydrocorePage() {
                   NOT A FILTER.<br />AN ASSET PROTECTION SYSTEM.
                 </h2>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '1.25rem' }}>
-                  Conventional fuel filters intercept particles. TURBOCORE™ intercepts the full contamination spectrum — particulate, free water, emulsified water and dissolved water — through a sequenced three-stage protection architecture that operates independently of fuel flow rate and back-pressure conditions.
+                  Conventional fuel filters intercept particles. HYDROCORE™ addresses the broader contamination spectrum — particulate, free water and emulsified water — through a staged fuel-conditioning and separation architecture matched to the approved Turbine Series FH/FG application.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '1.25rem' }}>
                   The 900FH and 1000FH models deploy HYDROCORE™ turbine rotation as the first line of defense — a passive inertial system that requires no electronic control, no actuators and no maintenance intervention. Protection begins the moment fuel enters the housing.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'Titillium Web, sans-serif' }}>
-                  The result: a fuel injection circuit that receives verified, clean fuel — every cycle, every hour, regardless of source fuel quality or operating conditions.
+                  The result: a fuel injection circuit protected by staged conditioning matched to the approved application's fuel quality and operating conditions.
                 </p>
               </AnimateIn>
 
@@ -134,11 +134,11 @@ export function HydrocorePage() {
                 <div style={{ position: 'sticky', top: '6rem' }}>
                   <img
                     src="/images/turbinefh-foto.avif"
-                    alt="TURBOCORE™ 900FH · 1000FH"
+                    alt="HYDROCORE™ 900FH · 1000FH"
                     style={{ width: '100%', borderRadius: '4px', border: '1px solid rgba(255,241,45,0.15)', display: 'block' }}
                   />
                   <p style={{ fontSize: '0.65rem', fontFamily: 'JetBrains Mono, monospace', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.15em', marginTop: '1rem', textAlign: 'center' }}>
-                    TURBOCORE™ · 900FH / 1000FH
+                    HYDROCORE™ · 900FH / 1000FH
                   </p>
                 </div>
               </AnimateIn>
@@ -225,7 +225,7 @@ export function HydrocorePage() {
                 ASSET APPLICATIONS
               </span>
               <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', marginBottom: '0.75rem' }}>
-                WHERE TURBOCORE™ PROTECTS
+                WHERE HYDROCORE™ PROTECTS
               </h2>
               <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '3rem', maxWidth: '580px', lineHeight: 1.7 }}>
                 FH-series turbine protection systems are validated for land-based combustion asset protection. Marine applications are served by the FM series.
@@ -252,7 +252,7 @@ export function HydrocorePage() {
           <AnimateIn direction="up">
             <div style={{ maxWidth: '700px', margin: '0 auto' }}>
               <span style={{ display: 'block', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.25em', color: 'rgba(0,0,0,0.5)', fontFamily: 'JetBrains Mono, monospace', marginBottom: '1rem' }}>
-                IDENTIFY YOUR TURBOCORE™ SKU
+                IDENTIFY YOUR HYDROCORE™ SKU
               </span>
               <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: 900, fontFamily: 'Titillium Web, sans-serif', color: '#000', marginBottom: '1.25rem', lineHeight: 1.1 }}>
                 FIND YOUR PROTECTION SYSTEM

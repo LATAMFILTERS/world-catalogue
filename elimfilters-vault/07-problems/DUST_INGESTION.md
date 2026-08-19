@@ -5,7 +5,7 @@ key: DUST_INGESTION
 name: Dust Ingestion
 problem_statement: "Engine ingesting fine particulate through the air intake system, accelerating abrasive wear on pistons, rings, turbocharger bearings, and cylinder walls."
 domain: air-intake
-root_contamination: "[[PARTICLE_WEAR]]"
+root_contamination: "[[PARTICLE_WEAR_AIR_INTAKE]]"
 contributing_factors:
   - Damaged or improperly seated air filter element
   - Filter element saturation past service interval — high restriction forces bypass
@@ -29,7 +29,6 @@ industry_frequency:
   - "[[AGRICULTURE]]"
 resolved_by_technologies:
   - "[[MACROCORE]]"
-  - "[[SYNTEPORE]]"
   - "[[INTEKCORE]]"
 applicable_standards:
   - "[[ISO_5011]]"
@@ -76,8 +75,7 @@ Dust ingestion problems often go undetected until oil analysis reveals elevated 
 - [[AGRICULTURE|Agriculture — Crop Residue and Fine Dust]]
 
 ### Solution Technologies
-- [[MACROCORE|MACROCORE™ — Progressive Density Gradient Air Protection]] (primary solution)
-- [[SYNTEPORE|SYNTEPORE™ — All-Synthetic Intake]] (humid/marine variant)
+- [[MACROCORE|MACROCORE™ — Engine Air Filtration]] (primary solution)
 - [[INTEKCORE|INTEKCORE™ — Zero-Bypass Housing]] (housing seal integrity)
 
 ### Governing Standards
@@ -96,7 +94,7 @@ DUST_INGESTION
     ↓ root_contamination
 PARTICLE_WEAR
     ↓ resolved_by
-MACROCORE (primary), SYNTEPORE (humid/marine), INTEKCORE (housing)
+MACROCORE (primary), INTEKCORE (housing)
     ↓ ProductFamily lookup
 AIRFILTER_PRIMARY
     ↓ Part Search API
@@ -131,9 +129,8 @@ ISO 5011: Air filter efficiency and dust-holding capacity test |
 SAE J1539: Air intake contamination classification defining acceptable limits
 
 RELATED_TECHNOLOGIES
-MACROCORE: 99.9%–99.98% efficiency PDG air filtration — primary prevention |
-INTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals |
-SYNTEPORE: All-synthetic element for humid environments where cellulose media degrades
+MACROCORE: Engine air filtration for primary and secondary intake protection — primary prevention |
+INTEKCORE: Zero-bypass housing preventing unfiltered air ingress at element seals
 
 INDUSTRIAL_ROLE
 Dust ingestion is the highest-frequency, highest-cost contamination event in mining and

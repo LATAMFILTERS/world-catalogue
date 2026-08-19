@@ -33,7 +33,7 @@ oem_codes[], competitor_codes[], brand_crossrefs{}, alternatives[], equipment_ap
 
 **Critical logic:**
 - `splitRefs()` re-classifies oem_codes + competitor_codes on EVERY response
-- `TECH_NAME_FIXES`: corrects 'SYNTAPORE' → 'SYNTEPORE'
+- `TECH_NAME_FIXES`: corrects 'SYNTAPORE' → 'SYNTAPORE'
 - `safeSubtype()`: strips proprietary media names (Synteq XP, Alpha-Web, etc.)
 - `extractText()`: handles JSONB `{en: "...", es: "..."}` OR plain string descriptions
 - `getTechLogo()`: maps tech name → `/assets/logo-[tech].png`

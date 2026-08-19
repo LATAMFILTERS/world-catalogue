@@ -13,26 +13,23 @@
     "not-in-ud",
     "part-search-node"
   ],
+  "domain": null,
   "citation": {
     "source_url": "elimfilters.com/systems/fuel-primary",
     "concept": "Primary Fuel Protection Product Family",
-    "version": "1.0",
-    "last_updated": "2026-06-03",
-    "content_hash": "sha256:639214634cf68f5e5563e12d0f8044389b8cc2204d803c0891a816a17a8c27eb"
+    "version": "2.0",
+    "last_updated": "2026-08-15",
+    "content_hash": "sha256:3b9e59f35b3128e139c99f91d353aec049295de92384c72a327b9e2a42aa3bc2"
   },
   "canonical": {
-    "definition": "Primary Fuel Protection — the HYDROCORE™-technology filter element family for diesel\nfuel water separation and particle filtration, covering approximately 85 SKUs across\nagricultural, marine, mining, power generation, and commercial transport applications,\nmeeting ASTM D6304 and ISO 12937 water content standards.",
-    "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\ncoalescing water-separation technology",
-    "failure_impact": "Selecting incorrect element from this family (wrong coalescing efficiency class or wrong\nflow rate) or exceeding service interval → residual free water passes to injectors →\ninjector tip corrosion and nozzle deposit formation → HPCR fuel system failure requiring\ninjector replacement at 3,000–8,000 hours instead of 15,000+ hours",
-    "related_standards": "ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |\nISO 12937: Petroleum products water determination — validates element performance claims",
-    "related_technologies": "HYDROCORE: Primary element technology (coalescing multi-stage water separation and\nparticulate filtration) | MACROCORE: Upstream pre-cleaner for high-contamination bulk\nfuel environments (not in this family)",
-    "industrial_role": "This product family is the principal contamination control implementation for diesel\nfuel water contamination — the leading cause of HPCR injector failure in agricultural,\nmarine, and mining equipment operating in high-humidity or bulk-storage environments."
+    "definition": "Primary Fuel Protection — the SYNTAPORE™-technology filter element family for diesel\nfuel particulate filtration (primary, secondary and cartridge, no water-separation\nfunction), covering 1,903 SKUs across agricultural, marine, mining, power generation,\nand commercial transport applications.",
+    "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements SYNTAPORE™\nparticulate-filtration technology",
+    "failure_impact": "Selecting incorrect element from this family (wrong efficiency class or wrong flow\nrate) or exceeding service interval → residual particulate reaches injectors and\nhigh-pressure pumps → injector stiction and premature wear → HPCR fuel system failure",
+    "related_standards": "SYNTAPORE governs plain diesel-fuel particulate filtration; no water-content or\nwater-separation standard applies to this family -- see FUEL_WATER_SEPARATOR for\nwater-content standards.",
+    "related_technologies": "HYDROCORE: Fuel/water separation architecture across approved standard (non-turbine)\nseparators (FUEL_WATER_SEPARATOR family) and Turbine Series FH/FG applications\n(FUEL_TURBINE family) -- both distinct product families, not covered here | MACROCORE:\nUpstream pre-cleaner for high-contamination bulk air environments (not in this family)",
+    "industrial_role": "This product family is the principal particulate-contamination control implementation\nfor diesel fuel systems that do not require a separate water-separation stage."
   },
   "relationships": {
-    "meets_standards": [
-      "ASTM_D6304",
-      "ISO_12937"
-    ],
     "target_industries": [
       "AGRICULTURE",
       "MARINE",
@@ -42,7 +39,7 @@
       "TRUCKS_FLEETS"
     ],
     "uses_technology": [
-      "HYDROCORE"
+      "SYNTAPORE"
     ],
     "belongs_to_domain": [
       "FUEL"
@@ -51,21 +48,11 @@
       "FUEL"
     ]
   },
-  "vault_path": "elimfilters-vault/08-product-families/FUEL_PRIMARY.md",
+  "vault_path": "elimfilters-vault\\08-product-families\\FUEL_PRIMARY.md",
   "_links": {
     "self": "/api/citation/FUEL_PRIMARY.json",
     "type_index": "/api/citation/type/product-family.json",
     "related": [
-      {
-        "key": "ASTM_D6304",
-        "relation": "meets_standards",
-        "href": "/api/citation/ASTM_D6304.json"
-      },
-      {
-        "key": "ISO_12937",
-        "relation": "meets_standards",
-        "href": "/api/citation/ISO_12937.json"
-      },
       {
         "key": "AGRICULTURE",
         "relation": "target_industries",
@@ -97,9 +84,9 @@
         "href": "/api/citation/TRUCKS_FLEETS.json"
       },
       {
-        "key": "HYDROCORE",
+        "key": "SYNTAPORE",
         "relation": "uses_technology",
-        "href": "/api/citation/HYDROCORE.json"
+        "href": "/api/citation/SYNTAPORE.json"
       },
       {
         "key": "FUEL",

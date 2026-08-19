@@ -4,24 +4,14 @@ import { getConfig } from "./config.js";
 import { createDb } from "./db.js";
 import { createLogger } from "./logger.js";
 import { createWorker } from "./worker.js";
-import { createKnowledgeSystemClient } from "./knowledge-system.js";
 
 const logger = createLogger("Instagram-Server");
 const config = getConfig();
 const db = createDb(config.databaseUrl);
 await db.init();
-const knowledgeSystem = createKnowledgeSystemClient(config);
 
-const worker = createWorker({ config, db, knowledgeSystem });
+const worker = createWorker({ config, db });
 const app = express();
-
-// Force Knowledge Engine Runtime to be configured
-if (!config.knowledgeEngineRuntimeUrl || !config.engineApiKey) {
-  logger.warn('WARNING: Knowledge Engine Runtime not fully configured', {
-    hasUrl: !!config.knowledgeEngineRuntimeUrl,
-    hasKey: !!config.engineApiKey
-  });
-}
 
 const webhookStats = {
   received: 0,
@@ -30,7 +20,6 @@ const webhookStats = {
   lastReceivedAt: null
 };
 
-// Root endpoint
 app.get("/", (_req, res) => {
   res.json({
     service: "elimfilters-instagram-bot",
@@ -39,35 +28,41 @@ app.get("/", (_req, res) => {
   });
 });
 
-// Health check
 app.get("/health", async (_req, res) => {
   res.json({
     ok: true,
     service: "elimfilters-instagram-bot",
     dryRun: config.dryRun,
+    protocol: Boolean(config.botProtocolUrl && config.botProtocolApiKey),
     queue: await db.status(),
     webhook: webhookStats
   });
 });
 
-// Instagram Webhook verification (GET challenge)
 app.get("/webhook", (req, res) => {
+  const mode = req.query["hub.mode"];
   const challenge = req.query["hub.challenge"];
   const verifyToken = req.query["hub.verify_token"];
 
-  if (verifyToken !== config.instagramVerifyToken) {
-    logger.warn("Invalid verify token", { received: verifyToken });
+  if (mode !== "subscribe" || verifyToken !== config.instagramVerifyToken || !challenge) {
+    logger.warn("Invalid webhook verification request");
     return res.sendStatus(403);
   }
 
   logger.info("Webhook verified");
-  res.status(200).send(challenge);
+  return res.status(200).send(challenge);
 });
 
-// Instagram Webhook event receiver (POST messages) - use raw body for signature verification
 app.post("/webhook", express.raw({ type: "application/json", limit: "1mb" }), async (req, res) => {
   webhookStats.received++;
   webhookStats.lastReceivedAt = new Date().toISOString();
+
+  const signature = req.get("x-hub-signature-256");
+  if (!verifyInstagramSignature(req.body, signature, config.instagramAppSecret)) {
+    webhookStats.rejected++;
+    logger.warn("Invalid signature");
+    return res.sendStatus(401);
+  }
 
   let body;
   try {
@@ -77,18 +72,7 @@ app.post("/webhook", express.raw({ type: "application/json", limit: "1mb" }), as
     return res.sendStatus(400);
   }
 
-  const rawBody = req.body.toString("utf8");
-
-  // Verify signature using raw body
-  const xHubSignature = req.get("x-hub-signature-256");
-  if (config.dryRun !== true && !verifyInstagramSignature(rawBody, xHubSignature, config.instagramAppSecret)) {
-    webhookStats.rejected++;
-    logger.warn("Invalid signature", { received: xHubSignature });
-    return res.sendStatus(401);
-  }
-
   try {
-    // Extract events from Instagram webhook format
     const events = [];
     if (body.entry && Array.isArray(body.entry)) {
       for (const entry of body.entry) {
@@ -110,39 +94,30 @@ app.post("/webhook", express.raw({ type: "application/json", limit: "1mb" }), as
     }
 
     webhookStats.lastEventCount = events.length;
+    res.sendStatus(200);
 
     if (events.length > 0) {
-      await Promise.all(events.map(e => db.enqueue(e)));
+      await Promise.all(events.map(event => db.enqueue(event)));
       logger.info(`Queued ${events.length} messages`, { events: webhookStats });
       setImmediate(() => worker.run().catch(console.error));
     }
-
-    res.sendStatus(200);
   } catch (err) {
     logger.logError({ action: "webhook_processing" }, err);
-    res.sendStatus(500);
   }
 });
 
-// Signature verification for Instagram (must use raw body, not parsed JSON)
 function verifyInstagramSignature(rawBody, signature, appSecret) {
-  if (!signature) return false;
-  const hash = crypto
-    .createHmac("sha256", appSecret)
-    .update(rawBody)
-    .digest("hex");
-  const expectedSignature = `sha256=${hash}`;
-  return crypto.timingSafeEqual(signature, expectedSignature);
+  if (!Buffer.isBuffer(rawBody) || !signature || !appSecret) return false;
+  const expected = `sha256=${crypto.createHmac("sha256", appSecret).update(rawBody).digest("hex")}`;
+  const receivedBuffer = Buffer.from(String(signature));
+  const expectedBuffer = Buffer.from(expected);
+  if (receivedBuffer.length !== expectedBuffer.length) return false;
+  return crypto.timingSafeEqual(receivedBuffer, expectedBuffer);
 }
 
 const port = config.port || 3000;
 app.listen(port, () => {
-  console.log("█████████████████████████████████████████████████████████");
-  console.log("█ INSTAGRAM BOT STARTING - RENDER REDEPLOY TEST 30/07/2026 █");
-  console.log("█████████████████████████████████████████████████████████");
-  logger.info(`🚀 INSTAGRAM BOT v2 STARTED - Knowledge Engine Runtime integration active`);
-  logger.info(`Instagram bot listening on port ${port}; dryRun=${config.dryRun}; knowledge_engine=${!!config.knowledgeEngineRuntimeUrl}`);
+  logger.info(`Instagram bot listening on port ${port}; dryRun=${config.dryRun}; central_protocol=true`);
 });
 
-// Periodic worker execution
 setInterval(() => worker.run().catch(console.error), 5000).unref();

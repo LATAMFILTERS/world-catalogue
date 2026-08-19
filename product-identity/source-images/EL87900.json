@@ -1,0 +1,100 @@
+{
+  "schema": "elimfilters.product-identity.visual-master.v2.5",
+  "status": "FINAL_APPROVED",
+  "pilot_position": "1/20",
+  "sku": "EL87900",
+  "product_family": "HD_SPINON",
+  "filter_type": "LUBE",
+  "display_filter_type": "Lube Filter",
+  "technology": "SINTRAX®",
+  "technology_descriptor": "Powered Filtration",
+  "positioning_line": "TOTAL ASSET PROTECTION",
+  "source": {
+    "brand": "FLEETGUARD",
+    "part_number": "LF14000NN",
+    "category_url": "https://www.fleetguard.com/es/category/productos/filtraci%C3%B3n-de-lubricante/filtros-de-lubricante-giratorios/0ZGPL0000000FSv4AM",
+    "source_image_url": "https://www.fleetguard.com/cdn-cgi/image/format=auto,onerror=redirect/https://atmus.widen.net/content/gjnjbycxmj/original/LF14000NN.jpg",
+    "fresh_execution_required": true,
+    "cache_or_previous_master_as_geometry_source_forbidden": true,
+    "real_manufacturer_screenshot_required": true,
+    "screenshot_provided_and_reviewed": true
+  },
+  "geometry_signature": {
+    "state": "APPROVED_LOCKED",
+    "mechanical_ground_truth": "CURRENT_FLEETGUARD_LF14000NN_SOURCE",
+    "preserve": [
+      "overall_body_shape",
+      "body_proportions",
+      "camera_perspective",
+      "upright_filter_position",
+      "horizontal_filter_position",
+      "top_rim_geometry",
+      "special_open_end_geometry",
+      "thread_geometry",
+      "outer_black_ring",
+      "internal_star_support_geometry",
+      "perforated_center_core",
+      "lighting",
+      "shadows",
+      "white_background"
+    ],
+    "generic_spin_on_base_forbidden": true,
+    "geometry_from_other_sku_forbidden": true
+  },
+  "artwork": {
+    "status": "FINAL_APPROVED",
+    "approved_on": "2026-08-08",
+    "format": "DIRECT_CAN_PRINT",
+    "designation": "AUTHORIZED_PRODUCT_MASTER",
+    "body_color_hex": "#414141",
+    "paint_finish": "SEMI_MATTE_INDUSTRIAL_COATING",
+    "lithography_color_hex": "#CBCBCB",
+    "lithography_finish": "METALLIC_SILVER_SATIN",
+    "print_elements_top_to_bottom": [
+      "APPROVED_INSTALLATION_ROTATION_MARKS",
+      "OFFICIAL_ELIMFILTERS_LOGO",
+      "TOTAL ASSET PROTECTION",
+      "EL87900",
+      "Lube Filter",
+      "SINTRAX®",
+      "Powered Filtration"
+    ],
+    "extra_text_allowed": false,
+    "secondary_colors_allowed": false,
+    "legacy_german_quality_forbidden": true
+  },
+  "approved_render": {
+    "gen_id": "4b5db3c3-1509-4cdb-babd-2786e4f02482",
+    "approval_state": "FINAL_APPROVED",
+    "approved_by": "USER",
+    "approved_at": "2026-08-08T17:33:00-05:00",
+    "local_filename": "filtros_de_aceite_elimfilters_en_estudio.png",
+    "sha256": "2c814df469e37000539c02d0c06136fc96f25fb1920289a969ffd422cd7234a7",
+    "pixel_dimensions": "1448x1086",
+    "storage": {
+      "provider": "CLOUDFLARE_R2",
+      "bucket": "elimfilters-renders",
+      "object_key": "fleetguard/page-1/01-20/EL87900-LF14000NN-1of20-approved.png/EL87900-LF14000NN-1of20-approved.png",
+      "content_type": "image/png",
+      "observed_size": "1.11 MB",
+      "upload_verified_by_user_screenshot": true,
+      "verified_at": "2026-08-08T17:46:00-05:00"
+    }
+  },
+  "pipeline_provenance": {
+    "pipeline_version": "2.5",
+    "fresh_from_zero_policy": true,
+    "current_sku_screenshot_bound": true,
+    "current_sku_geometry_signature_recorded": true,
+    "post_render_visual_geometry_match": true,
+    "user_visual_approval": true,
+    "future_regeneration_must_restart_from_current_manufacturer_source": true
+  },
+  "workflow": {
+    "family": "HD",
+    "pilot_sequence": "SPIN-ON",
+    "approval_state": "LOCKED_FOR_PRODUCTION_REFERENCE",
+    "replace_all_prior_EL87900_visual_masters": true,
+    "notes": "Approved 1/20 LF14000NN → EL87900 master. Fresh-source policy applies. Do not use cached geometry or prior renders for future regeneration."
+  }
+}

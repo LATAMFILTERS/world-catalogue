@@ -14,33 +14,27 @@ import type {
   IngestionDomain,
 } from './ingestion-types';
 
-import { TECHNOLOGIES } from '../unified-data';
+import { CANONICAL_TECHNOLOGY_KEYS } from '../canonical-entity-types';
 import { PROTECTION_SYSTEMS } from '../protection-systems-data';
 import { PRODUCT_FAMILIES } from '../product-families-data';
 
-// ============================================================================
-// KNOWN VALID VALUES
-// ============================================================================
-
-const VALID_TECHNOLOGY_KEYS = new Set(Object.keys(TECHNOLOGIES ?? {}));
+const VALID_TECHNOLOGY_KEYS = CANONICAL_TECHNOLOGY_KEYS;
 const VALID_SYSTEM_KEYS = new Set(Object.keys(PROTECTION_SYSTEMS ?? {}));
 const VALID_FAMILY_KEYS = new Set(Object.keys(PRODUCT_FAMILIES ?? {}));
-
 const VALID_PLATFORMS = new Set(['MARINECLEAN', 'DURATECH']);
 
-/** Canonical ELIMFILTERS part number prefixes and their duty class */
 const VALID_PREFIXES: Record<string, 'HD' | 'LD'> = {
-  EA1: 'HD', // Air, HD
-  EA3: 'LD', // Air, LD
-  EC1: 'HD', // Cabin, HD
-  EC3: 'LD', // Cabin, LD
-  EF9: 'HD', // Fuel, HD
-  EF3: 'LD', // Fuel, LD
-  EL8: 'HD', // Lube, HD
-  EL3: 'LD', // Lube, LD
-  EH6: 'HD', // Hydraulic, HD
-  EW7: 'HD', // Coolant, HD
-  ED4: 'HD', // Air Dryer, HD
+  EA1: 'HD',
+  EA3: 'LD',
+  EC1: 'HD',
+  EC3: 'LD',
+  EF9: 'HD',
+  EF3: 'LD',
+  EL8: 'HD',
+  EL3: 'LD',
+  EH6: 'HD',
+  EW7: 'HD',
+  ED4: 'HD',
 };
 
 const REQUIRED_FIELDS: Record<IngestionDomain, string[]> = {
@@ -52,10 +46,6 @@ const REQUIRED_FIELDS: Record<IngestionDomain, string[]> = {
   APPLICATION: ['application_id', 'name', 'category'],
   PRODUCT: ['part_number', 'duty', 'product_family'],
 };
-
-// ============================================================================
-// DUPLICATE REGISTRY (in-memory, per pipeline run)
-// ============================================================================
 
 export class DuplicateRegistry {
   private seen = new Map<string, Set<string>>();
@@ -74,10 +64,6 @@ export class DuplicateRegistry {
     this.seen.clear();
   }
 }
-
-// ============================================================================
-// VALIDATION HELPERS
-// ============================================================================
 
 function issue(
   field: string,
@@ -116,9 +102,7 @@ function validatePartNumberPrefix(
   return issues;
 }
 
-function validateRequiredFields(
-  record: NormalizedRecord
-): ValidationIssue[] {
+function validateRequiredFields(record: NormalizedRecord): ValidationIssue[] {
   const required = REQUIRED_FIELDS[record.domain] ?? [];
   return required
     .filter((f) => !record.fields[f])
@@ -129,16 +113,15 @@ function validateRequiredFields(
     );
 }
 
-function validateTechnologyKey(
-  record: NormalizedRecord
-): ValidationIssue[] {
+function validateTechnologyKey(record: NormalizedRecord): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
   const tech = record.fields['technology'] as string | null;
   if (!tech) return issues;
-  if (VALID_TECHNOLOGY_KEYS.size > 0 && !VALID_TECHNOLOGY_KEYS.has(tech)) {
+  const normalizedTech = tech.toUpperCase();
+  if (!VALID_TECHNOLOGY_KEYS.has(normalizedTech as any)) {
     issues.push(
       issue('technology', 'UNKNOWN_TECHNOLOGY', 'ERROR',
-        `Technology key "${tech}" is not registered in the Technology Registry.`, tech)
+        `Technology key "${tech}" is not registered in the canonical Technology Registry.`, tech)
     );
   }
   return issues;
@@ -183,20 +166,14 @@ function validatePlatformKey(record: NormalizedRecord): ValidationIssue[] {
   return issues;
 }
 
-// ============================================================================
-// MAIN VALIDATOR
-// ============================================================================
-
 export function validateRecord(
   record: NormalizedRecord,
   duplicates: DuplicateRegistry
 ): ValidationResult {
   const issues: ValidationIssue[] = [];
 
-  // 1. Required fields
   issues.push(...validateRequiredFields(record));
 
-  // 2. Duplicate detection (domain-specific)
   if (record.domain === 'OEM') {
     const id = record.fields['oem_id'] as string | null;
     if (id) {
@@ -231,7 +208,6 @@ export function validateRecord(
         duplicates.register('PRODUCT_PART_NUMBER', pn);
       }
     }
-    // Prefix validation
     issues.push(...validatePartNumberPrefix(
       pn,
       record.fields['duty'] as string | null
@@ -248,7 +224,6 @@ export function validateRecord(
     }
   }
 
-  // 3. Registry relationship checks
   issues.push(...validateTechnologyKey(record));
   issues.push(...validateSystemKey(record));
   issues.push(...validateFamilyKey(record));

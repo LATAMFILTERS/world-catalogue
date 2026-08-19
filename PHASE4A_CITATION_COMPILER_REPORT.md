@@ -140,7 +140,7 @@ The following is the full compiled record for `MACROCORE` from `CITATION_INDEX.j
     "systems": "Air Intake domain; applicable industries: Mining, Agriculture, Construction, Marine,\nAutomotive, Bus & Coach, Railway, Trucks & Fleets, Oil & Gas, Power Generation,\nWaste & Municipal (11 of 12 industry verticals)",
     "failure_impact": "Without adequate air intake filtration: dust ingestion → abrasive particle wear on piston\nrings, cylinder walls, and turbocharger bearings → compression loss 10–25% → oil\nconsumption increase 15–40% → engine overhaul interval reduced from 15,000–25,000 hours\nto 3,000–5,000 hours",
     "related_standards": "ISO 5011: Standardised efficiency, restriction, and dust-holding capacity test for air\nintake filters | SAE J1539: Air intake contamination classification for diesel engines |\nISO 16889: Multi-pass filter test and Beta ratio classification (supporting standard)",
-    "related_technologies": "SYNTEPORE: All-synthetic air intake variant for high-humidity and marine environments |\nINTEKCORE: Zero-bypass housing architecture that eliminates unfiltered bypass events",
+    "related_technologies": "SYNTAPORE: All-synthetic air intake variant for high-humidity and marine environments |\nINTEKCORE: Zero-bypass housing architecture that eliminates unfiltered bypass events",
     "industrial_role": "MACROCORE™ is the primary contamination control mechanism for the air intake path — the\nsingle largest source of abrasive particle ingestion in off-highway diesel engines.\nCorrect air filtration selection and maintenance is the highest-leverage intervention\nfor extending engine overhaul intervals in mining, agriculture, and construction."
   },
   "relationships": {

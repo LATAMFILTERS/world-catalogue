@@ -85,7 +85,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       'Applying a standard designed for one circuit type to another (e.g., using ISO 5011 air filter metrics for hydraulic selection) produces invalid specifications.',
       'Cleanliness targets set below the sensitivity of the most critical component allow damage to occur even while meeting the nominal specification.',
     ],
-    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'DRYCORE™', 'MICROKAPPA™'],
+    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™', 'DRYCORE™', 'MICROKAPPA™'],
     relatedSystems: [
       'Air Intake Protection',
       'Lubrication Protection',
@@ -154,7 +154,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       'Single-circuit focus (e.g., air only) while neglecting hydraulic or fuel circuits leaves the asset partially protected — one unprotected circuit can undermine all other filtration investments.',
       'Contamination budget deficits develop gradually and may not produce immediate symptoms, creating false confidence until catastrophic failure occurs.',
     ],
-    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™', 'DURATECH™'],
+    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™', 'DURATECH™'],
     relatedSystems: [
       'Air Intake Protection',
       'Lubrication Protection',
@@ -338,7 +338,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       'Water above 0.5% in lube oil reduces oil film strength at bearing surfaces, promotes bacterial growth in biodegradable oils, and accelerates oxidation — even in systems with clean particle counts.',
       'Cross-contamination between circuits (coolant leaking into lube oil via head gasket, fuel dilution from DPF post-injection) introduces chemical contamination that oil analysis must identify through physical property tests, not just particle counts.',
     ],
-    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'HYDROCORE™', 'SYNTEPORE™', 'MACROCORE™'],
+    relatedTechnologies: ['NANOFORCE™', 'SYNTRAX™', 'HYDROCORE™', 'SYNTAPORE™', 'MACROCORE™'],
     relatedSystems: ['Hydraulic Protection', 'Lubrication Protection', 'Fuel Cleanliness Protection'],
     relatedIndustries: ['Mining', 'Marine', 'Agriculture', 'Power Generation'],
     relatedKCArticles: ['contamination-control', 'failure-analysis', 'fluid-cleanliness', 'asset-protection-engineering'],
@@ -520,7 +520,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       'Glass fiber fracture under high-frequency pressure pulsation (hydraulic circuits) can migrate downstream, damaging precisely controlled clearances in servo valves.',
       'Pleat collapse under elevated ΔP reduces effective media area, causing non-linear restriction increase and premature service — confirmed by post-service element cross-section examination.',
     ],
-    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'MICROKAPPA™', 'SYNTEPORE™'],
+    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'MICROKAPPA™', 'SYNTAPORE™'],
     relatedSystems: ['Air Intake Protection', 'Lubrication Protection', 'Hydraulic Protection', 'Fuel Cleanliness Protection'],
     relatedIndustries: ['Mining', 'Agriculture', 'Manufacturing', 'Marine'],
     relatedKCArticles: ['filter-media-science', 'testing-and-validation', 'airflow-engineering'],
@@ -728,7 +728,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       {
         term: 'Cabin air filtration',
         definition:
-          'Operator cabin filters protect personnel from ambient particulate (PM₂.₅, PM₁₀, silica dust, grain dust, bioaerosols) and gas-phase contamination. Mining and construction cabs may have silica concentrations exceeding 100× the OSHA PEL. MICROKAPPA™ elements provide H13-class PM₂.₅ efficiency per ISO 11155-2.',
+          'Operator cabin filters protect personnel from ambient particulate (PM₂.₅, PM₁₀, silica dust, grain dust, bioaerosols) and gas-phase contamination. Mining and construction cabs may have silica concentrations exceeding 100× the OSHA PEL. MICROKAPPA™ elements are rated to the PM₂.₅ efficiency class specified for the approved application per ISO 11155-2.',
       },
       {
         term: 'Dust concentration by industry',
@@ -738,13 +738,13 @@ export const ERL_SECTIONS: ERLSection[] = [
       {
         term: 'PM₂.₅ and PM₁₀',
         definition:
-          'Respirable particulate matter classifications: PM₁₀ = particles ≤10 µm aerodynamic diameter; PM₂.₅ = particles ≤2.5 µm. PM₂.₅ penetrates deepest into the respiratory tract. ISO 11155-2 measures cabin filter efficiency against PM₂.₅. MICROKAPPA™ achieves H13-class efficiency at PM₂.₅.',
+          'Respirable particulate matter classifications: PM₁₀ = particles ≤10 µm aerodynamic diameter; PM₂.₅ = particles ≤2.5 µm. PM₂.₅ penetrates deepest into the respiratory tract. ISO 11155-2 measures cabin filter efficiency against PM₂.₅. MICROKAPPA™ is rated to the PM₂.₅ efficiency class specified for the approved application, up to H13-class where required.',
       },
     ],
     engineeringMetrics: [
       { label: 'Mining dust concentration', value: '0.1–5 mg/m³' },
       { label: 'Harvest dust concentration', value: '500–2,000 mg/m³ (combine proximity)' },
-      { label: 'DRYCORE™ instrument air class', value: 'ISO 8573-1 Class 1:4:1', standard: 'ISO 8573-1' },
+      { label: 'DRYCORE™ moisture control', value: 'Per approved pneumatic brake-system application', standard: 'ISO 8573-1' },
       { label: 'NA engine restriction limit', value: '25 mbar / 10 inH₂O', standard: 'ISO 5011' },
       { label: 'Silica Mohs hardness', value: '7 (vs steel 5–6.5)' },
     ],
@@ -813,7 +813,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       'DHC measured at laboratory face velocity and ingress rate may not translate to field service interval if actual operating conditions (higher airflow, higher dust) differ from test conditions.',
       'High initial ΔP media in a bypass-prone system (worn bypass valve seat) may bypass under normal operating conditions if initial restriction already approaches cracking pressure.',
     ],
-    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTEPORE™'],
+    relatedTechnologies: ['MACROCORE™', 'SYNTRAX™', 'NANOFORCE™', 'SYNTAPORE™'],
     relatedSystems: ['Air Intake Protection', 'Lubrication Protection', 'Hydraulic Protection'],
     relatedIndustries: ['Mining', 'Agriculture', 'Manufacturing'],
     relatedKCArticles: ['testing-and-validation', 'filter-media-science', 'airflow-engineering', 'oem-engineering'],
@@ -1106,7 +1106,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       'Standard NBR seals installed in H₂S oil and gas service degrade within 200–500 hours — catastrophic seal failure causes massive fluid loss and contamination events.',
       'Marine fuel polishing programs not scheduled for standby diesel generators allow 6–12 months of microbial growth and water accumulation, risking fuel delivery failure on emergency generator start.',
     ],
-    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™', 'HYDROCORE™', 'SYNTEPORE™', 'MARINECLEAN™', 'MICROKAPPA™'],
+    relatedTechnologies: ['MACROCORE™', 'INTEKCORE™', 'HYDROCORE™', 'SYNTAPORE™', 'MARINECLEAN™', 'MICROKAPPA™'],
     relatedSystems: ['Air Intake Protection', 'Fuel Cleanliness Protection', 'Cabin Air Protection'],
     relatedIndustries: ['Mining', 'Agriculture', 'Marine', 'Oil & Gas', 'Truck Fleets', 'Power Generation'],
     relatedKCArticles: ['dust-holding-capacity', 'service-intervals', 'airflow-engineering'],

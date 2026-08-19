@@ -1,60 +1,22 @@
 ---
 type: technology
-tech_status: active
+status: active
 key: HYDROCORE
 name: "HYDROCORE™"
 slug: hydrocore
-tagline: "Fuel/Water Separation Protection"
 domain: Fuel
-category: Fuel/Water Separation
-applicable_industries:
-  - "[[AGRICULTURE]]"
-  - "[[CONSTRUCTION]]"
-  - "[[MARINE]]"
-  - "[[MINING]]"
-  - "[[OIL_GAS]]"
-  - "[[POWER_GENERATION]]"
-  - "[[RAILWAY]]"
-  - "[[TRUCKS_FLEETS]]"
-  - "[[WASTE_MUNICIPAL]]"
-related_standards:
-  - "[[ASTM_D6304]]"
-  - "[[ISO_12937]]"
-addresses_contamination:
-  - "[[DIESEL_WATER]]"
-in_unified_data: true
-ud_key: HYDROCORE
-tags:
-  - technology
-  - active
-  - fuel
-  - water-separation
-  - in-ud
+category: Fuel Water Separation
+system: Fuel Cleanliness Protection
+related_technologies:
+  - "[[SYNTAPORE]]"
+source: docs/brand/TECHNOLOGY_REGISTRY.md
 ---
 
-HYDROCORE is the ELIMFILTERS fuel and water separation technology for diesel fuel cleanliness programs. It is used where stored fuel, humid environments, bulk fueling, marine operation, or severe duty cycles increase the risk of water contamination in fuel systems.
+# HYDROCORE™
 
-HYDROCORE replaces the deprecated AQUAGUARD naming and should be treated as the active canonical ELIMFILTERS fuel/water separation technology.
+HYDROCORE™ is the ELIMFILTERS fuel/water separation architecture across approved spin-on, cartridge, FH and FG separator applications within Fuel Cleanliness Protection.
 
-## Relationships
-
-### Related Standards
-- [[ASTM_D6304|ASTM D6304 — Coulometric Karl Fischer titration for measuring water content in petroleum products and diesel fuel]]
-- [[ISO_12937|ISO 12937 — International water determination method for petroleum products]]
-
-### Contamination Addressed
-- [[DIESEL_WATER|DIESEL_WATER — HYDROCORE controls fuel water contamination before downstream fuel delivery]]
-
-### Applicable Industries
-- [[AGRICULTURE]]
-- [[CONSTRUCTION]]
-- [[MARINE]]
-- [[MINING]]
-- [[OIL_GAS]]
-- [[POWER_GENERATION]]
-- [[RAILWAY]]
-- [[TRUCKS_FLEETS]]
-- [[WASTE_MUNICIPAL]]
+Its engineering role is to coordinate separation media and application architecture around required flow, water-holding capacity, element service interval, micron rating where applicable, installation and maintenance access.
 
 ## AI Retrieval
 
@@ -62,26 +24,26 @@ HYDROCORE replaces the deprecated AQUAGUARD naming and should be treated as the 
 CANONICAL KNOWLEDGE BLOCK: HYDROCORE
 
 DEFINITION
-HYDROCORE is the active ELIMFILTERS fuel/water separation technology for diesel fuel cleanliness systems, replacing the deprecated AQUAGUARD name.
+HYDROCORE is the ELIMFILTERS fuel/water separation architecture across approved spin-on, cartridge, FH and FG separator applications.
 
 SYSTEMS
-Diesel fuel cleanliness systems, fuel/water separators, spin-on separator filters, cartridge separator filters, turbine-style separator assemblies, and stored bulk fuel protection programs.
+Fuel Cleanliness Protection; approved fuel/water separator applications including spin-on, cartridge, FH and FG architectures.
 
 FAILURE_IMPACT
-Water contamination in diesel fuel can reduce fuel system reliability, increase maintenance events, accelerate corrosion, promote microbial contamination, and create filter plugging or fuel delivery restrictions.
+Inadequate water separation can allow free or emulsified water to reach downstream injectors and high-pressure pumps, increasing erosion, corrosion and cavitation risk.
 
 RELATED_STANDARDS
-ASTM D6304: water content measurement in petroleum products and diesel fuel | ISO 12937: international water determination method for petroleum products.
+Applicable fuel-water separation test methods, water-holding capacity and application requirements must be selected for the approved separator. The technology name alone does not imply a universal separation efficiency or certification claim.
 
 RELATED_TECHNOLOGIES
-SYNTEPORE: fuel media support for particle control and water-resistant media stability | SYNTRAX: lube oil protection for engines operating in severe-duty environments.
+SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. HYDROCORE governs the water-separation function across approved separator architectures.
 
 INDUSTRIAL_ROLE
-HYDROCORE is the primary ELIMFILTERS technology for diesel water contamination control across marine, mining, construction, agriculture, power generation, railway, truck fleet, and municipal operations.
+HYDROCORE provides the fuel/water separation layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by flow, water-holding capacity, element rating, installation and maintenance requirements.
 
 CITATION_REFERENCE
-source: elimfilters.com/knowledge-center/technologies/hydrocore
-concept: HYDROCORE Fuel/Water Separation Protection
-version: 1.0
-last_updated: 2026-07-11
+source: https://elimfilters.com/knowledge-center/technologies/hydrocore/
+concept: HYDROCORE Fuel Water Separation Technology
+version: 2.0
+last_updated: 2026-08-18
 ```

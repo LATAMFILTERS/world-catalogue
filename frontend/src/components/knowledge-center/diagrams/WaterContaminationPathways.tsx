@@ -363,7 +363,7 @@ export default function WaterContaminationPathways({ className, style }: SvgDiag
       </text>
       <text x="240" y="500" textAnchor="middle"
         fontFamily="'JetBrains Mono', monospace" fontSize="7" fill="rgba(255,255,255,0.3)">
-        ISO 16332 — water separator efficiency test &gt;95% water removal at rated flow
+        ISO 16332 — water separator efficiency test method
       </text>
 
       {/* ══════════════════════════════════════════════════════════════════════
@@ -380,9 +380,8 @@ export default function WaterContaminationPathways({ className, style }: SvgDiag
       </text>
       {[
         { t: 'HYDROCORE — coalescing water separator, bulk free-water removal', y: 463 },
-        { t: 'SYNTEPORE — glass-fiber fuel media, hydrophobic coating repels water', y: 477 },
-        { t: 'TURBOCORE — 3-stage fuel treatment: pre-filter + coalesce + final', y: 491 },
-        { t: 'Desiccant breather recommended on all non-pressurised vent ports', y: 503 },
+        { t: 'HYDROCORE — staged fuel treatment: pre-filter, coalesce, final barrier', y: 477 },
+        { t: 'Desiccant breather recommended on all non-pressurised vent ports', y: 491 },
       ].map(row => (
         <text key={row.y} x="480" y={row.y}
           fontFamily="'JetBrains Mono', monospace" fontSize="6.8" fill="rgba(255,255,255,0.45)">

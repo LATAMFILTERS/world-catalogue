@@ -1,6 +1,6 @@
 {
   "entry_key": "DUST_INGESTION",
-  "path_count": 3,
+  "path_count": 1,
   "paths": [
     {
       "path_id": "PATH_A_DUST_INGESTION_001",
@@ -13,30 +13,6 @@
         "AIRFILTER_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_A_DUST_INGESTION_001.json"
-    },
-    {
-      "path_id": "PATH_A_DUST_INGESTION_002",
-      "path_type": "A",
-      "entry_node": "DUST_INGESTION",
-      "entry_type": "problem",
-      "industry": null,
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_A_DUST_INGESTION_002.json"
-    },
-    {
-      "path_id": "PATH_A_DUST_INGESTION_003",
-      "path_type": "A",
-      "entry_node": "DUST_INGESTION",
-      "entry_type": "problem",
-      "industry": null,
-      "valid": true,
-      "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_A_DUST_INGESTION_003.json"
     }
   ]
 }

@@ -1,0 +1,49 @@
+{
+  "sku": "EL82100",
+  "segment": "HD",
+  "family": "oil_filter",
+  "construction": "spin_on",
+  "technology": "SINTRAX®",
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "cross_reference": {
+      "manufacturer": "FLEETGUARD",
+      "code": "LF3620"
+    }
+  },
+  "production": {
+    "template_authority": "data/product-identity/authorities/cylindrical-print-layout-authority.json",
+    "factory_ready": true
+  },
+  "lithography": {
+    "body_color_hex": "#414141",
+    "print_color_hex": "#CBCBCB",
+    "front": [
+      "OFFICIAL_ELIMFILTERS_LOGO",
+      "TOTAL ASSET PROTECTION",
+      "EL82100",
+      "Lube Filter",
+      "SINTRAX®",
+      "Powered Filtration"
+    ],
+    "rear": "SAME_AS_FRONT",
+    "extra_text_allowed": false
+  },
+  "media": {
+    "geometry_locked": true,
+    "geometry_reference": "FLEETGUARD_LF3620",
+    "approved_master_gen_id": "7b73c420-cb44-4f56-9cf5-528e0fe90cd0",
+    "replaces_master_gen_id": "7c935e28-49b3-48c6-a87d-3bdc353c863e",
+    "approval_state": "FINAL_APPROVED",
+    "approved_by": "USER",
+    "approved_at": "2026-08-08T15:46:00-05:00",
+    "quality_assessment": "99_PERCENT_APPROVED",
+    "pilot_position": "4/20"
+  },
+  "notes": [
+    "Latest user-approved replacement master on 2026-08-08.",
+    "This replaces the previously saved EL82100 visual master.",
+    "Physical geometry is unique to LF3620/EL82100 and must not be replaced by EL81670 or another SKU geometry."
+  ]
+}

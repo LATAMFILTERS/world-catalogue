@@ -4,7 +4,7 @@ type: protection-domain
 label: "Fuel Filtration Domain"
 version: "1.0"
 DEFINITION: "The fuel filtration domain covers diesel fuel cleanliness and water removal systems protecting high-pressure common-rail (HPCR) injectors and fuel pumps from particle wear and corrosion caused by particulate and water contamination in diesel fuel."
-related_technology: "[[SYNTEPORE]]"
+related_technology: "[[SYNTAPORE]]"
 related_family: "[[FUEL_PRIMARY]]"
 related_standards: ["[[ASTM_D6304]]", "[[ISO_12937]]"]
 ---
@@ -26,7 +26,7 @@ The fuel domain addresses particle and water contamination in diesel fuel circui
 
 ## Primary Technology
 
-SYNTEPORE — HPCR-rated fuel filter elements for sub-4 µm particle removal. HYDROCORE — coalescing water separator elements for free and emulsified water removal.
+SYNTAPORE — diesel-fuel particulate filtration elements for primary, secondary and cartridge fuel-filter applications. HYDROCORE — coalescing water separator elements for free and emulsified water removal.
 
 ## Failure Mechanism
 
@@ -50,7 +50,7 @@ RELATED_STANDARDS
 ASTM D6304: Water content measurement in petroleum products (Karl Fischer coulometric titration) | ISO 12937: Water determination in petroleum products by Karl Fischer reagent
 
 RELATED_TECHNOLOGIES
-SYNTEPORE: HPCR-rated fuel filter elements for sub-4 µm particle removal | HYDROCORE: Coalescing water separator elements for free and emulsified water removal | TURBOCORE: Three-stage fuel filtration for high-contamination environments
+SYNTAPORE: Diesel-fuel particulate filtration elements for primary, secondary and cartridge fuel-filter applications | HYDROCORE: Coalescing water separator elements for free and emulsified water removal
 
 INDUSTRIAL_ROLE
 Fuel filtration is the primary protection system for HPCR injection equipment operating above 1,800 bar — injector clearances of 2–4 µm require sub-4 µm particle control to prevent accelerated nozzle wear and injection system failure.

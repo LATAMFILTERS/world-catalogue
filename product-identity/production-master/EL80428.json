@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0",
+  "recordType": "ELIMFILTERS_PRODUCTION_MASTER",
+  "sku": "EL80428",
+  "pilotPosition": "2/20",
+  "sourceCrossReference": {
+    "manufacturer": "FLEETGUARD",
+    "partNumber": "LF3970"
+  },
+  "product": {
+    "filterType": "LUBE",
+    "productLabel": "Lube Filter",
+    "technology": "SINTRAX®",
+    "technologyDescriptor": "Powered Filtration",
+    "positioningLine": "TOTAL ASSET PROTECTION"
+  },
+  "visualMaster": {
+    "status": "FINAL_APPROVED",
+    "approvedBy": "USER",
+    "approvedOn": "2026-08-08",
+    "genId": "0283816d-8cb5-40fd-9c1b-7f387117c5f4",
+    "bodyColorHex": "#414141",
+    "lithographyColorHex": "#CBCBCB",
+    "background": "WHITE",
+    "geometryReference": "FLEETGUARD_LF3970",
+    "geometryLocked": true,
+    "artworkLocked": true,
+    "approvedImageFilename": "EL80428-LF3970-2of20-approved.png"
+  },
+  "publication": {
+    "status": "PENDING_AUTOMATED_R2_PUBLICATION",
+    "bucket": "elimfilters-renders",
+    "key": "fleetguard/page-1/02-20/EL80428-LF3970-2of20-approved.png",
+    "cdnUrl": "https://cdn.elimfilters.com/fleetguard/page-1/02-20/EL80428-LF3970-2of20-approved.png"
+  },
+  "sourcePolicy": {
+    "freshFromZero": true,
+    "cacheForbidden": true,
+    "previousRenderAsGeometrySourceForbidden": true,
+    "futureRegenerationMustStartFromCurrentFleetguardSource": true
+  }
+}

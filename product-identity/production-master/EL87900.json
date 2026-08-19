@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.1",
+  "recordType": "ELIMFILTERS_PRODUCTION_MASTER",
+  "sku": "EL87900",
+  "pilotPosition": "1/20",
+  "sourceCrossReference": {
+    "manufacturer": "FLEETGUARD",
+    "partNumber": "LF14000NN"
+  },
+  "product": {
+    "filterType": "LUBE",
+    "productLabel": "Lube Filter",
+    "technology": "SINTRAX®",
+    "technologyDescriptor": "Powered Filtration",
+    "positioningLine": "TOTAL ASSET PROTECTION"
+  },
+  "visualMaster": {
+    "status": "FINAL_APPROVED",
+    "approvedBy": "USER",
+    "approvedOn": "2026-08-08",
+    "genId": "4b5db3c3-1509-4cdb-babd-2786e4f02482",
+    "bodyColorHex": "#414141",
+    "lithographyColorHex": "#CBCBCB",
+    "background": "WHITE",
+    "geometryReference": "FLEETGUARD_LF14000NN",
+    "geometryLocked": true,
+    "artworkLocked": true,
+    "imageSha256": "2c814df469e37000539c02d0c06136fc96f25fb1920289a969ffd422cd7234a7",
+    "pixelDimensions": "1448x1086",
+    "storage": {
+      "provider": "CLOUDFLARE_R2",
+      "bucket": "elimfilters-renders",
+      "objectKey": "fleetguard/page-1/01-20/EL87900-LF14000NN-1of20-approved.png/EL87900-LF14000NN-1of20-approved.png",
+      "contentType": "image/png",
+      "observedSize": "1.11 MB",
+      "uploadVerified": true,
+      "verifiedAt": "2026-08-08T17:46:00-05:00"
+    }
+  },
+  "geometryLock": {
+    "specialOpenEnd": true,
+    "internalStarSupport": true,
+    "perforatedCenterCore": true,
+    "genericSpinOnBaseForbidden": true,
+    "otherSkuGeometryForbidden": true
+  },
+  "sourcePolicy": {
+    "freshFromZero": true,
+    "cacheForbidden": true,
+    "previousRenderAsGeometrySourceForbidden": true,
+    "futureRegenerationMustStartFromCurrentFleetguardSource": true
+  }
+}

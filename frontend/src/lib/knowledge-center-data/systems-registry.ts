@@ -24,7 +24,7 @@ export const KC_SYSTEMS = [
     title: 'Fuel Cleanliness Protection',
     description: 'Removing water and particles from diesel fuel to protect high-pressure common rail injectors. Water above 200 ppm causes injector stiction and micro-pitting.',
     icon: '⛽',
-    technologies: ['SYNTEPORE™', 'HYDROCORE™', 'DURATECH™', 'MARINECLEAN™'],
+    technologies: ['SYNTAPORE™', 'HYDROCORE™', 'DURATECH™', 'MARINECLEAN™'],
     standards: ['ISO 12937', 'ASTM D6304'],
     challenges: ['Water contamination', 'HPCR injector protection', 'Microbial growth', 'Fuel polishing'],
   },
@@ -96,7 +96,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
       },
       {
         heading: 'Pre-Cleaner Systems',
-        body: 'Centrifugal pre-cleaners installed upstream of the primary element remove 80–95% of coarse dust (>50 µm) before it reaches the filter media. INTEKCORE™ housings integrate pre-cleaner functionality, extending primary MACROCORE™ element life by 3–5× in high-dust environments. Pre-cleaners require automatic evacuation of the separated dust through a scavenging air ejector or manual drain.',
+        body: 'Centrifugal pre-cleaners installed upstream of the primary element remove a substantial fraction of coarse dust (>50 µm) before it reaches the filter media. INTEKCORE™ housings integrate pre-cleaner functionality, extending primary MACROCORE™ element life in high-dust environments; the specific extension must be confirmed by field service data for the approved application rather than assumed. Pre-cleaners require automatic evacuation of the separated dust through a scavenging air ejector or manual drain.',
       },
       {
         heading: 'Failure Analysis',
@@ -127,7 +127,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
       },
       {
         heading: 'Two-Stage Protection Strategy',
-        body: 'Fuel protection requires two complementary technologies: SYNTEPORE™ for particle removal (β₄(c) ≥200) and HYDROCORE™ for free water removal (≥96%). The pre-filter/coarse separator (HYDROCORE™) is installed upstream to remove bulk water and coarse particles. The final element (SYNTEPORE™) provides fine particle protection at the injection pump inlet. This sequence protects both the lift pump (10–15 µm clearances) and the high-pressure pump and injectors (1–3 µm clearances).',
+        body: 'Fuel protection requires two complementary technologies: SYNTAPORE™ for particle removal and HYDROCORE™ for free water removal. The pre-filter/coarse separator (HYDROCORE™) is installed upstream to remove bulk water and coarse particles. The final element (SYNTAPORE™) provides fine particle protection at the injection pump inlet. This sequence protects both the lift pump and the high-pressure pump and injectors.',
       },
       {
         heading: 'Water Contamination Pathways',
@@ -169,7 +169,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
     keyMetrics: [
       { label: 'Proportional valve clearance', value: '5–10 µm' },
       { label: 'NFPA T2.14 minimum', value: 'ISO 18/16/13' },
-      { label: 'NANOFORCE™ β₁₀(c)', value: '≥200 (99.5%)' },
+      { label: 'NANOFORCE™ Beta ratio', value: 'Per approved application' },
       { label: 'Equipment availability impact', value: '–15–30% without control' },
     ],
     sections: [
@@ -199,7 +199,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
     targetCleanliness: 'SCA concentration 0.5–1.0 units per liter; pH 8.5–10.5; coolant change interval per ASTM D6210.',
     keyMetrics: [
       { label: 'SCA target concentration', value: '0.5–1.0 units/L' },
-      { label: 'THERMACORE™ particle capture', value: '>80% at 20 µm' },
+      { label: 'THERMACORE™ particle capture', value: 'Per approved application' },
       { label: 'Liner erosion mechanism', value: 'Cavitation from vapor bubble collapse' },
     ],
     sections: [
@@ -209,7 +209,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
       },
       {
         heading: 'SCA Management',
-        body: 'SCA concentration must remain within the 0.5–1.0 units/L range. Below 0.5, cavitation erosion protection is insufficient. Above 1.5, SCA precipitation can cause gel formation and clogging. THERMACORE™ releases SCA linearly across the service interval, maintaining concentration without overdose. SCA concentration is verified using test strips or refractometer measurement at each coolant service interval.',
+        body: 'SCA concentration must remain within the range specified for the coolant chemistry and approved application. Below the minimum, cavitation erosion protection is insufficient; above the maximum, SCA precipitation can cause gel formation and clogging. THERMACORE™ is engineered to release SCA at a controlled rate across the service interval to help maintain concentration within the specified range. SCA concentration is verified using test strips or refractometer measurement at each coolant service interval.',
       },
     ],
   },
@@ -220,7 +220,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
     targetCleanliness: 'Cabin air quality below OEL: respirable silica <0.025 mg/m³, PM₂.₅ <35 µg/m³ (8-hr TWA), total diesel particulate below relevant national limits.',
     keyMetrics: [
       { label: 'OSHA PEL — respirable silica', value: '0.025 mg/m³' },
-      { label: 'MICROKAPPA™ PM₂.₅ efficiency', value: '≥95%' },
+      { label: 'MICROKAPPA™ PM₂.₅ efficiency', value: 'Per approved application' },
       { label: 'Mining ambient silica vs OEL', value: '100–1,000× above limit' },
     ],
     sections: [
@@ -235,7 +235,7 @@ export const KC_SYSTEM_DETAILS: Record<string, KCSystemDetail> = {
       },
       {
         heading: 'Cabin Filtration Design',
-        body: 'MICROKAPPA™ H13-class elements provide ≥95% PM₂.₅ efficiency and ≥99.95% efficiency at 0.3 µm (MPPS for HEPA-class media). The activated carbon layer adsorbs VOCs, NO₂, diesel exhaust gases, and agricultural chemicals. Proper cabin filtration requires positive pressurization of the cab relative to the exterior — air must flow outward through any gap, preventing unfiltered exterior air from entering through door seals, cable penetrations, or HVAC ducts.',
+        body: 'MICROKAPPA™ elements are rated to the PM₂.₅ efficiency class specified for the approved application, up to H13-class HEPA-equivalent media where required. The activated carbon layer adsorbs VOCs, NO₂, diesel exhaust gases, and agricultural chemicals. Proper cabin filtration requires positive pressurization of the cab relative to the exterior — air must flow outward through any gap, preventing unfiltered exterior air from entering through door seals, cable penetrations, or HVAC ducts.',
       },
       {
         heading: 'Filter Replacement Protocol',

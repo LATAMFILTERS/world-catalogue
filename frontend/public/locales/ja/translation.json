@@ -111,7 +111,9 @@
     "standards": "標準",
     "fleetOpt": "フリート最適化",
     "locationText": "フリスコ、テキサス州",
-    "kleoText": "© 2015–2026 Kleo Technologies"
+    "kleoText": "© 2015–2026 Kleo Technologies",
+    "elimfiltersCopyright": "KLEO TECHNOLOGY LLC |濾過におけるインテリジェンスとエンジニアリング",
+    "elimfiltersYear": "2015–2026"
   },
   "category": {
     "keyAdvantages": "主な利点",
@@ -162,9 +164,9 @@
     "problemTag": "// 運用リスク診断",
     "problemH1": "見えないもの",
     "problemH2": "あなたの操業を停止しています。",
-    "problemIntro": "設備の早期故障の80%は汚染が原因です。非効率なろ過により、目に見えない粒子が重要なコンポーネント内部でサンドペーパーのように作用します — 軸受面、インジェクターオリフィス、油圧スプール。",
+    "problemIntro": "油圧部品の早期故障の最大80%は汚染が原因です。非効率なろ過により、目に見えない粒子が重要なコンポーネント内部でサンドペーパーのように作用します — 軸受面、インジェクターオリフィス、油圧スプール。",
     "problemBadgeNum": "80%",
-    "problemBadgeDesc": "早期故障の原因は汚染です。",
+    "problemBadgeDesc": "油圧部品の早期故障の原因は汚染です。",
     "failModes": [
       {
         "title": "インジェクター腐食",

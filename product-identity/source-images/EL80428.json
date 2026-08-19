@@ -1,0 +1,50 @@
+{
+  "schema": "elimfilters.product-identity.visual-master.v2.1",
+  "status": "MIGRATION_REQUIRED_BEFORE_REUSE",
+  "pilot_position": "2/20",
+  "sku": "EL80428",
+  "product_family": "HD_SPINON",
+  "filter_type": "LUBE",
+  "display_filter_type": "Lube Filter",
+  "technology": "SINTRAX®",
+  "technology_descriptor": "Powered Filtration",
+  "source": {
+    "brand": "FLEETGUARD",
+    "part_number": "LF3970",
+    "geometry_source": true,
+    "real_manufacturer_source_required": true,
+    "real_manufacturer_screenshot_required": true
+  },
+  "master_geometry": {
+    "state": "LOCKED",
+    "mechanical_ground_truth": "SOURCE_IMAGE",
+    "preserve": ["overall_body_shape","body_proportions","camera_perspective","upright_filter_position","horizontal_filter_position","threaded_base","thread_depth","base_plate_hole_pattern","outer_gasket_ring","center_thread_geometry","lighting","shadows","background"]
+  },
+  "target_surface_finish": {
+    "container_color_hex": "#414141",
+    "finish": "SEMI_MATTE_INDUSTRIAL_COATING"
+  },
+  "target_lithography": {
+    "color_hex": "#CBCBCB",
+    "finish": "METALLIC_SILVER_SATIN",
+    "elements_top_to_bottom": ["APPROVED_INSTALLATION_ROTATION_MARKS","OFFICIAL_ELIMFILTERS_LOGO","TOTAL ASSET PROTECTION","EL80428","Lube Filter","SINTRAX®","Powered Filtration"],
+    "rear_strategy": "SAME_AS_FRONT_180_DEGREES",
+    "extra_text_allowed": false,
+    "secondary_colors_allowed": false
+  },
+  "pipeline_compliance": {
+    "required_version": "2.1",
+    "live_database_lookup_required": true,
+    "technology_asset_resolution_required": true,
+    "official_binary_assets_required": true,
+    "manifest_pass_required": true,
+    "edit_only_required": true,
+    "result_lineage_required": true,
+    "legacy_master_compliant": false
+  },
+  "approval": {
+    "geometry": "APPROVED_LOCKED",
+    "legacy_visual_master": "PRESERVED",
+    "current_v2_1_master": "PENDING_REGENERATION"
+  }
+}

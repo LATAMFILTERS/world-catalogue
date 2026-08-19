@@ -215,7 +215,7 @@ async function run() {
       FROM elimfilters_catalog
       WHERE
         (UPPER(technology) LIKE '%SYNTRAX%' AND filter_type != 'Oil Filter')
-        OR (UPPER(technology) LIKE '%SYNTEPORE%' AND filter_type NOT IN ('Fuel Filter','Fuel/Water Separator'))
+        OR (UPPER(technology) LIKE '%SYNTAPORE%' AND filter_type NOT IN ('Fuel Filter','Fuel/Water Separator'))
         OR (UPPER(technology) LIKE '%MACROCORE%' AND filter_type != 'Air Filter')
         OR (UPPER(technology) LIKE '%NANOFORCE%' AND filter_type NOT IN ('Hydraulic Filter','Fuel Filter','Fuel/Water Separator'))
         OR (UPPER(technology) LIKE '%MICROKAPPA%' AND filter_type != 'Cabin Air Filter')
