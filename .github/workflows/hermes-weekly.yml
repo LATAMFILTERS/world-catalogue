@@ -106,9 +106,24 @@ jobs:
     needs: [promote-baseline, rollback-baseline]
     if: always()
     runs-on: ubuntu-latest
+    # contents: write is required only for the two harvest-state sync steps
+    # below (state/source-observations.json on hermes-state) — a normal
+    # weekly run never writes anything else. The governed baseline
+    # (state/source-baseline.json, state/backups/**, state/promotion-audit.json)
+    # stays reachable ONLY through the promote-baseline/rollback-baseline
+    # jobs above, which remain gated behind HERMES_BASELINE_APPROVAL_TOKEN.
+    permissions:
+      contents: write
     env:
       HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
-      HERMES_BASELINE_MODE: ${{ vars.HERMES_BASELINE_MODE || 'true' }}
+      # A normal weekly run must never silently stay in baseline-only mode —
+      # baseline generation/refresh is the promote-baseline job's job
+      # (literally), which hardcodes HERMES_BASELINE_MODE=true for its own
+      # steps regardless of this variable. This default only governs the
+      # real-intelligence weekly-collection job, so it defaults to 'false':
+      # real intelligence collection is the safe, expected default here.
+      HERMES_BASELINE_MODE: ${{ vars.HERMES_BASELINE_MODE || 'false' }}
+      HERMES_MAX_SOURCES_PER_RUN: ${{ vars.HERMES_MAX_SOURCES_PER_RUN || '35' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -135,6 +150,10 @@ jobs:
         if: steps.guard.outputs.proceed == 'true'
         run: npm run hermes:baseline:restore
 
+      - name: Restore semantic-harvest state from hermes-state
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:harvest:restore
+
       - name: Download promotion result (if this dispatch also promoted)
         if: steps.guard.outputs.proceed == 'true' && needs.promote-baseline.result == 'success'
         continue-on-error: true
@@ -146,6 +165,10 @@ jobs:
       - name: Collect governed known sources
         if: steps.guard.outputs.proceed == 'true'
         run: npm run hermes:collect
+
+      - name: Persist semantic-harvest state to hermes-state
+        if: steps.guard.outputs.proceed == 'true'
+        run: npm run hermes:harvest:persist
 
       # The source registry is not the mission boundary. HERMES also performs
       # a mission-driven live-web sweep across the complete filtration

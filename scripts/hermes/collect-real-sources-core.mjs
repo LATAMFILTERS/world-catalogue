@@ -20,6 +20,7 @@ import {
   withUpdatedEntry,
   compareAgainstBaseline
 } from './source-baseline-core.mjs';
+import { hasBeenHarvested, recordHarvest, saveHarvestState } from './semantic-harvest-state-core.mjs';
 
 export const USER_AGENT = 'ELIMFILTERS-HERMES/1.0 (+source-monitor; contact: elimfilters@gmail.com)';
 export const DEFAULT_TIMEOUT_MS = 15000;
@@ -64,6 +65,53 @@ export const CATEGORY_RULES = {
 };
 
 const TRUST_CONFIDENCE = { high: 0.65, medium: 0.5, low: 0.35 };
+
+// Weekly-capacity source prioritization (task: "prioritize high-value
+// technical sources... do not prioritize marketing pages over technical
+// documentation when both exist"). Lower number = processed first when the
+// per-run cap trims the source list. Categories not listed fall back to the
+// lowest tier rather than erroring, so a newly-added registry category
+// never breaks collection.
+export const DEFAULT_SOURCE_PRIORITY_TIER = 9;
+export const SOURCE_PRIORITY = {
+  standards: 1,
+  regulation: 1,
+  technical_publication: 1,
+  technical_publications: 1,
+  oem_heavy_duty: 2,
+  oem_construction: 2,
+  oem_mining: 2,
+  oem_agriculture: 2,
+  oem_power_generation: 2,
+  oem_marine: 2,
+  oem_railway: 2,
+  oem_bus_coach: 2,
+  oem_waste_municipal: 2,
+  oem_light_duty: 2,
+  OEM: 2,
+  filter_media: 3,
+  filtration_components: 3,
+  strategic_supplier: 3,
+  filtration_competitor: 4,
+  suppliers: 5,
+  filtration_manufacturers: 5
+};
+
+export const DEFAULT_MAX_SOURCES_PER_RUN = 35;
+
+/**
+ * Trims `sources` to at most `maxSources`, keeping the highest-priority
+ * (lowest tier number) sources first and preserving registry order within a
+ * tier. `maxSources` of 0 or a non-finite value disables the cap entirely
+ * (returns `sources` unchanged) — a run must opt into a cap, never have one
+ * silently applied at 0.
+ */
+export function applySourceCap(sources, maxSources = DEFAULT_MAX_SOURCES_PER_RUN) {
+  if (!Number.isFinite(maxSources) || maxSources <= 0 || sources.length <= maxSources) return sources;
+  const withIndex = sources.map((source, index) => ({ source, index, tier: SOURCE_PRIORITY[source.category] ?? DEFAULT_SOURCE_PRIORITY_TIER }));
+  withIndex.sort((a, b) => (a.tier - b.tier) || (a.index - b.index));
+  return withIndex.slice(0, maxSources).sort((a, b) => a.index - b.index).map((entry) => entry.source);
+}
 
 export function sha256Hex(value) {
   return crypto.createHash('sha256').update(value).digest('hex');
@@ -245,12 +293,19 @@ export function buildCandidate({ source, contentHash, title, capturedAt, publish
   // HERMES cannot point at a specific new article from that alone, so
   // confidence is capped lower and the proposed_action says so explicitly.
   // This never applies to RSS items, which already carry a real title/link.
+  // FIRST_SEMANTIC_HARVEST gets the same conservative cap: it is HERMES's
+  // first-ever look at this source, not a structured item-level finding.
   const trust = changeClassification ? Math.min(baseTrust, 0.4) : baseTrust;
   const evidenceLevel = source.official ? 'PRIMARY' : 'SECONDARY_VERIFIED';
 
-  let proposedAction = `Review recently detected content change on ${source.name} (${source.url}) for potential ${source.category.replaceAll('_', ' ')} updates. HERMES only flags that content changed; a human must confirm what changed and whether canonical notes require an update.`;
-  if (changeClassification === 'CHANGE_DETECTED_REQUIRES_RESEARCH') {
-    proposedAction += ' HERMES could not identify the specific item that changed on this page — do not treat this as a confirmed new product, technology, or standard until a human researches and verifies the actual change.';
+  let proposedAction;
+  if (changeClassification === 'FIRST_SEMANTIC_HARVEST') {
+    proposedAction = `This is HERMES's first-ever observation of ${source.name} (${source.url}). No prior baseline exists to compare against, so this is not a "change" — a human should review it for baseline technical intelligence (${source.category.replaceAll('_', ' ')}) worth capturing now that the source is known.`;
+  } else {
+    proposedAction = `Review recently detected content change on ${source.name} (${source.url}) for potential ${source.category.replaceAll('_', ' ')} updates. HERMES only flags that content changed; a human must confirm what changed and whether canonical notes require an update.`;
+    if (changeClassification === 'CHANGE_DETECTED_REQUIRES_RESEARCH') {
+      proposedAction += ' HERMES could not identify the specific item that changed on this page — do not treat this as a confirmed new product, technology, or standard until a human researches and verifies the actual change.';
+    }
   }
 
   const candidate = {
@@ -344,10 +399,23 @@ export async function runCollection(options) {
     baselineMode = false,
     minContentLength = DEFAULT_MIN_CONTENT_LENGTH,
     baselinePath = path.join(path.dirname(sourceCacheDir), 'baselines', 'source-baseline.json'),
-    baselinePreviewPath = path.join(path.dirname(sourceCacheDir), 'baselines', 'source-baseline.preview.json')
+    baselinePreviewPath = path.join(path.dirname(sourceCacheDir), 'baselines', 'source-baseline.preview.json'),
+    // Semantic-harvest state (see semantic-harvest-state-core.mjs): tracks
+    // "has HERMES ever extracted intelligence from this source", separate
+    // from the hash baseline above. Defaults to an empty state, so a caller
+    // that never wires this in simply treats every source as never-harvested
+    // — the same conservative default as an absent baseline.
+    harvestState: initialHarvestState = { schema_version: '1.0.0', updated_at: null, sources: {} },
+    harvestStatePath = path.join(path.dirname(sourceCacheDir), 'baselines', 'source-observations.json'),
+    // 0/non-finite disables the cap. Callers that care about weekly
+    // capacity apply it via applySourceCap() themselves (or pass maxSources
+    // and let this function do it) so tests exercising the full source list
+    // are unaffected unless they opt in.
+    maxSources = 0
   } = options;
 
-  const sources = providedSources ?? loadSourcesConfig(configPath).sources;
+  const allSources = providedSources ?? loadSourcesConfig(configPath).sources;
+  const sources = maxSources > 0 ? applySourceCap(allSources, maxSources) : allSources;
 
   fs.mkdirSync(realCandidatesDir, { recursive: true });
   fs.mkdirSync(sourceCacheDir, { recursive: true });
@@ -363,10 +431,18 @@ export async function runCollection(options) {
   let workingBaseline = loadBaseline(baselinePath);
   let baselineDirty = false;
   let changedCount = 0;
+  let workingHarvestState = initialHarvestState;
+  let harvestStateDirty = false;
+  let firstHarvestCount = 0;
 
   function applyBaselineUpdate(source, entry) {
     workingBaseline = withUpdatedEntry(workingBaseline, source.id, entry);
     baselineDirty = true;
+  }
+
+  function applyHarvestUpdate(source, capturedAt, contentHash) {
+    workingHarvestState = recordHarvest(workingHarvestState, source.id, { harvestedAt: capturedAt, contentHash });
+    harvestStateDirty = true;
   }
 
   function recordCandidate(candidate, sourceId) {
@@ -545,10 +621,35 @@ export async function runCollection(options) {
 
     const comparison = compareAgainstBaseline(workingBaseline, source.id, contentHash);
     if (comparison.status === 'BASELINE_REQUIRED') {
-      // No prior baseline exists for this endpoint — HERMES has nothing to
-      // compare against, so it reports the gap instead of guessing that
-      // "first ever observation" means "something changed".
-      results.push({ id: source.id, status: 'BASELINE_REQUIRED', used_fallback: usedFallback });
+      // No prior baseline exists for this endpoint. That used to mean
+      // "nothing to compare against, so report the gap and produce zero
+      // intelligence" — an avoidable zero for a source HERMES has genuinely
+      // never looked at. Now: if the durable semantic-harvest state also
+      // has no record of this source, treat this as a legitimate first
+      // observation and extract from it (capped confidence, human review
+      // required, same as a whole-page CHANGED diff). If harvest state
+      // *does* have a record — the governed baseline just hasn't caught up
+      // with a promotion yet — stay conservative and do not re-harvest.
+      if (!hasBeenHarvested(workingHarvestState, source.id)) {
+        firstHarvestCount += 1;
+        const publishedAt = extractPublishedAt(effectiveFetchResult.text);
+        const evidenceSnippet = normalized.slice(0, EVIDENCE_SNIPPET_CHARS);
+        const { candidate, error: buildError } = buildCandidate({
+          source: effectiveSource,
+          contentHash,
+          title,
+          capturedAt,
+          publishedAt,
+          snippet: evidenceSnippet,
+          changeClassification: 'FIRST_SEMANTIC_HARVEST'
+        });
+        if (buildError) { results.push({ id: source.id, status: 'BUILD_ERROR', error: buildError }); continue; }
+        recordCandidate(candidate, source.id);
+        applyBaselineUpdate(source, baselineEntryNow());
+        applyHarvestUpdate(source, capturedAt, contentHash);
+        continue;
+      }
+      results.push({ id: source.id, status: 'BASELINE_REQUIRED', used_fallback: usedFallback, previously_harvested: true });
       continue;
     }
     if (comparison.status === 'UNCHANGED') {
@@ -580,6 +681,43 @@ export async function runCollection(options) {
 
   const baselineOutputPath = dryRun ? baselinePreviewPath : baselinePath;
   if (baselineDirty) saveBaseline(baselineOutputPath, workingBaseline);
+  // Harvest state is written on every real (non-dry-run) run regardless of
+  // baseline_mode/dry_run distinctions that gate the hash baseline — it is
+  // never approval-gated, and a dry run must not silently lose first-harvest
+  // bookkeeping just because it wouldn't have persisted real candidates.
+  if (harvestStateDirty && !dryRun) saveHarvestState(harvestStatePath, workingHarvestState);
+
+  const createdCount = results.filter((r) => r.status === 'CREATED').length;
+  const previewedCount = results.filter((r) => r.status === 'PREVIEWED').length;
+
+  // Zero-result diagnostics (task requirement: "do not allow an unexplained
+  // 0"). Only meaningful when this collection pass produced nothing at all
+  // — checked in priority order from most to least specific cause.
+  let zeroResultReason = null;
+  if (createdCount === 0 && previewedCount === 0) {
+    const disabledCount = results.filter((r) => r.status === 'SKIPPED_DISABLED').length;
+    const fetchErrorCount = results.filter((r) => r.status === 'FETCH_ERROR').length;
+    const baselineRequiredCount = results.filter((r) => r.status === 'BASELINE_REQUIRED').length;
+    const unchangedCount = results.filter((r) => r.status === 'UNCHANGED').length;
+    const emptyOrInsufficientCount = results.filter((r) => r.status === 'EMPTY_CONTENT' || r.status === 'INSUFFICIENT_CONTENT').length;
+    if (sources.length === 0) {
+      zeroResultReason = 'ZERO — no sources were configured/enabled for this run';
+    } else if (disabledCount === sources.length) {
+      zeroResultReason = 'ZERO — all sources skipped due to configuration (disabled)';
+    } else if (baselineMode) {
+      zeroResultReason = 'ZERO — run was in baseline-only mode by design (no candidates are ever produced in baseline mode)';
+    } else if (unchangedCount > 0 && unchangedCount + baselineRequiredCount + emptyOrInsufficientCount + fetchErrorCount + disabledCount >= sources.length) {
+      zeroResultReason = 'ZERO — no sources changed and all previously-harvested sources were unchanged';
+    } else if (baselineRequiredCount > 0) {
+      zeroResultReason = 'ZERO — sources awaiting baseline but already semantically harvested; no new evidence this run';
+    } else if (fetchErrorCount === sources.length) {
+      zeroResultReason = 'ZERO — all sources failed to fetch';
+    } else if (emptyOrInsufficientCount === sources.length) {
+      zeroResultReason = 'ZERO — sources fetched but contained no eligible technical content';
+    } else {
+      zeroResultReason = 'ZERO — sources processed but produced no eligible candidates (see per-source results for detail)';
+    }
+  }
 
   const summary = {
     schema_version: '1.1.0',
@@ -589,13 +727,16 @@ export async function runCollection(options) {
     generated_at: now().toISOString(),
     mode: dryRun ? 'DRY_RUN' : 'LIVE',
     baseline_mode: baselineMode,
+    sources_available: allSources.length,
     sources_total: sources.length,
+    sources_capped: allSources.length - sources.length,
     sources_enabled: sources.filter((s) => s.enabled === true).length,
     sources_checked: sources.filter((s) => s.enabled === true).length,
-    created: results.filter((r) => r.status === 'CREATED').length,
-    previewed: results.filter((r) => r.status === 'PREVIEWED').length,
+    created: createdCount,
+    previewed: previewedCount,
     unchanged: results.filter((r) => r.status === 'UNCHANGED').length,
     changed: changedCount,
+    first_harvest: firstHarvestCount,
     empty_content: results.filter((r) => r.status === 'EMPTY_CONTENT').length,
     insufficient_content: results.filter((r) => r.status === 'INSUFFICIENT_CONTENT').length,
     baseline_required: results.filter((r) => r.status === 'BASELINE_REQUIRED').length,
@@ -605,11 +746,14 @@ export async function runCollection(options) {
     failed: results.filter((r) => r.status === 'FETCH_ERROR').length,
     invalid: results.filter((r) => r.status === 'INVALID_CANDIDATE').length,
     disabled: results.filter((r) => r.status === 'SKIPPED_DISABLED').length,
-    candidates_created: results.filter((r) => r.status === 'CREATED').length,
-    candidates_previewed: results.filter((r) => r.status === 'PREVIEWED').length,
+    candidates_created: createdCount,
+    candidates_previewed: previewedCount,
     candidates_suppressed: results.filter((r) => r.status === 'DUPLICATE').length,
     baseline_updated: baselineDirty,
     baseline_output_path: baselineDirty ? baselineOutputPath : null,
+    harvest_state_updated: harvestStateDirty,
+    harvest_state: workingHarvestState,
+    zero_result_reason: zeroResultReason,
     approval_required: true,
     database_write: false,
     pgvector_write: false,

@@ -17,10 +17,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { runCollection, sourcesFromRegistry, loadSourcesConfig, DEFAULT_MAX_BYTES, DEFAULT_TIMEOUT_MS } from './collect-real-sources-core.mjs';
+import { runCollection, sourcesFromRegistry, loadSourcesConfig, DEFAULT_MAX_BYTES, DEFAULT_TIMEOUT_MS, DEFAULT_MAX_SOURCES_PER_RUN } from './collect-real-sources-core.mjs';
 import { DEFAULT_MIN_CONTENT_LENGTH } from './source-baseline-core.mjs';
 import { loadRegistry, validateRegistry } from './source-registry-core.mjs';
 import { isDryRunActive } from './hermes-core.mjs';
+import { loadHarvestState } from './semantic-harvest-state-core.mjs';
 
 const legacyConfigPath = process.argv[2] || 'hermes/config/real-sources.json';
 const organizationsPath = process.env.HERMES_SOURCE_ORGANIZATIONS_PATH || 'hermes/config/source-organizations.json';
@@ -36,6 +37,13 @@ const maxBytes = Number(process.env.HERMES_COLLECTION_MAX_BYTES || DEFAULT_MAX_B
 // by code; see hermes/PHASE5-LITE.md.
 const baselineMode = String(process.env.HERMES_BASELINE_MODE || 'false').toLowerCase() === 'true';
 const minContentLength = Number(process.env.HERMES_COLLECTION_MIN_CONTENT_LENGTH || DEFAULT_MIN_CONTENT_LENGTH);
+// Weekly capacity (task target: 30-40 sources/run). 0 disables the cap
+// entirely (useful for a manual full-registry sweep); baseline-mode runs
+// are never capped — bootstrapping/refreshing the baseline is a one-time
+// housekeeping pass, not a weekly-quota-constrained intelligence run.
+const maxSources = baselineMode ? 0 : Number(process.env.HERMES_MAX_SOURCES_PER_RUN ?? DEFAULT_MAX_SOURCES_PER_RUN);
+const harvestStatePath = path.resolve('hermes/baselines/source-observations.json');
+const harvestState = loadHarvestState(harvestStatePath);
 
 let sources;
 let sourceMode;
@@ -74,6 +82,9 @@ const summary = await runCollection({
   auditDir: path.resolve('elimfilters-vault/94-sync-log'),
   baselinePath: path.resolve('hermes/baselines/source-baseline.json'),
   baselinePreviewPath: path.resolve('hermes/baselines/source-baseline.preview.json'),
+  harvestState,
+  harvestStatePath,
+  maxSources,
   dryRun,
   baselineMode,
   minContentLength,
@@ -81,8 +92,10 @@ const summary = await runCollection({
   maxBytes
 });
 
-console.log(`[HERMES collect] source_mode=${sourceMode} mode=${summary.mode} baseline_mode=${summary.baseline_mode} sources=${summary.sources_total} enabled=${summary.sources_enabled}`);
-console.log(`[HERMES collect] created=${summary.created} previewed=${summary.previewed} unchanged=${summary.unchanged} changed=${summary.changed} empty_content=${summary.empty_content} insufficient_content=${summary.insufficient_content} baseline_required=${summary.baseline_required} baseline_recorded=${summary.baseline_recorded} duplicates=${summary.duplicates} fetch_errors=${summary.fetch_errors} invalid=${summary.invalid} disabled=${summary.disabled}`);
+console.log(`[HERMES collect] source_mode=${sourceMode} mode=${summary.mode} baseline_mode=${summary.baseline_mode} sources_available=${summary.sources_available} sources=${summary.sources_total} sources_capped=${summary.sources_capped} enabled=${summary.sources_enabled}`);
+console.log(`[HERMES collect] created=${summary.created} previewed=${summary.previewed} unchanged=${summary.unchanged} changed=${summary.changed} first_harvest=${summary.first_harvest} empty_content=${summary.empty_content} insufficient_content=${summary.insufficient_content} baseline_required=${summary.baseline_required} baseline_recorded=${summary.baseline_recorded} duplicates=${summary.duplicates} fetch_errors=${summary.fetch_errors} invalid=${summary.invalid} disabled=${summary.disabled}`);
+if (summary.zero_result_reason) console.log(`[HERMES collect] ${summary.zero_result_reason}`);
+if (summary.harvest_state_updated) console.log(`[HERMES collect] harvest state ${harvestStatePath}${dryRun ? ' (dry run — not written)' : ''}`);
 for (const result of summary.results) {
   if (result.status === 'FETCH_ERROR' || result.status === 'INVALID_CANDIDATE' || result.status === 'BUILD_ERROR') {
     console.warn(`[HERMES collect] ${result.status} ${result.id}: ${result.error || (result.errors || []).join('; ')}`);
