@@ -2,12 +2,8 @@
 
 /**
  * ELIMFILTERS catalog governance V3.
- *
- * Safe migration:
- * - installs the future-write codigo_base trigger
- * - backfills ONLY enrichment_data.codigo_base_governance
- * - does NOT change sku, codigo_base, oem_codes, competitor_codes, duty or product specs
- * - codigo_base is independent from alternate-code columns
+ * Safe migration: installs future-write enforcement and backfills ONLY
+ * enrichment_data.codigo_base_governance. Protected catalog fields are untouched.
  */
 
 require('dotenv').config();
@@ -73,27 +69,20 @@ BEGIN
       OR NEW.duty IS DISTINCT FROM OLD.duty
     ));
 
-  IF NOT strict_validation THEN
-    RETURN NEW;
-  END IF;
+  IF NOT strict_validation THEN RETURN NEW; END IF;
 
   IF duty_text = 'HEAVY_DUTY' THEN
-    -- Primary authority: Donaldson. Canonical code does NOT need duplication in alternates.
     IF approved_manufacturer = 'DONALDSON'
        AND coalesce((gov->>'primary_manufacturer_verified')::boolean, false) IS TRUE
        AND approved_code_norm = base_norm THEN
       RETURN NEW;
     END IF;
 
-    -- If current alternate evidence shows Donaldson, an unverified non-Donaldson base is blocked.
     IF observed_donaldson THEN
-      IF base_in_observed_donaldson THEN
-        RETURN NEW;
-      END IF;
+      IF base_in_observed_donaldson THEN RETURN NEW; END IF;
       RAISE EXCEPTION 'CATALOG_POLICY_V3: HD SKU % has Donaldson evidence; codigo_base requires verified Donaldson authority', NEW.sku;
     END IF;
 
-    -- Absence from JSONB is not absence. Fallback requires explicit manufacturing-absence evidence.
     IF coalesce((gov->>'donaldson_absence_verified')::boolean, false) IS NOT TRUE THEN
       RAISE EXCEPTION 'CATALOG_POLICY_V3: HD SKU % fallback requires verified Donaldson manufacturing absence', NEW.sku;
     END IF;
@@ -121,7 +110,6 @@ BEGIN
   END IF;
 
   IF duty_text = 'LIGHT_DUTY' THEN
-    -- Primary authority: MANN-FILTER. Canonical code does NOT need duplication in alternates.
     IF approved_manufacturer IN ('MANN','MANNFILTER','MANNHUMMEL')
        AND coalesce((gov->>'primary_manufacturer_verified')::boolean, false) IS TRUE
        AND approved_code_norm = base_norm THEN
@@ -129,9 +117,7 @@ BEGIN
     END IF;
 
     IF observed_mann THEN
-      IF base_in_observed_mann THEN
-        RETURN NEW;
-      END IF;
+      IF base_in_observed_mann THEN RETURN NEW; END IF;
       RAISE EXCEPTION 'CATALOG_POLICY_V3: LD SKU % has MANN-FILTER evidence; codigo_base requires verified MANN-FILTER authority', NEW.sku;
     END IF;
 
@@ -179,12 +165,13 @@ async function installPolicyV3({ backfill = true } = {}) {
     const stateCounts = {};
     if (backfill) {
       const current = await client.query(`
-        SELECT count(*)::int AS n
+        SELECT
+          count(*)::int AS total,
+          count(*) FILTER (WHERE enrichment_data->'codigo_base_governance'->>'policy_version' = $1)::int AS v3
         FROM elimfilters_catalog
-        WHERE enrichment_data->'codigo_base_governance'->>'policy_version' = $1
       `, [POLICY_VERSION]);
 
-      if (current.rows[0].n !== 12182) {
+      if (current.rows[0].v3 !== current.rows[0].total) {
         const { rows } = await client.query(`
           SELECT sku, codigo_base, duty, competitor_codes, oem_codes, enrichment_data
           FROM elimfilters_catalog
