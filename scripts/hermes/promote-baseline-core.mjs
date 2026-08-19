@@ -21,6 +21,7 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
 import { isDateTime } from './hermes-core.mjs';
 import { EMPTY_STRING_SHA256 } from './source-baseline-core.mjs';
 import {
@@ -40,6 +41,21 @@ export const STATE_BRANCH = 'hermes-state';
 export const STATE_BASELINE_PATH = 'state/source-baseline.json';
 export const STATE_BACKUPS_DIR = 'state/backups';
 export const STATE_AUDIT_PATH = 'state/promotion-audit.json';
+// Incident 2026-08-18: five separate manual `workflow_dispatch` runs each
+// correctly authorized (token present, all flags set) promoted the baseline
+// within a ~3.5 hour window. No single dispatch caused more than one
+// promotion — this cooldown exists to make *repeated human dispatches*
+// require deliberate intent, not to fix a code bug (there wasn't one in the
+// single-promotion path). A cooldown of 0/negative disables it. Read at
+// call time (not module load) so callers/tests can override per-invocation
+// without env-var ordering games.
+export const DEFAULT_MIN_PROMOTION_INTERVAL_MS = 60 * 60 * 1000;
+export function resolveMinPromotionIntervalMs() {
+  const raw = process.env.HERMES_MIN_PROMOTION_INTERVAL_MS;
+  if (raw === undefined || raw === '') return DEFAULT_MIN_PROMOTION_INTERVAL_MS;
+  const parsed = Number(raw);
+  return Number.isFinite(parsed) ? parsed : DEFAULT_MIN_PROMOTION_INTERVAL_MS;
+}
 
 export function sha256HexOfString(content) {
   return crypto.createHash('sha256').update(content, 'utf8').digest('hex');
@@ -192,7 +208,7 @@ export function restoreBaselineFromState({ cwd = process.cwd(), remote = 'origin
  * untouched (git only moves the ref after the object graph is fully built,
  * and a rejected push moves nothing at all).
  */
-export function promoteBaselineToState({ cwd = process.cwd(), remote = 'origin', previewPath, registry, minContentLength, now = () => new Date() }) {
+export function promoteBaselineToState({ cwd = process.cwd(), remote = 'origin', previewPath, registry, minContentLength, now = () => new Date(), minPromotionIntervalMs = resolveMinPromotionIntervalMs() }) {
   const nowIso = now().toISOString();
 
   if (!fs.existsSync(previewPath)) {
@@ -220,6 +236,22 @@ export function promoteBaselineToState({ cwd = process.cwd(), remote = 'origin',
   } catch (error) {
     return { status: 'FAILED', reason: `could not read current hermes-state from '${remote}': ${error.message}`, promoted_at: nowIso, errors: [] };
   }
+  if (Number.isFinite(minPromotionIntervalMs) && minPromotionIntervalMs > 0) {
+    const lastPromotedEvent = [...current.audit].reverse().find((event) => event.event === 'PROMOTED');
+    if (lastPromotedEvent?.timestamp) {
+      const elapsedMs = now().getTime() - new Date(lastPromotedEvent.timestamp).getTime();
+      if (Number.isFinite(elapsedMs) && elapsedMs < minPromotionIntervalMs) {
+        const remainingMinutes = Math.ceil((minPromotionIntervalMs - elapsedMs) / 60000);
+        return {
+          status: 'FAILED',
+          reason: `promotion cooldown active — the last promotion was at ${lastPromotedEvent.timestamp}, ${remainingMinutes} minute(s) before the next one is allowed (HERMES_MIN_PROMOTION_INTERVAL_MS=${minPromotionIntervalMs})`,
+          promoted_at: nowIso,
+          errors: []
+        };
+      }
+    }
+  }
+
   const newBaselineContent = `${JSON.stringify(baseline, null, 2)}\n`;
 
   let backups = current.backups;

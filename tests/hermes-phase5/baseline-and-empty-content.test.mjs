@@ -161,14 +161,26 @@ test('8) empty/insufficient content never overwrites a previously valid baseline
   assert.deepEqual(baselineAfter, baselineBefore, 'baseline must be byte-for-byte unchanged after empty content');
 });
 
-// 9) Fuente sin baseline queda BASELINE_REQUIRED.
-test('9) a source with no baseline entry yet is BASELINE_REQUIRED, never silently treated as changed', async () => {
+// 9) Fuente sin baseline: primera observación semántica real, nunca
+// silenciosamente tratada como un "change" (2026-08-19 hardening — see
+// weekly-hardening.test.mjs for the full first-harvest-vs-recurring-change
+// suite). A source HERMES has genuinely never harvested is no longer an
+// avoidable zero; it is only ever silently skipped (BASELINE_REQUIRED, no
+// candidate) when the durable semantic-harvest log shows it WAS already
+// harvested before but the governed baseline just hasn't caught up yet —
+// exercised separately in weekly-hardening.test.mjs test 4.
+test('9) a source with no baseline entry AND no harvest record is a genuine first-harvest, never silently treated as a "change"', async () => {
   const dirs = makeDirs();
   const summary = await runCollection({ ...dirs, sources: [source()], dryRun: false, fetchImpl: htmlResponse(REAL_BODY) });
-  assert.equal(summary.results[0].status, 'BASELINE_REQUIRED');
-  assert.equal(summary.baseline_required, 1);
-  assert.equal(summary.created, 0);
-  assert.equal(fs.existsSync(dirs.baselinePath), false, 'comparison mode must never silently seed a baseline for an unknown source');
+  assert.equal(summary.results[0].status, 'CREATED');
+  assert.equal(summary.first_harvest, 1);
+  assert.equal(summary.changed, 0, 'a first observation must never be counted as a "change" — there was nothing to change from');
+  assert.equal(summary.baseline_required, 0);
+  assert.equal(summary.created, 1);
+  const [file] = fs.readdirSync(dirs.realCandidatesDir);
+  const candidate = JSON.parse(fs.readFileSync(path.join(dirs.realCandidatesDir, file), 'utf8'));
+  assert.equal(candidate.change_classification, 'FIRST_SEMANTIC_HARVEST', 'must be labeled as a first observation, not CHANGE_DETECTED_REQUIRES_RESEARCH');
+  assert.ok(fs.existsSync(dirs.baselinePath), 'first-harvest still records a baseline entry going forward');
 });
 
 // 10) DRY RUN no reemplaza baseline real.

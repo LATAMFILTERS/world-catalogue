@@ -272,7 +272,7 @@ test('1/2) a baseline promoted from one clone is restored correctly by a totally
   const originDir = makeBareOrigin();
   const promoterClone = makeClone(originDir);
   writePreview(promoterClone, validBaseline());
-  const promoteResult = promoteBaselineToState({ cwd: promoterClone, remote: 'origin', previewPath: path.join(promoterClone, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200 });
+  const promoteResult = promoteBaselineToState({ cwd: promoterClone, remote: 'origin', previewPath: path.join(promoterClone, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0 });
   assert.equal(promoteResult.status, 'PROMOTED');
 
   // A brand-new clone, standing in for a fresh GitHub Actions runner next
@@ -292,7 +292,7 @@ test('2b) restore-baseline-from-state.mjs CLI performs the same restoration end-
   const originDir = makeBareOrigin();
   const promoterClone = makeClone(originDir);
   writePreview(promoterClone, validBaseline());
-  promoteBaselineToState({ cwd: promoterClone, remote: 'origin', previewPath: path.join(promoterClone, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200 });
+  promoteBaselineToState({ cwd: promoterClone, remote: 'origin', previewPath: path.join(promoterClone, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0 });
 
   const freshRunnerClone = makeClone(originDir);
   const result = spawnSync(process.execPath, [RESTORE_SCRIPT], { cwd: freshRunnerClone, env: { PATH: process.env.PATH }, encoding: 'utf8' });
@@ -340,7 +340,7 @@ test("4) promotion fails closed (never PROMOTED) when the 'origin' remote is unr
   const result = promoteBaselineToState({
     cwd: cloneDir, remote: 'origin',
     previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'),
-    registry: validRegistry(), minContentLength: 200
+    registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0
   });
   assert.equal(result.status, 'FAILED');
   assert.notEqual(result.status, 'PROMOTED');
@@ -390,10 +390,16 @@ test('7b) the promotion step still forces HERMES_COLLECTION_DRY_RUN=true, indepe
 });
 
 // ---------------------------------------------------------------------------
-// Scenario 8 — the read job cannot write; only the manual write jobs can.
+// Scenario 8 — the approval-gated baseline is reachable only through the
+// manual, token-gated jobs, even though weekly-collection also now holds
+// contents:write (added so it can sync the *separate*, non-approval-gated
+// semantic-harvest observation file — see sync-harvest-state-core.mjs and
+// weekly-hardening.test.mjs). Holding the permission is not the safety
+// boundary; only promote-baseline.mjs/rollback-baseline.mjs ever run, and
+// they refuse to act without HERMES_BASELINE_APPROVAL_TOKEN, checked below.
 // ---------------------------------------------------------------------------
 
-test('8) the weekly-collection (read) job carries no contents:write permission, while both write jobs declare it explicitly', () => {
+test('8) the promote and rollback jobs declare contents:write and remain the only steps that ever invoke a baseline-mutating script', () => {
   const workflowText = fs.readFileSync(WORKFLOW_PATH, 'utf8');
   assert.match(workflowText, /^permissions:\s*\n\s*contents:\s*read/m, 'workflow-level default permission must be read-only');
 
@@ -403,8 +409,20 @@ test('8) the weekly-collection (read) job carries no contents:write permission, 
   const rollbackJobBlock = /rollback-baseline:\s*\n([\s\S]*?)\n {2}weekly-collection:/.exec(workflowText)[1];
   assert.match(rollbackJobBlock, /permissions:\s*\n\s*contents:\s*write/);
 
+  // weekly-collection also declares contents:write (for harvest-state sync
+  // only) — but must never call the promote/rollback scripts or set the
+  // approval token itself.
   const weeklyJobBlock = workflowText.slice(workflowText.indexOf('  weekly-collection:'));
-  assert.doesNotMatch(weeklyJobBlock, /contents:\s*write/);
+  assert.match(weeklyJobBlock, /permissions:\s*\n\s*contents:\s*write/);
+  assert.doesNotMatch(weeklyJobBlock, /hermes:baseline:promote/);
+  assert.doesNotMatch(weeklyJobBlock, /hermes:baseline:rollback/);
+  // Only the live env-var reference matters here — the job's own comment
+  // explaining WHY the token stays out of scope necessarily mentions its
+  // name in prose, which must not itself trip this check.
+  assert.doesNotMatch(weeklyJobBlock, /HERMES_BASELINE_APPROVAL_TOKEN:\s*\$\{\{/);
+  // It IS expected to call the harvest-state sync scripts.
+  assert.match(weeklyJobBlock, /hermes:harvest:restore/);
+  assert.match(weeklyJobBlock, /hermes:harvest:persist/);
 });
 
 // ---------------------------------------------------------------------------
@@ -418,7 +436,7 @@ test('9/10) a promotion changes only refs/heads/hermes-state on the remote — r
   const before = mainSha(originDir);
 
   writePreview(cloneDir, validBaseline());
-  const result = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200 });
+  const result = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0 });
   assert.equal(result.status, 'PROMOTED');
 
   assert.equal(mainSha(originDir), before, 'main must not move as a side effect of promoting the baseline');
@@ -474,7 +492,8 @@ test('12) at most 5 backups are ever kept on hermes-state — older ones are rot
       cwd: cloneDir, remote: 'origin',
       previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'),
       registry: validRegistry(), minContentLength: 200,
-      now: () => new Date(Date.UTC(2026, 0, 1, 0, 0, i))
+      now: () => new Date(Date.UTC(2026, 0, 1, 0, 0, i)),
+      minPromotionIntervalMs: 0
     });
     assert.equal(result.status, 'PROMOTED');
     lastCommit = result.state_branch_commit;
@@ -493,11 +512,11 @@ test('13) rollback restores an earlier promoted baseline exactly, and itself bac
   const cloneDir = makeClone(originDir);
 
   writePreview(cloneDir, validBaseline({ test_ep: validEntry({ normalized_hash: 'a'.repeat(64) }) }));
-  const first = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200 });
+  const first = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0 });
   assert.equal(first.status, 'PROMOTED');
 
   writePreview(cloneDir, validBaseline({ test_ep: validEntry({ normalized_hash: 'c'.repeat(64) }) }));
-  const second = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200 });
+  const second = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0 });
   assert.equal(second.status, 'PROMOTED');
   assert.ok(second.backup_path, 'the second promotion must have backed up the first baseline');
   const backupName = second.backup_path.split('/').pop();
@@ -564,7 +583,7 @@ test('15) a concurrent promotion whose view of hermes-state is stale is rejected
   // A promotes for real in between B's read and B's (about to happen) push
   // — exactly the interleaving a genuine race would produce.
   writePreview(cloneA, validBaseline({ test_ep: validEntry({ normalized_hash: 'a'.repeat(64) }) }));
-  const resultA = promoteBaselineToState({ cwd: cloneA, remote: 'origin', previewPath: path.join(cloneA, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200 });
+  const resultA = promoteBaselineToState({ cwd: cloneA, remote: 'origin', previewPath: path.join(cloneA, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0 });
   assert.equal(resultA.status, 'PROMOTED');
 
   // B now pushes the promotion it built from its stale (pre-A) read — the
@@ -600,7 +619,7 @@ test('16) a successful promotion is only ever reported after independently re-re
   const originDir = makeBareOrigin();
   const cloneDir = makeClone(originDir);
   writePreview(cloneDir, validBaseline());
-  const result = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200 });
+  const result = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0 });
   assert.equal(result.status, 'PROMOTED');
   assert.equal(result.remote_verified, true);
 
@@ -650,7 +669,7 @@ test('a failed promotion (invalid preview) never creates or moves hermes-state a
   const originDir = makeBareOrigin();
   const cloneDir = makeClone(originDir);
   writePreview(cloneDir, validBaseline({ test_ep: validEntry({ response_status: 500 }) })); // invalid: not 200
-  const result = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200 });
+  const result = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0 });
   assert.equal(result.status, 'FAILED');
   assert.equal(resolveRemoteBranchSha({ cwd: cloneDir, remote: 'origin', branch: STATE_BRANCH }), null, 'hermes-state must not even exist after a failed first promotion attempt');
 });
@@ -659,7 +678,7 @@ test('no backup is created (and none is claimed) when no prior baseline existed 
   const originDir = makeBareOrigin();
   const cloneDir = makeClone(originDir);
   writePreview(cloneDir, validBaseline());
-  const result = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200 });
+  const result = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0 });
   assert.equal(result.status, 'PROMOTED');
   assert.equal(result.backup_path, null);
 });
@@ -668,7 +687,7 @@ test('a successful promotion writes exactly the three expected state paths — n
   const originDir = makeBareOrigin();
   const cloneDir = makeClone(originDir);
   writePreview(cloneDir, validBaseline());
-  const result = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200 });
+  const result = promoteBaselineToState({ cwd: cloneDir, remote: 'origin', previewPath: path.join(cloneDir, 'hermes', 'baselines', 'source-baseline.preview.json'), registry: validRegistry(), minContentLength: 200, minPromotionIntervalMs: 0 });
   const listAll = execFileSync('git', ['ls-tree', '-r', '--name-only', result.state_branch_commit], { cwd: cloneDir, encoding: 'utf8' }).trim().split('\n').filter(Boolean).sort();
   assert.deepEqual(listAll, ['state/promotion-audit.json', 'state/source-baseline.json']);
 });

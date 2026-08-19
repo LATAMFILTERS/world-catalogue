@@ -102,7 +102,7 @@ test('with registry files present, the CLI uses the registry and never touches r
   const result = runCli(cwd);
   assert.equal(result.status, 0, result.stderr);
   assert.match(result.stdout, /source_mode=registry organizations=1 endpoints=0 active_and_enabled=0/);
-  assert.match(result.stdout, /source_mode=registry mode=DRY_RUN baseline_mode=false sources=0 enabled=0/);
+  assert.match(result.stdout, /source_mode=registry mode=DRY_RUN baseline_mode=false sources_available=0 sources=0 sources_capped=0 enabled=0/);
   assert.doesNotMatch(result.stdout, /legacy/);
 });
 

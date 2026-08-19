@@ -85,15 +85,19 @@ const packageData = {
   source_collection: collectionSummary ? {
     baseline_mode: collectionSummary.baseline_mode ?? false,
     sources_checked: collectionSummary.sources_checked ?? collectionSummary.sources_enabled ?? 0,
+    sources_available: collectionSummary.sources_available ?? null,
+    sources_capped: collectionSummary.sources_capped ?? 0,
     unchanged: collectionSummary.unchanged ?? 0,
     changed: collectionSummary.changed ?? 0,
+    first_harvest: collectionSummary.first_harvest ?? 0,
     empty_content: collectionSummary.empty_content ?? 0,
     insufficient_content: collectionSummary.insufficient_content ?? 0,
     failed: collectionSummary.failed ?? collectionSummary.fetch_errors ?? 0,
     baseline_required: collectionSummary.baseline_required ?? 0,
     candidates_created: collectionSummary.candidates_created ?? collectionSummary.created ?? 0,
     candidates_previewed: collectionSummary.candidates_previewed ?? collectionSummary.previewed ?? 0,
-    candidates_suppressed: collectionSummary.candidates_suppressed ?? collectionSummary.duplicates ?? 0
+    candidates_suppressed: collectionSummary.candidates_suppressed ?? collectionSummary.duplicates ?? 0,
+    zero_result_reason: collectionSummary.zero_result_reason ?? null
   } : null,
   baseline_promotion: promotionSummary ? {
     status: promotionSummary.status,
@@ -115,6 +119,9 @@ const packageData = {
 const lines = ['# HERMES Weekly Intelligence Review', ''];
 if (packageData.source_collection?.baseline_mode) lines.push('**INITIAL BASELINE — NO INTELLIGENCE CANDIDATES GENERATED**', '');
 if (packageData.baseline_promotion?.banner) lines.push(`**${packageData.baseline_promotion.banner}**`, '');
+if (packageData.totals.review_ready === 0 && packageData.source_collection?.zero_result_reason) {
+  lines.push(`**${packageData.source_collection.zero_result_reason}**`, '');
+}
 
 lines.push(
   `Generated: ${end}`, `Reporting period: ${start} — ${end}`, '',
@@ -133,17 +140,21 @@ if (packageData.source_collection) {
   const sc = packageData.source_collection;
   lines.push(
     '## Source Collection', '',
+    `- Sources available: ${sc.sources_available ?? 'n/a'}${sc.sources_capped ? ` (${sc.sources_capped} skipped by weekly capacity cap)` : ''}`,
     `- Sources checked: ${sc.sources_checked}`,
     `- Unchanged: ${sc.unchanged}`,
     `- Changed: ${sc.changed}`,
+    `- First-time semantic harvest: ${sc.first_harvest}`,
     `- Empty content: ${sc.empty_content}`,
     `- Insufficient content: ${sc.insufficient_content}`,
     `- Failed: ${sc.failed}`,
-    `- Baseline required: ${sc.baseline_required}`,
+    `- Baseline required (already harvested, no new evidence): ${sc.baseline_required}`,
     `- Candidates created: ${sc.candidates_created}`,
     `- Candidates previewed: ${sc.candidates_previewed}`,
-    `- Candidates suppressed: ${sc.candidates_suppressed}`, ''
+    `- Candidates suppressed: ${sc.candidates_suppressed}`
   );
+  if (sc.zero_result_reason) lines.push(`- Zero-result reason: ${sc.zero_result_reason}`);
+  lines.push('');
 }
 
 if (packageData.baseline_promotion) {

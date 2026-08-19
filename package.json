@@ -33,6 +33,8 @@
     "hermes:baseline:restore": "node scripts/hermes/restore-baseline-from-state.mjs",
     "hermes:baseline:promote": "node scripts/hermes/promote-baseline.mjs",
     "hermes:baseline:rollback": "node scripts/hermes/rollback-baseline.mjs",
+    "hermes:harvest:restore": "node scripts/hermes/sync-harvest-state.mjs restore",
+    "hermes:harvest:persist": "node scripts/hermes/sync-harvest-state.mjs persist",
     "hermes:catalogue": "node scripts/hermes/catalogue-intelligence.mjs",
     "hermes:catalogue:snapshot": "node scripts/hermes/export-catalogue-snapshot.mjs",
     "hermes:catalogue:bridge": "node scripts/hermes/phase5-to-catalogue-discoveries.mjs",
