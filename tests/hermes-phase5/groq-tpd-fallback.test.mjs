@@ -1,6 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createResilientFetch } from '../../scripts/hermes/industry-sweep-reliable.mjs';
+import { createResilientFetch, _resetQuotaStateForTests } from '../../scripts/hermes/industry-sweep-reliable.mjs';
+
+// fatalDailyQuota/quotaState/exhaustedModels are run-scoped (module-level),
+// not per-call, by design (see the run-scoped circuit-breaker fix,
+// 2026-08-19) — each test() below must start from a clean slate rather than
+// inheriting exhaustion state a previous test in this file already tripped.
+test.beforeEach(() => _resetQuotaStateForTests());
 
 function headers(values = {}) {
   return { get: (name) => values[name.toLowerCase()] ?? null };
