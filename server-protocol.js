@@ -10,6 +10,10 @@ async function start() {
   const queue = await installHistoricalSanitationQueue();
   console.log('[catalog-historical-sanitation-queue]', JSON.stringify(queue));
 
+  const { installApplicationEvidenceGovernance } = require('./scripts/migrations/run_077_application_evidence_governance');
+  const applicationGovernance = await installApplicationEvidenceGovernance();
+  console.log('[catalog-application-governance]', JSON.stringify(applicationGovernance));
+
   // Apply only the small curated evidence batch whose exact official Donaldson
   // product URLs were independently reviewed. This path exists because Donaldson
   // returns HTTP 403 to Render-origin requests; 403 is never treated as absence.
