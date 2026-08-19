@@ -16,6 +16,8 @@
 /lib/catalog-write-gateway.js @elimfilters
 /lib/catalog-codigo-base-policy.js @elimfilters
 /lib/catalog-codigo-base-governance.js @elimfilters
+/lib/catalog-application-governance.js @elimfilters
+/lib/catalog-application-write-service.js @elimfilters
 /scripts/audit-catalog-governance-daily.js @elimfilters
 /scripts/catalog-historical-sanitation.js @elimfilters
 /scripts/migrations/run_07*.js @elimfilters
