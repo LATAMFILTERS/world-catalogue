@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "active_market": "Paraguay",
+  "active_wave": "south-cone-lab",
+  "mode": "CONTROLLED_PILOT",
+  "status": "READY_FOR_DISCOVERY",
+  "metrics": {
+    "companies_discovered": 0,
+    "valid_accounts": 0,
+    "priority_a": 0,
+    "priority_b": 0,
+    "contacts_verified": 0,
+    "outreach_sent": 0,
+    "replies": 0,
+    "positive_replies": 0,
+    "meetings": 0,
+    "rfqs": 0,
+    "quotes_sent": 0,
+    "opportunities": 0,
+    "customers": 0,
+    "bounce_rate_pct": null,
+    "contact_accuracy_pct": null,
+    "workflow_success_pct": null
+  },
+  "pilot_limits": {
+    "initial_discovery_batch": 25,
+    "initial_outreach_batch": 5,
+    "max_outreach_before_manual_review": 10
+  },
+  "readiness": {
+    "conversation_memory_verified": false,
+    "followup_state_verified": false,
+    "supplier_quote_flow_verified": false,
+    "pricing_flow_verified": false,
+    "executive_summary_verified": false
+  },
+  "next_action": "DISCOVER_PARAGUAY_ACCOUNTS",
+  "last_updated": "2026-08-19T23:06:00Z"
+}
