@@ -11,3 +11,16 @@
 /.github/protocol-lock.json @elimfilters
 /scripts/verify-protocol-lock.js @elimfilters
 /package.json @elimfilters
+
+# Catalog governance — changes here require explicit owner review
+/lib/catalog-write-gateway.js @elimfilters
+/lib/catalog-codigo-base-policy.js @elimfilters
+/lib/catalog-codigo-base-governance.js @elimfilters
+/scripts/audit-catalog-governance-daily.js @elimfilters
+/scripts/catalog-historical-sanitation.js @elimfilters
+/scripts/migrations/run_07*.js @elimfilters
+/tests/catalog-*.test.js @elimfilters
+/.github/workflows/catalog-governance.yml @elimfilters
+/import_donaldson.py @elimfilters
+/frontend/src/scripts/ingest-donaldson-production.ts @elimfilters
+/frontend/src/scripts/ingest-fleetguard-production.ts @elimfilters
