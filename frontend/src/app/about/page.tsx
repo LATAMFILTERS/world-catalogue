@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
-import { GlobalCommercialModel } from '@/components/GlobalCommercialModel';
+import { AboutStrategicModel } from '@/components/AboutStrategicModel';
 import '@/i18n';
 
 const ENGINEERING_METHOD = [
@@ -150,7 +150,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <GlobalCommercialModel variant="about" />
+      <AboutStrategicModel />
 
       <section style={principlesSection}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
