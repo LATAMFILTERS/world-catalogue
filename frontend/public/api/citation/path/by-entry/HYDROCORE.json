@@ -3,16 +3,17 @@
   "path_count": 1,
   "paths": [
     {
-      "path_id": "PATH_C_HYDROCORE_048",
+      "path_id": "PATH_C_HYDROCORE_041",
       "path_type": "C",
       "entry_node": "HYDROCORE",
       "entry_type": "technology",
       "industry": null,
       "valid": true,
       "terminal_product_families": [
+        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_C_HYDROCORE_048.json"
+      "href": "/api/citation/path/PATH_C_HYDROCORE_041.json"
     }
   ]
 }

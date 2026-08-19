@@ -31,12 +31,12 @@ industry_frequency:
   - "[[TRUCKS_FLEETS]]"
   - "[[AUTOMOTIVE]]"
 resolved_by_technologies:
-  - "[[TURBOCORE]]"
+  - "[[HYDROCORE]]"
 applicable_standards:
   - "[[ASTM_D6304]]"
   - "[[ISO_12937]]"
 recommended_product_families:
-  - "[[FUEL_PRIMARY]]"
+  - "[[FUEL_WATER_SEPARATOR]]"
 mtbf_reduction: "Fuel injector service life reduced from 15,000–25,000 hours to 3,000–6,000 hours under sustained water contamination exceeding 200 ppm; fuel pump service life reduced 40–60%"
 cost_impact: "Fuel injector replacement $800–$4,000 per unit; full injector set replacement $5,000–$30,000; high-pressure fuel pump replacement $3,000–$12,000"
 downtime_impact: "Filter plugging event: 0.5–2 hours; injector failure: 1–3 days; full fuel system service on mine haul truck: 2–5 days"
@@ -75,14 +75,14 @@ Cold-weather filter plugging combines water contamination with wax crystallisati
 - [[AUTOMOTIVE|Automotive]] (LOW-MEDIUM — commercial diesel passenger vehicles with retail fuel; filter plugging risk lower but present in humid climates)
 
 ### Solution Technologies
-- [[TURBOCORE|TURBOCORE™ — Water-Separation Fuel Filtration]] (primary: fuel/water separation and high-efficiency particulate capture protecting injection systems)
+- [[HYDROCORE|HYDROCORE™ — Fuel/Water Separation Technology]] (primary: fuel/water separation across approved spin-on, cartridge, and Turbine Series FH/FG architectures, protecting injection systems)
 
 ### Governing Standards
 - [[ASTM_D6304|ASTM D6304]] — standard test for water in diesel fuel; compliance baseline for storage and system monitoring
 - [[ISO_12937|ISO 12937]] — diesel fuel water content test method used for fleet fuel quality monitoring
 
 ### Recommended Product Families
-- [[FUEL_PRIMARY|Primary Fuel System Protection (TURBOCORE™)]]
+- [[FUEL_WATER_SEPARATOR|Fuel Water Separation (HYDROCORE™)]]
 
 ---
 
@@ -93,12 +93,12 @@ FUEL_FILTER_PLUGGING
     ↓ root_contamination
 DIESEL_WATER
     ↓ resolved_by
-TURBOCORE (primary)
+HYDROCORE (primary)
     ↓ ProductFamily lookup
-FUEL_PRIMARY (via TURBOCORE)
+FUEL_WATER_SEPARATOR (via HYDROCORE)
     ↓ Part Search API
 GET /api/part-search?problem=FUEL_FILTER_PLUGGING&industry=AGRICULTURE
-→ SKU results: TURBOCORE™ fuel/water separator elements for tractors and harvesters
+→ SKU results: HYDROCORE™ fuel/water separator elements for tractors and harvesters
 ```
 
 ---
@@ -130,17 +130,18 @@ ASTM D6304: Water in diesel fuel test standard; compliance baseline for fuel qua
 ISO 12937: Diesel fuel water content test method for fleet and bulk storage monitoring
 
 RELATED_TECHNOLOGIES
-TURBOCORE: Fuel/water separation and high-efficiency particulate capture protecting
-high-pressure common rail injection systems from water and contamination damage
+HYDROCORE: Fuel/water separation across approved spin-on, cartridge, and Turbine Series
+FH/FG architectures, protecting high-pressure common rail injection systems from water
+and contamination damage
 
 INDUSTRIAL_ROLE
 Fuel filter plugging is the most operationally disruptive fuel contamination event because
-it is rapid-onset and temperature-sensitive. It is the primary commercial target of the
-FUEL_PRIMARY product family and the sole focus of the TURBOCORE technology platform.
+it is rapid-onset and temperature-sensitive. It is the primary target of the
+FUEL_WATER_SEPARATOR product family, governed by HYDROCORE™.
 
 CITATION_REFERENCE
 source: elimfilters.com/knowledge-center/engineering/fluid-cleanliness
 concept: Fuel Filter Plugging — Fuel System Problem
-version: 1.0
-last_updated: 2026-06-03
+version: 1.1
+last_updated: 2026-08-18
 ```

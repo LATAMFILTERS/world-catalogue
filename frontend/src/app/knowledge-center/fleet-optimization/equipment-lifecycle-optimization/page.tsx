@@ -121,7 +121,7 @@ export default function EquipmentLifecycleOptimizationPage() {
                 phase: 'Phase 3: Operational Deployment',
                 vulnerability: 'High-contamination environments (dust, moisture) without barrier protection',
                 risk: 'Air intake, fuel, and hydraulic contamination overwhelm inadequate filtration',
-                solution: 'Multi-stage air intake (MACROCORE), fuel water separation (TURBOCORE), offline kidney-loops (NANOFORCE)',
+                solution: 'Multi-stage air intake (MACROCORE), fuel water separation (HYDROCORE), offline kidney-loops (NANOFORCE)',
               },
               {
                 phase: 'Phase 4: Maintenance & Service',
@@ -290,7 +290,7 @@ export default function EquipmentLifecycleOptimizationPage() {
             color: 'rgba(255,255,255,0.68)',
             textAlign: 'justify',
           }}>
-            A mining operation running 20 heavy-duty trucks in dusty, high-moisture environments experienced 3–4 unplanned failures per truck per year (60–80 total failures across fleet). Average equipment lifespan was 4,500 hours. Equipment replacement budget consumed 40% of maintenance spending. ELIMFILTERS implemented acquisition redesign for new truck purchases: dual-stage MACROCORE air intake, TURBOCORE fuel separation, SYNTRAX lube oil filtration, and NANOFORCE kidney-loop for hydraulic systems. Existing fleet received retrofit kidney-loops. Within 6 years, lifecycle results showed: new equipment reaching 14,000+ hours (3.1× longer), unplanned failures dropped to 0.5 per truck per year (92% reduction), annual replacement equipment budget dropped from $900K to $180K, bearing/injector failures reduced to single-digit per fleet. Total 6-year savings: $4.3M. ROI on filtration investment: 1,200% (equipment lasted 3× longer, eliminating $2.7M in premature replacements).
+            A mining operation running 20 heavy-duty trucks in dusty, high-moisture environments experienced 3–4 unplanned failures per truck per year (60–80 total failures across fleet). Average equipment lifespan was 4,500 hours. Equipment replacement budget consumed 40% of maintenance spending. ELIMFILTERS implemented acquisition redesign for new truck purchases: dual-stage MACROCORE air intake, HYDROCORE fuel separation, SYNTRAX lube oil filtration, and NANOFORCE kidney-loop for hydraulic systems. Existing fleet received retrofit kidney-loops. Within 6 years, lifecycle results showed: new equipment reaching 14,000+ hours (3.1× longer), unplanned failures dropped to 0.5 per truck per year (92% reduction), annual replacement equipment budget dropped from $900K to $180K, bearing/injector failures reduced to single-digit per fleet. Total 6-year savings: $4.3M. ROI on filtration investment: 1,200% (equipment lasted 3× longer, eliminating $2.7M in premature replacements).
           </p>
         </motion.section>
 

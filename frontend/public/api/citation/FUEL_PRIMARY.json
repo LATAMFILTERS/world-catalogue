@@ -19,14 +19,14 @@
     "concept": "Primary Fuel Protection Product Family",
     "version": "2.0",
     "last_updated": "2026-08-15",
-    "content_hash": "sha256:abe10eb558e2e226864df040d1760b202557ef3764daa08359a1d592fa258092"
+    "content_hash": "sha256:3b9e59f35b3128e139c99f91d353aec049295de92384c72a327b9e2a42aa3bc2"
   },
   "canonical": {
     "definition": "Primary Fuel Protection — the SYNTAPORE™-technology filter element family for diesel\nfuel particulate filtration (primary, secondary and cartridge, no water-separation\nfunction), covering 1,903 SKUs across agricultural, marine, mining, power generation,\nand commercial transport applications.",
     "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements SYNTAPORE™\nparticulate-filtration technology",
     "failure_impact": "Selecting incorrect element from this family (wrong efficiency class or wrong flow\nrate) or exceeding service interval → residual particulate reaches injectors and\nhigh-pressure pumps → injector stiction and premature wear → HPCR fuel system failure",
     "related_standards": "SYNTAPORE governs plain diesel-fuel particulate filtration; no water-content or\nwater-separation standard applies to this family -- see FUEL_WATER_SEPARATOR for\nwater-content standards.",
-    "related_technologies": "HYDROCORE: Fuel/water separation architecture for standard (non-turbine) separators --\na distinct product family (FUEL_WATER_SEPARATOR), not covered here | TURBOCORE:\nFuel-separation architecture reserved for approved Turbine Series FH/FG applications\n(FUEL_TURBINE family) | MACROCORE: Upstream pre-cleaner for high-contamination bulk air\nenvironments (not in this family)",
+    "related_technologies": "HYDROCORE: Fuel/water separation architecture across approved standard (non-turbine)\nseparators (FUEL_WATER_SEPARATOR family) and Turbine Series FH/FG applications\n(FUEL_TURBINE family) -- both distinct product families, not covered here | MACROCORE:\nUpstream pre-cleaner for high-contamination bulk air environments (not in this family)",
     "industrial_role": "This product family is the principal particulate-contamination control implementation\nfor diesel fuel systems that do not require a separate water-separation stage."
   },
   "relationships": {

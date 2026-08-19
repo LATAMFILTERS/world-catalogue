@@ -169,7 +169,7 @@ export function FuelSeparatorPage() {
                     marginBottom: '2.5rem',
                   }}
                 >
-                  Water in diesel fuel is not a rare event — it enters through condensation in storage tanks, contaminated deliveries and seal ingress during transport. ELIMFILTERS TURBOCORE™ deploys a staged asset protection system: an inertial defense layer captures sediment and large contaminants, a coalescing stage forces microscopic water droplets to merge and fall into the collection chamber, and the TURBOCORE™ hydrophobic final barrier blocks residual water from reaching the injection circuit. Tested per ISO 16332, the water separation test method for diesel fuel filters.
+                  Water in diesel fuel is not a rare event — it enters through condensation in storage tanks, contaminated deliveries and seal ingress during transport. ELIMFILTERS HYDROCORE™ deploys a staged asset protection system: an inertial defense layer captures sediment and large contaminants, a coalescing stage forces microscopic water droplets to merge and fall into the collection chamber, and the HYDROCORE™ hydrophobic final barrier blocks residual water from reaching the injection circuit. Tested per ISO 16332, the water separation test method for diesel fuel filters.
                 </p>
 
                 <div

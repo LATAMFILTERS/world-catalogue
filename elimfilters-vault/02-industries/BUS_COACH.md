@@ -17,7 +17,7 @@ relevant_contamination:
 applicable_technologies:
   - "[[MACROCORE]]"
   - "[[SYNTRAX]]"
-  - "[[TURBOCORE]]"
+  - "[[HYDROCORE]]"
   - "[[MICROKAPPA]]"
 applicable_standards:
   - "[[ISO_5011]]"
@@ -44,7 +44,7 @@ Bus & Coach is a MODERATE contamination exposure industry for passenger and publ
 
 Passenger cabin air quality in buses and coaches operates under a different regulatory context than single-operator industrial vehicle cabs: bus passengers — including schoolchildren, elderly individuals, and respiratory patients — lack the occupational health framework that governs driver exposure, but face equivalent PM2.5 exposure risk in poorly filtered vehicles operating in congested urban traffic corridors where ambient diesel particulate concentrations are at their highest. Urban traffic corridors frequently record PM2.5 concentrations of 50–150 µg/m³ during peak hours — well above the WHO 24-hour mean guideline of 15 µg/m³. A bus or coach without [[ISO_11155|ISO 11155]]-compliant cabin filtration acts as a concentrator of ambient particulate rather than a protective enclosure. For school bus operations specifically, children's respiratory sensitivity to PM2.5 makes cabin filtration a public health issue distinct from occupational compliance. [[MICROKAPPA|MICROKAPPA]] cabin filtration systems qualified to ISO 11155-1 provide the particle efficiency framework for bus operator cabin and passenger compartment air quality management.
 
-Diesel fuel water contamination affects bus fleet operations through the same bulk storage condensation mechanism common to all diesel fleets: depot fuel tanks servicing multiple vehicles accumulate water through temperature cycling, particularly in depot configurations with partial fill-and-draw patterns that maintain large headspace volumes subject to overnight condensation. Bus fleet operators conducting regular ASTM D6304 or [[ISO_12937|ISO 12937]] depot tank testing and deploying [[TURBOCORE|TURBOCORE]] water-separating fuel filtration at vehicle fuel inlets control injector erosion risk across fleets operating standardised common-rail diesel powertrains where injector replacement cost and service disruption are multiplied across fleet size.
+Diesel fuel water contamination affects bus fleet operations through the same bulk storage condensation mechanism common to all diesel fleets: depot fuel tanks servicing multiple vehicles accumulate water through temperature cycling, particularly in depot configurations with partial fill-and-draw patterns that maintain large headspace volumes subject to overnight condensation. Bus fleet operators conducting regular ASTM D6304 or [[ISO_12937|ISO 12937]] depot tank testing and deploying [[HYDROCORE|HYDROCORE]] water-separating fuel filtration at vehicle fuel inlets control injector erosion risk across fleets operating standardised common-rail diesel powertrains where injector replacement cost and service disruption are multiplied across fleet size.
 
 ## Relationships
 
@@ -56,7 +56,7 @@ Diesel fuel water contamination affects bus fleet operations through the same bu
 ### Applicable Technologies
 - [[MACROCORE|MACROCORE — Heavy-duty air intake pre-filtration for bus diesel engines operating in urban environments with diesel exhaust particulate and road dust; high dirt capacity media for extended service intervals in high-cycle urban operations]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube oil filtration for bus diesel engine crankshaft bearing protection at ISO 16889 Beta efficiency; synthetic media for consistent performance across stop-start thermal cycling in urban transit operations]]
-- [[TURBOCORE|TURBOCORE — Water-separating fuel filtration for bus fleet depot fuel systems and vehicle fuel inlets; coalescing barrier architecture removes free water from depot tank condensation before injector system entry]]
+- [[HYDROCORE|HYDROCORE — Water-separating fuel filtration for bus fleet depot fuel systems and vehicle fuel inlets; coalescing barrier architecture removes free water from depot tank condensation before injector system entry]]
 - [[MICROKAPPA|MICROKAPPA — Cabin air filtration for bus passenger compartments and driver cabs, rated to the ISO 11155 PM10/PM2.5 target specified for the approved application]]
 
 ### Applicable Standards
@@ -83,7 +83,7 @@ RELATED_STANDARDS
 ISO 5011: Air intake filtration performance test | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio lube filtration selection standard | ISO 11155: Cabin air filter particle efficiency and gaseous contaminant removal standard for bus passenger compartment qualification
 
 RELATED_TECHNOLOGIES
-MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | TURBOCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: Cabin filtration for bus passenger compartment PM2.5 protection, rated to the ISO 11155 target specified for the approved application
+MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | HYDROCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: Cabin filtration for bus passenger compartment PM2.5 protection, rated to the ISO 11155 target specified for the approved application
 
 INDUSTRIAL_ROLE
 Bus & Coach fleet contamination control is driven by the intersection of high engine cycle counts accelerating lube oil soot loading, depot fuel condensation affecting entire fleets from shared storage, and passenger cabin air quality obligations that extend contamination control responsibility from occupational health frameworks into public health territory.

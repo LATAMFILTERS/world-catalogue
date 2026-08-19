@@ -12,7 +12,7 @@ const technologies = [
   ['DRYCORE', 'drycore'],
   ['INTEKCORE', 'intekcore'],
   ['SYNTAPORE', 'syntapore'],
-  ['TURBOCORE', 'turbocore'],
+  ['HYDROCORE', 'hydrocore'],
   ['SYNTRAX', 'syntrax'],
   ['NANOFORCE', 'nanoforce'],
   ['THERMACORE', 'thermacore'],

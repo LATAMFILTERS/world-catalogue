@@ -439,7 +439,7 @@ describe('Domain-specific correct decisions', () => {
       contaminationEntityIds: ['CONT-WATER-FUEL', 'CONT-PARTICLE-FUEL'],
       failureModeEntityIds: ['FM-INJECTOR-STICTION'],
       principleEntityIds: ['EP-CONTAMINATION-CONTROL'],
-      technologyEntityIds: ['TECH-SYNTAPORE', 'TECH-TURBOCORE'],
+      technologyEntityIds: ['TECH-SYNTAPORE', 'TECH-HYDROCORE'],
       symptomIds: ['injector-issues', 'fuel-consumption', 'white-smoke'],
       environmentIds: ['wet', 'marine'],
       onsetId: 'gradual',

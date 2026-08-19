@@ -17,7 +17,6 @@ const technologies: readonly TechnologyCard[] = [
   ['macrocore', 'MACROCORE™', '/assets/MACROCORE_final.avif', 1.074],
   ['syntapore', 'SYNTAPORE™', '/assets/SYNTAPORE_final.avif', 1.000],
   ['hydrocore', 'HYDROCORE™', '/assets/HYDROCORE_final.avif', 1.100],
-  ['turbocore', 'TURBOCORE™', '/assets/TURBOCORE_final.avif', 1.089],
   ['syntrax', 'SYNTRAX™', '/assets/SYNTRAX_final.avif', 1.035],
   ['nanoforce', 'NANOFORCE™', '/assets/NANOFORCE_final.avif', 0.983],
   ['thermacore', 'THERMACORE™', '/assets/THERMACORE_final.avif', 1.152],

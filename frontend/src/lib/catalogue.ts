@@ -49,8 +49,8 @@ export const CATEGORY_URLS: Record<string, string> = {
 
 export function getTechLogoFile(name: string): string {
   const logoMap: Record<string, string> = {
-    'Turbocore Series': 'logo-turbocore.png',
-    Turbocore: 'logo-turbocore.png',
+    'Hydrocore Series': 'logo-hydrocore.png',
+    Hydrocore: 'logo-hydrocore.png',
     Syntapore: 'logo-syntapore.png',
     Drycore: 'logo-drycore.png',
     Duratech: 'logo-duratech.png',

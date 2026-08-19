@@ -51,7 +51,7 @@ function fuelWaterScenario(overrides: Partial<EvaluationInput> = {}): Evaluation
     contaminationEntityIds: ['CONT-WATER-FUEL', 'CONT-PARTICLE-FUEL'],
     failureModeEntityIds: ['FM-FUEL-001', 'FM-HPCR-001'],
     principleEntityIds: ['EP-SEP-001', 'EP-PHS-001'],
-    technologyEntityIds: ['TECH-TURBOCORE', 'TECH-SYNTAPORE'],
+    technologyEntityIds: ['TECH-HYDROCORE', 'TECH-SYNTAPORE'],
     symptomIds: ['injector-stiction', 'power-loss', 'hard-start-cold'],
     environmentIds: ['humid-coastal', 'long-haul-highway'],
     onsetId: 'gradual',
@@ -270,7 +270,7 @@ describe('EVS-FUEL — Fuel Water Contamination', () => {
     expect(result.domainCovered).toBe(true);
   });
 
-  it('EVS-FUEL-002: Technology domain mapping — TURBOCORE and SYNTAPORE, not NANOFORCE', () => {
+  it('EVS-FUEL-002: Technology domain mapping — HYDROCORE and SYNTAPORE, not NANOFORCE', () => {
     const result = evaluate(fuelWaterScenario());
 
     const comp = result.composition as Extract<CompositionResult, { authorized: true }>;

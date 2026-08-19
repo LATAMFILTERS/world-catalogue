@@ -12,7 +12,6 @@ const APPROVED = [
   'DRYCORE',
   'INTEKCORE',
   'SYNTAPORE',
-  'TURBOCORE',
   'HYDROCORE',
   'SYNTRAX',
   'NANOFORCE',
@@ -25,7 +24,6 @@ const EXPECTED_SYSTEMS = {
   DRYCORE: 'Air Intake & Airflow Protection',
   INTEKCORE: 'Air Intake & Airflow Protection',
   SYNTAPORE: 'Fuel Cleanliness Protection',
-  TURBOCORE: 'Fuel Cleanliness Protection',
   HYDROCORE: 'Fuel Cleanliness Protection',
   SYNTRAX: 'Lubrication Protection',
   NANOFORCE: 'Hydraulic Protection',
@@ -48,20 +46,20 @@ function technologyRegistry() {
   return fs.readFileSync(path.join(ROOT, 'docs/brand/TECHNOLOGY_REGISTRY.md'), 'utf8').replace(/\r\n/g, '\n');
 }
 
-test('canonical registry contains exactly the ten approved core technologies', () => {
+test('canonical registry contains exactly the nine approved core technologies', () => {
   assert.deepEqual(extractNames().sort(), [...APPROVED].sort());
 });
 
 test('fuel technologies resolve only to the approved fuel-cleanliness architecture', () => {
   const src = canonicalSource();
-  for (const key of ['SYNTAPORE', 'TURBOCORE', 'HYDROCORE']) {
+  for (const key of ['SYNTAPORE', 'HYDROCORE']) {
     const block = src.match(new RegExp(`${key.toLowerCase()}: \\{[\\s\\S]*?\\n  \\},`));
     assert.ok(block, `${key} block missing`);
     assert.match(block[0], /domain:\s*'fuel-cleanliness'/);
   }
 });
 
-test('technology governance assigns all ten core technologies to the five canonical systems', () => {
+test('technology governance assigns all nine core technologies to the five canonical systems', () => {
   const registry = technologyRegistry();
   const declaredSystems = new Set();
 

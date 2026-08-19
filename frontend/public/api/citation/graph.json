@@ -1,16 +1,11 @@
 {
-  "edge_count": 553,
-  "node_count": 69,
+  "edge_count": 548,
+  "node_count": 68,
   "dangling_keys": [],
   "edges": [
     {
       "from": "HYDROCORE",
       "to": "SYNTAPORE",
-      "relation": "related_technologies"
-    },
-    {
-      "from": "HYDROCORE",
-      "to": "TURBOCORE",
       "relation": "related_technologies"
     },
     {
@@ -55,21 +50,6 @@
     },
     {
       "from": "SYNTAPORE",
-      "to": "TURBOCORE",
-      "relation": "related_technologies"
-    },
-    {
-      "from": "SYNTAPORE",
-      "to": "HYDROCORE",
-      "relation": "related_technologies"
-    },
-    {
-      "from": "TURBOCORE",
-      "to": "SYNTAPORE",
-      "relation": "related_technologies"
-    },
-    {
-      "from": "TURBOCORE",
       "to": "HYDROCORE",
       "relation": "related_technologies"
     },
@@ -250,7 +230,7 @@
     },
     {
       "from": "BUS_COACH",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -525,7 +505,7 @@
     },
     {
       "from": "MARINE",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -610,7 +590,7 @@
     },
     {
       "from": "MINING",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -790,7 +770,7 @@
     },
     {
       "from": "POWER_GENERATION",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -945,7 +925,7 @@
     },
     {
       "from": "TRUCKS_FLEETS",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1035,7 +1015,7 @@
     },
     {
       "from": "WASTE_MUNICIPAL",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1245,7 +1225,7 @@
     },
     {
       "from": "FUEL_CLEANLINESS_PROTECTION",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "applicable_technologies"
     },
     {
@@ -1450,7 +1430,7 @@
     },
     {
       "from": "ASTM_D6304",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "applicable_to_technologies"
     },
     {
@@ -1570,7 +1550,7 @@
     },
     {
       "from": "ISO_12937",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "applicable_to_technologies"
     },
     {
@@ -1766,11 +1746,6 @@
     {
       "from": "DIESEL_WATER",
       "to": "HYDROCORE",
-      "relation": "resolved_by"
-    },
-    {
-      "from": "DIESEL_WATER",
-      "to": "TURBOCORE",
       "relation": "resolved_by"
     },
     {
@@ -2085,12 +2060,12 @@
     },
     {
       "from": "FUEL_FILTER_PLUGGING",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "resolved_by_technologies"
     },
     {
       "from": "FUEL_FILTER_PLUGGING",
-      "to": "FUEL_PRIMARY",
+      "to": "FUEL_WATER_SEPARATOR",
       "relation": "recommended_product_families"
     },
     {
@@ -2565,7 +2540,7 @@
     },
     {
       "from": "FUEL_TURBINE",
-      "to": "TURBOCORE",
+      "to": "HYDROCORE",
       "relation": "uses_technology"
     },
     {

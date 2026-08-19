@@ -609,7 +609,7 @@ export const ENGINEERING_DIAGRAMS: KCDiagram[] = [
     diagramType: 'flow',
     governingStandards: ['STD-ASTM-D6304', 'STD-ISO-12937', 'STD-ISO-16332'],
     applicableSystems: ['fuel-cleanliness', 'hydraulic-protection'],
-    relatedTechnologies: ['TURBOCORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedArticles: [
       'water-contamination-fuel',
       'diesel-fuel-filtration',

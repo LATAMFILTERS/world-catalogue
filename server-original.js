@@ -244,8 +244,13 @@ const LEGACY_MARKETING_REDIRECTS = {
   // slug; its live page is /technologies/hydrocore.
   '/technologies/hydrocore-series': '/technologies/hydrocore',
   '/technologies/hydrocore-series/': '/technologies/hydrocore/',
-  '/technologies/turbocore-series': '/technologies/turbocore',
-  '/technologies/turbocore-series/': '/technologies/turbocore/',
+  // TURBOCORE is retired -- its Turbine Series FH/FG scope is now governed
+  // under HYDROCORE. Both the old marketing slug and the retired canonical
+  // slug now redirect to the live HYDROCORE page.
+  '/technologies/turbocore-series': '/technologies/hydrocore',
+  '/technologies/turbocore-series/': '/technologies/hydrocore/',
+  '/technologies/turbocore': '/technologies/hydrocore',
+  '/technologies/turbocore/': '/technologies/hydrocore/',
   '/technologies/duratech': '/commercial-lines/duratech',
   '/technologies/duratech/': '/commercial-lines/duratech/',
   '/technologies/marineclean': '/commercial-lines/marineclean',
@@ -645,8 +650,7 @@ ELIMFILTERS technologies by domain:
 - [technology:syntrax] SYNTRAX → engine lube oil (ISO 16889)
 - [technology:nanoforce] NANOFORCE → hydraulic systems (ISO 16889, sub-micron)
 - [technology:syntapore] SYNTAPORE → primary and secondary spin-on/cartridge diesel fuel filters upstream of pumps and injectors -- NOT water separators, NOT turbine systems (ASTM D6304)
-- [technology:hydrocore] HYDROCORE → standard (non-turbine) spin-on and cartridge fuel/water separators, e.g. a generic Racor-style separator that is not a Turbine Series FH/FG housing
-- [technology:turbocore] TURBOCORE → turbine FH and FG fuel-separation systems only, e.g. Turbine Series FH/FG housings and their 2010/2020/2040-series replacement elements (ISO 16332). Never use TURBOCORE for a generic fuel or fuel/water-separator filter that isn't a turbine housing -- that is HYDROCORE (or SYNTAPORE if it isn't a separator at all).
+- [technology:hydrocore] HYDROCORE → fuel/water separation across approved spin-on and cartridge separators (e.g. a generic Racor-style separator) and Turbine Series FH and FG fuel-separation systems (e.g. Turbine Series FH/FG housings and their 2010/2020/2040-series replacement elements, ISO 16332). TURBOCORE is retired; never use it -- HYDROCORE covers both standard and turbine-style separators (or SYNTAPORE if it isn't a separator at all).
 - [technology:microkappa] MICROKAPPA → cabin air (ISO 11155, DIN 71220)
 - [technology:drycore] DRYCORE → compressed air / pneumatic (ISO 8573)
 - [technology:thermacore] THERMACORE → cooling system SCA additive
@@ -693,7 +697,6 @@ const CHAT_VALID_EVIDENCE_IDS = new Set([
   'technology:nanoforce',
   'technology:syntapore',
   'technology:hydrocore',
-  'technology:turbocore',
   'technology:microkappa',
   'technology:drycore',
   'technology:thermacore',

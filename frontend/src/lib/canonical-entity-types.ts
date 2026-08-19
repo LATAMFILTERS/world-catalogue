@@ -4,7 +4,7 @@ export type TechnologyKey =
   | 'DRYCORE'
   | 'INTEKCORE'
   | 'SYNTAPORE'
-  | 'TURBOCORE'
+  | 'HYDROCORE'
   | 'SYNTRAX'
   | 'NANOFORCE'
   | 'THERMACORE';
@@ -30,7 +30,7 @@ export const CANONICAL_TECHNOLOGY_KEYS: ReadonlySet<TechnologyKey> = new Set<Tec
   'DRYCORE',
   'INTEKCORE',
   'SYNTAPORE',
-  'TURBOCORE',
+  'HYDROCORE',
   'SYNTRAX',
   'NANOFORCE',
   'THERMACORE',

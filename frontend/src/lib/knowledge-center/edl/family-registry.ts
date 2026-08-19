@@ -127,7 +127,7 @@ export const EDL_FAMILIES: EDLFamilyRegistry = {
     lastModified: '2026-07-04',
     contentPhase: 3,
     system: 'SYS-FUEL-CLEANLINESS',
-    primaryTechnology: 'TECH-TURBOCORE',
+    primaryTechnology: 'TECH-HYDROCORE',
     standards: ['STD-ASTM-D6304', 'STD-ISO-12937'],
     hdPrefix: 'ES9',
     ldPrefix: null,

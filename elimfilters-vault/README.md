@@ -8,7 +8,7 @@ Core principle: **The filter is the means. Asset protection is the objective.**
 
 ## Current technologies
 
-MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · TURBOCORE™ · SYNTRAX™ · NANOFORCE™ · THERMACORE™
+MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · HYDROCORE™ · SYNTRAX™ · NANOFORCE™ · THERMACORE™
 
 ## Specialized solutions
 

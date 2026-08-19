@@ -142,7 +142,7 @@ try {
     DRYCORE: 'technologies/drycore',
     INTEKCORE: 'technologies/intekcore',
     SYNTAPORE: 'technologies/syntapore',
-    TURBOCORE: 'technologies/turbocore',
+    HYDROCORE: 'technologies/hydrocore',
     SYNTRAX: 'technologies/syntrax',
     NANOFORCE: 'technologies/nanoforce',
     THERMACORE: 'technologies/thermacore',

@@ -57,7 +57,7 @@ export default function RegionalFleetStrategiesPage() {
               maxWidth: '640px',
               textAlign: 'justify',
             }}>
-              Equipment operating in desert mining requires different contamination control than coastal marine environments. Regional climate, geography, and operational intensity determine filtration strategies. Desert dust demands multi-stage MACROCORE air intake with high bypass thresholds. Tropical humidity requires aggressive TURBOCORE water separation. Coastal salt air necessitates enhanced cabin MICROKAPPA filtration to protect operator health. Matching filtration systems to regional environmental stressors extends equipment life 2–4× compared to one-size-fits-all commodity approaches.
+              Equipment operating in desert mining requires different contamination control than coastal marine environments. Regional climate, geography, and operational intensity determine filtration strategies. Desert dust demands multi-stage MACROCORE air intake with high bypass thresholds. Tropical humidity requires aggressive HYDROCORE water separation. Coastal salt air necessitates enhanced cabin MICROKAPPA filtration to protect operator health. Matching filtration systems to regional environmental stressors extends equipment life 2–4× compared to one-size-fits-all commodity approaches.
             </p>
           </motion.div>
         </div>
@@ -105,7 +105,7 @@ export default function RegionalFleetStrategiesPage() {
                 region: 'Tropical Agriculture (Southeast Asia, Sub-Saharan Africa)',
                 challenges: 'High moisture 80%+ humidity; microbial growth in fuel/hydraulic; water ingress 200–500 ppm',
                 waterRisk: 'Critical (monsoons, high humidity); bacterial contamination in fuel tanks; hydraulic fluid oxidation',
-                strategy: 'TURBOCORE fuel water separator (maintains ≤100 ppm water); SYNTRAX kidney-loop to inhibit bacterial growth in oil',
+                strategy: 'HYDROCORE fuel water separator (maintains ≤100 ppm water); SYNTRAX kidney-loop to inhibit bacterial growth in oil',
               },
               {
                 region: 'Coastal/Marine (North Sea, Mediterranean, Pacific)',
@@ -117,7 +117,7 @@ export default function RegionalFleetStrategiesPage() {
                 region: 'Cold Climate (Northern Europe, Canada, Russia)',
                 challenges: 'Fuel gelling (−15°C to −40°C); viscosity changes 100× between summer/winter; water ingress from melting snow',
                 waterRisk: 'High (snow melt, condensation in fuel tanks); fuel filter ice blockage; hydraulic fluid sluggishness',
-                strategy: 'Winter-grade synthetic hydraulic fluid (ISO VG 46 AW with pour point <−30°C); heated fuel filters for heavy-duty trucks; aggressive water separation (TURBOCORE) to prevent fuel filter icing',
+                strategy: 'Winter-grade synthetic hydraulic fluid (ISO VG 46 AW with pour point <−30°C); heated fuel filters for heavy-duty trucks; aggressive water separation (HYDROCORE) to prevent fuel filter icing',
               },
               {
                 region: 'Urban Construction (Dense Cities, Limited Parking)',
@@ -181,7 +181,7 @@ export default function RegionalFleetStrategiesPage() {
             textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
-            Global fleets operating across multiple regions face inventory complexity: desert trucks carry different filters than tropical trucks. Standardizing on a modular system (MACROCORE for air, SYNTRAX for lube, NANOFORCE for hydraulic, TURBOCORE for fuel) reduces parts inventory 40% while allowing regional customization through kidney-loop configurations and monitoring intervals. Desert operation runs kidney-loop continuously (full contamination control). Tropical operation runs seasonal (monsoon months only). Coastal operation runs moderate (6 months/year). Same core filtration platform; different deployment intensity based on regional exposure.
+            Global fleets operating across multiple regions face inventory complexity: desert trucks carry different filters than tropical trucks. Standardizing on a modular system (MACROCORE for air, SYNTRAX for lube, NANOFORCE for hydraulic, HYDROCORE for fuel) reduces parts inventory 40% while allowing regional customization through kidney-loop configurations and monitoring intervals. Desert operation runs kidney-loop continuously (full contamination control). Tropical operation runs seasonal (monsoon months only). Coastal operation runs moderate (6 months/year). Same core filtration platform; different deployment intensity based on regional exposure.
           </p>
         </motion.section>
 
@@ -217,7 +217,7 @@ export default function RegionalFleetStrategiesPage() {
             textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
-            A global mining company operated 400 heavy-duty dump trucks across 8 regions: Australia (desert), Indonesia (tropical), Chile (high-altitude desert), Zambia (tropical bush), Canada (cold), South Africa (dry savanna), Papua New Guinea (extreme tropical), Russia (arctic). Previously, each region purchased commodity filters independently, with zero standardization. Implementation of ELIMFILTERS regional strategy: standardized core platform (MACROCORE air, SYNTRAX oil, NANOFORCE hydraulic, TURBOCORE fuel) with regional kidney-loop intensity adjustments. Within 5 years: fleet-wide equipment lifespan increased from 4,800 hours to 12,500 hours (2.6× improvement). Equipment replacement budget dropped from $18M/year to $5.2M/year (71% reduction). Unplanned failures dropped 87% (from 8 incidents/truck/year to 1 incident/truck/year). Total 5-year savings: $64.8M. Regional variations: desert region achieved highest lifespan (13,500 hrs) with aggressive offline kidney-loop; tropical regions achieved 11,800 hrs with seasonal kidney-loop activation; arctic region achieved 12,200 hrs despite extreme cold. No region underperformed baseline commodity approach.
+            A global mining company operated 400 heavy-duty dump trucks across 8 regions: Australia (desert), Indonesia (tropical), Chile (high-altitude desert), Zambia (tropical bush), Canada (cold), South Africa (dry savanna), Papua New Guinea (extreme tropical), Russia (arctic). Previously, each region purchased commodity filters independently, with zero standardization. Implementation of ELIMFILTERS regional strategy: standardized core platform (MACROCORE air, SYNTRAX oil, NANOFORCE hydraulic, HYDROCORE fuel) with regional kidney-loop intensity adjustments. Within 5 years: fleet-wide equipment lifespan increased from 4,800 hours to 12,500 hours (2.6× improvement). Equipment replacement budget dropped from $18M/year to $5.2M/year (71% reduction). Unplanned failures dropped 87% (from 8 incidents/truck/year to 1 incident/truck/year). Total 5-year savings: $64.8M. Regional variations: desert region achieved highest lifespan (13,500 hrs) with aggressive offline kidney-loop; tropical regions achieved 11,800 hrs with seasonal kidney-loop activation; arctic region achieved 12,200 hrs despite extreme cold. No region underperformed baseline commodity approach.
           </p>
         </motion.section>
 

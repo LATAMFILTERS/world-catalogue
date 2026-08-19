@@ -70,9 +70,9 @@ const TECHNOLOGY_ENGINEERING: Record<TechnologySlug, CanonicalEngineeringDefinit
   },
   hydrocore: {
     name: 'HYDROCORE™',
-    definition: 'A fuel/water separation architecture for spin-on and cartridge separators outside the Turbine Series FH/FG application.',
-    engineeringPrinciple: 'Coalescing and separation media remove free and emulsified water from diesel fuel ahead of the primary filtration stage, without the staged turbine-housing architecture reserved for TURBOCORE™.',
-    controlStrategy: 'Match separation efficiency, water-holding capacity, flow and service interval to the fuel-contamination profile and duty cycle of standard (non-turbine) fuel systems.',
+    definition: 'A fuel/water separation architecture across approved spin-on and cartridge separators and Turbine Series FH/FG applications.',
+    engineeringPrinciple: 'Coalescing and separation media remove free and emulsified water from diesel fuel ahead of the primary filtration stage, in standard spin-on/cartridge housings and staged turbine-housing (FH/FG) architectures alike.',
+    controlStrategy: 'Match separation efficiency, water-holding capacity, flow and service interval to the fuel-contamination profile and duty cycle of the approved fuel system, standard or turbine-style.',
     operationalImpact: 'Reduced water carryover helps protect injectors and high-pressure pumps from water-related erosion and corrosion.',
   },
 };

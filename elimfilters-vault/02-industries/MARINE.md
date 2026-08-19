@@ -17,7 +17,7 @@ relevant_contamination:
 applicable_technologies:
   - "[[NANOFORCE]]"
   - "[[SYNTRAX]]"
-  - "[[TURBOCORE]]"
+  - "[[HYDROCORE]]"
 applicable_standards:
   - "[[ISO_5011]]"
   - "[[SAE_J1539]]"
@@ -57,7 +57,7 @@ Air intake filtration for marine diesel engines faces the challenge of filtering
 ### Applicable Technologies
 - [[NANOFORCE|NANOFORCE — Sub-micron hydraulic filtration for deck crane and steering hydraulic circuits; protects proportional valves in humidity-accelerated contamination environments]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration for marine diesel engine crankshaft bearing protection in continuous high-load operating conditions]]
-- [[TURBOCORE|TURBOCORE — Diesel fuel water separation for marine fuel systems; coalescing separation of condensation and sea-spray water ingress from fuel before injector delivery]]
+- [[HYDROCORE|HYDROCORE — Diesel fuel water separation for marine fuel systems; coalescing separation of condensation and sea-spray water ingress from fuel before injector delivery]]
 
 ### Applicable Standards
 - [[ISO_5011|ISO 5011 — Air filtration performance test standard; governs air filter selection for marine diesel engine intake systems]]
@@ -83,10 +83,10 @@ RELATED_STANDARDS
 ISO 5011: Air filtration performance test for marine engine intake selection | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic and lube filtration in marine deck systems | ASTM D6304: Water content monitoring for marine diesel fuel tanks
 
 RELATED_TECHNOLOGIES
-TURBOCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron hydraulic filtration for deck crane and steering circuits in high-humidity marine environments
+HYDROCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron hydraulic filtration for deck crane and steering circuits in high-humidity marine environments
 
 INDUSTRIAL_ROLE
-Marine diesel contamination control — particularly fuel water separation and salt-resistant air intake filtration — determines whether vessels maintain propulsion reliability under IMO and classification society requirements; water contamination is the leading cause of fuel system failure in marine fleets, making ASTM D6304-compliant fuel monitoring and TURBOCORE coalescing filtration the primary engineering controls for fleet reliability.
+Marine diesel contamination control — particularly fuel water separation and salt-resistant air intake filtration — determines whether vessels maintain propulsion reliability under IMO and classification society requirements; water contamination is the leading cause of fuel system failure in marine fleets, making ASTM D6304-compliant fuel monitoring and HYDROCORE coalescing filtration the primary engineering controls for fleet reliability.
 
 CITATION_REFERENCE
 source: elimfilters.com/knowledge-center/industries/marine
