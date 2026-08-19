@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "policy_name": "ELIMFILTERS Commercial Agent Authority",
+  "default": "DENY_UNLESS_ALLOWED",
+  "autonomous_actions": [
+    "research_company",
+    "classify_account",
+    "find_public_business_contact",
+    "prepare_outreach_draft",
+    "send_approved_sequence_step",
+    "schedule_followup_within_policy",
+    "summarize_conversation",
+    "update_account_state",
+    "request_supplier_quote",
+    "compare_supplier_responses",
+    "prepare_customer_quote_within_pricing_policy",
+    "create_internal_task",
+    "log_action_and_result"
+  ],
+  "requires_victor_approval": [
+    "activate_new_account_for_outreach_when_policy_requires_owner_approval",
+    "territorial_exclusivity",
+    "commercial_credit",
+    "contract_acceptance_or_signature",
+    "exceptional_discount",
+    "price_below_floor",
+    "nonstandard_payment_terms",
+    "supplier_commitment_above_approved_limit",
+    "material_brand_or_legal_commitment",
+    "market_wave_advance"
+  ],
+  "safety_rules": {
+    "preserve_full_customer_conversation_history": true,
+    "preserve_supplier_conversation_history": true,
+    "never_overwrite_raw_message_history": true,
+    "append_only_decision_log": true,
+    "no_duplicate_outreach_to_same_contact_without_state_check": true,
+    "stop_sequence_on_reply": true,
+    "stop_sequence_on_opt_out": true,
+    "require_account_context_before_response": true,
+    "require_latest_open_opportunity_before_quote": true
+  }
+}
