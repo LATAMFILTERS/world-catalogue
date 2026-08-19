@@ -35,6 +35,8 @@
     "hermes:baseline:rollback": "node scripts/hermes/rollback-baseline.mjs",
     "hermes:harvest:restore": "node scripts/hermes/sync-harvest-state.mjs restore",
     "hermes:harvest:persist": "node scripts/hermes/sync-harvest-state.mjs persist",
+    "hermes:vault:sync": "node scripts/hermes/sync-vault.mjs",
+    "hermes:vault:sync:apply": "node scripts/hermes/sync-vault.mjs --apply",
     "hermes:catalogue": "node scripts/hermes/catalogue-intelligence.mjs",
     "hermes:catalogue:snapshot": "node scripts/hermes/export-catalogue-snapshot.mjs",
     "hermes:catalogue:bridge": "node scripts/hermes/phase5-to-catalogue-discoveries.mjs",

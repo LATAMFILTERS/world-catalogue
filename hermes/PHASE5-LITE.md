@@ -303,6 +303,91 @@ entry's `enabled` field the same way if you ever need it as a stopgap.
 3. Decide with `npm run hermes:decision -- <file> approve|reject|research
    [reason]` exactly as in Phase 1–4.
 
+## HERMES -> Obsidian Knowledge Vault integration (2026-08-19)
+
+`scripts/hermes/vault-sync-core.mjs` (pure planning logic) +
+`scripts/hermes/sync-vault.mjs` (CLI, `npm run hermes:vault:sync` for
+dry-run, `npm run hermes:vault:sync:apply` + `HERMES_VAULT_SYNC_LIVE=true`
+for live) let an **already-APPROVED** HERMES finding (same
+`hermes/real-candidates/*.json` contract, same `workflow_status ===
+'APPROVED'` + `approved_by`/`approved_at` gate used by
+`publish-approved-candidate.mjs`/`update-existing-note.mjs`) become a
+governed mutation of `elimfilters-vault/`.
+
+**Authority chain**: HERMES finding (evidence + Groq research) -> Victor's
+approval (unchanged, existing decision pipeline) -> vault sync planner
+(this integration) -> `elimfilters-vault/` note -> Knowledge Graph
+(`scripts/build-citation-index.js` already scans every vault folder this
+writes to — no separate KG ingestion path was built). Catalog and
+Knowledge Center are marked *eligible* only (`catalog_eligible`,
+`kc_eligible` on each plan item) — publication itself stays a separate,
+later, human-governed action; this integration never publishes anything.
+
+**Write allowlist** (`WRITE_ALLOWLIST` in vault-sync-core.mjs) is
+deliberately narrower than the older, partly-aspirational folder list
+inside `publish-approved-candidate.mjs`/`update-existing-note.mjs` — it is
+scoped to the vault's actual current 8 categories
+(`01-technologies/active`, `02-industries`, `03-systems`, `04-standards`,
+`05-contamination`, `06-components`, `07-problems`, `08-product-families`)
+plus the existing `94-sync-log` audit location. `12-oems`,
+`13-equipment`, `14-intelligence`, `15-filter-media`, `16-suppliers`,
+`17-technology-watch` are not real vault directories yet; findings mapped
+to those categories are correctly left as intelligence-only records
+(`resolveTarget()` returns no mapping) rather than invented as new
+top-level folders.
+
+**Idempotency**: `computeEvidenceFingerprint()` hashes only semantic
+evidence fields (statement, relationships, source identity, evidence
+hash) — never a sync-time timestamp — and is recorded in each note's
+`<!-- HERMES MANAGED UPDATE START/END -->` block (the same managed-block
+convention `update-existing-note.mjs` already used; not a new one). A
+second sync of identical evidence reads the recorded fingerprint back out
+and produces `NOOP`, not a rewrite.
+
+**Entity resolution**: before CREATE, every candidate key/name is checked
+against every existing vault entity's `key` and `name`. An exact key match
+is the same entity (route to UPDATE). A name match under a *different* key
+is `AMBIGUOUS` — recorded for human review, never silently merged and
+never silently duplicated (`Cummins ISX` / `ISX Cummins` / `Cummins-ISX`
+never become three notes).
+
+**Technology governance**: `01-technologies/active/*.md` is scanned at
+call time for `loadCanonicalTechnologies()` — never a hardcoded list or
+count. A technology CREATE is always rejected
+(`NONCANONICAL_TECHNOLOGY_CREATE`); a technology UPDATE is rejected unless
+the target is already active-canonical
+(`NONCANONICAL_TECHNOLOGY_UPDATE`) — a retired/consolidated technology
+(e.g. TURBOCORE, absent from `active/` after its 2026-08 consolidation
+into HYDROCORE) can never re-enter as current canon through this path.
+
+**Wikilinks**: `validateWikilinks()` deduplicates targets and drops any
+target that doesn't resolve to an existing, active vault entity —
+dangling links are reported (`danglingRejected`), never written.
+
+**Transaction safety**: `sync-vault.mjs --apply` prepares and validates
+every planned write (including checking every CREATE target doesn't
+already exist on disk) *before* writing anything; if any single item fails
+to prepare, nothing in the batch is written. If a write fails mid-batch,
+every item already written in that run is rolled back from its prepared
+backup before the process exits non-zero — a partial run can never leave
+half-written vault state.
+
+**Groq decoupling**: neither `vault-sync-core.mjs` nor `sync-vault.mjs`
+imports or calls anything Groq-related — a quota failure during collection
+can structurally never reach or corrupt the vault sync path (verified by
+`tests/hermes-phase5/vault-sync.test.mjs`, test 20).
+
+**Not yet built** (explicitly out of scope for this pass, flagged rather
+than silently skipped): CREATE only writes a minimal `status: candidate`
+staging note (never `status: active`) for entity types this pass
+understands generically — full type-specific note generation matching
+every entity type's own schema in `00-meta/_SCHEMA-REFERENCE.md` (Problem,
+Component, ProductFamily, etc. each have different required fields) is a
+follow-up. `resolveTarget()` in `sync-vault.mjs` currently maps only the
+`standards`/`regulation` HERMES categories to a real vault folder — the
+others (OEM, competitor, supplier, filter-media findings) correctly fall
+through to intelligence-only until their real vault destinations exist.
+
 ## Emergency procedure: disabling the workflow
 
 1. **Fastest**: GitHub → **Actions** tab → **HERMES Weekly Intelligence
