@@ -7,7 +7,7 @@
  *
  * EDR: EDR-A-002 — Why Technology Architecture Became the Core Engineering Entity
  * EDR: EDR-C-001 — Engineering Rationale for MACROCORE Technology Architecture
- * EDR: EDR-C-002 — Engineering Rationale for TURBOCORE Technology Architecture
+ * EDR: EDR-C-002 — Engineering Rationale for HYDROCORE Technology Architecture
  * EDR: EDR-C-003 — Engineering Rationale for SYNTRAX Technology Architecture
  * EDR: EDR-C-004 — Engineering Rationale for NANOFORCE Technology Architecture
  *
@@ -16,7 +16,7 @@
  *   SYNTRAX     → Engine Lube Oil         (ISO 16889, ISO 4406)
  *   NANOFORCE   → Hydraulic               (ISO 16889, NFPA T2.14)
  *   SYNTAPORE   → Fuel HPCR               (application-specific — no universal certification standard)
- *   TURBOCORE   → Fuel Water Separation   (application-specific — no universal certification standard)
+ *   HYDROCORE   → Fuel Water Separation   (application-specific — no universal certification standard)
 
  *   THERMACORE  → Cooling System          (ASTM D3306)
  *   INTEKCORE   → Filter Housing Systems
@@ -562,26 +562,26 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
   },
 
-  // ── TURBOCORE — Fuel Water Separation ────────────────────────────────
+  // ── HYDROCORE — Fuel Water Separation ────────────────────────────────
 
-  'TECH-TURBOCORE': {
+  'TECH-HYDROCORE': {
     entityType: 'TECHNOLOGY_ARCHITECTURE',
-    id: 'TECH-TURBOCORE',
-    technologyName: 'TURBOCORE',
-    commercialName: 'TURBOCORE™',
+    id: 'TECH-HYDROCORE',
+    technologyName: 'HYDROCORE',
+    commercialName: 'HYDROCORE™',
     systemDomain: 'Fuel Water Separation',
     primaryStandards: [],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'TURBOCORE is the ELIMFILTERS dedicated fuel-separation architecture for approved turbine-style FH and FG applications within Fuel Cleanliness Protection. Its engineering role is to coordinate staged fuel conditioning and separation around the required flow, separation duty, element rating, installation and maintenance access of each approved FH or FG application. Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved system; the technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.',
+      'HYDROCORE is the ELIMFILTERS fuel/water-separation architecture across approved spin-on, cartridge, and Turbine Series FH/FG applications within Fuel Cleanliness Protection. Its engineering role is to coordinate staged fuel conditioning and separation around the required flow, separation duty, element rating, installation and maintenance access of each approved application. Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved system; the technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.',
 
     systemContext:
-      'Applies to the approved Turbine Series FH and FG fuel-separation housings and their dedicated replacement elements. Flow, separation duty and element rating must be matched to the specific approved FH or FG application rather than assumed universally.',
+      'Applies to approved spin-on and cartridge fuel/water separators as well as Turbine Series FH and FG fuel-separation housings and their dedicated replacement elements. Flow, separation duty and element rating must be matched to the specific approved application rather than assumed universally.',
 
     industrialRole:
-      'TURBOCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection for approved turbine-style FH and FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements specific to each approved application.',
+      'HYDROCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection across approved spin-on, cartridge, and turbine-style FH/FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements specific to each approved application.',
 
     protectionMedia: [
       {
@@ -1298,7 +1298,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       {
         type: 'Kit assembly — application-matched elements',
         description:
-          'Pre-packaged combination of MACROCORE (air), SYNTRAX (lube oil), NANOFORCE (hydraulic), SYNTAPORE (fuel), TURBOCORE (water separation), and MICROKAPPA (cabin air) elements in the correct specifications for the target equipment model.',
+          'Pre-packaged combination of MACROCORE (air), SYNTRAX (lube oil), NANOFORCE (hydraulic), SYNTAPORE (fuel), HYDROCORE (water separation), and MICROKAPPA (cabin air) elements in the correct specifications for the target equipment model.',
         micronRating: 'Defined by each element technology in the kit',
         mediaConstruction: 'Assembled kit with element compatibility verified against OEM service documentation',
       },
@@ -1311,7 +1311,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
         component: 'Kit elements',
         material: 'Per individual element technology specifications',
         justification:
-          'DURATECH kit contains the same elements as ordered individually — MACROCORE, SYNTRAX, NANOFORCE, TURBOCORE, SYNTAPORE, MICROKAPPA — in the correct configurations for the target application. Material specifications are inherited from each element technology.',
+          'DURATECH kit contains the same elements as ordered individually — MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE, SYNTAPORE, MICROKAPPA — in the correct configurations for the target application. Material specifications are inherited from each element technology.',
       },
       {
         component: 'Kit packaging',

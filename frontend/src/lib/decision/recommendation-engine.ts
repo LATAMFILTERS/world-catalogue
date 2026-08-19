@@ -26,7 +26,7 @@ export function buildRecommendation(params: {
   // Map technologies to product families (synthetic mapping for logic)
   const techToFamily: Record<string, string[]> = {
     'MACROCORE™': ['Heavy Duty Air', 'Off-Highway Air'],
-    'TURBOCORE™': ['Water Separators', 'Fuel Coalescers'],
+    'HYDROCORE™': ['Water Separators', 'Fuel Coalescers'],
     'NANOFORCE™': ['High Pressure Hydraulics'],
     'MICROKAPPA™': ['Cabin Air Filters'],
     'SYNTAPORE™': ['Advanced Fuel Filters'],

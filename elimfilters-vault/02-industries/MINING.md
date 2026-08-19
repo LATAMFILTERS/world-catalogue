@@ -23,7 +23,7 @@ applicable_technologies:
   - "[[MACROCORE]]"
   - "[[NANOFORCE]]"
   - "[[SYNTRAX]]"
-  - "[[TURBOCORE]]"
+  - "[[HYDROCORE]]"
   - "[[INTEKCORE]]"
 applicable_standards:
   - "[[ISO_16889]]"
@@ -48,7 +48,7 @@ features:
   - "AIR INTAKE / MACROCORE™"
   - "HYDRAULIC / NANOFORCE™"
   - "LUBE OIL / SYNTRAX™"
-  - "FUEL / TURBOCORE™"
+  - "FUEL / HYDROCORE™"
 benefits:
   - "High-tonnage asset protection for haul trucks, excavators, and drills"
   - "Sub-zero and extreme temperature rated for open-pit and underground operation"
@@ -89,7 +89,7 @@ Secondary threats are hydraulic contamination (high-precision proportional valve
 - [[MACROCORE|MACROCORE™ — Engine Air Filtration]] (air intake — primary)
 - [[NANOFORCE|NANOFORCE™ — Sub-Micron Hydraulic Contamination Control]] (hydraulic)
 - [[SYNTRAX|SYNTRAX™ — Full-Flow Lube Protection]] (engine oil)
-- [[TURBOCORE|TURBOCORE™ — Turbine-Stage Fuel Water Separation]] (fuel)
+- [[HYDROCORE|HYDROCORE™ — Turbine-Stage Fuel Water Separation]] (fuel)
 - [[INTEKCORE|INTEKCORE™ — Zero-Bypass Radial Seal Housing]] (air intake housing)
 
 ### Standards
@@ -134,7 +134,7 @@ RELATED_TECHNOLOGIES
 MACROCORE: Engine air filtration for primary and secondary intake protection |
 NANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 target per approved application) |
 SYNTRAX: Full-flow lube oil protection (extended drain intervals) |
-TURBOCORE: Fuel water separation (condensation and bulk fuel contamination control)
+HYDROCORE: Fuel water separation (condensation and bulk fuel contamination control)
 
 INDUSTRIAL_ROLE
 Mining is the highest-consequence filtration environment — equipment downtime costs

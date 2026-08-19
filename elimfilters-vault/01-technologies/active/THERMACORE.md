@@ -34,7 +34,7 @@ RELATED_STANDARDS
 Applicable coolant, engine and maintenance requirements must be selected for the approved application. The technology name alone does not imply a universal cleanliness code, chemistry specification or certification claim.
 
 RELATED_TECHNOLOGIES
-THERMACORE is the canonical ELIMFILTERS cooling technology. SYNTRAX governs lubrication protection, NANOFORCE governs hydraulic protection, SYNTAPORE governs general fuel filtration and TURBOCORE governs approved turbine-style fuel separation; these technologies protect separate system domains.
+THERMACORE is the canonical ELIMFILTERS cooling technology. SYNTRAX governs lubrication protection, NANOFORCE governs hydraulic protection, SYNTAPORE governs particulate fuel filtration and HYDROCORE governs fuel/water separation including approved turbine-style FH/FG architecture; these technologies protect separate system domains.
 
 INDUSTRIAL_ROLE
 THERMACORE provides the coolant-cleanliness and component-protection layer of ELIMFILTERS Cooling System Protection. Selection is governed by engine requirements, coolant chemistry, filter capacity, system flow and service interval.

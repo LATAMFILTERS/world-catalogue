@@ -31,7 +31,7 @@ const TECH_SLUG_MAP: Record<string, string> = {
   'SYNTRAX™': 'syntrax',
   'NANOFORCE™': 'nanoforce',
   'SYNTAPORE™': 'syntapore',
-  'TURBOCORE™': 'TURBOCORE',
+  'HYDROCORE™': 'HYDROCORE',
   'THERMACORE™': 'thermacore',
   'DRYCORE™': 'drycore',
   'INTEKCORE™': 'intekcore',

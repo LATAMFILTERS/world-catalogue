@@ -52,7 +52,7 @@ export const EDL_SYSTEMS: EDLSystemRegistry = {
     created: '2026-07-04',
     lastModified: '2026-07-04',
     contentPhase: 3,
-    primaryTechnologies: ['TECH-SYNTAPORE', 'TECH-TURBOCORE', 'TECH-TURBOCORE'],
+    primaryTechnologies: ['TECH-SYNTAPORE', 'TECH-HYDROCORE', 'TECH-HYDROCORE'],
     supportingTechnologies: [],
     standards: ['STD-ASTM-D6304', 'STD-ISO-12937', 'STD-ISO-16332'],
     productFamilies: [

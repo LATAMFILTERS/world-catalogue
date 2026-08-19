@@ -132,7 +132,7 @@ export const STANDARDS_REGISTRY: Record<string, StandardRecord> = {
     title: 'Standard Test Method for Determination of Water in Petroleum Products, Lubricating Oils, and Additives by Coulometric Karl Fischer Titration',
     scope:
       'Defines the Karl Fischer coulometric titration method for quantifying water content in petroleum products and fuels. Detection range: 10–25,000 ppm water by mass. Required for measuring water content in diesel fuel for HPCR injection system protection assessments. The <200 ppm water target for HPCR fuels is verified using this test method.',
-    applicableTechnologyIds: ['TECH-TURBOCORE', 'TECH-SYNTAPORE'],
+    applicableTechnologyIds: ['TECH-HYDROCORE', 'TECH-SYNTAPORE'],
     applicableEngineeringPrincipleIds: ['EP-PHS-001', 'EP-PHS-002'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',
@@ -198,7 +198,7 @@ export const STANDARDS_REGISTRY: Record<string, StandardRecord> = {
     title: 'Diesel engines — Fuel filters — Test method for water separation efficiency',
     scope:
       'Defines the test method for evaluating water separation efficiency of fuel water separators. Uses controlled water injection into fuel flow and measures downstream water concentration by Karl Fischer titration. Applicable to primary fuel water separators in diesel engine fuel systems.',
-    applicableTechnologyIds: ['TECH-TURBOCORE'],
+    applicableTechnologyIds: ['TECH-HYDROCORE'],
     applicableEngineeringPrincipleIds: ['EP-PHS-001', 'EP-PHS-002'],
     maturity: MATURITY.PUBLISHED,
     createdDate: '2026-07-01',

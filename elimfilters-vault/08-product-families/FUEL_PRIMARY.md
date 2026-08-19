@@ -27,7 +27,7 @@ tags:
   - part-search-node
 ---
 
-The Primary Fuel Protection family contains all SYNTAPORE™-technology filter elements designed for diesel fuel systems — covering primary spin-on fuel filters, cartridge secondary filters, and other staged particulate-filtration elements. This family does not include water separators: a fuel/water separator (spin-on or cartridge, non-turbine) belongs to the FUEL_WATER_SEPARATOR family (HYDROCORE™), and a Turbine Series FH/FG separator belongs to the FUEL_TURBINE family (TURBOCORE™).
+The Primary Fuel Protection family contains all SYNTAPORE™-technology filter elements designed for diesel fuel systems — covering primary spin-on fuel filters, cartridge secondary filters, and other staged particulate-filtration elements. This family does not include water separators: a fuel/water separator (spin-on or cartridge, non-turbine) belongs to the FUEL_WATER_SEPARATOR family (HYDROCORE™), and a Turbine Series FH/FG separator belongs to the FUEL_TURBINE family (also HYDROCORE™) -- distinct product families under the same technology because housing/element architecture differs.
 
 This family covers 1,903 ELIMFILTERS® SKUs (verified directly against the production catalog), spanning:
 - Spin-on primary fuel filters for agricultural, mining, and commercial transport applications
@@ -102,11 +102,10 @@ water-separation standard applies to this family -- see FUEL_WATER_SEPARATOR for
 water-content standards.
 
 RELATED_TECHNOLOGIES
-HYDROCORE: Fuel/water separation architecture for standard (non-turbine) separators --
-a distinct product family (FUEL_WATER_SEPARATOR), not covered here | TURBOCORE:
-Fuel-separation architecture reserved for approved Turbine Series FH/FG applications
-(FUEL_TURBINE family) | MACROCORE: Upstream pre-cleaner for high-contamination bulk air
-environments (not in this family)
+HYDROCORE: Fuel/water separation architecture across approved standard (non-turbine)
+separators (FUEL_WATER_SEPARATOR family) and Turbine Series FH/FG applications
+(FUEL_TURBINE family) -- both distinct product families, not covered here | MACROCORE:
+Upstream pre-cleaner for high-contamination bulk air environments (not in this family)
 
 INDUSTRIAL_ROLE
 This product family is the principal particulate-contamination control implementation

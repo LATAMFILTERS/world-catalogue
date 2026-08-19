@@ -1,7 +1,19 @@
 {
   "entry_key": "AGRICULTURE",
-  "path_count": 6,
+  "path_count": 5,
   "paths": [
+    {
+      "path_id": "PATH_B_AGRICULTURE_006",
+      "path_type": "B",
+      "entry_node": "AGRICULTURE",
+      "entry_type": "industry",
+      "industry": "AGRICULTURE",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_006.json"
+    },
     {
       "path_id": "PATH_B_AGRICULTURE_007",
       "path_type": "B",
@@ -10,7 +22,7 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "LUBE_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_007.json"
     },
@@ -22,7 +34,8 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
+        "FUEL_TURBINE",
+        "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_008.json"
     },
@@ -34,7 +47,7 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_WATER_SEPARATOR"
+        "HYDRAULIC_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_009.json"
     },
@@ -46,33 +59,9 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_010.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_011",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_011.json"
-    },
-    {
-      "path_id": "PATH_B_AGRICULTURE_012",
-      "path_type": "B",
-      "entry_node": "AGRICULTURE",
-      "entry_type": "industry",
-      "industry": "AGRICULTURE",
-      "valid": true,
-      "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_AGRICULTURE_012.json"
+      "href": "/api/citation/path/PATH_B_AGRICULTURE_010.json"
     }
   ]
 }

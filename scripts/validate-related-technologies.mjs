@@ -153,7 +153,7 @@ function selfTest() {
     { key: 'SYNTAPORE', domain: 'Fuel', status: 'active', relatedTargets: ['MACROCORE'], filePath: '<synthetic:SYNTAPORE.md>' },
     { key: 'MACROCORE', domain: 'Air Intake', status: 'active', relatedTargets: ['SYNTAPORE'], filePath: '<synthetic:MACROCORE.md>' },
     { key: 'MICROKAPPA', domain: 'Cabin Air', status: 'active', relatedTargets: ['MICROKAPPA'], filePath: '<synthetic:MICROKAPPA.md>' },
-    { key: 'TURBOCORE', domain: 'Fuel', status: 'active', relatedTargets: ['SYNTAPORE', 'SYNTAPORE'], filePath: '<synthetic:TURBOCORE.md>' },
+    { key: 'SYNTHETIC_DUP_TEST', domain: 'Fuel', status: 'active', relatedTargets: ['SYNTAPORE', 'SYNTAPORE'], filePath: '<synthetic:SYNTHETIC_DUP_TEST.md>' },
     { key: 'HYDROCORE', domain: 'Fuel', status: 'active', relatedTargets: [RETIRED_SYNTAPORE_MISSPELLING], filePath: '<synthetic:HYDROCORE.md>' },
     { key: 'THERMACORE', domain: 'Cooling', status: 'active', relatedTargets: ['GHOSTCORE'], filePath: '<synthetic:THERMACORE.md>' },
   ];

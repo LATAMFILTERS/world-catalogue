@@ -1,9 +1,9 @@
 {
   "entry_key": "TRUCKS_FLEETS",
-  "path_count": 4,
+  "path_count": 3,
   "paths": [
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_041",
+      "path_id": "PATH_B_TRUCKS_FLEETS_035",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -12,34 +12,23 @@
       "terminal_product_families": [
         "LUBE_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_041.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_035.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_042",
+      "path_id": "PATH_B_TRUCKS_FLEETS_036",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
       "industry": "TRUCKS_FLEETS",
       "valid": true,
       "terminal_product_families": [
+        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_042.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_036.json"
     },
     {
-      "path_id": "PATH_B_TRUCKS_FLEETS_043",
-      "path_type": "B",
-      "entry_node": "TRUCKS_FLEETS",
-      "entry_type": "industry",
-      "industry": "TRUCKS_FLEETS",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_043.json"
-    },
-    {
-      "path_id": "PATH_B_TRUCKS_FLEETS_044",
+      "path_id": "PATH_B_TRUCKS_FLEETS_037",
       "path_type": "B",
       "entry_node": "TRUCKS_FLEETS",
       "entry_type": "industry",
@@ -48,7 +37,7 @@
       "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_044.json"
+      "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_037.json"
     }
   ]
 }

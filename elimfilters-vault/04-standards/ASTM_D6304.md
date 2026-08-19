@@ -11,7 +11,7 @@ criticality: PRIMARY
 domain:
   - Fuel
 applicable_to_technologies:
-  - "[[TURBOCORE]]"
+  - "[[HYDROCORE]]"
 applicable_to_industries:
   - "[[AGRICULTURE]]"
   - "[[MARINE]]"
@@ -43,12 +43,12 @@ ASTM D6304 is the standard test method for measuring water content in petroleum 
 
 Water in diesel fuel above 200 mg/kg is hazardous to common-rail diesel injection systems operating at injection pressures of 1,800–2,500 bar, where water droplets — even at concentrations below the EN 590 limit — cause cavitation erosion of injector nozzle tips and needle seat faces if water exists as free droplets rather than in dissolved form. The physical state of water in fuel matters as much as its concentration: diesel fuel at 20°C can dissolve approximately 50–100 mg/kg of water in solution without visible phase separation; above this saturation point, excess water forms free droplets or emulsified droplets that bypass injection system tolerances and cause erosive damage. ASTM D6304 measures total water regardless of physical state, making it the appropriate monitoring method for detecting free-water accumulation in storage tanks and vehicle fuel systems where condensation cycles regularly produce water concentrations well above the dissolved saturation limit.
 
-ASTM D6304 is widely used in commercial fleet fuel quality monitoring, marine fuel management, and upstream oil and gas fuel quality verification. Tank bottom sampling with ASTM D6304 analysis is the standard method for detecting water accumulation in bulk diesel storage tanks — fleet operators monitoring tank water content at intervals consistent with condensation accumulation rates (typically monthly or quarterly) can detect water ingress before it exceeds injector protection thresholds. In marine applications, IMO and classification society fuel management requirements include water content monitoring; ASTM D6304 or ISO 12937 testing of marine diesel fuel is a documented compliance record for vessel survey inspections. The [[TURBOCORE|TURBOCORE]] water-separating fuel filtration technology is designed to reduce filtered fuel water content to below the dissolved saturation level, with performance validation conducted by comparing ASTM D6304 measurements of unfiltered inlet fuel against filtered outlet fuel samples.
+ASTM D6304 is widely used in commercial fleet fuel quality monitoring, marine fuel management, and upstream oil and gas fuel quality verification. Tank bottom sampling with ASTM D6304 analysis is the standard method for detecting water accumulation in bulk diesel storage tanks — fleet operators monitoring tank water content at intervals consistent with condensation accumulation rates (typically monthly or quarterly) can detect water ingress before it exceeds injector protection thresholds. In marine applications, IMO and classification society fuel management requirements include water content monitoring; ASTM D6304 or ISO 12937 testing of marine diesel fuel is a documented compliance record for vessel survey inspections. The [[HYDROCORE|HYDROCORE]] water-separating fuel filtration technology is designed to reduce filtered fuel water content to below the dissolved saturation level, with performance validation conducted by comparing ASTM D6304 measurements of unfiltered inlet fuel against filtered outlet fuel samples.
 
 ## Relationships
 
 ### Applicable Technologies
-- [[TURBOCORE|TURBOCORE — TURBOCORE water-separation performance is validated by ASTM D6304 comparison of inlet and outlet water concentration; the coalescing barrier architecture targets outlet water concentration below dissolved saturation limit (50–100 mg/kg) from inlet concentrations exceeding 200 mg/kg]]
+- [[HYDROCORE|HYDROCORE — HYDROCORE water-separation performance is validated by ASTM D6304 comparison of inlet and outlet water concentration; the coalescing barrier architecture targets outlet water concentration below dissolved saturation limit (50–100 mg/kg) from inlet concentrations exceeding 200 mg/kg]]
 
 ### Contamination Addressed
 - [[DIESEL_WATER|DIESEL_WATER — ASTM D6304 is the primary quantitative measurement method for diesel fuel water contamination; both dissolved and free water contribute to the total mg/kg reading, providing the measurement baseline for water separation filtration performance assessment]]
@@ -82,10 +82,10 @@ RELATED_STANDARDS
 ISO 12937: ISO equivalent coulometric Karl Fischer method for water in petroleum products; European market compliance standard for EN 590 diesel water content verification; results equivalent to ASTM D6304
 
 RELATED_TECHNOLOGIES
-TURBOCORE: Water-separating fuel filtration technology; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for TURBOCORE coalescing efficiency claims
+HYDROCORE: Water-separating fuel filtration technology; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for HYDROCORE coalescing efficiency claims
 
 INDUSTRIAL_ROLE
-ASTM D6304 is the enabling measurement standard for diesel fuel water contamination control — without coulometric Karl Fischer measurement, fleet operators cannot distinguish between dissolved water (safe) and free water (injector-damaging) contamination states, making ASTM D6304 tank monitoring the necessary diagnostic layer that determines when TURBOCORE water separation is required and whether it is performing to specification.
+ASTM D6304 is the enabling measurement standard for diesel fuel water contamination control — without coulometric Karl Fischer measurement, fleet operators cannot distinguish between dissolved water (safe) and free water (injector-damaging) contamination states, making ASTM D6304 tank monitoring the necessary diagnostic layer that determines when HYDROCORE water separation is required and whether it is performing to specification.
 
 CITATION_REFERENCE
 source: elimfilters.com/knowledge-center/standards/astm-d6304

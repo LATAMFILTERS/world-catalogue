@@ -34,7 +34,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   'macrocore': 'MACROCORE',
   'nanoforce': 'NANOFORCE',
   'syntrax': 'SYNTRAX',
-  'TURBOCORE': 'TURBOCORE',
+  'HYDROCORE': 'HYDROCORE',
   'SYNTAPORE': 'SYNTAPORE',
   'drycore': 'DRYCORE',
   'intekcore': 'INTEKCORE',
@@ -52,7 +52,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   'housing': 'HOUSING',
   'kits': 'SERVICE KITS',
   'water': 'WATER SEPARATOR',
-  'turbocore-series': 'TURBOCORE',
+  'turbocore-series': 'HYDROCORE',
   // knowledge standards
   'lube-oil-systems': 'LUBE OIL SYSTEMS',
   'air-intake-systems': 'AIR INTAKE SYSTEMS',

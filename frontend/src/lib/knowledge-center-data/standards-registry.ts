@@ -1307,7 +1307,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-EMULSIFIED-WATER', 'TERM-HPCR', 'TERM-MICROBIAL-CONTAMINATION',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedArticles: ['fuel-water-contamination', 'oil-analysis-methods', 'hpcr-fuel-system-protection'],
     commonMistakes: [
       'Confusing free water and dissolved water in Karl Fischer results. ISO 12937 coulometric KF measures total water (dissolved + free + emulsified) — a result of 80 ppm in diesel does not mean free water is absent if phase separation has occurred.',
@@ -1321,7 +1321,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What water content limit does EN 590 specify for European diesel fuel, and why does it matter for HPCR?',
-        answer: 'EN 590 (European specification for automotive diesel fuel) specifies a maximum water content of 200 mg/kg (200 ppm by mass) as determined by ISO 12937. This limit is set to protect high-pressure common rail (HPCR) injection systems with fuel injection pressures of 1,800–2,500 bar and injector spool clearances of ≤1 µm. Water above 200 ppm in diesel fuel at HPCR operating conditions causes injector seat corrosion at the metal-to-metal seal surfaces, micro-pitting of needle valve surfaces, and stiction — where injector needles partially adhere to seats after injection events, causing irregular spray pattern, poor combustion efficiency, and ultimately injector failure. TURBOCORE™ coalescing separator elements are specified against the required outlet water target for the approved application, providing margin below the EN 590 limit.',
+        answer: 'EN 590 (European specification for automotive diesel fuel) specifies a maximum water content of 200 mg/kg (200 ppm by mass) as determined by ISO 12937. This limit is set to protect high-pressure common rail (HPCR) injection systems with fuel injection pressures of 1,800–2,500 bar and injector spool clearances of ≤1 µm. Water above 200 ppm in diesel fuel at HPCR operating conditions causes injector seat corrosion at the metal-to-metal seal surfaces, micro-pitting of needle valve surfaces, and stiction — where injector needles partially adhere to seats after injection events, causing irregular spray pattern, poor combustion efficiency, and ultimately injector failure. HYDROCORE™ coalescing separator elements are specified against the required outlet water target for the approved application, providing margin below the EN 590 limit.',
       },
       {
         question: 'What is the measurement range of ISO 12937 and when is it not appropriate?',
@@ -1345,7 +1345,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What microbial growth risk is associated with water contamination detected by ISO 12937?',
-        answer: 'Water content above 200 ppm in diesel fuel creates conditions for microbial contamination at the fuel-water interface in tank bottom accumulations. Sulphate-reducing bacteria (Pseudomonas aeruginosa, Desulfovibrio spp.) and fungi (Hormoconis resinae, known as the "kerosene fungus") colonize the water-fuel interface, producing acidic metabolites (sulphides, organic acids) that corrode tank walls and form biomass mats that block fuel filters. ISO 12937 water content testing provides early warning of conditions favouring microbial growth, but detecting established microbiological contamination requires additional testing: ATP bioluminescence, ASTM D6974 (microorganism enumeration in fuel), or culture-based colony count methods. TURBOCORE™ water separation reduces free water accumulation at tank bottoms, limiting microbial colonization sites.',
+        answer: 'Water content above 200 ppm in diesel fuel creates conditions for microbial contamination at the fuel-water interface in tank bottom accumulations. Sulphate-reducing bacteria (Pseudomonas aeruginosa, Desulfovibrio spp.) and fungi (Hormoconis resinae, known as the "kerosene fungus") colonize the water-fuel interface, producing acidic metabolites (sulphides, organic acids) that corrode tank walls and form biomass mats that block fuel filters. ISO 12937 water content testing provides early warning of conditions favouring microbial growth, but detecting established microbiological contamination requires additional testing: ATP bioluminescence, ASTM D6974 (microorganism enumeration in fuel), or culture-based colony count methods. HYDROCORE™ water separation reduces free water accumulation at tank bottoms, limiting microbial colonization sites.',
       },
       {
         question: 'Can ISO 12937 be used for marine fuel (HFO/LSFO) water content testing?',
@@ -1353,7 +1353,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What is the difference between dissolved, emulsified, and free water in diesel, and does ISO 12937 distinguish them?',
-        answer: 'ISO 12937 measures total water content — the sum of dissolved, emulsified, and free water phases. It does not distinguish between phases. Dissolved water is fully soluble in fuel at the sample temperature — invisible and not removable by settling. Emulsified water consists of sub-micron to 10 µm water droplets stabilized by surfactant contaminants or fuel oxidation products — not visible to the eye, removable only by coalescing filtration. Free water is a distinct visible aqueous phase (droplets >50 µm) — removable by settling and bulk separation. The distinction matters for filtration: dissolved water cannot be removed by standard coalescing filters and must be controlled at the source; emulsified water is removable by TURBOCORE™ coalescing media; free water is removable by any properly designed separator.',
+        answer: 'ISO 12937 measures total water content — the sum of dissolved, emulsified, and free water phases. It does not distinguish between phases. Dissolved water is fully soluble in fuel at the sample temperature — invisible and not removable by settling. Emulsified water consists of sub-micron to 10 µm water droplets stabilized by surfactant contaminants or fuel oxidation products — not visible to the eye, removable only by coalescing filtration. Free water is a distinct visible aqueous phase (droplets >50 µm) — removable by settling and bulk separation. The distinction matters for filtration: dissolved water cannot be removed by standard coalescing filters and must be controlled at the source; emulsified water is removable by HYDROCORE™ coalescing media; free water is removable by any properly designed separator.',
       },
     ],
     engineeringReferences: [
@@ -1398,7 +1398,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'Fuel and Lube Oil Applications',
-        body: 'In fuel applications, ASTM D6304 verifies diesel fuel water content below the 200 mg/kg threshold critical for HPCR injector protection. In lubricating oil applications, water above 0.1% indicates coolant leak (head gasket or liner failure); above 0.5%, water accelerates oil oxidation, promotes bacterial growth in biodegradable oils, and reduces oil film strength at bearing surfaces. TURBOCORE™ performance is validated by comparing ASTM D6304 inlet versus outlet water concentrations against the outlet target for the specific approved application.',
+        body: 'In fuel applications, ASTM D6304 verifies diesel fuel water content below the 200 mg/kg threshold critical for HPCR injector protection. In lubricating oil applications, water above 0.1% indicates coolant leak (head gasket or liner failure); above 0.5%, water accelerates oil oxidation, promotes bacterial growth in biodegradable oils, and reduces oil film strength at bearing surfaces. HYDROCORE™ performance is validated by comparing ASTM D6304 inlet versus outlet water concentrations against the outlet target for the specific approved application.',
       },
     ],
     keyParams: [
@@ -1413,7 +1413,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-WATER-SEPARATION-EFFICIENCY', 'TERM-COALESCING', 'TERM-HPCR',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedArticles: ['fuel-water-contamination', 'oil-analysis-methods', 'hpcr-fuel-system-protection'],
     commonMistakes: [
       'Selecting coulometric Karl Fischer (ASTM D6304) for high-water-content samples (>1000 ppm). Coulometric KF is designed for low water content — volumetric KF (ASTM D1744) is more appropriate for high-water petroleum products.',
@@ -1429,8 +1429,8 @@ export const KC_STANDARDS: KCStandard[] = [
         answer: 'ASTM D6304 covers water content from 10 to 25,000 mg/kg (10 ppm to 2.5% water by mass) in coulometric mode. Below 10 ppm, background moisture and reagent variability limit precision. Above approximately 1,000 ppm, extended titration times and potential reagent depletion make volumetric KF (ASTM D1744, which uses standardized iodine reagent solution rather than electrogenerated iodine) more practical and accurate. For diesel fuel below the EN 590/ASTM D975 water limit of 200 mg/kg, ASTM D6304 coulometric mode is the appropriate technique, providing precision of ±5–10 mg/kg at typical diesel water concentrations of 50–150 mg/kg.',
       },
       {
-        question: 'How is ASTM D6304 used to verify TURBOCORE™ water separator performance?',
-        answer: 'TURBOCORE™ water separator performance is verified by comparing ASTM D6304 water content measurements of fuel samples taken simultaneously at the separator inlet and outlet under operating flow conditions. Water separation efficiency = (Inlet water – Outlet water) / Inlet water × 100%. Field verification using ASTM D6304 at sampler ports installed upstream and downstream of the separator validates that the installed system achieves the rated performance for the specific approved element under actual fuel temperature, flow rate, and fuel composition conditions. Results below the approved rating may indicate element degradation, bypass leakage, or operation at above-rated flow rates.',
+        question: 'How is ASTM D6304 used to verify HYDROCORE™ water separator performance?',
+        answer: 'HYDROCORE™ water separator performance is verified by comparing ASTM D6304 water content measurements of fuel samples taken simultaneously at the separator inlet and outlet under operating flow conditions. Water separation efficiency = (Inlet water – Outlet water) / Inlet water × 100%. Field verification using ASTM D6304 at sampler ports installed upstream and downstream of the separator validates that the installed system achieves the rated performance for the specific approved element under actual fuel temperature, flow rate, and fuel composition conditions. Results below the approved rating may indicate element degradation, bypass leakage, or operation at above-rated flow rates.',
       },
       {
         question: 'What does ASTM D6304 measure in lubricating oil condition monitoring applications?',
@@ -1454,7 +1454,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'Is ASTM D6304 approved for use in ISO 16332 water separator performance testing?',
-        answer: 'ISO 16332 (Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency) specifies water content measurement using either ISO 12937 or ASTM D6304 as the analytical method for determining inlet and outlet water concentrations during separator performance testing. ASTM D6304 is explicitly accepted as an equivalent measurement method within ISO 16332. For North American laboratories performing ISO 16332 performance testing of TURBOCORE™ elements, ASTM D6304 is the standard coulometric KF method available in accredited fuel testing laboratories — enabling compliant ISO 16332 testing without requiring ISO 12937-specific instrument qualification.',
+        answer: 'ISO 16332 (Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency) specifies water content measurement using either ISO 12937 or ASTM D6304 as the analytical method for determining inlet and outlet water concentrations during separator performance testing. ASTM D6304 is explicitly accepted as an equivalent measurement method within ISO 16332. For North American laboratories performing ISO 16332 performance testing of HYDROCORE™ elements, ASTM D6304 is the standard coulometric KF method available in accredited fuel testing laboratories — enabling compliant ISO 16332 testing without requiring ISO 12937-specific instrument qualification.',
       },
       {
         question: 'What accuracy and precision does ASTM D6304 provide for diesel fuel water content measurement?',
@@ -1503,7 +1503,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'HPCR Fuel System Application',
-        body: 'ISO 16332 is a performance standard relevant to the water separation stage of HPCR fuel protection systems. In the ELIMFILTERS fuel protection strategy, TURBOCORE™ (water separation) operates in sequence with SYNTAPORE™ (primary particle removal). ISO 16332 water separation test performance is one criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection; the applicable rating must be tied to the specific approved element.',
+        body: 'ISO 16332 is a performance standard relevant to the water separation stage of HPCR fuel protection systems. In the ELIMFILTERS fuel protection strategy, HYDROCORE™ (water separation) operates in sequence with SYNTAPORE™ (primary particle removal). ISO 16332 water separation test performance is one criterion for selecting coalescing fuel filter elements for HPCR diesel engine protection; the applicable rating must be tied to the specific approved element.',
       },
       {
         heading: 'Relationship to Fuel Water Standards',
@@ -1520,7 +1520,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-EMULSIFIED-WATER', 'TERM-HPCR', 'TERM-INJECTOR-STICTION',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation'],
-    relatedTechnologies: ['TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedArticles: ['fuel-water-contamination', 'hpcr-fuel-system-protection', 'iso-16332'],
     commonMistakes: [
       'Specifying water separation efficiency at a single test flow rate as the only performance criterion. ISO 16332 water separation efficiency varies significantly with flow — a separator rated at 95% efficiency at rated flow may drop to 60% at 150% of rated flow.',
@@ -1564,7 +1564,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva',
-        relevance: 'Primary performance test standard for diesel fuel coalescing water separators; defines test methodology for water separation efficiency measurement relevant to TURBOCORE™ field performance verification.',
+        relevance: 'Primary performance test standard for diesel fuel coalescing water separators; defines test methodology for water separation efficiency measurement relevant to HYDROCORE™ field performance verification.',
       },
       {
         category: 'standard',
@@ -1574,7 +1574,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'EN 590:2022, Automotive Fuels — Diesel — Requirements and Test Methods, CEN Brussels',
-        relevance: 'European diesel fuel specification establishing the 200 mg/kg maximum water content that TURBOCORE™ water separators must achieve as HPCR fuel protection baseline.',
+        relevance: 'European diesel fuel specification establishing the 200 mg/kg maximum water content that HYDROCORE™ water separators must achieve as HPCR fuel protection baseline.',
       },
       {
         category: 'standard',
@@ -1948,7 +1948,7 @@ export const KC_STANDARDS: KCStandard[] = [
       'TERM-ABSOLUTE-EFFICIENCY', 'TERM-MULTI-PASS-TEST',
     ],
     relatedTopics: ['fluid-cleanliness', 'testing-and-validation', 'filter-media-science'],
-    relatedTechnologies: ['TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedArticles: ['hpcr-fuel-system-protection', 'fuel-water-contamination', 'beta-ratio', 'filter-media-engineering'],
     commonMistakes: [
       'Specifying fuel filter performance using ISO 4548 (lube oil filter method) when ISO 19438 is the applicable standard for fuel applications. Different test fluids, viscosities, and contaminant specifications make the tests non-comparable.',
@@ -1986,7 +1986,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What is the relationship between ISO 19438 and ISO 16332 in a complete diesel fuel protection system?',
-        answer: 'ISO 19438 and ISO 16332 address complementary but separate protection functions in the diesel fuel system. ISO 19438 qualifies particle filtration efficiency at the HPCR-critical 4–6 µm size range — protecting injection system precision components from abrasive wear by solid particles. ISO 16332 qualifies water separation efficiency — protecting injection system metallic surfaces from corrosion, micro-pitting, and stiction caused by water above 200 ppm. Both standards apply simultaneously in a correctly designed HPCR fuel protection system: particle filtration (ISO 19438) and water separation (ISO 16332, TURBOCORE™) each address one dimension of the dual-threat contamination challenge for HPCR injection systems.',
+        answer: 'ISO 19438 and ISO 16332 address complementary but separate protection functions in the diesel fuel system. ISO 19438 qualifies particle filtration efficiency at the HPCR-critical 4–6 µm size range — protecting injection system precision components from abrasive wear by solid particles. ISO 16332 qualifies water separation efficiency — protecting injection system metallic surfaces from corrosion, micro-pitting, and stiction caused by water above 200 ppm. Both standards apply simultaneously in a correctly designed HPCR fuel protection system: particle filtration (ISO 19438) and water separation (ISO 16332, HYDROCORE™) each address one dimension of the dual-threat contamination challenge for HPCR injection systems.',
       },
       {
         question: 'How does ISO 19438 treat test dust selection for fuel filter qualification?',
@@ -2012,7 +2012,7 @@ export const KC_STANDARDS: KCStandard[] = [
       {
         category: 'standard',
         citation: 'ISO 16332:2015, Diesel Engines — Fuel Filters — Test Methods for Water Separation Efficiency, ISO Geneva',
-        relevance: 'Complementary water separation test standard; ISO 19438 (particle filtration) and ISO 16332 (water separation, TURBOCORE™) together provide complete HPCR fuel protection qualification.',
+        relevance: 'Complementary water separation test standard; ISO 19438 (particle filtration) and ISO 16332 (water separation, HYDROCORE™) together provide complete HPCR fuel protection qualification.',
       },
     ],
   },

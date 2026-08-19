@@ -2358,7 +2358,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'How do centrifugal fuel-water separators differ from coalescing fuel filters in water removal mechanism?',
-        answer: 'Centrifugal separators use angular momentum to separate water from diesel based on density difference (water 1.00 g/mL vs. diesel 0.82–0.85 g/mL). The rotational field creates a centrifugal acceleration of 50–500×g — water droplets migrate outward and collect in a peripheral bowl while fuel exits from the center. Centrifugal separators are effective for separating free water droplets above 50–100 µm diameter but have minimal effect on emulsified water (droplets <10 µm) or dissolved water. Coalescing fuel filters use hydrophobic synthetic media that causes fine water droplets to merge (coalesce) into larger droplets that then settle under gravity to the water collection bowl. Coalescing filters remove droplets as small as 0.5 µm, making them effective against fuel emulsions. TURBOCORE combines coalescing media for fine water removal with a sediment filtration layer for particle capture in a single filter element.',
+        answer: 'Centrifugal separators use angular momentum to separate water from diesel based on density difference (water 1.00 g/mL vs. diesel 0.82–0.85 g/mL). The rotational field creates a centrifugal acceleration of 50–500×g — water droplets migrate outward and collect in a peripheral bowl while fuel exits from the center. Centrifugal separators are effective for separating free water droplets above 50–100 µm diameter but have minimal effect on emulsified water (droplets <10 µm) or dissolved water. Coalescing fuel filters use hydrophobic synthetic media that causes fine water droplets to merge (coalesce) into larger droplets that then settle under gravity to the water collection bowl. Coalescing filters remove droplets as small as 0.5 µm, making them effective against fuel emulsions. HYDROCORE combines coalescing media for fine water removal with a sediment filtration layer for particle capture in a single filter element.',
       },
       {
         question: 'What fuel system components are most vulnerable to water-induced failure?',
@@ -2457,7 +2457,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         heading: 'Coalescing Filter Technology and Water Removal',
-        body: 'Fuel filter water separators use coalescence to remove emulsified and free water from fuel. Coalescence media (glass fiber or hydrophilic synthetic with controlled surface energy) cause small water droplets to collide, adhere, and grow into larger droplets that settle by gravity to the water sump. Separation efficiency is expressed as water dropout rate at a specified fuel flow rate and initial water concentration. Stage 1 (coalescer): emulsified water droplets (1–10 µm) coalesce to >100 µm on the coalescing media surface. Stage 2 (separator shell): coalesced droplets settle through the quiescent zone below the coalescer to the water collection bowl. ASTM D7619 (Standard Test Method for Sizing and Characterization of Particles in Low-Sulfur Automotive-Grade Diesel Fuels) measures particulate levels that accompany water separation testing. TURBOCORE™ coalescing technology combines sub-10 µm particle capture with water separation in a single element, eliminating the separate secondary stage in applications where space is constrained.',
+        body: 'Fuel filter water separators use coalescence to remove emulsified and free water from fuel. Coalescence media (glass fiber or hydrophilic synthetic with controlled surface energy) cause small water droplets to collide, adhere, and grow into larger droplets that settle by gravity to the water sump. Separation efficiency is expressed as water dropout rate at a specified fuel flow rate and initial water concentration. Stage 1 (coalescer): emulsified water droplets (1–10 µm) coalesce to >100 µm on the coalescing media surface. Stage 2 (separator shell): coalesced droplets settle through the quiescent zone below the coalescer to the water collection bowl. ASTM D7619 (Standard Test Method for Sizing and Characterization of Particles in Low-Sulfur Automotive-Grade Diesel Fuels) measures particulate levels that accompany water separation testing. HYDROCORE™ coalescing technology combines sub-10 µm particle capture with water separation in a single element, eliminating the separate secondary stage in applications where space is constrained.',
         callout: [
           { label: 'Coalescence droplet range', value: '1–10 µm (initial) → >100 µm (coalesced)' },
           { label: 'Separation mechanism', value: 'Gravity settling after coalescence' },
@@ -2493,7 +2493,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Microbial prevention threshold', value: '<50 ppm tank water' },
     ],
     relatedStandards: ['ASTM D6304', 'ISO 12937'],
-    relatedTechnologies: ['TURBOCORE™'],
+    relatedTechnologies: ['HYDROCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['water contamination', 'fuel systems', 'Karl Fischer', 'ASTM D6304', 'ISO 12937', 'HPCR', 'coalescing filter', 'microbial contamination'],
     commonMistakes: [
@@ -2929,7 +2929,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'What is the water separation efficiency requirement for diesel fuel-water separators?',
-        answer: 'Water separation efficiency for diesel fuel-water separators is measured per ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) or SAE J1488 (Emulsified Water/Fuel Separation Test). Required separation efficiency for HPCR applications depends on the approved element and application; TURBOCORE coalescing media is rated for the required separation performance under these test conditions. The ISO 4020 test uses water-in-fuel emulsion at a defined droplet size distribution and measures downstream water content by Karl Fischer titration. Elements failing to meet the required rating allow free water accumulation at the common rail pump inlet — the primary mechanism for injector needle corrosion and fuel system microbial contamination propagation.',
+        answer: 'Water separation efficiency for diesel fuel-water separators is measured per ISO 4020 (Road Vehicles — Fuel Filters for Diesel Engines) or SAE J1488 (Emulsified Water/Fuel Separation Test). Required separation efficiency for HPCR applications depends on the approved element and application; HYDROCORE coalescing media is rated for the required separation performance under these test conditions. The ISO 4020 test uses water-in-fuel emulsion at a defined droplet size distribution and measures downstream water content by Karl Fischer titration. Elements failing to meet the required rating allow free water accumulation at the common rail pump inlet — the primary mechanism for injector needle corrosion and fuel system microbial contamination propagation.',
       },
       {
         question: 'What is the effect of low-temperature wax crystal formation on fuel filter performance?',
@@ -2957,7 +2957,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'What is the service interval for fuel-water separator bowl draining in marine diesel applications?',
-        answer: 'Marine diesel fuel system water separator bowl drainage intervals depend on sea conditions, fuel supply quality, and tank venting arrangements. Typical intervals: (1) After each bunkering operation — new fuel deliveries may contain free water; drain immediately after settling (1 hour per metre of tank depth). (2) Daily in high-humidity tropical climates — condensation accumulates overnight. (3) After heavy sea conditions — wave-induced fuel sloshing re-suspends settled water and sediment, increasing free water at filter inlet. The TURBOCORE separator bowl should be visually inspected at each engine pre-start check — visible water layer above the lower drain port trigger point requires immediate drain-off and recording in the engine room log. IMO MARPOL Annex I requirements for oil content of drained water may apply depending on vessel class and separator discharge arrangement.',
+        answer: 'Marine diesel fuel system water separator bowl drainage intervals depend on sea conditions, fuel supply quality, and tank venting arrangements. Typical intervals: (1) After each bunkering operation — new fuel deliveries may contain free water; drain immediately after settling (1 hour per metre of tank depth). (2) Daily in high-humidity tropical climates — condensation accumulates overnight. (3) After heavy sea conditions — wave-induced fuel sloshing re-suspends settled water and sediment, increasing free water at filter inlet. The HYDROCORE separator bowl should be visually inspected at each engine pre-start check — visible water layer above the lower drain port trigger point requires immediate drain-off and recording in the engine room log. IMO MARPOL Annex I requirements for oil content of drained water may apply depending on vessel class and separator discharge arrangement.',
       },
       {
         question: 'How is fuel filter performance validated for common rail systems after filter element replacement?',
@@ -3054,7 +3054,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Housing burst safety factor', value: '6× working pressure (ISO 4020)' },
     ],
     relatedStandards: ['ASTM D6304', 'ISO 12937'],
-    relatedTechnologies: ['SYNTAPORE™', 'TURBOCORE™', 'TURBOCORE™'],
+    relatedTechnologies: ['SYNTAPORE™', 'HYDROCORE™'],
     relatedSystems: ['Fuel Cleanliness Protection'],
     keywords: ['diesel fuel filtration', 'ISO 4020', 'HPCR', 'water separation', 'coalescing filter', 'fuel cleanliness', 'cold filter plugging point', 'EN 590'],
     fieldDiagnostics: {
@@ -4003,7 +4003,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       },
       {
         question: 'How does the surface energy of filter media fiber affect water separation in fuel and hydraulic systems?',
-        answer: 'Fiber surface energy determines whether water droplets wet the fiber surface (hydrophilic) or bead off (hydrophobic). Hydrophilic media — cellulose, untreated glass fiber — absorbs water from petroleum fluid and allows water to coat fiber surfaces; this can cause elevated pressure drop in the presence of free water without effective water-oil separation. Hydrophobic media — polyester, polypropylene, PTFE-treated glass fiber — causes water droplets from fuel/oil emulsions to coalesce at fiber contacts, growing into larger droplets that settle under gravity to the water bowl. TURBOCORE coalescing media uses a hydrophobic surface treatment engineered for free water separation from diesel fuel emulsions, tested per ISO 4020 against the required rating for the approved application. Surface hydrophobicity is verified by contact angle measurement: >90° contact angle (water droplet beads on surface) confirms hydrophobic treatment; <30° (water spreads on surface) confirms hydrophilic.',
+        answer: 'Fiber surface energy determines whether water droplets wet the fiber surface (hydrophilic) or bead off (hydrophobic). Hydrophilic media — cellulose, untreated glass fiber — absorbs water from petroleum fluid and allows water to coat fiber surfaces; this can cause elevated pressure drop in the presence of free water without effective water-oil separation. Hydrophobic media — polyester, polypropylene, PTFE-treated glass fiber — causes water droplets from fuel/oil emulsions to coalesce at fiber contacts, growing into larger droplets that settle under gravity to the water bowl. HYDROCORE coalescing media uses a hydrophobic surface treatment engineered for free water separation from diesel fuel emulsions, tested per ISO 4020 against the required rating for the approved application. Surface hydrophobicity is verified by contact angle measurement: >90° contact angle (water droplet beads on surface) confirms hydrophobic treatment; <30° (water spreads on surface) confirms hydrophilic.',
       },
       {
         question: 'What is the significance of fiber orientation in filter media performance?',
@@ -4299,7 +4299,7 @@ export const ENGINEERING_ARTICLES: KCArticle[] = [
       { label: 'Marine engine oil drain (large bore)', value: '2,000+ hours typical' },
     ],
     relatedStandards: ['ISO 8217', 'ASTM D6304', 'ISO 19438', 'ISO 4020', 'ISO 17359', 'ASTM D7468'],
-    relatedTechnologies: ['MARINECLEAN™', 'TURBOCORE™', 'SYNTAPORE™', 'SYNTRAX™'],
+    relatedTechnologies: ['MARINECLEAN™', 'HYDROCORE™', 'SYNTAPORE™', 'SYNTRAX™'],
     relatedSystems: ['Fuel Cleanliness Protection', 'Lubrication Protection'],
     keywords: [
       'marine diesel filtration', 'ISO 8217', 'MARPOL sulphur', 'saltwater contamination',

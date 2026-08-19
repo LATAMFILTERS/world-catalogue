@@ -1,7 +1,44 @@
 {
   "entry_key": "MINING",
-  "path_count": 6,
+  "path_count": 5,
   "paths": [
+    {
+      "path_id": "PATH_B_MINING_022",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "AIRFILTER_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_022.json"
+    },
+    {
+      "path_id": "PATH_B_MINING_023",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_023.json"
+    },
+    {
+      "path_id": "PATH_B_MINING_024",
+      "path_type": "B",
+      "entry_node": "MINING",
+      "entry_type": "industry",
+      "industry": "MINING",
+      "valid": true,
+      "terminal_product_families": [
+        "FUEL_TURBINE",
+        "FUEL_WATER_SEPARATOR"
+      ],
+      "href": "/api/citation/path/PATH_B_MINING_024.json"
+    },
     {
       "path_id": "PATH_B_MINING_025",
       "path_type": "B",
@@ -10,7 +47,7 @@
       "industry": "MINING",
       "valid": true,
       "terminal_product_families": [
-        "AIRFILTER_PRIMARY"
+        "HYDRAULIC_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_B_MINING_025.json"
     },
@@ -22,57 +59,9 @@
       "industry": "MINING",
       "valid": true,
       "terminal_product_families": [
-        "LUBE_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_026.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_027",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_WATER_SEPARATOR"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_027.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_028",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
-        "FUEL_TURBINE"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_028.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_029",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
-        "HYDRAULIC_PRIMARY"
-      ],
-      "href": "/api/citation/path/PATH_B_MINING_029.json"
-    },
-    {
-      "path_id": "PATH_B_MINING_030",
-      "path_type": "B",
-      "entry_node": "MINING",
-      "entry_type": "industry",
-      "industry": "MINING",
-      "valid": true,
-      "terminal_product_families": [
         "CABIN_PRIMARY"
       ],
-      "href": "/api/citation/path/PATH_B_MINING_030.json"
+      "href": "/api/citation/path/PATH_B_MINING_026.json"
     }
   ]
 }

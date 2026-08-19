@@ -37,7 +37,7 @@ RELATED_STANDARDS
 ISO 16889 provides a recognized multi-pass test method for hydraulic filter performance. ISO 4406 provides a recognized fluid-cleanliness coding framework. Application-specific targets and performance values must be established from approved engineering requirements; the technology name alone does not imply a universal Beta ratio or cleanliness code.
 
 RELATED_TECHNOLOGIES
-SYNTRAX is the ELIMFILTERS lubrication technology and must not be represented as a NANOFORCE stage. TURBOCORE is a fuel-separation technology and must not be represented as a hydraulic technology.
+SYNTRAX is the ELIMFILTERS lubrication technology and must not be represented as a NANOFORCE stage. HYDROCORE is a fuel-separation technology and must not be represented as a hydraulic technology.
 
 INDUSTRIAL_ROLE
 NANOFORCE provides the hydraulic-fluid contamination-control layer of ELIMFILTERS Hydraulic Protection. Selection is governed by the cleanliness requirement of the most sensitive component together with system flow, pressure, temperature, contaminant load and duty cycle.

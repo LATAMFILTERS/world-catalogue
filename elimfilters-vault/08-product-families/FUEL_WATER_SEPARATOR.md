@@ -35,7 +35,7 @@ This family covers 102 ELIMFILTERS® SKUs (verified directly against the product
 - Cartridge fuel/water separators for HPCR diesel engines (injector protection)
 - Heavy-duty separators for mining and power generation applications
 
-All elements in this family use HYDROCORE™ coalescing media construction for diesel fuel water separation. A separator built for the approved Turbine Series FH/FG architecture is TURBOCORE™, not HYDROCORE™ -- see the FUEL_TURBINE family.
+All elements in this family use HYDROCORE™ coalescing media construction for diesel fuel water separation. A separator built for the approved Turbine Series FH/FG architecture is also HYDROCORE™, but belongs to the distinct FUEL_TURBINE family -- see FUEL_TURBINE.
 
 The family is the **terminal product node** in the fuel Part Search traversal path for standard (non-turbine) separator applications: a user who presents contamination `DIESEL_WATER`, specifies industry `MARINE` or `AGRICULTURE`, and has no turbine/Racor signal will be directed to SKUs from this family.
 
@@ -68,7 +68,7 @@ This family is the **terminal product node** in the diesel water contamination P
 
 ```
 DIESEL_WATER (ContaminationMode)
-    ↓ resolved_by → HYDROCORE (standard separator) or TURBOCORE (turbine FH/FG)
+    ↓ resolved_by → HYDROCORE (standard separator, or turbine FH/FG for the FUEL_TURBINE family)
     ↓ ProductFamily lookup
 FUEL_WATER_SEPARATOR ← [you are here, when no turbine/Racor signal]
     ↓ Part Search DB query
@@ -103,11 +103,10 @@ HYDROCORE governs standard (non-turbine) fuel/water separation; no standard is
 currently approved as a direct canonical relationship for this family.
 
 RELATED_TECHNOLOGIES
-HYDROCORE: Primary element technology (coalescing water separation) for standard
-(non-turbine) applications | TURBOCORE: The equivalent separation technology reserved
-for approved Turbine Series FH/FG applications (a distinct product family, FUEL_TURBINE)
-| SYNTAPORE: Plain primary/secondary fuel filtration -- does not perform a
-water-separation function (not in this family)
+HYDROCORE: Primary element technology (coalescing water separation) for both standard
+(non-turbine) applications in this family and approved Turbine Series FH/FG applications
+(a distinct product family, FUEL_TURBINE) | SYNTAPORE: Plain primary/secondary fuel
+filtration -- does not perform a water-separation function (not in this family)
 
 INDUSTRIAL_ROLE
 This product family is the standard (non-turbine) implementation for diesel fuel water

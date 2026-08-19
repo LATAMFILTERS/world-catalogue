@@ -58,7 +58,7 @@
     },
     {
       "type": "technology",
-      "count": 10,
+      "count": 9,
       "href": "/api/citation/type/technology.json"
     }
   ]

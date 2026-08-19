@@ -115,7 +115,7 @@ test('technology portfolio and Knowledge Center definitions share one entity ID 
 
 test('AI sitemap contains both portfolio and technical definitions for all nine core technologies', () => {
   const xml = read('frontend/public/sitemap-ai.xml');
-  const slugs = ['macrocore', 'microkappa', 'drycore', 'intekcore', 'syntapore', 'turbocore', 'syntrax', 'nanoforce', 'thermacore'];
+  const slugs = ['macrocore', 'microkappa', 'drycore', 'intekcore', 'syntapore', 'hydrocore', 'syntrax', 'nanoforce', 'thermacore'];
   for (const slug of slugs) {
     assert.ok(xml.includes(`https://elimfilters.com/technologies/${slug}/`), `missing portfolio URL for ${slug}`);
     assert.ok(xml.includes(`https://elimfilters.com/knowledge-center/technologies/${slug}/`), `missing Knowledge Center URL for ${slug}`);

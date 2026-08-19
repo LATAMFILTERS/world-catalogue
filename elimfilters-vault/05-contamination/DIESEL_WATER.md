@@ -23,7 +23,6 @@ impacts:
   equipment_availability: "−10–20%"
 resolved_by:
   - "[[HYDROCORE]]"
-  - "[[TURBOCORE]]"
 related_standards:
   - "[[ASTM_D6304]]"
   - "[[ISO_12937]]"
@@ -45,8 +44,7 @@ The ASTM D6304 Karl Fischer titration method is the standard quantitative test f
 ## Relationships
 
 ### Resolved By Technologies
-- [[HYDROCORE|HYDROCORE — Standard (non-turbine) spin-on/cartridge water separation technology for diesel fuel systems; coalescing media separates free and emulsified water before injector delivery]]
-- [[TURBOCORE|TURBOCORE — The equivalent water-separation technology for approved Turbine Series FH/FG applications]]
+- [[HYDROCORE|HYDROCORE — Fuel/water separation technology across approved spin-on, cartridge, and Turbine Series FH/FG architectures; coalescing media separates free and emulsified water before injector delivery]]
 
 ### Governing Standards
 - [[ASTM_D6304|ASTM D6304 — Karl Fischer coulometric titration method for water in petroleum products; primary quantitative test for diesel fuel water content]]
@@ -90,7 +88,7 @@ RELATED_STANDARDS
 ASTM D6304: Karl Fischer coulometric titration for water in petroleum products; primary quantitative monitoring method | ISO 12937: European equivalent standard for water content in petroleum products
 
 RELATED_TECHNOLOGIES
-HYDROCORE: Standard (non-turbine) coalescing water separation technology; separates free and emulsified water from diesel before injector delivery | TURBOCORE: The equivalent water-separation technology for approved Turbine Series FH/FG applications
+HYDROCORE: Coalescing water separation technology across approved spin-on, cartridge, and Turbine Series FH/FG architectures; separates free and emulsified water from diesel before injector delivery
 
 INDUSTRIAL_ROLE
 Diesel water contamination is the leading cause of premature common-rail injector failure in mobile and stationary diesel equipment — controlling water content below ASTM D6304 thresholds through active coalescing separation extends injector service life 40–70% and eliminates microbiological tank failures that can render entire bulk fuel storage volumes unusable.
@@ -98,6 +96,6 @@ Diesel water contamination is the leading cause of premature common-rail injecto
 CITATION_REFERENCE
 source: elimfilters.com/knowledge-center/engineering/fluid-cleanliness
 concept: Diesel Water Contamination
-version: 1.0
-last_updated: 2026-06-03
+version: 1.1
+last_updated: 2026-08-18
 ```

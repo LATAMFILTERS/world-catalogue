@@ -60,7 +60,7 @@ const marineEnv: OperatingEnvironment = {
 
 const marineRec = evaluateAssetStrategy('ASSET-MARINE-001', marineEnv);
 
-assert('Marine env triggers TURBOCORE™ technology for water separation', marineRec.recommendedTechnologies.includes('TURBOCORE™'));
+assert('Marine env triggers HYDROCORE™ technology for water separation', marineRec.recommendedTechnologies.includes('HYDROCORE™'));
 assert('Marine env elevates Fuel System maintenance priority', marineRec.maintenanceStrategy.criticalSystems.includes('Fuel System'));
 assert('Traceability includes reference to Water/Fuel Risk Profile', marineRec.trace.some(t => t.reference.includes('Water/Fuel Risk Profile') || t.reference.includes('ISO-4406')));
 

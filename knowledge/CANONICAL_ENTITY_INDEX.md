@@ -21,7 +21,6 @@ ELIMFILTERS — Industrial Filtration Engineering / Asset Protection Systems
 - technology:drycore — DRYCORE™
 - technology:intekcore — INTEKCORE™
 - technology:syntapore — SYNTAPORE™
-- technology:turbocore — TURBOCORE™
 - technology:hydrocore — HYDROCORE™
 - technology:syntrax — SYNTRAX™
 - technology:nanoforce — NANOFORCE™

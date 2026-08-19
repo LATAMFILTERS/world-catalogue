@@ -14,7 +14,7 @@ const ENTITY_DICTIONARY: Record<string, { type: EntityType, value: string }> = {
   'DRYCORE': { type: 'TECHNOLOGY', value: 'DRYCORE™' },
   'INTEKCORE': { type: 'TECHNOLOGY', value: 'INTEKCORE™' },
   'SYNTAPORE': { type: 'TECHNOLOGY', value: 'SYNTAPORE™' },
-  'TURBOCORE': { type: 'TECHNOLOGY', value: 'TURBOCORE™' },
+  'HYDROCORE': { type: 'TECHNOLOGY', value: 'HYDROCORE™' },
   'SYNTRAX': { type: 'TECHNOLOGY', value: 'SYNTRAX™' },
   'NANOFORCE': { type: 'TECHNOLOGY', value: 'NANOFORCE™' },
   'THERMACORE': { type: 'TECHNOLOGY', value: 'THERMACORE™' },

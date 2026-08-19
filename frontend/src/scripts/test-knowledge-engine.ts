@@ -58,7 +58,7 @@ This document covers the updated filtration standards for heavy equipment.
 # Failure Modes and Protection
 Severe dust environments in mining operations cause abrasive wear and cylinder scoring. 
 To prevent this, equipment must be fitted with MACROCORE™ technology, which meets the ISO-5011 standard for heavy duty air intake systems.
-Additionally, water contamination causes pump cavitation, requiring TURBOCORE™ technology.
+Additionally, water contamination causes pump cavitation, requiring HYDROCORE™ technology.
 
 # Maintenance Intervals
 Standard maintenance is required every 250 hours in extreme environments.
@@ -96,7 +96,7 @@ console.log('──────────────────────�
 
 const reportV2 = processDocument(rawDocumentV2);
 
-assert('Detected new TURBOCORE entities', reportV2.newEntities.some(e => e.value === 'TURBOCORE™'));
+assert('Detected new HYDROCORE entities', reportV2.newEntities.some(e => e.value === 'HYDROCORE™'));
 assert('Superseded existing relationship versions', reportV2.deprecatedRelationships.length > 0);
 
 const updatedTechRel = reportV2.newRelationships.find(r => r.type === 'TECHNOLOGY_MEETS_STANDARD' && r.sourceEntityId.includes('macrocore'));

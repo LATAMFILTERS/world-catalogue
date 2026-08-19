@@ -9,7 +9,7 @@ Status: Active
 - [[DRYCORE]]
 - [[INTEKCORE]]
 - [[SYNTAPORE]]
-- [[TURBOCORE]]
+- [[HYDROCORE]]
 - [[SYNTRAX]]
 - [[NANOFORCE]]
 - [[THERMACORE]]

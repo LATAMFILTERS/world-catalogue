@@ -24,7 +24,7 @@ export const ENGINEERING_RULES: EngineeringRule[] = [
     condition: (env, p) => p.waterRisk === 'EXTREME' || p.waterRisk === 'HIGH',
     reference: 'ISO-4406 Fuel Water Separation Standards',
     justification: 'High water risk requires advanced coalescence technology to prevent injector tip failure and pump cavitation.',
-    action: { technology: 'TURBOCORE™', systemType: 'Fuel System', required: true, priority: 'CRITICAL' }
+    action: { technology: 'HYDROCORE™', systemType: 'Fuel System', required: true, priority: 'CRITICAL' }
   },
 
   // CABIN AIR RULES

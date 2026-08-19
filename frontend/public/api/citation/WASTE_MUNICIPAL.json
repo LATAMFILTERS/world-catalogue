@@ -18,14 +18,14 @@
     "concept": "Waste & Municipal Industry Filtration Requirements",
     "version": "1.0",
     "last_updated": "2026-06-03",
-    "content_hash": "sha256:c17fd866f595357349635c6a470bd39b4629ca2046d5787d91764071321e31e2"
+    "content_hash": "sha256:b6717a7fbcb9294e81a2755412a786272f8bbf1ea7ff3e2c1b10ad328e3eee59"
   },
   "canonical": {
     "definition": "Waste & Municipal is a HIGH contamination exposure industrial category for diesel refuse collection, street sweeping, and municipal utility equipment, characterised by stop-start duty cycles generating 2–3× baseline lube oil soot loading, operator cab exposure to biological aerosols and urban PM2.5, and >90% fleet availability requirements that make contamination-related unplanned maintenance a direct service delivery failure.",
     "systems": "Refuse collection vehicle diesel engine lube and air intake systems, street sweeper engine intake in maximum-particulate operating environments, municipal vehicle diesel fuel circuits with short-trip condensation accumulation, cab air supply systems for biological aerosol and PM2.5 protection",
     "failure_impact": "Stop-start cold-start cycles at 300–600 events/shift → elevated soot in lube oil at 2–3× sustained-load rates → accelerated bearing wear if lube filtration does not capture soot agglomerates | Short-trip duty → progressive fuel tank water accumulation → microbial growth (Hormoconis resinae) → simultaneous multi-vehicle fuel filter plugging during summer → fleet availability crisis | Operational Impact: contamination-related events account for 20–30% of unplanned municipal fleet maintenance; refuse collection schedule disruption has direct public service consequences.",
     "related_standards": "ISO 5011: Air filtration performance test for refuse vehicle and street sweeper engine intake systems | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio test for hydraulic system filtration on refuse vehicle compaction systems | ISO 11155: Cabin air filter test for operator health compliance in biological and chemical exposure environments",
-    "related_technologies": "SYNTRAX: Full-flow lube filtration with soot agglomerate capture for stop-start duty cycle soot management | NANOFORCE: Sub-micron hydraulic filtration for compaction and lift systems maintaining ISO 4406 cleanliness under elevated cold-start contamination | TURBOCORE: Diesel fuel water separation preventing microbial growth in short-trip condensation-accumulating fuel tanks | MICROKAPPA: ISO 11155 cabin filtration with activated carbon for biological aerosol and chemical vapor in refuse vehicle cabs | MACROCORE: Air intake filtration for street sweeper and refuse vehicle engines in high-particulate urban environments",
+    "related_technologies": "SYNTRAX: Full-flow lube filtration with soot agglomerate capture for stop-start duty cycle soot management | NANOFORCE: Sub-micron hydraulic filtration for compaction and lift systems maintaining ISO 4406 cleanliness under elevated cold-start contamination | HYDROCORE: Diesel fuel water separation preventing microbial growth in short-trip condensation-accumulating fuel tanks | MICROKAPPA: ISO 11155 cabin filtration with activated carbon for biological aerosol and chemical vapor in refuse vehicle cabs | MACROCORE: Air intake filtration for street sweeper and refuse vehicle engines in high-particulate urban environments",
     "industrial_role": "Waste & municipal fleet contamination control is operationally critical because >90% fleet uptime requirements mean contamination-driven failures translate directly to missed refuse collection schedules — fleet-level fuel water management and stop-start lube oil soot control are the two highest-leverage contamination interventions for maintaining service delivery reliability in municipal waste operations."
   },
   "relationships": {
@@ -38,7 +38,7 @@
       "MACROCORE",
       "NANOFORCE",
       "SYNTRAX",
-      "TURBOCORE",
+      "HYDROCORE",
       "MICROKAPPA"
     ],
     "applicable_standards": [
@@ -92,9 +92,9 @@
         "href": "/api/citation/SYNTRAX.json"
       },
       {
-        "key": "TURBOCORE",
+        "key": "HYDROCORE",
         "relation": "applicable_technologies",
-        "href": "/api/citation/TURBOCORE.json"
+        "href": "/api/citation/HYDROCORE.json"
       },
       {
         "key": "MICROKAPPA",

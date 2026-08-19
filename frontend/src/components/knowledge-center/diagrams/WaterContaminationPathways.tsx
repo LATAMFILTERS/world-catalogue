@@ -379,8 +379,8 @@ export default function WaterContaminationPathways({ className, style }: SvgDiag
         PREVENTION TECHNOLOGIES
       </text>
       {[
-        { t: 'TURBOCORE — coalescing water separator, bulk free-water removal', y: 463 },
-        { t: 'TURBOCORE — staged fuel treatment: pre-filter, coalesce, final barrier', y: 477 },
+        { t: 'HYDROCORE — coalescing water separator, bulk free-water removal', y: 463 },
+        { t: 'HYDROCORE — staged fuel treatment: pre-filter, coalesce, final barrier', y: 477 },
         { t: 'Desiccant breather recommended on all non-pressurised vent ports', y: 491 },
       ].map(row => (
         <text key={row.y} x="480" y={row.y}

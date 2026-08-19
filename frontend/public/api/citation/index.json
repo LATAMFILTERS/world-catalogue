@@ -1,8 +1,8 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-08-18T07:06:02.473Z",
-    "entity_count": 69,
+    "generated": "2026-08-19T03:37:15.215Z",
+    "entity_count": 68,
     "endpoint_base": "/api/citation",
     "query_patterns": {
       "entity_lookup": "/api/citation/[KEY].json",
@@ -56,22 +56,21 @@
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/hydrocore/",
         "concept": "HYDROCORE Fuel Water Separation Technology",
-        "version": "1.0",
-        "last_updated": "2026-08-15",
-        "content_hash": "sha256:da013411952f48852f7f70b7b852b165505f9421996d66d9003e3e9295754252"
+        "version": "2.0",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:9d20c1e782acb225d51f28785616ce4f8b0189ed8e63b2c0ee8b5ec5a2187ca9"
       },
       "canonical": {
-        "definition": "HYDROCORE is the ELIMFILTERS fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators.",
-        "systems": "Fuel Cleanliness Protection; standard spin-on and cartridge fuel/water separator applications outside the Turbine Series FH/FG architecture.",
+        "definition": "HYDROCORE is the ELIMFILTERS fuel/water separation architecture across approved spin-on, cartridge, FH and FG separator applications.",
+        "systems": "Fuel Cleanliness Protection; approved fuel/water separator applications including spin-on, cartridge, FH and FG architectures.",
         "failure_impact": "Inadequate water separation can allow free or emulsified water to reach downstream injectors and high-pressure pumps, increasing erosion, corrosion and cavitation risk.",
         "related_standards": "Applicable fuel-water separation test methods, water-holding capacity and application requirements must be selected for the approved separator. The technology name alone does not imply a universal separation efficiency or certification claim.",
-        "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection -- SYNTAPORE is scoped to plain fuel filtration and does not perform the water-separation function reserved for HYDROCORE. TURBOCORE: Dedicated fuel-separation architecture reserved for approved turbine-style FH and FG applications -- HYDROCORE is reserved for standard (non-turbine) separator housings and must not be represented as a Turbine Series FH/FG technology.",
-        "industrial_role": "HYDROCORE provides the standard (non-turbine) fuel/water separation layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by flow, water-holding capacity, element rating, installation and maintenance requirements."
+        "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. HYDROCORE governs the water-separation function across approved separator architectures.",
+        "industrial_role": "HYDROCORE provides the fuel/water separation layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by flow, water-holding capacity, element rating, installation and maintenance requirements."
       },
       "relationships": {
         "related_technologies": [
-          "SYNTAPORE",
-          "TURBOCORE"
+          "SYNTAPORE"
         ]
       },
       "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md"
@@ -194,14 +193,14 @@
         "concept": "NANOFORCE Hydraulic Filtration Technology",
         "version": "2.0",
         "last_updated": "2026-08-14",
-        "content_hash": "sha256:43bb24050dd038584ac0ff20e0d482bfdb272cd55f45d15bfe01b9dec00b64f0"
+        "content_hash": "sha256:d0f0290c12397153447e0e80a47e56244aa8768895cfbd8681ad9b3a96dbb822"
       },
       "canonical": {
         "definition": "NANOFORCE is the ELIMFILTERS hydraulic filtration architecture for contamination control in fluid-power systems.",
         "systems": "Hydraulic Protection; approved hydraulic fluid-power filtration applications.",
         "failure_impact": "Uncontrolled hydraulic-fluid contamination can accelerate wear, contribute to valve stiction and reduce the precision and reliability of fluid-power components.",
         "related_standards": "ISO 16889 provides a recognized multi-pass test method for hydraulic filter performance. ISO 4406 provides a recognized fluid-cleanliness coding framework. Application-specific targets and performance values must be established from approved engineering requirements; the technology name alone does not imply a universal Beta ratio or cleanliness code.",
-        "related_technologies": "SYNTRAX is the ELIMFILTERS lubrication technology and must not be represented as a NANOFORCE stage. TURBOCORE is a fuel-separation technology and must not be represented as a hydraulic technology.",
+        "related_technologies": "SYNTRAX is the ELIMFILTERS lubrication technology and must not be represented as a NANOFORCE stage. HYDROCORE is a fuel-separation technology and must not be represented as a hydraulic technology.",
         "industrial_role": "NANOFORCE provides the hydraulic-fluid contamination-control layer of ELIMFILTERS Hydraulic Protection. Selection is governed by the cleanliness requirement of the most sensitive component together with system flow, pressure, temperature, contaminant load and duty cycle."
       },
       "relationships": {
@@ -225,21 +224,20 @@
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/syntapore/",
         "concept": "SYNTAPORE Fuel Filtration Technology",
-        "version": "2.0",
-        "last_updated": "2026-08-14",
-        "content_hash": "sha256:d4f4f4ce563b6b5728afccaa5a9b01d33485c3d04d55a3fb4f7579cc6f269385"
+        "version": "2.1",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:7c3ac1653621abba294fc4d24b9b8b154d4623965bc31763a91c192cc8f20d56"
       },
       "canonical": {
         "definition": "SYNTAPORE is the ELIMFILTERS diesel-fuel filtration architecture for primary, secondary and cartridge fuel-filter applications.",
         "systems": "Fuel Cleanliness Protection; approved diesel-fuel filtration applications.",
         "failure_impact": "Uncontrolled particulate contamination in diesel fuel can increase contamination exposure at pumps, injectors and other precision fuel-system components.",
         "related_standards": "Applicable fuel-filter test methods and application requirements must be selected for the approved system. The technology name alone does not imply a universal micron rating, efficiency, capacity or certification claim.",
-        "related_technologies": "TURBOCORE: Dedicated fuel-separation architecture for approved turbine-style FH and FG applications within Fuel Cleanliness Protection. HYDROCORE: Fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators. SYNTAPORE governs general staged diesel-fuel particulate filtration only -- it does not perform a water-separation function and must not be represented as an engine-air technology.",
+        "related_technologies": "HYDROCORE: Fuel/water separation architecture for approved spin-on, cartridge, FH and FG separator applications. SYNTAPORE governs general staged diesel-fuel particulate filtration only -- it does not perform a water-separation function and must not be represented as an engine-air technology.",
         "industrial_role": "SYNTAPORE provides the staged particulate-contamination control layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by the required filtration stage, efficiency, capacity, flow, pressure drop and protected fuel-system components."
       },
       "relationships": {
         "related_technologies": [
-          "TURBOCORE",
           "HYDROCORE"
         ]
       },
@@ -288,51 +286,18 @@
         "concept": "THERMACORE Cooling System Protection Technology",
         "version": "2.0",
         "last_updated": "2026-08-14",
-        "content_hash": "sha256:a02e4f7c20f53cb3cf57c3c6280014b91308ef422a3c4c241d8cf109722c5db7"
+        "content_hash": "sha256:6a72ed1df44ab90d52678e5c91a7acc916d2f44aa6df447afd07a42882e70e6f"
       },
       "canonical": {
         "definition": "THERMACORE is the ELIMFILTERS cooling-system protection architecture for coolant cleanliness and component protection.",
         "systems": "Cooling System Protection; approved engine and equipment coolant-filtration applications.",
         "failure_impact": "Poor coolant condition or uncontrolled cooling-system contamination can affect passages, seals, heat-transfer surfaces and other protected cooling-system components, reducing thermal-system stability and reliability.",
         "related_standards": "Applicable coolant, engine and maintenance requirements must be selected for the approved application. The technology name alone does not imply a universal cleanliness code, chemistry specification or certification claim.",
-        "related_technologies": "THERMACORE is the canonical ELIMFILTERS cooling technology. SYNTRAX governs lubrication protection, NANOFORCE governs hydraulic protection, SYNTAPORE governs general fuel filtration and TURBOCORE governs approved turbine-style fuel separation; these technologies protect separate system domains.",
+        "related_technologies": "THERMACORE is the canonical ELIMFILTERS cooling technology. SYNTRAX governs lubrication protection, NANOFORCE governs hydraulic protection, SYNTAPORE governs particulate fuel filtration and HYDROCORE governs fuel/water separation including approved turbine-style FH/FG architecture; these technologies protect separate system domains.",
         "industrial_role": "THERMACORE provides the coolant-cleanliness and component-protection layer of ELIMFILTERS Cooling System Protection. Selection is governed by engine requirements, coolant chemistry, filter capacity, system flow and service interval."
       },
       "relationships": {},
       "vault_path": "elimfilters-vault\\01-technologies\\active\\THERMACORE.md"
-    },
-    "TURBOCORE": {
-      "key": "TURBOCORE",
-      "type": "technology",
-      "name": "TURBOCORE™",
-      "slug": "turbocore",
-      "status": "active",
-      "in_unified_data": false,
-      "ud_key": null,
-      "tags": [],
-      "domain": "Fuel",
-      "citation": {
-        "source_url": "https://elimfilters.com/knowledge-center/technologies/turbocore/",
-        "concept": "TURBOCORE Fuel Water Separation Technology",
-        "version": "2.0",
-        "last_updated": "2026-08-14",
-        "content_hash": "sha256:cd57faaaace4313eba17933c57b6137beddc857e02292f006015bed713e71849"
-      },
-      "canonical": {
-        "definition": "TURBOCORE is the ELIMFILTERS dedicated fuel-separation architecture for approved turbine-style FH and FG applications.",
-        "systems": "Fuel Cleanliness Protection; approved turbine-style FH and FG fuel-separation applications.",
-        "failure_impact": "Inadequate staged fuel conditioning or separation can increase particulate and water-contamination exposure in protected diesel fuel-system applications.",
-        "related_standards": "Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved FH or FG system. The technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.",
-        "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. HYDROCORE: Fuel/water separation architecture for standard (non-turbine) spin-on and cartridge separators. TURBOCORE is reserved for approved turbine-style FH and FG fuel-separation applications and must not be represented as a hydraulic, general-purpose fuel-filter, or standard-separator technology.",
-        "industrial_role": "TURBOCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection for approved turbine-style FH and FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements."
-      },
-      "relationships": {
-        "related_technologies": [
-          "SYNTAPORE",
-          "HYDROCORE"
-        ]
-      },
-      "vault_path": "elimfilters-vault\\01-technologies\\active\\TURBOCORE.md"
     },
     "AGRICULTURE": {
       "key": "AGRICULTURE",
@@ -473,14 +438,14 @@
         "concept": "Bus & Coach Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:078ddc4c81a8260d7627dfa5edf56510eb52a75018a5c0d9a69f237e47dc9c98"
+        "content_hash": "sha256:2c109a51174135e8560ca8a1472484c8bb9ff5f2aaa4c08d3cf85f94f27efce9"
       },
       "canonical": {
         "definition": "Bus & Coach is a MODERATE contamination exposure industrial category for public and passenger transport vehicle operations, with contamination risk driven by high-cycle urban stop-start engine soot loading, depot fuel tank condensation water accumulation, and passenger cabin PM2.5 exposure in traffic-congested urban corridors where ambient diesel particulate concentrations regularly exceed WHO 24-hour guidelines of 15 µg/m³.",
         "systems": "Urban transit bus diesel engine lube oil circuits, bulk depot fuel storage and vehicle fuel supply systems, bus and coach passenger compartment and driver cab HVAC filtration",
         "failure_impact": "Stop-start urban operation soot loading in bus lube oil above ISO 4406 19/17/14 → accelerated bearing journal wear → engine seizure → unplanned engine replacement | Engine replacement cost: $40,000–$80,000 per vehicle | Depot fuel condensation above 200 mg/kg total water → injector tip cavitation erosion across common-rail fleet → injector replacement $800–$4,000/unit across fleet size | Unfiltered passenger cabin PM2.5 at 50–150 µg/m³ urban ambient → 35–50% of routes expose passengers above WHO 15 µg/m³ guideline | Operational Impact: cumulative respiratory health liability and schedule disruption costs exceed filtration investment by order of magnitude in large transit fleets.",
         "related_standards": "ISO 5011: Air intake filtration performance test | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio lube filtration selection standard | ISO 11155: Cabin air filter particle efficiency and gaseous contaminant removal standard for bus passenger compartment qualification",
-        "related_technologies": "MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | TURBOCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: Cabin filtration for bus passenger compartment PM2.5 protection, rated to the ISO 11155 target specified for the approved application",
+        "related_technologies": "MACROCORE: Heavy-duty air intake pre-filtration for urban bus engine environments | SYNTRAX: Full-flow lube oil filtration at ISO 16889 Beta efficiency for bus diesel engine bearing protection | HYDROCORE: Coalescing water-separation fuel filtration for depot bulk tank condensation control | MICROKAPPA: Cabin filtration for bus passenger compartment PM2.5 protection, rated to the ISO 11155 target specified for the approved application",
         "industrial_role": "Bus & Coach fleet contamination control is driven by the intersection of high engine cycle counts accelerating lube oil soot loading, depot fuel condensation affecting entire fleets from shared storage, and passenger cabin air quality obligations that extend contamination control responsibility from occupational health frameworks into public health territory."
       },
       "relationships": {
@@ -492,7 +457,7 @@
         "applicable_technologies": [
           "MACROCORE",
           "SYNTRAX",
-          "TURBOCORE",
+          "HYDROCORE",
           "MICROKAPPA"
         ],
         "applicable_standards": [
@@ -663,15 +628,15 @@
         "concept": "Marine Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:8359a5b58bbc1692d5e0e1860f37d088f6e3b4d3c8b2756160e6a78c9fb0e7ad"
+        "content_hash": "sha256:ef6da82d29f963fe6f04cfb50eea2c6c6ed63dde0fbd9803f4fc60e36fab0d53"
       },
       "canonical": {
         "definition": "Marine is a HIGH contamination exposure industrial category for diesel-powered vessels and offshore equipment, characterised by near-100% ambient relative humidity accelerating fuel tank condensation and lube oil emulsification, salt-air intake environments degrading conventional filter media, and the operational consequence that engine failure at sea is catastrophic — no recovery option and IMO/classification society regulatory compliance requirements for fuel and hydraulic filtration.",
         "systems": "Marine diesel engine air intake, fuel systems, lube oil circuits, hydraulic deck and steering systems across fishing vessels, cargo ships, offshore platforms, and work boats",
         "failure_impact": "Marine humidity → fuel tank water accumulation above 500 ppm → microbial growth (Hormoconis resinae) → filter-plugging biomass formation → fuel starvation → propulsion loss at sea | Salt-air intake without synthetic media → cellulose media moisture absorption → structural collapse → engine bypass → abrasive wear | Operational impact: injector replacement $800–$4,000/unit; 30–40% of marine fuel filter failures from microbial contamination.",
         "related_standards": "ISO 5011: Air filtration performance test for marine engine intake selection | SAE J1539: Air intake cleanliness specification for diesel engines | ISO 16889: Beta ratio test for hydraulic and lube filtration in marine deck systems | ASTM D6304: Water content monitoring for marine diesel fuel tanks",
-        "related_technologies": "TURBOCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron hydraulic filtration for deck crane and steering circuits in high-humidity marine environments",
-        "industrial_role": "Marine diesel contamination control — particularly fuel water separation and salt-resistant air intake filtration — determines whether vessels maintain propulsion reliability under IMO and classification society requirements; water contamination is the leading cause of fuel system failure in marine fleets, making ASTM D6304-compliant fuel monitoring and TURBOCORE coalescing filtration the primary engineering controls for fleet reliability."
+        "related_technologies": "HYDROCORE: Coalescing water separation from marine diesel fuel | SYNTRAX: Full-flow lube protection for marine diesel engine crankshaft bearings | NANOFORCE: Sub-micron hydraulic filtration for deck crane and steering circuits in high-humidity marine environments",
+        "industrial_role": "Marine diesel contamination control — particularly fuel water separation and salt-resistant air intake filtration — determines whether vessels maintain propulsion reliability under IMO and classification society requirements; water contamination is the leading cause of fuel system failure in marine fleets, making ASTM D6304-compliant fuel monitoring and HYDROCORE coalescing filtration the primary engineering controls for fleet reliability."
       },
       "relationships": {
         "relevant_contamination": [
@@ -682,7 +647,7 @@
         "applicable_technologies": [
           "NANOFORCE",
           "SYNTRAX",
-          "TURBOCORE"
+          "HYDROCORE"
         ],
         "applicable_standards": [
           "ISO_5011",
@@ -727,14 +692,14 @@
         "concept": "Mining Industrial Filtration",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:3252ce6f8a8556d4de6dc6472ebea34019796ea75fb34d202aed9b64a348f321"
+        "content_hash": "sha256:7d0666339ad1706eff76ad82c0a0f77db98fc03f483f55eb1cc3e4c3b15dd98f"
       },
       "canonical": {
         "definition": "Mining operations present EXTREME contamination exposure — silica and hardrock particulate\nconcentrations 50× above ISO 5011 test standards — requiring multi-system filtration\nprotection across air intake, hydraulic, lube oil, and fuel domains for 24/7 asset\nreliability.",
         "systems": "Air Intake, Hydraulic, Lubrication, Fuel Cleanliness; primary equipment: haul trucks,\ndrill rigs, loaders, crushers operating in open-cut and underground environments",
         "failure_impact": "Uncontrolled particle ingestion → engine overhaul interval reduced from 25,000 to\n3,000 hours → unplanned downtime at ~$180,000/hour per machine → cascading supply\nchain disruption | Hydraulic contamination → proportional valve stiction → haul truck\nhydraulic failure → production stoppage",
         "related_standards": "ISO 5011: Air filter efficiency and restriction test | ISO 16889: Hydraulic cleanliness\nmulti-pass test | SAE J1539: Air intake contamination classification for diesel engines",
-        "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection |\nNANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 target per approved application) |\nSYNTRAX: Full-flow lube oil protection (extended drain intervals) |\nTURBOCORE: Fuel water separation (condensation and bulk fuel contamination control)",
+        "related_technologies": "MACROCORE: Engine air filtration for primary and secondary intake protection |\nNANOFORCE: Sub-micron hydraulic contamination control (ISO 4406 target per approved application) |\nSYNTRAX: Full-flow lube oil protection (extended drain intervals) |\nHYDROCORE: Fuel water separation (condensation and bulk fuel contamination control)",
         "industrial_role": "Mining is the highest-consequence filtration environment — equipment downtime costs\nexceed $180,000/hour and component replacement costs reach $150,000+ per engine\noverhaul. Contamination control is a supply-chain continuity decision, not a\nmaintenance cost decision."
       },
       "relationships": {
@@ -747,7 +712,7 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "TURBOCORE",
+          "HYDROCORE",
           "INTEKCORE"
         ],
         "applicable_standards": [
@@ -851,14 +816,14 @@
         "concept": "Power Generation Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:da5aaa4f2f54fcd64cf6b592ffc56401fabd2f4b67b24c06b36eb10dd5c2c346"
+        "content_hash": "sha256:c0fffc616038d498d701543968e44709709b0b630ee91a425f838bc850317ba3"
       },
       "canonical": {
         "definition": "Power generation is a HIGH contamination exposure industrial category for stationary diesel generators, gas turbines, and CHP plants where contamination-driven failure during emergency activation has outage costs of $100,000–$1,000,000+ per event — driven by standby fuel water accumulation causing emergency startup failure, turbine compressor blade erosion from inlet air particles, and lube circuit contamination reducing generator MTBF from 20,000+ hours to 6,000–8,000 hours.",
         "systems": "Diesel generator engine air intake, fuel storage and delivery, lube oil circuits, gas turbine inlet air systems, CHP plant hydraulic control circuits",
         "failure_impact": "Standby generator fuel water accumulation above 500 ppm → filter plugging and microbial biomass → engine fuel starvation at emergency start → outage at the moment backup power is required | Gas turbine compressor blade erosion from inlet particles >5 µm → 1% blade efficiency loss per particle event cycle → 1.5–2% fuel consumption increase per MWh | Diesel generator lube oil at ISO 4406 19/17/14 → MTBF 6,000–8,000 hours vs. 20,000+ hours at 15/13/10.",
         "related_standards": "ISO 5011: Air filtration performance test for generator intake and gas turbine inlet systems | ISO 16889: Hydraulic and lube filtration Beta ratio test for generator fluid systems | ASTM D6304: Water content test for standby diesel fuel quality monitoring",
-        "related_technologies": "MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop hydraulic filtration for generator governor control and CHP hydraulic circuits at the ISO 4406 target specified for the approved application | SYNTRAX: Full-flow lube protection for generator engine bearing life | TURBOCORE: Fuel water separation for standby fuel polishing and emergency activation reliability",
+        "related_technologies": "MACROCORE: Air intake filtration for diesel generator sets in industrial dust environments | NANOFORCE: Kidney-loop hydraulic filtration for generator governor control and CHP hydraulic circuits at the ISO 4406 target specified for the approved application | SYNTRAX: Full-flow lube protection for generator engine bearing life | HYDROCORE: Fuel water separation for standby fuel polishing and emergency activation reliability",
         "industrial_role": "Power generation filtration is the highest consequence filtration application in industrial operations — the cost of an emergency generator failure or gas turbine outage ($100,000–$1,000,000+ per event) creates an economic case for comprehensive filtration system investment that is measurable in avoided outage costs rather than filter expenditure; standby fuel polishing and gas turbine inlet air filtration are the two highest-ROI filtration investments in this sector."
       },
       "relationships": {
@@ -871,7 +836,7 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "TURBOCORE"
+          "HYDROCORE"
         ],
         "applicable_standards": [
           "ISO_5011",
@@ -970,14 +935,14 @@
         "concept": "Trucks & Fleets Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:4866d9f800314569bc289f793fd78d239983f2bbb540bc55a00c5ef56a10e973"
+        "content_hash": "sha256:574ca7fde39337a8932400e33f9a29b32d929798e78eac2b8d5fc1ff3c0efd32"
       },
       "canonical": {
         "definition": "Trucks & Fleets is a MODERATE contamination exposure industrial category for on-highway diesel vehicles — long-haul trucks, distribution vehicles, delivery vans, bus fleets — where EGR soot contamination in Euro VI lube circuits, fuel quality variation across fleet fuelling networks, and fleet-scale procurement standardisation across multiple OEM brands create the primary filtration engineering and economic challenges.",
         "systems": "Long-haul truck diesel engine air intake and lube circuits, fleet fuel storage and delivery filtration, EGR-equipped engine lube oil management, truck driver cab air quality filtration across 100–5,000 vehicle managed fleets",
         "failure_impact": "EGR soot above 2% by weight in lube oil → soot-induced viscosity increase → oil film thinning at journal bearings → accelerated bearing wear → engine rebuild at 300,000–500,000 km instead of 1,000,000+ km | Fleet fuel water contamination → common-rail injector erosion at 1,600–2,500 bar → injector replacement $800–$4,000/unit across fleet | Fleet standardisation gap → unplanned engine downtime 10–18% higher than optimised fleets.",
         "related_standards": "ISO 5011: Air filtration performance test across truck OEM specifications | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Lube and hydraulic filtration Beta ratio test for truck engine fluid systems | ISO 11155: Cabin air filter test standard for truck driver health compliance",
-        "related_technologies": "MACROCORE: Air intake filtration for long-haul trucks with extended drain interval dirt-holding capacity | SYNTRAX: Full-flow lube filtration for EGR-equipped Euro VI engines with high soot agglomerate capture capability | INTEKCORE: Zero-bypass housing for reliable on-highway air filtration sealing | TURBOCORE: Fuel water separation for fleet fuel quality management | MICROKAPPA: Driver cab air filtration for ISO 11155 occupational health compliance",
+        "related_technologies": "MACROCORE: Air intake filtration for long-haul trucks with extended drain interval dirt-holding capacity | SYNTRAX: Full-flow lube filtration for EGR-equipped Euro VI engines with high soot agglomerate capture capability | INTEKCORE: Zero-bypass housing for reliable on-highway air filtration sealing | HYDROCORE: Fuel water separation for fleet fuel quality management | MICROKAPPA: Driver cab air filtration for ISO 11155 occupational health compliance",
         "industrial_role": "Trucks & Fleets filtration is primarily an economic optimisation problem at fleet scale — the aggregate financial impact of standardising filtration across 100+ vehicle fleets (15–25% procurement cost reduction; 10–18% unplanned downtime reduction) creates measurable ROI from system-level filtration investment that commodity product selection approaches cannot capture."
       },
       "relationships": {
@@ -990,7 +955,7 @@
           "MACROCORE",
           "INTEKCORE",
           "SYNTRAX",
-          "TURBOCORE",
+          "HYDROCORE",
           "MICROKAPPA"
         ],
         "applicable_standards": [
@@ -1032,14 +997,14 @@
         "concept": "Waste & Municipal Industry Filtration Requirements",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:c17fd866f595357349635c6a470bd39b4629ca2046d5787d91764071321e31e2"
+        "content_hash": "sha256:b6717a7fbcb9294e81a2755412a786272f8bbf1ea7ff3e2c1b10ad328e3eee59"
       },
       "canonical": {
         "definition": "Waste & Municipal is a HIGH contamination exposure industrial category for diesel refuse collection, street sweeping, and municipal utility equipment, characterised by stop-start duty cycles generating 2–3× baseline lube oil soot loading, operator cab exposure to biological aerosols and urban PM2.5, and >90% fleet availability requirements that make contamination-related unplanned maintenance a direct service delivery failure.",
         "systems": "Refuse collection vehicle diesel engine lube and air intake systems, street sweeper engine intake in maximum-particulate operating environments, municipal vehicle diesel fuel circuits with short-trip condensation accumulation, cab air supply systems for biological aerosol and PM2.5 protection",
         "failure_impact": "Stop-start cold-start cycles at 300–600 events/shift → elevated soot in lube oil at 2–3× sustained-load rates → accelerated bearing wear if lube filtration does not capture soot agglomerates | Short-trip duty → progressive fuel tank water accumulation → microbial growth (Hormoconis resinae) → simultaneous multi-vehicle fuel filter plugging during summer → fleet availability crisis | Operational Impact: contamination-related events account for 20–30% of unplanned municipal fleet maintenance; refuse collection schedule disruption has direct public service consequences.",
         "related_standards": "ISO 5011: Air filtration performance test for refuse vehicle and street sweeper engine intake systems | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Beta ratio test for hydraulic system filtration on refuse vehicle compaction systems | ISO 11155: Cabin air filter test for operator health compliance in biological and chemical exposure environments",
-        "related_technologies": "SYNTRAX: Full-flow lube filtration with soot agglomerate capture for stop-start duty cycle soot management | NANOFORCE: Sub-micron hydraulic filtration for compaction and lift systems maintaining ISO 4406 cleanliness under elevated cold-start contamination | TURBOCORE: Diesel fuel water separation preventing microbial growth in short-trip condensation-accumulating fuel tanks | MICROKAPPA: ISO 11155 cabin filtration with activated carbon for biological aerosol and chemical vapor in refuse vehicle cabs | MACROCORE: Air intake filtration for street sweeper and refuse vehicle engines in high-particulate urban environments",
+        "related_technologies": "SYNTRAX: Full-flow lube filtration with soot agglomerate capture for stop-start duty cycle soot management | NANOFORCE: Sub-micron hydraulic filtration for compaction and lift systems maintaining ISO 4406 cleanliness under elevated cold-start contamination | HYDROCORE: Diesel fuel water separation preventing microbial growth in short-trip condensation-accumulating fuel tanks | MICROKAPPA: ISO 11155 cabin filtration with activated carbon for biological aerosol and chemical vapor in refuse vehicle cabs | MACROCORE: Air intake filtration for street sweeper and refuse vehicle engines in high-particulate urban environments",
         "industrial_role": "Waste & municipal fleet contamination control is operationally critical because >90% fleet uptime requirements mean contamination-driven failures translate directly to missed refuse collection schedules — fleet-level fuel water management and stop-start lube oil soot control are the two highest-leverage contamination interventions for maintaining service delivery reliability in municipal waste operations."
       },
       "relationships": {
@@ -1052,7 +1017,7 @@
           "MACROCORE",
           "NANOFORCE",
           "SYNTRAX",
-          "TURBOCORE",
+          "HYDROCORE",
           "MICROKAPPA"
         ],
         "applicable_standards": [
@@ -1199,14 +1164,14 @@
         "concept": "Fuel Cleanliness Protection Systems",
         "version": "1.0",
         "last_updated": "2026-07-11",
-        "content_hash": "sha256:4a1a49ba8f85b307dbdcad66b511669bc961def129b31d774ce21ca8fca2b361"
+        "content_hash": "sha256:b0993c63228da75989b7087f6179a96896a66aa95b033bf515189c8edf5f7eb2"
       },
       "canonical": {
         "definition": "Fuel Cleanliness Protection Systems are the ELIMFILTERS system domain controlling water, particles, microbial contamination, and fuel restriction before diesel fuel reaches pumps, injectors, and high-pressure common-rail components.",
         "systems": "Fuel filters, fuel/water separators, turbine-style separation assemblies, spin-on fuel separators, cartridge fuel filters, bulk fuel protection, and fuel cleanliness programs for industrial diesel assets.",
         "failure_impact": "Diesel water and particulate contamination → injector erosion, needle-seat wear, pump scoring, corrosion, microbial growth, filter plugging, fuel starvation, poor combustion, emergency start failure, and unplanned downtime. In high-pressure common-rail systems, small contamination events can create expensive injector and pump failures.",
         "related_standards": "ASTM D6304: Coulometric Karl Fischer water measurement in petroleum products | ISO 12937: International Karl Fischer method for water in petroleum products and diesel fuel cleanliness programs.",
-        "related_technologies": "TURBOCORE: Water-separating fuel protection technology | SYNTAPORE: Diesel-fuel particulate filtration technology for primary, secondary and cartridge fuel-filter applications within fuel cleanliness systems.",
+        "related_technologies": "HYDROCORE: Water-separating fuel protection technology | SYNTAPORE: Diesel-fuel particulate filtration technology for primary, secondary and cartridge fuel-filter applications within fuel cleanliness systems.",
         "industrial_role": "Fuel Cleanliness Protection determines whether stored or delivered diesel becomes a controlled energy source or a contamination pathway into injectors, pumps, generators, vessels, locomotives, trucks, and off-highway equipment."
       },
       "relationships": {
@@ -1222,7 +1187,7 @@
           "WASTE_MUNICIPAL"
         ],
         "applicable_technologies": [
-          "TURBOCORE",
+          "HYDROCORE",
           "SYNTAPORE"
         ],
         "applicable_standards": [
@@ -1392,14 +1357,14 @@
         "concept": "FUEL — Fuel Filtration Domain",
         "version": "1.0",
         "last_updated": "2026-06-24",
-        "content_hash": "sha256:9a815847a0ea1017984fb3409f813cfa9a11461b83b1a7d37c9f9eabefe3beac"
+        "content_hash": "sha256:ea36693c674dd5ac880de546075af04be5a9edb9e12cff681b04c19fc364e3ff"
       },
       "canonical": {
         "definition": "The fuel filtration domain covers diesel fuel cleanliness and water removal systems protecting high-pressure common-rail injectors and fuel pumps from particle wear and corrosion caused by particulate and water contamination.",
         "systems": "HPCR diesel injection systems, fuel transfer circuits, bulk fuel storage systems across on-highway trucks, off-highway equipment, marine engines, and stationary power generation",
         "failure_impact": "Water contamination → injector corrosion and microbial growth → injector stiction → misfires | Particle contamination above 4 µm → injector nozzle erosion → fuel spray pattern degradation → incomplete combustion → engine damage | HPCR injector replacement cost: $800–$2,500 per injector.",
         "related_standards": "ASTM D6304: Water content measurement in petroleum products (Karl Fischer coulometric titration) | ISO 12937: Water determination in petroleum products by Karl Fischer reagent",
-        "related_technologies": "SYNTAPORE: Diesel-fuel particulate filtration elements for primary, secondary and cartridge fuel-filter applications | TURBOCORE: Coalescing water separator elements for free and emulsified water removal",
+        "related_technologies": "SYNTAPORE: Diesel-fuel particulate filtration elements for primary, secondary and cartridge fuel-filter applications | HYDROCORE: Coalescing water separator elements for free and emulsified water removal",
         "industrial_role": "Fuel filtration is the primary protection system for HPCR injection equipment operating above 1,800 bar — injector clearances of 2–4 µm require sub-4 µm particle control to prevent accelerated nozzle wear and injection system failure."
       },
       "relationships": {
@@ -1498,22 +1463,22 @@
         "concept": "ASTM D6304 Water in Petroleum Products",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:9f6247f49b13378dbfb73180cf20f998576d70b769cdc6066bbeb71c4fe45128"
+        "content_hash": "sha256:1b261f72fbbf8f3d4734ad5a44afb3f91698932bd8d79565a2b8c0e7800fc925"
       },
       "canonical": {
         "definition": "ASTM D6304 is the standard test method for measuring water content in petroleum products using coulometric Karl Fischer titration, quantifying total water concentration in diesel fuel as mg/kg (ppm) by mass — providing the primary analytical tool for monitoring water contamination in fuel storage, delivery, and filtration systems against the EN 590 limit of 200 mg/kg.",
         "systems": "Diesel fuel quality monitoring in bulk storage tanks, vehicle fuel systems, marine fuel management, and oilfield fuel supply verification; used as the performance validation method for water-separating fuel filtration technologies",
         "failure_impact": "Diesel fuel above 200 mg/kg total water (ASTM D6304) or free water at any concentration above dissolved saturation (50–100 mg/kg) → water droplets entering common-rail injection system at 1,800–2,500 bar → cavitation erosion at injector nozzle tip and needle seat → spray pattern degradation → incomplete combustion and power loss | Without ASTM D6304 monitoring, water accumulation in storage tanks progresses to microbial growth and filter-plugging biomass formation before detection | Operational Impact: injector replacement $800–$4,000/unit; microbial contamination causes 30–40% of fuel filter failures in marine and remote-site diesel fleets.",
         "related_standards": "ISO 12937: ISO equivalent coulometric Karl Fischer method for water in petroleum products; European market compliance standard for EN 590 diesel water content verification; results equivalent to ASTM D6304",
-        "related_technologies": "TURBOCORE: Water-separating fuel filtration technology; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for TURBOCORE coalescing efficiency claims",
-        "industrial_role": "ASTM D6304 is the enabling measurement standard for diesel fuel water contamination control — without coulometric Karl Fischer measurement, fleet operators cannot distinguish between dissolved water (safe) and free water (injector-damaging) contamination states, making ASTM D6304 tank monitoring the necessary diagnostic layer that determines when TURBOCORE water separation is required and whether it is performing to specification."
+        "related_technologies": "HYDROCORE: Water-separating fuel filtration technology; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for HYDROCORE coalescing efficiency claims",
+        "industrial_role": "ASTM D6304 is the enabling measurement standard for diesel fuel water contamination control — without coulometric Karl Fischer measurement, fleet operators cannot distinguish between dissolved water (safe) and free water (injector-damaging) contamination states, making ASTM D6304 tank monitoring the necessary diagnostic layer that determines when HYDROCORE water separation is required and whether it is performing to specification."
       },
       "relationships": {
         "related_standards": [
           "ISO_12937"
         ],
         "applicable_to_technologies": [
-          "TURBOCORE"
+          "HYDROCORE"
         ],
         "applicable_to_industries": [
           "AGRICULTURE",
@@ -1682,14 +1647,14 @@
         "concept": "ISO 12937 Water in Petroleum Products",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:0f9fdff834b0093f30390b559f4addea6ed153dcf7233d1af9a1cd51dead8b75"
+        "content_hash": "sha256:a6f8b8ce12cfa0373b618c77b91ee873cd8cdc27a783422a31ab012b6408a3cd"
       },
       "canonical": {
         "definition": "ISO 12937 is the international coulometric Karl Fischer titration standard for measuring water content in petroleum products as mg/kg (ppm), functionally equivalent to ASTM D6304 and serving as the European and international market reference method for EN 590 diesel fuel water content compliance and ISO 8217 marine fuel water management.",
         "systems": "Diesel fuel bulk storage quality monitoring, marine fuel management, power generation facility fuel quality verification, and international fleet fuel compliance programs in markets where EN 590 and ISO 8217 apply",
         "failure_impact": "Diesel fuel exceeding ISO 12937 EN 590 limit of 200 mg/kg total water → free water droplet formation above dissolved saturation (50–100 mg/kg) → free water entering common-rail injection at 1,800–2,500 bar → cavitation erosion of injector nozzle tip and needle seat geometry → spray pattern degradation and combustion inefficiency | In marine applications, water-contaminated fuel above 200 mg/kg triggers microbial growth in marine diesel tanks between voyages | Operational Impact: injector replacement $800–$4,000/unit; marine fuel tank microbial contamination causes complete fuel polishing events costing $10,000–$50,000 per vessel.",
         "related_standards": "ASTM D6304: North American equivalent coulometric Karl Fischer method; same electrochemical principle, equivalent results; cross-reference acknowledged in both standards; cited in North American vs European regulatory contexts for identical contamination scenarios",
-        "related_technologies": "TURBOCORE: Coalescing water-separating fuel filtration; ISO 12937 inlet/outlet water content comparison is a field verification method for separator performance in European and international markets. Applicable separation ratings must be tied to the specific approved element and test basis, not presented as a universal efficiency claim.",
+        "related_technologies": "HYDROCORE: Coalescing water-separating fuel filtration; ISO 12937 inlet/outlet water content comparison is a field verification method for separator performance in European and international markets. Applicable separation ratings must be tied to the specific approved element and test basis, not presented as a universal efficiency claim.",
         "industrial_role": "ISO 12937 is the European and international market measurement standard enabling diesel fuel water contamination control — fleet operators and fuel system engineers in EN 590 and ISO 8217 jurisdictions depend on ISO 12937 testing to detect water accumulation before it exceeds injector protection thresholds and to validate that water-separating filtration is performing to specification."
       },
       "relationships": {
@@ -1697,7 +1662,7 @@
           "ASTM_D6304"
         ],
         "applicable_to_technologies": [
-          "TURBOCORE"
+          "HYDROCORE"
         ],
         "applicable_to_industries": [
           "MARINE",
@@ -2020,16 +1985,16 @@
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
         "concept": "Diesel Water Contamination",
-        "version": "1.0",
-        "last_updated": "2026-06-03",
-        "content_hash": "sha256:a69236bff43abe3537e7589cccbc7a2dce39f59d9ffe2ec49c9957096d87fdb5"
+        "version": "1.1",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:e2c00ca512658a7211ab19475337b740a2f89d242682b4e1bce805fbfb55670a"
       },
       "canonical": {
         "definition": "Diesel water contamination is the presence of dissolved, free, or emulsified water in diesel fuel systems — entering through condensation, rain ingress, cross-contamination, or emulsification — that causes injector erosion at 1,600–2,500 bar operating pressures, microbiological growth at tank water interfaces, fuel filter plugging from biomass and ice crystal formation, and tank corrosion from microbial acid byproducts.",
         "systems": "Common-rail diesel injection systems, fuel storage tanks, fuel transfer and distribution systems, bulk fuel storage across agriculture, marine, mining, and fleet industries",
         "failure_impact": "Water ingress above 500 ppm free water → injector needle erosion at hydraulic flash point (1,600–2,500 bar, 1–3 µm clearance) → injector replacement at $800–$4,000 per unit | Microbial growth at water-diesel interface → biomass mat formation → fuel filter plugging → engine fuel starvation → unplanned downtime | Operational impact: injector life −40–70%; filter service interval −60–80%; fuel consumption +5–15%; equipment availability −10–20%.",
         "related_standards": "ASTM D6304: Karl Fischer coulometric titration for water in petroleum products; primary quantitative monitoring method | ISO 12937: European equivalent standard for water content in petroleum products",
-        "related_technologies": "HYDROCORE: Standard (non-turbine) coalescing water separation technology; separates free and emulsified water from diesel before injector delivery | TURBOCORE: The equivalent water-separation technology for approved Turbine Series FH/FG applications",
+        "related_technologies": "HYDROCORE: Coalescing water separation technology across approved spin-on, cartridge, and Turbine Series FH/FG architectures; separates free and emulsified water from diesel before injector delivery",
         "industrial_role": "Diesel water contamination is the leading cause of premature common-rail injector failure in mobile and stationary diesel equipment — controlling water content below ASTM D6304 thresholds through active coalescing separation extends injector service life 40–70% and eliminates microbiological tank failures that can render entire bulk fuel storage volumes unusable."
       },
       "relationships": {
@@ -2038,8 +2003,7 @@
           "ISO_12937"
         ],
         "resolved_by": [
-          "HYDROCORE",
-          "TURBOCORE"
+          "HYDROCORE"
         ]
       },
       "vault_path": "elimfilters-vault\\05-contamination\\DIESEL_WATER.md"
@@ -2514,17 +2478,17 @@
       "citation": {
         "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
         "concept": "Fuel Filter Plugging — Fuel System Problem",
-        "version": "1.0",
-        "last_updated": "2026-06-03",
-        "content_hash": "sha256:fb2517d29e3efd55edbf5633d1603c1b65fd6a542b92d6d60e2a42eec0655cde"
+        "version": "1.1",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:eb112818e2f0f026c8fa69664b5395ce2d5c2c0fa8366f3f46f9703fb556c01b"
       },
       "canonical": {
         "definition": "Fuel filter plugging — premature blockage of diesel fuel filters by water contamination,\nmicrobial growth, and associated debris — is the most frequent fuel system maintenance\nevent in off-highway, marine, and stationary engine applications.",
         "systems": "Fuel; affected components: fuel filter elements, injector needles, high-pressure fuel pumps;\nprimary industries: Agriculture, Marine, Mining, Oil & Gas, Power Generation, Trucks/Fleets",
         "failure_impact": "Water contamination in diesel → microbial growth at fuel-water interface\n→ biofilm and debris plugging fuel filter → restricted fuel flow → injection pressure drop\n→ engine power loss or shutdown; water slug in common rail injectors (1,200–2,500 bar)\n→ hydraulic hammer erosion of injector needle seats → injector failure |\nOperational Impact: fuel filter life reduction from 500 hours to 50–100 hours under\nactive microbial contamination; injector service life 15,000 hours reduced to 3,000–6,000 hours",
         "related_standards": "ASTM D6304: Water in diesel fuel test standard; compliance baseline for fuel quality monitoring |\nISO 12937: Diesel fuel water content test method for fleet and bulk storage monitoring",
-        "related_technologies": "TURBOCORE: Fuel/water separation and high-efficiency particulate capture protecting\nhigh-pressure common rail injection systems from water and contamination damage",
-        "industrial_role": "Fuel filter plugging is the most operationally disruptive fuel contamination event because\nit is rapid-onset and temperature-sensitive. It is the primary commercial target of the\nFUEL_PRIMARY product family and the sole focus of the TURBOCORE technology platform."
+        "related_technologies": "HYDROCORE: Fuel/water separation across approved spin-on, cartridge, and Turbine Series\nFH/FG architectures, protecting high-pressure common rail injection systems from water\nand contamination damage",
+        "industrial_role": "Fuel filter plugging is the most operationally disruptive fuel contamination event because\nit is rapid-onset and temperature-sensitive. It is the primary target of the\nFUEL_WATER_SEPARATOR product family, governed by HYDROCORE™."
       },
       "relationships": {
         "applicable_standards": [
@@ -2532,10 +2496,10 @@
           "ISO_12937"
         ],
         "resolved_by_technologies": [
-          "TURBOCORE"
+          "HYDROCORE"
         ],
         "recommended_product_families": [
-          "FUEL_PRIMARY"
+          "FUEL_WATER_SEPARATOR"
         ],
         "root_contamination": [
           "DIESEL_WATER"
@@ -2956,14 +2920,14 @@
         "concept": "Primary Fuel Protection Product Family",
         "version": "2.0",
         "last_updated": "2026-08-15",
-        "content_hash": "sha256:abe10eb558e2e226864df040d1760b202557ef3764daa08359a1d592fa258092"
+        "content_hash": "sha256:3b9e59f35b3128e139c99f91d353aec049295de92384c72a327b9e2a42aa3bc2"
       },
       "canonical": {
         "definition": "Primary Fuel Protection — the SYNTAPORE™-technology filter element family for diesel\nfuel particulate filtration (primary, secondary and cartridge, no water-separation\nfunction), covering 1,903 SKUs across agricultural, marine, mining, power generation,\nand commercial transport applications.",
         "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements SYNTAPORE™\nparticulate-filtration technology",
         "failure_impact": "Selecting incorrect element from this family (wrong efficiency class or wrong flow\nrate) or exceeding service interval → residual particulate reaches injectors and\nhigh-pressure pumps → injector stiction and premature wear → HPCR fuel system failure",
         "related_standards": "SYNTAPORE governs plain diesel-fuel particulate filtration; no water-content or\nwater-separation standard applies to this family -- see FUEL_WATER_SEPARATOR for\nwater-content standards.",
-        "related_technologies": "HYDROCORE: Fuel/water separation architecture for standard (non-turbine) separators --\na distinct product family (FUEL_WATER_SEPARATOR), not covered here | TURBOCORE:\nFuel-separation architecture reserved for approved Turbine Series FH/FG applications\n(FUEL_TURBINE family) | MACROCORE: Upstream pre-cleaner for high-contamination bulk air\nenvironments (not in this family)",
+        "related_technologies": "HYDROCORE: Fuel/water separation architecture across approved standard (non-turbine)\nseparators (FUEL_WATER_SEPARATOR family) and Turbine Series FH/FG applications\n(FUEL_TURBINE family) -- both distinct product families, not covered here | MACROCORE:\nUpstream pre-cleaner for high-contamination bulk air environments (not in this family)",
         "industrial_role": "This product family is the principal particulate-contamination control implementation\nfor diesel fuel systems that do not require a separate water-separation stage."
       },
       "relationships": {
@@ -3006,17 +2970,17 @@
       "citation": {
         "source_url": "elimfilters.com/systems/fuel-turbine",
         "concept": "Turbine Fuel Separation Product Family",
-        "version": "1.0",
-        "last_updated": "2026-08-15",
-        "content_hash": "sha256:019348add2c87833b2bead6f8a9fe91e745da11c10c8a380e9c164a2f9c108b1"
+        "version": "2.0",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:96a66b73338efa6fd8e9a2b45cd09c267b08487834db891d0bec954512469a3b"
       },
       "canonical": {
-        "definition": "Turbine Fuel Separation — the TURBOCORE™-technology filter element family for approved\nTurbine Series FH and FG fuel-separation housings and their dedicated 2010/2020/2040-series\nreplacement elements, covering 13 SKUs verified directly against production.",
-        "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements TURBOCORE™\nstaged fuel-separation technology",
+        "definition": "Turbine Fuel Separation — the HYDROCORE™-technology filter element family for approved\nTurbine Series FH and FG fuel-separation housings and their dedicated 2010/2020/2040-series\nreplacement elements, covering 13 SKUs verified directly against production.",
+        "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\nfuel/water-separation technology in its Turbine Series FH/FG architecture",
         "failure_impact": "Using a standard (non-turbine) separator element in a Turbine Series FH/FG housing, or\nvice versa, can compromise the staged separation and filtration performance the housing\nwas engineered around.",
         "related_standards": "ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |\nISO 12937: Petroleum products water determination",
-        "related_technologies": "HYDROCORE: Fuel/water separation architecture for standard (non-turbine) separators --\na distinct product family (FUEL_WATER_SEPARATOR) | SYNTAPORE: Plain primary/secondary\nfuel filtration, no separation function (FUEL_PRIMARY family)",
-        "industrial_role": "This product family is the exclusive implementation for approved Turbine Series FH/FG\nfuel-separation architecture and its dedicated replacement elements."
+        "related_technologies": "HYDROCORE: Fuel/water separation architecture governing both this family (Turbine Series\nFH/FG) and the standard (non-turbine) FUEL_WATER_SEPARATOR family -- distinct product\nfamilies under the same technology because housing/element architecture differs |\nSYNTAPORE: Plain primary/secondary fuel filtration, no separation function (FUEL_PRIMARY\nfamily)",
+        "industrial_role": "This product family is the exclusive implementation for approved Turbine Series FH/FG\nfuel-separation architecture and its dedicated replacement elements, governed by\nHYDROCORE™."
       },
       "relationships": {
         "meets_standards": [
@@ -3032,7 +2996,7 @@
           "TRUCKS_FLEETS"
         ],
         "uses_technology": [
-          "TURBOCORE"
+          "HYDROCORE"
         ],
         "belongs_to_domain": [
           "FUEL"
@@ -3064,14 +3028,14 @@
         "concept": "Fuel Water Separation Product Family",
         "version": "1.0",
         "last_updated": "2026-08-15",
-        "content_hash": "sha256:0ca0c05a15f33e17fa949f3349cb210f7bd22fd083da3c50ea66d52ed988c6a5"
+        "content_hash": "sha256:f70f4b28e48c6becbe2f7f6434eab49f9f4a4bb073f410cd675643a6d428dcb3"
       },
       "canonical": {
         "definition": "Fuel Water Separation — the HYDROCORE™-technology filter element family for standard\n(non-turbine) diesel fuel water separation, covering 102 SKUs across agricultural,\nmarine, mining, power generation, and commercial transport applications.",
         "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\ncoalescing water-separation technology",
         "failure_impact": "Selecting incorrect element from this family (wrong coalescing efficiency class or wrong\nflow rate) or exceeding service interval → residual free water passes to injectors →\ninjector tip corrosion and nozzle deposit formation → HPCR fuel system failure requiring\ninjector replacement well before its rated service life",
         "related_standards": "HYDROCORE governs standard (non-turbine) fuel/water separation; no standard is\ncurrently approved as a direct canonical relationship for this family.",
-        "related_technologies": "HYDROCORE: Primary element technology (coalescing water separation) for standard\n(non-turbine) applications | TURBOCORE: The equivalent separation technology reserved\nfor approved Turbine Series FH/FG applications (a distinct product family, FUEL_TURBINE)\n| SYNTAPORE: Plain primary/secondary fuel filtration -- does not perform a\nwater-separation function (not in this family)",
+        "related_technologies": "HYDROCORE: Primary element technology (coalescing water separation) for both standard\n(non-turbine) applications in this family and approved Turbine Series FH/FG applications\n(a distinct product family, FUEL_TURBINE) | SYNTAPORE: Plain primary/secondary fuel\nfiltration -- does not perform a water-separation function (not in this family)",
         "industrial_role": "This product family is the standard (non-turbine) implementation for diesel fuel water\ncontamination — a leading cause of HPCR injector failure in agricultural, marine, and\nmining equipment operating in high-humidity or bulk-storage environments."
       },
       "relationships": {
@@ -3256,26 +3220,29 @@
       "in_unified_data": false,
       "ud_key": null,
       "tags": [
+        "filter-kit",
         "fleet",
         "heavy-duty",
-        "transport",
-        "consolidation"
+        "automotive",
+        "equipment",
+        "maintenance",
+        "specialized-solution"
       ],
       "domain": null,
       "citation": {
-        "source_url": "elimfilters.com/technologies/duratech",
-        "concept": "DURATECH Consolidated Filter Kit System",
-        "version": "1.0",
-        "last_updated": "2026-06-24",
-        "content_hash": "sha256:2b37df1d46020e6660e4109d4c8c5fac37ba5ebee77f91b946147cffd7aaf013"
+        "source_url": "elimfilters.com/commercial-lines/duratech/",
+        "concept": "DURATECH Integrated Filter Kit Program",
+        "version": "1.1",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:34e4017eab0c536e5a909044dd845c671d97dfff6d77a9a7bd5f912767cfe861"
       },
       "canonical": {
-        "definition": "DURATECH is the ELIMFILTERS consolidated filter kit system for heavy-duty fleets, delivering the complete filtration requirement for a specific piece of equipment in a single maintenance kit covering air, oil, fuel, and hydraulic filters simultaneously.",
-        "systems": "Heavy-duty on-highway and off-highway fleet maintenance — trucks, buses, construction equipment, agricultural machinery requiring coordinated multi-system filter replacement",
-        "failure_impact": "Incomplete filter replacement (replacing only primary filters while leaving secondary filters in service) → extended contamination exposure in non-replaced systems → accelerated wear in overlooked circuits | Operational impact: DURATECH kits prevent selective maintenance, ensuring all filtration systems are renewed simultaneously.",
-        "related_standards": "ISO 4406: Particle cleanliness codes maintained across all circuits covered by DURATECH kit | ISO 16889: Filter efficiency ratings applicable to kit components",
-        "related_technologies": "MACROCORE: Air intake element included in DURATECH kits | SYNTRAX: Lube oil element | SYNTAPORE: Fuel element | NANOFORCE: Hydraulic element (where applicable per equipment specification)",
-        "industrial_role": "DURATECH consolidated kits eliminate the operational malpractice of extending service intervals on secondary filters — ensuring all contamination control systems are renewed simultaneously and protecting fleet budgets against maintenance cost variance."
+        "definition": "DURATECH is the ELIMFILTERS integrated filter-kit program for coordinated maintenance of a defined vehicle, truck, machine, equipment application, or service interval.",
+        "systems": "Cross-system maintenance program. Kit contents depend on the approved application and may coordinate multiple ELIMFILTERS filtration systems.",
+        "failure_impact": null,
+        "related_standards": null,
+        "related_technologies": "DURATECH may incorporate products using canonical ELIMFILTERS technologies such as MACROCORE, MICROKAPPA, SYNTAPORE, HYDROCORE, SYNTRAX, NANOFORCE, THERMACORE, DRYCORE, or INTEKCORE where applicable to the validated kit definition. DURATECH itself is not a technology.",
+        "industrial_role": "DURATECH simplifies coordinated filtration maintenance, inventory planning, recurring service execution, and asset-protection coverage for defined applications."
       },
       "relationships": {},
       "vault_path": "elimfilters-vault\\10-commercial\\DURATECH.md"
@@ -3290,24 +3257,25 @@
       "ud_key": null,
       "tags": [
         "marine",
-        "consolidation",
-        "fleet"
+        "filtration",
+        "asset-protection",
+        "specialized-solution"
       ],
       "domain": null,
       "citation": {
-        "source_url": "elimfilters.com/technologies/marineclean",
-        "concept": "MARINECLEAN Marine Filtration System",
-        "version": "1.0",
-        "last_updated": "2026-06-24",
-        "content_hash": "sha256:6cdc46e4bd1246e4edc7a96e3e00947c24e5bbe144b035428e6edb7ccce30614"
+        "source_url": "elimfilters.com/commercial-lines/marineclean/",
+        "concept": "MARINECLEAN Marine Filtration Solution",
+        "version": "1.1",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:6ca856ce150453da130772297679c6f30aceccad8fbbba83c624938b21ac801e"
       },
       "canonical": {
-        "definition": "MARINECLEAN is the ELIMFILTERS comprehensive commercial system for the maritime sector, consolidating all marine filtration requirements (engine lube, fuel, hydraulic) for vessels operating in high-humidity and high-salinity environments with full traceability.",
-        "systems": "Marine diesel engines (recreational to commercial cargo), hydraulic steering and deck machinery systems, fuel transfer systems on vessels including jet skis, recreational boats, and heavy-duty cargo ships",
-        "failure_impact": "Uncontrolled contamination on vessels → engine or hydraulic failure at sea → vessel immobilization with no immediate service access | High-salinity environments accelerate corrosion in fuel and lube circuits — consolidated MARINECLEAN maintenance prevents catastrophic failure in remote maritime operations.",
-        "related_standards": "IMO marine equipment certification requirements | ISO 16889: Filter efficiency applicable to marine lube and hydraulic circuits | ASTM D6304: Water content testing for marine diesel fuel",
-        "related_technologies": "SYNTRAX: Marine engine lube oil filtration | TURBOCORE: Marine fuel water separation | NANOFORCE: Marine hydraulic system filtration | SYNTAPORE: HPCR marine diesel fuel filtration",
-        "industrial_role": "MARINECLEAN provides maritime operators with a single-source consolidated filtration solution that guarantees full traceability across all on-board filtration circuits, reducing the risk of vessel downtime in remote maritime operations."
+        "definition": "MARINECLEAN is the ELIMFILTERS specialized marine filtration solution for coordinated asset protection across marine fuel, lubrication, hydraulic, and related filtration applications.",
+        "systems": "Marine applications may involve Fuel Cleanliness, Lubrication, Hydraulic, Air Intake & Airflow, Cooling, and other approved filtration requirements depending on the equipment.",
+        "failure_impact": null,
+        "related_standards": null,
+        "related_technologies": "MARINECLEAN may incorporate products using canonical ELIMFILTERS technologies such as SYNTAPORE, HYDROCORE, SYNTRAX, NANOFORCE, MACROCORE, THERMACORE, DRYCORE, INTEKCORE, or MICROKAPPA where applicable. MARINECLEAN itself is not a technology.",
+        "industrial_role": "MARINECLEAN provides a dedicated commercial and technical framework for coordinating filtration requirements in marine applications while preserving product-specific evidence and application validation."
       },
       "relationships": {},
       "vault_path": "elimfilters-vault\\10-commercial\\MARINECLEAN.md"

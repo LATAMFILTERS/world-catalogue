@@ -18,7 +18,7 @@ applicable_technologies:
   - "[[MACROCORE]]"
   - "[[INTEKCORE]]"
   - "[[SYNTRAX]]"
-  - "[[TURBOCORE]]"
+  - "[[HYDROCORE]]"
   - "[[MICROKAPPA]]"
 applicable_standards:
   - "[[ISO_5011]]"
@@ -60,7 +60,7 @@ Fleet management standardisation is the primary value driver in the Trucks & Fle
 - [[MACROCORE|MACROCORE — Air intake filtration for long-haul truck diesel engines with high dirt-holding capacity for extended drain interval maintenance cycles]]
 - [[INTEKCORE|INTEKCORE — Zero-bypass radial seal air filter housing for on-highway trucks requiring reliable sealing across high-vibration highway operating conditions]]
 - [[SYNTRAX|SYNTRAX — Full-flow lube filtration for EGR-equipped Euro VI and EPA Tier 4 Final truck engines with high soot capture efficiency for extended drain intervals]]
-- [[TURBOCORE|TURBOCORE — Diesel fuel water separation for fleet fuel storage and vehicle-mounted primary fuel filtration; protects common-rail injection systems across mixed fuel quality environments]]
+- [[HYDROCORE|HYDROCORE — Diesel fuel water separation for fleet fuel storage and vehicle-mounted primary fuel filtration; protects common-rail injection systems across mixed fuel quality environments]]
 - [[MICROKAPPA|MICROKAPPA — Cabin air filtration for long-haul truck driver health compliance with ISO 11155 performance requirements]]
 
 ### Applicable Standards
@@ -87,7 +87,7 @@ RELATED_STANDARDS
 ISO 5011: Air filtration performance test across truck OEM specifications | SAE J1539: Diesel engine air intake cleanliness specification | ISO 16889: Lube and hydraulic filtration Beta ratio test for truck engine fluid systems | ISO 11155: Cabin air filter test standard for truck driver health compliance
 
 RELATED_TECHNOLOGIES
-MACROCORE: Air intake filtration for long-haul trucks with extended drain interval dirt-holding capacity | SYNTRAX: Full-flow lube filtration for EGR-equipped Euro VI engines with high soot agglomerate capture capability | INTEKCORE: Zero-bypass housing for reliable on-highway air filtration sealing | TURBOCORE: Fuel water separation for fleet fuel quality management | MICROKAPPA: Driver cab air filtration for ISO 11155 occupational health compliance
+MACROCORE: Air intake filtration for long-haul trucks with extended drain interval dirt-holding capacity | SYNTRAX: Full-flow lube filtration for EGR-equipped Euro VI engines with high soot agglomerate capture capability | INTEKCORE: Zero-bypass housing for reliable on-highway air filtration sealing | HYDROCORE: Fuel water separation for fleet fuel quality management | MICROKAPPA: Driver cab air filtration for ISO 11155 occupational health compliance
 
 INDUSTRIAL_ROLE
 Trucks & Fleets filtration is primarily an economic optimisation problem at fleet scale — the aggregate financial impact of standardising filtration across 100+ vehicle fleets (15–25% procurement cost reduction; 10–18% unplanned downtime reduction) creates measurable ROI from system-level filtration investment that commodity product selection approaches cannot capture.
