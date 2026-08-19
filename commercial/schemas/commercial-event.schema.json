@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://elimfilters.com/schemas/commercial-event.schema.json",
+  "title": "ELIMFILTERS Commercial Event",
+  "type": "object",
+  "required": ["event_id", "timestamp", "market", "actor", "action", "result"],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "market": {"type": "string", "minLength": 1},
+    "account_id": {"type": ["string", "null"]},
+    "contact_id": {"type": ["string", "null"]},
+    "supplier_id": {"type": ["string", "null"]},
+    "actor": {"type": "string", "minLength": 1},
+    "action": {"type": "string", "minLength": 1},
+    "result": {"type": "string", "enum": ["SUCCESS", "FAILED", "PENDING", "ESCALATED", "SKIPPED"]},
+    "reason": {"type": ["string", "null"]},
+    "pattern_id": {"type": ["string", "null"]},
+    "previous_state": {"type": ["string", "null"]},
+    "next_state": {"type": ["string", "null"]},
+    "metrics": {"type": "object", "additionalProperties": {"type": ["number", "integer", "string", "boolean", "null"]}},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "requires_review": {"type": "boolean", "default": false}
+  },
+  "additionalProperties": false
+}
