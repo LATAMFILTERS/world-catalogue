@@ -220,15 +220,36 @@ export async function runIndustrySweep({ apiKey = process.env.GROQ_API_KEY, fetc
   const output = path.resolve(outputDir);
   fs.mkdirSync(output, { recursive: true });
   const signatures = existingSignatures(output);
-  const summary = { mission_version: mission.schema_version, model: MODEL, domains: mission.domains.length, batches: 0, findings_seen: 0, created: 0, duplicates: 0, no_material_change: 0, invalid: 0, failed_batches: 0, failures: [] };
+  const summary = {
+    mission_version: mission.schema_version, model: MODEL, domains: mission.domains.length, batches: 0,
+    findings_seen: 0, created: 0, duplicates: 0, no_material_change: 0, invalid: 0, failed_batches: 0, failures: [],
+    // Batches never attempted because Groq quota was already confirmed
+    // exhausted this run — explicit accounting, distinct from a genuine
+    // per-batch failure and from "processed, zero eligible findings".
+    quota_exhausted: false, quota_exhausted_reason: null, skipped_due_quota: 0, skipped_domains: []
+  };
   if (!apiKey) return { ...summary, error: 'GROQ_API_KEY_MISSING' };
 
-  for (const domainBatch of chunks(mission.domains, BATCH_SIZE)) {
+  const allBatches = chunks(mission.domains, BATCH_SIZE);
+  for (let i = 0; i < allBatches.length; i += 1) {
+    const domainBatch = allBatches[i];
     summary.batches += 1;
     let search;
     try {
       search = await searchBatch(mission, domainBatch, apiKey, fetchImpl);
     } catch (error) {
+      if (error?.code === 'HERMES_QUOTA_EXHAUSTED') {
+        summary.quota_exhausted = true;
+        summary.quota_exhausted_reason = String(error?.message || error);
+        summary.skipped_due_quota += 1;
+        summary.skipped_domains.push(...domainBatch.map((d) => d.id));
+        for (let j = i + 1; j < allBatches.length; j += 1) {
+          summary.batches += 1;
+          summary.skipped_due_quota += 1;
+          summary.skipped_domains.push(...allBatches[j].map((d) => d.id));
+        }
+        break;
+      }
       summary.failed_batches += 1;
       summary.failures.push({ domains: domainBatch.map((d) => d.id), error: String(error?.message || error) });
       continue;
