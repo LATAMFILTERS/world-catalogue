@@ -2,9 +2,9 @@ require('dotenv').config();
 require('./lib/part-search-runtime-hardening');
 
 async function start() {
-  const { installPolicyV3 } = require('./scripts/migrations/run_072_catalog_codigo_base_governance_v3');
-  const policy = await installPolicyV3({ backfill: true });
-  console.log('[catalog-codigo-base-policy-v3]', JSON.stringify(policy));
+  const { installPolicyV31 } = require('./scripts/migrations/run_073_catalog_codigo_base_governance_v31');
+  const policy = await installPolicyV31({ backfill: true });
+  console.log('[catalog-codigo-base-policy-v31]', JSON.stringify(policy));
 
   require('./server');
 
@@ -21,6 +21,6 @@ async function start() {
 }
 
 start().catch((error) => {
-  console.error('[catalog-codigo-base-policy-v3] startup enforcement failed', error);
+  console.error('[catalog-codigo-base-policy-v31] startup enforcement failed', error);
   process.exit(1);
 });
