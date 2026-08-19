@@ -243,7 +243,7 @@ export function Footer() {
             textTransform: 'lowercase',
           }}>
             <p style={{ margin: 0 }}>
-              © KLEO TECHNOLOGY LLC. ELIMFILTERS® is a registered trademark. Legal Headquarters: Frisco, Texas, USA. Available exclusively through authorized distributors worldwide — we do not sell directly to end users.
+              © KLEO TECHNOLOGY LLC. ELIMFILTERS® is a registered trademark. Legal Headquarters: Frisco, Texas, USA. ELIMFILTERS operates through a distributor-first global commercial model with coordinated strategic-account capability.
             </p>
           </div>
           <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap' }}>
