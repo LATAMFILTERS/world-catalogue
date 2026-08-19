@@ -33,6 +33,10 @@ const scripts = [
 const checks = [
   'src/coverage-audit-engine.js',
   'scripts/verify-coverage-audit-direct.js',
+  'lib/catalog-write-gateway.js',
+  'lib/catalog-application-governance.js',
+  'lib/catalog-application-write-service.js',
+  'scripts/migrations/run_077_application_evidence_governance.js',
 ];
 
 let failed = false;
@@ -72,6 +76,23 @@ if (!failed) {
     execFileSync(process.execPath, [path.join('scripts', 'verify-coverage-audit-direct.js')], { stdio: 'inherit', cwd: root });
   } catch {
     console.error('[postinstall] ✗ Coverage audit verification failed');
+    failed = true;
+  }
+}
+
+if (!failed) {
+  try {
+    console.log('[postinstall] ⟳ Running catalog governance regressions...');
+    execFileSync(process.execPath, [
+      '--test',
+      'tests/catalog-write-gateway.test.js',
+      'tests/catalog-codigo-base-governance.test.js',
+      'tests/catalog-historical-sanitation.test.js',
+      'tests/catalog-application-governance.test.js',
+    ], { stdio: 'inherit', cwd: root });
+    console.log('[postinstall] ✓ Catalog governance regressions');
+  } catch {
+    console.error('[postinstall] ✗ Catalog governance regressions failed');
     failed = true;
   }
 }
