@@ -29,7 +29,6 @@ Protect fuel systems from particles and water contamination.
 Technologies:
 - SYNTAPORE™
 - HYDROCORE™
-- TURBOCORE™
 
 Products:
 - Fuel Filters

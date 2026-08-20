@@ -20,11 +20,11 @@ ELIMFILTERS engineering content is organized around contamination and reliabilit
 ## Technology relationships
 
 - Air Intake & Airflow Protection: MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™
-- Fuel Cleanliness Protection: SYNTAPORE™, TURBOCORE™
+- Fuel Cleanliness Protection: SYNTAPORE™, HYDROCORE™
 - Lubrication Protection: SYNTRAX™
 - Hydraulic Protection: NANOFORCE™
 - Cooling System Protection: THERMACORE™
 - Marine applications: MARINECLEAN™
-- Integrated maintenance kits: DURATECH™
+- Integrated maintenance kits: DURACTECH™
 
 Rule: a technology may be associated only with its approved protection function.

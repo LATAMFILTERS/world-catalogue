@@ -1,7 +1,7 @@
 # ELIMFILTERS BRAND AUDIT
 
 Status: Active
-Last updated: 2026-08-13
+Last updated: 2026-08-19
 
 ## Canonical positioning
 
@@ -24,7 +24,7 @@ Core principle: **The filter is the means. Asset protection is the objective.**
 - DRYCORE™ — pneumatic brake-system air dryer filtration
 - INTEKCORE™ — air-intake and air-filter housings
 - SYNTAPORE™ — spin-on, primary, secondary and cartridge fuel filtration
-- TURBOCORE™ — approved turbine/FH/FG fuel-separation applications
+- HYDROCORE™ — fuel/water separation, including approved turbine/FH/FG applications
 - SYNTRAX™ — lubrication filtration
 - NANOFORCE™ — hydraulic filtration
 - THERMACORE™ — coolant filtration
@@ -32,6 +32,6 @@ Core principle: **The filter is the means. Asset protection is the objective.**
 ## Specialized solutions
 
 - MARINECLEAN™ — marine filtration systems
-- DURATECH™ — integrated maintenance and asset-protection kits
+- DURACTECH™ — integrated maintenance and asset-protection kits
 
-All public, AI, Knowledge Center, Part Search and structured-data surfaces must use this taxonomy only.
+All public, computational, Knowledge Center, Part Search, metadata and structured-data surfaces must use this taxonomy only.

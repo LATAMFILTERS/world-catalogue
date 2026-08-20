@@ -1,7 +1,6 @@
 'use client';
 
 import '@/i18n';
-
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Navigation } from '@/components/Navigation';
@@ -10,90 +9,66 @@ import { Footer } from '@/components/Footer';
 const SECTIONS = [
   {
     title: '1. Purpose',
-    body: `This AI Use Policy governs all artificial intelligence features and AI-assisted functionality on ELIMFILTERS digital platforms, including the Knowledge System, Part Search, product recommendations, technical guidance tools, and any future AI agents or assistants.
+    body: `This policy governs the public use of artificial intelligence and computational methods within ELIMFILTERS engineering communications and digital platforms.
 
-The governing principle of this policy is that ELIMFILTERS AI must function as an engineering intelligence system — not an opinion engine. Every AI output must be traceable to documented technical data, industrial standards, or validated product specifications.`,
+ELIMFILTERS uses artificial intelligence only as a mathematical and computational engineering tool. Its role is to support analysis of demanding or extreme operating conditions affecting protected assets and filtration media. It does not replace physical validation, documented test protocols, qualified technical review, or professional engineering judgment.`,
   },
   {
-    title: '2. Scope of AI Features',
-    body: `AI-assisted functionality on ELIMFILTERS platforms currently includes or may include:
+    title: '2. Permitted Engineering Use',
+    body: `Permitted use includes mathematical modeling, computational analysis, predictive modeling, and engineering simulation used to study interactions among operating conditions, contamination load, flow behavior, pressure differential, temperature, material response, filtration-media characteristics, service duration, and operating severity.
 
-— Product recommendation engines that suggest filtration products based on equipment type, OEM references, and operating environment
-— Knowledge System search and retrieval tools that surface technical documentation, contamination studies, and industrial standards
-— Cross-reference validation that identifies compatible or equivalent products
-— Technical guidance assistants that answer engineering questions about filtration systems, contamination control, and asset protection
-— Fleet optimization tools that analyze operational data to support maintenance decisions`,
+These methods may support scenario analysis, sensitivity analysis, engineering evaluation, and test planning before demanding conditions are encountered in service.`,
   },
   {
-    title: '3. AI Output Standards',
-    body: `All AI outputs on ELIMFILTERS platforms must meet the following standards:
+    title: '3. Physical Validation Remains Required',
+    body: `Computational models are not product certification and are not independent proof of performance.
 
-Traceability: Recommendations must be traceable to documented product data, industrial standards (ISO, SAE, ASTM), or engineering specifications.
-
-Accuracy threshold: AI systems must not generate product recommendations without matching data in the ELIMFILTERS catalog. Approximate matches must be identified as unvalidated.
-
-Citation requirement: Technical claims must reference applicable standards (e.g., ISO 16889, ISO 4406, SAE J1539) where relevant.
-
-No fabrication: AI systems must not invent product specifications, filtration efficiency data, or equipment compatibility information. When data is insufficient for a confident recommendation, the system must state this explicitly.`,
+Where a technical claim depends on filtration efficiency, restriction, contaminant-holding capacity, flow behavior, media strength, pleat stability, seal integrity, burst or collapse resistance, cyclic pressure endurance, thermal exposure, material compatibility, water separation, or another measurable product characteristic, the applicable evidence must come from documented product data and physical validation appropriate to the product and application.`,
   },
   {
-    title: '4. Advisory Nature of AI Outputs',
-    body: `AI recommendations provided through ELIMFILTERS platforms are advisory only.
+    title: '4. Prohibited Public Representations',
+    body: `ELIMFILTERS public communications must not represent artificial intelligence as:
 
-AI outputs support engineering and purchasing decisions but do not constitute professional engineering advice, warranty commitments, or guarantees of product performance. Critical filtration decisions — particularly for high-value industrial assets, safety-critical equipment, hazardous operating environments, or warranty-sensitive applications — must be reviewed and validated by qualified engineers or authorized ELIMFILTERS distributors before implementation.
-
-ELIMFILTERS accepts no liability for equipment failures, operational disruptions, or safety incidents resulting from reliance on AI recommendations without appropriate technical validation.`,
+— an autonomous product auditor or certifier
+— a replacement for engineers, quality personnel, laboratories, or physical testing
+— an independent source of validated product specifications
+— an autonomous workforce responsible for technical or commercial accountability
+— the reason engineering controls, validation requirements, or human review can be reduced
+— a basis for unsupported claims of superiority, guaranteed protection, zero bypass, universal compatibility, or blanket standards compliance`,
   },
   {
-    title: '5. Citation Hierarchy',
-    body: `ELIMFILTERS AI systems use the following citation hierarchy when generating recommendations and technical guidance:
+    title: '5. Technical Evidence and Traceability',
+    body: `Technical conclusions must remain traceable to documented ELIMFILTERS product information, validated application data, applicable standards or test methods, and qualified engineering review where required.
 
-Level 1 — Technology: The ELIMFILTERS filtration technology platform (e.g., MACROCORE™, NANOFORCE™, SYNTRAX™) recommended for the application.
-
-Level 2 — System: The protection system domain applicable to the equipment (Air Intake, Fuel Cleanliness, Lubrication, Hydraulic, Cooling).
-
-Level 3 — Mechanism: The specific contamination control mechanism being applied (e.g., particulate capture, water separation, coalescing).
-
-Level 4 — Operational Impact: The measurable operational benefit of the recommendation (e.g., reduced bearing wear, extended component life, improved cleanliness code).
-
-Level 5 — Business Outcome: The downstream operational outcome for the asset and fleet (e.g., extended asset life, reduced unplanned downtime, lower total cost of ownership).
-
-This hierarchy ensures AI outputs are anchored in engineering reality before reaching commercial conclusions.`,
+If available evidence does not support a product-specific conclusion, the system or communication must state the limitation rather than infer or fabricate a specification.`,
   },
   {
-    title: '6. Prohibited AI Behaviors',
-    body: `The following outputs are prohibited from ELIMFILTERS AI systems:
+    title: '6. Cross-Reference and Application Guidance',
+    body: `Cross-reference information supports product identification and application research. A cross-reference does not by itself establish identical construction, identical performance, or universal interchangeability.
 
-— Stating that a cross-referenced product is "identical" to an OEM part without validated equivalency data
-— Generating filtration efficiency specifications (e.g., Beta ratios, micron ratings) not documented in the ELIMFILTERS catalog
-— Recommending products outside the validated ELIMFILTERS product range without explicit disclosure
-— Providing safety-critical guidance (e.g., fire suppression, personal protective equipment) outside ELIMFILTERS's technical domain
-— Reproducing competitor product data in a manner that implies ELIMFILTERS endorsement or verification of competitor specifications
-— Using marketing language (premium, superior, industry-leading, best-in-class) in technical guidance contexts`,
+Application suitability must be evaluated using available dimensional, functional, operating-condition, and product-specific evidence. Critical applications require appropriate technical validation before implementation.`,
   },
   {
-    title: '7. AI and Personal Data',
-    body: `AI systems operating on ELIMFILTERS platforms must not expose, reproduce, or aggregate personal customer data in their outputs. AI training processes are governed by data classification standards that restrict access to personally identifiable information.
+    title: '7. Human Accountability',
+    body: `Human accountability remains in engineering review, manufacturing oversight, quality governance, evidence review, application escalation, and critical technical decisions.
 
-User queries submitted to AI-assisted features may be retained to improve model performance, subject to the terms of the Privacy Policy. Users may request deletion of interaction history by contacting info@elimfilters.com.`,
+Digital workflows and automation may improve information handling and operational efficiency, but they do not transfer technical responsibility away from qualified people or documented processes.`,
   },
   {
-    title: '8. User Responsibilities',
-    body: `Users of ELIMFILTERS AI-assisted features are responsible for:
+    title: '8. Personal and Confidential Information',
+    body: `Users should not submit unnecessary personal information, regulated data, confidential third-party information, or trade secrets to computational or automated features.
 
-— Providing accurate equipment information, operating conditions, and maintenance context when requesting recommendations
-— Validating AI recommendations against equipment technical manuals, OEM service guidelines, and applicable safety requirements before implementation
-— Reporting inaccurate, misleading, or fabricated AI outputs to ELIMFILTERS at info@elimfilters.com`,
+Data handling is governed by the ELIMFILTERS Privacy Policy and applicable contractual and legal requirements.`,
   },
   {
     title: '9. Transparency',
-    body: `ELIMFILTERS will clearly identify AI-assisted features within platform interfaces. Users will not be misled into believing AI recommendations are human-reviewed engineering assessments unless they have been explicitly reviewed and validated by ELIMFILTERS technical personnel.`,
+    body: `Where artificial intelligence materially participates in a user-facing computational function, ELIMFILTERS will describe its role accurately. Public descriptions will distinguish mathematical or computational support from physical testing, human review, and validated engineering evidence.`,
   },
   {
     title: '10. Updates and Contact',
-    body: `This policy may be updated to reflect changes in AI capabilities, regulatory requirements, or platform functionality. Material changes will be communicated through an updated effective date.
+    body: `This policy may be updated as ELIMFILTERS engineering methods, digital platforms, evidence governance, or applicable requirements evolve.
 
-For questions about AI functionality, to report problematic outputs, or to exercise data rights related to AI interactions, contact info@elimfilters.com.`,
+Questions regarding this policy may be sent to info@elimfilters.com.`,
   },
 ];
 
@@ -110,64 +85,20 @@ export default function AIUsePolicyPage() {
     <>
       <Navigation />
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-
         <div style={{ padding: '1.5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
-          <Link href="/" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.72rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>
-            ← ELIMFILTERS
-          </Link>
+          <Link href="/" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.72rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>← ELIMFILTERS</Link>
         </div>
-
         <section style={{ padding: '4rem 8% 3rem', borderBottom: '1px solid rgba(255,241,45,0.08)' }}>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.18em', color: '#FFF12D', opacity: 0.8, marginBottom: '1rem', textTransform: 'uppercase' }}>
-              {'// Legal · AI Systems'}
-            </p>
-            <h1 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#fff', margin: '0 0 1rem', lineHeight: 1.15, textAlign: 'justify' }}>
-              AI Use Policy
-            </h1>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'rgba(255,255,255,0.45)', margin: 0 }}>
-              Last updated: June 2026
-            </p>
+          <motion.div initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.5 }}>
+            <p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem', letterSpacing:'0.18em', color:'#FFF12D', opacity:0.8, marginBottom:'1rem', textTransform:'uppercase' }}>{'// Legal · Computational Engineering'}</p>
+            <h1 style={{ fontFamily:'var(--font-body)', fontWeight:700, fontSize:'clamp(2rem, 4vw, 3rem)', color:'#fff', margin:'0 0 1rem', lineHeight:1.15 }}>AI & Computational Modeling Policy</h1>
+            <p style={{ fontFamily:'var(--font-body)', fontSize:'0.9rem', color:'rgba(255,255,255,0.45)', margin:0 }}>Last updated: August 2026</p>
           </motion.div>
         </section>
-
-        <div style={{ maxWidth: '820px', margin: '0 auto', padding: '4rem 8%' }}>
-          {SECTIONS.map((s, i) => (
-            <motion.section
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.04 }}
-              style={{ marginBottom: '2.5rem', paddingBottom: '2.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
-            >
-              <h2 style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1.05rem', color: '#FFF12D', marginBottom: '0.9rem', lineHeight: 1.3, textAlign: 'justify' }}>
-                {s.title}
-              </h2>
-              {s.body.split('\n\n').map((para, j) => (
-                <p key={j} style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '0.75rem' }}>
-                  {para}
-                </p>
-              ))}
-            </motion.section>
-          ))}
-
-          <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,241,45,0.12)' }}>
-            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.3)', marginBottom: '1rem', textTransform: 'uppercase' }}>
-              Related Legal Documents
-            </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
-              {RELATED.map((r) => (
-                <Link key={r.href} href={r.href} style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', padding: '0.4rem 0.85rem', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#FFF12D'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,241,45,0.4)'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.5)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.1)'; }}
-                >
-                  {r.label}
-                </Link>
-              ))}
-            </div>
-          </div>
+        <div style={{ maxWidth:'820px', margin:'0 auto', padding:'4rem 8%' }}>
+          {SECTIONS.map((s,i)=><motion.section key={i} initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{duration:0.4,delay:i*0.04}} style={{marginBottom:'2.5rem',paddingBottom:'2.5rem',borderBottom:'1px solid rgba(255,255,255,0.05)'}}><h2 style={{fontFamily:'var(--font-body)',fontWeight:700,fontSize:'1.05rem',color:'#FFF12D',marginBottom:'0.9rem',lineHeight:1.3}}>{s.title}</h2>{s.body.split('\n\n').map((para,j)=><p key={j} style={{fontFamily:'var(--font-body)',fontSize:'0.92rem',color:'rgba(255,255,255,0.7)',lineHeight:1.8,marginBottom:'0.75rem'}}>{para}</p>)}</motion.section>)}
+          <div style={{marginTop:'3rem',paddingTop:'2rem',borderTop:'1px solid rgba(255,241,45,0.12)'}}><p style={{fontFamily:'JetBrains Mono, monospace',fontSize:'0.7rem',letterSpacing:'0.14em',color:'rgba(255,255,255,0.3)',marginBottom:'1rem',textTransform:'uppercase'}}>Related Legal Documents</p><div style={{display:'flex',flexWrap:'wrap',gap:'0.75rem'}}>{RELATED.map(r=><Link key={r.href} href={r.href} style={{fontFamily:'var(--font-body)',fontSize:'0.82rem',color:'rgba(255,255,255,0.5)',textDecoration:'none',padding:'0.4rem 0.85rem',border:'1px solid rgba(255,255,255,0.1)',borderRadius:'4px'}}>{r.label}</Link>)}</div></div>
         </div>
-
       </main>
       <Footer />
     </>

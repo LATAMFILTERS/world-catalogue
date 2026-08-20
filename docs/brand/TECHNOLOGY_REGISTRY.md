@@ -70,7 +70,7 @@ Protection role: Cooling-system cleanliness and component protection.
 Type: Marine Filtration Systems
 Strategic role: Extends the Asset Protection Systems architecture into specialized marine operating environments.
 
-## DURATECH™
+## DURACTECH™
 Type: Integrated Maintenance and Asset Protection Kits
 Applications:
 - Vehicles
@@ -78,14 +78,14 @@ Applications:
 - Machines
 - Equipment
 
-Strategic role: DURATECH™ integrates the required filtration components for a defined maintenance interval so the customer manages protection of the complete vehicle, machine or equipment rather than isolated filter replacement.
+Strategic role: DURACTECH™ integrates the required filtration components for a defined maintenance interval so the customer manages protection of the complete vehicle, machine or equipment rather than isolated filter replacement.
 
 On-Road differentiation:
 - Applicable segment: trucks and commercial vehicles.
 - Governed commercial claim: 15,000 km On-Road protection interval.
-- Claim interpretation: the DURATECH™ kit represents a protected maintenance interval, not merely a bundle of filters.
+- Claim interpretation: the DURACTECH™ kit represents a protected maintenance interval, not merely a bundle of filters.
 - Public use requirement: warranty/coverage language must remain consistent with the approved application, installation and maintenance conditions defined by ELIMFILTERS.
 
 Canonical positioning:
 
-DURATECH™ does not sell a set of filters as the end value. It delivers an integrated asset-protection interval.
+DURACTECH™ does not sell a set of filters as the end value. It delivers an integrated asset-protection interval.
