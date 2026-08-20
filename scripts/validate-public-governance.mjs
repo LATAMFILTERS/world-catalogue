@@ -23,7 +23,6 @@ for (const file of files) {
   const before = text;
   text = text.replaceAll('DURATECH™', 'DURACTECH™');
   text = text.replaceAll('DURATECH', 'DURACTECH');
-  text = text.replaceAll('/commercial-lines/duratech/', '/commercial-lines/duractech/');
   text = text.replaceAll('TURBOCORE™', 'HYDROCORE™');
   text = text.replaceAll('TURBOCORE', 'HYDROCORE');
   if (text !== before) fs.writeFileSync(file, text, 'utf8');
@@ -40,7 +39,6 @@ const forbidden = [
   /100% guaranteed safety/i,
   /absolute protection of critical equipment/i,
   /DURATECH™/,
-  /\/commercial-lines\/duratech\//,
   /TURBOCORE™/,
 ];
 
@@ -52,26 +50,79 @@ for (const file of files) {
   }
 }
 
-const distributors = path.join(out, 'distributors', 'index.html');
-if (!fs.existsSync(distributors)) violations.push('distributors/index.html missing');
-else {
-  const text = fs.readFileSync(distributors, 'utf8');
-  for (const required of ['Authorized Commercial Partner Network', 'application intelligence', 'inventory strategy']) {
-    if (!text.toLowerCase().includes(required.toLowerCase())) violations.push(`distributors/index.html missing governed concept: ${required}`);
+function requireFile(rel) {
+  const full = path.join(out, rel);
+  if (!fs.existsSync(full)) {
+    violations.push(`${rel} missing`);
+    return null;
+  }
+  return fs.readFileSync(full, 'utf8');
+}
+
+function requireText(rel, required) {
+  const text = requireFile(rel);
+  if (text == null) return;
+  for (const item of required) {
+    if (!text.toLowerCase().includes(item.toLowerCase())) violations.push(`${rel} missing governed concept: ${item}`);
   }
 }
 
-const aiPolicy = path.join(out, 'legal', 'ai-policy', 'index.html');
-if (!fs.existsSync(aiPolicy)) violations.push('legal/ai-policy/index.html missing');
-else {
-  const text = fs.readFileSync(aiPolicy, 'utf8');
+requireText('distributors/index.html', [
+  'Authorized Commercial Partner Network',
+  'application intelligence',
+  'inventory strategy',
+]);
+
+const aiPolicy = requireFile('legal/ai-policy/index.html');
+if (aiPolicy != null) {
   for (const required of ['mathematical and computational engineering tool', 'does not replace physical validation', 'Human Accountability']) {
-    if (!text.includes(required)) violations.push(`legal/ai-policy/index.html missing policy concept: ${required}`);
+    if (!aiPolicy.includes(required)) violations.push(`legal/ai-policy/index.html missing policy concept: ${required}`);
+  }
+  if (!/rel="canonical"[^>]+https:\/\/elimfilters\.com\/legal\/ai-policy\//i.test(aiPolicy)) {
+    violations.push('legal/ai-policy/index.html missing self canonical');
   }
 }
 
-const canonicalDuractech = path.join(out, 'commercial-lines', 'duractech', 'index.html');
-if (!fs.existsSync(canonicalDuractech)) violations.push('commercial-lines/duractech/index.html missing');
+const canonicalDuractech = requireFile('commercial-lines/duractech/index.html');
+if (canonicalDuractech != null) {
+  if (!/rel="canonical"[^>]+https:\/\/elimfilters\.com\/commercial-lines\/duractech\//i.test(canonicalDuractech)) {
+    violations.push('commercial-lines/duractech/index.html missing self canonical');
+  }
+}
+
+const legacyDuratech = requireFile('commercial-lines/duratech/index.html');
+if (legacyDuratech != null) {
+  if (!/noindex/i.test(legacyDuratech)) violations.push('commercial-lines/duratech/index.html must be noindex migration shim');
+  if (!legacyDuratech.includes('https://elimfilters.com/commercial-lines/duractech/')) violations.push('commercial-lines/duratech/index.html missing canonical migration destination');
+}
+
+const kcIndex = requireFile('knowledge-center/index.html');
+if (kcIndex != null) {
+  for (const required of ['Engineering knowledge for better asset decisions', 'CONTAMINATION CONTROL LOGIC', 'DECISION PATH']) {
+    if (!kcIndex.includes(required)) violations.push(`knowledge-center/index.html missing professional architecture: ${required}`);
+  }
+  if (!/rel="canonical"[^>]+https:\/\/elimfilters\.com\/knowledge-center\//i.test(kcIndex)) {
+    violations.push('knowledge-center/index.html missing self canonical');
+  }
+}
+
+const rawKeyPattern = /\b(?:knowledgeCenter|standards|problems|technologies|systems|fleet|distributors)\.[A-Za-z][A-Za-z0-9_.-]*\b/g;
+for (const file of files.filter((f) => f.includes(`${path.sep}knowledge-center${path.sep}`) || f.endsWith(`${path.sep}distributors${path.sep}index.html`))) {
+  const text = fs.readFileSync(file, 'utf8');
+  const matches = [...new Set(text.match(rawKeyPattern) || [])];
+  if (matches.length) violations.push(`${path.relative(out, file)} raw translation keys: ${matches.slice(0, 6).join(', ')}`);
+}
+
+const sitemap = requireFile('sitemap.xml');
+if (sitemap != null) {
+  if (!sitemap.includes('https://elimfilters.com/commercial-lines/duractech/')) violations.push('sitemap.xml missing DURACTECH canonical URL');
+  if (sitemap.includes('https://elimfilters.com/commercial-lines/duratech/')) violations.push('sitemap.xml contains retired DURATECH URL');
+}
+
+const sitemapIndex = requireFile('sitemap-index.xml');
+if (sitemapIndex != null && !sitemapIndex.includes('https://elimfilters.com/sitemap.xml')) {
+  violations.push('sitemap-index.xml missing main sitemap');
+}
 
 if (violations.length) {
   console.error('[validate-public-governance] FAILED');
