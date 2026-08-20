@@ -4,6 +4,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
   governanceForReferences,
+  governedDutyForReference,
   filterProductsForGovernance,
   applyGovernanceToCatalogResult,
   applyGovernanceToSearchBody,
@@ -85,6 +86,38 @@ test('1R1808 governed HD family bypasses the upstream mixed-duty prompt', () => 
   assert.deepEqual(body.results.map(x => x.elimfilters_sku), [
     'EL81808', 'EL84005', 'EL84105', 'EL87405', 'EL87505'
   ]);
+});
+
+test('1R1808 governance overrides an explicit LIGHT_DUTY request before SQL', () => {
+  assert.equal(governedDutyForReference('1R-1808', 'LIGHT_DUTY'), 'HEAVY_DUTY');
+  assert.equal(governedDutyForReference('1R1808', null), 'HEAVY_DUTY');
+  assert.equal(governedDutyForReference('UNRELATED', 'LIGHT_DUTY'), 'LIGHT_DUTY');
+});
+
+test('1R1808 fail-closed response removes contaminated LD candidates', () => {
+  const body = applyGovernanceToSearchBody({
+    success: true,
+    source: 'xref_ambiguous',
+    resolution: 'AMBIGUOUS',
+    results: [],
+    candidates: ['EL33125', 'EL34518']
+  }, '1R1808');
+
+  assert.deepEqual(body.candidates, []);
+  assert.equal(body.source, 'xref_governed');
+  assert.equal(body.resolution, 'GOVERNANCE_BLOCKED_CONFLICTING_DUTY');
+  assert.equal(body.governed_reference, '1R1808');
+  assert.equal(body.resolved_duty, 'HEAVY_DUTY');
+  assert.equal(body.reference_safety_removed, 2);
+});
+
+test('runtime applies governed duty before the original search handler', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const source = fs.readFileSync(path.join(__dirname, '..', 'lib',
+    'part-search-runtime-hardening.js'), 'utf8');
+  assert.match(source, /governedDutyForReference\(raw, req\.query\?\.duty\)/);
+  assert.match(source, /req\.query\.duty = governedDuty/);
 });
 
 test('1R0732 keeps EH66700 when public API uses elimfilters_sku', () => {
