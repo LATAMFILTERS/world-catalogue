@@ -24,11 +24,11 @@ const binaryExt = new Set(['.png','.jpg','.jpeg','.gif','.webp','.avif','.ico','
 
 // Hex keeps retired labels out of current repository text while still allowing
 // the guard to detect them in active file contents and paths.
+// DURACTECH is canonical and therefore intentionally absent from this list.
 const forbidden = [
   '53594e5445504f5245',
   '53594e5445464f52',
   '434f4f4c54454348',
-  '445552414354454348',
   '4e414e4f434f5245',
   '49534f4755415244',
   '50554c5345434f5245',
