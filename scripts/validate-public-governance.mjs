@@ -50,6 +50,37 @@ for (const file of files) {
   }
 }
 
+const kcFiles = files.filter((file) =>
+  file.includes(`${path.sep}knowledge-center${path.sep}`) ||
+  file.includes(`${path.sep}api${path.sep}citation${path.sep}`)
+);
+const kcForbidden = [
+  /sole global standardi[sz]ed test method/i,
+  /reference standard for all ELIMFILTERS fluid filter qualification/i,
+  /Particle contamination is responsible for 70[–-]80% of hydraulic system failures/i,
+  /extends valve spool life by 3[–-]5×/i,
+  /only valid basis for filter element selection/i,
+  /\bCaterpillar\b/i,
+  /\bKomatsu\b/i,
+  /\bDonaldson\b/i,
+  /\bFleetguard\b/i,
+  /\bMANN(?:-FILTER)?\b/i,
+];
+const kcEmoji = ['💨', '⛽', '🔧', '⚙️', '⚙', '🌡️', '🌡', '🏭', '⛏️', '⛏', '🏗️', '🏗', '🌾', '🚛', '⚓', '🛢️', '🛢', '⚡', '🚂', '🗑️', '🗑'];
+
+for (const file of kcFiles) {
+  const text = fs.readFileSync(file, 'utf8');
+  for (const re of kcForbidden) {
+    if (re.test(text)) violations.push(`${path.relative(out, file)} KC governance violation: ${re}`);
+  }
+  for (const mark of kcEmoji) {
+    if (text.includes(mark)) violations.push(`${path.relative(out, file)} contains non-professional KC icon: ${mark}`);
+  }
+  if (file.endsWith('.html') && /#(?:ff4444|ff8c00|44ff88)/i.test(text)) {
+    violations.push(`${path.relative(out, file)} contains non-brand KC status/severity color`);
+  }
+}
+
 function requireFile(rel) {
   const full = path.join(out, rel);
   if (!fs.existsSync(full)) {
@@ -130,4 +161,4 @@ if (violations.length) {
   process.exit(1);
 }
 
-console.log(`[validate-public-governance] PASS — ${files.length} public text files checked`);
+console.log(`[validate-public-governance] PASS — ${files.length} public text files checked; ${kcFiles.length} KC/citation files governed`);
