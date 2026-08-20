@@ -13,6 +13,10 @@ const {
   physicalSignature,
   filterGlobalReferenceSafety
 } = require('../lib/part-search-reference-governance-patch');
+const {
+  quarantineForReference,
+  replaceReferenceQuarantineForTest,
+} = require('../lib/catalog-reference-quarantine');
 
 const candidates = [
   { sku: 'EL80788', duty: 'HEAVY_DUTY', filter_type: 'oil', thread_size: '1 1/2-16 UN' },
@@ -118,6 +122,22 @@ test('runtime applies governed duty before the original search handler', () => {
     'part-search-runtime-hardening.js'), 'utf8');
   assert.match(source, /governedDutyForReference\(raw, req\.query\?\.duty\)/);
   assert.match(source, /req\.query\.duty = governedDuty/);
+  assert.match(source, /quarantineForReference\(raw\)/);
+  assert.match(source, /resolution:\s*'EVIDENCE_REQUIRED'/);
+});
+
+test('unreviewed cross-duty reference is loaded into fail-closed quarantine', () => {
+  replaceReferenceQuarantineForTest([{
+    normalizedReference: '1R0716',
+    hdCount: 8,
+    ldCount: 3,
+    reasons: ['CROSS_DUTY', 'OFFICIAL_EVIDENCE_REQUIRED'],
+  }]);
+  const entry = quarantineForReference('1R-0716');
+  assert.ok(entry);
+  assert.equal(entry.normalizedReference, '1R0716');
+  assert.deepEqual(entry.reasons, ['CROSS_DUTY', 'OFFICIAL_EVIDENCE_REQUIRED']);
+  replaceReferenceQuarantineForTest([]);
 });
 
 test('1R0732 keeps EH66700 when public API uses elimfilters_sku', () => {
