@@ -10,7 +10,7 @@
     "start": "node server-protocol.js",
     "dev": "node server-protocol.js",
     "build": "cd frontend && npm ci && npm run build",
-    "catalog:governance:test": "node --test tests/catalog-write-gateway.test.js tests/catalog-codigo-base-governance.test.js tests/catalog-historical-sanitation.test.js tests/catalog-application-governance.test.js tests/donaldson-url-discovery.test.js tests/catalog-curated-evidence-batch2.test.js tests/catalog-p551315-canonical-evidence.test.js tests/part-search-reference-governance.test.js tests/part-search-1r0732-regression.test.js",
+    "catalog:governance:test": "node --test tests/catalog-write-gateway.test.js tests/catalog-codigo-base-governance.test.js tests/catalog-historical-sanitation.test.js tests/catalog-application-governance.test.js tests/donaldson-url-discovery.test.js tests/catalog-curated-evidence-batch2.test.js tests/catalog-p551315-canonical-evidence.test.js tests/catalog-alternate-integrity-v1.test.js tests/part-search-reference-governance.test.js tests/part-search-1r0732-regression.test.js",
     "catalog:governance:audit": "node scripts/audit-catalog-governance-daily.js",
     "hermes:validate": "node scripts/hermes/validate-candidates.mjs hermes/test-candidates",
     "hermes:report": "node scripts/hermes/generate-weekly-report.mjs hermes/test-candidates hermes/reports",

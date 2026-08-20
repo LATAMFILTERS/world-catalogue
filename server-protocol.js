@@ -14,6 +14,13 @@ async function start() {
   const applicationGovernance = await installApplicationEvidenceGovernance();
   console.log('[catalog-application-governance]', JSON.stringify(applicationGovernance));
 
+  // Structural cleanup only: remove exact codigo_base duplication, build the
+  // evidence queues and prevent unresolved HD/LD conflicts from reaching the
+  // public selector. No manufacturer or equivalence is inferred.
+  const { applyAlternateIntegrityAndReferenceQuarantine } = require('./scripts/migrations/run_080_alternate_integrity_and_reference_quarantine');
+  const alternateIntegrity = await applyAlternateIntegrityAndReferenceQuarantine();
+  console.log('[alternate-integrity-v1]', JSON.stringify(alternateIntegrity));
+
   // Apply only the small curated evidence batch whose exact official Donaldson
   // product URLs were independently reviewed. This path exists because Donaldson
   // returns HTTP 403 to Render-origin requests; 403 is never treated as absence.
@@ -34,6 +41,10 @@ async function start() {
   const { applyP551315CanonicalEvidence } = require('./scripts/migrations/run_079_apply_p551315_canonical_evidence');
   const p551315Evidence = await applyP551315CanonicalEvidence();
   console.log('[p551315-canonical-evidence]', JSON.stringify(p551315Evidence));
+
+  const { loadReferenceQuarantine } = require('./lib/catalog-reference-quarantine');
+  const referenceQuarantine = await loadReferenceQuarantine();
+  console.log('[reference-quarantine]', JSON.stringify(referenceQuarantine));
 
   require('./server');
 
