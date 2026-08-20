@@ -19,6 +19,11 @@ const {
   pageSupportsCrossReference,
   pageSupportsOfficialProduct,
 } = require('../lib/donaldson-official-evidence');
+const {
+  canonicalOfficialProductUrl,
+  discoveryUrls,
+  extractOfficialProductUrls,
+} = require('../lib/donaldson-url-discovery');
 
 const DATABASE_URL = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
 if (!DATABASE_URL) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
@@ -35,31 +40,19 @@ const FETCH_HEADERS = {
 
 function officialProductUrlRegex(code) {
   const escaped = String(code).trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return new RegExp(`https:\\/\\/shop\\.donaldson\\.com\\/store\\/(?:en|fr)-us\\/product\\/${escaped}\\/[A-Za-z0-9_-]+`, 'i');
+  return new RegExp(`https:\\/\\/shop\\.donaldson\\.com\\/store\\/[a-z]{2}-[a-z]{2}\\/product\\/${escaped}\\/[A-Za-z0-9_-]+`, 'i');
 }
 
 async function discoverOfficialDonaldsonUrl(code) {
-  const query = encodeURIComponent(`site:shop.donaldson.com/store/en-us/product/ \"${String(code).trim()}\"`);
-  const discoveryUrls = [
-    `https://www.bing.com/search?q=${query}`,
-    `https://html.duckduckgo.com/html/?q=${query}`,
-  ];
-  const regex = officialProductUrlRegex(code);
-
-  for (const discoveryUrl of discoveryUrls) {
+  for (const discoveryUrl of discoveryUrls(code)) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 15000);
     try {
       const response = await fetch(discoveryUrl, { redirect: 'follow', signal: controller.signal, headers: FETCH_HEADERS });
       if (!response.ok) continue;
-      let html = await response.text();
-      html = html.replace(/&amp;/g, '&');
-      const direct = html.match(regex);
-      if (direct?.[0]) return direct[0];
-
-      const decoded = decodeURIComponent(html.replace(/%2F/gi, '/').replace(/%3A/gi, ':'));
-      const decodedMatch = decoded.match(regex);
-      if (decodedMatch?.[0]) return decodedMatch[0];
+      const payload = await response.text();
+      const [officialUrl] = extractOfficialProductUrls(payload, code);
+      if (officialUrl) return officialUrl;
     } catch (_) {
       // Discovery failure is not manufacturer evidence and never becomes absence evidence.
     } finally {
@@ -69,40 +62,55 @@ async function discoverOfficialDonaldsonUrl(code) {
   return null;
 }
 
-async function fetchOfficialDonaldsonPage(code) {
-  const discovered = await discoverOfficialDonaldsonUrl(code);
-  if (!discovered) {
-    return { ok: false, reason: 'OFFICIAL_URL_DISCOVERY_FAILED', url: null, html: '', status: null, hash: null };
-  }
-
+async function fetchOfficialCandidate(candidate, code) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 15000);
   try {
-    const response = await fetch(discovered, {
+    const response = await fetch(candidate, {
       redirect: 'follow',
       signal: controller.signal,
       headers: FETCH_HEADERS,
     });
     if (!response.ok) {
-      return { ok: false, reason: 'OFFICIAL_PRODUCT_FETCH_FAILED', url: discovered, html: '', status: response.status, hash: null };
+      return { ok: false, reason: 'OFFICIAL_PRODUCT_FETCH_FAILED', url: candidate, html: '', status: response.status, hash: null };
     }
     const html = await response.text();
-    if (!pageSupportsOfficialProduct(html, code)) {
-      return { ok: false, reason: 'OFFICIAL_PRODUCT_PAGE_DID_NOT_VALIDATE', url: response.url || discovered, html, status: response.status, hash: null };
+    const officialUrl = canonicalOfficialProductUrl(response.url || candidate, code);
+    if (!officialUrl || !pageSupportsOfficialProduct(html, code)) {
+      return { ok: false, reason: 'OFFICIAL_PRODUCT_PAGE_DID_NOT_VALIDATE', url: response.url || candidate, html, status: response.status, hash: null };
     }
     return {
       ok: true,
       reason: null,
-      url: response.url || discovered,
+      url: officialUrl,
       html,
       status: response.status,
       hash: crypto.createHash('sha256').update(html).digest('hex'),
     };
   } catch (_) {
-    return { ok: false, reason: 'OFFICIAL_PRODUCT_FETCH_FAILED', url: discovered, html: '', status: null, hash: null };
+    return { ok: false, reason: 'OFFICIAL_PRODUCT_FETCH_FAILED', url: candidate, html: '', status: null, hash: null };
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function fetchOfficialDonaldsonPage(code) {
+  const encoded = encodeURIComponent(String(code).trim());
+  const directCandidates = [
+    `https://shop.donaldson.com/store/en-us/product/${encoded}`,
+    `https://shop.donaldson.com/store/fr-us/product/${encoded}`,
+  ];
+
+  for (const candidate of directCandidates) {
+    const result = await fetchOfficialCandidate(candidate, code);
+    if (result.ok) return result;
+  }
+
+  const discovered = await discoverOfficialDonaldsonUrl(code);
+  if (!discovered) {
+    return { ok: false, reason: 'OFFICIAL_URL_DISCOVERY_FAILED', url: null, html: '', status: null, hash: null };
+  }
+  return fetchOfficialCandidate(discovered, code);
 }
 
 function governance(row) {
@@ -325,6 +333,7 @@ if (require.main === module) {
 module.exports = {
   officialProductUrlRegex,
   discoverOfficialDonaldsonUrl,
+  fetchOfficialCandidate,
   fetchOfficialDonaldsonPage,
   verifyRow,
   runHistoricalSanitationBatch,
