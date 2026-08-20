@@ -18,14 +18,15 @@ Principle = The filter is the means. Asset protection is the objective.
 
 MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · HYDROCORE™ · SYNTRAX™ · NANOFORCE™ · THERMACORE™
 
-TURBOCORE™ is retired/non-canonical. Its Turbine Series FH/FG fuel/water-separation scope is now governed under HYDROCORE™.
+All approved turbine/FH/FG fuel/water-separation scope is governed under HYDROCORE™. Legacy aliases are retired and must not be emitted on active or public surfaces.
 
-Specialized solutions: MARINECLEAN™ · DURATECH™.
+Specialized solutions: MARINECLEAN™ · DURACTECH™.
 
 ## Hard rules
 
 - Resolve technology names from canonical registries only.
 - Do not invent technologies, performance values, certifications or legal facts.
-- Do not expose unapproved technology aliases on public, AI, Knowledge Center, Part Search or structured-data surfaces.
+- Do not expose unapproved technology aliases on public, computational, Knowledge Center, Part Search, SEO/GEO, metadata or structured-data surfaces.
 - Keep competitor material out of ELIMFILTERS-facing content. External sources are internal evidence only for generic industry validation.
-- DURATECH™ On-Road: 15,000 km protection interval only for approved truck and commercial-vehicle applications and subject to ELIMFILTERS application, installation and maintenance conditions.
+- DURACTECH™ On-Road: 15,000 km protection interval only for approved truck and commercial-vehicle applications and subject to ELIMFILTERS application, installation and maintenance conditions.
+- Artificial intelligence may be described publicly only as mathematical/computational engineering support for evaluating demanding operating conditions; it does not replace physical validation, documented testing or professional engineering judgment.
