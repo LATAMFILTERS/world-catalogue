@@ -35,17 +35,21 @@ test('1R1808 excludes secondary cross-reference contamination', () => {
   const policy = governanceForReferences(['1R1808']);
   const filtered = filterProductsForGovernance(candidates, policy);
   assert.deepEqual(filtered.map(x => x.sku), ['EL81808', 'EL84005', 'EL84105', 'EL87405', 'EL87505']);
+  assert.ok(!filtered.some(x => ['EL80788', 'EL84206', 'EL89050'].includes(x.sku)));
 });
 
 test('catalog result is resolved as HD without a duty clarification', () => {
   const result = applyGovernanceToCatalogResult({ products: candidates, lookupStatus: 'completed' }, ['1R1808']);
   assert.equal(result.resolvedDuty, 'HEAVY_DUTY');
+  assert.equal(result.dutyResolution, 'REFERENCE_GOVERNANCE');
   assert.equal(result.products.length, 5);
+  assert.equal(singleDutyFromProducts(result.products), 'HEAVY_DUTY');
 });
 
 test('public search response exposes fixed duty and five approved results', () => {
   const body = applyGovernanceToSearchBody({ results: candidates }, '1R1808');
   assert.equal(body.resolved_duty, 'HEAVY_DUTY');
+  assert.equal(body.duty_clarification_required, false);
   assert.deepEqual(body.results.map(x => x.sku), ['EL81808', 'EL84005', 'EL84105', 'EL87405', 'EL87505']);
 });
 
@@ -122,6 +126,7 @@ test('global safety uses a direct canonical match as the physical anchor', () =>
   ];
   const result = filterGlobalReferenceSafety(products, ['P551808']);
   assert.deepEqual(result.products.map(x => x.sku), ['EL81808', 'EL84005']);
+  assert.equal(result.status, 'DIRECT_ANCHOR_FILTERED');
   assert.equal(result.removed, 2);
 });
 
@@ -135,6 +140,8 @@ test('global safety selects one dominant physical family when secondary graph is
   ];
   const result = filterGlobalReferenceSafety(products, ['OEM12345']);
   assert.deepEqual(result.products.map(x => x.sku), ['A1', 'A2', 'A3']);
+  assert.equal(result.status, 'DOMINANT_PHYSICAL_FAMILY');
+  assert.equal(result.removed, 2);
 });
 
 test('global safety fails closed when conflicting physical families tie', () => {
@@ -146,6 +153,7 @@ test('global safety fails closed when conflicting physical families tie', () => 
   ];
   const result = filterGlobalReferenceSafety(products, ['OEM99999']);
   assert.deepEqual(result.products, []);
+  assert.equal(result.status, 'AMBIGUOUS_PHYSICAL_FAMILIES_REVIEW_REQUIRED');
 });
 
 test('physical signature includes duty, filter type and thread', () => {
