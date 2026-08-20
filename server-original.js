@@ -6,6 +6,7 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 const OutlookMailService = require('./lib/outlook-mail');
+const { governanceForReferences } = require('./lib/part-search-reference-governance-patch');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
 const TranslationService = require('./lib/translation-service');
 
@@ -1776,6 +1777,36 @@ app.get('/api/search', searchLimiter, async (req, res) => {
           .map(r => r.sku)
       )];
       if (topSkus.length > 1) {
+        // A reference-governance policy names one canonical SKU for a tied
+        // family (e.g. same-envelope Donaldson alternates with different
+        // media). When one applies, resolve to it instead of surfacing an
+        // AMBIGUOUS empty result — the other tied SKUs still reach the
+        // client via enrichAlternatives(), since the primary's alternatives[]
+        // already lists their codigo_base values.
+        const policy = governanceForReferences([raw]);
+        const approvedSet = policy?.approvedSkus?.length
+          ? new Set(policy.approvedSkus.map(s => s.toUpperCase()))
+          : null;
+        const governedRows = approvedSet
+          ? xrows.filter(r => approvedSet.has(String(r.sku).toUpperCase()))
+          : [];
+        if (governedRows.length) {
+          if (!validDuty) {
+            const mixed = await handleMixedDuty(governedRows, lang, client);
+            if (mixed) return res.json(mixed);
+          }
+          const products = governedRows.slice(0, 10).map(r => buildFilterData(r, lang));
+          await enrichAlternatives(products, client);
+          governedRows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+          return res.json({
+            success: true,
+            results: products,
+            source: 'xref_governed',
+            resolution: 'RESOLVED',
+            governed_reference: policy.reference,
+          });
+        }
+
         xrows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
         return res.json({
           success: true,
