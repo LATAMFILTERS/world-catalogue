@@ -28,6 +28,13 @@ async function start() {
   const curatedEvidenceBatch2 = await applyCuratedOfficialEvidenceBatch2();
   console.log('[curated-official-evidence-batch2]', JSON.stringify(curatedEvidenceBatch2));
 
+  // Exact Donaldson evidence corrects EF91315 from the historical ST1315
+  // placeholder to P551315. Protected alternate/application payloads are
+  // audited before and after and the transaction fails closed on any change.
+  const { applyP551315CanonicalEvidence } = require('./scripts/migrations/run_079_apply_p551315_canonical_evidence');
+  const p551315Evidence = await applyP551315CanonicalEvidence();
+  console.log('[p551315-canonical-evidence]', JSON.stringify(p551315Evidence));
+
   require('./server');
 
   setTimeout(() => {
