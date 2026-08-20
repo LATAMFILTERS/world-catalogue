@@ -10,10 +10,6 @@ type Copy = {
   intro2: string;
   statement1: string;
   statement2: string;
-  partnersTitle: string;
-  partners1: string;
-  partners2: string;
-  partners3: string;
   globalTitle: string;
   global1: string;
   global2: string;
@@ -40,10 +36,6 @@ const COPY_EN: Copy = {
   intro2: 'Product selection therefore begins with duty cycle, contamination exposure, flow requirement, pressure differential, temperature range, fluid or air characteristics, available installation envelope, and the evidence required for the specific application.',
   statement1: 'The filter element is the means.',
   statement2: 'Asset protection is the objective.',
-  partnersTitle: 'Commercial partners are part of the operating model',
-  partners1: 'ELIMFILTERS develops markets through qualified commercial partners with direct knowledge of the installed base, local operating conditions, customer requirements, inventory behavior, and service expectations.',
-  partners2: 'That local capability is technically relevant. Correct filtration depends not only on the product itself, but also on accurate application identification, availability at the required service interval, disciplined substitution, and an understanding of the equipment environment in which the product will operate.',
-  partners3: 'ELIMFILTERS contributes product architecture, technical governance, cross-reference and application intelligence, structured documentation, manufacturing control, and portfolio access. The commercial partner converts those capabilities into inventory strategy, technical sales, customer continuity, and long-term territory development.',
   globalTitle: 'Global engineering and manufacturing architecture',
   global1: 'The development and formulation of ELIMFILTERS filtration media is carried out in Germany around defined targets for filtration behavior, capacity, resistance, dimensional stability, material response, and suitability for the intended operating environment.',
   global2: 'Manufacturing is executed through qualified production partners in the People’s Republic of China (PRC), selected for specialized filtration capability, process capacity, industrial scale, and experience within mature heavy-duty and automotive supply chains.',
@@ -70,10 +62,6 @@ const COPY_ES: Copy = {
   intro2: 'La selección del producto parte del ciclo de trabajo, exposición a contaminantes, requerimiento de caudal, diferencial de presión, rango de temperatura, características del fluido o del aire, espacio disponible de instalación y evidencia técnica requerida para la aplicación específica.',
   statement1: 'El elemento filtrante es el medio.',
   statement2: 'La protección del activo es el objetivo.',
-  partnersTitle: 'El socio comercial forma parte del modelo operativo',
-  partners1: 'ELIMFILTERS desarrolla los mercados mediante socios comerciales calificados con conocimiento directo del parque instalado, las condiciones locales de operación, los requerimientos del cliente, el comportamiento del inventario y las necesidades de servicio.',
-  partners2: 'Esa capacidad local tiene relevancia técnica. Una filtración correcta depende no solo del producto, sino también de una identificación precisa de la aplicación, disponibilidad en el intervalo de servicio requerido, sustitución disciplinada y comprensión del entorno en el que opera el equipo.',
-  partners3: 'ELIMFILTERS aporta arquitectura de producto, gobernanza técnica, inteligencia de aplicación y referencias cruzadas, documentación estructurada, control de manufactura y acceso al portafolio. El socio comercial convierte esas capacidades en estrategia de inventario, venta técnica, continuidad del cliente y desarrollo sostenido del territorio.',
   globalTitle: 'Arquitectura global de ingeniería y manufactura',
   global1: 'El desarrollo y formulación de los medios filtrantes ELIMFILTERS se realiza en Alemania alrededor de objetivos definidos de comportamiento de filtración, capacidad, resistencia, estabilidad dimensional, respuesta de materiales y adecuación al entorno operativo previsto.',
   global2: 'La manufactura se ejecuta mediante socios de producción calificados en la República Popular China (RPC), seleccionados por su capacidad especializada en filtración, capacidad de proceso, escala industrial y experiencia dentro de cadenas maduras de suministro Heavy Duty y automotriz.',
@@ -100,11 +88,10 @@ export function AboutStrategicModel() {
   const copy = isSpanish ? COPY_ES : COPY_EN;
 
   const sections = [
-    [copy.partnersTitle, copy.partners1, copy.partners2, copy.partners3],
-    [copy.globalTitle, copy.global1, copy.global2, copy.global3],
-    [copy.modelingTitle, copy.modeling1, copy.modeling2, copy.modeling3],
-    [copy.horizontalTitle, copy.horizontal1, copy.horizontal2, copy.horizontal3],
-    [copy.efficiencyTitle, copy.efficiency1, copy.efficiency2, copy.efficiency3],
+    ['02', copy.globalTitle, copy.global1, copy.global2, copy.global3],
+    ['03', copy.modelingTitle, copy.modeling1, copy.modeling2, copy.modeling3],
+    ['04', copy.horizontalTitle, copy.horizontal1, copy.horizontal2, copy.horizontal3],
+    ['05', copy.efficiencyTitle, copy.efficiency1, copy.efficiency2, copy.efficiency3],
   ];
 
   return (
@@ -123,10 +110,10 @@ export function AboutStrategicModel() {
         </div>
 
         <div style={sectionGrid}>
-          {sections.map(([heading, p1, p2, p3], index) => (
+          {sections.map(([num, heading, p1, p2, p3]) => (
             <article key={heading} style={card}>
               <div style={cardTop}>
-                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
+                <span style={number}>{num}</span>
                 <h3 style={cardTitle}>{heading}</h3>
               </div>
               <p style={body}>{p1}</p>
@@ -154,13 +141,13 @@ const section: CSSProperties = {
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const eyebrow: CSSProperties = { color: '#FFF12D', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.16em', margin: '0 0 1rem', textTransform: 'uppercase' };
 const title: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem, 4.8vw, 4.5rem)', lineHeight: 0.94, letterSpacing: '-0.03em', margin: 0, textTransform: 'uppercase', maxWidth: '1000px' };
-const introGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', marginTop: '2.2rem' };
-const lead: CSSProperties = { color: 'rgba(255,255,255,0.84)', fontSize: 'clamp(1.05rem, 1.55vw, 1.3rem)', lineHeight: 1.72, fontWeight: 600, margin: 0 };
-const body: CSSProperties = { color: 'rgba(255,255,255,0.64)', fontSize: '1rem', lineHeight: 1.76 };
-const statement: CSSProperties = { marginTop: '2.8rem', display: 'grid', gap: '0.35rem', borderLeft: '3px solid #FFF12D', padding: '1.2rem 1.5rem', background: 'rgba(255,241,45,0.035)', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.3rem, 2.5vw, 2.2rem)', textTransform: 'uppercase' };
-const sectionGrid: CSSProperties = { display: 'grid', gap: '1rem', marginTop: '3rem' };
+const introGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(1.5rem, 4vw, 3rem)', marginTop: '1.5rem' };
+const lead: CSSProperties = { color: 'rgba(255,255,255,0.84)', fontSize: 'clamp(1.05rem, 1.55vw, 1.3rem)', lineHeight: 1.72, fontWeight: 600, margin: 0, textAlign: 'justify' };
+const body: CSSProperties = { color: 'rgba(255,255,255,0.64)', fontSize: '1rem', lineHeight: 1.76, textAlign: 'justify' };
+const statement: CSSProperties = { marginTop: '2rem', display: 'grid', gap: '0.35rem', borderLeft: '3px solid #FFF12D', padding: '1.2rem 1.5rem', background: 'rgba(255,241,45,0.035)', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.3rem, 2.5vw, 2.2rem)', textTransform: 'uppercase' };
+const sectionGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1rem', marginTop: '2.25rem' };
 const card: CSSProperties = { border: '1px solid rgba(255,255,255,0.1)', padding: 'clamp(1.4rem, 3vw, 2rem)', background: 'rgba(255,255,255,0.02)' };
-const cardTop: CSSProperties = { display: 'grid', gridTemplateColumns: '55px minmax(0, 1fr)', gap: '1rem', alignItems: 'start', marginBottom: '1rem' };
+const cardTop: CSSProperties = { display: 'grid', gridTemplateColumns: '55px minmax(0, 1fr)', gap: '1rem', alignItems: 'start', marginBottom: '0.85rem' };
 const number: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '0.14em', fontSize: '0.8rem', paddingTop: '0.3rem' };
 const cardTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(1.45rem, 2.6vw, 2.4rem)', lineHeight: 1, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase' };
-const closing: CSSProperties = { marginTop: '3rem', borderTop: '1px solid rgba(255,241,45,0.28)', paddingTop: '2rem', display: 'grid', gap: '0.45rem', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3vw, 2.8rem)', textTransform: 'uppercase' };
+const closing: CSSProperties = { marginTop: '2.25rem', borderTop: '1px solid rgba(255,241,45,0.28)', paddingTop: '1.5rem', display: 'grid', gap: '0.45rem', fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3vw, 2.8rem)', textTransform: 'uppercase' };
