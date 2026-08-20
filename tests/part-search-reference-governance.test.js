@@ -53,14 +53,66 @@ test('public search response exposes fixed duty and five approved results', () =
   assert.deepEqual(body.results.map(x => x.sku), ['EL81808', 'EL84005', 'EL84105', 'EL87405', 'EL87505']);
 });
 
+test('1R1808 governed HD family bypasses the upstream mixed-duty prompt', () => {
+  const hdProducts = candidates.map(({ sku, ...product }) => ({
+    ...product,
+    elimfilters_sku: sku
+  }));
+  const ldProducts = [
+    { elimfilters_sku: 'WL10001', duty: 'LIGHT_DUTY', filter_type: 'oil', thread_size: '3/4-16 UN' },
+    { elimfilters_sku: 'WL10002', duty: 'LIGHT_DUTY', filter_type: 'oil', thread_size: 'M20X1.5' }
+  ];
+  const body = applyGovernanceToSearchBody({
+    success: true,
+    source: 'xref_v5',
+    resolution: 'AMBIGUOUS',
+    results: [],
+    mixed_duty: true,
+    hd_count: 8,
+    ld_count: 2,
+    hd_products: hdProducts,
+    ld_products: ldProducts
+  }, '1R-1808');
+
+  assert.equal(body.mixed_duty, false);
+  assert.equal(body.source, 'xref_governed');
+  assert.equal(body.resolution, 'RESOLVED');
+  assert.equal(body.resolved_duty, 'HEAVY_DUTY');
+  assert.equal(body.duty_resolution, 'REFERENCE_GOVERNANCE');
+  assert.equal(body.duty_clarification_required, false);
+  assert.equal(body.governed_reference, '1R1808');
+  assert.equal(body.reference_safety_removed, 5);
+  assert.deepEqual(body.results.map(x => x.elimfilters_sku), [
+    'EL81808', 'EL84005', 'EL84105', 'EL87405', 'EL87505'
+  ]);
+});
+
+test('1R0732 keeps EH66700 when public API uses elimfilters_sku', () => {
+  const apiBody = {
+    success: true,
+    source: 'xref_governed',
+    resolution: 'RESOLVED',
+    results: [{
+      elimfilters_sku: 'EH66700',
+      duty: 'HEAVY_DUTY',
+      filter_type: 'hydraulic',
+      thread_size: null
+    }]
+  };
+  const body = applyGovernanceToSearchBody(apiBody, '1R0732');
+  assert.equal(body.results.length, 1);
+  assert.equal(body.results[0].elimfilters_sku, 'EH66700');
+  assert.equal(body.source, 'xref_governed');
+  assert.equal(body.resolution, 'RESOLVED');
+  assert.equal(body.governed_reference, '1R0732');
+  assert.equal(body.resolved_duty, 'HEAVY_DUTY');
+  assert.equal(body.duty_clarification_required, false);
+});
+
 test('pathological cross-reference blobs are quarantined from secondary matching', () => {
   const pathological = {
-    sku: 'EF92005',
-    duty: 'HEAVY_DUTY',
-    filter_type: 'fuel',
-    thread_size: '1-14 UN',
-    oem_codes: Array.from({ length: 1001 }, (_, i) => ({ code: `X${i}` })),
-    competitor_codes: []
+    sku: 'EF92005', duty: 'HEAVY_DUTY', filter_type: 'fuel', thread_size: '1-14 UN',
+    oem_codes: Array.from({ length: 1001 }, (_, i) => ({ code: `X${i}` })), competitor_codes: []
   };
   assert.equal(isPathologicallyContaminated(pathological), true);
 });
@@ -105,8 +157,5 @@ test('global safety fails closed when conflicting physical families tie', () => 
 });
 
 test('physical signature includes duty, filter type and thread', () => {
-  assert.equal(
-    physicalSignature({ duty: 'HEAVY_DUTY', filter_type: 'oil', thread_size: '1 1/2-16 UN' }),
-    'HEAVY_DUTY|OIL|111216UN'
-  );
+  assert.equal(physicalSignature({ duty: 'HEAVY_DUTY', filter_type: 'oil', thread_size: '1 1/2-16 UN' }), 'HEAVY_DUTY|OIL|11216UN');
 });
