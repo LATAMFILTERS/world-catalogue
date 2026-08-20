@@ -21,6 +21,13 @@ async function start() {
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
   console.log('[curated-official-evidence-batch1]', JSON.stringify(curatedEvidence));
 
+  // Post-repair controlled validation: four exact official product pages were
+  // independently reviewed before deploy. The migration is idempotent and
+  // changes governance/evidence only when exact SKU + codigo_base match.
+  const { applyCuratedOfficialEvidenceBatch2 } = require('./scripts/migrations/run_078_apply_curated_official_evidence_batch2');
+  const curatedEvidenceBatch2 = await applyCuratedOfficialEvidenceBatch2();
+  console.log('[curated-official-evidence-batch2]', JSON.stringify(curatedEvidenceBatch2));
+
   require('./server');
 
   setTimeout(() => {
@@ -34,18 +41,24 @@ async function start() {
     }
   }, 15000);
 
-  // Generic worker remains conservative: no inferred absence, no alternate-code
-  // mutation, no SKU mutation, and no codigo_base change without official evidence.
-  setTimeout(() => {
-    try {
-      const { runHistoricalSanitationBatch } = require('./scripts/catalog-historical-sanitation');
-      runHistoricalSanitationBatch({ apply: true, limit: 25 })
-        .then((result) => console.log('[historical-sanitation-batch]', JSON.stringify(result)))
-        .catch((error) => console.error('[historical-sanitation-batch] failed', error.message));
-    } catch (error) {
-      console.error('[historical-sanitation-batch] startup load failed', error.message);
-    }
-  }, 45000);
+  // The generic worker is opt-in. Render-origin discovery/fetch failures are not
+  // evidence and must not consume queue attempts on every service restart.
+  if (process.env.CATALOG_HISTORICAL_SANITATION_LIVE === 'true') {
+    const requestedLimit = Number(process.env.CATALOG_HISTORICAL_SANITATION_LIMIT || 5);
+    const controlledLimit = Math.max(1, Math.min(5, Number.isFinite(requestedLimit) ? requestedLimit : 5));
+    setTimeout(() => {
+      try {
+        const { runHistoricalSanitationBatch } = require('./scripts/catalog-historical-sanitation');
+        runHistoricalSanitationBatch({ apply: true, limit: controlledLimit })
+          .then((result) => console.log('[historical-sanitation-batch]', JSON.stringify(result)))
+          .catch((error) => console.error('[historical-sanitation-batch] failed', error.message));
+      } catch (error) {
+        console.error('[historical-sanitation-batch] startup load failed', error.message);
+      }
+    }, 45000);
+  } else {
+    console.log('[historical-sanitation-batch] disabled: controlled evidence acquisition required');
+  }
 }
 
 start().catch((error) => {
