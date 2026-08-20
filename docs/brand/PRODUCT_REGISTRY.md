@@ -32,15 +32,15 @@ Technology:
 
 ## Fuel Water Separators
 Technology:
-- TURBOCORE™ where applicable to approved turbine/FH/FG architecture
+- HYDROCORE™ where applicable to approved separator and turbine/FH/FG architecture
 
 ## FH Series
 Technology:
-- TURBOCORE™
+- HYDROCORE™
 
 ## FG Series
 Technology:
-- TURBOCORE™
+- HYDROCORE™
 
 ---
 
@@ -76,7 +76,7 @@ Technology / Solution:
 
 ## Integrated Maintenance and Asset Protection Kits
 Technology / Solution:
-- DURATECH™
+- DURACTECH™
 
 Rule:
 Products belong to protection systems. Solutions may contain products from multiple systems. The filter is the means; asset protection is the objective.
