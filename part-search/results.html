@@ -1061,6 +1061,30 @@ function showMixedDutyPrompt(data, searchTerm) {
     </div>`;
 }
 
+function showAmbiguousPrompt(data, searchTerm) {
+  document.title = `${searchTerm.toUpperCase()} — ELIMFILTERS Part Search`;
+  const summaryEl = document.getElementById('search-summary');
+  if (summaryEl) {
+    summaryEl.innerHTML = `
+      <span class="search-summary-mode">MULTIPLE MATCHES</span>
+      <span class="search-summary-main"><strong>${_esc(searchTerm.toUpperCase())}</strong></span>`;
+  }
+  const skuLinks = data.candidates.map(sku => `
+    <a href="/results.html?q=${encodeURIComponent(sku)}"
+       style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;padding:0.75rem 1.4rem;border:1px solid #FFF12D;background:rgba(255,241,45,0.1);color:#FFF12D;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;">
+      â–¶ ${_esc(sku)}
+    </a>`).join('');
+  app.innerHTML = `
+    <div style="border:1px solid rgba(255,241,45,0.3);border-radius:6px;padding:1.75rem;background:rgba(255,241,45,0.04);max-width:600px;margin:0 auto;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;color:#FFF12D;margin-bottom:0.85rem;">âš  MULTIPLE PRODUCTS FOUND</div>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:1.5rem;">
+        The reference <strong style="color:#fff;">${_esc(searchTerm.toUpperCase())}</strong> matches ${data.candidates.length} ELIMFILTERS products with equal priority.
+        Select one to view its details, or refine your search with additional info (equipment, manufacturer):
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">${skuLinks}</div>
+    </div>`;
+}
+
 function showLoading(term) {
   app.innerHTML = `
     <div class="loading-container">
@@ -1490,6 +1514,10 @@ async function executeSearch() {
       // mixed_duty: API found both HD and LD — show duty selection prompt
       if (data.mixed_duty) {
         showMixedDutyPrompt(data, query);
+        return;
+      }
+      if (data.resolution === 'AMBIGUOUS' && data.candidates?.length) {
+        showAmbiguousPrompt(data, query);
         return;
       }
       if (!data.results?.length) { showEmpty(query); return; }
