@@ -9,31 +9,26 @@ const excludedDirs = new Set([
 const excludedFiles = new Set([
   'frontend/tsconfig.tsbuildinfo',
 ]);
-// Legitimate historical/archival directories that are not canonical or
-// deployable source surfaces. scripts/migrations/backups/ is a gitignored-by-
-// design, pre-mutation safety-snapshot directory written by scripts/migrations/
-// run_0XX*.js scripts before any database write (see e.g. run_068's own header
-// comment: "written to scripts/migrations/backups/ (gitignored)") — it holds
-// point-in-time JSON/SQL snapshots of database rows, not source, vault, frontend,
-// generated publication, or canonical registry content. Keep this list narrow:
-// only exact, verified archival paths, never a blanket exclusion.
 const excludedDirPaths = new Set([
   'scripts/migrations/backups',
 ]);
 const binaryExt = new Set(['.png','.jpg','.jpeg','.gif','.webp','.avif','.ico','.pdf','.zip','.gz','.tar','.mp4','.mov','.woff','.woff2','.ttf','.eot','.db','.sqlite','.sqlite3']);
 
-// Hex keeps retired labels out of current repository text while still allowing
-// the guard to detect them in active file contents and paths.
-// DURACTECH is canonical and therefore intentionally absent from this list.
+// DURACTECH is canonical. The only permitted retired-name path is the explicit
+// static migration shim that moves the previously indexed URL to DURACTECH.
+const legacyMigrationPath = 'frontend/src/app/commercial-lines/duratech';
+
 const forbidden = [
   '53594e5445504f5245',
   '53594e5445464f52',
   '434f4f4c54454348',
+  '4455524154454348',
   '4e414e4f434f5245',
   '49534f4755415244',
   '50554c5345434f5245',
   '454c494d434f5245',
   '44494553454c434f5245',
+  '545552424f434f5245',
   '5457454c564520544543484e4f4c4f47494553',
   '31322050524f505249455441525920544543484e4f4c4f47494553',
 ].map((hex) => Buffer.from(hex, 'hex').toString('utf8'));
@@ -54,9 +49,12 @@ function walk(dir) {
 
     if (excludedFiles.has(rel)) continue;
 
+    const isMigrationShim = rel === legacyMigrationPath || rel.startsWith(`${legacyMigrationPath}/`);
     const upperPath = rel.toUpperCase();
-    for (const token of forbidden) {
-      if (upperPath.includes(token)) violations.push(`${rel} [path]`);
+    if (!isMigrationShim) {
+      for (const token of forbidden) {
+        if (upperPath.includes(token)) violations.push(`${rel} [path]`);
+      }
     }
 
     if (binaryExt.has(path.extname(entry.name).toLowerCase())) continue;
