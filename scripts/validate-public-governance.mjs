@@ -18,14 +18,14 @@ function walk(dir) {
 }
 walk(out);
 
-// Canonicalize generated public text. Historical/internal source records are not
-// published by this step; every public textual surface must use DURACTECH.
 for (const file of files) {
   let text = fs.readFileSync(file, 'utf8');
   const before = text;
   text = text.replaceAll('DURATECH™', 'DURACTECH™');
   text = text.replaceAll('DURATECH', 'DURACTECH');
   text = text.replaceAll('/commercial-lines/duratech/', '/commercial-lines/duractech/');
+  text = text.replaceAll('TURBOCORE™', 'HYDROCORE™');
+  text = text.replaceAll('TURBOCORE', 'HYDROCORE');
   if (text !== before) fs.writeFileSync(file, text, 'utf8');
 }
 
@@ -41,6 +41,7 @@ const forbidden = [
   /absolute protection of critical equipment/i,
   /DURATECH™/,
   /\/commercial-lines\/duratech\//,
+  /TURBOCORE™/,
 ];
 
 const violations = [];
