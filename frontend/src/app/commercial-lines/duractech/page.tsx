@@ -8,7 +8,7 @@ const DATA: TechDetailData = {
   heroSubtitle: 'INTEGRATED ASSET-PROTECTION KITS',
   heroTagline: 'Application-specific maintenance kits that coordinate the filtration components required for a defined service interval.',
   heroImage: '/images/npr-01_converted.avif',
-  logoSrc: '/assets/Duratech.avif',
+  logoSrc: '/images/kits-npr.avif',
   breadcrumbParent: { label: 'COMMERCIAL LINES', href: '/commercial-lines/' },
   heroStats: [
     { key: 'ON-ROAD INTERVAL', value: '15,000 KM' },
