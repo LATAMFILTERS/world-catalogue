@@ -111,8 +111,12 @@ test('1R0732 keeps EH66700 when public API uses elimfilters_sku', () => {
 
 test('pathological cross-reference blobs are quarantined from secondary matching', () => {
   const pathological = {
-    sku: 'EF92005', duty: 'HEAVY_DUTY', filter_type: 'fuel', thread_size: '1-14 UN',
-    oem_codes: Array.from({ length: 1001 }, (_, i) => ({ code: `X${i}` })), competitor_codes: []
+    sku: 'EF92005',
+    duty: 'HEAVY_DUTY',
+    filter_type: 'fuel',
+    thread_size: '1-14 UN',
+    oem_codes: Array.from({ length: 1001 }, (_, i) => ({ code: `X${i}` })),
+    competitor_codes: []
   };
   assert.equal(isPathologicallyContaminated(pathological), true);
 });
@@ -157,5 +161,8 @@ test('global safety fails closed when conflicting physical families tie', () => 
 });
 
 test('physical signature includes duty, filter type and thread', () => {
-  assert.equal(physicalSignature({ duty: 'HEAVY_DUTY', filter_type: 'oil', thread_size: '1 1/2-16 UN' }), 'HEAVY_DUTY|OIL|11216UN');
+  assert.equal(
+    physicalSignature({ duty: 'HEAVY_DUTY', filter_type: 'oil', thread_size: '1 1/2-16 UN' }),
+    'HEAVY_DUTY|OIL|11216UN'
+  );
 });
