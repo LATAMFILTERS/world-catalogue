@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "strategy": "south_to_north_learning_sweep",
+  "principle": "small_market_learning_before_scale",
+  "waves": [
+    {
+      "id": "south-cone-lab",
+      "markets": [
+        {"country": "Paraguay", "role": "laboratory", "status": "ACTIVE"},
+        {"country": "Uruguay", "role": "reproducibility", "status": "LOCKED"}
+      ]
+    },
+    {
+      "id": "south-cone-scale",
+      "markets": [
+        {"country": "Argentina", "role": "scale", "status": "LOCKED"}
+      ]
+    },
+    {
+      "id": "spanish-south-america-expansion",
+      "markets": [
+        {"country": "Chile", "status": "LOCKED"},
+        {"country": "Bolivia", "status": "LOCKED"},
+        {"country": "Peru", "status": "LOCKED"},
+        {"country": "Ecuador", "status": "LOCKED"},
+        {"country": "Colombia", "status": "LOCKED"},
+        {"country": "Venezuela", "status": "LOCKED"}
+      ]
+    }
+  ],
+  "advance_gate": {
+    "minimum_valid_accounts": 10,
+    "maximum_contact_bounce_rate_pct": 5,
+    "minimum_contact_accuracy_pct": 90,
+    "minimum_workflow_success_pct": 95,
+    "minimum_positive_reply_observations": 3,
+    "require_conversation_memory_verified": true,
+    "require_followup_state_verified": true,
+    "require_manual_review": true
+  },
+  "global_opportunity_override": {
+    "enabled": true,
+    "description": "A verified high-value opportunity detected outside the active geographic wave may enter the CRM without changing the active market-learning sequence."
+  }
+}
