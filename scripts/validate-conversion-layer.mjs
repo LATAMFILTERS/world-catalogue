@@ -1,0 +1,41 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = path.resolve(import.meta.dirname, '..');
+const out = path.join(root, 'frontend', 'out');
+const failures = [];
+
+const strategicPages = [
+  path.join(out, 'industries', 'mining', 'index.html'),
+  path.join(out, 'industries', 'trucks-fleets', 'index.html'),
+  path.join(out, 'industries', 'power-generation', 'index.html'),
+  path.join(out, 'technologies', 'macrocore', 'index.html'),
+];
+
+for (const file of strategicPages) {
+  if (!fs.existsSync(file)) {
+    failures.push(`strategic conversion page missing: ${path.relative(out, file)}`);
+    continue;
+  }
+  const html = fs.readFileSync(file, 'utf8');
+  if (!html.includes('data-conversion-action="product-intelligence"')) {
+    failures.push(`product-intelligence conversion action missing: ${path.relative(out, file)}`);
+  }
+  if (!html.includes('data-conversion-action="application-support"')) {
+    failures.push(`application-support conversion action missing: ${path.relative(out, file)}`);
+  }
+  if (!html.includes('https://part-search.elimfilters.com')) {
+    failures.push(`Part Search path missing: ${path.relative(out, file)}`);
+  }
+  if (!html.includes('/contact/')) {
+    failures.push(`application support contact path missing: ${path.relative(out, file)}`);
+  }
+}
+
+if (failures.length) {
+  console.error('[validate-conversion-layer] FAIL');
+  failures.forEach((failure) => console.error(`- ${failure}`));
+  process.exit(1);
+}
+
+console.log('[validate-conversion-layer] PASS — strategic pages expose product-intelligence and application-support conversion paths');

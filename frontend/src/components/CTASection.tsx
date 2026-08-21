@@ -7,6 +7,12 @@ interface CTASectionProps {
   description?: string;
   buttonText?: string;
   buttonHref?: string;
+  secondaryButtonText?: string;
+  secondaryButtonHref?: string;
+}
+
+function isExternalHref(href: string) {
+  return /^https?:\/\//i.test(href);
 }
 
 export function CTASection({
@@ -14,6 +20,8 @@ export function CTASection({
   description = "Find the correct filtration component for your equipment, application, and protected system using ELIMFILTERS Part Search.",
   buttonText = "FIND MY FILTER",
   buttonHref = "https://part-search.elimfilters.com",
+  secondaryButtonText = "TALK TO APPLICATION SUPPORT",
+  secondaryButtonHref = "/contact/",
 }: CTASectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -32,9 +40,13 @@ export function CTASection({
     return () => observer.disconnect();
   }, []);
 
+  const primaryExternal = isExternalHref(buttonHref);
+  const secondaryExternal = isExternalHref(secondaryButtonHref);
+
   return (
     <section
       ref={sectionRef}
+      aria-label="Application conversion path"
       style={{
         background: 'linear-gradient(135deg, rgba(255,241,45,0.05) 0%, transparent 60%)',
         borderTop: '1px solid rgba(255,241,45,0.15)',
@@ -44,7 +56,7 @@ export function CTASection({
     >
       <div
         style={{
-          maxWidth: '680px',
+          maxWidth: '760px',
           margin: '0 auto',
           opacity: visible ? 1 : 0,
           transform: visible ? 'translateY(0)' : 'translateY(24px)',
@@ -81,20 +93,31 @@ export function CTASection({
           style={{
             fontFamily: 'Titillium Web, sans-serif',
             fontSize: '0.95rem',
-            color: 'rgba(255,255,255,0.5)',
+            color: 'rgba(255,255,255,0.55)',
             lineHeight: 1.75,
-            marginBottom: '2.5rem',
-            maxWidth: '520px',
-            margin: '0 auto 2.5rem',
+            margin: '0 auto 1.25rem',
+            maxWidth: '560px',
           }}
         >
           {description}
         </p>
-        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <p
+          style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.62rem',
+            color: 'rgba(255,255,255,0.42)',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            margin: '0 auto 2.25rem',
+          }}
+        >
+          Search the application database or send the operating requirement to our team.
+        </p>
+        <div style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <a
             href={buttonHref}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...(primaryExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            data-conversion-action="product-intelligence"
             style={{
               display: 'inline-block',
               background: '#FFF12D',
@@ -103,21 +126,33 @@ export function CTASection({
               fontWeight: 700,
               fontSize: '0.78rem',
               letterSpacing: '0.12em',
-              padding: '0.85rem 2.5rem',
+              padding: '0.9rem 2rem',
               textDecoration: 'none',
               transition: 'all 0.25s ease',
               borderRadius: '2px',
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 0 32px rgba(255,241,45,0.45)';
-              e.currentTarget.style.transform = 'translateY(-1px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.transform = 'none';
-            }}
           >
             {buttonText} →
+          </a>
+          <a
+            href={secondaryButtonHref}
+            {...(secondaryExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            data-conversion-action="application-support"
+            style={{
+              display: 'inline-block',
+              background: 'transparent',
+              color: '#fff',
+              fontFamily: 'Titillium Web, sans-serif',
+              fontWeight: 700,
+              fontSize: '0.78rem',
+              letterSpacing: '0.1em',
+              padding: '0.9rem 1.6rem',
+              textDecoration: 'none',
+              border: '1px solid rgba(255,255,255,0.24)',
+              borderRadius: '2px',
+            }}
+          >
+            {secondaryButtonText} →
           </a>
         </div>
       </div>
