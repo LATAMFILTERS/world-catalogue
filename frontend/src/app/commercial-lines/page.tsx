@@ -15,11 +15,11 @@ const SOLUTIONS = [
     labels: ['MARINE', 'ASSET PROTECTION', 'APPLICATION-SPECIFIC'],
   },
   {
-    slug: 'duractech',
-    name: 'DURACTECH™',
+    slug: 'duratech',
+    name: 'DURATECH™',
     role: 'Integrated Maintenance Solution',
     image: '/images/kits-npr.avif',
-    href: '/commercial-lines/duractech/',
+    href: '/commercial-lines/duratech/',
     description: 'Integrates the filtration components required for a defined maintenance interval so protection is managed at the vehicle, machine or equipment level.',
     labels: ['MAINTENANCE', 'INTEGRATED KIT', 'GOVERNED INTERVAL'],
   },
@@ -27,7 +27,7 @@ const SOLUTIONS = [
 
 export const metadata = {
   title: 'Specialized Asset Protection Solutions | ELIMFILTERS',
-  description: 'MARINECLEAN™ and DURACTECH™ extend the ELIMFILTERS Asset Protection Systems architecture into specialized marine and integrated-maintenance applications.',
+  description: 'MARINECLEAN™ and DURATECH™ extend the ELIMFILTERS Asset Protection Systems architecture into specialized marine and integrated-maintenance applications.',
   alternates: { canonical: `${BASE_URL}/commercial-lines/` },
 };
 
@@ -51,7 +51,7 @@ export default function CommercialLinesPage() {
         <div style={heroInner}>
           <p style={eyebrow}>// SPECIALIZED ASSET PROTECTION SOLUTIONS</p>
           <h1 style={heroTitle}>Specialized operating environments require governed application logic.</h1>
-          <p style={heroLead}>MARINECLEAN™ and DURACTECH™ extend the five core ELIMFILTERS protection systems without creating additional core technologies or systems.</p>
+          <p style={heroLead}>MARINECLEAN™ and DURATECH™ extend the five core ELIMFILTERS protection systems without creating additional core technologies or systems.</p>
         </div>
       </section>
       <section style={section}>
