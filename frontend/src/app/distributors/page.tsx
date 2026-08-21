@@ -5,13 +5,13 @@ import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'ELIMFILTERS Authorized Distributor Network | Global B2B Partners',
-  description: 'Explore the ELIMFILTERS authorized distributor network and partner model for industrial, heavy-duty, fleet, equipment, and complementary automotive filtration markets.',
-  keywords: ['distributor network', 'industrial filtration', 'authorized distributors', 'heavy duty filtration', 'automotive filtration', 'B2B filtration partners'],
+  title: 'Industrial Filtration Distributors & B2B Partners | ELIMFILTERS',
+  description: 'Find ELIMFILTERS authorized distributors for industrial, heavy-duty, fleet and equipment filtration, access Product Intelligence, or contact Application Support.',
+  keywords: ['industrial filtration distributors', 'heavy duty filter distributor', 'fleet filtration distributor', 'authorized filtration distributors', 'B2B filtration partners', 'ELIMFILTERS distributors'],
   alternates: { canonical: 'https://elimfilters.com/distributors/' },
   openGraph: {
-    title: 'ELIMFILTERS Authorized Distributor Network | Global B2B Partners',
-    description: 'Regional coverage, technical support, product intelligence, and a partner-first commercial model for industrial, heavy-duty, fleet, and automotive markets.',
+    title: 'Industrial Filtration Distributors & B2B Partners | ELIMFILTERS',
+    description: 'Find authorized regional distributors, access Product Intelligence, or contact ELIMFILTERS Application Support for industrial and heavy-duty filtration requirements.',
     url: 'https://elimfilters.com/distributors/',
     type: 'website',
     siteName: 'ELIMFILTERS',
@@ -128,8 +128,14 @@ export default function DistributorsPage() {
         <div style={heroInner}>
           <h1 style={heroTitle}>Authorized Commercial Partner Network</h1>
           <p style={heroLead}>
-            ELIMFILTERS works with qualified regional partners that extend product access, technical capability, application intelligence, and long-term Asset Protection support into their markets.
+            Find an ELIMFILTERS authorized distributor for industrial, heavy-duty, fleet and equipment filtration, or use our technical channels when you need product identification or application support.
           </p>
+
+          <div style={heroActions}>
+            <a href="#authorized-distributors" style={yellowButton} data-conversion-action="distributor-locator">FIND A DISTRIBUTOR</a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton} data-conversion-action="product-intelligence">SEARCH PRODUCT INTELLIGENCE</a>
+            <Link href="/contact/" style={darkButton} data-conversion-action="application-support">APPLICATION SUPPORT</Link>
+          </div>
 
           <div style={tagRow}>
             {TAGS.map((label) => (
@@ -157,7 +163,7 @@ export default function DistributorsPage() {
 
       <GlobalCommercialModel variant="distributors" />
 
-      <section style={networkSection}>
+      <section id="authorized-distributors" style={networkSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
             <h2 style={sectionTitle}>Authorized Distributors</h2>
@@ -211,18 +217,22 @@ export default function DistributorsPage() {
               Submit your company profile, service territory, technical capabilities, target industries, automotive / Light Duty coverage where relevant, and market-development objectives for commercial review.
             </p>
           </div>
-          <Link href="/distributor-application" style={yellowButton}>APPLY FOR REVIEW</Link>
+          <Link href="/distributor-application" style={yellowButton} data-conversion-action="partner-application">APPLY FOR REVIEW</Link>
         </div>
       </section>
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Build Regional Market Strength With ELIMFILTERS
+            Need a Distributor, a Product Match, or Technical Support?
           </h2>
+          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.2rem auto 0' }}>
+            Choose the path that matches your requirement. Distributor discovery, product identification and application support are separate workflows so technical questions do not get lost inside a generic commercial inquiry.
+          </p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/distributor-application" style={yellowButton}>APPLY FOR REVIEW</Link>
-            <Link href="/contact" style={darkButton}>CONTACT ELIMFILTERS</Link>
+            <a href="#authorized-distributors" style={yellowButton} data-conversion-action="distributor-locator">FIND A DISTRIBUTOR</a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton} data-conversion-action="product-intelligence">PRODUCT INTELLIGENCE</a>
+            <Link href="/contact/" style={darkButton} data-conversion-action="application-support">APPLICATION SUPPORT</Link>
           </div>
         </div>
       </section>
@@ -256,10 +266,11 @@ const heroTitle: CSSProperties = {
 };
 
 const heroLead: CSSProperties = {
-  marginTop: '2rem', maxWidth: '800px', color: 'rgba(255,255,255,0.78)',
+  marginTop: '2rem', maxWidth: '850px', color: 'rgba(255,255,255,0.78)',
   fontSize: 'clamp(1rem, 1.6vw, 1.28rem)', lineHeight: 1.75, fontWeight: 600,
 };
 
+const heroActions: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2rem' };
 const tagRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' };
 
 const tag: CSSProperties = {
@@ -296,7 +307,7 @@ const number: CSSProperties = {
   fontWeight: 700, letterSpacing: '0.16em', marginBottom: '1rem',
 };
 
-const networkSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
+const networkSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)', scrollMarginTop: '6rem' };
 
 const distributorGrid: CSSProperties = {
   display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem',

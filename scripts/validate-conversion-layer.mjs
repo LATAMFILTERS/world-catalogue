@@ -7,6 +7,7 @@ const failures = [];
 
 const strategicPages = [
   path.join(out, 'families', 'index.html'),
+  path.join(out, 'distributors', 'index.html'),
   path.join(out, 'industries', 'mining', 'index.html'),
   path.join(out, 'industries', 'trucks-fleets', 'index.html'),
   path.join(out, 'industries', 'power-generation', 'index.html'),
@@ -22,6 +23,7 @@ for (const file of strategicPages) {
   const html = fs.readFileSync(file, 'utf8');
   const relative = path.relative(out, file);
   const isMacrocore = relative === path.join('technologies', 'macrocore', 'index.html');
+  const isDistributors = relative === path.join('distributors', 'index.html');
 
   const hasProductIntelligence =
     html.includes('data-conversion-action="product-intelligence"') ||
@@ -43,6 +45,17 @@ for (const file of strategicPages) {
   if (!isMacrocore && !html.includes('/contact/')) {
     failures.push(`application support contact path missing: ${relative}`);
   }
+  if (isDistributors) {
+    if (!html.includes('data-conversion-action="distributor-locator"')) {
+      failures.push(`distributor-locator conversion action missing: ${relative}`);
+    }
+    if (!html.includes('id="authorized-distributors"')) {
+      failures.push(`authorized distributor target missing: ${relative}`);
+    }
+    if (!html.includes('data-conversion-action="partner-application"')) {
+      failures.push(`partner-application conversion action missing: ${relative}`);
+    }
+  }
 }
 
 if (failures.length) {
@@ -51,4 +64,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[validate-conversion-layer] PASS — strategic pages expose product-intelligence and application-support conversion paths');
+console.log('[validate-conversion-layer] PASS — strategic pages expose governed conversion paths');
