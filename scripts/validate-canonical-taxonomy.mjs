@@ -4,11 +4,6 @@ import path from 'node:path';
 const root = path.resolve(import.meta.dirname, '..');
 const binaryExt = new Set(['.png','.jpg','.jpeg','.gif','.webp','.avif','.ico','.pdf','.zip','.gz','.tar','.mp4','.mov','.woff','.woff2','.ttf','.eot','.db','.sqlite','.sqlite3']);
 
-// Prebuild governance is intentionally limited to active canonical/deployable
-// taxonomy sources. Historical reports, migrations, tests, backups and archived
-// evidence may preserve retired labels for provenance and must not block builds.
-// The postbuild public-governance gate separately scans the complete generated
-// public output and fails if a retired identifier is emitted to users/crawlers.
 const activeFiles = new Set([
   'CLAUDE.md',
   'docs/brand/AUDIT.md',
@@ -23,16 +18,15 @@ const activePrefixes = [
   'frontend/src/app/commercial-lines/',
 ];
 
-// DURACTECH is canonical. DURATECH is allowed only inside the explicit legacy
-// migration shim required to migrate Google's previously indexed URL.
-const legacyMigrationPrefix = 'frontend/src/app/commercial-lines/duratech/';
-const retiredDuratech = Buffer.from('4455524154454348', 'hex').toString('utf8');
+// DURATECH is canonical. DURACTECH is tolerated only inside the explicit legacy
+// migration shim while Google and external links converge on the canonical route.
+const legacyMigrationPrefix = 'frontend/src/app/commercial-lines/duractech/';
+const retiredDuractech = 'DURACTECH';
 
 const forbidden = [
   '53594e5445504f5245',
   '53594e5445464f52',
   '434f4f4c54454348',
-  '4455524154454348',
   '4e414e4f434f5245',
   '49534f4755415244',
   '50554c5345434f5245',
@@ -55,7 +49,6 @@ function walk(dir) {
     const rel = path.relative(root, full).replaceAll('\\', '/');
 
     if (entry.isDirectory()) {
-      // Prune directories that cannot contain an active surface.
       const couldContainActive = [...activeFiles, ...activePrefixes].some((target) =>
         target === rel || target.startsWith(`${rel}/`) || rel.startsWith(target)
       );
@@ -69,7 +62,6 @@ function walk(dir) {
     const upperPath = rel.toUpperCase();
     const isLegacyShim = rel.startsWith(legacyMigrationPrefix);
     for (const token of forbidden) {
-      if (isLegacyShim && token === retiredDuratech) continue;
       if (upperPath.includes(token)) violations.push(`${rel} [path]`);
     }
 
@@ -77,8 +69,13 @@ function walk(dir) {
     try { text = fs.readFileSync(full, 'utf8'); } catch { continue; }
     const upper = text.toUpperCase();
     for (const token of forbidden) {
-      if (isLegacyShim && token === retiredDuratech) continue;
       if (upper.includes(token)) violations.push(`${rel} [content]`);
+    }
+
+    // Retired spelling is a deployable-surface concern; historical/canonical docs
+    // may still mention it while migration records are being reconciled.
+    if (rel.startsWith('frontend/src/app/commercial-lines/') && !isLegacyShim && upper.includes(retiredDuractech)) {
+      violations.push(`${rel} [retired DURACTECH content]`);
     }
   }
 }

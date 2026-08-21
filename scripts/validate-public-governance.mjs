@@ -21,8 +21,8 @@ walk(out);
 for (const file of files) {
   let text = fs.readFileSync(file, 'utf8');
   const before = text;
-  text = text.replaceAll('DURATECH™', 'DURACTECH™');
-  text = text.replaceAll('DURATECH', 'DURACTECH');
+  text = text.replaceAll('DURACTECH™', 'DURATECH™');
+  text = text.replaceAll('DURACTECH', 'DURATECH');
   text = text.replaceAll('TURBOCORE™', 'HYDROCORE™');
   text = text.replaceAll('TURBOCORE', 'HYDROCORE');
   if (text !== before) fs.writeFileSync(file, text, 'utf8');
@@ -38,7 +38,7 @@ const forbidden = [
   /zero bypass architecture on every system/i,
   /100% guaranteed safety/i,
   /absolute protection of critical equipment/i,
-  /DURATECH™/,
+  /DURACTECH™/,
   /TURBOCORE™/,
 ];
 
@@ -114,17 +114,17 @@ if (aiPolicy != null) {
   }
 }
 
-const canonicalDuractech = requireFile('commercial-lines/duractech/index.html');
-if (canonicalDuractech != null) {
-  if (!/rel="canonical"[^>]+https:\/\/elimfilters\.com\/commercial-lines\/duractech\//i.test(canonicalDuractech)) {
-    violations.push('commercial-lines/duractech/index.html missing self canonical');
+const canonicalDuratech = requireFile('commercial-lines/duratech/index.html');
+if (canonicalDuratech != null) {
+  if (!/rel="canonical"[^>]+https:\/\/elimfilters\.com\/commercial-lines\/duratech\//i.test(canonicalDuratech)) {
+    violations.push('commercial-lines/duratech/index.html missing self canonical');
   }
 }
 
-const legacyDuratech = requireFile('commercial-lines/duratech/index.html');
-if (legacyDuratech != null) {
-  if (!/noindex/i.test(legacyDuratech)) violations.push('commercial-lines/duratech/index.html must be noindex migration shim');
-  if (!legacyDuratech.includes('https://elimfilters.com/commercial-lines/duractech/')) violations.push('commercial-lines/duratech/index.html missing canonical migration destination');
+const legacyDuractech = requireFile('commercial-lines/duractech/index.html');
+if (legacyDuractech != null) {
+  if (!/noindex/i.test(legacyDuractech)) violations.push('commercial-lines/duractech/index.html must be noindex migration shim');
+  if (!legacyDuractech.includes('https://elimfilters.com/commercial-lines/duratech/')) violations.push('commercial-lines/duractech/index.html missing canonical migration destination');
 }
 
 const kcIndex = requireFile('knowledge-center/index.html');
@@ -146,8 +146,8 @@ for (const file of files.filter((f) => f.includes(`${path.sep}knowledge-center${
 
 const sitemap = requireFile('sitemap.xml');
 if (sitemap != null) {
-  if (!sitemap.includes('https://elimfilters.com/commercial-lines/duractech/')) violations.push('sitemap.xml missing DURACTECH canonical URL');
-  if (sitemap.includes('https://elimfilters.com/commercial-lines/duratech/')) violations.push('sitemap.xml contains retired DURATECH URL');
+  if (!sitemap.includes('https://elimfilters.com/commercial-lines/duratech/')) violations.push('sitemap.xml missing DURATECH canonical URL');
+  if (sitemap.includes('https://elimfilters.com/commercial-lines/duractech/')) violations.push('sitemap.xml contains retired DURACTECH URL');
 }
 
 const sitemapIndex = requireFile('sitemap-index.xml');
