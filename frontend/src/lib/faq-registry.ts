@@ -1,7 +1,8 @@
 import { getSystemEditorial } from './system-editorial';
 import { getTechnologyEditorial } from './technology-editorial';
+import { KC_STANDARDS } from './knowledge-center-data/standards-registry';
 
-export type FAQSourceType = 'system' | 'technology' | 'search-demand';
+export type FAQSourceType = 'system' | 'technology' | 'standard' | 'search-demand';
 
 export interface FAQRegistryEntry {
   readonly id: string;
@@ -194,6 +195,22 @@ export function getFAQRegistry(): FAQRegistryEntry[] {
         answer: faq.answer,
         sourceHref: `/technologies/${slug}/`,
         sourceType: 'technology',
+        lastReviewed: REVIEW_DATE,
+      });
+    });
+  }
+
+  for (const standard of KC_STANDARDS) {
+    if (!standard.faqs?.length) continue;
+    standard.faqs.forEach((faq, index) => {
+      entries.push({
+        id: `standard-${standard.slug}-${index + 1}`,
+        category: 'Standards',
+        topic: standard.code,
+        question: faq.question,
+        answer: faq.answer,
+        sourceHref: `/knowledge-center/standards/${standard.slug}/`,
+        sourceType: 'standard',
         lastReviewed: REVIEW_DATE,
       });
     });
