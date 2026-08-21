@@ -12,8 +12,7 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
-  const { t, i18n } = useTranslation();
-  const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -25,44 +24,20 @@ export function Navigation() {
   return (
     <nav
       style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         transition: 'background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease',
         background: scrolled ? 'rgba(0,0,0,0.70)' : 'linear-gradient(to bottom, rgba(0,0,0,0.8), transparent)',
         backdropFilter: scrolled ? 'blur(14px)' : 'none',
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : 'none',
       }}
     >
-      <div
-        style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          padding: 'clamp(0.65rem, 2.4vw, 1.4rem) clamp(1rem, 4vw, 2rem) clamp(0.5rem, 1.7vw, 0.9rem)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-        role="banner"
-      >
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: 'clamp(0.65rem, 2.4vw, 1.4rem) clamp(1rem, 4vw, 2rem) clamp(0.5rem, 1.7vw, 0.9rem)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} role="banner">
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
           <Link href="/" aria-label="ELIMFILTERS — home" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
             {logoError ? (
-              <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
-                ELIMFILTERS
-              </span>
+              <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>ELIMFILTERS</span>
             ) : (
-              <img
-                src="/assets/Elimfilters_logo_oficial.avif"
-                alt="ELIMFILTERS — Total Asset Protection"
-                className="nav-logo"
-                width={1959}
-                height={528}
-                onError={() => setLogoError(true)}
-                style={{ objectFit: 'contain', height: 'clamp(36px, 7.8vw, 58px)', width: 'auto', display: 'block' }}
-              />
+              <img src="/assets/Elimfilters_logo_oficial.avif" alt="ELIMFILTERS — Total Asset Protection" className="nav-logo" width={1959} height={528} onError={() => setLogoError(true)} style={{ objectFit: 'contain', height: 'clamp(36px, 7.8vw, 58px)', width: 'auto', display: 'block' }} />
             )}
           </Link>
         </motion.div>
@@ -72,37 +47,18 @@ export function Navigation() {
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
           <NavLink href="/knowledge-center/">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
-          <AboutNavMenu label={t('nav.about', 'About')} isSpanish={isSpanish} />
+          <NavLink href="/about">{t('nav.about', 'About')}</NavLink>
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
-          <motion.a
-            href="https://part-search.elimfilters.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.18 }}
-            style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.1em', padding: '0.55rem 1.35rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase' }}
-          >
+          <motion.a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.18 }} style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.1em', padding: '0.55rem 1.35rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase' }}>
             {t('nav.findMyFilter', 'FIND MY FILTER')}
           </motion.a>
         </nav>
 
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.65rem', display: 'none' }}
-          className="show-mobile"
-          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={menuOpen}
-        >
+        <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.65rem', display: 'none' }} className="show-mobile" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen}>
           <div style={{ width: '24px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
             {[0, 1, 2].map((i) => (
-              <motion.span
-                key={i}
-                animate={{ rotate: menuOpen && i === 0 ? 45 : menuOpen && i === 2 ? -45 : 0, scaleX: menuOpen && i === 1 ? 0 : 1, y: menuOpen && i === 0 ? 7 : menuOpen && i === 2 ? -7 : 0 }}
-                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: 'block', height: '2px', background: '#FFF12D', transformOrigin: 'center' }}
-              />
+              <motion.span key={i} animate={{ rotate: menuOpen && i === 0 ? 45 : menuOpen && i === 2 ? -45 : 0, scaleX: menuOpen && i === 1 ? 0 : 1, y: menuOpen && i === 0 ? 7 : menuOpen && i === 2 ? -7 : 0 }} transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }} style={{ display: 'block', height: '2px', background: '#FFF12D', transformOrigin: 'center' }} />
             ))}
           </div>
         </button>
@@ -110,40 +66,22 @@ export function Navigation() {
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{ overflow: 'hidden', background: 'rgba(0,0,0,0.98)', borderTop: '1px solid rgba(255,255,255,0.08)' }}
-          >
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }}
-              style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.05rem' }}
-            >
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }} style={{ overflow: 'hidden', background: 'rgba(0,0,0,0.98)', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }} style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               {[
                 { href: '/industries', label: t('nav.industries', 'Industries') },
                 { href: '/systems', label: t('nav.systems', 'Systems') },
                 { href: '/technologies', label: t('nav.technologies', 'Technologies') },
                 { href: '/knowledge-center/', label: t('nav.knowledge', 'Knowledge') },
-                { href: '/about', label: isSpanish ? 'Quiénes Somos' : 'Who We Are' },
-                { href: '/about/leadership', label: isSpanish ? 'Liderazgo' : 'Leadership', child: true },
-                { href: '/about/philosophy', label: isSpanish ? 'Filosofía de Ingeniería' : 'Engineering Philosophy', child: true },
+                { href: '/about', label: t('nav.about', 'About') },
                 { href: '/contact', label: t('nav.contact', 'Contact') },
               ].map((item) => (
                 <motion.div key={item.href} variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
-                  <Link href={item.href} style={{ ...mobileLinkStyle, paddingLeft: item.child ? '1rem' : 0, color: item.child ? 'rgba(255,255,255,0.62)' : mobileLinkStyle.color }} onClick={() => setMenuOpen(false)}>
-                    {item.child ? '— ' : ''}{item.label}
-                  </Link>
+                  <Link href={item.href} style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>{item.label}</Link>
                 </motion.div>
               ))}
-
               <motion.div variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
-                <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                  {t('nav.findMyFilter', 'FIND MY FILTER')} →
-                </a>
+                <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('nav.findMyFilter', 'FIND MY FILTER')} →</a>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -151,52 +89,10 @@ export function Navigation() {
       </AnimatePresence>
 
       <style>{`
-        @media (max-width: 768px) {
-          .hidden-mobile { display: none !important; }
-          .show-mobile { display: flex !important; }
-        }
-        @media (min-width: 769px) {
-          .show-mobile { display: none !important; }
-        }
+        @media (max-width: 768px) {.hidden-mobile{display:none!important}.show-mobile{display:flex!important}}
+        @media (min-width: 769px) {.show-mobile{display:none!important}}
       `}</style>
     </nav>
-  );
-}
-
-function AboutNavMenu({ label, isSpanish }: { label: string; isSpanish: boolean }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} onFocus={() => setOpen(true)} onBlur={(event) => {
-      if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOpen(false);
-    }} style={{ position: 'relative' }}>
-      <Link href="/about" aria-haspopup="menu" aria-expanded={open} style={{ color: open ? '#FFF12D' : 'rgba(255,255,255,0.75)', textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '0.95rem', fontWeight: 600, letterSpacing: '0.025em', paddingBottom: '8px', display: 'block' }}>
-        {label}
-      </Link>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            role="menu"
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.18 }}
-            style={{ position: 'absolute', top: '100%', left: '-1rem', minWidth: '250px', background: 'rgba(5,5,5,.98)', border: '1px solid rgba(255,255,255,.1)', borderTop: '2px solid #FFF12D', padding: '.55rem', backdropFilter: 'blur(14px)' }}
-          >
-            <AboutMenuLink href="/about">{isSpanish ? 'Quiénes Somos' : 'Who We Are'}</AboutMenuLink>
-            <AboutMenuLink href="/about/leadership">{isSpanish ? 'Liderazgo' : 'Leadership'}</AboutMenuLink>
-            <AboutMenuLink href="/about/philosophy">{isSpanish ? 'Filosofía de Ingeniería' : 'Engineering Philosophy'}</AboutMenuLink>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
-function AboutMenuLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link role="menuitem" href={href} style={{ display: 'block', color: 'rgba(255,255,255,.78)', textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '.82rem', fontWeight: 600, padding: '.72rem .75rem', borderBottom: '1px solid rgba(255,255,255,.06)' }}>
-      {children}
-    </Link>
   );
 }
 
@@ -204,19 +100,10 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   const [hovered, setHovered] = useState(false);
   return (
     <motion.div onHoverStart={() => setHovered(true)} onHoverEnd={() => setHovered(false)} style={{ position: 'relative', display: 'inline-block' }}>
-      <Link href={href} style={{ color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)', textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '0.95rem', fontWeight: 600, letterSpacing: '0.025em', transition: 'color 0.2s ease', display: 'block', paddingBottom: '3px' }}>
-        {children}
-      </Link>
+      <Link href={href} style={{ color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)', textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '0.95rem', fontWeight: 600, letterSpacing: '0.025em', transition: 'color 0.2s ease', display: 'block', paddingBottom: '3px' }}>{children}</Link>
       <motion.span animate={{ scaleX: hovered ? 1 : 0 }} transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }} style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '1px', background: '#FFF12D', transformOrigin: 'left', display: 'block' }} />
     </motion.div>
   );
 }
 
-const mobileLinkStyle: React.CSSProperties = {
-  color: 'rgba(255,255,255,0.85)',
-  textDecoration: 'none',
-  fontFamily: HEADER_DISPLAY_FONT,
-  fontSize: '1rem',
-  fontWeight: 600,
-  letterSpacing: '0.025em',
-};
+const mobileLinkStyle: React.CSSProperties = { color: 'rgba(255,255,255,0.85)', textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '1rem', fontWeight: 600, letterSpacing: '0.025em' };
