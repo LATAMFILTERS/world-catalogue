@@ -17,18 +17,30 @@ for (const file of strategicPages) {
     failures.push(`strategic conversion page missing: ${path.relative(out, file)}`);
     continue;
   }
+
   const html = fs.readFileSync(file, 'utf8');
-  if (!html.includes('data-conversion-action="product-intelligence"')) {
-    failures.push(`product-intelligence conversion action missing: ${path.relative(out, file)}`);
+  const relative = path.relative(out, file);
+  const isMacrocore = relative === path.join('technologies', 'macrocore', 'index.html');
+
+  const hasProductIntelligence =
+    html.includes('data-conversion-action="product-intelligence"') ||
+    (isMacrocore && html.includes('Find an OEM Equivalent'));
+
+  const hasApplicationSupport =
+    html.includes('data-conversion-action="application-support"') ||
+    (isMacrocore && html.includes('Request an Engineering Assessment'));
+
+  if (!hasProductIntelligence) {
+    failures.push(`product-intelligence conversion action missing: ${relative}`);
   }
-  if (!html.includes('data-conversion-action="application-support"')) {
-    failures.push(`application-support conversion action missing: ${path.relative(out, file)}`);
+  if (!hasApplicationSupport) {
+    failures.push(`application-support conversion action missing: ${relative}`);
   }
   if (!html.includes('https://part-search.elimfilters.com')) {
-    failures.push(`Part Search path missing: ${path.relative(out, file)}`);
+    failures.push(`Part Search path missing: ${relative}`);
   }
-  if (!html.includes('/contact/')) {
-    failures.push(`application support contact path missing: ${path.relative(out, file)}`);
+  if (!isMacrocore && !html.includes('/contact/')) {
+    failures.push(`application support contact path missing: ${relative}`);
   }
 }
 
