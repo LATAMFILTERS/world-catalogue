@@ -1,0 +1,1 @@
+Leadership binary assets are being replaced with validated JPEG files in this hotfix.
