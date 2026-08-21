@@ -4,6 +4,7 @@ import path from 'node:path';
 const root = path.resolve(import.meta.dirname, '..');
 const out = path.join(root, 'frontend', 'out');
 const faqHtml = path.join(out, 'knowledge-center', 'faq', 'index.html');
+const knowledgeCenterHtml = path.join(out, 'knowledge-center', 'index.html');
 const sitemap = path.join(out, 'sitemap.xml');
 
 const failures = [];
@@ -17,6 +18,14 @@ if (!fs.existsSync(faqHtml)) {
   if (!html.includes('Technical Frequently Asked Questions')) failures.push('FAQ hub H1 missing');
   if (/PENDING DE TRADUCCI[ÓO]N|PENDING DE TRADUCTION/i.test(html)) failures.push('translation placeholder leaked into FAQ hub');
   if (/DURACTECH/i.test(html)) failures.push('retired DURACTECH token leaked into FAQ hub');
+}
+
+if (!fs.existsSync(knowledgeCenterHtml)) {
+  failures.push('Knowledge Center homepage output is missing');
+} else {
+  const html = fs.readFileSync(knowledgeCenterHtml, 'utf8');
+  if (!html.includes('/knowledge-center/faq')) failures.push('Knowledge Center homepage does not link to Technical FAQ');
+  if (!html.includes('Technical FAQ')) failures.push('Knowledge Center homepage does not expose Technical FAQ label');
 }
 
 if (!fs.existsSync(sitemap)) {
@@ -40,4 +49,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[validate-faq-governance] PASS — canonical FAQ hub, schema, sitemap and legacy payload hygiene verified');
+console.log('[validate-faq-governance] PASS — canonical FAQ hub, homepage discovery, schema, sitemap and legacy payload hygiene verified');
