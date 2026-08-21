@@ -54,6 +54,14 @@ const KNOWLEDGE_SECTIONS = [
     href: '/knowledge-center/glossary',
     label: 'ENGINEERING REFERENCE',
   },
+  {
+    id: 'faq',
+    index: '07',
+    title: 'Technical FAQ',
+    description: 'Direct engineering answers to recurring questions about filtration, contamination control, maintenance, standards and asset protection.',
+    href: '/knowledge-center/faq',
+    label: 'QUESTIONS / ANSWERS',
+  },
 ];
 
 const DECISION_PATH = [
