@@ -75,6 +75,30 @@ if (!fs.existsSync(knowledgeCenterPage)) {
   }
 }
 
+const comparisonPage = path.join(out, 'knowledge-center', 'comparisons', 'iso4406-vs-nas1638', 'index.html');
+if (!fs.existsSync(comparisonPage)) {
+  failures.push('priority KC comparison missing: knowledge-center/comparisons/iso4406-vs-nas1638/index.html');
+} else {
+  const html = fs.readFileSync(comparisonPage, 'utf8');
+  for (const action of ['product-intelligence', 'application-support']) {
+    if (!html.includes(`data-conversion-action="${action}"`)) {
+      failures.push(`priority KC comparison conversion action missing: ${action}`);
+    }
+  }
+  if (!html.includes('https://part-search.elimfilters.com')) {
+    failures.push('priority KC comparison Product Intelligence handoff missing');
+  }
+  if (!html.includes('/contact/')) {
+    failures.push('priority KC comparison Application Support path missing');
+  }
+  if (!html.includes('ISO 4406 vs NAS 1638: Fluid Cleanliness Codes')) {
+    failures.push('priority KC comparison CTR title missing');
+  }
+  if (!html.includes('https://elimfilters.com/knowledge-center/comparisons/iso4406-vs-nas1638/')) {
+    failures.push('priority KC comparison canonical URL missing');
+  }
+}
+
 if (failures.length) {
   console.error('[validate-conversion-layer] FAIL');
   failures.forEach((failure) => console.error(`- ${failure}`));
