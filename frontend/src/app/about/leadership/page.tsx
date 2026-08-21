@@ -1,4 +1,4 @@
-' use client';
+'use client';
 
 import Link from 'next/link';
 import { useState, type CSSProperties } from 'react';
@@ -11,7 +11,6 @@ const AGENTS = [
   {
     id: 'operations',
     title: 'Chief Operating & Supply Chain Agent',
-    titleEs: 'Chief Operating & Supply Chain Agent',
     short: 'Operations & Supply Chain',
     shortEs: 'Operaciones & Supply Chain',
     responsibility: 'Operations, procurement, supply continuity, logistics, fulfillment, and operational quality.',
@@ -22,7 +21,6 @@ const AGENTS = [
   {
     id: 'product',
     title: 'Chief Product & Technology Agent',
-    titleEs: 'Chief Product & Technology Agent',
     short: 'Product & Technology',
     shortEs: 'Producto & Tecnología',
     responsibility: 'Product architecture, filtration technologies, applications, validation, catalog integrity, and technical knowledge governance.',
@@ -33,7 +31,6 @@ const AGENTS = [
   {
     id: 'commercial',
     title: 'Chief Commercial & Markets Agent',
-    titleEs: 'Chief Commercial & Markets Agent',
     short: 'Commercial & Markets',
     shortEs: 'Comercial & Mercados',
     responsibility: 'B2B growth, distributors, strategic accounts, market development, CRM, pricing discipline, and customer intelligence.',
@@ -44,7 +41,6 @@ const AGENTS = [
   {
     id: 'finance',
     title: 'Chief Finance & Risk Agent',
-    titleEs: 'Chief Finance & Risk Agent',
     short: 'Finance & Risk',
     shortEs: 'Finanzas & Riesgo',
     responsibility: 'Liquidity, margins, forecasting, working capital, financial discipline, and enterprise-risk visibility.',
@@ -55,7 +51,6 @@ const AGENTS = [
   {
     id: 'strategy',
     title: 'Chief Strategy, Performance & Intelligence Agent',
-    titleEs: 'Chief Strategy, Performance & Intelligence Agent',
     short: 'Strategy, Performance & Intelligence',
     shortEs: 'Estrategia, Desempeño & Inteligencia',
     responsibility: 'Strategy support, performance intelligence, AI governance, data, automation, digital architecture, and agent governance.',
@@ -105,7 +100,7 @@ export default function LeadershipPage() {
 
       <section style={agentsSection}>
         <div style={wrap}>
-          <p style={eyebrow}>{isSpanish ? 'EXECUTIVE AI LEADERSHIP' : 'EXECUTIVE AI LEADERSHIP'}</p>
+          <p style={eyebrow}>EXECUTIVE AI LEADERSHIP</p>
           <h2 style={sectionTitle}>{isSpanish ? 'Cinco funciones ejecutivas especializadas.' : 'Five specialized executive functions.'}</h2>
           <p style={sectionLead}>
             {isSpanish
@@ -145,7 +140,7 @@ export default function LeadershipPage() {
       <section style={governanceSection}>
         <div style={governanceGrid}>
           <div>
-            <p style={darkEyebrow}>{isSpanish ? 'GOVERNANCE & ACCOUNTABILITY' : 'GOVERNANCE & ACCOUNTABILITY'}</p>
+            <p style={darkEyebrow}>GOVERNANCE & ACCOUNTABILITY</p>
             <h2 style={darkTitle}>{isSpanish ? 'La responsabilidad nunca se vuelve artificial.' : 'Accountability never becomes artificial.'}</h2>
           </div>
           <div>
@@ -160,7 +155,7 @@ export default function LeadershipPage() {
 
       <section style={capabilitySection}>
         <div style={wrap}>
-          <p style={eyebrow}>{isSpanish ? 'CAPABILITY BEFORE COMPLEXITY' : 'CAPABILITY BEFORE COMPLEXITY'}</p>
+          <p style={eyebrow}>CAPABILITY BEFORE COMPLEXITY</p>
           <h2 style={closingTitle}>{isSpanish ? 'Construidos para capacidad, no para aparentar tamaño.' : 'Built for capability, not apparent headcount.'}</h2>
           <p style={closingBody}>
             {isSpanish
@@ -205,7 +200,7 @@ const darkEyebrow: CSSProperties = { ...eyebrow, color: '#6c6100' };
 const heroTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-.05em', lineHeight: .92, fontSize: 'clamp(3rem,6.6vw,6.6rem)', maxWidth: '1050px', margin: 0, textTransform: 'uppercase' };
 const heroLead: CSSProperties = { marginTop: '1.5rem', maxWidth: '900px', color: 'rgba(255,255,255,.78)', fontSize: 'clamp(1rem,1.5vw,1.23rem)', lineHeight: 1.75 };
 const founderSection: CSSProperties = { background: '#f2f2ef', color: '#111', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
-const founderGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(280px,.85fr) minmax(300px,1.15fr)', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
+const founderGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
 const founderName: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2.4rem,5vw,5rem)', lineHeight: .95, letterSpacing: '-.04em', margin: '0 0 .65rem' };
 const founderTitle: CSSProperties = { color: '#6c6100', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', margin: '0 0 1.5rem' };
 const darkBody: CSSProperties = { color: '#3f3f3b', fontSize: '1.02rem', lineHeight: 1.78, margin: 0 };
@@ -229,7 +224,7 @@ const numberStyle: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-d
 const flowTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: '1.25rem', margin: '2rem 0 .5rem' };
 const flowDetail: CSSProperties = { color: 'rgba(255,255,255,.55)', margin: 0 };
 const governanceSection: CSSProperties = { background: '#f2f2ef', color: '#111', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
-const governanceGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'start' };
+const governanceGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'start' };
 const darkTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4.3vw,4.3rem)', lineHeight: 1, letterSpacing: '-.04em', margin: 0, textTransform: 'uppercase' };
 const capabilitySection: CSSProperties = { background: '#000', padding: 'clamp(5rem,9vw,8rem) clamp(1.25rem,6vw,6rem)' };
 const closingTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem,4.8vw,4.8rem)', lineHeight: 1, letterSpacing: '-.04em', maxWidth: '960px', margin: '0 0 1.4rem', textTransform: 'uppercase' };
