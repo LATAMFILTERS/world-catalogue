@@ -1,12 +1,21 @@
 import type { Metadata } from 'next';
 
 const URL = 'https://elimfilters.com/knowledge-center/';
-const TITLE = 'Knowledge Center – ELIMFILTERS® Technical Resources';
-const DESCRIPTION = 'Technical resources for industrial filtration, contamination control, standards, reliability, fleet optimization, and asset protection engineering.';
+const TITLE = 'Industrial Filtration Knowledge Center | ELIMFILTERS';
+const DESCRIPTION = 'Industrial filtration knowledge for engineers, fleets and maintenance teams: standards, contamination control, reliability, technical FAQ and asset protection.';
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+  keywords: [
+    'industrial filtration knowledge',
+    'filtration standards',
+    'contamination control',
+    'equipment reliability',
+    'fleet maintenance',
+    'asset protection',
+    'technical filtration FAQ',
+  ],
   robots: { index: true, follow: true },
   alternates: { canonical: URL },
   openGraph: {
@@ -37,6 +46,7 @@ const collectionSchema = {
     { '@type': 'Thing', name: 'Contamination control' },
     { '@type': 'Thing', name: 'Asset protection systems' },
     { '@type': 'Thing', name: 'Equipment reliability' },
+    { '@type': 'Thing', name: 'Filtration standards and test methods' },
   ],
   hasPart: [
     { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/standards/#collection', url: 'https://elimfilters.com/knowledge-center/standards/', name: 'Industrial Standards' },
