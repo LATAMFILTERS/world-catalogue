@@ -45,6 +45,7 @@ const collectionSchema = {
     { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/systems/#collection', url: 'https://elimfilters.com/knowledge-center/systems/', name: 'Asset Protection Systems' },
     { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/fleet-optimization/#collection', url: 'https://elimfilters.com/knowledge-center/fleet-optimization/', name: 'Fleet Optimization' },
     { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/glossary/#collection', url: 'https://elimfilters.com/knowledge-center/glossary/', name: 'Technical Glossary' },
+    { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/faq/#collection', url: 'https://elimfilters.com/knowledge-center/faq/', name: 'Technical FAQ' },
   ],
 };
 
