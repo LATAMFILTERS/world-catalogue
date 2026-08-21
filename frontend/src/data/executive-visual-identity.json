@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "status": "frozen",
   "updated": "2026-08-21",
   "governance": {
@@ -14,7 +14,7 @@
     "name": "Víctor Abreu",
     "designation": "Founder & CEO",
     "type": "human",
-    "image": "/assets/leadership/victor-abreu-founder-ceo.jpg",
+    "image": "/assets/leadership/victor-abreu-founder-ceo.jpg?v=20260821-1253",
     "alt": "Víctor Abreu, Founder & CEO of ELIMFILTERS",
     "visual": {
       "direct_eye_contact": true,
@@ -31,7 +31,7 @@
       "title": "Chief Operating & Supply Chain Agent",
       "label": "Executive AI Agent",
       "type": "ai_agent",
-      "image": "/assets/leadership/chief-operating-supply-chain-agent.jpg",
+      "image": "/assets/leadership/chief-operating-supply-chain-agent.jpg?v=20260821-1253",
       "alt": "Chief Operating & Supply Chain Agent — Executive AI Agent",
       "initials": "OS",
       "visual": {"direct_eye_contact": true, "photorealistic": true, "functional_environment": "operations and logistics", "logo_on_clothing": false, "logo_in_background": false}
@@ -41,7 +41,7 @@
       "title": "Chief Product & Technology Agent",
       "label": "Executive AI Agent",
       "type": "ai_agent",
-      "image": "/assets/leadership/chief-product-technology-agent.jpg",
+      "image": "/assets/leadership/chief-product-technology-agent.jpg?v=20260821-1253",
       "alt": "Chief Product & Technology Agent — Executive AI Agent",
       "initials": "PT",
       "visual": {"direct_eye_contact": true, "photorealistic": true, "functional_environment": "engineering and laboratory", "logo_on_clothing": false, "logo_in_background": false}
@@ -51,7 +51,7 @@
       "title": "Chief Commercial & Markets Agent",
       "label": "Executive AI Agent",
       "type": "ai_agent",
-      "image": "/assets/leadership/chief-commercial-markets-agent.jpg",
+      "image": "/assets/leadership/chief-commercial-markets-agent.jpg?v=20260821-1253",
       "alt": "Chief Commercial & Markets Agent — Executive AI Agent",
       "initials": "CM",
       "visual": {"direct_eye_contact": true, "photorealistic": true, "functional_environment": "global markets and commercial meeting", "logo_on_clothing": false, "logo_in_background": false}
@@ -61,7 +61,7 @@
       "title": "Chief Finance & Risk Agent",
       "label": "Executive AI Agent",
       "type": "ai_agent",
-      "image": "/assets/leadership/chief-finance-risk-agent.jpg",
+      "image": "/assets/leadership/chief-finance-risk-agent.jpg?v=20260821-1253",
       "alt": "Chief Finance & Risk Agent — Executive AI Agent",
       "initials": "FR",
       "visual": {"direct_eye_contact": true, "photorealistic": true, "functional_environment": "finance and risk office", "logo_on_clothing": false, "logo_in_background": false}
@@ -71,7 +71,7 @@
       "title": "Chief Strategy, Performance & Intelligence Agent",
       "label": "Executive AI Agent",
       "type": "ai_agent",
-      "image": "/assets/leadership/chief-strategy-performance-intelligence-agent.jpg",
+      "image": "/assets/leadership/chief-strategy-performance-intelligence-agent.jpg?v=20260821-1253",
       "alt": "Chief Strategy, Performance & Intelligence Agent — Executive AI Agent",
       "initials": "SI",
       "visual": {"direct_eye_contact": true, "photorealistic": true, "functional_environment": "strategy and intelligence", "logo_on_clothing": false, "logo_in_background": false}
