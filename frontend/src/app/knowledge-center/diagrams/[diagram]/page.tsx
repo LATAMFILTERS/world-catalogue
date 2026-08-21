@@ -14,11 +14,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const diagram = getDiagramBySlug(params.diagram);
   if (!diagram) return {};
+  const priorityTitles: Record<string, string> = {
+    'iso-4406-cleanliness-scale': 'ISO 4406 Cleanliness Code Chart — Particle Count Scale | ELIMFILTERS',
+    'iso-8573-purity-classes': 'ISO 8573-1 Purity Classes Chart — Compressed Air | ELIMFILTERS',
+  };
   return {
-    title: `${diagram.title} — ELIMFILTERS Engineering Diagrams`,
+    title: priorityTitles[diagram.slug] || `${diagram.title} — ELIMFILTERS Engineering Diagrams`,
     description: diagram.metaDescription,
     alternates: {
-      canonical: `https://elimfilters.com/knowledge-center/diagrams/${diagram.slug}`,
+      canonical: `https://elimfilters.com/knowledge-center/diagrams/${diagram.slug}/`,
     },
   };
 }
