@@ -16,11 +16,14 @@ export async function generateMetadata({
   const entry = TERMINOLOGY_REGISTRY[id];
   if (!entry) return {};
   const isPublished = entry.status === 'published';
+  const title = params.term === 'iso-cleanliness-code'
+    ? 'ISO 4406 Cleanliness Code Explained — Glossary | ELIMFILTERS'
+    : `${entry.term} — Glossary | ELIMFILTERS`;
   return {
-    title: `${entry.term} — Glossary | ELIMFILTERS`,
+    title,
     description: entry.definition.slice(0, 160),
     alternates: {
-      canonical: `https://elimfilters.com/knowledge-center/glossary/${params.term}`,
+      canonical: `https://elimfilters.com/knowledge-center/glossary/${params.term}/`,
     },
     robots: {
       index: isPublished,
