@@ -2,17 +2,19 @@
 
 import { useEffect } from 'react';
 import { useConsent } from '@/lib/useConsent';
+import { trackEvent } from '@/lib/analytics';
 
 type EventParams = Record<string, string | number | boolean | undefined>;
 
 const CAMPAIGN_KEY = 'elimfilters_campaign_attribution';
 const SOCIAL_HOSTS = ['instagram.com', 'facebook.com', 'linkedin.com', 'youtube.com', 'youtu.be', 'tiktok.com', 'x.com', 'twitter.com'];
 const DOWNLOAD_EXTENSIONS = ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.csv', '.zip'];
-
-function getGtag() {
-  if (typeof window === 'undefined') return undefined;
-  return (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
-}
+const CONVERSION_EVENTS: Record<string, string> = {
+  'product-intelligence': 'conversion_product_intelligence',
+  'application-support': 'conversion_application_support',
+  'distributor-locator': 'conversion_distributor_locator',
+  'partner-application': 'conversion_partner_application',
+};
 
 function readCampaign(): EventParams {
   if (typeof window === 'undefined') return {};
@@ -44,10 +46,9 @@ function readCampaign(): EventParams {
 }
 
 function sendEvent(name: string, params: EventParams = {}) {
-  const gtag = getGtag();
-  if (!gtag || typeof window === 'undefined') return;
+  if (typeof window === 'undefined') return;
 
-  gtag('event', name, {
+  trackEvent(name, {
     page_path: window.location.pathname,
     page_location: window.location.href,
     page_title: document.title,
@@ -158,6 +159,17 @@ export default function CommercialAnalytics() {
       const href = interactive instanceof HTMLAnchorElement ? interactive.href : '';
       const rawHref = interactive instanceof HTMLAnchorElement ? interactive.getAttribute('href') || '' : '';
       const analyticsAction = interactive.getAttribute('data-analytics-event');
+      const conversionAction = interactive.getAttribute('data-conversion-action');
+
+      if (conversionAction) {
+        const conversionEvent = CONVERSION_EVENTS[conversionAction] || 'conversion_action_click';
+        sendEvent(conversionEvent, {
+          conversion_action: conversionAction,
+          link_text: label,
+          destination: href || undefined,
+          button_location: window.location.pathname,
+        });
+      }
 
       if (analyticsAction) {
         sendEvent(analyticsAction, { link_text: label, button_location: window.location.pathname });
