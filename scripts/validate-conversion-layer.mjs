@@ -6,6 +6,7 @@ const out = path.join(root, 'frontend', 'out');
 const failures = [];
 
 const strategicPages = [
+  path.join(out, 'families', 'index.html'),
   path.join(out, 'industries', 'mining', 'index.html'),
   path.join(out, 'industries', 'trucks-fleets', 'index.html'),
   path.join(out, 'industries', 'power-generation', 'index.html'),
