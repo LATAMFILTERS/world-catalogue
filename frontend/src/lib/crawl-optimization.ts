@@ -14,6 +14,7 @@ export const STATIC_CRAWL_ROUTES = [
   '/families',
   '/industries',
   '/knowledge-center',
+  '/knowledge-center/faq',
   '/about',
   '/contact',
   '/distributors',
