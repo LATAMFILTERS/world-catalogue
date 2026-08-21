@@ -1,0 +1,80 @@
+{
+  "version": "1.0.0",
+  "status": "frozen",
+  "updated": "2026-08-21",
+  "governance": {
+    "human_governed": true,
+    "ai_agents_are_not_human_employees": true,
+    "no_fictional_human_names": true,
+    "no_brand_logos_on_agent_clothing_or_backgrounds": true,
+    "founder_is_real_human": true
+  },
+  "founder": {
+    "id": "office_chief_executive",
+    "name": "Víctor Abreu",
+    "designation": "Founder & CEO",
+    "type": "human",
+    "image": "/assets/leadership/victor-abreu-founder-ceo.jpg",
+    "alt": "Víctor Abreu, Founder & CEO of ELIMFILTERS",
+    "visual": {
+      "direct_eye_contact": true,
+      "photorealistic": true,
+      "bright_corporate_background": true,
+      "wardrobe": "dark executive suit jacket, white open-collar shirt, no tie",
+      "logo_on_clothing": false,
+      "logo_in_background": false
+    }
+  },
+  "agents": [
+    {
+      "id": "office_chief_operating_supply_chain",
+      "title": "Chief Operating & Supply Chain Agent",
+      "label": "Executive AI Agent",
+      "type": "ai_agent",
+      "image": "/assets/leadership/chief-operating-supply-chain-agent.jpg",
+      "alt": "Chief Operating & Supply Chain Agent — Executive AI Agent",
+      "initials": "OS",
+      "visual": {"direct_eye_contact": true, "photorealistic": true, "functional_environment": "operations and logistics", "logo_on_clothing": false, "logo_in_background": false}
+    },
+    {
+      "id": "office_chief_product_technology",
+      "title": "Chief Product & Technology Agent",
+      "label": "Executive AI Agent",
+      "type": "ai_agent",
+      "image": "/assets/leadership/chief-product-technology-agent.jpg",
+      "alt": "Chief Product & Technology Agent — Executive AI Agent",
+      "initials": "PT",
+      "visual": {"direct_eye_contact": true, "photorealistic": true, "functional_environment": "engineering and laboratory", "logo_on_clothing": false, "logo_in_background": false}
+    },
+    {
+      "id": "office_chief_commercial_markets",
+      "title": "Chief Commercial & Markets Agent",
+      "label": "Executive AI Agent",
+      "type": "ai_agent",
+      "image": "/assets/leadership/chief-commercial-markets-agent.jpg",
+      "alt": "Chief Commercial & Markets Agent — Executive AI Agent",
+      "initials": "CM",
+      "visual": {"direct_eye_contact": true, "photorealistic": true, "functional_environment": "global markets and commercial meeting", "logo_on_clothing": false, "logo_in_background": false}
+    },
+    {
+      "id": "office_chief_finance_risk",
+      "title": "Chief Finance & Risk Agent",
+      "label": "Executive AI Agent",
+      "type": "ai_agent",
+      "image": "/assets/leadership/chief-finance-risk-agent.jpg",
+      "alt": "Chief Finance & Risk Agent — Executive AI Agent",
+      "initials": "FR",
+      "visual": {"direct_eye_contact": true, "photorealistic": true, "functional_environment": "finance and risk office", "logo_on_clothing": false, "logo_in_background": false}
+    },
+    {
+      "id": "office_chief_strategy_performance_intelligence",
+      "title": "Chief Strategy, Performance & Intelligence Agent",
+      "label": "Executive AI Agent",
+      "type": "ai_agent",
+      "image": "/assets/leadership/chief-strategy-performance-intelligence-agent.jpg",
+      "alt": "Chief Strategy, Performance & Intelligence Agent — Executive AI Agent",
+      "initials": "SI",
+      "visual": {"direct_eye_contact": true, "photorealistic": true, "functional_environment": "strategy and intelligence", "logo_on_clothing": false, "logo_in_background": false}
+    }
+  ]
+}
