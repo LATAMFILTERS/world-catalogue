@@ -73,7 +73,6 @@ if (!fs.existsSync(comparisonPage)) {
   if (!html.includes('https://elimfilters.com/knowledge-center/comparisons/iso4406-vs-nas1638/')) failures.push('priority KC comparison canonical URL missing');
 }
 
-// Balanced engineering conversion coverage: compressed air, cooling, fuel, housing/application, and air intake.
 const priorityEngineeringSlugs = [
   'compressed-air-quality-verification',
   'cooling-system-contamination',
@@ -100,6 +99,20 @@ for (const slug of priorityEngineeringSlugs) {
   if (!html.includes(`https://elimfilters.com/knowledge-center/engineering/${slug}/`)) {
     failures.push(`priority engineering canonical URL missing: ${slug}`);
   }
+}
+
+const ctrEngineeringTitles = {
+  'compressed-air-quality-verification': 'Compressed Air Quality Verification | ELIMFILTERS®',
+  'cooling-system-contamination': 'Cooling System Contamination: Causes & Control | ELIMFILTERS®',
+  'hpcr-fuel-system-cleanliness': 'HPCR Fuel System Cleanliness & Contamination Control | ELIMFILTERS®',
+  'filter-housing-design': 'Filter Housing Design: Flow, Sealing & Application | ELIMFILTERS®',
+};
+
+for (const [slug, expectedTitle] of Object.entries(ctrEngineeringTitles)) {
+  const file = path.join(out, 'knowledge-center', 'engineering', slug, 'index.html');
+  if (!fs.existsSync(file)) continue;
+  const html = fs.readFileSync(file, 'utf8');
+  if (!html.includes(expectedTitle)) failures.push(`priority engineering CTR title missing: ${slug}`);
 }
 
 if (failures.length) {
