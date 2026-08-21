@@ -159,6 +159,33 @@ if (!fs.existsSync(technologiesHub)) {
   if (!html.includes('https://elimfilters.com/technologies/')) failures.push('technologies hub canonical URL missing');
 }
 
+const priorityStandardTitleTokens = {
+  'iso-16889': ['ISO 16889', 'Multi-Pass Filter Test Method', 'ELIMFILTERS'],
+  'iso-12937': ['ISO 12937', 'Water in Petroleum Products', 'ELIMFILTERS'],
+  'iso-3968': ['ISO 3968', 'Pressure Drop', 'Flow Test', 'ELIMFILTERS'],
+  'sae-j726': ['SAE J726', 'Air Cleaner Test Method', 'ELIMFILTERS'],
+  'din-51524': ['DIN 51524', 'Hydraulic Fluids Standard', 'ELIMFILTERS'],
+};
+
+for (const [slug, requiredTokens] of Object.entries(priorityStandardTitleTokens)) {
+  const file = path.join(out, 'knowledge-center', 'standards', slug, 'index.html');
+  if (!fs.existsSync(file)) {
+    failures.push(`priority standard page missing: ${slug}`);
+    continue;
+  }
+  const html = fs.readFileSync(file, 'utf8');
+  const missing = requiredTokens.filter((token) => !html.includes(token));
+  if (missing.length) failures.push(`priority standard CTR language missing (${slug}): ${missing.join(', ')}`);
+  for (const action of ['product-intelligence', 'application-support']) {
+    if (!html.includes(`data-conversion-action="${action}"`)) failures.push(`priority standard conversion action missing (${slug}): ${action}`);
+  }
+  if (!html.includes('https://part-search.elimfilters.com')) failures.push(`priority standard Product Intelligence handoff missing: ${slug}`);
+  if (!html.includes('/contact/')) failures.push(`priority standard Application Support path missing: ${slug}`);
+  if (!html.includes(`https://elimfilters.com/knowledge-center/standards/${slug}/`)) {
+    failures.push(`priority standard canonical URL missing: ${slug}`);
+  }
+}
+
 if (failures.length) {
   console.error('[validate-conversion-layer] FAIL');
   failures.forEach((failure) => console.error(`- ${failure}`));
