@@ -16,15 +16,15 @@ const canonicalTechnologies = [
 ] as const;
 
 export const metadata = {
-  title: 'Industrial Filtration Engineering Technologies',
-  description: 'ELIMFILTERS protection technologies: MACROCORE, MICROKAPPA, DRYCORE, INTEKCORE, SYNTAPORE, HYDROCORE, SYNTRAX, NANOFORCE and THERMACORE.',
-  keywords: ['industrial filtration engineering', 'asset protection systems', 'ELIMFILTERS technologies', 'contamination control', 'equipment reliability'],
+  title: 'Industrial Filtration Technologies for Asset Protection | ELIMFILTERS®',
+  description: 'Explore ELIMFILTERS industrial filtration technologies for air intake, cabin air, compressed air, fuel, lubrication, hydraulic and cooling-system asset protection.',
+  keywords: ['industrial filtration technologies', 'asset protection systems', 'air intake filtration', 'fuel filtration technology', 'lubrication filtration', 'hydraulic filtration', 'cooling system filtration', 'contamination control'],
   alternates: {
     canonical: 'https://elimfilters.com/technologies/',
   },
   openGraph: {
-    title: 'Industrial Filtration Engineering Technologies | ELIMFILTERS',
-    description: 'Protection technologies engineered within ELIMFILTERS Asset Protection Systems.',
+    title: 'Industrial Filtration Technologies for Asset Protection | ELIMFILTERS',
+    description: 'Engineering technologies across air intake, cabin, compressed air, fuel, lubrication, hydraulic and cooling-system protection.',
     url: 'https://elimfilters.com/technologies/',
     type: 'website',
     siteName: 'ELIMFILTERS',
@@ -33,8 +33,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Industrial Filtration Engineering Technologies | ELIMFILTERS',
-    description: 'Protection technologies engineered within ELIMFILTERS Asset Protection Systems.',
+    title: 'Industrial Filtration Technologies for Asset Protection | ELIMFILTERS',
+    description: 'Engineering technologies across air intake, cabin, compressed air, fuel, lubrication, hydraulic and cooling-system protection.',
     images: ['https://elimfilters.com/assets/logo-elimfilters.png'],
   },
 };
@@ -106,9 +106,21 @@ export default function TechnologiesPage() {
       <section className="technologies-final-cta" style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 className="technologies-final-title" style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>Technologies support systems. Systems protect assets.</h2>
+          <p style={{ ...bodyText, maxWidth: '760px', margin: '1.25rem auto 0' }}>
+            Use Product Intelligence when you have a reference, part number, or known application. Use Application Support when operating conditions or technical fit still need review.
+          </p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/systems/" style={yellowButton}>EXPLORE SYSTEMS</Link>
-            <Link href="/contact/" style={darkButton}>CONTACT ELIMFILTERS</Link>
+            <a
+              href="https://part-search.elimfilters.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-action="product-intelligence"
+              style={yellowButton}
+            >
+              SEARCH PRODUCT INTELLIGENCE
+            </a>
+            <Link href="/contact/" data-conversion-action="application-support" style={darkButton}>REQUEST APPLICATION SUPPORT</Link>
+            <Link href="/systems/" style={darkButton}>EXPLORE SYSTEMS</Link>
           </div>
         </div>
       </section>
