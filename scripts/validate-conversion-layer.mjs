@@ -73,6 +73,29 @@ if (!fs.existsSync(comparisonPage)) {
   if (!html.includes('https://elimfilters.com/knowledge-center/comparisons/iso4406-vs-nas1638/')) failures.push('priority KC comparison canonical URL missing');
 }
 
+const priorityComparisonTitleTokens = {
+  'iso5011-vs-sae-j726': ['ISO 5011', 'SAE J726', 'Air Cleaner Test Methods', 'ELIMFILTERS'],
+  'multipass-vs-single-pass-testing': ['Multi-Pass', 'Single-Pass', 'Filter Testing', 'ELIMFILTERS'],
+  'beta-ratio-vs-filtration-efficiency': ['Beta Ratio', 'Filtration Efficiency', 'ELIMFILTERS'],
+};
+
+for (const [slug, requiredTokens] of Object.entries(priorityComparisonTitleTokens)) {
+  const file = path.join(out, 'knowledge-center', 'comparisons', slug, 'index.html');
+  if (!fs.existsSync(file)) {
+    failures.push(`priority comparison page missing: ${slug}`);
+    continue;
+  }
+  const html = fs.readFileSync(file, 'utf8');
+  const missing = requiredTokens.filter((token) => !html.includes(token));
+  if (missing.length) failures.push(`priority comparison CTR language missing (${slug}): ${missing.join(', ')}`);
+  for (const action of ['product-intelligence', 'application-support']) {
+    if (!html.includes(`data-conversion-action="${action}"`)) failures.push(`priority comparison conversion action missing (${slug}): ${action}`);
+  }
+  if (!html.includes(`https://elimfilters.com/knowledge-center/comparisons/${slug}/`)) {
+    failures.push(`priority comparison canonical URL missing: ${slug}`);
+  }
+}
+
 const priorityEngineeringSlugs = [
   'compressed-air-quality-verification',
   'cooling-system-contamination',
