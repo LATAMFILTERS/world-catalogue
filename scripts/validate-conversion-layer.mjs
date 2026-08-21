@@ -31,18 +31,10 @@ for (const file of strategicPages) {
     html.includes('data-conversion-action="application-support"') ||
     (isMacrocore && html.includes('Request an Engineering Assessment'));
 
-  if (!hasProductIntelligence) {
-    failures.push(`product-intelligence conversion action missing: ${relative}`);
-  }
-  if (!hasApplicationSupport) {
-    failures.push(`application-support conversion action missing: ${relative}`);
-  }
-  if (!html.includes('https://part-search.elimfilters.com')) {
-    failures.push(`Part Search path missing: ${relative}`);
-  }
-  if (!isMacrocore && !html.includes('/contact/')) {
-    failures.push(`application support contact path missing: ${relative}`);
-  }
+  if (!hasProductIntelligence) failures.push(`product-intelligence conversion action missing: ${relative}`);
+  if (!hasApplicationSupport) failures.push(`application-support conversion action missing: ${relative}`);
+  if (!html.includes('https://part-search.elimfilters.com')) failures.push(`Part Search path missing: ${relative}`);
+  if (!isMacrocore && !html.includes('/contact/')) failures.push(`application support contact path missing: ${relative}`);
 }
 
 const distributorPage = path.join(out, 'distributors', 'index.html');
@@ -51,9 +43,7 @@ if (!fs.existsSync(distributorPage)) {
 } else {
   const html = fs.readFileSync(distributorPage, 'utf8');
   for (const action of ['distributor-locator', 'product-intelligence', 'application-support', 'partner-application']) {
-    if (!html.includes(`data-conversion-action="${action}"`)) {
-      failures.push(`distributor conversion action missing: ${action}`);
-    }
+    if (!html.includes(`data-conversion-action="${action}"`)) failures.push(`distributor conversion action missing: ${action}`);
   }
 }
 
@@ -62,16 +52,10 @@ if (!fs.existsSync(knowledgeCenterPage)) {
   failures.push('knowledge-center conversion page missing: knowledge-center/index.html');
 } else {
   const html = fs.readFileSync(knowledgeCenterPage, 'utf8');
-  if (!html.includes('https://part-search.elimfilters.com')) {
-    failures.push('Knowledge Center Product Intelligence handoff missing');
-  }
-  if (!html.includes('Search Product Intelligence')) {
-    failures.push('Knowledge Center Product Intelligence CTA missing');
-  }
+  if (!html.includes('https://part-search.elimfilters.com')) failures.push('Knowledge Center Product Intelligence handoff missing');
+  if (!html.includes('Search Product Intelligence')) failures.push('Knowledge Center Product Intelligence CTA missing');
   for (const route of ['/knowledge-center/standards', '/knowledge-center/problems', '/knowledge-center/faq']) {
-    if (!html.includes(route)) {
-      failures.push(`Knowledge Center decision path missing: ${route}`);
-    }
+    if (!html.includes(route)) failures.push(`Knowledge Center decision path missing: ${route}`);
   }
 }
 
@@ -81,21 +65,40 @@ if (!fs.existsSync(comparisonPage)) {
 } else {
   const html = fs.readFileSync(comparisonPage, 'utf8');
   for (const action of ['product-intelligence', 'application-support']) {
+    if (!html.includes(`data-conversion-action="${action}"`)) failures.push(`priority KC comparison conversion action missing: ${action}`);
+  }
+  if (!html.includes('https://part-search.elimfilters.com')) failures.push('priority KC comparison Product Intelligence handoff missing');
+  if (!html.includes('/contact/')) failures.push('priority KC comparison Application Support path missing');
+  if (!html.includes('ISO 4406 vs NAS 1638: Fluid Cleanliness Codes')) failures.push('priority KC comparison CTR title missing');
+  if (!html.includes('https://elimfilters.com/knowledge-center/comparisons/iso4406-vs-nas1638/')) failures.push('priority KC comparison canonical URL missing');
+}
+
+// Balanced engineering conversion coverage: compressed air, cooling, fuel, housing/application, and air intake.
+const priorityEngineeringSlugs = [
+  'compressed-air-quality-verification',
+  'cooling-system-contamination',
+  'hpcr-fuel-system-cleanliness',
+  'filter-housing-design',
+  'iso-5011',
+];
+
+for (const slug of priorityEngineeringSlugs) {
+  const file = path.join(out, 'knowledge-center', 'engineering', slug, 'index.html');
+  if (!fs.existsSync(file)) {
+    failures.push(`priority engineering page missing: ${slug}`);
+    continue;
+  }
+
+  const html = fs.readFileSync(file, 'utf8');
+  for (const action of ['product-intelligence', 'application-support']) {
     if (!html.includes(`data-conversion-action="${action}"`)) {
-      failures.push(`priority KC comparison conversion action missing: ${action}`);
+      failures.push(`priority engineering conversion action missing (${slug}): ${action}`);
     }
   }
-  if (!html.includes('https://part-search.elimfilters.com')) {
-    failures.push('priority KC comparison Product Intelligence handoff missing');
-  }
-  if (!html.includes('/contact/')) {
-    failures.push('priority KC comparison Application Support path missing');
-  }
-  if (!html.includes('ISO 4406 vs NAS 1638: Fluid Cleanliness Codes')) {
-    failures.push('priority KC comparison CTR title missing');
-  }
-  if (!html.includes('https://elimfilters.com/knowledge-center/comparisons/iso4406-vs-nas1638/')) {
-    failures.push('priority KC comparison canonical URL missing');
+  if (!html.includes('https://part-search.elimfilters.com')) failures.push(`priority engineering Product Intelligence handoff missing: ${slug}`);
+  if (!html.includes('/contact/')) failures.push(`priority engineering Application Support path missing: ${slug}`);
+  if (!html.includes(`https://elimfilters.com/knowledge-center/engineering/${slug}/`)) {
+    failures.push(`priority engineering canonical URL missing: ${slug}`);
   }
 }
 
