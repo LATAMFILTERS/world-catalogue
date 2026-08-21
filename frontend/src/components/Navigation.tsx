@@ -9,18 +9,16 @@ import '@/i18n';
 const HEADER_DISPLAY_FONT = 'Chakra Petch, Arial Narrow, monospace';
 
 export function Navigation() {
-  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
-    // Check initial scroll position
     handler();
     window.addEventListener('scroll', handler, { passive: true });
-    setMounted(true);
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
@@ -52,17 +50,7 @@ export function Navigation() {
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
           <Link href="/" aria-label="ELIMFILTERS — home" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
             {logoError ? (
-              <span
-                style={{
-                  fontFamily: HEADER_DISPLAY_FONT,
-                  fontWeight: 700,
-                  fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)',
-                  letterSpacing: '-0.01em',
-                  color: '#fff',
-                  textTransform: 'uppercase',
-                  whiteSpace: 'nowrap',
-                }}
-              >
+              <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
                 ELIMFILTERS
               </span>
             ) : (
@@ -84,7 +72,7 @@ export function Navigation() {
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
           <NavLink href="/knowledge-center/">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
-          <NavLink href="/about">{t('nav.about', 'About')}</NavLink>
+          <AboutNavMenu label={t('nav.about', 'About')} isSpanish={isSpanish} />
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
           <motion.a
@@ -94,18 +82,7 @@ export function Navigation() {
             whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.18 }}
-            style={{
-              background: '#FFF12D',
-              color: '#000',
-              fontFamily: HEADER_DISPLAY_FONT,
-              fontWeight: 700,
-              fontSize: '0.82rem',
-              letterSpacing: '0.1em',
-              padding: '0.55rem 1.35rem',
-              textDecoration: 'none',
-              display: 'inline-block',
-              textTransform: 'uppercase',
-            }}
+            style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.1em', padding: '0.55rem 1.35rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase' }}
           >
             {t('nav.findMyFilter', 'FIND MY FILTER')}
           </motion.a>
@@ -122,11 +99,7 @@ export function Navigation() {
             {[0, 1, 2].map((i) => (
               <motion.span
                 key={i}
-                animate={{
-                  rotate: menuOpen && i === 0 ? 45 : menuOpen && i === 2 ? -45 : 0,
-                  scaleX: menuOpen && i === 1 ? 0 : 1,
-                  y: menuOpen && i === 0 ? 7 : menuOpen && i === 2 ? -7 : 0,
-                }}
+                animate={{ rotate: menuOpen && i === 0 ? 45 : menuOpen && i === 2 ? -45 : 0, scaleX: menuOpen && i === 1 ? 0 : 1, y: menuOpen && i === 0 ? 7 : menuOpen && i === 2 ? -7 : 0 }}
                 transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 style={{ display: 'block', height: '2px', background: '#FFF12D', transformOrigin: 'center' }}
               />
@@ -142,47 +115,33 @@ export function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              overflow: 'hidden',
-              background: 'rgba(0,0,0,0.98)',
-              borderTop: '1px solid rgba(255,255,255,0.08)',
-            }}
+            style={{ overflow: 'hidden', background: 'rgba(0,0,0,0.98)', borderTop: '1px solid rgba(255,255,255,0.08)' }}
           >
             <motion.div
               initial="hidden"
               animate="visible"
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }}
-              style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}
+              style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.05rem' }}
             >
               {[
                 { href: '/industries', label: t('nav.industries', 'Industries') },
                 { href: '/systems', label: t('nav.systems', 'Systems') },
                 { href: '/technologies', label: t('nav.technologies', 'Technologies') },
                 { href: '/knowledge-center/', label: t('nav.knowledge', 'Knowledge') },
-                { href: '/about', label: t('nav.about', 'About') },
+                { href: '/about', label: isSpanish ? 'Quiénes Somos' : 'Who We Are' },
+                { href: '/about/leadership', label: isSpanish ? 'Liderazgo' : 'Leadership', child: true },
+                { href: '/about/philosophy', label: isSpanish ? 'Filosofía de Ingeniería' : 'Engineering Philosophy', child: true },
                 { href: '/contact', label: t('nav.contact', 'Contact') },
               ].map((item) => (
-                <motion.div
-                  key={item.href}
-                  variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  <Link href={item.href} style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>
-                    {item.label}
+                <motion.div key={item.href} variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
+                  <Link href={item.href} style={{ ...mobileLinkStyle, paddingLeft: item.child ? '1rem' : 0, color: item.child ? 'rgba(255,255,255,0.62)' : mobileLinkStyle.color }} onClick={() => setMenuOpen(false)}>
+                    {item.child ? '— ' : ''}{item.label}
                   </Link>
                 </motion.div>
               ))}
 
-              <motion.div
-                variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }}
-                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <a
-                  href="https://part-search.elimfilters.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}
-                >
+              <motion.div variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
+                <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
                   {t('nav.findMyFilter', 'FIND MY FILTER')} →
                 </a>
               </motion.div>
@@ -204,45 +163,51 @@ export function Navigation() {
   );
 }
 
+function AboutNavMenu({ label, isSpanish }: { label: string; isSpanish: boolean }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} onFocus={() => setOpen(true)} onBlur={(event) => {
+      if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOpen(false);
+    }} style={{ position: 'relative' }}>
+      <Link href="/about" aria-haspopup="menu" aria-expanded={open} style={{ color: open ? '#FFF12D' : 'rgba(255,255,255,0.75)', textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '0.95rem', fontWeight: 600, letterSpacing: '0.025em', paddingBottom: '8px', display: 'block' }}>
+        {label}
+      </Link>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            role="menu"
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.18 }}
+            style={{ position: 'absolute', top: '100%', left: '-1rem', minWidth: '250px', background: 'rgba(5,5,5,.98)', border: '1px solid rgba(255,255,255,.1)', borderTop: '2px solid #FFF12D', padding: '.55rem', backdropFilter: 'blur(14px)' }}
+          >
+            <AboutMenuLink href="/about">{isSpanish ? 'Quiénes Somos' : 'Who We Are'}</AboutMenuLink>
+            <AboutMenuLink href="/about/leadership">{isSpanish ? 'Liderazgo' : 'Leadership'}</AboutMenuLink>
+            <AboutMenuLink href="/about/philosophy">{isSpanish ? 'Filosofía de Ingeniería' : 'Engineering Philosophy'}</AboutMenuLink>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function AboutMenuLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link role="menuitem" href={href} style={{ display: 'block', color: 'rgba(255,255,255,.78)', textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '.82rem', fontWeight: 600, padding: '.72rem .75rem', borderBottom: '1px solid rgba(255,255,255,.06)' }}>
+      {children}
+    </Link>
+  );
+}
+
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   const [hovered, setHovered] = useState(false);
-
   return (
-    <motion.div
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      style={{ position: 'relative', display: 'inline-block' }}
-    >
-      <Link
-        href={href}
-        style={{
-          color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)',
-          textDecoration: 'none',
-          fontFamily: HEADER_DISPLAY_FONT,
-          fontSize: '0.95rem',
-          fontWeight: 600,
-          letterSpacing: '0.025em',
-          transition: 'color 0.2s ease',
-          display: 'block',
-          paddingBottom: '3px',
-        }}
-      >
+    <motion.div onHoverStart={() => setHovered(true)} onHoverEnd={() => setHovered(false)} style={{ position: 'relative', display: 'inline-block' }}>
+      <Link href={href} style={{ color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)', textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '0.95rem', fontWeight: 600, letterSpacing: '0.025em', transition: 'color 0.2s ease', display: 'block', paddingBottom: '3px' }}>
         {children}
       </Link>
-      <motion.span
-        animate={{ scaleX: hovered ? 1 : 0 }}
-        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: '1px',
-          background: '#FFF12D',
-          transformOrigin: 'left',
-          display: 'block',
-        }}
-      />
+      <motion.span animate={{ scaleX: hovered ? 1 : 0 }} transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }} style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '1px', background: '#FFF12D', transformOrigin: 'left', display: 'block' }} />
     </motion.div>
   );
 }
