@@ -31,7 +31,7 @@ for (const route of noindexRoutes) {
 }
 
 const retiredSignals = [
-  '/commercial-lines/duratech/',
+  '/commercial-lines/duractech/',
   '/knowledge-system/',
   '/fleet-optimization/',
   '/home/',
@@ -46,8 +46,8 @@ for (const signal of retiredSignals) {
   }
 }
 
-if (!sitemap.includes('https://elimfilters.com/commercial-lines/duractech/')) {
-  violations.push('sitemap.xml missing canonical DURACTECH route');
+if (!sitemap.includes('https://elimfilters.com/commercial-lines/duratech/')) {
+  violations.push('sitemap.xml missing canonical DURATECH route');
 }
 if (!sitemapIndex.includes('https://elimfilters.com/sitemap.xml')) {
   violations.push('sitemap-index.xml missing main sitemap');
@@ -64,11 +64,11 @@ for (const [rel, route] of noindexFiles) {
   }
 }
 
-const migrationHtml = read('commercial-lines/duratech/index.html');
+const migrationHtml = read('commercial-lines/duractech/index.html');
 if (migrationHtml) {
-  if (!/noindex/i.test(migrationHtml)) violations.push('/commercial-lines/duratech/ must remain noindex');
-  if (!migrationHtml.includes('https://elimfilters.com/commercial-lines/duractech/')) {
-    violations.push('/commercial-lines/duratech/ missing canonical destination');
+  if (!/noindex/i.test(migrationHtml)) violations.push('/commercial-lines/duractech/ must remain noindex');
+  if (!migrationHtml.includes('https://elimfilters.com/commercial-lines/duratech/')) {
+    violations.push('/commercial-lines/duractech/ missing canonical destination');
   }
 }
 
