@@ -18,6 +18,26 @@ if (!fs.existsSync(faqHtml)) {
   if (!html.includes('Technical Frequently Asked Questions')) failures.push('FAQ hub H1 missing');
   if (/PENDING DE TRADUCCI[ÓO]N|PENDING DE TRADUCTION/i.test(html)) failures.push('translation placeholder leaked into FAQ hub');
   if (/DURACTECH/i.test(html)) failures.push('retired DURACTECH token leaked into FAQ hub');
+
+  const demandGrounding = [
+    ['How do you read an ISO cleanliness code?', '/knowledge-center/glossary/iso-cleanliness-code/'],
+    ['What is an ISO 4406 cleanliness chart?', '/knowledge-center/diagrams/iso-4406-cleanliness-scale/'],
+    ['What is ISO 8573-1?', '/knowledge-center/standards/iso-8573-1/'],
+    ['What is differential pressure?', '/knowledge-center/glossary/differential-pressure/'],
+    ['What is a service interval?', '/knowledge-center/glossary/service-interval/'],
+    ['What is soot?', '/knowledge-center/glossary/soot/'],
+    ['What is depth filtration?', '/knowledge-center/glossary/depth-filtration/'],
+    ['What is coalescing?', '/knowledge-center/glossary/coalescing/'],
+    ['What is bearing clearance?', '/knowledge-center/glossary/bearing-clearance/'],
+    ['What is hydrodynamic lubrication?', '/knowledge-center/glossary/hydrodynamic-lubrication/'],
+    ['What is microbiological contamination?', '/knowledge-center/glossary/microbial-contamination/'],
+    ['What is a NAS cleanliness value?', '/knowledge-center/glossary/nas-cleanliness-code/'],
+  ];
+
+  for (const [question, href] of demandGrounding) {
+    if (!html.includes(question)) failures.push(`GSC-observed FAQ missing: ${question}`);
+    if (!html.includes(href)) failures.push(`GSC-observed FAQ exact source missing: ${href}`);
+  }
 }
 
 if (!fs.existsSync(knowledgeCenterHtml)) {
@@ -49,4 +69,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[validate-faq-governance] PASS — canonical FAQ hub, homepage discovery, schema, sitemap and legacy payload hygiene verified');
+console.log('[validate-faq-governance] PASS — canonical FAQ hub, GSC demand grounding, exact sources, schema, sitemap and legacy payload hygiene verified');
