@@ -9,9 +9,9 @@ const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 
 export const metadata: Metadata = {
-  title: 'Industrial Filter Product Families & Protection Systems | ELIMFILTERS',
+  title: 'Industrial Filter Families by System & Application | ELIMFILTERS',
   description:
-    'Browse ELIMFILTERS product families organized by system, duty class, and application. Find the right filtration products for your asset protection strategy.',
+    'Explore ELIMFILTERS industrial filter families by protection system, duty class and application, then identify the correct product path for your equipment.',
   alternates: { canonical: `${BASE_URL}/families/` },
 };
 
@@ -112,12 +112,24 @@ export default function FamiliesPage() {
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Product families connect technical architecture to real field applications.
+            Move from product family to a validated application path.
           </h2>
+          <p style={{ ...bodyText, maxWidth: '760px', margin: '1.2rem auto 0' }}>
+            Search Product Intelligence when you already have a part number or application reference. Use Application Support when the protected system, duty cycle or application still needs technical validation.
+          </p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/systems/" style={yellowButton}>EXPLORE SYSTEMS</Link>
+            <a
+              href="https://part-search.elimfilters.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-action="product-intelligence"
+              style={yellowButton}
+            >
+              SEARCH PRODUCT INTELLIGENCE
+            </a>
+            <Link href="/contact/" data-conversion-action="application-support" style={darkButton}>APPLICATION SUPPORT</Link>
+            <Link href="/systems/" style={darkButton}>EXPLORE SYSTEMS</Link>
             <Link href="/technologies/" style={darkButton}>EXPLORE TECHNOLOGIES</Link>
-            <Link href="/contact/" style={darkButton}>CONTACT ELIMFILTERS</Link>
           </div>
         </div>
       </section>
