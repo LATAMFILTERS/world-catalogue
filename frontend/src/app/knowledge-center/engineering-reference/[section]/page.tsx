@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${section.title} | Engineering Reference | ELIMFILTERS`,
     description: section.definition.slice(0, 155),
     alternates: {
-      canonical: `https://elimfilters.com/knowledge-center/engineering-reference/${section.slug}`,
+      canonical: `https://elimfilters.com/knowledge-center/engineering-reference/${section.slug}/`,
     },
   };
 }
