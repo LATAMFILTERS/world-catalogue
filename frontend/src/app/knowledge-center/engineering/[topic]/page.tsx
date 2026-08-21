@@ -4,6 +4,25 @@ import { ENGINEERING_ARTICLES } from '@/lib/knowledge-center-data';
 import { notFound } from 'next/navigation';
 import ArticleContent from './ArticleContent';
 
+const CTR_OVERRIDES: Record<string, { title: string; description: string }> = {
+  'compressed-air-quality-verification': {
+    title: 'Compressed Air Quality Verification | ELIMFILTERS®',
+    description: 'How compressed-air quality is verified using contamination, moisture and purity measurements for industrial air systems and maintenance decisions.',
+  },
+  'cooling-system-contamination': {
+    title: 'Cooling System Contamination: Causes & Control | ELIMFILTERS®',
+    description: 'Technical guide to cooling-system contamination, deposit formation, fluid condition and protection decisions for industrial and heavy-duty equipment.',
+  },
+  'hpcr-fuel-system-cleanliness': {
+    title: 'HPCR Fuel System Cleanliness & Contamination Control | ELIMFILTERS®',
+    description: 'Technical guidance for high-pressure common-rail fuel cleanliness, particle and water contamination control, and application-level protection decisions.',
+  },
+  'filter-housing-design': {
+    title: 'Filter Housing Design: Flow, Sealing & Application | ELIMFILTERS®',
+    description: 'Engineering reference for filter housing design, including flow path, sealing, restriction, structural considerations and application suitability.',
+  },
+};
+
 export function generateStaticParams() {
   return ENGINEERING_ARTICLES.map((a) => ({ topic: a.slug }));
 }
@@ -13,16 +32,25 @@ export async function generateMetadata({ params }: { params: { topic: string } }
   if (!article) return {};
 
   const url = `https://elimfilters.com/knowledge-center/engineering/${params.topic}/`;
+  const override = CTR_OVERRIDES[params.topic];
+  const title = override?.title ?? article.title;
+  const description = override?.description ?? article.metaDescription;
+
   return {
-    title: article.title,
-    description: article.metaDescription,
+    title,
+    description,
     keywords: article.keywords,
     alternates: { canonical: url },
     openGraph: {
-      title: `${article.title} | ELIMFILTERS`,
-      description: article.metaDescription,
+      title,
+      description,
       url,
       type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     },
   };
 }
