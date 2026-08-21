@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node ../scripts/validate-canonical-taxonomy.mjs && node ../scripts/validate-legacy-catalogue-dependency.mjs && node ../scripts/build-citation-index.js && node ../scripts/validate-canonical-citation-index.mjs && node ../scripts/build-part-search-map.js && node ../scripts/validate-path-domain-consistency.mjs && node ../scripts/generate-citation-api.js && node ../scripts/validate-citation-api-output.mjs && node ../scripts/validate-citation-content-governance.mjs && node ../scripts/validate-part-search-integrity.mjs && node ../scripts/validate-air-intake-page-guard.mjs && node ../scripts/validate-citation-tracking.mjs && node ../scripts/ensure-next-cache.mjs",
+    "prebuild": "node ../scripts/validate-canonical-taxonomy.mjs && node ../scripts/validate-legacy-catalogue-dependency.mjs && node ../scripts/build-citation-index.js && node ../scripts/validate-canonical-citation-index.mjs && node ../scripts/build-part-search-map.js && node ../scripts/validate-path-domain-consistency.mjs && node ../scripts/generate-citation-api.js && node ../scripts/validate-citation-api-output.mjs && node ../scripts/validate-citation-content-governance.mjs && node ../scripts/validate-part-search-integrity.mjs && node ../scripts/validate-air-intake-page-guard.mjs && node ../scripts/validate-citation-tracking.mjs && npx tsx scripts/validate-geo-entities.ts && node ../scripts/ensure-next-cache.mjs",
     "dev": "next dev",
     "build": "next build",
     "postbuild": "node ../scripts/sanitize-public-html.mjs && node ../scripts/sanitize-public-translations.mjs && node ../scripts/sanitize-knowledge-center-public.mjs && node ../scripts/generate-kc-sitemap.mjs && node ../scripts/generate-video-sitemap.mjs && node ../scripts/generate-sitemap-index.mjs && node ../scripts/validate-public-governance.mjs && node ../scripts/validate-index-hygiene.mjs",
@@ -17,6 +17,7 @@
     "validate:map": "node ../scripts/build-part-search-map.js --validate",
     "validate:citation-api": "node ../scripts/generate-citation-api.js --validate",
     "validate:kc": "npx tsx scripts/validate-kc-integrity.ts",
+    "validate:geo": "npx tsx scripts/validate-geo-entities.ts",
     "guardian": "bash ../scripts/guardian.sh --skip-build",
     "guardian:full": "bash ../scripts/guardian.sh",
     "test": "vitest run",
