@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
+import styles from './AboutIndustrialTheme.module.css';
 import '@/i18n';
 
 const ITEMS = [
@@ -14,12 +15,16 @@ export function AboutSubnav() {
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
 
   return (
-    <nav aria-label={isSpanish ? 'Navegación interna de Acerca de' : 'About internal navigation'} style={{
-      position: 'relative',
-      zIndex: 5,
-      borderBottom: '1px solid rgba(255,255,255,0.08)',
-      background: '#050505',
-    }}>
+    <nav
+      className={styles.aboutIndustrialNav}
+      aria-label={isSpanish ? 'Navegación interna de Acerca de' : 'About internal navigation'}
+      style={{
+        position: 'relative',
+        zIndex: 5,
+        borderBottom: '1px solid #deded9',
+        background: '#ffffff',
+      }}
+    >
       <div style={{
         maxWidth: '1180px',
         margin: '0 auto',
@@ -30,10 +35,10 @@ export function AboutSubnav() {
       }}>
         {ITEMS.map((item) => (
           <a key={item.href} href={item.href} style={{
-            color: 'rgba(255,255,255,0.78)',
+            color: '#292925',
             background: 'transparent',
-            borderLeft: '1px solid rgba(255,255,255,0.08)',
-            borderRight: '1px solid rgba(255,255,255,0.08)',
+            borderLeft: '1px solid #e4e4df',
+            borderRight: '1px solid #e4e4df',
             textDecoration: 'none',
             fontFamily: 'var(--font-display)',
             fontSize: '0.76rem',

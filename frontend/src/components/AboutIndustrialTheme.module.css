@@ -1,0 +1,115 @@
+.aboutIndustrialNav {
+  position: relative;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav)) {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(1)) {
+  background: #050505 !important;
+  color: #ffffff !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(2)),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(3)),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(5)),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(6)),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(8)),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(10)) {
+  background: #ffffff !important;
+  color: #111111 !important;
+  border-color: #e3e3df !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(4)),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(9)) {
+  background: #f5f5f2 !important;
+  color: #111111 !important;
+  border-color: #e3e3df !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(7)),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(11)) {
+  background: #050505 !important;
+  color: #ffffff !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(2) h2),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(3) h2),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(4) h2),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(5) h2),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(6) h2),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(8) h2),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(9) h2),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(10) h2),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(3) h3),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(6) h3) {
+  color: #111111 !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(2) p),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(3) p),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(4) p),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(5) p),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(6) p),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(8) p),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(9) p),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(10) p),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(10) li) {
+  color: #4a4a46 !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(2) p:first-child),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(3) p:first-child),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(4) p:first-child),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(5) p:first-child),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(6) p:first-child),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(8) p:first-child),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(9) p:first-child),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(10) p:first-child) {
+  color: #756a00 !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(3) article),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(6) article) {
+  background: #ffffff !important;
+  border: 1px solid #deded9 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.035);
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(3) article span),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(6) article span) {
+  color: #756a00 !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(6) article p) {
+  color: #555550 !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(9) a),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(10) a) {
+  color: #756a00 !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(10) strong) {
+  color: #756a00 !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(3) > div > div),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(6) > div > div) {
+  border-color: #deded9 !important;
+}
+
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(5) img),
+:global(main#main-content:has(.aboutIndustrialNav) > section:nth-of-type(6) img) {
+  background: #f0f0ed;
+}
+
+@media (max-width: 640px) {
+  .aboutIndustrialNav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
