@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-const DESC = 'ELIMFILTERS specialized Asset Protection Systems solutions: MARINECLEAN™ for marine operating environments and DURACTECH™ for integrated maintenance and asset-protection kits.';
+const DESC = 'ELIMFILTERS specialized Asset Protection Systems solutions: MARINECLEAN™ for marine operating environments and DURATECH™ for integrated maintenance and asset-protection kits.';
 
 export const metadata: Metadata = {
   title: 'Specialized Asset Protection Solutions | ELIMFILTERS',
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   keywords: [
     'ELIMFILTERS specialized solutions',
     'MARINECLEAN',
-    'DURACTECH',
+    'DURATECH',
     'marine asset protection',
     'integrated maintenance kits',
     'industrial contamination control',
