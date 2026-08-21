@@ -4,6 +4,9 @@ import { getEntityAuthorityScore } from './entity-authority';
 
 const BASE_URL = 'https://elimfilters.com';
 
+// Only canonical, index-worthy public destinations belong in the generated sitemap.
+// Internal search and customer-intelligence surfaces are intentionally excluded
+// and governed with noindex metadata at the route level.
 export const STATIC_CRAWL_ROUTES = [
   '/',
   '/systems',
@@ -13,14 +16,17 @@ export const STATIC_CRAWL_ROUTES = [
   '/knowledge-center',
   '/about',
   '/contact',
-  '/search',
   '/distributors',
   '/commercial-lines',
   '/commercial-lines/duractech',
   '/commercial-lines/marineclean',
-  '/customer-intelligence',
   '/distributor-application',
   '/warranty',
+] as const;
+
+export const NOINDEX_PUBLIC_ROUTES = [
+  '/search',
+  '/customer-intelligence',
 ] as const;
 
 export interface CrawlProfile {
@@ -39,6 +45,7 @@ export interface CrawlValidationResult {
   readonly invalidCanonicalUrls: string[];
   readonly invalidPriorities: string[];
   readonly isolatedEntityUrls: string[];
+  readonly noindexUrlsInSitemap: string[];
   readonly isValid: boolean;
 }
 
@@ -147,6 +154,9 @@ export function validateCrawlOptimization(): CrawlValidationResult {
     .filter((node) => node.kind !== 'organization')
     .filter((node) => getConnectedEntities(node.id).length === 0)
     .map((node) => canonicalUrl(node.href));
+  const noindexUrlsInSitemap = NOINDEX_PUBLIC_ROUTES
+    .map(canonicalUrl)
+    .filter((url) => profileUrlSet.has(url));
 
   return {
     duplicateUrls: Array.from(new Set(duplicateUrls)),
@@ -154,11 +164,13 @@ export function validateCrawlOptimization(): CrawlValidationResult {
     invalidCanonicalUrls,
     invalidPriorities,
     isolatedEntityUrls,
+    noindexUrlsInSitemap,
     isValid:
       duplicateUrls.length === 0 &&
       missingEntityUrls.length === 0 &&
       invalidCanonicalUrls.length === 0 &&
       invalidPriorities.length === 0 &&
-      isolatedEntityUrls.length === 0,
+      isolatedEntityUrls.length === 0 &&
+      noindexUrlsInSitemap.length === 0,
   };
 }
