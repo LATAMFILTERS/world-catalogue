@@ -88,14 +88,18 @@ function buildWebPageNode(kind: SchemaEntityKind, slug: string) {
     ...context.industries,
     ...context.failures,
   ];
-  const mentions = Array.from(new Map(connected.map((node) => {
-    const separator = node.id.indexOf(':');
-    if (separator < 0 || node.kind === 'organization') return [node.id, { '@id': ORGANIZATION_ID }];
-    const connectedKind = node.kind as SchemaEntityKind;
-    const connectedSlug = node.id.slice(separator + 1);
-    const connectedUrl = absoluteEntityUrl(node.href);
-    return [node.id, { '@id': canonicalEntityId(connectedKind, connectedSlug, connectedUrl) }];
-  })).values());
+  const mentions = Array.from(new Map<string, { '@id': string }>(
+    connected.map((node): [string, { '@id': string }] => {
+      const separator = node.id.indexOf(':');
+      if (separator < 0 || node.kind === 'organization') {
+        return [node.id, { '@id': ORGANIZATION_ID }];
+      }
+      const connectedKind = node.kind as SchemaEntityKind;
+      const connectedSlug = node.id.slice(separator + 1);
+      const connectedUrl = absoluteEntityUrl(node.href);
+      return [node.id, { '@id': canonicalEntityId(connectedKind, connectedSlug, connectedUrl) }];
+    }),
+  ).values());
 
   return {
     '@type': 'WebPage',
@@ -125,7 +129,6 @@ export function buildRichResultsGraph(kind: SchemaEntityKind, slug: string): Kno
 export function validateRichResultsGraph(kind: SchemaEntityKind, slug: string): RichResultsValidationResult {
   const graph = buildRichResultsGraph(kind, slug)['@graph'];
   const ids = graph.map((node) => node['@id']).filter((id): id is string => typeof id === 'string');
-  const idSet = new Set(ids);
   const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
   const typeCounts = new Map<string, number>();
   graph.forEach((node) => {
@@ -143,13 +146,21 @@ export function validateRichResultsGraph(kind: SchemaEntityKind, slug: string): 
     .filter((node) => node['@type'] === 'FAQPage')
     .filter((node) => !Array.isArray(node.mainEntity) || node.mainEntity.length === 0)
     .map((node) => String(node['@id']));
-  const invalidEntityPageLinks = graph
-    .filter((node) => typeof node.mainEntityOfPage === 'object' && node.mainEntityOfPage !== null)
-    .filter((node) => {
-      const reference = node.mainEntityOfPage as { '@id'?: unknown };
-      return typeof reference['@id'] !== 'string' || !idSet.has(reference['@id']);
-    })
-    .map((node) => String(node['@id']));
+
+  const context = getGeoContextByKindAndSlug(kind, slug);
+  const invalidEntityPageLinks: string[] = [];
+  if (context) {
+    const url = absoluteEntityUrl(context.entity.href);
+    const entityId = canonicalEntityId(kind, slug, url);
+    const pageId = canonicalWebPageId(kind, slug, url);
+    const entityNode = graph.find((node) => node['@id'] === entityId);
+    const pageNode = graph.find((node) => node['@id'] === pageId);
+    const entityPageRef = entityNode?.mainEntityOfPage as { '@id'?: unknown } | undefined;
+    const pageAboutRef = pageNode?.about as { '@id'?: unknown } | undefined;
+    if (entityPageRef?.['@id'] !== pageId || pageAboutRef?.['@id'] !== entityId) {
+      invalidEntityPageLinks.push(entityId);
+    }
+  }
 
   return {
     duplicateIds: Array.from(new Set(duplicateIds)),
