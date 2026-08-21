@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     'Knowledge Graph of 15 canonical industrial equipment failure problems caused by contamination. Each problem maps to contamination sources, affected components, and filtration technologies.',
   alternates: {
-    canonical: 'https://elimfilters.com/knowledge-center/problems',
+    canonical: 'https://elimfilters.com/knowledge-center/problems/',
   },
 };
 
