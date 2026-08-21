@@ -101,8 +101,6 @@ for (const slug of priorityEngineeringSlugs) {
   }
 }
 
-// Guard the distinctive search-intent language rather than a serialized HTML title string.
-// Next.js and post-build sanitizers may encode punctuation such as ampersands differently.
 const ctrEngineeringTitleTokens = {
   'compressed-air-quality-verification': ['Compressed Air Quality Verification', 'ELIMFILTERS'],
   'cooling-system-contamination': ['Cooling System Contamination', 'Causes', 'Control', 'ELIMFILTERS'],
@@ -118,6 +116,24 @@ for (const [slug, requiredTokens] of Object.entries(ctrEngineeringTitleTokens)) 
   if (missing.length) {
     failures.push(`priority engineering CTR title language missing (${slug}): ${missing.join(', ')}`);
   }
+}
+
+const technologiesHub = path.join(out, 'technologies', 'index.html');
+if (!fs.existsSync(technologiesHub)) {
+  failures.push('technologies hub conversion page missing: technologies/index.html');
+} else {
+  const html = fs.readFileSync(technologiesHub, 'utf8');
+  for (const action of ['product-intelligence', 'application-support']) {
+    if (!html.includes(`data-conversion-action="${action}"`)) {
+      failures.push(`technologies hub conversion action missing: ${action}`);
+    }
+  }
+  if (!html.includes('https://part-search.elimfilters.com')) failures.push('technologies hub Product Intelligence handoff missing');
+  if (!html.includes('/contact/')) failures.push('technologies hub Application Support path missing');
+  for (const token of ['Industrial Filtration Technologies', 'Asset Protection', 'ELIMFILTERS']) {
+    if (!html.includes(token)) failures.push(`technologies hub CTR language missing: ${token}`);
+  }
+  if (!html.includes('https://elimfilters.com/technologies/')) failures.push('technologies hub canonical URL missing');
 }
 
 if (failures.length) {
