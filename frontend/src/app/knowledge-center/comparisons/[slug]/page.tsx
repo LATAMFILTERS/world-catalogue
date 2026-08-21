@@ -11,6 +11,18 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     title: 'ISO 4406 vs NAS 1638: Fluid Cleanliness Codes | ELIMFILTERS',
     description: 'Compare ISO 4406 and NAS 1638 fluid cleanliness classification: particle-count structure, calibration basis, current use, limitations, and application context.',
   },
+  'iso5011-vs-sae-j726': {
+    title: 'ISO 5011 vs SAE J726: Air Cleaner Test Methods | ELIMFILTERS',
+    description: 'Compare ISO 5011 and SAE J726 air-cleaner test methods, including dust capacity, restriction, efficiency, test conditions, and application context.',
+  },
+  'multipass-vs-single-pass-testing': {
+    title: 'Multi-Pass vs Single-Pass Filter Testing | ELIMFILTERS',
+    description: 'Compare multi-pass and single-pass filtration testing: what each method measures, how results differ, and when each test approach is relevant.',
+  },
+  'beta-ratio-vs-filtration-efficiency': {
+    title: 'Beta Ratio vs Filtration Efficiency: What the Numbers Mean | ELIMFILTERS',
+    description: 'Understand the relationship between beta ratio and filtration efficiency, how each metric is interpreted, and why test context matters.',
+  },
 };
 
 export function generateStaticParams() {
