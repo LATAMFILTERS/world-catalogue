@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Industrial Filtration Protection Systems | ELIMFILTERS',
-  description: 'Engineering guidance for the five canonical ELIMFILTERS protection systems: Air Intake & Airflow, Fuel Cleanliness, Lubrication, Hydraulic, and Cooling System Protection.',
+  title: 'Asset Protection Systems | ELIMFILTERS',
+  description: 'Engineering guidance for air intake, fuel, lubrication, hydraulic, and cooling-system protection in industrial assets.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-center/systems/',
   },
