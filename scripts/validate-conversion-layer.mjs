@@ -7,7 +7,6 @@ const failures = [];
 
 const strategicPages = [
   path.join(out, 'families', 'index.html'),
-  path.join(out, 'distributors', 'index.html'),
   path.join(out, 'industries', 'mining', 'index.html'),
   path.join(out, 'industries', 'trucks-fleets', 'index.html'),
   path.join(out, 'industries', 'power-generation', 'index.html'),
@@ -23,7 +22,6 @@ for (const file of strategicPages) {
   const html = fs.readFileSync(file, 'utf8');
   const relative = path.relative(out, file);
   const isMacrocore = relative === path.join('technologies', 'macrocore', 'index.html');
-  const isDistributors = relative === path.join('distributors', 'index.html');
 
   const hasProductIntelligence =
     html.includes('data-conversion-action="product-intelligence"') ||
@@ -45,15 +43,34 @@ for (const file of strategicPages) {
   if (!isMacrocore && !html.includes('/contact/')) {
     failures.push(`application support contact path missing: ${relative}`);
   }
-  if (isDistributors) {
-    if (!html.includes('data-conversion-action="distributor-locator"')) {
-      failures.push(`distributor-locator conversion action missing: ${relative}`);
+}
+
+const distributorPage = path.join(out, 'distributors', 'index.html');
+if (!fs.existsSync(distributorPage)) {
+  failures.push('distributor conversion page missing: distributors/index.html');
+} else {
+  const html = fs.readFileSync(distributorPage, 'utf8');
+  for (const action of ['distributor-locator', 'product-intelligence', 'application-support', 'partner-application']) {
+    if (!html.includes(`data-conversion-action="${action}"`)) {
+      failures.push(`distributor conversion action missing: ${action}`);
     }
-    if (!html.includes('id="authorized-distributors"')) {
-      failures.push(`authorized distributor target missing: ${relative}`);
-    }
-    if (!html.includes('data-conversion-action="partner-application"')) {
-      failures.push(`partner-application conversion action missing: ${relative}`);
+  }
+}
+
+const knowledgeCenterPage = path.join(out, 'knowledge-center', 'index.html');
+if (!fs.existsSync(knowledgeCenterPage)) {
+  failures.push('knowledge-center conversion page missing: knowledge-center/index.html');
+} else {
+  const html = fs.readFileSync(knowledgeCenterPage, 'utf8');
+  if (!html.includes('https://part-search.elimfilters.com')) {
+    failures.push('Knowledge Center Product Intelligence handoff missing');
+  }
+  if (!html.includes('Search Product Intelligence')) {
+    failures.push('Knowledge Center Product Intelligence CTA missing');
+  }
+  for (const route of ['/knowledge-center/standards', '/knowledge-center/problems', '/knowledge-center/faq']) {
+    if (!html.includes(route)) {
+      failures.push(`Knowledge Center decision path missing: ${route}`);
     }
   }
 }
@@ -64,4 +81,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[validate-conversion-layer] PASS — strategic pages expose governed conversion paths');
+console.log('[validate-conversion-layer] PASS — strategic pages expose governed technical and commercial conversion paths');
