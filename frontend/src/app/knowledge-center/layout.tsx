@@ -23,6 +23,36 @@ export const metadata: Metadata = {
   },
 };
 
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${URL}#collection`,
+  url: URL,
+  name: 'ELIMFILTERS Technical Knowledge Center',
+  description: DESCRIPTION,
+  isPartOf: { '@id': 'https://elimfilters.com/#website' },
+  publisher: { '@id': 'https://elimfilters.com/#organization' },
+  about: [
+    { '@type': 'Thing', name: 'Industrial filtration' },
+    { '@type': 'Thing', name: 'Contamination control' },
+    { '@type': 'Thing', name: 'Asset protection systems' },
+    { '@type': 'Thing', name: 'Equipment reliability' },
+  ],
+  hasPart: [
+    { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/standards/#collection', url: 'https://elimfilters.com/knowledge-center/standards/', name: 'Industrial Standards' },
+    { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/problems/#collection', url: 'https://elimfilters.com/knowledge-center/problems/', name: 'Contamination & Failure Modes' },
+    { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/technologies/#collection', url: 'https://elimfilters.com/knowledge-center/technologies/', name: 'Protection Technologies' },
+    { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/systems/#collection', url: 'https://elimfilters.com/knowledge-center/systems/', name: 'Asset Protection Systems' },
+    { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/fleet-optimization/#collection', url: 'https://elimfilters.com/knowledge-center/fleet-optimization/', name: 'Fleet Optimization' },
+    { '@type': 'CollectionPage', '@id': 'https://elimfilters.com/knowledge-center/glossary/#collection', url: 'https://elimfilters.com/knowledge-center/glossary/', name: 'Technical Glossary' },
+  ],
+};
+
 export default function KnowledgeCenterLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
+      {children}
+    </>
+  );
 }

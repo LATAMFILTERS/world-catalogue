@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     'Canonical definitions for filtration engineering terms. Each term carries a permanent TERM-xxx identifier and is referenced by ID across all Knowledge Center content.',
   alternates: {
-    canonical: 'https://elimfilters.com/knowledge-center/glossary',
+    canonical: 'https://elimfilters.com/knowledge-center/glossary/',
   },
 };
 
