@@ -101,18 +101,23 @@ for (const slug of priorityEngineeringSlugs) {
   }
 }
 
-const ctrEngineeringTitles = {
-  'compressed-air-quality-verification': 'Compressed Air Quality Verification | ELIMFILTERS®',
-  'cooling-system-contamination': 'Cooling System Contamination: Causes & Control | ELIMFILTERS®',
-  'hpcr-fuel-system-cleanliness': 'HPCR Fuel System Cleanliness & Contamination Control | ELIMFILTERS®',
-  'filter-housing-design': 'Filter Housing Design: Flow, Sealing & Application | ELIMFILTERS®',
+// Guard the distinctive search-intent language rather than a serialized HTML title string.
+// Next.js and post-build sanitizers may encode punctuation such as ampersands differently.
+const ctrEngineeringTitleTokens = {
+  'compressed-air-quality-verification': ['Compressed Air Quality Verification', 'ELIMFILTERS'],
+  'cooling-system-contamination': ['Cooling System Contamination', 'Causes', 'Control', 'ELIMFILTERS'],
+  'hpcr-fuel-system-cleanliness': ['HPCR Fuel System Cleanliness', 'Contamination Control', 'ELIMFILTERS'],
+  'filter-housing-design': ['Filter Housing Design', 'Flow', 'Sealing', 'Application', 'ELIMFILTERS'],
 };
 
-for (const [slug, expectedTitle] of Object.entries(ctrEngineeringTitles)) {
+for (const [slug, requiredTokens] of Object.entries(ctrEngineeringTitleTokens)) {
   const file = path.join(out, 'knowledge-center', 'engineering', slug, 'index.html');
   if (!fs.existsSync(file)) continue;
   const html = fs.readFileSync(file, 'utf8');
-  if (!html.includes(expectedTitle)) failures.push(`priority engineering CTR title missing: ${slug}`);
+  const missing = requiredTokens.filter((token) => !html.includes(token));
+  if (missing.length) {
+    failures.push(`priority engineering CTR title language missing (${slug}): ${missing.join(', ')}`);
+  }
 }
 
 if (failures.length) {
