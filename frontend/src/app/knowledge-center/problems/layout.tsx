@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Problem Graph — Industrial Equipment Failure Problems | ELIMFILTERS',
-  description:
-    'Knowledge Graph of 15 canonical industrial equipment failure problems caused by contamination. Each problem maps to contamination sources, affected components, and filtration technologies.',
+  title: 'Contamination Failure Modes | ELIMFILTERS',
+  description: 'Technical guidance on contamination-driven failure modes, affected components, root causes, and filtration-control strategies.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-center/problems/',
   },

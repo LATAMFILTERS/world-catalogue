@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Filtration Technologies | ELIMFILTERS Knowledge Center',
-  description: 'Explore the nine canonical ELIMFILTERS core filtration technologies mapped to Air Intake & Airflow, Fuel Cleanliness, Lubrication, Hydraulic, and Cooling System Protection.',
+  description: 'Explore ELIMFILTERS filtration technologies for air, fuel, lubrication, hydraulic, and cooling-system protection.',
   alternates: {
     canonical: 'https://elimfilters.com/knowledge-center/technologies/',
   },

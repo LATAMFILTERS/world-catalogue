@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-const DESC = 'DURACTECH™ is the ELIMFILTERS integrated filter-kit program for coordinated maintenance across trucks, fleets, vehicles, machines, and equipment. DURACTECH™ is a specialized commercial solution, not a filtration technology.';
+const DESC = 'DURACTECH™ integrated filter kits coordinate application-specific filtration components and maintenance intervals for approved commercial assets.';
 
 export const metadata: Metadata = {
   title: 'DURACTECH™ — Integrated Filter Kit Program | ELIMFILTERS®',

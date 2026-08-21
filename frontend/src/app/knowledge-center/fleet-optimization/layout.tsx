@@ -1,17 +1,16 @@
 import type { Metadata } from 'next';
 
 const URL = 'https://elimfilters.com/knowledge-center/fleet-optimization/';
+const DESCRIPTION = 'Engineering guidance for fleet maintenance, contamination control, asset reliability, lifecycle planning, and total cost of ownership.';
 
 export const metadata: Metadata = {
-  title: 'Fleet Optimization & Asset Reliability | ELIMFILTERS Knowledge Center',
-  description:
-    'Engineering guidance for maintenance strategy, contamination control, asset lifecycle planning, predictive monitoring, and total cost of ownership in industrial fleets.',
+  title: 'Fleet Optimization & Reliability | ELIMFILTERS',
+  description: DESCRIPTION,
   robots: { index: true, follow: true },
   alternates: { canonical: URL },
   openGraph: {
-    title: 'Fleet Optimization & Asset Reliability | ELIMFILTERS',
-    description:
-      'Engineering guidance for maintenance strategy, contamination control, asset lifecycle planning, predictive monitoring, and total cost of ownership in industrial fleets.',
+    title: 'Fleet Optimization & Reliability | ELIMFILTERS',
+    description: DESCRIPTION,
     url: URL,
     type: 'website',
     siteName: 'ELIMFILTERS',
