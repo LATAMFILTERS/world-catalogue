@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - verify-kc-postbuild-432
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
