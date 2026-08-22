@@ -4,6 +4,7 @@ import path from 'node:path';
 const root = path.resolve(import.meta.dirname, '..');
 const out = path.join(root, 'frontend', 'out');
 const failures = [];
+const dynamicFamilies = ['glossary', 'diagrams', 'engineering-reference'];
 
 const governedPages = [
   {
@@ -48,6 +49,50 @@ const governedPages = [
   },
 ];
 
+function extractCanonical(html) {
+  const match = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["'][^>]*>/i)
+    || html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["'][^>]*>/i);
+  return match?.[1] ?? null;
+}
+
+for (const family of dynamicFamilies) {
+  const familyDir = path.join(out, 'knowledge-center', family);
+  if (!fs.existsSync(familyDir)) {
+    failures.push(`dynamic KC family missing: ${family}`);
+    continue;
+  }
+
+  for (const entry of fs.readdirSync(familyDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const file = path.join(familyDir, entry.name, 'index.html');
+    if (!fs.existsSync(file)) continue;
+
+    const html = fs.readFileSync(file, 'utf8');
+    const expected = `https://elimfilters.com/knowledge-center/${family}/${entry.name}/`;
+    const canonical = extractCanonical(html);
+
+    if (canonical !== expected) {
+      failures.push(`canonical mismatch (${family}/${entry.name}): expected ${expected}, got ${canonical ?? 'missing'}`);
+    }
+
+    const absoluteUnslashed = new RegExp(
+      `https://elimfilters\\.com/knowledge-center/${family}/${entry.name}(?=[?#"'<>\\s])`,
+      'g',
+    );
+    if (absoluteUnslashed.test(html)) {
+      failures.push(`unslashed absolute entity URL leaked: ${family}/${entry.name}`);
+    }
+
+    const relativeUnslashed = new RegExp(
+      `(?<!https://elimfilters\\.com)/knowledge-center/${family}/${entry.name}(?=[?#"'<>\\s])`,
+      'g',
+    );
+    if (relativeUnslashed.test(html)) {
+      failures.push(`unslashed internal route leaked: ${family}/${entry.name}`);
+    }
+  }
+}
+
 for (const spec of governedPages) {
   const file = path.join(out, ...spec.rel);
   const label = spec.rel.slice(0, -1).join('/');
@@ -56,13 +101,6 @@ for (const spec of governedPages) {
     continue;
   }
   const html = fs.readFileSync(file, 'utf8');
-  if (!html.includes(`rel="canonical" href="${spec.canonical}"`) && !html.includes(`href="${spec.canonical}" rel="canonical"`)) {
-    failures.push(`self-canonical with trailing slash missing: ${label}`);
-  }
-  const unslashed = spec.canonical.slice(0, -1);
-  if (html.includes(`rel="canonical" href="${unslashed}"`) || html.includes(`href="${unslashed}" rel="canonical"`)) {
-    failures.push(`unslashed canonical leaked: ${label}`);
-  }
   for (const token of spec.tokens) {
     if (!html.includes(token)) failures.push(`KC entity/intent token missing (${label}): ${token}`);
   }
@@ -84,6 +122,11 @@ for (const name of sitemapFiles) {
   for (const [key, variants] of normalized) {
     if (new Set(variants).size > 1) failures.push(`duplicate slash/no-slash KC sitemap variants in ${name}: ${key}`);
   }
+
+  for (const url of urls) {
+    const dynamic = /\/knowledge-center\/(glossary|diagrams|engineering-reference)\/[^/]+$/.test(url);
+    if (dynamic) failures.push(`unslashed dynamic KC sitemap URL in ${name}: ${url}`);
+  }
 }
 
 if (failures.length) {
@@ -92,4 +135,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[validate-kc-canonical-overlap] PASS — KC canonicals, entity signals, intent separation and sitemap variant hygiene verified');
+console.log('[validate-kc-canonical-overlap] PASS — all dynamic KC canonicals, entity URLs, internal routes, intent signals and sitemap variants are normalized');
