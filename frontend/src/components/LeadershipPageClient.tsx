@@ -7,26 +7,56 @@ import { AboutSubnav } from '@/components/AboutSubnav';
 import registry from '@/data/executive-visual-identity.json';
 import '@/i18n';
 
-const RESPONSIBILITIES: Record<string, { en: string; es: string }> = {
+const AGENT_PROFILES: Record<string, { en: string[]; es: string[] }> = {
   office_chief_operating_supply_chain: {
-    en: 'Operations, procurement, supply continuity, logistics, fulfillment, and operational quality.',
-    es: 'Operaciones, compras, continuidad de suministro, logística, fulfillment y calidad operacional.',
+    en: [
+      'The Chief Operating & Supply Chain Agent leads the operational execution framework of ELIMFILTERS across procurement, supply continuity, logistics, fulfillment, and operational quality.',
+      'The role supports disciplined coordination between suppliers, inventory, commercial demand, and delivery execution, with a focus on continuity, responsiveness, and scalable operating control.',
+    ],
+    es: [
+      'El Chief Operating & Supply Chain Agent dirige el marco de ejecución operativa de ELIMFILTERS en compras, continuidad de suministro, logística, fulfillment y calidad operacional.',
+      'La función coordina proveedores, inventario, demanda comercial y ejecución de entregas, con énfasis en continuidad, capacidad de respuesta y control operativo escalable.',
+    ],
   },
   office_chief_product_technology: {
-    en: 'Product architecture, filtration technologies, applications, validation, catalog integrity, and technical knowledge governance.',
-    es: 'Arquitectura de producto, tecnologías de filtración, aplicaciones, validación, integridad de catálogo y gobernanza del conocimiento técnico.',
+    en: [
+      'The Chief Product & Technology Agent leads product architecture, filtration technologies, application intelligence, technical validation, catalog integrity, and engineering knowledge governance.',
+      'The role connects product strategy with technical evidence and digital systems so that specifications, applications, and technical content remain consistent, validated, and operationally useful across ELIMFILTERS.',
+    ],
+    es: [
+      'El Chief Product & Technology Agent dirige la arquitectura de producto, las tecnologías de filtración, la inteligencia de aplicaciones, la validación técnica, la integridad del catálogo y la gobernanza del conocimiento de ingeniería.',
+      'La función conecta la estrategia de producto con evidencia técnica y sistemas digitales para mantener especificaciones, aplicaciones y contenido técnico consistentes, validados y operativamente útiles en ELIMFILTERS.',
+    ],
   },
   office_chief_commercial_markets: {
-    en: 'B2B growth, distributors, strategic accounts, market development, CRM, pricing discipline, and customer intelligence.',
-    es: 'Crecimiento B2B, distribuidores, cuentas estratégicas, desarrollo de mercados, CRM, disciplina de precios e inteligencia de clientes.',
+    en: [
+      'The Chief Commercial & Markets Agent leads B2B growth, distributor development, strategic accounts, market expansion, CRM execution, pricing discipline, and customer intelligence.',
+      'The role translates ELIMFILTERS capabilities into structured commercial development, prioritizing qualified markets, durable channel relationships, account intelligence, and disciplined revenue growth.',
+    ],
+    es: [
+      'El Chief Commercial & Markets Agent dirige el crecimiento B2B, el desarrollo de distribuidores, las cuentas estratégicas, la expansión de mercados, la ejecución del CRM, la disciplina de precios y la inteligencia de clientes.',
+      'La función convierte las capacidades de ELIMFILTERS en desarrollo comercial estructurado, priorizando mercados calificados, relaciones de canal sostenibles, inteligencia de cuentas y crecimiento disciplinado de ingresos.',
+    ],
   },
   office_chief_finance_risk: {
-    en: 'Liquidity, margins, forecasting, working capital, financial discipline, and enterprise-risk visibility.',
-    es: 'Liquidez, márgenes, forecasting, capital de trabajo, disciplina financiera y visibilidad de riesgos empresariales.',
+    en: [
+      'The Chief Finance & Risk Agent leads financial discipline across liquidity, margins, forecasting, working capital, planning, and enterprise-risk visibility.',
+      'The role provides decision support for sustainable growth by connecting operating performance with financial exposure, resource allocation, scenario analysis, and risk controls.',
+    ],
+    es: [
+      'El Chief Finance & Risk Agent dirige la disciplina financiera en liquidez, márgenes, forecasting, capital de trabajo, planificación y visibilidad de riesgos empresariales.',
+      'La función apoya el crecimiento sostenible conectando desempeño operativo con exposición financiera, asignación de recursos, análisis de escenarios y controles de riesgo.',
+    ],
   },
   office_chief_strategy_performance_intelligence: {
-    en: 'Strategy support, performance intelligence, AI governance, data, automation, digital architecture, and agent governance.',
-    es: 'Soporte estratégico, inteligencia de desempeño, gobernanza de IA, datos, automatización, arquitectura digital y gobernanza de agentes.',
+    en: [
+      'The Chief Strategy, Performance & Intelligence Agent supports enterprise strategy, performance intelligence, AI governance, data, automation, digital architecture, and agent governance.',
+      'The role connects strategic priorities with measurable execution, helping the Chief Executive Office identify signals, monitor performance, govern AI-enabled operations, and coordinate intelligence across the organization.',
+    ],
+    es: [
+      'El Chief Strategy, Performance & Intelligence Agent apoya la estrategia empresarial, la inteligencia de desempeño, la gobernanza de IA, los datos, la automatización, la arquitectura digital y la gobernanza de agentes.',
+      'La función conecta prioridades estratégicas con ejecución medible, ayudando a la Chief Executive Office a identificar señales, monitorear desempeño, gobernar operaciones habilitadas por IA y coordinar inteligencia en toda la organización.',
+    ],
   },
 };
 
@@ -95,18 +125,21 @@ export function LeadershipPageClient() {
               : 'These profiles are the official visual representations of executive AI agents, not human employees. Each agent manages a defined domain under delegated authority and oversight of the Chief Executive Office.'}
           </p>
 
-          <div className="agents-grid">
+          <div className="agent-list">
             {registry.agents.map((agent) => {
-              const responsibility = RESPONSIBILITIES[agent.id];
+              const profile = AGENT_PROFILES[agent.id];
+              const paragraphs = isSpanish ? profile.es : profile.en;
               return (
-                <article className="agent-card" key={agent.id}>
-                  <div className="agent-photo-shell">
-                    <img src={agent.image} alt={agent.alt} className="agent-photo" />
-                  </div>
-                  <div className="agent-copy">
+                <article className="agent-profile" key={agent.id}>
+                  <div className="agent-identity">
+                    <div className="agent-photo-shell">
+                      <img src={agent.image} alt={agent.alt} className="agent-photo" />
+                    </div>
                     <span className="ai-label">{agent.label}</span>
                     <h3>{agent.title}</h3>
-                    <p>{isSpanish ? responsibility.es : responsibility.en}</p>
+                  </div>
+                  <div className="agent-description">
+                    {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                   </div>
                 </article>
               );
@@ -169,11 +202,13 @@ export function LeadershipPageClient() {
         .founder-copy h2{font-size:clamp(2.5rem,5vw,5rem);line-height:.95;letter-spacing:-.04em;margin:0 0 .6rem}.founder-role{color:#6c6100;font-family:var(--font-display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 1.5rem}.founder-profile{display:grid;gap:1rem}.founder-profile p{color:#3f3f3b;font-size:1.02rem;line-height:1.72;margin:0}
         .agents-section,.model-section,.closing-section{padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.agents-section{background:#050505}.model-section{background:#000}.closing-section{background:#050505}
         .agents-section h2,.model-section h2,.closing-section h2{font-size:clamp(2rem,4vw,4rem);line-height:1;letter-spacing:-.035em;margin:0 0 1rem;text-transform:uppercase;max-width:950px}
-        .agents-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.09);margin-top:2.5rem}.agent-card{background:#090909;min-width:0}.agent-photo-shell{aspect-ratio:4/5;overflow:hidden;background:#111}.agent-photo{width:100%;height:100%;object-fit:cover;display:block}.agent-copy{padding:1.2rem}.ai-label{color:#FFF12D;font-family:var(--font-display);font-size:.63rem;font-weight:700;letter-spacing:.14em}.agent-copy h3{font-size:1rem;line-height:1.2;margin:.7rem 0 .55rem}.agent-copy p{color:rgba(255,255,255,.62);font-size:.9rem;line-height:1.6;margin:0}
+        .agent-list{margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.12)}
+        .agent-profile{display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);gap:clamp(2rem,6vw,5rem);padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid rgba(255,255,255,.12);align-items:start}
+        .agent-identity{min-width:0}.agent-photo-shell{aspect-ratio:4/5;overflow:hidden;background:#111;width:100%;max-width:320px;margin-bottom:1.35rem}.agent-photo{width:100%;height:100%;object-fit:cover;display:block}.ai-label{color:#FFF12D;font-family:var(--font-display);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.agent-identity h3{font-size:clamp(1.4rem,2.3vw,2.2rem);line-height:1.08;margin:.75rem 0 0;letter-spacing:-.025em}.agent-description{padding-top:.15rem;display:grid;gap:1.1rem}.agent-description p{color:rgba(255,255,255,.72);font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.78;margin:0;max-width:760px}
         .flow-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);margin-top:2.5rem}.flow-card{background:#080808;padding:1.5rem}.flow-card span{color:#FFF12D;font-family:var(--font-display);font-weight:700;font-size:.75rem;letter-spacing:.14em}.flow-card h3{margin:1rem 0 .35rem;font-size:1rem}.flow-card p{margin:0;color:rgba(255,255,255,.58);font-size:.9rem}
         .governance-section{background:#f2f2ef;color:#111;padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.governance-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}.governance-grid h2{font-size:clamp(2rem,4vw,4rem);line-height:1;letter-spacing:-.035em;margin:0}.governance-grid>p{color:#3f3f3b;font-size:1.04rem;line-height:1.78;margin:0}.back-link{display:inline-block;margin-top:1.25rem;color:#FFF12D;text-decoration:none;font-family:var(--font-display);font-weight:700;letter-spacing:.06em}
-        @media(max-width:900px){.founder-grid,.governance-grid{grid-template-columns:1fr}.founder-photo-shell{width:70%;max-width:340px}.agents-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-        @media(max-width:560px){.leadership-hero{padding-top:8.5rem}.founder-section,.agents-section,.model-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-photo-shell{aspect-ratio:4/5;width:70%;max-width:none}.agents-grid,.flow-grid{grid-template-columns:1fr}.agent-photo-shell{aspect-ratio:4/5}.agent-copy{padding:1.1rem}.founder-copy h2{font-size:2.5rem}}
+        @media(max-width:900px){.founder-grid,.governance-grid,.agent-profile{grid-template-columns:1fr}.founder-photo-shell{width:70%;max-width:340px}.agent-photo-shell{max-width:300px}.flow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        @media(max-width:560px){.leadership-hero{padding-top:8.5rem}.founder-section,.agents-section,.model-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-photo-shell{width:78%;max-width:300px}.agent-profile{gap:1.5rem;padding:3rem 0}.agent-photo-shell{max-width:260px}.flow-grid{grid-template-columns:1fr}.founder-copy h2{font-size:2.5rem}}
       `}</style>
     </main>
   );
