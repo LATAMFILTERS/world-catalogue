@@ -57,21 +57,6 @@ const governedPages = [
     canonical: 'https://elimfilters.com/knowledge-center/engineering-reference/fluid-cleanliness/',
     tokens: ['Fluid Cleanliness Engineering'],
   },
-  {
-    rel: ['knowledge-center', 'engineering-reference', 'differential-pressure', 'index.html'],
-    canonical: 'https://elimfilters.com/knowledge-center/engineering-reference/differential-pressure/',
-    tokens: ['Differential Pressure Engineering'],
-  },
-  {
-    rel: ['knowledge-center', 'engineering-reference', 'depth-filtration', 'index.html'],
-    canonical: 'https://elimfilters.com/knowledge-center/engineering-reference/depth-filtration/',
-    tokens: ['Depth Filtration Engineering'],
-  },
-  {
-    rel: ['knowledge-center', 'engineering-reference', 'compressed-air-purity', 'index.html'],
-    canonical: 'https://elimfilters.com/knowledge-center/engineering-reference/compressed-air-purity/',
-    tokens: ['Compressed Air Purity Engineering'],
-  },
 ];
 
 function extractCanonical(html) {
