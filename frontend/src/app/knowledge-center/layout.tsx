@@ -32,6 +32,16 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  '@id': `${URL}#breadcrumb`,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Knowledge Center', item: URL },
+  ],
+};
+
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -41,6 +51,7 @@ const collectionSchema = {
   description: DESCRIPTION,
   isPartOf: { '@id': 'https://elimfilters.com/#website' },
   publisher: { '@id': 'https://elimfilters.com/#organization' },
+  breadcrumb: { '@id': `${URL}#breadcrumb` },
   about: [
     { '@type': 'Thing', name: 'Industrial filtration' },
     { '@type': 'Thing', name: 'Contamination control' },
@@ -62,6 +73,7 @@ const collectionSchema = {
 export default function KnowledgeCenterLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       {children}
     </>
