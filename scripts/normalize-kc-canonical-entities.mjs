@@ -29,10 +29,11 @@ const relativeRoute = new RegExp(
   'g',
 );
 
-const legacyInternalRoutes = [
-  ['/fleet-optimization/', '/knowledge-center/fleet-optimization/'],
-  ['/knowledge-system/problems', '/knowledge-center/problems/'],
-];
+// Only rewrite the legacy Fleet Optimization route when it is not already
+// nested under /knowledge-center/. This avoids corrupting correct canonicals
+// such as /knowledge-center/fleet-optimization/ into duplicated paths.
+const legacyFleetRoute = /(?<!\/knowledge-center)\/fleet-optimization\//g;
+const legacyProblemsRoute = /\/knowledge-system\/problems\/?/g;
 
 let changedFiles = 0;
 let replacements = 0;
@@ -50,13 +51,15 @@ for (const file of htmlFiles) {
     return `${match}/`;
   });
 
-  for (const [legacyRoute, canonicalRoute] of legacyInternalRoutes) {
-    const before = html;
-    html = html.replaceAll(legacyRoute, canonicalRoute);
-    if (html !== before) {
-      replacements += before.split(legacyRoute).length - 1;
-    }
-  }
+  html = html.replace(legacyFleetRoute, () => {
+    replacements += 1;
+    return '/knowledge-center/fleet-optimization/';
+  });
+
+  html = html.replace(legacyProblemsRoute, () => {
+    replacements += 1;
+    return '/knowledge-center/problems/';
+  });
 
   if (html !== original) {
     fs.writeFileSync(file, html, 'utf8');
