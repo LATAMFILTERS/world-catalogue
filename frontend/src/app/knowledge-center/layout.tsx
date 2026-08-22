@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 const URL = 'https://elimfilters.com/knowledge-center/';
-const TITLE = 'Industrial Filtration Engineering Knowledge Center';
+const TITLE = 'Engineering Knowledge for Better Asset Decisions';
 const DESCRIPTION = 'Engineering knowledge for industrial filtration, contamination control, standards, equipment reliability, fleet maintenance and asset protection decisions.';
 
 export const metadata: Metadata = {
