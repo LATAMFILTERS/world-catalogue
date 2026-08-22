@@ -2,7 +2,7 @@ export interface ArticleSchemaProps {
   data: Record<string, unknown>;
 }
 
-const KC_DYNAMIC_URL = /^https:\/\/elimfilters\.com\/knowledge-center\/(glossary|diagrams|engineering-reference)\/[^/?#]+(?:[?#].*)?$/;
+const KC_DYNAMIC_URL = /^https:\/\/elimfilters\.com\/knowledge-center\/(glossary|diagrams|engineering-reference|standards)\/[^/?#]+(?:[?#].*)?$/;
 
 function normalizeKcEntityUrls(value: unknown): unknown {
   if (typeof value === 'string') {
