@@ -101,6 +101,10 @@ for (const spec of governedPages) {
     continue;
   }
   const html = fs.readFileSync(file, 'utf8');
+  const canonical = extractCanonical(html);
+  if (canonical !== spec.canonical) {
+    failures.push(`governed canonical mismatch (${label}): expected ${spec.canonical}, got ${canonical ?? 'missing'}`);
+  }
   for (const token of spec.tokens) {
     if (!html.includes(token)) failures.push(`KC entity/intent token missing (${label}): ${token}`);
   }
