@@ -1,19 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
 import { AboutSubnav } from '@/components/AboutSubnav';
 import '@/i18n';
-
-const SYSTEMS = [
-  'Air Intake & Airflow Protection',
-  'Fuel Cleanliness Protection',
-  'Lubrication Protection',
-  'Hydraulic Protection',
-  'Cooling System Protection',
-];
 
 export default function AboutPage() {
   const { i18n } = useTranslation();
@@ -21,36 +12,34 @@ export default function AboutPage() {
 
   const copy = isSpanish ? {
     heroTitle: 'Quiénes Somos',
-    heroLead: 'ELIMFILTERS® es una organización de ingeniería de filtración industrial enfocada en proteger activos críticos mediante control disciplinado de contaminación, inteligencia de aplicación, arquitectura de producto validada y ejecución comercial confiable.',
-    identityTitle: 'Filtración industrial diseñada alrededor del activo',
-    identityBody: 'El filtro es el medio. La protección del activo es el objetivo. ELIMFILTERS desarrolla soluciones de filtración a partir de la condición operativa del equipo protegido, integrando conocimiento técnico, arquitectura de producto, manufactura calificada, validación, inteligencia de aplicación y ejecución de mercado.',
-    systemsTitle: 'Qué Protegemos',
-    systemsLead: 'Nuestra arquitectura técnica se organiza alrededor de cinco sistemas de protección que representan las principales funciones de control de contaminación en equipos móviles e industriales.',
-    philosophyTitle: 'Filosofía de Ingeniería',
-    philosophyBody: 'Las decisiones de ingeniería se rigen por evidencia, contexto de aplicación, validación física, integridad técnica y el valor operativo del activo que se protege. La inteligencia artificial puede apoyar análisis y ejecución, pero no sustituye la validación física, la trazabilidad ni el juicio técnico profesional.',
-    structureTitle: 'Estructura Corporativa',
-    networkTitle: 'Red de Socios Comerciales',
-    networkBody: 'Los socios comerciales calificados amplían la capacidad técnica de ELIMFILTERS, el acceso al producto, la estrategia de inventario, las relaciones con clientes y la ejecución local.',
-    knowledgeTitle: 'Recursos de Conocimiento',
-    knowledgeBody: 'Conocimiento técnico sobre normas de filtración, control de contaminación, comportamiento de aplicaciones, inteligencia de producto, condiciones operativas y principios de protección de activos.',
-    closingTitle: 'Construidos para capacidad, no para aparentar tamaño.',
-    closingBody: 'Nuestro modelo operativo está diseñado para escalar competencia, velocidad, continuidad y disciplina técnica antes de añadir complejidad organizacional. La integridad del producto y los resultados del cliente siguen siendo la medida de si el modelo funciona.',
+    heroLead: 'ELIMFILTERS® es la marca global de filtración industrial de Kleo Technology LLC, enfocada en proteger activos críticos mediante control disciplinado de contaminación, inteligencia de aplicación y arquitectura de producto validada.',
+    identityTitle: 'Ingeniería de filtración organizada alrededor del activo',
+    identityBody: 'El filtro es el medio. La protección del activo es el objetivo. ELIMFILTERS conecta conocimiento técnico, arquitectura de producto, manufactura calificada, validación, inteligencia de aplicación y ejecución de mercado para ayudar a preservar confiabilidad, continuidad operativa y vida útil.',
+    visionTitle: 'Visión de la Compañía',
+    visionBody: 'Construir el ecosistema de protección de activos más inteligente del mundo: uno en el que la contaminación se controle antes de causar daño y cada decisión de protección mejore con evidencia, conocimiento e inteligencia.',
+    missionTitle: 'Misión',
+    missionBody: 'Proteger activos industriales mediante el control de contaminación, ayudando a las organizaciones a mejorar la confiabilidad, reducir tiempos de inactividad y extender la vida útil de sus equipos.',
+    philosophyTitle: 'Filosofía de Protección de Activos',
+    philosophyBody: 'No comenzamos con el filtro. Comenzamos con el activo, su sistema, su condición operativa y el riesgo que debe controlarse. Los productos implementan tecnologías; las tecnologías deben responder a una estrategia de protección; y la protección debe producir un resultado operativo verificable.',
+    positioningTitle: 'Posicionamiento Global',
+    positioningBody: 'ELIMFILTERS opera como una organización global de sistemas de protección de activos para aplicaciones industriales, heavy-duty, flotas, equipos y mercados automotrices complementarios. La marca pertenece a Kleo Technology LLC y coordina ingeniería, conocimiento, inteligencia de aplicaciones y desarrollo comercial desde Frisco, Texas.',
+    evolutionTitle: 'Evolución de ELIMFILTERS',
+    evolutionBody: 'ELIMFILTERS comenzó atendiendo aplicaciones de filtración exigentes. La experiencia en transporte, construcción, minería, agricultura, manufactura, marina, generación de energía y petróleo y gas reveló una realidad común: la contaminación es una de las causas más predecibles y controlables de falla. Esa comprensión transformó el enfoque desde referencias individuales hacia sistemas, tecnologías y estrategias integradas de protección de activos.',
   } : {
     heroTitle: 'Who We Are',
-    heroLead: 'ELIMFILTERS® is an industrial filtration engineering organization focused on protecting critical assets through disciplined contamination control, application intelligence, validated product architecture, and reliable commercial execution.',
-    identityTitle: 'Industrial filtration engineered around the asset',
-    identityBody: 'The filter is the means. Asset protection is the objective. ELIMFILTERS develops filtration solutions around the operating condition of the protected equipment, connecting technical knowledge, product architecture, qualified manufacturing, validation, application intelligence, and market execution.',
-    systemsTitle: 'What We Protect',
-    systemsLead: 'Our technical architecture is organized around five protection systems that reflect the major contamination-control functions of mobile and industrial equipment.',
-    philosophyTitle: 'Engineering Philosophy',
-    philosophyBody: 'Engineering decisions are governed by evidence, application context, physical validation, technical integrity, and the operating value of the protected asset. Artificial intelligence may support analysis and execution, but it does not replace physical validation, traceability, or professional engineering judgment.',
-    structureTitle: 'Corporate Structure',
-    networkTitle: 'Commercial Partner Network',
-    networkBody: 'Qualified commercial partners extend ELIMFILTERS technical capability, product access, inventory strategy, customer relationships, and local market execution.',
-    knowledgeTitle: 'Knowledge Resources',
-    knowledgeBody: 'Technical knowledge on filtration standards, contamination control, application behavior, product intelligence, operating conditions, and asset-protection principles.',
-    closingTitle: 'Built for capability, not apparent headcount.',
-    closingBody: 'Our operating model is designed to scale competence, speed, continuity, and technical discipline before adding organizational complexity. Product integrity and customer outcomes remain the measure of whether the model works.',
+    heroLead: 'ELIMFILTERS® is Kleo Technology LLC’s global industrial filtration brand, focused on protecting critical assets through disciplined contamination control, application intelligence, and validated product architecture.',
+    identityTitle: 'Filtration engineering organized around the asset',
+    identityBody: 'The filter is the means. Asset protection is the objective. ELIMFILTERS connects technical knowledge, product architecture, qualified manufacturing, validation, application intelligence, and market execution to help preserve reliability, operating continuity, and service life.',
+    visionTitle: 'Company Vision',
+    visionBody: 'Build the world’s most intelligent asset-protection ecosystem: one in which contamination is controlled before it causes damage and every protection decision improves through evidence, knowledge, and intelligence.',
+    missionTitle: 'Mission',
+    missionBody: 'Protect industrial assets through contamination control, helping organizations improve reliability, reduce downtime, and extend equipment life.',
+    philosophyTitle: 'Asset Protection Philosophy',
+    philosophyBody: 'We do not start with the filter. We start with the asset, its system, its operating condition, and the risk that must be controlled. Products implement technologies; technologies must serve a protection strategy; and protection must produce a verifiable operating outcome.',
+    positioningTitle: 'Global Positioning',
+    positioningBody: 'ELIMFILTERS operates as a global asset-protection systems organization for industrial, heavy-duty, fleet, equipment, and complementary automotive applications. The brand is owned by Kleo Technology LLC and coordinates engineering, knowledge, application intelligence, and commercial development from Frisco, Texas.',
+    evolutionTitle: 'Evolution of ELIMFILTERS',
+    evolutionBody: 'ELIMFILTERS began by serving demanding filtration applications. Experience across transportation, construction, mining, agriculture, manufacturing, marine, power generation, and oil and gas revealed a common reality: contamination is one of the most predictable and controllable causes of failure. That understanding evolved the organization from individual references toward integrated asset-protection systems, technologies, and strategies.',
   };
 
   return (
@@ -78,90 +67,200 @@ export default function AboutPage() {
       </section>
 
       <section style={darkSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>{copy.systemsTitle}</p>
-          <h2 style={sectionTitle}>{copy.systemsLead}</h2>
-          <div style={systemsGrid}>
-            {SYSTEMS.map((system, index) => (
-              <article key={system} style={systemCard}>
-                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
-                <h3 style={cardTitle}>{system}</h3>
-              </article>
-            ))}
-          </div>
+        <div style={twoColumn}>
+          <article style={statementCard}>
+            <p style={eyebrow}>{copy.visionTitle}</p>
+            <h2 style={statementTitle}>{copy.visionBody}</h2>
+          </article>
+          <article style={statementCard}>
+            <p style={eyebrow}>{copy.missionTitle}</p>
+            <h2 style={statementTitle}>{copy.missionBody}</h2>
+          </article>
         </div>
       </section>
 
-
-      <section id="engineering-philosophy" style={philosophySection}>
+      <section id="asset-protection-philosophy" style={philosophySection}>
         <div style={wrap}>
           <p style={eyebrow}>{copy.philosophyTitle}</p>
-          <h2 style={sectionTitle}>{isSpanish ? 'Ingeniería antes que marketing.' : 'Engineering before marketing.'}</h2>
+          <h2 style={sectionTitle}>{isSpanish ? 'El activo primero.' : 'The asset comes first.'}</h2>
           <p style={sectionLead}>{copy.philosophyBody}</p>
-          <Link href="/about/philosophy" style={textLink}>{isSpanish ? 'Leer la filosofía completa →' : 'Read the full engineering philosophy →'}</Link>
         </div>
       </section>
 
-      <section style={corporateSection}>
+      <section id="global-positioning" style={lightSection}>
         <div style={wrap}>
-          <p style={eyebrow}>{copy.structureTitle}</p>
-          <ul style={structureList}>
-            <li><strong style={label}>{isSpanish ? 'Propietario de la Marca' : 'Brand Owner'}:</strong> Kleo Technology LLC</li>
-            <li><strong style={label}>{isSpanish ? 'Sede Legal' : 'Legal Headquarters'}:</strong> Frisco, Texas, USA</li>
-            <li><strong style={label}>{isSpanish ? 'Modelo Operativo' : 'Operating Model'}:</strong> {isSpanish ? 'Operación global distributor-first con capacidad coordinada para cuentas estratégicas' : 'Distributor-first global operations with coordinated strategic-account capability'}</li>
-          </ul>
-          <div style={twoCol}>
-            <div>
-              <p style={eyebrow}>{copy.networkTitle}</p>
-              <p style={bodyText}>{copy.networkBody}</p>
-              <Link href="/distributors" style={textLink}>{isSpanish ? 'Explorar Red de Socios Comerciales →' : 'Explore Commercial Partner Network →'}</Link>
-            </div>
-            <div>
-              <p style={eyebrow}>{copy.knowledgeTitle}</p>
-              <p style={bodyText}>{copy.knowledgeBody}</p>
-              <Link href="/knowledge-center/" style={textLink}>{isSpanish ? 'Acceder al Centro de Conocimiento →' : 'Access Knowledge Center →'}</Link>
-            </div>
-          </div>
+          <p style={darkEyebrow}>{copy.positioningTitle}</p>
+          <h2 style={darkTitle}>{isSpanish ? 'Capacidad global. Responsabilidad definida.' : 'Global capability. Defined accountability.'}</h2>
+          <p style={darkBody}>{copy.positioningBody}</p>
         </div>
       </section>
 
-      <section style={closingSection}>
+      <section id="evolution" style={evolutionSection}>
         <div style={wrap}>
-          <p style={eyebrow}>CAPABILITY BEFORE COMPLEXITY</p>
-          <h2 style={closingTitle}>{copy.closingTitle}</h2>
-          <p style={closingBody}>{copy.closingBody}</p>
+          <p style={eyebrow}>{copy.evolutionTitle}</p>
+          <h2 style={sectionTitle}>{isSpanish ? 'De la filtración a la protección integral del activo.' : 'From filtration to integrated asset protection.'}</h2>
+          <p style={sectionLead}>{copy.evolutionBody}</p>
         </div>
       </section>
     </main>
   );
 }
 
-const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
-const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%' };
-const heroSection: CSSProperties = { minHeight: '76vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem,10vw,9rem) clamp(1.25rem,6vw,6rem)' };
-const heroImage: CSSProperties = { position: 'absolute', inset: 0, backgroundImage: 'url(/images/grupo-filters.avif)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: .38 };
-const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.48) 58%,rgba(0,0,0,.2)),radial-gradient(circle at 80% 15%,rgba(255,241,45,.14),transparent 32%)' };
-const eyebrow: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', fontWeight: 700, letterSpacing: '.16em', margin: '0 0 1rem', textTransform: 'uppercase', position: 'relative', zIndex: 2 };
-const darkEyebrow: CSSProperties = { ...eyebrow, color: '#6c6100' };
-const heroTitle: CSSProperties = { position: 'relative', zIndex: 2, fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-.05em', lineHeight: .92, fontSize: 'clamp(3.2rem,7vw,7rem)', margin: 0, textTransform: 'uppercase' };
-const heroLead: CSSProperties = { position: 'relative', zIndex: 2, marginTop: '1.5rem', maxWidth: '900px', color: 'rgba(255,255,255,.82)', fontSize: 'clamp(1rem,1.5vw,1.25rem)', lineHeight: 1.75, fontWeight: 550 };
-const lightSection: CSSProperties = { background: '#f2f2ef', color: '#111', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
-const darkSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
-const darkTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '850px', margin: '0 0 1.5rem', textTransform: 'uppercase' };
-const darkBody: CSSProperties = { maxWidth: '880px', color: '#3d3d3a', lineHeight: 1.8, fontSize: '1.05rem' };
-const sectionTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '950px', margin: '0 0 1rem', textTransform: 'uppercase' };
-const sectionLead: CSSProperties = { color: 'rgba(255,255,255,.68)', lineHeight: 1.75, maxWidth: '900px', fontSize: '1.03rem' };
-const systemsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)', marginTop: '2.5rem' };
-const systemCard: CSSProperties = { background: '#080808', padding: '1.5rem', minHeight: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' };
-const number: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', letterSpacing: '.14em', fontWeight: 700 };
-const cardTitle: CSSProperties = { margin: '1.5rem 0 0', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2, textTransform: 'uppercase' };
-const philosophySection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
-const corporateSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
-const structureList: CSSProperties = { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem', color: 'rgba(255,255,255,.72)', lineHeight: 1.65 };
-const label: CSSProperties = { color: '#FFF12D' };
-const twoCol: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', marginTop: '3rem' };
-const bodyText: CSSProperties = { color: 'rgba(255,255,255,.66)', lineHeight: 1.75 };
-const textLink: CSSProperties = { display: 'inline-block', marginTop: '1rem', color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.05em' };
-const closingSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,241,45,.16)' };
-const closingTitle: CSSProperties = { ...sectionTitle, maxWidth: '900px' };
-const closingBody: CSSProperties = { ...sectionLead, maxWidth: '850px' };
+const main: CSSProperties = {
+  background: '#000',
+  color: '#fff',
+  minHeight: '100vh',
+  fontFamily: 'var(--font-body)',
+};
+
+const wrap: CSSProperties = {
+  maxWidth: '1180px',
+  margin: '0 auto',
+  width: '100%',
+};
+
+const heroSection: CSSProperties = {
+  minHeight: '76vh',
+  position: 'relative',
+  overflow: 'hidden',
+  display: 'flex',
+  alignItems: 'center',
+  padding: 'clamp(6rem,10vw,9rem) clamp(1.25rem,6vw,6rem)',
+};
+
+const heroImage: CSSProperties = {
+  position: 'absolute',
+  inset: 0,
+  backgroundImage: 'url(/images/grupo-filters.avif)',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  opacity: 0.38,
+};
+
+const heroOverlay: CSSProperties = {
+  position: 'absolute',
+  inset: 0,
+  background: 'linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.48) 58%,rgba(0,0,0,.2)),radial-gradient(circle at 80% 15%,rgba(255,241,45,.14),transparent 32%)',
+};
+
+const eyebrow: CSSProperties = {
+  color: '#FFF12D',
+  fontFamily: 'var(--font-display)',
+  fontSize: '.72rem',
+  fontWeight: 700,
+  letterSpacing: '.16em',
+  margin: '0 0 1rem',
+  textTransform: 'uppercase',
+  position: 'relative',
+  zIndex: 2,
+};
+
+const darkEyebrow: CSSProperties = {
+  ...eyebrow,
+  color: '#6c6100',
+};
+
+const heroTitle: CSSProperties = {
+  position: 'relative',
+  zIndex: 2,
+  fontFamily: 'var(--font-display)',
+  fontWeight: 700,
+  letterSpacing: '-.05em',
+  lineHeight: 0.92,
+  fontSize: 'clamp(3.2rem,7vw,7rem)',
+  margin: 0,
+  textTransform: 'uppercase',
+};
+
+const heroLead: CSSProperties = {
+  position: 'relative',
+  zIndex: 2,
+  marginTop: '1.5rem',
+  maxWidth: '900px',
+  color: 'rgba(255,255,255,.82)',
+  fontSize: 'clamp(1rem,1.5vw,1.25rem)',
+  lineHeight: 1.75,
+  fontWeight: 550,
+};
+
+const lightSection: CSSProperties = {
+  background: '#f2f2ef',
+  color: '#111',
+  padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)',
+  scrollMarginTop: '90px',
+};
+
+const darkSection: CSSProperties = {
+  background: '#050505',
+  padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)',
+};
+
+const philosophySection: CSSProperties = {
+  background: '#000',
+  padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)',
+};
+
+const evolutionSection: CSSProperties = {
+  background: 'radial-gradient(circle at 80% 0%,rgba(255,241,45,.12),transparent 34%),#050505',
+  padding: 'clamp(5rem,9vw,8rem) clamp(1.25rem,6vw,6rem)',
+  borderTop: '1px solid rgba(255,255,255,.06)',
+};
+
+const twoColumn: CSSProperties = {
+  maxWidth: '1180px',
+  margin: '0 auto',
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))',
+  gap: '1px',
+  background: 'rgba(255,255,255,.1)',
+  border: '1px solid rgba(255,255,255,.1)',
+};
+
+const statementCard: CSSProperties = {
+  background: '#080808',
+  padding: 'clamp(2rem,4vw,3.5rem)',
+  minHeight: '310px',
+};
+
+const statementTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)',
+  fontSize: 'clamp(1.5rem,2.7vw,2.7rem)',
+  lineHeight: 1.18,
+  letterSpacing: '-.025em',
+  margin: '2rem 0 0',
+  maxWidth: '560px',
+};
+
+const darkTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)',
+  fontSize: 'clamp(2rem,4vw,4rem)',
+  lineHeight: 1,
+  letterSpacing: '-.035em',
+  maxWidth: '900px',
+  margin: '0 0 1.5rem',
+  textTransform: 'uppercase',
+};
+
+const darkBody: CSSProperties = {
+  maxWidth: '900px',
+  color: '#3d3d3a',
+  lineHeight: 1.8,
+  fontSize: '1.05rem',
+};
+
+const sectionTitle: CSSProperties = {
+  fontFamily: 'var(--font-display)',
+  fontSize: 'clamp(2rem,4vw,4rem)',
+  lineHeight: 1,
+  letterSpacing: '-.035em',
+  maxWidth: '950px',
+  margin: '0 0 1rem',
+  textTransform: 'uppercase',
+};
+
+const sectionLead: CSSProperties = {
+  color: 'rgba(255,255,255,.68)',
+  lineHeight: 1.78,
+  maxWidth: '900px',
+  fontSize: '1.05rem',
+};
