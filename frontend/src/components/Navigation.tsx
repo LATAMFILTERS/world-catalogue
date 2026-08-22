@@ -12,7 +12,8 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -47,7 +48,7 @@ export function Navigation() {
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
           <NavLink href="/knowledge-center/">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
-          <NavLink href="/about">{t('nav.about', 'About')}</NavLink>
+          <AboutNavMenu label={t('nav.about', 'About')} isSpanish={isSpanish} />
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
           <motion.a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.18 }} style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.1em', padding: '0.55rem 1.35rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase' }}>
@@ -73,11 +74,14 @@ export function Navigation() {
                 { href: '/systems', label: t('nav.systems', 'Systems') },
                 { href: '/technologies', label: t('nav.technologies', 'Technologies') },
                 { href: '/knowledge-center/', label: t('nav.knowledge', 'Knowledge') },
-                { href: '/about', label: t('nav.about', 'About') },
+                { href: '/about', label: isSpanish ? 'Quiénes Somos' : 'Who We Are' },
+                { href: '/about/leadership', label: isSpanish ? 'Liderazgo' : 'Leadership', child: true },
+                { href: '/technologies', label: isSpanish ? 'Tecnología e Innovación' : 'Technology & Innovation', child: true },
+                { href: '/legal/ai-policy', label: isSpanish ? 'Gobernanza' : 'Governance', child: true },
                 { href: '/contact', label: t('nav.contact', 'Contact') },
               ].map((item) => (
                 <motion.div key={item.href} variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
-                  <Link href={item.href} style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>{item.label}</Link>
+                  <Link href={item.href} style={{ ...mobileLinkStyle, paddingLeft: item.child ? '1rem' : 0, color: item.child ? 'rgba(255,255,255,0.62)' : mobileLinkStyle.color }} onClick={() => setMenuOpen(false)}>{item.child ? '— ' : ''}{item.label}</Link>
                 </motion.div>
               ))}
               <motion.div variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
@@ -93,6 +97,89 @@ export function Navigation() {
         @media (min-width: 769px) {.show-mobile{display:none!important}}
       `}</style>
     </nav>
+  );
+}
+
+
+function AboutNavMenu({ label, isSpanish }: { label: string; isSpanish: boolean }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onFocus={() => setOpen(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setOpen(false);
+      }}
+      style={{ position: 'relative' }}
+    >
+      <Link
+        href="/about"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        style={{
+          color: open ? '#FFF12D' : 'rgba(255,255,255,0.75)',
+          textDecoration: 'none',
+          fontFamily: HEADER_DISPLAY_FONT,
+          fontSize: '0.95rem',
+          fontWeight: 600,
+          letterSpacing: '0.025em',
+          paddingBottom: '8px',
+          display: 'block',
+        }}
+      >
+        {label}
+      </Link>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            role="menu"
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.18 }}
+            style={{
+              position: 'absolute',
+              top: '100%',
+              left: '-1rem',
+              minWidth: '260px',
+              background: 'rgba(5,5,5,.98)',
+              border: '1px solid rgba(255,255,255,.1)',
+              borderTop: '2px solid #FFF12D',
+              padding: '.55rem',
+              backdropFilter: 'blur(14px)',
+            }}
+          >
+            <AboutMenuLink href="/about">{isSpanish ? 'Quiénes Somos' : 'Who We Are'}</AboutMenuLink>
+            <AboutMenuLink href="/about/leadership">{isSpanish ? 'Liderazgo' : 'Leadership'}</AboutMenuLink>
+            <AboutMenuLink href="/technologies">{isSpanish ? 'Tecnología e Innovación' : 'Technology & Innovation'}</AboutMenuLink>
+            <AboutMenuLink href="/legal/ai-policy">{isSpanish ? 'Gobernanza' : 'Governance'}</AboutMenuLink>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function AboutMenuLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      role="menuitem"
+      href={href}
+      style={{
+        display: 'block',
+        color: 'rgba(255,255,255,.78)',
+        textDecoration: 'none',
+        fontFamily: HEADER_DISPLAY_FONT,
+        fontSize: '.82rem',
+        fontWeight: 600,
+        padding: '.72rem .75rem',
+        borderBottom: '1px solid rgba(255,255,255,.06)',
+      }}
+    >
+      {children}
+    </Link>
   );
 }
 
