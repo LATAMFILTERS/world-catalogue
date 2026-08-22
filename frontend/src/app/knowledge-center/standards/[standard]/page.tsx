@@ -17,6 +17,14 @@ const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
     title: 'ISO 16889 Multi-Pass Filter Test Method | ELIMFILTERS',
     description: 'Engineering reference for ISO 16889 multi-pass filter testing, beta ratio, filtration efficiency, contaminant loading and application interpretation.',
   },
+  'iso-4406': {
+    title: 'ISO 4406 Fluid Cleanliness Code — Standard Reference | ELIMFILTERS',
+    description: 'Normative engineering reference for ISO 4406 fluid cleanliness coding, particle-count size channels and cleanliness class interpretation.',
+  },
+  'iso-8573-1': {
+    title: 'ISO 8573-1 Compressed Air Purity Classes — Standard Reference | ELIMFILTERS',
+    description: 'Normative engineering reference for ISO 8573-1 compressed-air purity classes covering particles, water and oil contamination limits.',
+  },
   'iso-12937': {
     title: 'ISO 12937 Water in Petroleum Products | ELIMFILTERS',
     description: 'Engineering reference for ISO 12937 determination of water in petroleum products, test context, interpretation and contamination-control applications.',
