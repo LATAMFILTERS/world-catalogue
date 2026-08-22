@@ -29,6 +29,11 @@ const relativeRoute = new RegExp(
   'g',
 );
 
+const legacyInternalRoutes = [
+  ['/fleet-optimization/', '/knowledge-center/fleet-optimization/'],
+  ['/knowledge-system/problems', '/knowledge-center/problems/'],
+];
+
 let changedFiles = 0;
 let replacements = 0;
 
@@ -44,6 +49,14 @@ for (const file of htmlFiles) {
     replacements += 1;
     return `${match}/`;
   });
+
+  for (const [legacyRoute, canonicalRoute] of legacyInternalRoutes) {
+    const before = html;
+    html = html.replaceAll(legacyRoute, canonicalRoute);
+    if (html !== before) {
+      replacements += before.split(legacyRoute).length - 1;
+    }
+  }
 
   if (html !== original) {
     fs.writeFileSync(file, html, 'utf8');
