@@ -373,24 +373,24 @@ export default function Home() {
         {/* ── ENGINEERING ENTRY ── */}
 
         {/* ── INDUSTRIES STRIP ── */}
-      <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+      <section style={{ padding: '4.75rem 8%', background: 'var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
 
               <motion.h2 variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.05, color: 'rgba(255,255,255,0.85)', marginBottom: '2.75rem' }}>
+                style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.05, color: 'var(--ink)', marginBottom: '2.75rem' }}>
                 {t('home.problemH1', "WHAT YOU CAN'T SEE")}
                 <br /><span style={{ color: '#FFF12D' }}>{t('home.problemH2', 'IS STOPPING YOUR OPERATION.')}</span>
               </motion.h2>
             </motion.div>
 
-            <SpotlightCard style={{ background: '#050505', padding: '3.5rem', border: '1px solid #1a1a1a', borderRadius: '2px' }}
+            <SpotlightCard style={{ background: 'var(--surface-light-2)', padding: '3.5rem', border: '1px solid var(--border-on-light)', borderRadius: '2px' }}
               contentClassName="spotlight-grid" contentStyle={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }}
                 variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem', marginBottom: '2.5rem', lineHeight: 1.75, fontFamily: 'Barlow, Arial, sans-serif' }}>
+                  style={{ color: 'var(--ink-2)', fontSize: '1.05rem', marginBottom: '2.5rem', lineHeight: 1.75, fontFamily: 'Barlow, Arial, sans-serif' }}>
                   {t('home.problemIntro', 'Up to 80% of premature hydraulic component failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.')}
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -401,8 +401,8 @@ export default function Home() {
                         <span style={{ color: '#f87171', fontWeight: 700, fontSize: '0.8rem', fontFamily: 'Barlow, Arial, sans-serif' }}>{FAILURE_NUMS[idx] ?? String(idx + 1).padStart(2, '0')}</span>
                       </div>
                       <div>
-                        <h3 style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.82rem', marginBottom: '0.3rem', fontFamily: 'Barlow, Arial, sans-serif' }}>{item.title}</h3>
-                        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.875rem', lineHeight: 1.65, fontFamily: 'Barlow, Arial, sans-serif' }}>{item.desc}</p>
+                        <h3 style={{ color: 'var(--ink)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.82rem', marginBottom: '0.3rem', fontFamily: 'Barlow, Arial, sans-serif' }}>{item.title}</h3>
+                        <p style={{ color: 'var(--ink-3)', fontSize: '0.875rem', lineHeight: 1.65, fontFamily: 'Barlow, Arial, sans-serif' }}>{item.desc}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -422,7 +422,7 @@ export default function Home() {
         </section>
 
         {/* ── REAL COST OF CONTAMINATION ── */}
-        <section style={{ padding: '4.75rem 8%', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+        <section style={{ padding: '4.75rem 8%', background: 'var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -431,11 +431,11 @@ export default function Home() {
               viewport={{ once: true, margin: '-80px' }}
             >
 
-              <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.65rem)', textTransform: 'uppercase', lineHeight: 1.1, color: 'rgba(255,255,255,0.85)', marginBottom: '1.25rem' }}>
+              <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.65rem)', textTransform: 'uppercase', lineHeight: 1.1, color: 'var(--ink)', marginBottom: '1.25rem' }}>
                 One Contamination Event.<br />
                 <span style={{ color: '#FFF12D' }}>A Cascade Of Losses.</span>
               </h2>
-              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, maxWidth: '760px', marginBottom: '2.5rem' }}>
+              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'var(--ink-2)', lineHeight: 1.8, maxWidth: '760px', marginBottom: '2.5rem' }}>
                 A single contamination failure rarely stays contained. It escalates from a damaged component to a full assembly replacement, to fluid and system recertification, to unplanned downtime that stalls the whole operation — costs that compound far beyond the part that failed.
               </p>
             </motion.div>
@@ -452,11 +452,11 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true, margin: '-40px' }}
-                  style={{ background: '#050505', border: '1px solid rgba(255,255,255,0.08)', padding: '2rem', borderRadius: '2px' }}
+                  style={{ background: 'var(--surface-light-2)', border: '1px solid var(--border-on-light)', padding: '2rem', borderRadius: '2px' }}
                 >
                   <p style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{item.icon}</p>
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.7)', marginBottom: '0.6rem' }}>{item.label}</p>
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.65, textAlign: 'left' }}>{item.desc}</p>
+                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--ink-2)', marginBottom: '0.6rem' }}>{item.label}</p>
+                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.85rem', color: 'var(--ink-2)', lineHeight: 1.65, textAlign: 'left' }}>{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -466,33 +466,33 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true, margin: '-60px' }}
-              style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.2)', padding: '2rem 2.5rem', borderRadius: '2px' }}
+              style={{ background: 'var(--surface-light-2)', border: '1px solid rgba(255,241,45,0.35)', padding: '2rem 2.5rem', borderRadius: '2px' }}
             >
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem', textTransform: 'uppercase' }}>Prevention vs. Failure</p>
-              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, maxWidth: '760px' }}>
+              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', color: 'var(--ink-2)', lineHeight: 1.7, maxWidth: '760px' }}>
                 Scheduled filter replacement is a routine maintenance line item. A contamination-driven failure is not.
                 <br />
-                <strong style={{ color: 'rgba(255,255,255,0.85)' }}>Asset protection is not a cost — it is the lowest-cost insurance available.</strong>
+                <strong style={{ color: 'var(--ink)' }}>Asset protection is not a cost — it is the lowest-cost insurance available.</strong>
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* ── WHY ELIMFILTERS ── */}
-        <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+        <section style={{ padding: '4.75rem 8%', background: 'var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.h2 initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.05, color: 'rgba(255,255,255,0.85)', marginBottom: '2.75rem' }}>
+              style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.05, color: 'var(--ink)', marginBottom: '2.75rem' }}>
               {t('home.whyTitle1', 'ASSET PROTECTION')} <span style={{ color: '#FFF12D' }}>{t('home.whyTitle2', 'TECHNOLOGY')}</span>
             </motion.h2>
             <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1.75rem' }}>
+                  style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'var(--ink-2)', marginBottom: '1.75rem' }}>
                   {t('home.whyP1', 'ELIMFILTERS is not a filter company. ELIMFILTERS is an ')}<strong style={{ color: '#FFF12D' }}>{t('home.whyP1hl', 'Asset Protection Technology')}</strong>{t('home.whyP1after', ' company — engineering systems that control contamination, prevent degradation and protect the value of critical industrial assets.')}
                 </motion.p>
                 <motion.p variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '1.75rem' }}>
+                  style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'var(--ink-2)', marginBottom: '1.75rem' }}>
                   {t('home.whyP2', 'Every technology we build addresses a measurable contamination threat. Equipment that fails costs hundreds of thousands to repair. We protect that investment at the system level, not the product level.')}
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -500,23 +500,23 @@ export default function Home() {
                     <motion.div key={i} variants={{ hidden: { opacity: 0, x: -24 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
                       style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                       <span style={{ color: '#FFF12D', fontWeight: 700, fontSize: '1rem', flexShrink: 0 }}>OK</span>
-                      <span style={{ fontFamily: 'Barlow, Arial, sans-serif', color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem' }}>{item}</span>
+                      <span style={{ fontFamily: 'Barlow, Arial, sans-serif', color: 'var(--ink-2)', fontSize: '0.95rem' }}>{item}</span>
                     </motion.div>
                   ))}
                 </div>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}>
-                <SpotlightCard style={{ background: '#050505', padding: '2.5rem', border: '1px solid #1a1a1a', borderRadius: '2px' }}>
+                <SpotlightCard style={{ background: 'var(--surface-light-2)', padding: '2.5rem', border: '1px solid var(--border-on-light)', borderRadius: '2px' }}>
 
-                  <h3 style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.3rem', color: 'rgba(255,255,255,0.85)', marginBottom: '1.5rem', lineHeight: 1.3, textAlign: 'justify' }}>
+                  <h3 style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.3rem', color: 'var(--ink)', marginBottom: '1.5rem', lineHeight: 1.3, textAlign: 'justify' }}>
                     {t('home.whyCardTitle1', 'Your equipment is worth millions.')}<br />{t('home.whyCardTitle2', 'Protect it accordingly.')}
                   </h3>
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.65)', marginBottom: '2rem' }}>
+                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--ink-2)', marginBottom: '2rem' }}>
                     {t('home.whyCardDesc', 'Every ELIMFILTERS technology exists to protect critical assets, reduce downtime and extend operational life.')}
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {(Array.isArray(whyCardItems) ? whyCardItems : []).map((item, i) => (
-                      <li key={i} style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', paddingLeft: '1.5rem', position: 'relative' }}>
+                      <li key={i} style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'var(--ink-2)', paddingLeft: '1.5rem', position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>→</span>
                         {item}
                       </li>
@@ -529,23 +529,23 @@ export default function Home() {
         </section>
 
         {/* ── ASSET PROTECTION NARRATIVE ── */}
-        <section style={{ padding: '4.75rem 8%', background: 'linear-gradient(180deg, rgba(255,241,45,0.03) 0%, transparent 100%)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+        <section style={{ padding: '4.75rem 8%', background: 'linear-gradient(180deg, rgba(255,241,45,0.05) 0%, transparent 100%), var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
             style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div className="asset-protection-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
               <div>
 
-                <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: 'clamp(1.7rem, 3.2vw, 2.25rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem' }}>
+                <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: 'clamp(1.7rem, 3.2vw, 2.25rem)', fontWeight: 700, lineHeight: 1.15, color: 'var(--ink)', marginBottom: '1.5rem' }}>
                   {t('home.assetTitle', 'Protecting Industrial Assets Through Contamination Control')}
                 </h2>
-                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', color: 'var(--ink-2)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
                   {t('home.assetP1', 'ELIMFILTERS protects industrial assets by controlling contamination across critical systems. Our engineering approach focuses on preventing degradation, extending service life, improving reliability and reducing total cost of ownership.')}
                 </p>
-                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, paddingLeft: '1.25rem', borderLeft: '3px solid #FFF12D' }}>
+                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'var(--ink-3)', lineHeight: 1.7, paddingLeft: '1.25rem', borderLeft: '3px solid #FFF12D' }}>
                   {t('home.assetP2', 'Every technology we engineer addresses a specific contamination mechanism — particle wear, water ingestion, bypass failure, or thermal degradation — targeting the root cause of premature asset failure.')}
                 </p>
               </div>
-              <div style={{ background: '#050505', border: '1px solid rgba(255,241,45,0.15)', padding: '2.5rem' }}>
+              <div style={{ background: 'var(--surface-light-2)', border: '1px solid rgba(255,241,45,0.3)', padding: '2.5rem' }}>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
@@ -556,8 +556,8 @@ export default function Home() {
                     <div key={i} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                       <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#FFF12D', flexShrink: 0, marginTop: '0.52rem' }} />
                       <div>
-                        <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', margin: '0 0 0.2rem', letterSpacing: '0.02em' }}>{item.label}</p>
-                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'rgba(255,255,255,0.48)', margin: 0, letterSpacing: 0 }}>{item.desc}</p>
+                        <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'var(--ink)', margin: '0 0 0.2rem', letterSpacing: '0.02em' }}>{item.label}</p>
+                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--ink-3)', margin: 0, letterSpacing: 0 }}>{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -568,15 +568,15 @@ export default function Home() {
         </section>
 
         {/* ── SCIENTIFIC AUTHORITY ── */}
-        <section style={{ padding: '4.75rem 8%', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+        <section style={{ padding: '4.75rem 8%', background: 'var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
               style={{ marginBottom: '2.75rem' }}>
 
-              <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', color: '#fff', lineHeight: 1.15, marginBottom: '1rem', maxWidth: '700px' }}>
+              <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', color: 'var(--ink)', lineHeight: 1.15, marginBottom: '1rem', maxWidth: '700px' }}>
                 {t('home.sciTitle', 'The Science Behind Asset Protection')}
               </h2>
-              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.5)', maxWidth: '640px' }}>
+              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'var(--ink-3)', maxWidth: '640px' }}>
                 {t('home.sciDesc', 'ELIMFILTERS contamination control systems are engineered to international standards, validated through rigorous laboratory testing and field deployment across critical industrial environments.')}
               </p>
             </motion.div>
@@ -595,22 +595,22 @@ export default function Home() {
         </section>
 
         {/* ── TECHNOLOGY ── */}
-        <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
+        <section style={{ padding: '4.75rem 8%', background: 'var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}>
 
               <motion.h2 variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.05, color: 'rgba(255,255,255,0.85)', marginBottom: '2.75rem' }}>
+                style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 3rem)', textTransform: 'uppercase', letterSpacing: '0.01em', lineHeight: 1.05, color: 'var(--ink)', marginBottom: '2.75rem' }}>
                 {t('home.techTitle', 'Asset Protection')} <span style={{ color: '#FFF12D' }}>{t('home.techHighlight', 'Technology')}</span>
               </motion.h2>
               <div className="tech-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
                 {(Array.isArray(techItems) ? techItems : []).map((tech, i) => (
                   <motion.div key={i} variants={{ hidden: { opacity: 0, y: 36 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 }}>
-                    <SpotlightCard style={{ background: '#050505', padding: '2rem', border: '1px solid #1a1a1a', borderRadius: '2px', height: '100%' }}>
+                    <SpotlightCard style={{ background: 'var(--surface-light-2)', padding: '2rem', border: '1px solid var(--border-on-light)', borderRadius: '2px', height: '100%' }}>
                       <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
                         <div style={{ width: 32, height: 2, background: '#FFF12D', marginBottom: '1.5rem' }} />
-                        <h3 style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#FFF12D', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{tech.title}</h3>
-                        <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.6)' }}>{tech.desc}</p>
+                        <h3 style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1rem', color: 'var(--volt-ink)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{tech.title}</h3>
+                        <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', lineHeight: 1.75, color: 'var(--ink-3)' }}>{tech.desc}</p>
                       </motion.div>
                     </SpotlightCard>
                   </motion.div>
