@@ -7,6 +7,25 @@ interface Props {
   params: { section: string };
 }
 
+const SEO_INTENT_OVERRIDES: Record<string, { title: string; description: string }> = {
+  'fluid-cleanliness': {
+    title: 'Fluid Cleanliness Engineering — ISO 4406 Application | ELIMFILTERS',
+    description: 'Engineering application reference for fluid cleanliness: interpreting ISO 4406 codes, particle contamination targets, monitoring and system-level cleanliness decisions.',
+  },
+  'differential-pressure': {
+    title: 'Differential Pressure Engineering — Filter ΔP Application | ELIMFILTERS',
+    description: 'Engineering application reference for differential pressure across filtration systems, including restriction, loading, monitoring and service decisions.',
+  },
+  'depth-filtration': {
+    title: 'Depth Filtration Engineering — Media Application | ELIMFILTERS',
+    description: 'Engineering application reference for depth-filtration media behavior, particle capture through media thickness and application tradeoffs.',
+  },
+  'compressed-air-purity': {
+    title: 'Compressed Air Purity Engineering — ISO 8573 Application | ELIMFILTERS',
+    description: 'Engineering application reference for selecting and interpreting compressed-air purity targets under ISO 8573 without replacing the formal standards reference.',
+  },
+};
+
 export async function generateStaticParams() {
   return ERL_SECTIONS.map((s) => ({ section: s.slug }));
 }
@@ -14,9 +33,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const section = getERLSection(params.section);
   if (!section) return { title: 'Not Found' };
+  const override = SEO_INTENT_OVERRIDES[section.slug];
   return {
-    title: `${section.title} | Engineering Reference | ELIMFILTERS`,
-    description: section.definition.slice(0, 155),
+    title: override?.title || `${section.title} | Engineering Reference | ELIMFILTERS`,
+    description: override?.description || section.definition.slice(0, 155),
     alternates: {
       canonical: `https://elimfilters.com/knowledge-center/engineering-reference/${section.slug}/`,
     },
