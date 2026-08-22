@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
 const out = path.join(root, 'frontend', 'out');
-const TARGET_FAMILIES = '(?:glossary|diagrams|engineering-reference)';
+const TARGET_FAMILIES = '(?:glossary|diagrams|engineering-reference|standards)';
 
 if (!fs.existsSync(out)) {
   console.error('[normalize-kc-canonical-entities] frontend/out is missing');
