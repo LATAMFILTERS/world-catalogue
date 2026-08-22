@@ -179,9 +179,17 @@ for (const file of files) {
   rawPages.push({ file, route, html, title, h1: h1s[0] ?? '', h1Count: h1s.length });
 }
 
+// Uniqueness is an authority-page property. Consolidated/legacy URLs must not
+// make the canonical destination appear duplicated, because they do not compete
+// as autonomous indexable entities.
+const authorityPagesForUniqueness = rawPages.filter((p) => {
+  const canon = canonical(p.html);
+  return canon === `https://elimfilters.com${p.route}`;
+});
+
 const titleCounts = new Map();
 const h1Counts = new Map();
-for (const p of rawPages) {
+for (const p of authorityPagesForUniqueness) {
   if (p.title) titleCounts.set(p.title.toLowerCase(), (titleCounts.get(p.title.toLowerCase()) ?? 0) + 1);
   if (p.h1) h1Counts.set(p.h1.toLowerCase(), (h1Counts.get(p.h1.toLowerCase()) ?? 0) + 1);
 }
@@ -211,9 +219,9 @@ for (const p of rawPages) {
   if (titleH1Overlap >= 0.45) intent += 5;
   else warnings.push('Title and H1 show weak semantic alignment.');
   if ((titleCounts.get(p.title.toLowerCase()) ?? 0) === 1) intent += 3;
-  else if (p.title) warnings.push('Title is duplicated on another indexable page.');
+  else if (p.title) warnings.push('Title is duplicated on another self-canonical indexable page.');
   if ((h1Counts.get(p.h1.toLowerCase()) ?? 0) === 1) intent += 2;
-  else if (p.h1) warnings.push('H1 is duplicated on another indexable page.');
+  else if (p.h1) warnings.push('H1 is duplicated on another self-canonical indexable page.');
   addResult(blocks, 'searchIntentOwnership', 15, intent, [`titleH1Overlap=${titleH1Overlap.toFixed(2)}`]);
 
   // 2. Technical SEO integrity — 15
