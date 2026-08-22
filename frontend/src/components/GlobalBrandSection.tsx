@@ -16,9 +16,9 @@ export function GlobalBrandSection() {
   return (
     <section style={{
       padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
-      background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), linear-gradient(90deg, rgba(255,241,45,0.08) 0%, transparent 50%)',
+      background: 'linear-gradient(90deg, rgba(255,241,45,0.06) 0%, transparent 50%), var(--surface-light)',
       borderTop: '1px solid rgba(255,241,45,0.15)',
-      borderBottom: '1px solid rgba(255,255,255,0.03)',
+      borderBottom: '1px solid var(--border-on-light)',
     }}>
       <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
         <motion.div
@@ -45,7 +45,7 @@ export function GlobalBrandSection() {
             textTransform: 'uppercase',
             letterSpacing: '0.01em',
             lineHeight: 1.05,
-            color: 'rgba(255,255,255,0.9)',
+            color: 'var(--ink)',
             marginBottom: '1.6rem',
             maxWidth: '980px',
           }}>
@@ -53,7 +53,7 @@ export function GlobalBrandSection() {
           </h2>
 
           <p style={{
-            color: 'rgba(255,255,255,0.72)',
+            color: 'var(--ink-2)',
             fontSize: 'clamp(1rem, 1.6vw, 1.15rem)',
             lineHeight: 1.8,
             maxWidth: '900px',
@@ -71,16 +71,16 @@ export function GlobalBrandSection() {
             {PLATFORM_PILLARS.map(([title, role, body]) => (
               <div key={title} style={{
                 padding: '1.25rem',
-                background: 'rgba(255,255,255,0.025)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: 'var(--surface-light-2)',
+                border: '1px solid var(--border-on-light)',
               }}>
                 <p style={{ color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.66rem', letterSpacing: '0.12em', textTransform: 'uppercase', margin: '0 0 0.65rem' }}>
                   {role}
                 </p>
-                <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.05rem', margin: '0 0 0.55rem', color: '#fff' }}>
+                <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.05rem', margin: '0 0 0.55rem', color: 'var(--ink)' }}>
                   {title}
                 </h3>
-                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ color: 'var(--ink-3)', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>
                   {body}
                 </p>
               </div>
@@ -96,7 +96,7 @@ export function GlobalBrandSection() {
             {PLATFORM_MANTRA.map((value) => (
               <span key={value} style={{
                 border: '1px solid rgba(255,241,45,0.28)',
-                color: 'rgba(255,255,255,0.82)',
+                color: 'var(--ink-2)',
                 padding: '0.6rem 0.85rem',
                 fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
                 fontWeight: 700,
@@ -150,7 +150,7 @@ export function GlobalBrandSection() {
             <Link href="/distributors" style={{
               display: 'inline-block',
               background: 'transparent',
-              color: 'rgba(255,255,255,0.72)',
+              color: 'var(--ink-2)',
               textDecoration: 'none',
               fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
               fontWeight: 700,
@@ -158,7 +158,7 @@ export function GlobalBrandSection() {
               fontSize: '0.82rem',
               padding: '0.95rem 1.35rem',
               textTransform: 'uppercase',
-              border: '1px solid rgba(255,255,255,0.2)',
+              border: '1px solid var(--border-on-light)',
             }}>
               Global Network
             </Link>
