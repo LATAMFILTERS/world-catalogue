@@ -46,7 +46,7 @@ jobs:
             echo "frontend/out was not generated; Authority Scorecard cannot run"
             exit 1
           fi
-          node scripts/audit-authority-scorecard.mjs
+          node scripts/audit-authority-scorecard-governed.mjs
 
       - name: Show Authority Scorecard summary
         if: always()
