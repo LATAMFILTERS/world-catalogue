@@ -190,7 +190,7 @@ export default function KnowledgeCenterPage() {
                 maxWidth: '720px',
                 margin: '0 0 2rem',
               }}>
-                Technical references for filtration, contamination control, equipment reliability and industrial asset protection — structured for engineers, maintenance leaders, fleet managers and technical decision-makers.
+                ELIMFILTERS Technical Knowledge Center provides engineering references for industrial filtration, contamination control, equipment reliability and asset protection, organized to help engineers, maintenance leaders and fleet managers move from operating condition to validated protection decisions.
               </p>
 
               <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
@@ -293,14 +293,14 @@ export default function KnowledgeCenterPage() {
               </p>
             </div>
 
-            <div>
+            <ol style={{ listStyle: 'none', margin: 0, padding: 0 }}>
               {DECISION_PATH.map(([step, text], i) => (
-                <div key={step} style={{ display: 'grid', gridTemplateColumns: '54px 1fr', gap: '1rem', padding: '1rem 0', borderTop: i === 0 ? '1px solid rgba(255,255,255,0.09)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.09)' }}>
+                <li key={step} style={{ display: 'grid', gridTemplateColumns: '54px 1fr', gap: '1rem', padding: '1rem 0', borderTop: i === 0 ? '1px solid rgba(255,255,255,0.09)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.09)' }}>
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#FFF12D', fontSize: '0.7rem' }}>{step}</span>
                   <span style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', color: 'rgba(255,255,255,0.82)', fontSize: '1rem' }}>{text}</span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </section>
 
@@ -380,13 +380,25 @@ export default function KnowledgeCenterPage() {
       <script type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
-          '@type': 'CollectionPage',
-          '@id': 'https://elimfilters.com/knowledge-center/#collection',
-          name: 'ELIMFILTERS Technical Knowledge Center',
-          description: 'Technical references for industrial filtration, contamination control, reliability and asset protection.',
-          url: 'https://elimfilters.com/knowledge-center/',
-          isPartOf: { '@id': 'https://elimfilters.com/#website' },
-          publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+          '@graph': [
+            {
+              '@type': 'CollectionPage',
+              '@id': 'https://elimfilters.com/knowledge-center/#collection',
+              name: 'ELIMFILTERS Technical Knowledge Center',
+              description: 'Technical references for industrial filtration, contamination control, reliability and asset protection.',
+              url: 'https://elimfilters.com/knowledge-center/',
+              isPartOf: { '@id': 'https://elimfilters.com/#website' },
+              publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+            },
+            {
+              '@type': 'BreadcrumbList',
+              '@id': 'https://elimfilters.com/knowledge-center/#breadcrumb',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com/' },
+                { '@type': 'ListItem', position: 2, name: 'Knowledge Center', item: 'https://elimfilters.com/knowledge-center/' },
+              ],
+            },
+          ],
         })}
       </script>
     </>
