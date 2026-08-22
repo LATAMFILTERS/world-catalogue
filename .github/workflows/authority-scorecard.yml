@@ -31,14 +31,29 @@ jobs:
         working-directory: frontend
         run: npm ci
 
-      - name: Build and generate Authority Scorecard
+      - name: Build production output
+        id: build
+        continue-on-error: true
         working-directory: frontend
         run: npm run build
 
+      - name: Generate Authority Scorecard even when a validator fails
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -d frontend/out ]; then
+            echo "frontend/out was not generated; Authority Scorecard cannot run"
+            exit 1
+          fi
+          node scripts/audit-authority-scorecard.mjs
+
       - name: Show Authority Scorecard summary
+        if: always()
         run: cat reports/seo-geo/authority-scorecard.md
 
       - name: Upload Authority Scorecard
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: authority-scorecard
@@ -47,3 +62,9 @@ jobs:
             reports/seo-geo/authority-scorecard.md
           if-no-files-found: error
           retention-days: 30
+
+      - name: Preserve build validation status
+        if: steps.build.outcome == 'failure'
+        run: |
+          echo "Production build or an existing validator failed. Scorecard was still generated for diagnosis."
+          exit 1
