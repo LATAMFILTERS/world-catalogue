@@ -5,6 +5,7 @@ import { motion, useInView, animate, useSpring, useScroll, useTransform } from '
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { GlobalBrandSection } from '@/components/GlobalBrandSection';
+import { HomeStatBar } from '@/components/HomeStatBar';
 import '@/i18n';
 import { useTranslation } from 'react-i18next';
 import CinematicHero from '@/components/ui/CinematicHero';
@@ -362,6 +363,9 @@ export default function Home() {
 
         {/* ── HERO ── */}
         <CinematicHero />
+
+        {/* ── STAT BAR ── */}
+        <HomeStatBar />
 
         {/* ── GLOBAL BRAND SECTION ── */}
         <GlobalBrandSection />
