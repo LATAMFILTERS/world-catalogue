@@ -26,23 +26,21 @@ export default function CinematicHero() {
         fontFamily: approvedBodyFont,
       }}
     >
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
+      <div
+        role="img"
+        aria-label="ELIMFILTERS protection systems in the field"
         style={{
           position: "absolute",
           inset: 0,
           width: "100%",
           height: "100%",
-          objectFit: "cover",
+          backgroundImage: "url(/assets/hero-systems.avif)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           opacity: 0.52,
           zIndex: 0,
         }}
-      >
-        <source src="/images/moleculas.mp4" type="video/mp4" />
-      </video>
+      />
 
       <div
         aria-hidden="true"
