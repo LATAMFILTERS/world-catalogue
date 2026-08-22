@@ -47,7 +47,7 @@ export function Navigation() {
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
           <NavLink href="/knowledge-center/">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
-          <NavLink href="/about">{t('nav.about', 'About')}</NavLink>
+          <NavLink href="/about">{t('nav.about', 'Company')}</NavLink>
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
           <motion.a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.18 }} style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.1em', padding: '0.55rem 1.35rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase' }}>
@@ -73,7 +73,7 @@ export function Navigation() {
                 { href: '/systems', label: t('nav.systems', 'Systems') },
                 { href: '/technologies', label: t('nav.technologies', 'Technologies') },
                 { href: '/knowledge-center/', label: t('nav.knowledge', 'Knowledge') },
-                { href: '/about', label: t('nav.about', 'About') },
+                { href: '/about', label: t('nav.about', 'Company') },
                 { href: '/contact', label: t('nav.contact', 'Contact') },
               ].map((item) => (
                 <motion.div key={item.href} variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>

@@ -6,7 +6,7 @@ import '@/i18n';
 
 const ITEMS = [
   { href: '/about/#who-we-are', en: 'Who We Are', es: 'Quiénes Somos' },
-  { href: '/about/#leadership', en: 'Leadership', es: 'Liderazgo' },
+  { href: '/about/leadership/', en: 'Leadership', es: 'Liderazgo' },
   { href: '/about/#engineering-philosophy', en: 'Engineering Philosophy', es: 'Filosofía de Ingeniería' },
 ];
 
