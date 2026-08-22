@@ -15,12 +15,17 @@ const governedPages = [
   {
     rel: ['knowledge-center', 'glossary', 'differential-pressure', 'index.html'],
     canonical: 'https://elimfilters.com/knowledge-center/glossary/differential-pressure/',
-    tokens: ['DefinedTerm', 'https://elimfilters.com/#organization'],
+    tokens: ['Differential Pressure Definition', 'DefinedTerm', 'https://elimfilters.com/#organization'],
   },
   {
     rel: ['knowledge-center', 'glossary', 'depth-filtration', 'index.html'],
     canonical: 'https://elimfilters.com/knowledge-center/glossary/depth-filtration/',
-    tokens: ['DefinedTerm', 'https://elimfilters.com/#organization'],
+    tokens: ['Depth Filtration Definition', 'DefinedTerm', 'https://elimfilters.com/#organization'],
+  },
+  {
+    rel: ['knowledge-center', 'glossary', 'compressed-air-purity', 'index.html'],
+    canonical: 'https://elimfilters.com/knowledge-center/glossary/compressed-air-purity/',
+    tokens: ['Compressed Air Purity Definition', 'DefinedTerm', 'https://elimfilters.com/#organization'],
   },
   {
     rel: ['knowledge-center', 'glossary', 'bearing-clearance', 'index.html'],
@@ -38,14 +43,34 @@ const governedPages = [
     tokens: ['ISO 8573-1 Purity Classes Chart', 'Compressed Air', 'TechArticle', 'https://elimfilters.com/#organization'],
   },
   {
+    rel: ['knowledge-center', 'standards', 'iso-4406', 'index.html'],
+    canonical: 'https://elimfilters.com/knowledge-center/standards/iso-4406/',
+    tokens: ['ISO 4406 Fluid Cleanliness Code', 'https://elimfilters.com/#organization'],
+  },
+  {
     rel: ['knowledge-center', 'standards', 'iso-8573-1', 'index.html'],
     canonical: 'https://elimfilters.com/knowledge-center/standards/iso-8573-1/',
-    tokens: ['ISO 8573', 'https://elimfilters.com/#organization'],
+    tokens: ['ISO 8573-1 Compressed Air Purity Classes', 'https://elimfilters.com/#organization'],
   },
   {
     rel: ['knowledge-center', 'engineering-reference', 'fluid-cleanliness', 'index.html'],
     canonical: 'https://elimfilters.com/knowledge-center/engineering-reference/fluid-cleanliness/',
-    tokens: ['Engineering Reference'],
+    tokens: ['Fluid Cleanliness Engineering'],
+  },
+  {
+    rel: ['knowledge-center', 'engineering-reference', 'differential-pressure', 'index.html'],
+    canonical: 'https://elimfilters.com/knowledge-center/engineering-reference/differential-pressure/',
+    tokens: ['Differential Pressure Engineering'],
+  },
+  {
+    rel: ['knowledge-center', 'engineering-reference', 'depth-filtration', 'index.html'],
+    canonical: 'https://elimfilters.com/knowledge-center/engineering-reference/depth-filtration/',
+    tokens: ['Depth Filtration Engineering'],
+  },
+  {
+    rel: ['knowledge-center', 'engineering-reference', 'compressed-air-purity', 'index.html'],
+    canonical: 'https://elimfilters.com/knowledge-center/engineering-reference/compressed-air-purity/',
+    tokens: ['Compressed Air Purity Engineering'],
   },
 ];
 
@@ -53,6 +78,10 @@ function extractCanonical(html) {
   const match = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["'][^>]*>/i)
     || html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["'][^>]*>/i);
   return match?.[1] ?? null;
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 for (const family of dynamicFamilies) {
@@ -100,11 +129,20 @@ for (const spec of governedPages) {
     failures.push(`governed KC page missing: ${label}`);
     continue;
   }
+
   const html = fs.readFileSync(file, 'utf8');
   const canonical = extractCanonical(html);
   if (canonical !== spec.canonical) {
     failures.push(`governed canonical mismatch (${label}): expected ${spec.canonical}, got ${canonical ?? 'missing'}`);
   }
+
+  const routePath = new URL(spec.canonical).pathname.replace(/\/$/, '');
+  const escapedRoutePath = escapeRegExp(routePath);
+  const absoluteUnslashed = new RegExp(`https://elimfilters\\.com${escapedRoutePath}(?=[?#"'<>\\s])`);
+  const relativeUnslashed = new RegExp(`(?<!https://elimfilters\\.com)${escapedRoutePath}(?=[?#"'<>\\s])`);
+  if (absoluteUnslashed.test(html)) failures.push(`governed unslashed absolute entity URL leaked: ${label}`);
+  if (relativeUnslashed.test(html)) failures.push(`governed unslashed internal route leaked: ${label}`);
+
   for (const token of spec.tokens) {
     if (!html.includes(token)) failures.push(`KC entity/intent token missing (${label}): ${token}`);
   }
@@ -128,7 +166,7 @@ for (const name of sitemapFiles) {
   }
 
   for (const url of urls) {
-    const dynamic = /\/knowledge-center\/(glossary|diagrams|engineering-reference)\/[^/]+$/.test(url);
+    const dynamic = /\/knowledge-center\/(glossary|diagrams|engineering-reference|standards)\/[^/]+$/.test(url);
     if (dynamic) failures.push(`unslashed dynamic KC sitemap URL in ${name}: ${url}`);
   }
 }
@@ -139,4 +177,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[validate-kc-canonical-overlap] PASS — all dynamic KC canonicals, entity URLs, internal routes, intent signals and sitemap variants are normalized');
+console.log('[validate-kc-canonical-overlap] PASS — KC canonicals, entity URLs, internal routes, semantic intent ownership and sitemap variants are normalized');
