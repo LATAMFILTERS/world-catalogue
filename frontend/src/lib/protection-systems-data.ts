@@ -52,7 +52,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     ...relationships('fuel-cleanliness'),
   },
   lubrication: {
-    key: 'lubrication', name: 'Lubrication Protection', slug: 'lubrication',
+    key: 'lubrication', name: 'Lubrication Filtration & Asset Protection', slug: 'lubrication',
     tagline: 'Lubrication protection maintains oil cleanliness by controlling soot, wear debris and degradation products across changing load, viscosity and service conditions.',
     overview: 'Lubrication Protection is the contamination-control layer for oil-wetted engine components. It removes damaging particulate and degradation byproducts before recirculating lubricant reaches bearings, journals, valve-train surfaces and other precision interfaces, helping preserve oil flow and component protection throughout the service interval.',
     engineeringPrinciple: 'Full-flow composite media balances efficiency, contaminant capacity, pressure drop, and valve integrity across changing viscosity and temperature conditions.',
@@ -60,7 +60,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     ...relationships('lubrication'),
   },
   hydraulic: {
-    key: 'hydraulic', name: 'Hydraulic Protection', slug: 'hydraulic',
+    key: 'hydraulic', name: 'Hydraulic Filtration & Contamination Control', slug: 'hydraulic',
     tagline: 'Hydraulic protection controls damaging particles in high-pressure fluid circuits to protect pumps, valves, actuators and precision control components.',
     overview: 'Hydraulic Protection maintains fluid cleanliness around the tolerance requirements of pumps, valves, actuators and servo controls. The system manages contamination before critical particles circulate through precision clearances, where abrasive wear, sticking, leakage and performance loss can accelerate equipment failure and unplanned downtime.',
     engineeringPrinciple: 'Beta-rated media, collapse-resistant construction, and thermal stability are matched to flow, pressure, critical particle size, and duty cycle.',
@@ -68,7 +68,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     ...relationships('hydraulic'),
   },
   'cooling-system': {
-    key: 'cooling-system', name: 'Cooling System Protection', slug: 'cooling-system',
+    key: 'cooling-system', name: 'Cooling System Filtration & Asset Protection', slug: 'cooling-system',
     tagline: 'Cooling-system protection controls coolant contamination, corrosion debris and additive condition to preserve heat transfer and engine cooling reliability.',
     overview: 'Cooling System Protection manages particulate contamination, corrosion products, scale debris and coolant additive condition within heavy-duty engine cooling circuits. The protection strategy supports clean coolant passages, stable heat transfer, wet-liner protection, seal integrity and reliable thermal control across demanding operating and service conditions.',
     engineeringPrinciple: 'Controlled additive release and particulate removal protect wet liners, heat-transfer surfaces, seals, and coolant passages across the service interval.',
