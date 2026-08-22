@@ -49,7 +49,9 @@ const gridStyle: CSSProperties = {
   gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
   gap: '1px',
   background: 'rgba(255,255,255,0.07)',
-  marginTop: '1.55rem',
+  margin: '1.55rem 0 0',
+  padding: 0,
+  listStyle: 'none',
 };
 
 const cardStyle: CSSProperties = {
@@ -147,14 +149,14 @@ export function CoreSystemProtectionNarrative({ slug }: Props) {
           <p style={eyebrowStyle}>Protection Architecture</p>
           <h2 style={titleStyle}>{narrative.title}</h2>
           <p style={paragraphStyle}>{narrative.lead}</p>
-          <div style={gridStyle}>
+          <ol style={gridStyle} aria-label="Protection architecture sequence">
             {narrative.cards.map((card) => (
-              <article key={card.title} style={cardStyle}>
+              <li key={card.title} style={cardStyle}>
                 <h3 style={cardTitleStyle}>{card.title}</h3>
                 <p style={cardParagraphStyle}>{card.body}</p>
-              </article>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
       {editorial && <SystemEditorialContent editorial={editorial} />}
