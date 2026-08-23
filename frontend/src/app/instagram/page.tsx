@@ -18,9 +18,11 @@ export default function InstagramLandingPage() {
       <div style={{ width: '100%', maxWidth: 520, margin: '0 auto' }}>
         <header style={{ textAlign: 'center', padding: '2px 8px 26px' }}>
           <img
-            src="/assets/logo-elimfilters.png"
-            alt="ELIMFILTERS"
-            style={{ display: 'block', width: 150, height: 92, objectFit: 'contain', margin: '0 auto 16px' }}
+            src="/assets/Elimfilters_logo_oficial.avif"
+            alt="ELIMFILTERS — Total Asset Protection"
+            width={1959}
+            height={528}
+            style={{ display: 'block', width: 'min(190px, 62vw)', height: 'auto', margin: '16px auto 28px' }}
           />
           <h1 style={{ margin: '0 0 10px', fontFamily: 'Titillium Web, Arial, sans-serif', fontSize: 'clamp(2rem, 9vw, 3.1rem)', lineHeight: 1, fontWeight: 800, letterSpacing: '-0.04em' }}>{t('instagram.heroTitle')}</h1>
           <p style={{ maxWidth: 420, margin: '0 auto', color: 'rgba(255,255,255,0.62)', fontSize: 15, lineHeight: 1.55 }}>{t('instagram.heroDesc')}</p>
