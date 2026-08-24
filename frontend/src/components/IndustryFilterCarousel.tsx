@@ -219,24 +219,27 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
             >
               View {family.name} →
             </Link>
-            <button type="button" aria-label="Previous filter" onClick={() => go(-1)} style={{ ...arrowButtonStyle, marginTop: 'clamp(1.5rem, 3vw, 2.25rem)' }}>
-              {'<'}
-            </button>
           </div>
 
-          <div style={{ position: 'relative' }}>
-            <div style={{ position: 'relative', width: '100%', paddingBottom: '75%', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', background: '#fff' }}>
-              <img
-                src={image}
-                alt={family.name}
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: '1.5rem' }}
-              />
-            </div>
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '75%', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', background: '#fff' }}>
+            <img
+              src={image}
+              alt={family.name}
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: '1.5rem' }}
+            />
+            <button
+              type="button"
+              aria-label="Previous filter"
+              onClick={() => go(-1)}
+              style={{ ...onImageArrowStyle, left: '0.75rem' }}
+            >
+              {'<'}
+            </button>
             <button
               type="button"
               aria-label="Next filter"
               onClick={() => go(1)}
-              style={{ ...arrowButtonStyle, position: 'absolute', top: '50%', right: '-24px', transform: 'translateY(-50%)' }}
+              style={{ ...onImageArrowStyle, right: '0.75rem' }}
             >
               {'>'}
             </button>
@@ -247,15 +250,19 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
   );
 }
 
-const arrowButtonStyle: React.CSSProperties = {
-  width: '48px',
-  height: '48px',
+const onImageArrowStyle: React.CSSProperties = {
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  zIndex: 2,
+  width: '44px',
+  height: '44px',
   borderRadius: '50%',
-  border: '1px solid rgba(255,255,255,0.3)',
-  background: 'rgba(255,255,255,0.04)',
+  border: '1px solid rgba(0,0,0,0.15)',
+  background: 'rgba(0,0,0,0.65)',
   color: '#fff',
   cursor: 'pointer',
   fontFamily: bodyFont,
-  fontSize: '1.1rem',
+  fontSize: '1.05rem',
   transition: 'all 0.2s ease',
 };
