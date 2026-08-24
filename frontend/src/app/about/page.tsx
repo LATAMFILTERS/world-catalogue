@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
+import { AboutEngineeringProcess } from '@/components/AboutEngineeringProcess';
 import '@/i18n';
 
 const ENGINEERING_METHOD = [
@@ -135,15 +136,15 @@ export default function AboutPage() {
             {t('about.section3Body')}
           </p>
 
-          <div style={{ marginTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-            {ENGINEERING_METHOD.map((item) => (
-              <div key={item.step} style={methodRow}>
-                <div style={stepNumber}>{item.step}</div>
-                <h3 style={methodTitle}>{t(item.titleKey)}</h3>
-                <p style={{ ...bodyText, margin: 0 }}>{t(item.bodyKey)}</p>
-              </div>
-            ))}
-          </div>
+          <AboutEngineeringProcess
+            title={t('about.processDiagramTitle')}
+            description={t('about.processDiagramDesc')}
+            steps={ENGINEERING_METHOD.map((item) => ({
+              step: item.step,
+              title: t(item.titleKey),
+              body: t(item.bodyKey),
+            }))}
+          />
         </div>
       </section>
 
@@ -158,6 +159,22 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section style={sectionSpacing}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'clamp(2rem, 6vw, 5rem)', alignItems: 'center' }}>
+          <div>
+            <h2 style={{ ...sectionTitle, maxWidth: '620px' }}>{t('about.operationalTitle')}</h2>
+            <p style={{ ...bodyText, maxWidth: '540px', marginTop: '1.6rem' }}>
+              {t('about.operationalBody')}
+            </p>
+          </div>
+          <img
+            src="/images/empleados-bodega.avif"
+            alt={t('about.operationalImageAlt')}
+            style={operationalImage}
+          />
         </div>
       </section>
 
@@ -207,6 +224,21 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section style={sectionSpacing}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+          <h2 style={{ ...sectionTitle, maxWidth: '820px' }}>{t('about.evidenceTitle')}</h2>
+          <p style={{ ...bodyText, maxWidth: '850px', marginTop: '1.8rem' }}>
+            {t('about.evidenceBody')}
+          </p>
+          <Link href="/knowledge-center/" style={{ display: 'inline-block', marginTop: '1.6rem', color: '#FFF12D', textDecoration: 'none', fontWeight: 600, transition: 'opacity 0.2s' }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+          >
+            {t('about.evidenceButton')} →
+          </Link>
+        </div>
+      </section>
+
       <section style={closingSection}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
@@ -238,7 +270,12 @@ const heroSection: React.CSSProperties = {
 
 const heroImage: React.CSSProperties = {
   position: 'absolute',
-  inset: 0,
+  top: 0,
+  bottom: 0,
+  left: '50%',
+  transform: 'translateX(-50%)',
+  width: '100%',
+  maxWidth: '1900px',
   backgroundImage: 'url(/images/grupo-filters.avif)',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
@@ -303,28 +340,16 @@ const twoColumnGrid: React.CSSProperties = {
   gap: 'clamp(2rem, 6vw, 5rem)',
 };
 
-const methodRow: React.CSSProperties = {
-  display: 'grid',
-  gridTemplateColumns: '70px minmax(220px, 0.72fr) minmax(0, 1fr)',
-  gap: '1.5rem',
-  padding: '1.8rem 0',
-  borderBottom: '1px solid rgba(255,255,255,0.08)',
-  alignItems: 'start',
-};
-
-const stepNumber: React.CSSProperties = {
-  color: '#FFF12D',
-  fontFamily: 'var(--font-display)',
-  fontWeight: 700,
-  letterSpacing: '0.16em',
-};
-
-const methodTitle: React.CSSProperties = {
-  margin: 0,
-  fontFamily: 'var(--font-display)',
-  fontSize: 'clamp(1.1rem, 2vw, 1.55rem)',
-  lineHeight: 1.1,
-  textTransform: 'uppercase',
+const operationalImage: React.CSSProperties = {
+  display: 'block',
+  width: '100%',
+  maxWidth: '560px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  aspectRatio: '3 / 2',
+  objectFit: 'cover',
+  objectPosition: 'center',
+  border: '1px solid rgba(255,255,255,0.1)',
 };
 
 const principlesGrid: React.CSSProperties = {

@@ -401,7 +401,15 @@
     "closingTitle": "We do not begin with a filter. We begin with the asset that cannot afford to fail.",
     "closingDesc": "The result is a growing industrial protection platform designed to turn engineering knowledge, validated technology, and product intelligence into measurable reliability support.",
     "contactButton": "CONTACT ELIMFILTERS",
-    "knowledgeButton": "EXPLORE OUR KNOWLEDGE SYSTEM"
+    "knowledgeButton": "EXPLORE OUR KNOWLEDGE SYSTEM",
+    "processDiagramTitle": "How we get from risk to protection",
+    "processDiagramDesc": "From understanding the asset to validating the protection approach, our engineering method connects operating reality with application-specific decisions.",
+    "operationalTitle": "Engineering reaches the operating environment",
+    "operationalBody": "ELIMFILTERS products move through distributors, warehouses, and maintenance teams before they reach the assets they protect. That connection between engineering decisions and operating reality is part of the protection strategy.",
+    "operationalImageAlt": "Workers in ELIMFILTERS-branded safety equipment move palletized filtration product through warehouse racking.",
+    "evidenceTitle": "Technical decisions need context",
+    "evidenceBody": "We publish our engineering methodology, technology principles, standards references, failure modes, and application guidance through the Knowledge Center. Technical claims should be evaluated in the context of the approved technology, element, assembly, and operating application.",
+    "evidenceButton": "VISIT THE KNOWLEDGE CENTER"
   },
   "warranty": {
     "homeLink": "HOME",

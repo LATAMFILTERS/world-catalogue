@@ -13,7 +13,7 @@ import { EngineeringSearchBar } from '@/components/engineering';
 import type { CustomerIntent } from '@/components/conversion';
 import type { SearchResult } from '@/lib/services';
 
-// â”€â”€â”€ Static structural data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Static structural data ───────────────────────────────────────────────────
 
 const STATS_DATA = [
   { value: null, display: '15k+', ring: 75 },
@@ -47,7 +47,7 @@ const INDUSTRY_COLORS: Record<string, string> = {
   'stationary-engines': 'rgba(233,30,99,0.12)',
 };
 
-// â”€â”€â”€ Counter â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Counter ──────────────────────────────────────────────────────────────────
 
 function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -69,7 +69,7 @@ function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string
   return <span ref={ref}>{prefix}{Number.isInteger(to) ? Math.round(to) : to.toFixed(1)}{suffix}</span>;
 }
 
-// â”€â”€â”€ Spotlight card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Spotlight card ──────────────────────────────────────────────────────────
 
 function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   children: React.ReactNode;
@@ -99,7 +99,7 @@ function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   );
 }
 
-// â”€â”€â”€ FloatingParticles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── FloatingParticles ───────────────────────────────────────────────────────
 
 function FloatingParticles({ count = 22 }: { count?: number }) {
   return (
@@ -115,7 +115,7 @@ function FloatingParticles({ count = 22 }: { count?: number }) {
   );
 }
 
-// â”€â”€â”€ StatRing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── StatRing ─────────────────────────────────────────────────────────────
 
 function StatRing({ percent, content, label }: { percent: number; content: React.ReactNode; label: string }) {
   const r = 38;
@@ -144,7 +144,7 @@ function StatRing({ percent, content, label }: { percent: number; content: React
   );
 }
 
-// â”€â”€â”€ IndustryCard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── IndustryCard ──────────────────────────────────────────────────────────
 
 function IndustryCard({ id, label, href }: { id: string; label: string; href: string }) {
   const [hovered, setHovered] = useState(false);
@@ -160,7 +160,7 @@ function IndustryCard({ id, label, href }: { id: string; label: string; href: st
   );
 }
 
-// â”€â”€â”€ Engineering Entry Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Engineering Entry Section ───────────────────────────────────────────────
 
 const JOURNEY_CARDS = [
   {
@@ -307,7 +307,7 @@ function EngineeringEntrySection() {
   );
 }
 
-// â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Page ─────────────────────────────────────────────────────────────────
 
 export default function Home() {
   const { t } = useTranslation();
@@ -352,7 +352,7 @@ export default function Home() {
     <ConversionProvider>
       <Navigation />
       <main style={{ fontFamily: 'Barlow, Arial, sans-serif' }}>
-        {/* â”€â”€ DIRECT ANSWER BLOCK (hidden from view, visible in HTML source for AI crawlers) â”€â”€ */}
+        {/* ── DIRECT ANSWER BLOCK (hidden from view, visible in HTML source for AI crawlers) ── */}
         <div style={{
           display: 'none',
           visibility: 'hidden',
@@ -377,15 +377,15 @@ export default function Home() {
           }
         `}</style>
 
-        {/* â”€â”€ HERO â”€â”€ */}
+        {/* ── HERO ── */}
         <CinematicHero />
 
-        {/* â”€â”€ GLOBAL BRAND SECTION â”€â”€ */}
+        {/* ── GLOBAL BRAND SECTION ── */}
         <GlobalBrandSection />
 
-        {/* â”€â”€ ENGINEERING ENTRY â”€â”€ */}
+        {/* ── ENGINEERING ENTRY ── */}
 
-        {/* â”€â”€ INDUSTRIES STRIP â”€â”€ */}
+        {/* ── INDUSTRIES STRIP ── */}
       <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
@@ -434,7 +434,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* â”€â”€ REAL COST OF CONTAMINATION â”€â”€ */}
+        {/* ── REAL COST OF CONTAMINATION ── */}
         <section style={{ padding: '4.75rem 8%', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <motion.div
@@ -493,7 +493,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* â”€â”€ WHY ELIMFILTERS â”€â”€ */}
+        {/* ── WHY ELIMFILTERS ── */}
         <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.h2 initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -532,7 +532,7 @@ export default function Home() {
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {(Array.isArray(whyCardItems) ? whyCardItems : []).map((item, i) => (
                       <li key={i} style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', paddingLeft: '1.5rem', position: 'relative' }}>
-                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>â - †</span>
+                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>→</span>
                         {item}
                       </li>
                     ))}
@@ -543,7 +543,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* â”€â”€ ASSET PROTECTION NARRATIVE â”€â”€ */}
+        {/* ── ASSET PROTECTION NARRATIVE ── */}
         <section style={{ padding: '4.75rem 8%', background: 'linear-gradient(180deg, rgba(255,241,45,0.03) 0%, transparent 100%)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
             style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -582,7 +582,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* â”€â”€ SCIENTIFIC AUTHORITY â”€â”€ */}
+        {/* ── SCIENTIFIC AUTHORITY ── */}
         <section style={{ padding: '4.75rem 8%', background: '#050505', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
@@ -609,7 +609,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* â”€â”€ TECHNOLOGY â”€â”€ */}
+        {/* ── TECHNOLOGY ── */}
         <section style={{ padding: '4.75rem 8%', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}>
@@ -637,7 +637,7 @@ export default function Home() {
 
 
 
-        {/* â”€â”€ CTA SLIDES â”€â”€ */}
+        {/* ── CTA SLIDES ── */}
         <div style={{ position: 'relative', background: '#000', borderTop: '1px solid #111', overflow: 'hidden' }}>
           {CTA_SLIDES.map((slide, i) => (
             <div key={i} style={{ position: i === activeSlide ? 'relative' : 'absolute', top: i === activeSlide ? undefined : 0, left: i === activeSlide ? undefined : 0, width: '100%', opacity: i === activeSlide ? 1 : 0, transition: 'opacity 0.8s ease', pointerEvents: i === activeSlide ? 'all' : 'none', padding: '4.75rem 8%' }}>
@@ -662,9 +662,9 @@ export default function Home() {
           <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: '#FFF12D', width: `${progress}%` }} />
         </div>
 
-        {/* â”€â”€ TESTIMONIALS â”€â”€ */}
+        {/* ── TESTIMONIALS ── */}
 
-        {/* â”€â”€ FAQ SECTION â”€â”€ */}
+        {/* ── FAQ SECTION ── */}
       </main>
       <Footer />
     </ConversionProvider>
