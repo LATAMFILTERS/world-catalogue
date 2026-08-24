@@ -37,7 +37,10 @@ export function Hero({
   const ctaRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const normalizedSubtitle = subtitle?.trim().replace(/\.$/, '');
-  const isApprovedAssetSubtitle = normalizedSubtitle?.endsWith(' ASSETS') || false;
+  // The /industries parent hero is always a compact 2-line headline (white line + yellow line),
+  // never two full-size stacked headlines, so industry detail pages always use the smaller
+  // subtitle treatment regardless of wording.
+  const isApprovedAssetSubtitle = industryChrome || normalizedSubtitle?.endsWith(' ASSETS') || false;
 
   useEffect(() => {
     const elements = [
