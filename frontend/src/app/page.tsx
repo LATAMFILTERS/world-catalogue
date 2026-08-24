@@ -458,7 +458,7 @@ export default function Home() {
                   viewport={{ once: true, margin: '-40px' }}
                   style={{ background: 'var(--surface-light-2)', border: '1px solid var(--border-on-light)', padding: '2rem', borderRadius: '2px', textAlign: 'center' }}
                 >
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--ink-2)', marginBottom: '0.6rem' }}>{item.label}</p>
+                  <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.05rem', textTransform: 'uppercase', margin: '0 0 0.55rem', color: '#fff' }}>{item.label}</h3>
                   <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'var(--ink-2)', lineHeight: 1.65, textAlign: 'justify' }}>{item.desc}</p>
                 </motion.div>
               ))}
