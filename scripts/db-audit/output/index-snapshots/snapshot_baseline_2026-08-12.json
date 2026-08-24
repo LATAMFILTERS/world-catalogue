@@ -1,0 +1,2423 @@
+{
+  "label": "baseline_2026-08-12",
+  "captured_at": "2026-08-12T16:13:47.573Z",
+  "stats_reset": null,
+  "indexes": [
+    {
+      "schema": "bot_governance",
+      "table": "knowledge_gaps",
+      "index": "idx_bot_knowledge_gaps_conversation",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "bot_governance",
+      "table": "knowledge_gaps",
+      "index": "idx_bot_knowledge_gaps_last_detected",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "bot_governance",
+      "table": "knowledge_gaps",
+      "index": "idx_bot_knowledge_gaps_status",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "bot_governance",
+      "table": "knowledge_gaps",
+      "index": "knowledge_gaps_deduplication_key_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "bot_governance",
+      "table": "knowledge_gaps",
+      "index": "knowledge_gaps_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "bot_governance",
+      "table": "knowledge_gaps",
+      "index": "knowledge_gaps_request_id_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "bot_governance",
+      "table": "schema_migrations",
+      "index": "schema_migrations_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_competitor_cross_references",
+      "index": "idx_ld_comp_brand_part",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "1277952"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_competitor_cross_references",
+      "index": "idx_ld_comp_elim_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "712704"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_competitor_cross_references",
+      "index": "ld_competitor_cross_reference_elimfilters_sku_competitor_br_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "4710400"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_competitor_cross_references",
+      "index": "ld_competitor_cross_references_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "1449984"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_oem_cross_references",
+      "index": "idx_ld_oem_brand_part",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "131072"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_oem_cross_references",
+      "index": "idx_ld_oem_elim_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "90112"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_oem_cross_references",
+      "index": "ld_oem_cross_references_elimfilters_sku_oem_brand_oem_part__key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "434176"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_oem_cross_references",
+      "index": "ld_oem_cross_references_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "155648"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_catalog",
+      "index": "idx_ld_product_source_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "172032"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_catalog",
+      "index": "ld_product_catalog_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "221184"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_specifications",
+      "index": "idx_ld_spec_elim_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "40960"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_specifications",
+      "index": "ld_product_specifications_elimfilters_sku_spec_key_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "90112"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_specifications",
+      "index": "ld_product_specifications_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "40960"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_production_readiness",
+      "index": "idx_ld_readiness_tier",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "65536"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_production_readiness",
+      "index": "ld_production_readiness_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "221184"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_vehicle_applications",
+      "index": "idx_ld_app_elim_sku",
+      "idx_scan": "1",
+      "idx_tup_read": "282252",
+      "idx_tup_fetch": "8506",
+      "size_bytes": "2899968"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_vehicle_applications",
+      "index": "idx_ld_app_make_model",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "3334144"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_vehicle_applications",
+      "index": "ld_vehicle_applications_elimfilters_sku_make_model_family_m_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "43548672"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_vehicle_applications",
+      "index": "ld_vehicle_applications_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "6365184"
+    },
+    {
+      "schema": "public",
+      "table": "ai_content_pages",
+      "index": "ai_content_pages_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "ai_content_pages",
+      "index": "ai_content_pages_slug_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "ai_messages",
+      "index": "ai_messages_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "ai_messages",
+      "index": "idx_ai_messages_session",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "ai_sessions",
+      "index": "ai_sessions_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "ai_usage_log",
+      "index": "ai_usage_log_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group",
+      "index": "idx_ag_compat_class",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "40960"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group",
+      "index": "idx_ag_technology",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "40960"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group",
+      "index": "pk_alternative_group",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "73728"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group",
+      "index": "uq_alternative_group_code",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "155648"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group_member",
+      "index": "idx_agm_baseline",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "40960"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group_member",
+      "index": "idx_agm_element_id",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "73728"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group_member",
+      "index": "idx_agm_group_id",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "73728"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group_member",
+      "index": "idx_agm_one_baseline_per_group",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "73728"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group_member",
+      "index": "pk_alternative_group_member",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "73728"
+    },
+    {
+      "schema": "public",
+      "table": "ambiguous_ld_crossrefs",
+      "index": "ambiguous_ld_crossrefs_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "api_decision_log",
+      "index": "api_decision_log_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "api_fail_closed_config",
+      "index": "api_fail_closed_config_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "api_resolution_guard",
+      "index": "api_resolution_guard_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "api_resolution_guard",
+      "index": "api_resolution_guard_rule_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "bad_crossref_quarantine",
+      "index": "bad_crossref_quarantine_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "competitive_intel",
+      "index": "competitive_intel_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "competitive_intel",
+      "index": "idx_intel_active",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "competitive_intel",
+      "index": "idx_intel_brand",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "competitive_intel",
+      "index": "idx_intel_category",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "coverage_audit_reports",
+      "index": "coverage_audit_reports_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "cross_reference_master_legacy",
+      "index": "cross_reference_master_donaldson_part_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "cross_reference_master_legacy",
+      "index": "cross_reference_master_fleetguard_part_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "cross_reference_master_legacy",
+      "index": "cross_reference_master_mann_part_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "40960"
+    },
+    {
+      "schema": "public",
+      "table": "cross_reference_master_legacy",
+      "index": "cross_reference_master_match_method_idx",
+      "idx_scan": "2",
+      "idx_tup_read": "2878",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "cross_reference_master_legacy",
+      "index": "cross_reference_master_oem_normalized_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "57344"
+    },
+    {
+      "schema": "public",
+      "table": "cross_reference_master_legacy",
+      "index": "cross_reference_master_segment_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "crossref_resolved_cache",
+      "index": "idx_cache_code",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "17629184"
+    },
+    {
+      "schema": "public",
+      "table": "crossref_resolved_cache",
+      "index": "idx_cache_lookup",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "19464192"
+    },
+    {
+      "schema": "public",
+      "table": "duplicate_product_quarantine",
+      "index": "duplicate_product_quarantine_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "index": "elimfilters_catalog_pkey",
+      "idx_scan": "1",
+      "idx_tup_read": "12182",
+      "idx_tup_fetch": "12182",
+      "size_bytes": "622592"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "index": "elimfilters_catalog_sku_key",
+      "idx_scan": "205",
+      "idx_tup_read": "122025",
+      "idx_tup_fetch": "107009",
+      "size_bytes": "573440"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "index": "idx_catalog_codigo_base",
+      "idx_scan": "60",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "516096"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "index": "idx_catalog_codigo_base_normalized",
+      "idx_scan": "4",
+      "idx_tup_read": "48728",
+      "idx_tup_fetch": "33712",
+      "size_bytes": "278528"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "index": "idx_catalog_competitor_codes_gin",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "5570560"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "index": "idx_catalog_equipment_applications_trgm",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "12050432"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "index": "idx_catalog_oem_codes_gin",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8118272"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "index": "idx_catalog_sku_normalized",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "294912"
+    },
+    {
+      "schema": "public",
+      "table": "equipment_vin",
+      "index": "equipment_vin_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "equipment_vin",
+      "index": "idx_equipment_vin_model",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "exact_part_reference",
+      "index": "exact_part_reference_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "40960"
+    },
+    {
+      "schema": "public",
+      "table": "exact_part_reference",
+      "index": "exact_part_reference_reference_type_brand_part_number_sku_s_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "106496"
+    },
+    {
+      "schema": "public",
+      "table": "exact_part_reference",
+      "index": "idx_exact_part_reference_number",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "49152"
+    },
+    {
+      "schema": "public",
+      "table": "exact_part_reference",
+      "index": "idx_exact_part_reference_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "fleetguard_true_cross",
+      "index": "fleetguard_true_cross_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "intelligence_events",
+      "index": "intelligence_events_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_makes",
+      "index": "idx_kg_makes_is_active",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_makes",
+      "index": "idx_kg_makes_slug",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_makes",
+      "index": "kg_equipment_makes_pkey",
+      "idx_scan": "44",
+      "idx_tup_read": "44",
+      "idx_tup_fetch": "44",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_makes",
+      "index": "kg_equipment_makes_slug_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_models",
+      "index": "idx_kg_models_display_name",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "1277952"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_models",
+      "index": "idx_kg_models_make_id",
+      "idx_scan": "54",
+      "idx_tup_read": "6560",
+      "idx_tup_fetch": "6516",
+      "size_bytes": "311296"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_models",
+      "index": "idx_kg_models_year_range",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "270336"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_models",
+      "index": "kg_equipment_models_pkey",
+      "idx_scan": "44",
+      "idx_tup_read": "44",
+      "idx_tup_fetch": "0",
+      "size_bytes": "868352"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_models",
+      "index": "uq_make_model_slug",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "1220608"
+    },
+    {
+      "schema": "public",
+      "table": "kg_industries",
+      "index": "kg_industries_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_industries",
+      "index": "kg_industries_slug_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_make_industries",
+      "index": "kg_make_industries_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_problem_systems",
+      "index": "kg_problem_systems_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    },
+    {
+      "schema": "public",
+      "table": "kg_problems",
+      "index": "kg_problems_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_problems",
+      "index": "kg_problems_slug_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_equipment",
+      "index": "idx_kg_pe_model_id",
+      "idx_scan": "4110",
+      "idx_tup_read": "24793",
+      "idx_tup_fetch": "24749",
+      "size_bytes": "2367488"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_equipment",
+      "index": "idx_kg_pe_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "1277952"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_equipment",
+      "index": "kg_product_equipment_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "3063808"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_equipment",
+      "index": "uq_product_model",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "4325376"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_systems",
+      "index": "idx_kgps_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "147456"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_systems",
+      "index": "idx_kgps_system",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "65536"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_systems",
+      "index": "kg_product_systems_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "122880"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_systems",
+      "index": "uq_product_system",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "221184"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_technologies",
+      "index": "idx_kgpt_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "139264"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_technologies",
+      "index": "idx_kgpt_technology",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "65536"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_technologies",
+      "index": "kg_product_technologies_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "122880"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_technologies",
+      "index": "uq_product_technology",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "221184"
+    },
+    {
+      "schema": "public",
+      "table": "kg_systems",
+      "index": "idx_kg_systems_slug",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_systems",
+      "index": "kg_systems_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_systems",
+      "index": "kg_systems_slug_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_technologies",
+      "index": "idx_kg_tech_primary_system",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_technologies",
+      "index": "idx_kg_tech_slug",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_technologies",
+      "index": "kg_technologies_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kg_technologies",
+      "index": "kg_technologies_slug_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kit_brand_codes",
+      "index": "kit_brand_codes_code_key",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kit_brand_codes",
+      "index": "kit_brand_codes_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "kit_components",
+      "index": "kit_components_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "ld_air_oil_false_positive_review",
+      "index": "ld_air_oil_false_positive_review_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "maintenance_kits",
+      "index": "maintenance_kits_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "mann_donaldson_matches",
+      "index": "mann_donaldson_matches_assigned_segment_idx",
+      "idx_scan": "2",
+      "idx_tup_read": "3926",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "mann_donaldson_matches",
+      "index": "mann_donaldson_matches_donaldson_part_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "mann_donaldson_matches",
+      "index": "mann_donaldson_matches_elimfilters_sku_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "mann_donaldson_matches",
+      "index": "mann_donaldson_matches_mann_part_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "40960"
+    },
+    {
+      "schema": "public",
+      "table": "mann_donaldson_matches",
+      "index": "mann_donaldson_matches_match_method_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "mann_donaldson_matches",
+      "index": "mann_donaldson_matches_oem_normalized_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "65536"
+    },
+    {
+      "schema": "public",
+      "table": "mann_fleetguard_matches",
+      "index": "mann_fleetguard_matches_elimfilters_sku_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "mann_fleetguard_matches",
+      "index": "mann_fleetguard_matches_fleetguard_part_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "mann_fleetguard_matches",
+      "index": "mann_fleetguard_matches_mann_part_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "32768"
+    },
+    {
+      "schema": "public",
+      "table": "mann_fleetguard_matches",
+      "index": "mann_fleetguard_matches_oem_normalized_idx",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "49152"
+    },
+    {
+      "schema": "public",
+      "table": "mann_oem_clean",
+      "index": "idx_mann_oem_norm",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "1646592"
+    },
+    {
+      "schema": "public",
+      "table": "mann_oem_clean",
+      "index": "idx_mann_oem_seg",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "303104"
+    },
+    {
+      "schema": "public",
+      "table": "mann_oem_clean",
+      "index": "idx_mann_oem_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "851968"
+    },
+    {
+      "schema": "public",
+      "table": "mann_oem_clean",
+      "index": "mann_oem_clean_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "1007616"
+    },
+    {
+      "schema": "public",
+      "table": "mann_oem_clean",
+      "index": "uq_mann_oem",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "3735552"
+    },
+    {
+      "schema": "public",
+      "table": "manufacturer_learning_weights",
+      "index": "manufacturer_learning_weights_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "483328"
+    },
+    {
+      "schema": "public",
+      "table": "manufacturer_learning_weights",
+      "index": "uq_mlw_manufacturer",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "344064"
+    },
+    {
+      "schema": "public",
+      "table": "manufacturer_priority",
+      "index": "manufacturer_priority_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "model_element_compatibility",
+      "index": "idx_mec_confidence",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "40960"
+    },
+    {
+      "schema": "public",
+      "table": "model_element_compatibility",
+      "index": "idx_mec_element_id",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "49152"
+    },
+    {
+      "schema": "public",
+      "table": "model_element_compatibility",
+      "index": "idx_mec_model_id",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "49152"
+    },
+    {
+      "schema": "public",
+      "table": "model_element_compatibility",
+      "index": "pk_model_element_compatibility",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "90112"
+    },
+    {
+      "schema": "public",
+      "table": "mv_crossref_engine",
+      "index": "idx_mv_code",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "9183232"
+    },
+    {
+      "schema": "public",
+      "table": "oem_codes_legacy",
+      "index": "idx_oem_code",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "12124160"
+    },
+    {
+      "schema": "public",
+      "table": "oem_codes_legacy",
+      "index": "idx_oem_code_lookup",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "9183232"
+    },
+    {
+      "schema": "public",
+      "table": "oem_codes_legacy",
+      "index": "idx_oem_code_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "20701184"
+    },
+    {
+      "schema": "public",
+      "table": "oem_codes_legacy",
+      "index": "idx_oem_manufacturer",
+      "idx_scan": "4",
+      "idx_tup_read": "2647776",
+      "idx_tup_fetch": "7276",
+      "size_bytes": "5013504"
+    },
+    {
+      "schema": "public",
+      "table": "oem_codes_legacy",
+      "index": "idx_oem_sku",
+      "idx_scan": "6",
+      "idx_tup_read": "1323294",
+      "idx_tup_fetch": "3640",
+      "size_bytes": "5414912"
+    },
+    {
+      "schema": "public",
+      "table": "oem_codes_legacy",
+      "index": "oem_codes_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "31277056"
+    },
+    {
+      "schema": "public",
+      "table": "product_element",
+      "index": "idx_product_element_code",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "90112"
+    },
+    {
+      "schema": "public",
+      "table": "product_element",
+      "index": "idx_product_element_compat",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "57344"
+    },
+    {
+      "schema": "public",
+      "table": "product_element",
+      "index": "idx_product_element_family_id",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "49152"
+    },
+    {
+      "schema": "public",
+      "table": "product_element",
+      "index": "idx_product_element_grade",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "49152"
+    },
+    {
+      "schema": "public",
+      "table": "product_element",
+      "index": "idx_product_element_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "106496"
+    },
+    {
+      "schema": "public",
+      "table": "product_element",
+      "index": "pk_product_element",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "73728"
+    },
+    {
+      "schema": "public",
+      "table": "product_element",
+      "index": "uq_product_element_code",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "90112"
+    },
+    {
+      "schema": "public",
+      "table": "product_family",
+      "index": "pk_product_family",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "product_family",
+      "index": "uq_product_family_code",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "16384"
+    },
+    {
+      "schema": "public",
+      "table": "product_model",
+      "index": "idx_product_model_code",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "212992"
+    },
+    {
+      "schema": "public",
+      "table": "product_model",
+      "index": "idx_product_model_compat",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "98304"
+    },
+    {
+      "schema": "public",
+      "table": "product_model",
+      "index": "idx_product_model_family_id",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "114688"
+    },
+    {
+      "schema": "public",
+      "table": "product_model",
+      "index": "idx_product_model_sku",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "188416"
+    },
+    {
+      "schema": "public",
+      "table": "product_model",
+      "index": "pk_product_model",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "155648"
+    },
+    {
+      "schema": "public",
+      "table": "product_model",
+      "index": "uq_product_model_code",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "204800"
+    },
+    {
+      "schema": "public",
+      "table": "recovered_oil_hydraulic_crossrefs_stage",
+      "index": "recovered_oil_hydraulic_crossrefs_stage_pkey",
+      "idx_scan": "2",
+      "idx_tup_read": "3960",
+      "idx_tup_fetch": "0",
+      "size_bytes": "81920"
+    },
+    {
+      "schema": "public",
+      "table": "search_result_priority",
+      "index": "search_result_priority_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "352256"
+    },
+    {
+      "schema": "public",
+      "table": "sku_sink_blocklist",
+      "index": "sku_sink_blocklist_pkey",
+      "idx_scan": "0",
+      "idx_tup_read": "0",
+      "idx_tup_fetch": "0",
+      "size_bytes": "8192"
+    }
+  ],
+  "tables": [
+    {
+      "schema": "bot_governance",
+      "table": "knowledge_gaps",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "bot_governance",
+      "table": "schema_migrations",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_competitor_cross_references",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_oem_cross_references",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_catalog",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_product_specifications",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_production_readiness",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "ld_catalog",
+      "table": "ld_vehicle_applications",
+      "seq_scan": "2",
+      "idx_scan": "1",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ai_content_pages",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ai_messages",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ai_sessions",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ai_usage_log",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "alternative_group_member",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ambiguous_ld_crossrefs",
+      "seq_scan": "3",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ambiguous_ld_oem_refs",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "api_decision_log",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "api_fail_closed_config",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "api_resolution_guard",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "backup_catalog_before_oil_hydraulic_crossrefs_20260705",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "bad_crossref_quarantine",
+      "seq_scan": "3",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "competitive_intel",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "coverage_audit_reports",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "cross_reference_master_legacy",
+      "seq_scan": "1",
+      "idx_scan": "2",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "crossref_resolved_cache",
+      "seq_scan": "12",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "decision_explanations",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "duplicate_product_quarantine",
+      "seq_scan": "3",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "el80047_refs_to_el31275_stage",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "elimfilters_catalog",
+      "seq_scan": "10",
+      "idx_scan": "270",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "equipment_vin",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "exact_part_reference",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "fleetguard_true_cross",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "hd_equipment_inheritance_stage",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "hd_oil_crossrefs_that_hit_ld_oil",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "hd_oil_ld_contamination_audit",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "hd_oil_ld_single_target_conflicts",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "intelligence_events",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_makes",
+      "seq_scan": "11",
+      "idx_scan": "44",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_equipment_models",
+      "seq_scan": "0",
+      "idx_scan": "98",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_industries",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_make_industries",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_problem_systems",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_problems",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_equipment",
+      "seq_scan": "0",
+      "idx_scan": "4110",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_systems",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_product_technologies",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_systems",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kg_technologies",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kit_brand_codes",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "kit_components",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ld_air_oil_duplicate_merge_candidates",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ld_air_oil_false_positive_review",
+      "seq_scan": "3",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ld_air_sku_with_oil_crossrefs",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ld_oem_duplicate_audit",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ld_oem_severe_duplicate_refs",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ld_severe_ref_classification",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ld_severe_refs_by_manufacturer",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "ld_sku_prefix_type_mismatch",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "maintenance_kits",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "mann_donaldson_matches",
+      "seq_scan": "1",
+      "idx_scan": "2",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "mann_fleetguard_matches",
+      "seq_scan": "3",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "mann_oem_clean",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "manufacturer_learning_weights",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "manufacturer_priority",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "mixed_duty_action_candidates",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "mixed_duty_aftermarket_safe_review",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "mixed_duty_crossref_audit",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "model_element_compatibility",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "mv_crossref_engine",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "oem_codes_legacy",
+      "seq_scan": "1",
+      "idx_scan": "10",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "product_element",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "product_family",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "product_model",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "recovered_oil_hydraulic_crossrefs_stage",
+      "seq_scan": "1",
+      "idx_scan": "2",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "search_result_priority",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "search_result_priority_candidates_from_alternatives",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "search_result_priority_candidates_from_alternatives_dedup",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "sku_sink_blocklist",
+      "seq_scan": "0",
+      "idx_scan": "0",
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "suspected_filter_type_misclassification",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "t_cleanup",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "t_safe_oil_cleanup",
+      "seq_scan": "3",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "v_flagged_count",
+      "seq_scan": "0",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "v_makes_with_models",
+      "seq_scan": "0",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "v_products_total",
+      "seq_scan": "0",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "v_products_with_eq",
+      "seq_scan": "0",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    },
+    {
+      "schema": "public",
+      "table": "v_unmatched_makes",
+      "seq_scan": "0",
+      "idx_scan": null,
+      "n_tup_ins": "0",
+      "n_tup_upd": "0",
+      "n_tup_del": "0",
+      "n_live_tup": "0",
+      "n_dead_tup": "0"
+    }
+  ],
+  "invalid_indexes": []
+}
