@@ -11,10 +11,16 @@ const config: Config = {
       colors: {
         volt: '#FFF12D',
         'volt-dim': '#CCB800',
+        'volt-ink': '#8A6D00',
         bg: '#000000',
         surface: '#050505',
         'surface-2': '#0a0a0a',
         'surface-3': '#111111',
+        'surface-light': '#FAFAFA',
+        'surface-light-2': '#F0F0F0',
+        ink: '#101214',
+        'ink-2': '#33383E',
+        'ink-3': '#5B6570',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
