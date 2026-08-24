@@ -464,10 +464,10 @@ export default function Home() {
               style={{ background: 'var(--surface-light-2)', border: '1px solid rgba(255,241,45,0.35)', padding: '2rem 2.5rem', borderRadius: '2px' }}
             >
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#FFF12D', opacity: 0.7, marginBottom: '0.75rem', textTransform: 'uppercase' }}>Prevention vs. Failure</p>
-              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', color: 'var(--ink-2)', lineHeight: 1.7, maxWidth: '760px' }}>
+              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1.05rem', color: 'var(--ink-2)', lineHeight: 1.7, textAlign: 'justify' }}>
                 Scheduled filter replacement is a routine maintenance line item. A contamination-driven failure is not.
                 <br />
-                <strong style={{ color: 'var(--ink)' }}>Asset protection is not a cost — it is the lowest-cost insurance available.</strong>
+                <strong style={{ color: 'var(--ink)' }}>Asset protection is the lowest-cost insurance available against unplanned downtime.</strong>
               </p>
             </motion.div>
           </div>
