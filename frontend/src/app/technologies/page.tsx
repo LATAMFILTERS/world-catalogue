@@ -75,7 +75,9 @@ export default function TechnologiesPage() {
       <PageHeader currentPage="Technologies" />
 
       <section style={hero}>
-        <div style={{ ...heroImage, backgroundImage: 'url(/images/operator-technology.avif)' }} />
+        <video autoPlay muted loop playsInline preload="auto" style={{ ...heroImage, objectFit: 'cover', objectPosition: 'center' }}>
+          <source src="/images/Operator_enters_machine_cabin_20_tecnology.mp4" type="video/mp4" />
+        </video>
         <div style={heroOverlay} />
         <div style={heroInner}>
           <h1 style={heroTitle}>

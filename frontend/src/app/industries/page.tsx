@@ -69,7 +69,9 @@ export default function IndustriesPage() {
       <PageHeader currentPage="Industries" />
 
       <section style={hero}>
-        <div style={{ ...heroImage, backgroundImage: 'url(/images/mineria-1.avif)' }} />
+        <video autoPlay muted loop playsInline preload="auto" style={{ ...heroImage, objectFit: 'cover', objectPosition: 'center' }}>
+          <source src="/images/Engineer_walking_home_industrias.mp4" type="video/mp4" />
+        </video>
         <div style={heroOverlay} />
 
         <div style={heroInner}>
