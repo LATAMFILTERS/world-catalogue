@@ -6,9 +6,9 @@ import { motion } from 'motion/react';
 const PLATFORM_NAME = 'Asset Protection Intelligence';
 
 const PLATFORM_PILLARS = [
-  ['KNOWLEDGE CENTER', 'Technical knowledge base', 'Curated, reviewed technical knowledge for customers, distributors and engineers.'],
-  ['PRODUCT CATALOGUE', 'Product authority', 'Keeps SKU, applications and cross-references governed.'],
-  ['PART SEARCH', 'Product discovery', 'Turns validated catalogue data into fast part discovery.'],
+  ['KNOWLEDGE CENTER', 'Engineering references indexed by system, failure mode, and industry standard — ISO 4406, ISO 16889, ISO 11171.'],
+  ['PRODUCT CATALOGUE', 'SKU-level database mapping OEM part numbers, thread specs, media rating, and cross-references.'],
+  ['PART SEARCH', 'Look up by OEM number, dimension, or application to the correct ELIMFILTERS SKU.'],
 ] as const;
 
 export function GlobalBrandSection() {
@@ -67,15 +67,13 @@ export function GlobalBrandSection() {
             gap: '0.9rem',
             marginBottom: '2.5rem',
           }}>
-            {PLATFORM_PILLARS.map(([title, role, body]) => (
+            {PLATFORM_PILLARS.map(([title, body]) => (
               <div key={title} style={{
-                padding: '1.25rem',
+                padding: '1.5rem',
                 background: 'rgba(255,255,255,0.04)',
                 border: '1px solid rgba(255,255,255,0.1)',
+                textAlign: 'center',
               }}>
-                <p style={{ color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.66rem', letterSpacing: '0.12em', textTransform: 'uppercase', margin: '0 0 0.65rem' }}>
-                  {role}
-                </p>
                 <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.05rem', margin: '0 0 0.55rem', color: '#fff' }}>
                   {title}
                 </h3>
