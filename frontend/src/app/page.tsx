@@ -322,8 +322,8 @@ export default function Home() {
   const trustIndustries = t('home.trustIndustries', { returnObjects: true }) as string[];
 
   const CTA_SLIDES = [
-    { tag: t('home.ctaDealerTag', '// DEALER NETWORK'), title: t('home.ctaDealerTitle', 'ONLY THE BEST'), highlight: t('home.ctaDealerHl', 'SELL ELIMFILTERS.'), buttonText: t('home.ctaDealerBtn', 'BECOME A DEALER'), href: '/distributor-application' },
-    { tag: t('home.ctaSearchTag', '// TECHNICAL SEARCH'), title: t('home.ctaSearchTitle', 'THE RIGHT FILTER.'), highlight: t('home.ctaSearchHl', 'SEARCH LIKE A PRO.'), buttonText: t('home.ctaSearchBtn', 'FIND MY PART'), href: 'https://part-search.elimfilters.com' },
+    { tag: t('home.ctaDealerTag', 'DEALER NETWORK'), title: t('home.ctaDealerTitle', 'ONLY THE BEST'), highlight: t('home.ctaDealerHl', 'SELL ELIMFILTERS.'), buttonText: t('home.ctaDealerBtn', 'BECOME A DEALER'), href: '/distributor-application' },
+    { tag: t('home.ctaSearchTag', 'TECHNICAL SEARCH'), title: t('home.ctaSearchTitle', 'THE RIGHT FILTER.'), highlight: t('home.ctaSearchHl', 'SEARCH LIKE A PRO.'), buttonText: t('home.ctaSearchBtn', 'FIND MY PART'), href: 'https://part-search.elimfilters.com' },
   ];
 
   useEffect(() => {
