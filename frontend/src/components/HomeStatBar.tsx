@@ -29,9 +29,9 @@ export function HomeStatBar() {
   return (
     <section
       style={{
-        background: 'var(--surface-light)',
+        background: '#000',
         padding: 'clamp(2.5rem, 5vw, 3.5rem) clamp(1.25rem, 6vw, 6rem)',
-        borderBottom: '1px solid var(--border-on-light)',
+        borderBottom: '1px solid rgba(255,255,255,0.1)',
       }}
     >
       <div
@@ -58,7 +58,7 @@ export function HomeStatBar() {
                 fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
                 fontWeight: 700,
                 fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
-                color: 'var(--ink)',
+                color: '#fff',
                 margin: '0 0 0.4rem',
                 fontVariantNumeric: 'tabular-nums',
               }}
@@ -72,7 +72,7 @@ export function HomeStatBar() {
                 fontWeight: 600,
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
-                color: 'var(--ink-3)',
+                color: 'rgba(255,255,255,0.55)',
                 margin: 0,
               }}
             >
