@@ -399,7 +399,7 @@ export default function Home() {
                   {(Array.isArray(failModes) ? failModes : []).map((item, idx) => (
                     <motion.div key={idx} variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}>
                       <h3 style={{ color: 'var(--ink)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.82rem', marginBottom: '0.3rem', fontFamily: 'Barlow, Arial, sans-serif' }}>{item.title}</h3>
-                      <p style={{ color: 'var(--ink-3)', fontSize: '0.875rem', lineHeight: 1.65, fontFamily: 'Barlow, Arial, sans-serif', textAlign: 'justify' }}>{item.desc}</p>
+                      <p style={{ color: 'var(--ink-3)', fontSize: '1rem', lineHeight: 1.65, fontFamily: 'Barlow, Arial, sans-serif', textAlign: 'justify' }}>{item.desc}</p>
                     </motion.div>
                   ))}
                 </div>
