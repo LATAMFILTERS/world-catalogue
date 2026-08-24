@@ -134,3 +134,6 @@ hermes/baselines/
 hermes/reports/*
 !hermes/reports/source-coverage-report.md
 !hermes/reports/source-coverage-report.json
+
+scripts/migrations/backups/
+scripts/db-audit/output/r2-export/
