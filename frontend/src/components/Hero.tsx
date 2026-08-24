@@ -108,7 +108,8 @@ export function Hero({
             objectFit: 'cover',
             objectPosition: 'center center',
             transform: 'none',
-            filter: 'brightness(1.14) contrast(1.05)',
+            opacity: industryChrome ? 0.4 : 1,
+            filter: industryChrome ? 'none' : 'brightness(1.14) contrast(1.05)',
           }}
         >
           <source src={backgroundVideo} type="video/mp4" />
@@ -124,7 +125,8 @@ export function Hero({
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
             transform: 'none',
-            filter: 'brightness(1.14) contrast(1.05)',
+            opacity: industryChrome ? 0.4 : 1,
+            filter: industryChrome ? 'none' : 'brightness(1.14) contrast(1.05)',
           }}
         />
       )}
@@ -133,8 +135,9 @@ export function Hero({
         style={{
           position: 'absolute',
           inset: 0,
-          background:
-            'linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.56) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
+          background: industryChrome
+            ? 'linear-gradient(90deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.48) 48%, rgba(0,0,0,0.28) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 36%)'
+            : 'linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.56) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
         }}
       />
 
@@ -188,7 +191,7 @@ export function Hero({
             fontSize: 'clamp(3.1rem, 7.5vw, 7.2rem)',
             lineHeight: 0.88,
             letterSpacing: '-0.055em',
-            color: 'rgba(255,255,255,0.96)',
+            color: industryChrome ? '#fff' : 'rgba(255,255,255,0.96)',
             maxWidth: '980px',
             margin: 0,
             marginBottom: normalizedSubtitle ? '0.25rem' : '1.5rem',
