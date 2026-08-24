@@ -6,6 +6,7 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { GlobalBrandSection } from '@/components/GlobalBrandSection';
 import { HomeStatBar } from '@/components/HomeStatBar';
+import { IndustriesShowcase } from '@/components/IndustriesShowcase';
 import '@/i18n';
 import { useTranslation } from 'react-i18next';
 import CinematicHero from '@/components/ui/CinematicHero';
@@ -369,6 +370,9 @@ export default function Home() {
 
         {/* ── GLOBAL BRAND SECTION ── */}
         <GlobalBrandSection />
+
+        {/* ── INDUSTRIES SHOWCASE ── */}
+        <IndustriesShowcase />
 
         {/* ── ENGINEERING ENTRY ── */}
 
