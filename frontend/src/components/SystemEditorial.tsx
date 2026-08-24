@@ -56,10 +56,13 @@ const card: CSSProperties = {
 };
 
 function CopyBlock({ title, copy }: { title: string; copy: string }) {
+  const paragraphs = copy.split('\n\n');
   return (
     <section style={sectionStyle}>
       <h2 style={heading}>{title}</h2>
-      <p style={{ ...body, maxWidth: '980px' }}>{copy}</p>
+      {paragraphs.map((para, i) => (
+        <p key={i} style={{ ...body, maxWidth: '980px', marginTop: i > 0 ? '1rem' : 0 }}>{para}</p>
+      ))}
     </section>
   );
 }
