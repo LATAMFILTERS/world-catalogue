@@ -86,6 +86,17 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <p style={{ fontFamily: displayFont, fontSize: 'clamp(1.3rem, 2.6vw, 1.9rem)', lineHeight: 1.4, color: '#fff', fontWeight: 500, margin: '0 0 1.25rem' }}>
+            &ldquo;We size and validate every technology against the operating reality of the industry it protects, not a generic duty cycle. A filter that&apos;s correct for a standby generator is not automatically correct for a mining loader.&rdquo;
+          </p>
+          <p style={{ ...bodyText, fontWeight: 700, color: 'rgba(255,255,255,0.85)' }}>
+            Víctor Abreu, Founder &amp; CEO, ELIMFILTERS
+          </p>
+        </div>
+      </section>
+
       <section style={section}>
         <div style={twoCol}>
           <div>
@@ -124,30 +135,35 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      <section style={{ padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,241,45,0.03)', borderTop: '1px solid rgba(255,241,45,0.1)' }}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+          <h2 style={{ ...sectionTitle, marginBottom: '1.5rem' }}>Industry-Specific Contamination Control</h2>
+          <p style={{ ...bodyText, maxWidth: '780px', marginBottom: '1.75rem' }}>
+            Every industry above has its own failure library in the Knowledge Center: documented failure modes, the standards used to test against them, and the protection system that addresses each one. A few examples:
+          </p>
+          <ul style={{ ...bodyText, maxWidth: '780px', marginBottom: '2rem', paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <li>Mining and construction: abrasive dust ingestion and hydraulic contamination under ISO 4406 cleanliness targets.</li>
+            <li>Marine and oil &amp; gas: water ingress, salt exposure, and fuel-system contamination resistance under ISO 19438.</li>
+            <li>Power generation and manufacturing: continuous-duty air intake filtration and lube protection under ISO 16889.</li>
+          </ul>
+          <Link href="/knowledge-center/industries/" style={yellowButton}>
+            Explore Industry-Specific Technical Strategies →
+          </Link>
+        </div>
+      </section>
+
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
             Each market requires a different protection conversation.
           </h2>
           <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>
-            ELIMFILTERS helps distributors and industrial operators connect the correct technology portfolio to the operating reality of each market.
+            If you sell into one of these industries, we&apos;ll work with you to match the right ELIMFILTERS technology portfolio to what your customers actually run. If you want to carry ELIMFILTERS as a distributor, tell us your markets and territory and we&apos;ll follow up with fit and next steps.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
             <Link href="/contact/" style={yellowButton}>CONTACT ELIMFILTERS</Link>
             <Link href="/distributor-application/" style={darkButton}>DISTRIBUTOR REVIEW</Link>
           </div>
-        </div>
-      </section>
-
-      <section style={{ padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,241,45,0.03)', borderTop: '1px solid rgba(255,241,45,0.1)' }}>
-        <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <h2 style={{ ...sectionTitle, marginBottom: '1.5rem' }}>Industry-Specific Contamination Control</h2>
-          <p style={{ ...bodyText, maxWidth: '720px', marginBottom: '1.5rem' }}>
-            Explore industry-specific technical strategies, failure modes, and protection systems in the Knowledge Center.
-          </p>
-          <Link href="/knowledge-center/industries/" style={yellowButton}>
-            Explore Industry-Specific Technical Strategies →
-          </Link>
         </div>
       </section>
     </main>

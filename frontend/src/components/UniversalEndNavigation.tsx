@@ -95,7 +95,7 @@ function navigationFor(pathname: string): NavigationConfig | null {
   if (isRoute(pathname, '/industries')) {
     return {
       kind: 'industries',
-      eyebrow: 'CONTINUE THE PROTECTION STRATEGY',
+      eyebrow: '',
       title: pathname === '/industries'
         ? 'Translate industry risk into the correct protection architecture.'
         : 'Move from operating environment to the correct protection architecture.',
@@ -188,7 +188,7 @@ export function UniversalEndNavigation() {
       role="navigation"
     >
       <div className="universal-end-nav__inner">
-        <p className="universal-end-nav__eyebrow">{config.eyebrow}</p>
+        {config.eyebrow && <p className="universal-end-nav__eyebrow">{config.eyebrow}</p>}
         <h2 className="universal-end-nav__title">{config.title}</h2>
         <div className="universal-end-nav__grid">
           {config.items.map((item) => {
