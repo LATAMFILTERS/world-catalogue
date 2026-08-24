@@ -3,16 +3,16 @@
 import { useRef } from 'react';
 
 const INDUSTRIES = [
-  { slug: 'agriculture', title: 'Agriculture', video: '/images/Agriculture-2.mp4' },
-  { slug: 'construction', title: 'Construction', video: '/images/construction-2.mp4' },
-  { slug: 'mining', title: 'Mining', video: '/images/Mina-Video-1.mp4' },
-  { slug: 'oil-gas', title: 'Oil & Gas', video: '/images/Oil&Gas(1).mp4' },
-  { slug: 'marine', title: 'Marine', video: '/images/Marino-1.mp4' },
-  { slug: 'manufacturing', title: 'Manufacturing', video: '/images/Manufacture-1.mp4' },
-  { slug: 'power-generation', title: 'Power Generation', video: '/images/Power-1.mp4' },
-  { slug: 'railway', title: 'Railway', video: '/images/Train.mp4' },
-  { slug: 'truck-fleets', title: 'Truck Fleets', video: '/images/Trucks&Feel-1.mp4' },
-  { slug: 'waste-municipal', title: 'Waste & Municipal', video: '/images/wasted-2.mp4' },
+  { slug: 'agriculture', title: 'Agriculture', image: '/images/agriculture.avif' },
+  { slug: 'construction', title: 'Construction', image: '/images/construccion.avif' },
+  { slug: 'mining', title: 'Mining', image: '/images/mineria.avif' },
+  { slug: 'oil-gas', title: 'Oil & Gas', image: '/images/oil&gas.avif' },
+  { slug: 'marine', title: 'Marine', image: '/images/marine-2_converted.avif' },
+  { slug: 'manufacturing', title: 'Manufacturing', image: '/images/manufacture.avif' },
+  { slug: 'power-generation', title: 'Power Generation', image: '/images/power-generator.avif' },
+  { slug: 'railway', title: 'Railway', image: '/images/trenes.avif' },
+  { slug: 'truck-fleets', title: 'Truck Fleets', image: '/images/trucks-1.avif' },
+  { slug: 'waste-municipal', title: 'Waste & Municipal', image: '/images/wasted.avif' },
 ] as const;
 
 const CARD_WIDTH = 300;
@@ -104,18 +104,17 @@ export function IndustriesShowcase() {
               background: '#111',
             }}
           >
-            <video
-              src={industry.video}
-              autoPlay
-              muted
-              loop
-              playsInline
+            <div
+              role="img"
+              aria-label={industry.title}
               style={{
                 position: 'absolute',
                 inset: 0,
                 width: '100%',
                 height: '100%',
-                objectFit: 'cover',
+                backgroundImage: `url(${industry.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
               }}
             />
             <div
