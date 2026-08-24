@@ -154,7 +154,7 @@ export default function SystemsPage() {
               Getting it right the first time starts with the people running the bench, not just the equipment on it. Every ELIMFILTERS® media formulation and finished component is measured against the same testing discipline before it is approved for production, so reliability does not depend on which batch, which shift, or which line built the part.
             </p>
             <p style={{ ...bodyText, marginTop: '1.2rem' }}>
-              Preventing a failure is worth more than diagnosing one after it happens. Beyond physical bench testing, ELIMFILTERS® engineering uses AI-generated simulation models built on hostile-environment data — extreme dust loading, thermal cycling, vibration, and contamination profiles drawn from real operating conditions — to stress-test a design before a single physical unit exists. Predicting how a filter would fail is how we design it not to.
+              Preventing a failure is worth more than diagnosing one after it happens. ELIMFILTERS® engineering combines physics-based modeling with AI-generated simulation built on hostile-environment data — extreme dust loading, thermal cycling, vibration, and contaminant flow characteristics modeled down to the fiber and micro-scale level. That makes it possible to analyze hundreds of design configurations before a single physical unit exists, so the design that reaches the bench has already been optimized against the conditions it will actually face.
             </p>
           </div>
           <div>
