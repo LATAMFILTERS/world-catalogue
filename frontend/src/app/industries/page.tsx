@@ -223,10 +223,10 @@ const industryRiskTitle: CSSProperties = {
 
 const leadText: CSSProperties = {
   color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)',
-  lineHeight: 1.72, fontWeight: 600, margin: 0,
+  lineHeight: 1.72, fontWeight: 600, margin: '0 0 1.5rem',
 };
 
-const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
+const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78, margin: 0 };
 
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 
