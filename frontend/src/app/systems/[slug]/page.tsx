@@ -162,7 +162,7 @@ export default function ProtectionSystemPage({ params }: Props) {
 
         <section style={section}>
           <h2 style={h2Style}>Primary Technologies</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}>
             {sys.primaryTechnologies.map((slug) => (
               <Link key={slug} href={`/technologies/${slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.55rem', transition: 'background 0.2s' }}>
                 <p style={{ ...labelStyle, color: '#FFF12D' }}>Primary</p>
@@ -185,7 +185,7 @@ export default function ProtectionSystemPage({ params }: Props) {
           {families.length === 0 ? (
             <p style={prose}>DOCUMENTATION PENDING</p>
           ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.04)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.04)' }}>
               {families.map((fam) => (
                 <Link key={fam.key} href={`/families/${fam.slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem 1.75rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' as const }}>
