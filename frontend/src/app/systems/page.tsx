@@ -7,7 +7,9 @@ import { PROTECTION_SYSTEM_LIST } from '@/lib/protection-systems-data';
 const BASE_URL = 'https://elimfilters.com';
 
 const SYSTEM_IMAGES: Record<string, string> = {
-  'air-intake': '/images/mecanica-air.avif',
+  // Not mecanica-air.avif: a legacy page-scoped CSS hack (main:has(img[src*="mecanica-air.avif"]))
+  // hides every sibling section after the 3rd once that file appears anywhere in <main>.
+  'air-intake': '/images/air-filters-lab.avif',
   'fuel-cleanliness': '/images/fuellseparator-hero.avif',
   lubrication: '/images/oil-hand.avif',
   hydraulic: '/images/hidraulic.avif',
@@ -157,7 +159,10 @@ export default function SystemsPage() {
 
               return (
                 <Link key={system.key} href={`/systems/${system.slug}/`} style={systemCard}>
-                  <img src={image} alt={system.name} style={systemImage} />
+                  {/* alt intentionally not the literal system name: a legacy page-scoped CSS rule
+                      (main:has(img[alt="Air Intake & Airflow Protection"])) hides sibling sections
+                      on any page where that exact string appears on an <img>. */}
+                  <img src={image} alt={`${system.name} system card`} style={systemImage} />
                   <div style={systemOverlay} />
                   <div style={systemContent}>
                     <h3 style={systemTitle}>{system.name}</h3>
