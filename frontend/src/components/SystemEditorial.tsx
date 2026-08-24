@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import type { SystemEditorial, SystemEditorialKey } from '@/lib/system-editorial';
+import type { SystemEditorial } from '@/lib/system-editorial';
 
 interface Props {
   editorial: SystemEditorial;
@@ -55,20 +55,18 @@ const card: CSSProperties = {
   padding: '1.35rem 1.45rem',
 };
 
-function CopyBlock({ title, copy, label }: { title: string; copy: string; label: string }) {
+function CopyBlock({ title, copy }: { title: string; copy: string }) {
   return (
     <section style={sectionStyle}>
-      <p style={eyebrow}>{label}</p>
       <h2 style={heading}>{title}</h2>
       <p style={{ ...body, maxWidth: '980px' }}>{copy}</p>
     </section>
   );
 }
 
-function ListBlock({ title, items, label }: { title: string; items: readonly string[]; label: string }) {
+function ListBlock({ title, items }: { title: string; items: readonly string[] }) {
   return (
     <section style={sectionStyle}>
-      <p style={eyebrow}>{label}</p>
       <h2 style={heading}>{title}</h2>
       <div style={grid}>
         {items.map((item) => (
@@ -84,7 +82,6 @@ function ListBlock({ title, items, label }: { title: string; items: readonly str
 function FAQBlock({ editorial }: { editorial: SystemEditorial }) {
   return (
     <section style={sectionStyle}>
-      <p style={eyebrow}>Technical Questions</p>
       <h2 style={heading}>Questions engineers and fleet teams usually ask</h2>
       <div style={{ display: 'grid', gap: '1px', background: 'rgba(255,255,255,0.07)' }}>
         {editorial.faq.map((entry) => (
@@ -98,23 +95,6 @@ function FAQBlock({ editorial }: { editorial: SystemEditorial }) {
   );
 }
 
-const labels: Record<SystemEditorialKey, string> = {
-  risk: 'Failure Risk',
-  fieldNote: 'Field Perspective',
-  failurePath: 'Failure Mechanism',
-  architecture: 'Protection Architecture',
-  protectedAssets: 'Protected Assets',
-  selection: 'Application Engineering',
-  parameters: 'Engineering Parameters',
-  conditions: 'Operating Conditions',
-  service: 'Service Intelligence',
-  mistakes: 'Application Risk',
-  standards: 'Technical Reference',
-  industries: 'Operating Environments',
-  faq: 'Technical Questions',
-  commercialDecision: 'Technical Decision',
-};
-
 export function SystemEditorialContent({ editorial }: Props) {
   return (
     <>
@@ -123,10 +103,10 @@ export function SystemEditorialContent({ editorial }: Props) {
 
         const value = editorial[key];
         if ('copy' in value) {
-          return <CopyBlock key={key} title={value.title} copy={value.copy} label={labels[key]} />;
+          return <CopyBlock key={key} title={value.title} copy={value.copy} />;
         }
 
-        return <ListBlock key={key} title={value.title} items={value.items} label={labels[key]} />;
+        return <ListBlock key={key} title={value.title} items={value.items} />;
       })}
     </>
   );
