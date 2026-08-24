@@ -9,6 +9,7 @@ import {
 import { getFamiliesByProtectionSystem } from '@/lib/product-families-data';
 import { CoreSystemProtectionNarrative } from './CoreSystemProtectionNarrative';
 import { PageHeader } from '@/components/PageHeader';
+import { Hero } from '@/components/Hero';
 
 const BASE_URL = 'https://elimfilters.com';
 const displayFont = 'Chakra Petch, Arial Narrow, monospace';
@@ -108,65 +109,7 @@ export default function ProtectionSystemPage({ params }: Props) {
   if (!sys) notFound();
 
   const families = getFamiliesByProtectionSystem(sys.slug);
-  const isAirIntake = sys.slug === 'air-intake';
   const systemUrl = `${BASE_URL}/systems/${sys.slug}/`;
-
-  const heroStyle: CSSProperties = {
-    position: 'relative',
-    minHeight: isAirIntake ? 'clamp(590px, 82vh, 900px)' : 'clamp(440px, 68vh, 720px)',
-    overflow: 'hidden',
-    display: 'flex',
-    alignItems: 'center',
-  };
-
-  const heroImageStyle: CSSProperties = {
-    position: 'absolute',
-    inset: 0,
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    objectPosition: isAirIntake ? 'center 26%' : 'center center',
-    opacity: isAirIntake ? 0.78 : 0.42,
-    filter: isAirIntake ? 'brightness(1.15) contrast(1.05) saturate(1.05)' : 'brightness(1.05)',
-  };
-
-  const heroOverlayStyle: CSSProperties = {
-    position: 'absolute',
-    inset: 0,
-    background: isAirIntake
-      ? 'linear-gradient(90deg, rgba(0,0,0,0.46) 0%, rgba(0,0,0,0.32) 34%, rgba(0,0,0,0.10) 72%, rgba(0,0,0,0.16) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.10), transparent 34%)'
-      : 'linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.32) 48%, rgba(0,0,0,0.12) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
-  };
-
-  const heroContentStyle: CSSProperties = {
-    position: 'relative',
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: isAirIntake ? 'clamp(4.4rem, 7vw, 6.4rem) clamp(1.5rem, 5vw, 4rem)' : 'clamp(4rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem)',
-    width: '100%',
-    textShadow: isAirIntake ? '0 2px 18px rgba(0,0,0,0.85)' : undefined,
-  };
-
-  const heroTitleStyle: CSSProperties = {
-    fontFamily: displayFont,
-    fontWeight: 700,
-    fontSize: isAirIntake ? 'clamp(2.65rem, 5.8vw, 5.45rem)' : 'clamp(3.1rem, 7.5vw, 7.2rem)',
-    lineHeight: 0.88,
-    letterSpacing: '-0.055em',
-    textTransform: 'uppercase',
-    maxWidth: isAirIntake ? '760px' : '980px',
-    margin: 0,
-    marginBottom: '1.5rem',
-  };
-
-  const heroTaglineStyle: CSSProperties = {
-    fontFamily: bodyFont,
-    fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-    color: isAirIntake ? '#FFF12D' : 'rgba(255,255,255,0.82)',
-    maxWidth: isAirIntake ? '980px' : '770px',
-    lineHeight: 1.65,
-    fontWeight: 800,
-  };
 
   const breadcrumb = {
     '@context': 'https://schema.org',
@@ -203,27 +146,7 @@ export default function ProtectionSystemPage({ params }: Props) {
       <main style={main}>
         <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage={sys.name} />
 
-        <header style={heroStyle}>
-          <img
-            src={sys.heroImage}
-            alt={sys.name}
-            style={heroImageStyle}
-          />
-          <div style={heroOverlayStyle} />
-          <div style={heroContentStyle}>
-            {!isAirIntake && (
-              <p style={{ ...labelStyle, color: '#FFF12D', marginBottom: '1.25rem', letterSpacing: '0.34em' }}>
-                PROTECTION SYSTEM
-              </p>
-            )}
-            <h1 style={heroTitleStyle}>
-              {sys.name}
-            </h1>
-            <p style={heroTaglineStyle}>
-              {sys.tagline}
-            </p>
-          </div>
-        </header>
+        <Hero title={sys.name} tagline={sys.tagline} backgroundImage={sys.heroImage} industryChrome />
 
         <section style={section}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
