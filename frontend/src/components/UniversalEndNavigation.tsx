@@ -73,7 +73,7 @@ function navigationFor(pathname: string): NavigationConfig | null {
   if (isRoute(pathname, '/systems')) {
     return {
       kind: 'systems',
-      eyebrow: 'NEXT ENGINEERING PATH',
+      eyebrow: '',
       title: pathname === '/systems'
         ? 'Move from protection architecture to products and field application.'
         : 'Connect the protection system to products and operating context.',
