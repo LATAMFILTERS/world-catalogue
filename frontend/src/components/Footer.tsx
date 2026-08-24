@@ -89,7 +89,7 @@ export function Footer() {
               <img
                 src="/images/KLEO-TECHNOLOGY-fn.avif"
                 alt="Kleo Technologies"
-                style={{ maxHeight: '40px', maxWidth: '130px', objectFit: 'contain', display: 'block' }}
+                style={{ maxHeight: '64px', maxWidth: '200px', objectFit: 'contain', display: 'block' }}
               />
               <div style={{ marginTop: '12px' }}>
                 <p style={{
