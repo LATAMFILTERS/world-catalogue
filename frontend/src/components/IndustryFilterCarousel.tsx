@@ -5,7 +5,12 @@ import Link from 'next/link';
 import { PRODUCT_FAMILIES, type FamilyKey } from '@/lib/product-families-data';
 
 const CORE_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'cabin-filters'];
-const EXTRA_HD_KEYS: FamilyKey[] = ['fuel-water-separators', 'air-dryer-filters', 'coolant-filters'];
+// Fuel water separators apply across every HD industry (marine, oil & gas, mining, etc.).
+const HD_EXTRA_KEYS: FamilyKey[] = ['fuel-water-separators'];
+// Air dryer (pneumatic brake systems) and coolant filters only apply to on-road fleet-type
+// industries with air-brake systems and closed cooling circuits in daily service.
+const FLEET_ONLY_KEYS: FamilyKey[] = ['air-dryer-filters', 'coolant-filters'];
+const FLEET_INDUSTRIES = ['Trucks Fleets', 'Waste Municipal', 'Bus Coach'];
 
 // Approved ELIMFILTERS product renders, hosted on Cloudflare R2 (elimfilters-renders bucket).
 const R2_BASE = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20';
@@ -132,7 +137,12 @@ interface IndustryFilterCarouselProps {
 }
 
 export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilterCarouselProps) {
-  const keys = dutyClass === 'LD' ? CORE_KEYS : [...CORE_KEYS, ...EXTRA_HD_KEYS];
+  const keys =
+    dutyClass === 'LD'
+      ? CORE_KEYS
+      : FLEET_INDUSTRIES.includes(industryName)
+        ? [...CORE_KEYS, ...HD_EXTRA_KEYS, ...FLEET_ONLY_KEYS]
+        : [...CORE_KEYS, ...HD_EXTRA_KEYS];
   const families = keys.map((key) => PRODUCT_FAMILIES[key]);
   const [index, setIndex] = useState(0);
 
