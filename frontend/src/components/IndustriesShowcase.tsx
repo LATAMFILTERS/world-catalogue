@@ -39,9 +39,6 @@ export function IndustriesShowcase() {
     >
       <div
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
           padding: '0 clamp(1.25rem, 6vw, 6rem)',
           marginBottom: '1.75rem',
         }}
@@ -58,40 +55,39 @@ export function IndustriesShowcase() {
         >
           Built for Every <span style={{ color: '#FFF12D' }}>Industry</span>
         </h2>
-
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <button
-            type="button"
-            aria-label="Scroll industries left"
-            onClick={() => scrollByCards(-1)}
-            style={arrowButtonStyle}
-          >
-            {'<'}
-          </button>
-          <button
-            type="button"
-            aria-label="Scroll industries right"
-            onClick={() => scrollByCards(1)}
-            style={arrowButtonStyle}
-          >
-            {'>'}
-          </button>
-        </div>
       </div>
 
-      <div
-        ref={trackRef}
-        style={{
-          display: 'flex',
-          gap: `${CARD_GAP}px`,
-          overflowX: 'auto',
-          scrollSnapType: 'x mandatory',
-          padding: '0 clamp(1.25rem, 6vw, 6rem)',
-          scrollbarWidth: 'none',
-        }}
-        className="industries-track"
-      >
-        {INDUSTRIES.map((industry) => (
+      <div style={{ position: 'relative' }}>
+        <button
+          type="button"
+          aria-label="Scroll industries left"
+          onClick={() => scrollByCards(-1)}
+          style={{ ...arrowButtonStyle, left: 'clamp(0.75rem, 3vw, 2rem)' }}
+        >
+          {'<'}
+        </button>
+        <button
+          type="button"
+          aria-label="Scroll industries right"
+          onClick={() => scrollByCards(1)}
+          style={{ ...arrowButtonStyle, right: 'clamp(0.75rem, 3vw, 2rem)' }}
+        >
+          {'>'}
+        </button>
+
+        <div
+          ref={trackRef}
+          style={{
+            display: 'flex',
+            gap: `${CARD_GAP}px`,
+            overflowX: 'auto',
+            scrollSnapType: 'x mandatory',
+            padding: '0 clamp(1.25rem, 6vw, 6rem)',
+            scrollbarWidth: 'none',
+          }}
+          className="industries-track"
+        >
+          {INDUSTRIES.map((industry) => (
           <a
             key={industry.slug}
             href={`/industries/${industry.slug}`}
@@ -147,17 +143,23 @@ export function IndustriesShowcase() {
               </span>
             </div>
           </a>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
 const arrowButtonStyle: React.CSSProperties = {
-  width: '44px',
-  height: '44px',
-  border: '1px solid rgba(255,255,255,0.2)',
-  background: 'transparent',
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  zIndex: 2,
+  width: '48px',
+  height: '48px',
+  borderRadius: '50%',
+  border: '1px solid rgba(255,255,255,0.3)',
+  background: 'rgba(0,0,0,0.55)',
   color: '#fff',
   cursor: 'pointer',
   fontFamily: 'Barlow, Arial, sans-serif',

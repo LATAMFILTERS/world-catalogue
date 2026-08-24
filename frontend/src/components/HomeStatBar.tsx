@@ -51,13 +51,13 @@ export function HomeStatBar() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            style={{ textAlign: 'center' }}
+            style={{ width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
           >
             <p
               style={{
                 fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
                 fontWeight: 700,
-                fontSize: 'clamp(2rem, 4vw, 2.75rem)',
+                fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
                 color: 'var(--ink)',
                 margin: '0 0 0.4rem',
                 fontVariantNumeric: 'tabular-nums',
