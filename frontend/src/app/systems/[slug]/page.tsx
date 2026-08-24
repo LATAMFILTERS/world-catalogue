@@ -8,6 +8,7 @@ import {
 } from '@/lib/protection-systems-data';
 import { getFamiliesByProtectionSystem } from '@/lib/product-families-data';
 import { CoreSystemProtectionNarrative } from './CoreSystemProtectionNarrative';
+import { PageHeader } from '@/components/PageHeader';
 
 const BASE_URL = 'https://elimfilters.com';
 const displayFont = 'Chakra Petch, Arial Narrow, monospace';
@@ -48,21 +49,6 @@ const main: CSSProperties = {
   color: '#fff',
   minHeight: '100vh',
   fontFamily: bodyFont,
-};
-
-const breadcrumbLink: CSSProperties = {
-  fontFamily: displayFont,
-  fontSize: '0.66rem',
-  fontWeight: 700,
-  letterSpacing: '0.16em',
-  color: 'rgba(255,255,255,0.38)',
-  textDecoration: 'none',
-  textTransform: 'uppercase',
-};
-
-const breadcrumbCurrent: CSSProperties = {
-  ...breadcrumbLink,
-  color: '#FFF12D',
 };
 
 const section: CSSProperties = {
@@ -215,24 +201,7 @@ export default function ProtectionSystemPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(systemSchema) }} />
 
       <main style={main}>
-        <nav style={{ maxWidth: '1200px', margin: '0 auto', padding: '1.25rem clamp(1.5rem, 5vw, 4rem) 0', display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-          {[
-            { href: '/', label: 'Home' },
-            { href: '/systems/', label: 'Systems' },
-            { label: sys.name },
-          ].map((crumb, i, arr) => (
-            <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              {crumb.href ? (
-                <Link href={crumb.href} style={breadcrumbLink}>
-                  {crumb.label}
-                </Link>
-              ) : (
-                <span style={breadcrumbCurrent}>{crumb.label}</span>
-              )}
-              {i < arr.length - 1 && <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>/</span>}
-            </span>
-          ))}
-        </nav>
+        <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage={sys.name} />
 
         <header style={heroStyle}>
           <img
