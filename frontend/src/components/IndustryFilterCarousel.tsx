@@ -1,21 +1,29 @@
 'use client';
 
-import { useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { PRODUCT_FAMILIES, type FamilyKey } from '@/lib/product-families-data';
 
 const CORE_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'cabin-filters'];
 const EXTRA_HD_KEYS: FamilyKey[] = ['fuel-water-separators', 'air-dryer-filters', 'coolant-filters'];
 
-// mecanica-air.avif is targeted by legacy page-scoped CSS hacks (main:has(img[src*="mecanica-air.avif"]))
-// that hide sibling sections on the Air Intake technology page. Swap it here so this carousel
-// doesn't accidentally trip those selectors on unrelated pages.
-const IMAGE_OVERRIDES: Partial<Record<FamilyKey, string>> = {
-  'primary-air': '/images/air-filter1.avif',
+// Approved ELIMFILTERS product renders, hosted on Cloudflare R2 (elimfilters-renders bucket).
+// No light-duty (automotive) renders exist yet in the pilot batch, so LD industries currently
+// reuse the same HD-class renders until light-duty SKUs are produced.
+const R2_BASE = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20';
+const CLOUDFLARE_IMAGES: Record<FamilyKey, string> = {
+  'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
+  'secondary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
+  'air-cleaner-housings': `${R2_BASE}/EA20080-INTEKCORE-approved-opt.png`,
+  'primary-fuel': `${R2_BASE}/EF98279-SYNTAPORE-approved-opt.png`,
+  'secondary-fuel': `${R2_BASE}/EF98960-SYNTAPORE-approved-opt.png`,
+  'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
+  'oil-filters': `${R2_BASE}/EL87900-LF14000NN-1of20-approved.png`,
+  'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`,
+  'coolant-filters': `${R2_BASE}/EW74685-WF2077-2of20-approved-opt.png`,
+  'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
+  'air-dryer-filters': `${R2_BASE}/ED43571-THERMACORE-approved-opt.png`,
 };
-
-const CARD_WIDTH = 300;
-const CARD_GAP = 16;
 
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
@@ -26,19 +34,20 @@ interface IndustryFilterCarouselProps {
 }
 
 export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilterCarouselProps) {
-  const trackRef = useRef<HTMLDivElement>(null);
   const keys = dutyClass === 'LD' ? CORE_KEYS : [...CORE_KEYS, ...EXTRA_HD_KEYS];
   const families = keys.map((key) => PRODUCT_FAMILIES[key]);
+  const [index, setIndex] = useState(0);
 
-  const scrollByCards = (direction: 1 | -1) => {
-    const el = trackRef.current;
-    if (!el) return;
-    el.scrollBy({ left: direction * (CARD_WIDTH + CARD_GAP) * 2, behavior: 'smooth' });
+  const go = (direction: 1 | -1) => {
+    setIndex((prev) => (prev + direction + families.length) % families.length);
   };
+
+  const family = families[index];
+  const image = CLOUDFLARE_IMAGES[family.key];
 
   return (
     <section style={{ background: '#000', padding: 'clamp(4rem, 8vw, 7rem) 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-      <div style={{ padding: '0 clamp(1.25rem, 6vw, 6rem)', marginBottom: '1.75rem' }}>
+      <div style={{ padding: '0 clamp(1.25rem, 6vw, 6rem)', marginBottom: 'clamp(2rem, 4vw, 3rem)' }}>
         <h2
           style={{
             fontFamily: displayFont,
@@ -58,77 +67,62 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
         </p>
       </div>
 
-      <div style={{ position: 'relative' }}>
-        <button type="button" aria-label="Scroll filters left" onClick={() => scrollByCards(-1)} style={{ ...arrowButtonStyle, left: 'clamp(0.75rem, 3vw, 2rem)' }}>
-          {'<'}
-        </button>
-        <button type="button" aria-label="Scroll filters right" onClick={() => scrollByCards(1)} style={{ ...arrowButtonStyle, right: 'clamp(0.75rem, 3vw, 2rem)' }}>
-          {'>'}
-        </button>
-
+      <div style={{ position: 'relative', padding: '0 clamp(1.25rem, 6vw, 6rem)' }}>
         <div
-          ref={trackRef}
+          className="filter-carousel-slide"
           style={{
-            display: 'flex',
-            gap: `${CARD_GAP}px`,
-            overflowX: 'auto',
-            scrollSnapType: 'x mandatory',
-            padding: '0 clamp(1.25rem, 6vw, 6rem)',
-            scrollbarWidth: 'none',
+            display: 'grid',
+            gridTemplateColumns: 'minmax(0, 1.1fr) minmax(0, 0.9fr)',
+            gap: 'clamp(2rem, 5vw, 4rem)',
+            alignItems: 'center',
+            minHeight: '360px',
           }}
-          className="industries-track"
         >
-          {families.map((family) => {
-            const code = dutyClass === 'LD' ? family.ldPrefix : family.hdPrefix;
-            return (
-              <Link
-                key={family.key}
-                href={`/families/${family.slug}/`}
-                style={{
-                  flex: `0 0 ${CARD_WIDTH}px`,
-                  scrollSnapAlign: 'start',
-                  display: 'block',
-                  textDecoration: 'none',
-                  background: '#050505',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                }}
-              >
-                <div style={{ position: 'relative', width: '100%', paddingBottom: '75%', overflow: 'hidden' }}>
-                  <img
-                    src={IMAGE_OVERRIDES[family.key] ?? family.heroImage}
-                    alt={family.name}
-                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
-                  {code && (
-                    <span
-                      style={{
-                        position: 'absolute',
-                        top: '0.75rem',
-                        left: '0.75rem',
-                        fontFamily: displayFont,
-                        fontWeight: 700,
-                        fontSize: '0.68rem',
-                        letterSpacing: '0.08em',
-                        color: '#000',
-                        background: '#FFF12D',
-                        padding: '0.3rem 0.55rem',
-                      }}
-                    >
-                      {code}
-                    </span>
-                  )}
-                </div>
-                <div style={{ padding: '1.1rem 1.25rem 1.35rem' }}>
-                  <h3 style={{ fontFamily: displayFont, fontWeight: 700, fontSize: '1.05rem', color: '#fff', margin: '0 0 0.6rem', textTransform: 'uppercase' }}>
-                    {family.name}
-                  </h3>
-                  <p style={{ fontFamily: bodyFont, fontSize: '0.85rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.55)', margin: 0 }}>
-                    {family.purpose}
-                  </p>
-                </div>
-              </Link>
-            );
-          })}
+          <div>
+            <span style={{ fontFamily: displayFont, fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.16em', color: '#FFF12D' }}>
+              {String(index + 1).padStart(2, '0')} / {String(families.length).padStart(2, '0')}
+            </span>
+            <h3 style={{ fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)', color: '#fff', margin: '0.9rem 0 1.1rem', textTransform: 'uppercase' }}>
+              {family.name}
+            </h3>
+            <p style={{ fontFamily: bodyFont, fontSize: '1.02rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', margin: '0 0 1.5rem', maxWidth: '520px' }}>
+              {family.purpose}
+            </p>
+            <Link
+              href={`/families/${family.slug}/`}
+              style={{
+                display: 'inline-block',
+                fontFamily: displayFont,
+                fontWeight: 700,
+                fontSize: '0.75rem',
+                letterSpacing: '0.12em',
+                color: '#000',
+                background: '#FFF12D',
+                padding: '0.85rem 1.4rem',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+              }}
+            >
+              View {family.name} →
+            </Link>
+          </div>
+
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '75%', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', background: '#fff' }}>
+            <img
+              src={image}
+              alt={family.name}
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: '1.5rem' }}
+            />
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', gap: '0.75rem', marginTop: 'clamp(1.5rem, 3vw, 2.25rem)' }}>
+          <button type="button" aria-label="Previous filter" onClick={() => go(-1)} style={arrowButtonStyle}>
+            {'<'}
+          </button>
+          <button type="button" aria-label="Next filter" onClick={() => go(1)} style={arrowButtonStyle}>
+            {'>'}
+          </button>
         </div>
       </div>
     </section>
@@ -136,15 +130,11 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
 }
 
 const arrowButtonStyle: React.CSSProperties = {
-  position: 'absolute',
-  top: '37.5%',
-  transform: 'translateY(-50%)',
-  zIndex: 2,
   width: '48px',
   height: '48px',
   borderRadius: '50%',
   border: '1px solid rgba(255,255,255,0.3)',
-  background: 'rgba(0,0,0,0.55)',
+  background: 'rgba(255,255,255,0.04)',
   color: '#fff',
   cursor: 'pointer',
   fontFamily: bodyFont,
