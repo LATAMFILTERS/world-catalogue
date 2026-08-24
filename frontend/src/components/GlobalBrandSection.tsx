@@ -77,7 +77,7 @@ export function GlobalBrandSection() {
                 <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.05rem', margin: '0 0 0.55rem', color: '#fff' }}>
                   {title}
                 </h3>
-                <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '1rem', lineHeight: 1.65, margin: 0, textAlign: 'justify' }}>
                   {body}
                 </p>
               </div>
