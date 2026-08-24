@@ -84,7 +84,9 @@ export default function SystemsPage() {
       <PageHeader currentPage="Systems" />
 
       <section style={hero}>
-        <div style={{ ...heroImage, backgroundImage: 'url(/assets/hero-systems.avif)' }} />
+        <video autoPlay muted loop playsInline preload="auto" style={{ ...heroImage, objectFit: 'cover', objectPosition: 'center' }}>
+          <source src="/images/Robotic_arm_replacing_filtration_system.mp4" type="video/mp4" />
+        </video>
         <div style={heroOverlay} />
 
         <div style={heroInner}>
