@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+main p {
+  text-align: justify;
+  hyphens: none;
+}
+
 :root {
   --volt: #FFF12D;
   --volt-ink: #8A6D00;

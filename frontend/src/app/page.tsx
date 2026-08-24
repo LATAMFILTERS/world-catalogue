@@ -321,8 +321,6 @@ export default function Home() {
   const economicStats = t('home.economicStats', { returnObjects: true }) as Array<{ value: string; label: string }>;
   const trustIndustries = t('home.trustIndustries', { returnObjects: true }) as string[];
 
-  const FAILURE_NUMS = ['01', '02', '03'];
-
   const CTA_SLIDES = [
     { tag: t('home.ctaDealerTag', '// DEALER NETWORK'), title: t('home.ctaDealerTitle', 'ONLY THE BEST'), highlight: t('home.ctaDealerHl', 'SELL ELIMFILTERS.'), buttonText: t('home.ctaDealerBtn', 'BECOME A DEALER'), href: '/distributor-application' },
     { tag: t('home.ctaSearchTag', '// TECHNICAL SEARCH'), title: t('home.ctaSearchTitle', 'THE RIGHT FILTER.'), highlight: t('home.ctaSearchHl', 'SEARCH LIKE A PRO.'), buttonText: t('home.ctaSearchBtn', 'FIND MY PART'), href: 'https://part-search.elimfilters.com' },
@@ -399,15 +397,9 @@ export default function Home() {
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                   {(Array.isArray(failModes) ? failModes : []).map((item, idx) => (
-                    <motion.div key={idx} variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                      style={{ display: 'flex', gap: '1.25rem' }}>
-                      <div style={{ flexShrink: 0, width: 48, height: 48, borderRadius: '50%', border: '1px solid rgba(180,0,0,0.35)', background: 'rgba(100,0,0,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <span style={{ color: '#f87171', fontWeight: 700, fontSize: '0.8rem', fontFamily: 'Barlow, Arial, sans-serif' }}>{FAILURE_NUMS[idx] ?? String(idx + 1).padStart(2, '0')}</span>
-                      </div>
-                      <div>
-                        <h3 style={{ color: 'var(--ink)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.82rem', marginBottom: '0.3rem', fontFamily: 'Barlow, Arial, sans-serif' }}>{item.title}</h3>
-                        <p style={{ color: 'var(--ink-3)', fontSize: '0.875rem', lineHeight: 1.65, fontFamily: 'Barlow, Arial, sans-serif' }}>{item.desc}</p>
-                      </div>
+                    <motion.div key={idx} variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}>
+                      <h3 style={{ color: 'var(--ink)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.82rem', marginBottom: '0.3rem', fontFamily: 'Barlow, Arial, sans-serif' }}>{item.title}</h3>
+                      <p style={{ color: 'var(--ink-3)', fontSize: '0.875rem', lineHeight: 1.65, fontFamily: 'Barlow, Arial, sans-serif', textAlign: 'justify' }}>{item.desc}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -439,8 +431,8 @@ export default function Home() {
                 One Contamination Event.<br />
                 <span style={{ color: '#FFF12D' }}>A Cascade Of Losses.</span>
               </h2>
-              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'var(--ink-2)', lineHeight: 1.8, maxWidth: '760px', marginBottom: '2.5rem' }}>
-                A single contamination failure rarely stays contained. It escalates from a damaged component to a full assembly replacement, to fluid and system recertification, to unplanned downtime that stalls the whole operation — costs that compound far beyond the part that failed.
+              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'var(--ink-2)', lineHeight: 1.8, marginBottom: '2.5rem', textAlign: 'justify' }}>
+                A single contamination failure rarely stays contained. It escalates from a damaged component to a full assembly replacement, to fluid and system recertification, to unplanned downtime that stalls the whole operation. The costs compound far beyond the part that failed.
               </p>
             </motion.div>
 
