@@ -123,6 +123,27 @@ export default function SystemsPage() {
         </div>
       </section>
 
+      <section style={section}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: 'clamp(2rem, 6vw, 4rem)', alignItems: 'center' }}>
+          <div>
+            <img
+              src="/images/banco-pruebas-filtros.png"
+              alt="Filter validation test bench"
+              style={{ width: '100%', display: 'block', border: '1px solid rgba(255,255,255,0.1)' }}
+            />
+          </div>
+          <div>
+            <h2 style={whyTitle}>Validated on the bench before it is specified in the field.</h2>
+            <p style={{ ...leadText, marginTop: '1.5rem' }}>
+              Every protection system is run through dedicated test equipment that reproduces the pressure, flow rate, temperature, and contaminant characteristics of the actual application, not a generic laboratory standard. That is where efficiency, contaminant-holding capacity, and structural durability are measured against the conditions the part will actually face before it ever reaches production.
+            </p>
+            <p style={{ ...bodyText, marginTop: '1.2rem' }}>
+              Industry-standard test protocols set a baseline, but they do not always reflect a specific duty cycle, fuel quality, or operating environment. ELIMFILTERS structures its validation around application-based simulation testing to close that gap, so a protection system is proven under real operating conditions before it is specified, not after it fails in the field.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section style={systemSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
