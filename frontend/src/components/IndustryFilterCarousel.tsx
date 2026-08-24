@@ -104,13 +104,12 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
   },
 };
 
-// LD-prefix renders (EA3/EF3/EL3/EC3) — Automotive only. EF3 (fuel) and EC3 (cabin) have no
-// approved render in the bucket yet, so those two fall back to an HD image until produced.
+// LD-prefix renders (EA3/EF3/EL3/EC3) — Automotive only. Never reused on any other industry.
 const LD_IMAGES: Partial<Record<FamilyKey, string>> = {
   'primary-air': `${R2_BASE}/EA30755-MACROCORE-approved-opt.png`,
   'oil-filters': `${R2_BASE}/EL36889-SYNTRAX-approved-opt.png`,
-  'primary-fuel': `${R2_BASE}/EF98279-SYNTAPORE-approved-opt.png`,
-  'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
+  'primary-fuel': `${R2_BASE}/EF38279-SYNTAPORE-approved-opt.png`,
+  'cabin-filters': `${R2_BASE}/EC30729-MICROKAPPA-approved-opt.png`,
 };
 
 const displayFont = 'var(--font-display)';
