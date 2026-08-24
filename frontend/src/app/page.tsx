@@ -533,11 +533,11 @@ export default function Home() {
                 <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: 'clamp(1.7rem, 3.2vw, 2.25rem)', fontWeight: 700, lineHeight: 1.15, color: 'var(--ink)', marginBottom: '1.5rem' }}>
                   {t('home.assetTitle', 'Protecting Industrial Assets Through Contamination Control')}
                 </h2>
-                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', color: 'var(--ink-2)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1.05rem', color: 'var(--ink-2)', lineHeight: 1.8, marginBottom: '1.5rem', textAlign: 'justify' }}>
                   {t('home.assetP1', 'ELIMFILTERS protects industrial assets by controlling contamination across critical systems. Our engineering approach focuses on preventing degradation, extending service life, improving reliability and reducing total cost of ownership.')}
                 </p>
-                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'var(--ink-3)', lineHeight: 1.7, paddingLeft: '1.25rem', borderLeft: '3px solid #FFF12D' }}>
-                  {t('home.assetP2', 'Every technology we engineer addresses a specific contamination mechanism — particle wear, water ingestion, bypass failure, or thermal degradation — targeting the root cause of premature asset failure.')}
+                <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'var(--ink-3)', lineHeight: 1.7, paddingLeft: '1.25rem', borderLeft: '3px solid #FFF12D', textAlign: 'justify' }}>
+                  {t('home.assetP2', 'Every technology we engineer addresses a specific contamination mechanism: particle wear, water ingestion, bypass failure, or thermal degradation, targeting the root cause of premature asset failure.')}
                 </p>
               </div>
               <div style={{ background: 'var(--surface-light-2)', border: '1px solid rgba(255,241,45,0.3)', padding: '2.5rem' }}>
@@ -551,8 +551,8 @@ export default function Home() {
                     <div key={i} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                       <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#FFF12D', flexShrink: 0, marginTop: '0.52rem' }} />
                       <div>
-                        <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'var(--ink)', margin: '0 0 0.2rem', letterSpacing: '0.02em' }}>{item.label}</p>
-                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.82rem', color: 'var(--ink-3)', margin: 0, letterSpacing: 0 }}>{item.desc}</p>
+                        <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', color: 'var(--ink)', margin: '0 0 0.2rem', letterSpacing: '0.02em' }}>{item.label}</p>
+                        <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.92rem', color: 'var(--ink-3)', margin: 0, letterSpacing: 0 }}>{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -571,7 +571,7 @@ export default function Home() {
               <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', color: 'var(--ink)', lineHeight: 1.15, marginBottom: '1rem', maxWidth: '700px' }}>
                 {t('home.sciTitle', 'The Science Behind Asset Protection')}
               </h2>
-              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'var(--ink-3)', maxWidth: '640px' }}>
+              <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'var(--ink-3)', textAlign: 'justify' }}>
                 {t('home.sciDesc', 'ELIMFILTERS contamination control systems are engineered to international standards, validated through rigorous laboratory testing and field deployment across critical industrial environments.')}
               </p>
             </motion.div>
@@ -580,7 +580,7 @@ export default function Home() {
                 <motion.div key={i} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.08 }} viewport={{ once: true, margin: '-40px' }}
                   style={{ flex: '1 1 calc(33.333% - 1.5rem)', minWidth: '320px', maxWidth: '440px' }}>
                   <SpotlightCard style={{ background: '#000', border: '1px solid rgba(255,241,45,0.12)', padding: '2.5rem', borderRadius: '2px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '1.4rem', color: '#FFF12D', marginBottom: '1rem', letterSpacing: '0.05em', textAlign: 'center' }}>{std.code}</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '1.75rem', color: '#FFF12D', marginBottom: '1rem', letterSpacing: '0.05em', textAlign: 'center' }}>{std.code}</div>
                     <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1.1rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', margin: 0, textAlign: 'center' }}>{std.desc}</p>
                   </SpotlightCard>
                 </motion.div>
@@ -604,8 +604,8 @@ export default function Home() {
                     <SpotlightCard style={{ background: 'var(--surface-light-2)', padding: '2rem', border: '1px solid var(--border-on-light)', borderRadius: '2px', height: '100%' }}>
                       <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
                         <div style={{ width: 32, height: 2, background: '#FFF12D', marginBottom: '1.5rem' }} />
-                        <h3 style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1rem', color: 'var(--volt-ink)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{tech.title}</h3>
-                        <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', lineHeight: 1.75, color: 'var(--ink-3)' }}>{tech.desc}</p>
+                        <h3 style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1rem', color: '#fff', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{tech.title}</h3>
+                        <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', lineHeight: 1.75, color: 'var(--ink-3)', textAlign: 'justify' }}>{tech.desc}</p>
                       </motion.div>
                     </SpotlightCard>
                   </motion.div>

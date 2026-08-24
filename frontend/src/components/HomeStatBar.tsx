@@ -11,7 +11,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   useEffect(() => {
     if (!inView || !ref.current) return;
     const controls = animate(0, value, {
-      duration: 1.4,
+      duration: 2,
       ease: [0.16, 1, 0.3, 1],
       onUpdate(v) {
         if (ref.current) ref.current.textContent = `${Math.round(v)}${suffix}`;
@@ -57,7 +57,7 @@ export function HomeStatBar() {
               style={{
                 fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
                 fontWeight: 700,
-                fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                fontSize: 'clamp(3rem, 6vw, 4.25rem)',
                 color: '#fff',
                 margin: '0 0 0.4rem',
                 fontVariantNumeric: 'tabular-nums',
@@ -68,7 +68,7 @@ export function HomeStatBar() {
             <p
               style={{
                 fontFamily: 'Barlow, Arial, sans-serif',
-                fontSize: '0.78rem',
+                fontSize: '0.92rem',
                 fontWeight: 600,
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
