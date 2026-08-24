@@ -446,9 +446,9 @@ export default function Home() {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
               {[
-                { label: 'Component Damage', icon: '05', desc: 'Particle contamination destroys spool valves and pump internals, often requiring full assembly replacement rather than a simple part swap.' },
-                { label: 'System Recovery', icon: '06', desc: 'Contaminated fluid must be fully purged. Lines flushed, fluid replaced, system recertified before the equipment can safely return to service.' },
-                { label: 'Unplanned Downtime', icon: '07', desc: 'Every day an asset is out of service is lost production, missed commitments, and idle labor — the cost that compounds the fastest.' },
+                { label: 'Component Damage', desc: 'Particle contamination destroys spool valves and pump internals, often requiring full assembly replacement rather than a simple part swap.' },
+                { label: 'System Recovery', desc: 'Contaminated fluid must be fully purged. Lines flushed, fluid replaced, system recertified before the equipment can safely return to service.' },
+                { label: 'Unplanned Downtime', desc: 'Every day an asset is out of service is lost production, missed commitments, and idle labor — the cost that compounds the fastest.' },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -456,11 +456,10 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true, margin: '-40px' }}
-                  style={{ background: 'var(--surface-light-2)', border: '1px solid var(--border-on-light)', padding: '2rem', borderRadius: '2px' }}
+                  style={{ background: 'var(--surface-light-2)', border: '1px solid var(--border-on-light)', padding: '2rem', borderRadius: '2px', textAlign: 'center' }}
                 >
-                  <p style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>{item.icon}</p>
                   <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--ink-2)', marginBottom: '0.6rem' }}>{item.label}</p>
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.85rem', color: 'var(--ink-2)', lineHeight: 1.65, textAlign: 'left' }}>{item.desc}</p>
+                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'var(--ink-2)', lineHeight: 1.65, textAlign: 'justify' }}>{item.desc}</p>
                 </motion.div>
               ))}
             </div>
