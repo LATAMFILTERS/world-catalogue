@@ -24,83 +24,87 @@ const R2_BASE = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/
 const AIR_DRYER_IMAGE = `${R2_BASE}/ED43571-THERMACORE-approved-opt.png`;
 const COOLANT_IMAGE = `${R2_BASE}/EW74685-WF2077-2of20-approved-opt.png`;
 
+// Assignments below are the ones you sent directly (SKU → industry). Where a category still had
+// no assignment for an industry, it is filled from whatever was left unused in that category's
+// pool (noted inline as "gap fill"), since only Marine (MARINECLEAN) and the ones you listed have
+// a confirmed industry match — everything marked "gap fill" is still a best-effort placeholder.
 const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> = {
   Mining: {
-    'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF98279-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL80352-SYNTRAX-approved-opt.png`,
+    'primary-air': `${R2_BASE}/EA17557-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF90541-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL80352-SYNTRAX-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
-  },
-  Agriculture: {
-    'primary-air': `${R2_BASE}/EA10695-MICROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF98960-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL80422-SYNTRAX-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC10729-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`,
   },
+  Agriculture: {
+    'primary-air': `${R2_BASE}/EA15292-AF55014-2of20-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF96745-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL80422-SYNTRAX-approved-opt.png`, // gap fill
+    'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91242-HYDROCORE-approved-opt.png`, // gap fill
+  },
   Construction: {
-    'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`,
+    'primary-air': `${R2_BASE}/EA14603-MACROCORE-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF90345-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL80428-LF3970-2of20-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES91242-HYDROCORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL80428-LF3970-2of20-approved-opt.png`, // gap fill
+    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`,
   },
   'Oil Gas': {
-    'primary-air': `${R2_BASE}/EA135396-MACROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF90529-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL80779-LF16243-2of20-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`,
+    'primary-air': `${R2_BASE}/EA19371-MACROCORE-approved-opt.png`, // gap fill
+    'primary-fuel': `${R2_BASE}/EF91315-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL80779-LF16243-2of20-approved-opt.png`, // gap fill
+    'cabin-filters': `${R2_BASE}/EC10729-MICROKAPPA-approved-opt.png`, // gap fill
+    'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`, // gap fill
   },
   Marine: {
     'primary-air': `${R2_BASE}/EA15189-MARINECLEAN-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF90541-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL80920-SYNTRAX-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF98279-SYNTAPORE-approved-opt.png`, // gap fill
+    'oil-filters': `${R2_BASE}/EL80920-SYNTRAX-approved-opt.png`, // gap fill
+    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`, // gap fill
+    'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`, // gap fill
   },
   'Power Generation': {
-    'primary-air': `${R2_BASE}/EA14603-MACROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF91315-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL81807-SYNTRAX-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES99030-HYDROCORE-approved-opt.png`,
-  },
-  'Trucks Fleets': {
-    'primary-air': `${R2_BASE}/EA15292-AF55014-2of20-approved-opt.png`,
+    'primary-air': `${R2_BASE}/EA135396-MACROCORE-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF92478-SYNTAPORE-approved-opt.png`,
     'oil-filters': `${R2_BASE}/EL83000-SYNTRAX-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC10729-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
-  },
-  Manufacturing: {
-    'primary-air': `${R2_BASE}/EA17557-MACROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF95811-FF5971NN-2of20-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL84403-SYNTRAX-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`,
-  },
-  Railway: {
-    'primary-air': `${R2_BASE}/EA19371-MACROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF96745-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES91242-HYDROCORE-approved-opt.png`,
-  },
-  'Waste Municipal': {
-    'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF98279-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL87345-SYNTRAX-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`,
   },
-  'Bus Coach': {
+  'Trucks Fleets': {
     'primary-air': `${R2_BASE}/EA10695-MICROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF98960-SYNTAPORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF90529-SYNTAPORE-approved-opt.png`,
     'oil-filters': `${R2_BASE}/EL87900-LF14000NN-1of20-approved.png`,
-    'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES99030-HYDROCORE-approved-opt.png`,
+  },
+  Manufacturing: {
+    'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`, // gap fill
+    'primary-fuel': `${R2_BASE}/EF90345-SYNTAPORE-approved-opt.png`, // gap fill
+    'oil-filters': `${R2_BASE}/EL81807-SYNTRAX-approved-opt.png`, // gap fill
+    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`, // gap fill
+    'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`, // gap fill
+  },
+  Railway: {
+    'primary-air': `${R2_BASE}/EA135396-MACROCORE-approved-opt.png`, // gap fill
+    'primary-fuel': `${R2_BASE}/EF98960-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL84403-SYNTRAX-approved-opt.png`, // gap fill
+    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`, // gap fill
+    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`, // gap fill
+  },
+  'Waste Municipal': {
+    'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF90529-SYNTAPORE-approved-opt.png`, // gap fill
+    'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`, // gap fill
+    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`, // gap fill
+    'fuel-water-separators': `${R2_BASE}/ES99030-HYDROCORE-approved-opt.png`,
+  },
+  'Bus Coach': {
+    'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF95811-FF5971NN-2of20-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL87345-SYNTRAX-approved-opt.png`, // gap fill
+    'cabin-filters': `${R2_BASE}/EC10729-MICROKAPPA-approved-opt.png`, // gap fill
+    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
   },
 };
 
