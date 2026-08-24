@@ -483,19 +483,19 @@ export default function Home() {
             <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'var(--ink-2)', marginBottom: '1.75rem' }}>
-                  {t('home.whyP1', 'ELIMFILTERS is not a filter company. ELIMFILTERS is an ')}<strong style={{ color: '#FFF12D' }}>{t('home.whyP1hl', 'Asset Protection Technology')}</strong>{t('home.whyP1after', ' company — engineering systems that control contamination, prevent degradation and protect the value of critical industrial assets.')}
+                  style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--ink-2)', marginBottom: '1.75rem', textAlign: 'justify' }}>
+                  {t('home.whyP1', 'ELIMFILTERS is not a filter company. ELIMFILTERS is an ')}<strong style={{ color: '#FFF12D' }}>{t('home.whyP1hl', 'Asset Protection Technology')}</strong>{t('home.whyP1after', ' company: we engineer systems that control contamination, prevent degradation, and protect the value of your critical industrial assets.')}
                 </motion.p>
                 <motion.p variants={{ hidden: { opacity: 0, x: -32 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                  style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', lineHeight: 1.8, color: 'var(--ink-2)', marginBottom: '1.75rem' }}>
-                  {t('home.whyP2', 'Every technology we build addresses a measurable contamination threat. Equipment that fails costs hundreds of thousands to repair. We protect that investment at the system level, not the product level.')}
+                  style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1.1rem', lineHeight: 1.8, color: 'var(--ink-2)', marginBottom: '1.75rem', textAlign: 'justify' }}>
+                  {t('home.whyP2', "If a machine you depend on goes down, it isn't just the part that failed. It's the repair bill, the missed schedule, and the crew standing around waiting. Every technology we build targets a specific, measurable contamination threat, so we protect your equipment at the system level, not just at the part level.")}
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {(Array.isArray(whyCheckItems) ? whyCheckItems : []).map((item, i) => (
                     <motion.div key={i} variants={{ hidden: { opacity: 0, x: -24 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: i * 0.06 }}
                       style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                      <span style={{ color: '#FFF12D', fontWeight: 700, fontSize: '1rem', flexShrink: 0 }}>OK</span>
-                      <span style={{ fontFamily: 'Barlow, Arial, sans-serif', color: 'var(--ink-2)', fontSize: '0.95rem' }}>{item}</span>
+                      <span style={{ color: '#FFF12D', fontWeight: 700, fontSize: '1.1rem', flexShrink: 0 }}>OK</span>
+                      <span style={{ fontFamily: 'Barlow, Arial, sans-serif', color: 'var(--ink-2)', fontSize: '1.05rem' }}>{item}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -503,15 +503,15 @@ export default function Home() {
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}>
                 <SpotlightCard style={{ background: 'var(--surface-light-2)', padding: '2.5rem', border: '1px solid var(--border-on-light)', borderRadius: '2px' }}>
 
-                  <h3 style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.3rem', color: 'var(--ink)', marginBottom: '1.5rem', lineHeight: 1.3, textAlign: 'justify' }}>
+                  <h3 style={{ fontFamily: 'Barlow, Arial, sans-serif', fontWeight: 700, fontSize: '1.4rem', color: 'var(--ink)', marginBottom: '1.5rem', lineHeight: 1.3, textAlign: 'justify' }}>
                     {t('home.whyCardTitle1', 'Your equipment is worth millions.')}<br />{t('home.whyCardTitle2', 'Protect it accordingly.')}
                   </h3>
-                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--ink-2)', marginBottom: '2rem' }}>
+                  <p style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--ink-2)', marginBottom: '2rem', textAlign: 'justify' }}>
                     {t('home.whyCardDesc', 'Every ELIMFILTERS technology exists to protect critical assets, reduce downtime and extend operational life.')}
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {(Array.isArray(whyCardItems) ? whyCardItems : []).map((item, i) => (
-                      <li key={i} style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', color: 'var(--ink-2)', paddingLeft: '1.5rem', position: 'relative' }}>
+                      <li key={i} style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'var(--ink-2)', paddingLeft: '1.5rem', position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>→</span>
                         {item}
                       </li>
