@@ -12,6 +12,8 @@ interface HeroProps {
   backgroundVideo?: string;
   stats?: { label: string; value: string }[];
   category?: string;
+  /** Match the /industries parent-page hero structure: no CTA row, no scroll indicator, fluid clamp() spacing, 92vh. */
+  industryChrome?: boolean;
 }
 
 const displayFont = 'Chakra Petch, Arial Narrow, monospace';
@@ -27,6 +29,7 @@ export function Hero({
   backgroundVideo,
   stats,
   category,
+  industryChrome = false,
 }: HeroProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -65,7 +68,7 @@ export function Hero({
       className="industry-hero-section"
       style={{
         position: 'relative',
-        minHeight: '100vh',
+        minHeight: industryChrome ? '92vh' : '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -150,10 +153,10 @@ export function Hero({
           zIndex: 10,
           maxWidth: '1180px',
           margin: '0 auto',
-          padding: '0 2rem',
-          paddingTop: '120px',
-          paddingBottom: stats ? '8rem' : '6rem',
           width: '100%',
+          ...(industryChrome
+            ? { padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)' }
+            : { padding: '0 2rem', paddingTop: '120px', paddingBottom: stats ? '8rem' : '6rem' }),
         }}
       >
         {category && (
@@ -217,81 +220,95 @@ export function Hero({
         {tagline && !category && (
           <p
             ref={taglineRef}
-            style={{
-              fontFamily: bodyFont,
-              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-              color: 'rgba(255,255,255,0.76)',
-              maxWidth: '770px',
-              lineHeight: 1.65,
-              fontWeight: 600,
-              marginBottom: '2.5rem',
-              borderLeft: '3px solid #FFF12D',
-              paddingLeft: '1.25rem',
-            }}
+            style={
+              industryChrome
+                ? {
+                    fontFamily: bodyFont,
+                    fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                    color: 'rgba(255,255,255,0.76)',
+                    maxWidth: '770px',
+                    lineHeight: 1.65,
+                    fontWeight: 600,
+                    marginTop: '2rem',
+                  }
+                : {
+                    fontFamily: bodyFont,
+                    fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                    color: 'rgba(255,255,255,0.76)',
+                    maxWidth: '770px',
+                    lineHeight: 1.65,
+                    fontWeight: 600,
+                    marginBottom: '2.5rem',
+                    borderLeft: '3px solid #FFF12D',
+                    paddingLeft: '1.25rem',
+                  }
+            }
           >
             {tagline}
           </p>
         )}
 
-        <div ref={ctaRef} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
-          <a
-            href={ctaHref}
-            target={ctaHref.startsWith('http') ? '_blank' : undefined}
-            rel={ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
-            style={{
-              display: 'inline-block',
-              background: '#FFF12D',
-              color: '#000',
-              fontFamily: displayFont,
-              fontWeight: 700,
-              fontSize: '0.78rem',
-              letterSpacing: '0.16em',
-              padding: '0.95rem 1.4rem',
-              textDecoration: 'none',
-              textTransform: 'uppercase',
-              transition: 'all 0.25s ease',
-              borderRadius: '2px',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 0 32px rgba(255,241,45,0.45)';
-              e.currentTarget.style.transform = 'translateY(-1px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.transform = 'none';
-            }}
-          >
-            {ctaText}
-          </a>
-          <a
-            href="#features"
-            style={{
-              display: 'inline-block',
-              border: '1px solid rgba(255,255,255,0.14)',
-              background: 'rgba(255,255,255,0.04)',
-              color: 'rgba(255,255,255,0.72)',
-              fontFamily: displayFont,
-              fontWeight: 700,
-              fontSize: '0.78rem',
-              letterSpacing: '0.16em',
-              padding: '0.95rem 1.4rem',
-              textDecoration: 'none',
-              textTransform: 'uppercase',
-              transition: 'all 0.25s ease',
-              borderRadius: '2px',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255,241,45,0.45)';
-              e.currentTarget.style.color = '#FFF12D';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)';
-              e.currentTarget.style.color = 'rgba(255,255,255,0.72)';
-            }}
-          >
-            EXPLORE
-          </a>
-        </div>
+        {!industryChrome && (
+          <div ref={ctaRef} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '2rem' }}>
+            <a
+              href={ctaHref}
+              target={ctaHref.startsWith('http') ? '_blank' : undefined}
+              rel={ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+              style={{
+                display: 'inline-block',
+                background: '#FFF12D',
+                color: '#000',
+                fontFamily: displayFont,
+                fontWeight: 700,
+                fontSize: '0.78rem',
+                letterSpacing: '0.16em',
+                padding: '0.95rem 1.4rem',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                transition: 'all 0.25s ease',
+                borderRadius: '2px',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 0 32px rgba(255,241,45,0.45)';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.transform = 'none';
+              }}
+            >
+              {ctaText}
+            </a>
+            <a
+              href="#features"
+              style={{
+                display: 'inline-block',
+                border: '1px solid rgba(255,255,255,0.14)',
+                background: 'rgba(255,255,255,0.04)',
+                color: 'rgba(255,255,255,0.72)',
+                fontFamily: displayFont,
+                fontWeight: 700,
+                fontSize: '0.78rem',
+                letterSpacing: '0.16em',
+                padding: '0.95rem 1.4rem',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                transition: 'all 0.25s ease',
+                borderRadius: '2px',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,241,45,0.45)';
+                e.currentTarget.style.color = '#FFF12D';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)';
+                e.currentTarget.style.color = 'rgba(255,255,255,0.72)';
+              }}
+            >
+              EXPLORE
+            </a>
+          </div>
+        )}
       </div>
 
       {stats && stats.length > 0 && (
@@ -332,23 +349,25 @@ export function Hero({
         </div>
       )}
 
-      <div
-        style={{
-          position: 'absolute',
-          bottom: stats ? '120px' : '2rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 10,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-          opacity: 0.4,
-          animation: 'bounce 2s infinite',
-        }}
-      >
-        <div style={{ width: '1px', height: '48px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,241,45,0.8))' }} />
-      </div>
+      {!industryChrome && (
+        <div
+          style={{
+            position: 'absolute',
+            bottom: stats ? '120px' : '2rem',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 10,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '0.5rem',
+            opacity: 0.4,
+            animation: 'bounce 2s infinite',
+          }}
+        >
+          <div style={{ width: '1px', height: '48px', background: 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,241,45,0.8))' }} />
+        </div>
+      )}
 
       <style>{`
         @keyframes bounce {

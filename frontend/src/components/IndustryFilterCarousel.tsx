@@ -8,10 +8,10 @@ const CORE_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'c
 const EXTRA_HD_KEYS: FamilyKey[] = ['fuel-water-separators', 'air-dryer-filters', 'coolant-filters'];
 
 // Approved ELIMFILTERS product renders, hosted on Cloudflare R2 (elimfilters-renders bucket).
-// No light-duty (automotive) renders exist yet in the pilot batch, so LD industries currently
-// reuse the same HD-class renders until light-duty SKUs are produced.
 const R2_BASE = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20';
-const CLOUDFLARE_IMAGES: Record<FamilyKey, string> = {
+
+// HD-prefix renders (EA1/EF9/EL8/EC1/ES9/ED4/EW7) — used by every industry except Automotive.
+const HD_IMAGES: Partial<Record<FamilyKey, string>> = {
   'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
   'secondary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
   'air-cleaner-housings': `${R2_BASE}/EA20080-INTEKCORE-approved-opt.png`,
@@ -23,6 +23,13 @@ const CLOUDFLARE_IMAGES: Record<FamilyKey, string> = {
   'coolant-filters': `${R2_BASE}/EW74685-WF2077-2of20-approved-opt.png`,
   'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
   'air-dryer-filters': `${R2_BASE}/ED43571-THERMACORE-approved-opt.png`,
+};
+
+// LD-prefix renders (EA3/EF3/EL3/EC3) — Automotive only. EF3 (fuel) and EC3 (cabin) have no
+// approved render in the bucket yet, so those two fall back to the HD image until produced.
+const LD_IMAGES: Partial<Record<FamilyKey, string>> = {
+  'primary-air': `${R2_BASE}/EA30755-MACROCORE-approved-opt.png`,
+  'oil-filters': `${R2_BASE}/EL36889-SYNTRAX-approved-opt.png`,
 };
 
 const displayFont = 'var(--font-display)';
@@ -43,7 +50,7 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
   };
 
   const family = families[index];
-  const image = CLOUDFLARE_IMAGES[family.key];
+  const image = (dutyClass === 'LD' ? LD_IMAGES[family.key] : undefined) ?? HD_IMAGES[family.key];
 
   return (
     <section style={{ background: '#000', padding: 'clamp(4rem, 8vw, 7rem) 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
