@@ -9,6 +9,7 @@ interface HeroProps {
   ctaText?: string;
   ctaHref?: string;
   backgroundImage?: string;
+  backgroundVideo?: string;
   stats?: { label: string; value: string }[];
   category?: string;
 }
@@ -23,6 +24,7 @@ export function Hero({
   ctaText = 'FIND MY FILTER',
   ctaHref = 'https://part-search.elimfilters.com',
   backgroundImage = '/images/fondomotor.PNG',
+  backgroundVideo,
   stats,
   category,
 }: HeroProps) {
@@ -87,19 +89,42 @@ export function Hero({
         }
       `}</style>
 
-      <div
-        className="industry-hero-bg"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-          transform: 'none',
-          filter: 'brightness(1.14) contrast(1.05)',
-        }}
-      />
+      {backgroundVideo ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="industry-hero-bg"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center center',
+            transform: 'none',
+            filter: 'brightness(1.14) contrast(1.05)',
+          }}
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+      ) : (
+        <div
+          className="industry-hero-bg"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+            transform: 'none',
+            filter: 'brightness(1.14) contrast(1.05)',
+          }}
+        />
+      )}
 
       <div
         style={{
