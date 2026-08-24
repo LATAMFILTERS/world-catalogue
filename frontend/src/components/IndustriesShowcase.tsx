@@ -3,16 +3,18 @@
 import { useRef } from 'react';
 
 const INDUSTRIES = [
-  { slug: 'agriculture', title: 'Agriculture', image: '/images/agriculture.avif' },
-  { slug: 'construction', title: 'Construction', image: '/images/construccion.avif' },
-  { slug: 'mining', title: 'Mining', image: '/images/mineria.avif' },
-  { slug: 'oil-gas', title: 'Oil & Gas', image: '/images/oil&gas.avif' },
-  { slug: 'marine', title: 'Marine', image: '/images/marine-2_converted.avif' },
-  { slug: 'manufacturing', title: 'Manufacturing', image: '/images/manufacture.avif' },
-  { slug: 'power-generation', title: 'Power Generation', image: '/images/power-generator.avif' },
-  { slug: 'railway', title: 'Railway', image: '/images/trenes.avif' },
-  { slug: 'truck-fleets', title: 'Truck Fleets', image: '/images/trucks-1.avif' },
-  { slug: 'waste-municipal', title: 'Waste & Municipal', image: '/images/wasted.avif' },
+  { slug: 'mining', title: 'Mining', image: '/images/mineria-1.avif' },
+  { slug: 'agriculture', title: 'Agriculture', image: '/images/agricultor-1.avif' },
+  { slug: 'construction', title: 'Construction', image: '/images/chino-construction.avif' },
+  { slug: 'oil-gas', title: 'Oil & Gas', image: '/images/ingpetrolero.avif' },
+  { slug: 'marine', title: 'Marine', image: '/images/ingmarine.avif' },
+  { slug: 'power-generation', title: 'Power Generation', image: '/images/generatorsupervisor.avif' },
+  { slug: 'trucks-fleets', title: 'Truck Fleets', image: '/images/transport.avif' },
+  { slug: 'manufacturing', title: 'Manufacturing', image: '/images/manufactura.avif' },
+  { slug: 'railway', title: 'Railway', image: '/images/ing-railway.avif' },
+  { slug: 'waste-municipal', title: 'Waste & Municipal', image: '/images/wasted-municipal.avif' },
+  { slug: 'bus-coach', title: 'Bus & Coach', image: '/images/bus-hero.avif' },
+  { slug: 'automotive', title: 'Automotive', image: '/images/Automotive-1.avif' },
 ] as const;
 
 const CARD_WIDTH = 300;
