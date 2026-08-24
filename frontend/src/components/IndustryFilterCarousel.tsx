@@ -197,10 +197,7 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
           }}
         >
           <div>
-            <span style={{ fontFamily: displayFont, fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.16em', color: '#FFF12D' }}>
-              {String(index + 1).padStart(2, '0')} / {String(families.length).padStart(2, '0')}
-            </span>
-            <h3 style={{ fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)', color: '#fff', margin: '0.9rem 0 1.1rem', textTransform: 'uppercase' }}>
+            <h3 style={{ fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)', color: '#fff', margin: '0 0 1.1rem', textTransform: 'uppercase' }}>
               {family.name}
             </h3>
             <p style={{ fontFamily: bodyFont, fontSize: '1.02rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', margin: '0 0 1.5rem', maxWidth: '520px' }}>
