@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { PRODUCT_FAMILIES, type FamilyKey } from '@/lib/product-families-data';
 
 const CORE_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'cabin-filters'];
-// Fuel water separators apply across every HD industry (marine, oil & gas, mining, etc.).
-const HD_EXTRA_KEYS: FamilyKey[] = ['fuel-water-separators'];
+// Fuel water separators and hydraulic filters apply across every HD industry (marine, oil & gas,
+// mining, manufacturing, etc.) — hydraulic systems aren't limited to on-road fleets.
+const HD_EXTRA_KEYS: FamilyKey[] = ['fuel-water-separators', 'hydraulic-filters'];
 // Air dryer (pneumatic brake systems) and coolant filters only apply to on-road fleet-type
 // industries with air-brake systems and closed cooling circuits in daily service.
 const FLEET_ONLY_KEYS: FamilyKey[] = ['air-dryer-filters', 'coolant-filters'];
@@ -35,6 +36,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL80352-SYNTRAX-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`,
+    'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`,
   },
   Agriculture: {
     'primary-air': `${R2_BASE}/EA15292-AF55014-2of20-approved-opt.png`,
@@ -42,6 +44,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL80422-SYNTRAX-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES91242-HYDROCORE-approved-opt.png`, // gap fill
+    'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`, // gap fill
   },
   Construction: {
     'primary-air': `${R2_BASE}/EA14603-MACROCORE-approved-opt.png`,
@@ -49,6 +52,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL80428-LF3970-2of20-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`,
+    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`,
   },
   'Oil Gas': {
     'primary-air': `${R2_BASE}/EA19371-MACROCORE-approved-opt.png`, // gap fill
@@ -56,6 +60,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL80779-LF16243-2of20-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC10729-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`, // gap fill
+    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`, // gap fill
   },
   Marine: {
     'primary-air': `${R2_BASE}/EA15189-MARINECLEAN-approved-opt.png`,
@@ -63,6 +68,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL80920-SYNTRAX-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`, // gap fill
+    'hydraulic-filters': `${R2_BASE}/EH65876-NANOFORCE-approved-opt.png`, // gap fill
   },
   'Power Generation': {
     'primary-air': `${R2_BASE}/EA135396-MACROCORE-approved-opt.png`,
@@ -70,6 +76,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL83000-SYNTRAX-approved-opt.png`,
     'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`,
+    'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`, // gap fill
   },
   'Trucks Fleets': {
     'primary-air': `${R2_BASE}/EA10695-MICROCORE-approved-opt.png`,
@@ -77,6 +84,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL87900-LF14000NN-1of20-approved.png`,
     'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES99030-HYDROCORE-approved-opt.png`,
+    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`, // gap fill
   },
   Manufacturing: {
     'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`, // gap fill
@@ -84,6 +92,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL81807-SYNTRAX-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`, // gap fill
+    'hydraulic-filters': `${R2_BASE}/EH65876-NANOFORCE-approved-opt.png`, // gap fill
   },
   Railway: {
     'primary-air': `${R2_BASE}/EA135396-MACROCORE-approved-opt.png`, // gap fill
@@ -91,6 +100,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL84403-SYNTRAX-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`, // gap fill
+    'hydraulic-filters': `${R2_BASE}/EH65876-NANOFORCE-approved-opt.png`,
   },
   'Waste Municipal': {
     'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`,
@@ -98,6 +108,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES99030-HYDROCORE-approved-opt.png`,
+    'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`, // gap fill
   },
   'Bus Coach': {
     'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
@@ -105,6 +116,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL87345-SYNTRAX-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC10729-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
+    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`, // gap fill
   },
 };
 
@@ -200,8 +212,8 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
             <h3 style={{ fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)', color: '#fff', margin: '0 0 1.1rem', textTransform: 'uppercase' }}>
               {family.name}
             </h3>
-            <p style={{ fontFamily: bodyFont, fontSize: '1.02rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', margin: '0 0 1.5rem', maxWidth: '520px' }}>
-              {family.purpose}
+            <p style={{ fontFamily: bodyFont, fontSize: '1.02rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', margin: '0 0 1.5rem', maxWidth: '540px' }}>
+              {family.purpose} {family.engineering}
             </p>
             <Link
               href={`/families/${family.slug}/`}
