@@ -146,6 +146,27 @@ export default function SystemsPage() {
         </div>
       </section>
 
+      <section style={section}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: 'clamp(2rem, 6vw, 4rem)', alignItems: 'center' }}>
+          <div>
+            <h2 style={whyTitle}>Consistency is the standard, not the exception.</h2>
+            <p style={{ ...leadText, marginTop: '1.5rem' }}>
+              Getting it right the first time starts with the people running the bench, not just the equipment on it. Every ELIMFILTERS® media formulation and finished component is measured against the same testing discipline before it is approved for production, so reliability does not depend on which batch, which shift, or which line built the part.
+            </p>
+            <p style={{ ...bodyText, marginTop: '1.2rem' }}>
+              Preventing a failure is worth more than diagnosing one after it happens. Beyond physical bench testing, ELIMFILTERS® engineering uses AI-generated simulation models built on hostile-environment data — extreme dust loading, thermal cycling, vibration, and contamination profiles drawn from real operating conditions — to stress-test a design before a single physical unit exists. Predicting how a filter would fail is how we design it not to.
+            </p>
+          </div>
+          <div>
+            <img
+              src="/images/operador-bancopruebas.png"
+              alt="Test bench results review"
+              style={{ width: '100%', display: 'block', border: '1px solid rgba(255,255,255,0.1)' }}
+            />
+          </div>
+        </div>
+      </section>
+
       <section style={systemSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
