@@ -10,26 +10,102 @@ const EXTRA_HD_KEYS: FamilyKey[] = ['fuel-water-separators', 'air-dryer-filters'
 // Approved ELIMFILTERS product renders, hosted on Cloudflare R2 (elimfilters-renders bucket).
 const R2_BASE = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20';
 
-// HD-prefix renders (EA1/EF9/EL8/EC1/ES9/ED4/EW7) — used by every industry except Automotive.
-const HD_IMAGES: Partial<Record<FamilyKey, string>> = {
-  'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
-  'secondary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
-  'air-cleaner-housings': `${R2_BASE}/EA20080-INTEKCORE-approved-opt.png`,
-  'primary-fuel': `${R2_BASE}/EF98279-SYNTAPORE-approved-opt.png`,
-  'secondary-fuel': `${R2_BASE}/EF98960-SYNTAPORE-approved-opt.png`,
-  'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
-  'oil-filters': `${R2_BASE}/EL87900-LF14000NN-1of20-approved.png`,
-  'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`,
-  'coolant-filters': `${R2_BASE}/EW74685-WF2077-2of20-approved-opt.png`,
-  'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
-  'air-dryer-filters': `${R2_BASE}/ED43571-THERMACORE-approved-opt.png`,
+// HD-class renders (EA1/EF9/EL8/EC1/ES9/ED4/EW7), assigned per industry so each market shows a
+// different physical part instead of the same photo everywhere. Only Marine's air filter has a
+// genuine industry signal behind it — the render is literally branded "MARINECLEAN". Everything
+// else is rotated through the SKUs the bucket actually has for that category (no per-industry
+// engineering data exists to justify a "correct" match beyond that), and Air Dryer / Coolant have
+// only one approved render each in the whole bucket, so every industry shares those two.
+const AIR_DRYER_IMAGE = `${R2_BASE}/ED43571-THERMACORE-approved-opt.png`;
+const COOLANT_IMAGE = `${R2_BASE}/EW74685-WF2077-2of20-approved-opt.png`;
+
+const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> = {
+  Mining: {
+    'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF98279-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL80352-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
+  },
+  Agriculture: {
+    'primary-air': `${R2_BASE}/EA10695-MICROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF98960-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL80422-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC10729-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`,
+  },
+  Construction: {
+    'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF90345-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL80428-LF3970-2of20-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91242-HYDROCORE-approved-opt.png`,
+  },
+  'Oil Gas': {
+    'primary-air': `${R2_BASE}/EA135396-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF90529-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL80779-LF16243-2of20-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`,
+  },
+  Marine: {
+    'primary-air': `${R2_BASE}/EA15189-MARINECLEAN-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF90541-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL80920-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`,
+  },
+  'Power Generation': {
+    'primary-air': `${R2_BASE}/EA14603-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF91315-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL81807-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES99030-HYDROCORE-approved-opt.png`,
+  },
+  'Trucks Fleets': {
+    'primary-air': `${R2_BASE}/EA15292-AF55014-2of20-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF92478-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL83000-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC10729-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
+  },
+  Manufacturing: {
+    'primary-air': `${R2_BASE}/EA17557-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF95811-FF5971NN-2of20-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL84403-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`,
+  },
+  Railway: {
+    'primary-air': `${R2_BASE}/EA19371-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF96745-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91242-HYDROCORE-approved-opt.png`,
+  },
+  'Waste Municipal': {
+    'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF98279-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL87345-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`,
+  },
+  'Bus Coach': {
+    'primary-air': `${R2_BASE}/EA10695-MICROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF98960-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL87900-LF14000NN-1of20-approved.png`,
+    'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`,
+  },
 };
 
 // LD-prefix renders (EA3/EF3/EL3/EC3) — Automotive only. EF3 (fuel) and EC3 (cabin) have no
-// approved render in the bucket yet, so those two fall back to the HD image until produced.
+// approved render in the bucket yet, so those two fall back to an HD image until produced.
 const LD_IMAGES: Partial<Record<FamilyKey, string>> = {
   'primary-air': `${R2_BASE}/EA30755-MACROCORE-approved-opt.png`,
   'oil-filters': `${R2_BASE}/EL36889-SYNTRAX-approved-opt.png`,
+  'primary-fuel': `${R2_BASE}/EF98279-SYNTAPORE-approved-opt.png`,
+  'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
 };
 
 const displayFont = 'var(--font-display)';
@@ -65,7 +141,14 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
   };
 
   const family = families[index];
-  const image = (dutyClass === 'LD' ? LD_IMAGES[family.key] : undefined) ?? HD_IMAGES[family.key];
+  const image =
+    family.key === 'air-dryer-filters'
+      ? AIR_DRYER_IMAGE
+      : family.key === 'coolant-filters'
+        ? COOLANT_IMAGE
+        : dutyClass === 'LD'
+          ? LD_IMAGES[family.key]
+          : HD_IMAGES_BY_INDUSTRY[industryName]?.[family.key];
 
   return (
     <section style={{ background: '#000', padding: 'clamp(4rem, 8vw, 7rem) 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
