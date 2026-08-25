@@ -48,6 +48,9 @@ export default function AboutPage() {
     knowledgeBody: 'Conocimiento técnico sobre normas de filtración, control de contaminación, comportamiento de aplicaciones, inteligencia de producto, condiciones operativas y principios de protección de activos.',
     closingTitle: 'Construidos para capacidad, no para aparentar tamaño.',
     closingBody: 'Nuestro modelo operativo está diseñado para escalar competencia, velocidad, continuidad y disciplina técnica antes de añadir complejidad organizacional. La integridad del producto y los resultados del cliente siguen siendo la medida de si el modelo funciona.',
+    originTitle: 'Dónde nace el proyecto',
+    originBody: 'Aquí es donde nació ELIMFILTERS. Mi padre, Don Víctor, y mi hermano menor, Juan Carlos, me escucharon y me apoyaron desde el inicio, junto al resto de nuestra familia y equipo.',
+    originAttribution: 'Víctor Abreu — Fundador, ELIMFILTERS',
   } : {
     heroTitle: 'Who We Are',
     heroLead: 'ELIMFILTERS® is an industrial filtration engineering organization focused on protecting critical assets through disciplined contamination control, application intelligence, validated product architecture, and reliable commercial execution.',
@@ -64,6 +67,9 @@ export default function AboutPage() {
     knowledgeBody: 'Technical knowledge on filtration standards, contamination control, application behavior, product intelligence, operating conditions, and asset-protection principles.',
     closingTitle: 'Built for capability, not apparent headcount.',
     closingBody: 'Our operating model is designed to scale competence, speed, continuity, and technical discipline before adding organizational complexity. Product integrity and customer outcomes remain the measure of whether the model works.',
+    originTitle: 'Where the project was born',
+    originBody: 'This is where ELIMFILTERS took shape. My father, Don Víctor, and my younger brother, Juan Carlos, listened and stood behind me from the beginning, alongside the rest of our family and team.',
+    originAttribution: 'Víctor Abreu — Founder, ELIMFILTERS',
   };
 
   return (
@@ -87,6 +93,20 @@ export default function AboutPage() {
           <p style={darkEyebrow}>ELIMFILTERS · ASSET PROTECTION SYSTEMS</p>
           <h2 style={darkTitle}>{copy.identityTitle}</h2>
           <p style={darkBody}>{copy.identityBody}</p>
+        </div>
+      </section>
+
+      <section style={originSection}>
+        <div style={{ ...wrap, ...originGrid }}>
+          <div style={originImageShell}>
+            <img src="/images/about-origin-story.jpg" alt={copy.originAttribution} style={originImage} />
+          </div>
+          <div>
+            <p style={eyebrow}>{isSpanish ? 'ORIGEN' : 'ORIGIN'}</p>
+            <h2 style={sectionTitle}>{copy.originTitle}</h2>
+            <p style={{ ...sectionLead, marginTop: '1.5rem' }}>{copy.originBody}</p>
+            <p style={originAttributionStyle}>{copy.originAttribution}</p>
+          </div>
         </div>
       </section>
 
@@ -216,6 +236,11 @@ const label: CSSProperties = { color: '#FFF12D' };
 const twoCol: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', marginTop: '3rem' };
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,.66)', lineHeight: 1.75 };
 const textLink: CSSProperties = { display: 'inline-block', marginTop: '1rem', color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.05em' };
+const originSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
+const originGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
+const originImageShell: CSSProperties = { aspectRatio: '4 / 3', overflow: 'hidden', background: '#080808', border: '1px solid rgba(255,255,255,.08)' };
+const originImage: CSSProperties = { width: '100%', height: '100%', objectFit: 'cover' };
+const originAttributionStyle: CSSProperties = { marginTop: '1.5rem', color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '.82rem', letterSpacing: '.1em', textTransform: 'uppercase' };
 const logisticsSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const presenceSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const presenceGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '1rem', marginTop: '2.5rem' };
