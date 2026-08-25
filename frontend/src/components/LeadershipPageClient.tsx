@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
-import { AboutSubnav } from '@/components/AboutSubnav';
 import registry from '@/data/executive-visual-identity.json';
 import '@/i18n';
 
@@ -96,8 +95,6 @@ export function LeadershipPageClient() {
           </p>
         </div>
       </section>
-
-      <AboutSubnav />
 
       <section className="founder-section">
         <div className="founder-grid">
