@@ -16,6 +16,10 @@ export default function WhoWeArePage() {
     profileEyebrow: 'PERFIL DE LA EMPRESA',
     profileTitle: 'De Valencia, Venezuela, a una operación con presencia en cuatro países.',
     profileBody: 'ELIMFILTERS® nació en 2015 en Valencia, Venezuela, donde comenzó operaciones comerciales y se posicionó rápidamente. Desde ahí se expandió a Colombia y República Dominicana, y luego a Estados Unidos, donde en 2020 la marca estableció sus operaciones en Frisco, Texas, bajo Kleo Technology LLC. La compañía opera un modelo comercial distributor-first, con capacidad coordinada para cuentas estratégicas, y organiza su plataforma técnica alrededor de cinco sistemas de protección en lugar de un catálogo plano de piezas: aire de motor y cabina, combustible, lubricación, circuitos hidráulicos y de enfriamiento, cada uno atendido por una tecnología propia diseñada específicamente para ese dominio.',
+    globalEyebrow: 'EXPANSIÓN GLOBAL',
+    globalTitle: 'Hoy, ELIMFILTERS se lanza a la globalización.',
+    globalBody: 'La tecnología puso una red de distribución global al alcance de un celular, una tablet o una computadora, y ELIMFILTERS está usando ese cambio para globalizarse — entrando en uno de los mercados más esenciales y menos visibles del mundo. Los motores mueven el mundo; controlar la contaminación que los desgasta es lo que lo mantiene en marcha. Esa es la oportunidad que abrimos a nuevos emprendedores en cualquier parte: sumarse a nuestra red de distribuidores bajo una filosofía operativa simple, moderna y que se adapta a los cambios del mercado.',
+    globalLink: 'Conviértete en distribuidor →',
     builtEyebrow: 'CÓMO ESTAMOS CONSTRUIDOS',
     builtTitle: 'Una Chief Executive Office humana, junto con agentes ejecutivos de IA especializados.',
     builtBody: 'El Founder & CEO, Víctor Abreu, mantiene la autoridad ejecutiva final, y la Chief Executive Office conserva la responsabilidad institucional sobre la estructura de la compañía y sus decisiones materiales. La ejecución diaria por dominio —operaciones, producto y tecnología, mercados comerciales, finanzas y riesgo, estrategia e inteligencia— la llevan cinco agentes ejecutivos de IA especializados, bajo autoridad delegada, responsabilidad formal y escalamiento humano para decisiones estratégicas o irreversibles.',
@@ -29,6 +33,10 @@ export default function WhoWeArePage() {
     profileEyebrow: 'COMPANY PROFILE',
     profileTitle: 'From Valencia, Venezuela, to operations across four countries.',
     profileBody: 'ELIMFILTERS® was founded in 2015 in Valencia, Venezuela, where it began commercial operations and quickly established its position. From there it expanded into Colombia and the Dominican Republic, and then into the United States, where the brand established its operations in Frisco, Texas in 2020 under Kleo Technology LLC. The company operates a distributor-first commercial model with coordinated capability for strategic accounts, and organizes its technical platform around five protection systems rather than a flat parts catalog: engine air and cabin air, fuel, lubrication, hydraulic, and cooling-system circuits, each served by a purpose-built technology of its own.',
+    globalEyebrow: 'GLOBAL EXPANSION',
+    globalTitle: 'Today, ELIMFILTERS is going global.',
+    globalBody: 'Technology has put a global distribution network within reach of a phone, a tablet, or a laptop, and ELIMFILTERS is using that shift to go global — entering one of the world’s most essential yet least visible markets. Engines move the world; controlling the contamination that wears them down is what keeps it running. That is the opportunity we are opening to new entrepreneurs everywhere: join our distributor network under an operating philosophy built to stay simple, modern, and adaptable as the market changes.',
+    globalLink: 'Become a distributor →',
     builtEyebrow: 'HOW WE’RE BUILT',
     builtTitle: 'A human Chief Executive Office, paired with specialized executive AI agents.',
     builtBody: 'Founder & CEO Víctor Abreu holds final executive authority, and the Chief Executive Office retains institutional accountability for the company’s structure and material decisions. Day-to-day domain execution — operations, product and technology, commercial markets, finance and risk, strategy and intelligence — is carried by five specialized executive AI agents operating under delegated authority, formal accountability, and human escalation for strategic or irreversible decisions.',
@@ -62,6 +70,15 @@ export default function WhoWeArePage() {
           <div style={identityPhotoShell}>
             <img src="/images/planta_converted.avif" alt="ELIMFILTERS manufacturing facility" style={portraitImage} />
           </div>
+        </div>
+      </section>
+
+      <section style={globalSection}>
+        <div style={wrap}>
+          <p style={eyebrow}>{copy.globalEyebrow}</p>
+          <h2 style={sectionTitle}>{copy.globalTitle}</h2>
+          <p style={sectionLead}>{copy.globalBody}</p>
+          <Link href="/distributor-application" style={textLink}>{copy.globalLink}</Link>
         </div>
       </section>
 
@@ -102,6 +119,7 @@ const darkTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 
 const darkBody: CSSProperties = { maxWidth: '880px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, fontSize: '1.05rem' };
 const sectionTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '950px', margin: '0 0 1rem', textTransform: 'uppercase' };
 const sectionLead: CSSProperties = { color: 'rgba(255,255,255,.68)', lineHeight: 1.75, maxWidth: '900px', fontSize: '1.03rem' };
+const globalSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const darkSectionDivided: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const textLink: CSSProperties = { display: 'inline-block', marginTop: '1.5rem', color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.05em' };
 const closingSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,241,45,.16)' };
