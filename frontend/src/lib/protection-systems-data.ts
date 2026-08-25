@@ -73,7 +73,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     tagline: 'Coolant cleanliness, additive control, and thermal-system protection.',
     overview: 'Cooling System Protection controls corrosion products, scale debris, and coolant additive condition in heavy-duty engine cooling circuits.',
     engineeringPrinciple: 'Controlled additive release and particulate removal protect wet liners, heat-transfer surfaces, seals, and coolant passages across the service interval.',
-    heroImage: '/images/coolant-hero.avif', heroColor: '#FFF12D', hdPrefix: 'EW7', ldPrefix: null,
+    heroImage: '/images/thermacore_mecnico.jpg', heroColor: '#FFF12D', hdPrefix: 'EW7', ldPrefix: null,
     ...relationships('cooling-system'),
   },
 };
