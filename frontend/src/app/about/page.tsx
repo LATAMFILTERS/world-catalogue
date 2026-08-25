@@ -15,6 +15,19 @@ const SYSTEMS = [
   'Cooling System Protection',
 ];
 
+const DISTRIBUTOR_PRESENCE_PHOTOS = [
+  '/images/distributor-tradeshow-truck-booth.jpg',
+  '/images/distributor-rd-exclusive.jpg',
+  '/images/distributor-training-team.jpg',
+  '/images/distributor-fps-booth.jpg',
+];
+
+const LOGISTICS_PHOTOS = [
+  '/images/logistics-container-loading-worker.jpg',
+  '/images/logistics-container-stacked-boxes.jpg',
+  '/images/logistics-container-forklift.jpg',
+];
+
 export default function AboutPage() {
   const { i18n } = useTranslation();
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
@@ -124,6 +137,48 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section style={logisticsSection}>
+        <div style={wrap}>
+          <p style={eyebrow}>{isSpanish ? 'LOGÍSTICA GLOBAL' : 'GLOBAL LOGISTICS'}</p>
+          <h2 style={sectionTitle}>
+            {isSpanish ? 'Del centro logístico a cada distribuidor.' : 'From the logistics center to every distributor.'}
+          </h2>
+          <p style={sectionLead}>
+            {isSpanish
+              ? 'Preparación y despacho de contenedores desde nuestro centro logístico hacia la red de distribuidores.'
+              : 'Container preparation and dispatch from our logistics center to the distributor network.'}
+          </p>
+          <div style={presenceGrid}>
+            {LOGISTICS_PHOTOS.map((src) => (
+              <div key={src} style={presenceCard}>
+                <img src={src} alt="" style={presenceImage} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={presenceSection}>
+        <div style={wrap}>
+          <p style={eyebrow}>{isSpanish ? 'PRESENCIA COMERCIAL' : 'COMMERCIAL PRESENCE'}</p>
+          <h2 style={sectionTitle}>
+            {isSpanish ? 'Junto a nuestros distribuidores.' : 'Alongside our distributors.'}
+          </h2>
+          <p style={sectionLead}>
+            {isSpanish
+              ? 'Ferias comerciales y capacitaciones donde acompañamos directamente a nuestra red de distribuidores.'
+              : 'Trade shows and training events where we work directly alongside our distributor network.'}
+          </p>
+          <div style={presenceGrid}>
+            {DISTRIBUTOR_PRESENCE_PHOTOS.map((src) => (
+              <div key={src} style={presenceCard}>
+                <img src={src} alt="" style={presenceImage} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section style={closingSection}>
         <div style={wrap}>
           <p style={eyebrow}>CAPABILITY BEFORE COMPLEXITY</p>
@@ -161,6 +216,11 @@ const label: CSSProperties = { color: '#FFF12D' };
 const twoCol: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', marginTop: '3rem' };
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,.66)', lineHeight: 1.75 };
 const textLink: CSSProperties = { display: 'inline-block', marginTop: '1rem', color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.05em' };
+const logisticsSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
+const presenceSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
+const presenceGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '1rem', marginTop: '2.5rem' };
+const presenceCard: CSSProperties = { aspectRatio: '4 / 3', overflow: 'hidden', background: '#080808', border: '1px solid rgba(255,255,255,.08)' };
+const presenceImage: CSSProperties = { width: '100%', height: '100%', objectFit: 'cover' };
 const closingSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,241,45,.16)' };
 const closingTitle: CSSProperties = { ...sectionTitle, maxWidth: '900px' };
 const closingBody: CSSProperties = { ...sectionLead, maxWidth: '850px' };

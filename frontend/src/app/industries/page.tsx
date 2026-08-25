@@ -100,6 +100,15 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      <section style={quoteSection}>
+        <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+          <blockquote style={quoteText}>
+            “We size and validate every technology against the operating reality of the industry it protects, not a generic duty cycle. A filter that's correct for a standby generator is not automatically correct for a mining loader.”
+          </blockquote>
+          <p style={quoteAttribution}>Víctor Abreu — Founder &amp; CEO, ELIMFILTERS</p>
+        </div>
+      </section>
+
       <section style={marketSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
@@ -211,6 +220,24 @@ const leadText: CSSProperties = {
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.78 };
 
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
+
+const quoteSection: CSSProperties = {
+  padding: 'clamp(3rem, 6vw, 5rem) clamp(1.25rem, 6vw, 6rem)',
+  borderTop: '1px solid rgba(255,241,45,0.16)',
+  borderBottom: '1px solid rgba(255,255,255,0.06)',
+  textAlign: 'center',
+};
+
+const quoteText: CSSProperties = {
+  fontFamily: displayFont, fontWeight: 600, fontStyle: 'normal',
+  fontSize: 'clamp(1.35rem, 2.4vw, 2rem)', lineHeight: 1.4,
+  color: '#fff', margin: 0, letterSpacing: '-0.01em',
+};
+
+const quoteAttribution: CSSProperties = {
+  marginTop: '1.5rem', color: '#FFF12D', fontFamily: displayFont,
+  fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.1em', textTransform: 'uppercase',
+};
 
 const marketSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)' };
 
