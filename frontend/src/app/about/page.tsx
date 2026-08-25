@@ -5,16 +5,17 @@ import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
 import { AboutSubnav } from '@/components/AboutSubnav';
+import { PROTECTION_SYSTEM_LIST } from '@/lib/protection-systems-data';
 import registry from '@/data/executive-visual-identity.json';
 import '@/i18n';
 
-const SYSTEMS = [
-  'Air Intake & Airflow Protection',
-  'Fuel Cleanliness Protection',
-  'Lubrication Protection',
-  'Hydraulic Protection',
-  'Cooling System Protection',
-];
+const SYSTEM_CARD_IMAGES: Record<string, string> = {
+  'air-intake': '/images/air-filters-lab.avif',
+  'fuel-cleanliness': '/images/syntapore_mecanico_camion.avif',
+  lubrication: '/images/oil-hand.avif',
+  hydraulic: '/images/hidraulico-trabajador.jpg',
+  'cooling-system': '/images/thermacore_mecnico.jpg',
+};
 
 const RESPONSIBILITIES: Record<string, { en: string; es: string }> = {
   office_chief_operating_supply_chain: {
@@ -101,23 +102,33 @@ export default function AboutPage() {
       <AboutSubnav />
 
       <section id="who-we-are" style={lightSection}>
-        <div style={wrap}>
-          <p style={darkEyebrow}>ELIMFILTERS · ASSET PROTECTION SYSTEMS</p>
-          <h2 style={darkTitle}>{copy.identityTitle}</h2>
-          <p style={darkBody}>{copy.identityBody}</p>
+        <div style={identityGrid}>
+          <div>
+            <p style={darkEyebrow}>ELIMFILTERS · ASSET PROTECTION SYSTEMS</p>
+            <h2 style={darkTitle}>{copy.identityTitle}</h2>
+            <p style={darkBody}>{copy.identityBody}</p>
+          </div>
+          <div style={identityPhotoShell}>
+            <img src="/images/planta_converted.avif" alt="ELIMFILTERS manufacturing facility" style={portraitImage} />
+          </div>
         </div>
       </section>
 
-      <section style={darkSection}>
+      <section style={darkSectionDivided}>
         <div style={wrap}>
           <p style={eyebrow}>{copy.systemsTitle}</p>
           <h2 style={sectionTitle}>{copy.systemsLead}</h2>
           <div style={systemsGrid}>
-            {SYSTEMS.map((system, index) => (
-              <article key={system} style={systemCard}>
-                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
-                <h3 style={cardTitle}>{system}</h3>
-              </article>
+            {PROTECTION_SYSTEM_LIST.map((system, index) => (
+              <Link key={system.key} href={`/systems/${system.slug}/`} style={systemCardLink}>
+                <img src={SYSTEM_CARD_IMAGES[system.slug]} alt={`${system.name} system card`} style={systemCardImage} />
+                <div style={systemCardOverlay} />
+                <div style={systemCardBody}>
+                  <span style={number}>{String(index + 1).padStart(2, '0')}</span>
+                  <h3 style={cardTitle}>{system.name}</h3>
+                  <span style={exploreLabel}>{isSpanish ? 'EXPLORAR SISTEMA →' : 'EXPLORE SYSTEM →'}</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -137,7 +148,6 @@ export default function AboutPage() {
             <img src={founder.image} alt={founder.alt} style={portraitImage} />
           </div>
           <div>
-            <p style={darkEyebrow}>FOUNDER & CEO</p>
             <h2 style={founderName}>{founder.name}</h2>
             <p style={founderRole}>{founder.designation}</p>
             <p style={darkBody}>{copy.founderBody}</p>
@@ -145,7 +155,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section style={agentsSection}>
+      <section style={agentsSectionDivided}>
         <div style={wrap}>
           <p style={eyebrow}>EXECUTIVE AI LEADERSHIP</p>
           <h2 style={sectionTitle}>{isSpanish ? 'Cinco funciones ejecutivas especializadas.' : 'Five specialized executive functions.'}</h2>
@@ -193,7 +203,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="engineering-philosophy" style={philosophySection}>
+      <section id="engineering-philosophy" style={philosophySectionDivided}>
         <div style={wrap}>
           <p style={eyebrow}>{copy.philosophyTitle}</p>
           <h2 style={sectionTitle}>{isSpanish ? 'Ingeniería antes que marketing.' : 'Engineering before marketing.'}</h2>
@@ -251,22 +261,31 @@ const heroTitle: CSSProperties = { position: 'relative', zIndex: 2, fontFamily: 
 const heroLead: CSSProperties = { position: 'relative', zIndex: 2, marginTop: '1.5rem', maxWidth: '900px', color: 'rgba(255,255,255,.82)', fontSize: 'clamp(1rem,1.5vw,1.25rem)', lineHeight: 1.75, fontWeight: 550 };
 const lightSection: CSSProperties = { background: '#050505', color: '#fff', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
 const darkSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
+const darkSectionDivided: CSSProperties = { ...darkSection, borderTop: '1px solid rgba(255,255,255,.06)' };
+const identityGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
+const identityPhotoShell: CSSProperties = { aspectRatio: '4 / 3', overflow: 'hidden', background: '#111', border: '1px solid rgba(255,255,255,0.1)' };
 const darkTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '850px', margin: '0 0 1.5rem', textTransform: 'uppercase' };
 const darkBody: CSSProperties = { maxWidth: '880px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, fontSize: '1.05rem' };
 const sectionTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '950px', margin: '0 0 1rem', textTransform: 'uppercase' };
 const sectionLead: CSSProperties = { color: 'rgba(255,255,255,.68)', lineHeight: 1.75, maxWidth: '900px', fontSize: '1.03rem' };
-const systemsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)', marginTop: '2.5rem' };
+const systemsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)', marginTop: '2.5rem' };
 const systemCard: CSSProperties = { background: '#080808', padding: '1.5rem', minHeight: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' };
-const number: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', letterSpacing: '.14em', fontWeight: 700 };
-const cardTitle: CSSProperties = { margin: '1.5rem 0 0', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2, textTransform: 'uppercase' };
+const systemCardLink: CSSProperties = { position: 'relative', minHeight: '340px', overflow: 'hidden', textDecoration: 'none', color: '#fff', background: '#080808' };
+const systemCardImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.62, filter: 'brightness(1.02)' };
+const systemCardOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.9) 100%)' };
+const systemCardBody: CSSProperties = { position: 'absolute', inset: 0, padding: '1.35rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' };
+const exploreLabel: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.14em', fontSize: '.68rem', marginTop: '1.1rem' };
+const number: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', letterSpacing: '.14em', fontWeight: 700, position: 'relative', zIndex: 1 };
+const cardTitle: CSSProperties = { margin: '1.5rem 0 0', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2, textTransform: 'uppercase', position: 'relative', zIndex: 1 };
 const leadershipIntroSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
 const founderSection: CSSProperties = { background: '#050505', color: '#fff', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
+const agentsSectionDivided: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
+const philosophySectionDivided: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px', borderTop: '1px solid rgba(255,255,255,.06)' };
 const founderGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
 const founderPhotoShell: CSSProperties = { aspectRatio: '4 / 5', overflow: 'hidden', background: '#111' };
 const portraitImage: CSSProperties = { width: '100%', height: '100%', objectFit: 'cover', display: 'block' };
 const founderName: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,5rem)', lineHeight: .95, letterSpacing: '-.04em', margin: '0 0 .6rem' };
 const founderRole: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', margin: '0 0 1.5rem' };
-const agentsSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
 const agentsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(210px,1fr))', gap: '1px', background: 'rgba(255,255,255,.09)', border: '1px solid rgba(255,255,255,.09)', marginTop: '2.5rem' };
 const agentCard: CSSProperties = { background: '#090909', minWidth: 0 };
 const agentPhotoShell: CSSProperties = { aspectRatio: '4 / 5', overflow: 'hidden', background: '#111' };
@@ -281,7 +300,6 @@ const flowTitle: CSSProperties = { fontFamily: 'var(--font-display)', margin: '1
 const flowDetail: CSSProperties = { margin: 0, color: 'rgba(255,255,255,.58)', fontSize: '.9rem' };
 const governanceSection: CSSProperties = { background: '#050505', color: '#fff', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
 const governanceGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)' };
-const philosophySection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
 const corporateSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const structureList: CSSProperties = { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem', color: 'rgba(255,255,255,.72)', lineHeight: 1.65 };
 const label: CSSProperties = { color: '#FFF12D' };
