@@ -57,7 +57,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     tagline: 'Oil cleanliness maintained across the service interval.',
     overview: 'Lubrication Protection controls soot, wear debris, and oxidation byproducts before oil returns to critical bearings and lubricated interfaces.',
     engineeringPrinciple: 'Full-flow composite media balances efficiency, contaminant capacity, pressure drop, and valve integrity across changing viscosity and temperature conditions.',
-    heroImage: '/images/oil-hand.avif', heroColor: '#FFF12D', hdPrefix: 'EL8', ldPrefix: 'EL3',
+    heroImage: '/images/trucks-1.avif', heroColor: '#FFF12D', hdPrefix: 'EL8', ldPrefix: 'EL3',
     ...relationships('lubrication'),
   },
   hydraulic: {
