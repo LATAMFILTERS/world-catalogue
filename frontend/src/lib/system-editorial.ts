@@ -26,27 +26,38 @@ export interface SystemFAQ {
   answer: string;
 }
 
+export interface SystemEditorialCopy {
+  title: string;
+  copy: string;
+  image?: string;
+  imageAlt?: string;
+  imageSide?: 'left' | 'right';
+}
+
 export interface SystemEditorial {
-  risk: { title: string; copy: string };
-  fieldNote: { title: string; copy: string };
-  failurePath: { title: string; copy: string };
-  architecture: { title: string; copy: string };
+  risk: SystemEditorialCopy;
+  fieldNote: SystemEditorialCopy;
+  failurePath: SystemEditorialCopy;
+  architecture: SystemEditorialCopy;
   protectedAssets: { title: string; items: readonly string[] };
   selection: { title: string; items: readonly string[] };
   parameters: { title: string; items: readonly string[] };
   conditions: { title: string; items: readonly string[] };
   service: { title: string; items: readonly string[] };
   mistakes: { title: string; items: readonly string[] };
-  standards: { title: string; copy: string };
+  standards: SystemEditorialCopy;
   industries: { title: string; items: readonly string[] };
   faq: readonly SystemFAQ[];
-  commercialDecision: { title: string; copy: string };
+  commercialDecision: SystemEditorialCopy;
   flow: readonly SystemEditorialKey[];
 }
 
 const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
   'air-intake': {
     risk: {
+      image: '/images/pelon-air_converted.avif',
+      imageAlt: 'ELIMFILTERS primary air element',
+      imageSide: 'left',
       title: 'Dust becomes engine wear only after the intake boundary fails.',
       copy: 'The engineering problem is not simply whether an air element looks dirty. The real question is whether the complete intake path is controlling contaminant entry while still delivering the air mass the engine requires, since media loading, restriction, housing integrity, sealing, safety-stage condition and service practice all influence that outcome.\n\nAirborne particulate enters through the intake path or bypasses a compromised seal, and once abrasive contamination reaches turbocharger compressor surfaces, cylinders and rings, the damage mechanism is no longer a filtration issue, it is an engine-wear issue. Excessive restriction creates a separate failure path by reducing available airflow and affecting performance.\n\nPrimary filtration carries the normal dust load, while secondary protection, where the equipment architecture requires it, protects the clean side during service or primary-element failure. Housings, inlet geometry, sealing surfaces and restriction monitoring determine whether the media can perform as designed, and cabin and compressed-air positions belong to the broader airflow domain but must be selected against their own operating requirements.\n\nIn the field, dust tracks on the clean side, damaged sealing surfaces, repeated early restriction, collapsed media or a housing that no longer closes correctly are system findings, not just element wear. Replacing the element without correcting the boundary can leave the asset exposed.',
     },
@@ -87,6 +98,9 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       items: ['Selecting by dimensions alone', 'Ignoring housing or seal damage', 'Removing a safety element because it appears clean', 'Extending service after restriction reaches the equipment limit', 'Treating every dusty environment as the same duty cycle'],
     },
     standards: {
+      image: '/images/cabin-hero.avif',
+      imageAlt: 'ELIMFILTERS cabin air filter',
+      imageSide: 'right',
       title: 'Selecting and servicing the correct configuration',
       copy: 'Correct selection starts with exact equipment, engine and housing identification, the primary-versus-secondary element position, required airflow and allowable restriction, dust concentration and duty cycle, housing condition and seal geometry, and the service strategy and restriction-indication method already in place.\n\nMining and quarry dust, agricultural chaff and seasonal loading, construction and demolition environments, long highway intervals, high ambient humidity, and damaged or inefficient pre-cleaning hardware all change which configuration is correct for a given asset. The assets downstream of that decision include turbocharger compressor surfaces, cylinder walls and piston rings, the combustion-air path, air-cleaner housing and seals, the operator HVAC path where cabin filtration is part of the application, and pneumatic components where air drying is required.\n\nRestriction reaching the equipment service threshold, dust evidence on the clean side, damaged seals or housing clamps, recurring premature plugging, changes in airflow or engine response, and media damage from inappropriate cleaning are the signals worth acting on, not appearance alone. A new element can still let dust downstream if the fit, seals or housing are damaged, or if contamination is introduced during service, and a higher efficiency rating only protects the engine better if airflow, restriction, capacity and sealing remain compatible with the application.\n\nThe most common mistakes are selecting by dimensions only, ignoring housing or seal damage, removing a safety element because it looks clean, extending service past the equipment restriction limit, and treating every dusty environment as the same duty cycle.\n\nEngine air-cleaner performance is commonly evaluated using ISO 5011 methods, and efficiency, capacity and restriction claims should be tied to validated data for the actual element or assembly rather than applied universally. Airflow protection is operationally critical across mining, construction, agriculture, truck fleets, power generation, waste and municipal fleets, and bus and coach operations.\n\nWhen a fleet is experiencing repeated dust ingress, short element life, high restriction or intake-related wear, ELIMFILTERS can review the complete airflow boundary and duty cycle to select the correct protection architecture for the asset, not simply quote another replacement element.',
     },

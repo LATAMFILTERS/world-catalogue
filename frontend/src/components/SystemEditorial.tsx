@@ -55,14 +55,65 @@ const card: CSSProperties = {
   padding: '1.35rem 1.45rem',
 };
 
-function CopyBlock({ title, copy }: { title: string; copy: string }) {
+function CopyBlock({
+  title,
+  copy,
+  image,
+  imageAlt,
+  imageSide = 'right',
+}: {
+  title: string;
+  copy: string;
+  image?: string;
+  imageAlt?: string;
+  imageSide?: 'left' | 'right';
+}) {
   const paragraphs = copy.split('\n\n');
-  return (
-    <section style={sectionStyle}>
+  const text = (
+    <div>
       <h2 style={heading}>{title}</h2>
       {paragraphs.map((para, i) => (
-        <p key={i} style={{ ...body, maxWidth: '980px', marginTop: i > 0 ? '1rem' : 0 }}>{para}</p>
+        <p key={i} style={{ ...body, maxWidth: image ? undefined : '980px', marginTop: i > 0 ? '1rem' : 0 }}>{para}</p>
       ))}
+    </div>
+  );
+
+  if (!image) {
+    return <section style={sectionStyle}>{text}</section>;
+  }
+
+  const photo = (
+    <div>
+      <img
+        src={image}
+        alt={imageAlt || title}
+        style={{ width: '100%', display: 'block', border: '1px solid rgba(255,255,255,0.1)' }}
+      />
+    </div>
+  );
+
+  return (
+    <section style={sectionStyle}>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
+          gap: 'clamp(2rem, 6vw, 4rem)',
+          alignItems: 'center',
+        }}
+      >
+        {imageSide === 'left' ? (
+          <>
+            {photo}
+            {text}
+          </>
+        ) : (
+          <>
+            {text}
+            {photo}
+          </>
+        )}
+      </div>
     </section>
   );
 }
@@ -106,7 +157,16 @@ export function SystemEditorialContent({ editorial }: Props) {
 
         const value = editorial[key];
         if ('copy' in value) {
-          return <CopyBlock key={key} title={value.title} copy={value.copy} />;
+          return (
+            <CopyBlock
+              key={key}
+              title={value.title}
+              copy={value.copy}
+              image={value.image}
+              imageAlt={value.imageAlt}
+              imageSide={value.imageSide}
+            />
+          );
         }
 
         return <ListBlock key={key} title={value.title} items={value.items} />;
