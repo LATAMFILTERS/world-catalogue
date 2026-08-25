@@ -83,11 +83,17 @@ function CopyBlock({
   }
 
   const photo = (
-    <div>
+    <div style={{ alignSelf: 'start', height: 'fit-content' }}>
       <img
         src={image}
         alt={imageAlt || title}
-        style={{ width: '100%', display: 'block', border: '1px solid rgba(255,255,255,0.1)' }}
+        style={{
+          width: '100%',
+          aspectRatio: '4 / 5',
+          display: 'block',
+          objectFit: 'cover',
+          border: '1px solid rgba(255,255,255,0.1)',
+        }}
       />
     </div>
   );
@@ -99,7 +105,7 @@ function CopyBlock({
           display: 'grid',
           gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
           gap: 'clamp(2rem, 6vw, 4rem)',
-          alignItems: 'center',
+          alignItems: 'start',
         }}
       >
         {imageSide === 'left' ? (
