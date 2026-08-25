@@ -17,29 +17,6 @@ const SYSTEM_CARD_IMAGES: Record<string, string> = {
   'cooling-system': '/images/thermacore_mecnico.jpg',
 };
 
-const RESPONSIBILITIES: Record<string, { en: string; es: string }> = {
-  office_chief_operating_supply_chain: {
-    en: 'Operations, procurement, supply continuity, logistics, fulfillment, and operational quality.',
-    es: 'Operaciones, compras, continuidad de suministro, logística, fulfillment y calidad operacional.',
-  },
-  office_chief_product_technology: {
-    en: 'Product architecture, filtration technologies, applications, validation, catalog integrity, and technical knowledge governance.',
-    es: 'Arquitectura de producto, tecnologías de filtración, aplicaciones, validación, integridad de catálogo y gobernanza del conocimiento técnico.',
-  },
-  office_chief_commercial_markets: {
-    en: 'B2B growth, distributors, strategic accounts, market development, CRM, pricing discipline, and customer intelligence.',
-    es: 'Crecimiento B2B, distribuidores, cuentas estratégicas, desarrollo de mercados, CRM, disciplina de precios e inteligencia de clientes.',
-  },
-  office_chief_finance_risk: {
-    en: 'Liquidity, margins, forecasting, working capital, financial discipline, and enterprise-risk visibility.',
-    es: 'Liquidez, márgenes, forecasting, capital de trabajo, disciplina financiera y visibilidad de riesgos empresariales.',
-  },
-  office_chief_strategy_performance_intelligence: {
-    en: 'Strategy support, performance intelligence, AI governance, data, automation, digital architecture, and agent governance.',
-    es: 'Soporte estratégico, inteligencia de desempeño, gobernanza de IA, datos, automatización, arquitectura digital y gobernanza de agentes.',
-  },
-};
-
 export default function AboutPage() {
   const { i18n } = useTranslation();
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
@@ -135,71 +112,22 @@ export default function AboutPage() {
       </section>
 
       <section id="leadership" style={leadershipIntroSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>LEADERSHIP</p>
-          <h2 style={sectionTitle}>{isSpanish ? 'Liderazgo humano. Ejecución AI-native.' : 'Human leadership. AI-native execution.'}</h2>
-          <p style={sectionLead}>{copy.leadershipLead}</p>
-        </div>
-      </section>
-
-      <section style={founderSection}>
-        <div style={founderGrid}>
-          <div style={founderPhotoShell}>
-            <img src={founder.image} alt={founder.alt} style={portraitImage} />
-          </div>
+        <div style={leadershipTeaserGrid}>
           <div>
-            <h2 style={founderName}>{founder.name}</h2>
-            <p style={founderRole}>{founder.designation}</p>
-            <p style={darkBody}>{copy.founderBody}</p>
+            <p style={eyebrow}>LEADERSHIP</p>
+            <h2 style={sectionTitle}>{isSpanish ? 'Liderazgo humano. Ejecución AI-native.' : 'Human leadership. AI-native execution.'}</h2>
+            <p style={sectionLead}>{copy.leadershipLead}</p>
+            <Link href="/about/leadership" style={textLink}>{isSpanish ? 'Conocer al equipo de liderazgo →' : 'Meet the leadership team →'}</Link>
           </div>
-        </div>
-      </section>
-
-      <section style={agentsSectionDivided}>
-        <div style={wrap}>
-          <p style={eyebrow}>EXECUTIVE AI LEADERSHIP</p>
-          <h2 style={sectionTitle}>{isSpanish ? 'Cinco funciones ejecutivas especializadas.' : 'Five specialized executive functions.'}</h2>
-          <p style={sectionLead}>{copy.agentsLead}</p>
-          <div style={agentsGrid}>
-            {registry.agents.map((agent) => {
-              const responsibility = RESPONSIBILITIES[agent.id];
-              return (
-                <article key={agent.id} style={agentCard}>
-                  <div style={agentPhotoShell}>
-                    <img src={agent.image} alt={agent.alt} style={portraitImage} />
-                  </div>
-                  <div style={agentCopy}>
-                    <span style={aiLabel}>{agent.label}</span>
-                    <h3 style={agentTitle}>{agent.title}</h3>
-                    <p style={agentBody}>{isSpanish ? responsibility.es : responsibility.en}</p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section style={modelSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>{isSpanish ? 'CÓMO FUNCIONA' : 'HOW THE MODEL WORKS'}</p>
-          <h2 style={sectionTitle}>{isSpanish ? 'La oficina permanece. La implementación puede evolucionar.' : 'The office remains. The implementation can evolve.'}</h2>
-          <div style={flowGrid}>
-            <Flow n="01" title="Chief Executive Office" detail={isSpanish ? 'Autoridad humana final' : 'Final human authority'} />
-            <Flow n="02" title="Executive AI Agents" detail={isSpanish ? 'Responsabilidad por dominio' : 'Domain accountability'} />
-            <Flow n="03" title="Specialized Subagents" detail={isSpanish ? 'Ejecución especializada' : 'Specialized execution'} />
-            <Flow n="04" title="Systems & Automation" detail={isSpanish ? 'Escala y continuidad' : 'Scale and continuity'} />
-          </div>
-        </div>
-      </section>
-
-      <section style={governanceSection}>
-        <div style={governanceGrid}>
-          <div>
-            <p style={darkEyebrow}>GOVERNANCE & ACCOUNTABILITY</p>
-            <h2 style={darkTitle}>{isSpanish ? 'La responsabilidad nunca se vuelve artificial.' : 'Accountability never becomes artificial.'}</h2>
-          </div>
-          <p style={darkBody}>{isSpanish ? 'La inteligencia artificial puede ejercer autoridad delegada dentro de ELIMFILTERS, pero las decisiones estratégicas, materiales, excepcionales, irreversibles o de alto riesgo permanecen sujetas a autoridad humana.' : 'Artificial intelligence may exercise delegated authority within ELIMFILTERS, but strategic, material, exceptional, irreversible, or high-risk decisions remain subject to human authority.'}</p>
+          <Link href="/about/leadership" style={founderTeaserCard}>
+            <div style={founderPhotoShell}>
+              <img src={founder.image} alt={founder.alt} style={portraitImage} />
+            </div>
+            <div style={{ marginTop: '1.25rem' }}>
+              <h3 style={founderTeaserName}>{founder.name}</h3>
+              <p style={founderRole}>{founder.designation}</p>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -246,10 +174,6 @@ export default function AboutPage() {
   );
 }
 
-function Flow({ n, title, detail }: { n: string; title: string; detail: string }) {
-  return <div style={flowCard}><span style={number}>{n}</span><h3 style={flowTitle}>{title}</h3><p style={flowDetail}>{detail}</p></div>;
-}
-
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%' };
 const heroSection: CSSProperties = { minHeight: '76vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem,10vw,9rem) clamp(1.25rem,6vw,6rem)' };
@@ -278,28 +202,13 @@ const exploreLabel: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-
 const number: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', letterSpacing: '.14em', fontWeight: 700, position: 'relative', zIndex: 1 };
 const cardTitle: CSSProperties = { margin: '1.5rem 0 0', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2, textTransform: 'uppercase', position: 'relative', zIndex: 1 };
 const leadershipIntroSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
-const founderSection: CSSProperties = { background: '#050505', color: '#fff', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
-const agentsSectionDivided: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const philosophySectionDivided: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px', borderTop: '1px solid rgba(255,255,255,.06)' };
-const founderGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
+const leadershipTeaserGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
+const founderTeaserCard: CSSProperties = { textDecoration: 'none', color: '#fff', maxWidth: '320px' };
 const founderPhotoShell: CSSProperties = { aspectRatio: '4 / 5', overflow: 'hidden', background: '#111' };
 const portraitImage: CSSProperties = { width: '100%', height: '100%', objectFit: 'cover', display: 'block' };
-const founderName: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem,5vw,5rem)', lineHeight: .95, letterSpacing: '-.04em', margin: '0 0 .6rem' };
-const founderRole: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', margin: '0 0 1.5rem' };
-const agentsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(210px,1fr))', gap: '1px', background: 'rgba(255,255,255,.09)', border: '1px solid rgba(255,255,255,.09)', marginTop: '2.5rem' };
-const agentCard: CSSProperties = { background: '#090909', minWidth: 0 };
-const agentPhotoShell: CSSProperties = { aspectRatio: '4 / 5', overflow: 'hidden', background: '#111' };
-const agentCopy: CSSProperties = { padding: '1.2rem' };
-const aiLabel: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.63rem', fontWeight: 700, letterSpacing: '.14em' };
-const agentTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: '1rem', lineHeight: 1.2, margin: '.7rem 0 .55rem' };
-const agentBody: CSSProperties = { color: 'rgba(255,255,255,.62)', fontSize: '.9rem', lineHeight: 1.6, margin: 0 };
-const modelSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
-const flowGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(210px,1fr))', gap: '1px', background: 'rgba(255,255,255,.1)', marginTop: '2.5rem' };
-const flowCard: CSSProperties = { background: '#080808', padding: '1.5rem' };
-const flowTitle: CSSProperties = { fontFamily: 'var(--font-display)', margin: '1rem 0 .35rem', fontSize: '1rem' };
-const flowDetail: CSSProperties = { margin: 0, color: 'rgba(255,255,255,.58)', fontSize: '.9rem' };
-const governanceSection: CSSProperties = { background: '#050505', color: '#fff', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
-const governanceGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)' };
+const founderTeaserName: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: '1.4rem', lineHeight: 1.05, letterSpacing: '-.02em', margin: '0 0 .4rem' };
+const founderRole: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', margin: 0, fontSize: '.78rem' };
 const corporateSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const structureList: CSSProperties = { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem', color: 'rgba(255,255,255,.72)', lineHeight: 1.65 };
 const label: CSSProperties = { color: '#FFF12D' };
