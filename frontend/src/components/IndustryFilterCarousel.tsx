@@ -12,6 +12,8 @@ const HD_EXTRA_KEYS: FamilyKey[] = ['fuel-water-separators', 'hydraulic-filters'
 // industries with air-brake systems and closed cooling circuits in daily service.
 const FLEET_ONLY_KEYS: FamilyKey[] = ['air-dryer-filters', 'coolant-filters'];
 const FLEET_INDUSTRIES = ['Trucks Fleets', 'Waste Municipal', 'Bus Coach'];
+// These industries' equipment doesn't carry an operator cabin filtration position.
+const NO_CABIN_INDUSTRIES = ['Manufacturing', 'Oil Gas'];
 
 // Approved ELIMFILTERS product renders, hosted on Cloudflare R2 (elimfilters-renders bucket).
 const R2_BASE = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20';
@@ -58,13 +60,13 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'primary-air': `${R2_BASE}/EA19371-MACROCORE-approved-opt.png`, // gap fill
     'primary-fuel': `${R2_BASE}/EF91315-SYNTAPORE-approved-opt.png`,
     'oil-filters': `${R2_BASE}/EL80779-LF16243-2of20-approved-opt.png`, // gap fill
-    'cabin-filters': `${R2_BASE}/EC10729-MICROKAPPA-approved-opt.png`, // gap fill
+    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`, // gap fill
     'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`, // gap fill
   },
   Marine: {
     'primary-air': `${R2_BASE}/EA15189-MARINECLEAN-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF98279-SYNTAPORE-approved-opt.png`, // gap fill
+    'primary-fuel': `${R2_BASE}/EF91315-SYNTAPORE-approved-opt.png`, // gap fill
     'oil-filters': `${R2_BASE}/EL80920-SYNTRAX-approved-opt.png`, // gap fill
     'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`, // gap fill
@@ -114,7 +116,7 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF95811-FF5971NN-2of20-approved-opt.png`,
     'oil-filters': `${R2_BASE}/EL87345-SYNTRAX-approved-opt.png`, // gap fill
-    'cabin-filters': `${R2_BASE}/EC10729-MICROKAPPA-approved-opt.png`, // gap fill
+    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
     'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`, // gap fill
   },
@@ -152,12 +154,13 @@ interface IndustryFilterCarouselProps {
 }
 
 export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilterCarouselProps) {
-  const keys =
+  const keys = (
     dutyClass === 'LD'
       ? CORE_KEYS
       : FLEET_INDUSTRIES.includes(industryName)
         ? [...CORE_KEYS, ...HD_EXTRA_KEYS, ...FLEET_ONLY_KEYS]
-        : [...CORE_KEYS, ...HD_EXTRA_KEYS];
+        : [...CORE_KEYS, ...HD_EXTRA_KEYS]
+  ).filter((key) => !(key === 'cabin-filters' && NO_CABIN_INDUSTRIES.includes(industryName)));
   const families = keys.map((key) => PRODUCT_FAMILIES[key]);
   const [index, setIndex] = useState(0);
 
