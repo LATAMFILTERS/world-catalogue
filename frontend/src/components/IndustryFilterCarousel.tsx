@@ -14,6 +14,8 @@ const FLEET_ONLY_KEYS: FamilyKey[] = ['air-dryer-filters', 'coolant-filters'];
 const FLEET_INDUSTRIES = ['Trucks Fleets', 'Waste Municipal', 'Bus Coach'];
 // These industries' equipment doesn't carry an operator cabin filtration position.
 const NO_CABIN_INDUSTRIES = ['Manufacturing', 'Oil Gas'];
+// Power Generation equipment doesn't carry a hydraulic filtration position.
+const NO_HYDRAULIC_INDUSTRIES = ['Power Generation'];
 
 // Approved ELIMFILTERS product renders, hosted on Cloudflare R2 (elimfilters-renders bucket).
 const R2_BASE = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20';
@@ -160,7 +162,10 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
       : FLEET_INDUSTRIES.includes(industryName)
         ? [...CORE_KEYS, ...HD_EXTRA_KEYS, ...FLEET_ONLY_KEYS]
         : [...CORE_KEYS, ...HD_EXTRA_KEYS]
-  ).filter((key) => !(key === 'cabin-filters' && NO_CABIN_INDUSTRIES.includes(industryName)));
+  ).filter((key) =>
+    !(key === 'cabin-filters' && NO_CABIN_INDUSTRIES.includes(industryName)) &&
+    !(key === 'hydraulic-filters' && NO_HYDRAULIC_INDUSTRIES.includes(industryName))
+  );
   const families = keys.map((key) => PRODUCT_FAMILIES[key]);
   const [index, setIndex] = useState(0);
 
