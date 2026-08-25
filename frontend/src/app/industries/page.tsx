@@ -182,12 +182,12 @@ const hero: CSSProperties = {
 };
 
 const heroImage: CSSProperties = {
-  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center 38%', opacity: 0.40,
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center 38%', opacity: 0.48,
 };
 
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.48) 48%, rgba(0,0,0,0.28) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 36%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.40) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)',
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };

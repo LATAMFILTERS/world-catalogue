@@ -111,7 +111,7 @@ export function Hero({
             objectFit: 'cover',
             objectPosition: 'center center',
             transform: 'none',
-            opacity: industryChrome ? 0.4 : 1,
+            opacity: industryChrome ? 0.48 : 1,
             filter: industryChrome ? 'none' : 'brightness(1.14) contrast(1.05)',
           }}
         >
@@ -128,7 +128,7 @@ export function Hero({
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
             transform: 'none',
-            opacity: industryChrome ? 0.4 : 1,
+            opacity: industryChrome ? 0.48 : 1,
             filter: industryChrome ? 'none' : 'brightness(1.14) contrast(1.05)',
           }}
         />
@@ -139,8 +139,8 @@ export function Hero({
           position: 'absolute',
           inset: 0,
           background: industryChrome
-            ? 'linear-gradient(90deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.48) 48%, rgba(0,0,0,0.28) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 36%)'
-            : 'linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.56) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
+            ? 'linear-gradient(90deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.40) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)'
+            : 'linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.46) 48%, rgba(0,0,0,0.14) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
         }}
       />
 
