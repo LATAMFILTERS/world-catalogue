@@ -22,12 +22,6 @@ const DISTRIBUTOR_PRESENCE_PHOTOS = [
   '/images/distributor-fps-booth.jpg',
 ];
 
-const LOGISTICS_PHOTOS = [
-  '/images/logistics-container-loading-worker.jpg',
-  '/images/logistics-container-stacked-boxes.jpg',
-  '/images/logistics-container-forklift.jpg',
-];
-
 export default function AboutPage() {
   const { i18n } = useTranslation();
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
@@ -157,27 +151,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section style={logisticsSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>{isSpanish ? 'LOGÍSTICA GLOBAL' : 'GLOBAL LOGISTICS'}</p>
-          <h2 style={sectionTitle}>
-            {isSpanish ? 'Del centro logístico a cada distribuidor.' : 'From the logistics center to every distributor.'}
-          </h2>
-          <p style={sectionLead}>
-            {isSpanish
-              ? 'Preparación y despacho de contenedores desde nuestro centro logístico hacia la red de distribuidores.'
-              : 'Container preparation and dispatch from our logistics center to the distributor network.'}
-          </p>
-          <div style={presenceGrid}>
-            {LOGISTICS_PHOTOS.map((src) => (
-              <div key={src} style={presenceCard}>
-                <img src={src} alt="" style={presenceImage} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section style={presenceSection}>
         <div style={wrap}>
           <p style={eyebrow}>{isSpanish ? 'PRESENCIA COMERCIAL' : 'COMMERCIAL PRESENCE'}</p>
@@ -241,7 +214,6 @@ const originGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repea
 const originImageShell: CSSProperties = { aspectRatio: '4 / 3', overflow: 'hidden', background: '#080808', border: '1px solid rgba(255,255,255,.08)' };
 const originImage: CSSProperties = { width: '100%', height: '100%', objectFit: 'cover' };
 const originAttributionStyle: CSSProperties = { marginTop: '1.5rem', color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '.82rem', letterSpacing: '.1em', textTransform: 'uppercase' };
-const logisticsSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const presenceSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const presenceGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '1rem', marginTop: '2.5rem' };
 const presenceCard: CSSProperties = { aspectRatio: '4 / 3', overflow: 'hidden', background: '#080808', border: '1px solid rgba(255,255,255,.08)' };
