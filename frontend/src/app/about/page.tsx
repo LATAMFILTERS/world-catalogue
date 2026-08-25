@@ -20,6 +20,7 @@ export default function AboutPage() {
     identityTitle: 'Filtración industrial diseñada alrededor del activo',
     identityBody: 'El filtro es el medio. La protección del activo es el objetivo. ELIMFILTERS desarrolla soluciones de filtración a partir de la condición operativa del equipo protegido, integrando conocimiento técnico, arquitectura de producto, manufactura calificada, validación, inteligencia de aplicación y ejecución de mercado.',
     systemsTitle: 'Qué Protegemos',
+    systemsShortTitle: 'Cinco sistemas de protección.',
     systemsLead: 'Nuestra arquitectura técnica se organiza alrededor de cinco sistemas de protección que representan las principales funciones de control de contaminación en equipos móviles e industriales.',
     leadershipLead: 'ELIMFILTERS combina autoridad ejecutiva humana con funciones ejecutivas especializadas operadas por agentes de IA bajo un marco formal de responsabilidad, autoridad delegada, trazabilidad y escalamiento.',
     founderBody: 'Como Founder & CEO, Víctor dirige la visión, la estrategia y la autoridad ejecutiva final de ELIMFILTERS. La Chief Executive Office conserva la responsabilidad institucional sobre la estructura ejecutiva y las decisiones materiales de la compañía.',
@@ -33,12 +34,20 @@ export default function AboutPage() {
     knowledgeBody: 'Conocimiento técnico sobre normas de filtración, control de contaminación, comportamiento de aplicaciones, inteligencia de producto, condiciones operativas y principios de protección de activos.',
     closingTitle: 'Construidos para capacidad, no para aparentar tamaño.',
     closingBody: 'Nuestro modelo operativo está diseñado para escalar competencia, velocidad, continuidad y disciplina técnica antes de añadir complejidad organizacional. La integridad del producto y los resultados del cliente siguen siendo la medida de si el modelo funciona.',
+    pillarsTitle: 'Cuatro principios rigen cada sistema de protección.',
+    pillars: [
+      { title: 'Ingeniería centrada en el activo', body: 'El filtro es el medio; la protección del activo es el objetivo. Cada solución se desarrolla a partir de la condición operativa real del equipo, no de un catálogo genérico.' },
+      { title: 'Validación basada en aplicación', body: 'Cada sistema de protección se somete a bancos de prueba dedicados que reproducen presión, flujo, temperatura y contaminantes reales, apoyados en modelado físico y simulación por IA.' },
+      { title: 'Arquitectura por sistema', body: 'La plataforma se organiza primero por sistema de protección, luego por tecnología canónica, después por familia de producto, y por último por número de parte individual.' },
+      { title: 'Ejecución comercial confiable', body: 'La disponibilidad se sostiene mediante una red de socios comerciales calificados y una operación global distributor-first con capacidad coordinada para cuentas estratégicas.' },
+    ],
   } : {
     heroTitle: 'Who We Are',
     heroLead: 'ELIMFILTERS® is an industrial filtration engineering organization focused on protecting critical assets through disciplined contamination control, application intelligence, validated product architecture, and reliable commercial execution.',
     identityTitle: 'Industrial filtration engineered around the asset',
     identityBody: 'The filter is the means. Asset protection is the objective. ELIMFILTERS develops filtration solutions around the operating condition of the protected equipment, connecting technical knowledge, product architecture, qualified manufacturing, validation, application intelligence, and market execution.',
     systemsTitle: 'What We Protect',
+    systemsShortTitle: 'Five protection systems.',
     systemsLead: 'Our technical architecture is organized around five protection systems that reflect the major contamination-control functions of mobile and industrial equipment.',
     leadershipLead: 'ELIMFILTERS combines human executive authority with specialized executive functions operated by AI agents under a formal framework of accountability, delegated authority, traceability, and escalation.',
     founderBody: 'As Founder & CEO, Víctor leads the vision, strategy, and final executive authority of ELIMFILTERS. The Chief Executive Office retains institutional accountability for the executive structure and material company decisions.',
@@ -52,6 +61,13 @@ export default function AboutPage() {
     knowledgeBody: 'Technical knowledge on filtration standards, contamination control, application behavior, product intelligence, operating conditions, and asset-protection principles.',
     closingTitle: 'Built for capability, not apparent headcount.',
     closingBody: 'Our operating model is designed to scale competence, speed, continuity, and technical discipline before adding organizational complexity. Product integrity and customer outcomes remain the measure of whether the model works.',
+    pillarsTitle: 'Four principles govern every protection system.',
+    pillars: [
+      { title: 'Asset-first engineering', body: 'The filter is the means; asset protection is the objective. Every solution is developed from the real operating condition of the equipment, not a generic catalog entry.' },
+      { title: 'Application-based validation', body: 'Every protection system runs through dedicated test equipment that reproduces real pressure, flow, temperature, and contaminant conditions, backed by physics-based modeling and AI-generated simulation.' },
+      { title: 'System-level architecture', body: 'The platform is structured around protection systems first, canonical technologies second, product families third, and individual part numbers last.' },
+      { title: 'Reliable commercial execution', body: 'Availability is sustained through a network of qualified commercial partners and distributor-first global operations with coordinated strategic-account capability.' },
+    ],
   };
 
   return (
@@ -83,14 +99,29 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section style={pillarsSection}>
+        <div style={wrap}>
+          <p style={eyebrow}>{isSpanish ? 'CÓMO LO HACEMOS' : 'HOW WE DO IT'}</p>
+          <h2 style={sectionTitle}>{copy.pillarsTitle}</h2>
+          <div style={pillarsGrid}>
+            {copy.pillars.map((pillar) => (
+              <div key={pillar.title} style={pillarCard}>
+                <h3 style={pillarTitle}>{pillar.title}</h3>
+                <p style={pillarBody}>{pillar.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section style={darkSectionDivided}>
         <div style={wrap}>
           <p style={eyebrow}>{copy.systemsTitle}</p>
-          <h2 style={sectionTitle}>{copy.systemsLead}</h2>
+          <h2 style={sectionTitle}>{copy.systemsShortTitle}</h2>
+          <p style={sectionLead}>{copy.systemsLead}</p>
           <div style={systemsGrid}>
-            {PROTECTION_SYSTEM_LIST.map((system, index) => (
+            {PROTECTION_SYSTEM_LIST.map((system) => (
               <Link key={system.key} href={`/systems/${system.slug}/`} style={systemCard}>
-                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
                 <div>
                   <h3 style={cardTitle}>{system.name}</h3>
                   <span style={exploreLabel}>{isSpanish ? 'EXPLORAR →' : 'EXPLORE →'}</span>
@@ -144,6 +175,11 @@ const heroLead: CSSProperties = { position: 'relative', zIndex: 2, marginTop: '1
 const lightSection: CSSProperties = { background: '#050505', color: '#fff', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
 const darkSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
 const darkSectionDivided: CSSProperties = { ...darkSection, borderTop: '1px solid rgba(255,255,255,.06)' };
+const pillarsSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
+const pillarsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)', marginTop: '2.5rem' };
+const pillarCard: CSSProperties = { background: '#050505', padding: '1.75rem' };
+const pillarTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.05rem', letterSpacing: '-.01em', textTransform: 'uppercase', margin: '0 0 .8rem', color: '#FFF12D' };
+const pillarBody: CSSProperties = { color: 'rgba(255,255,255,.68)', fontSize: '.92rem', lineHeight: 1.65, margin: 0 };
 const identityGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
 const identityPhotoShell: CSSProperties = { aspectRatio: '4 / 3', overflow: 'hidden', background: '#111', border: '1px solid rgba(255,255,255,0.1)' };
 const darkTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '850px', margin: '0 0 1.5rem', textTransform: 'uppercase' };
@@ -153,7 +189,6 @@ const sectionLead: CSSProperties = { color: 'rgba(255,255,255,.68)', lineHeight:
 const systemsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)', marginTop: '2.5rem' };
 const systemCard: CSSProperties = { background: '#080808', padding: '1.5rem', minHeight: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textDecoration: 'none', color: '#fff' };
 const exploreLabel: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.14em', fontSize: '.68rem', marginTop: '1.1rem', display: 'inline-block' };
-const number: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', letterSpacing: '.14em', fontWeight: 700 };
 const cardTitle: CSSProperties = { margin: '1.5rem 0 0', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2, textTransform: 'uppercase' };
 const leadershipIntroSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
 const leadershipTeaserGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
