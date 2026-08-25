@@ -259,7 +259,7 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
 
   hydraulic: {
     risk: {
-      image: '/images/nanoforce-mecanico.avif',
+      image: '/images/nanoforce_motor.avif',
       imageAlt: 'ELIMFILTERS NANOFORCE hydraulic filtration technology',
       imageSide: 'left',
       title: 'Hydraulic contamination is a tolerance problem before it becomes a failure.',

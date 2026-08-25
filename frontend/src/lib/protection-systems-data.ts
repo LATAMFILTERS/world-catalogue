@@ -65,7 +65,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     tagline: 'Contamination control in high-pressure hydraulic circuits.',
     overview: 'Hydraulic Protection maintains fluid cleanliness around the tolerance requirements of pumps, valves, actuators, and servo controls.',
     engineeringPrinciple: 'Beta-rated media, collapse-resistant construction, and thermal stability are matched to flow, pressure, critical particle size, and duty cycle.',
-    heroImage: '/images/nanoforce_motor.avif', heroColor: '#FFF12D', hdPrefix: 'EH6', ldPrefix: null,
+    heroImage: '/images/hidraulico-trabajador.jpg', heroColor: '#FFF12D', hdPrefix: 'EH6', ldPrefix: null,
     ...relationships('hydraulic'),
   },
   'cooling-system': {
