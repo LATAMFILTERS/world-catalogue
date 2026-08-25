@@ -9,14 +9,6 @@ import { PROTECTION_SYSTEM_LIST } from '@/lib/protection-systems-data';
 import registry from '@/data/executive-visual-identity.json';
 import '@/i18n';
 
-const SYSTEM_CARD_IMAGES: Record<string, string> = {
-  'air-intake': '/images/air-filters-lab.avif',
-  'fuel-cleanliness': '/images/syntapore_mecanico_camion.avif',
-  lubrication: '/images/oil-hand.avif',
-  hydraulic: '/images/hidraulico-trabajador.jpg',
-  'cooling-system': '/images/thermacore_mecnico.jpg',
-};
-
 export default function AboutPage() {
   const { i18n } = useTranslation();
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
@@ -97,13 +89,11 @@ export default function AboutPage() {
           <h2 style={sectionTitle}>{copy.systemsLead}</h2>
           <div style={systemsGrid}>
             {PROTECTION_SYSTEM_LIST.map((system, index) => (
-              <Link key={system.key} href={`/systems/${system.slug}/`} style={systemCardLink}>
-                <img src={SYSTEM_CARD_IMAGES[system.slug]} alt={`${system.name} system card`} style={systemCardImage} />
-                <div style={systemCardOverlay} />
-                <div style={systemCardBody}>
-                  <span style={number}>{String(index + 1).padStart(2, '0')}</span>
+              <Link key={system.key} href={`/systems/${system.slug}/`} style={systemCard}>
+                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
+                <div>
                   <h3 style={cardTitle}>{system.name}</h3>
-                  <span style={exploreLabel}>{isSpanish ? 'EXPLORAR SISTEMA →' : 'EXPLORE SYSTEM →'}</span>
+                  <span style={exploreLabel}>{isSpanish ? 'EXPLORAR →' : 'EXPLORE →'}</span>
                 </div>
               </Link>
             ))}
@@ -128,38 +118,6 @@ export default function AboutPage() {
               <p style={founderRole}>{founder.designation}</p>
             </div>
           </Link>
-        </div>
-      </section>
-
-      <section id="engineering-philosophy" style={philosophySectionDivided}>
-        <div style={wrap}>
-          <p style={eyebrow}>{copy.philosophyTitle}</p>
-          <h2 style={sectionTitle}>{isSpanish ? 'Ingeniería antes que marketing.' : 'Engineering before marketing.'}</h2>
-          <p style={sectionLead}>{copy.philosophyBody}</p>
-          <Link href="/about/philosophy" style={textLink}>{isSpanish ? 'Leer la filosofía completa →' : 'Read the full engineering philosophy →'}</Link>
-        </div>
-      </section>
-
-      <section style={corporateSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>{copy.structureTitle}</p>
-          <ul style={structureList}>
-            <li><strong style={label}>{isSpanish ? 'Propietario de la Marca' : 'Brand Owner'}:</strong> Kleo Technology LLC</li>
-            <li><strong style={label}>{isSpanish ? 'Sede Legal' : 'Legal Headquarters'}:</strong> Frisco, Texas, USA</li>
-            <li><strong style={label}>{isSpanish ? 'Modelo Operativo' : 'Operating Model'}:</strong> {isSpanish ? 'Operación global distributor-first con capacidad coordinada para cuentas estratégicas' : 'Distributor-first global operations with coordinated strategic-account capability'}</li>
-          </ul>
-          <div style={twoCol}>
-            <div>
-              <p style={eyebrow}>{copy.networkTitle}</p>
-              <p style={bodyText}>{copy.networkBody}</p>
-              <Link href="/distributors" style={textLink}>{isSpanish ? 'Explorar Red de Socios Comerciales →' : 'Explore Commercial Partner Network →'}</Link>
-            </div>
-            <div>
-              <p style={eyebrow}>{copy.knowledgeTitle}</p>
-              <p style={bodyText}>{copy.knowledgeBody}</p>
-              <Link href="/knowledge-center/" style={textLink}>{isSpanish ? 'Acceder al Centro de Conocimiento →' : 'Access Knowledge Center →'}</Link>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -193,27 +151,17 @@ const darkBody: CSSProperties = { maxWidth: '880px', color: 'rgba(255,255,255,0.
 const sectionTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '950px', margin: '0 0 1rem', textTransform: 'uppercase' };
 const sectionLead: CSSProperties = { color: 'rgba(255,255,255,.68)', lineHeight: 1.75, maxWidth: '900px', fontSize: '1.03rem' };
 const systemsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(230px,1fr))', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)', marginTop: '2.5rem' };
-const systemCard: CSSProperties = { background: '#080808', padding: '1.5rem', minHeight: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' };
-const systemCardLink: CSSProperties = { position: 'relative', minHeight: '340px', overflow: 'hidden', textDecoration: 'none', color: '#fff', background: '#080808' };
-const systemCardImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.62, filter: 'brightness(1.02)' };
-const systemCardOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.9) 100%)' };
-const systemCardBody: CSSProperties = { position: 'absolute', inset: 0, padding: '1.35rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' };
-const exploreLabel: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.14em', fontSize: '.68rem', marginTop: '1.1rem' };
-const number: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', letterSpacing: '.14em', fontWeight: 700, position: 'relative', zIndex: 1 };
-const cardTitle: CSSProperties = { margin: '1.5rem 0 0', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2, textTransform: 'uppercase', position: 'relative', zIndex: 1 };
+const systemCard: CSSProperties = { background: '#080808', padding: '1.5rem', minHeight: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', textDecoration: 'none', color: '#fff' };
+const exploreLabel: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.14em', fontSize: '.68rem', marginTop: '1.1rem', display: 'inline-block' };
+const number: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', letterSpacing: '.14em', fontWeight: 700 };
+const cardTitle: CSSProperties = { margin: '1.5rem 0 0', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2, textTransform: 'uppercase' };
 const leadershipIntroSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
-const philosophySectionDivided: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px', borderTop: '1px solid rgba(255,255,255,.06)' };
 const leadershipTeaserGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
 const founderTeaserCard: CSSProperties = { textDecoration: 'none', color: '#fff', maxWidth: '320px' };
 const founderPhotoShell: CSSProperties = { aspectRatio: '4 / 5', overflow: 'hidden', background: '#111' };
 const portraitImage: CSSProperties = { width: '100%', height: '100%', objectFit: 'cover', display: 'block' };
 const founderTeaserName: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: '1.4rem', lineHeight: 1.05, letterSpacing: '-.02em', margin: '0 0 .4rem' };
 const founderRole: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', margin: 0, fontSize: '.78rem' };
-const corporateSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
-const structureList: CSSProperties = { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem', color: 'rgba(255,255,255,.72)', lineHeight: 1.65 };
-const label: CSSProperties = { color: '#FFF12D' };
-const twoCol: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', marginTop: '3rem' };
-const bodyText: CSSProperties = { color: 'rgba(255,255,255,.66)', lineHeight: 1.75 };
 const textLink: CSSProperties = { display: 'inline-block', marginTop: '1rem', color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.05em' };
 const closingSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,241,45,.16)' };
 const closingTitle: CSSProperties = { ...sectionTitle, maxWidth: '900px' };
