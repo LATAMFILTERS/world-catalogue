@@ -11,6 +11,7 @@ export interface ProtectionSystem {
   readonly overview: string;
   readonly engineeringPrinciple: string;
   readonly heroImage: string;
+  readonly heroPosition?: string;
   readonly heroColor: string;
   readonly primaryTechnologies: TechnologySlug[];
   readonly supportingTechnologies: TechnologySlug[];
@@ -40,7 +41,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     tagline: 'Contamination interception across engine intake, operator air, housings, and compressed-air drying.',
     overview: 'Air Intake & Airflow Protection is the first defense layer in any contamination control strategy. It combines engine air filtration, secondary safety protection, operator-cabin air quality, air-cleaner housings, and air-dryer elements within one coordinated airflow protection domain.',
     engineeringPrinciple: 'Progressive media density, controlled sealing, electrostatic capture, adsorption, and desiccant drying are applied according to the protected airflow path. Each family addresses a distinct contamination boundary while remaining part of one airflow protection architecture.',
-    heroImage: '/images/carcasa.jd.avif', heroColor: '#FFF12D', hdPrefix: 'EA1', ldPrefix: 'EA3',
+    heroImage: '/images/carcasa.jd.avif', heroPosition: 'center 15%', heroColor: '#FFF12D', hdPrefix: 'EA1', ldPrefix: 'EA3',
     ...relationships('air-intake'),
   },
   'fuel-cleanliness': {

@@ -146,7 +146,7 @@ export default function ProtectionSystemPage({ params }: Props) {
       <main style={main}>
         <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage={sys.name} />
 
-        <Hero title={sys.name} tagline={sys.tagline} backgroundImage={sys.heroImage} industryChrome />
+        <Hero title={sys.name} tagline={sys.tagline} backgroundImage={sys.heroImage} backgroundPosition={sys.heroPosition} industryChrome />
 
         <section style={section}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>

@@ -10,6 +10,8 @@ interface HeroProps {
   ctaHref?: string;
   backgroundImage?: string;
   backgroundVideo?: string;
+  /** CSS background-position / object-position for the hero media, e.g. 'center 20%'. */
+  backgroundPosition?: string;
   stats?: { label: string; value: string }[];
   category?: string;
   /** Match the /industries parent-page hero structure: no CTA row, no scroll indicator, fluid clamp() spacing, 92vh. */
@@ -27,6 +29,7 @@ export function Hero({
   ctaHref = 'https://part-search.elimfilters.com',
   backgroundImage = '/images/fondomotor.PNG',
   backgroundVideo,
+  backgroundPosition = 'center center',
   stats,
   category,
   industryChrome = false,
@@ -109,7 +112,7 @@ export function Hero({
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            objectPosition: 'center center',
+            objectPosition: backgroundPosition,
             transform: 'none',
             opacity: industryChrome ? 0.48 : 1,
             filter: industryChrome ? 'none' : 'brightness(1.14) contrast(1.05)',
@@ -125,7 +128,7 @@ export function Hero({
             inset: 0,
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center center',
+            backgroundPosition,
             backgroundRepeat: 'no-repeat',
             transform: 'none',
             opacity: industryChrome ? 0.48 : 1,
