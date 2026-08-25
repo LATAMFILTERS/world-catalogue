@@ -20,9 +20,9 @@ export default function WhoWeArePage() {
     builtTitle: 'Una Chief Executive Office humana, junto con agentes ejecutivos de IA especializados.',
     builtBody: 'El Founder & CEO, Víctor Abreu, mantiene la autoridad ejecutiva final, y la Chief Executive Office conserva la responsabilidad institucional sobre la estructura de la compañía y sus decisiones materiales. La ejecución diaria por dominio —operaciones, producto y tecnología, mercados comerciales, finanzas y riesgo, estrategia e inteligencia— la llevan cinco agentes ejecutivos de IA especializados, bajo autoridad delegada, responsabilidad formal y escalamiento humano para decisiones estratégicas o irreversibles.',
     builtLink: 'Conocer al equipo de liderazgo →',
-    purposeEyebrow: 'POR QUÉ IMPORTA',
-    purposeTitle: 'Un activo que opera limpio es tiempo de inactividad, combustible y material que no se desperdician.',
-    purposeBody: 'Las fallas por contaminación rara vez son súbitas: se acumulan por un desgaste que la filtración disciplinada está diseñada a prevenir. Extender la vida útil del equipo que ELIMFILTERS protege reduce el costo ambiental y operativo del reemplazo prematuro de piezas y del servicio no planificado a lo largo del ciclo de vida del equipo.',
+    purposeEyebrow: 'PROTECCIÓN AMBIENTAL',
+    purposeTitle: 'El control de contaminación es inseparable del impacto ambiental.',
+    purposeBody: 'Cada falla que la filtración disciplinada previene es también una falla que el ambiente no tiene que absorber: menos fluidos contaminados que desechar, menos componentes desgastados prematuramente que fabricar para reemplazar lo que debió durar más, y menos combustible o energía consumidos por un equipo que trabaja más de lo necesario porque no está operando limpio. Proteger el activo y proteger el entorno que lo rodea son, en la práctica, la misma disciplina de ingeniería.',
   } : {
     heroTitle: 'Who We Are',
     heroLead: 'Since 2015, ELIMFILTERS® has been the industrial filtration brand of Kleo Technology LLC, legally headquartered in Frisco, Texas — organized around asset protection rather than filter replacement, a distinction that shapes everything from product architecture to executive structure.',
@@ -33,9 +33,9 @@ export default function WhoWeArePage() {
     builtTitle: 'A human Chief Executive Office, paired with specialized executive AI agents.',
     builtBody: 'Founder & CEO Víctor Abreu holds final executive authority, and the Chief Executive Office retains institutional accountability for the company’s structure and material decisions. Day-to-day domain execution — operations, product and technology, commercial markets, finance and risk, strategy and intelligence — is carried by five specialized executive AI agents operating under delegated authority, formal accountability, and human escalation for strategic or irreversible decisions.',
     builtLink: 'Meet the leadership team →',
-    purposeEyebrow: 'WHY IT MATTERS',
-    purposeTitle: 'A clean asset is downtime, fuel, and material waste avoided.',
-    purposeBody: 'Contamination failures are rarely sudden; they accumulate through wear that disciplined filtration is designed to prevent. Extending the useful life of the equipment ELIMFILTERS protects reduces the environmental and operating cost of premature part replacement and unplanned service across the equipment lifecycle.',
+    purposeEyebrow: 'ENVIRONMENTAL PROTECTION',
+    purposeTitle: 'Contamination control is inseparable from environmental impact.',
+    purposeBody: 'Every failure that disciplined filtration prevents is also a failure the environment doesn’t have to absorb: fewer contaminated fluids to dispose of, fewer prematurely worn components manufactured to replace what should have lasted, and less fuel or energy burned by equipment working harder than it should because it isn’t running clean. Protecting the asset and protecting the environment around it are, in practice, the same engineering discipline.',
   };
 
   return (
