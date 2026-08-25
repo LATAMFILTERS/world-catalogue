@@ -10,7 +10,7 @@ const SYSTEM_IMAGES: Record<string, string> = {
   // Not mecanica-air.avif: a legacy page-scoped CSS hack (main:has(img[src*="mecanica-air.avif"]))
   // hides every sibling section after the 3rd once that file appears anywhere in <main>.
   'air-intake': '/images/air-filters-lab.avif',
-  'fuel-cleanliness': '/images/fuellseparator-hero.avif',
+  'fuel-cleanliness': '/images/syntapore_mecanico_camion.avif',
   lubrication: '/images/oil-hand.avif',
   hydraulic: '/images/hidraulic.avif',
   'cooling-system': '/images/coolant-filters.avif',

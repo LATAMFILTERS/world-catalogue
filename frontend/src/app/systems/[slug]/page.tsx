@@ -13,6 +13,14 @@ import { Hero } from '@/components/Hero';
 
 const BASE_URL = 'https://elimfilters.com';
 const displayFont = 'Chakra Petch, Arial Narrow, monospace';
+
+const SYSTEM_TAGS: Record<string, string> = {
+  'air-intake': 'AIR INTAKE & AIRFLOW',
+  'fuel-cleanliness': 'FUEL',
+  lubrication: 'LUBRICATION',
+  hydraulic: 'HYDRAULIC',
+  'cooling-system': 'COOLING',
+};
 const bodyFont = 'Barlow, Arial, sans-serif';
 
 interface Props {
@@ -146,7 +154,19 @@ export default function ProtectionSystemPage({ params }: Props) {
       <main style={main}>
         <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage={sys.name} />
 
-        <Hero title={sys.name} tagline={sys.tagline} backgroundImage={sys.heroImage} backgroundPosition={sys.heroPosition} industryChrome />
+        <Hero
+          title={sys.name.replace(/\s*Protection$/, '')}
+          subtitle="Protection"
+          tagline={sys.tagline}
+          backgroundImage={sys.heroImage}
+          backgroundPosition={sys.heroPosition}
+          industryChrome
+          tags={PROTECTION_SYSTEM_LIST.map((s) => ({
+            label: SYSTEM_TAGS[s.slug] || s.name,
+            href: `/systems/${s.slug}/`,
+            active: s.slug === sys.slug,
+          }))}
+        />
 
         <section style={section}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>

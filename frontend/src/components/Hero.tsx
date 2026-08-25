@@ -1,6 +1,13 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
+
+interface HeroTag {
+  label: string;
+  href?: string;
+  active?: boolean;
+}
 
 interface HeroProps {
   title: string;
@@ -16,6 +23,8 @@ interface HeroProps {
   category?: string;
   /** Match the /industries parent-page hero structure: no CTA row, no scroll indicator, fluid clamp() spacing, 92vh. */
   industryChrome?: boolean;
+  /** Pill row below the tagline, matching the /systems index hero (e.g. quick nav across sibling entries). */
+  tags?: HeroTag[];
 }
 
 const displayFont = 'Chakra Petch, Arial Narrow, monospace';
@@ -33,6 +42,7 @@ export function Hero({
   stats,
   category,
   industryChrome = false,
+  tags,
 }: HeroProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -255,6 +265,35 @@ export function Hero({
           >
             {tagline}
           </p>
+        )}
+
+        {tags && tags.length > 0 && (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2.2rem' }}>
+            {tags.map((t) => {
+              const pillStyle = {
+                border: t.active ? '1px solid #FFF12D' : '1px solid rgba(255,255,255,0.14)',
+                background: t.active ? '#FFF12D' : 'rgba(255,255,255,0.04)',
+                padding: '0.75rem 1rem',
+                fontFamily: displayFont,
+                fontSize: '0.72rem',
+                textTransform: 'uppercase' as const,
+                letterSpacing: '0.16em',
+                fontWeight: 700,
+                color: t.active ? '#000' : 'rgba(255,255,255,0.72)',
+                textDecoration: 'none',
+                display: 'inline-block',
+              };
+              return t.href && !t.active ? (
+                <Link key={t.label} href={t.href} style={pillStyle}>
+                  {t.label}
+                </Link>
+              ) : (
+                <span key={t.label} style={pillStyle}>
+                  {t.label}
+                </span>
+              );
+            })}
+          </div>
         )}
 
         {!industryChrome && (
