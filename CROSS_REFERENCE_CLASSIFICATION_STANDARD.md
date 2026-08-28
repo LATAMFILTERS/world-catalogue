@@ -136,8 +136,8 @@ REVIEW_REQUIRED
 
 Autoridades de referencia:
 
-- **MANN**: Autoridad Única para el Catálogo Liviano y Europeo (`mann_catalog_ld.jsonl`).
-- **FRAM**: Autoridad Única para el Catálogo Liviano y Americano (en base al catálogo WIX anexo).
+- **MANN**: Autoridad Única para el Catálogo Liviano de EUROPA (`mann_catalog_ld.jsonl`).
+- **FRAM**: Autoridad Única para el Catálogo Liviano de AMÉRICA y ASIA, incluyendo JAPÓN (en base al catálogo WIX anexo).
 
 ---
 
@@ -173,9 +173,9 @@ Toda promoción de categoría requiere evidencia documental.
 
 Donaldson = HD Authority (Autoridad Única para el Catálogo Pesado e Industrial)
 
-MANN = LD Authority (Autoridad Única para el Catálogo Liviano y Europeo)
+MANN = LD Authority (Autoridad Única para el Catálogo Liviano de EUROPA)
 
-FRAM = LD Authority (Autoridad Única para el Catálogo Liviano y Americano, en base a catálogo WIX anexo)
+FRAM = LD Authority (Autoridad Única para el Catálogo Liviano de AMÉRICA y ASIA, incluyendo JAPÓN, en base a catálogo WIX anexo)
 
 Fleetguard = Enrichment Layer (Capa de Enriquecimiento Secundario)
 
