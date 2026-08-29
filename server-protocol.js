@@ -28,6 +28,13 @@ async function start() {
   const ldCanonicalIdentity = await applyLdCanonicalIdentityPolicyPgFix();
   console.log('[ld-canonical-identity-pgfix]', JSON.stringify(ldCanonicalIdentity));
 
+  // Align the legacy codigo_base governance trigger with the regional LD rule.
+  // EUROPEAN = MANN-FILTER canonical source; NON_EUROPEAN = FRAM canonical source.
+  // Existing rows are audited only; no codigo_base or SKU is inferred here.
+  const { applyRegionalLdCodigoBasePolicy } = require('./scripts/migrations/run_083_regional_ld_codigo_base_policy');
+  const regionalLdPolicy = await applyRegionalLdCodigoBasePolicy();
+  console.log('[regional-ld-codigo-base-v32]', JSON.stringify(regionalLdPolicy));
+
   // Apply only the small curated evidence batch whose exact official Donaldson
   // product URLs were independently reviewed. This path exists because Donaldson
   // returns HTTP 403 to Render-origin requests; 403 is never treated as absence.
