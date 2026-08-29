@@ -50,17 +50,19 @@ async function start() {
   const europeanMannDiagnostics = await applyEuropeanMannDiagnosticsCoverageGuard();
   console.log('[european-mann-unresolved-diagnostics-v3]', JSON.stringify(europeanMannDiagnostics));
 
-  // Reconcile the original 087 classification with corrected 091 coverage before
-  // allowing any second canonical promotion batch. Evidence only; no catalog writes.
   const { applyEuropeanMannMatchReconciliation } = require('./scripts/migrations/run_092_european_mann_match_reconciliation');
   const europeanMannReconciliation = await applyEuropeanMannMatchReconciliation();
   console.log('[european-mann-match-reconciliation]', JSON.stringify(europeanMannReconciliation));
 
-  // Certify every public catalog SKU against one deterministic global matrix.
-  // This creates an audit ledger only; blocked SKUs are never auto-promoted or rewritten.
   const { applyGlobalSkuCertificationAudit } = require('./scripts/migrations/run_093_global_sku_certification_audit');
   const globalSkuCertification = await applyGlobalSkuCertificationAudit();
   console.log('[global-sku-certification-audit]', JSON.stringify(globalSkuCertification));
+
+  // Extend canonical resolution to every verified, uniquely owned catalog base code.
+  // This closes the HD resolver gap without certifying unverified or duplicate bases.
+  const { applyGlobalCanonicalResolverV7 } = require('./scripts/migrations/run_094_global_canonical_resolver_v7');
+  const globalCanonicalResolver = await applyGlobalCanonicalResolverV7();
+  console.log('[global-canonical-resolver-v7]', JSON.stringify(globalCanonicalResolver));
 
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
