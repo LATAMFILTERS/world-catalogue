@@ -21,13 +21,12 @@ async function start() {
   const alternateIntegrity = await applyAlternateIntegrityAndReferenceQuarantine();
   console.log('[alternate-integrity-v1]', JSON.stringify(alternateIntegrity));
 
-  // Install the LD canonical identity policy before the public API starts.
-  // EUROPEAN vehicle-origin families use MANN-FILTER as canonical source;
-  // NON_EUROPEAN families use FRAM. Ambiguous historical cross-references are
-  // quarantined rather than guessed, and v_api_resolver_v6 is installed here.
-  const { applyLdCanonicalIdentityPolicy } = require('./scripts/migrations/run_081_ld_canonical_identity_policy');
-  const ldCanonicalIdentity = await applyLdCanonicalIdentityPolicy();
-  console.log('[ld-canonical-identity-v1]', JSON.stringify(ldCanonicalIdentity));
+  // PostgreSQL-compatible LD canonical identity policy. Migration 081 used
+  // COUNT(DISTINCT ...) OVER (...), which PostgreSQL rejects. Migration 082
+  // implements the same fail-closed policy using grouped uniqueness checks.
+  const { applyLdCanonicalIdentityPolicyPgFix } = require('./scripts/migrations/run_082_ld_canonical_identity_policy_pgfix');
+  const ldCanonicalIdentity = await applyLdCanonicalIdentityPolicyPgFix();
+  console.log('[ld-canonical-identity-pgfix]', JSON.stringify(ldCanonicalIdentity));
 
   // Apply only the small curated evidence batch whose exact official Donaldson
   // product URLs were independently reviewed. This path exists because Donaldson
