@@ -30,7 +30,7 @@ async function applyRegionalLdCodigoBasePolicy() {
         approved_code_norm text := upper(regexp_replace(coalesce(gov->>'approved_codigo_base', ''), '[^A-Z0-9]', '', 'g'));
         approved_manufacturer text := upper(regexp_replace(coalesce(gov->>'approved_manufacturer', ''), '[^A-Z0-9]', '', 'g'));
         approved_source text := upper(coalesce(gov->>'approved_source_column', ''));
-        origin_group text := upper(coalesce(gov->>'origin_group', ''));
+        origin_group_value text := upper(coalesce(gov->>'origin_group', ''));
         expected_ld_brand text;
         strict_validation boolean := false;
         code_digits text;
@@ -85,32 +85,29 @@ async function applyRegionalLdCodigoBasePolicy() {
         END IF;
 
         IF duty_text = 'LIGHT_DUTY' THEN
-          IF origin_group NOT IN ('EUROPEAN','NON_EUROPEAN') THEN
+          IF origin_group_value NOT IN ('EUROPEAN','NON_EUROPEAN') THEN
             RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % requires explicit origin_group EUROPEAN or NON_EUROPEAN', NEW.sku;
           END IF;
 
-          SELECT upper(regexp_replace(canonical_brand, '[^A-Z0-9]', '', 'g'))
+          SELECT upper(regexp_replace(p.canonical_brand, '[^A-Z0-9]', '', 'g'))
           INTO expected_ld_brand
-          FROM ld_catalog.ld_canonical_source_policy
-          WHERE upper(origin_group) = enforce_elimfilters_codigo_base_policy.origin_group
-            AND active = true;
+          FROM ld_catalog.ld_canonical_source_policy p
+          WHERE upper(p.origin_group) = origin_group_value
+            AND p.active = true;
 
           IF expected_ld_brand IS NULL THEN
-            RAISE EXCEPTION 'CATALOG_POLICY_V32: no active LD canonical source policy for origin_group %', origin_group;
+            RAISE EXCEPTION 'CATALOG_POLICY_V32: no active LD canonical source policy for origin_group %', origin_group_value;
           END IF;
 
           IF coalesce((gov->>'primary_manufacturer_verified')::boolean, false) IS NOT TRUE THEN
             RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % requires verified canonical manufacturer authority', NEW.sku;
           END IF;
           IF approved_manufacturer <> expected_ld_brand THEN
-            RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % origin_group % requires canonical manufacturer %, got %', NEW.sku, origin_group, expected_ld_brand, approved_manufacturer;
+            RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % origin_group % requires canonical manufacturer %, got %', NEW.sku, origin_group_value, expected_ld_brand, approved_manufacturer;
           END IF;
           IF approved_code_norm = '' OR approved_code_norm <> base_norm THEN
             RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % codigo_base must equal approved_codigo_base', NEW.sku;
           END IF;
-
-          -- Canonical references belong in codigo_base. If the same code is also
-          -- present in alternates, the alternate-integrity trigger rejects it.
           RETURN NEW;
         END IF;
 
