@@ -30,26 +30,24 @@ async function start() {
   const ldOriginCandidates = await applyLdOriginCandidateBackfill();
   console.log('[ld-origin-candidate-backfill]', JSON.stringify(ldOriginCandidates));
 
-  // Normalized LD child tables reference ld_product_catalog by elimfilters_sku.
-  // SKU canonicalization is a legitimate parent-key update, so propagate it to
-  // all dependent rows atomically instead of blocking the repair at the FK.
   const { applyLdFkUpdateCascade } = require('./scripts/migrations/run_086_ld_fk_update_cascade');
   const ldFkCascade = await applyLdFkUpdateCascade();
   console.log('[ld-fk-update-cascade]', JSON.stringify(ldFkCascade));
 
-  // First guarded non-European canonical repair. Exact application evidence ties
-  // normalized MANN W68/3 to the existing Toyota (USA) 2ZRFXE oil family, while
-  // FRAM PH4967 is promoted to codigo_base and MANN remains a cross-reference.
   const { applyPh4967CanonicalRepair } = require('./scripts/migrations/run_085_ph4967_canonical_repair');
   const ph4967Repair = await applyPh4967CanonicalRepair();
   console.log('[ph4967-canonical-repair]', JSON.stringify(ph4967Repair));
 
-  // Build an evidence-only staging map from normalized European MANN families to
-  // existing public LIGHT_DUTY SKUs using complete vehicle-application coverage.
-  // This stage does not change catalog SKUs or codigo_base values.
   const { applyEuropeanMannPublicMatchStaging } = require('./scripts/migrations/run_087_european_mann_public_match_staging');
   const europeanMannMatch = await applyEuropeanMannPublicMatchStaging();
   console.log('[european-mann-public-match-staging]', JSON.stringify(europeanMannMatch));
+
+  // Promote only the strict one-to-one subset from migration 087: one MANN
+  // family, one public LIGHT_DUTY SKU, complete application coverage, and no
+  // canonical/code collision. Ambiguous families remain untouched.
+  const { applyEuropeanMannCanonicalBatch1 } = require('./scripts/migrations/run_088_european_mann_canonical_batch1');
+  const europeanMannCanonical = await applyEuropeanMannCanonicalBatch1();
+  console.log('[european-mann-canonical-batch1]', JSON.stringify(europeanMannCanonical));
 
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
