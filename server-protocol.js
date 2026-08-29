@@ -42,12 +42,16 @@ async function start() {
   const europeanMannMatch = await applyEuropeanMannPublicMatchStaging();
   console.log('[european-mann-public-match-staging]', JSON.stringify(europeanMannMatch));
 
-  // Promote only the strict one-to-one subset from migration 087: one MANN
-  // family, one public LIGHT_DUTY SKU, complete application coverage, and no
-  // canonical/code collision. Ambiguous families remain untouched.
   const { applyEuropeanMannCanonicalBatch1 } = require('./scripts/migrations/run_088_european_mann_canonical_batch1');
   const europeanMannCanonical = await applyEuropeanMannCanonicalBatch1();
   console.log('[european-mann-canonical-batch1]', JSON.stringify(europeanMannCanonical));
+
+  // Preserve all unresolved European MANN families as evidence-only diagnostics.
+  // Candidate coverage and OEM overlap are measured, but no automatic canonical
+  // promotion occurs for multiple or partial application matches.
+  const { applyEuropeanMannUnresolvedDiagnostics } = require('./scripts/migrations/run_089_european_mann_unresolved_diagnostics');
+  const europeanMannDiagnostics = await applyEuropeanMannUnresolvedDiagnostics();
+  console.log('[european-mann-unresolved-diagnostics]', JSON.stringify(europeanMannDiagnostics));
 
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
