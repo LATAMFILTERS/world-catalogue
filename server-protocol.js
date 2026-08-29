@@ -46,12 +46,12 @@ async function start() {
   const europeanMannCanonical = await applyEuropeanMannCanonicalBatch1();
   console.log('[european-mann-canonical-batch1]', JSON.stringify(europeanMannCanonical));
 
-  // Preserve all unresolved European MANN families as evidence-only diagnostics.
-  // Candidate coverage and OEM overlap are measured, but no automatic canonical
-  // promotion occurs for multiple or partial application matches.
-  const { applyEuropeanMannUnresolvedDiagnostics } = require('./scripts/migrations/run_089_european_mann_unresolved_diagnostics');
-  const europeanMannDiagnostics = await applyEuropeanMannUnresolvedDiagnostics();
-  console.log('[european-mann-unresolved-diagnostics]', JSON.stringify(europeanMannDiagnostics));
+  // Rebuild the evidence-only diagnostics staging table with nullable public_sku
+  // before running migration 089. NO_PUBLIC_EXACT_MATCH is a valid state and must
+  // be representable without fabricating a public candidate.
+  const { applyEuropeanMannDiagnosticsNullableCandidate } = require('./scripts/migrations/run_090_european_mann_diagnostics_nullable_candidate');
+  const europeanMannDiagnostics = await applyEuropeanMannDiagnosticsNullableCandidate();
+  console.log('[european-mann-unresolved-diagnostics-v2]', JSON.stringify(europeanMannDiagnostics));
 
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
