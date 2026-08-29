@@ -56,6 +56,12 @@ async function start() {
   const europeanMannReconciliation = await applyEuropeanMannMatchReconciliation();
   console.log('[european-mann-match-reconciliation]', JSON.stringify(europeanMannReconciliation));
 
+  // Certify every public catalog SKU against one deterministic global matrix.
+  // This creates an audit ledger only; blocked SKUs are never auto-promoted or rewritten.
+  const { applyGlobalSkuCertificationAudit } = require('./scripts/migrations/run_093_global_sku_certification_audit');
+  const globalSkuCertification = await applyGlobalSkuCertificationAudit();
+  console.log('[global-sku-certification-audit]', JSON.stringify(globalSkuCertification));
+
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
   console.log('[curated-official-evidence-batch1]', JSON.stringify(curatedEvidence));
