@@ -46,12 +46,12 @@ async function start() {
   const europeanMannCanonical = await applyEuropeanMannCanonicalBatch1();
   console.log('[european-mann-canonical-batch1]', JSON.stringify(europeanMannCanonical));
 
-  // Rebuild the evidence-only diagnostics staging table with nullable public_sku
-  // before running migration 089. NO_PUBLIC_EXACT_MATCH is a valid state and must
-  // be representable without fabricating a public candidate.
-  const { applyEuropeanMannDiagnosticsNullableCandidate } = require('./scripts/migrations/run_090_european_mann_diagnostics_nullable_candidate');
-  const europeanMannDiagnostics = await applyEuropeanMannDiagnosticsNullableCandidate();
-  console.log('[european-mann-unresolved-diagnostics-v2]', JSON.stringify(europeanMannDiagnostics));
+  // Rebuild the nullable diagnostics table, then recalculate coverage by counting
+  // each normalized application at most once per public candidate. This prevents
+  // duplicate public application rows from inflating evidence above 100%.
+  const { applyEuropeanMannDiagnosticsCoverageGuard } = require('./scripts/migrations/run_091_european_mann_diagnostics_coverage_guard');
+  const europeanMannDiagnostics = await applyEuropeanMannDiagnosticsCoverageGuard();
+  console.log('[european-mann-unresolved-diagnostics-v3]', JSON.stringify(europeanMannDiagnostics));
 
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
