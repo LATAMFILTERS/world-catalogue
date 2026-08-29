@@ -14,44 +14,33 @@ async function start() {
   const applicationGovernance = await installApplicationEvidenceGovernance();
   console.log('[catalog-application-governance]', JSON.stringify(applicationGovernance));
 
-  // Structural cleanup only: remove exact codigo_base duplication, build the
-  // evidence queues and prevent unresolved HD/LD conflicts from reaching the
-  // public selector. No manufacturer or equivalence is inferred.
   const { applyAlternateIntegrityAndReferenceQuarantine } = require('./scripts/migrations/run_080_alternate_integrity_and_reference_quarantine');
   const alternateIntegrity = await applyAlternateIntegrityAndReferenceQuarantine();
   console.log('[alternate-integrity-v1]', JSON.stringify(alternateIntegrity));
 
-  // PostgreSQL-compatible LD canonical identity policy. Migration 081 used
-  // COUNT(DISTINCT ...) OVER (...), which PostgreSQL rejects. Migration 082
-  // implements the same fail-closed policy using grouped uniqueness checks.
   const { applyLdCanonicalIdentityPolicyPgFix } = require('./scripts/migrations/run_082_ld_canonical_identity_policy_pgfix');
   const ldCanonicalIdentity = await applyLdCanonicalIdentityPolicyPgFix();
   console.log('[ld-canonical-identity-pgfix]', JSON.stringify(ldCanonicalIdentity));
 
-  // Align the legacy codigo_base governance trigger with the regional LD rule.
-  // EUROPEAN = MANN-FILTER canonical source; NON_EUROPEAN = FRAM canonical source.
-  // Existing rows are audited only; no codigo_base or SKU is inferred here.
   const { applyRegionalLdCodigoBasePolicy } = require('./scripts/migrations/run_083_regional_ld_codigo_base_policy');
   const regionalLdPolicy = await applyRegionalLdCodigoBasePolicy();
   console.log('[regional-ld-codigo-base-v32]', JSON.stringify(regionalLdPolicy));
 
-  // Apply only the small curated evidence batch whose exact official Donaldson
-  // product URLs were independently reviewed. This path exists because Donaldson
-  // returns HTTP 403 to Render-origin requests; 403 is never treated as absence.
+  // Classify LD product families by curated vehicle-manufacturer origin and stage
+  // canonical candidates. This is evidence preparation only: it does not rename
+  // SKUs or change codigo_base. Ambiguous/mixed/multi-FRAM families stay blocked.
+  const { applyLdOriginCandidateBackfill } = require('./scripts/migrations/run_084_ld_origin_candidate_backfill');
+  const ldOriginCandidates = await applyLdOriginCandidateBackfill();
+  console.log('[ld-origin-candidate-backfill]', JSON.stringify(ldOriginCandidates));
+
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
   console.log('[curated-official-evidence-batch1]', JSON.stringify(curatedEvidence));
 
-  // Post-repair controlled validation: four exact official product pages were
-  // independently reviewed before deploy. The migration is idempotent and
-  // changes governance/evidence only when exact SKU + codigo_base match.
   const { applyCuratedOfficialEvidenceBatch2 } = require('./scripts/migrations/run_078_apply_curated_official_evidence_batch2');
   const curatedEvidenceBatch2 = await applyCuratedOfficialEvidenceBatch2();
   console.log('[curated-official-evidence-batch2]', JSON.stringify(curatedEvidenceBatch2));
 
-  // Exact Donaldson evidence corrects EF91315 from the historical ST1315
-  // placeholder to P551315. Protected alternate/application payloads are
-  // audited before and after and the transaction fails closed on any change.
   const { applyP551315CanonicalEvidence } = require('./scripts/migrations/run_079_apply_p551315_canonical_evidence');
   const p551315Evidence = await applyP551315CanonicalEvidence();
   console.log('[p551315-canonical-evidence]', JSON.stringify(p551315Evidence));
@@ -73,8 +62,6 @@ async function start() {
     }
   }, 15000);
 
-  // The generic worker is opt-in. Render-origin discovery/fetch failures are not
-  // evidence and must not consume queue attempts on every service restart.
   if (process.env.CATALOG_HISTORICAL_SANITATION_LIVE === 'true') {
     const requestedLimit = Number(process.env.CATALOG_HISTORICAL_SANITATION_LIMIT || 5);
     const controlledLimit = Math.max(1, Math.min(5, Number.isFinite(requestedLimit) ? requestedLimit : 5));
