@@ -3038,6 +3038,59 @@ app.get('/api/admin/audit', adminLimiter, requireAdmin, async (req, res) => {
   }
 });
 
+// ─── GET /api/admin/logistics-audit ───────────────────────────────────────────
+// Read-only. Reports how many SKUs already have each logistics/packaging field
+// populated on elimfilters_catalog, for the packaging-data enrichment project.
+// Never writes. Auto-detects whichever of the 16 target columns already exist.
+app.get('/api/admin/logistics-audit', adminLimiter, requireAdmin, async (req, res) => {
+  const TARGET_FIELDS = [
+    'units_per_case', 'unit_net_weight_kg', 'unit_packaged_weight_kg',
+    'unit_packaged_volume_m3', 'master_carton_length_cm', 'master_carton_width_cm',
+    'master_carton_height_cm', 'master_carton_net_weight_kg', 'master_carton_gross_weight_kg',
+    'master_carton_volume_m3', 'packaging_type', 'packaging_source',
+    'packaging_source_url', 'packaging_validation_status', 'packaging_validated_at',
+    'packaging_notes',
+  ];
+  const client = await pool.connect();
+  try {
+    await client.query("SET client_encoding = 'UTF8'");
+
+    const total = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
+
+    const cols = await client.query(
+      `SELECT column_name, data_type FROM information_schema.columns
+       WHERE table_schema='public' AND table_name='elimfilters_catalog'
+       ORDER BY ordinal_position`
+    );
+    const existingColumnNames = cols.rows.map(r => r.column_name);
+    const existingTargetFields = TARGET_FIELDS.filter(f => existingColumnNames.includes(f));
+    const missingTargetFields = TARGET_FIELDS.filter(f => !existingColumnNames.includes(f));
+
+    let populatedCounts = {};
+    if (existingTargetFields.length) {
+      const selectParts = existingTargetFields
+        .map(f => `COUNT(${f}) AS ${f}_populated`)
+        .join(', ');
+      const populated = await client.query(`SELECT ${selectParts} FROM elimfilters_catalog`);
+      populatedCounts = populated.rows[0];
+    }
+
+    res.json({
+      total_skus: parseInt(total.rows[0].count, 10),
+      catalog_table_columns: cols.rows,
+      target_logistics_fields: TARGET_FIELDS,
+      existing_target_fields: existingTargetFields,
+      missing_target_fields: missingTargetFields,
+      populated_counts: populatedCounts,
+    });
+  } catch (e) {
+    console.error('[logistics-audit]', e.message);
+    res.status(500).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/admin/malformed-skus ────────────────────────────────────────────────────────────────────────────
 // Lists all SKUs that don’t match the 7-char format ^[A-Z0-9]{2,4}[0-9]{4}$
 app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res) => {
