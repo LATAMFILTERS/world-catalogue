@@ -58,11 +58,11 @@ async function start() {
   const globalSkuCertification = await applyGlobalSkuCertificationAudit();
   console.log('[global-sku-certification-audit]', JSON.stringify(globalSkuCertification));
 
-  // Extend canonical resolution to every verified, uniquely owned catalog base code.
-  // This closes the HD resolver gap without certifying unverified or duplicate bases.
-  const { applyGlobalCanonicalResolverV7 } = require('./scripts/migrations/run_094_global_canonical_resolver_v7');
-  const globalCanonicalResolver = await applyGlobalCanonicalResolverV7();
-  console.log('[global-canonical-resolver-v7]', JSON.stringify(globalCanonicalResolver));
+  // Extend canonical resolution only through globally unique reference ownership.
+  // Ambiguous safe LD cross-reference codes stay fail-closed instead of producing multi-SKU results.
+  const { applyGlobalCanonicalResolverV7Safe } = require('./scripts/migrations/run_095_global_canonical_resolver_v7_safe');
+  const globalCanonicalResolver = await applyGlobalCanonicalResolverV7Safe();
+  console.log('[global-canonical-resolver-v7-safe]', JSON.stringify(globalCanonicalResolver));
 
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
