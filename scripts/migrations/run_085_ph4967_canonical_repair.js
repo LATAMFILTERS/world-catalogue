@@ -17,7 +17,28 @@ async function applyPh4967CanonicalRepair() {
     await client.query('BEGIN');
 
     const existingTarget = await client.query("SELECT count(*)::int n FROM public.elimfilters_catalog WHERE sku='EL34967'");
+    const existingSource = await client.query("SELECT count(*)::int n FROM public.elimfilters_catalog WHERE sku='EL30683'");
     report.checks.target_sku_exists = existingTarget.rows[0].n;
+    report.checks.source_sku_exists = existingSource.rows[0].n;
+
+    // The migration is executed at every API startup. Once the guarded repair has
+    // succeeded, the source SKU no longer exists. Treat that exact verified state
+    // as ALREADY_APPLIED instead of attempting the one-time rename again.
+    if (existingTarget.rows[0].n === 1 && existingSource.rows[0].n === 0) {
+      await normalizeCanonicalGovernance(client);
+      const finalState = await verifyCanonicalState(client);
+      report.checks.already_applied = true;
+      report.checks.code_mapping_view = finalState.codeMapping;
+      report.checks.canonical_identity = finalState.identity;
+      report.checks.v6 = finalState.v6;
+      report.checks.normalized_product = finalState.normalizedProduct;
+      await client.query('COMMIT');
+      return report;
+    }
+
+    if (existingTarget.rows[0].n !== 0 || existingSource.rows[0].n !== 1) {
+      throw new Error('PH4967_REPAIR_SOURCE_TARGET_STATE_INVALID');
+    }
 
     const source = await client.query(`
       SELECT sku, codigo_base, filter_type, duty, height_mm, outer_diameter_mm, thread_size
@@ -79,33 +100,13 @@ async function applyPh4967CanonicalRepair() {
     const promoted = await client.query(`
       UPDATE public.elimfilters_catalog
       SET sku='EL34967',
-          codigo_base='PH4967',
-          enrichment_data = jsonb_set(
-            coalesce(enrichment_data,'{}'::jsonb),
-            '{codigo_base_governance}',
-            coalesce(enrichment_data->'codigo_base_governance','{}'::jsonb) || jsonb_build_object(
-              'origin_group','NON_EUROPEAN',
-              'approved_manufacturer','FRAM',
-              'approved_codigo_base','PH4967',
-              'approved_source_column','CANONICAL_POLICY',
-              'primary_manufacturer_verified',true,
-              'governance_state','CANONICAL_VERIFIED',
-              'evidence_note','Exact TOYOTA (USA) 2ZRFXE Prius application match to normalized MANN W68/3 family; FRAM PH4967 present in legacy verified cross-reference set.'
-            ),
-            true
-          )
+          codigo_base='PH4967'
       WHERE sku='EL30683'
       RETURNING sku,codigo_base,filter_type,duty
     `);
     if (promoted.rowCount !== 1) throw new Error('PH4967_REPAIR_PROMOTION_FAILED');
     report.mutations.catalog_promoted = promoted.rows[0];
 
-    // code_mapping is a simple updatable VIEW over elimfilters_catalog. Its sku,
-    // elim_code and code columns all project the same underlying sku column, and
-    // codigo_base/base_code both project the same underlying codigo_base column.
-    // Updating those aliases together makes PostgreSQL reject the statement as
-    // multiple assignments to the same base column. The catalog update above is
-    // therefore the only write required; assert that the view reflects it.
     const cm = await client.query(`
       SELECT sku, elim_code, code, codigo_base, base_code
       FROM public.code_mapping
@@ -120,10 +121,9 @@ async function applyPh4967CanonicalRepair() {
     }
     report.checks.code_mapping_view = cm.rows[0];
 
+    // ON UPDATE CASCADE constraints installed by migration 086 carry dependent
+    // LD rows atomically when the normalized parent SKU is renamed.
     await client.query("UPDATE ld_catalog.ld_product_catalog SET elimfilters_sku='EL34967', updated_at=now() WHERE elimfilters_sku='EL50683'");
-    await client.query("UPDATE ld_catalog.ld_vehicle_applications SET elimfilters_sku='EL34967' WHERE elimfilters_sku='EL50683'");
-    await client.query("UPDATE ld_catalog.ld_oem_cross_references SET elimfilters_sku='EL34967' WHERE elimfilters_sku='EL50683'");
-    await client.query("UPDATE ld_catalog.ld_competitor_cross_references SET elimfilters_sku='EL34967' WHERE elimfilters_sku='EL50683'");
 
     await client.query(`
       INSERT INTO ld_catalog.ld_competitor_cross_references
@@ -151,6 +151,8 @@ async function applyPh4967CanonicalRepair() {
         updated_at=now()
     `);
 
+    await normalizeCanonicalGovernance(client);
+
     const unresolved = await client.query(`
       SELECT count(DISTINCT sku)::int n
       FROM public.v_api_resolver_v5
@@ -158,15 +160,10 @@ async function applyPh4967CanonicalRepair() {
     `);
     report.checks.legacy_v5_other_skus = unresolved.rows[0].n;
 
-    const canonical = await client.query(`
-      SELECT code,sku,manufacturer,status
-      FROM public.v_api_resolver_v6
-      WHERE code='PH4967'
-    `);
-    if (canonical.rowCount !== 1 || canonical.rows[0].sku !== 'EL34967') {
-      throw new Error('PH4967_REPAIR_V6_NOT_CANONICAL_SINGLE_RESULT');
-    }
-    report.checks.v6 = canonical.rows;
+    const finalState = await verifyCanonicalState(client);
+    report.checks.canonical_identity = finalState.identity;
+    report.checks.normalized_product = finalState.normalizedProduct;
+    report.checks.v6 = finalState.v6;
 
     await client.query('COMMIT');
     return report;
@@ -177,6 +174,89 @@ async function applyPh4967CanonicalRepair() {
     client.release();
     await pool.end();
   }
+}
+
+async function normalizeCanonicalGovernance(client) {
+  const updated = await client.query(`
+    UPDATE public.elimfilters_catalog
+    SET enrichment_data = jsonb_set(
+      coalesce(enrichment_data,'{}'::jsonb),
+      '{codigo_base_governance}',
+      coalesce(enrichment_data->'codigo_base_governance','{}'::jsonb) || jsonb_build_object(
+        'policy_version','2026-08-29-regional-v3.2',
+        'origin_group','NON_EUROPEAN',
+        'approved_manufacturer','FRAM',
+        'approved_codigo_base','PH4967',
+        'approved_source_column','CANONICAL_POLICY',
+        'current_codigo_base','PH4967',
+        'primary_manufacturer_verified',true,
+        'governance_state','CANONICAL_VERIFIED',
+        'state','CANONICAL_VERIFIED',
+        'required_authority','REGIONAL_CANONICAL_POLICY_SATISFIED',
+        'evidence_note','Exact TOYOTA (USA) 2ZRFXE Prius application match to normalized MANN W68/3 family; FRAM PH4967 is the non-European canonical reference.'
+      ),
+      true
+    )
+    WHERE sku='EL34967' AND codigo_base='PH4967' AND filter_type='oil' AND duty='LIGHT_DUTY'
+    RETURNING sku
+  `);
+  if (updated.rowCount !== 1) throw new Error('PH4967_REPAIR_GOVERNANCE_NORMALIZATION_FAILED');
+}
+
+async function verifyCanonicalState(client) {
+  const codeMapping = await client.query(`
+    SELECT sku, elim_code, code, codigo_base, base_code
+    FROM public.code_mapping
+    WHERE sku='EL34967'
+  `);
+  if (codeMapping.rowCount !== 1
+      || codeMapping.rows[0].codigo_base !== 'PH4967'
+      || codeMapping.rows[0].base_code !== 'PH4967') {
+    throw new Error('PH4967_REPAIR_FINAL_CODE_MAPPING_INVALID');
+  }
+
+  const identity = await client.query(`
+    SELECT elimfilters_sku,origin_group,canonical_brand,canonical_part_number,filter_type,status
+    FROM ld_catalog.ld_canonical_product_identity
+    WHERE elimfilters_sku='EL34967'
+  `);
+  if (identity.rowCount !== 1
+      || identity.rows[0].origin_group !== 'NON_EUROPEAN'
+      || identity.rows[0].canonical_brand !== 'FRAM'
+      || identity.rows[0].canonical_part_number !== 'PH4967'
+      || identity.rows[0].status !== 'ACTIVE') {
+    throw new Error('PH4967_REPAIR_FINAL_IDENTITY_INVALID');
+  }
+
+  const normalizedProduct = await client.query(`
+    SELECT elimfilters_sku,source_sku
+    FROM ld_catalog.ld_product_catalog
+    WHERE elimfilters_sku IN ('EL34967','EL50683')
+  `);
+  if (normalizedProduct.rowCount !== 1
+      || normalizedProduct.rows[0].elimfilters_sku !== 'EL34967'
+      || ldNorm(normalizedProduct.rows[0].source_sku) !== 'W683') {
+    throw new Error('PH4967_REPAIR_FINAL_NORMALIZED_PRODUCT_INVALID');
+  }
+
+  const canonical = await client.query(`
+    SELECT code,sku,manufacturer,status
+    FROM public.v_api_resolver_v6
+    WHERE code='PH4967'
+  `);
+  if (canonical.rowCount !== 1
+      || canonical.rows[0].sku !== 'EL34967'
+      || canonical.rows[0].manufacturer !== 'FRAM'
+      || canonical.rows[0].status !== 'RESOLVED_CANONICAL') {
+    throw new Error('PH4967_REPAIR_V6_NOT_CANONICAL_SINGLE_RESULT');
+  }
+
+  return {
+    codeMapping: codeMapping.rows[0],
+    identity: identity.rows[0],
+    normalizedProduct: normalizedProduct.rows[0],
+    v6: canonical.rows
+  };
 }
 
 function ldNorm(value) {
