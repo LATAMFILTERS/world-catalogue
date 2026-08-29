@@ -44,6 +44,13 @@ async function start() {
   const ph4967Repair = await applyPh4967CanonicalRepair();
   console.log('[ph4967-canonical-repair]', JSON.stringify(ph4967Repair));
 
+  // Build an evidence-only staging map from normalized European MANN families to
+  // existing public LIGHT_DUTY SKUs using complete vehicle-application coverage.
+  // This stage does not change catalog SKUs or codigo_base values.
+  const { applyEuropeanMannPublicMatchStaging } = require('./scripts/migrations/run_087_european_mann_public_match_staging');
+  const europeanMannMatch = await applyEuropeanMannPublicMatchStaging();
+  console.log('[european-mann-public-match-staging]', JSON.stringify(europeanMannMatch));
+
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
   console.log('[curated-official-evidence-batch1]', JSON.stringify(curatedEvidence));
