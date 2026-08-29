@@ -30,6 +30,13 @@ async function start() {
   const ldOriginCandidates = await applyLdOriginCandidateBackfill();
   console.log('[ld-origin-candidate-backfill]', JSON.stringify(ldOriginCandidates));
 
+  // Normalized LD child tables reference ld_product_catalog by elimfilters_sku.
+  // SKU canonicalization is a legitimate parent-key update, so propagate it to
+  // all dependent rows atomically instead of blocking the repair at the FK.
+  const { applyLdFkUpdateCascade } = require('./scripts/migrations/run_086_ld_fk_update_cascade');
+  const ldFkCascade = await applyLdFkUpdateCascade();
+  console.log('[ld-fk-update-cascade]', JSON.stringify(ldFkCascade));
+
   // First guarded non-European canonical repair. Exact application evidence ties
   // normalized MANN W68/3 to the existing Toyota (USA) 2ZRFXE oil family, while
   // FRAM PH4967 is promoted to codigo_base and MANN remains a cross-reference.
