@@ -46,12 +46,15 @@ async function start() {
   const europeanMannCanonical = await applyEuropeanMannCanonicalBatch1();
   console.log('[european-mann-canonical-batch1]', JSON.stringify(europeanMannCanonical));
 
-  // Rebuild the nullable diagnostics table, then recalculate coverage by counting
-  // each normalized application at most once per public candidate. This prevents
-  // duplicate public application rows from inflating evidence above 100%.
   const { applyEuropeanMannDiagnosticsCoverageGuard } = require('./scripts/migrations/run_091_european_mann_diagnostics_coverage_guard');
   const europeanMannDiagnostics = await applyEuropeanMannDiagnosticsCoverageGuard();
   console.log('[european-mann-unresolved-diagnostics-v3]', JSON.stringify(europeanMannDiagnostics));
+
+  // Reconcile the original 087 classification with corrected 091 coverage before
+  // allowing any second canonical promotion batch. Evidence only; no catalog writes.
+  const { applyEuropeanMannMatchReconciliation } = require('./scripts/migrations/run_092_european_mann_match_reconciliation');
+  const europeanMannReconciliation = await applyEuropeanMannMatchReconciliation();
+  console.log('[european-mann-match-reconciliation]', JSON.stringify(europeanMannReconciliation));
 
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
