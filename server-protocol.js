@@ -26,12 +26,16 @@ async function start() {
   const regionalLdPolicy = await applyRegionalLdCodigoBasePolicy();
   console.log('[regional-ld-codigo-base-v32]', JSON.stringify(regionalLdPolicy));
 
-  // Classify LD product families by curated vehicle-manufacturer origin and stage
-  // canonical candidates. This is evidence preparation only: it does not rename
-  // SKUs or change codigo_base. Ambiguous/mixed/multi-FRAM families stay blocked.
   const { applyLdOriginCandidateBackfill } = require('./scripts/migrations/run_084_ld_origin_candidate_backfill');
   const ldOriginCandidates = await applyLdOriginCandidateBackfill();
   console.log('[ld-origin-candidate-backfill]', JSON.stringify(ldOriginCandidates));
+
+  // First guarded non-European canonical repair. Exact application evidence ties
+  // normalized MANN W68/3 to the existing Toyota (USA) 2ZRFXE oil family, while
+  // FRAM PH4967 is promoted to codigo_base and MANN remains a cross-reference.
+  const { applyPh4967CanonicalRepair } = require('./scripts/migrations/run_085_ph4967_canonical_repair');
+  const ph4967Repair = await applyPh4967CanonicalRepair();
+  console.log('[ph4967-canonical-repair]', JSON.stringify(ph4967Repair));
 
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
