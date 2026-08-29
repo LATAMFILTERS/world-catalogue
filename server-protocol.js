@@ -21,6 +21,14 @@ async function start() {
   const alternateIntegrity = await applyAlternateIntegrityAndReferenceQuarantine();
   console.log('[alternate-integrity-v1]', JSON.stringify(alternateIntegrity));
 
+  // Install the LD canonical identity policy before the public API starts.
+  // EUROPEAN vehicle-origin families use MANN-FILTER as canonical source;
+  // NON_EUROPEAN families use FRAM. Ambiguous historical cross-references are
+  // quarantined rather than guessed, and v_api_resolver_v6 is installed here.
+  const { applyLdCanonicalIdentityPolicy } = require('./scripts/migrations/run_081_ld_canonical_identity_policy');
+  const ldCanonicalIdentity = await applyLdCanonicalIdentityPolicy();
+  console.log('[ld-canonical-identity-v1]', JSON.stringify(ldCanonicalIdentity));
+
   // Apply only the small curated evidence batch whose exact official Donaldson
   // product URLs were independently reviewed. This path exists because Donaldson
   // returns HTTP 403 to Render-origin requests; 403 is never treated as absence.
