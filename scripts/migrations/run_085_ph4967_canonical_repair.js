@@ -61,7 +61,6 @@ async function applyPh4967CanonicalRepair() {
     `);
     if (framEvidence.rows[0].n < 1) throw new Error('PH4967_REPAIR_FRAM_PH4967_EVIDENCE_MISSING');
 
-    // Remove the exact contaminated FRAM PH4967 alternate from every historical row.
     const cleaned = await client.query(`
       UPDATE public.elimfilters_catalog c
       SET competitor_codes = COALESCE((
@@ -77,7 +76,6 @@ async function applyPh4967CanonicalRepair() {
     `);
     report.mutations.ph4967_alternates_removed_from_rows = cleaned.rowCount;
 
-    // Promote the verified non-European oil identity to FRAM PH4967 and canonical SKU EL34967.
     const promoted = await client.query(`
       UPDATE public.elimfilters_catalog
       SET sku='EL34967',
@@ -102,14 +100,26 @@ async function applyPh4967CanonicalRepair() {
     if (promoted.rowCount !== 1) throw new Error('PH4967_REPAIR_PROMOTION_FAILED');
     report.mutations.catalog_promoted = promoted.rows[0];
 
+    // code_mapping is a simple updatable VIEW over elimfilters_catalog. Its sku,
+    // elim_code and code columns all project the same underlying sku column, and
+    // codigo_base/base_code both project the same underlying codigo_base column.
+    // Updating those aliases together makes PostgreSQL reject the statement as
+    // multiple assignments to the same base column. The catalog update above is
+    // therefore the only write required; assert that the view reflects it.
     const cm = await client.query(`
-      UPDATE public.code_mapping
-      SET sku='EL34967', elim_code='EL34967', code='EL34967', codigo_base='PH4967', base_code='PH4967'
-      WHERE sku='EL30683'
+      SELECT sku, elim_code, code, codigo_base, base_code
+      FROM public.code_mapping
+      WHERE sku='EL34967'
     `);
-    report.mutations.code_mapping_rows = cm.rowCount;
+    if (cm.rowCount !== 1
+        || cm.rows[0].elim_code !== 'EL34967'
+        || cm.rows[0].code !== 'EL34967'
+        || cm.rows[0].codigo_base !== 'PH4967'
+        || cm.rows[0].base_code !== 'PH4967') {
+      throw new Error('PH4967_REPAIR_CODE_MAPPING_VIEW_NOT_ALIGNED');
+    }
+    report.checks.code_mapping_view = cm.rows[0];
 
-    // Align normalized LD tables to the canonical SKU while keeping MANN W68/3 as cross-reference evidence.
     await client.query("UPDATE ld_catalog.ld_product_catalog SET elimfilters_sku='EL34967', updated_at=now() WHERE elimfilters_sku='EL50683'");
     await client.query("UPDATE ld_catalog.ld_vehicle_applications SET elimfilters_sku='EL34967' WHERE elimfilters_sku='EL50683'");
     await client.query("UPDATE ld_catalog.ld_oem_cross_references SET elimfilters_sku='EL34967' WHERE elimfilters_sku='EL50683'");
