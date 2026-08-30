@@ -70,11 +70,7 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     standards: [],
     relatedSystems: ['fuel-cleanliness-protection'],
     relatedIndustries: [],
-<<<<<<< HEAD
-    worksWith: ['HYDROCORE™'],
-=======
     worksWith: ['HYDROCORE™', 'TURBOCORE™'],
->>>>>>> origin/main
     image: '/images/technologies/syntapore-media.png',
   },
   {
