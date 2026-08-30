@@ -1,0 +1,174 @@
+name: HERMES Recovery Delivery
+
+# Recovery rule:
+# - The Monday HERMES email must be delivered even when research is degraded.
+# - If the scheduled weekly run was degraded/failed, retry the research pipeline hourly.
+# - Do NOT send repeated degraded emails from the recovery loop.
+# - Send one recovered/full email only after the pipeline completes successfully.
+# - Once a successful recovery run is newer than the failed weekly run, stop retrying.
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: hermes-recovery
+  cancel-in-progress: false
+
+jobs:
+  recovery:
+    runs-on: ubuntu-latest
+    env:
+      HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
+      HERMES_BASELINE_MODE: 'false'
+      HERMES_MAX_SOURCES_PER_RUN: ${{ vars.HERMES_MAX_SOURCES_PER_RUN || '35' }}
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Determine whether recovery is pending
+        id: pending
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          weekly_json=$(gh api \
+            -H 'Accept: application/vnd.github+json' \
+            "repos/${GITHUB_REPOSITORY}/actions/workflows/hermes-weekly.yml/runs?branch=main&per_page=30")
+
+          latest_failed_weekly=$(printf '%s' "$weekly_json" | jq -r \
+            '[.workflow_runs[] | select(.event == "schedule" and .conclusion == "failure")] | sort_by(.created_at) | reverse | .[0].created_at // empty')
+
+          if [ -z "$latest_failed_weekly" ]; then
+            echo 'No failed scheduled HERMES weekly run requires recovery.'
+            echo 'proceed=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          recovery_json=$(gh api \
+            -H 'Accept: application/vnd.github+json' \
+            "repos/${GITHUB_REPOSITORY}/actions/workflows/hermes-recovery.yml/runs?branch=main&per_page=30" 2>/dev/null || echo '{"workflow_runs":[]}')
+
+          latest_successful_recovery=$(printf '%s' "$recovery_json" | jq -r \
+            '[.workflow_runs[] | select(.conclusion == "success")] | sort_by(.created_at) | reverse | .[0].created_at // empty')
+
+          echo "Latest failed weekly run: ${latest_failed_weekly}"
+          echo "Latest successful recovery: ${latest_successful_recovery:-none}"
+
+          if [ -n "$latest_successful_recovery" ] && [[ "$latest_successful_recovery" > "$latest_failed_weekly" || "$latest_successful_recovery" == "$latest_failed_weekly" ]]; then
+            echo 'A successful recovery already occurred after the latest degraded weekly run.'
+            echo 'proceed=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo 'Recovery is pending.'
+          echo 'proceed=true' >> "$GITHUB_OUTPUT"
+          echo "failed_weekly_at=${latest_failed_weekly}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        if: steps.pending.outputs.proceed == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.pending.outputs.proceed == 'true'
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        if: steps.pending.outputs.proceed == 'true'
+        run: npm ci
+
+      - name: Restore baseline
+        id: baseline
+        if: steps.pending.outputs.proceed == 'true'
+        continue-on-error: true
+        run: npm run hermes:baseline:restore
+
+      - name: Restore harvest state
+        id: harvest_restore
+        if: steps.pending.outputs.proceed == 'true'
+        continue-on-error: true
+        run: npm run hermes:harvest:restore
+
+      - name: Collect governed known sources
+        id: collect
+        if: steps.pending.outputs.proceed == 'true'
+        continue-on-error: true
+        run: npm run hermes:collect
+
+      - name: Sweep complete filtration industry with Groq
+        id: sweep
+        if: steps.pending.outputs.proceed == 'true'
+        continue-on-error: true
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
+        run: npm run hermes:sweep
+
+      - name: Resolve detected source changes with Groq
+        id: research
+        if: steps.pending.outputs.proceed == 'true'
+        continue-on-error: true
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
+        run: npm run hermes:research
+
+      - name: Validate real candidates
+        id: validate
+        if: steps.pending.outputs.proceed == 'true'
+        continue-on-error: true
+        run: npm run hermes:validate:real
+
+      - name: Generate recovered weekly report
+        id: report
+        if: steps.pending.outputs.proceed == 'true'
+        continue-on-error: true
+        run: npm run hermes:report:real
+
+      - name: Evaluate recovered pipeline
+        id: recovered
+        if: steps.pending.outputs.proceed == 'true'
+        shell: bash
+        env:
+          BASELINE: ${{ steps.baseline.outcome }}
+          COLLECT: ${{ steps.collect.outcome }}
+          SWEEP: ${{ steps.sweep.outcome }}
+          RESEARCH: ${{ steps.research.outcome }}
+          VALIDATE: ${{ steps.validate.outcome }}
+          REPORT: ${{ steps.report.outcome }}
+        run: |
+          set -euo pipefail
+          echo "baseline=$BASELINE collect=$COLLECT sweep=$SWEEP research=$RESEARCH validate=$VALIDATE report=$REPORT"
+
+          if [ "$BASELINE" = 'success' ] \
+            && [ "$COLLECT" = 'success' ] \
+            && [ "$SWEEP" = 'success' ] \
+            && [ "$RESEARCH" = 'success' ] \
+            && [ "$VALIDATE" = 'success' ] \
+            && [ "$REPORT" = 'success' ]; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Send recovered weekly email
+        if: steps.pending.outputs.proceed == 'true' && steps.recovered.outputs.ready == 'true'
+        env:
+          HERMES_EMAIL_PROVIDER: outlook
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          HERMES_SENDER_EMAIL: ${{ secrets.HERMES_SENDER_EMAIL }}
+          HERMES_REVIEW_EMAIL: ${{ secrets.HERMES_REVIEW_EMAIL }}
+          HERMES_EMAIL_LIVE: ${{ vars.HERMES_EMAIL_LIVE || 'false' }}
+        run: npm run hermes:email:real
+
+      - name: Keep retrying while provider/pipeline is unavailable
+        if: steps.pending.outputs.proceed == 'true' && steps.recovered.outputs.ready != 'true'
+        run: |
+          echo 'HERMES recovery is still incomplete. No duplicate recovery email was sent. The hourly recovery schedule will retry automatically.'
+          exit 1
