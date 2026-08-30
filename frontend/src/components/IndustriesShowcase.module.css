@@ -124,10 +124,11 @@
 
 .loaderOverlay {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 0;
   z-index: 20;
   width: 100%;
-  height: 100vh;
+  height: clamp(520px, 72vh, 680px);
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   overflow: hidden;
@@ -135,6 +136,9 @@
   pointer-events: none;
   opacity: 1;
   visibility: visible;
+  transform: translateY(-50%);
+  perspective: 1200px;
+  perspective-origin: center center;
 }
 
 .loaderColumn {
@@ -143,9 +147,9 @@
   height: 100%;
   overflow: hidden;
   background: #000;
-  will-change: clip-path, transform;
+  will-change: transform, opacity;
   backface-visibility: hidden;
-  transform: translateZ(0);
+  transform-style: preserve-3d;
 }
 
 .loaderColumn:not(:last-child) {
@@ -186,7 +190,7 @@
   }
 
   .loaderOverlay {
-    height: 78vh;
+    height: clamp(420px, 66vh, 540px);
   }
 
   .card {
