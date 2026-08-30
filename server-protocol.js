@@ -54,12 +54,16 @@ async function start() {
   const europeanMannReconciliation = await applyEuropeanMannMatchReconciliation();
   console.log('[european-mann-match-reconciliation]', JSON.stringify(europeanMannReconciliation));
 
+  // Promote only the 092 families for which corrected coverage proves exactly one
+  // full European public target. All other unresolved families remain blocked.
+  const { applyEuropeanMannCanonicalBatch2 } = require('./scripts/migrations/run_096_european_mann_canonical_batch2');
+  const europeanMannCanonicalBatch2 = await applyEuropeanMannCanonicalBatch2();
+  console.log('[european-mann-canonical-batch2]', JSON.stringify(europeanMannCanonicalBatch2));
+
   const { applyGlobalSkuCertificationAudit } = require('./scripts/migrations/run_093_global_sku_certification_audit');
   const globalSkuCertification = await applyGlobalSkuCertificationAudit();
   console.log('[global-sku-certification-audit]', JSON.stringify(globalSkuCertification));
 
-  // Extend canonical resolution only through globally unique reference ownership.
-  // Ambiguous safe LD cross-reference codes stay fail-closed instead of producing multi-SKU results.
   const { applyGlobalCanonicalResolverV7Safe } = require('./scripts/migrations/run_095_global_canonical_resolver_v7_safe');
   const globalCanonicalResolver = await applyGlobalCanonicalResolverV7Safe();
   console.log('[global-canonical-resolver-v7-safe]', JSON.stringify(globalCanonicalResolver));
