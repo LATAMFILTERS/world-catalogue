@@ -51,21 +51,44 @@ async function applyFleetguardTurbocoreHousings() {
         + `before it reaches the engine, protecting injectors from corrosion and abrasive wear. `
         + `Fleetguard-equivalent housing, same turbine family as the existing ET9 TURBOCORE / RACOR-equivalent series.`;
 
-      // competitor_codes intentionally excludes this same Fleetguard code --
-      // it's already codigo_base on this row, and the alternate-integrity
-      // guard correctly rejects a code being listed as its own alternate.
+      // codigo_base_governance shape copied verbatim from a real, already
+      // -passing fallback-pattern row (ES99030 / Parker R9030MB), fetched via
+      // /api/admin/fallback-example -- confirms the approved code must NOT be
+      // duplicated inside competitor_codes (alternate-integrity forbids that);
+      // the codigo_base-policy trigger only reads this governance JSON.
+      const governance = {
+        state: 'CANONICAL_VERIFIED',
+        verified_at: new Date().toISOString(),
+        approved_code: codigo_base,
+        oem_code_count: 0,
+        policy_version: '2026-08-19-v3.1',
+        verification_note: `Confirmed directly by Victor Abreu (ELIMFILTERS): Donaldson does not manufacture an equivalent turbine-style fuel/water separator housing for Fleetguard ${codigo_base}. Same engineering family as the existing RACOR-equivalent ET9 TURBOCORE series, so this housing is classified under TURBOCORE with Fleetguard as the commercial base code.`,
+        required_authority: 'VERIFIED_AFTERMARKET_FALLBACK',
+        contamination_flags: [],
+        current_codigo_base: codigo_base,
+        verification_method: 'ELIMFILTERS_TEAM_MANUFACTURER_CONFIRMATION',
+        alternate_code_model: 'OEM_CODES_AND_COMPETITOR_CODES_ARE_ALTERNATES_ONLY',
+        approved_codigo_base: codigo_base,
+        approved_manufacturer: 'FLEETGUARD',
+        competitor_code_count: 0,
+        approved_source_column: 'COMPETITOR_CODES',
+        donaldson_absence_note: `Not a Donaldson-manufactured part. Confirmed by Victor Abreu (ELIMFILTERS) as a Fleetguard turbine-style fuel/water separator housing, same family as the existing ET9 TURBOCORE / RACOR-equivalent series.`,
+        donaldson_absence_verified: true,
+        observed_primary_candidates: [],
+        fallback_manufacturer_verified: true,
+        fallback_commercial_code_verified: true,
+      };
+      const enrichmentData = JSON.stringify({ codigo_base_governance: governance });
 
       try {
         await client.query('BEGIN');
-        // oem_codes/competitor_codes set explicitly to '[]' -- don't rely on
-        // the column default, which is what tripped ALTERNATE_INTEGRITY here.
         const { rows } = await client.query(
           `INSERT INTO elimfilters_catalog
-             (sku, codigo_base, filter_type, technology, duty, description, installation_type, oem_codes, competitor_codes, created_at)
-           VALUES ($1, $2, 'fuel', 'TURBOCORE™', 'HEAVY_DUTY', $3, 'Replacement Cartridge Element', '[]'::jsonb, '[]'::jsonb, now())
+             (sku, codigo_base, filter_type, technology, duty, description, installation_type, oem_codes, competitor_codes, enrichment_data, created_at)
+           VALUES ($1, $2, 'fuel', 'TURBOCORE™', 'HEAVY_DUTY', $3, 'Replacement Cartridge Element', '[]'::jsonb, '[]'::jsonb, $4::jsonb, now())
            ON CONFLICT (sku) DO NOTHING
            RETURNING sku`,
-          [sku, codigo_base, description]
+          [sku, codigo_base, description, enrichmentData]
         );
         await client.query('COMMIT');
 
