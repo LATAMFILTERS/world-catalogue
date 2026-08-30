@@ -1,17 +1,7 @@
 .section {
   position: relative;
-  min-height: 100vh;
   background: #000;
   overflow: hidden;
-}
-
-.content {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: clamp(2.5rem, 5vw, 4rem) 0;
 }
 
@@ -21,12 +11,12 @@
 }
 
 .heading {
+  margin: 0;
   font-family: Barlow, Arial, sans-serif;
   font-weight: 800;
   text-transform: uppercase;
-  color: #fff;
-  margin: 0;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: #fff;
 }
 
 .yellow {
@@ -35,14 +25,19 @@
 
 .carouselWrap {
   position: relative;
+  min-height: 380px;
+}
+
+.track,
+.animationRail {
+  display: flex;
+  gap: 16px;
+  padding: 0 clamp(1.25rem, 6vw, 6rem);
 }
 
 .track {
-  display: flex;
-  gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 0 clamp(1.25rem, 6vw, 6rem);
   scrollbar-width: none;
 }
 
@@ -50,15 +45,20 @@
   display: none;
 }
 
-.card {
+.card,
+.animationColumn {
   position: relative;
   flex: 0 0 300px;
+  width: 300px;
   height: 380px;
-  scroll-snap-align: start;
   overflow: hidden;
+  background: #111;
+}
+
+.card {
   display: block;
   text-decoration: none;
-  background: #111;
+  scroll-snap-align: start;
 }
 
 .cardImage,
@@ -75,7 +75,7 @@
 .animationShade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 34%, rgba(0, 0, 0, 0.88) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 34%, rgba(0, 0, 0, 0.86) 100%);
 }
 
 .cardLabelWrap {
@@ -83,17 +83,13 @@
   left: 1.25rem;
   right: 1.25rem;
   bottom: 1.25rem;
-}
-
-.cardLabel,
-.animationIndustryLabel,
-.animationTechnologyLabel {
-  font-family: Barlow, Arial, sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
+  z-index: 2;
 }
 
 .cardLabel {
+  font-family: Barlow, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
   font-size: 1.1rem;
   color: #fff;
 }
@@ -102,7 +98,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 3;
+  z-index: 20;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -131,117 +127,93 @@
 .animationOverlay {
   position: absolute;
   inset: 0;
-  z-index: 20;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  background: #000;
+  z-index: 10;
   overflow: hidden;
   pointer-events: none;
-  opacity: 1;
-  visibility: visible;
+  background: transparent;
 }
 
-.animationGrid {
-  position: absolute;
-  inset: 0;
-  display: grid;
+.animationRail {
   height: 100%;
-  overflow: hidden;
 }
 
 .animationColumn {
-  position: relative;
-  min-width: 0;
-  height: 100%;
-  overflow: hidden;
   background: #000;
-  transform-origin: top center;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.animationColumn:last-child {
-  border-right: 0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02),
+    0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
 .animationPanel {
   position: absolute;
   inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
-  background: #0b0b0b;
-  text-decoration: none;
-  will-change: transform;
+  will-change: transform, clip-path;
 }
 
 .animationIndustryLabel {
   position: absolute;
+  left: 1rem;
+  bottom: 3.15rem;
+  right: 1rem;
   z-index: 3;
-  left: 50%;
-  bottom: clamp(3.6rem, 7vh, 5.2rem);
-  transform: translateX(-50%) rotate(180deg);
-  writing-mode: vertical-rl;
-  max-height: 36vh;
-  overflow: hidden;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(0.52rem, 0.7vw, 0.74rem);
-  line-height: 1;
-  letter-spacing: 0.04em;
+  font-family: Barlow, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  line-height: 1.05;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.03em;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
-  white-space: nowrap;
 }
 
 .animationTechnologyLabel {
   position: absolute;
-  z-index: 20;
-  left: 50%;
-  bottom: clamp(0.75rem, 1.8vw, 1.25rem);
-  transform: translateX(-50%) rotate(180deg);
-  writing-mode: vertical-rl;
-  color: #fff12d;
-  font-size: clamp(0.5rem, 0.7vw, 0.78rem);
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0.38rem 0.55rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 241, 45, 0.22);
+  font-family: Barlow, Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.68rem;
   line-height: 1;
   letter-spacing: 0.08em;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
+  color: #fff12d;
   white-space: nowrap;
-  pointer-events: none;
 }
 
 @media (max-width: 720px) {
-  .section,
-  .content {
-    min-height: 78vh;
+  .carouselWrap {
+    min-height: 350px;
   }
 
-  .animationOverlay {
-    min-height: 78vh;
-  }
-
-  .card {
+  .card,
+  .animationColumn {
     flex-basis: min(78vw, 300px);
+    width: min(78vw, 300px);
     height: 350px;
   }
 
   .animationIndustryLabel {
-    display: none;
+    bottom: 2.9rem;
+    font-size: 0.76rem;
   }
 
   .animationTechnologyLabel {
-    bottom: 0.6rem;
-    font-size: 0.48rem;
-    letter-spacing: 0.04em;
+    font-size: 0.62rem;
+    padding: 0.32rem 0.5rem;
   }
 
   .arrowButton {
     width: 42px;
     height: 42px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .track {
-    scroll-behavior: auto;
   }
 }
