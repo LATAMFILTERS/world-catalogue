@@ -3143,6 +3143,69 @@ app.post('/api/admin/run-confirmed-units-sample', adminLimiter, requireAdmin, as
   }
 });
 
+// ─── POST /api/admin/run-fleetguard-turbocore-housings ────────────────────────
+// Runs 100_FLEETGUARD_TURBOCORE_HOUSINGS: creates 10 new ELIMFILTERS SKUs for
+// Fleetguard fuel/water separator housings Donaldson doesn't make, per the
+// confirmed brand-coverage-gap rule (Fleetguard code as base, ET9/TURBOCORE
+// family). Idempotent (ON CONFLICT DO NOTHING).
+app.post('/api/admin/run-fleetguard-turbocore-housings', adminLimiter, requireAdmin, async (req, res) => {
+  try {
+    const { applyFleetguardTurbocoreHousings } = require('./scripts/migrations/run_100_fleetguard_turbocore_housings');
+    const report = await applyFleetguardTurbocoreHousings();
+    console.log('[run-fleetguard-turbocore-housings]', JSON.stringify(report));
+    res.json(report);
+  } catch (e) {
+    console.error('[run-fleetguard-turbocore-housings]', e.message);
+    res.status(500).json({ error: e.message, report: e.migrationReport || null });
+  }
+});
+
+// ─── GET /api/admin/fallback-example ──────────────────────────────────────────
+// Read-only. Returns one existing HD SKU whose codigo_base_governance shows
+// fallback_manufacturer_verified=true, as a template for the exact data
+// shape the codigo_base + alternate-integrity triggers both require.
+app.get('/api/admin/fallback-example', adminLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    const { rows } = await client.query(`
+      SELECT sku, codigo_base, oem_codes, competitor_codes, enrichment_data->'codigo_base_governance' AS governance
+      FROM elimfilters_catalog
+      WHERE duty = 'HEAVY_DUTY'
+        AND (enrichment_data->'codigo_base_governance'->>'fallback_manufacturer_verified')::boolean IS TRUE
+      LIMIT 3
+    `);
+    res.json({ count: rows.length, rows });
+  } catch (e) {
+    console.error('[fallback-example]', e.message);
+    res.status(500).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── GET /api/admin/hd-donaldson-codes ────────────────────────────────────────
+// Read-only. Lists sku + codigo_base for HEAVY_DUTY rows whose codigo_base
+// looks like a Donaldson code, for the Etapa 3 official-source scrape.
+app.get('/api/admin/hd-donaldson-codes', adminLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    const { rows } = await client.query(`
+      SELECT sku, codigo_base
+      FROM elimfilters_catalog
+      WHERE duty = 'HEAVY_DUTY'
+        AND codigo_base IS NOT NULL
+        AND codigo_base ~ '^P[0-9]{6}$'
+      ORDER BY codigo_base
+    `);
+    res.json({ count: rows.length, rows });
+  } catch (e) {
+    console.error('[hd-donaldson-codes]', e.message);
+    res.status(500).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/admin/malformed-skus ────────────────────────────────────────────────────────────────────────────
 // Lists all SKUs that don’t match the 7-char format ^[A-Z0-9]{2,4}[0-9]{4}$
 app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res) => {

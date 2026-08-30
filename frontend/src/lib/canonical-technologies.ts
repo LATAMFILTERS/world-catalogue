@@ -51,7 +51,13 @@ export const CANONICAL_TECHNOLOGIES = {
     slug: 'hydrocore',
     name: 'HYDROCORE™',
     domain: 'fuel-cleanliness',
-    role: 'Fuel/water separation across approved spin-on, cartridge, FH and FG architectures',
+    role: 'Fuel/water separation for approved standard non-turbine separators, including drain and transparent-bowl configurations',
+  },
+  turbocore: {
+    slug: 'turbocore',
+    name: 'TURBOCORE™',
+    domain: 'fuel-cleanliness',
+    role: 'Turbine-style fuel/water separation exclusively for FH and FG series systems',
   },
   turbocore: {
     slug: 'turbocore',

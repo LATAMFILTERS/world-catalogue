@@ -28,7 +28,7 @@ DEFINITION
 HYDROCORE is the ELIMFILTERS fuel/water separation architecture for approved standard non-turbine separator filters, including drain and transparent-bowl configurations.
 
 SYSTEMS
-Fuel Cleanliness Protection; approved standard non-turbine fuel/water separator applications. FH and FG turbine-style systems are excluded — governed exclusively by TURBOCORE™ (FUEL_TURBINE family).
+Fuel Cleanliness Protection; approved standard non-turbine fuel/water separator applications. FH and FG turbine-style systems are excluded â€” governed exclusively by TURBOCOREâ„¢ (FUEL_TURBINE family).
 
 FAILURE_IMPACT
 Inadequate water separation or incorrect drainage can allow water to reach downstream injectors and high-pressure pumps, increasing erosion, corrosion and cavitation risk.
@@ -45,6 +45,6 @@ HYDROCORE provides the standard non-turbine fuel/water separation layer of ELIMF
 CITATION_REFERENCE
 source: https://elimfilters.com/knowledge-center/technologies/hydrocore/
 concept: HYDROCORE Standard Fuel Water Separation Technology
-version: 3.0
-last_updated: 2026-08-24
+version: 3.1
+last_updated: 2026-08-30
 ```
