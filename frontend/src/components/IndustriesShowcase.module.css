@@ -183,21 +183,31 @@
   pointer-events: none;
 }
 
-/* Homepage contamination-risk callout.
-   Keep the callout in the upper-right negative-space of the photo so the
-   engine remains fully visible and the message reads as a compact annotation. */
+/* Homepage contamination-risk callout. Keep the image unobstructed: the right
+   visual column becomes a vertical stack and the risk note sits below it. */
+:global(.spotlight-grid):not(.section) > div:last-child {
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: stretch !important;
+}
+
 :global(.problem-badge):not(.section) {
-  top: 1.35rem !important;
-  right: 1.35rem !important;
+  position: relative !important;
+  inset: auto !important;
+  right: auto !important;
   bottom: auto !important;
-  width: clamp(220px, 17vw, 260px) !important;
-  min-width: 220px !important;
-  max-width: 260px !important;
-  padding: 1.05rem 1.15rem 1.15rem !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin-top: 1rem !important;
+  padding: 1.05rem 1.2rem 1.15rem !important;
+  background: #FFF12D !important;
+  color: #000 !important;
   border-radius: 0 !important;
-  border-top: 4px solid #000 !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28) !important;
-  overflow: hidden !important;
+  border-left: 4px solid #000 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  flex: 0 0 auto !important;
 }
 
 :global(.problem-badge):not(.section) p {
@@ -214,18 +224,19 @@
   font-size: 0.72rem !important;
   font-weight: 700 !important;
   line-height: 1 !important;
-  letter-spacing: 0.14em !important;
+  letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
 }
 
 :global(.problem-badge):not(.section) p:last-child {
-  margin-top: 0.7rem !important;
+  margin-top: 0.55rem !important;
   font-family: var(--font-body) !important;
-  font-size: 0.84rem !important;
-  font-weight: 700 !important;
-  line-height: 1.42 !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
+  max-width: 34rem !important;
 }
 
 @media (max-width: 720px) {
