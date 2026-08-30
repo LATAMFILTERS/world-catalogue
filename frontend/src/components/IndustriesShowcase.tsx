@@ -1,6 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import styles from './IndustriesShowcase.module.css';
 
 const INDUSTRIES = [
   { slug: 'mining', title: 'Mining', image: '/images/mineria-1.avif' },
@@ -19,9 +21,107 @@ const INDUSTRIES = [
 
 const CARD_WIDTH = 300;
 const CARD_GAP = 16;
+const COLUMN_COUNT = 4;
+const IMAGES_PER_COLUMN = 4;
+
+// Four columns × four images. The first four industries are repeated once only
+// to complete the 16 animation slots while keeping the canonical 12-industry set.
+const ANIMATION_ITEMS = Array.from(
+  { length: COLUMN_COUNT * IMAGES_PER_COLUMN },
+  (_, index) => INDUSTRIES[index % INDUSTRIES.length],
+);
+
+const ANIMATION_COLUMNS = Array.from({ length: COLUMN_COUNT }, (_, columnIndex) =>
+  Array.from(
+    { length: IMAGES_PER_COLUMN },
+    (_, imageIndex) => ANIMATION_ITEMS[imageIndex * COLUMN_COUNT + columnIndex],
+  ),
+);
 
 export function IndustriesShowcase() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const columnsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const panelsRef = useRef<(HTMLAnchorElement | null)[][]>(
+    Array.from({ length: COLUMN_COUNT }, () => []),
+  );
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const overlay = overlayRef.current;
+    const columns = columnsRef.current.filter(Boolean) as HTMLDivElement[];
+
+    if (!section || !overlay || columns.length !== COLUMN_COUNT) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      gsap.set(overlay, { autoAlpha: 0, pointerEvents: 'none' });
+      return;
+    }
+
+    const ctx = gsap.context(() => {
+      const allPanels = panelsRef.current.flat().filter(Boolean) as HTMLAnchorElement[];
+
+      gsap.set(columns, { height: '100%' });
+      gsap.set(allPanels, { xPercent: -105, autoAlpha: 1 });
+      gsap.set(overlay, { autoAlpha: 1 });
+
+      const tl = gsap.timeline({
+        paused: true,
+        defaults: { ease: 'power3.inOut' },
+        onComplete: () => {
+          gsap.set(overlay, { autoAlpha: 0, pointerEvents: 'none' });
+        },
+      });
+
+      for (let imageIndex = 0; imageIndex < IMAGES_PER_COLUMN; imageIndex += 1) {
+        const currentRow = panelsRef.current
+          .map((column) => column[imageIndex])
+          .filter(Boolean) as HTMLAnchorElement[];
+
+        tl.to(
+          currentRow,
+          {
+            xPercent: 105,
+            duration: 2,
+            stagger: { each: 0.12, from: 'start' },
+            ease: 'power2.inOut',
+          },
+          imageIndex === 0 ? 0 : '>-0.65',
+        );
+      }
+
+      tl.to(
+        columns,
+        {
+          height: '0%',
+          duration: 1.2,
+          stagger: { each: 0.14, from: 'end' },
+          ease: 'power3.inOut',
+        },
+        '>-0.35',
+      );
+
+      let hasPlayed = false;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !hasPlayed) {
+            hasPlayed = true;
+            tl.play(0);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.3 },
+      );
+
+      observer.observe(section);
+
+      return () => observer.disconnect();
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
 
   const scrollByCards = (direction: 1 | -1) => {
     const el = trackRef.current;
@@ -30,139 +130,88 @@ export function IndustriesShowcase() {
   };
 
   return (
-    <div
-      style={{
-        background: '#000',
-        padding: 'clamp(2.5rem, 5vw, 4rem) 0',
-        overflow: 'hidden',
-      }}
-    >
-      <div
-        style={{
-          padding: '0 clamp(1.25rem, 6vw, 6rem)',
-          marginBottom: '1.75rem',
-        }}
-      >
-        <h2
-          style={{
-            fontFamily: 'Barlow, Arial, sans-serif',
-            fontWeight: 800,
-            textTransform: 'uppercase',
-            fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
-            color: '#fff',
-            margin: 0,
-          }}
-        >
-          Built for Every <span style={{ color: '#FFF12D' }}>Industry</span>
-        </h2>
-      </div>
+    <section ref={sectionRef} className={styles.section} aria-labelledby="industries-heading">
+      <div ref={overlayRef} className={styles.animationOverlay} aria-hidden="true">
+        <div className={styles.animationHeading}>
+          <span>Built for Every </span>
+          <span className={styles.yellow}>Industry</span>
+        </div>
 
-      <div style={{ position: 'relative' }}>
-        <button
-          type="button"
-          aria-label="Scroll industries left"
-          onClick={() => scrollByCards(-1)}
-          style={{ ...arrowButtonStyle, left: 'clamp(0.75rem, 3vw, 2rem)' }}
-        >
-          {'<'}
-        </button>
-        <button
-          type="button"
-          aria-label="Scroll industries right"
-          onClick={() => scrollByCards(1)}
-          style={{ ...arrowButtonStyle, right: 'clamp(0.75rem, 3vw, 2rem)' }}
-        >
-          {'>'}
-        </button>
-
-        <div
-          ref={trackRef}
-          style={{
-            display: 'flex',
-            gap: `${CARD_GAP}px`,
-            overflowX: 'auto',
-            scrollSnapType: 'x mandatory',
-            padding: '0 clamp(1.25rem, 6vw, 6rem)',
-            scrollbarWidth: 'none',
-          }}
-          className="industries-track"
-        >
-          {INDUSTRIES.map((industry) => (
-          <a
-            key={industry.slug}
-            href={`/industries/${industry.slug}`}
-            style={{
-              position: 'relative',
-              flex: `0 0 ${CARD_WIDTH}px`,
-              height: '380px',
-              scrollSnapAlign: 'start',
-              overflow: 'hidden',
-              display: 'block',
-              textDecoration: 'none',
-              background: '#111',
-            }}
-          >
+        <div className={styles.animationGrid}>
+          {ANIMATION_COLUMNS.map((column, columnIndex) => (
             <div
-              role="img"
-              aria-label={industry.title}
-              style={{
-                position: 'absolute',
-                inset: 0,
-                width: '100%',
-                height: '100%',
-                backgroundImage: `url(${industry.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
+              key={`column-${columnIndex}`}
+              ref={(el) => {
+                columnsRef.current[columnIndex] = el;
               }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%)',
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                left: '1.25rem',
-                bottom: '1.25rem',
-                right: '1.25rem',
-              }}
+              className={styles.animationColumn}
             >
-              <span
-                style={{
-                  fontFamily: 'Barlow, Arial, sans-serif',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  fontSize: '1.1rem',
-                  color: '#fff',
-                }}
-              >
-                {industry.title}
-              </span>
+              {column.map((industry, imageIndex) => (
+                <a
+                  key={`${industry.slug}-${columnIndex}-${imageIndex}`}
+                  ref={(el) => {
+                    panelsRef.current[columnIndex][imageIndex] = el;
+                  }}
+                  href={`/industries/${industry.slug}`}
+                  tabIndex={-1}
+                  className={styles.animationPanel}
+                >
+                  <div
+                    className={styles.animationImage}
+                    style={{ backgroundImage: `url(${industry.image})` }}
+                  />
+                  <div className={styles.animationShade} />
+                  <span className={styles.animationLabel}>{industry.title}</span>
+                </a>
+              ))}
             </div>
-          </a>
           ))}
         </div>
       </div>
-    </div>
+
+      <div className={styles.content}>
+        <div className={styles.headingWrap}>
+          <h2 id="industries-heading" className={styles.heading}>
+            Built for Every <span className={styles.yellow}>Industry</span>
+          </h2>
+        </div>
+
+        <div className={styles.carouselWrap}>
+          <button
+            type="button"
+            aria-label="Scroll industries left"
+            onClick={() => scrollByCards(-1)}
+            className={`${styles.arrowButton} ${styles.arrowLeft}`}
+          >
+            {'<'}
+          </button>
+          <button
+            type="button"
+            aria-label="Scroll industries right"
+            onClick={() => scrollByCards(1)}
+            className={`${styles.arrowButton} ${styles.arrowRight}`}
+          >
+            {'>'}
+          </button>
+
+          <div ref={trackRef} className={styles.track}>
+            {INDUSTRIES.map((industry) => (
+              <a key={industry.slug} href={`/industries/${industry.slug}`} className={styles.card}>
+                <div
+                  role="img"
+                  aria-label={industry.title}
+                  className={styles.cardImage}
+                  style={{ backgroundImage: `url(${industry.image})` }}
+                />
+                <div className={styles.cardShade} />
+                <div className={styles.cardLabelWrap}>
+                  <span className={styles.cardLabel}>{industry.title}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
-
-const arrowButtonStyle: React.CSSProperties = {
-  position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-50%)',
-  zIndex: 2,
-  width: '48px',
-  height: '48px',
-  borderRadius: '50%',
-  border: '1px solid rgba(255,255,255,0.3)',
-  background: 'rgba(0,0,0,0.55)',
-  color: '#fff',
-  cursor: 'pointer',
-  fontFamily: 'Barlow, Arial, sans-serif',
-  fontSize: '1.1rem',
-  transition: 'all 0.2s ease',
-};
