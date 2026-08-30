@@ -3143,6 +3143,29 @@ app.post('/api/admin/run-confirmed-units-sample', adminLimiter, requireAdmin, as
   }
 });
 
+// ─── GET /api/admin/hd-donaldson-codes ────────────────────────────────────────
+// Read-only. Lists sku + codigo_base for HEAVY_DUTY rows whose codigo_base
+// looks like a Donaldson code, for the Etapa 3 official-source scrape.
+app.get('/api/admin/hd-donaldson-codes', adminLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    const { rows } = await client.query(`
+      SELECT sku, codigo_base
+      FROM elimfilters_catalog
+      WHERE duty = 'HEAVY_DUTY'
+        AND codigo_base IS NOT NULL
+        AND codigo_base ~ '^P[0-9]{6}$'
+      ORDER BY codigo_base
+    `);
+    res.json({ count: rows.length, rows });
+  } catch (e) {
+    console.error('[hd-donaldson-codes]', e.message);
+    res.status(500).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/admin/malformed-skus ────────────────────────────────────────────────────────────────────────────
 // Lists all SKUs that don’t match the 7-char format ^[A-Z0-9]{2,4}[0-9]{4}$
 app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res) => {
