@@ -57,10 +57,12 @@ async function applyFleetguardTurbocoreHousings() {
 
       try {
         await client.query('BEGIN');
+        // oem_codes/competitor_codes set explicitly to '[]' -- don't rely on
+        // the column default, which is what tripped ALTERNATE_INTEGRITY here.
         const { rows } = await client.query(
           `INSERT INTO elimfilters_catalog
-             (sku, codigo_base, filter_type, technology, duty, description, installation_type, created_at)
-           VALUES ($1, $2, 'fuel', 'TURBOCORE™', 'HEAVY_DUTY', $3, 'Replacement Cartridge Element', now())
+             (sku, codigo_base, filter_type, technology, duty, description, installation_type, oem_codes, competitor_codes, created_at)
+           VALUES ($1, $2, 'fuel', 'TURBOCORE™', 'HEAVY_DUTY', $3, 'Replacement Cartridge Element', '[]'::jsonb, '[]'::jsonb, now())
            ON CONFLICT (sku) DO NOTHING
            RETURNING sku`,
           [sku, codigo_base, description]
