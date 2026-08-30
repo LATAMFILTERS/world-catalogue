@@ -3143,6 +3143,23 @@ app.post('/api/admin/run-confirmed-units-sample', adminLimiter, requireAdmin, as
   }
 });
 
+// ─── POST /api/admin/run-fleetguard-turbocore-housings ────────────────────────
+// Runs 100_FLEETGUARD_TURBOCORE_HOUSINGS: creates 10 new ELIMFILTERS SKUs for
+// Fleetguard fuel/water separator housings Donaldson doesn't make, per the
+// confirmed brand-coverage-gap rule (Fleetguard code as base, ET9/TURBOCORE
+// family). Idempotent (ON CONFLICT DO NOTHING).
+app.post('/api/admin/run-fleetguard-turbocore-housings', adminLimiter, requireAdmin, async (req, res) => {
+  try {
+    const { applyFleetguardTurbocoreHousings } = require('./scripts/migrations/run_100_fleetguard_turbocore_housings');
+    const report = await applyFleetguardTurbocoreHousings();
+    console.log('[run-fleetguard-turbocore-housings]', JSON.stringify(report));
+    res.json(report);
+  } catch (e) {
+    console.error('[run-fleetguard-turbocore-housings]', e.message);
+    res.status(500).json({ error: e.message, report: e.migrationReport || null });
+  }
+});
+
 // ─── GET /api/admin/hd-donaldson-codes ────────────────────────────────────────
 // Read-only. Lists sku + codigo_base for HEAVY_DUTY rows whose codigo_base
 // looks like a Donaldson code, for the Etapa 3 official-source scrape.
