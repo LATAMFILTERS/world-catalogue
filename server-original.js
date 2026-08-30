@@ -3038,6 +3038,134 @@ app.get('/api/admin/audit', adminLimiter, requireAdmin, async (req, res) => {
   }
 });
 
+// ─── GET /api/admin/logistics-audit ───────────────────────────────────────────
+// Read-only. Reports how many SKUs already have each logistics/packaging field
+// populated on elimfilters_catalog, for the packaging-data enrichment project.
+// Never writes. Auto-detects whichever of the 16 target columns already exist.
+app.get('/api/admin/logistics-audit', adminLimiter, requireAdmin, async (req, res) => {
+  const TARGET_FIELDS = [
+    'units_per_case', 'unit_net_weight_kg', 'unit_packaged_weight_kg',
+    'unit_packaged_volume_m3', 'master_carton_length_cm', 'master_carton_width_cm',
+    'master_carton_height_cm', 'master_carton_net_weight_kg', 'master_carton_gross_weight_kg',
+    'master_carton_volume_m3', 'packaging_type', 'packaging_source',
+    'packaging_source_url', 'packaging_validation_status', 'packaging_validated_at',
+    'packaging_notes',
+  ];
+  const client = await pool.connect();
+  try {
+    await client.query("SET client_encoding = 'UTF8'");
+
+    const total = await client.query('SELECT COUNT(*) FROM elimfilters_catalog');
+
+    const cols = await client.query(
+      `SELECT column_name, data_type FROM information_schema.columns
+       WHERE table_schema='public' AND table_name='elimfilters_catalog'
+       ORDER BY ordinal_position`
+    );
+    const existingColumnNames = cols.rows.map(r => r.column_name);
+    const existingTargetFields = TARGET_FIELDS.filter(f => existingColumnNames.includes(f));
+    const missingTargetFields = TARGET_FIELDS.filter(f => !existingColumnNames.includes(f));
+
+    let populatedCounts = {};
+    if (existingTargetFields.length) {
+      const selectParts = existingTargetFields
+        .map(f => `COUNT(${f}) AS ${f}_populated`)
+        .join(', ');
+      const populated = await client.query(`SELECT ${selectParts} FROM elimfilters_catalog`);
+      populatedCounts = populated.rows[0];
+    }
+
+    // Check whether packaging data is already nested inside the generic
+    // enrichment_data / specs JSONB columns before we add new dedicated
+    // columns, per governance rule "reutiliza campos equivalentes".
+    // Uses native jsonb '<>' (not ::text cast) to stay cheap on 12k rows.
+    const jsonbSample = await client.query(`
+      SELECT sku, enrichment_data, specs
+      FROM elimfilters_catalog
+      WHERE enrichment_data <> '{}'::jsonb
+         OR specs <> '{}'::jsonb
+      LIMIT 8
+    `);
+    const jsonbNonEmptyCounts = await client.query(`
+      SELECT
+        COUNT(*) FILTER (WHERE enrichment_data <> '{}'::jsonb) AS enrichment_data_non_empty,
+        COUNT(*) FILTER (WHERE specs <> '{}'::jsonb) AS specs_non_empty
+      FROM elimfilters_catalog
+    `);
+
+    res.json({
+      total_skus: parseInt(total.rows[0].count, 10),
+      catalog_table_columns: cols.rows,
+      target_logistics_fields: TARGET_FIELDS,
+      existing_target_fields: existingTargetFields,
+      missing_target_fields: missingTargetFields,
+      populated_counts: populatedCounts,
+      jsonb_non_empty_counts: jsonbNonEmptyCounts.rows[0],
+      jsonb_sample: jsonbSample.rows,
+    });
+  } catch (e) {
+    console.error('[logistics-audit]', e.message);
+    res.status(500).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
+// ─── POST /api/admin/run-logistics-migration ──────────────────────────────────
+// Runs 098_LOGISTICS_PACKAGING_FIELDS: adds the 16 logistics/packaging
+// columns to elimfilters_catalog (all nullable, no defaults) plus the
+// generated logistics_data_complete flag. Additive-only, idempotent.
+app.post('/api/admin/run-logistics-migration', adminLimiter, requireAdmin, async (req, res) => {
+  try {
+    const { applyLogisticsPackagingFields } = require('./scripts/migrations/run_098_logistics_packaging_fields');
+    const report = await applyLogisticsPackagingFields();
+    console.log('[run-logistics-migration]', JSON.stringify(report));
+    res.json(report);
+  } catch (e) {
+    console.error('[run-logistics-migration]', e.message);
+    res.status(500).json({ error: e.message, report: e.migrationReport || null });
+  }
+});
+
+// ─── POST /api/admin/run-confirmed-units-sample ───────────────────────────────
+// Runs 099_CONFIRMED_UNITS_PER_CASE_SAMPLE: applies the three plant-confirmed
+// units_per_case values (P552100=6, P554004=12, P502042=12). Only touches
+// units_per_case + provenance fields; never fabricates weight/volume/dims.
+app.post('/api/admin/run-confirmed-units-sample', adminLimiter, requireAdmin, async (req, res) => {
+  try {
+    const { applyConfirmedUnitsPerCaseSample } = require('./scripts/migrations/run_099_confirmed_units_per_case_sample');
+    const report = await applyConfirmedUnitsPerCaseSample();
+    console.log('[run-confirmed-units-sample]', JSON.stringify(report));
+    res.json(report);
+  } catch (e) {
+    console.error('[run-confirmed-units-sample]', e.message);
+    res.status(500).json({ error: e.message, report: e.migrationReport || null });
+  }
+});
+
+// ─── GET /api/admin/hd-donaldson-codes ────────────────────────────────────────
+// Read-only. Lists sku + codigo_base for HEAVY_DUTY rows whose codigo_base
+// looks like a Donaldson code, for the Etapa 3 official-source scrape.
+app.get('/api/admin/hd-donaldson-codes', adminLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    const { rows } = await client.query(`
+      SELECT sku, codigo_base
+      FROM elimfilters_catalog
+      WHERE duty = 'HEAVY_DUTY'
+        AND codigo_base IS NOT NULL
+        AND codigo_base ~ '^P[0-9]{6}$'
+      ORDER BY codigo_base
+    `);
+    res.json({ count: rows.length, rows });
+  } catch (e) {
+    console.error('[hd-donaldson-codes]', e.message);
+    res.status(500).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/admin/malformed-skus ────────────────────────────────────────────────────────────────────────────
 // Lists all SKUs that don’t match the 7-char format ^[A-Z0-9]{2,4}[0-9]{4}$
 app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res) => {
