@@ -62,7 +62,7 @@ export default function DashboardPage() {
               ← CUSTOMER INTELLIGENCE
             </Link>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>
-              {'// DASHBOARD'}
+              {'DASHBOARD'}
             </p>
             <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700 }}>
               Intelligence Overview

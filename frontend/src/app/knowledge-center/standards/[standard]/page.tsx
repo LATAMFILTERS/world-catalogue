@@ -10,6 +10,7 @@ const STANDARD_ALIASES: Record<string, string> = {
   'iso-11155': 'iso-29463',
   'iso-3724': 'iso-16889',
   'iso-4405': 'iso-4406',
+  'din-71220': 'din-71460',
 };
 
 const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {

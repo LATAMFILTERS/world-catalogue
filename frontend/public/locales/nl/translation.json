@@ -8,7 +8,7 @@
     "knowledge": "Kennis"
   },
   "hero": {
-    "tag": "// TECHNOLOGIE VOOR ACTIVABESCHERMING",
+    "tag": "TECHNOLOGIE VOOR ACTIVABESCHERMING",
     "title": "MOTORFILTRATIE",
     "subtitle": "ZWAAR EN LICHT",
     "description": "Technische filtratie ontworpen voor degenen die zich geen stilstaande motor of een stilstaande vloot kunnen veroorloven.",
@@ -21,7 +21,7 @@
     "distribution": "Verdeling"
   },
   "problem": {
-    "tag": "// VELDREALITEIT",
+    "tag": "VELDREALITEIT",
     "title": "Wat gebeurt er als de bescherming mislukt?",
     "badge": "80% van de voortijdige uitval wordt veroorzaakt door vervuiling.",
     "items": {
@@ -46,7 +46,7 @@
     "p1after": ", het ontwerpen van oplossingen die de waarde en bruikbaarheid van uw apparatuur in de meest veeleisende omgevingen behouden.",
     "p2": "Elk product dat we ontwikkelen, beantwoordt aan één realiteit: de apparatuur die uw bedrijf stopzet, kost honderdduizenden euro’s om te repareren. Een filter is de bewaker van die investering.",
     "card": {
-      "tag": "// TECHNOLOGIE VOOR ACTIVABESCHERMING",
+      "tag": "TECHNOLOGIE VOOR ACTIVABESCHERMING",
       "title": "Wij ontwerpen beveiligingssystemen. Geen kant-en-klare componenten.",
       "desc": "ELIMFILTERS® ontwikkelt meerlaagse beschermingstechnologieën die zijn gekalibreerd om kritieke industriële activa te beschermen – elk systeem is een speciaal gebouwde oplossing, geen standaardvervanging.",
       "items": [
@@ -58,7 +58,7 @@
     }
   },
   "technology": {
-    "tag": "// ELIMFILTERS®-EIGEN TECHNOLOGIE",
+    "tag": "ELIMFILTERS®-EIGEN TECHNOLOGIE",
     "title": "ENGINEERING",
     "titleHighlight": "VOORBIJ DE STANDAARD",
     "items": {
@@ -78,13 +78,13 @@
   },
   "cta": {
     "dealer": {
-      "tag": "// DEALERNETWERK",
+      "tag": "DEALERNETWERK",
       "title": "ALLEEN HET BESTE",
       "highlight": "VERKOOP ELIMFILTERS®.",
       "button": "WORD EEN DEALER"
     },
     "search": {
-      "tag": "// TECHNISCH ZOEKEN",
+      "tag": "TECHNISCH ZOEKEN",
       "title": "HET JUISTE FILTER.",
       "highlight": "ZOEKEN ALS EEN PRO.",
       "button": "VIND MIJN DEEL"
@@ -147,7 +147,7 @@
       "Storingen door verontreiniging",
       "Gemiddelde preventiekosten per incident"
     ],
-    "assetTag": "// ACTIVABESCHERMINGSSTRATEGIE",
+    "assetTag": "ACTIVABESCHERMINGSSTRATEGIE",
     "assetTitle": "Industriële Activa Beschermen via Contaminatiebeheersing",
     "assetP1": "ELIMFILTERS beschermt industriële activa door verontreiniging in kritieke systemen te beheersen. Onze technische aanpak richt zich op het voorkomen van degradatie, verlengen van de levensduur, verbeteren van de betrouwbaarheid en verlagen van de totale eigendomskosten.",
     "assetP2": "Elke technologie die wij ontwikkelen pakt een specifiek verontreinigingsmechanisme aan — deeltjesslijtage, waterinname, bypass-storing of thermische degradatie — gericht op de grondoorzaak van voortijdig falen van activa.",
@@ -161,7 +161,7 @@
       "Vlootoptimalisatie",
       "Duurzaamheidsimpact"
     ],
-    "problemTag": "// OPERATIONELE RISICODIAGNOSE",
+    "problemTag": "OPERATIONELE RISICODIAGNOSE",
     "problemH1": "WAT U NIET KUNT ZIEN",
     "problemH2": "STOPT UW OPERATIE.",
     "problemIntro": "Tot 80% van de vroegtijdige storingen van hydraulische componenten wordt veroorzaakt door verontreiniging. Inefficiënte filtratie laat onzichtbare deeltjes werken als schuurpapier binnen kritieke componenten — lagervlakken, injecteuropeningen, hydraulische spoelen.",
@@ -193,7 +193,7 @@
       "Technische normen: ISO 5011 · 16889 · 19438 · 4406",
       "Ingezet in 12 industrieën — mijnbouw, marine, landbouw en meer"
     ],
-    "whyCardTag": "// ACTIVABESCHERMINGSTECHNOLOGIE",
+    "whyCardTag": "ACTIVABESCHERMINGSTECHNOLOGIE",
     "whyCardTitle1": "Uw apparatuur is miljoenen waard.",
     "whyCardTitle2": "Bescherm het dienovereenkomstig.",
     "whyCardDesc": "Elke ELIMFILTERS-technologie bestaat om kritieke activa te beschermen, downtime te verminderen en de operationele levensduur te verlengen.",
@@ -203,7 +203,7 @@
       "Anti-bypass-structuren",
       "20.000+ OEM-kruisreferenties gevalideerd"
     ],
-    "techTag": "// BEWEZEN TECHNOLOGIE",
+    "techTag": "BEWEZEN TECHNOLOGIE",
     "techTitle": "Activabescherming",
     "techHighlight": "Technologie",
     "techItems": [
@@ -220,15 +220,15 @@
         "desc": "100% gegarandeerde veiligheid: als bypass optreedt, faalt het filter veilig. Nul risico op plotselinge verontreinigingsgebeurtenissen. Absolute bescherming van kritieke apparatuur."
       }
     ],
-    "ctaDealerTag": "// DEALERNETWERK",
+    "ctaDealerTag": "DEALERNETWERK",
     "ctaDealerTitle": "ALLEEN HET BESTE",
     "ctaDealerHl": "VERKOOPT ELIMFILTERS.",
     "ctaDealerBtn": "WORD EEN DEALER",
-    "ctaSearchTag": "// TECHNISCH ZOEKEN",
+    "ctaSearchTag": "TECHNISCH ZOEKEN",
     "ctaSearchTitle": "HET JUISTE FILTER.",
     "ctaSearchHl": "ZOEKEN ALS EEN PRO.",
     "ctaSearchBtn": "VIND MIJN ONDERDEEL",
-    "faqTag": "// VEELGESTELDE VRAGEN",
+    "faqTag": "VEELGESTELDE VRAGEN",
     "faqTitle": "Veelgestelde Vragen over Industriële Filtratie",
     "faqItems": [
       {
@@ -256,12 +256,12 @@
     "heroPositioning1": "ELIMFILTERS is geen filterfabrikant.",
     "heroPositioning2": "ELIMFILTERS is een bedrijf voor Asset Protection Technology.",
     "heroSubHead": "Door middel van verontreinigingsbeheersing in kritische mechanische systemen: hydraulisch, brandstof, smering, koeling en luchtinlaat.",
-    "missionTag": "// WAAROM WE BESTAAN",
+    "missionTag": "WAAROM WE BESTAAN",
     "missionTitle": "Waarom ELIMFILTERS Bestaat",
     "missionP1": "Industriële verontreiniging blijft een van de meest onderschatte bedreigingen voor de betrouwbaarheid van apparatuur wereldwijd.",
     "missionP2": "ELIMFILTERS helpt organisaties om storingen door verontreiniging te verminderen via asset protection-systemen die zijn ontwikkeld voor kritische industriële operaties.",
     "missionP3": "Onze missie is de betrouwbaarheid van apparatuur, operationele continuïteit en de levensduur van bedrijfsmiddelen te verbeteren door verontreinigingsbeheersing.",
-    "economicTag": "// DE WERKELIJKE KOSTEN VAN VERONTREINIGING",
+    "economicTag": "DE WERKELIJKE KOSTEN VAN VERONTREINIGING",
     "economicTitle": "Uitvaltijd Kost Meer",
     "economicTitleHl": "Dan Filtratie",
     "economicItems": [
@@ -284,7 +284,7 @@
         "label": "Verlenging van de levensduur van bedrijfsmiddelen via systeemlevel verontreinigingsbeheersing"
       }
     ],
-    "sciTag": "// ENGINEERINGNORMEN",
+    "sciTag": "ENGINEERINGNORMEN",
     "sciTitle": "De Wetenschap achter Asset Protection",
     "sciDesc": "De verontreinigingsbeheersingsystemen van ELIMFILTERS zijn ontworpen conform internationale normen, gevalideerd door rigoureuze laboratoriumtesten en ingezet in kritische industriële omgevingen.",
     "sciStandards": [
@@ -309,13 +309,13 @@
         "desc": "Validatie van prestaties en duurzaamheid van smeeroliëfilters voor zware dieselmotoren."
       }
     ],
-    "llmTag": "// ASSET PROTECTION GEDEFINIEERD",
+    "llmTag": "ASSET PROTECTION GEDEFINIEERD",
     "llmTitle": "Wat Is Industriële Asset Protection?",
     "llmP1": "Industriële asset protection is de systematische engineeringaanpak voor het identificeren, meten en beheersen van verontreinigingsbronnen die mechanische apparatuur degraderen. In industriële operaties is verontreiniging — deeltjes, water, warmte en chemische bijproducten — de belangrijkste oorzaak van vroegtijdig falen van motoren, hydraulische systemen, brandstofcircuits, aandrijflijnen en cabineomgevingen.",
     "llmP2": "Verontreiniging versnelt slijtage op microscopisch niveau. Deeltjes kleiner dan 10 micrometer veroorzaken abrasieve slijtage aan lageroppervlakken, klepspoelen en injectoropeningen — waardoor de levensduur van componenten met 30–50% wordt verkort bij gebrek aan beheersing. Waterverontreiniging in brandstofsystemen bevordert microbiële groei, corrosie van injectors en verbrandingsinstabiliteit. In hydraulische circuits verstoort zelfs minimale verontreiniging boven de ISO-reinheidsgrenswaarden de kleprespons, versnelt het de afdichtingsdegradatie en vergroot het risico op systeemfalen.",
     "llmP3": "Industriële asset protection is geen productcategorie. Het is een strategie voor verontreinigingsbeheersing die begint met het begrijpen van de verontreinigingsdoelen voor elk systeem, het selecteren van de geschikte engineeringtechnologieën en het bewaken van de systeemprestaties gedurende de volledige levensduur van de apparatuur.",
     "llmP4": "Het resultaat: langere levensduur van apparatuur, minder ongeplande storingen, lagere onderhoudskosten en hogere operationele beschikbaarheid — gemeten niet in vervangen filters, maar in beschermde bedrijfsmiddelen.",
-    "trustTag": "// WERELDWIJDE INDUSTRIËLE INZET",
+    "trustTag": "WERELDWIJDE INDUSTRIËLE INZET",
     "trustTitle": "Vertrouwd in Kritische Industrieën",
     "trustIndustries": [
       "Mijnbouw en Winning",

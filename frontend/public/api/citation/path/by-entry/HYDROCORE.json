@@ -10,7 +10,6 @@
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_C_HYDROCORE_041.json"

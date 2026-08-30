@@ -1,6 +1,6 @@
 {
-  "path_count": 48,
-  "valid_count": 48,
+  "path_count": 49,
+  "valid_count": 49,
   "paths": [
     {
       "path_id": "PATH_A_DUST_INGESTION_001",
@@ -34,7 +34,6 @@
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_A_FUEL_FILTER_PLUGGING_003.json"
@@ -95,7 +94,6 @@
       "industry": "AGRICULTURE",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_AGRICULTURE_008.json"
@@ -240,7 +238,6 @@
       "industry": "MARINE",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_MARINE_020.json"
@@ -289,7 +286,6 @@
       "industry": "MINING",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_MINING_024.json"
@@ -338,7 +334,6 @@
       "industry": "OIL_GAS",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_OIL_GAS_028.json"
@@ -375,7 +370,6 @@
       "industry": "POWER_GENERATION",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_POWER_GENERATION_031.json"
@@ -436,7 +430,6 @@
       "industry": "TRUCKS_FLEETS",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_036.json"
@@ -497,7 +490,6 @@
       "industry": null,
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_C_HYDROCORE_041.json"
@@ -585,6 +577,18 @@
         "COOLING_PRIMARY"
       ],
       "href": "/api/citation/path/PATH_C_THERMACORE_048.json"
+    },
+    {
+      "path_id": "PATH_C_TURBOCORE_049",
+      "path_type": "C",
+      "entry_node": "TURBOCORE",
+      "entry_type": "technology",
+      "industry": null,
+      "valid": true,
+      "terminal_product_families": [
+        "FUEL_TURBINE"
+      ],
+      "href": "/api/citation/path/PATH_C_TURBOCORE_049.json"
     }
   ]
 }

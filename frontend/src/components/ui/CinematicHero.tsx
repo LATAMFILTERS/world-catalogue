@@ -26,21 +26,26 @@ export default function CinematicHero() {
         fontFamily: approvedBodyFont,
       }}
     >
-      <div
-        role="img"
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
         aria-label="ELIMFILTERS protection systems in the field"
         style={{
           position: "absolute",
           inset: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: "url(/assets/hero-systems.avif)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          objectFit: "cover",
+          objectPosition: "center",
           opacity: 0.52,
           zIndex: 0,
         }}
-      />
+      >
+        <source src="/images/Hero-HOME_elimfilters.mp4" type="video/mp4" />
+      </video>
 
       <div
         aria-hidden="true"

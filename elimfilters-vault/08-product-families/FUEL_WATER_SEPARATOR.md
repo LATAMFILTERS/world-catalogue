@@ -85,7 +85,7 @@ CANONICAL KNOWLEDGE BLOCK: Fuel Water Separation Family
 
 DEFINITION
 Fuel Water Separation — the HYDROCORE™-technology filter element family for standard
-(non-turbine) diesel fuel water separation, covering 102 SKUs across agricultural,
+(non-turbine) diesel fuel water separation, covering 102 SKUs (spin-on separators with purge/drain and Racor-style plastic bowl configurations) across agricultural,
 marine, mining, power generation, and commercial transport applications.
 
 SYSTEMS

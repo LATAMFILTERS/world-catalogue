@@ -341,14 +341,14 @@
         "concept": "Turbine Fuel Separation Product Family",
         "version": "2.0",
         "last_updated": "2026-08-18",
-        "content_hash": "sha256:96a66b73338efa6fd8e9a2b45cd09c267b08487834db891d0bec954512469a3b"
+        "content_hash": "sha256:eda13800d7202cf3cc0ddfb900723cbf5373feefb61cb1ca12e20312aa0b877f"
       },
       "canonical": {
         "definition": "Turbine Fuel Separation — the HYDROCORE™-technology filter element family for approved\nTurbine Series FH and FG fuel-separation housings and their dedicated 2010/2020/2040-series\nreplacement elements, covering 13 SKUs verified directly against production.",
         "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\nfuel/water-separation technology in its Turbine Series FH/FG architecture",
         "failure_impact": "Using a standard (non-turbine) separator element in a Turbine Series FH/FG housing, or\nvice versa, can compromise the staged separation and filtration performance the housing\nwas engineered around.",
         "related_standards": "ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |\nISO 12937: Petroleum products water determination",
-        "related_technologies": "HYDROCORE: Fuel/water separation architecture governing both this family (Turbine Series\nFH/FG) and the standard (non-turbine) FUEL_WATER_SEPARATOR family -- distinct product\nfamilies under the same technology because housing/element architecture differs |\nSYNTAPORE: Plain primary/secondary fuel filtration, no separation function (FUEL_PRIMARY\nfamily)",
+        "related_technologies": "TURBOCORE: Turbine-style fuel-separation architecture governing this family (Turbine Series\nFH/FG) and the standard (non-turbine) FUEL_WATER_SEPARATOR family -- distinct product\nfamilies under the same technology because housing/element architecture differs |\nSYNTAPORE: Plain primary/secondary fuel filtration, no separation function (FUEL_PRIMARY\nfamily)",
         "industrial_role": "This product family is the exclusive implementation for approved Turbine Series FH/FG\nfuel-separation architecture and its dedicated replacement elements, governed by\nHYDROCORE™."
       },
       "relationships": {
@@ -365,7 +365,7 @@
           "TRUCKS_FLEETS"
         ],
         "uses_technology": [
-          "HYDROCORE"
+          "TURBOCORE"
         ],
         "belongs_to_domain": [
           "FUEL"
@@ -397,10 +397,10 @@
         "concept": "Fuel Water Separation Product Family",
         "version": "1.0",
         "last_updated": "2026-08-15",
-        "content_hash": "sha256:f70f4b28e48c6becbe2f7f6434eab49f9f4a4bb073f410cd675643a6d428dcb3"
+        "content_hash": "sha256:f82cc0874b1d69cdb1b34b529eb9dd6c0f32f864a69c5fc74e6776b371b59b1f"
       },
       "canonical": {
-        "definition": "Fuel Water Separation — the HYDROCORE™-technology filter element family for standard\n(non-turbine) diesel fuel water separation, covering 102 SKUs across agricultural,\nmarine, mining, power generation, and commercial transport applications.",
+        "definition": "Fuel Water Separation — the HYDROCORE™-technology filter element family for standard\n(non-turbine) diesel fuel water separation, covering 102 SKUs (spin-on separators with purge/drain and Racor-style plastic bowl configurations) across agricultural,\nmarine, mining, power generation, and commercial transport applications.",
         "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\ncoalescing water-separation technology",
         "failure_impact": "Selecting incorrect element from this family (wrong coalescing efficiency class or wrong\nflow rate) or exceeding service interval → residual free water passes to injectors →\ninjector tip corrosion and nozzle deposit formation → HPCR fuel system failure requiring\ninjector replacement well before its rated service life",
         "related_standards": "HYDROCORE governs standard (non-turbine) fuel/water separation; no standard is\ncurrently approved as a direct canonical relationship for this family.",

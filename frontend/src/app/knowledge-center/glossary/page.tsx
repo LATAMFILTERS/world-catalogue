@@ -25,6 +25,18 @@ export default function GlossaryPage() {
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <Link href="/knowledge-center" style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.65rem',
+            letterSpacing: '0.1em',
+            color: 'rgba(255,255,255,0.35)',
+            textDecoration: 'none',
+            display: 'inline-block',
+            marginBottom: '2rem',
+          }}>
+            ← KNOWLEDGE CENTER
+          </Link>
+
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}

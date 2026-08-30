@@ -29,9 +29,13 @@ export interface OemPartEntry {
   duty: 'HD' | 'LD' | DocumentationPending;
   productType: string;
   crossReferences: string[]; // ELIMFILTERS part numbers
+  specifications?: { label: string; value: string }[]; // From the OEM's official product page (e.g. dimensions, thread size)
+  oemCrossReferences?: { manufacturer: string; partNumber: string }[]; // Other-brand OEM codes listed on the OEM's own official page (not the crossreference.com sites)
+  equipmentApplications?: { equipment: string; year: string; equipmentType: string; equipmentOptions: string; engine: string; engineOption: string }[]; // Fitment table from the OEM's official product page; not yet normalized into EQUIPMENT_REGISTRY/ENGINE_REGISTRY
   applications: ApplicationId[];
   equipment: EquipmentId[];
   engines: EngineId[];
+  sourceUrl?: string; // The official OEM product page this entry was captured from
   status: 'ACTIVE' | 'OBSOLETE' | DocumentationPending;
 }
 

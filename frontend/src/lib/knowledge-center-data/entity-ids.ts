@@ -84,7 +84,7 @@ export const STANDARD_IDS = {
   'iso-11155-1': 'STD-ISO-11155-1',
   'astm-d6304':  'STD-ASTM-D6304',
   'iso-16332':   'STD-ISO-16332',
-  'din-71220':   'STD-DIN-71220',
+  'din-71460':   'STD-DIN-71460',
   'din-51524':   'STD-DIN-51524',
   'sae-j726':    'STD-SAE-J726',
   // Phase 5C additions

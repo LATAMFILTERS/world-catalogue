@@ -9,7 +9,7 @@ export default function CustomerIntelligencePage() {
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
           <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', color: '#FFF12D', letterSpacing: '0.12em', marginBottom: '1rem' }}>
-            {'// CUSTOMER INTELLIGENCE'}
+            {'CUSTOMER INTELLIGENCE'}
           </p>
           <h1 style={{ fontFamily: 'Titillium Web, sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, marginBottom: '1rem' }}>
             Customer Intelligence

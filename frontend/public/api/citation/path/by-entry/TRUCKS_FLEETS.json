@@ -22,7 +22,6 @@
       "industry": "TRUCKS_FLEETS",
       "valid": true,
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "href": "/api/citation/path/PATH_B_TRUCKS_FLEETS_036.json"

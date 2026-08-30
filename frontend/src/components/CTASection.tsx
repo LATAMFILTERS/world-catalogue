@@ -65,8 +65,8 @@ export function CTASection({
       >
         <h2
           style={{
-            fontFamily: 'Titillium Web, sans-serif',
-            fontWeight: 300,
+            fontFamily: 'var(--font-display)',
+            fontWeight: 500,
             fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
             color: 'rgba(255,255,255,0.92)',
             lineHeight: 1.15,
@@ -78,8 +78,8 @@ export function CTASection({
         </h2>
         <h2
           style={{
-            fontFamily: 'Titillium Web, sans-serif',
-            fontWeight: 600,
+            fontFamily: 'var(--font-display)',
+            fontWeight: 700,
             fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)',
             color: '#FFF12D',
             lineHeight: 1.15,
@@ -91,7 +91,7 @@ export function CTASection({
         </h2>
         <p
           style={{
-            fontFamily: 'Titillium Web, sans-serif',
+            fontFamily: 'var(--font-body)',
             fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.55)',
             lineHeight: 1.75,
@@ -103,7 +103,7 @@ export function CTASection({
         </p>
         <p
           style={{
-            fontFamily: 'JetBrains Mono, monospace',
+            fontFamily: 'var(--font-mono)',
             fontSize: '0.62rem',
             color: 'rgba(255,255,255,0.42)',
             letterSpacing: '0.08em',
@@ -122,7 +122,7 @@ export function CTASection({
               display: 'inline-block',
               background: '#FFF12D',
               color: '#000',
-              fontFamily: 'Titillium Web, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontWeight: 700,
               fontSize: '0.78rem',
               letterSpacing: '0.12em',
@@ -142,7 +142,7 @@ export function CTASection({
               display: 'inline-block',
               background: 'transparent',
               color: '#fff',
-              fontFamily: 'Titillium Web, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontWeight: 700,
               fontSize: '0.78rem',
               letterSpacing: '0.1em',
