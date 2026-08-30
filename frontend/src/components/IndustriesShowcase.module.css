@@ -20,16 +20,12 @@
   margin-bottom: 1.75rem;
 }
 
-.heading,
-.animationHeading {
+.heading {
   font-family: Barlow, Arial, sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   color: #fff;
   margin: 0;
-}
-
-.heading {
   font-size: clamp(1.5rem, 3vw, 2.25rem);
 }
 
@@ -135,25 +131,15 @@
 .animationOverlay {
   position: absolute;
   inset: 0;
-  z-index: 10;
+  z-index: 20;
   width: 100%;
-  height: 100vh;
-  min-height: 100%;
+  height: 100%;
+  min-height: 100vh;
   background: #000;
   overflow: hidden;
   pointer-events: none;
+  opacity: 1;
   visibility: visible;
-}
-
-.animationHeading {
-  position: absolute;
-  z-index: 30;
-  top: clamp(1.4rem, 4vw, 3.25rem);
-  left: clamp(1.25rem, 6vw, 6rem);
-  right: clamp(1.25rem, 6vw, 6rem);
-  font-size: clamp(1.35rem, 2.8vw, 2.25rem);
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65);
-  pointer-events: none;
 }
 
 .animationGrid {
@@ -230,16 +216,12 @@
   }
 
   .animationOverlay {
-    height: 78vh;
+    min-height: 78vh;
   }
 
   .card {
     flex-basis: min(78vw, 300px);
     height: 350px;
-  }
-
-  .animationHeading {
-    top: 1.25rem;
   }
 
   .animationIndustryLabel {
@@ -259,10 +241,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animationOverlay {
-    display: none;
-  }
-
   .track {
     scroll-behavior: auto;
   }
