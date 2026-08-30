@@ -157,18 +157,6 @@ export default function KnowledgeCenterPage() {
         }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(340px, 0.8fr)', gap: 'clamp(2rem, 5vw, 5rem)', alignItems: 'center' }}>
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
-              <p style={{
-                fontFamily: 'JetBrains Mono, monospace',
-                fontSize: '0.72rem',
-                letterSpacing: '0.17em',
-                textTransform: 'uppercase',
-                color: '#FFF12D',
-                margin: '0 0 1.25rem',
-                fontWeight: 600,
-              }}>
-                ELIMFILTERS / TECHNICAL KNOWLEDGE CENTER
-              </p>
-
               <h1 style={{
                 fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
                 fontWeight: 700,
@@ -242,7 +230,6 @@ export default function KnowledgeCenterPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 0.65fr) minmax(0, 1.35fr)', gap: 'clamp(2rem, 5vw, 5rem)', alignItems: 'end', marginBottom: '2.2rem' }}>
               <div>
-                <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', letterSpacing: '0.14em', color: '#FFF12D', margin: '0 0 0.8rem' }}>KNOWLEDGE ARCHITECTURE</p>
                 <h2 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: 'clamp(2rem, 3.4vw, 3.1rem)', lineHeight: 1.05, textTransform: 'uppercase', margin: 0 }}>Start with the technical question.</h2>
               </div>
               <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, margin: 0, maxWidth: '720px' }}>
@@ -265,8 +252,7 @@ export default function KnowledgeCenterPage() {
                       flexDirection: 'column',
                       transition: 'background 180ms ease, border-color 180ms ease',
                     }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
-                        <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: '#FFF12D' }}>{section.index}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '1rem' }}>
                         <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.54rem', letterSpacing: '0.09em', color: 'rgba(255,255,255,0.28)', textAlign: 'right' }}>{section.label}</span>
                       </div>
                       <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.35rem', lineHeight: 1.15, margin: '1.8rem 0 0.8rem', color: '#fff' }}>{section.title}</h3>
@@ -295,8 +281,7 @@ export default function KnowledgeCenterPage() {
 
             <div>
               {DECISION_PATH.map(([step, text], i) => (
-                <div key={step} style={{ display: 'grid', gridTemplateColumns: '54px 1fr', gap: '1rem', padding: '1rem 0', borderTop: i === 0 ? '1px solid rgba(255,255,255,0.09)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.09)' }}>
-                  <span style={{ fontFamily: 'JetBrains Mono, monospace', color: '#FFF12D', fontSize: '0.7rem' }}>{step}</span>
+                <div key={step} style={{ padding: '1rem 0', borderTop: i === 0 ? '1px solid rgba(255,255,255,0.09)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.09)' }}>
                   <span style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', color: 'rgba(255,255,255,0.82)', fontSize: '1rem' }}>{text}</span>
                 </div>
               ))}

@@ -2,3 +2,7 @@ node_modules/
 .next/
 *.log
 npm-debug.log*
+.next-fresh/
+
+frontend-*-BACKUP-*
+

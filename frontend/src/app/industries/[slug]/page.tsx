@@ -9,7 +9,7 @@ interface Props {
 const BASE_URL = 'https://elimfilters.com';
 
 const industryMedia: Record<string, { image?: string; video?: string }> = {
-  Agriculture: { image: '/images/agriculture.avif', video: '/images/Agriculture-2.mp4' },
+  Agriculture: { image: '/images/agriculture-2_converted.avif', video: '/images/Agriculture-2.mp4' },
   Automotive: { image: '/images/autos-02.avif', video: '/images/Autos-Vin4.mp4' },
   'Bus Coach': { image: '/images/bus-hero.avif', video: '/images/buses-2.mp4' },
   Construction: { image: '/images/construccion.avif', video: '/images/construction-2.mp4' },

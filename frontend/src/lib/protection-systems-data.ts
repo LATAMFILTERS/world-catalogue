@@ -11,6 +11,7 @@ export interface ProtectionSystem {
   readonly overview: string;
   readonly engineeringPrinciple: string;
   readonly heroImage: string;
+  readonly heroPosition?: string;
   readonly heroColor: string;
   readonly primaryTechnologies: TechnologySlug[];
   readonly supportingTechnologies: TechnologySlug[];
@@ -40,7 +41,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     tagline: 'Contamination interception across engine intake, operator air, housings, and compressed-air drying.',
     overview: 'Air Intake & Airflow Protection is the first defense layer in any contamination control strategy. It combines engine air filtration, secondary safety protection, operator-cabin air quality, air-cleaner housings, and air-dryer elements within one coordinated airflow protection domain.',
     engineeringPrinciple: 'Progressive media density, controlled sealing, electrostatic capture, adsorption, and desiccant drying are applied according to the protected airflow path. Each family addresses a distinct contamination boundary while remaining part of one airflow protection architecture.',
-    heroImage: '/images/carcasa.jd.avif', heroColor: '#FFF12D', hdPrefix: 'EA1', ldPrefix: 'EA3',
+    heroImage: '/images/carcasa.jd.avif', heroPosition: 'center 15%', heroColor: '#FFF12D', hdPrefix: 'EA1', ldPrefix: 'EA3',
     ...relationships('air-intake'),
   },
   'fuel-cleanliness': {
@@ -48,7 +49,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     tagline: 'Water and particle elimination before the high-pressure injection circuit.',
     overview: 'Fuel Cleanliness Protection defends high-pressure injection systems by controlling particulate contamination and water before fuel reaches precision pumps and injectors.',
     engineeringPrinciple: 'SYNTAPORE™ controls particulate contamination, and HYDROCORE™ provides fuel/water separation across standard spin-on/cartridge separators and Turbine Series FH/FG fuel-separation systems and 2010/2020/2040 replacement elements.',
-    heroImage: '/images/fuellseparator-hero.avif', heroColor: '#FFF12D', hdPrefix: 'EF9', ldPrefix: 'EF3',
+    heroImage: '/images/turbine-plant.avif', heroColor: '#FFF12D', hdPrefix: 'EF9', ldPrefix: 'EF3',
     ...relationships('fuel-cleanliness'),
   },
   lubrication: {
@@ -56,7 +57,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     tagline: 'Oil cleanliness maintained across the service interval.',
     overview: 'Lubrication Protection controls soot, wear debris, and oxidation byproducts before oil returns to critical bearings and lubricated interfaces.',
     engineeringPrinciple: 'Full-flow composite media balances efficiency, contaminant capacity, pressure drop, and valve integrity across changing viscosity and temperature conditions.',
-    heroImage: '/images/oil-hand.avif', heroColor: '#FFF12D', hdPrefix: 'EL8', ldPrefix: 'EL3',
+    heroImage: '/images/trucks-1.avif', heroColor: '#FFF12D', hdPrefix: 'EL8', ldPrefix: 'EL3',
     ...relationships('lubrication'),
   },
   hydraulic: {
@@ -64,7 +65,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     tagline: 'Contamination control in high-pressure hydraulic circuits.',
     overview: 'Hydraulic Protection maintains fluid cleanliness around the tolerance requirements of pumps, valves, actuators, and servo controls.',
     engineeringPrinciple: 'Beta-rated media, collapse-resistant construction, and thermal stability are matched to flow, pressure, critical particle size, and duty cycle.',
-    heroImage: '/images/hidraulic.avif', heroColor: '#FFF12D', hdPrefix: 'EH6', ldPrefix: null,
+    heroImage: '/images/hidraulico-trabajador.jpg', heroColor: '#FFF12D', hdPrefix: 'EH6', ldPrefix: null,
     ...relationships('hydraulic'),
   },
   'cooling-system': {
@@ -72,7 +73,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     tagline: 'Coolant cleanliness, additive control, and thermal-system protection.',
     overview: 'Cooling System Protection controls corrosion products, scale debris, and coolant additive condition in heavy-duty engine cooling circuits.',
     engineeringPrinciple: 'Controlled additive release and particulate removal protect wet liners, heat-transfer surfaces, seals, and coolant passages across the service interval.',
-    heroImage: '/images/coolant-hero.avif', heroColor: '#FFF12D', hdPrefix: 'EW7', ldPrefix: null,
+    heroImage: '/images/thermacore_mecnico.jpg', heroColor: '#FFF12D', hdPrefix: 'EW7', ldPrefix: null,
     ...relationships('cooling-system'),
   },
 };

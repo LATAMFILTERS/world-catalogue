@@ -238,7 +238,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'How many cleanliness classes does NAS 1638 define, and what does Class 6 represent?',
-        answer: 'NAS 1638 defines 14 cleanliness classes: Class 00, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, and 12. Class 12 is the dirtiest; Class 00 is the cleanest. Class 6 permits a maximum of 128 particles per 100 mL at the 5–15 µm range, 32 at 15–25 µm, 8 at 25–50 µm, 2 at 50–100 µm, and 1 at >100 µm. Class 6 is approximately equivalent to ISO 4406 code 17/15/12 — suitable for medium-pressure hydraulic circuits with gear pumps and directional control valves.',
+        answer: 'NAS 1638 defines 14 cleanliness classes: Class 00, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, and 12. Class 12 is the dirtiest; Class 00 is the cleanest. Class 6 permits a maximum of 32,000 particles per 100 mL at the 5–15 µm range, 5,700 at 15–25 µm, 1,012 at 25–50 µm, 180 at 50–100 µm, and 32 at >100 µm. Class 6 is approximately equivalent to ISO 4406 code 17/15/12 — suitable for medium-pressure hydraulic circuits with gear pumps and directional control valves.',
       },
       {
         question: 'What NAS 1638 class is required for servo valve hydraulic circuits?',
@@ -258,7 +258,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         question: 'What is the practical significance of NAS 1638 Class 4 for industrial hydraulic systems?',
-        answer: 'NAS Class 4 represents high cleanliness — maximum 32 particles per 100 mL at 5–15 µm, 8 at 15–25 µm, 2 at 25–50 µm, and 0 at >100 µm. Achieving Class 4 requires kidney-loop offline filtration with β₃(c)≥200 elements and a sealed reservoir with breather desiccant. Class 4 is required for high-pressure axial piston pump systems (>280 bar), high-speed servo valves in precision motion control, and electrohydraulic actuators in aerospace ground support equipment. A non-zero count at >100 µm indicates a seal failure or media bypass event requiring immediate investigation.',
+        answer: 'NAS Class 4 represents high cleanliness — maximum 8,000 particles per 100 mL at 5–15 µm, 1,425 at 15–25 µm, 253 at 25–50 µm, 45 at 50–100 µm, and 8 at >100 µm. Achieving Class 4 requires kidney-loop offline filtration with β₃(c)≥200 elements and a sealed reservoir with breather desiccant. Class 4 is required for high-pressure axial piston pump systems (>280 bar), high-speed servo valves in precision motion control, and electrohydraulic actuators in aerospace ground support equipment. A count materially above the >100 µm limit indicates a seal failure or media bypass event requiring immediate investigation.',
       },
       {
         question: 'How does NAS 1638 treat differential versus cumulative particle counts?',
@@ -1082,7 +1082,7 @@ export const KC_STANDARDS: KCStandard[] = [
       },
       {
         heading: 'ISO 11155-2 Complement',
-        body: 'ISO 11155-1 addresses particle filtration; ISO 11155-2 addresses gaseous contaminant removal efficiency for activated carbon layers against odour compounds, aromatic hydrocarbons, and NOx species. Together, Parts 1 and 2 provide the full performance framework for cabin air filtration. DIN 71220 is the German predecessor standard, harmonised into ISO 11155 methodology, still referenced in European OEM cabin filter qualification documents.',
+        body: 'ISO 11155-1 addresses particle filtration; ISO 11155-2 addresses gaseous contaminant removal efficiency for activated carbon layers against odour compounds, aromatic hydrocarbons, and NOx species. Together, Parts 1 and 2 provide the full performance framework for cabin air filtration. DIN 71460 is the German predecessor standard, harmonised into ISO 11155 methodology, still referenced in European OEM cabin filter qualification documents.',
       },
       {
         heading: 'Heavy Equipment Application',
@@ -1172,24 +1172,24 @@ export const KC_STANDARDS: KCStandard[] = [
   },
 
   {
-    slug: 'din-71220',
-    code: 'DIN 71220',
-    entityId: 'STD-DIN-71220',
+    slug: 'din-71460',
+    code: 'DIN 71460',
+    entityId: 'STD-DIN-71460',
     title: 'Road Vehicles — Cabin Air Filters — Requirements and Testing',
     issuingOrganization: 'DIN (Deutsches Institut für Normung)',
     year: 'Active (pre-harmonisation)',
     revisionStatus: 'active',
-    metaDescription: 'DIN 71220 is the German standard for road vehicle cabin air filter performance, specifying particle filtration efficiency, odour removal, and activated carbon performance — a predecessor to ISO 11155 still referenced in European OEM specifications.',
+    metaDescription: 'DIN 71460 is the German standard for road vehicle cabin air filter performance, specifying particle filtration efficiency, odour removal, and activated carbon performance — a predecessor to ISO 11155 still referenced in European OEM specifications.',
     scope: 'Cabin air filters for road vehicles (passenger cars, light commercial vehicles, buses, trucks) in European OEM qualification contexts, particularly German automotive supply chains.',
     engineeringPurpose: 'German predecessor standard for cabin air filter qualification, still required alongside ISO 11155 for European OEM supply chains where legacy specifications mandate dual-standard compliance for German automotive and commercial vehicle markets.',
     sections: [
       {
         heading: 'Scope and Background',
-        body: 'DIN 71220 specifies particle filtration efficiency (>80%), odour removal performance, and activated carbon layer testing for road vehicle cabin air filters. Published by DIN (Deutsches Institut für Normung), it preceded ISO 11155 and remains cited in European OEM supplier qualification documents — particularly in German automotive, bus, and truck supply chains — where legacy specifications have not been updated to ISO 11155 equivalents. The standard covers the same vehicle scope as ISO 11155: passenger cars, light commercial vehicles, buses, and trucks.',
+        body: 'DIN 71460 specifies particle filtration efficiency (>80%), odour removal performance, and activated carbon layer testing for road vehicle cabin air filters. Published by DIN (Deutsches Institut für Normung), it preceded ISO 11155 and remains cited in European OEM supplier qualification documents — particularly in German automotive, bus, and truck supply chains — where legacy specifications have not been updated to ISO 11155 equivalents. The standard covers the same vehicle scope as ISO 11155: passenger cars, light commercial vehicles, buses, and trucks.',
       },
       {
         heading: 'Relationship to ISO 11155',
-        body: 'ISO 11155-1 particle efficiency and flow resistance methodology builds directly on the DIN 71220 framework with internationally standardised test conditions. In practice, a cabin filter that passes ISO 11155-1 will generally satisfy DIN 71220 particle efficiency requirements. However, formal DIN 71220 testing may be required separately for OEM qualification where German OEM specifications continue to cite DIN 71220 alongside or in place of ISO 11155. Dual-standard compliance is required for European market cabin filter products targeting German OEM supply chains.',
+        body: 'ISO 11155-1 particle efficiency and flow resistance methodology builds directly on the DIN 71460 framework with internationally standardised test conditions. In practice, a cabin filter that passes ISO 11155-1 will generally satisfy DIN 71460 particle efficiency requirements. However, formal DIN 71460 testing may be required separately for OEM qualification where German OEM specifications continue to cite DIN 71460 alongside or in place of ISO 11155. Dual-standard compliance is required for European market cabin filter products targeting German OEM supply chains.',
       },
     ],
     keyParams: [
@@ -1204,71 +1204,67 @@ export const KC_STANDARDS: KCStandard[] = [
     relatedTechnologies: ['MICROKAPPA™'],
     relatedArticles: ['cabin-air-filtration', 'filter-media-science'],
     commonMistakes: [
-      'Treating DIN 71220 and ISO 11155 as fully interchangeable specifications. Test dust concentrations and efficiency measurement conditions differ between the two standards — a filter qualifying under one may not meet the other.',
+      'Treating DIN 71460 and ISO 11155 as fully interchangeable specifications. Test dust concentrations and efficiency measurement conditions differ between the two standards — a filter qualifying under one may not meet the other.',
       'Applying automotive passenger vehicle cabin filter change intervals (typically 15,000–25,000 km) to construction or agricultural equipment where ambient dust concentrations are 10–100× higher than road vehicle conditions.',
     ],
     faqs: [
       {
-        question: 'What is DIN 71220 and how does it relate to ISO 11155?',
-        answer: 'DIN 71220 (Road Vehicles — Cabin Air Filters — Requirements and Testing) is the German national standard for cabin air filter performance, issued by DIN (Deutsches Institut für Normung) before the international standard ISO 11155 was established. DIN 71220 specifies particulate filtration efficiency and, in its complete formulation, activated carbon performance for odour and gas filtration. ISO 11155 was developed as an international standard harmonizing the methodology of DIN 71220 and other national cabin filter standards. Some European OEM supply chains, particularly German automotive and commercial vehicle manufacturers, continue to require DIN 71220 qualification alongside ISO 11155 for cabin air filter elements.',
+        question: 'What is DIN 71460 and how does it relate to ISO 11155?',
+        answer: 'DIN 71460 (Road Vehicles — Cabin Air Filters — Requirements and Testing) is the German national standard for cabin air filter performance, issued by DIN (Deutsches Institut für Normung) before the international standard ISO 11155 was established. DIN 71460 specifies particulate filtration efficiency and, in its complete formulation, activated carbon performance for odour and gas filtration. ISO 11155 was developed as an international standard harmonizing the methodology of DIN 71460 and other national cabin filter standards. Some European OEM supply chains, particularly German automotive and commercial vehicle manufacturers, continue to require DIN 71460 qualification alongside ISO 11155 for cabin air filter elements.',
       },
       {
-        question: 'What filtration efficiency does DIN 71220 specify for cabin air particle filters?',
-        answer: 'DIN 71220 specifies particle filtration efficiency performance thresholds tested with standardized dust under defined HVAC airflow conditions. The standard requires a minimum particle filtration efficiency — the precise values for different particle size fractions are specified in the test protocol. For PM10 particle protection, DIN 71220 specifies ≥80% filtration efficiency, similar to ISO 11155-1 minimum thresholds. MICROKAPPA™ cabin air elements are selected to exceed the DIN 71220 minimum thresholds for both PM10 and PM2.5 efficiency, rated to the PM2.5 efficiency target specified for the approved application under both DIN 71220 and ISO 11155-1 test conditions.',
+        question: 'What filtration efficiency does DIN 71460 specify for cabin air particle filters?',
+        answer: 'DIN 71460 specifies particle filtration efficiency performance thresholds tested with standardized dust under defined HVAC airflow conditions. The standard requires a minimum particle filtration efficiency — the precise values for different particle size fractions are specified in the test protocol. For PM10 particle protection, DIN 71460 specifies ≥80% filtration efficiency, similar to ISO 11155-1 minimum thresholds. MICROKAPPA™ cabin air elements are selected to exceed the DIN 71460 minimum thresholds for both PM10 and PM2.5 efficiency, rated to the PM2.5 efficiency target specified for the approved application under both DIN 71460 and ISO 11155-1 test conditions.',
       },
       {
-        question: 'Does DIN 71220 cover activated carbon layers for gaseous contaminant removal?',
-        answer: 'DIN 71220 in its full scope includes requirements and test methods for activated carbon layer performance in cabin air filters — covering adsorption capacity for odour compounds, aromatic hydrocarbons (benzene, toluene), and inorganic gases (NOx, SO₂). This dual-function scope is analogous to the combined ISO 11155-1 (particles) and ISO 11155-2 (gases) framework. OEM specifications requiring DIN 71220 compliance for activated carbon cabin air filters must verify both the particle efficiency component and the gas phase adsorption component — a combined filter element must satisfy both parts of the specification.',
+        question: 'Does DIN 71460 cover activated carbon layers for gaseous contaminant removal?',
+        answer: 'DIN 71460 in its full scope includes requirements and test methods for activated carbon layer performance in cabin air filters — covering adsorption capacity for odour compounds, aromatic hydrocarbons (benzene, toluene), and inorganic gases (NOx, SO₂). This dual-function scope is analogous to the combined ISO 11155-1 (particles) and ISO 11155-2 (gases) framework. OEM specifications requiring DIN 71460 compliance for activated carbon cabin air filters must verify both the particle efficiency component and the gas phase adsorption component — a combined filter element must satisfy both parts of the specification.',
       },
       {
-        question: 'Which OEMs specifically require DIN 71220 qualification?',
-        answer: 'DIN 71220 qualification is primarily required by German automotive and commercial vehicle OEMs including Volkswagen Group (VW, Audi, Seat, Skoda), BMW Group, Mercedes-Benz, MAN Truck & Bus, and their tier-1 HVAC system suppliers. The requirement reflects the historical dominance of DIN standards in German OEM supply chains prior to ISO harmonisation. Non-German European OEMs (Renault, Peugeot, Stellantis, Volvo Cars) more commonly reference ISO 11155 directly. For cabin air filter suppliers addressing the full European OEM market, dual DIN 71220 and ISO 11155 qualification is the standard approach.',
+        question: 'How do DIN 71460 test conditions differ from ISO 11155-1 test conditions?',
+        answer: 'DIN 71460 and ISO 11155-1 use comparable but not identical test conditions for particle efficiency measurement. Differences include the specific test dust type and concentration, the airflow rate applied during testing relative to filter element face area, and the efficiency calculation methodology. These procedural differences mean that a filter element achieving exactly the minimum threshold under one standard may not achieve the minimum threshold under the other standard. For dual-standard compliance, elements must be tested independently under each standard\'s exact protocol, not assumed to cross-comply based on one test result.',
       },
       {
-        question: 'How do DIN 71220 test conditions differ from ISO 11155-1 test conditions?',
-        answer: 'DIN 71220 and ISO 11155-1 use comparable but not identical test conditions for particle efficiency measurement. Differences include the specific test dust type and concentration, the airflow rate applied during testing relative to filter element face area, and the efficiency calculation methodology. These procedural differences mean that a filter element achieving exactly the minimum threshold under one standard may not achieve the minimum threshold under the other standard. For dual-standard compliance, elements must be tested independently under each standard\'s exact protocol, not assumed to cross-comply based on one test result.',
+        question: 'What is the appropriate cabin air filter service interval for construction equipment under DIN 71460?',
+        answer: 'DIN 71460 specifies cabin air filter performance requirements for road vehicles (passenger cars, LCV, buses, trucks) under road vehicle operating conditions — ambient dust concentrations of 5–50 µg/m³ TSP typical for urban and suburban road environments. Construction and mining equipment operates in ambient environments of 50–5,000 µg/m³ TSP — 10–100× higher dust loading. DIN 71460 does not specify service intervals, which are the equipment OEM\'s responsibility. Construction equipment OEMs should apply maintenance interval reduction factors of 5–20× compared to road vehicle cabin filter specifications, requiring inspection at 50–200 hour intervals for active mining and construction operations.',
       },
       {
-        question: 'What is the appropriate cabin air filter service interval for construction equipment under DIN 71220?',
-        answer: 'DIN 71220 specifies cabin air filter performance requirements for road vehicles (passenger cars, LCV, buses, trucks) under road vehicle operating conditions — ambient dust concentrations of 5–50 µg/m³ TSP typical for urban and suburban road environments. Construction and mining equipment operates in ambient environments of 50–5,000 µg/m³ TSP — 10–100× higher dust loading. DIN 71220 does not specify service intervals, which are the equipment OEM\'s responsibility. Construction equipment OEMs should apply maintenance interval reduction factors of 5–20× compared to road vehicle cabin filter specifications, requiring inspection at 50–200 hour intervals for active mining and construction operations.',
+        question: 'Does DIN 71460 address cabin pressurization requirements for heavy equipment operator cabs?',
+        answer: 'DIN 71460 was developed for road vehicle passenger compartments and does not directly address cabin pressurization specifications for heavy equipment operator cabs. Positive cab pressurization (maintaining 50–150 Pa above ambient pressure through the HVAC blower-filter system) is specified by heavy equipment OEMs in their cab design requirements — not by cabin air filter standards such as DIN 71460 or ISO 11155. However, the DIN 71460-compliant filter element\'s flow resistance characteristics directly affect the cab pressurization system\'s ability to maintain positive pressure, making filter element selection part of the integrated cab HVAC pressurization design.',
       },
       {
-        question: 'Does DIN 71220 address cabin pressurization requirements for heavy equipment operator cabs?',
-        answer: 'DIN 71220 was developed for road vehicle passenger compartments and does not directly address cabin pressurization specifications for heavy equipment operator cabs. Positive cab pressurization (maintaining 50–150 Pa above ambient pressure through the HVAC blower-filter system) is specified by heavy equipment OEMs in their cab design requirements — not by cabin air filter standards such as DIN 71220 or ISO 11155. However, the DIN 71220-compliant filter element\'s flow resistance characteristics directly affect the cab pressurization system\'s ability to maintain positive pressure, making filter element selection part of the integrated cab HVAC pressurization design.',
+        question: 'Can a DIN 71460-qualified element be used as a direct substitute for an ISO 11155-1 qualified element?',
+        answer: 'Not without verification. DIN 71460 and ISO 11155-1 specifications are closely related but not identical. A filter element independently qualified under both standards provides compliance confidence. Using a DIN 71460-only qualified element in an ISO 11155-1 specified application requires demonstration (via test data or technical equivalence justification) that the element meets ISO 11155-1 PM10 and PM2.5 efficiency thresholds under ISO 11155-1 test conditions. In European OEM supply chains where the equipment specification cites ISO 11155-1, submission of DIN 71460 data alone is not sufficient for formal qualification approval without explicit OEM acceptance.',
       },
       {
-        question: 'Can a DIN 71220-qualified element be used as a direct substitute for an ISO 11155-1 qualified element?',
-        answer: 'Not without verification. DIN 71220 and ISO 11155-1 specifications are closely related but not identical. A filter element independently qualified under both standards provides compliance confidence. Using a DIN 71220-only qualified element in an ISO 11155-1 specified application requires demonstration (via test data or technical equivalence justification) that the element meets ISO 11155-1 PM10 and PM2.5 efficiency thresholds under ISO 11155-1 test conditions. In European OEM supply chains where the equipment specification cites ISO 11155-1, submission of DIN 71220 data alone is not sufficient for formal qualification approval without explicit OEM acceptance.',
+        question: 'What is the typical PM2.5 efficiency achievable with a DIN 71460-compliant cabin air filter for mining equipment?',
+        answer: 'Standard DIN 71460-compliant cabin air filters for road vehicles typically achieve PM2.5 efficiencies of 60–85% — above the standard minimum threshold but not in the HEPA performance range. For mining and construction equipment operator protection against respirable crystalline silica (which has a WHO-defined carcinogenic threshold below 25 µg/m³ silica-specific respirable dust), PM2.5 efficiency of ≥95% is required to reduce in-cab silica concentration below occupational exposure limits at mining ambient concentrations of 200–1,000 µg/m³. MICROKAPPA™ elements are selected to the PM2.5 efficiency target specified for the approved application under DIN 71460 and ISO 11155-1 conditions — addressing the occupational health requirement beyond standard DIN 71460 minimum thresholds.',
       },
       {
-        question: 'What is the typical PM2.5 efficiency achievable with a DIN 71220-compliant cabin air filter for mining equipment?',
-        answer: 'Standard DIN 71220-compliant cabin air filters for road vehicles typically achieve PM2.5 efficiencies of 60–85% — above the standard minimum threshold but not in the HEPA performance range. For mining and construction equipment operator protection against respirable crystalline silica (which has a WHO-defined carcinogenic threshold below 25 µg/m³ silica-specific respirable dust), PM2.5 efficiency of ≥95% is required to reduce in-cab silica concentration below occupational exposure limits at mining ambient concentrations of 200–1,000 µg/m³. MICROKAPPA™ elements are selected to the PM2.5 efficiency target specified for the approved application under DIN 71220 and ISO 11155-1 conditions — addressing the occupational health requirement beyond standard DIN 71220 minimum thresholds.',
-      },
-      {
-        question: 'What activated carbon adsorption capacity does DIN 71220 require for combined particle/gas cabin air filters?',
-        answer: 'DIN 71220 specifies minimum activated carbon adsorption performance for combined particle and gas phase cabin air filters tested against defined challenge concentrations of toluene, butane, and SO₂ as representative gas contaminants. The standard specifies breakthrough time (time to specified downstream concentration) under defined face velocity and initial contaminant concentration. Activated carbon capacity is directly related to carbon bed weight per unit filter area and the specific surface area (typically 1,000–1,500 m²/g for activated carbon used in cabin air applications). DIN 71220 requires the carbon layer to demonstrate breakthrough times meeting the specified minimum at the rated HVAC airflow rate through the filter element.',
+        question: 'What activated carbon adsorption capacity does DIN 71460 require for combined particle/gas cabin air filters?',
+        answer: 'DIN 71460 specifies minimum activated carbon adsorption performance for combined particle and gas phase cabin air filters tested against defined challenge concentrations of toluene, butane, and SO₂ as representative gas contaminants. The standard specifies breakthrough time (time to specified downstream concentration) under defined face velocity and initial contaminant concentration. Activated carbon capacity is directly related to carbon bed weight per unit filter area and the specific surface area (typically 1,000–1,500 m²/g for activated carbon used in cabin air applications). DIN 71460 requires the carbon layer to demonstrate breakthrough times meeting the specified minimum at the rated HVAC airflow rate through the filter element.',
       },
     ],
     engineeringReferences: [
       {
         category: 'standard',
-        citation: 'DIN 71220, Kraftfahrzeuge — Innenraumluftfilter — Anforderungen und Prüfung (Road Vehicles — Cabin Air Filters — Requirements and Testing), Deutsches Institut für Normung',
+        citation: 'DIN 71460, Kraftfahrzeuge — Innenraumluftfilter — Anforderungen und Prüfung (Road Vehicles — Cabin Air Filters — Requirements and Testing), Deutsches Institut für Normung',
         relevance: 'Primary German standard for cabin air filter performance; predecessor to ISO 11155; still required for European automotive OEM supply chain qualification in German and German-affiliated vehicle manufacturing.',
       },
       {
         category: 'standard',
         citation: 'ISO 11155-1:2001, Road Vehicles — Air Filters for Passenger Compartments — Part 1: Test for Particulate Filtration, ISO Geneva',
-        relevance: 'International successor to DIN 71220 for particle filtration performance; defines PM10 and PM2.5 efficiency measurement methodology applicable alongside DIN 71220 for dual-standard OEM qualification.',
+        relevance: 'International successor to DIN 71460 for particle filtration performance; defines PM10 and PM2.5 efficiency measurement methodology applicable alongside DIN 71460 for dual-standard OEM qualification.',
       },
       {
         category: 'standard',
         citation: 'ISO 11155-2:2009, Road Vehicles — Air Filters for Passenger Compartments — Part 2: Test for Gaseous Filtration, ISO Geneva',
-        relevance: 'Companion standard to ISO 11155-1 for gaseous contaminant removal; equivalent to the gas phase component of DIN 71220 for activated carbon cabin air filter qualification.',
+        relevance: 'Companion standard to ISO 11155-1 for gaseous contaminant removal; equivalent to the gas phase component of DIN 71460 for activated carbon cabin air filter qualification.',
       },
       {
         category: 'standard',
         citation: 'ISO 29463-1:2011, High-Efficiency Filters and Filter Media — Classification, Performance Testing and Marking, ISO Geneva',
-        relevance: 'Higher-performance HEPA classification standard applied when DIN 71220 minimum thresholds are insufficient for occupational health protection in mining and construction environments requiring ≥99.95% PM efficiency.',
+        relevance: 'Higher-performance HEPA classification standard applied when DIN 71460 minimum thresholds are insufficient for occupational health protection in mining and construction environments requiring ≥99.95% PM efficiency.',
       },
     ],
   },

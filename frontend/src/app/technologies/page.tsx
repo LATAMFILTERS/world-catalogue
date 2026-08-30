@@ -75,7 +75,9 @@ export default function TechnologiesPage() {
       <PageHeader currentPage="Technologies" />
 
       <section style={hero}>
-        <div style={{ ...heroImage, backgroundImage: 'url(/images/operator-technology.avif)' }} />
+        <video autoPlay muted loop playsInline preload="auto" style={{ ...heroImage, objectFit: 'cover', objectPosition: 'center' }}>
+          <source src="/images/Operator_enters_machine_cabin_20_tecnology.mp4" type="video/mp4" />
+        </video>
         <div style={heroOverlay} />
         <div style={heroInner}>
           <h1 style={heroTitle}>
@@ -138,10 +140,10 @@ const hero: CSSProperties = {
   padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
   borderBottom: '1px solid rgba(255,255,255,0.08)',
 };
-const heroImage: CSSProperties = { position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.45 };
+const heroImage: CSSProperties = { position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.52 };
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.32) 48%, rgba(0,0,0,0.12) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.26) 48%, rgba(0,0,0,0.08) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
 };
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 const heroTitle: CSSProperties = {

@@ -39,8 +39,11 @@ Domain: Lubrication Protection
 ### NANOFORCE�
 Domain: Hydraulic Protection
 
+### HYDROCORE�
+Domain: Standard Non-Turbine Fuel Water Separation
+
 ### TURBOCORE�
-Domain: Fuel Water Separation
+Domain: FH and FG Turbine Fuel Water Separation
 
 ### THERMACORE�
 Domain: Cooling System Protection
