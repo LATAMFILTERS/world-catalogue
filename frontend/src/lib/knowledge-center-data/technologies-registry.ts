@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ELIMFILTERS Knowledge Center — Canonical Technology Registry
  * Source of truth: docs/brand/TECHNOLOGY_REGISTRY.md
  */
@@ -70,7 +70,11 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     standards: [],
     relatedSystems: ['fuel-cleanliness-protection'],
     relatedIndustries: [],
+<<<<<<< HEAD
+    worksWith: ['HYDROCORE™'],
+=======
     worksWith: ['HYDROCORE™', 'TURBOCORE™'],
+>>>>>>> origin/main
     image: '/images/technologies/syntapore-media.png',
   },
   {
