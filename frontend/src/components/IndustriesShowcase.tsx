@@ -58,8 +58,11 @@ export function IndustriesShowcase() {
       gsap.set(overlay, { autoAlpha: 1, display: 'grid' });
       gsap.set(columns, {
         height: '100%',
-        clipPath: 'inset(0% 0% 0% 0%)',
-        yPercent: 0,
+        rotationY: 0,
+        autoAlpha: 1,
+        transformOrigin: 'right center',
+        transformPerspective: 1200,
+        force3D: true,
       });
       gsap.set(allPanels, { xPercent: -100, autoAlpha: 1, force3D: true });
 
@@ -99,16 +102,17 @@ export function IndustriesShowcase() {
         });
       }
 
-      // Keep each column at full size and reveal the page with a masked curtain
-      // instead of collapsing column height. This avoids any visible squeezing.
+      // Final reveal: the four vertical panels rotate away like premium shutters.
+      // The last column starts first, then the motion travels back to column one.
       tl.to(
         columns,
         {
-          clipPath: 'inset(0% 0% 100% 0%)',
-          yPercent: -2,
-          duration: 1.05,
-          stagger: { each: 0.11, from: 'end' },
+          rotationY: -92,
+          autoAlpha: 0,
+          duration: 1.15,
+          stagger: { each: 0.13, from: 'end' },
           ease: 'power4.inOut',
+          force3D: true,
         },
         '+=0.12',
       );
@@ -117,10 +121,10 @@ export function IndustriesShowcase() {
         overlay,
         {
           autoAlpha: 0,
-          duration: 0.18,
+          duration: 0.16,
           ease: 'power2.out',
         },
-        '-=0.12',
+        '-=0.08',
       );
 
       let hasPlayed = false;
