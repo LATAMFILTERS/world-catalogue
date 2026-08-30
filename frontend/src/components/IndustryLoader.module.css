@@ -4,7 +4,7 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: var(--loader-cols, repeat(4, 1fr));
   z-index: 9999;
   background: #000;
 }
@@ -48,3 +48,4 @@
   pointer-events: none;
   padding: 0 1rem;
 }
+

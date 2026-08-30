@@ -8,11 +8,8 @@ interface IndustryLoaderProps {
   onComplete?: () => void;
 }
 
-const INDUSTRIES = [
-  { name: "Mining", image: "/images/industries/mining.jpg" },
-  { name: "Agriculture", image: "/images/industries/agriculture.jpg" },
-  { name: "Construction", image: "/images/industries/construction.jpg" },
-  { name: "Truck Fleets", image: "/images/industries/trucks.jpg" },
+const TECHNOLOGIES = [
+  { slug: 'macrocore', name: 'MACROCORE™™', image: '/images/technologies/macrocore-media.png' },   { slug: 'nanoforce', name: 'NANOFORCE™™', image: '/images/technologies/nanoforce-media.png' },   { slug: 'syntapore', name: 'SYNTAPORE™™', image: '/images/technologies/syntapore-media.png' },   { slug: 'syntrax', name: 'SYNTRAX™™', image: '/images/technologies/syntrax-media.png' },
 ];
 
 export default function IndustryLoader({ onComplete }: IndustryLoaderProps) {
@@ -23,7 +20,6 @@ export default function IndustryLoader({ onComplete }: IndustryLoaderProps) {
   useEffect(() => {
     const cols = colsRef.current.filter(Boolean) as HTMLDivElement[];
     const medias = mediasRef.current.filter(Boolean) as HTMLDivElement[];
-
     if (!cols.length || !medias.length) return;
 
     gsap.set(cols, { height: "100%" });
@@ -32,9 +28,7 @@ export default function IndustryLoader({ onComplete }: IndustryLoaderProps) {
     const tl = gsap.timeline({
       defaults: { ease: "power3.inOut" },
       onComplete: () => {
-        if (containerRef.current) {
-          containerRef.current.style.display = "none";
-        }
+        if (containerRef.current) containerRef.current.style.display = "none";
         onComplete?.();
       },
     });
@@ -46,35 +40,24 @@ export default function IndustryLoader({ onComplete }: IndustryLoaderProps) {
       ease: "power2.inOut",
     });
 
-    tl.to(
-      cols,
-      {
-        height: "0%",
-        duration: 1.4,
-        stagger: { each: 0.18, from: "end" },
-        ease: "power3.inOut",
-      },
-      "-=0.6"
-    );
+    tl.to(cols, {
+      height: "0%",
+      duration: 1.4,
+      stagger: { each: 0.18, from: "end" },
+      ease: "power3.inOut",
+    }, "-=0.6");
 
     return () => { tl.kill(); };
   }, [onComplete]);
 
   return (
-    <div className={styles.loader} ref={containerRef}>
-      {INDUSTRIES.map((industry, i) => (
-        <div
-          key={industry.name}
-          className={styles.col}
-          ref={(el) => { colsRef.current[i] = el; }}
-        >
-          <div
-            className={styles.media}
-            ref={(el) => { mediasRef.current[i] = el; }}
-          >
-            <img src={industry.image} alt={industry.name} />
+    <div className={styles.loader} ref={containerRef} style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+      {TECHNOLOGIES.map((tech, i) => (
+        <div key={tech.slug} className={styles.col} ref={(el) => { colsRef.current[i] = el; }}>
+          <div className={styles.media} ref={(el) => { mediasRef.current[i] = el; }}>
+            <img src={tech.image} alt={tech.name} />
           </div>
-          <span className={styles.label}>{industry.name}</span>
+          <span className={styles.label}>{tech.name}</span>
         </div>
       ))}
     </div>
