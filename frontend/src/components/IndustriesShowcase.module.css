@@ -183,6 +183,47 @@
   pointer-events: none;
 }
 
+/* Home contamination risk callout — global override for the inline homepage badge. */
+:global(.problem-badge) {
+  right: 1.5rem !important;
+  bottom: 1.5rem !important;
+  width: clamp(250px, 19vw, 300px) !important;
+  min-width: 250px !important;
+  max-width: 300px !important;
+  padding: 1.35rem 1.45rem 1.45rem !important;
+  border-radius: 0 !important;
+  box-shadow: 0 14px 42px rgba(255, 241, 45, 0.22) !important;
+  overflow: hidden !important;
+}
+
+:global(.problem-badge p) {
+  margin: 0 !important;
+  text-align: left !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+  white-space: normal !important;
+}
+
+:global(.problem-badge p:first-child) {
+  font-family: var(--font-display) !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+:global(.problem-badge p:last-child) {
+  margin-top: 0.8rem !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  line-height: 1.38 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: uppercase !important;
+}
+
 @media (max-width: 720px) {
   .section,
   .content {
