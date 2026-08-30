@@ -38,7 +38,7 @@ export const SYSTEM_RELATIONSHIPS = {
     relatedSystems: ['fuel-cleanliness', 'lubrication', 'cooling-system'],
   },
   'fuel-cleanliness': {
-    primaryTechnologies: ['syntapore', 'hydrocore'] as TechnologySlug[],
+    primaryTechnologies: ['syntapore', 'hydrocore', 'turbocore'] as TechnologySlug[],
     supportingTechnologies: ['turbocore'] as TechnologySlug[],
     productFamilies: ['primary-fuel', 'secondary-fuel', 'fuel-water-separators', 'fuel-turbine'],
     standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
