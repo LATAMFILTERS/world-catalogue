@@ -46,12 +46,34 @@ async function start() {
   const europeanMannCanonical = await applyEuropeanMannCanonicalBatch1();
   console.log('[european-mann-canonical-batch1]', JSON.stringify(europeanMannCanonical));
 
-  // Rebuild the nullable diagnostics table, then recalculate coverage by counting
-  // each normalized application at most once per public candidate. This prevents
-  // duplicate public application rows from inflating evidence above 100%.
   const { applyEuropeanMannDiagnosticsCoverageGuard } = require('./scripts/migrations/run_091_european_mann_diagnostics_coverage_guard');
   const europeanMannDiagnostics = await applyEuropeanMannDiagnosticsCoverageGuard();
   console.log('[european-mann-unresolved-diagnostics-v3]', JSON.stringify(europeanMannDiagnostics));
+
+  const { applyEuropeanMannMatchReconciliation } = require('./scripts/migrations/run_092_european_mann_match_reconciliation');
+  const europeanMannReconciliation = await applyEuropeanMannMatchReconciliation();
+  console.log('[european-mann-match-reconciliation]', JSON.stringify(europeanMannReconciliation));
+
+  // Promote only reconciled 1:1 European MANN targets that do not already have
+  // a different active canonical identity. Conflicting targets remain blocked.
+  const { applyEuropeanMannCanonicalBatch2Safe } = require('./scripts/migrations/run_097_european_mann_canonical_batch2_safe');
+  const europeanMannCanonicalBatch2 = await applyEuropeanMannCanonicalBatch2Safe();
+  console.log('[european-mann-canonical-batch2-safe]', JSON.stringify(europeanMannCanonicalBatch2));
+
+  const { applyGlobalSkuCertificationAudit } = require('./scripts/migrations/run_093_global_sku_certification_audit');
+  const globalSkuCertification = await applyGlobalSkuCertificationAudit();
+  console.log('[global-sku-certification-audit]', JSON.stringify(globalSkuCertification));
+
+  const { applyGlobalCanonicalResolverV7Safe } = require('./scripts/migrations/run_095_global_canonical_resolver_v7_safe');
+  const globalCanonicalResolver = await applyGlobalCanonicalResolverV7Safe();
+  console.log('[global-canonical-resolver-v7-safe]', JSON.stringify(globalCanonicalResolver));
+
+  // Re-audit every MANN identity promoted by migrations 088/097 using corrected
+  // per-normalized-application EXISTS semantics. Any invalid promotion is
+  // removed from CERTIFIED status before Part Search is allowed to expose it.
+  const { applyPromotedEuropeanMannCorrectedAudit } = require('./scripts/migrations/run_099_promoted_european_mann_corrected_audit');
+  const promotedMannCorrectedAudit = await applyPromotedEuropeanMannCorrectedAudit();
+  console.log('[promoted-european-mann-corrected-audit]', JSON.stringify(promotedMannCorrectedAudit));
 
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
