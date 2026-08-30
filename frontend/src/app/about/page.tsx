@@ -4,77 +4,63 @@ import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
-import { AboutSubnav } from '@/components/AboutSubnav';
 import '@/i18n';
-
-const SYSTEMS = [
-  'Air Intake & Airflow Protection',
-  'Fuel Cleanliness Protection',
-  'Lubrication Protection',
-  'Hydraulic Protection',
-  'Cooling System Protection',
-];
-
-const DISTRIBUTOR_PRESENCE_PHOTOS = [
-  '/images/distributor-tradeshow-truck-booth.jpg',
-  '/images/distributor-rd-exclusive.jpg',
-  '/images/distributor-training-team.jpg',
-  '/images/distributor-fps-booth.jpg',
-];
-
-const LOGISTICS_PHOTOS = [
-  '/images/logistics-container-loading-worker.jpg',
-  '/images/logistics-container-stacked-boxes.jpg',
-  '/images/logistics-container-forklift.jpg',
-];
 
 export default function AboutPage() {
   const { i18n } = useTranslation();
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
 
   const copy = isSpanish ? {
-    heroTitle: 'Quiénes Somos',
+    heroTitle: 'Acerca de ELIMFILTERS',
     heroLead: 'ELIMFILTERS® es una organización de ingeniería de filtración industrial enfocada en proteger activos críticos mediante control disciplinado de contaminación, inteligencia de aplicación, arquitectura de producto validada y ejecución comercial confiable.',
-    identityTitle: 'Filtración industrial diseñada alrededor del activo',
-    identityBody: 'El filtro es el medio. La protección del activo es el objetivo. ELIMFILTERS desarrolla soluciones de filtración a partir de la condición operativa del equipo protegido, integrando conocimiento técnico, arquitectura de producto, manufactura calificada, validación, inteligencia de aplicación y ejecución de mercado.',
-    systemsTitle: 'Qué Protegemos',
-    systemsLead: 'Nuestra arquitectura técnica se organiza alrededor de cinco sistemas de protección que representan las principales funciones de control de contaminación en equipos móviles e industriales.',
-    philosophyTitle: 'Filosofía de Ingeniería',
-    philosophyBody: 'Las decisiones de ingeniería se rigen por evidencia, contexto de aplicación, validación física, integridad técnica y el valor operativo del activo que se protege. La inteligencia artificial puede apoyar análisis y ejecución, pero no sustituye la validación física, la trazabilidad ni el juicio técnico profesional.',
-    structureTitle: 'Estructura Corporativa',
-    networkTitle: 'Red de Socios Comerciales',
-    networkBody: 'Los socios comerciales calificados amplían la capacidad técnica de ELIMFILTERS, el acceso al producto, la estrategia de inventario, las relaciones con clientes y la ejecución local.',
-    knowledgeTitle: 'Recursos de Conocimiento',
-    knowledgeBody: 'Conocimiento técnico sobre normas de filtración, control de contaminación, comportamiento de aplicaciones, inteligencia de producto, condiciones operativas y principios de protección de activos.',
-    closingTitle: 'Construidos para capacidad, no para aparentar tamaño.',
-    closingBody: 'Nuestro modelo operativo está diseñado para escalar competencia, velocidad, continuidad y disciplina técnica antes de añadir complejidad organizacional. La integridad del producto y los resultados del cliente siguen siendo la medida de si el modelo funciona.',
-    originTitle: 'Dónde nace el proyecto',
-    originBody: 'Aquí es donde nació ELIMFILTERS. Mi padre, Don Víctor, y mi hermano menor, Juan Carlos, me escucharon y me apoyaron desde el inicio, junto al resto de nuestra familia y equipo.',
-    originAttribution: 'Víctor Abreu — Fundador, ELIMFILTERS',
+    essenceEyebrow: 'POR QUÉ EXISTE ELIMFILTERS',
+    essenceTitle: 'La filtración se trata como ingeniería de confiabilidad, no como una pieza genérica.',
+    essenceBody: 'La mayoría de las fallas por contaminación son prevenibles, no inevitables. Un filtro elegido solo por dimensiones no protege nada si no corresponde al fluido, la presión o el modo de falla real del activo que hay detrás — por eso cada decisión de ELIMFILTERS parte del equipo protegido, no de una página de catálogo. El mismo principio define cómo está construida la propia empresa: una Chief Executive Office humana junto con agentes ejecutivos de IA especializados, para que la capacidad técnica y la continuidad puedan escalar a largo plazo sin añadir complejidad organizacional por sí misma.',
+    cards: [
+      {
+        title: 'Quiénes Somos',
+        body: 'Filtración industrial diseñada alrededor del activo: cinco sistemas de protección, nueve tecnologías propietarias y un proceso de validación basado en aplicación real.',
+        href: '/about/who-we-are',
+      },
+      {
+        title: 'Liderazgo',
+        body: 'Autoridad ejecutiva humana combinada con funciones ejecutivas especializadas operadas por agentes de IA, bajo un marco formal de responsabilidad y autoridad delegada.',
+        href: '/about/leadership',
+      },
+      {
+        title: 'Filosofía de Ingeniería',
+        body: 'Decisiones de ingeniería regidas por evidencia, validación física e integridad técnica, no por afirmaciones comerciales genéricas.',
+        href: '/about/philosophy',
+      },
+    ],
   } : {
-    heroTitle: 'Who We Are',
+    heroTitle: 'About ELIMFILTERS',
     heroLead: 'ELIMFILTERS® is an industrial filtration engineering organization focused on protecting critical assets through disciplined contamination control, application intelligence, validated product architecture, and reliable commercial execution.',
-    identityTitle: 'Industrial filtration engineered around the asset',
-    identityBody: 'The filter is the means. Asset protection is the objective. ELIMFILTERS develops filtration solutions around the operating condition of the protected equipment, connecting technical knowledge, product architecture, qualified manufacturing, validation, application intelligence, and market execution.',
-    systemsTitle: 'What We Protect',
-    systemsLead: 'Our technical architecture is organized around five protection systems that reflect the major contamination-control functions of mobile and industrial equipment.',
-    philosophyTitle: 'Engineering Philosophy',
-    philosophyBody: 'Engineering decisions are governed by evidence, application context, physical validation, technical integrity, and the operating value of the protected asset. Artificial intelligence may support analysis and execution, but it does not replace physical validation, traceability, or professional engineering judgment.',
-    structureTitle: 'Corporate Structure',
-    networkTitle: 'Commercial Partner Network',
-    networkBody: 'Qualified commercial partners extend ELIMFILTERS technical capability, product access, inventory strategy, customer relationships, and local market execution.',
-    knowledgeTitle: 'Knowledge Resources',
-    knowledgeBody: 'Technical knowledge on filtration standards, contamination control, application behavior, product intelligence, operating conditions, and asset-protection principles.',
-    closingTitle: 'Built for capability, not apparent headcount.',
-    closingBody: 'Our operating model is designed to scale competence, speed, continuity, and technical discipline before adding organizational complexity. Product integrity and customer outcomes remain the measure of whether the model works.',
-    originTitle: 'Where the project was born',
-    originBody: 'This is where ELIMFILTERS took shape. My father, Don Víctor, and my younger brother, Juan Carlos, listened and stood behind me from the beginning, alongside the rest of our family and team.',
-    originAttribution: 'Víctor Abreu — Founder, ELIMFILTERS',
+    essenceEyebrow: 'WHY ELIMFILTERS EXISTS',
+    essenceTitle: 'Filtration treated as reliability engineering, not a commodity part.',
+    essenceBody: 'Most contamination failures are preventable, not inevitable. A filter chosen by dimensions alone protects nothing if it doesn’t match the fluid, the pressure, or the real failure mode of the asset behind it — which is why every ELIMFILTERS decision starts from the protected equipment, not from a catalog page. The same principle shapes how the company itself is built: a human Chief Executive Office paired with specialized executive AI agents, so technical capability and continuity can scale for the long term without adding organizational complexity for its own sake.',
+    cards: [
+      {
+        title: 'Who We Are',
+        body: 'Industrial filtration engineered around the asset: five protection systems, nine proprietary technologies, and an application-based validation process.',
+        href: '/about/who-we-are',
+      },
+      {
+        title: 'Leadership',
+        body: 'Human executive authority combined with specialized executive functions operated by AI agents, under a formal framework of accountability and delegated authority.',
+        href: '/about/leadership',
+      },
+      {
+        title: 'Engineering Philosophy',
+        body: 'Engineering decisions governed by evidence, physical validation, and technical integrity, not generic commercial claims.',
+        href: '/about/philosophy',
+      },
+    ],
   };
 
   return (
     <main id="main-content" style={main}>
-      <PageHeader currentPage="About" />
+      <PageHeader currentPage={isSpanish ? 'Acerca de' : 'About'} />
 
       <section style={heroSection}>
         <div aria-hidden="true" style={heroImage} />
@@ -86,129 +72,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <AboutSubnav />
-
-      <section id="who-we-are" style={lightSection}>
+      <section style={essenceSection}>
         <div style={wrap}>
-          <p style={darkEyebrow}>ELIMFILTERS · ASSET PROTECTION SYSTEMS</p>
-          <h2 style={darkTitle}>{copy.identityTitle}</h2>
-          <p style={darkBody}>{copy.identityBody}</p>
+          <p style={eyebrow}>{copy.essenceEyebrow}</p>
+          <h2 style={essenceTitle}>{copy.essenceTitle}</h2>
+          <p style={essenceBody}>{copy.essenceBody}</p>
         </div>
       </section>
 
-      <section style={originSection}>
-        <div style={{ ...wrap, ...originGrid }}>
-          <div style={originImageStack}>
-            <div style={originImageShell}>
-              <img src="/images/about-origin-idea.jpg" alt={copy.originAttribution} style={originImage} />
-            </div>
-            <div style={originImageShell}>
-              <img src="/images/about-origin-first-meeting.jpg" alt={copy.originAttribution} style={originImage} />
-            </div>
-          </div>
-          <div>
-            <p style={eyebrow}>{isSpanish ? 'ORIGEN' : 'ORIGIN'}</p>
-            <h2 style={sectionTitle}>{copy.originTitle}</h2>
-            <p style={{ ...sectionLead, marginTop: '1.5rem' }}>{copy.originBody}</p>
-            <p style={originAttributionStyle}>{copy.originAttribution}</p>
-          </div>
-        </div>
-      </section>
-
-      <section style={darkSection}>
+      <section style={cardsSection}>
         <div style={wrap}>
-          <p style={eyebrow}>{copy.systemsTitle}</p>
-          <h2 style={sectionTitle}>{copy.systemsLead}</h2>
-          <div style={systemsGrid}>
-            {SYSTEMS.map((system, index) => (
-              <article key={system} style={systemCard}>
-                <span style={number}>{String(index + 1).padStart(2, '0')}</span>
-                <h3 style={cardTitle}>{system}</h3>
-              </article>
+          <div style={cardsGrid}>
+            {copy.cards.map((card) => (
+              <Link key={card.href} href={card.href} style={cardLink}>
+                <h2 style={cardTitle}>{card.title}</h2>
+                <p style={cardBody}>{card.body}</p>
+                <span style={exploreLabel}>{isSpanish ? 'LEER MÁS →' : 'READ MORE →'}</span>
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="engineering-philosophy" style={philosophySection}>
-        <div style={wrap}>
-          <p style={eyebrow}>{copy.philosophyTitle}</p>
-          <h2 style={sectionTitle}>{isSpanish ? 'Ingeniería antes que marketing.' : 'Engineering before marketing.'}</h2>
-          <p style={sectionLead}>{copy.philosophyBody}</p>
-          <Link href="/about/philosophy" style={textLink}>{isSpanish ? 'Leer la filosofía completa →' : 'Read the full engineering philosophy →'}</Link>
-        </div>
-      </section>
-
-      <section style={corporateSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>{copy.structureTitle}</p>
-          <ul style={structureList}>
-            <li><strong style={label}>{isSpanish ? 'Propietario de la Marca' : 'Brand Owner'}:</strong> Kleo Technology LLC</li>
-            <li><strong style={label}>{isSpanish ? 'Sede Legal' : 'Legal Headquarters'}:</strong> Frisco, Texas, USA</li>
-            <li><strong style={label}>{isSpanish ? 'Modelo Operativo' : 'Operating Model'}:</strong> {isSpanish ? 'Operación global distributor-first con capacidad coordinada para cuentas estratégicas' : 'Distributor-first global operations with coordinated strategic-account capability'}</li>
-          </ul>
-          <div style={twoCol}>
-            <div>
-              <p style={eyebrow}>{copy.networkTitle}</p>
-              <p style={bodyText}>{copy.networkBody}</p>
-              <Link href="/distributors" style={textLink}>{isSpanish ? 'Explorar Red de Socios Comerciales →' : 'Explore Commercial Partner Network →'}</Link>
-            </div>
-            <div>
-              <p style={eyebrow}>{copy.knowledgeTitle}</p>
-              <p style={bodyText}>{copy.knowledgeBody}</p>
-              <Link href="/knowledge-center/" style={textLink}>{isSpanish ? 'Acceder al Centro de Conocimiento →' : 'Access Knowledge Center →'}</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section style={logisticsSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>{isSpanish ? 'LOGÍSTICA GLOBAL' : 'GLOBAL LOGISTICS'}</p>
-          <h2 style={sectionTitle}>
-            {isSpanish ? 'Del centro logístico a cada distribuidor.' : 'From the logistics center to every distributor.'}
-          </h2>
-          <p style={sectionLead}>
-            {isSpanish
-              ? 'Preparación y despacho de contenedores desde nuestro centro logístico hacia la red de distribuidores.'
-              : 'Container preparation and dispatch from our logistics center to the distributor network.'}
-          </p>
-          <div style={presenceGrid}>
-            {LOGISTICS_PHOTOS.map((src) => (
-              <div key={src} style={presenceCard}>
-                <img src={src} alt="" style={presenceImage} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={presenceSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>{isSpanish ? 'PRESENCIA COMERCIAL' : 'COMMERCIAL PRESENCE'}</p>
-          <h2 style={sectionTitle}>
-            {isSpanish ? 'Junto a nuestros distribuidores.' : 'Alongside our distributors.'}
-          </h2>
-          <p style={sectionLead}>
-            {isSpanish
-              ? 'Ferias comerciales y capacitaciones donde acompañamos directamente a nuestra red de distribuidores.'
-              : 'Trade shows and training events where we work directly alongside our distributor network.'}
-          </p>
-          <div style={presenceGrid}>
-            {DISTRIBUTOR_PRESENCE_PHOTOS.map((src) => (
-              <div key={src} style={presenceCard}>
-                <img src={src} alt="" style={presenceImage} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={closingSection}>
-        <div style={wrap}>
-          <p style={eyebrow}>CAPABILITY BEFORE COMPLEXITY</p>
-          <h2 style={closingTitle}>{copy.closingTitle}</h2>
-          <p style={closingBody}>{copy.closingBody}</p>
         </div>
       </section>
     </main>
@@ -217,41 +99,18 @@ export default function AboutPage() {
 
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%' };
-const heroSection: CSSProperties = { minHeight: '76vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem,10vw,9rem) clamp(1.25rem,6vw,6rem)' };
+const heroSection: CSSProperties = { minHeight: '58vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem,10vw,9rem) clamp(1.25rem,6vw,6rem)' };
 const heroImage: CSSProperties = { position: 'absolute', inset: 0, backgroundImage: 'url(/images/grupo-filters.avif)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: .38 };
 const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.48) 58%,rgba(0,0,0,.2)),radial-gradient(circle at 80% 15%,rgba(255,241,45,.14),transparent 32%)' };
 const eyebrow: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', fontWeight: 700, letterSpacing: '.16em', margin: '0 0 1rem', textTransform: 'uppercase', position: 'relative', zIndex: 2 };
-const darkEyebrow: CSSProperties = { ...eyebrow, color: '#6c6100' };
-const heroTitle: CSSProperties = { position: 'relative', zIndex: 2, fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-.05em', lineHeight: .92, fontSize: 'clamp(3.2rem,7vw,7rem)', margin: 0, textTransform: 'uppercase' };
-const heroLead: CSSProperties = { position: 'relative', zIndex: 2, marginTop: '1.5rem', maxWidth: '900px', color: 'rgba(255,255,255,.82)', fontSize: 'clamp(1rem,1.5vw,1.25rem)', lineHeight: 1.75, fontWeight: 550 };
-const lightSection: CSSProperties = { background: '#f2f2ef', color: '#111', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
-const darkSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)' };
-const darkTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '850px', margin: '0 0 1.5rem', textTransform: 'uppercase' };
-const darkBody: CSSProperties = { maxWidth: '880px', color: '#3d3d3a', lineHeight: 1.8, fontSize: '1.05rem' };
-const sectionTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 1, letterSpacing: '-.035em', maxWidth: '950px', margin: '0 0 1rem', textTransform: 'uppercase' };
-const sectionLead: CSSProperties = { color: 'rgba(255,255,255,.68)', lineHeight: 1.75, maxWidth: '900px', fontSize: '1.03rem' };
-const systemsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)', marginTop: '2.5rem' };
-const systemCard: CSSProperties = { background: '#080808', padding: '1.5rem', minHeight: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' };
-const number: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', letterSpacing: '.14em', fontWeight: 700 };
-const cardTitle: CSSProperties = { margin: '1.5rem 0 0', fontFamily: 'var(--font-display)', fontSize: '1.05rem', lineHeight: 1.2, textTransform: 'uppercase' };
-const philosophySection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', scrollMarginTop: '90px' };
-const corporateSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
-const structureList: CSSProperties = { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem', color: 'rgba(255,255,255,.72)', lineHeight: 1.65 };
-const label: CSSProperties = { color: '#FFF12D' };
-const twoCol: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(2rem,6vw,5rem)', marginTop: '3rem' };
-const bodyText: CSSProperties = { color: 'rgba(255,255,255,.66)', lineHeight: 1.75 };
-const textLink: CSSProperties = { display: 'inline-block', marginTop: '1rem', color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.05em' };
-const originSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
-const originGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
-const originImageStack: CSSProperties = { display: 'flex', flexDirection: 'column', gap: '1rem' };
-const originImageShell: CSSProperties = { aspectRatio: '4 / 3', overflow: 'hidden', background: '#080808', border: '1px solid rgba(255,255,255,.08)' };
-const originImage: CSSProperties = { width: '100%', height: '100%', objectFit: 'cover' };
-const originAttributionStyle: CSSProperties = { marginTop: '1.5rem', color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '.82rem', letterSpacing: '.1em', textTransform: 'uppercase' };
-const logisticsSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
-const presenceSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
-const presenceGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '1rem', marginTop: '2.5rem' };
-const presenceCard: CSSProperties = { aspectRatio: '4 / 3', overflow: 'hidden', background: '#080808', border: '1px solid rgba(255,255,255,.08)' };
-const presenceImage: CSSProperties = { width: '100%', height: '100%', objectFit: 'cover' };
-const closingSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,241,45,.16)' };
-const closingTitle: CSSProperties = { ...sectionTitle, maxWidth: '900px' };
-const closingBody: CSSProperties = { ...sectionLead, maxWidth: '850px' };
+const heroTitle: CSSProperties = { position: 'relative', zIndex: 2, fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-.05em', lineHeight: .92, fontSize: 'clamp(2.6rem,6vw,5.5rem)', margin: 0, textTransform: 'uppercase' };
+const heroLead: CSSProperties = { position: 'relative', zIndex: 2, marginTop: '1.5rem', maxWidth: '820px', color: 'rgba(255,255,255,.82)', fontSize: 'clamp(1rem,1.5vw,1.25rem)', lineHeight: 1.75, fontWeight: 550 };
+const essenceSection: CSSProperties = { background: '#050505', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
+const essenceTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem,3.4vw,3rem)', lineHeight: 1.05, letterSpacing: '-.03em', maxWidth: '900px', margin: '0 0 1.25rem', textTransform: 'uppercase' };
+const essenceBody: CSSProperties = { color: 'rgba(255,255,255,.72)', lineHeight: 1.8, maxWidth: '860px', fontSize: '1.03rem' };
+const cardsSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
+const cardsGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1px', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.08)' };
+const cardLink: CSSProperties = { background: '#080808', padding: '2.25rem 2rem', textDecoration: 'none', color: '#fff', display: 'flex', flexDirection: 'column' };
+const cardTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1.3rem', letterSpacing: '-.02em', textTransform: 'uppercase', margin: '0 0 1rem' };
+const cardBody: CSSProperties = { color: 'rgba(255,255,255,.68)', fontSize: '.95rem', lineHeight: 1.7, margin: 0, flexGrow: 1 };
+const exploreLabel: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.14em', fontSize: '.68rem', marginTop: '1.5rem', display: 'inline-block' };
