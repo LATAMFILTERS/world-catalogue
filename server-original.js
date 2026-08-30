@@ -3075,6 +3075,23 @@ app.get('/api/admin/logistics-audit', adminLimiter, requireAdmin, async (req, re
       populatedCounts = populated.rows[0];
     }
 
+    // Check whether packaging data is already nested inside the generic
+    // enrichment_data / specs JSONB columns before we add new dedicated
+    // columns, per governance rule "reutiliza campos equivalentes".
+    const jsonbSample = await client.query(`
+      SELECT sku, enrichment_data, specs
+      FROM elimfilters_catalog
+      WHERE (enrichment_data IS NOT NULL AND enrichment_data::text <> '{}')
+         OR (specs IS NOT NULL AND specs::text <> '{}')
+      LIMIT 8
+    `);
+    const jsonbNonEmptyCounts = await client.query(`
+      SELECT
+        COUNT(*) FILTER (WHERE enrichment_data IS NOT NULL AND enrichment_data::text <> '{}') AS enrichment_data_non_empty,
+        COUNT(*) FILTER (WHERE specs IS NOT NULL AND specs::text <> '{}') AS specs_non_empty
+      FROM elimfilters_catalog
+    `);
+
     res.json({
       total_skus: parseInt(total.rows[0].count, 10),
       catalog_table_columns: cols.rows,
@@ -3082,6 +3099,8 @@ app.get('/api/admin/logistics-audit', adminLimiter, requireAdmin, async (req, re
       existing_target_fields: existingTargetFields,
       missing_target_fields: missingTargetFields,
       populated_counts: populatedCounts,
+      jsonb_non_empty_counts: jsonbNonEmptyCounts.rows[0],
+      jsonb_sample: jsonbSample.rows,
     });
   } catch (e) {
     console.error('[logistics-audit]', e.message);
