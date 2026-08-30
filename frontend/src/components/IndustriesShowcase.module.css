@@ -90,15 +90,16 @@
 }
 
 .cardLabel,
-.animationLabel {
+.animationIndustryLabel,
+.animationTechnologyLabel {
   font-family: Barlow, Arial, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  color: #fff;
 }
 
 .cardLabel {
   font-size: 1.1rem;
+  color: #fff;
 }
 
 .arrowButton {
@@ -159,13 +160,13 @@
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
   height: 100%;
   overflow: hidden;
 }
 
 .animationColumn {
   position: relative;
+  min-width: 0;
   height: 100%;
   overflow: hidden;
   background: #000;
@@ -189,16 +190,37 @@
   will-change: transform;
 }
 
-.animationLabel {
+.animationIndustryLabel {
   position: absolute;
   z-index: 3;
-  left: clamp(0.65rem, 1.5vw, 1.15rem);
-  bottom: clamp(1rem, 2vw, 1.5rem);
-  right: 0.75rem;
-  font-size: clamp(0.72rem, 1.25vw, 1.05rem);
-  line-height: 1.1;
-  letter-spacing: 0.03em;
+  left: 50%;
+  bottom: clamp(3.6rem, 7vh, 5.2rem);
+  transform: translateX(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  max-height: 36vh;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(0.52rem, 0.7vw, 0.74rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+}
+
+.animationTechnologyLabel {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  bottom: clamp(0.75rem, 1.8vw, 1.25rem);
+  transform: translateX(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  color: #fff12d;
+  font-size: clamp(0.5rem, 0.7vw, 0.78rem);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 @media (max-width: 720px) {
@@ -220,13 +242,14 @@
     top: 1.25rem;
   }
 
-  .animationLabel {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    left: 50%;
-    right: auto;
-    bottom: 1rem;
-    font-size: 0.72rem;
+  .animationIndustryLabel {
+    display: none;
+  }
+
+  .animationTechnologyLabel {
+    bottom: 0.6rem;
+    font-size: 0.48rem;
+    letter-spacing: 0.04em;
   }
 
   .arrowButton {
