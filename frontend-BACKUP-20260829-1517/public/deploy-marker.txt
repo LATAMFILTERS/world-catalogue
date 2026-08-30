@@ -1,7 +1,0 @@
-Render frontend deploy marker
-Purpose: force frontend rebuild from current main after product family updates.
-Last requested by Victor: 2026-08-15
-Deployment trigger: technologies HYDROCORE/TURBOCORE visual correction from main commit 19db0fc64d991aa871ba05364ee09c122e07c3a2.
-Expected technology updates:
-- /technologies/ includes HYDROCORE™ in the technology portfolio.
-- /technologies/turbocore/ uses the corrected turbine-specific hero asset.
