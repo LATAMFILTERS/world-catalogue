@@ -1,65 +1,63 @@
-export const CANONICAL_TECHNOLOGIES = {
+﻿export const CANONICAL_TECHNOLOGIES = {
   macrocore: {
     slug: 'macrocore',
-    name: 'MACROCORE™',
+    name: 'MACROCOREâ„¢',
     domain: 'air-intake',
     role: 'Primary and secondary engine air filtration',
   },
   microkappa: {
     slug: 'microkappa',
-    name: 'MICROKAPPA™',
+    name: 'MICROKAPPAâ„¢',
     domain: 'air-intake',
     role: 'Cabin air filtration',
   },
   syntrax: {
     slug: 'syntrax',
-    name: 'SYNTRAX™',
+    name: 'SYNTRAXâ„¢',
     domain: 'lubrication',
     role: 'Lubrication and oil filtration',
   },
   syntapore: {
     slug: 'syntapore',
-    name: 'SYNTAPORE™',
+    name: 'SYNTAPOREâ„¢',
     domain: 'fuel-cleanliness',
     role: 'Primary and secondary spin-on/cartridge fuel filtration',
   },
   nanoforce: {
     slug: 'nanoforce',
-    name: 'NANOFORCE™',
+    name: 'NANOFORCEâ„¢',
     domain: 'hydraulic',
     role: 'Hydraulic filtration',
   },
   thermacore: {
     slug: 'thermacore',
-    name: 'THERMACORE™',
+    name: 'THERMACOREâ„¢',
     domain: 'cooling-system',
     role: 'Cooling-system filtration',
   },
   intekcore: {
     slug: 'intekcore',
-    name: 'INTEKCORE™',
+    name: 'INTEKCOREâ„¢',
     domain: 'air-intake',
     role: 'Air-cleaner housings and sealing architecture',
   },
   drycore: {
     slug: 'drycore',
-    name: 'DRYCORE™',
+    name: 'DRYCOREâ„¢',
     domain: 'air-intake',
     role: 'Pneumatic brake-system air dryer filtration',
   },
   hydrocore: {
     slug: 'hydrocore',
-    name: 'HYDROCORE™',
+    name: 'HYDROCOREâ„¢',
     domain: 'fuel-cleanliness',
     role: 'Fuel/water separation for approved standard non-turbine separators, including drain and transparent-bowl configurations',
   },
   turbocore: {
     slug: 'turbocore',
-    name: 'TURBOCORE™',
+    name: 'TURBOCOREâ„¢',
     domain: 'fuel-cleanliness',
     role: 'Turbine-style fuel/water separation exclusively for FH and FG series systems',
-<<<<<<< HEAD
-=======
   },
 } as const;
 
@@ -75,3 +73,4 @@ export function isCanonicalTechnology(value: string): value is TechnologySlug {
 export function getCanonicalTechnology(slug: string): CanonicalTechnology | undefined {
   return isCanonicalTechnology(slug) ? CANONICAL_TECHNOLOGIES[slug] : undefined;
 }
+
