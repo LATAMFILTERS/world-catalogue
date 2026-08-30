@@ -46,91 +46,93 @@ export function IndustriesShowcase() {
     const section = sectionRef.current;
     const overlay = overlayRef.current;
     const columns = columnsRef.current.filter(Boolean) as HTMLDivElement[];
-
     if (!section || !overlay || columns.length !== COLUMN_COUNT) return;
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      gsap.set(overlay, { autoAlpha: 0, pointerEvents: 'none' });
-      return;
-    }
 
     const ctx = gsap.context(() => {
       const allPanels = panelsRef.current.flat().filter(Boolean) as HTMLAnchorElement[];
 
+      gsap.set(overlay, { autoAlpha: 1, display: 'block' });
       gsap.set(columns, { height: '100%' });
-      gsap.set(allPanels, { xPercent: -105, autoAlpha: 1 });
-      gsap.set(overlay, { autoAlpha: 1 });
+      gsap.set(allPanels, { xPercent: -110, autoAlpha: 1 });
 
       const tl = gsap.timeline({
         paused: true,
-        defaults: { ease: 'power3.inOut' },
         onComplete: () => {
-          gsap.set(overlay, { autoAlpha: 0, pointerEvents: 'none' });
+          gsap.set(overlay, { autoAlpha: 0, display: 'none' });
         },
       });
 
-      // Each image must visibly enter, settle fully inside its column,
-      // then continue out to the right before the next image takes over.
       for (let imageIndex = 0; imageIndex < IMAGES_PER_COLUMN; imageIndex += 1) {
         const currentRow = panelsRef.current
           .map((column) => column[imageIndex])
           .filter(Boolean) as HTMLAnchorElement[];
 
-        const rowLabel = `row-${imageIndex}`;
-        tl.addLabel(rowLabel, imageIndex === 0 ? 0 : '>-0.25');
+        const rowStart = imageIndex === 0 ? 0 : '>-0.35';
 
         tl.to(
           currentRow,
           {
             xPercent: 0,
-            duration: 0.95,
-            stagger: { each: 0.07, from: 'start' },
+            duration: 1.15,
+            stagger: { each: 0.1, from: 'start' },
             ease: 'power3.out',
           },
-          rowLabel,
+          rowStart,
         );
 
         tl.to(
           currentRow,
           {
-            xPercent: 105,
-            duration: 0.95,
-            stagger: { each: 0.07, from: 'start' },
+            xPercent: 110,
+            duration: 1.05,
+            stagger: { each: 0.1, from: 'start' },
             ease: 'power3.in',
           },
-          '+=0.18',
+          '+=0.28',
         );
       }
 
-      // Only after the final image has completely left do the black
-      // technology columns retract, from the last technology to the first.
       tl.to(
         columns,
         {
           height: '0%',
-          duration: 1.15,
-          stagger: { each: 0.09, from: 'end' },
+          duration: 1.35,
+          stagger: { each: 0.1, from: 'end' },
           ease: 'power3.inOut',
         },
-        '+=0.15',
+        '+=0.2',
       );
 
       let hasPlayed = false;
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting && !hasPlayed) {
-            hasPlayed = true;
-            tl.play(0);
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.55 },
-      );
+      let raf = 0;
 
-      observer.observe(section);
+      const tryStart = () => {
+        if (hasPlayed) return;
+        const rect = section.getBoundingClientRect();
+        const triggerLine = window.innerHeight * 0.82;
+        if (rect.top <= triggerLine && rect.bottom > window.innerHeight * 0.2) {
+          hasPlayed = true;
+          tl.play(0);
+          window.removeEventListener('scroll', onScroll);
+          window.removeEventListener('resize', onScroll);
+        }
+      };
 
-      return () => observer.disconnect();
+      const onScroll = () => {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(tryStart);
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      requestAnimationFrame(tryStart);
+
+      return () => {
+        cancelAnimationFrame(raf);
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onScroll);
+        tl.kill();
+      };
     }, section);
 
     return () => ctx.revert();
@@ -175,7 +177,6 @@ export function IndustriesShowcase() {
                   <span className={styles.animationIndustryLabel}>{industry.title}</span>
                 </a>
               ))}
-
               <span className={styles.animationTechnologyLabel}>{technology.name}</span>
             </div>
           ))}
@@ -190,32 +191,17 @@ export function IndustriesShowcase() {
         </div>
 
         <div className={styles.carouselWrap}>
-          <button
-            type="button"
-            aria-label="Scroll industries left"
-            onClick={() => scrollByCards(-1)}
-            className={`${styles.arrowButton} ${styles.arrowLeft}`}
-          >
+          <button type="button" aria-label="Scroll industries left" onClick={() => scrollByCards(-1)} className={`${styles.arrowButton} ${styles.arrowLeft}`}>
             {'<'}
           </button>
-          <button
-            type="button"
-            aria-label="Scroll industries right"
-            onClick={() => scrollByCards(1)}
-            className={`${styles.arrowButton} ${styles.arrowRight}`}
-          >
+          <button type="button" aria-label="Scroll industries right" onClick={() => scrollByCards(1)} className={`${styles.arrowButton} ${styles.arrowRight}`}>
             {'>'}
           </button>
 
           <div ref={trackRef} className={styles.track}>
             {INDUSTRIES.map((industry) => (
               <a key={industry.slug} href={`/industries/${industry.slug}`} className={styles.card}>
-                <div
-                  role="img"
-                  aria-label={industry.title}
-                  className={styles.cardImage}
-                  style={{ backgroundImage: `url(${industry.image})` }}
-                />
+                <div role="img" aria-label={industry.title} className={styles.cardImage} style={{ backgroundImage: `url(${industry.image})` }} />
                 <div className={styles.cardShade} />
                 <div className={styles.cardLabelWrap}>
                   <span className={styles.cardLabel}>{industry.title}</span>
