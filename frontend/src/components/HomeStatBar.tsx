@@ -11,7 +11,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   useEffect(() => {
     if (!inView || !ref.current) return;
     const controls = animate(0, value, {
-      duration: 1.4,
+      duration: 2,
       ease: [0.16, 1, 0.3, 1],
       onUpdate(v) {
         if (ref.current) ref.current.textContent = `${Math.round(v)}${suffix}`;
@@ -29,9 +29,9 @@ export function HomeStatBar() {
   return (
     <section
       style={{
-        background: 'var(--surface-light)',
+        background: '#000',
         padding: 'clamp(2.5rem, 5vw, 3.5rem) clamp(1.25rem, 6vw, 6rem)',
-        borderBottom: '1px solid var(--border-on-light)',
+        borderBottom: '1px solid rgba(255,255,255,0.1)',
       }}
     >
       <div
@@ -51,14 +51,14 @@ export function HomeStatBar() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            style={{ textAlign: 'center' }}
+            style={{ width: '100%', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
           >
             <p
               style={{
                 fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
                 fontWeight: 700,
-                fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-                color: 'var(--ink)',
+                fontSize: 'clamp(3rem, 6vw, 4.25rem)',
+                color: '#fff',
                 margin: '0 0 0.4rem',
                 fontVariantNumeric: 'tabular-nums',
               }}
@@ -68,11 +68,11 @@ export function HomeStatBar() {
             <p
               style={{
                 fontFamily: 'Barlow, Arial, sans-serif',
-                fontSize: '0.78rem',
+                fontSize: '0.92rem',
                 fontWeight: 600,
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
-                color: 'var(--ink-3)',
+                color: 'rgba(255,255,255,0.55)',
                 margin: 0,
               }}
             >

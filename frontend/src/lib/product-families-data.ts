@@ -103,6 +103,13 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/cabin-hero.avif',
     ...relationships('cabin-filters'),
   },
+  'fuel-turbine': {
+    key: 'fuel-turbine', name: 'Turbine Fuel Separation', slug: 'fuel-turbine', dutyClass: 'HD', hdPrefix: 'ET9', ldPrefix: null,
+    purpose: 'Turbine Series FH and FG fuel-separation housings and replacement elements for approved turbine-style fuel/water separation architecture, including Fleetguard fuel processor housings.',
+    engineering: 'TURBOCORE™ governs the turbine-style housing architecture (900FH, 902FH, 1000FH, 1002FH) and dedicated 2010/2020/2040-series replacement elements, paired with HYDROCORE™ coalescing separation media.',
+    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: '/images/fuel-turbine-hero.avif',
+    ...relationships('fuel-turbine'),
+  },
   'air-dryer-filters': {
     key: 'air-dryer-filters', name: 'Air Dryer Filters', slug: 'air-dryer-filters', dutyClass: 'HD', hdPrefix: 'ED4', ldPrefix: null,
     purpose: 'Air dryer elements remove water vapor from pneumatic braking and instrument-air systems.',

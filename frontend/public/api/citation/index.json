@@ -1,8 +1,8 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-08-19T03:37:15.215Z",
-    "entity_count": 68,
+    "generated": "2026-08-30T04:33:12.007Z",
+    "entity_count": 69,
     "endpoint_base": "/api/citation",
     "query_patterns": {
       "entity_lookup": "/api/citation/[KEY].json",
@@ -55,22 +55,23 @@
       "domain": "Fuel",
       "citation": {
         "source_url": "https://elimfilters.com/knowledge-center/technologies/hydrocore/",
-        "concept": "HYDROCORE Fuel Water Separation Technology",
-        "version": "2.0",
-        "last_updated": "2026-08-18",
-        "content_hash": "sha256:9d20c1e782acb225d51f28785616ce4f8b0189ed8e63b2c0ee8b5ec5a2187ca9"
+        "concept": "HYDROCORE Standard Fuel Water Separation Technology",
+        "version": "3.0",
+        "last_updated": "2026-08-24",
+        "content_hash": "sha256:fbc6194a3aa10ad469fe774c0bd1599a4101c591dd3cb22d1b2702e0787cd541"
       },
       "canonical": {
-        "definition": "HYDROCORE is the ELIMFILTERS fuel/water separation architecture across approved spin-on, cartridge, FH and FG separator applications.",
-        "systems": "Fuel Cleanliness Protection; approved fuel/water separator applications including spin-on, cartridge, FH and FG architectures.",
-        "failure_impact": "Inadequate water separation can allow free or emulsified water to reach downstream injectors and high-pressure pumps, increasing erosion, corrosion and cavitation risk.",
-        "related_standards": "Applicable fuel-water separation test methods, water-holding capacity and application requirements must be selected for the approved separator. The technology name alone does not imply a universal separation efficiency or certification claim.",
-        "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. HYDROCORE governs the water-separation function across approved separator architectures.",
-        "industrial_role": "HYDROCORE provides the fuel/water separation layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by flow, water-holding capacity, element rating, installation and maintenance requirements."
+        "definition": "HYDROCORE is the ELIMFILTERS fuel/water separation architecture for approved standard non-turbine separator filters, including drain and transparent-bowl configurations.",
+        "systems": "Fuel Cleanliness Protection; approved standard non-turbine fuel/water separator applications. FH and FG turbine-style systems are excluded � governed exclusively by TURBOCORE� (FUEL_TURBINE family).",
+        "failure_impact": "Inadequate water separation or incorrect drainage can allow water to reach downstream injectors and high-pressure pumps, increasing erosion, corrosion and cavitation risk.",
+        "related_standards": "Applicable fuel-water separation test methods, water-holding capacity and application requirements must be selected for the approved separator. The technology name alone does not imply a universal efficiency or certification claim.",
+        "related_technologies": "SYNTAPORE governs plain diesel-fuel particulate filtration. TURBOCORE exclusively governs FH and FG turbine-style fuel/water separator systems (FUEL_TURBINE family). HYDROCORE ES9 governs standard spin-on separators with drain or transparent bowl (FUEL_WATER_SEPARATOR family). HYDROCORE must never be assigned to FH or FG.",
+        "industrial_role": "HYDROCORE provides the standard non-turbine fuel/water separation layer of ELIMFILTERS Fuel Cleanliness Protection."
       },
       "relationships": {
         "related_technologies": [
-          "SYNTAPORE"
+          "SYNTAPORE",
+          "TURBOCORE"
         ]
       },
       "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md"
@@ -226,19 +227,20 @@
         "concept": "SYNTAPORE Fuel Filtration Technology",
         "version": "2.1",
         "last_updated": "2026-08-18",
-        "content_hash": "sha256:7c3ac1653621abba294fc4d24b9b8b154d4623965bc31763a91c192cc8f20d56"
+        "content_hash": "sha256:fe029cc39645941c03d2274fe105c2819af42d38594a7360941af62284006c1c"
       },
       "canonical": {
         "definition": "SYNTAPORE is the ELIMFILTERS diesel-fuel filtration architecture for primary, secondary and cartridge fuel-filter applications.",
         "systems": "Fuel Cleanliness Protection; approved diesel-fuel filtration applications.",
         "failure_impact": "Uncontrolled particulate contamination in diesel fuel can increase contamination exposure at pumps, injectors and other precision fuel-system components.",
         "related_standards": "Applicable fuel-filter test methods and application requirements must be selected for the approved system. The technology name alone does not imply a universal micron rating, efficiency, capacity or certification claim.",
-        "related_technologies": "HYDROCORE: Fuel/water separation architecture for approved spin-on, cartridge, FH and FG separator applications. SYNTAPORE governs general staged diesel-fuel particulate filtration only -- it does not perform a water-separation function and must not be represented as an engine-air technology.",
+        "related_technologies": "HYDROCORE: Standard non-turbine fuel/water separator architecture, including drain and transparent-bowl configurations. TURBOCORE: Turbine-style fuel/water separation exclusively for FH and FG series systems. SYNTAPORE governs plain staged diesel-fuel particulate filtration only.",
         "industrial_role": "SYNTAPORE provides the staged particulate-contamination control layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by the required filtration stage, efficiency, capacity, flow, pressure drop and protected fuel-system components."
       },
       "relationships": {
         "related_technologies": [
-          "HYDROCORE"
+          "HYDROCORE",
+          "TURBOCORE"
         ]
       },
       "vault_path": "elimfilters-vault\\01-technologies\\active\\SYNTAPORE.md"
@@ -298,6 +300,43 @@
       },
       "relationships": {},
       "vault_path": "elimfilters-vault\\01-technologies\\active\\THERMACORE.md"
+    },
+    "TURBOCORE": {
+      "key": "TURBOCORE",
+      "type": "technology",
+      "name": "TURBOCORE™",
+      "slug": "turbocore",
+      "status": "active",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [],
+      "domain": "Fuel",
+      "citation": {
+        "source_url": "https://elimfilters.com/knowledge-center/technologies/turbocore/",
+        "concept": "TURBOCORE FH and FG Turbine Fuel Water Separation Technology",
+        "version": "1.0",
+        "last_updated": "2026-08-24",
+        "content_hash": "sha256:63ae393ee277918543447cbed689f7a125da8bba783beee9217f9706f1acbb40"
+      },
+      "canonical": {
+        "definition": "TURBOCORE is the ELIMFILTERS turbine-style fuel/water separation technology exclusively for FH and FG series systems.",
+        "systems": "Fuel Cleanliness Protection; approved FH and FG turbine-style separator systems only.\n\nPRODUCTS\nFUEL_TURBINE family: 900FH, 902FH, 1000FH, 1002FH turbine housings; 2010/2020/2040 PM/SM/TM replacement elements; Fleetguard fuel processor housings.\n\nBOUNDARY\nTURBOCORE must not be assigned to standard non-turbine separator filters. HYDROCORE must not be assigned to FH or FG turbine systems.",
+        "failure_impact": null,
+        "related_standards": null,
+        "related_technologies": "SYNTAPORE governs plain fuel filtration. HYDROCORE governs approved standard non-turbine fuel/water separators, including drain and transparent-bowl configurations.\n\nRELATED_FAMILIES\nFUEL_TURBINE: Turbine Series FH/FG housings and 2010/2020/2040 replacement elements governed by TURBOCORE�.",
+        "industrial_role": "TURBOCORE provides the turbine-style fuel/water separation layer for approved FH and FG series systems within ELIMFILTERS Fuel Cleanliness Protection."
+      },
+      "relationships": {
+        "related_standards": [
+          "ASTM_D6304",
+          "ISO_12937"
+        ],
+        "related_technologies": [
+          "SYNTAPORE",
+          "HYDROCORE"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\01-technologies\\active\\TURBOCORE.md"
     },
     "AGRICULTURE": {
       "key": "AGRICULTURE",
@@ -1463,14 +1502,14 @@
         "concept": "ASTM D6304 Water in Petroleum Products",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:1b261f72fbbf8f3d4734ad5a44afb3f91698932bd8d79565a2b8c0e7800fc925"
+        "content_hash": "sha256:4ebb9b89c4c2623843248cdd75b524190521b8c95b0ddda84f612d349a27b714"
       },
       "canonical": {
         "definition": "ASTM D6304 is the standard test method for measuring water content in petroleum products using coulometric Karl Fischer titration, quantifying total water concentration in diesel fuel as mg/kg (ppm) by mass — providing the primary analytical tool for monitoring water contamination in fuel storage, delivery, and filtration systems against the EN 590 limit of 200 mg/kg.",
         "systems": "Diesel fuel quality monitoring in bulk storage tanks, vehicle fuel systems, marine fuel management, and oilfield fuel supply verification; used as the performance validation method for water-separating fuel filtration technologies",
         "failure_impact": "Diesel fuel above 200 mg/kg total water (ASTM D6304) or free water at any concentration above dissolved saturation (50–100 mg/kg) → water droplets entering common-rail injection system at 1,800–2,500 bar → cavitation erosion at injector nozzle tip and needle seat → spray pattern degradation → incomplete combustion and power loss | Without ASTM D6304 monitoring, water accumulation in storage tanks progresses to microbial growth and filter-plugging biomass formation before detection | Operational Impact: injector replacement $800–$4,000/unit; microbial contamination causes 30–40% of fuel filter failures in marine and remote-site diesel fleets.",
         "related_standards": "ISO 12937: ISO equivalent coulometric Karl Fischer method for water in petroleum products; European market compliance standard for EN 590 diesel water content verification; results equivalent to ASTM D6304",
-        "related_technologies": "HYDROCORE: Water-separating fuel filtration technology; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for HYDROCORE coalescing efficiency claims",
+        "related_technologies": "HYDROCORE: Water-separating fuel filtration technology\nTURBOCORE: Turbine-style fuel-separation technology for approved FH/FG systems; ASTM D6304 inlet/outlet comparison validates coalescing efficiency in turbine housings and 2010/2020/2040 replacement elements; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for HYDROCORE coalescing efficiency claims",
         "industrial_role": "ASTM D6304 is the enabling measurement standard for diesel fuel water contamination control — without coulometric Karl Fischer measurement, fleet operators cannot distinguish between dissolved water (safe) and free water (injector-damaging) contamination states, making ASTM D6304 tank monitoring the necessary diagnostic layer that determines when HYDROCORE water separation is required and whether it is performing to specification."
       },
       "relationships": {
@@ -1478,7 +1517,8 @@
           "ISO_12937"
         ],
         "applicable_to_technologies": [
-          "HYDROCORE"
+          "HYDROCORE",
+          "TURBOCORE"
         ],
         "applicable_to_industries": [
           "AGRICULTURE",
@@ -1647,14 +1687,14 @@
         "concept": "ISO 12937 Water in Petroleum Products",
         "version": "1.0",
         "last_updated": "2026-06-03",
-        "content_hash": "sha256:a6f8b8ce12cfa0373b618c77b91ee873cd8cdc27a783422a31ab012b6408a3cd"
+        "content_hash": "sha256:6cc6cc6cd100b87d778c492c4dde4983313d64e0c15159e7d314c14e6c8cb733"
       },
       "canonical": {
         "definition": "ISO 12937 is the international coulometric Karl Fischer titration standard for measuring water content in petroleum products as mg/kg (ppm), functionally equivalent to ASTM D6304 and serving as the European and international market reference method for EN 590 diesel fuel water content compliance and ISO 8217 marine fuel water management.",
         "systems": "Diesel fuel bulk storage quality monitoring, marine fuel management, power generation facility fuel quality verification, and international fleet fuel compliance programs in markets where EN 590 and ISO 8217 apply",
         "failure_impact": "Diesel fuel exceeding ISO 12937 EN 590 limit of 200 mg/kg total water → free water droplet formation above dissolved saturation (50–100 mg/kg) → free water entering common-rail injection at 1,800–2,500 bar → cavitation erosion of injector nozzle tip and needle seat geometry → spray pattern degradation and combustion inefficiency | In marine applications, water-contaminated fuel above 200 mg/kg triggers microbial growth in marine diesel tanks between voyages | Operational Impact: injector replacement $800–$4,000/unit; marine fuel tank microbial contamination causes complete fuel polishing events costing $10,000–$50,000 per vessel.",
         "related_standards": "ASTM D6304: North American equivalent coulometric Karl Fischer method; same electrochemical principle, equivalent results; cross-reference acknowledged in both standards; cited in North American vs European regulatory contexts for identical contamination scenarios",
-        "related_technologies": "HYDROCORE: Coalescing water-separating fuel filtration; ISO 12937 inlet/outlet water content comparison is a field verification method for separator performance in European and international markets. Applicable separation ratings must be tied to the specific approved element and test basis, not presented as a universal efficiency claim.",
+        "related_technologies": "HYDROCORE: Coalescing water-separating fuel filtration\nTURBOCORE: Turbine-style fuel-separation technology for approved FH/FG systems; ISO 12937 inlet/outlet comparison validates coalescing efficiency in turbine housings and replacement elements in EN 590/ISO 8217 jurisdictions; ISO 12937 inlet/outlet water content comparison is a field verification method for separator performance in European and international markets. Applicable separation ratings must be tied to the specific approved element and test basis, not presented as a universal efficiency claim.",
         "industrial_role": "ISO 12937 is the European and international market measurement standard enabling diesel fuel water contamination control — fleet operators and fuel system engineers in EN 590 and ISO 8217 jurisdictions depend on ISO 12937 testing to detect water accumulation before it exceeds injector protection thresholds and to validate that water-separating filtration is performing to specification."
       },
       "relationships": {
@@ -1662,7 +1702,8 @@
           "ASTM_D6304"
         ],
         "applicable_to_technologies": [
-          "HYDROCORE"
+          "HYDROCORE",
+          "TURBOCORE"
         ],
         "applicable_to_industries": [
           "MARINE",
@@ -2972,14 +3013,14 @@
         "concept": "Turbine Fuel Separation Product Family",
         "version": "2.0",
         "last_updated": "2026-08-18",
-        "content_hash": "sha256:96a66b73338efa6fd8e9a2b45cd09c267b08487834db891d0bec954512469a3b"
+        "content_hash": "sha256:eda13800d7202cf3cc0ddfb900723cbf5373feefb61cb1ca12e20312aa0b877f"
       },
       "canonical": {
         "definition": "Turbine Fuel Separation — the HYDROCORE™-technology filter element family for approved\nTurbine Series FH and FG fuel-separation housings and their dedicated 2010/2020/2040-series\nreplacement elements, covering 13 SKUs verified directly against production.",
         "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\nfuel/water-separation technology in its Turbine Series FH/FG architecture",
         "failure_impact": "Using a standard (non-turbine) separator element in a Turbine Series FH/FG housing, or\nvice versa, can compromise the staged separation and filtration performance the housing\nwas engineered around.",
         "related_standards": "ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |\nISO 12937: Petroleum products water determination",
-        "related_technologies": "HYDROCORE: Fuel/water separation architecture governing both this family (Turbine Series\nFH/FG) and the standard (non-turbine) FUEL_WATER_SEPARATOR family -- distinct product\nfamilies under the same technology because housing/element architecture differs |\nSYNTAPORE: Plain primary/secondary fuel filtration, no separation function (FUEL_PRIMARY\nfamily)",
+        "related_technologies": "TURBOCORE: Turbine-style fuel-separation architecture governing this family (Turbine Series\nFH/FG) and the standard (non-turbine) FUEL_WATER_SEPARATOR family -- distinct product\nfamilies under the same technology because housing/element architecture differs |\nSYNTAPORE: Plain primary/secondary fuel filtration, no separation function (FUEL_PRIMARY\nfamily)",
         "industrial_role": "This product family is the exclusive implementation for approved Turbine Series FH/FG\nfuel-separation architecture and its dedicated replacement elements, governed by\nHYDROCORE™."
       },
       "relationships": {
@@ -2996,7 +3037,7 @@
           "TRUCKS_FLEETS"
         ],
         "uses_technology": [
-          "HYDROCORE"
+          "TURBOCORE"
         ],
         "belongs_to_domain": [
           "FUEL"
@@ -3028,10 +3069,10 @@
         "concept": "Fuel Water Separation Product Family",
         "version": "1.0",
         "last_updated": "2026-08-15",
-        "content_hash": "sha256:f70f4b28e48c6becbe2f7f6434eab49f9f4a4bb073f410cd675643a6d428dcb3"
+        "content_hash": "sha256:f82cc0874b1d69cdb1b34b529eb9dd6c0f32f864a69c5fc74e6776b371b59b1f"
       },
       "canonical": {
-        "definition": "Fuel Water Separation — the HYDROCORE™-technology filter element family for standard\n(non-turbine) diesel fuel water separation, covering 102 SKUs across agricultural,\nmarine, mining, power generation, and commercial transport applications.",
+        "definition": "Fuel Water Separation — the HYDROCORE™-technology filter element family for standard\n(non-turbine) diesel fuel water separation, covering 102 SKUs (spin-on separators with purge/drain and Racor-style plastic bowl configurations) across agricultural,\nmarine, mining, power generation, and commercial transport applications.",
         "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\ncoalescing water-separation technology",
         "failure_impact": "Selecting incorrect element from this family (wrong coalescing efficiency class or wrong\nflow rate) or exceeding service interval → residual free water passes to injectors →\ninjector tip corrosion and nozzle deposit formation → HPCR fuel system failure requiring\ninjector replacement well before its rated service life",
         "related_standards": "HYDROCORE governs standard (non-turbine) fuel/water separation; no standard is\ncurrently approved as a direct canonical relationship for this family.",

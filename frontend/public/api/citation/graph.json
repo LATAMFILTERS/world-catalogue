@@ -1,11 +1,16 @@
 {
-  "edge_count": 548,
-  "node_count": 68,
+  "edge_count": 556,
+  "node_count": 69,
   "dangling_keys": [],
   "edges": [
     {
       "from": "HYDROCORE",
       "to": "SYNTAPORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "related_technologies"
     },
     {
@@ -50,6 +55,31 @@
     },
     {
       "from": "SYNTAPORE",
+      "to": "HYDROCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "SYNTAPORE",
+      "to": "TURBOCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "TURBOCORE",
+      "to": "ASTM_D6304",
+      "relation": "related_standards"
+    },
+    {
+      "from": "TURBOCORE",
+      "to": "ISO_12937",
+      "relation": "related_standards"
+    },
+    {
+      "from": "TURBOCORE",
+      "to": "SYNTAPORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "TURBOCORE",
       "to": "HYDROCORE",
       "relation": "related_technologies"
     },
@@ -1435,6 +1465,11 @@
     },
     {
       "from": "ASTM_D6304",
+      "to": "TURBOCORE",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ASTM_D6304",
       "to": "AGRICULTURE",
       "relation": "applicable_to_industries"
     },
@@ -1551,6 +1586,11 @@
     {
       "from": "ISO_12937",
       "to": "HYDROCORE",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ISO_12937",
+      "to": "TURBOCORE",
       "relation": "applicable_to_technologies"
     },
     {
@@ -2540,7 +2580,7 @@
     },
     {
       "from": "FUEL_TURBINE",
-      "to": "HYDROCORE",
+      "to": "TURBOCORE",
       "relation": "uses_technology"
     },
     {

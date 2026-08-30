@@ -16,7 +16,11 @@ require('dotenv').config();
 const { Pool } = require('pg');
 
 const MIGRATION = '080_ALTERNATE_INTEGRITY_AND_REFERENCE_QUARANTINE';
-const REVIEWED_REFERENCES = Object.freeze(['1R1808', '1R0732']);
+const REVIEWED_REFERENCES = Object.freeze([
+  '1R1808', '1R0732',
+  'PH3614', 'PH3614A', 'PH3614AZ',
+  'G3802', 'G3802A', 'G3802DP'
+]);
 
 const normalizeSql = (expression) =>
   `upper(regexp_replace(coalesce(${expression}, ''), '[^A-Z0-9]', '', 'g'))`;
@@ -151,6 +155,10 @@ async function applyAlternateIntegrityAndReferenceQuarantine() {
           SELECT 1 FROM catalog_reference_conflicts_080 c
           WHERE c.normalized_reference=q.normalized_reference
         )
+    `);
+    await client.query(`
+      DELETE FROM catalog_reference_governance_queue
+      WHERE normalized_reference IN (${reviewed})
     `);
     const queued = await client.query(`
       INSERT INTO catalog_reference_governance_queue (

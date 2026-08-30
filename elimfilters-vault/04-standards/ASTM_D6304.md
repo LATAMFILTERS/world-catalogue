@@ -12,6 +12,7 @@ domain:
   - Fuel
 applicable_to_technologies:
   - "[[HYDROCORE]]"
+  - "[[TURBOCORE]]"
 applicable_to_industries:
   - "[[AGRICULTURE]]"
   - "[[MARINE]]"
@@ -48,7 +49,8 @@ ASTM D6304 is widely used in commercial fleet fuel quality monitoring, marine fu
 ## Relationships
 
 ### Applicable Technologies
-- [[HYDROCORE|HYDROCORE — HYDROCORE water-separation performance is validated by ASTM D6304 comparison of inlet and outlet water concentration; the coalescing barrier architecture targets outlet water concentration below dissolved saturation limit (50–100 mg/kg) from inlet concentrations exceeding 200 mg/kg]]
+- [[HYDROCORE|HYDROCORE
+- [[TURBOCORE|TURBOCORE � TURBOCORE turbine-style fuel-separation performance for FH/FG systems is validated by ASTM D6304 comparison of inlet versus outlet water concentration; coalescing barrier targets outlet water below dissolved saturation limit]] — HYDROCORE water-separation performance is validated by ASTM D6304 comparison of inlet and outlet water concentration; the coalescing barrier architecture targets outlet water concentration below dissolved saturation limit (50–100 mg/kg) from inlet concentrations exceeding 200 mg/kg]]
 
 ### Contamination Addressed
 - [[DIESEL_WATER|DIESEL_WATER — ASTM D6304 is the primary quantitative measurement method for diesel fuel water contamination; both dissolved and free water contribute to the total mg/kg reading, providing the measurement baseline for water separation filtration performance assessment]]
@@ -82,7 +84,8 @@ RELATED_STANDARDS
 ISO 12937: ISO equivalent coulometric Karl Fischer method for water in petroleum products; European market compliance standard for EN 590 diesel water content verification; results equivalent to ASTM D6304
 
 RELATED_TECHNOLOGIES
-HYDROCORE: Water-separating fuel filtration technology; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for HYDROCORE coalescing efficiency claims
+HYDROCORE: Water-separating fuel filtration technology
+TURBOCORE: Turbine-style fuel-separation technology for approved FH/FG systems; ASTM D6304 inlet/outlet comparison validates coalescing efficiency in turbine housings and 2010/2020/2040 replacement elements; ASTM D6304 comparison of inlet versus outlet water concentration is the primary performance validation method for HYDROCORE coalescing efficiency claims
 
 INDUSTRIAL_ROLE
 ASTM D6304 is the enabling measurement standard for diesel fuel water contamination control — without coulometric Karl Fischer measurement, fleet operators cannot distinguish between dissolved water (safe) and free water (injector-damaging) contamination states, making ASTM D6304 tank monitoring the necessary diagnostic layer that determines when HYDROCORE water separation is required and whether it is performing to specification.

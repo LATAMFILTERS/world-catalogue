@@ -14,12 +14,13 @@ products:
   - Fuel Filter Cartridges
 related_technologies:
   - "[[HYDROCORE]]"
+  - "[[TURBOCORE]]"
 source: docs/brand/TECHNOLOGY_REGISTRY.md
 ---
 
 # SYNTAPORE™
 
-SYNTAPORE™ is the ELIMFILTERS diesel-fuel filtration architecture assigned to primary, secondary and cartridge fuel-filter applications within Fuel Cleanliness Protection. It is scoped to plain fuel filtration only -- fuel/water separator applications, including approved FH and FG architectures, are HYDROCORE™.
+SYNTAPORE™ is the ELIMFILTERS diesel-fuel filtration architecture assigned to primary, secondary and cartridge fuel-filter applications within Fuel Cleanliness Protection. It is scoped to plain fuel filtration only -- standard non-turbine fuel/water separator applications are HYDROCORE™, while FH and FG turbine-style systems are governed exclusively by TURBOCORE™.
 
 Its engineering role is to stage particulate-contamination control before fuel reaches pumps and injectors. Efficiency, capacity, flow and pressure-drop performance must be matched to each approved fuel-filtration stage.
 
@@ -41,7 +42,7 @@ RELATED_STANDARDS
 Applicable fuel-filter test methods and application requirements must be selected for the approved system. The technology name alone does not imply a universal micron rating, efficiency, capacity or certification claim.
 
 RELATED_TECHNOLOGIES
-HYDROCORE: Fuel/water separation architecture for approved spin-on, cartridge, FH and FG separator applications. SYNTAPORE governs general staged diesel-fuel particulate filtration only -- it does not perform a water-separation function and must not be represented as an engine-air technology.
+HYDROCORE: Standard non-turbine fuel/water separator architecture, including drain and transparent-bowl configurations. TURBOCORE: Turbine-style fuel/water separation exclusively for FH and FG series systems. SYNTAPORE governs plain staged diesel-fuel particulate filtration only.
 
 INDUSTRIAL_ROLE
 SYNTAPORE provides the staged particulate-contamination control layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by the required filtration stage, efficiency, capacity, flow, pressure drop and protected fuel-system components.

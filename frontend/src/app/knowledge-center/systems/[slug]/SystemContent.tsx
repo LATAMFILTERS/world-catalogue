@@ -23,7 +23,7 @@ const STD_SLUG_MAP: Record<string, string> = {
   'ISO 11155-1': 'iso-11155-1',
   'ASTM D6304': 'astm-d6304',
   'ISO 16332': 'iso-16332',
-  'DIN 71220': 'din-71220',
+  'DIN 71460': 'din-71460',
   'DIN 51524': 'din-51524',
 };
 
@@ -333,6 +333,26 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
             </div>
           )}
 
+          {system.kits.length > 0 && (
+            <div style={{ marginBottom: '1.5rem' }}>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
+                COMMERCIAL KITS
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                {system.kits.map((kit) => (
+                  <Link key={kit} href={`/commercial-lines/${kit.replace('™', '').toLowerCase()}`} style={{ textDecoration: 'none' }}>
+                    <motion.div
+                      whileHover={{ borderColor: 'rgba(102,204,255,0.3)' }}
+                      style={{ border: '1px solid rgba(255,255,255,0.07)', padding: '0.6rem 0.875rem', fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', fontWeight: 600, color: '#66ccff', transition: 'border-color 0.2s' }}
+                    >
+                      {kit}
+                    </motion.div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div style={{ marginBottom: referencingArticles.length > 0 ? '1.5rem' : 0 }}>
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
               OTHER SYSTEMS
@@ -391,7 +411,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
         url: `https://elimfilters.com/knowledge-center/systems/${system.slug}`,
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
-        keywords: [...system.technologies, ...system.standards, ...system.challenges.slice(0, 3)].join(', '),
+        keywords: [...system.technologies, ...system.kits, ...system.standards, ...system.challenges.slice(0, 3)].join(', '),
         about: { '@type': 'Thing', name: system.title, description: system.description },
       })}} />
     </main>
