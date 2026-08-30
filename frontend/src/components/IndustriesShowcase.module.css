@@ -183,18 +183,20 @@
   pointer-events: none;
 }
 
-/* Homepage contamination-risk callout. The local :not(.section) anchor keeps
-   these global selectors valid in CSS Modules pure mode while matching the
-   homepage badge, which never carries the generated section class. */
+/* Homepage contamination-risk callout.
+   Keep the callout in the upper-right negative-space of the photo so the
+   engine remains fully visible and the message reads as a compact annotation. */
 :global(.problem-badge):not(.section) {
-  right: 1.5rem !important;
-  bottom: 1.5rem !important;
-  width: clamp(250px, 19vw, 300px) !important;
-  min-width: 250px !important;
-  max-width: 300px !important;
-  padding: 1.35rem 1.45rem 1.45rem !important;
+  top: 1.35rem !important;
+  right: 1.35rem !important;
+  bottom: auto !important;
+  width: clamp(220px, 17vw, 260px) !important;
+  min-width: 220px !important;
+  max-width: 260px !important;
+  padding: 1.05rem 1.15rem 1.15rem !important;
   border-radius: 0 !important;
-  box-shadow: 0 14px 42px rgba(255, 241, 45, 0.22) !important;
+  border-top: 4px solid #000 !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28) !important;
   overflow: hidden !important;
 }
 
@@ -209,7 +211,7 @@
 
 :global(.problem-badge):not(.section) p:first-child {
   font-family: var(--font-display) !important;
-  font-size: 0.88rem !important;
+  font-size: 0.72rem !important;
   font-weight: 700 !important;
   line-height: 1 !important;
   letter-spacing: 0.14em !important;
@@ -217,13 +219,13 @@
 }
 
 :global(.problem-badge):not(.section) p:last-child {
-  margin-top: 0.8rem !important;
+  margin-top: 0.7rem !important;
   font-family: var(--font-body) !important;
-  font-size: 0.88rem !important;
+  font-size: 0.84rem !important;
   font-weight: 700 !important;
-  line-height: 1.38 !important;
-  letter-spacing: 0.01em !important;
-  text-transform: uppercase !important;
+  line-height: 1.42 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
 }
 
 @media (max-width: 720px) {
