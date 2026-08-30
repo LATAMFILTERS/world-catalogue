@@ -187,7 +187,6 @@ export function IndustriesShowcase() {
                   draggable={false}
                 />
                 <div className={styles.loaderShade} />
-                <span className={styles.loaderLabel}>{industry.title}</span>
               </div>
             ))}
           </div>
