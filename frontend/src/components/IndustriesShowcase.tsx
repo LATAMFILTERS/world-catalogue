@@ -56,7 +56,11 @@ export function IndustriesShowcase() {
       const allPanels = panelsRef.current.flat().filter(Boolean) as HTMLDivElement[];
 
       gsap.set(overlay, { autoAlpha: 1, display: 'grid' });
-      gsap.set(columns, { height: '100%' });
+      gsap.set(columns, {
+        height: '100%',
+        clipPath: 'inset(0% 0% 0% 0%)',
+        yPercent: 0,
+      });
       gsap.set(allPanels, { xPercent: -100, autoAlpha: 1, force3D: true });
 
       const tl = gsap.timeline({
@@ -95,25 +99,28 @@ export function IndustriesShowcase() {
         });
       }
 
+      // Keep each column at full size and reveal the page with a masked curtain
+      // instead of collapsing column height. This avoids any visible squeezing.
       tl.to(
         columns,
         {
-          height: '0%',
-          duration: 1.15,
-          stagger: { each: 0.14, from: 'end' },
-          ease: 'power3.inOut',
+          clipPath: 'inset(0% 0% 100% 0%)',
+          yPercent: -2,
+          duration: 1.05,
+          stagger: { each: 0.11, from: 'end' },
+          ease: 'power4.inOut',
         },
-        '+=0.15',
+        '+=0.12',
       );
 
       tl.to(
         overlay,
         {
           autoAlpha: 0,
-          duration: 0.25,
+          duration: 0.18,
           ease: 'power2.out',
         },
-        '-=0.2',
+        '-=0.12',
       );
 
       let hasPlayed = false;
