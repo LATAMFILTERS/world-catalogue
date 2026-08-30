@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { CANONICAL_TECHNOLOGY_LIST } from '@/lib/canonical-technologies';
 import styles from './IndustriesShowcase.module.css';
 
 const INDUSTRIES = [
@@ -21,18 +20,21 @@ const INDUSTRIES = [
 ] as const;
 
 const CARD_WIDTH = 300;
-const CARD_HEIGHT = 380;
 const CARD_GAP = 16;
+const COLUMN_COUNT = 4;
 const IMAGES_PER_COLUMN = 4;
-const TECHNOLOGIES = CANONICAL_TECHNOLOGY_LIST;
 
-const ANIMATION_COLUMNS = TECHNOLOGIES.map((technology, technologyIndex) => ({
-  technology,
-  industries: Array.from({ length: IMAGES_PER_COLUMN }, (_, imageIndex) => {
-    const index = (technologyIndex * IMAGES_PER_COLUMN + imageIndex) % INDUSTRIES.length;
-    return INDUSTRIES[index];
-  }),
-}));
+const LOADER_ITEMS = Array.from(
+  { length: COLUMN_COUNT * IMAGES_PER_COLUMN },
+  (_, index) => INDUSTRIES[index % INDUSTRIES.length],
+);
+
+const LOADER_COLUMNS = Array.from({ length: COLUMN_COUNT }, (_, columnIndex) =>
+  Array.from(
+    { length: IMAGES_PER_COLUMN },
+    (_, imageIndex) => LOADER_ITEMS[imageIndex * COLUMN_COUNT + columnIndex],
+  ),
+);
 
 export function IndustriesShowcase() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -40,7 +42,7 @@ export function IndustriesShowcase() {
   const trackRef = useRef<HTMLDivElement>(null);
   const columnsRef = useRef<(HTMLDivElement | null)[]>([]);
   const panelsRef = useRef<(HTMLDivElement | null)[][]>(
-    Array.from({ length: TECHNOLOGIES.length }, () => []),
+    Array.from({ length: COLUMN_COUNT }, () => []),
   );
 
   useEffect(() => {
@@ -48,73 +50,70 @@ export function IndustriesShowcase() {
     const overlay = overlayRef.current;
     const columns = columnsRef.current.filter(Boolean) as HTMLDivElement[];
 
-    if (!section || !overlay || columns.length !== TECHNOLOGIES.length) return;
+    if (!section || !overlay || columns.length !== COLUMN_COUNT) return;
 
     const ctx = gsap.context(() => {
       const allPanels = panelsRef.current.flat().filter(Boolean) as HTMLDivElement[];
 
-      gsap.set(overlay, { autoAlpha: 1, display: 'block' });
-      gsap.set(columns, { height: CARD_HEIGHT });
-      gsap.set(allPanels, {
-        autoAlpha: 1,
-        xPercent: -6,
-        clipPath: 'inset(0 100% 0 0)',
-      });
+      gsap.set(overlay, { autoAlpha: 1, display: 'grid' });
+      gsap.set(columns, { height: '100%' });
+      gsap.set(allPanels, { xPercent: -100, autoAlpha: 1, force3D: true });
 
       const tl = gsap.timeline({
         paused: true,
-        defaults: { ease: 'power3.out' },
+        defaults: { overwrite: 'auto' },
         onComplete: () => {
-          gsap.to(overlay, {
-            autoAlpha: 0,
-            duration: 0.35,
-            ease: 'power2.out',
-            onComplete: () => gsap.set(overlay, { display: 'none' }),
-          });
+          gsap.set(overlay, { autoAlpha: 0, display: 'none', pointerEvents: 'none' });
         },
       });
 
       for (let imageIndex = 0; imageIndex < IMAGES_PER_COLUMN; imageIndex += 1) {
-        const currentRow = panelsRef.current
+        const currentImages = panelsRef.current
           .map((column) => column[imageIndex])
           .filter(Boolean) as HTMLDivElement[];
 
-        const rowStart = imageIndex === 0 ? 0 : '>-0.25';
-
         tl.to(
-          currentRow,
+          currentImages,
           {
             xPercent: 0,
-            clipPath: 'inset(0 0% 0 0)',
             duration: 0.95,
-            stagger: { each: 0.08, from: 'start' },
+            stagger: { each: 0.12, from: 'start' },
             ease: 'power3.out',
+            force3D: true,
           },
-          rowStart,
+          imageIndex === 0 ? 0 : '>-0.2',
         );
 
-        tl.to(
-          currentRow,
-          {
-            xPercent: 4,
-            clipPath: 'inset(0 0% 0 100%)',
-            duration: 0.85,
-            stagger: { each: 0.08, from: 'start' },
-            ease: 'power3.in',
-          },
-          '+=0.22',
-        );
+        tl.to({}, { duration: 0.22 });
+
+        tl.to(currentImages, {
+          xPercent: 100,
+          duration: 0.95,
+          stagger: { each: 0.12, from: 'start' },
+          ease: 'power3.in',
+          force3D: true,
+        });
       }
 
       tl.to(
         columns,
         {
-          height: 0,
-          duration: 1.1,
-          stagger: { each: 0.08, from: 'end' },
+          height: '0%',
+          duration: 1.15,
+          stagger: { each: 0.14, from: 'end' },
           ease: 'power3.inOut',
         },
-        '+=0.2',
+        '+=0.15',
+      );
+
+      tl.to(
+        overlay,
+        {
+          autoAlpha: 0,
+          duration: 0.25,
+          ease: 'power2.out',
+        },
+        '-=0.2',
       );
 
       let hasPlayed = false;
@@ -125,7 +124,7 @@ export function IndustriesShowcase() {
         const rect = section.getBoundingClientRect();
         const triggerLine = window.innerHeight * 0.82;
 
-        if (rect.top <= triggerLine && rect.bottom > window.innerHeight * 0.18) {
+        if (rect.top <= triggerLine && rect.bottom > window.innerHeight * 0.2) {
           hasPlayed = true;
           tl.play(0);
           window.removeEventListener('scroll', onScroll);
@@ -164,79 +163,79 @@ export function IndustriesShowcase() {
 
   return (
     <section ref={sectionRef} className={styles.section} aria-labelledby="industries-heading">
-      <div className={styles.headingWrap}>
-        <h2 id="industries-heading" className={styles.heading}>
-          Built for Every <span className={styles.yellow}>Industry</span>
-        </h2>
-      </div>
-
-      <div className={styles.carouselWrap}>
-        <div ref={overlayRef} className={styles.animationOverlay} aria-hidden="true">
-          <div className={styles.animationRail}>
-            {ANIMATION_COLUMNS.map(({ technology, industries }, columnIndex) => (
+      <div ref={overlayRef} className={styles.loaderOverlay} aria-hidden="true">
+        {LOADER_COLUMNS.map((column, columnIndex) => (
+          <div
+            key={`loader-column-${columnIndex}`}
+            ref={(el) => {
+              columnsRef.current[columnIndex] = el;
+            }}
+            className={styles.loaderColumn}
+          >
+            {column.map((industry, imageIndex) => (
               <div
-                key={technology.slug}
+                key={`${industry.slug}-${columnIndex}-${imageIndex}`}
                 ref={(el) => {
-                  columnsRef.current[columnIndex] = el;
+                  panelsRef.current[columnIndex][imageIndex] = el;
                 }}
-                className={styles.animationColumn}
+                className={styles.loaderPanel}
               >
-                {industries.map((industry, imageIndex) => (
-                  <div
-                    key={`${technology.slug}-${industry.slug}-${imageIndex}`}
-                    ref={(el) => {
-                      panelsRef.current[columnIndex][imageIndex] = el;
-                    }}
-                    className={styles.animationPanel}
-                  >
-                    <div
-                      className={styles.animationImage}
-                      style={{ backgroundImage: `url(${industry.image})` }}
-                    />
-                    <div className={styles.animationShade} />
-                    <span className={styles.animationIndustryLabel}>{industry.title}</span>
-                  </div>
-                ))}
-
-                <span className={styles.animationTechnologyLabel}>{technology.name}</span>
+                <img
+                  src={industry.image}
+                  alt=""
+                  className={styles.loaderImage}
+                  draggable={false}
+                />
+                <div className={styles.loaderShade} />
+                <span className={styles.loaderLabel}>{industry.title}</span>
               </div>
             ))}
           </div>
+        ))}
+      </div>
+
+      <div className={styles.content}>
+        <div className={styles.headingWrap}>
+          <h2 id="industries-heading" className={styles.heading}>
+            Built for Every <span className={styles.yellow}>Industry</span>
+          </h2>
         </div>
 
-        <button
-          type="button"
-          aria-label="Scroll industries left"
-          onClick={() => scrollByCards(-1)}
-          className={`${styles.arrowButton} ${styles.arrowLeft}`}
-        >
-          {'<'}
-        </button>
+        <div className={styles.carouselWrap}>
+          <button
+            type="button"
+            aria-label="Scroll industries left"
+            onClick={() => scrollByCards(-1)}
+            className={`${styles.arrowButton} ${styles.arrowLeft}`}
+          >
+            {'<'}
+          </button>
 
-        <button
-          type="button"
-          aria-label="Scroll industries right"
-          onClick={() => scrollByCards(1)}
-          className={`${styles.arrowButton} ${styles.arrowRight}`}
-        >
-          {'>'}
-        </button>
+          <button
+            type="button"
+            aria-label="Scroll industries right"
+            onClick={() => scrollByCards(1)}
+            className={`${styles.arrowButton} ${styles.arrowRight}`}
+          >
+            {'>'}
+          </button>
 
-        <div ref={trackRef} className={styles.track}>
-          {INDUSTRIES.map((industry) => (
-            <a key={industry.slug} href={`/industries/${industry.slug}`} className={styles.card}>
-              <div
-                role="img"
-                aria-label={industry.title}
-                className={styles.cardImage}
-                style={{ backgroundImage: `url(${industry.image})` }}
-              />
-              <div className={styles.cardShade} />
-              <div className={styles.cardLabelWrap}>
-                <span className={styles.cardLabel}>{industry.title}</span>
-              </div>
-            </a>
-          ))}
+          <div ref={trackRef} className={styles.track}>
+            {INDUSTRIES.map((industry) => (
+              <a key={industry.slug} href={`/industries/${industry.slug}`} className={styles.card}>
+                <div
+                  role="img"
+                  aria-label={industry.title}
+                  className={styles.cardImage}
+                  style={{ backgroundImage: `url(${industry.image})` }}
+                />
+                <div className={styles.cardShade} />
+                <div className={styles.cardLabelWrap}>
+                  <span className={styles.cardLabel}>{industry.title}</span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>
