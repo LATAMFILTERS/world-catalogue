@@ -39,11 +39,12 @@ async function applyFleetguardTurbocoreHousings() {
 
   const pool = new Pool({ connectionString: databaseUrl, ssl: { rejectUnauthorized: false }, max: 1 });
   const client = await pool.connect();
-  const report = { migration: MIGRATION, inserted: [], skipped: [] };
+  const report = { migration: MIGRATION, inserted: [], skipped: [], rejected: [] };
 
   try {
-    await client.query('BEGIN');
-
+    // Each row gets its own transaction so one integrity-guard rejection
+    // (e.g. a Fleetguard code already registered as an alternate on a
+    // different SKU) doesn't block the rest of the batch.
     for (const { sku, codigo_base } of NEW_HOUSINGS) {
       const description = `ELIMFILTERS® ${sku} Turbine-series fuel/water separator housing. `
         + `TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel `
@@ -52,24 +53,27 @@ async function applyFleetguardTurbocoreHousings() {
 
       const competitorCodes = JSON.stringify([{ manufacturer: 'FLEETGUARD', code: codigo_base }]);
 
-      const { rows } = await client.query(
-        `INSERT INTO elimfilters_catalog
-           (sku, codigo_base, filter_type, technology, duty, description, competitor_codes, installation_type, created_at)
-         VALUES ($1, $2, 'fuel', 'TURBOCORE™', 'HEAVY_DUTY', $3, $4::jsonb, 'Replacement Cartridge Element', now())
-         ON CONFLICT (sku) DO NOTHING
-         RETURNING sku`,
-        [sku, codigo_base, description, competitorCodes]
-      );
+      try {
+        await client.query('BEGIN');
+        const { rows } = await client.query(
+          `INSERT INTO elimfilters_catalog
+             (sku, codigo_base, filter_type, technology, duty, description, competitor_codes, installation_type, created_at)
+           VALUES ($1, $2, 'fuel', 'TURBOCORE™', 'HEAVY_DUTY', $3, $4::jsonb, 'Replacement Cartridge Element', now())
+           ON CONFLICT (sku) DO NOTHING
+           RETURNING sku`,
+          [sku, codigo_base, description, competitorCodes]
+        );
+        await client.query('COMMIT');
 
-      if (rows.length) report.inserted.push(sku);
-      else report.skipped.push({ sku, reason: 'ALREADY_EXISTS' });
+        if (rows.length) report.inserted.push(sku);
+        else report.skipped.push({ sku, reason: 'ALREADY_EXISTS' });
+      } catch (rowError) {
+        await client.query('ROLLBACK');
+        report.rejected.push({ sku, codigo_base, reason: rowError.message });
+      }
     }
 
-    await client.query('COMMIT');
     return report;
-  } catch (error) {
-    await client.query('ROLLBACK');
-    throw Object.assign(error, { migrationReport: report });
   } finally {
     client.release();
     await pool.end();
