@@ -54,11 +54,11 @@ async function start() {
   const europeanMannReconciliation = await applyEuropeanMannMatchReconciliation();
   console.log('[european-mann-match-reconciliation]', JSON.stringify(europeanMannReconciliation));
 
-  // Promote only the 092 families for which corrected coverage proves exactly one
-  // full European public target. All other unresolved families remain blocked.
-  const { applyEuropeanMannCanonicalBatch2 } = require('./scripts/migrations/run_096_european_mann_canonical_batch2');
-  const europeanMannCanonicalBatch2 = await applyEuropeanMannCanonicalBatch2();
-  console.log('[european-mann-canonical-batch2]', JSON.stringify(europeanMannCanonicalBatch2));
+  // Promote only reconciled 1:1 European MANN targets that do not already have
+  // a different active canonical identity. Conflicting targets remain blocked.
+  const { applyEuropeanMannCanonicalBatch2Safe } = require('./scripts/migrations/run_097_european_mann_canonical_batch2_safe');
+  const europeanMannCanonicalBatch2 = await applyEuropeanMannCanonicalBatch2Safe();
+  console.log('[european-mann-canonical-batch2-safe]', JSON.stringify(europeanMannCanonicalBatch2));
 
   const { applyGlobalSkuCertificationAudit } = require('./scripts/migrations/run_093_global_sku_certification_audit');
   const globalSkuCertification = await applyGlobalSkuCertificationAudit();
