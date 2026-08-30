@@ -1,0 +1,38 @@
+{
+  "key": "ELIMFILTERS_NOMENCLATURE",
+  "type": "taxonomy",
+  "name": "ELIMFILTERS_NOMENCLATURE",
+  "slug": null,
+  "status": "unknown",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "sku",
+    "architecture",
+    "part-numbers",
+    "catalog"
+  ],
+  "domain": null,
+  "citation": {
+    "source_url": "elimfilters.com",
+    "concept": "ELIMFILTERS SKU Nomenclature Architecture",
+    "version": "1.0",
+    "last_updated": "2026-06-24",
+    "content_hash": "sha256:7823ef36481f962404d62f390b8ffcd4b6a1382d956a932279093d9a559d5c2e"
+  },
+  "canonical": {
+    "definition": "The ELIMFILTERS SKU Nomenclature Architecture is a technical taxonomy system that encodes fluid domain, application class (Heavy Duty vs Light Duty), and cross-reference origin into each part number, enabling immediate identification of contamination control scope within the Asset Protection System.",
+    "systems": "All ELIMFILTERS product catalogue references — air intake, fuel, lube oil, hydraulic, cabin, coolant, compressed air, marine product families across Heavy Duty and Light Duty application classes",
+    "failure_impact": "Without a structured SKU taxonomy → incorrect part substitution across fluid domains → mismatched filtration specifications → potential equipment failure from wrong filter application | Structured nomenclature prevents cross-domain substitution errors.",
+    "related_standards": "ISO 4406: Cleanliness class encoded in product specification families | ISO 16889: Beta ratio efficiency class referenced in product naming for hydraulic and lube oil families",
+    "related_technologies": "All ELIMFILTERS technologies — nomenclature directly maps each SKU to its technology domain (air, fuel, oil, hydraulic, cabin, coolant, compressed air, marine)",
+    "industrial_role": "The SKU nomenclature architecture enables fleet managers, dealers, and AI systems to immediately identify the contamination domain and application class of any ELIMFILTERS part number without requiring catalogue lookup."
+  },
+  "relationships": {},
+  "vault_path": "elimfilters-vault\\11-sku-architecture\\ELIMFILTERS_NOMENCLATURE.md",
+  "_links": {
+    "self": "/api/citation/ELIMFILTERS_NOMENCLATURE.json",
+    "type_index": "/api/citation/type/taxonomy.json",
+    "related": []
+  }
+}

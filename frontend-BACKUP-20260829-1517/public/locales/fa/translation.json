@@ -1,0 +1,498 @@
+{
+  "nav": {
+    "industries": "صنایع",
+    "systems": "سیستم ها",
+    "technologies": "فن آوری ها",
+    "contact": "تماس بگیرید",
+    "findMyFilter": "فیلتر من را پیدا کنید",
+    "knowledge": "دانش"
+  },
+  "hero": {
+    "tag": "فن آوری حفاظت از دارایی",
+    "title": "فیلتراسیون موتور",
+    "subtitle": "HEAVY DUTY و LIGHT-DUTY",
+    "description": "فیلتر مهندسی طراحی شده برای کسانی که توانایی خرید موتور از کار افتاده یا ناوگان غیرفعال را ندارند.",
+    "cta": "ویژگی ها را کاوش کنید"
+  },
+  "stats": {
+    "mediaEfficiency": "کارایی رسانه",
+    "engineLifeSpan": "طول عمر موتور",
+    "oemCrossRefs": "OEM Cross-Refs",
+    "distribution": "توزیع"
+  },
+  "problem": {
+    "tag": "واقعیت میدانی",
+    "title": "وقتی حفاظت از کار بیفتد چه اتفاقی می افتد؟",
+    "badge": "80 درصد از خرابی های زودرس ناشی از آلودگی است.",
+    "items": {
+      "injector": {
+        "title": "فرسایش انژکتوری",
+        "desc": "ذرات میکرونی روزنه های اسپری را تغییر می دهند و باعث از دست دادن فوری نیرو و احتراق ضعیف می شوند."
+      },
+      "bearing": {
+        "title": "اصطکاک یاتاقان بحرانی",
+        "desc": "روغن آلوده سایش فلز را تسریع می کند و عمر بلوک موتور را تا 40 درصد کاهش می دهد."
+      },
+      "fuel": {
+        "title": "تخلیه سوخت",
+        "desc": "یک موتور محدود تا 8 درصد دیزل بیشتری مصرف می‌کند تا همان سطوح گشتاور را حفظ کند."
+      }
+    }
+  },
+  "why": {
+    "title": "چرا ELIMFILTERS® را انتخاب کنید",
+    "p1": "ELIMFILTERS® چیزی بیش از یک تولید کننده فیلتر است. ما یک شرکت تخصصی هستیم",
+    "p1highlight": "فناوری حفاظت از دارایی",
+    "p1after": "، طراحی راه حل هایی که ارزش و عملکرد تجهیزات شما را در سخت ترین محیط ها حفظ می کند.",
+    "p2": "هر محصولی که تولید می کنیم به یک واقعیت پاسخ می دهد: تجهیزاتی که کار شما را متوقف می کند صدها هزار هزینه برای تعمیر دارد. فیلتر نگهبان آن سرمایه گذاری است.",
+    "card": {
+      "tag": "فن آوری حفاظت از دارایی",
+      "title": "ما سیستم های حفاظتی را طراحی می کنیم. اجزای خارج از قفسه نیست.",
+      "desc": "مهندسین ELIMFILTERS® فناوری‌های حفاظت چندلایه را که برای دفاع از دارایی‌های صنعتی حیاتی کالیبره شده‌اند - هر سیستمی یک راه‌حل هدفمند است، نه جایگزینی برای کالا.",
+      "items": [
+        "ماتریس حفاظتی چند لایه با فرمول هوش مصنوعی",
+        "معماری دور زدن صفر در هر سیستم",
+        "ISO 5011 · 16332 · 16889 · گواهی 19438",
+        "20000+ ارجاع متقابل دارایی OEM"
+      ]
+    }
+  },
+  "technology": {
+    "tag": "ELIMFILTERS® PRIETARY TECHNOLOGY",
+    "title": "مهندسی",
+    "titleHighlight": "فراتر از استاندارد",
+    "items": {
+      "media": {
+        "title": "رسانه ترکیبی فرموله شده با هوش مصنوعی",
+        "desc": "الیاف مصنوعی و سلولزی از طریق الگوریتم‌های هوش مصنوعی برای دستیابی به حداکثر ظرفیت کثیفی و در عین حال حفظ حفاظت بای پس صفر مهندسی شده‌اند."
+      },
+      "hydrophobic": {
+        "title": "سیستم های جداسازی آبگریز",
+        "desc": "فناوری جداسازی آب پیشرفته که آب آزاد، امولسیون شده و محلول را قبل از رسیدن به سیستم های تزریق حیاتی حذف می کند."
+      },
+      "antibypass": {
+        "title": "سازه های ضد بای پس",
+        "desc": "هندسه مهر و موم مهندسی شده که دور زدن آلودگی صفر را تحت شدیدترین شرایط فشار و دما تضمین می کند."
+      }
+    }
+  },
+  "cta": {
+    "dealer": {
+      "tag": "شبکه فروش",
+      "title": "فقط بهترین",
+      "highlight": "فروش الیافیلتر.",
+      "button": "فروشنده شوید"
+    },
+    "search": {
+      "tag": "جستجوی فنی",
+      "title": "فیلتر مناسب",
+      "highlight": "مانند یک حرفه ای جستجو کنید.",
+      "button": "قسمت من را پیدا کن"
+    }
+  },
+  "footer": {
+    "company": "شرکت",
+    "about": "درباره ما",
+    "industries": "صنایع",
+    "contact": "تماس بگیرید",
+    "solutions": "راه حل ها",
+    "partSearch": "جستجوی قسمت",
+    "technologies": "فن آوری ها",
+    "systems": "سیستم ها",
+    "support": "پشتیبانی",
+    "technical": "پشتیبانی فنی",
+    "dealer": "فروشنده شوید",
+    "warranty": "گارانتی",
+    "copyright": "© 2015-2026 ELIMFILTERS® LLC | هوش و مهندسی در فیلتراسیون",
+    "location": "فریسکو تگزاس",
+    "colProducts": "محصولات",
+    "colKnowledge": "دانش",
+    "knowledgeSystem": "سیستم دانش",
+    "standards": "استانداردها",
+    "fleetOpt": "بهینه‌سازی ناوگان",
+    "locationText": "فریسکو، تگزاس",
+    "kleoText": "© 2015–2026 Kleo Technologies",
+    "elimfiltersCopyright": "KLEO TECHNOLOGY LLC | هوش و مهندسی در فیلتراسیون",
+    "elimfiltersYear": "2015–2026"
+  },
+  "category": {
+    "keyAdvantages": "مزیت های کلیدی",
+    "engineeredAdvantages": "مزیت های مهندسی شده",
+    "engineeringExcellence": "برتری مهندسی",
+    "precisionEngineering": "مهندسی دقیق",
+    "systemSpecs": "مشخصات سیستم",
+    "active": "✓ فعال",
+    "operationalAdvantages": "مزیت های عملیاتی",
+    "whyElimfilters": "چرا ELIMFILTERS®",
+    "technologiesIncluded": "فن آوری های گنجانده شده است",
+    "performanceMetrics": "معیارهای عملکرد",
+    "readyToUpgrade": "آماده ارتقا هستید؟",
+    "readyDesc": "فیلتر دقیق برنامه خود را پیدا کنید. ارجاع متقابل 500000+ قطعات.",
+    "engineeringDesc": "مهندسی ELIMFILTERS® استانداردهای دقیقی را برای هر جزء اعمال می کند. سیستم‌های فیلتراسیون ما به گونه‌ای طراحی شده‌اند که از مشخصات OEM فراتر رفته و حداکثر حفاظت و عملکرد را در چرخه‌های کاری سخت تضمین می‌کنند.",
+    "home": "خانه"
+  },
+  "language": {
+    "switchToEn": "EN"
+  },
+  "home": {
+    "eyebrow": "Asset Protection Technology Platform",
+    "hero1": "محافظت از دارایی‌های صنعتی",
+    "hero2": "از طریق کنترل آلودگی.",
+    "heroDesc": "سیستم‌های پیشرفته کنترل آلودگی که برای کاهش سایش، به حداقل رساندن خرابی، بهبود قابلیت اطمینان و افزایش طول عمر عملیاتی تجهیزات صنعتی حیاتی طراحی شده‌اند.",
+    "ctaFilter": "یافتن قطعه",
+    "ctaKnowledge": "سیستم دانش",
+    "statsLabels": [
+      "طول عمر یاتاقان موتور",
+      "افزایش عمر دارایی‌ها",
+      "خرابی‌های ناشی از آلودگی",
+      "میانگین هزینه رویداد پیشگیری شده"
+    ],
+    "assetTag": "استراتژی حفاظت از دارایی",
+    "assetTitle": "محافظت از دارایی‌های صنعتی از طریق کنترل آلودگی",
+    "assetP1": "ELIMFILTERS دارایی‌های صنعتی را با کنترل آلودگی در سیستم‌های حیاتی محافظت می‌کند. رویکرد مهندسی ما بر پیشگیری از تخریب، تمدید عمر سرویس، بهبود قابلیت اطمینان و کاهش هزینه کل مالکیت تمرکز دارد.",
+    "assetP2": "هر فناوری که طراحی می‌کنیم به یک مکانیسم خاص آلودگی می‌پردازد — سایش ذرات، جذب آب، خرابی بای‌پس یا تخریب حرارتی — و علت اصلی خرابی زودرس دارایی را هدف قرار می‌دهد.",
+    "archLabel": "معماری اطلاعات",
+    "archItems": [
+      "آلودگی",
+      "تخریب دارایی",
+      "استانداردها و اندازه‌گیری",
+      "فناوری‌های حفاظتی",
+      "پیاده‌سازی محصول",
+      "بهینه‌سازی ناوگان",
+      "تأثیر پایداری"
+    ],
+    "problemTag": "تشخیص ریسک عملیاتی",
+    "problemH1": "آنچه نمی‌توانید ببینید",
+    "problemH2": "عملیات شما را متوقف می‌کند.",
+    "problemIntro": "تا ۸۰٪ از خرابی‌های زودرس اجزای هیدرولیکی ناشی از آلودگی است. فیلتراسیون ناکارآمد اجازه می‌دهد ذرات نامرئی مانند سمباده در داخل اجزای حیاتی عمل کنند — سطوح یاتاقان، دهانه‌های انژکتور، اسپول‌های هیدرولیک.",
+    "problemBadgeNum": "80%",
+    "problemBadgeDesc": "از خرابی‌های زودرس اجزای هیدرولیکی ناشی از آلودگی است.",
+    "failModes": [
+      {
+        "title": "فرسایش انژکتور",
+        "desc": "ذرات میکرونی دهانه‌های اسپری را تغییر شکل می‌دهند و باعث از دست دادن فوری توان و احتراق ضعیف می‌شوند."
+      },
+      {
+        "title": "اصطکاک بحرانی یاتاقان",
+        "desc": "روغن آلوده سایش فلز را تسریع می‌کند و عمر بلوک موتور را تا ۴۰٪ کاهش می‌دهد."
+      },
+      {
+        "title": "از دست دادن بازده سوخت",
+        "desc": "سیستم‌های سوخت آلوده موتورها را مجبور می‌کنند تا ۸٪ دیزل بیشتر مصرف کنند تا همان خروجی گشتاور را حفظ کنند."
+      }
+    ],
+    "whyTitle1": "حفاظت از دارایی",
+    "whyTitle2": "فناوری",
+    "whyP1": "ELIMFILTERS یک شرکت فیلتر نیست. ELIMFILTERS یک شرکت ",
+    "whyP1hl": "فناوری حفاظت از دارایی",
+    "whyP1after": " است — سیستم‌های مهندسی که آلودگی را کنترل می‌کنند، از تخریب جلوگیری می‌کنند و ارزش دارایی‌های صنعتی حیاتی را حفظ می‌کنند.",
+    "whyP2": "هر فناوری که توسعه می‌دهیم به یک تهدید آلودگی قابل اندازه‌گیری می‌پردازد. تجهیزاتی که خراب می‌شوند صدها هزار تومان هزینه تعمیر دارند. ما آن سرمایه‌گذاری را در سطح سیستم، نه سطح محصول، محافظت می‌کنیم.",
+    "whyCheckItems": [
+      "کنترل آلودگی در سطح سیستم، نه جایگزینی محصول",
+      "بیش از ۲۵ سال محافظت از دارایی‌های صنعتی ارزشمند",
+      "استانداردهای مهندسی: ISO 5011 · 16889 · 19438 · 4406",
+      "استقرار در ۱۲ صنعت — معدن، دریایی، کشاورزی و بیشتر"
+    ],
+    "whyCardTag": "فناوری حفاظت از دارایی",
+    "whyCardTitle1": "تجهیزات شما ارزش میلیون‌ها دارد.",
+    "whyCardTitle2": "آن را متناسب با این ارزش محافظت کنید.",
+    "whyCardDesc": "هر فناوری ELIMFILTERS برای محافظت از دارایی‌های حیاتی، کاهش خرابی و تمدید عمر عملیاتی وجود دارد.",
+    "whyCardItems": [
+      "رسانه هیبریدی با فرمول هوش مصنوعی",
+      "سیستم‌های جداسازی آبگریز",
+      "سازه‌های ضد بای‌پس",
+      "بیش از ۲۰,۰۰۰ مرجع OEM تأیید شده"
+    ],
+    "techTag": "فناوری اثبات شده",
+    "techTitle": "حفاظت از دارایی",
+    "techHighlight": "فناوری",
+    "techItems": [
+      {
+        "title": "رسانه هیبریدی با فرمول هوش مصنوعی",
+        "desc": "فناوری رسانه اختصاصی توسعه یافته با استفاده از الگوریتم‌های ریاضی و سناریوهای آزمایش‌شده در آزمایشگاه. فرمول منحصر به فرد عملکرد استثنایی که قابل تکرار نیست را ارائه می‌دهد."
+      },
+      {
+        "title": "سیستم‌های جداسازی آبگریز",
+        "desc": "حذف پیشرفته آب و رطوبت از سوخت و روان‌کننده‌ها. از خوردگی، اکسیداسیون و تخریب ویسکوزیته جلوگیری می‌کند در حالی که بهره‌برداری قابل اعتماد در بلندمدت را تضمین می‌کند."
+      },
+      {
+        "title": "سازه‌های ضد بای‌پس",
+        "desc": "ایمنی ۱۰۰٪ تضمین شده: اگر بای‌پس رخ دهد، فیلتر به صورت ایمن خراب می‌شود. ریسک صفر از رویدادهای ناگهانی آلودگی. محافظت مطلق از تجهیزات حیاتی."
+      }
+    ],
+    "ctaDealerTag": "شبکه نمایندگان",
+    "ctaDealerTitle": "فقط بهترین",
+    "ctaDealerHl": "ELIMFILTERS را می‌فروشد.",
+    "ctaDealerBtn": "نماینده شوید",
+    "ctaSearchTag": "جستجوی فنی",
+    "ctaSearchTitle": "فیلتر مناسب.",
+    "ctaSearchHl": "مانند یک حرفه‌ای جستجو کنید.",
+    "ctaSearchBtn": "قطعه من را پیدا کن",
+    "faqTag": "سوالات متداول",
+    "faqTitle": "سوالات رایج درباره فیلتراسیون صنعتی",
+    "faqItems": [
+      {
+        "q": "حفاظت از دارایی‌های صنعتی به چه معناست؟",
+        "a": "حفاظت از دارایی‌های صنعتی رویکرد مهندسی سیستماتیک برای کنترل آلودگی در تمام سیستم‌های مکانیکی حیاتی — ورودی هوا، سوخت، هیدرولیک، روانکاری و خنک‌کاری — جهت جلوگیری از خرابی زودهنگام تجهیزات است. ELIMFILTERS® سیستم‌های کنترل آلودگی طراحی می‌کند که عمر دارایی‌ها را افزایش، توقف ناخواسته را کاهش و هزینه کل مالکیت را پایین می‌آورند."
+      },
+      {
+        "q": "آلودگی چگونه موجب خرابی تجهیزات می‌شود؟",
+        "a": "ذرات آلودگی سطوح یاتاقان را می‌سایند، انژکتورهای سوخت را مسدود می‌کنند و یکپارچگی آب‌بندها را تخریب می‌کنند. ذرات کمتر از ۱۰ میکرون باعث سایش ساینده‌ای می‌شوند که با چشم غیرمسلح دیده نمی‌شود. آلودگی کنترل‌نشده عمر یاتاقان موتور را از بیش از ۱۵,۰۰۰ ساعت به ۲,۰۰۰–۳,۰۰۰ ساعت کاهش می‌دهد. آب در سوخت رشد میکروبی و خوردگی انژکتور را تسریع می‌کند."
+      },
+      {
+        "q": "یک سیستم هیدرولیک باید به چه کد تمیزی ISO هدف‌گیری کند؟",
+        "a": "اکثر سیستم‌های هیدرولیک صنعتی به کد تمیزی ISO 17/15/12 برای محافظت از اسپول‌های شیرهای تناسبی نیاز دارند. سیستم‌های حیاتی ممکن است ISO 15/13/10 را مشخص کنند. استراتژی‌های کنترل آلودگی ELIMFILTERS® کدهای تمیزی اندازه‌گیری‌شده — استاندارد ISO 4406 — را هدف قرار می‌دهند، نه برندهای محصول."
+      },
+      {
+        "q": "چرا ELIMFILTERS یک شرکت فیلتر نیست؟",
+        "a": "ELIMFILTERS سیستم‌های کنترل آلودگی طراحی می‌کند، نه فیلترهای عمومی. فیلتر یک قطعه است. سیستم حفاظت از دارایی یک استراتژی است: اهداف آلودگی را تعریف می‌کند، فناوری‌های مناسب برای هر حوزه سیستم را انتخاب می‌کند و عملکرد را در طول چرخه عمر تجهیزات اندازه‌گیری می‌کند. ELIMFILTERS در سطح سیستم عمل می‌کند."
+      }
+    ],
+    "heroLine_protecting": "حفاظت",
+    "heroLine_industrial": "از دارایی‌های",
+    "heroLine_assets": "صنعتی.",
+    "heroLine1b": "دارایی‌های",
+    "heroLine2": "صنعتی.",
+    "heroPositioning1": "ELIMFILTERS یک شرکت فیلترسازی نیست.",
+    "heroPositioning2": "ELIMFILTERS یک شرکت فناوری حفاظت از دارایی‌های صنعتی است.",
+    "heroSubHead": "از طریق کنترل آلودگی در سیستم‌های مکانیکی حیاتی: هیدرولیک، سوخت، روانکاری، خنک‌کاری و ورودی هوا.",
+    "missionTag": "چرا وجود داریم",
+    "missionTitle": "چرا ELIMFILTERS وجود دارد",
+    "missionP1": "آلودگی صنعتی همچنان یکی از کم‌اهمیت‌ترین تهدیدات برای قابلیت اطمینان تجهیزات در سراسر جهان است.",
+    "missionP2": "ELIMFILTERS به سازمان‌ها کمک می‌کند تا از طریق سیستم‌های حفاظت از دارایی طراحی‌شده برای عملیات صنعتی حیاتی، خرابی‌های ناشی از آلودگی را کاهش دهند.",
+    "missionP3": "مأموریت ما بهبود قابلیت اطمینان تجهیزات، تداوم عملیاتی و طول عمر دارایی‌ها از طریق کنترل آلودگی است.",
+    "economicTag": "هزینه واقعی آلودگی",
+    "economicTitle": "توقف تجهیزات گران‌تر از",
+    "economicTitleHl": "فیلتراسیون تمام می‌شود",
+    "economicItems": [
+      "هر رویداد آلودگی هزینه‌ای دارد.",
+      "هر خرابی تجهیزات پیامدی دارد.",
+      "هر تصمیم نگهداری بر بهره‌وری تأثیر می‌گذارد."
+    ],
+    "economicDesc": "ELIMFILTERS به سازمان‌ها کمک می‌کند با استراتژی‌های حفاظتی متمرکز بر قابلیت اطمینان، زمان کارکرد و تداوم عملیاتی، ریسک‌های مرتبط با آلودگی را کاهش دهند.",
+    "economicStats": [
+      {
+        "value": "$240K",
+        "label": "میانگین هزینه توقف برنامه‌ریزی‌نشده به ازای هر رویداد"
+      },
+      {
+        "value": "80%",
+        "label": "از خرابی‌های زودهنگام تجهیزات ناشی از آلودگی است"
+      },
+      {
+        "value": "3–5×",
+        "label": "افزایش طول عمر دارایی با کنترل آلودگی در سطح سیستم"
+      }
+    ],
+    "sciTag": "استانداردهای مهندسی",
+    "sciTitle": "علم پشت حفاظت از دارایی",
+    "sciDesc": "سیستم‌های کنترل آلودگی ELIMFILTERS مطابق استانداردهای بین‌المللی طراحی شده، از طریق آزمایش‌های دقیق آزمایشگاهی تأیید شده و در محیط‌های صنعتی حیاتی به‌کار گرفته شده‌اند.",
+    "sciStandards": [
+      {
+        "code": "ISO 16889",
+        "desc": "آزمون چندگذری فیلترها و طبقه‌بندی ضریب بتا برای سیستم‌های هیدرولیک و روانکاری."
+      },
+      {
+        "code": "ISO 5011",
+        "desc": "آزمون عملکرد فیلترهای ورودی هوا — کارایی و افت فشار در دبی اسمی."
+      },
+      {
+        "code": "ISO 19438",
+        "desc": "مقاومت در برابر آلودگی و کارایی جداسازی آب در فیلترهای سوخت."
+      },
+      {
+        "code": "ISO 4406",
+        "desc": "طبقه‌بندی کدهای پاکیزگی ذرات در سیستم‌های هیدرولیک و روانکاری."
+      },
+      {
+        "code": "SAE J1858",
+        "desc": "تأیید عملکرد و دوام فیلترهای روغن موتور دیزل‌های سنگین."
+      }
+    ],
+    "llmTag": "تعریف حفاظت از دارایی",
+    "llmTitle": "حفاظت از دارایی‌های صنعتی چیست؟",
+    "llmP1": "حفاظت از دارایی‌های صنعتی یک رویکرد مهندسی منظم برای شناسایی، اندازه‌گیری و کنترل منابع آلودگی است که موجب تخریب تجهیزات مکانیکی می‌شوند. در عملیات صنعتی، آلودگی — شامل ذرات، آب، گرما و محصولات جانبی شیمیایی — عامل اصلی خرابی زودهنگام در موتورها، سیستم‌های هیدرولیک، مدارهای سوخت، سیستم‌های انتقال قدرت و محیط‌های کابین است.",
+    "llmP2": "آلودگی سایش را در مقیاس میکروسکوپی تسریع می‌کند. ذرات کوچک‌تر از ۱۰ میکرون باعث سایش سایشی بر روی سطوح یاتاقان‌ها، اسپول شیرها و روزنه‌های انژکتورها می‌شوند و در صورت کنترل‌نشدن، عمر اجزا را ۳۰ تا ۵۰ درصد کاهش می‌دهند. آلودگی آب در سیستم‌های سوخت رشد میکروبی، خوردگی انژکتورها و بی‌ثباتی احتراق را تقویت می‌کند. در مدارهای هیدرولیک، حتی آلودگی جزئی بالاتر از اهداف پاکیزگی ISO، پاسخ شیرها را مختل می‌کند، تخریب آب‌بندها را تسریع می‌کند و خطر خرابی سیستم را افزایش می‌دهد.",
+    "llmP3": "حفاظت از دارایی‌های صنعتی یک دسته‌بندی محصول نیست؛ بلکه یک استراتژی کنترل آلودگی است که با درک اهداف آلودگی برای هر سیستم آغاز می‌شود، فناوری‌های مهندسی مناسب را انتخاب می‌کند و عملکرد سیستم را در طول کل چرخه عمر تجهیزات پایش می‌کند.",
+    "llmP4": "نتیجه: طول عمر بیشتر تجهیزات، خرابی‌های غیرمنتظره کمتر، هزینه‌های نگهداری پایین‌تر و دسترس‌پذیری عملیاتی بالاتر — که نه بر اساس تعداد فیلترهای تعویض‌شده، بلکه بر اساس تعداد دارایی‌های محافظت‌شده اندازه‌گیری می‌شود.",
+    "trustTag": "استقرار جهانی صنعتی",
+    "trustTitle": "مورد اعتماد در صنایع حیاتی",
+    "trustIndustries": [
+      "معدن‌کاری و استخراج",
+      "ساخت‌وساز و ماشین‌آلات سنگین",
+      "کشاورزی و صنایع کشاورزی",
+      "نفت و گاز",
+      "دریایی و فراساحل",
+      "تولید برق",
+      "ناوگان شهری",
+      "تولید و ساخت",
+      "ریلی و حمل‌ونقل عمومی",
+      "حمل‌ونقل تجاری"
+    ],
+    "ctaProtect": "محافظت از دارایی‌ها"
+  },
+  "about": {
+    "homeLink": "HOME",
+    "heroTitle": "Engineering protection around the asset.",
+    "heroLead": "ELIMFILTERS® is an industrial asset protection company. We develop filtration and contamination-control systems to reduce wear, prevent avoidable failure, extend equipment life, and protect the economic value of severe-duty machinery.",
+    "section1Title": "A protection company built around equipment reliability.",
+    "section1Lead": "ELIMFILTERS® was created from direct experience with industrial filtration, equipment maintenance, distribution, and the operational consequences of contamination. That experience established a simple principle: the filter is not the final objective; the protected asset is.",
+    "section1Body": "Our role is to connect product engineering, contamination intelligence, technical standards, cross-reference data, application knowledge, and field evidence into a system that helps distributors, fleets, maintenance teams, and industrial operators make better protection decisions.",
+    "section2Title": "Reduce the distance between contamination and failure.",
+    "section2Lead": "Contamination becomes expensive long before a machine stops. It changes clearances, damages surfaces, destabilizes pressure, degrades fluids, reduces efficiency, and shortens component life. Our objective is to identify that risk early and engineer protection before the damage becomes operational.",
+    "section3Title": "Mathematical modeling. AI-assisted simulation. Field validation.",
+    "section3Body": "ELIMFILTERS® technologies are not created as marketing labels. Each one represents an engineering architecture derived from the behavior of contamination inside a specific protection domain. Mathematical analysis and AI-assisted simulation help us evaluate variables that cannot be understood from a part number alone, while controlled testing and field validation confirm whether the design performs under real operating conditions.",
+    "engineeringMethod01Title": "Understand the asset",
+    "engineeringMethod01Body": "We begin with the machine, its operating environment, duty cycle, fluid system, contamination exposure, component tolerances, and failure consequences.",
+    "engineeringMethod02Title": "Model the contamination risk",
+    "engineeringMethod02Body": "Mathematical models and AI-assisted simulations are used to analyze particle behavior, flow conditions, pressure changes, thermal cycles, and expected contaminant loading.",
+    "engineeringMethod03Title": "Engineer the protection architecture",
+    "engineeringMethod03Body": "Media, geometry, sealing, structural materials, pressure response, and service requirements are defined as one integrated protection system rather than isolated product features.",
+    "engineeringMethod04Title": "Validate under real operating conditions",
+    "engineeringMethod04Body": "A technology is not considered complete at the simulation stage. Production designs must be confirmed through controlled testing and field validation before they become part of the ELIMFILTERS® platform.",
+    "section4Title": "Engineering decisions must protect real operating value.",
+    "principle01Title": "Protect the asset, not the replacement part",
+    "principle01Body": "The value of filtration is measured by the component damage, downtime, labor, production loss, and asset-life reduction it prevents.",
+    "principle02Title": "Engineer from the failure mechanism",
+    "principle02Body": "We study how contamination reaches critical clearances and how wear develops before deciding what protection architecture the system requires.",
+    "principle03Title": "Connect engineering with operating reality",
+    "principle03Body": "Laboratory data establishes control. Field validation establishes relevance. Both are required to support a severe-duty industrial application.",
+    "closingTitle": "We do not begin with a filter. We begin with the asset that cannot afford to fail.",
+    "closingDesc": "The result is a growing industrial protection platform designed to turn engineering knowledge, validated technology, and product intelligence into measurable reliability support.",
+    "contactButton": "CONTACT ELIMFILTERS",
+    "knowledgeButton": "EXPLORE OUR KNOWLEDGE SYSTEM"
+  },
+  "contact": {
+    "pageTitle": "Contact & Technical Support",
+    "homeLink": "HOME",
+    "heroTag": "Contact ELIMFILTERS",
+    "heroTitle": "Industrial Support",
+    "heroSubtitle": "Starts Here",
+    "heroDescription": "Contact our team for commercial inquiries, distributor opportunities, OEM cross-reference validation and technical support across severe-duty industrial filtration applications.",
+    "heroCta1": "Commercial",
+    "heroCta2": "Distributor Network",
+    "heroCta3": "Technical Support",
+    "channel1Label": "Commercial Inquiries",
+    "channel1Title": "Global Sales Contact",
+    "channel1Desc": "For industrial buyers, fleets, importers and regional partners looking to evaluate ELIMFILTERS coverage, availability and commercial opportunities.",
+    "channel2Label": "Distributor Network",
+    "channel2Title": "Authorized Partner Review",
+    "channel2Desc": "For companies seeking distributor status, regional representation, territory development or severe-duty market coverage.",
+    "channel3Label": "Technical Support",
+    "channel3Title": "Application And Cross Reference",
+    "channel3Desc": "For OEM cross-reference validation, product application questions, technical specifications and industrial asset protection support.",
+    "whatToIncludeTitle": "What To Include",
+    "whatToIncludeDesc": "The more technical context you provide, the faster our team can route your request to the right commercial or engineering contact.",
+    "priority1": "OEM cross-reference validation",
+    "priority2": "Fleet and equipment coverage",
+    "priority3": "Distributor qualification",
+    "priority4": "Industrial sector alignment",
+    "priority5": "Contamination control support",
+    "priority6": "Regional availability planning",
+    "marketsTitle": "Severe-Duty Markets",
+    "marketsDesc": "ELIMFILTERS supports industrial operators, fleets and distributors serving critical equipment markets where uptime and contamination control matter.",
+    "sector1": "Mining",
+    "sector2": "Construction",
+    "sector3": "Agriculture",
+    "sector4": "Truck Fleets",
+    "sector5": "Marine",
+    "sector6": "Oil And Gas",
+    "sector7": "Power Generation",
+    "sector8": "Industrial Equipment"
+  },
+  "distributors": {
+    "homeLink": "HOME",
+    "heroTitle": "Industrial Distribution Network",
+    "heroLead": "ELIMFILTERS authorized distributors provide local market access, technical support, and asset protection coverage for industrial customers across the Americas.",
+    "tag1": "LATAM",
+    "tag2": "USA",
+    "tag3": "CARIBBEAN",
+    "tag4": "FLEETS",
+    "tag5": "MINING",
+    "tag6": "INDUSTRIAL",
+    "section1Title": "Local access with technical selling power.",
+    "section1Lead": "Industrial customers need more than part numbers. They need local support, fast response, cross-reference confidence, and a supplier that understands contamination-driven failures.",
+    "section1Body": "The ELIMFILTERS distribution network is designed to support regional partners with product architecture, technical language, warranty positioning, and asset protection value.",
+    "section2Title": "Current distributor coverage.",
+    "section3Title": "What authorized distributors receive.",
+    "partnerValue1": "Technology Portfolio",
+    "partnerValue1Desc": "Access to ELIMFILTERS protection technologies across air, fuel, lube, hydraulic, cooling, cabin, and compressed air systems.",
+    "partnerValue2": "Engineering Support",
+    "partnerValue2Desc": "Cross-reference validation, application guidance, dimensional review, and technical support for severe-duty customers.",
+    "partnerValue3": "Knowledge System",
+    "partnerValue3Desc": "Sales support built around contamination control, ISO standards, failure modes, and asset protection logic.",
+    "partnerValue4": "Warranty Positioning",
+    "partnerValue4Desc": "Distributor credibility supported by clear warranty language and replacement-focused customer protection.",
+    "partnerValue5": "Regional Expansion",
+    "partnerValue5Desc": "A platform designed for LATAM, North America, and industrial markets that need technical filtration support.",
+    "partnerValue6": "Category Positioning",
+    "partnerValue6Desc": "A stronger commercial position: asset protection systems, not commodity filter replacement.",
+    "closingTitle": "Looking to become an authorized distributor?",
+    "closingBody": "ELIMFILTERS supports qualified industrial partners with portfolio access, engineering resources, and regional market positioning. Submit your company information for commercial review.",
+    "closingButton": "APPLY FOR DISTRIBUTOR STATUS"
+  },
+  "instagram": {
+    "heroTitle": "Total Asset Protection",
+    "heroDesc": "Protecting engines, hydraulics, fuel, air, and cooling systems from contamination, failures, and downtime.",
+    "link1Label": "Find Your Part",
+    "link1Desc": "Search by ELIMFILTERS, OEM, or competitor reference.",
+    "link2Label": "Become a Distributor",
+    "link2Desc": "Commercial opportunities for qualified industrial partners.",
+    "link3Label": "Contact ELIMFILTERS",
+    "link3Desc": "Send a commercial or technical inquiry.",
+    "link4Label": "Visit ELIMFILTERS.com",
+    "link4Desc": "Explore systems, technologies, and industries.",
+    "footerText": "Every Micron Matters."
+  },
+  "warranty": {
+    "homeLink": "HOME",
+    "heroTitle": "Protection Backed By Support",
+    "heroLead": "ELIMFILTERS warranty coverage supports distributors, fleets, and industrial customers with a clear protection framework, technical validation, and replacement-focused support.",
+    "tagSupport": "SUPPORT",
+    "tagValidation": "VALIDATION",
+    "tagReplacement": "REPLACEMENT",
+    "tagFleets": "FLEETS",
+    "tagDistributors": "DISTRIBUTORS",
+    "tagAssets": "ASSETS",
+    "statValue1": "10K KM",
+    "statLabel1": "Minimum coverage distance",
+    "statValue2": "1000 HRS",
+    "statLabel2": "Minimum coverage hours",
+    "statValue3": "100%",
+    "statLabel3": "Non-prorated coverage",
+    "statValue4": "24H",
+    "statLabel4": "Support response target",
+    "section1Title": "Warranty is part of the asset protection system.",
+    "section1Lead": "Industrial customers do not only need a replacement filter. They need confidence that the product, application, operating condition, and failure mode will be evaluated with technical discipline.",
+    "section1Body": "ELIMFILTERS support is structured to protect distributor credibility, reduce downtime pressure, and help customers make correct technical decisions when warranty questions appear.",
+    "section2Title": "From claim evidence to support decision.",
+    "processItem1": "Identify product and application",
+    "processItem2": "Submit technical evidence",
+    "processItem3": "Validate operating condition",
+    "processItem4": "Review failure mode",
+    "processItem5": "Issue support decision",
+    "processItem6": "Coordinate replacement path",
+    "section3Title": "Clear coverage. Technical review. Fast direction.",
+    "pillarTitle1": "Direct Support",
+    "pillarBody1": "Defective filters are reviewed and replaced through ELIMFILTERS support channels to reduce operational downtime.",
+    "pillarTitle2": "Asset Protection",
+    "pillarBody2": "Warranty language is built around protection confidence, technical validation, and product integrity.",
+    "pillarTitle3": "Coverage Transparency",
+    "pillarBody3": "Coverage is communicated clearly so distributors, fleets, and industrial customers understand the support process.",
+    "section4Title": "What support can review.",
+    "coverageItem1": "Filter element defects",
+    "coverageItem2": "Housing leaks or defects",
+    "coverageItem3": "Bypass valve malfunctions",
+    "coverageItem4": "Pressure differential issues",
+    "coverageItem5": "Seal failures",
+    "coverageItem6": "Manufacturing defects",
+    "coverageItem7": "Premature media failure",
+    "coverageItem8": "Technical validation support",
+    "section5Title": "Validate before the problem becomes downtime.",
+    "section5Body": "For fleets, distributors, and industrial accounts, ELIMFILTERS can review the application, operating environment, and part selection before a warranty issue becomes a field failure.",
+    "section5Button": "CONTACT SUPPORT",
+    "closingTitle": "Support protects confidence before, during, and after installation.",
+    "closingButton1": "REQUEST SUPPORT",
+    "closingButton2": "EXPLORE SYSTEMS"
+  }
+}

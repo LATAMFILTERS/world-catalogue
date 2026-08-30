@@ -1,0 +1,49 @@
+{
+  "key": "TURBOCORE",
+  "type": "technology",
+  "name": "TURBOCORE™",
+  "slug": "turbocore",
+  "status": "active",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [],
+  "domain": "Fuel",
+  "citation": {
+    "source_url": "https://elimfilters.com/knowledge-center/technologies/turbocore/",
+    "concept": "TURBOCORE FH and FG Turbine Fuel Water Separation Technology",
+    "version": "1.0",
+    "last_updated": "2026-08-24",
+    "content_hash": "sha256:00744bcf0d936375059ceb901a5ed76e968a0fa80814992d1d5bb004336c9f33"
+  },
+  "canonical": {
+    "definition": "TURBOCORE is the ELIMFILTERS turbine-style fuel/water separation technology exclusively for FH and FG series systems.",
+    "systems": "Fuel Cleanliness Protection; approved FH and FG turbine-style separator systems only.\n\nBOUNDARY\nTURBOCORE must not be assigned to standard non-turbine separator filters. HYDROCORE must not be assigned to FH or FG turbine systems.",
+    "failure_impact": null,
+    "related_standards": null,
+    "related_technologies": "SYNTAPORE governs plain fuel filtration. HYDROCORE governs approved standard non-turbine fuel/water separators, including drain and transparent-bowl configurations.",
+    "industrial_role": null
+  },
+  "relationships": {
+    "related_technologies": [
+      "SYNTAPORE",
+      "HYDROCORE"
+    ]
+  },
+  "vault_path": "elimfilters-vault\\01-technologies\\active\\TURBOCORE.md",
+  "_links": {
+    "self": "/api/citation/TURBOCORE.json",
+    "type_index": "/api/citation/type/technology.json",
+    "related": [
+      {
+        "key": "SYNTAPORE",
+        "relation": "related_technologies",
+        "href": "/api/citation/SYNTAPORE.json"
+      },
+      {
+        "key": "HYDROCORE",
+        "relation": "related_technologies",
+        "href": "/api/citation/HYDROCORE.json"
+      }
+    ]
+  }
+}

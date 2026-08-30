@@ -1,0 +1,125 @@
+{
+  "key": "OPERATOR_DUST_EXPOSURE",
+  "type": "problem",
+  "name": "Operator Dust Exposure",
+  "slug": null,
+  "status": "active",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "problem",
+    "active",
+    "cabin",
+    "not-in-ud",
+    "part-search-entry",
+    "exposure-extreme",
+    "occupational-health"
+  ],
+  "domain": "cabin",
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
+    "concept": "Operator Dust Exposure — Cabin Air Problem",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:c40db41df53c67068ca4e4630112bac9c0ee4c538a0d86fdac6efc593d06a68e"
+  },
+  "canonical": {
+    "definition": "Operator dust exposure — ingress of respirable particulate and chemical contaminants into\nequipment operator cabs — is the primary occupational health contamination problem in\nconstruction, mining, and agricultural equipment, governed by ISO 11155 cab air standards\nand occupational health regulations.",
+    "systems": "Cabin/Operator Protection; affected: operator respiratory system; primary industries:\nMining (EXTREME), Construction (HIGH), Agriculture (HIGH), Bus/Coach, Railway, Trucks/Fleets",
+    "failure_impact": "Cab filter degradation or bypass → ambient dust (silica, PM2.5) enters breathing zone\n→ cumulative alveolar deposition of crystalline silica → progressive pulmonary fibrosis\n→ silicosis (irreversible) after 10+ years sustained exposure |\nOperational Impact: regulatory non-compliance exposure ($500K–$2M lifetime cost per case);\nISO 11155 Class A cab maintains <0.025 mg/m³ at 500 mg/m³ ambient concentration",
+    "related_standards": "ISO 11155: Cab air filter performance requirements for agricultural and construction equipment |\nDIN 71220: Vehicle cabin air filter classification standard",
+    "related_technologies": "MICROKAPPA: ISO 11155-compliant cabin filtration removing PM10, PM2.5, and chemical aerosols\nfrom operator cab air supply; available in Class A (particulate) and Class B (particulate + carbon)",
+    "industrial_role": "Operator dust exposure is the only contamination problem with direct human health and\nregulatory compliance consequences. It is distinct from all equipment-failure contamination\nproblems in that the failure is measured in occupational health outcomes, not equipment\nlifespan. CABIN_PRIMARY / MICROKAPPA is the sole citation chain for this problem domain."
+  },
+  "relationships": {
+    "applicable_standards": [
+      "ISO_11155",
+      "DIN_71220"
+    ],
+    "resolved_by_technologies": [
+      "MICROKAPPA"
+    ],
+    "recommended_product_families": [
+      "CABIN_PRIMARY"
+    ],
+    "root_contamination": [
+      "CABIN_AIR_CONTAMINATION"
+    ],
+    "industry_frequency": [
+      "CONSTRUCTION",
+      "MINING",
+      "AGRICULTURE",
+      "BUS_COACH",
+      "RAILWAY",
+      "TRUCKS_FLEETS",
+      "WASTE_MUNICIPAL"
+    ]
+  },
+  "vault_path": "elimfilters-vault\\07-problems\\OPERATOR_DUST_EXPOSURE.md",
+  "_links": {
+    "self": "/api/citation/OPERATOR_DUST_EXPOSURE.json",
+    "type_index": "/api/citation/type/problem.json",
+    "related": [
+      {
+        "key": "ISO_11155",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_11155.json"
+      },
+      {
+        "key": "DIN_71220",
+        "relation": "applicable_standards",
+        "href": "/api/citation/DIN_71220.json"
+      },
+      {
+        "key": "MICROKAPPA",
+        "relation": "resolved_by_technologies",
+        "href": "/api/citation/MICROKAPPA.json"
+      },
+      {
+        "key": "CABIN_PRIMARY",
+        "relation": "recommended_product_families",
+        "href": "/api/citation/CABIN_PRIMARY.json"
+      },
+      {
+        "key": "CABIN_AIR_CONTAMINATION",
+        "relation": "root_contamination",
+        "href": "/api/citation/CABIN_AIR_CONTAMINATION.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "industry_frequency",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "industry_frequency",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "AGRICULTURE",
+        "relation": "industry_frequency",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "BUS_COACH",
+        "relation": "industry_frequency",
+        "href": "/api/citation/BUS_COACH.json"
+      },
+      {
+        "key": "RAILWAY",
+        "relation": "industry_frequency",
+        "href": "/api/citation/RAILWAY.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "industry_frequency",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "WASTE_MUNICIPAL",
+        "relation": "industry_frequency",
+        "href": "/api/citation/WASTE_MUNICIPAL.json"
+      }
+    ]
+  }
+}

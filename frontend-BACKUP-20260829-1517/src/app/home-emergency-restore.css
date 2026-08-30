@@ -1,0 +1,84 @@
+/* Controlled HOME readability adjustments.
+ * Loaded after globals.css to keep HOME stable while applying requested text-size improvements.
+ * No layout structure, images, section order, or GEO content is changed here.
+ */
+
+/* 1) Humanized hero paragraph: wider + about 10% larger. */
+main:has(> div[style*="visibility: hidden"]) > section:first-of-type p {
+  max-width: 1100px !important;
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem) !important;
+  line-height: 1.7 !important;
+}
+
+/* 2) Problem intro paragraph: about 10% larger. */
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(2) .spotlight-grid > div:first-child > p:first-child {
+  max-width: 100% !important;
+  font-size: 1.16rem !important;
+  line-height: 1.8 !important;
+}
+
+/* 3) Three failure-mode descriptions: about 17% larger. */
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(2) .spotlight-grid > div:first-child > div p {
+  font-size: 1.03rem !important;
+  line-height: 1.72 !important;
+}
+
+/* 5) Remove only the prevention-cost container, not the full cost section. */
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(3) div[style*="space-between"] {
+  display: none !important;
+}
+
+/* 4) Cost-card descriptions: about 15% larger. */
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(3) div[style*="repeat(auto-fit"] p:last-child {
+  font-size: 0.98rem !important;
+  line-height: 1.72 !important;
+}
+
+/* 6) Why ELIMFILTERS narrative: about 20% larger. */
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:first-child p {
+  font-size: 1.2rem !important;
+  line-height: 1.8 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:first-child span:not(:first-child) {
+  font-size: 1.14rem !important;
+  line-height: 1.65 !important;
+}
+
+/* 7) Why-card paragraph and bullet text: about 20% larger. */
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:last-child p,
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:last-child li {
+  font-size: 1.14rem !important;
+  line-height: 1.7 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(4) .why-grid > div:last-child li > span:first-child::before {
+  font-size: 1.14rem !important;
+}
+
+/* 8) Asset protection narrative block: about 20% larger, controlled. */
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(5) h2 {
+  font-size: clamp(2.04rem, 3.84vw, 2.7rem) !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(5) p {
+  font-size: 1.14rem !important;
+  line-height: 1.8 !important;
+}
+
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(5) [style*="var(--font-mono)"] {
+  font-size: 0.78rem !important;
+}
+
+/* 9) Standards intro: wider + about 20% larger. */
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(6) div[style*="marginBottom: 2.75rem"] > p {
+  max-width: 1040px !important;
+  font-size: 1.08rem !important;
+  line-height: 1.8 !important;
+}
+
+/* 10) Technology-card descriptions: about 17% larger. */
+main:has(> div[style*="visibility: hidden"]) > section:nth-of-type(7) .tech-grid p {
+  font-size: 1.05rem !important;
+  line-height: 1.78 !important;
+}

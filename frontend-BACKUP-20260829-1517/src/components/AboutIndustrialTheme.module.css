@@ -1,0 +1,115 @@
+.aboutIndustrialNav {
+  position: relative;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) {
+  background: #050505 !important;
+  color: #ffffff !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(1) {
+  background: #050505 !important;
+  color: #ffffff !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(2),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(3),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(5),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(6),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(8),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(10) {
+  background: #050505 !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(4),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(9) {
+  background: #0a0a0a !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(7),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(11) {
+  background: #050505 !important;
+  color: #ffffff !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(2) :global(h2),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(3) :global(h2),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(4) :global(h2),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(5) :global(h2),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(6) :global(h2),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(8) :global(h2),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(9) :global(h2),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(10) :global(h2),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(3) :global(h3),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(6) :global(h3) {
+  color: #ffffff !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(2) :global(p),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(3) :global(p),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(4) :global(p),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(5) :global(p),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(6) :global(p),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(8) :global(p),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(9) :global(p),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(10) :global(p),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(10) :global(li) {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(2) :global(p:first-child),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(3) :global(p:first-child),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(4) :global(p:first-child),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(5) :global(p:first-child),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(6) :global(p:first-child),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(8) :global(p:first-child),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(9) :global(p:first-child),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(10) :global(p:first-child) {
+  color: #FFF12D !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(3) :global(article),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(6) :global(article) {
+  background: #0a0a0a !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(3) :global(article span),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(6) :global(article span) {
+  color: #FFF12D !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(6) :global(article p) {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(9) :global(a),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(10) :global(a) {
+  color: #FFF12D !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(10) :global(strong) {
+  color: #FFF12D !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(3) > :global(div) > :global(div),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(6) > :global(div) > :global(div) {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(5) :global(img),
+:global(main#main-content):has(.aboutIndustrialNav) > :global(section):nth-of-type(6) :global(img) {
+  background: #111111;
+}
+
+@media (max-width: 640px) {
+  .aboutIndustrialNav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

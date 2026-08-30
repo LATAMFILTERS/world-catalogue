@@ -1,0 +1,85 @@
+{
+  "key": "COMPRESSED_AIR_PRIMARY",
+  "type": "product-family",
+  "name": "Pneumatic Air Dryer Protection",
+  "slug": "compressed-air-primary",
+  "status": "active",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "product-family",
+    "active",
+    "compressed-air",
+    "not-in-ud",
+    "part-search-node"
+  ],
+  "domain": null,
+  "citation": {
+    "source_url": "elimfilters.com/systems/compressed-air-primary",
+    "concept": "Pneumatic Air Dryer Protection Product Family",
+    "version": "1.0",
+    "last_updated": "2026-08-15",
+    "content_hash": "sha256:39bf4e1f7c074675863df7c18824409b62dbef2d0edcf1a6aeb9fa98a769d59d"
+  },
+  "canonical": {
+    "definition": "Pneumatic Air Dryer Protection — the DRYCORE™-technology air-dryer filtration\nelement family for pneumatic brake-system moisture control, covering 16 SKUs.",
+    "systems": "Compressed-air domain within Air Intake & Airflow Protection; implements\nDRYCORE™ air-dryer filtration technology",
+    "failure_impact": "Inadequate moisture removal in compressed air allows condensation to affect\npneumatic valves, actuators and braking-system components, risking corrosion\nand reduced reliability.",
+    "related_standards": null,
+    "related_technologies": "None -- DRYCORE is the sole ELIMFILTERS technology assigned to the\ncompressed-air / pneumatic-brake domain.",
+    "industrial_role": "This product family is the principal moisture-control implementation for\nELIMFILTERS pneumatic brake-system protection."
+  },
+  "relationships": {
+    "target_industries": [
+      "TRUCKS_FLEETS",
+      "CONSTRUCTION",
+      "MINING"
+    ],
+    "uses_technology": [
+      "DRYCORE"
+    ],
+    "belongs_to_domain": [
+      "AIR_INTAKE_PROTECTION"
+    ],
+    "belongs_to_product_system": [
+      "AIR_INTAKE_PROTECTION"
+    ]
+  },
+  "vault_path": "elimfilters-vault\\08-product-families\\COMPRESSED_AIR_PRIMARY.md",
+  "_links": {
+    "self": "/api/citation/COMPRESSED_AIR_PRIMARY.json",
+    "type_index": "/api/citation/type/product-family.json",
+    "related": [
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "target_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "target_industries",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "target_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "DRYCORE",
+        "relation": "uses_technology",
+        "href": "/api/citation/DRYCORE.json"
+      },
+      {
+        "key": "AIR_INTAKE_PROTECTION",
+        "relation": "belongs_to_domain",
+        "href": "/api/citation/AIR_INTAKE_PROTECTION.json"
+      },
+      {
+        "key": "AIR_INTAKE_PROTECTION",
+        "relation": "belongs_to_product_system",
+        "href": "/api/citation/AIR_INTAKE_PROTECTION.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+.technology-detail-syntrax main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  background: transparent !important;
+  gap: 1px !important;
+}
+
+.technology-detail-syntrax main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] > div {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #050505 !important;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .technology-detail-syntrax main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .technology-detail-syntrax main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+  }
+}

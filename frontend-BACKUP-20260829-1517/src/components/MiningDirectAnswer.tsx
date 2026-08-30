@@ -1,0 +1,53 @@
+import type { CSSProperties } from 'react';
+
+interface Props {
+  paragraphStyle: CSSProperties;
+  paragraphs?: string[];
+}
+
+const miningParagraphs = [
+  'ELIMFILTERS® mining asset protection systems are engineered for hydraulic excavators, ultra class haul trucks, wheel loaders, rotary drill rigs, dozers, and mineral processing equipment working in open pit and underground mining environments. Mining operations place every filtration system under pressure. Dust is constant, hydraulic loads are severe, fuel quality can vary from site to site, and lubrication systems must protect critical components through long service intervals.',
+  'Mine sites can generate ambient dust concentrations of 5,000 to 15,000 mg/m³, which is 5 to 15 times higher than the 1,000 mg/m³ standard test dust concentration ISO 5011 specifies for single-stage air cleaners. In high tonnage operations, unplanned equipment downtime can cost $5,000 to $20,000 or more per hour per machine, with the most severe cases running higher depending on how far the disruption cascades through the production cycle. ELIMFILTERS® proprietary protection media is designed to control contamination across air intake, hydraulic, fuel, and lubrication systems so mining fleets can protect equipment value, maintain service discipline, and reduce downtime risk across demanding duty cycles.',
+];
+
+export function MiningDirectAnswer({ paragraphStyle, paragraphs }: Props) {
+  const content = paragraphs && paragraphs.length > 0 ? paragraphs : miningParagraphs;
+
+  return (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: content.length > 1 ? 'repeat(2, minmax(0, 1fr))' : '1fr',
+        gap: 'clamp(2rem, 4vw, 4rem)',
+        width: 'min(1240px, calc(100vw - 4rem))',
+        maxWidth: '1240px',
+        position: 'relative',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        alignItems: 'start',
+      }}
+    >
+      {content.map((paragraph) => (
+        <p
+          key={paragraph}
+          style={{
+            ...paragraphStyle,
+            margin: 0,
+            fontSize: 'clamp(1rem, 1.38vw, 1.16rem)',
+            lineHeight: 1.82,
+            textAlign: 'justify',
+          }}
+        >
+          {paragraph}
+        </p>
+      ))}
+      <style>{`
+        @media (max-width: 860px) {
+          div:has(> p:first-child:last-child) {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
+    </div>
+  );
+}

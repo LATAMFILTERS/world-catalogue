@@ -1,0 +1,2767 @@
+{
+  "edge_count": 552,
+  "node_count": 69,
+  "dangling_keys": [],
+  "edges": [
+    {
+      "from": "HYDROCORE",
+      "to": "SYNTAPORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "HYDROCORE",
+      "to": "TURBOCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "INTEKCORE",
+      "to": "ISO_5011",
+      "relation": "related_standards"
+    },
+    {
+      "from": "INTEKCORE",
+      "to": "MACROCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "MACROCORE",
+      "to": "ISO_5011",
+      "relation": "related_standards"
+    },
+    {
+      "from": "MACROCORE",
+      "to": "INTEKCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "MICROKAPPA",
+      "to": "MACROCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "MICROKAPPA",
+      "to": "INTEKCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "NANOFORCE",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "NANOFORCE",
+      "to": "ISO_4406",
+      "relation": "related_standards"
+    },
+    {
+      "from": "SYNTAPORE",
+      "to": "HYDROCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "SYNTAPORE",
+      "to": "TURBOCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "TURBOCORE",
+      "to": "SYNTAPORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "TURBOCORE",
+      "to": "HYDROCORE",
+      "relation": "related_technologies"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "NANOFORCE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "INTEKCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "ASTM_D6304",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "DUST_INGESTION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "AIRFILTER_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "AGRICULTURE",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "ISO_4406",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "AUTOMOTIVE",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "CABIN_AIR_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "HYDROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "MICROKAPPA",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "ISO_11155",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "BUS_COACH",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "HYDRAULIC_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "CABIN_AIR_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "NANOFORCE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "MICROKAPPA",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "INTEKCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "NFPA_T214",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "ISO_11155",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "DUST_INGESTION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "AIRFILTER_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "CONSTRUCTION",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "NANOFORCE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "MICROKAPPA",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "INTEKCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "ISO_4406",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "AIRFILTER_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MANUFACTURING",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MARINE",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "MARINE",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "MARINE",
+      "to": "HYDRAULIC_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "MARINE",
+      "to": "NANOFORCE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MARINE",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MARINE",
+      "to": "HYDROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MARINE",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "MARINE",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "MARINE",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "MARINE",
+      "to": "ASTM_D6304",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "MARINE",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MARINE",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MARINE",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MARINE",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MARINE",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MARINE",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MINING",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "MINING",
+      "to": "HYDRAULIC_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "MINING",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "MINING",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MINING",
+      "to": "NANOFORCE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MINING",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MINING",
+      "to": "HYDROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MINING",
+      "to": "INTEKCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "MINING",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "MINING",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "MINING",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "MINING",
+      "to": "DUST_INGESTION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MINING",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MINING",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MINING",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MINING",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "MINING",
+      "to": "AIRFILTER_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MINING",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MINING",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MINING",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "MINING",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "HYDRAULIC_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "NANOFORCE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "ISO_4406",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "OIL_GAS",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "HYDRAULIC_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "NANOFORCE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "HYDROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "ASTM_D6304",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "HYDRAULIC_VALVE_FAILURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "POWER_GENERATION",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "CABIN_AIR_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "INTEKCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "MICROKAPPA",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "ISO_11155",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "RAILWAY",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "CABIN_AIR_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "INTEKCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "HYDROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "MICROKAPPA",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "ISO_11155",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "FUEL_FILTER_PLUGGING",
+      "relation": "common_problems"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "FUEL_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "TRUCKS_FLEETS",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "PARTICLE_WEAR",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "DIESEL_WATER",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "CABIN_AIR_CONTAMINATION",
+      "relation": "relevant_contamination"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "NANOFORCE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "HYDROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "MICROKAPPA",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "ISO_11155",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "ENGINE_OIL_CONTAMINATION",
+      "relation": "common_problems"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "OPERATOR_DUST_EXPOSURE",
+      "relation": "common_problems"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "LUBE_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "WASTE_MUNICIPAL",
+      "to": "CABIN_PRIMARY",
+      "relation": "typical_product_families"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "AGRICULTURE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "CONSTRUCTION",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "MINING",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "MARINE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "OIL_GAS",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "POWER_GENERATION",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "RAILWAY",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "TRUCKS_FLEETS",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "AUTOMOTIVE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "BUS_COACH",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "MACROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "INTEKCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "AIR_INTAKE_PROTECTION",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "COOLING_SYSTEM_PROTECTION",
+      "to": "CONSTRUCTION",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "COOLING_SYSTEM_PROTECTION",
+      "to": "MINING",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "COOLING_SYSTEM_PROTECTION",
+      "to": "OIL_GAS",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "COOLING_SYSTEM_PROTECTION",
+      "to": "POWER_GENERATION",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "COOLING_SYSTEM_PROTECTION",
+      "to": "TRUCKS_FLEETS",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "COOLING_SYSTEM_PROTECTION",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "COOLING_SYSTEM_PROTECTION",
+      "to": "AGRICULTURE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "COOLING_SYSTEM_PROTECTION",
+      "to": "THERMACORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "AGRICULTURE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "CONSTRUCTION",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "MARINE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "MINING",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "OIL_GAS",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "POWER_GENERATION",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "RAILWAY",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "TRUCKS_FLEETS",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "HYDROCORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "SYNTAPORE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "ASTM_D6304",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "FUEL_CLEANLINESS_PROTECTION",
+      "to": "ISO_12937",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "AGRICULTURE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "CONSTRUCTION",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "MANUFACTURING",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "MARINE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "MINING",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "OIL_GAS",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "POWER_GENERATION",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "RAILWAY",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "TRUCKS_FLEETS",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "NANOFORCE",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "HYDRAULIC_PROTECTION",
+      "to": "ISO_4406",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "AGRICULTURE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "AUTOMOTIVE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "BUS_COACH",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "CONSTRUCTION",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "MANUFACTURING",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "MARINE",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "MINING",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "OIL_GAS",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "POWER_GENERATION",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "RAILWAY",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "TRUCKS_FLEETS",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "applicable_industries"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "SYNTRAX",
+      "relation": "applicable_technologies"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "LUBRICATION_PROTECTION",
+      "to": "ISO_4406",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "CABIN",
+      "to": "ISO_11155",
+      "relation": "related_standards"
+    },
+    {
+      "from": "CABIN",
+      "to": "DIN_71220",
+      "relation": "related_standards"
+    },
+    {
+      "from": "FUEL",
+      "to": "ASTM_D6304",
+      "relation": "related_standards"
+    },
+    {
+      "from": "FUEL",
+      "to": "ISO_12937",
+      "relation": "related_standards"
+    },
+    {
+      "from": "HYDRAULIC",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "HYDRAULIC",
+      "to": "ISO_4406",
+      "relation": "related_standards"
+    },
+    {
+      "from": "OIL",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "OIL",
+      "to": "ISO_4406",
+      "relation": "related_standards"
+    },
+    {
+      "from": "ASTM_D6304",
+      "to": "ISO_12937",
+      "relation": "related_standards"
+    },
+    {
+      "from": "ASTM_D6304",
+      "to": "HYDROCORE",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ASTM_D6304",
+      "to": "AGRICULTURE",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ASTM_D6304",
+      "to": "MARINE",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ASTM_D6304",
+      "to": "MINING",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ASTM_D6304",
+      "to": "OIL_GAS",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ASTM_D6304",
+      "to": "POWER_GENERATION",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ASTM_D6304",
+      "to": "TRUCKS_FLEETS",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ASTM_D6304",
+      "to": "DIESEL_WATER",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "DIN_71220",
+      "to": "ISO_11155",
+      "relation": "related_standards"
+    },
+    {
+      "from": "DIN_71220",
+      "to": "MICROKAPPA",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "DIN_71220",
+      "to": "AUTOMOTIVE",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "DIN_71220",
+      "to": "BUS_COACH",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "DIN_71220",
+      "to": "TRUCKS_FLEETS",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "DIN_71220",
+      "to": "CABIN_AIR_CONTAMINATION",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "ISO_11155",
+      "to": "DIN_71220",
+      "relation": "related_standards"
+    },
+    {
+      "from": "ISO_11155",
+      "to": "MICROKAPPA",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ISO_11155",
+      "to": "AGRICULTURE",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_11155",
+      "to": "CONSTRUCTION",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_11155",
+      "to": "MINING",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_11155",
+      "to": "RAILWAY",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_11155",
+      "to": "TRUCKS_FLEETS",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_11155",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_11155",
+      "to": "CABIN_AIR_CONTAMINATION",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "ISO_12937",
+      "to": "ASTM_D6304",
+      "relation": "related_standards"
+    },
+    {
+      "from": "ISO_12937",
+      "to": "HYDROCORE",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ISO_12937",
+      "to": "MARINE",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_12937",
+      "to": "OIL_GAS",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_12937",
+      "to": "POWER_GENERATION",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_12937",
+      "to": "DIESEL_WATER",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "ISO_16889",
+      "to": "ISO_4406",
+      "relation": "related_standards"
+    },
+    {
+      "from": "ISO_16889",
+      "to": "NANOFORCE",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ISO_16889",
+      "to": "SYNTRAX",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ISO_16889",
+      "to": "MINING",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_16889",
+      "to": "AGRICULTURE",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_16889",
+      "to": "PARTICLE_WEAR",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "ISO_4406",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "ISO_4406",
+      "to": "NANOFORCE",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ISO_4406",
+      "to": "SYNTRAX",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ISO_4406",
+      "to": "PARTICLE_WEAR",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "ISO_5011",
+      "to": "SAE_J1539",
+      "relation": "related_standards"
+    },
+    {
+      "from": "ISO_5011",
+      "to": "MACROCORE",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ISO_5011",
+      "to": "INTEKCORE",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "ISO_5011",
+      "to": "MINING",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_5011",
+      "to": "AGRICULTURE",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_5011",
+      "to": "CONSTRUCTION",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_5011",
+      "to": "TRUCKS_FLEETS",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_5011",
+      "to": "POWER_GENERATION",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "ISO_5011",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "applicable_to_systems"
+    },
+    {
+      "from": "ISO_5011",
+      "to": "PARTICLE_WEAR",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "NFPA_T214",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "NFPA_T214",
+      "to": "ISO_4406",
+      "relation": "related_standards"
+    },
+    {
+      "from": "NFPA_T214",
+      "to": "NANOFORCE",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "NFPA_T214",
+      "to": "CONSTRUCTION",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "NFPA_T214",
+      "to": "MINING",
+      "relation": "applicable_to_industries"
+    },
+    {
+      "from": "NFPA_T214",
+      "to": "HYDRAULIC_CONTAMINATION",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "SAE_J1539",
+      "to": "ISO_5011",
+      "relation": "related_standards"
+    },
+    {
+      "from": "SAE_J1539",
+      "to": "MACROCORE",
+      "relation": "applicable_to_technologies"
+    },
+    {
+      "from": "SAE_J1539",
+      "to": "PARTICLE_WEAR",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "CABIN_AIR_CONTAMINATION",
+      "to": "ISO_11155",
+      "relation": "related_standards"
+    },
+    {
+      "from": "CABIN_AIR_CONTAMINATION",
+      "to": "DIN_71220",
+      "relation": "related_standards"
+    },
+    {
+      "from": "CABIN_AIR_CONTAMINATION",
+      "to": "MICROKAPPA",
+      "relation": "resolved_by"
+    },
+    {
+      "from": "DIESEL_WATER",
+      "to": "ASTM_D6304",
+      "relation": "related_standards"
+    },
+    {
+      "from": "DIESEL_WATER",
+      "to": "ISO_12937",
+      "relation": "related_standards"
+    },
+    {
+      "from": "DIESEL_WATER",
+      "to": "HYDROCORE",
+      "relation": "resolved_by"
+    },
+    {
+      "from": "HYDRAULIC_CONTAMINATION",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "HYDRAULIC_CONTAMINATION",
+      "to": "ISO_4406",
+      "relation": "related_standards"
+    },
+    {
+      "from": "HYDRAULIC_CONTAMINATION",
+      "to": "NFPA_T214",
+      "relation": "related_standards"
+    },
+    {
+      "from": "HYDRAULIC_CONTAMINATION",
+      "to": "NANOFORCE",
+      "relation": "resolved_by"
+    },
+    {
+      "from": "PARTICLE_WEAR",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR",
+      "to": "ISO_4406",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR",
+      "to": "SAE_J1539",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR",
+      "to": "PARTICLE_WEAR_AIR_INTAKE",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "PARTICLE_WEAR",
+      "to": "PARTICLE_WEAR_LUBE_OIL",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "PARTICLE_WEAR_AIR_INTAKE",
+      "to": "ISO_5011",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR_AIR_INTAKE",
+      "to": "SAE_J1539",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR_AIR_INTAKE",
+      "to": "MACROCORE",
+      "relation": "resolved_by"
+    },
+    {
+      "from": "PARTICLE_WEAR_AIR_INTAKE",
+      "to": "PARTICLE_WEAR",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "PARTICLE_WEAR_LUBE_OIL",
+      "to": "ISO_16889",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR_LUBE_OIL",
+      "to": "ISO_4406",
+      "relation": "related_standards"
+    },
+    {
+      "from": "PARTICLE_WEAR_LUBE_OIL",
+      "to": "SYNTRAX",
+      "relation": "resolved_by"
+    },
+    {
+      "from": "PARTICLE_WEAR_LUBE_OIL",
+      "to": "PARTICLE_WEAR",
+      "relation": "related_contamination"
+    },
+    {
+      "from": "ENGINE_BEARING_JOURNAL",
+      "to": "SYNTRAX",
+      "relation": "protected_by_technologies"
+    },
+    {
+      "from": "ENGINE_BEARING_JOURNAL",
+      "to": "PARTICLE_WEAR",
+      "relation": "sensitive_to_contamination"
+    },
+    {
+      "from": "ENGINE_BEARING_JOURNAL",
+      "to": "ISO_4406",
+      "relation": "protection_standard"
+    },
+    {
+      "from": "PISTON_RING_ASSEMBLY",
+      "to": "MACROCORE",
+      "relation": "protected_by_technologies"
+    },
+    {
+      "from": "PISTON_RING_ASSEMBLY",
+      "to": "SYNTRAX",
+      "relation": "protected_by_technologies"
+    },
+    {
+      "from": "PISTON_RING_ASSEMBLY",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "located_in_systems"
+    },
+    {
+      "from": "PISTON_RING_ASSEMBLY",
+      "to": "PARTICLE_WEAR",
+      "relation": "sensitive_to_contamination"
+    },
+    {
+      "from": "PISTON_RING_ASSEMBLY",
+      "to": "ISO_5011",
+      "relation": "protection_standard"
+    },
+    {
+      "from": "TURBOCHARGER_BEARING",
+      "to": "MACROCORE",
+      "relation": "protected_by_technologies"
+    },
+    {
+      "from": "TURBOCHARGER_BEARING",
+      "to": "SYNTRAX",
+      "relation": "protected_by_technologies"
+    },
+    {
+      "from": "TURBOCHARGER_BEARING",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "located_in_systems"
+    },
+    {
+      "from": "TURBOCHARGER_BEARING",
+      "to": "AIRFILTER_PRIMARY",
+      "relation": "typical_filter_families"
+    },
+    {
+      "from": "TURBOCHARGER_BEARING",
+      "to": "PARTICLE_WEAR",
+      "relation": "sensitive_to_contamination"
+    },
+    {
+      "from": "TURBOCHARGER_BEARING",
+      "to": "ISO_5011",
+      "relation": "protection_standard"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "ISO_5011",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "SAE_J1539",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "MACROCORE",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "INTEKCORE",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "TURBOCHARGER_BEARING",
+      "relation": "affects_components"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "affects_systems"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "AIRFILTER_PRIMARY",
+      "relation": "recommended_product_families"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "PARTICLE_WEAR_AIR_INTAKE",
+      "relation": "root_contamination"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "MINING",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "CONSTRUCTION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "DUST_INGESTION",
+      "to": "AGRICULTURE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "ISO_4406",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "SYNTRAX",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "ENGINE_BEARING_JOURNAL",
+      "relation": "affects_components"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "PISTON_RING_ASSEMBLY",
+      "relation": "affects_components"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "LUBE_PRIMARY",
+      "relation": "recommended_product_families"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "PARTICLE_WEAR_LUBE_OIL",
+      "relation": "root_contamination"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "MINING",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "CONSTRUCTION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "AGRICULTURE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "TRUCKS_FLEETS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "MARINE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "OIL_GAS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "POWER_GENERATION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "RAILWAY",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "BUS_COACH",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "ENGINE_OIL_CONTAMINATION",
+      "to": "AUTOMOTIVE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "ASTM_D6304",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "ISO_12937",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "HYDROCORE",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "FUEL_WATER_SEPARATOR",
+      "relation": "recommended_product_families"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "DIESEL_WATER",
+      "relation": "root_contamination"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "AGRICULTURE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "MARINE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "MINING",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "OIL_GAS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "POWER_GENERATION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "TRUCKS_FLEETS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "FUEL_FILTER_PLUGGING",
+      "to": "AUTOMOTIVE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "ISO_16889",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "ISO_4406",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "NFPA_T214",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "NANOFORCE",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "HYDRAULIC_PRIMARY",
+      "relation": "recommended_product_families"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "HYDRAULIC_CONTAMINATION",
+      "relation": "root_contamination"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "CONSTRUCTION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "MINING",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "AGRICULTURE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "MARINE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "OIL_GAS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "HYDRAULIC_VALVE_FAILURE",
+      "to": "POWER_GENERATION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "ISO_11155",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "DIN_71220",
+      "relation": "applicable_standards"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "MICROKAPPA",
+      "relation": "resolved_by_technologies"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "CABIN_PRIMARY",
+      "relation": "recommended_product_families"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "CABIN_AIR_CONTAMINATION",
+      "relation": "root_contamination"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "CONSTRUCTION",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "MINING",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "AGRICULTURE",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "BUS_COACH",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "RAILWAY",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "TRUCKS_FLEETS",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "OPERATOR_DUST_EXPOSURE",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "industry_frequency"
+    },
+    {
+      "from": "AIRFILTER_PRIMARY",
+      "to": "ISO_5011",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "AIRFILTER_PRIMARY",
+      "to": "SAE_J1539",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "AIRFILTER_PRIMARY",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIRFILTER_PRIMARY",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIRFILTER_PRIMARY",
+      "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIRFILTER_PRIMARY",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIRFILTER_PRIMARY",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIRFILTER_PRIMARY",
+      "to": "MACROCORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "AIRFILTER_PRIMARY",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "AIRFILTER_PRIMARY",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "ISO_5011",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "INTEKCORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "AIR_HOUSING",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "ISO_11155",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "DIN_71220",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "BUS_COACH",
+      "relation": "target_industries"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "RAILWAY",
+      "relation": "target_industries"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "target_industries"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "MICROKAPPA",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "CABIN",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "CABIN_PRIMARY",
+      "to": "CABIN",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "DRYCORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "COMPRESSED_AIR_PRIMARY",
+      "to": "AIR_INTAKE_PROTECTION",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "THERMACORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "COOLING_SYSTEM_PROTECTION",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "COOLING_PRIMARY",
+      "to": "COOLING_SYSTEM_PROTECTION",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "FUEL_PRIMARY",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_PRIMARY",
+      "to": "MARINE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_PRIMARY",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_PRIMARY",
+      "to": "OIL_GAS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_PRIMARY",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_PRIMARY",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_PRIMARY",
+      "to": "SYNTAPORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "FUEL_PRIMARY",
+      "to": "FUEL",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "FUEL_PRIMARY",
+      "to": "FUEL",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "ASTM_D6304",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "ISO_12937",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "MARINE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "OIL_GAS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "HYDROCORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "FUEL",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "FUEL_TURBINE",
+      "to": "FUEL",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "AUTOMOTIVE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "MARINE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "OIL_GAS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "HYDROCORE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "FUEL",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "FUEL_WATER_SEPARATOR",
+      "to": "FUEL",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "ISO_16889",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "ISO_4406",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "NFPA_T214",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "MARINE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "OIL_GAS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "NANOFORCE",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "HYDRAULIC",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "HYDRAULIC_PRIMARY",
+      "to": "HYDRAULIC",
+      "relation": "belongs_to_product_system"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "ISO_16889",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "ISO_4406",
+      "relation": "meets_standards"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "AGRICULTURE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "AUTOMOTIVE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "BUS_COACH",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "CONSTRUCTION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "MARINE",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "MINING",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "OIL_GAS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "POWER_GENERATION",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "RAILWAY",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "TRUCKS_FLEETS",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "WASTE_MUNICIPAL",
+      "relation": "target_industries"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "SYNTRAX",
+      "relation": "uses_technology"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "OIL",
+      "relation": "belongs_to_domain"
+    },
+    {
+      "from": "LUBE_PRIMARY",
+      "to": "OIL",
+      "relation": "belongs_to_product_system"
+    }
+  ]
+}

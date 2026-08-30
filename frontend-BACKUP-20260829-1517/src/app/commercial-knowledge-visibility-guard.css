@@ -1,0 +1,9 @@
+/* Commercial pages: keep GEO/knowledge entities available through schema/API,
+ * but prevent structured knowledge panels from rendering publicly on commercial routes.
+ */
+main .structured-definition--connections,
+main .structured-definition[aria-label="Engineering knowledge connections"],
+main section[data-topic-cluster],
+main section:has(.structured-definition__eyebrow) {
+  display: none !important;
+}

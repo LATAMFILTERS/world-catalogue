@@ -1,0 +1,7 @@
+Class,Particles 0.1-0.5µm (/m³),Particles 0.5-1.0µm (/m³),Particles 1.0-5.0µm (/m³),Water Pressure Dew Point (°C),Total Oil (mg/m³),Typical Application
+0,Per agreement,Per agreement,Per agreement,Per agreement,Per agreement,User-defined stricter than Class 1
+1,≤ 20000,≤ 400,≤ 10,≤ -70,≤ 0.01,Electronics / cleanroom / cryogenic
+2,≤ 400000,≤ 6000,≤ 100,≤ -40,≤ 0.1,Pharmaceutical / food / precision instruments
+3,N/A,≤ 90000,≤ 1000,≤ -20,≤ 1.0,General manufacturing / instrument air
+4,N/A,N/A,≤ 10000,≤ +3,≤ 5.0,Heavy industry / mining / pneumatic tools
+5,N/A,N/A,≤ 100000,≤ +7,> 5.0 (Class X),Non-critical industrial air

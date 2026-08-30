@@ -1,0 +1,39 @@
+{
+  "type": "architecture",
+  "count": 1,
+  "entities": [
+    {
+      "key": "AI_REASONING_ENGINE",
+      "type": "architecture",
+      "name": "AI_REASONING_ENGINE",
+      "slug": null,
+      "status": "unknown",
+      "in_unified_data": false,
+      "ud_key": null,
+      "tags": [
+        "ai",
+        "personas",
+        "diagnostics",
+        "metrology"
+      ],
+      "domain": null,
+      "citation": {
+        "source_url": "elimfilters.com",
+        "concept": "ELIMFILTERS AI Reasoning Engine",
+        "version": "1.0",
+        "last_updated": "2026-06-24",
+        "content_hash": "sha256:f7e01e19eacfaea9f46e5c195890f702d8eddb69935c42e6dbfcb4ead41a0a72"
+      },
+      "canonical": {
+        "definition": "The ELIMFILTERS AI Reasoning Engine is the cognitive layer of the ELIMFILTERS platform that transforms standard parts search queries into consultative Asset Protection Engineering interactions through structured contamination-to-solution reasoning chains.",
+        "systems": "Digital customer interaction layer — parts search, dealer consultation, fleet diagnostic queries, cross-reference evaluation, and contamination problem diagnosis across all ELIMFILTERS product domains",
+        "failure_impact": "Without a structured reasoning engine → customers default to commodity filter selection by price or brand → incorrect filtration specifications → premature equipment failure | Operational impact: AI-guided selection ensures contamination targets are defined before products are specified.",
+        "related_standards": "ISO 4406: Cleanliness code targets used as primary decision criteria in reasoning chains | ISO 16889: Beta ratio efficiency thresholds applied in technology recommendation logic",
+        "related_technologies": "All ELIMFILTERS technologies — the AI Reasoning Engine maps contamination problems to the appropriate technology domain for each query",
+        "industrial_role": "The AI Reasoning Engine repositions the filtration selection conversation from product price comparison to contamination control system design — shifting customer decision criteria from commodity purchasing to asset protection engineering."
+      },
+      "relationships": {},
+      "vault_path": "elimfilters-vault\\09-artificial-intelligence\\AI_REASONING_ENGINE.md"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "type": "contamination-mode",
+  "count": 6,
+  "entities": [
+    {
+      "key": "CABIN_AIR_CONTAMINATION",
+      "type": "contamination-mode",
+      "name": "Cabin Air Contamination",
+      "slug": "cabin-air-contamination",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "CABIN_AIR_CONTAMINATION",
+      "tags": [
+        "contamination-mode",
+        "active",
+        "cabin",
+        "in-ud"
+      ],
+      "domain": null,
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/systems/cabin-air-protection",
+        "concept": "Cabin Air Contamination",
+        "version": "1.0",
+        "last_updated": "2026-06-03",
+        "content_hash": "sha256:2aa8db81a6055e3f5ff6a609020536cbf8febcc44f5c20d48faf45020455675c"
+      },
+      "canonical": {
+        "definition": "Cabin air contamination is the occupational exposure of equipment operators to respirable particulate matter (PM10, PM2.5, crystalline silica), chemical vapors (pesticides, exhaust gases), and biological particles (endotoxins, spores) entering the cab through degraded filtration, failed positive pressure, or contamination bypass pathways — creating regulatory OEL violation risk and long-term respiratory disease exposure.",
+        "systems": "Agricultural machine cabs (harvesters, tractors, sprayers), mining equipment operator cabs, construction machine cabs (excavators, loaders), on-highway truck driver cabs, municipal refuse vehicle cabs",
+        "failure_impact": "Cab filtration bypass or degradation → respirable silica particles above 0.025–0.1 mg/m³ OEL → chronic occupational exposure → silicosis (irreversible) at 5–15 year latency | Pesticide vapor infiltration → acute toxicity events | Blocked cabin filter → loss of cab positive pressure → all gap pathways become contamination ingress routes | Operational impact: regulatory OEL violation; operator productivity −10–20% in extreme dust environments; chronic respiratory disease liability.",
+        "related_standards": "ISO 11155: Passenger compartment air filter test standard; defines cab filter efficiency classification | DIN 71220: Agricultural machinery cab air filtration performance requirements",
+        "related_technologies": "MICROKAPPA: Cabin air filtration technology for PM10, PM2.5, and silica capture with cab positive pressure maintenance and optional chemical vapor adsorption stage",
+        "industrial_role": "Cabin air contamination is the primary occupational health regulatory compliance challenge in mining and agricultural equipment operation — maintaining ISO 11155-rated cab filtration performance and cab positive pressure is the only controllable engineering control that prevents respirable silica and chemical vapor exposure from exceeding OEL limits in high-dust equipment operating environments."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_11155",
+          "DIN_71220"
+        ],
+        "resolved_by": [
+          "MICROKAPPA"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\05-contamination\\CABIN_AIR_CONTAMINATION.md"
+    },
+    {
+      "key": "DIESEL_WATER",
+      "type": "contamination-mode",
+      "name": "Diesel Water Contamination",
+      "slug": "diesel-water",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "DIESEL_WATER",
+      "tags": [
+        "contamination-mode",
+        "active",
+        "fuel",
+        "in-ud"
+      ],
+      "domain": null,
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/engineering/fluid-cleanliness",
+        "concept": "Diesel Water Contamination",
+        "version": "1.1",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:e2c00ca512658a7211ab19475337b740a2f89d242682b4e1bce805fbfb55670a"
+      },
+      "canonical": {
+        "definition": "Diesel water contamination is the presence of dissolved, free, or emulsified water in diesel fuel systems — entering through condensation, rain ingress, cross-contamination, or emulsification — that causes injector erosion at 1,600–2,500 bar operating pressures, microbiological growth at tank water interfaces, fuel filter plugging from biomass and ice crystal formation, and tank corrosion from microbial acid byproducts.",
+        "systems": "Common-rail diesel injection systems, fuel storage tanks, fuel transfer and distribution systems, bulk fuel storage across agriculture, marine, mining, and fleet industries",
+        "failure_impact": "Water ingress above 500 ppm free water → injector needle erosion at hydraulic flash point (1,600–2,500 bar, 1–3 µm clearance) → injector replacement at $800–$4,000 per unit | Microbial growth at water-diesel interface → biomass mat formation → fuel filter plugging → engine fuel starvation → unplanned downtime | Operational impact: injector life −40–70%; filter service interval −60–80%; fuel consumption +5–15%; equipment availability −10–20%.",
+        "related_standards": "ASTM D6304: Karl Fischer coulometric titration for water in petroleum products; primary quantitative monitoring method | ISO 12937: European equivalent standard for water content in petroleum products",
+        "related_technologies": "HYDROCORE: Coalescing water separation technology across approved spin-on, cartridge, and Turbine Series FH/FG architectures; separates free and emulsified water from diesel before injector delivery",
+        "industrial_role": "Diesel water contamination is the leading cause of premature common-rail injector failure in mobile and stationary diesel equipment — controlling water content below ASTM D6304 thresholds through active coalescing separation extends injector service life 40–70% and eliminates microbiological tank failures that can render entire bulk fuel storage volumes unusable."
+      },
+      "relationships": {
+        "related_standards": [
+          "ASTM_D6304",
+          "ISO_12937"
+        ],
+        "resolved_by": [
+          "HYDROCORE"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\05-contamination\\DIESEL_WATER.md"
+    },
+    {
+      "key": "HYDRAULIC_CONTAMINATION",
+      "type": "contamination-mode",
+      "name": "Hydraulic System Contamination",
+      "slug": "hydraulic-contamination",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "HYDRAULIC_CONTAMINATION",
+      "tags": [
+        "contamination-mode",
+        "active",
+        "hydraulic",
+        "in-ud"
+      ],
+      "domain": null,
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+        "concept": "Hydraulic System Contamination",
+        "version": "1.0",
+        "last_updated": "2026-06-03",
+        "content_hash": "sha256:06c096aba58d6c2502f3d6150897d9e54dcf7ebdfe8e5c75425ea7093a2f02b8"
+      },
+      "canonical": {
+        "definition": "Hydraulic system contamination is the presence of particles, water, and fluid degradation products in hydraulic fluid that causes proportional valve failure, pump wear, and system efficiency loss — operating through direct abrasive wear at 1–25 µm component clearances, water-accelerated fluid thermal degradation, and varnish deposition at valve bore surfaces causing control stiction.",
+        "systems": "Proportional and servo hydraulic systems, mobile equipment hydraulic circuits, industrial hydraulic power units, mining shovel and excavator hydraulic systems, crane and materials handling hydraulic circuits",
+        "failure_impact": "Particle contamination above ISO 4406 17/15/12 → abrasive wear at proportional valve spool (1–5 µm clearance) → valve scoring and jamming → loss of proportional control | Varnish deposition from thermal-oxidative degradation → 1–2 µm lacquer film on valve bores → spool stiction → control instability | Operational impact: system efficiency −15–40%; component life −50–70%; unplanned downtime +25–35%.",
+        "related_standards": "ISO 16889: Multi-pass Beta ratio test for hydraulic filter element efficiency classification | ISO 4406: Three-number cleanliness code; proportional valve target 16/14/11; industrial hydraulic target 17/15/12 | NFPA T2.14: Hydraulic system cleanliness and filtration design requirements",
+        "related_technologies": "NANOFORCE: Sub-micron particle removal at Beta(x[c]) ≥ 1000 at 5 µm; protects proportional valve critical clearances",
+        "industrial_role": "Hydraulic system contamination is the leading cause of proportional valve and pump failure in mobile and industrial hydraulic equipment — maintaining ISO 4406 cleanliness at 16/14/11 versus 19/17/14 extends proportional valve service life 50–70% and reduces unplanned hydraulic system downtime by 25–35% across construction, mining, and agricultural equipment fleets."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_16889",
+          "ISO_4406",
+          "NFPA_T214"
+        ],
+        "resolved_by": [
+          "NANOFORCE"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\05-contamination\\HYDRAULIC_CONTAMINATION.md"
+    },
+    {
+      "key": "PARTICLE_WEAR",
+      "type": "contamination-mode",
+      "name": "Particle Wear in Engines",
+      "slug": "particle-wear",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "PARTICLE_WEAR",
+      "tags": [
+        "contamination-mode",
+        "active",
+        "parent-concept",
+        "not-traversal-resolver",
+        "air-intake",
+        "lube-oil",
+        "fuel",
+        "in-ud"
+      ],
+      "domain": null,
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+        "concept": "Particle Wear in Engines",
+        "version": "2.0",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:a9a429337d80cac3e0f99909d9e42bb2f44582fcc236410e08c15bc610e4a4f7"
+      },
+      "canonical": {
+        "definition": "Particle wear is the parent educational concept for abrasive degradation of precision engine surfaces — piston rings, cylinder walls, and crankshaft journals — caused by hard particles (silica, metal oxides, combustion debris) entrained through two distinct system pathways, air intake ingestion and lube oil circulation, through two-body, three-body, and adhesive wear mechanisms. This entity is not a traversal resolver; each pathway is governed by its own domain-specific contamination-mode entity (PARTICLE_WEAR_AIR_INTAKE, PARTICLE_WEAR_LUBE_OIL).",
+        "systems": "Engine lube circuits, air intake systems, turbocharger bearing circuits — as two distinct, separately-resolved pathways, not a single undifferentiated system.",
+        "failure_impact": "Hard particles enter the air intake or oil circuit → abrasive micro-cutting at piston ring-to-wall interface (5–15 µm clearance) and journal bearings (15–50 µm film) → progressive clearance loss. See PARTICLE_WEAR_AIR_INTAKE and PARTICLE_WEAR_LUBE_OIL for pathway-specific impact figures.",
+        "related_standards": "ISO 16889: Multi-pass Beta ratio test for filter efficiency classification | ISO 4406: Three-number fluid cleanliness code (≥4/≥6/≥14 µm particle counts per 100 mL) | SAE J1539: Air intake cleanliness specification for diesel engines",
+        "related_technologies": "Air-intake pathway is resolved by MACROCORE (engine air intake filtration) via PARTICLE_WEAR_AIR_INTAKE. Lube-oil pathway is resolved by SYNTRAX (full-flow lube oil filtration) via PARTICLE_WEAR_LUBE_OIL. These technologies operate in different systems and are not interchangeable.",
+        "industrial_role": "Particle wear is the primary mechanism converting contamination events (dust ingestion, oil degradation) into quantifiable engine lifespan reduction. As an educational parent concept it explains the shared physical wear mechanism; the governed, technology-specific resolution for each pathway is defined at PARTICLE_WEAR_AIR_INTAKE and PARTICLE_WEAR_LUBE_OIL respectively."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_16889",
+          "ISO_4406",
+          "SAE_J1539"
+        ],
+        "related_contamination": [
+          "PARTICLE_WEAR_AIR_INTAKE",
+          "PARTICLE_WEAR_LUBE_OIL"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR.md"
+    },
+    {
+      "key": "PARTICLE_WEAR_AIR_INTAKE",
+      "type": "contamination-mode",
+      "name": "Particle Wear — Air Intake Pathway",
+      "slug": "particle-wear-air-intake",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "PARTICLE_WEAR_AIR_INTAKE",
+      "tags": [
+        "contamination-mode",
+        "active",
+        "air-intake",
+        "in-ud"
+      ],
+      "domain": null,
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+        "concept": "Particle Wear — Air Intake Pathway",
+        "version": "1.0",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:f56207392348e2ef91fd952490ee63c0a8fecccdc60c492e93ff59f7aff0292e"
+      },
+      "canonical": {
+        "definition": "Particle wear via the air intake pathway is the abrasive degradation of piston ring, cylinder wall, and turbocharger bearing surfaces caused by hard particles (silica, environmental dust) entering the engine through air intake ingestion, operating through two-body and three-body wear mechanisms.",
+        "systems": "Engine air intake systems, piston ring and cylinder bore assemblies, turbocharger bearing circuits",
+        "failure_impact": "Hard particles bypass air intake filtration → abrasive micro-cutting at piston ring-to-cylinder wall interface (5–15 µm clearance) → progressive clearance loss → compression drop −10–25%; equipment availability −15–25%.",
+        "related_standards": "ISO 5011: Air-cleaner performance testing for engine air-intake applications | SAE J1539: Air intake cleanliness specification for diesel engines",
+        "related_technologies": "MACROCORE: Engine air intake filtration technology resolving the air-intake pathway of particle wear.",
+        "industrial_role": "This is the air-intake-specific specialization of the particle wear mechanism, isolated for resolution-pathway clarity: it is addressed exclusively by air-intake filtration technology, not by lubrication, fuel, hydraulic, or cabin-air technologies."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_5011",
+          "SAE_J1539"
+        ],
+        "resolved_by": [
+          "MACROCORE"
+        ],
+        "related_contamination": [
+          "PARTICLE_WEAR"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR_AIR_INTAKE.md"
+    },
+    {
+      "key": "PARTICLE_WEAR_LUBE_OIL",
+      "type": "contamination-mode",
+      "name": "Particle Wear — Lube Oil Circulation Pathway",
+      "slug": "particle-wear-lube-oil",
+      "status": "active",
+      "in_unified_data": true,
+      "ud_key": "PARTICLE_WEAR_LUBE_OIL",
+      "tags": [
+        "contamination-mode",
+        "active",
+        "lube-oil",
+        "in-ud"
+      ],
+      "domain": null,
+      "citation": {
+        "source_url": "elimfilters.com/knowledge-center/engineering/contamination-control",
+        "concept": "Particle Wear — Lube Oil Circulation Pathway",
+        "version": "1.0",
+        "last_updated": "2026-08-18",
+        "content_hash": "sha256:17578bc3dc1d8e808ff503a13579d0f7b2d9007e8cfdaf22338b249a10066749"
+      },
+      "canonical": {
+        "definition": "Particle wear via the lube oil circulation pathway is the abrasive degradation of crankshaft journal bearings and internal engine surfaces caused by hard particles circulating in the engine lube oil circuit, operating through adhesive wear, bearing spalling, and ring sticking mechanisms.",
+        "systems": "Engine lube oil circuits, crankshaft journal bearing assemblies",
+        "failure_impact": "Hard particles circulate in the oil circuit via internal generation or ingress → adhesive wear at journal bearings (15–50 µm film) → progressive clearance loss and deposit accumulation → oil consumption +15–40%; engine blow-by +5–10%.",
+        "related_standards": "ISO 16889: Multi-pass Beta ratio test for filter efficiency classification | ISO 4406: Three-number fluid cleanliness code (≥4/≥6/≥14 µm particle counts per 100 mL)",
+        "related_technologies": "SYNTRAX: Full-flow engine lube oil filtration technology resolving the lube-circulation pathway of particle wear.",
+        "industrial_role": "This is the lube-oil-specific specialization of the particle wear mechanism, isolated for resolution-pathway clarity: it is addressed exclusively by lubrication filtration technology, not by air-intake, fuel, hydraulic, or cabin-air technologies."
+      },
+      "relationships": {
+        "related_standards": [
+          "ISO_16889",
+          "ISO_4406"
+        ],
+        "resolved_by": [
+          "SYNTRAX"
+        ],
+        "related_contamination": [
+          "PARTICLE_WEAR"
+        ]
+      },
+      "vault_path": "elimfilters-vault\\05-contamination\\PARTICLE_WEAR_LUBE_OIL.md"
+    }
+  ]
+}

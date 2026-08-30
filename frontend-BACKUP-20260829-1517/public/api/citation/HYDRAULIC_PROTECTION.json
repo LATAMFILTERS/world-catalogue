@@ -1,0 +1,126 @@
+{
+  "key": "HYDRAULIC_PROTECTION",
+  "type": "system",
+  "name": "Hydraulic Systems",
+  "slug": "hydraulic-protection",
+  "status": "active",
+  "in_unified_data": true,
+  "ud_key": "HYDRAULIC_PROTECTION",
+  "tags": [
+    "system",
+    "active",
+    "hydraulic",
+    "fluid-power",
+    "asset-protection",
+    "in-ud"
+  ],
+  "domain": "Hydraulic",
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/systems/hydraulic-protection",
+    "concept": "Hydraulic Systems",
+    "version": "1.0",
+    "last_updated": "2026-07-11",
+    "content_hash": "sha256:94d74c5c2a003d73b0ed61abc431c8e05f3e59fb97fedd90e0c09b23cc05b3d8"
+  },
+  "canonical": {
+    "definition": "Hydraulic Systems are the ELIMFILTERS system domain controlling fluid power contamination to protect pumps, valves, actuators, cylinders, seals, and proportional/servo control components from particle-induced wear and malfunction.",
+    "systems": "Hydraulic return filters, pressure filters, suction filters, breather filtration, offline/kidney-loop filtration, hydraulic reservoir protection, and ISO 4406 cleanliness control programs.",
+    "failure_impact": "Hydraulic particle contamination → valve spool stiction, pump scoring, actuator seal wear, pressure instability, flow restriction, heat generation, loss of control precision, unplanned downtime, and catastrophic fluid power failure.",
+    "related_standards": "ISO 16889: Multi-pass hydraulic filter performance and Beta ratio testing | ISO 4406: Fluid cleanliness code for hydraulic particle count control.",
+    "related_technologies": "NANOFORCE: High-efficiency hydraulic filtration technology controlling fine particles and supporting target ISO cleanliness codes in severe-duty hydraulic circuits.",
+    "industrial_role": "Hydraulic Systems protect the movement, force, and control functions of mobile and industrial equipment. In construction, mining, manufacturing, agriculture, marine, railway, and oil & gas operations, hydraulic contamination directly converts into lost productivity and high-cost component replacement."
+  },
+  "relationships": {
+    "applicable_industries": [
+      "AGRICULTURE",
+      "CONSTRUCTION",
+      "MANUFACTURING",
+      "MARINE",
+      "MINING",
+      "OIL_GAS",
+      "POWER_GENERATION",
+      "RAILWAY",
+      "TRUCKS_FLEETS",
+      "WASTE_MUNICIPAL"
+    ],
+    "applicable_technologies": [
+      "NANOFORCE"
+    ],
+    "applicable_standards": [
+      "ISO_16889",
+      "ISO_4406"
+    ]
+  },
+  "vault_path": "elimfilters-vault\\03-systems\\HYDRAULIC_PROTECTION.md",
+  "_links": {
+    "self": "/api/citation/HYDRAULIC_PROTECTION.json",
+    "type_index": "/api/citation/type/system.json",
+    "related": [
+      {
+        "key": "AGRICULTURE",
+        "relation": "applicable_industries",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "applicable_industries",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "MANUFACTURING",
+        "relation": "applicable_industries",
+        "href": "/api/citation/MANUFACTURING.json"
+      },
+      {
+        "key": "MARINE",
+        "relation": "applicable_industries",
+        "href": "/api/citation/MARINE.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "applicable_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "OIL_GAS",
+        "relation": "applicable_industries",
+        "href": "/api/citation/OIL_GAS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "applicable_industries",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "RAILWAY",
+        "relation": "applicable_industries",
+        "href": "/api/citation/RAILWAY.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "applicable_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "WASTE_MUNICIPAL",
+        "relation": "applicable_industries",
+        "href": "/api/citation/WASTE_MUNICIPAL.json"
+      },
+      {
+        "key": "NANOFORCE",
+        "relation": "applicable_technologies",
+        "href": "/api/citation/NANOFORCE.json"
+      },
+      {
+        "key": "ISO_16889",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_16889.json"
+      },
+      {
+        "key": "ISO_4406",
+        "relation": "applicable_standards",
+        "href": "/api/citation/ISO_4406.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "key": "LUBE_PRIMARY",
+  "type": "product-family",
+  "name": "Primary Lube Oil Protection",
+  "slug": "lube-primary",
+  "status": "active",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [
+    "product-family",
+    "active",
+    "lube-oil",
+    "not-in-ud",
+    "part-search-node"
+  ],
+  "domain": null,
+  "citation": {
+    "source_url": "elimfilters.com/systems/lube-primary",
+    "concept": "Primary Lube Oil Protection Product Family",
+    "version": "1.0",
+    "last_updated": "2026-06-03",
+    "content_hash": "sha256:7e2476130a5bd5beca696d2b467f43ffb4ec94e5f3ddb0eed3c317eef270e146"
+  },
+  "canonical": {
+    "definition": "Primary Lube Oil Protection — the SYNTRAX™-technology lube oil filter element family\nfor full-flow engine and transmission oil filtration, covering approximately 110 SKUs\nselected to the ISO 4406 cleanliness target specified for the approved application across\nmining, agriculture, construction, transport, marine, and power generation applications.",
+    "systems": "Lube oil filtration domain; belongs to OIL product-line system; implements SYNTRAX™\nactive synthetic media technology; full-flow primary filtration for engine, transmission,\nand final drive oil circuits",
+    "failure_impact": "Incorrect element selection (wrong bypass valve setting, wrong dirt capacity for\nservice interval) or exceeding service interval → media loading causes premature bypass\nvalve opening → contaminated oil bypasses filter → particle concentration rises above\nISO 4406 19/17/14 → abrasive bearing wear accelerates → bearing clearance reduction →\nincreased friction → localized temperature spikes → bearing seizure; bearing life\ncompression from 15,000+ hours to 2,000–3,000 hours",
+    "related_standards": "ISO 16889: Multi-pass Beta ratio test — elements rated to the Beta ratio specified for\nthe approved application in full-flow lube circuits | ISO 4406: Particle cleanliness code\nclassification — target selected per the approved application for engine bearing protection",
+    "related_technologies": "SYNTRAX: Primary element technology (active synthetic media, high dirt capacity,\nextended service intervals)",
+    "industrial_role": "This product family is the principal contamination control implementation for the most\ncommon failure mode in diesel engine maintenance — particle accumulation in lube oil\ncausing abrasive bearing wear. Correct element selection from this family, matched to\nthe ISO 4406 cleanliness target and service interval specified for the approved\napplication, is a primary factor in engine bearing service life."
+  },
+  "relationships": {
+    "meets_standards": [
+      "ISO_16889",
+      "ISO_4406"
+    ],
+    "target_industries": [
+      "AGRICULTURE",
+      "AUTOMOTIVE",
+      "BUS_COACH",
+      "CONSTRUCTION",
+      "MARINE",
+      "MINING",
+      "OIL_GAS",
+      "POWER_GENERATION",
+      "RAILWAY",
+      "TRUCKS_FLEETS",
+      "WASTE_MUNICIPAL"
+    ],
+    "uses_technology": [
+      "SYNTRAX"
+    ],
+    "belongs_to_domain": [
+      "OIL"
+    ],
+    "belongs_to_product_system": [
+      "OIL"
+    ]
+  },
+  "vault_path": "elimfilters-vault\\08-product-families\\LUBE_PRIMARY.md",
+  "_links": {
+    "self": "/api/citation/LUBE_PRIMARY.json",
+    "type_index": "/api/citation/type/product-family.json",
+    "related": [
+      {
+        "key": "ISO_16889",
+        "relation": "meets_standards",
+        "href": "/api/citation/ISO_16889.json"
+      },
+      {
+        "key": "ISO_4406",
+        "relation": "meets_standards",
+        "href": "/api/citation/ISO_4406.json"
+      },
+      {
+        "key": "AGRICULTURE",
+        "relation": "target_industries",
+        "href": "/api/citation/AGRICULTURE.json"
+      },
+      {
+        "key": "AUTOMOTIVE",
+        "relation": "target_industries",
+        "href": "/api/citation/AUTOMOTIVE.json"
+      },
+      {
+        "key": "BUS_COACH",
+        "relation": "target_industries",
+        "href": "/api/citation/BUS_COACH.json"
+      },
+      {
+        "key": "CONSTRUCTION",
+        "relation": "target_industries",
+        "href": "/api/citation/CONSTRUCTION.json"
+      },
+      {
+        "key": "MARINE",
+        "relation": "target_industries",
+        "href": "/api/citation/MARINE.json"
+      },
+      {
+        "key": "MINING",
+        "relation": "target_industries",
+        "href": "/api/citation/MINING.json"
+      },
+      {
+        "key": "OIL_GAS",
+        "relation": "target_industries",
+        "href": "/api/citation/OIL_GAS.json"
+      },
+      {
+        "key": "POWER_GENERATION",
+        "relation": "target_industries",
+        "href": "/api/citation/POWER_GENERATION.json"
+      },
+      {
+        "key": "RAILWAY",
+        "relation": "target_industries",
+        "href": "/api/citation/RAILWAY.json"
+      },
+      {
+        "key": "TRUCKS_FLEETS",
+        "relation": "target_industries",
+        "href": "/api/citation/TRUCKS_FLEETS.json"
+      },
+      {
+        "key": "WASTE_MUNICIPAL",
+        "relation": "target_industries",
+        "href": "/api/citation/WASTE_MUNICIPAL.json"
+      },
+      {
+        "key": "SYNTRAX",
+        "relation": "uses_technology",
+        "href": "/api/citation/SYNTRAX.json"
+      },
+      {
+        "key": "OIL",
+        "relation": "belongs_to_domain",
+        "href": "/api/citation/OIL.json"
+      },
+      {
+        "key": "OIL",
+        "relation": "belongs_to_product_system",
+        "href": "/api/citation/OIL.json"
+      }
+    ]
+  }
+}

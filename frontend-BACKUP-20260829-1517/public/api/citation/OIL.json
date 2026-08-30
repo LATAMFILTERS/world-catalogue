@@ -1,0 +1,49 @@
+{
+  "key": "OIL",
+  "type": "protection-domain",
+  "name": "Lube Oil Filtration Domain",
+  "slug": null,
+  "status": "unknown",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [],
+  "domain": null,
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/systems/lubrication-protection",
+    "concept": "OIL — Lube Oil Filtration Domain",
+    "version": "1.0",
+    "last_updated": "2026-06-24",
+    "content_hash": "sha256:bf03800238ecd6cb32d39a7e9982c17ae9f86ac1c88e1f9738cee70876438dbd"
+  },
+  "canonical": {
+    "definition": "The lube oil filtration domain covers all engine oil and transmission oil circuits where particle contamination causes abrasive wear of bearing journals, piston rings, and gear surfaces, reducing component life measurably below design specifications.",
+    "systems": "Engine crankcase circuits, transmission fluid circuits, bearing lubrication systems across diesel engines, gas engines, and on/off-highway mobile equipment",
+    "failure_impact": "Particle contamination in oil above ISO 4406 16/14/11 → abrasive micro-cutting at bearing journal surfaces → progressive clearance increase → oil film breakdown → bearing seizure | Operational impact: bearing life reduction from 15,000–25,000 hours to 3,000–5,000 hours with uncontrolled contamination.",
+    "related_standards": "ISO 4406: Particle cleanliness code classification; target 16/14/11 for engine bearings | ISO 16889: Multi-pass filter efficiency test (Beta ratio) | DIN 51524: Lube and hydraulic oil specification; defines fluid compatibility requirements for filtration media",
+    "related_technologies": "SYNTRAX: Full-flow lube oil filter elements targeting ISO 4406 16/14/11 engine bearing cleanliness",
+    "industrial_role": "Lube oil filtration is the single largest controllable factor in engine bearing lifespan — maintaining ISO 4406 16/14/11 cleanliness extends bearing life 3–5× compared to commodity filtration approaches."
+  },
+  "relationships": {
+    "related_standards": [
+      "ISO_16889",
+      "ISO_4406"
+    ]
+  },
+  "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\OIL.md",
+  "_links": {
+    "self": "/api/citation/OIL.json",
+    "type_index": "/api/citation/type/protection-domain.json",
+    "related": [
+      {
+        "key": "ISO_16889",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_16889.json"
+      },
+      {
+        "key": "ISO_4406",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_4406.json"
+      }
+    ]
+  }
+}

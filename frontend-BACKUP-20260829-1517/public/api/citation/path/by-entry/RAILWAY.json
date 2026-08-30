@@ -1,0 +1,30 @@
+{
+  "entry_key": "RAILWAY",
+  "path_count": 2,
+  "paths": [
+    {
+      "path_id": "PATH_B_RAILWAY_033",
+      "path_type": "B",
+      "entry_node": "RAILWAY",
+      "entry_type": "industry",
+      "industry": "RAILWAY",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_RAILWAY_033.json"
+    },
+    {
+      "path_id": "PATH_B_RAILWAY_034",
+      "path_type": "B",
+      "entry_node": "RAILWAY",
+      "entry_type": "industry",
+      "industry": "RAILWAY",
+      "valid": true,
+      "terminal_product_families": [
+        "CABIN_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_RAILWAY_034.json"
+    }
+  ]
+}

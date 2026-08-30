@@ -1,0 +1,30 @@
+{
+  "entry_key": "BUS_COACH",
+  "path_count": 2,
+  "paths": [
+    {
+      "path_id": "PATH_B_BUS_COACH_013",
+      "path_type": "B",
+      "entry_node": "BUS_COACH",
+      "entry_type": "industry",
+      "industry": "BUS_COACH",
+      "valid": true,
+      "terminal_product_families": [
+        "LUBE_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_BUS_COACH_013.json"
+    },
+    {
+      "path_id": "PATH_B_BUS_COACH_014",
+      "path_type": "B",
+      "entry_node": "BUS_COACH",
+      "entry_type": "industry",
+      "industry": "BUS_COACH",
+      "valid": true,
+      "terminal_product_families": [
+        "CABIN_PRIMARY"
+      ],
+      "href": "/api/citation/path/PATH_B_BUS_COACH_014.json"
+    }
+  ]
+}

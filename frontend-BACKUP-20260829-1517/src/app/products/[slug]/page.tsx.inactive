@@ -1,0 +1,170 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+
+import { PRODUCT_FAMILY_LIST } from '@/lib/product-families-data';
+
+const BASE_URL = 'https://elimfilters.com';
+
+interface Props {
+  params: { slug: string };
+}
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const allProducts = new Set<string>();
+  
+  PRODUCT_FAMILY_LIST.forEach(fam => {
+    fam.hdProducts.forEach(pn => {
+      if (pn !== 'DOCUMENTATION PENDING') allProducts.add(pn.toLowerCase());
+    });
+    fam.ldProducts.forEach(pn => {
+      if (pn !== 'DOCUMENTATION PENDING') allProducts.add(pn.toLowerCase());
+    });
+  });
+
+  return Array.from(allProducts).map(slug => ({ slug }));
+}
+
+// In a real implementation, this would fetch from a database or static JSON of all products.
+// For now, we only render the template for whatever slug is requested.
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const pn = params.slug.toUpperCase();
+  const title = `${pn} | ELIMFILTERS Product`;
+  const url = `${BASE_URL}/products/${params.slug}`;
+  return {
+    title,
+    description: `Product details, specifications, and cross-references for ELIMFILTERS part number ${pn}.`,
+    alternates: { canonical: url },
+    openGraph: { title, url, type: 'website', siteName: 'ELIMFILTERS World Catalogue' },
+  };
+}
+
+export default function ProductPage({ params }: Props) {
+  const pn = params.slug.toUpperCase();
+  
+  // Basic validation that it looks like a part number (e.g. EA1, EL8, etc.)
+  if (pn.length < 5) notFound();
+
+  const isHD = pn.includes('1') || pn.includes('9') || pn.includes('8') || pn.includes('6') || pn.includes('7') || pn.includes('4');
+  const duty = isHD ? 'HEAVY DUTY' : 'LIGHT DUTY';
+
+  const label: React.CSSProperties = { fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.22em', color: '#FFF12D', textTransform: 'uppercase' as const, marginBottom: '1rem' };
+  const h2Style: React.CSSProperties = { fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', lineHeight: 1.2, marginBottom: '1rem', color: '#fff' };
+  const pending: React.CSSProperties = { fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.05em' };
+  const section: React.CSSProperties = { maxWidth: '1200px', margin: '0 auto', padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
+  
+  const attrRow: React.CSSProperties = { display: 'flex', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '1rem 0' };
+  const attrLabel: React.CSSProperties = { flex: '0 0 160px', fontFamily: "'Outfit', sans-serif", fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', fontWeight: 500 };
+  const attrValue: React.CSSProperties = { flex: 1, ...pending };
+
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: `${BASE_URL}/products` },
+      { '@type': 'ListItem', position: 3, name: pn, item: `${BASE_URL}/products/${params.slug}` },
+    ],
+  };
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
+        
+        {/* Breadcrumb */}
+        <nav style={{ maxWidth: '1200px', margin: '0 auto', padding: '1.25rem clamp(1.5rem, 5vw, 4rem) 0', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+          {[
+            { href: '/', label: 'Home' },
+            { href: '/products', label: 'Products' },
+            { label: pn },
+          ].map((crumb, i, arr) => (
+            <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              {crumb.href ? (
+                <Link href={crumb.href} style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.12em', color: 'rgba(255,255,255,0.35)', textDecoration: 'none' }}>{crumb.label}</Link>
+              ) : (
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', letterSpacing: '0.12em', color: '#FFF12D' }}>{crumb.label}</span>
+              )}
+              {i < arr.length - 1 && <span style={{ color: 'rgba(255,255,255,0.2)', fontSize: '0.6rem' }}>/</span>}
+            </span>
+          ))}
+        </nav>
+
+        {/* Hero Header */}
+        <header style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+          <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', flexWrap: 'wrap' as const }}>
+            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.1em', color: '#FFF12D', background: 'rgba(255,241,45,0.08)', padding: '0.3rem 0.75rem', borderRadius: '3px' }}>
+              {duty}
+            </span>
+            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.05)', padding: '0.3rem 0.75rem', borderRadius: '3px' }}>
+              DOCUMENTATION PENDING
+            </span>
+          </div>
+          <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '1rem' }}>
+            {pn}
+          </h1>
+        </header>
+
+        {/* Product Data Grid */}
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+          
+          <div style={{ padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)', borderRight: '1px solid rgba(255,255,255,0.06)' }}>
+            <p style={label}>// CLASSIFICATION</p>
+            <div style={attrRow}><span style={attrLabel}>Protection System</span><span style={attrValue}>DOCUMENTATION PENDING</span></div>
+            <div style={attrRow}><span style={attrLabel}>Product Family</span><span style={attrValue}>DOCUMENTATION PENDING</span></div>
+            <div style={attrRow}><span style={attrLabel}>Technology</span><span style={attrValue}>DOCUMENTATION PENDING</span></div>
+            <div style={attrRow}><span style={attrLabel}>Engineering Center</span><span style={attrValue}>DOCUMENTATION PENDING</span></div>
+          </div>
+
+          <div style={{ padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)' }}>
+            <p style={label}>// SPECIFICATIONS</p>
+            <div style={attrRow}><span style={attrLabel}>Dimensions</span><span style={attrValue}>DOCUMENTATION PENDING</span></div>
+            <div style={attrRow}><span style={attrLabel}>Performance</span><span style={attrValue}>DOCUMENTATION PENDING</span></div>
+            <div style={attrRow}><span style={attrLabel}>Standards</span><span style={attrValue}>DOCUMENTATION PENDING</span></div>
+            <div style={attrRow}><span style={attrLabel}>Thread Size</span><span style={attrValue}>DOCUMENTATION PENDING</span></div>
+          </div>
+
+        </div>
+
+        {/* Extended Data */}
+        <section style={section}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem' }}>
+            <div>
+              <p style={label}>// OEM CROSS REFERENCES</p>
+              <h2 style={h2Style}>Cross Reference Data</h2>
+              <p style={pending}>DOCUMENTATION PENDING</p>
+            </div>
+            <div>
+              <p style={label}>// APPLICATIONS</p>
+              <h2 style={h2Style}>Compatible Equipment</h2>
+              <p style={pending}>DOCUMENTATION PENDING</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Cross Links */}
+        <section style={{ ...section, borderBottom: 'none' }}>
+          <p style={label}>// RESOURCES</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+            {[
+              { href: '/knowledge-system', label: 'Knowledge Center' },
+              { href: '#', label: 'Engineering Reference Library (Pending)' },
+              { href: 'https://part-search.elimfilters.com', label: 'Part Search Engine ↗' },
+            ].map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                style={{ display: 'block', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', padding: '1rem 1.25rem', textDecoration: 'none', fontFamily: "'Outfit', sans-serif", fontWeight: 500, fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)' }}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </section>
+
+      </main>
+    </>
+  );
+}

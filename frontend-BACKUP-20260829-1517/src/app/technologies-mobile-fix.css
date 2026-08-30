@@ -1,0 +1,66 @@
+/* Mobile/tablet-only fixes for the technologies landing page. Desktop remains unchanged. */
+
+@media (max-width: 860px) {
+  .technologies-page h1,
+  .technologies-page h2,
+  .technologies-page h3,
+  .technologies-page p,
+  .technologies-page a,
+  .technologies-page span {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+  }
+
+  .technologies-page .technology-portfolio-title,
+  .technologies-page .technologies-difference-title,
+  .technologies-page .technologies-final-title {
+    max-width: 100% !important;
+    word-break: keep-all !important;
+    text-wrap: balance;
+  }
+
+  .technologies-page .technology-portfolio-title {
+    font-size: clamp(1.62rem, 6.9vw, 2.25rem) !important;
+    line-height: 1.06 !important;
+    letter-spacing: -0.018em !important;
+    margin-bottom: 1.65rem !important;
+  }
+
+  .technologies-page .technologies-difference-title,
+  .technologies-page .technologies-final-title {
+    font-size: clamp(1.72rem, 7.2vw, 2.35rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .technologies-page .technologies-final-cta {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .technologies-page .technologies-final-cta > div {
+    width: 100% !important;
+    max-width: 38rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .technologies-page .technologies-final-cta a {
+    width: 100% !important;
+    max-width: 24rem !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .technologies-page .technology-portfolio-title {
+    font-size: clamp(1.5rem, 6.7vw, 1.95rem) !important;
+  }
+
+  .technologies-page .technologies-difference-title,
+  .technologies-page .technologies-final-title {
+    font-size: clamp(1.55rem, 6.9vw, 2rem) !important;
+  }
+}

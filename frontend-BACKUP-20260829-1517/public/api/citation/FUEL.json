@@ -1,0 +1,49 @@
+{
+  "key": "FUEL",
+  "type": "protection-domain",
+  "name": "Fuel Filtration Domain",
+  "slug": null,
+  "status": "unknown",
+  "in_unified_data": false,
+  "ud_key": null,
+  "tags": [],
+  "domain": null,
+  "citation": {
+    "source_url": "elimfilters.com/knowledge-center/systems/fuel-cleanliness-protection",
+    "concept": "FUEL — Fuel Filtration Domain",
+    "version": "1.0",
+    "last_updated": "2026-06-24",
+    "content_hash": "sha256:ea36693c674dd5ac880de546075af04be5a9edb9e12cff681b04c19fc364e3ff"
+  },
+  "canonical": {
+    "definition": "The fuel filtration domain covers diesel fuel cleanliness and water removal systems protecting high-pressure common-rail injectors and fuel pumps from particle wear and corrosion caused by particulate and water contamination.",
+    "systems": "HPCR diesel injection systems, fuel transfer circuits, bulk fuel storage systems across on-highway trucks, off-highway equipment, marine engines, and stationary power generation",
+    "failure_impact": "Water contamination → injector corrosion and microbial growth → injector stiction → misfires | Particle contamination above 4 µm → injector nozzle erosion → fuel spray pattern degradation → incomplete combustion → engine damage | HPCR injector replacement cost: $800–$2,500 per injector.",
+    "related_standards": "ASTM D6304: Water content measurement in petroleum products (Karl Fischer coulometric titration) | ISO 12937: Water determination in petroleum products by Karl Fischer reagent",
+    "related_technologies": "SYNTAPORE: Diesel-fuel particulate filtration elements for primary, secondary and cartridge fuel-filter applications | HYDROCORE: Coalescing water separator elements for free and emulsified water removal",
+    "industrial_role": "Fuel filtration is the primary protection system for HPCR injection equipment operating above 1,800 bar — injector clearances of 2–4 µm require sub-4 µm particle control to prevent accelerated nozzle wear and injection system failure."
+  },
+  "relationships": {
+    "related_standards": [
+      "ASTM_D6304",
+      "ISO_12937"
+    ]
+  },
+  "vault_path": "elimfilters-vault\\03-systems\\protection-domain\\FUEL.md",
+  "_links": {
+    "self": "/api/citation/FUEL.json",
+    "type_index": "/api/citation/type/protection-domain.json",
+    "related": [
+      {
+        "key": "ASTM_D6304",
+        "relation": "related_standards",
+        "href": "/api/citation/ASTM_D6304.json"
+      },
+      {
+        "key": "ISO_12937",
+        "relation": "related_standards",
+        "href": "/api/citation/ISO_12937.json"
+      }
+    ]
+  }
+}

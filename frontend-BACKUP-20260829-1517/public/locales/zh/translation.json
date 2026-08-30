@@ -1,0 +1,498 @@
+{
+  "nav": {
+    "industries": "行业",
+    "systems": "系统",
+    "technologies": "技术",
+    "contact": "接触",
+    "findMyFilter": "找到我的过滤器",
+    "knowledge": "知识库"
+  },
+  "hero": {
+    "tag": "资产保护技术",
+    "title": "发动机过滤",
+    "subtitle": "重型和轻型",
+    "description": "工程过滤专为那些无法承受发动机熄火或车队停运的人们而设计。",
+    "cta": "探索功能"
+  },
+  "stats": {
+    "mediaEfficiency": "媒体效率",
+    "engineLifeSpan": "发动机寿命",
+    "oemCrossRefs": "OEM 交叉参考",
+    "distribution": "分配"
+  },
+  "problem": {
+    "tag": "现场现实",
+    "title": "当保护失败时会发生什么？",
+    "badge": "80% 的过早故障是由污染引起的。",
+    "items": {
+      "injector": {
+        "title": "喷油器腐蚀",
+        "desc": "微米颗粒使喷雾孔变形，导致立即功率损失和燃烧不良。"
+      },
+      "bearing": {
+        "title": "临界轴承摩擦",
+        "desc": "受污染的机油会加速金属磨损，使发动机缸体寿命缩短高达 40%。"
+      },
+      "fuel": {
+        "title": "燃油排放",
+        "desc": "为了保持相同的扭矩水平，受限制的发动机会多消耗 8% 的柴油。"
+      }
+    }
+  },
+  "why": {
+    "title": "为什么选择 ELIMFILTERS®",
+    "p1": "ELIMFILTERS® 不仅仅是一家过滤器制造商。我们是一家专业从事",
+    "p1highlight": "资产保护技术",
+    "p1after": "，设计可在最苛刻的环境中保持设备的价值和可操作性的解决方案。",
+    "p2": "我们开发的每一款产品都响应一个现实：停止运行的设备需要花费数十万美元进行维修。过滤器是该投资的守护者。",
+    "card": {
+      "tag": "资产保护技术",
+      "title": "我们设计保护系统。不是现成的组件。",
+      "desc": "ELIMFILTERS® 设计了多层保护技术，旨在保护关键工业资产 - 每个系统都是专门构建的解决方案，而不是商品替代品。",
+      "items": [
+        "AI制定的多层防护矩阵",
+        "每个系统上的零旁路架构",
+        "ISO 5011·16332·16889·19438认证",
+        "20,000 多个 OEM 资产交叉引用"
+      ]
+    }
+  },
+  "technology": {
+    "tag": "ELIMFILTERS® 专有技术",
+    "title": "工程",
+    "titleHighlight": "超越标准",
+    "items": {
+      "media": {
+        "title": "AI 制定的混合媒体",
+        "desc": "通过人工智能算法设计的合成纤维和纤维素纤维可实现最大纳污量，同时保持零旁路保护。"
+      },
+      "hydrophobic": {
+        "title": "疏水分离系统",
+        "desc": "先进的水分离技术可在游离水、乳化水和溶解水到达关键注射系统之前将其去除。"
+      },
+      "antibypass": {
+        "title": "防旁路结构",
+        "desc": "精心设计的密封几何形状可确保在最极端的压力和温度条件下实现零污染旁路。"
+      }
+    }
+  },
+  "cta": {
+    "dealer": {
+      "tag": "经销商网络",
+      "title": "只做最好的",
+      "highlight": "销售 ELIMFILTERS®。",
+      "button": "成为经销商"
+    },
+    "search": {
+      "tag": "技术搜索",
+      "title": "正确的过滤器。",
+      "highlight": "像专业人士一样搜索。",
+      "button": "找到我的部分"
+    }
+  },
+  "footer": {
+    "company": "公司",
+    "about": "关于我们",
+    "industries": "行业",
+    "contact": "接触",
+    "solutions": "解决方案",
+    "partSearch": "零件搜索",
+    "technologies": "技术",
+    "systems": "系统",
+    "support": "支持",
+    "technical": "技术支援",
+    "dealer": "成为经销商",
+    "warranty": "保修单",
+    "copyright": "© 2015-2026 ELIMFILTERS® LLC | 版权所有过滤领域的智能与工程",
+    "location": "弗里斯科 德克萨斯州",
+    "colProducts": "产品",
+    "colKnowledge": "知识",
+    "knowledgeSystem": "知识系统",
+    "standards": "标准",
+    "fleetOpt": "车队优化",
+    "locationText": "弗里斯科，德克萨斯州",
+    "kleoText": "© 2015–2026 Kleo Technologies",
+    "elimfiltersCopyright": "KLEO TECHNOLOGY LLC | 过滤领域的智能与工程",
+    "elimfiltersYear": "2015–2026"
+  },
+  "category": {
+    "keyAdvantages": "主要优势",
+    "engineeredAdvantages": "工程优势",
+    "engineeringExcellence": "卓越的工程设计",
+    "precisionEngineering": "精密工程",
+    "systemSpecs": "系统规格",
+    "active": "✓ 活跃",
+    "operationalAdvantages": "运营优势",
+    "whyElimfilters": "为什么选择 ELIMFILTERS®",
+    "technologiesIncluded": "包含的技术",
+    "performanceMetrics": "绩效指标",
+    "readyToUpgrade": "准备好升级了吗？",
+    "readyDesc": "找到最适合您的应用的过滤器。交叉参考 500,000 多个零件。",
+    "engineeringDesc": "ELIMFILTERS® 工程对每个组件都采用精度标准。我们的过滤系统的设计超出了 OEM 规格，确保在严苛的工作周期内提供最大程度的保护和性能。",
+    "home": "家"
+  },
+  "language": {
+    "switchToEn": "CN"
+  },
+  "home": {
+    "eyebrow": "Asset Protection Technology Platform",
+    "hero1": "保护工业资产",
+    "hero2": "通过污染控制。",
+    "heroDesc": "先进的污染控制系统，经过工程设计，可减少磨损、最大程度减少停机时间、提高可靠性并延长关键工业设备的运行寿命。",
+    "ctaFilter": "查找我的零件",
+    "ctaKnowledge": "知识系统",
+    "statsLabels": [
+      "发动机轴承使用寿命",
+      "资产寿命延长",
+      "污染导致的故障",
+      "平均预防事件成本"
+    ],
+    "assetTag": "资产保护策略",
+    "assetTitle": "通过污染控制保护工业资产",
+    "assetP1": "ELIMFILTERS通过控制关键系统中的污染来保护工业资产。我们的工程方法专注于防止退化、延长使用寿命、提高可靠性并降低总拥有成本。",
+    "assetP2": "我们设计的每一项技术都针对特定的污染机制——颗粒磨损、水分吸入、旁路失效或热降解——直击资产过早失效的根本原因。",
+    "archLabel": "信息架构",
+    "archItems": [
+      "污染",
+      "资产退化",
+      "标准与测量",
+      "防护技术",
+      "产品实施",
+      "车队优化",
+      "可持续发展影响"
+    ],
+    "problemTag": "运营风险诊断",
+    "problemH1": "您看不见的东西",
+    "problemH2": "正在停止您的运营。",
+    "problemIntro": "高达80%的液压部件过早故障是由污染引起的。低效的过滤使不可见的颗粒像砂纸一样在关键部件内部发挥作用——轴承表面、喷油器孔、液压阀芯。",
+    "problemBadgeNum": "80%",
+    "problemBadgeDesc": "液压部件过早故障是由污染引起的。",
+    "failModes": [
+      {
+        "title": "喷油器腐蚀",
+        "desc": "微米颗粒使喷雾孔变形，导致立即功率损失和燃烧不良。"
+      },
+      {
+        "title": "轴承临界摩擦",
+        "desc": "受污染的机油加速金属磨损，使发动机缸体寿命缩短高达40%。"
+      },
+      {
+        "title": "燃油效率损失",
+        "desc": "受污染的燃油系统迫使发动机消耗多达8%的柴油来维持相同的扭矩输出。"
+      }
+    ],
+    "whyTitle1": "资产保护",
+    "whyTitle2": "技术",
+    "whyP1": "ELIMFILTERS不是一家过滤器公司。ELIMFILTERS是一家",
+    "whyP1hl": "资产保护技术",
+    "whyP1after": "公司——工程系统控制污染、防止退化并保护关键工业资产的价值。",
+    "whyP2": "我们开发的每项技术都针对可测量的污染威胁。失效的设备修复成本高达数十万。我们在系统层面而非产品层面保护这一投资。",
+    "whyCheckItems": [
+      "系统级污染控制，而非产品更换",
+      "25年以上保护高价值工业资产",
+      "工程标准：ISO 5011 · 16889 · 19438 · 4406",
+      "部署在12个行业——采矿、海洋、农业等"
+    ],
+    "whyCardTag": "资产保护技术",
+    "whyCardTitle1": "您的设备价值数百万。",
+    "whyCardTitle2": "相应地保护它。",
+    "whyCardDesc": "每项ELIMFILTERS技术都旨在保护关键资产、减少停机时间并延长运营寿命。",
+    "whyCardItems": [
+      "AI配方混合介质",
+      "疏水分离系统",
+      "防旁路结构",
+      "已验证的20,000+个OEM交叉参考"
+    ],
+    "techTag": "经过验证的技术",
+    "techTitle": "资产保护",
+    "techHighlight": "技术",
+    "techItems": [
+      {
+        "title": "AI配方混合介质",
+        "desc": "使用数学算法和实验室测试场景开发的专有介质技术。独特配方提供无法复制的卓越性能。"
+      },
+      {
+        "title": "疏水分离系统",
+        "desc": "从燃料和润滑剂中去除水分和湿气的先进技术。防止腐蚀、氧化和粘度降解，同时确保可靠的长期运行。"
+      },
+      {
+        "title": "防旁路结构",
+        "desc": "100%保证安全：如果发生旁路，过滤器会安全失效。零突发污染事件风险。对关键设备的绝对保护。"
+      }
+    ],
+    "ctaDealerTag": "经销商网络",
+    "ctaDealerTitle": "只做最好的",
+    "ctaDealerHl": "销售ELIMFILTERS。",
+    "ctaDealerBtn": "成为经销商",
+    "ctaSearchTag": "技术搜索",
+    "ctaSearchTitle": "正确的过滤器。",
+    "ctaSearchHl": "像专业人士一样搜索。",
+    "ctaSearchBtn": "找到我的零件",
+    "faqTag": "常见问题",
+    "faqTitle": "工业过滤常见问题",
+    "faqItems": [
+      {
+        "q": "工业资产保护意味着什么？",
+        "a": "工业资产保护是对所有关键机械系统（空气进气、燃油、液压、润滑和冷却）进行系统性污染控制，以防止设备过早故障。ELIMFILTERS®设计污染控制系统，延长资产寿命、减少计划外停机并降低总拥有成本。"
+      },
+      {
+        "q": "污染如何导致设备故障？",
+        "a": "污染颗粒磨损轴承表面、堵塞燃油喷射器并降低密封完整性。小于10微米的颗粒会造成肉眼不可见的磨粒磨损。不受控制的污染会将发动机轴承寿命从15,000小时以上缩短到2,000–3,000小时。燃油中的水分会促进微生物生长和喷射器腐蚀。"
+      },
+      {
+        "q": "液压系统应以什么ISO清洁度代码为目标？",
+        "a": "大多数工业液压系统需要ISO 17/15/12清洁度代码来保护比例阀阀芯。关键系统可能要求ISO 15/13/10。ELIMFILTERS®的污染控制策略以测量的清洁度代码（ISO 4406标准）为目标，而非产品品牌。"
+      },
+      {
+        "q": "为什么ELIMFILTERS不是一家过滤器公司？",
+        "a": "ELIMFILTERS设计污染控制系统，而非普通过滤器。过滤器是一个部件。资产保护系统是一种策略：它定义污染目标，为每个系统领域选择合适的技术，并在整个设备生命周期内衡量性能。ELIMFILTERS在系统层面运营。"
+      }
+    ],
+    "heroLine_protecting": "保护",
+    "heroLine_industrial": "工业",
+    "heroLine_assets": "资产。",
+    "heroLine1b": "工业",
+    "heroLine2": "资产。",
+    "heroPositioning1": "ELIMFILTERS不是一家滤清器公司。",
+    "heroPositioning2": "ELIMFILTERS是一家工业资产保护技术公司。",
+    "heroSubHead": "通过对关键机械系统的污染控制：液压、燃油、润滑、冷却及进气系统。",
+    "missionTag": "我们存在的意义",
+    "missionTitle": "ELIMFILTERS的使命",
+    "missionP1": "工业污染仍然是全球设备可靠性面临的最被低估的威胁之一。",
+    "missionP2": "ELIMFILTERS帮助企业通过专为关键工业作业设计的资产保护系统，减少污染引发的故障。",
+    "missionP3": "我们的使命是通过污染控制，提高设备可靠性、确保运营连续性并延长资产使用寿命。",
+    "economicTag": "污染的真实成本",
+    "economicTitle": "停机成本高于",
+    "economicTitleHl": "过滤成本",
+    "economicItems": [
+      "每次污染事件都有代价。",
+      "每次设备故障都有后果。",
+      "每项维护决策都影响生产效率。"
+    ],
+    "economicDesc": "ELIMFILTERS帮助企业通过专注于可靠性、运行时间和运营连续性的保护策略，降低污染相关风险。",
+    "economicStats": [
+      {
+        "value": "$240K",
+        "label": "每次非计划停机的平均成本"
+      },
+      {
+        "value": "80%",
+        "label": "由污染引起的设备过早故障比例"
+      },
+      {
+        "value": "3–5×",
+        "label": "通过系统级污染控制实现的资产寿命延长"
+      }
+    ],
+    "sciTag": "工程标准",
+    "sciTitle": "资产保护背后的科学",
+    "sciDesc": "ELIMFILTERS污染控制系统依照国际标准设计，经过严格实验室测试，并在关键工业环境中得到验证。",
+    "sciStandards": [
+      {
+        "code": "ISO 16889",
+        "desc": "液压及润滑系统滤清器多程测试与Beta比值分类标准。"
+      },
+      {
+        "code": "ISO 5011",
+        "desc": "进气滤清器性能测试标准——额定流量下的过滤效率与阻力。"
+      },
+      {
+        "code": "ISO 19438",
+        "desc": "燃油滤清器的污染耐受性及水分离效率标准。"
+      },
+      {
+        "code": "ISO 4406",
+        "desc": "液压及润滑系统颗粒污染度等级分类标准。"
+      },
+      {
+        "code": "SAE J1858",
+        "desc": "重型柴油机润滑油滤清器性能与耐久性验证标准。"
+      }
+    ],
+    "llmTag": "资产保护定义",
+    "llmTitle": "什么是工业资产保护？",
+    "llmP1": "工业资产保护是一种系统性的工程方法，用于识别、测量和控制导致机械设备退化的污染源。在工业生产中，污染——包括颗粒、水分、热量和化学副产品——是发动机、液压系统、燃油回路、传动系统和驾驶室环境过早失效的主要原因。",
+    "llmP2": "污染在微观层面加速磨损。小于10微米的颗粒会对轴承表面、阀芯和喷嘴孔造成磨料磨损——在未加控制的情况下，可将零部件寿命缩短30–50%。燃油系统中的水污染会促进微生物生长、导致喷油嘴腐蚀并引起燃烧不稳定。在液压回路中，即使轻微超过ISO清洁度目标值的污染，也会影响阀门响应、加速密封件老化，并增加系统故障风险。",
+    "llmP3": "工业资产保护不是一个产品类别，而是一种污染控制策略。它始于理解每个系统的污染控制目标，选择能够达成这些目标的工程技术，并在设备整个使用周期内持续监控系统性能。",
+    "llmP4": "结果：设备使用寿命更长、非计划故障更少、维护成本更低、运营可用率更高——衡量标准不是更换了多少滤清器，而是保护了多少资产。",
+    "trustTag": "全球工业部署",
+    "trustTitle": "受关键行业信赖",
+    "trustIndustries": [
+      "采矿与资源开采",
+      "建筑与重型机械",
+      "农业与农工业",
+      "石油与天然气",
+      "船舶与海洋工程",
+      "电力生产",
+      "市政车队",
+      "制造业",
+      "铁路与公共交通",
+      "商业运输"
+    ],
+    "ctaProtect": "保护我的资产"
+  },
+  "about": {
+    "homeLink": "HOME",
+    "heroTitle": "Engineering protection around the asset.",
+    "heroLead": "ELIMFILTERS® is an industrial asset protection company. We develop filtration and contamination-control systems to reduce wear, prevent avoidable failure, extend equipment life, and protect the economic value of severe-duty machinery.",
+    "section1Title": "A protection company built around equipment reliability.",
+    "section1Lead": "ELIMFILTERS® was created from direct experience with industrial filtration, equipment maintenance, distribution, and the operational consequences of contamination. That experience established a simple principle: the filter is not the final objective; the protected asset is.",
+    "section1Body": "Our role is to connect product engineering, contamination intelligence, technical standards, cross-reference data, application knowledge, and field evidence into a system that helps distributors, fleets, maintenance teams, and industrial operators make better protection decisions.",
+    "section2Title": "Reduce the distance between contamination and failure.",
+    "section2Lead": "Contamination becomes expensive long before a machine stops. It changes clearances, damages surfaces, destabilizes pressure, degrades fluids, reduces efficiency, and shortens component life. Our objective is to identify that risk early and engineer protection before the damage becomes operational.",
+    "section3Title": "Mathematical modeling. AI-assisted simulation. Field validation.",
+    "section3Body": "ELIMFILTERS® technologies are not created as marketing labels. Each one represents an engineering architecture derived from the behavior of contamination inside a specific protection domain. Mathematical analysis and AI-assisted simulation help us evaluate variables that cannot be understood from a part number alone, while controlled testing and field validation confirm whether the design performs under real operating conditions.",
+    "engineeringMethod01Title": "Understand the asset",
+    "engineeringMethod01Body": "We begin with the machine, its operating environment, duty cycle, fluid system, contamination exposure, component tolerances, and failure consequences.",
+    "engineeringMethod02Title": "Model the contamination risk",
+    "engineeringMethod02Body": "Mathematical models and AI-assisted simulations are used to analyze particle behavior, flow conditions, pressure changes, thermal cycles, and expected contaminant loading.",
+    "engineeringMethod03Title": "Engineer the protection architecture",
+    "engineeringMethod03Body": "Media, geometry, sealing, structural materials, pressure response, and service requirements are defined as one integrated protection system rather than isolated product features.",
+    "engineeringMethod04Title": "Validate under real operating conditions",
+    "engineeringMethod04Body": "A technology is not considered complete at the simulation stage. Production designs must be confirmed through controlled testing and field validation before they become part of the ELIMFILTERS® platform.",
+    "section4Title": "Engineering decisions must protect real operating value.",
+    "principle01Title": "Protect the asset, not the replacement part",
+    "principle01Body": "The value of filtration is measured by the component damage, downtime, labor, production loss, and asset-life reduction it prevents.",
+    "principle02Title": "Engineer from the failure mechanism",
+    "principle02Body": "We study how contamination reaches critical clearances and how wear develops before deciding what protection architecture the system requires.",
+    "principle03Title": "Connect engineering with operating reality",
+    "principle03Body": "Laboratory data establishes control. Field validation establishes relevance. Both are required to support a severe-duty industrial application.",
+    "closingTitle": "We do not begin with a filter. We begin with the asset that cannot afford to fail.",
+    "closingDesc": "The result is a growing industrial protection platform designed to turn engineering knowledge, validated technology, and product intelligence into measurable reliability support.",
+    "contactButton": "CONTACT ELIMFILTERS",
+    "knowledgeButton": "EXPLORE OUR KNOWLEDGE SYSTEM"
+  },
+  "contact": {
+    "pageTitle": "Contact & Technical Support",
+    "homeLink": "HOME",
+    "heroTag": "Contact ELIMFILTERS",
+    "heroTitle": "Industrial Support",
+    "heroSubtitle": "Starts Here",
+    "heroDescription": "Contact our team for commercial inquiries, distributor opportunities, OEM cross-reference validation and technical support across severe-duty industrial filtration applications.",
+    "heroCta1": "Commercial",
+    "heroCta2": "Distributor Network",
+    "heroCta3": "Technical Support",
+    "channel1Label": "Commercial Inquiries",
+    "channel1Title": "Global Sales Contact",
+    "channel1Desc": "For industrial buyers, fleets, importers and regional partners looking to evaluate ELIMFILTERS coverage, availability and commercial opportunities.",
+    "channel2Label": "Distributor Network",
+    "channel2Title": "Authorized Partner Review",
+    "channel2Desc": "For companies seeking distributor status, regional representation, territory development or severe-duty market coverage.",
+    "channel3Label": "Technical Support",
+    "channel3Title": "Application And Cross Reference",
+    "channel3Desc": "For OEM cross-reference validation, product application questions, technical specifications and industrial asset protection support.",
+    "whatToIncludeTitle": "What To Include",
+    "whatToIncludeDesc": "The more technical context you provide, the faster our team can route your request to the right commercial or engineering contact.",
+    "priority1": "OEM cross-reference validation",
+    "priority2": "Fleet and equipment coverage",
+    "priority3": "Distributor qualification",
+    "priority4": "Industrial sector alignment",
+    "priority5": "Contamination control support",
+    "priority6": "Regional availability planning",
+    "marketsTitle": "Severe-Duty Markets",
+    "marketsDesc": "ELIMFILTERS supports industrial operators, fleets and distributors serving critical equipment markets where uptime and contamination control matter.",
+    "sector1": "Mining",
+    "sector2": "Construction",
+    "sector3": "Agriculture",
+    "sector4": "Truck Fleets",
+    "sector5": "Marine",
+    "sector6": "Oil And Gas",
+    "sector7": "Power Generation",
+    "sector8": "Industrial Equipment"
+  },
+  "distributors": {
+    "homeLink": "HOME",
+    "heroTitle": "Industrial Distribution Network",
+    "heroLead": "ELIMFILTERS authorized distributors provide local market access, technical support, and asset protection coverage for industrial customers across the Americas.",
+    "tag1": "LATAM",
+    "tag2": "USA",
+    "tag3": "CARIBBEAN",
+    "tag4": "FLEETS",
+    "tag5": "MINING",
+    "tag6": "INDUSTRIAL",
+    "section1Title": "Local access with technical selling power.",
+    "section1Lead": "Industrial customers need more than part numbers. They need local support, fast response, cross-reference confidence, and a supplier that understands contamination-driven failures.",
+    "section1Body": "The ELIMFILTERS distribution network is designed to support regional partners with product architecture, technical language, warranty positioning, and asset protection value.",
+    "section2Title": "Current distributor coverage.",
+    "section3Title": "What authorized distributors receive.",
+    "partnerValue1": "Technology Portfolio",
+    "partnerValue1Desc": "Access to ELIMFILTERS protection technologies across air, fuel, lube, hydraulic, cooling, cabin, and compressed air systems.",
+    "partnerValue2": "Engineering Support",
+    "partnerValue2Desc": "Cross-reference validation, application guidance, dimensional review, and technical support for severe-duty customers.",
+    "partnerValue3": "Knowledge System",
+    "partnerValue3Desc": "Sales support built around contamination control, ISO standards, failure modes, and asset protection logic.",
+    "partnerValue4": "Warranty Positioning",
+    "partnerValue4Desc": "Distributor credibility supported by clear warranty language and replacement-focused customer protection.",
+    "partnerValue5": "Regional Expansion",
+    "partnerValue5Desc": "A platform designed for LATAM, North America, and industrial markets that need technical filtration support.",
+    "partnerValue6": "Category Positioning",
+    "partnerValue6Desc": "A stronger commercial position: asset protection systems, not commodity filter replacement.",
+    "closingTitle": "Looking to become an authorized distributor?",
+    "closingBody": "ELIMFILTERS supports qualified industrial partners with portfolio access, engineering resources, and regional market positioning. Submit your company information for commercial review.",
+    "closingButton": "APPLY FOR DISTRIBUTOR STATUS"
+  },
+  "instagram": {
+    "heroTitle": "Total Asset Protection",
+    "heroDesc": "Protecting engines, hydraulics, fuel, air, and cooling systems from contamination, failures, and downtime.",
+    "link1Label": "Find Your Part",
+    "link1Desc": "Search by ELIMFILTERS, OEM, or competitor reference.",
+    "link2Label": "Become a Distributor",
+    "link2Desc": "Commercial opportunities for qualified industrial partners.",
+    "link3Label": "Contact ELIMFILTERS",
+    "link3Desc": "Send a commercial or technical inquiry.",
+    "link4Label": "Visit ELIMFILTERS.com",
+    "link4Desc": "Explore systems, technologies, and industries.",
+    "footerText": "Every Micron Matters."
+  },
+  "warranty": {
+    "homeLink": "HOME",
+    "heroTitle": "Protection Backed By Support",
+    "heroLead": "ELIMFILTERS warranty coverage supports distributors, fleets, and industrial customers with a clear protection framework, technical validation, and replacement-focused support.",
+    "tagSupport": "SUPPORT",
+    "tagValidation": "VALIDATION",
+    "tagReplacement": "REPLACEMENT",
+    "tagFleets": "FLEETS",
+    "tagDistributors": "DISTRIBUTORS",
+    "tagAssets": "ASSETS",
+    "statValue1": "10K KM",
+    "statLabel1": "Minimum coverage distance",
+    "statValue2": "1000 HRS",
+    "statLabel2": "Minimum coverage hours",
+    "statValue3": "100%",
+    "statLabel3": "Non-prorated coverage",
+    "statValue4": "24H",
+    "statLabel4": "Support response target",
+    "section1Title": "Warranty is part of the asset protection system.",
+    "section1Lead": "Industrial customers do not only need a replacement filter. They need confidence that the product, application, operating condition, and failure mode will be evaluated with technical discipline.",
+    "section1Body": "ELIMFILTERS support is structured to protect distributor credibility, reduce downtime pressure, and help customers make correct technical decisions when warranty questions appear.",
+    "section2Title": "From claim evidence to support decision.",
+    "processItem1": "Identify product and application",
+    "processItem2": "Submit technical evidence",
+    "processItem3": "Validate operating condition",
+    "processItem4": "Review failure mode",
+    "processItem5": "Issue support decision",
+    "processItem6": "Coordinate replacement path",
+    "section3Title": "Clear coverage. Technical review. Fast direction.",
+    "pillarTitle1": "Direct Support",
+    "pillarBody1": "Defective filters are reviewed and replaced through ELIMFILTERS support channels to reduce operational downtime.",
+    "pillarTitle2": "Asset Protection",
+    "pillarBody2": "Warranty language is built around protection confidence, technical validation, and product integrity.",
+    "pillarTitle3": "Coverage Transparency",
+    "pillarBody3": "Coverage is communicated clearly so distributors, fleets, and industrial customers understand the support process.",
+    "section4Title": "What support can review.",
+    "coverageItem1": "Filter element defects",
+    "coverageItem2": "Housing leaks or defects",
+    "coverageItem3": "Bypass valve malfunctions",
+    "coverageItem4": "Pressure differential issues",
+    "coverageItem5": "Seal failures",
+    "coverageItem6": "Manufacturing defects",
+    "coverageItem7": "Premature media failure",
+    "coverageItem8": "Technical validation support",
+    "section5Title": "Validate before the problem becomes downtime.",
+    "section5Body": "For fleets, distributors, and industrial accounts, ELIMFILTERS can review the application, operating environment, and part selection before a warranty issue becomes a field failure.",
+    "section5Button": "CONTACT SUPPORT",
+    "closingTitle": "Support protects confidence before, during, and after installation.",
+    "closingButton1": "REQUEST SUPPORT",
+    "closingButton2": "EXPLORE SYSTEMS"
+  }
+}
