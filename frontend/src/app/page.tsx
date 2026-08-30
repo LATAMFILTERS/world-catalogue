@@ -1,4 +1,6 @@
-'use client';
+﻿'use client';
+
+import dynamic from 'next/dynamic';
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, animate, useSpring, useScroll, useTransform } from 'motion/react';
@@ -15,7 +17,7 @@ import { EngineeringSearchBar } from '@/components/engineering';
 import type { CustomerIntent } from '@/components/conversion';
 import type { SearchResult } from '@/lib/services';
 
-// ─── Static structural data ───────────────────────────────────────────────────
+// â”€â”€â”€ Static structural data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const SLIDE_DURATION = 5000;
 
@@ -42,7 +44,7 @@ const INDUSTRY_COLORS: Record<string, string> = {
   'stationary-engines': 'rgba(233,30,99,0.12)',
 };
 
-// ─── Counter ──────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Counter â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -64,7 +66,7 @@ function Counter({ to, prefix = '', suffix = '' }: { to: number; prefix?: string
   return <span ref={ref}>{prefix}{Number.isInteger(to) ? Math.round(to) : to.toFixed(1)}{suffix}</span>;
 }
 
-// ─── Spotlight card ──────────────────────────────────────────────────────────
+// â”€â”€â”€ Spotlight card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   children: React.ReactNode;
@@ -94,7 +96,7 @@ function SpotlightCard({ children, style, contentStyle, contentClassName }: {
   );
 }
 
-// ─── FloatingParticles ───────────────────────────────────────────────────────
+// â”€â”€â”€ FloatingParticles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function FloatingParticles({ count = 22 }: { count?: number }) {
   return (
@@ -110,7 +112,7 @@ function FloatingParticles({ count = 22 }: { count?: number }) {
   );
 }
 
-// ─── StatRing ─────────────────────────────────────────────────────────────
+// â”€â”€â”€ StatRing â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function StatRing({ percent, content, label }: { percent: number; content: React.ReactNode; label: string }) {
   const r = 38;
@@ -139,7 +141,7 @@ function StatRing({ percent, content, label }: { percent: number; content: React
   );
 }
 
-// ─── IndustryCard ──────────────────────────────────────────────────────────
+// â”€â”€â”€ IndustryCard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function IndustryCard({ id, label, href }: { id: string; label: string; href: string }) {
   const [hovered, setHovered] = useState(false);
@@ -155,7 +157,7 @@ function IndustryCard({ id, label, href }: { id: string; label: string; href: st
   );
 }
 
-// ─── Engineering Entry Section ───────────────────────────────────────────────
+// â”€â”€â”€ Engineering Entry Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const JOURNEY_CARDS = [
   {
@@ -250,7 +252,7 @@ function EngineeringEntrySection() {
           <EngineeringSearchBar onResult={handleResult} placeholder="Part number, symptom, failure mode, standard..." />
         </motion.div>
 
-        {/* Journey cards — 2x2 grid */}
+        {/* Journey cards â€” 2x2 grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -302,7 +304,7 @@ function EngineeringEntrySection() {
   );
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export default function Home() {
   const { t } = useTranslation();
@@ -345,13 +347,13 @@ export default function Home() {
     <ConversionProvider>
       <Navigation />
       <main style={{ fontFamily: 'Barlow, Arial, sans-serif' }}>
-        {/* ── DIRECT ANSWER BLOCK (hidden from view, visible in HTML source for AI crawlers) ── */}
+        {/* â”€â”€ DIRECT ANSWER BLOCK (hidden from view, visible in HTML source for AI crawlers) â”€â”€ */}
         <div style={{
           display: 'none',
           visibility: 'hidden',
         }}>
           <p>
-            ELIMFILTERS® is Kleo Technology LLC's global industrial filtration brand. We do not sell directly to end users; instead, ELIMFILTERS products are available exclusively through authorized distributors across the Americas and other regions. ELIMFILTERS engineers advanced contamination control systems for air intake, fuel, hydraulic, oil, and cabin filtration across 12 industries including mining, agriculture, marine, and power generation. Our products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications, backed by 25+ years of industrial field deployment.
+            ELIMFILTERSÂ® is Kleo Technology LLC's global industrial filtration brand. We do not sell directly to end users; instead, ELIMFILTERS products are available exclusively through authorized distributors across the Americas and other regions. ELIMFILTERS engineers advanced contamination control systems for air intake, fuel, hydraulic, oil, and cabin filtration across 12 industries including mining, agriculture, marine, and power generation. Our products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000+ OEM specifications, backed by 25+ years of industrial field deployment.
           </p>
         </div>
 
@@ -370,21 +372,21 @@ export default function Home() {
           }
         `}</style>
 
-        {/* ── HERO ── */}
+        {/* â”€â”€ HERO â”€â”€ */}
         <CinematicHero />
 
-        {/* ── STAT BAR ── */}
+        {/* â”€â”€ STAT BAR â”€â”€ */}
         <HomeStatBar />
 
-        {/* ── GLOBAL BRAND SECTION ── */}
+        {/* â”€â”€ GLOBAL BRAND SECTION â”€â”€ */}
         <GlobalBrandSection />
 
-        {/* ── INDUSTRIES SHOWCASE ── */}
+        {/* â”€â”€ INDUSTRIES SHOWCASE â”€â”€ */}
         <IndustriesShowcase />
 
-        {/* ── ENGINEERING ENTRY ── */}
+        {/* â”€â”€ ENGINEERING ENTRY â”€â”€ */}
 
-        {/* ── INDUSTRIES STRIP ── */}
+        {/* â”€â”€ INDUSTRIES STRIP â”€â”€ */}
       <section style={{ padding: '4.75rem 8%', background: 'var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}>
@@ -403,7 +405,7 @@ export default function Home() {
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <motion.p variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                   style={{ color: 'var(--ink-2)', fontSize: '1.05rem', marginBottom: '2.5rem', lineHeight: 1.75, fontFamily: 'Barlow, Arial, sans-serif' }}>
-                  {t('home.problemIntro', 'Up to 80% of premature hydraulic component failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.')}
+                  {t('home.problemIntro', 'Up to 80% of premature hydraulic component failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components â€” bearing surfaces, injector orifices, hydraulic spools.')}
                 </motion.p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                   {(Array.isArray(failModes) ? failModes : []).map((item, idx) => (
@@ -427,7 +429,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── REAL COST OF CONTAMINATION ── */}
+        {/* â”€â”€ REAL COST OF CONTAMINATION â”€â”€ */}
         <section style={{ padding: '4.75rem 8%', background: 'var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <motion.div
@@ -450,7 +452,7 @@ export default function Home() {
               {[
                 { label: 'Component Damage', desc: 'Particle contamination destroys spool valves and pump internals, often requiring full assembly replacement rather than a simple part swap.' },
                 { label: 'System Recovery', desc: 'Contaminated fluid must be fully purged. Lines flushed, fluid replaced, system recertified before the equipment can safely return to service.' },
-                { label: 'Unplanned Downtime', desc: 'Every day an asset is out of service is lost production, missed commitments, and idle labor — the cost that compounds the fastest.' },
+                { label: 'Unplanned Downtime', desc: 'Every day an asset is out of service is lost production, missed commitments, and idle labor â€” the cost that compounds the fastest.' },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -483,7 +485,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── WHY ELIMFILTERS ── */}
+        {/* â”€â”€ WHY ELIMFILTERS â”€â”€ */}
         <section style={{ padding: '4.75rem 8%', background: 'var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.h2 initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -522,7 +524,7 @@ export default function Home() {
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {(Array.isArray(whyCardItems) ? whyCardItems : []).map((item, i) => (
                       <li key={i} style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '1rem', color: 'var(--ink-2)', paddingLeft: '1.5rem', position: 'relative' }}>
-                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>→</span>
+                        <span style={{ position: 'absolute', left: 0, color: '#FFF12D', fontWeight: 700 }}>â†’</span>
                         {item}
                       </li>
                     ))}
@@ -533,7 +535,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── ASSET Asset Protection NARRATIVE ── */}
+        {/* â”€â”€ ASSET Asset Protection NARRATIVE â”€â”€ */}
         <section style={{ padding: '4.75rem 8%', background: 'linear-gradient(180deg, rgba(255,241,45,0.05) 0%, transparent 100%), var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
             style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -555,8 +557,8 @@ export default function Home() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
                     { label: 'Identify Contamination', desc: 'Particles, water, heat, chemical byproducts' },
-                    { label: 'Apply Engineering Standards', desc: 'ISO 4406 · ISO 16889 · ISO 5011 · ISO 19438' },
-                    { label: 'Deploy Protection Technology', desc: 'MACROCORE · SYNTRAX · NANOFORCE · SYNTAPORE' },
+                    { label: 'Apply Engineering Standards', desc: 'ISO 4406 Â· ISO 16889 Â· ISO 5011 Â· ISO 19438' },
+                    { label: 'Deploy Protection Technology', desc: 'MACROCORE Â· SYNTRAX Â· NANOFORCE Â· SYNTAPORE' },
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                       <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#FFF12D', flexShrink: 0, marginTop: '0.52rem' }} />
@@ -572,7 +574,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* ── SCIENTIFIC AUTHORITY ── */}
+        {/* â”€â”€ SCIENTIFIC AUTHORITY â”€â”€ */}
         <section style={{ padding: '4.75rem 8%', background: 'var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true, margin: '-80px' }}
@@ -599,7 +601,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── TECHNOLOGY ── */}
+        {/* â”€â”€ TECHNOLOGY â”€â”€ */}
         <section style={{ padding: '4.75rem 8%', background: 'var(--surface-light)', borderBottom: '1px solid var(--border-on-light)' }}>
           <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-60px' }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}>
@@ -627,7 +629,7 @@ export default function Home() {
 
 
 
-        {/* ── CTA SLIDES ── */}
+        {/* â”€â”€ CTA SLIDES â”€â”€ */}
         <div style={{ position: 'relative', background: '#000', borderTop: '1px solid #111', overflow: 'hidden' }}>
           {CTA_SLIDES.map((slide, i) => (
             <div key={i} style={{ position: i === activeSlide ? 'relative' : 'absolute', top: i === activeSlide ? undefined : 0, left: i === activeSlide ? undefined : 0, width: '100%', opacity: i === activeSlide ? 1 : 0, transition: 'opacity 0.8s ease', pointerEvents: i === activeSlide ? 'all' : 'none', padding: '4.75rem 8%' }}>
@@ -652,14 +654,15 @@ export default function Home() {
           <div style={{ position: 'absolute', bottom: 0, left: 0, height: '2px', background: '#FFF12D', width: `${progress}%` }} />
         </div>
 
-        {/* ── TESTIMONIALS ── */}
+        {/* â”€â”€ TESTIMONIALS â”€â”€ */}
 
-        {/* ── FAQ SECTION ── */}
+        {/* â”€â”€ FAQ SECTION â”€â”€ */}
       </main>
       <Footer />
     </ConversionProvider>
   );
 }
+
 
 
 
