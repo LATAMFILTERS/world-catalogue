@@ -70,32 +70,50 @@ export function IndustriesShowcase() {
         },
       });
 
+      // Each image must visibly enter, settle fully inside its column,
+      // then continue out to the right before the next image takes over.
       for (let imageIndex = 0; imageIndex < IMAGES_PER_COLUMN; imageIndex += 1) {
         const currentRow = panelsRef.current
           .map((column) => column[imageIndex])
           .filter(Boolean) as HTMLAnchorElement[];
 
+        const rowLabel = `row-${imageIndex}`;
+        tl.addLabel(rowLabel, imageIndex === 0 ? 0 : '>-0.25');
+
+        tl.to(
+          currentRow,
+          {
+            xPercent: 0,
+            duration: 0.95,
+            stagger: { each: 0.07, from: 'start' },
+            ease: 'power3.out',
+          },
+          rowLabel,
+        );
+
         tl.to(
           currentRow,
           {
             xPercent: 105,
-            duration: 2,
-            stagger: { each: 0.08, from: 'start' },
-            ease: 'power2.inOut',
+            duration: 0.95,
+            stagger: { each: 0.07, from: 'start' },
+            ease: 'power3.in',
           },
-          imageIndex === 0 ? 0 : '>-0.65',
+          '+=0.18',
         );
       }
 
+      // Only after the final image has completely left do the black
+      // technology columns retract, from the last technology to the first.
       tl.to(
         columns,
         {
           height: '0%',
-          duration: 1.2,
-          stagger: { each: 0.1, from: 'end' },
+          duration: 1.15,
+          stagger: { each: 0.09, from: 'end' },
           ease: 'power3.inOut',
         },
-        '>-0.35',
+        '+=0.15',
       );
 
       let hasPlayed = false;
@@ -107,7 +125,7 @@ export function IndustriesShowcase() {
             observer.disconnect();
           }
         },
-        { threshold: 0.3 },
+        { threshold: 0.55 },
       );
 
       observer.observe(section);
@@ -127,11 +145,6 @@ export function IndustriesShowcase() {
   return (
     <section ref={sectionRef} className={styles.section} aria-labelledby="industries-heading">
       <div ref={overlayRef} className={styles.animationOverlay} aria-hidden="true">
-        <div className={styles.animationHeading}>
-          <span>Built for Every </span>
-          <span className={styles.yellow}>Industry</span>
-        </div>
-
         <div
           className={styles.animationGrid}
           style={{ gridTemplateColumns: `repeat(${COLUMN_COUNT}, minmax(0, 1fr))` }}
