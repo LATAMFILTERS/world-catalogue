@@ -183,8 +183,10 @@
   pointer-events: none;
 }
 
-/* Home contamination risk callout — global override for the inline homepage badge. */
-:global(.problem-badge) {
+/* Homepage contamination-risk callout. The local :not(.section) anchor keeps
+   these global selectors valid in CSS Modules pure mode while matching the
+   homepage badge, which never carries the generated section class. */
+:global(.problem-badge):not(.section) {
   right: 1.5rem !important;
   bottom: 1.5rem !important;
   width: clamp(250px, 19vw, 300px) !important;
@@ -196,7 +198,7 @@
   overflow: hidden !important;
 }
 
-:global(.problem-badge p) {
+:global(.problem-badge):not(.section) p {
   margin: 0 !important;
   text-align: left !important;
   word-break: normal !important;
@@ -205,7 +207,7 @@
   white-space: normal !important;
 }
 
-:global(.problem-badge p:first-child) {
+:global(.problem-badge):not(.section) p:first-child {
   font-family: var(--font-display) !important;
   font-size: 0.88rem !important;
   font-weight: 700 !important;
@@ -214,7 +216,7 @@
   text-transform: uppercase !important;
 }
 
-:global(.problem-badge p:last-child) {
+:global(.problem-badge):not(.section) p:last-child {
   margin-top: 0.8rem !important;
   font-family: var(--font-body) !important;
   font-size: 0.88rem !important;
