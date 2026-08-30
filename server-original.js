@@ -3111,6 +3111,22 @@ app.get('/api/admin/logistics-audit', adminLimiter, requireAdmin, async (req, re
   }
 });
 
+// ─── POST /api/admin/run-logistics-migration ──────────────────────────────────
+// Runs 098_LOGISTICS_PACKAGING_FIELDS: adds the 16 logistics/packaging
+// columns to elimfilters_catalog (all nullable, no defaults) plus the
+// generated logistics_data_complete flag. Additive-only, idempotent.
+app.post('/api/admin/run-logistics-migration', adminLimiter, requireAdmin, async (req, res) => {
+  try {
+    const { applyLogisticsPackagingFields } = require('./scripts/migrations/run_098_logistics_packaging_fields');
+    const report = await applyLogisticsPackagingFields();
+    console.log('[run-logistics-migration]', JSON.stringify(report));
+    res.json(report);
+  } catch (e) {
+    console.error('[run-logistics-migration]', e.message);
+    res.status(500).json({ error: e.message, report: e.migrationReport || null });
+  }
+});
+
 // ─── GET /api/admin/malformed-skus ────────────────────────────────────────────────────────────────────────────
 // Lists all SKUs that don’t match the 7-char format ^[A-Z0-9]{2,4}[0-9]{4}$
 app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res) => {
