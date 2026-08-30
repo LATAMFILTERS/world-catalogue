@@ -3160,6 +3160,29 @@ app.post('/api/admin/run-fleetguard-turbocore-housings', adminLimiter, requireAd
   }
 });
 
+// ─── GET /api/admin/fallback-example ──────────────────────────────────────────
+// Read-only. Returns one existing HD SKU whose codigo_base_governance shows
+// fallback_manufacturer_verified=true, as a template for the exact data
+// shape the codigo_base + alternate-integrity triggers both require.
+app.get('/api/admin/fallback-example', adminLimiter, requireAdmin, async (req, res) => {
+  const client = await pool.connect();
+  try {
+    const { rows } = await client.query(`
+      SELECT sku, codigo_base, oem_codes, competitor_codes, enrichment_data->'codigo_base_governance' AS governance
+      FROM elimfilters_catalog
+      WHERE duty = 'HEAVY_DUTY'
+        AND (enrichment_data->'codigo_base_governance'->>'fallback_manufacturer_verified')::boolean IS TRUE
+      LIMIT 3
+    `);
+    res.json({ count: rows.length, rows });
+  } catch (e) {
+    console.error('[fallback-example]', e.message);
+    res.status(500).json({ error: e.message });
+  } finally {
+    client.release();
+  }
+});
+
 // ─── GET /api/admin/hd-donaldson-codes ────────────────────────────────────────
 // Read-only. Lists sku + codigo_base for HEAVY_DUTY rows whose codigo_base
 // looks like a Donaldson code, for the Etapa 3 official-source scrape.
