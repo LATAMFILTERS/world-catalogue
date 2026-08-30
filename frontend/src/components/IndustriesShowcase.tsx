@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { CANONICAL_TECHNOLOGY_LIST } from '@/lib/canonical-technologies';
 import styles from './IndustriesShowcase.module.css';
 
 const INDUSTRIES = [
@@ -21,22 +22,16 @@ const INDUSTRIES = [
 
 const CARD_WIDTH = 300;
 const CARD_GAP = 16;
-const COLUMN_COUNT = 4;
 const IMAGES_PER_COLUMN = 4;
+const TECHNOLOGIES = CANONICAL_TECHNOLOGY_LIST;
+const COLUMN_COUNT = TECHNOLOGIES.length;
 
-// Four columns × four images. The first four industries are repeated once only
-// to complete the 16 animation slots while keeping the canonical 12-industry set.
-const ANIMATION_ITEMS = Array.from(
-  { length: COLUMN_COUNT * IMAGES_PER_COLUMN },
-  (_, index) => INDUSTRIES[index % INDUSTRIES.length],
-);
-
-const ANIMATION_COLUMNS = Array.from({ length: COLUMN_COUNT }, (_, columnIndex) =>
-  Array.from(
-    { length: IMAGES_PER_COLUMN },
-    (_, imageIndex) => ANIMATION_ITEMS[imageIndex * COLUMN_COUNT + columnIndex],
+const ANIMATION_COLUMNS = TECHNOLOGIES.map((technology, technologyIndex) => ({
+  technology,
+  industries: Array.from({ length: IMAGES_PER_COLUMN }, (_, imageIndex) =>
+    INDUSTRIES[(technologyIndex * IMAGES_PER_COLUMN + imageIndex) % INDUSTRIES.length],
   ),
-);
+}));
 
 export function IndustriesShowcase() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -85,7 +80,7 @@ export function IndustriesShowcase() {
           {
             xPercent: 105,
             duration: 2,
-            stagger: { each: 0.12, from: 'start' },
+            stagger: { each: 0.08, from: 'start' },
             ease: 'power2.inOut',
           },
           imageIndex === 0 ? 0 : '>-0.65',
@@ -97,7 +92,7 @@ export function IndustriesShowcase() {
         {
           height: '0%',
           duration: 1.2,
-          stagger: { each: 0.14, from: 'end' },
+          stagger: { each: 0.1, from: 'end' },
           ease: 'power3.inOut',
         },
         '>-0.35',
@@ -137,18 +132,21 @@ export function IndustriesShowcase() {
           <span className={styles.yellow}>Industry</span>
         </div>
 
-        <div className={styles.animationGrid}>
-          {ANIMATION_COLUMNS.map((column, columnIndex) => (
+        <div
+          className={styles.animationGrid}
+          style={{ gridTemplateColumns: `repeat(${COLUMN_COUNT}, minmax(0, 1fr))` }}
+        >
+          {ANIMATION_COLUMNS.map(({ technology, industries }, columnIndex) => (
             <div
-              key={`column-${columnIndex}`}
+              key={technology.slug}
               ref={(el) => {
                 columnsRef.current[columnIndex] = el;
               }}
               className={styles.animationColumn}
             >
-              {column.map((industry, imageIndex) => (
+              {industries.map((industry, imageIndex) => (
                 <a
-                  key={`${industry.slug}-${columnIndex}-${imageIndex}`}
+                  key={`${technology.slug}-${industry.slug}-${imageIndex}`}
                   ref={(el) => {
                     panelsRef.current[columnIndex][imageIndex] = el;
                   }}
@@ -161,9 +159,11 @@ export function IndustriesShowcase() {
                     style={{ backgroundImage: `url(${industry.image})` }}
                   />
                   <div className={styles.animationShade} />
-                  <span className={styles.animationLabel}>{industry.title}</span>
+                  <span className={styles.animationIndustryLabel}>{industry.title}</span>
                 </a>
               ))}
+
+              <span className={styles.animationTechnologyLabel}>{technology.name}</span>
             </div>
           ))}
         </div>
