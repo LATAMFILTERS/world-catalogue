@@ -44,6 +44,18 @@ export default function ProblemsPage() {
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <Link href="/knowledge-center" style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.65rem',
+            letterSpacing: '0.1em',
+            color: 'rgba(255,255,255,0.35)',
+            textDecoration: 'none',
+            display: 'inline-block',
+            marginBottom: '2rem',
+          }}>
+            ← KNOWLEDGE CENTER
+          </Link>
+
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -168,6 +180,7 @@ export default function ProblemsPage() {
 
 function ProblemCard({ problem }: { problem: ProblemStub }) {
   const severityColor = PROBLEM_SEVERITY_COLORS[problem.severity as keyof typeof PROBLEM_SEVERITY_COLORS];
+  const hasContent = Boolean(problem.definition || (problem.sections && problem.sections.length > 0));
 
   return (
     <motion.div
@@ -220,15 +233,27 @@ function ProblemCard({ problem }: { problem: ProblemStub }) {
         </p>
 
         {/* Status */}
-        <span style={{
-          fontFamily: 'JetBrains Mono, monospace',
-          fontSize: '0.58rem',
-          color: 'rgba(255,255,255,0.25)',
-          letterSpacing: '0.06em',
-          textTransform: 'uppercase',
-        }}>
-          Engineering content pending — Phase 3
-        </span>
+        {hasContent ? (
+          <span style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.58rem',
+            color: 'rgba(255,255,255,0.25)',
+            letterSpacing: '0.06em',
+            textTransform: 'uppercase',
+          }}>
+            Engineering reference available
+          </span>
+        ) : (
+          <span style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.58rem',
+            color: 'rgba(255,255,255,0.25)',
+            letterSpacing: '0.06em',
+            textTransform: 'uppercase',
+          }}>
+            Engineering content pending — Phase 3
+          </span>
+        )}
       </Link>
     </motion.div>
   );

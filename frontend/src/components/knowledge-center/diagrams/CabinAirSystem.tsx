@@ -271,7 +271,7 @@ export default function CabinAirSystem({ className, style }: SvgDiagramProps = {
       <text x="850" y="475" textAnchor="end"
         fontFamily="'JetBrains Mono', monospace" fontSize="9" fill="rgba(255,255,255,0.2)"
         letterSpacing="0.06em">
-        ISO 11155 · ISO 29463 · DIN 71220
+        ISO 11155 · ISO 29463 · DIN 71460
       </text>
     </svg>
   );

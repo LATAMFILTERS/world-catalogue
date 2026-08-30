@@ -1,4 +1,4 @@
-/**
+﻿/**
  * types.ts
  * ELIMFILTERS Knowledge Center — Entity Type Definitions
  *
@@ -113,6 +113,7 @@ export interface KCTechnology {
   relatedSystems: string[];
   relatedIndustries: string[];
   worksWith: string[];
+  image?: string;
 }
 
 export interface KCSystemDetail {

@@ -20,6 +20,28 @@ export default function EngineeringReferencePage() {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap');`}</style>
 
       <Link
+        href="/knowledge-center"
+        style={{
+          position: 'fixed',
+          top: '1.1rem',
+          left: '1.35rem',
+          zIndex: 50,
+          background: 'rgba(0,0,0,0.78)',
+          border: '1px solid rgba(255,255,255,0.25)',
+          color: 'rgba(255,255,255,0.8)',
+          textDecoration: 'none',
+          fontFamily: displayFont,
+          fontWeight: 700,
+          letterSpacing: '0.16em',
+          fontSize: '0.78rem',
+          padding: '0.8rem 1.15rem',
+          backdropFilter: 'blur(14px)',
+        }}
+      >
+        ← KNOWLEDGE CENTER
+      </Link>
+
+      <Link
         href="/"
         style={{
           position: 'fixed',

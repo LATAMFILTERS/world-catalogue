@@ -1,16 +1,16 @@
 {
   "meta": {
     "version": "1.0",
-    "generated": "2026-08-19T03:37:15.102Z",
+    "generated": "2026-08-30T04:33:11.787Z",
     "source_index": "elimfilters-vault/00-meta/CITATION_INDEX.json",
     "source_index_version": "1.0",
-    "path_count": 48,
-    "valid_path_count": 48,
+    "path_count": 49,
+    "valid_path_count": 49,
     "product_family_count": 10,
     "coverage_summary": {
       "problems_with_complete_paths": "5/5",
       "industries_with_complete_paths": "11/12",
-      "technologies_with_product_families": "9/9",
+      "technologies_with_product_families": "10/10",
       "product_families_reachable": "10/10"
     },
     "generator": "scripts/build-part-search-map.js",
@@ -97,7 +97,6 @@
         }
       ],
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "valid": true
@@ -253,7 +252,6 @@
         }
       ],
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "valid": true
@@ -650,7 +648,6 @@
         }
       ],
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "valid": true
@@ -783,7 +780,6 @@
         }
       ],
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "valid": true
@@ -916,7 +912,6 @@
         }
       ],
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "valid": true
@@ -1016,7 +1011,6 @@
         }
       ],
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "valid": true
@@ -1182,7 +1176,6 @@
         }
       ],
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "valid": true
@@ -1318,7 +1311,6 @@
         }
       ],
       "terminal_product_families": [
-        "FUEL_TURBINE",
         "FUEL_WATER_SEPARATOR"
       ],
       "valid": true
@@ -1446,6 +1438,24 @@
       ],
       "terminal_product_families": [
         "COOLING_PRIMARY"
+      ],
+      "valid": true
+    },
+    {
+      "path_id": "PATH_C_TURBOCORE_049",
+      "path_type": "C",
+      "entry_node": "TURBOCORE",
+      "entry_type": "technology",
+      "industry": null,
+      "steps": [
+        {
+          "key": "TURBOCORE",
+          "type": "technology",
+          "name": "TURBOCORE™"
+        }
+      ],
+      "terminal_product_families": [
+        "FUEL_TURBINE"
       ],
       "valid": true
     }
@@ -1611,30 +1621,14 @@
     "FUEL_TURBINE": {
       "name": "Turbine Fuel Separation",
       "reachable_via": [
-        "PATH_A_FUEL_FILTER_PLUGGING_003",
-        "PATH_B_AGRICULTURE_008",
-        "PATH_B_MARINE_020",
-        "PATH_B_MINING_024",
-        "PATH_B_OIL_GAS_028",
-        "PATH_B_POWER_GENERATION_031",
-        "PATH_B_TRUCKS_FLEETS_036",
-        "PATH_C_HYDROCORE_041"
+        "PATH_C_TURBOCORE_049"
       ],
-      "entry_problems": [
-        "FUEL_FILTER_PLUGGING"
-      ],
-      "entry_industries": [
-        "AGRICULTURE",
-        "MARINE",
-        "MINING",
-        "OIL_GAS",
-        "POWER_GENERATION",
-        "TRUCKS_FLEETS"
-      ],
+      "entry_problems": [],
+      "entry_industries": [],
       "entry_technologies": [
-        "HYDROCORE"
+        "TURBOCORE"
       ],
-      "uses_technology": "HYDROCORE",
+      "uses_technology": "TURBOCORE",
       "meets_standards": [
         "ASTM_D6304",
         "ISO_12937"

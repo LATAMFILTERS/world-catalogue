@@ -89,7 +89,7 @@ export function Footer() {
               <img
                 src="/images/KLEO-TECHNOLOGY-fn.avif"
                 alt="Kleo Technologies"
-                style={{ maxHeight: '40px', maxWidth: '130px', objectFit: 'contain', display: 'block' }}
+                style={{ maxHeight: '64px', maxWidth: '200px', objectFit: 'contain', display: 'block' }}
               />
               <div style={{ marginTop: '12px' }}>
                 <p style={{
@@ -200,7 +200,7 @@ export function Footer() {
                   background: 'rgba(255,255,255,0.05)',
                   border: '1px solid rgba(255,241,45,0.15)',
                   color: 'rgba(255,241,45,0.6)',
-                  fontSize: '11px',
+                  fontSize: '13px',
                   fontWeight: 600,
                   textDecoration: 'none',
                   fontFamily: 'JetBrains Mono, monospace',
@@ -212,7 +212,7 @@ export function Footer() {
             ))}
           </div>
 
-          <div style={{ display: 'flex', gap: '8px', alignItems: 'center', fontSize: '12px', whiteSpace: 'nowrap' }}>
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center', fontSize: '15px', whiteSpace: 'nowrap' }}>
             <a href="mailto:info@elimfilters.com" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
@@ -235,7 +235,7 @@ export function Footer() {
           width: '100%',
         }}>
           <div style={{
-            fontSize: '10px',
+            fontSize: '12px',
             color: 'rgba(255,255,255,0.65)',
             fontFamily: 'var(--font-body)',
             lineHeight: 1.5,

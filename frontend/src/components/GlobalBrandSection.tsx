@@ -4,21 +4,20 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 
 const PLATFORM_NAME = 'Asset Protection Intelligence';
-const PLATFORM_MANTRA = ['Safety', 'Reliability', 'Efficiency'] as const;
 
 const PLATFORM_PILLARS = [
-  ['KNOWLEDGE CENTER', 'Technical knowledge base', 'Curated, reviewed technical knowledge for customers, distributors and engineers.'],
-  ['PRODUCT CATALOGUE', 'Product authority', 'Keeps SKU, applications and cross-references governed.'],
-  ['PART SEARCH', 'Product discovery', 'Turns validated catalogue data into fast part discovery.'],
+  ['KNOWLEDGE CENTER', 'Engineering references indexed by system, failure mode, and industry standard — ISO 4406, ISO 16889, ISO 11171.'],
+  ['PRODUCT CATALOGUE', 'SKU-level database mapping OEM part numbers, thread specs, media rating, and cross-references.'],
+  ['PART SEARCH', 'Look up by OEM number, dimension, or application to the correct ELIMFILTERS SKU.'],
 ] as const;
 
 export function GlobalBrandSection() {
   return (
     <section style={{
       padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
-      background: 'linear-gradient(90deg, rgba(255,241,45,0.06) 0%, transparent 50%), var(--surface-light)',
+      background: 'linear-gradient(90deg, rgba(255,241,45,0.06) 0%, transparent 50%), #000',
       borderTop: '1px solid rgba(255,241,45,0.15)',
-      borderBottom: '1px solid var(--border-on-light)',
+      borderBottom: '1px solid rgba(255,255,255,0.1)',
     }}>
       <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
         <motion.div
@@ -45,7 +44,7 @@ export function GlobalBrandSection() {
             textTransform: 'uppercase',
             letterSpacing: '0.01em',
             lineHeight: 1.05,
-            color: 'var(--ink)',
+            color: '#fff',
             marginBottom: '1.6rem',
             maxWidth: '980px',
           }}>
@@ -53,7 +52,7 @@ export function GlobalBrandSection() {
           </h2>
 
           <p style={{
-            color: 'var(--ink-2)',
+            color: 'rgba(255,255,255,0.75)',
             fontSize: 'clamp(1rem, 1.6vw, 1.15rem)',
             lineHeight: 1.8,
             maxWidth: '900px',
@@ -68,44 +67,20 @@ export function GlobalBrandSection() {
             gap: '0.9rem',
             marginBottom: '2.5rem',
           }}>
-            {PLATFORM_PILLARS.map(([title, role, body]) => (
+            {PLATFORM_PILLARS.map(([title, body]) => (
               <div key={title} style={{
-                padding: '1.25rem',
-                background: 'var(--surface-light-2)',
-                border: '1px solid var(--border-on-light)',
+                padding: '1.5rem',
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                textAlign: 'center',
               }}>
-                <p style={{ color: '#FFF12D', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.66rem', letterSpacing: '0.12em', textTransform: 'uppercase', margin: '0 0 0.65rem' }}>
-                  {role}
-                </p>
-                <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.05rem', margin: '0 0 0.55rem', color: 'var(--ink)' }}>
+                <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.05rem', margin: '0 0 0.55rem', color: '#fff' }}>
                   {title}
                 </h3>
-                <p style={{ color: 'var(--ink-3)', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '1rem', lineHeight: 1.65, margin: 0, textAlign: 'justify' }}>
                   {body}
                 </p>
               </div>
-            ))}
-          </div>
-
-          <div style={{
-            display: 'flex',
-            gap: '0.7rem',
-            flexWrap: 'wrap',
-            marginBottom: '2.5rem',
-          }}>
-            {PLATFORM_MANTRA.map((value) => (
-              <span key={value} style={{
-                border: '1px solid rgba(255,241,45,0.28)',
-                color: 'var(--ink-2)',
-                padding: '0.6rem 0.85rem',
-                fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
-                fontWeight: 700,
-                fontSize: '0.72rem',
-                letterSpacing: '0.14em',
-                textTransform: 'uppercase',
-              }}>
-                {value}
-              </span>
             ))}
           </div>
 
@@ -114,7 +89,7 @@ export function GlobalBrandSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
+            style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}
           >
             <Link href="/knowledge-center" style={{
               display: 'inline-block',
@@ -124,9 +99,10 @@ export function GlobalBrandSection() {
               fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
               fontWeight: 700,
               letterSpacing: '0.1em',
-              fontSize: '0.82rem',
-              padding: '0.95rem 1.35rem',
+              fontSize: '0.98rem',
+              padding: '1.25rem 2rem',
               textTransform: 'uppercase',
+              textAlign: 'center',
             }}>
               Explore Knowledge
             </Link>
@@ -139,9 +115,10 @@ export function GlobalBrandSection() {
               fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
               fontWeight: 700,
               letterSpacing: '0.1em',
-              fontSize: '0.82rem',
-              padding: '0.95rem 1.35rem',
+              fontSize: '0.98rem',
+              padding: '1.25rem 2rem',
               textTransform: 'uppercase',
+              textAlign: 'center',
               border: '1px solid rgba(255,241,45,0.4)',
             }}>
               Search Product Intelligence
@@ -150,15 +127,16 @@ export function GlobalBrandSection() {
             <Link href="/distributors" style={{
               display: 'inline-block',
               background: 'transparent',
-              color: 'var(--ink-2)',
+              color: 'rgba(255,255,255,0.75)',
               textDecoration: 'none',
               fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif',
               fontWeight: 700,
               letterSpacing: '0.1em',
-              fontSize: '0.82rem',
-              padding: '0.95rem 1.35rem',
+              fontSize: '0.98rem',
+              padding: '1.25rem 2rem',
               textTransform: 'uppercase',
-              border: '1px solid var(--border-on-light)',
+              textAlign: 'center',
+              border: '1px solid rgba(255,255,255,0.15)',
             }}>
               Global Network
             </Link>

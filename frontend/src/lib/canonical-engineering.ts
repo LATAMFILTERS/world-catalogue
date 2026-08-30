@@ -75,6 +75,13 @@ const TECHNOLOGY_ENGINEERING: Record<TechnologySlug, CanonicalEngineeringDefinit
     controlStrategy: 'Match separation efficiency, water-holding capacity, flow and service interval to the fuel-contamination profile and duty cycle of the approved fuel system, standard or turbine-style.',
     operationalImpact: 'Reduced water carryover helps protect injectors and high-pressure pumps from water-related erosion and corrosion.',
   },
+  turbocore: {
+    name: 'TURBOCORE™',
+    definition: 'A turbine-style fuel filter housing and structural assembly architecture (FH/FG series) paired with HYDROCORE™ filtration media.',
+    engineeringPrinciple: 'Housing structure, port sizing, seal integrity and element-retention geometry preserve the staged fuel/water-separation boundary under the turbine (FH/FG) architecture.',
+    controlStrategy: 'Match housing capacity, port configuration and mounting orientation to the fuel system duty cycle, and validate sealing and retention under the approved service interval.',
+    operationalImpact: 'A reliable housing structure sustains staged fuel/water separation and reduces the risk of unfiltered bypass or seal failure.',
+  },
 };
 
 export function getTechnologyEngineering(slug: string): CanonicalEngineeringDefinition | undefined {

@@ -50,7 +50,7 @@ const LIBRARY_DOCS = [
     subtitle: 'Assessment procedure for evaluating operator exposure risk and cabin filtration system adequacy in heavy equipment applications.',
     type: 'ASSESSMENT GUIDE',
     sections: ['PM2.5 exposure risk classification', 'Pressurization testing', 'Filter efficiency verification', 'Chemical vapor assessment', 'ISO 11155 compliance check'],
-    standards: ['ISO 11155', 'DIN 71220', 'ISO 29463'],
+    standards: ['ISO 11155', 'DIN 71460', 'ISO 29463'],
   },
 ];
 
