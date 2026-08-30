@@ -3127,6 +3127,22 @@ app.post('/api/admin/run-logistics-migration', adminLimiter, requireAdmin, async
   }
 });
 
+// ─── POST /api/admin/run-confirmed-units-sample ───────────────────────────────
+// Runs 099_CONFIRMED_UNITS_PER_CASE_SAMPLE: applies the three plant-confirmed
+// units_per_case values (P552100=6, P554004=12, P502042=12). Only touches
+// units_per_case + provenance fields; never fabricates weight/volume/dims.
+app.post('/api/admin/run-confirmed-units-sample', adminLimiter, requireAdmin, async (req, res) => {
+  try {
+    const { applyConfirmedUnitsPerCaseSample } = require('./scripts/migrations/run_099_confirmed_units_per_case_sample');
+    const report = await applyConfirmedUnitsPerCaseSample();
+    console.log('[run-confirmed-units-sample]', JSON.stringify(report));
+    res.json(report);
+  } catch (e) {
+    console.error('[run-confirmed-units-sample]', e.message);
+    res.status(500).json({ error: e.message, report: e.migrationReport || null });
+  }
+});
+
 // ─── GET /api/admin/malformed-skus ────────────────────────────────────────────────────────────────────────────
 // Lists all SKUs that don’t match the 7-char format ^[A-Z0-9]{2,4}[0-9]{4}$
 app.get('/api/admin/malformed-skus', adminLimiter, requireAdmin, async (req, res) => {
