@@ -98,13 +98,8 @@ export default function AboutPage() {
 
       <section style={originSection}>
         <div style={{ ...wrap, ...originGrid }}>
-          <div style={originImageStack}>
-            <div style={originImageShell}>
-              <img src="/images/about-origin-idea.jpg" alt={copy.originAttribution} style={originImage} />
-            </div>
-            <div style={originImageShell}>
-              <img src="/images/about-origin-first-meeting.jpg" alt={copy.originAttribution} style={originImage} />
-            </div>
+          <div style={originImageShell}>
+            <img src="/images/about-origin-story.jpg" alt={copy.originAttribution} style={originImage} />
           </div>
           <div>
             <p style={eyebrow}>{isSpanish ? 'ORIGEN' : 'ORIGIN'}</p>
@@ -243,7 +238,6 @@ const bodyText: CSSProperties = { color: 'rgba(255,255,255,.66)', lineHeight: 1.
 const textLink: CSSProperties = { display: 'inline-block', marginTop: '1rem', color: '#FFF12D', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '.05em' };
 const originSection: CSSProperties = { background: '#000', padding: 'clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderTop: '1px solid rgba(255,255,255,.06)' };
 const originGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'center' };
-const originImageStack: CSSProperties = { display: 'flex', flexDirection: 'column', gap: '1rem' };
 const originImageShell: CSSProperties = { aspectRatio: '4 / 3', overflow: 'hidden', background: '#080808', border: '1px solid rgba(255,255,255,.08)' };
 const originImage: CSSProperties = { width: '100%', height: '100%', objectFit: 'cover' };
 const originAttributionStyle: CSSProperties = { marginTop: '1.5rem', color: '#FFF12D', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '.82rem', letterSpacing: '.1em', textTransform: 'uppercase' };
