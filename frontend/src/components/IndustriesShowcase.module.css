@@ -1,0 +1,246 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+}
+
+.headingWrap {
+  padding: 0 clamp(1.25rem, 6vw, 6rem);
+  margin-bottom: 1.75rem;
+}
+
+.heading,
+.animationHeading {
+  font-family: Barlow, Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+.heading {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.yellow {
+  color: #fff12d;
+}
+
+.carouselWrap {
+  position: relative;
+}
+
+.track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 clamp(1.25rem, 6vw, 6rem);
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 300px;
+  height: 380px;
+  scroll-snap-align: start;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  background: #111;
+}
+
+.cardImage,
+.animationImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.cardShade,
+.animationShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 34%, rgba(0, 0, 0, 0.88) 100%);
+}
+
+.cardLabelWrap {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+}
+
+.cardLabel,
+.animationLabel {
+  font-family: Barlow, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.cardLabel {
+  font-size: 1.1rem;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  cursor: pointer;
+  font-family: Barlow, Arial, sans-serif;
+  font-size: 1.1rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.arrowButton:hover {
+  background: rgba(0, 0, 0, 0.82);
+  border-color: rgba(255, 241, 45, 0.7);
+}
+
+.arrowLeft {
+  left: clamp(0.75rem, 3vw, 2rem);
+}
+
+.arrowRight {
+  right: clamp(0.75rem, 3vw, 2rem);
+}
+
+.animationOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  background: #000;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: visible;
+}
+
+.animationHeading {
+  position: absolute;
+  z-index: 30;
+  top: clamp(1.4rem, 4vw, 3.25rem);
+  left: clamp(1.25rem, 6vw, 6rem);
+  right: clamp(1.25rem, 6vw, 6rem);
+  font-size: clamp(1.35rem, 2.8vw, 2.25rem);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+}
+
+.animationGrid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  height: 100%;
+  overflow: hidden;
+}
+
+.animationColumn {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  transform-origin: top center;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.animationColumn:last-child {
+  border-right: 0;
+}
+
+.animationPanel {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0b0b0b;
+  text-decoration: none;
+  will-change: transform;
+}
+
+.animationLabel {
+  position: absolute;
+  z-index: 3;
+  left: clamp(0.65rem, 1.5vw, 1.15rem);
+  bottom: clamp(1rem, 2vw, 1.5rem);
+  right: 0.75rem;
+  font-size: clamp(0.72rem, 1.25vw, 1.05rem);
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 720px) {
+  .section,
+  .content {
+    min-height: 78vh;
+  }
+
+  .animationOverlay {
+    height: 78vh;
+  }
+
+  .card {
+    flex-basis: min(78vw, 300px);
+    height: 350px;
+  }
+
+  .animationHeading {
+    top: 1.25rem;
+  }
+
+  .animationLabel {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    left: 50%;
+    right: auto;
+    bottom: 1rem;
+    font-size: 0.72rem;
+  }
+
+  .arrowButton {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animationOverlay {
+    display: none;
+  }
+
+  .track {
+    scroll-behavior: auto;
+  }
+}
