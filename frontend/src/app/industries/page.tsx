@@ -106,7 +106,7 @@ const INDUSTRIES = [
   },
   {
     slug: 'automotive',
-    label: 'Automotive',
+    label: 'Automotive & Light Duty',
     image: '/images/Automotive-1.avif',
     summary: 'Light-duty filtration for service reliability, contamination control, and high-volume application coverage.',
     risks: ['Service variability', 'Airborne contamination', 'Fuel and lube cleanliness'],
@@ -217,14 +217,14 @@ export default function IndustriesPage() {
         </video>
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <p style={eyebrow}>INDUSTRIAL ASSET PROTECTION</p>
           <h1 style={heroTitle}>
             Industrial Filtration
             <br />
             <span style={{ color: '#FFF12D' }}>By Industry</span>
           </h1>
+          <p style={heroPromise}>Built for severe-duty operating environments.</p>
           <p style={heroLead}>
-            ELIMFILTERS structures contamination control around the equipment, operating environment, duty cycle, and cost of downtime—not a generic application assumption.
+            Different industries expose equipment to different contamination risks. ELIMFILTERS matches filtration and contamination-control architectures to the machine, environment, duty cycle, and operational consequences of failure.
           </p>
           <div style={heroActions}>
             <Link href="/contact/" style={yellowButton}>PROTECT MY EQUIPMENT</Link>
@@ -241,7 +241,7 @@ export default function IndustriesPage() {
           </div>
           <div>
             <p style={leadText}>
-              ELIMFILTERS provides industrial filtration and contamination-control architectures for 12 markets: mining, agriculture, construction, oil &amp; gas, marine, power generation, commercial truck fleets, manufacturing, railway, waste and municipal fleets, bus and coach operations, and automotive applications.
+              ELIMFILTERS provides industrial filtration and contamination-control architectures for 12 markets: mining, agriculture, construction, oil &amp; gas, marine, power generation, commercial truck fleets, manufacturing, railway, waste and municipal fleets, bus and coach operations, and automotive and light-duty applications.
             </p>
             <p style={bodyText}>
               Filtration requirements change with dust concentration, water exposure, fuel quality, temperature, load cycle, system sensitivity, idle time, and service interval. Industry is therefore the first context layer—not the final product selection.
@@ -352,17 +352,17 @@ export default function IndustriesPage() {
             <div style={conversionCard}>
               <h3 style={conversionTitle}>Protect Equipment</h3>
               <p style={conversionText}>Tell us the equipment, engine, operating environment, or contamination problem. We will route the request to the correct protection path.</p>
-              <Link href="/contact/" style={yellowButton}>GET TECHNICAL SUPPORT</Link>
+              <Link href="/contact/" style={yellowButton}>PROTECT MY EQUIPMENT</Link>
             </div>
             <div style={conversionCard}>
               <h3 style={conversionTitle}>Find a Part</h3>
               <p style={conversionText}>Already know the OEM reference or filter number? Go directly to cross-reference and application search.</p>
-              <a href="https://part-search.elimfilters.com/" style={yellowButton}>OPEN PART SEARCH</a>
+              <a href="https://part-search.elimfilters.com/" style={yellowButton}>FIND MY FILTER</a>
             </div>
             <div style={conversionCard}>
               <h3 style={conversionTitle}>Represent ELIMFILTERS</h3>
               <p style={conversionText}>Tell us the industries, territory, and customer base your company serves so we can evaluate distributor fit.</p>
-              <Link href="/distributor-application/" style={yellowButton}>DISTRIBUTOR REVIEW</Link>
+              <Link href="/distributor-application/" style={yellowButton}>BECOME A DISTRIBUTOR</Link>
             </div>
           </div>
         </div>
@@ -411,7 +411,8 @@ const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%'
 const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,0,0,0.76) 0%, rgba(0,0,0,0.48) 52%, rgba(0,0,0,0.18) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.18), transparent 38%)' };
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.055em', lineHeight: 0.9, fontSize: 'clamp(3.1rem, 7.2vw, 6.8rem)', maxWidth: '1050px', margin: 0, textTransform: 'uppercase' };
-const heroLead: CSSProperties = { marginTop: '2rem', maxWidth: '800px', color: 'rgba(255,255,255,0.8)', fontSize: 'clamp(1.05rem, 2vw, 1.28rem)', lineHeight: 1.68, fontWeight: 500 };
+const heroPromise: CSSProperties = { margin: '1.45rem 0 0', maxWidth: '760px', color: '#fff', fontFamily: displayFont, fontSize: 'clamp(1.05rem, 1.8vw, 1.35rem)', lineHeight: 1.35, fontWeight: 700, letterSpacing: '-0.01em' };
+const heroLead: CSSProperties = { marginTop: '0.9rem', maxWidth: '820px', color: 'rgba(255,255,255,0.78)', fontSize: 'clamp(1rem, 1.7vw, 1.18rem)', lineHeight: 1.68, fontWeight: 500 };
 const heroActions: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.85rem', marginTop: '2rem' };
 const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.72rem', lineHeight: 1, letterSpacing: '0.2em', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 1rem' };
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
