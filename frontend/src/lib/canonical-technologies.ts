@@ -58,6 +58,8 @@ export const CANONICAL_TECHNOLOGIES = {
     name: 'TURBOCORE™',
     domain: 'fuel-cleanliness',
     role: 'Turbine-style fuel/water separation exclusively for FH and FG series systems',
+<<<<<<< HEAD
+=======
   },
 } as const;
 
