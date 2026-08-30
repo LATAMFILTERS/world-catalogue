@@ -3078,17 +3078,18 @@ app.get('/api/admin/logistics-audit', adminLimiter, requireAdmin, async (req, re
     // Check whether packaging data is already nested inside the generic
     // enrichment_data / specs JSONB columns before we add new dedicated
     // columns, per governance rule "reutiliza campos equivalentes".
+    // Uses native jsonb '<>' (not ::text cast) to stay cheap on 12k rows.
     const jsonbSample = await client.query(`
       SELECT sku, enrichment_data, specs
       FROM elimfilters_catalog
-      WHERE (enrichment_data IS NOT NULL AND enrichment_data::text <> '{}')
-         OR (specs IS NOT NULL AND specs::text <> '{}')
+      WHERE enrichment_data <> '{}'::jsonb
+         OR specs <> '{}'::jsonb
       LIMIT 8
     `);
     const jsonbNonEmptyCounts = await client.query(`
       SELECT
-        COUNT(*) FILTER (WHERE enrichment_data IS NOT NULL AND enrichment_data::text <> '{}') AS enrichment_data_non_empty,
-        COUNT(*) FILTER (WHERE specs IS NOT NULL AND specs::text <> '{}') AS specs_non_empty
+        COUNT(*) FILTER (WHERE enrichment_data <> '{}'::jsonb) AS enrichment_data_non_empty,
+        COUNT(*) FILTER (WHERE specs <> '{}'::jsonb) AS specs_non_empty
       FROM elimfilters_catalog
     `);
 
