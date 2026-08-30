@@ -54,8 +54,6 @@ async function start() {
   const europeanMannReconciliation = await applyEuropeanMannMatchReconciliation();
   console.log('[european-mann-match-reconciliation]', JSON.stringify(europeanMannReconciliation));
 
-  // Promote only reconciled 1:1 European MANN targets that do not already have
-  // a different active canonical identity. Conflicting targets remain blocked.
   const { applyEuropeanMannCanonicalBatch2Safe } = require('./scripts/migrations/run_097_european_mann_canonical_batch2_safe');
   const europeanMannCanonicalBatch2 = await applyEuropeanMannCanonicalBatch2Safe();
   console.log('[european-mann-canonical-batch2-safe]', JSON.stringify(europeanMannCanonicalBatch2));
@@ -68,12 +66,13 @@ async function start() {
   const globalCanonicalResolver = await applyGlobalCanonicalResolverV7Safe();
   console.log('[global-canonical-resolver-v7-safe]', JSON.stringify(globalCanonicalResolver));
 
-  // Re-audit every MANN identity promoted by migrations 088/097 using corrected
-  // per-normalized-application EXISTS semantics. Any invalid promotion is
-  // removed from CERTIFIED status before Part Search is allowed to expose it.
   const { applyPromotedEuropeanMannCorrectedAudit } = require('./scripts/migrations/run_099_promoted_european_mann_corrected_audit');
   const promotedMannCorrectedAudit = await applyPromotedEuropeanMannCorrectedAudit();
   console.log('[promoted-european-mann-corrected-audit]', JSON.stringify(promotedMannCorrectedAudit));
+
+  const { applyMannSourceFamilyIntegrityAudit } = require('./scripts/migrations/run_100_mann_source_family_integrity_audit');
+  const mannSourceFamilyIntegrity = await applyMannSourceFamilyIntegrityAudit();
+  console.log('[mann-source-family-integrity-audit]', JSON.stringify(mannSourceFamilyIntegrity));
 
   const { applyCuratedOfficialEvidenceBatch1 } = require('./scripts/migrations/run_076_apply_curated_official_evidence_batch1');
   const curatedEvidence = await applyCuratedOfficialEvidenceBatch1();
