@@ -59,6 +59,12 @@ export const CANONICAL_TECHNOLOGIES = {
     domain: 'fuel-cleanliness',
     role: 'Turbine-style fuel/water separation exclusively for FH and FG series systems',
   },
+  turbocore: {
+    slug: 'turbocore',
+    name: 'TURBOCORE™',
+    domain: 'fuel-cleanliness',
+    role: 'Turbine-style fuel filter housings and structural assemblies (FH/FG architecture), paired with HYDROCORE™ filtration media',
+  },
 } as const;
 
 export type TechnologySlug = keyof typeof CANONICAL_TECHNOLOGIES;
