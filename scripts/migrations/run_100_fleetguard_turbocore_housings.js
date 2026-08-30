@@ -51,17 +51,19 @@ async function applyFleetguardTurbocoreHousings() {
         + `before it reaches the engine, protecting injectors from corrosion and abrasive wear. `
         + `Fleetguard-equivalent housing, same turbine family as the existing ET9 TURBOCORE / RACOR-equivalent series.`;
 
-      const competitorCodes = JSON.stringify([{ manufacturer: 'FLEETGUARD', code: codigo_base }]);
+      // competitor_codes intentionally excludes this same Fleetguard code --
+      // it's already codigo_base on this row, and the alternate-integrity
+      // guard correctly rejects a code being listed as its own alternate.
 
       try {
         await client.query('BEGIN');
         const { rows } = await client.query(
           `INSERT INTO elimfilters_catalog
-             (sku, codigo_base, filter_type, technology, duty, description, competitor_codes, installation_type, created_at)
-           VALUES ($1, $2, 'fuel', 'TURBOCORE™', 'HEAVY_DUTY', $3, $4::jsonb, 'Replacement Cartridge Element', now())
+             (sku, codigo_base, filter_type, technology, duty, description, installation_type, created_at)
+           VALUES ($1, $2, 'fuel', 'TURBOCORE™', 'HEAVY_DUTY', $3, 'Replacement Cartridge Element', now())
            ON CONFLICT (sku) DO NOTHING
            RETURNING sku`,
-          [sku, codigo_base, description, competitorCodes]
+          [sku, codigo_base, description]
         );
         await client.query('COMMIT');
 
