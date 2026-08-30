@@ -205,22 +205,23 @@
         "domain": "Fuel",
         "citation": {
           "source_url": "https://elimfilters.com/knowledge-center/technologies/hydrocore/",
-          "concept": "HYDROCORE Fuel Water Separation Technology",
-          "version": "2.0",
-          "last_updated": "2026-08-18",
-          "content_hash": "sha256:9d20c1e782acb225d51f28785616ce4f8b0189ed8e63b2c0ee8b5ec5a2187ca9"
+          "concept": "HYDROCORE Standard Fuel Water Separation Technology",
+          "version": "3.0",
+          "last_updated": "2026-08-24",
+          "content_hash": "sha256:fbc6194a3aa10ad469fe774c0bd1599a4101c591dd3cb22d1b2702e0787cd541"
         },
         "canonical": {
-          "definition": "HYDROCORE is the ELIMFILTERS fuel/water separation architecture across approved spin-on, cartridge, FH and FG separator applications.",
-          "systems": "Fuel Cleanliness Protection; approved fuel/water separator applications including spin-on, cartridge, FH and FG architectures.",
-          "failure_impact": "Inadequate water separation can allow free or emulsified water to reach downstream injectors and high-pressure pumps, increasing erosion, corrosion and cavitation risk.",
-          "related_standards": "Applicable fuel-water separation test methods, water-holding capacity and application requirements must be selected for the approved separator. The technology name alone does not imply a universal separation efficiency or certification claim.",
-          "related_technologies": "SYNTAPORE: Diesel-fuel filtration architecture for primary, secondary and cartridge applications within Fuel Cleanliness Protection. HYDROCORE governs the water-separation function across approved separator architectures.",
-          "industrial_role": "HYDROCORE provides the fuel/water separation layer of ELIMFILTERS Fuel Cleanliness Protection. Selection is governed by flow, water-holding capacity, element rating, installation and maintenance requirements."
+          "definition": "HYDROCORE is the ELIMFILTERS fuel/water separation architecture for approved standard non-turbine separator filters, including drain and transparent-bowl configurations.",
+          "systems": "Fuel Cleanliness Protection; approved standard non-turbine fuel/water separator applications. FH and FG turbine-style systems are excluded � governed exclusively by TURBOCORE� (FUEL_TURBINE family).",
+          "failure_impact": "Inadequate water separation or incorrect drainage can allow water to reach downstream injectors and high-pressure pumps, increasing erosion, corrosion and cavitation risk.",
+          "related_standards": "Applicable fuel-water separation test methods, water-holding capacity and application requirements must be selected for the approved separator. The technology name alone does not imply a universal efficiency or certification claim.",
+          "related_technologies": "SYNTAPORE governs plain diesel-fuel particulate filtration. TURBOCORE exclusively governs FH and FG turbine-style fuel/water separator systems (FUEL_TURBINE family). HYDROCORE ES9 governs standard spin-on separators with drain or transparent bowl (FUEL_WATER_SEPARATOR family). HYDROCORE must never be assigned to FH or FG.",
+          "industrial_role": "HYDROCORE provides the standard non-turbine fuel/water separation layer of ELIMFILTERS Fuel Cleanliness Protection."
         },
         "relationships": {
           "related_technologies": [
-            "SYNTAPORE"
+            "SYNTAPORE",
+            "TURBOCORE"
           ]
         },
         "vault_path": "elimfilters-vault\\01-technologies\\active\\HYDROCORE.md"
@@ -228,7 +229,6 @@
     }
   ],
   "terminal_product_families": [
-    "FUEL_TURBINE",
     "FUEL_WATER_SEPARATOR"
   ]
 }

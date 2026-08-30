@@ -3,75 +3,78 @@
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
-import { AboutSubnav } from '@/components/AboutSubnav';
 import registry from '@/data/executive-visual-identity.json';
 import '@/i18n';
 
 const AGENT_PROFILES: Record<string, { en: string[]; es: string[] }> = {
   office_chief_operating_supply_chain: {
     en: [
-      'The Chief Operating & Supply Chain Agent leads the operational execution framework of ELIMFILTERS across procurement, supply continuity, logistics, fulfillment, and operational quality.',
-      'The role supports disciplined coordination between suppliers, inventory, commercial demand, and delivery execution, with a focus on continuity, responsiveness, and scalable operating control.',
+      'The Chief Operating & Supply Chain Agent runs the machinery behind every shipment — coordinating procurement, container-level export logistics from ELIMFILTERS’ manufacturing partners, and fulfillment across the distributor network spanning Colombia, the Dominican Republic, Venezuela, and the United States.',
+      'The role keeps inventory, supplier commitments, and delivery execution aligned with real commercial demand, so a country distributor’s container orders move on schedule and at the volume the market actually needs.',
     ],
     es: [
-      'El Chief Operating & Supply Chain Agent dirige el marco de ejecución operativa de ELIMFILTERS en compras, continuidad de suministro, logística, fulfillment y calidad operacional.',
-      'La función coordina proveedores, inventario, demanda comercial y ejecución de entregas, con énfasis en continuidad, capacidad de respuesta y control operativo escalable.',
+      'El Chief Operating & Supply Chain Agent dirige la maquinaria detrás de cada envío — coordinando compras, logística de exportación por contenedor desde los socios de manufactura de ELIMFILTERS, y cumplimiento de pedidos en toda la red de distribuidores que abarca Colombia, República Dominicana, Venezuela y Estados Unidos.',
+      'La función mantiene el inventario, los compromisos con proveedores y la ejecución de entregas alineados con la demanda comercial real, para que los pedidos por contenedor de un distribuidor país se muevan a tiempo y en el volumen que el mercado realmente necesita.',
     ],
   },
   office_chief_product_technology: {
     en: [
-      'The Chief Product & Technology Agent leads product architecture, filtration technologies, application intelligence, technical validation, catalog integrity, and engineering knowledge governance.',
-      'The role connects product strategy with technical evidence and digital systems so that specifications, applications, and technical content remain consistent, validated, and operationally useful across ELIMFILTERS.',
+      'The Chief Product & Technology Agent owns ELIMFILTERS’ technical platform: the five protection systems — engine air and cabin air, fuel, lubrication, hydraulic, and cooling — and the nine proprietary technologies built to serve them, from MACROCORE™ air filtration to HYDROCORE™ fuel/water separation.',
+      'The role keeps every specification, cross-reference, and application claim validated against real equipment and failure modes, so the catalog reflects engineering evidence rather than a generic parts list.',
     ],
     es: [
-      'El Chief Product & Technology Agent dirige la arquitectura de producto, las tecnologías de filtración, la inteligencia de aplicaciones, la validación técnica, la integridad del catálogo y la gobernanza del conocimiento de ingeniería.',
-      'La función conecta la estrategia de producto con evidencia técnica y sistemas digitales para mantener especificaciones, aplicaciones y contenido técnico consistentes, validados y operativamente útiles en ELIMFILTERS.',
+      'El Chief Product & Technology Agent es responsable de la plataforma técnica de ELIMFILTERS: los cinco sistemas de protección —aire de motor y cabina, combustible, lubricación, hidráulico y enfriamiento— y las nueve tecnologías propias construidas para cada uno, desde la filtración de aire MACROCORE™ hasta la separación combustible/agua HYDROCORE™.',
+      'La función mantiene cada especificación, referencia cruzada y afirmación de aplicación validada contra equipos y modos de falla reales, para que el catálogo refleje evidencia de ingeniería y no una lista genérica de piezas.',
     ],
   },
   office_chief_commercial_markets: {
     en: [
-      'The Chief Commercial & Markets Agent leads B2B growth, distributor development, strategic accounts, market expansion, CRM execution, pricing discipline, and customer intelligence.',
-      'The role translates ELIMFILTERS capabilities into structured commercial development, prioritizing qualified markets, durable channel relationships, account intelligence, and disciplined revenue growth.',
+      'The Chief Commercial & Markets Agent runs the country-exclusive distributor program — qualifying new territory partners, managing pricing and account relationships, and coordinating the CRM across every active and prospective market.',
+      'The role translates the distributor-first model into practice: prioritizing partners capable of building real coverage, and keeping commercial growth disciplined rather than opportunistic.',
     ],
     es: [
-      'El Chief Commercial & Markets Agent dirige el crecimiento B2B, el desarrollo de distribuidores, las cuentas estratégicas, la expansión de mercados, la ejecución del CRM, la disciplina de precios y la inteligencia de clientes.',
-      'La función convierte las capacidades de ELIMFILTERS en desarrollo comercial estructurado, priorizando mercados calificados, relaciones de canal sostenibles, inteligencia de cuentas y crecimiento disciplinado de ingresos.',
+      'El Chief Commercial & Markets Agent dirige el programa de distribuidores exclusivos por país — calificando nuevos socios de territorio, gestionando precios y relaciones de cuenta, y coordinando el CRM en cada mercado activo y prospecto.',
+      'La función traduce el modelo distributor-first a la práctica: priorizando socios capaces de construir cobertura real, y manteniendo el crecimiento comercial disciplinado en vez de oportunista.',
     ],
   },
   office_chief_finance_risk: {
     en: [
-      'The Chief Finance & Risk Agent leads financial discipline across liquidity, margins, forecasting, working capital, planning, and enterprise-risk visibility.',
-      'The role provides decision support for sustainable growth by connecting operating performance with financial exposure, resource allocation, scenario analysis, and risk controls.',
+      'The Chief Finance & Risk Agent manages the financial discipline behind a container-based, distributor-first business — margins, working capital, and cash flow across manufacturing partners, logistics, and a multi-country receivables base.',
+      'The role gives the Chief Executive Office visibility into financial exposure before it becomes a problem: which markets are performing, which commitments carry risk, and where resources should be allocated next.',
     ],
     es: [
-      'El Chief Finance & Risk Agent dirige la disciplina financiera en liquidez, márgenes, forecasting, capital de trabajo, planificación y visibilidad de riesgos empresariales.',
-      'La función apoya el crecimiento sostenible conectando desempeño operativo con exposición financiera, asignación de recursos, análisis de escenarios y controles de riesgo.',
+      'El Chief Finance & Risk Agent gestiona la disciplina financiera detrás de un negocio distributor-first basado en contenedores — márgenes, capital de trabajo y flujo de caja entre socios de manufactura, logística y una base de cuentas por cobrar multipaís.',
+      'La función le da a la Chief Executive Office visibilidad sobre la exposición financiera antes de que se convierta en un problema: qué mercados están rindiendo, qué compromisos cargan riesgo, y dónde deben asignarse los recursos a continuación.',
     ],
   },
   office_chief_strategy_performance_intelligence: {
     en: [
-      'The Chief Strategy, Performance & Intelligence Agent supports enterprise strategy, performance intelligence, AI governance, data, automation, digital architecture, and agent governance.',
-      'The role connects strategic priorities with measurable execution, helping the Chief Executive Office identify signals, monitor performance, govern AI-enabled operations, and coordinate intelligence across the organization.',
+      'The Chief Strategy, Performance & Intelligence Agent governs the AI-agent model itself — monitoring how the other four executive agents perform, coordinating the data and automation that keep them accountable, and flagging anything that needs to escalate to the human Chief Executive Office.',
+      'The role is also behind the flat organizational structure ELIMFILTERS runs on: using process automation to remove the internal approval layers that usually sit between a distributor and a decision.',
     ],
     es: [
-      'El Chief Strategy, Performance & Intelligence Agent apoya la estrategia empresarial, la inteligencia de desempeño, la gobernanza de IA, los datos, la automatización, la arquitectura digital y la gobernanza de agentes.',
-      'La función conecta prioridades estratégicas con ejecución medible, ayudando a la Chief Executive Office a identificar señales, monitorear desempeño, gobernar operaciones habilitadas por IA y coordinar inteligencia en toda la organización.',
+      'El Chief Strategy, Performance & Intelligence Agent gobierna el propio modelo de agentes de IA — monitoreando el desempeño de los otros cuatro agentes ejecutivos, coordinando los datos y la automatización que los mantienen responsables, y señalando cualquier cosa que deba escalar a la Chief Executive Office humana.',
+      'La función también está detrás de la estructura organizacional plana sobre la que opera ELIMFILTERS: usando automatización de procesos para eliminar las capas de aprobación interna que normalmente se interponen entre un distribuidor y una decisión.',
     ],
   },
 };
 
 const FOUNDER_PROFILE = {
   en: [
-    'Víctor Abreu is Founder and Chief Executive Officer (CEO) of ELIMFILTERS®, Kleo Technology LLC’s global industrial filtration brand. He leads the company’s strategic direction, corporate development, technology integration, commercial expansion, and asset protection systems strategy.',
-    'As Founder & CEO, he oversees ELIMFILTERS’ executive structure and the company’s five core leadership functions: Operations & Supply Chain, Product & Technology, Commercial & Markets, Finance & Risk, and Strategy, Performance & Intelligence.',
-    'His responsibilities also include corporate strategy, market expansion, digital infrastructure, artificial intelligence integration, knowledge systems, brand positioning, governance, and the continued development of ELIMFILTERS as a global platform for industrial filtration and asset protection.',
-    'Under his leadership, ELIMFILTERS is being developed around an integrated model that combines filtration engineering, application intelligence, validated technical knowledge, digital systems, and global commercial execution.',
+    "Víctor Abreu is the Founder and Chief Executive Officer of ELIMFILTERS®, responsible for corporate strategy, international market development, technology integration, knowledge systems, and the company\'s long-term growth.",
+    "He brings more than two decades of experience in industrial filtration, distribution, and business development, during which he has built and led operations serving automotive, transportation, industrial, and heavy-duty applications across multiple markets in the Americas.",
+    "Before establishing ELIMFILTERS, Abreu led one of Venezuela\'s most relevant industrial filtration distribution operations, developing strategic relationships with international manufacturers and strengthening the company\'s presence among major industrial and automotive accounts.",
+    "His experience spans international sourcing, supply chain development, technical product strategy, B2B distribution, market expansion, and the development of solutions for fleets, industrial operators, and asset-intensive businesses.",
+    "His management approach combines financial discipline, risk analysis, budget control, and cost structuring with a strong focus on value creation. Throughout his career, he has applied these principles to develop operating and commercial models designed to balance cost, performance, and profitability, translating greater efficiency into higher-value solutions for customers.",
+    "Today, Abreu leads the transformation of ELIMFILTERS into an industrial filtration intelligence company focused on Total Assets Protection. His work integrates product strategy, technical knowledge systems, artificial intelligence, application data, market development, and international distribution within a unified operating platform.",
+    "He holds a degree in Public Accounting from UCAT and earned an MBA in Business Management in 2002.",
+    "Strategic Responsibilities: Corporate Strategy · Global Expansion · Technology Integration · Artificial Intelligence · Industrial Filtration Intelligence · Knowledge Systems · Supply Chain Strategy · Financial Management · Risk Management · Corporate Governance",
   ],
   es: [
-    'Víctor Abreu es Fundador y Director Ejecutivo (CEO) de ELIMFILTERS®, la marca global de filtración industrial de Kleo Technology LLC. Dirige la dirección estratégica de la compañía, el desarrollo corporativo, la integración tecnológica, la expansión comercial y la estrategia de sistemas de protección de activos.',
-    'Como Fundador y CEO, supervisa la estructura ejecutiva de ELIMFILTERS y las cinco funciones principales de liderazgo de la compañía: Operaciones y Cadena de Suministro, Producto y Tecnología, Comercial y Mercados, Finanzas y Riesgo, y Estrategia, Desempeño e Inteligencia.',
-    'Entre sus responsabilidades también se encuentran la estrategia corporativa, la expansión de mercados, la infraestructura digital, la integración de inteligencia artificial, los sistemas de conocimiento, el posicionamiento de marca, la gobernanza y el desarrollo continuo de ELIMFILTERS como plataforma global de filtración industrial y protección de activos.',
-    'Bajo su liderazgo, ELIMFILTERS se desarrolla alrededor de un modelo integrado que combina ingeniería de filtración, inteligencia de aplicaciones, conocimiento técnico validado, sistemas digitales y ejecución comercial global.',
+    "Víctor Abreu es Fundador y Director Ejecutivo (CEO) de ELIMFILTERS®. Es Contador Público egresado de la UCAT (2000) y tiene un MBA en Gerencia Empresarial, y construyó su carrera en la distribución de filtración industrial más de dos décadas antes de fundar ELIMFILTERS.",
+    "Desde 2004, dirigió ELIMPERCA como distribuidor en Venezuela de Donaldson, Fleetguard y Parker (Racor), llevándola a ser el distribuidor número uno de estas marcas en el continente durante siete años consecutivos, con cuentas directas que incluían a General Motors Venezuela y Mack Venezuela — ambas comercializaban filtración Donaldson, Fleetguard y Racor como equipo original en lugar de sus propias líneas OEM. En su punto más alto, la operación importaba un promedio de 18 contenedores HQ de producto a Venezuela cada mes.",
+    "En 2014, la dirección corporativa de Donaldson, Fleetguard y Parker retiró sus acuerdos de distribución de Venezuela. En lugar de salir del mercado, Víctor Abreu construyó ELIMFILTERS como marca propia de la empresa — la misma experiencia en filtración, ahora bajo un nombre que la empresa controlaba por completo.",
+    "ELIMPERCA siguió siendo la empresa matriz de ELIMFILTERS hasta 2020, cuando las operaciones se centralizaron en todo el continente americano bajo LATAMFILTERS PRO INC. Esa entidad se cerró posteriormente y fue reemplazada por Kleo Technology LLC, con sede en Texas, la estructura que hoy lidera ELIMFILTERS.",
   ],
 };
 
@@ -97,8 +100,6 @@ export function LeadershipPageClient() {
         </div>
       </section>
 
-      <AboutSubnav />
-
       <section className="founder-section">
         <div className="founder-grid">
           <div className="founder-photo-shell">
@@ -121,6 +122,11 @@ export function LeadershipPageClient() {
           <h2>{isSpanish ? 'Cinco funciones ejecutivas especializadas.' : 'Five specialized executive functions.'}</h2>
           <p className="section-copy">
             {isSpanish
+              ? 'El mismo salto que llevó a ELIMFILTERS de vender filtros a proteger activos es el que definió cómo está organizada la propia empresa. Un distribuidor tradicional escala agregando personas y capas de gerencia; una empresa construida sobre disciplina de ingeniería y protección de activos a largo plazo necesitaba una estructura que pudiera escalar experiencia y consistencia en su lugar — por eso ELIMFILTERS combina una Chief Executive Office humana con agentes ejecutivos de IA especializados, en vez de una jerarquía gerencial convencional.'
+              : 'The same leap that took ELIMFILTERS from selling filters to protecting assets is what shaped how the company itself is organized. A traditional distributor scales by adding people and management layers; a company built around engineering discipline and long-term asset protection needed a structure that could scale expertise and consistency instead — which is why ELIMFILTERS pairs a human Chief Executive Office with specialized executive AI agents, rather than a conventional management hierarchy.'}
+          </p>
+          <p className="section-copy">
+            {isSpanish
               ? 'Estos perfiles son representaciones visuales oficiales de agentes ejecutivos de IA, no empleados humanos. Cada agente gestiona un dominio definido bajo autoridad delegada y supervisión de la Chief Executive Office.'
               : 'These profiles are the official visual representations of executive AI agents, not human employees. Each agent manages a defined domain under delegated authority and oversight of the Chief Executive Office.'}
           </p>
@@ -140,23 +146,16 @@ export function LeadershipPageClient() {
                   </div>
                   <div className="agent-description">
                     {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    {'email' in agent && agent.email ? (
+                      <div className="agent-contact">
+                        <span>{isSpanish ? 'CONTACTO' : 'CONTACT'}</span>
+                        <a href={`mailto:${agent.email}`}>{agent.email} →</a>
+                      </div>
+                    ) : null}
                   </div>
                 </article>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="model-section">
-        <div className="leadership-wrap">
-          <p className="eyebrow">{isSpanish ? 'CÓMO FUNCIONA' : 'HOW THE MODEL WORKS'}</p>
-          <h2>{isSpanish ? 'La oficina permanece. La implementación puede evolucionar.' : 'The office remains. The implementation can evolve.'}</h2>
-          <div className="flow-grid">
-            <Flow n="01" title="Chief Executive Office" detail={isSpanish ? 'Autoridad humana final' : 'Final human authority'} />
-            <Flow n="02" title="Executive AI Agents" detail={isSpanish ? 'Responsabilidad por dominio' : 'Domain accountability'} />
-            <Flow n="03" title="Specialized Subagents" detail={isSpanish ? 'Ejecución especializada' : 'Specialized execution'} />
-            <Flow n="04" title="Systems & Automation" detail={isSpanish ? 'Escala y continuidad' : 'Scale and continuity'} />
           </div>
         </div>
       </section>
@@ -184,7 +183,7 @@ export function LeadershipPageClient() {
               ? 'ELIMFILTERS utiliza agentes, automatización, sistemas y profesionales humanos donde cada mecanismo aporta mayor competencia. La escala organizacional crece por necesidad real, no para simular una estructura mayor.'
               : 'ELIMFILTERS uses agents, automation, systems, and human professionals where each mechanism adds the greatest competence. Organizational scale grows from real need, not to simulate a larger structure.'}
           </p>
-          <Link href="/about" className="back-link">{isSpanish ? 'Volver a Quiénes Somos →' : 'Back to Who We Are →'}</Link>
+          <Link href="/about/who-we-are" className="back-link">{isSpanish ? 'Volver a Quiénes Somos →' : 'Back to Who We Are →'}</Link>
         </div>
       </section>
 
@@ -195,25 +194,26 @@ export function LeadershipPageClient() {
         .eyebrow{color:#FFF12D;font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.16em;margin:0 0 1rem;text-transform:uppercase}.eyebrow.dark{color:#6c6100}
         h1,h2,h3{font-family:var(--font-display)}
         h1{font-weight:700;letter-spacing:-.05em;line-height:.92;font-size:clamp(3rem,6.6vw,6.6rem);max-width:1050px;margin:0;text-transform:uppercase}
-        .hero-copy,.section-copy{max-width:900px;color:rgba(255,255,255,.72);font-size:clamp(1rem,1.5vw,1.23rem);line-height:1.75}
+        .hero-copy{max-width:900px;color:rgba(255,255,255,.72);font-size:clamp(1rem,1.5vw,1.23rem);line-height:1.75}
+        .section-copy{max-width:100%;color:rgba(255,255,255,.72);font-size:clamp(1rem,1.5vw,1.23rem);line-height:1.75}
+        .section-copy+.section-copy{margin-top:1.1rem}
         .founder-section{background:#f2f2ef;color:#111;padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}
         .founder-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(230px,.63fr) minmax(420px,1.37fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
         .founder-photo-shell{aspect-ratio:4/5;overflow:hidden;background:#111;width:100%;max-width:340px;justify-self:center}.founder-photo{width:100%;height:100%;object-fit:cover;display:block}
         .founder-copy h2{font-size:clamp(2.5rem,5vw,5rem);line-height:.95;letter-spacing:-.04em;margin:0 0 .6rem}.founder-role{color:#6c6100;font-family:var(--font-display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 1.5rem}.founder-profile{display:grid;gap:1rem}.founder-profile p{color:#3f3f3b;font-size:1.02rem;line-height:1.72;margin:0}
-        .agents-section,.model-section,.closing-section{padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.agents-section{background:#050505}.model-section{background:#000}.closing-section{background:#050505}
-        .agents-section h2,.model-section h2,.closing-section h2{font-size:clamp(2rem,4vw,4rem);line-height:1;letter-spacing:-.035em;margin:0 0 1rem;text-transform:uppercase;max-width:950px}
+        .agents-section,.closing-section{padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.agents-section{background:#050505}.closing-section{background:#050505}
+        .agents-section h2,.closing-section h2{font-size:clamp(2rem,4vw,4rem);line-height:1;letter-spacing:-.035em;margin:0 0 1rem;text-transform:uppercase;max-width:950px}
         .agent-list{margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.12)}
         .agent-profile{display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);gap:clamp(2rem,6vw,5rem);padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid rgba(255,255,255,.12);align-items:start}
         .agent-identity{min-width:0}.agent-photo-shell{aspect-ratio:4/5;overflow:hidden;background:#111;width:100%;max-width:320px;margin-bottom:1.35rem}.agent-photo{width:100%;height:100%;object-fit:cover;display:block}.ai-label{color:#FFF12D;font-family:var(--font-display);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.agent-identity h3{font-size:clamp(1.4rem,2.3vw,2.2rem);line-height:1.08;margin:.75rem 0 0;letter-spacing:-.025em}.agent-description{padding-top:.15rem;display:grid;gap:1.1rem}.agent-description p{color:rgba(255,255,255,.72);font-size:clamp(1rem,1.25vw,1.12rem);line-height:1.78;margin:0;max-width:760px}
-        .flow-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.1);margin-top:2.5rem}.flow-card{background:#080808;padding:1.5rem}.flow-card span{color:#FFF12D;font-family:var(--font-display);font-weight:700;font-size:.75rem;letter-spacing:.14em}.flow-card h3{margin:1rem 0 .35rem;font-size:1rem}.flow-card p{margin:0;color:rgba(255,255,255,.58);font-size:.9rem}
+        .agent-contact{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;padding:.85rem 1.1rem;background:rgba(255,241,45,.06);border:1px solid rgba(255,241,45,.25)}
+        .agent-contact span{color:rgba(255,255,255,.5);font-family:var(--font-display);font-weight:700;font-size:.66rem;letter-spacing:.14em}
+        .agent-contact a{color:#FFF12D;font-family:var(--font-display);font-weight:700;font-size:.95rem;letter-spacing:.02em;text-decoration:underline;text-underline-offset:.2em;cursor:pointer}
+        .agent-contact a:hover{color:#fff}
         .governance-section{background:#f2f2ef;color:#111;padding:clamp(4rem,8vw,7rem) clamp(1.25rem,6vw,6rem)}.governance-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}.governance-grid h2{font-size:clamp(2rem,4vw,4rem);line-height:1;letter-spacing:-.035em;margin:0}.governance-grid>p{color:#3f3f3b;font-size:1.04rem;line-height:1.78;margin:0}.back-link{display:inline-block;margin-top:1.25rem;color:#FFF12D;text-decoration:none;font-family:var(--font-display);font-weight:700;letter-spacing:.06em}
-        @media(max-width:900px){.founder-grid,.governance-grid,.agent-profile{grid-template-columns:1fr}.founder-photo-shell{width:70%;max-width:340px}.agent-photo-shell{max-width:300px}.flow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-        @media(max-width:560px){.leadership-hero{padding-top:8.5rem}.founder-section,.agents-section,.model-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-photo-shell{width:78%;max-width:300px}.agent-profile{gap:1.5rem;padding:3rem 0}.agent-photo-shell{max-width:260px}.flow-grid{grid-template-columns:1fr}.founder-copy h2{font-size:2.5rem}}
+        @media(max-width:900px){.founder-grid,.governance-grid,.agent-profile{grid-template-columns:1fr}.founder-photo-shell{width:70%;max-width:340px}.agent-photo-shell{max-width:300px}}
+        @media(max-width:560px){.leadership-hero{padding-top:8.5rem}.founder-section,.agents-section,.governance-section,.closing-section{padding-left:1.25rem;padding-right:1.25rem}.founder-grid{grid-template-columns:1fr;gap:2rem}.founder-photo-shell{width:78%;max-width:300px}.agent-profile{gap:1.5rem;padding:3rem 0}.agent-photo-shell{max-width:260px}.founder-copy h2{font-size:2.5rem}}
       `}</style>
     </main>
   );
-}
-
-function Flow({ n, title, detail }: { n: string; title: string; detail: string }) {
-  return <div className="flow-card"><span>{n}</span><h3>{title}</h3><p>{detail}</p></div>;
 }

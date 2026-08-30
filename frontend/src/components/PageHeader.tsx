@@ -1,7 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+
+const SCROLL_HIDE_THRESHOLD = 60;
 
 export interface Breadcrumb {
   label: string;
@@ -24,6 +27,14 @@ const PAGE_KEYS: Record<string, string> = {
 
 export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
   const { t } = useTranslation();
+  const [atTop, setAtTop] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setAtTop(window.scrollY < SCROLL_HIDE_THRESHOLD);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const localizeLabel = (label: string) => {
     const key = PAGE_KEYS[label.trim().toLowerCase()];
@@ -43,38 +54,38 @@ export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
   return (
     <div style={{
       position: 'fixed',
-      top: '1.1rem',
-      right: '1.35rem',
+      top: '1.5rem',
+      left: 'clamp(1.25rem, 6vw, 6rem)',
       zIndex: 50,
-      background: 'rgba(0,0,0,0.78)',
-      border: '1px solid rgba(255,241,45,0.45)',
-      borderRadius: '0',
-      backdropFilter: 'blur(14px)',
-      padding: '0.8rem 1.15rem',
       display: 'flex',
       alignItems: 'center',
-      gap: '0.5rem',
+      gap: '0.45rem',
       flexWrap: 'nowrap',
+      opacity: atTop ? 1 : 0,
+      transform: atTop ? 'translateY(0)' : 'translateY(-8px)',
+      pointerEvents: atTop ? 'auto' : 'none',
+      transition: 'opacity 0.25s ease, transform 0.25s ease',
       fontFamily: 'var(--font-display)',
-      fontSize: '0.78rem',
-      letterSpacing: '0.16em',
+      fontSize: '0.68rem',
+      letterSpacing: '0.14em',
       fontWeight: 700,
+      textShadow: '0 1px 6px rgba(0,0,0,0.85)',
     }}>
       {trail.map((crumb, idx) => (
-        <div key={`${crumb.label}-${idx}`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div key={`${crumb.label}-${idx}`} style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
           {crumb.href ? (
             <Link href={crumb.href} style={{
-              color: '#FFF12D',
+              color: 'rgba(255,255,255,0.62)',
               textDecoration: 'none',
-              transition: 'opacity 0.2s',
-            }} onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')} onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}>
+              transition: 'color 0.2s',
+            }} onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.62)')}>
               {crumb.label}
             </Link>
           ) : (
             <span style={{ color: '#FFF12D' }}>{crumb.label}</span>
           )}
           {idx < trail.length - 1 && (
-            <span style={{ color: 'rgba(255,241,45,0.35)', fontSize: '0.65rem' }}>→</span>
+            <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.6rem' }}>→</span>
           )}
         </div>
       ))}

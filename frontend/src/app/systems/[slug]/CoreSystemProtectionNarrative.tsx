@@ -24,16 +24,6 @@ const shellStyle: CSSProperties = {
   padding: 'clamp(1.6rem, 3vw, 2.4rem)',
 };
 
-const eyebrowStyle: CSSProperties = {
-  fontFamily: displayFont,
-  fontSize: '0.68rem',
-  fontWeight: 700,
-  letterSpacing: '0.22em',
-  textTransform: 'uppercase',
-  color: '#FFF12D',
-  marginBottom: '0.85rem',
-};
-
 const titleStyle: CSSProperties = {
   fontFamily: displayFont,
   fontWeight: 700,
@@ -144,7 +134,6 @@ export function CoreSystemProtectionNarrative({ slug }: Props) {
     <>
       <section style={sectionStyle}>
         <div style={shellStyle}>
-          <p style={eyebrowStyle}>Protection Architecture</p>
           <h2 style={titleStyle}>{narrative.title}</h2>
           <p style={paragraphStyle}>{narrative.lead}</p>
           <div style={gridStyle}>

@@ -163,6 +163,40 @@ export default function SystemsPage() {
               </div>
             )}
 
+            {system.kits.length > 0 && (
+              <div style={{ marginBottom: '1rem' }}>
+                <p style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '0.58rem',
+                  letterSpacing: '0.1em',
+                  color: 'rgba(255,255,255,0.3)',
+                  marginBottom: '0.5rem',
+                }}>
+                  COMMERCIAL KITS
+                </p>
+                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                  {system.kits.map((kit) => (
+                    <Link
+                      key={kit}
+                      href={`/commercial-lines/${kit.replace('™', '').toLowerCase()}`}
+                      style={{
+                        textDecoration: 'none',
+                        fontFamily: 'JetBrains Mono, monospace',
+                        fontSize: '0.62rem',
+                        fontWeight: 700,
+                        color: '#66ccff',
+                        background: 'rgba(102,204,255,0.07)',
+                        padding: '0.2rem 0.5rem',
+                        border: '1px solid rgba(102,204,255,0.2)',
+                      }}
+                    >
+                      {kit}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {system.standards.length > 0 && (
               <div style={{ marginBottom: '1rem' }}>
                 <p style={{

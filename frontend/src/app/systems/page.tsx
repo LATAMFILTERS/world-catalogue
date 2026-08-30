@@ -7,8 +7,10 @@ import { PROTECTION_SYSTEM_LIST } from '@/lib/protection-systems-data';
 const BASE_URL = 'https://elimfilters.com';
 
 const SYSTEM_IMAGES: Record<string, string> = {
-  'air-intake': '/images/mecanica-air.avif',
-  'fuel-cleanliness': '/images/fuellseparator-hero.avif',
+  // Not mecanica-air.avif: a legacy page-scoped CSS hack (main:has(img[src*="mecanica-air.avif"]))
+  // hides every sibling section after the 3rd once that file appears anywhere in <main>.
+  'air-intake': '/images/air-filters-lab.avif',
+  'fuel-cleanliness': '/images/syntapore_mecanico_camion.avif',
   lubrication: '/images/oil-hand.avif',
   hydraulic: '/images/hidraulic.avif',
   'cooling-system': '/images/coolant-filters.avif',
@@ -84,7 +86,9 @@ export default function SystemsPage() {
       <PageHeader currentPage="Systems" />
 
       <section style={hero}>
-        <div style={{ ...heroImage, backgroundImage: 'url(/assets/hero-systems.avif)' }} />
+        <video autoPlay muted loop playsInline preload="auto" style={{ ...heroImage, objectFit: 'cover', objectPosition: 'center' }}>
+          <source src="/images/Robotic_arm_replacing_filtration_system.mp4" type="video/mp4" />
+        </video>
         <div style={heroOverlay} />
 
         <div style={heroInner}>
@@ -121,6 +125,48 @@ export default function SystemsPage() {
         </div>
       </section>
 
+      <section style={section}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: 'clamp(2rem, 6vw, 4rem)', alignItems: 'center' }}>
+          <div>
+            <img
+              src="/images/banco-pruebas-filtros.png"
+              alt="Filter validation test bench"
+              style={{ width: '100%', display: 'block', border: '1px solid rgba(255,255,255,0.1)' }}
+            />
+          </div>
+          <div>
+            <h2 style={whyTitle}>Validated on the bench before it is specified in the field.</h2>
+            <p style={{ ...leadText, marginTop: '1.5rem' }}>
+              Every protection system is run through dedicated test equipment that reproduces the pressure, flow rate, temperature, and contaminant characteristics of the actual application, not a generic laboratory standard. That is where efficiency, contaminant-holding capacity, and structural durability are measured against the conditions the part will actually face before it ever reaches production.
+            </p>
+            <p style={{ ...bodyText, marginTop: '1.2rem' }}>
+              Industry-standard test protocols set a baseline, but they do not always reflect a specific duty cycle, fuel quality, or operating environment. ELIMFILTERS structures its validation around application-based simulation testing to close that gap, so a protection system is proven under real operating conditions before it is specified, not after it fails in the field.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: 'clamp(2rem, 6vw, 4rem)', alignItems: 'center' }}>
+          <div>
+            <h2 style={whyTitle}>Consistency is the standard, not the exception.</h2>
+            <p style={{ ...leadText, marginTop: '1.5rem' }}>
+              Getting it right the first time starts with the people running the bench, not just the equipment on it. Every ELIMFILTERS® media formulation and finished component is measured against the same testing discipline before it is approved for production, so reliability does not depend on which batch, which shift, or which line built the part.
+            </p>
+            <p style={{ ...bodyText, marginTop: '1.2rem' }}>
+              Preventing a failure is worth more than diagnosing one after it happens. ELIMFILTERS® engineering combines physics-based modeling with AI-generated simulation built on hostile-environment data — extreme dust loading, thermal cycling, vibration, and contaminant flow characteristics modeled down to the fiber and micro-scale level. That makes it possible to analyze hundreds of design configurations before a single physical unit exists, so the design that reaches the bench has already been optimized against the conditions it will actually face.
+            </p>
+          </div>
+          <div>
+            <img
+              src="/images/operador-bancopruebas.png"
+              alt="Test bench results review"
+              style={{ width: '100%', display: 'block', border: '1px solid rgba(255,255,255,0.1)' }}
+            />
+          </div>
+        </div>
+      </section>
+
       <section style={systemSection}>
         <div style={wrapWide}>
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
@@ -134,7 +180,10 @@ export default function SystemsPage() {
 
               return (
                 <Link key={system.key} href={`/systems/${system.slug}/`} style={systemCard}>
-                  <img src={image} alt={system.name} style={systemImage} />
+                  {/* alt intentionally not the literal system name: a legacy page-scoped CSS rule
+                      (main:has(img[alt="Air Intake & Airflow Protection"])) hides sibling sections
+                      on any page where that exact string appears on an <img>. */}
+                  <img src={image} alt={`${system.name} system card`} style={systemImage} />
                   <div style={systemOverlay} />
                   <div style={systemContent}>
                     <h3 style={systemTitle}>{system.name}</h3>
@@ -204,12 +253,12 @@ const hero: CSSProperties = {
 };
 
 const heroImage: CSSProperties = {
-  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.45,
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.52,
 };
 
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.32) 48%, rgba(0,0,0,0.12) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
+  background: 'linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.26) 48%, rgba(0,0,0,0.08) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };

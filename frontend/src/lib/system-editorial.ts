@@ -26,29 +26,40 @@ export interface SystemFAQ {
   answer: string;
 }
 
+export interface SystemEditorialCopy {
+  title: string;
+  copy: string;
+  image?: string;
+  imageAlt?: string;
+  imageSide?: 'left' | 'right';
+}
+
 export interface SystemEditorial {
-  risk: { title: string; copy: string };
-  fieldNote: { title: string; copy: string };
-  failurePath: { title: string; copy: string };
-  architecture: { title: string; copy: string };
+  risk: SystemEditorialCopy;
+  fieldNote: SystemEditorialCopy;
+  failurePath: SystemEditorialCopy;
+  architecture: SystemEditorialCopy;
   protectedAssets: { title: string; items: readonly string[] };
   selection: { title: string; items: readonly string[] };
   parameters: { title: string; items: readonly string[] };
   conditions: { title: string; items: readonly string[] };
   service: { title: string; items: readonly string[] };
   mistakes: { title: string; items: readonly string[] };
-  standards: { title: string; copy: string };
+  standards: SystemEditorialCopy;
   industries: { title: string; items: readonly string[] };
   faq: readonly SystemFAQ[];
-  commercialDecision: { title: string; copy: string };
+  commercialDecision: SystemEditorialCopy;
   flow: readonly SystemEditorialKey[];
 }
 
 const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
   'air-intake': {
     risk: {
+      image: '/images/pelon-air_converted.avif',
+      imageAlt: 'ELIMFILTERS primary air element',
+      imageSide: 'left',
       title: 'Dust becomes engine wear only after the intake boundary fails.',
-      copy: 'The engineering problem is not simply whether an air element looks dirty. The real question is whether the complete intake path is controlling contaminant entry while still delivering the air mass the engine requires. Media loading, restriction, housing integrity, sealing, safety-stage condition and service practice all influence that outcome.',
+      copy: 'The question is not whether an element looks dirty, but whether the intake path controls contaminant entry while still delivering required airflow — media loading, restriction, sealing and housing integrity all shape that outcome. Particulate bypassing a compromised seal and reaching turbocharger surfaces or cylinders becomes engine wear, not a filtration issue; excessive restriction cuts airflow and performance on its own.\n\nPrimary filtration carries the normal dust load while secondary protection guards the clean side during service or failure; housings, sealing surfaces and restriction monitoring determine whether the media performs as designed. Dust on the clean side, damaged seals or a housing that no longer closes are system findings — replacing the element alone can leave the asset exposed.',
     },
     fieldNote: {
       title: 'What a field inspection should reveal',
@@ -87,8 +98,11 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       items: ['Selecting by dimensions alone', 'Ignoring housing or seal damage', 'Removing a safety element because it appears clean', 'Extending service after restriction reaches the equipment limit', 'Treating every dusty environment as the same duty cycle'],
     },
     standards: {
-      title: 'Technical reference',
-      copy: 'Engine air-cleaner performance is commonly evaluated using ISO 5011 methods. Product-level efficiency, capacity and restriction claims should be tied to validated data for the actual element or assembly rather than applied universally to the whole system.',
+      image: '/images/cabin-hero.avif',
+      imageAlt: 'ELIMFILTERS cabin air filter',
+      imageSide: 'right',
+      title: 'Selecting and servicing the correct configuration',
+      copy: 'Correct selection starts with exact equipment, engine and housing identification, the primary-versus-secondary position, required airflow and restriction, dust concentration and duty cycle, and the service strategy in place — mining dust, chaff, construction sites and humidity each change the right configuration. Assets at stake include turbocharger surfaces, cylinder walls, the combustion-air path, housing seals and cabin or pneumatic components where applicable.\n\nRestriction reaching the service threshold, dust on the clean side, damaged seals and recurring premature plugging are the signals worth acting on — not appearance alone. Common mistakes include selecting by dimensions only, ignoring housing damage, and extending service past the restriction limit. When a fleet faces repeated dust ingress or intake wear, ELIMFILTERS can review the complete airflow boundary to select the correct protection architecture.',
     },
     industries: {
       title: 'Where airflow protection becomes operationally critical',
@@ -104,13 +118,16 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       title: 'When this should become an engineering review',
       copy: 'If a fleet is experiencing repeated dust ingress, short element life, high restriction or intake-related wear, ELIMFILTERS can review the complete airflow boundary and duty cycle. The objective is to select the correct protection architecture for the asset, not simply quote another replacement element.',
     },
-    flow: ['risk','fieldNote','failurePath','architecture','selection','parameters','conditions','protectedAssets','service','mistakes','standards','industries','faq','commercialDecision'],
+    flow: ['risk','standards'],
   },
 
   'fuel-cleanliness': {
     risk: {
+      image: '/images/syntapor_motor.avif',
+      imageAlt: 'ELIMFILTERS SYNTAPORE fuel filtration on engine',
+      imageSide: 'left',
       title: 'Fuel contamination becomes expensive when it reaches precision components.',
-      copy: 'Modern fuel systems have little tolerance for abrasive particles, free water or unstable fuel quality. The correct protection strategy is staged around the failure path: control particulate loading, remove water where required, preserve flow and keep contamination away from high-pressure pumps and injectors.',
+      copy: 'Modern fuel systems have little tolerance for abrasive particles, free water or unstable fuel quality. The protection strategy is staged around the failure path — controlling particulate loading, removing water, and keeping contamination away from high-pressure pumps and injectors. Contamination entering during transfer, storage or tank breathing promotes corrosion, microbial growth and abrasive wear, growing more severe as pressure increases toward the injectors.\n\nA plugged filter and recurring water are different failure signatures: plugging points to upstream particulate ingress, while returning water points to storage, condensation or poor drainage further in the supply chain — replacing the last element corrects neither cause. Particulate filtration and water separation solve different problems and must not be treated as interchangeable; each occupies a defined position, and flow, capacity and drainage must work together.',
     },
     fieldNote: {
       title: 'Water and particles tell different stories.',
@@ -149,8 +166,11 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       items: ['Assuming a finer element automatically improves the system', 'Ignoring water because the engine still runs', 'Using a separator where only particulate filtration is required or vice versa', 'Failing to inspect storage and transfer practices', 'Selecting by thread or external dimensions without validating flow and architecture'],
     },
     standards: {
-      title: 'Technical reference',
-      copy: 'Fuel-filter and water-separation claims should remain tied to the applicable validated test basis for the specific product or assembly. Particle-control and water-separation performance are separate engineering questions and should be documented as such.',
+      image: '/images/syntapore_mecanico_camion.avif',
+      imageAlt: 'ELIMFILTERS SYNTAPORE fuel filter service on truck',
+      imageSide: 'right',
+      title: 'Selecting and servicing the correct configuration',
+      copy: 'Selecting the right configuration starts with confirming the engine, fuel-system architecture and existing filter positions, then identifying whether the application needs particulate control, water separation, or both. Fuel flow, water-holding capacity, pressure drop, viscosity and drain strategy drive the decision, while bulk storage, humidity and mining or marine duty each raise the bar differently. Exposed components include the high-pressure pump, injectors, control valves and fuel rails.\n\nRecurring water, premature plugging, hard starting or shortening service intervals are signals that justify investigation. A separator and a fuel filter are not interchangeable, and the finest micron rating is not automatically correct once flow, pressure drop and capacity are weighed together. Fuel-cleanliness protection is critical across truck fleets, mining, agriculture and marine operations — recurring failures justify a full review of the contamination path, not just a cross-reference.',
     },
     industries: {
       title: 'Typical high-risk operating environments',
@@ -166,13 +186,16 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       title: 'When to review the complete fuel-cleanliness architecture',
       copy: 'Recurring injector failures, water events, premature plugging or unstable fuel quality justify more than a cross-reference exercise. ELIMFILTERS can review the contamination path, filtration stages and operating conditions to determine the correct protection strategy before a product is specified.',
     },
-    flow: ['fieldNote','risk','architecture','failurePath','protectedAssets','conditions','selection','parameters','service','mistakes','industries','standards','faq','commercialDecision'],
+    flow: ['risk','standards'],
   },
 
   lubrication: {
     risk: {
+      image: '/images/oil-hand.avif',
+      imageAlt: 'ELIMFILTERS lubrication filter held in hand',
+      imageSide: 'left',
       title: 'Lubrication protection has to work while the oil is changing.',
-      copy: 'Engine oil carries soot, wear debris and oxidation products while temperature and viscosity move continuously through the duty cycle. A lubrication system has to control contamination without compromising oil delivery, bypass behavior or pressure stability.',
+      copy: 'Engine oil carries soot, wear debris and oxidation products while temperature and viscosity shift through the duty cycle — the system must control contamination without compromising oil delivery, bypass behavior or pressure stability. Particles generated at bearings, rings and gears circulate through the same fluid that protects the engine; if restriction becomes excessive, flow or bypass behavior creates a separate risk.\n\nMedia efficiency, contaminant capacity, structural integrity and valve behavior must stay compatible with oil viscosity and temperature — the goal is stable protection across the full service interval, not maximum filtration in isolation. A filter cannot correct a problem created elsewhere: fuel dilution, coolant contamination or wrong viscosity can overwhelm the strategy, so element condition should be read together with oil condition and engine behavior.',
     },
     fieldNote: {
       title: 'A filter cannot correct a lubrication problem created elsewhere.',
@@ -211,8 +234,11 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       items: ['Extending drain intervals based only on filter claims', 'Ignoring bypass-valve compatibility', 'Selecting by thread and gasket dimensions only', 'Treating abnormal wear debris as normal service contamination', 'Assuming a filter can compensate for incorrect oil or mechanical wear'],
     },
     standards: {
-      title: 'Technical reference',
-      copy: 'Lubrication-filter performance should be evaluated using the validated test basis appropriate to the specific product and application. Published efficiency or capacity values must not be generalized beyond the evidence available for the element.',
+      image: '/images/syntrax.avif',
+      imageAlt: 'ELIMFILTERS SYNTRAX lubrication filtration technology',
+      imageSide: 'right',
+      title: 'Selecting and servicing the correct configuration',
+      copy: 'Selection starts with confirming the engine and exact filter position, then validating thread, sealing and bypass requirements against the oil grade and viscosity range — soot load, service history and oil analysis should inform the decision, and intervals should never be extended without evidence. Oil flow, pressure drop, media efficiency, bypass-valve requirement and structural integrity drive selection, while high idle time, heavy load and soot-intensive duty raise lubrication stress differently.\n\nAbnormal oil pressure, repeatedly shortened filter life, unusual debris and oil analysis showing rising wear metals are signals that deserve more than a routine change — a better filter does not by itself justify a longer interval. Common mistakes include extending drains on filter claims alone, ignoring bypass-valve compatibility and selecting by thread dimensions only. When oil pressure or wear trends create uncertainty, ELIMFILTERS can review the filtration application alongside the operating condition.',
     },
     industries: {
       title: 'Where lubrication reliability has high operational value',
@@ -228,13 +254,16 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       title: 'When lubrication filtration should be reviewed as an asset-protection decision',
       copy: 'If oil pressure, abnormal wear, shortened service life or contamination trends are creating uncertainty, ELIMFILTERS can review the filtration application alongside the operating condition. The commercial decision should follow the engineering evidence, not precede it.',
     },
-    flow: ['risk','failurePath','protectedAssets','fieldNote','parameters','selection','conditions','service','mistakes','standards','faq','industries','architecture','commercialDecision'],
+    flow: ['risk','standards'],
   },
 
   hydraulic: {
     risk: {
+      image: '/images/nanoforce_motor.avif',
+      imageAlt: 'ELIMFILTERS NANOFORCE hydraulic filtration technology',
+      imageSide: 'left',
       title: 'Hydraulic contamination is a tolerance problem before it becomes a failure.',
-      copy: 'Pumps, proportional valves, servo components and actuators operate across clearances where particles that appear insignificant can change leakage, response and wear. The protection target therefore has to be defined around the most contamination-sensitive component in the circuit.',
+      copy: 'Pumps, proportional valves, servo components and actuators operate across clearances where particles that appear insignificant can change leakage, response and wear — the protection target has to be defined around the most contamination-sensitive component, not the circuit as a whole. Contamination enters through service, seals, reservoir breathing and new fluid, while additional debris is generated internally by component wear, creating abrasion, erosion and sticking.\n\nPressure, return, suction and offline positions do not perform the same function, so media efficiency, collapse resistance and differential-pressure behavior must match the location — a well-selected element in the wrong position is still the wrong decision. A clean-looking fluid can still be hydraulically dirty; repeated valve sticking, pump wear or short element life should be connected to particle-count evidence, not appearance.',
     },
     fieldNote: {
       title: 'A clean-looking fluid can still be hydraulically dirty.',
@@ -273,8 +302,11 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       items: ['Choosing a micron number without a cleanliness target', 'Ignoring filter position', 'Using an element without validating pressure and collapse requirements', 'Assuming new hydraulic fluid is clean enough for the circuit', 'Replacing filters repeatedly without locating contamination ingress'],
     },
     standards: {
-      title: 'Technical reference',
-      copy: 'ISO 16889 is commonly used to characterize multi-pass hydraulic-filter performance, while ISO 4406 is widely used to express fluid cleanliness. Product claims and cleanliness targets must remain tied to validated application data and the sensitivity of the protected circuit.',
+      image: '/images/nanoforce_linea_produccion.avif',
+      imageAlt: 'ELIMFILTERS NANOFORCE hydraulic filter production line',
+      imageSide: 'right',
+      title: 'Selecting and servicing the correct configuration',
+      copy: 'Selection should begin at the most sensitive component: identify the target cleanliness requirement, map the filter position, confirm flow and maximum pressure, validate collapse and burst requirements, and confirm the indicator or bypass strategy where applicable. Target cleanliness level, Beta-rated particle performance, differential pressure, collapse resistance and contaminant capacity are the parameters that drive the decision, while high-cycle mobile hydraulics and dusty environments raise contamination demand.\n\nA lower micron rating is not automatically better — target cleanliness, pressure drop, flow and circuit position must be evaluated together, and a new system can still be contaminated from manufacturing debris or installation work before it enters service. ISO 16889 and ISO 4406 are commonly used to characterize filter performance and fluid cleanliness. If valves are sticking or particle counts remain unstable, ELIMFILTERS can review the contamination-control architecture against the actual circuit.',
     },
     industries: {
       title: 'Applications where hydraulic cleanliness drives availability',
@@ -290,13 +322,16 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       title: 'When a hydraulic filter quote is not enough',
       copy: 'If valves are sticking, pumps are wearing prematurely or particle counts remain unstable, ELIMFILTERS can review the contamination-control architecture and filter position against the actual circuit. That is a reliability decision, not merely a replacement-part transaction.',
     },
-    flow: ['fieldNote','risk','failurePath','parameters','architecture','protectedAssets','selection','conditions','service','standards','mistakes','faq','industries','commercialDecision'],
+    flow: ['risk','standards'],
   },
 
   'cooling-system': {
     risk: {
+      image: '/images/thercmocore_mecanico_mano.jpg',
+      imageAlt: 'ELIMFILTERS THERMACORE cooling system filter held in hand',
+      imageSide: 'left',
       title: 'A cooling circuit can lose protection before it overheats.',
-      copy: 'Corrosion products, mineral scale, degraded coolant and additive imbalance can reduce heat transfer or attack internal surfaces long before the temperature gauge shows a dramatic event. Cooling protection therefore has to preserve fluid condition and keep debris from circulating through the thermal circuit.',
+      copy: 'Corrosion products, mineral scale, degraded coolant and additive imbalance can reduce heat transfer or attack internal surfaces long before the gauge shows a dramatic event — protection has to preserve fluid condition and keep debris from circulating through the thermal circuit, not just top off what is lost. Scale and corrosion restrict passages and reduce heat exchange, while depleted or incorrect coolant chemistry exposes liners, pumps and seals.\n\nParticulate removal supports circuit cleanliness, but filtration cannot compensate for incorrect coolant chemistry, mixed formulations or an unresolved leak — additive-support filtration must match the approved cooling-system requirement exactly. Overheating is often the final symptom, not the first warning: discolored coolant, recurring debris, deposits or unexplained coolant loss are earlier signals, and a coolant filter should be read in that context, not as an isolated item.',
     },
     fieldNote: {
       title: 'Overheating is often the final symptom, not the first warning.',
@@ -335,8 +370,11 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       items: ['Treating the coolant filter as a substitute for coolant maintenance', 'Mixing incompatible coolant formulations', 'Adding chemicals without confirming system requirement', 'Ignoring recurring debris after filter replacement', 'Failing to correct leaks that continually dilute the coolant strategy'],
     },
     standards: {
-      title: 'Technical reference',
-      copy: 'Cooling-system maintenance and coolant chemistry are strongly application-specific. Product and additive claims should remain tied to validated evidence and equipment guidance rather than generalized across all engines or coolant formulations.',
+      image: '/images/thermocore-mesa.png',
+      imageAlt: 'ELIMFILTERS THERMACORE cooling system filter on workbench',
+      imageSide: 'right',
+      title: 'Selecting and servicing the correct configuration',
+      copy: 'Selection starts with confirming the equipment and cooling-system design, identifying the coolant type and maintenance strategy, and determining whether the application uses particulate-only or additive-support filtration — service strategies should never be mixed without evidence. Coolant chemistry and compatibility, flow through the filter position, debris load, temperature range and sealing condition drive selection, while high thermal load, hard-water contamination and frequent top-off due to leaks change the risk.\n\nA coolant filter can support cleanliness but cannot prevent overheating on its own, since heat-exchanger restriction, chemistry, thermostat or mechanical problems can all cause it independently — mixing coolants should never be assumed safe without validated compatibility guidance. Debris returning after a filter change usually means the circuit still has an unresolved chemistry problem. Recurring contamination, overheating or shortened component life warrants a full review of the coolant strategy.',
     },
     industries: {
       title: 'Applications where thermal reliability is critical',
@@ -352,7 +390,7 @@ const CONTENT: Record<SystemEditorialSlug, SystemEditorial> = {
       title: 'When cooling protection should be reviewed as a system',
       copy: 'Recurring contamination, overheating, corrosion or shortened component life warrants a review of the coolant strategy and filtration position. ELIMFILTERS can help determine whether filtration is part of the corrective architecture and identify the appropriate product family only after the operating condition is understood.',
     },
-    flow: ['risk','architecture','fieldNote','protectedAssets','failurePath','conditions','selection','parameters','service','mistakes','faq','standards','industries','commercialDecision'],
+    flow: ['risk','standards'],
   },
 };
 

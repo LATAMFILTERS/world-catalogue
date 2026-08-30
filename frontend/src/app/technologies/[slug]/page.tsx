@@ -27,6 +27,7 @@ const TECHNOLOGY_ASSETS: Readonly<Record<TechnologySlug, string>> = {
   nanoforce: '/assets/NANOFORCE_final.avif',
   thermacore: '/assets/THERMACORE_final.avif',
   hydrocore: '/assets/HYDROCORE_final.avif',
+  turbocore: '/assets/TURBOCORE_final.avif',
 };
 
 const TECHNOLOGY_HERO_IMAGES: Readonly<Record<TechnologySlug, string>> = {
@@ -39,6 +40,7 @@ const TECHNOLOGY_HERO_IMAGES: Readonly<Record<TechnologySlug, string>> = {
   nanoforce: '/images/nanoforce-mecanico.avif',
   thermacore: '/images/THERMACORE-CAMION.avif',
   hydrocore: '/images/fuellseparator-hero.avif',
+  turbocore: '/images/TURBOCORE-hero.avif',
 };
 
 const APPLICATION_CONTEXT: Readonly<Record<TechnologySlug, string>> = {
@@ -51,6 +53,7 @@ const APPLICATION_CONTEXT: Readonly<Record<TechnologySlug, string>> = {
   nanoforce: 'Applied in fluid-power systems where cleanliness targets are established around the tolerance requirements of the most sensitive hydraulic component.',
   thermacore: 'Applied in heavy-duty cooling circuits where coolant cleanliness, additive condition, flow and service interval must remain compatible with the approved cooling-system maintenance strategy.',
   hydrocore: 'Applied in standard spin-on and cartridge fuel/water separators where free and emulsified water must be removed ahead of the fuel-filtration stage.',
+  turbocore: 'Applied at the turbine-style FH/FG housing and structural-assembly boundary, paired with HYDROCORE™ filtration media, where housing integrity determines whether fuel actually flows through the separation element rather than bypassing it.',
 };
 
 // MACROCORE-specific pre-sales copy. Sourced exclusively from

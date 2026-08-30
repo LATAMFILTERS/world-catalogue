@@ -12,19 +12,44 @@ if (!fs.existsSync(indexPath)) {
 let html = fs.readFileSync(indexPath, 'utf8');
 const before = html;
 
-html = html.replace(
-  /ELIMFILTERSÂ® is Kleo Technology LLC's global industrial filtration brand\. We do not sell directly to end users; instead, ELIMFILTERS products are available exclusively through authorized distributors across the Americas and other regions\. ELIMFILTERS engineers advanced contamination control systems for air intake, fuel, hydraulic, oil, and cabin filtration across 12 industries including mining, agriculture, marine, and power generation\. Our products comply with ISO 5011, ISO 16889, and ISO 19438 standards and are cross-referenced to 20,000\+ OEM specifications\./g,
-  ''
-);
-
-const forbidden = [
+// Frases prohibidas (cada una se busca y elimina de forma flexible)
+const forbiddenPhrases = [
   'We do not sell directly to end users',
   'available exclusively through authorized distributors',
   'Our products comply with ISO 5011, ISO 16889, and ISO 19438 standards',
   'cross-referenced to 20,000+ OEM specifications',
 ];
 
-const remaining = forbidden.filter((phrase) => html.includes(phrase));
+// Regex flexible: ignora espacios, saltos de línea, y entidades HTML comunes
+function escapeForRegex(phrase) {
+  return phrase
+    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    .replace(/'/g, "(?:'|&#x27;|&#39;|&apos;)")
+    .replace(/"/g, '(?:"|&quot;|&#34;)')
+    .replace(/®/g, '(?:®|&reg;|&#174;)')
+    .replace(/™/g, '(?:™|&trade;|&#8482;)')
+    .replace(/ /g, '\\s+');
+}
+
+for (const phrase of forbiddenPhrases) {
+  const pattern = new RegExp(escapeForRegex(phrase), 'gi');
+  html = html.replace(pattern, '');
+}
+
+// También eliminamos el bloque completo del div hidden si queda vacío o residual
+// Busca <div style="display:none;visibility:hidden"> que contenga solo espacios/etiquetas vacías
+html = html.replace(
+  /<div\s+style=["']display:\s*none;?\s*visibility:\s*hidden["']\s*>(?:\s*<p>\s*<\/p>\s*|\s*)<\/div>/gi,
+  ''
+);
+
+const remaining = [];
+for (const phrase of forbiddenPhrases) {
+  // Búsqueda simple sin regex para verificar
+  const simpleSearch = phrase.replace(/'/g, "'").replace(/®/g, '®');
+  if (html.includes(simpleSearch)) remaining.push(phrase);
+}
+
 if (remaining.length) {
   console.error('[sanitize-public-html] Forbidden public claims remain in index.html:');
   for (const phrase of remaining) console.error(` - ${phrase}`);
@@ -33,7 +58,7 @@ if (remaining.length) {
 
 if (html !== before) {
   fs.writeFileSync(indexPath, html, 'utf8');
-  console.log('[sanitize-public-html] Removed legacy hidden Home claims');
+  console.log('[sanitize-public-html] Removed forbidden public claims');
 } else {
-  console.log('[sanitize-public-html] No legacy hidden Home claims found');
+  console.log('[sanitize-public-html] No forbidden public claims found');
 }

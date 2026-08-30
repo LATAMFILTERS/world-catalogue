@@ -23,7 +23,7 @@ const STD_SLUG_MAP: Record<string, string> = {
   'ISO 11155-1': 'iso-11155-1',
   'ASTM D6304': 'astm-d6304',
   'ISO 16332': 'iso-16332',
-  'DIN 71220': 'din-71220',
+  'DIN 71460': 'din-71460',
   'DIN 51524': 'din-51524',
 };
 

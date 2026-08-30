@@ -5,7 +5,7 @@ key: FUEL_TURBINE
 label: "Turbine Fuel Separation"
 slug: fuel-turbine
 description: "HYDROCORE™ fuel/water-separation housings and replacement elements for approved Turbine Series FH and FG applications, including the 2010/2020/2040-series elements built specifically for those turbine housings."
-uses_technology: "[[HYDROCORE]]"
+uses_technology: "[[TURBOCORE]]"
 uses_tech_display: "HYDROCORE™"
 belongs_to_domain: "[[FUEL]]"
 belongs_to_product_system: "[[FUEL]]"
@@ -90,7 +90,7 @@ ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |
 ISO 12937: Petroleum products water determination
 
 RELATED_TECHNOLOGIES
-HYDROCORE: Fuel/water separation architecture governing both this family (Turbine Series
+TURBOCORE: Turbine-style fuel-separation architecture governing this family (Turbine Series
 FH/FG) and the standard (non-turbine) FUEL_WATER_SEPARATOR family -- distinct product
 families under the same technology because housing/element architecture differs |
 SYNTAPORE: Plain primary/secondary fuel filtration, no separation function (FUEL_PRIMARY

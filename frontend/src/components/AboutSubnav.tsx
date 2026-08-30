@@ -6,8 +6,8 @@ import '@/i18n';
 
 const ITEMS = [
   { href: '/about/#who-we-are', en: 'Who We Are', es: 'Quiénes Somos' },
-  { href: '/about/leadership/', en: 'Leadership', es: 'Liderazgo' },
-  { href: '/about/#engineering-philosophy', en: 'Engineering Philosophy', es: 'Filosofía de Ingeniería' },
+  { href: '/about/leadership', en: 'Leadership', es: 'Liderazgo' },
+  { href: '/about/philosophy', en: 'Engineering Philosophy', es: 'Filosofía de Ingeniería' },
 ];
 
 export function AboutSubnav() {
@@ -21,8 +21,8 @@ export function AboutSubnav() {
       style={{
         position: 'relative',
         zIndex: 5,
-        borderBottom: '1px solid #deded9',
-        background: '#ffffff',
+        borderBottom: '1px solid rgba(255,255,255,0.1)',
+        background: '#050505',
       }}
     >
       <div style={{
@@ -35,10 +35,10 @@ export function AboutSubnav() {
       }}>
         {ITEMS.map((item) => (
           <a key={item.href} href={item.href} style={{
-            color: '#292925',
+            color: '#ffffff',
             background: 'transparent',
-            borderLeft: '1px solid #e4e4df',
-            borderRight: '1px solid #e4e4df',
+            borderLeft: '1px solid rgba(255,255,255,0.1)',
+            borderRight: '1px solid rgba(255,255,255,0.1)',
             textDecoration: 'none',
             fontFamily: 'var(--font-display)',
             fontSize: '0.76rem',

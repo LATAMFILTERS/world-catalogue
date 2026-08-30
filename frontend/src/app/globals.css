@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+main p {
+  text-align: justify;
+  hyphens: none;
+}
+
 :root {
   --volt: #FFF12D;
   --volt-ink: #8A6D00;
@@ -11,17 +16,17 @@
   --surface: #050505;
   --surface-2: #0a0a0a;
   --surface-3: #111111;
-  --surface-light: #FAFAFA;
-  --surface-light-2: #F0F0F0;
+  --surface-light: #000000;
+  --surface-light-2: rgba(255, 255, 255, 0.04);
   --border: rgba(255, 255, 255, 0.08);
   --border-2: rgba(255, 255, 255, 0.12);
-  --border-on-light: rgba(16, 18, 20, 0.12);
+  --border-on-light: rgba(255, 255, 255, 0.1);
   --text: #ffffff;
   --text-muted: rgba(255, 255, 255, 0.9);
   --text-subtle: rgba(255, 255, 255, 0.85);
-  --ink: #101214;
-  --ink-2: #33383E;
-  --ink-3: #5B6570;
+  --ink: #ffffff;
+  --ink-2: rgba(255, 255, 255, 0.75);
+  --ink-3: rgba(255, 255, 255, 0.55);
 
   /* ELIMFILTERS APPROVED TYPOGRAPHY SYSTEM
    * ELIM Display Font = Chakra Petch

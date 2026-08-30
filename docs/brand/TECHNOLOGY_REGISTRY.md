@@ -46,8 +46,14 @@ System: Fuel Cleanliness Protection
 Products:
 - Spin-on Fuel/Water Separators
 - Cartridge Fuel/Water Separators
-- Approved FH and FG fuel-separation architectures
-Protection role: Fuel/water separation and fuel-system protection across approved separator applications.
+Protection role: Fuel/water separation and fuel-system protection for approved standard non-turbine separators, including drain and transparent-bowl configurations.
+
+## TURBOCORE™
+System: Fuel Cleanliness Protection
+Products:
+- FH Series Turbine Fuel/Water Separator Systems
+- FG Series Turbine Fuel/Water Separator Systems
+Protection role: Turbine-style fuel/water separation exclusively for approved FH and FG series systems.
 
 ## SYNTRAX™
 System: Lubrication Protection
@@ -70,7 +76,7 @@ Protection role: Cooling-system cleanliness and component protection.
 Type: Marine Filtration Systems
 Strategic role: Extends the Asset Protection Systems architecture into specialized marine operating environments.
 
-## DURACTECH™
+## DURATECH™
 Type: Integrated Maintenance and Asset Protection Kits
 Applications:
 - Vehicles
@@ -78,14 +84,14 @@ Applications:
 - Machines
 - Equipment
 
-Strategic role: DURACTECH™ integrates the required filtration components for a defined maintenance interval so the customer manages protection of the complete vehicle, machine or equipment rather than isolated filter replacement.
+Strategic role: DURATECH™ integrates the required filtration components for a defined maintenance interval so the customer manages protection of the complete vehicle, machine or equipment rather than isolated filter replacement.
 
 On-Road differentiation:
 - Applicable segment: trucks and commercial vehicles.
 - Governed commercial claim: 15,000 km On-Road protection interval.
-- Claim interpretation: the DURACTECH™ kit represents a protected maintenance interval, not merely a bundle of filters.
+- Claim interpretation: the DURATECH™ kit represents a protected maintenance interval, not merely a bundle of filters.
 - Public use requirement: warranty/coverage language must remain consistent with the approved application, installation and maintenance conditions defined by ELIMFILTERS.
 
 Canonical positioning:
 
-DURACTECH™ does not sell a set of filters as the end value. It delivers an integrated asset-protection interval.
+DURATECH™ does not sell a set of filters as the end value. It delivers an integrated asset-protection interval.

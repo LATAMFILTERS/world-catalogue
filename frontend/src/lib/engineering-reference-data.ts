@@ -41,7 +41,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       'SAE J1858',
       'NFPA T2.14',
       'NAS 1638',
-      'DIN 71220',
+      'DIN 71460',
       'DIN 51524',
       'ISO 16332',
     ],
@@ -713,7 +713,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       'Air cleanliness engineering covers the measurement, specification, and control of airborne contaminants in industrial contexts — including engine intake air, compressed air for instrumentation and process applications, and operator cabin air. Each application has distinct contaminant types, measurement standards, and cleanliness targets.',
     engineeringPurpose:
       'Air contamination causes three distinct damage mechanisms: particulate ingestion causing abrasive wear in engines, compressed air contamination causing instrument malfunction and process quality failures, and airborne dust causing operator respiratory disease. Each requires a different measurement standard and technology response.',
-    applicableStandards: ['ISO 5011', 'ISO 8573-1', 'ISO 11155-1', 'SAE J1539', 'DIN 71220'],
+    applicableStandards: ['ISO 5011', 'ISO 8573-1', 'ISO 11155-1', 'SAE J1539', 'DIN 71460'],
     keyConcepts: [
       {
         term: 'Engine intake air quality',
@@ -761,7 +761,7 @@ export const ERL_SECTIONS: ERLSection[] = [
       'ISO 5011:2020 — Inlet air cleaning equipment for internal combustion engines',
       'ISO 8573-1:2010 — Compressed air — Contaminant classes and purity requirements',
       'ISO 11155-1:2001 — Road vehicles — Air conditioning and ventilation',
-      'DIN 71220 — Cabin air filter classification',
+      'DIN 71460 — Air filters for passenger compartments of motor vehicles',
     ],
   },
   {
