@@ -1,0 +1,59 @@
+name: Patch commercial API runtime v2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-commercial-api-runtime-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: patch-commercial-api-runtime-v2
+  cancel-in-progress: false
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - name: Patch server runtime
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('server-original.js')
+          text = p.read_text()
+          marker = "const app = express();\napp.set('trust proxy', 1);"
+          replacement = "const app = express();\nrequire('./lib/install-commercial-intelligence').installCommercialIntelligence(app);\napp.set('trust proxy', 1);"
+          if "installCommercialIntelligence(app)" not in text:
+              if marker not in text:
+                  raise SystemExit('Expected app bootstrap marker not found')
+              text = text.replace(marker, replacement, 1)
+              p.write_text(text)
+          PY
+
+      - name: Verify syntax and hook
+        run: |
+          node --check lib/install-commercial-intelligence.js
+          node --check server-original.js
+          grep -F "installCommercialIntelligence(app)" server-original.js
+
+      - name: Commit runtime wiring
+        run: |
+          git config user.name "ELIMFILTERS Automation"
+          git config user.email "automation@elimfilters.com"
+          git add server-original.js
+          if git diff --cached --quiet; then
+            echo "Runtime already wired"
+            exit 0
+          fi
+          git commit -m "Wire commercial intelligence ingestion into API runtime"
+          git pull --rebase origin main
+          git push origin HEAD:main
