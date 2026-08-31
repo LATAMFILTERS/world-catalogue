@@ -1,5 +1,6 @@
 import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
+import { MiningIndustryPage } from '@/components/MiningIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -30,7 +31,7 @@ const industryMetaDescription: Record<string, string> = {
   Construction: 'Asset-protection and contamination-control architecture for excavators, loaders, dozers, graders and other construction equipment operating in dust, vibration, heat and hydraulic duty.',
   Manufacturing: 'Asset-protection and contamination-control architecture for industrial engines, hydraulic power units, compressors, pumps and production equipment operating under continuous plant duty.',
   Marine: 'Asset-protection and contamination-control architecture for commercial vessels, workboats, marine engines and onboard equipment operating under moisture, salt atmosphere and extended marine duty.',
-  Mining: 'Asset-protection and contamination-control architecture for mining equipment operating under abrasive dust, hydraulic load, vibration and severe production duty cycles.',
+  Mining: 'Mining filtration systems for haul trucks, excavators, loaders, drill rigs and support equipment. Control air, fuel, lubrication and hydraulic contamination in severe-duty mining environments.',
   'Oil Gas': 'Asset-protection and contamination-control architecture for oil and gas equipment, engines, pumps, compressors and hydraulic assets operating in demanding energy environments.',
   'Power Generation': 'Asset-protection and contamination-control architecture for standby generators, prime power systems and industrial engine-driven generation equipment.',
   Railway: 'Asset-protection and contamination-control architecture for locomotives, auxiliary engines, pneumatic systems and railway support equipment operating under vibration and long duty cycles.',
@@ -53,7 +54,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const url = `${BASE_URL}/industries/${params.slug}/`;
   const description = industryMetaDescription[item.name] || item.description;
-  const title = `${item.title} | ELIMFILTERS Asset Protection`;
+  const title = item.name === 'Mining'
+    ? 'Mining Filtration Systems | Heavy-Duty Equipment | ELIMFILTERS'
+    : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -90,6 +93,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function IndustryPage({ params }: Props) {
   const item = getItemBySlug('industries', params.slug);
   if (!item) return null;
+
+  if (item.name === 'Mining') {
+    return <MiningIndustryPage />;
+  }
 
   const media = industryMedia[item.name] || {};
   const url = `${BASE_URL}/industries/${params.slug}/`;
