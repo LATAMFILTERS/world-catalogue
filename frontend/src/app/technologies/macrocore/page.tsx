@@ -1,18 +1,17 @@
 import type { Metadata } from 'next';
-import { MacrocoreTechnologyPage } from '@/components/MacrocoreTechnologyPage';
-import { MacrocoreMediaEngineeringPortal } from '@/components/MacrocoreMediaEngineeringPortal';
+import { MacrocoreTechnologyPageFinal } from '@/components/MacrocoreTechnologyPageFinal';
 
 const BASE_URL = 'https://elimfilters.com';
 const URL = `${BASE_URL}/technologies/macrocore/`;
 
 export const metadata: Metadata = {
-  title: 'MACROCORE Engine Air Filtration | ELIMFILTERS',
-  description: 'MACROCORE™ is the ELIMFILTERS architecture for engine air-intake protection. It integrates media configuration, contaminant-holding capacity, restriction control, and sealing integrity according to airflow demand and operating conditions.',
+  title: 'MACROCORE™ Engine Air Filtration Technology | ELIMFILTERS',
+  description: 'MACROCORE™ is the ELIMFILTERS architecture for primary and secondary engine air-intake protection, integrating media configuration, contaminant capacity, restriction control and sealing integrity.',
   keywords: [
     'MACROCORE',
     'engine air filtration technology',
     'engine air filter media',
-    'primary air filter',
+    'primary engine air filter',
     'secondary air filter',
     'safety air element',
     'fine fiber filtration media',
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     title: 'MACROCORE™ Engine Air Filtration Technology | ELIMFILTERS',
-    description: 'Engine-air contamination-control architecture integrating media configuration, contaminant capacity, restriction control and sealing integrity for primary and secondary intake protection.',
+    description: 'Primary and secondary engine-air contamination-control architecture integrating media configuration, contaminant capacity, restriction control and sealing integrity.',
     url: URL,
     type: 'article',
     siteName: 'ELIMFILTERS',
@@ -47,12 +46,7 @@ export default function MacrocorePage() {
   return (
     <div className="macrocore-route">
       <style>{`
-        .macrocore-route section[aria-labelledby="macrocore-title"] img[alt="MACROCORE™"] {
-          display: none !important;
-        }
-
-        .macrocore-route section[aria-labelledby="macrocore-title"]::after {
-          content: "MACROCORE™";
+        .macrocoreHeroWordmark {
           position: relative;
           z-index: 3;
           display: block;
@@ -69,13 +63,12 @@ export default function MacrocorePage() {
         }
 
         @media (max-width: 640px) {
-          .macrocore-route section[aria-labelledby="macrocore-title"]::after {
+          .macrocoreHeroWordmark {
             font-size: clamp(2.3rem, 12vw, 4.1rem);
           }
         }
       `}</style>
-      <MacrocoreTechnologyPage />
-      <MacrocoreMediaEngineeringPortal />
+      <MacrocoreTechnologyPageFinal />
     </div>
   );
 }
