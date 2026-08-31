@@ -55,6 +55,7 @@ process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]
 const app = express();
 require('./lib/install-commercial-intelligence').installCommercialIntelligence(app);
 require('./lib/install-commercial-intelligence-retry').installCommercialIntelligenceRetry();
+require('./lib/install-content-intelligence').installContentIntelligence(app, requireAdmin);
 app.set('trust proxy', 1);
 
 // Mounts /api/bot/protocol (+ /image) once, explicitly, right after the app
