@@ -6,6 +6,7 @@ import { ConstructionIndustryPage } from '@/components/ConstructionIndustryPage'
 import { OilGasIndustryPage } from '@/components/OilGasIndustryPage';
 import { MarineIndustryPage } from '@/components/MarineIndustryPage';
 import { PowerGenerationIndustryPage } from '@/components/PowerGenerationIndustryPage';
+import { TrucksFleetsIndustryPage } from '@/components/TrucksFleetsIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -40,7 +41,7 @@ const industryMetaDescription: Record<string, string> = {
   'Oil Gas': 'Oil and gas filtration systems for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, sand, heat, vibration and extended duty.',
   'Power Generation': 'Power generation filtration systems for standby generators, prime-power systems and industrial diesel generator sets requiring fuel, air, lubrication and cooling-system protection.',
   Railway: 'Asset-protection and contamination-control architecture for locomotives, auxiliary engines, pneumatic systems and railway support equipment operating under vibration and long duty cycles.',
-  'Trucks Fleets': 'Asset-protection and contamination-control architecture for heavy-duty trucks, commercial fleets, diesel engines, fuel systems, lubrication circuits, cooling systems and cabin environments.',
+  'Trucks Fleets': 'Truck fleet filtration systems for long-haul, regional, vocational and mixed commercial fleets requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
   'Waste Municipal': 'Asset-protection and contamination-control architecture for refuse trucks, municipal service fleets, utility vehicles and public-works equipment operating under repeated urban duty cycles.',
 };
 
@@ -71,7 +72,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             ? 'Marine Filtration Systems | Vessels & Marine Engines | ELIMFILTERS'
             : item.name === 'Power Generation'
               ? 'Power Generation Filtration Systems | Generator Sets | ELIMFILTERS'
-              : `${item.title} | ELIMFILTERS Asset Protection`;
+              : item.name === 'Trucks Fleets'
+                ? 'Truck Fleet Filtration Systems | Heavy-Duty Fleets | ELIMFILTERS'
+                : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -131,6 +134,10 @@ export default function IndustryPage({ params }: Props) {
 
   if (item.name === 'Power Generation') {
     return <PowerGenerationIndustryPage />;
+  }
+
+  if (item.name === 'Trucks Fleets') {
+    return <TrucksFleetsIndustryPage />;
   }
 
   const media = industryMedia[item.name] || {};
