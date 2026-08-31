@@ -81,9 +81,17 @@ export function SyntaporeStablePage() {
     name: 'SYNTAPORE™',
     url: 'https://elimfilters.com/technologies/syntapore/',
     description: 'SYNTAPORE™ is the ELIMFILTERS architecture for particulate control in primary, secondary and cartridge diesel-fuel filtration stages. Its configuration is selected around efficiency, contaminant-holding capacity, flow and pressure drop for each application.',
-    author: { '@id': 'https://elimfilters.com/#organization' },
-    publisher: { '@id': 'https://elimfilters.com/#organization' },
+    author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+    publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+    about: [
+      { '@type': 'Thing', name: 'diesel fuel filtration' },
+      { '@type': 'Thing', name: 'primary fuel filtration' },
+      { '@type': 'Thing', name: 'secondary fuel filtration' },
+      { '@type': 'Thing', name: 'particulate contamination control' },
+      { '@type': 'Thing', name: 'fuel filter restriction' },
+    ],
     mentions: ['diesel fuel filtration','primary fuel filtration','secondary fuel filtration','cartridge fuel filter','particulate contamination','fuel restriction','fuel starvation','injector contamination','microbial fuel contamination','fuel flow','pressure drop'].map((name) => ({ '@type': 'Thing', name })),
+    isPartOf: { '@type': 'WebSite', '@id': 'https://elimfilters.com/#website', name: 'ELIMFILTERS', url: 'https://elimfilters.com/' },
   };
 
   const faqSchema = {
@@ -92,10 +100,21 @@ export function SyntaporeStablePage() {
     mainEntity: faqs.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Technologies', item: 'https://elimfilters.com/technologies/' },
+      { '@type': 'ListItem', position: 3, name: 'SYNTAPORE™', item: 'https://elimfilters.com/technologies/syntapore/' },
+    ],
+  };
+
   return (
     <main id="main-content" className={styles.page}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className={styles.hero} aria-labelledby="syntapore-title">
         <img className={styles.heroBackground} src="/images/hero-syntapore.avif" alt="Diesel fuel filtration service environment" />
