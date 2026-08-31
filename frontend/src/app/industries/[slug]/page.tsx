@@ -3,6 +3,7 @@ import { CategoryPage } from '@/components/CategoryPage';
 import { MiningIndustryPageV2 } from '@/components/MiningIndustryPageV2';
 import { AgricultureIndustryPage } from '@/components/AgricultureIndustryPage';
 import { ConstructionIndustryPage } from '@/components/ConstructionIndustryPage';
+import { OilGasIndustryPage } from '@/components/OilGasIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -34,7 +35,7 @@ const industryMetaDescription: Record<string, string> = {
   Manufacturing: 'Asset-protection and contamination-control architecture for industrial engines, hydraulic power units, compressors, pumps and production equipment operating under continuous plant duty.',
   Marine: 'Asset-protection and contamination-control architecture for commercial vessels, workboats, marine engines and onboard equipment operating under moisture, salt atmosphere and extended marine duty.',
   Mining: 'Mining filtration systems for haul trucks, excavators, loaders, drill rigs and support equipment. Control air, fuel, lubrication and hydraulic contamination in severe-duty mining environments.',
-  'Oil Gas': 'Asset-protection and contamination-control architecture for oil and gas equipment, engines, pumps, compressors and hydraulic assets operating in demanding energy environments.',
+  'Oil Gas': 'Oil and gas filtration systems for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, sand, heat, vibration and extended duty.',
   'Power Generation': 'Asset-protection and contamination-control architecture for standby generators, prime power systems and industrial engine-driven generation equipment.',
   Railway: 'Asset-protection and contamination-control architecture for locomotives, auxiliary engines, pneumatic systems and railway support equipment operating under vibration and long duty cycles.',
   'Trucks Fleets': 'Asset-protection and contamination-control architecture for heavy-duty trucks, commercial fleets, diesel engines, fuel systems, lubrication circuits, cooling systems and cabin environments.',
@@ -62,7 +63,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? 'Agricultural Filtration Systems | Tractors & Combines | ELIMFILTERS'
       : item.name === 'Construction'
         ? 'Construction Filtration Systems | Heavy Equipment | ELIMFILTERS'
-        : `${item.title} | ELIMFILTERS Asset Protection`;
+        : item.name === 'Oil Gas'
+          ? 'Oil & Gas Filtration Systems | Field Equipment | ELIMFILTERS'
+          : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -110,6 +113,10 @@ export default function IndustryPage({ params }: Props) {
 
   if (item.name === 'Construction') {
     return <ConstructionIndustryPage />;
+  }
+
+  if (item.name === 'Oil Gas') {
+    return <OilGasIndustryPage />;
   }
 
   const media = industryMedia[item.name] || {};
