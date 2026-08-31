@@ -155,8 +155,9 @@ export function MacrocoreTechnologyPage() {
       <section style={mediaFeatureSection}>
         <div style={mediaFeatureGrid}>
           <div>
-            <p style={eyebrow}>APPLICATION / PRIMARY AND SECONDARY ENGINE AIR-INTAKE FILTRATION</p>
-            <h2 style={h2}>Airflow Management and Particle Control</h2>
+            <p style={eyebrow}>APPLICATION</p>
+            <p style={applicationText}>Primary and secondary engine air-intake filtration</p>
+            <h2 style={{ ...h2, marginTop: '1.4rem' }}>Airflow Management and Particle Control</h2>
             <p style={{ ...lead, marginTop: '1.5rem' }}>MACROCORE™ is the ELIMFILTERS architecture for engine air-intake protection. It integrates media configuration, contaminant-holding capacity, restriction control, and sealing integrity according to airflow demand and operating conditions.</p>
           </div>
           <figure style={mediaFigure}>
@@ -319,6 +320,7 @@ const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem,
 const sectionAlt: CSSProperties = { ...section, maxWidth: 'none', background: 'rgba(255,255,255,.025)', borderTop: '1px solid rgba(255,255,255,.06)', borderBottom: '1px solid rgba(255,255,255,.06)' };
 const mediaFeatureSection: CSSProperties = { ...section, maxWidth: 'none', background: 'linear-gradient(135deg, rgba(255,241,45,.055), rgba(255,255,255,.018) 42%, rgba(0,0,0,0) 100%)', borderTop: '1px solid rgba(255,241,45,.14)', borderBottom: '1px solid rgba(255,255,255,.07)' };
 const mediaFeatureGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: 'clamp(2.5rem,6vw,5.5rem)', alignItems: 'center' };
+const applicationText: CSSProperties = { margin: 0, maxWidth: '720px', color: 'rgba(255,255,255,.78)', fontSize: 'clamp(1rem,1.45vw,1.14rem)', lineHeight: 1.55, fontWeight: 600 };
 const mediaFigure: CSSProperties = { margin: 0, width: '100%' };
 const mediaImage: CSSProperties = { display: 'block', width: '100%', height: 'auto', objectFit: 'contain', border: '1px solid rgba(255,255,255,.1)', background: '#050505' };
 const mediaCaption: CSSProperties = { marginTop: '.85rem', fontSize: '.78rem', lineHeight: 1.55, color: 'rgba(255,255,255,.48)', fontStyle: 'italic' };
