@@ -45,6 +45,7 @@ export const metadata: Metadata = {
 export default function MacrocorePage() {
   return (
     <div className="macrocore-route">
+      <link rel="preload" as="image" href="/assets/MACROCORE_final.avif" fetchPriority="high" />
       <style>{`
         .macrocoreHeroWordmark {
           position: relative;
@@ -70,8 +71,8 @@ export default function MacrocorePage() {
 
         @media (max-width: 640px) {
           .macrocoreHeroWordmark {
-            width: min(430px, 82vw);
-            height: clamp(90px, 24vw, 125px);
+            width: min(300px, 55vw);
+            height: clamp(58px, 15vw, 78px);
             background-position: center 45%;
           }
         }
