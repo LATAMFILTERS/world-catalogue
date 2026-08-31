@@ -50,21 +50,25 @@ export default function MacrocorePage() {
           position: relative;
           z-index: 3;
           display: block;
-          color: #ffffff;
-          font-family: var(--font-display), Arial, sans-serif;
-          font-size: clamp(3rem, 7vw, 6.8rem);
-          font-style: italic;
-          font-weight: 900;
-          line-height: 1;
-          letter-spacing: -0.055em;
-          text-transform: uppercase;
-          text-shadow: 0 8px 24px rgba(0,0,0,.42);
-          white-space: nowrap;
+          width: min(620px, 74vw);
+          height: clamp(125px, 17vw, 175px);
+          overflow: hidden;
+          color: transparent;
+          font-size: 0;
+          line-height: 0;
+          background-image: url('/assets/MACROCORE_final.avif');
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: center 45%;
+          mix-blend-mode: screen;
+          filter: drop-shadow(0 8px 24px rgba(0,0,0,.34));
         }
 
         @media (max-width: 640px) {
           .macrocoreHeroWordmark {
-            font-size: clamp(2.3rem, 12vw, 4.1rem);
+            width: min(430px, 82vw);
+            height: clamp(90px, 24vw, 125px);
+            background-position: center 45%;
           }
         }
       `}</style>
