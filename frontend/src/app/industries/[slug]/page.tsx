@@ -5,6 +5,7 @@ import { AgricultureIndustryPage } from '@/components/AgricultureIndustryPage';
 import { ConstructionIndustryPage } from '@/components/ConstructionIndustryPage';
 import { OilGasIndustryPage } from '@/components/OilGasIndustryPage';
 import { MarineIndustryPage } from '@/components/MarineIndustryPage';
+import { PowerGenerationIndustryPage } from '@/components/PowerGenerationIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -37,7 +38,7 @@ const industryMetaDescription: Record<string, string> = {
   Marine: 'Marine filtration systems for commercial vessels, workboats, marine engines, deck machinery and onboard hydraulic equipment operating under salt air, humidity, fuel-water exposure and extended duty.',
   Mining: 'Mining filtration systems for haul trucks, excavators, loaders, drill rigs and support equipment. Control air, fuel, lubrication and hydraulic contamination in severe-duty mining environments.',
   'Oil Gas': 'Oil and gas filtration systems for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, sand, heat, vibration and extended duty.',
-  'Power Generation': 'Asset-protection and contamination-control architecture for standby generators, prime power systems and industrial engine-driven generation equipment.',
+  'Power Generation': 'Power generation filtration systems for standby generators, prime-power systems and industrial diesel generator sets requiring fuel, air, lubrication and cooling-system protection.',
   Railway: 'Asset-protection and contamination-control architecture for locomotives, auxiliary engines, pneumatic systems and railway support equipment operating under vibration and long duty cycles.',
   'Trucks Fleets': 'Asset-protection and contamination-control architecture for heavy-duty trucks, commercial fleets, diesel engines, fuel systems, lubrication circuits, cooling systems and cabin environments.',
   'Waste Municipal': 'Asset-protection and contamination-control architecture for refuse trucks, municipal service fleets, utility vehicles and public-works equipment operating under repeated urban duty cycles.',
@@ -68,7 +69,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           ? 'Oil & Gas Filtration Systems | Field Equipment | ELIMFILTERS'
           : item.name === 'Marine'
             ? 'Marine Filtration Systems | Vessels & Marine Engines | ELIMFILTERS'
-            : `${item.title} | ELIMFILTERS Asset Protection`;
+            : item.name === 'Power Generation'
+              ? 'Power Generation Filtration Systems | Generator Sets | ELIMFILTERS'
+              : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -124,6 +127,10 @@ export default function IndustryPage({ params }: Props) {
 
   if (item.name === 'Marine') {
     return <MarineIndustryPage />;
+  }
+
+  if (item.name === 'Power Generation') {
+    return <PowerGenerationIndustryPage />;
   }
 
   const media = industryMedia[item.name] || {};
