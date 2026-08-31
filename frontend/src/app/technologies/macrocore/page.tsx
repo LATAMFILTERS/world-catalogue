@@ -64,6 +64,10 @@ export default function MacrocorePage() {
           filter: drop-shadow(0 8px 24px rgba(0,0,0,.34));
         }
 
+        .macrocore-route main#main-content > section:nth-of-type(2) h2 {
+          font-size: clamp(2.25rem, 5.25vw, 4.65rem) !important;
+        }
+
         @media (max-width: 640px) {
           .macrocoreHeroWordmark {
             width: min(430px, 82vw);
