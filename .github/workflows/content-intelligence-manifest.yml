@@ -1,0 +1,54 @@
+name: Content intelligence publication manifest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'frontend/public/sitemap.xml'
+      - 'knowledge/entities/**'
+      - 'knowledge/brain/brain-manifest.json'
+      - 'scripts/build-content-intelligence-manifest.mjs'
+      - '.github/workflows/content-intelligence-manifest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: content-intelligence-manifest-main
+  cancel-in-progress: true
+
+jobs:
+  build-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build governed publication manifest
+        run: node scripts/build-content-intelligence-manifest.mjs
+      - name: Validate manifest
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const p = 'knowledge/generated/content-intelligence/publication-manifest.json';
+          const x = JSON.parse(fs.readFileSync(p, 'utf8'));
+          if (!Array.isArray(x.rows) || x.rows.length === 0) throw new Error('manifest has no rows');
+          if (x.rows.some(r => !r.canonicalUrl?.startsWith('https://elimfilters.com/'))) throw new Error('non-canonical host');
+          if (x.rows.some(r => r.sourceChain?.includes('obsidian-vault'))) throw new Error('Obsidian cannot publish directly');
+          console.log(`[content-intelligence] validated ${x.rows.length} rows`);
+          NODE
+      - name: Commit generated manifest
+        run: |
+          if git diff --quiet -- knowledge/generated/content-intelligence/publication-manifest.json; then
+            echo 'No manifest changes'
+            exit 0
+          fi
+          git config user.name 'elimfilters-bot'
+          git config user.email 'elimfilters@gmail.com'
+          git add knowledge/generated/content-intelligence/publication-manifest.json
+          git commit -m 'Refresh content intelligence publication manifest'
+          git push
