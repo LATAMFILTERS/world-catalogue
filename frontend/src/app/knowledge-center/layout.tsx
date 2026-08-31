@@ -4,7 +4,7 @@ const BASE='https://elimfilters.com';
 const URL=`${BASE}/knowledge-center/`;
 const TITLE='Industrial Filtration Knowledge Center | ELIMFILTERS';
 const DESCRIPTION='Engineering knowledge for industrial filtration, contamination control, standards, failure diagnosis, equipment reliability, fleet maintenance and asset protection.';
-const IMAGE=`${BASE}/images/knowledge-center-hero.avif`;
+const IMAGE=`${BASE}/images/mecanica-air.avif`;
 
 export const metadata:Metadata={
  title:TITLE,
