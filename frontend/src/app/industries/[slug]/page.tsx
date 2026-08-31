@@ -1,7 +1,7 @@
 import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
 import { MiningIndustryExperience } from '@/components/MiningIndustryExperience';
-import { AgricultureIndustryPage } from '@/components/AgricultureIndustryPage';
+import { AgricultureIndustryPageWithCarousel } from '@/components/AgricultureIndustryPageWithCarousel';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -102,7 +102,7 @@ export default function IndustryPage({ params }: Props) {
   }
 
   if (item.name === 'Agriculture') {
-    return <AgricultureIndustryPage />;
+    return <AgricultureIndustryPageWithCarousel />;
   }
 
   const media = industryMedia[item.name] || {};
