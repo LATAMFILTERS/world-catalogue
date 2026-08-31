@@ -1,0 +1,513 @@
+.page {
+  --yellow: #fff12d;
+  --ink: #050505;
+  --panel: #0a0a0a;
+  --panel-soft: #101010;
+  --line: rgba(255, 255, 255, 0.11);
+  --muted: rgba(255, 255, 255, 0.68);
+  --soft: rgba(255, 255, 255, 0.48);
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  min-height: clamp(520px, 78vh, 860px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.22));
+}
+
+.heroMark {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: min(520px, 68vw);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,.45));
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.section,
+.sectionAlt,
+.sectionFeature,
+.ctaSection {
+  padding: clamp(3.5rem, 7vw, 6.5rem) clamp(1.25rem, 6vw, 6rem);
+}
+
+.sectionAlt {
+  background: #070707;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionFeature {
+  background: linear-gradient(135deg, rgba(255,241,45,.075), #080808 42%, #030303 100%);
+  border-top: 1px solid rgba(255,241,45,.20);
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 .9rem;
+  color: var(--yellow);
+  font-family: var(--font-display);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .21em;
+  text-transform: uppercase;
+}
+
+.h2 {
+  margin: 0;
+  max-width: 920px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.7rem);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+
+.h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.03rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.lead {
+  margin: 0;
+  color: rgba(255,255,255,.86);
+  font-size: clamp(1.05rem, 1.65vw, 1.28rem);
+  line-height: 1.7;
+}
+
+.body {
+  margin: .75rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.answerGrid,
+.mediaGrid,
+.isoGrid,
+.ctaGrid {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: clamp(2rem, 6vw, 5.5rem);
+  align-items: start;
+}
+
+.answerCopy {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1.25rem;
+  margin-bottom: 1.4rem;
+}
+
+.metaItem {
+  display: inline-flex;
+  gap: .45rem;
+  align-items: baseline;
+  color: rgba(255,255,255,.78);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.metaLabel {
+  color: var(--yellow);
+  font-family: var(--font-display);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.mediaCopy {
+  align-self: start;
+}
+
+.mediaFigure {
+  margin: 0;
+  align-self: start;
+}
+
+.mediaImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255,255,255,.10);
+  background: #050505;
+}
+
+.mediaCaption {
+  margin-top: .8rem;
+  color: var(--soft);
+  font-size: .78rem;
+  line-height: 1.55;
+  font-style: italic;
+}
+
+.flow {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border: 1px solid var(--line);
+}
+
+.flowCard {
+  padding: 1.25rem;
+  border-right: 1px solid var(--line);
+  background: #050505;
+}
+
+.flowCard:last-child {
+  border-right: 0;
+}
+
+.stepNo {
+  display: block;
+  margin-bottom: .8rem;
+  color: var(--yellow);
+  font-family: var(--font-display);
+  font-size: .69rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.factorGrid,
+.assetGrid,
+.signalGrid,
+.faqGrid,
+.applicationGrid {
+  margin-top: 2.2rem;
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+
+.factorGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.factorCard,
+.signalCard,
+.faqCard,
+.applicationCard {
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  background: #080808;
+}
+
+.factorCard,
+.signalCard,
+.faqCard,
+.applicationCard,
+.assetCard {
+  align-self: start;
+}
+
+.assetGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.assetCard {
+  padding: 1.35rem 0;
+  border-top: 1px solid rgba(255,241,45,.28);
+}
+
+.loadingGrid {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid var(--line);
+}
+
+.loadingStep {
+  padding: 1.3rem;
+  background: #050505;
+  border-right: 1px solid var(--line);
+}
+
+.loadingStep:last-child {
+  border-right: 0;
+}
+
+.signalGrid,
+.faqGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.applicationGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.applicationCard {
+  color: #fff;
+  text-decoration: none;
+  transition: border-color .18s ease, transform .18s ease;
+}
+
+.applicationCard:hover {
+  border-color: rgba(255,241,45,.52);
+  transform: translateY(-2px);
+}
+
+.applicationLink {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--yellow);
+  font-family: var(--font-display);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.familyGrid {
+  margin-top: 2.1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.familyCard {
+  display: block;
+  padding: 1.45rem;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: #080808;
+}
+
+.decisionPath {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--line);
+}
+
+.decisionStep {
+  padding: 1.05rem;
+  color: rgba(255,255,255,.82);
+  background: #050505;
+  border-right: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: .06em;
+}
+
+.decisionStep:last-child {
+  border-right: 0;
+}
+
+.microCta {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255,241,45,.28);
+  background: rgba(255,241,45,.045);
+}
+
+.microCtaText {
+  margin: 0;
+  color: rgba(255,255,255,.82);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 1.7rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-block;
+  padding: .95rem 1.15rem;
+  font-family: var(--font-display);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-decoration: none;
+}
+
+.primaryButton {
+  color: #000;
+  background: var(--yellow);
+}
+
+.secondaryButton {
+  color: var(--yellow);
+  background: #050505;
+  border: 1px solid rgba(255,241,45,.36);
+}
+
+.atGlance {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border: 1px solid var(--line);
+}
+
+.atGlanceItem {
+  padding: 1.15rem;
+  border-right: 1px solid var(--line);
+  background: #050505;
+}
+
+.atGlanceItem:last-child {
+  border-right: 0;
+}
+
+.atGlanceLabel {
+  display: block;
+  margin-bottom: .45rem;
+  color: var(--yellow);
+  font-family: var(--font-display);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.atGlanceValue {
+  color: rgba(255,255,255,.82);
+  font-size: .92rem;
+  line-height: 1.5;
+}
+
+.ctaSection {
+  border-top: 1px solid rgba(255,241,45,.22);
+  background: radial-gradient(circle at 20% 0%, rgba(255,241,45,.14), transparent 38%), #050505;
+}
+
+@media (max-width: 980px) {
+  .answerGrid,
+  .mediaGrid,
+  .isoGrid,
+  .ctaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .flow,
+  .atGlance {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .flowCard,
+  .atGlanceItem {
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .factorGrid,
+  .applicationGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .loadingGrid,
+  .decisionPath {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .loadingStep,
+  .decisionStep {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 58vh;
+  }
+
+  .heroMark {
+    width: min(390px, 76vw);
+  }
+
+  .section,
+  .sectionAlt,
+  .sectionFeature,
+  .ctaSection {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flow,
+  .factorGrid,
+  .assetGrid,
+  .loadingGrid,
+  .signalGrid,
+  .faqGrid,
+  .applicationGrid,
+  .familyGrid,
+  .decisionPath,
+  .atGlance {
+    grid-template-columns: 1fr;
+  }
+
+  .flowCard,
+  .loadingStep,
+  .decisionStep,
+  .atGlanceItem {
+    border-right: 0;
+  }
+
+  .microCta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
