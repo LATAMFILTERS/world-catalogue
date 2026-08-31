@@ -62,7 +62,7 @@ function technologyEntityUrl(slug: string) {
 
 export function generateStaticParams() {
   return CANONICAL_TECHNOLOGY_LIST
-    .filter((technology) => technology.slug !== 'macrocore' && technology.slug !== 'syntapore')
+    .filter((technology) => technology.slug !== 'macrocore' && technology.slug !== 'syntapore' && technology.slug !== 'syntrax')
     .map((technology) => ({ slug: technology.slug }));
 }
 
@@ -179,7 +179,7 @@ export default function TechnologyPage({ params }: Props) {
   const canonical = getCanonicalTechnology(params.slug);
   const engineering = getTechnologyEngineering(params.slug);
   const editorial = getTechnologyEditorial(params.slug);
-  if (!canonical || !engineering || !editorial || canonical.slug === 'macrocore' || canonical.slug === 'syntapore') notFound();
+  if (!canonical || !engineering || !editorial || canonical.slug === 'macrocore' || canonical.slug === 'syntapore' || canonical.slug === 'syntrax') notFound();
 
   const slug = canonical.slug as TechnologySlug;
   const technologyAsset = TECHNOLOGY_ASSETS[slug];
@@ -196,101 +196,30 @@ export default function TechnologyPage({ params }: Props) {
       {questionsSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(questionsSchema) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
 
-      <section
-        aria-label={`${canonical.name} technology hero`}
-        style={{
-          position: 'relative',
-          minHeight: 'clamp(560px, 82vh, 860px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          overflow: 'hidden',
-          backgroundImage: `url(${technologyHero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        <img
-          src={technologyAsset}
-          alt={canonical.name}
-          style={{
-            position: 'relative',
-            zIndex: 2,
-            width: 'min(520px, 48vw)',
-            height: 'auto',
-            display: 'block',
-            mixBlendMode: 'screen',
-            filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))',
-          }}
-        />
+      <section aria-label={`${canonical.name} technology hero`} style={{ position: 'relative', minHeight: 'clamp(560px, 82vh, 860px)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', backgroundImage: `url(${technologyHero})`, backgroundSize: 'cover', backgroundPosition: 'center center', backgroundRepeat: 'no-repeat' }}>
+        <img src={technologyAsset} alt={canonical.name} style={{ position: 'relative', zIndex: 2, width: 'min(520px, 48vw)', height: 'auto', display: 'block', mixBlendMode: 'screen', filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))' }} />
       </section>
 
       <nav aria-label="Breadcrumb" style={{ borderTop: '1px solid rgba(255,241,45,0.14)', borderBottom: '1px solid rgba(255,255,255,0.07)', padding: '1rem 2rem' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', gap: '0.7rem', alignItems: 'center', fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.08em' }}>
-          <Link href="/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>HOME</Link>
-          <span style={{ color: 'rgba(255,255,255,0.25)' }}>/</span>
-          <Link href="/technologies/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>TECHNOLOGIES</Link>
-          <span style={{ color: 'rgba(255,255,255,0.25)' }}>/</span>
-          <span style={{ color: '#FFF12D' }}>{canonical.name}</span>
+          <Link href="/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>HOME</Link><span style={{ color: 'rgba(255,255,255,0.25)' }}>/</span><Link href="/technologies/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>TECHNOLOGIES</Link><span style={{ color: 'rgba(255,255,255,0.25)' }}>/</span><span style={{ color: '#FFF12D' }}>{canonical.name}</span>
         </div>
       </nav>
 
       <section style={{ padding: '6.5rem 2rem 5.5rem' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.82fr) minmax(0, 1.18fr)', gap: 'clamp(3rem, 7vw, 7rem)', alignItems: 'start' }} className="technology-intro-grid">
-          <div>
-            <div style={sectionLabel}>FILTRATION TECHNOLOGY</div>
-            <h1 style={{ ...sectionHeading, fontSize: 'clamp(2.8rem, 6vw, 5.2rem)' }}>{canonical.name}</h1>
-            <p style={{ ...bodyCopy, marginTop: '1.3rem', color: '#fff', fontWeight: 600 }}>{canonical.role}</p>
-          </div>
-          <div>
-            <p style={{ ...bodyCopy, fontSize: 'clamp(1.1rem, 1.8vw, 1.34rem)', color: 'rgba(255,255,255,0.9)', marginTop: 0 }}>{engineering.definition}</p>
-            <p style={{ ...bodyCopy, marginTop: '1.5rem' }}>{APPLICATION_CONTEXT[slug]}</p>
-          </div>
+          <div><div style={sectionLabel}>FILTRATION TECHNOLOGY</div><h1 style={{ ...sectionHeading, fontSize: 'clamp(2.8rem, 6vw, 5.2rem)' }}>{canonical.name}</h1><p style={{ ...bodyCopy, marginTop: '1.3rem', color: '#fff', fontWeight: 600 }}>{canonical.role}</p></div>
+          <div><p style={{ ...bodyCopy, fontSize: 'clamp(1.1rem, 1.8vw, 1.34rem)', color: 'rgba(255,255,255,0.9)', marginTop: 0 }}>{engineering.definition}</p><p style={{ ...bodyCopy, marginTop: '1.5rem' }}>{APPLICATION_CONTEXT[slug]}</p></div>
         </div>
       </section>
 
       <TechnologyEditorial editorial={editorial} />
 
-      {system && (
-        <section style={{ padding: '6rem 2rem', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-          <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-            <div style={sectionLabel}>SYSTEM INTEGRATION</div>
-            <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 'clamp(3rem, 7vw, 7rem)', alignItems: 'start' }} className="technology-system-grid">
-              <div>
-                <h2 style={sectionHeading}>{system.name}</h2>
-                <Link href={`/systems/${system.slug}/`} style={{ display: 'inline-block', marginTop: '1.6rem', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.08em', color: '#FFF12D', textDecoration: 'none', borderBottom: '1px solid rgba(255,241,45,0.45)', paddingBottom: '0.25rem' }}>EXPLORE PROTECTION SYSTEM</Link>
-              </div>
-              <div>
-                <p style={{ ...bodyCopy, marginTop: 0, color: 'rgba(255,255,255,0.9)' }}>{system.overview}</p>
-                <p style={{ ...bodyCopy, marginTop: '1.4rem' }}>{system.engineeringPrinciple}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      {system && <section style={{ padding: '6rem 2rem', borderTop: '1px solid rgba(255,255,255,0.07)' }}><div style={{ maxWidth: '1240px', margin: '0 auto' }}><div style={sectionLabel}>SYSTEM INTEGRATION</div><div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 'clamp(3rem, 7vw, 7rem)', alignItems: 'start' }} className="technology-system-grid"><div><h2 style={sectionHeading}>{system.name}</h2><Link href={`/systems/${system.slug}/`} style={{ display: 'inline-block', marginTop: '1.6rem', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.08em', color: '#FFF12D', textDecoration: 'none', borderBottom: '1px solid rgba(255,241,45,0.45)', paddingBottom: '0.25rem' }}>EXPLORE PROTECTION SYSTEM</Link></div><div><p style={{ ...bodyCopy, marginTop: 0, color: 'rgba(255,255,255,0.9)' }}>{system.overview}</p><p style={{ ...bodyCopy, marginTop: '1.4rem' }}>{system.engineeringPrinciple}</p></div></div></div></section>}
 
-      <section style={{ padding: '5.5rem 2rem', borderTop: '1px solid rgba(255,241,45,0.18)', background: 'linear-gradient(180deg, rgba(255,241,45,0.035), #000)' }}>
-        <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '2rem', alignItems: 'center' }} className="technology-cta-grid">
-          <div>
-            <div style={sectionLabel}>APPLICATION SUPPORT</div>
-            <h2 style={{ ...sectionHeading, maxWidth: '760px' }}>Bring us the application, duty cycle and failure pattern — not just the part number.</h2>
-            <p style={{ ...bodyCopy, maxWidth: '780px', marginTop: '1.2rem' }}>Use Part Search when the application is already known. When the issue is repeated contamination, short service life, component exposure or uncertain filtration architecture, use the Knowledge Center as the technical path into an application review.</p>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', minWidth: '220px' }}>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ background: '#FFF12D', color: '#000', textDecoration: 'none', textAlign: 'center', padding: '1rem 1.35rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em' }}>FIND MY PART</a>
-            <Link href="/knowledge-center/" style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#fff', textDecoration: 'none', textAlign: 'center', padding: '1rem 1.35rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em' }}>TECHNICAL REVIEW PATH</Link>
-          </div>
-        </div>
-      </section>
+      <section style={{ padding: '5.5rem 2rem', borderTop: '1px solid rgba(255,241,45,0.18)', background: 'linear-gradient(180deg, rgba(255,241,45,0.035), #000)' }}><div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '2rem', alignItems: 'center' }} className="technology-cta-grid"><div><div style={sectionLabel}>APPLICATION SUPPORT</div><h2 style={{ ...sectionHeading, maxWidth: '760px' }}>Bring us the application, duty cycle and failure pattern — not just the part number.</h2><p style={{ ...bodyCopy, maxWidth: '780px', marginTop: '1.2rem' }}>Use Part Search when the application is already known. When the issue is repeated contamination, short service life, component exposure or uncertain filtration architecture, use the Knowledge Center as the technical path into an application review.</p></div><div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', minWidth: '220px' }}><a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ background: '#FFF12D', color: '#000', textDecoration: 'none', textAlign: 'center', padding: '1rem 1.35rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em' }}>FIND MY PART</a><Link href="/knowledge-center/" style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#fff', textDecoration: 'none', textAlign: 'center', padding: '1rem 1.35rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em' }}>TECHNICAL REVIEW PATH</Link></div></div></section>
 
-      <style>{`
-        @media (max-width: 860px) {
-          .technology-intro-grid,
-          .technology-system-grid,
-          .technology-cta-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
+      <style>{`@media (max-width: 860px) {.technology-intro-grid,.technology-system-grid,.technology-cta-grid { grid-template-columns: 1fr !important; }}`}</style>
     </main>
   );
 }
