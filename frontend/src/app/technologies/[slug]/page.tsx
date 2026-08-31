@@ -7,219 +7,44 @@ import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
 import { getTechnologyEditorial } from '@/lib/technology-editorial';
 import TechnologyEditorial from '@/components/TechnologyEditorial';
 
-interface Props {
-  params: { slug: string };
-}
-
+interface Props { params: { slug: string }; }
 const BASE_URL = 'https://elimfilters.com';
-
-const TECHNOLOGY_ASSETS: Readonly<Record<TechnologySlug, string>> = {
-  macrocore: '/assets/MACROCORE_final.avif',
-  microkappa: '/assets/MICROKAPPA_final.avif',
-  drycore: '/assets/DRYCORE_final.avif',
-  intekcore: '/assets/INTEKCORE_final.avif',
-  syntapore: '/assets/SYNTAPORE_final.avif',
-  syntrax: '/assets/SYNTRAX_final.avif',
-  nanoforce: '/assets/NANOFORCE_final.avif',
-  thermacore: '/assets/THERMACORE_final.avif',
-  hydrocore: '/assets/HYDROCORE_final.avif',
-  turbocore: '/assets/TURBOCORE_final.avif',
+const TECHNOLOGY_ASSETS: Readonly<Record<TechnologySlug,string>> = {macrocore:'/assets/MACROCORE_final.avif',microkappa:'/assets/MICROKAPPA_final.avif',drycore:'/assets/DRYCORE_final.avif',intekcore:'/assets/INTEKCORE_final.avif',syntapore:'/assets/SYNTAPORE_final.avif',syntrax:'/assets/SYNTRAX_final.avif',nanoforce:'/assets/NANOFORCE_final.avif',thermacore:'/assets/THERMACORE_final.avif',hydrocore:'/assets/HYDROCORE_final.avif',turbocore:'/assets/TURBOCORE_final.avif'};
+const TECHNOLOGY_HERO_IMAGES: Readonly<Record<TechnologySlug,string>> = {macrocore:'/images/mecanica-air.avif',microkappa:'/images/cabin-hero.avif',drycore:'/images/airdryer-hero.avif',intekcore:'/images/intekcor-hero.avif',syntapore:'/images/hero-syntapore.avif',syntrax:'/images/syntrax.avif',nanoforce:'/images/nanoforce-mecanico.avif',thermacore:'/images/THERMACORE-CAMION.avif',hydrocore:'/images/fuellseparator-hero.avif',turbocore:'/images/TURBOCORE-hero.avif'};
+const APPLICATION_CONTEXT: Readonly<Record<TechnologySlug,string>> = {
+ macrocore:'Applied where engine intake air must be controlled through primary and secondary filtration before airborne contamination reaches the combustion system.',
+ microkappa:'Applied in operator and passenger HVAC systems where particulate control, airflow demand and cabin pressure-drop limits must be balanced.',
+ drycore:'Applied in compressed-air and pneumatic brake circuits where moisture must be controlled before it can affect valves, actuators and pneumatic controls.',
+ intekcore:'Applied at the air-cleaner housing and sealing boundary where housing geometry, element fit and seal loading determine whether unfiltered air can bypass the filtration element.',
+ syntapore:'Applied across approved primary, secondary and cartridge diesel-fuel filtration stages upstream of precision pumps and injectors.',
+ syntrax:'Applied in engine lubrication circuits where wear debris, soot agglomerates and lubricant contamination must be controlled across the service interval.',
+ nanoforce:'Applied in fluid-power systems where cleanliness targets are established around the tolerance requirements of the most sensitive hydraulic component.',
+ thermacore:'Applied in heavy-duty cooling circuits where coolant cleanliness, additive condition, flow and service interval must remain compatible with the approved cooling-system maintenance strategy.',
+ hydrocore:'Applied in standard spin-on and cartridge fuel/water separators where free and emulsified water must be removed ahead of the fuel-filtration stage.',
+ turbocore:'Applied at the turbine-style FH/FG housing and structural-assembly boundary, paired with HYDROCORE™ filtration media, where housing integrity determines whether fuel actually flows through the separation element rather than bypassing it.'
 };
-
-const TECHNOLOGY_HERO_IMAGES: Readonly<Record<TechnologySlug, string>> = {
-  macrocore: '/images/mecanica-air.avif',
-  microkappa: '/images/cabin-hero.avif',
-  drycore: '/images/airdryer-hero.avif',
-  intekcore: '/images/intekcor-hero.avif',
-  syntapore: '/images/hero-syntapore.avif',
-  syntrax: '/images/syntrax.avif',
-  nanoforce: '/images/nanoforce-mecanico.avif',
-  thermacore: '/images/THERMACORE-CAMION.avif',
-  hydrocore: '/images/fuellseparator-hero.avif',
-  turbocore: '/images/TURBOCORE-hero.avif',
-};
-
-const APPLICATION_CONTEXT: Readonly<Record<TechnologySlug, string>> = {
-  macrocore: 'Applied where engine intake air must be controlled through primary and secondary filtration before airborne contamination reaches the combustion system.',
-  microkappa: 'Applied in operator and passenger HVAC systems where particulate control, airflow demand and cabin pressure-drop limits must be balanced.',
-  drycore: 'Applied in compressed-air and pneumatic brake circuits where moisture must be controlled before it can affect valves, actuators and pneumatic controls.',
-  intekcore: 'Applied at the air-cleaner housing and sealing boundary where housing geometry, element fit and seal loading determine whether unfiltered air can bypass the filtration element.',
-  syntapore: 'Applied across approved primary, secondary and cartridge diesel-fuel filtration stages upstream of precision pumps and injectors.',
-  syntrax: 'Applied in engine lubrication circuits where wear debris, soot agglomerates and lubricant contamination must be controlled across the service interval.',
-  nanoforce: 'Applied in fluid-power systems where cleanliness targets are established around the tolerance requirements of the most sensitive hydraulic component.',
-  thermacore: 'Applied in heavy-duty cooling circuits where coolant cleanliness, additive condition, flow and service interval must remain compatible with the approved cooling-system maintenance strategy.',
-  hydrocore: 'Applied in standard spin-on and cartridge fuel/water separators where free and emulsified water must be removed ahead of the fuel-filtration stage.',
-  turbocore: 'Applied at the turbine-style FH/FG housing and structural-assembly boundary, paired with HYDROCORE™ filtration media, where housing integrity determines whether fuel actually flows through the separation element rather than bypassing it.',
-};
-
-function technologyUrl(slug: string) {
-  return `${BASE_URL}/technologies/${slug}/`;
-}
-
-function technologyEntityUrl(slug: string) {
-  return `${technologyUrl(slug)}#technology`;
-}
-
-export function generateStaticParams() {
-  return CANONICAL_TECHNOLOGY_LIST
-    .filter((technology) => technology.slug !== 'macrocore' && technology.slug !== 'syntapore' && technology.slug !== 'syntrax' && technology.slug !== 'nanoforce')
-    .map((technology) => ({ slug: technology.slug }));
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const canonical = getCanonicalTechnology(params.slug);
-  const engineering = getTechnologyEngineering(params.slug);
-  if (!canonical || !engineering) return { title: 'Not Found', robots: { index: false, follow: false } };
-
-  const slug = canonical.slug as TechnologySlug;
-  const url = technologyUrl(slug);
-  const heroImage = `${BASE_URL}${TECHNOLOGY_HERO_IMAGES[slug]}`;
-  const title = `${canonical.name} Filtration Technology | ELIMFILTERS`;
-
-  return {
-    title,
-    description: engineering.definition,
-    keywords: [canonical.name, `${canonical.name} filtration technology`, 'ELIMFILTERS technology', 'industrial filtration technology', 'asset protection'],
-    alternates: { canonical: url },
-    openGraph: {
-      title,
-      description: engineering.definition,
-      url,
-      type: 'website',
-      siteName: 'ELIMFILTERS',
-      images: [{ url: heroImage, width: 1200, height: 630, alt: `${canonical.name} technology` }],
-    },
-    twitter: { card: 'summary_large_image', title, description: engineering.definition, images: [heroImage] },
-  };
-}
-
-function technologySchema(slug: TechnologySlug) {
-  const canonical = getCanonicalTechnology(slug);
-  const engineering = getTechnologyEngineering(slug);
-  if (!canonical || !engineering) return null;
-  const url = technologyUrl(slug);
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'TechArticle',
-    '@id': `${url}#article`,
-    headline: canonical.name,
-    name: canonical.name,
-    description: engineering.definition,
-    url,
-    author: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
-    publisher: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'ELIMFILTERS' },
-    about: {
-      '@type': 'DefinedTerm',
-      '@id': technologyEntityUrl(slug),
-      name: canonical.name,
-      description: engineering.definition,
-      url,
-      inDefinedTermSet: `${BASE_URL}/technologies/`,
-    },
-    abstract: engineering.engineeringPrinciple,
-    keywords: [canonical.name, 'industrial filtration technology', 'contamination control', 'asset protection', 'ELIMFILTERS'],
-    isPartOf: { '@type': 'WebSite', '@id': `${BASE_URL}/#website`, name: 'ELIMFILTERS', url: `${BASE_URL}/` },
-  };
-}
-
-function faqSchema(slug: TechnologySlug) {
-  const editorial = getTechnologyEditorial(slug);
-  if (!editorial) return null;
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: editorial.faq.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: { '@type': 'Answer', text: item.answer },
-    })),
-  };
-}
-
-function breadcrumbSchema(name: string, slug: TechnologySlug) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
-      { '@type': 'ListItem', position: 2, name: 'Technologies', item: `${BASE_URL}/technologies/` },
-      { '@type': 'ListItem', position: 3, name, item: technologyUrl(slug) },
-    ],
-  };
-}
-
-const sectionLabel = {
-  fontFamily: 'var(--font-mono)',
-  fontSize: '0.72rem',
-  letterSpacing: '0.18em',
-  textTransform: 'uppercase' as const,
-  color: '#FFF12D',
-  marginBottom: '0.9rem',
-};
-
-const sectionHeading = {
-  fontFamily: 'var(--font-display)',
-  fontSize: 'clamp(2rem, 4vw, 3.35rem)',
-  lineHeight: 1.05,
-  letterSpacing: '-0.035em',
-  color: '#fff',
-  margin: 0,
-};
-
-const bodyCopy = {
-  fontFamily: 'var(--font-body)',
-  fontSize: 'clamp(1rem, 1.35vw, 1.12rem)',
-  lineHeight: 1.8,
-  color: 'rgba(255,255,255,0.74)',
-};
-
-export default function TechnologyPage({ params }: Props) {
-  const canonical = getCanonicalTechnology(params.slug);
-  const engineering = getTechnologyEngineering(params.slug);
-  const editorial = getTechnologyEditorial(params.slug);
-  if (!canonical || !engineering || !editorial || canonical.slug === 'macrocore' || canonical.slug === 'syntapore' || canonical.slug === 'syntrax' || canonical.slug === 'nanoforce') notFound();
-
-  const slug = canonical.slug as TechnologySlug;
-  const technologyAsset = TECHNOLOGY_ASSETS[slug];
-  const technologyHero = TECHNOLOGY_HERO_IMAGES[slug];
-  const system = getProtectionSystemBySlug(canonical.domain);
-
-  const articleSchema = technologySchema(slug);
-  const questionsSchema = faqSchema(slug);
-  const breadcrumbs = breadcrumbSchema(canonical.name, slug);
-
-  return (
-    <main style={{ background: '#000', color: '#fff' }}>
-      {articleSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />}
-      {questionsSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(questionsSchema) }} />}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
-
-      <section aria-label={`${canonical.name} technology hero`} style={{ position: 'relative', minHeight: 'clamp(560px, 82vh, 860px)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', backgroundImage: `url(${technologyHero})`, backgroundSize: 'cover', backgroundPosition: 'center center', backgroundRepeat: 'no-repeat' }}>
-        <img src={technologyAsset} alt={canonical.name} style={{ position: 'relative', zIndex: 2, width: 'min(520px, 48vw)', height: 'auto', display: 'block', mixBlendMode: 'screen', filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.5))' }} />
-      </section>
-
-      <nav aria-label="Breadcrumb" style={{ borderTop: '1px solid rgba(255,241,45,0.14)', borderBottom: '1px solid rgba(255,255,255,0.07)', padding: '1rem 2rem' }}>
-        <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', gap: '0.7rem', alignItems: 'center', fontFamily: 'var(--font-mono)', fontSize: '0.7rem', letterSpacing: '0.08em' }}>
-          <Link href="/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>HOME</Link><span style={{ color: 'rgba(255,255,255,0.25)' }}>/</span><Link href="/technologies/" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>TECHNOLOGIES</Link><span style={{ color: 'rgba(255,255,255,0.25)' }}>/</span><span style={{ color: '#FFF12D' }}>{canonical.name}</span>
-        </div>
-      </nav>
-
-      <section style={{ padding: '6.5rem 2rem 5.5rem' }}>
-        <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.82fr) minmax(0, 1.18fr)', gap: 'clamp(3rem, 7vw, 7rem)', alignItems: 'start' }} className="technology-intro-grid">
-          <div><div style={sectionLabel}>FILTRATION TECHNOLOGY</div><h1 style={{ ...sectionHeading, fontSize: 'clamp(2.8rem, 6vw, 5.2rem)' }}>{canonical.name}</h1><p style={{ ...bodyCopy, marginTop: '1.3rem', color: '#fff', fontWeight: 600 }}>{canonical.role}</p></div>
-          <div><p style={{ ...bodyCopy, fontSize: 'clamp(1.1rem, 1.8vw, 1.34rem)', color: 'rgba(255,255,255,0.9)', marginTop: 0 }}>{engineering.definition}</p><p style={{ ...bodyCopy, marginTop: '1.5rem' }}>{APPLICATION_CONTEXT[slug]}</p></div>
-        </div>
-      </section>
-
-      <TechnologyEditorial editorial={editorial} />
-
-      {system && <section style={{ padding: '6rem 2rem', borderTop: '1px solid rgba(255,255,255,0.07)' }}><div style={{ maxWidth: '1240px', margin: '0 auto' }}><div style={sectionLabel}>SYSTEM INTEGRATION</div><div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 'clamp(3rem, 7vw, 7rem)', alignItems: 'start' }} className="technology-system-grid"><div><h2 style={sectionHeading}>{system.name}</h2><Link href={`/systems/${system.slug}/`} style={{ display: 'inline-block', marginTop: '1.6rem', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.08em', color: '#FFF12D', textDecoration: 'none', borderBottom: '1px solid rgba(255,241,45,0.45)', paddingBottom: '0.25rem' }}>EXPLORE PROTECTION SYSTEM</Link></div><div><p style={{ ...bodyCopy, marginTop: 0, color: 'rgba(255,255,255,0.9)' }}>{system.overview}</p><p style={{ ...bodyCopy, marginTop: '1.4rem' }}>{system.engineeringPrinciple}</p></div></div></div></section>}
-
-      <section style={{ padding: '5.5rem 2rem', borderTop: '1px solid rgba(255,241,45,0.18)', background: 'linear-gradient(180deg, rgba(255,241,45,0.035), #000)' }}><div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '2rem', alignItems: 'center' }} className="technology-cta-grid"><div><div style={sectionLabel}>APPLICATION SUPPORT</div><h2 style={{ ...sectionHeading, maxWidth: '760px' }}>Bring us the application, duty cycle and failure pattern — not just the part number.</h2><p style={{ ...bodyCopy, maxWidth: '780px', marginTop: '1.2rem' }}>Use Part Search when the application is already known. When the issue is repeated contamination, short service life, component exposure or uncertain filtration architecture, use the Knowledge Center as the technical path into an application review.</p></div><div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', minWidth: '220px' }}><a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ background: '#FFF12D', color: '#000', textDecoration: 'none', textAlign: 'center', padding: '1rem 1.35rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em' }}>FIND MY PART</a><Link href="/knowledge-center/" style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#fff', textDecoration: 'none', textAlign: 'center', padding: '1rem 1.35rem', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.1em' }}>TECHNICAL REVIEW PATH</Link></div></div></section>
-
-      <style>{`@media (max-width: 860px) {.technology-intro-grid,.technology-system-grid,.technology-cta-grid { grid-template-columns: 1fr !important; }}`}</style>
-    </main>
-  );
+function technologyUrl(slug:string){return `${BASE_URL}/technologies/${slug}/`;}
+function technologyEntityUrl(slug:string){return `${technologyUrl(slug)}#technology`;}
+export function generateStaticParams(){return CANONICAL_TECHNOLOGY_LIST.filter(t=>!['macrocore','microkappa','syntapore','syntrax','nanoforce'].includes(t.slug)).map(t=>({slug:t.slug}));}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const canonical=getCanonicalTechnology(params.slug);const engineering=getTechnologyEngineering(params.slug);if(!canonical||!engineering)return{title:'Not Found',robots:{index:false,follow:false}};const slug=canonical.slug as TechnologySlug;const url=technologyUrl(slug);const heroImage=`${BASE_URL}${TECHNOLOGY_HERO_IMAGES[slug]}`;const title=`${canonical.name} Filtration Technology | ELIMFILTERS`;return{title,description:engineering.definition,keywords:[canonical.name,`${canonical.name} filtration technology`,'ELIMFILTERS technology','industrial filtration technology','asset protection'],alternates:{canonical:url},openGraph:{title,description:engineering.definition,url,type:'website',siteName:'ELIMFILTERS',images:[{url:heroImage,width:1200,height:630,alt:`${canonical.name} technology`}]},twitter:{card:'summary_large_image',title,description:engineering.definition,images:[heroImage]}};}
+function technologySchema(slug:TechnologySlug){const canonical=getCanonicalTechnology(slug);const engineering=getTechnologyEngineering(slug);if(!canonical||!engineering)return null;const url=technologyUrl(slug);return{'@context':'https://schema.org','@type':'TechArticle','@id':`${url}#article`,headline:canonical.name,name:canonical.name,description:engineering.definition,url,author:{'@type':'Organization','@id':`${BASE_URL}/#organization`,name:'ELIMFILTERS'},publisher:{'@type':'Organization','@id':`${BASE_URL}/#organization`,name:'ELIMFILTERS'},about:{'@type':'DefinedTerm','@id':technologyEntityUrl(slug),name:canonical.name,description:engineering.definition,url,inDefinedTermSet:`${BASE_URL}/technologies/`},abstract:engineering.engineeringPrinciple,keywords:[canonical.name,'industrial filtration technology','contamination control','asset protection','ELIMFILTERS'],isPartOf:{'@type':'WebSite','@id':`${BASE_URL}/#website`,name:'ELIMFILTERS',url:`${BASE_URL}/`}};}
+function faqSchema(slug:TechnologySlug){const editorial=getTechnologyEditorial(slug);if(!editorial)return null;return{'@context':'https://schema.org','@type':'FAQPage',mainEntity:editorial.faq.map(item=>({'@type':'Question',name:item.question,acceptedAnswer:{'@type':'Answer',text:item.answer}}))};}
+function breadcrumbSchema(name:string,slug:TechnologySlug){return{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:`${BASE_URL}/`},{'@type':'ListItem',position:2,name:'Technologies',item:`${BASE_URL}/technologies/`},{'@type':'ListItem',position:3,name,item:technologyUrl(slug)}]};}
+const sectionLabel={fontFamily:'var(--font-mono)',fontSize:'0.72rem',letterSpacing:'0.18em',textTransform:'uppercase' as const,color:'#FFF12D',marginBottom:'0.9rem'};
+const sectionHeading={fontFamily:'var(--font-display)',fontSize:'clamp(2rem, 4vw, 3.35rem)',lineHeight:1.05,letterSpacing:'-0.035em',color:'#fff',margin:0};
+const bodyCopy={fontFamily:'var(--font-body)',fontSize:'clamp(1rem, 1.35vw, 1.12rem)',lineHeight:1.8,color:'rgba(255,255,255,0.74)'};
+export default function TechnologyPage({params}:Props){
+ const canonical=getCanonicalTechnology(params.slug);const engineering=getTechnologyEngineering(params.slug);const editorial=getTechnologyEditorial(params.slug);
+ if(!canonical||!engineering||!editorial||['macrocore','microkappa','syntapore','syntrax','nanoforce'].includes(canonical.slug))notFound();
+ const slug=canonical.slug as TechnologySlug;const technologyAsset=TECHNOLOGY_ASSETS[slug];const technologyHero=TECHNOLOGY_HERO_IMAGES[slug];const system=getProtectionSystemBySlug(canonical.domain);const articleSchema=technologySchema(slug);const questionsSchema=faqSchema(slug);const breadcrumbs=breadcrumbSchema(canonical.name,slug);
+ return <main style={{background:'#000',color:'#fff'}}>
+  {articleSchema&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(articleSchema)}}/>}{questionsSchema&&<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(questionsSchema)}}/>}<script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbs)}}/>
+  <section aria-label={`${canonical.name} technology hero`} style={{position:'relative',minHeight:'clamp(560px, 82vh, 860px)',display:'flex',alignItems:'center',justifyContent:'center',overflow:'hidden',backgroundImage:`url(${technologyHero})`,backgroundSize:'cover',backgroundPosition:'center center',backgroundRepeat:'no-repeat'}}><img src={technologyAsset} alt={canonical.name} style={{position:'relative',zIndex:2,width:'min(520px, 48vw)',height:'auto',display:'block',mixBlendMode:'screen',filter:'drop-shadow(0 2px 12px rgba(0,0,0,0.5))'}}/></section>
+  <nav aria-label="Breadcrumb" style={{borderTop:'1px solid rgba(255,241,45,0.14)',borderBottom:'1px solid rgba(255,255,255,0.07)',padding:'1rem 2rem'}}><div style={{maxWidth:'1240px',margin:'0 auto',display:'flex',gap:'0.7rem',alignItems:'center',fontFamily:'var(--font-mono)',fontSize:'0.7rem',letterSpacing:'0.08em'}}><Link href="/" style={{color:'rgba(255,255,255,0.5)',textDecoration:'none'}}>HOME</Link><span style={{color:'rgba(255,255,255,0.25)'}}>/</span><Link href="/technologies/" style={{color:'rgba(255,255,255,0.5)',textDecoration:'none'}}>TECHNOLOGIES</Link><span style={{color:'rgba(255,255,255,0.25)'}}>/</span><span style={{color:'#FFF12D'}}>{canonical.name}</span></div></nav>
+  <section style={{padding:'6.5rem 2rem 5.5rem'}}><div style={{maxWidth:'1240px',margin:'0 auto',display:'grid',gridTemplateColumns:'minmax(0, 0.82fr) minmax(0, 1.18fr)',gap:'clamp(3rem, 7vw, 7rem)',alignItems:'start'}} className="technology-intro-grid"><div><div style={sectionLabel}>FILTRATION TECHNOLOGY</div><h1 style={{...sectionHeading,fontSize:'clamp(2.8rem, 6vw, 5.2rem)'}}>{canonical.name}</h1><p style={{...bodyCopy,marginTop:'1.3rem',color:'#fff',fontWeight:600}}>{canonical.role}</p></div><div><p style={{...bodyCopy,fontSize:'clamp(1.1rem, 1.8vw, 1.34rem)',color:'rgba(255,255,255,0.9)',marginTop:0}}>{engineering.definition}</p><p style={{...bodyCopy,marginTop:'1.5rem'}}>{APPLICATION_CONTEXT[slug]}</p></div></div></section>
+  <TechnologyEditorial editorial={editorial}/>
+  {system&&<section style={{padding:'6rem 2rem',borderTop:'1px solid rgba(255,255,255,0.07)'}}><div style={{maxWidth:'1240px',margin:'0 auto'}}><div style={sectionLabel}>SYSTEM INTEGRATION</div><div style={{display:'grid',gridTemplateColumns:'0.9fr 1.1fr',gap:'clamp(3rem, 7vw, 7rem)',alignItems:'start'}} className="technology-system-grid"><div><h2 style={sectionHeading}>{system.name}</h2><Link href={`/systems/${system.slug}/`} style={{display:'inline-block',marginTop:'1.6rem',fontFamily:'var(--font-mono)',fontSize:'0.72rem',letterSpacing:'0.08em',color:'#FFF12D',textDecoration:'none',borderBottom:'1px solid rgba(255,241,45,0.45)',paddingBottom:'0.25rem'}}>EXPLORE PROTECTION SYSTEM</Link></div><div><p style={{...bodyCopy,marginTop:0,color:'rgba(255,255,255,0.9)'}}>{system.overview}</p><p style={{...bodyCopy,marginTop:'1.4rem'}}>{system.engineeringPrinciple}</p></div></div></div></section>}
+  <section style={{padding:'5.5rem 2rem',borderTop:'1px solid rgba(255,241,45,0.18)',background:'linear-gradient(180deg, rgba(255,241,45,0.035), #000)'}}><div style={{maxWidth:'1240px',margin:'0 auto',display:'grid',gridTemplateColumns:'1fr auto',gap:'2rem',alignItems:'center'}} className="technology-cta-grid"><div><div style={sectionLabel}>APPLICATION SUPPORT</div><h2 style={{...sectionHeading,maxWidth:'760px'}}>Bring us the application, duty cycle and failure pattern — not just the part number.</h2><p style={{...bodyCopy,maxWidth:'780px',marginTop:'1.2rem'}}>Use Part Search when the application is already known. When the issue is repeated contamination, short service life, component exposure or uncertain filtration architecture, use the Knowledge Center as the technical path into an application review.</p></div><div style={{display:'flex',flexDirection:'column',gap:'0.8rem',minWidth:'220px'}}><a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{background:'#FFF12D',color:'#000',textDecoration:'none',textAlign:'center',padding:'1rem 1.35rem',fontFamily:'var(--font-display)',fontWeight:700,fontSize:'0.8rem',letterSpacing:'0.1em'}}>FIND MY PART</a><Link href="/knowledge-center/" style={{border:'1px solid rgba(255,255,255,0.2)',color:'#fff',textDecoration:'none',textAlign:'center',padding:'1rem 1.35rem',fontFamily:'var(--font-display)',fontWeight:700,fontSize:'0.8rem',letterSpacing:'0.1em'}}>TECHNICAL REVIEW PATH</Link></div></div></section>
+  <style>{`@media (max-width: 860px) {.technology-intro-grid,.technology-system-grid,.technology-cta-grid { grid-template-columns: 1fr !important; }}`}</style>
+ </main>;
 }
