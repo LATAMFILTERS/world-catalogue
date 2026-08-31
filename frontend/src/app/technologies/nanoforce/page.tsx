@@ -27,17 +27,28 @@ export const metadata: Metadata = {
     url: URL,
     type: 'article',
     siteName: 'ELIMFILTERS',
-    images: [{ url: 'https://elimfilters.com/images/nanoforce-mecanico.avif', width: 1200, height: 630, alt: 'NANOFORCE hydraulic filtration technology — ELIMFILTERS' }],
+    images: [{ url: 'https://elimfilters.com/images/nanoforce-hero.avif', width: 1200, height: 630, alt: 'NANOFORCE hydraulic filtration technology — ELIMFILTERS' }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'NANOFORCE™ Hydraulic Filtration Technology | ELIMFILTERS',
     description: 'Hydraulic filtration architecture for cleanliness control around precision fluid-power components.',
-    images: ['https://elimfilters.com/images/nanoforce-mecanico.avif'],
+    images: ['https://elimfilters.com/images/nanoforce-hero.avif'],
   },
 };
 
 export default function NanoforcePage() {
-  return <NanoforceStablePage />;
+  return <>
+    <style dangerouslySetInnerHTML={{__html: `
+      #main-content > section:first-of-type {
+        background-image: url('/images/nanoforce-hero.avif');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      #main-content > section:first-of-type > img:first-of-type { display: none; }
+    `}} />
+    <NanoforceStablePage />
+  </>;
 }
