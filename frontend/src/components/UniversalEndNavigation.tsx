@@ -138,23 +138,24 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
   const [hydrated, setHydrated] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const language = (i18n.resolvedLanguage || i18n.language || 'en').slice(0, 2);
+  const isMacrocore = pathname === '/technologies/macrocore' || pathname === '/technologies/macrocore/';
 
   useEffect(() => {
     setHydrated(true);
   }, []);
 
   useEffect(() => {
-    if (!hydrated || !navRef.current) return;
+    if (isMacrocore || !hydrated || !navRef.current) return;
     const footer = document.querySelector('footer');
     if (!footer) return;
     const parent = footer.parentElement;
     if (parent && navRef.current.parentElement !== parent) {
       parent.insertBefore(navRef.current, footer);
     }
-  }, [hydrated]);
+  }, [hydrated, isMacrocore]);
 
   useEffect(() => {
-    if (!config || !hydrated || language !== 'en') return;
+    if (isMacrocore || !config || !hydrated || language !== 'en') return;
     const main = document.querySelector('main');
     if (!main) return;
 
@@ -177,7 +178,7 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
         delete section.dataset.universalEndNavHidden;
       });
     };
-  }, [config, pathname, hydrated, language]);
+  }, [config, pathname, hydrated, language, isMacrocore]);
 
   if (!config || !hydrated || language !== 'en') return null;
 
