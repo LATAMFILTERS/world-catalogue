@@ -35,7 +35,7 @@ export function NanoforceStablePage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema)}} />
 
-    <section className={styles.hero} aria-labelledby="nanoforce-title">
+    <section className={`${styles.hero} ${styles.nanoforceHero}`} aria-labelledby="nanoforce-title">
       <img className={styles.heroBackground} src="/images/nanoforce-mecanico.avif" alt="Hydraulic filtration service environment" />
       <div className={styles.heroShade} aria-hidden="true" />
       <h1 id="nanoforce-title" className={styles.srOnly}>NANOFORCE™ Hydraulic Filtration Technology</h1>
