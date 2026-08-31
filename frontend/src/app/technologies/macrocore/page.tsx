@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { MacrocoreTechnologyPage } from '@/components/MacrocoreTechnologyPage';
+import { MacrocoreMediaEngineeringPortal } from '@/components/MacrocoreMediaEngineeringPortal';
 
 const BASE_URL = 'https://elimfilters.com';
 const URL = `${BASE_URL}/technologies/macrocore/`;
@@ -74,6 +75,7 @@ export default function MacrocorePage() {
         }
       `}</style>
       <MacrocoreTechnologyPage />
+      <MacrocoreMediaEngineeringPortal />
     </div>
   );
 }
