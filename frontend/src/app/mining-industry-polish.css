@@ -154,21 +154,23 @@ section:not([aria-labelledby]) > div > div:first-child:has(> [data-conversion-ac
   border: 1px solid #FFF12D !important;
 }
 
-/* Equipment section refinement: keep the existing layout, but force a square image and smaller equipment labels. */
+/* Equipment section refinement: preserve the source image's original aspect ratio and keep labels compact. */
 section[aria-labelledby="equipment-title"] img {
   width: 100% !important;
-  aspect-ratio: 1 / 1 !important;
+  max-width: 100% !important;
   height: auto !important;
-  object-fit: cover !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
   object-position: center center !important;
   display: block !important;
 }
 
 section[aria-labelledby="equipment-title"] [role="listitem"] span {
-  font-size: clamp(0.95rem, 1.35vw, 1.3rem) !important;
+  font-size: clamp(0.82rem, 1.05vw, 1.08rem) !important;
   line-height: 1.08 !important;
   max-width: 100% !important;
-  overflow-wrap: break-word !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
 }
 
 @media (max-width: 900px) {
