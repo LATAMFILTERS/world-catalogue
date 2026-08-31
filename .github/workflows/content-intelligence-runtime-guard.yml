@@ -1,0 +1,54 @@
+name: Content intelligence runtime guard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lib/install-content-intelligence.js'
+      - 'server-original.js'
+      - '.github/workflows/content-intelligence-runtime-guard.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: content-intelligence-runtime-main
+  cancel-in-progress: true
+
+jobs:
+  wire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Ensure runtime hook
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('server-original.js')
+          s = p.read_text()
+          hook = "require('./lib/install-content-intelligence').installContentIntelligence(app, requireAdmin);"
+          anchor = "require('./lib/install-commercial-intelligence-retry').installCommercialIntelligenceRetry();"
+          if hook not in s:
+              if anchor not in s:
+                  raise SystemExit('commercial intelligence runtime anchor missing')
+              s = s.replace(anchor, anchor + "\n" + hook, 1)
+              p.write_text(s)
+          PY
+          node --check lib/install-content-intelligence.js
+          node --check server-original.js
+          grep -F "installContentIntelligence(app, requireAdmin)" server-original.js
+      - name: Commit runtime wiring if needed
+        run: |
+          if git diff --quiet -- server-original.js; then
+            echo 'Runtime already wired'
+            exit 0
+          fi
+          git config user.name 'elimfilters-bot'
+          git config user.email 'elimfilters@gmail.com'
+          git add server-original.js
+          git commit -m 'Wire SEO GEO intelligence batch ingestion'
+          git push
