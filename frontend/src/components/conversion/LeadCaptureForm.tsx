@@ -10,6 +10,9 @@ interface LeadCaptureFormProps {
   onCancel: () => void;
 }
 
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://api.elimfilters.com').replace(/\/$/, '');
+const CAMPAIGN_KEY = 'elimfilters_campaign_attribution';
+
 const LEAD_LABELS: Record<LeadType, string> = {
   'L-1': 'Engineering Consultation',
   'L-2': 'Request a Quote',
@@ -42,6 +45,47 @@ const FIELD_CONFIG: Record<string, { label: string; type: string; placeholder: s
   teamSize: { label: 'Team Size', type: 'text', placeholder: 'Number of participants' },
 };
 
+function readCampaign() {
+  if (typeof window === 'undefined') return {};
+  try {
+    const stored = sessionStorage.getItem(CAMPAIGN_KEY);
+    return stored ? JSON.parse(stored) : {};
+  } catch {
+    return {};
+  }
+}
+
+function attributionContext() {
+  if (typeof window === 'undefined') return {};
+  const path = window.location.pathname;
+  const technologySlug = path.match(/\/technologies\/([a-z0-9-]+)/i)?.[1];
+  const systemSlug = path.match(/\/systems\/([a-z0-9-]+)/i)?.[1];
+  const industrySlug = path.match(/\/industries\/([a-z0-9-]+)/i)?.[1];
+  let landingPage: string | undefined;
+  try {
+    landingPage = sessionStorage.getItem('elimfilters_landing_page') || undefined;
+    if (!landingPage) {
+      landingPage = window.location.href;
+      sessionStorage.setItem('elimfilters_landing_page', landingPage);
+    }
+  } catch {
+    landingPage = window.location.href;
+  }
+
+  return {
+    landingPage,
+    conversionPage: window.location.href,
+    pagePath: path,
+    pageTitle: document.title,
+    referrer: document.referrer || undefined,
+    sourceDomain: window.location.hostname,
+    technologySlug,
+    systemSlug,
+    industrySlug,
+    ...readCampaign(),
+  };
+}
+
 export function LeadCaptureForm({ leadType, onSubmitted, onCancel }: LeadCaptureFormProps) {
   const fields = LEAD_FIELDS[leadType];
   const [values, setValues] = useState<Record<string, string>>(
@@ -58,10 +102,15 @@ export function LeadCaptureForm({ leadType, onSubmitted, onCancel }: LeadCapture
     setSubmitting(true);
     setError(null);
     try {
-      const res = await fetch('/api/lead-capture', {
+      const res = await fetch(`${API_URL}/api/lead-capture`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ leadType, fields: values }),
+        body: JSON.stringify({
+          leadType,
+          fields: values,
+          conversionAction: 'lead_capture_submit',
+          ...attributionContext(),
+        }),
       });
       if (!res.ok) throw new Error('Submission failed');
       onSubmitted();
