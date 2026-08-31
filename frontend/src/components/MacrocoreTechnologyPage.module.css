@@ -576,6 +576,11 @@
     min-height: clamp(380px, 58svh, 540px);
   }
 
+  .nanoforceHero {
+    min-height: 0;
+    height: clamp(220px, 68vw, 340px);
+  }
+
   .heroMark {
     width: min(440px, 88vw);
     clip-path: inset(33% 2% 40% 2%);
