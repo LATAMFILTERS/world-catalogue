@@ -39,6 +39,10 @@ const questions = [
     a: 'Abrasive mineral dust increases loading on the air-intake system. If contamination reaches protected engine interfaces, it can contribute to wear and loss of performance. Air-cleaner capacity, restriction growth, sealing integrity and service practice therefore matter together.',
   },
   {
+    q: 'What failure mechanisms can mining dust create?',
+    a: 'Dust can contribute to abrasive wear, rising restriction, impaired heat rejection and interference with sensors or exposed control components. The dominant mechanism depends on where contamination enters, which system carries it and which interface is vulnerable.',
+  },
+  {
     q: 'Why is hydraulic cleanliness important in excavators and haul trucks?',
     a: 'Mining hydraulic systems rely on pumps, valves, actuators and control surfaces operating under high load. Contamination can interfere with those precision interfaces, so hydraulic filtration must be selected around fluid cleanliness requirements, system sensitivity, operating pressure and service conditions.',
   },
@@ -76,7 +80,9 @@ export function MiningIndustryPage() {
           { '@type': 'Thing', name: 'Mining filtration systems' },
           { '@type': 'Thing', name: 'Mining equipment contamination control' },
           { '@type': 'Thing', name: 'Mining asset protection' },
+          { '@type': 'Thing', name: 'Mining equipment availability' },
           { '@type': 'Thing', name: 'Mining equipment total cost of ownership' },
+          { '@type': 'Thing', name: 'Mining dust failure mechanisms' },
         ],
         breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
       },
@@ -214,16 +220,16 @@ export function MiningIndustryPage() {
         <div style={stakesGrid}>
           <div>
             <p style={eyebrow}>WHAT CONTAMINATION PUTS AT RISK</p>
-            <h2 style={impactTitle}>Protect the operating chain, not just the filter change.</h2>
+            <h2 style={impactTitle}>Protect the operating chain before contamination becomes downtime.</h2>
           </div>
           <div style={stakesList}>
             {[
-              ['Component Life', 'Limit contamination-driven wear at critical interfaces.'],
+              ['Component Wear', 'Limit abrasive contamination at bearings, pumps, valves and other precision interfaces.'],
+              ['Airflow & Restriction', 'Manage particulate loading before rising restriction changes airflow or service demand.'],
               ['Hydraulic Reliability', 'Protect pumps, valves, actuators and control surfaces around the required fluid cleanliness.'],
-              ['Fuel-System Integrity', 'Control particulate and water contamination across the fuel-handling path.'],
-              ['Service Discipline', 'Align filter capacity and maintenance intervals with real operating conditions.'],
+              ['Fuel-System Integrity', 'Control particulate and water contamination across storage, transfer and field refueling.'],
+              ['Thermal Control', 'Keep contamination from becoming an additional burden on cooling surfaces and heat rejection.'],
               ['Equipment Availability', 'Reduce avoidable contamination events that can remove productive assets from service.'],
-              ['Maintenance Predictability', 'Make protection decisions from documented operating conditions rather than generic assumptions.'],
             ].map(([title, text]) => (
               <div key={title} style={stakeRow}>
                 <h3 style={stakeTitle}>{title}</h3>
@@ -237,12 +243,25 @@ export function MiningIndustryPage() {
       <section style={tcoSection} aria-labelledby="mining-tco-title">
         <div style={tcoGrid}>
           <div>
-            <p style={eyebrowDark}>AVAILABILITY & TOTAL COST OF OWNERSHIP</p>
+            <p style={eyebrow}>AVAILABILITY & TOTAL COST OF OWNERSHIP</p>
             <h2 id="mining-tco-title" style={tcoTitle}>The filter is inexpensive. The component it protects is not.</h2>
+            <p style={tcoIntro}>Mining filtration should be judged against component sensitivity, maintenance consequence and equipment availability—not filter price alone.</p>
           </div>
           <div>
-            <p style={tcoLead}>Mining filtration should be evaluated against the value and sensitivity of the protected asset. Consumable filters sit upstream of engines, hydraulic assemblies, injectors, bearings and other components whose failure can create far greater maintenance and production consequences.</p>
-            <div style={tcoFlow}>
+            <p style={tcoLead}>A practical protection hierarchy separates long-life asset structures, high-value serviceable components and consumable protection elements. The categories are a decision aid: they show why a relatively low-cost filtration element can matter to much higher-value interfaces.</p>
+            <div style={valueList}>
+              {[
+                ['Long-life asset structures', 'Frames, housings, major castings and structural assemblies intended to remain with the machine for long periods.'],
+                ['High-value serviceable components', 'Turbochargers, injectors, pumps, valves, transmissions, final drives and other assemblies with significant service consequence.'],
+                ['Consumable protection elements', 'Filters, seals and service fluids replaced through the lifecycle to control contamination before it reaches sensitive interfaces.'],
+              ].map(([title, text], index) => (
+                <article key={title} style={valueRow}>
+                  <span style={valueNumber}>{String(index + 1).padStart(2, '0')}</span>
+                  <div><h3 style={valueTitle}>{title}</h3><p style={valueText}>{text}</p></div>
+                </article>
+              ))}
+            </div>
+            <div style={tcoFlow} aria-label="Contamination to lifecycle cost pathway">
               {[
                 ['01', 'Contamination ingress'],
                 ['02', 'Wear / restriction / thermal load'],
@@ -396,15 +415,21 @@ const stakesList: CSSProperties = { borderTop: '1px solid rgba(255,255,255,0.14)
 const stakeRow: CSSProperties = { padding: '1.4rem 0', borderBottom: '1px solid rgba(255,255,255,0.14)', display: 'grid', gridTemplateColumns: 'minmax(min(150px, 100%), 0.55fr) minmax(0, 1fr)', gap: '1.3rem' };
 const stakeTitle: CSSProperties = { fontFamily: displayFont, fontSize: '0.82rem', letterSpacing: '0.06em', textTransform: 'uppercase', margin: 0, color: '#FFF12D' };
 const stakeText: CSSProperties = { ...bodyText, fontSize: '0.92rem', color: 'rgba(255,255,255,0.75)' };
-const tcoSection: CSSProperties = { padding: 'clamp(4.5rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: '#FFF12D', color: '#080808' };
+const tcoSection: CSSProperties = { padding: 'clamp(4.5rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'radial-gradient(circle at 100% 0%, rgba(255,241,45,0.08), transparent 32%), #020202', color: '#fff', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
 const tcoGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'clamp(2.5rem, 7vw, 6rem)', alignItems: 'start' };
-const tcoTitle: CSSProperties = { ...sectionTitle, color: '#080808', fontSize: 'clamp(2.5rem, 5.2vw, 4.8rem)' };
-const tcoLead: CSSProperties = { color: 'rgba(0,0,0,0.76)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)', lineHeight: 1.65, fontWeight: 600, margin: 0, maxWidth: '620px' };
-const tcoFlow: CSSProperties = { borderTop: '1px solid rgba(0,0,0,0.22)', marginTop: '2rem' };
-const tcoRow: CSSProperties = { display: 'grid', gridTemplateColumns: '42px minmax(0,1fr)', gap: '1rem', alignItems: 'center', padding: '0.9rem 0', borderBottom: '1px solid rgba(0,0,0,0.22)' };
-const tcoNumber: CSSProperties = { fontFamily: displayFont, fontSize: '0.66rem', letterSpacing: '0.1em', color: 'rgba(0,0,0,0.58)' };
-const tcoRowText: CSSProperties = { fontFamily: displayFont, fontSize: '0.92rem', textTransform: 'uppercase', letterSpacing: '0.02em' };
-const tcoLink: CSSProperties = { display: 'inline-block', marginTop: '1.5rem', color: '#080808', textDecoration: 'none', borderBottom: '2px solid #080808', paddingBottom: '0.25rem', fontFamily: displayFont, fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.1em' };
+const tcoTitle: CSSProperties = { ...sectionTitle, color: '#fff', fontSize: 'clamp(2.5rem, 5.2vw, 4.8rem)' };
+const tcoIntro: CSSProperties = { ...bodyText, fontSize: '1rem', maxWidth: '560px', marginTop: '1.4rem', color: 'rgba(255,255,255,0.66)' };
+const tcoLead: CSSProperties = { color: 'rgba(255,255,255,0.82)', fontSize: 'clamp(1.05rem, 1.6vw, 1.28rem)', lineHeight: 1.65, fontWeight: 600, margin: 0, maxWidth: '650px' };
+const valueList: CSSProperties = { borderTop: '1px solid rgba(255,255,255,0.14)', marginTop: '2rem' };
+const valueRow: CSSProperties = { display: 'grid', gridTemplateColumns: '44px minmax(0,1fr)', gap: '1rem', padding: '1.25rem 0', borderBottom: '1px solid rgba(255,255,255,0.14)' };
+const valueNumber: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.68rem', letterSpacing: '0.1em', paddingTop: '0.15rem' };
+const valueTitle: CSSProperties = { fontFamily: displayFont, color: '#fff', fontSize: '0.95rem', textTransform: 'uppercase', margin: '0 0 0.45rem' };
+const valueText: CSSProperties = { ...bodyText, fontSize: '0.9rem', color: 'rgba(255,255,255,0.62)' };
+const tcoFlow: CSSProperties = { borderTop: '1px solid rgba(255,241,45,0.28)', marginTop: '2rem' };
+const tcoRow: CSSProperties = { display: 'grid', gridTemplateColumns: '42px minmax(0,1fr)', gap: '1rem', alignItems: 'center', padding: '0.9rem 0', borderBottom: '1px solid rgba(255,241,45,0.18)' };
+const tcoNumber: CSSProperties = { fontFamily: displayFont, fontSize: '0.66rem', letterSpacing: '0.1em', color: '#FFF12D' };
+const tcoRowText: CSSProperties = { fontFamily: displayFont, fontSize: '0.92rem', textTransform: 'uppercase', letterSpacing: '0.02em', color: '#fff' };
+const tcoLink: CSSProperties = { display: 'inline-block', marginTop: '1.5rem', color: '#FFF12D', textDecoration: 'none', borderBottom: '1px solid rgba(255,241,45,0.6)', paddingBottom: '0.25rem', fontFamily: displayFont, fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.1em' };
 const decisionSection: CSSProperties = { padding: 'clamp(4.5rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
 const decisionInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const decisionGrid: CSSProperties = { marginTop: '2.8rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(190px, 100%), 1fr))', gap: '1px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.1)' };
