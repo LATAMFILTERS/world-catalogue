@@ -53,6 +53,7 @@ process.on('uncaughtException', (err) => console.error('[uncaughtException]', er
 process.on('unhandledRejection', (reason) => console.error('[unhandledRejection]', reason));
 
 const app = express();
+require('./lib/install-commercial-intelligence').installCommercialIntelligence(app);
 app.set('trust proxy', 1);
 
 // Mounts /api/bot/protocol (+ /image) once, explicitly, right after the app
