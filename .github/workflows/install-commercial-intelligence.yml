@@ -1,0 +1,46 @@
+name: Install commercial intelligence ingestion hook
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lib/install-commercial-intelligence.js'
+      - '.github/workflows/install-commercial-intelligence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Install ingestion hook
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('server-original.js')
+          text = p.read_text()
+          hook = "const app = express();\nrequire('./lib/install-commercial-intelligence').installCommercialIntelligence(app);"
+          if hook not in text:
+              needle = "const app = express();"
+              if needle not in text:
+                  raise SystemExit('Express app construction marker not found')
+              text = text.replace(needle, hook, 1)
+              p.write_text(text)
+          PY
+      - name: Remove temporary installer and commit
+        run: |
+          rm -f .github/workflows/install-commercial-intelligence.yml
+          git config user.name "ELIMFILTERS Automation"
+          git config user.email "automation@elimfilters.com"
+          git add server-original.js .github/workflows/install-commercial-intelligence.yml
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Wire commercial intelligence ingestion into API runtime"
+          git push origin main
