@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
+import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/agriculture/`;
@@ -145,6 +146,8 @@ export function AgricultureIndustryPage() {
           <p style={principleText}>Agricultural filtration should be selected around the field environment, machine duty, contamination source, protected system and service window—not by equipment category alone.</p>
         </div>
       </section>
+
+      <IndustryFilterCarousel dutyClass="HD" industryName="Agriculture" />
 
       <section style={continuitySection} aria-labelledby="continuity-title">
         <div style={contentWidth}>
