@@ -5,7 +5,7 @@ const BASE_URL = 'https://elimfilters.com';
 const URL = `${BASE_URL}/technologies/macrocore/`;
 
 export const metadata: Metadata = {
-  title: 'MACROCORE™ Engine Air Filtration Technology | ELIMFILTERS',
+  title: 'MACROCORE Engine Air Filtration | ELIMFILTERS',
   description: 'MACROCORE™ is the ELIMFILTERS engine-air filtration architecture for primary and secondary intake protection, connecting airflow demand, restriction, sealing integrity, dust loading and validated application evidence.',
   keywords: [
     'MACROCORE',
