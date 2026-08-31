@@ -1,6 +1,7 @@
 import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
 import { MiningIndustryPageV2 } from '@/components/MiningIndustryPageV2';
+import { AgricultureIndustryPage } from '@/components/AgricultureIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -25,7 +26,7 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
 };
 
 const industryMetaDescription: Record<string, string> = {
-  Agriculture: 'Asset-protection and contamination-control architecture for tractors, combines, harvesters, sprayers and agricultural support equipment operating in dust, crop residue, heat and seasonal duty cycles.',
+  Agriculture: 'Agricultural filtration systems for tractors, combines, harvesters, sprayers, irrigation engines and field support equipment operating in soil dust, crop residue, heat and seasonal duty cycles.',
   Automotive: 'Asset-protection and contamination-control architecture for passenger vehicles, light commercial vehicles, delivery fleets, engines, fuel systems, lubrication circuits and cabin environments.',
   'Bus Coach': 'Asset-protection and contamination-control architecture for transit buses, school buses, coaches and passenger fleets operating under stop-and-go duty, urban particulate exposure and extended daily service.',
   Construction: 'Asset-protection and contamination-control architecture for excavators, loaders, dozers, graders and other construction equipment operating in dust, vibration, heat and hydraulic duty.',
@@ -56,7 +57,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = industryMetaDescription[item.name] || item.description;
   const title = item.name === 'Mining'
     ? 'Mining Filtration Systems | Heavy-Duty Equipment | ELIMFILTERS'
-    : `${item.title} | ELIMFILTERS Asset Protection`;
+    : item.name === 'Agriculture'
+      ? 'Agricultural Filtration Systems | Tractors & Combines | ELIMFILTERS'
+      : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -96,6 +99,10 @@ export default function IndustryPage({ params }: Props) {
 
   if (item.name === 'Mining') {
     return <MiningIndustryPageV2 />;
+  }
+
+  if (item.name === 'Agriculture') {
+    return <AgricultureIndustryPage />;
   }
 
   const media = industryMedia[item.name] || {};
