@@ -5,39 +5,22 @@ import Link from 'next/link';
 import { PRODUCT_FAMILIES, type FamilyKey } from '@/lib/product-families-data';
 
 const CORE_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'cabin-filters'];
-// Fuel water separators and hydraulic filters apply across every HD industry (marine, oil & gas,
-// mining, manufacturing, etc.) — hydraulic systems aren't limited to on-road fleets.
 const HD_EXTRA_KEYS: FamilyKey[] = ['fuel-water-separators', 'hydraulic-filters'];
-// Air dryer (pneumatic brake systems) and coolant filters only apply to on-road fleet-type
-// industries with air-brake systems and closed cooling circuits in daily service.
 const FLEET_ONLY_KEYS: FamilyKey[] = ['air-dryer-filters', 'coolant-filters'];
+const POWER_GENERATION_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'fuel-water-separators', 'coolant-filters'];
 const FLEET_INDUSTRIES = ['Trucks Fleets', 'Waste Municipal', 'Bus Coach'];
-// These industries' equipment doesn't carry an operator cabin filtration position.
-const NO_CABIN_INDUSTRIES = ['Manufacturing', 'Oil Gas'];
-// Power Generation equipment doesn't carry a hydraulic filtration position.
+const NO_CABIN_INDUSTRIES = ['Manufacturing', 'Oil Gas', 'Power Generation'];
 const NO_HYDRAULIC_INDUSTRIES = ['Power Generation'];
 
-// Approved ELIMFILTERS product renders, hosted on Cloudflare R2 (elimfilters-renders bucket).
 const R2_BASE = 'https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20';
-
-// HD-class renders (EA1/EF9/EL8/EC1/ES9/ED4/EW7), assigned per industry so each market shows a
-// different physical part instead of the same photo everywhere. Only Marine's air filter has a
-// genuine industry signal behind it — the render is literally branded "MARINECLEAN". Everything
-// else is rotated through the SKUs the bucket actually has for that category (no per-industry
-// engineering data exists to justify a "correct" match beyond that), and Air Dryer / Coolant have
-// only one approved render each in the whole bucket, so every industry shares those two.
 const AIR_DRYER_IMAGE = `${R2_BASE}/ED43571-THERMACORE-approved-opt.png`;
 const COOLANT_IMAGE = `${R2_BASE}/EW74685-WF2077-2of20-approved-opt.png`;
 
-// Assignments below are the ones you sent directly (SKU → industry). Where a category still had
-// no assignment for an industry, it is filled from whatever was left unused in that category's
-// pool (noted inline as "gap fill"), since only Marine (MARINECLEAN) and the ones you listed have
-// a confirmed industry match — everything marked "gap fill" is still a best-effort placeholder.
 const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> = {
   Mining: {
     'primary-air': `${R2_BASE}/EA17557-MACROCORE-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF90541-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL80352-SYNTRAX-approved-opt.png`, // gap fill
+    'oil-filters': `${R2_BASE}/EL80352-SYNTRAX-approved-opt.png`,
     'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`,
     'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`,
@@ -45,42 +28,40 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
   Agriculture: {
     'primary-air': `${R2_BASE}/EA15292-AF55014-2of20-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF96745-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL80422-SYNTRAX-approved-opt.png`, // gap fill
+    'oil-filters': `${R2_BASE}/EL80422-SYNTRAX-approved-opt.png`,
     'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`,
-    'fuel-water-separators': `${R2_BASE}/ES91242-HYDROCORE-approved-opt.png`, // gap fill
-    'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`, // gap fill
+    'fuel-water-separators': `${R2_BASE}/ES91242-HYDROCORE-approved-opt.png`,
+    'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`,
   },
   Construction: {
     'primary-air': `${R2_BASE}/EA14603-MACROCORE-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF90345-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL80428-LF3970-2of20-approved-opt.png`, // gap fill
+    'oil-filters': `${R2_BASE}/EL80428-LF3970-2of20-approved-opt.png`,
     'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`,
     'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`,
   },
   'Oil Gas': {
-    'primary-air': `${R2_BASE}/EA19371-MACROCORE-approved-opt.png`, // gap fill
+    'primary-air': `${R2_BASE}/EA19371-MACROCORE-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF91315-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL80779-LF16243-2of20-approved-opt.png`, // gap fill
-    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`, // gap fill
-    'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`, // gap fill
-    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`, // gap fill
+    'oil-filters': `${R2_BASE}/EL80779-LF16243-2of20-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91432-HYDROCORE-approved-opt.png`,
+    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`,
   },
   Marine: {
     'primary-air': `${R2_BASE}/EA15189-MARINECLEAN-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF91315-SYNTAPORE-approved-opt.png`, // gap fill
-    'oil-filters': `${R2_BASE}/EL80920-SYNTRAX-approved-opt.png`, // gap fill
-    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`, // gap fill
-    'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`, // gap fill
-    'hydraulic-filters': `${R2_BASE}/EH65876-NANOFORCE-approved-opt.png`, // gap fill
+    'primary-fuel': `${R2_BASE}/EF91315-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL80920-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`,
+    'hydraulic-filters': `${R2_BASE}/EH65876-NANOFORCE-approved-opt.png`,
   },
   'Power Generation': {
     'primary-air': `${R2_BASE}/EA135396-MACROCORE-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF92478-SYNTAPORE-approved-opt.png`,
     'oil-filters': `${R2_BASE}/EL83000-SYNTRAX-approved-opt.png`,
-    'cabin-filters': `${R2_BASE}/EC10249-MICROKAPPA-approved-opt.png`, // gap fill
     'fuel-water-separators': `${R2_BASE}/ES91354-HYDROCORE-approved-opt.png`,
-    'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`, // gap fill
   },
   'Trucks Fleets': {
     'primary-air': `${R2_BASE}/EA10695-MICROCORE-approved-opt.png`,
@@ -88,43 +69,42 @@ const HD_IMAGES_BY_INDUSTRY: Record<string, Partial<Record<FamilyKey, string>>> 
     'oil-filters': `${R2_BASE}/EL87900-LF14000NN-1of20-approved.png`,
     'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES99030-HYDROCORE-approved-opt.png`,
-    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`, // gap fill
+    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`,
   },
   Manufacturing: {
-    'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`, // gap fill
-    'primary-fuel': `${R2_BASE}/EF90345-SYNTAPORE-approved-opt.png`, // gap fill
-    'oil-filters': `${R2_BASE}/EL81807-SYNTRAX-approved-opt.png`, // gap fill
-    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`, // gap fill
-    'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`, // gap fill
-    'hydraulic-filters': `${R2_BASE}/EH65876-NANOFORCE-approved-opt.png`, // gap fill
+    'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`,
+    'primary-fuel': `${R2_BASE}/EF90345-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL81807-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC14547-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES91108-HYDROCORE-approved-opt.png`,
+    'hydraulic-filters': `${R2_BASE}/EH65876-NANOFORCE-approved-opt.png`,
   },
   Railway: {
-    'primary-air': `${R2_BASE}/EA135396-MACROCORE-approved-opt.png`, // gap fill
+    'primary-air': `${R2_BASE}/EA135396-MACROCORE-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF98960-SYNTAPORE-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL84403-SYNTRAX-approved-opt.png`, // gap fill
-    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`, // gap fill
-    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`, // gap fill
+    'oil-filters': `${R2_BASE}/EL84403-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`,
+    'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
     'hydraulic-filters': `${R2_BASE}/EH65876-NANOFORCE-approved-opt.png`,
   },
   'Waste Municipal': {
     'primary-air': `${R2_BASE}/EA11132-MACROCORE-approved-opt.png`,
-    'primary-fuel': `${R2_BASE}/EF90529-SYNTAPORE-approved-opt.png`, // gap fill
-    'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`, // gap fill
-    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`, // gap fill
+    'primary-fuel': `${R2_BASE}/EF90529-SYNTAPORE-approved-opt.png`,
+    'oil-filters': `${R2_BASE}/EL84407-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC16090-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES99030-HYDROCORE-approved-opt.png`,
-    'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`, // gap fill
+    'hydraulic-filters': `${R2_BASE}/EH60388-NANOFORCE-approved-opt.png`,
   },
   'Bus Coach': {
     'primary-air': `${R2_BASE}/EA10489-MACROCORE-approved-opt.png`,
     'primary-fuel': `${R2_BASE}/EF95811-FF5971NN-2of20-approved-opt.png`,
-    'oil-filters': `${R2_BASE}/EL87345-SYNTRAX-approved-opt.png`, // gap fill
-    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`, // gap fill
+    'oil-filters': `${R2_BASE}/EL87345-SYNTRAX-approved-opt.png`,
+    'cabin-filters': `${R2_BASE}/EC18643-MICROKAPPA-approved-opt.png`,
     'fuel-water-separators': `${R2_BASE}/ES90990-HYDROCORE-approved-opt.png`,
-    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`, // gap fill
+    'hydraulic-filters': `${R2_BASE}/EH62766-HF6002-2of20-approved-opt.png`,
   },
 };
 
-// LD-prefix renders (EA3/EF3/EL3/EC3) — Automotive only. Never reused on any other industry.
 const LD_IMAGES: Partial<Record<FamilyKey, string>> = {
   'primary-air': `${R2_BASE}/EA30755-MACROCORE-approved-opt.png`,
   'oil-filters': `${R2_BASE}/EL36889-SYNTRAX-approved-opt.png`,
@@ -141,7 +121,7 @@ const INDUSTRY_INTRO: Record<string, string> = {
   Construction: 'Every day a machine sits idle on a jobsite is a day a project falls further behind schedule. ELIMFILTERS® filtration protects the hydraulic systems, engines, and drivetrains that keep excavators, loaders, and compactors working through abrasive silica dust and constant start-stop cycles. Our distributor partners keep that protection close to the jobsite, so contractors spend less time waiting on parts and more time building.',
   'Oil Gas': 'Energy operations often run in places where a service call can take days, not hours. ELIMFILTERS® systems are engineered to withstand salt air, fuel contamination, and the pressure cycling that comes with continuous-duty compressors, turbines, and pumps. Through distributors positioned across upstream, offshore, and energy-support markets, we help operators protect equipment that cannot afford to fail without warning.',
   Marine: 'At sea, a contamination problem does not wait for the next port call. ELIMFILTERS® marine protection systems are built to handle salt air, humidity, and fuel-water contamination that put engines, deck machinery, and steering systems at risk on every voyage. Our distributor network keeps the correct protection system stocked and available across the ports and service centers vessels actually depend on.',
-  'Power Generation': 'Backup power has to work the moment it is needed, with no second chance. Our technical team works closely with ELIMFILTERS® distributor partners to match the right protection system to each generator set, fuel system, and cooling circuit, whether it is running continuously or sitting in standby readiness for months. That close distributor relationship is what lets hospitals, data centers, and industrial plants trust their emergency power to stay ready.',
+  'Power Generation': 'Standby power can spend long periods waiting and then be required to carry load immediately. ELIMFILTERS® protection systems are designed to support fuel, air, lubrication and cooling-system cleanliness across stored readiness, routine testing and sustained generator duty. Product selection should reflect the actual generator set, duty profile, stored-fluid condition and validated application evidence.',
   'Trucks Fleets': 'A truck that is not moving is not earning. ELIMFILTERS® filtration and protection systems are engineered to extend service intervals and protect HPCR fuel systems, engines, and drivetrains across long-haul, regional, and vocational duty cycles, which means fewer surprises and lower total cost of ownership per mile. Because our distributors are positioned across the routes fleets actually run, the right part is never far from where the truck is parked.',
   Manufacturing: 'In a production environment, a single failed filter can stop an entire line. ELIMFILTERS® systems protect the compressors, hydraulic power units, and rotating machinery that keep manufacturing facilities running through continuous duty cycles and process contamination. Our distributor partners help plants keep the correct protection system in inventory, so a scheduled service interval never turns into an unscheduled shutdown.',
   Railway: 'Rail networks run on tight schedules, and a locomotive pulled for unplanned maintenance affects every train behind it. ELIMFILTERS® protection systems are engineered for the vibration, thermal cycling, and extended duty cycles of passenger and freight locomotives, helping maintenance teams plan service instead of reacting to failure. Our distributors support the maintenance depots and rail operators that keep networks moving on schedule.',
@@ -159,9 +139,11 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
   const keys = (
     dutyClass === 'LD'
       ? CORE_KEYS
-      : FLEET_INDUSTRIES.includes(industryName)
-        ? [...CORE_KEYS, ...HD_EXTRA_KEYS, ...FLEET_ONLY_KEYS]
-        : [...CORE_KEYS, ...HD_EXTRA_KEYS]
+      : industryName === 'Power Generation'
+        ? POWER_GENERATION_KEYS
+        : FLEET_INDUSTRIES.includes(industryName)
+          ? [...CORE_KEYS, ...HD_EXTRA_KEYS, ...FLEET_ONLY_KEYS]
+          : [...CORE_KEYS, ...HD_EXTRA_KEYS]
   ).filter((key) =>
     !(key === 'cabin-filters' && NO_CABIN_INDUSTRIES.includes(industryName)) &&
     !(key === 'hydraulic-filters' && NO_HYDRAULIC_INDUSTRIES.includes(industryName))
