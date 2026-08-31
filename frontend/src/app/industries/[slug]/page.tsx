@@ -1,7 +1,7 @@
 import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
-import { MiningIndustryExperience } from '@/components/MiningIndustryExperience';
-import { AgricultureIndustryPageWithCarousel } from '@/components/AgricultureIndustryPageWithCarousel';
+import { MiningIndustryPageV2 } from '@/components/MiningIndustryPageV2';
+import { AgricultureIndustryPage } from '@/components/AgricultureIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -98,11 +98,11 @@ export default function IndustryPage({ params }: Props) {
   if (!item) return null;
 
   if (item.name === 'Mining') {
-    return <MiningIndustryExperience />;
+    return <MiningIndustryPageV2 />;
   }
 
   if (item.name === 'Agriculture') {
-    return <AgricultureIndustryPageWithCarousel />;
+    return <AgricultureIndustryPage />;
   }
 
   const media = industryMedia[item.name] || {};
