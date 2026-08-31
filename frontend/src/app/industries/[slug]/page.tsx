@@ -11,6 +11,7 @@ import { ManufacturingIndustryPage } from '@/components/ManufacturingIndustryPag
 import { RailwayIndustryPage } from '@/components/RailwayIndustryPage';
 import { WasteMunicipalIndustryPage } from '@/components/WasteMunicipalIndustryPage';
 import { BusCoachIndustryPage } from '@/components/BusCoachIndustryPage';
+import { AutomotiveIndustryPage } from '@/components/AutomotiveIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -36,7 +37,7 @@ const industryMedia: Record<string, { image?: string; video?: string }> = {
 
 const industryMetaDescription: Record<string, string> = {
   Agriculture: 'Agricultural filtration systems for tractors, combines, harvesters, sprayers, irrigation engines and field support equipment operating in soil dust, crop residue, heat and seasonal duty cycles.',
-  Automotive: 'Asset-protection and contamination-control architecture for passenger vehicles, light commercial vehicles, delivery fleets, engines, fuel systems, lubrication circuits and cabin environments.',
+  Automotive: 'Automotive filtration systems for passenger vehicles, light commercial vehicles, delivery fleets, service vans and mixed light-duty fleets requiring engine air, fuel, lubrication and cabin-air protection.',
   'Bus Coach': 'Bus and coach filtration systems for transit buses, intercity coaches, school buses and shuttle fleets requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
   Construction: 'Construction filtration systems for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, hydraulic load, vibration and severe off-road duty.',
   Manufacturing: 'Manufacturing filtration systems for hydraulic power units, compressors, pumps, machine tools and production equipment requiring contamination control across continuous plant duty and planned maintenance windows.',
@@ -86,7 +87,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                       ? 'Waste & Municipal Filtration Systems | Public-Service Fleets | ELIMFILTERS'
                       : item.name === 'Bus Coach'
                         ? 'Bus & Coach Filtration Systems | Transit & Passenger Fleets | ELIMFILTERS'
-                        : `${item.title} | ELIMFILTERS Asset Protection`;
+                        : item.name === 'Automotive'
+                          ? 'Automotive Filtration Systems | Passenger & Light-Duty Vehicles | ELIMFILTERS'
+                          : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -135,6 +138,7 @@ export default function IndustryPage({ params }: Props) {
   if (item.name === 'Railway') return <RailwayIndustryPage />;
   if (item.name === 'Waste Municipal') return <WasteMunicipalIndustryPage />;
   if (item.name === 'Bus Coach') return <BusCoachIndustryPage />;
+  if (item.name === 'Automotive') return <AutomotiveIndustryPage />;
 
   const media = industryMedia[item.name] || {};
   const url = `${BASE_URL}/industries/${params.slug}/`;
