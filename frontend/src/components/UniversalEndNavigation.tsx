@@ -20,6 +20,10 @@ interface NavigationConfig {
   items: NavItem[];
 }
 
+interface UniversalEndNavigationProps {
+  label?: string;
+}
+
 const COMMON: Record<string, NavItem> = {
   systems: {
     href: '/systems',
@@ -127,7 +131,7 @@ const LEGACY_ENDING_MARKERS = [
   'related resources',
 ];
 
-export function UniversalEndNavigation() {
+export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = {}) {
   const pathname = usePathname();
   const config = navigationFor(pathname);
   const { t, i18n } = useTranslation();
@@ -175,10 +179,9 @@ export function UniversalEndNavigation() {
     };
   }, [config, pathname, hydrated, language]);
 
-  // This component's editorial copy is currently governed in English only.
-  // Do not inject English into a localized page. Localized routes retain their
-  // native page ending until a fully translated navigation bundle is approved.
   if (!config || !hydrated || language !== 'en') return null;
+
+  const eyebrow = label ?? config.eyebrow;
 
   return (
     <nav
@@ -188,7 +191,7 @@ export function UniversalEndNavigation() {
       role="navigation"
     >
       <div className="universal-end-nav__inner">
-        {config.eyebrow && <p className="universal-end-nav__eyebrow">{config.eyebrow}</p>}
+        {eyebrow && <p className="universal-end-nav__eyebrow">{eyebrow}</p>}
         <h2 className="universal-end-nav__title">{config.title}</h2>
         <div className="universal-end-nav__grid">
           {config.items.map((item) => {
