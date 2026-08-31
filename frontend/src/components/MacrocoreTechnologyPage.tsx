@@ -136,7 +136,7 @@ export function MacrocoreTechnologyPage() {
           <p style={heroLead}>MACROCORE™ is the ELIMFILTERS technology architecture for primary and secondary engine-air filtration. It connects media configuration, airflow management, housing integrity and application evidence before a part number is selected.</p>
           <div style={buttonRow}>
             <Link href="#selection" style={yellowButton}>IDENTIFY THE INTAKE REQUIREMENT</Link>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>FIND MY FILTER</a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence" style={darkButton}>FIND MY FILTER</a>
           </div>
         </div>
       </section>
@@ -295,8 +295,8 @@ export function MacrocoreTechnologyPage() {
           <h2 style={h2}>Start with the intake system, not with a visually similar filter.</h2>
           <p style={{ ...lead, maxWidth: '800px' }}>Send the equipment, engine, current element reference, housing information, duty environment and any restriction or dust-bypass history. That evidence is used to identify the correct protection path before the final part number is accepted.</p>
           <div style={buttonRow}>
-            <a href="mailto:applications@elimfilters.com?subject=MACROCORE%20Application%20Support" style={yellowButton}>IDENTIFY MY MACROCORE APPLICATION</a>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>PART SEARCH</a>
+            <a href="mailto:applications@elimfilters.com?subject=MACROCORE%20Application%20Support" data-conversion-action="application-support" style={yellowButton}>IDENTIFY MY MACROCORE APPLICATION</a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence" style={darkButton}>PART SEARCH</a>
             <Link href="/systems/air-intake/" style={darkButton}>AIR INTAKE SYSTEM</Link>
           </div>
         </div>
