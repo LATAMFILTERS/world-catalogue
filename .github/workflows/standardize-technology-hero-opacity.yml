@@ -1,0 +1,62 @@
+name: Standardize technology hero opacity
+
+on:
+  push:
+    paths:
+      - '.github/workflows/standardize-technology-hero-opacity.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  standardize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Apply 8 percent hero overlay standard
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          css = Path('frontend/src/components/MacrocoreTechnologyPage.module.css')
+          text = css.read_text()
+          old = "background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.18));"
+          new = "background: rgba(0, 0, 0, 0.08);"
+          if old not in text:
+              raise SystemExit('Shared technology hero shade pattern not found')
+          css.write_text(text.replace(old, new, 1))
+
+          hub = Path('frontend/src/app/technologies/page.tsx')
+          text = hub.read_text()
+          old_image = "const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.5 };"
+          new_image = "const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 1 };"
+          old_overlay = "const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.70) 54%, rgba(0,0,0,.30) 100%)' };"
+          new_overlay = "const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.08)' };"
+          if old_image not in text:
+              raise SystemExit('Technologies hub hero image opacity pattern not found')
+          if old_overlay not in text:
+              raise SystemExit('Technologies hub hero overlay pattern not found')
+          text = text.replace(old_image, new_image, 1).replace(old_overlay, new_overlay, 1)
+          hub.write_text(text)
+
+          kc = Path('frontend/src/app/knowledge-center/page.tsx')
+          text = kc.read_text()
+          old_cta = '>FIND MY PART</a>'
+          new_cta = '>Search Product Intelligence</a>'
+          if old_cta not in text:
+              raise SystemExit('Knowledge Center product-intelligence CTA pattern not found')
+          kc.write_text(text.replace(old_cta, new_cta, 1))
+          PY
+
+      - name: Remove temporary workflow and commit
+        run: |
+          git rm .github/workflows/standardize-technology-hero-opacity.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/src/components/MacrocoreTechnologyPage.module.css frontend/src/app/technologies/page.tsx frontend/src/app/knowledge-center/page.tsx
+          git commit -m "Standardize technology heroes at 8 percent overlay"
+          git push origin main
