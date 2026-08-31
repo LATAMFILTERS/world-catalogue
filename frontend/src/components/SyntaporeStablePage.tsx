@@ -150,7 +150,7 @@ export function SyntaporeStablePage() {
           </div>
           <figure className={styles.mediaFigure}>
             <img className={styles.mediaImage} src="/images/SYNTAPORE_media.png" alt="Conceptual filtration media structure illustrating SYNTAPORE particulate-control architecture" />
-            <figcaption>Conceptual visualization of filtration-media structure. It does not represent an actual SYNTAPORE™ laboratory micrograph.</figcaption>
+            <figcaption>Microscopic visualization of filtration media structure used for technical illustration.</figcaption>
           </figure>
         </div>
       </div></section>

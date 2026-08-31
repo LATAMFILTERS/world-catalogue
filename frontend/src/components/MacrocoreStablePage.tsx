@@ -61,7 +61,7 @@ export function MacrocoreStablePage() {
             </div>
             <figure className={styles.mediaFigure}>
               <img className={styles.mediaImage} src="/images/MACROCORE-media.png" alt="Conceptual fibrous filtration structure illustrating MACROCORE media architecture" />
-              <figcaption>Conceptual visualization of a fibrous filtration structure. It does not represent an actual MACROCORE™ laboratory micrograph.</figcaption>
+              <figcaption>Microscopic visualization of filtration media structure used for technical illustration.</figcaption>
             </figure>
           </div>
 

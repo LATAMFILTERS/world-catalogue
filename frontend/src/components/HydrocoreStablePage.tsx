@@ -75,7 +75,7 @@ export function HydrocoreStablePage(){
        style={{border:0,filter:'grayscale(1) contrast(1.08) brightness(.96)',transform:'scale(1.035)',transformOrigin:'center center'}}
       />
      </div>
-     <figcaption>Conceptual visualization of a fibrous fuel/water separation media structure. Not an ELIMFILTERS laboratory micrograph.</figcaption>
+     <figcaption>Microscopic visualization of filtration media structure used for technical illustration.</figcaption>
     </figure>
    </div>
   </div></section>
