@@ -152,6 +152,24 @@ export function MacrocoreTechnologyPage() {
         </div>
       </section>
 
+      <section style={mediaFeatureSection}>
+        <div style={mediaFeatureGrid}>
+          <div>
+            <p style={eyebrow}>APPLICATION / PRIMARY AND SECONDARY ENGINE AIR-INTAKE FILTRATION</p>
+            <h2 style={h2}>Airflow Management and Particle Control</h2>
+            <p style={{ ...lead, marginTop: '1.5rem' }}>MACROCORE™ is the ELIMFILTERS architecture for engine air-intake protection. It integrates media configuration, contaminant-holding capacity, restriction control, and sealing integrity according to airflow demand and operating conditions.</p>
+          </div>
+          <figure style={mediaFigure}>
+            <img
+              src="/images/MACROCORE-media.png"
+              alt="Conceptual fibrous structure representing MACROCORE engine air-intake filtration media architecture"
+              style={mediaImage}
+            />
+            <figcaption style={mediaCaption}>Conceptual representation of a fibrous structure. This image is not an actual MACROCORE™ micrograph.</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section style={sectionAlt}>
         <p style={eyebrow}>CONTAMINATION PATH</p>
         <h2 style={h2}>Follow the air from the environment to the engine.</h2>
@@ -299,6 +317,11 @@ const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, f
 const heroLead: CSSProperties = { fontSize: 'clamp(1rem, 1.6vw, 1.18rem)', lineHeight: 1.72, color: 'rgba(255,255,255,.72)', maxWidth: '860px', margin: '1rem 0 0' };
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', maxWidth: '1320px', margin: '0 auto', width: '100%' };
 const sectionAlt: CSSProperties = { ...section, maxWidth: 'none', background: 'rgba(255,255,255,.025)', borderTop: '1px solid rgba(255,255,255,.06)', borderBottom: '1px solid rgba(255,255,255,.06)' };
+const mediaFeatureSection: CSSProperties = { ...section, maxWidth: 'none', background: 'linear-gradient(135deg, rgba(255,241,45,.055), rgba(255,255,255,.018) 42%, rgba(0,0,0,0) 100%)', borderTop: '1px solid rgba(255,241,45,.14)', borderBottom: '1px solid rgba(255,255,255,.07)' };
+const mediaFeatureGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: 'clamp(2.5rem,6vw,5.5rem)', alignItems: 'center' };
+const mediaFigure: CSSProperties = { margin: 0, width: '100%' };
+const mediaImage: CSSProperties = { display: 'block', width: '100%', height: 'auto', objectFit: 'contain', border: '1px solid rgba(255,255,255,.1)', background: '#050505' };
+const mediaCaption: CSSProperties = { marginTop: '.85rem', fontSize: '.78rem', lineHeight: 1.55, color: 'rgba(255,255,255,.48)', fontStyle: 'italic' };
 const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'start' };
 const eyebrow: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, fontSize: '.72rem', letterSpacing: '.22em', textTransform: 'uppercase', margin: '0 0 1rem' };
 const h2: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(2rem,4vw,3.6rem)', lineHeight: .98, letterSpacing: '-.035em', textTransform: 'uppercase', margin: 0 };
