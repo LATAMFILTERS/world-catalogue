@@ -1,0 +1,279 @@
+import Link from 'next/link';
+import type { CSSProperties } from 'react';
+import { PageHeader } from './PageHeader';
+
+const BASE_URL = 'https://elimfilters.com';
+const PAGE_URL = `${BASE_URL}/systems/hydraulic/`;
+
+const pathways = [
+  ['INGRESSED PARTICULATE', 'Dust + service contamination + seal ingress', 'HYDRAULIC FILTRATION', 'NANOFORCE™', '/technologies/nanoforce/'],
+  ['INTERNAL WEAR DEBRIS', 'Pump + valve + actuator wear products', 'RETURN / PRESSURE CONTROL', 'NANOFORCE™', '/technologies/nanoforce/'],
+  ['RESERVOIR CONTAMINATION', 'Maintenance + breathing + fluid handling', 'SYSTEM CLEANLINESS', 'NANOFORCE™', '/technologies/nanoforce/'],
+] as const;
+
+const assets = [
+  ['Hydraulic Pumps', 'Pumps depend on controlled fluid cleanliness because abrasive contamination can accelerate wear at precision interfaces and reduce volumetric efficiency.'],
+  ['Control Valves', 'Spools, servo valves and proportional valves operate with tight clearances where particle contamination can interfere with response and repeatability.'],
+  ['Actuators & Cylinders', 'Actuators rely on clean fluid to protect seals, surfaces and internal interfaces across repeated load cycles.'],
+  ['Manifolds & Precision Controls', 'Manifolds, pilot circuits and precision controls can become contamination-sensitive points when fluid cleanliness is not maintained.'],
+] as const;
+
+const standards = [
+  ['ISO 4406', 'Used to describe hydraulic-fluid cleanliness by particle-count code.'],
+  ['ISO 16889', 'Used for multi-pass evaluation of hydraulic filter performance and beta-ratio efficiency.'],
+  ['NFPA T2.14', 'Provides hydraulic filtration test context for applicable products and systems.'],
+  ['DIN 51524', 'Provides hydraulic-fluid specification context where applicable to the operating system.'],
+] as const;
+
+const faqs = [
+  ['What is Hydraulic Protection?', 'Hydraulic Protection is the ELIMFILTERS system domain for controlling particulate contamination in hydraulic circuits before it affects pumps, valves, actuators and precision controls.'],
+  ['Which ELIMFILTERS technology is used for hydraulic filtration?', 'NANOFORCE™ is the primary ELIMFILTERS technology for hydraulic filtration within the Hydraulic Protection system.'],
+  ['Why is hydraulic cleanliness important?', 'Hydraulic components often operate with small internal clearances. Particulate contamination can accelerate wear, disturb valve response and reduce the reliability of pumps and actuators.'],
+  ['What does ISO 4406 mean?', 'ISO 4406 is a cleanliness-code system used to describe the concentration of particles in hydraulic fluid by defined particle-size ranges.'],
+  ['What does ISO 16889 evaluate?', 'ISO 16889 is a multi-pass test method used to evaluate hydraulic-filter efficiency and beta-ratio performance under controlled conditions.'],
+  ['Can a hydraulic filter be selected only by thread or dimensions?', 'No. Selection should also consider the protected circuit, flow requirement, pressure conditions, collapse requirement, filtration target and validated application evidence.'],
+  ['What information is needed to identify a hydraulic filter?', 'Useful evidence includes equipment model, hydraulic system function, existing filter or OEM number, dimensions, connection type, pressure context and any known cleanliness or filtration requirement.'],
+] as const;
+
+const families = [
+  ['Hydraulic Filters', 'hydraulic-filters', 'Pressure, return and applicable hydraulic-circuit contamination control'],
+] as const;
+
+export function HydraulicSystemPage() {
+  const schemas = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${PAGE_URL}#webpage`,
+      name: 'Hydraulic Protection',
+      url: PAGE_URL,
+      description: 'Hydraulic filtration and contamination-control architecture for pumps, valves, actuators and precision hydraulic components.',
+      isPartOf: { '@id': `${BASE_URL}/#website` },
+      publisher: { '@id': `${BASE_URL}/#organization` },
+      about: [
+        { '@type': 'Thing', name: 'Hydraulic filtration' },
+        { '@type': 'Thing', name: 'Hydraulic fluid cleanliness' },
+        { '@type': 'Thing', name: 'Hydraulic contamination control' },
+        { '@type': 'Thing', name: 'Hydraulic component protection' },
+      ],
+      mentions: [
+        { '@type': 'Thing', name: 'NANOFORCE' },
+        { '@type': 'Thing', name: 'ISO 4406' },
+        { '@type': 'Thing', name: 'ISO 16889' },
+        { '@type': 'Thing', name: 'NFPA T2.14' },
+        { '@type': 'Thing', name: 'DIN 51524' },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Systems', item: `${BASE_URL}/systems/` },
+        { '@type': 'ListItem', position: 3, name: 'Hydraulic Protection', item: PAGE_URL },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Hydraulic Protection product families',
+      itemListElement: families.map((family, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: family[0],
+        url: `${BASE_URL}/families/${family[1]}/`,
+      })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(([question, answer]) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: { '@type': 'Answer', text: answer },
+      })),
+    },
+  ];
+
+  return (
+    <main style={main}>
+      {schemas.map((schema, index) => (
+        <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      ))}
+
+      <PageHeader breadcrumbs={[{ label: 'Systems', href: '/systems/' }]} currentPage="Hydraulic Protection" />
+
+      <section style={hero}>
+        <img src="/images/hidraulico-trabajador.jpg" alt="Hydraulic protection system" style={heroMedia} />
+        <div style={heroOverlay} />
+        <div style={heroInner}>
+          <p style={eyebrow}>HYDRAULIC CONTAMINATION CONTROL</p>
+          <h1 style={heroTitle}>Hydraulic<br /><span style={{ color: '#FFF12D' }}>Protection</span></h1>
+          <p style={heroPromise}>Control particle contamination around the hydraulic clearances that determine pressure, movement and machine response.</p>
+          <p style={heroLead}>ELIMFILTERS Hydraulic Protection organizes fluid cleanliness around pumps, valves, actuators and precision controls. The hydraulic circuit, flow, pressure context, cleanliness requirement and application evidence must be resolved before a part number is accepted.</p>
+          <div style={buttonRow}>
+            <Link href="#protection-path" style={yellowButton}>IDENTIFY THE HYDRAULIC PATH</Link>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>FIND MY FILTER</a>
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <p style={eyebrow}>DIRECT ANSWER</p>
+        <div style={twoCol}>
+          <h2 style={h2}>Hydraulic filtration protects the tolerances that make the system work.</h2>
+          <div>
+            <p style={lead}>Hydraulic Protection is the ELIMFILTERS system architecture for controlling particulate contamination in hydraulic fluid before it reaches contamination-sensitive pumps, valves, actuators and control components.</p>
+            <p style={body}>The correct decision is not simply “which filter fits.” It is which filtration path matches the circuit, operating pressure, flow demand, cleanliness target and validated application evidence.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="protection-path" style={sectionAlt}>
+        <p style={eyebrow}>CONTAMINATION PATHWAYS</p>
+        <h2 style={h2}>Resolve where contamination enters, circulates and becomes critical.</h2>
+        <div style={grid3}>
+          {pathways.map(([title, exposure, system, technology, href]) => (
+            <article key={title} style={card}>
+              <p style={cardLabel}>{title}</p>
+              <p style={cardBody}>{exposure}</p>
+              <div style={arrow}>↓</div>
+              <p style={systemLabel}>{system}</p>
+              <Link href={href} style={techLink}>{technology}</Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section style={section}>
+        <div style={twoCol}>
+          <div>
+            <p style={eyebrow}>ENGINEERING PRINCIPLE</p>
+            <h2 style={h2}>Hydraulic cleanliness has to be matched to component sensitivity and duty.</h2>
+          </div>
+          <div>
+            <p style={lead}>The filtration target should reflect the hydraulic components being protected, the particle sizes that matter to those interfaces and the circuit conditions under which the filter must operate.</p>
+            <p style={body}>ELIMFILTERS keeps the hierarchy explicit: hydraulic circuit → cleanliness requirement → filtration technology → product family → validated part number.</p>
+          </div>
+        </div>
+      </section>
+
+      <section style={sectionAlt}>
+        <p style={eyebrow}>WHAT THE SYSTEM PROTECTS</p>
+        <h2 style={h2}>Protect the components that convert fluid power into controlled work.</h2>
+        <div style={grid2}>
+          {assets.map(([title, text]) => (
+            <article key={title} style={lineCard}>
+              <h3 style={h3}>{title}</h3>
+              <p style={body}>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section style={section}>
+        <p style={eyebrow}>SYSTEM → TECHNOLOGY → FAMILY</p>
+        <h2 style={h2}>Keep the hydraulic protection hierarchy explicit.</h2>
+        <div style={hierarchy}>
+          <div style={hierarchyNode}><span style={nodeLabel}>SYSTEM</span><strong>Hydraulic Protection</strong></div>
+          <div style={hierarchyArrow}>→</div>
+          <Link href="/technologies/nanoforce/" style={hierarchyNode}><span style={nodeLabel}>TECHNOLOGY</span><strong>NANOFORCE™</strong></Link>
+          <div style={hierarchyArrow}>→</div>
+          <Link href="/families/hydraulic-filters/" style={hierarchyNode}><span style={nodeLabel}>PRODUCT FAMILY</span><strong>Hydraulic Filters</strong></Link>
+          <div style={hierarchyArrow}>→</div>
+          <div style={hierarchyNode}><span style={nodeLabel}>OUTPUT</span><strong>Validated Part Number</strong></div>
+        </div>
+      </section>
+
+      <section style={sectionAlt}>
+        <p style={eyebrow}>VALIDATION CONTEXT</p>
+        <h2 style={h2}>Use cleanliness and filter-performance standards in the correct context.</h2>
+        <div style={grid4}>
+          {standards.map(([name, text]) => (
+            <article key={name} style={card}>
+              <p style={cardLabel}>{name}</p>
+              <p style={cardBody}>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section style={section}>
+        <p style={eyebrow}>FROM HYDRAULIC CONDITION TO PART</p>
+        <h2 style={h2}>Resolve the application in a controlled sequence.</h2>
+        <div style={decisionFlow}>
+          {['1. EQUIPMENT', '2. HYDRAULIC CIRCUIT', '3. FLOW + PRESSURE CONTEXT', '4. CLEANLINESS / FILTRATION TARGET', '5. OEM + DIMENSIONAL EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step) => (
+            <div key={step} style={decisionStep}>{step}</div>
+          ))}
+        </div>
+      </section>
+
+      <section style={sectionAlt}>
+        <p style={eyebrow}>FREQUENT QUESTIONS</p>
+        <h2 style={h2}>Hydraulic Protection</h2>
+        <div style={faqGrid}>
+          {faqs.map(([question, answer]) => (
+            <article key={question} style={faqCard}>
+              <h3 style={faqQuestion}>{question}</h3>
+              <p style={body}>{answer}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section style={finalCta}>
+        <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+          <p style={eyebrow}>HAVE A HYDRAULIC APPLICATION TO RESOLVE?</p>
+          <h2 style={h2}>Identify the hydraulic circuit before selecting the filter.</h2>
+          <p style={{ ...lead, maxWidth: '780px' }}>Use equipment, circuit function, flow, pressure context, existing filter or OEM reference and available cleanliness evidence to resolve the correct ELIMFILTERS hydraulic protection path.</p>
+          <div style={buttonRow}>
+            <a href="mailto:applications@elimfilters.com?subject=Hydraulic%20Application%20Support" style={yellowButton}>IDENTIFY MY HYDRAULIC PROTECTION PATH</a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>PART SEARCH</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+const displayFont = 'var(--font-display)';
+const bodyFont = 'var(--font-body)';
+const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
+const hero: CSSProperties = { minHeight: '86vh', position: 'relative', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)', overflow: 'hidden', borderBottom: '1px solid rgba(255,255,255,0.08)' };
+const heroMedia: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.48 };
+const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.74) 52%, rgba(0,0,0,.38) 100%)' };
+const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
+const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(3rem, 7vw, 6.8rem)', lineHeight: 0.9, letterSpacing: '-0.05em', textTransform: 'uppercase', margin: 0, maxWidth: '960px' };
+const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', lineHeight: 1.35, maxWidth: '820px', margin: '1.6rem 0 0' };
+const heroLead: CSSProperties = { fontSize: 'clamp(1rem, 1.7vw, 1.14rem)', lineHeight: 1.7, maxWidth: '860px', color: 'rgba(255,255,255,.7)', margin: '1rem 0 0' };
+const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: '#000' };
+const sectionAlt: CSSProperties = { ...section, background: '#070707', borderTop: '1px solid rgba(255,255,255,.06)', borderBottom: '1px solid rgba(255,255,255,.06)' };
+const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 'clamp(2rem,6vw,5rem)', alignItems: 'start' };
+const eyebrow: CSSProperties = { fontFamily: displayFont, fontSize: '.72rem', fontWeight: 700, letterSpacing: '.18em', color: '#FFF12D', textTransform: 'uppercase', margin: '0 0 1rem' };
+const h2: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(2rem,4.5vw,4rem)', lineHeight: .98, letterSpacing: '-.04em', textTransform: 'uppercase', margin: 0, maxWidth: '950px' };
+const h3: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: '1.15rem', textTransform: 'uppercase', margin: '0 0 .7rem' };
+const lead: CSSProperties = { fontSize: 'clamp(1.02rem,1.6vw,1.18rem)', lineHeight: 1.75, color: 'rgba(255,255,255,.82)', margin: 0 };
+const body: CSSProperties = { fontSize: '.98rem', lineHeight: 1.72, color: 'rgba(255,255,255,.62)', margin: '1rem 0 0' };
+const grid2: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1px', background: 'rgba(255,255,255,.06)' };
+const grid3: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(250px,1fr))', gap: '1px', background: 'rgba(255,255,255,.06)' };
+const grid4: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '1px', background: 'rgba(255,255,255,.06)' };
+const card: CSSProperties = { background: '#000', padding: '1.7rem', minHeight: '190px' };
+const lineCard: CSSProperties = { background: '#000', padding: '1.8rem' };
+const cardLabel: CSSProperties = { ...eyebrow, marginBottom: '.7rem' };
+const cardBody: CSSProperties = { ...body, marginTop: 0 };
+const systemLabel: CSSProperties = { fontFamily: displayFont, fontSize: '.72rem', fontWeight: 700, color: 'rgba(255,255,255,.58)', letterSpacing: '.12em', textTransform: 'uppercase', margin: '.65rem 0' };
+const arrow: CSSProperties = { fontSize: '1.5rem', color: '#FFF12D', marginTop: '.8rem' };
+const techLink: CSSProperties = { color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, textTransform: 'uppercase' };
+const hierarchy: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'stretch' };
+const hierarchyNode: CSSProperties = { flex: '1 1 210px', minHeight: '120px', border: '1px solid rgba(255,255,255,.08)', background: '#070707', padding: '1.3rem', textDecoration: 'none', color: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '.45rem' };
+const nodeLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '.65rem', letterSpacing: '.16em', textTransform: 'uppercase' };
+const hierarchyArrow: CSSProperties = { alignSelf: 'center', color: '#FFF12D', fontSize: '1.4rem' };
+const decisionFlow: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '1px', background: 'rgba(255,255,255,.06)' };
+const decisionStep: CSSProperties = { background: '#070707', padding: '1.4rem', fontFamily: displayFont, fontWeight: 700, fontSize: '.78rem', lineHeight: 1.45, letterSpacing: '.08em', color: 'rgba(255,255,255,.82)' };
+const faqGrid: CSSProperties = { maxWidth: '1180px', margin: '2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '1px', background: 'rgba(255,255,255,.06)' };
+const faqCard: CSSProperties = { background: '#000', padding: '1.7rem' };
+const faqQuestion: CSSProperties = { ...h3, color: '#fff', fontSize: '1rem' };
+const finalCta: CSSProperties = { padding: 'clamp(5rem,9vw,8rem) clamp(1.25rem,6vw,6rem)', background: '#050505', borderTop: '1px solid rgba(255,241,45,.16)' };
+const buttonRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '.8rem', marginTop: '2rem' };
+const yellowButton: CSSProperties = { display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minHeight: '48px', padding: '.9rem 1.2rem', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, fontSize: '.78rem', letterSpacing: '.07em', textTransform: 'uppercase' };
+const darkButton: CSSProperties = { ...yellowButton, background: '#0b0b0b', color: '#fff', border: '1px solid rgba(255,255,255,.16)' };
