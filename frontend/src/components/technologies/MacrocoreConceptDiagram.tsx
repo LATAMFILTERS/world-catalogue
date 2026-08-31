@@ -15,12 +15,30 @@ const STEPS = [
   },
 ] as const;
 
+const ENGINEERING_VALUES = [
+  {
+    label: 'Media Configuration',
+    detail: 'The media pack has to support the required contamination-control role while remaining compatible with the airflow demand of the application.',
+  },
+  {
+    label: 'Contaminant Holding',
+    detail: 'Dust loading changes restriction over time. Holding capacity therefore matters together with the actual concentration and type of airborne contamination.',
+  },
+  {
+    label: 'Restriction Control',
+    detail: 'Initial and terminal restriction limits belong to the equipment application. Filter selection must respect those limits rather than relying on dimensions alone.',
+  },
+  {
+    label: 'Seal Integrity',
+    detail: 'A technically capable media pack cannot protect the engine if gasket geometry, housing condition or clean-side sealing allows contamination to bypass the element.',
+  },
+] as const;
+
 const wrap: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   gap: '1.8rem',
-  width: 'calc(100% + clamp(360px, 34vw, 500px))',
-  marginLeft: 'calc(-1 * clamp(360px, 34vw, 500px))',
+  width: '100%',
 };
 
 const svgWrap: CSSProperties = {
@@ -42,11 +60,53 @@ const textAlt: CSSProperties = {
   width: '100%',
 };
 
+const valueGrid: CSSProperties = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+  gap: '1rem',
+  width: '100%',
+};
+
+const valueCard: CSSProperties = {
+  minHeight: '190px',
+  padding: '1.45rem',
+  border: '1px solid rgba(255,255,255,0.1)',
+  borderTop: '1px solid rgba(255,241,45,0.42)',
+  background: 'linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.012))',
+};
+
+const valueLabel: CSSProperties = {
+  margin: 0,
+  color: '#fff',
+  fontFamily: 'var(--font-display)',
+  fontSize: '1rem',
+  fontWeight: 700,
+  textTransform: 'uppercase',
+};
+
+const valueBody: CSSProperties = {
+  margin: '.8rem 0 0',
+  color: 'rgba(255,255,255,0.64)',
+  fontFamily: 'var(--font-body)',
+  fontSize: '.92rem',
+  lineHeight: 1.68,
+};
+
+const operatingNote: CSSProperties = {
+  padding: '1.35rem 1.5rem',
+  borderLeft: '2px solid #FFF12D',
+  background: 'rgba(255,241,45,0.035)',
+  color: 'rgba(255,255,255,0.78)',
+  fontFamily: 'var(--font-body)',
+  fontSize: '1rem',
+  lineHeight: 1.7,
+};
+
 /**
- * Conceptual air-path diagram for MACROCORE™: ambient air -> filtration/seal
- * boundary -> protected engine components. Intentionally omits layer counts,
- * particle-size ranges, efficiency, restriction, pressure and temperature —
- * none of that is approved for public claim on this technology.
+ * Conceptual air-path diagram for MACROCORE™. The public technology page
+ * intentionally avoids universal numeric efficiency, particle-size,
+ * restriction, pressure or temperature claims. Product-level values remain
+ * tied to validated evidence for the specific element or assembly.
  */
 export default function MacrocoreConceptDiagram() {
   return (
@@ -63,9 +123,8 @@ export default function MacrocoreConceptDiagram() {
       >
         <title id="macrocore-diagram-title">MACROCORE™ air path, conceptual</title>
         <desc id="macrocore-diagram-desc">
-          A simple left-to-right flow of three stages: ambient air, the MACROCORE filtration media and
-          housing seal boundary, and the protected engine components downstream. No layer counts, particle
-          sizes, efficiency figures, restriction values, pressure or temperature ratings are represented.
+          A left-to-right flow of ambient air, the MACROCORE filtration media and housing seal boundary,
+          and protected engine components downstream. No universal product-level performance values are represented.
         </desc>
 
         <defs>
@@ -118,23 +177,26 @@ export default function MacrocoreConceptDiagram() {
         })}
       </svg>
 
-      {/* Accessible text-equivalent of the diagram above, always present in the DOM */}
-      <ol style={{ ...textAlt, listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+      <ol style={{ ...textAlt, listStyle: 'none', margin: 0, padding: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '1rem' }}>
         {STEPS.map((step, i) => (
-          <li key={step.label}>
-            {i + 1}. {step.label} — {step.detail}
+          <li key={step.label} style={{ borderTop: '1px solid rgba(255,255,255,.1)', paddingTop: '1rem' }}>
+            <strong style={{ color: '#fff' }}>{i + 1}. {step.label}</strong><br />{step.detail}
           </li>
         ))}
       </ol>
 
-      <style>{`
-        @media (max-width: 860px) {
-          .macrocore-diagram-wrap {
-            width: 100% !important;
-            margin-left: 0 !important;
-          }
-        }
-      `}</style>
+      <div style={valueGrid}>
+        {ENGINEERING_VALUES.map((item) => (
+          <article key={item.label} style={valueCard}>
+            <h3 style={valueLabel}>{item.label}</h3>
+            <p style={valueBody}>{item.detail}</p>
+          </article>
+        ))}
+      </div>
+
+      <div style={operatingNote}>
+        <strong style={{ color: '#FFF12D' }}>Engineering note:</strong> a longer service interval is not automatically a better filtration outcome. The correct objective is controlled contamination at an acceptable restriction level, with sealing integrity preserved for the real engine and operating environment.
+      </div>
     </div>
   );
 }
