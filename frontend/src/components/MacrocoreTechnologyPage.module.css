@@ -576,7 +576,8 @@
     min-height: clamp(380px, 58svh, 540px);
   }
 
-  .nanoforceHero {
+  .nanoforceHero,
+  .syntraxHero {
     min-height: 0;
     height: clamp(220px, 68vw, 340px);
   }
