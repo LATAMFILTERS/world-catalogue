@@ -8,6 +8,7 @@ import { MarineIndustryPage } from '@/components/MarineIndustryPage';
 import { PowerGenerationIndustryPage } from '@/components/PowerGenerationIndustryPage';
 import { TrucksFleetsIndustryPage } from '@/components/TrucksFleetsIndustryPage';
 import { ManufacturingIndustryPage } from '@/components/ManufacturingIndustryPage';
+import { RailwayIndustryPage } from '@/components/RailwayIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -41,7 +42,7 @@ const industryMetaDescription: Record<string, string> = {
   Mining: 'Mining filtration systems for haul trucks, excavators, loaders, drill rigs and support equipment. Control air, fuel, lubrication and hydraulic contamination in severe-duty mining environments.',
   'Oil Gas': 'Oil and gas filtration systems for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, sand, heat, vibration and extended duty.',
   'Power Generation': 'Power generation filtration systems for standby generators, prime-power systems and industrial diesel generator sets requiring fuel, air, lubrication and cooling-system protection.',
-  Railway: 'Asset-protection and contamination-control architecture for locomotives, auxiliary engines, pneumatic systems and railway support equipment operating under vibration and long duty cycles.',
+  Railway: 'Railway filtration systems for freight and passenger locomotives, diesel multiple units, auxiliary power units and rail maintenance equipment operating under vibration, route dust, fuel-handling exposure and extended duty.',
   'Trucks Fleets': 'Truck fleet filtration systems for long-haul, regional, vocational and mixed commercial fleets requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
   'Waste Municipal': 'Asset-protection and contamination-control architecture for refuse trucks, municipal service fleets, utility vehicles and public-works equipment operating under repeated urban duty cycles.',
 };
@@ -77,7 +78,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 ? 'Truck Fleet Filtration Systems | Heavy-Duty Fleets | ELIMFILTERS'
                 : item.name === 'Manufacturing'
                   ? 'Manufacturing Filtration Systems | Industrial Equipment | ELIMFILTERS'
-                  : `${item.title} | ELIMFILTERS Asset Protection`;
+                  : item.name === 'Railway'
+                    ? 'Railway Filtration Systems | Locomotives & Rail Fleets | ELIMFILTERS'
+                    : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -123,6 +126,7 @@ export default function IndustryPage({ params }: Props) {
   if (item.name === 'Power Generation') return <PowerGenerationIndustryPage />;
   if (item.name === 'Trucks Fleets') return <TrucksFleetsIndustryPage />;
   if (item.name === 'Manufacturing') return <ManufacturingIndustryPage />;
+  if (item.name === 'Railway') return <RailwayIndustryPage />;
 
   const media = industryMedia[item.name] || {};
   const url = `${BASE_URL}/industries/${params.slug}/`;
