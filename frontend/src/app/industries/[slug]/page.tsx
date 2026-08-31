@@ -1,6 +1,6 @@
 import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
-import { MiningIndustryPage } from '@/components/MiningIndustryPage';
+import { MiningIndustryPageV2 } from '@/components/MiningIndustryPageV2';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -95,17 +95,13 @@ export default function IndustryPage({ params }: Props) {
   if (!item) return null;
 
   if (item.name === 'Mining') {
-    return <MiningIndustryPage />;
+    return <MiningIndustryPageV2 />;
   }
 
   const media = industryMedia[item.name] || {};
   const url = `${BASE_URL}/industries/${params.slug}/`;
   const description = industryMetaDescription[item.name] || item.description;
 
-  // Do not pass legacy catalogue marketing claims into the public industry
-  // template. The industry name remains the lookup key for the template's
-  // qualitative operating-context profile; all generic benefits/stats below
-  // are evidence-neutral and system-level.
   const governedItem = {
     ...item,
     description,
@@ -136,10 +132,7 @@ export default function IndustryPage({ params }: Props) {
         description,
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
-        about: {
-          '@type': 'Thing',
-          name: `${item.name} industrial asset protection`,
-        },
+        about: { '@type': 'Thing', name: `${item.name} industrial asset protection` },
       },
       {
         '@context': 'https://schema.org',
