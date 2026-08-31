@@ -1,6 +1,6 @@
 import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
-import { MiningIndustryPageV2 } from '@/components/MiningIndustryPageV2';
+import { MiningIndustryExperience } from '@/components/MiningIndustryExperience';
 import { AgricultureIndustryPage } from '@/components/AgricultureIndustryPage';
 import type { Metadata } from 'next';
 
@@ -98,7 +98,7 @@ export default function IndustryPage({ params }: Props) {
   if (!item) return null;
 
   if (item.name === 'Mining') {
-    return <MiningIndustryPageV2 />;
+    return <MiningIndustryExperience />;
   }
 
   if (item.name === 'Agriculture') {
