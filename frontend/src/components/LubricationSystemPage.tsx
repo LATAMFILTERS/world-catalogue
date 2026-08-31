@@ -12,7 +12,7 @@ const contamination = [
   ['SERVICE INGRESS', 'External dirt can enter during oil changes, top-off, filter replacement or service work.'],
 ] as const;
 
-const protected = [
+const protectedComponents = [
   ['Bearings + Journals', 'Lubrication cleanliness helps protect loaded surfaces that depend on a stable oil film and controlled particle exposure.'],
   ['Turbocharger Lubrication', 'Oil supply to turbocharger bearings depends on correct flow, pressure behavior and contamination control.'],
   ['Valve-Train Interfaces', 'Cam, follower and valve-train contact surfaces operate under repeated load and depend on clean lubricant delivery.'],
@@ -127,7 +127,7 @@ export function LubricationSystemPage() {
       <section style={sectionAlt}>
         <p style={eyebrow}>WHAT THE SYSTEM PROTECTS</p>
         <h2 style={h2}>Clean lubricant supports the interfaces carrying engine load.</h2>
-        <div style={grid2}>{protected.map(([title, text]) => <article key={title} style={lineCard}><h3 style={h3}>{title}</h3><p style={body}>{text}</p></article>)}</div>
+        <div style={grid2}>{protectedComponents.map(([title, text]) => <article key={title} style={lineCard}><h3 style={h3}>{title}</h3><p style={body}>{text}</p></article>)}</div>
       </section>
 
       <section style={section}>
