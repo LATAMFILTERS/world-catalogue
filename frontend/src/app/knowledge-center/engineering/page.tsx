@@ -4,13 +4,32 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ENGINEERING_ARTICLES } from '@/lib/knowledge-center-data';
 
-const CATEGORIES = ['Engineering', 'Contamination', 'Operations', 'Materials'];
+const miningSeries = [
+  {
+    slug: 'mining-contamination-tco',
+    title: 'Mining Dust Contamination, Availability & TCO',
+    description: 'How contamination mechanisms influence component life, maintenance predictability, equipment availability and lifecycle cost.',
+  },
+  {
+    slug: 'dust-failure-mechanisms-mining',
+    title: 'Mining Dust Failure Mechanisms',
+    description: 'Abrasive wear, restriction, thermal load and instrumentation interference in severe-duty mining environments.',
+  },
+  {
+    slug: 'contamination-reliability-curve',
+    title: 'Contamination & the Equipment Reliability Curve',
+    description: 'How contamination can influence early-life failures, useful life and wear-out behavior.',
+  },
+  {
+    slug: 'high-value-component-protection',
+    title: 'Protecting High-Value Components Through Filtration',
+    description: 'Connect consumable protection elements with component criticality, equipment availability and lifecycle economics.',
+  },
+] as const;
 
 export default function EngineeringHubPage() {
   return (
-    <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
-
-      {/* Hero */}
+    <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
       <section style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
@@ -52,7 +71,7 @@ export default function EngineeringHubPage() {
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.15,
-              textAlign: 'justify',
+              textAlign: 'left',
               marginBottom: '1.25rem',
             }}
           >
@@ -67,17 +86,112 @@ export default function EngineeringHubPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.75,
-              textAlign: 'justify',
+              textAlign: 'left',
               color: 'rgba(255,255,255,0.6)',
-              maxWidth: '600px',
+              maxWidth: '650px',
             }}
           >
-            Technical articles covering filtration theory, media science, fluid mechanics, contamination modes, and system engineering for heavy equipment and industrial applications. Each article references applicable ISO, ASTM, and SAE standards.
+            Technical references covering filtration theory, contamination modes, fluid mechanics, asset protection and system engineering for heavy equipment and industrial applications.
           </motion.p>
         </div>
       </section>
 
-      {/* Articles List */}
+      <section style={{
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
+        background: 'radial-gradient(circle at 100% 0%, rgba(255,241,45,0.08), transparent 30%), #050505',
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <p style={{
+            fontFamily: 'JetBrains Mono, monospace',
+            fontSize: '0.62rem',
+            letterSpacing: '0.12em',
+            color: '#FFF12D',
+            margin: '0 0 0.8rem',
+          }}>
+            MINING CONTAMINATION SERIES
+          </p>
+          <h2 style={{
+            fontFamily: 'Outfit, sans-serif',
+            fontSize: 'clamp(1.8rem, 4vw, 3.2rem)',
+            lineHeight: 1.05,
+            margin: '0 0 0.9rem',
+            maxWidth: '760px',
+          }}>
+            From dust exposure to reliability, availability and lifecycle cost.
+          </h2>
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            color: 'rgba(255,255,255,0.58)',
+            lineHeight: 1.7,
+            maxWidth: '720px',
+            margin: '0 0 2rem',
+          }}>
+            A focused engineering path for maintenance, reliability and asset-management teams working in severe-duty mining environments.
+          </p>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))',
+            gap: '1px',
+            background: 'rgba(255,255,255,0.08)',
+            border: '1px solid rgba(255,255,255,0.08)',
+          }}>
+            {miningSeries.map((item, index) => (
+              <Link
+                key={item.slug}
+                href={`/knowledge-center/engineering/${item.slug}/`}
+                style={{
+                  background: '#050505',
+                  padding: '1.5rem',
+                  textDecoration: 'none',
+                  color: '#fff',
+                  minHeight: '190px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  minWidth: 0,
+                }}
+              >
+                <span style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  color: '#FFF12D',
+                  fontSize: '0.6rem',
+                  letterSpacing: '0.1em',
+                }}>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <strong style={{
+                  fontFamily: 'Outfit, sans-serif',
+                  fontSize: '1.05rem',
+                  lineHeight: 1.25,
+                  marginTop: '1rem',
+                }}>
+                  {item.title}
+                </strong>
+                <span style={{
+                  fontFamily: 'Inter, sans-serif',
+                  color: 'rgba(255,255,255,0.5)',
+                  lineHeight: 1.55,
+                  fontSize: '0.82rem',
+                  marginTop: '0.65rem',
+                }}>
+                  {item.description}
+                </span>
+                <span style={{
+                  fontFamily: 'JetBrains Mono, monospace',
+                  color: 'rgba(255,255,255,0.7)',
+                  fontSize: '0.58rem',
+                  letterSpacing: '0.08em',
+                  marginTop: 'auto',
+                  paddingTop: '1rem',
+                }}>
+                  READ GUIDE →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section style={{
         maxWidth: '1200px',
         margin: '0 auto',
@@ -85,7 +199,7 @@ export default function EngineeringHubPage() {
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(300px, 100%), 1fr))',
           gap: '1px',
           background: 'rgba(255,255,255,0.05)',
           border: '1px solid rgba(255,255,255,0.05)',
@@ -96,8 +210,9 @@ export default function EngineeringHubPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3, delay: i * 0.04 }}
+              style={{ minWidth: 0 }}
             >
-              <Link href={`/knowledge-center/engineering/${article.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
+              <Link href={`/knowledge-center/engineering/${article.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
                 <motion.div
                   whileHover={{ background: 'rgba(255,241,45,0.03)', borderLeftColor: '#FFF12D' }}
                   style={{
@@ -106,6 +221,7 @@ export default function EngineeringHubPage() {
                     borderLeft: '3px solid transparent',
                     cursor: 'pointer',
                     transition: 'background 0.2s, border-left-color 0.2s',
+                    height: '100%',
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem', gap: '1rem' }}>
@@ -136,7 +252,7 @@ export default function EngineeringHubPage() {
                     color: '#fff',
                     marginBottom: '0.35rem',
                     lineHeight: 1.25,
-                    textAlign: 'justify',
+                    textAlign: 'left',
                   }}>
                     {article.title}
                   </h2>
@@ -146,7 +262,7 @@ export default function EngineeringHubPage() {
                     fontSize: '0.8rem',
                     color: 'rgba(255,255,255,0.4)',
                     lineHeight: 1.5,
-                    textAlign: 'justify',
+                    textAlign: 'left',
                     marginBottom: '1rem',
                   }}>
                     {article.subtitle}
@@ -175,24 +291,31 @@ export default function EngineeringHubPage() {
         </div>
       </section>
 
-      {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
         name: 'Filtration Engineering Articles — ELIMFILTERS Knowledge Center',
-        description: 'Technical engineering articles on filtration theory, media science, contamination control, and industrial asset protection.',
+        description: 'Technical engineering articles on filtration theory, media science, contamination control, reliability and industrial asset protection.',
         url: 'https://elimfilters.com/knowledge-center/engineering',
         publisher: {
           '@type': 'Organization',
           '@id': 'https://elimfilters.com/#organization',
           name: 'ELIMFILTERS',
         },
-        hasPart: ENGINEERING_ARTICLES.map((a) => ({
-          '@type': 'TechArticle',
-          headline: a.title,
-          url: `https://elimfilters.com/knowledge-center/engineering/${a.slug}`,
-          description: a.metaDescription,
-        })),
+        hasPart: [
+          ...miningSeries.map((a) => ({
+            '@type': 'TechArticle',
+            headline: a.title,
+            url: `https://elimfilters.com/knowledge-center/engineering/${a.slug}/`,
+            description: a.description,
+          })),
+          ...ENGINEERING_ARTICLES.map((a) => ({
+            '@type': 'TechArticle',
+            headline: a.title,
+            url: `https://elimfilters.com/knowledge-center/engineering/${a.slug}`,
+            description: a.metaDescription,
+          })),
+        ],
       })}} />
     </main>
   );
