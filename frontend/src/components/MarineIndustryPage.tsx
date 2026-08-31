@@ -39,6 +39,7 @@ const consequences = [
 ] as const;
 
 const questions = [
+  ['What is MARINECLEAN™?', 'MARINECLEAN™ is the ELIMFILTERS marine filtration line. It identifies filters developed and organized for marine applications; it is not a filtration-media technology. Products within the MARINECLEAN™ line may use the appropriate ELIMFILTERS technology for the protected system, including HYDROCORE™, MACROCORE™, NANOFORCE™ or SYNTRAX™.'],
   ['What filtration systems are most important on commercial vessels and workboats?', 'Fuel and water separation, air intake, lubrication and hydraulic filtration are common priorities on marine equipment. The correct priority depends on the vessel, engine, fuel-handling path, hydraulic functions, duty cycle and maintenance access.'],
   ['Why is fuel-water separation especially important in marine applications?', 'Marine fuel can be exposed to storage time, tank breathing, condensation, transfer operations and persistent humidity. The protection strategy should therefore consider the complete fuel path and the need to control both particulate and water before fuel reaches sensitive engine interfaces.'],
   ['How does salt air affect marine filtration decisions?', 'Salt atmosphere and humidity can increase contamination exposure around air-intake paths, housings and service interfaces. Selection should consider the environment, sealing integrity, loading conditions and protected component rather than treating marine duty as equivalent to inland service.'],
@@ -62,6 +63,7 @@ export function MarineIndustryPage() {
         publisher: { '@id': `${BASE_URL}/#organization` },
         about: [
           { '@type': 'Thing', name: 'Marine filtration systems' },
+          { '@type': 'Thing', name: 'MARINECLEAN Marine Filtration Line' },
           { '@type': 'Thing', name: 'Marine fuel water separation' },
           { '@type': 'Thing', name: 'Commercial vessel filtration' },
           { '@type': 'Thing', name: 'Marine hydraulic cleanliness' },
@@ -69,6 +71,7 @@ export function MarineIndustryPage() {
           { '@type': 'Thing', name: 'Vessel operating reliability' },
         ],
         mentions: [
+          { '@type': 'Thing', name: 'MARINECLEAN Marine Filtration Line' },
           { '@type': 'Thing', name: 'Fuel filtration and water separation' },
           { '@type': 'Thing', name: 'Air intake filtration' },
           { '@type': 'Thing', name: 'Hydraulic filtration' },
@@ -118,6 +121,7 @@ export function MarineIndustryPage() {
           <h1 style={heroTitle}>Marine Filtration<br /><span style={yellow}>Systems</span></h1>
           <p style={heroPromise}>Protect propulsion, fuel and hydraulic systems before the vessel leaves service access behind.</p>
           <p style={heroLead}>Fuel-water separation, air intake, lubrication and hydraulic contamination control for commercial vessels, workboats, marine engines, deck machinery and auxiliary systems operating under salt air, humidity and extended duty.</p>
+          <p style={heroLine}><strong>MARINECLEAN™ Marine Filtration Line</strong> — the ELIMFILTERS product line for marine filtration applications.</p>
           <div style={actions}>
             <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY MARINE PROTECTION PATH</Link>
             <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
@@ -130,6 +134,14 @@ export function MarineIndustryPage() {
           <p style={eyebrow}>DIRECT ANSWER</p>
           <h2 id="marine-direct-title" style={directTitle}>What defines the correct marine filtration strategy?</h2>
           <p style={directText}>Marine filtration begins with the vessel and contamination path, then resolves fuel-water exposure, protected system, component sensitivity, voyage duty, maintenance access and validated application evidence. The correct filter should not be selected from vessel category or service interval alone.</p>
+        </div>
+      </section>
+
+      <section style={lineSection} aria-labelledby="marineclean-title">
+        <div style={contentWidth}>
+          <p style={eyebrow}>MARINE PRODUCT LINE</p>
+          <h2 id="marineclean-title" style={directTitle}>MARINECLEAN™ Marine Filtration Line</h2>
+          <p style={directText}>MARINECLEAN™ is the ELIMFILTERS line that groups filtration products for marine applications. It defines the marine product class, not the filtration technology itself. A MARINECLEAN™ product is assigned the ELIMFILTERS technology appropriate to the protected system—for example HYDROCORE™ for fuel/water separation, MACROCORE™ for air intake, NANOFORCE™ for hydraulic protection or SYNTRAX™ for lubrication.</p>
         </div>
       </section>
 
@@ -229,10 +241,12 @@ const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', font
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-.055em', lineHeight: .88, fontSize: 'clamp(3.3rem,7.6vw,7.2rem)', textTransform: 'uppercase', margin: 0, maxWidth: '920px' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.1rem,2vw,1.55rem)', lineHeight: 1.3, fontWeight: 700, maxWidth: '820px', margin: '1.6rem 0 0' };
 const heroLead: CSSProperties = { fontSize: 'clamp(1rem,1.45vw,1.18rem)', lineHeight: 1.7, color: 'rgba(255,255,255,.78)', maxWidth: '900px', margin: '1rem 0 0' };
+const heroLine: CSSProperties = { fontSize: '.9rem', lineHeight: 1.6, color: 'rgba(255,255,255,.88)', maxWidth: '820px', margin: '1rem 0 0', paddingLeft: '1rem', borderLeft: '2px solid #FFF12D' };
 const actions: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '.8rem', marginTop: '2rem' };
 const primaryButton: CSSProperties = { display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '.1em', fontSize: '.74rem', padding: '1rem 1.2rem', textTransform: 'uppercase' };
 const secondaryButton: CSSProperties = { display: 'inline-block', background: 'transparent', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '.1em', fontSize: '.74rem', padding: '1rem 1.2rem', textTransform: 'uppercase', border: '1px solid rgba(255,241,45,.42)' };
 const directSection: CSSProperties = { padding: 'clamp(3.5rem,6vw,5.5rem) clamp(1.25rem,6vw,6rem)', background: '#050505', borderBottom: '1px solid rgba(255,255,255,.08)' };
+const lineSection: CSSProperties = { padding: 'clamp(3.5rem,6vw,5.5rem) clamp(1.25rem,6vw,6rem)', background: 'linear-gradient(90deg,rgba(255,241,45,.055),#030303 42%)', borderBottom: '1px solid rgba(255,255,255,.08)' };
 const contentWidth: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const directTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem,4vw,3.4rem)', lineHeight: 1, textTransform: 'uppercase', letterSpacing: '-.035em', margin: 0, maxWidth: '900px' };
 const directText: CSSProperties = { fontSize: 'clamp(1.05rem,1.6vw,1.24rem)', lineHeight: 1.75, color: 'rgba(255,255,255,.82)', maxWidth: '980px', margin: '1.3rem 0 0' };
