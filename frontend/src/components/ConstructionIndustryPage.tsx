@@ -37,6 +37,8 @@ const questions = [
   ['How does silica dust affect construction equipment?', 'Fine silica-rich dust can load the air-intake system and challenge sealing interfaces. If particulate bypasses the intended protection path, it can reach sensitive engine surfaces and contribute to abrasive wear. Restriction trend, sealing integrity and service practice should therefore be evaluated together.'],
   ['Why is hydraulic cleanliness critical on construction machinery?', 'Excavators, loaders, dozers and graders rely on high-pressure pumps, valves and actuators. Contamination can interfere with those precision interfaces, so hydraulic filtration should be matched to fluid cleanliness requirements, pressure, duty cycle and component sensitivity.'],
   ['How can construction fuel become contaminated on a jobsite?', 'Fuel can pick up particulate or water through storage tanks, transfer equipment, mobile refueling, tank breathing and condensation. The protection strategy should consider the complete handling path before fuel reaches the engine.'],
+  ['Should construction filters be selected by service interval alone?', 'No. Service interval is only one input. The final selection should also resolve the machine, protected system, contamination source, component sensitivity, duty cycle, sealing condition and available application evidence.'],
+  ['What information is needed to identify the correct construction filter?', 'Provide the machine, engine or equipment model, protected system, duty conditions, any known OEM or current filter number, and relevant dimensions when available. This creates a stronger application-evidence path than selecting from equipment category alone.'],
   ['Can ELIMFILTERS identify a construction filter from an OEM or part number?', 'Yes. If the OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For an engineering review, include the machine, engine, protected system and jobsite conditions.'],
 ] as const;
 
@@ -58,6 +60,18 @@ export function ConstructionIndustryPage() {
           { '@type': 'Thing', name: 'Excavator filtration' },
           { '@type': 'Thing', name: 'Hydraulic cleanliness in construction equipment' },
           { '@type': 'Thing', name: 'Jobsite dust contamination' },
+          { '@type': 'Thing', name: 'Construction equipment fuel contamination' },
+          { '@type': 'Thing', name: 'Construction fleet availability' },
+        ],
+        mentions: [
+          { '@type': 'Thing', name: 'Air intake filtration' },
+          { '@type': 'Thing', name: 'Hydraulic filtration' },
+          { '@type': 'Thing', name: 'Fuel filtration and water separation' },
+          { '@type': 'Thing', name: 'Lubrication filtration' },
+          { '@type': 'Thing', name: 'MACROCORE' },
+          { '@type': 'Thing', name: 'NANOFORCE' },
+          { '@type': 'Thing', name: 'HYDROCORE' },
+          { '@type': 'Thing', name: 'SYNTRAX' },
         ],
         breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
       },
@@ -66,8 +80,8 @@ export function ConstructionIndustryPage() {
         '@id': `${PAGE_URL}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: 'Industries', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Construction', item: PAGE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
+          { '@type': 'ListItem', position: 3, name: 'Construction Filtration Systems', item: PAGE_URL },
         ],
       },
       {
@@ -100,9 +114,17 @@ export function ConstructionIndustryPage() {
           <p style={heroPromise}>Protect the machines that keep the project moving.</p>
           <p style={heroLead}>Air intake, hydraulic, fuel and lubrication contamination control for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, vibration, heat and severe off-road duty.</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>PROTECT CONSTRUCTION EQUIPMENT</Link>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY PROTECTION PATH</Link>
             <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
           </div>
+        </div>
+      </section>
+
+      <section style={directAnswerSection} aria-labelledby="direct-answer-title">
+        <div style={contentWidth}>
+          <p style={eyebrow}>DIRECT ANSWER</p>
+          <h2 id="direct-answer-title" style={directAnswerTitle}>What should a construction filtration strategy protect?</h2>
+          <p style={directAnswerText}>A construction filtration strategy should protect the machine systems most exposed to jobsite contamination: engine air intake, hydraulic circuits, fuel handling and delivery, and lubrication. Final filter selection should then be resolved from the machine, contamination source, component sensitivity, duty cycle, service conditions and validated application evidence.</p>
         </div>
       </section>
 
@@ -164,6 +186,19 @@ export function ConstructionIndustryPage() {
         </div>
       </section>
 
+      <section style={evidenceSection} aria-labelledby="evidence-title">
+        <div style={contentWidth}>
+          <p style={eyebrow}>APPLICATION EVIDENCE</p>
+          <h2 id="evidence-title" style={sectionTitle}>Selection should end with evidence, not assumption.</h2>
+          <p style={wideText}>A construction application becomes stronger when the equipment identity, protected system and operating reality are checked against available OEM references, current filter numbers, dimensions and documented application evidence before the final product is selected.</p>
+          <div style={evidenceGrid}>
+            <article style={evidenceCard}><h3 style={cardTitle}>Identify the asset</h3><p style={bodyText}>Machine, engine, model and protected system establish the technical context.</p></article>
+            <article style={evidenceCard}><h3 style={cardTitle}>Define the exposure</h3><p style={bodyText}>Dust, moisture, fuel handling, hydraulic demand, vibration and service access define the operating reality.</p></article>
+            <article style={evidenceCard}><h3 style={cardTitle}>Validate the part</h3><p style={bodyText}>OEM references, current filter numbers, dimensions and application evidence support final product identification.</p></article>
+          </div>
+        </div>
+      </section>
+
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
           <p style={eyebrow}>CONSTRUCTION FILTRATION QUESTIONS</p>
@@ -174,7 +209,7 @@ export function ConstructionIndustryPage() {
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div><p style={eyebrow}>HAVE A MACHINE OR JOBSITE CONTAMINATION PROBLEM?</p><h2 style={conversionTitle}>Build the protection path around the machine and the work it is doing.</h2><p style={conversionText}>Send the machine, engine, protected system, jobsite conditions and any known OEM or filter reference.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>REQUEST APPLICATION SUPPORT</Link></div>
+          <div><p style={eyebrow}>NEED TO RESOLVE A CONSTRUCTION APPLICATION?</p><h2 style={conversionTitle}>Identify the protection path before choosing the part.</h2><p style={conversionText}>Send the machine, engine, protected system, jobsite conditions and any known OEM or filter reference. ELIMFILTERS can use that information to structure the application path and move from operating condition to validated product identification.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY PROTECTION PATH</Link></div>
           <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE CONSTRUCTION CUSTOMERS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
         </div>
       </section>
@@ -197,6 +232,9 @@ const heroLead: CSSProperties = { fontSize: 'clamp(1rem,1.45vw,1.18rem)', lineHe
 const actions: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '.8rem', marginTop: '2rem' };
 const primaryButton: CSSProperties = { display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '.1em', fontSize: '.74rem', padding: '1rem 1.2rem', textTransform: 'uppercase' };
 const secondaryButton: CSSProperties = { display: 'inline-block', background: 'transparent', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '.1em', fontSize: '.74rem', padding: '1rem 1.2rem', textTransform: 'uppercase', border: '1px solid rgba(255,241,45,.42)' };
+const directAnswerSection: CSSProperties = { padding: 'clamp(3rem,5vw,4.5rem) clamp(1.25rem,6vw,6rem)', background: '#030303', borderBottom: '1px solid rgba(255,255,255,.08)' };
+const directAnswerTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.8rem,3.4vw,3rem)', lineHeight: 1, letterSpacing: '-.03em', textTransform: 'uppercase', margin: 0, maxWidth: '900px' };
+const directAnswerText: CSSProperties = { fontSize: 'clamp(1.02rem,1.6vw,1.2rem)', lineHeight: 1.75, color: 'rgba(255,255,255,.82)', maxWidth: '980px', margin: '1.25rem 0 0' };
 const section: CSSProperties = { padding: 'clamp(4.5rem,8vw,7rem) clamp(1.25rem,6vw,6rem)', borderBottom: '1px solid rgba(255,255,255,.06)' };
 const contentWidth: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const sectionTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(2.2rem,4.7vw,4.2rem)', lineHeight: .96, letterSpacing: '-.04em', textTransform: 'uppercase', margin: 0, maxWidth: '920px' };
@@ -234,6 +272,9 @@ const impactCard: CSSProperties = { borderTop: '1px solid rgba(255,255,255,.15)'
 const impactTitle: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '1.05rem', textTransform: 'uppercase', margin: '0 0 .65rem' };
 const decisionGrid: CSSProperties = { marginTop: '2.6rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(200px,100%),1fr))', gap: '1px', background: 'rgba(255,255,255,.1)', border: '1px solid rgba(255,255,255,.1)' };
 const decisionCard: CSSProperties = { background: '#030303', minHeight: '200px', padding: '1.5rem' };
+const evidenceSection: CSSProperties = { ...section, background: '#020202' };
+const evidenceGrid: CSSProperties = { marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(250px,100%),1fr))', gap: '1rem' };
+const evidenceCard: CSSProperties = { borderTop: '2px solid rgba(255,241,45,.7)', background: '#060606', padding: '1.5rem', minHeight: '170px' };
 const faqSection: CSSProperties = { ...section, background: '#070707' };
 const faqList: CSSProperties = { marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,.12)' };
 const faqItem: CSSProperties = { padding: '1.5rem 0', borderBottom: '1px solid rgba(255,255,255,.12)' };
