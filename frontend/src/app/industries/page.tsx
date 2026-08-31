@@ -5,114 +5,18 @@ import type { CSSProperties } from 'react';
 const BASE_URL = 'https://elimfilters.com';
 
 const INDUSTRIES = [
-  {
-    slug: 'mining',
-    label: 'Mining',
-    image: '/images/mineria-1.avif',
-    summary: 'Mining filtration for equipment operating under abrasive dust, heavy hydraulic load, and severe production cycles.',
-    risks: ['Abrasive dust', 'Hydraulic contamination', 'Fuel cleanliness'],
-    systems: ['Air Intake', 'Fuel', 'Lube', 'Hydraulic'],
-    assets: ['Haul trucks', 'Loaders', 'Excavators', 'Drills'],
-  },
-  {
-    slug: 'agriculture',
-    label: 'Agriculture',
-    image: '/images/agricultor-1.avif',
-    summary: 'Agricultural equipment filtration for harvest dust, variable fuel quality, long service windows, and seasonal uptime.',
-    risks: ['Harvest dust', 'Fuel contamination', 'Long service intervals'],
-    systems: ['Air Intake', 'Fuel', 'Lube', 'Cabin'],
-    assets: ['Tractors', 'Combines', 'Sprayers', 'Harvesters'],
-  },
-  {
-    slug: 'construction',
-    label: 'Construction',
-    image: '/images/chino-construction.avif',
-    summary: 'Construction equipment filtration for dusty jobsites, hydraulic stress, idle time, and high-cost downtime.',
-    risks: ['Jobsite dust', 'Hydraulic contamination', 'Idle-time loading'],
-    systems: ['Air Intake', 'Fuel', 'Lube', 'Hydraulic'],
-    assets: ['Excavators', 'Loaders', 'Dozers', 'Graders'],
-  },
-  {
-    slug: 'oil-gas',
-    label: 'Oil & Gas',
-    image: '/images/ingpetrolero.avif',
-    summary: 'Oil and gas filtration for remote assets exposed to bulk-fuel contamination, fluid cleanliness demands, and harsh duty cycles.',
-    risks: ['Bulk-fuel contamination', 'Water ingress', 'Remote downtime'],
-    systems: ['Fuel', 'Lube', 'Hydraulic', 'Air Intake'],
-    assets: ['Field equipment', 'Compressors', 'Generators', 'Support fleets'],
-  },
-  {
-    slug: 'marine',
-    label: 'Marine',
-    image: '/images/ingmarine.avif',
-    summary: 'Marine filtration for propulsion and auxiliary equipment exposed to moisture, fuel contamination, and corrosion-prone environments.',
-    risks: ['Water contamination', 'Fuel cleanliness', 'Moisture exposure'],
-    systems: ['Fuel', 'Lube', 'Air Intake', 'Coolant'],
-    assets: ['Main engines', 'Auxiliary engines', 'Generators', 'Workboats'],
-  },
-  {
-    slug: 'power-generation',
-    label: 'Power Generation',
-    image: '/images/generatorsupervisor.avif',
-    summary: 'Power-generation filtration for standby readiness, fuel stability, lubrication protection, and emergency uptime.',
-    risks: ['Standby fuel degradation', 'Air restriction', 'Lube contamination'],
-    systems: ['Air Intake', 'Fuel', 'Lube', 'Coolant'],
-    assets: ['Generator sets', 'Standby units', 'Prime-power units', 'Rental fleets'],
-  },
-  {
-    slug: 'trucks-fleets',
-    label: 'Commercial Truck Fleets',
-    image: '/images/transport.avif',
-    summary: 'Commercial fleet filtration for route uptime, fuel economy, service discipline, and lifecycle cost control.',
-    risks: ['Fuel contamination', 'Air restriction', 'Service variability'],
-    systems: ['Air Intake', 'Fuel', 'Lube', 'Cabin'],
-    assets: ['Class 8 trucks', 'Vocational trucks', 'Regional fleets', 'Line-haul fleets'],
-  },
-  {
-    slug: 'manufacturing',
-    label: 'Manufacturing',
-    image: '/images/manufactura.avif',
-    summary: 'Industrial filtration for plant continuity, compressed-air quality, hydraulic control, and process reliability.',
-    risks: ['Hydraulic contamination', 'Compressed-air contamination', 'Process downtime'],
-    systems: ['Hydraulic', 'Compressed Air', 'Lube', 'Air Intake'],
-    assets: ['Production equipment', 'Compressors', 'Hydraulic systems', 'Plant utilities'],
-  },
-  {
-    slug: 'railway',
-    label: 'Railway',
-    image: '/images/ing-railway.avif',
-    summary: 'Railway filtration for long operating cycles, diesel reliability, vibration exposure, and maintenance planning.',
-    risks: ['Long duty cycles', 'Fuel contamination', 'Airborne dust'],
-    systems: ['Air Intake', 'Fuel', 'Lube', 'Coolant'],
-    assets: ['Locomotives', 'Rail equipment', 'Maintenance units', 'Support equipment'],
-  },
-  {
-    slug: 'waste-municipal',
-    label: 'Waste & Municipal Fleets',
-    image: '/images/wasted-municipal.avif',
-    summary: 'Municipal fleet filtration for stop-start operation, dust ingestion, hydraulic load, and public-service uptime.',
-    risks: ['Stop-start duty', 'Dust ingestion', 'Hydraulic load'],
-    systems: ['Air Intake', 'Fuel', 'Lube', 'Hydraulic'],
-    assets: ['Refuse trucks', 'Sweepers', 'Utility trucks', 'Municipal equipment'],
-  },
-  {
-    slug: 'bus-coach',
-    label: 'Bus & Coach',
-    image: '/images/bus-hero.avif',
-    summary: 'Bus and coach filtration for passenger uptime, cabin-air quality, engine protection, and predictable route service.',
-    risks: ['Urban duty cycles', 'Cabin-air loading', 'Fuel contamination'],
-    systems: ['Air Intake', 'Fuel', 'Lube', 'Cabin'],
-    assets: ['Transit buses', 'Intercity coaches', 'School buses', 'Shuttle fleets'],
-  },
-  {
-    slug: 'automotive',
-    label: 'Automotive & Light Duty',
-    image: '/images/Automotive-1.avif',
-    summary: 'Light-duty filtration for service reliability, contamination control, and high-volume application coverage.',
-    risks: ['Service variability', 'Airborne contamination', 'Fuel and lube cleanliness'],
-    systems: ['Air Intake', 'Fuel', 'Lube', 'Cabin'],
-    assets: ['Passenger vehicles', 'Light trucks', 'Vans', 'Service fleets'],
-  },
+  { slug: 'mining', label: 'Mining', image: '/images/mineria-1.avif', summary: 'Mining filtration for equipment operating under abrasive dust, heavy hydraulic load, and severe production cycles.' },
+  { slug: 'agriculture', label: 'Agriculture', image: '/images/agricultor-1.avif', summary: 'Agricultural equipment filtration for harvest dust, variable fuel quality, long service windows, and seasonal uptime.' },
+  { slug: 'construction', label: 'Construction', image: '/images/chino-construction.avif', summary: 'Construction equipment filtration for dusty jobsites, hydraulic stress, idle time, and high-cost downtime.' },
+  { slug: 'oil-gas', label: 'Oil & Gas', image: '/images/ingpetrolero.avif', summary: 'Oil and gas filtration for remote assets exposed to bulk-fuel contamination, fluid cleanliness demands, and harsh duty cycles.' },
+  { slug: 'marine', label: 'Marine', image: '/images/ingmarine.avif', summary: 'Marine filtration for propulsion and auxiliary equipment exposed to moisture, fuel contamination, and corrosion-prone environments.' },
+  { slug: 'power-generation', label: 'Power Generation', image: '/images/generatorsupervisor.avif', summary: 'Power-generation filtration for standby readiness, fuel stability, lubrication protection, and emergency uptime.' },
+  { slug: 'trucks-fleets', label: 'Commercial Truck Fleets', image: '/images/transport.avif', summary: 'Commercial fleet filtration for route uptime, fuel economy, service discipline, and lifecycle cost control.' },
+  { slug: 'manufacturing', label: 'Manufacturing', image: '/images/manufactura.avif', summary: 'Industrial filtration for plant continuity, compressed-air quality, hydraulic control, and process reliability.' },
+  { slug: 'railway', label: 'Railway', image: '/images/ing-railway.avif', summary: 'Railway filtration for long operating cycles, diesel reliability, vibration exposure, and maintenance planning.' },
+  { slug: 'waste-municipal', label: 'Waste & Municipal Fleets', image: '/images/wasted-municipal.avif', summary: 'Municipal fleet filtration for stop-start operation, dust ingestion, hydraulic load, and public-service uptime.' },
+  { slug: 'bus-coach', label: 'Bus & Coach', image: '/images/bus-hero.avif', summary: 'Bus and coach filtration for passenger uptime, cabin-air quality, engine protection, and predictable route service.' },
+  { slug: 'automotive', label: 'Automotive & Light Duty', image: '/images/Automotive-1.avif', summary: 'Light-duty filtration for service reliability, contamination control, and high-volume application coverage.' },
 ] as const;
 
 const FAQS = [
@@ -208,7 +112,6 @@ export default function IndustriesPage() {
   return (
     <main id="main-content" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
-
       <PageHeader currentPage="Industries" />
 
       <section style={hero}>
@@ -217,15 +120,9 @@ export default function IndustriesPage() {
         </video>
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <h1 style={heroTitle}>
-            Industrial Filtration
-            <br />
-            <span style={{ color: '#FFF12D' }}>By Industry</span>
-          </h1>
+          <h1 style={heroTitle}>Industrial Filtration<br /><span style={{ color: '#FFF12D' }}>By Industry</span></h1>
           <p style={heroPromise}>Built for severe-duty operating environments.</p>
-          <p style={heroLead}>
-            Different industries expose equipment to different contamination risks. ELIMFILTERS matches filtration and contamination-control architectures to the machine, environment, duty cycle, and operational consequences of failure.
-          </p>
+          <p style={heroLead}>Different industries expose equipment to different contamination risks. ELIMFILTERS matches filtration and contamination-control architectures to the machine, environment, duty cycle, and operational consequences of failure.</p>
           <div style={heroActions}>
             <Link href="/contact/" style={yellowButton}>PROTECT MY EQUIPMENT</Link>
             <a href="https://part-search.elimfilters.com/" style={darkButton}>FIND MY FILTER</a>
@@ -235,54 +132,33 @@ export default function IndustriesPage() {
 
       <section style={answerSection} aria-labelledby="industries-answer-title">
         <div style={answerGrid}>
+          <div><p style={eyebrow}>DIRECT ANSWER</p><h2 id="industries-answer-title" style={sectionTitle}>What industries does ELIMFILTERS support?</h2></div>
           <div>
-            <p style={eyebrow}>DIRECT ANSWER</p>
-            <h2 id="industries-answer-title" style={sectionTitle}>What industries does ELIMFILTERS support?</h2>
-          </div>
-          <div>
-            <p style={leadText}>
-              ELIMFILTERS provides industrial filtration and contamination-control architectures for 12 markets: mining, agriculture, construction, oil &amp; gas, marine, power generation, commercial truck fleets, manufacturing, railway, waste and municipal fleets, bus and coach operations, and automotive and light-duty applications.
-            </p>
-            <p style={bodyText}>
-              Filtration requirements change with dust concentration, water exposure, fuel quality, temperature, load cycle, system sensitivity, idle time, and service interval. Industry is therefore the first context layer—not the final product selection.
-            </p>
+            <p style={leadText}>ELIMFILTERS provides industrial filtration and contamination-control architectures for 12 markets: mining, agriculture, construction, oil &amp; gas, marine, power generation, commercial truck fleets, manufacturing, railway, waste and municipal fleets, bus and coach operations, and automotive and light-duty applications.</p>
+            <p style={bodyText}>Filtration requirements change with dust concentration, water exposure, fuel quality, temperature, load cycle, system sensitivity, idle time, and service interval. Industry is therefore the first context layer—not the final product selection.</p>
           </div>
         </div>
       </section>
 
       <section style={section}>
         <div style={twoCol}>
+          <div><p style={eyebrow}>WHY INDUSTRY MATTERS</p><h2 style={industryRiskTitle}>The same filter does not face the same failure risk.</h2></div>
           <div>
-            <p style={eyebrow}>WHY INDUSTRY MATTERS</p>
-            <h2 style={industryRiskTitle}>The same filter does not face the same failure risk.</h2>
-          </div>
-          <div>
-            <p style={leadText}>
-              A mining loader, a marine engine, a standby generator, and a city waste truck may share filter categories, but they do not share the same operating reality.
-            </p>
-            <p style={bodyText}>
-              The correct protection strategy connects the contamination mechanism to the system being protected, the equipment duty cycle, the maintenance environment, and the consequence of failure.
-            </p>
+            <p style={leadText}>A mining loader, a marine engine, a standby generator, and a city waste truck may share filter categories, but they do not share the same operating reality.</p>
+            <p style={bodyText}>The correct protection strategy connects the contamination mechanism to the system being protected, the equipment duty cycle, the maintenance environment, and the consequence of failure.</p>
           </div>
         </div>
       </section>
 
       <section style={marketSection} aria-labelledby="markets-title">
         <div style={wrapWide}>
-          <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}>
-            <p style={eyebrow}>12 OPERATING MARKETS</p>
-            <h2 id="markets-title" style={sectionTitle}>Select the industry. Understand the risk. Protect the asset.</h2>
-          </div>
-
+          <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}><p style={eyebrow}>12 OPERATING MARKETS</p><h2 id="markets-title" style={sectionTitle}>Select the industry. Understand the risk. Protect the asset.</h2></div>
           <div style={marketGrid}>
             {INDUSTRIES.map((industry) => (
               <Link key={industry.slug} href={`/industries/${industry.slug}/`} style={marketCard} aria-label={`Explore ${industry.label} filtration and asset protection`}>
                 <img src={industry.image} alt={`${industry.label} industrial equipment`} style={marketImage} loading="lazy" />
                 <div style={marketOverlay} />
-                <div style={marketContent}>
-                  <h3 style={marketTitle}>{industry.label}</h3>
-                  <span style={explore}>EXPLORE INDUSTRY →</span>
-                </div>
+                <div style={marketContent}><h3 style={marketTitle}>{industry.label}</h3><span style={explore}>EXPLORE INDUSTRY →</span></div>
               </Link>
             ))}
           </div>
@@ -293,36 +169,32 @@ export default function IndustriesPage() {
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
           <p style={eyebrow}>ENGINEERING DECISION FACTORS</p>
           <h2 style={{ ...sectionTitle, marginBottom: '1.5rem', maxWidth: '980px' }}>What actually changes the filtration decision?</h2>
-          <p style={{ ...bodyText, maxWidth: '860px', marginBottom: '2rem' }}>
-            Industry tells us where the equipment works. It does not, by itself, determine the filter. The engineering decision becomes useful only when operating conditions are translated into measurable contamination load, system sensitivity, service reality, and failure consequence.
-          </p>
-
+          <p style={{ ...bodyText, maxWidth: '860px', marginBottom: '2rem' }}>Industry tells us where the equipment works. It does not, by itself, determine the filter. The engineering decision becomes useful only when operating conditions are translated into measurable contamination load, system sensitivity, service reality, and failure consequence.</p>
           <div style={standardGrid}>
-            <div style={standardCard}>
-              <span style={factorNumber}>01</span>
-              <h3 style={standardTitle}>Contamination Load</h3>
-              <p style={standardText}>Particle size, concentration, water content, debris source, and ingestion rate determine what the filtration system must remove and how quickly its capacity can be consumed.</p>
-            </div>
-            <div style={standardCard}>
-              <span style={factorNumber}>02</span>
-              <h3 style={standardTitle}>Duty Cycle &amp; Environment</h3>
-              <p style={standardText}>Load, idle time, temperature, vibration, humidity, dust exposure, and operating hours change restriction growth, fluid condition, and the rate at which contamination reaches critical components.</p>
-            </div>
-            <div style={standardCard}>
-              <span style={factorNumber}>03</span>
-              <h3 style={standardTitle}>System Sensitivity</h3>
-              <p style={standardText}>Injector clearances, hydraulic control surfaces, bearing films, pumps, and other precision interfaces determine how much contamination the protected system can tolerate before wear or performance loss accelerates.</p>
-            </div>
-            <div style={standardCard}>
-              <span style={factorNumber}>04</span>
-              <h3 style={standardTitle}>Maintenance Reality</h3>
-              <p style={standardText}>Service interval, access, inventory discipline, technician practices, and replacement consistency determine whether a technically correct filtration strategy remains effective in real operation.</p>
-            </div>
+            <div style={standardCard}><span style={factorNumber}>01</span><h3 style={standardTitle}>Contamination Load</h3><p style={standardText}>Particle size, concentration, water content, debris source, and ingestion rate determine what the filtration system must remove and how quickly its capacity can be consumed.</p></div>
+            <div style={standardCard}><span style={factorNumber}>02</span><h3 style={standardTitle}>Duty Cycle &amp; Environment</h3><p style={standardText}>Load, idle time, temperature, vibration, humidity, dust exposure, and operating hours change restriction growth, fluid condition, and the rate at which contamination reaches critical components.</p></div>
+            <div style={standardCard}><span style={factorNumber}>03</span><h3 style={standardTitle}>System Sensitivity</h3><p style={standardText}>Injector clearances, hydraulic control surfaces, bearing films, pumps, and other precision interfaces determine how much contamination the protected system can tolerate before wear or performance loss accelerates.</p></div>
+            <div style={standardCard}><span style={factorNumber}>04</span><h3 style={standardTitle}>Maintenance Reality</h3><p style={standardText}>Service interval, access, inventory discipline, technician practices, and replacement consistency determine whether a technically correct filtration strategy remains effective in real operation.</p></div>
           </div>
+          <div style={engineeringPrinciple}><p style={engineeringPrincipleLabel}>ENGINEERING PRINCIPLE</p><p style={engineeringPrincipleText}>The correct filter is not selected by industry name alone. Industry establishes context; final selection must resolve the asset, protected system, contamination mechanism, duty cycle, service constraints, and validated performance requirement.</p></div>
+        </div>
+      </section>
 
-          <div style={engineeringPrinciple}>
-            <p style={engineeringPrincipleLabel}>ENGINEERING PRINCIPLE</p>
-            <p style={engineeringPrincipleText}>The correct filter is not selected by industry name alone. Industry establishes context; final selection must resolve the asset, protected system, contamination mechanism, duty cycle, service constraints, and validated performance requirement.</p>
+      <section style={impactSection} aria-labelledby="impact-title">
+        <div style={impactGrid}>
+          <div>
+            <p style={eyebrow}>ENGINEERING IMPACT</p>
+            <h2 id="impact-title" style={impactTitle}>Protection that reduces waste at the source.</h2>
+          </div>
+          <div>
+            <p style={impactLead}>Contamination does more than damage components. It can shorten fluid life, increase maintenance frequency, accelerate replacement demand, and create avoidable material and energy waste across the equipment lifecycle.</p>
+            <p style={bodyText}>ELIMFILTERS technologies are engineered to help control that burden by keeping critical systems cleaner for longer. The objective is not simply to capture particles, but to protect the useful life of components, fluids, and equipment while reducing unnecessary service intervention and premature replacement.</p>
+            <div style={impactOutcomes}>
+              <div style={impactOutcome}><span style={impactOutcomeLabel}>LONGER USEFUL LIFE</span><p style={impactOutcomeText}>Protect components and fluids from contamination-driven degradation.</p></div>
+              <div style={impactOutcome}><span style={impactOutcomeLabel}>LESS SERVICE WASTE</span><p style={impactOutcomeText}>Reduce avoidable replacement and maintenance activity caused by premature contamination-related wear.</p></div>
+              <div style={impactOutcome}><span style={impactOutcomeLabel}>LOWER OPERATING BURDEN</span><p style={impactOutcomeText}>Support more stable service intervals and fewer disruption-driven interventions.</p></div>
+            </div>
+            <Link href="/technologies/" style={{ ...yellowButton, marginTop: '1.75rem' }}>EXPLORE ELIMFILTERS TECHNOLOGIES</Link>
           </div>
         </div>
       </section>
@@ -339,11 +211,7 @@ export default function IndustriesPage() {
               ['04', 'Technology', 'Apply the ELIMFILTERS technology architecture engineered for that system.'],
               ['05', 'Product', 'Resolve the final part, OEM reference, dimensions, and application fit.'],
             ].map(([num, title, desc]) => (
-              <div key={num} style={pathCard}>
-                <span style={pathNumber}>{num}</span>
-                <h3 style={pathTitle}>{title}</h3>
-                <p style={pathText}>{desc}</p>
-              </div>
+              <div key={num} style={pathCard}><span style={pathNumber}>{num}</span><h3 style={pathTitle}>{title}</h3><p style={pathText}>{desc}</p></div>
             ))}
           </div>
         </div>
@@ -354,21 +222,9 @@ export default function IndustriesPage() {
           <p style={eyebrow}>CHOOSE YOUR NEXT STEP</p>
           <h2 id="conversion-title" style={{ ...sectionTitle, marginBottom: '2.25rem' }}>What do you need to do?</h2>
           <div style={conversionGrid}>
-            <div style={conversionCard}>
-              <h3 style={conversionTitle}>Protect Equipment</h3>
-              <p style={conversionText}>Tell us the equipment, engine, operating environment, or contamination problem. We will route the request to the correct protection path.</p>
-              <Link href="/contact/" style={yellowButton}>PROTECT MY EQUIPMENT</Link>
-            </div>
-            <div style={conversionCard}>
-              <h3 style={conversionTitle}>Find a Part</h3>
-              <p style={conversionText}>Already know the OEM reference or filter number? Go directly to cross-reference and application search.</p>
-              <a href="https://part-search.elimfilters.com/" style={yellowButton}>FIND MY FILTER</a>
-            </div>
-            <div style={conversionCard}>
-              <h3 style={conversionTitle}>Represent ELIMFILTERS</h3>
-              <p style={conversionText}>Tell us the industries, territory, and customer base your company serves so we can evaluate distributor fit.</p>
-              <Link href="/distributor-application/" style={yellowButton}>BECOME A DISTRIBUTOR</Link>
-            </div>
+            <div style={conversionCard}><h3 style={conversionTitle}>Protect Equipment</h3><p style={conversionText}>Tell us the equipment, engine, operating environment, or contamination problem. We will route the request to the correct protection path.</p><Link href="/contact/" style={yellowButton}>PROTECT MY EQUIPMENT</Link></div>
+            <div style={conversionCard}><h3 style={conversionTitle}>Find a Part</h3><p style={conversionText}>Already know the OEM reference or filter number? Go directly to cross-reference and application search.</p><a href="https://part-search.elimfilters.com/" style={yellowButton}>FIND MY FILTER</a></div>
+            <div style={conversionCard}><h3 style={conversionTitle}>Represent ELIMFILTERS</h3><p style={conversionText}>Tell us the industries, territory, and customer base your company serves so we can evaluate distributor fit.</p><Link href="/distributor-application/" style={yellowButton}>BECOME A DISTRIBUTOR</Link></div>
           </div>
         </div>
       </section>
@@ -377,30 +233,15 @@ export default function IndustriesPage() {
         <div style={{ maxWidth: '980px', margin: '0 auto' }}>
           <p style={eyebrow}>INDUSTRY FILTRATION QUESTIONS</p>
           <h2 id="faq-title" style={{ ...sectionTitle, marginBottom: '2rem' }}>Common questions about filtration by industry</h2>
-          <div style={{ display: 'grid', gap: '1rem' }}>
-            {FAQS.map((item) => (
-              <article key={item.q} style={faqCard}>
-                <h3 style={faqQuestion}>{item.q}</h3>
-                <p style={faqAnswer}>{item.a}</p>
-              </article>
-            ))}
-          </div>
+          <div style={{ display: 'grid', gap: '1rem' }}>{FAQS.map((item) => <article key={item.q} style={faqCard}><h3 style={faqQuestion}>{item.q}</h3><p style={faqAnswer}>{item.a}</p></article>)}</div>
         </div>
       </section>
 
       <section style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Start with the operating reality. End with the right protection.
-          </h2>
-          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>
-            Move from industry context to protection system, technology, and product identification without treating every duty cycle as the same application.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <Link href="/systems/" style={yellowButton}>PROTECTION SYSTEMS</Link>
-            <Link href="/technologies/" style={darkButton}>TECHNOLOGIES</Link>
-            <a href="https://part-search.elimfilters.com/" style={darkButton}>PART SEARCH</a>
-          </div>
+          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '880px', marginLeft: 'auto', marginRight: 'auto' }}>Start with the operating reality. End with the right protection.</h2>
+          <p style={{ ...bodyText, maxWidth: '720px', margin: '1.4rem auto 0', textAlign: 'center' }}>Move from industry context to protection system, technology, and product identification without treating every duty cycle as the same application.</p>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}><Link href="/systems/" style={yellowButton}>PROTECTION SYSTEMS</Link><Link href="/technologies/" style={darkButton}>TECHNOLOGIES</Link><a href="https://part-search.elimfilters.com/" style={darkButton}>PART SEARCH</a></div>
         </div>
       </section>
     </main>
@@ -409,7 +250,6 @@ export default function IndustriesPage() {
 
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
-
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
 const hero: CSSProperties = { minHeight: '88vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
 const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.48 };
@@ -422,8 +262,8 @@ const heroActions: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.
 const eyebrow: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.72rem', lineHeight: 1, letterSpacing: '0.2em', fontWeight: 700, textTransform: 'uppercase', margin: '0 0 1rem' };
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
 const answerSection: CSSProperties = { ...section, borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.015)' };
-const answerGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.85fr) minmax(0, 1.15fr)', gap: 'clamp(2rem, 6vw, 5rem)' };
-const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 0.9fr) minmax(0, 1.1fr)', gap: 'clamp(2rem, 6vw, 5rem)' };
+const answerGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(2rem, 6vw, 5rem)' };
+const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'clamp(2rem, 6vw, 5rem)' };
 const sectionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.98, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700 };
 const industryRiskTitle: CSSProperties = { ...sectionTitle, fontSize: 'clamp(2.3rem, 4.6vw, 4.14rem)' };
 const leadText: CSSProperties = { color: 'rgba(255,255,255,0.82)', fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)', lineHeight: 1.72, fontWeight: 600, margin: '0 0 1.5rem' };
@@ -443,9 +283,17 @@ const standardCard: CSSProperties = { background: 'rgba(255,255,255,0.025)', bor
 const factorNumber: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em' };
 const standardTitle: CSSProperties = { fontFamily: displayFont, color: '#fff', fontSize: '1.08rem', textTransform: 'uppercase', letterSpacing: '0.03em', margin: '1rem 0 0.75rem' };
 const standardText: CSSProperties = { ...bodyText, fontSize: '0.94rem' };
-const engineeringPrinciple: CSSProperties = { marginTop: '1rem', padding: '1.6rem 1.8rem', borderLeft: '3px solid #FFF12D', background: 'rgba(255,241,45,0.055)', display: 'grid', gridTemplateColumns: 'minmax(150px, 0.35fr) minmax(0, 1.65fr)', gap: '1.5rem', alignItems: 'start' };
+const engineeringPrinciple: CSSProperties = { marginTop: '1rem', padding: '1.6rem 1.8rem', borderLeft: '3px solid #FFF12D', background: 'rgba(255,241,45,0.055)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', alignItems: 'start' };
 const engineeringPrincipleLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.7rem', lineHeight: 1.4, fontWeight: 700, letterSpacing: '0.15em', margin: 0 };
 const engineeringPrincipleText: CSSProperties = { ...bodyText, color: 'rgba(255,255,255,0.82)', fontSize: '1rem' };
+const impactSection: CSSProperties = { padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(135deg, rgba(255,241,45,0.08), rgba(255,255,255,0.015) 52%, rgba(0,0,0,0) 100%)' };
+const impactGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2.5rem, 7vw, 6rem)', alignItems: 'start' };
+const impactTitle: CSSProperties = { ...sectionTitle, fontSize: 'clamp(2.5rem, 5vw, 4.8rem)', maxWidth: '700px' };
+const impactLead: CSSProperties = { ...leadText, fontSize: 'clamp(1.15rem, 1.8vw, 1.45rem)' };
+const impactOutcomes: CSSProperties = { display: 'grid', gap: '0', marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.12)' };
+const impactOutcome: CSSProperties = { padding: '1.2rem 0', borderBottom: '1px solid rgba(255,255,255,0.12)', display: 'grid', gridTemplateColumns: 'minmax(150px, 0.42fr) minmax(0, 1fr)', gap: '1rem' };
+const impactOutcomeLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em' };
+const impactOutcomeText: CSSProperties = { ...bodyText, color: 'rgba(255,255,255,0.78)', fontSize: '0.94rem' };
 const pathSection: CSSProperties = { ...section, borderBottom: '1px solid rgba(255,255,255,0.06)' };
 const pathGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.08)', marginTop: '2.5rem', border: '1px solid rgba(255,255,255,0.08)' };
 const pathCard: CSSProperties = { background: '#050505', padding: '1.5rem', minHeight: '210px' };
