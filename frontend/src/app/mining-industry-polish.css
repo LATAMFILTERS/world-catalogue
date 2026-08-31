@@ -37,8 +37,131 @@ section[aria-labelledby="equipment-title"] [role="listitem"] span:last-child {
   color: #fff !important;
 }
 
+/* Risk section: remove the dead split-column composition and use the full content width. */
+section:not([aria-labelledby]) > div[style*="max-width: 1180px"][style*="display: grid"] {
+  min-width: 0;
+}
+
+/* TCO section: intro first, then hierarchy and lifecycle path across the full width. */
+section[aria-labelledby="mining-tco-title"] > div {
+  display: block !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+section[aria-labelledby="mining-tco-title"] > div > div:first-child {
+  max-width: 900px !important;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem) !important;
+}
+
+section[aria-labelledby="mining-tco-title"] > div > div:first-child h2 {
+  max-width: 820px !important;
+  font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
+}
+
+section[aria-labelledby="mining-tco-title"] > div > div:first-child p:last-child {
+  max-width: 760px !important;
+}
+
+section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > p:first-child {
+  max-width: 940px !important;
+  margin-bottom: 2rem !important;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem) !important;
+}
+
+section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1px !important;
+  margin-top: 0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type > article {
+  display: block !important;
+  min-height: 210px !important;
+  padding: 1.5rem !important;
+  border: 0 !important;
+  background: #050505 !important;
+}
+
+section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type > article > span {
+  display: block !important;
+  margin-bottom: 1.4rem !important;
+  color: #FFF12D !important;
+}
+
+section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type > article h3 {
+  font-size: clamp(1rem, 1.6vw, 1.3rem) !important;
+  line-height: 1.08 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  margin-top: 2rem !important;
+  border-top: 1px solid rgba(255, 241, 45, 0.28) !important;
+  border-bottom: 1px solid rgba(255, 241, 45, 0.18) !important;
+}
+
+section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div {
+  min-height: 92px !important;
+  padding: 1rem 1.1rem !important;
+  border-bottom: 0 !important;
+  border-right: 1px solid rgba(255, 241, 45, 0.14) !important;
+  grid-template-columns: 34px minmax(0, 1fr) !important;
+}
+
+section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div:nth-child(3n) {
+  border-right: 0 !important;
+}
+
+section[aria-labelledby="mining-tco-title"] a[href*="mining-contamination-tco"] {
+  margin-top: 2rem !important;
+}
+
+@media (max-width: 900px) {
+  section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type {
+    grid-template-columns: 1fr !important;
+  }
+
+  section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type > article {
+    min-height: 0 !important;
+  }
+
+  section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div,
+  section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div:nth-child(3n) {
+    border-right: 1px solid rgba(255, 241, 45, 0.14) !important;
+    border-bottom: 1px solid rgba(255, 241, 45, 0.14) !important;
+  }
+
+  section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div:nth-child(2n) {
+    border-right: 0 !important;
+  }
+}
+
 @media (max-width: 720px) {
   section[aria-labelledby="equipment-title"] {
     background: #050505 !important;
+  }
+
+  section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  section[aria-labelledby="mining-tco-title"] [aria-label="Contamination to lifecycle cost pathway"] > div {
+    border-right: 0 !important;
   }
 }
