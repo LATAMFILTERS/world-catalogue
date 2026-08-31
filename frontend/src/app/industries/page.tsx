@@ -281,11 +281,7 @@ export default function IndustriesPage() {
                 <div style={marketOverlay} />
                 <div style={marketContent}>
                   <h3 style={marketTitle}>{industry.label}</h3>
-                  <p style={marketLine}>{industry.summary}</p>
-                  <div style={dataRow}><span style={dataLabel}>RISKS</span><span>{industry.risks.join(' · ')}</span></div>
-                  <div style={dataRow}><span style={dataLabel}>PROTECT</span><span>{industry.systems.join(' · ')}</span></div>
-                  <div style={dataRow}><span style={dataLabel}>ASSETS</span><span>{industry.assets.join(' · ')}</span></div>
-                  <span style={explore}>EXPLORE {industry.label.toUpperCase()} PROTECTION →</span>
+                  <span style={explore}>EXPLORE INDUSTRY →</span>
                 </div>
               </Link>
             ))}
@@ -426,15 +422,12 @@ const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.62)', fontSize: '1r
 const wrapWide: CSSProperties = { maxWidth: '1320px', margin: '0 auto' };
 const marketSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem)', borderTop: '1px solid rgba(255,255,255,0.06)' };
 const marketGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))', gap: '1rem' };
-const marketCard: CSSProperties = { minHeight: '520px', position: 'relative', overflow: 'hidden', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505' };
-const marketImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.82, filter: 'brightness(0.9) contrast(1.04)' };
-const marketOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.34) 38%, rgba(0,0,0,0.94) 84%, rgba(0,0,0,0.98) 100%)' };
+const marketCard: CSSProperties = { minHeight: '390px', position: 'relative', overflow: 'hidden', textDecoration: 'none', color: '#fff', border: '1px solid rgba(255,255,255,0.1)', background: '#050505' };
+const marketImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.94, filter: 'brightness(0.96) contrast(1.03)' };
+const marketOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.08) 48%, rgba(0,0,0,0.72) 100%)' };
 const marketContent: CSSProperties = { position: 'absolute', inset: 0, padding: '1.45rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' };
-const marketTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.45rem, 2vw, 1.95rem)', lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase', fontWeight: 700 };
-const marketLine: CSSProperties = { color: 'rgba(255,255,255,0.78)', fontSize: '0.94rem', lineHeight: 1.55, margin: '0.8rem 0 1rem', maxWidth: '420px' };
-const dataRow: CSSProperties = { display: 'grid', gridTemplateColumns: '72px 1fr', gap: '0.65rem', color: 'rgba(255,255,255,0.7)', fontSize: '0.78rem', lineHeight: 1.45, marginTop: '0.45rem' };
-const dataLabel: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.08em', fontSize: '0.66rem' };
-const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.11em', fontSize: '0.68rem', marginTop: '1.25rem' };
+const marketTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.45rem, 2vw, 1.95rem)', lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase', fontWeight: 700, textShadow: '0 2px 18px rgba(0,0,0,0.8)' };
+const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.11em', fontSize: '0.68rem', marginTop: '0.8rem' };
 const standardsSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,241,45,0.025)', borderTop: '1px solid rgba(255,241,45,0.1)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
 const standardGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' };
 const standardCard: CSSProperties = { background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.09)', padding: '1.6rem' };
