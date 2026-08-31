@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useConsent } from '@/lib/useConsent';
 import { trackEvent } from '@/lib/analytics';
+import { sendCommercialIntelligenceEvent } from '@/lib/commercial-intelligence';
 
 type EventParams = Record<string, string | number | boolean | undefined>;
 
@@ -48,13 +49,16 @@ function readCampaign(): EventParams {
 function sendEvent(name: string, params: EventParams = {}) {
   if (typeof window === 'undefined') return;
 
-  trackEvent(name, {
+  const enriched = {
     page_path: window.location.pathname,
     page_location: window.location.href,
     page_title: document.title,
     ...readCampaign(),
     ...params,
-  });
+  };
+
+  trackEvent(name, enriched);
+  sendCommercialIntelligenceEvent(name, enriched);
 }
 
 function cleanLabel(element: HTMLElement): string {
