@@ -62,7 +62,7 @@ function technologyEntityUrl(slug: string) {
 
 export function generateStaticParams() {
   return CANONICAL_TECHNOLOGY_LIST
-    .filter((technology) => technology.slug !== 'macrocore' && technology.slug !== 'syntapore' && technology.slug !== 'syntrax')
+    .filter((technology) => technology.slug !== 'macrocore' && technology.slug !== 'syntapore' && technology.slug !== 'syntrax' && technology.slug !== 'nanoforce')
     .map((technology) => ({ slug: technology.slug }));
 }
 
@@ -179,7 +179,7 @@ export default function TechnologyPage({ params }: Props) {
   const canonical = getCanonicalTechnology(params.slug);
   const engineering = getTechnologyEngineering(params.slug);
   const editorial = getTechnologyEditorial(params.slug);
-  if (!canonical || !engineering || !editorial || canonical.slug === 'macrocore' || canonical.slug === 'syntapore' || canonical.slug === 'syntrax') notFound();
+  if (!canonical || !engineering || !editorial || canonical.slug === 'macrocore' || canonical.slug === 'syntapore' || canonical.slug === 'syntrax' || canonical.slug === 'nanoforce') notFound();
 
   const slug = canonical.slug as TechnologySlug;
   const technologyAsset = TECHNOLOGY_ASSETS[slug];
