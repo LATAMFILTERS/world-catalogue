@@ -150,6 +150,18 @@ export default function TechnologiesPage() {
     },
   ];
 
+  const renderSystemCard = (group: (typeof systemGroups)[number]) => (
+    <article key={group.system} style={systemCard}>
+      <Link href={group.href} style={systemName}>{group.system}</Link>
+      <p style={bodyText}>{group.description}</p>
+      <div style={technologyTags}>
+        {group.technologies.map((technology) => (
+          <span key={technology} style={technologyTag}>{technology}</span>
+        ))}
+      </div>
+    </article>
+  );
+
   return (
     <main className="technologies-page" style={main}>
       {schemas.map((schema, index) => (
@@ -190,20 +202,17 @@ export default function TechnologiesPage() {
       </section>
 
       <section id="technology-architecture" style={sectionAlt}>
-        <p style={eyebrow}>SYSTEM → TECHNOLOGY</p>
-        <h2 style={sectionTitle}>Nine technologies organized inside five protection systems.</h2>
-        <div style={systemGrid}>
-          {systemGroups.map((group) => (
-            <article key={group.system} style={systemCard}>
-              <Link href={group.href} style={systemName}>{group.system}</Link>
-              <p style={bodyText}>{group.description}</p>
-              <div style={technologyTags}>
-                {group.technologies.map((technology) => (
-                  <span key={technology} style={technologyTag}>{technology}</span>
-                ))}
-              </div>
-            </article>
-          ))}
+        <div style={systemSectionInner}>
+          <p style={eyebrow}>SYSTEM → TECHNOLOGY</p>
+          <h2 style={sectionTitle}>Nine technologies organized inside five protection systems.</h2>
+          <div className="system-pyramid">
+            <div className="system-pyramid-top">
+              {systemGroups.slice(0, 3).map(renderSystemCard)}
+            </div>
+            <div className="system-pyramid-bottom">
+              {systemGroups.slice(3).map(renderSystemCard)}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -257,6 +266,56 @@ export default function TechnologiesPage() {
           </div>
         </div>
       </section>
+
+      <style>{`
+        .system-pyramid {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin-top: 2.2rem;
+        }
+        .system-pyramid-top {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 1rem;
+        }
+        .system-pyramid-bottom {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1rem;
+          width: calc((100% - 2rem) * 2 / 3 + 1rem);
+          margin: 0 auto;
+        }
+        .system-pyramid-top > article,
+        .system-pyramid-bottom > article {
+          height: 100%;
+          min-height: 285px;
+          display: flex;
+          flex-direction: column;
+        }
+        .system-pyramid-top > article > div:last-child,
+        .system-pyramid-bottom > article > div:last-child {
+          margin-top: auto !important;
+          padding-top: 1.1rem;
+        }
+        @media (max-width: 900px) {
+          .system-pyramid-top,
+          .system-pyramid-bottom {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            width: 100%;
+          }
+        }
+        @media (max-width: 620px) {
+          .system-pyramid-top,
+          .system-pyramid-bottom {
+            grid-template-columns: 1fr;
+          }
+          .system-pyramid-top > article,
+          .system-pyramid-bottom > article {
+            min-height: 0;
+          }
+        }
+      `}</style>
     </main>
   );
 }
@@ -274,6 +333,7 @@ const heroLead: CSSProperties = { marginTop: '1rem', maxWidth: '860px', color: '
 const eyebrow: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', margin: '0 0 1rem' };
 const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)' };
 const sectionAlt: CSSProperties = { ...section, background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
+const systemSectionInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 6vw, 5rem)' };
 const sectionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.98, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700 };
 const leadText: CSSProperties = { color: 'rgba(255,255,255,0.82)', fontSize: 'clamp(1.08rem, 1.7vw, 1.3rem)', lineHeight: 1.7, fontWeight: 600, margin: 0 };
@@ -281,8 +341,7 @@ const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.62)', fontSize: '1r
 const buttonRow: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' };
 const yellowButton: CSSProperties = { display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.1em', fontSize: '0.8rem', padding: '1rem 1.2rem' };
 const darkButton: CSSProperties = { display: 'inline-block', background: 'rgba(0,0,0,0.5)', color: '#FFF12D', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.1em', fontSize: '0.8rem', padding: '1rem 1.2rem', border: '1px solid rgba(255,241,45,0.4)' };
-const systemGrid: CSSProperties = { maxWidth: '1180px', margin: '2.2rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.07)' };
-const systemCard: CSSProperties = { background: '#000', padding: '1.6rem' };
+const systemCard: CSSProperties = { background: '#000', padding: '1.6rem', border: '1px solid rgba(255,255,255,0.08)' };
 const systemName: CSSProperties = { color: '#fff', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, fontSize: '1.1rem', textTransform: 'uppercase' };
 const technologyTags: CSSProperties = { display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1.1rem' };
 const technologyTag: CSSProperties = { color: '#FFF12D', border: '1px solid rgba(255,241,45,0.28)', background: 'rgba(255,241,45,0.05)', padding: '0.45rem 0.6rem', fontFamily: displayFont, fontWeight: 700, fontSize: '0.66rem', letterSpacing: '0.08em' };
