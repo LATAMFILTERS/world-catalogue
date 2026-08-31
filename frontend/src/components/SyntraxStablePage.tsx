@@ -33,7 +33,7 @@ export function SyntraxStablePage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(faqSchema)}} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema)}} />
 
-    <section className={styles.hero} aria-labelledby="syntrax-title">
+    <section className={`${styles.hero} ${styles.syntraxHero}`} aria-labelledby="syntrax-title">
       <img className={styles.heroBackground} src="/images/syntrax.avif" alt="Engine lubrication filtration service environment" />
       <div className={styles.heroShade} aria-hidden="true" />
       <h1 id="syntrax-title" className={styles.srOnly}>SYNTRAX™ Lubrication Filtration Technology</h1>
