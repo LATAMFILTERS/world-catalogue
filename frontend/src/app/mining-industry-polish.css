@@ -1,0 +1,44 @@
+/* Mining industry visual governance: yellow is an accent, never a full section background. */
+section[aria-labelledby="equipment-title"] {
+  background: radial-gradient(circle at 12% 0%, rgba(255, 241, 45, 0.06), transparent 30%), #050505 !important;
+  color: #fff !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+section[aria-labelledby="equipment-title"] h2 {
+  color: #fff !important;
+}
+
+section[aria-labelledby="equipment-title"] p {
+  color: rgba(255, 255, 255, 0.64) !important;
+}
+
+section[aria-labelledby="equipment-title"] > div > div:first-child > div:first-child > p:first-child {
+  color: #FFF12D !important;
+}
+
+section[aria-labelledby="equipment-title"] [role="list"] {
+  border-top-color: rgba(255, 255, 255, 0.16) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+section[aria-labelledby="equipment-title"] [role="listitem"] {
+  background: transparent !important;
+  color: #fff !important;
+  border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+section[aria-labelledby="equipment-title"] [role="listitem"] span:first-child {
+  color: #FFF12D !important;
+}
+
+section[aria-labelledby="equipment-title"] [role="listitem"] span:last-child {
+  color: #fff !important;
+}
+
+@media (max-width: 720px) {
+  section[aria-labelledby="equipment-title"] {
+    background: #050505 !important;
+  }
+}
