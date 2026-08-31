@@ -4,6 +4,7 @@ import { MiningIndustryPageV2 } from '@/components/MiningIndustryPageV2';
 import { AgricultureIndustryPage } from '@/components/AgricultureIndustryPage';
 import { ConstructionIndustryPage } from '@/components/ConstructionIndustryPage';
 import { OilGasIndustryPage } from '@/components/OilGasIndustryPage';
+import { MarineIndustryPage } from '@/components/MarineIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -33,7 +34,7 @@ const industryMetaDescription: Record<string, string> = {
   'Bus Coach': 'Asset-protection and contamination-control architecture for transit buses, school buses, coaches and passenger fleets operating under stop-and-go duty, urban particulate exposure and extended daily service.',
   Construction: 'Construction filtration systems for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, hydraulic load, vibration and severe off-road duty.',
   Manufacturing: 'Asset-protection and contamination-control architecture for industrial engines, hydraulic power units, compressors, pumps and production equipment operating under continuous plant duty.',
-  Marine: 'Asset-protection and contamination-control architecture for commercial vessels, workboats, marine engines and onboard equipment operating under moisture, salt atmosphere and extended marine duty.',
+  Marine: 'Marine filtration systems for commercial vessels, workboats, marine engines, deck machinery and onboard hydraulic equipment operating under salt air, humidity, fuel-water exposure and extended duty.',
   Mining: 'Mining filtration systems for haul trucks, excavators, loaders, drill rigs and support equipment. Control air, fuel, lubrication and hydraulic contamination in severe-duty mining environments.',
   'Oil Gas': 'Oil and gas filtration systems for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, sand, heat, vibration and extended duty.',
   'Power Generation': 'Asset-protection and contamination-control architecture for standby generators, prime power systems and industrial engine-driven generation equipment.',
@@ -65,7 +66,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? 'Construction Filtration Systems | Heavy Equipment | ELIMFILTERS'
         : item.name === 'Oil Gas'
           ? 'Oil & Gas Filtration Systems | Field Equipment | ELIMFILTERS'
-          : `${item.title} | ELIMFILTERS Asset Protection`;
+          : item.name === 'Marine'
+            ? 'Marine Filtration Systems | Vessels & Marine Engines | ELIMFILTERS'
+            : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -117,6 +120,10 @@ export default function IndustryPage({ params }: Props) {
 
   if (item.name === 'Oil Gas') {
     return <OilGasIndustryPage />;
+  }
+
+  if (item.name === 'Marine') {
+    return <MarineIndustryPage />;
   }
 
   const media = industryMedia[item.name] || {};
