@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
+import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/mining/`;
@@ -167,6 +168,8 @@ export function MiningIndustryPageV2() {
         </div>
         <div style={principle}><span style={principleLabel}>MINING ENGINEERING PRINCIPLE</span><p style={principleText}>The correct filtration strategy is not determined by machine type alone. Dust loading, fluid cleanliness requirements, fuel handling, duty cycle, service interval and component sensitivity determine the protection architecture.</p></div>
       </section>
+
+      <IndustryFilterCarousel dutyClass="HD" industryName="Mining" />
 
       <section style={stakesSection} aria-labelledby="stakes-title">
         <div style={wideHeader}><p style={eyebrow}>WHAT CONTAMINATION PUTS AT RISK</p><h2 id="stakes-title" style={sectionTitle}>Protect the operating chain before contamination becomes downtime.</h2><p style={bodyWide}>In mining, contamination can affect airflow, hydraulic cleanliness, fuel-system integrity, thermal control and overall equipment availability across the operating chain.</p></div>
