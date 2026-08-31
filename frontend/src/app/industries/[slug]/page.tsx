@@ -7,6 +7,7 @@ import { OilGasIndustryPage } from '@/components/OilGasIndustryPage';
 import { MarineIndustryPage } from '@/components/MarineIndustryPage';
 import { PowerGenerationIndustryPage } from '@/components/PowerGenerationIndustryPage';
 import { TrucksFleetsIndustryPage } from '@/components/TrucksFleetsIndustryPage';
+import { ManufacturingIndustryPage } from '@/components/ManufacturingIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -35,7 +36,7 @@ const industryMetaDescription: Record<string, string> = {
   Automotive: 'Asset-protection and contamination-control architecture for passenger vehicles, light commercial vehicles, delivery fleets, engines, fuel systems, lubrication circuits and cabin environments.',
   'Bus Coach': 'Asset-protection and contamination-control architecture for transit buses, school buses, coaches and passenger fleets operating under stop-and-go duty, urban particulate exposure and extended daily service.',
   Construction: 'Construction filtration systems for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, hydraulic load, vibration and severe off-road duty.',
-  Manufacturing: 'Asset-protection and contamination-control architecture for industrial engines, hydraulic power units, compressors, pumps and production equipment operating under continuous plant duty.',
+  Manufacturing: 'Manufacturing filtration systems for hydraulic power units, compressors, pumps, machine tools and production equipment requiring contamination control across continuous plant duty and planned maintenance windows.',
   Marine: 'Marine filtration systems for commercial vessels, workboats, marine engines, deck machinery and onboard hydraulic equipment operating under salt air, humidity, fuel-water exposure and extended duty.',
   Mining: 'Mining filtration systems for haul trucks, excavators, loaders, drill rigs and support equipment. Control air, fuel, lubrication and hydraulic contamination in severe-duty mining environments.',
   'Oil Gas': 'Oil and gas filtration systems for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, sand, heat, vibration and extended duty.',
@@ -74,7 +75,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
               ? 'Power Generation Filtration Systems | Generator Sets | ELIMFILTERS'
               : item.name === 'Trucks Fleets'
                 ? 'Truck Fleet Filtration Systems | Heavy-Duty Fleets | ELIMFILTERS'
-                : `${item.title} | ELIMFILTERS Asset Protection`;
+                : item.name === 'Manufacturing'
+                  ? 'Manufacturing Filtration Systems | Industrial Equipment | ELIMFILTERS'
+                  : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -112,33 +115,14 @@ export default function IndustryPage({ params }: Props) {
   const item = getItemBySlug('industries', params.slug);
   if (!item) return null;
 
-  if (item.name === 'Mining') {
-    return <MiningIndustryPageV2 />;
-  }
-
-  if (item.name === 'Agriculture') {
-    return <AgricultureIndustryPage />;
-  }
-
-  if (item.name === 'Construction') {
-    return <ConstructionIndustryPage />;
-  }
-
-  if (item.name === 'Oil Gas') {
-    return <OilGasIndustryPage />;
-  }
-
-  if (item.name === 'Marine') {
-    return <MarineIndustryPage />;
-  }
-
-  if (item.name === 'Power Generation') {
-    return <PowerGenerationIndustryPage />;
-  }
-
-  if (item.name === 'Trucks Fleets') {
-    return <TrucksFleetsIndustryPage />;
-  }
+  if (item.name === 'Mining') return <MiningIndustryPageV2 />;
+  if (item.name === 'Agriculture') return <AgricultureIndustryPage />;
+  if (item.name === 'Construction') return <ConstructionIndustryPage />;
+  if (item.name === 'Oil Gas') return <OilGasIndustryPage />;
+  if (item.name === 'Marine') return <MarineIndustryPage />;
+  if (item.name === 'Power Generation') return <PowerGenerationIndustryPage />;
+  if (item.name === 'Trucks Fleets') return <TrucksFleetsIndustryPage />;
+  if (item.name === 'Manufacturing') return <ManufacturingIndustryPage />;
 
   const media = industryMedia[item.name] || {};
   const url = `${BASE_URL}/industries/${params.slug}/`;
