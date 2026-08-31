@@ -258,7 +258,7 @@ export function HYDROCOREPage() {
                 FIND YOUR PROTECTION SYSTEM
               </h2>
               <p style={{ fontSize: '1rem', color: 'rgba(0,0,0,0.65)', fontFamily: 'Titillium Web, sans-serif', marginBottom: '2.5rem', lineHeight: 1.65 }}>
-                Cross-reference 500,000+ OEM part numbers. Identify the exact 900FH or 1000FH model for your asset.
+                Cross-reference 600,000+ OEM part numbers. Identify the exact 900FH or 1000FH model for your asset.
               </p>
               <motion.a
                 href="https://part-search.elimfilters.com"

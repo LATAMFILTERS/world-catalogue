@@ -458,7 +458,7 @@ export function FuelSeparatorPage() {
                 Ready to Deploy?
               </h2>
               <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6, fontFamily: 'Inter, sans-serif' }}>
-                Identify your SKU. Cross-reference 500,000+ parts. Find your fuel separator now.
+                Identify your SKU. Cross-reference 600,000+ parts. Find your fuel separator now.
               </p>
               <motion.a
                 href="https://part-search.elimfilters.com"

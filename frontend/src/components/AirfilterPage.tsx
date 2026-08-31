@@ -396,7 +396,7 @@ export function AirfilterPage() {
                 Ready to Deploy?
               </h2>
               <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6 }}>
-                Identify your SKU. Cross-reference 500,000+ parts. Find your perfect air filtration solution now.
+                Identify your SKU. Cross-reference 600,000+ parts. Find your perfect air filtration solution now.
               </p>
               <motion.a
                 href="https://part-search.elimfilters.com"

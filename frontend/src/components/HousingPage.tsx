@@ -376,7 +376,7 @@ export function HousingPage() {
                   PRECISION GEOMETRY MATCH
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
-                  Direct drop-in replacement across 500,000+ vehicle and equipment cross-references
+                  Direct drop-in replacement across 600,000+ vehicle and equipment cross-references
                 </p>
               </motion.div>
             </StaggerContainer>
@@ -458,7 +458,7 @@ export function HousingPage() {
                 Ready to Deploy?
               </h2>
               <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6, fontFamily: 'Inter, sans-serif' }}>
-                Identify your SKU. Cross-reference 500,000+ parts. Find your filter housing solution now.
+                Identify your SKU. Cross-reference 600,000+ parts. Find your filter housing solution now.
               </p>
               <motion.a
                 href="https://part-search.elimfilters.com"

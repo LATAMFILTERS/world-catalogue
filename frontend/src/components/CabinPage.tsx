@@ -301,7 +301,7 @@ export function CabinPage() {
                   GEOMETRY-MATCHED FIT
                 </p>
                 <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', fontFamily: 'Inter, sans-serif', marginTop: '0.5rem' }}>
-                  Zero-bypass seal verified across 500,000+ vehicle cross-references
+                  Zero-bypass seal verified across 600,000+ vehicle cross-references
                 </p>
               </motion.div>
             </StaggerContainer>
@@ -379,7 +379,7 @@ export function CabinPage() {
                 Ready to Deploy?
               </h2>
               <p style={{ fontSize: '1rem', color: '#000', marginBottom: '2rem', lineHeight: 1.6, fontFamily: 'Inter, sans-serif' }}>
-                Identify your SKU. Cross-reference 500,000+ parts. Find your cabin air filtration solution now.
+                Identify your SKU. Cross-reference 600,000+ parts. Find your cabin air filtration solution now.
               </p>
               <motion.a
                 href="https://part-search.elimfilters.com"
