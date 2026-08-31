@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { MacrocoreTechnologyPageFinal } from '@/components/MacrocoreTechnologyPageFinal';
+import { MacrocoreStablePage } from '@/components/MacrocoreStablePage';
 
 const BASE_URL = 'https://elimfilters.com';
 const URL = `${BASE_URL}/technologies/macrocore/`;
@@ -64,18 +64,6 @@ export default function MacrocorePage() {
           filter: drop-shadow(0 8px 24px rgba(0,0,0,.34));
         }
 
-        .macrocore-route main#main-content > section:not([aria-labelledby="macrocore-title"]) {
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-
-        .macrocore-route main#main-content > section[aria-labelledby="macrocore-title"] {
-          display: grid !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-
         @media (max-width: 640px) {
           .macrocoreHeroWordmark {
             width: min(430px, 82vw);
@@ -84,7 +72,7 @@ export default function MacrocorePage() {
           }
         }
       `}</style>
-      <MacrocoreTechnologyPageFinal />
+      <MacrocoreStablePage />
     </div>
   );
 }
