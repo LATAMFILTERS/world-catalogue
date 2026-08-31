@@ -154,6 +154,23 @@ section:not([aria-labelledby]) > div > div:first-child:has(> [data-conversion-ac
   border: 1px solid #FFF12D !important;
 }
 
+/* Equipment section refinement: keep the existing layout, but force a square image and smaller equipment labels. */
+section[aria-labelledby="equipment-title"] img {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+section[aria-labelledby="equipment-title"] [role="listitem"] span {
+  font-size: clamp(0.95rem, 1.35vw, 1.3rem) !important;
+  line-height: 1.08 !important;
+  max-width: 100% !important;
+  overflow-wrap: break-word !important;
+}
+
 @media (max-width: 900px) {
   section[aria-labelledby="mining-tco-title"] > div > div:nth-child(2) > div:first-of-type {
     grid-template-columns: 1fr !important;
