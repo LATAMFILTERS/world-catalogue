@@ -14,6 +14,14 @@ const HUBS=[
  ['08','Knowledge Search','TECHNICAL DISCOVERY','Search the Knowledge Center when the question is known but the correct technical domain or document is not.','/knowledge-center/search'],
 ] as const;
 
+const SCALE=[
+ ['12,000+','Primary catalog products','12,192 unique ELIMFILTERS SKUs in the database-audited primary catalog.'],
+ ['1,000,000+','Cross-reference relationships','1,044,939 unique relationships across the primary and LD catalog intelligence layers.'],
+ ['37,000+','Equipment models','37,751 models connected through the curated equipment knowledge graph.'],
+ ['123,000+','Vehicle configurations','123,357 distinct LD vehicle configurations derived from 282,252 application records.'],
+ ['423','Active equipment makes','Curated equipment-make coverage supporting application and asset-protection reasoning.'],
+] as const;
+
 const DECISION=[
  ['01','Identify the condition','Operating symptoms, duty cycle, environment and service history define the starting point.'],
  ['02','Define the mechanism','Determine whether the issue is particles, water, restriction, degradation, bypass or another failure mechanism.'],
@@ -53,6 +61,13 @@ export default function KnowledgeCenterPage(){
    </div></section>
 
    <section className={styles.domains}><div className={`${styles.inner} ${styles.domainRow}`}><span>REFERENCE DOMAINS</span>{['AIR INTAKE','FUEL','LUBRICATION','HYDRAULICS','COOLING','PNEUMATICS','RELIABILITY'].map(x=><span key={x}>{x}</span>)}</div></section>
+
+   <section className={`${styles.section} ${styles.sectionAlt}`}><div className={styles.inner}>
+    <p className={styles.eyebrow}>DATABASE-AUDITED APPLICATION INTELLIGENCE</p>
+    <h2 className={styles.h2}>Engineering depth backed by catalog and application data.</h2>
+    <p className={styles.lead}>ELIMFILTERS connects technical knowledge to a production catalog, OEM and aftermarket reference intelligence, equipment models and vehicle applications. Cross-reference data supports identification and application reasoning; product-level performance remains governed by validated technical evidence.</p>
+    <div className={styles.decision} style={{marginTop:'2.4rem'}}>{SCALE.map(([value,title,text])=><article className={styles.decisionItem} key={title}><span>{value}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+   </div></section>
 
    <section className={styles.section}><div className={styles.inner}>
     <div className={styles.sectionHead}><h2 className={styles.h2}>Start with the technical question.</h2><p className={styles.body}>The system is organized by investigative intent, not by decorative categories. Move from the operating condition to the technical mechanism, supporting framework, protection architecture and validated application.</p></div>
