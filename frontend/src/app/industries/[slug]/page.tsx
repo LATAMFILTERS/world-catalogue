@@ -9,6 +9,7 @@ import { PowerGenerationIndustryPage } from '@/components/PowerGenerationIndustr
 import { TrucksFleetsIndustryPage } from '@/components/TrucksFleetsIndustryPage';
 import { ManufacturingIndustryPage } from '@/components/ManufacturingIndustryPage';
 import { RailwayIndustryPage } from '@/components/RailwayIndustryPage';
+import { WasteMunicipalIndustryPage } from '@/components/WasteMunicipalIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -44,7 +45,7 @@ const industryMetaDescription: Record<string, string> = {
   'Power Generation': 'Power generation filtration systems for standby generators, prime-power systems and industrial diesel generator sets requiring fuel, air, lubrication and cooling-system protection.',
   Railway: 'Railway filtration systems for freight and passenger locomotives, diesel multiple units, auxiliary power units and rail maintenance equipment operating under vibration, route dust, fuel-handling exposure and extended duty.',
   'Trucks Fleets': 'Truck fleet filtration systems for long-haul, regional, vocational and mixed commercial fleets requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
-  'Waste Municipal': 'Asset-protection and contamination-control architecture for refuse trucks, municipal service fleets, utility vehicles and public-works equipment operating under repeated urban duty cycles.',
+  'Waste Municipal': 'Waste and municipal filtration systems for refuse trucks, street sweepers, sewer and vacuum trucks, utility vehicles and public-works fleets operating under stop-start urban duty, dust, debris and hydraulic load.',
 };
 
 export function generateStaticParams() {
@@ -80,7 +81,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                   ? 'Manufacturing Filtration Systems | Industrial Equipment | ELIMFILTERS'
                   : item.name === 'Railway'
                     ? 'Railway Filtration Systems | Locomotives & Rail Fleets | ELIMFILTERS'
-                    : `${item.title} | ELIMFILTERS Asset Protection`;
+                    : item.name === 'Waste Municipal'
+                      ? 'Waste & Municipal Filtration Systems | Public-Service Fleets | ELIMFILTERS'
+                      : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -127,6 +130,7 @@ export default function IndustryPage({ params }: Props) {
   if (item.name === 'Trucks Fleets') return <TrucksFleetsIndustryPage />;
   if (item.name === 'Manufacturing') return <ManufacturingIndustryPage />;
   if (item.name === 'Railway') return <RailwayIndustryPage />;
+  if (item.name === 'Waste Municipal') return <WasteMunicipalIndustryPage />;
 
   const media = industryMedia[item.name] || {};
   const url = `${BASE_URL}/industries/${params.slug}/`;
