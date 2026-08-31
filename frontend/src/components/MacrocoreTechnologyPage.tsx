@@ -1,63 +1,100 @@
 import Link from 'next/link';
-import { MACROCORE_APPLICATIONS } from '@/lib/macrocore-applications';
 import { PageHeader } from './PageHeader';
+import { UniversalEndNavigation } from './UniversalEndNavigation';
 import styles from './MacrocoreTechnologyPage.module.css';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/technologies/macrocore/`;
 
+const applicationPositions = [
+  'Primary engine air filtration',
+  'Secondary / safety air filtration where specified by the intake architecture',
+  'Heavy-duty engine air-cleaner assemblies operating in dusty environments',
+  'Applications where airflow demand, restriction development and sealing integrity must be evaluated together',
+] as const;
+
+const operatingConditions = [
+  'High airborne dust concentration',
+  'Fine particulate and mixed particle-size environments',
+  'High engine load and sustained airflow demand',
+  'Repeated idle-to-load duty cycles',
+  'Remote or severe-duty service conditions',
+  'Maintenance practices around housings, seals and safety elements',
+] as const;
+
+const riskIndustries = [
+  'Mining',
+  'Construction',
+  'Agriculture',
+  'Truck fleets',
+  'Power generation',
+  'Waste & municipal',
+  'Bus & coach',
+] as const;
+
+const selectionQuestions = [
+  'Is this the primary element, secondary / safety element, or a complete air-cleaner assembly?',
+  'What engine, equipment and housing does the element serve?',
+  'What airflow and restriction limits apply to the validated application?',
+  'What contamination environment and duty cycle does the equipment operate in?',
+  'Is there a history of premature restriction, dust downstream or recurring seal issues?',
+] as const;
+
+const engineeringParameters = [
+  'Filtration efficiency for the specific validated product',
+  'Contaminant-holding capacity',
+  'Airflow requirement',
+  'Restriction development through the service cycle',
+  'Media configuration and available filtration area',
+  'Seal geometry, element retention and housing interface',
+] as const;
+
+const selectionErrors = [
+  'Choosing by dimensions alone',
+  'Treating every dusty environment as the same duty cycle',
+  'Replacing an element only because it looks dirty',
+  'Ignoring clean-side dust traces or damaged sealing surfaces',
+  'Assuming one universal efficiency, micron or service-life value applies to every MACROCORE™ configuration',
+] as const;
+
 const protectionPath = [
-  ['AMBIENT AIR', 'Dust, soot, fibers and airborne debris enter through the intake environment.'],
-  ['PRIMARY FILTRATION', 'The primary element carries the normal contamination load while supporting the airflow required by the engine application.'],
-  ['SECONDARY PROTECTION', 'Where specified, a safety element provides an additional clean-side protection layer during service or abnormal primary-element conditions.'],
-  ['SEALED CLEAN-AIR PATH', 'Element fit, housing condition and sealing geometry preserve the contamination boundary downstream of the filter.'],
-  ['ENGINE', 'Controlled intake contamination helps protect turbocharger compressor surfaces, cylinder walls, piston rings and the combustion-air path.'],
-] as const;
-
-const decisionFactors = [
-  ['Airflow Demand', 'Engine displacement, operating load and intake-system design determine the airflow that the filter and housing must support.'],
-  ['Restriction', 'The selected configuration must remain compatible with the restriction limits defined by the equipment application.'],
-  ['Dust Loading', 'Contaminant concentration, particle distribution and duty environment influence media loading and service behavior.'],
-  ['Media Configuration', 'Fiber structure, media depth and available filtration area influence contaminant retention and restriction development.'],
-  ['Housing + Seal', 'Dimensions alone do not prove fit. Retention, gasket geometry, housing condition and clean-side sealing are part of the protection decision.'],
-  ['Service Strategy', 'Restriction indication, inspection history and operating environment should guide maintenance rather than visual appearance alone.'],
-] as const;
-
-const loadingLogic = [
-  ['01', 'Contaminant Exposure', 'The operating environment determines the concentration and character of airborne material presented to the intake system.'],
-  ['02', 'Media Utilization', 'Particles are distributed through the available filtration structure according to media design, airflow and loading conditions.'],
-  ['03', 'Restriction Development', 'As contaminant accumulates, resistance to airflow changes. The rate of change depends on the application and media configuration.'],
-  ['04', 'Service Limit', 'The maintenance decision should follow the validated restriction and service strategy for the equipment, not appearance alone.'],
+  ['Primary stage', 'The primary element carries the normal contamination load while supporting the airflow required by the engine application.'],
+  ['Secondary protection', 'Where specified, a safety element adds a downstream protection layer during service or abnormal primary-element conditions.'],
+  ['Clean-air boundary', 'Element fit, housing condition and seal integrity keep contamination on the dirty side of the intake system.'],
 ] as const;
 
 const protectedAssets = [
-  ['Turbocharger Compressor', 'Airborne particulate reaching compressor surfaces can contribute to erosive wear and loss of surface integrity.'],
-  ['Cylinder Walls', 'Fine particulate entering the combustion-air path can contribute to abrasive contact at the cylinder interface.'],
-  ['Piston Rings', 'Dust ingestion can increase abrasive exposure at ring and liner surfaces.'],
-  ['Combustion Air Path', 'The intake system must deliver required air while preserving the clean-air boundary.'],
+  'Turbocharger compressor surfaces',
+  'Cylinder walls',
+  'Piston rings',
+  'Combustion-air passages',
 ] as const;
 
-const fieldSignals = [
-  ['Premature Restriction', 'Repeated short filter intervals can indicate a mismatch between contamination exposure, media capacity, airflow demand or service strategy.'],
-  ['Dust Downstream', 'Dust tracks on the clean side require inspection of element fit, sealing surfaces, housing condition and service practices.'],
-  ['Recurring Seal Problems', 'Repeated gasket, clamp or housing issues should be treated as an intake-system integrity problem, not only a filter replacement problem.'],
-  ['Selection by Dimensions Alone', 'Visual similarity and dimensions are useful evidence, but they do not establish airflow, seal, housing or application compatibility.'],
+const loadingPath = [
+  ['01', 'Contaminant exposure', 'Dust concentration and particle characteristics define what reaches the filter.'],
+  ['02', 'Media utilization', 'Media structure, filtration area and airflow influence how contamination is distributed and retained.'],
+  ['03', 'Restriction development', 'As loading increases, resistance to airflow changes according to the application and media configuration.'],
+  ['04', 'Service limit', 'Replacement should follow the validated restriction and maintenance strategy rather than appearance alone.'],
 ] as const;
 
-const families = [
-  ['Primary Air Filters', '/families/primary-air/', 'Main engine-intake contamination barrier for the normal service load.'],
-  ['Secondary / Safety Air Elements', '/families/secondary-air/', 'Additional downstream protection where the intake architecture specifies a secondary element.'],
+const serviceSignals = [
+  'Premature restriction or repeated short filter intervals',
+  'Dust tracks downstream of the element',
+  'Damaged, distorted or repeatedly displaced seals',
+  'Housing, clamp or retention problems',
+  'Restriction symptoms that do not match the expected duty cycle',
+  'Contamination introduced during element service or housing cleaning',
 ] as const;
 
 const faqs = [
-  ['What is MACROCORE™?', 'MACROCORE™ is the ELIMFILTERS architecture for primary and secondary engine air-intake filtration. It combines media configuration, contaminant-holding capacity, restriction control and sealing integrity according to airflow demand and operating conditions.'],
-  ['How does MACROCORE™ manage particle control and airflow?', 'The engineering objective is to keep airborne contamination on the dirty side while maintaining the airflow and restriction behavior required by the validated intake application.'],
+  ['How do I know whether I need a primary or secondary engine air filter?', 'The application architecture determines the position. The primary element normally carries the contamination load; a secondary or safety element is used only where the intake design specifies an additional downstream protection layer.'],
+  ['Is a higher-efficiency engine air filter always better?', 'Not as a universal rule. Particle control must be evaluated together with airflow demand, restriction, contaminant capacity, housing design and the validated requirements of the engine application.'],
+  ['Why is my engine air filter plugging much earlier than expected?', 'Early restriction can be associated with severe dust exposure, insufficient filtration area, media/application mismatch, unusual contaminant characteristics, housing conditions or a service strategy that does not match the duty cycle.'],
   ['What causes dust downstream of an engine air filter?', 'Possible causes include damaged or incorrectly seated elements, compromised seals, housing defects, incorrect part selection or contamination introduced during service. The complete intake path should be inspected.'],
-  ['Why can an engine air filter plug earlier than expected?', 'Premature restriction can be influenced by severe dust loading, contaminant characteristics, insufficient filtration area, airflow demand, media configuration, housing conditions or a service strategy that does not match the duty cycle.'],
-  ['Should an engine air filter be replaced because it looks dirty?', 'Not by appearance alone. Restriction condition, the equipment maintenance strategy, service history and inspection of the complete intake system should guide replacement decisions.'],
-  ['What is the difference between primary and secondary air filtration?', 'The primary element carries the normal contamination load. A secondary or safety element, where specified by the intake architecture, provides an additional protection layer downstream of the primary element.'],
-  ['Can an engine air filter be selected only by dimensions?', 'No. Dimensions are useful evidence, but airflow demand, restriction, seal geometry, housing fit, element position and validated application compatibility also matter.'],
-  ['What does ISO 5011 mean for MACROCORE™?', 'ISO 5011 provides test methods used to evaluate engine air cleaners and filter elements. Any numeric product-performance claim should remain tied to validated data for the specific element or assembly rather than treated as a universal MACROCORE™ value.'],
+  ['Should an engine air filter be replaced because it looks dirty?', 'Not by appearance alone. Restriction condition, maintenance strategy, service history and inspection of the complete intake system should guide replacement decisions.'],
+  ['Can MACROCORE™ be selected only by dimensions or cross reference?', 'No. Dimensions and cross references are evidence, not complete validation. Airflow, restriction, seal geometry, housing fit, element position and application compatibility must also be resolved.'],
+  ['What information helps with MACROCORE™ application validation?', 'Useful evidence includes equipment, engine, current element reference, housing information, operating environment, duty cycle, service interval, restriction history and any dust-bypass or sealing events.'],
+  ['What does ISO 5011 mean for MACROCORE™?', 'ISO 5011 provides test methods used to evaluate engine air cleaners and filter elements. Numeric performance claims should remain tied to validated data for the specific element or assembly rather than treated as a universal MACROCORE™ value.'],
 ] as const;
 
 export function MacrocoreTechnologyPage() {
@@ -81,11 +118,11 @@ export function MacrocoreTechnologyPage() {
       },
       mentions: [
         { '@type': 'Thing', name: 'Engine air filtration' },
-        { '@type': 'Thing', name: 'Primary air filtration' },
-        { '@type': 'Thing', name: 'Secondary air filtration' },
+        { '@type': 'Thing', name: 'Primary engine air filter' },
+        { '@type': 'Thing', name: 'Secondary safety air filter' },
         { '@type': 'Thing', name: 'Air intake contamination control' },
         { '@type': 'Thing', name: 'Airflow restriction' },
-        { '@type': 'Thing', name: 'Dust loading' },
+        { '@type': 'Thing', name: 'Dust holding capacity' },
         { '@type': 'Thing', name: 'ISO 5011' },
       ],
       isPartOf: { '@id': `${BASE_URL}/#website` },
@@ -111,237 +148,224 @@ export function MacrocoreTechnologyPage() {
   ];
 
   return (
-    <main className={styles.page}>
+    <main id="main-content" className={styles.page}>
       {schemas.map((schema, index) => (
         <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       ))}
 
-      <PageHeader breadcrumbs={[{ label: 'Technologies', href: '/technologies/' }]} currentPage="MACROCORE™" />
-
       <section className={styles.hero} aria-labelledby="macrocore-title">
-        <img className={styles.heroBackground} src="/images/mecanica-air.avif" alt="Engine air-intake application" />
+        <img className={styles.heroBackground} src="/images/mecanica-air.avif" alt="Engine air-intake service environment" />
         <div className={styles.heroShade} aria-hidden="true" />
         <h1 id="macrocore-title" className={styles.srOnly}>MACROCORE™ Engine Air Filtration Technology</h1>
         <img className={styles.heroMark} src="/assets/MACROCORE_final.avif" alt="MACROCORE™" />
       </section>
 
-      <section className={styles.section}>
-        <div className={`${styles.inner} ${styles.answerGrid}`}>
-          <div>
-            <p className={styles.eyebrow}>WHY MACROCORE EXISTS</p>
-            <h2 className={styles.h2}>The filter is one boundary inside a complete engine air-intake system.</h2>
-          </div>
-          <div className={styles.answerCopy}>
-            <p className={styles.lead}>Engine air protection depends on more than particle capture. The intake system has to control contamination while supporting the airflow demanded by the engine and preserving sealing integrity from the dirty side to the clean side.</p>
-            <p className={styles.body}>MACROCORE™ connects media configuration, contaminant-holding capacity, restriction behavior, element fit and operating conditions before a final filter reference is accepted.</p>
-          </div>
-        </div>
-      </section>
+      <PageHeader breadcrumbs={[{ label: 'Technologies', href: '/technologies/' }]} currentPage="MACROCORE™" />
 
-      <section className={styles.sectionFeature}>
-        <div className={`${styles.inner} ${styles.mediaGrid}`}>
-          <div className={styles.mediaCopy}>
-            <div className={styles.metaRow}>
-              <span className={styles.metaItem}><span className={styles.metaLabel}>Technology:</span> MACROCORE™</span>
-              <span className={styles.metaItem}><span className={styles.metaLabel}>Application:</span> Primary and secondary engine air filtration</span>
+      <section className={styles.introSection}>
+        <div className={styles.inner}>
+          <p className={styles.eyebrow}>FILTRATION TECHNOLOGY</p>
+          <h2 className={styles.displayTitle}>MACROCORE™</h2>
+          <p className={styles.applicationLine}><strong>Primary and secondary engine air filtration</strong></p>
+          <p className={styles.lead}>An engine air-intake filtration architecture for controlling airborne particulate while managing airflow demand, restriction development and sealing integrity.</p>
+          <p className={styles.bodyWide}>Applied across approved primary and secondary / safety engine-air filtration positions upstream of turbocharger, cylinder and combustion-air components.</p>
+
+          <div className={styles.mediaGrid}>
+            <div className={styles.mediaCopy}>
+              <div className={styles.metaStack}>
+                <p><span>Technology:</span> MACROCORE™</p>
+                <p><span>Application:</span> Primary and secondary engine air filtration</p>
+              </div>
+              <h3 className={styles.featureTitle}>Airflow Management and Particle Control</h3>
+              <p className={styles.lead}>MACROCORE™ is the ELIMFILTERS architecture for engine air-intake protection. It integrates media configuration, contaminant-holding capacity, restriction control, and sealing integrity according to airflow demand and operating conditions.</p>
             </div>
-            <p className={styles.eyebrow}>MEDIA ARCHITECTURE</p>
-            <h2 className={styles.h2}>Airflow Management and Particle Control</h2>
-            <p className={styles.lead} style={{ marginTop: '1.4rem' }}>MACROCORE™ is the ELIMFILTERS architecture for engine air-intake protection. It integrates media configuration, contaminant-holding capacity, restriction control, and sealing integrity according to airflow demand and operating conditions.</p>
+            <figure className={styles.mediaFigure}>
+              <img className={styles.mediaImage} src="/images/MACROCORE-media.png" alt="Conceptual fibrous filtration structure illustrating media architecture" />
+              <figcaption>Conceptual visualization of a fibrous filtration structure. It does not represent an actual MACROCORE™ laboratory micrograph.</figcaption>
+            </figure>
           </div>
-          <figure className={styles.mediaFigure}>
-            <img className={styles.mediaImage} src="/images/MACROCORE-media.png" alt="Conceptual fibrous filtration structure used to explain MACROCORE media architecture" />
-            <figcaption className={styles.mediaCaption}>Conceptual visualization of a fibrous filtration structure. It does not represent an actual MACROCORE™ laboratory micrograph.</figcaption>
-          </figure>
         </div>
       </section>
 
-      <section className={styles.sectionAlt}>
+      <section className={styles.band}>
         <div className={styles.inner}>
-          <p className={styles.eyebrow}>HOW THE PROTECTION PATH WORKS</p>
-          <h2 className={styles.h2}>Follow the air from ambient contamination to the engine.</h2>
-          <div className={styles.flow}>
-            {protectionPath.map(([title, text], index) => (
-              <article className={styles.flowCard} key={title}>
-                <span className={styles.stepNo}>{String(index + 1).padStart(2, '0')}</span>
+          <p className={styles.eyebrow}>OPERATING REALITY</p>
+          <h2 className={styles.h2}>Engine air systems do not tolerate uncontrolled dust ingestion.</h2>
+          <p className={styles.lead}>Airborne particulate that crosses the clean-air boundary can contribute to abrasive and erosive wear at turbocharger, cylinder, ring and combustion-air surfaces. MACROCORE™ is used where particle control and airflow management have to coexist across the service cycle.</p>
+          <div className={styles.twoColumnNotes}>
+            <article className={styles.noteBlock}>
+              <h3 className={styles.h3}>A useful distinction</h3>
+              <p className={styles.body}>“Air filter” describes a category. The application position, housing, airflow requirement and protection strategy determine what the element is actually being asked to do.</p>
+            </article>
+            <article className={styles.noteBlock}>
+              <h3 className={styles.h3}>Primary contaminant: airborne particulate.</h3>
+              <p className={styles.body}>Dust, soot, fibers and mixed debris can enter the intake stream. Effective control depends on the element, its seal, the housing and the complete clean-air path acting as one protection boundary.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.bandAlt}>
+        <div className={styles.inner}>
+          <p className={styles.eyebrow}>APPLICATION ENVIRONMENT</p>
+          <h2 className={styles.h2}>Where MACROCORE™ belongs</h2>
+          <div className={styles.editorialColumns}>
+            <div>
+              <h3 className={styles.h3}>Application positions</h3>
+              <ul className={styles.list}>{applicationPositions.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+            <div>
+              <h3 className={styles.h3}>Operating conditions that change the filter duty</h3>
+              <ul className={styles.list}>{operatingConditions.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+            <div>
+              <h3 className={styles.h3}>Where intake cleanliness becomes operational risk</h3>
+              <ul className={styles.list}>{riskIndustries.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="selection" className={styles.band}>
+        <div className={styles.inner}>
+          <p className={styles.eyebrow}>SPECIFICATION &amp; SELECTION</p>
+          <h2 className={styles.h2}>Questions before selecting an engine air filter</h2>
+          <div className={styles.editorialColumns}>
+            <div>
+              <h3 className={styles.h3}>Application questions</h3>
+              <ul className={styles.list}>{selectionQuestions.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+            <div>
+              <h3 className={styles.h3}>Key engineering parameters</h3>
+              <ul className={styles.list}>{engineeringParameters.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+            <div>
+              <h3 className={styles.h3}>Common selection errors</h3>
+              <ul className={styles.list}>{selectionErrors.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.bandAlt}>
+        <div className={styles.inner}>
+          <p className={styles.eyebrow}>HOW THE SYSTEM BEHAVES</p>
+          <h2 className={styles.h2}>Different intake stages do different work.</h2>
+          <p className={styles.lead}>A primary element normally carries the contamination burden. Where specified, a secondary / safety element provides an additional clean-side protection layer. Neither position should be selected independently of airflow, restriction, seal and housing requirements.</p>
+
+          <div className={styles.stageGrid}>
+            {protectionPath.map(([title, text]) => (
+              <article className={styles.stageItem} key={title}>
                 <h3 className={styles.h3}>{title}</h3>
                 <p className={styles.body}>{text}</p>
               </article>
             ))}
           </div>
+
+          <div className={styles.behaviorGrid}>
+            <div>
+              <h3 className={styles.h3}>What clean air is protecting</h3>
+              <ul className={styles.list}>{protectedAssets.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+            <div>
+              <h3 className={styles.h3}>Contaminant loading vs. restriction</h3>
+              <div className={styles.loadingPath}>
+                {loadingPath.map(([number, title, text]) => (
+                  <article className={styles.loadingItem} key={title}>
+                    <span>{number}</span>
+                    <div><strong>{title}</strong><p>{text}</p></div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.band}>
         <div className={styles.inner}>
-          <p className={styles.eyebrow}>CONTAMINANT LOADING VS. RESTRICTION</p>
-          <h2 className={styles.h2}>Particle capture has to be evaluated together with restriction development.</h2>
-          <p className={styles.lead} style={{ maxWidth: 900, marginTop: '1.3rem' }}>A useful engine-air filtration decision is not based on efficiency alone. Media structure, available filtration area, airflow and the contamination environment influence how loading develops through the service cycle.</p>
-          <div className={styles.loadingGrid}>
-            {loadingLogic.map(([no, title, text]) => (
-              <article className={styles.loadingStep} key={title}>
-                <span className={styles.stepNo}>{no}</span>
-                <h3 className={styles.h3}>{title}</h3>
-                <p className={styles.body}>{text}</p>
-              </article>
-            ))}
+          <p className={styles.eyebrow}>SERVICE &amp; DIAGNOSIS</p>
+          <h2 className={styles.h2}>What early restriction or dust downstream may be telling you</h2>
+          <ul className={`${styles.list} ${styles.serviceList}`}>{serviceSignals.map((item) => <li key={item}>{item}</li>)}</ul>
+          <div className={styles.inlineCta}>
+            <p>Repeated restriction, clean-side dust or sealing problems should trigger an intake-system review, not just another filter replacement.</p>
+            <a href="mailto:applications@elimfilters.com?subject=MACROCORE%20Intake%20System%20Review" data-conversion-action="application-support">REQUEST INTAKE SYSTEM REVIEW</a>
           </div>
         </div>
       </section>
 
-      <section id="selection" className={styles.sectionAlt}>
+      <section className={styles.bandAlt}>
         <div className={styles.inner}>
-          <p className={styles.eyebrow}>ENGINEERING PARAMETERS</p>
-          <h2 className={styles.h2}>Six variables define whether the air-filter decision is technically complete.</h2>
-          <div className={styles.factorGrid}>
-            {decisionFactors.map(([title, text]) => (
-              <article className={styles.factorCard} key={title}>
-                <h3 className={styles.h3}>{title}</h3>
-                <p className={styles.body}>{text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className={styles.inner}>
-          <p className={styles.eyebrow}>PROTECTED ASSETS</p>
-          <h2 className={styles.h2}>The protected asset begins after the clean-air seal.</h2>
-          <div className={styles.assetGrid}>
-            {protectedAssets.map(([title, text]) => (
-              <article className={styles.assetCard} key={title}>
-                <h3 className={styles.h3}>{title}</h3>
-                <p className={styles.body}>{text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.sectionAlt}>
-        <div className={styles.inner}>
-          <p className={styles.eyebrow}>FAILURE DIAGNOSIS</p>
-          <h2 className={styles.h2}>Some air-filter problems are really intake-system problems.</h2>
-          <div className={styles.signalGrid}>
-            {fieldSignals.map(([title, text]) => (
-              <article className={styles.signalCard} key={title}>
-                <h3 className={styles.h3}>{title}</h3>
-                <p className={styles.body}>{text}</p>
-              </article>
-            ))}
-          </div>
-          <div className={styles.microCta}>
-            <p className={styles.microCtaText}>Experiencing premature restriction, dust downstream or recurring seal problems?</p>
-            <a className={styles.primaryButton} href="mailto:applications@elimfilters.com?subject=MACROCORE%20Intake%20System%20Review" data-conversion-action="application-support">REQUEST INTAKE SYSTEM REVIEW</a>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className={styles.inner}>
-          <p className={styles.eyebrow}>OPERATING ENVIRONMENTS</p>
-          <h2 className={styles.h2}>MACROCORE™ follows the intake duty, not an industry label alone.</h2>
-          <p className={styles.lead} style={{ maxWidth: 900, marginTop: '1.3rem' }}>Selection still depends on equipment, engine, housing, airflow requirement, contamination exposure, duty cycle and validated application evidence.</p>
-          <div className={styles.applicationGrid}>
-            {MACROCORE_APPLICATIONS.map((application) => {
-              const content = (
-                <>
-                  <h3 className={styles.h3}>{application.label}</h3>
-                  {application.description ? <p className={styles.body}>{application.description}</p> : null}
-                  {application.route ? <span className={styles.applicationLink}>VIEW INDUSTRY →</span> : null}
-                </>
-              );
-
-              return application.route ? (
-                <Link className={styles.applicationCard} href={application.route} key={application.id}>{content}</Link>
-              ) : (
-                <article className={styles.applicationCard} key={application.id}>{content}</article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.sectionAlt}>
-        <div className={styles.inner}>
-          <p className={styles.eyebrow}>PRODUCT ARCHITECTURE</p>
-          <h2 className={styles.h2}>Technology first. Product family second. Validated part number last.</h2>
-          <div className={styles.familyGrid}>
-            {families.map(([name, href, description]) => (
-              <Link className={styles.familyCard} href={href} key={name}>
-                <h3 className={styles.h3}>{name}</h3>
-                <p className={styles.body}>{description}</p>
-                <span className={styles.applicationLink}>VIEW PRODUCT FAMILY →</span>
-              </Link>
-            ))}
-          </div>
-          <div className={styles.decisionPath}>
-            {['AIR INTAKE & AIRFLOW PROTECTION', 'MACROCORE™', 'PRIMARY / SECONDARY AIR FAMILY', 'VALIDATED PART NUMBER'].map((item) => (
-              <div className={styles.decisionStep} key={item}>{item}</div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.section}>
-        <div className={`${styles.inner} ${styles.isoGrid}`}>
-          <div>
-            <p className={styles.eyebrow}>TECHNICAL BASIS</p>
-            <h2 className={styles.h2}>ISO 5011 is a test framework, not a universal MACROCORE™ performance claim.</h2>
-          </div>
-          <div className={styles.answerCopy}>
-            <p className={styles.lead}>Engine air-cleaner performance is commonly evaluated using ISO 5011 methods. The standard provides a controlled basis for evaluating relevant filter or air-cleaner performance characteristics.</p>
-            <p className={styles.body}>Published efficiency, dust-capacity, restriction or durability values should remain tied to validated test data for the specific element or assembly. MACROCORE™ should not be assigned a single universal numeric performance value across every product and application.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.sectionAlt}>
-        <div className={styles.inner}>
-          <p className={styles.eyebrow}>QUESTIONS ENGINEERS ASK</p>
-          <h2 className={styles.h2}>Engine air filtration questions that should be resolved before selection.</h2>
-          <div className={styles.faqGrid}>
+          <p className={styles.eyebrow}>QUESTIONS FROM THE FIELD</p>
+          <h2 className={styles.h2}>What to clarify before treating every engine-air position the same way.</h2>
+          <div className={styles.faqList}>
             {faqs.map(([question, answer]) => (
-              <article className={styles.faqCard} key={question}>
-                <h3 className={styles.h3}>{question}</h3>
-                <p className={styles.body}>{answer}</p>
-              </article>
+              <details key={question} className={styles.faqItem}>
+                <summary>{question}</summary>
+                <p>{answer}</p>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.band}>
         <div className={styles.inner}>
-          <p className={styles.eyebrow}>MACROCORE™ AT A GLANCE</p>
-          <h2 className={styles.h2}>A compact engineering definition for the technology.</h2>
-          <div className={styles.atGlance}>
-            <div className={styles.atGlanceItem}><span className={styles.atGlanceLabel}>Technology</span><span className={styles.atGlanceValue}>MACROCORE™</span></div>
-            <div className={styles.atGlanceItem}><span className={styles.atGlanceLabel}>Application</span><span className={styles.atGlanceValue}>Primary and secondary engine air filtration</span></div>
-            <div className={styles.atGlanceItem}><span className={styles.atGlanceLabel}>System</span><span className={styles.atGlanceValue}>Air Intake & Airflow Protection</span></div>
-            <div className={styles.atGlanceItem}><span className={styles.atGlanceLabel}>Primary Variables</span><span className={styles.atGlanceValue}>Airflow, loading, restriction, media and sealing</span></div>
-            <div className={styles.atGlanceItem}><span className={styles.atGlanceLabel}>Test Context</span><span className={styles.atGlanceValue}>ISO 5011 at validated product level</span></div>
+          <p className={styles.eyebrow}>TECHNICAL BASIS</p>
+          <h2 className={styles.h2}>Technical reference</h2>
+          <div className={styles.twoColumnNotes}>
+            <article className={styles.noteBlock}>
+              <h3 className={styles.h3}>ISO 5011 context</h3>
+              <p className={styles.body}>Engine air-cleaner performance is commonly evaluated using ISO 5011 methods. Published efficiency, dust-capacity, restriction or durability values should remain tied to validated test data for the specific element or assembly.</p>
+            </article>
+            <article className={styles.noteBlock}>
+              <h3 className={styles.h3}>Product-family connection</h3>
+              <p className={styles.body}>MACROCORE™ applies to ELIMFILTERS primary air and secondary / safety air families within the Air Intake &amp; Airflow Protection architecture. A single universal micron, efficiency or service-life claim is not assigned across every configuration.</p>
+              <div className={styles.textLinks}>
+                <Link href="/families/primary-air/">PRIMARY AIR FILTERS →</Link>
+                <Link href="/families/secondary-air/">SECONDARY / SAFETY AIR →</Link>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.bandAlt}>
+        <div className={styles.inner}>
+          <p className={styles.eyebrow}>WHEN A TECHNICAL REVIEW MAKES SENSE</p>
+          <h2 className={styles.h2}>When engine air filtration becomes a fleet-level problem</h2>
+          <p className={styles.lead}>Repeated dust downstream, short filter intervals, recurring seal failures, unexplained restriction or accelerated engine wear justify looking beyond individual part numbers. The complete intake boundary, operating environment and maintenance strategy should be reviewed together.</p>
+          <p className={styles.bodyWide}>A useful air-filtration review starts with the equipment, engine, filter position, current element reference, housing, duty environment, service interval, restriction history and any evidence of dust bypass or clean-side contamination.</p>
+        </div>
+      </section>
+
+      <section className={styles.band}>
+        <div className={styles.inner}>
+          <p className={styles.eyebrow}>SYSTEM INTEGRATION</p>
+          <h2 className={styles.h2}>Air Intake &amp; Airflow Protection</h2>
+          <div className={styles.systemGrid}>
+            <div>
+              <p className={styles.lead}>Air Intake &amp; Airflow Protection controls contamination entering the engine and manages the clean-air path required to support equipment performance and component life.</p>
+              <Link className={styles.systemButton} href="/systems/air-intake/">EXPLORE PROTECTION SYSTEM</Link>
+            </div>
+            <p className={styles.bodyWide}>MACROCORE™ provides primary and secondary engine-air filtration within this architecture. The final selection still resolves the protected asset, contamination mechanism, airflow requirement, duty cycle, housing interface and validated product evidence.</p>
           </div>
         </div>
       </section>
 
       <section className={styles.ctaSection}>
-        <div className={`${styles.inner} ${styles.ctaGrid}`}>
-          <div>
-            <p className={styles.eyebrow}>APPLICATION SUPPORT</p>
-            <h2 className={styles.h2}>Resolve the intake requirement before accepting the part number.</h2>
-          </div>
-          <div>
-            <p className={styles.lead}>Provide the equipment, engine, current element reference, housing information, duty environment and any restriction or dust-bypass history. ELIMFILTERS can use that evidence to identify the appropriate protection path.</p>
-            <div className={styles.buttonRow}>
-              <a className={styles.primaryButton} href="mailto:applications@elimfilters.com?subject=MACROCORE%20Application%20Assessment" data-conversion-action="application-support">REQUEST ENGINEERING ASSESSMENT</a>
-              <a className={styles.secondaryButton} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence">FIND AN OEM EQUIVALENT</a>
-              <Link className={styles.secondaryButton} href="/systems/air-intake/">AIR INTAKE SYSTEM</Link>
-            </div>
+        <div className={styles.inner}>
+          <p className={styles.eyebrow}>APPLICATION SUPPORT</p>
+          <h2 className={styles.h2}>Bring us the application, duty cycle and failure pattern — not just the part number.</h2>
+          <p className={styles.lead}>Use Part Search when the application is already known. When the issue is repeated contamination, short service life, uncertain restriction behavior, component exposure or an unclear intake architecture, use the technical review path.</p>
+          <div className={styles.buttonRow}>
+            <a className={styles.primaryButton} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence">FIND MY PART</a>
+            <a className={styles.secondaryButton} href="mailto:applications@elimfilters.com?subject=MACROCORE%20Application%20Assessment" data-conversion-action="application-support">TECHNICAL REVIEW PATH</a>
           </div>
         </div>
       </section>
+
+      <UniversalEndNavigation label="Explore related technologies" />
     </main>
   );
 }
