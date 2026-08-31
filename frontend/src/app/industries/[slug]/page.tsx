@@ -2,6 +2,7 @@ import { catalogue, getSlug, getItemBySlug } from '@/lib/catalogue';
 import { CategoryPage } from '@/components/CategoryPage';
 import { MiningIndustryPageV2 } from '@/components/MiningIndustryPageV2';
 import { AgricultureIndustryPage } from '@/components/AgricultureIndustryPage';
+import { ConstructionIndustryPage } from '@/components/ConstructionIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -29,7 +30,7 @@ const industryMetaDescription: Record<string, string> = {
   Agriculture: 'Agricultural filtration systems for tractors, combines, harvesters, sprayers, irrigation engines and field support equipment operating in soil dust, crop residue, heat and seasonal duty cycles.',
   Automotive: 'Asset-protection and contamination-control architecture for passenger vehicles, light commercial vehicles, delivery fleets, engines, fuel systems, lubrication circuits and cabin environments.',
   'Bus Coach': 'Asset-protection and contamination-control architecture for transit buses, school buses, coaches and passenger fleets operating under stop-and-go duty, urban particulate exposure and extended daily service.',
-  Construction: 'Asset-protection and contamination-control architecture for excavators, loaders, dozers, graders and other construction equipment operating in dust, vibration, heat and hydraulic duty.',
+  Construction: 'Construction filtration systems for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, hydraulic load, vibration and severe off-road duty.',
   Manufacturing: 'Asset-protection and contamination-control architecture for industrial engines, hydraulic power units, compressors, pumps and production equipment operating under continuous plant duty.',
   Marine: 'Asset-protection and contamination-control architecture for commercial vessels, workboats, marine engines and onboard equipment operating under moisture, salt atmosphere and extended marine duty.',
   Mining: 'Mining filtration systems for haul trucks, excavators, loaders, drill rigs and support equipment. Control air, fuel, lubrication and hydraulic contamination in severe-duty mining environments.',
@@ -59,7 +60,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? 'Mining Filtration Systems | Heavy-Duty Equipment | ELIMFILTERS'
     : item.name === 'Agriculture'
       ? 'Agricultural Filtration Systems | Tractors & Combines | ELIMFILTERS'
-      : `${item.title} | ELIMFILTERS Asset Protection`;
+      : item.name === 'Construction'
+        ? 'Construction Filtration Systems | Heavy Equipment | ELIMFILTERS'
+        : `${item.title} | ELIMFILTERS Asset Protection`;
   const image = industryMedia[item.name]?.image
     ? `${BASE_URL}${industryMedia[item.name].image}`
     : `${BASE_URL}/assets/logo-elimfilters.png`;
@@ -103,6 +106,10 @@ export default function IndustryPage({ params }: Props) {
 
   if (item.name === 'Agriculture') {
     return <AgricultureIndustryPage />;
+  }
+
+  if (item.name === 'Construction') {
+    return <ConstructionIndustryPage />;
   }
 
   const media = industryMedia[item.name] || {};
