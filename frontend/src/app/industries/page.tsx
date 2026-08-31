@@ -291,30 +291,39 @@ export default function IndustriesPage() {
 
       <section style={standardsSection}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <p style={eyebrow}>ENGINEERING CONTEXT</p>
-          <h2 style={{ ...sectionTitle, marginBottom: '1.5rem' }}>Industry-specific contamination control</h2>
-          <p style={{ ...bodyText, maxWidth: '820px', marginBottom: '2rem' }}>
-            Industry changes the contamination load; engineering standards help define how the relevant system is measured. The standard must match the failure mechanism and filtration domain rather than being used as a generic industry label.
+          <p style={eyebrow}>ENGINEERING DECISION FACTORS</p>
+          <h2 style={{ ...sectionTitle, marginBottom: '1.5rem', maxWidth: '980px' }}>What actually changes the filtration decision?</h2>
+          <p style={{ ...bodyText, maxWidth: '860px', marginBottom: '2rem' }}>
+            Industry tells us where the equipment works. It does not, by itself, determine the filter. The engineering decision becomes useful only when operating conditions are translated into measurable contamination load, system sensitivity, service reality, and failure consequence.
           </p>
 
           <div style={standardGrid}>
             <div style={standardCard}>
-              <h3 style={standardTitle}>Mining &amp; Construction</h3>
-              <p style={standardText}>Air-intake performance: ISO 5011. Hydraulic filter multi-pass performance: ISO 16889. Fluid cleanliness coding: ISO 4406.</p>
+              <span style={factorNumber}>01</span>
+              <h3 style={standardTitle}>Contamination Load</h3>
+              <p style={standardText}>Particle size, concentration, water content, debris source, and ingestion rate determine what the filtration system must remove and how quickly its capacity can be consumed.</p>
             </div>
             <div style={standardCard}>
-              <h3 style={standardTitle}>Marine &amp; Oil &amp; Gas</h3>
-              <p style={standardText}>Fuel-filter performance: ISO 19438. Water-content determination in fuel: ISO 12937 where applicable. Corrosion and salt exposure are treated as separate environmental considerations.</p>
+              <span style={factorNumber}>02</span>
+              <h3 style={standardTitle}>Duty Cycle &amp; Environment</h3>
+              <p style={standardText}>Load, idle time, temperature, vibration, humidity, dust exposure, and operating hours change restriction growth, fluid condition, and the rate at which contamination reaches critical components.</p>
             </div>
             <div style={standardCard}>
-              <h3 style={standardTitle}>Power Generation &amp; Manufacturing</h3>
-              <p style={standardText}>Air-intake performance: ISO 5011 where engine or compressor intake applies. Hydraulic and lubrication filter performance: ISO 16889 where applicable.</p>
+              <span style={factorNumber}>03</span>
+              <h3 style={standardTitle}>System Sensitivity</h3>
+              <p style={standardText}>Injector clearances, hydraulic control surfaces, bearing films, pumps, and other precision interfaces determine how much contamination the protected system can tolerate before wear or performance loss accelerates.</p>
+            </div>
+            <div style={standardCard}>
+              <span style={factorNumber}>04</span>
+              <h3 style={standardTitle}>Maintenance Reality</h3>
+              <p style={standardText}>Service interval, access, inventory discipline, technician practices, and replacement consistency determine whether a technically correct filtration strategy remains effective in real operation.</p>
             </div>
           </div>
 
-          <Link href="/knowledge-center/industries/" style={{ ...yellowButton, marginTop: '2rem' }}>
-            EXPLORE INDUSTRY TECHNICAL STRATEGIES
-          </Link>
+          <div style={engineeringPrinciple}>
+            <p style={engineeringPrincipleLabel}>ENGINEERING PRINCIPLE</p>
+            <p style={engineeringPrincipleText}>The correct filter is not selected by industry name alone. Industry establishes context; final selection must resolve the asset, protected system, contamination mechanism, duty cycle, service constraints, and validated performance requirement.</p>
+          </div>
         </div>
       </section>
 
@@ -429,10 +438,14 @@ const marketContent: CSSProperties = { position: 'absolute', inset: 0, padding: 
 const marketTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.45rem, 2vw, 1.95rem)', lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase', fontWeight: 700, textShadow: '0 2px 18px rgba(0,0,0,0.8)' };
 const explore: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.11em', fontSize: '0.68rem', marginTop: '0.8rem' };
 const standardsSection: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', background: 'rgba(255,241,45,0.025)', borderTop: '1px solid rgba(255,241,45,0.1)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
-const standardGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' };
-const standardCard: CSSProperties = { background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.09)', padding: '1.6rem' };
-const standardTitle: CSSProperties = { fontFamily: displayFont, color: '#fff', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '0.03em', margin: '0 0 0.75rem' };
+const standardGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' };
+const standardCard: CSSProperties = { background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.09)', padding: '1.7rem', minHeight: '250px' };
+const factorNumber: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em' };
+const standardTitle: CSSProperties = { fontFamily: displayFont, color: '#fff', fontSize: '1.08rem', textTransform: 'uppercase', letterSpacing: '0.03em', margin: '1rem 0 0.75rem' };
 const standardText: CSSProperties = { ...bodyText, fontSize: '0.94rem' };
+const engineeringPrinciple: CSSProperties = { marginTop: '1rem', padding: '1.6rem 1.8rem', borderLeft: '3px solid #FFF12D', background: 'rgba(255,241,45,0.055)', display: 'grid', gridTemplateColumns: 'minmax(150px, 0.35fr) minmax(0, 1.65fr)', gap: '1.5rem', alignItems: 'start' };
+const engineeringPrincipleLabel: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontSize: '0.7rem', lineHeight: 1.4, fontWeight: 700, letterSpacing: '0.15em', margin: 0 };
+const engineeringPrincipleText: CSSProperties = { ...bodyText, color: 'rgba(255,255,255,0.82)', fontSize: '1rem' };
 const pathSection: CSSProperties = { ...section, borderBottom: '1px solid rgba(255,255,255,0.06)' };
 const pathGrid: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.08)', marginTop: '2.5rem', border: '1px solid rgba(255,255,255,0.08)' };
 const pathCard: CSSProperties = { background: '#050505', padding: '1.5rem', minHeight: '210px' };
