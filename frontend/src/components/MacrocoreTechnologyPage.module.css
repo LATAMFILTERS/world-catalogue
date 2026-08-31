@@ -577,7 +577,8 @@
   }
 
   .nanoforceHero,
-  .syntraxHero {
+  .syntraxHero,
+  .microkappaHero {
     min-height: 0;
     height: clamp(220px, 68vw, 340px);
   }
