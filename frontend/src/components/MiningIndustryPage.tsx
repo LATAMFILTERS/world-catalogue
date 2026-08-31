@@ -161,9 +161,9 @@ export function MiningIndustryPage() {
             </div>
             <p style={equipmentLead}>The same mine can place completely different demands on a haul truck, excavator, drill rig and processing asset. Equipment type narrows the protection problem before a product number is considered.</p>
           </div>
-          <div style={equipmentGrid}>
+          <div style={equipmentList} role="list" aria-label="Mining equipment applications">
             {equipment.map((asset, index) => (
-              <div key={asset} style={equipmentItem}>
+              <div key={asset} style={equipmentRow} role="listitem">
                 <span style={equipmentIndex}>{String(index + 1).padStart(2, '0')}</span>
                 <span style={equipmentName}>{asset}</span>
               </div>
@@ -364,10 +364,10 @@ const equipmentInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', wi
 const equipmentHeader: CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'start' };
 const equipmentTitle: CSSProperties = { ...sectionTitle, color: '#080808' };
 const equipmentLead: CSSProperties = { color: 'rgba(0,0,0,0.72)', fontSize: '1.02rem', lineHeight: 1.7, margin: 0, textAlign: 'left', maxWidth: '540px' };
-const equipmentGrid: CSSProperties = { width: '100%', margin: '2.5rem auto 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(220px, 100%), 1fr))', gap: '1px', background: 'rgba(0,0,0,0.18)', border: '1px solid rgba(0,0,0,0.18)', overflow: 'hidden' };
-const equipmentItem: CSSProperties = { background: '#FFF12D', minHeight: '150px', padding: '1.2rem 1.25rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minWidth: 0 };
-const equipmentIndex: CSSProperties = { fontFamily: displayFont, fontSize: '0.72rem', letterSpacing: '0.12em', fontWeight: 700, color: 'rgba(0,0,0,0.8)' };
-const equipmentName: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.2rem, 2vw, 1.75rem)', lineHeight: 1.03, textTransform: 'uppercase', fontWeight: 700, color: '#050505', overflowWrap: 'anywhere' };
+const equipmentList: CSSProperties = { width: '100%', margin: '2.5rem auto 0', borderTop: '1px solid rgba(0,0,0,0.28)', borderBottom: '1px solid rgba(0,0,0,0.28)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(290px, 100%), 1fr))', columnGap: 'clamp(2rem, 5vw, 4rem)' };
+const equipmentRow: CSSProperties = { minHeight: '84px', padding: '1rem 0', borderBottom: '1px solid rgba(0,0,0,0.2)', display: 'grid', gridTemplateColumns: '42px minmax(0, 1fr)', gap: '1rem', alignItems: 'center', minWidth: 0, background: 'transparent', color: '#050505' };
+const equipmentIndex: CSSProperties = { fontFamily: displayFont, fontSize: '0.68rem', letterSpacing: '0.12em', fontWeight: 700, color: 'rgba(0,0,0,0.58)' };
+const equipmentName: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.05rem, 1.7vw, 1.45rem)', lineHeight: 1.05, textTransform: 'uppercase', fontWeight: 700, color: '#050505', overflowWrap: 'anywhere' };
 const pathwaySection: CSSProperties = { padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem)', background: 'radial-gradient(circle at 100% 0%, rgba(255,241,45,0.07), transparent 32%), #020202' };
 const pathwayHeader: CSSProperties = { maxWidth: '1180px', margin: '0 auto 3rem' };
 const pathwayIntro: CSSProperties = { ...bodyText, maxWidth: '820px', marginTop: '1.4rem', fontSize: '1.02rem' };
