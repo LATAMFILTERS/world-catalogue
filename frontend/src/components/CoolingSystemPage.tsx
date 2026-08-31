@@ -12,7 +12,7 @@ const contamination = [
   ['SERVICE INGRESS', 'Maintenance, topping-off and component replacement can introduce particulate or incompatible fluid into the cooling circuit.'],
 ] as const;
 
-const protected = [
+const protectedComponents = [
   ['Wet Liners', 'Cooling-system condition affects liner surfaces and the fluid environment around high-load engine structures.'],
   ['Water Pumps', 'Clean coolant supports the passages, seals and rotating interfaces that depend on stable fluid condition.'],
   ['Heat-Transfer Surfaces', 'Radiators, jackets and passages depend on unobstructed coolant flow and controlled deposits.'],
@@ -146,7 +146,7 @@ export function CoolingSystemPage() {
         <p style={eyebrow}>WHAT THE SYSTEM PROTECTS</p>
         <h2 style={h2}>The cooling circuit protects more than engine temperature.</h2>
         <div style={grid2}>
-          {protected.map(([title, text]) => (
+          {protectedComponents.map(([title, text]) => (
             <article key={title} style={lineCard}>
               <h3 style={h3}>{title}</h3>
               <p style={body}>{text}</p>
