@@ -23,10 +23,15 @@ function normalize(file) {
   const before = fs.readFileSync(file, 'utf8');
   let after = before;
 
-  // Canonical public scale signal.
-  after = after.replace(/500,000\+/g, '600,000+');
-  after = after.replace(/500,000 cross-reference/gi, '600,000+ cross-reference');
-  after = after.replace(/500,000 cross references/gi, '600,000+ cross-reference relationships');
+  // Canonical public scale signal, audited directly against catalogo_elimfilters on 2026-08-31.
+  // Primary catalog: 12,192 unique SKUs. Primary + LD catalog layers: 18,497 unique SKUs.
+  // Unique cross-reference relationships including LD: 1,044,939.
+  after = after.replace(/500,000\+/g, '1,000,000+');
+  after = after.replace(/600,000\+/g, '1,000,000+');
+  after = after.replace(/500,000 cross-reference/gi, '1,000,000+ cross-reference');
+  after = after.replace(/600,000 cross-reference/gi, '1,000,000+ cross-reference');
+  after = after.replace(/500,000 cross references/gi, '1,000,000+ cross-reference relationships');
+  after = after.replace(/600,000 cross references/gi, '1,000,000+ cross-reference relationships');
 
   // Retire legacy universal marketing claims from public-facing copy.
   after = after.replace(/99\.9% capture efficiency/gi, 'product-specific filtration efficiency validated under the applicable test method');
