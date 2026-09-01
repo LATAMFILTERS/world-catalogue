@@ -10,7 +10,7 @@ export default function SchemaMarkup() {
         logo: {
           '@type': 'ImageObject',
           '@id': 'https://elimfilters.com/#logo',
-          url: 'https://elimfilters.com/assets/logo-elimfilters.png',
+          url: 'https://elimfilters.com/assets/elimfilters-logo-transparent.png',
         },
         description: 'Industrial filtration engineering organization focused on contamination control, equipment reliability, and Total Asset Protection Systems.',
         address: {

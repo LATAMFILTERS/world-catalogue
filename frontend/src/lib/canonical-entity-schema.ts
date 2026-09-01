@@ -98,7 +98,7 @@ export function buildOrganizationSchema() {
     legalName: 'Kleo Technology LLC',
     alternateName: ['ELIMFILTERS', 'ELIMFILTERS Asset Protection Systems'],
     url: BASE_URL,
-    logo: `${BASE_URL}/assets/logo-elimfilters.png`,
+    logo: `${BASE_URL}/assets/elimfilters-logo-transparent.png`,
     description: 'ELIMFILTERS is an industrial filtration engineering and asset-protection brand combining contamination-control technologies, technical knowledge, application intelligence, a 12,000+ product primary catalog and more than 1,000,000 cross-reference relationships.',
     brand: {
       '@type': 'Brand',
