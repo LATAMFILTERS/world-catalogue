@@ -133,6 +133,11 @@ export function buildOrganizationSchema() {
       { '@type': 'WebApplication', name: 'ELIMFILTERS Part Search', url: 'https://part-search.elimfilters.com' },
     ],
     sameAs: [
+      'https://www.linkedin.com/company/133064152/',
+      'https://www.facebook.com/elimfilters/',
+      'https://www.instagram.com/elimfilters.global',
+      'https://x.com/elimfilters',
+      'https://www.youtube.com/@elimfilters9112',
       'https://www.amazon.com/stores/Elimfilters/page/B7619BD8-A04B-48A2-B275-FF4976181C55',
     ],
   };
