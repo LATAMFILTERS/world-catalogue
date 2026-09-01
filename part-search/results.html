@@ -1338,7 +1338,7 @@ function renderCard(p, index) {
         <div class="card-header">
           <div class="card-identity">
             <span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(255,241,45,0.45);text-transform:uppercase;display:block;margin-bottom:0.2rem;">ELIMFILTERSÂ®</span>
-            <span class="card-sku">${sku}</span>
+            <span class="card-sku">${esc(sku)}</span>
           </div>
           <div class="card-badges">
             ${p.filter_type      ? `<span class="badge badge-type">${esc(p.filter_type)}</span>` : ''}
