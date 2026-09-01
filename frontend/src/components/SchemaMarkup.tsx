@@ -20,6 +20,13 @@ export default function SchemaMarkup() {
           addressCountry: 'US',
         },
         areaServed: 'Worldwide',
+        sameAs: [
+          'https://www.linkedin.com/company/133064152/',
+          'https://www.facebook.com/elimfilters/',
+          'https://www.instagram.com/elimfilters.global',
+          'https://x.com/elimfilters',
+          'https://www.youtube.com/@elimfilters9112',
+        ],
         brand: {
           '@id': 'https://elimfilters.com/#brand',
         },
