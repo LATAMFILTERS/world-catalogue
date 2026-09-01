@@ -20,7 +20,9 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
     return () => controls.stop();
   }, [inView, value, suffix]);
 
-  return <span ref={ref}>0{suffix}</span>;
+  // Render the factual value in SSR/static HTML so crawlers and non-JS clients
+  // receive the real statistic. The client animation is only presentation.
+  return <span ref={ref}>{value}{suffix}</span>;
 }
 
 export function HomeStatBar() {
