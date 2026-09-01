@@ -1,6 +1,7 @@
 # PRODUCT_REGISTRY
 
 Status: Active
+Last updated: 2026-09-01
 
 ---
 
@@ -26,21 +27,28 @@ Technology:
 
 # FUEL CLEANLINESS PROTECTION
 
-## Fuel Filters
+## Primary / Secondary / Spin-On / Cartridge Fuel Filters
 Technology:
 - SYNTAPORE™
 
-## Fuel Water Separators
-Technology:
-- HYDROCORE™ where applicable to approved separator and turbine/FH/FG architecture
-
-## FH Series
+## Standard Non-Turbine Fuel Water Separators
 Technology:
 - HYDROCORE™
 
-## FG Series
+Scope:
+- Approved standard non-turbine separator configurations
+- Drain and transparent-bowl configurations where specified by application
+
+## FH Series Turbine Fuel/Water Separation
 Technology:
-- HYDROCORE™
+- TURBOCORE™
+
+## FG Series Turbine Fuel/Water Separation
+Technology:
+- TURBOCORE™
+
+Rule:
+SYNTAPORE™, HYDROCORE™ and TURBOCORE™ are distinct fuel-cleanliness technology scopes and must not be merged or substituted.
 
 ---
 
@@ -68,15 +76,15 @@ Technology:
 
 ---
 
-# SPECIALIZED SOLUTIONS
+# SPECIALIZED COMMERCIAL SOLUTIONS
 
 ## Marine Filtration Systems
-Technology / Solution:
+Solution:
 - MARINECLEAN™
 
 ## Integrated Maintenance and Asset Protection Kits
-Technology / Solution:
-- DURACTECH™
+Solution:
+- DURATECH™
 
 Rule:
-Products belong to protection systems. Solutions may contain products from multiple systems. The filter is the means; asset protection is the objective.
+Products belong to protection systems. Specialized solutions may contain products from multiple systems but are not core technology entities. The filter is the means; asset protection is the objective.
