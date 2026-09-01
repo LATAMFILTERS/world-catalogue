@@ -38,6 +38,15 @@ if (!fs.existsSync(faqHtml)) {
     if (!html.includes(question)) failures.push(`GSC-observed FAQ missing: ${question}`);
     if (!html.includes(href)) failures.push(`GSC-observed FAQ exact source missing: ${href}`);
   }
+
+  const canonicalTechnologyFaqs = [
+    ['What is TURBOCORE™?', '/technologies/turbocore/'],
+    ['Does HYDROCORE™ govern FH or FG turbine systems?', '/technologies/turbocore/'],
+  ];
+  for (const [question, href] of canonicalTechnologyFaqs) {
+    if (!html.includes(question)) failures.push(`Canonical technology FAQ missing: ${question}`);
+    if (!html.includes(href)) failures.push(`Canonical technology FAQ source missing: ${href}`);
+  }
 }
 
 if (!fs.existsSync(knowledgeCenterHtml)) {
@@ -69,4 +78,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[validate-faq-governance] PASS — canonical FAQ hub, GSC demand grounding, exact sources, schema, sitemap and legacy payload hygiene verified');
+console.log('[validate-faq-governance] PASS — canonical FAQ hub, GSC demand grounding, technology coverage, exact sources, schema, sitemap and legacy payload hygiene verified');
