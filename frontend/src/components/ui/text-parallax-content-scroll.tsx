@@ -13,7 +13,7 @@ const TECHNOLOGIES = [
     title: "Progressive Density Gradient (PDG)",
     p1: "Outer protection layers capture macro-contaminants while progressively denser inner zones neutralise sub-micron threats, achieving 99.9% to 99.98% interception efficiency.",
     p2: "Engineered for heavy-duty combustion engines: on-road vehicles, mining equipment, agricultural machinery, and industrial compressors rated to ISO 5011.",
-    link: "/knowledge-system/standards/air-intake-systems",
+    link: "/knowledge-center/standards/iso-5011",
   },
   {
     imgUrl: "/images/fuellseparator-hero.avif",
@@ -21,7 +21,7 @@ const TECHNOLOGIES = [
     title: "Turbine-Stage Water Separation",
     p1: "HYDROCORE removes free and emulsified water from diesel and turbine fuel systems, protecting precision HPCR injectors operating at 1,800 to 2,500 bar.",
     p2: "Engineered for Common Rail and turbine fuel systems in mining, marine, power generation, and agriculture. Validates against ASTM D6304 and SAE J1488.",
-    link: "/knowledge-system/standards/fuel-systems",
+    link: "/knowledge-center/standards/astm-d6304",
   },
   {
     imgUrl: "/images/oil-hand.avif",
@@ -29,7 +29,7 @@ const TECHNOLOGIES = [
     title: "Full-Flow Lubrication Protection",
     p1: "SYNTRAX maintains ISO 4406 cleanliness codes (16/14/11) throughout extended drain intervals for diesel, gas, and dual-fuel engines, capturing combustion soot above 2% by weight.",
     p2: "It intercepts metal wear particles and fuel dilution byproducts that reduce oil film strength, accelerate bearing wear, and shorten engine service life in mobile and stationary applications.",
-    link: "/knowledge-system/standards/lube-oil-systems",
+    link: "/knowledge-center/standards/iso-4406",
   },
 ];
 
