@@ -3,11 +3,12 @@ import { CanonicalEntitySchema } from '@/components/CanonicalEntitySchema';
 
 export const dynamicParams = false;
 
-export default function IndustryLayout({ children, params }: { children: ReactNode; params: { slug: string } }) {
+export default async function IndustryLayout({ children, params }: { children: ReactNode; params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   return (
     <>
       {children}
-      <CanonicalEntitySchema kind="industry" slug={params.slug} />
+      <CanonicalEntitySchema kind="industry" slug={slug} />
     </>
   );
 }

@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { MediaExplorerClient } from './MediaExplorerClient';
 
 interface Props {
-  params: { entityId: string };
+  params: Promise<{ entityId: string }>;
 }
 
 export function generateStaticParams() {
@@ -12,19 +12,21 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { entityId } = await params;
   const entities = listEntitiesWithProvenance('PROTECTION_MEDIA');
-  const entry = entities.find(({ node }) => node.entityId === params.entityId);
+  const entry = entities.find(({ node }) => node.entityId === entityId);
   if (!entry) return {};
   return {
     title: `${entry.node.label} — Protection Media | ELIMFILTERS`,
     description: `Engineering reference for ${entry.node.label}.`,
-    alternates: { canonical: `https://elimfilters.com/engineering/media/${params.entityId}` },
+    alternates: { canonical: `https://elimfilters.com/engineering/media/${entityId}` },
   };
 }
 
-export default function ExplorerPage({ params }: Props) {
+export default async function ExplorerPage({ params }: Props) {
+  const { entityId } = await params;
   const entities = listEntitiesWithProvenance('PROTECTION_MEDIA');
-  const entry = entities.find(({ node }) => node.entityId === params.entityId);
+  const entry = entities.find(({ node }) => node.entityId === entityId);
   if (!entry) return notFound();
-  return <MediaExplorerClient entityId={params.entityId} />;
+  return <MediaExplorerClient entityId={entityId} />;
 }

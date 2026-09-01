@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next';
 
+export const dynamic = 'force-static';
+
 const BASE_URL = 'https://elimfilters.com';
 
 export default function robots(): MetadataRoute.Robots {

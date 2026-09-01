@@ -3,11 +3,12 @@ import { CanonicalEntitySchema } from '@/components/CanonicalEntitySchema';
 
 export const dynamicParams = false;
 
-export default function SystemLayout({ children, params }: { children: ReactNode; params: { slug: string } }) {
+export default async function SystemLayout({ children, params }: { children: ReactNode; params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   return (
     <>
       {children}
-      <CanonicalEntitySchema kind="system" slug={params.slug} />
+      <CanonicalEntitySchema kind="system" slug={slug} />
     </>
   );
 }

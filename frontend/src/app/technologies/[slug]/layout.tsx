@@ -4,11 +4,12 @@ import './technology-detail.css';
 
 export const dynamicParams = false;
 
-export default function TechnologyLayout({ children, params }: { children: ReactNode; params: { slug: string } }) {
+export default async function TechnologyLayout({ children, params }: { children: ReactNode; params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   return (
     <>
-      <div className={`technology-detail technology-detail-${params.slug}`}>{children}</div>
-      <ServerKnowledgeConnections kind="technology" slug={params.slug} />
+      <div className={`technology-detail technology-detail-${slug}`}>{children}</div>
+      <ServerKnowledgeConnections kind="technology" slug={slug} />
     </>
   );
 }

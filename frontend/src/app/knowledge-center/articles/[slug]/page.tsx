@@ -18,9 +18,10 @@ export function generateStaticParams() {
   return Object.keys(ARTICLE_REDIRECTS).map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const destination = ARTICLE_REDIRECTS[params.slug] || '/knowledge-center/engineering/';
-  const label = params.slug.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const destination = ARTICLE_REDIRECTS[slug] || '/knowledge-center/engineering/';
+  const label = slug.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
   return {
     title: `${label} Legacy Article`,
     description: `Legacy route for ${label}. Continue to the current ELIMFILTERS engineering article.`,
@@ -29,8 +30,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function LegacyArticlePage({ params }: { params: { slug: string } }) {
-  const destination = ARTICLE_REDIRECTS[params.slug] || '/knowledge-center/engineering/';
+export default async function LegacyArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const destination = ARTICLE_REDIRECTS[slug] || '/knowledge-center/engineering/';
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '2rem' }}>
       <script dangerouslySetInnerHTML={{ __html: `window.location.replace('${destination}');` }} />

@@ -4,7 +4,7 @@ import { ENGINEERING_DIAGRAMS, getDiagramBySlug } from '@/lib/knowledge-center-d
 import DiagramContent from './DiagramContent';
 
 interface Props {
-  params: { diagram: string };
+  params: Promise<{ diagram: string }>;
 }
 
 export async function generateStaticParams() {
@@ -12,7 +12,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const diagram = getDiagramBySlug(params.diagram);
+  const { diagram: diagramSlug } = await params;
+  const diagram = getDiagramBySlug(diagramSlug);
   if (!diagram) return {};
   const priorityTitles: Record<string, string> = {
     'iso-4406-cleanliness-scale': 'ISO 4406 Cleanliness Code Chart — Particle Count Scale | ELIMFILTERS',
@@ -27,8 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function DiagramPage({ params }: Props) {
-  const diagram = getDiagramBySlug(params.diagram);
+export default async function DiagramPage({ params }: Props) {
+  const { diagram: diagramSlug } = await params;
+  const diagram = getDiagramBySlug(diagramSlug);
   if (!diagram) notFound();
   return <DiagramContent diagram={diagram} />;
 }

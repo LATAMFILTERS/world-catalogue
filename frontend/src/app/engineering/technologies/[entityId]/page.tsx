@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { TechnologyExplorerClient } from './TechnologyExplorerClient';
 
 interface Props {
-  params: { entityId: string };
+  params: Promise<{ entityId: string }>;
 }
 
 export function generateStaticParams() {
@@ -12,19 +12,21 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { entityId } = await params;
   const entities = listEntitiesWithProvenance('TECHNOLOGY_ARCHITECTURE');
-  const entry = entities.find(({ node }) => node.entityId === params.entityId);
+  const entry = entities.find(({ node }) => node.entityId === entityId);
   if (!entry) return {};
   return {
     title: `${entry.node.label} — Engineering Technology | ELIMFILTERS`,
     description: `Engineering analysis of ${entry.node.label}: contamination control mechanism, applicable standards, and failure modes prevented.`,
-    alternates: { canonical: `https://elimfilters.com/engineering/technologies/${params.entityId}` },
+    alternates: { canonical: `https://elimfilters.com/engineering/technologies/${entityId}` },
   };
 }
 
-export default function TechnologyExplorerPage({ params }: Props) {
+export default async function TechnologyExplorerPage({ params }: Props) {
+  const { entityId } = await params;
   const entities = listEntitiesWithProvenance('TECHNOLOGY_ARCHITECTURE');
-  const entry = entities.find(({ node }) => node.entityId === params.entityId);
+  const entry = entities.find(({ node }) => node.entityId === entityId);
   if (!entry) return notFound();
-  return <TechnologyExplorerClient entityId={params.entityId} label={entry.node.label} />;
+  return <TechnologyExplorerClient entityId={entityId} label={entry.node.label} />;
 }

@@ -17,11 +17,12 @@ export function generateStaticParams() {
   return KC_TECHNOLOGIES.map((t) => ({ slug: t.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const tech = KC_TECHNOLOGIES.find((t) => t.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const tech = KC_TECHNOLOGIES.find((t) => t.slug === slug);
   if (!tech) return {};
 
-  const url = knowledgeTechnologyUrl(params.slug);
+  const url = knowledgeTechnologyUrl(slug);
   return {
     title: `${tech.name} Filtration Technology`,
     description: tech.tagline,
@@ -36,12 +37,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function TechPage({ params }: { params: { slug: string } }) {
-  const tech = KC_TECHNOLOGIES.find((t) => t.slug === params.slug);
+export default async function TechPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const tech = KC_TECHNOLOGIES.find((t) => t.slug === slug);
   if (!tech) return notFound();
 
-  const url = knowledgeTechnologyUrl(params.slug);
-  const technologyEntity = canonicalTechnologyEntityUrl(params.slug);
+  const url = knowledgeTechnologyUrl(slug);
+  const technologyEntity = canonicalTechnologyEntityUrl(slug);
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',

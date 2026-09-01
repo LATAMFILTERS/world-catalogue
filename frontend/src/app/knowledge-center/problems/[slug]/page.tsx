@@ -10,16 +10,17 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const problem = PROBLEM_STUBS_BY_SLUG[params.slug];
+  const { slug } = await params;
+  const problem = PROBLEM_STUBS_BY_SLUG[slug];
   if (!problem) return {};
   const isPublished = problem.status === 'published' || problem.status === 'engineering-approved';
   return {
     title: `${problem.name} — Problem Graph | ELIMFILTERS`,
     description: `${problem.id}: ${problem.name}. Engineering content for this Knowledge Graph entity is scheduled for Phase 3.`,
     alternates: {
-      canonical: `https://elimfilters.com/knowledge-center/problems/${params.slug}`,
+      canonical: `https://elimfilters.com/knowledge-center/problems/${slug}`,
     },
     robots: {
       index: isPublished,
@@ -28,8 +29,9 @@ export async function generateMetadata({
   };
 }
 
-export default function ProblemPage({ params }: { params: { slug: string } }) {
-  const problem = PROBLEM_STUBS_BY_SLUG[params.slug];
+export default async function ProblemPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const problem = PROBLEM_STUBS_BY_SLUG[slug];
   if (!problem) return notFound();
   return <ProblemStubContent problem={problem} />;
 }

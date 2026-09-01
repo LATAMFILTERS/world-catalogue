@@ -27,12 +27,13 @@ export function generateStaticParams() {
   return ENGINEERING_ARTICLES.map((a) => ({ topic: a.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { topic: string } }): Promise<Metadata> {
-  const article = ENGINEERING_ARTICLES.find((a) => a.slug === params.topic);
+export async function generateMetadata({ params }: { params: Promise<{ topic: string }> }): Promise<Metadata> {
+  const { topic } = await params;
+  const article = ENGINEERING_ARTICLES.find((a) => a.slug === topic);
   if (!article) return {};
 
-  const url = `https://elimfilters.com/knowledge-center/engineering/${params.topic}/`;
-  const override = CTR_OVERRIDES[params.topic];
+  const url = `https://elimfilters.com/knowledge-center/engineering/${topic}/`;
+  const override = CTR_OVERRIDES[topic];
   const title = override?.title ?? article.title;
   const description = override?.description ?? article.metaDescription;
 
@@ -55,8 +56,9 @@ export async function generateMetadata({ params }: { params: { topic: string } }
   };
 }
 
-export default function EngineeringArticlePage({ params }: { params: { topic: string } }) {
-  const article = ENGINEERING_ARTICLES.find((a) => a.slug === params.topic);
+export default async function EngineeringArticlePage({ params }: { params: Promise<{ topic: string }> }) {
+  const { topic } = await params;
+  const article = ENGINEERING_ARTICLES.find((a) => a.slug === topic);
   if (!article) return notFound();
 
   return (

@@ -60,9 +60,10 @@ function labelFor(slug: string) {
   }).join(' ');
 }
 
-export function generateMetadata({ params }: { params: { legacy: string } }): Metadata {
-  const destination = LEGACY_ROUTES[params.legacy] || '/knowledge-center/';
-  const label = labelFor(params.legacy);
+export async function generateMetadata({ params }: { params: Promise<{ legacy: string }> }): Promise<Metadata> {
+  const { legacy } = await params;
+  const destination = LEGACY_ROUTES[legacy] || '/knowledge-center/';
+  const label = labelFor(legacy);
   const description = `Legacy route for ${label}. Continue to the current ELIMFILTERS engineering resource.`;
   return {
     title: `${label} Legacy Route`,
@@ -74,9 +75,10 @@ export function generateMetadata({ params }: { params: { legacy: string } }): Me
   };
 }
 
-export default function LegacyKnowledgeCenterPage({ params }: { params: { legacy: string } }) {
-  const destination = LEGACY_ROUTES[params.legacy] || '/knowledge-center/';
-  const label = labelFor(params.legacy);
+export default async function LegacyKnowledgeCenterPage({ params }: { params: Promise<{ legacy: string }> }) {
+  const { legacy } = await params;
+  const destination = LEGACY_ROUTES[legacy] || '/knowledge-center/';
+  const label = labelFor(legacy);
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '2rem' }}>
       <script dangerouslySetInnerHTML={{ __html: `window.location.replace('${destination}');` }} />
