@@ -12,6 +12,27 @@ if (!fs.existsSync(indexPath)) {
 let html = fs.readFileSync(indexPath, 'utf8');
 const before = html;
 
+// Normalize common UTF-8 text that was previously double-decoded before it
+// reaches crawlers. This is intentionally limited to known mojibake sequences.
+const mojibakeMap = new Map([
+  ['Â®', '®'],
+  ['Â©', '©'],
+  ['Â·', '·'],
+  ['â„¢', '™'],
+  ['â€”', '—'],
+  ['â€“', '–'],
+  ['â†’', '→'],
+  ['â€™', '’'],
+  ['â€˜', '‘'],
+  ['â€œ', '“'],
+  ['â€', '”'],
+  ['â€¦', '…'],
+]);
+
+for (const [broken, normalized] of mojibakeMap) {
+  html = html.replaceAll(broken, normalized);
+}
+
 // Frases prohibidas (cada una se busca y elimina de forma flexible)
 const forbiddenPhrases = [
   'We do not sell directly to end users',
@@ -20,14 +41,14 @@ const forbiddenPhrases = [
   'cross-referenced to 20,000+ OEM specifications',
 ];
 
-// Regex flexible: ignora espacios, saltos de l�nea, y entidades HTML comunes
+// Regex flexible: ignora espacios, saltos de línea, y entidades HTML comunes
 function escapeForRegex(phrase) {
   return phrase
     .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
     .replace(/'/g, "(?:'|&#x27;|&#39;|&apos;)")
     .replace(/"/g, '(?:"|&quot;|&#34;)')
-    .replace(/�/g, '(?:�|&reg;|&#174;)')
-    .replace(/�/g, '(?:�|&trade;|&#8482;)')
+    .replace(/®/g, '(?:®|&reg;|&#174;)')
+    .replace(/™/g, '(?:™|&trade;|&#8482;)')
     .replace(/ /g, '\\s+');
 }
 
@@ -36,8 +57,8 @@ for (const phrase of forbiddenPhrases) {
   html = html.replace(pattern, '');
 }
 
-// Tambi�n eliminamos el bloque completo del div hidden si queda vac�o o residual
-// Busca <div style="display:none;visibility:hidden"> que contenga solo espacios/etiquetas vac�as
+// También eliminamos el bloque completo del div hidden si queda vacío o residual
+// Busca <div style="display:none;visibility:hidden"> que contenga solo espacios/etiquetas vacías
 html = html.replace(
   /<div\s+style=["']display:\s*none;?\s*visibility:\s*hidden["']\s*>(?:\s*<p>\s*<\/p>\s*|\s*)<\/div>/gi,
   ''
@@ -45,8 +66,8 @@ html = html.replace(
 
 const remaining = [];
 for (const phrase of forbiddenPhrases) {
-  // B�squeda simple sin regex para verificar
-  const simpleSearch = phrase.replace(/'/g, "'").replace(/�/g, '�');
+  // Búsqueda simple sin regex para verificar
+  const simpleSearch = phrase.replace(/'/g, "'").replace(/®/g, '®');
   if (html.includes(simpleSearch)) remaining.push(phrase);
 }
 
@@ -58,7 +79,7 @@ if (remaining.length) {
 
 if (html !== before) {
   fs.writeFileSync(indexPath, html, 'utf8');
-  console.log('[sanitize-public-html] Removed forbidden public claims');
+  console.log('[sanitize-public-html] Sanitized public homepage HTML');
 } else {
-  console.log('[sanitize-public-html] No forbidden public claims found');
+  console.log('[sanitize-public-html] No public HTML sanitization needed');
 }
