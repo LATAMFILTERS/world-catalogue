@@ -11,17 +11,17 @@
   "citation": {
     "source_url": "https://elimfilters.com/knowledge-center/technologies/turbocore/",
     "concept": "TURBOCORE FH and FG Turbine Fuel Water Separation Technology",
-    "version": "1.0",
-    "last_updated": "2026-08-24",
+    "version": "1.1",
+    "last_updated": "2026-09-01",
     "content_hash": "sha256:63ae393ee277918543447cbed689f7a125da8bba783beee9217f9706f1acbb40"
   },
   "canonical": {
-    "definition": "TURBOCORE is the ELIMFILTERS turbine-style fuel/water separation technology exclusively for FH and FG series systems.",
-    "systems": "Fuel Cleanliness Protection; approved FH and FG turbine-style separator systems only.\n\nPRODUCTS\nFUEL_TURBINE family: 900FH, 902FH, 1000FH, 1002FH turbine housings; 2010/2020/2040 PM/SM/TM replacement elements; Fleetguard fuel processor housings.\n\nBOUNDARY\nTURBOCORE must not be assigned to standard non-turbine separator filters. HYDROCORE must not be assigned to FH or FG turbine systems.",
-    "failure_impact": null,
-    "related_standards": null,
-    "related_technologies": "SYNTAPORE governs plain fuel filtration. HYDROCORE governs approved standard non-turbine fuel/water separators, including drain and transparent-bowl configurations.\n\nRELATED_FAMILIES\nFUEL_TURBINE: Turbine Series FH/FG housings and 2010/2020/2040 replacement elements governed by TURBOCORE�.",
-    "industrial_role": "TURBOCORE provides the turbine-style fuel/water separation layer for approved FH and FG series systems within ELIMFILTERS Fuel Cleanliness Protection."
+    "definition": "TURBOCORE is the ELIMFILTERS turbine-style fuel/water separation technology exclusively for approved FH and FG series systems.",
+    "systems": "Fuel Cleanliness Protection; approved FH and FG turbine-style separator systems only.\n\nPRODUCTS\nFUEL_TURBINE family: 900FH, 902FH, 1000FH, 1002FH turbine housings; 2010/2020/2040 PM/SM/TM replacement elements.\n\nBOUNDARY\nTURBOCORE must not be assigned to standard non-turbine separator filters. HYDROCORE must not be assigned to FH or FG turbine systems.",
+    "failure_impact": "Incorrect housing, element-series, sealing or stage assignment can compromise the intended FH/FG turbine flow path, water-management boundary and particulate-control function, increasing downstream contamination exposure and fitment risk.",
+    "related_standards": "ASTM D6304: water content determination in petroleum products | ISO 12937: water determination in petroleum products. Product-level water-separation efficiency or flow claims require validated evidence for the specific approved TURBOCORE configuration.",
+    "related_technologies": "SYNTAPORE governs plain diesel-fuel particulate filtration. HYDROCORE governs approved standard non-turbine fuel/water separators, including drain and transparent-bowl configurations.\n\nRELATED_FAMILIES\nFUEL_TURBINE: Turbine Series FH/FG housings and 2010/2020/2040 replacement elements governed by TURBOCORE™.",
+    "industrial_role": "TURBOCORE provides the turbine-style fuel/water separation layer for approved FH and FG series systems within ELIMFILTERS Fuel Cleanliness Protection. It keeps turbine-specific housing geometry, staged flow routing and dedicated replacement-element architecture separate from standard non-turbine separator applications."
   },
   "relationships": {
     "related_standards": [
