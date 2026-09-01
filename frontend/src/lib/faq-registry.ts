@@ -1,5 +1,6 @@
 import { getSystemEditorial } from './system-editorial';
 import { getTechnologyEditorial } from './technology-editorial';
+import { TURBOCORE_EDITORIAL } from './turbocore-editorial';
 import { KC_STANDARDS } from './knowledge-center-data/standards-registry';
 
 export type FAQSourceType = 'system' | 'technology' | 'standard' | 'search-demand';
@@ -16,7 +17,7 @@ export interface FAQRegistryEntry {
   readonly lastReviewed: string;
 }
 
-const REVIEW_DATE = '2026-08-21';
+const REVIEW_DATE = '2026-09-01';
 
 const SYSTEMS = [
   ['air-intake', 'Air Intake & Airflow'],
@@ -33,6 +34,7 @@ const TECHNOLOGIES = [
   ['intekcore', 'INTEKCORE™'],
   ['syntapore', 'SYNTAPORE™'],
   ['hydrocore', 'HYDROCORE™'],
+  ['turbocore', 'TURBOCORE™'],
   ['syntrax', 'SYNTRAX™'],
   ['nanoforce', 'NANOFORCE™'],
   ['thermacore', 'THERMACORE™'],
@@ -187,6 +189,10 @@ function normalizeQuestion(question: string): string {
     .trim();
 }
 
+function technologyEditorial(slug: string) {
+  return slug === 'turbocore' ? TURBOCORE_EDITORIAL : getTechnologyEditorial(slug);
+}
+
 export function getFAQRegistry(): FAQRegistryEntry[] {
   const entries: FAQRegistryEntry[] = [];
 
@@ -208,7 +214,7 @@ export function getFAQRegistry(): FAQRegistryEntry[] {
   }
 
   for (const [slug, label] of TECHNOLOGIES) {
-    const editorial = getTechnologyEditorial(slug);
+    const editorial = technologyEditorial(slug);
     if (!editorial) continue;
     editorial.faq.forEach((faq, index) => {
       entries.push({
