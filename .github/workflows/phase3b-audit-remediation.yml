@@ -1,0 +1,89 @@
+name: Phase 3B audit remediation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/phase3b-audit-remediation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Apply production audit remediations
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          # Contact page: put the intent router immediately after the site header.
+          p = Path('frontend/src/app/contact/page.tsx')
+          s = p.read_text(encoding='utf-8')
+          imp = "import ContactIntentRouter from '@/components/ContactIntentRouter';\n"
+          if imp not in s:
+              s = s.replace("import ContactEmailActions from './ContactEmailActions';\n", "import ContactEmailActions from './ContactEmailActions';\n" + imp)
+          marker = '      <PageHeader currentPage="Contact" />\n'
+          if '<ContactIntentRouter />' not in s:
+              s = s.replace(marker, marker + '      <ContactIntentRouter />\n')
+          p.write_text(s, encoding='utf-8')
+
+          # Add image/dateModified to dedicated TechArticle blocks using each page hero asset.
+          for p in Path('frontend/src/components').glob('*StablePage.tsx'):
+              s = p.read_text(encoding='utf-8')
+              if "'@type':'TechArticle'" not in s and "'@type': 'TechArticle'" not in s:
+                  continue
+              if 'dateModified:' in s and re.search(r'\bimage:', s):
+                  continue
+              hero = re.search(r'className=\{styles\.heroBackground\}\s+src="([^"]+)"', s)
+              if not hero:
+                  hero = re.search(r'src="(/images/[^"]+)"[^\n]*alt=', s)
+              image = f"https://elimfilters.com{hero.group(1)}" if hero else 'https://elimfilters.com/assets/logo-elimfilters.png'
+              url_line = re.search(r"(\s+headline:[^\n]*url:'https://elimfilters\.com/technologies/[^']+/',\n)", s)
+              if url_line:
+                  addition = ''
+                  if not re.search(r'\bimage:', s):
+                      addition += f"  image:'{image}',\n"
+                  if 'dateModified:' not in s:
+                      addition += "  dateModified:'2026-08-31',\n"
+                  s = s[:url_line.end()] + addition + s[url_line.end():]
+              p.write_text(s, encoding='utf-8')
+
+          # Repair common double-encoded punctuation in public frontend source.
+          replacements = {
+              'â„¢':'™', 'Â®':'®', 'â€”':'—', 'â€“':'–', 'â€™':'’', 'â€œ':'“', 'â€':'”', 'â†’':'→',
+          }
+          for p in Path('frontend/src').rglob('*'):
+              if p.suffix.lower() not in {'.ts','.tsx','.js','.jsx','.json','.css','.md'}:
+                  continue
+              try:
+                  s = p.read_text(encoding='utf-8')
+              except Exception:
+                  continue
+              out = s
+              for old,new in replacements.items(): out = out.replace(old,new)
+              if out != s: p.write_text(out, encoding='utf-8')
+          PY
+
+      - name: Run frontend build
+        working-directory: frontend
+        run: npm ci && npm run build
+      - name: Commit remediation
+        run: |
+          git config user.name "ELIMFILTERS Automation"
+          git config user.email "automation@elimfilters.com"
+          git add frontend/src/app/contact/page.tsx frontend/src/components frontend/src || true
+          if git diff --cached --quiet; then
+            echo "No remediation changes required"
+          else
+            git commit -m "Complete Phase 3B audit remediation"
+            git push origin main
+          fi
