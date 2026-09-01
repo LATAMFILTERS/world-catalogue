@@ -1,3 +1,5 @@
+import TechnologyRouteChrome from '@/components/TechnologyRouteChrome';
+
 export default function TechnologiesLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return <TechnologyRouteChrome>{children}</TechnologyRouteChrome>;
 }
