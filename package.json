@@ -6,7 +6,7 @@
     "node": "20.x"
   },
   "scripts": {
-    "postinstall": "node scripts/postinstall-safe.js",
+    "postinstall": "node scripts/postinstall-safe.js && node --test tests/omnichannel-canonical-taxonomy.test.js tests/bot-protocol-postgres-rich-response.test.js",
     "start": "node server-protocol.js",
     "dev": "node server-protocol.js",
     "build": "cd frontend && npm ci && npm run build",
