@@ -1,7 +1,5 @@
 import {
   buildCanonicalEntitySchema,
-  buildOrganizationSchema,
-  buildWebsiteSchema,
   type CanonicalSchemaNode,
   type SchemaEntityKind,
 } from './canonical-entity-schema';
@@ -14,7 +12,6 @@ import {
 
 const BASE_URL = 'https://elimfilters.com';
 const ORGANIZATION_ID = `${BASE_URL}/#organization`;
-const WEBSITE_ID = `${BASE_URL}/#website`;
 const CONCEPT_SET_ID = `${BASE_URL}/#industrial-contamination-knowledge`;
 
 export interface KnowledgeGraphSchema {
@@ -60,8 +57,11 @@ function buildConceptSetNode(): Record<string, unknown> {
 export function buildKnowledgeGraphSchema(
   focus?: { kind: SchemaEntityKind; slug: string },
 ): KnowledgeGraphSchema {
-  const organization = buildOrganizationSchema();
-  const website = buildWebsiteSchema();
+  // Organization/WebSite are defined once, sitewide, by SchemaMarkup.tsx in the
+  // root layout. Re-declaring full copies here (as opposed to referencing them
+  // by @id, as every other node in this graph already does) created two
+  // conflicting nodes sharing the same @id on every page that renders this
+  // graph, with different name/legalName/logo/inLanguage values between them.
   const entitySchemas: CanonicalSchemaNode[] = [];
   const conceptSchemas: Record<string, unknown>[] = [];
 
@@ -102,8 +102,6 @@ export function buildKnowledgeGraphSchema(
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      withoutContext(organization),
-      withoutContext(website),
       buildConceptSetNode(),
       ...uniqueEntities.map((schema) => withoutContext(schema as unknown as Record<string, unknown>)),
       ...uniqueConcepts,
@@ -139,7 +137,11 @@ export function validateKnowledgeGraphSchema(): KnowledgeGraphValidationResult {
     if (id.startsWith(`${BASE_URL}/`) && !id.includes('#entity')) return false;
     return id.startsWith(BASE_URL);
   });
-  const missingRootNodes = [ORGANIZATION_ID, WEBSITE_ID, CONCEPT_SET_ID].filter((id) => !idSet.has(id));
+  // Organization/WebSite are sitewide nodes owned by SchemaMarkup.tsx and are
+  // intentionally referenced by @id rather than redefined in this per-page
+  // graph (see buildKnowledgeGraphSchema) — only the concept set is expected
+  // to be locally present.
+  const missingRootNodes = [CONCEPT_SET_ID].filter((id) => !idSet.has(id));
   const invalidCanonicalIds = ids.filter((id) => !id.startsWith(BASE_URL));
 
   return {
