@@ -15,7 +15,7 @@ export default function TechnicalFAQsPage() {
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       {/* Back Navigation */}
       <Link
-        href="/knowledge-system/faqs"
+        href="/knowledge-system"
         style={{
           display: 'inline-block',
           margin: '2rem',
@@ -198,7 +198,7 @@ export default function TechnicalFAQsPage() {
             }}
           >
             <Link
-              href="/knowledge-system/standards"
+              href="/knowledge-center/standards"
               style={{
                 padding: '1rem',
                 background: 'rgba(255,241,45,0.05)',
@@ -213,7 +213,7 @@ export default function TechnicalFAQsPage() {
               ↗ Standards Domain Pages
             </Link>
             <Link
-              href="/knowledge-system/contamination"
+              href="/knowledge-center/problems"
               style={{
                 padding: '1rem',
                 background: 'rgba(255,241,45,0.05)',
@@ -228,7 +228,7 @@ export default function TechnicalFAQsPage() {
               ↗ Contamination Case Studies
             </Link>
             <Link
-              href="/knowledge-system/fleet"
+              href="/knowledge-center/fleet-optimization"
               style={{
                 padding: '1rem',
                 background: 'rgba(255,241,45,0.05)',

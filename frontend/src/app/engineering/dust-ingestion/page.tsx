@@ -249,7 +249,7 @@ function DustIngestionContent() {
               {
                 code: 'ISO 5011',
                 scope: 'Air filter element performance test method for internal combustion engines and compressors. Measures filtration efficiency (% particle capture at specified sizes), initial restriction, and dust-holding capacity under controlled test conditions. The standard used to rate MACROCORE™ and equivalent air filtration products.',
-                link: '/knowledge-system/standards/air-intake-systems',
+                link: '/knowledge-center/standards/iso-5011',
               },
               {
                 code: 'SAE J1539',
@@ -462,10 +462,10 @@ function DustIngestionContent() {
             gap: '0.75rem',
           }}>
             {[
-              { label: 'Air Intake Systems — Standards Domain', href: '/knowledge-system/standards/air-intake-systems' },
-              { label: 'Particle Wear — Contamination Study', href: '/knowledge-system/contamination/particle-wear' },
+              { label: 'Air Intake Systems — Standards Domain', href: '/knowledge-center/standards' },
+              { label: 'Particle Wear — Contamination Study', href: '/knowledge-center/problems' },
               { label: 'MACROCORE™ Technology', href: '/engineering/technologies/TECH-MACROCORE' },
-              { label: 'Engine Oil Contamination', href: '/knowledge-system/contamination/particle-wear' },
+              { label: 'Engine Oil Contamination', href: '/knowledge-center/problems' },
               { label: 'Hydraulic Contamination', href: '/engineering/hydraulic-contamination' },
               { label: 'Mining — Extreme Dust Application', href: '/industries/mining' },
               { label: 'Agriculture — Crop Dust Application', href: '/industries/agriculture' },

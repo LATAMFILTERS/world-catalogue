@@ -273,7 +273,7 @@ export default function FleetOptimizationHub() {
           }}>
             Contamination Analysis →
           </Link>
-          <Link href="/knowledge-system/problems" style={{
+          <Link href="/knowledge-center/problems" style={{
             padding: '0.75rem 1.5rem',
             background: 'rgba(255,241,45,0.1)',
             border: '1px solid rgba(255,241,45,0.3)',

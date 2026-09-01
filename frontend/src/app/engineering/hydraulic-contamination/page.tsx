@@ -246,12 +246,12 @@ function HydraulicContaminationContent() {
               {
                 code: 'ISO 4406',
                 scope: 'Particle cleanliness code classification for hydraulic and lube oil systems. Three-number code (4µm / 6µm / 14µm particle count per mL). Target: 16/14/11 for proportional valve circuits; 17/15/12 for standard hydraulic systems.',
-                link: '/knowledge-system/standards/iso-4406',
+                link: '/knowledge-center/standards/iso-4406',
               },
               {
                 code: 'ISO 16889',
                 scope: 'Multi-pass filter efficiency test methodology. Defines Beta ratio (βx[c]) as the ratio of upstream to downstream particle count at a given size. A filter rated β10[c] ≥ 1000 removes 99.9% of particles ≥10 µm.',
-                link: '/knowledge-system/standards/iso-16889',
+                link: '/knowledge-center/standards/iso-16889',
               },
               {
                 code: 'NFPA T2.14',
@@ -480,12 +480,12 @@ function HydraulicContaminationContent() {
             gap: '0.75rem',
           }}>
             {[
-              { label: 'ISO 4406 — Particle Cleanliness Codes', href: '/knowledge-system/standards/iso-4406' },
-              { label: 'ISO 16889 — Beta Ratio Filter Testing', href: '/knowledge-system/standards/iso-16889' },
-              { label: 'Hydraulic Systems — Standards Domain', href: '/knowledge-system/standards/hydraulic-systems' },
-              { label: 'Hydraulic Contamination — Case Study', href: '/knowledge-system/contamination/hydraulic-system' },
+              { label: 'ISO 4406 — Particle Cleanliness Codes', href: '/knowledge-center/standards/iso-4406' },
+              { label: 'ISO 16889 — Beta Ratio Filter Testing', href: '/knowledge-center/standards/iso-16889' },
+              { label: 'Hydraulic Systems — Standards Domain', href: '/knowledge-center/standards' },
+              { label: 'Hydraulic Contamination — Case Study', href: '/knowledge-center/problems' },
               { label: 'Diesel Water Contamination', href: '/engineering/diesel-water-contamination' },
-              { label: 'Particle Wear in Engines', href: '/knowledge-system/contamination/particle-wear' },
+              { label: 'Particle Wear in Engines', href: '/knowledge-center/problems' },
               { label: 'NANOFORCE™ Technology', href: '/engineering/technologies/TECH-NANOFORCE' },
               { label: 'Mining — Industry Application', href: '/industries/mining' },
             ].map((link) => (

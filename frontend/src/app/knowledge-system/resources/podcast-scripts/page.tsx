@@ -18,7 +18,7 @@ export default function PodcastScriptsPage() {
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       {/* Back Navigation */}
       <Link
-        href="/knowledge-system/resources"
+        href="/knowledge-system"
         style={{
           display: 'inline-block',
           margin: '2rem',

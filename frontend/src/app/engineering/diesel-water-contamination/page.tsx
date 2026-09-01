@@ -448,14 +448,14 @@ function DieselWaterContaminationContent() {
             gap: '0.75rem',
           }}>
             {[
-              { label: 'Fuel Systems — Standards Domain', href: '/knowledge-system/standards/fuel-systems' },
-              { label: 'Diesel Water Contamination — Case Study', href: '/knowledge-system/contamination/diesel-water' },
-              { label: 'ASTM D6304 — Karl Fischer Testing', href: '/knowledge-system/standards/fuel-systems' },
+              { label: 'Fuel Systems — Standards Domain', href: '/knowledge-center/standards' },
+              { label: 'Diesel Water Contamination — Case Study', href: '/knowledge-center/problems' },
+              { label: 'ASTM D6304 — Karl Fischer Testing', href: '/knowledge-center/standards/astm-d6304' },
               { label: 'Hydraulic Contamination', href: '/engineering/hydraulic-contamination' },
               { label: 'Dust Ingestion — Air Intake', href: '/engineering/dust-ingestion' },
               { label: 'Agriculture — Industry Application', href: '/industries/agriculture' },
               { label: 'Marine — Industry Application', href: '/industries/marine' },
-              { label: 'Fleet Fuel Efficiency', href: '/knowledge-system/fleet/fuel-efficiency' },
+              { label: 'Fleet Fuel Efficiency', href: '/knowledge-center/fleet-optimization' },
             ].map((link) => (
               <Link key={link.href} href={link.href} style={{ textDecoration: 'none' }}>
                 <motion.div
