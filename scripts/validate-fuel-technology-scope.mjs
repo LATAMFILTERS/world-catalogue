@@ -64,7 +64,7 @@ if (!/TURBOCORE™ exclusively governs|governed exclusively by TURBOCORE/i.test(
   violations.push('The governed TURBOCORE editorial source must state the FH/FG turbine-only scope explicitly.');
 }
 
-const familyMatch = familyData.match(/'fuel-turbine':\s*\{[\s\S]*?\n\s*\},\n\s*'oil-filters':/);
+const familyMatch = familyData.match(/'fuel-turbine':\s*\{[\s\S]*?\.\.\.relationships\('fuel-turbine'\),\s*\n\s*\},/);
 if (!familyMatch) {
   violations.push('Could not locate fuel-turbine product-family source block.');
 } else {
