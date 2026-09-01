@@ -88,7 +88,14 @@ test('repeated 429 is capped at three total calls per domain', async () => {
   const response = await createResilientFetch(baseFetch, async (ms) => { sleeps.push(ms); })(endpoint, init);
   assert.equal(response.ok, false);
   assert.equal(calls, 3);
-  assert.equal(sleeps.filter((ms) => ms >= 10000).length, 2);
+  // Two 429s were retried (calls 1->2 and 2->3), and each retry boundary
+  // now carries two distinct waits: the 429 retry backoff itself
+  // (MIN_RATE_LIMIT_BACKOFF_MS floor, >=10s but well under the pacing
+  // floor) and the base inter-request pacing wait (MIN_GROQ_INTERVAL_MS,
+  // currently 70s — see industry-sweep-reliable.mjs for why it is this
+  // large). Two of each, four sleeps total.
+  assert.equal(sleeps.filter((ms) => ms >= 10000 && ms < 70000).length, 2);
+  assert.equal(sleeps.filter((ms) => ms >= 70000).length, 2);
 });
 
 test('successful low-token response triggers proactive pacing before next Groq call', async () => {

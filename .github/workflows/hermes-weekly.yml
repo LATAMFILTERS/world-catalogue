@@ -102,15 +102,24 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Guard against DST duplicate run
+      # GitHub Actions schedule triggers are best-effort — a run can fire
+      # several hours after its declared cron time (observed: both of this
+      # workflow's DST-alternate crons landing ~6 hours late on the same
+      # Monday). The old guard compared the runner's current America/Chicago
+      # hour against a hardcoded "08" and skipped everything if it did not
+      # match exactly, which meant a bad-delay Monday silently skipped both
+      # firings — no collection, no Groq, no email, reported as "success".
+      # This asks a question that does not depend on wall-clock timing at
+      # all: has a real send already completed for the current ISO week?
+      # (see scripts/hermes/weekly-send-guard-core.mjs). Manual
+      # workflow_dispatch runs always proceed, same as before.
+      - name: Guard against duplicate weekly send
         id: guard
         run: |
-          HOUR=$(node -e "console.log(new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',hour:'2-digit',hour12:false}).format(new Date()))")
-          echo "Current America/Chicago hour: $HOUR"
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$HOUR" != "08" ]; then
-            echo "This is the DST-shifted cron firing outside the 08:xx America/Chicago window; skipping the rest of the job."
-            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            node scripts/hermes/weekly-send-guard.mjs check
           else
+            echo "Manual workflow_dispatch run; always proceeds regardless of weekly send state."
             echo "proceed=true" >> "$GITHUB_OUTPUT"
           fi
 
@@ -246,6 +255,14 @@ jobs:
           HERMES_REVIEW_EMAIL: ${{ secrets.HERMES_REVIEW_EMAIL }}
           HERMES_EMAIL_LIVE: ${{ vars.HERMES_EMAIL_LIVE || 'false' }}
         run: npm run hermes:email:real
+
+      # Only record the week as delivered once the email step itself did
+      # not fail — if it errored (bad credentials, transient outage), the
+      # next scheduled firing this same week should still be free to retry
+      # rather than seeing a false "already sent".
+      - name: Record weekly send for this ISO week
+        if: steps.guard.outputs.proceed == 'true' && steps.email.outcome == 'success'
+        run: node scripts/hermes/weekly-send-guard.mjs mark
 
       - name: Upload HERMES artifacts
         if: always()

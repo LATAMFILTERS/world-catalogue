@@ -7,7 +7,16 @@ process.env.HERMES_SWEEP_DOMAIN_BATCH ||= '1';
 
 const GROQ_ENDPOINT_FRAGMENT = 'api.groq.com/openai/v1/chat/completions';
 const MAX_RETRIES = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_RETRIES || 3));
-const MIN_GROQ_INTERVAL_MS = Math.max(0, Number(process.env.HERMES_SWEEP_MIN_INTERVAL_MS || 5000));
+// Groq's on-demand tier caps groq/compound at 30,000 tokens per minute
+// (TPM). Each domain's 3-lane matrix call has run 8,000-19,000+ tokens in
+// observed production runs, so the old 5s floor allowed 3-4 requests within
+// a rolling minute — comfortably over the TPM cap on its own, before any
+// retry even fires. That produced a 429 storm on 2026-08-24 (13/15 domain
+// batches failed, and the run still burned 492,474 of the 500,000 daily
+// token budget retrying into the wall) rather than a slow, reliable sweep.
+// One request per ~70s keeps every domain's real usage under the per-minute
+// cap with headroom, even for the largest observed calls.
+const MIN_GROQ_INTERVAL_MS = Math.max(0, Number(process.env.HERMES_SWEEP_MIN_INTERVAL_MS || 70000));
 const DEFAULT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_BACKOFF_MS || 10000));
 const MIN_RATE_LIMIT_BACKOFF_MS = Math.max(1000, Number(process.env.HERMES_SWEEP_MIN_429_BACKOFF_MS || 10000));
 const MAX_FALLBACK_BACKOFF_MS = Math.max(MIN_RATE_LIMIT_BACKOFF_MS, Number(process.env.HERMES_SWEEP_MAX_BACKOFF_MS || 90000));
@@ -43,6 +52,12 @@ export function _resetQuotaStateForTests() {
   fatalDailyQuota = null;
   quotaState = null;
   exhaustedModels = new Set();
+  // Also module-scoped, and just as much a leak between test cases as the
+  // three above — omitting it let one test's pacing clock bleed into the
+  // next, which only stayed invisible while MIN_GROQ_INTERVAL_MS was small
+  // enough that a leftover pacing wait never crossed a test's backoff-size
+  // threshold assertions.
+  lastGroqRequestAt = 0;
 }
 
 function quotaExhaustedError(message) {
