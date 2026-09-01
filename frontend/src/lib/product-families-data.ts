@@ -105,8 +105,8 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
   },
   'fuel-turbine': {
     key: 'fuel-turbine', name: 'Turbine Fuel Separation', slug: 'fuel-turbine', dutyClass: 'HD', hdPrefix: 'ET9', ldPrefix: null,
-    purpose: 'Turbine Series FH and FG fuel-separation housings and replacement elements for approved turbine-style fuel/water separation architecture, including Fleetguard fuel processor housings.',
-    engineering: 'TURBOCORE™ governs the turbine-style housing architecture (900FH, 902FH, 1000FH, 1002FH) and dedicated 2010/2020/2040-series replacement elements, paired with HYDROCORE™ coalescing separation media.',
+    purpose: 'Turbine Series FH and FG fuel-separation housings and dedicated replacement elements for approved turbine-style fuel/water separation architecture.',
+    engineering: 'TURBOCORE™ exclusively governs the turbine-style FH/FG housing and element architecture, including approved 900FH, 902FH, 1000FH, 1002FH and dedicated 2010/2020/2040-series replacement configurations. HYDROCORE™ remains reserved for standard non-turbine fuel/water separators.',
     construction: pending, hdProducts: [pending], ldProducts: [], heroImage: '/images/fuel-turbine-hero.avif',
     ...relationships('fuel-turbine'),
   },
