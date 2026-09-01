@@ -5,18 +5,18 @@ import gsap from 'gsap';
 import styles from './IndustriesShowcase.module.css';
 
 const INDUSTRIES = [
-  { slug: 'mining', title: 'Mining', image: '/images/mineria-1.avif' },
-  { slug: 'agriculture', title: 'Agriculture', image: '/images/agricultor-1.avif' },
-  { slug: 'construction', title: 'Construction', image: '/images/chino-construction.avif' },
-  { slug: 'oil-gas', title: 'Oil & Gas', image: '/images/ingpetrolero.avif' },
-  { slug: 'marine', title: 'Marine', image: '/images/ingmarine.avif' },
-  { slug: 'power-generation', title: 'Power Generation', image: '/images/generatorsupervisor.avif' },
-  { slug: 'trucks-fleets', title: 'Truck Fleets', image: '/images/transport.avif' },
-  { slug: 'manufacturing', title: 'Manufacturing', image: '/images/manufactura.avif' },
-  { slug: 'railway', title: 'Railway', image: '/images/ing-railway.avif' },
-  { slug: 'waste-municipal', title: 'Waste & Municipal', image: '/images/wasted-municipal.avif' },
-  { slug: 'bus-coach', title: 'Bus & Coach', image: '/images/bus-hero.avif' },
-  { slug: 'automotive', title: 'Automotive', image: '/images/Automotive-1.avif' },
+  { slug: 'mining', title: 'Mining', image: '/images/mineria-1.avif', width: 1104, height: 974 },
+  { slug: 'agriculture', title: 'Agriculture', image: '/images/agricultor-1.avif', width: 1408, height: 768 },
+  { slug: 'construction', title: 'Construction', image: '/images/chino-construction.avif', width: 1024, height: 683 },
+  { slug: 'oil-gas', title: 'Oil & Gas', image: '/images/ingpetrolero.avif', width: 1224, height: 864 },
+  { slug: 'marine', title: 'Marine', image: '/images/ingmarine.avif', width: 1321, height: 800 },
+  { slug: 'power-generation', title: 'Power Generation', image: '/images/generatorsupervisor.avif', width: 1321, height: 800 },
+  { slug: 'trucks-fleets', title: 'Truck Fleets', image: '/images/transport.avif', width: 1254, height: 1254 },
+  { slug: 'manufacturing', title: 'Manufacturing', image: '/images/manufactura.avif', width: 1195, height: 896 },
+  { slug: 'railway', title: 'Railway', image: '/images/ing-railway.avif', width: 1024, height: 1024 },
+  { slug: 'waste-municipal', title: 'Waste & Municipal', image: '/images/wasted-municipal.avif', width: 4800, height: 3600 },
+  { slug: 'bus-coach', title: 'Bus & Coach', image: '/images/bus-hero.avif', width: 300, height: 300 },
+  { slug: 'automotive', title: 'Automotive', image: '/images/Automotive-1.avif', width: 1297, height: 816 },
 ] as const;
 
 const CARD_WIDTH = 300;
@@ -194,6 +194,8 @@ export function IndustriesShowcase() {
                 <img
                   src={industry.image}
                   alt=""
+                  width={industry.width}
+                  height={industry.height}
                   className={styles.loaderImage}
                   draggable={false}
                 />
