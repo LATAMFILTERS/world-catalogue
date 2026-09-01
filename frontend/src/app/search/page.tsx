@@ -17,7 +17,6 @@ import {
 } from '@/lib/services';
 import type { SearchResult, Recommendation, RecommendationStep } from '@/lib/services';
 import type { GraphNode } from '@/lib/graph/graph-types';
-import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { ConversionProvider } from '@/components/conversion';
 import { EngineeringSearchBar } from '@/components/engineering';
@@ -902,7 +901,6 @@ function SearchPageInner() {
 
   return (
     <>
-      <Navigation />
       <main style={{ background: '#000', minHeight: '100vh' }}>
 
         {/* Search header */}
