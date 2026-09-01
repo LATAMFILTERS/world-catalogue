@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import styles from './KnowledgeCenter.module.css';
 
@@ -41,7 +40,6 @@ const PATHS=[
 
 export default function KnowledgeCenterPage(){
  return <>
-  <Navigation/>
   <main className={styles.page} id="main-content">
    <section className={styles.hero}><div className={`${styles.inner} ${styles.heroGrid}`}>
     <div>

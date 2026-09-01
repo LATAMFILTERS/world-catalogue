@@ -3,7 +3,6 @@
 import '@/i18n';
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
 const SECTIONS = [
@@ -19,7 +18,7 @@ const SECTIONS = [
 ];
 
 export default function AcceptableUsePolicyPage() {
-  return <><Navigation /><main style={{ background:'#000', color:'#fff', minHeight:'100vh' }}>
+  return <><main style={{ background:'#000', color:'#fff', minHeight:'100vh' }}>
     <div style={{ padding:'1.5rem 8%', borderBottom:'1px solid rgba(255,255,255,0.04)' }}><Link href="/" style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.72rem', letterSpacing:'0.14em', color:'rgba(255,255,255,0.4)', textDecoration:'none' }}>← ELIMFILTERS</Link></div>
     <section style={{ padding:'4rem 8% 3rem', borderBottom:'1px solid rgba(255,241,45,0.08)' }}><motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:0.5}}><p style={{ fontFamily:'JetBrains Mono, monospace', fontSize:'0.7rem', letterSpacing:'0.18em', color:'#FFF12D', opacity:0.8, marginBottom:'1rem', textTransform:'uppercase' }}>{'Legal · Acceptable Use'}</p><h1 style={{ fontFamily:'var(--font-body)', fontWeight:700, fontSize:'clamp(2rem, 4vw, 3rem)', margin:'0 0 1rem' }}>Acceptable Use Policy</h1><p style={{ color:'rgba(255,255,255,0.45)', margin:0 }}>Last updated: August 2026</p></motion.div></section>
     <div style={{ maxWidth:'820px', margin:'0 auto', padding:'4rem 8%' }}>{SECTIONS.map((s,i)=><section key={i} style={{ marginBottom:'2.5rem', paddingBottom:'2.5rem', borderBottom:'1px solid rgba(255,255,255,0.05)' }}><h2 style={{ fontSize:'1.05rem', color:'#FFF12D', marginBottom:'0.9rem' }}>{s.title}</h2><p style={{ fontSize:'0.92rem', color:'rgba(255,255,255,0.7)', lineHeight:1.8 }}>{s.body}</p></section>)}</div>

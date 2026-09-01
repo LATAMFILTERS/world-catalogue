@@ -3,7 +3,6 @@
 import '@/i18n';
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
 const SECTIONS = [
@@ -83,7 +82,6 @@ const RELATED = [
 export default function AIUsePolicyPage() {
   return (
     <>
-      <Navigation />
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
         <div style={{ padding: '1.5rem 8%', borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
           <Link href="/" style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.72rem', letterSpacing: '0.14em', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>← ELIMFILTERS</Link>
