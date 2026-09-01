@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, animate, useSpring, useScroll, useTransform } from 'motion/react';
 import { Footer } from '@/components/Footer';
+import { Navigation } from '@/components/Navigation';
 import { GlobalBrandSection } from '@/components/GlobalBrandSection';
 import { HomeStatBar } from '@/components/HomeStatBar';
 import { IndustriesShowcase } from '@/components/IndustriesShowcase';
@@ -344,6 +345,7 @@ export default function Home() {
 
   return (
     <ConversionProvider>
+      <Navigation />
       <main style={{ fontFamily: 'Barlow, Arial, sans-serif' }}>
         {/* â”€â”€ DIRECT ANSWER BLOCK (hidden from view, visible in HTML source for AI crawlers) â”€â”€ */}
         <div style={{

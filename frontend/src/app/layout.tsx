@@ -15,7 +15,6 @@ import PostHogAnalytics from '@/components/PostHogAnalytics';
 import UserRegistrationTracker from '@/components/UserRegistrationTracker';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import SkipNavigation from '@/components/SkipNavigation';
-import { Navigation } from '@/components/Navigation';
 
 const BASE_URL = 'https://elimfilters.com';
 const GA_ID = 'G-0XJP6FLV55';
@@ -135,7 +134,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ClientProviders>
           <SkipNavigation />
-          <Navigation />
           {children}
           <WebVitalsTracker />
           <VideoAnalytics />
