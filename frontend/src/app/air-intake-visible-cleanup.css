@@ -4,12 +4,13 @@
  * not repeated as visible blocks on the commercial system page.
  */
 
-/* Primary route scope: Air Intake page has the mecanica-air hero image. */
-main:has(img[src*="mecanica-air.avif"]) > :nth-child(n+6),
+/* Primary route scope: Air Intake page has this hero image alt text.
+ * (The page's hero image src has since changed to carcasa.jd.avif, and
+ * mecanica-air.avif is now also used as the MACROCORE technology page's
+ * hero — matching by src alone hid MACROCORE's entire body content, so
+ * the src-based selector variants were removed.) */
 main:has(img[alt="Air Intake & Airflow Protection"]) > :nth-child(n+6),
-main:has(img[src*="mecanica-air.avif"]) > section:nth-of-type(n+4),
 main:has(img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(n+4),
-main:has(img[src*="mecanica-air.avif"]) > section:nth-of-type(3) ~ *,
 main:has(img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) ~ * {
   display: none !important;
   visibility: hidden !important;
@@ -24,9 +25,7 @@ main:has(img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) ~ 
 /* If the reference/GEO blocks are injected inside the Product Families section,
  * keep only the visible Product Families heading and card grid.
  */
-main:has(img[src*="mecanica-air.avif"]) > section:nth-of-type(3) > :nth-child(n+3),
 main:has(img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) > :nth-child(n+3),
-main:has(img[src*="mecanica-air.avif"]) > section:nth-of-type(3) > div ~ *,
 main:has(img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(3) > div ~ * {
   display: none !important;
   visibility: hidden !important;
