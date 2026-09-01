@@ -19,14 +19,18 @@ export function MobileInternalLayoutFix() {
     const isTechnologies = matchesRoute('technologies');
     const isIndustries = matchesRoute('industries');
     const isSystems = matchesRoute('systems');
-    const isTarget = isAbout || isTechnologies || isIndustries || isSystems;
+
+    // Technology detail pages now carry route-specific responsive layouts.
+    // Do not run this legacy generic DOM mutator on /technologies/* because it
+    // rewrites authored grid, width, media and section geometry at runtime.
+    const isTarget = !isTechnologies && (isAbout || isIndustries || isSystems);
 
     const applyFixes = () => {
       const main = document.querySelector<HTMLElement>('main');
       if (!main || !window.matchMedia(MOBILE_QUERY).matches || !isTarget) return;
 
       main.classList.toggle('about-page-mobile-fix', isAbout);
-      main.classList.toggle('technologies-page-mobile-fix', isTechnologies);
+      main.classList.remove('technologies-page-mobile-fix');
       main.classList.toggle('industries-page-mobile-fix', isIndustries);
       main.classList.toggle('systems-page-mobile-fix', isSystems);
       main.style.width = '100%';
@@ -100,7 +104,6 @@ export function MobileInternalLayoutFix() {
     <style>{`
       @media (max-width: 860px) {
         .about-page-mobile-fix,
-        .technologies-page-mobile-fix,
         .industries-page-mobile-fix,
         .systems-page-mobile-fix {
           width: 100% !important;
