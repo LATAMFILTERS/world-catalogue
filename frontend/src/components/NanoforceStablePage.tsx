@@ -19,6 +19,7 @@ export function NanoforceStablePage() {
     '@context':'https://schema.org','@type':'TechArticle','@id':'https://elimfilters.com/technologies/nanoforce/#article',
     headline:'NANOFORCE™ Hydraulic Filtration Technology',name:'NANOFORCE™',url:'https://elimfilters.com/technologies/nanoforce/',
     description:'NANOFORCE™ is the ELIMFILTERS hydraulic-filtration architecture developed to maintain fluid cleanliness around the tolerance requirements of pumps, valves, actuators and precision hydraulic components.',
+    image:'https://elimfilters.com/images/nanoforce-mecanico.avif',datePublished:'2026-08-31',dateModified:'2026-09-01',
     author:{'@type':'Organization','@id':'https://elimfilters.com/#organization',name:'ELIMFILTERS'},reviewedBy:TECHNICAL_REVIEWER,publisher:{'@type':'Organization','@id':'https://elimfilters.com/#organization',name:'ELIMFILTERS'},
     about:['hydraulic filtration','hydraulic fluid cleanliness','pressure-line filtration','return-line filtration','offline filtration','Beta ratio','critical particle size','hydraulic filter pressure drop'].map(name=>({'@type':'Thing',name})),
     mentions:['pumps','hydraulic valves','actuators','precision hydraulic components','fluid viscosity','system flow','operating pressure'].map(name=>({'@type':'Thing',name})),

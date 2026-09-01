@@ -189,6 +189,7 @@ export default function IndustriesPage() {
           <div>
             <p style={impactLead}>Contamination does more than damage components. It can shorten fluid life, increase maintenance frequency, accelerate replacement demand, and create avoidable material and energy waste across the equipment lifecycle.</p>
             <p style={bodyText}>ELIMFILTERS technologies are engineered to help control that burden by keeping critical systems cleaner for longer. The objective is not simply to capture particles, but to protect the useful life of components, fluids, and equipment while reducing unnecessary service intervention and premature replacement.</p>
+            <p style={bodyText}>For engineering-level detail on dust exposure, contamination mechanisms, and system-level technical guidance by industry, see the <Link href="/knowledge-center/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>Knowledge Center Industries reference</Link>.</p>
             <div style={impactOutcomes}>
               <div style={impactOutcome}><span style={impactOutcomeLabel}>LONGER USEFUL LIFE</span><p style={impactOutcomeText}>Protect components and fluids from contamination-driven degradation.</p></div>
               <div style={impactOutcome}><span style={impactOutcomeLabel}>LESS SERVICE WASTE</span><p style={impactOutcomeText}>Reduce avoidable replacement and maintenance activity caused by premature contamination-related wear.</p></div>

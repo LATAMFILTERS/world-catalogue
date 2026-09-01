@@ -18,6 +18,7 @@ export function SyntraxStablePage() {
     '@context':'https://schema.org','@type':'TechArticle','@id':'https://elimfilters.com/technologies/syntrax/#article',
     headline:'SYNTRAX™ Lubrication Filtration Technology',name:'SYNTRAX™',url:'https://elimfilters.com/technologies/syntrax/',
     description:'SYNTRAX™ is the ELIMFILTERS architecture developed to control wear debris, soot agglomerates and other contaminants present in the lubricant. Its selection balances efficiency, contaminant capacity, oil flow, pressure drop and structural integrity throughout the service interval.',
+    image:'https://elimfilters.com/images/syntrax.avif',datePublished:'2026-08-31',dateModified:'2026-09-01',
     author:{'@id':'https://elimfilters.com/#organization'},reviewedBy:TECHNICAL_REVIEWER,publisher:{'@id':'https://elimfilters.com/#organization'},
     about:['engine lubrication filtration','wear debris control','soot agglomerate control','oil filter pressure drop','oil flow management'].map(name=>({'@type':'Thing',name})),
     isPartOf:{'@type':'WebSite','@id':'https://elimfilters.com/#website',name:'ELIMFILTERS',url:'https://elimfilters.com/'}

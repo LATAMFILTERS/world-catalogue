@@ -79,6 +79,17 @@ export default function IndustriesPage() {
           >
             Industry-specific contamination profiles, equipment exposure levels, and filtration requirements for heavy equipment and industrial operations. Contamination exposure directly determines filtration system design, service intervals, and asset protection strategy.
           </motion.p>
+
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '0.85rem',
+            lineHeight: 1.7,
+            marginTop: '1rem',
+            color: 'rgba(255,255,255,0.45)',
+            maxWidth: '600px',
+          }}>
+            Looking for commercial filtration solutions by industry? See <Link href="/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>ELIMFILTERS Industries</Link>.
+          </p>
         </div>
       </section>
 
