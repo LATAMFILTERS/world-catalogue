@@ -15,15 +15,16 @@ export function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const resolvedSlug = SYSTEM_ALIASES[params.slug] || params.slug;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const resolvedSlug = SYSTEM_ALIASES[slug] || slug;
   const system = KC_SYSTEMS.find((s) => s.slug === resolvedSlug);
   if (!system) return {};
 
-  const isAlias = resolvedSlug !== params.slug;
+  const isAlias = resolvedSlug !== slug;
   const url = `https://elimfilters.com/knowledge-center/systems/${resolvedSlug}`;
   return {
-    title: isAlias ? `${params.slug.replace(/-/g, ' ')} Legacy System` : `${system.title} System`,
+    title: isAlias ? `${slug.replace(/-/g, ' ')} Legacy System` : `${system.title} System`,
     description: isAlias ? `Legacy protection-system route. Continue to the current ${system.title} page.` : system.description,
     alternates: { canonical: url },
     robots: isAlias ? { index: false, follow: true } : undefined,
@@ -36,12 +37,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function SystemPage({ params }: { params: { slug: string } }) {
-  const resolvedSlug = SYSTEM_ALIASES[params.slug] || params.slug;
+export default async function SystemPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const resolvedSlug = SYSTEM_ALIASES[slug] || slug;
   const system = KC_SYSTEMS.find((s) => s.slug === resolvedSlug);
   if (!system) return notFound();
 
-  if (resolvedSlug !== params.slug) {
+  if (resolvedSlug !== slug) {
     const destination = `/knowledge-center/systems/${resolvedSlug}/`;
     return (
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '2rem' }}>

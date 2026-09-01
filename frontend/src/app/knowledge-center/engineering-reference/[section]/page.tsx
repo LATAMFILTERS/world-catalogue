@@ -4,7 +4,7 @@ import { ERL_SECTIONS, getERLSection } from '@/lib/engineering-reference-data';
 import SectionContent from './SectionContent';
 
 interface Props {
-  params: { section: string };
+  params: Promise<{ section: string }>;
 }
 
 const SEO_INTENT_OVERRIDES: Record<string, { title: string; description: string }> = {
@@ -31,7 +31,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const section = getERLSection(params.section);
+  const { section: sectionSlug } = await params;
+  const section = getERLSection(sectionSlug);
   if (!section) return { title: 'Not Found' };
   const override = SEO_INTENT_OVERRIDES[section.slug];
   return {
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function SectionPage({ params }: Props) {
-  const section = getERLSection(params.section);
+export default async function SectionPage({ params }: Props) {
+  const { section: sectionSlug } = await params;
+  const section = getERLSection(sectionSlug);
   if (!section) notFound();
 
   const currentIndex = ERL_SECTIONS.findIndex((s) => s.slug === section.slug);

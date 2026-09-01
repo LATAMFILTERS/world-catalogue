@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { StandardExplorerClient } from './StandardExplorerClient';
 
 interface Props {
-  params: { entityId: string };
+  params: Promise<{ entityId: string }>;
 }
 
 export function generateStaticParams() {
@@ -12,19 +12,21 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { entityId } = await params;
   const entities = listEntitiesWithProvenance('STANDARD');
-  const entry = entities.find(({ node }) => node.entityId === params.entityId);
+  const entry = entities.find(({ node }) => node.entityId === entityId);
   if (!entry) return {};
   return {
     title: `${entry.node.label} — Standard Reference | ELIMFILTERS`,
     description: `Engineering reference for ${entry.node.label}.`,
-    alternates: { canonical: `https://elimfilters.com/engineering/standards/${params.entityId}` },
+    alternates: { canonical: `https://elimfilters.com/engineering/standards/${entityId}` },
   };
 }
 
-export default function ExplorerPage({ params }: Props) {
+export default async function ExplorerPage({ params }: Props) {
+  const { entityId } = await params;
   const entities = listEntitiesWithProvenance('STANDARD');
-  const entry = entities.find(({ node }) => node.entityId === params.entityId);
+  const entry = entities.find(({ node }) => node.entityId === entityId);
   if (!entry) return notFound();
-  return <StandardExplorerClient entityId={params.entityId} />;
+  return <StandardExplorerClient entityId={entityId} />;
 }

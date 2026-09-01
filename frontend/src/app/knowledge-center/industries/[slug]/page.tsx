@@ -7,11 +7,12 @@ export function generateStaticParams() {
   return KC_INDUSTRIES.map((ind) => ({ slug: ind.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const industry = KC_INDUSTRIES.find((ind) => ind.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const industry = KC_INDUSTRIES.find((ind) => ind.slug === slug);
   if (!industry) return {};
 
-  const url = `https://elimfilters.com/knowledge-center/industries/${params.slug}`;
+  const url = `https://elimfilters.com/knowledge-center/industries/${slug}`;
   return {
     title: `${industry.title} Filtration Engineering`,
     description: industry.description,
@@ -25,9 +26,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function IndustryPage({ params }: { params: { slug: string } }) {
-  const industry = KC_INDUSTRIES.find((ind) => ind.slug === params.slug);
+export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const industry = KC_INDUSTRIES.find((ind) => ind.slug === slug);
   if (!industry) return notFound();
-  const detail = KC_INDUSTRY_DETAILS[params.slug] ?? null;
+  const detail = KC_INDUSTRY_DETAILS[slug] ?? null;
   return <IndustryContent industry={industry} detail={detail} />;
 }

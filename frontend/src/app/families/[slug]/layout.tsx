@@ -3,6 +3,7 @@ import { ServerKnowledgeConnections } from '@/components/ServerKnowledgeConnecti
 
 export const dynamicParams = false;
 
-export default function FamilyLayout({ children, params }: { children: ReactNode; params: { slug: string } }) {
-  return <>{children}<ServerKnowledgeConnections kind="family" slug={params.slug} /></>;
+export default async function FamilyLayout({ children, params }: { children: ReactNode; params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return <>{children}<ServerKnowledgeConnections kind="family" slug={slug} /></>;
 }

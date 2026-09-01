@@ -29,18 +29,19 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { term: string };
+  params: Promise<{ term: string }>;
 }): Promise<Metadata> {
-  const id = slugToTermId(params.term);
+  const { term } = await params;
+  const id = slugToTermId(term);
   const entry = TERMINOLOGY_REGISTRY[id];
   if (!entry) return {};
   const isPublished = entry.status === 'published';
-  const override = SEO_INTENT_OVERRIDES[params.term];
+  const override = SEO_INTENT_OVERRIDES[term];
   return {
     title: override?.title || `${entry.term} — Glossary | ELIMFILTERS`,
     description: override?.description || entry.definition.slice(0, 160),
     alternates: {
-      canonical: `https://elimfilters.com/knowledge-center/glossary/${params.term}/`,
+      canonical: `https://elimfilters.com/knowledge-center/glossary/${term}/`,
     },
     robots: {
       index: isPublished,
@@ -49,9 +50,10 @@ export async function generateMetadata({
   };
 }
 
-export default function GlossaryTermPage({ params }: { params: { term: string } }) {
-  const id = slugToTermId(params.term);
+export default async function GlossaryTermPage({ params }: { params: Promise<{ term: string }> }) {
+  const { term } = await params;
+  const id = slugToTermId(term);
   const entry = TERMINOLOGY_REGISTRY[id];
   if (!entry) return notFound();
-  return <GlossaryTermContent entry={entry} slug={params.term} />;
+  return <GlossaryTermContent entry={entry} slug={term} />;
 }

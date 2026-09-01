@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import CalculatorContent from './CalculatorContent';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -12,7 +12,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const calc = getCalculatorBySlug(params.slug);
+  const { slug } = await params;
+  const calc = getCalculatorBySlug(slug);
   if (!calc) return {};
   return {
     title: `${calc.title} | ELIMFILTERS Knowledge Center`,
@@ -20,8 +21,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function CalculatorPage({ params }: PageProps) {
-  const calc = getCalculatorBySlug(params.slug);
+export default async function CalculatorPage({ params }: PageProps) {
+  const { slug } = await params;
+  const calc = getCalculatorBySlug(slug);
   if (!calc) notFound();
   return <CalculatorContent calc={calc} />;
 }

@@ -15,7 +15,7 @@ import { AutomotiveIndustryPage } from '@/components/AutomotiveIndustryPage';
 import type { Metadata } from 'next';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 const BASE_URL = 'https://elimfilters.com';
@@ -55,7 +55,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const item = getItemBySlug('industries', params.slug);
+  const { slug } = await params;
+  const item = getItemBySlug('industries', slug);
   if (!item) {
     return {
       title: 'Industry Not Found | ELIMFILTERS',
@@ -63,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const url = `${BASE_URL}/industries/${params.slug}/`;
+  const url = `${BASE_URL}/industries/${slug}/`;
   const description = industryMetaDescription[item.name] || item.description;
   const title = item.name === 'Mining'
     ? 'Mining Filtration Systems | Heavy-Duty Equipment | ELIMFILTERS'
@@ -123,8 +124,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function IndustryPage({ params }: Props) {
-  const item = getItemBySlug('industries', params.slug);
+export default async function IndustryPage({ params }: Props) {
+  const { slug } = await params;
+  const item = getItemBySlug('industries', slug);
   if (!item) return null;
 
   if (item.name === 'Mining') return <MiningIndustryPageV2 />;
@@ -141,7 +143,7 @@ export default function IndustryPage({ params }: Props) {
   if (item.name === 'Automotive') return <AutomotiveIndustryPage />;
 
   const media = industryMedia[item.name] || {};
-  const url = `${BASE_URL}/industries/${params.slug}/`;
+  const url = `${BASE_URL}/industries/${slug}/`;
   const description = industryMetaDescription[item.name] || item.description;
 
   const governedItem = {

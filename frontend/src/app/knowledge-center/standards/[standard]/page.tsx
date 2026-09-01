@@ -51,15 +51,16 @@ export function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata({ params }: { params: { standard: string } }): Promise<Metadata> {
-  const resolvedSlug = STANDARD_ALIASES[params.standard] || params.standard;
+export async function generateMetadata({ params }: { params: Promise<{ standard: string }> }): Promise<Metadata> {
+  const { standard } = await params;
+  const resolvedSlug = STANDARD_ALIASES[standard] || standard;
   const std = KC_STANDARDS.find((s) => s.slug === resolvedSlug);
   if (!std) return {};
 
-  const isAlias = resolvedSlug !== params.standard;
+  const isAlias = resolvedSlug !== standard;
   const url = `https://elimfilters.com/knowledge-center/standards/${resolvedSlug}/`;
   const override = SEO_OVERRIDES[resolvedSlug];
-  const title = isAlias ? `${params.standard.toUpperCase()} Legacy Standard` : override?.title || `${std.code}: ${std.title}`;
+  const title = isAlias ? `${standard.toUpperCase()} Legacy Standard` : override?.title || `${std.code}: ${std.title}`;
   const description = isAlias
     ? `Legacy standards route. Continue to the current ${std.code} ELIMFILTERS reference.`
     : override?.description || std.metaDescription;
@@ -78,12 +79,13 @@ export async function generateMetadata({ params }: { params: { standard: string 
   };
 }
 
-export default function StandardPage({ params }: { params: { standard: string } }) {
-  const resolvedSlug = STANDARD_ALIASES[params.standard] || params.standard;
+export default async function StandardPage({ params }: { params: Promise<{ standard: string }> }) {
+  const { standard } = await params;
+  const resolvedSlug = STANDARD_ALIASES[standard] || standard;
   const std = KC_STANDARDS.find((s) => s.slug === resolvedSlug);
   if (!std) return notFound();
 
-  if (resolvedSlug !== params.standard) {
+  if (resolvedSlug !== standard) {
     const destination = `/knowledge-center/standards/${resolvedSlug}/`;
     return (
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '2rem' }}>

@@ -24,7 +24,7 @@ const SYSTEM_TAGS: Record<string, string> = {
 const bodyFont = 'Barlow, Arial, sans-serif';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -32,7 +32,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const sys = getProtectionSystemBySlug(params.slug);
+  const { slug } = await params;
+  const sys = getProtectionSystemBySlug(slug);
   if (!sys) return { title: 'Not Found' };
   const url = `${BASE_URL}/systems/${sys.slug}/`;
   const title = sys.name;
@@ -112,8 +113,9 @@ const mutedLinkLabel: CSSProperties = {
   textTransform: 'uppercase',
 };
 
-export default function ProtectionSystemPage({ params }: Props) {
-  const sys = getProtectionSystemBySlug(params.slug);
+export default async function ProtectionSystemPage({ params }: Props) {
+  const { slug } = await params;
+  const sys = getProtectionSystemBySlug(slug);
   if (!sys) notFound();
 
   const families = getFamiliesByProtectionSystem(sys.slug);

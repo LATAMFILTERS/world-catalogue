@@ -12,7 +12,7 @@ const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 const PROTECTED_COMPONENTS: Record<string, readonly string[]> = {
@@ -58,7 +58,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const fam = getFamilyBySlug(params.slug);
+  const { slug } = await params;
+  const fam = getFamilyBySlug(slug);
   if (!fam) return { title: 'Not Found' };
 
   const url = `${BASE_URL}/families/${fam.slug}/`;
@@ -100,8 +101,9 @@ function industryLabel(value: string) {
     .join(' ');
 }
 
-export default function FamilyPage({ params }: Props) {
-  const fam = getFamilyBySlug(params.slug);
+export default async function FamilyPage({ params }: Props) {
+  const { slug } = await params;
+  const fam = getFamilyBySlug(slug);
   if (!fam) notFound();
 
   const system = getProtectionSystemBySlug(fam.protectionSystem);
