@@ -126,7 +126,8 @@ export default function CinematicHero() {
           style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}
         >
           <Link
-            href="/knowledge-system"
+            href="/systems/"
+            data-conversion-action="asset-protection-systems"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -161,6 +162,7 @@ export default function CinematicHero() {
             href="https://part-search.elimfilters.com"
             target="_blank"
             rel="noopener noreferrer"
+            data-conversion-action="product-intelligence"
             style={{
               display: "inline-flex",
               alignItems: "center",
