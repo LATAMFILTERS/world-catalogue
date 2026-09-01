@@ -35,7 +35,7 @@ const TECHNOLOGY_ENGINEERING: Record<TechnologySlug, CanonicalEngineeringDefinit
   },
   syntapore: {
     name: 'SYNTAPORE™',
-    definition: 'A diesel-fuel filtration architecture for primary, secondary and cartridge fuel-filter applications.',
+    definition: 'A diesel-fuel particulate filtration architecture for primary, secondary and cartridge fuel-filter applications.',
     engineeringPrinciple: 'Fuel filtration is staged to control particulate contamination before it reaches pumps and injectors.',
     controlStrategy: 'Apply the required efficiency, capacity, flow and pressure-drop performance at each approved fuel-filtration stage.',
     operationalImpact: 'Cleaner fuel helps maintain fuel-system reliability and precision component protection.',
@@ -70,17 +70,17 @@ const TECHNOLOGY_ENGINEERING: Record<TechnologySlug, CanonicalEngineeringDefinit
   },
   hydrocore: {
     name: 'HYDROCORE™',
-    definition: 'A fuel/water separation architecture across approved spin-on and cartridge separators and Turbine Series FH/FG applications.',
-    engineeringPrinciple: 'Coalescing and separation media remove free and emulsified water from diesel fuel ahead of the primary filtration stage, in standard spin-on/cartridge housings and staged turbine-housing (FH/FG) architectures alike.',
-    controlStrategy: 'Match separation efficiency, water-holding capacity, flow and service interval to the fuel-contamination profile and duty cycle of the approved fuel system, standard or turbine-style.',
-    operationalImpact: 'Reduced water carryover helps protect injectors and high-pressure pumps from water-related erosion and corrosion.',
+    definition: 'A fuel/water separation architecture for approved standard non-turbine separator filters, including drain and transparent-bowl configurations.',
+    engineeringPrinciple: 'Separation and coalescing behavior are matched to the approved standard separator configuration without extending HYDROCORE scope to FH or FG turbine systems.',
+    controlStrategy: 'Match the separator element, flow requirement, water-management configuration and service condition to the approved non-turbine application.',
+    operationalImpact: 'Controlled water separation helps reduce water carryover into downstream fuel-system components.',
   },
   turbocore: {
     name: 'TURBOCORE™',
-    definition: 'A turbine-style fuel filter housing and structural assembly architecture (FH/FG series) paired with HYDROCORE™ filtration media.',
-    engineeringPrinciple: 'Housing structure, port sizing, seal integrity and element-retention geometry preserve the staged fuel/water-separation boundary under the turbine (FH/FG) architecture.',
-    controlStrategy: 'Match housing capacity, port configuration and mounting orientation to the fuel system duty cycle, and validate sealing and retention under the approved service interval.',
-    operationalImpact: 'A reliable housing structure sustains staged fuel/water separation and reduces the risk of unfiltered bypass or seal failure.',
+    definition: 'A turbine-style fuel/water separation architecture reserved exclusively for approved FH and FG series systems and their dedicated replacement elements.',
+    engineeringPrinciple: 'Housing geometry, staged separation, element retention, sealing and flow routing operate as one turbine-specific fuel/water separation architecture.',
+    controlStrategy: 'Match the approved FH or FG housing, dedicated element series, flow requirement, port configuration and service condition without substituting standard non-turbine separator elements.',
+    operationalImpact: 'Maintaining the correct turbine-specific housing and element architecture supports staged separation and reduces bypass, sealing and fitment risk.',
   },
 };
 
