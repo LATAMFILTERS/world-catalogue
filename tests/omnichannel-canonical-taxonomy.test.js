@@ -12,6 +12,12 @@ function read(rel) {
   return fs.readFileSync(path.join(root, rel), 'utf8').replace(/^\uFEFF/, '');
 }
 
+function readIfPresent(rel) {
+  const file = path.join(root, rel);
+  if (!fs.existsSync(file)) return null;
+  return fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
+}
+
 const cases = [
   [{ filter_type: 'Fuel Filter' }, 'SYNTAPORE™'],
   [{ filter_type: 'Primary Diesel Fuel Filter' }, 'SYNTAPORE™'],
@@ -65,18 +71,26 @@ test('WhatsApp automatically prefers central protocol when its credential is pro
   assert.match(config, /useCentralProtocol: centralProtocolEnabled\(botProtocolApiKey\)/);
 });
 
-test('configured omnichannel workers never fall through to an independent AI after central-protocol failure', () => {
-  const linkedin = read('elimfilters-linkedin-bot/src/worker.js');
-  const youtube = read('elimfilters-youtube-bot/src/worker.js');
+test('vendored omnichannel workers never fall through to an independent AI after central-protocol failure', () => {
   const whatsapp = read('elimfilters-whatsapp-bot/src/worker.js');
+  assert.match(whatsapp, /if \(config\.useCentralProtocol\)/);
+  assert.match(whatsapp, /central_protocol_failure_safe_message/);
+  assert.match(whatsapp, /else \{[\s\S]*Legacy independent path/i);
 
-  for (const [name, source] of [['LinkedIn', linkedin], ['YouTube', youtube]]) {
+  // LinkedIn and YouTube may be deployed from separate repositories and are
+  // not guaranteed to be vendored into world-catalogue. Validate them here
+  // only when their worker sources are actually present in this checkout;
+  // absence must not make the main site deploy fail with ENOENT.
+  const optionalWorkers = [
+    ['LinkedIn', 'elimfilters-linkedin-bot/src/worker.js'],
+    ['YouTube', 'elimfilters-youtube-bot/src/worker.js'],
+  ];
+
+  for (const [name, rel] of optionalWorkers) {
+    const source = readIfPresent(rel);
+    if (!source) continue;
     assert.match(source, /if \(config\.botProtocolApiKey\)/, `${name} must gate the governed central route on its credential`);
     assert.match(source, /SAFE_SUPPORT_MESSAGE/, `${name} must use a deterministic safe response on governed-protocol failure`);
     assert.match(source, /else \{[\s\S]*legacy/i, `${name} legacy reasoning must be isolated to the no-central-credential branch`);
   }
-
-  assert.match(whatsapp, /if \(config\.useCentralProtocol\)/);
-  assert.match(whatsapp, /central_protocol_failure_safe_message/);
-  assert.match(whatsapp, /else \{[\s\S]*Legacy independent path/i);
 });
