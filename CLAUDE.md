@@ -16,19 +16,24 @@ Principle = The filter is the means. Asset protection is the objective.
 
 ## Approved technologies
 
-MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · HYDROCORE™ · SYNTRAX™ · NANOFORCE™ · THERMACORE™
+MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · HYDROCORE™ · TURBOCORE™ · SYNTRAX™ · NANOFORCE™ · THERMACORE™
 
-All approved turbine/FH/FG fuel/water-separation scope is governed under HYDROCORE™. Legacy aliases are retired and must not be emitted on active or public surfaces.
+### Fuel Cleanliness scope guardrail
 
-Specialized solutions: MARINECLEAN™ · DURACTECH™.
+- SYNTAPORE™ governs plain diesel-fuel particulate filtration for approved primary, secondary, spin-on and cartridge applications.
+- HYDROCORE™ governs approved standard non-turbine fuel/water separator configurations, including drain and transparent-bowl applications.
+- TURBOCORE™ governs approved turbine-style FH and FG fuel/water separation systems and their dedicated replacement-element architecture.
+- SYNTAPORE™, HYDROCORE™ and TURBOCORE™ are distinct scopes. Never merge, alias or substitute one for another in active or public surfaces.
+
+Specialized commercial solutions: MARINECLEAN™ · DURATECH™. These are not canonical core technology entities.
 
 ## Hard rules
 
-- Resolve technology names from canonical registries only.
+- Resolve technology names and scopes from canonical registries only.
 - Do not invent technologies, performance values, certifications or legal facts.
-- Do not expose unapproved technology aliases on public, computational, Knowledge Center, Part Search, SEO/GEO, metadata or structured-data surfaces.
+- Do not expose retired or unapproved technology aliases on public, computational, Knowledge Center, Part Search, SEO/GEO, metadata or structured-data surfaces.
 - Keep competitor material out of ELIMFILTERS-facing content. External sources are internal evidence only for generic industry validation.
-- DURACTECH™ On-Road: 15,000 km protection interval only for approved truck and commercial-vehicle applications and subject to ELIMFILTERS application, installation and maintenance conditions.
+- Any product-specific service interval, performance value, efficiency, pressure, capacity or certification claim requires approved product/application evidence before public use.
 - In engineering, product, validation, performance, and technical-claim contexts, artificial intelligence may be described only as mathematical/computational engineering support for evaluating demanding operating conditions; it does not replace physical validation, documented testing, or professional engineering judgment.
 - In corporate leadership and governance contexts, ELIMFILTERS may accurately disclose specialized Executive AI Agents as AI-operated executive functions under the human-governed Chief Executive Office. They must never be represented as undisclosed human employees or natural persons, and agent autonomy must not be overstated.
 - Public descriptions of the executive-agent model must emphasize defined responsibility, delegated authority, accountability, traceability, escalation, and human intervention rather than novelty or fictional staffing.
