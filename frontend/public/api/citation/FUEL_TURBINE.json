@@ -22,12 +22,12 @@
     "content_hash": "sha256:eda13800d7202cf3cc0ddfb900723cbf5373feefb61cb1ca12e20312aa0b877f"
   },
   "canonical": {
-    "definition": "Turbine Fuel Separation — the HYDROCORE™-technology filter element family for approved\nTurbine Series FH and FG fuel-separation housings and their dedicated 2010/2020/2040-series\nreplacement elements, covering 13 SKUs verified directly against production.",
-    "systems": "Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™\nfuel/water-separation technology in its Turbine Series FH/FG architecture",
-    "failure_impact": "Using a standard (non-turbine) separator element in a Turbine Series FH/FG housing, or\nvice versa, can compromise the staged separation and filtration performance the housing\nwas engineered around.",
-    "related_standards": "ASTM D6304: Karl Fischer water content measurement standard for diesel fuel |\nISO 12937: Petroleum products water determination",
-    "related_technologies": "TURBOCORE: Turbine-style fuel-separation architecture governing this family (Turbine Series\nFH/FG) and the standard (non-turbine) FUEL_WATER_SEPARATOR family -- distinct product\nfamilies under the same technology because housing/element architecture differs |\nSYNTAPORE: Plain primary/secondary fuel filtration, no separation function (FUEL_PRIMARY\nfamily)",
-    "industrial_role": "This product family is the exclusive implementation for approved Turbine Series FH/FG\nfuel-separation architecture and its dedicated replacement elements, governed by\nHYDROCORE™."
+    "definition": "Turbine Fuel Separation — the TURBOCORE™ product family for approved FH and FG turbine-style fuel-separation housings and their dedicated 2010/2020/2040-series replacement elements.",
+    "systems": "Fuel Cleanliness Protection; turbine-specific FH/FG architecture governed exclusively by TURBOCORE™.",
+    "failure_impact": "Using an element or housing configuration outside its approved FH/FG turbine architecture can compromise fit, sealing, flow routing and staged separation performance. Selection must be validated against the specific approved application.",
+    "related_standards": "ASTM D6304: Karl Fischer water content measurement standard for diesel fuel | ISO 12937: Petroleum products water determination",
+    "related_technologies": "TURBOCORE: Governs approved FH/FG turbine-style fuel/water separation systems | HYDROCORE: Governs approved standard non-turbine fuel/water separators | SYNTAPORE: Governs plain primary/secondary/cartridge diesel-fuel particulate filtration",
+    "industrial_role": "This product family is the turbine-specific implementation for approved FH/FG fuel/water separation systems and their dedicated replacement elements, governed exclusively by TURBOCORE™."
   },
   "relationships": {
     "meets_standards": [
