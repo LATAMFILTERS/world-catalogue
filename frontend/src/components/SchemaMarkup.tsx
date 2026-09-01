@@ -6,6 +6,7 @@ export default function SchemaMarkup() {
         '@type': 'Organization',
         '@id': 'https://elimfilters.com/#organization',
         name: 'ELIMFILTERS',
+        legalName: 'Kleo Technology LLC',
         url: 'https://elimfilters.com/',
         logo: {
           '@type': 'ImageObject',
@@ -26,6 +27,7 @@ export default function SchemaMarkup() {
           'https://www.instagram.com/elimfilters.global',
           'https://x.com/elimfilters',
           'https://www.youtube.com/@elimfilters9112',
+          'https://www.amazon.com/stores/Elimfilters/page/B7619BD8-A04B-48A2-B275-FF4976181C55',
         ],
         brand: {
           '@id': 'https://elimfilters.com/#brand',
