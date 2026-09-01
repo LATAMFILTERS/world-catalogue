@@ -1,63 +1,63 @@
-﻿export const CANONICAL_TECHNOLOGIES = {
+export const CANONICAL_TECHNOLOGIES = {
   macrocore: {
     slug: 'macrocore',
-    name: 'MACROCOREâ„¢',
+    name: 'MACROCORE™',
     domain: 'air-intake',
     role: 'Primary and secondary engine air filtration',
   },
   microkappa: {
     slug: 'microkappa',
-    name: 'MICROKAPPAâ„¢',
+    name: 'MICROKAPPA™',
     domain: 'air-intake',
     role: 'Cabin air filtration',
   },
   syntrax: {
     slug: 'syntrax',
-    name: 'SYNTRAXâ„¢',
+    name: 'SYNTRAX™',
     domain: 'lubrication',
     role: 'Lubrication and oil filtration',
   },
   syntapore: {
     slug: 'syntapore',
-    name: 'SYNTAPOREâ„¢',
+    name: 'SYNTAPORE™',
     domain: 'fuel-cleanliness',
-    role: 'Primary and secondary spin-on/cartridge fuel filtration',
+    role: 'Primary and secondary spin-on/cartridge diesel fuel particulate filtration',
   },
   nanoforce: {
     slug: 'nanoforce',
-    name: 'NANOFORCEâ„¢',
+    name: 'NANOFORCE™',
     domain: 'hydraulic',
     role: 'Hydraulic filtration',
   },
   thermacore: {
     slug: 'thermacore',
-    name: 'THERMACOREâ„¢',
+    name: 'THERMACORE™',
     domain: 'cooling-system',
     role: 'Cooling-system filtration',
   },
   intekcore: {
     slug: 'intekcore',
-    name: 'INTEKCOREâ„¢',
+    name: 'INTEKCORE™',
     domain: 'air-intake',
     role: 'Air-cleaner housings and sealing architecture',
   },
   drycore: {
     slug: 'drycore',
-    name: 'DRYCOREâ„¢',
+    name: 'DRYCORE™',
     domain: 'air-intake',
     role: 'Pneumatic brake-system air dryer filtration',
   },
   hydrocore: {
     slug: 'hydrocore',
-    name: 'HYDROCOREâ„¢',
+    name: 'HYDROCORE™',
     domain: 'fuel-cleanliness',
     role: 'Fuel/water separation for approved standard non-turbine separators, including drain and transparent-bowl configurations',
   },
   turbocore: {
     slug: 'turbocore',
-    name: 'TURBOCOREâ„¢',
+    name: 'TURBOCORE™',
     domain: 'fuel-cleanliness',
-    role: 'Turbine-style fuel/water separation exclusively for FH and FG series systems',
+    role: 'Turbine-style fuel/water separation exclusively for approved FH and FG series systems',
   },
 } as const;
 
@@ -73,4 +73,3 @@ export function isCanonicalTechnology(value: string): value is TechnologySlug {
 export function getCanonicalTechnology(slug: string): CanonicalTechnology | undefined {
   return isCanonicalTechnology(slug) ? CANONICAL_TECHNOLOGIES[slug] : undefined;
 }
-
