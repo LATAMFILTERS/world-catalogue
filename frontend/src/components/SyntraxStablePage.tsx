@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './MacrocoreTechnologyPage.module.css';
+import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 
 const faqs = [
   ['What is SYNTRAX™?', 'SYNTRAX™ is the ELIMFILTERS architecture developed to control wear debris, soot agglomerates and other contaminants present in the lubricant. Its selection balances efficiency, contaminant capacity, oil flow, pressure drop and structural integrity throughout the service interval.'],
@@ -17,7 +18,7 @@ export function SyntraxStablePage() {
     '@context':'https://schema.org','@type':'TechArticle','@id':'https://elimfilters.com/technologies/syntrax/#article',
     headline:'SYNTRAX™ Lubrication Filtration Technology',name:'SYNTRAX™',url:'https://elimfilters.com/technologies/syntrax/',
     description:'SYNTRAX™ is the ELIMFILTERS architecture developed to control wear debris, soot agglomerates and other contaminants present in the lubricant. Its selection balances efficiency, contaminant capacity, oil flow, pressure drop and structural integrity throughout the service interval.',
-    author:{'@id':'https://elimfilters.com/#organization'},publisher:{'@id':'https://elimfilters.com/#organization'},
+    author:{'@id':'https://elimfilters.com/#organization'},reviewedBy:TECHNICAL_REVIEWER,publisher:{'@id':'https://elimfilters.com/#organization'},
     about:['engine lubrication filtration','wear debris control','soot agglomerate control','oil filter pressure drop','oil flow management'].map(name=>({'@type':'Thing',name})),
     isPartOf:{'@type':'WebSite','@id':'https://elimfilters.com/#website',name:'ELIMFILTERS',url:'https://elimfilters.com/'}
   };
@@ -47,7 +48,7 @@ export function SyntraxStablePage() {
       <h2 className={styles.displayTitle} style={{fontSize:'clamp(2.25rem,5.25vw,4.65rem)'}}>SYNTRAX™</h2>
       <p className={styles.applicationLine}><strong>Engine lubrication filtration</strong></p>
       <p className={styles.lead}>A lubrication-filtration architecture for controlling wear debris, soot agglomerates and other contaminants while maintaining oil flow and structural integrity through the service interval.</p>
-      <div className={styles.mediaGrid}><div className={styles.mediaCopy}><div className={styles.metaStack}><p><span>Technology:</span> SYNTRAX™</p><p><span>Application:</span> Engine lubrication filtration</p></div><p className={styles.eyebrow}>DESCRIPTION</p><h3 className={styles.featureTitle}>Lubrication System Contamination Control</h3><p className={styles.lead}>SYNTRAX™ is the ELIMFILTERS architecture developed to control wear debris, soot agglomerates and other contaminants present in the lubricant. Its selection balances efficiency, contaminant capacity, oil flow, pressure drop and structural integrity throughout the service interval.</p></div><figure className={styles.mediaFigure}><img className={styles.mediaImage} src="/images/SINTRAX_media-.png.png" alt="Conceptual filtration media structure illustrating SYNTRAX lubrication contamination-control architecture" /><figcaption>Microscopic visualization of filtration media structure used for technical illustration.</figcaption></figure></div>
+      <div className={styles.mediaGrid}><div className={styles.mediaCopy}><div className={styles.metaStack}><p><span>Technology:</span> SYNTRAX™</p><p><span>Application:</span> Engine lubrication filtration</p><p><span>Technical review:</span> <Link href="/about/leadership/">Víctor Abreu — Founder &amp; CEO</Link></p></div><p className={styles.eyebrow}>DESCRIPTION</p><h3 className={styles.featureTitle}>Lubrication System Contamination Control</h3><p className={styles.lead}>SYNTRAX™ is the ELIMFILTERS architecture developed to control wear debris, soot agglomerates and other contaminants present in the lubricant. Its selection balances efficiency, contaminant capacity, oil flow, pressure drop and structural integrity throughout the service interval.</p></div><figure className={styles.mediaFigure}><img className={styles.mediaImage} src="/images/SINTRAX_media-.png.png" alt="Conceptual filtration media structure illustrating SYNTRAX lubrication contamination-control architecture" /><figcaption>Microscopic visualization of filtration media structure used for technical illustration.</figcaption></figure></div>
     </div></section>
 
     <section className={styles.band}><div className={styles.inner}><p className={styles.eyebrow}>OPERATING REALITY</p><h2 className={styles.h2}>Lubrication cleanliness is part of wear control.</h2><p className={styles.lead}>Engine oil carries internally generated wear debris, soot and other suspended contaminants through precision interfaces. Filtration must control contamination without creating unacceptable restriction or compromising oil delivery.</p></div></section>
