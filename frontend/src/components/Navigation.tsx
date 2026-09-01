@@ -37,7 +37,7 @@ export function Navigation() {
             {logoError ? (
               <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>ELIMFILTERS</span>
             ) : (
-              <img src="/assets/Elimfilters_logo_oficial.avif" alt="ELIMFILTERS — Total Asset Protection" className="nav-logo" width={1959} height={528} onError={() => setLogoError(true)} style={{ objectFit: 'contain', height: 'clamp(36px, 7.8vw, 58px)', width: 'auto', display: 'block' }} />
+              <img src="/assets/elimfilters-logo-transparent.png" alt="ELIMFILTERS — Total Asset Protection" className="nav-logo" width={1254} height={1254} onError={() => setLogoError(true)} style={{ objectFit: 'contain', height: 'clamp(36px, 7.8vw, 58px)', width: 'auto', display: 'block' }} />
             )}
           </Link>
         </motion.div>

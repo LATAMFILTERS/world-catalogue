@@ -72,7 +72,7 @@ export default function OurPhilosophyPage() {
     name: 'ELIMFILTERS',
     legalName: 'Kleo Technology LLC',
     url: 'https://elimfilters.com',
-    logo: 'https://elimfilters.com/assets/logo-elimfilters.png',
+    logo: 'https://elimfilters.com/assets/elimfilters-logo-transparent.png',
     email: 'info@elimfilters.com',
     areaServed: 'Worldwide',
     description: 'ELIMFILTERS is an industrial asset protection company protecting critical equipment through contamination control, proprietary filtration technologies, and system-level engineering frameworks.',
