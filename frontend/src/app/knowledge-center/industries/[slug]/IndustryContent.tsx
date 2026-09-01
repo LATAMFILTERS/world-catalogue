@@ -31,7 +31,7 @@ const TECH_SLUG_MAP: Record<string, string> = {
   'SYNTRAX™': 'syntrax',
   'NANOFORCE™': 'nanoforce',
   'SYNTAPORE™': 'syntapore',
-  'HYDROCORE™': 'HYDROCORE',
+  'HYDROCORE™': 'hydrocore',
   'THERMACORE™': 'thermacore',
   'DRYCORE™': 'drycore',
   'INTEKCORE™': 'intekcore',
@@ -47,9 +47,18 @@ const DUST_COLORS: Record<string, string> = {
   'Low': '#44ff88',
 };
 
+// The commercial /industries/[slug] pages (catalogue.json-driven, dedicated
+// per-industry components) run 6-9x deeper than this Knowledge Center
+// engineering summary and are the intended primary destination for the
+// industry+filtration query. Slugs match directly except this one case.
+const COMMERCIAL_INDUSTRY_SLUG: Record<string, string> = {
+  'truck-fleets': 'trucks-fleets',
+};
+
 export default function IndustryContent({ industry, detail }: { industry: KCIndustry; detail: KCIndustryDetail | null }) {
   const otherIndustries = KC_INDUSTRIES.filter((ind) => ind.slug !== industry.slug);
   const dustColor = DUST_COLORS[industry.dust] || '#FFF12D';
+  const commercialSlug = COMMERCIAL_INDUSTRY_SLUG[industry.slug] ?? industry.slug;
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
@@ -128,6 +137,32 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
           >
             {industry.description}
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
+            style={{ marginBottom: '1.5rem' }}
+          >
+            <Link
+              href={`/industries/${commercialSlug}/`}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontFamily: 'JetBrains Mono, monospace',
+                fontSize: '0.7rem',
+                fontWeight: 700,
+                letterSpacing: '0.06em',
+                color: '#FFF12D',
+                textDecoration: 'none',
+                border: '1px solid rgba(255,241,45,0.3)',
+                padding: '0.55rem 0.9rem',
+              }}
+            >
+              See the full {industry.title} Filtration Systems guide →
+            </Link>
+          </motion.div>
 
           {detail && (
             <motion.div
