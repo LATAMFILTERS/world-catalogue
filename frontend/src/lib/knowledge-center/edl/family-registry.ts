@@ -2,16 +2,14 @@
  * edl/family-registry.ts
  * Engineering Data Layer — Product Family Entity Registry
  *
- * 12 canonical Product Family entities with permanent FAM-xxx identifiers.
- * Families are the Level 6 nodes in the KC Engineering Authority Hierarchy.
+ * Canonical Product Family entities with permanent FAM-xxx identifiers.
+ * Families are Level 6 nodes in the KC Engineering Authority Hierarchy.
  * Each family belongs to exactly one Protection System.
  */
 
 import type { EDLFamilyEntity, EDLFamilyRegistry } from './types';
 
 export const EDL_FAMILIES: EDLFamilyRegistry = {
-
-  // ── Air Intake System Families ────────────────────────────────────────────
 
   'FAM-PRIMARY-AIR': {
     id: 'FAM-PRIMARY-AIR',
@@ -81,8 +79,6 @@ export const EDL_FAMILIES: EDLFamilyRegistry = {
     dutyClass: 'HD',
   },
 
-  // ── Fuel Cleanliness System Families ─────────────────────────────────────
-
   'FAM-PRIMARY-FUEL': {
     id: 'FAM-PRIMARY-FUEL',
     name: 'Primary Fuel Filters',
@@ -94,7 +90,7 @@ export const EDL_FAMILIES: EDLFamilyRegistry = {
     contentPhase: 3,
     system: 'SYS-FUEL-CLEANLINESS',
     primaryTechnology: 'TECH-SYNTAPORE',
-    standards: ['STD-ASTM-D6304', 'STD-ISO-16332'],
+    standards: ['STD-ISO-16332'],
     hdPrefix: 'EF9',
     ldPrefix: 'EF3',
     dutyClass: 'HD+LD',
@@ -111,7 +107,7 @@ export const EDL_FAMILIES: EDLFamilyRegistry = {
     contentPhase: 3,
     system: 'SYS-FUEL-CLEANLINESS',
     primaryTechnology: 'TECH-SYNTAPORE',
-    standards: ['STD-ASTM-D6304', 'STD-ISO-16332'],
+    standards: ['STD-ISO-16332'],
     hdPrefix: 'EF9',
     ldPrefix: null,
     dutyClass: 'HD',
@@ -122,9 +118,9 @@ export const EDL_FAMILIES: EDLFamilyRegistry = {
     name: 'Fuel Water Separators',
     slug: 'fuel-water-separators',
     status: 'published',
-    version: '1.0',
+    version: '1.1',
     created: '2026-07-04',
-    lastModified: '2026-07-04',
+    lastModified: '2026-09-01',
     contentPhase: 3,
     system: 'SYS-FUEL-CLEANLINESS',
     primaryTechnology: 'TECH-HYDROCORE',
@@ -134,7 +130,22 @@ export const EDL_FAMILIES: EDLFamilyRegistry = {
     dutyClass: 'HD',
   },
 
-  // ── Lubrication System Families ───────────────────────────────────────────
+  'FAM-FUEL-TURBINE': {
+    id: 'FAM-FUEL-TURBINE',
+    name: 'Turbine Fuel Separation',
+    slug: 'fuel-turbine',
+    status: 'published',
+    version: '1.0',
+    created: '2026-09-01',
+    lastModified: '2026-09-01',
+    contentPhase: 3,
+    system: 'SYS-FUEL-CLEANLINESS',
+    primaryTechnology: 'TECH-TURBOCORE',
+    standards: ['STD-ASTM-D6304', 'STD-ISO-12937'],
+    hdPrefix: 'ET9',
+    ldPrefix: null,
+    dutyClass: 'HD',
+  },
 
   'FAM-OIL-FILTERS': {
     id: 'FAM-OIL-FILTERS',
@@ -153,8 +164,6 @@ export const EDL_FAMILIES: EDLFamilyRegistry = {
     dutyClass: 'HD+LD',
   },
 
-  // ── Hydraulic System Families ─────────────────────────────────────────────
-
   'FAM-HYDRAULIC-FILTERS': {
     id: 'FAM-HYDRAULIC-FILTERS',
     name: 'Hydraulic Filters',
@@ -171,8 +180,6 @@ export const EDL_FAMILIES: EDLFamilyRegistry = {
     ldPrefix: null,
     dutyClass: 'HD',
   },
-
-  // ── Cooling System Families ───────────────────────────────────────────────
 
   'FAM-COOLANT-FILTERS': {
     id: 'FAM-COOLANT-FILTERS',
@@ -191,8 +198,6 @@ export const EDL_FAMILIES: EDLFamilyRegistry = {
     dutyClass: 'HD',
   },
 
-  // ── Cabin Air System Families ─────────────────────────────────────────────
-
   'FAM-CABIN-FILTERS': {
     id: 'FAM-CABIN-FILTERS',
     name: 'Cabin Air Filters',
@@ -209,8 +214,6 @@ export const EDL_FAMILIES: EDLFamilyRegistry = {
     ldPrefix: 'EC3',
     dutyClass: 'HD+LD',
   },
-
-  // ── Compressed Air System Families ───────────────────────────────────────
 
   'FAM-AIR-DRYER-FILTERS': {
     id: 'FAM-AIR-DRYER-FILTERS',
