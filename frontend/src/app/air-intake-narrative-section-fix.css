@@ -1,78 +1,71 @@
 /* Air Intake section index override after adding Protection Architecture.
  * Product Families moved from section 3 to section 4.
+ *
+ * IMPORTANT: scope this only by the Air Intake system page's semantic hero alt.
+ * Do not use shared image src values as page identity. MACROCORE also uses
+ * mecanica-air.avif, so src-based selectors can rewrite or hide technology
+ * page sections when the same asset is reused.
  */
 
-main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4),
-main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) {
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) {
   display: block !important;
 }
 
-main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div,
-main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) > div {
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div {
   display: grid !important;
   grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
   gap: 1px !important;
   background: transparent !important;
 }
 
-main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a,
-main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) > div > a {
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a {
   background: #000 !important;
   border: 1px solid rgba(255,255,255,0.08) !important;
   min-height: 250px !important;
 }
 
-main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a:nth-child(1),
-main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) > div > a:nth-child(1) {
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a:nth-child(1) {
   grid-column: 2 / span 2 !important;
   grid-row: 1 !important;
 }
 
-main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a:nth-child(2),
-main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) > div > a:nth-child(2) {
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a:nth-child(2) {
   grid-column: 4 / span 2 !important;
   grid-row: 1 !important;
 }
 
-main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a:nth-child(3),
-main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) > div > a:nth-child(3) {
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a:nth-child(3) {
   grid-column: 1 / span 2 !important;
   grid-row: 2 !important;
 }
 
-main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a:nth-child(4),
-main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) > div > a:nth-child(4) {
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a:nth-child(4) {
   grid-column: 3 / span 2 !important;
   grid-row: 2 !important;
 }
 
-main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a:nth-child(5),
-main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) > div > a:nth-child(5) {
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a:nth-child(5) {
   grid-column: 5 / span 2 !important;
   grid-row: 2 !important;
 }
 
-main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(n+5),
-main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(n+5) {
+main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(n+5) {
   display: none !important;
 }
 
 @media (max-width: 1100px) {
-  main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div,
-  main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) > div {
+  main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
-  main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a,
-  main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) > div > a {
+  main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div > a {
     grid-column: auto !important;
     grid-row: auto !important;
   }
 }
 
 @media (max-width: 720px) {
-  main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div,
-  main:has(header > img[src$="/images/mecanica-air.avif"]) > section:nth-of-type(4) > div {
+  main:has(> header > img[alt="Air Intake & Airflow Protection"]) > section:nth-of-type(4) > div {
     grid-template-columns: 1fr !important;
   }
 }
