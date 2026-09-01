@@ -25,7 +25,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: BRAND_TITLE,
-    template: '%s | ELIMFILTERS',
+    // Child routes already carry their approved ELIMFILTERS suffix. Do not append it twice.
+    template: '%s',
   },
   description: BRAND_DESCRIPTION,
   applicationName: 'ELIMFILTERS',
