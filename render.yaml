@@ -219,46 +219,6 @@ services:
         sync: false
 
   - type: web
-    name: elimfilters-linkedin-bot
-    runtime: node
-    rootDir: elimfilters-linkedin-bot
-    plan: free
-    buildCommand: npm ci
-    startCommand: npm start
-    healthCheckPath: /health
-    envVars:
-      - key: NODE_VERSION
-        value: "20"
-      - key: LINKEDIN_CLIENT_ID
-        sync: false
-      - key: LINKEDIN_CLIENT_SECRET
-        sync: false
-      - key: LINKEDIN_ORGANIZATION_ID
-        sync: false
-      - key: LINKEDIN_VERIFY_TOKEN
-        sync: false
-      - key: BOT_PROTOCOL_API_KEY
-        sync: false
-      - key: NVIDIA_MODEL
-        value: nvidia/nemotron-3-super-120b-a12b
-      - key: DRY_RUN
-        value: "false"
-      - key: DATABASE_URL
-        fromDatabase:
-          name: elimfilters-instagram-db
-          property: connectionString
-      - key: NVIDIA_NIM_API_KEY
-        sync: false
-      - key: KNOWLEDGE_CENTER_API_URL
-        value: https://knowledge-center-api-staging.onrender.com
-      - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
-      - key: KNOWLEDGE_ENGINE_RUNTIME_URL
-        value: https://knowledge-engine-runtime-staging.onrender.com
-      - key: ENGINE_API_KEY
-        sync: false
-
-  - type: web
     name: elimfilters-whatsapp-bot
     runtime: node
     rootDir: elimfilters-whatsapp-bot
