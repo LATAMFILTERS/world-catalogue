@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './MacrocoreTechnologyPage.module.css';
+import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 
 const applications = [
   'Primary fuel filtration without a dedicated water-separation function',
@@ -82,6 +83,7 @@ export function SyntaporeStablePage() {
     url: 'https://elimfilters.com/technologies/syntapore/',
     description: 'SYNTAPORE™ is the ELIMFILTERS architecture for particulate control in primary, secondary and cartridge diesel-fuel filtration stages. Its configuration is selected around efficiency, contaminant-holding capacity, flow and pressure drop for each application.',
     author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+    reviewedBy: TECHNICAL_REVIEWER,
     publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
     about: [
       { '@type': 'Thing', name: 'diesel fuel filtration' },
@@ -143,6 +145,7 @@ export function SyntaporeStablePage() {
             <div className={styles.metaStack}>
               <p><span>Technology:</span> SYNTAPORE™</p>
               <p><span>Application:</span> Primary, secondary and cartridge diesel-fuel particulate filtration</p>
+              <p><span>Technical review:</span> <Link href="/about/leadership/">Víctor Abreu — Founder &amp; CEO</Link></p>
             </div>
             <p className={styles.eyebrow}>DESCRIPTION</p>
             <h3 className={styles.featureTitle}>Advanced Particle Control in Fuel</h3>

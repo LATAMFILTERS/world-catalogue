@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './MacrocoreTechnologyPage.module.css';
+import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 
 const faqs = [
   ['What is HYDROCORE™?','HYDROCORE™ is the ELIMFILTERS fuel/water separation architecture for approved standard non-turbine separator filters, including drain and transparent-bowl configurations.'],
@@ -19,6 +20,7 @@ export function HydrocoreStablePage(){
   headline:'HYDROCORE™ Fuel/Water Separation Technology',name:'HYDROCORE™',url:'https://elimfilters.com/technologies/hydrocore/',
   description:'HYDROCORE™ is the ELIMFILTERS fuel/water separation architecture developed for approved standard diesel separator applications where water control is required before fuel reaches pumps, injectors and other precision fuel-system components.',
   author:{'@type':'Organization','@id':'https://elimfilters.com/#organization',name:'ELIMFILTERS'},
+  reviewedBy:TECHNICAL_REVIEWER,
   publisher:{'@type':'Organization','@id':'https://elimfilters.com/#organization',name:'ELIMFILTERS'},
   about:['diesel fuel water separation','fuel contamination control','fuel separator drainage','fuel restriction','water in diesel fuel','fuel system corrosion'].map(name=>({'@type':'Thing',name})),
   mentions:['high-pressure fuel pump','diesel injectors','fuel starvation under load','microbial fuel contamination','fuel storage contamination','transparent separator bowl'].map(name=>({'@type':'Thing',name})),
@@ -58,6 +60,7 @@ export function HydrocoreStablePage(){
      <div className={styles.metaStack}>
       <p><span>Technology:</span> HYDROCORE™</p>
       <p><span>Application:</span> Standard non-turbine fuel/water separators</p>
+      <p><span>Technical review:</span> <Link href="/about/leadership/">Víctor Abreu — Founder &amp; CEO</Link></p>
      </div>
      <p className={styles.eyebrow}>DESCRIPTION</p>
      <h3 className={styles.featureTitle}>Fuel/Water Separation and Drainage Control</h3>

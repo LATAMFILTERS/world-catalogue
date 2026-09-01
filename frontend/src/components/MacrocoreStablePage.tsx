@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './MacrocoreTechnologyPage.module.css';
+import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 
 const faqs = [
   ['What is MACROCORE™?', 'MACROCORE™ is the ELIMFILTERS architecture for primary and secondary engine air-intake protection. It integrates media configuration, contaminant-holding capacity, restriction control and sealing integrity according to airflow demand and operating conditions.'],
@@ -16,6 +17,32 @@ const parameters = ['Filtration efficiency for the validated product','Contamina
 const errors = ['Choosing by dimensions alone','Treating every dusty environment as the same duty','Replacing only because the element looks dirty','Ignoring clean-side dust or damaged seals','Applying one universal micron or service-life value'];
 
 export function MacrocoreStablePage() {
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    '@id': 'https://elimfilters.com/technologies/macrocore/#article',
+    headline: 'MACROCORE™ Engine Air Filtration Technology',
+    name: 'MACROCORE™',
+    url: 'https://elimfilters.com/technologies/macrocore/',
+    description: 'MACROCORE™ is the ELIMFILTERS architecture for primary and secondary engine air-intake protection, integrating media configuration, contaminant-holding capacity, restriction control and sealing integrity according to airflow demand and operating conditions.',
+    author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+    reviewedBy: TECHNICAL_REVIEWER,
+    publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+    about: ['engine air intake filtration', 'primary air filtration', 'secondary air filtration', 'surface loading filtration', 'depth loading filtration', 'air filter restriction'].map((name) => ({ '@type': 'Thing', name })),
+    mentions: ['turbocharger', 'combustion air', 'air cleaner housing', 'dust holding capacity', 'ISO 5011'].map((name) => ({ '@type': 'Thing', name })),
+    isPartOf: { '@type': 'WebSite', '@id': 'https://elimfilters.com/#website', name: 'ELIMFILTERS', url: 'https://elimfilters.com/' },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Technologies', item: 'https://elimfilters.com/technologies/' },
+      { '@type': 'ListItem', position: 3, name: 'MACROCORE™', item: 'https://elimfilters.com/technologies/macrocore/' },
+    ],
+  };
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -24,6 +51,8 @@ export function MacrocoreStablePage() {
 
   return (
     <main id="main-content" className={styles.page}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className={styles.hero} aria-labelledby="macrocore-title">
@@ -54,6 +83,7 @@ export function MacrocoreStablePage() {
               <div className={styles.metaStack}>
                 <p><span>Technology:</span> MACROCORE™</p>
                 <p><span>Application:</span> Primary and secondary engine air filtration</p>
+                <p><span>Technical review:</span> <Link href="/about/leadership/">Víctor Abreu — Founder &amp; CEO</Link></p>
               </div>
               <p className={styles.eyebrow}>DESCRIPTION</p>
               <h3 className={styles.featureTitle}>Airflow Management and Particle Control</h3>
