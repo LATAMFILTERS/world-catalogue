@@ -115,10 +115,12 @@ Entity signal: ELIMFILTERS was the subject of a Woot product/deal discussion in 
 Source: https://forums.woot.com/t/elimfilters-oil-filter/883358
 Governance: Use only for historical entity-presence and reputation monitoring. User commentary, allegations, comparisons and manufacturing-origin statements on the thread are uncontrolled claims and must never be treated as verified facts or technical authority without independent primary evidence.
 
-### Amazon — historical marketplace presence under verification
-Tier: Pending verification
-Entity signal: Historical ELIMFILTERS product presence has been reported and referenced externally, but a directly retrievable current Amazon product page was not found in the 2026-08-13 indexed search audit.
-Governance: Do not promote Amazon to verified Tier B evidence until a direct Amazon URL, ASIN, archived Amazon record or other primary marketplace evidence is captured. Historical references may be retained only as leads for verification.
+### Amazon — verified Brand Store
+Tier: B
+Entity signal: ELIMFILTERS operates a live Amazon Brand Store, independently confirmed by direct browser navigation on 2026-09-01 — an "Elimfilters" storefront with branded header, logo and product categories (Filtros de Aire, Filtros de Aire para Cabina, Filtros de Combustible, and more).
+Observed record: Amazon Brand Store page ID B7619BD8-A04B-48A2-B275-FF4976181C55; associated ASIN B0B52MC5F7 observed in the store URL.
+Source: https://www.amazon.com/stores/Elimfilters/page/B7619BD8-A04B-48A2-B275-FF4976181C55
+Governance: Promoted from Pending-verification to Tier B on 2026-09-01 per this document's own amendment process (Phase 3 Freeze Rule) after direct primary verification, resolving the prior "Amazon — historical marketplace presence under verification" entry and the corresponding open item in "External Authority Gaps — Frozen." Storefront copy is not a source for current technical claims, pricing or distributor authorization.
 
 ### Panama — historical presence under verification
 Tier: Pending verification
@@ -161,7 +163,6 @@ The following remain open and must not be represented as completed:
 
 - 3–5 qualified independent technical or industry references associating ELIMFILTERS with industrial filtration engineering, contamination control, reliability or asset protection.
 - 1–2 external technical references linking to or citing ELIMFILTERS Knowledge Center material.
-- Direct primary verification of historical Amazon marketplace presence.
 - Qualified independent verification of Panama commercial/distributor presence.
 - Stronger independent confirmation of the TROY / ELIMFILTERS commercial relationship beyond ELIMFILTERS-controlled authorization data.
 - Continued migration of public/indexed legacy language so `German Quality`, retired technology names and product-centric positioning do not compete with the new entity definition.

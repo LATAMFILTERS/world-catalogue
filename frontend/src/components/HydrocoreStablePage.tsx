@@ -19,6 +19,8 @@ export function HydrocoreStablePage(){
   '@context':'https://schema.org','@type':'TechArticle','@id':'https://elimfilters.com/technologies/hydrocore/#article',
   headline:'HYDROCORE™ Fuel/Water Separation Technology',name:'HYDROCORE™',url:'https://elimfilters.com/technologies/hydrocore/',
   description:'HYDROCORE™ is the ELIMFILTERS fuel/water separation architecture developed for approved standard diesel separator applications where water control is required before fuel reaches pumps, injectors and other precision fuel-system components.',
+  image:'https://elimfilters.com/images/fuellseparator-hero.avif',
+  datePublished:'2026-08-31',dateModified:'2026-09-01',
   author:{'@type':'Organization','@id':'https://elimfilters.com/#organization',name:'ELIMFILTERS'},
   reviewedBy:TECHNICAL_REVIEWER,
   publisher:{'@type':'Organization','@id':'https://elimfilters.com/#organization',name:'ELIMFILTERS'},
