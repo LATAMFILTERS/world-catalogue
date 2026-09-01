@@ -15,13 +15,14 @@ function read(rel) {
 const cases = [
   [{ filter_type: 'Fuel Filter' }, 'SYNTAPORE™'],
   [{ filter_type: 'Primary Diesel Fuel Filter' }, 'SYNTAPORE™'],
-  // HYDROCORE™ is the fuel/water-separation technology across approved
-  // spin-on, cartridge, and Turbine Series FH/FG applications (TURBOCORE™
-  // is retired). SYNTAPORE™ is scoped to plain fuel filtration only, never
-  // separators.
+  // Fuel technology scope is intentionally split:
+  // HYDROCORE™ = approved standard non-turbine fuel/water separators.
+  // TURBOCORE™ = approved FH/FG turbine-style fuel/water separation.
+  // SYNTAPORE™ = plain diesel-fuel particulate filtration.
   [{ filter_type: 'Fuel Water Separator' }, 'HYDROCORE™'],
-  [{ filter_type: 'Fuel Water Separator', sku: '900FH-RACOR' }, 'HYDROCORE™'],
-  [{ description: 'Approved 900FH turbine fuel separator element' }, 'HYDROCORE™'],
+  [{ filter_type: 'Fuel Water Separator', sku: '900FH-RACOR' }, 'TURBOCORE™'],
+  [{ description: 'Approved 900FH turbine fuel separator element' }, 'TURBOCORE™'],
+  [{ codigo_base: '2020PM' }, 'TURBOCORE™'],
   [{ filter_type: 'Hydraulic Filter' }, 'NANOFORCE™'],
   [{ filter_type: 'Lube Oil Filter' }, 'SYNTRAX™'],
   [{ filter_type: 'Coolant Filter' }, 'THERMACORE™'],
