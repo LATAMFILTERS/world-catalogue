@@ -32,34 +32,69 @@ export default function ConsentBanner() {
   }, []);
 
   return (
-    <AnimatePresence>
-      {mounted && consent === 'pending' && (
-        <motion.div
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 80, opacity: 0 }}
-          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          role="dialog"
-          aria-label={copy.aria}
-          aria-live="polite"
-          style={{ position: 'fixed', bottom: 'calc(1.25rem + env(safe-area-inset-bottom))', left: '50%', transform: 'translateX(-50%)', zIndex: 9000, width: 'min(680px, calc(100vw - 2rem))', maxWidth: 'calc(100vw - 2rem)', background: 'rgba(10,10,10,0.97)', border: '1px solid rgba(255,241,45,0.2)', borderRadius: '6px', padding: '1.25rem 1.5rem', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}
-        >
-          <p style={{ flex: 1, minWidth: '220px', fontFamily: 'Outfit, sans-serif', fontSize: '0.82rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.65)', margin: 0 }}>
-            {copy.text}{' '}
-            <Link href="/legal/cookies" style={{ color: '#FFF12D', textDecoration: 'underline' }}>{copy.cookie}</Link>
-            {' '}{copy.and}{' '}
-            <Link href="/legal/privacy" style={{ color: '#FFF12D', textDecoration: 'underline' }}>{copy.privacy}</Link>.
-          </p>
-          <div style={{ display: 'flex', gap: '0.75rem', flexShrink: 0 }}>
-            <button onClick={decline} style={{ padding: '0.5rem 1rem', background: 'transparent', border: '1px solid rgba(255,255,255,0.18)', borderRadius: '4px', color: 'rgba(255,255,255,0.7)', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', letterSpacing: '0.1em', cursor: 'pointer' }}>
-              {copy.decline}
-            </button>
-            <button onClick={accept} style={{ padding: '0.5rem 1.25rem', background: '#FFF12D', border: 'none', borderRadius: '4px', color: '#000', fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', cursor: 'pointer' }}>
-              {copy.accept}
-            </button>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    <>
+      <style>{`
+        @media (max-width: 600px) {
+          .elim-consent-banner {
+            bottom: calc(.45rem + env(safe-area-inset-bottom)) !important;
+            width: calc(100vw - .9rem) !important;
+            max-width: calc(100vw - .9rem) !important;
+            padding: .72rem .8rem !important;
+            gap: .55rem !important;
+            border-radius: 4px !important;
+            align-items: flex-start !important;
+          }
+          .elim-consent-copy {
+            min-width: 0 !important;
+            width: 100% !important;
+            font-size: .69rem !important;
+            line-height: 1.38 !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 3 !important;
+            -webkit-box-orient: vertical !important;
+            overflow: hidden !important;
+          }
+          .elim-consent-actions {
+            width: 100% !important;
+            gap: .5rem !important;
+          }
+          .elim-consent-actions button {
+            flex: 1 1 0 !important;
+            min-height: 36px !important;
+            padding: .4rem .65rem !important;
+          }
+        }
+      `}</style>
+      <AnimatePresence>
+        {mounted && consent === 'pending' && (
+          <motion.div
+            className="elim-consent-banner"
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 80, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            role="dialog"
+            aria-label={copy.aria}
+            aria-live="polite"
+            style={{ position: 'fixed', bottom: 'calc(1.25rem + env(safe-area-inset-bottom))', left: '50%', transform: 'translateX(-50%)', zIndex: 9000, width: 'min(680px, calc(100vw - 2rem))', maxWidth: 'calc(100vw - 2rem)', background: 'rgba(10,10,10,0.97)', border: '1px solid rgba(255,241,45,0.2)', borderRadius: '6px', padding: '1.25rem 1.5rem', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}
+          >
+            <p className="elim-consent-copy" style={{ flex: 1, minWidth: '220px', fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.82rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.65)', margin: 0 }}>
+              {copy.text}{' '}
+              <Link href="/legal/cookies" style={{ color: '#FFF12D', textDecoration: 'underline' }}>{copy.cookie}</Link>
+              {' '}{copy.and}{' '}
+              <Link href="/legal/privacy" style={{ color: '#FFF12D', textDecoration: 'underline' }}>{copy.privacy}</Link>.
+            </p>
+            <div className="elim-consent-actions" style={{ display: 'flex', gap: '0.75rem', flexShrink: 0 }}>
+              <button onClick={decline} style={{ padding: '0.5rem 1rem', background: 'transparent', border: '1px solid rgba(255,255,255,0.18)', borderRadius: '4px', color: 'rgba(255,255,255,0.7)', fontFamily: 'Chakra Petch, Arial, sans-serif', fontSize: '0.7rem', letterSpacing: '0.1em', cursor: 'pointer' }}>
+                {copy.decline}
+              </button>
+              <button onClick={accept} style={{ padding: '0.5rem 1.25rem', background: '#FFF12D', border: 'none', borderRadius: '4px', color: '#000', fontFamily: 'Chakra Petch, Arial, sans-serif', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', cursor: 'pointer' }}>
+                {copy.accept}
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
