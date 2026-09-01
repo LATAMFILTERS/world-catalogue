@@ -23,8 +23,6 @@ for (const file of files) {
   const before = text;
   text = text.replaceAll('DURACTECH™', 'DURATECH™');
   text = text.replaceAll('DURACTECH', 'DURATECH');
-  text = text.replaceAll('TURBOCORE™', 'HYDROCORE™');
-  text = text.replaceAll('TURBOCORE', 'HYDROCORE');
   if (text !== before) fs.writeFileSync(file, text, 'utf8');
 }
 
@@ -39,7 +37,6 @@ const forbidden = [
   /100% guaranteed safety/i,
   /absolute protection of critical equipment/i,
   /DURACTECH™/,
-  /TURBOCORE™/,
 ];
 
 const violations = [];
