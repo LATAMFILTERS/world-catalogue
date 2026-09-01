@@ -213,7 +213,7 @@ export default function TechnicalFAQsPage() {
               ↗ Standards Domain Pages
             </Link>
             <Link
-              href="/knowledge-center/problems"
+              href="/knowledge-center/engineering/"
               style={{
                 padding: '1rem',
                 background: 'rgba(255,241,45,0.05)',

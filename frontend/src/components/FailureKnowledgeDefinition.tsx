@@ -40,7 +40,7 @@ export function FailureKnowledgeDefinition() {
     {
       label: 'Related Knowledge',
       links: [
-        { href: '/knowledge-center/problems', name: 'Contamination and Failure Mechanisms' },
+        { href: '/knowledge-center/engineering/', name: 'Contamination and Failure Mechanisms' },
         { href: '/knowledge-system', name: 'Knowledge System' },
       ],
     },

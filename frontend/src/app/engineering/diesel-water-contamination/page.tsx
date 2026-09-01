@@ -449,7 +449,7 @@ function DieselWaterContaminationContent() {
           }}>
             {[
               { label: 'Fuel Systems — Standards Domain', href: '/knowledge-center/standards' },
-              { label: 'Diesel Water Contamination — Case Study', href: '/knowledge-center/problems' },
+              { label: 'Diesel Water Contamination — Case Study', href: '/knowledge-center/engineering/fluid-cleanliness/' },
               { label: 'ASTM D6304 — Karl Fischer Testing', href: '/knowledge-center/standards/astm-d6304' },
               { label: 'Hydraulic Contamination', href: '/engineering/hydraulic-contamination' },
               { label: 'Dust Ingestion — Air Intake', href: '/engineering/dust-ingestion' },
