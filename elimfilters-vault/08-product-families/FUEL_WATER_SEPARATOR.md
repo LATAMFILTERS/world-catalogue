@@ -3,13 +3,13 @@ type: product-family
 status: active
 key: FUEL_WATER_SEPARATOR
 label: "Fuel Water Separation"
-slug: fuel-water-separator
-description: "Standard (non-turbine) spin-on and cartridge HYDROCORE™ fuel/water separators for diesel fuel systems across agricultural, marine, mining, and commercial transport equipment. Addresses free water, emulsified water, and particulate contamination in EN 590 and ASTM D975 diesel."
+slug: fuel-water-separators
+description: "Approved standard non-turbine spin-on and cartridge HYDROCORE™ fuel/water separator configurations for diesel fuel systems, including drain and transparent-bowl applications."
 uses_technology: "[[HYDROCORE]]"
 uses_tech_display: "HYDROCORE™"
 belongs_to_domain: "[[FUEL]]"
 belongs_to_product_system: "[[FUEL]]"
-performance_rating: ">99% free water separation; >95% emulsified water removal; EN 590 compliant"
+performance_rating: "Application-specific; use only validated product and application data"
 target_industries:
   - "[[AGRICULTURE]]"
   - "[[AUTOMOTIVE]]"
@@ -18,7 +18,6 @@ target_industries:
   - "[[OIL_GAS]]"
   - "[[POWER_GENERATION]]"
   - "[[TRUCKS_FLEETS]]"
-sku_count_approx: 102
 in_unified_data: false
 tags:
   - product-family
@@ -28,52 +27,40 @@ tags:
   - part-search-node
 ---
 
-The Fuel Water Separation family contains all HYDROCORE™-technology filter elements designed for diesel fuel systems — covering standard (non-turbine) spin-on and cartridge water/fuel separators. The family addresses the water-contamination side of diesel fuel: free water that causes microbial growth and injector corrosion, and emulsified water that bypasses simple filtration.
+The Fuel Water Separation family contains HYDROCORE™ configurations for approved standard non-turbine diesel fuel/water separator applications. Typical architecture may include spin-on or cartridge elements, a drain, or a transparent collection bowl where specified by the application.
 
-This family covers 102 ELIMFILTERS® SKUs (verified directly against the production catalog), spanning:
-- Bowl-type spin-on water/fuel separators for agricultural and marine applications
-- Cartridge fuel/water separators for HPCR diesel engines (injector protection)
-- Heavy-duty separators for mining and power generation applications
+HYDROCORE™ does not govern FH or FG turbine-style systems. Approved FH/FG turbine housings and their dedicated replacement elements belong to the separate FUEL_TURBINE family governed by TURBOCORE™. Plain diesel-fuel particulate filtration belongs to SYNTAPORE™.
 
-All elements in this family use HYDROCORE™ coalescing media construction for diesel fuel water separation. A separator built for the approved Turbine Series FH/FG architecture is also HYDROCORE™, but belongs to the distinct FUEL_TURBINE family -- see FUEL_TURBINE.
-
-The family is the **terminal product node** in the fuel Part Search traversal path for standard (non-turbine) separator applications: a user who presents contamination `DIESEL_WATER`, specifies industry `MARINE` or `AGRICULTURE`, and has no turbine/Racor signal will be directed to SKUs from this family.
+No universal separation percentage, micron rating, flow rate, water capacity or service interval is asserted at family level. Those values must come from validated product/application evidence.
 
 ---
 
 ## Relationships
 
 ### Primary Technology
-- [[HYDROCORE|HYDROCORE™ — Fuel Water Separation Technology]]
+- [[HYDROCORE|HYDROCORE™ — Standard Non-Turbine Fuel/Water Separation Architecture]]
 
 ### System Context
-- [[FUEL|Fuel Filtration System — Product Line]] (belongs to this system)
+- [[FUEL|Fuel Filtration System — Product Line]]
 
-### Target Industries
-- [[AGRICULTURE|Agriculture — Seasonal Fuel Storage and Tank Contamination Risk]]
-- [[MARINE|Marine — High Humidity Water Ingress in Fuel Systems]]
-- [[MINING|Mining — Bulk Fuel Storage Contamination in Remote Sites]]
-- [[OIL_GAS|Oil & Gas — Diesel-powered field equipment and generators]]
-- [[POWER_GENERATION|Power Generation — Stationary Diesel Gensets]]
-- [[TRUCKS_FLEETS|Trucks & Fleets — Commercial diesel engine protection]]
+### Related Product Families
+- [[FUEL_TURBINE|Turbine Fuel Separation — TURBOCORE™, approved FH/FG architecture]]
+- [[FUEL_PRIMARY|Primary Fuel Protection — SYNTAPORE™, diesel-fuel particulate filtration]]
 
-### Upstream Entry Points (Part Search)
-- [[DIESEL_WATER|Diesel Water Contamination]] (contamination mode entry → this family, when no turbine signal is present)
+### Upstream Entry Points
+- [[DIESEL_WATER|Diesel Water Contamination]] when the approved application uses a standard non-turbine separator architecture.
 
 ---
 
 ## Part Search Traversal
 
-This family is the **terminal product node** in the diesel water contamination Part Search path for standard (non-turbine) separators:
-
 ```
 DIESEL_WATER (ContaminationMode)
-    ↓ resolved_by → HYDROCORE (standard separator, or turbine FH/FG for the FUEL_TURBINE family)
-    ↓ ProductFamily lookup
-FUEL_WATER_SEPARATOR ← [you are here, when no turbine/Racor signal]
-    ↓ Part Search DB query
-GET /api/part-search?family=FUEL_WATER_SEPARATOR&industry=MARINE
-→ ~102 SKUs, filtered by equipment type and flow rate
+    ↓ resolve architecture
+    ├─ approved standard non-turbine separator → HYDROCORE
+    │    ↓ ProductFamily lookup
+    │  FUEL_WATER_SEPARATOR ← [you are here]
+    └─ approved FH/FG turbine architecture → TURBOCORE → FUEL_TURBINE
 ```
 
 ---
@@ -84,38 +71,30 @@ GET /api/part-search?family=FUEL_WATER_SEPARATOR&industry=MARINE
 CANONICAL KNOWLEDGE BLOCK: Fuel Water Separation Family
 
 DEFINITION
-Fuel Water Separation — the HYDROCORE™-technology filter element family for standard
-(non-turbine) diesel fuel water separation, covering 102 SKUs (spin-on separators with purge/drain and Racor-style plastic bowl configurations) across agricultural,
-marine, mining, power generation, and commercial transport applications.
+Fuel Water Separation is the HYDROCORE™ product family for approved standard
+non-turbine fuel/water separator configurations, including drain and transparent-bowl
+applications where specified.
 
 SYSTEMS
-Fuel filtration domain; belongs to FUEL product-line system; implements HYDROCORE™
-coalescing water-separation technology
+Fuel Cleanliness Protection.
 
-FAILURE_IMPACT
-Selecting incorrect element from this family (wrong coalescing efficiency class or wrong
-flow rate) or exceeding service interval → residual free water passes to injectors →
-injector tip corrosion and nozzle deposit formation → HPCR fuel system failure requiring
-injector replacement well before its rated service life
+SCOPE GUARDRAIL
+HYDROCORE governs standard non-turbine separators only.
+TURBOCORE governs approved FH/FG turbine systems.
+SYNTAPORE governs diesel-fuel particulate filtration.
+Do not merge these scopes.
 
-RELATED_STANDARDS
-HYDROCORE governs standard (non-turbine) fuel/water separation; no standard is
-currently approved as a direct canonical relationship for this family.
-
-RELATED_TECHNOLOGIES
-HYDROCORE: Primary element technology (coalescing water separation) for both standard
-(non-turbine) applications in this family and approved Turbine Series FH/FG applications
-(a distinct product family, FUEL_TURBINE) | SYNTAPORE: Plain primary/secondary fuel
-filtration -- does not perform a water-separation function (not in this family)
+PERFORMANCE GOVERNANCE
+Family-level efficiency, micron, flow, water capacity and service-interval values are
+not universal. Use validated product/application evidence only.
 
 INDUSTRIAL_ROLE
-This product family is the standard (non-turbine) implementation for diesel fuel water
-contamination — a leading cause of HPCR injector failure in agricultural, marine, and
-mining equipment operating in high-humidity or bulk-storage environments.
+This family supports water management in approved standard diesel fuel/water separator
+applications within the Fuel Cleanliness Protection system.
 
 CITATION_REFERENCE
-source: elimfilters.com/systems/fuel-water-separator
+source: elimfilters.com/families/fuel-water-separators/
 concept: Fuel Water Separation Product Family
-version: 1.0
-last_updated: 2026-08-15
+version: 2.0
+last_updated: 2026-09-01
 ```
