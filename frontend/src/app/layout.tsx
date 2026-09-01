@@ -79,6 +79,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <SchemaMarkup />
+        {/*
+          Motion (framer-motion) SSR-renders each animated element's
+          `initial` state directly as an inline style, e.g.
+          style="opacity:0;transform:translateY(28px)" — including the
+          homepage H1 and 50+ other elements. Motion's own script then
+          animates it to visible once it hydrates. If that script is slow
+          (throttled connection), blocked, or errors out anywhere else on
+          the page and hydration never completes, the element stays at
+          opacity:0 forever — real content becomes permanently invisible
+          with no failure indication.
+          This is a pure-CSS fail-safe, independent of Motion ever
+          running: if an element is still sitting at inline opacity:0
+          after 4s, force it visible. Once Motion does hydrate (the
+          normal case), it re-renders those elements with animate/style
+          and this rule simply never has anything left to do.
+        */}
+        <style>{`
+          [style*="opacity:0;"],[style$="opacity:0"]{animation:elim-force-visible 0s 4s forwards}
+          @keyframes elim-force-visible{to{opacity:1 !important;transform:none !important}}
+        `}</style>
         <Script id="ga4-consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
