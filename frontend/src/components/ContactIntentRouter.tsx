@@ -6,7 +6,7 @@ const routes = [
   {
     title: 'Technical Support',
     body: 'Application questions, repeated failures, OEM cross-reference validation and engineering review.',
-    href: 'mailto:applications@elimfilters.com?subject=ELIMFILTERS%20Technical%20Support',
+    href: 'mailto:support@elimfilters.com?subject=ELIMFILTERS%20Technical%20Support',
     action: 'application-support',
     label: 'Request technical support',
   },
@@ -23,6 +23,13 @@ const routes = [
     href: '/distributor-application/',
     action: 'distributor-application',
     label: 'Apply as distributor',
+  },
+  {
+    title: 'Commercial Inquiry',
+    body: 'Existing customers, bulk orders, or general business questions not covered by the paths above.',
+    href: 'mailto:info@elimfilters.com?subject=ELIMFILTERS%20Commercial%20Inquiry',
+    action: 'commercial-inquiry',
+    label: 'Send a commercial inquiry',
   },
 ] as const;
 
