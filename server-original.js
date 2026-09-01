@@ -2120,13 +2120,7 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
 // Finds rows where vehicle_applications / equipment_applications hold a
 // non-array JSON value, which breaks any query calling jsonb_array_elements()
 // on that column directly (no typeof guard).
-app.get('/api/debug/bad-jsonb-applications', searchLimiter, async (req, res) => {
-  const ADMIN_KEY_LOCAL = process.env.ADMIN_KEY;
-  const authHeader = req.get('authorization') || '';
-  const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (!ADMIN_KEY_LOCAL || providedKey !== ADMIN_KEY_LOCAL) {
-    return res.status(403).json({ error: 'forbidden' });
-  }
+app.get('/api/debug/bad-jsonb-applications', adminLimiter, requireAdmin, async (req, res) => {
   const client = await pool.connect();
   try {
     const { rows } = await client.query(`
@@ -2147,16 +2141,9 @@ app.get('/api/debug/bad-jsonb-applications', searchLimiter, async (req, res) => 
 });
 
 // ─── GET /api/debug/sku-codes ───────────────────────────────────────────────────────────────────────
-app.get('/api/debug/sku-codes', searchLimiter, async (req, res) => {
+app.get('/api/debug/sku-codes', adminLimiter, requireAdmin, async (req, res) => {
   const sku = (req.query.sku || '').trim().toUpperCase();
   if (!sku) return res.status(400).json({ error: 'sku required' });
-
-  const ADMIN_KEY_LOCAL = process.env.ADMIN_KEY;
-  const authHeader = req.get('authorization') || '';
-  const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (!ADMIN_KEY_LOCAL || providedKey !== ADMIN_KEY_LOCAL) {
-    return res.status(403).json({ error: 'forbidden' });
-  }
 
   const client = await pool.connect();
   try {
@@ -2183,13 +2170,7 @@ app.get('/api/debug/sku-codes', searchLimiter, async (req, res) => {
 });
 
 // ─── GET /api/debug/suspects-equipment ─────────────────────────────────────────────────────────
-app.get('/api/debug/suspects-equipment', searchLimiter, async (req, res) => {
-  const ADMIN_KEY_LOCAL = process.env.ADMIN_KEY;
-  const authHeader = req.get('authorization') || '';
-  const providedKey = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '';
-  if (!ADMIN_KEY_LOCAL || providedKey !== ADMIN_KEY_LOCAL) {
-    return res.status(403).json({ error: 'forbidden' });
-  }
+app.get('/api/debug/suspects-equipment', adminLimiter, requireAdmin, async (req, res) => {
 
   const limit = Math.min(parseInt(req.query.limit) || 100, 500);
   const offset = parseInt(req.query.offset) || 0;
