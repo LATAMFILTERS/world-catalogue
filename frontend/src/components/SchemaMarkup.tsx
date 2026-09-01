@@ -9,6 +9,7 @@ export default function SchemaMarkup() {
         url: 'https://elimfilters.com/',
         logo: {
           '@type': 'ImageObject',
+          '@id': 'https://elimfilters.com/#logo',
           url: 'https://elimfilters.com/assets/logo-elimfilters.png',
         },
         description: 'Industrial filtration engineering organization focused on contamination control, equipment reliability, and Total Asset Protection Systems.',
@@ -46,19 +47,6 @@ export default function SchemaMarkup() {
           '@id': 'https://elimfilters.com/#brand',
         },
         inLanguage: 'en',
-      },
-      {
-        '@type': 'CollectionPage',
-        '@id': 'https://elimfilters.com/knowledge-center/#collection',
-        url: 'https://elimfilters.com/knowledge-center/',
-        name: 'ELIMFILTERS Knowledge Center',
-        description: 'Industrial filtration engineering reference covering contamination control, protection systems, technologies, standards, industries, and technical guidance.',
-        isPartOf: {
-          '@id': 'https://elimfilters.com/#website',
-        },
-        publisher: {
-          '@id': 'https://elimfilters.com/#organization',
-        },
       },
     ],
   };
