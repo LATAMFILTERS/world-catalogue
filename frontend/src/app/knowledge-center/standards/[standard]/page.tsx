@@ -13,6 +13,16 @@ const STANDARD_ALIASES: Record<string, string> = {
   'din-71220': 'din-71460',
 };
 
+function resolveStandardSlug(slug: string): string {
+  const seen = new Set<string>();
+  let current = slug;
+  while (STANDARD_ALIASES[current] && !seen.has(current)) {
+    seen.add(current);
+    current = STANDARD_ALIASES[current];
+  }
+  return current;
+}
+
 const SEO_OVERRIDES: Record<string, { title: string; description: string }> = {
   'iso-16889': {
     title: 'ISO 16889 Multi-Pass Filter Test Method | ELIMFILTERS',
@@ -53,7 +63,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ standard: string }> }): Promise<Metadata> {
   const { standard } = await params;
-  const resolvedSlug = STANDARD_ALIASES[standard] || standard;
+  const resolvedSlug = resolveStandardSlug(standard);
   const std = KC_STANDARDS.find((s) => s.slug === resolvedSlug);
   if (!std) return {};
 
@@ -81,7 +91,7 @@ export async function generateMetadata({ params }: { params: Promise<{ standard:
 
 export default async function StandardPage({ params }: { params: Promise<{ standard: string }> }) {
   const { standard } = await params;
-  const resolvedSlug = STANDARD_ALIASES[standard] || standard;
+  const resolvedSlug = resolveStandardSlug(standard);
   const std = KC_STANDARDS.find((s) => s.slug === resolvedSlug);
   if (!std) return notFound();
 
