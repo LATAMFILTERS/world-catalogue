@@ -94,10 +94,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           after 4s, force it visible. Once Motion does hydrate (the
           normal case), it re-renders those elements with animate/style
           and this rule simply never has anything left to do.
+          No !important on the keyframe target: it is invalid inside
+          @keyframes and browsers silently drop the whole declaration
+          rather than just ignoring the !important flag (confirmed via
+          the live CSSOM: the rule serialized as `100% { }`, completely
+          empty, so this fail-safe never actually applied anywhere since
+          it first shipped). A plain (non-important) CSS animation
+          already sits above normal-priority author styles -- including
+          a plain inline style="opacity:0" with no !important of its
+          own -- so no !important is needed here for the override to win.
         */}
         <style>{`
           [style*="opacity:0;"],[style$="opacity:0"]{animation:elim-force-visible 0s 4s forwards}
-          @keyframes elim-force-visible{to{opacity:1 !important;transform:none !important}}
+          @keyframes elim-force-visible{to{opacity:1;transform:none}}
         `}</style>
         <Script id="ga4-consent-default" strategy="beforeInteractive">
           {`
