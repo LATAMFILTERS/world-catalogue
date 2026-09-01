@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
@@ -26,10 +26,33 @@ export default function ConsentBanner() {
   const language = (i18n.resolvedLanguage || i18n.language || 'en').slice(0, 2);
   const copy = COPY[language] || COPY.en;
   const [mounted, setMounted] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
+  const visible = mounted && consent === 'pending';
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Reserve real space at the bottom of the page for the banner instead of
+  // floating on top of whatever content happens to sit there — on mobile,
+  // that was covering hero CTA buttons until the banner was dismissed.
+  useEffect(() => {
+    if (!visible || !bannerRef.current) {
+      document.body.style.paddingBottom = '';
+      return;
+    }
+    const el = bannerRef.current;
+    const applyPadding = () => {
+      document.body.style.paddingBottom = `${el.offsetHeight + 16}px`;
+    };
+    applyPadding();
+    const observer = new ResizeObserver(applyPadding);
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      document.body.style.paddingBottom = '';
+    };
+  }, [visible]);
 
   return (
     <>
@@ -66,8 +89,9 @@ export default function ConsentBanner() {
         }
       `}</style>
       <AnimatePresence>
-        {mounted && consent === 'pending' && (
+        {visible && (
           <motion.div
+            ref={bannerRef}
             className="elim-consent-banner"
             initial={{ y: 80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
