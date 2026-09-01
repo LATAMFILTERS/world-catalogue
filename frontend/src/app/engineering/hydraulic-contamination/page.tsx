@@ -483,9 +483,9 @@ function HydraulicContaminationContent() {
               { label: 'ISO 4406 — Particle Cleanliness Codes', href: '/knowledge-center/standards/iso-4406' },
               { label: 'ISO 16889 — Beta Ratio Filter Testing', href: '/knowledge-center/standards/iso-16889' },
               { label: 'Hydraulic Systems — Standards Domain', href: '/knowledge-center/standards' },
-              { label: 'Hydraulic Contamination — Case Study', href: '/knowledge-center/problems' },
+              { label: 'Hydraulic Contamination — Case Study', href: '/knowledge-center/engineering/contamination-control/' },
               { label: 'Diesel Water Contamination', href: '/engineering/diesel-water-contamination' },
-              { label: 'Particle Wear in Engines', href: '/knowledge-center/problems' },
+              { label: 'Particle Wear in Engines', href: '/knowledge-center/engineering/contamination-control/' },
               { label: 'NANOFORCE™ Technology', href: '/engineering/technologies/TECH-NANOFORCE' },
               { label: 'Mining — Industry Application', href: '/industries/mining' },
             ].map((link) => (

@@ -463,9 +463,9 @@ function DustIngestionContent() {
           }}>
             {[
               { label: 'Air Intake Systems — Standards Domain', href: '/knowledge-center/standards' },
-              { label: 'Particle Wear — Contamination Study', href: '/knowledge-center/problems' },
+              { label: 'Particle Wear — Contamination Study', href: '/knowledge-center/engineering/contamination-control/' },
               { label: 'MACROCORE™ Technology', href: '/engineering/technologies/TECH-MACROCORE' },
-              { label: 'Engine Oil Contamination', href: '/knowledge-center/problems' },
+              { label: 'Engine Oil Contamination', href: '/knowledge-center/engineering/contamination-control/' },
               { label: 'Hydraulic Contamination', href: '/engineering/hydraulic-contamination' },
               { label: 'Mining — Extreme Dust Application', href: '/industries/mining' },
               { label: 'Agriculture — Crop Dust Application', href: '/industries/agriculture' },
