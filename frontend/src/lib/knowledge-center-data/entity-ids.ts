@@ -87,7 +87,6 @@ export const STANDARD_IDS = {
   'din-71460':   'STD-DIN-71460',
   'din-51524':   'STD-DIN-51524',
   'sae-j726':    'STD-SAE-J726',
-  // Phase 5C additions
   'iso-3723':    'STD-ISO-3723',
   'iso-19438':   'STD-ISO-19438',
   'astm-d5185':  'STD-ASTM-D5185',
@@ -103,7 +102,7 @@ export const TECHNOLOGY_IDS = {
   'nanoforce':   'TECH-NANOFORCE',
   'SYNTAPORE':   'TECH-SYNTAPORE',
   'HYDROCORE':   'TECH-HYDROCORE',
-  'turbocore':   'TECH-HYDROCORE',
+  'turbocore':   'TECH-TURBOCORE',
   'thermacore':  'TECH-THERMACORE',
   'drycore':     'TECH-DRYCORE',
   'intekcore':   'TECH-INTEKCORE',
@@ -141,7 +140,6 @@ export const INDUSTRY_IDS = {
 // ── Term IDs ──────────────────────────────────────────────────────────────────
 
 export const TERM_IDS = {
-  // Filtration Performance
   'beta-ratio':                    'TERM-BETA-RATIO',
   'absolute-efficiency':           'TERM-ABSOLUTE-EFFICIENCY',
   'nominal-efficiency':            'TERM-NOMINAL-EFFICIENCY',
@@ -150,81 +148,64 @@ export const TERM_IDS = {
   'differential-pressure':         'TERM-DIFFERENTIAL-PRESSURE',
   'filter-bypass-valve':           'TERM-FILTER-BYPASS-VALVE',
   'element-collapse':              'TERM-ELEMENT-COLLAPSE',
-  // Fluid Cleanliness
   'iso-cleanliness-code':          'TERM-ISO-CLEANLINESS-CODE',
   'particle-count':                'TERM-PARTICLE-COUNT',
   'nas-cleanliness-code':          'TERM-NAS-CLEANLINESS-CODE',
   'contamination-ingression-rate': 'TERM-CONTAMINATION-INGRESSION-RATE',
   'test-dust':                     'TERM-TEST-DUST',
   'oil-condition-monitoring':      'TERM-OIL-CONDITION-MONITORING',
-  // Air Intake
   'restriction':                   'TERM-RESTRICTION',
   'dust-holding-capacity':         'TERM-DUST-HOLDING-CAPACITY',
   'progressive-density-gradient':  'TERM-PROGRESSIVE-DENSITY-GRADIENT',
   'cyclonic-separation':           'TERM-CYCLONIC-SEPARATION',
   'ingress-protection':            'TERM-INGRESS-PROTECTION',
   'service-interval':              'TERM-SERVICE-INTERVAL',
-  // Contamination
   'abrasive-wear':                 'TERM-ABRASIVE-WEAR',
   'adhesive-wear':                 'TERM-ADHESIVE-WEAR',
   'silica':                        'TERM-SILICA',
   'aeration':                      'TERM-AERATION',
   'particle-size-distribution':    'TERM-PARTICLE-SIZE-DISTRIBUTION',
-  // Hydraulic Systems
   'servo-valve':                   'TERM-SERVO-VALVE',
   'proportional-valve':            'TERM-PROPORTIONAL-VALVE',
   'cavitation':                    'TERM-CAVITATION',
   'bypass-filtration':             'TERM-BYPASS-FILTRATION',
   'full-flow-filtration':          'TERM-FULL-FLOW-FILTRATION',
-  // Lubrication
   'bearing-clearance':             'TERM-BEARING-CLEARANCE',
   'viscosity':                     'TERM-VISCOSITY',
   'viscosity-index':               'TERM-VISCOSITY-INDEX',
   'total-base-number':             'TERM-TOTAL-BASE-NUMBER',
-  // Chemical Degradation
   'varnish':                       'TERM-VARNISH',
   'oxidative-degradation':         'TERM-OXIDATIVE-DEGRADATION',
   'thermal-degradation':           'TERM-THERMAL-DEGRADATION',
   'total-acid-number':             'TERM-TOTAL-ACID-NUMBER',
   'soot':                          'TERM-SOOT',
-  // Water & Fuel
   'water-ingress':                 'TERM-WATER-INGRESS',
   'karl-fischer-titration':        'TERM-KARL-FISCHER-TITRATION',
   'hpcr':                          'TERM-HPCR',
   'injector-stiction':             'TERM-INJECTOR-STICTION',
   'coalescing':                    'TERM-COALESCING',
   'microbial-contamination':       'TERM-MICROBIAL-CONTAMINATION',
-  // Filter Media
   'depth-filtration':              'TERM-DEPTH-FILTRATION',
   'surface-filtration':            'TERM-SURFACE-FILTRATION',
   'synthetic-media':               'TERM-SYNTHETIC-MEDIA',
-  // Phase 5B Expansion — Filtration Performance
   'collapse-pressure':             'TERM-COLLAPSE-PRESSURE',
-  // Phase 5B Expansion — Air Intake
   'safety-element':                'TERM-SAFETY-ELEMENT',
   'pre-cleaner':                   'TERM-PRE-CLEANER',
   'restriction-indicator':         'TERM-RESTRICTION-INDICATOR',
   'breather-filter':               'TERM-BREATHER-FILTER',
-  // Phase 5B Expansion — Fluid Cleanliness
   'dew-point':                     'TERM-DEW-POINT',
   'compressed-air-purity':         'TERM-COMPRESSED-AIR-PURITY',
-  // Phase 5B Expansion — Contamination
   'ferrous-wear-debris':           'TERM-FERROUS-WEAR-DEBRIS',
   'glycol-contamination':          'TERM-GLYCOL-CONTAMINATION',
-  // Phase 5B Expansion — Hydraulic Systems
   'kidney-loop':                   'TERM-KIDNEY-LOOP',
   'system-flushing':               'TERM-SYSTEM-FLUSHING',
-  // Phase 5B Expansion — Lubrication
   'hydrodynamic-lubrication':      'TERM-HYDRODYNAMIC-LUBRICATION',
   'oil-drain-interval':            'TERM-OIL-DRAIN-INTERVAL',
-  // Phase 5B Expansion — Chemical Degradation
   'sludge':                        'TERM-SLUDGE',
   'lacquer':                       'TERM-LACQUER',
-  // Phase 5B Expansion — Water & Fuel
   'free-water':                    'TERM-FREE-WATER',
   'emulsified-water':              'TERM-EMULSIFIED-WATER',
   'water-separation-efficiency':   'TERM-WATER-SEPARATION-EFFICIENCY',
-  // Phase 5B Expansion — Filter Media
   'melt-blown-media':              'TERM-MELT-BLOWN-MEDIA',
   'cellulose-media':               'TERM-CELLULOSE-MEDIA',
 } as const;
@@ -242,7 +223,6 @@ export const DIAGRAM_IDS = {
   'differential-pressure-curve':     'DIAG-DP-CURVE',
   'compressed-air-treatment':        'DIAG-CA-TREATMENT',
   'particle-wear-mechanism':         'DIAG-PARTICLE-WEAR',
-  // ── Phase 6B additions ──────────────────────────────────────────────────────
   'filter-media-cross-section':      'DIAG-MEDIA-CROSS-SECTION',
   'iso-8573-purity-classes':         'DIAG-ISO8573-PURITY',
   'service-interval-flow':           'DIAG-SERVICE-INTERVAL-FLOW',
