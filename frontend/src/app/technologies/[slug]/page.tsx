@@ -5,6 +5,7 @@ import { CANONICAL_TECHNOLOGY_LIST, getCanonicalTechnology, type TechnologySlug 
 import { getTechnologyEngineering } from '@/lib/canonical-engineering';
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
 import { getTechnologyEditorial } from '@/lib/technology-editorial';
+import { TURBOCORE_EDITORIAL } from '@/lib/turbocore-editorial';
 import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 import TechnologyEditorial from '@/components/TechnologyEditorial';
 
@@ -27,17 +28,18 @@ const APPLICATION_CONTEXT: Readonly<Record<TechnologySlug,string>> = {
 const DEDICATED=['macrocore','microkappa','syntapore','syntrax','nanoforce','hydrocore','thermacore','drycore','intekcore'];
 function technologyUrl(slug:string){return `${BASE_URL}/technologies/${slug}/`;}
 function technologyEntityUrl(slug:string){return `${technologyUrl(slug)}#technology`;}
+function resolvedEditorial(slug:string){return slug==='turbocore'?TURBOCORE_EDITORIAL:getTechnologyEditorial(slug);}
 export function generateStaticParams(){return CANONICAL_TECHNOLOGY_LIST.filter(t=>!DEDICATED.includes(t.slug)).map(t=>({slug:t.slug}));}
 export async function generateMetadata({params}:Props):Promise<Metadata>{const {slug:paramSlug}=await params;const canonical=getCanonicalTechnology(paramSlug);const engineering=getTechnologyEngineering(paramSlug);if(!canonical||!engineering)return{title:'Not Found',robots:{index:false,follow:false}};const slug=canonical.slug as TechnologySlug;const url=technologyUrl(slug);const heroImage=`${BASE_URL}${TECHNOLOGY_HERO_IMAGES[slug]}`;const title=`${canonical.name} Filtration Technology | ELIMFILTERS`;return{title,description:engineering.definition,keywords:[canonical.name,`${canonical.name} filtration technology`,'ELIMFILTERS technology','industrial filtration technology','asset protection'],alternates:{canonical:url},openGraph:{title,description:engineering.definition,url,type:'website',siteName:'ELIMFILTERS',images:[{url:heroImage,width:1200,height:630,alt:`${canonical.name} technology`}]},twitter:{card:'summary_large_image',title,description:engineering.definition,images:[heroImage]}};}
 function technologySchema(slug:TechnologySlug){const canonical=getCanonicalTechnology(slug);const engineering=getTechnologyEngineering(slug);if(!canonical||!engineering)return null;const url=technologyUrl(slug);return{'@context':'https://schema.org','@type':'TechArticle','@id':`${url}#article`,headline:canonical.name,name:canonical.name,description:engineering.definition,url,image:`${BASE_URL}${TECHNOLOGY_HERO_IMAGES[slug]}`,datePublished:'2026-08-31',dateModified:'2026-09-01',author:{'@type':'Organization','@id':`${BASE_URL}/#organization`,name:'ELIMFILTERS'},reviewedBy:TECHNICAL_REVIEWER,publisher:{'@type':'Organization','@id':`${BASE_URL}/#organization`,name:'ELIMFILTERS'},about:{'@type':'DefinedTerm','@id':technologyEntityUrl(slug),name:canonical.name,description:engineering.definition,url,inDefinedTermSet:`${BASE_URL}/technologies/`},abstract:engineering.engineeringPrinciple,keywords:[canonical.name,'industrial filtration technology','contamination control','asset protection','ELIMFILTERS'],isPartOf:{'@type':'WebSite','@id':`${BASE_URL}/#website`,name:'ELIMFILTERS',url:`${BASE_URL}/`}};}
-function faqSchema(slug:TechnologySlug){const editorial=getTechnologyEditorial(slug);if(!editorial)return null;return{'@context':'https://schema.org','@type':'FAQPage',mainEntity:editorial.faq.map(item=>({'@type':'Question',name:item.question,acceptedAnswer:{'@type':'Answer',text:item.answer}}))};}
+function faqSchema(slug:TechnologySlug){const editorial=resolvedEditorial(slug);if(!editorial)return null;return{'@context':'https://schema.org','@type':'FAQPage',mainEntity:editorial.faq.map(item=>({'@type':'Question',name:item.question,acceptedAnswer:{'@type':'Answer',text:item.answer}}))};}
 function breadcrumbSchema(name:string,slug:TechnologySlug){return{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:`${BASE_URL}/`},{'@type':'ListItem',position:2,name:'Technologies',item:`${BASE_URL}/technologies/`},{'@type':'ListItem',position:3,name,item:technologyUrl(slug)}]};}
 const sectionLabel={fontFamily:'var(--font-mono)',fontSize:'0.72rem',letterSpacing:'0.18em',textTransform:'uppercase' as const,color:'#FFF12D',marginBottom:'0.9rem'};
 const sectionHeading={fontFamily:'var(--font-display)',fontSize:'clamp(2rem, 4vw, 3.35rem)',lineHeight:1.05,letterSpacing:'-0.035em',color:'#fff',margin:0};
 const bodyCopy={fontFamily:'var(--font-body)',fontSize:'clamp(1rem, 1.35vw, 1.12rem)',lineHeight:1.8,color:'rgba(255,255,255,0.74)'};
 export default async function TechnologyPage({params}:Props){
  const {slug:paramSlug}=await params;
- const canonical=getCanonicalTechnology(paramSlug);const engineering=getTechnologyEngineering(paramSlug);const editorial=getTechnologyEditorial(paramSlug);
+ const canonical=getCanonicalTechnology(paramSlug);const engineering=getTechnologyEngineering(paramSlug);const editorial=resolvedEditorial(paramSlug);
  if(!canonical||!engineering||!editorial||DEDICATED.includes(canonical.slug))notFound();
  const slug=canonical.slug as TechnologySlug;const technologyAsset=TECHNOLOGY_ASSETS[slug];const technologyHero=TECHNOLOGY_HERO_IMAGES[slug];const system=getProtectionSystemBySlug(canonical.domain);const articleSchema=technologySchema(slug);const questionsSchema=faqSchema(slug);const breadcrumbs=breadcrumbSchema(canonical.name,slug);
  return <main style={{background:'#000',color:'#fff'}}>
