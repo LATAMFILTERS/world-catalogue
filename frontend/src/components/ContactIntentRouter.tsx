@@ -35,11 +35,16 @@ const routes = [
 
 export default function ContactIntentRouter() {
   return (
-    <section aria-labelledby="contact-intent-title" style={{position:'relative',overflow:'hidden',background:"linear-gradient(90deg,rgba(0,0,0,.93),rgba(0,0,0,.72) 62%,rgba(0,0,0,.35)),url('/images/contacto-papa.avif') center 58%/cover no-repeat",borderBottom:'1px solid rgba(255,255,255,.08)'}}>
-      <div style={{maxWidth:1180,margin:'0 auto',padding:'168px clamp(20px,5vw,32px) 96px'}}>
+    <>
+    <section aria-labelledby="contact-intent-title" style={{position:'relative',overflow:'hidden',minHeight:420,display:'flex',alignItems:'flex-end',background:"linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.6) 62%,rgba(0,0,0,.25)),url('/images/contacto-papa.avif') center/cover no-repeat"}}>
+      <div style={{maxWidth:1180,margin:'0 auto',width:'100%',padding:'96px clamp(20px,5vw,32px) 48px'}}>
         <p style={{margin:'0 0 12px',color:'#FFF12D',font:"700 .72rem/1.2 'Chakra Petch',Arial,sans-serif",letterSpacing:'.18em',textTransform:'uppercase'}}>CONTACT ELIMFILTERS</p>
         <h1 id="contact-intent-title" style={{margin:'0 0 14px',maxWidth:900,font:"700 clamp(2.2rem,5vw,4.4rem)/.95 'Chakra Petch',Arial,sans-serif",textTransform:'uppercase'}}>Choose the reason for your inquiry.</h1>
-        <p style={{margin:'0 0 30px',maxWidth:820,color:'rgba(255,255,255,.68)',fontSize:'1.05rem',lineHeight:1.65}}>Technical, product-intelligence and distribution requests follow different workflows. Start with the path that matches what you need so the request reaches the correct team with the right context.</p>
+        <p style={{margin:0,maxWidth:820,color:'rgba(255,255,255,.68)',fontSize:'1.05rem',lineHeight:1.65}}>Technical, product-intelligence and distribution requests follow different workflows. Start with the path that matches what you need so the request reaches the correct team with the right context.</p>
+      </div>
+    </section>
+    <section style={{background:'#050505',borderBottom:'1px solid rgba(255,255,255,.08)'}}>
+      <div style={{maxWidth:1180,margin:'0 auto',padding:'40px clamp(20px,5vw,32px) 56px'}}>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:14}}>
           {routes.map((route) => {
             const external = route.href.startsWith('http');
@@ -52,5 +57,6 @@ export default function ContactIntentRouter() {
         </div>
       </div>
     </section>
+    </>
   );
 }
