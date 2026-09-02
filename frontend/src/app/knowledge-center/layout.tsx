@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ClientNav from './ClientNav';
 
 const BASE='https://elimfilters.com';
 const URL=`${BASE}/knowledge-center/`;
@@ -31,4 +32,4 @@ const collectionSchema={
 const breadcrumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:`${BASE}/`},{'@type':'ListItem',position:2,name:'Knowledge Center',item:URL}]};
 const itemList={'@context':'https://schema.org','@type':'ItemList','@id':`${URL}#knowledge-domains`,name:'ELIMFILTERS Knowledge Center domains',itemListElement:parts.map((item,index)=>({'@type':'ListItem',position:index+1,item}))};
 
-export default function KnowledgeCenterLayout({children}:{children:React.ReactNode}){return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(collectionSchema)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumb)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(itemList)}}/>{children}</>}
+export default function KnowledgeCenterLayout({children}:{children:React.ReactNode}){return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(collectionSchema)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumb)}}/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(itemList)}}/><ClientNav/>{children}</>}
