@@ -52,9 +52,15 @@ export default function KnowledgeCenterPage(){
      </div>
     </div>
     <div className={styles.signal} aria-label="Technical decision flow">
-     <div className={styles.signalHead}><span className={styles.micro}>CONTAMINATION CONTROL LOGIC</span><span className={styles.micro}>SOURCE → VERIFY</span></div>
-     <div className={styles.flow}>{['CONDITION','MECHANISM','FRAMEWORK','PROTECTION','VALIDATION'].map(x=><div className={styles.flowStep} key={x}><span className={styles.dot}/><span>{x}</span></div>)}</div>
-     <p className={styles.body} style={{marginTop:'2rem'}}>The Knowledge Center connects observed conditions to failure mechanisms, engineering references, protection systems, technologies and final application validation.</p>
+     <div className={styles.signalHead}><span className={styles.micro}>CONTAMINATION CONTROL LOGIC</span><span className={styles.micro}>CONDITION → VALIDATION</span></div>
+     <svg viewBox="0 0 620 190" role="img" aria-hidden="true" style={{width:'100%',height:'auto',display:'block',marginTop:'1.6rem'}}>
+      <defs><linearGradient id="signalLine" x1="0" x2="1"><stop offset="0%" stopColor="#FFF12D" stopOpacity="0.25"/><stop offset="100%" stopColor="#FFF12D" stopOpacity="1"/></linearGradient></defs>
+      <line x1="40" y1="110" x2="580" y2="110" stroke="rgba(255,255,255,0.14)" strokeWidth="2"/>
+      <path d="M40 110 C90 110 125 60 175 60 C225 60 260 150 310 150 C360 150 395 60 445 60 C495 60 530 110 580 110" fill="none" stroke="url(#signalLine)" strokeWidth="3"/>
+      {[{x:40,y:110},{x:175,y:60},{x:310,y:150},{x:445,y:60},{x:580,y:110}].map((p,i)=><g key={i}><circle cx={p.x} cy={p.y} r="9" fill="#050505" stroke="#FFF12D" strokeWidth="2"/><circle cx={p.x} cy={p.y} r="3" fill="#FFF12D"/></g>)}
+      {[['CONDITION',40,140],['MECHANISM',175,45],['FRAMEWORK',310,175],['PROTECTION',445,45],['VALIDATION',580,140]].map(([label,x,y])=><text key={label as string} x={x as number} y={y as number} textAnchor={x===40?'start':x===580?'end':'middle'} fill="rgba(255,255,255,0.55)" fontSize="11" fontFamily="var(--font-mono)" letterSpacing="0.06em">{label}</text>)}
+     </svg>
+     <p className={styles.body} style={{marginTop:'1.6rem'}}>The Knowledge Center connects observed conditions to failure mechanisms, engineering references, protection systems, technologies and final application validation.</p>
     </div>
    </div></section>
 
