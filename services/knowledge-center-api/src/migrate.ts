@@ -26,7 +26,7 @@ async function ensureMigrationsTable(client: pg.PoolClient): Promise<void> {
 }
 
 async function getMigrations(): Promise<Migration[]> {
-  const phaseDir = path.resolve(import.meta.url.replace('file://', ''), '../../..', 'migrations/knowledge-center-phase2');
+  const phaseDir = path.resolve(import.meta.url.replace('file://', ''), '../../../..', 'migrations/knowledge-center-phase2');
 
   if (!fs.existsSync(phaseDir)) {
     console.error(`Migrations directory not found: ${phaseDir}`);
