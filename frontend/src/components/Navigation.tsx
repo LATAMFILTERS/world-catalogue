@@ -42,7 +42,7 @@ export function Navigation() {
                 alt="ELIMFILTERS — Total Asset Protection"
                 className="nav-logo"
                 onError={() => setLogoError(true)}
-                style={{ width: 'clamp(175px, 13vw, 205px)', height: 'auto', display: 'block', objectFit: 'contain', flexShrink: 0 }}
+                style={{ height: 'clamp(36px, 7.8vw, 58px)', width: 'auto', display: 'block', objectFit: 'contain', flexShrink: 0 }}
               />
             )}
           </Link>
