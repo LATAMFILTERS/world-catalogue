@@ -145,7 +145,7 @@ export default function MiningContaminationTcoPage() {
 
       <section style={section}>
         <div style={twoCol}>
-          <div>
+          <div style={twoColHeading}>
             <p style={eyebrow}>DIRECT ANSWER</p>
             <h2 style={sectionTitle}>Why does contamination matter to mining TCO?</h2>
           </div>
@@ -180,7 +180,7 @@ export default function MiningContaminationTcoPage() {
 
       <section style={section}>
         <div style={twoCol}>
-          <div>
+          <div style={twoColHeading}>
             <p style={eyebrow}>RELIABILITY CURVE</p>
             <h2 style={sectionTitle}>Contamination can move failure behavior earlier.</h2>
           </div>
@@ -205,7 +205,7 @@ export default function MiningContaminationTcoPage() {
 
       <section style={assetSection}>
         <div style={twoCol}>
-          <div>
+          <div style={twoColHeading}>
             <p style={eyebrow}>ASSET ECONOMICS</p>
             <h2 style={sectionTitle}>Protect expensive components with lower-cost protection elements.</h2>
           </div>
@@ -313,6 +313,7 @@ const heroLead = { fontSize: 'clamp(1.1rem, 2vw, 1.45rem)', lineHeight: 1.65, co
 const section = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.06)' } as const;
 const contentWidth = { maxWidth: '1180px', margin: '0 auto' } as const;
 const twoCol = { ...contentWidth, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: 'clamp(2.5rem, 7vw, 6rem)', alignItems: 'start' } as const;
+const twoColHeading = { position: 'sticky', top: '7rem' } as const;
 const sectionTitle = { fontFamily: displayFont, fontSize: 'clamp(2.2rem, 4.8vw, 4.2rem)', lineHeight: 0.98, letterSpacing: '-0.04em', textTransform: 'uppercase', margin: 0 } as const;
 const leadText = { fontSize: 'clamp(1.08rem, 1.7vw, 1.35rem)', lineHeight: 1.68, fontWeight: 600, color: 'rgba(255,255,255,0.84)', margin: '0 0 1.3rem' } as const;
 const bodyText = { fontSize: '0.98rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.64)', margin: 0, textAlign: 'left' } as const;

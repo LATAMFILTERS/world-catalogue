@@ -94,7 +94,7 @@ export default function SystemsPage() {
 
       <section style={section}>
         <div style={decisionShell}>
-          <div><p style={eyebrow}>SYSTEM-LEVEL ENGINEERING</p><h2 style={sectionTitle}>Why system-first selection reduces identification risk.</h2></div>
+          <div style={decisionHeading}><p style={eyebrow}>SYSTEM-LEVEL ENGINEERING</p><h2 style={sectionTitle}>Why system-first selection reduces identification risk.</h2></div>
           <div style={decisionSteps}>{[
             ['1', 'Identify the asset', 'Vehicle, machine, engine, generator, vessel, locomotive or plant equipment.'],
             ['2', 'Locate the protected system', 'Airflow, fuel, lubrication, hydraulic or cooling.'],
@@ -156,7 +156,8 @@ const systemFact: CSSProperties = { display: 'grid', gap: '0.35rem', padding: '0
 const factLabel: CSSProperties = { fontFamily: displayFont, fontSize: '0.68rem', letterSpacing: '0.12em', color: '#FFF12D', fontWeight: 700 };
 const factText: CSSProperties = { color: 'rgba(255,255,255,.68)', fontSize: '0.92rem', lineHeight: 1.55 };
 const explore: CSSProperties = { display: 'inline-block', color: '#fff', fontFamily: displayFont, fontWeight: 700, fontSize: '0.74rem', letterSpacing: '0.1em', marginTop: '1.2rem' };
-const decisionShell: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: 'clamp(2.5rem, 6vw, 5rem)' };
+const decisionShell: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: 'clamp(2.5rem, 6vw, 5rem)', alignItems: 'start' };
+const decisionHeading: CSSProperties = { position: 'sticky', top: '7rem' };
 const decisionSteps: CSSProperties = { borderTop: '1px solid rgba(255,255,255,.12)' };
 const decisionStep: CSSProperties = { display: 'grid', gridTemplateColumns: '44px 1fr', gap: '1rem', padding: '1.25rem 0', borderBottom: '1px solid rgba(255,255,255,.1)' };
 const stepNumber: CSSProperties = { fontFamily: displayFont, color: '#FFF12D', fontWeight: 700, fontSize: '1.1rem' };
