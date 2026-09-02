@@ -48,6 +48,18 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
   letter-spacing: .01em !important;
   padding: .95rem 1rem !important;
 }
+#logo {
+  min-width: 260px !important;
+  min-height: 78px !important;
+  overflow: visible !important;
+}
+#logo img {
+  width: 260px !important;
+  height: auto !important;
+  max-width: none !important;
+  display: block !important;
+  object-fit: contain !important;
+}
 .logo-badge {
   position: fixed !important;
   top: 1.5rem !important;
@@ -89,6 +101,8 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
 }
 .btn-search::before, .btn-search::after { content: none !important; display: none !important; }
 @media (max-width: 1024px) {
+  #logo { min-width: 220px !important; min-height: 66px !important; }
+  #logo img { width: 220px !important; }
   .logo-badge { top: 1.25rem !important; right: 1.25rem !important; min-width: 88px !important; min-height: 38px !important; }
 }
 @media (max-width: 640px) {
@@ -97,6 +111,8 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
   .mode-tabs { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
   .mode-tab { width: 100% !important; min-width: 0 !important; padding: .7rem .2rem !important; font-size: .78rem !important; }
   .btn-search { width: min(100%, 360px) !important; min-width: 0 !important; min-height: 58px !important; }
+  #logo { min-width: 165px !important; min-height: 52px !important; top: 1rem !important; left: 1rem !important; }
+  #logo img { width: 165px !important; }
   .logo-badge { top: 1rem !important; right: 1rem !important; min-width: 78px !important; min-height: 36px !important; padding: .55rem .75rem !important; font-size: .66rem !important; letter-spacing: .12em !important; }
 }
 </style>
@@ -110,13 +126,19 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
     document.querySelectorAll('.logo-badge').forEach(function (badge) {
       badge.replaceChildren(document.createTextNode('HOME'));
     });
+    var logo = document.getElementById('logo');
+    var logoImg = logo && logo.querySelector('img');
+    if (logoImg) {
+      logoImg.src = 'https://elimfilters.com/assets/elimfilters-logo-white.png';
+      logoImg.alt = 'ELIMFILTERS — Total Asset Protection';
+    }
   }
   normalizePartSearch();
   document.addEventListener('DOMContentLoaded', normalizePartSearch);
   window.addEventListener('load', normalizePartSearch);
 })();
 </script>
-<!-- PART_SEARCH_UI_BUILD_20260814_UTF8_CANONICAL -->`;
+<!-- PART_SEARCH_UI_BUILD_20260902_BRAND_LOGO -->`;
 
   html = html.replace(/<style id="part-search-approved-ui">[\s\S]*?<!-- PART_SEARCH_UI_BUILD_[^>]*-->/gi, '');
   html = html.replace('</body>', `${finalLayer}\n</body>`);
