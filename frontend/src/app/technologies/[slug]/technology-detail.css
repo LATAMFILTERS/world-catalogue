@@ -10,14 +10,37 @@
   box-sizing: border-box;
 }
 
+/* Technology hero marks include both the technology name and its protection subtitle.
+   The shared module crop was cutting the second line on NANOFORCE, THERMACORE and
+   other *_final assets. Keep the complete lockup visible while preserving scale. */
+.technology-detail main section[aria-labelledby] > img[src^="/assets/"][src$="_final.avif"] {
+  clip-path: inset(18% 1% 18% 1%) !important;
+  transform: scale(1.08) !important;
+  width: min(620px, 76vw) !important;
+  max-height: 42vh;
+  object-fit: contain !important;
+}
+
 @media (max-width: 900px) {
   .technology-detail-syntrax main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .technology-detail main section[aria-labelledby] > img[src^="/assets/"][src$="_final.avif"] {
+    width: min(560px, 82vw) !important;
+    max-height: 36vh;
   }
 }
 
 @media (max-width: 600px) {
   .technology-detail-syntrax main section div[style*="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))"] {
     grid-template-columns: 1fr !important;
+  }
+
+  .technology-detail main section[aria-labelledby] > img[src^="/assets/"][src$="_final.avif"] {
+    clip-path: inset(14% 1% 14% 1%) !important;
+    transform: scale(1.02) !important;
+    width: min(340px, 78vw) !important;
+    max-height: 30vh;
   }
 }
