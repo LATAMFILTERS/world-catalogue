@@ -128,7 +128,17 @@ function decide(records: RetrievedRecord[], request: ReasoningRequest): { action
   if (/\b(bypass|ignore approval|publish automatically|override safety)\b/i.test(request.query)) return { action:'STOP', confidence:1, reason:'Request conflicts with governance boundaries.' };
   if (!records.length) return { action:'ESCALATE', confidence:0, reason:'No approved knowledge matched the request.' };
   const contradictions = records.some(r => r.sources.some(s => s.supportType === 'CONTRADICTS'));
-  const confidence = Math.min(1, records.slice(0,3).reduce((sum,r)=>sum+r.confidence,0) / Math.min(3,records.length));
+  // records is already ORDER BY confidence DESC, so records[0] is the best
+  // match. Averaging in weaker co-matches (the old records.slice(0,3)
+  // average) actively punishes a strong single match: confirmed live, a
+  // query naming one seeded technology by name scored a clean 1.0 against
+  // that record, but every other technology record also contains generic
+  // shared vocabulary ("technology") and matched at ~0.5, pulling the
+  // averaged confidence down to ~0.67 -- below the 0.72 answer threshold --
+  // purely because unrelated records existed at all, not because the real
+  // match was weak. Confidence should reflect how well the best candidate
+  // answers the query, not be diluted by tangential co-matches.
+  const confidence = records[0].confidence;
   if (contradictions) return { action:'VERIFY', confidence, reason:'Approved evidence contains a contradiction.' };
   if (request.audience === 'CUSTOMER' && confidence < minProduction) return { action:'ESCALATE', confidence, reason:'Confidence is below the production response threshold.' };
   if (confidence < minAnswer) return { action:'VERIFY', confidence, reason:'More asset or measurement evidence is required.' };
