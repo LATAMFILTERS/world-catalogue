@@ -132,7 +132,7 @@ export default function IndustriesPage() {
 
       <section style={answerSection} aria-labelledby="industries-answer-title">
         <div style={answerGrid}>
-          <div><p style={eyebrow}>DIRECT ANSWER</p><h2 id="industries-answer-title" style={sectionTitle}>What industries does ELIMFILTERS support?</h2></div>
+          <div style={stickyHeading}><p style={eyebrow}>DIRECT ANSWER</p><h2 id="industries-answer-title" style={sectionTitle}>What industries does ELIMFILTERS support?</h2></div>
           <div>
             <p style={leadText}>ELIMFILTERS provides industrial filtration and contamination-control architectures for 12 markets: mining, agriculture, construction, oil &amp; gas, marine, power generation, commercial truck fleets, manufacturing, railway, waste and municipal fleets, bus and coach operations, and automotive and light-duty applications.</p>
             <p style={bodyText}>Filtration requirements change with dust concentration, water exposure, fuel quality, temperature, load cycle, system sensitivity, idle time, and service interval. Industry is therefore the first context layer—not the final product selection.</p>
@@ -142,7 +142,7 @@ export default function IndustriesPage() {
 
       <section style={section}>
         <div style={twoCol}>
-          <div><p style={eyebrow}>WHY INDUSTRY MATTERS</p><h2 style={industryRiskTitle}>The same filter does not face the same failure risk.</h2></div>
+          <div style={stickyHeading}><p style={eyebrow}>WHY INDUSTRY MATTERS</p><h2 style={industryRiskTitle}>The same filter does not face the same failure risk.</h2></div>
           <div>
             <p style={leadText}>A mining loader, a marine engine, a standby generator, and a city waste truck may share filter categories, but they do not share the same operating reality.</p>
             <p style={bodyText}>The correct protection strategy connects the contamination mechanism to the system being protected, the equipment duty cycle, the maintenance environment, and the consequence of failure.</p>
@@ -290,6 +290,7 @@ const engineeringPrincipleText: CSSProperties = { fontFamily: bodyFont, color: '
 const impactSection: CSSProperties = { padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(135deg, rgba(255,241,45,0.08), rgba(255,255,255,0.015) 52%, rgba(0,0,0,0) 100%)' };
 const impactGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2.5rem, 7vw, 6rem)', alignItems: 'start' };
 const impactHeading: CSSProperties = { position: 'sticky', top: '7rem' };
+const stickyHeading: CSSProperties = { position: 'sticky', top: '7rem' };
 const impactTitle: CSSProperties = { ...sectionTitle, fontSize: 'clamp(2.5rem, 5vw, 4.8rem)', maxWidth: '700px' };
 const impactLead: CSSProperties = { ...leadText, fontSize: 'clamp(1.15rem, 1.8vw, 1.45rem)' };
 const impactOutcomes: CSSProperties = { display: 'grid', gap: '0', marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.12)' };

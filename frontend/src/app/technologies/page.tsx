@@ -193,7 +193,7 @@ export default function TechnologiesPage() {
       <section style={section}>
         <p style={eyebrow}>DIRECT ANSWER</p>
         <div style={twoCol}>
-          <h2 style={sectionTitle}>A technology is not a filter family and not a part number.</h2>
+          <h2 style={{ ...sectionTitle, ...stickyHeading }}>A technology is not a filter family and not a part number.</h2>
           <div>
             <p style={leadText}>ELIMFILTERS technologies define the engineering architecture used to control a specific contamination pathway inside a protected system.</p>
             <p style={bodyText}>The decision sequence is explicit: protected system → contamination function → technology → product family → validated part number. This prevents technology names from being treated as interchangeable product categories.</p>
@@ -218,7 +218,7 @@ export default function TechnologiesPage() {
 
       <section style={section}>
         <div style={twoCol}>
-          <div>
+          <div style={stickyHeading}>
             <p style={eyebrow}>ENGINEERING PRINCIPLE</p>
             <h2 style={sectionTitle}>Do not start with the technology name. Start with the protected function.</h2>
           </div>
@@ -335,6 +335,7 @@ const section: CSSProperties = { padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem,
 const sectionAlt: CSSProperties = { ...section, background: '#050505', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' };
 const systemSectionInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const twoCol: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 6vw, 5rem)' };
+const stickyHeading: CSSProperties = { position: 'sticky', top: '7rem' };
 const sectionTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(2rem, 4vw, 3.6rem)', lineHeight: 0.98, letterSpacing: '-0.035em', margin: 0, textTransform: 'uppercase', fontWeight: 700 };
 const leadText: CSSProperties = { color: 'rgba(255,255,255,0.82)', fontSize: 'clamp(1.08rem, 1.7vw, 1.3rem)', lineHeight: 1.7, fontWeight: 600, margin: 0 };
 const bodyText: CSSProperties = { color: 'rgba(255,255,255,0.62)', fontSize: '1rem', lineHeight: 1.76, marginTop: '1rem' };
