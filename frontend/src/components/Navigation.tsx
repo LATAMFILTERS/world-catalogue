@@ -38,7 +38,7 @@ export function Navigation() {
               <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>ELIMFILTERS</span>
             ) : (
               <img
-                src="/assets/elimfilters-logo-total-assets-protection.png"
+                src="/assets/elimfilters-logo-white.png"
                 alt="ELIMFILTERS — Total Asset Protection"
                 className="nav-logo"
                 onError={() => setLogoError(true)}
