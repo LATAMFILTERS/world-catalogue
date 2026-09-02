@@ -52,6 +52,16 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
   min-width: 260px !important;
   min-height: 78px !important;
   overflow: visible !important;
+  left: 50% !important;
+  margin-left: -130px !important;
+}
+.intro-label {
+  font-weight: 700 !important;
+  letter-spacing: -0.055em !important;
+  line-height: 0.88 !important;
+  text-transform: uppercase !important;
+  font-size: clamp(1.55rem, 6vw, 2.4rem) !important;
+  margin-bottom: 3.5rem !important;
 }
 #logo img {
   width: 260px !important;
@@ -69,22 +79,24 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  min-width: 92px !important;
-  min-height: 40px !important;
-  padding: .65rem 1rem !important;
-  border: 1px solid rgba(255,241,45,.34) !important;
-  border-radius: 2px !important;
-  color: #FFF12D !important;
-  background: rgba(0,0,0,.72) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: rgba(255,255,255,.65) !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   font-size: .72rem !important;
   font-weight: 600 !important;
   letter-spacing: .14em !important;
   line-height: 1 !important;
   text-transform: uppercase !important;
   pointer-events: auto !important;
+  transition: color .2s ease !important;
 }
+.logo-badge:hover { color: #FFF12D !important; }
 .btn-search {
   min-width: 220px !important;
   min-height: 56px !important;
@@ -101,9 +113,9 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
 }
 .btn-search::before, .btn-search::after { content: none !important; display: none !important; }
 @media (max-width: 1024px) {
-  #logo { min-width: 220px !important; min-height: 66px !important; }
+  #logo { min-width: 220px !important; min-height: 66px !important; margin-left: -110px !important; }
   #logo img { width: 220px !important; }
-  .logo-badge { top: 1.25rem !important; right: 1.25rem !important; min-width: 88px !important; min-height: 38px !important; }
+  .logo-badge { top: 1.25rem !important; right: 1.25rem !important; }
 }
 @media (max-width: 640px) {
   #ui { justify-content: flex-start !important; padding: 7.5rem 1rem 3rem !important; }
@@ -111,9 +123,9 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
   .mode-tabs { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
   .mode-tab { width: 100% !important; min-width: 0 !important; padding: .7rem .2rem !important; font-size: .78rem !important; }
   .btn-search { width: min(100%, 360px) !important; min-width: 0 !important; min-height: 58px !important; }
-  #logo { min-width: 165px !important; min-height: 52px !important; top: 1rem !important; left: 1rem !important; }
+  #logo { min-width: 165px !important; min-height: 52px !important; top: 1rem !important; left: 50% !important; margin-left: -82px !important; }
   #logo img { width: 165px !important; }
-  .logo-badge { top: 1rem !important; right: 1rem !important; min-width: 78px !important; min-height: 36px !important; padding: .55rem .75rem !important; font-size: .66rem !important; letter-spacing: .12em !important; }
+  .logo-badge { top: 1rem !important; right: 1rem !important; font-size: .66rem !important; letter-spacing: .12em !important; }
 }
 </style>
 <script>
@@ -138,7 +150,7 @@ html, body, input, select, textarea { font-family: 'Barlow', sans-serif !importa
   window.addEventListener('load', normalizePartSearch);
 })();
 </script>
-<!-- PART_SEARCH_UI_BUILD_20260902_BRAND_LOGO -->`;
+<!-- PART_SEARCH_UI_BUILD_20260902_LOGO_CENTERED_HERO_FONTS -->`;
 
   html = html.replace(/<style id="part-search-approved-ui">[\s\S]*?<!-- PART_SEARCH_UI_BUILD_[^>]*-->/gi, '');
   html = html.replace('</body>', `${finalLayer}\n</body>`);
