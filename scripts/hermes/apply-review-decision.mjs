@@ -23,15 +23,20 @@ if (decision === 'approve') {
   candidate.approved_by = 'Victor Abreu';
   candidate.approved_at = now;
   candidate.sync_status = 'NOT_READY';
+  delete candidate.rejection_reason;
+  delete candidate.research_instruction;
   targetFolder = 'elimfilters-vault/92-approved-updates';
 } else if (decision === 'reject') {
   if (!reason) throw new Error('A rejection reason is required');
   candidate.workflow_status = 'REJECTED';
   candidate.rejection_reason = reason;
+  delete candidate.research_instruction;
   targetFolder = 'elimfilters-vault/93-rejected';
 } else {
+  if (!reason) throw new Error('A research instruction is required');
   candidate.workflow_status = 'NEEDS_RESEARCH';
-  candidate.rejection_reason = reason;
+  candidate.research_instruction = reason;
+  delete candidate.rejection_reason;
   targetFolder = 'elimfilters-vault/91-pending-review';
 }
 
@@ -49,6 +54,7 @@ const audit = {
   actor: 'Victor Abreu',
   timestamp: now,
   reason,
+  research_instruction: decision === 'research' ? reason : null,
   source_hash: candidate.source_hash,
   output_path: path.relative(process.cwd(), outputPath).replaceAll('\\','/'),
   database_write: false,
