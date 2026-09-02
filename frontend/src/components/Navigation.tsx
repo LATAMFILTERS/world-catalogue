@@ -59,12 +59,14 @@ export function Navigation() {
             {logoError ? (
               <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>ELIMFILTERS</span>
             ) : (
+              // Size is intentionally fixed — Víctor asked explicitly to keep the
+              // header at this exact size (2026-09-01). Don't re-enlarge it.
               <img
                 src="/assets/elimfilters-logo-white.png"
                 alt="ELIMFILTERS — Total Asset Protection"
                 className="nav-logo"
                 onError={() => setLogoError(true)}
-                style={{ width: 'clamp(231px, 17.2vw, 271px)', height: 'auto', display: 'block', objectFit: 'contain', flexShrink: 0, transform: 'translateY(-24px)' }}
+                style={{ height: 'clamp(36px, 7.8vw, 58px)', width: 'auto', display: 'block', objectFit: 'contain', flexShrink: 0 }}
               />
             )}
           </Link>
@@ -120,7 +122,6 @@ export function Navigation() {
         @media (max-width: 768px) {
           .hidden-mobile{display:none!important}
           .show-mobile{display:flex!important}
-          .nav-logo{width:199px!important; transform:translateY(-14px)!important}
         }
         @media (min-width: 769px) {.show-mobile{display:none!important}}
       `}</style>
