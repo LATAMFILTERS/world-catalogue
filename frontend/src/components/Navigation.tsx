@@ -42,7 +42,7 @@ export function Navigation() {
                 alt="ELIMFILTERS — Total Asset Protection"
                 className="nav-logo"
                 onError={() => setLogoError(true)}
-                style={{ width: 'clamp(175px, 13vw, 205px)', height: 'auto', display: 'block', objectFit: 'contain', flexShrink: 0 }}
+                style={{ width: 'clamp(201px, 14.95vw, 236px)', height: 'auto', display: 'block', objectFit: 'contain', flexShrink: 0, transform: 'translateY(-2px)' }}
               />
             )}
           </Link>
@@ -98,7 +98,7 @@ export function Navigation() {
         @media (max-width: 768px) {
           .hidden-mobile{display:none!important}
           .show-mobile{display:flex!important}
-          .nav-logo{width:150px!important}
+          .nav-logo{width:173px!important}
         }
         @media (min-width: 769px) {.show-mobile{display:none!important}}
       `}</style>
