@@ -34,7 +34,7 @@
 .heroShade {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.08);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.16) 58%, rgba(0, 0, 0, 0.06) 100%);
 }
 
 .heroMark {
@@ -45,7 +45,7 @@
   height: auto;
   object-fit: contain;
   mix-blend-mode: screen;
-  clip-path: inset(33% 3% 40% 3%);
+  clip-path: inset(33% 3% 20% 3%);
   transform: scale(1.28);
   filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.28));
 }
@@ -176,7 +176,7 @@
 
   .heroMark {
     width: min(300px, 55vw);
-    clip-path: inset(33% 2% 40% 2%);
+    clip-path: inset(33% 2% 20% 2%);
     transform: scale(1.18);
   }
 
