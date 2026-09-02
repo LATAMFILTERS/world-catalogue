@@ -40,7 +40,7 @@ export function HydrocoreStablePage(){
    <img className={styles.heroBackground} src="/images/fuellseparator-hero.avif" alt="Diesel fuel/water separation service environment"/>
    <div className={styles.heroShade} aria-hidden="true"/>
    <h1 id="hydrocore-title" className={styles.srOnly}>HYDROCORE™ Fuel/Water Separation Technology</h1>
-   <img className={styles.heroMark} style={{clipPath:'inset(33% 3% 20% 3%)'}} src="/assets/HYDROCORE_final.avif" alt="HYDROCORE™"/>
+   <img className={styles.heroMark} src="/assets/HYDROCORE_final.avif" alt="HYDROCORE™"/>
   </section>
 
   <nav aria-label="Breadcrumb" style={{padding:'1rem clamp(1.15rem,6vw,6rem)',borderBottom:'1px solid rgba(255,255,255,.12)',background:'#020202'}}>
