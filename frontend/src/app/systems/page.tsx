@@ -68,7 +68,7 @@ export default function SystemsPage() {
 
       <section style={section}>
         <div style={answerGrid}>
-          <div><p style={eyebrow}>DIRECT ANSWER</p><h2 style={sectionTitle}>What is a protection system?</h2></div>
+          <div style={decisionHeading}><p style={eyebrow}>DIRECT ANSWER</p><h2 style={sectionTitle}>What is a protection system?</h2></div>
           <div><p style={leadText}>A protection system is the operating domain that must stay clean enough for the asset to perform its intended function. It defines the contamination pathway, the components at risk and the filtration decisions that follow.</p><p style={bodyText}>The decision sequence is <strong style={{ color: '#fff' }}>asset → protected system → contamination exposure → duty cycle → filtration technology → product family → validated part number.</strong></p></div>
         </div>
       </section>

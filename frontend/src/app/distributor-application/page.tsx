@@ -202,7 +202,7 @@ export default function DistributorApplication() {
       <section style={{ ...sectionStyle, background: '#050505' }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,0.85fr) minmax(0,1.15fr)', gap: 'clamp(2rem, 6vw, 5rem)', alignItems: 'start' }}>
-            <div>
+            <div style={{ position: 'sticky', top: '7rem' }}>
               <p style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, letterSpacing: '0.18em', fontSize: '0.72rem', textTransform: 'uppercase' }}>// THE BUSINESS MODEL</p>
               <h2 style={headingStyle}>One Country. One Distribution Partner.</h2>
             </div>

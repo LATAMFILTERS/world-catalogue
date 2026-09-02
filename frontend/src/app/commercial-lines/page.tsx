@@ -70,7 +70,7 @@ export default function CommercialLinesPage() {
       </section>
       <section style={governanceBand}>
         <div style={governanceInner}>
-          <div><p style={eyebrow}>// GOVERNANCE</p><h2 style={sectionTitle}>9 core technologies. 5 core systems. 2 specialized solutions.</h2></div>
+          <div style={stickyHeading}><p style={eyebrow}>// GOVERNANCE</p><h2 style={sectionTitle}>9 core technologies. 5 core systems. 2 specialized solutions.</h2></div>
           <p style={governanceCopy}>Specialized solutions organize approved technologies and components around a specific operating or maintenance context. They do not replace or expand the canonical core taxonomy.</p>
         </div>
       </section>
@@ -99,6 +99,7 @@ const labelStyle: CSSProperties = { border: '1px solid rgba(255,255,255,0.12)', 
 const explore: CSSProperties = { marginTop: 'auto', paddingTop: '2rem', color: '#FFF12D', fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.68rem', letterSpacing: '0.1em' };
 const governanceBand: CSSProperties = { borderTop: '1px solid rgba(255,241,45,0.14)', borderBottom: '1px solid rgba(255,241,45,0.14)', background: 'rgba(255,241,45,0.035)', padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 6vw, 6rem)' };
 const governanceInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'start' };
+const stickyHeading: CSSProperties = { position: 'sticky', top: '7rem' };
 const sectionTitle: CSSProperties = { fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 4vw, 3.2rem)', lineHeight: 1, textTransform: 'uppercase', margin: 0 };
 const governanceCopy: CSSProperties = { color: 'rgba(255,255,255,0.66)', lineHeight: 1.75, margin: 0 };
 const cta: CSSProperties = { display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.8rem', padding: '4rem 1.5rem' };
