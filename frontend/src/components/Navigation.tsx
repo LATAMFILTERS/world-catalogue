@@ -37,17 +37,13 @@ export function Navigation() {
             {logoError ? (
               <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>ELIMFILTERS</span>
             ) : (
-              <span className="nav-logo-frame" style={{ position: 'relative', display: 'block', width: 'clamp(170px, 13vw, 195px)', height: 'clamp(44px, 4vw, 56px)', overflow: 'hidden', flexShrink: 0 }}>
-                <img
-                  src="/assets/elimfilters-logo-white.png"
-                  alt="ELIMFILTERS — Total Asset Protection"
-                  className="nav-logo"
-                  width={1216}
-                  height={759}
-                  onError={() => setLogoError(true)}
-                  style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '190%', height: 'auto', display: 'block', maxWidth: 'none' }}
-                />
-              </span>
+              <img
+                src="/assets/Elimfilters_logo_oficial.avif"
+                alt="ELIMFILTERS — Total Asset Protection"
+                className="nav-logo"
+                onError={() => setLogoError(true)}
+                style={{ width: 'clamp(175px, 13vw, 205px)', height: 'auto', display: 'block', objectFit: 'contain', flexShrink: 0 }}
+              />
             )}
           </Link>
         </motion.div>
@@ -102,7 +98,7 @@ export function Navigation() {
         @media (max-width: 768px) {
           .hidden-mobile{display:none!important}
           .show-mobile{display:flex!important}
-          .nav-logo-frame{width:150px!important;height:44px!important}
+          .nav-logo{width:150px!important}
         }
         @media (min-width: 769px) {.show-mobile{display:none!important}}
       `}</style>
