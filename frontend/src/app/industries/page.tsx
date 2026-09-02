@@ -182,7 +182,7 @@ export default function IndustriesPage() {
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={impactGrid}>
-          <div>
+          <div style={impactHeading}>
             <p style={eyebrow}>ENGINEERING IMPACT</p>
             <h2 id="impact-title" style={impactTitle}>Protection that reduces waste at the source.</h2>
           </div>
@@ -289,6 +289,7 @@ const engineeringPrincipleLabel: CSSProperties = { fontFamily: displayFont, colo
 const engineeringPrincipleText: CSSProperties = { fontFamily: bodyFont, color: 'rgba(255,255,255,0.9)', fontSize: 'clamp(1.18rem, 1.9vw, 1.55rem)', lineHeight: 1.65, letterSpacing: '-0.01em', textAlign: 'left', margin: 0, maxWidth: '100%' };
 const impactSection: CSSProperties = { padding: 'clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(135deg, rgba(255,241,45,0.08), rgba(255,255,255,0.015) 52%, rgba(0,0,0,0) 100%)' };
 const impactGrid: CSSProperties = { maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2.5rem, 7vw, 6rem)', alignItems: 'start' };
+const impactHeading: CSSProperties = { position: 'sticky', top: '7rem' };
 const impactTitle: CSSProperties = { ...sectionTitle, fontSize: 'clamp(2.5rem, 5vw, 4.8rem)', maxWidth: '700px' };
 const impactLead: CSSProperties = { ...leadText, fontSize: 'clamp(1.15rem, 1.8vw, 1.45rem)' };
 const impactOutcomes: CSSProperties = { display: 'grid', gap: '0', marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.12)' };
