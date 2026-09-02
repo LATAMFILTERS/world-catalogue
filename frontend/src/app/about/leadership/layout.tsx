@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import LeadershipTitleNormalizer from './LeadershipTitleNormalizer';
 
 export const metadata: Metadata = {
   title: 'Leadership — ELIMFILTERS Human-Governed AI Executive Model',
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://elimfilters.com/about/leadership' },
   openGraph: {
     title: 'Leadership — ELIMFILTERS',
-    description: 'Human leadership. AI-native execution. ELIMFILTERS combines a human Chief Executive Office with specialized executive AI functions.',
+    description: 'Human Leadership. AI Native Execution. ELIMFILTERS combines a human Chief Executive Office with specialized executive AI functions.',
     url: 'https://elimfilters.com/about/leadership',
     type: 'website',
     siteName: 'ELIMFILTERS World Catalogue',
@@ -14,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function LeadershipLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return <><LeadershipTitleNormalizer />{children}</>;
 }
