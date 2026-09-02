@@ -21,6 +21,7 @@ export default function ClientNav() {
 
   return (
     <nav
+      aria-label="Knowledge Center navigation"
       style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         background: 'rgba(0,0,0,0.95)',
@@ -89,7 +90,7 @@ export default function ClientNav() {
             textTransform: 'uppercase',
           }}
         >
-          ELIMFILTERS
+          HOME
         </Link>
 
         <div className="kc-nav-links">
