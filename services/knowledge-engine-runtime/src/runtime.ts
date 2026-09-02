@@ -129,16 +129,29 @@ function decide(records: RetrievedRecord[], request: ReasoningRequest): { action
   if (!records.length) return { action:'ESCALATE', confidence:0, reason:'No approved knowledge matched the request.' };
   const contradictions = records.some(r => r.sources.some(s => s.supportType === 'CONTRADICTS'));
   // records is already ORDER BY confidence DESC, so records[0] is the best
-  // match. Averaging in weaker co-matches (the old records.slice(0,3)
+  // single match. Averaging in weaker co-matches (the old records.slice(0,3)
   // average) actively punishes a strong single match: confirmed live, a
   // query naming one seeded technology by name scored a clean 1.0 against
   // that record, but every other technology record also contains generic
   // shared vocabulary ("technology") and matched at ~0.5, pulling the
   // averaged confidence down to ~0.67 -- below the 0.72 answer threshold --
   // purely because unrelated records existed at all, not because the real
-  // match was weak. Confidence should reflect how well the best candidate
-  // answers the query, not be diluted by tangential co-matches.
-  const confidence = records[0].confidence;
+  // match was weak.
+  //
+  // A single best match isn't the whole picture either: a two-entity query
+  // ("difference between SYNTRAX and HYDROCORE") splits across two records
+  // that each cover their own name but not the other's, so records[0] alone
+  // sits at ~0.5 even though the top few records TOGETHER answer the full
+  // query -- confirmed live. unionConfidence measures how much of the
+  // query's substantive terms are covered by compose()'s top-4 candidate
+  // set as a whole (the same set the answer text is actually built from),
+  // so a query correctly answered by combining several on-topic records
+  // isn't penalized just because no single one of them was self-sufficient.
+  const queryTerms = tokens(request.query);
+  const topCandidates = records.slice(0, 4);
+  const combinedText = topCandidates.map(r => `${r.title} ${r.summary ?? ''} ${JSON.stringify(r.content ?? '')}`).join(' ').toLowerCase();
+  const unionConfidence = queryTerms.length ? queryTerms.filter(t => combinedText.includes(t)).length / queryTerms.length : 0;
+  const confidence = Math.max(records[0].confidence, unionConfidence);
   if (contradictions) return { action:'VERIFY', confidence, reason:'Approved evidence contains a contradiction.' };
   if (request.audience === 'CUSTOMER' && confidence < minProduction) return { action:'ESCALATE', confidence, reason:'Confidence is below the production response threshold.' };
   if (confidence < minAnswer) return { action:'VERIFY', confidence, reason:'More asset or measurement evidence is required.' };
