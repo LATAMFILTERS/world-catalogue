@@ -58,8 +58,14 @@ async function isAlreadyApplied(client: pg.PoolClient, version: string): Promise
 }
 
 async function recordMigration(client: pg.PoolClient, version: string, timeMs: number, status: 'SUCCESS' | 'FAILED'): Promise<void> {
+  // ON CONFLICT DO UPDATE, not a plain INSERT: a migration that failed once
+  // (recorded here with status FAILED) gets retried on the next deploy under
+  // the same version/filename, which would otherwise hit the version
+  // primary key and mask the real error behind a duplicate-key violation.
   await client.query(
-    'INSERT INTO knowledge_center.schema_migrations (version, description, execution_time_ms, status) VALUES ($1, $2, $3, $4)',
+    `INSERT INTO knowledge_center.schema_migrations (version, description, execution_time_ms, status)
+     VALUES ($1, $2, $3, $4)
+     ON CONFLICT (version) DO UPDATE SET description = EXCLUDED.description, executed_at = now(), execution_time_ms = EXCLUDED.execution_time_ms, status = EXCLUDED.status`,
     [version, `Phase 2 Migration: ${version}`, timeMs, status]
   );
 }
