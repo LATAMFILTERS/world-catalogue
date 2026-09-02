@@ -134,6 +134,7 @@ export async function reason(request: ReasoningRequest): Promise<ReasoningRespon
   const traceId = crypto.randomUUID();
   const records = await retrieve(request.query);
   const decision = decide(records, request);
+  console.info('[reason-diag]', JSON.stringify({ query: request.query, retrieved: records.length, titles: records.map(r => r.title), action: decision.action, confidence: decision.confidence }));
   const response: ReasoningResponse = {
     traceId,
     action: decision.action,
