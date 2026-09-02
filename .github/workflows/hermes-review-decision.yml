@@ -20,7 +20,7 @@ on:
           - reject
           - research
       reason:
-        description: 'Optional audit comment / additional research instruction.'
+        description: 'Required for reject/research; optional for approve.'
         required: false
         type: string
         default: ''
@@ -46,6 +46,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate decision input
+        env:
+          DECISION: ${{ inputs.decision }}
+          REASON: ${{ inputs.reason }}
+        run: |
+          set -euo pipefail
+          if { [ "$DECISION" = "reject" ] || [ "$DECISION" = "research" ]; } && [ -z "$(printf '%s' "$REASON" | tr -d '[:space:]')" ]; then
+            echo "A reason/instruction is required for $DECISION."
+            exit 2
+          fi
+
       - name: Download weekly HERMES artifact
         uses: actions/download-artifact@v4
         with:
@@ -65,6 +76,7 @@ jobs:
       - name: Persist decision record to hermes-state
         env:
           HERMES_REVIEW_CANDIDATE: ${{ inputs.candidate }}
+          HERMES_REVIEW_DECISION: ${{ inputs.decision }}
         run: |
           set -euo pipefail
           CANDIDATE_SAFE=$(printf '%s' "$HERMES_REVIEW_CANDIDATE" | tr -cd 'A-Za-z0-9._-')
@@ -82,8 +94,18 @@ jobs:
           fi
           mkdir -p .hermes-state-worktree/state/review-decisions
           cp "$RECORD" ".hermes-state-worktree/state/review-decisions/${CANDIDATE_SAFE}.decision.json"
+
+          if [ "$HERMES_REVIEW_DECISION" = "research" ]; then
+            REQUEST="elimfilters-vault/91-pending-review/${CANDIDATE_SAFE}.json"
+            test -f "$REQUEST"
+            mkdir -p .hermes-state-worktree/state/research-requests
+            cp "$REQUEST" ".hermes-state-worktree/state/research-requests/${CANDIDATE_SAFE}.json"
+          else
+            rm -f ".hermes-state-worktree/state/research-requests/${CANDIDATE_SAFE}.json"
+          fi
+
           cd .hermes-state-worktree
-          git add "state/review-decisions/${CANDIDATE_SAFE}.decision.json"
+          git add state/review-decisions state/research-requests 2>/dev/null || git add state/review-decisions
           if git diff --cached --quiet; then
             echo "Decision state already current."
           else
@@ -96,5 +118,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: hermes-review-${{ inputs.candidate }}-${{ github.run_id }}
-          path: hermes/review-decisions
-          if-no-files-found: error
+          path: |
+            hermes/review-decisions
+            elimfilters-vault/91-pending-review
+            elimfilters-vault/92-approved-updates
+            elimfilters-vault/93-rejected
+          if-no-files-found: warn
