@@ -1,0 +1,100 @@
+name: HERMES Review Decision
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Weekly HERMES workflow run containing the candidate artifact.'
+        required: true
+        type: string
+      candidate:
+        description: 'HERMES candidate entity_code.'
+        required: true
+        type: string
+      decision:
+        description: 'approve, reject, or research.'
+        required: true
+        type: choice
+        options:
+          - approve
+          - reject
+          - research
+      reason:
+        description: 'Optional audit comment / additional research instruction.'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: hermes-review-${{ inputs.candidate }}
+  cancel-in-progress: false
+
+jobs:
+  apply-decision:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download weekly HERMES artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: hermes-weekly-collection
+          path: .hermes-review-source
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.run_id }}
+
+      - name: Apply Victor review decision
+        env:
+          HERMES_REVIEW_CANDIDATE: ${{ inputs.candidate }}
+          HERMES_REVIEW_DECISION: ${{ inputs.decision }}
+          HERMES_REVIEW_REASON: ${{ inputs.reason }}
+          HERMES_REVIEW_SOURCE_RUN_ID: ${{ inputs.run_id }}
+        run: node scripts/hermes/apply-review-from-artifact.mjs .hermes-review-source hermes/review-decisions
+
+      - name: Persist decision record to hermes-state
+        env:
+          HERMES_REVIEW_CANDIDATE: ${{ inputs.candidate }}
+        run: |
+          set -euo pipefail
+          CANDIDATE_SAFE=$(printf '%s' "$HERMES_REVIEW_CANDIDATE" | tr -cd 'A-Za-z0-9._-')
+          RECORD="hermes/review-decisions/${CANDIDATE_SAFE}.decision.json"
+          test -f "$RECORD"
+          git config user.name "HERMES Review Bot"
+          git config user.email "hermes@elimfilters.com"
+          git fetch origin hermes-state:refs/remotes/origin/hermes-state || true
+          rm -rf .hermes-state-worktree
+          if git show-ref --verify --quiet refs/remotes/origin/hermes-state; then
+            git worktree add -B hermes-state .hermes-state-worktree origin/hermes-state
+          else
+            git worktree add --detach .hermes-state-worktree
+            (cd .hermes-state-worktree && git switch --orphan hermes-state && git rm -rf . >/dev/null 2>&1 || true)
+          fi
+          mkdir -p .hermes-state-worktree/state/review-decisions
+          cp "$RECORD" ".hermes-state-worktree/state/review-decisions/${CANDIDATE_SAFE}.decision.json"
+          cd .hermes-state-worktree
+          git add "state/review-decisions/${CANDIDATE_SAFE}.decision.json"
+          if git diff --cached --quiet; then
+            echo "Decision state already current."
+          else
+            git commit -m "hermes(review): ${CANDIDATE_SAFE} ${{ inputs.decision }}"
+            git push origin HEAD:hermes-state
+          fi
+
+      - name: Upload decision audit artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hermes-review-${{ inputs.candidate }}-${{ github.run_id }}
+          path: hermes/review-decisions
+          if-no-files-found: error
