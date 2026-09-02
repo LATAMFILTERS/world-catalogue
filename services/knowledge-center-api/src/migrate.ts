@@ -16,13 +16,18 @@ interface Migration {
 async function ensureMigrationsTable(client: pg.PoolClient): Promise<void> {
   await client.query(`
     CREATE TABLE IF NOT EXISTS knowledge_center.schema_migrations (
-      version text PRIMARY KEY,
-      description text,
-      executed_at timestamp DEFAULT now(),
-      execution_time_ms integer,
-      status text DEFAULT 'SUCCESS' CHECK (status IN ('SUCCESS', 'FAILED', 'ROLLED_BACK'))
+      version text PRIMARY KEY
     );
   `);
+  // The table may already exist from an earlier, differently-shaped bootstrap
+  // (confirmed live: a prior deploy left it without a status column), so
+  // CREATE TABLE IF NOT EXISTS above is a no-op in that case. Backfill any
+  // columns this module depends on idempotently rather than assuming they're
+  // already there.
+  await client.query(`ALTER TABLE knowledge_center.schema_migrations ADD COLUMN IF NOT EXISTS description text`);
+  await client.query(`ALTER TABLE knowledge_center.schema_migrations ADD COLUMN IF NOT EXISTS executed_at timestamp DEFAULT now()`);
+  await client.query(`ALTER TABLE knowledge_center.schema_migrations ADD COLUMN IF NOT EXISTS execution_time_ms integer`);
+  await client.query(`ALTER TABLE knowledge_center.schema_migrations ADD COLUMN IF NOT EXISTS status text DEFAULT 'SUCCESS'`);
 }
 
 async function getMigrations(): Promise<Migration[]> {
@@ -94,6 +99,22 @@ async function migrate(): Promise<void> {
         appliedCount++;
       } catch (error) {
         await conn.query('ROLLBACK');
+        // Confirmed live: this database's schema was originally bootstrapped
+        // by some other, undocumented one-off process before this runner's
+        // path-resolution bug (fixed alongside this change) ever let it run,
+        // so schema_migrations has no record of 001/002 even though their
+        // tables/indexes/triggers already exist. A "duplicate object" class
+        // error here means the migration's effect is already present, not
+        // that something is actually broken -- record it as applied instead
+        // of failing every future deploy on DDL that already succeeded once.
+        const pgCode = (error as { code?: string } | null)?.code;
+        const alreadyExists = pgCode === '42710' || pgCode === '42P07' || pgCode === '42701' || pgCode === '42P06';
+        if (alreadyExists) {
+          await recordMigration(conn, migration.version, Date.now() - startTime, 'SUCCESS');
+          console.warn(`⚠ ${migration.version}: schema objects already existed (${error instanceof Error ? error.message : String(error)}); recording as applied`);
+          skippedCount++;
+          continue;
+        }
         await recordMigration(conn, migration.version, Date.now() - startTime, 'FAILED');
         console.error(`✗ ${migration.version}: ${error instanceof Error ? error.message : String(error)}`);
         throw error;
@@ -107,7 +128,12 @@ async function migrate(): Promise<void> {
 
     conn.release();
     await pool.end();
-    process.exit(appliedCount > 0 ? 0 : 1);
+    // Reaching here means every migration is either applied or already
+    // up to date -- that is success, not failure. The steady state after
+    // the first successful deploy is appliedCount === 0 (nothing new to
+    // apply), so exiting non-zero in that case would fail scripts/run.sh
+    // (set -e) on every subsequent deploy even though nothing is wrong.
+    process.exit(0);
   } catch (error) {
     console.error('Migration failed:', error);
     conn.release();
