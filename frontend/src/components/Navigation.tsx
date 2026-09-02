@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import '@/i18n';
@@ -12,20 +13,41 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const pathname = usePathname();
   const { t } = useTranslation();
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40);
+    const isHome = pathname === '/';
+
+    const handler = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 40);
+
+      if (!isHome || menuOpen || currentY <= 40) {
+        setHeaderVisible(true);
+      } else if (currentY > lastScrollY.current + 4) {
+        setHeaderVisible(false);
+      } else if (currentY < lastScrollY.current - 4) {
+        setHeaderVisible(true);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
+    lastScrollY.current = window.scrollY;
     handler();
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
-  }, []);
+  }, [pathname, menuOpen]);
 
   return (
     <nav
       style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-        transition: 'background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease',
+        transform: headerVisible ? 'translateY(0)' : 'translateY(-110%)',
+        transition: 'transform 0.28s ease, background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease',
         background: scrolled ? 'rgba(0,0,0,0.70)' : 'linear-gradient(to bottom, rgba(0,0,0,0.8), transparent)',
         backdropFilter: scrolled ? 'blur(14px)' : 'none',
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : 'none',
