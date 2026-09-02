@@ -54,7 +54,7 @@ export function Navigation() {
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: 'clamp(0.65rem, 2.4vw, 1.4rem) clamp(1rem, 4vw, 2rem) clamp(0.5rem, 1.7vw, 0.9rem)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} role="banner">
-        <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }} style={{ marginLeft: 'calc(7vw - clamp(1rem, 4vw, 2rem))', transform: 'translateY(-10px)' }}>
+        <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }} style={{ marginLeft: 'calc(7vw - clamp(1rem, 4vw, 2rem))', transform: 'translateY(-10px) scale(1.3)', transformOrigin: 'bottom left' }}>
           <Link href="/" aria-label="ELIMFILTERS — home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             {logoError ? (
               <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>ELIMFILTERS</span>
