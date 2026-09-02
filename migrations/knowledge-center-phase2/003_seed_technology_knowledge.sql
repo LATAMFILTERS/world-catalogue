@@ -19,13 +19,30 @@
 -- (frontend/src/components/*StablePage.tsx, frontend/src/lib/turbocore-
 -- editorial.ts) as the source text, so the chatbot's answers stay
 -- consistent with what the site itself says.
+--
+-- knowledge_center.knowledge_records carries governance triggers (002)
+-- that a naive insert-then-update sequence cannot satisfy:
+--   - trg_production_approval is a deferred constraint trigger, but it
+--     captures NEW.current_version_id from the statement that raised it,
+--     not a live re-read at commit time -- so current_version_id must be
+--     set in the SAME INSERT that sets production_eligible=true, not via
+--     a later UPDATE (confirmed live: "Production-eligible records
+--     require a current version" even with a same-transaction UPDATE
+--     immediately after).
+--   - it also requires a matching, non-revoked approval_records row
+--     (decision='APPROVED', approval_scope IN ('TECHNICAL','PRODUCTION'))
+--     for that version, which is a live EXISTS check at commit time.
+-- So each technology here is one INSERT into knowledge_records with
+-- current_version_id already pointing at the version's id (the FK itself
+-- is deferrable, and the version row is inserted in the same transaction
+-- before commit), followed by the version insert and an approval record.
 
 INSERT INTO knowledge_center.actors (id, actor_type, display_name, active)
 VALUES ('00000000-0000-0000-0000-000000000200', 'SYSTEM', 'TECHNOLOGY_CONTENT_MIGRATION', true);
 
 -- DRYCORE
-INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, created_at)
-VALUES ('00000000-0000-0000-0000-000000002101', 'KC-TECH-DRYCORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', now());
+INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, current_version_id, created_at)
+VALUES ('00000000-0000-0000-0000-000000002101', 'KC-TECH-DRYCORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', '00000000-0000-0000-0000-000000002201', now());
 INSERT INTO knowledge_center.knowledge_record_versions (id, record_id, version_number, schema_version, title, summary, content, content_hash, change_reason, created_by, created_at)
 VALUES ('00000000-0000-0000-0000-000000002201', '00000000-0000-0000-0000-000000002101', 1, '1.0',
   'DRYCORE (TM) Air Dryer Filtration Technology',
@@ -38,11 +55,12 @@ VALUES ('00000000-0000-0000-0000-000000002201', '00000000-0000-0000-0000-0000000
     'sourceUrl', 'https://elimfilters.com/technologies/drycore/'
   ),
   md5('drycore-v1'), 'Seeded from reviewed /technologies/drycore/ page copy', '00000000-0000-0000-0000-000000000200', now());
-UPDATE knowledge_center.knowledge_records SET current_version_id = '00000000-0000-0000-0000-000000002201' WHERE id = '00000000-0000-0000-0000-000000002101';
+INSERT INTO knowledge_center.approval_records (external_id, record_version_id, approval_scope, decision, approved_by)
+VALUES ('KC-APPROVAL-DRYCORE-v1', '00000000-0000-0000-0000-000000002201', 'PRODUCTION', 'APPROVED', '00000000-0000-0000-0000-000000000200');
 
 -- HYDROCORE
-INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, created_at)
-VALUES ('00000000-0000-0000-0000-000000002102', 'KC-TECH-HYDROCORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', now());
+INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, current_version_id, created_at)
+VALUES ('00000000-0000-0000-0000-000000002102', 'KC-TECH-HYDROCORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', '00000000-0000-0000-0000-000000002202', now());
 INSERT INTO knowledge_center.knowledge_record_versions (id, record_id, version_number, schema_version, title, summary, content, content_hash, change_reason, created_by, created_at)
 VALUES ('00000000-0000-0000-0000-000000002202', '00000000-0000-0000-0000-000000002102', 1, '1.0',
   'HYDROCORE (TM) Fuel/Water Separation Technology',
@@ -55,11 +73,12 @@ VALUES ('00000000-0000-0000-0000-000000002202', '00000000-0000-0000-0000-0000000
     'sourceUrl', 'https://elimfilters.com/technologies/hydrocore/'
   ),
   md5('hydrocore-v1'), 'Seeded from reviewed /technologies/hydrocore/ page copy', '00000000-0000-0000-0000-000000000200', now());
-UPDATE knowledge_center.knowledge_records SET current_version_id = '00000000-0000-0000-0000-000000002202' WHERE id = '00000000-0000-0000-0000-000000002102';
+INSERT INTO knowledge_center.approval_records (external_id, record_version_id, approval_scope, decision, approved_by)
+VALUES ('KC-APPROVAL-HYDROCORE-v1', '00000000-0000-0000-0000-000000002202', 'PRODUCTION', 'APPROVED', '00000000-0000-0000-0000-000000000200');
 
 -- INTEKCORE
-INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, created_at)
-VALUES ('00000000-0000-0000-0000-000000002103', 'KC-TECH-INTEKCORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', now());
+INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, current_version_id, created_at)
+VALUES ('00000000-0000-0000-0000-000000002103', 'KC-TECH-INTEKCORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', '00000000-0000-0000-0000-000000002203', now());
 INSERT INTO knowledge_center.knowledge_record_versions (id, record_id, version_number, schema_version, title, summary, content, content_hash, change_reason, created_by, created_at)
 VALUES ('00000000-0000-0000-0000-000000002203', '00000000-0000-0000-0000-000000002103', 1, '1.0',
   'INTEKCORE (TM) Air Cleaner Housing and Sealing Technology',
@@ -72,11 +91,12 @@ VALUES ('00000000-0000-0000-0000-000000002203', '00000000-0000-0000-0000-0000000
     'sourceUrl', 'https://elimfilters.com/technologies/intekcore/'
   ),
   md5('intekcore-v1'), 'Seeded from reviewed /technologies/intekcore/ page copy', '00000000-0000-0000-0000-000000000200', now());
-UPDATE knowledge_center.knowledge_records SET current_version_id = '00000000-0000-0000-0000-000000002203' WHERE id = '00000000-0000-0000-0000-000000002103';
+INSERT INTO knowledge_center.approval_records (external_id, record_version_id, approval_scope, decision, approved_by)
+VALUES ('KC-APPROVAL-INTEKCORE-v1', '00000000-0000-0000-0000-000000002203', 'PRODUCTION', 'APPROVED', '00000000-0000-0000-0000-000000000200');
 
 -- MACROCORE
-INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, created_at)
-VALUES ('00000000-0000-0000-0000-000000002104', 'KC-TECH-MACROCORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', now());
+INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, current_version_id, created_at)
+VALUES ('00000000-0000-0000-0000-000000002104', 'KC-TECH-MACROCORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', '00000000-0000-0000-0000-000000002204', now());
 INSERT INTO knowledge_center.knowledge_record_versions (id, record_id, version_number, schema_version, title, summary, content, content_hash, change_reason, created_by, created_at)
 VALUES ('00000000-0000-0000-0000-000000002204', '00000000-0000-0000-0000-000000002104', 1, '1.0',
   'MACROCORE (TM) Engine Air Filtration Technology',
@@ -89,11 +109,12 @@ VALUES ('00000000-0000-0000-0000-000000002204', '00000000-0000-0000-0000-0000000
     'sourceUrl', 'https://elimfilters.com/technologies/macrocore/'
   ),
   md5('macrocore-v1'), 'Seeded from reviewed /technologies/macrocore/ page copy', '00000000-0000-0000-0000-000000000200', now());
-UPDATE knowledge_center.knowledge_records SET current_version_id = '00000000-0000-0000-0000-000000002204' WHERE id = '00000000-0000-0000-0000-000000002104';
+INSERT INTO knowledge_center.approval_records (external_id, record_version_id, approval_scope, decision, approved_by)
+VALUES ('KC-APPROVAL-MACROCORE-v1', '00000000-0000-0000-0000-000000002204', 'PRODUCTION', 'APPROVED', '00000000-0000-0000-0000-000000000200');
 
 -- MICROKAPPA
-INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, created_at)
-VALUES ('00000000-0000-0000-0000-000000002105', 'KC-TECH-MICROKAPPA-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', now());
+INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, current_version_id, created_at)
+VALUES ('00000000-0000-0000-0000-000000002105', 'KC-TECH-MICROKAPPA-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', '00000000-0000-0000-0000-000000002205', now());
 INSERT INTO knowledge_center.knowledge_record_versions (id, record_id, version_number, schema_version, title, summary, content, content_hash, change_reason, created_by, created_at)
 VALUES ('00000000-0000-0000-0000-000000002205', '00000000-0000-0000-0000-000000002105', 1, '1.0',
   'MICROKAPPA (TM) Cabin Air Filtration Technology',
@@ -106,11 +127,12 @@ VALUES ('00000000-0000-0000-0000-000000002205', '00000000-0000-0000-0000-0000000
     'sourceUrl', 'https://elimfilters.com/technologies/microkappa/'
   ),
   md5('microkappa-v1'), 'Seeded from reviewed /technologies/microkappa/ page copy', '00000000-0000-0000-0000-000000000200', now());
-UPDATE knowledge_center.knowledge_records SET current_version_id = '00000000-0000-0000-0000-000000002205' WHERE id = '00000000-0000-0000-0000-000000002105';
+INSERT INTO knowledge_center.approval_records (external_id, record_version_id, approval_scope, decision, approved_by)
+VALUES ('KC-APPROVAL-MICROKAPPA-v1', '00000000-0000-0000-0000-000000002205', 'PRODUCTION', 'APPROVED', '00000000-0000-0000-0000-000000000200');
 
 -- NANOFORCE
-INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, created_at)
-VALUES ('00000000-0000-0000-0000-000000002106', 'KC-TECH-NANOFORCE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', now());
+INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, current_version_id, created_at)
+VALUES ('00000000-0000-0000-0000-000000002106', 'KC-TECH-NANOFORCE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', '00000000-0000-0000-0000-000000002206', now());
 INSERT INTO knowledge_center.knowledge_record_versions (id, record_id, version_number, schema_version, title, summary, content, content_hash, change_reason, created_by, created_at)
 VALUES ('00000000-0000-0000-0000-000000002206', '00000000-0000-0000-0000-000000002106', 1, '1.0',
   'NANOFORCE (TM) Hydraulic Fluid Filtration Technology',
@@ -123,11 +145,12 @@ VALUES ('00000000-0000-0000-0000-000000002206', '00000000-0000-0000-0000-0000000
     'sourceUrl', 'https://elimfilters.com/technologies/nanoforce/'
   ),
   md5('nanoforce-v1'), 'Seeded from reviewed /technologies/nanoforce/ page copy', '00000000-0000-0000-0000-000000000200', now());
-UPDATE knowledge_center.knowledge_records SET current_version_id = '00000000-0000-0000-0000-000000002206' WHERE id = '00000000-0000-0000-0000-000000002106';
+INSERT INTO knowledge_center.approval_records (external_id, record_version_id, approval_scope, decision, approved_by)
+VALUES ('KC-APPROVAL-NANOFORCE-v1', '00000000-0000-0000-0000-000000002206', 'PRODUCTION', 'APPROVED', '00000000-0000-0000-0000-000000000200');
 
 -- SYNTAPORE
-INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, created_at)
-VALUES ('00000000-0000-0000-0000-000000002107', 'KC-TECH-SYNTAPORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', now());
+INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, current_version_id, created_at)
+VALUES ('00000000-0000-0000-0000-000000002107', 'KC-TECH-SYNTAPORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', '00000000-0000-0000-0000-000000002207', now());
 INSERT INTO knowledge_center.knowledge_record_versions (id, record_id, version_number, schema_version, title, summary, content, content_hash, change_reason, created_by, created_at)
 VALUES ('00000000-0000-0000-0000-000000002207', '00000000-0000-0000-0000-000000002107', 1, '1.0',
   'SYNTAPORE (TM) Diesel Fuel Filtration Technology',
@@ -140,11 +163,12 @@ VALUES ('00000000-0000-0000-0000-000000002207', '00000000-0000-0000-0000-0000000
     'sourceUrl', 'https://elimfilters.com/technologies/syntapore/'
   ),
   md5('syntapore-v1'), 'Seeded from reviewed /technologies/syntapore/ page copy', '00000000-0000-0000-0000-000000000200', now());
-UPDATE knowledge_center.knowledge_records SET current_version_id = '00000000-0000-0000-0000-000000002207' WHERE id = '00000000-0000-0000-0000-000000002107';
+INSERT INTO knowledge_center.approval_records (external_id, record_version_id, approval_scope, decision, approved_by)
+VALUES ('KC-APPROVAL-SYNTAPORE-v1', '00000000-0000-0000-0000-000000002207', 'PRODUCTION', 'APPROVED', '00000000-0000-0000-0000-000000000200');
 
 -- SYNTRAX
-INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, created_at)
-VALUES ('00000000-0000-0000-0000-000000002108', 'KC-TECH-SYNTRAX-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', now());
+INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, current_version_id, created_at)
+VALUES ('00000000-0000-0000-0000-000000002108', 'KC-TECH-SYNTRAX-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', '00000000-0000-0000-0000-000000002208', now());
 INSERT INTO knowledge_center.knowledge_record_versions (id, record_id, version_number, schema_version, title, summary, content, content_hash, change_reason, created_by, created_at)
 VALUES ('00000000-0000-0000-0000-000000002208', '00000000-0000-0000-0000-000000002108', 1, '1.0',
   'SYNTRAX (TM) Lubrication Filtration Technology',
@@ -157,11 +181,12 @@ VALUES ('00000000-0000-0000-0000-000000002208', '00000000-0000-0000-0000-0000000
     'sourceUrl', 'https://elimfilters.com/technologies/syntrax/'
   ),
   md5('syntrax-v1'), 'Seeded from reviewed /technologies/syntrax/ page copy', '00000000-0000-0000-0000-000000000200', now());
-UPDATE knowledge_center.knowledge_records SET current_version_id = '00000000-0000-0000-0000-000000002208' WHERE id = '00000000-0000-0000-0000-000000002108';
+INSERT INTO knowledge_center.approval_records (external_id, record_version_id, approval_scope, decision, approved_by)
+VALUES ('KC-APPROVAL-SYNTRAX-v1', '00000000-0000-0000-0000-000000002208', 'PRODUCTION', 'APPROVED', '00000000-0000-0000-0000-000000000200');
 
 -- THERMACORE
-INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, created_at)
-VALUES ('00000000-0000-0000-0000-000000002109', 'KC-TECH-THERMACORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', now());
+INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, current_version_id, created_at)
+VALUES ('00000000-0000-0000-0000-000000002109', 'KC-TECH-THERMACORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', '00000000-0000-0000-0000-000000002209', now());
 INSERT INTO knowledge_center.knowledge_record_versions (id, record_id, version_number, schema_version, title, summary, content, content_hash, change_reason, created_by, created_at)
 VALUES ('00000000-0000-0000-0000-000000002209', '00000000-0000-0000-0000-000000002109', 1, '1.0',
   'THERMACORE (TM) Coolant Filtration Technology',
@@ -174,11 +199,12 @@ VALUES ('00000000-0000-0000-0000-000000002209', '00000000-0000-0000-0000-0000000
     'sourceUrl', 'https://elimfilters.com/technologies/thermacore/'
   ),
   md5('thermacore-v1'), 'Seeded from reviewed /technologies/thermacore/ page copy', '00000000-0000-0000-0000-000000000200', now());
-UPDATE knowledge_center.knowledge_records SET current_version_id = '00000000-0000-0000-0000-000000002209' WHERE id = '00000000-0000-0000-0000-000000002109';
+INSERT INTO knowledge_center.approval_records (external_id, record_version_id, approval_scope, decision, approved_by)
+VALUES ('KC-APPROVAL-THERMACORE-v1', '00000000-0000-0000-0000-000000002209', 'PRODUCTION', 'APPROVED', '00000000-0000-0000-0000-000000000200');
 
 -- TURBOCORE
-INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, created_at)
-VALUES ('00000000-0000-0000-0000-000000002110', 'KC-TECH-TURBOCORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', now());
+INSERT INTO knowledge_center.knowledge_records (id, external_id, record_type, lifecycle_status, production_eligible, owner_actor_id, current_version_id, created_at)
+VALUES ('00000000-0000-0000-0000-000000002110', 'KC-TECH-TURBOCORE-v1', 'TECHNOLOGY', 'APPROVED', true, '00000000-0000-0000-0000-000000000200', '00000000-0000-0000-0000-000000002210', now());
 INSERT INTO knowledge_center.knowledge_record_versions (id, record_id, version_number, schema_version, title, summary, content, content_hash, change_reason, created_by, created_at)
 VALUES ('00000000-0000-0000-0000-000000002210', '00000000-0000-0000-0000-000000002110', 1, '1.0',
   'TURBOCORE (TM) Turbine Fuel/Water Separation Technology',
@@ -191,4 +217,5 @@ VALUES ('00000000-0000-0000-0000-000000002210', '00000000-0000-0000-0000-0000000
     'sourceUrl', 'https://elimfilters.com/technologies/turbocore/'
   ),
   md5('turbocore-v1'), 'Seeded from reviewed /technologies/turbocore/ page copy (frontend/src/lib/turbocore-editorial.ts)', '00000000-0000-0000-0000-000000000200', now());
-UPDATE knowledge_center.knowledge_records SET current_version_id = '00000000-0000-0000-0000-000000002210' WHERE id = '00000000-0000-0000-0000-000000002110';
+INSERT INTO knowledge_center.approval_records (external_id, record_version_id, approval_scope, decision, approved_by)
+VALUES ('KC-APPROVAL-TURBOCORE-v1', '00000000-0000-0000-0000-000000002210', 'PRODUCTION', 'APPROVED', '00000000-0000-0000-0000-000000000200');
