@@ -294,7 +294,18 @@ app.use(express.json({
 }));
 app.use(express.urlencoded({ extended: false, limit: '100kb' }));
 const frontendStatic = express.static('frontend/out', { maxAge: '1h', etag: true, lastModified: true });
-const partSearchStatic = express.static('part-search', { maxAge: '1h', etag: true, lastModified: true });
+const partSearchStatic = express.static('part-search', {
+  maxAge: '1h',
+  etag: true,
+  lastModified: true,
+  setHeaders(res, filePath) {
+    if (filePath.endsWith('.html')) {
+      // Entry-point HTML must always revalidate so a deploy is visible on
+      // the next request instead of sitting behind a 1h client cache.
+      res.setHeader('Cache-Control', 'no-cache');
+    }
+  },
+});
 
 app.use((req, res, next) => {
   if (req.path.startsWith('/api')) return next();
