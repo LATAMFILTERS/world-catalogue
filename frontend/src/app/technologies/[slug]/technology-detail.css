@@ -12,70 +12,26 @@
 
 /* --------------------------------------------------------------------------
    TECHNOLOGY DETAIL VISUAL GOVERNANCE
-   One hero-title system, one breadcrumb system and one section-eyebrow system
-   for every canonical technology detail page. The visible hero typography is
-   rendered as real CSS text instead of depending on the crop inside *_final
-   artwork, so subtitles cannot be clipped and every technology uses the same
-   scale, alignment and responsive behavior.
    -------------------------------------------------------------------------- */
 
-.technology-detail-macrocore {
-  --technology-hero-title: "MACROCORE™";
-  --technology-hero-subtitle: "Engine Air System Protection";
-}
+.technology-detail-macrocore { --technology-hero-title: "MACROCORE™"; --technology-hero-subtitle: "Engine Air System Protection"; }
+.technology-detail-microkappa { --technology-hero-title: "MICROKAPPA™"; --technology-hero-subtitle: "Cabin Air Protection"; }
+.technology-detail-drycore { --technology-hero-title: "DRYCORE™"; --technology-hero-subtitle: "Compressed Air System Protection"; }
+.technology-detail-intekcore { --technology-hero-title: "INTEKCORE™"; --technology-hero-subtitle: "Air Intake System Protection"; }
+.technology-detail-syntapore { --technology-hero-title: "SYNTAPORE™"; --technology-hero-subtitle: "Fuel System Protection"; }
+.technology-detail-hydrocore { --technology-hero-title: "HYDROCORE™"; --technology-hero-subtitle: "Fuel / Water Separation"; }
+.technology-detail-syntrax { --technology-hero-title: "SYNTRAX™"; --technology-hero-subtitle: "Lubrication System Protection"; }
+.technology-detail-nanoforce { --technology-hero-title: "NANOFORCE™"; --technology-hero-subtitle: "Hydraulic System Protection"; }
+.technology-detail-thermacore { --technology-hero-title: "THERMACORE™"; --technology-hero-subtitle: "Thermal System Protection"; }
+.technology-detail-turbocore { --technology-hero-title: "TURBOCORE™"; --technology-hero-subtitle: "Turbine Fuel System Protection"; }
 
-.technology-detail-microkappa {
-  --technology-hero-title: "MICROKAPPA™";
-  --technology-hero-subtitle: "Cabin Air Protection";
-}
-
-.technology-detail-drycore {
-  --technology-hero-title: "DRYCORE™";
-  --technology-hero-subtitle: "Compressed Air System Protection";
-}
-
-.technology-detail-intekcore {
-  --technology-hero-title: "INTEKCORE™";
-  --technology-hero-subtitle: "Air Intake System Protection";
-}
-
-.technology-detail-syntapore {
-  --technology-hero-title: "SYNTAPORE™";
-  --technology-hero-subtitle: "Fuel System Protection";
-}
-
-.technology-detail-hydrocore {
-  --technology-hero-title: "HYDROCORE™";
-  --technology-hero-subtitle: "Fuel / Water Separation";
-}
-
-.technology-detail-syntrax {
-  --technology-hero-title: "SYNTRAX™";
-  --technology-hero-subtitle: "Lubrication System Protection";
-}
-
-.technology-detail-nanoforce {
-  --technology-hero-title: "NANOFORCE™";
-  --technology-hero-subtitle: "Hydraulic System Protection";
-}
-
-.technology-detail-thermacore {
-  --technology-hero-title: "THERMACORE™";
-  --technology-hero-subtitle: "Thermal System Protection";
-}
-
-.technology-detail-turbocore {
-  --technology-hero-title: "TURBOCORE™";
-  --technology-hero-subtitle: "Turbine Fuel System Protection";
-}
-
-/* Hero: hide the baked-in text lockup and use one governed typographic system. */
+/* Hero: hide baked-in lockup artwork and render one CSS-governed title system. */
 .technology-detail main > section:first-of-type[aria-labelledby] {
   position: relative;
   isolation: isolate;
   display: grid !important;
   place-items: center !important;
-  text-align: center;
+  text-align: center !important;
 }
 
 .technology-detail main > section:first-of-type[aria-labelledby] > img[src^="/assets/"][src$="_final.avif"] {
@@ -93,63 +49,88 @@
   transform: translateX(-50%);
   color: #fff;
   text-align: center;
-  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.42);
   pointer-events: none;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0 3px 5px rgba(0,0,0,.9), 0 8px 24px rgba(0,0,0,.72);
 }
 
 .technology-detail main > section:first-of-type[aria-labelledby]::before {
   content: var(--technology-hero-title, "ELIMFILTERS™");
   top: 50%;
-  transform: translate(-50%, -68%);
+  transform: translate(-50%, -74%);
   font-family: var(--font-display), "Titillium Web", Arial, sans-serif;
-  font-size: clamp(4.1rem, 5.65vw, 6.15rem);
+  font-size: clamp(4rem, 5.45vw, 6rem);
   font-weight: 800;
   font-style: italic;
-  line-height: 0.92;
-  letter-spacing: -0.045em;
+  line-height: .94;
+  letter-spacing: -.04em;
   white-space: nowrap;
 }
 
 .technology-detail main > section:first-of-type[aria-labelledby]::after {
   content: var(--technology-hero-subtitle, "Asset Protection System");
-  top: calc(50% + clamp(2.8rem, 4.35vw, 4.6rem));
+  top: calc(50% + clamp(2.6rem, 4vw, 4.25rem));
   font-family: var(--font-display), "Titillium Web", Arial, sans-serif;
-  font-size: clamp(1.55rem, 2.05vw, 2.15rem);
-  font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: 0.01em;
+  font-size: clamp(1.5rem, 1.95vw, 2.05rem);
+  font-weight: 650;
+  line-height: 1.16;
+  letter-spacing: .005em;
   white-space: nowrap;
 }
 
-/* Breadcrumb: identical geometry, typography and colors across technologies. */
+/* --------------------------------------------------------------------------
+   CANONICAL TECHNOLOGY BREADCRUMB
+   This deliberately overrides each StablePage's inline styles so every
+   technology has exactly the same visual hierarchy and spacing.
+   -------------------------------------------------------------------------- */
 .technology-detail main > nav[aria-label="Breadcrumb"] {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 56px !important;
+  margin: 0 !important;
   padding: 0 !important;
   background: #020202 !important;
-  border-top: 0 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
-}
-
-.technology-detail main > nav[aria-label="Breadcrumb"] > div {
-  box-sizing: border-box;
-  width: min(1180px, calc(100% - 2.3rem)) !important;
-  margin: 0 auto !important;
-  padding: 1rem 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.65rem !important;
-  flex-wrap: wrap !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,.12) !important;
+  color: rgba(255,255,255,.55) !important;
   font-family: var(--font-display), "Titillium Web", Arial, sans-serif !important;
-  font-size: 0.72rem !important;
-  font-weight: 600 !important;
-  line-height: 1.4 !important;
-  letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
 }
 
-.technology-detail main > nav[aria-label="Breadcrumb"] a {
-  color: rgba(255, 255, 255, 0.55) !important;
+.technology-detail main > nav[aria-label="Breadcrumb"] > div {
+  box-sizing: border-box !important;
+  width: min(1180px, calc(100% - 2.3rem)) !important;
+  max-width: 1180px !important;
+  min-height: 56px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: .65rem !important;
+  color: rgba(255,255,255,.55) !important;
+  font-family: var(--font-display), "Titillium Web", Arial, sans-serif !important;
+  font-size: .72rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.technology-detail main > nav[aria-label="Breadcrumb"] a,
+.technology-detail main > nav[aria-label="Breadcrumb"] a:visited {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: rgba(255,255,255,.55) !important;
+  font: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
   text-decoration: none !important;
+  text-transform: uppercase !important;
 }
 
 .technology-detail main > nav[aria-label="Breadcrumb"] a:hover,
@@ -158,7 +139,15 @@
 }
 
 .technology-detail main > nav[aria-label="Breadcrumb"] span {
-  color: rgba(255, 255, 255, 0.58) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: rgba(255,255,255,.58) !important;
+  font: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: uppercase !important;
 }
 
 .technology-detail main > nav[aria-label="Breadcrumb"] span:last-child {
@@ -166,15 +155,20 @@
   font-weight: 700 !important;
 }
 
-/* The first content eyebrow is always FILTRATION TECHNOLOGY. */
+/* Normalize accidental compact/no-space variants such as HOME→TECHNOLOGIES. */
+.technology-detail main > nav[aria-label="Breadcrumb"] > div > * {
+  flex: 0 0 auto !important;
+}
+
+/* Canonical FILTRATION TECHNOLOGY eyebrow */
 .technology-detail main > section:nth-of-type(2) > div > p:first-child {
-  margin: 0 0 0.85rem !important;
+  margin: 0 0 .85rem !important;
   color: #fff12d !important;
   font-family: var(--font-display), "Titillium Web", Arial, sans-serif !important;
-  font-size: 0.72rem !important;
+  font-size: .72rem !important;
   font-weight: 700 !important;
   line-height: 1.35 !important;
-  letter-spacing: 0.2em !important;
+  letter-spacing: .2em !important;
   text-transform: uppercase !important;
 }
 
@@ -185,18 +179,24 @@
   }
 
   .technology-detail main > section:first-of-type[aria-labelledby]::before {
-    font-size: clamp(3.35rem, 7.25vw, 5.15rem);
+    font-size: clamp(3.2rem, 7vw, 5rem);
   }
 
   .technology-detail main > section:first-of-type[aria-labelledby]::after {
-    top: calc(50% + clamp(2.5rem, 5.3vw, 3.9rem));
+    top: calc(50% + clamp(2.35rem, 5vw, 3.7rem));
     width: min(900px, 88vw);
-    font-size: clamp(1.35rem, 2.75vw, 1.9rem);
+    font-size: clamp(1.28rem, 2.65vw, 1.82rem);
+  }
+
+  .technology-detail main > nav[aria-label="Breadcrumb"],
+  .technology-detail main > nav[aria-label="Breadcrumb"] > div {
+    min-height: 52px !important;
   }
 
   .technology-detail main > nav[aria-label="Breadcrumb"] > div {
     width: min(1180px, calc(100% - 3rem)) !important;
-    font-size: 0.7rem !important;
+    gap: .55rem !important;
+    font-size: .69rem !important;
   }
 }
 
@@ -215,8 +215,8 @@
     top: 49%;
     transform: translate(-50%, -72%);
     font-size: clamp(2.15rem, 10.2vw, 3.15rem);
-    line-height: 0.94;
-    letter-spacing: -0.035em;
+    line-height: .94;
+    letter-spacing: -.035em;
   }
 
   .technology-detail main > section:first-of-type[aria-labelledby]::after {
@@ -226,18 +226,23 @@
     white-space: normal;
   }
 
+  .technology-detail main > nav[aria-label="Breadcrumb"],
+  .technology-detail main > nav[aria-label="Breadcrumb"] > div {
+    min-height: 48px !important;
+  }
+
   .technology-detail main > nav[aria-label="Breadcrumb"] > div {
     width: calc(100% - 2rem) !important;
-    padding: 0.85rem 0 !important;
-    gap: 0.4rem !important;
-    font-size: 0.64rem !important;
+    padding: .65rem 0 !important;
+    gap: .38rem !important;
+    font-size: .64rem !important;
     line-height: 1.45 !important;
-    letter-spacing: 0.05em !important;
+    letter-spacing: .05em !important;
   }
 
   .technology-detail main > section:nth-of-type(2) > div > p:first-child {
-    margin-bottom: 0.8rem !important;
-    font-size: 0.66rem !important;
-    letter-spacing: 0.16em !important;
+    margin-bottom: .8rem !important;
+    font-size: .66rem !important;
+    letter-spacing: .16em !important;
   }
 }
