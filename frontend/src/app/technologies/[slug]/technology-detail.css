@@ -78,6 +78,28 @@
   white-space: nowrap;
 }
 
+/* NANOFORCE and THERMACORE have unusually bright/busy image centers.
+   Keep their titles on the same typographic scale, but move the lockup into a
+   cleaner image zone and strengthen edge contrast so the subtitle stays legible. */
+.technology-detail-nanoforce main > section:first-of-type[aria-labelledby]::before,
+.technology-detail-thermacore main > section:first-of-type[aria-labelledby]::before {
+  top: 43.5%;
+  -webkit-text-stroke: .55px rgba(0,0,0,.52);
+  text-shadow: 0 2px 4px rgba(0,0,0,.98), 0 7px 22px rgba(0,0,0,.86);
+}
+
+.technology-detail-nanoforce main > section:first-of-type[aria-labelledby]::after,
+.technology-detail-thermacore main > section:first-of-type[aria-labelledby]::after {
+  top: calc(43.5% + clamp(3.7rem, 5.05vw, 5.3rem));
+  width: min(760px, 78vw);
+  padding: .08em .4em .14em;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.16);
+  border-radius: 2px;
+  -webkit-text-stroke: .35px rgba(0,0,0,.55);
+  text-shadow: 0 2px 4px rgba(0,0,0,1), 0 6px 18px rgba(0,0,0,.9);
+}
+
 /* --------------------------------------------------------------------------
    CANONICAL TECHNOLOGY BREADCRUMB
    This deliberately overrides each StablePage's inline styles so every
@@ -188,6 +210,17 @@
     font-size: clamp(1.28rem, 2.65vw, 1.82rem);
   }
 
+  .technology-detail-nanoforce main > section:first-of-type[aria-labelledby]::before,
+  .technology-detail-thermacore main > section:first-of-type[aria-labelledby]::before {
+    top: 44%;
+  }
+
+  .technology-detail-nanoforce main > section:first-of-type[aria-labelledby]::after,
+  .technology-detail-thermacore main > section:first-of-type[aria-labelledby]::after {
+    top: calc(44% + clamp(3.25rem, 6.3vw, 4.5rem));
+    width: min(720px, 82vw);
+  }
+
   .technology-detail main > nav[aria-label="Breadcrumb"],
   .technology-detail main > nav[aria-label="Breadcrumb"] > div {
     min-height: 52px !important;
@@ -224,6 +257,18 @@
     font-size: clamp(1.02rem, 4.6vw, 1.35rem);
     line-height: 1.18;
     white-space: normal;
+  }
+
+  .technology-detail-nanoforce main > section:first-of-type[aria-labelledby]::before,
+  .technology-detail-thermacore main > section:first-of-type[aria-labelledby]::before {
+    top: 45.5%;
+  }
+
+  .technology-detail-nanoforce main > section:first-of-type[aria-labelledby]::after,
+  .technology-detail-thermacore main > section:first-of-type[aria-labelledby]::after {
+    top: calc(45.5% + clamp(2.55rem, 11vw, 3.35rem));
+    width: calc(100% - 2.5rem);
+    padding: .1em .32em .16em;
   }
 
   .technology-detail main > nav[aria-label="Breadcrumb"],
