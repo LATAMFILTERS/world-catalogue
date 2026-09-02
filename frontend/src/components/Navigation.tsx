@@ -33,11 +33,21 @@ export function Navigation() {
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: 'clamp(0.65rem, 2.4vw, 1.4rem) clamp(1rem, 4vw, 2rem) clamp(0.5rem, 1.7vw, 0.9rem)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} role="banner">
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }}>
-          <Link href="/" aria-label="ELIMFILTERS — home" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none', gap: '2px' }}>
+          <Link href="/" aria-label="ELIMFILTERS — home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             {logoError ? (
               <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>ELIMFILTERS</span>
             ) : (
-              <img src="/assets/elimfilters-logo-white.png" alt="ELIMFILTERS — Total Asset Protection" className="nav-logo" width={1216} height={759} onError={() => setLogoError(true)} style={{ objectFit: 'contain', height: 'clamp(36px, 7.8vw, 58px)', width: 'auto', display: 'block' }} />
+              <span className="nav-logo-frame" style={{ position: 'relative', display: 'block', width: 'clamp(150px, 12vw, 180px)', height: 'clamp(40px, 4vw, 52px)', overflow: 'hidden', flexShrink: 0 }}>
+                <img
+                  src="/assets/elimfilters-logo-white.png"
+                  alt="ELIMFILTERS — Total Asset Protection"
+                  className="nav-logo"
+                  width={1216}
+                  height={759}
+                  onError={() => setLogoError(true)}
+                  style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)', width: '100%', height: 'auto', display: 'block', maxWidth: 'none' }}
+                />
+              </span>
             )}
           </Link>
         </motion.div>
@@ -89,7 +99,11 @@ export function Navigation() {
       </AnimatePresence>
 
       <style>{`
-        @media (max-width: 768px) {.hidden-mobile{display:none!important}.show-mobile{display:flex!important}}
+        @media (max-width: 768px) {
+          .hidden-mobile{display:none!important}
+          .show-mobile{display:flex!important}
+          .nav-logo-frame{width:140px!important;height:42px!important}
+        }
         @media (min-width: 769px) {.show-mobile{display:none!important}}
       `}</style>
     </nav>
