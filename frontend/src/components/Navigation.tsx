@@ -98,7 +98,6 @@ export function Navigation() {
         @media (max-width: 768px) {
           .hidden-mobile{display:none!important}
           .show-mobile{display:flex!important}
-          .nav-logo{width:150px!important}
         }
         @media (min-width: 769px) {.show-mobile{display:none!important}}
       `}</style>
