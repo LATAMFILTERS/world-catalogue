@@ -82,8 +82,18 @@ export async function ensureRuntimeSchema(): Promise<void> {
   }
 }
 
+// Generic question words ("what is X used for", "tell me about X") almost
+// never appear verbatim in formal technical record text, so counting them
+// toward the confidence denominator in decide() silently sank real matches
+// below the 0.72 answer threshold -- confirmed live: a query naming an
+// actual seeded technology by name scored ~0.4 (2 of 5 terms) because
+// "what"/"used"/"for" never matched anything, even though "syntrax" and
+// "technology" both did. Stripped before scoring so confidence reflects
+// how much of the *substantive* query matched, not filler words.
+const STOPWORDS = new Set(['the','and','for','are','but','not','you','all','can','has','have','had','was','were','been','being','this','that','these','those','what','which','who','whom','whose','when','where','why','how','tell','about','used','use','uses','using','does','doing','done','with','from','into','onto','than','then','them','they','their','there','here','some','any','more','most','much','many','also','just','only','very','difference','different','differences','between','versus','compare','comparison','ser','uso','usar','usado','para','sobre','que','cual','como','donde','cuando','esta','este','esto','sirve','diferencia','entre']);
+
 function tokens(text: string): string[] {
-  return [...new Set(text.toLowerCase().replace(/[^a-z0-9áéíóúñü\s-]/gi, ' ').split(/\s+/).filter(x => x.length > 2))].slice(0, 24);
+  return [...new Set(text.toLowerCase().replace(/[^a-z0-9áéíóúñü\s-]/gi, ' ').split(/\s+/).filter(x => x.length > 2 && !STOPWORDS.has(x)))].slice(0, 24);
 }
 
 async function retrieve(query: string): Promise<RetrievedRecord[]> {
