@@ -152,6 +152,7 @@ function decide(records: RetrievedRecord[], request: ReasoningRequest): { action
   const combinedText = topCandidates.map(r => `${r.title} ${r.summary ?? ''} ${JSON.stringify(r.content ?? '')}`).join(' ').toLowerCase();
   const unionConfidence = queryTerms.length ? queryTerms.filter(t => combinedText.includes(t)).length / queryTerms.length : 0;
   const confidence = Math.max(records[0].confidence, unionConfidence);
+  console.info('[decide-diag]', JSON.stringify({ query: request.query, queryTerms, recordCount: records.length, recordTitles: records.map(r=>r.title), recordConfidences: records.map(r=>r.confidence), topConfidence: records[0].confidence, unionConfidence, finalConfidence: confidence, contradictions }));
   if (contradictions) return { action:'VERIFY', confidence, reason:'Approved evidence contains a contradiction.' };
   if (request.audience === 'CUSTOMER' && confidence < minProduction) return { action:'ESCALATE', confidence, reason:'Confidence is below the production response threshold.' };
   if (confidence < minAnswer) return { action:'VERIFY', confidence, reason:'More asset or measurement evidence is required.' };
