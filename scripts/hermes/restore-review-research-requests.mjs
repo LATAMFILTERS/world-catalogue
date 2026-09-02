@@ -38,8 +38,11 @@ let restored = 0;
 for (const name of files) {
   const raw = runGit(['show', `${remote}/${stateBranch}:state/research-requests/${name}`]);
   const candidate = JSON.parse(raw);
+  const instruction = String(candidate.research_instruction || '').trim();
   if (candidate.workflow_status !== 'NEEDS_RESEARCH') continue;
-  if (!String(candidate.research_instruction || '').trim()) continue;
+  if (!instruction) continue;
+  const priorSnippet = String(candidate.extracted_snippet || '').trim();
+  candidate.extracted_snippet = [priorSnippet, `VICTOR REVIEW INSTRUCTION: ${instruction}`].filter(Boolean).join(' | ');
   const target = path.join(outputDir, name);
   fs.writeFileSync(target, JSON.stringify(candidate, null, 2) + '\n', 'utf8');
   restored += 1;
