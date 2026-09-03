@@ -8,6 +8,14 @@ const SEO_INTENT_OVERRIDES: Record<string, { title: string; description: string 
     title: 'Beta Ratio Definition — Filtration Glossary | ELIMFILTERS',
     description: 'Definition of Beta ratio (β) as filtration terminology; use the Engineering article for measurement, interpretation, and application guidance.',
   },
+  'cavitation': {
+    title: 'Cavitation Definition — Hydraulic Glossary | ELIMFILTERS',
+    description: 'Definition of cavitation as a hydraulic-fluid phenomenon; use the Problem Graph for failure progression, diagnosis, and mitigation context.',
+  },
+  'element-collapse': {
+    title: 'Element Collapse Definition — Filtration Glossary | ELIMFILTERS',
+    description: 'Definition of filter element collapse as a structural filtration term; use the Problem Graph for failure causes, consequences, and mitigation.',
+  },
   'iso-cleanliness-code': {
     title: 'ISO 4406 Cleanliness Code Explained — Glossary | ELIMFILTERS',
     description: 'Definition of the ISO 4406 cleanliness code and what its three-number particle contamination classification means in fluid cleanliness terminology.',
