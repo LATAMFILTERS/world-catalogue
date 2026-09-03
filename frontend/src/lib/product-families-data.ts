@@ -65,7 +65,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     key: 'secondary-fuel', name: 'Secondary Fuel', slug: 'secondary-fuel', dutyClass: 'HD+LD', hdPrefix: 'EF9', ldPrefix: 'EF3',
     purpose: 'Secondary fuel filters provide final-stage particulate control immediately upstream of the high-pressure pump and injectors.',
     engineering: 'SYNTAPORE™ fine filtration controls the critical particle population that threatens precision injection clearances.',
-    construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/fuelfilter-hero.avif',
+    construction: pending, hdProducts: [pending], ldProducts: [pending], heroImage: '/images/hero-syntapore.avif',
     ...relationships('secondary-fuel'),
   },
   'fuel-water-separators': {
@@ -107,7 +107,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
     key: 'fuel-turbine', name: 'Turbine Fuel Separation', slug: 'fuel-turbine', dutyClass: 'HD', hdPrefix: 'ET9', ldPrefix: null,
     purpose: 'Turbine Series FH and FG fuel-separation housings and dedicated replacement elements for approved turbine-style fuel/water separation architecture.',
     engineering: 'TURBOCORE™ exclusively governs the turbine-style FH/FG housing and element architecture, including approved 900FH, 902FH, 1000FH, 1002FH and dedicated 2010/2020/2040-series replacement configurations. HYDROCORE™ remains reserved for standard non-turbine fuel/water separators.',
-    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: '/images/fuel-turbine-hero.avif',
+    construction: pending, hdProducts: [pending], ldProducts: [], heroImage: '/images/fuellseparator-hero.avif',
     ...relationships('fuel-turbine'),
   },
   'air-dryer-filters': {
