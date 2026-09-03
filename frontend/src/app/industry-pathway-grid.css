@@ -1,0 +1,20 @@
+/* Industry pages: force the "operating exposure -> protection system -> technology"
+   pathway cards onto a uniform 3-column grid on desktop, instead of the previous
+   auto-fit sizing (which produced an inconsistent number of columns per page —
+   e.g. 4 columns on Trucks & Fleets vs 3 on most other industry pages — leaving an
+   uneven, lopsided last row). Collapses to 2 then 1 column on narrower screens. */
+.industry-pathway-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+@media (max-width: 860px) {
+  .industry-pathway-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .industry-pathway-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
