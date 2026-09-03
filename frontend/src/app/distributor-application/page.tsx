@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect, useState, type CSSProperties } from 'react';
+import { PageHeader } from '@/components/PageHeader';
 
 const PROGRAM_SUPPORT = [
   {
@@ -60,9 +60,10 @@ const schemaBreadcrumb = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://elimfilters.com/contact/' },
     {
       '@type': 'ListItem',
-      position: 2,
+      position: 3,
       name: 'Country Distributor Application',
       item: 'https://elimfilters.com/distributor-application/',
     },
@@ -173,9 +174,7 @@ export default function DistributorApplication() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaService) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }} />
 
-      <Link href="/" style={{ position: 'fixed', top: '1rem', right: '1rem', zIndex: 100, border: '1px solid rgba(255,241,45,0.45)', padding: '0.6rem 1rem', color: '#FFF12D', background: 'rgba(0,0,0,0.88)', textDecoration: 'none', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.16em' }}>
-        HOME
-      </Link>
+      <PageHeader breadcrumbs={[{ label: 'Contact', href: '/contact/' }]} currentPage="Country Distributor Application" />
 
       <section style={{ minHeight: '92vh', display: 'flex', alignItems: 'center', padding: '7rem clamp(1.25rem, 6vw, 6rem)', background: 'radial-gradient(circle at 85% 15%, rgba(255,241,45,0.23), transparent 34%), linear-gradient(135deg, #050505 0%, #000 62%)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%' }}>
