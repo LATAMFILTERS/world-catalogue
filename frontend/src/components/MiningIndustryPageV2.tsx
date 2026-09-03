@@ -111,7 +111,7 @@ export function MiningIndustryPageV2() {
   };
 
   return (
-    <main id="main-content" style={main}>
+    <main id="main-content" className="mining-industry-page" style={main}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <PageHeader currentPage="Mining" />
 
