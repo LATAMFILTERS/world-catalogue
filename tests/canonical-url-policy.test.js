@@ -113,11 +113,12 @@ test('technology portfolio and Knowledge Center definitions share one entity ID 
   assert.match(knowledge, /alternates:\s*\{ canonical: url \}/);
 });
 
-test('AI sitemap contains both portfolio and technical definitions for all nine core technologies', () => {
+test('AI sitemap contains both portfolio and technical definitions for all ten core technologies', () => {
   const xml = read('frontend/public/sitemap-ai.xml');
-  const slugs = ['macrocore', 'microkappa', 'drycore', 'intekcore', 'syntapore', 'hydrocore', 'syntrax', 'nanoforce', 'thermacore'];
+  const slugs = ['macrocore', 'microkappa', 'drycore', 'intekcore', 'syntapore', 'hydrocore', 'turbocore', 'syntrax', 'nanoforce', 'thermacore'];
   for (const slug of slugs) {
     assert.ok(xml.includes(`https://elimfilters.com/technologies/${slug}/`), `missing portfolio URL for ${slug}`);
     assert.ok(xml.includes(`https://elimfilters.com/knowledge-center/technologies/${slug}/`), `missing Knowledge Center URL for ${slug}`);
   }
+  assert.doesNotMatch(xml, /knowledge-center\/systems\/cabin-air-protection\//);
 });
