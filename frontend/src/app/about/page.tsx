@@ -19,7 +19,7 @@ export default function AboutPage() {
     cards: [
       {
         title: 'Quiénes Somos',
-        body: 'Filtración industrial diseñada alrededor del activo: cinco sistemas de protección, nueve tecnologías propietarias y un proceso de validación basado en aplicación real.',
+        body: 'Filtración industrial diseñada alrededor del activo: cinco sistemas de protección, diez tecnologías propietarias y un proceso de validación basado en aplicación real.',
         href: '/about/who-we-are',
       },
       {
@@ -42,7 +42,7 @@ export default function AboutPage() {
     cards: [
       {
         title: 'Who We Are',
-        body: 'Industrial filtration engineered around the asset: five protection systems, nine proprietary technologies, and an application-based validation process.',
+        body: 'Industrial filtration engineered around the asset: five protection systems, ten proprietary technologies, and an application-based validation process.',
         href: '/about/who-we-are',
       },
       {
