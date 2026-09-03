@@ -83,3 +83,20 @@ if (html !== before) {
 } else {
   console.log('[sanitize-public-html] No public HTML sanitization needed');
 }
+
+// The root not-found boundary is embedded while Next.js renders valid static pages,
+// so document metadata declared there can leak into every page. Normalize only the
+// exported 404 document after the build instead.
+const notFoundPath = path.join(outDir, '404.html');
+if (fs.existsSync(notFoundPath)) {
+  let notFoundHtml = fs.readFileSync(notFoundPath, 'utf8');
+  notFoundHtml = notFoundHtml
+    .replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi, '')
+    .replace(/<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/gi, '')
+    .replace(
+      /<\/head>/i,
+      '<title>Page Not Found | ELIMFILTERS</title><meta name="robots" content="noindex, nofollow"></head>'
+    );
+  fs.writeFileSync(notFoundPath, notFoundHtml, 'utf8');
+  console.log('[sanitize-public-html] Normalized 404 title and robots metadata');
+}
