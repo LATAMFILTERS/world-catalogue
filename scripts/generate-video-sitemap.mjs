@@ -109,7 +109,7 @@ function generateVideoSitemap() {
       <video:thumbnail_loc>${BASE_URL}${video.thumbnail}</video:thumbnail_loc>
       <video:title>${escapeXml(video.title)}</video:title>
       <video:description>${escapeXml(video.description)}</video:description>
-      <video:content_loc>${BASE_URL}/images/${escapeXml(video.id === 'moleculas' ? 'moleculas.mp4' : ({ agriculture: 'Agriculture-2.mp4', automotive: 'Autos-Vin4.mp4', mining: 'Minning4.mp4', construction: 'construction-2.mp4', 'trucks-fleets': 'Trucks&amp;Feel-1.mp4', railway: 'Train-2.mp4', marine: 'Marino-1.mp4', manufacturing: 'Manufacture-1.mp4', 'power-generation': 'Power-1.mp4', 'oil-gas': 'Petro&amp;Gas-1.mp4', 'bus-coach': 'buses-2.mp4' })[video.id])}</video:content_loc>
+      <video:content_loc>${BASE_URL}/images/${escapeXml(video.id === 'moleculas' ? 'moleculas.mp4' : ({ agriculture: 'Agriculture-2.mp4', automotive: 'Autos-Vin4.mp4', mining: 'Minning4.mp4', construction: 'construction-2.mp4', 'trucks-fleets': 'Trucks&Feel-1.mp4', railway: 'Train-2.mp4', marine: 'Marino-1.mp4', manufacturing: 'Manufacture-1.mp4', 'power-generation': 'Power-1.mp4', 'oil-gas': 'Petro&Gas-1.mp4', 'bus-coach': 'buses-2.mp4' })[video.id])}</video:content_loc>
     </video:video>
   </url>`
   ).join('');
