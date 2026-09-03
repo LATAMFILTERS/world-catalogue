@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "channel": "LINKEDIN",
+  "purpose": "Transform validated ELIMFILTERS knowledge and approved intelligence into varied, technically credible LinkedIn content without repetitive templating or unsupported claims.",
+  "source_of_truth": [
+    "Knowledge Center canonical content",
+    "approved HERMES intelligence candidates",
+    "ELIMFILTERS technology/system/industry canonical pages",
+    "approved company and leadership facts"
+  ],
+  "editorial_principle": "CONSISTENT_BRAND_VARIABLE_NARRATIVE",
+  "mandatory_rules": {
+    "all_technical_claims_must_be_supported": true,
+    "invented_metrics_or_percentages_forbidden": true,
+    "competitor_names_public_by_default": false,
+    "competitor_proprietary_technology_public_by_default": false,
+    "technology_mention_required_in_every_post": false,
+    "cta_required_in_every_post": false,
+    "knowledge_center_link_required_in_every_post": false,
+    "same_narrative_on_consecutive_posts_forbidden": true,
+    "same_opening_pattern_on_consecutive_posts_forbidden": true,
+    "approval_required_before_publish": true,
+    "approval_authority": "Victor Abreu"
+  },
+  "content_mix_percent": {
+    "TECHNICAL_EDUCATION_ASSET_PROTECTION": 30,
+    "APPLICATIONS_INDUSTRIES": 20,
+    "ELIMFILTERS_TECHNOLOGIES": 15,
+    "RELIABILITY_MAINTENANCE": 10,
+    "INDUSTRY_INTELLIGENCE": 10,
+    "CASE_EVIDENCE": 5,
+    "BRAND_LEADERSHIP": 5,
+    "CONVERSATION_ENGAGEMENT": 5
+  },
+  "narrative_formats": [
+    "QUESTION_LED",
+    "FIELD_SCENARIO",
+    "TECHNICAL_EXPLAINER",
+    "DATA_INTERPRETATION",
+    "MYTH_VS_FACT",
+    "COMMON_MISTAKE",
+    "OPERATOR_PERSPECTIVE",
+    "MAINTENANCE_PERSPECTIVE",
+    "ENGINEERING_BREAKDOWN",
+    "CASE_STUDY",
+    "WHAT_THIS_MEANS",
+    "INDUSTRY_SIGNAL",
+    "EVENT_OR_WEBINAR",
+    "TECHNOLOGY_SPOTLIGHT",
+    "BEHIND_THE_TECHNOLOGY",
+    "LEADERSHIP_POINT_OF_VIEW",
+    "DISCUSSION_PROMPT",
+    "VISUAL_FIRST",
+    "SHORT_OBSERVATION",
+    "PROBLEM_SOLUTION",
+    "CHECKLIST_OR_FIELD_GUIDE"
+  ],
+  "objectives": [
+    "BUILD_TECHNICAL_AUTHORITY",
+    "EDUCATE",
+    "GENERATE_CONVERSATION",
+    "DRIVE_KNOWLEDGE_CENTER_TRAFFIC",
+    "CONNECT_TO_APPLICATION",
+    "CONNECT_TO_TECHNOLOGY",
+    "SUPPORT_ASSET_PROTECTION_POSITIONING",
+    "SUPPORT_DISTRIBUTOR_OR_COMMERCIAL_DISCOVERY",
+    "AMPLIFY_VALIDATED_INDUSTRY_INTELLIGENCE"
+  ],
+  "audiences": [
+    "maintenance managers",
+    "fleet managers",
+    "reliability professionals",
+    "engineers",
+    "procurement and parts professionals",
+    "distributors",
+    "equipment owners",
+    "technical decision makers",
+    "industrial operators"
+  ],
+  "cta_modes": [
+    "NONE",
+    "READ_KNOWLEDGE_CENTER",
+    "EXPLORE_TECHNOLOGY",
+    "EXPLORE_SYSTEM",
+    "EXPLORE_INDUSTRY",
+    "SEARCH_PARTS",
+    "CONTACT_ELIMFILTERS",
+    "DISCUSSION_QUESTION"
+  ],
+  "editorial_selection_flow": [
+    "SELECT_VALIDATED_TOPIC",
+    "DEFINE_OBJECTIVE",
+    "SELECT_AUDIENCE",
+    "SELECT_NARRATIVE_FORMAT_NOT_RECENTLY_USED",
+    "SET_TECHNICAL_DEPTH",
+    "DECIDE_IF_ELIMFILTERS_TECHNOLOGY_IS_RELEVANT",
+    "DECIDE_CTA_OR_NO_CTA",
+    "SELECT_VISUAL_ASSET_TYPE",
+    "SELECT_DESTINATION_URL_IF_NEEDED",
+    "VERIFY_EVIDENCE_AND_PUBLIC_SAFETY",
+    "CREATE_DRAFT",
+    "CHECK_RECENT_POSTS_FOR_REPETITION",
+    "SUBMIT_FOR_VICTOR_APPROVAL"
+  ],
+  "knowledge_center_queue_states": [
+    "READY_NOW",
+    "NEEDS_REWRITE",
+    "NEEDS_EVIDENCE",
+    "INTERNAL_ONLY"
+  ],
+  "anti_repetition": {
+    "recent_post_window": 6,
+    "avoid_same_narrative_within_window": true,
+    "avoid_same_hook_within_window": true,
+    "avoid_same_cta_within_last_n_posts": 2,
+    "avoid_forced_brand_or_technology_mentions": true,
+    "prefer_topic_and_audience_rotation": true
+  },
+  "linking_policy": {
+    "use_deep_link_instead_of_homepage_when_relevant": true,
+    "preferred_destinations": [
+      "Knowledge Center article",
+      "technology page",
+      "system page",
+      "industry/application page",
+      "Part Search",
+      "contact/distributor route"
+    ],
+    "utm_required_when_external_social_post_links_to_elimfilters": true,
+    "utm_source": "linkedin",
+    "utm_medium": "organic-social"
+  },
+  "governance": {
+    "hermes_role": "RESEARCH_VALIDATE_CLASSIFY_AND_PROPOSE",
+    "community_manager_role": "SELECT_NARRATIVE_MIX_AND_ADAPT_FOR_CHANNEL",
+    "knowledge_center_role": "CANONICAL_TECHNICAL_SOURCE",
+    "linkedin_role": "DISTRIBUTION_AND_CONVERSATION_CHANNEL",
+    "automatic_publish": false,
+    "new_paid_tools_allowed": false,
+    "new_subscription_cost": 0
+  }
+}

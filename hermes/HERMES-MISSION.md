@@ -38,6 +38,72 @@ Operational shorthand:
 
 This does not require a paid social-monitoring platform. The weekly mission-driven search is expected to discover publicly reachable LinkedIn signals and the primary sources behind them using the existing HERMES research stack.
 
+## LinkedIn editorial rule
+
+ELIMFILTERS LinkedIn content must be governed as a professional industrial community-management program, not as a repeated post template.
+
+The canonical source for this policy is `hermes/config/social-editorial-policy.json`.
+
+HERMES may propose social content from validated Knowledge Center material, approved intelligence, technology/system/industry pages and approved company facts. The editorial layer must vary the narrative according to the topic, objective and audience.
+
+The content-selection sequence is:
+
+`VALIDATED TOPIC`
+
+`→ OBJECTIVE`
+
+`→ AUDIENCE`
+
+`→ NARRATIVE FORMAT`
+
+`→ TECHNICAL DEPTH`
+
+`→ TECHNOLOGY MENTION IF RELEVANT`
+
+`→ CTA OR NO CTA`
+
+`→ VISUAL ASSET TYPE`
+
+`→ DESTINATION URL IF NEEDED`
+
+`→ EVIDENCE / PUBLIC-SAFETY CHECK`
+
+`→ REPETITION CHECK`
+
+`→ VICTOR APPROVAL`
+
+LinkedIn posts are not required to mention an ELIMFILTERS technology, contain a CTA, or link to the Knowledge Center. Those choices depend on the editorial objective. Some posts educate, some build technical authority, some create conversation, some interpret industry developments, some drive traffic, and some connect directly to an ELIMFILTERS technology or application.
+
+Narrative formats must rotate. Examples include question-led posts, field scenarios, technical explainers, data interpretation, myths/facts, common mistakes, operator perspectives, engineering breakdowns, case studies, industry signals, technology spotlights, leadership viewpoints, visual-first posts and discussion prompts.
+
+The same narrative structure or opening pattern must not be used on consecutive posts. Recent content must be checked for repetition before a draft is submitted for approval.
+
+The target editorial mix is:
+
+- 30% technical education and asset protection.
+- 20% applications and industries.
+- 15% ELIMFILTERS technologies.
+- 10% reliability and maintenance.
+- 10% industry intelligence.
+- 5% cases/evidence.
+- 5% brand/leadership.
+- 5% conversation/engagement.
+
+These percentages are portfolio guidance, not a rigid weekly quota. Technical relevance and content quality take priority over forcing a category.
+
+Knowledge Center material intended for social reuse is classified as:
+
+- `READY_NOW`
+- `NEEDS_REWRITE`
+- `NEEDS_EVIDENCE`
+- `INTERNAL_ONLY`
+
+No unsupported metric, percentage, performance claim, cross-reference, specification or technical statement may be created to make a post more persuasive.
+
+When a LinkedIn post links to ELIMFILTERS, a relevant deep link is preferred over the homepage. Organic LinkedIn links must use UTM attribution with `utm_source=linkedin` and `utm_medium=organic-social`.
+
+No paid social-management platform, additional subscription or advertising spend is required by this policy.
+
 ## Knowledge rule: never duplicate
 
 Every verified finding must be compared against ELIMFILTERS existing public Knowledge Center / knowledge-system content before it becomes a review candidate.
