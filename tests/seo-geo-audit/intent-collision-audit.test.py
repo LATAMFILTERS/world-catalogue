@@ -1,6 +1,7 @@
 import csv
 import importlib.util
 from pathlib import Path
+from urllib.parse import urlparse
 
 SCRIPT = Path('scripts/seo-geo-audit/detect_intent_collisions.py')
 spec = importlib.util.spec_from_file_location('intent_collision', SCRIPT)
@@ -10,8 +11,11 @@ spec.loader.exec_module(module)
 
 
 def row(url, title, description='Technical reference', indexable='true'):
+    path = urlparse(url).path
     return {
         'url': url,
+        'path': path,
+        'family': module.family_for(path),
         'status': '200',
         'indexable_html': indexable,
         'title': title,
@@ -47,5 +51,6 @@ def test_nonindexable_aliases_are_excluded_from_input(tmp_path):
     with path.open('w', newline='', encoding='utf-8') as handle:
         writer = csv.DictWriter(handle, fieldnames=fields)
         writer.writeheader()
-        writer.writerow(row('https://elimfilters.com/knowledge-center/engineering/iso-4406/', 'ISO 4406', indexable='false'))
+        raw = row('https://elimfilters.com/knowledge-center/engineering/iso-4406/', 'ISO 4406', indexable='false')
+        writer.writerow({key: raw[key] for key in fields})
     assert module.load_rows(path) == []
