@@ -125,20 +125,51 @@ async function detectLangAsync(): Promise<string> {
   }
 }
 
-function detectMessageLang(text: string): string | null {
-  const value = text.trim().toLowerCase();
-  if (!value) return null;
-  if (/[¿¡ñáéíóúü]/.test(value)
-    || /\b(cu[aá]ntos?|filtros?|aceite|cami[oó]n|motor|necesito|tengo|busco|para|con|usa|utiliza|lleva|ayuda)\b/i.test(value)) {
-    return "es";
-  }
-  if (/[ãõç]/.test(value) || /\b(quantos?|filtros?|caminh[aã]o|preciso|tenho|para|com|usa)\b/i.test(value)) {
-    return "pt";
-  }
-  if (/[àâçéèêëîïôùûüÿœ]/.test(value) || /\b(combien|filtres?|camion|moteur|besoin|avec|pour)\b/i.test(value)) {
-    return "fr";
-  }
+// Non-Latin scripts are unambiguous, so they resolve the language outright
+// with no keyword scoring needed.
+const PERSIAN_LETTERS = /[پچژگ]/; // pe/che/zhe/gaf
+const PERSIAN_WORDS = /(سلام|نیاز|می‌?باشد|های|برای|هستم|دارم|کنید|لطفا|چطور|چگونه|خیلی|ممنون|متشکرم)/;
+
+function detectByScript(text: string): string | null {
+  if (/[Ѐ-ӿ]/.test(text)) return "ru";
+  if (/[぀-ヿ]/.test(text)) return "ja";
+  if (/[一-鿿]/.test(text)) return "zh";
+  if (PERSIAN_LETTERS.test(text)) return "fa";
+  if (/[؀-ۿ]/.test(text)) return PERSIAN_WORDS.test(text) ? "fa" : "ar";
   return null;
+}
+
+// Same keyword/diacritic approach as the backend's detectLanguage (see
+// lib/bot-protocol-channel-format.js) so the widget's own welcome text and
+// placeholder update immediately, ahead of the round trip -- this is what
+// makes the reply language follow how the customer actually starts talking,
+// not IP geolocation.
+const LATIN_LANGUAGE_PATTERNS: Record<string, RegExp> = {
+  es: /[¿¡ñ]|\b(cu[aá]ntos?|filtro|filtros|aceite|cami[oó]n|motor|necesito|tengo|busco|para|con|usa|utiliza|lleva|ayuda|d[oó]nde|comprar|distribuidor|equivalente|repuesto|hola|gracias)\b/gi,
+  pt: /[ãõç]|\b(quantos?|filtro|filtros|caminh[aã]o|preciso|tenho|onde|comprar|distribuidor|equivalente|peça|ol[aá]|obrigado)\b/gi,
+  fr: /[àâéèêëîïôùûüÿœ]|\b(combien|filtre|filtres|camion|moteur|besoin|avec|pour|où|acheter|distributeur|équivalent|pièce|bonjour|merci)\b/gi,
+  it: /\b(ciao|quanti|filtro|filtri|camion|motore|bisogno|dove|comprare|distributore|equivalente|ricambio|pezzo|grazie)\b/gi,
+  nl: /\b(hallo|hoeveel|filter|filters|vrachtwagen|motor|nodig|voor|met|waar|kopen|distributeur|equivalent|onderdeel|dank)\b/gi,
+  en: /\b(how\s+many|filters?|truck|engine|need|have|where|buy|distributor|equivalent|part|cross[\s-]?reference)\b/gi,
+};
+
+function detectMessageLang(text: string): string | null {
+  const value = text.trim();
+  if (!value) return null;
+
+  const scriptLang = detectByScript(value);
+  if (scriptLang) return scriptLang;
+
+  let topLang: string | null = null;
+  let topScore = 0;
+  for (const [lang, pattern] of Object.entries(LATIN_LANGUAGE_PATTERNS)) {
+    const score = (value.match(pattern) || []).length;
+    if (score > topScore) {
+      topScore = score;
+      topLang = lang;
+    }
+  }
+  return topLang;
 }
 
 function getWelcome(lang: string): Message {
