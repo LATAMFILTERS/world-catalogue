@@ -12,7 +12,8 @@ const canonicalTechnologies = [
   ['DRYCORE™', 'drycore', 'Moisture control for applicable pneumatic and compressed-air systems.', 'Air Intake & Airflow Protection'],
   ['INTEKCORE™', 'intekcore', 'Air-cleaner housing, sealing and airflow-system integration.', 'Air Intake & Airflow Protection'],
   ['SYNTAPORE™', 'syntapore', 'Fuel particulate contamination control before precision fuel-system components.', 'Fuel Cleanliness Protection'],
-  ['HYDROCORE™', 'hydrocore', 'Fuel-water separation for approved separator architectures and applications.', 'Fuel Cleanliness Protection'],
+  ['HYDROCORE™', 'hydrocore', 'Fuel-water separation for approved standard non-turbine separator architectures and applications.', 'Fuel Cleanliness Protection'],
+  ['TURBOCORE™', 'turbocore', 'Turbine-style fuel-water separation for approved FH and FG series systems.', 'Fuel Cleanliness Protection'],
   ['SYNTRAX™', 'syntrax', 'Lubricant contamination control for protected engine and component interfaces.', 'Lubrication Protection'],
   ['NANOFORCE™', 'nanoforce', 'Hydraulic-fluid cleanliness control around pumps, valves and actuators.', 'Hydraulic Protection'],
   ['THERMACORE™', 'thermacore', 'Cooling-system cleanliness and coolant-circuit component protection.', 'Cooling System Protection'],
@@ -28,8 +29,8 @@ const systemGroups = [
   {
     system: 'Fuel Cleanliness Protection',
     href: '/systems/fuel-cleanliness/',
-    technologies: ['SYNTAPORE™', 'HYDROCORE™'],
-    description: 'Particle control and fuel-water separation are resolved as separate functions before a fuel product family or part number is selected.',
+    technologies: ['SYNTAPORE™', 'HYDROCORE™', 'TURBOCORE™'],
+    description: 'Particulate control, standard non-turbine fuel-water separation and FH/FG turbine-style separation are distinct functions inside one fuel-cleanliness protection system.',
   },
   {
     system: 'Lubrication Protection',
@@ -52,18 +53,18 @@ const systemGroups = [
 ] as const;
 
 const faqs = [
-  ['What is an ELIMFILTERS filtration technology?', 'An ELIMFILTERS filtration technology is the engineering architecture assigned to a specific contamination-control function inside a defined protection system. It is not a generic product label and should not be selected independently of the protected system and application. Each technology — MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTAPORE™, HYDROCORE™, SYNTRAX™, NANOFORCE™ and THERMACORE™ — governs a distinct contamination mechanism, whether that is airborne particulate, cabin air, compressed-air moisture, housing architecture, fuel particulate, fuel/water separation, lubricant contamination, hydraulic fluid cleanliness or coolant condition. Because the hierarchy runs from protected system to technology to product family to validated part number, identifying a technology name is one step in application resolution, not the final answer. A customer who knows only that a filter uses SYNTRAX™ technology, for example, still needs the equipment, engine and duty context confirmed before ELIMFILTERS validates a specific oil-filter part number for that application.'],
+  ['What is an ELIMFILTERS filtration technology?', 'An ELIMFILTERS filtration technology is the engineering architecture assigned to a specific contamination-control function inside a defined protection system. It is not a generic product label and should not be selected independently of the protected system and application. Each technology — MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTAPORE™, HYDROCORE™, TURBOCORE™, SYNTRAX™, NANOFORCE™ and THERMACORE™ — governs a distinct contamination-control role. Because the hierarchy runs from protected system to technology to product family to validated part number, identifying a technology name is one step in application resolution, not the final answer. A customer who knows only that a filter uses SYNTRAX™ technology, for example, still needs the equipment, engine and duty context confirmed before ELIMFILTERS validates a specific oil-filter part number for that application.'],
   ['How are systems, technologies, product families and part numbers related?', 'The hierarchy is protected system first, technology second, product family third and validated part number last. This keeps technical selection tied to the function being protected instead of choosing a product only by appearance or cross-reference. A protected system — such as Lubrication Protection, Hydraulic Protection or Air Intake & Airflow Protection — defines which asset and contamination pathway matters for a given application. The technology assigned to that system, such as SYNTRAX™ for lubrication or NANOFORCE™ for hydraulic filtration, defines the engineering architecture used to control that contamination. The product family then defines the specific category of filter built around that technology, such as Oil Filters or Coolant Filters. Only after system, technology and product family are confirmed does ELIMFILTERS validate a specific part number against dimensional, application and cross-reference evidence — skipping any step in this sequence risks selecting a filter that fits physically but does not perform the protection function the application actually requires.'],
-  ['How many ELIMFILTERS filtration technologies are presented on this page?', 'Nine technologies are presented here: MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTAPORE™, HYDROCORE™, SYNTRAX™, NANOFORCE™ and THERMACORE™. Each technology is scoped to a specific contamination-control function rather than serving as an interchangeable general-purpose filtration label. MACROCORE™ governs engine air-intake filtration, while INTEKCORE™ governs the air-cleaner housing architecture that supports it, and MICROKAPPA™ and DRYCORE™ serve the related but distinct cabin-air and compressed-air functions within the broader airflow protection system. SYNTAPORE™ addresses particulate fuel filtration and HYDROCORE™ addresses fuel/water separation — related fuel-system functions that are not interchangeable with each other. SYNTRAX™, NANOFORCE™ and THERMACORE™ separately govern lubrication, hydraulic and cooling-system protection. Because a tenth technology, TURBOCORE™, is reserved specifically for applicable FH/FG turbine-series fuel-separation systems rather than general fuel filtration, it is addressed within the Fuel Cleanliness Protection system rather than presented alongside these nine general-purpose technologies on this page.'],
+  ['How many ELIMFILTERS filtration technologies are presented on this page?', 'Ten technologies are presented here: MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTAPORE™, HYDROCORE™, TURBOCORE™, SYNTRAX™, NANOFORCE™ and THERMACORE™. They are organized inside five protection systems and each technology is scoped to a defined contamination-control function. Within Fuel Cleanliness Protection, SYNTAPORE™ governs particulate fuel filtration, HYDROCORE™ governs approved standard non-turbine fuel/water separator applications, and TURBOCORE™ is reserved for approved FH and FG turbine-style fuel/water separator systems. These three fuel technologies are related by the protected system but are not interchangeable.'],
   ['Which technology is used for engine air intake filtration?', 'MACROCORE™ is the primary ELIMFILTERS technology for engine air-intake filtration. INTEKCORE™ supports the air-cleaner housing architecture, while MICROKAPPA™ and DRYCORE™ serve separate cabin-air and compressed-air functions within the broader airflow protection system. MACROCORE™ specifically addresses the combustion air path, controlling ambient dust, soot, fibers and airborne debris before they reach internal engine components. INTEKCORE™ does not filter air directly; instead it governs the housing geometry, sealing interfaces and element support that determine whether a properly rated MACROCORE™ element can actually perform as intended, since housing sealing issues can allow unfiltered air to bypass the media even when the filter itself is correctly specified. MICROKAPPA™ and DRYCORE™ address entirely separate airflow paths — operator cabin ventilation and compressed-air drying, respectively — evaluated under their own test standards and selected independently from engine-intake filtration, since they are not extensions of MACROCORE™ but distinct technologies within the same broader Air Intake & Airflow Protection system.'],
-  ['Which technologies are used for diesel fuel protection?', "SYNTAPORE™ is used for particulate fuel filtration and HYDROCORE™ for approved fuel-water separation applications. These functions are related but are not interchangeable. SYNTAPORE™ governs the particulate-control pathway within Fuel Cleanliness Protection, removing hard particles, storage debris and transfer contamination from the fuel supply path before it reaches primary and secondary filtration stages. HYDROCORE™ governs a distinct function — fuel/water separation — addressing free water and entrained moisture before they reach sensitive downstream components such as precision pumps and injectors; a particulate filter without separator media will not perform this role even if it resembles a separator housing. A third technology, TURBOCORE™, is reserved specifically for applicable FH/FG turbine-series fuel-separation systems and their dedicated replacement elements, distinct from the standard non-turbine separation HYDROCORE™ governs. Because these three technologies address different contamination mechanisms, identifying which function — or combination of functions — a specific diesel fuel application requires is part of confirming the correct product family before a part number is validated."],
+  ['Which technologies are used for diesel fuel protection?', "Fuel Cleanliness Protection uses three governed technologies with distinct scopes. SYNTAPORE™ controls particulate contamination in diesel fuel. HYDROCORE™ governs approved standard non-turbine fuel/water separator applications, including applicable drain and transparent-bowl configurations. TURBOCORE™ is reserved exclusively for approved FH and FG turbine-style fuel/water separator systems and their dedicated replacement elements. The three technologies belong to the same protection system but are not interchangeable, so the correct path depends on whether the application requires particulate filtration, standard fuel/water separation, turbine-style separation, or an approved combination of functions."],
   ['Which technologies protect lubrication, hydraulic and cooling systems?', 'SYNTRAX™ supports lubrication filtration, NANOFORCE™ supports hydraulic filtration and THERMACORE™ supports cooling-system filtration. SYNTRAX™ is engineered to capture the contamination that circulates in engine oil — soot, wear debris, oxidation products and service-introduced particulate — without compromising the flow and pressure behavior the lubrication circuit depends on, protecting bearings, journals, turbocharger interfaces and valve-train surfaces. NANOFORCE™ addresses hydraulic contamination pathways including ingressed particulate, internal wear debris and reservoir contamination, protecting pumps, control valves, actuators and precision manifolds that operate with small internal clearances. THERMACORE™ addresses cooling-circuit contamination such as corrosion products, scale and mineral deposits, and coolant degradation, protecting wet liners, water pumps, heat-transfer surfaces and coolant-circuit seals. Because each technology is tied to a distinct system, fluid chemistry and set of protected components, they are not interchangeable across lubrication, hydraulic and cooling applications even where duty conditions or contamination symptoms appear superficially similar.'],
   ['Can a technology name alone identify the correct filter?', 'No. The technology identifies the engineering architecture. Final selection still requires the equipment or vehicle, protected system, duty context, product family and validated application evidence. Knowing that an application uses SYNTRAX™, NANOFORCE™ or any other ELIMFILTERS technology confirms which contamination-control architecture applies, but it does not confirm the specific bypass valve setting, sealing configuration, flow requirement, filtration target or dimensional fit a given engine, hydraulic circuit or cooling system actually needs. Two applications using the same technology can still require different filter configurations once equipment platform, duty cycle, existing OEM reference and installation-specific evidence are considered. For that reason, ELIMFILTERS treats technology identification as the second step in a controlled sequence — after confirming the protected system and before narrowing to product family and validated part number — rather than as a shortcut that bypasses the application-validation process every filtration decision depends on.'],
 ] as const;
 
 export const metadata = {
   title: 'Industrial Filtration Technologies | Contamination Control | ELIMFILTERS®',
-  description: 'Explore nine ELIMFILTERS filtration technologies mapped to air intake, cabin air, compressed air, fuel, lubrication, hydraulic and cooling-system protection. Connect each technology to its protected system, product family and validated application path.',
+  description: 'Explore ten ELIMFILTERS filtration technologies organized inside five protection systems across air intake and airflow, fuel cleanliness, lubrication, hydraulic and cooling-system protection.',
   keywords: [
     'industrial filtration technologies',
     'filtration technology',
@@ -80,7 +81,7 @@ export const metadata = {
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: 'Industrial Filtration Technologies | ELIMFILTERS',
-    description: 'Nine ELIMFILTERS engineering technologies mapped to protected systems, contamination risks, product families and validated applications.',
+    description: 'Ten ELIMFILTERS engineering technologies mapped to five protected systems, contamination risks, product families and validated applications.',
     url: PAGE_URL,
     type: 'website',
     siteName: 'ELIMFILTERS',
@@ -90,7 +91,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Industrial Filtration Technologies | ELIMFILTERS',
-    description: 'Nine filtration technologies organized by protected system, contamination function and application path.',
+    description: 'Ten filtration technologies organized inside five protection systems by contamination function and application path.',
     images: [`${BASE_URL}/assets/logo-elimfilters.png`],
   },
 };
@@ -103,7 +104,7 @@ export default function TechnologiesPage() {
       '@id': `${PAGE_URL}#collection`,
       name: 'ELIMFILTERS Industrial Filtration Technologies',
       url: PAGE_URL,
-      description: 'Nine industrial filtration engineering technologies organized by protected system, contamination-control function and product architecture.',
+      description: 'Ten industrial filtration engineering technologies organized inside five protection systems by contamination-control function and product architecture.',
       isPartOf: { '@id': `${BASE_URL}/#website` },
       publisher: { '@id': `${BASE_URL}/#organization` },
       about: [
@@ -182,7 +183,7 @@ export default function TechnologiesPage() {
             <span style={{ color: '#FFF12D' }}>Technologies</span>
           </h1>
           <p style={heroPromise}>Technology defines how contamination is controlled. The protected system defines where that technology belongs.</p>
-          <p style={heroLead}>ELIMFILTERS® organizes nine filtration technologies across air intake and airflow, fuel cleanliness, lubrication, hydraulic and cooling-system protection. Each technology is connected to a defined contamination-control function, product family and validated application path.</p>
+          <p style={heroLead}>ELIMFILTERS® organizes ten filtration technologies across five protection systems: air intake and airflow, fuel cleanliness, lubrication, hydraulic and cooling-system protection. Each technology is connected to a defined contamination-control function, product family and validated application path.</p>
           <div style={buttonRow}>
             <a href="#technology-architecture" style={yellowButton}>SELECT A TECHNOLOGY</a>
             <Link href="/systems/" style={darkButton}>START WITH A PROTECTION SYSTEM</Link>
@@ -204,7 +205,7 @@ export default function TechnologiesPage() {
       <section id="technology-architecture" style={sectionAlt}>
         <div style={systemSectionInner}>
           <p style={eyebrow}>SYSTEM → TECHNOLOGY</p>
-          <h2 style={sectionTitle}>Nine technologies organized inside five protection systems.</h2>
+          <h2 style={sectionTitle}>Ten technologies organized inside five protection systems.</h2>
           <div className="system-pyramid">
             <div className="system-pyramid-top">
               {systemGroups.slice(0, 3).map(renderSystemCard)}
