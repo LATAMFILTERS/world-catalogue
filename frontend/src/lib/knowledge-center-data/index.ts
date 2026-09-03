@@ -14,6 +14,7 @@
  *   standards-registry    ← imports types
  *   technologies-registry ← imports types
  *   systems-registry      ← imports types
+ *   canonical-systems-registry ← derives public five-system ontology
  *   industries-registry   ← imports types
  *   calculators-registry  ← imports types, entity-ids
  *   comparisons-registry  ← imports types, entity-ids
@@ -46,7 +47,8 @@ export {
 export { ENGINEERING_ARTICLES } from './articles-registry';
 export { KC_STANDARDS } from './standards-registry';
 export { KC_TECHNOLOGIES } from './technologies-registry';
-export { KC_SYSTEMS, KC_SYSTEM_DETAILS } from './systems-registry';
+export { KC_SYSTEMS } from './canonical-systems-registry';
+export { KC_SYSTEM_DETAILS } from './systems-registry';
 export { KC_INDUSTRIES, KC_INDUSTRY_DETAILS } from './industries-registry';
 export { GLOSSARY_REGISTRY } from './glossary-registry';
 

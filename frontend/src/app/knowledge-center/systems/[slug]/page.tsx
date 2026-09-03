@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import SystemContent from './SystemContent';
 
 const SYSTEM_ALIASES: Record<string, string> = {
+  'cabin-air-protection': 'air-intake-protection',
   'compressed-air-protection': 'air-intake-protection',
   'fuel-cleanliness': 'fuel-cleanliness-protection',
 };
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!system) return {};
 
   const isAlias = resolvedSlug !== slug;
-  const url = `https://elimfilters.com/knowledge-center/systems/${resolvedSlug}`;
+  const url = `https://elimfilters.com/knowledge-center/systems/${resolvedSlug}/`;
   return {
     title: isAlias ? `${slug.replace(/-/g, ' ')} Legacy System` : `${system.title} System`,
     description: isAlias ? `Legacy protection-system route. Continue to the current ${system.title} page.` : system.description,
