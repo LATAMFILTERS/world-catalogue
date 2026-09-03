@@ -13,8 +13,6 @@ export default function NotFound() {
         padding: 'clamp(1.5rem, 5vw, 4rem)',
       }}
     >
-      <title>Page Not Found | ELIMFILTERS</title>
-      <meta name="robots" content="noindex, nofollow" />
       <div
         aria-hidden="true"
         style={{
