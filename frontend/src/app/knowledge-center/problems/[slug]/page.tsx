@@ -15,21 +15,34 @@ export async function generateMetadata({
   const { slug } = await params;
   const problem = PROBLEM_STUBS_BY_SLUG[slug];
   if (!problem) return {};
+
   const isPublished = problem.status === 'published' || problem.status === 'engineering-approved';
+  const hasApprovedContent = Boolean(problem.metaDescription && problem.definition && problem.sections?.length);
   const isDustIngestionAlias = slug === 'silicon-dust-ingestion';
+  const shouldIndex = isPublished && hasApprovedContent && !isDustIngestionAlias;
+  const description = isDustIngestionAlias
+    ? 'This graph alias consolidates into the complete ELIMFILTERS dust-ingestion engineering reference.'
+    : problem.metaDescription || `${problem.name} engineering problem reference for contamination and filtration analysis.`;
+
   return {
-    title: `${problem.name} — Problem Graph | ELIMFILTERS`,
-    description: isDustIngestionAlias
-      ? 'This graph alias consolidates into the complete ELIMFILTERS dust-ingestion engineering reference.'
-      : `${problem.id}: ${problem.name}. Engineering content for this Knowledge Graph entity is scheduled for Phase 3.`,
+    title: `${problem.name} — Filtration Failure Analysis | ELIMFILTERS`,
+    description,
     alternates: {
       canonical: isDustIngestionAlias
         ? 'https://elimfilters.com/engineering/dust-ingestion/'
         : `https://elimfilters.com/knowledge-center/problems/${slug}/`,
     },
     robots: {
-      index: isPublished && !isDustIngestionAlias,
+      index: shouldIndex,
       follow: true,
+    },
+    openGraph: {
+      title: `${problem.name} — Filtration Failure Analysis | ELIMFILTERS`,
+      description,
+      url: isDustIngestionAlias
+        ? 'https://elimfilters.com/engineering/dust-ingestion/'
+        : `https://elimfilters.com/knowledge-center/problems/${slug}/`,
+      type: 'article',
     },
   };
 }
