@@ -4,6 +4,10 @@ import { TERMINOLOGY_REGISTRY, getPublishedTerms, termIdToSlug, slugToTermId } f
 import GlossaryTermContent from './GlossaryTermContent';
 
 const SEO_INTENT_OVERRIDES: Record<string, { title: string; description: string }> = {
+  'beta-ratio': {
+    title: 'Beta Ratio Definition — Filtration Glossary | ELIMFILTERS',
+    description: 'Definition of Beta ratio (β) as filtration terminology; use the Engineering article for measurement, interpretation, and application guidance.',
+  },
   'iso-cleanliness-code': {
     title: 'ISO 4406 Cleanliness Code Explained — Glossary | ELIMFILTERS',
     description: 'Definition of the ISO 4406 cleanliness code and what its three-number particle contamination classification means in fluid cleanliness terminology.',
