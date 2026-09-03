@@ -16,6 +16,7 @@
  *   systems-registry      ← imports types
  *   canonical-systems-registry ← derives public five-system ontology
  *   industries-registry   ← imports types
+ *   canonical-industry-details ← normalizes public industry semantics
  *   calculators-registry  ← imports types, entity-ids
  *   comparisons-registry  ← imports types, entity-ids
  *   index.ts (this)       ← imports all above
@@ -49,7 +50,8 @@ export { KC_STANDARDS } from './standards-registry';
 export { KC_TECHNOLOGIES } from './technologies-registry';
 export { KC_SYSTEMS } from './canonical-systems-registry';
 export { KC_SYSTEM_DETAILS } from './systems-registry';
-export { KC_INDUSTRIES, KC_INDUSTRY_DETAILS } from './industries-registry';
+export { KC_INDUSTRIES } from './industries-registry';
+export { KC_INDUSTRY_DETAILS } from './canonical-industry-details';
 export { GLOSSARY_REGISTRY } from './glossary-registry';
 
 // ── Engineering Diagrams ───────────────────────────────────────────────────────
