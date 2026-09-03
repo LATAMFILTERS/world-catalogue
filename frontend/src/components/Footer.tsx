@@ -222,11 +222,11 @@ export function Footer() {
               info@elimfilters.com
             </a>
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
-            <a href="tel:+12819659142" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+            <a href="https://wa.me/12819659142" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}
             >
-              +1 281 965 9142
+              WhatsApp
             </a>
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>Corporate Headquarters: Frisco, Texas</span>
