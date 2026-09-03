@@ -6,6 +6,7 @@ on:
     paths:
       - 'seo-geo-audit-input/gsc/*.csv'
       - 'scripts/seo-geo-audit/triage_gsc_indexing_examples.py'
+      - 'scripts/seo-geo-audit/triage_gsc_technical_examples.py'
       - '.github/workflows/gsc-indexing-intake.yml'
 
 permissions:
@@ -44,74 +45,85 @@ jobs:
         run: |
           set -euo pipefail
           INPUT_DIR='seo-geo-audit-input/gsc'
-          crawled="$(find "$INPUT_DIR" -maxdepth 1 -type f -iname '*.csv' | grep -Ei '/[^/]*(crawled|rastreada)[^/]*\.csv$' | head -n 1 || true)"
-          discovered="$(find "$INPUT_DIR" -maxdepth 1 -type f -iname '*.csv' | grep -Ei '/[^/]*(discovered|descubierta)[^/]*\.csv$' | head -n 1 || true)"
+          files="$(find "$INPUT_DIR" -maxdepth 1 -type f -iname '*.csv' || true)"
+          detect() { printf '%s\n' "$files" | grep -Ei "$1" | head -n 1 || true; }
 
-          if [ -z "$crawled" ] && [ -z "$discovered" ]; then
+          crawled="$(detect '/[^/]*(crawled|rastreada)[^/]*\.csv$')"
+          discovered="$(detect '/[^/]*(discovered|descubierta)[^/]*\.csv$')"
+          not_found="$(detect '/[^/]*(404|not[-_ ]?found|no[-_ ]?encontrad)[^/]*\.csv$')"
+          duplicate="$(detect '/[^/]*(duplicate|duplicad)[^/]*(canonical|can[oó]nic)[^/]*\.csv$')"
+          robots="$(detect '/[^/]*(robots|bloquead)[^/]*\.csv$')"
+          redirect_error="$(detect '/[^/]*(redirect|redirecci[oó]n)[^/]*(error|err)[^/]*\.csv$')"
+          server_error="$(detect '/[^/]*(5xx|server[-_ ]?error|error[-_ ]?de[-_ ]?servidor)[^/]*\.csv$')"
+
+          if [ -z "$crawled$discovered$not_found$duplicate$robots$redirect_error$server_error" ]; then
             echo 'has_input=false' >> "$GITHUB_OUTPUT"
-            echo 'No detailed GSC Page Indexing CSV exports found.'
             exit 0
           fi
 
           echo 'has_input=true' >> "$GITHUB_OUTPUT"
+          echo "has_semantic=$([ -n "$crawled$discovered" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          echo "has_technical=$([ -n "$not_found$duplicate$robots$redirect_error$server_error" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
           echo "crawled=$crawled" >> "$GITHUB_OUTPUT"
           echo "discovered=$discovered" >> "$GITHUB_OUTPUT"
-          echo "Crawled export: ${crawled:-not provided}"
-          echo "Discovered export: ${discovered:-not provided}"
+          echo "not_found=$not_found" >> "$GITHUB_OUTPUT"
+          echo "duplicate=$duplicate" >> "$GITHUB_OUTPUT"
+          echo "robots=$robots" >> "$GITHUB_OUTPUT"
+          echo "redirect_error=$redirect_error" >> "$GITHUB_OUTPUT"
+          echo "server_error=$server_error" >> "$GITHUB_OUTPUT"
 
       - name: Audit current production state
         if: steps.inputs.outputs.has_input == 'true'
         run: python3 scripts/seo-geo-audit/audit.py --out-dir seo-geo-audit-out
 
-      - name: Triage GSC URL examples against live audit
-        if: steps.inputs.outputs.has_input == 'true'
+      - name: Triage crawled/discovered GSC examples
+        if: steps.inputs.outputs.has_semantic == 'true'
         shell: bash
         run: |
           set -euo pipefail
           args=(--audit seo-geo-audit-out/seo-geo-audit.csv --out-dir seo-geo-audit-out)
-          if [ -n "${{ steps.inputs.outputs.crawled }}" ]; then
-            args+=(--crawled "${{ steps.inputs.outputs.crawled }}")
-          fi
-          if [ -n "${{ steps.inputs.outputs.discovered }}" ]; then
-            args+=(--discovered "${{ steps.inputs.outputs.discovered }}")
-          fi
+          [ -z "${{ steps.inputs.outputs.crawled }}" ] || args+=(--crawled "${{ steps.inputs.outputs.crawled }}")
+          [ -z "${{ steps.inputs.outputs.discovered }}" ] || args+=(--discovered "${{ steps.inputs.outputs.discovered }}")
           python3 scripts/seo-geo-audit/triage_gsc_indexing_examples.py "${args[@]}"
+
+      - name: Triage technical GSC examples
+        if: steps.inputs.outputs.has_technical == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--audit seo-geo-audit-out/seo-geo-audit.csv --out-dir seo-geo-audit-out)
+          [ -z "${{ steps.inputs.outputs.not_found }}" ] || args+=(--not-found "${{ steps.inputs.outputs.not_found }}")
+          [ -z "${{ steps.inputs.outputs.duplicate }}" ] || args+=(--duplicate "${{ steps.inputs.outputs.duplicate }}")
+          [ -z "${{ steps.inputs.outputs.robots }}" ] || args+=(--robots "${{ steps.inputs.outputs.robots }}")
+          [ -z "${{ steps.inputs.outputs.redirect_error }}" ] || args+=(--redirect-error "${{ steps.inputs.outputs.redirect_error }}")
+          [ -z "${{ steps.inputs.outputs.server_error }}" ] || args+=(--server-error "${{ steps.inputs.outputs.server_error }}")
+          python3 scripts/seo-geo-audit/triage_gsc_technical_examples.py "${args[@]}"
 
       - name: Count semantic candidates
         id: semantic
-        if: steps.inputs.outputs.has_input == 'true'
+        if: steps.inputs.outputs.has_semantic == 'true'
         shell: bash
         run: |
           file='seo-geo-audit-out/gsc-indexing-semantic-candidates.csv'
-          if [ ! -f "$file" ]; then
-            echo 'count=0' >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
+          if [ ! -f "$file" ]; then echo 'count=0' >> "$GITHUB_OUTPUT"; exit 0; fi
           count=$(python3 - <<'PY'
           import csv
-          from pathlib import Path
-          p = Path('seo-geo-audit-out/gsc-indexing-semantic-candidates.csv')
-          with p.open(newline='', encoding='utf-8-sig') as f:
+          with open('seo-geo-audit-out/gsc-indexing-semantic-candidates.csv', newline='', encoding='utf-8-sig') as f:
               print(sum(1 for _ in csv.DictReader(f)))
           PY
           )
           echo "count=$count" >> "$GITHUB_OUTPUT"
-          echo "Semantic candidates: $count"
 
-      - name: Build governed HERMES requests from crawled-not-indexed candidates
-        if: steps.inputs.outputs.has_input == 'true' && steps.semantic.outputs.count != '0'
-        run: |
-          python3 scripts/seo-geo-audit/build_hermes_knowledge_gaps.py \
-            seo-geo-audit-out/gsc-indexing-semantic-candidates.csv \
-            --out-dir seo-geo-audit-out/gsc-hermes
+      - name: Build governed HERMES requests
+        if: steps.inputs.outputs.has_semantic == 'true' && steps.semantic.outputs.count != '0'
+        run: python3 scripts/seo-geo-audit/build_hermes_knowledge_gaps.py seo-geo-audit-out/gsc-indexing-semantic-candidates.csv --out-dir seo-geo-audit-out/gsc-hermes
 
-      - name: Import GSC semantic gaps as governed HERMES candidates
-        if: steps.inputs.outputs.has_input == 'true' && steps.semantic.outputs.count != '0'
+      - name: Import semantic gaps as HERMES candidates
+        if: steps.inputs.outputs.has_semantic == 'true' && steps.semantic.outputs.count != '0'
         run: node scripts/hermes/import-seo-knowledge-gaps.mjs seo-geo-audit-out/gsc-hermes/hermes-knowledge-gaps.json
 
       - name: Research GSC candidates with HERMES
-        id: research
-        if: steps.inputs.outputs.has_input == 'true' && steps.semantic.outputs.count != '0'
+        if: steps.inputs.outputs.has_semantic == 'true' && steps.semantic.outputs.count != '0'
         continue-on-error: true
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
@@ -119,19 +131,8 @@ jobs:
         run: npm run hermes:research
 
       - name: Validate governed HERMES candidates
-        if: steps.inputs.outputs.has_input == 'true' && steps.semantic.outputs.count != '0'
+        if: steps.inputs.outputs.has_semantic == 'true' && steps.semantic.outputs.count != '0'
         run: npm run hermes:validate:real
-
-      - name: Write intake summary when no semantic expansion is required
-        if: steps.inputs.outputs.has_input == 'true' && steps.semantic.outputs.count == '0'
-        run: |
-          printf '%s\n' \
-            '# GSC indexing intake result' \
-            '' \
-            'No technically clean crawled-not-indexed editorial/entity URL required semantic HERMES review in this intake.' \
-            '' \
-            'See gsc-indexing-triage.csv for crawl, technical, canonical, noindex and purpose-driven classifications.' \
-            > seo-geo-audit-out/gsc-hermes-result.md
 
       - name: Upload intake evidence and HERMES artifacts
         if: always()
@@ -150,6 +151,5 @@ jobs:
       - name: Fail clearly when no detailed export was supplied
         if: steps.inputs.outputs.has_input == 'false'
         run: |
-          echo 'No crawled/discovered detailed GSC CSV was found under seo-geo-audit-input/gsc/.'
-          echo 'Add the detailed example export(s); the workflow will rerun automatically.'
+          echo 'No supported detailed GSC CSV was found under seo-geo-audit-input/gsc/.'
           exit 1
