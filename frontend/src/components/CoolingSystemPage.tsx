@@ -186,9 +186,9 @@ export function CoolingSystemPage() {
       <section style={section}>
         <p style={eyebrow}>FROM COOLING CIRCUIT TO PART</p>
         <h2 style={h2}>Resolve the application in a controlled sequence.</h2>
-        <div style={decisionFlow}>
-          {['1. EQUIPMENT / VEHICLE', '2. ENGINE', '3. COOLING-SYSTEM CONFIGURATION', '4. COOLANT + SERVICE CONTEXT', '5. OEM / FILTER EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step) => (
-            <div key={step} style={decisionStep}>{step}</div>
+        <div className="decision-flow" style={decisionFlow}>
+          {['1. EQUIPMENT / VEHICLE', '2. ENGINE', '3. COOLING-SYSTEM CONFIGURATION', '4. COOLANT + SERVICE CONTEXT', '5. OEM / FILTER EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step, i) => (
+            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label">{step.replace(/^\d+\.\s*/, '')}</span></div>
           ))}
         </div>
       </section>
@@ -196,7 +196,7 @@ export function CoolingSystemPage() {
       <section style={sectionAlt}>
         <p style={eyebrow}>FREQUENT QUESTIONS</p>
         <h2 style={h2}>Cooling System Protection</h2>
-        <div style={faqGrid}>
+        <div className="faq-grid" style={faqGrid}>
           {faqs.map(([question, answer]) => (
             <article key={question} style={faqCard}>
               <h3 style={faqQuestion}>{question}</h3>

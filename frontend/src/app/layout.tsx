@@ -3,6 +3,8 @@ import Script from 'next/script';
 import './globals.css';
 import './phase4-site.css';
 import './industry-pathway-grid.css';
+import './faq-grid-fill.css';
+import './decision-flow.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import { MiningHeroCleanup } from '@/components/MiningHeroCleanup';
 import { MobileInternalLayoutFix } from '@/components/MobileInternalLayoutFix';

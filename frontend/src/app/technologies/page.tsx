@@ -234,9 +234,9 @@ export default function TechnologiesPage() {
       <section style={sectionAlt}>
         <p style={eyebrow}>FROM TECHNOLOGY TO PART</p>
         <h2 style={sectionTitle}>Use the technology to narrow the architecture, not to bypass application validation.</h2>
-        <div style={decisionFlow}>
-          {['1. ASSET / EQUIPMENT', '2. PROTECTED SYSTEM', '3. CONTAMINATION FUNCTION', '4. ELIMFILTERS TECHNOLOGY', '5. PRODUCT FAMILY', '6. VALIDATED PART NUMBER'].map((step) => (
-            <div key={step} style={decisionStep}>{step}</div>
+        <div className="decision-flow" style={decisionFlow}>
+          {['1. ASSET / EQUIPMENT', '2. PROTECTED SYSTEM', '3. CONTAMINATION FUNCTION', '4. ELIMFILTERS TECHNOLOGY', '5. PRODUCT FAMILY', '6. VALIDATED PART NUMBER'].map((step, i) => (
+            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label">{step.replace(/^\d+\.\s*/, '')}</span></div>
           ))}
         </div>
       </section>
@@ -244,7 +244,7 @@ export default function TechnologiesPage() {
       <section style={section}>
         <p style={eyebrow}>FREQUENT QUESTIONS</p>
         <h2 style={sectionTitle}>Industrial Filtration Technologies</h2>
-        <div style={faqGrid}>
+        <div className="faq-grid" style={faqGrid}>
           {faqs.map(([question, answer]) => (
             <article key={question} style={faqCard}>
               <h3 style={faqQuestion}>{question}</h3>

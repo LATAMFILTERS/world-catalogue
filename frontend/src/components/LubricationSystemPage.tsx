@@ -145,7 +145,7 @@ export function LubricationSystemPage() {
       <section style={sectionAlt}>
         <p style={eyebrow}>FROM OIL CONDITION TO PART</p>
         <h2 style={h2}>Resolve the application in a controlled sequence.</h2>
-        <div style={decisionFlow}>{decision.map((step) => <div key={step} style={decisionStep}>{step}</div>)}</div>
+        <div className="decision-flow" style={decisionFlow}>{decision.map((step, i) => <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label">{step.replace(/^\d+\.\s*/, '')}</span></div>)}</div>
       </section>
 
       <section style={section}>
@@ -158,7 +158,7 @@ export function LubricationSystemPage() {
 
       <section style={sectionAlt}>
         <p style={eyebrow}>FREQUENT QUESTIONS</p><h2 style={h2}>Lubrication Protection</h2>
-        <div style={faqGrid}>{faqs.map(([q, a]) => <article key={q} style={faqCard}><h3 style={faqQuestion}>{q}</h3><p style={body}>{a}</p></article>)}</div>
+        <div className="faq-grid" style={faqGrid}>{faqs.map(([q, a]) => <article key={q} style={faqCard}><h3 style={faqQuestion}>{q}</h3><p style={body}>{a}</p></article>)}</div>
       </section>
 
       <section style={finalCta}>

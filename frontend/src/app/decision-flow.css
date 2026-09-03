@@ -1,0 +1,52 @@
+/* "Resolve the application in a controlled sequence" step diagrams, shared
+   across the system pages (Lubrication, Hydraulic, Fuel Cleanliness,
+   Cooling, Air Intake). Adds a large index numeral per step, a directional
+   arrow into the next step, and a hover highlight so the sequence reads as
+   a connected technical process rather than a flat list of boxes. Layered
+   on top of each page's own decisionFlow/decisionStep inline styles via
+   !important only where it needs to override them (hover background). */
+
+.decision-step {
+  position: relative;
+  transition: background-color .18s ease, border-color .18s ease;
+}
+
+.decision-step:hover {
+  background: rgba(255, 241, 45, .07) !important;
+}
+
+.decision-step-index {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(255, 241, 45, .22);
+  margin-bottom: .5rem;
+  transition: color .18s ease;
+}
+
+.decision-step:hover .decision-step-index {
+  color: rgba(255, 241, 45, .68);
+}
+
+.decision-step-label {
+  display: block;
+}
+
+@media (min-width: 641px) {
+  .decision-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid #FFF12D;
+    opacity: .8;
+    z-index: 3;
+  }
+}
