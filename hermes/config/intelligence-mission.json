@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.0.0",
-  "mission": "Continuously sweep the complete engine, vehicle, equipment and industrial filtration ecosystem; discover verifiable developments; compare them with ELIMFILTERS existing knowledge; and propose new knowledge or reinforcement of existing knowledge without duplication.",
+  "schema_version": "1.1.0",
+  "mission": "Continuously sweep the complete engine, vehicle, equipment and industrial filtration ecosystem; discover verifiable developments; compare them with ELIMFILTERS existing knowledge; and propose new knowledge or reinforcement of existing knowledge without duplication. LinkedIn is an explicit weekly discovery/radar source: HERMES may use official company, OEM, technical-institution and industry LinkedIn posts to detect signals, but a LinkedIn post must never be treated as final technical evidence by itself. For every LinkedIn-origin signal, HERMES must follow the post or independently locate a primary or technically verifiable source such as an official product page, case study, technical bulletin, white paper, standard, regulatory document or recognized technical publication before creating a verified candidate. If no such corroborating source is found, retain the signal as INTERNAL_ONLY / unresolved intelligence and do not propose canonical Knowledge Center or catalogue changes.",
   "coverage_policy": "EXPANSIVE_NOT_CLOSED_LIST",
   "lookback_days": 7,
   "max_findings_per_group": 6,
@@ -27,6 +27,41 @@
     "CUSTOMER_EMAIL",
     "SALES_INTELLIGENCE"
   ],
+  "discovery_sources": {
+    "linkedin": {
+      "enabled": true,
+      "role": "DISCOVERY_RADAR",
+      "cadence": "WEEKLY",
+      "priority_targets": [
+        "official OEM pages",
+        "engine and equipment manufacturers",
+        "aftermarket and filtration manufacturers",
+        "filter media and materials manufacturers",
+        "standards and technical institutions",
+        "recognized industry organizations and technical publications"
+      ],
+      "allowed_signal_types": [
+        "new product or application",
+        "technical case study",
+        "filter media or material development",
+        "standard or regulation update",
+        "manufacturing or laboratory capability",
+        "reliability or maintenance development",
+        "industry expansion or supply-chain signal",
+        "technical article or white-paper announcement"
+      ],
+      "evidence_rule": "DISCOVERY_ONLY_REQUIRES_CORROBORATION",
+      "canonical_evidence_allowed": false
+    }
+  },
+  "evidence_policy": {
+    "linkedin_is_discovery_not_final_evidence": true,
+    "prefer_primary_source": true,
+    "secondary_source_requires_technical_verification": true,
+    "uncorroborated_social_signal_destination": "INTERNAL_ONLY",
+    "uncorroborated_social_signal_may_modify_catalogue": false,
+    "uncorroborated_social_signal_may_modify_knowledge_center": false
+  },
   "domains": [
     {
       "id": "oem_engines_equipment",
