@@ -107,6 +107,8 @@ export interface KCTechnology {
   domain: string;
   tagline: string;
   engineeringPrinciple: string;
+  selectionGuidance: string;
+  evidenceBoundary: string;
   contamination: string[];
   performanceSpecs: { label: string; value: string }[];
   standards: string[];
