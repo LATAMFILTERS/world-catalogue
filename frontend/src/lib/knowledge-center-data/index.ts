@@ -18,6 +18,7 @@
  *   industries-registry   ← imports types
  *   canonical-industries-registry ← derives public 12-market ontology
  *   canonical-industry-details ← normalizes public industry semantics
+ *   canonical-diagram-registry ← normalizes public diagram ontology
  *   calculators-registry  ← imports types, entity-ids
  *   comparisons-registry  ← imports types, entity-ids
  *   index.ts (this)       ← imports all above
@@ -63,7 +64,7 @@ export {
   getDiagramBySlug,
   getDiagramsForArticle,
   getDiagramsForStandard,
-} from './diagram-registry';
+} from './canonical-diagram-registry';
 
 // ── Engineering Calculators ───────────────────────────────────────────────────
 export type {
