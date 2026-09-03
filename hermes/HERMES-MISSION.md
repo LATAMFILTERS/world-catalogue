@@ -8,6 +8,36 @@ HERMES must discover, verify, classify and preserve useful technical intelligenc
 
 The governed source registry is a high-value seed and monitoring set. It is not an exhaustive scope boundary. The mission-driven Groq Compound sweep is responsible for discovering relevant developments outside the registered endpoints.
 
+## LinkedIn discovery rule
+
+LinkedIn is part of the weekly HERMES radar.
+
+HERMES may use official LinkedIn posts from OEMs, engine/equipment manufacturers, filtration manufacturers, filter-media/material suppliers, standards/technical institutions, recognized industry organizations and technical publications to detect signals such as new products, applications, case studies, materials, standards, manufacturing capabilities, laboratory capabilities, maintenance/reliability developments and relevant market or supply-chain changes.
+
+LinkedIn is a **discovery source, not final technical evidence**.
+
+For every LinkedIn-origin signal HERMES must:
+
+1. Preserve the LinkedIn post/company/date/topic as internal provenance when available.
+2. Follow the post link or independently locate corroborating evidence.
+3. Prefer an official primary source: product/application page, case study, technical bulletin, white paper, standard, regulatory document, laboratory/test documentation or other official technical publication.
+4. Accept a secondary source only when it is technically verifiable and sufficiently strong.
+5. Extract technical facts from the corroborating evidence, not from promotional language alone.
+6. Compare the verified fact against existing ELIMFILTERS knowledge before proposing any change.
+7. If corroboration cannot be found, retain the signal as unresolved/internal intelligence only. It must not update the catalogue or canonical Knowledge Center.
+
+Operational shorthand:
+
+`LINKEDIN = RADAR`
+
+`PRIMARY / VERIFIED TECHNICAL SOURCE = EVIDENCE`
+
+`HERMES = VALIDATION + CLASSIFICATION`
+
+`KNOWLEDGE CENTER = CANONICAL KNOWLEDGE AFTER APPROVAL`
+
+This does not require a paid social-monitoring platform. The weekly mission-driven search is expected to discover publicly reachable LinkedIn signals and the primary sources behind them using the existing HERMES research stack.
+
 ## Knowledge rule: never duplicate
 
 Every verified finding must be compared against ELIMFILTERS existing public Knowledge Center / knowledge-system content before it becomes a review candidate.
@@ -23,11 +53,11 @@ A new source reporting an old fact is not a new Knowledge Center article. Existi
 
 ## Research pipeline
 
-`KNOWN SOURCE MONITORING + MISSION-DRIVEN INDUSTRY SWEEP`
+`KNOWN SOURCE MONITORING + MISSION-DRIVEN INDUSTRY SWEEP + LINKEDIN DISCOVERY RADAR`
 
 `→ GROQ LIVE SEARCH / WEBSITE VISITING`
 
-`→ SPECIFIC EVIDENCE`
+`→ PRIMARY / VERIFIED TECHNICAL EVIDENCE`
 
 `→ TECHNICAL FACT EXTRACTION`
 
