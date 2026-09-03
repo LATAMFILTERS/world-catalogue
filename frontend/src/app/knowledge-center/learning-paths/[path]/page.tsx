@@ -16,6 +16,7 @@ export async function generateMetadata(
   return {
     title: `${lp.title} | ELIMFILTERS Knowledge Center`,
     description: lp.description,
+    alternates: { canonical: `https://elimfilters.com/knowledge-center/learning-paths/${lp.slug}/` },
   };
 }
 
