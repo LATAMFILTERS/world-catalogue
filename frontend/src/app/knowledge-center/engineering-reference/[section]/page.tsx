@@ -26,6 +26,10 @@ const SEO_INTENT_OVERRIDES: Record<string, { title: string; description: string 
   },
 };
 
+const CONSOLIDATED_REFERENCE_SECTIONS: Record<string, string> = {
+  'engineering-glossary': 'https://elimfilters.com/knowledge-center/glossary/',
+};
+
 export async function generateStaticParams() {
   return ERL_SECTIONS.map((s) => ({ section: s.slug }));
 }
@@ -34,13 +38,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { section: sectionSlug } = await params;
   const section = getERLSection(sectionSlug);
   if (!section) return { title: 'Not Found' };
+  const consolidatedCanonical = CONSOLIDATED_REFERENCE_SECTIONS[section.slug];
   const override = SEO_INTENT_OVERRIDES[section.slug];
   return {
     title: override?.title || `${section.title} | Engineering Reference | ELIMFILTERS`,
     description: override?.description || section.definition.slice(0, 155),
     alternates: {
-      canonical: `https://elimfilters.com/knowledge-center/engineering-reference/${section.slug}/`,
+      canonical: consolidatedCanonical || `https://elimfilters.com/knowledge-center/engineering-reference/${section.slug}/`,
     },
+    robots: consolidatedCanonical ? { index: false, follow: true } : undefined,
   };
 }
 
