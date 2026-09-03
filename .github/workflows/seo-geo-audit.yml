@@ -22,6 +22,13 @@ jobs:
       - name: Run SEO/GEO audit against production
         run: python3 scripts/seo-geo-audit/audit.py --out-dir seo-geo-audit-out
 
+      - name: Triage short indexable pages by intent
+        run: |
+          python3 scripts/seo-geo-audit/triage_short_pages.py \
+            seo-geo-audit-out/seo-geo-audit.csv \
+            --threshold 250 \
+            --out-dir seo-geo-audit-out
+
       - name: Upload audit artifacts
         if: always()
         uses: actions/upload-artifact@v4
