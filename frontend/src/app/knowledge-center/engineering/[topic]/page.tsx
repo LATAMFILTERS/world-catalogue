@@ -23,6 +23,11 @@ const CTR_OVERRIDES: Record<string, { title: string; description: string }> = {
   },
 };
 
+const STANDARD_CANONICAL_TOPICS: Record<string, string> = {
+  'iso-16889': 'https://elimfilters.com/knowledge-center/standards/iso-16889/',
+  'iso-4406': 'https://elimfilters.com/knowledge-center/standards/iso-4406/',
+};
+
 export function generateStaticParams() {
   return ENGINEERING_ARTICLES.map((a) => ({ topic: a.slug }));
 }
@@ -33,6 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ topic: st
   if (!article) return {};
 
   const url = `https://elimfilters.com/knowledge-center/engineering/${topic}/`;
+  const canonicalStandardUrl = STANDARD_CANONICAL_TOPICS[topic];
   const override = CTR_OVERRIDES[topic];
   const title = override?.title ?? article.title;
   const description = override?.description ?? article.metaDescription;
@@ -41,11 +47,12 @@ export async function generateMetadata({ params }: { params: Promise<{ topic: st
     title,
     description,
     keywords: article.keywords,
-    alternates: { canonical: url },
+    alternates: { canonical: canonicalStandardUrl ?? url },
+    robots: canonicalStandardUrl ? { index: false, follow: true } : undefined,
     openGraph: {
       title,
       description,
-      url,
+      url: canonicalStandardUrl ?? url,
       type: 'article',
     },
     twitter: {
