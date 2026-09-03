@@ -23,9 +23,10 @@ const CTR_OVERRIDES: Record<string, { title: string; description: string }> = {
   },
 };
 
-const STANDARD_CANONICAL_TOPICS: Record<string, string> = {
+const CANONICAL_TOPIC_OWNERS: Record<string, string> = {
   'iso-16889': 'https://elimfilters.com/knowledge-center/standards/iso-16889/',
   'iso-4406': 'https://elimfilters.com/knowledge-center/standards/iso-4406/',
+  'filter-media-science': 'https://elimfilters.com/knowledge-center/engineering/filter-media-engineering/',
 };
 
 export function generateStaticParams() {
@@ -38,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ topic: st
   if (!article) return {};
 
   const url = `https://elimfilters.com/knowledge-center/engineering/${topic}/`;
-  const canonicalStandardUrl = STANDARD_CANONICAL_TOPICS[topic];
+  const canonicalOwnerUrl = CANONICAL_TOPIC_OWNERS[topic];
   const override = CTR_OVERRIDES[topic];
   const title = override?.title ?? article.title;
   const description = override?.description ?? article.metaDescription;
@@ -47,12 +48,12 @@ export async function generateMetadata({ params }: { params: Promise<{ topic: st
     title,
     description,
     keywords: article.keywords,
-    alternates: { canonical: canonicalStandardUrl ?? url },
-    robots: canonicalStandardUrl ? { index: false, follow: true } : undefined,
+    alternates: { canonical: canonicalOwnerUrl ?? url },
+    robots: canonicalOwnerUrl ? { index: false, follow: true } : undefined,
     openGraph: {
       title,
       description,
-      url: canonicalStandardUrl ?? url,
+      url: canonicalOwnerUrl ?? url,
       type: 'article',
     },
     twitter: {
