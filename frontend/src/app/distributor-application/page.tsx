@@ -176,7 +176,7 @@ export default function DistributorApplication() {
 
       <PageHeader breadcrumbs={[{ label: 'Contact', href: '/contact/' }]} currentPage="Country Distributor Application" />
 
-      <section style={{ minHeight: '92vh', display: 'flex', alignItems: 'center', padding: '7rem clamp(1.25rem, 6vw, 6rem)', background: 'radial-gradient(circle at 85% 15%, rgba(255,241,45,0.23), transparent 34%), linear-gradient(135deg, #050505 0%, #000 62%)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+      <section style={{ minHeight: '92vh', display: 'flex', alignItems: 'center', padding: '7rem clamp(1.25rem, 6vw, 6rem)', background: "linear-gradient(100deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.74) 42%, rgba(0,0,0,0.34) 75%, rgba(0,0,0,0.15) 100%), radial-gradient(circle at 85% 15%, rgba(255,241,45,0.18), transparent 34%), url('/images/DISTRIBUTION.jpeg') center/cover no-repeat", borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%' }}>
           <p style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, letterSpacing: '0.26em', textTransform: 'uppercase', fontSize: '0.76rem', marginBottom: '1.4rem' }}>
             // COUNTRY MASTER DISTRIBUTOR PROGRAM
