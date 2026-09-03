@@ -5,7 +5,7 @@ Status: Approved under current ELIMFILTERS governance
 Layer 2 must represent the five canonical Asset Protection Systems and their approved technologies.
 
 - Air Intake & Airflow Protection → MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™
-- Fuel Cleanliness Protection → SYNTAPORE™, TURBOCORE™
+- Fuel Cleanliness Protection → SYNTAPORE™, HYDROCORE™, TURBOCORE™
 - Lubrication Protection → SYNTRAX™
 - Hydraulic Protection → NANOFORCE™
 - Cooling System Protection → THERMACORE™
