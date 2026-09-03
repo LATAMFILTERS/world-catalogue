@@ -53,17 +53,17 @@ test('a 2010/2020/2040 SM/TM/PM turbine element infers TURBOCORE (production dat
   assert.equal(inferTechnology({ filter_type: 'fuel', codigo_base: '2040PM-OR', sku: 'ET92040P' }), 'TURBOCORE™');
 });
 
-test('single-word production filter_type values translate instead of leaking English into Spanish', () => {
-  const air = formatCatalogProduct({ sku: 'EF-AIR-1', filter_type: 'air', technology: 'MACROCORE™' }, { language: 'es' });
+test('single-word production filter_type values translate instead of leaking English into Spanish', async () => {
+  const air = await formatCatalogProduct({ sku: 'EF-AIR-1', filter_type: 'air', technology: 'MACROCORE™' }, { language: 'es' });
   assert.match(air, /Filtro de aire/);
   assert.doesNotMatch(air, /— air\b/i);
 
-  const oil = formatCatalogProduct({ sku: 'EF-OIL-1', filter_type: 'oil', technology: 'SYNTRAX™' }, { language: 'es' });
+  const oil = await formatCatalogProduct({ sku: 'EF-OIL-1', filter_type: 'oil', technology: 'SYNTRAX™' }, { language: 'es' });
   assert.match(oil, /Filtro de aceite/);
   assert.doesNotMatch(oil, /— oil\b/i);
 });
 
-test('validated PostgreSQL cross-reference returns a natural English answer with ELIMFILTERS technology', () => {
+test('validated PostgreSQL cross-reference returns a natural English answer with ELIMFILTERS technology', async () => {
   const payload = {
     intent: 'cross_reference_lookup',
     evidence: {
@@ -77,7 +77,7 @@ test('validated PostgreSQL cross-reference returns a natural English answer with
     }
   };
 
-  const answer = buildCrossReferenceNarrative(payload, { message: 'Cross reference RE52987' }, 'en');
+  const answer = await buildCrossReferenceNarrative(payload, { message: 'Cross reference RE52987' }, 'en');
 
   assert.match(answer, /RE52987/);
   assert.match(answer, /ES91424/);

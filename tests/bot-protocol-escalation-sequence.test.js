@@ -71,8 +71,8 @@ test('escalates only after five completed evidence-free resolutions', () => {
   })), true);
 });
 
-test('a requested filter-code response is preserved and not replaced by a ticket', () => {
-  const result = formatForChannel(payload(), {
+test('a requested filter-code response is preserved and not replaced by a ticket', async () => {
+  const result = await formatForChannel(payload(), {
     channel: 'whatsapp',
     conversation_id: 'regression-sequence-1',
     message: 'P550425'
