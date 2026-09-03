@@ -301,8 +301,11 @@ export default function SectionContent({ section, prev, next }: Props) {
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {section.relatedTechnologies.map((tech) => {
                 const slug = tech.replace('™', '').toLowerCase();
+                const href = slug === 'duratech' || slug === 'marineclean'
+                  ? `/commercial-lines/${slug}/`
+                  : `/knowledge-center/technologies/${slug}/`;
                 return (
-                  <Link key={tech} href={`/knowledge-center/technologies/${slug}`} style={{ textDecoration: 'none' }}>
+                  <Link key={tech} href={href} style={{ textDecoration: 'none' }}>
                     <motion.span
                       whileHover={{ borderColor: 'rgba(255,241,45,0.6)', color: '#FFF12D' }}
                       style={{

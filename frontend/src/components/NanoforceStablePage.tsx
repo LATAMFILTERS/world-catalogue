@@ -19,7 +19,7 @@ export function NanoforceStablePage() {
     '@context':'https://schema.org','@type':'TechArticle','@id':'https://elimfilters.com/technologies/nanoforce/#article',
     headline:'NANOFORCE™ Hydraulic Filtration Technology',name:'NANOFORCE™',url:'https://elimfilters.com/technologies/nanoforce/',
     description:'NANOFORCE™ is the ELIMFILTERS hydraulic-filtration architecture developed to maintain fluid cleanliness around the tolerance requirements of pumps, valves, actuators and precision hydraulic components.',
-    image:'https://elimfilters.com/images/nanoforce-mecanico.avif',datePublished:'2026-08-31',dateModified:'2026-09-01',
+    image:'https://elimfilters.com/images/hidraulico-trabajador.jpg',datePublished:'2026-08-31',dateModified:'2026-09-01',
     author:{'@type':'Organization','@id':'https://elimfilters.com/#organization',name:'ELIMFILTERS'},reviewedBy:TECHNICAL_REVIEWER,publisher:{'@type':'Organization','@id':'https://elimfilters.com/#organization',name:'ELIMFILTERS'},
     about:['hydraulic filtration','hydraulic fluid cleanliness','pressure-line filtration','return-line filtration','offline filtration','Beta ratio','critical particle size','hydraulic filter pressure drop'].map(name=>({'@type':'Thing',name})),
     mentions:['pumps','hydraulic valves','actuators','precision hydraulic components','fluid viscosity','system flow','operating pressure'].map(name=>({'@type':'Thing',name})),
@@ -38,7 +38,7 @@ export function NanoforceStablePage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(breadcrumbSchema)}} />
 
     <section className={`${styles.hero} ${styles.nanoforceHero}`} aria-labelledby="nanoforce-title">
-      <img className={styles.heroBackground} src="/images/nanoforce-mecanico.avif" alt="Hydraulic filtration service environment" />
+      <img className={styles.heroBackground} src="/images/hidraulico-trabajador.jpg" alt="Hydraulic filtration service environment" />
       <div className={styles.heroShade} aria-hidden="true" />
       <h1 id="nanoforce-title" className={styles.srOnly}>NANOFORCE™ Hydraulic Filtration Technology</h1>
       <img className={styles.heroMark} src="/assets/NANOFORCE_final.avif" alt="NANOFORCE™" />

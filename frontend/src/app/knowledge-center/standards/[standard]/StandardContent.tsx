@@ -165,7 +165,7 @@ export default function StandardContent({ std }: { std: KCStandard }) {
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {std.relatedTopics.map((topic) => (
-              <Link key={topic} href={`/knowledge-center/engineering/${topic}`} style={{ textDecoration: 'none' }}>
+              <Link key={topic} href={topic === 'operator-health' ? '/knowledge-center/systems/cabin-air-protection/' : `/knowledge-center/engineering/${topic}/`} style={{ textDecoration: 'none' }}>
                 <motion.div
                   whileHover={{ background: 'rgba(255,255,255,0.04)' }}
                   style={{

@@ -12,7 +12,7 @@ const technologyHeroAssets = [
   'intekcor-hero.avif',
   'hero-syntapore.avif',
   'syntrax.avif',
-  'nanoforce-mecanico.avif',
+  'hidraulico-trabajador.jpg',
   'THERMACORE-CAMION.avif',
   'fuellseparator-hero.avif',
   'TURBOCORE-hero.avif',

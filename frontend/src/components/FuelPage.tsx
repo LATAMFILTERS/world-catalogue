@@ -34,7 +34,7 @@ export function FuelPage() {
             minHeight: '70vh',
             display: 'flex',
             alignItems: 'center',
-            backgroundImage: 'url(/images/fuelfilter-hero.avif)',
+            backgroundImage: 'url(/images/hero-syntapore.avif)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             position: 'relative',
