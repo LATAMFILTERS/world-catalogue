@@ -21,7 +21,7 @@ export default function IndustriesPage() {
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <Link href="/knowledge-center" style={{
+          <Link href="/knowledge-center/" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
             letterSpacing: '0.1em',
@@ -77,7 +77,7 @@ export default function IndustriesPage() {
               maxWidth: '600px',
             }}
           >
-            Industry-specific contamination profiles, equipment exposure levels, and filtration requirements for heavy equipment and industrial operations. Contamination exposure directly determines filtration system design, service intervals, and asset protection strategy.
+            Twelve industry-specific technical profiles connect contamination exposure, equipment duty, protected systems and application evidence across the complete ELIMFILTERS market portfolio, including Automotive &amp; Light Duty and Bus &amp; Coach.
           </motion.p>
 
           <p style={{
@@ -109,7 +109,7 @@ export default function IndustriesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.06 }}
           >
-            <Link href={`/knowledge-center/industries/${industry.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+            <Link href={`/knowledge-center/industries/${industry.slug}/`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
             <motion.div
               whileHover={{ borderColor: 'rgba(255,241,45,0.25)', background: 'rgba(255,255,255,0.015)' }}
               style={{
@@ -180,7 +180,7 @@ export default function IndustriesPage() {
             color: 'rgba(255,241,45,0.5)',
             marginBottom: '0.5rem',
           }}>
-            CONTAMINATION EXPOSURE CLASSIFICATION
+            APPLICATION EVIDENCE BOUNDARY
           </p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
@@ -189,7 +189,7 @@ export default function IndustriesPage() {
             lineHeight: 1.65,
             textAlign: 'justify',
           }}>
-            Exposure levels reflect typical operating conditions for ambient particulate, process contamination, and fluid ingress severity. Extreme exposure (mining, silica-heavy operations) requires daily air restriction checks, cabin HEPA filtration, and reduced hydraulic service intervals. High exposure (agriculture, construction) requires site-specific service intervals rather than OEM calendar-based schedules.
+            Industry context identifies operating conditions; it does not by itself prove a product fit. Final service intervals, performance requirements and part selection must remain tied to validated equipment, protected system, duty cycle, OEM reference, dimensions and application evidence.
           </p>
         </div>
       </section>
@@ -199,8 +199,18 @@ export default function IndustriesPage() {
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
         name: 'Industrial Application Profiles — ELIMFILTERS Knowledge Center',
-        description: 'Industry-specific contamination profiles, exposure levels, and filtration requirements for 8 industrial verticals.',
-        url: 'https://elimfilters.com/knowledge-center/industries',
+        description: 'Twelve technical industry profiles covering the canonical ELIMFILTERS operating-market portfolio.',
+        url: 'https://elimfilters.com/knowledge-center/industries/',
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: KC_INDUSTRIES.length,
+          itemListElement: KC_INDUSTRIES.map((industry, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            url: `https://elimfilters.com/knowledge-center/industries/${industry.slug}/`,
+            name: industry.title,
+          })),
+        },
         publisher: {
           '@type': 'Organization',
           '@id': 'https://elimfilters.com/#organization',
