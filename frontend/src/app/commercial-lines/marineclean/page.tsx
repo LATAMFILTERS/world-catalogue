@@ -8,7 +8,7 @@ const DATA: TechDetailData = {
   heroSubtitle: 'MARINE ASSET-PROTECTION SYSTEMS',
   heroTagline: 'A specialized ELIMFILTERS solution for applying contamination-control and asset-protection architecture in marine operating environments.',
   heroImage: '/images/marine-hero.avif',
-  logoSrc: '/assets/MARINECLEAN.avif',
+  logoSrc: '/assets/MARINECLEAN_final.avif',
   breadcrumbParent: { label: 'COMMERCIAL LINES', href: '/commercial-lines/' },
   heroStats: [
     { key: 'ENVIRONMENT', value: 'MARINE' },
