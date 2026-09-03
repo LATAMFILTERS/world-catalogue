@@ -21,6 +21,7 @@ export const STATIC_CRAWL_ROUTES = [
   '/commercial-lines',
   '/commercial-lines/duratech',
   '/commercial-lines/marineclean',
+  '/engineering/dust-ingestion',
   '/distributor-application',
   '/warranty',
 ] as const;
