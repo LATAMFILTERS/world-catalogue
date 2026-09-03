@@ -201,9 +201,9 @@ export function HydraulicSystemPage() {
       <section style={section}>
         <p style={eyebrow}>FROM HYDRAULIC CONDITION TO PART</p>
         <h2 style={h2}>Resolve the application in a controlled sequence.</h2>
-        <div style={decisionFlow}>
-          {['1. EQUIPMENT', '2. HYDRAULIC CIRCUIT', '3. FLOW + PRESSURE CONTEXT', '4. CLEANLINESS / FILTRATION TARGET', '5. OEM + DIMENSIONAL EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step) => (
-            <div key={step} style={decisionStep}>{step}</div>
+        <div className="decision-flow" style={decisionFlow}>
+          {['1. EQUIPMENT', '2. HYDRAULIC CIRCUIT', '3. FLOW + PRESSURE CONTEXT', '4. CLEANLINESS / FILTRATION TARGET', '5. OEM + DIMENSIONAL EVIDENCE', '6. VALIDATED ELIMFILTERS PART'].map((step, i) => (
+            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label">{step.replace(/^\d+\.\s*/, '')}</span></div>
           ))}
         </div>
       </section>
@@ -211,7 +211,7 @@ export function HydraulicSystemPage() {
       <section style={sectionAlt}>
         <p style={eyebrow}>FREQUENT QUESTIONS</p>
         <h2 style={h2}>Hydraulic Protection</h2>
-        <div style={faqGrid}>
+        <div className="faq-grid" style={faqGrid}>
           {faqs.map(([question, answer]) => (
             <article key={question} style={faqCard}>
               <h3 style={faqQuestion}>{question}</h3>

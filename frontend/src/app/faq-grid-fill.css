@@ -1,0 +1,16 @@
+/* FAQ card grids (system + technology pages): a plain CSS grid with
+   auto-fit columns leaves a dead empty cell whenever the item count doesn't
+   divide evenly into the column count (e.g. 7 items -> 4 + 3, with the
+   4th slot on the last row rendering as blank space). Flex + wrap lets
+   each row grow to fill the full row width on its own, so a partial last
+   row has no empty gap instead of stretching every card in every page to
+   uniform-but-orphaned columns. */
+.faq-grid {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.faq-grid > * {
+  flex: 1 1 300px;
+}
