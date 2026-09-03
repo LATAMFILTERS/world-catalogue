@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Engineering Datasets — ELIMFILTERS Knowledge Center',
   description: 'Downloadable engineering datasets for industrial filtration: ISO 4406 Range Number table, ISO 16889 Beta ratio to efficiency conversion, ISO 8573-1 compressed air purity classes, and component clearance data.',
+  alternates: { canonical: 'https://elimfilters.com/knowledge-center/datasets/' },
 };
 
 const DATASETS = [
