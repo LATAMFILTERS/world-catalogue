@@ -19,11 +19,11 @@ const AGENT_PROFILES: Record<string, { en: string[]; es: string[] }> = {
   },
   office_chief_product_technology: {
     en: [
-      'The Chief Product & Technology Agent owns ELIMFILTERS’ technical platform: the five protection systems — engine air and cabin air, fuel, lubrication, hydraulic, and cooling — and the nine proprietary technologies built to serve them, from MACROCORE™ air filtration to HYDROCORE™ fuel/water separation.',
+      'The Chief Product & Technology Agent owns ELIMFILTERS’ technical platform: the five protection systems — air intake and airflow, fuel cleanliness, lubrication, hydraulic, and cooling — and the ten proprietary technologies built to serve them, including MACROCORE™ for engine air intake, HYDROCORE™ for approved standard non-turbine fuel/water separation, and TURBOCORE™ for approved FH/FG turbine-style fuel/water separator systems.',
       'The role keeps every specification, cross-reference, and application claim validated against real equipment and failure modes, so the catalog reflects engineering evidence rather than a generic parts list.',
     ],
     es: [
-      'El Chief Product & Technology Agent es responsable de la plataforma técnica de ELIMFILTERS: los cinco sistemas de protección —aire de motor y cabina, combustible, lubricación, hidráulico y enfriamiento— y las nueve tecnologías propias construidas para cada uno, desde la filtración de aire MACROCORE™ hasta la separación combustible/agua HYDROCORE™.',
+      'El Chief Product & Technology Agent es responsable de la plataforma técnica de ELIMFILTERS: los cinco sistemas de protección —admisión y flujo de aire, limpieza de combustible, lubricación, hidráulico y enfriamiento— y las diez tecnologías propias construidas para servirlos, incluyendo MACROCORE™ para admisión de aire de motor, HYDROCORE™ para separación combustible/agua estándar no-turbina aprobada y TURBOCORE™ para sistemas separadores combustible/agua tipo turbina FH/FG aprobados.',
       'La función mantiene cada especificación, referencia cruzada y afirmación de aplicación validada contra equipos y modos de falla reales, para que el catálogo refleje evidencia de ingeniería y no una lista genérica de piezas.',
     ],
   },
