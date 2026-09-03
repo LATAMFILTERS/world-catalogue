@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const industry = KC_INDUSTRIES.find((ind) => ind.slug === slug);
   if (!industry) return {};
 
-  const url = `https://elimfilters.com/knowledge-center/industries/${slug}`;
+  const url = `https://elimfilters.com/knowledge-center/industries/${slug}/`;
   return {
     title: `${industry.title} Filtration Engineering`,
     description: industry.description,
