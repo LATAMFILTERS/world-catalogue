@@ -29,6 +29,12 @@ jobs:
             --threshold 250 \
             --out-dir seo-geo-audit-out
 
+      - name: Build governed HERMES knowledge-gap requests
+        run: |
+          python3 scripts/seo-geo-audit/build_hermes_knowledge_gaps.py \
+            seo-geo-audit-out/short-pages-triage.csv \
+            --out-dir seo-geo-audit-out
+
       - name: Upload audit artifacts
         if: always()
         uses: actions/upload-artifact@v4
