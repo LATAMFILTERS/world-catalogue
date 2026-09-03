@@ -16,14 +16,19 @@ export async function generateMetadata({
   const problem = PROBLEM_STUBS_BY_SLUG[slug];
   if (!problem) return {};
   const isPublished = problem.status === 'published' || problem.status === 'engineering-approved';
+  const isDustIngestionAlias = slug === 'silicon-dust-ingestion';
   return {
     title: `${problem.name} — Problem Graph | ELIMFILTERS`,
-    description: `${problem.id}: ${problem.name}. Engineering content for this Knowledge Graph entity is scheduled for Phase 3.`,
+    description: isDustIngestionAlias
+      ? 'This graph alias consolidates into the complete ELIMFILTERS dust-ingestion engineering reference.'
+      : `${problem.id}: ${problem.name}. Engineering content for this Knowledge Graph entity is scheduled for Phase 3.`,
     alternates: {
-      canonical: `https://elimfilters.com/knowledge-center/problems/${slug}`,
+      canonical: isDustIngestionAlias
+        ? 'https://elimfilters.com/engineering/dust-ingestion/'
+        : `https://elimfilters.com/knowledge-center/problems/${slug}/`,
     },
     robots: {
-      index: isPublished,
+      index: isPublished && !isDustIngestionAlias,
       follow: true,
     },
   };
