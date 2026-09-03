@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { KC_TECHNOLOGIES, KCTechnology } from '@/lib/knowledge-center-data';
 import { getTechSidebarData } from '@/lib/knowledge-center/navigation-index';
+import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 
 const TECHS = KC_TECHNOLOGIES;
 
@@ -237,6 +238,24 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
             </div>
           </motion.section>
 
+          <motion.section
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.18 }}
+            style={{ marginBottom: '3rem' }}
+          >
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.6rem' }}>02 /</p>
+            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>Application Selection</h2>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)', textAlign: 'justify', marginBottom: '1.25rem' }}>{tech.selectionGuidance}</p>
+            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>Evidence Boundary</h2>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)', textAlign: 'justify' }}>{tech.evidenceBoundary}</p>
+          </motion.section>
+
+          <section aria-label="Technical review" style={{ marginBottom: '3rem', padding: '1.1rem 1.25rem', border: '1px solid rgba(255,241,45,0.16)', background: 'rgba(255,241,45,0.025)' }}>
+            <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: '#FFF12D', marginBottom: '0.5rem' }}>TECHNICAL REVIEW &amp; PUBLISHING GOVERNANCE</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.82rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.62)', margin: 0 }}>Reviewed by <Link href="/about/leadership/" style={{ color: '#FFF12D' }}>Víctor Abreu</Link>, Founder &amp; CEO of ELIMFILTERS. Product-level ratings and application decisions remain subject to verified technical evidence.</p>
+          </section>
+
           {/* Protected Systems */}
           {tech.relatedSystems.length > 0 && (
             <motion.section
@@ -454,6 +473,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
         url: `https://elimfilters.com/knowledge-center/technologies/${tech.slug}`,
         author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
         publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
+        reviewedBy: TECHNICAL_REVIEWER,
         keywords: [tech.domain, ...tech.standards, ...tech.contamination.slice(0, 3)].join(', '),
         about: {
           '@type': 'Thing',
