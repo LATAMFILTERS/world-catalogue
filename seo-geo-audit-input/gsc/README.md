@@ -1,22 +1,19 @@
 # Google Search Console Page Indexing intake
 
-Place the detailed example exports from Google Search Console in this directory using either English or Spanish filenames.
+Place detailed Page Indexing example exports in this directory. English or Spanish filenames are accepted.
 
 Preferred filenames:
 
-- `crawled-not-indexed.csv` — **Crawled - currently not indexed / Rastreada: actualmente sin indexar**
-- `discovered-not-indexed.csv` — **Discovered - currently not indexed / Descubierta: actualmente sin indexar**
+- `crawled-not-indexed.csv` — Crawled / Rastreada: currently not indexed
+- `discovered-not-indexed.csv` — Discovered / Descubierta: currently not indexed
+- `404-not-found.csv` — Not found (404)
+- `duplicate-without-canonical.csv` — Duplicate without user-selected canonical
+- `blocked-by-robots.csv` — Blocked by robots.txt
+- `redirect-error.csv` — Redirect error
+- `server-error-5xx.csv` — Server error (5xx)
 
-The dedicated `gsc-indexing-intake.yml` workflow runs automatically when CSV files in this directory change. It:
+`gsc-indexing-intake.yml` runs automatically whenever a CSV here changes. It first audits current production, then compares every historical GSC example with current live state.
 
-1. audits current production URLs;
-2. classifies each GSC example by technical vs semantic cause;
-3. keeps utilities/calculators/navigation out of content padding;
-4. builds governed HERMES knowledge-gap requests only from `REVIEW_FOR_EXPANSION` rows;
-5. converts those requests into `HERMES_REAL_*` candidates;
-6. runs HERMES research using the existing Groq configuration;
-7. validates candidates and uploads all evidence as workflow artifacts.
+Crawled-not-indexed editorial/entity pages are eligible for governed HERMES semantic review only when technically clean. Discovered-not-indexed pages are treated as crawl/discovery work first. Technical exports are classified as current defect, intentional exclusion/retirement, or resolved historical signal.
 
-No step in this workflow approves, publishes, or modifies canonical Knowledge Center content. Victor review remains mandatory.
-
-The workflow auto-detects `.csv` files containing `crawled`/`rastreada` and `discovered`/`descubierta` in their names. If only one export is present, it processes that export and leaves the other state untouched.
+No workflow step approves or publishes canonical content. Victor review remains mandatory.
