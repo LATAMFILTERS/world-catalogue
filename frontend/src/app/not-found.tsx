@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { motion } from 'motion/react';
 
 export const metadata: Metadata = {
   title: 'Page Not Found | ELIMFILTERS',
@@ -57,10 +56,7 @@ export default function NotFound() {
           textAlign: 'center',
         }}
       >
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+        <p
           style={{
             margin: '0 0 1.75rem',
             fontFamily: 'JetBrains Mono, monospace',
@@ -72,13 +68,10 @@ export default function NotFound() {
           }}
         >
           ELIMFILTERS // ROUTE CONTROL
-        </motion.p>
+        </p>
 
-        <motion.h1
+        <h1
           id="not-found-title"
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.55, delay: 0.05 }}
           style={{
             margin: 0,
             fontFamily: 'Titillium Web, sans-serif',
@@ -91,12 +84,9 @@ export default function NotFound() {
           }}
         >
           404
-        </motion.h1>
+        </h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.18 }}
+        <div
           style={{ marginTop: 'clamp(2rem, 6vw, 4.5rem)' }}
         >
           <p
@@ -126,13 +116,10 @@ export default function NotFound() {
             The requested page, link, or automated route is not active within ELIMFILTERS.
             No product, technical record, or commercial destination exists at this address.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
+        <div
           aria-hidden="true"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.7, delay: 0.32 }}
           style={{
             width: '86px',
             height: '4px',
