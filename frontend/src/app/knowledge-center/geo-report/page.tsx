@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'GEO Readiness Report — ELIMFILTERS Knowledge Center',
   description: 'Generative Engine Optimization audit of the ELIMFILTERS Knowledge Center. Tracks JSON-LD schema coverage, EEAT metadata, FAQ population, structured dataset availability, and AI citation readiness across all KC entities.',
+  alternates: { canonical: 'https://elimfilters.com/knowledge-center/geo-report/' },
 };
 
 const SCHEMA_COVERAGE = [
