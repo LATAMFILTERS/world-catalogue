@@ -77,7 +77,7 @@ export default function IndustriesPage() {
               maxWidth: '600px',
             }}
           >
-            Industry-specific contamination profiles, equipment exposure levels, and filtration requirements for heavy equipment and industrial operations. Contamination exposure directly determines filtration system design, service intervals, and asset protection strategy.
+            ELIMFILTERS serves 12 operating markets. This Knowledge Center currently publishes 10 evidence-backed technical industry profiles where contamination exposure, engineering context, and application guidance are mature enough for technical publication.
           </motion.p>
 
           <p style={{
@@ -86,9 +86,9 @@ export default function IndustriesPage() {
             lineHeight: 1.7,
             marginTop: '1rem',
             color: 'rgba(255,255,255,0.45)',
-            maxWidth: '600px',
+            maxWidth: '650px',
           }}>
-            Looking for commercial filtration solutions by industry? See <Link href="/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>ELIMFILTERS Industries</Link>.
+            Bus &amp; Coach and Automotive &amp; Light Duty remain part of the canonical 12-market portfolio and are available through their commercial guides until dedicated Knowledge Center technical profiles are supported by sufficient engineering evidence. See <Link href="/industries/bus-coach/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>Bus &amp; Coach</Link>, <Link href="/industries/automotive/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>Automotive &amp; Light Duty</Link>, or the complete <Link href="/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>ELIMFILTERS Industries portfolio</Link>.
           </p>
         </div>
       </section>
@@ -109,7 +109,7 @@ export default function IndustriesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.06 }}
           >
-            <Link href={`/knowledge-center/industries/${industry.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+            <Link href={`/knowledge-center/industries/${industry.slug}/`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
             <motion.div
               whileHover={{ borderColor: 'rgba(255,241,45,0.25)', background: 'rgba(255,255,255,0.015)' }}
               style={{
@@ -189,7 +189,7 @@ export default function IndustriesPage() {
             lineHeight: 1.65,
             textAlign: 'justify',
           }}>
-            Exposure levels reflect typical operating conditions for ambient particulate, process contamination, and fluid ingress severity. Extreme exposure (mining, silica-heavy operations) requires daily air restriction checks, cabin HEPA filtration, and reduced hydraulic service intervals. High exposure (agriculture, construction) requires site-specific service intervals rather than OEM calendar-based schedules.
+            Exposure levels describe the operating context represented by the current technical profile. Final service intervals, filtration performance requirements, and application claims must remain tied to validated equipment, duty, standard, and product evidence rather than inferred from an industry label alone.
           </p>
         </div>
       </section>
@@ -199,8 +199,16 @@ export default function IndustriesPage() {
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
         name: 'Industrial Application Profiles — ELIMFILTERS Knowledge Center',
-        description: 'Industry-specific contamination profiles, exposure levels, and filtration requirements for 8 industrial verticals.',
-        url: 'https://elimfilters.com/knowledge-center/industries',
+        description: 'Ten evidence-backed technical industry profiles within the canonical ELIMFILTERS portfolio of 12 operating markets.',
+        url: 'https://elimfilters.com/knowledge-center/industries/',
+        about: {
+          '@type': 'Thing',
+          name: 'Industrial filtration applications',
+        },
+        isPartOf: {
+          '@type': 'WebSite',
+          '@id': 'https://elimfilters.com/#website',
+        },
         publisher: {
           '@type': 'Organization',
           '@id': 'https://elimfilters.com/#organization',
