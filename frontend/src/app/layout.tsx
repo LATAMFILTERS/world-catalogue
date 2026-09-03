@@ -65,11 +65,6 @@ export const metadata: Metadata = {
     description: BRAND_DESCRIPTION,
     images: ['/assets/logo-elimfilters.png'],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
-  },
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',

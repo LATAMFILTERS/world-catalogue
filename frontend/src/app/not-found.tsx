@@ -1,6 +1,11 @@
-'use client';
-
+import type { Metadata } from 'next';
 import { motion } from 'motion/react';
+
+export const metadata: Metadata = {
+  title: 'Page Not Found | ELIMFILTERS',
+  description: 'The requested ELIMFILTERS page could not be found.',
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   return (
@@ -17,6 +22,8 @@ export default function NotFound() {
         padding: 'clamp(1.5rem, 5vw, 4rem)',
       }}
     >
+      <title>Page Not Found | ELIMFILTERS</title>
+      <meta name="robots" content="noindex, nofollow" />
       <div
         aria-hidden="true"
         style={{

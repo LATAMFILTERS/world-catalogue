@@ -46,8 +46,9 @@ const schemaService = {
   provider: {
     '@type': 'Organization',
     name: 'ELIMFILTERS',
-    legalName: 'Kleo Technologies LLC',
-    url: 'https://elimfilters.com',
+    '@id': 'https://elimfilters.com/#organization',
+    legalName: 'Kleo Technology LLC',
+    url: 'https://elimfilters.com/',
   },
   description:
     'Country-level distribution partnership for companies building the ELIMFILTERS filtration business in their local market with factory-direct volume economics, technical support and commercial infrastructure.',

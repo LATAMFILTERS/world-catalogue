@@ -26,87 +26,79 @@ const VIDEOS = [
     id: 'agriculture',
     title: 'Filtration Solutions for Agriculture',
     description: 'Heavy-duty filtration for agricultural equipment and harvesting operations',
-    url: '/industries/agriculture',
+    url: '/videos/agriculture',
     thumbnail: '/video-thumbnails/agriculture.svg',
   },
   {
     id: 'automotive',
     title: 'Heavy-Duty Vehicle Filtration',
     description: 'Comprehensive filtration systems for trucks and commercial vehicles',
-    url: '/industries/automotive',
+    url: '/videos/automotive',
     thumbnail: '/video-thumbnails/automotive.svg',
   },
   {
     id: 'mining',
     title: 'Mining Equipment Protection',
     description: 'Industrial filtration for extreme mining conditions',
-    url: '/industries/mining',
+    url: '/videos/mining',
     thumbnail: '/video-thumbnails/mining.svg',
   },
   {
     id: 'construction',
     title: 'Construction Equipment Filtration',
     description: 'Filtration systems for construction and heavy equipment',
-    url: '/industries/construction',
+    url: '/videos/construction',
     thumbnail: '/video-thumbnails/construction.svg',
   },
   {
     id: 'trucks-fleets',
     title: 'Fleet Maintenance Optimization',
     description: 'Total cost of ownership optimization for commercial fleets',
-    url: '/industries/trucks-and-fleets',
+    url: '/videos/trucks-fleets',
     thumbnail: '/video-thumbnails/trucks-fleets.svg',
   },
   {
     id: 'railway',
     title: 'Railway Systems Protection',
     description: 'Filtration solutions for rail transport and locomotive systems',
-    url: '/industries/railway',
+    url: '/videos/railway',
     thumbnail: '/video-thumbnails/railway.svg',
   },
   {
     id: 'marine',
     title: 'Marine Vessel Filtration',
     description: 'Advanced filtration for maritime and ocean-going vessels',
-    url: '/industries/marine',
+    url: '/videos/marine',
     thumbnail: '/video-thumbnails/marine.svg',
   },
   {
     id: 'manufacturing',
     title: 'Industrial Manufacturing Systems',
     description: 'Filtration for precision manufacturing and production equipment',
-    url: '/industries/manufacturing',
+    url: '/videos/manufacturing',
     thumbnail: '/video-thumbnails/manufacturing.svg',
   },
   {
     id: 'power-generation',
     title: 'Power Generation Protection',
     description: 'Filtration systems for power plants and electrical generation',
-    url: '/industries/power-generation',
+    url: '/videos/power-generation',
     thumbnail: '/video-thumbnails/power-generation.svg',
   },
   {
     id: 'oil-gas',
     title: 'Oil & Gas Operations',
     description: 'Specialized filtration for upstream and downstream operations',
-    url: '/industries/oil-and-gas',
+    url: '/videos/oil-gas',
     thumbnail: '/video-thumbnails/oil-gas.svg',
   },
   {
     id: 'bus-coach',
     title: 'Transit & Coach Systems',
     description: 'Reliable filtration for public transportation and coach services',
-    url: '/industries/bus-and-coach',
+    url: '/videos/bus-coach',
     thumbnail: '/video-thumbnails/bus-coach.svg',
-  },
-  {
-    id: 'product-elimfilters',
-    title: 'ELIMFILTERS Product Systems',
-    description: 'Complete range of ELIMFILTERS filtration products and technologies',
-    url: '/products',
-    thumbnail: '/video-thumbnails/product-elimfilters.svg',
-  },
-];
+  },];
 
 function generateVideoSitemap() {
   const videoEntries = VIDEOS.map(
@@ -117,6 +109,7 @@ function generateVideoSitemap() {
       <video:thumbnail_loc>${BASE_URL}${video.thumbnail}</video:thumbnail_loc>
       <video:title>${escapeXml(video.title)}</video:title>
       <video:description>${escapeXml(video.description)}</video:description>
+      <video:content_loc>${BASE_URL}/images/${escapeXml(video.id === 'moleculas' ? 'moleculas.mp4' : ({ agriculture: 'Agriculture-2.mp4', automotive: 'Autos-Vin4.mp4', mining: 'Minning4.mp4', construction: 'construction-2.mp4', 'trucks-fleets': 'Trucks&Feel-1.mp4', railway: 'Train-2.mp4', marine: 'Marino-1.mp4', manufacturing: 'Manufacture-1.mp4', 'power-generation': 'Power-1.mp4', 'oil-gas': 'Petro&Gas-1.mp4', 'bus-coach': 'buses-2.mp4' })[video.id])}</video:content_loc>
     </video:video>
   </url>`
   ).join('');
