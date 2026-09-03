@@ -15,6 +15,19 @@ export const STATIC_CRAWL_ROUTES = [
   '/industries',
   '/knowledge-center',
   '/knowledge-center/faq',
+  '/videos',
+  '/videos/moleculas',
+  '/videos/agriculture',
+  '/videos/automotive',
+  '/videos/mining',
+  '/videos/construction',
+  '/videos/trucks-fleets',
+  '/videos/railway',
+  '/videos/marine',
+  '/videos/manufacturing',
+  '/videos/power-generation',
+  '/videos/oil-gas',
+  '/videos/bus-coach',
   '/about',
   '/contact',
   '/distributors',
@@ -86,14 +99,15 @@ function frequencyForTier(tier: CrawlProfile['crawlTier']): CrawlProfile['change
 
 function staticProfile(path: (typeof STATIC_CRAWL_ROUTES)[number]): CrawlProfile {
   const isSpecializedSolution = path === '/commercial-lines/duratech' || path === '/commercial-lines/marineclean';
-  const tier: CrawlProfile['crawlTier'] = path === '/' ? 1 : path === '/contact' || path === '/about' ? 4 : isSpecializedSolution ? 2 : 1;
+  const isVideoRoute = path === '/videos' || path.startsWith('/videos/');
+  const tier: CrawlProfile['crawlTier'] = path === '/' ? 1 : path === '/contact' || path === '/about' ? 4 : isSpecializedSolution ? 2 : isVideoRoute ? 2 : 1;
   return {
     path,
     url: canonicalUrl(path),
-    priority: path === '/' ? 1 : isSpecializedSolution ? 0.84 : tier === 1 ? 0.92 : 0.55,
-    changeFrequency: path === '/' ? 'weekly' : isSpecializedSolution ? 'monthly' : 'monthly',
+    priority: path === '/' ? 1 : isSpecializedSolution ? 0.84 : isVideoRoute ? 0.78 : tier === 1 ? 0.92 : 0.55,
+    changeFrequency: path === '/' ? 'weekly' : isSpecializedSolution || isVideoRoute ? 'monthly' : 'monthly',
     crawlTier: tier,
-    authority: path === '/' ? 100 : isSpecializedSolution ? 85 : 80,
+    authority: path === '/' ? 100 : isSpecializedSolution ? 85 : isVideoRoute ? 72 : 80,
     connectionCount: 0,
   };
 }
