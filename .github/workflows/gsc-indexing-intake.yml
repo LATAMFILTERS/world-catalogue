@@ -7,7 +7,6 @@ on:
       - 'seo-geo-audit-input/gsc/*.csv'
       - 'scripts/seo-geo-audit/triage_gsc_indexing_examples.py'
       - 'scripts/seo-geo-audit/triage_gsc_technical_examples.py'
-      - 'scripts/seo-geo-audit/recover_historical_404s.py'
       - '.github/workflows/gsc-indexing-intake.yml'
 
 permissions:
@@ -99,15 +98,6 @@ jobs:
           [ -z "${{ steps.inputs.outputs.redirect_error }}" ] || args+=(--redirect-error "${{ steps.inputs.outputs.redirect_error }}")
           [ -z "${{ steps.inputs.outputs.server_error }}" ] || args+=(--server-error "${{ steps.inputs.outputs.server_error }}")
           python3 scripts/seo-geo-audit/triage_gsc_technical_examples.py "${args[@]}"
-
-      - name: Recover historical 404s with evidence-backed mappings
-        if: steps.inputs.outputs.not_found != ''
-        run: |
-          python3 scripts/seo-geo-audit/recover_historical_404s.py \
-            --examples "${{ steps.inputs.outputs.not_found }}" \
-            --registry seo-geo-audit-input/gsc/historical-404-recovery-registry.csv \
-            --audit seo-geo-audit-out/seo-geo-audit.csv \
-            --out-dir seo-geo-audit-out
 
       - name: Count semantic candidates
         id: semantic
