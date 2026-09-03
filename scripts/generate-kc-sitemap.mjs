@@ -87,8 +87,17 @@ function injectIntoSitemap(sitemapPath, entries) {
     throw new Error(`${sitemapPath} does not contain a </urlset> closing tag — refusing to write a malformed sitemap.`);
   }
 
-  // Remove any previously injected KC block
-  const withoutKcBlock = content.replace(/\n  <!-- ── Knowledge Center ── -->[\s\S]*?(?=\n<\/urlset>)/, '');
+  // Replace every pre-generated Knowledge Center entry with the routes scanned
+  // from exported HTML. This guarantees that noindex legacy documents cannot
+  // remain in the sitemap through the core entity graph.
+  const withoutKnowledgeCenterEntries = content.replace(
+    /\s*<url>\s*<loc>https:\/\/elimfilters\.com\/knowledge-center(?:\/[^<]*)?<\/loc>[\s\S]*?<\/url>/g,
+    '',
+  );
+  const withoutKcBlock = withoutKnowledgeCenterEntries.replace(
+    /\n  <!-- ── Knowledge Center ── -->[\s\S]*?(?=\n<\/urlset>)/,
+    '',
+  );
 
   const block = `\n  <!-- ── Knowledge Center ── -->\n${entries.join('\n')}\n`;
   const updated = withoutKcBlock.replace('</urlset>', `${block}</urlset>`);

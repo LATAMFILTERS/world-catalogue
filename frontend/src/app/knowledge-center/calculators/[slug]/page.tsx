@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${calc.title} | ELIMFILTERS Knowledge Center`,
     description: calc.formula.standard + ' — ' + calc.description,
+    alternates: { canonical: `https://elimfilters.com/knowledge-center/calculators/${calc.slug}/` },
   };
 }
 
