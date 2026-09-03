@@ -4,13 +4,10 @@ import { KC_STANDARDS } from '@/lib/knowledge-center-data';
 import { notFound } from 'next/navigation';
 import StandardContent from './StandardContent';
 
+// Only exact semantic aliases belong here. Unrelated historical standards must
+// resolve independently (or 404) rather than inherit another standard's entity.
 const STANDARD_ALIASES: Record<string, string> = {
-  'astm-d6210': 'iso-4406',
-  'eu-dir-2019-130': 'iso-11155',
-  'iso-11155': 'iso-29463',
-  'iso-3724': 'iso-16889',
-  'iso-4405': 'iso-4406',
-  'din-71220': 'din-71460',
+  'iso-11155': 'iso-11155-1',
 };
 
 function resolveStandardSlug(slug: string): string {
