@@ -13,6 +13,7 @@ const technologies = [
   ['INTEKCORE', 'intekcore'],
   ['SYNTAPORE', 'syntapore'],
   ['HYDROCORE', 'hydrocore'],
+  ['TURBOCORE', 'turbocore'],
   ['SYNTRAX', 'syntrax'],
   ['NANOFORCE', 'nanoforce'],
   ['THERMACORE', 'thermacore'],
@@ -24,7 +25,7 @@ function read(key) {
   return fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
 }
 
-test('all nine core technologies have active citation-grade vault notes', () => {
+test('all ten core technologies have active citation-grade vault notes', () => {
   for (const [key, slug] of technologies) {
     const note = read(key);
     const frontmatter = note.match(/^---\n([\s\S]*?)\n---/m)?.[1] || '';
