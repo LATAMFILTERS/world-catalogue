@@ -151,7 +151,17 @@ jobs:
           HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
         run: npm run hermes:sweep
 
-      - name: Resolve detected source changes with Groq
+      - name: Generate SEO/GEO/AEO knowledge-gap candidates for HERMES
+        id: seo_gaps
+        if: steps.guard.outputs.proceed == 'true' && env.HERMES_BASELINE_MODE != 'true'
+        continue-on-error: true
+        run: |
+          python3 scripts/seo-geo-audit/audit.py --out-dir seo-geo-audit-out
+          python3 scripts/seo-geo-audit/triage_short_pages.py seo-geo-audit-out/seo-geo-audit.csv --threshold 250 --out-dir seo-geo-audit-out
+          python3 scripts/seo-geo-audit/build_hermes_knowledge_gaps.py seo-geo-audit-out/short-pages-triage.csv --out-dir seo-geo-audit-out
+          node scripts/hermes/import-seo-knowledge-gaps.mjs seo-geo-audit-out/hermes-knowledge-gaps.json
+
+      - name: Resolve detected source changes and SEO knowledge gaps with Groq
         id: research
         if: steps.guard.outputs.proceed == 'true' && env.HERMES_BASELINE_MODE != 'true'
         continue-on-error: true
@@ -173,6 +183,7 @@ jobs:
         env:
           HERMES_COLLECT_STATUS: ${{ steps.collect.outcome || 'skipped' }}
           HERMES_SWEEP_STATUS: ${{ steps.sweep.outcome || 'skipped' }}
+          HERMES_SEO_GAPS_STATUS: ${{ steps.seo_gaps.outcome || 'skipped' }}
           HERMES_RESEARCH_STATUS: ${{ steps.research.outcome || 'skipped' }}
           HERMES_VALIDATE_STATUS: ${{ steps.validate.outcome || 'skipped' }}
         run: npm run hermes:report:real
@@ -182,6 +193,7 @@ jobs:
         env:
           HERMES_COLLECT_STATUS: ${{ steps.collect.outcome || 'skipped' }}
           HERMES_SWEEP_STATUS: ${{ steps.sweep.outcome || 'skipped' }}
+          HERMES_SEO_GAPS_STATUS: ${{ steps.seo_gaps.outcome || 'skipped' }}
           HERMES_RESEARCH_STATUS: ${{ steps.research.outcome || 'skipped' }}
           HERMES_VALIDATE_STATUS: ${{ steps.validate.outcome || 'skipped' }}
           HERMES_REPORT_STATUS: ${{ steps.report.outcome || 'skipped' }}
@@ -197,6 +209,7 @@ jobs:
             const statuses = {
               collection: process.env.HERMES_COLLECT_STATUS,
               industry_sweep: process.env.HERMES_SWEEP_STATUS,
+              seo_geo_aeo_gap_intake: process.env.HERMES_SEO_GAPS_STATUS,
               research_resolution: process.env.HERMES_RESEARCH_STATUS,
               validation: process.env.HERMES_VALIDATE_STATUS,
               report_generation: process.env.HERMES_REPORT_STATUS,
@@ -260,11 +273,12 @@ jobs:
             hermes/source-cache
             hermes/baselines
             hermes/industry-sweep
+            seo-geo-audit-out
             elimfilters-vault/94-sync-log
           if-no-files-found: warn
 
       - name: Mark degraded weekly intelligence run as failed
-        if: always() && steps.guard.outputs.proceed == 'true' && (steps.collect.outcome == 'failure' || steps.sweep.outcome == 'failure' || steps.research.outcome == 'failure' || steps.validate.outcome == 'failure' || steps.report.outcome == 'failure' || steps.email.outcome == 'failure')
+        if: always() && steps.guard.outputs.proceed == 'true' && (steps.collect.outcome == 'failure' || steps.sweep.outcome == 'failure' || steps.seo_gaps.outcome == 'failure' || steps.research.outcome == 'failure' || steps.validate.outcome == 'failure' || steps.report.outcome == 'failure' || steps.email.outcome == 'failure')
         run: |
           echo "HERMES weekly delivery completed or was attempted, but one or more pipeline stages failed. See the emailed partial report and workflow logs."
           exit 1
