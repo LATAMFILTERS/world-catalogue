@@ -13,7 +13,7 @@ test('Knowledge Center publishes the full canonical 12-market industry portfolio
   const registry = read('frontend/src/lib/knowledge-center-data/canonical-industries-registry.ts');
   const barrel = read('frontend/src/lib/knowledge-center-data/index.ts');
 
-  assert.match(page, /Twelve technical industry profiles/);
+  assert.match(page, /Twelve industry-specific technical profiles/);
   assert.match(page, /Automotive &amp; Light Duty and Bus &amp; Coach/);
   assert.match(registry, /slug: 'automotive'/);
   assert.match(registry, /slug: 'bus-coach'/);
