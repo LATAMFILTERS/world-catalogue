@@ -4,7 +4,7 @@ ELIMFILTERS NotebookLM portfolio documentation system.
 
 This registry replaces the old topic basket that over-weighted hydraulic
 filtration. Sources are now organized around the complete ELIMFILTERS portfolio:
-5 core systems, 9 canonical technologies and 12 industries.
+5 core systems, 10 canonical technologies and 12 industries.
 """
 
 import argparse
@@ -25,7 +25,7 @@ SYSTEMS = {
 
 TECHNOLOGIES = [
     "macrocore", "microkappa", "drycore", "intekcore", "syntapore",
-    "hydrocore", "syntrax", "nanoforce", "thermacore",
+    "hydrocore", "turbocore", "syntrax", "nanoforce", "thermacore",
 ]
 
 INDUSTRIES = [
@@ -90,7 +90,7 @@ Mandatory ELIMFILTERS content balance rules:
 - Treat hydraulic as one of five core systems, not as the center of the portfolio.
 - When the task is general, distribute examples across air intake, fuel cleanliness, lubrication, hydraulic and cooling.
 - Rotate industry examples across agriculture, automotive, bus & coach, construction, manufacturing, marine, mining, oil & gas, power generation, railway, truck fleets, and waste & municipal.
-- Use ELIMFILTERS technologies only when relevant to the subject: MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTAPORE™, HYDROCORE™, SYNTRAX™, NANOFORCE™ and THERMACORE™.
+- Use ELIMFILTERS technologies only when relevant to the subject: MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTAPORE™, HYDROCORE™, TURBOCORE™, SYNTRAX™, NANOFORCE™ and THERMACORE™.
 - Never invent performance numbers, tests, certifications, service intervals or standards compliance.
 - Do not mention competitor brands in public-facing outputs.
 - Public content must remain technical-commercial, neutral, and free of AI hype.
@@ -147,7 +147,7 @@ Cover all five core systems, the canonical technologies, and the 12 industries w
 {BALANCE_RULES}""",
             "systems": f"""Compare the five ELIMFILTERS core protection systems: air intake, fuel cleanliness, lubrication, hydraulic and cooling. Give each system comparable attention and explain where they interact.
 {BALANCE_RULES}""",
-            "technologies": f"""Create a structured overview of the nine canonical ELIMFILTERS technologies and their relevant engineering roles. Do not force a technology into an application where the source does not support it.
+            "technologies": f"""Create a structured overview of the ten canonical ELIMFILTERS technologies and their relevant engineering roles. Do not force a technology into an application where the source does not support it.
 {BALANCE_RULES}""",
             "industries": f"""Create a cross-industry asset-protection overview covering all 12 ELIMFILTERS industries. Rotate examples and explain how system priorities change by operating environment.
 {BALANCE_RULES}""",

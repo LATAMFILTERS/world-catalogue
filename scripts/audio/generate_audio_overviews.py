@@ -40,6 +40,7 @@ PAGES = {
     "technology-intekcore": {"title": "INTEKCORE™", "url": f"{BASE}/technologies/intekcore/", "section": "technology"},
     "technology-syntapore": {"title": "SYNTAPORE™", "url": f"{BASE}/technologies/syntapore/", "section": "technology"},
     "technology-hydrocore": {"title": "HYDROCORE™", "url": f"{BASE}/technologies/hydrocore/", "section": "technology"},
+    "technology-turbocore": {"title": "TURBOCORE™", "url": f"{BASE}/technologies/turbocore/", "section": "technology"},
     "technology-syntrax": {"title": "SYNTRAX™", "url": f"{BASE}/technologies/syntrax/", "section": "technology"},
     "technology-nanoforce": {"title": "NANOFORCE™", "url": f"{BASE}/technologies/nanoforce/", "section": "technology"},
     "technology-thermacore": {"title": "THERMACORE™", "url": f"{BASE}/technologies/thermacore/", "section": "technology"},
@@ -78,7 +79,7 @@ Portfolio-balance rules are mandatory:
 - Do not use hydraulic systems as the default example.
 - When examples are useful, choose examples from the named industry, system or technology first.
 - Across ELIMFILTERS, recognize the five core systems: air intake, fuel cleanliness, lubrication, hydraulic and cooling.
-- Recognize the nine canonical technologies: MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTAPORE™, HYDROCORE™, SYNTRAX™, NANOFORCE™ and THERMACORE™.
+- Recognize the ten canonical technologies: MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, SYNTAPORE™, HYDROCORE™, TURBOCORE™, SYNTRAX™, NANOFORCE™ and THERMACORE™.
 - Do not invent test results, certifications, service intervals or performance numbers.
 - Standards may be mentioned only where applicable and with qualified wording.
 - Do not mention competitor brands in public-facing script text.

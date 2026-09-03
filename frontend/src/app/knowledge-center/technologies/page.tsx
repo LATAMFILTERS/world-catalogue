@@ -70,7 +70,7 @@ export default function TechnologiesPage() {
               maxWidth: '620px',
             }}
           >
-            Nine canonical core filtration technologies engineered for specific contamination domains. Each technology is mapped to the contamination modes it controls, the technical standards referenced where applicable, and the industrial protection system it supports.
+            Ten canonical core filtration technologies engineered for specific contamination domains. Each technology is mapped to the contamination modes it controls, the technical standards referenced where applicable, and the industrial protection system it supports.
           </motion.p>
         </div>
       </section>
@@ -189,7 +189,7 @@ export default function TechnologiesPage() {
         '@type': 'CollectionPage',
         '@id': 'https://elimfilters.com/knowledge-center/technologies/#collection',
         name: 'ELIMFILTERS Technology Registry — Filtration Technologies',
-        description: 'Nine canonical core ELIMFILTERS filtration technologies mapped to contamination domains, technical standards where applicable, and industrial protection systems.',
+        description: 'Ten canonical core ELIMFILTERS filtration technologies mapped to contamination domains, technical standards where applicable, and industrial protection systems.',
         url: 'https://elimfilters.com/knowledge-center/technologies/',
         isPartOf: { '@id': 'https://elimfilters.com/knowledge-center/#collection' },
         publisher: {
