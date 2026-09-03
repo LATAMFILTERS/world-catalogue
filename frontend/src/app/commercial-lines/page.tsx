@@ -9,7 +9,7 @@ const SOLUTIONS = [
     slug: 'marineclean',
     name: 'MARINECLEAN™',
     role: 'Specialized Marine Solution',
-    image: '/assets/MARINECLEAN.avif',
+    image: '/assets/MARINECLEAN_final.avif',
     href: '/commercial-lines/marineclean/',
     description: 'Extends the ELIMFILTERS Asset Protection Systems architecture into marine operating environments through application-specific contamination-control planning.',
     labels: ['MARINE', 'ASSET PROTECTION', 'APPLICATION-SPECIFIC'],
