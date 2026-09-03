@@ -183,6 +183,7 @@ export function TechDetailPage({ data }: Props) {
               />
             )}
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.3 }} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem, 5vw, 4.8rem)', lineHeight: 1, margin: '0 0 1rem', color: '#fff', textTransform: 'uppercase' }}>{title}</h1>
               <p style={{ fontSize: 'clamp(0.85rem, 1.3vw, 1rem)', maxWidth: '600px', lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-display)', margin: '0 0 2rem' }}>
                 {cleanText(data.heroTagline)}
               </p>
