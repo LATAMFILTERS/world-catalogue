@@ -1,0 +1,58 @@
+name: Current Indexability Priority Matrix
+
+on:
+  workflow_dispatch: {}
+  pull_request:
+    paths:
+      - 'scripts/seo-geo-audit/build_current_indexability_matrix.py'
+      - '.github/workflows/current-indexability-matrix.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/seo-geo-audit/build_current_indexability_matrix.py'
+      - '.github/workflows/current-indexability-matrix.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: current-indexability-priority-matrix-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Audit current production architecture
+        run: python3 scripts/seo-geo-audit/audit.py --out-dir seo-geo-audit-out
+
+      - name: Build current architecture indexability matrix
+        run: |
+          python3 scripts/seo-geo-audit/build_current_indexability_matrix.py \
+            seo-geo-audit-out/seo-geo-audit.csv \
+            --out-dir seo-geo-audit-out
+
+      - name: Print priority summary
+        run: cat seo-geo-audit-out/current-indexability-priority-matrix.md
+
+      - name: Upload matrix evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: current-indexability-priority-matrix-${{ github.run_number }}
+          path: |
+            seo-geo-audit-out/seo-geo-audit.csv
+            seo-geo-audit-out/seo-geo-summary.md
+            seo-geo-audit-out/current-indexability-priority-matrix.csv
+            seo-geo-audit-out/current-indexability-priority-matrix.md
+          if-no-files-found: warn
+          retention-days: 90
