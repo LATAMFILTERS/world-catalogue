@@ -6,28 +6,6 @@
  *
  * Builds a flat array of KCSearchDocument from all KC entity registries.
  * Computed once at module scope — O(N) over all entities on first import.
- *
- * Entity coverage (10 types):
- *   article    — 53 engineering articles
- *   standard   — 22 ISO/ASTM/SAE/NFPA standards
- *   technology — 12 ELIMFILTERS technologies
- *   term       — 68 glossary entries
- *   system     — 6 protection systems
- *   diagram    — 15 engineering diagrams
- *   calculator — 7 calculators
- *   comparison — 10 side-by-side comparisons
- *   industry   — 10 industry profiles (legacy, carried forward)
- *   problem    — 15 engineering problems (legacy, carried forward)
- *
- * Graph-density weighting:
- *   edgeCount for each node is sourced from the recommendation graph
- *   singleton (getKCRecommendationGraph). Nodes without a recommendation
- *   graph entry (industries, problems) have edgeCount = 0.
- *
- * Dependency:
- *   knowledge-center-data (all registries)
- *   knowledge-center/recommendation-graph (edge counts)
- *   knowledge-center/article-registry (termIdToSlug, PROBLEM_STUBS)
  */
 
 import {
@@ -43,9 +21,8 @@ import {
 import { ENGINEERING_DIAGRAMS } from '@/lib/knowledge-center-data/diagram-registry';
 import { PROBLEM_STUBS, PROBLEM_CATEGORY_LABELS, termIdToSlug } from './article-registry';
 import { getKCRecommendationGraph } from './recommendation-graph';
+import { isConsolidatedEngineeringTopic } from './canonical-article-ownership';
 import type { KCSearchDocument } from './search-types';
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
 
 function edgeCountFor(nodeKey: string): number {
   const graph = getKCRecommendationGraph();
@@ -56,31 +33,30 @@ function nk(type: string, slug: string): string {
   return `${type}:${slug}`;
 }
 
-/** Cap subtitle to 200 chars for display purposes. */
 function cap(text: string, max = 200): string {
   return text.length > max ? text.slice(0, max - 1) + '…' : text;
 }
 
-// ── Index builders per entity type ────────────────────────────────────────────
-
 function buildArticleDocs(): KCSearchDocument[] {
-  return ENGINEERING_ARTICLES.map(a => ({
-    id:        nk('article', a.slug),
-    type:      'article' as const,
-    slug:      a.slug,
-    label:     a.title,
-    subtitle:  a.subtitle,
-    domain:    a.category,
-    keywords:  [
-      ...a.keywords,
-      ...a.relatedStandards,
-      ...a.relatedTechnologies,
-      a.category,
-      a.subtitle,
-    ],
-    href:      `/knowledge-center/engineering/${a.slug}`,
-    edgeCount: edgeCountFor(nk('article', a.slug)),
-  }));
+  return ENGINEERING_ARTICLES
+    .filter(a => !isConsolidatedEngineeringTopic(a.slug))
+    .map(a => ({
+      id:        nk('article', a.slug),
+      type:      'article' as const,
+      slug:      a.slug,
+      label:     a.title,
+      subtitle:  a.subtitle,
+      domain:    a.category,
+      keywords:  [
+        ...a.keywords,
+        ...a.relatedStandards,
+        ...a.relatedTechnologies,
+        a.category,
+        a.subtitle,
+      ],
+      href:      `/knowledge-center/engineering/${a.slug}/`,
+      edgeCount: edgeCountFor(nk('article', a.slug)),
+    }));
 }
 
 function buildStandardDocs(): KCSearchDocument[] {
@@ -100,7 +76,7 @@ function buildStandardDocs(): KCSearchDocument[] {
       s.issuingOrganization,
       s.revisionStatus,
     ],
-    href:      `/knowledge-center/standards/${s.slug}`,
+    href:      `/knowledge-center/standards/${s.slug}/`,
     edgeCount: edgeCountFor(nk('standard', s.slug)),
   }));
 }
@@ -122,7 +98,7 @@ function buildTechnologyDocs(): KCSearchDocument[] {
       ...t.standards,
       ...t.relatedSystems,
     ],
-    href:      `/knowledge-center/technologies/${t.slug}`,
+    href:      `/knowledge-center/technologies/${t.slug}/`,
     edgeCount: edgeCountFor(nk('technology', t.slug)),
   }));
 }
@@ -145,7 +121,7 @@ function buildTermDocs(): KCSearchDocument[] {
         ...(entry.relatedTechnologies ?? []),
         entry.category,
       ],
-      href:      `/knowledge-center/glossary/${slug}`,
+      href:      `/knowledge-center/glossary/${slug}/`,
       edgeCount: edgeCountFor(nk('term', slug)),
     };
   });
@@ -169,7 +145,7 @@ function buildSystemDocs(): KCSearchDocument[] {
         ...s.standards,
         ...s.challenges,
       ],
-      href:      `/knowledge-center/systems/${s.slug}`,
+      href:      `/knowledge-center/systems/${s.slug}/`,
       edgeCount: edgeCountFor(nk('system', s.slug)),
     };
   });
@@ -190,7 +166,7 @@ function buildDiagramDocs(): KCSearchDocument[] {
       ...d.relatedArticles,
       ...d.governingStandards,
     ],
-    href:      `/knowledge-center/diagrams/${d.slug}`,
+    href:      `/knowledge-center/diagrams/${d.slug}/`,
     edgeCount: edgeCountFor(nk('diagram', d.slug)),
   }));
 }
@@ -212,7 +188,7 @@ function buildCalculatorDocs(): KCSearchDocument[] {
       ...c.relatedStandards,
       ...c.relatedTechnologies,
     ],
-    href:      `/knowledge-center/calculators/${c.slug}`,
+    href:      `/knowledge-center/calculators/${c.slug}/`,
     edgeCount: edgeCountFor(nk('calculator', c.slug)),
   }));
 }
@@ -235,7 +211,7 @@ function buildComparisonDocs(): KCSearchDocument[] {
       ...comp.relatedStandards,
       ...comp.relatedTechnologies,
     ],
-    href:      `/knowledge-center/comparisons/${comp.slug}`,
+    href:      `/knowledge-center/comparisons/${comp.slug}/`,
     edgeCount: edgeCountFor(nk('comparison', comp.slug)),
   }));
 }
@@ -251,7 +227,7 @@ function buildIndustryDocs(): KCSearchDocument[] {
       subtitle:  cap(i.description),
       domain:    `${i.dust} dust concentration`,
       keywords:  [i.title, i.dust, 'industry', 'sector'],
-      href:      `/knowledge-center/industries/${i.slug}`,
+      href:      `/knowledge-center/industries/${i.slug}/`,
       edgeCount: 0,
     };
   });
@@ -266,20 +242,11 @@ function buildProblemDocs(): KCSearchDocument[] {
     subtitle:  `${PROBLEM_CATEGORY_LABELS[p.category]} — ${p.severity} severity`,
     domain:    PROBLEM_CATEGORY_LABELS[p.category],
     keywords:  [p.name, p.category, p.severity, 'contamination', 'failure', 'wear'],
-    href:      `/knowledge-center/problems/${p.slug}`,
+    href:      `/knowledge-center/problems/${p.slug}/`,
     edgeCount: 0,
   }));
 }
 
-// ── Singleton index ────────────────────────────────────────────────────────────
-
-/**
- * Complete search index — built once at module load.
- * All 10 entity types; ~200 documents total.
- *
- * Order within the array has no effect on ranking — the search engine sorts
- * by score, typeOrder, and label on every query.
- */
 export const KC_SEARCH_INDEX: KCSearchDocument[] = [
   ...buildArticleDocs(),
   ...buildStandardDocs(),
@@ -293,7 +260,6 @@ export const KC_SEARCH_INDEX: KCSearchDocument[] = [
   ...buildProblemDocs(),
 ];
 
-/** Total document count per entity type — for display in filter UI. */
 export const KC_SEARCH_TYPE_COUNTS: Record<string, number> = KC_SEARCH_INDEX.reduce(
   (acc, doc) => ({ ...acc, [doc.type]: (acc[doc.type] ?? 0) + 1 }),
   {} as Record<string, number>,
