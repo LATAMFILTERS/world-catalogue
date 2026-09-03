@@ -21,11 +21,9 @@ export default function SchemaMarkup() {
           addressCountry: 'US',
         },
         email: 'info@elimfilters.com',
-        telephone: '+1-281-965-9142',
         contactPoint: {
           '@type': 'ContactPoint',
           contactType: 'customer support and commercial inquiries',
-          telephone: '+1-281-965-9142',
           email: 'info@elimfilters.com',
           areaServed: 'Worldwide',
           availableLanguage: ['English', 'Spanish'],
