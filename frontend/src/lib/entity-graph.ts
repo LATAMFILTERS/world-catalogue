@@ -39,9 +39,13 @@ export { normalizeStandardId };
 
 const unique = <T,>(items: T[]): T[] => Array.from(new Set(items));
 
+/**
+ * Canonical corporate industry registry for the entity graph.
+ * Industry existence must not depend on whether a current system/failure edge happens to reference it.
+ */
 const INDUSTRY_NAMES: Record<string, string> = {
   agriculture: 'Agriculture',
-  automotive: 'Automotive',
+  automotive: 'Automotive & Light Duty',
   'bus-coach': 'Bus & Coach',
   construction: 'Construction',
   manufacturing: 'Manufacturing',
@@ -50,18 +54,15 @@ const INDUSTRY_NAMES: Record<string, string> = {
   'oil-gas': 'Oil & Gas',
   'power-generation': 'Power Generation',
   railway: 'Railway',
-  'trucks-fleets': 'Truck Fleets',
-  'waste-municipal': 'Waste & Municipal',
+  'trucks-fleets': 'Commercial Truck Fleets',
+  'waste-municipal': 'Waste & Municipal Fleets',
 };
 
 export function getStandardHref(standard: string): string {
   return `/knowledge-center/standards/${normalizeStandardId(standard)}/`;
 }
 
-const industrySlugs = unique([
-  ...PROTECTION_SYSTEM_LIST.flatMap((system) => system.relatedIndustries),
-  ...Object.values(FAILURE_KNOWLEDGE).flatMap((failure) => [...failure.industries]),
-]);
+const industrySlugs = Object.keys(INDUSTRY_NAMES);
 
 const standardNameById = new Map<string, string>();
 [
@@ -88,25 +89,25 @@ export const ENTITY_NODES: readonly EntityNode[] = [
     id: `system:${system.slug}`,
     kind: 'system' as const,
     name: system.name,
-    href: `/systems/${system.slug}`,
+    href: `/systems/${system.slug}/`,
   })),
   ...PRODUCT_FAMILY_LIST.map((family) => ({
     id: `family:${family.slug}`,
     kind: 'family' as const,
     name: family.name,
-    href: `/families/${family.slug}`,
+    href: `/families/${family.slug}/`,
   })),
   ...CANONICAL_TECHNOLOGY_LIST.map((technology) => ({
     id: `technology:${technology.slug}`,
     kind: 'technology' as const,
     name: technology.name,
-    href: `/technologies/${technology.slug}`,
+    href: `/technologies/${technology.slug}/`,
   })),
   ...industrySlugs.map((slug) => ({
     id: `industry:${slug}`,
     kind: 'industry' as const,
-    name: INDUSTRY_NAMES[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase()),
-    href: `/industries/${slug}`,
+    name: INDUSTRY_NAMES[slug],
+    href: `/industries/${slug}/`,
   })),
   ...standardNodes,
   ...Object.values(FAILURE_KNOWLEDGE).map((failure) => ({
