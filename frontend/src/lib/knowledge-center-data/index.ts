@@ -2,26 +2,9 @@
  * index.ts
  * ELIMFILTERS Knowledge Center — Data Registry Barrel Export
  *
- * Single import point for all KC data.
- * All existing imports from '@/lib/knowledge-center-data' resolve to this file.
- * Zero breaking changes — all previously exported names remain available.
- *
- * Dependency graph (acyclic):
- *   types.ts              ← no imports from this module
- *   entity-ids.ts         ← no imports from this module
- *   calculator-engines.ts ← no imports from this module
- *   articles-registry     ← imports types
- *   standards-registry    ← imports types
- *   technologies-registry ← imports types
- *   systems-registry      ← imports types
- *   canonical-systems-registry ← derives public five-system ontology
- *   industries-registry   ← imports types
- *   canonical-industries-registry ← derives public 12-market ontology
- *   canonical-industry-details ← normalizes public industry semantics
- *   canonical-diagram-registry ← normalizes public diagram ontology
- *   calculators-registry  ← imports types, entity-ids
- *   comparisons-registry  ← imports types, entity-ids
- *   index.ts (this)       ← imports all above
+ * Single import point for all KC data. Public Technology, System and Industry
+ * IDs are exported from the current canonical layer; historical identifiers
+ * remain reserved in entity-ids.ts for backward compatibility and audit history.
  */
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -34,17 +17,19 @@ export type {
 export {
   ARTICLE_IDS,
   STANDARD_IDS,
-  TECHNOLOGY_IDS,
-  SYSTEM_IDS,
-  INDUSTRY_IDS,
   TERM_IDS,
   getArticleId,
   getStandardId,
+  getTermId,
+} from './entity-ids';
+export {
+  TECHNOLOGY_IDS,
+  SYSTEM_IDS,
+  INDUSTRY_IDS,
   getTechnologyId,
   getSystemId,
   getIndustryId,
-  getTermId,
-} from './entity-ids';
+} from './canonical-entity-ids';
 
 // ── Data Registries ───────────────────────────────────────────────────────────
 export { ENGINEERING_ARTICLES } from './articles-registry';
