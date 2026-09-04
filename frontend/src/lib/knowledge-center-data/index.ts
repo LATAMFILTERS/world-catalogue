@@ -3,8 +3,8 @@
  * ELIMFILTERS Knowledge Center — Data Registry Barrel Export
  *
  * Single import point for all KC data. Public Technology, System, Industry,
- * Standards and Engineering Article data are exported from canonical layers;
- * historical identifiers and details remain reserved for audit history.
+ * Standards, Engineering Article and Comparison data are exported from canonical
+ * layers; historical identifiers and details remain reserved for audit history.
  */
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -110,4 +110,4 @@ export {
   KC_COMPARISONS,
   getComparisonBySlug,
   getComparisonsByCategory,
-} from './comparisons-registry';
+} from './canonical-comparisons-registry';
