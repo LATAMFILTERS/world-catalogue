@@ -22,6 +22,7 @@ const PROTECTED_COMPONENTS: Record<string, readonly string[]> = {
   drycore: ['Pneumatic valves', 'Actuators', 'Brake air circuit', 'Compressed-air controls'],
   syntapore: ['High-pressure fuel pump', 'Injectors', 'Fuel metering components', 'Injection circuit'],
   hydrocore: ['Fuel transfer path', 'Water-sensitive fuel components', 'Injection-system feed'],
+  turbocore: ['FH/FG turbine housing', 'Dedicated separator element', 'Bowl and drain assembly', 'Downstream fuel-system feed'],
   syntrax: ['Bearings', 'Journals', 'Lubricated interfaces', 'Engine oil circuit'],
   nanoforce: ['Hydraulic pumps', 'Control valves', 'Actuators', 'Servo controls'],
   thermacore: ['Coolant passages', 'Seals', 'Wet liners', 'Heat-transfer surfaces'],
@@ -34,6 +35,7 @@ const FIELD_QUESTIONS: Record<string, readonly string[]> = {
   'primary-fuel': ['What contamination enters from storage and transfer?', 'What flow and pressure-drop limits apply?', 'Is water also present in the fuel supply?', 'What downstream filtration stage must be protected?'],
   'secondary-fuel': ['What cleanliness level is required upstream of the injection circuit?', 'What flow and pressure-drop limits apply at final filtration?', 'Is upstream water separation effective?', 'Are service practices preventing clean-side contamination?'],
   'fuel-water-separators': ['Is contamination free water, emulsified water, particulate, or a combination?', 'What fuel flow must the separator support?', 'How is collected water inspected and drained?', 'Is installation orientation and service access correct?'],
+  'fuel-turbine': ['Which approved FH or FG housing is installed?', 'Which dedicated 2010, 2020 or 2040-series replacement configuration applies?', 'What fuel flow, port arrangement and service condition must the turbine system support?', 'Are bowl, drain, seals and element orientation verified for the approved housing?'],
   'oil-filters': ['What engine duty and oil condition define the service interval?', 'What viscosity range and flow must be supported?', 'What contaminant loading is expected?', 'Are bypass and anti-drainback functions appropriate to the application?'],
   'hydraulic-filters': ['Which component has the tightest clearance?', 'What cleanliness target applies to the circuit?', 'What are system flow, pressure and temperature?', 'What collapse strength and duty cycle are required?'],
   'coolant-filters': ['What coolant chemistry is approved for the engine?', 'What contamination or corrosion products are present?', 'What flow and capacity are required?', 'How does the filter fit the cooling-system maintenance strategy?'],
@@ -48,6 +50,7 @@ const SERVICE_DISCIPLINE: Record<string, readonly string[]> = {
   drycore: ['Treat moisture control as a pneumatic-system reliability function.', 'Confirm purge behavior and compressor duty when service life appears abnormal.', 'Inspect downstream evidence of moisture rather than replacing the element in isolation.'],
   syntapore: ['Protect the clean side of the fuel circuit during service.', 'Investigate storage or transfer contamination when filters load abnormally fast.', 'Verify the complete staged-filtration path rather than treating one element as the whole system.'],
   hydrocore: ['Drain collected water according to operating conditions.', 'Inspect seals, bowl condition and installation orientation.', 'Investigate the upstream fuel source when water loading becomes recurrent.'],
+  turbocore: ['Service the FH/FG housing and dedicated element as one approved turbine-specific architecture.', 'Verify bowl, drain, seals, element orientation and flow path before returning the system to service.', 'Do not substitute standard non-turbine separator elements solely by dimensions or appearance.'],
   syntrax: ['Evaluate filter condition together with lubricant condition and engine duty.', 'Prevent contamination from entering during filter and oil service.', 'Investigate abnormal debris loading as a possible indicator of component wear.'],
   nanoforce: ['Set the filtration target from the most contamination-sensitive component.', 'Control contamination introduced during hose, cylinder and reservoir service.', 'Investigate abnormal differential pressure or debris loading before simply shortening intervals.'],
   thermacore: ['Keep filter selection aligned with approved coolant chemistry.', 'Inspect coolant condition and contamination sources when loading is abnormal.', 'Treat filtration as part of the complete cooling-system maintenance strategy.'],
@@ -86,6 +89,7 @@ function standardHref(std: string) {
   if (key.includes('iso 16889')) return '/knowledge-center/standards/iso-16889/';
   if (key.includes('iso 4406')) return '/knowledge-center/standards/iso-4406/';
   if (key.includes('iso 5011')) return '/knowledge-center/standards/iso-5011/';
+  if (key.includes('iso 16332')) return '/knowledge-center/standards/iso-16332/';
   return '/knowledge-center/standards/';
 }
 
