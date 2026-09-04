@@ -28,13 +28,9 @@ export const SYSTEM_RELATIONSHIPS = {
     productFamilies: ['primary-air', 'secondary-air', 'air-cleaner-housings', 'cabin-filters', 'air-dryer-filters'],
     // Standards are intentionally not modeled at system level: air-intake spans
     // sub-domains (engine intake, cabin air, pneumatic air-drying) with distinct,
-    // non-interchangeable standards. A system-level list lets the entity graph
-    // attribute any one standard to every technology sharing this system,
-    // regardless of which sub-domain it actually applies to. Standards are
-    // modeled per product family (FAMILY_RELATIONSHIPS below), each of which
-    // maps to exactly one technology.
+    // non-interchangeable standards. Standards are modeled per product family.
     standards: [] as string[],
-    industries: ['mining', 'agriculture', 'construction', 'trucks-fleets', 'power-generation', 'marine', 'oil-gas', 'railway', 'bus-coach', 'manufacturing', 'waste-municipal'],
+    industries: ['mining', 'agriculture', 'construction', 'trucks-fleets', 'power-generation', 'marine', 'oil-gas', 'railway', 'bus-coach', 'manufacturing', 'waste-municipal', 'automotive'],
     relatedSystems: ['fuel-cleanliness', 'lubrication', 'cooling-system'],
   },
   'fuel-cleanliness': {
@@ -42,7 +38,7 @@ export const SYSTEM_RELATIONSHIPS = {
     supportingTechnologies: ['turbocore'] as TechnologySlug[],
     productFamilies: ['primary-fuel', 'secondary-fuel', 'fuel-water-separators', 'fuel-turbine'],
     standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
-    industries: ['mining', 'agriculture', 'power-generation', 'marine', 'oil-gas', 'construction', 'trucks-fleets'],
+    industries: ['mining', 'agriculture', 'power-generation', 'marine', 'oil-gas', 'construction', 'trucks-fleets', 'automotive'],
     relatedSystems: ['air-intake', 'lubrication'],
   },
   lubrication: {
@@ -50,7 +46,7 @@ export const SYSTEM_RELATIONSHIPS = {
     supportingTechnologies: [] as TechnologySlug[],
     productFamilies: ['oil-filters'],
     standards: ['ISO 4406', 'ISO 16889'],
-    industries: ['trucks-fleets', 'mining', 'agriculture', 'construction', 'power-generation', 'marine', 'bus-coach', 'railway'],
+    industries: ['trucks-fleets', 'mining', 'agriculture', 'construction', 'power-generation', 'marine', 'bus-coach', 'railway', 'automotive'],
     relatedSystems: ['air-intake', 'fuel-cleanliness', 'cooling-system'],
   },
   hydraulic: {
@@ -78,11 +74,11 @@ export const FAMILY_RELATIONSHIPS = {
   'primary-fuel': { system: 'fuel-cleanliness', technology: 'syntapore', standards: ['ASTM D6304', 'ISO 12937'] },
   'secondary-fuel': { system: 'fuel-cleanliness', technology: 'syntapore', standards: ['ASTM D6304', 'ISO 12937'] },
   'fuel-water-separators': { system: 'fuel-cleanliness', technology: 'hydrocore', standards: ['ASTM D6304', 'ISO 12937'] },
-  'fuel-turbine': { system: 'fuel-cleanliness', technology: 'turbocore', standards: ['ASTM D6304', 'ISO 12937'] },
+  'fuel-turbine': { system: 'fuel-cleanliness', technology: 'turbocore', standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'] },
   'oil-filters': { system: 'lubrication', technology: 'syntrax', standards: ['ISO 4406', 'ISO 16889'] },
   'hydraulic-filters': { system: 'hydraulic', technology: 'nanoforce', standards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14', 'DIN 51524'] },
   'coolant-filters': { system: 'cooling-system', technology: 'thermacore', standards: ['ASTM D6210'] },
-  'cabin-filters': { system: 'air-intake', technology: 'microkappa', standards: ['ISO 11155', 'EU Dir. 2019/130'] },
+  'cabin-filters': { system: 'air-intake', technology: 'microkappa', standards: ['ISO 11155-1'] },
   'air-dryer-filters': { system: 'air-intake', technology: 'drycore', standards: ['ISO 8573-1'] },
 } as const satisfies Record<string, { system: string; technology: TechnologySlug; standards: readonly string[] }>;
 
@@ -97,13 +93,13 @@ export const FAILURE_RELATIONSHIPS = {
     technologies: ['macrocore', 'syntrax', 'nanoforce', 'syntapore'],
     families: ['primary-air', 'secondary-air', 'oil-filters', 'hydraulic-filters', 'primary-fuel', 'secondary-fuel'],
     standards: ['iso-5011', 'iso-4406', 'iso-16889'],
-    industries: ['mining', 'construction', 'agriculture', 'trucks-fleets', 'power-generation', 'marine'],
+    industries: ['mining', 'construction', 'agriculture', 'trucks-fleets', 'power-generation', 'marine', 'automotive'],
   },
   'diesel-water': {
     systems: ['fuel-cleanliness'], technologies: ['syntapore', 'hydrocore', 'turbocore'],
     families: ['primary-fuel', 'secondary-fuel', 'fuel-water-separators', 'fuel-turbine'],
     standards: ['astm-d6304', 'iso-12937', 'iso-16332'],
-    industries: ['mining', 'agriculture', 'power-generation', 'marine', 'oil-gas', 'construction', 'trucks-fleets'],
+    industries: ['mining', 'agriculture', 'power-generation', 'marine', 'oil-gas', 'construction', 'trucks-fleets', 'automotive'],
   },
 } as const;
 
