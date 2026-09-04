@@ -2,9 +2,9 @@
  * index.ts
  * ELIMFILTERS Knowledge Center — Data Registry Barrel Export
  *
- * Single import point for all KC data. Public Technology, System and Industry
- * IDs and current System details are exported from canonical layers; historical
- * identifiers/details remain reserved for backward compatibility and audit history.
+ * Single import point for all KC data. Public Technology, System, Industry and
+ * Standards data are exported from canonical layers; historical identifiers and
+ * details remain reserved for backward compatibility and audit history.
  */
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -33,7 +33,7 @@ export {
 
 // ── Data Registries ───────────────────────────────────────────────────────────
 export { ENGINEERING_ARTICLES } from './articles-registry';
-export { KC_STANDARDS } from './standards-registry';
+export { KC_STANDARDS } from './canonical-standards-registry';
 export { KC_TECHNOLOGIES } from './technologies-registry';
 export { KC_SYSTEMS } from './canonical-systems-registry';
 export { KC_SYSTEM_DETAILS } from './canonical-system-details';
