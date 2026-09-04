@@ -133,3 +133,17 @@ export {
   KEYWORD_INTENT_GOVERNANCE_RULES,
   getKeywordIntentNode,
 } from './canonical-keyword-intent-governance';
+
+export type {
+  KeywordDemandRelationType,
+  KeywordDemandNode,
+  KeywordDemandRelation,
+} from './keyword-demand-graph';
+
+export {
+  KEYWORD_DEMAND_NODES,
+  KEYWORD_DEMAND_RELATIONS,
+  KEYWORD_DEMAND_GRAPH_POLICY,
+  getKeywordDemandNode,
+  getKeywordDemandRelations,
+} from './keyword-demand-graph';
