@@ -90,6 +90,12 @@ function standardHref(std: string) {
   if (key.includes('iso 4406')) return '/knowledge-center/standards/iso-4406/';
   if (key.includes('iso 5011')) return '/knowledge-center/standards/iso-5011/';
   if (key.includes('iso 16332')) return '/knowledge-center/standards/iso-16332/';
+  if (key.includes('astm d6304')) return '/knowledge-center/standards/astm-d6304/';
+  if (key.includes('iso 12937')) return '/knowledge-center/standards/iso-12937/';
+  if (key.includes('nfpa t2.14')) return '/knowledge-center/standards/nfpa-t2-14/';
+  if (key.includes('din 51524')) return '/knowledge-center/standards/din-51524/';
+  if (key.includes('iso 11155-1')) return '/knowledge-center/standards/iso-11155-1/';
+  if (key.includes('iso 8573-1')) return '/knowledge-center/standards/iso-8573-1/';
   return '/knowledge-center/standards/';
 }
 
