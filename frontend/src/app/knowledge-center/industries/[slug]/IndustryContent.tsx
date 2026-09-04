@@ -114,7 +114,6 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.12,
-              textAlign: 'justify',
               marginBottom: '0.75rem',
             }}
           >
@@ -130,7 +129,6 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
               fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
               color: 'rgba(255,255,255,0.55)',
               marginBottom: '1.5rem',
-              textAlign: 'justify',
               maxWidth: '640px',
               lineHeight: 1.7,
             }}
@@ -179,7 +177,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.5)', marginBottom: '0.5rem' }}>
                 CONTAMINATION ENVIRONMENT
               </p>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, textAlign: 'justify' }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>
                 {detail.contaminationEnvironment}
               </p>
             </motion.div>
@@ -223,11 +221,10 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
                     color: dustColor,
                     marginBottom: '0.25rem',
                     lineHeight: 1.2,
-                    textAlign: 'justify',
                   }}>
                     {m.value}
                   </p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4, textAlign: 'justify' }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4 }}>
                     {m.label}
                   </p>
                 </div>
@@ -259,7 +256,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
                     border: '1px solid rgba(255,255,255,0.05)',
                   }}>
                     <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: dustColor, marginTop: '0.1rem', flexShrink: 0 }}>→</span>
-                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5, textAlign: 'justify' }}>{risk}</p>
+                    <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>{risk}</p>
                   </div>
                 ))}
               </div>
@@ -280,7 +277,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
                 Service Interval Guidance
               </h2>
               <div style={{ padding: '1rem 1.25rem', background: 'rgba(255,241,45,0.03)', border: '1px solid rgba(255,241,45,0.1)' }}>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, textAlign: 'justify' }}>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
                   {detail.serviceIntervalNote}
                 </p>
               </div>
@@ -301,7 +298,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
               <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>
                 {section.heading}
               </h2>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', textAlign: 'justify' }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)' }}>
                 {section.body}
               </p>
             </motion.section>

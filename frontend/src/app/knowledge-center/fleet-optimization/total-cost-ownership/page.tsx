@@ -57,7 +57,6 @@ export default function TotalCostOwnershipPage() {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}>
               10-year fleet economics: Commodity filtration approach vs. system-level contamination control. Real-world TCO comparison showing 60%+ cost reduction through asset protection.
             </p>
@@ -98,7 +97,6 @@ export default function TotalCostOwnershipPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             Baseline scenario: 10-truck fleet, Cummins QSL9 diesel engines, 200,000 km/year per vehicle (2,000,000 km total per fleet). Commodity approach: purchase standard OEM-specified filters, install, change on OEM schedule, no proactive contamination monitoring or condition-based maintenance.
@@ -182,7 +180,6 @@ export default function TotalCostOwnershipPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             System approach: Install premium multi-stage filtration (MACROCORE, SYNTRAX, HYDROCORE), implement ISO 4406 cleanliness targets (16/14/11 for engine lube oil), quarterly contamination monitoring, kidney-loop offline circulation, preventive maintenance based on condition not calendar. Goal: Extend equipment life 50–80%, reduce downtime 80–90%, eliminate unplanned failures.
@@ -295,7 +292,6 @@ export default function TotalCostOwnershipPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
           }}>
             The system approach eliminates the three largest cost drivers: unplanned downtime ($900K+ reduction), premature overhauls ($12,750 reduction vs baseline), and component replacement failures ($20K+ reduction). The upfront investment in premium filters, kidney-loop systems, and ISO 4406 monitoring is recovered within 18–24 months and generates $1.1M+ fleet savings over the full lifecycle.
           </p>

@@ -84,7 +84,6 @@ export default function CalculatorsHubPage() {
           lineHeight: 1.7,
           color: 'rgba(255,255,255,0.65)',
           maxWidth: '620px',
-          textAlign: 'justify',
         }}>
           Pure engineering tools derived from published ISO, SAE, and ASTM standards.
           Each calculator implements the exact formula from the governing standard,

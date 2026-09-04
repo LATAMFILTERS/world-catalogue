@@ -68,7 +68,6 @@ export default function GlossaryPage() {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}>
               {allTerms.length} canonical engineering terms across {byCategory.size} technical categories.
               Each term carries a permanent{' '}
@@ -211,7 +210,6 @@ export default function GlossaryPage() {
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
                         overflow: 'hidden',
-                        textAlign: 'justify',
                       }}>
                         {term.definition}
                       </p>

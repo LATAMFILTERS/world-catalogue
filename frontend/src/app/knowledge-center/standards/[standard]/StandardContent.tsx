@@ -49,7 +49,7 @@ function FaqAccordion({ faqs }: { faqs: KCFaqItem[] }) {
           </button>
           {openIdx === i && (
             <div style={{ padding: '0 1.25rem 1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', textAlign: 'justify', marginTop: '0.75rem' }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', marginTop: '0.75rem' }}>
                 {faq.answer}
               </p>
             </div>
@@ -375,7 +375,6 @@ export default function StandardContent({ std }: { std: KCStandard }) {
               color: '#fff',
               marginBottom: '0.875rem',
               lineHeight: 1.2,
-              textAlign: 'justify',
             }}>
               {section.heading}
             </h2>
@@ -384,7 +383,6 @@ export default function StandardContent({ std }: { std: KCStandard }) {
               fontSize: '0.93rem',
               lineHeight: 1.8,
               color: 'rgba(255,255,255,0.68)',
-              textAlign: 'justify',
             }}>
               {section.body}
             </p>

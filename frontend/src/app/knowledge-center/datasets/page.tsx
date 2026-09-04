@@ -128,7 +128,6 @@ export default function DatasetsPage() {
           fontSize: '0.93rem',
           lineHeight: 1.8,
           color: 'rgba(255,255,255,0.55)',
-          textAlign: 'justify',
           maxWidth: '680px',
         }}>
           Downloadable datasets derived from ISO, ASTM, and SAE engineering standards. Available in JSON and CSV formats for use in fluid analysis software, maintenance management systems, and engineering calculations. All data is traceable to the governing standard cited for each dataset.
@@ -201,7 +200,6 @@ export default function DatasetsPage() {
                   fontSize: '0.88rem',
                   lineHeight: 1.75,
                   color: 'rgba(255,255,255,0.55)',
-                  textAlign: 'justify',
                   marginBottom: '1.25rem',
                 }}>
                   {dataset.description}

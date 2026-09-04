@@ -63,7 +63,7 @@ export default function ArticleHero({
             fontWeight: 700,
             fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
             lineHeight: 1.12,
-            textAlign: 'justify',
+            textWrap: 'balance',
             marginBottom: subtitle ? '0.75rem' : '1.25rem',
           }}
         >
@@ -96,7 +96,6 @@ export default function ArticleHero({
               fontFamily: 'Inter, sans-serif',
               fontSize: '1rem',
               lineHeight: 1.75,
-              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               maxWidth: '640px',
               marginBottom: children ? '1rem' : '0',

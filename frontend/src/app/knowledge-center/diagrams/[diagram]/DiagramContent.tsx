@@ -123,7 +123,6 @@ export default function DiagramContent({ diagram }: { diagram: KCDiagram }) {
             lineHeight: 1.75,
             color: 'rgba(255,255,255,0.55)',
             maxWidth: '720px',
-            textAlign: 'justify',
           }}>
             {diagram.engineeringPurpose}
           </p>

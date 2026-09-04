@@ -736,7 +736,6 @@ export default function CalculatorContent({ calc }: { calc: KCCalculator }) {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.5)',
               marginTop: '1.25rem',
-              textAlign: 'justify',
             }}>
               {calc.formula.workedExample.narrative}
             </p>

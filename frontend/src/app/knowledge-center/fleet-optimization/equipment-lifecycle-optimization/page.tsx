@@ -55,7 +55,6 @@ export default function EquipmentLifecycleOptimizationPage() {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}>
               Extending equipment operational life 3–5× through contamination control across the full lifecycle—from acquisition specification through end-of-service. Equipment that operates 15,000+ hours instead of 5,000 hours represents 30–50% cost reduction per equipment unit and dramatically reduces fleet replacement capital requirements.
             </p>
@@ -94,7 +93,6 @@ export default function EquipmentLifecycleOptimizationPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             Industrial equipment follows five contamination-critical phases: acquisition, deployment, operations, maintenance, and end-of-life. Each phase determines the equipment's final lifespan. Equipment specified without contamination control targets begins with poor cleanliness and never recovers. Equipment deployed in high-contamination environments without protection measures degrades 3–5× faster than protected equipment. Operations without condition-based monitoring allow contamination to accumulate silently until catastrophic failure. Maintenance intervals based on commodity filters rather than contamination targets fail to prevent wear. Equipment reaching end-of-life after 5,000 hours (commodity approach) versus 15,000+ hours (system approach) represents a 67% operational life penalty.
@@ -252,7 +250,6 @@ export default function EquipmentLifecycleOptimizationPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             Equipment lifecycle begins at specification. OEM purchase specifications that lack contamination control targets guarantee poor performance. A diesel truck specified for "ISO 5011 air filter" without Beta ratio requirements will receive a generic 30 µm filter that allows 30 µm+ particles into the engine. Redesign acquisition specifications to mandate: (1) ISO 4406 target cleanliness codes (lube oil: 16/14/11, hydraulic: 17/15/12), (2) air intake filters with Beta3 ≥ 200 (ISO 5011), (3) fuel water separation ≤ 100 ppm water ingress, (4) kidney-loop offline filtration capability during commissioning. These specifications add $2K–4K per equipment unit at purchase but prevent $40K–80K in lifecycle costs. Equipment specified for contamination control maintains cleanliness from deployment forward and extends lifespan 3–5×.
@@ -288,7 +285,6 @@ export default function EquipmentLifecycleOptimizationPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
           }}>
             A mining operation running 20 heavy-duty trucks in dusty, high-moisture environments experienced 3–4 unplanned failures per truck per year (60–80 total failures across fleet). Average equipment lifespan was 4,500 hours. Equipment replacement budget consumed 40% of maintenance spending. ELIMFILTERS implemented acquisition redesign for new truck purchases: dual-stage MACROCORE air intake, HYDROCORE fuel separation, SYNTRAX lube oil filtration, and NANOFORCE kidney-loop for hydraulic systems. Existing fleet received retrofit kidney-loops. Within 6 years, lifecycle results showed: new equipment reaching 14,000+ hours (3.1× longer), unplanned failures dropped to 0.5 per truck per year (92% reduction), annual replacement equipment budget dropped from $900K to $180K, bearing/injector failures reduced to single-digit per fleet. Total 6-year savings: $4.3M. ROI on filtration investment: 1,200% (equipment lasted 3× longer, eliminating $2.7M in premature replacements).
           </p>

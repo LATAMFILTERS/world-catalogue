@@ -57,7 +57,6 @@ export default function IndustriesPage() {
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.15,
-              textAlign: 'justify',
               marginBottom: '1.25rem',
             }}
           >
@@ -72,7 +71,6 @@ export default function IndustriesPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.75,
-              textAlign: 'justify',
               color: 'rgba(255,255,255,0.6)',
               maxWidth: '600px',
             }}
@@ -142,7 +140,6 @@ export default function IndustriesPage() {
                 color: '#fff',
                 marginBottom: '0.65rem',
                 lineHeight: 1.2,
-                textAlign: 'justify',
               }}>
                 {industry.title}
               </h2>
@@ -151,7 +148,6 @@ export default function IndustriesPage() {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: '0.85rem',
                 lineHeight: 1.65,
-                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.5)',
               }}>
                 {industry.description}
@@ -187,7 +183,6 @@ export default function IndustriesPage() {
             fontSize: '0.85rem',
             color: 'rgba(255,255,255,0.5)',
             lineHeight: 1.65,
-            textAlign: 'justify',
           }}>
             Exposure levels reflect typical operating conditions for ambient particulate, process contamination, and fluid ingress severity. Extreme exposure (mining, silica-heavy operations) requires daily air restriction checks, cabin HEPA filtration, and reduced hydraulic service intervals. High exposure (agriculture, construction) requires site-specific service intervals rather than OEM calendar-based schedules.
           </p>

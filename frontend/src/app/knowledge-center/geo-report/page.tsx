@@ -122,7 +122,6 @@ export default function GeoReportPage() {
           fontSize: '0.93rem',
           lineHeight: 1.8,
           color: 'rgba(255,255,255,0.55)',
-          textAlign: 'justify',
           maxWidth: '700px',
         }}>
           This report tracks the ELIMFILTERS Knowledge Center&apos;s readiness for AI citation by generative engines (ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews). It audits JSON-LD schema coverage, EEAT metadata, FAQ population, structured dataset availability, and the completeness of machine-readable engineering content across all KC entity types.

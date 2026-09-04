@@ -87,7 +87,6 @@ export default function ProblemsPage() {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}>
               {totalProblems} canonical failure problems across 5 categories. Each problem is a first-class
               entity in the Knowledge Graph, linking contamination sources, affected components,

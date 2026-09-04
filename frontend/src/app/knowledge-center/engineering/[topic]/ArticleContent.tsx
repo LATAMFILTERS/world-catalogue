@@ -99,7 +99,6 @@ function FaqAccordion({ question, answer }: { question: string; answer: string }
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.55)',
             margin: '0.75rem 0 0',
-            textAlign: 'justify',
           }}>
             {answer}
           </p>
@@ -554,7 +553,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
               color: '#fff',
               marginBottom: '1rem',
               lineHeight: 1.2,
-              textAlign: 'justify',
+              textWrap: 'balance',
             }}>
               {section.heading}
             </h2>
@@ -562,7 +561,6 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.8,
-              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
             }}>
               {section.body}

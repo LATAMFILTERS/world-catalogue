@@ -55,7 +55,6 @@ export default function AssetProtectionSystemPage() {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}>
               ELIMFILTERS positioning as industrial asset protection provider. Moving beyond commodity filtration to system-level contamination control protecting equipment through 10+ year lifecycle.
             </p>
@@ -94,7 +93,6 @@ export default function AssetProtectionSystemPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             Industrial equipment does not fail from "bad luck" or random defects. It fails from <strong>uncontrolled contamination</strong>. A diesel engine, a hydraulic system, or a hydraulic pump fails for the same reason: contaminated air, fuel, or oil exceeded the system's filtration capacity, accelerated component wear, and exceeded that component's lifespan.
@@ -104,7 +102,6 @@ export default function AssetProtectionSystemPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             <strong>ELIMFILTERS positions itself as an asset protection provider, not a filter manufacturer.</strong> Our role is to engineer contamination control systems that protect industrial assets from failure, extending equipment life 3–5 times and reducing total cost of ownership 60%.
@@ -114,7 +111,6 @@ export default function AssetProtectionSystemPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
           }}>
             The business outcome: Fleets investing in ELIMFILTERS asset protection systems see unplanned failures drop by 90%, downtime reduced 80%, and equipment lifespan extended 50–80%. The cost? Typically recouped in 18–24 months through eliminated repairs and extended equipment life.
           </p>
@@ -149,7 +145,6 @@ export default function AssetProtectionSystemPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '2rem',
           }}>
             Industrial assets operate across 5 fluid and air domains, each with unique contamination threats and component sensitivity. ELIMFILTERS provides specialized protection for each domain:
@@ -271,7 +266,6 @@ export default function AssetProtectionSystemPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
           }}>
             <strong>This positioning makes us unassailable in price competition:</strong> If a customer views us as "premium filter manufacturer," they compare us to Donaldson. If they view us as "asset protection provider," they compare us to major maintenance outsourcing firms and pay 10–20× more for the equivalent result (downtime reduction, equipment life extension). Our job is to move every conversation from "which filter" to "how do we protect this asset."
           </p>

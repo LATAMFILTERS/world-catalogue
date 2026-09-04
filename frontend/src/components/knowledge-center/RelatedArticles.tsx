@@ -72,7 +72,6 @@ export default function RelatedArticles({
                 color: '#fff',
                 marginBottom: item.description || item.meta ? '0.25rem' : '0',
                 lineHeight: 1.25,
-                textAlign: 'justify',
               }}>
                 {item.title}
               </p>

@@ -91,7 +91,6 @@ export default function DiagramsHubPage() {
             lineHeight: 1.75,
             color: 'rgba(255,255,255,0.6)',
             maxWidth: '680px',
-            textAlign: 'justify',
           }}>
             Standards-accurate engineering diagrams covering ISO 16889 test circuits, ISO 4406 cleanliness
             scales, hydraulic contamination paths, lubrication oil circuits, fuel filtration stages,
@@ -195,7 +194,6 @@ export default function DiagramsHubPage() {
                   lineHeight: 1.6,
                   margin: 0,
                   flexGrow: 1,
-                  textAlign: 'justify',
                 }}>
                   {diagram.engineeringPurpose.slice(0, 140)}…
                 </p>
