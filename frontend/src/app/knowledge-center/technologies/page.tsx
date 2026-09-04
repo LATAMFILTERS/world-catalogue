@@ -13,7 +13,7 @@ export default function TechnologiesPage() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Link href="/knowledge-center" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
@@ -65,7 +65,7 @@ export default function TechnologiesPage() {
               fontSize: '0.95rem',
               lineHeight: 1.75,
               color: 'rgba(255,255,255,0.6)',
-              maxWidth: '620px',
+              maxWidth: '820px',
             }}
           >
             Ten canonical core filtration technologies engineered for specific contamination domains. Each technology is mapped to the contamination modes it controls, the technical standards referenced where applicable, and the industrial protection system it supports.

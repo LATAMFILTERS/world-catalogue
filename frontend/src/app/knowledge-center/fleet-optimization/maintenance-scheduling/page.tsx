@@ -24,7 +24,7 @@ export default function MaintenanceSchedulingPage() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export default function MaintenanceSchedulingPage() {
               fontSize: '1.05rem',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
-              maxWidth: '640px',
+              maxWidth: '780px',
             }}>
               Shift from fixed time-based maintenance intervals to contamination-driven condition-based scheduling. Equipment equipped with contamination monitoring (ISO 4406 particle counts, fluid condition sensors) can extend maintenance intervals 30–40% while reducing unplanned downtime 80%. Predictive scheduling based on actual component wear—not arbitrary calendar dates—extends equipment life and reduces emergency maintenance events.
             </p>
@@ -62,7 +62,7 @@ export default function MaintenanceSchedulingPage() {
         </div>
       </section>
 
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -307,7 +307,7 @@ export default function MaintenanceSchedulingPage() {
       </div>
 
       <section style={{
-        maxWidth: '860px',
+        maxWidth: '1000px',
         margin: '3rem auto',
         padding: '2rem',
         borderTop: '1px solid rgba(255,255,255,0.06)',

@@ -24,7 +24,7 @@ export default function GlossaryPage() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <Link href="/knowledge-center" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
@@ -67,7 +67,7 @@ export default function GlossaryPage() {
               fontSize: '1.05rem',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
-              maxWidth: '640px',
+              maxWidth: '820px',
             }}>
               {allTerms.length} canonical engineering terms across {byCategory.size} technical categories.
               Each term carries a permanent{' '}
@@ -108,7 +108,7 @@ export default function GlossaryPage() {
 
       {/* Categories */}
       <div style={{
-        maxWidth: '860px',
+        maxWidth: '1100px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
@@ -248,7 +248,7 @@ export default function GlossaryPage() {
         borderTop: '1px solid rgba(255,241,45,0.2)',
         borderBottom: '1px solid rgba(255,241,45,0.2)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}

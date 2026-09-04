@@ -59,7 +59,7 @@ export default function DiagramsHubPage() {
       <section style={{
         padding: 'clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
-        maxWidth: '900px',
+        maxWidth: '1200px',
       }}>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -90,7 +90,7 @@ export default function DiagramsHubPage() {
             fontSize: '1.05rem',
             lineHeight: 1.75,
             color: 'rgba(255,255,255,0.6)',
-            maxWidth: '680px',
+            maxWidth: '820px',
           }}>
             Standards-accurate engineering diagrams covering ISO 16889 test circuits, ISO 4406 cleanliness
             scales, hydraulic contamination paths, lubrication oil circuits, fuel filtration stages,

@@ -56,7 +56,7 @@ export default function CalculatorsHubPage() {
       <section style={{
         padding: 'clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
-        maxWidth: '900px',
+        maxWidth: '1200px',
       }}>
         <p style={{
           fontFamily: 'JetBrains Mono, monospace',
@@ -83,7 +83,7 @@ export default function CalculatorsHubPage() {
           fontSize: '1rem',
           lineHeight: 1.7,
           color: 'rgba(255,255,255,0.65)',
-          maxWidth: '620px',
+          maxWidth: '820px',
         }}>
           Pure engineering tools derived from published ISO, SAE, and ASTM standards.
           Each calculator implements the exact formula from the governing standard,

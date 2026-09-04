@@ -97,7 +97,7 @@ export default function GeoReportPage() {
       </div>
 
       {/* Hero */}
-      <section style={{ padding: '3.5rem 2rem 3rem', maxWidth: '860px', margin: '0 auto' }}>
+      <section style={{ padding: '3.5rem 2rem 3rem', maxWidth: '1100px', margin: '0 auto' }}>
         <p style={{
           fontFamily: 'JetBrains Mono, monospace',
           fontSize: '0.6rem',
@@ -122,7 +122,7 @@ export default function GeoReportPage() {
           fontSize: '0.93rem',
           lineHeight: 1.8,
           color: 'rgba(255,255,255,0.55)',
-          maxWidth: '700px',
+          maxWidth: '820px',
         }}>
           This report tracks the ELIMFILTERS Knowledge Center&apos;s readiness for AI citation by generative engines (ChatGPT, Perplexity, Gemini, Claude, Google AI Overviews). It audits JSON-LD schema coverage, EEAT metadata, FAQ population, structured dataset availability, and the completeness of machine-readable engineering content across all KC entity types.
         </p>
@@ -172,7 +172,7 @@ export default function GeoReportPage() {
       </section>
 
       {/* GEO Signals */}
-      <section style={{ padding: '0 2rem 3rem', maxWidth: '860px', margin: '0 auto' }}>
+      <section style={{ padding: '0 2rem 3rem', maxWidth: '1100px', margin: '0 auto' }}>
         <p style={{
           fontFamily: 'JetBrains Mono, monospace',
           fontSize: '0.6rem',
@@ -292,7 +292,7 @@ export default function GeoReportPage() {
       </section>
 
       {/* AI citation checklist */}
-      <section style={{ padding: '0 2rem 6rem', maxWidth: '860px', margin: '0 auto' }}>
+      <section style={{ padding: '0 2rem 6rem', maxWidth: '1100px', margin: '0 auto' }}>
         <p style={{
           fontFamily: 'JetBrains Mono, monospace',
           fontSize: '0.6rem',
