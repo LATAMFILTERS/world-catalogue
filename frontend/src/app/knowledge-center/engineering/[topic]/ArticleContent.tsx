@@ -523,7 +523,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
           >
             <EngineeringNote
               items={article.keyMetrics}
-              valueSize="clamp(1.2rem, 2.5vw, 1.6rem)"
+              valueSize="clamp(0.95rem, 1.5vw, 1.15rem)"
             />
             <div style={{ marginBottom: '3rem' }} />
           </motion.div>

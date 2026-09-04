@@ -14,27 +14,27 @@ export interface EngineeringNoteProps {
 export default function EngineeringNote({
   items,
   variant = 'yellow',
-  valueSize = '1.3rem',
+  valueSize = 'clamp(0.95rem, 1.5vw, 1.15rem)',
 }: EngineeringNoteProps) {
   const isYellow = variant === 'yellow';
 
   return (
     <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+      display: 'flex',
+      flexWrap: 'wrap',
       gap: '1px',
       background: isYellow ? 'rgba(255,241,45,0.08)' : 'rgba(255,255,255,0.05)',
       border: `1px solid ${isYellow ? 'rgba(255,241,45,0.15)' : 'rgba(255,255,255,0.06)'}`,
       marginTop: '1.5rem',
     }}>
       {items.map((item) => (
-        <div key={item.label} style={{ background: '#000', padding: '1rem 1.25rem', minWidth: 0 }}>
+        <div key={item.label} style={{ background: '#000', padding: '1rem 1.25rem', flex: '1 1 200px', minWidth: 0 }}>
           <p style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 700,
-            fontSize: valueSize,
+            fontSize: item.value.length > 28 ? 'clamp(0.78rem, 1.1vw, 0.92rem)' : valueSize,
             color: '#FFF12D',
-            lineHeight: 1.25,
+            lineHeight: 1.3,
             marginBottom: '0.3rem',
             overflowWrap: 'break-word',
           }}>
