@@ -4,6 +4,10 @@ export const metadata: Metadata = {
   title: 'Search Filtration Engineering Knowledge | ELIMFILTERS',
   description: 'Search ELIMFILTERS engineering articles, standards, technologies, systems, glossary terms, calculators, and technical resources.',
   alternates: { canonical: 'https://elimfilters.com/knowledge-center/search/' },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function SearchLayout({ children }: Readonly<{ children: React.ReactNode }>) {

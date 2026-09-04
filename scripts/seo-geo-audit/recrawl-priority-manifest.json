@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "generatedAt": "2026-09-04",
+  "baseUrl": "https://elimfilters.com",
+  "policy": "One canonical intent owner per indexable URL. Priority tiers guide crawl emphasis; they do not create pages.",
+  "tiers": {
+    "P0": {
+      "priority": 1.0,
+      "changeFrequency": "weekly",
+      "exactPaths": [
+        "/",
+        "/knowledge-center",
+        "/knowledge-center/faq",
+        "/technologies",
+        "/systems",
+        "/industries",
+        "/families"
+      ],
+      "prefixes": []
+    },
+    "P1": {
+      "priority": 0.9,
+      "changeFrequency": "monthly",
+      "exactPaths": [
+        "/about",
+        "/distributor-application",
+        "/distributors"
+      ],
+      "prefixes": [
+        "/knowledge-center/technologies/",
+        "/knowledge-center/systems/",
+        "/knowledge-center/industries/",
+        "/knowledge-center/standards/",
+        "/technologies/",
+        "/systems/",
+        "/industries/",
+        "/families/"
+      ]
+    },
+    "P2": {
+      "priority": 0.72,
+      "changeFrequency": "monthly",
+      "exactPaths": [
+        "/commercial-lines",
+        "/commercial-lines/duratech",
+        "/commercial-lines/marineclean",
+        "/warranty",
+        "/videos"
+      ],
+      "prefixes": [
+        "/knowledge-center/engineering/",
+        "/knowledge-center/engineering-reference/",
+        "/knowledge-center/glossary/",
+        "/knowledge-center/problems/",
+        "/knowledge-center/comparisons/",
+        "/knowledge-center/diagrams/",
+        "/knowledge-center/calculators/",
+        "/knowledge-center/families/",
+        "/videos/"
+      ]
+    }
+  },
+  "excluded": {
+    "exactPaths": [
+      "/search",
+      "/knowledge-center/search",
+      "/customer-intelligence",
+      "/knowledge-center/standards/iso-11155",
+      "/knowledge-center/engineering/iso-16889",
+      "/knowledge-center/engineering/iso-4406",
+      "/knowledge-center/engineering/filter-media-science",
+      "/knowledge-center/engineering-reference/engineering-glossary",
+      "/knowledge-center/standards/nfpa-t2-14",
+      "/knowledge-center/engineering/nfpa-t2-14-hydraulic-cleanliness"
+    ],
+    "prefixes": []
+  }
+}
