@@ -2,9 +2,22 @@
  * Current public Knowledge Center entity IDs.
  *
  * Historical IDs remain reserved in entity-ids.ts and are never reused. This
- * layer exposes only the current 5-system / 12-industry ontology to public
- * Knowledge Center consumers.
+ * layer exposes only the current 10-technology / 5-system / 12-industry ontology
+ * to public Knowledge Center consumers.
  */
+
+export const TECHNOLOGY_IDS = {
+  macrocore: 'TECH-MACROCORE',
+  microkappa: 'TECH-MICROKAPPA',
+  drycore: 'TECH-DRYCORE',
+  intekcore: 'TECH-INTEKCORE',
+  syntapore: 'TECH-SYNTAPORE',
+  hydrocore: 'TECH-HYDROCORE',
+  turbocore: 'TECH-TURBOCORE',
+  syntrax: 'TECH-SYNTRAX',
+  nanoforce: 'TECH-NANOFORCE',
+  thermacore: 'TECH-THERMACORE',
+} as const;
 
 export const SYSTEM_IDS = {
   'air-intake-protection': 'SYS-AIR-INTAKE-PROTECTION',
@@ -28,6 +41,10 @@ export const INDUSTRY_IDS = {
   'bus-coach': 'IND-BUS-COACH',
   automotive: 'IND-AUTOMOTIVE-LIGHT-DUTY',
 } as const;
+
+export function getTechnologyId(slug: string): string | undefined {
+  return (TECHNOLOGY_IDS as Record<string, string>)[slug];
+}
 
 export function getSystemId(slug: string): string | undefined {
   return (SYSTEM_IDS as Record<string, string>)[slug];
