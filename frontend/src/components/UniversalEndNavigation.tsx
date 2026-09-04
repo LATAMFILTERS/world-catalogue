@@ -136,6 +136,7 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
   const config = navigationFor(pathname);
   const { t, i18n } = useTranslation();
   const [hydrated, setHydrated] = useState(false);
+  const [positioned, setPositioned] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const language = (i18n.resolvedLanguage || i18n.language || 'en').slice(0, 2);
   const isMacrocore = pathname === '/technologies/macrocore' || pathname === '/technologies/macrocore/';
@@ -145,14 +146,23 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
   }, []);
 
   useEffect(() => {
-    if (isMacrocore || !hydrated || !navRef.current) return;
+    setPositioned(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (isMacrocore) {
+      setPositioned(true);
+      return;
+    }
+    if (!hydrated || !navRef.current) return;
     const footer = document.querySelector('footer');
     if (!footer) return;
     const parent = footer.parentElement;
     if (parent && navRef.current.parentElement !== parent) {
       parent.insertBefore(navRef.current, footer);
     }
-  }, [hydrated, isMacrocore]);
+    setPositioned(true);
+  }, [hydrated, isMacrocore, pathname]);
 
   useEffect(() => {
     if (isMacrocore || !config || !hydrated || language !== 'en') return;
@@ -190,6 +200,7 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
       className={`universal-end-nav universal-end-nav--${config.kind}`}
       aria-label={t('nav.continueLabel', 'Continue through the ELIMFILTERS platform')}
       role="navigation"
+      style={{ visibility: positioned ? 'visible' : 'hidden' }}
     >
       <div className="universal-end-nav__inner">
         {eyebrow && <p className="universal-end-nav__eyebrow">{eyebrow}</p>}
