@@ -78,9 +78,9 @@ const TECHNOLOGY_ENGINEERING: Record<TechnologySlug, CanonicalEngineeringDefinit
   turbocore: {
     name: 'TURBOCORE™',
     definition: 'A turbine-style fuel/water separation architecture reserved exclusively for approved FH and FG series systems and their dedicated replacement elements.',
-    engineeringPrinciple: 'Housing geometry, staged separation, element retention, sealing and flow routing operate as one turbine-specific fuel/water separation architecture.',
-    controlStrategy: 'Match the approved FH or FG housing, dedicated element series, flow requirement, port configuration and service condition without substituting standard non-turbine separator elements.',
-    operationalImpact: 'Maintaining the correct turbine-specific housing and element architecture supports staged separation and reduces bypass, sealing and fitment risk.',
+    engineeringPrinciple: 'Housing geometry, staged separation, element retention, sealing and flow routing operate as one turbine-specific fuel/water separation architecture. Element family and filtration grade are independent selection variables: 2010 serves the 500-series architecture, 2020 the 1000-series architecture, and 2040 the 900-series architecture; each family may be specified in 2, 10 or 30 µm grades where approved.',
+    controlStrategy: 'First match the approved FH or FG housing to the correct element family (2010, 2020 or 2040). Then select the approved filtration grade independently: 2 µm final, 10 µm secondary, or 30 µm primary filtration. Historical SM/TM/PM suffixes correspond to 2/10/30 µm respectively. Do not infer micron rating from the 2010/2020/2040 family number and do not substitute standard non-turbine separator elements.',
+    operationalImpact: 'Maintaining both the correct turbine-specific element family and the correct micron grade supports the intended staged-separation role and reduces bypass, sealing, fitment and incorrect-stage selection risk.',
   },
 };
 
