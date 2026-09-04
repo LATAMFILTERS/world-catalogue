@@ -110,4 +110,4 @@ export {
   KC_COMPARISONS,
   getComparisonBySlug,
   getComparisonsByCategory,
-} from './canonical-comparisons-registry';
+} from './canonical-public-comparisons-registry';
