@@ -1,41 +1,11 @@
 /**
- * recommendation-graph.ts
  * ELIMFILTERS Knowledge Center — Recommendation Graph Builder
  *
- * Phase 6D: Engineering Recommendation Engine
- *
- * Builds a singleton undirected KCGraph from all KC entity registries.
- * All edges are derived exclusively from explicit relationship fields in the
- * registry data — no inference, no LLM, no heuristics.
- *
- * Edge sources by entity type:
- *   Articles    → relatedStandards (display codes) · relatedTechnologies (display names)
- *                 relatedSystems (display names or slugs)
- *   Standards   → relatedTechnologies (display names) · applicableSystems (slugs)
- *                 relatedGlossaryTerms (TERM-xxx IDs) · relatedArticles (slugs)
- *   Technologies→ standards (display codes) · relatedSystems (slugs)
- *                 worksWith (display names)
- *   Terms       → applicableStandards (STD-xxx IDs) · relatedTechnologies (slugs)
- *                 relatedSystems (slugs) · relatedArticles (slugs)
- *                 relatedTerms (TERM-xxx IDs)
- *   Diagrams    → governingStandards (STD-xxx IDs) · relatedTechnologies (display names)
- *                 applicableSystems (slugs) · relatedArticles (slugs)
- *                 relatedGlossaryTerms (TERM-xxx IDs)
- *   Calculators → relatedStandards (slugs) · relatedArticles (slugs)
- *                 relatedTechnologies (display names with ™)
- *   Comparisons → relatedStandards (slugs) · relatedTechnologies (display names, no ™)
- *                 relatedSystems (slugs or abbreviations) · relatedTerms (term slugs)
- *                 relatedArticles (slugs)
- *
- * Normalisation functions:
- *   techDisplayToSlug  — 'MACROCORE™' / 'NANOFORCE' → 'macrocore' / 'nanoforce'
- *   stdCodeToSlug      — 'ISO 16889' / 'ISO 16889:2022' → 'iso-16889'
- *   stdEntityIdToSlug  — 'STD-ISO-16889' → 'iso-16889'
- *   termIdToSlug       — 'TERM-BETA-RATIO' → 'beta-ratio'
- *   termSlugToId       — 'beta-ratio' → 'TERM-BETA-RATIO'
- *   systemRefToSlug    — 'hydraulic' / 'Hydraulic Protection' → 'hydraulic-protection'
- *
- * Dependency: knowledge-center-data (all registries), ./recommendation-types
+ * Public graph rules:
+ * - only canonical Engineering article owners become article nodes;
+ * - relationships to consolidated Engineering aliases are transferred to their owner;
+ * - Cabin Air and Compressed Air references resolve into Air Intake & Airflow Protection;
+ * - all public hrefs use trailing-slash canonical form.
  */
 
 import {
@@ -48,410 +18,315 @@ import {
   KC_COMPARISONS,
 } from '@/lib/knowledge-center-data';
 import { ENGINEERING_DIAGRAMS } from '@/lib/knowledge-center-data/diagram-registry';
+import {
+  getEngineeringTopicCanonicalOwner,
+  isConsolidatedEngineeringTopic,
+} from './canonical-article-ownership';
 import type { KCGraph, KCGraphNode, KCNodeKey, KCNodeType } from './recommendation-types';
 
-// ── Normalisation helpers ──────────────────────────────────────────────────────
-
-/** Strip ™, trim, lowercase: 'MACROCORE™' → 'macrocore', 'NANOFORCE' → 'nanoforce' */
 function techDisplayToSlug(displayName: string): string {
   return displayName.replace(/™/g, '').trim().toLowerCase();
 }
 
-/**
- * 'ISO 16889' / 'ISO 16889:2022' / 'SAE J1539' → 'iso-16889' / 'sae-j1539'
- * Remove year suffix, lowercase, replace spaces with hyphens.
- */
 function stdCodeToSlug(code: string): string {
   return code
-    .replace(/:\d{4}.*$/, '') // strip ':2022' or ':2021 §...' suffixes
+    .replace(/:\d{4}.*$/, '')
     .trim()
     .toLowerCase()
     .replace(/\s+/g, '-');
 }
 
-/**
- * 'STD-ISO-16889' → 'iso-16889'
- * Strip 'STD-' prefix, lowercase (hyphens already correct).
- */
 function stdEntityIdToSlug(entityId: string): string {
   return entityId.replace(/^STD-/, '').toLowerCase();
 }
 
-/**
- * 'TERM-BETA-RATIO' → 'beta-ratio'
- * Mirrors termIdToSlug in article-registry.ts.
- */
 function termIdToSlug(id: string): string {
   return id.replace(/^TERM-/, '').toLowerCase();
 }
 
-/**
- * 'beta-ratio' → 'TERM-BETA-RATIO'
- * Mirrors slugToTermId in article-registry.ts.
- */
 function termSlugToId(slug: string): string {
   return `TERM-${slug.toUpperCase()}`;
 }
 
-/**
- * Normalise system references to canonical slugs.
- * Handles: full slugs, display names (navigation-index SYSTEM_NAME_TO_SLUG),
- * and abbreviations introduced in comparisons-registry (e.g. 'hydraulic', 'lube-oil').
- */
 const SYSTEM_REF_MAP: Record<string, string> = {
-  // Display names
   'Air Intake Protection':       'air-intake-protection',
+  'Air Intake & Airflow Protection': 'air-intake-protection',
   'Fuel Cleanliness Protection': 'fuel-cleanliness-protection',
   'Lubrication Protection':      'lubrication-protection',
   'Hydraulic Protection':        'hydraulic-protection',
   'Cooling System Protection':   'cooling-system-protection',
-  'Cabin Air Protection':        'cabin-air-protection',
-  'Compressed Air Protection':   'compressed-air-protection',
-  // Full slugs (identity)
+  'Cabin Air Protection':        'air-intake-protection',
+  'Compressed Air Protection':   'air-intake-protection',
+
   'air-intake-protection':       'air-intake-protection',
   'fuel-cleanliness-protection': 'fuel-cleanliness-protection',
   'lubrication-protection':      'lubrication-protection',
   'hydraulic-protection':        'hydraulic-protection',
   'cooling-system-protection':   'cooling-system-protection',
-  'cabin-air-protection':        'cabin-air-protection',
-  'compressed-air-protection':   'compressed-air-protection',
-  // Abbreviations used in comparisons-registry
-  'hydraulic':                   'hydraulic-protection',
+  'cabin-air-protection':        'air-intake-protection',
+  'compressed-air-protection':   'air-intake-protection',
+
+  hydraulic:                     'hydraulic-protection',
   'lube-oil':                    'lubrication-protection',
-  'lubrication':                 'lubrication-protection',
+  lubrication:                   'lubrication-protection',
   'air-intake':                  'air-intake-protection',
-  'fuel':                        'fuel-cleanliness-protection',
+  fuel:                          'fuel-cleanliness-protection',
   'fuel-cleanliness':            'fuel-cleanliness-protection',
-  'cabin':                       'cabin-air-protection',
-  'cabin-air':                   'cabin-air-protection',
-  'cooling':                     'cooling-system-protection',
-  'compressed-air':              'compressed-air-protection',
+  cabin:                         'air-intake-protection',
+  'cabin-air':                   'air-intake-protection',
+  cooling:                       'cooling-system-protection',
+  'compressed-air':              'air-intake-protection',
 };
 
 function systemRefToSlug(ref: string): string | null {
   return SYSTEM_REF_MAP[ref] ?? null;
 }
 
-// ── Graph construction helpers ────────────────────────────────────────────────
-
 function makeKey(type: KCNodeType, slug: string): KCNodeKey {
   return `${type}:${slug}`;
 }
 
 function addNode(graph: KCGraph, node: KCGraphNode): void {
-  if (!graph.nodes.has(node.key)) {
-    graph.nodes.set(node.key, node);
-  }
+  if (!graph.nodes.has(node.key)) graph.nodes.set(node.key, node);
 }
 
-/**
- * Add an undirected edge between two nodes.
- * Silently skips if either node is not registered — prevents phantom edges
- * from normalisation mismatches.
- */
 function addEdge(graph: KCGraph, keyA: KCNodeKey, keyB: KCNodeKey): void {
   if (keyA === keyB) return;
   if (!graph.nodes.has(keyA) || !graph.nodes.has(keyB)) return;
-
   if (!graph.edges.has(keyA)) graph.edges.set(keyA, new Set());
   if (!graph.edges.has(keyB)) graph.edges.set(keyB, new Set());
-
   graph.edges.get(keyA)!.add(keyB);
   graph.edges.get(keyB)!.add(keyA);
 }
 
-// ── Graph factory ─────────────────────────────────────────────────────────────
+function canonicalArticleTarget(slug: string): KCNodeKey {
+  const owner = getEngineeringTopicCanonicalOwner(slug);
+  if (!owner) return makeKey('article', slug);
+
+  const parsed = new URL(owner);
+  const parts = parsed.pathname.split('/').filter(Boolean);
+  const section = parts.at(-2);
+  const ownerSlug = parts.at(-1) ?? slug;
+
+  if (section === 'standards') return makeKey('standard', ownerSlug);
+  return makeKey('article', ownerSlug);
+}
+
+function addArticleRelationship(graph: KCGraph, source: KCNodeKey, articleSlug: string): void {
+  addEdge(graph, source, canonicalArticleTarget(articleSlug));
+}
+
+function addSystemRelationship(graph: KCGraph, source: KCNodeKey, systemRef: string): void {
+  const slug = systemRefToSlug(systemRef);
+  if (slug) addEdge(graph, source, makeKey('system', slug));
+}
 
 function buildGraph(): KCGraph {
-  const graph: KCGraph = {
-    nodes: new Map(),
-    edges: new Map(),
-  };
+  const graph: KCGraph = { nodes: new Map(), edges: new Map() };
+  const canonicalArticles = ENGINEERING_ARTICLES.filter(
+    (article) => !isConsolidatedEngineeringTopic(article.slug),
+  );
 
-  // ── 1. Register all nodes ────────────────────────────────────────────────────
-
-  // Articles
-  for (const a of ENGINEERING_ARTICLES) {
+  for (const a of canonicalArticles) {
     addNode(graph, {
-      key:   makeKey('article', a.slug),
-      type:  'article',
-      slug:  a.slug,
+      key: makeKey('article', a.slug),
+      type: 'article',
+      slug: a.slug,
       label: a.title,
-      href:  `/knowledge-center/engineering/${a.slug}`,
+      href: `/knowledge-center/engineering/${a.slug}/`,
     });
   }
 
-  // Standards
   for (const s of KC_STANDARDS) {
     addNode(graph, {
-      key:   makeKey('standard', s.slug),
-      type:  'standard',
-      slug:  s.slug,
+      key: makeKey('standard', s.slug),
+      type: 'standard',
+      slug: s.slug,
       label: s.code,
-      href:  `/knowledge-center/standards/${s.slug}`,
+      href: `/knowledge-center/standards/${s.slug}/`,
     });
   }
 
-  // Technologies
   for (const t of KC_TECHNOLOGIES) {
     addNode(graph, {
-      key:   makeKey('technology', t.slug),
-      type:  'technology',
-      slug:  t.slug,
+      key: makeKey('technology', t.slug),
+      type: 'technology',
+      slug: t.slug,
       label: t.name,
-      href:  `/knowledge-center/technologies/${t.slug}`,
+      href: `/knowledge-center/technologies/${t.slug}/`,
     });
   }
 
-  // Systems
   for (const sys of KC_SYSTEMS) {
     addNode(graph, {
-      key:   makeKey('system', sys.slug),
-      type:  'system',
-      slug:  sys.slug,
+      key: makeKey('system', sys.slug),
+      type: 'system',
+      slug: sys.slug,
       label: (sys as { title: string }).title,
-      href:  `/knowledge-center/systems/${sys.slug}`,
+      href: `/knowledge-center/systems/${sys.slug}/`,
     });
   }
 
-  // Glossary terms (using term slug as node key slug)
   for (const [termId, entry] of Object.entries(GLOSSARY_REGISTRY)) {
     const slug = termIdToSlug(termId);
     addNode(graph, {
-      key:   makeKey('term', slug),
-      type:  'term',
+      key: makeKey('term', slug),
+      type: 'term',
       slug,
       label: entry.term,
-      href:  `/knowledge-center/glossary/${slug}`,
+      href: `/knowledge-center/glossary/${slug}/`,
     });
   }
 
-  // Diagrams
   for (const d of ENGINEERING_DIAGRAMS) {
     addNode(graph, {
-      key:   makeKey('diagram', d.slug),
-      type:  'diagram',
-      slug:  d.slug,
+      key: makeKey('diagram', d.slug),
+      type: 'diagram',
+      slug: d.slug,
       label: d.title,
-      href:  `/knowledge-center/diagrams/${d.slug}`,
+      href: `/knowledge-center/diagrams/${d.slug}/`,
     });
   }
 
-  // Calculators
   for (const c of KC_CALCULATORS) {
     addNode(graph, {
-      key:   makeKey('calculator', c.slug),
-      type:  'calculator',
-      slug:  c.slug,
+      key: makeKey('calculator', c.slug),
+      type: 'calculator',
+      slug: c.slug,
       label: c.title,
-      href:  `/knowledge-center/calculators/${c.slug}`,
+      href: `/knowledge-center/calculators/${c.slug}/`,
     });
   }
 
-  // Comparisons
   for (const comp of KC_COMPARISONS) {
     addNode(graph, {
-      key:   makeKey('comparison', comp.slug),
-      type:  'comparison',
-      slug:  comp.slug,
+      key: makeKey('comparison', comp.slug),
+      type: 'comparison',
+      slug: comp.slug,
       label: comp.title,
-      href:  `/knowledge-center/comparisons/${comp.slug}`,
+      href: `/knowledge-center/comparisons/${comp.slug}/`,
     });
   }
 
-  // ── 2. Register all edges ────────────────────────────────────────────────────
-
-  // ── Articles ─────────────────────────────────────────────────────────────────
-  for (const a of ENGINEERING_ARTICLES) {
+  for (const a of canonicalArticles) {
     const aKey = makeKey('article', a.slug);
-
-    // article ↔ standard (display code strings → slugs)
     for (const stdCode of a.relatedStandards) {
       addEdge(graph, aKey, makeKey('standard', stdCodeToSlug(stdCode)));
     }
-
-    // article ↔ technology (display names with ™ → slugs)
     for (const techName of a.relatedTechnologies) {
       addEdge(graph, aKey, makeKey('technology', techDisplayToSlug(techName)));
     }
-
-    // article ↔ system (display names or slugs)
     for (const sysRef of a.relatedSystems) {
-      const sysSlug = systemRefToSlug(sysRef);
-      if (sysSlug) addEdge(graph, aKey, makeKey('system', sysSlug));
+      addSystemRelationship(graph, aKey, sysRef);
     }
   }
 
-  // ── Standards ────────────────────────────────────────────────────────────────
   for (const s of KC_STANDARDS) {
     const sKey = makeKey('standard', s.slug);
-
-    // standard ↔ technology (display names with ™)
     for (const techName of s.relatedTechnologies) {
       addEdge(graph, sKey, makeKey('technology', techDisplayToSlug(techName)));
     }
-
-    // standard ↔ system (slugs)
-    for (const sysSlug of s.applicableSystems) {
-      addEdge(graph, sKey, makeKey('system', sysSlug));
+    for (const sysRef of s.applicableSystems) {
+      addSystemRelationship(graph, sKey, sysRef);
     }
-
-    // standard ↔ term (TERM-xxx IDs)
     for (const termId of s.relatedGlossaryTerms) {
       addEdge(graph, sKey, makeKey('term', termIdToSlug(termId)));
     }
-
-    // standard ↔ article (slugs)
     for (const artSlug of s.relatedArticles) {
-      addEdge(graph, sKey, makeKey('article', artSlug));
+      addArticleRelationship(graph, sKey, artSlug);
     }
   }
 
-  // ── Technologies ─────────────────────────────────────────────────────────────
   for (const t of KC_TECHNOLOGIES) {
     const tKey = makeKey('technology', t.slug);
-
-    // technology ↔ standard (display code strings)
     for (const stdCode of t.standards) {
       addEdge(graph, tKey, makeKey('standard', stdCodeToSlug(stdCode)));
     }
-
-    // technology ↔ system (slugs)
-    for (const sysSlug of t.relatedSystems) {
-      addEdge(graph, tKey, makeKey('system', sysSlug));
+    for (const sysRef of t.relatedSystems) {
+      addSystemRelationship(graph, tKey, sysRef);
     }
-
-    // technology ↔ technology (worksWith display names)
     for (const peerName of t.worksWith) {
       addEdge(graph, tKey, makeKey('technology', techDisplayToSlug(peerName)));
     }
   }
 
-  // ── Glossary Terms ────────────────────────────────────────────────────────────
   for (const [termId, entry] of Object.entries(GLOSSARY_REGISTRY)) {
     const tSlug = termIdToSlug(termId);
-    const tKey  = makeKey('term', tSlug);
-
-    // term ↔ standard (STD-xxx entity IDs → slugs)
-    for (const stdEntityId of (entry.applicableStandards ?? [])) {
+    const tKey = makeKey('term', tSlug);
+    for (const stdEntityId of entry.applicableStandards ?? []) {
       addEdge(graph, tKey, makeKey('standard', stdEntityIdToSlug(stdEntityId)));
     }
-
-    // term ↔ technology (already slugs in GLOSSARY_REGISTRY)
-    for (const techSlug of (entry.relatedTechnologies ?? [])) {
+    for (const techSlug of entry.relatedTechnologies ?? []) {
       addEdge(graph, tKey, makeKey('technology', techSlug));
     }
-
-    // term ↔ system (slugs)
-    for (const sysSlug of (entry.relatedSystems ?? [])) {
-      addEdge(graph, tKey, makeKey('system', sysSlug));
+    for (const sysRef of entry.relatedSystems ?? []) {
+      addSystemRelationship(graph, tKey, sysRef);
     }
-
-    // term ↔ article (slugs)
-    for (const artSlug of (entry.relatedArticles ?? [])) {
-      addEdge(graph, tKey, makeKey('article', artSlug));
+    for (const artSlug of entry.relatedArticles ?? []) {
+      addArticleRelationship(graph, tKey, artSlug);
     }
-
-    // term ↔ term (TERM-xxx IDs)
-    for (const relTermId of (entry.relatedTerms ?? [])) {
+    for (const relTermId of entry.relatedTerms ?? []) {
       addEdge(graph, tKey, makeKey('term', termIdToSlug(relTermId)));
     }
   }
 
-  // ── Diagrams ─────────────────────────────────────────────────────────────────
   for (const d of ENGINEERING_DIAGRAMS) {
     const dKey = makeKey('diagram', d.slug);
-
-    // diagram ↔ standard (STD-xxx entity IDs → slugs)
     for (const stdEntityId of d.governingStandards) {
       addEdge(graph, dKey, makeKey('standard', stdEntityIdToSlug(stdEntityId)));
     }
-
-    // diagram ↔ technology (display names with ™)
     for (const techName of d.relatedTechnologies) {
       addEdge(graph, dKey, makeKey('technology', techDisplayToSlug(techName)));
     }
-
-    // diagram ↔ system (slugs)
-    for (const sysSlug of d.applicableSystems) {
-      addEdge(graph, dKey, makeKey('system', sysSlug));
+    for (const sysRef of d.applicableSystems) {
+      addSystemRelationship(graph, dKey, sysRef);
     }
-
-    // diagram ↔ article (slugs)
     for (const artSlug of d.relatedArticles) {
-      addEdge(graph, dKey, makeKey('article', artSlug));
+      addArticleRelationship(graph, dKey, artSlug);
     }
-
-    // diagram ↔ term (TERM-xxx IDs)
     for (const termId of d.relatedGlossaryTerms) {
       addEdge(graph, dKey, makeKey('term', termIdToSlug(termId)));
     }
   }
 
-  // ── Calculators ───────────────────────────────────────────────────────────────
   for (const c of KC_CALCULATORS) {
     const cKey = makeKey('calculator', c.slug);
-
-    // calculator ↔ standard (already slugs in calculators-registry)
     for (const stdSlug of c.relatedStandards) {
       addEdge(graph, cKey, makeKey('standard', stdSlug));
     }
-
-    // calculator ↔ article (slugs)
     for (const artSlug of c.relatedArticles) {
-      addEdge(graph, cKey, makeKey('article', artSlug));
+      addArticleRelationship(graph, cKey, artSlug);
     }
-
-    // calculator ↔ technology (display names with ™)
     for (const techName of c.relatedTechnologies) {
       addEdge(graph, cKey, makeKey('technology', techDisplayToSlug(techName)));
     }
   }
 
-  // ── Comparisons ───────────────────────────────────────────────────────────────
   for (const comp of KC_COMPARISONS) {
     const compKey = makeKey('comparison', comp.slug);
-
-    // comparison ↔ standard (already slugs in comparisons-registry)
     for (const stdSlug of comp.relatedStandards) {
       addEdge(graph, compKey, makeKey('standard', stdSlug));
     }
-
-    // comparison ↔ technology (display names WITHOUT ™ in comparisons-registry)
     for (const techName of comp.relatedTechnologies) {
       addEdge(graph, compKey, makeKey('technology', techDisplayToSlug(techName)));
     }
-
-    // comparison ↔ system (slugs or abbreviations)
     for (const sysRef of comp.relatedSystems) {
-      const sysSlug = systemRefToSlug(sysRef);
-      if (sysSlug) addEdge(graph, compKey, makeKey('system', sysSlug));
+      addSystemRelationship(graph, compKey, sysRef);
     }
-
-    // comparison ↔ term (term slugs in comparisons-registry → convert to ID → back to slug for key)
     for (const termSlug of comp.relatedTerms) {
-      // Validate: the term slug must exist in GLOSSARY_REGISTRY
       const termId = termSlugToId(termSlug);
       if (GLOSSARY_REGISTRY[termId]) {
         addEdge(graph, compKey, makeKey('term', termSlug));
       }
     }
-
-    // comparison ↔ article (slugs)
     for (const artSlug of comp.relatedArticles) {
-      addEdge(graph, compKey, makeKey('article', artSlug));
+      addArticleRelationship(graph, compKey, artSlug);
     }
   }
 
   return graph;
 }
 
-// ── Singleton ─────────────────────────────────────────────────────────────────
-
-/**
- * Lazily-initialised singleton KC recommendation graph.
- * Built once on first access; identical for any two builds of the same data.
- */
 let _graph: KCGraph | null = null;
 
 export function getKCRecommendationGraph(): KCGraph {
