@@ -184,16 +184,16 @@ export default async function ProtectionSystemPage({ params }: Props) {
 
         <section style={section}>
           <h2 style={h2Style}>Primary Technologies</h2>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1px', background: 'rgba(255,255,255,0.06)' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,0.06)' }}>
             {sys.primaryTechnologies.map((slug) => (
-              <Link key={slug} href={`/technologies/${slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.55rem', transition: 'background 0.2s', flex: '1 1 240px', minWidth: 0 }}>
+              <Link key={slug} href={`/technologies/${slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.55rem', transition: 'background 0.2s', flex: '1 1 240px', maxWidth: '380px', minWidth: 0 }}>
                 <p style={{ ...labelStyle, color: '#FFF12D' }}>Primary</p>
                 <p style={cardTitle}>{slug.replace(/-/g, ' ')}</p>
                 <p style={mutedLinkLabel}>View Technology →</p>
               </Link>
             ))}
             {sys.supportingTechnologies.map((slug) => (
-              <Link key={slug} href={`/technologies/${slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.55rem', flex: '1 1 240px', minWidth: 0 }}>
+              <Link key={slug} href={`/technologies/${slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.55rem', flex: '1 1 240px', maxWidth: '380px', minWidth: 0 }}>
                 <p style={{ ...labelStyle, color: 'rgba(255,255,255,0.44)' }}>Supporting</p>
                 <p style={{ ...cardTitle, color: 'rgba(255,255,255,0.75)' }}>{slug.replace(/-/g, ' ')}</p>
                 <p style={mutedLinkLabel}>View Technology →</p>
@@ -207,9 +207,9 @@ export default async function ProtectionSystemPage({ params }: Props) {
           {families.length === 0 ? (
             <p style={prose}>DOCUMENTATION PENDING</p>
           ) : (
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1px', background: 'rgba(255,255,255,0.04)' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1px', background: 'rgba(255,255,255,0.04)' }}>
               {families.map((fam) => (
-                <Link key={fam.key} href={`/families/${fam.slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem 1.75rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', flex: '1 1 260px', minWidth: 0 }}>
+                <Link key={fam.key} href={`/families/${fam.slug}/`} style={{ textDecoration: 'none', background: '#000', padding: '1.5rem 1.75rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', flex: '1 1 260px', maxWidth: '420px', minWidth: 0 }}>
                   <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' as const }}>
                     {fam.hdPrefix && <span style={{ ...labelStyle, fontSize: '0.58rem', color: '#FFF12D', background: 'rgba(255,241,45,0.08)', padding: '0.2rem 0.5rem', borderRadius: '2px' }}>HD</span>}
                     {fam.ldPrefix && <span style={{ ...labelStyle, fontSize: '0.58rem', color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.05)', padding: '0.2rem 0.5rem', borderRadius: '2px' }}>LD</span>}
