@@ -26,7 +26,7 @@ export default function TotalCostOwnershipPage() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export default function TotalCostOwnershipPage() {
               fontSize: '1.05rem',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
-              maxWidth: '640px',
+              maxWidth: '780px',
             }}>
               10-year fleet economics: Commodity filtration approach vs. system-level contamination control. Real-world TCO comparison showing 60%+ cost reduction through asset protection.
             </p>
@@ -65,7 +65,7 @@ export default function TotalCostOwnershipPage() {
       </section>
 
       {/* Content */}
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         {/* Section 1 */}
         <motion.section
@@ -365,7 +365,7 @@ export default function TotalCostOwnershipPage() {
 
       {/* Footer Navigation */}
       <section style={{
-        maxWidth: '860px',
+        maxWidth: '1000px',
         margin: '3rem auto',
         padding: '2rem',
         borderTop: '1px solid rgba(255,255,255,0.06)',

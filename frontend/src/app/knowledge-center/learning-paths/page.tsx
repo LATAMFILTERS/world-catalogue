@@ -41,7 +41,7 @@ export default function LearningPathsPage() {
       </div>
 
       {/* Hero */}
-      <section style={{ padding: '4rem 2rem 3rem', maxWidth: '860px', margin: '0 auto' }}>
+      <section style={{ padding: '4rem 2rem 3rem', maxWidth: '1100px', margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function LearningPathsPage() {
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.55)',
-            maxWidth: '600px',
+            maxWidth: '780px',
           }}>
             Curated sequences of articles, standards, diagrams, and calculators drawn from the Engineering Knowledge Graph. Each path builds understanding progressively from foundational concepts to applied engineering decisions.
           </p>

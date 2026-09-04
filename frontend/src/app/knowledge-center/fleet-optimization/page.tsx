@@ -69,7 +69,7 @@ export default function FleetOptimizationHub() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ export default function FleetOptimizationHub() {
               fontSize: '1.05rem',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
-              maxWidth: '640px',
+              maxWidth: '820px',
             }}>
               Fleet Optimization translates contamination control principles into operational strategies. This section connects industrial asset protection (Standards → Contamination → Technologies) to practical fleet management: equipment lifecycle planning, condition-based maintenance scheduling, predictive monitoring, and regional deployment strategies. The result: equipment operating 3–5× longer, 90% fewer unplanned failures, 60% lower total cost of ownership.
             </p>

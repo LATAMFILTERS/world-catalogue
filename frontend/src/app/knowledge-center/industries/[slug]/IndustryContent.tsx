@@ -83,7 +83,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ export default function IndustryContent({ industry, detail }: { industry: KCIndu
               fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
               color: 'rgba(255,255,255,0.55)',
               marginBottom: '1.5rem',
-              maxWidth: '640px',
+              maxWidth: '820px',
               lineHeight: 1.7,
             }}
           >

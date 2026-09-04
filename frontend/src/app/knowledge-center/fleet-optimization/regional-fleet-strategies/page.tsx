@@ -24,7 +24,7 @@ export default function RegionalFleetStrategiesPage() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export default function RegionalFleetStrategiesPage() {
               fontSize: '1.05rem',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
-              maxWidth: '640px',
+              maxWidth: '780px',
             }}>
               Equipment operating in desert mining requires different contamination control than coastal marine environments. Regional climate, geography, and operational intensity determine filtration strategies. Desert dust demands multi-stage MACROCORE air intake with high bypass thresholds. Tropical humidity requires aggressive HYDROCORE water separation. Coastal salt air necessitates enhanced cabin MICROKAPPA filtration to protect operator health. Matching filtration systems to regional environmental stressors extends equipment life 2–4× compared to one-size-fits-all commodity approaches.
             </p>
@@ -62,7 +62,7 @@ export default function RegionalFleetStrategiesPage() {
         </div>
       </section>
 
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -221,7 +221,7 @@ export default function RegionalFleetStrategiesPage() {
       </div>
 
       <section style={{
-        maxWidth: '860px',
+        maxWidth: '1000px',
         margin: '3rem auto',
         padding: '2rem',
         borderTop: '1px solid rgba(255,255,255,0.06)',

@@ -81,7 +81,7 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -136,7 +136,7 @@ export default function ProblemStubContent({ problem }: { problem: ProblemStub }
       </section>
 
       <div style={{
-        maxWidth: '860px',
+        maxWidth: '1000px',
         margin: '0 auto',
         padding: 'clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem)',
       }}>

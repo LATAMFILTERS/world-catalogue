@@ -24,7 +24,7 @@ export default function ContaminationControlStrategyPage() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export default function ContaminationControlStrategyPage() {
               fontSize: '1.05rem',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
-              maxWidth: '640px',
+              maxWidth: '780px',
             }}>
               Unified framework protecting industrial assets across 5 contamination domains: air intake, fuel, lube oil, hydraulic systems, and compressed air. Information architecture: Contamination → Degradation → Standards → Technologies → Implementation.
             </p>
@@ -62,7 +62,7 @@ export default function ContaminationControlStrategyPage() {
         </div>
       </section>
 
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -304,7 +304,7 @@ export default function ContaminationControlStrategyPage() {
       </div>
 
       <section style={{
-        maxWidth: '860px',
+        maxWidth: '1000px',
         margin: '3rem auto',
         padding: '2rem',
         borderTop: '1px solid rgba(255,255,255,0.06)',

@@ -68,7 +68,7 @@ export default function ComparisonsPage() {
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.95rem',
             color: 'rgba(255,255,255,0.55)',
-            maxWidth: '640px',
+            maxWidth: '780px',
             lineHeight: 1.7,
           }}>
             Side-by-side technical comparisons across filtration standards, technologies,

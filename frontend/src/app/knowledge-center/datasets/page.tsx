@@ -103,7 +103,7 @@ export default function DatasetsPage() {
       </div>
 
       {/* Hero */}
-      <section style={{ padding: '3.5rem 2rem 3rem', maxWidth: '860px', margin: '0 auto' }}>
+      <section style={{ padding: '3.5rem 2rem 3rem', maxWidth: '1100px', margin: '0 auto' }}>
         <p style={{
           fontFamily: 'JetBrains Mono, monospace',
           fontSize: '0.6rem',
@@ -128,7 +128,7 @@ export default function DatasetsPage() {
           fontSize: '0.93rem',
           lineHeight: 1.8,
           color: 'rgba(255,255,255,0.55)',
-          maxWidth: '680px',
+          maxWidth: '820px',
         }}>
           Downloadable datasets derived from ISO, ASTM, and SAE engineering standards. Available in JSON and CSV formats for use in fluid analysis software, maintenance management systems, and engineering calculations. All data is traceable to the governing standard cited for each dataset.
         </p>
@@ -148,7 +148,7 @@ export default function DatasetsPage() {
       </section>
 
       {/* Datasets */}
-      <section style={{ padding: '0 2rem 6rem', maxWidth: '860px', margin: '0 auto' }}>
+      <section style={{ padding: '0 2rem 6rem', maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {DATASETS.map((dataset) => (
             <div key={dataset.id} style={{

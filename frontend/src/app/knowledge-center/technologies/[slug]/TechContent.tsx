@@ -79,7 +79,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -137,7 +137,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
               fontSize: '0.95rem',
               lineHeight: 1.8,
               color: 'rgba(255,255,255,0.7)',
-              maxWidth: '660px',
+              maxWidth: '820px',
             }}
           >
             {tech.engineeringPrinciple}

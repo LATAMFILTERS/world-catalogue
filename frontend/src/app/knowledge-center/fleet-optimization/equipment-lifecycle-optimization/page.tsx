@@ -24,7 +24,7 @@ export default function EquipmentLifecycleOptimizationPage() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export default function EquipmentLifecycleOptimizationPage() {
               fontSize: '1.05rem',
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
-              maxWidth: '640px',
+              maxWidth: '780px',
             }}>
               Extending equipment operational life 3–5× through contamination control across the full lifecycle—from acquisition specification through end-of-service. Equipment that operates 15,000+ hours instead of 5,000 hours represents 30–50% cost reduction per equipment unit and dramatically reduces fleet replacement capital requirements.
             </p>
@@ -62,7 +62,7 @@ export default function EquipmentLifecycleOptimizationPage() {
         </div>
       </section>
 
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '4rem 2rem' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '4rem 2rem' }}>
 
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -293,7 +293,7 @@ export default function EquipmentLifecycleOptimizationPage() {
       </div>
 
       <section style={{
-        maxWidth: '860px',
+        maxWidth: '1000px',
         margin: '3rem auto',
         padding: '2rem',
         borderTop: '1px solid rgba(255,255,255,0.06)',
