@@ -1,27 +1,31 @@
-name: Current Indexability Priority Matrix
+name: Current SEO GEO AEO Production Closure
 
 on:
   workflow_dispatch: {}
   pull_request:
     paths:
+      - 'scripts/seo-geo-audit/audit.py'
       - 'scripts/seo-geo-audit/build_current_indexability_matrix.py'
+      - 'scripts/seo-geo-audit/detect_intent_collisions.py'
       - '.github/workflows/current-indexability-matrix.yml'
   push:
     branches:
       - main
     paths:
+      - 'scripts/seo-geo-audit/audit.py'
       - 'scripts/seo-geo-audit/build_current_indexability_matrix.py'
+      - 'scripts/seo-geo-audit/detect_intent_collisions.py'
       - '.github/workflows/current-indexability-matrix.yml'
 
 permissions:
   contents: read
 
 concurrency:
-  group: current-indexability-priority-matrix-${{ github.ref }}
+  group: current-seo-geo-aeo-production-closure-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  matrix:
+  closure:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -41,18 +45,32 @@ jobs:
             seo-geo-audit-out/seo-geo-audit.csv \
             --out-dir seo-geo-audit-out
 
-      - name: Print priority summary
-        run: cat seo-geo-audit-out/current-indexability-priority-matrix.md
+      - name: Detect current Knowledge Center intent collisions
+        run: |
+          python3 scripts/seo-geo-audit/detect_intent_collisions.py \
+            --audit seo-geo-audit-out/seo-geo-audit.csv \
+            --out-dir seo-geo-audit-out
 
-      - name: Upload matrix evidence
+      - name: Print SEO GEO AEO closure summary
+        run: |
+          echo '===== PRODUCTION SEO/GEO AUDIT ====='
+          cat seo-geo-audit-out/seo-geo-summary.md
+          echo '===== INDEXABILITY PRIORITY MATRIX ====='
+          cat seo-geo-audit-out/current-indexability-priority-matrix.md
+          echo '===== INTENT COLLISION REVIEW ====='
+          cat seo-geo-audit-out/current-intent-collisions.md
+
+      - name: Upload closure evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: current-indexability-priority-matrix-${{ github.run_number }}
+          name: seo-geo-aeo-production-closure-${{ github.run_number }}
           path: |
             seo-geo-audit-out/seo-geo-audit.csv
             seo-geo-audit-out/seo-geo-summary.md
             seo-geo-audit-out/current-indexability-priority-matrix.csv
             seo-geo-audit-out/current-indexability-priority-matrix.md
+            seo-geo-audit-out/current-intent-collisions.csv
+            seo-geo-audit-out/current-intent-collisions.md
           if-no-files-found: warn
           retention-days: 90
