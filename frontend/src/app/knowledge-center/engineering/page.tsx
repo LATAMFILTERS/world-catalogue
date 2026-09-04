@@ -39,7 +39,7 @@ export default function EngineeringHubPage() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
-        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Link href="/knowledge-center/" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
@@ -93,7 +93,7 @@ export default function EngineeringHubPage() {
               lineHeight: 1.75,
               textAlign: 'left',
               color: 'rgba(255,255,255,0.6)',
-              maxWidth: '650px',
+              maxWidth: '820px',
             }}
           >
             Technical references covering filtration theory, contamination modes, fluid mechanics, asset protection and system engineering for heavy equipment and industrial applications.
