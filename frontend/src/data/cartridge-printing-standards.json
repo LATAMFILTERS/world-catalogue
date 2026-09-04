@@ -1,0 +1,88 @@
+{
+  "standardId": "ELIM-CARTRIDGE-TOP-CAP-PRINT-001",
+  "title": "ELIMFILTERS Cartridge Filters — Top Cap Printing Standard",
+  "status": "APPROVED",
+  "revision": "1.0",
+  "effectiveDate": "2026-09-04",
+  "scope": [
+    "cartridge_filters",
+    "cylindrical_cartridge_filters"
+  ],
+  "masterAssetRepository": "frontend/public/assets/",
+  "brandAsset": "frontend/public/assets/Logotipo Elimfilters® con eslogan corporativo.png",
+  "printSystem": {
+    "mediaPrinting": false,
+    "printLocation": "circular_end_cap",
+    "cylindricalBothEnds": {
+      "enabled": true,
+      "rule": "When the cartridge has equivalent cylindrical end caps and no dedicated lower information area, repeat the same approved circular artwork on both ends.",
+      "rotation": "0_or_180_degrees_as_required_by_assembly"
+    },
+    "layout": {
+      "geometry": "radial_circular",
+      "centerReference": "center_hole_axis",
+      "logoTreatment": "curved_to_follow_cap_arc",
+      "skuTreatment": "radial_or_arc_aligned_to_approved_master",
+      "technologyTreatment": "curved_to_follow_cap_arc",
+      "productTypeTreatment": "radial_or_arc_aligned_to_approved_master",
+      "rectangularLabelOnMedia": "PROHIBITED"
+    },
+    "ink": {
+      "internalCode": "EF-INK-002",
+      "name": "ELIMFILTERS Neutral Grey",
+      "pantoneReference": "Pantone Cool Gray 11 C",
+      "note": "Pantone is a production communication reference; final acceptance must be against the approved physical print sample."
+    }
+  },
+  "skuRules": [
+    {
+      "prefixFamily": "EF5-EF9",
+      "productType": "Fuel Filter",
+      "technology": "SYNTAPORE",
+      "technologyAsset": "frontend/public/assets/SYNTAPORE_final.avif"
+    },
+    {
+      "prefixFamily": "ES5-ES9",
+      "productType": "Fuel / Water Separator",
+      "technology": "HYDROCORE",
+      "technologyAsset": "frontend/public/assets/HYDROCORE_final.avif"
+    },
+    {
+      "prefixFamily": "ES9",
+      "productType": "Fuel / Water Separator",
+      "technology": "HYDROCORE",
+      "technologyAsset": "frontend/public/assets/HYDROCORE_final.avif",
+      "approvedExplicitRule": true
+    },
+    {
+      "prefixFamily": "EH6",
+      "productType": "Hydraulic Filter",
+      "technology": "HYDROCORE",
+      "technologyAsset": "frontend/public/assets/HYDROCORE_final.avif",
+      "approvedExplicitRule": true
+    }
+  ],
+  "hydrocoreApplicationRule": {
+    "technology": "HYDROCORE",
+    "rules": {
+      "ES9": "Fuel / Water Separator",
+      "EH6": "Hydraulic Filter"
+    },
+    "requirement": "The SKU prefix and printed Product Type must always match the actual application. HYDROCORE remains the technology mark for both approved applications."
+  },
+  "requiredPrintedElements": [
+    "ELIMFILTERS master logo",
+    "TOTAL ASSETS PROTECTION",
+    "SKU",
+    "Product Type",
+    "Approved technology identity"
+  ],
+  "manufacturingControls": [
+    "Use only master logos from frontend/public/assets/.",
+    "Do not redraw, typeset, stretch or approximate the ELIMFILTERS or technology logos.",
+    "Keep all printed information inside the usable annular print area and clear of the center hole and cap edge.",
+    "Artwork must follow the circular geometry of the approved reference cap; the ELIMFILTERS logo is not to be placed as a straight rectangular lockup on this cylindrical-cap design.",
+    "Media remains unprinted and carries no adhesive label.",
+    "Mass production requires approval of a physical Golden Sample."
+  ]
+}
