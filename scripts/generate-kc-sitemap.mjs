@@ -1,7 +1,7 @@
 /**
  * Post-build Knowledge Center sitemap governance.
  *
- * Scans exported /knowledge-center/**/index.html files, excludes any noindex or
+ * Scans exported Knowledge Center index HTML files, excludes any noindex or
  * manifest-retired route, and applies the shared Recrawl Priority Manifest.
  */
 
