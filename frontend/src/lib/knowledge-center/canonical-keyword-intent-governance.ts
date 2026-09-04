@@ -23,6 +23,12 @@ export interface CanonicalKeywordIntentNode {
 }
 
 const OWNER_OVERRIDES: Readonly<Record<string, Partial<CanonicalKeywordIntentNode>>> = {
+  'diesel filter comparison': {
+    ownerKind: 'comparison',
+    ownerPath: '/knowledge-center/comparisons/single-stage-vs-multi-stage-fuel/',
+    publishingState: 'reinforce-existing',
+    action: 'Use the governed single-stage vs. multi-stage diesel fuel-filtration comparison as the single intent owner; product pages may support it without duplicating comparison metadata.',
+  },
   'diesel fuel water contamination': {
     ownerKind: 'problem',
     ownerPath: '/knowledge-center/problems/water-ingress/',
