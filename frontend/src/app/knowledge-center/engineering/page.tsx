@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ENGINEERING_ARTICLES } from '@/lib/knowledge-center-data';
+import { isConsolidatedEngineeringTopic } from '@/lib/knowledge-center/canonical-article-ownership';
 
 const miningSeries = [
   {
@@ -27,6 +28,10 @@ const miningSeries = [
   },
 ] as const;
 
+const canonicalEngineeringArticles = ENGINEERING_ARTICLES.filter(
+  (article) => !isConsolidatedEngineeringTopic(article.slug),
+);
+
 export default function EngineeringHubPage() {
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', overflowX: 'hidden' }}>
@@ -35,7 +40,7 @@ export default function EngineeringHubPage() {
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-          <Link href="/knowledge-center" style={{
+          <Link href="/knowledge-center/" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
             letterSpacing: '0.1em',
@@ -204,7 +209,7 @@ export default function EngineeringHubPage() {
           background: 'rgba(255,255,255,0.05)',
           border: '1px solid rgba(255,255,255,0.05)',
         }}>
-          {ENGINEERING_ARTICLES.map((article, i) => (
+          {canonicalEngineeringArticles.map((article, i) => (
             <motion.div
               key={article.slug}
               initial={{ opacity: 0 }}
@@ -212,7 +217,7 @@ export default function EngineeringHubPage() {
               transition={{ duration: 0.3, delay: i * 0.04 }}
               style={{ minWidth: 0 }}
             >
-              <Link href={`/knowledge-center/engineering/${article.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <Link href={`/knowledge-center/engineering/${article.slug}/`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
                 <motion.div
                   whileHover={{ background: 'rgba(255,241,45,0.03)', borderLeftColor: '#FFF12D' }}
                   style={{
@@ -296,7 +301,7 @@ export default function EngineeringHubPage() {
         '@type': 'CollectionPage',
         name: 'Filtration Engineering Articles — ELIMFILTERS Knowledge Center',
         description: 'Technical engineering articles on filtration theory, media science, contamination control, reliability and industrial asset protection.',
-        url: 'https://elimfilters.com/knowledge-center/engineering',
+        url: 'https://elimfilters.com/knowledge-center/engineering/',
         publisher: {
           '@type': 'Organization',
           '@id': 'https://elimfilters.com/#organization',
@@ -309,10 +314,10 @@ export default function EngineeringHubPage() {
             url: `https://elimfilters.com/knowledge-center/engineering/${a.slug}/`,
             description: a.description,
           })),
-          ...ENGINEERING_ARTICLES.map((a) => ({
+          ...canonicalEngineeringArticles.map((a) => ({
             '@type': 'TechArticle',
             headline: a.title,
-            url: `https://elimfilters.com/knowledge-center/engineering/${a.slug}`,
+            url: `https://elimfilters.com/knowledge-center/engineering/${a.slug}/`,
             description: a.metaDescription,
           })),
         ],
