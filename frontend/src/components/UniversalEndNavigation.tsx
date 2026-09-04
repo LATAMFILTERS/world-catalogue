@@ -155,14 +155,40 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
       return;
     }
     if (!hydrated || !navRef.current) return;
-    const footer = document.querySelector('footer');
-    if (!footer) return;
-    const parent = footer.parentElement;
-    if (parent && navRef.current.parentElement !== parent) {
-      parent.insertBefore(navRef.current, footer);
-    }
-    setPositioned(true);
-  }, [hydrated, isMacrocore, pathname]);
+
+    let cancelled = false;
+    const tryRelocate = () => {
+      if (cancelled || !navRef.current) return false;
+      const footer = document.querySelector('footer');
+      if (!footer) return false;
+      const parent = footer.parentElement;
+      if (parent && navRef.current.parentElement !== parent) {
+        parent.insertBefore(navRef.current, footer);
+      }
+      setPositioned(true);
+      return true;
+    };
+
+    if (tryRelocate()) return;
+
+    // The footer may not have mounted yet on first pass - retry briefly.
+    const interval = window.setInterval(() => {
+      if (tryRelocate()) window.clearInterval(interval);
+    }, 100);
+
+    // Never leave the block permanently hidden: reveal it regardless after a
+    // short grace period, even if the footer never appears to relocate against.
+    const fallback = window.setTimeout(() => {
+      window.clearInterval(interval);
+      setPositioned(true);
+    }, 1500);
+
+    return () => {
+      cancelled = true;
+      window.clearInterval(interval);
+      window.clearTimeout(fallback);
+    };
+  }, [hydrated, isMacrocore, pathname, language]);
 
   useEffect(() => {
     if (isMacrocore || !config || !hydrated || language !== 'en') return;
