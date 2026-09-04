@@ -1,5 +1,10 @@
 import { STANDARD_IDS as LEGACY_STANDARD_IDS } from './entity-ids';
 
+const {
+  ['nfpa-t2-14']: _retiredNfpaStandard,
+  ...CURRENT_STANDARD_IDS
+} = LEGACY_STANDARD_IDS;
+
 /**
  * Current public Standard IDs.
  *
@@ -7,7 +12,7 @@ import { STANDARD_IDS as LEGACY_STANDARD_IDS } from './entity-ids';
  * added here without reusing or deleting any legacy identifier.
  */
 export const STANDARD_IDS = {
-  ...LEGACY_STANDARD_IDS,
+  ...CURRENT_STANDARD_IDS,
   'iso-2941': 'STD-ISO-2941',
 } as const;
 
