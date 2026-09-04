@@ -1,10 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ENGINEERING_ARTICLES } from '@/lib/knowledge-center-data';
+import { CONSOLIDATED_ENGINEERING_TOPICS } from '@/lib/knowledge-center/engineering-topic-ownership';
 import { notFound } from 'next/navigation';
 import ArticleContent from './ArticleContent';
 
 const CTR_OVERRIDES: Record<string, { title: string; description: string }> = {
+  'airflow-engineering': {
+    title: 'Airflow Engineering: Restriction, Pressure Drop & Engine Impact | ELIMFILTERS®',
+    description: 'Deep engineering analysis of air-filter restriction, pressure drop, volumetric efficiency and engine impact; use Engineering Reference for the structured application framework.',
+  },
+  'fluid-cleanliness': {
+    title: 'Fluid Cleanliness: ISO 4406 Targets, Particle Counting & Oil Analysis | ELIMFILTERS®',
+    description: 'Deep technical analysis of ISO 4406 target codes, particle counting and oil-analysis interpretation; use Engineering Reference for the structured cleanliness-management framework.',
+  },
   'compressed-air-quality-verification': {
     title: 'Compressed Air Quality Verification | ELIMFILTERS®',
     description: 'How compressed-air quality is verified using contamination, moisture and purity measurements for industrial air systems and maintenance decisions.',
@@ -23,12 +32,6 @@ const CTR_OVERRIDES: Record<string, { title: string; description: string }> = {
   },
 };
 
-const CANONICAL_TOPIC_OWNERS: Record<string, string> = {
-  'iso-16889': 'https://elimfilters.com/knowledge-center/standards/iso-16889/',
-  'iso-4406': 'https://elimfilters.com/knowledge-center/standards/iso-4406/',
-  'filter-media-science': 'https://elimfilters.com/knowledge-center/engineering/filter-media-engineering/',
-};
-
 export function generateStaticParams() {
   return ENGINEERING_ARTICLES.map((a) => ({ topic: a.slug }));
 }
@@ -39,7 +42,8 @@ export async function generateMetadata({ params }: { params: Promise<{ topic: st
   if (!article) return {};
 
   const url = `https://elimfilters.com/knowledge-center/engineering/${topic}/`;
-  const canonicalOwnerUrl = CANONICAL_TOPIC_OWNERS[topic];
+  const canonicalOwnerPath = CONSOLIDATED_ENGINEERING_TOPICS[topic];
+  const canonicalOwnerUrl = canonicalOwnerPath ? `https://elimfilters.com${canonicalOwnerPath}` : undefined;
   const override = CTR_OVERRIDES[topic];
   const title = override?.title ?? article.title;
   const description = override?.description ?? article.metaDescription;
