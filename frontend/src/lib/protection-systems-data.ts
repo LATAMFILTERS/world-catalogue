@@ -48,7 +48,7 @@ export const PROTECTION_SYSTEMS: Record<ProtectionSystemKey, ProtectionSystem> =
     key: 'fuel-cleanliness', name: 'Fuel Cleanliness Protection', slug: 'fuel-cleanliness',
     tagline: 'Water and particle elimination before the high-pressure injection circuit.',
     overview: 'Fuel Cleanliness Protection defends high-pressure injection systems by controlling particulate contamination and water before fuel reaches precision pumps and injectors.',
-    engineeringPrinciple: 'SYNTAPORE™ controls particulate contamination, and HYDROCORE™ provides fuel/water separation across standard spin-on/cartridge separators and Turbine Series FH/FG fuel-separation systems and 2010/2020/2040 replacement elements.',
+    engineeringPrinciple: 'SYNTAPORE™ controls particulate contamination. HYDROCORE™ governs standard non-turbine spin-on and cartridge fuel/water separator applications, while TURBOCORE™ governs applicable FH/FG turbine-style fuel/water separation housings and dedicated 2010/2020/2040-series replacement configurations.',
     heroImage: '/images/turbine-plant.avif', heroColor: '#FFF12D', hdPrefix: 'EF9', ldPrefix: 'EF3',
     ...relationships('fuel-cleanliness'),
   },
