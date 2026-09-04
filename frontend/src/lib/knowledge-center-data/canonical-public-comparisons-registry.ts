@@ -8,10 +8,18 @@ function isRetiredNfpaStandard(value: string): boolean {
   return /nfpa[\s-]*t2[.\s-]*14/i.test(value);
 }
 
+function isIso3724(value: string): boolean {
+  return /iso[\s-]*3724/i.test(value);
+}
+
 function sanitizeRelations(comparison: KCComparison): KCComparison {
+  const governingStandards = comparison.governingStandards
+    .filter((standard) => !isRetiredNfpaStandard(standard))
+    .filter((standard) => comparison.slug !== 'cellulose-vs-synthetic-media' || !isIso3724(standard));
+
   return {
     ...comparison,
-    governingStandards: comparison.governingStandards.filter((standard) => !isRetiredNfpaStandard(standard)),
+    governingStandards,
     relatedStandards: comparison.relatedStandards.filter((standard) => !isRetiredNfpaStandard(standard)),
     relatedArticles: comparison.relatedArticles.filter((slug) => !isConsolidatedEngineeringTopic(slug)),
   };
@@ -22,8 +30,8 @@ function sanitizeRelations(comparison: KCComparison): KCComparison {
  *
  * Semantic corrections happen in canonical-comparisons-registry.ts. This final
  * layer enforces graph/discovery hygiene across every comparison so retired
- * Standards and consolidated Engineering aliases cannot be reintroduced through
- * lateral relationships.
+ * Standards, domain-mismatched governing references and consolidated Engineering
+ * aliases cannot be reintroduced through lateral relationships.
  */
 export const KC_COMPARISONS: KCComparison[] = SEMANTIC_COMPARISONS.map(sanitizeRelations);
 
