@@ -1,25 +1,10 @@
 /**
- * navigation-index.ts
  * ELIMFILTERS Knowledge Center — Semantic Navigation Index
  *
- * Builds a lazy-initialized singleton index from all KC entity registries.
- * All sidebar and navigation data is derived exclusively from graph relationships —
- * no hardcoded article, standard, technology, system, or problem logic.
- *
- * Performance contract:
- *   - Index creation: O(N) over all entities, runs once per module scope.
- *   - Any lookup: O(1) Map.get().
- *   - Sidebar generation: O(1) after index creation.
- *   - Zero additional runtime API calls.
- *   - Zero client-side graph rebuilding across re-renders.
- *
- * Determinism: All arrays in the index are sorted before storage.
- *   Running the build twice with identical data produces identical output.
- *
- * Dependency direction (acyclic):
- *   knowledge-center-data/index → knowledge-center/navigation-index → components
- *
- * Graph versioning:
+ * Canonical navigation rules:
+ * - consolidated Engineering aliases are not first-class navigation entities;
+ * - Cabin Air / Compressed Air references resolve to Air Intake & Airflow Protection;
+ * - graph counts are derived from current canonical registries, never hardcoded.
  */
 
 import {
@@ -27,36 +12,40 @@ import {
   KC_STANDARDS,
   KC_TECHNOLOGIES,
   KC_SYSTEMS,
+  KC_INDUSTRIES,
   GLOSSARY_REGISTRY,
+  KC_CALCULATORS,
+  KC_COMPARISONS,
 } from '@/lib/knowledge-center-data';
+import { ENGINEERING_DIAGRAMS } from '@/lib/knowledge-center-data/diagram-registry';
 import type { KCArticle, KCStandard, KCTechnology } from '@/lib/knowledge-center-data';
 import { PROBLEM_STUBS } from './article-registry';
 import type { ProblemStub } from './article-registry';
 import type { TerminologyEntry } from './governance';
+import {
+  getEngineeringTopicCanonicalOwner,
+  isConsolidatedEngineeringTopic,
+} from './canonical-article-ownership';
 
-// ── Graph Version Metadata ────────────────────────────────────────────────────
+const CANONICAL_ARTICLES = ENGINEERING_ARTICLES.filter(
+  (article) => !isConsolidatedEngineeringTopic(article.slug),
+);
 
 export const KC_GRAPH_METADATA = {
-  /** Semantic version: Phase.Articles.Standards.Technologies.Terms.Diagrams.Calculators.Comparisons */
-  graphVersion: '6F.53.22.12.68.15.7.10',
-  /** Schema version for the navigation index structure. */
-  schemaVersion: '1.1.0',
-  /**
-   * Deterministic build date (not a timestamp).
-   * Identical for any two builds of the same data.
-   */
-  generatedAt: '2026-07-08',
+  graphVersion: '6G.canonical',
+  schemaVersion: '1.2.0',
+  generatedAt: '2026-09-03',
   entityCounts: {
-    articles:     53,
-    standards:    22,
-    technologies: 12,
-    systems:       6,
-    industries:   10,
-    problems:     15,
-    terms:        68,
-    diagrams:     15,
-    calculators:   7,
-    comparisons:  10,
+    articles: CANONICAL_ARTICLES.length,
+    standards: KC_STANDARDS.length,
+    technologies: KC_TECHNOLOGIES.length,
+    systems: KC_SYSTEMS.length,
+    industries: KC_INDUSTRIES.length,
+    problems: PROBLEM_STUBS.length,
+    terms: Object.keys(GLOSSARY_REGISTRY).length,
+    diagrams: ENGINEERING_DIAGRAMS.length,
+    calculators: KC_CALCULATORS.length,
+    comparisons: KC_COMPARISONS.length,
   },
   edgeTypes: [
     'ARTICLE_TO_STANDARD',
@@ -85,47 +74,56 @@ export const KC_GRAPH_METADATA = {
   ],
 } as const;
 
-// ── System Name Normalizer ────────────────────────────────────────────────────
-// Articles use both display names ("Lubrication Protection") and slugs
-// ("lubrication-protection") in their relatedSystems arrays.
-// This map normalizes both forms to the canonical slug.
-
 const SYSTEM_NAME_TO_SLUG: Record<string, string> = {
-  // Display names
-  'Air Intake Protection':      'air-intake-protection',
-  'Fuel Cleanliness Protection':'fuel-cleanliness-protection',
-  'Lubrication Protection':     'lubrication-protection',
-  'Hydraulic Protection':       'hydraulic-protection',
-  'Cooling System Protection':  'cooling-system-protection',
-  'Cabin Air Protection':       'cabin-air-protection',
-  'Compressed Air Protection':  'compressed-air-protection', // referenced in some articles; no KC_SYSTEMS entry
-  // Slug forms (identity mapping)
-  'air-intake-protection':      'air-intake-protection',
-  'fuel-cleanliness-protection':'fuel-cleanliness-protection',
-  'lubrication-protection':     'lubrication-protection',
-  'hydraulic-protection':       'hydraulic-protection',
-  'cooling-system-protection':  'cooling-system-protection',
-  'cabin-air-protection':       'cabin-air-protection',
-  'compressed-air-protection':  'compressed-air-protection',
+  'Air Intake Protection': 'air-intake-protection',
+  'Air Intake & Airflow Protection': 'air-intake-protection',
+  'Fuel Cleanliness Protection': 'fuel-cleanliness-protection',
+  'Lubrication Protection': 'lubrication-protection',
+  'Hydraulic Protection': 'hydraulic-protection',
+  'Cooling System Protection': 'cooling-system-protection',
+  'Cabin Air Protection': 'air-intake-protection',
+  'Compressed Air Protection': 'air-intake-protection',
+  'air-intake-protection': 'air-intake-protection',
+  'fuel-cleanliness-protection': 'fuel-cleanliness-protection',
+  'lubrication-protection': 'lubrication-protection',
+  'hydraulic-protection': 'hydraulic-protection',
+  'cooling-system-protection': 'cooling-system-protection',
+  'cabin-air-protection': 'air-intake-protection',
+  'compressed-air-protection': 'air-intake-protection',
+  cabin: 'air-intake-protection',
+  'cabin-air': 'air-intake-protection',
+  'compressed-air': 'air-intake-protection',
 };
 
 function normalizeSystemRef(ref: string): string {
   return SYSTEM_NAME_TO_SLUG[ref] ?? ref.toLowerCase().replace(/\s+/g, '-');
 }
 
-// ── Problem → System Category Adjacency ──────────────────────────────────────
-// Data-driven mapping: problem category → system slugs where this problem occurs.
-// Used to compute article→problem relationships from system overlap.
+function canonicalArticleSlug(slug: string): string | null {
+  const owner = getEngineeringTopicCanonicalOwner(slug);
+  if (!owner) return slug;
+  const parsed = new URL(owner);
+  const parts = parsed.pathname.split('/').filter(Boolean);
+  const section = parts.at(-2);
+  return section === 'engineering' ? (parts.at(-1) ?? null) : null;
+}
+
+function canonicalArticleSlugs(slugs: string[]): string[] {
+  return Array.from(
+    new Set(slugs.flatMap((slug) => {
+      const canonical = canonicalArticleSlug(slug);
+      return canonical ? [canonical] : [];
+    })),
+  );
+}
 
 const PROBLEM_CATEGORY_TO_SYSTEMS: Record<string, string[]> = {
-  'mechanical-wear':      ['lubrication-protection', 'hydraulic-protection', 'air-intake-protection'],
-  'contamination':        ['lubrication-protection', 'fuel-cleanliness-protection', 'air-intake-protection', 'hydraulic-protection', 'cabin-air-protection'],
-  'structural-failure':   ['hydraulic-protection', 'lubrication-protection'],
+  'mechanical-wear': ['lubrication-protection', 'hydraulic-protection', 'air-intake-protection'],
+  contamination: ['lubrication-protection', 'fuel-cleanliness-protection', 'air-intake-protection', 'hydraulic-protection'],
+  'structural-failure': ['hydraulic-protection', 'lubrication-protection'],
   'chemical-degradation': ['lubrication-protection', 'hydraulic-protection'],
-  'biological':           ['fuel-cleanliness-protection'],
+  biological: ['fuel-cleanliness-protection'],
 };
-
-// ── Sidebar Data Types ────────────────────────────────────────────────────────
 
 export interface SidebarStandard {
   permanentId: string;
@@ -171,8 +169,6 @@ export interface KCSidebarData {
   relatedArticles: SidebarArticle[];
 }
 
-// ── Standard Articles Sidebar Types ──────────────────────────────────────────
-
 export interface StandardSidebarArticle {
   permanentId: string;
   slug: string;
@@ -186,8 +182,6 @@ export interface StandardSidebarData {
   relatedStandards: SidebarStandard[];
 }
 
-// ── Technology Sidebar Types ──────────────────────────────────────────────────
-
 export interface TechSidebarArticle {
   permanentId: string;
   slug: string;
@@ -200,13 +194,9 @@ export interface TechSidebarData {
   referencingArticles: TechSidebarArticle[];
 }
 
-// ── System Sidebar Types ──────────────────────────────────────────────────────
-
 export interface SystemSidebarData {
   referencingArticles: StandardSidebarArticle[];
 }
-
-// ── Glossary Sidebar Types ────────────────────────────────────────────────────
 
 export interface SidebarTerm {
   permanentId: string;
@@ -216,36 +206,27 @@ export interface SidebarTerm {
 }
 
 export interface GlossarySidebarData {
-  relatedStandards:    SidebarStandard[];
+  relatedStandards: SidebarStandard[];
   relatedTechnologies: SidebarTechnology[];
-  relatedSystems:      SidebarSystem[];
-  relatedArticles:     SidebarArticle[];
-  relatedTerms:        SidebarTerm[];
+  relatedSystems: SidebarSystem[];
+  relatedArticles: SidebarArticle[];
+  relatedTerms: SidebarTerm[];
 }
 
-// ── Internal Index Structure ──────────────────────────────────────────────────
-
 interface KCNavigationIndex {
-  // Entity lookup maps (keyed by slug/code — O(1) access)
-  articleBySlug:     Map<string, KCArticle>;
-  standardByCode:    Map<string, KCStandard>;
-  standardBySlug:    Map<string, KCStandard>;
-  technologyBySlug:  Map<string, KCTechnology>;
-  systemBySlug:      Map<string, { slug: string; title: string }>;
-  termBySlug:        Map<string, TerminologyEntry>;
-
-  // Inverted indexes (keyed by related entity → sorted article slug list)
-  articlesByStandard:   Map<string, string[]>; // standard code → article slugs
-  articlesByTechnology: Map<string, string[]>; // tech slug → article slugs
-  articlesBySystem:     Map<string, string[]>; // system slug → article slugs
-
-  // Permanent ID maps (slug → permanent ID string)
-  articlePermanentIds:    Map<string, string>;
-  standardPermanentIds:   Map<string, string>; // keyed by slug
-  technologyPermanentIds: Map<string, string>; // keyed by slug
-  systemPermanentIds:     Map<string, string>; // keyed by slug
-
-  // Query functions
+  articleBySlug: Map<string, KCArticle>;
+  standardByCode: Map<string, KCStandard>;
+  standardBySlug: Map<string, KCStandard>;
+  technologyBySlug: Map<string, KCTechnology>;
+  systemBySlug: Map<string, { slug: string; title: string }>;
+  termBySlug: Map<string, TerminologyEntry>;
+  articlesByStandard: Map<string, string[]>;
+  articlesByTechnology: Map<string, string[]>;
+  articlesBySystem: Map<string, string[]>;
+  articlePermanentIds: Map<string, string>;
+  standardPermanentIds: Map<string, string>;
+  technologyPermanentIds: Map<string, string>;
+  systemPermanentIds: Map<string, string>;
   getArticleSidebar(slug: string): KCSidebarData;
   getStandardSidebar(stdSlug: string): StandardSidebarData;
   getTechSidebar(techSlug: string): TechSidebarData;
@@ -253,103 +234,78 @@ interface KCNavigationIndex {
   getGlossarySidebar(termSlug: string): GlossarySidebarData;
 }
 
-// ── Singleton ─────────────────────────────────────────────────────────────────
-
 let _index: KCNavigationIndex | null = null;
 
 function buildIndex(): KCNavigationIndex {
-  // ── Entity maps ────────────────────────────────────────────────────────────
-
-  const articleBySlug    = new Map(ENGINEERING_ARTICLES.map((a) => [a.slug, a]));
-  const standardByCode   = new Map(KC_STANDARDS.map((s) => [s.code, s]));
-  const standardBySlug   = new Map(KC_STANDARDS.map((s) => [s.slug, s]));
+  const articleBySlug = new Map(CANONICAL_ARTICLES.map((a) => [a.slug, a]));
+  const standardByCode = new Map(KC_STANDARDS.map((s) => [s.code, s]));
+  const standardBySlug = new Map(KC_STANDARDS.map((s) => [s.slug, s]));
   const technologyBySlug = new Map(KC_TECHNOLOGIES.map((t) => [t.slug, t]));
-  const systemBySlug     = new Map(KC_SYSTEMS.map((s) => [s.slug, { slug: s.slug, title: s.title }]));
+  const systemBySlug = new Map(KC_SYSTEMS.map((s) => [s.slug, { slug: s.slug, title: s.title }]));
 
-  // Glossary: build slug → TerminologyEntry map.
-  // Slug = TERM-xxx → strip prefix, lowercase → term slug.
   function termIdToSlug(id: string): string {
     return id.replace(/^TERM-/, '').toLowerCase();
   }
+
   const termBySlug = new Map<string, TerminologyEntry>(
-    Object.values(GLOSSARY_REGISTRY).map((t) => [termIdToSlug(t.id), t])
+    Object.values(GLOSSARY_REGISTRY).map((t) => [termIdToSlug(t.id), t]),
   );
 
-  // ── Permanent ID maps ──────────────────────────────────────────────────────
-  // IDs are constructed deterministically from slug conventions.
-  // Format mirrors governance.ts: {PREFIX}-{SLUG-UPPERCASED-HYPHENS}
+  const toArticleId = (slug: string) => `ARTICLE-${slug.toUpperCase()}`;
+  const toStandardId = (slug: string) => `STD-${slug.toUpperCase()}`;
+  const toTechnologyId = (slug: string) => `TECH-${slug.toUpperCase()}`;
+  const toSystemId = (slug: string) => `SYS-${slug.toUpperCase()}`;
 
-  function toArticleId(slug: string): string {
-    return `ARTICLE-${slug.toUpperCase()}`;
-  }
-  function toStandardId(slug: string): string {
-    return `STD-${slug.toUpperCase()}`;
-  }
-  function toTechnologyId(slug: string): string {
-    return `TECH-${slug.toUpperCase()}`;
-  }
-  function toSystemId(slug: string): string {
-    return `SYS-${slug.toUpperCase()}`;
-  }
-
-  const articlePermanentIds    = new Map(ENGINEERING_ARTICLES.map((a) => [a.slug, toArticleId(a.slug)]));
-  const standardPermanentIds   = new Map(KC_STANDARDS.map((s) => [s.slug, toStandardId(s.slug)]));
+  const articlePermanentIds = new Map(CANONICAL_ARTICLES.map((a) => [a.slug, toArticleId(a.slug)]));
+  const standardPermanentIds = new Map(KC_STANDARDS.map((s) => [s.slug, toStandardId(s.slug)]));
   const technologyPermanentIds = new Map(KC_TECHNOLOGIES.map((t) => [t.slug, toTechnologyId(t.slug)]));
-  const systemPermanentIds     = new Map(KC_SYSTEMS.map((s) => [s.slug, toSystemId(s.slug)]));
+  const systemPermanentIds = new Map(KC_SYSTEMS.map((s) => [s.slug, toSystemId(s.slug)]));
 
-  // ── Inverted indexes ───────────────────────────────────────────────────────
-
-  const articlesByStandard   = new Map<string, string[]>();
+  const articlesByStandard = new Map<string, string[]>();
   const articlesByTechnology = new Map<string, string[]>();
-  const articlesBySystem     = new Map<string, string[]>();
+  const articlesBySystem = new Map<string, string[]>();
 
-  for (const article of ENGINEERING_ARTICLES) {
-    // standard code → articles
+  for (const article of CANONICAL_ARTICLES) {
     for (const stdCode of article.relatedStandards) {
-      const list = articlesByStandard.get(stdCode) ?? [];
-      list.push(article.slug);
-      articlesByStandard.set(stdCode, list);
+      articlesByStandard.set(stdCode, [...(articlesByStandard.get(stdCode) ?? []), article.slug]);
     }
-    // technology slug → articles (strip ™ and lowercase)
     for (const techName of article.relatedTechnologies) {
       const slug = techName.replace(/™/g, '').toLowerCase().trim();
-      const list = articlesByTechnology.get(slug) ?? [];
-      list.push(article.slug);
-      articlesByTechnology.set(slug, list);
+      articlesByTechnology.set(slug, [...(articlesByTechnology.get(slug) ?? []), article.slug]);
     }
-    // system slug (normalize display names + slugs) → articles
     for (const sysRef of article.relatedSystems) {
       const slug = normalizeSystemRef(sysRef);
-      const list = articlesBySystem.get(slug) ?? [];
-      list.push(article.slug);
-      articlesBySystem.set(slug, list);
+      articlesBySystem.set(slug, [...(articlesBySystem.get(slug) ?? []), article.slug]);
     }
   }
 
-  // Sort all inverted index lists for deterministic output
-  Array.from(articlesByStandard.values()).forEach((list)   => list.sort());
+  Array.from(articlesByStandard.values()).forEach((list) => list.sort());
   Array.from(articlesByTechnology.values()).forEach((list) => list.sort());
-  Array.from(articlesBySystem.values()).forEach((list)     => list.sort());
-
-  // ── Published problems (for sidebar) ──────────────────────────────────────
+  Array.from(articlesBySystem.values()).forEach((list) => list.sort());
 
   const publishedProblems = PROBLEM_STUBS.filter((p) => p.status === 'published');
 
-  // ── Query: Article Sidebar ─────────────────────────────────────────────────
+  function articleItem(slug: string): SidebarArticle | null {
+    const a = articleBySlug.get(slug);
+    if (!a) return null;
+    return {
+      permanentId: articlePermanentIds.get(slug) ?? toArticleId(slug),
+      slug,
+      title: a.title,
+      category: a.category,
+      readTime: a.readTime,
+    };
+  }
 
   function getArticleSidebar(slug: string): KCSidebarData {
-    const article = articleBySlug.get(slug);
+    const canonicalSlug = canonicalArticleSlug(slug);
+    const article = canonicalSlug ? articleBySlug.get(canonicalSlug) : undefined;
     if (!article) {
       return {
-        relatedStandards: [],
-        relatedTechnologies: [],
-        relatedSystems: [],
-        relatedProblems: [],
-        relatedArticles: [],
+        relatedStandards: [], relatedTechnologies: [], relatedSystems: [], relatedProblems: [], relatedArticles: [],
       };
     }
 
-    // Standards panel — from article.relatedStandards
     const relatedStandards: SidebarStandard[] = article.relatedStandards.map((code) => {
       const std = standardByCode.get(code);
       return {
@@ -360,46 +316,33 @@ function buildIndex(): KCNavigationIndex {
       };
     });
 
-    // Technologies panel — from article.relatedTechnologies
-    const relatedTechnologies: SidebarTechnology[] = article.relatedTechnologies
-      .map((name) => {
-        const slug = name.replace(/™/g, '').toLowerCase().trim();
-        const tech = technologyBySlug.get(slug);
-        if (!tech) return null;
-        return {
-          permanentId: technologyPermanentIds.get(tech.slug) ?? toTechnologyId(tech.slug),
-          name: tech.name,
-          slug: tech.slug,
-          domain: tech.domain,
-        };
-      })
-      .filter((t): t is SidebarTechnology => t !== null);
+    const relatedTechnologies = article.relatedTechnologies
+      .map((name) => technologyBySlug.get(name.replace(/™/g, '').toLowerCase().trim()))
+      .flatMap((tech): SidebarTechnology[] => tech ? [{
+        permanentId: technologyPermanentIds.get(tech.slug) ?? toTechnologyId(tech.slug),
+        name: tech.name,
+        slug: tech.slug,
+        domain: tech.domain,
+      }] : []);
 
-    // Systems panel — from article.relatedSystems
-    const relatedSystems: SidebarSystem[] = article.relatedSystems
-      .map((sysRef) => {
-        const slug = normalizeSystemRef(sysRef);
-        const sys = systemBySlug.get(slug);
-        if (!sys) return null;
-        return {
-          permanentId: systemPermanentIds.get(sys.slug) ?? toSystemId(sys.slug),
-          slug: sys.slug,
-          title: sys.title,
-        };
-      })
-      .filter((s): s is SidebarSystem => s !== null);
+    const seenSystems = new Set<string>();
+    const relatedSystems = article.relatedSystems.flatMap((sysRef): SidebarSystem[] => {
+      const systemSlug = normalizeSystemRef(sysRef);
+      if (seenSystems.has(systemSlug)) return [];
+      seenSystems.add(systemSlug);
+      const sys = systemBySlug.get(systemSlug);
+      return sys ? [{
+        permanentId: systemPermanentIds.get(sys.slug) ?? toSystemId(sys.slug),
+        slug: sys.slug,
+        title: sys.title,
+      }] : [];
+    });
 
-    // Problems panel — derived from system overlap with problem category adjacency
-    const articleSystemSlugs = new Set(
-      article.relatedSystems.map(normalizeSystemRef)
-    );
-    const relatedProblems: SidebarProblem[] = publishedProblems
-      .filter((p) => {
-        const problemSystems = PROBLEM_CATEGORY_TO_SYSTEMS[p.category] ?? [];
-        return problemSystems.some((sys) => articleSystemSlugs.has(sys));
-      })
+    const articleSystemSlugs = new Set(article.relatedSystems.map(normalizeSystemRef));
+    const relatedProblems = publishedProblems
+      .filter((p) => (PROBLEM_CATEGORY_TO_SYSTEMS[p.category] ?? []).some((sys) => articleSystemSlugs.has(sys)))
       .slice(0, 4)
-      .map((p) => ({
+      .map((p): SidebarProblem => ({
         permanentId: p.id,
         slug: p.slug,
         name: p.name,
@@ -407,53 +350,35 @@ function buildIndex(): KCNavigationIndex {
         category: p.category,
       }));
 
-    // Related articles panel — overlap in systems OR standards, max 6, sorted for determinism
-    const relatedArticles: SidebarArticle[] = ENGINEERING_ARTICLES
-      .filter((a) => a.slug !== slug)
+    const relatedArticles = CANONICAL_ARTICLES
+      .filter((a) => a.slug !== canonicalSlug)
       .filter((a) => {
-        const sharedSystems   = a.relatedSystems.some((s) => article.relatedSystems.includes(s));
-        const sharedStandards = a.relatedStandards.some((s) => article.relatedStandards.includes(s));
+        const candidateSystems = new Set(a.relatedSystems.map(normalizeSystemRef));
+        const sharedSystems = [...candidateSystems].some((system) => articleSystemSlugs.has(system));
+        const sharedStandards = a.relatedStandards.some((standard) => article.relatedStandards.includes(standard));
         return sharedSystems || sharedStandards;
       })
       .sort((a, b) => a.slug.localeCompare(b.slug))
       .slice(0, 6)
-      .map((a) => ({
-        permanentId: articlePermanentIds.get(a.slug) ?? toArticleId(a.slug),
-        slug: a.slug,
-        title: a.title,
-        category: a.category,
-        readTime: a.readTime,
-      }));
+      .map((a) => articleItem(a.slug))
+      .filter((a): a is SidebarArticle => a !== null);
 
     return { relatedStandards, relatedTechnologies, relatedSystems, relatedProblems, relatedArticles };
   }
-
-  // ── Query: Standard Sidebar ────────────────────────────────────────────────
 
   function getStandardSidebar(stdSlug: string): StandardSidebarData {
     const std = standardBySlug.get(stdSlug);
     if (!std) return { referencingArticles: [], relatedStandards: [] };
 
-    const referencingArticles: StandardSidebarArticle[] = (articlesByStandard.get(std.code) ?? [])
-      .map((slug) => {
-        const a = articleBySlug.get(slug);
-        if (!a) return null;
-        return {
-          permanentId: articlePermanentIds.get(slug) ?? toArticleId(slug),
-          slug,
-          title: a.title,
-          category: a.category,
-          readTime: a.readTime,
-        };
-      })
-      .filter((a): a is StandardSidebarArticle => a !== null);
+    const referencingArticles = canonicalArticleSlugs(articlesByStandard.get(std.code) ?? [])
+      .map(articleItem)
+      .filter((a): a is SidebarArticle => a !== null);
 
-    // Related standards — those sharing at least one referencing article topic
     const relatedTopicSlugs = new Set(std.relatedTopics);
-    const relatedStandards: SidebarStandard[] = KC_STANDARDS
+    const relatedStandards = KC_STANDARDS
       .filter((s) => s.slug !== stdSlug && s.relatedTopics.some((t) => relatedTopicSlugs.has(t)))
       .slice(0, 4)
-      .map((s) => ({
+      .map((s): SidebarStandard => ({
         permanentId: standardPermanentIds.get(s.slug) ?? toStandardId(s.slug),
         code: s.code,
         slug: s.slug,
@@ -463,134 +388,71 @@ function buildIndex(): KCNavigationIndex {
     return { referencingArticles, relatedStandards };
   }
 
-  // ── Query: Technology Sidebar ──────────────────────────────────────────────
-
   function getTechSidebar(techSlug: string): TechSidebarData {
-    const articleSlugs = articlesByTechnology.get(techSlug) ?? [];
-    const referencingArticles: TechSidebarArticle[] = articleSlugs
-      .map((slug) => {
-        const a = articleBySlug.get(slug);
-        if (!a) return null;
-        return {
-          permanentId: articlePermanentIds.get(slug) ?? toArticleId(slug),
-          slug,
-          title: a.title,
-          category: a.category,
-          readTime: a.readTime,
-        };
-      })
-      .filter((a): a is TechSidebarArticle => a !== null);
-
+    const referencingArticles = canonicalArticleSlugs(articlesByTechnology.get(techSlug) ?? [])
+      .map(articleItem)
+      .filter((a): a is SidebarArticle => a !== null);
     return { referencingArticles };
   }
-
-  // ── Query: System Sidebar ──────────────────────────────────────────────────
 
   function getSystemSidebar(systemSlug: string): SystemSidebarData {
-    const articleSlugs = articlesBySystem.get(systemSlug) ?? [];
-    const referencingArticles: StandardSidebarArticle[] = articleSlugs
-      .map((slug) => {
-        const a = articleBySlug.get(slug);
-        if (!a) return null;
-        return {
-          permanentId: articlePermanentIds.get(slug) ?? toArticleId(slug),
-          slug,
-          title: a.title,
-          category: a.category,
-          readTime: a.readTime,
-        };
-      })
-      .filter((a): a is StandardSidebarArticle => a !== null);
-
+    const canonicalSystemSlug = normalizeSystemRef(systemSlug);
+    const referencingArticles = canonicalArticleSlugs(articlesBySystem.get(canonicalSystemSlug) ?? [])
+      .map(articleItem)
+      .filter((a): a is SidebarArticle => a !== null);
     return { referencingArticles };
   }
-
-  // ── Query: Glossary Term Sidebar ───────────────────────────────────────────
 
   function getGlossarySidebar(termSlug: string): GlossarySidebarData {
     const entry = termBySlug.get(termSlug);
     if (!entry) {
-      return {
-        relatedStandards: [],
-        relatedTechnologies: [],
-        relatedSystems: [],
-        relatedArticles: [],
-        relatedTerms: [],
-      };
+      return { relatedStandards: [], relatedTechnologies: [], relatedSystems: [], relatedArticles: [], relatedTerms: [] };
     }
 
-    // Standards panel — from entry.applicableStandards (TERM-xxx → STD-xxx IDs)
-    const relatedStandards: SidebarStandard[] = entry.applicableStandards
-      .map((stdId) => {
-        // stdId is STD-xxx — derive slug by lowercasing after prefix
-        const slug = stdId.replace(/^STD-/, '').toLowerCase();
-        const std = standardBySlug.get(slug);
-        return {
-          permanentId: stdId,
-          code: std?.code ?? stdId.replace(/^STD-/, '').replace(/-/g, ' '),
-          slug: std?.slug ?? null,
-          title: std?.title ?? stdId,
-        };
-      });
+    const relatedStandards = (entry.applicableStandards ?? []).map((stdId): SidebarStandard => {
+      const slug = stdId.replace(/^STD-/, '').toLowerCase();
+      const std = standardBySlug.get(slug);
+      return {
+        permanentId: stdId,
+        code: std?.code ?? stdId.replace(/^STD-/, '').replace(/-/g, ' '),
+        slug: std?.slug ?? null,
+        title: std?.title ?? stdId,
+      };
+    });
 
-    // Technologies panel — from entry.relatedTechnologies (slugs)
-    const relatedTechnologies: SidebarTechnology[] = entry.relatedTechnologies
-      .map((slug) => {
-        const tech = technologyBySlug.get(slug);
-        if (!tech) return null;
-        return {
-          permanentId: technologyPermanentIds.get(tech.slug) ?? toTechnologyId(tech.slug),
-          name: tech.name,
-          slug: tech.slug,
-          domain: tech.domain,
-        };
-      })
-      .filter((t): t is SidebarTechnology => t !== null);
+    const relatedTechnologies = (entry.relatedTechnologies ?? [])
+      .map((slug) => technologyBySlug.get(slug))
+      .flatMap((tech): SidebarTechnology[] => tech ? [{
+        permanentId: technologyPermanentIds.get(tech.slug) ?? toTechnologyId(tech.slug),
+        name: tech.name,
+        slug: tech.slug,
+        domain: tech.domain,
+      }] : []);
 
-    // Systems panel — from entry.relatedSystems (slugs)
-    const relatedSystems: SidebarSystem[] = entry.relatedSystems
-      .map((slug) => {
-        const sys = systemBySlug.get(slug);
-        if (!sys) return null;
-        return {
-          permanentId: systemPermanentIds.get(sys.slug) ?? toSystemId(sys.slug),
-          slug: sys.slug,
-          title: sys.title,
-        };
-      })
-      .filter((s): s is SidebarSystem => s !== null);
+    const seenSystems = new Set<string>();
+    const relatedSystems = (entry.relatedSystems ?? []).flatMap((sysRef): SidebarSystem[] => {
+      const slug = normalizeSystemRef(sysRef);
+      if (seenSystems.has(slug)) return [];
+      seenSystems.add(slug);
+      const sys = systemBySlug.get(slug);
+      return sys ? [{
+        permanentId: systemPermanentIds.get(sys.slug) ?? toSystemId(sys.slug),
+        slug: sys.slug,
+        title: sys.title,
+      }] : [];
+    });
 
-    // Articles panel — from entry.relatedArticles (article slugs), max 6
-    const relatedArticles: SidebarArticle[] = entry.relatedArticles
-      .map((slug) => {
-        const a = articleBySlug.get(slug);
-        if (!a) return null;
-        return {
-          permanentId: articlePermanentIds.get(slug) ?? toArticleId(slug),
-          slug,
-          title: a.title,
-          category: a.category,
-          readTime: a.readTime,
-        };
-      })
+    const relatedArticles = canonicalArticleSlugs(entry.relatedArticles ?? [])
+      .map(articleItem)
       .filter((a): a is SidebarArticle => a !== null)
       .slice(0, 6);
 
-    // Related terms panel — from entry.relatedTerms (TERM-xxx IDs)
-    const relatedTerms: SidebarTerm[] = entry.relatedTerms
-      .map((termId) => {
+    const relatedTerms = (entry.relatedTerms ?? [])
+      .flatMap((termId): SidebarTerm[] => {
         const slug = termIdToSlug(termId);
         const t = termBySlug.get(slug);
-        if (!t) return null;
-        const item: SidebarTerm = {
-          permanentId: termId as string,
-          slug,
-          term: t.term,
-          category: t.category as string,
-        };
-        return item;
-      })
-      .filter((t): t is SidebarTerm => t !== null);
+        return t ? [{ permanentId: termId, slug, term: t.term, category: String(t.category) }] : [];
+      });
 
     return { relatedStandards, relatedTechnologies, relatedSystems, relatedArticles, relatedTerms };
   }
@@ -622,70 +484,62 @@ function getIndex(): KCNavigationIndex {
   return _index;
 }
 
-// ── Public API ────────────────────────────────────────────────────────────────
-
-/** Returns all sidebar data for an engineering article. O(1) after first call. */
 export function getArticleSidebarData(slug: string): KCSidebarData {
   return getIndex().getArticleSidebar(slug);
 }
 
-/** Returns articles referencing a standard + related standards. O(1) after first call. */
 export function getStandardSidebarData(stdSlug: string): StandardSidebarData {
   return getIndex().getStandardSidebar(stdSlug);
 }
 
-/** Returns articles referencing a technology. O(1) after first call. */
 export function getTechSidebarData(techSlug: string): TechSidebarData {
   return getIndex().getTechSidebar(techSlug);
 }
 
-/** Returns articles for a protection system. O(1) after first call. */
 export function getSystemSidebarData(systemSlug: string): SystemSidebarData {
   return getIndex().getSystemSidebar(systemSlug);
 }
 
-/** Returns all sidebar data for a glossary term. O(1) after first call. */
 export function getGlossarySidebarData(termSlug: string): GlossarySidebarData {
   return getIndex().getGlossarySidebar(termSlug);
 }
 
-/** Graph statistics for validation and reporting. */
 export function getGraphStats() {
   const idx = getIndex();
   let totalArticleToStandardEdges = 0;
   let totalArticleToTechEdges = 0;
   let totalArticleToSystemEdges = 0;
 
-  Array.from(idx.articlesByStandard.values()).forEach((list)   => { totalArticleToStandardEdges   += list.length; });
-  Array.from(idx.articlesByTechnology.values()).forEach((list) => { totalArticleToTechEdges        += list.length; });
-  Array.from(idx.articlesBySystem.values()).forEach((list)     => { totalArticleToSystemEdges      += list.length; });
+  Array.from(idx.articlesByStandard.values()).forEach((list) => { totalArticleToStandardEdges += list.length; });
+  Array.from(idx.articlesByTechnology.values()).forEach((list) => { totalArticleToTechEdges += list.length; });
+  Array.from(idx.articlesBySystem.values()).forEach((list) => { totalArticleToSystemEdges += list.length; });
 
-  // Glossary edge counts (sum all term relationship arrays)
   const terms = Object.values(GLOSSARY_REGISTRY);
   let totalTermToStandard = 0;
   let totalTermToTechnology = 0;
   let totalTermToSystem = 0;
   let totalTermToArticle = 0;
   let totalTermToTerm = 0;
+
   terms.forEach((t) => {
-    totalTermToStandard    += t.applicableStandards.length;
-    totalTermToTechnology  += t.relatedTechnologies.length;
-    totalTermToSystem      += t.relatedSystems.length;
-    totalTermToArticle     += t.relatedArticles.length;
-    totalTermToTerm        += t.relatedTerms.length;
+    totalTermToStandard += (t.applicableStandards ?? []).length;
+    totalTermToTechnology += (t.relatedTechnologies ?? []).length;
+    totalTermToSystem += new Set((t.relatedSystems ?? []).map(normalizeSystemRef)).size;
+    totalTermToArticle += canonicalArticleSlugs(t.relatedArticles ?? []).length;
+    totalTermToTerm += (t.relatedTerms ?? []).length;
   });
 
   return {
     ...KC_GRAPH_METADATA,
     edgeCounts: {
-      articleToStandard:   totalArticleToStandardEdges,
+      articleToStandard: totalArticleToStandardEdges,
       articleToTechnology: totalArticleToTechEdges,
-      articleToSystem:     totalArticleToSystemEdges,
-      termToStandard:      totalTermToStandard,
-      termToTechnology:    totalTermToTechnology,
-      termToSystem:        totalTermToSystem,
-      termToArticle:       totalTermToArticle,
-      termToTerm:          totalTermToTerm,
+      articleToSystem: totalArticleToSystemEdges,
+      termToStandard: totalTermToStandard,
+      termToTechnology: totalTermToTechnology,
+      termToSystem: totalTermToSystem,
+      termToArticle: totalTermToArticle,
+      termToTerm: totalTermToTerm,
     },
   };
 }
