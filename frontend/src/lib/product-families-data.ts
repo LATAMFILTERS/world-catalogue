@@ -106,7 +106,7 @@ export const PRODUCT_FAMILIES: Record<FamilyKey, ProductFamily> = {
   'fuel-turbine': {
     key: 'fuel-turbine', name: 'Turbine Fuel Separation', slug: 'fuel-turbine', dutyClass: 'HD', hdPrefix: 'ET9', ldPrefix: null,
     purpose: 'Turbine Series FH and FG fuel-separation housings and dedicated replacement elements for approved turbine-style fuel/water separation architecture.',
-    engineering: 'TURBOCORE™ exclusively governs the turbine-style FH/FG housing and element architecture. Element family and micron grade must be selected separately: 2010 = 500-series, 2020 = 1000-series, and 2040 = 900-series. Each family may use 2, 10 or 30 µm grades where approved; 2 µm is final filtration, 10 µm secondary filtration, and 30 µm primary filtration. Historical SM/TM/PM suffixes map to 2/10/30 µm. The 2010/2020/2040 number never defines micronage by itself. HYDROCORE™ remains reserved for standard non-turbine fuel/water separators.',
+    engineering: 'TURBOCORE™ exclusively governs the turbine-style FH/FG housing and element architecture. Element family and micron grade must be selected separately: 2010 = 500-series, 2020 = 1000-series, and 2040 = 900-series. Each family may use 2, 10 or 30 µm grades where approved; 2 µm is final filtration, 10 µm secondary filtration, and 30 µm primary filtration. Historical SM/TM/PM suffixes map to 2/10/30 µm. The 2010/2020/2040 number never defines the micron rating by itself. HYDROCORE™ remains reserved for standard non-turbine fuel/water separators.',
     construction: pending, hdProducts: [pending], ldProducts: [], heroImage: '/images/fuellseparator-hero.avif',
     ...relationships('fuel-turbine'),
   },
