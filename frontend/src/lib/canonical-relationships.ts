@@ -53,7 +53,7 @@ export const SYSTEM_RELATIONSHIPS = {
     primaryTechnologies: ['nanoforce'] as TechnologySlug[],
     supportingTechnologies: [] as TechnologySlug[],
     productFamilies: ['hydraulic-filters'],
-    standards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14', 'DIN 51524'],
+    standards: ['ISO 16889', 'ISO 4406', 'ISO 2941', 'DIN 51524'],
     industries: ['construction', 'mining', 'manufacturing', 'marine', 'agriculture'],
     relatedSystems: ['lubrication', 'fuel-cleanliness'],
   },
@@ -76,7 +76,7 @@ export const FAMILY_RELATIONSHIPS = {
   'fuel-water-separators': { system: 'fuel-cleanliness', technology: 'hydrocore', standards: ['ASTM D6304', 'ISO 12937'] },
   'fuel-turbine': { system: 'fuel-cleanliness', technology: 'turbocore', standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'] },
   'oil-filters': { system: 'lubrication', technology: 'syntrax', standards: ['ISO 4406', 'ISO 16889'] },
-  'hydraulic-filters': { system: 'hydraulic', technology: 'nanoforce', standards: ['ISO 16889', 'ISO 4406', 'NFPA T2.14', 'DIN 51524'] },
+  'hydraulic-filters': { system: 'hydraulic', technology: 'nanoforce', standards: ['ISO 16889', 'ISO 4406', 'ISO 2941', 'DIN 51524'] },
   'coolant-filters': { system: 'cooling-system', technology: 'thermacore', standards: ['ASTM D6210'] },
   'cabin-filters': { system: 'air-intake', technology: 'microkappa', standards: ['ISO 11155-1'] },
   'air-dryer-filters': { system: 'air-intake', technology: 'drycore', standards: ['ISO 8573-1'] },
@@ -85,7 +85,7 @@ export const FAMILY_RELATIONSHIPS = {
 export const FAILURE_RELATIONSHIPS = {
   'hydraulic-system': {
     systems: ['hydraulic'], technologies: ['nanoforce'], families: ['hydraulic-filters'],
-    standards: ['iso-4406', 'iso-16889', 'nfpa-t2-14', 'din-51524'],
+    standards: ['iso-4406', 'iso-16889', 'iso-2941', 'din-51524'],
     industries: ['construction', 'mining', 'manufacturing', 'marine', 'agriculture'],
   },
   'particle-wear': {
