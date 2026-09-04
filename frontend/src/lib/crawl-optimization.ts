@@ -5,8 +5,6 @@ import { getEntityAuthorityScore } from './entity-authority';
 const BASE_URL = 'https://elimfilters.com';
 
 // Only canonical, index-worthy public destinations belong in the generated sitemap.
-// Internal search and customer-intelligence surfaces are intentionally excluded
-// and governed with noindex metadata at the route level.
 export const STATIC_CRAWL_ROUTES = [
   '/',
   '/systems',
@@ -39,9 +37,18 @@ export const STATIC_CRAWL_ROUTES = [
   '/warranty',
 ] as const;
 
+/**
+ * Public routes that may resolve for compatibility or internal utility, but must
+ * never be emitted as canonical sitemap destinations.
+ */
 export const NOINDEX_PUBLIC_ROUTES = [
   '/search',
   '/customer-intelligence',
+  '/knowledge-center/standards/iso-11155',
+  '/knowledge-center/engineering/iso-16889',
+  '/knowledge-center/engineering/iso-4406',
+  '/knowledge-center/engineering/filter-media-science',
+  '/knowledge-center/engineering-reference/engineering-glossary',
 ] as const;
 
 export interface CrawlProfile {
