@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ENGINEERING_ARTICLES } from '@/lib/knowledge-center-data';
-import { CONSOLIDATED_ENGINEERING_TOPICS } from '@/lib/knowledge-center/engineering-topic-ownership';
+import { getEngineeringTopicCanonicalOwner } from '@/lib/knowledge-center/canonical-article-ownership';
 import { notFound } from 'next/navigation';
 import ArticleContent from './ArticleContent';
 
@@ -42,8 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ topic: st
   if (!article) return {};
 
   const url = `https://elimfilters.com/knowledge-center/engineering/${topic}/`;
-  const canonicalOwnerPath = CONSOLIDATED_ENGINEERING_TOPICS[topic];
-  const canonicalOwnerUrl = canonicalOwnerPath ? `https://elimfilters.com${canonicalOwnerPath}` : undefined;
+  const canonicalOwnerUrl = getEngineeringTopicCanonicalOwner(topic);
   const override = CTR_OVERRIDES[topic];
   const title = override?.title ?? article.title;
   const description = override?.description ?? article.metaDescription;
