@@ -136,7 +136,6 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
   const config = navigationFor(pathname);
   const { t, i18n } = useTranslation();
   const [hydrated, setHydrated] = useState(false);
-  const [positioned, setPositioned] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const language = (i18n.resolvedLanguage || i18n.language || 'en').slice(0, 2);
   const isMacrocore = pathname === '/technologies/macrocore' || pathname === '/technologies/macrocore/';
@@ -145,16 +144,11 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
     setHydrated(true);
   }, []);
 
+  // Best-effort reposition next to <footer>. This never gates visibility -
+  // the block always renders immediately where React puts it; relocating it
+  // is a pure background improvement, not a precondition for showing it.
   useEffect(() => {
-    setPositioned(false);
-  }, [pathname]);
-
-  useEffect(() => {
-    if (isMacrocore) {
-      setPositioned(true);
-      return;
-    }
-    if (!hydrated || !navRef.current) return;
+    if (isMacrocore || !hydrated || !navRef.current) return;
 
     let cancelled = false;
     const tryRelocate = () => {
@@ -165,30 +159,22 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
       if (parent && navRef.current.parentElement !== parent) {
         parent.insertBefore(navRef.current, footer);
       }
-      setPositioned(true);
       return true;
     };
 
     if (tryRelocate()) return;
 
-    // The footer may not have mounted yet on first pass - retry briefly.
     const interval = window.setInterval(() => {
       if (tryRelocate()) window.clearInterval(interval);
     }, 100);
-
-    // Never leave the block permanently hidden: reveal it regardless after a
-    // short grace period, even if the footer never appears to relocate against.
-    const fallback = window.setTimeout(() => {
-      window.clearInterval(interval);
-      setPositioned(true);
-    }, 1500);
+    const stopRetrying = window.setTimeout(() => window.clearInterval(interval), 3000);
 
     return () => {
       cancelled = true;
       window.clearInterval(interval);
-      window.clearTimeout(fallback);
+      window.clearTimeout(stopRetrying);
     };
-  }, [hydrated, isMacrocore, pathname, language]);
+  }, [hydrated, isMacrocore, pathname]);
 
   useEffect(() => {
     if (isMacrocore || !config || !hydrated || language !== 'en') return;
@@ -226,7 +212,6 @@ export function UniversalEndNavigation({ label }: UniversalEndNavigationProps = 
       className={`universal-end-nav universal-end-nav--${config.kind}`}
       aria-label={t('nav.continueLabel', 'Continue through the ELIMFILTERS platform')}
       role="navigation"
-      style={{ visibility: positioned ? 'visible' : 'hidden' }}
     >
       <div className="universal-end-nav__inner">
         {eyebrow && <p className="universal-end-nav__eyebrow">{eyebrow}</p>}
