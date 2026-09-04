@@ -22,13 +22,14 @@ export default function EngineeringNote({
     <div style={{
       display: 'flex',
       flexWrap: 'wrap',
+      justifyContent: 'center',
       gap: '1px',
       background: isYellow ? 'rgba(255,241,45,0.08)' : 'rgba(255,255,255,0.05)',
       border: `1px solid ${isYellow ? 'rgba(255,241,45,0.15)' : 'rgba(255,255,255,0.06)'}`,
       marginTop: '1.5rem',
     }}>
       {items.map((item) => (
-        <div key={item.label} style={{ background: '#000', padding: '1rem 1.25rem', flex: '1 1 200px', minWidth: 0 }}>
+        <div key={item.label} style={{ background: '#000', padding: '1rem 1.25rem', flex: '1 1 200px', maxWidth: '320px', minWidth: 0 }}>
           <p style={{
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 700,
