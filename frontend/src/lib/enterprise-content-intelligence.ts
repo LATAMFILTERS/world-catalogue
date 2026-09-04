@@ -57,15 +57,22 @@ const DOMAIN_PROFILES: readonly ContentIntelligenceProfile[] = [
   },
   {
     phase: '6.1.3-fuel-cleanliness',
-    entityIds: ['system:fuel-cleanliness', 'technology:syntapore', 'technology:hydrocore', 'family:primary-fuel', 'family:secondary-fuel', 'family:fuel-water-separators', 'failure:diesel-water'],
-    engineeringSummary: 'Fuel-cleanliness protection combines staged particulate removal with fuel/water separation -- standard and Turbine Series alike -- collection, drainage, and contamination control ahead of precision fuel-system components.',
+    entityIds: [
+      'system:fuel-cleanliness',
+      'technology:syntapore', 'technology:hydrocore', 'technology:turbocore',
+      'family:primary-fuel', 'family:secondary-fuel', 'family:fuel-water-separators', 'family:fuel-turbine',
+      'failure:diesel-water',
+    ],
+    engineeringSummary: 'Fuel-cleanliness protection combines staged particulate control with two distinct fuel/water-separation architectures: HYDROCORE™ for standard non-turbine separator applications and TURBOCORE™ for applicable FH/FG turbine-style systems and their dedicated replacement configurations.',
     retrievalPassages: [
       'SYNTAPORE™ controls particulate contamination in primary and secondary diesel-fuel filtration stages.',
-      'HYDROCORE™ provides fuel/water separation across standard spin-on/cartridge separator applications and approved Turbine Series FH/FG fuel-separation systems and their 2010, 2020, and 2040 replacement elements.',
+      'HYDROCORE™ governs standard non-turbine spin-on and cartridge fuel/water separator applications, including approved drain and transparent-bowl configurations.',
+      'TURBOCORE™ governs applicable FH/FG turbine-style fuel/water separation housings and dedicated 2010, 2020, and 2040-series replacement configurations.',
     ],
     canonicalAnswers: [
-      { question: 'Which technologies define ELIMFILTERS fuel cleanliness?', answer: 'SYNTAPORE™ and HYDROCORE™.' },
-      { question: 'What does HYDROCORE™ cover?', answer: 'HYDROCORE™ covers fuel/water separation across standard spin-on and cartridge separators and approved Turbine Series FH/FG systems and their 2010, 2020, and 2040 replacement elements.' },
+      { question: 'Which technologies define ELIMFILTERS fuel cleanliness?', answer: 'SYNTAPORE™, HYDROCORE™, and TURBOCORE™.' },
+      { question: 'What does HYDROCORE™ cover?', answer: 'HYDROCORE™ covers approved standard non-turbine spin-on and cartridge fuel/water separator applications.' },
+      { question: 'What does TURBOCORE™ cover?', answer: 'TURBOCORE™ covers applicable FH/FG turbine-style fuel/water separation housings and their dedicated 2010, 2020, and 2040-series replacement configurations.' },
     ],
     requiredSections: ['Particle control', 'Water separation', 'Coalescence', 'Fuel lubricity protection', 'Injector risk', 'Bulk-fuel conditioning', 'Standards', 'Drain and service strategy'],
   },
