@@ -135,9 +135,52 @@ function canonicalizeIso16332(standard: KCStandard): KCStandard {
   };
 }
 
+function canonicalizeSaeJ726(standard: KCStandard): KCStandard {
+  return {
+    ...standard,
+    year: '2002 (canceled)',
+    revisionStatus: 'withdrawn',
+    metaDescription: 'SAE J726 is a canceled historical air-cleaner test code. The final SAE revision, J726_200206, was canceled on June 27, 2002; use it only as a legacy reference when required by historical documentation.',
+    scope: 'Historical laboratory test code for determining and reporting dry-type and oil-bath internal-combustion-engine air-cleaner performance.',
+    engineeringPurpose: 'Preserves SAE J726 as a legacy technical reference for historical equipment and documentation. It must not be presented as an active North American equivalent to ISO 5011 or as a current universal OEM qualification requirement.',
+    sections: [
+      {
+        heading: 'Current Status',
+        body: 'SAE J726 was canceled in 2002. Earlier revisions addressed laboratory determination and reporting of air-cleaner performance characteristics such as airflow restriction or pressure drop, dust collection efficiency, dust capacity and structural integrity. It remains useful only when a legacy specification or historical test report explicitly cites J726.',
+      },
+      {
+        heading: 'Use with Current Engineering Work',
+        body: 'Do not infer current compliance, service intervals, terminal restriction values or product qualification from a historical J726 reference alone. Current product evaluation should follow the active standard or OEM requirement applicable to the specific air-cleaner system and market.',
+      },
+      {
+        heading: 'Relationship to ISO 5011',
+        body: 'ISO 5011 is a separate international standard for inlet air-cleaning equipment performance testing. Historical SAE J726 data and ISO 5011 data should not be treated as automatically interchangeable; compare only results generated under explicitly compatible test conditions and reporting requirements.',
+      },
+    ],
+    keyParams: [
+      { label: 'Status', value: 'Canceled by SAE in 2002' },
+      { label: 'Use', value: 'Legacy / historical reference only' },
+      { label: 'Historical measurements', value: 'Restriction, dust efficiency, dust capacity, structural integrity' },
+      { label: 'Current selection rule', value: 'Follow the active OEM or standard requirement for the application' },
+    ],
+    commonMistakes: [
+      'Presenting SAE J726 as an active standard or current North American equivalent of ISO 5011.',
+      'Using historical J726 test results as proof of current ISO 5011 compliance without compatible test evidence.',
+      'Turning dust-capacity data into a universal field service interval without measured loading and OEM restriction limits.',
+      'Publishing generic efficiency improvements, restriction thresholds or service-life multipliers as though SAE J726 mandates them.',
+    ],
+    faqs: [
+      { question: 'Is SAE J726 still active?', answer: 'No. SAE lists the final J726_200206 revision as canceled on June 27, 2002.' },
+      { question: 'Should SAE J726 be used as a current qualification standard?', answer: 'Only when a legacy specification explicitly requires it. Current qualification should follow the active OEM or standard requirement applicable to the product and market.' },
+      { question: 'Are SAE J726 and ISO 5011 results interchangeable?', answer: 'Not automatically. Historical J726 and ISO 5011 results should be compared only when the test conditions, contaminants, airflow and reporting basis are shown to be compatible.' },
+    ],
+  };
+}
+
 export const KC_STANDARDS: KCStandard[] = LEGACY_STANDARDS.map((standard) => {
   if (standard.slug === 'iso-16889') return canonicalizeIso16889(standard);
   if (standard.slug === 'iso-4406') return canonicalizeIso4406(standard);
   if (standard.slug === 'iso-16332') return canonicalizeIso16332(standard);
+  if (standard.slug === 'sae-j726') return canonicalizeSaeJ726(standard);
   return standard;
 });
