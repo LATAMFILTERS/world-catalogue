@@ -120,3 +120,16 @@ export type {
 } from './dashboard-types';
 
 export { KC_DASHBOARD_DATA } from './dashboard-analytics';
+
+// Search-demand / intent governance
+export type {
+  CanonicalKeywordOwnerKind,
+  CanonicalKeywordIntentNode,
+} from './canonical-keyword-intent-governance';
+
+export {
+  ANSWER_THE_PUBLIC_KEYWORD_NODES,
+  KEYWORD_OWNER_GAPS,
+  KEYWORD_INTENT_GOVERNANCE_RULES,
+  getKeywordIntentNode,
+} from './canonical-keyword-intent-governance';
