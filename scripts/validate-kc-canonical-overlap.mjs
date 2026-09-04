@@ -6,6 +6,17 @@ const out = path.join(root, 'frontend', 'out');
 const failures = [];
 const dynamicFamilies = ['glossary', 'diagrams', 'engineering-reference'];
 
+// Dynamic routes normally self-canonicalize. A small number of routes are
+// intentionally retained only as compatibility aliases after ownership was
+// consolidated into a stronger canonical entity. Keep these exceptions explicit
+// so the validator remains strict for every other dynamic Knowledge Center URL.
+const intentionalCanonicalOwners = new Map([
+  [
+    'engineering-reference/engineering-glossary',
+    'https://elimfilters.com/knowledge-center/glossary/',
+  ],
+]);
+
 const governedPages = [
   {
     rel: ['knowledge-center', 'glossary', 'iso-cleanliness-code', 'index.html'],
@@ -82,7 +93,9 @@ for (const family of dynamicFamilies) {
     if (!fs.existsSync(file)) continue;
 
     const html = fs.readFileSync(file, 'utf8');
-    const expected = `https://elimfilters.com/knowledge-center/${family}/${entry.name}/`;
+    const routeKey = `${family}/${entry.name}`;
+    const expected = intentionalCanonicalOwners.get(routeKey)
+      ?? `https://elimfilters.com/knowledge-center/${family}/${entry.name}/`;
     const canonical = extractCanonical(html);
 
     if (canonical !== expected) {
