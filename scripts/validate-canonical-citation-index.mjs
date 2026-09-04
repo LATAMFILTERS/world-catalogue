@@ -15,6 +15,7 @@ const CORE_TECHNOLOGIES = [
   ['INTEKCORE', 'intekcore'],
   ['SYNTAPORE', 'syntapore'],
   ['HYDROCORE', 'hydrocore'],
+  ['TURBOCORE', 'turbocore'],
   ['SYNTRAX', 'syntrax'],
   ['NANOFORCE', 'nanoforce'],
   ['THERMACORE', 'thermacore'],
