@@ -81,7 +81,6 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.12,
-              textAlign: 'justify',
               marginBottom: '0.75rem',
             }}
           >
@@ -97,7 +96,6 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
               fontSize: 'clamp(0.95rem, 2vw, 1.1rem)',
               color: 'rgba(255,255,255,0.55)',
               marginBottom: '1.5rem',
-              textAlign: 'justify',
               maxWidth: '640px',
               lineHeight: 1.7,
             }}
@@ -120,7 +118,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
               <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.58rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.5)', marginBottom: '0.5rem' }}>
                 FAILURE MECHANISM
               </p>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, textAlign: 'justify' }}>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>
                 {detail.failureMechanism}
               </p>
             </motion.div>
@@ -167,7 +165,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
                   }}>
                     {m.value}
                   </p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4, textAlign: 'justify' }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4 }}>
                     {m.label}
                   </p>
                 </div>
@@ -190,7 +188,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
                   <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '0.75rem' }}>
                     Contamination Target
                   </h2>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', textAlign: 'justify' }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)' }}>
                     {detail.contaminationTarget}
                   </p>
                   {detail.targetCleanliness && (
@@ -216,7 +214,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
                   <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>
                     {section.heading}
                   </h2>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', textAlign: 'justify' }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.95rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)' }}>
                     {section.body}
                   </p>
                   {section.callout && section.callout.length > 0 && (

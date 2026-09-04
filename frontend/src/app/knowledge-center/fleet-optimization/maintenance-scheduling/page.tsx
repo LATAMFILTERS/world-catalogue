@@ -55,7 +55,6 @@ export default function MaintenanceSchedulingPage() {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}>
               Shift from fixed time-based maintenance intervals to contamination-driven condition-based scheduling. Equipment equipped with contamination monitoring (ISO 4406 particle counts, fluid condition sensors) can extend maintenance intervals 30–40% while reducing unplanned downtime 80%. Predictive scheduling based on actual component wear—not arbitrary calendar dates—extends equipment life and reduces emergency maintenance events.
             </p>
@@ -94,7 +93,6 @@ export default function MaintenanceSchedulingPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             Time-based maintenance (replace filter at 500 hours, oil at 1,000 hours) assumes all equipment operates identically. A truck running light-duty city routes accumulates minimal contamination. The same truck model running desert mining routes accumulates 10× more dust, sand, and engine wear. Time-based intervals treat both identically—either the light-duty truck wastes money replacing clean filters, or the heavy-duty truck runs filters past their contamination capacity. Condition-based maintenance measures actual contamination (ISO 4406 particle counts, water content, particle morphology) and replaces fluids/filters only when contamination targets are exceeded. Result: heavy-duty truck maintains shorter intervals (but accurate), light-duty truck extends intervals (maintaining cleanliness indefinitely). Both save 25–40% on consumable costs and reduce emergency failures 80%.
@@ -130,7 +128,6 @@ export default function MaintenanceSchedulingPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '2rem',
           }}>
             Condition-based scheduling uses ISO 4406 cleanliness codes as the decision trigger. Fleet operators establish a target cleanliness code (e.g., 18/16/13 for lube oil, 17/15/12 for hydraulic) and monitor particles monthly. When a sample exceeds the target, the filter is replaced and fluids topped off. This approach prevents both premature replacement and over-use.
@@ -225,7 +222,6 @@ export default function MaintenanceSchedulingPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             A single emergency maintenance event (engine failure, bearing seizure, injector failure) costs 5–10× more than preventive maintenance. Emergency repair: equipment towed (€500), parts (€4K–8K), labor (€2K–5K), downtime (€8K–20K/day), lost revenue. Total: €15K–35K per event. Preventive filter replacement and fluid service: parts (€500–1K), labor (€200–500), no downtime. Cost: €1K–2K. Reducing emergency events from 8/year to 1/year saves €90K–200K per truck per year. Condition-based scheduling detects contamination before component damage occurs, preventing 90% of emergency events.

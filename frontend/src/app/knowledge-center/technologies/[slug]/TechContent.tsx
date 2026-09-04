@@ -105,7 +105,6 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
               fontWeight: 700,
               fontSize: 'clamp(2rem, 5vw, 3rem)',
               lineHeight: 1.1,
-              textAlign: 'justify',
               marginBottom: '0.75rem',
               color: '#FFF12D',
               letterSpacing: '0.01em',
@@ -137,7 +136,6 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.8,
-              textAlign: 'justify',
               color: 'rgba(255,255,255,0.7)',
               maxWidth: '660px',
             }}
@@ -184,11 +182,10 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                     color: '#FFF12D',
                     marginBottom: '0.3rem',
                     lineHeight: 1.1,
-                    textAlign: 'justify',
                   }}>
                     {spec.value}
                   </p>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4, textAlign: 'justify' }}>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.4 }}>
                     {spec.label}
                   </p>
                 </div>
@@ -232,7 +229,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
                   border: '1px solid rgba(255,255,255,0.05)',
                 }}>
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: '#FFF12D', marginTop: '0.1rem', flexShrink: 0 }}>→</span>
-                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5, textAlign: 'justify' }}>{c}</p>
+                  <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>{c}</p>
                 </div>
               ))}
             </div>
@@ -246,9 +243,9 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
           >
             <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.6rem' }}>02 /</p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>Application Selection</h2>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)', textAlign: 'justify', marginBottom: '1.25rem' }}>{tech.selectionGuidance}</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)', marginBottom: '1.25rem' }}>{tech.selectionGuidance}</p>
             <h2 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>Evidence Boundary</h2>
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)', textAlign: 'justify' }}>{tech.evidenceBoundary}</p>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)' }}>{tech.evidenceBoundary}</p>
           </motion.section>
 
           <section aria-label="Technical review" style={{ marginBottom: '3rem', padding: '1.1rem 1.25rem', border: '1px solid rgba(255,241,45,0.16)', background: 'rgba(255,241,45,0.025)' }}>

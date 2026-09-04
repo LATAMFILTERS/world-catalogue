@@ -100,7 +100,6 @@ export default function FleetOptimizationHub() {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}>
               Fleet Optimization translates contamination control principles into operational strategies. This section connects industrial asset protection (Standards → Contamination → Technologies) to practical fleet management: equipment lifecycle planning, condition-based maintenance scheduling, predictive monitoring, and regional deployment strategies. The result: equipment operating 3–5× longer, 90% fewer unplanned failures, 60% lower total cost of ownership.
             </p>
@@ -177,7 +176,6 @@ export default function FleetOptimizationHub() {
                     fontSize: '0.9rem',
                     lineHeight: 1.6,
                     color: 'rgba(255,255,255,0.65)',
-                    textAlign: 'justify',
                     flex: 1,
                   }}>
                     {page.description}
@@ -224,7 +222,6 @@ export default function FleetOptimizationHub() {
             fontSize: '0.95rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
           }}>
             Fleet Optimization sits at the operational apex of ELIMFILTERS Knowledge System. The hierarchy flows: <strong>Contamination</strong> (root cause) → <strong>Asset Degradation</strong> (impact) → <strong>Standards & Measurement</strong> (assessment via ISO 4406, ISO 16889, ASTM D6304) → <strong>Protection Technologies</strong> (MACROCORE, SYNTRAX, NANOFORCE, HYDROCORE) → <strong>Product Implementation</strong> (specific filters and systems) → <strong>Fleet Optimization</strong> (operational strategy). Fleet Optimization pages translate technical knowledge into business outcomes: extend equipment life, reduce failures, lower total cost of ownership.
           </p>

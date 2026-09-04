@@ -55,7 +55,6 @@ export default function ContaminationControlStrategyPage() {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}>
               Unified framework protecting industrial assets across 5 contamination domains: air intake, fuel, lube oil, hydraulic systems, and compressed air. Information architecture: Contamination → Degradation → Standards → Technologies → Implementation.
             </p>
@@ -94,7 +93,6 @@ export default function ContaminationControlStrategyPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             All industrial equipment failure modes share a common root cause: <strong>uncontrolled contamination</strong>. Although air, fuel, oil, hydraulic, and compressed-air systems appear separate, the underlying mechanism is identical: contamination enters → exceeds filter capacity → accelerates component degradation → equipment life reduced 50–80% → downtime and catastrophic costs.
@@ -104,7 +102,6 @@ export default function ContaminationControlStrategyPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
           }}>
             The difference is not the contamination source, but component sensitivity. A 4 µm silica particle damages proportional valve spool clearances (1–4 µm) but passes harmlessly through cylinder ports (20–50 µm). Effective contamination control requires understanding which component is most sensitive in each system and specifying filtration to protect that critical component.
           </p>

@@ -55,7 +55,6 @@ export default function PredictiveMonitoringPage() {
               lineHeight: 1.7,
               color: 'rgba(255,255,255,0.65)',
               maxWidth: '640px',
-              textAlign: 'justify',
             }}>
               Detect equipment failure 2–4 weeks before catastrophic breakdown. Real-time fluid condition monitoring (ISO 4406 particle counts, fluid viscosity, water content, ferrous wear debris) identifies component degradation while maintenance options still exist. Equipment showing ISO 18/16/14 trend climbing to 19/17/15 signals imminent failure—order bearing replacement, schedule maintenance window, prevent emergency downtime.
             </p>
@@ -94,7 +93,6 @@ export default function PredictiveMonitoringPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             Fluid condition analysis reveals equipment wear before external symptoms appear. A lube oil sample showing 500 µm wear particles per 100 mL (vs. normal 50–100) signals bearing distress. 1,000+ µm particles indicate imminent bearing failure within 200–500 hours. Fuel water content rising from 50 ppm to 300 ppm over 2 weeks signals fuel tank water ingress and imminent injector corrosion. Hydraulic oil showing sudden ISO code jump (17/15/12 → 19/17/14) indicates component wear, proportional valve internal leakage, or pump cavitation. These signals appear 2–4 weeks before failure, allowing planned maintenance instead of emergency repair.
@@ -247,7 +245,6 @@ export default function PredictiveMonitoringPage() {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.68)',
-            textAlign: 'justify',
             marginBottom: '1.5rem',
           }}>
             Three monitoring approaches: (1) Lab-based particle counting: fluid samples sent to ISO 4406 certified lab; results returned 24–48 hours; cost €60–120 per sample; accuracy ±0.3 ISO codes. (2) Portable field analyzers: particle counters that operate in-vehicle; real-time ISO 4406 counts; cost €15K–25K per device; accuracy ±0.5 ISO codes; enables immediate threshold detection. (3) Continuous in-vehicle sensors: deployed on critical equipment; measure particle count, water content, viscosity continuously; data streamed to fleet dashboard; cost €8K–12K per sensor + €200/month data; enables predictive trend analysis. Most cost-effective approach: portable lab combined with scheduled sampling (1–2× per month) for light-duty vehicles, continuous sensors for critical high-value equipment (mining trucks, refuse compactors, construction cranes).

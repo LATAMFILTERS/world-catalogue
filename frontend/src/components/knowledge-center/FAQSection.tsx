@@ -42,7 +42,6 @@ export default function FAQSection({
               color: '#fff',
               marginBottom: '0.6rem',
               lineHeight: 1.35,
-              textAlign: 'justify',
             }}>
               {item.q}
             </p>
@@ -51,7 +50,6 @@ export default function FAQSection({
               fontSize: '0.88rem',
               color: 'rgba(255,255,255,0.55)',
               lineHeight: 1.75,
-              textAlign: 'justify',
             }}>
               {item.a}
             </p>

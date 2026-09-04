@@ -100,7 +100,6 @@ export default function TechnicalLibraryPage() {
               fontWeight: 700,
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               lineHeight: 1.15,
-              textAlign: 'justify',
               marginBottom: '1.25rem',
             }}
           >
@@ -115,7 +114,6 @@ export default function TechnicalLibraryPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.75,
-              textAlign: 'justify',
               color: 'rgba(255,255,255,0.6)',
               maxWidth: '600px',
             }}
@@ -186,7 +184,6 @@ export default function TechnicalLibraryPage() {
                 color: '#fff',
                 marginBottom: '0.5rem',
                 lineHeight: 1.2,
-                textAlign: 'justify',
               }}>
                 {doc.title}
               </h2>
@@ -195,7 +192,6 @@ export default function TechnicalLibraryPage() {
                 fontFamily: 'Inter, sans-serif',
                 fontSize: '0.87rem',
                 lineHeight: 1.65,
-                textAlign: 'justify',
                 color: 'rgba(255,255,255,0.5)',
                 marginBottom: '1.25rem',
                 maxWidth: '640px',

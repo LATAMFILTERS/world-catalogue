@@ -19,11 +19,12 @@ export function MobileInternalLayoutFix() {
     const isTechnologies = matchesRoute('technologies');
     const isIndustries = matchesRoute('industries');
     const isSystems = matchesRoute('systems');
+    const isKnowledgeCenter = matchesRoute('knowledge-center');
 
     // Technology detail pages now carry route-specific responsive layouts.
     // Do not run this legacy generic DOM mutator on /technologies/* because it
     // rewrites authored grid, width, media and section geometry at runtime.
-    const isTarget = !isTechnologies && (isAbout || isIndustries || isSystems);
+    const isTarget = !isTechnologies && (isAbout || isIndustries || isSystems || isKnowledgeCenter);
 
     const applyFixes = () => {
       const main = document.querySelector<HTMLElement>('main');
@@ -33,6 +34,7 @@ export function MobileInternalLayoutFix() {
       main.classList.remove('technologies-page-mobile-fix');
       main.classList.toggle('industries-page-mobile-fix', isIndustries);
       main.classList.toggle('systems-page-mobile-fix', isSystems);
+      main.classList.toggle('knowledge-center-page-mobile-fix', isKnowledgeCenter);
       main.style.width = '100%';
       main.style.maxWidth = '100%';
       main.style.overflowX = 'clip';
@@ -105,14 +107,16 @@ export function MobileInternalLayoutFix() {
       @media (max-width: 860px) {
         .about-page-mobile-fix,
         .industries-page-mobile-fix,
-        .systems-page-mobile-fix {
+        .systems-page-mobile-fix,
+        .knowledge-center-page-mobile-fix {
           width: 100% !important;
           max-width: 100% !important;
           overflow-x: clip !important;
         }
 
         .industries-page-mobile-fix section,
-        .systems-page-mobile-fix section {
+        .systems-page-mobile-fix section,
+        .knowledge-center-page-mobile-fix section {
           width: 100% !important;
           max-width: 100vw !important;
           min-height: auto !important;
@@ -123,8 +127,10 @@ export function MobileInternalLayoutFix() {
 
         .industries-page-mobile-fix section > div,
         .systems-page-mobile-fix section > div,
+        .knowledge-center-page-mobile-fix section > div,
         .industries-page-mobile-fix div > *,
-        .systems-page-mobile-fix div > * {
+        .systems-page-mobile-fix div > *,
+        .knowledge-center-page-mobile-fix div > * {
           min-width: 0 !important;
           max-width: 100% !important;
           box-sizing: border-box !important;
@@ -132,8 +138,10 @@ export function MobileInternalLayoutFix() {
 
         .industries-page-mobile-fix div[style*="display: grid"],
         .systems-page-mobile-fix div[style*="display: grid"],
+        .knowledge-center-page-mobile-fix div[style*="display: grid"],
         .industries-page-mobile-fix ul,
-        .systems-page-mobile-fix ul {
+        .systems-page-mobile-fix ul,
+        .knowledge-center-page-mobile-fix ul {
           grid-template-columns: minmax(0, 1fr) !important;
           width: 100% !important;
           max-width: 100% !important;
@@ -145,7 +153,10 @@ export function MobileInternalLayoutFix() {
         .industries-page-mobile-fix h3,
         .systems-page-mobile-fix h1,
         .systems-page-mobile-fix h2,
-        .systems-page-mobile-fix h3 {
+        .systems-page-mobile-fix h3,
+        .knowledge-center-page-mobile-fix h1,
+        .knowledge-center-page-mobile-fix h2,
+        .knowledge-center-page-mobile-fix h3 {
           max-width: 100% !important;
           word-break: normal !important;
           overflow-wrap: normal !important;
@@ -166,7 +177,8 @@ export function MobileInternalLayoutFix() {
         }
 
         .industries-page-mobile-fix p,
-        .systems-page-mobile-fix p {
+        .systems-page-mobile-fix p,
+        .knowledge-center-page-mobile-fix p {
           width: 100% !important;
           max-width: 100% !important;
           white-space: normal !important;
@@ -176,8 +188,10 @@ export function MobileInternalLayoutFix() {
 
         .industries-page-mobile-fix img,
         .systems-page-mobile-fix img,
+        .knowledge-center-page-mobile-fix img,
         .industries-page-mobile-fix video,
-        .systems-page-mobile-fix video {
+        .systems-page-mobile-fix video,
+        .knowledge-center-page-mobile-fix video {
           display: block !important;
           max-width: 100% !important;
           height: auto !important;
@@ -186,7 +200,8 @@ export function MobileInternalLayoutFix() {
 
       @media (max-width: 430px) {
         .industries-page-mobile-fix section,
-        .systems-page-mobile-fix section {
+        .systems-page-mobile-fix section,
+        .knowledge-center-page-mobile-fix section {
           padding-left: 1rem !important;
           padding-right: 1rem !important;
         }

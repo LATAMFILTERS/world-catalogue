@@ -72,7 +72,6 @@ export default function LearningPathsPage() {
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.55)',
             maxWidth: '600px',
-            textAlign: 'justify',
           }}>
             Curated sequences of articles, standards, diagrams, and calculators drawn from the Engineering Knowledge Graph. Each path builds understanding progressively from foundational concepts to applied engineering decisions.
           </p>
@@ -158,7 +157,6 @@ export default function LearningPathsPage() {
                     lineHeight: 1.7,
                     color: 'rgba(255,255,255,0.45)',
                     flexGrow: 1,
-                    textAlign: 'justify',
                   }}>
                     {path.description}
                   </p>

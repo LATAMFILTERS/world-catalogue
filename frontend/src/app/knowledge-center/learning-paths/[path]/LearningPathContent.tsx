@@ -119,7 +119,6 @@ export default function LearningPathContent({ path }: { path: LearningPath }) {
             fontSize: '0.93rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.55)',
-            textAlign: 'justify',
             maxWidth: '680px',
           }}>
             {path.description}
@@ -277,7 +276,6 @@ export default function LearningPathContent({ path }: { path: LearningPath }) {
                       fontSize: '0.82rem',
                       lineHeight: 1.65,
                       color: 'rgba(255,255,255,0.42)',
-                      textAlign: 'justify',
                     }}>
                       {step.description}
                     </p>
@@ -325,7 +323,6 @@ export default function LearningPathContent({ path }: { path: LearningPath }) {
             fontSize: '0.9rem',
             lineHeight: 1.75,
             color: 'rgba(255,255,255,0.6)',
-            textAlign: 'justify',
           }}>
             {path.outcomeStatement}
           </p>

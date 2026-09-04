@@ -107,7 +107,6 @@ export default function ComparisonContent({
               color: 'rgba(255,255,255,0.7)',
               lineHeight: 1.65,
               margin: 0,
-              textAlign: 'justify',
             }}>
               {c.engineeringObjective}
             </p>
@@ -126,7 +125,6 @@ export default function ComparisonContent({
               color: 'rgba(255,255,255,0.7)',
               lineHeight: 1.65,
               margin: 0,
-              textAlign: 'justify',
             }}>
               {c.comparisonScope}
             </p>
@@ -213,7 +211,6 @@ export default function ComparisonContent({
                   color: 'rgba(255,255,255,0.6)',
                   lineHeight: 1.7,
                   marginBottom: '1rem',
-                  textAlign: 'justify',
                 }}>
                   {opt.description}
                 </p>
@@ -454,7 +451,6 @@ export default function ComparisonContent({
                   fontSize: '0.85rem',
                   color: 'rgba(255,255,255,0.65)',
                   lineHeight: 1.65,
-                  textAlign: 'justify',
                 }}>
                   {impl}
                 </span>

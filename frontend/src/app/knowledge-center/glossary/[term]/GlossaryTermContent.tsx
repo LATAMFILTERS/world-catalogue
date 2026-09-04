@@ -115,7 +115,6 @@ export default function GlossaryTermContent({
             fontSize: '1rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.8)',
-            textAlign: 'justify',
           }}>
             {entry.definition}
           </p>
@@ -149,7 +148,6 @@ export default function GlossaryTermContent({
             fontSize: '0.95rem',
             lineHeight: 1.8,
             color: 'rgba(255,255,255,0.7)',
-            textAlign: 'justify',
           }}>
             {entry.engineeringContext}
           </p>
