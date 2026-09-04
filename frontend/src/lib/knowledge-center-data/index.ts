@@ -16,12 +16,14 @@ export type {
 // ── Entity IDs ────────────────────────────────────────────────────────────────
 export {
   ARTICLE_IDS,
-  STANDARD_IDS,
   TERM_IDS,
   getArticleId,
-  getStandardId,
   getTermId,
 } from './entity-ids';
+export {
+  STANDARD_IDS,
+  getStandardId,
+} from './canonical-standard-ids';
 export {
   TECHNOLOGY_IDS,
   SYSTEM_IDS,
@@ -33,7 +35,7 @@ export {
 
 // ── Data Registries ───────────────────────────────────────────────────────────
 export { ENGINEERING_ARTICLES } from './articles-registry';
-export { KC_STANDARDS } from './canonical-standards-registry';
+export { KC_STANDARDS } from './canonical-structural-standards-registry';
 export { KC_TECHNOLOGIES } from './technologies-registry';
 export { KC_SYSTEMS } from './canonical-systems-registry';
 export { KC_SYSTEM_DETAILS } from './canonical-system-details';
