@@ -93,14 +93,92 @@ async function groqSearch(candidate, apiKey, attempt = 1, previousErrors = [], f
     signal:{entity_code:candidate.entity_code,publisher:candidate.source_publisher,source_url:candidate.source_url,source_title:candidate.source_title,candidate_type:candidate.candidate_type,category:candidate.category,captured_at:candidate.captured_at,snippet:candidate.extracted_snippet || null},
     required_json:{status:'VERIFIED or UNRESOLVED',finding_type:'OEM | AFTERMARKET | FILTER_MEDIA | STANDARD | TECHNICAL | SUPPLIER | INDUSTRY',finding_title:'specific item',evidence_url:'absolute strongest evidence URL',published_at:'ISO date if supported else null',technical_facts:['specific verifiable fact'],affected_entities:['engine/equipment/filter/application/technical entity'],destination:'CATALOGUE | KNOWLEDGE_CENTER | TECHNICAL_INTELLIGENCE | TECHNOLOGY_WATCH | STANDARDS | OEM_APPLICATION_INTELLIGENCE | INTERNAL_ONLY',knowledge_action:'CREATE_NEW | UPDATE_REINFORCE | NO_MATERIAL_CHANGE | INTERNAL_ONLY',existing_elimfilters_url:'matching ELIMFILTERS URL or null',relevance:'ELIMFILTERS relevance',public_safe_fact:'neutral technical wording without competitor marketing',proposed_action:'specific review proposal for Victor; for UPDATE_REINFORCE describe what existing knowledge should gain/change',content_channels:['BLOG | WEEKLY_PODCAST | NEWSLETTER | SOCIAL | CUSTOMER_EMAIL | SALES_INTELLIGENCE'],confidence:'0..1',source_type:'PRIMARY or SECONDARY_VERIFIED'}
   };
-  const res = await fetchImpl(ENDPOINT,{method:'POST',headers:{Authorization:`Bearer ${apiKey}`,'Content-Type':'application/json','Groq-Model-Version':'latest'},body:JSON.stringify({model:MODEL,temperature:0,response_format:{type:'json_object'},messages:[{role:'system',content:researchSystemPrompt(attempt)},{role:'user',content:JSON.stringify(input)}]})});
-  if (!res.ok) throw new Error(`Groq HTTP ${res.status}: ${(await res.text()).slice(0,400)}`);
+  const res = await fetchImpl(ENDPOINT,{method:'POST',headers:{Authorization:`Bearer ${apiKey}`,'Content-Type':'application/json','Groq-Model-Version':'latest'},body:JSON.stringify({model:MODEL,temperature:0,max_completion_tokens:2500,response_format:{type:'json_object'},messages:[
+{role:'system',content:MODEL === 'groq/compound-mini'
+? `You are HERMES, ELIMFILTERS industrial filtration intelligence researcher.
+
+Use live web search and website visiting.
+
+Resolve the supplied source signal into ONE concrete, current, verifiable finding relevant to filtration, filter media, OEM equipment, applications, standards, fluids, engines or industrial reliability.
+
+Rules:
+- Search the supplied publisher/domain first.
+- Prefer a specific product page, release, technical document, application page or primary evidence URL.
+- Never invent facts, part numbers, dates, applications, standards or URLs.
+- Ignore generic corporate/financial/marketing news without technical relevance.
+- Return VERIFIED only with a concrete finding, valid evidence URL and technical facts.
+- If no concrete evidence can be established, return UNRESOLVED.
+- Competitor information is internal provenance only; public_safe_fact must use neutral technical language.
+- Return strict JSON matching the requested schema.`
+: researchSystemPrompt(attempt)},
+{role:'user',content:JSON.stringify(input)}
+]})});
+  if (!res.ok) {
+    const body = (await res.text()).slice(0, 800);
+
+    if (res.status === 429) {
+        const retryAfterHeader = Number(res.headers.get('retry-after') || 0);
+        const retryMatch = body.match(/try again in\s+([\d.]+)s/i);
+        const retrySeconds = retryAfterHeader || Number(retryMatch?.[1] || 20);
+
+        const error = new Error(`Groq HTTP 429: ${body}`);
+        error.retryAfterMs = Math.ceil((retrySeconds + 2) * 1000);
+        throw error;
+    }
+
+    throw new Error(`Groq HTTP ${res.status}: ${body}`);
+}
   const payload = await res.json();
   const content = payload?.choices?.[0]?.message?.content;
   if (!content) throw new Error('Groq returned no content');
-  return { resolution:JSON.parse(stripFence(content)), tool_calls:payload?.choices?.[0]?.message?.executed_tools?.length || 0 };
+  return { resolution:repairMojibakeDeep(JSON.parse(stripFence(content))), tool_calls:payload?.choices?.[0]?.message?.executed_tools?.length || 0 };
 }
 
+const CP1252_REVERSE = new Map([
+  [0x20AC,0x80],[0x201A,0x82],[0x0192,0x83],[0x201E,0x84],
+  [0x2026,0x85],[0x2020,0x86],[0x2021,0x87],[0x02C6,0x88],
+  [0x2030,0x89],[0x0160,0x8A],[0x2039,0x8B],[0x0152,0x8C],
+  [0x017D,0x8E],[0x2018,0x91],[0x2019,0x92],[0x201C,0x93],
+  [0x201D,0x94],[0x2022,0x95],[0x2013,0x96],[0x2014,0x97],
+  [0x02DC,0x98],[0x2122,0x99],[0x0161,0x9A],[0x203A,0x9B],
+  [0x0153,0x9C],[0x017E,0x9E],[0x0178,0x9F]
+]);
+
+function repairMojibakeString(value) {
+  if (typeof value !== 'string' || !/[ÃÂâ]/.test(value)) return value;
+
+  const bytes = [];
+  for (const ch of value) {
+    const cp = ch.codePointAt(0);
+
+    if (cp <= 0xFF) {
+      bytes.push(cp);
+      continue;
+    }
+
+    const mapped = CP1252_REVERSE.get(cp);
+    if (mapped === undefined) return value;
+    bytes.push(mapped);
+  }
+
+  const repaired = Buffer.from(bytes).toString('utf8');
+
+  const badCount = text => (text.match(/[ÃÂâ]/g) || []).length;
+  return badCount(repaired) < badCount(value) ? repaired : value;
+}
+
+function repairMojibakeDeep(value) {
+  if (typeof value === 'string') return repairMojibakeString(value);
+  if (Array.isArray(value)) return value.map(repairMojibakeDeep);
+
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value).map(([key,val]) => [key, repairMojibakeDeep(val)])
+    );
+  }
+
+  return value;
+}
 async function resolveOne(candidate, apiKey, fetchImpl) {
   const started = new Date().toISOString();
   const unresolved = (reason, extra={}) => ({...candidate,workflow_status:'NEEDS_RESEARCH',research_resolution:{status:'UNRESOLVED',engine:'GROQ',model:MODEL,reason,...extra,started_at:started,resolved_at:new Date().toISOString()}});
@@ -112,12 +190,29 @@ async function resolveOne(candidate, apiKey, fetchImpl) {
   for (let attempt = 1; attempt <= MAX_SEARCH_ATTEMPTS; attempt += 1) {
     try {
       search = await groqSearch(candidate,apiKey,attempt,errors,fetchImpl);
+
+      if (search.resolution?.status === 'UNRESOLVED') {
+        return {
+          resolved:false,
+          candidate:unresolved('RESEARCH_UNRESOLVED',{
+            model:MODEL,
+            tool_calls:search.tool_calls,
+            attempts_used:attempt
+          })
+        };
+      }
+
       errors = validateResolution(search.resolution);
       if (!errors.length) break;
       lastError = `attempt ${attempt}: ${errors.join('; ')}`;
     } catch (err) {
       lastError = `attempt ${attempt}: ${String(err?.message || err)}`;
-      errors = [lastError];
+errors = [lastError];
+
+if (err?.retryAfterMs && attempt < MAX_SEARCH_ATTEMPTS) {
+    console.log(`[HERMES research] Groq rate limit - waiting ${Math.ceil(err.retryAfterMs / 1000)}s before retry`);
+    await new Promise(resolve => setTimeout(resolve, err.retryAfterMs));
+}
     }
   }
 
@@ -147,7 +242,7 @@ export async function runResearch({inputDir=resolveRealCandidatesInputDir(),apiK
   const dir=path.resolve(inputDir); if(!fs.existsSync(dir)) return {scanned:0,resolved:0,unresolved:0,results:[]};
   const results=[];
   for(const name of fs.readdirSync(dir).filter(f=>f.endsWith('.json')).sort()){
-    const file=path.join(dir,name); const candidate=JSON.parse(fs.readFileSync(file,'utf8'));
+    const file=path.join(dir,name); const candidate=JSON.parse(fs.readFileSync(file,'utf8').replace(/^\uFEFF/,''));
     if(!String(candidate.entity_code||'').startsWith('HERMES_REAL_')) continue;
     if(candidate.research_resolution?.status==='VERIFIED'&&candidate.workflow_status==='PENDING_REVIEW'){results.push({entity_code:candidate.entity_code,status:'ALREADY_RESOLVED'});continue;}
     const out=await resolveOne({...candidate,workflow_status:'NEEDS_RESEARCH'},apiKey,fetchImpl); atomic(file,out.candidate); results.push({entity_code:candidate.entity_code,status:out.resolved?'RESOLVED':'UNRESOLVED',reason:out.candidate.research_resolution?.reason||null});

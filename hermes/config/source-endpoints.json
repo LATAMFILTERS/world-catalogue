@@ -126,7 +126,7 @@
     {
       "id": "ahlstrom__newsroom",
       "organization_id": "ahlstrom",
-      "url": "https://www.ahlstrom.com/",
+      "url": "https://www.ahlstrom.com/Media/releases/",
       "endpoint_type": "newsroom",
       "source_type": "html",
       "status": "ACTIVE",

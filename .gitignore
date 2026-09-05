@@ -52,3 +52,20 @@ __pycache__/
 # Ignore backup directories
 *-BACKUP-*/
 *-CONFLICT-BACKUP-*/
+
+hermes/source-cache/
+hermes/real-candidates/
+hermes/real-candidates-previews/
+hermes/update-previews/
+hermes/rollback-previews/
+hermes/backups/
+hermes/publication-previews/
+
+# HERMES runtime state and generated audit artifacts
+hermes/baselines/
+hermes/reports/operational-preflight.json
+hermes/reports/operational-preflight.md
+elimfilters-vault/94-sync-log/
+hermes/industry-sweep/
+hermes/reports/source-discovery-backlog.json
+hermes/reports/source-discovery-backlog.md

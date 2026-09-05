@@ -111,9 +111,9 @@
     "suppliers": [
       {
         "id": "ahlstrom_home",
-        "name": "Ahlstrom — Corporate site",
+        "name": "Ahlstrom — Releases and news",
         "category": "suppliers",
-        "url": "https://www.ahlstrom.com/",
+        "url": "https://www.ahlstrom.com/Media/releases/",
         "source_type": "html",
         "enabled": true,
         "official": true,
