@@ -23,6 +23,27 @@ function normalize(value) {
   return String(value || '').replace(/[^A-Z0-9]/gi, '').toUpperCase();
 }
 
+function referenceParams(params = []) {
+  const refs = [];
+  for (const raw of params[0] || []) {
+    if (typeof raw === 'string' && /^[\[{]/.test(raw.trim())) {
+      try {
+        const parsed = JSON.parse(raw);
+        const items = Array.isArray(parsed) ? parsed : [parsed];
+        for (const item of items) {
+          if (!item || typeof item !== 'object') continue;
+          for (const value of Object.values(item)) {
+            if (typeof value === 'string' || typeof value === 'number') refs.push(normalize(value));
+          }
+        }
+        continue;
+      } catch {}
+    }
+    refs.push(normalize(raw));
+  }
+  return [...new Set(refs.filter(Boolean))];
+}
+
 const BASE_ROWS = [
   {
     id: 101,
@@ -50,9 +71,7 @@ const BASE_ROWS = [
       { make: 'Volvo', model: 'VNL', engine: 'D13' },
       { make: 'Mack', model: 'Anthem', engine: 'MP8' }
     ],
-    specs: {},
-    enrichment_data: {},
-    is_primary: true
+    specs: {}, enrichment_data: {}, is_primary: true
   }
 ];
 
@@ -73,15 +92,14 @@ function poolForMode() {
         async query(sql, params = []) {
           if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(String(sql))) return { rows: [] };
           if (!/FROM elimfilters_catalog/i.test(String(sql))) return { rows: [] };
-          const refs = (params[0] || []).map(normalize);
-          const rows = BASE_ROWS.filter(row => matchesRow(row, refs));
+          const refs = referenceParams(params);
           if (mode === 'ambiguous' && refs.includes('AMB331193')) {
             return { rows: [
               { ...BASE_ROWS[0], sku: 'EL82100', competitor_codes: [{ manufacturer: 'WIX', code: 'AMB331193' }] },
               { ...BASE_ROWS[0], id: 102, sku: 'EL82101', competitor_codes: [{ manufacturer: 'WIX', code: 'AMB331193' }] }
             ] };
           }
-          return { rows };
+          return { rows: BASE_ROWS.filter(row => matchesRow(row, refs)) };
         },
         release() {}
       };
@@ -95,19 +113,10 @@ let baseUrl;
 async function send(message, conversationId) {
   const response = await fetch(`${baseUrl}/api/bot/protocol`, {
     method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-bot-protocol-key': 'cert-key'
-    },
-    body: JSON.stringify({
-      message,
-      conversation_id: conversationId,
-      channel: 'web',
-      language: 'es'
-    })
+    headers: { 'content-type': 'application/json', 'x-bot-protocol-key': 'cert-key' },
+    body: JSON.stringify({ message, conversation_id: conversationId, channel: 'web', language: 'es' })
   });
-  const body = await response.json();
-  return { status: response.status, body };
+  return { status: response.status, body: await response.json() };
 }
 
 function assertNoInventedTechnicalClaims(answer) {
@@ -187,7 +196,6 @@ test('valid lookup followed by invalid lookup in same conversation never leaks p
   const valid = await send('Donaldson P552100', conversationId);
   assert.equal(valid.body.evidence.validated, true);
   assert.match(valid.body.answer, /EL82100/);
-
   const invalid = await send('Ahora busca Donaldson P527692', conversationId);
   assert.equal(invalid.body.evidence.validated, false);
   assert.equal(invalid.body.evidence.lookup_status, 'not_found');
@@ -198,7 +206,6 @@ test('invalid lookup followed by valid lookup in same conversation can recover w
   const conversationId = `cert-invalid-valid-${Date.now()}`;
   const invalid = await send('Donaldson P527692', conversationId);
   assert.equal(invalid.body.evidence.validated, false);
-
   const valid = await send('Ahora busca Donaldson P552100', conversationId);
   assert.equal(valid.body.evidence.validated, true);
   assert.match(valid.body.answer, /Donaldson P552100/i);
