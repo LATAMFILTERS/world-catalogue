@@ -8,6 +8,7 @@ import './decision-flow.css';
 import './responsive-final.css';
 import './mobile-critical-layout-fixes.css';
 import './mobile-critical-fix.css';
+import './mobile-sitewide-guard.css';
 import { ClientProviders } from '@/components/ClientProviders';
 import { MiningHeroCleanup } from '@/components/MiningHeroCleanup';
 import { MobileInternalLayoutFix } from '@/components/MobileInternalLayoutFix';
