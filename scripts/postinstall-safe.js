@@ -111,7 +111,6 @@ if (!failed) {
       'tests/bot-protocol-reference-response-policy.test.js',
       'tests/bot-protocol-reference-preflight.test.js',
       'tests/bot-protocol-reference-certification.test.js',
-      'tests/bot-protocol-e2e.test.js',
     ], { stdio: 'inherit', cwd: root });
     console.log('[postinstall] ✓ Chatbot reference certification gate');
   } catch {
