@@ -3,8 +3,22 @@ name: Bot Protocol Validation
 on:
   pull_request:
     branches: [main]
+    paths:
+      - 'lib/bot-*.js'
+      - 'server-protocol.js'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/bot-protocol-validation.yml'
   push:
     branches: [main]
+    paths:
+      - 'lib/bot-*.js'
+      - 'server-protocol.js'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/bot-protocol-validation.yml'
   workflow_dispatch:
 
 permissions:

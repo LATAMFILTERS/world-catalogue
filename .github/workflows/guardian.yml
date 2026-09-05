@@ -5,6 +5,13 @@ on:
     branches: [main]
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: repository-guardian-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   # ── Job 1: PR Type Check ──────────────────────────────────────────────────
   pr-type:
