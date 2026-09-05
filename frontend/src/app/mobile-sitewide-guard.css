@@ -1,0 +1,145 @@
+/*
+ * Sitewide mobile safety net.
+ *
+ * This file is intentionally imported after the authored responsive layers.
+ * It addresses layout primitives shared by parent, child and dynamic detail
+ * routes without changing the desktop composition.
+ */
+
+@media (max-width: 860px) {
+  main,
+  main > section,
+  main > header,
+  main > article,
+  main aside {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Remaining desktop editorial split patterns found in route templates. */
+  main [style*="grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr)"],
+  main [style*="grid-template-columns: minmax(0,1.2fr) minmax(280px,0.8fr)"],
+  main [style*="grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr)"],
+  main [style*="grid-template-columns: minmax(0,0.82fr) minmax(0,1.18fr)"],
+  main [style*="grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr)"],
+  main [style*="grid-template-columns: minmax(0,0.85fr) minmax(0,1.15fr)"],
+  main [style*="grid-template-columns: 1fr auto"],
+  main [style*="grid-template-columns: auto 1fr"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: clamp(1.5rem, 5vw, 2.5rem) !important;
+  }
+
+  /* Sticky editorial headings are useful on desktop but not on a phone. */
+  main [style*="position: sticky"][style*="top: 7rem"],
+  main [style*="position:sticky"][style*="top:7rem"] {
+    position: static !important;
+    top: auto !important;
+  }
+
+  /* Technical content must stay inside the viewport. */
+  main table {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  main pre {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  main input,
+  main select,
+  main textarea,
+  main button {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 640px) {
+  /*
+   * Final phone fallback for inline desktop grids used by dynamic route
+   * templates. Class-based layouts keep their own authored responsive CSS.
+   */
+  main div[style*="display: grid"][style*="grid-template-columns"],
+  main div[style*="display:grid"][style*="grid-template-columns"],
+  main section[style*="display: grid"][style*="grid-template-columns"],
+  main section[style*="display:grid"][style*="grid-template-columns"],
+  main article[style*="display: grid"][style*="grid-template-columns"],
+  main article[style*="display:grid"][style*="grid-template-columns"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Remove hard minimums that can exceed the usable phone content width. */
+  main [style*="min-width: 340px"],
+  main [style*="min-width:340px"],
+  main [style*="min-width: 320px"],
+  main [style*="min-width:320px"],
+  main [style*="min-width: 300px"],
+  main [style*="min-width:300px"],
+  main [style*="min-width: 280px"],
+  main [style*="min-width:280px"] {
+    min-width: 0 !important;
+  }
+
+  /* Preserve nowrap only inside intentionally scrollable comparison tables. */
+  main :not(th)[style*="white-space: nowrap"],
+  main :not(th)[style*="white-space:nowrap"] {
+    white-space: normal !important;
+  }
+}
+
+/*
+ * Footer sits outside <main>, so the earlier main-scoped responsive rules do
+ * not reach it. The six-column desktop footer must collapse independently.
+ */
+@media (max-width: 900px) {
+  footer {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  footer .footer-main-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  footer > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  footer .footer-main-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+  }
+
+  footer [style*="gap: 48px"][style*="justify-content: center"],
+  footer [style*="gap:48px"][style*="justify-content:center"] {
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  footer [style*="white-space: nowrap"],
+  footer [style*="white-space:nowrap"] {
+    white-space: normal !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+
+  footer img {
+    max-width: 100%;
+    height: auto;
+  }
+}
