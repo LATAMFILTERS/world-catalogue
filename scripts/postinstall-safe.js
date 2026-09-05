@@ -38,7 +38,10 @@ const checks = [
   'lib/catalog-application-write-service.js',
   'scripts/migrations/run_077_application_evidence_governance.js',
   'lib/bot-protocol-reference-response-policy.js',
+  'lib/bot-protocol-reference-preflight.js',
   'lib/bot-protocol-guardrails.js',
+  'lib/bot-protocol.js',
+  'lib/bot-protocol-web-adapter.js',
 ];
 
 let failed = false;
@@ -106,6 +109,7 @@ if (!failed) {
       '--test',
       'tests/bot-protocol-guardrails.test.js',
       'tests/bot-protocol-reference-response-policy.test.js',
+      'tests/bot-protocol-reference-preflight.test.js',
       'tests/bot-protocol-reference-certification.test.js',
       'tests/bot-protocol-e2e.test.js',
     ], { stdio: 'inherit', cwd: root });
