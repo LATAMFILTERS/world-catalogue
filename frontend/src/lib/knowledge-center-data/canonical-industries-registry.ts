@@ -4,6 +4,21 @@ const LEGACY_SLUG_MAP: Record<string, string> = {
   'truck-fleets': 'trucks-fleets',
 };
 
+const INDUSTRY_TECHNICAL_CODES: Record<string, string> = {
+  mining: 'IND-MIN',
+  construction: 'IND-CON',
+  agriculture: 'IND-AGR',
+  'trucks-fleets': 'IND-FLT',
+  marine: 'IND-MAR',
+  'oil-gas': 'IND-O&G',
+  manufacturing: 'IND-MFG',
+  'power-generation': 'IND-PWR',
+  railway: 'IND-RAL',
+  'waste-municipal': 'IND-MUN',
+  'bus-coach': 'IND-BUS',
+  automotive: 'IND-LD',
+};
+
 const INDUSTRY_OVERRIDES: Record<string, { title?: string; description?: string }> = {
   'trucks-fleets': {
     title: 'Commercial Truck Fleets',
@@ -24,6 +39,7 @@ const canonicalLegacyIndustries = LEGACY_INDUSTRIES.map((industry) => {
   return {
     ...industry,
     slug,
+    icon: INDUSTRY_TECHNICAL_CODES[slug] ?? 'IND',
     title: override.title ?? industry.title,
     description: override.description ?? industry.description,
   };
@@ -33,14 +49,14 @@ const ADDITIONAL_CANONICAL_INDUSTRIES = [
   {
     slug: 'bus-coach',
     title: 'Bus & Coach',
-    icon: '🚌',
+    icon: INDUSTRY_TECHNICAL_CODES['bus-coach'],
     dust: 'Moderate',
     description: 'Passenger-fleet filtration for urban transit, intercity coaches, school buses and shuttle fleets operating through stop-and-go duty, continuous HVAC demand and scheduled depot maintenance.',
   },
   {
     slug: 'automotive',
     title: 'Automotive & Light Duty',
-    icon: '🚗',
+    icon: INDUSTRY_TECHNICAL_CODES.automotive,
     dust: 'Moderate',
     description: 'Passenger-vehicle and light-duty filtration for urban, highway and fleet service requiring accurate vehicle, engine, model-year and protected-system identification.',
   },
