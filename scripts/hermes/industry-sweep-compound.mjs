@@ -161,7 +161,7 @@ async function searchBatch(mission, domainBatch, apiKey, fetchImpl = globalThis.
   let toolCalls = 0;
 
   for (const domain of domainBatch) {
-    const topicGroups = chunks(domain.topics, MAX_TOPICS_PER_REQUEST);
+    const topicGroups = [domain.topics];
     for (const topics of topicGroups) {
       try {
         const result = await searchTopicsAdaptive(mission, domain, topics, apiKey, fetchImpl);
