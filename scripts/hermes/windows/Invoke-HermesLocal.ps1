@@ -59,7 +59,7 @@ function Invoke-LimitedProcess {
   $quotedArguments = @($Arguments | ForEach-Object { "'" + ([string]$_).Replace("'","''") + "'" })
   $quotedExitFile = "'" + $exitFile.Replace("'","''") + "'"
   $wrapperBody = @(
-    "$ErrorActionPreference = 'Continue'"
+    '$ErrorActionPreference = ''Continue'''
     "& $quotedFile $($quotedArguments -join ' ')"
     '$childExit = $LASTEXITCODE'
     'if ($null -eq $childExit) { $childExit = 1 }'
