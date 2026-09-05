@@ -50,23 +50,41 @@ function Invoke-LimitedProcess {
     [string[]]$Arguments,
     [int]$TimeoutMinutes
   )
-  $stdout = Join-Path $env:TEMP ('hermes-{0}-{1}.out' -f $PID, [guid]::NewGuid().ToString('N'))
-  $stderr = Join-Path $env:TEMP ('hermes-{0}-{1}.err' -f $PID, [guid]::NewGuid().ToString('N'))
-  Write-Log "START $Name (timeout ${TimeoutMinutes}m)"
+  $id = [guid]::NewGuid().ToString('N')
+  $stdout = Join-Path $env:TEMP ("hermes-$PID-$id.out")
+  $stderr = Join-Path $env:TEMP ("hermes-$PID-$id.err")
+  $exitFile = Join-Path $env:TEMP ("hermes-$PID-$id.exit")
+  $wrapper = Join-Path $env:TEMP ("hermes-$PID-$id.ps1")
+  $quotedFile = "'" + $FilePath.Replace("'","''") + "'"
+  $quotedArguments = @($Arguments | ForEach-Object { "'" + ([string]$_).Replace("'","''") + "'" })
+  $quotedExitFile = "'" + $exitFile.Replace("'","''") + "'"
+  $wrapperBody = @(
+    "$ErrorActionPreference = 'Continue'"
+    "& $quotedFile $($quotedArguments -join ' ')"
+    '$childExit = $LASTEXITCODE'
+    'if ($null -eq $childExit) { $childExit = 1 }'
+    ("[IO.File]::WriteAllText(" + $quotedExitFile + ', [string]$childExit)')
+    'exit $childExit'
+  ) -join [Environment]::NewLine
+  [IO.File]::WriteAllText($wrapper, $wrapperBody, [Text.UTF8Encoding]::new($false))
+
+  Write-Log "START $Name (timeout $($TimeoutMinutes)m)"
   try {
-    $process = Start-Process -FilePath $FilePath -ArgumentList $Arguments -WorkingDirectory $RepoRoot -NoNewWindow -PassThru -RedirectStandardOutput $stdout -RedirectStandardError $stderr
+    $powerShell = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
+    $process = Start-Process -FilePath $powerShell -ArgumentList @('-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass','-File',$wrapper) -WorkingDirectory $RepoRoot -NoNewWindow -PassThru -RedirectStandardOutput $stdout -RedirectStandardError $stderr
     if (-not $process.WaitForExit($TimeoutMinutes * 60000)) {
-      $process.Kill()
-      $process.WaitForExit()
+      & taskkill.exe /PID $process.Id /T /F | Out-Null
       Write-Log "TIMEOUT $Name"
       return $false
     }
-    # Complete redirected stream handling before reading ExitCode on Windows PowerShell 5.1.
     $process.WaitForExit()
-    $process.Refresh()
-    $exitCode = $process.ExitCode
     if (Test-Path $stdout) { Get-Content $stdout | ForEach-Object { Write-Log "[$Name] $_" } }
     if (Test-Path $stderr) { Get-Content $stderr | ForEach-Object { Write-Log "[$Name] $_" } }
+    if (-not (Test-Path $exitFile)) {
+      Write-Log "FAILED $Name no exit status was produced"
+      return $false
+    }
+    $exitCode = [int]([IO.File]::ReadAllText($exitFile))
     if ($exitCode -ne 0) {
       Write-Log "FAILED $Name exit=$exitCode"
       return $false
@@ -79,7 +97,7 @@ function Invoke-LimitedProcess {
     return $false
   }
   finally {
-    Remove-Item $stdout,$stderr -Force -ErrorAction SilentlyContinue
+    Remove-Item $stdout,$stderr,$exitFile,$wrapper -Force -ErrorAction SilentlyContinue
   }
 }
 
