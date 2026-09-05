@@ -61,10 +61,14 @@ function Invoke-LimitedProcess {
       Write-Log "TIMEOUT $Name"
       return $false
     }
+    # Complete redirected stream handling before reading ExitCode on Windows PowerShell 5.1.
+    $process.WaitForExit()
+    $process.Refresh()
+    $exitCode = $process.ExitCode
     if (Test-Path $stdout) { Get-Content $stdout | ForEach-Object { Write-Log "[$Name] $_" } }
     if (Test-Path $stderr) { Get-Content $stderr | ForEach-Object { Write-Log "[$Name] $_" } }
-    if ($process.ExitCode -ne 0) {
-      Write-Log "FAILED $Name exit=$($process.ExitCode)"
+    if ($exitCode -ne 0) {
+      Write-Log "FAILED $Name exit=$exitCode"
       return $false
     }
     Write-Log "SUCCESS $Name"
