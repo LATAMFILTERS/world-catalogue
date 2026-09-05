@@ -13,6 +13,9 @@ const MISSION_PATH = path.resolve(process.env.HERMES_MISSION_PATH || 'hermes/con
 const BATCH_SIZE = Math.max(1, Number(process.env.HERMES_SWEEP_DOMAIN_BATCH || 3));
 const TIMEOUT_MS = Number(process.env.HERMES_RESEARCH_TIMEOUT_MS || 25000);
 const MAX_EVIDENCE_CHARS = Number(process.env.HERMES_RESEARCH_MAX_EVIDENCE_CHARS || 16000);
+const MAX_TOPICS_PER_REQUEST = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_TOPICS_PER_REQUEST || 4));
+const MAX_COMPLETION_TOKENS = Math.max(600, Number(process.env.HERMES_SWEEP_MAX_COMPLETION_TOKENS || 1800));
+const MAX_FINDINGS_PER_DOMAIN = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN || 3));
 
 const sha256 = (value) => crypto.createHash('sha256').update(String(value)).digest('hex');
 const plain = (html) => String(html).replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/\s+/g, ' ').trim();
@@ -86,53 +89,104 @@ async function fetchEvidence(url, fetchImpl = globalThis.fetch) {
 }
 
 function sweepPrompt(mission, domainBatch) {
-  const domains = domainBatch.map((d) => ({ id: d.id, label: d.label, topics: d.topics }));
-  return `You are HERMES, ELIMFILTERS' continuous industrial filtration intelligence system. Use Groq Compound live web search and website visiting. Your mission is not to follow a fixed list of companies; it is to sweep the complete ecosystem surrounding engine, vehicle, equipment and industrial filtration.
+  const domains = domainBatch.map((domain) => ({
+    id: domain.id,
+    label: domain.label,
+    topics: domain.topics
+  }));
+  return `You are HERMES, ELIMFILTERS' industrial filtration intelligence researcher. Use live web search and website visiting.
 
 MISSION
 ${mission.mission}
 
-DOMAINS FOR THIS SEARCH BATCH
+SEARCH SCOPE
 ${JSON.stringify(domains)}
 
-SEARCH REQUIREMENTS
-1. Search globally for material developments published or materially updated during the last ${mission.lookback_days} days. Search every domain in this batch; do not ignore a domain merely because the first query has few results.
-2. Cover OEMs, engine manufacturers, equipment manufacturers, aftermarket filtration, filter manufacturers, filter paper/media/material manufacturers, component suppliers, standards bodies, technical institutions and recognized technical publications.
-3. Capture developments involving filters, engines, applications, equipment, filter media, particle/solid mechanics, fluid mechanics, fuels, lubricants, coolants, hydraulic fluids, contamination, emissions/environment, electric/hybrid vehicles, fuel cells, thermal management, reliability and maintenance whenever relevant to ELIMFILTERS' asset-protection knowledge.
-4. Prefer primary official evidence. A secondary source is acceptable only when strong and technically verifiable.
-5. Ignore generic corporate publicity with no filtration/engine/fluid/material/application relevance.
-6. Never invent part numbers, cross references, specifications, compatibility, dates, standards or technical claims.
-7. For EACH technically relevant finding, also search ELIMFILTERS public Knowledge Center / knowledge-system pages. Decide whether the topic is absent (CREATE_NEW), already exists but the new evidence materially adds/corrects/refreshes it (UPDATE_REINFORCE), is already fully covered with no material addition (NO_MATERIAL_CHANGE), or should remain internal (INTERNAL_ONLY).
-8. Do not create duplicate knowledge merely because a new source reports the same established fact. Prefer UPDATE_REINFORCE when existing knowledge can be improved.
-9. Preserve source/competitor identity only as internal provenance. public_safe_fact and proposed_action must be neutral, non-proprietary ELIMFILTERS technical language without competitor promotion.
-10. Every finding must be independently useful: a concrete news item, technical development, catalogue/application addition, standard/regulation change, material/media development, engine/equipment change or validated industry development.
+Find only concrete, verifiable developments from the last ${mission.lookback_days} days. Use the supplied topics as search terms. Cover:
+A. Current products, engines, equipment, applications, fluids or manufacturing changes.
+B. Technical materials, performance, testing, standards, regulation or research.
+C. The ELIMFILTERS knowledge gap: CREATE_NEW, UPDATE_REINFORCE, NO_MATERIAL_CHANGE or INTERNAL_ONLY.
 
-Return strict JSON only with shape:
-{"findings":[{"domain_id":"one supplied domain id","finding_type":"OEM|AFTERMARKET|FILTER_MEDIA|MATERIALS_COMPONENTS|STANDARD|TECHNICAL|ENVIRONMENT|EV_POWERTRAIN|FUELS_LUBRICANTS|INDUSTRY","finding_title":"specific item","evidence_url":"absolute URL","source_publisher":"publisher","source_type":"PRIMARY|SECONDARY_VERIFIED","published_at":"ISO date or null","technical_facts":["specific verifiable fact"],"affected_entities":["entity"],"destination":"CATALOGUE|KNOWLEDGE_CENTER|TECHNICAL_INTELLIGENCE|TECHNOLOGY_WATCH|STANDARDS|OEM_APPLICATION_INTELLIGENCE|INTERNAL_ONLY","knowledge_action":"CREATE_NEW|UPDATE_REINFORCE|NO_MATERIAL_CHANGE|INTERNAL_ONLY","existing_elimfilters_url":"URL if found else null","relevance":"why this matters to ELIMFILTERS","public_safe_fact":"neutral reusable technical fact","proposed_action":"specific action Victor can approve/reject","content_channels":["BLOG|WEEKLY_PODCAST|NEWSLETTER|SOCIAL|CUSTOMER_EMAIL|SALES_INTELLIGENCE"],"confidence":0.0}]}
+Prefer primary evidence. Reject generic marketing and vague commentary. Never invent facts, dates, specifications, applications, standards or URLs. Competitor identity is internal provenance only; public wording must be neutral. Returning zero findings is correct.
 
-Return no more than ${mission.max_findings_per_group * domainBatch.length} findings. If a domain has no material verified development, return none for that domain rather than inventing one.`;
+Return strict JSON:
+{"findings":[{"domain_id":"supplied id","finding_type":"OEM|AFTERMARKET|FILTER_MEDIA|MATERIALS_COMPONENTS|STANDARD|TECHNICAL|ENVIRONMENT|EV_POWERTRAIN|FUELS_LUBRICANTS|INDUSTRY","finding_title":"specific item","evidence_url":"absolute URL","source_publisher":"publisher","source_type":"PRIMARY|SECONDARY_VERIFIED","published_at":"ISO date or null","technical_facts":["verified fact"],"affected_entities":["entity"],"destination":"CATALOGUE|KNOWLEDGE_CENTER|TECHNICAL_INTELLIGENCE|TECHNOLOGY_WATCH|STANDARDS|OEM_APPLICATION_INTELLIGENCE|INTERNAL_ONLY","knowledge_action":"CREATE_NEW|UPDATE_REINFORCE|NO_MATERIAL_CHANGE|INTERNAL_ONLY","existing_elimfilters_url":"URL or null","relevance":"ELIMFILTERS relevance","public_safe_fact":"neutral reusable fact","proposed_action":"specific review proposal for Victor","content_channels":["BLOG|WEEKLY_PODCAST|NEWSLETTER|SOCIAL|CUSTOMER_EMAIL|SALES_INTELLIGENCE"],"confidence":0.0}]}
+
+Return at most ${MAX_FINDINGS_PER_DOMAIN} highest-value findings for this request.`;
 }
 
-async function searchBatch(mission, domainBatch, apiKey, fetchImpl = globalThis.fetch) {
+async function searchSegment(mission, domainBatch, apiKey, fetchImpl = globalThis.fetch) {
   const response = await fetchImpl(ENDPOINT, {
     method: 'POST',
     headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'Groq-Model-Version': 'latest' },
     body: JSON.stringify({
       model: MODEL,
       temperature: 0,
+      max_completion_tokens: MAX_COMPLETION_TOKENS,
       response_format: { type: 'json_object' },
       messages: [
         { role: 'system', content: sweepPrompt(mission, domainBatch) },
-        { role: 'user', content: 'Run the industry sweep now. Search all supplied domains and return only verified, material developments.' }
+        { role: 'user', content: 'Search this narrow scope now and return only verified, material developments.' }
       ]
     })
   });
-  if (!response.ok) throw new Error(`Groq HTTP ${response.status}: ${(await response.text()).slice(0, 400)}`);
+  if (!response.ok) {
+    const error = new Error(`Groq HTTP ${response.status}: ${(await response.text()).slice(0, 400)}`);
+    error.status = response.status;
+    throw error;
+  }
   const payload = await response.json();
   const content = payload?.choices?.[0]?.message?.content;
   if (!content) throw new Error('Groq returned no content');
   const parsed = JSON.parse(stripFence(content));
   return { findings: Array.isArray(parsed.findings) ? parsed.findings : [], tool_calls: payload?.choices?.[0]?.message?.executed_tools?.length || 0 };
+}
+
+async function searchTopicsAdaptive(mission, domain, topics, apiKey, fetchImpl) {
+  try {
+    return await searchSegment(mission, [{ ...domain, topics }], apiKey, fetchImpl);
+  } catch (error) {
+    if (error?.status !== 413 || topics.length <= 1) throw error;
+    const midpoint = Math.ceil(topics.length / 2);
+    console.warn(`[HERMES industry sweep] HTTP 413 domain=${domain.id} topics=${topics.length}; splitting into ${midpoint}+${topics.length - midpoint}`);
+    const left = await searchTopicsAdaptive(mission, domain, topics.slice(0, midpoint), apiKey, fetchImpl);
+    const right = await searchTopicsAdaptive(mission, domain, topics.slice(midpoint), apiKey, fetchImpl);
+    return { findings: [...left.findings, ...right.findings], tool_calls: left.tool_calls + right.tool_calls };
+  }
+}
+
+async function searchBatch(mission, domainBatch, apiKey, fetchImpl = globalThis.fetch) {
+  const findings = [];
+  const partialErrors = [];
+  let toolCalls = 0;
+
+  for (const domain of domainBatch) {
+    const topicGroups = chunks(domain.topics, MAX_TOPICS_PER_REQUEST);
+    for (const topics of topicGroups) {
+      try {
+        const result = await searchTopicsAdaptive(mission, domain, topics, apiKey, fetchImpl);
+        findings.push(...result.findings);
+        toolCalls += result.tool_calls;
+      } catch (error) {
+        if (error?.code === 'HERMES_QUOTA_EXHAUSTED') throw error;
+        partialErrors.push({ domain_id: domain.id, topics, error: String(error?.message || error) });
+      }
+    }
+  }
+
+  const seen = new Set();
+  const deduplicated = findings.filter((finding) => {
+    const key = `${finding?.evidence_url || ''}|${finding?.finding_title || ''}`.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
+  return {
+    findings: deduplicated.slice(0, MAX_FINDINGS_PER_DOMAIN * domainBatch.length),
+    tool_calls: toolCalls,
+    partial_errors: partialErrors
+  };
 }
 
 function existingSignatures(dir) {
@@ -278,6 +332,14 @@ export async function runIndustrySweep({ apiKey = process.env.GROQ_API_KEY, fetc
       signatures.urls.add(normalizedUrl);
       signatures.keys.add(candidate.deduplication_key);
       summary.created += 1;
+    }
+
+    if (search.partial_errors?.length) {
+      summary.failed_batches += 1;
+      summary.failures.push({
+        domains: domainBatch.map((domain) => domain.id),
+        error: `PARTIAL_SEGMENT_FAILURES_${search.partial_errors.length}: ${search.partial_errors.map((item) => item.error).join(' | ').slice(0, 800)}`
+      });
     }
   }
 
