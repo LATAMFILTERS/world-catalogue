@@ -76,3 +76,36 @@ test('industry sweep creates one verified candidate and suppresses repeated evid
   assert.equal(candidate.research_resolution.knowledge_action, 'UPDATE_REINFORCE');
   assert.equal(candidate.research_resolution.destination, 'KNOWLEDGE_CENTER');
 });
+
+test('industry sweep splits an oversized 413 domain request and preserves the recovered batch', async () => {
+  const outputDir = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-sweep-413-'));
+  let groqCalls = 0;
+  let injected413 = false;
+
+  const fakeFetch = async (url) => {
+    if (String(url).includes('api.groq.com')) {
+      groqCalls += 1;
+      if (!injected413) {
+        injected413 = true;
+        return {
+          ok: false,
+          status: 413,
+          text: async () => JSON.stringify({ error: { code: 'request_too_large' } })
+        };
+      }
+      return {
+        ok: true,
+        status: 200,
+        json: async () => ({ choices: [{ message: { content: JSON.stringify({ findings: [] }), executed_tools: [] } }] })
+      };
+    }
+    throw new Error('evidence fetch should not run for an empty finding set');
+  };
+
+  const summary = await runIndustrySweep({ apiKey: 'test-key', fetchImpl: fakeFetch, outputDir });
+
+  assert.equal(summary.failed_batches, 0);
+  assert.equal(summary.quota_exhausted, false);
+  assert.equal(summary.created, 0);
+  assert.equal(groqCalls, mission.domains.length + 2, 'one rejected request is replaced by two narrower requests');
+});
