@@ -112,6 +112,9 @@ $script:LogFile = Join-Path $LogRoot ('hermes-{0}-{1}.log' -f (Get-Date -Format 
 Get-ChildItem $LogRoot -Filter 'hermes-*.log' -File -ErrorAction SilentlyContinue | Where-Object LastWriteTime -lt (Get-Date).AddDays(-30) | Remove-Item -Force -ErrorAction SilentlyContinue
 
 $lockPath = Join-Path $StateRoot 'hermes.lock'
+$pendingPath = Join-Path $StateRoot 'recovery-pending.json'
+$cycle = Get-CycleId
+$attempt = 0
 $lock = $null
 try {
   try { $lock = [IO.File]::Open($lockPath, 'OpenOrCreate', 'ReadWrite', 'None') }
@@ -127,18 +130,14 @@ try {
   $python = (Get-Command python.exe -ErrorAction Stop).Source
   if (-not (Test-Path $npm) -or -not (Test-Path $node)) { throw 'Node.js 20 was not found in C:\Program Files\nodejs.' }
 
-  $pendingPath = Join-Path $StateRoot 'recovery-pending.json'
-  $cycle = Get-CycleId
   $sentPath = Join-Path $StateRoot ("weekly-$cycle.sent.json")
   if ($Mode -eq 'Weekly' -and (Test-Path $sentPath)) { Write-Log "SKIPPED weekly email already sent for cycle $cycle"; exit 0 }
   if ($Mode -eq 'Recovery' -and -not (Test-Path $pendingPath)) { Write-Log 'SKIPPED no recovery is pending'; exit 0 }
 
-  $attempt = 0
   if ($Mode -eq 'Recovery') {
     $pending = Get-Content $pendingPath -Raw | ConvertFrom-Json
-    $attempt = [int]$pending.attempts
-    if ($attempt -ge 4) { Write-Log 'SKIPPED recovery limit of 4 attempts reached'; exit 0 }
-    $attempt++
+    $attempt = [int]$pending.attempts + 1
+    Write-Log "RECOVERY attempt=$attempt; pending state retained until pipeline and email both succeed"
   }
 
   $vault = Import-Clixml $VaultPath
@@ -153,7 +152,20 @@ try {
   $env:HERMES_COLLECTION_DRY_RUN = 'true'
   $env:HERMES_BASELINE_MODE = 'false'
   $env:HERMES_MAX_SOURCES_PER_RUN = '35'
+
+  # Research keeps the full Compound model. Industry sweep has an independent,
+  # lower-pressure model and request matrix so broad monitoring cannot starve research.
   $env:HERMES_GROQ_MODEL = 'groq/compound'
+  $env:HERMES_SWEEP_MODEL = 'groq/compound-mini'
+  $env:HERMES_SWEEP_DOMAIN_BATCH = '1'
+  $env:HERMES_SWEEP_MAX_TOPICS_PER_REQUEST = '4'
+  $env:HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN = '2'
+  $env:HERMES_SWEEP_MAX_RETRIES = '2'
+  $env:HERMES_SWEEP_MIN_INTERVAL_MS = '75000'
+  $env:HERMES_SWEEP_MIN_429_BACKOFF_MS = '30000'
+  $env:HERMES_SWEEP_BACKOFF_MS = '30000'
+  $env:HERMES_SWEEP_MAX_BACKOFF_MS = '120000'
+  $env:HERMES_GROQ_TPD_FALLBACK = 'true'
 
   if ($Mode -ne 'Test') {
     $reportDate = Get-Date -Format 'yyyy-MM-dd'
@@ -220,11 +232,21 @@ try {
   exit 1
 }
 catch {
-  Write-Log "FATAL $($_.Exception.Message)"
+  $fatalMessage = $_.Exception.Message
+  Write-Log "FATAL $fatalMessage"
+  if ($Mode -ne 'Test') {
+    try {
+      @{ cycle=$cycle; attempts=$attempt; updatedAt=(Get-Date).ToUniversalTime().ToString('o'); failed=@("fatal:$fatalMessage") } | ConvertTo-Json | Set-Content $pendingPath -Encoding UTF8
+      Write-Log "RECOVERY PENDING persisted after fatal error attempt=$attempt"
+    }
+    catch {
+      Write-Log "FAILED to persist recovery state after fatal error: $($_.Exception.Message)"
+    }
+  }
   exit 1
 }
 finally {
   $env:HERMES_EMAIL_LIVE = 'false'
-  foreach ($name in 'GROQ_API_KEY','AZURE_CLIENT_ID','AZURE_TENANT_ID','AZURE_CLIENT_SECRET','HERMES_SENDER_EMAIL','HERMES_REVIEW_EMAIL') { Remove-Item "Env:$name" -ErrorAction SilentlyContinue }
+  foreach ($name in 'GROQ_API_KEY','AZURE_CLIENT_ID','AZURE_TENANT_ID','AZURE_CLIENT_SECRET','HERMES_SENDER_EMAIL','HERMES_REVIEW_EMAIL','HERMES_SWEEP_MODEL','HERMES_SWEEP_DOMAIN_BATCH','HERMES_SWEEP_MAX_TOPICS_PER_REQUEST','HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN','HERMES_SWEEP_MAX_RETRIES','HERMES_SWEEP_MIN_INTERVAL_MS','HERMES_SWEEP_MIN_429_BACKOFF_MS','HERMES_SWEEP_BACKOFF_MS','HERMES_SWEEP_MAX_BACKOFF_MS') { Remove-Item "Env:$name" -ErrorAction SilentlyContinue }
   if ($null -ne $lock) { $lock.Dispose() }
 }
