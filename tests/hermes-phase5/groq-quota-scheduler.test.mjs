@@ -94,8 +94,11 @@ test('repeated 429 is capped at three total calls per domain', async () => {
   // floor) and the base inter-request pacing wait (MIN_GROQ_INTERVAL_MS,
   // currently 70s — see industry-sweep-reliable.mjs for why it is this
   // large). Two of each, four sleeps total.
-  assert.equal(sleeps.filter((ms) => ms >= 10000 && ms < 70000).length, 2);
-  assert.equal(sleeps.filter((ms) => ms >= 70000).length, 2);
+  // Date.now() advances while the mocked sleeper returns immediately, so a
+  // nominal 70s pacing wait can be observed as 69,999ms. Use a safe boundary
+  // well above retry backoff (<=21.5s) and below inter-request pacing (~70s).
+  assert.equal(sleeps.filter((ms) => ms >= 10000 && ms < 60000).length, 2);
+  assert.equal(sleeps.filter((ms) => ms >= 60000).length, 2);
 });
 
 test('successful low-token response triggers proactive pacing before next Groq call', async () => {
