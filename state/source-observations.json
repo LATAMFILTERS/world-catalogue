@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at": "2026-09-05T04:41:54.575Z",
+  "sources": {
+    "volvo_trucks__news": {
+      "endpoint_id": "volvo_trucks__news",
+      "first_harvested_at": "2026-09-05T04:41:49.093Z",
+      "last_harvested_at": "2026-09-05T04:41:49.093Z",
+      "last_harvested_hash": "faddc6428baadfc991cd2dc07c488a3298974cd2ad14417c4619e1d8d9797bf2",
+      "harvest_count": 1
+    },
+    "komatsu__newsroom": {
+      "endpoint_id": "komatsu__newsroom",
+      "first_harvested_at": "2026-09-05T04:41:49.939Z",
+      "last_harvested_at": "2026-09-05T04:41:49.939Z",
+      "last_harvested_hash": "fbfcde0104f16cc188889174458c7148b1d4324989e5750337d93a64b4169f87",
+      "harvest_count": 1
+    },
+    "donaldson__news": {
+      "endpoint_id": "donaldson__news",
+      "first_harvested_at": "2026-09-05T04:41:50.665Z",
+      "last_harvested_at": "2026-09-05T04:41:50.665Z",
+      "last_harvested_hash": "80dbe483f43cba9940d335070cfc1d9c8501c5ad69565ed81e3cba7c7f2db961",
+      "harvest_count": 1
+    },
+    "mann_hummel__newsroom": {
+      "endpoint_id": "mann_hummel__newsroom",
+      "first_harvested_at": "2026-09-05T04:41:50.900Z",
+      "last_harvested_at": "2026-09-05T04:41:50.900Z",
+      "last_harvested_hash": "5cbb125c989f431b1eff1c4d8cbc53aea7694fa6f2eca29801f15085459e9735",
+      "harvest_count": 1
+    },
+    "mahle__press_releases": {
+      "endpoint_id": "mahle__press_releases",
+      "first_harvested_at": "2026-09-05T04:41:51.845Z",
+      "last_harvested_at": "2026-09-05T04:41:51.845Z",
+      "last_harvested_hash": "10278179883dac28fa1fe3f173662a6c0b0e74edfbf40a0a49155b2257900329",
+      "harvest_count": 1
+    },
+    "nfpa__news": {
+      "endpoint_id": "nfpa__news",
+      "first_harvested_at": "2026-09-05T04:41:52.082Z",
+      "last_harvested_at": "2026-09-05T04:41:52.082Z",
+      "last_harvested_hash": "73d02845f3fb38e8a785a284178994792224a57efd3a3daa7537a42fffed1734",
+      "harvest_count": 1
+    },
+    "ahlstrom__newsroom": {
+      "endpoint_id": "ahlstrom__newsroom",
+      "first_harvested_at": "2026-09-05T04:41:52.439Z",
+      "last_harvested_at": "2026-09-05T04:41:52.439Z",
+      "last_harvested_hash": "eaf5a80c0f2fa8bec67ab5ecdd92beafc1db88a29711add4ac858e00335f89e9",
+      "harvest_count": 1
+    },
+    "hollingsworth_vose__newsroom": {
+      "endpoint_id": "hollingsworth_vose__newsroom",
+      "first_harvested_at": "2026-09-05T04:41:52.742Z",
+      "last_harvested_at": "2026-09-05T04:41:52.742Z",
+      "last_harvested_hash": "9b2663f7f05347259233552bc5fa91a498e6c9c491bdb5b15c91a2f28e7f8c25",
+      "harvest_count": 1
+    },
+    "freudenberg_filtration__newsroom": {
+      "endpoint_id": "freudenberg_filtration__newsroom",
+      "first_harvested_at": "2026-09-05T04:41:53.531Z",
+      "last_harvested_at": "2026-09-05T04:41:53.531Z",
+      "last_harvested_hash": "b1204876f142e373953e266bef716da160d64ef3c1b8e392b7848c4e9656e40b",
+      "harvest_count": 1
+    },
+    "hydraulics_pneumatics__news": {
+      "endpoint_id": "hydraulics_pneumatics__news",
+      "first_harvested_at": "2026-09-05T04:41:54.575Z",
+      "last_harvested_at": "2026-09-05T04:41:54.575Z",
+      "last_harvested_hash": "aaac0c54bafdc6fdc621e390df31d85546c288c333b1fe3a448b99c364e5a8c6",
+      "harvest_count": 1
+    }
+  }
+}
