@@ -37,6 +37,8 @@ const checks = [
   'lib/catalog-application-governance.js',
   'lib/catalog-application-write-service.js',
   'scripts/migrations/run_077_application_evidence_governance.js',
+  'lib/bot-protocol-reference-response-policy.js',
+  'lib/bot-protocol-guardrails.js',
 ];
 
 let failed = false;
@@ -93,6 +95,23 @@ if (!failed) {
     console.log('[postinstall] ✓ Catalog governance regressions');
   } catch {
     console.error('[postinstall] ✗ Catalog governance regressions failed');
+    failed = true;
+  }
+}
+
+if (!failed) {
+  try {
+    console.log('[postinstall] ⟳ Running mandatory chatbot reference certification gate...');
+    execFileSync(process.execPath, [
+      '--test',
+      'tests/bot-protocol-guardrails.test.js',
+      'tests/bot-protocol-reference-response-policy.test.js',
+      'tests/bot-protocol-reference-certification.test.js',
+      'tests/bot-protocol-e2e.test.js',
+    ], { stdio: 'inherit', cwd: root });
+    console.log('[postinstall] ✓ Chatbot reference certification gate');
+  } catch {
+    console.error('[postinstall] ✗ Chatbot reference certification gate failed');
     failed = true;
   }
 }
