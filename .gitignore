@@ -69,3 +69,7 @@ elimfilters-vault/94-sync-log/
 hermes/industry-sweep/
 hermes/reports/source-discovery-backlog.json
 hermes/reports/source-discovery-backlog.md
+# HERMES local scheduler generated reports and previews
+hermes/reports/hermes-weekly-*.md
+hermes/reports/hermes-weekly-*.json
+hermes/reports/hermes-email-preview-*.html
