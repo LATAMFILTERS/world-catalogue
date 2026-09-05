@@ -8,13 +8,14 @@ import { pathToFileURL } from 'node:url';
 import { resolveRealCandidatesInputDir, validateCandidate } from './hermes-core.mjs';
 
 const ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
-const MODEL = process.env.HERMES_GROQ_MODEL || 'groq/compound';
+const MODEL = process.env.HERMES_SWEEP_MODEL || 'groq/compound-mini';
 const MISSION_PATH = path.resolve(process.env.HERMES_MISSION_PATH || 'hermes/config/intelligence-mission.json');
 const BATCH_SIZE = Math.max(1, Number(process.env.HERMES_SWEEP_DOMAIN_BATCH || 3));
 const TIMEOUT_MS = Number(process.env.HERMES_RESEARCH_TIMEOUT_MS || 25000);
 const MAX_EVIDENCE_CHARS = Number(process.env.HERMES_RESEARCH_MAX_EVIDENCE_CHARS || 16000);
 const MAX_COMPLETION_TOKENS = Math.max(600, Number(process.env.HERMES_SWEEP_MAX_COMPLETION_TOKENS || 1800));
 const MAX_FINDINGS_PER_DOMAIN = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN || 3));
+const MAX_TOPICS_PER_REQUEST = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_TOPICS_PER_REQUEST || 4));
 
 const sha256 = (value) => crypto.createHash('sha256').update(String(value)).digest('hex');
 const plain = (html) => String(html).replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/\s+/g, ' ').trim();
@@ -160,7 +161,7 @@ async function searchBatch(mission, domainBatch, apiKey, fetchImpl = globalThis.
   let toolCalls = 0;
 
   for (const domain of domainBatch) {
-    const topicGroups = [domain.topics];
+    const topicGroups = chunks(domain.topics, MAX_TOPICS_PER_REQUEST);
     for (const topics of topicGroups) {
       try {
         const result = await searchTopicsAdaptive(mission, domain, topics, apiKey, fetchImpl);
@@ -276,9 +277,6 @@ export async function runIndustrySweep({ apiKey = process.env.GROQ_API_KEY, fetc
   const summary = {
     mission_version: mission.schema_version, model: MODEL, domains: mission.domains.length, batches: 0,
     findings_seen: 0, created: 0, duplicates: 0, no_material_change: 0, invalid: 0, failed_batches: 0, failures: [],
-    // Batches never attempted because Groq quota was already confirmed
-    // exhausted this run — explicit accounting, distinct from a genuine
-    // per-batch failure and from "processed, zero eligible findings".
     quota_exhausted: false, quota_exhausted_reason: null, skipped_due_quota: 0, skipped_domains: []
   };
   if (!apiKey) return { ...summary, error: 'GROQ_API_KEY_MISSING' };
