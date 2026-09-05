@@ -2,6 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
   applyProtocolGuardrails,
+  applyCatalogNotFoundGuard,
   MAX_UNRESOLVED_ATTEMPTS,
   SUPPORT_EMAIL
 } = require('../lib/bot-protocol-guardrails');
@@ -61,4 +62,61 @@ test('cleans undefined and null from customer-facing answer', () => {
   assert.equal(result.answer.includes('undefined'), false);
   assert.equal(result.answer.includes('null'), false);
   assert.match(result.answer, /equipo/);
+});
+
+test('P527692 NOT_FOUND cannot publish an invented SKU or specification', () => {
+  const result = applyCatalogNotFoundGuard({
+    answer: 'P527692 corresponde al ELIMFILTERS EF99999 con 10 micras.',
+    evidence: {
+      lookup_status: 'not_found',
+      validated: false,
+      count: 0,
+      products: [],
+      references: ['P527692']
+    },
+    governance: {
+      invented_sku_blocked: true
+    }
+  }, {
+    message: 'Cuál es la equivalencia de P527692?',
+    language: 'es'
+  });
+
+  assert.equal(result.evidence.lookup_status, 'not_found');
+  assert.equal(result.evidence.validated, false);
+  assert.equal(result.evidence.count, 0);
+  assert.deepEqual(result.evidence.products, []);
+  assert.equal(result.governance.catalog_not_found_blocked, true);
+  assert.equal(result.deterministic_router.source, 'catalog_not_found_guard');
+  assert.match(result.answer, /P527692/);
+  assert.match(result.answer, /No encontré una coincidencia verificada/);
+  assert.match(result.answer, /No asignaré un SKU/);
+  assert.doesNotMatch(result.answer, /EF99999/);
+  assert.doesNotMatch(result.answer, /10 micras/);
+});
+
+test('catalog not-found guard leaves validated catalog responses unchanged', () => {
+  const payload = {
+    answer: 'Referencia confirmada: EH60950',
+    evidence: {
+      lookup_status: 'validated',
+      validated: true,
+      count: 1,
+      products: [{ sku: 'EH60950' }],
+      references: ['P170950']
+    }
+  };
+
+  assert.equal(applyCatalogNotFoundGuard(payload, { language: 'es' }), payload);
+});
+
+test('catalog not-found guard does not rewrite non-catalog diagnostic responses', () => {
+  const payload = {
+    answer: '¿Desde cuándo ocurre el problema?',
+    intent: 'diagnostic',
+    pending_field: 'duration',
+    evidence: { validated: false, count: 0, products: [] }
+  };
+
+  assert.equal(applyCatalogNotFoundGuard(payload, { language: 'es' }), payload);
 });
