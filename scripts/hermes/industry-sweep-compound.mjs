@@ -13,7 +13,6 @@ const MISSION_PATH = path.resolve(process.env.HERMES_MISSION_PATH || 'hermes/con
 const BATCH_SIZE = Math.max(1, Number(process.env.HERMES_SWEEP_DOMAIN_BATCH || 3));
 const TIMEOUT_MS = Number(process.env.HERMES_RESEARCH_TIMEOUT_MS || 25000);
 const MAX_EVIDENCE_CHARS = Number(process.env.HERMES_RESEARCH_MAX_EVIDENCE_CHARS || 16000);
-const MAX_TOPICS_PER_REQUEST = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_TOPICS_PER_REQUEST || 4));
 const MAX_COMPLETION_TOKENS = Math.max(600, Number(process.env.HERMES_SWEEP_MAX_COMPLETION_TOKENS || 1800));
 const MAX_FINDINGS_PER_DOMAIN = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN || 3));
 
