@@ -16,7 +16,8 @@ if (-not (Test-Path $node)) { throw "Node.js not found: $node" }
 $jsFiles = @(
   'scripts\hermes\industry-sweep-compound.mjs',
   'scripts\hermes\research-real-candidates-compound.mjs',
-  'scripts\hermes\industry-sweep-reliable.mjs'
+  'scripts\hermes\industry-sweep-reliable.mjs',
+  'scripts\hermes\validate-sweep-checkpoint.mjs'
 )
 
 foreach ($file in $jsFiles) {
@@ -51,7 +52,39 @@ $recoveryInfo = Get-ScheduledTaskInfo -TaskPath $TaskPath -TaskName 'HERMES Reco
 Write-Host "Scheduler credentials preserved; existing Recovery trigger left unchanged."
 Write-Host "Recovery next scheduled run: $($recoveryInfo.NextRunTime)"
 
-$pending = 'C:\ELIMSERVER\state\hermes\recovery-pending.json'
+$stateRoot = 'C:\ELIMSERVER\state\hermes'
+$pending = Join-Path $stateRoot 'recovery-pending.json'
+
+# Reconcile the control-plane pending state against the authoritative sweep checkpoint.
+# A stale pending file must never allow downstream stages to run while sweep work remains.
+if (Test-Path $pending) {
+  $pendingState = Get-Content $pending -Raw | ConvertFrom-Json
+  $cycle = [string]$pendingState.cycle
+  $sweepPath = Join-Path $stateRoot ("sweep-$cycle.json")
+
+  if (Test-Path $sweepPath) {
+    $sweepState = Get-Content $sweepPath -Raw | ConvertFrom-Json
+    $totalWork = [int]$sweepState.total_work
+    $completedCount = @($sweepState.completed_work).Count
+    $sweepComplete = ($sweepState.complete -eq $true) -and ($totalWork -gt 0) -and ($completedCount -eq $totalWork)
+
+    if (-not $sweepComplete) {
+      $reconciled = @{
+        cycle = $cycle
+        attempts = [int]$pendingState.attempts
+        updatedAt = (Get-Date).ToUniversalTime().ToString('o')
+        failed = @('sweep')
+        emailState = 'NOT_ATTEMPTED_PIPELINE_INCOMPLETE'
+        reconciledFromCheckpoint = $true
+      }
+      $reconciled | ConvertTo-Json | Set-Content $pending -Encoding UTF8
+      Write-Host "RECOVERY STATE RECONCILED: sweep incomplete ($completedCount/$totalWork); pending reset to sweep."
+    } else {
+      Write-Host "Sweep checkpoint COMPLETE ($completedCount/$totalWork)."
+    }
+  }
+}
+
 if (Test-Path $pending) {
   Write-Host "Pending recovery found. Starting HERMES Recovery with checkpoint-aware runner."
   if ($recovery.State -ne 'Running') {
