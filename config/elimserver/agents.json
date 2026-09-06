@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "authority": "CEO_GOVERNED",
+  "decision_authority": "Victor Abreu",
+  "agents": [
+    {"id":"chief-operating-supply-chain","title":"Chief Operating & Supply Chain Agent","scope":["supplier_comparison","production_release_tracking","logistics","risk","factory_coordination"],"approval_required":["new_supplier","material_commercial_commitment","exception_to_approved_terms"]},
+    {"id":"chief-product-technology","title":"Chief Product & Technology Agent","scope":["product_governance","technology_registry","technical_validation","knowledge_gaps"],"approval_required":["canonical_publication","new_technology_claim","material_spec_change"]},
+    {"id":"chief-commercial-markets","title":"Chief Commercial & Markets Agent","scope":["market_intelligence","distributor_pipeline","account_strategy","commercial_follow_up"],"approval_required":["account_activation","price_exception","exclusive_distribution","sensitive_outreach"]},
+    {"id":"chief-finance","title":"Chief Finance Agent","scope":["payment_verification","receipt_support","production_finance_clearance","cash_risk"],"approval_required":["refund","credit_exception","payment_terms_exception"]},
+    {"id":"chief-governance-intelligence","title":"Chief Governance & Intelligence Agent","scope":["HERMES_health","knowledge_governance","audit","policy_compliance","executive_alerts"],"approval_required":["policy_change","automatic_publication_enablement"]}
+  ],
+  "global_rules": {
+    "automatic_canonical_publication": false,
+    "automatic_sensitive_commercial_commitment": false,
+    "audit_every_material_action": true,
+    "preserve_system_of_record_boundaries": true,
+    "crm_system_of_record": "LATAMFILTERS/elimfilters-crm",
+    "technical_intelligence_system": "HERMES",
+    "knowledge_relationship_layer": "Nodal Center"
+  }
+}
