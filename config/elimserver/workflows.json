@@ -1,21 +1,16 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
+  "owner": "ELIMSERVER / HERMES",
   "workflows": {
-    "customer_requisition": ["customer_po_received","requisition_normalized","sku_pack_validation","commercial_review","finance_deposit_pending","finance_deposit_verified","production_release","supplier_execution","logistics_coordination","documents_ready","customer_update","closed"],
-    "finance_to_production": ["payment_evidence_received","finance_verification","customer_receipt_issued","production_clearance_issued","production_acknowledged"],
-    "supplier_selection": ["rfq_created","supplier_quotes_collected","comparison_scored","recommendation_created","approval_if_required","supplier_selected","backup_supplier_recorded"],
     "hermes_intelligence": ["weekly_trigger","collect","sweep","research","validate","report","email","complete"],
-    "distributor_pipeline": ["discovered","qualified","a_b_c_classified","outreach_ready","contacted","engaged","application","ceo_approval","active_distributor"],
-    "exception_management": ["exception_detected","owner_assigned","impact_scored","ceo_alert_if_material","corrective_action","verification","closed"]
+    "elimserver_incident": ["incident_detected","owner_assigned","impact_scored","ceo_alert_if_material","corrective_action","verification","closed"]
   },
   "controls": {
-    "autosave": true,
     "append_only_material_events": true,
     "idempotent_recovery": true,
     "manual_approval_gates": true,
-    "production_requires_finance_clearance": true,
-    "finance_never_contacts_supplier": true,
-    "production_owns_supplier_execution": true,
-    "no_automatic_supplier_or_customer_commitment_outside_policy": true
+    "automatic_publication": false,
+    "commercial_workflows_owned_by_crm": true,
+    "crm_repository": "LATAMFILTERS/elimfilters-crm"
   }
 }
