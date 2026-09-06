@@ -14,17 +14,14 @@ const PRODUCT = {
   filter_type: 'fuel',
   protocol_source_brand: 'DONALDSON',
   protocol_resolved_reference: 'P551315',
-  oem_codes: [
-    { manufacturer: 'CATERPILLAR', code: '1R0751' },
-    { manufacturer: 'VOLVO', code: '85114066' },
-    { manufacturer: 'MACK', code: '2191P551315' }
+  protocol_validated_crossrefs: [
+    { manufacturer: 'DONALDSON', code: 'P551315', score: 950, status: 'RESOLVED_CANONICAL_BASE' },
+    { manufacturer: 'CATERPILLAR', code: '1R0751', score: 900, status: 'RESOLVED_SINGLE' },
+    { manufacturer: 'VOLVO', code: '85114066', score: 900, status: 'RESOLVED_SINGLE' },
+    { manufacturer: 'MACK', code: '2191P551315', score: 900, status: 'RESOLVED_SINGLE' },
+    { manufacturer: 'FLEETGUARD', code: 'FF5309', score: 900, status: 'RESOLVED_SINGLE' },
+    { manufacturer: 'WIX', code: '33377', score: 900, status: 'RESOLVED_SINGLE' }
   ],
-  competitor_codes: [
-    { manufacturer: 'FLEETGUARD', code: 'FF5309' },
-    { manufacturer: 'WIX', code: '33377' },
-    { manufacturer: 'BALDWIN', code: 'BF7530MPG' }
-  ],
-  brand_crossrefs: {},
   equipment_applications: [
     { equipment: 'CATERPILLAR 320D', engine: 'CATERPILLAR C6.4 ACERT' },
     { equipment: 'KENWORTH T800', engine: 'CATERPILLAR C9' },
@@ -52,13 +49,14 @@ function basePayload() {
 
 test('technical presentation publishes ELIMFILTERS SKU, technical description, applications and up to three cross-references', () => {
   const payload = applyTechnicalProductPresentation(basePayload(), { language: 'es' });
-  assert.equal(payload.governance.reference_response_policy, 'validated_technical_deterministic');
+  assert.equal(payload.governance.reference_response_policy, 'validated_deterministic');
+  assert.equal(payload.governance.technical_presentation, 'validated_deterministic');
   assert.match(payload.answer, /SKU ELIMFILTERS: EF91315/i);
-  assert.match(payload.answer, /Tipo de filtro: Filtro de combustible/i);
+  assert.match(payload.answer, /Clasificación del filtro: Filtro de combustible/i);
   assert.match(payload.answer, /Descripción técnica:/i);
   assert.match(payload.answer, /diesel injection systems/i);
   assert.match(payload.answer, /Aplicaciones principales validadas:/i);
-  assert.match(payload.answer, /Cross-references principales:/i);
+  assert.match(payload.answer, /Cross-references validados principales:/i);
   assert.ok(payload.governance.applications_published <= 3);
   assert.ok(payload.governance.equivalent_references_published <= 3);
 });
@@ -70,6 +68,17 @@ test('cross-reference selection prioritizes OEM manufacturers and does not repea
   assert.ok(selected.every(item => item.code !== 'P551315'));
 });
 
+test('raw catalog cross-references are never published without resolver validation', () => {
+  const product = {
+    ...PRODUCT,
+    protocol_validated_crossrefs: [],
+    oem_codes: [{ manufacturer: 'CATERPILLAR', code: 'UNVERIFIED1' }],
+    competitor_codes: [{ manufacturer: 'FLEETGUARD', code: 'UNVERIFIED2' }]
+  };
+  const selected = selectEquivalentReferences(product, { brand: 'Donaldson', code: 'P551315' }, 3);
+  assert.deepEqual(selected, []);
+});
+
 test('NOT_FOUND response remains fail-closed and is not enriched with product data', () => {
   const payload = applyTechnicalProductPresentation({
     intent: 'exact_reference_lookup',
@@ -78,5 +87,5 @@ test('NOT_FOUND response remains fail-closed and is not enriched with product da
     answer: ''
   }, { language: 'es' });
   assert.match(payload.answer, /No encontr[eé] una coincidencia verificada/i);
-  assert.doesNotMatch(payload.answer, /SKU ELIMFILTERS|Cross-references principales|Descripción técnica/i);
+  assert.doesNotMatch(payload.answer, /SKU ELIMFILTERS|Cross-references validados principales|Descripción técnica/i);
 });
