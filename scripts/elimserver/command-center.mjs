@@ -23,8 +23,6 @@ function snapshot(){
   const sweep = latestByPrefix(HERMES,'sweep-');
   const research = latestByPrefix(HERMES,'research-');
   const health = readJson(path.join(STATE,'server-health.json'));
-  const agents = readJson(path.join(REPO,'config','elimserver','agents.json'));
-  const hermesWorkflows = readJson(path.join(REPO,'config','elimserver','workflows.json'));
   const crmPath = path.join(ROOT,'repos','elimfilters-crm');
   const crmWorkflows = readJson(path.join(crmPath,'config','workflows.json'));
   const alerts = jsonList(path.join(STATE,'alerts'),20);
@@ -32,10 +30,9 @@ function snapshot(){
   return {
     generatedAt:new Date().toISOString(), host:os.hostname(), platform:os.platform(), uptimeSeconds:Math.round(os.uptime()),
     git:{commit:git('rev-parse','--short','HEAD'), branch:git('rev-parse','--abbrev-ref','HEAD'), dirty:!!git('status','--porcelain')},
-    hermes:{operational,pending,sweep,research,workflows:hermesWorkflows}, health, alerts,
-    crm:{installed:exists(crmPath),workflows:crmWorkflows,bridgeQueued:crmOutbox.length,bridgeOutbox:crmOutbox.slice(0,20)},
-    services:{worldCatalogue:exists(REPO), crm:exists(crmPath), nodal:exists(path.join(ROOT,'nodal-center')), backups:exists(path.join(ROOT,'backups'))},
-    agents
+    hermes:{operational,pending,sweep,research,dashboard:'http://127.0.0.1:8788'}, health, alerts,
+    crm:{installed:exists(crmPath),workflows:crmWorkflows,bridgeQueued:crmOutbox.length,bridgeOutbox:crmOutbox.slice(0,20),dashboard:'http://127.0.0.1:8789',localRuntimeReady:false},
+    services:{worldCatalogue:exists(REPO), crm:exists(crmPath), nodal:exists(path.join(ROOT,'nodal-center')), backups:exists(path.join(ROOT,'backups'))}
   };
 }
 
@@ -44,16 +41,16 @@ function html(s){
   const op=s.hermes.operational||{}; const sw=s.hermes.sweep||{}; const health=s.health||{};
   const openAlerts=s.alerts.filter(a=>a.status!=='CLOSED');
   const cards=[
-    ['HERMES', op.status||'UNKNOWN', op.valid===true?'VALID':'CHECK'],
-    ['Sweep', `${Array.isArray(sw.completed_work)?sw.completed_work.length:0}/${sw.total_work??0}`, sw.complete?'COMPLETE':(sw.last_run_summary?.resume_reason||'PENDING')],
-    ['Server', health.overall||'UNKNOWN', health.generatedAt||''],
-    ['CEO Alerts', String(openAlerts.length), openAlerts[0]?.summary||'No open material alerts'],
-    ['CRM', s.crm.installed?'INSTALLED':'MISSING', 'Owns requisitions, finance→production, suppliers, distributors'],
-    ['CRM Bridge', String(s.crm.bridgeQueued), 'Queued transfers from ELIMSERVER to CRM'],
-    ['Nodal Center', s.services.nodal?'READY':'MISSING', 'Governed knowledge'],
-    ['Backups', s.services.backups?'READY':'MISSING', 'Local retention']
+    ['HERMES', op.status||'UNKNOWN', op.valid===true?'VALID':'CHECK',s.hermes.dashboard],
+    ['Sweep', `${Array.isArray(sw.completed_work)?sw.completed_work.length:0}/${sw.total_work??0}`, sw.complete?'COMPLETE':(sw.last_run_summary?.resume_reason||'PENDING'),s.hermes.dashboard],
+    ['CRM', s.crm.installed?'CODE READY':'MISSING', s.crm.localRuntimeReady?'LOCAL':'AWAITING LOCAL DB MIGRATION',s.crm.dashboard],
+    ['CRM Bridge', String(s.crm.bridgeQueued), 'Queued transfers to CRM',null],
+    ['Server', health.overall||'UNKNOWN', health.generatedAt||'',null],
+    ['CEO Alerts', String(openAlerts.length), openAlerts[0]?.summary||'No open material alerts',null],
+    ['Nodal Center', s.services.nodal?'READY':'MISSING', 'Governed knowledge',null],
+    ['Backups', s.services.backups?'READY':'MISSING', 'Local retention',null]
   ];
-  return `<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="30"><title>ELIMFILTERS Command Center</title><style>body{font-family:Segoe UI,Arial;background:#0d0d0d;color:#f5f5f5;margin:0}header{padding:24px 30px;border-bottom:4px solid #ffd400}h1{margin:0;font-size:28px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:24px}.card{background:#171717;border:1px solid #333;border-radius:10px;padding:18px}.v{font-size:24px;font-weight:700;margin:8px 0}.s{color:#aaa;font-size:13px}pre{white-space:pre-wrap;background:#111;padding:18px;margin:0 24px 24px;border:1px solid #333;border-radius:10px;color:#ddd}</style></head><body><header><h1>ELIMFILTERS® CEO Command Center</h1><div class="s">${esc(s.host)} · commit ${esc(s.git.commit)} · ${esc(s.generatedAt)}</div></header><div class="grid">${cards.map(c=>`<div class="card"><b>${esc(c[0])}</b><div class="v">${esc(c[1])}</div><div class="s">${esc(c[2])}</div></div>`).join('')}</div><pre>${esc(JSON.stringify({hermes:{pending:s.hermes.pending,operational:s.hermes.operational},crm:{workflows:s.crm.workflows,bridgeQueued:s.crm.bridgeQueued},health:s.health,alerts:s.alerts.slice(0,5)},null,2))}</pre></body></html>`;
+  return `<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="30"><title>ELIMFILTERS Command Center</title><style>body{font-family:Segoe UI,Arial;background:#0d0d0d;color:#f5f5f5;margin:0}header{padding:24px 30px;border-bottom:4px solid #ffd400}h1{margin:0;font-size:28px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:24px}.card{display:block;background:#171717;border:1px solid #333;border-radius:10px;padding:18px;color:#f5f5f5;text-decoration:none}.card:hover{border-color:#ffd400}.v{font-size:24px;font-weight:700;margin:8px 0}.s{color:#aaa;font-size:13px}pre{white-space:pre-wrap;background:#111;padding:18px;margin:0 24px 24px;border:1px solid #333;border-radius:10px;color:#ddd}</style></head><body><header><h1>ELIMFILTERS® CEO Command Center</h1><div class="s">${esc(s.host)} · commit ${esc(s.git.commit)} · ${esc(s.generatedAt)}</div></header><div class="grid">${cards.map(c=>`<${c[3]?'a':'div'} class="card"${c[3]?` href="${esc(c[3])}"`:''}><b>${esc(c[0])}</b><div class="v">${esc(c[1])}</div><div class="s">${esc(c[2])}</div></${c[3]?'a':'div'}>`).join('')}</div><pre>${esc(JSON.stringify({hermes:{pending:s.hermes.pending,operational:s.hermes.operational},crm:{bridgeQueued:s.crm.bridgeQueued,localRuntimeReady:s.crm.localRuntimeReady},health:s.health,alerts:s.alerts.slice(0,5)},null,2))}</pre></body></html>`;
 }
 
 http.createServer((req,res)=>{
