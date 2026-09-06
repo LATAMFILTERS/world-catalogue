@@ -17,7 +17,8 @@ $jsFiles = @(
   'scripts\hermes\industry-sweep-compound.mjs',
   'scripts\hermes\research-real-candidates-compound.mjs',
   'scripts\hermes\industry-sweep-reliable.mjs',
-  'scripts\hermes\validate-sweep-checkpoint.mjs'
+  'scripts\hermes\validate-sweep-checkpoint.mjs',
+  'scripts\hermes\validate-operational-state.mjs'
 )
 
 foreach ($file in $jsFiles) {
@@ -43,10 +44,6 @@ foreach ($file in $psFiles) {
   Write-Host "PASS PowerShell parse $file"
 }
 
-# Do not modify the ScheduledTask trigger here. Tasks registered with LogonType=Password
-# require the account password again on Set-ScheduledTask. HERMES reliability is enforced
-# inside Invoke-HermesLocal.ps1 by lock/checkpoint/retry-state, so an existing trigger may
-# fire more frequently without duplicating completed work or losing the pending cycle.
 $recovery = Get-ScheduledTask -TaskPath $TaskPath -TaskName 'HERMES Recovery' -ErrorAction Stop
 $recoveryInfo = Get-ScheduledTaskInfo -TaskPath $TaskPath -TaskName 'HERMES Recovery'
 Write-Host "Scheduler credentials preserved; existing Recovery trigger left unchanged."
@@ -56,7 +53,6 @@ $stateRoot = 'C:\ELIMSERVER\state\hermes'
 $pending = Join-Path $stateRoot 'recovery-pending.json'
 
 # Reconcile the control-plane pending state against the authoritative sweep checkpoint.
-# A stale pending file must never allow downstream stages to run while sweep work remains.
 if (Test-Path $pending) {
   $pendingState = Get-Content $pending -Raw | ConvertFrom-Json
   $cycle = [string]$pendingState.cycle
@@ -83,6 +79,26 @@ if (Test-Path $pending) {
       Write-Host "Sweep checkpoint COMPLETE ($completedCount/$totalWork)."
     }
   }
+}
+
+# Certify the full operational state before starting another Recovery run.
+$oldStateRoot = $env:HERMES_STATE_ROOT
+$oldCycleId = $env:HERMES_CYCLE_ID
+try {
+  $env:HERMES_STATE_ROOT = $stateRoot
+  if (Test-Path $pending) {
+    $certPending = Get-Content $pending -Raw | ConvertFrom-Json
+    $env:HERMES_CYCLE_ID = [string]$certPending.cycle
+  } else {
+    Remove-Item Env:HERMES_CYCLE_ID -ErrorAction SilentlyContinue
+  }
+  & $node (Join-Path $RepoRoot 'scripts\hermes\validate-operational-state.mjs')
+  if ($LASTEXITCODE -ne 0) { throw 'HERMES operational state certification failed.' }
+  Write-Host "Operational state certificate: $stateRoot\operational-validation.json"
+}
+finally {
+  if ($null -ne $oldStateRoot) { $env:HERMES_STATE_ROOT = $oldStateRoot } else { Remove-Item Env:HERMES_STATE_ROOT -ErrorAction SilentlyContinue }
+  if ($null -ne $oldCycleId) { $env:HERMES_CYCLE_ID = $oldCycleId } else { Remove-Item Env:HERMES_CYCLE_ID -ErrorAction SilentlyContinue }
 }
 
 if (Test-Path $pending) {
