@@ -22,7 +22,7 @@
     "hermes:phase1": "npm run hermes:validate && npm run hermes:report",
     "hermes:phase2": "npm run hermes:phase1 && npm run hermes:email",
     "hermes:collect": "node scripts/hermes/collect-real-sources.mjs",
-    "hermes:sweep": "node scripts/hermes/industry-sweep-reliable.mjs",
+    "hermes:sweep": "node scripts/hermes/industry-sweep-reliable.mjs && node scripts/hermes/validate-sweep-checkpoint.mjs",
     "hermes:research:restore": "node scripts/hermes/restore-review-research-requests.mjs",
     "hermes:research": "npm run hermes:research:restore && node scripts/hermes/research-real-candidates-compound.mjs",
     "hermes:validate:real": "node scripts/hermes/validate-candidates.mjs --auto",
