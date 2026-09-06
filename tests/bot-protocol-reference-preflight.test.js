@@ -10,44 +10,28 @@ function normalize(value) {
   return String(value || '').replace(/[^A-Z0-9]/gi, '').toUpperCase();
 }
 
-function referenceParams(params = []) {
-  const refs = [];
-  for (const raw of params[0] || []) {
-    if (typeof raw === 'string' && /^[\[{]/.test(raw.trim())) {
-      try {
-        const parsed = JSON.parse(raw);
-        const items = Array.isArray(parsed) ? parsed : [parsed];
-        for (const item of items) {
-          if (!item || typeof item !== 'object') continue;
-          for (const value of Object.values(item)) {
-            if (typeof value === 'string' || typeof value === 'number') refs.push(normalize(value));
-          }
-        }
-        continue;
-      } catch {}
-    }
-    refs.push(normalize(raw));
-  }
-  return [...new Set(refs.filter(Boolean))];
-}
+const CATALOG = [
+  { id: 1, sku: 'EL82100', codigo_base: 'P552100', name: 'Lube Filter', filter_type: 'oil', competitor_codes: [], oem_codes: [], brand_crossrefs: {}, equipment_applications: [], specs: {}, enrichment_data: {}, is_primary: true },
+  { id: 2, sku: 'EL82101', codigo_base: 'X2', name: 'Lube Filter 2', filter_type: 'oil', competitor_codes: [], oem_codes: [], brand_crossrefs: {}, equipment_applications: [], specs: {}, enrichment_data: {}, is_primary: true }
+];
 
-function installPool(rows = [], { fail = false } = {}) {
+function installPool(resolverRows = [], { fail = false } = {}) {
   __setProtocolPoolForTests({
     async connect() {
       if (fail) throw new Error('database down');
       return {
         async query(sql, params = []) {
-          if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(String(sql))) return { rows: [] };
-          if (!/FROM elimfilters_catalog/i.test(String(sql))) return { rows: [] };
-          const refs = referenceParams(params);
-          return {
-            rows: rows.filter(row => {
-              const values = [row.sku, row.codigo_base]
-                .concat((row.oem_codes || []).map(v => v.code || v.reference || v))
-                .concat((row.competitor_codes || []).map(v => v.code || v.reference || v));
-              return values.some(value => refs.includes(normalize(value)));
-            })
-          };
+          const text = String(sql);
+          if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(text)) return { rows: [] };
+          if (/FROM v_api_resolver_v7/i.test(text)) {
+            const refs = (params[0] || []).map(normalize);
+            return { rows: resolverRows.filter(row => refs.includes(normalize(row.code))) };
+          }
+          if (/FROM elimfilters_catalog/i.test(text)) {
+            const refs = (params[0] || []).map(normalize);
+            return { rows: CATALOG.filter(row => refs.includes(normalize(row.sku))) };
+          }
+          return { rows: [] };
         },
         release() {}
       };
@@ -60,40 +44,44 @@ test.afterEach(() => {
   __setRedisClientForTests(null);
 });
 
-test('NOT_FOUND direct reference lookup is stopped before LLM', async () => {
+test('P527692 NOT_FOUND is stopped before LLM', async () => {
   installPool([]);
   const payload = await preflightReferenceLookup({ channel: 'web', conversation_id: 'preflight-notfound', message: 'Donaldson P527692', language: 'es' });
   assert.ok(payload);
   assert.equal(payload.evidence.lookup_status, 'not_found');
   assert.equal(payload.evidence.validated, false);
+  assert.equal(payload.evidence.source, 'v_api_resolver_v7');
   assert.equal(payload.governance.llm_bypassed, true);
-  assert.equal(payload.intelligence.classifier, 'deterministic_reference_preflight');
 });
 
 test('database outage is stopped before LLM and is not mislabeled NOT_FOUND', async () => {
   installPool([], { fail: true });
   const payload = await preflightReferenceLookup({ channel: 'web', conversation_id: 'preflight-db-down', message: 'Busco equivalencia Donaldson P552100', language: 'es' });
-  assert.ok(payload);
   assert.equal(payload.evidence.lookup_status, 'database_unavailable');
   assert.equal(payload.governance.llm_bypassed, true);
 });
 
-test('multiple SKU candidates are stopped as ambiguous before LLM', async () => {
+test('multiple resolver SKU candidates are ambiguous and candidate SKUs are not published', async () => {
   installPool([
-    { id: 1, sku: 'EL80001', codigo_base: 'A1', competitor_codes: [{ manufacturer: 'WIX', code: '331193' }], oem_codes: [], brand_crossrefs: {}, equipment_applications: [], specs: {}, enrichment_data: {} },
-    { id: 2, sku: 'EL80002', codigo_base: 'A2', competitor_codes: [{ manufacturer: 'WIX', code: '331193' }], oem_codes: [], brand_crossrefs: {}, equipment_applications: [], specs: {}, enrichment_data: {} }
+    { code: '331193', sku: 'EL82100', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' },
+    { code: '331193', sku: 'EL82101', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' }
   ]);
   const payload = await preflightReferenceLookup({ channel: 'web', conversation_id: 'preflight-ambiguous', message: 'Equivalencia WIX 331193', language: 'es' });
-  assert.ok(payload);
   assert.equal(payload.evidence.lookup_status, 'ambiguous');
   assert.equal(payload.evidence.validated, false);
+  assert.equal(payload.evidence.products.length, 0);
   assert.equal(payload.governance.llm_bypassed, true);
 });
 
-test('one validated SKU does not block the normal deterministic catalog renderer', async () => {
+test('one resolver-authorized SKU is returned deterministically and bypasses LLM', async () => {
   installPool([
-    { id: 3, sku: 'EL82100', codigo_base: 'EL82100', competitor_codes: [{ manufacturer: 'Fleetguard', code: 'LF3970' }], oem_codes: [], brand_crossrefs: {}, equipment_applications: [], specs: {}, enrichment_data: {} }
+    { code: 'P552100', sku: 'EL82100', manufacturer: 'DONALDSON', score: 950, status: 'RESOLVED_CANONICAL_BASE' }
   ]);
-  const payload = await preflightReferenceLookup({ channel: 'web', conversation_id: 'preflight-valid', message: 'Fleetguard LF3970', language: 'es' });
-  assert.equal(payload, null);
+  const payload = await preflightReferenceLookup({ channel: 'web', conversation_id: 'preflight-valid', message: 'Donaldson P552100', language: 'es' });
+  assert.ok(payload);
+  assert.equal(payload.evidence.lookup_status, 'validated');
+  assert.equal(payload.evidence.validated, true);
+  assert.equal(payload.evidence.products[0].sku, 'EL82100');
+  assert.equal(payload.evidence.products[0].protocol_source_brand, 'DONALDSON');
+  assert.equal(payload.governance.llm_bypassed, true);
 });
