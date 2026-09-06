@@ -95,6 +95,29 @@ $cycle = Get-CycleId
 $attempt = 0
 $lock = $null
 
+function Invoke-OperationalCertification {
+  if ($Mode -eq 'Test') { return }
+  try {
+    $nodePath = 'C:\Program Files\nodejs\node.exe'
+    $validator = Join-Path $RepoRoot 'scripts\hermes\validate-operational-state.mjs'
+    if (-not (Test-Path $nodePath)) { Write-Log 'OPERATIONAL CERTIFICATION SKIPPED; node.exe unavailable'; return }
+    if (-not (Test-Path $validator)) { Write-Log 'OPERATIONAL CERTIFICATION SKIPPED; validator unavailable'; return }
+    $previousStateRoot = $env:HERMES_STATE_ROOT
+    $previousCycle = $env:HERMES_CYCLE_ID
+    try {
+      $env:HERMES_STATE_ROOT = $StateRoot
+      $env:HERMES_CYCLE_ID = $cycle
+      & $nodePath $validator 2>&1 | ForEach-Object { Write-Log "[operational-certification] $_" }
+      $certExit = $LASTEXITCODE
+      if ($certExit -eq 0) { Write-Log 'OPERATIONAL CERTIFICATION PASS' }
+      else { Write-Log "OPERATIONAL CERTIFICATION FAIL exit=$certExit" }
+    } finally {
+      if ($null -eq $previousStateRoot) { Remove-Item Env:HERMES_STATE_ROOT -ErrorAction SilentlyContinue } else { $env:HERMES_STATE_ROOT = $previousStateRoot }
+      if ($null -eq $previousCycle) { Remove-Item Env:HERMES_CYCLE_ID -ErrorAction SilentlyContinue } else { $env:HERMES_CYCLE_ID = $previousCycle }
+    }
+  } catch { Write-Log "OPERATIONAL CERTIFICATION ERROR $($_.Exception.Message)" }
+}
+
 function Stop-RecoveryAtFailure([string]$Stage) {
   if ($Mode -ne 'Recovery') { return }
   $payload = @{
@@ -179,6 +202,7 @@ catch {
   exit 1
 }
 finally {
+  Invoke-OperationalCertification
   $env:HERMES_EMAIL_LIVE='false'
   foreach($name in 'GROQ_API_KEY','AZURE_CLIENT_ID','AZURE_TENANT_ID','AZURE_CLIENT_SECRET','HERMES_SENDER_EMAIL','HERMES_REVIEW_EMAIL','HERMES_CYCLE_ID','HERMES_STATE_ROOT','HERMES_SWEEP_MODEL','HERMES_SWEEP_DOMAIN_BATCH','HERMES_SWEEP_MAX_TOPICS_PER_REQUEST','HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN','HERMES_SWEEP_MAX_RETRIES','HERMES_SWEEP_MIN_INTERVAL_MS','HERMES_SWEEP_MIN_429_BACKOFF_MS','HERMES_SWEEP_BACKOFF_MS','HERMES_SWEEP_MAX_BACKOFF_MS','HERMES_SWEEP_BUDGET_MS','HERMES_RESEARCH_BUDGET_MS','HERMES_RESEARCH_RETRY_DELAY_MS'){Remove-Item "Env:$name" -ErrorAction SilentlyContinue}
   if($null -ne $lock){$lock.Dispose()}
