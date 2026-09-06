@@ -42,16 +42,23 @@ foreach ($file in $psFiles) {
   Write-Host "PASS PowerShell parse $file"
 }
 
+# Do not modify the ScheduledTask trigger here. Tasks registered with LogonType=Password
+# require the account password again on Set-ScheduledTask. HERMES reliability is enforced
+# inside Invoke-HermesLocal.ps1 by lock/checkpoint/retry-state, so an existing trigger may
+# fire more frequently without duplicating completed work or losing the pending cycle.
 $recovery = Get-ScheduledTask -TaskPath $TaskPath -TaskName 'HERMES Recovery' -ErrorAction Stop
-$trigger = New-ScheduledTaskTrigger -Once -At ((Get-Date).AddMinutes(5)) -RepetitionInterval (New-TimeSpan -Minutes 30)
-Set-ScheduledTask -TaskPath $TaskPath -TaskName 'HERMES Recovery' -Trigger $trigger | Out-Null
-
-Write-Host "Recovery cadence normalized to every 30 minutes."
+$recoveryInfo = Get-ScheduledTaskInfo -TaskPath $TaskPath -TaskName 'HERMES Recovery'
+Write-Host "Scheduler credentials preserved; existing Recovery trigger left unchanged."
+Write-Host "Recovery next scheduled run: $($recoveryInfo.NextRunTime)"
 
 $pending = 'C:\ELIMSERVER\state\hermes\recovery-pending.json'
 if (Test-Path $pending) {
   Write-Host "Pending recovery found. Starting HERMES Recovery with checkpoint-aware runner."
-  Start-ScheduledTask -TaskPath $TaskPath -TaskName 'HERMES Recovery'
+  if ($recovery.State -ne 'Running') {
+    Start-ScheduledTask -TaskPath $TaskPath -TaskName 'HERMES Recovery'
+  } else {
+    Write-Host "HERMES Recovery is already running; no duplicate instance started."
+  }
 } else {
   Write-Host "No recovery pending. Scheduler is ready for the next cycle."
 }
