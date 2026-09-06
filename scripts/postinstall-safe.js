@@ -38,6 +38,7 @@ const checks = [
   'lib/catalog-application-write-service.js',
   'scripts/migrations/run_077_application_evidence_governance.js',
   'lib/bot-protocol-reference-response-policy.js',
+  'lib/bot-protocol-reference-authority.js',
   'lib/bot-protocol-reference-preflight.js',
   'lib/bot-protocol-guardrails.js',
   'lib/bot-protocol.js',
