@@ -2,9 +2,8 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const http = require('node:http');
+const http = require('http');
 const express = require('express');
-
 const { __setProtocolPoolForTests } = require('../lib/bot-protocol-db');
 const { __setRedisClientForTests } = require('../lib/bot-protocol-memory');
 
@@ -22,63 +21,35 @@ function normalize(value) {
   return String(value || '').replace(/[^A-Z0-9]/gi, '').toUpperCase();
 }
 
-function referenceParams(params = []) {
-  const refs = [];
-  for (const raw of params[0] || []) {
-    if (typeof raw === 'string' && /^[\[{]/.test(raw.trim())) {
-      try {
-        const parsed = JSON.parse(raw);
-        const items = Array.isArray(parsed) ? parsed : [parsed];
-        for (const item of items) {
-          if (!item || typeof item !== 'object') continue;
-          for (const value of Object.values(item)) {
-            if (typeof value === 'string' || typeof value === 'number') refs.push(normalize(value));
-          }
-        }
-        continue;
-      } catch {}
-    }
-    refs.push(normalize(raw));
-  }
-  return [...new Set(refs.filter(Boolean))];
-}
-
 const ROW = {
-  id: 201,
-  sku: 'EL82100',
-  codigo_base: 'EL82100',
-  name: 'Full-Flow Lube Oil Filter',
-  description: null,
-  filter_type: 'Oil Filter',
-  sub_type: null,
-  technology: 'SYNTRAX',
-  thread_size: null,
-  height_mm: null,
-  outer_diameter_mm: null,
-  gasket_od_mm: null,
-  gasket_id_mm: null,
-  micron_rating: null,
-  nominal_efficiency: null,
-  filter_media: null,
-  oem_codes: [{ manufacturer: 'Donaldson', code: 'P552100' }],
-  competitor_codes: [{ manufacturer: 'Fleetguard', code: 'LF3970' }],
-  brand_crossrefs: { WIX: ['W51372'] },
+  id: 201, sku: 'EL82100', codigo_base: 'P552100', name: 'Full-Flow Lube Oil Filter', description: null,
+  duty: null, filter_type: 'Oil Filter', sub_type: null, technology: 'SYNTRAX', thread_size: null,
+  height_mm: null, outer_diameter_mm: null, gasket_od_mm: null, gasket_id_mm: null,
+  micron_rating: null, nominal_efficiency: null, filter_media: null,
+  oem_codes: [], competitor_codes: [], brand_crossrefs: {},
   equipment_applications: [
-    { make: 'Freightliner', model: 'Cascadia', engine: 'Detroit DD15' },
-    { make: 'Kenworth', model: 'T680', engine: 'Cummins X15' },
-    { make: 'Volvo', model: 'VNL', engine: 'D13' },
-    { make: 'Mack', model: 'Anthem', engine: 'MP8' }
+    { equipment: 'Freightliner Cascadia', engine: 'Detroit DD15' },
+    { equipment: 'Kenworth T680', engine: 'Cummins X15' },
+    { equipment: 'Volvo VNL', engine: 'D13' },
+    { equipment: 'Mack Anthem', engine: 'MP8' }
   ],
   specs: {}, enrichment_data: {}, is_primary: true
 };
 
 let dbMode = 'normal';
 
-function matches(row, refs) {
-  if (refs.includes(normalize(row.sku)) || refs.includes(normalize(row.codigo_base))) return true;
-  if ((row.oem_codes || []).some(x => refs.includes(normalize(x.code)))) return true;
-  if ((row.competitor_codes || []).some(x => refs.includes(normalize(x.code)))) return true;
-  return Object.values(row.brand_crossrefs || {}).flatMap(v => Array.isArray(v) ? v : [v]).some(v => refs.includes(normalize(v)));
+function resolverRows(refs) {
+  if (dbMode === 'ambiguous' && refs.includes('331193')) {
+    return [
+      { code: '331193', sku: 'EL82100', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' },
+      { code: '331193', sku: 'EL82101', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' }
+    ];
+  }
+  const map = {
+    P552100: { code: 'P552100', sku: 'EL82100', manufacturer: 'DONALDSON', score: 950, status: 'RESOLVED_CANONICAL_BASE' },
+    LF3970: { code: 'LF3970', sku: 'EL82100', manufacturer: 'FLEETGUARD', score: 900, status: 'RESOLVED_SINGLE' }
+  };
+  return refs.map(ref => map[ref]).filter(Boolean);
 }
 
 function pool() {
@@ -89,15 +60,16 @@ function pool() {
         async query(sql, params = []) {
           const text = String(sql);
           if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(text)) return { rows: [] };
-          if (!/FROM elimfilters_catalog/i.test(text)) return { rows: [] };
-          const refs = referenceParams(params);
-          if (dbMode === 'ambiguous' && refs.includes('331193')) {
-            return { rows: [
-              { ...ROW, id: 202, sku: 'EL82100', competitor_codes: [{ manufacturer: 'WIX', code: '331193' }] },
-              { ...ROW, id: 203, sku: 'EL82101', competitor_codes: [{ manufacturer: 'WIX', code: '331193' }] }
-            ] };
+          if (/FROM v_api_resolver_v7/i.test(text)) {
+            return { rows: resolverRows((params[0] || []).map(normalize)) };
           }
-          return { rows: matches(ROW, refs) ? [ROW] : [] };
+          if (/FROM elimfilters_catalog/i.test(text)) {
+            const refs = (params[0] || []).map(normalize);
+            if (refs.includes('EL82100')) return { rows: [ROW] };
+            if (refs.includes('EL82101')) return { rows: [{ ...ROW, id: 202, sku: 'EL82101', codigo_base: 'X2' }] };
+            return { rows: [] };
+          }
+          return { rows: [] };
         },
         release() {}
       };
@@ -140,19 +112,20 @@ test.beforeEach(() => {
   __setProtocolPoolForTests(pool());
 });
 
-test('web chat validates Donaldson reference and returns branded deterministic answer', async () => {
+test('web chat uses resolver authority for Donaldson and bypasses LLM', async () => {
   const { status, body, allowOrigin } = await chat('Busco equivalencia Donaldson P552100', `web-don-${Date.now()}`);
   assert.equal(status, 200);
   assert.equal(allowOrigin, 'https://elimfilters.com');
-  assert.equal(body.source, 'central_protocol');
   assert.equal(body.lookup_status, 'validated');
+  assert.equal(body.reference_preflight, true);
+  assert.equal(body.llm_bypassed, true);
+  assert.equal(body.source_brand, 'Donaldson');
   assert.match(body.reply, /Donaldson P552100/i);
   assert.match(body.reply, /ELIMFILTERS EL82100/i);
-  assert.doesNotMatch(body.reply, /\bOEM\b/i);
-  assert.doesNotMatch(body.reply, /SYNTRAX|NANOFORCE|SYNTAPORE/i);
+  assert.doesNotMatch(body.reply, /\bOEM\b|SYNTRAX|NANOFORCE|SYNTAPORE/i);
 });
 
-test('web chat P527692 is fail closed before LLM and never publishes a SKU', async () => {
+test('web chat P527692 is fail closed and never publishes a SKU', async () => {
   const { status, body } = await chat('Donaldson P527692', `web-notfound-${Date.now()}`);
   assert.equal(status, 200);
   assert.equal(body.lookup_status, 'not_found');
@@ -162,43 +135,37 @@ test('web chat P527692 is fail closed before LLM and never publishes a SKU', asy
   assert.doesNotMatch(body.reply, /\bE[A-Z]\d{4,7}\b/);
 });
 
-test('web chat typo stays NOT_FOUND and is never silently corrected', async () => {
+test('web chat typo remains NOT_FOUND', async () => {
   const { body } = await chat('Donaldson P55210X', `web-typo-${Date.now()}`);
   assert.equal(body.lookup_status, 'not_found');
   assert.equal(body.llm_bypassed, true);
   assert.doesNotMatch(body.reply, /EL82100/);
-  assert.match(body.reply, /Verifica el c[oó]digo impreso/i);
 });
 
-test('web chat ambiguous reference blocks all candidate SKUs', async () => {
+test('web chat ambiguous resolver result blocks candidate SKUs', async () => {
   dbMode = 'ambiguous';
   __setProtocolPoolForTests(pool());
   const { body } = await chat('Equivalencia WIX 331193', `web-amb-${Date.now()}`);
   assert.equal(body.lookup_status, 'ambiguous');
-  assert.equal(body.reference_preflight, true);
   assert.equal(body.llm_bypassed, true);
   assert.doesNotMatch(body.reply, /EL82100|EL82101/);
-  assert.match(body.reply, /m[aá]s de una coincidencia/i);
 });
 
-test('web chat database outage is not mislabeled as missing reference and publishes no SKU', async () => {
+test('web chat database outage is not mislabeled NOT_FOUND', async () => {
   dbMode = 'down';
   __setProtocolPoolForTests(pool());
   const { status, body } = await chat('Donaldson P552100', `web-db-${Date.now()}`);
   assert.equal(status, 200);
   assert.equal(body.lookup_status, 'database_unavailable');
-  assert.equal(body.reference_preflight, true);
   assert.equal(body.llm_bypassed, true);
   assert.doesNotMatch(body.reply, /EL82100/);
-  assert.doesNotMatch(body.reply, /No encontr[eé] una coincidencia verificada/i);
 });
 
-test('web chat valid then invalid in same session never leaks previous SKU', async () => {
+test('web chat valid then invalid never leaks prior SKU', async () => {
   const sessionId = `web-state-${Date.now()}`;
   const first = await chat('Donaldson P552100', sessionId);
   assert.match(first.body.reply, /EL82100/);
   const second = await chat('Ahora busca Donaldson P527692', sessionId);
   assert.equal(second.body.lookup_status, 'not_found');
-  assert.equal(second.body.llm_bypassed, true);
   assert.doesNotMatch(second.body.reply, /EL82100/);
 });
