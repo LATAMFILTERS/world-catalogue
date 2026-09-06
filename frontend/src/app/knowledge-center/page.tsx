@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Footer } from '@/components/Footer';
 import styles from './KnowledgeCenter.module.css';
 
 const HUBS=[
@@ -96,6 +95,5 @@ export default function KnowledgeCenterPage(){
 
    <section className={styles.cta}><div className={`${styles.inner} ${styles.ctaGrid}`}><div><p className={styles.eyebrow}>APPLICATION SUPPORT</p><h2 className={styles.h2}>Bring us the operating condition — not just the part number.</h2><p className={styles.lead}>Use Part Search when the application is known. For repeated failures, contamination uncertainty, short service life or unclear protection architecture, use technical review.</p></div><div className={styles.buttonRow}><a className={styles.primary} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence">Search Product Intelligence</a><a className={styles.secondary} href="mailto:applications@elimfilters.com?subject=ELIMFILTERS%20Knowledge%20Center%20Technical%20Review" data-conversion-action="application-support">TECHNICAL REVIEW</a></div></div></section>
   </main>
-  <Footer/>
  </>;
 }
