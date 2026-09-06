@@ -20,8 +20,11 @@ $weeklyAction = New-ScheduledTaskAction -Execute $powerShell -Argument "-NoProfi
 $weeklyTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday -At '08:00'
 Register-ScheduledTask -TaskName 'HERMES Weekly' -TaskPath $TaskPath -Action $weeklyAction -Trigger $weeklyTrigger -Settings $settings -User $credential.UserName -Password $plainPassword -RunLevel Limited -Force | Out-Null
 
+# Recovery is checkpoint-aware and safe to invoke frequently. Thirty minutes is
+# short enough to resume promptly after transient provider recovery, while the
+# runner lock and per-item nextAttemptAt prevent duplicate work or API hammering.
 $recoveryAction = New-ScheduledTaskAction -Execute $powerShell -Argument "-NoProfile -NonInteractive -ExecutionPolicy Bypass -File `"$runner`" -Mode Recovery" -WorkingDirectory $RepoRoot
-$recoveryTrigger = New-ScheduledTaskTrigger -Once -At ((Get-Date).Date.AddMinutes(17)) -RepetitionInterval (New-TimeSpan -Hours 6)
+$recoveryTrigger = New-ScheduledTaskTrigger -Once -At ((Get-Date).AddMinutes(5)) -RepetitionInterval (New-TimeSpan -Minutes 30)
 Register-ScheduledTask -TaskName 'HERMES Recovery' -TaskPath $TaskPath -Action $recoveryAction -Trigger $recoveryTrigger -Settings $settings -User $credential.UserName -Password $plainPassword -RunLevel Limited -Force | Out-Null
 
 $plainPassword = $null
