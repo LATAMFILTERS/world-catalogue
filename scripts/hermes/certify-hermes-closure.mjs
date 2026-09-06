@@ -4,8 +4,12 @@ import path from 'node:path';
 
 const stateRoot = process.env.HERMES_STATE_ROOT || path.resolve('hermes/state');
 const requestedCycle = process.env.HERMES_CYCLE_ID || null;
-const readJson = p => { try { return JSON.parse(fs.readFileSync(p,'utf8')); } catch { return null; } };
+const readJson = p => {
+  try { return JSON.parse(fs.readFileSync(p,'utf8').replace(/^\uFEFF/,'')); }
+  catch { return null; }
+};
 const exists = p => fs.existsSync(p);
+const asArray = value => Array.isArray(value) ? value : (value == null ? [] : [value]);
 
 const pendingPath = path.join(stateRoot,'recovery-pending.json');
 const pending = readJson(pendingPath);
@@ -25,11 +29,12 @@ const deferredResearch = research?.items && typeof research.items === 'object'
 const operationalClear = operational?.valid === true && operational?.status === 'PIPELINE_CLEAR';
 const noPending = !exists(pendingPath);
 const emailConfirmed = !!weeklySent;
+const pendingFailed = asArray(pending?.failed).map(String).filter(Boolean);
 
 let status = 'NOT_CLOSED';
 let reason = 'UNKNOWN';
 if (!cycle) reason = 'NO_ACTIVE_CYCLE';
-else if (!noPending) reason = `RECOVERY_PENDING:${Array.isArray(pending?.failed)?pending.failed.join(','):'UNKNOWN'}`;
+else if (!noPending) reason = `RECOVERY_PENDING:${pendingFailed.length ? pendingFailed.join(',') : 'UNKNOWN'}`;
 else if (!sweepComplete) reason = `SWEEP_INCOMPLETE:${completed}/${total}`;
 else if (deferredResearch > 0) reason = `RESEARCH_DEFERRED:${deferredResearch}`;
 else if (!operationalClear) reason = `OPERATIONAL_NOT_CLEAR:${operational?.status || 'MISSING'}`;
@@ -37,13 +42,14 @@ else if (!emailConfirmed) reason = 'WEEKLY_EMAIL_NOT_CONFIRMED';
 else { status = 'CLOSED'; reason = 'PIPELINE_COMPLETE_AND_DELIVERY_CONFIRMED'; }
 
 const payload = {
-  schema_version:'1.0.0',
+  schema_version:'1.0.1',
   generated_at:new Date().toISOString(),
   cycle,
   status,
   reason,
   checks:{
     no_pending_recovery:noPending,
+    pending_failed:pendingFailed,
     sweep_complete:sweepComplete,
     sweep_progress:`${completed}/${total}`,
     deferred_research:deferredResearch,
