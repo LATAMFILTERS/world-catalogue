@@ -18,7 +18,8 @@ $jsFiles = @(
   'scripts\hermes\research-real-candidates-compound.mjs',
   'scripts\hermes\industry-sweep-reliable.mjs',
   'scripts\hermes\validate-sweep-checkpoint.mjs',
-  'scripts\hermes\validate-operational-state.mjs'
+  'scripts\hermes\validate-operational-state.mjs',
+  'scripts\hermes\validate-runner-contract.mjs'
 )
 
 foreach ($file in $jsFiles) {
@@ -43,6 +44,10 @@ foreach ($file in $psFiles) {
   }
   Write-Host "PASS PowerShell parse $file"
 }
+
+Write-Host "`n=== HERMES RUNNER CONTRACT ==="
+& $node (Join-Path $RepoRoot 'scripts\hermes\validate-runner-contract.mjs')
+if ($LASTEXITCODE -ne 0) { throw 'HERMES runner reliability contract failed.' }
 
 $recovery = Get-ScheduledTask -TaskPath $TaskPath -TaskName 'HERMES Recovery' -ErrorAction Stop
 $recoveryInfo = Get-ScheduledTaskInfo -TaskPath $TaskPath -TaskName 'HERMES Recovery'
