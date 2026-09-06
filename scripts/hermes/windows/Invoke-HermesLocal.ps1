@@ -153,18 +153,19 @@ try {
   $env:HERMES_BASELINE_MODE = 'false'
   $env:HERMES_MAX_SOURCES_PER_RUN = '35'
 
-  # Research keeps the full Compound model. Industry sweep has an independent,
-  # lower-pressure model and request matrix so broad monitoring cannot starve research.
+  # Research keeps the full Compound model. Industry sweep uses Compound Mini
+  # with small request chunks and header-driven quota pacing. The small fixed
+  # interval prevents bursts without making a complete sweep exceed its 45m guard.
   $env:HERMES_GROQ_MODEL = 'groq/compound'
   $env:HERMES_SWEEP_MODEL = 'groq/compound-mini'
   $env:HERMES_SWEEP_DOMAIN_BATCH = '1'
   $env:HERMES_SWEEP_MAX_TOPICS_PER_REQUEST = '4'
   $env:HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN = '2'
   $env:HERMES_SWEEP_MAX_RETRIES = '2'
-  $env:HERMES_SWEEP_MIN_INTERVAL_MS = '75000'
-  $env:HERMES_SWEEP_MIN_429_BACKOFF_MS = '30000'
-  $env:HERMES_SWEEP_BACKOFF_MS = '30000'
-  $env:HERMES_SWEEP_MAX_BACKOFF_MS = '120000'
+  $env:HERMES_SWEEP_MIN_INTERVAL_MS = '10000'
+  $env:HERMES_SWEEP_MIN_429_BACKOFF_MS = '10000'
+  $env:HERMES_SWEEP_BACKOFF_MS = '10000'
+  $env:HERMES_SWEEP_MAX_BACKOFF_MS = '60000'
   $env:HERMES_GROQ_TPD_FALLBACK = 'true'
 
   if ($Mode -ne 'Test') {
@@ -209,8 +210,10 @@ try {
   $critical = @('baseline','collect','sweep','seoImport','research','validate','report')
   $complete = @($critical | Where-Object { -not $status[$_] }).Count -eq 0
   $sendNow = ($Mode -eq 'Weekly') -or (($Mode -eq 'Recovery') -and $complete)
+  $emailAttempted = $false
   $status.email = $false
   if ($sendNow) {
+    $emailAttempted = $true
     $env:HERMES_EMAIL_LIVE = 'true'
     $status.email = Invoke-LimitedProcess 'email' $npm @('run','hermes:email:real') 10
     $env:HERMES_EMAIL_LIVE = 'false'
@@ -227,8 +230,10 @@ try {
   }
 
   if ($Mode -eq 'Weekly') { $attempt = 0 }
-  @{ cycle=$cycle; attempts=$attempt; updatedAt=(Get-Date).ToUniversalTime().ToString('o'); failed=@($status.Keys | Where-Object { -not $status[$_] }) } | ConvertTo-Json | Set-Content $pendingPath -Encoding UTF8
-  Write-Log "PIPELINE DEGRADED; recovery pending with attempt=$attempt"
+  $failedStages = @($status.Keys | Where-Object { -not $status[$_] -and ($_ -ne 'email' -or $emailAttempted) })
+  $emailState = $(if (-not $emailAttempted) {'NOT_ATTEMPTED_PIPELINE_INCOMPLETE'} elseif ($status.email) {'SUCCESS'} else {'FAILED'})
+  @{ cycle=$cycle; attempts=$attempt; updatedAt=(Get-Date).ToUniversalTime().ToString('o'); failed=$failedStages; emailState=$emailState } | ConvertTo-Json | Set-Content $pendingPath -Encoding UTF8
+  Write-Log "PIPELINE DEGRADED; recovery pending with attempt=$attempt emailState=$emailState"
   exit 1
 }
 catch {
