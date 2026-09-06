@@ -40,6 +40,7 @@ const checks = [
   'lib/bot-protocol-reference-response-policy.js',
   'lib/bot-protocol-reference-authority.js',
   'lib/bot-protocol-reference-preflight.js',
+  'lib/bot-protocol-technical-product-presentation.js',
   'lib/bot-protocol-guardrails.js',
   'lib/bot-protocol.js',
   'lib/bot-protocol-web-adapter.js',
@@ -113,6 +114,7 @@ if (!failed) {
       'tests/bot-protocol-reference-preflight.test.js',
       'tests/bot-protocol-reference-certification.test.js',
       'tests/bot-protocol-web-reference-certification.test.js',
+      'tests/bot-protocol-technical-product-presentation.test.js',
     ], { stdio: 'inherit', cwd: root });
     console.log('[postinstall] ✓ Chatbot reference certification gate');
   } catch {
