@@ -85,7 +85,7 @@ export default function TechnicalLibraryPage() {
           </Link>
 
           <motion.p
-            initial={{ opacity: 0, y: 8 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
             style={{
@@ -100,7 +100,7 @@ export default function TechnicalLibraryPage() {
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 14 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.08 }}
             style={{
@@ -116,7 +116,7 @@ export default function TechnicalLibraryPage() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.15 }}
             style={{
