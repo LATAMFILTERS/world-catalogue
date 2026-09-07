@@ -18,18 +18,22 @@ export default function IndustriesPage() {
       {/* Hero */}
       <section style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
-        padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
-        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 48%, rgba(0,0,0,0.48) 100%), url('/images/elementos-oil.avif')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 4rem)',
+        minHeight: 'clamp(500px, 52vw, 620px)',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundColor: '#050505',
+        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.70) 36%, rgba(0,0,0,0.42) 68%, rgba(0,0,0,0.20) 100%), url('/images/elementos-oil.avif')",
+        backgroundSize: '100% 100%, contain',
+        backgroundPosition: 'center, 72% center',
+        backgroundRepeat: 'no-repeat, no-repeat',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
           <Link href="/knowledge-center/" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
             letterSpacing: '0.1em',
-            color: 'rgba(255,255,255,0.35)',
+            color: 'rgba(255,255,255,0.42)',
             textDecoration: 'none',
             display: 'inline-block',
             marginBottom: '2rem',
@@ -75,7 +79,7 @@ export default function IndustriesPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.6)',
+              color: 'rgba(255,255,255,0.68)',
               maxWidth: '820px',
             }}
           >
@@ -87,7 +91,7 @@ export default function IndustriesPage() {
             fontSize: '0.85rem',
             lineHeight: 1.7,
             marginTop: '1rem',
-            color: 'rgba(255,255,255,0.45)',
+            color: 'rgba(255,255,255,0.52)',
             maxWidth: '600px',
           }}>
             Looking for commercial filtration solutions by industry? See <Link href="/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>ELIMFILTERS Industries</Link>.
