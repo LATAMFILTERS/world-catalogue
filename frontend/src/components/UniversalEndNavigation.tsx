@@ -63,6 +63,8 @@ function isRoute(pathname: string, base: string): boolean {
 }
 
 function navigationFor(pathname: string): NavigationConfig | null {
+  if (isRoute(pathname, '/knowledge-center')) return null;
+
   if (isRoute(pathname, '/families')) {
     return {
       kind: 'families',
@@ -103,17 +105,6 @@ function navigationFor(pathname: string): NavigationConfig | null {
       title: pathname === '/industries'
         ? 'Translate industry risk into the correct protection architecture.'
         : 'Move from operating environment to the correct protection architecture.',
-      items: [COMMON.systems, COMMON.families, COMMON.technologies, COMMON.search],
-    };
-  }
-
-  if (isRoute(pathname, '/knowledge-center')) {
-    return {
-      kind: 'knowledge',
-      eyebrow: '',
-      title: pathname === '/knowledge-center'
-        ? 'Turn technical knowledge into an asset protection decision.'
-        : 'Turn technical understanding into a protection decision.',
       items: [COMMON.systems, COMMON.families, COMMON.technologies, COMMON.search],
     };
   }
