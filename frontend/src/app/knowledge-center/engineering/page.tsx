@@ -38,8 +38,15 @@ export default function EngineeringHubPage() {
       <section style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
+        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.72) 52%, rgba(0,0,0,0.35) 100%), url('/images/operador-bancopruebas.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: 'clamp(420px, 56vw, 620px)',
+        display: 'flex',
+        alignItems: 'center',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
           <Link href="/knowledge-center/" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
