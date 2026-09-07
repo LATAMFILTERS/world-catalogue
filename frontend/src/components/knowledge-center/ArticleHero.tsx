@@ -21,7 +21,7 @@ export default function ArticleHero({
   subtitle,
   intro,
   gradient = true,
-  maxWidth = '860px',
+  maxWidth = '1200px',
   children,
 }: ArticleHeroProps) {
   return (
@@ -30,7 +30,7 @@ export default function ArticleHero({
       borderBottom: '1px solid rgba(255,255,255,0.06)',
       padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
     }}>
-      <div style={{ maxWidth, margin: '0 auto' }}>
+      <div style={{ maxWidth, width: '100%', margin: '0 auto' }}>
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,6 +58,7 @@ export default function ArticleHero({
             color: '#FFF12D',
             marginBottom: subtitle ? '0.5rem' : '1.25rem',
             lineHeight: 1.1,
+            maxWidth: '1000px',
           } : {
             fontFamily: 'Outfit, sans-serif',
             fontWeight: 700,
@@ -65,6 +66,7 @@ export default function ArticleHero({
             lineHeight: 1.12,
             textWrap: 'balance',
             marginBottom: subtitle ? '0.75rem' : '1.25rem',
+            maxWidth: '1000px',
           }}
         >
           {title}
@@ -81,6 +83,7 @@ export default function ArticleHero({
               fontSize: 'clamp(1rem, 2vw, 1.2rem)',
               color: 'rgba(255,255,255,0.5)',
               marginBottom: intro || children ? '1.5rem' : '0',
+              maxWidth: '900px',
             }}
           >
             {subtitle}
@@ -97,7 +100,7 @@ export default function ArticleHero({
               fontSize: '1rem',
               lineHeight: 1.75,
               color: 'rgba(255,255,255,0.7)',
-              maxWidth: '640px',
+              maxWidth: '860px',
               marginBottom: children ? '1rem' : '0',
             }}
           >
