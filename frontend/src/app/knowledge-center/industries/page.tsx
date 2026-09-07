@@ -19,6 +19,10 @@ export default function IndustriesPage() {
       <section style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
+        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 48%, rgba(0,0,0,0.48) 100%), url('/images/taller-npr-300x225_converted.avif')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Link href="/knowledge-center/" style={{
