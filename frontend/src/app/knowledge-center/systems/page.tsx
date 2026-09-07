@@ -10,19 +10,23 @@ export default function SystemsPage() {
 
       {/* Hero */}
       <section style={{
-        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.38) 100%), url('/images/dossier-filters.avif')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#050505',
+        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.70) 36%, rgba(0,0,0,0.42) 68%, rgba(0,0,0,0.20) 100%), url('/images/dossier-filters.avif')",
+        backgroundSize: '100% 100%, contain',
+        backgroundPosition: 'center, 72% center',
+        backgroundRepeat: 'no-repeat, no-repeat',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
-        padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
+        padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 4rem)',
+        minHeight: 'clamp(500px, 52vw, 620px)',
+        display: 'flex',
+        alignItems: 'center',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
           <Link href="/knowledge-center" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
             letterSpacing: '0.1em',
-            color: 'rgba(255,255,255,0.35)',
+            color: 'rgba(255,255,255,0.42)',
             textDecoration: 'none',
             display: 'inline-block',
             marginBottom: '2rem',
@@ -68,7 +72,7 @@ export default function SystemsPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.95rem',
               lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.6)',
+              color: 'rgba(255,255,255,0.68)',
               maxWidth: '820px',
             }}
           >
