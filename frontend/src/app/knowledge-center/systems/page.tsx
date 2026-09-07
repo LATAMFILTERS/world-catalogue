@@ -10,6 +10,10 @@ export default function SystemsPage() {
 
       {/* Hero */}
       <section style={{
+        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.38) 100%), url('/images/dossier-filters.avif')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
       }}>
