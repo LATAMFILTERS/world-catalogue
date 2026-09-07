@@ -62,13 +62,14 @@ export default function TechnicalLibraryPage() {
       <section style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 4rem)',
-        minHeight: 'clamp(440px, 58vw, 640px)',
+        minHeight: 'clamp(500px, 52vw, 620px)',
         display: 'flex',
         alignItems: 'center',
-        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.84) 34%, rgba(0,0,0,0.62) 66%, rgba(0,0,0,0.40) 100%), url('/images/grupo3-oil.avif')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#050505',
+        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.70) 36%, rgba(0,0,0,0.42) 68%, rgba(0,0,0,0.20) 100%), url('/images/grupo3-oil.avif')",
+        backgroundSize: '100% 100%, contain',
+        backgroundPosition: 'center, 72% center',
+        backgroundRepeat: 'no-repeat, no-repeat',
       }}>
         <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
           <Link href="/knowledge-center" style={{
@@ -122,7 +123,7 @@ export default function TechnicalLibraryPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '1rem',
               lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.72)',
+              color: 'rgba(255,255,255,0.68)',
               maxWidth: '820px',
             }}
           >
