@@ -61,18 +61,21 @@ export default function TechnicalLibraryPage() {
       {/* Hero */}
       <section style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
-        padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
-        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 48%, rgba(0,0,0,0.48) 100%), url('/images/conductora.avif')",
+        padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 4vw, 4rem)',
+        minHeight: 'clamp(440px, 58vw, 640px)',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.84) 34%, rgba(0,0,0,0.62) 66%, rgba(0,0,0,0.40) 100%), url('/images/grupo3-oil.avif')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto' }}>
           <Link href="/knowledge-center" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
             letterSpacing: '0.1em',
-            color: 'rgba(255,255,255,0.35)',
+            color: 'rgba(255,255,255,0.42)',
             textDecoration: 'none',
             display: 'inline-block',
             marginBottom: '2rem',
@@ -102,9 +105,10 @@ export default function TechnicalLibraryPage() {
             style={{
               fontFamily: 'Outfit, sans-serif',
               fontWeight: 700,
-              fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
-              lineHeight: 1.15,
-              marginBottom: '1.25rem',
+              fontSize: 'clamp(2rem, 4.5vw, 3.25rem)',
+              lineHeight: 1.08,
+              marginBottom: '1.1rem',
+              maxWidth: '760px',
             }}
           >
             Technical Reference Library
@@ -116,9 +120,9 @@ export default function TechnicalLibraryPage() {
             transition={{ duration: 0.4, delay: 0.15 }}
             style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.95rem',
+              fontSize: '1rem',
               lineHeight: 1.75,
-              color: 'rgba(255,255,255,0.6)',
+              color: 'rgba(255,255,255,0.72)',
               maxWidth: '820px',
             }}
           >
