@@ -39,12 +39,6 @@ const ROW = {
 let dbMode = 'normal';
 
 function resolverRows(refs) {
-  if (refs.includes('331193')) {
-    return [
-      { code: '331193', sku: 'EL82100', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' },
-      { code: '331193', sku: 'EL82101', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' }
-    ];
-  }
   const map = {
     P552100: { code: 'P552100', sku: 'EL82100', manufacturer: 'DONALDSON', score: 950, status: 'RESOLVED_CANONICAL_BASE' },
     LF3970: { code: 'LF3970', sku: 'EL82100', manufacturer: 'FLEETGUARD', score: 900, status: 'RESOLVED_SINGLE' }
@@ -142,11 +136,9 @@ test('web chat typo remains NOT_FOUND', async () => {
   assert.doesNotMatch(body.reply, /EL82100/);
 });
 
-test('web chat ambiguous resolver result blocks candidate SKUs', async () => {
-  dbMode = 'ambiguous';
-  __setProtocolPoolForTests(pool());
-  const { body } = await chat('Equivalencia WIX 331193', `web-amb-${Date.now()}`);
-  assert.equal(body.lookup_status, 'ambiguous');
+test('web chat unverified WIX reference remains NOT_FOUND and blocks candidate SKUs', async () => {
+  const { body } = await chat('Equivalencia WIX 331193', `web-notfound-wix-${Date.now()}`);
+  assert.equal(body.lookup_status, 'not_found');
   assert.equal(body.llm_bypassed, true);
   assert.doesNotMatch(body.reply, /EL82100|EL82101/);
 });
