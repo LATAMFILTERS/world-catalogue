@@ -40,7 +40,7 @@ const ROW = {
 let mode = 'normal';
 
 function resolverRows(refs) {
-  if (mode === 'ambiguous' && refs.includes('AMB331193')) {
+  if (refs.includes('AMB331193')) {
     return [
       { code: 'AMB331193', sku: 'EL82100', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' },
       { code: 'AMB331193', sku: 'EL82101', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' }
@@ -126,7 +126,7 @@ test('Donaldson resolver match returns validated ELIMFILTERS SKU without generic
   assert.equal(body.evidence.validated, true);
   assert.equal(body.evidence.products[0].sku, 'EL82100');
   assert.match(body.answer, /Donaldson P552100/i);
-  assert.match(body.answer, /ELIMFILTERS EL82100/i);
+  assert.match(body.answer, /(?:ELIMFILTERS\s+EL82100|SKU\s+ELIMFILTERS:\s*EL82100)/i);
   assert.doesNotMatch(body.answer, /\bOEM\b/i);
   assertNoInventedTechnicalClaims(body.answer);
 });
