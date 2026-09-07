@@ -73,7 +73,7 @@ export default function EngineeringReferencePage() {
           padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
           backgroundImage:
-            "linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.52) 48%, rgba(0,0,0,0.36) 100%), url('/images/marino-taller.avif')",
+            "linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.74) 34%, rgba(0,0,0,0.50) 66%, rgba(0,0,0,0.30) 100%), url('/images/oil-instalado.avif')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -93,6 +93,7 @@ export default function EngineeringReferencePage() {
               maxWidth: '1120px',
               margin: 0,
               textTransform: 'uppercase',
+              textShadow: '0 4px 22px rgba(0,0,0,0.45)',
             }}
           >
             Engineering
@@ -107,10 +108,11 @@ export default function EngineeringReferencePage() {
             style={{
               marginTop: '2rem',
               maxWidth: '800px',
-              color: 'rgba(255,255,255,0.78)',
+              color: 'rgba(255,255,255,0.82)',
               fontSize: 'clamp(1rem, 1.6vw, 1.28rem)',
               lineHeight: 1.75,
               fontWeight: 600,
+              textShadow: '0 2px 14px rgba(0,0,0,0.42)',
             }}
           >
             Structured technical references for filtration standards, particle control, contamination mechanisms, test methods,
