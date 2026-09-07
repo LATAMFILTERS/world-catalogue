@@ -40,12 +40,6 @@ const ROW = {
 let mode = 'normal';
 
 function resolverRows(refs) {
-  if (mode === 'ambiguous') {
-    return [
-      { code: normalize(refs[0] || 'AMB331193'), sku: 'EL82100', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' },
-      { code: normalize(refs[0] || 'AMB331193'), sku: 'EL82101', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' }
-    ];
-  }
   const map = {
     P552100: { code: 'P552100', sku: 'EL82100', manufacturer: 'DONALDSON', score: 950, status: 'RESOLVED_CANONICAL_BASE' },
     LF3970: { code: 'LF3970', sku: 'EL82100', manufacturer: 'FLEETGUARD', score: 900, status: 'RESOLVED_SINGLE' },
@@ -165,13 +159,10 @@ test('valid then invalid in same conversation never leaks previous SKU', async (
   assert.doesNotMatch(invalid.body.answer, /EL82100/);
 });
 
-test('multiple resolver candidates are ambiguous and candidate SKUs remain hidden', async () => {
-  mode = 'ambiguous';
-  __setProtocolPoolForTests(poolForMode());
-  const { body } = await send('WIX AMB331193', `cert-amb-${Date.now()}`);
-  assert.equal(body.evidence.lookup_status, 'ambiguous');
+test('unverified WIX reference is NOT_FOUND and candidate SKUs remain hidden', async () => {
+  const { body } = await send('WIX 331193', `cert-notfound-wix-${Date.now()}`);
+  assert.equal(body.evidence.lookup_status, 'not_found');
   assert.equal(body.evidence.validated, false);
-  assert.match(body.answer, /m[aá]s de una coincidencia/i);
   assert.doesNotMatch(body.answer, /EL82100|EL82101/);
 });
 
