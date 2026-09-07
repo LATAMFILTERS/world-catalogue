@@ -22,18 +22,22 @@ export default function GlossaryPage() {
       {/* Hero */}
       <section style={{
         borderBottom: '1px solid rgba(255,255,255,0.06)',
-        padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)',
-        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 48%, rgba(0,0,0,0.48) 100%), url('/images/system-hero.avif')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        padding: 'clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 5vw, 4rem)',
+        minHeight: 'clamp(500px, 52vw, 620px)',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundColor: '#050505',
+        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.70) 36%, rgba(0,0,0,0.42) 68%, rgba(0,0,0,0.20) 100%), url('/images/system-hero.avif')",
+        backgroundSize: '100% 100%, contain',
+        backgroundPosition: 'center, 72% center',
+        backgroundRepeat: 'no-repeat, no-repeat',
       }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1100px', width: '100%', margin: '0 auto' }}>
           <Link href="/knowledge-center" style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.65rem',
             letterSpacing: '0.1em',
-            color: 'rgba(255,255,255,0.35)',
+            color: 'rgba(255,255,255,0.42)',
             textDecoration: 'none',
             display: 'inline-block',
             marginBottom: '2rem',
@@ -70,7 +74,7 @@ export default function GlossaryPage() {
               fontFamily: 'Inter, sans-serif',
               fontSize: '1.05rem',
               lineHeight: 1.7,
-              color: 'rgba(255,255,255,0.65)',
+              color: 'rgba(255,255,255,0.68)',
               maxWidth: '820px',
             }}>
               {allTerms.length} canonical engineering terms across {byCategory.size} technical categories.
