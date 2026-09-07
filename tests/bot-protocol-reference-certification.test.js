@@ -40,10 +40,10 @@ const ROW = {
 let mode = 'normal';
 
 function resolverRows(refs) {
-  if (refs.includes('AMB331193')) {
+  if (mode === 'ambiguous') {
     return [
-      { code: 'AMB331193', sku: 'EL82100', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' },
-      { code: 'AMB331193', sku: 'EL82101', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' }
+      { code: normalize(refs[0] || 'AMB331193'), sku: 'EL82100', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' },
+      { code: normalize(refs[0] || 'AMB331193'), sku: 'EL82101', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' }
     ];
   }
   const map = {
