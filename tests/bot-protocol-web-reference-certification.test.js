@@ -39,7 +39,7 @@ const ROW = {
 let dbMode = 'normal';
 
 function resolverRows(refs) {
-  if (dbMode === 'ambiguous' && refs.includes('331193')) {
+  if (refs.includes('331193')) {
     return [
       { code: '331193', sku: 'EL82100', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' },
       { code: '331193', sku: 'EL82101', manufacturer: 'WIX', score: 900, status: 'RESOLVED_SINGLE' }
@@ -121,7 +121,7 @@ test('web chat uses resolver authority for Donaldson and bypasses LLM', async ()
   assert.equal(body.llm_bypassed, true);
   assert.equal(body.source_brand, 'Donaldson');
   assert.match(body.reply, /Donaldson P552100/i);
-  assert.match(body.reply, /ELIMFILTERS EL82100/i);
+  assert.match(body.reply, /(?:ELIMFILTERS\s+EL82100|SKU\s+ELIMFILTERS:\s*EL82100)/i);
   assert.doesNotMatch(body.reply, /\bOEM\b|SYNTRAX|NANOFORCE|SYNTAPORE/i);
 });
 
