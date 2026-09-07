@@ -65,18 +65,19 @@ export default function EngineeringReferencePage() {
 
       <section
         style={{
-          minHeight: '74vh',
+          minHeight: 'clamp(500px, 52vw, 620px)',
           position: 'relative',
           overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
-          padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
+          padding: 'clamp(5rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
+          backgroundColor: '#050505',
           backgroundImage:
-            "linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.74) 34%, rgba(0,0,0,0.50) 66%, rgba(0,0,0,0.30) 100%), url('/images/oil-instalado.avif')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+            "linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.70) 36%, rgba(0,0,0,0.42) 68%, rgba(0,0,0,0.20) 100%), url('/images/oil-instalado.avif')",
+          backgroundSize: '100% 100%, contain',
+          backgroundPosition: 'center, 72% center',
+          backgroundRepeat: 'no-repeat, no-repeat',
         }}
       >
         <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 }}>
