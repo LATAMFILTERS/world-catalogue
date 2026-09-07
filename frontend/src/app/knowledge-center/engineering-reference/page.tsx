@@ -72,8 +72,11 @@ export default function EngineeringReferencePage() {
           alignItems: 'center',
           padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
-          background:
-            'linear-gradient(90deg, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.32) 48%, rgba(0,0,0,0.22) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.24), transparent 36%)',
+          backgroundImage:
+            "linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.52) 48%, rgba(0,0,0,0.36) 100%), url('/images/marino-taller.avif')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
       >
         <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 }}>
