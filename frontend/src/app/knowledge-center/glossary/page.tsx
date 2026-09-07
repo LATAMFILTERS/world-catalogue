@@ -46,7 +46,7 @@ export default function GlossaryPage() {
           </Link>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
           >
@@ -87,7 +87,7 @@ export default function GlossaryPage() {
 
           {/* Category nav pills */}
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.2 }}
             style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '2rem' }}
@@ -131,7 +131,6 @@ export default function GlossaryPage() {
               transition={{ duration: 0.4, delay: catIndex * 0.06 }}
               style={{ marginBottom: '3.5rem' }}
             >
-              {/* Category heading */}
               <div style={{
                 display: 'flex',
                 alignItems: 'baseline',
@@ -157,7 +156,6 @@ export default function GlossaryPage() {
                 </span>
               </div>
 
-              {/* Terms in this category */}
               {catTerms.map((term) => {
                 const slug = termIdToSlug(term.id);
                 return (
@@ -175,7 +173,6 @@ export default function GlossaryPage() {
                         transition: 'border-left-color 0.2s, background 0.2s',
                       }}
                     >
-                      {/* Term ID + aliases */}
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '0.4rem', flexWrap: 'wrap' }}>
                         <span style={{
                           fontFamily: 'JetBrains Mono, monospace',
@@ -197,7 +194,6 @@ export default function GlossaryPage() {
                         ))}
                       </div>
 
-                      {/* Term name */}
                       <p style={{
                         fontFamily: 'Outfit, sans-serif',
                         fontWeight: 600,
@@ -208,7 +204,6 @@ export default function GlossaryPage() {
                         {term.term}
                       </p>
 
-                      {/* Definition excerpt */}
                       <p style={{
                         fontFamily: 'Inter, sans-serif',
                         fontSize: '0.85rem',
@@ -222,7 +217,6 @@ export default function GlossaryPage() {
                         {term.definition}
                       </p>
 
-                      {/* Standards */}
                       {term.applicableStandards.length > 0 && (
                         <div style={{ marginTop: '0.55rem', display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
                           {term.applicableStandards.map((std) => (
@@ -248,7 +242,6 @@ export default function GlossaryPage() {
         })}
       </div>
 
-      {/* CTA Section: Go Deeper */}
       <section style={{
         padding: '3rem clamp(1.5rem, 5vw, 4rem)',
         marginTop: '2rem',
@@ -300,7 +293,6 @@ export default function GlossaryPage() {
         </div>
       </section>
 
-      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
