@@ -24,13 +24,15 @@ export default function ArticleHero({
   maxWidth = '1200px',
   children,
 }: ArticleHeroProps) {
+  const containerMaxWidth = maxWidth === '860px' ? '1200px' : maxWidth;
+
   return (
     <section style={{
       background: gradient ? 'linear-gradient(160deg, #080808 0%, #000 100%)' : '#000',
       borderBottom: '1px solid rgba(255,255,255,0.06)',
       padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem)',
     }}>
-      <div style={{ maxWidth, width: '100%', margin: '0 auto' }}>
+      <div style={{ maxWidth: containerMaxWidth, width: '100%', margin: '0 auto' }}>
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
