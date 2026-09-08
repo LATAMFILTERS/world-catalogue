@@ -5,6 +5,7 @@ import process from 'node:process';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import { latestWeeklyReport, resolveMailConfig } from './send-weekly-email.mjs';
+import { validateWeeklyEmailContract, validateRenderedWeeklyEmail } from './weekly-email-integrity.mjs';
 
 const require = createRequire(import.meta.url);
 const { buildReviewUrl } = require('../../lib/hermes-review-token');
@@ -66,13 +67,13 @@ function buildExecutiveMessage(report, env = process.env) {
 
   if (!data || typeof data !== 'object') {
     const fallback = esc(report.text);
-    return {
-      date,
-      subject,
-      text: `HERMES — Revisión Semanal de Inteligencia\n\n${report.text}`,
-      html: `<div style="font-family:Arial,sans-serif;max-width:760px"><h2>${esc(subject)}</h2><pre style="white-space:pre-wrap">${fallback}</pre></div>`,
-    };
+    const text = `HERMES — Revisión Semanal de Inteligencia\n\n${report.text}`;
+    const html = `<div style="font-family:Arial,sans-serif;max-width:760px"><h2>${esc(subject)}</h2><pre style="white-space:pre-wrap">${fallback}</pre></div>`;
+    if (String(report.text || '').trim().length < 100) throw new Error('HERMES_EMAIL_INTEGRITY: unstructured fallback report is too small to send.');
+    return { date, subject, text, html };
   }
+
+  validateWeeklyEmailContract(data);
 
   const totals = data.totals || {};
   const groups = data.groups || {};
@@ -148,11 +149,10 @@ function buildExecutiveMessage(report, env = process.env) {
     <hr><p style="font-size:12px;color:#666">Autoridad de decisión: Victor Abreu.</p>
   </div>`;
 
-  if (String(html).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().length < 120) {
-    throw new Error('HERMES weekly email body failed content validation.');
-  }
+  const finalText = `${notice}\n\n${text.join('\n')}`;
+  validateRenderedWeeklyEmail(data, { html, text: finalText });
 
-  return { date, subject, text: `${notice}\n\n${text.join('\n')}`, html };
+  return { date, subject, text: finalText, html };
 }
 
 export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env = process.env, gmailTransportFactory = null, outlookFactory = null } = {}) {
