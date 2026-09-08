@@ -76,12 +76,15 @@ function buildExecutiveMessage(report, env = process.env) {
 
   const totals = data.totals || {};
   const groups = data.groups || {};
+  const pending = Array.isArray(data.research_pending) ? data.research_pending : [];
+  const duplicates = Array.isArray(data.duplicates) ? data.duplicates : [];
+  const invalid = Array.isArray(data.invalid) ? data.invalid : [];
   const cards = [];
   const text = [];
   text.push('HERMES — Revisión Semanal de Inteligencia', '');
   text.push(`Candidatos analizados: ${totals.scanned ?? 0}`);
   text.push(`Listos para revisión: ${totals.review_ready ?? 0}`);
-  text.push(`Requieren más investigación: ${totals.needs_research ?? 0}`, '');
+  text.push(`Requieren más investigación: ${totals.needs_research ?? pending.length}`, '');
 
   for (const [type, candidates] of Object.entries(groups).sort()) {
     for (const c of candidates) {
@@ -109,17 +112,46 @@ function buildExecutiveMessage(report, env = process.env) {
     }
   }
 
+  if (pending.length) {
+    text.push('REQUIEREN MÁS INVESTIGACIÓN', '');
+    for (const item of pending) {
+      text.push(`Código: ${item.entity_code || 'n/a'}`);
+      text.push(`Motivo: ${item.reason || 'RESEARCH_NOT_RESOLVED'}`);
+      text.push(`Fuente: ${item.source_publisher || 'n/a'} — ${item.source_url || 'n/a'}`);
+      if (item.proposed_action) text.push(`Acción propuesta: ${item.proposed_action}`);
+      text.push('');
+    }
+  }
+
+  const pendingCards = pending.map((item) => `<div style="border:1px solid #e5c84b;border-radius:8px;padding:16px;margin:14px 0;background:#fffdf2">
+    <div style="font-size:12px;text-transform:uppercase;color:#7a6400">Requiere más investigación</div>
+    <h3 style="margin:6px 0 10px">${esc(item.entity_code || 'Hallazgo pendiente')}</h3>
+    <p><strong>Motivo:</strong> ${esc(item.reason || 'RESEARCH_NOT_RESOLVED')}</p>
+    <p><strong>Fuente:</strong> ${esc(item.source_publisher || 'n/a')} — ${esc(item.source_url || 'n/a')}</p>
+    ${item.proposed_action ? `<p><strong>Acción propuesta:</strong> ${esc(item.proposed_action)}</p>` : ''}
+    <p style="font-size:12px;color:#666">Estado: pendiente de investigación adicional antes de cualquier aprobación.</p>
+  </div>`);
+
   const notice = 'HERMES no modifica catálogo, Knowledge Center, Obsidian ni PostgreSQL sin aprobación explícita.';
+  const detailBlocks = [...cards, ...pendingCards];
+  const emptyMessage = duplicates.length || invalid.length
+    ? '<p>No hay hallazgos listos para revisión; existen elementos clasificados como duplicados o inválidos en este ciclo.</p>'
+    : '<p>No hay hallazgos ni pendientes de investigación en este ciclo.</p>';
   const html = `<div style="font-family:Arial,sans-serif;max-width:760px;color:#111">
     <h2>${esc(subject)}</h2>
     <div style="background:#f5f5f5;padding:14px;border-radius:8px">
       <strong>Resumen ejecutivo</strong><br>
-      Candidatos analizados: ${esc(totals.scanned ?? 0)} · Listos para revisión: ${esc(totals.review_ready ?? 0)} · Requieren investigación: ${esc(totals.needs_research ?? 0)}
+      Candidatos analizados: ${esc(totals.scanned ?? 0)} · Listos para revisión: ${esc(totals.review_ready ?? 0)} · Requieren investigación: ${esc(totals.needs_research ?? pending.length)}
     </div>
     <p><strong>${esc(notice)}</strong></p>
-    ${cards.join('\n') || '<p>No hay hallazgos listos para revisión en este ciclo.</p>'}
+    ${detailBlocks.join('\n') || emptyMessage}
     <hr><p style="font-size:12px;color:#666">Autoridad de decisión: Victor Abreu.</p>
   </div>`;
+
+  if (String(html).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().length < 120) {
+    throw new Error('HERMES weekly email body failed content validation.');
+  }
+
   return { date, subject, text: `${notice}\n\n${text.join('\n')}`, html };
 }
 
