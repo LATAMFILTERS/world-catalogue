@@ -17,7 +17,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { runCollection, sourcesFromRegistry, loadSourcesConfig, DEFAULT_MAX_BYTES, DEFAULT_TIMEOUT_MS, DEFAULT_MAX_SOURCES_PER_RUN } from './collect-real-sources-core.mjs';
+import { runCollection, sourcesFromRegistry, loadSourcesConfig, DEFAULT_MAX_BYTES, DEFAULT_TIMEOUT_MS, DEFAULT_MAX_SOURCES_PER_RUN, SOURCE_PRIORITY, DEFAULT_SOURCE_PRIORITY_TIER } from './collect-real-sources-core.mjs';
 import { DEFAULT_MIN_CONTENT_LENGTH } from './source-baseline-core.mjs';
 import { loadRegistry, validateRegistry } from './source-registry-core.mjs';
 import { isDryRunActive } from './hermes-core.mjs';
@@ -42,8 +42,55 @@ const minContentLength = Number(process.env.HERMES_COLLECTION_MIN_CONTENT_LENGTH
 // are never capped — bootstrapping/refreshing the baseline is a one-time
 // housekeeping pass, not a weekly-quota-constrained intelligence run.
 const maxSources = baselineMode ? 0 : Number(process.env.HERMES_MAX_SOURCES_PER_RUN ?? DEFAULT_MAX_SOURCES_PER_RUN);
+const fairnessSlots = Math.max(0, Number(process.env.HERMES_SOURCE_FAIRNESS_SLOTS ?? 3));
 const harvestStatePath = path.resolve('hermes/baselines/source-observations.json');
 const harvestState = loadHarvestState(harvestStatePath);
+
+function isoWeekKey(date = new Date()) {
+  const d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+  const day = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - day);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  const week = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+  return (d.getUTCFullYear() * 100) + week;
+}
+
+// Preserve most capacity for governed priority while reserving a small number
+// of weekly-rotating fairness slots. This prevents the same tail endpoints from
+// being permanently excluded when active sources exceed HERMES_MAX_SOURCES_PER_RUN.
+function applyWeeklyFairRotation(allSources, cap, slots, rotationKey = isoWeekKey()) {
+  if (!Number.isFinite(cap) || cap <= 0 || allSources.length <= cap) {
+    return { selected: allSources, rotatingPool: 0, fairnessUsed: 0, rotationKey };
+  }
+
+  const indexed = allSources.map((source, index) => ({
+    source,
+    index,
+    tier: SOURCE_PRIORITY[source.category] ?? DEFAULT_SOURCE_PRIORITY_TIER
+  }));
+  indexed.sort((a, b) => (a.tier - b.tier) || (a.index - b.index));
+
+  const requestedFairness = Math.min(Math.max(0, Math.floor(slots)), cap);
+  const guaranteedCount = Math.max(0, cap - requestedFairness);
+  const guaranteed = indexed.slice(0, guaranteedCount);
+  const pool = indexed.slice(guaranteedCount);
+  const fairnessUsed = Math.min(requestedFairness, pool.length, cap - guaranteed.length);
+
+  const rotated = [];
+  if (fairnessUsed > 0 && pool.length > 0) {
+    const offset = Math.abs(rotationKey) % pool.length;
+    for (let i = 0; i < fairnessUsed; i += 1) rotated.push(pool[(offset + i) % pool.length]);
+  }
+
+  const selectedEntries = [...guaranteed, ...rotated]
+    .sort((a, b) => a.index - b.index);
+  return {
+    selected: selectedEntries.map((entry) => entry.source),
+    rotatingPool: pool.length,
+    fairnessUsed,
+    rotationKey
+  };
+}
 
 let sources;
 let sourceMode;
@@ -74,8 +121,18 @@ if (baselineMode) {
   console.log('[HERMES collect] HERMES_BASELINE_MODE=true — this run only bootstraps/refreshes hermes/baselines/source-baseline.json; it will not produce any candidate.');
 }
 
+const availableSourceCount = sources.length;
+const rotation = baselineMode
+  ? { selected: sources, rotatingPool: 0, fairnessUsed: 0, rotationKey: isoWeekKey() }
+  : applyWeeklyFairRotation(sources, maxSources, fairnessSlots);
+const selectedSources = rotation.selected;
+
+if (!baselineMode && availableSourceCount > selectedSources.length) {
+  console.log(`[HERMES collect] fairness_rotation=weekly rotation_key=${rotation.rotationKey} fairness_slots=${rotation.fairnessUsed} rotating_pool=${rotation.rotatingPool} selected=${selectedSources.length}/${availableSourceCount}`);
+}
+
 const summary = await runCollection({
-  sources,
+  sources: selectedSources,
   realCandidatesDir: path.resolve('hermes/real-candidates'),
   sourceCacheDir: path.resolve('hermes/source-cache'),
   previewDir: path.resolve('hermes/real-candidates-previews'),
@@ -84,13 +141,20 @@ const summary = await runCollection({
   baselinePreviewPath: path.resolve('hermes/baselines/source-baseline.preview.json'),
   harvestState,
   harvestStatePath,
-  maxSources,
+  // Selection/capping has already been applied above so the core must not
+  // cap the selected list a second time.
+  maxSources: 0,
   dryRun,
   baselineMode,
   minContentLength,
   timeoutMs,
   maxBytes
 });
+
+// Preserve operational reporting against the full governed registry even
+// though runCollection receives only this week's selected subset.
+summary.sources_available = availableSourceCount;
+summary.sources_capped = Math.max(0, availableSourceCount - selectedSources.length);
 
 console.log(`[HERMES collect] source_mode=${sourceMode} mode=${summary.mode} baseline_mode=${summary.baseline_mode} sources_available=${summary.sources_available} sources=${summary.sources_total} sources_capped=${summary.sources_capped} enabled=${summary.sources_enabled}`);
 console.log(`[HERMES collect] created=${summary.created} previewed=${summary.previewed} unchanged=${summary.unchanged} changed=${summary.changed} first_harvest=${summary.first_harvest} empty_content=${summary.empty_content} insufficient_content=${summary.insufficient_content} baseline_required=${summary.baseline_required} baseline_recorded=${summary.baseline_recorded} duplicates=${summary.duplicates} fetch_errors=${summary.fetch_errors} invalid=${summary.invalid} disabled=${summary.disabled}`);
