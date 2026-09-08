@@ -99,7 +99,6 @@ $alertStatePath = Join-Path $StateDir 'alert-state.json'
 $checks = New-Object 'System.Collections.Generic.List[object]'
 $now = Get-Date
 
-# Disk health
 try {
   $drive = Get-CimInstance Win32_LogicalDisk -Filter "DeviceID='C:'"
   $freeGB = [math]::Round($drive.FreeSpace / 1GB, 2)
@@ -115,7 +114,6 @@ try {
   Add-Check $checks 'disk_c' 'CRITICAL' "Unable to read C: disk health: $($_.Exception.Message)"
 }
 
-# Required paths
 foreach ($pathSpec in @(
   @{ name='world_catalogue_repo'; path=$RepoPath },
   @{ name='hermes_runtime'; path=(Join-Path $Root 'apps\hermes-runtime') },
@@ -128,7 +126,6 @@ foreach ($pathSpec in @(
   }
 }
 
-# Scheduled tasks
 $taskSpecs = @(
   @{ name='hermes_task'; task='ELIMFILTERS-HERMES-Weekly'; maxAgeHours=192 },
   @{ name='backup_task'; task='ELIMFILTERS-Lenovo-Backup'; maxAgeHours=36 }
@@ -156,7 +153,6 @@ foreach ($spec in $taskSpecs) {
   }
 }
 
-# Local backup freshness and integrity sidecars
 $backupRoot = Join-Path $Root 'backups\lenovo'
 try {
   $latestZip = Get-ChildItem $backupRoot -Filter 'elimserver-lenovo-*.zip' -File -ErrorAction Stop | Sort-Object LastWriteTime -Descending | Select-Object -First 1
@@ -178,7 +174,6 @@ try {
   Add-Check $checks 'local_backup' 'CRITICAL' "Unable to inspect local backups: $($_.Exception.Message)"
 }
 
-# HERMES stale lock
 $hermesLock = Join-Path $Root 'state\hermes\weekly.lock'
 if (Test-Path $hermesLock) {
   $lockAge = [math]::Round((New-TimeSpan -Start (Get-Item $hermesLock).LastWriteTime -End $now).TotalHours, 2)
@@ -191,7 +186,6 @@ if (Test-Path $hermesLock) {
   Add-Check $checks 'hermes_lock' 'OK' 'No stale HERMES run lock present.'
 }
 
-# R2 reachability and latest backup visibility
 if ([string]::IsNullOrWhiteSpace($R2Remote)) {
   $R2Remote = [Environment]::GetEnvironmentVariable('ELIM_R2_REMOTE','User')
 }
@@ -211,9 +205,9 @@ if ([string]::IsNullOrWhiteSpace($R2Remote)) {
       $remoteLatest = $remoteZips[-1]
       $localLatest = Get-ChildItem $backupRoot -Filter 'elimserver-lenovo-*.zip' -File -ErrorAction SilentlyContinue | Sort-Object Name | Select-Object -Last 1
       if ($null -ne $localLatest -and $remoteLatest -ne $localLatest.Name) {
-        Add-Check $checks 'r2_backup' 'WARN' "R2 reachable, but latest remote ZIP differs from latest local ZIP." @{ remote_latest=$remoteLatest; local_latest=$localLatest.Name }
+        Add-Check $checks 'r2_backup' 'WARN' 'R2 reachable, but latest remote ZIP differs from latest local ZIP.' @{ remote_latest=$remoteLatest; local_latest=$localLatest.Name }
       } else {
-        Add-Check $checks 'r2_backup' 'OK' "R2 reachable; latest Lenovo backup visible." @{ remote_latest=$remoteLatest }
+        Add-Check $checks 'r2_backup' 'OK' 'R2 reachable; latest Lenovo backup visible.' @{ remote_latest=$remoteLatest }
       }
     }
   } catch {
@@ -221,30 +215,31 @@ if ([string]::IsNullOrWhiteSpace($R2Remote)) {
   }
 }
 
-$criticalCount = @($checks | Where-Object status -eq 'CRITICAL').Count
-$warnCount = @($checks | Where-Object status -eq 'WARN').Count
+$checkArray = @($checks | ForEach-Object { $_ })
+$criticalCount = @($checkArray | Where-Object status -eq 'CRITICAL').Count
+$warnCount = @($checkArray | Where-Object status -eq 'WARN').Count
 $overall = if ($criticalCount -gt 0) { 'CRITICAL' } elseif ($warnCount -gt 0) { 'WARN' } else { 'OK' }
 
 $status = [ordered]@{
-  schema_version = '1.0.0'
+  schema_version = '1.0.1'
   checked_at = $now.ToString('o')
   computer = $env:COMPUTERNAME
   overall = $overall
   critical_count = $criticalCount
   warning_count = $warnCount
-  checks = @($checks)
+  checks = $checkArray
 }
 
 $statusJson = $status | ConvertTo-Json -Depth 8
 $statusJson | Out-File -FilePath $statusPath -Encoding utf8
 ($status | ConvertTo-Json -Depth 8 -Compress) | Add-Content -Path $historyPath -Encoding utf8
 
-$previousOverall = $null
+$lastNotifiedOverall = $null
 if (Test-Path $alertStatePath) {
-  try { $previousOverall = (Get-Content $alertStatePath -Raw | ConvertFrom-Json).overall } catch { $previousOverall = $null }
+  try { $lastNotifiedOverall = (Get-Content $alertStatePath -Raw | ConvertFrom-Json).last_notified_overall } catch { $lastNotifiedOverall = $null }
 }
 
-$shouldNotify = $ForceNotify -or [string]::IsNullOrWhiteSpace([string]$previousOverall) -or ($previousOverall -ne $overall)
+$shouldNotify = $ForceNotify -or [string]::IsNullOrWhiteSpace([string]$lastNotifiedOverall) -or ($lastNotifiedOverall -ne $overall)
 $notificationOutcome = 'SKIPPED_NO_STATE_CHANGE'
 if ($shouldNotify) {
   $lines = New-Object System.Collections.Generic.List[string]
@@ -252,20 +247,22 @@ if ($shouldNotify) {
   $lines.Add("Computer: $env:COMPUTERNAME") | Out-Null
   $lines.Add("Checked: $($now.ToString('yyyy-MM-dd HH:mm:ss zzz'))") | Out-Null
   $lines.Add('') | Out-Null
-  foreach ($check in $checks) {
+  foreach ($check in $checkArray) {
     $lines.Add("[$($check.status)] $($check.name): $($check.message)") | Out-Null
   }
   $bodyText = $lines -join "`r`n"
   try {
     Send-MonitorEmail -Subject "[ELIMFILTERS Lenovo] $overall monitoring status" -BodyText $bodyText -SecretsFile $SecretsPath
     $notificationOutcome = 'SENT'
+    $lastNotifiedOverall = $overall
   } catch {
     $notificationOutcome = "FAILED: $($_.Exception.Message)"
   }
 }
 
 @{
-  overall = $overall
+  current_overall = $overall
+  last_notified_overall = $lastNotifiedOverall
   updated_at = $now.ToString('o')
   notification = $notificationOutcome
 } | ConvertTo-Json | Out-File -FilePath $alertStatePath -Encoding utf8
