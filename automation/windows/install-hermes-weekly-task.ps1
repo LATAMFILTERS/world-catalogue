@@ -12,11 +12,22 @@ if (-not (Test-Path (Join-Path $DevRepoPath '.git'))) {
 }
 
 Set-Location $DevRepoPath
+$originUrl = (git remote get-url origin).Trim()
+if (-not $originUrl) {
+  throw "Could not resolve the origin remote URL from $DevRepoPath"
+}
+
 git fetch origin main
+if ($LASTEXITCODE -ne 0) {
+  throw "git fetch origin main failed in $DevRepoPath"
+}
 
 if (-not (Test-Path $RuntimePath)) {
   New-Item -ItemType Directory -Force -Path (Split-Path $RuntimePath -Parent) | Out-Null
-  git clone --branch main --single-branch origin $RuntimePath
+  git clone --branch main --single-branch $originUrl $RuntimePath
+  if ($LASTEXITCODE -ne 0) {
+    throw "git clone failed from $originUrl to $RuntimePath"
+  }
 } elseif (-not (Test-Path (Join-Path $RuntimePath '.git'))) {
   throw "Runtime path exists but is not a git clone: $RuntimePath"
 }
@@ -24,7 +35,13 @@ if (-not (Test-Path $RuntimePath)) {
 $runner = Join-Path $RuntimePath 'automation\windows\run-hermes-weekly.ps1'
 Set-Location $RuntimePath
 git fetch origin main
+if ($LASTEXITCODE -ne 0) {
+  throw "git fetch origin main failed in $RuntimePath"
+}
 git reset --hard origin/main
+if ($LASTEXITCODE -ne 0) {
+  throw "git reset --hard origin/main failed in $RuntimePath"
+}
 
 if (-not (Test-Path $runner)) {
   throw "HERMES runner not found after runtime sync: $runner"
