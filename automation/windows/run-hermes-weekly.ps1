@@ -1,5 +1,5 @@
 param(
-  [string]$RepoPath = "C:\ELIMSERVER\repos\world-catalogue",
+  [string]$RepoPath = "C:\ELIMSERVER\apps\hermes-runtime",
   [string]$LogDir = "C:\ELIMSERVER\logs\hermes",
   [string]$StateDir = "C:\ELIMSERVER\state\hermes"
 )
@@ -17,6 +17,10 @@ $stamp = Get-Date -Format 'yyyy-MM-dd_HH-mm-ss'
 $log = Join-Path $LogDir "hermes-weekly-$stamp.log"
 $lock = Join-Path $StateDir 'weekly.lock'
 
+if (-not (Test-Path (Join-Path $RepoPath '.git'))) {
+  throw "HERMES runtime clone not found: $RepoPath"
+}
+
 if (Test-Path $lock) {
   $age = (Get-Date) - (Get-Item $lock).LastWriteTime
   if ($age.TotalHours -lt 6) {
@@ -30,14 +34,15 @@ New-Item -ItemType File -Force -Path $lock | Out-Null
 
 try {
   Set-Location $RepoPath
-  node scripts\validate-hybrid-runtime.js | Tee-Object -FilePath $log -Append
 
+  # Runtime clone is disposable and isolated from Claude Code's development checkout.
   git fetch origin main | Tee-Object -FilePath $log -Append
-  git pull --ff-only origin main | Tee-Object -FilePath $log -Append
+  git reset --hard origin/main | Tee-Object -FilePath $log -Append
+  git clean -fd -e hermes/ -e seo-geo-audit-out/ | Tee-Object -FilePath $log -Append
 
+  node scripts\validate-hybrid-runtime.js | Tee-Object -FilePath $log -Append
   npm ci | Tee-Object -FilePath $log -Append
 
-  # Preserve the governed HERMES sequence used by the former GitHub Action.
   npm run hermes:baseline:restore | Tee-Object -FilePath $log -Append
   try { npm run hermes:harvest:restore | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
   try { npm run hermes:collect | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
@@ -53,7 +58,7 @@ try {
   try { npm run hermes:validate:real | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
   try { npm run hermes:report:real | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
 
-  # Email delivery must still be attempted even when an upstream stage degraded.
+  # Executive delivery is still attempted even when upstream research degrades.
   npm run hermes:email:real | Tee-Object -FilePath $log -Append
   node scripts\hermes\weekly-send-guard.mjs mark | Tee-Object -FilePath $log -Append
 
