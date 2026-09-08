@@ -109,6 +109,8 @@ if (!failed) {
     console.log('[postinstall] ⟳ Running mandatory chatbot reference certification gate...');
     execFileSync(process.execPath, [
       '--test',
+      '--test-force-exit',
+      '--test-concurrency=1',
       'tests/bot-protocol-guardrails.test.js',
       'tests/bot-protocol-reference-response-policy.test.js',
       'tests/bot-protocol-reference-preflight.test.js',
