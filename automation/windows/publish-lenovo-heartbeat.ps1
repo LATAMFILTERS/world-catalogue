@@ -21,22 +21,21 @@ if (-not (Test-Path $SecretsPath)) { throw "HERMES secrets file not found: $Secr
 if (-not (Test-Path (Join-Path $RepoPath 'scripts\hermes\hermes-ha-control.mjs'))) { throw "HA control script not found in $RepoPath" }
 
 $secrets = Import-Clixml $SecretsPath
-$dbProp = $secrets.PSObject.Properties['DATABASE_URL']
-if ($null -eq $dbProp) { $dbProp = $secrets.PSObject.Properties['CATALOG_DATABASE_URL'] }
-if ($null -eq $dbProp) { throw 'DATABASE_URL/CATALOG_DATABASE_URL missing from HERMES secrets.' }
+$dbProp = $secrets.PSObject.Properties['CATALOG_DATABASE_URL']
+if ($null -eq $dbProp) { throw 'CATALOG_DATABASE_URL missing from HERMES secrets.' }
 $dbUrl = Convert-SecretValueToPlainText $dbProp.Value
-if ([string]::IsNullOrWhiteSpace($dbUrl)) { throw 'Database URL is empty.' }
+if ([string]::IsNullOrWhiteSpace($dbUrl)) { throw 'CATALOG_DATABASE_URL is empty.' }
 
 try {
-  $dbUri = [Uri]$dbUrl
+  $uri = [Uri]$dbUrl
+  $dbName = $uri.AbsolutePath.Trim('/')
 } catch {
-  throw 'DATABASE_URL is not a valid PostgreSQL URI.'
+  throw 'CATALOG_DATABASE_URL is not a valid PostgreSQL URL.'
 }
-$dbName = $dbUri.AbsolutePath.Trim('/')
 if ($dbName -ne 'catalogo_elimfilters') {
-  throw "HA heartbeat blocked: HERMES database is '$dbName', expected 'catalogo_elimfilters'. Update hermes-secrets.clixml before enabling failover."
+  throw "HA heartbeat blocked: CATALOG_DATABASE_URL targets '$dbName', expected 'catalogo_elimfilters'."
 }
-Write-Host "HA database target validated: $dbName"
+Write-Host 'HA database target validated: catalogo_elimfilters'
 
 $oldDatabaseUrl = $env:DATABASE_URL
 $oldCatalogDatabaseUrl = $env:CATALOG_DATABASE_URL
