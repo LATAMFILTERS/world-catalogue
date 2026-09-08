@@ -1,9 +1,6 @@
 name: HERMES Weekly Intelligence Collection
 
 on:
-  schedule:
-    - cron: '0 13 * * 1' # 08:00 America/Chicago during CDT
-    - cron: '0 14 * * 1' # 08:00 America/Chicago during CST
   workflow_dispatch:
     inputs:
       promote_baseline:
@@ -107,12 +104,8 @@ jobs:
       - name: Guard against duplicate weekly send
         id: guard
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            node scripts/hermes/weekly-send-guard.mjs check
-          else
-            echo "Manual workflow_dispatch run; always proceeds regardless of weekly send state."
-            echo "proceed=true" >> "$GITHUB_OUTPUT"
-          fi
+          echo "Manual workflow_dispatch run; always proceeds regardless of weekly send state."
+          echo "proceed=true" >> "$GITHUB_OUTPUT"
 
       - name: Restore baseline from hermes-state
         if: steps.guard.outputs.proceed == 'true'
