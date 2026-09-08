@@ -60,6 +60,14 @@ async function start() {
   const europeanMannCanonicalBatch2 = await applyEuropeanMannCanonicalBatch2Safe();
   console.log('[european-mann-canonical-batch2-safe]', JSON.stringify(europeanMannCanonicalBatch2));
 
+  // Repair resolver/cache identities after the RACOR fuel/water separator
+  // family was correctly migrated from EF9* (fuel filter) to ES9* (separator).
+  // This must run before the global SKU certification audit so Part Search
+  // certifies and resolves the current ES identities, not the retired EF ones.
+  const { applyRacorSeparatorSearchIdentityRepair } = require('./scripts/migrations/run_100_racor_separator_search_identity_repair');
+  const racorSeparatorSearchIdentity = await applyRacorSeparatorSearchIdentityRepair();
+  console.log('[racor-separator-search-identity-repair]', JSON.stringify(racorSeparatorSearchIdentity));
+
   const { applyGlobalSkuCertificationAudit } = require('./scripts/migrations/run_093_global_sku_certification_audit');
   const globalSkuCertification = await applyGlobalSkuCertificationAudit();
   console.log('[global-sku-certification-audit]', JSON.stringify(globalSkuCertification));
