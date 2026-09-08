@@ -52,23 +52,23 @@ function canonicalUrl(url) {
 function looksLikeErrorDestination(url) {
   try {
     const u = new URL(url);
-    const combined = `${u.pathname} ${u.search}`.toLowerCase();
-    return /(^|[\/_?&=.-])(404|not[-_ ]?found|error)([\/_?&=.-]|$)/i.test(combined);
+    const segments = u.pathname.toLowerCase().split('/').filter(Boolean);
+    return segments.some((segment) => /^(404|403|500|error|errors|not-found|not_found|notfound)$/i.test(segment));
   } catch { return true; }
 }
 function finalPathRetainsEndpointIntent(url) {
   try {
     const u = new URL(url);
-    const text = `${u.pathname} ${u.search}`.toLowerCase();
-    return /(news|newsroom|press|media|bulletin|release|article|story|stories|updates?)/i.test(text);
+    const pathname = u.pathname.toLowerCase();
+    return /(news|newsroom|press|media|bulletin|release|article|story|stories|updates?)/i.test(pathname);
   } catch { return false; }
 }
 function rejectionReason(org, diag) {
   if (diag.result !== 'VALID') return diag.reason || `diagnostic=${diag.result}`;
   if (diag.http_status !== 200) return `HTTP ${diag.http_status}`;
   if (!sameCorporateHost(org.official_domain, diag.final_url)) return 'redirected outside official corporate domain';
-  if (looksLikeErrorDestination(diag.final_url)) return 'final URL looks like an error/404 destination';
-  if (!finalPathRetainsEndpointIntent(diag.final_url)) return 'final URL lost news/media/press/technical endpoint intent';
+  if (looksLikeErrorDestination(diag.final_url)) return 'final URL pathname is an error/404 destination';
+  if (!finalPathRetainsEndpointIntent(diag.final_url)) return 'final URL pathname lost news/media/press/technical endpoint intent';
   return null;
 }
 
@@ -146,7 +146,7 @@ async function discoverOrganization(org) {
 }
 
 console.log(`[HERMES discovery] starting mode=${report.mode} organizations=${backlog.length} concurrency=${concurrency} timeout_ms=${timeoutMs} candidate_paths=${candidatePaths.length}`);
-console.log('[HERMES discovery] strict_validation=true duplicate_url_rejection=true');
+console.log('[HERMES discovery] strict_validation=true duplicate_url_rejection=true pathname_intent_only=true');
 console.log('[HERMES discovery] Safe to stop with Ctrl+C during DRY_RUN; registry files are not modified.');
 
 let cursor = 0;
@@ -173,8 +173,6 @@ async function worker(workerId) {
 
 await Promise.all(Array.from({ length: Math.min(concurrency, backlog.length || 1) }, (_, i) => worker(i + 1)));
 
-// Do not count or apply duplicate URLs. One physical source should be fetched once,
-// even when several business segments share the same corporate newsroom.
 const uniquePromoted = [];
 const seenUrls = new Map();
 for (const item of report.promoted) {
