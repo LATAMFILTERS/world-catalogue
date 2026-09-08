@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 import process from 'node:process';
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { Pool } from 'pg';
 import { isoWeekKey, hasSentThisWeek } from './weekly-send-guard-core.mjs';
 
@@ -176,6 +178,7 @@ async function main() {
   console.log(JSON.stringify(result, null, 2));
 }
 
-if (import.meta.url === `file://${process.argv[1].replace(/\\/g, '/')}`) {
+const isDirectCli = Boolean(process.argv[1]) && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href;
+if (isDirectCli) {
   main().catch((error) => { console.error('[hermes-ha-control] failed', error); process.exitCode = 1; }).finally(() => pool.end());
 }
