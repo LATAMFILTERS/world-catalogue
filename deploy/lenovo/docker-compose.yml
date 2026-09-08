@@ -1,0 +1,19 @@
+name: elimfilters-world-catalogue
+
+services:
+  world-catalogue:
+    build:
+      context: ../..
+      dockerfile: deploy/lenovo/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+    ports:
+      - "127.0.0.1:${WORLD_CATALOGUE_HOST_PORT:-3100}:3000"
+    volumes:
+      - ../../hermes:/app/hermes
+      - ../../logs:/app/logs
+
