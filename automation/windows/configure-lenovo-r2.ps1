@@ -31,14 +31,20 @@ if ($null -eq $rcloneCommand) {
 
 Write-Host ''
 Write-Host 'Enter the NEW Cloudflare R2 S3 credentials locally. They are not uploaded to GitHub.'
-$accessKey = Read-Host 'R2 Access Key ID'
-$secretSecure = Read-Host 'R2 Secret Access Key' -AsSecureString
+$accessKey = Read-Host 'R2 Access Key ID (32 characters)'
+$secretSecure = Read-Host 'R2 Secret Access Key (64 characters)' -AsSecureString
 $secretKey = Convert-SecureStringToPlainText $secretSecure
 
 if ([string]::IsNullOrWhiteSpace($accessKey)) { throw 'Access Key ID cannot be empty.' }
 if ([string]::IsNullOrWhiteSpace($secretKey)) { throw 'Secret Access Key cannot be empty.' }
 if ($accessKey.StartsWith('cfat_', [System.StringComparison]::OrdinalIgnoreCase)) {
   throw 'The Access Key ID is invalid: do not use the Cloudflare API token beginning with cfat_.'
+}
+if ($accessKey.Length -ne 32) {
+  throw "Cloudflare R2 Access Key ID must be 32 characters; received $($accessKey.Length). The Access Key ID and Secret Access Key may be reversed."
+}
+if ($secretKey.Length -ne 64) {
+  throw "Cloudflare R2 Secret Access Key must be 64 characters; received $($secretKey.Length). The Access Key ID and Secret Access Key may be reversed."
 }
 
 try {
