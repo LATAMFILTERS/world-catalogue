@@ -11,9 +11,13 @@ services:
     environment:
       NODE_ENV: production
       PORT: 3000
+      ELIM_RUNTIME_NODE: ${ELIM_RUNTIME_NODE:-LENOVO}
+      ELIM_RUNTIME_ROLE: ${ELIM_RUNTIME_ROLE:-PRIMARY}
+      ELIM_DOMAIN: WORLD_CATALOGUE
+      ELIM_SCHEDULER_ENABLED: ${ELIM_SCHEDULER_ENABLED:-true}
+    command: ["sh", "-c", "node scripts/validate-hybrid-runtime.js && npm start"]
     ports:
       - "127.0.0.1:${WORLD_CATALOGUE_HOST_PORT:-3100}:3000"
     volumes:
       - ../../hermes:/app/hermes
       - ../../logs:/app/logs
-
