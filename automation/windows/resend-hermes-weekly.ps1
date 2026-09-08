@@ -38,27 +38,6 @@ $reportsDir = Join-Path $RuntimePath 'hermes\reports'
 if (-not (Test-Path $reportsDir)) { throw "HERMES reports directory not found: $reportsDir" }
 $latest = Get-ChildItem $reportsDir -Filter 'hermes-weekly-*.md' -File | Sort-Object Name | Select-Object -Last 1
 if ($null -eq $latest) { throw 'No HERMES weekly report exists to resend.' }
-if ($latest.Length -lt 100) { throw "Latest HERMES weekly Markdown report is too small to resend: $($latest.FullName)" }
-
-$date = [regex]::Match($latest.Name, '\d{4}-\d{2}-\d{2}').Value
-$jsonPath = Join-Path $reportsDir "hermes-weekly-$date.json"
-if (Test-Path $jsonPath) {
-  try {
-    $json = Get-Content $jsonPath -Raw | ConvertFrom-Json
-    $groupsCount = 0
-    if ($json.groups) {
-      foreach ($p in $json.groups.PSObject.Properties) {
-        if ($p.Value) { $groupsCount += @($p.Value).Count }
-      }
-    }
-    $hasStructuredContent = ($groupsCount -gt 0) -or (@($json.research_pending).Count -gt 0) -or (@($json.duplicates).Count -gt 0) -or (@($json.invalid).Count -gt 0)
-    if (-not $hasStructuredContent -and $latest.Length -lt 300) {
-      throw 'Structured HERMES report contains no findings and Markdown fallback is insufficient.'
-    }
-  } catch {
-    Write-Warning "Structured report validation warning: $($_.Exception.Message). Markdown fallback will be used if needed."
-  }
-}
 
 $secrets = Import-Clixml $SecretsPath
 @(
@@ -77,7 +56,7 @@ $env:HERMES_EMAIL_LIVE = 'true'
 $env:HERMES_COLLECTION_DRY_RUN = 'false'
 $env:HERMES_REVIEW_BASE_URL = 'https://elimfilters-search-pro.onrender.com/hermes/review'
 
-Write-Host "Resending HERMES weekly intelligence report: $($latest.Name)"
+Write-Host "Evaluating HERMES weekly review report: $($latest.Name)"
 $resultLines = @(& node scripts\hermes\send-weekly-email-actions.mjs hermes/reports 2>&1)
 $resultLines | Out-Host
 if ($LASTEXITCODE -ne 0) { throw 'HERMES resend failed.' }
@@ -88,10 +67,20 @@ for ($i = 0; $i -lt $resultLines.Count; $i++) {
 }
 if ($jsonStart -lt 0) { throw 'HERMES resend result JSON not found.' }
 $result = ($resultLines[$jsonStart..($resultLines.Count - 1)] -join "`n") | ConvertFrom-Json
-if ($result.outcome -ne 'SENT') { throw "HERMES resend did not report SENT: $($result.outcome)" }
+
+if ($result.outcome -eq 'NO_REVIEW_READY') {
+  Write-Host ''
+  Write-Host 'HERMES: NO REVIEW-READY FINDINGS — EMAIL SUPPRESSED'
+  Write-Host "Queued pending: $($result.queued_pending)"
+  Write-Host "Report: $($latest.FullName)"
+  exit 0
+}
+
+if ($result.outcome -ne 'SENT') { throw "HERMES resend unexpected outcome: $($result.outcome)" }
 if ([string]::IsNullOrWhiteSpace([string]$result.recipient)) { throw 'HERMES resend reported SENT but recipient is empty.' }
 
 Write-Host ''
-Write-Host 'HERMES WEEKLY REPORT RESENT WITH CONTENT VALIDATION'
+Write-Host 'HERMES REVIEW-READY REPORT SENT'
 Write-Host "Recipient: $($result.recipient)"
+Write-Host "Review ready: $($result.review_ready)"
 Write-Host "Report: $($latest.FullName)"
