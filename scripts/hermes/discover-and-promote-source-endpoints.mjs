@@ -16,8 +16,6 @@ const maxOrganizations = Math.max(1, Math.min(156, Number(maxArg?.split('=')[1] 
 const concurrency = Math.max(1, Math.min(8, Number(concurrencyArg?.split('=')[1] || 5)));
 const timeoutMs = Math.max(2000, Math.min(15000, Number(timeoutArg?.split('=')[1] || process.env.HERMES_COLLECTION_TIMEOUT_MS || 6000)));
 
-// One canonical spelling per candidate path. Avoid trying both /news and /news/
-// because normal redirects already resolve that distinction and doubled discovery time.
 const candidatePaths = [
   { path: '/news', type: 'news' },
   { path: '/newsroom', type: 'newsroom' },
@@ -43,6 +41,36 @@ function endpointId(orgId, type) {
 }
 function readDoc(p) { return JSON.parse(fs.readFileSync(p, 'utf8')); }
 function writeDoc(p, doc) { fs.writeFileSync(p, JSON.stringify(doc, null, 2) + '\n', 'utf8'); }
+function canonicalUrl(url) {
+  try {
+    const u = new URL(url);
+    u.hash = '';
+    u.searchParams.sort();
+    return u.toString().replace(/\/$/, '').toLowerCase();
+  } catch { return String(url || '').toLowerCase(); }
+}
+function looksLikeErrorDestination(url) {
+  try {
+    const u = new URL(url);
+    const combined = `${u.pathname} ${u.search}`.toLowerCase();
+    return /(^|[\/_?&=.-])(404|not[-_ ]?found|error)([\/_?&=.-]|$)/i.test(combined);
+  } catch { return true; }
+}
+function finalPathRetainsEndpointIntent(url) {
+  try {
+    const u = new URL(url);
+    const text = `${u.pathname} ${u.search}`.toLowerCase();
+    return /(news|newsroom|press|media|bulletin|release|article|story|stories|updates?)/i.test(text);
+  } catch { return false; }
+}
+function rejectionReason(org, diag) {
+  if (diag.result !== 'VALID') return diag.reason || `diagnostic=${diag.result}`;
+  if (diag.http_status !== 200) return `HTTP ${diag.http_status}`;
+  if (!sameCorporateHost(org.official_domain, diag.final_url)) return 'redirected outside official corporate domain';
+  if (looksLikeErrorDestination(diag.final_url)) return 'final URL looks like an error/404 destination';
+  if (!finalPathRetainsEndpointIntent(diag.final_url)) return 'final URL lost news/media/press/technical endpoint intent';
+  return null;
+}
 
 const registry = loadRegistry(organizationsPath, endpointsPath);
 const initialErrors = validateRegistry(registry);
@@ -53,6 +81,7 @@ if (initialErrors.length) {
 }
 
 const existingOrgIds = new Set(registry.endpoints.map((e) => e.organization_id));
+const existingUrls = new Set(registry.endpoints.map((e) => canonicalUrl(e.url)));
 const backlog = registry.organizations
   .filter((o) => o.status === 'DISCOVERY_REQUIRED' && !existingOrgIds.has(o.id))
   .sort((a, b) => (Number(a.priority || 9) - Number(b.priority || 9)) || String(a.category).localeCompare(String(b.category)) || String(a.id).localeCompare(String(b.id)))
@@ -69,6 +98,7 @@ const report = {
   timeout_ms: timeoutMs,
   promoted: [],
   unresolved: [],
+  duplicate_endpoint_urls: [],
   rejected_candidates: []
 };
 
@@ -82,8 +112,8 @@ async function discoverOrganization(org) {
   for (const candidate of candidatePaths) {
     const url = `${base}${candidate.path}`;
     const diag = await diagnoseEndpoint({ url, timeoutMs });
-    const valid = diag.result === 'VALID' && diag.http_status === 200 && sameCorporateHost(org.official_domain, diag.final_url);
-    if (valid) {
+    const reason = rejectionReason(org, diag);
+    if (!reason) {
       const promoted = {
         id: endpointId(org.id, candidate.type),
         organization_id: org.id,
@@ -104,18 +134,19 @@ async function discoverOrganization(org) {
       result: diag.result,
       http_status: diag.http_status,
       normalized_length: diag.normalized_length,
-      reason: diag.reason,
+      reason,
       final_url: diag.final_url
     });
   }
 
   return {
-    unresolved: { organization_id: org.id, name: org.name, category: org.category, official_domain: org.official_domain, reason: 'no governed candidate endpoint passed validation' },
+    unresolved: { organization_id: org.id, name: org.name, category: org.category, official_domain: org.official_domain, reason: 'no governed candidate endpoint passed strict validation' },
     rejected
   };
 }
 
 console.log(`[HERMES discovery] starting mode=${report.mode} organizations=${backlog.length} concurrency=${concurrency} timeout_ms=${timeoutMs} candidate_paths=${candidatePaths.length}`);
+console.log('[HERMES discovery] strict_validation=true duplicate_url_rejection=true');
 console.log('[HERMES discovery] Safe to stop with Ctrl+C during DRY_RUN; registry files are not modified.');
 
 let cursor = 0;
@@ -141,6 +172,27 @@ async function worker(workerId) {
 }
 
 await Promise.all(Array.from({ length: Math.min(concurrency, backlog.length || 1) }, (_, i) => worker(i + 1)));
+
+// Do not count or apply duplicate URLs. One physical source should be fetched once,
+// even when several business segments share the same corporate newsroom.
+const uniquePromoted = [];
+const seenUrls = new Map();
+for (const item of report.promoted) {
+  const key = canonicalUrl(item.endpoint.url);
+  if (existingUrls.has(key)) {
+    report.duplicate_endpoint_urls.push({ organization_id: item.organization_id, url: item.endpoint.url, reason: 'URL already exists in registry' });
+    report.unresolved.push({ organization_id: item.organization_id, name: item.name, category: item.category, official_domain: null, reason: 'valid endpoint duplicates an existing registry source URL' });
+    continue;
+  }
+  if (seenUrls.has(key)) {
+    report.duplicate_endpoint_urls.push({ organization_id: item.organization_id, url: item.endpoint.url, duplicate_of: seenUrls.get(key), reason: 'same physical endpoint discovered for multiple organizations' });
+    report.unresolved.push({ organization_id: item.organization_id, name: item.name, category: item.category, official_domain: null, reason: `valid endpoint duplicates source selected for ${seenUrls.get(key)}` });
+    continue;
+  }
+  seenUrls.set(key, item.organization_id);
+  uniquePromoted.push(item);
+}
+report.promoted = uniquePromoted;
 
 fs.mkdirSync(reportsDir, { recursive: true });
 const reportPath = path.join(reportsDir, 'source-auto-discovery.json');
@@ -177,8 +229,9 @@ if (apply && report.promoted.length) {
   writeDoc(endpointsPath, endpointsDoc);
 }
 
-console.log(`[HERMES discovery] mode=${report.mode} considered=${report.organizations_considered} promoted=${report.promoted.length} unresolved=${report.unresolved.length}`);
+console.log(`[HERMES discovery] mode=${report.mode} considered=${report.organizations_considered} promoted=${report.promoted.length} unresolved=${report.unresolved.length} duplicate_urls=${report.duplicate_endpoint_urls.length}`);
 console.log(`[HERMES discovery] active_before=${report.active_before} projected_active=${report.active_before + report.promoted.length}`);
 for (const item of report.promoted) console.log(`[HERMES discovery] PROMOTED ${item.organization_id} -> ${item.endpoint.url}`);
+for (const item of report.duplicate_endpoint_urls) console.log(`[HERMES discovery] DUPLICATE ${item.organization_id} -> ${item.url}`);
 console.log(`[HERMES discovery] report=${path.relative(process.cwd(), reportPath)}`);
-if (!apply) console.log('[HERMES discovery] DRY RUN only. Re-run with --apply after reviewing results.');
+if (!apply) console.log('[HERMES discovery] DRY RUN only. Re-run with --apply only after reviewing strict-validation results.');
