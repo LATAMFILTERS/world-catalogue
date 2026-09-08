@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-09-05T04:41:54.575Z",
+  "updated_at": "2026-09-08T16:04:08.417Z",
   "sources": {
     "volvo_trucks__news": {
       "endpoint_id": "volvo_trucks__news",
@@ -70,6 +70,167 @@
       "first_harvested_at": "2026-09-05T04:41:54.575Z",
       "last_harvested_at": "2026-09-05T04:41:54.575Z",
       "last_harvested_hash": "aaac0c54bafdc6fdc621e390df31d85546c288c333b1fe3a448b99c364e5a8c6",
+      "harvest_count": 1
+    },
+    "bendix_cvs__press_releases": {
+      "endpoint_id": "bendix_cvs__press_releases",
+      "first_harvested_at": "2026-09-08T16:03:47.371Z",
+      "last_harvested_at": "2026-09-08T16:03:47.371Z",
+      "last_harvested_hash": "925b15e00289e203f9db73bd4af4756449ab161294ee256b44ecaba33e803b52",
+      "harvest_count": 1
+    },
+    "daimler_truck__newsroom": {
+      "endpoint_id": "daimler_truck__newsroom",
+      "first_harvested_at": "2026-09-08T16:03:48.173Z",
+      "last_harvested_at": "2026-09-08T16:03:48.173Z",
+      "last_harvested_hash": "7df35bfff3ce7d31a555fc7f7325694ebb99d7bd7772c1811f78a8f0594401a3",
+      "harvest_count": 1
+    },
+    "peterbilt__news": {
+      "endpoint_id": "peterbilt__news",
+      "first_harvested_at": "2026-09-08T16:03:48.530Z",
+      "last_harvested_at": "2026-09-08T16:03:48.530Z",
+      "last_harvested_hash": "053f947bc95677b5c1d3d46eaa5bf88dc054aadebbcfd665c4129a39f334f857",
+      "harvest_count": 1
+    },
+    "scania__news": {
+      "endpoint_id": "scania__news",
+      "first_harvested_at": "2026-09-08T16:03:49.346Z",
+      "last_harvested_at": "2026-09-08T16:03:49.346Z",
+      "last_harvested_hash": "8b58dd024e2e0ad5a8d27187d775ee9947686535591e633d2bdb7abaa8d26d68",
+      "harvest_count": 1
+    },
+    "cummins_marine__news": {
+      "endpoint_id": "cummins_marine__news",
+      "first_harvested_at": "2026-09-08T16:03:49.718Z",
+      "last_harvested_at": "2026-09-08T16:03:49.718Z",
+      "last_harvested_hash": "899af9e07dd822edc832cabd8b71d892d2092b8cb2603ba2d8c1b9cba6e2fa9e",
+      "harvest_count": 1
+    },
+    "alstom__news": {
+      "endpoint_id": "alstom__news",
+      "first_harvested_at": "2026-09-08T16:03:50.135Z",
+      "last_harvested_at": "2026-09-08T16:03:50.135Z",
+      "last_harvested_hash": "25e0ef34f35988aef39ed6f39408d27778970abbf0cf98cbe7e0c054929ede20",
+      "harvest_count": 1
+    },
+    "wabtec__newsroom": {
+      "endpoint_id": "wabtec__newsroom",
+      "first_harvested_at": "2026-09-08T16:03:51.129Z",
+      "last_harvested_at": "2026-09-08T16:03:51.129Z",
+      "last_harvested_hash": "4b3d06b6105cdcc6db1578c4c7a48e1fc24086dc3785121b1c3eb1ee2dfa3623",
+      "harvest_count": 1
+    },
+    "us_epa__newsroom": {
+      "endpoint_id": "us_epa__newsroom",
+      "first_harvested_at": "2026-09-08T16:03:51.277Z",
+      "last_harvested_at": "2026-09-08T16:03:51.277Z",
+      "last_harvested_hash": "72cb33fad338b910edaaa7fb2c9a185d0feed7de023de5952fa7321b4ad72134",
+      "harvest_count": 1
+    },
+    "toray__news": {
+      "endpoint_id": "toray__news",
+      "first_harvested_at": "2026-09-08T16:03:51.547Z",
+      "last_harvested_at": "2026-09-08T16:03:51.547Z",
+      "last_harvested_hash": "d7beb757a487bb7e0fa92d973b29fed855310ffb03030a0ef28b5396c071ac1e",
+      "harvest_count": 1
+    },
+    "kubota__news": {
+      "endpoint_id": "kubota__news",
+      "first_harvested_at": "2026-09-08T16:03:52.511Z",
+      "last_harvested_at": "2026-09-08T16:03:52.511Z",
+      "last_harvested_hash": "ef410e9d3d33516bbdcd01064fc14c3d27fe8cf2be8074fe70d45c5b4deddeef",
+      "harvest_count": 1
+    },
+    "new_flyer__news": {
+      "endpoint_id": "new_flyer__news",
+      "first_harvested_at": "2026-09-08T16:03:52.763Z",
+      "last_harvested_at": "2026-09-08T16:03:52.763Z",
+      "last_harvested_hash": "576e19756ff43a5de0d63243e4245bf1528ebc6dba36561f19a35f7df5cb27fd",
+      "harvest_count": 1
+    },
+    "doosan_bobcat__news": {
+      "endpoint_id": "doosan_bobcat__news",
+      "first_harvested_at": "2026-09-08T16:03:54.395Z",
+      "last_harvested_at": "2026-09-08T16:03:54.395Z",
+      "last_harvested_hash": "989d610ed5e6b4edaaccc3613bff91bd65ff57240d82c0acd2953a66c1e282fa",
+      "harvest_count": 1
+    },
+    "jcb__news": {
+      "endpoint_id": "jcb__news",
+      "first_harvested_at": "2026-09-08T16:03:55.521Z",
+      "last_harvested_at": "2026-09-08T16:03:55.521Z",
+      "last_harvested_hash": "52d97b4a193730dfc0ba24eff3de9f661788d2962d4786faceebf7ceecb5c5c2",
+      "harvest_count": 1
+    },
+    "bmw_group__news": {
+      "endpoint_id": "bmw_group__news",
+      "first_harvested_at": "2026-09-08T16:03:56.657Z",
+      "last_harvested_at": "2026-09-08T16:03:56.657Z",
+      "last_harvested_hash": "7f32a78d616132cddf8608d1676403b43faaeaca2ca26ec1598605457c84200d",
+      "harvest_count": 1
+    },
+    "generac__news": {
+      "endpoint_id": "generac__news",
+      "first_harvested_at": "2026-09-08T16:03:57.924Z",
+      "last_harvested_at": "2026-09-08T16:03:57.924Z",
+      "last_harvested_hash": "54eead1b685974d6e4051a3909fe45754fa00d5c9073478409a30334cba69299",
+      "harvest_count": 1
+    },
+    "wartsila__newsroom": {
+      "endpoint_id": "wartsila__newsroom",
+      "first_harvested_at": "2026-09-08T16:03:58.148Z",
+      "last_harvested_at": "2026-09-08T16:03:58.148Z",
+      "last_harvested_hash": "e2b2d66d80dead2cbfbe0de439103e3cada33317c2ee99aee219943148b551ba",
+      "harvest_count": 1
+    },
+    "mtu_rolls_royce__press_releases": {
+      "endpoint_id": "mtu_rolls_royce__press_releases",
+      "first_harvested_at": "2026-09-08T16:04:04.342Z",
+      "last_harvested_at": "2026-09-08T16:04:04.342Z",
+      "last_harvested_hash": "d93ee82da7f3d43a02fb1e42cc2e1d9ff6e9ac2f600a6ed40f1503779ee697cb",
+      "harvest_count": 1
+    },
+    "carb__news": {
+      "endpoint_id": "carb__news",
+      "first_harvested_at": "2026-09-08T16:04:04.508Z",
+      "last_harvested_at": "2026-09-08T16:04:04.508Z",
+      "last_harvested_hash": "d299141923c89a8d1421f5bff314962a475233bf01571f4a2181763b778f3058",
+      "harvest_count": 1
+    },
+    "eu_environment__newsroom": {
+      "endpoint_id": "eu_environment__newsroom",
+      "first_harvested_at": "2026-09-08T16:04:05.291Z",
+      "last_harvested_at": "2026-09-08T16:04:05.291Z",
+      "last_harvested_hash": "d262361abbae58bf1cc232b3c09f645deb269df5df5bf533fe4fc257256e872d",
+      "harvest_count": 1
+    },
+    "basf__news": {
+      "endpoint_id": "basf__news",
+      "first_harvested_at": "2026-09-08T16:04:06.269Z",
+      "last_harvested_at": "2026-09-08T16:04:06.269Z",
+      "last_harvested_hash": "0252d9935b9bac7abb895f42e2ba80cbde818b854cf03d4c5d407c6d63873e51",
+      "harvest_count": 1
+    },
+    "henkel__press_releases": {
+      "endpoint_id": "henkel__press_releases",
+      "first_harvested_at": "2026-09-08T16:04:07.386Z",
+      "last_harvested_at": "2026-09-08T16:04:07.386Z",
+      "last_harvested_hash": "78e720310f80a77387ff9e1a3de184f6d783bd2ff727ed4ef4a7f1cda59e23e0",
+      "harvest_count": 1
+    },
+    "mahindra_agri__newsroom": {
+      "endpoint_id": "mahindra_agri__newsroom",
+      "first_harvested_at": "2026-09-08T16:04:07.688Z",
+      "last_harvested_at": "2026-09-08T16:04:07.688Z",
+      "last_harvested_hash": "9a1e8b073dd802a00c705aa19192b357c455a86a6409ac75a931cac73e7cf8b8",
+      "harvest_count": 1
+    },
+    "same_deutz_fahr__news": {
+      "endpoint_id": "same_deutz_fahr__news",
+      "first_harvested_at": "2026-09-08T16:04:08.417Z",
+      "last_harvested_at": "2026-09-08T16:04:08.417Z",
+      "last_harvested_hash": "c8d3ce7525591f9c13d9aee7dc55ceb2723e4e415d9af3c446bef1e245e13790",
       "harvest_count": 1
     }
   }
