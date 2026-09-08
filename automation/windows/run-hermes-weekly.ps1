@@ -19,7 +19,7 @@ function Convert-SecretValueToPlainText($Value) {
 
 function Set-EnvFromSecret($Secrets, [string]$Name) {
   $prop = $Secrets.PSObject.Properties[$Name]
-  if ($null -eq $prop) { throw "Required HERMES secret is missing from $SecretsPath: $Name" }
+  if ($null -eq $prop) { throw "Required HERMES secret is missing from ${SecretsPath}: $Name" }
   $plain = Convert-SecretValueToPlainText $prop.Value
   if ([string]::IsNullOrWhiteSpace($plain)) { throw "Required HERMES secret is empty: $Name" }
   [Environment]::SetEnvironmentVariable($Name, $plain, 'Process')
