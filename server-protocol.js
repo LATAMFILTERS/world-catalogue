@@ -1,7 +1,28 @@
 require('dotenv').config();
 require('./lib/part-search-runtime-hardening');
 
+const startupAsync = process.env.ELIM_STARTUP_MIGRATIONS_ASYNC === 'true';
+let runtimeSurfaceStarted = false;
+
+function startRuntimeSurface() {
+  if (runtimeSurfaceStarted) return;
+  require('./server');
+  runtimeSurfaceStarted = true;
+
+  try {
+    const { startRenderFailoverWatcher } = require('./lib/hermes-render-failover-watch');
+    startRenderFailoverWatcher();
+  } catch (error) {
+    console.error('[hermes-failover-watch] startup load failed', error.message);
+  }
+}
+
 async function start() {
+  if (startupAsync) {
+    startRuntimeSurface();
+    console.log('[startup-migrations] asynchronous mode enabled: service surface is available while governed migrations run');
+  }
+
   const { installPolicyV31 } = require('./scripts/migrations/run_073_catalog_codigo_base_governance_v31');
   const policy = await installPolicyV31({ backfill: true });
   console.log('[catalog-codigo-base-policy-v31]', JSON.stringify(policy));
@@ -99,7 +120,7 @@ async function start() {
   const referenceQuarantine = await loadReferenceQuarantine();
   console.log('[reference-quarantine]', JSON.stringify(referenceQuarantine));
 
-  require('./server');
+  startRuntimeSurface();
 
   setTimeout(() => {
     try {
@@ -132,5 +153,9 @@ async function start() {
 
 start().catch((error) => {
   console.error('[catalog-codigo-base-policy-v31] startup enforcement failed', error);
+  if (startupAsync) {
+    console.error('[startup-migrations] asynchronous migration failure retained for remediation; runtime surface remains online');
+    return;
+  }
   process.exit(1);
 });
