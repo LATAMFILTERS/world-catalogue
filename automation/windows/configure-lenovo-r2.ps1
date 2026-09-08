@@ -59,22 +59,19 @@ try {
     --non-interactive
   if ($LASTEXITCODE -ne 0) { throw 'rclone remote creation failed.' }
 
-  Write-Host 'Testing R2 account access...'
-  $buckets = @(& $rcloneExe lsd "$RemoteName`:" 2>&1)
-  if ($LASTEXITCODE -ne 0) {
-    $buckets | Out-Host
-    throw 'R2 account test failed.'
-  }
-  $buckets | Out-Host
-  if (-not (($buckets -join "`n") -match [regex]::Escape($Bucket))) {
-    throw "R2 connected but bucket '$Bucket' was not listed. Verify token scope."
-  }
-
-  Write-Host 'Testing target bucket access...'
-  & $rcloneExe lsf "$RemoteName`:$Bucket" --max-depth 1 | Out-Host
-  if ($LASTEXITCODE -ne 0) { throw "Cannot access bucket $Bucket." }
-
+  # The token is intentionally scoped to one bucket. Do not call `lsd remote:`
+  # because that invokes S3 ListBuckets, which correctly returns 403 for a
+  # bucket-scoped Cloudflare R2 token.
   $remotePath = "$RemoteName`:$Bucket"
+  Write-Host "Testing scoped R2 bucket access: $remotePath"
+  $bucketListing = @(& $rcloneExe lsf $remotePath --max-depth 1 2>&1)
+  if ($LASTEXITCODE -ne 0) {
+    $bucketListing | Out-Host
+    throw "Cannot access scoped bucket $Bucket. Verify the S3 Access Key ID, Secret Access Key, and token bucket scope."
+  }
+  $bucketListing | Out-Host
+  Write-Host 'Scoped R2 bucket access: OK'
+
   [Environment]::SetEnvironmentVariable('ELIM_R2_REMOTE', $remotePath, 'User')
   $env:ELIM_R2_REMOTE = $remotePath
 
