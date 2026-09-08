@@ -27,6 +27,48 @@ MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · H
 
 Specialized commercial solutions: MARINECLEAN™ · DURATECH™. These are not canonical core technology entities.
 
+## Hybrid infrastructure — mandatory
+
+ELIMFILTERS uses a hybrid architecture. Lenovo, GitHub, Render, Cloudflare and R2 are complementary layers, not mutually exclusive replacements.
+
+- GitHub is the source-control and audit authority.
+- Lenovo is the preferred primary execution node for continuous/private catalogue, Part Search and technical HERMES workloads.
+- Render may remain a cloud runtime or failover node where justified.
+- Cloudflare is the public routing/security layer.
+- R2 is external storage/archive/backup where configured.
+
+Do not delete, disable or bypass a cloud component merely because an equivalent Lenovo runtime exists. Any cutover requires explicit operator approval and verified health/failover behavior.
+
+Read `HYBRID_RUNTIME_CONTRACT.md` before changing infrastructure, schedulers, HERMES execution, Part Search runtime, catalogue jobs, queues or deployment behavior.
+
+## Repository boundary
+
+This repository owns canonical catalogue/product knowledge, Part Search governance/canonicalization, technical evidence, Knowledge Center publication and technical/catalogue HERMES research.
+
+`LATAMFILTERS/elimfilters-crm` owns commercial/operational state and execution: distributors, suppliers, requisitions, approvals, governed communications, operational agents and Command Center workflows.
+
+Do not duplicate CRM commercial workers or recurring research loops here. Do not mutate CRM commercial tables directly from this repository except through an explicit authenticated interface/event contract.
+
+Likewise, the CRM may consume catalogue data READ-ONLY but must not become a second canonical product master or write canonical catalogue data directly.
+
+## HERMES execution boundary
+
+HERMES is one logical system with separated execution domains:
+
+- Technical HERMES (`world-catalogue`): catalogue research, technical evidence, application/product knowledge, Part Search governance and Knowledge Center publication/proposals.
+- Operational HERMES (`elimfilters-crm`): distributor/supplier/commercial intelligence, approvals, recommendations, governed communication and operational workflow execution.
+
+A capability may exist on Lenovo and cloud for resilience, but a recurring production job must have exactly one ACTIVE owner at a time. Cloud copies may be STANDBY, CI or manual/failover.
+
+Use these labels for new runtime definitions:
+
+- `ELIM_RUNTIME_NODE=LENOVO|RENDER|GITHUB`
+- `ELIM_RUNTIME_ROLE=PRIMARY|STANDBY|CI`
+- `ELIM_DOMAIN=WORLD_CATALOGUE`
+- `ELIM_SCHEDULER_ENABLED=true|false`
+
+A `STANDBY` or `CI` node must not run recurring production schedulers. Before adding a cron, worker, queue consumer or recurring research job, search both repositories and existing GitHub/Render/Lenovo execution paths to ensure the function does not already have an active owner.
+
 ## Hard rules
 
 - Resolve technology names and scopes from canonical registries only.
