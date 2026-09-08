@@ -120,11 +120,13 @@ if (-not [string]::IsNullOrWhiteSpace($R2Remote)) {
   if ($null -eq $rclone) {
     $r2Outcome = 'SKIPPED_RCLONE_NOT_INSTALLED'
   } else {
-    & rclone copyto $zipPath "$R2Remote/lenovo/$(Split-Path $zipPath -Leaf)" --checksum
+    # R2 token is intentionally bucket-scoped. --s3-no-check-bucket prevents
+    # rclone from trying HeadBucket/CreateBucket before PutObject.
+    & rclone copyto $zipPath "$R2Remote/lenovo/$(Split-Path $zipPath -Leaf)" --checksum --s3-no-check-bucket
     if ($LASTEXITCODE -ne 0) { throw 'R2 upload failed for backup archive.' }
-    & rclone copyto $hashPath "$R2Remote/lenovo/$(Split-Path $hashPath -Leaf)"
+    & rclone copyto $hashPath "$R2Remote/lenovo/$(Split-Path $hashPath -Leaf)" --s3-no-check-bucket
     if ($LASTEXITCODE -ne 0) { throw 'R2 upload failed for checksum.' }
-    & rclone copyto $manifestPath "$R2Remote/lenovo/$(Split-Path $manifestPath -Leaf)"
+    & rclone copyto $manifestPath "$R2Remote/lenovo/$(Split-Path $manifestPath -Leaf)" --s3-no-check-bucket
     if ($LASTEXITCODE -ne 0) { throw 'R2 upload failed for manifest.' }
     $r2Outcome = 'UPLOADED'
   }
