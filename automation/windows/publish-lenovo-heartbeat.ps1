@@ -27,6 +27,17 @@ if ($null -eq $dbProp) { throw 'DATABASE_URL/CATALOG_DATABASE_URL missing from H
 $dbUrl = Convert-SecretValueToPlainText $dbProp.Value
 if ([string]::IsNullOrWhiteSpace($dbUrl)) { throw 'Database URL is empty.' }
 
+try {
+  $dbUri = [Uri]$dbUrl
+} catch {
+  throw 'DATABASE_URL is not a valid PostgreSQL URI.'
+}
+$dbName = $dbUri.AbsolutePath.Trim('/')
+if ($dbName -ne 'catalogo_elimfilters') {
+  throw "HA heartbeat blocked: HERMES database is '$dbName', expected 'catalogo_elimfilters'. Update hermes-secrets.clixml before enabling failover."
+}
+Write-Host "HA database target validated: $dbName"
+
 $oldDatabaseUrl = $env:DATABASE_URL
 $oldCatalogDatabaseUrl = $env:CATALOG_DATABASE_URL
 try {
