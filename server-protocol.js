@@ -1,6 +1,13 @@
 require('dotenv').config();
+
+// Preserve the normal pg Pool for long-running governed startup migrations.
+// Part Search runtime hardening installs an 8s statement timeout for request-path
+// lookups; that timeout must not leak into catalog governance migrations.
+const pg = require('pg');
+const MigrationPool = pg.Pool;
 require('./lib/part-search-r90-fail-closed');
 require('./lib/part-search-runtime-hardening');
+pg.Pool = MigrationPool;
 
 const startupAsync = process.env.ELIM_STARTUP_MIGRATIONS_ASYNC === 'true';
 let runtimeSurfaceStarted = false;
