@@ -13,6 +13,27 @@ async function applyLdOriginCandidateBackfill() {
   const client = await pool.connect();
   const report = { migration: MIGRATION, origin: {}, candidates: {} };
 
+  // This migration is an idempotent staging/backfill. Rebuilding the full
+  // candidate view and upserting every LD row on every Render restart can take
+  // minutes and used to block later governed migrations (including RACOR
+  // identity repair). Reuse an already-populated staging table unless a
+  // deliberate rebuild is explicitly requested.
+  if (process.env.ELIM_FORCE_LD_ORIGIN_REBUILD !== 'true') {
+    const existing = await client.query(`
+      SELECT to_regclass('ld_catalog.ld_canonical_backfill_candidates') IS NOT NULL AS exists,
+             CASE WHEN to_regclass('ld_catalog.ld_canonical_backfill_candidates') IS NOT NULL
+                  THEN (SELECT count(*)::int FROM ld_catalog.ld_canonical_backfill_candidates)
+                  ELSE 0 END AS rows
+    `);
+    if (existing.rows[0]?.exists && Number(existing.rows[0]?.rows || 0) > 0) {
+      report.reused_existing_backfill = true;
+      report.candidates.existing_rows = Number(existing.rows[0].rows);
+      client.release();
+      await pool.end();
+      return report;
+    }
+  }
+
   try {
     await client.query('BEGIN');
 
