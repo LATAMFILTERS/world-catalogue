@@ -25,6 +25,15 @@ function Set-EnvFromSecret($Secrets, [string]$Name) {
   [Environment]::SetEnvironmentVariable($Name, $plain, 'Process')
 }
 
+function Set-OptionalEnvFromSecret($Secrets, [string]$Name) {
+  $prop = $Secrets.PSObject.Properties[$Name]
+  if ($null -eq $prop) { return }
+  $plain = Convert-SecretValueToPlainText $prop.Value
+  if (-not [string]::IsNullOrWhiteSpace($plain)) {
+    [Environment]::SetEnvironmentVariable($Name, $plain, 'Process')
+  }
+}
+
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 New-Item -ItemType Directory -Force -Path $StateDir | Out-Null
 $stamp = Get-Date -Format 'yyyy-MM-dd_HH-mm-ss'
@@ -64,6 +73,7 @@ try {
     'DATABASE_URL',
     'CATALOG_DATABASE_URL'
   ) | ForEach-Object { Set-EnvFromSecret $secrets $_ }
+  Set-OptionalEnvFromSecret $secrets 'HERMES_REVIEW_TOKEN_SECRET'
   "[$(Get-Date -Format o)] Required HERMES secrets loaded." | Tee-Object -FilePath $log -Append
 
   if (Test-Path $lock) {
@@ -88,6 +98,9 @@ try {
 
   npm ci | Tee-Object -FilePath $log -Append
   if ($LASTEXITCODE -ne 0) { throw 'npm ci failed' }
+
+  node scripts\hermes\apply-review-decisions-from-db.mjs | Tee-Object -FilePath $log -Append
+  if ($LASTEXITCODE -ne 0) { throw 'Failed to apply one or more HERMES review decisions from durable queue' }
 
   npm run hermes:baseline:restore | Tee-Object -FilePath $log -Append
   try { npm run hermes:harvest:restore | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
@@ -135,11 +148,12 @@ try {
 
   if ($emailJson.outcome -ne 'SENT') { throw "HERMES email was not sent; outcome=$($emailJson.outcome)" }
   if ([string]::IsNullOrWhiteSpace([string]$emailJson.recipient)) { throw 'HERMES email reported SENT but recipient is empty' }
+  if ($emailJson.actionable -ne $true) { throw 'HERMES review email was sent without active review actions' }
 
   node scripts\hermes\weekly-send-guard.mjs mark | Tee-Object -FilePath $log -Append
   if ($LASTEXITCODE -ne 0) { throw 'Failed to mark weekly send state' }
 
-  "[$(Get-Date -Format o)] HERMES weekly run completed and review-ready email SENT to configured recipient." | Tee-Object -FilePath $log -Append
+  "[$(Get-Date -Format o)] HERMES weekly run completed and actionable review-ready email SENT to configured recipient." | Tee-Object -FilePath $log -Append
 }
 catch {
   "[$(Get-Date -Format o)] HERMES FAILURE: $($_.Exception.Message)" | Tee-Object -FilePath $log -Append
