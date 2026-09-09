@@ -9,6 +9,7 @@ import { validateWeeklyEmailContract, validateRenderedWeeklyEmail } from './week
 
 const require = createRequire(import.meta.url);
 const { buildReviewUrl } = require('../../lib/hermes-review-token');
+const { stageCandidates } = require('../../lib/hermes-review-store');
 
 function esc(value) {
   return String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
@@ -35,7 +36,7 @@ function candidateTypeLabel(type) {
 function actionConfig(env = process.env) {
   const baseUrl = String(env.HERMES_REVIEW_BASE_URL || '').trim();
   const secret = String(env.HERMES_REVIEW_TOKEN_SECRET || '').trim();
-  const runId = String(env.GITHUB_RUN_ID || '').trim();
+  const runId = String(env.HERMES_REVIEW_RUN_ID || env.GITHUB_RUN_ID || '').trim();
   const dryRun = String(env.HERMES_COLLECTION_DRY_RUN || 'true').toLowerCase() === 'true';
   const ttlDays = Math.max(1, Math.min(30, Number(env.HERMES_REVIEW_LINK_TTL_DAYS || 14)));
   return { baseUrl, secret, runId, dryRun, ttlDays, enabled: Boolean(baseUrl && secret && /^\d+$/.test(runId) && !dryRun) };
@@ -43,7 +44,7 @@ function actionConfig(env = process.env) {
 
 function actionButtons(candidate, cfg) {
   if (!cfg.enabled) {
-    return '<p style="font-size:12px;color:#777"><strong>Acciones:</strong> disponibles en Review Center cuando el ciclo tenga enlaces firmados.</p>';
+    return '<p style="font-size:12px;color:#777"><strong>Acciones:</strong> no disponibles; falta configuración del Review Center.</p>';
   }
   const exp = Math.floor(Date.now() / 1000) + cfg.ttlDays * 86400;
   const common = { candidate: candidate.entity_code, run_id: cfg.runId, exp };
@@ -52,9 +53,9 @@ function actionButtons(candidate, cfg) {
   const research = buildReviewUrl(cfg.baseUrl, { ...common, decision: 'research' }, cfg.secret);
   const style = 'display:inline-block;margin:4px 5px 4px 0;padding:11px 14px;border-radius:5px;text-decoration:none;font-weight:800;font-size:12px;';
   return `<div style="margin-top:16px">
-    <a href="${esc(approve)}" style="${style}background:#FFF12D;color:#000">APROBAR</a>
-    <a href="${esc(reject)}" style="${style}background:#222;color:#fff;border:1px solid #555">RECHAZAR</a>
-    <a href="${esc(research)}" style="${style}background:#fff;color:#000;border:1px solid #bbb">INVESTIGAR MÁS</a>
+    <a href="${esc(approve)}" style="${style}background:#FFF12D;color:#000">ACEPTAR</a>
+    <a href="${esc(research)}" style="${style}background:#fff;color:#000;border:1px solid #bbb">REVISAR</a>
+    <a href="${esc(reject)}" style="${style}background:#222;color:#fff;border:1px solid #555">ELIMINAR</a>
   </div>`;
 }
 
@@ -63,6 +64,11 @@ function reviewReadyCount(data) {
   if (Number.isFinite(n) && n >= 0) return n;
   const groups = data?.groups && typeof data.groups === 'object' ? data.groups : {};
   return Object.values(groups).reduce((sum, value) => sum + (Array.isArray(value) ? value.length : 0), 0);
+}
+
+function reviewCandidates(data) {
+  const groups = data?.groups && typeof data.groups === 'object' ? data.groups : {};
+  return Object.values(groups).flatMap((value) => Array.isArray(value) ? value : []);
 }
 
 function buildExecutiveMessage(report, env = process.env) {
@@ -93,7 +99,7 @@ function buildExecutiveMessage(report, env = process.env) {
       if (Array.isArray(rr.technical_facts) && rr.technical_facts.length) text.push(`Hechos técnicos: ${rr.technical_facts.join(' | ')}`);
       if (rr.relevance) text.push(`Relevancia para ELIMFILTERS: ${rr.relevance}`);
       text.push(`Acción propuesta: ${c.proposed_action || rr.proposed_action || 'n/a'}`);
-      text.push('Decisión: APROBAR / RECHAZAR / INVESTIGAR MÁS', '');
+      text.push('Decisión: ACEPTAR / REVISAR / ELIMINAR', '');
 
       cards.push(`<div style="border:1px solid #ddd;border-radius:8px;padding:16px;margin:14px 0">
         <div style="font-size:12px;text-transform:uppercase;color:#666">${esc(candidateTypeLabel(type))}</div>
@@ -146,12 +152,17 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
     };
   }
 
+  if (!env.HERMES_REVIEW_RUN_ID) env.HERMES_REVIEW_RUN_ID = String(env.GITHUB_RUN_ID || Date.now());
+  const cfg = actionConfig(env);
+  if (!cfg.enabled) throw new Error('HERMES review-ready email cannot be sent without signed Review Center actions.');
+  await stageCandidates(reviewCandidates(report.data), { cycleId: cfg.runId, env });
+
   const message = buildExecutiveMessage(report, env);
 
   if (!config.live) {
     const preview = path.join(path.resolve(reportsDir), `hermes-email-preview-${message.date}.html`);
     fs.writeFileSync(preview, message.html, 'utf8');
-    return { outcome: 'DRY_RUN', preview, provider: config.provider, recipient: config.recipient || null, review_ready: contract.review_ready, actionable: actionConfig(env).enabled };
+    return { outcome: 'DRY_RUN', preview, provider: config.provider, recipient: config.recipient || null, review_ready: contract.review_ready, actionable: true };
   }
 
   if (config.provider === 'gmail') {
@@ -159,7 +170,7 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
     const transport = createTransport({ service: 'gmail', auth: { user: config.senderEmail, pass: config.gmailAppPassword } });
     await transport.verify();
     const result = await transport.sendMail({ from: config.senderEmail ? `${config.senderName} <${config.senderEmail}>` : undefined, to: config.recipient, subject: message.subject, text: message.text, html: message.html });
-    return { outcome: 'SENT', provider: 'gmail', recipient: config.recipient, message_id: result.messageId || null, review_ready: contract.review_ready, actionable: actionConfig(env).enabled };
+    return { outcome: 'SENT', provider: 'gmail', recipient: config.recipient, message_id: result.messageId || null, review_ready: contract.review_ready, actionable: true };
   }
 
   const OutlookMailService = outlookFactory || require('../../lib/outlook-mail.js');
@@ -167,7 +178,7 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
   mail.validateConfig();
   if (config.senderEmail) mail.emailMap.default = config.senderEmail;
   await mail.send(config.recipient, message.subject, message.html, message.text, 'default');
-  return { outcome: 'SENT', provider: 'outlook', recipient: config.recipient, message_id: null, review_ready: contract.review_ready, actionable: actionConfig(env).enabled };
+  return { outcome: 'SENT', provider: 'outlook', recipient: config.recipient, message_id: null, review_ready: contract.review_ready, actionable: true };
 }
 
 async function main() {
@@ -179,4 +190,4 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
   main().catch((error) => { console.error(`[HERMES email] ${error.message}`); process.exit(1); });
 }
 
-export { buildExecutiveMessage, actionConfig, reviewReadyCount };
+export { buildExecutiveMessage, actionConfig, reviewReadyCount, reviewCandidates };
