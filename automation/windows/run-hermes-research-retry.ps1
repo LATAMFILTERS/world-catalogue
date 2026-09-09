@@ -25,6 +25,15 @@ function Set-EnvFromSecret($Secrets, [string]$Name) {
   [Environment]::SetEnvironmentVariable($Name, $plain, 'Process')
 }
 
+function Set-OptionalEnvFromSecret($Secrets, [string]$Name) {
+  $prop = $Secrets.PSObject.Properties[$Name]
+  if ($null -eq $prop) { return }
+  $plain = Convert-SecretValueToPlainText $prop.Value
+  if (-not [string]::IsNullOrWhiteSpace($plain)) {
+    [Environment]::SetEnvironmentVariable($Name, $plain, 'Process')
+  }
+}
+
 New-Item -ItemType Directory -Force -Path $StateDir,$LogDir | Out-Null
 $stamp = Get-Date -Format 'yyyy-MM-dd_HH-mm-ss'
 $log = Join-Path $LogDir "hermes-research-retry-$stamp.log"
@@ -55,6 +64,7 @@ try {
     'DATABASE_URL',
     'CATALOG_DATABASE_URL'
   ) | ForEach-Object { Set-EnvFromSecret $secrets $_ }
+  Set-OptionalEnvFromSecret $secrets 'HERMES_REVIEW_TOKEN_SECRET'
 
   $env:ELIM_RUNTIME_NODE = 'LENOVO'
   $env:ELIM_RUNTIME_ROLE = 'PRIMARY'
@@ -75,6 +85,9 @@ try {
     npm ci | Tee-Object -FilePath $log -Append
     if ($LASTEXITCODE -ne 0) { throw 'npm ci failed' }
   }
+
+  node scripts\hermes\apply-review-decisions-from-db.mjs | Tee-Object -FilePath $log -Append
+  if ($LASTEXITCODE -ne 0) { throw 'Failed to apply one or more HERMES review decisions from durable queue' }
 
   # Do not send a second review email in the same ISO week.
   $guardFile = Join-Path $StateDir 'weekly-guard-output.txt'
@@ -119,10 +132,11 @@ try {
     exit 0
   }
   if ($result.outcome -ne 'SENT') { throw "Unexpected HERMES email outcome: $($result.outcome)" }
+  if ($result.actionable -ne $true) { throw 'HERMES review email was sent without active review actions' }
 
   node scripts\hermes\weekly-send-guard.mjs mark | Tee-Object -FilePath $log -Append
   if ($LASTEXITCODE -ne 0) { throw 'Failed to mark weekly send state' }
-  "[$(Get-Date -Format o)] Verified review-ready HERMES email sent. review_ready=$($result.review_ready)." | Tee-Object -FilePath $log -Append
+  "[$(Get-Date -Format o)] Verified actionable HERMES email sent. review_ready=$($result.review_ready)." | Tee-Object -FilePath $log -Append
 }
 catch {
   "[$(Get-Date -Format o)] HERMES RESEARCH RETRY FAILURE: $($_.Exception.Message)" | Tee-Object -FilePath $log -Append
