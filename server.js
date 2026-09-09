@@ -192,6 +192,51 @@ try {
       .toUpperCase();
   }
 
+  function normalizedSearchQuery() {
+    var params = new URLSearchParams(window.location.search || '');
+    return String(params.get('q') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  }
+
+  function resultLanguage() {
+    var params = new URLSearchParams(window.location.search || '');
+    var lang = String(params.get('lang') || document.documentElement.lang || 'en').toLowerCase();
+    if (lang.indexOf('es') === 0) return 'es';
+    if (lang.indexOf('pt') === 0) return 'pt';
+    return 'en';
+  }
+
+  function normalizeR90DisambiguationUi(scope) {
+    if (normalizedSearchQuery() !== 'R90') return;
+    var root = scope || document;
+    var title = root.querySelector && root.querySelector('.status-title');
+    var desc = root.querySelector && root.querySelector('.status-desc');
+    if (!title || !desc) {
+      title = document.querySelector('.status-title');
+      desc = document.querySelector('.status-desc');
+    }
+    if (!title || !desc) return;
+
+    var copy = {
+      en: {
+        title: 'MANUFACTURER REQUIRED',
+        desc: 'R90 is used by more than one manufacturer. Enter TECNOCAR R90 for the validated TECNOCAR cross-reference, or enter the complete RACOR element reference R90S, R90T, or R90P.'
+      },
+      es: {
+        title: 'FABRICANTE REQUERIDO',
+        desc: 'R90 es utilizado por más de un fabricante. Ingresa TECNOCAR R90 para la referencia validada de TECNOCAR, o ingresa la referencia completa del elemento RACOR: R90S, R90T o R90P.'
+      },
+      pt: {
+        title: 'FABRICANTE OBRIGATÓRIO',
+        desc: 'R90 é utilizado por mais de um fabricante. Digite TECNOCAR R90 para a referência TECNOCAR validada, ou digite a referência completa do elemento RACOR: R90S, R90T ou R90P.'
+      }
+    }[resultLanguage()];
+
+    title.textContent = copy.title;
+    desc.textContent = copy.desc;
+    title.setAttribute('data-resolution', 'AMBIGUOUS_MANUFACTURER');
+    desc.setAttribute('data-manufacturer-required', 'true');
+  }
+
   function normalizeResultsUi(root) {
     var scope = root || document;
 
@@ -216,6 +261,8 @@ try {
       badge.title = 'Learn more about ' + (badge.textContent || key).trim();
       badge.setAttribute('aria-label', 'Open ' + key + ' technology page');
     });
+
+    normalizeR90DisambiguationUi(scope);
   }
 
   function start() {
@@ -233,9 +280,10 @@ try {
     new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
         mutation.addedNodes.forEach(function (node) {
-          if (node.nodeType === 1) normalizeResultsUi(node.matches && node.matches('.badge-tech, .header-back, .search-summary-mode') ? node.parentNode || document : node);
+          if (node.nodeType === 1) normalizeResultsUi(node.matches && node.matches('.badge-tech, .header-back, .search-summary-mode, .status-container, .status-title, .status-desc') ? node.parentNode || document : node);
         });
       });
+      normalizeR90DisambiguationUi(document);
     }).observe(document.body, { childList: true, subtree: true });
   }
 
@@ -243,7 +291,7 @@ try {
   else start();
 })();
 </script>
-<!-- PART_SEARCH_RESULTS_FIXES_BUILD_20260814_UTF8_CANONICAL -->`;
+<!-- PART_SEARCH_RESULTS_FIXES_BUILD_20260909_R90_DISAMBIGUATION -->`;
 
   resultsHtml = resultsHtml
     .replace(/<script id="part-search-technology-links">[\s\S]*?<!-- PART_SEARCH_TECH_LINKS_BUILD_[^>]*-->/gi, '')
@@ -251,7 +299,7 @@ try {
   resultsHtml = resultsHtml.replace('</body>', `${resultsFixLayer}\n</body>`);
 
   fs.writeFileSync(resultsPath, resultsHtml, 'utf8');
-  console.log('[part-search-results] technology links normalized to current registry');
+  console.log('[part-search-results] technology links and R90 disambiguation normalized');
 } catch (error) {
   console.error('[part-search-results]', error.message);
 }
