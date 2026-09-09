@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('./lib/part-search-r90-fail-closed');
 require('./lib/part-search-runtime-hardening');
 
 const startupAsync = process.env.ELIM_STARTUP_MIGRATIONS_ASYNC === 'true';
@@ -88,6 +89,14 @@ async function start() {
   const { applyRacorSeparatorSearchIdentityRepair } = require('./scripts/migrations/run_100_racor_separator_search_identity_repair');
   const racorSeparatorSearchIdentity = await applyRacorSeparatorSearchIdentityRepair();
   console.log('[racor-separator-search-identity-repair]', JSON.stringify(racorSeparatorSearchIdentity));
+
+  // Sanitize contaminated bare R90 mappings before certification/resolver
+  // rebuild. Valid RACOR references R90S/R90T/R90P are untouched. The only
+  // retained catalog R90 is TECNOCAR -> EL84004, and public bare-R90 search
+  // still fails closed unless a manufacturer/complete validated code is used.
+  const { applyR90ReferenceSanitation } = require('./scripts/migrations/run_101_r90_reference_sanitation');
+  const r90ReferenceSanitation = await applyR90ReferenceSanitation();
+  console.log('[r90-reference-sanitation]', JSON.stringify(r90ReferenceSanitation));
 
   const { applyGlobalSkuCertificationAudit } = require('./scripts/migrations/run_093_global_sku_certification_audit');
   const globalSkuCertification = await applyGlobalSkuCertificationAudit();
