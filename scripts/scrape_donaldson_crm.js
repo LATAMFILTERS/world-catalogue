@@ -89,27 +89,82 @@ async function clickVisible(page, selector) {
   return count;
 }
 
-async function activateAllTabs(page) {
-  const labels = ['Attributes', 'Cross Reference', 'Equipment', 'Alternate Parts', 'Related Parts', 'Resources'];
-  for (const label of labels) {
-    const tab = page.getByText(label, { exact: true }).first();
-    try { if (await tab.isVisible()) { await tab.click(); await sleep(900); } } catch {}
-  }
+const SECTIONS = [
+  { name: 'attributes', label: 'Attributes', scope: '#attributesBody' },
+  { name: 'cross_reference', label: 'Cross Reference', scope: '#crossreferenceBody' },
+  { name: 'equipment', label: 'Equipment', scope: '#equiptmentBody' },
+  { name: 'alternate_parts', label: 'Alternate Parts', scope: '#alternateBody' },
+  { name: 'related_parts', label: 'Related Parts', scope: '#relatedPartsBody' },
+  { name: 'resources', label: 'Resources', scope: '#resourcesBody' },
+];
+
+async function visibleCount(page, selector) {
+  return page.locator(selector).evaluateAll((els) => els.filter((el) => {
+    const s = getComputedStyle(el);
+    const r = el.getBoundingClientRect();
+    return s.visibility !== 'hidden' && s.display !== 'none' && r.width > 0 && r.height > 0;
+  }).length).catch(() => 0);
 }
 
-async function exhaustExpansions(page) {
-  let showMoreClicks = 0, plusClicks = 0, stable = 0, previous = -1;
-  for (let pass = 0; pass < 120 && stable < 3; pass++) {
-    plusClicks += await clickVisible(page,
-      '#crossreferenceBody .fa-plus, #equiptmentBody .fa-plus, [aria-expanded="false"], button:has-text("+")');
-    showMoreClicks += await clickVisible(page,
-      '#showMoreProductSpecsButton, #showAllCrossReferenceListButton, #showMorePdpListButton, button:has-text("Show More"), a:has-text("Show More"), button:has-text("View More"), button:has-text("Load More")');
-    await sleep(700);
-    const current = await page.locator('tr').count();
-    stable = current === previous ? stable + 1 : 0;
-    previous = current;
+async function activateTab(page, section) {
+  const direct = page.locator(`a[href="${section.scope}"],a[data-target="${section.scope}"],[data-target="${section.scope}"]`).first();
+  const textTab = page.getByText(section.label, { exact: true }).first();
+  for (const candidate of [direct, textTab]) {
+    try {
+      if (await candidate.isVisible()) { await candidate.click(); await sleep(1000); return true; }
+    } catch {}
   }
-  return { show_more_clicks: showMoreClicks, plus_buttons_expanded: plusClicks, expansion_complete: stable >= 3 };
+  return false;
+}
+
+async function exhaustSection(page, section) {
+  const activated = await activateTab(page, section);
+  const scopeExists = await page.locator(section.scope).count().catch(() => 0);
+  if (!activated && !scopeExists) {
+    return { available: false, activated: false, show_more_clicks: 0, plus_buttons_expanded: 0,
+      row_count: 0, remaining_show_more: 0, remaining_plus: 0, complete: true };
+  }
+
+  const scope = scopeExists ? section.scope : 'body';
+  const showSelector = `${scope} #showMoreProductSpecsButton,${scope} #showAllCrossReferenceListButton,${scope} #showMorePdpListButton,${scope} button:has-text("Show More"),${scope} a:has-text("Show More"),${scope} button:has-text("Mostrar más"),${scope} a:has-text("Mostrar más"),${scope} button:has-text("View More"),${scope} button:has-text("Load More")`;
+  const plusSelector = `${scope} .fa-plus,${scope} [aria-expanded="false"],${scope} button:has-text("+")`;
+  let showMoreClicks = 0, plusClicks = 0, stable = 0, previousRows = -1;
+
+  for (let pass = 0; pass < 150 && stable < 3; pass++) {
+    // Expand current rows first, then load more rows, then expand newly loaded rows.
+    plusClicks += await clickVisible(page, plusSelector);
+    const more = await clickVisible(page, showSelector);
+    showMoreClicks += more;
+    if (more) plusClicks += await clickVisible(page, plusSelector);
+    await sleep(800);
+    const rows = await page.locator(`${scope} tr`).count().catch(() => 0);
+    const remainingShow = await visibleCount(page, showSelector);
+    const remainingPlus = await visibleCount(page, plusSelector);
+    stable = rows === previousRows && remainingShow === 0 && remainingPlus === 0 ? stable + 1 : 0;
+    previousRows = rows;
+  }
+
+  const remainingShowMore = await visibleCount(page, showSelector);
+  const remainingPlus = await visibleCount(page, plusSelector);
+  const rowCount = await page.locator(`${scope} tr`).count().catch(() => 0);
+  return {
+    available: true, activated, show_more_clicks: showMoreClicks,
+    plus_buttons_expanded: plusClicks, row_count: rowCount,
+    remaining_show_more: remainingShowMore, remaining_plus: remainingPlus,
+    complete: stable >= 3 && remainingShowMore === 0 && remainingPlus === 0,
+  };
+}
+
+async function exhaustAllSections(page) {
+  const sections = {};
+  for (const section of SECTIONS) sections[section.name] = await exhaustSection(page, section);
+  const available = Object.values(sections).filter((s) => s.available);
+  return {
+    sections,
+    expansion_complete: available.length > 0 && available.every((s) => s.complete),
+    remaining_show_more: available.reduce((n, s) => n + s.remaining_show_more, 0),
+    remaining_plus: available.reduce((n, s) => n + s.remaining_plus, 0),
+  };
 }
 
 async function extractPage(page, requestedCode) {
@@ -189,8 +244,7 @@ async function main() {
         fs.appendFileSync(NOT_FOUND, `${code}\n`); done.add(code); saveProgress(done); continue;
       }
       await page.goto(sourceUrl, { waitUntil: 'networkidle', timeout: 90000 });
-      await activateAllTabs(page);
-      const audit = await exhaustExpansions(page);
+      const audit = await exhaustAllSections(page);
       const official = await extractPage(page, code);
       const metric = metricFromOfficial(official.attributes);
       appendJsonl({ codigo_base: code, status: audit.expansion_complete ? 'OK' : 'PARTIAL', source_url: page.url(), scraped_at: new Date().toISOString(), official, metric, audit });
@@ -203,4 +257,3 @@ async function main() {
 }
 
 main().catch((error) => { console.error(error); process.exit(1); });
-
