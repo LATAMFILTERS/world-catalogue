@@ -26,7 +26,7 @@ const BASE = 'https://shop.donaldson.com/store/en-us';
 const CATEGORIES = {
   'air-dryer': `${BASE}/search?N=2748940002&Nr=product.language%3AEnglish&catNav=true&st=parts`,
 };
-const EXPECTED_CATEGORY_COUNTS = { 'air-dryer': 5 };
+const EXPECTED_CATEGORY_COUNTS = { 'air-dryer': 3 };
 
 const args = process.argv.slice(2);
 const value = (flag) => { const i = args.indexOf(flag); return i >= 0 ? args[i + 1] : null; };
@@ -167,7 +167,6 @@ async function exhaustAllSections(page) {
     remaining_plus: available.reduce((n, s) => n + s.remaining_plus, 0),
   };
 }
-
 async function extractPage(page, requestedCode) {
   return page.evaluate((requested) => {
     const text = (el) => (el?.textContent || '').replace(/\s+/g, ' ').trim();
