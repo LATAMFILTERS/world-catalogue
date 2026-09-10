@@ -1,5 +1,8 @@
 name: HERMES Weekly Intelligence Collection
 
+# Schedule intentionally removed here (commit 69f7a098ef): recurring execution is owned by the
+# Lenovo primary runtime (ELIMFILTERS-HERMES-Weekly / ELIMFILTERS-HERMES-Research-Retry scheduled
+# tasks), not GitHub Actions cron, to avoid Actions minutes cost. This is not an oversight.
 on:
   workflow_dispatch:
     inputs:

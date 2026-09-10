@@ -10,6 +10,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
+import { execFileSync } from 'node:child_process';
 import { loadRegistry, validateRegistry } from './source-registry-core.mjs';
 
 const REPO_ROOT = path.resolve(process.argv[2] || '.');
@@ -88,7 +89,37 @@ function workflowCheck(id, description, test) {
   return record(id, description, test(workflowText) ? 'SAFE' : 'UNSAFE');
 }
 workflowCheck('workflow:workflow_dispatch', 'workflow_dispatch trigger present', (t) => /\bworkflow_dispatch:/.test(t));
-workflowCheck('workflow:schedule', 'weekly schedule (cron) present', (t) => /schedule:/.test(t) && /cron:/.test(t));
+// Recurring execution moved off GitHub Actions cron onto the Lenovo primary runtime's own
+// Windows Scheduled Tasks (commit 69f7a098ef). On Windows, verify the real task is present and
+// enabled rather than trusting a comment -- a comment can't detect someone deleting the task.
+// Off Windows (e.g. a manual workflow_dispatch run on an ubuntu runner, which cannot see the
+// Lenovo's Task Scheduler at all), fall back to the documented-intent text check.
+function lenovoScheduledTaskEnabled(taskName) {
+  if (process.platform !== 'win32') return null;
+  try {
+    const output = execFileSync('schtasks', ['/query', '/tn', taskName, '/fo', 'list', '/v'], { encoding: 'utf8' });
+    return /Scheduled Task State:\s*Enabled/i.test(output);
+  } catch {
+    return false;
+  }
+}
+{
+  const lenovoTaskState = lenovoScheduledTaskEnabled('ELIMFILTERS-HERMES-Weekly');
+  if (lenovoTaskState === null) {
+    workflowCheck(
+      'workflow:schedule',
+      'weekly schedule (cron in this workflow, or documented as owned by the Lenovo primary runtime -- unverifiable from this non-Windows host)',
+      (t) => (/schedule:/.test(t) && /cron:/.test(t)) || /Lenovo primary runtime/.test(t)
+    );
+  } else {
+    record(
+      'workflow:schedule',
+      'weekly schedule owned by the Lenovo primary runtime (ELIMFILTERS-HERMES-Weekly Scheduled Task)',
+      lenovoTaskState ? 'SAFE' : 'UNSAFE',
+      lenovoTaskState ? '' : 'ELIMFILTERS-HERMES-Weekly Scheduled Task is missing or disabled'
+    );
+  }
+}
 workflowCheck('workflow:node20', "Node 20 pinned", (t) => /node-version:\s*'20'/.test(t));
 workflowCheck('workflow:concurrency', 'concurrency group configured (prevents overlapping runs)', (t) => /concurrency:/.test(t));
 workflowCheck('workflow:dry_run_default', "HERMES_COLLECTION_DRY_RUN defaults to 'true'", (t) => /HERMES_COLLECTION_DRY_RUN:\s*\$\{\{\s*vars\.HERMES_COLLECTION_DRY_RUN\s*\|\|\s*'true'\s*\}\}/.test(t));
