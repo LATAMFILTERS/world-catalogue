@@ -30,6 +30,9 @@ test('HERMES mission covers the complete filtration intelligence ecosystem', () 
 
 test('industry sweep creates one verified candidate and suppresses repeated evidence', async () => {
   const outputDir = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-sweep-'));
+  // Isolated from the real hermes/state/ directory -- writing checkpoints there could make the
+  // real scheduled sweep believe production work for this cycle was already done (2026-09-10 incident).
+  process.env.HERMES_STATE_ROOT = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-sweep-state-'));
   let groqCalls = 0;
   const fakeFetch = async (url) => {
     if (String(url).includes('api.groq.com')) {
@@ -79,6 +82,9 @@ test('industry sweep creates one verified candidate and suppresses repeated evid
 
 test('industry sweep splits an oversized 413 domain request and preserves the recovered batch', async () => {
   const outputDir = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-sweep-413-'));
+  // Isolated from the real hermes/state/ directory -- this test doesn't override `now`, so
+  // without this it writes checkpoints straight into the real current-week production cycle file.
+  process.env.HERMES_STATE_ROOT = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-sweep-413-state-'));
   let groqCalls = 0;
   let injected413 = false;
 

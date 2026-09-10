@@ -16,7 +16,25 @@ const MAX_COMPLETION_TOKENS = Math.max(600, Number(process.env.HERMES_SWEEP_MAX_
 const MAX_FINDINGS_PER_DOMAIN = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN || 3));
 const MAX_TOPICS_PER_REQUEST = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_TOPICS_PER_REQUEST || 4));
 const MAX_RUNTIME_MS = Math.max(60_000, Number(process.env.HERMES_SWEEP_BUDGET_MS || 35 * 60_000));
-const STATE_ROOT = path.resolve(process.env.HERMES_STATE_ROOT || 'hermes/state');
+// Read at call time, not at module load, so tests (and any caller) can point this at an
+// isolated directory via HERMES_STATE_ROOT before invoking runIndustrySweep -- this used to be
+// a frozen top-level constant, and the test suite (which imports this module statically before
+// it gets a chance to set the env var) was silently writing real checkpoint data into the
+// production hermes/state/ directory, which could make the real scheduled sweep believe an
+// entire week's work was already done. See 2026-09-10 incident notes below.
+function resolveStateRoot() { return path.resolve(process.env.HERMES_STATE_ROOT || 'hermes/state'); }
+// 2026-09-10 incident: one domain's live-web-browsing cost (real tool calls, not request-size
+// retries) consumed the entire ~100K daily Groq token budget in a single work item before it
+// even finished, hitting TPD exhaustion mid-item with zero checkpoints saved -- so the next run
+// re-attempted the exact same domain first and would repeat the same all-or-nothing failure
+// indefinitely. This cap stops pursuing a single item once it alone has burned an outsized share
+// of a typical day's budget, freeing the rest of the run for other domains instead.
+const MAX_TOKENS_PER_ITEM = Math.max(1000, Number(process.env.HERMES_SWEEP_MAX_TOKENS_PER_ITEM || 25000));
+// Barrier checked BEFORE a new domain is ever sent to Groq (not just capped mid-flight once
+// consumption has already started): once this much of the run's own token spend has accumulated,
+// stop starting further items and end the run cleanly, leaving headroom under the real daily
+// quota instead of finding out it's gone only after a request is already in flight.
+const MAX_TOKENS_PER_RUN = Math.max(MAX_TOKENS_PER_ITEM, Number(process.env.HERMES_SWEEP_MAX_TOKENS_PER_RUN || 80000));
 
 const sha256 = (value) => crypto.createHash('sha256').update(String(value)).digest('hex');
 const plain = (html) => String(html).replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/\s+/g, ' ').trim();
@@ -82,17 +100,26 @@ async function searchSegment(mission, domain, topics, apiKey, fetchImpl = global
   const response = await fetchImpl(ENDPOINT, { method: 'POST', headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'Groq-Model-Version': 'latest' }, body: JSON.stringify({ model: MODEL, temperature: 0, max_completion_tokens: MAX_COMPLETION_TOKENS, response_format: { type: 'json_object' }, messages: [{ role: 'system', content: sweepPrompt(mission, domain, topics) }, { role: 'user', content: 'Search this narrow scope now and return only verified, material developments.' }] }) });
   if (!response.ok) { const error = new Error(`Groq HTTP ${response.status}: ${(await response.text()).slice(0, 400)}`); error.status = response.status; throw error; }
   const payload = await response.json(); const content = payload?.choices?.[0]?.message?.content; if (!content) throw new Error('Groq returned no content');
-  const parsed = JSON.parse(stripFence(content)); return { findings: Array.isArray(parsed.findings) ? parsed.findings : [], tool_calls: payload?.choices?.[0]?.message?.executed_tools?.length || 0 };
+  const parsed = JSON.parse(stripFence(content));
+  return { findings: Array.isArray(parsed.findings) ? parsed.findings : [], tool_calls: payload?.choices?.[0]?.message?.executed_tools?.length || 0, tokens_used: Number(payload?.usage?.total_tokens) || 0 };
 }
 
-async function searchTopicsAdaptive(mission, domain, topics, apiKey, fetchImpl) {
-  try { return await searchSegment(mission, domain, topics, apiKey, fetchImpl); }
-  catch (error) {
+async function searchTopicsAdaptive(mission, domain, topics, apiKey, fetchImpl, tokenBudget = { used: 0 }) {
+  if (tokenBudget.used >= MAX_TOKENS_PER_ITEM) {
+    const error = new Error(`work item exceeded per-item token cap (${tokenBudget.used}/${MAX_TOKENS_PER_ITEM}) before completing -- deferring rather than exhausting the whole daily budget on one domain`);
+    error.code = 'HERMES_ITEM_TOO_EXPENSIVE';
+    throw error;
+  }
+  try {
+    const result = await searchSegment(mission, domain, topics, apiKey, fetchImpl);
+    tokenBudget.used += result.tokens_used;
+    return result;
+  } catch (error) {
     if (error?.status !== 413 || topics.length <= 1) throw error;
     const midpoint = Math.ceil(topics.length / 2);
     console.warn(`[HERMES industry sweep] HTTP 413 domain=${domain.id} topics=${topics.length}; emergency split ${midpoint}+${topics.length - midpoint}`);
-    const left = await searchTopicsAdaptive(mission, domain, topics.slice(0, midpoint), apiKey, fetchImpl);
-    const right = await searchTopicsAdaptive(mission, domain, topics.slice(midpoint), apiKey, fetchImpl);
+    const left = await searchTopicsAdaptive(mission, domain, topics.slice(0, midpoint), apiKey, fetchImpl, tokenBudget);
+    const right = await searchTopicsAdaptive(mission, domain, topics.slice(midpoint), apiKey, fetchImpl, tokenBudget);
     return { findings: [...left.findings, ...right.findings], tool_calls: left.tool_calls + right.tool_calls };
   }
 }
@@ -113,27 +140,35 @@ function candidateFromFinding(finding, evidence, now, toolCalls) {
 }
 
 export async function runIndustrySweep({ apiKey = process.env.GROQ_API_KEY, fetchImpl = globalThis.fetch, outputDir = resolveRealCandidatesInputDir(), now = () => new Date() } = {}) {
-  const mission = loadMission(); const output = path.resolve(outputDir); fs.mkdirSync(output, { recursive: true }); fs.mkdirSync(STATE_ROOT, { recursive: true });
-  const cycle = process.env.HERMES_CYCLE_ID || cycleId(now()); const statePath = path.join(STATE_ROOT, `sweep-${cycle}.json`); const signatures = existingSignatures(output); const startedMs = Date.now();
+  const mission = loadMission(); const output = path.resolve(outputDir); const stateRoot = resolveStateRoot(); fs.mkdirSync(output, { recursive: true }); fs.mkdirSync(stateRoot, { recursive: true });
+  const cycle = process.env.HERMES_CYCLE_ID || cycleId(now()); const statePath = path.join(stateRoot, `sweep-${cycle}.json`); const signatures = existingSignatures(output); const startedMs = Date.now();
   const work = mission.domains.flatMap((domain) => chunks(domain.topics, MAX_TOPICS_PER_REQUEST).map((topics, index) => ({ key: `${domain.id}:${index}`, domain, topics, index })));
   const previous = readJson(statePath, {}); const completed = new Set(Array.isArray(previous.completed_work) ? previous.completed_work : []);
   const summary = { mission_version: mission.schema_version, model: MODEL, cycle, domains: mission.domains.length, total_work: work.length, completed_before: completed.size, completed_this_run: 0, batches: 0, findings_seen: 0, created: 0, duplicates: 0, no_material_change: 0, invalid: 0, failed_batches: 0, failures: [], quota_exhausted: false, quota_exhausted_reason: null, resume_required: false, work_remaining: Math.max(0, work.length - completed.size) };
   if (!apiKey) return { ...summary, error: 'GROQ_API_KEY_MISSING' };
 
   const persist = (extra = {}) => atomicWrite(statePath, { schema_version: '1.0.0', cycle, mission_version: mission.schema_version, model: MODEL, total_work: work.length, completed_work: [...completed], complete: completed.size === work.length, updated_at: now().toISOString(), ...extra });
+  const runBudget = { used: 0 };
 
   for (const item of work) {
     if (completed.has(item.key)) continue;
     if (Date.now() - startedMs >= MAX_RUNTIME_MS) { summary.resume_required = true; summary.resume_reason = 'EXECUTION_BUDGET_REACHED'; break; }
+    // Barrier checked before this domain is sent to Groq at all: if the run has already spent
+    // enough that even one more average-sized item risks tipping past the real daily quota,
+    // stop here instead of starting a request that's likely to hit TPD exhaustion mid-flight.
+    if (runBudget.used >= MAX_TOKENS_PER_RUN) { summary.resume_required = true; summary.resume_reason = 'RUN_TOKEN_BUDGET_REACHED'; console.warn(`[HERMES industry sweep] run token budget reached (${runBudget.used}/${MAX_TOKENS_PER_RUN}); stopping before starting ${item.key}`); break; }
     summary.batches += 1;
     let search;
-    try { search = await searchTopicsAdaptive(mission, item.domain, item.topics, apiKey, fetchImpl); }
+    const itemBudget = { used: 0 };
+    try { search = await searchTopicsAdaptive(mission, item.domain, item.topics, apiKey, fetchImpl, itemBudget); }
     catch (error) {
+      runBudget.used += itemBudget.used;
       if (error?.code === 'HERMES_QUOTA_EXHAUSTED') { summary.quota_exhausted = true; summary.quota_exhausted_reason = String(error?.message || error); summary.resume_required = true; summary.resume_reason = 'QUOTA_EXHAUSTED'; break; }
-      summary.failed_batches += 1; summary.failures.push({ work_key: item.key, domain: item.domain.id, topics: item.topics, error: String(error?.message || error) });
+      summary.failed_batches += 1; summary.failures.push({ work_key: item.key, domain: item.domain.id, topics: item.topics, error: String(error?.message || error), tokens_spent_before_failure: itemBudget.used });
       persist({ last_error: summary.failures.at(-1) });
       continue;
     }
+    runBudget.used += itemBudget.used;
 
     for (const finding of search.findings) {
       summary.findings_seen += 1; const errors = validateFinding(finding, mission); if (errors.length) { summary.invalid += 1; continue; }
