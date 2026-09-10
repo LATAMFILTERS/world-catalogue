@@ -21,8 +21,7 @@
   main#main-content > section[aria-labelledby="hydrocore-title"] > h1,
   main#main-content > section[aria-labelledby="syntrax-title"] > h1,
   main#main-content > section[aria-labelledby="nanoforce-title"] > h1,
-  main#main-content > section[aria-labelledby="thermacore-title"] > h1,
-  main#main-content > section[aria-labelledby="turbocore-title"] > h1 {
+  main#main-content > section[aria-labelledby="thermacore-title"] > h1 {
     position: relative !important;
     z-index: 4 !important;
     inset: auto !important;
@@ -47,8 +46,24 @@
     pointer-events: none !important;
   }
 
-  main#main-content > section[aria-labelledby$="-title"] > h1::before,
-  main#main-content > section[aria-labelledby$="-title"] > h1::after {
+  main#main-content > section[aria-labelledby="macrocore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="macrocore-title"] > h1::after,
+  main#main-content > section[aria-labelledby="microkappa-title"] > h1::before,
+  main#main-content > section[aria-labelledby="microkappa-title"] > h1::after,
+  main#main-content > section[aria-labelledby="drycore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="drycore-title"] > h1::after,
+  main#main-content > section[aria-labelledby="intekcore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="intekcore-title"] > h1::after,
+  main#main-content > section[aria-labelledby="syntapore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="syntapore-title"] > h1::after,
+  main#main-content > section[aria-labelledby="hydrocore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="hydrocore-title"] > h1::after,
+  main#main-content > section[aria-labelledby="syntrax-title"] > h1::before,
+  main#main-content > section[aria-labelledby="syntrax-title"] > h1::after,
+  main#main-content > section[aria-labelledby="nanoforce-title"] > h1::before,
+  main#main-content > section[aria-labelledby="nanoforce-title"] > h1::after,
+  main#main-content > section[aria-labelledby="thermacore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="thermacore-title"] > h1::after {
     display: block;
     width: 100%;
     color: #fff;
@@ -58,7 +73,15 @@
     text-shadow: 0 3px 5px rgba(0,0,0,.9), 0 8px 24px rgba(0,0,0,.72);
   }
 
-  main#main-content > section[aria-labelledby$="-title"] > h1::before {
+  main#main-content > section[aria-labelledby="macrocore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="microkappa-title"] > h1::before,
+  main#main-content > section[aria-labelledby="drycore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="intekcore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="syntapore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="hydrocore-title"] > h1::before,
+  main#main-content > section[aria-labelledby="syntrax-title"] > h1::before,
+  main#main-content > section[aria-labelledby="nanoforce-title"] > h1::before,
+  main#main-content > section[aria-labelledby="thermacore-title"] > h1::before {
     font-size: clamp(3rem, 7vw, 5rem);
     font-style: italic;
     font-weight: 800;
@@ -67,7 +90,15 @@
     white-space: nowrap;
   }
 
-  main#main-content > section[aria-labelledby$="-title"] > h1::after {
+  main#main-content > section[aria-labelledby="macrocore-title"] > h1::after,
+  main#main-content > section[aria-labelledby="microkappa-title"] > h1::after,
+  main#main-content > section[aria-labelledby="drycore-title"] > h1::after,
+  main#main-content > section[aria-labelledby="intekcore-title"] > h1::after,
+  main#main-content > section[aria-labelledby="syntapore-title"] > h1::after,
+  main#main-content > section[aria-labelledby="hydrocore-title"] > h1::after,
+  main#main-content > section[aria-labelledby="syntrax-title"] > h1::after,
+  main#main-content > section[aria-labelledby="nanoforce-title"] > h1::after,
+  main#main-content > section[aria-labelledby="thermacore-title"] > h1::after {
     font-size: clamp(1.2rem, 2.65vw, 1.8rem);
     font-weight: 650;
     line-height: 1.16;
@@ -100,7 +131,4 @@
 
   main#main-content > section[aria-labelledby="thermacore-title"] > h1::before { content: "THERMACORE™"; }
   main#main-content > section[aria-labelledby="thermacore-title"] > h1::after { content: "Thermal System Protection"; }
-
-  main#main-content > section[aria-labelledby="turbocore-title"] > h1::before { content: "TURBOCORE™"; }
-  main#main-content > section[aria-labelledby="turbocore-title"] > h1::after { content: "Turbine Fuel System Protection"; }
 }
