@@ -50,7 +50,12 @@ export function convertCanonicalMeasurement(
       case 'length_cm': return { value, unit: 'cm', decimals: 2 };
       case 'weight_kg': return { value, unit: 'kg', decimals: 2 };
       case 'volume_m3': return { value, unit: 'm³', decimals: 3 };
-      case 'pressure_kpa': return { value, unit: 'kPa', decimals: 1 };
+      case 'pressure_kpa': {
+        // kPa remains canonical in the database. Industrial pressures are
+        // presented as bar above 1,000 kPa to avoid unreadable five/six-digit values.
+        if (Math.abs(value) >= 1000) return { value: value / 100, unit: 'bar', decimals: 1 };
+        return { value, unit: 'kPa', decimals: 1 };
+      }
       case 'temperature_c': return { value, unit: '°C', decimals: 1 };
       case 'flow_lpm': return { value, unit: 'L/min', decimals: 1 };
     }
@@ -80,6 +85,28 @@ export function formatCanonicalMeasurement(
     unit: converted.unit,
     text: `${formatNumber(normalized, locale, converted.decimals)} ${converted.unit}`,
   };
+}
+
+export function formatCanonicalMeasurementRange(
+  kind: MeasurementKind,
+  canonicalMin: number,
+  canonicalMax: number,
+  system: MeasurementSystem,
+  locale = 'en',
+): string {
+  const min = convertCanonicalMeasurement(kind, canonicalMin, system);
+  const max = convertCanonicalMeasurement(kind, canonicalMax, system);
+
+  if (min.unit !== max.unit) {
+    const first = formatCanonicalMeasurement(kind, canonicalMin, system, locale).text;
+    const second = formatCanonicalMeasurement(kind, canonicalMax, system, locale).text;
+    return `${first}–${second}`;
+  }
+
+  const decimals = Math.max(min.decimals, max.decimals);
+  const minValue = round(min.value, decimals);
+  const maxValue = round(max.value, decimals);
+  return `${formatNumber(minValue, locale, decimals)}–${formatNumber(maxValue, locale, decimals)} ${min.unit}`;
 }
 
 export function formatDimensionsCm(
