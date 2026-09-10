@@ -4,6 +4,10 @@ require('dotenv').config();
 const fs = require('node:fs');
 const path = require('node:path');
 const { Pool } = require('pg');
+const {
+  requiredPackagingFields,
+  isProtectedPackaging,
+} = require('./lib/hd_packaging_policy');
 
 const BATCH_SIZE = Math.max(1, Number(process.env.HD_PACKAGING_BATCH_SIZE || 25));
 const OUTPUT_DIR = path.resolve(__dirname, 'hd_packaging_batches');
@@ -14,16 +18,41 @@ const FAMILY_ORDER = [
   'fuel-water-separator',
   'cooling',
   'hydraulic',
-  'air-dryer',
   'unknown',
 ];
 
 function normalize(value) {
-  return String(value || '').trim().toLowerCase().replace(/_/g, '-');
+  return String(value || '').trim().toLowerCase();
+}
+
+function looksSpinOn(row) {
+  const haystack = [
+    row.style,
+    row.filter_style,
+    row.product_style,
+    row.form_factor,
+    row.packaging_type,
+    row.description,
+    row.product_name,
+  ].filter(Boolean).map(normalize).join(' | ');
+
+  if (/spin[- ]?on/.test(haystack)) return true;
+
+  const family = normalize(row.filter_type);
+  const knownSpinOnFamilies = new Set([
+    'oil', 'oil_filter', 'lube', 'lube_filter',
+    'fuel', 'fuel_filter', 'fuel_water_separator', 'separator',
+    'coolant', 'coolant_filter',
+    'hydraulic', 'hydraulic_filter',
+    'air_dryer',
+  ]);
+
+  const hasThread = [row.thread_size, row.thread, row.thread_spec].some((v) => String(v || '').trim());
+  return knownSpinOnFamilies.has(family) && hasThread;
 }
 
 function classifyFamily(row) {
-  const filterType = normalize(row.filter_type);
+  const filterType = normalize(row.filter_type).replace(/_/g, '-');
   const technology = String(row.technology || '').toUpperCase();
 
   if (filterType.includes('air-dryer') || technology.includes('DRYCORE')) return 'air-dryer';
@@ -33,20 +62,6 @@ function classifyFamily(row) {
   if (filterType.includes('fuel')) return 'fuel';
   if (filterType.includes('oil') || filterType.includes('lube') || technology.includes('SYNTRAX')) return 'lube-oil';
   return 'unknown';
-}
-
-function missingPackagingFields(row) {
-  const required = [
-    'unit_packaged_length_cm',
-    'unit_packaged_width_cm',
-    'unit_packaged_height_cm',
-    'unit_packaged_weight_kg',
-  ];
-
-  return required.filter((field) => {
-    const value = Number(row[field]);
-    return !Number.isFinite(value) || value <= 0;
-  });
 }
 
 function chunk(items, size) {
@@ -68,44 +83,41 @@ function safeJson(value) {
   });
 
   try {
+    const columnsResult = await pool.query(`
+      SELECT column_name
+      FROM information_schema.columns
+      WHERE table_schema = 'public'
+        AND table_name = 'elimfilters_catalog'
+    `);
+    const columns = new Set(columnsResult.rows.map((r) => r.column_name));
+
+    const optional = [
+      'style','filter_style','product_style','form_factor','description','product_name',
+      'thread_size','thread','thread_spec','oem_codes','competitor_codes','brand_crossrefs'
+    ].filter((name) => columns.has(name));
+
+    const selectColumns = [
+      'sku','codigo_base','duty','filter_type','technology',
+      'unit_packaged_length_cm','unit_packaged_width_cm','unit_packaged_height_cm',
+      'unit_packaged_weight_kg','unit_packaged_volume_m3','units_per_case',
+      'packaging_type','packaging_source','packaging_validation_status','packaging_notes',
+      ...optional,
+    ].filter((name) => columns.has(name));
+
     const result = await pool.query(`
-      SELECT
-        sku,
-        codigo_base,
-        duty,
-        filter_type,
-        technology,
-        style,
-        product_name,
-        description,
-        unit_packaged_length_cm,
-        unit_packaged_width_cm,
-        unit_packaged_height_cm,
-        unit_packaged_weight_kg,
-        unit_packaged_volume_m3,
-        units_per_case,
-        packaging_source,
-        packaging_validation_status,
-        oem_codes,
-        competitor_codes,
-        brand_crossrefs
+      SELECT ${selectColumns.map((c) => `"${c}"`).join(', ')}
       FROM elimfilters_catalog
       WHERE duty = 'HEAVY_DUTY'
-      ORDER BY sku
+      ORDER BY filter_type NULLS LAST, sku
     `);
 
     const rows = result.rows
-      .filter((row) => {
-        const style = normalize(row.style);
-        const type = normalize(row.filter_type);
-        const name = normalize(row.product_name);
-        const desc = normalize(row.description);
-        return [style, type, name, desc].some((value) => value.includes('spin-on') || value.includes('spin on'));
-      })
+      .filter(looksSpinOn)
+      .filter((row) => !isProtectedPackaging(row))
       .map((row) => ({
         ...row,
         family: classifyFamily(row),
-        missing_fields: missingPackagingFields(row),
+        missing_fields: requiredPackagingFields(row),
       }))
       .filter((row) => row.family !== 'air-dryer')
       .filter((row) => row.missing_fields.length > 0);
@@ -121,7 +133,6 @@ function safeJson(value) {
     };
 
     for (const family of FAMILY_ORDER) {
-      if (family === 'air-dryer') continue;
       const familyRows = rows.filter((row) => row.family === family);
       if (!familyRows.length) continue;
 
@@ -146,8 +157,9 @@ function safeJson(value) {
             codigo_base: row.codigo_base,
             filter_type: row.filter_type,
             technology: row.technology,
-            style: row.style,
-            product_name: row.product_name,
+            style: row.style || row.filter_style || row.product_style || row.form_factor || null,
+            product_name: row.product_name || null,
+            thread: row.thread_size || row.thread || row.thread_spec || null,
             missing_fields: row.missing_fields,
             current_packaging: {
               unit_packaged_length_cm: row.unit_packaged_length_cm,
