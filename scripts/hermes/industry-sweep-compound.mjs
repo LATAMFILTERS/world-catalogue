@@ -124,6 +124,25 @@ async function searchTopicsAdaptive(mission, domain, topics, apiKey, fetchImpl, 
   }
 }
 
+// URLs must be clean the moment HERMES selects them as evidence -- not cleaned up later in the
+// weekly report/email. Strips tracking/marketing query params and empty fragments so the same
+// underlying page always dedupes to one signature and the report never shows raw tracking junk.
+const TRACKING_PARAM_PREFIXES = ['utm_'];
+const TRACKING_PARAMS = new Set([
+  'gclid', 'fbclid', 'msclkid', 'mc_cid', 'mc_eid', 'igshid', 'yclid', 'dclid', 'twclid',
+  'vero_id', 'mkt_tok', '_ga', 'ref', 'referrer', 'trk', 'si', 'spm', 'ito', 'cmpid'
+]);
+function cleanEvidenceUrl(rawUrl) {
+  const url = new URL(rawUrl);
+  for (const key of [...url.searchParams.keys()]) {
+    if (TRACKING_PARAMS.has(key.toLowerCase()) || TRACKING_PARAM_PREFIXES.some((prefix) => key.toLowerCase().startsWith(prefix))) {
+      url.searchParams.delete(key);
+    }
+  }
+  url.hash = '';
+  return url.toString();
+}
+
 function existingSignatures(dir) {
   const urls = new Set(); const keys = new Set();
   if (!fs.existsSync(dir)) return { urls, keys };
@@ -173,7 +192,7 @@ export async function runIndustrySweep({ apiKey = process.env.GROQ_API_KEY, fetc
     for (const finding of search.findings) {
       summary.findings_seen += 1; const errors = validateFinding(finding, mission); if (errors.length) { summary.invalid += 1; continue; }
       if (finding.knowledge_action === 'NO_MATERIAL_CHANGE') { summary.no_material_change += 1; continue; }
-      const normalizedUrl = new URL(finding.evidence_url).toString(); const key = `industry-sweep-${sha256(`${normalizedUrl}|${finding.finding_title}`).slice(0, 40)}`;
+      const normalizedUrl = cleanEvidenceUrl(finding.evidence_url); const key = `industry-sweep-${sha256(`${normalizedUrl}|${finding.finding_title}`).slice(0, 40)}`;
       if (signatures.urls.has(normalizedUrl) || signatures.keys.has(key)) { summary.duplicates += 1; continue; }
       const evidence = await fetchEvidence(normalizedUrl, fetchImpl); if (!evidence.ok) { summary.invalid += 1; continue; }
       finding.evidence_url = normalizedUrl; const stamp = now().toISOString(); const candidate = candidateFromFinding(finding, evidence, stamp, search.tool_calls); const candidateErrors = validateCandidate(candidate); if (candidateErrors.length) { summary.invalid += 1; continue; }
