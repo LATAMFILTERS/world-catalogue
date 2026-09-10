@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { detectGeoLanguage } from '@/lib/geoLanguage';
 import {
   formatCanonicalMeasurement,
+  formatCanonicalMeasurementRange,
   formatDimensionsCm,
   measurementSystemForCountry,
   type MeasurementKind,
@@ -17,6 +18,7 @@ interface MeasurementContextValue {
   measurementSystem: MeasurementSystem;
   setMeasurementSystem: (system: MeasurementSystem) => void;
   formatMeasurement: (kind: MeasurementKind, value: number, locale?: string) => string;
+  formatMeasurementRange: (kind: MeasurementKind, min: number, max: number, locale?: string) => string;
   formatDimensions: (lengthCm: number, widthCm: number, heightCm: number, locale?: string) => string;
 }
 
@@ -60,6 +62,8 @@ export function MeasurementProvider({ children }: { children: React.ReactNode })
     setMeasurementSystem,
     formatMeasurement: (kind, measurementValue, locale = 'en') =>
       formatCanonicalMeasurement(kind, measurementValue, measurementSystem, locale).text,
+    formatMeasurementRange: (kind, min, max, locale = 'en') =>
+      formatCanonicalMeasurementRange(kind, min, max, measurementSystem, locale),
     formatDimensions: (lengthCm, widthCm, heightCm, locale = 'en') =>
       formatDimensionsCm(lengthCm, widthCm, heightCm, measurementSystem, locale),
   }), [country, measurementSystem]);
