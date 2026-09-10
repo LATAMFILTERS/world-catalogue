@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useMeasurementSystem } from "@/components/MeasurementProvider";
 
 const IMG_PADDING = 12;
 
@@ -19,7 +20,9 @@ const TECHNOLOGIES = [
     imgUrl: "/images/fuellseparator-hero.avif",
     logoUrl: "/assets/HYDROCORE.avif",
     title: "Turbine-Stage Water Separation",
-    p1: "HYDROCORE removes free and emulsified water from diesel and turbine fuel systems, protecting precision HPCR injectors operating at 1,800 to 2,500 bar.",
+    p1Prefix: "HYDROCORE removes free and emulsified water from diesel and turbine fuel systems, protecting precision HPCR injectors operating at ",
+    pressureRangeKpa: [180000, 250000] as const,
+    p1Suffix: ".",
     p2: "Engineered for Common Rail and turbine fuel systems in mining, marine, power generation, and agriculture. Validates against ASTM D6304 and SAE J1488.",
     link: "/knowledge-center/standards/astm-d6304",
   },
@@ -34,22 +37,30 @@ const TECHNOLOGIES = [
 ];
 
 export const TechnologiesParallaxContent = () => {
+  const { formatMeasurementRange } = useMeasurementSystem();
+
   return (
     <div style={{ background: "#000", color: "#fff" }}>
-      {TECHNOLOGIES.map((tech, i) => (
-        <TextParallaxContent
-          key={i}
-          imgUrl={tech.imgUrl}
-          logoUrl={tech.logoUrl}
-        >
-          <ExampleContent
-            title={tech.title}
-            p1={tech.p1}
-            p2={tech.p2}
-            link={tech.link}
-          />
-        </TextParallaxContent>
-      ))}
+      {TECHNOLOGIES.map((tech, i) => {
+        const p1 = "pressureRangeKpa" in tech && tech.pressureRangeKpa
+          ? `${tech.p1Prefix}${formatMeasurementRange("pressure_kpa", tech.pressureRangeKpa[0], tech.pressureRangeKpa[1])}${tech.p1Suffix}`
+          : tech.p1;
+
+        return (
+          <TextParallaxContent
+            key={i}
+            imgUrl={tech.imgUrl}
+            logoUrl={tech.logoUrl}
+          >
+            <ExampleContent
+              title={tech.title}
+              p1={p1}
+              p2={tech.p2}
+              link={tech.link}
+            />
+          </TextParallaxContent>
+        );
+      })}
     </div>
   );
 };

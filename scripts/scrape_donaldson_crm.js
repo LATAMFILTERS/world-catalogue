@@ -180,12 +180,22 @@ async function extractPage(page, requestedCode) {
     };
     const rows = (scope) => [...(scope?.querySelectorAll('tr') || [])].map((tr) =>
       [...tr.querySelectorAll('th,td')].map(text).filter(Boolean)).filter((r) => r.length > 1);
-    const canonical = text(document.querySelector('h1')) || requested;
+    const uniqueRows = (input) => {
+      const seen = new Set();
+      return input.filter((row) => {
+        const key = JSON.stringify(row.map((value) => String(value || '').trim()));
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    };
+    const pathCode = location.pathname.match(/\/product\/([^/?#]+)/i)?.[1] || requested;
+    const canonical = String(pathCode || requested).trim().toUpperCase();
     const description = text(document.querySelector('.prodSubTitleMob,.prodSubTitle,h6.desLengthCheck,h6'));
     const attrsScope = document.querySelector('#attributesBody') || document;
     const attributes = pairs(attrsScope);
     const crossRows = rows(document.querySelector('#crossreferenceBody'));
-    const equipmentRows = rows(document.querySelector('#equiptmentBody'));
+    const equipmentRows = uniqueRows(rows(document.querySelector('#equiptmentBody')));
     const alternatives = [...document.querySelectorAll('.compareListProdAlternate [data-partnumber],#alternateBody [data-partnumber]')]
       .map((e) => e.getAttribute('data-partnumber')).filter(Boolean);
     const related = [...document.querySelectorAll('a[href*="/product/"]')].map((a) => ({ label: text(a), url: a.href }))
