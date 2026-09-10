@@ -2,7 +2,11 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { functionalFamily, isSameFunctionalFamily } = require('../lib/alternative-functional-family');
+const {
+  functionalFamily,
+  isSameFunctionalFamily,
+  filterAlternativesByFunctionalFamily,
+} = require('../lib/alternative-functional-family');
 
 test('keeps separator alternatives inside the separator family', () => {
   const primary = { elimfilters_sku: 'ES91855', filter_type: 'fuel', technology: 'HYDROCORE' };
@@ -22,4 +26,11 @@ test('does not collapse unrelated functional families into a generic duty bucket
   const oil = { sku: 'EO10000', duty: 'HEAVY_DUTY', filter_type: 'oil' };
   const hydraulic = { sku: 'EH10000', duty: 'HEAVY_DUTY', filter_type: 'hydraulic' };
   assert.equal(isSameFunctionalFamily(oil, hydraulic), false);
+});
+
+
+test('returns an empty alternative list when every candidate is a different family', () => {
+  const primary = { elimfilters_sku: 'ES91855', filter_type: 'fuel', technology: 'HYDROCORE' };
+  const candidates = [{ sku: 'EF91075', filter_type: 'fuel', technology: 'SYNTAPORE' }];
+  assert.deepEqual(filterAlternativesByFunctionalFamily(primary, candidates), []);
 });
