@@ -6,6 +6,7 @@ import './industry-pathway-grid.css';
 import './faq-grid-fill.css';
 import './decision-flow.css';
 import './responsive-final.css';
+import './technology-tablet-hero-fix.css';
 import './mobile-critical-layout-fixes.css';
 import './mobile-critical-fix.css';
 import './mobile-sitewide-guard.css';
