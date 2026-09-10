@@ -26,6 +26,7 @@ const BASE = 'https://shop.donaldson.com/store/en-us';
 const CATEGORIES = {
   'air-dryer': `${BASE}/search?N=2748940002&Nr=product.language%3AEnglish&catNav=true&st=parts`,
 };
+const EXPECTED_CATEGORY_COUNTS = { 'air-dryer': 5 };
 
 const args = process.argv.slice(2);
 const value = (flag) => { const i = args.indexOf(flag); return i >= 0 ? args[i + 1] : null; };
@@ -208,15 +209,31 @@ async function resolveProductUrl(page, code) {
 
 async function categoryCodes(page, category) {
   await page.goto(CATEGORIES[category], { waitUntil: 'domcontentloaded', timeout: 90000 });
-  await sleep(2000);
+  await sleep(4000);
   const codes = new Set();
+  let pagesVisited = 0;
   for (let pass = 0; pass < 30; pass++) {
+    pagesVisited++;
     const found = await page.locator('a[href*="/product/"]').evaluateAll((links) => links.map((a) => a.href.match(/\/product\/([^/]+)/)?.[1]).filter(Boolean));
     found.forEach((x) => codes.add(normalize(x)));
-    const next = page.getByText('Next', { exact: true }).first();
-    if (!(await next.isVisible().catch(() => false))) break;
-    await next.click(); await sleep(1200);
+    console.log(`[catalog:${category}] page=${pagesVisited} links=${found.length} unique_codes=${codes.size}`);
+    const next = page.locator('a[aria-label="Next page"],button[aria-label="Next page"],li.next:not(.disabled) a,a:has-text("Next"),button:has-text("Next")').first();
+    const visible = await next.isVisible().catch(() => false);
+    const disabled = visible ? await next.evaluate((el) => el.matches(':disabled,[disabled],[aria-disabled="true"]') || el.closest('.disabled') !== null).catch(() => true) : true;
+    if (!visible || disabled) break;
+    const before = page.url();
+    await next.click();
+    await sleep(2200);
+    if (page.url() === before && pass > 0) break;
   }
+  const audit = {
+    category, catalog_pages_visited: pagesVisited, codes_discovered: codes.size,
+    expected_codes: EXPECTED_CATEGORY_COUNTS[category] || null,
+    catalog_complete: !EXPECTED_CATEGORY_COUNTS[category] || codes.size === EXPECTED_CATEGORY_COUNTS[category],
+  };
+  fs.writeFileSync(path.join(ROOT, `donaldson_${category}_catalog_audit.json`), JSON.stringify(audit, null, 2));
+  console.log(`[catalog:${category}] audit=${JSON.stringify(audit)}`);
+  if (!audit.catalog_complete) throw new Error(`INCOMPLETE_CATALOG: ${category} expected ${audit.expected_codes}, discovered ${audit.codes_discovered}`);
   return [...codes];
 }
 
@@ -234,13 +251,16 @@ async function main() {
   else throw new Error('Use --part, --input or a supported --category');
 
   const done = new Set(loadJson(PROGRESS, { done: [] }).done || []);
+  console.log(`[run] requested=${codes.length} already_done=${codes.filter((c) => done.has(c)).length}`);
   for (const code of codes) {
-    if (done.has(code)) continue;
+    if (done.has(code)) { console.log(`[skip] ${code} already complete in progress file`); continue; }
     const started = new Date().toISOString();
+    console.log(`[product] ${code} start`);
     try {
       const sourceUrl = await resolveProductUrl(page, code);
       if (!sourceUrl) {
         appendJsonl({ codigo_base: code, status: 'NOT_FOUND', scraped_at: started });
+        console.log(`[product] ${code} NOT_FOUND`);
         fs.appendFileSync(NOT_FOUND, `${code}\n`); done.add(code); saveProgress(done); continue;
       }
       await page.goto(sourceUrl, { waitUntil: 'networkidle', timeout: 90000 });
@@ -248,8 +268,10 @@ async function main() {
       const official = await extractPage(page, code);
       const metric = metricFromOfficial(official.attributes);
       appendJsonl({ codigo_base: code, status: audit.expansion_complete ? 'OK' : 'PARTIAL', source_url: page.url(), scraped_at: new Date().toISOString(), official, metric, audit });
+      console.log(`[product] ${code} status=${audit.expansion_complete ? 'OK' : 'PARTIAL'} remaining_show_more=${audit.remaining_show_more} remaining_plus=${audit.remaining_plus}`);
     } catch (error) {
       appendJsonl({ codigo_base: code, status: 'ERROR', error: error.message, scraped_at: new Date().toISOString() });
+      console.error(`[product] ${code} ERROR ${error.message}`);
     }
     done.add(code); saveProgress(done);
   }
