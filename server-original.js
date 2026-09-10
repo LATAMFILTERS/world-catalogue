@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 const OutlookMailService = require('./lib/outlook-mail');
 const { governanceForReferences } = require('./lib/part-search-reference-governance-patch');
+const { isSameFunctionalFamily } = require('./lib/alternative-functional-family');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
 const TranslationService = require('./lib/translation-service');
 
@@ -1204,7 +1205,8 @@ async function enrichAlternatives(products, client) {
   if (!altCodes.length) return;
 
   const { rows } = await client.query(
-    `SELECT sku, codigo_base, oem_codes, competitor_codes, equipment_applications
+    `SELECT sku, codigo_base, description, filter_type, sub_type, technology, duty,
+            oem_codes, competitor_codes, equipment_applications
      FROM elimfilters_catalog
      WHERE UPPER(codigo_base) = ANY($1)`,
     [altCodes]
@@ -1219,6 +1221,10 @@ async function enrichAlternatives(products, client) {
       const cb = (typeof a === 'object' ? (a.sku || a.code || '') : String(a)).toUpperCase();
       const src = altMap[cb];
       if (!src) continue;
+      // Shared secondary references may connect products that are not valid
+      // substitutes. Alternative eligibility requires the same functional
+      // family as the primary result before any SKU or inherited data is used.
+      if (!isSameFunctionalFamily(p, src)) continue;
       if (src.sku) resolvedSkus.push(src.sku);
       if (p.equipment_applications.length === 0 && Array.isArray(src.equipment_applications) && src.equipment_applications.length) {
         p.equipment_applications = src.equipment_applications;
@@ -1635,7 +1641,10 @@ app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
     );
 
     const lang = detectLang(req);
-    res.json({ success: true, alternatives: altRows.map(r => buildFilterData(r, lang)) });
+    const compatibleAlternatives = altRows
+      .filter(alt => isSameFunctionalFamily(row, alt))
+      .map(alt => buildFilterData(alt, lang));
+    res.json({ success: true, alternatives: compatibleAlternatives });
   } catch(e) {
     console.error('[filters/alternatives]', e.message);
     res.status(500).json({ success: false, error: 'Internal server error' });
