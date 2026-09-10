@@ -149,10 +149,14 @@ function getSslConfig(connectionString) {
   try {
     const url = new URL(connectionString);
     const host = url.hostname.toLowerCase();
+    const sslmode = String(url.searchParams.get('sslmode') || '').toLowerCase();
+    if (sslmode === 'disable') return false;
+    if (['require','prefer','verify-ca','verify-full'].includes(sslmode)) return { rejectUnauthorized: false };
     if (host === 'localhost' || host === '127.0.0.1' || host === '::1') return false;
-    if (url.searchParams.get('sslmode') === 'disable') return false;
-  } catch {}
-  return false;
+    return { rejectUnauthorized: false };
+  } catch {
+    return { rejectUnauthorized: false };
+  }
 }
 
 async function main() {
