@@ -21,3 +21,24 @@ services:
     volumes:
       - ../../hermes:/app/hermes
       - ../../logs:/app/logs
+
+  world-notifications:
+    build:
+      context: ../..
+      dockerfile: deploy/lenovo/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      WORLD_NOTIFICATION_HOST: 0.0.0.0
+      WORLD_NOTIFICATION_PORT: 8791
+      ELIM_RUNTIME_NODE: ${ELIM_RUNTIME_NODE:-LENOVO}
+      ELIM_RUNTIME_ROLE: ${ELIM_RUNTIME_ROLE:-PRIMARY}
+      ELIM_DOMAIN: WORLD_CATALOGUE
+      ELIM_SCHEDULER_ENABLED: "false"
+    command: ["sh", "-c", "node scripts/migrations/run_102_native_notifications.js && node scripts/native-notification-center.js"]
+    ports:
+      - "127.0.0.1:${WORLD_NOTIFICATION_HOST_PORT:-8791}:8791"
+    volumes:
+      - ../../logs:/app/logs
