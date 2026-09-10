@@ -4,6 +4,19 @@ import { normalizeManufacturer } from './catalogue-coverage-audit.mjs';
 
 const DEFAULT_ORGS = path.resolve('hermes/config/source-organizations.json');
 
+const SAFE_ALIAS_BY_ORG_ID = Object.freeze({
+  baldwin_filters: ['BALDWIN'],
+  cummins_filtration: ['FLEETGUARD'],
+  fram_group: ['FRAM'],
+  hengst: ['HENGST'],
+  luber_finer: ['LUBERFINER', 'LUBER FINER', 'CHAMP'],
+  sakura_filter: ['SAKURA', 'SAKURA FILTER'],
+  ufi_filters: ['UFI', 'UFI FILTERS'],
+  ford: ['FORD'],
+  gm: ['GENERAL MOTORS', 'GENERAL-MOTORS', 'GM'],
+  purolator: ['PUROLATOR'],
+});
+
 function rankOrg(org) {
   let score = 0;
   if (org.status === 'ACTIVE') score += 100;
@@ -20,9 +33,8 @@ function keysForOrg(org) {
     org.name,
     org.parent_company,
     ...(Array.isArray(org.aliases) ? org.aliases : []),
+    ...(SAFE_ALIAS_BY_ORG_ID[org.id] || []),
   ];
-  const note = String(org.notes || '');
-  for (const token of note.split(/[\/,;()|]+/)) values.push(token);
   return [...new Set(values.map(normalizeManufacturer).filter((v) => v && v.length >= 2))];
 }
 
@@ -32,6 +44,24 @@ function collapseEquivalent(matches) {
   const domains = new Set(matches.map((m) => String(m.official_domain || '').toLowerCase()).filter(Boolean));
   if (domains.size === 1) return [...matches].sort((a,b) => rankOrg(b) - rankOrg(a))[0];
   return null;
+}
+
+function conservativeFuzzyCandidates(normalized, organizations) {
+  const candidates = [];
+  for (const org of organizations || []) {
+    for (const key of keysForOrg(org)) {
+      // Only allow containment when the shorter side is still highly specific.
+      // This prevents generic tokens such as AMERICAN/PARTS/FILTER from mapping
+      // unrelated companies merely because a note or corporate name shares a word.
+      const shorter = normalized.length <= key.length ? normalized : key;
+      const longer = normalized.length <= key.length ? key : normalized;
+      if (shorter.length >= 6 && longer.includes(shorter)) {
+        candidates.push(org);
+        break;
+      }
+    }
+  }
+  return [...new Map(candidates.map((org) => [org.id, org])).values()];
 }
 
 export function buildManufacturerResolver(organizations) {
@@ -49,19 +79,29 @@ export function buildManufacturerResolver(organizations) {
 
     const direct = exact.get(normalized) || [];
     const equivalent = collapseEquivalent(direct);
-    if (equivalent) return { status: direct.length > 1 ? 'EXACT_EQUIVALENT' : 'EXACT', normalized, organization: equivalent, candidates: direct };
+    if (equivalent) {
+      const isAlias = (SAFE_ALIAS_BY_ORG_ID[equivalent.id] || []).map(normalizeManufacturer).includes(normalized);
+      return {
+        status: isAlias ? 'SAFE_ALIAS' : (direct.length > 1 ? 'EXACT_EQUIVALENT' : 'EXACT'),
+        normalized,
+        organization: equivalent,
+        candidates: direct,
+      };
+    }
     if (direct.length > 1) return { status: 'AMBIGUOUS_EXACT', normalized, organization: null, candidates: direct };
 
-    const tokens = normalized.split(' ').filter((t) => t.length >= 3);
-    const fuzzy = [];
-    for (const org of organizations || []) {
-      const orgKeys = keysForOrg(org);
-      if (orgKeys.some((key) => key === normalized || key.includes(normalized) || normalized.includes(key) || tokens.some((t) => key.split(' ').includes(t)))) fuzzy.push(org);
+    const fuzzy = conservativeFuzzyCandidates(normalized, organizations);
+    const fuzzyEquivalent = collapseEquivalent(fuzzy);
+    if (fuzzyEquivalent && fuzzy.length === 1) {
+      return { status: 'CONSERVATIVE_FUZZY', normalized, organization: fuzzyEquivalent, candidates: fuzzy };
     }
-    const unique = [...new Map(fuzzy.map((o) => [o.id, o])).values()];
-    const fuzzyEquivalent = collapseEquivalent(unique);
-    if (fuzzyEquivalent && unique.length <= 3) return { status: 'FUZZY_EQUIVALENT', normalized, organization: fuzzyEquivalent, candidates: unique };
-    return { status: unique.length ? 'AMBIGUOUS_FUZZY' : 'UNMAPPED', normalized, organization: null, candidates: unique };
+
+    return {
+      status: fuzzy.length ? 'AMBIGUOUS_FUZZY' : 'UNMAPPED',
+      normalized,
+      organization: null,
+      candidates: fuzzy,
+    };
   };
 }
 
