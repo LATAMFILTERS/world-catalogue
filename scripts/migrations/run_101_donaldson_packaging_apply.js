@@ -12,7 +12,7 @@ const fs = require('fs');
 const path = require('path');
 const { Pool } = require('pg');
 
-const MIGRATION = '101_DONALDSON_UNIT_PACKAGING_APPLY_V3';
+const MIGRATION = '101_DONALDSON_UNIT_PACKAGING_APPLY_V4';
 const RESULTS_FILE = process.env.DONALDSON_CRM_RESULTS || path.join(__dirname, '..', 'donaldson_crm_results.jsonl');
 
 const PACKAGED_FIELDS = [
@@ -84,13 +84,13 @@ async function apply() {
       else report.partial_packaged_dimensions++;
 
       const count = await client.query(
-        `SELECT count(*)::int n FROM elimfilters_catalog WHERE duty='HD' AND upper(trim(codigo_base))=$1`,
+        `SELECT count(*)::int n FROM elimfilters_catalog WHERE duty='HEAVY_DUTY' AND upper(trim(codigo_base))=$1`,
         [code]
       );
       const n = count.rows[0].n;
       report.matching_rows += n;
       if (!n) {
-        report.skipped.push({ codigo_base: code, reason: 'NO_HD_MATCH' });
+        report.skipped.push({ codigo_base: code, reason: 'NO_HEAVY_DUTY_MATCH' });
         continue;
       }
       if (dryRun) continue;
@@ -118,7 +118,7 @@ async function apply() {
             ELSE COALESCE(packaging_validation_status,$13)
           END,
           packaging_notes = COALESCE(packaging_notes,$14)
-        WHERE duty='HD' AND upper(trim(codigo_base))=$15
+        WHERE duty='HEAVY_DUTY' AND upper(trim(codigo_base))=$15
       `, [
         e.metric.unit_packaged_length_cm,
         e.metric.unit_packaged_width_cm,
