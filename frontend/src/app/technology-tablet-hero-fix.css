@@ -1,0 +1,106 @@
+/*
+ * Technology hero lockup — tablet Safari fallback
+ *
+ * The legacy *_final.avif lockups use a black canvas plus mix-blend-mode: screen.
+ * iPad/Safari can composite that canvas as an opaque black rectangle. On tablet
+ * widths we render the approved technology name/subtitle as live type instead,
+ * preserving the hero photography and avoiding blend-mode dependency.
+ */
+
+@media (min-width: 641px) and (max-width: 1180px) {
+  main#main-content > section[aria-labelledby$="-title"] > img[src^="/assets/"][src$="_final.avif"],
+  main#main-content > section[aria-labelledby="macrocore-title"] > .macrocoreHeroWordmark {
+    display: none !important;
+  }
+
+  main#main-content > section[aria-labelledby="macrocore-title"] > h1,
+  main#main-content > section[aria-labelledby="microkappa-title"] > h1,
+  main#main-content > section[aria-labelledby="drycore-title"] > h1,
+  main#main-content > section[aria-labelledby="intekcore-title"] > h1,
+  main#main-content > section[aria-labelledby="syntapore-title"] > h1,
+  main#main-content > section[aria-labelledby="hydrocore-title"] > h1,
+  main#main-content > section[aria-labelledby="syntrax-title"] > h1,
+  main#main-content > section[aria-labelledby="nanoforce-title"] > h1,
+  main#main-content > section[aria-labelledby="thermacore-title"] > h1,
+  main#main-content > section[aria-labelledby="turbocore-title"] > h1 {
+    position: relative !important;
+    z-index: 4 !important;
+    inset: auto !important;
+    display: flex !important;
+    width: min(900px, 88vw) !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    clip: auto !important;
+    clip-path: none !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(.35rem, 1vw, .7rem) !important;
+    color: transparent !important;
+    font-size: 0 !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    border: 0 !important;
+    pointer-events: none !important;
+  }
+
+  main#main-content > section[aria-labelledby$="-title"] > h1::before,
+  main#main-content > section[aria-labelledby$="-title"] > h1::after {
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-family: var(--font-display), "Titillium Web", Arial, sans-serif;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 0 3px 5px rgba(0,0,0,.9), 0 8px 24px rgba(0,0,0,.72);
+  }
+
+  main#main-content > section[aria-labelledby$="-title"] > h1::before {
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-style: italic;
+    font-weight: 800;
+    line-height: .94;
+    letter-spacing: -.04em;
+    white-space: nowrap;
+  }
+
+  main#main-content > section[aria-labelledby$="-title"] > h1::after {
+    font-size: clamp(1.2rem, 2.65vw, 1.8rem);
+    font-weight: 650;
+    line-height: 1.16;
+    letter-spacing: .005em;
+  }
+
+  main#main-content > section[aria-labelledby="macrocore-title"] > h1::before { content: "MACROCORE™"; }
+  main#main-content > section[aria-labelledby="macrocore-title"] > h1::after { content: "Engine Air System Protection"; }
+
+  main#main-content > section[aria-labelledby="microkappa-title"] > h1::before { content: "MICROKAPPA™"; }
+  main#main-content > section[aria-labelledby="microkappa-title"] > h1::after { content: "Cabin Air Protection"; }
+
+  main#main-content > section[aria-labelledby="drycore-title"] > h1::before { content: "DRYCORE™"; }
+  main#main-content > section[aria-labelledby="drycore-title"] > h1::after { content: "Compressed Air System Protection"; }
+
+  main#main-content > section[aria-labelledby="intekcore-title"] > h1::before { content: "INTEKCORE™"; }
+  main#main-content > section[aria-labelledby="intekcore-title"] > h1::after { content: "Air Intake System Protection"; }
+
+  main#main-content > section[aria-labelledby="syntapore-title"] > h1::before { content: "SYNTAPORE™"; }
+  main#main-content > section[aria-labelledby="syntapore-title"] > h1::after { content: "Fuel System Protection"; }
+
+  main#main-content > section[aria-labelledby="hydrocore-title"] > h1::before { content: "HYDROCORE™"; }
+  main#main-content > section[aria-labelledby="hydrocore-title"] > h1::after { content: "Fuel / Water Separation"; }
+
+  main#main-content > section[aria-labelledby="syntrax-title"] > h1::before { content: "SYNTRAX™"; }
+  main#main-content > section[aria-labelledby="syntrax-title"] > h1::after { content: "Lubrication System Protection"; }
+
+  main#main-content > section[aria-labelledby="nanoforce-title"] > h1::before { content: "NANOFORCE™"; }
+  main#main-content > section[aria-labelledby="nanoforce-title"] > h1::after { content: "Hydraulic System Protection"; }
+
+  main#main-content > section[aria-labelledby="thermacore-title"] > h1::before { content: "THERMACORE™"; }
+  main#main-content > section[aria-labelledby="thermacore-title"] > h1::after { content: "Thermal System Protection"; }
+
+  main#main-content > section[aria-labelledby="turbocore-title"] > h1::before { content: "TURBOCORE™"; }
+  main#main-content > section[aria-labelledby="turbocore-title"] > h1::after { content: "Turbine Fuel System Protection"; }
+}
