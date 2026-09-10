@@ -1,0 +1,94 @@
+{
+  "standardId": "ELIM-AIR-AXIAL-SEAL-PRINT-001",
+  "title": "ELIMFILTERS Axial Seal Air Filters — Product Identity & Printing Standard",
+  "status": "APPROVED",
+  "revision": "1.0",
+  "effectiveDate": "2026-09-10",
+  "scope": [
+    "axial_seal_air_filters",
+    "primary_air_filters",
+    "secondary_air_filters"
+  ],
+  "masterAssetRepository": "frontend/public/assets/",
+  "brandAsset": "frontend/public/assets/Logotipo Elimfilters® con eslogan corporativo.png",
+  "technology": {
+    "name": "MACROCORE",
+    "asset": "frontend/public/assets/MACROCORE_final.avif"
+  },
+  "construction": {
+    "geometry": "cylindrical_radial_air_filter_with_axial_seal",
+    "types": {
+      "primary": "outer_element",
+      "secondary": "inner_safety_element"
+    },
+    "mediaPrinting": false,
+    "labelOnMedia": false,
+    "printLocation": "end_cap_only",
+    "axialSealSurfacePrinting": false
+  },
+  "visualIdentity": {
+    "logoTreatment": "curved_half_moon_following_end_cap_arc",
+    "tagline": "TOTAL ASSETS PROTECTION",
+    "technologyMark": "MACROCORE",
+    "layout": "radial_circular",
+    "centerReference": "airflow_opening_axis",
+    "yellowOnProduct": "PROHIBITED",
+    "decorativeColorFill": "PROHIBITED"
+  },
+  "skuRules": {
+    "primary": {
+      "format": "EA + 5 digits",
+      "example": "EA32567",
+      "printedProductType": "PRIMARY AIR FILTER"
+    },
+    "secondary": {
+      "format": "EA + 5 digits + S",
+      "example": "EA32567S",
+      "printedProductType": "SECONDARY AIR FILTER"
+    }
+  },
+  "printSystem": {
+    "ink": {
+      "internalCode": "EF-INK-002",
+      "name": "ELIMFILTERS Neutral Grey",
+      "pantoneReference": "Pantone Cool Gray 11 C",
+      "note": "Pantone is a production communication reference; final acceptance is against the approved physical Golden Sample and released supplier ink specification."
+    },
+    "process": [
+      "pad_printing",
+      "silk_screen",
+      "other_factory_qualified_process"
+    ]
+  },
+  "requiredPrintedElements": [
+    "ELIMFILTERS master identity in curved half-moon orientation",
+    "TOTAL ASSETS PROTECTION",
+    "SKU",
+    "PRIMARY AIR FILTER or SECONDARY AIR FILTER",
+    "MACROCORE technology identity"
+  ],
+  "dimensionalReleaseFields": [
+    "overall_height_H",
+    "outside_diameter_OD",
+    "inside_diameter_ID",
+    "axial_seal_outer_diameter_AS_OD",
+    "axial_seal_inner_diameter_AS_ID",
+    "end_cap_diameter",
+    "usable_annular_print_area_outer_diameter",
+    "usable_annular_print_area_inner_diameter",
+    "end_cap_material",
+    "axial_seal_material",
+    "printed_art_orientation"
+  ],
+  "manufacturingControls": [
+    "Use only controlled ELIMFILTERS and MACROCORE assets from frontend/public/assets/.",
+    "Do not redraw, retype, stretch, approximate or substitute official logos.",
+    "Do not use yellow paint, yellow ink or yellow decorative graphics on the filter product.",
+    "The curved half-moon effect belongs to the ELIMFILTERS logo placement itself, not to a colored graphic behind or above the logo.",
+    "Keep all printing off the filter media.",
+    "Do not print on the axial sealing/gasket surface.",
+    "Keep artwork clear of the airflow opening and sealing geometry.",
+    "Primary and secondary filters must be explicitly identified in the printed Product Type.",
+    "Mass production requires approval of a physical Golden Sample."
+  ]
+}
