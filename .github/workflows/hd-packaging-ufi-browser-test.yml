@@ -1,0 +1,46 @@
+name: HD Packaging UFI Browser Test
+
+on:
+  push:
+    branches:
+      - hd-packaging-ufi-browser-test
+    paths:
+      - 'scripts/hermes/hd-packaging-ufi-github-test.mjs'
+      - '.github/workflows/hd-packaging-ufi-browser-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ufi-package-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      UFI_PART_NUMBER: '25.696.00'
+    steps:
+      - name: Checkout isolated HD test branch
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright only
+        run: npm install --no-save --ignore-scripts playwright
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run UFI official packaging probe
+        run: node scripts/hermes/hd-packaging-ufi-github-test.mjs
+
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hd-packaging-ufi-25-696-00
+          path: artifacts/hd-packaging-ufi-test/
+          if-no-files-found: warn
+          retention-days: 7
