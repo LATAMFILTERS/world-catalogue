@@ -7,7 +7,10 @@ const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 const OutlookMailService = require('./lib/outlook-mail');
 const { governanceForReferences } = require('./lib/part-search-reference-governance-patch');
-const { isSameFunctionalFamily } = require('./lib/alternative-functional-family');
+const {
+  isSameFunctionalFamily,
+  filterAlternativesByFunctionalFamily,
+} = require('./lib/alternative-functional-family');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
 const TranslationService = require('./lib/translation-service');
 
@@ -1235,7 +1238,9 @@ async function enrichAlternatives(products, client) {
         if (p.oem_codes.length === 0 && srcRefs.oem.length) p.oem_codes = srcRefs.oem;
       }
     }
-    if (resolvedSkus.length > 0) p.alternatives = resolvedSkus;
+    // Always replace the stored list, including with [], so an incompatible
+    // unresolved base code cannot leak through to the client unchanged.
+    p.alternatives = resolvedSkus;
   }
 }
 
@@ -1641,8 +1646,7 @@ app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
     );
 
     const lang = detectLang(req);
-    const compatibleAlternatives = altRows
-      .filter(alt => isSameFunctionalFamily(row, alt))
+    const compatibleAlternatives = filterAlternativesByFunctionalFamily(row, altRows)
       .map(alt => buildFilterData(alt, lang));
     res.json({ success: true, alternatives: compatibleAlternatives });
   } catch(e) {
