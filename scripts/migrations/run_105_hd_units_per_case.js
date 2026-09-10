@@ -302,7 +302,7 @@ function selectCase(row) {
             master_carton_net_weight_kg = $5,
             master_carton_volume_m3 = $6,
             packaging_type = 'HD_SHRINK_WRAPPED_MASTER_CARTON',
-            packaging_source = 'ELIMFILTERS_INTERNAL_CALCULATION',
+            packaging_source = 'DERIVED_CALCULATION',
             packaging_validation_status = 'CALCULATED_PENDING_FACTORY_CONFIRMATION',
             packaging_notes = CASE
               WHEN COALESCE(packaging_notes, '') = '' THEN $7
