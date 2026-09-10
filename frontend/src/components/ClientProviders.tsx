@@ -6,6 +6,7 @@ import i18n from '@/i18n';
 import { ScrollProgress } from './ScrollProgress';
 import { LanguageDetector } from './LanguageDetector';
 import { UniversalEndNavigation } from './UniversalEndNavigation';
+import { MeasurementProvider } from './MeasurementProvider';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -20,10 +21,12 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <LanguageDetector />
-      <ScrollProgress />
-      {children}
-      <UniversalEndNavigation />
+      <MeasurementProvider>
+        <LanguageDetector />
+        <ScrollProgress />
+        {children}
+        <UniversalEndNavigation />
+      </MeasurementProvider>
     </I18nextProvider>
   );
 }
