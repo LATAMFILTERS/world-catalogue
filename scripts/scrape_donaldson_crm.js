@@ -211,11 +211,17 @@ async function categoryCodes(page, category) {
   await page.goto(CATEGORIES[category], { waitUntil: 'domcontentloaded', timeout: 90000 });
   await sleep(4000);
   const codes = new Set();
+  const productUrls = new Set();
   let pagesVisited = 0;
   for (let pass = 0; pass < 30; pass++) {
     pagesVisited++;
-    const found = await page.locator('a[href*="/product/"]').evaluateAll((links) => links.map((a) => a.href.match(/\/product\/([^/]+)/)?.[1]).filter(Boolean));
-    found.forEach((x) => codes.add(normalize(x)));
+    const links = await page.locator('a[href*="/product/"]').evaluateAll((els) => els.map((a) => a.href));
+    links.forEach((href) => {
+      productUrls.add(href);
+      const code = href.match(/\/product\/([^/?#]+)/)?.[1];
+      if (code) codes.add(normalize(code));
+    });
+    const found = links.map((href) => href.match(/\/product\/([^/?#]+)/)?.[1]).filter(Boolean);
     console.log(`[catalog:${category}] page=${pagesVisited} links=${found.length} unique_codes=${codes.size}`);
     const next = page.locator('a[aria-label="Next page"],button[aria-label="Next page"],li.next:not(.disabled) a,a:has-text("Next"),button:has-text("Next")').first();
     const visible = await next.isVisible().catch(() => false);
@@ -228,10 +234,15 @@ async function categoryCodes(page, category) {
   }
   const audit = {
     category, catalog_pages_visited: pagesVisited, codes_discovered: codes.size,
+    discovered_codes: [...codes].sort(), product_urls: [...productUrls].sort(),
     expected_codes: EXPECTED_CATEGORY_COUNTS[category] || null,
     catalog_complete: !EXPECTED_CATEGORY_COUNTS[category] || codes.size === EXPECTED_CATEGORY_COUNTS[category],
   };
   fs.writeFileSync(path.join(ROOT, `donaldson_${category}_catalog_audit.json`), JSON.stringify(audit, null, 2));
+  if (!audit.catalog_complete) {
+    fs.writeFileSync(path.join(ROOT, `donaldson_${category}_incomplete_catalog.html`), await page.content(), 'utf8');
+    await page.screenshot({ path: path.join(ROOT, `donaldson_${category}_incomplete_catalog.png`), fullPage: true });
+  }
   console.log(`[catalog:${category}] audit=${JSON.stringify(audit)}`);
   if (!audit.catalog_complete) throw new Error(`INCOMPLETE_CATALOG: ${category} expected ${audit.expected_codes}, discovered ${audit.codes_discovered}`);
   return [...codes];
