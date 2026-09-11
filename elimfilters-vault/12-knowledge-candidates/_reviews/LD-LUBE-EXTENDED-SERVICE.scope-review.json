@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "knowledge_object_id": "LD-LUBE-EXTENDED-SERVICE",
+  "review_status": "pending",
+  "reviewer": null,
+  "reviewed_at": null,
+  "scope_review": {
+    "official_system_registry_verified": false,
+    "technical_scope_verified": false,
+    "source_neutrality_verified": false,
+    "no_proprietary_external_claims_verified": false,
+    "public_language_reviewed": false,
+    "technology_relation_resolution": "pending",
+    "application_relation_resolution": "pending"
+  },
+  "metric_item_ids": [
+    "METRIC-B8A737448CD34AB2",
+    "METRIC-A8CB818097EBBE6D",
+    "METRIC-22BD7BA8883C9AFD",
+    "METRIC-7C8AA52C6F1D4E5F",
+    "METRIC-60B85470CADFCACA",
+    "METRIC-CF826190EF8245ED",
+    "METRIC-70928020557B7AA2",
+    "METRIC-2702D52BA3C3F6A7"
+  ],
+  "relationship_item_ids": [
+    "REL-B5E977E1338ECC95",
+    "REL-4DBF312810894F2B"
+  ],
+  "procedure_item_ids": [],
+  "final_notes": null
+}

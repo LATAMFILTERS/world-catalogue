@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "knowledge_object_id": "LD-CABIN-AIRFLOW-DIRECTION",
+  "review_status": "pending",
+  "reviewer": null,
+  "reviewed_at": null,
+  "scope_review": {
+    "official_system_registry_verified": false,
+    "technical_scope_verified": false,
+    "source_neutrality_verified": false,
+    "no_proprietary_external_claims_verified": false,
+    "public_language_reviewed": false,
+    "technology_relation_resolution": "pending",
+    "application_relation_resolution": "pending"
+  },
+  "metric_item_ids": [],
+  "relationship_item_ids": [
+    "REL-D37C7B131601986B"
+  ],
+  "procedure_item_ids": [
+    "PROC-E1D1FE9F5CDA8C6D",
+    "PROC-22B7E2A1B2A1D4E2",
+    "PROC-78FA14F2D899E28E"
+  ],
+  "final_notes": null
+}

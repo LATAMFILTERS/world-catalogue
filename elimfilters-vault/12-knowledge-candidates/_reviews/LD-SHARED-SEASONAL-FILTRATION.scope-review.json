@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "knowledge_object_id": "LD-SHARED-SEASONAL-FILTRATION",
+  "review_status": "pending",
+  "reviewer": null,
+  "reviewed_at": null,
+  "scope_review": {
+    "official_system_registry_verified": false,
+    "technical_scope_verified": false,
+    "source_neutrality_verified": false,
+    "no_proprietary_external_claims_verified": false,
+    "public_language_reviewed": false,
+    "technology_relation_resolution": "pending",
+    "application_relation_resolution": "pending"
+  },
+  "metric_item_ids": [
+    "METRIC-15A02D79FF4AA10C",
+    "METRIC-16A3FDB2557D4945",
+    "METRIC-1E369089AA31D6B7",
+    "METRIC-B6862CA307FAF22D",
+    "METRIC-95BC5B20BB265D67"
+  ],
+  "relationship_item_ids": [
+    "REL-9DA75FD97C08DF06",
+    "REL-EA596FA33062FE6A"
+  ],
+  "procedure_item_ids": [],
+  "final_notes": null
+}

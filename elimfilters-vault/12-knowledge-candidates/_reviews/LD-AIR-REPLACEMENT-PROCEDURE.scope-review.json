@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "knowledge_object_id": "LD-AIR-REPLACEMENT-PROCEDURE",
+  "review_status": "pending",
+  "reviewer": null,
+  "reviewed_at": null,
+  "scope_review": {
+    "official_system_registry_verified": false,
+    "technical_scope_verified": false,
+    "source_neutrality_verified": false,
+    "no_proprietary_external_claims_verified": false,
+    "public_language_reviewed": false,
+    "technology_relation_resolution": "pending",
+    "application_relation_resolution": "pending"
+  },
+  "metric_item_ids": [
+    "METRIC-F6F0C8C611C5EEF3"
+  ],
+  "relationship_item_ids": [],
+  "procedure_item_ids": [
+    "PROC-3F893A3BF0AB3950",
+    "PROC-51FD83DC177CBF97",
+    "PROC-3FFA64BCF9069226",
+    "PROC-4858E0B1204F7449"
+  ],
+  "final_notes": null
+}

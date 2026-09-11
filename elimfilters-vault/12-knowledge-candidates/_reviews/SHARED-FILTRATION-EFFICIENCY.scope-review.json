@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "knowledge_object_id": "SHARED-FILTRATION-EFFICIENCY",
+  "review_status": "pending",
+  "reviewer": null,
+  "reviewed_at": null,
+  "scope_review": {
+    "official_system_registry_verified": false,
+    "technical_scope_verified": false,
+    "source_neutrality_verified": false,
+    "no_proprietary_external_claims_verified": false,
+    "public_language_reviewed": false,
+    "technology_relation_resolution": "not_applicable",
+    "application_relation_resolution": "pending"
+  },
+  "metric_item_ids": [
+    "METRIC-0A18F8FE15A61E2B",
+    "METRIC-8584CBCB2AFD5ADC",
+    "METRIC-CB5A33F0990359F4",
+    "METRIC-C7B08E3FAF5CC52B",
+    "METRIC-34FED305AAAA404E",
+    "METRIC-58F8F7AE47A665AE",
+    "METRIC-20E3FF4A68B34D4E",
+    "METRIC-71C50E0EC2A2996C",
+    "METRIC-C49215E6C85EE38D",
+    "METRIC-99FB58ACEC1F4AEF",
+    "METRIC-1FDFFA66B42F38BB",
+    "METRIC-3F304BEC234085EF",
+    "METRIC-747ED579D43D9117"
+  ],
+  "relationship_item_ids": [
+    "REL-8A58D800E5E62027",
+    "REL-78C975B7E2F35E0F",
+    "REL-EAC75BD327CF0F32",
+    "REL-7F943CADFBC30E8A",
+    "REL-E9086F68E62E35D7",
+    "REL-49550435E049A1D0",
+    "REL-83D52A08B514965E",
+    "REL-5B9AA1D2C2681613"
+  ],
+  "procedure_item_ids": [],
+  "final_notes": null
+}

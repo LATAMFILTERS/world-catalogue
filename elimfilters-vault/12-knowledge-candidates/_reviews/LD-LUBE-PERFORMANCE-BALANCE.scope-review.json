@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "knowledge_object_id": "LD-LUBE-PERFORMANCE-BALANCE",
+  "review_status": "pending",
+  "reviewer": null,
+  "reviewed_at": null,
+  "scope_review": {
+    "official_system_registry_verified": false,
+    "technical_scope_verified": false,
+    "source_neutrality_verified": false,
+    "no_proprietary_external_claims_verified": false,
+    "public_language_reviewed": false,
+    "technology_relation_resolution": "pending",
+    "application_relation_resolution": "pending"
+  },
+  "metric_item_ids": [
+    "METRIC-0A18F8FE15A61E2B",
+    "METRIC-8584CBCB2AFD5ADC",
+    "METRIC-CB5A33F0990359F4",
+    "METRIC-C7B08E3FAF5CC52B",
+    "METRIC-34FED305AAAA404E",
+    "METRIC-58F8F7AE47A665AE",
+    "METRIC-20E3FF4A68B34D4E",
+    "METRIC-71C50E0EC2A2996C"
+  ],
+  "relationship_item_ids": [
+    "REL-8A58D800E5E62027",
+    "REL-78C975B7E2F35E0F"
+  ],
+  "procedure_item_ids": [],
+  "final_notes": null
+}

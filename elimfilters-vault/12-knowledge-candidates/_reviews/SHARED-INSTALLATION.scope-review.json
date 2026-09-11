@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "knowledge_object_id": "SHARED-INSTALLATION",
+  "review_status": "pending",
+  "reviewer": null,
+  "reviewed_at": null,
+  "scope_review": {
+    "official_system_registry_verified": false,
+    "technical_scope_verified": false,
+    "source_neutrality_verified": false,
+    "no_proprietary_external_claims_verified": false,
+    "public_language_reviewed": false,
+    "technology_relation_resolution": "not_applicable",
+    "application_relation_resolution": "pending"
+  },
+  "metric_item_ids": [
+    "METRIC-DA49EB8D0CB093FC",
+    "METRIC-A1C34AEC14545C78",
+    "METRIC-F6F0C8C611C5EEF3",
+    "METRIC-C49215E6C85EE38D",
+    "METRIC-99FB58ACEC1F4AEF",
+    "METRIC-747ED579D43D9117"
+  ],
+  "relationship_item_ids": [
+    "REL-5A7B8F38A9A82B06",
+    "REL-D4D999DD2B8E68D3",
+    "REL-D37C7B131601986B",
+    "REL-83D52A08B514965E",
+    "REL-5B9AA1D2C2681613"
+  ],
+  "procedure_item_ids": [],
+  "final_notes": null
+}
