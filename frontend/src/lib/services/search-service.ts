@@ -3,15 +3,11 @@
  *
  * Deterministic semantic search over the Knowledge Graph.
  * No AI. No embeddings. Graph traversal + field matching only.
- *
- * Search is case-insensitive string matching against indexed fields.
- * Results are scored by match quality and ranked deterministically.
  */
 
 import { getGraph } from './knowledge-service';
+import { toPublicGraphNode } from './public-knowledge-gateway';
 import type { GraphNode, NodeEntityType } from '@/lib/graph/graph-types';
-
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 export type SearchEntityType = NodeEntityType | 'ALL';
 
@@ -20,37 +16,32 @@ export interface SearchResult {
   readonly entityId: string;
   readonly entityType: NodeEntityType;
   readonly label: string;
-  readonly score: number;           // 0–100; higher = stronger match
+  readonly score: number;
   readonly matchedFields: readonly string[];
-  readonly excerpt: string;         // first matched snippet
+  readonly excerpt: string;
 }
 
 export interface SearchOptions {
-  readonly entityTypes?: readonly SearchEntityType[];  // default: ['ALL']
-  readonly maxResults?: number;                        // default: 20
-  readonly includeDeprecated?: boolean;               // default: false
+  readonly entityTypes?: readonly SearchEntityType[];
+  readonly maxResults?: number;
+  readonly includeDeprecated?: boolean;
+  readonly includeNonPublic?: boolean;
 }
-
-// ─── Field extractors by entity type ─────────────────────────────────────────
 
 function extractSearchableText(node: GraphNode): Array<{ field: string; text: string; weight: number }> {
   const p = node.properties as Record<string, unknown>;
   const fields: Array<{ field: string; text: string; weight: number }> = [];
 
   function add(field: string, value: unknown, weight: number) {
-    if (typeof value === 'string' && value.length > 0) {
-      fields.push({ field, text: value.toLowerCase(), weight });
-    }
+    if (typeof value === 'string' && value.length > 0) fields.push({ field, text: value.toLowerCase(), weight });
   }
 
-  // Common high-weight fields
   add('id', p['id'], 100);
   add('code', p['code'], 90);
   add('name', p['name'], 85);
   add('technologyName', p['technologyName'], 85);
   add('commercialName', p['commercialName'], 80);
 
-  // Domain-specific
   switch (node.entityType) {
     case 'ENGINEERING_PRINCIPLE':
       add('definition', p['definition'], 60);
@@ -83,7 +74,7 @@ function extractSearchableText(node: GraphNode): Array<{ field: string; text: st
       add('phaseState', p['phaseState'], 55);
       break;
     case 'ENGINEERING_MEMORY':
-      add('entityId', p['entityId'], 30);   // Low weight: memory is secondary
+      add('entityId', p['entityId'], 30);
       add('archivedReason', p['archivedReason'], 15);
       break;
   }
@@ -91,13 +82,9 @@ function extractSearchableText(node: GraphNode): Array<{ field: string; text: st
   return fields;
 }
 
-function scoreMatch(query: string, fields: Array<{ field: string; text: string; weight: number }>): {
-  score: number;
-  matchedFields: string[];
-  excerpt: string;
-} {
+function scoreMatch(query: string, fields: Array<{ field: string; text: string; weight: number }>) {
   const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  if (terms.length === 0) return { score: 0, matchedFields: [], excerpt: '' };
+  if (terms.length === 0) return { score: 0, matchedFields: [] as string[], excerpt: '' };
 
   let totalScore = 0;
   let matchedWeight = 0;
@@ -107,76 +94,51 @@ function scoreMatch(query: string, fields: Array<{ field: string; text: string; 
   for (const { field, text, weight } of fields) {
     let fieldScore = 0;
     let fieldMatched = false;
-
     for (const term of terms) {
-      if (text === term) {
-        fieldScore += weight * 1.0;
-        fieldMatched = true;
-      } else if (text.startsWith(term)) {
-        fieldScore += weight * 0.8;
-        fieldMatched = true;
-      } else if (text.includes(term)) {
-        fieldScore += weight * 0.5;
-        fieldMatched = true;
-      }
+      if (text === term) { fieldScore += weight; fieldMatched = true; }
+      else if (text.startsWith(term)) { fieldScore += weight * 0.8; fieldMatched = true; }
+      else if (text.includes(term)) { fieldScore += weight * 0.5; fieldMatched = true; }
     }
-
     if (fieldMatched) {
       totalScore += fieldScore;
       matchedWeight += weight;
       matchedFields.push(field);
       if (!firstExcerpt) {
         const idx = text.indexOf(terms[0]);
-        const start = Math.max(0, idx - 20);
-        firstExcerpt = text.slice(start, start + 120);
+        firstExcerpt = text.slice(Math.max(0, idx - 20), Math.max(0, idx - 20) + 120);
       }
     }
   }
 
-  // Score formula:
-  //   raw = (totalScore / matchedWeight) * matchQuality        (0–100)
-  //   coverage = matchedWeight / totalFieldWeight               (penalizes sparse entities)
-  //   score = raw * coverage
-  // This ensures entities with many relevant fields outscore entities with few fields.
   const totalFieldWeight = fields.reduce((sum, f) => sum + f.weight, 0);
   const matchQuality = matchedWeight > 0 ? totalScore / matchedWeight : 0;
   const coverage = totalFieldWeight > 0 ? matchedWeight / totalFieldWeight : 0;
   let score = Math.min(100, Math.round(matchQuality * coverage * 100));
-
-  // Identity bonus: if the 'id' field is an exact match, guarantee top ranking
   const idField = fields.find((f) => f.field === 'id');
-  if (idField && terms.length === 1 && idField.text === terms[0]) {
-    score = Math.max(score, 95);
-  }
+  if (idField && terms.length === 1 && idField.text === terms[0]) score = Math.max(score, 95);
 
   return { score, matchedFields: matchedFields.filter((v, i, a) => a.indexOf(v) === i), excerpt: firstExcerpt };
 }
 
-// ─── Main Search Function ─────────────────────────────────────────────────────
-
-/**
- * Search the Knowledge Graph for entities matching the query string.
- *
- * Deterministic: same query always returns same results in same order.
- */
 export function search(query: string, options: SearchOptions = {}): SearchResult[] {
   if (!query || query.trim().length === 0) return [];
 
   const graph = getGraph();
   const maxResults = options.maxResults ?? 20;
   const includeDeprecated = options.includeDeprecated ?? false;
+  const includeNonPublic = options.includeNonPublic ?? false;
   const entityTypes = options.entityTypes ?? ['ALL'];
   const filterAll = entityTypes.includes('ALL');
-
   const results: SearchResult[] = [];
 
-  for (const node of Array.from(graph.nodes.values())) {
-    if (!filterAll && !entityTypes.includes(node.entityType as SearchEntityType)) continue;
-    if (!includeDeprecated && node.provenance.isDeprecated) continue;
+  for (const rawNode of Array.from(graph.nodes.values())) {
+    if (!filterAll && !entityTypes.includes(rawNode.entityType as SearchEntityType)) continue;
+    if (!includeNonPublic && rawNode.provenance.governanceStatus !== 'ACTIVE') continue;
+    if (!includeDeprecated && rawNode.provenance.isDeprecated) continue;
 
+    const node = includeNonPublic ? rawNode : toPublicGraphNode(rawNode);
     const fields = extractSearchableText(node);
     const { score, matchedFields, excerpt } = scoreMatch(query, fields);
-
     if (score > 0) {
       results.push({
         nodeId: node.nodeId,
@@ -190,32 +152,21 @@ export function search(query: string, options: SearchOptions = {}): SearchResult
     }
   }
 
-  // Deterministic sort: score DESC, then entityId ASC (stable tiebreak)
-  results.sort((a, b) => {
-    if (b.score !== a.score) return b.score - a.score;
-    return a.entityId.localeCompare(b.entityId);
-  });
-
+  results.sort((a, b) => b.score !== a.score ? b.score - a.score : a.entityId.localeCompare(b.entityId));
   return results.slice(0, maxResults);
 }
 
-/**
- * Search for entities of a specific type only.
- */
-export function searchByType(
-  query: string,
-  entityType: NodeEntityType,
-  maxResults = 20,
-): SearchResult[] {
+export function searchByType(query: string, entityType: NodeEntityType, maxResults = 20): SearchResult[] {
   return search(query, { entityTypes: [entityType], maxResults });
 }
 
-/**
- * Find entity by exact entity ID.
- */
-export function findById(entityId: string): GraphNode | null {
+export function findById(entityId: string, options: { includeNonPublic?: boolean } = {}): GraphNode | null {
   const graph = getGraph();
   const nid = graph.nodesByEntityId.get(entityId);
   if (!nid) return null;
-  return graph.nodes.get(nid) ?? null;
+  const node = graph.nodes.get(nid);
+  if (!node) return null;
+  if (options.includeNonPublic === true) return node;
+  if (node.provenance.governanceStatus !== 'ACTIVE') return null;
+  return toPublicGraphNode(node);
 }
