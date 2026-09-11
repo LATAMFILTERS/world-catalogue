@@ -20,6 +20,17 @@ const privateImports = [
   /hermes\/automotive-source-cache/i,
 ];
 
+// Competitor names may appear where their explicit purpose is part-number
+// identification/trademark disclosure. That is catalog navigation, not a
+// knowledge source. Private HERMES imports remain forbidden there as well.
+function isIdentificationOnlyPath(file) {
+  const rel = path.relative(frontendRoot, file).replaceAll('\\', '/').toLowerCase();
+  return rel.includes('src/app/legal/cross-reference/') ||
+    rel.includes('src/app/search/') ||
+    rel.includes('out/legal/cross-reference/') ||
+    rel.includes('out/search/');
+}
+
 function walk(dir, allowedExts, files = []) {
   if (!fs.existsSync(dir)) return files;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -46,7 +57,9 @@ if (!outputMode) {
   ];
   const files = publicSourceRoots.flatMap((dir) => walk(dir, sourceExts));
   for (const file of files) {
-    scan(file, sourceSignatures, 'external evidence signature in public frontend source');
+    if (!isIdentificationOnlyPath(file)) {
+      scan(file, sourceSignatures, 'external evidence signature in public knowledge/frontend source');
+    }
     scan(file, privateImports, 'direct import/reference to private HERMES evidence layer');
   }
   console.log(`[universal-knowledge-governance] source coverage=${files.length} public frontend files`);
@@ -58,7 +71,11 @@ if (!outputMode) {
   }
   const publicExts = new Set(['.html', '.json', '.xml', '.txt']);
   const files = walk(outDir, publicExts);
-  for (const file of files) scan(file, sourceSignatures, 'external evidence signature in built public output');
+  for (const file of files) {
+    if (!isIdentificationOnlyPath(file)) {
+      scan(file, sourceSignatures, 'external evidence signature in built public knowledge output');
+    }
+  }
   console.log(`[universal-knowledge-governance] output coverage=${files.length} public artifacts`);
 }
 
