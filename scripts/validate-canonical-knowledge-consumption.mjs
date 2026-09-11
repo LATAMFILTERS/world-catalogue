@@ -17,7 +17,12 @@ const required = [
 for (const rel of required) if (!fs.existsSync(path.join(repo, rel))) throw new Error(`Missing canonical consumer: ${rel}`);
 const data = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
 if (data.sourceAuthority !== '13-canonical-knowledge') throw new Error('Generated knowledge index authority mismatch');
-if (data.count !== 34 || data.records?.length !== 34) throw new Error(`Expected 34 canonical records, got ${data.records?.length ?? 0}`);
+const records = Array.isArray(data.records) ? data.records : [];
+if (data.count !== records.length) throw new Error(`Canonical index count mismatch: count=${data.count} records=${records.length}`);
+if (records.length < 40) throw new Error(`Canonical corpus regression: expected at least 40 approved records, got ${records.length}`);
+const ids = records.map((r) => r.id).filter(Boolean);
+if (ids.length !== records.length) throw new Error('Canonical record missing id');
+if (new Set(ids).size !== ids.length) throw new Error('Duplicate canonical record id detected');
 const serialized = JSON.stringify(data);
 if (/\bFRAM\b|fram\.com|https?:\/\/|EVID-|12-knowledge-candidates|validation-evidence|structured-knowledge/i.test(serialized)) throw new Error('Private/source signature leaked into canonical public index');
 const ai = fs.readFileSync(path.join(repo,'frontend/src/lib/services/ai-context-builder.ts'),'utf8');
@@ -28,4 +33,4 @@ const exportBlock = searchIndex.match(/export const KC_SEARCH_INDEX:[\s\S]*?\];/
 if (!/buildCanonicalKnowledgeDocs/.test(exportBlock) || /buildArticleDocs|buildStandardDocs|buildTechnologyDocs|buildProblemDocs/.test(exportBlock)) throw new Error('Knowledge Center search is not canonical-only');
 const backend = fs.readFileSync(path.join(repo,'lib/knowledge-governance/canonical-knowledge-repository.js'),'utf8');
 if (!/13-canonical-knowledge/.test(backend)) throw new Error('Backend canonical repository authority mismatch');
-console.log(`[canonical consumption] PASS records=${data.count} KnowledgeCenter=canonical Search=canonical AI=canonical backend=canonical`);
+console.log(`[canonical consumption] PASS records=${data.count} minimum=40 uniqueIds=${ids.length} KnowledgeCenter=canonical Search=canonical AI=canonical backend=canonical`);
