@@ -1,5 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
+import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
@@ -47,7 +49,11 @@ const privateSignatures = [
   /KCAND-FRAM-LD-/i,
   /source_identity_sha256/i,
   /source_content_sha256/i,
+  /raw_content_sha256/i,
+  /normalized_text_sha256/i,
   /forensic_backfill/i,
+  /FRAM_AUTOMOTIVE_CRYPTOGRAPHIC_SNAPSHOT_V1/i,
+  /91-private-evidence\/fram-automotive/i,
   /source_registration_commit/i,
   /hermes_classification_commit/i,
   /canonical_promotion_commit/i
@@ -79,6 +85,16 @@ for (const root of publicCandidates) {
   }
 }
 
+// If post-policy snapshots exist, cryptographically verify every stored byte
+// and re-run the public-isolation checks. If no post-policy snapshot exists
+// yet, historical records remain explicitly marked as unsnapshotted.
+const snapshotValidation = spawnSync(process.execPath, [path.join(repo, 'scripts', 'validate-fram-forensic-snapshots.mjs')], {
+  cwd: repo,
+  stdio: 'inherit',
+  env: process.env
+});
+if (snapshotValidation.status !== 0) fail(`snapshot integrity validator exited ${snapshotValidation.status ?? 'unknown'}`);
+
 const promoted = ledger.filter((r) => r.canonical_ids.length > 0).length;
 const supportOnly = ledger.length - promoted;
-console.log(`FRAM forensic lineage PASS: ${ledger.length}/${ledger.length} sources traced; ${promoted} promoted; ${supportOnly} support-only; public lineage leakage=0.`);
+console.log(`FRAM forensic lineage PASS: ${ledger.length}/${ledger.length} sources traced; ${promoted} promoted; ${supportOnly} support-only; public lineage leakage=0; snapshot integrity gate=active.`);
