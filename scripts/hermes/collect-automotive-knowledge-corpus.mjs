@@ -17,7 +17,7 @@ import {
   DEFAULT_TIMEOUT_MS
 } from './collect-real-sources-core.mjs';
 import { DEFAULT_MIN_CONTENT_LENGTH } from './source-baseline-core.mjs';
-import { isDryRunActive } from './hermes-core.mjs';
+import { isDryRunActive, validateCandidate } from './hermes-core.mjs';
 import { loadHarvestState } from './semantic-harvest-state-core.mjs';
 
 const require = createRequire(import.meta.url);
@@ -31,7 +31,7 @@ const dryRun = isDryRunActive();
 const timeoutMs = Number(process.env.HERMES_LD_COLLECTION_TIMEOUT_MS || DEFAULT_TIMEOUT_MS);
 const maxBytes = Number(process.env.HERMES_LD_COLLECTION_MAX_BYTES || DEFAULT_MAX_BYTES);
 const minContentLength = Number(process.env.HERMES_LD_COLLECTION_MIN_CONTENT_LENGTH || DEFAULT_MIN_CONTENT_LENGTH);
-const baselineMode = String(process.env.HERMES_LD_BASELINE_MODE || 'false').toLowerCase() === 'true';
+const baselineMode = process.argv.includes('--baseline') || String(process.env.HERMES_LD_BASELINE_MODE || 'false').toLowerCase() === 'true';
 
 const baselinePath = path.resolve('hermes/baselines/fram-automotive-source-baseline.json');
 const baselinePreviewPath = path.resolve('hermes/baselines/fram-automotive-source-baseline.preview.json');
@@ -47,7 +47,7 @@ if (sources.length !== getUniqueCorpusUrls().length) {
 console.log(`[HERMES LD corpus] domain=${SOURCE.knowledge_domain} industry=${SOURCE.industry} sources=${sources.length}`);
 console.log('[HERMES LD corpus] governance: internal evidence only; catalog_auto_update=false; public_brand_reference=false');
 if (baselineMode) {
-  console.log('[HERMES LD corpus] HERMES_LD_BASELINE_MODE=true — baseline refresh only, no candidates generated');
+  console.log('[HERMES LD corpus] baseline mode — baseline refresh only, no candidates generated');
 }
 
 const summary = await runCollection({
@@ -80,6 +80,7 @@ function enrichCandidateFile(result) {
     knowledge_domain: source.knowledge_domain,
     industries: [source.industry],
     knowledge_systems: source.knowledge_systems,
+    knowledge_content_type: source.knowledge_content_type,
     technology_candidates: source.technology_candidates,
     technology_relation: source.technology_relation,
     application_relation: source.application_relation,
@@ -91,6 +92,11 @@ function enrichCandidateFile(result) {
     }
   };
 
+  const validationErrors = validateCandidate(enriched);
+  if (validationErrors.length) {
+    throw new Error(`Enriched candidate ${enriched.entity_code} failed Hermes validation: ${validationErrors.join('; ')}`);
+  }
+
   fs.writeFileSync(candidatePath, JSON.stringify(enriched, null, 2) + '\n', 'utf8');
   return true;
 }
@@ -101,7 +107,7 @@ for (const result of summary.results) {
 }
 
 const domainManifest = {
-  schema_version: '1.0.0',
+  schema_version: '1.1.0',
   corpus: 'FRAM_AUTOMOTIVE_TECHNICAL_CORPUS',
   knowledge_domain: SOURCE.knowledge_domain,
   industry: SOURCE.industry,
@@ -117,6 +123,7 @@ const domainManifest = {
     id: source.id,
     url: source.url,
     knowledge_systems: source.knowledge_systems,
+    knowledge_content_type: source.knowledge_content_type,
     technology_candidates: source.technology_candidates,
     technology_relation: source.technology_relation,
     application_relation: source.application_relation,
