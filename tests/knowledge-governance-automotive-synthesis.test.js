@@ -7,13 +7,16 @@ const { AUTOMOTIVE_KNOWLEDGE_SEEDS, allCoveredSourceIds } = require('../lib/know
 const { synthesizeAutomotiveKnowledge, buildSharedEngineeringFromCanonical } = require('../lib/knowledge-governance/automotive-knowledge-synthesis');
 
 function fakeProfiles() {
-  return buildHermesCorpusSources().map((source) => ({
+  return buildHermesCorpusSources().map((source, index) => ({
     source_id: source.id,
     source_url: source.url,
     source_publisher: source.name,
-    source_hash: 'a'.repeat(64),
+    source_hash: String(index + 1).padStart(64, 'a').slice(-64),
     published_at: null,
-    metrics: []
+    metrics: [{
+      name: 'Example Metric', value: '95', unit: '%', source_id: source.id,
+      evidence_hash: String(index + 1).padStart(64, 'b').slice(-64), validation_status: 'awaiting_validation'
+    }]
   }));
 }
 
@@ -30,6 +33,25 @@ test('canonical automotive synthesis creates valid non-public review objects', (
   assert.equal(records.every((r) => r.object.public_use_allowed === false), true);
   assert.equal(records.every((r) => r.object.publication_status === 'awaiting_validation'), true);
   assert.equal(records.every((r) => r.object.source_evidence.length >= 1), true);
+});
+
+test('canonical and shared objects contain only neutral evidence identifiers', () => {
+  const canonical = synthesizeAutomotiveKnowledge(fakeProfiles());
+  const shared = buildSharedEngineeringFromCanonical(canonical);
+  for (const record of [...canonical, ...shared]) {
+    const text = JSON.stringify(record.object);
+    assert.doesNotMatch(text, /FRAM|fram\.com|https?:\/\//i);
+    for (const evidence of record.object.source_evidence || []) {
+      assert.match(evidence.evidence_id, /^EVID-[A-F0-9]{16}$/);
+      assert.equal(Object.prototype.hasOwnProperty.call(evidence, 'source_url'), false);
+      assert.equal(Object.prototype.hasOwnProperty.call(evidence, 'source_publisher'), false);
+      assert.equal(Object.prototype.hasOwnProperty.call(evidence, 'source_id'), false);
+    }
+    for (const metric of record.object.metrics || []) {
+      assert.equal(Object.prototype.hasOwnProperty.call(metric, 'source_id'), false);
+      assert.match(metric.evidence_id, /^EVID-[A-F0-9]{16}$/);
+    }
+  }
 });
 
 test('shared engineering aggregation produces valid source-backed concepts', () => {
