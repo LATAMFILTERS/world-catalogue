@@ -128,7 +128,7 @@ export function listEntitiesWithProvenance(
       const prov = node ? getNodeProvenance(graph, nid) : null;
       if (!node || !prov) return null;
       if (options.includeNonPublic === true) return { node, provenance: prov };
-      if (prov.governanceStatus !== 'ACTIVE') return null;
+      if (node.provenance.governanceStatus !== 'ACTIVE') return null;
       return { node: toPublicGraphNode(node), provenance: prov };
     })
     .filter((x): x is { node: GraphNode; provenance: EntityProvenance } => x !== null);
