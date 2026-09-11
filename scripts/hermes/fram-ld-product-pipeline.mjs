@@ -14,11 +14,13 @@ const extractArgs = [];
 if (reconcile) extractArgs.push('--reconcile');
 if (limitIndex >= 0 && process.argv[limitIndex+1]) extractArgs.push('--limit',process.argv[limitIndex+1]);
 
-run('discover official LD product pages','scripts/hermes/discover-fram-ld-product-pages.mjs');
+run('discover FRAM LD LUBE/AIR/CABIN/FUEL pages','scripts/hermes/discover-fram-ld-product-pages.mjs');
 run('extract private applications/cross evidence','scripts/hermes/extract-fram-ld-product-evidence.mjs',extractArgs);
-run('enrich private logistics evidence','scripts/hermes/enrich-fram-ld-logistics-evidence.mjs');
+run('enrich four-family, logistics and competitor-cross evidence','scripts/hermes/enrich-fram-ld-four-family-evidence.mjs');
 
 console.log('\n[HERMES FRAM LD] COMPLETE');
-console.log('[HERMES FRAM LD] source pages → private snapshots → candidate applications/crosses → logistics dimensions/weight/package evidence → optional read-only DB reconciliation');
-console.log('[HERMES FRAM LD] Europe promotion is excluded; MANN-FILTER nomenclature remains authoritative for European LD coverage');
-console.log('[HERMES FRAM LD] confirmed catalog and logistics writes remain blocked by governance');
+console.log('[HERMES FRAM LD] allowed families: LUBE, AIR, CABIN, FUEL only');
+console.log('[HERMES FRAM LD] source pages → private snapshots → applications/cross candidates → logistics evidence → optional read-only DB reconciliation');
+console.log('[HERMES FRAM LD] Europe promotion excluded; MANN-FILTER remains European LD nomenclature authority');
+console.log('[HERMES FRAM LD] MANN-FILTER references observed in non-European FRAM evidence are classified only as Cross Reference Competitor candidates');
+console.log('[HERMES FRAM LD] confirmed catalog/logistics writes remain blocked until validation');
