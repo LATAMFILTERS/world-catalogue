@@ -6,6 +6,7 @@
  */
 
 import { getGraph } from './knowledge-service';
+import { toPublicGraphNode } from './public-knowledge-gateway';
 import {
   getNodeProvenance,
   getRelationshipProvenance,
@@ -19,11 +20,10 @@ import type { EntityProvenance, RelationshipProvenance } from '@/lib/graph/prove
 
 export type { EntityProvenance, RelationshipProvenance };
 
-// ─── Entity Provenance ────────────────────────────────────────────────────────
+export interface EntityListingOptions {
+  readonly includeNonPublic?: boolean;
+}
 
-/**
- * Get provenance for an entity by its entity ID (e.g. 'TECH-MACROCORE').
- */
 export function getEntityProvenance(entityId: string): EntityProvenance | null {
   const graph = getGraph();
   const nid = graph.nodesByEntityId.get(entityId);
@@ -31,18 +31,10 @@ export function getEntityProvenance(entityId: string): EntityProvenance | null {
   return getNodeProvenance(graph, nid);
 }
 
-/**
- * Get provenance for a relationship by its relationship ID.
- */
 export function getRelProvenance(relationshipId: string): RelationshipProvenance | null {
   return getRelationshipProvenance(getGraph(), relationshipId);
 }
 
-// ─── Engineering Memory ───────────────────────────────────────────────────────
-
-/**
- * Get all Engineering Memory nodes for a given entity.
- */
 export function getMemoryFor(entityId: string): GraphNode[] {
   const graph = getGraph();
   const nid = graph.nodesByEntityId.get(entityId);
@@ -50,35 +42,17 @@ export function getMemoryFor(entityId: string): GraphNode[] {
   return getMemoryForNode(graph, nid);
 }
 
-// ─── Audit Trail ─────────────────────────────────────────────────────────────
-
-/**
- * Get the full governance audit trail for an entity:
- * provenance + memory chain + EDR references.
- */
 export function getFullAuditTrail(entityId: string): ReturnType<typeof getAuditTrail> {
   return getAuditTrail(getGraph(), entityId);
 }
 
-// ─── Deprecated Entities ─────────────────────────────────────────────────────
-
-/**
- * List all deprecated nodes in the Knowledge Graph.
- */
 export function listDeprecatedEntities(): GraphNode[] {
   return getDeprecatedNodes(getGraph());
 }
 
-// ─── Alias Entities ──────────────────────────────────────────────────────────
-
-/**
- * List all alias nodes (e.g. EP-SEP-005 → EP-TRB-002).
- */
 export function listAliasEntities(): GraphNode[] {
   return getAliasNodes(getGraph());
 }
-
-// ─── Version History ─────────────────────────────────────────────────────────
 
 export interface VersionHistoryEntry {
   readonly version: string;
@@ -88,9 +62,6 @@ export interface VersionHistoryEntry {
   readonly edrRef?: string;
 }
 
-/**
- * Get the version history for a governed entity.
- */
 export function getVersionHistory(entityId: string): VersionHistoryEntry[] {
   const graph = getGraph();
   const nid = graph.nodesByEntityId.get(entityId);
@@ -103,8 +74,6 @@ export function getVersionHistory(entityId: string): VersionHistoryEntry[] {
   return vh as VersionHistoryEntry[];
 }
 
-// ─── Governance Summary ───────────────────────────────────────────────────────
-
 export interface GovernanceSummary {
   readonly totalEntities: number;
   readonly activeEntities: number;
@@ -115,13 +84,9 @@ export interface GovernanceSummary {
   readonly entitiesWithEDRRefs: number;
 }
 
-/**
- * Produce a governance health summary for the entire Knowledge Graph.
- */
 export function getGovernanceSummary(): GovernanceSummary {
   const graph = getGraph();
   const nodes = Array.from(graph.nodes.values());
-
   let active = 0, deprecated = 0, alias = 0, superseded = 0, withMemory = 0, withEDR = 0;
 
   for (const node of nodes) {
@@ -147,10 +112,13 @@ export function getGovernanceSummary(): GovernanceSummary {
 }
 
 /**
- * Get all nodes of a specific entity type with their provenance.
+ * Public by default. Page mothers/children consuming this service only receive
+ * ACTIVE entities with private HERMES/source evidence removed. Internal review
+ * tools must explicitly opt in with includeNonPublic=true.
  */
 export function listEntitiesWithProvenance(
   entityType: NodeEntityType,
+  options: EntityListingOptions = {},
 ): Array<{ node: GraphNode; provenance: EntityProvenance }> {
   const graph = getGraph();
   const nodeIds = graph.nodesByEntityType.get(entityType) ?? [];
@@ -159,7 +127,9 @@ export function listEntitiesWithProvenance(
       const node = graph.nodes.get(nid);
       const prov = node ? getNodeProvenance(graph, nid) : null;
       if (!node || !prov) return null;
-      return { node, provenance: prov };
+      if (options.includeNonPublic === true) return { node, provenance: prov };
+      if (prov.governanceStatus !== 'ACTIVE') return null;
+      return { node: toPublicGraphNode(node), provenance: prov };
     })
     .filter((x): x is { node: GraphNode; provenance: EntityProvenance } => x !== null);
 }
