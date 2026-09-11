@@ -8,6 +8,7 @@ const {
   KNOWLEDGE_CONTENT_TYPES,
   canonicalizeSourceUrl,
   getUniqueCorpusUrls,
+  classifyAutomotiveSource,
   classifyKnowledgeContentType,
   buildHermesCorpusSources
 } = require('../lib/knowledge-governance/fram-automotive-source-corpus');
@@ -39,6 +40,10 @@ test('corpus maps LD knowledge to SYNTRAX, MACROCORE and MICROKAPPA topic famili
   assert.equal(TOPIC_MAP.lubrication.includes('SYNTRAX™'), true);
   assert.equal(TOPIC_MAP.engine_air_intake.includes('MACROCORE™'), true);
   assert.equal(TOPIC_MAP.cabin_air.includes('MICROKAPPA™'), true);
+
+  const carbonCabin = classifyAutomotiveSource('https://www.fram.com/vehicle-maintenance-center/post/how-carbon-air-filters-work');
+  assert.equal(carbonCabin.technology_candidates.includes('MICROKAPPA™'), true);
+  assert.equal(carbonCabin.knowledge_systems.includes('Cabin Air Protection'), true);
 });
 
 test('corpus assigns precise knowledge content types without changing legacy candidate_type', () => {
