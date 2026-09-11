@@ -16,7 +16,9 @@ if (limitIndex >= 0 && process.argv[limitIndex+1]) extractArgs.push('--limit',pr
 
 run('discover official LD product pages','scripts/hermes/discover-fram-ld-product-pages.mjs');
 run('extract private applications/cross evidence','scripts/hermes/extract-fram-ld-product-evidence.mjs',extractArgs);
+run('enrich private logistics evidence','scripts/hermes/enrich-fram-ld-logistics-evidence.mjs');
 
 console.log('\n[HERMES FRAM LD] COMPLETE');
-console.log('[HERMES FRAM LD] source pages → private snapshots → candidate applications/crosses → optional read-only DB reconciliation');
-console.log('[HERMES FRAM LD] confirmed catalog writes remain blocked by governance');
+console.log('[HERMES FRAM LD] source pages → private snapshots → candidate applications/crosses → logistics dimensions/weight/package evidence → optional read-only DB reconciliation');
+console.log('[HERMES FRAM LD] Europe promotion is excluded; MANN-FILTER nomenclature remains authoritative for European LD coverage');
+console.log('[HERMES FRAM LD] confirmed catalog and logistics writes remain blocked by governance');
