@@ -80,3 +80,5 @@ export {
   buildAIContextBatch,
   resetAIContextCounter,
 } from './ai-context-builder';
+
+export * from './canonical-knowledge-service';

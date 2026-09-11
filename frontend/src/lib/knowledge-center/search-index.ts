@@ -23,6 +23,7 @@ import { PROBLEM_STUBS, PROBLEM_CATEGORY_LABELS, termIdToSlug } from './article-
 import { getKCRecommendationGraph } from './recommendation-graph';
 import { isConsolidatedEngineeringTopic } from './canonical-article-ownership';
 import type { KCSearchDocument } from './search-types';
+import { listCanonicalKnowledge } from '@/lib/services/canonical-knowledge-service';
 
 function edgeCountFor(nodeKey: string): number {
   const graph = getKCRecommendationGraph();
@@ -57,6 +58,17 @@ function buildArticleDocs(): KCSearchDocument[] {
       href:      `/knowledge-center/engineering/${a.slug}/`,
       edgeCount: edgeCountFor(nk('article', a.slug)),
     }));
+}
+
+
+function buildCanonicalKnowledgeDocs(): KCSearchDocument[] {
+  return listCanonicalKnowledge().map(record => ({
+    id: nk('article', `canonical-${record.slug}`), type: 'article' as const,
+    slug: `canonical-${record.slug}`, label: record.title,
+    subtitle: `${record.contentType} — approved ELIMFILTERS canonical knowledge`,
+    domain: record.systems[0] ?? record.domain, keywords: record.keywords,
+    href: `/knowledge-center/canonical/${record.slug}/`, edgeCount: record.sharedEngineering.length,
+  }));
 }
 
 function buildStandardDocs(): KCSearchDocument[] {
@@ -248,16 +260,7 @@ function buildProblemDocs(): KCSearchDocument[] {
 }
 
 export const KC_SEARCH_INDEX: KCSearchDocument[] = [
-  ...buildArticleDocs(),
-  ...buildStandardDocs(),
-  ...buildTechnologyDocs(),
-  ...buildTermDocs(),
-  ...buildSystemDocs(),
-  ...buildDiagramDocs(),
-  ...buildCalculatorDocs(),
-  ...buildComparisonDocs(),
-  ...buildIndustryDocs(),
-  ...buildProblemDocs(),
+  ...buildCanonicalKnowledgeDocs(),
 ];
 
 export const KC_SEARCH_TYPE_COUNTS: Record<string, number> = KC_SEARCH_INDEX.reduce(

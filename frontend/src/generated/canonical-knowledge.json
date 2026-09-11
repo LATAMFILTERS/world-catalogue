@@ -1,0 +1,2125 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceAuthority": "13-canonical-knowledge",
+  "generatedAt": "2026-09-11T05:04:57.414Z",
+  "count": 34,
+  "records": [
+    {
+      "id": "LD-AIR-FILTER-ARCHITECTURE",
+      "slug": "ld-air-filter-architecture",
+      "title": "Engine Air Filter Types and Functional Architecture",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "MACROCORE™"
+      ],
+      "components": [
+        "Engine Air Filter",
+        "Filter Media",
+        "Air Filter Housing"
+      ],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
+        "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Filtration Efficiency",
+        "Flow Rate",
+        "Restriction",
+        "Sealing"
+      ],
+      "keywords": [
+        "Engine Air Filter Types and Functional Architecture",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Automotive",
+        "Air Intake & Airflow Protection Systems",
+        "MACROCORE™",
+        "Engine Air Filter",
+        "Filter Media",
+        "Air Filter Housing",
+        "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
+        "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment.",
+        "Filtration Efficiency",
+        "Flow Rate",
+        "Restriction",
+        "Sealing"
+      ]
+    },
+    {
+      "id": "LD-AIR-REPLACEMENT-PROCEDURE",
+      "slug": "ld-air-replacement-procedure",
+      "title": "Engine Air Filter Replacement Procedure",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Installation Procedure",
+      "confidence": "low",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "MACROCORE™"
+      ],
+      "components": [
+        "Engine Air Filter",
+        "Air Filter Housing"
+      ],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [
+        "Open the air-filter housing using the vehicle-specific service method.",
+        "Remove the used element without introducing loose debris into the clean side of the intake.",
+        "Inspect and clean the housing sealing area as appropriate.",
+        "Install the validated replacement in the correct orientation and ensure the housing is fully sealed before operation."
+      ],
+      "procedures": [
+        "Open the air-filter housing using the vehicle-specific service method.",
+        "Remove the used element without introducing loose debris into the clean side of the intake.",
+        "Inspect and clean the housing sealing area as appropriate.",
+        "Install the validated replacement in the correct orientation and ensure the housing is fully sealed before operation."
+      ],
+      "technicalRelationships": [],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Installation",
+        "Sealing"
+      ],
+      "keywords": [
+        "Engine Air Filter Replacement Procedure",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Installation Procedure",
+        "Automotive",
+        "Air Intake & Airflow Protection Systems",
+        "MACROCORE™",
+        "Engine Air Filter",
+        "Air Filter Housing",
+        "Installation",
+        "Sealing"
+      ]
+    },
+    {
+      "id": "LD-AIR-RESTRICTION-SYMPTOMS",
+      "slug": "ld-air-restriction-symptoms",
+      "title": "Engine Air Filter Loading and Intake Restriction Symptoms",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Failure Analysis Guide",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "MACROCORE™"
+      ],
+      "components": [
+        "Engine Air Filter",
+        "Filter Media"
+      ],
+      "problems": [
+        "Excessive intake restriction"
+      ],
+      "failureModes": [],
+      "symptoms": [
+        "Reduced airflow to the engine",
+        "Possible degradation of engine response or efficiency when restriction becomes excessive"
+      ],
+      "rootCauses": [
+        "Dust and particulate loading of the filter media"
+      ],
+      "diagnosticMethods": [
+        "Inspect the air filter and intake path and use the vehicle or equipment restriction criteria where available"
+      ],
+      "correctiveActions": [
+        "Replace a loaded or damaged air filter when service criteria require it"
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Restriction",
+        "Contaminant Loading",
+        "Failure Analysis"
+      ],
+      "keywords": [
+        "Engine Air Filter Loading and Intake Restriction Symptoms",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Failure Analysis Guide",
+        "Automotive",
+        "Air Intake & Airflow Protection Systems",
+        "MACROCORE™",
+        "Engine Air Filter",
+        "Filter Media",
+        "Excessive intake restriction",
+        "Reduced airflow to the engine",
+        "Possible degradation of engine response or efficiency when restriction becomes excessive",
+        "Dust and particulate loading of the filter media",
+        "Inspect the air filter and intake path and use the vehicle or equipment restriction criteria where available",
+        "Replace a loaded or damaged air filter when service criteria require it",
+        "Restriction",
+        "Contaminant Loading",
+        "Failure Analysis"
+      ]
+    },
+    {
+      "id": "LD-AIR-SERVICE-INTERVAL",
+      "slug": "ld-air-service-interval",
+      "title": "Engine Air Filter Service Interval by Operating Condition",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Service Reference",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "MACROCORE™"
+      ],
+      "components": [
+        "Engine Air Filter",
+        "Filter Media",
+        "Air Filter Housing"
+      ],
+      "problems": [
+        "Air-filter loading and increasing intake restriction"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Evaluate service interval against vehicle requirements, operating environment and observed filter condition"
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Engine-air-filter service life varies with dust exposure, operating environment and vehicle usage rather than mileage alone.",
+        "Higher airborne contaminant loading can accelerate media loading and increase intake restriction."
+      ],
+      "operatingConditions": [
+        "Dusty Environment"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Restriction",
+        "Contaminant Loading",
+        "Service Life"
+      ],
+      "keywords": [
+        "Engine Air Filter Service Interval by Operating Condition",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Service Reference",
+        "Automotive",
+        "Air Intake & Airflow Protection Systems",
+        "MACROCORE™",
+        "Engine Air Filter",
+        "Filter Media",
+        "Air Filter Housing",
+        "Air-filter loading and increasing intake restriction",
+        "Evaluate service interval against vehicle requirements, operating environment and observed filter condition",
+        "Engine-air-filter service life varies with dust exposure, operating environment and vehicle usage rather than mileage alone.",
+        "Higher airborne contaminant loading can accelerate media loading and increase intake restriction.",
+        "Dusty Environment",
+        "Restriction",
+        "Contaminant Loading",
+        "Service Life"
+      ]
+    },
+    {
+      "id": "LD-CABIN-AIRFLOW-DIRECTION",
+      "slug": "ld-cabin-airflow-direction",
+      "title": "Cabin Filter Airflow Direction and Layer Orientation",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Installation Procedure",
+      "confidence": "low",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "MICROKAPPA™"
+      ],
+      "components": [
+        "Cabin Air Filter",
+        "Activated Carbon Media",
+        "HVAC System"
+      ],
+      "problems": [
+        "Incorrect cabin-filter orientation"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Identify the HVAC airflow direction and the orientation marking on the replacement element before installation"
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [
+        "Determine airflow direction through the cabin-filter housing.",
+        "Orient the filter according to the airflow indicator or vehicle-specific installation requirement.",
+        "Verify the element is seated correctly and does not distort the housing seal."
+      ],
+      "procedures": [
+        "Determine airflow direction through the cabin-filter housing.",
+        "Orient the filter according to the airflow indicator or vehicle-specific installation requirement.",
+        "Verify the element is seated correctly and does not distort the housing seal."
+      ],
+      "technicalRelationships": [
+        "Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Installation",
+        "Flow Rate"
+      ],
+      "keywords": [
+        "Cabin Filter Airflow Direction and Layer Orientation",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Installation Procedure",
+        "Automotive",
+        "Air Intake & Airflow Protection Systems",
+        "MICROKAPPA™",
+        "Cabin Air Filter",
+        "Activated Carbon Media",
+        "HVAC System",
+        "Incorrect cabin-filter orientation",
+        "Identify the HVAC airflow direction and the orientation marking on the replacement element before installation",
+        "Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice.",
+        "Installation",
+        "Flow Rate"
+      ]
+    },
+    {
+      "id": "LD-CABIN-CARBON-MEDIA",
+      "slug": "ld-cabin-carbon-media",
+      "title": "Activated Carbon in Cabin Air Filtration",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "low",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "MICROKAPPA™"
+      ],
+      "components": [
+        "Cabin Air Filter",
+        "Activated Carbon Media",
+        "HVAC System"
+      ],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination.",
+        "Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Service Life"
+      ],
+      "keywords": [
+        "Activated Carbon in Cabin Air Filtration",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Automotive",
+        "Air Intake & Airflow Protection Systems",
+        "MICROKAPPA™",
+        "Cabin Air Filter",
+        "Activated Carbon Media",
+        "HVAC System",
+        "Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination.",
+        "Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function.",
+        "Flow Rate",
+        "Service Life"
+      ]
+    },
+    {
+      "id": "LD-CABIN-FUNDAMENTALS",
+      "slug": "ld-cabin-fundamentals",
+      "title": "Cabin Air Filtration Fundamentals",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "low",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "MICROKAPPA™"
+      ],
+      "components": [
+        "Cabin Air Filter",
+        "HVAC System"
+      ],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path.",
+        "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Filtration Efficiency",
+        "Flow Rate",
+        "Contaminant Loading",
+        "Service Life"
+      ],
+      "keywords": [
+        "Cabin Air Filtration Fundamentals",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Automotive",
+        "Air Intake & Airflow Protection Systems",
+        "MICROKAPPA™",
+        "Cabin Air Filter",
+        "HVAC System",
+        "The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path.",
+        "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
+        "Filtration Efficiency",
+        "Flow Rate",
+        "Contaminant Loading",
+        "Service Life"
+      ]
+    },
+    {
+      "id": "LD-CABIN-LOADING-SYMPTOMS",
+      "slug": "ld-cabin-loading-symptoms",
+      "title": "Cabin Filter Loading and HVAC Symptoms",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Failure Analysis Guide",
+      "confidence": "low",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "MICROKAPPA™"
+      ],
+      "components": [
+        "Cabin Air Filter",
+        "HVAC System"
+      ],
+      "problems": [
+        "Cabin-filter loading",
+        "Reduced HVAC airflow"
+      ],
+      "failureModes": [],
+      "symptoms": [
+        "Reduced vent airflow",
+        "Persistent odor or degraded cabin-air quality when the filter is loaded or exhausted"
+      ],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Inspect cabin-filter condition and compare airflow and service history with vehicle requirements"
+      ],
+      "correctiveActions": [
+        "Replace a loaded or exhausted cabin filter when service criteria require it"
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Restriction",
+        "Contaminant Loading",
+        "Failure Analysis"
+      ],
+      "keywords": [
+        "Cabin Filter Loading and HVAC Symptoms",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Failure Analysis Guide",
+        "Automotive",
+        "Air Intake & Airflow Protection Systems",
+        "MICROKAPPA™",
+        "Cabin Air Filter",
+        "HVAC System",
+        "Cabin-filter loading",
+        "Reduced HVAC airflow",
+        "Reduced vent airflow",
+        "Persistent odor or degraded cabin-air quality when the filter is loaded or exhausted",
+        "Inspect cabin-filter condition and compare airflow and service history with vehicle requirements",
+        "Replace a loaded or exhausted cabin filter when service criteria require it",
+        "Restriction",
+        "Contaminant Loading",
+        "Failure Analysis"
+      ]
+    },
+    {
+      "id": "LD-CABIN-SERVICE-INTERVAL",
+      "slug": "ld-cabin-service-interval",
+      "title": "Cabin Filter Service Interval and Environmental Load",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Service Reference",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "MICROKAPPA™"
+      ],
+      "components": [
+        "Cabin Air Filter",
+        "Activated Carbon Media",
+        "HVAC System"
+      ],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Cabin-filter service interval is affected by environmental particulate loading, seasonal conditions and vehicle usage.",
+        "High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions."
+      ],
+      "operatingConditions": [
+        "Dusty Environment",
+        "High Temperature / Summer Heat"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Contaminant Loading",
+        "Service Life",
+        "Restriction"
+      ],
+      "keywords": [
+        "Cabin Filter Service Interval and Environmental Load",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Service Reference",
+        "Automotive",
+        "Air Intake & Airflow Protection Systems",
+        "MICROKAPPA™",
+        "Cabin Air Filter",
+        "Activated Carbon Media",
+        "HVAC System",
+        "Cabin-filter service interval is affected by environmental particulate loading, seasonal conditions and vehicle usage.",
+        "High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions.",
+        "Dusty Environment",
+        "High Temperature / Summer Heat",
+        "Contaminant Loading",
+        "Service Life",
+        "Restriction"
+      ]
+    },
+    {
+      "id": "LD-LUBE-BYPASS-OPERATION",
+      "slug": "ld-lube-bypass-operation",
+      "title": "Oil Filter Bypass Operation and Lubrication Continuity",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Engine Oil Filter",
+        "Bypass Valve",
+        "Filter Media"
+      ],
+      "problems": [],
+      "failureModes": [
+        "Bypass activation under excessive restriction",
+        "Bypass valve stuck open",
+        "Bypass valve stuck closed"
+      ],
+      "symptoms": [
+        "Loss of normal filtration while bypass remains open",
+        "Lubrication restriction risk if required bypass flow is unavailable"
+      ],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Evaluate restriction, service condition and application-specific bypass behavior"
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media.",
+        "During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent.",
+        "A bypass setting must be treated as application-specific rather than as a universal filter value."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Differential Pressure",
+        "Restriction",
+        "Bypass",
+        "Flow Rate"
+      ],
+      "keywords": [
+        "Oil Filter Bypass Operation and Lubrication Continuity",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Engine Oil Filter",
+        "Bypass Valve",
+        "Filter Media",
+        "Bypass activation under excessive restriction",
+        "Bypass valve stuck open",
+        "Bypass valve stuck closed",
+        "Loss of normal filtration while bypass remains open",
+        "Lubrication restriction risk if required bypass flow is unavailable",
+        "Evaluate restriction, service condition and application-specific bypass behavior",
+        "Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media.",
+        "During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent.",
+        "A bypass setting must be treated as application-specific rather than as a universal filter value.",
+        "Differential Pressure",
+        "Restriction",
+        "Bypass",
+        "Flow Rate"
+      ]
+    },
+    {
+      "id": "LD-LUBE-COLD-START",
+      "slug": "ld-lube-cold-start",
+      "title": "Cold Temperature, Oil Viscosity and Filter Restriction",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Engine Oil Filter",
+        "Filter Media",
+        "Bypass Valve"
+      ],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
+        "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important."
+      ],
+      "operatingConditions": [
+        "Cold Weather / Low Temperature"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Differential Pressure",
+        "Restriction",
+        "Bypass"
+      ],
+      "keywords": [
+        "Cold Temperature, Oil Viscosity and Filter Restriction",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Engine Oil Filter",
+        "Filter Media",
+        "Bypass Valve",
+        "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
+        "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important.",
+        "Cold Weather / Low Temperature",
+        "Flow Rate",
+        "Differential Pressure",
+        "Restriction",
+        "Bypass"
+      ]
+    },
+    {
+      "id": "LD-LUBE-COMPONENT-ARCHITECTURE",
+      "slug": "ld-lube-component-architecture",
+      "title": "Engine Oil Filter Components and Architecture",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Engine Oil Filter",
+        "Filter Media",
+        "Bypass Valve",
+        "Anti-Drainback Valve",
+        "Center Tube",
+        "Gasket / Seal",
+        "Filter Housing / Can",
+        "Base Plate"
+      ],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application.",
+        "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Bypass",
+        "Sealing",
+        "Installation"
+      ],
+      "keywords": [
+        "Engine Oil Filter Components and Architecture",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Engine Oil Filter",
+        "Filter Media",
+        "Bypass Valve",
+        "Anti-Drainback Valve",
+        "Center Tube",
+        "Gasket / Seal",
+        "Filter Housing / Can",
+        "Base Plate",
+        "Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application.",
+        "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
+        "Flow Rate",
+        "Bypass",
+        "Sealing",
+        "Installation"
+      ]
+    },
+    {
+      "id": "LD-LUBE-CONTAMINANT-LOADING",
+      "slug": "ld-lube-contaminant-loading",
+      "title": "Contaminant Loading, Media Saturation and Oil Filter Life",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Failure Analysis Guide",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Engine Oil Filter",
+        "Filter Media"
+      ],
+      "problems": [
+        "Progressive contaminant accumulation",
+        "Increasing filter restriction",
+        "Premature loss of effective filter service life"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [
+        "Soot and combustion byproducts",
+        "Metallic wear debris",
+        "Sludge formation",
+        "Moisture or fuel dilution",
+        "Extended operation under severe conditions"
+      ],
+      "diagnosticMethods": [
+        "Review lubricant condition, operating severity and filter service history",
+        "Inspect for evidence of abnormal contamination or premature loading"
+      ],
+      "correctiveActions": [
+        "Correct the contamination source where identified",
+        "Replace the filter when service limits or contamination conditions require it"
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
+        "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Contaminant Loading",
+        "Media Saturation",
+        "Restriction",
+        "Service Life"
+      ],
+      "keywords": [
+        "Contaminant Loading, Media Saturation and Oil Filter Life",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Failure Analysis Guide",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Engine Oil Filter",
+        "Filter Media",
+        "Progressive contaminant accumulation",
+        "Increasing filter restriction",
+        "Premature loss of effective filter service life",
+        "Soot and combustion byproducts",
+        "Metallic wear debris",
+        "Sludge formation",
+        "Moisture or fuel dilution",
+        "Extended operation under severe conditions",
+        "Review lubricant condition, operating severity and filter service history",
+        "Inspect for evidence of abnormal contamination or premature loading",
+        "Correct the contamination source where identified",
+        "Replace the filter when service limits or contamination conditions require it",
+        "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
+        "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function.",
+        "Contaminant Loading",
+        "Media Saturation",
+        "Restriction",
+        "Service Life"
+      ]
+    },
+    {
+      "id": "LD-LUBE-EXTENDED-SERVICE",
+      "slug": "ld-lube-extended-service",
+      "title": "Lubricant Type and Extended Filter Service",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Application Note",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Engine Oil Filter",
+        "Filter Media"
+      ],
+      "problems": [
+        "Filter service capacity may be exceeded before the lubricant service interval is complete"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [
+        "Extended drain interval without matching filter capacity",
+        "Thermal and chemical exposure over a longer service period"
+      ],
+      "diagnosticMethods": [
+        "Compare filter service capability with the vehicle and lubricant service strategy"
+      ],
+      "correctiveActions": [
+        "Use a filter whose validated service capability matches the intended maintenance interval"
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress.",
+        "Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered."
+      ],
+      "operatingConditions": [
+        "Extended Service Interval",
+        "High Temperature / Summer Heat"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Service Life",
+        "Dirt Holding Capacity",
+        "Flow Rate"
+      ],
+      "keywords": [
+        "Lubricant Type and Extended Filter Service",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Application Note",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Engine Oil Filter",
+        "Filter Media",
+        "Filter service capacity may be exceeded before the lubricant service interval is complete",
+        "Extended drain interval without matching filter capacity",
+        "Thermal and chemical exposure over a longer service period",
+        "Compare filter service capability with the vehicle and lubricant service strategy",
+        "Use a filter whose validated service capability matches the intended maintenance interval",
+        "Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress.",
+        "Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered.",
+        "Extended Service Interval",
+        "High Temperature / Summer Heat",
+        "Service Life",
+        "Dirt Holding Capacity",
+        "Flow Rate"
+      ]
+    },
+    {
+      "id": "LD-LUBE-FITMENT-COMPATIBILITY",
+      "slug": "ld-lube-fitment-compatibility",
+      "title": "Oil Filter Functional Compatibility and Correct Selection",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Application Note",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Engine Oil Filter",
+        "Gasket / Seal",
+        "Bypass Valve"
+      ],
+      "problems": [
+        "Incorrect filter selection",
+        "Sealing incompatibility",
+        "Flow or bypass incompatibility"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [
+        "Selection based only on physical resemblance or partial dimensions"
+      ],
+      "diagnosticMethods": [
+        "Verify application, thread or cartridge interface, sealing geometry and required functional specifications"
+      ],
+      "correctiveActions": [
+        "Use a validated application match rather than a visually similar filter"
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Physical similarity does not establish functional interchangeability between oil filters.",
+        "Correct fitment requires compatible sealing, attachment geometry and application-specific flow and pressure-control requirements."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Sealing",
+        "Flow Rate",
+        "Bypass"
+      ],
+      "keywords": [
+        "Oil Filter Functional Compatibility and Correct Selection",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Application Note",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Engine Oil Filter",
+        "Gasket / Seal",
+        "Bypass Valve",
+        "Incorrect filter selection",
+        "Sealing incompatibility",
+        "Flow or bypass incompatibility",
+        "Selection based only on physical resemblance or partial dimensions",
+        "Verify application, thread or cartridge interface, sealing geometry and required functional specifications",
+        "Use a validated application match rather than a visually similar filter",
+        "Physical similarity does not establish functional interchangeability between oil filters.",
+        "Correct fitment requires compatible sealing, attachment geometry and application-specific flow and pressure-control requirements.",
+        "Sealing",
+        "Flow Rate",
+        "Bypass"
+      ]
+    },
+    {
+      "id": "LD-LUBE-LOW-PRESSURE-DIAGNOSIS",
+      "slug": "ld-lube-low-pressure-diagnosis",
+      "title": "Low Oil Pressure and Filtration-Related Diagnostic Context",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Failure Analysis Guide",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Engine Oil Filter",
+        "Bypass Valve",
+        "Filter Media"
+      ],
+      "problems": [
+        "Low oil pressure"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Treat low oil pressure as a system-level symptom and verify lubricant level and condition, filter condition, restriction and other lubrication-system causes before attributing it to a single component"
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis.",
+        "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Differential Pressure",
+        "Restriction",
+        "Failure Analysis"
+      ],
+      "keywords": [
+        "Low Oil Pressure and Filtration-Related Diagnostic Context",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Failure Analysis Guide",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Engine Oil Filter",
+        "Bypass Valve",
+        "Filter Media",
+        "Low oil pressure",
+        "Treat low oil pressure as a system-level symptom and verify lubricant level and condition, filter condition, restriction and other lubrication-system causes before attributing it to a single component",
+        "A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis.",
+        "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes.",
+        "Differential Pressure",
+        "Restriction",
+        "Failure Analysis"
+      ]
+    },
+    {
+      "id": "LD-LUBE-PERFORMANCE-BALANCE",
+      "slug": "ld-lube-performance-balance",
+      "title": "Oil Filter Performance Balance",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "low",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Engine Oil Filter",
+        "Filter Media"
+      ],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Filtration Efficiency",
+        "Micron Rating",
+        "Dirt Holding Capacity",
+        "Flow Rate",
+        "Restriction"
+      ],
+      "keywords": [
+        "Oil Filter Performance Balance",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Engine Oil Filter",
+        "Filter Media",
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
+        "Filtration Efficiency",
+        "Micron Rating",
+        "Dirt Holding Capacity",
+        "Flow Rate",
+        "Restriction"
+      ]
+    },
+    {
+      "id": "LD-LUBE-SEAL-LEAKAGE",
+      "slug": "ld-lube-seal-leakage",
+      "title": "Oil Filter Sealing and Leakage",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Failure Analysis Guide",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Engine Oil Filter",
+        "Gasket / Seal",
+        "Filter Housing / Can"
+      ],
+      "problems": [
+        "Oil leakage at or near the filter interface"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [
+        "Damaged or incorrectly seated seal",
+        "Incorrect filter fitment",
+        "Installation error",
+        "Housing or sealing-surface damage"
+      ],
+      "diagnosticMethods": [
+        "Inspect filter fitment, gasket position, sealing surface and housing condition"
+      ],
+      "correctiveActions": [
+        "Correct the sealing or fitment condition and verify the system is leak-free after service"
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Sealing",
+        "Installation",
+        "Failure Analysis"
+      ],
+      "keywords": [
+        "Oil Filter Sealing and Leakage",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Failure Analysis Guide",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Engine Oil Filter",
+        "Gasket / Seal",
+        "Filter Housing / Can",
+        "Oil leakage at or near the filter interface",
+        "Damaged or incorrectly seated seal",
+        "Incorrect filter fitment",
+        "Installation error",
+        "Housing or sealing-surface damage",
+        "Inspect filter fitment, gasket position, sealing surface and housing condition",
+        "Correct the sealing or fitment condition and verify the system is leak-free after service",
+        "Sealing",
+        "Installation",
+        "Failure Analysis"
+      ]
+    },
+    {
+      "id": "LD-LUBE-SERVICE-ACCESS",
+      "slug": "ld-lube-service-access",
+      "title": "Oil Filter Service Access and Removal",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Installation Procedure",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Engine Oil Filter",
+        "Filter Housing / Can",
+        "Gasket / Seal"
+      ],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [
+        "Identify the correct filter location and service configuration before removal.",
+        "Use a removal method appropriate to the filter or housing without damaging surrounding components.",
+        "Inspect the sealing surface and verify the old seal is not left behind.",
+        "Install the validated replacement according to the vehicle or filter service specification and verify for leakage after service."
+      ],
+      "procedures": [
+        "Identify the correct filter location and service configuration before removal.",
+        "Use a removal method appropriate to the filter or housing without damaging surrounding components.",
+        "Inspect the sealing surface and verify the old seal is not left behind.",
+        "Install the validated replacement according to the vehicle or filter service specification and verify for leakage after service."
+      ],
+      "technicalRelationships": [],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Installation",
+        "Sealing"
+      ],
+      "keywords": [
+        "Oil Filter Service Access and Removal",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Installation Procedure",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Engine Oil Filter",
+        "Filter Housing / Can",
+        "Gasket / Seal",
+        "Installation",
+        "Sealing"
+      ]
+    },
+    {
+      "id": "LD-SHARED-SEASONAL-FILTRATION",
+      "slug": "ld-shared-seasonal-filtration",
+      "title": "Seasonal Operating Conditions and Filtration Service",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Service Reference",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems",
+        "Air Intake & Airflow Protection Systems",
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™",
+        "MACROCORE™",
+        "MICROKAPPA™"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems.",
+        "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval."
+      ],
+      "operatingConditions": [
+        "Cold Weather / Low Temperature",
+        "High Temperature / Summer Heat",
+        "Dusty Environment"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Service Life",
+        "Restriction",
+        "Contaminant Loading",
+        "Flow Rate"
+      ],
+      "keywords": [
+        "Seasonal Operating Conditions and Filtration Service",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Service Reference",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "Air Intake & Airflow Protection Systems",
+        "SYNTRAX™",
+        "MACROCORE™",
+        "MICROKAPPA™",
+        "Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems.",
+        "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval.",
+        "Cold Weather / Low Temperature",
+        "High Temperature / Summer Heat",
+        "Dusty Environment",
+        "Service Life",
+        "Restriction",
+        "Contaminant Loading",
+        "Flow Rate"
+      ]
+    },
+    {
+      "id": "LD-SHARED-TOTAL-VEHICLE-PROTECTION",
+      "slug": "ld-shared-total-vehicle-protection",
+      "title": "Integrated Vehicle Filtration Protection",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Application Note",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems",
+        "Air Intake & Airflow Protection Systems",
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™",
+        "MACROCORE™",
+        "MICROKAPPA™"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
+        "Correct selection, installation and service condition are common requirements across these filtration systems."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Filtration Efficiency",
+        "Contaminant Loading",
+        "Service Life",
+        "Installation"
+      ],
+      "keywords": [
+        "Integrated Vehicle Filtration Protection",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Application Note",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "Air Intake & Airflow Protection Systems",
+        "SYNTRAX™",
+        "MACROCORE™",
+        "MICROKAPPA™",
+        "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
+        "Correct selection, installation and service condition are common requirements across these filtration systems.",
+        "Filtration Efficiency",
+        "Contaminant Loading",
+        "Service Life",
+        "Installation"
+      ]
+    },
+    {
+      "id": "SHARED-BYPASS",
+      "slug": "shared-bypass",
+      "title": "Bypass",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media.",
+        "During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent.",
+        "A bypass setting must be treated as application-specific rather than as a universal filter value.",
+        "Physical similarity does not establish functional interchangeability between oil filters.",
+        "Correct fitment requires compatible sealing, attachment geometry and application-specific flow and pressure-control requirements.",
+        "Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application.",
+        "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
+        "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
+        "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Bypass"
+      ],
+      "keywords": [
+        "Bypass",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media.",
+        "During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent.",
+        "A bypass setting must be treated as application-specific rather than as a universal filter value.",
+        "Physical similarity does not establish functional interchangeability between oil filters.",
+        "Correct fitment requires compatible sealing, attachment geometry and application-specific flow and pressure-control requirements.",
+        "Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application.",
+        "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
+        "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
+        "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important."
+      ]
+    },
+    {
+      "id": "SHARED-CONTAMINANT-LOADING",
+      "slug": "shared-contaminant-loading",
+      "title": "Contaminant Loading",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
+        "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function.",
+        "Engine-air-filter service life varies with dust exposure, operating environment and vehicle usage rather than mileage alone.",
+        "Higher airborne contaminant loading can accelerate media loading and increase intake restriction.",
+        "The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path.",
+        "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
+        "Cabin-filter service interval is affected by environmental particulate loading, seasonal conditions and vehicle usage.",
+        "High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions.",
+        "Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems.",
+        "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval.",
+        "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
+        "Correct selection, installation and service condition are common requirements across these filtration systems."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Contaminant Loading"
+      ],
+      "keywords": [
+        "Contaminant Loading",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
+        "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function.",
+        "Engine-air-filter service life varies with dust exposure, operating environment and vehicle usage rather than mileage alone.",
+        "Higher airborne contaminant loading can accelerate media loading and increase intake restriction.",
+        "The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path.",
+        "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
+        "Cabin-filter service interval is affected by environmental particulate loading, seasonal conditions and vehicle usage.",
+        "High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions.",
+        "Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems.",
+        "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval.",
+        "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
+        "Correct selection, installation and service condition are common requirements across these filtration systems."
+      ]
+    },
+    {
+      "id": "SHARED-DIFFERENTIAL-PRESSURE",
+      "slug": "shared-differential-pressure",
+      "title": "Differential Pressure",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media.",
+        "During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent.",
+        "A bypass setting must be treated as application-specific rather than as a universal filter value.",
+        "A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis.",
+        "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes.",
+        "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
+        "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Differential Pressure"
+      ],
+      "keywords": [
+        "Differential Pressure",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media.",
+        "During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent.",
+        "A bypass setting must be treated as application-specific rather than as a universal filter value.",
+        "A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis.",
+        "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes.",
+        "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
+        "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important."
+      ]
+    },
+    {
+      "id": "SHARED-DIRT-HOLDING-CAPACITY",
+      "slug": "shared-dirt-holding-capacity",
+      "title": "Dirt Holding Capacity",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "low",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
+        "Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress.",
+        "Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Dirt Holding Capacity"
+      ],
+      "keywords": [
+        "Dirt Holding Capacity",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
+        "Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress.",
+        "Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered."
+      ]
+    },
+    {
+      "id": "SHARED-FAILURE-ANALYSIS",
+      "slug": "shared-failure-analysis",
+      "title": "Failure Analysis",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis.",
+        "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Failure Analysis"
+      ],
+      "keywords": [
+        "Failure Analysis",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis.",
+        "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes."
+      ]
+    },
+    {
+      "id": "SHARED-FILTRATION-EFFICIENCY",
+      "slug": "shared-filtration-efficiency",
+      "title": "Filtration Efficiency",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
+        "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
+        "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment.",
+        "The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path.",
+        "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
+        "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
+        "Correct selection, installation and service condition are common requirements across these filtration systems."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Filtration Efficiency"
+      ],
+      "keywords": [
+        "Filtration Efficiency",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
+        "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
+        "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment.",
+        "The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path.",
+        "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
+        "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
+        "Correct selection, installation and service condition are common requirements across these filtration systems."
+      ]
+    },
+    {
+      "id": "SHARED-FLOW-RATE",
+      "slug": "shared-flow-rate",
+      "title": "Flow Rate",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
+        "Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress.",
+        "Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered.",
+        "Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media.",
+        "During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent.",
+        "A bypass setting must be treated as application-specific rather than as a universal filter value.",
+        "Physical similarity does not establish functional interchangeability between oil filters.",
+        "Correct fitment requires compatible sealing, attachment geometry and application-specific flow and pressure-control requirements.",
+        "Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application.",
+        "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
+        "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
+        "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important.",
+        "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
+        "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment.",
+        "Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice.",
+        "The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path.",
+        "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
+        "Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination.",
+        "Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Flow Rate"
+      ],
+      "keywords": [
+        "Flow Rate",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
+        "Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress.",
+        "Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered.",
+        "Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media.",
+        "During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent.",
+        "A bypass setting must be treated as application-specific rather than as a universal filter value.",
+        "Physical similarity does not establish functional interchangeability between oil filters.",
+        "Correct fitment requires compatible sealing, attachment geometry and application-specific flow and pressure-control requirements.",
+        "Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application.",
+        "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
+        "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
+        "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important.",
+        "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
+        "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment.",
+        "Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice.",
+        "The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path.",
+        "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
+        "Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination.",
+        "Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function."
+      ]
+    },
+    {
+      "id": "SHARED-INSTALLATION",
+      "slug": "shared-installation",
+      "title": "Installation",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application.",
+        "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
+        "Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice.",
+        "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
+        "Correct selection, installation and service condition are common requirements across these filtration systems."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Installation"
+      ],
+      "keywords": [
+        "Installation",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application.",
+        "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
+        "Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice.",
+        "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
+        "Correct selection, installation and service condition are common requirements across these filtration systems."
+      ]
+    },
+    {
+      "id": "SHARED-MEDIA-SATURATION",
+      "slug": "shared-media-saturation",
+      "title": "Media Saturation",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "low",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
+        "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Media Saturation"
+      ],
+      "keywords": [
+        "Media Saturation",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
+        "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function."
+      ]
+    },
+    {
+      "id": "SHARED-MICRON-RATING",
+      "slug": "shared-micron-rating",
+      "title": "Micron Rating",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "low",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Micron Rating"
+      ],
+      "keywords": [
+        "Micron Rating",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size."
+      ]
+    },
+    {
+      "id": "SHARED-RESTRICTION",
+      "slug": "shared-restriction",
+      "title": "Restriction",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
+        "Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media.",
+        "During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent.",
+        "A bypass setting must be treated as application-specific rather than as a universal filter value.",
+        "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
+        "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function.",
+        "A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis.",
+        "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes.",
+        "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
+        "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important.",
+        "Engine-air-filter service life varies with dust exposure, operating environment and vehicle usage rather than mileage alone.",
+        "Higher airborne contaminant loading can accelerate media loading and increase intake restriction.",
+        "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
+        "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment.",
+        "Cabin-filter service interval is affected by environmental particulate loading, seasonal conditions and vehicle usage.",
+        "High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions.",
+        "Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems.",
+        "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Restriction"
+      ],
+      "keywords": [
+        "Restriction",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
+        "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
+        "Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media.",
+        "During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent.",
+        "A bypass setting must be treated as application-specific rather than as a universal filter value.",
+        "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
+        "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function.",
+        "A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis.",
+        "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes.",
+        "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
+        "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important.",
+        "Engine-air-filter service life varies with dust exposure, operating environment and vehicle usage rather than mileage alone.",
+        "Higher airborne contaminant loading can accelerate media loading and increase intake restriction.",
+        "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
+        "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment.",
+        "Cabin-filter service interval is affected by environmental particulate loading, seasonal conditions and vehicle usage.",
+        "High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions.",
+        "Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems.",
+        "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval."
+      ]
+    },
+    {
+      "id": "SHARED-SEALING",
+      "slug": "shared-sealing",
+      "title": "Sealing",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Physical similarity does not establish functional interchangeability between oil filters.",
+        "Correct fitment requires compatible sealing, attachment geometry and application-specific flow and pressure-control requirements.",
+        "Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application.",
+        "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
+        "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
+        "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Sealing"
+      ],
+      "keywords": [
+        "Sealing",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Physical similarity does not establish functional interchangeability between oil filters.",
+        "Correct fitment requires compatible sealing, attachment geometry and application-specific flow and pressure-control requirements.",
+        "Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application.",
+        "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
+        "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
+        "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment."
+      ]
+    },
+    {
+      "id": "SHARED-SERVICE-LIFE",
+      "slug": "shared-service-life",
+      "title": "Service Life",
+      "domain": "SHARED_ENGINEERING_KNOWLEDGE",
+      "contentType": "Shared Engineering Concept",
+      "confidence": "medium",
+      "industries": [
+        "Shared / none"
+      ],
+      "systems": [
+        "Shared / none"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress.",
+        "Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered.",
+        "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
+        "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function.",
+        "Engine-air-filter service life varies with dust exposure, operating environment and vehicle usage rather than mileage alone.",
+        "Higher airborne contaminant loading can accelerate media loading and increase intake restriction.",
+        "The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path.",
+        "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
+        "Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination.",
+        "Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function.",
+        "Cabin-filter service interval is affected by environmental particulate loading, seasonal conditions and vehicle usage.",
+        "High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions.",
+        "Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems.",
+        "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval.",
+        "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
+        "Correct selection, installation and service condition are common requirements across these filtration systems."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Service Life"
+      ],
+      "keywords": [
+        "Service Life",
+        "SHARED_ENGINEERING_KNOWLEDGE",
+        "Shared Engineering Concept",
+        "Shared / none",
+        "None assigned",
+        "Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress.",
+        "Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered.",
+        "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
+        "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function.",
+        "Engine-air-filter service life varies with dust exposure, operating environment and vehicle usage rather than mileage alone.",
+        "Higher airborne contaminant loading can accelerate media loading and increase intake restriction.",
+        "The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path.",
+        "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
+        "Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination.",
+        "Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function.",
+        "Cabin-filter service interval is affected by environmental particulate loading, seasonal conditions and vehicle usage.",
+        "High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions.",
+        "Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems.",
+        "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval.",
+        "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
+        "Correct selection, installation and service condition are common requirements across these filtration systems."
+      ]
+    }
+  ]
+}

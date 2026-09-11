@@ -10,6 +10,7 @@ const HUBS=[
  ['06','Technical Glossary','ENGINEERING REFERENCE','Consistent terminology for filtration, contamination control, maintenance, reliability and asset protection.','/knowledge-center/glossary'],
  ['07','Technical FAQ','QUESTIONS / ANSWERS','Direct technical answers to recurring questions about filtration, contamination, standards and maintenance.','/knowledge-center/faq'],
  ['08','Knowledge Search','TECHNICAL DISCOVERY','Search the Knowledge Center when the question is known but the correct technical domain or document is not.','/knowledge-center/search'],
+ ['09','Canonical Engineering Knowledge','APPROVED / GOVERNED','Validated ELIMFILTERS engineering knowledge promoted through Nodal Center governance and authorized for Knowledge Center use.','/knowledge-center/canonical'],
 ] as const;
 
 const SCALE=[
@@ -44,14 +45,14 @@ export default function KnowledgeCenterPage(){
     <div>
      <p className={styles.eyebrow}>ELIMFILTERS KNOWLEDGE SYSTEM</p>
      <h1 className={styles.title}>Engineering knowledge for better asset decisions.</h1>
-     <p className={styles.lead}>Technical knowledge for filtration, contamination control, reliability and industrial asset protection — organized around the way engineers, fleet managers and maintenance teams investigate real operating problems.</p>
+     <p className={styles.lead}>Technical knowledge for filtration, contamination control, reliability and industrial asset protection â€” organized around the way engineers, fleet managers and maintenance teams investigate real operating problems.</p>
      <div className={styles.buttonRow}>
       <Link className={styles.primary} href="/knowledge-center/problems" data-conversion-action="knowledge-diagnostics">DIAGNOSE A PROBLEM</Link>
       <Link className={styles.secondary} href="/knowledge-center/search" data-conversion-action="knowledge-search">SEARCH KNOWLEDGE</Link>
      </div>
     </div>
     <div className={styles.signal} aria-label="Technical decision flow">
-     <div className={styles.signalHead}><span className={styles.micro}>CONTAMINATION CONTROL LOGIC</span><span className={styles.micro}>CONDITION → VALIDATION</span></div>
+     <div className={styles.signalHead}><span className={styles.micro}>CONTAMINATION CONTROL LOGIC</span><span className={styles.micro}>CONDITION â†’ VALIDATION</span></div>
      <svg viewBox="0 0 620 190" role="img" aria-hidden="true" style={{width:'100%',height:'auto',display:'block',marginTop:'1.6rem'}}>
       <defs><linearGradient id="signalLine" x1="0" x2="1"><stop offset="0%" stopColor="#FFF12D" stopOpacity="0.25"/><stop offset="100%" stopColor="#FFF12D" stopOpacity="1"/></linearGradient></defs>
       <line x1="40" y1="110" x2="580" y2="110" stroke="rgba(255,255,255,0.14)" strokeWidth="2"/>
@@ -74,26 +75,26 @@ export default function KnowledgeCenterPage(){
 
    <section className={styles.section}><div className={styles.inner}>
     <div className={styles.sectionHead}><h2 className={styles.h2}>Start with the technical question.</h2><p className={styles.body}>The system is organized by investigative intent, not by decorative categories. Move from the operating condition to the technical mechanism, supporting framework, protection architecture and validated application.</p></div>
-    <div className={styles.hubGrid}>{HUBS.map(([n,title,label,description,href])=><Link href={href} className={styles.hub} key={title}><div className={styles.hubMeta}><span>{n}</span><span>{label}</span></div><h3>{title}</h3><p>{description}</p><b>OPEN REFERENCE →</b></Link>)}</div>
+    <div className={styles.hubGrid}>{HUBS.map(([n,title,label,description,href])=><Link href={href} className={styles.hub} key={title}><div className={styles.hubMeta}><span>{n}</span><span>{label}</span></div><h3>{title}</h3><p>{description}</p><b>OPEN REFERENCE â†’</b></Link>)}</div>
    </div></section>
 
    <section className={`${styles.section} ${styles.sectionAlt}`}><div className={styles.inner}>
-    <p className={styles.eyebrow}>ENGINEERING DECISION PATH</p><h2 className={styles.h2}>Problem → evidence → protection → application.</h2>
+    <p className={styles.eyebrow}>ENGINEERING DECISION PATH</p><h2 className={styles.h2}>Problem â†’ evidence â†’ protection â†’ application.</h2>
     <div className={styles.decision} style={{marginTop:'2.4rem'}}>{DECISION.map(([n,title,text])=><article className={styles.decisionItem} key={n}><span>{n}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
    </div></section>
 
    <section className={styles.section}><div className={styles.inner}>
     <div className={styles.sectionHead}><h2 className={styles.h2}>Choose the shortest technical path.</h2><p className={styles.body}>The same knowledge base supports different starting points. Use the route that matches what is already known instead of forcing every user through the same sequence.</p></div>
-    <div className={styles.pathGrid}>{PATHS.map(([title,text,href,label])=><article className={styles.pathCard} key={title}><h3>{title}</h3><p>{text}</p>{href.startsWith('http')||href.startsWith('mailto:')?<a href={href} target={href.startsWith('http')?'_blank':undefined} rel={href.startsWith('http')?'noopener noreferrer':undefined} data-conversion-action={href.includes('part-search')?'product-intelligence':href.startsWith('mailto:')?'application-support':undefined}>{label} →</a>:<Link href={href}>{label} →</Link>}</article>)}</div>
+    <div className={styles.pathGrid}>{PATHS.map(([title,text,href,label])=><article className={styles.pathCard} key={title}><h3>{title}</h3><p>{text}</p>{href.startsWith('http')||href.startsWith('mailto:')?<a href={href} target={href.startsWith('http')?'_blank':undefined} rel={href.startsWith('http')?'noopener noreferrer':undefined} data-conversion-action={href.includes('part-search')?'product-intelligence':href.startsWith('mailto:')?'application-support':undefined}>{label} â†’</a>:<Link href={href}>{label} â†’</Link>}</article>)}</div>
    </div></section>
 
    <section className={`${styles.section} ${styles.sectionAlt}`}><div className={styles.inner}>
     <p className={styles.eyebrow}>SYSTEM CONNECTIONS</p><h2 className={styles.h2}>Knowledge does not stop at the article.</h2>
     <p className={styles.lead}>Technical content should lead to the next useful decision. Problems connect to systems. Systems connect to technologies. Technologies connect to validated applications and product intelligence.</p>
-    <div className={styles.searchRow}><Link className={styles.searchLink} href="/systems/">PROTECTION SYSTEMS →</Link><Link className={styles.searchLink} href="/technologies/">TECHNOLOGIES →</Link><Link className={styles.searchLink} href="/industries/">INDUSTRIES →</Link><a className={styles.searchLink} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence">PART SEARCH →</a></div>
+    <div className={styles.searchRow}><Link className={styles.searchLink} href="/systems/">PROTECTION SYSTEMS â†’</Link><Link className={styles.searchLink} href="/technologies/">TECHNOLOGIES â†’</Link><Link className={styles.searchLink} href="/industries/">INDUSTRIES â†’</Link><a className={styles.searchLink} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence">PART SEARCH â†’</a></div>
    </div></section>
 
-   <section className={styles.cta}><div className={`${styles.inner} ${styles.ctaGrid}`}><div><p className={styles.eyebrow}>APPLICATION SUPPORT</p><h2 className={styles.h2}>Bring us the operating condition — not just the part number.</h2><p className={styles.lead}>Use Part Search when the application is known. For repeated failures, contamination uncertainty, short service life or unclear protection architecture, use technical review.</p></div><div className={styles.buttonRow}><a className={styles.primary} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence">Search Product Intelligence</a><a className={styles.secondary} href="mailto:applications@elimfilters.com?subject=ELIMFILTERS%20Knowledge%20Center%20Technical%20Review" data-conversion-action="application-support">TECHNICAL REVIEW</a></div></div></section>
+   <section className={styles.cta}><div className={`${styles.inner} ${styles.ctaGrid}`}><div><p className={styles.eyebrow}>APPLICATION SUPPORT</p><h2 className={styles.h2}>Bring us the operating condition â€” not just the part number.</h2><p className={styles.lead}>Use Part Search when the application is known. For repeated failures, contamination uncertainty, short service life or unclear protection architecture, use technical review.</p></div><div className={styles.buttonRow}><a className={styles.primary} href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence">Search Product Intelligence</a><a className={styles.secondary} href="mailto:applications@elimfilters.com?subject=ELIMFILTERS%20Knowledge%20Center%20Technical%20Review" data-conversion-action="application-support">TECHNICAL REVIEW</a></div></div></section>
   </main>
  </>;
 }

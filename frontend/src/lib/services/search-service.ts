@@ -1,5 +1,5 @@
 /**
- * Phase 3 — Engineering Services: Engineering Search Service
+ * Phase 3 â€” Engineering Services: Engineering Search Service
  *
  * Deterministic semantic search over the Knowledge Graph.
  * No AI. No embeddings. Graph traversal + field matching only.
@@ -7,6 +7,7 @@
 
 import { getGraph } from './knowledge-service';
 import { toPublicGraphNode } from './public-knowledge-gateway';
+import { searchCanonicalKnowledge, type CanonicalKnowledgeRecord } from './canonical-knowledge-service';
 import type { GraphNode, NodeEntityType } from '@/lib/graph/graph-types';
 
 export type SearchEntityType = NodeEntityType | 'ALL';
@@ -120,42 +121,37 @@ function scoreMatch(query: string, fields: Array<{ field: string; text: string; 
   return { score, matchedFields: matchedFields.filter((v, i, a) => a.indexOf(v) === i), excerpt: firstExcerpt };
 }
 
-export function search(query: string, options: SearchOptions = {}): SearchResult[] {
-  if (!query || query.trim().length === 0) return [];
-
-  const graph = getGraph();
-  const maxResults = options.maxResults ?? 20;
-  const includeDeprecated = options.includeDeprecated ?? false;
-  const includeNonPublic = options.includeNonPublic ?? false;
-  const entityTypes = options.entityTypes ?? ['ALL'];
-  const filterAll = entityTypes.includes('ALL');
-  const results: SearchResult[] = [];
-
-  for (const rawNode of Array.from(graph.nodes.values())) {
-    if (!filterAll && !entityTypes.includes(rawNode.entityType as SearchEntityType)) continue;
-    if (!includeNonPublic && rawNode.provenance.governanceStatus !== 'ACTIVE') continue;
-    if (!includeDeprecated && rawNode.provenance.isDeprecated) continue;
-
-    const node = includeNonPublic ? rawNode : toPublicGraphNode(rawNode);
-    const fields = extractSearchableText(node);
-    const { score, matchedFields, excerpt } = scoreMatch(query, fields);
-    if (score > 0) {
-      results.push({
-        nodeId: node.nodeId,
-        entityId: node.entityId,
-        entityType: node.entityType,
-        label: node.label,
-        score,
-        matchedFields,
-        excerpt,
-      });
-    }
-  }
-
-  results.sort((a, b) => b.score !== a.score ? b.score - a.score : a.entityId.localeCompare(b.entityId));
-  return results.slice(0, maxResults);
+function canonicalEntityType(record: CanonicalKnowledgeRecord): NodeEntityType {
+  if (/Failure Analysis/i.test(record.contentType)) return 'FAILURE_MODE';
+  if (record.technologies.length > 0 && /Architecture|Technology/i.test(record.title)) return 'TECHNOLOGY_ARCHITECTURE';
+  return 'ENGINEERING_PRINCIPLE';
 }
 
+export function search(query: string, options: SearchOptions = {}): SearchResult[] {
+  if (!query || query.trim().length === 0) return [];
+  const maxResults = options.maxResults ?? 20;
+  const entityTypes = options.entityTypes ?? ['ALL'];
+  const filterAll = entityTypes.includes('ALL');
+  const canonical = searchCanonicalKnowledge(query, Math.max(maxResults * 3, 30));
+  return canonical
+    .map((record, index) => {
+      const entityType = canonicalEntityType(record);
+      const queryTerms = query.toLowerCase().split(/\s+/).filter(Boolean);
+      const keywordText = record.keywords.join(' ').toLowerCase();
+      const matchedFields = queryTerms.filter(term => keywordText.includes(term)).map(() => 'canonicalKnowledge');
+      return {
+        nodeId: `CANONICAL:${record.id}`,
+        entityId: record.id,
+        entityType,
+        label: record.title,
+        score: Math.max(10, 100 - index * 4),
+        matchedFields: [...new Set(matchedFields)],
+        excerpt: record.technicalRelationships[0] || record.diagnosticMethods[0] || record.problems[0] || record.contentType,
+      } satisfies SearchResult;
+    })
+    .filter(result => filterAll || entityTypes.includes(result.entityType as SearchEntityType))
+    .slice(0, maxResults);
+}
 export function searchByType(query: string, entityType: NodeEntityType, maxResults = 20): SearchResult[] {
   return search(query, { entityTypes: [entityType], maxResults });
 }
