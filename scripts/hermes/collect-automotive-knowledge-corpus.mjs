@@ -7,6 +7,7 @@
 // PostgreSQL, never creates cross references, and never authorizes public
 // ELIMFILTERS content. All produced candidates remain approval-gated.
 
+import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { createRequire } from 'node:module';
@@ -37,6 +38,7 @@ const baselinePreviewPath = path.resolve('hermes/baselines/fram-automotive-sourc
 const harvestStatePath = path.resolve('hermes/baselines/fram-automotive-source-observations.json');
 const harvestState = loadHarvestState(harvestStatePath);
 const sources = buildHermesCorpusSources();
+const sourcesById = new Map(sources.map((source) => [source.id, source]));
 
 if (sources.length !== getUniqueCorpusUrls().length) {
   throw new Error('FRAM automotive corpus source count does not match canonical URL count');
@@ -66,6 +68,38 @@ const summary = await runCollection({
   maxBytes
 });
 
+function enrichCandidateFile(result) {
+  if (!['CREATED', 'PREVIEWED'].includes(result.status) || !result.output_path) return false;
+  const source = sourcesById.get(result.id);
+  if (!source) throw new Error(`Cannot classify candidate: unknown corpus source ${result.id}`);
+
+  const candidatePath = path.resolve(result.output_path);
+  const candidate = JSON.parse(fs.readFileSync(candidatePath, 'utf8'));
+  const enriched = {
+    ...candidate,
+    knowledge_domain: source.knowledge_domain,
+    industries: [source.industry],
+    knowledge_systems: source.knowledge_systems,
+    technology_candidates: source.technology_candidates,
+    technology_relation: source.technology_relation,
+    application_relation: source.application_relation,
+    knowledge_topics: source.knowledge_topics,
+    source_governance: {
+      public_brand_reference: source.public_brand_reference,
+      catalog_auto_update: source.catalog_auto_update,
+      external_source_role: 'internal_evidence_only'
+    }
+  };
+
+  fs.writeFileSync(candidatePath, JSON.stringify(enriched, null, 2) + '\n', 'utf8');
+  return true;
+}
+
+let enrichedCandidates = 0;
+for (const result of summary.results) {
+  if (enrichCandidateFile(result)) enrichedCandidates += 1;
+}
+
 const domainManifest = {
   schema_version: '1.0.0',
   corpus: 'FRAM_AUTOMOTIVE_TECHNICAL_CORPUS',
@@ -90,9 +124,6 @@ const domainManifest = {
   }))
 };
 
-// runCollection owns candidate/cache/baseline persistence. The manifest is
-// emitted to stdout for downstream jobs rather than written into canonical
-// Obsidian/Nodal Center paths, preserving the existing review boundary.
-console.log(`[HERMES LD corpus] mode=${summary.mode} first_harvest=${summary.first_harvest} created=${summary.created} previewed=${summary.previewed} unchanged=${summary.unchanged} duplicates=${summary.duplicates} fetch_errors=${summary.fetch_errors}`);
+console.log(`[HERMES LD corpus] mode=${summary.mode} first_harvest=${summary.first_harvest} created=${summary.created} previewed=${summary.previewed} enriched=${enrichedCandidates} unchanged=${summary.unchanged} duplicates=${summary.duplicates} fetch_errors=${summary.fetch_errors}`);
 console.log(`[HERMES LD corpus] manifest=${JSON.stringify(domainManifest)}`);
 console.log('[HERMES LD corpus] database_write=false pgvector_write=false catalogue_cross_write=false obsidian_auto_publish=false');
