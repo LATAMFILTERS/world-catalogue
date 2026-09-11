@@ -27,6 +27,7 @@
     "hermes:ld:collect": "node scripts/hermes/collect-automotive-knowledge-corpus.mjs",
     "hermes:ld:baseline": "node scripts/hermes/collect-automotive-knowledge-corpus.mjs --baseline",
     "hermes:ld:structure": "node scripts/hermes/structure-automotive-knowledge-corpus.mjs",
+    "hermes:fram:ld:codes": "node scripts/hermes/extract-fram-ld-catalog-codes.mjs",
     "hermes:sweep": "node scripts/hermes/industry-sweep-reliable.mjs && node scripts/hermes/validate-sweep-checkpoint.mjs",
     "hermes:research:restore": "node scripts/hermes/restore-review-research-requests.mjs",
     "hermes:research": "npm run hermes:research:restore && node scripts/hermes/research-real-candidates-compound.mjs",
