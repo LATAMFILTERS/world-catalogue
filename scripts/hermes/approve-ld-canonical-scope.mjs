@@ -41,9 +41,12 @@ function technologiesValid(c){
     return c.systems.some((s)=>allowed.has(s));
   });
 }
-function refsApproved(review){
-  return (review.relationship_item_ids||[]).every((id)=>rel.get(id)?.decision==='approved') &&
-    (review.procedure_item_ids||[]).every((id)=>proc.get(id)?.decision==='approved');
+function currentRefs(id){return ledger.candidate_refs?.[id] || {metric_item_ids:[],relationship_item_ids:[],procedure_item_ids:[]};}
+function refsApproved(id){
+  const refs=currentRefs(id);
+  return (refs.relationship_item_ids||[]).every((x)=>rel.get(x)?.decision==='approved') &&
+    (refs.procedure_item_ids||[]).every((x)=>proc.get(x)?.decision==='approved') &&
+    (refs.metric_item_ids||[]).length===0;
 }
 
 const results=[];
@@ -53,13 +56,17 @@ for(const file of walk(candidateRoot)){
   if(!candidate.knowledge_object_id) continue;
   const rp=reviewPath(candidate.knowledge_object_id);
   const review=JSON.parse(fs.readFileSync(rp,'utf8'));
+  const refs=currentRefs(candidate.knowledge_object_id);
   const official = candidate.domain==='SHARED_ENGINEERING_KNOWLEDGE' || candidate.systems.every((s)=>OFFICIAL_SYSTEMS.has(s));
   const neutral=sourceNeutral(text);
   const techOk=technologiesValid(candidate);
-  const technicalOk=refsApproved(review) && candidate.metrics.length===0;
+  const technicalOk=refsApproved(candidate.knowledge_object_id) && candidate.metrics.length===0;
   const ready=official && neutral && techOk && technicalOk;
   results.push({id:candidate.knowledge_object_id,ready,official,neutral,techOk,technicalOk});
   if(!apply || !ready) continue;
+  review.metric_item_ids=refs.metric_item_ids||[];
+  review.relationship_item_ids=refs.relationship_item_ids||[];
+  review.procedure_item_ids=refs.procedure_item_ids||[];
   review.review_status='approved'; review.reviewer=reviewer; review.reviewed_at=reviewedAt;
   Object.assign(review.scope_review,{
     official_system_registry_verified:true,
