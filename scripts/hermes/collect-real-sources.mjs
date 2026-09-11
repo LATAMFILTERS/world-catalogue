@@ -22,6 +22,7 @@ import { DEFAULT_MIN_CONTENT_LENGTH } from './source-baseline-core.mjs';
 import { loadRegistry, validateRegistry } from './source-registry-core.mjs';
 import { isDryRunActive } from './hermes-core.mjs';
 import { loadHarvestState } from './semantic-harvest-state-core.mjs';
+import { captureForensicSnapshotsForRun } from './forensic-capture-run.mjs';
 
 const legacyConfigPath = process.argv[2] || 'hermes/config/real-sources.json';
 const organizationsPath = process.env.HERMES_SOURCE_ORGANIZATIONS_PATH || 'hermes/config/source-organizations.json';
@@ -31,20 +32,14 @@ const forceLegacy = String(process.env.HERMES_COLLECTION_USE_LEGACY_SOURCES || '
 const dryRun = isDryRunActive();
 const timeoutMs = Number(process.env.HERMES_COLLECTION_TIMEOUT_MS || DEFAULT_TIMEOUT_MS);
 const maxBytes = Number(process.env.HERMES_COLLECTION_MAX_BYTES || DEFAULT_MAX_BYTES);
-// Governed baseline mode: bootstraps/refreshes hermes/baselines/source-baseline.json
-// without ever producing a candidate. Defaults to false (normal comparison
-// mode) — a human must set this explicitly, and it is never auto-disabled
-// by code; see hermes/PHASE5-LITE.md.
 const baselineMode = String(process.env.HERMES_BASELINE_MODE || 'false').toLowerCase() === 'true';
 const minContentLength = Number(process.env.HERMES_COLLECTION_MIN_CONTENT_LENGTH || DEFAULT_MIN_CONTENT_LENGTH);
-// Weekly capacity (task target: 30-40 sources/run). 0 disables the cap
-// entirely (useful for a manual full-registry sweep); baseline-mode runs
-// are never capped — bootstrapping/refreshing the baseline is a one-time
-// housekeeping pass, not a weekly-quota-constrained intelligence run.
 const maxSources = baselineMode ? 0 : Number(process.env.HERMES_MAX_SOURCES_PER_RUN ?? DEFAULT_MAX_SOURCES_PER_RUN);
 const fairnessSlots = Math.max(0, Number(process.env.HERMES_SOURCE_FAIRNESS_SLOTS ?? 3));
 const harvestStatePath = path.resolve('hermes/baselines/source-observations.json');
 const harvestState = loadHarvestState(harvestStatePath);
+const sourceCacheDir = path.resolve('hermes/source-cache');
+const forensicSnapshotDir = path.resolve('hermes/forensic-source-snapshots');
 
 function isoWeekKey(date = new Date()) {
   const d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
@@ -55,9 +50,6 @@ function isoWeekKey(date = new Date()) {
   return (d.getUTCFullYear() * 100) + week;
 }
 
-// Preserve most capacity for governed priority while reserving a small number
-// of weekly-rotating fairness slots. This prevents the same tail endpoints from
-// being permanently excluded when active sources exceed HERMES_MAX_SOURCES_PER_RUN.
 function applyWeeklyFairRotation(allSources, cap, slots, rotationKey = isoWeekKey()) {
   if (!Number.isFinite(cap) || cap <= 0 || allSources.length <= cap) {
     return { selected: allSources, rotatingPool: 0, fairnessUsed: 0, rotationKey };
@@ -134,15 +126,13 @@ if (!baselineMode && availableSourceCount > selectedSources.length) {
 const summary = await runCollection({
   sources: selectedSources,
   realCandidatesDir: path.resolve('hermes/real-candidates'),
-  sourceCacheDir: path.resolve('hermes/source-cache'),
+  sourceCacheDir,
   previewDir: path.resolve('hermes/real-candidates-previews'),
   auditDir: path.resolve('elimfilters-vault/94-sync-log'),
   baselinePath: path.resolve('hermes/baselines/source-baseline.json'),
   baselinePreviewPath: path.resolve('hermes/baselines/source-baseline.preview.json'),
   harvestState,
   harvestStatePath,
-  // Selection/capping has already been applied above so the core must not
-  // cap the selected list a second time.
   maxSources: 0,
   dryRun,
   baselineMode,
@@ -151,13 +141,30 @@ const summary = await runCollection({
   maxBytes
 });
 
-// Preserve operational reporting against the full governed registry even
-// though runCollection receives only this week's selected subset.
+// Universal forensic rule: every successfully observed governed source —
+// regardless of industry — receives a private cryptographic snapshot.
+// Newly-created candidates are linked to that snapshot before any later
+// approval/promotion step. The snapshot tree is gitignored and forbidden
+// from public/canonical projections.
+const forensicCaptures = await captureForensicSnapshotsForRun({
+  sources: selectedSources,
+  summary,
+  sourceCacheDir,
+  forensicSnapshotDir,
+  timeoutMs,
+  maxBytes
+});
+
+summary.forensic_snapshot_required = true;
+summary.forensic_snapshot_storage = 'private_runtime_only';
+summary.forensic_snapshots_captured = forensicCaptures.size;
+
 summary.sources_available = availableSourceCount;
 summary.sources_capped = Math.max(0, availableSourceCount - selectedSources.length);
 
 console.log(`[HERMES collect] source_mode=${sourceMode} mode=${summary.mode} baseline_mode=${summary.baseline_mode} sources_available=${summary.sources_available} sources=${summary.sources_total} sources_capped=${summary.sources_capped} enabled=${summary.sources_enabled}`);
 console.log(`[HERMES collect] created=${summary.created} previewed=${summary.previewed} unchanged=${summary.unchanged} changed=${summary.changed} first_harvest=${summary.first_harvest} empty_content=${summary.empty_content} insufficient_content=${summary.insufficient_content} baseline_required=${summary.baseline_required} baseline_recorded=${summary.baseline_recorded} duplicates=${summary.duplicates} fetch_errors=${summary.fetch_errors} invalid=${summary.invalid} disabled=${summary.disabled}`);
+console.log(`[HERMES collect] forensic_snapshots=${summary.forensic_snapshots_captured} storage=${forensicSnapshotDir} scope=ALL_GOVERNED_INDUSTRIES`);
 if (summary.zero_result_reason) console.log(`[HERMES collect] ${summary.zero_result_reason}`);
 if (summary.harvest_state_updated) console.log(`[HERMES collect] harvest state ${harvestStatePath}${dryRun ? ' (dry run — not written)' : ''}`);
 for (const result of summary.results) {
@@ -167,7 +174,7 @@ for (const result of summary.results) {
 }
 console.log(`[HERMES collect] audit ${summary.audit_path}`);
 if (summary.baseline_updated) console.log(`[HERMES collect] baseline ${summary.baseline_output_path}${dryRun ? ' (preview only — real baseline untouched)' : ''}`);
-console.log(`[HERMES collect] database_write=false pgvector_write=false unified_data_write=false canonical_vault_writes=false`);
+console.log(`[HERMES collect] database_write=false pgvector_write=false unified_data_write=false canonical_vault_writes=false forensic_publication=false`);
 if (dryRun) {
   console.log('[HERMES collect] DRY RUN — no files were written to hermes/real-candidates. Set HERMES_COLLECTION_DRY_RUN=false to persist candidates.');
 }
