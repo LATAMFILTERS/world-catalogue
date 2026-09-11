@@ -17,6 +17,7 @@
 const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
+const { createJobNotifier } = require('../lib/job-notifications');
 
 const ROOT = __dirname;
 const OUTPUT = path.join(ROOT, 'donaldson_crm_results.jsonl');
@@ -27,6 +28,7 @@ const CATEGORIES = {
   'air-dryer': `${BASE}/search?N=2748940002&Nr=product.language%3AEnglish&catNav=true&st=parts`,
 };
 const EXPECTED_CATEGORY_COUNTS = { 'air-dryer': 3 };
+const JOB_PROGRESS_MIN_SECONDS = Math.max(Number(process.env.JOB_PROGRESS_MIN_SECONDS) || 120, 0);
 
 const args = process.argv.slice(2);
 const value = (flag) => { const i = args.indexOf(flag); return i >= 0 ? args[i + 1] : null; };
@@ -40,6 +42,21 @@ function loadJson(file, fallback) {
 function appendJsonl(row) { fs.appendFileSync(OUTPUT, `${JSON.stringify(row)}\n`, 'utf8'); }
 function saveProgress(done) {
   fs.writeFileSync(PROGRESS, JSON.stringify({ done: [...done].sort(), updated_at: new Date().toISOString() }, null, 2));
+}
+
+function loadLatestStatuses(file) {
+  const latest = new Map();
+  try {
+    for (const line of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
+      if (!line.trim()) continue;
+      try {
+        const row = JSON.parse(line);
+        const code = normalize(row.codigo_base || row.part_number);
+        if (code) latest.set(code, String(row.status || 'UNKNOWN').toUpperCase());
+      } catch {}
+    }
+  } catch {}
+  return latest;
 }
 
 function numeric(text) {
@@ -132,7 +149,6 @@ async function exhaustSection(page, section) {
   let showMoreClicks = 0, plusClicks = 0, stable = 0, previousRows = -1;
 
   for (let pass = 0; pass < 150 && stable < 3; pass++) {
-    // Expand current rows first, then load more rows, then expand newly loaded rows.
     plusClicks += await clickVisible(page, plusSelector);
     const more = await clickVisible(page, showSelector);
     showMoreClicks += more;
@@ -167,6 +183,7 @@ async function exhaustAllSections(page) {
     remaining_plus: available.reduce((n, s) => n + s.remaining_plus, 0),
   };
 }
+
 async function extractPage(page, requestedCode) {
   return page.evaluate((requested) => {
     const text = (el) => (el?.textContent || '').replace(/\s+/g, ' ').trim();
@@ -216,7 +233,7 @@ async function resolveProductUrl(page, code) {
   return href ? new URL(href, BASE).href : null;
 }
 
-async function categoryCodes(page, category) {
+async function categoryCodes(page, category, notifier) {
   await page.goto(CATEGORIES[category], { waitUntil: 'domcontentloaded', timeout: 90000 });
   await sleep(4000);
   const codes = new Set();
@@ -247,55 +264,153 @@ async function categoryCodes(page, category) {
     expected_codes: EXPECTED_CATEGORY_COUNTS[category] || null,
     catalog_complete: !EXPECTED_CATEGORY_COUNTS[category] || codes.size === EXPECTED_CATEGORY_COUNTS[category],
   };
-  fs.writeFileSync(path.join(ROOT, `donaldson_${category}_catalog_audit.json`), JSON.stringify(audit, null, 2));
+  const auditFile = `donaldson_${category}_catalog_audit.json`;
+  fs.writeFileSync(path.join(ROOT, auditFile), JSON.stringify(audit, null, 2));
   if (!audit.catalog_complete) {
     fs.writeFileSync(path.join(ROOT, `donaldson_${category}_incomplete_catalog.html`), await page.content(), 'utf8');
     await page.screenshot({ path: path.join(ROOT, `donaldson_${category}_incomplete_catalog.png`), fullPage: true });
   }
   console.log(`[catalog:${category}] audit=${JSON.stringify(audit)}`);
-  if (!audit.catalog_complete) throw new Error(`INCOMPLETE_CATALOG: ${category} expected ${audit.expected_codes}, discovered ${audit.codes_discovered}`);
+  if (!audit.catalog_complete) {
+    if (notifier) {
+      await notifier.blocked(
+        `Catálogo ${category} incompleto: esperados ${audit.expected_codes}, descubiertos ${audit.codes_discovered}. La corrida se detuvo para evitar evidencia parcial.`,
+        {
+          title: `HERMES — Donaldson ${category} bloqueado`,
+          deepLink: `/technical-jobs/${notifier.jobId}?artifact=${encodeURIComponent(auditFile)}`,
+          metadata: { reason: 'INCOMPLETE_CATALOG', ...audit, artifact: auditFile },
+        }
+      );
+    }
+    const error = new Error(`INCOMPLETE_CATALOG: ${category} expected ${audit.expected_codes}, discovered ${audit.codes_discovered}`);
+    error.jobBlocked = true;
+    throw error;
+  }
   return [...codes];
 }
 
-async function main() {
-  const browser = await chromium.launch({ headless: !args.includes('--headed') });
-  const context = await browser.newContext({ locale: 'en-US' });
-  const page = await context.newPage();
-  let codes = [];
-  const part = value('--part'), input = value('--input'), category = value('--category');
-  if (part) codes = [normalize(part)];
-  else if (input) {
-    const raw = loadJson(path.resolve(input), []);
-    codes = [...new Set((Array.isArray(raw) ? raw : raw.codes || raw.results || []).map((x) => normalize(typeof x === 'string' ? x : x.codigo_base || x.part_number)).filter(Boolean))];
-  } else if (category && CATEGORIES[category]) codes = await categoryCodes(page, category);
-  else throw new Error('Use --part, --input or a supported --category');
-
-  const done = new Set(loadJson(PROGRESS, { done: [] }).done || []);
-  console.log(`[run] requested=${codes.length} already_done=${codes.filter((c) => done.has(c)).length}`);
-  for (const code of codes) {
-    if (done.has(code)) { console.log(`[skip] ${code} already complete in progress file`); continue; }
-    const started = new Date().toISOString();
-    console.log(`[product] ${code} start`);
-    try {
-      const sourceUrl = await resolveProductUrl(page, code);
-      if (!sourceUrl) {
-        appendJsonl({ codigo_base: code, status: 'NOT_FOUND', scraped_at: started });
-        console.log(`[product] ${code} NOT_FOUND`);
-        fs.appendFileSync(NOT_FOUND, `${code}\n`); done.add(code); saveProgress(done); continue;
-      }
-      await page.goto(sourceUrl, { waitUntil: 'networkidle', timeout: 90000 });
-      const audit = await exhaustAllSections(page);
-      const official = await extractPage(page, code);
-      const metric = metricFromOfficial(official.attributes);
-      appendJsonl({ codigo_base: code, status: audit.expansion_complete ? 'OK' : 'PARTIAL', source_url: page.url(), scraped_at: new Date().toISOString(), official, metric, audit });
-      console.log(`[product] ${code} status=${audit.expansion_complete ? 'OK' : 'PARTIAL'} remaining_show_more=${audit.remaining_show_more} remaining_plus=${audit.remaining_plus}`);
-    } catch (error) {
-      appendJsonl({ codigo_base: code, status: 'ERROR', error: error.message, scraped_at: new Date().toISOString() });
-      console.error(`[product] ${code} ERROR ${error.message}`);
+async function maybeEmitProgress(notifier, runStartedAt, processed, total) {
+  if (!total || Date.now() - runStartedAt < JOB_PROGRESS_MIN_SECONDS * 1000) return;
+  const percent = Math.floor((processed / total) * 100);
+  for (const milestone of [25, 50, 75]) {
+    if (percent >= milestone) {
+      await notifier.progress(
+        milestone,
+        `${processed}/${total} códigos reconciliados en esta corrida.`,
+        { metadata: { processed, total } }
+      );
     }
-    done.add(code); saveProgress(done);
   }
-  await browser.close();
 }
 
-main().catch((error) => { console.error(error); process.exit(1); });
+async function main() {
+  const runStartedAt = Date.now();
+  const part = value('--part'), input = value('--input'), category = value('--category');
+  const requestedScope = part ? `part:${normalize(part)}` : input ? `input:${path.basename(input)}` : category ? `category:${category}` : 'unresolved';
+  const notifier = createJobNotifier({
+    jobKey: 'donaldson-crm',
+    title: 'HERMES — Donaldson',
+    module: 'HERMES',
+    metadata: { scraper: 'scripts/scrape_donaldson_crm.js', scope: requestedScope },
+  });
+  const runLink = `/technical-jobs/${notifier.jobId}`;
+  let browser;
+
+  await notifier.started(`Corrida Donaldson iniciada. Alcance solicitado: ${requestedScope}.`, {
+    deepLink: runLink,
+    metadata: { started_at: new Date(runStartedAt).toISOString() },
+  });
+
+  try {
+    browser = await chromium.launch({ headless: !args.includes('--headed') });
+    const context = await browser.newContext({ locale: 'en-US' });
+    const page = await context.newPage();
+    let codes = [];
+
+    if (part) codes = [normalize(part)];
+    else if (input) {
+      const raw = loadJson(path.resolve(input), []);
+      codes = [...new Set((Array.isArray(raw) ? raw : raw.codes || raw.results || []).map((x) => normalize(typeof x === 'string' ? x : x.codigo_base || x.part_number)).filter(Boolean))];
+    } else if (category && CATEGORIES[category]) codes = await categoryCodes(page, category, notifier);
+    else throw new Error('Use --part, --input or a supported --category');
+
+    await notifier.checkpoint('UNIVERSE_READY', `${codes.length} códigos definidos para reconciliación.`, {
+      title: 'HERMES — Donaldson universo definido',
+      deepLink: runLink,
+      metadata: { requested_codes: codes.length },
+    });
+
+    const done = new Set(loadJson(PROGRESS, { done: [] }).done || []);
+    let processed = codes.filter((c) => done.has(c)).length;
+    console.log(`[run] requested=${codes.length} already_done=${processed}`);
+
+    for (const code of codes) {
+      if (done.has(code)) { console.log(`[skip] ${code} already complete in progress file`); continue; }
+      const started = new Date().toISOString();
+      console.log(`[product] ${code} start`);
+      try {
+        const sourceUrl = await resolveProductUrl(page, code);
+        if (!sourceUrl) {
+          appendJsonl({ codigo_base: code, status: 'NOT_FOUND', scraped_at: started });
+          console.log(`[product] ${code} NOT_FOUND`);
+          fs.appendFileSync(NOT_FOUND, `${code}\n`);
+          done.add(code);
+          saveProgress(done);
+          processed++;
+          await maybeEmitProgress(notifier, runStartedAt, processed, codes.length);
+          continue;
+        }
+        await page.goto(sourceUrl, { waitUntil: 'networkidle', timeout: 90000 });
+        const audit = await exhaustAllSections(page);
+        const official = await extractPage(page, code);
+        const metric = metricFromOfficial(official.attributes);
+        appendJsonl({ codigo_base: code, status: audit.expansion_complete ? 'OK' : 'PARTIAL', source_url: page.url(), scraped_at: new Date().toISOString(), official, metric, audit });
+        console.log(`[product] ${code} status=${audit.expansion_complete ? 'OK' : 'PARTIAL'} remaining_show_more=${audit.remaining_show_more} remaining_plus=${audit.remaining_plus}`);
+      } catch (error) {
+        appendJsonl({ codigo_base: code, status: 'ERROR', error: error.message, scraped_at: new Date().toISOString() });
+        console.error(`[product] ${code} ERROR ${error.message}`);
+      }
+      done.add(code);
+      saveProgress(done);
+      processed++;
+      await maybeEmitProgress(notifier, runStartedAt, processed, codes.length);
+    }
+
+    const latest = loadLatestStatuses(OUTPUT);
+    const counts = { OK: 0, PARTIAL: 0, NOT_FOUND: 0, ERROR: 0, UNKNOWN: 0 };
+    for (const code of codes) {
+      const status = latest.get(code) || 'UNKNOWN';
+      if (Object.prototype.hasOwnProperty.call(counts, status)) counts[status]++;
+      else counts.UNKNOWN++;
+    }
+    const reconciled = codes.filter((code) => done.has(code)).length;
+    const durationSeconds = Math.round((Date.now() - runStartedAt) / 1000);
+    const reportMessage = `${reconciled}/${codes.length} códigos reconciliados. OK: ${counts.OK} · PARTIAL: ${counts.PARTIAL} · NOT_FOUND: ${counts.NOT_FOUND} · ERROR: ${counts.ERROR}${counts.UNKNOWN ? ` · UNKNOWN: ${counts.UNKNOWN}` : ''}.`;
+
+    await notifier.completed(reportMessage, {
+      title: 'HERMES — Donaldson completado',
+      deepLink: `${runLink}?artifact=${encodeURIComponent(path.basename(OUTPUT))}`,
+      metadata: {
+        requested_codes: codes.length,
+        reconciled_codes: reconciled,
+        status_counts: counts,
+        duration_seconds: durationSeconds,
+        result_artifact: path.basename(OUTPUT),
+        progress_artifact: path.basename(PROGRESS),
+      },
+    });
+  } catch (error) {
+    if (!error.jobBlocked) {
+      await notifier.failed(error.message || 'Error fatal sin detalle.', {
+        title: 'HERMES — Donaldson falló',
+        deepLink: runLink,
+        metadata: { error_name: error.name || 'Error', error_message: error.message || String(error) },
+      });
+    }
+    throw error;
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+  }
+}
+
+main().catch((error) => { console.error(error); process.exitCode = 1; });
