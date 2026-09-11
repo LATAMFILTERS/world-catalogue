@@ -68,7 +68,7 @@ Primary systems:
 
 - Lube/Oil Protection Systems
 - Air Intake & Airflow Protection Systems
-- Cabin Air Protection
+- Cabin Air / MICROKAPPA? (subdomain of Air Intake & Airflow Protection Systems)
 - Fuel Cleanliness Protection Systems (expandable as validated knowledge is added)
 
 Primary technologies:
@@ -184,7 +184,7 @@ Engine air filter
 -> MACROCORE™ candidate relationship
 
 Cabin air filter
--> Cabin Air Protection
+-> Air Intake & Airflow Protection Systems -> Cabin Air / MICROKAPPA?
 -> MICROKAPPA™ candidate relationship
 
 Cross-system/general maintenance material

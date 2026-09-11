@@ -1,8 +1,8 @@
 ---
 type: structured_knowledge_candidate
 status: candidate
-knowledge_object_id: "LD-CABIN-CARBON-MEDIA"
-title: "Activated Carbon in Cabin Air Filtration"
+knowledge_object_id: "LD-CABIN-FUNDAMENTALS"
+title: "Cabin Air Filtration Fundamentals"
 domain: "LIGHT_DUTY_KNOWLEDGE_DOMAIN"
 knowledge_content_type: "Engineering Reference"
 confidence: "low"
@@ -14,7 +14,7 @@ catalog_write_allowed: false
 cross_reference_write_allowed: false
 ---
 
-# Activated Carbon in Cabin Air Filtration
+# Cabin Air Filtration Fundamentals
 
 > **NODAL CENTER — REVIEW CANDIDATE.** Structured by HERMES and ELIMFILTERS knowledge governance. This note is not canonical, is not public, and cannot create product, application, SKU or cross-reference authority.
 
@@ -22,7 +22,7 @@ cross_reference_write_allowed: false
 
 - Domain: LIGHT_DUTY_KNOWLEDGE_DOMAIN
 - Industries: Automotive
-- Systems: Cabin Air Protection
+- Systems: Air Intake & Airflow Protection Systems
 - Technologies: MICROKAPPA™
 - Technology relation: probable
 - Application relation: candidate
@@ -30,7 +30,6 @@ cross_reference_write_allowed: false
 ## Components
 
 - Cabin Air Filter
-- Activated Carbon Media
 - HVAC System
 
 ## Problems
@@ -67,15 +66,13 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Source-Reported Technical Value: 90 % | evidence: EVID-56D901067740C663 | status: awaiting_validation
-- Source-Reported Technical Value: 6-12 months | evidence: EVID-56D901067740C663 | status: awaiting_validation
-- Service Interval: 3-6 months | evidence: EVID-56D901067740C663 | status: awaiting_validation
-- Source-Reported Technical Value: 99.97 % | evidence: EVID-56D901067740C663 | status: awaiting_validation
+- Service Interval: 000 miles | evidence: EVID-5C13CCE9F1A838E3 | status: awaiting_validation
+- Source-Reported Technical Value: 98 % | evidence: EVID-5C13CCE9F1A838E3 | status: awaiting_validation
 
 ## Technical Relationships — Awaiting Validation
 
-- Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination. | status: awaiting_validation
-- Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function. | status: awaiting_validation
+- The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path. | status: awaiting_validation
+- As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary. | status: awaiting_validation
 
 ## Operating Conditions
 
@@ -87,12 +84,14 @@ cross_reference_write_allowed: false
 
 ## Shared Engineering
 
+- [[SHARED-FILTRATION-EFFICIENCY|Filtration Efficiency]]
 - [[SHARED-FLOW-RATE|Flow Rate]]
+- [[SHARED-CONTAMINANT-LOADING|Contaminant Loading]]
 - [[SHARED-SERVICE-LIFE|Service Life]]
 
 ## Evidence Trace
 
-- EVID-56D901067740C663
+- EVID-5C13CCE9F1A838E3
 
 ## Governance
 

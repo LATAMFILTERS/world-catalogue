@@ -1,11 +1,11 @@
 ---
 type: structured_knowledge_candidate
 status: candidate
-knowledge_object_id: "LD-CABIN-SERVICE-INTERVAL"
-title: "Cabin Filter Service Interval and Environmental Load"
+knowledge_object_id: "LD-CABIN-CARBON-MEDIA"
+title: "Activated Carbon in Cabin Air Filtration"
 domain: "LIGHT_DUTY_KNOWLEDGE_DOMAIN"
-knowledge_content_type: "Service Reference"
-confidence: "medium"
+knowledge_content_type: "Engineering Reference"
+confidence: "low"
 publication_status: awaiting_validation
 public_use_allowed: false
 hermes_origin: true
@@ -14,7 +14,7 @@ catalog_write_allowed: false
 cross_reference_write_allowed: false
 ---
 
-# Cabin Filter Service Interval and Environmental Load
+# Activated Carbon in Cabin Air Filtration
 
 > **NODAL CENTER — REVIEW CANDIDATE.** Structured by HERMES and ELIMFILTERS knowledge governance. This note is not canonical, is not public, and cannot create product, application, SKU or cross-reference authority.
 
@@ -22,7 +22,7 @@ cross_reference_write_allowed: false
 
 - Domain: LIGHT_DUTY_KNOWLEDGE_DOMAIN
 - Industries: Automotive
-- Systems: Cabin Air Protection
+- Systems: Air Intake & Airflow Protection Systems
 - Technologies: MICROKAPPA™
 - Technology relation: probable
 - Application relation: candidate
@@ -67,21 +67,19 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Filtration Efficiency: 99 % | evidence: EVID-CD272EDFE1E0DAFA | status: awaiting_validation
-- Filtration Efficiency: 95 % | evidence: EVID-CD272EDFE1E0DAFA | status: awaiting_validation
-- Filtration Efficiency: 12 months | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
-- Service Interval: 12 months | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
+- Source-Reported Technical Value: 90 % | evidence: EVID-56D901067740C663 | status: awaiting_validation
+- Source-Reported Technical Value: 6-12 months | evidence: EVID-56D901067740C663 | status: awaiting_validation
+- Service Interval: 3-6 months | evidence: EVID-56D901067740C663 | status: awaiting_validation
+- Source-Reported Technical Value: 99.97 % | evidence: EVID-56D901067740C663 | status: awaiting_validation
 
 ## Technical Relationships — Awaiting Validation
 
-- Cabin-filter service interval is affected by environmental particulate loading, seasonal conditions and vehicle usage. | status: awaiting_validation
-- High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions. | status: awaiting_validation
+- Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination. | status: awaiting_validation
+- Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function. | status: awaiting_validation
 
 ## Operating Conditions
 
-- Dusty Environment
-- High Temperature / Summer Heat
+- None recorded
 
 ## Standards
 
@@ -89,16 +87,12 @@ cross_reference_write_allowed: false
 
 ## Shared Engineering
 
-- [[SHARED-CONTAMINANT-LOADING|Contaminant Loading]]
+- [[SHARED-FLOW-RATE|Flow Rate]]
 - [[SHARED-SERVICE-LIFE|Service Life]]
-- [[SHARED-RESTRICTION|Restriction]]
 
 ## Evidence Trace
 
-- EVID-CE732059222F59FE
-- EVID-CD272EDFE1E0DAFA
-- EVID-E9C9F923E452D444
-- EVID-AFC8451BE949EFA3
+- EVID-56D901067740C663
 
 ## Governance
 

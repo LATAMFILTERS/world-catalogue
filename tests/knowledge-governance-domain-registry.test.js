@@ -20,7 +20,8 @@ test('HD and LD remain parallel governed domains', () => {
   assert.equal(INDUSTRIES.HEAVY_DUTY.includes('Truck Fleets'), true);
   assert.deepEqual(INDUSTRIES.LIGHT_DUTY, ['Automotive']);
   assert.equal(isSystemAllowedForDomain(KNOWLEDGE_DOMAINS.HEAVY_DUTY, SYSTEMS.HYDRAULIC), true);
-  assert.equal(isSystemAllowedForDomain(KNOWLEDGE_DOMAINS.LIGHT_DUTY, SYSTEMS.CABIN_AIR), true);
+  assert.equal(Object.values(SYSTEMS).length, 5);
+  assert.equal(isSystemAllowedForDomain(KNOWLEDGE_DOMAINS.LIGHT_DUTY, SYSTEMS.AIR_INTAKE), true);
   assert.equal(isIndustryAllowedForDomain(KNOWLEDGE_DOMAINS.LIGHT_DUTY, 'Automotive'), true);
   assert.equal(isIndustryAllowedForDomain(KNOWLEDGE_DOMAINS.LIGHT_DUTY, 'Mining'), false);
 });

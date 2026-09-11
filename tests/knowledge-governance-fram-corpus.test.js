@@ -43,7 +43,7 @@ test('corpus maps LD knowledge to SYNTRAX, MACROCORE and MICROKAPPA topic famili
 
   const carbonCabin = classifyAutomotiveSource('https://www.fram.com/vehicle-maintenance-center/post/how-carbon-air-filters-work');
   assert.equal(carbonCabin.technology_candidates.includes('MICROKAPPA™'), true);
-  assert.equal(carbonCabin.knowledge_systems.includes('Cabin Air Protection'), true);
+  assert.equal(carbonCabin.knowledge_systems.includes('Air Intake & Airflow Protection Systems'), true);
 });
 
 test('corpus assigns precise knowledge content types without changing legacy candidate_type', () => {

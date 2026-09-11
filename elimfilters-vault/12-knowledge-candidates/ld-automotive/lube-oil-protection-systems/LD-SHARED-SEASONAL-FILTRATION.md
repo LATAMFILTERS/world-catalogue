@@ -22,7 +22,7 @@ cross_reference_write_allowed: false
 
 - Domain: LIGHT_DUTY_KNOWLEDGE_DOMAIN
 - Industries: Automotive
-- Systems: Lube/Oil Protection Systems; Air Intake & Airflow Protection Systems; Cabin Air Protection
+- Systems: Lube/Oil Protection Systems; Air Intake & Airflow Protection Systems; Air Intake & Airflow Protection Systems
 - Technologies: SYNTRAX™; MACROCORE™; MICROKAPPA™
 - Technology relation: probable
 - Application relation: candidate

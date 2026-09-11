@@ -17,7 +17,7 @@ sku_authority: postgresql
 
 - Lube/Oil Protection Systems
 - Air Intake & Airflow Protection Systems
-- Cabin Air Protection
+- Air Intake & Airflow Protection Systems ? Cabin Air / MICROKAPPA? subdomain
 - Fuel Cleanliness Protection Systems — expandable only as validated LD evidence is added
 
 ## Technology relationships

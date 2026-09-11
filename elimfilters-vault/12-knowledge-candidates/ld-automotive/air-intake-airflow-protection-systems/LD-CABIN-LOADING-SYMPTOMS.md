@@ -22,7 +22,7 @@ cross_reference_write_allowed: false
 
 - Domain: LIGHT_DUTY_KNOWLEDGE_DOMAIN
 - Industries: Automotive
-- Systems: Cabin Air Protection
+- Systems: Air Intake & Airflow Protection Systems
 - Technologies: MICROKAPPA™
 - Technology relation: probable
 - Application relation: candidate
