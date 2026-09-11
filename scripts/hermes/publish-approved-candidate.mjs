@@ -50,6 +50,9 @@ if (live && isSynthetic && !allowSynthetic) {
   throw new Error('Synthetic publication is blocked. Set HERMES_ALLOW_SYNTHETIC_PUBLISH=true only for an explicit local test.');
 }
 
+const sourcePublicReferenceAllowed = candidate?.source_governance?.public_brand_reference === true;
+const publicSourceVisibility = sourcePublicReferenceAllowed ? 'explicitly_allowed' : 'internal_only';
+
 const vaultRoot = path.resolve('elimfilters-vault');
 const targetDir = path.resolve(vaultRoot, normalizedTargetFolder);
 if (!targetDir.startsWith(vaultRoot + path.sep)) throw new Error('Target folder escapes the vault');
@@ -67,7 +70,7 @@ fs.mkdirSync(backupDir, { recursive: true });
 fs.mkdirSync(auditDir, { recursive: true });
 
 const now = new Date().toISOString();
-const note = `---\nentity_type: ${candidate.candidate_type}\nentity_code: ${safeEntity}\nstatus: DRAFT\nsource_candidate: ${candidate.entity_code}\nsource_url: ${candidate.source_url}\nsource_publisher: ${JSON.stringify(candidate.source_publisher)}\nevidence_level: ${candidate.evidence_level}\nclaim_scope: ${candidate.claim_scope}\nconfidence: ${candidate.confidence}\napproved_by: Victor Abreu\napproved_at: ${candidate.approved_at}\npublished_from_hermes_at: ${now}\nsynthetic_test: ${isSynthetic}\n---\n\n# ${safeEntity}\n\n## Proposed update\n\n${candidate.proposed_action}\n\n## Affected entities\n\n${candidate.affected_entities.map(v => `- ${v}`).join('\n')}\n\n## Source\n\n- Publisher: ${candidate.source_publisher}\n- URL: ${candidate.source_url}\n- Source hash: ${candidate.source_hash}\n\n> HERMES-controlled publication. This note remains DRAFT until canonical editorial review is complete.\n`;
+const note = `---\nentity_type: ${candidate.candidate_type}\nentity_code: ${safeEntity}\nstatus: DRAFT\nsource_candidate: ${candidate.entity_code}\nsource_url: ${candidate.source_url}\nsource_publisher: ${JSON.stringify(candidate.source_publisher)}\npublic_source_visibility: ${publicSourceVisibility}\nevidence_level: ${candidate.evidence_level}\nclaim_scope: ${candidate.claim_scope}\nconfidence: ${candidate.confidence}\napproved_by: Victor Abreu\napproved_at: ${candidate.approved_at}\npublished_from_hermes_at: ${now}\nsynthetic_test: ${isSynthetic}\n---\n\n# ${safeEntity}\n\n## Proposed update\n\n${candidate.proposed_action}\n\n## Affected entities\n\n${candidate.affected_entities.map(v => `- ${v}`).join('\n')}\n\n## Internal evidence provenance\n\n> Internal governance metadata. Do not render this section, publisher name, or source URL in public ELIMFILTERS content unless public_source_visibility is explicitly_allowed after editorial review.\n\n- Publisher: ${candidate.source_publisher}\n- URL: ${candidate.source_url}\n- Source hash: ${candidate.source_hash}\n\n> HERMES-controlled publication. This note remains DRAFT until canonical editorial review is complete.\n`;
 const noteHash = crypto.createHash('sha256').update(note).digest('hex');
 const previewPath = path.join(previewDir, `${candidate.entity_code}.publication-preview.md`);
 fs.writeFileSync(previewPath, note, 'utf8');
@@ -97,6 +100,7 @@ const audit = {
   backup_path: backupPath ? path.relative(process.cwd(), backupPath).replaceAll('\\','/') : null,
   note_sha256: noteHash,
   synthetic_test: isSynthetic,
+  public_source_visibility: publicSourceVisibility,
   database_write: false,
   pgvector_write: false,
   unified_data_write: false
