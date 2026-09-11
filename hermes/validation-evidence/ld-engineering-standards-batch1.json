@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Independent technical corroboration for Nodal Center LD validation batch 1",
+  "public_use_allowed": false,
+  "sources": [
+    {
+      "evidence_id": "EVID-VAL45481",
+      "authority": "ISO",
+      "reference": "ISO 4548-1:1997",
+      "title": "Methods of test for full-flow lubricating oil filters for internal combustion engines — Part 1: Differential pressure/flow characteristics",
+      "url": "https://www.iso.org/standard/21711.html",
+      "status_checked": "current_confirmed_2024",
+      "supports": ["lubricating-oil filter differential-pressure/flow relationships"]
+    },
+    {
+      "evidence_id": "EVID-VAL45482",
+      "authority": "ISO",
+      "reference": "ISO 4548-2:1997",
+      "title": "Methods of test for full-flow lubricating oil filters for internal combustion engines — Part 2: Element by-pass valve characteristics",
+      "url": "https://www.iso.org/standard/21712.html",
+      "status_checked": "current_confirmed_2024",
+      "supports": ["oil-filter bypass-valve behavior and application-specific bypass characteristics"]
+    },
+    {
+      "evidence_id": "EVID-VAL454812",
+      "authority": "ISO",
+      "reference": "ISO 4548-12:2017",
+      "title": "Methods of test for full-flow lubricating oil filters for internal combustion engines — Part 12: Filtration efficiency using particle counting and contaminant retention capacity",
+      "url": "https://www.iso.org/standard/62763.html",
+      "status_checked": "published_under_revision",
+      "supports": ["particle-removal efficiency", "contaminant retention capacity", "differential pressure"]
+    },
+    {
+      "evidence_id": "EVID-VAL45485",
+      "authority": "ISO",
+      "reference": "ISO 4548-5:2020",
+      "title": "Methods of test for full-flow lubricating oil filters for internal combustion engines — Part 5: Test for hydraulic pulse durability",
+      "url": "https://www.iso.org/standard/69996.html",
+      "status_checked": "published",
+      "supports": ["cold-start pressure surge", "cyclic pressure exposure"]
+    },
+    {
+      "evidence_id": "EVID-VAL5011",
+      "authority": "ISO",
+      "reference": "ISO 5011:2025",
+      "title": "Inlet air cleaning equipment for internal combustion engines and compressors — Performance testing",
+      "url": "https://www.iso.org/standard/85950.html",
+      "status_checked": "published_2025",
+      "supports": ["airflow restriction/differential pressure", "dust collection efficiency", "dust capacity"]
+    },
+    {
+      "evidence_id": "EVID-VAL111551",
+      "authority": "ISO",
+      "reference": "ISO/TS 11155-1:2001",
+      "title": "Road vehicles — Air filters for passenger compartments — Part 1: Test for particulate filtration",
+      "url": "https://www.iso.org/standard/34308.html",
+      "status_checked": "technical_specification",
+      "supports": ["cabin particulate filtration", "pressure loss", "fractional efficiency", "particulate holding capability"]
+    },
+    {
+      "evidence_id": "EVID-VAL111552",
+      "authority": "ISO",
+      "reference": "ISO 11155-2:2009",
+      "title": "Road vehicles — Air filters for passenger compartments — Part 2: Test for gaseous filtration",
+      "url": "https://www.iso.org/standard/46274.html",
+      "status_checked": "current_confirmed_2023",
+      "supports": ["dynamic gas adsorption", "odor/gas reduction", "pressure loss", "gas/vapour removal"]
+    },
+    {
+      "evidence_id": "EVID-VALJ300",
+      "authority": "SAE International",
+      "reference": "SAE J300_202405",
+      "title": "Engine Oil Viscosity Classification",
+      "url": "https://saemobilus.sae.org/standards/j300_202405-engine-oil-viscosity-classification",
+      "status_checked": "revised_2024",
+      "supports": ["engine-oil rheological/viscosity classification"]
+    }
+  ]
+}
