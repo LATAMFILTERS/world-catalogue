@@ -54,6 +54,8 @@ __pycache__/
 *-CONFLICT-BACKUP-*/
 
 hermes/source-cache/
+hermes/automotive-source-cache/
+hermes/forensic-source-snapshots/
 hermes/real-candidates/
 hermes/real-candidates-previews/
 hermes/update-previews/
