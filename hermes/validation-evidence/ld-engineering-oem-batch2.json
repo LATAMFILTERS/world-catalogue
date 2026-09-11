@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Independent OEM and regulatory technical corroboration for Nodal Center LD validation batch 2",
+  "public_use_allowed": false,
+  "sources": [
+    {
+      "evidence_id": "EVID-VALFORD-AIR",
+      "authority": "Ford Motor Company",
+      "title": "Changing the Engine Air Filter",
+      "url": "https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1919603&Uid=G1919602&buildtype=web%2F1000&countryCode=USA&div=f&languageCode=en&userMarket=USA&vFilteringEnabled=False&variantid=9069",
+      "supports": ["engine-air filter removal", "housing cleaning", "correct seating", "sealing verification"]
+    },
+    {
+      "evidence_id": "EVID-VALTOYOTA-CABIN",
+      "authority": "Toyota Motor Sales, U.S.A.",
+      "title": "2024 Grand Highlander — Air conditioning filter",
+      "url": "https://www.toyota.com/owners/warranty-owners-manuals/digital/article/grand-highlander/2024/om0e126u/ch06se030408/",
+      "supports": ["cabin-filter orientation", "dust/heavy-traffic shortened service", "reduced-airflow clogging symptom"]
+    },
+    {
+      "evidence_id": "EVID-VALTOYOTA-MAINT",
+      "authority": "Toyota Motor Sales, U.S.A.",
+      "title": "Scheduled Maintenance Guide — special operating conditions",
+      "url": "https://assets.sia.toyota.com/publications/en/omms-s/T-MMS-09FJCruiser/pdf/09%20FJCruiser%20SMG%20127074%201st%20Print%20EN.pdf",
+      "supports": ["dusty-road severity", "cabin-filter life variation", "condition-based maintenance"]
+    },
+    {
+      "evidence_id": "EVID-VALNHTSA-OIL-SERVICE",
+      "authority": "OEM service bulletin archived by NHTSA",
+      "title": "Engine Oil and Filter Replacement service procedure",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2023/MC-10231281-0001.pdf",
+      "supports": ["oil-filter seal inspection", "clean contact surface", "correct installation", "post-service leak verification"]
+    },
+    {
+      "evidence_id": "EVID-VALNHTSA-OLDGASKET",
+      "authority": "OEM service bulletin archived by NHTSA",
+      "title": "Oil-filter gasket sealing-surface inspection",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2015/MC-10135381-9999.pdf",
+      "supports": ["old gasket removal", "sealing-surface cleaning", "leak prevention"]
+    },
+    {
+      "evidence_id": "EVID-VALNHTSA-LOWOIL1",
+      "authority": "OEM service bulletin archived by NHTSA",
+      "title": "Low Oil Pressure Message/Light diagnostic guidance",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2015/MC-10114601-9999.pdf",
+      "supports": ["filter restriction as one possible low-pressure cause", "system-level diagnosis"]
+    },
+    {
+      "evidence_id": "EVID-VALNHTSA-LOWOIL2",
+      "authority": "OEM diagnostic flow archived by NHTSA",
+      "title": "Low oil pressure diagnostic flow chart",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2021/MC-10185928-0001.pdf",
+      "supports": ["manual pressure verification", "multiple-cause low-oil-pressure diagnosis"]
+    }
+  ]
+}
