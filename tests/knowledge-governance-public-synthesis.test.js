@@ -8,6 +8,7 @@ const {
 const {
   buildSynthesisInput,
   buildSynthesisInstructions,
+  detectExternalPhraseResemblance,
   validateSynthesisOutput
 } = require('../lib/knowledge-governance/elimfilters-ai-knowledge-synthesis-contract');
 
@@ -61,4 +62,19 @@ test('AI synthesis instructions explicitly forbid source paraphrase and brand le
   const instructions = buildSynthesisInstructions();
   assert.match(instructions, /do not paraphrase external articles/i);
   assert.match(instructions, /Never mention, cite, imitate or allude/i);
+  assert.match(instructions, /Do not preserve source sentence structure/i);
+});
+
+test('long source-text resemblance is blocked even without source brand or URL', () => {
+  const sourceText = 'As contaminant loading increases across the filter media restriction rises and differential pressure can eventually activate the bypass mechanism to preserve lubrication flow.';
+  const copiedDraft = 'As contaminant loading increases across the filter media restriction rises and differential pressure can eventually activate the bypass mechanism to preserve lubrication flow.';
+  const result = detectExternalPhraseResemblance(copiedDraft, [sourceText], { shingleSize: 8, maxMatchingShingles: 1 });
+  assert.equal(result.blocked, true);
+});
+
+test('independently reconstructed ELIMFILTERS engineering wording is allowed by resemblance guard', () => {
+  const sourceText = 'As contaminant loading increases across the filter media restriction rises and differential pressure can eventually activate the bypass mechanism to preserve lubrication flow.';
+  const elimfiltersDraft = 'A loaded lubrication filter can create a larger pressure drop. If the application-specific threshold is reached, bypass operation may maintain oil delivery while reducing filtration exposure control.';
+  const result = detectExternalPhraseResemblance(elimfiltersDraft, [sourceText], { shingleSize: 8, maxMatchingShingles: 1 });
+  assert.equal(result.blocked, false);
 });
