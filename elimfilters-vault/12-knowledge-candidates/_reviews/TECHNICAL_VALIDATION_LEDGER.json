@@ -9,42 +9,42 @@
     {
       "item_id": "METRIC-C49215E6C85EE38D",
       "source_line": "- Source-Reported Technical Value: 000 miles | evidence: EVID-D9470D17137F3A38 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-99FB58ACEC1F4AEF",
       "source_line": "- Service Interval: 000 miles | evidence: EVID-D9470D17137F3A38 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-F6F0C8C611C5EEF3",
       "source_line": "- Source-Reported Technical Value: 000 miles | evidence: EVID-27D9EF3AE43281EA | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-ED3071B5EFF154B3",
       "source_line": "- Filtration Efficiency: 10 psi | evidence: EVID-788F5F06C1DF74D5 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: pressure unit cannot represent filtration efficiency. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-47A33683A3D2EFE3",
@@ -59,22 +59,22 @@
     {
       "item_id": "METRIC-175E402F224D5D0C",
       "source_line": "- Service Interval: 2-6 % | evidence: EVID-788F5F06C1DF74D5 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: percentage cannot represent a service interval. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-776787CEC86C6B5D",
       "source_line": "- Service Interval: 000 miles | evidence: EVID-282C617439439F74 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-BA415CE4C092DBD9",
@@ -89,22 +89,22 @@
     {
       "item_id": "METRIC-FDFE3A289B3E8E39",
       "source_line": "- Source-Reported Technical Value: 000 miles | evidence: EVID-72D284E4ECE1163A | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-B58BD0EF640EFE9B",
       "source_line": "- Service Interval: 000 miles | evidence: EVID-72D284E4ECE1163A | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-FB7CFAFD2532DD4D",
@@ -139,12 +139,12 @@
     {
       "item_id": "METRIC-1E369089AA31D6B7",
       "source_line": "- Filtration Efficiency: 12 months | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: time unit cannot represent filtration efficiency. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-B6862CA307FAF22D",
@@ -159,12 +159,12 @@
     {
       "item_id": "METRIC-95BC5B20BB265D67",
       "source_line": "- Service Interval: 000 miles | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-DD24A8DAA654D90F",
@@ -209,12 +209,12 @@
     {
       "item_id": "METRIC-1FDFFA66B42F38BB",
       "source_line": "- Service Interval: 000 miles | evidence: EVID-5C13CCE9F1A838E3 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-3F304BEC234085EF",
@@ -239,32 +239,32 @@
     {
       "item_id": "METRIC-DA49EB8D0CB093FC",
       "source_line": "- Filtration Efficiency: 20 micron | evidence: EVID-DCBD3469FB0F59BA | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: micron value requires paired efficiency context and is misclassified as efficiency. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-B8A737448CD34AB2",
       "source_line": "- Service Interval: 000 miles | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-A8CB818097EBBE6D",
       "source_line": "- Source-Reported Technical Value: 000 miles | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-22BD7BA8883C9AFD",
@@ -279,12 +279,12 @@
     {
       "item_id": "METRIC-7C8AA52C6F1D4E5F",
       "source_line": "- Filtration Efficiency: 20 microns | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: micron value requires paired efficiency context and is misclassified as efficiency. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-60B85470CADFCACA",
@@ -299,12 +299,12 @@
     {
       "item_id": "METRIC-CF826190EF8245ED",
       "source_line": "- Particle Size / Micron Rating: 99 % | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: percentage cannot represent particle size or micron rating. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-70928020557B7AA2",
@@ -319,12 +319,12 @@
     {
       "item_id": "METRIC-2702D52BA3C3F6A7",
       "source_line": "- Particle Size / Micron Rating: 000 miles | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-0A18F8FE15A61E2B",
@@ -339,12 +339,12 @@
     {
       "item_id": "METRIC-8584CBCB2AFD5ADC",
       "source_line": "- Filtration Efficiency: 20 microns | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: micron value requires paired efficiency context and is misclassified as efficiency. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-CB5A33F0990359F4",
@@ -359,12 +359,12 @@
     {
       "item_id": "METRIC-C7B08E3FAF5CC52B",
       "source_line": "- Filtration Efficiency: 10 microns | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: micron value requires paired efficiency context and is misclassified as efficiency. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-34FED305AAAA404E",
@@ -399,12 +399,12 @@
     {
       "item_id": "METRIC-71C50E0EC2A2996C",
       "source_line": "- Filtration Efficiency: 5 microns | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: micron value requires paired efficiency context and is misclassified as efficiency. Candidate must be corrected/regenerated before promotion."
     },
     {
       "item_id": "METRIC-A1C34AEC14545C78",
@@ -419,24 +419,26 @@
     {
       "item_id": "METRIC-747ED579D43D9117",
       "source_line": "- Service Interval: 000 miles | evidence: EVID-F6A9C3B365AE75C2 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Rejected from canonical knowledge: truncated or malformed mileage extraction; numeric value is incomplete. Candidate must be corrected/regenerated before promotion."
     }
   ],
   "relationship_reviews": [
     {
       "item_id": "REL-EAC75BD327CF0F32",
       "source_line": "- Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL5011"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-7F943CADFBC30E8A",
@@ -451,22 +453,26 @@
     {
       "item_id": "REL-65CA57AD5B1CA722",
       "source_line": "- Engine-air-filter service life varies with dust exposure, operating environment and vehicle usage rather than mileage alone. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL5011"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-FE7BD79FF9545FFD",
       "source_line": "- Higher airborne contaminant loading can accelerate media loading and increase intake restriction. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VAL5011"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-D37C7B131601986B",
@@ -481,42 +487,51 @@
     {
       "item_id": "REL-B9FC6F604EEEB227",
       "source_line": "- Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VAL111552",
+        "EVID-VAL111551"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-2D9D970DF8ADF1FA",
       "source_line": "- Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL111552"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-E9086F68E62E35D7",
       "source_line": "- The cabin filter removes airborne particulate matter from air entering the passenger-compartment HVAC path. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VAL111551"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-49550435E049A1D0",
       "source_line": "- As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL111551"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-FC7C74691B99FA8C",
@@ -531,102 +546,130 @@
     {
       "item_id": "REL-B3CC871659229F0B",
       "source_line": "- High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL111551"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-56B2595218C9BBA1",
       "source_line": "- Excessive pressure difference across the filter can trigger bypass operation so lubricant flow can continue around the restricted media. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VAL45481",
+        "EVID-VAL45482"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-C705F199933A7F2E",
       "source_line": "- During bypass operation, lubrication flow may continue while filtration through the main media is temporarily reduced or absent. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL45482"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-44DF693BEC28A101",
       "source_line": "- A bypass setting must be treated as application-specific rather than as a universal filter value. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VAL45482"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-CF6CCDC04B11E73C",
       "source_line": "- Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VALJ300",
+        "EVID-VAL45485"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-039C25DDC9A33A43",
       "source_line": "- Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VAL45485",
+        "EVID-VAL45481",
+        "EVID-VAL45482"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-5A7B8F38A9A82B06",
       "source_line": "- Oil-filter architecture combines the filtration element with structural, sealing and flow-control components whose functions depend on the application. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL45481",
+        "EVID-VAL45482",
+        "EVID-VAL454812"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-D4D999DD2B8E68D3",
       "source_line": "- Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL45481",
+        "EVID-VAL454812"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-26FABE645DA1F517",
       "source_line": "- Increasing contaminant loading consumes available media capacity and can raise flow restriction. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VAL454812"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-BAB968EBDC870E03",
       "source_line": "- Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VAL454812",
+        "EVID-VAL45482"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-B5E977E1338ECC95",
@@ -651,22 +694,29 @@
     {
       "item_id": "REL-925087DCA3A0C008",
       "source_line": "- Physical similarity does not establish functional interchangeability between oil filters. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL45481",
+        "EVID-VAL45482",
+        "EVID-VAL454812"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-A75EA133CF0AE93D",
       "source_line": "- Correct fitment requires compatible sealing, attachment geometry and application-specific flow and pressure-control requirements. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL45481",
+        "EVID-VAL45482"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-68E5CD3FD6FF27E7",
@@ -691,22 +741,27 @@
     {
       "item_id": "REL-8A58D800E5E62027",
       "source_line": "- Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VAL45481",
+        "EVID-VAL454812"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-78C975B7E2F35E0F",
       "source_line": "- A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "standard_reference",
+      "supporting_evidence_ids": [
+        "EVID-VAL454812"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:27:10.073Z",
+      "notes": "Independently corroborated against governed engineering standards; source corpus was not used as sole validation authority."
     },
     {
       "item_id": "REL-9DA75FD97C08DF06",
@@ -1468,5 +1523,13 @@
       ],
       "procedure_item_ids": []
     }
+  },
+  "last_validation_batch": {
+    "batch_id": "LD_ENGINEERING_BATCH_1",
+    "reviewed_at": "2026-09-11T04:27:10.073Z",
+    "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
+    "relationship_approvals": 21,
+    "metric_rejections": 21,
+    "independent_evidence_registry": "hermes/validation-evidence/ld-engineering-standards-batch1.json"
   }
 }
