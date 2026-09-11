@@ -132,7 +132,7 @@ export default function CompetitiveAnalysisFrameworkPage() {
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       {/* Navigation */}
       <Link
-        href="/knowledge-system"
+        href="/knowledge-system/market"
         style={{
           display: 'inline-block',
           margin: '2rem',
@@ -494,10 +494,10 @@ export default function CompetitiveAnalysisFrameworkPage() {
             }}
           >
             {[
-              { text: 'Competitive Intelligence Analysis', href: '/knowledge-system/market/competitive-intelligence' },
-              { text: 'Market Projections 2026-2031', href: '/knowledge-system/market/competitive-intelligence' },
-              { text: 'Total Cost of Ownership Strategy', href: '/knowledge-center/fleet-optimization/total-cost-ownership' },
-              { text: 'Technology Differentiation', href: '/technologies' },
+              { text: 'Competitive Intelligence Analysis', href: '/knowledge-system/market/competitive-intelligence/' },
+              { text: 'Market Projections 2026-2031', href: '/knowledge-center/' },
+              { text: 'Total Cost of Ownership Strategy', href: '/knowledge-center/fleet-optimization/total-cost-ownership/' },
+              { text: 'Technology Differentiation', href: '/technologies/' },
             ].map((link) => (
               <Link
                 key={link.href}

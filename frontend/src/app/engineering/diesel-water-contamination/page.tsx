@@ -250,7 +250,7 @@ function DieselWaterContaminationContent() {
               },
               {
                 code: 'ISO 16332',
-                scope: 'Fuel filter water separation efficiency test. Defines coalescing efficiency measurement methodology for fuel-water separators — the standard used to rate HYDROCORE™ and equivalent water separation filter elements.',
+                scope: 'Fuel filter water separation efficiency test. Defines coalescing efficiency measurement methodology for fuel-water separators — the standard used to rate TURBOCORE™ and equivalent water separation filter elements.',
               },
             ].map((std) => (
               <div key={std.code} style={{
@@ -293,10 +293,10 @@ function DieselWaterContaminationContent() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
               {
-                tech: 'HYDROCORE™',
+                tech: 'TURBOCORE™',
                 role: 'Primary water separation',
                 description: 'Coalescing media that captures and separates free and emulsified water from diesel fuel before injector delivery. Primary defence against water contamination; applies ISO 16332 rated coalescing efficiency. Required on all fuel circuits where bulk storage condensation risk exists.',
-                href: '/engineering/technologies/TECH-HYDROCORE',
+                href: '/engineering/technologies/TECH-TURBOCORE',
               },
               {
                 tech: 'SYNTAPORE™',
@@ -305,10 +305,10 @@ function DieselWaterContaminationContent() {
                 href: '/engineering/technologies/TECH-SYNTAPORE',
               },
               {
-                tech: 'HYDROCORE™',
+                tech: 'TURBOCORE™',
                 role: 'Three-stage fuel filtration',
                 description: 'Three-stage fuel filtration sequence: pre-filter water separation, primary particle filtration, and final HPCR protection. Applied in systems where fuel path length from storage to injection is extended — agricultural equipment with large fuel tanks, marine diesel engines.',
-                href: '/engineering/technologies/TECH-HYDROCORE',
+                href: '/engineering/technologies/TECH-TURBOCORE',
               },
             ].map((item) => (
               <Link key={item.tech} href={item.href} style={{ textDecoration: 'none' }}>
@@ -416,8 +416,8 @@ function DieselWaterContaminationContent() {
             fontSize: '0.87rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7,
             marginBottom: '1.5rem', textAlign: 'justify',
           }}>
-            Product selection follows technology selection. HYDROCORE™ for water separation,
-            SYNTAPORE™ for HPCR injector protection.
+            Product selection follows technology selection. TURBOCORE™ for water separation,
+            SYNTAPORE™ for HPCR injector protection, TURBOCORE™ for three-stage systems.
             Equipment make and model determine the correct element dimensions, thread specification,
             and bypass pressure rating.
           </p>
@@ -448,14 +448,14 @@ function DieselWaterContaminationContent() {
             gap: '0.75rem',
           }}>
             {[
-              { label: 'Fuel Systems — Standards Domain', href: '/knowledge-center/standards' },
+              { label: 'Fuel Systems — Standards Domain', href: '/knowledge-center/standards/astm-d6304/' },
               { label: 'Diesel Water Contamination — Case Study', href: '/knowledge-center/engineering/fluid-cleanliness/' },
-              { label: 'ASTM D6304 — Karl Fischer Testing', href: '/knowledge-center/standards/astm-d6304' },
+              { label: 'ASTM D6304 — Karl Fischer Testing', href: '/knowledge-center/standards/astm-d6304/' },
               { label: 'Hydraulic Contamination', href: '/engineering/hydraulic-contamination' },
               { label: 'Dust Ingestion — Air Intake', href: '/engineering/dust-ingestion' },
               { label: 'Agriculture — Industry Application', href: '/industries/agriculture' },
               { label: 'Marine — Industry Application', href: '/industries/marine' },
-              { label: 'Fleet Fuel Efficiency', href: '/knowledge-center/fleet-optimization' },
+              { label: 'Fleet Fuel Efficiency', href: '/knowledge-center/fleet-optimization/total-cost-ownership/' },
             ].map((link) => (
               <Link key={link.href} href={link.href} style={{ textDecoration: 'none' }}>
                 <motion.div
@@ -532,7 +532,7 @@ function DieselWaterContaminationContent() {
           },
           mentions: {
             standards: ['ASTM D6304', 'ISO 12937', 'ISO 16332'],
-            technologies: ['HYDROCORE', 'SYNTAPORE'],
+            technologies: ['TURBOCORE', 'SYNTAPORE', 'TURBOCORE'],
             contaminationModes: ['water ingress', 'microbial growth', 'filter plugging', 'injector erosion'],
           },
           url: 'https://elimfilters.com/engineering/diesel-water-contamination',

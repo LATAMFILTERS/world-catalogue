@@ -246,12 +246,12 @@ function HydraulicContaminationContent() {
               {
                 code: 'ISO 4406',
                 scope: 'Particle cleanliness code classification for hydraulic and lube oil systems. Three-number code (4µm / 6µm / 14µm particle count per mL). Target: 16/14/11 for proportional valve circuits; 17/15/12 for standard hydraulic systems.',
-                link: '/knowledge-center/standards/iso-4406',
+                link: '/knowledge-system/standards/iso-4406',
               },
               {
                 code: 'ISO 16889',
                 scope: 'Multi-pass filter efficiency test methodology. Defines Beta ratio (βx[c]) as the ratio of upstream to downstream particle count at a given size. A filter rated β10[c] ≥ 1000 removes 99.9% of particles ≥10 µm.',
-                link: '/knowledge-center/standards/iso-16889',
+                link: '/knowledge-system/standards/iso-16889',
               },
               {
                 code: 'NFPA T2.14',
@@ -324,10 +324,10 @@ function HydraulicContaminationContent() {
                 mechanism: 'Particle contamination — bulk load',
               },
               {
-                tech: 'HYDROCORE™',
+                tech: 'TURBOCORE™',
                 role: 'Water separation',
                 description: 'Coalescing media for free and emulsified water removal from hydraulic fluid. Prevents water-accelerated fluid oxidation and varnish precursor formation. Applied in reservoir return-line housings.',
-                href: '/engineering/technologies/TECH-HYDROCORE',
+                href: '/engineering/technologies/TECH-TURBOCORE',
                 mechanism: 'Water contamination',
               },
               {
@@ -480,9 +480,9 @@ function HydraulicContaminationContent() {
             gap: '0.75rem',
           }}>
             {[
-              { label: 'ISO 4406 — Particle Cleanliness Codes', href: '/knowledge-center/standards/iso-4406' },
-              { label: 'ISO 16889 — Beta Ratio Filter Testing', href: '/knowledge-center/standards/iso-16889' },
-              { label: 'Hydraulic Systems — Standards Domain', href: '/knowledge-center/standards' },
+              { label: 'ISO 4406 — Particle Cleanliness Codes', href: '/knowledge-center/standards/iso-4406/' },
+              { label: 'ISO 16889 — Beta Ratio Filter Testing', href: '/knowledge-center/standards/iso-16889/' },
+              { label: 'Hydraulic Systems — Standards Domain', href: '/knowledge-center/standards/' },
               { label: 'Hydraulic Contamination — Case Study', href: '/knowledge-center/engineering/contamination-control/' },
               { label: 'Diesel Water Contamination', href: '/engineering/diesel-water-contamination' },
               { label: 'Particle Wear in Engines', href: '/knowledge-center/engineering/contamination-control/' },
@@ -571,7 +571,7 @@ function HydraulicContaminationContent() {
           },
           mentions: {
             standards: ['ISO 4406', 'ISO 16889', 'NFPA T2.14', 'DIN 51524'],
-            technologies: ['NANOFORCE', 'SYNTRAX', 'HYDROCORE', 'MICROKAPPA'],
+            technologies: ['NANOFORCE', 'SYNTRAX', 'TURBOCORE', 'MICROKAPPA'],
             contaminationModes: ['particle wear', 'silt contamination', 'varnish formation', 'water ingress'],
           },
           url: 'https://elimfilters.com/engineering/hydraulic-contamination',

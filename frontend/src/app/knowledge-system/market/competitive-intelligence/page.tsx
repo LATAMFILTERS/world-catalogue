@@ -48,7 +48,7 @@ export default function CompetitiveIntelligencePage() {
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh' }}>
       {/* Back Navigation */}
       <Link
-        href="/knowledge-system"
+        href="/knowledge-system/market"
         style={{
           display: 'inline-block',
           margin: '2rem',
@@ -374,10 +374,10 @@ export default function CompetitiveIntelligencePage() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
             {[
-              { text: 'Standards Domain Pages', href: '/knowledge-center/standards' },
-              { text: 'Total Cost of Ownership Analysis', href: '/knowledge-center/fleet-optimization/total-cost-ownership' },
-              { text: 'Technology Comparison', href: '/technologies' },
-              { text: 'Market Projections 2026-2031', href: '/knowledge-system/market/competitive-analysis-framework' },
+              { text: 'Standards Domain Pages', href: '/knowledge-center/standards/' },
+              { text: 'Total Cost of Ownership Analysis', href: '/knowledge-center/fleet-optimization/total-cost-ownership/' },
+              { text: 'Technology Comparison', href: '/technologies/' },
+              { text: 'Market Projections 2026-2031', href: '/knowledge-center/' },
             ].map((link) => (
               <Link
                 key={link.href}

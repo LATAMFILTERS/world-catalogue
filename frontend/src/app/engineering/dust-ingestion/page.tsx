@@ -249,7 +249,7 @@ function DustIngestionContent() {
               {
                 code: 'ISO 5011',
                 scope: 'Air filter element performance test method for internal combustion engines and compressors. Measures filtration efficiency (% particle capture at specified sizes), initial restriction, and dust-holding capacity under controlled test conditions. The standard used to rate MACROCORE™ and equivalent air filtration products.',
-                link: '/knowledge-center/standards/iso-5011',
+                link: '/knowledge-system/standards/air-intake-systems',
               },
               {
                 code: 'SAE J1539',
@@ -309,7 +309,7 @@ function DustIngestionContent() {
               {
                 tech: 'MACROCORE™',
                 role: 'Primary air intake protection',
-                description: 'Multi-layer filtration media rated per ISO 5011 for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. Primary protection for mining-class and agricultural engine applications.',
+                description: 'Progressive Density Gradient (PDG) filtration media achieving 99.9%–99.98% efficiency (ISO 5011) for off-highway diesel engines. Outer layers capture large particles and protect inner high-efficiency media. High dirt-holding capacity extends service intervals in extreme dust environments. Primary protection for mining-class and agricultural engine applications.',
                 href: '/engineering/technologies/TECH-MACROCORE',
               },
               {
@@ -462,7 +462,7 @@ function DustIngestionContent() {
             gap: '0.75rem',
           }}>
             {[
-              { label: 'Air Intake Systems — Standards Domain', href: '/knowledge-center/standards' },
+              { label: 'Air Intake Systems — Standards Domain', href: '/knowledge-center/standards/' },
               { label: 'Particle Wear — Contamination Study', href: '/knowledge-center/engineering/contamination-control/' },
               { label: 'MACROCORE™ Technology', href: '/engineering/technologies/TECH-MACROCORE' },
               { label: 'Engine Oil Contamination', href: '/knowledge-center/engineering/contamination-control/' },
