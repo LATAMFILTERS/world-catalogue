@@ -11,7 +11,6 @@ const {
 } = require('../lib/knowledge-governance/response-governance-contract');
 const { buildSkuAuthorityFromCatalogResult } = require('../lib/knowledge-governance/sku-authority-contract');
 
-// Case 6: Groq inventa SKU -> eliminado.
 test('a Groq-invented SKU not present in validated_skus is redacted from the answer', () => {
   const governance = buildResponseGovernance({
     skuAuthority: buildSkuAuthorityFromCatalogResult({ products: [], lookupStatus: 'completed' }, {})
@@ -31,12 +30,9 @@ test('a legitimately validated SKU is never redacted', () => {
   assert.equal(violations.length, 0);
 });
 
-// Case 7: HERMES propone SKU -> eliminado (HERMES output never feeds validated_skus).
 test('a SKU suggested only by HERMES findings never enters validated_skus', () => {
   const governance = buildResponseGovernance({
     skuAuthority: buildSkuAuthorityFromCatalogResult({ products: [], lookupStatus: 'completed' }, {})
-    // Note: no path exists to pass HERMES findings into skuAuthority — this
-    // test documents that absence structurally.
   });
   assert.deepEqual(governance.validated_skus, []);
   assert.equal(governance.sku_validated_in_postgresql, false);
@@ -55,7 +51,6 @@ test('assertNoUnauthorizedOemClaim flags an oem_maintenance object without appro
   assert.equal(violations.length, 1);
 });
 
-// Case 18: Respuesta diagnóstica preliminar puede publicarse.
 test('a preliminary diagnostic answer with no claims at all is safe to publish', () => {
   const governance = buildResponseGovernance({});
   assert.equal(governance.technical_source_validated, false);
@@ -63,11 +58,9 @@ test('a preliminary diagnostic answer with no claims at all is safe to publish',
   assert.equal(governance.safe_to_publish, true);
 });
 
-// Case 20: Toda respuesta final pasa por determineSafeToPublish.
 test('safe_to_publish is always exactly what determineSafeToPublish computes', () => {
   const clean = buildResponseGovernance({ skuAuthority: buildSkuAuthorityFromCatalogResult({ products: [{ sku: 'EL82100' }], lookupStatus: 'completed' }, {}) });
   assert.equal(clean.safe_to_publish, determineSafeToPublish(clean));
-
   const violating = { authority_violations: [{ rule: 'rule_9_sku_requires_postgresql_evidence', reason: 'x' }] };
   assert.equal(determineSafeToPublish(violating), false);
 });
@@ -75,4 +68,22 @@ test('safe_to_publish is always exactly what determineSafeToPublish computes', (
 test('validateResponseGovernance rejects an internally inconsistent object', () => {
   const result = validateResponseGovernance({ oem_maintenance_found: true, technical_source_validated: false });
   assert.equal(result.valid, false);
+});
+
+test('backend final-answer guard removes external HERMES provenance signatures', () => {
+  const governance = buildResponseGovernance({});
+  const { text, violations } = redactUnauthorizedClaims(
+    'FRAM publicó esto en https://www.fram.com/x y el registro interno es fram_ld_03.',
+    governance
+  );
+  assert.doesNotMatch(text, /FRAM|fram\.com|fram_ld_/i);
+  assert.ok(violations.some(v => v.rule === 'rule_10_external_source_must_not_surface_publicly'));
+});
+
+test('backend final-answer guard leaves original ELIMFILTERS engineering language unchanged', () => {
+  const governance = buildResponseGovernance({});
+  const answer = 'La saturación del medio puede elevar la restricción y modificar el diferencial de presión.';
+  const { text, violations } = redactUnauthorizedClaims(answer, governance);
+  assert.equal(text, answer);
+  assert.equal(violations.length, 0);
 });
