@@ -67,9 +67,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Filtration Efficiency: 12 months | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
-- Service Interval: 12 months | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

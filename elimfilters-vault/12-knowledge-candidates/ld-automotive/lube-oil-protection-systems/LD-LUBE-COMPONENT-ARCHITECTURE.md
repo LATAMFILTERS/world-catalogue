@@ -72,7 +72,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Filtration Efficiency: 20 micron | evidence: EVID-DCBD3469FB0F59BA | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

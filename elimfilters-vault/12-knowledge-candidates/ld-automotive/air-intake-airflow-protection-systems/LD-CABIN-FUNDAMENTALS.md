@@ -66,8 +66,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Service Interval: 000 miles | evidence: EVID-5C13CCE9F1A838E3 | status: awaiting_validation
-- Source-Reported Technical Value: 98 % | evidence: EVID-5C13CCE9F1A838E3 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

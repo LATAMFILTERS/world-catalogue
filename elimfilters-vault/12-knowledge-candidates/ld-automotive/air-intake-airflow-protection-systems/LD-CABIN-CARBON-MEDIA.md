@@ -67,10 +67,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Source-Reported Technical Value: 90 % | evidence: EVID-56D901067740C663 | status: awaiting_validation
-- Source-Reported Technical Value: 6-12 months | evidence: EVID-56D901067740C663 | status: awaiting_validation
-- Service Interval: 3-6 months | evidence: EVID-56D901067740C663 | status: awaiting_validation
-- Source-Reported Technical Value: 99.97 % | evidence: EVID-56D901067740C663 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

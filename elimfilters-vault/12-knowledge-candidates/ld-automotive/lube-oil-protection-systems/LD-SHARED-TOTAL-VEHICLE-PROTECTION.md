@@ -65,9 +65,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Source-Reported Technical Value: 000 miles | evidence: EVID-D9470D17137F3A38 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-D9470D17137F3A38 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-F6A9C3B365AE75C2 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

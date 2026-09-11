@@ -65,13 +65,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Filtration Efficiency: 10 psi | evidence: EVID-788F5F06C1DF74D5 | status: awaiting_validation
-- Filtration Efficiency: 3 % | evidence: EVID-788F5F06C1DF74D5 | status: awaiting_validation
-- Service Interval: 2-6 % | evidence: EVID-788F5F06C1DF74D5 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-282C617439439F74 | status: awaiting_validation
-- Source-Reported Technical Value: 10 % | evidence: EVID-282C617439439F74 | status: awaiting_validation
-- Source-Reported Technical Value: 000 miles | evidence: EVID-D9470D17137F3A38 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-D9470D17137F3A38 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

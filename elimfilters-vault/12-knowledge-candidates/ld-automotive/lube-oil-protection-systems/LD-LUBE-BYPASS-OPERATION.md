@@ -70,7 +70,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Pressure / Bypass Setting: 15 psi | evidence: EVID-6768CDB55306D1F8 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

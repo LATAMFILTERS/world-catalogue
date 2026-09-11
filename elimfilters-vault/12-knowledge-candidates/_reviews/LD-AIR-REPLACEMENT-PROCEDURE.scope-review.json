@@ -1,21 +1,19 @@
 {
   "schema_version": "1.0.0",
   "knowledge_object_id": "LD-AIR-REPLACEMENT-PROCEDURE",
-  "review_status": "pending",
-  "reviewer": null,
-  "reviewed_at": null,
+  "review_status": "approved",
+  "reviewer": "ELIMFILTERS AI Engineering Validation — Canonical Scope Review",
+  "reviewed_at": "2026-09-11T04:40:31.265Z",
   "scope_review": {
-    "official_system_registry_verified": false,
-    "technical_scope_verified": false,
-    "source_neutrality_verified": false,
-    "no_proprietary_external_claims_verified": false,
-    "public_language_reviewed": false,
-    "technology_relation_resolution": "pending",
-    "application_relation_resolution": "pending"
+    "official_system_registry_verified": true,
+    "technical_scope_verified": true,
+    "source_neutrality_verified": true,
+    "no_proprietary_external_claims_verified": true,
+    "public_language_reviewed": true,
+    "technology_relation_resolution": "confirmed",
+    "application_relation_resolution": "not_applicable"
   },
-  "metric_item_ids": [
-    "METRIC-F6F0C8C611C5EEF3"
-  ],
+  "metric_item_ids": [],
   "relationship_item_ids": [],
   "procedure_item_ids": [
     "PROC-3F893A3BF0AB3950",
@@ -23,5 +21,5 @@
     "PROC-3FFA64BCF9069226",
     "PROC-4858E0B1204F7449"
   ],
-  "final_notes": null
+  "final_notes": "Scope approved after independent technical validation. Numeric source claims rejected from generic canonical use remain only in the private validation ledger."
 }

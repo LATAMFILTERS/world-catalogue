@@ -73,7 +73,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Filtration Efficiency: 99 % | evidence: EVID-67A8BAD7601A4B36 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

@@ -49,12 +49,12 @@
     {
       "item_id": "METRIC-47A33683A3D2EFE3",
       "source_line": "- Filtration Efficiency: 3 % | evidence: EVID-788F5F06C1DF74D5 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: efficiency percentage lacks required particle-size, method, product and application context for canonical generic use."
     },
     {
       "item_id": "METRIC-175E402F224D5D0C",
@@ -79,12 +79,12 @@
     {
       "item_id": "METRIC-BA415CE4C092DBD9",
       "source_line": "- Source-Reported Technical Value: 10 % | evidence: EVID-282C617439439F74 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: source-reported numeric value lacks a defined governed parameter, method and application context."
     },
     {
       "item_id": "METRIC-FDFE3A289B3E8E39",
@@ -109,32 +109,32 @@
     {
       "item_id": "METRIC-FB7CFAFD2532DD4D",
       "source_line": "- Source-Reported Technical Value: 99 % | evidence: EVID-72D284E4ECE1163A | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: source-reported numeric value lacks a defined governed parameter, method and application context."
     },
     {
       "item_id": "METRIC-15A02D79FF4AA10C",
       "source_line": "- Filtration Efficiency: 99 % | evidence: EVID-CD272EDFE1E0DAFA | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: efficiency percentage lacks required particle-size, method, product and application context for canonical generic use."
     },
     {
       "item_id": "METRIC-16A3FDB2557D4945",
       "source_line": "- Filtration Efficiency: 95 % | evidence: EVID-CD272EDFE1E0DAFA | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: efficiency percentage lacks required particle-size, method, product and application context for canonical generic use."
     },
     {
       "item_id": "METRIC-1E369089AA31D6B7",
@@ -149,12 +149,12 @@
     {
       "item_id": "METRIC-B6862CA307FAF22D",
       "source_line": "- Service Interval: 12 months | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: service interval is vehicle/application/operating-condition specific and cannot be promoted as a universal ELIMFILTERS value."
     },
     {
       "item_id": "METRIC-95BC5B20BB265D67",
@@ -169,42 +169,42 @@
     {
       "item_id": "METRIC-DD24A8DAA654D90F",
       "source_line": "- Source-Reported Technical Value: 90 % | evidence: EVID-56D901067740C663 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: source-reported numeric value lacks a defined governed parameter, method and application context."
     },
     {
       "item_id": "METRIC-D79B709C8F5BFD5F",
       "source_line": "- Source-Reported Technical Value: 6-12 months | evidence: EVID-56D901067740C663 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: source-reported numeric value lacks a defined governed parameter, method and application context."
     },
     {
       "item_id": "METRIC-15B64D636E34F29E",
       "source_line": "- Service Interval: 3-6 months | evidence: EVID-56D901067740C663 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: service interval is vehicle/application/operating-condition specific and cannot be promoted as a universal ELIMFILTERS value."
     },
     {
       "item_id": "METRIC-38B4F65928B6E4EB",
       "source_line": "- Source-Reported Technical Value: 99.97 % | evidence: EVID-56D901067740C663 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: source-reported numeric value lacks a defined governed parameter, method and application context."
     },
     {
       "item_id": "METRIC-1FDFFA66B42F38BB",
@@ -219,22 +219,22 @@
     {
       "item_id": "METRIC-3F304BEC234085EF",
       "source_line": "- Source-Reported Technical Value: 98 % | evidence: EVID-5C13CCE9F1A838E3 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: source-reported numeric value lacks a defined governed parameter, method and application context."
     },
     {
       "item_id": "METRIC-188A8C414618F8DC",
       "source_line": "- Pressure / Bypass Setting: 15 psi | evidence: EVID-6768CDB55306D1F8 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: bypass pressure is application-specific and requires validated product/application authority."
     },
     {
       "item_id": "METRIC-DA49EB8D0CB093FC",
@@ -269,12 +269,12 @@
     {
       "item_id": "METRIC-22BD7BA8883C9AFD",
       "source_line": "- Filtration Efficiency: 99 % | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: efficiency percentage lacks required particle-size, method, product and application context for canonical generic use."
     },
     {
       "item_id": "METRIC-7C8AA52C6F1D4E5F",
@@ -289,12 +289,12 @@
     {
       "item_id": "METRIC-60B85470CADFCACA",
       "source_line": "- Service Interval: 500 miles | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: service interval is vehicle/application/operating-condition specific and cannot be promoted as a universal ELIMFILTERS value."
     },
     {
       "item_id": "METRIC-CF826190EF8245ED",
@@ -309,12 +309,12 @@
     {
       "item_id": "METRIC-70928020557B7AA2",
       "source_line": "- Particle Size / Micron Rating: 20 microns | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: standalone micron value lacks paired efficiency/test-method context and cannot define generic filtration performance."
     },
     {
       "item_id": "METRIC-2702D52BA3C3F6A7",
@@ -329,12 +329,12 @@
     {
       "item_id": "METRIC-0A18F8FE15A61E2B",
       "source_line": "- Filtration Efficiency: 95 % | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: efficiency percentage lacks required particle-size, method, product and application context for canonical generic use."
     },
     {
       "item_id": "METRIC-8584CBCB2AFD5ADC",
@@ -349,12 +349,12 @@
     {
       "item_id": "METRIC-CB5A33F0990359F4",
       "source_line": "- Filtration Efficiency: 50 % | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: efficiency percentage lacks required particle-size, method, product and application context for canonical generic use."
     },
     {
       "item_id": "METRIC-C7B08E3FAF5CC52B",
@@ -369,32 +369,32 @@
     {
       "item_id": "METRIC-34FED305AAAA404E",
       "source_line": "- Particle Size / Micron Rating: 25 microns | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: standalone micron value lacks paired efficiency/test-method context and cannot define generic filtration performance."
     },
     {
       "item_id": "METRIC-58F8F7AE47A665AE",
       "source_line": "- Particle Size / Micron Rating: 5 microns | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: standalone micron value lacks paired efficiency/test-method context and cannot define generic filtration performance."
     },
     {
       "item_id": "METRIC-20E3FF4A68B34D4E",
       "source_line": "- Filtration Efficiency: 90 % | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: efficiency percentage lacks required particle-size, method, product and application context for canonical generic use."
     },
     {
       "item_id": "METRIC-71C50E0EC2A2996C",
@@ -409,12 +409,12 @@
     {
       "item_id": "METRIC-A1C34AEC14545C78",
       "source_line": "- Filtration Efficiency: 99 % | evidence: EVID-67A8BAD7601A4B36 | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
+      "decision": "rejected",
+      "validation_method": "engineering_review",
       "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Rejected from canonical generic knowledge: efficiency percentage lacks required particle-size, method, product and application context for canonical generic use."
     },
     {
       "item_id": "METRIC-747ED579D43D9117",
@@ -443,12 +443,15 @@
     {
       "item_id": "REL-7F943CADFBC30E8A",
       "source_line": "- Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL5011",
+        "EVID-VALFORD-AIR"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     },
     {
       "item_id": "REL-65CA57AD5B1CA722",
@@ -477,12 +480,14 @@
     {
       "item_id": "REL-D37C7B131601986B",
       "source_line": "- Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALTOYOTA-CABIN"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     },
     {
       "item_id": "REL-B9FC6F604EEEB227",
@@ -536,12 +541,16 @@
     {
       "item_id": "REL-FC7C74691B99FA8C",
       "source_line": "- Cabin-filter service interval is affected by environmental particulate loading, seasonal conditions and vehicle usage. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL111551",
+        "EVID-VALTOYOTA-CABIN",
+        "EVID-VALTOYOTA-MAINT"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     },
     {
       "item_id": "REL-B3CC871659229F0B",
@@ -674,22 +683,29 @@
     {
       "item_id": "REL-B5E977E1338ECC95",
       "source_line": "- Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL45485",
+        "EVID-VAL454812"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     },
     {
       "item_id": "REL-4DBF312810894F2B",
       "source_line": "- Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL45481",
+        "EVID-VAL45482",
+        "EVID-VAL454812"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     },
     {
       "item_id": "REL-925087DCA3A0C008",
@@ -721,22 +737,28 @@
     {
       "item_id": "REL-68E5CD3FD6FF27E7",
       "source_line": "- A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "cross_source_validation",
+      "supporting_evidence_ids": [
+        "EVID-VALNHTSA-LOWOIL1",
+        "EVID-VALNHTSA-LOWOIL2"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     },
     {
       "item_id": "REL-C778BC2D662A21E8",
       "source_line": "- Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "cross_source_validation",
+      "supporting_evidence_ids": [
+        "EVID-VALNHTSA-LOWOIL1",
+        "EVID-VALNHTSA-LOWOIL2"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     },
     {
       "item_id": "REL-8A58D800E5E62027",
@@ -766,162 +788,197 @@
     {
       "item_id": "REL-9DA75FD97C08DF06",
       "source_line": "- Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALJ300",
+        "EVID-VAL5011",
+        "EVID-VALTOYOTA-MAINT"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     },
     {
       "item_id": "REL-EA596FA33062FE6A",
       "source_line": "- Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALTOYOTA-MAINT",
+        "EVID-VALTOYOTA-CABIN"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     },
     {
       "item_id": "REL-83D52A08B514965E",
       "source_line": "- Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VAL454812",
+        "EVID-VAL5011",
+        "EVID-VAL111551"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     },
     {
       "item_id": "REL-5B9AA1D2C2681613",
       "source_line": "- Correct selection, installation and service condition are common requirements across these filtration systems. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "cross_source_validation",
+      "supporting_evidence_ids": [
+        "EVID-VALFORD-AIR",
+        "EVID-VALTOYOTA-CABIN",
+        "EVID-VALNHTSA-OIL-SERVICE"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Validated independently against governed standards/OEM diagnostic or service evidence and ELIMFILTERS engineering review."
     }
   ],
   "procedure_reviews": [
     {
       "item_id": "PROC-3F893A3BF0AB3950",
       "source_line": "1. Open the air-filter housing using the vehicle-specific service method. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALFORD-AIR"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     },
     {
       "item_id": "PROC-51FD83DC177CBF97",
       "source_line": "2. Remove the used element without introducing loose debris into the clean side of the intake. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALFORD-AIR"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     },
     {
       "item_id": "PROC-3FFA64BCF9069226",
       "source_line": "3. Inspect and clean the housing sealing area as appropriate. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALFORD-AIR"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     },
     {
       "item_id": "PROC-4858E0B1204F7449",
       "source_line": "4. Install the validated replacement in the correct orientation and ensure the housing is fully sealed before operation. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALFORD-AIR"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     },
     {
       "item_id": "PROC-E1D1FE9F5CDA8C6D",
       "source_line": "1. Determine airflow direction through the cabin-filter housing. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALTOYOTA-CABIN"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     },
     {
       "item_id": "PROC-22B7E2A1B2A1D4E2",
       "source_line": "2. Orient the filter according to the airflow indicator or vehicle-specific installation requirement. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALTOYOTA-CABIN"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     },
     {
       "item_id": "PROC-78FA14F2D899E28E",
       "source_line": "3. Verify the element is seated correctly and does not distort the housing seal. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALTOYOTA-CABIN"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     },
     {
       "item_id": "PROC-2B762B08AB5EC09C",
       "source_line": "1. Identify the correct filter location and service configuration before removal. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALNHTSA-OIL-SERVICE"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     },
     {
       "item_id": "PROC-199A8D6D71930C29",
       "source_line": "2. Use a removal method appropriate to the filter or housing without damaging surrounding components. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALNHTSA-OIL-SERVICE"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     },
     {
       "item_id": "PROC-4CB50144CB6359DD",
       "source_line": "3. Inspect the sealing surface and verify the old seal is not left behind. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALNHTSA-OLDGASKET",
+        "EVID-VALNHTSA-OIL-SERVICE"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     },
     {
       "item_id": "PROC-6D20217485CA126A",
       "source_line": "4. Install the validated replacement according to the vehicle or filter service specification and verify for leakage after service. | status: awaiting_validation",
-      "decision": "needs_evidence",
-      "validation_method": null,
-      "supporting_evidence_ids": [],
-      "reviewer": null,
-      "reviewed_at": null,
-      "notes": null
+      "decision": "approved",
+      "validation_method": "engineering_review",
+      "supporting_evidence_ids": [
+        "EVID-VALNHTSA-OIL-SERVICE"
+      ],
+      "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+      "reviewed_at": "2026-09-11T04:36:07.041Z",
+      "notes": "Procedure is intentionally generic; vehicle-specific torque, access and safety instructions remain controlled by the applicable service information."
     }
   ],
   "candidate_refs": {
     "LD-AIR-FILTER-ARCHITECTURE": {
-      "metric_item_ids": [
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-EAC75BD327CF0F32",
         "REL-7F943CADFBC30E8A"
@@ -929,9 +986,7 @@
       "procedure_item_ids": []
     },
     "LD-AIR-REPLACEMENT-PROCEDURE": {
-      "metric_item_ids": [
-        "METRIC-F6F0C8C611C5EEF3"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [],
       "procedure_item_ids": [
         "PROC-3F893A3BF0AB3950",
@@ -941,31 +996,12 @@
       ]
     },
     "LD-AIR-RESTRICTION-SYMPTOMS": {
-      "metric_item_ids": [
-        "METRIC-ED3071B5EFF154B3",
-        "METRIC-47A33683A3D2EFE3",
-        "METRIC-175E402F224D5D0C",
-        "METRIC-776787CEC86C6B5D",
-        "METRIC-BA415CE4C092DBD9",
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [],
       "procedure_item_ids": []
     },
     "LD-AIR-SERVICE-INTERVAL": {
-      "metric_item_ids": [
-        "METRIC-FDFE3A289B3E8E39",
-        "METRIC-B58BD0EF640EFE9B",
-        "METRIC-FB7CFAFD2532DD4D",
-        "METRIC-15A02D79FF4AA10C",
-        "METRIC-16A3FDB2557D4945",
-        "METRIC-1E369089AA31D6B7",
-        "METRIC-B6862CA307FAF22D",
-        "METRIC-95BC5B20BB265D67",
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-65CA57AD5B1CA722",
         "REL-FE7BD79FF9545FFD"
@@ -984,12 +1020,7 @@
       ]
     },
     "LD-CABIN-CARBON-MEDIA": {
-      "metric_item_ids": [
-        "METRIC-DD24A8DAA654D90F",
-        "METRIC-D79B709C8F5BFD5F",
-        "METRIC-15B64D636E34F29E",
-        "METRIC-38B4F65928B6E4EB"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-B9FC6F604EEEB227",
         "REL-2D9D970DF8ADF1FA"
@@ -997,10 +1028,7 @@
       "procedure_item_ids": []
     },
     "LD-CABIN-FUNDAMENTALS": {
-      "metric_item_ids": [
-        "METRIC-1FDFFA66B42F38BB",
-        "METRIC-3F304BEC234085EF"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-E9086F68E62E35D7",
         "REL-49550435E049A1D0"
@@ -1013,13 +1041,7 @@
       "procedure_item_ids": []
     },
     "LD-CABIN-SERVICE-INTERVAL": {
-      "metric_item_ids": [
-        "METRIC-15A02D79FF4AA10C",
-        "METRIC-16A3FDB2557D4945",
-        "METRIC-1E369089AA31D6B7",
-        "METRIC-B6862CA307FAF22D",
-        "METRIC-95BC5B20BB265D67"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-FC7C74691B99FA8C",
         "REL-B3CC871659229F0B"
@@ -1027,9 +1049,7 @@
       "procedure_item_ids": []
     },
     "LD-LUBE-BYPASS-OPERATION": {
-      "metric_item_ids": [
-        "METRIC-188A8C414618F8DC"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-56B2595218C9BBA1",
         "REL-C705F199933A7F2E",
@@ -1038,11 +1058,7 @@
       "procedure_item_ids": []
     },
     "LD-LUBE-COLD-START": {
-      "metric_item_ids": [
-        "METRIC-1E369089AA31D6B7",
-        "METRIC-B6862CA307FAF22D",
-        "METRIC-95BC5B20BB265D67"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-CF6CCDC04B11E73C",
         "REL-039C25DDC9A33A43"
@@ -1050,9 +1066,7 @@
       "procedure_item_ids": []
     },
     "LD-LUBE-COMPONENT-ARCHITECTURE": {
-      "metric_item_ids": [
-        "METRIC-DA49EB8D0CB093FC"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-5A7B8F38A9A82B06",
         "REL-D4D999DD2B8E68D3"
@@ -1068,16 +1082,7 @@
       "procedure_item_ids": []
     },
     "LD-LUBE-EXTENDED-SERVICE": {
-      "metric_item_ids": [
-        "METRIC-B8A737448CD34AB2",
-        "METRIC-A8CB818097EBBE6D",
-        "METRIC-22BD7BA8883C9AFD",
-        "METRIC-7C8AA52C6F1D4E5F",
-        "METRIC-60B85470CADFCACA",
-        "METRIC-CF826190EF8245ED",
-        "METRIC-70928020557B7AA2",
-        "METRIC-2702D52BA3C3F6A7"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-B5E977E1338ECC95",
         "REL-4DBF312810894F2B"
@@ -1101,16 +1106,7 @@
       "procedure_item_ids": []
     },
     "LD-LUBE-PERFORMANCE-BALANCE": {
-      "metric_item_ids": [
-        "METRIC-0A18F8FE15A61E2B",
-        "METRIC-8584CBCB2AFD5ADC",
-        "METRIC-CB5A33F0990359F4",
-        "METRIC-C7B08E3FAF5CC52B",
-        "METRIC-34FED305AAAA404E",
-        "METRIC-58F8F7AE47A665AE",
-        "METRIC-20E3FF4A68B34D4E",
-        "METRIC-71C50E0EC2A2996C"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-8A58D800E5E62027",
         "REL-78C975B7E2F35E0F"
@@ -1123,9 +1119,7 @@
       "procedure_item_ids": []
     },
     "LD-LUBE-SERVICE-ACCESS": {
-      "metric_item_ids": [
-        "METRIC-A1C34AEC14545C78"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [],
       "procedure_item_ids": [
         "PROC-2B762B08AB5EC09C",
@@ -1135,13 +1129,7 @@
       ]
     },
     "LD-SHARED-SEASONAL-FILTRATION": {
-      "metric_item_ids": [
-        "METRIC-15A02D79FF4AA10C",
-        "METRIC-16A3FDB2557D4945",
-        "METRIC-1E369089AA31D6B7",
-        "METRIC-B6862CA307FAF22D",
-        "METRIC-95BC5B20BB265D67"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-9DA75FD97C08DF06",
         "REL-EA596FA33062FE6A"
@@ -1149,11 +1137,7 @@
       "procedure_item_ids": []
     },
     "LD-SHARED-TOTAL-VEHICLE-PROTECTION": {
-      "metric_item_ids": [
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF",
-        "METRIC-747ED579D43D9117"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-83D52A08B514965E",
         "REL-5B9AA1D2C2681613"
@@ -1161,13 +1145,7 @@
       "procedure_item_ids": []
     },
     "SHARED-BYPASS": {
-      "metric_item_ids": [
-        "METRIC-188A8C414618F8DC",
-        "METRIC-DA49EB8D0CB093FC",
-        "METRIC-1E369089AA31D6B7",
-        "METRIC-B6862CA307FAF22D",
-        "METRIC-95BC5B20BB265D67"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-56B2595218C9BBA1",
         "REL-C705F199933A7F2E",
@@ -1182,26 +1160,7 @@
       "procedure_item_ids": []
     },
     "SHARED-CONTAMINANT-LOADING": {
-      "metric_item_ids": [
-        "METRIC-FDFE3A289B3E8E39",
-        "METRIC-B58BD0EF640EFE9B",
-        "METRIC-FB7CFAFD2532DD4D",
-        "METRIC-15A02D79FF4AA10C",
-        "METRIC-16A3FDB2557D4945",
-        "METRIC-1E369089AA31D6B7",
-        "METRIC-B6862CA307FAF22D",
-        "METRIC-95BC5B20BB265D67",
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF",
-        "METRIC-ED3071B5EFF154B3",
-        "METRIC-47A33683A3D2EFE3",
-        "METRIC-175E402F224D5D0C",
-        "METRIC-776787CEC86C6B5D",
-        "METRIC-BA415CE4C092DBD9",
-        "METRIC-1FDFFA66B42F38BB",
-        "METRIC-3F304BEC234085EF",
-        "METRIC-747ED579D43D9117"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-26FABE645DA1F517",
         "REL-BAB968EBDC870E03",
@@ -1219,12 +1178,7 @@
       "procedure_item_ids": []
     },
     "SHARED-DIFFERENTIAL-PRESSURE": {
-      "metric_item_ids": [
-        "METRIC-188A8C414618F8DC",
-        "METRIC-1E369089AA31D6B7",
-        "METRIC-B6862CA307FAF22D",
-        "METRIC-95BC5B20BB265D67"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-56B2595218C9BBA1",
         "REL-C705F199933A7F2E",
@@ -1237,24 +1191,7 @@
       "procedure_item_ids": []
     },
     "SHARED-DIRT-HOLDING-CAPACITY": {
-      "metric_item_ids": [
-        "METRIC-0A18F8FE15A61E2B",
-        "METRIC-8584CBCB2AFD5ADC",
-        "METRIC-CB5A33F0990359F4",
-        "METRIC-C7B08E3FAF5CC52B",
-        "METRIC-34FED305AAAA404E",
-        "METRIC-58F8F7AE47A665AE",
-        "METRIC-20E3FF4A68B34D4E",
-        "METRIC-71C50E0EC2A2996C",
-        "METRIC-B8A737448CD34AB2",
-        "METRIC-A8CB818097EBBE6D",
-        "METRIC-22BD7BA8883C9AFD",
-        "METRIC-7C8AA52C6F1D4E5F",
-        "METRIC-60B85470CADFCACA",
-        "METRIC-CF826190EF8245ED",
-        "METRIC-70928020557B7AA2",
-        "METRIC-2702D52BA3C3F6A7"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-8A58D800E5E62027",
         "REL-78C975B7E2F35E0F",
@@ -1264,15 +1201,7 @@
       "procedure_item_ids": []
     },
     "SHARED-FAILURE-ANALYSIS": {
-      "metric_item_ids": [
-        "METRIC-ED3071B5EFF154B3",
-        "METRIC-47A33683A3D2EFE3",
-        "METRIC-175E402F224D5D0C",
-        "METRIC-776787CEC86C6B5D",
-        "METRIC-BA415CE4C092DBD9",
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-68E5CD3FD6FF27E7",
         "REL-C778BC2D662A21E8"
@@ -1280,21 +1209,7 @@
       "procedure_item_ids": []
     },
     "SHARED-FILTRATION-EFFICIENCY": {
-      "metric_item_ids": [
-        "METRIC-0A18F8FE15A61E2B",
-        "METRIC-8584CBCB2AFD5ADC",
-        "METRIC-CB5A33F0990359F4",
-        "METRIC-C7B08E3FAF5CC52B",
-        "METRIC-34FED305AAAA404E",
-        "METRIC-58F8F7AE47A665AE",
-        "METRIC-20E3FF4A68B34D4E",
-        "METRIC-71C50E0EC2A2996C",
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF",
-        "METRIC-1FDFFA66B42F38BB",
-        "METRIC-3F304BEC234085EF",
-        "METRIC-747ED579D43D9117"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-8A58D800E5E62027",
         "REL-78C975B7E2F35E0F",
@@ -1308,38 +1223,7 @@
       "procedure_item_ids": []
     },
     "SHARED-FLOW-RATE": {
-      "metric_item_ids": [
-        "METRIC-0A18F8FE15A61E2B",
-        "METRIC-8584CBCB2AFD5ADC",
-        "METRIC-CB5A33F0990359F4",
-        "METRIC-C7B08E3FAF5CC52B",
-        "METRIC-34FED305AAAA404E",
-        "METRIC-58F8F7AE47A665AE",
-        "METRIC-20E3FF4A68B34D4E",
-        "METRIC-71C50E0EC2A2996C",
-        "METRIC-B8A737448CD34AB2",
-        "METRIC-A8CB818097EBBE6D",
-        "METRIC-22BD7BA8883C9AFD",
-        "METRIC-7C8AA52C6F1D4E5F",
-        "METRIC-60B85470CADFCACA",
-        "METRIC-CF826190EF8245ED",
-        "METRIC-70928020557B7AA2",
-        "METRIC-2702D52BA3C3F6A7",
-        "METRIC-188A8C414618F8DC",
-        "METRIC-DA49EB8D0CB093FC",
-        "METRIC-1E369089AA31D6B7",
-        "METRIC-B6862CA307FAF22D",
-        "METRIC-95BC5B20BB265D67",
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF",
-        "METRIC-1FDFFA66B42F38BB",
-        "METRIC-3F304BEC234085EF",
-        "METRIC-DD24A8DAA654D90F",
-        "METRIC-D79B709C8F5BFD5F",
-        "METRIC-15B64D636E34F29E",
-        "METRIC-38B4F65928B6E4EB",
-        "METRIC-15A02D79FF4AA10C"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-8A58D800E5E62027",
         "REL-78C975B7E2F35E0F",
@@ -1365,14 +1249,7 @@
       "procedure_item_ids": []
     },
     "SHARED-INSTALLATION": {
-      "metric_item_ids": [
-        "METRIC-DA49EB8D0CB093FC",
-        "METRIC-A1C34AEC14545C78",
-        "METRIC-F6F0C8C611C5EEF3",
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF",
-        "METRIC-747ED579D43D9117"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-5A7B8F38A9A82B06",
         "REL-D4D999DD2B8E68D3",
@@ -1391,16 +1268,7 @@
       "procedure_item_ids": []
     },
     "SHARED-MICRON-RATING": {
-      "metric_item_ids": [
-        "METRIC-0A18F8FE15A61E2B",
-        "METRIC-8584CBCB2AFD5ADC",
-        "METRIC-CB5A33F0990359F4",
-        "METRIC-C7B08E3FAF5CC52B",
-        "METRIC-34FED305AAAA404E",
-        "METRIC-58F8F7AE47A665AE",
-        "METRIC-20E3FF4A68B34D4E",
-        "METRIC-71C50E0EC2A2996C"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-8A58D800E5E62027",
         "REL-78C975B7E2F35E0F"
@@ -1408,32 +1276,7 @@
       "procedure_item_ids": []
     },
     "SHARED-RESTRICTION": {
-      "metric_item_ids": [
-        "METRIC-0A18F8FE15A61E2B",
-        "METRIC-8584CBCB2AFD5ADC",
-        "METRIC-CB5A33F0990359F4",
-        "METRIC-C7B08E3FAF5CC52B",
-        "METRIC-34FED305AAAA404E",
-        "METRIC-58F8F7AE47A665AE",
-        "METRIC-20E3FF4A68B34D4E",
-        "METRIC-71C50E0EC2A2996C",
-        "METRIC-188A8C414618F8DC",
-        "METRIC-1E369089AA31D6B7",
-        "METRIC-B6862CA307FAF22D",
-        "METRIC-95BC5B20BB265D67",
-        "METRIC-FDFE3A289B3E8E39",
-        "METRIC-B58BD0EF640EFE9B",
-        "METRIC-FB7CFAFD2532DD4D",
-        "METRIC-15A02D79FF4AA10C",
-        "METRIC-16A3FDB2557D4945",
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF",
-        "METRIC-ED3071B5EFF154B3",
-        "METRIC-47A33683A3D2EFE3",
-        "METRIC-175E402F224D5D0C",
-        "METRIC-776787CEC86C6B5D",
-        "METRIC-BA415CE4C092DBD9"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-8A58D800E5E62027",
         "REL-78C975B7E2F35E0F",
@@ -1458,13 +1301,7 @@
       "procedure_item_ids": []
     },
     "SHARED-SEALING": {
-      "metric_item_ids": [
-        "METRIC-DA49EB8D0CB093FC",
-        "METRIC-A1C34AEC14545C78",
-        "METRIC-F6F0C8C611C5EEF3",
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-925087DCA3A0C008",
         "REL-A75EA133CF0AE93D",
@@ -1476,33 +1313,7 @@
       "procedure_item_ids": []
     },
     "SHARED-SERVICE-LIFE": {
-      "metric_item_ids": [
-        "METRIC-B8A737448CD34AB2",
-        "METRIC-A8CB818097EBBE6D",
-        "METRIC-22BD7BA8883C9AFD",
-        "METRIC-7C8AA52C6F1D4E5F",
-        "METRIC-60B85470CADFCACA",
-        "METRIC-CF826190EF8245ED",
-        "METRIC-70928020557B7AA2",
-        "METRIC-2702D52BA3C3F6A7",
-        "METRIC-FDFE3A289B3E8E39",
-        "METRIC-B58BD0EF640EFE9B",
-        "METRIC-FB7CFAFD2532DD4D",
-        "METRIC-15A02D79FF4AA10C",
-        "METRIC-16A3FDB2557D4945",
-        "METRIC-1E369089AA31D6B7",
-        "METRIC-B6862CA307FAF22D",
-        "METRIC-95BC5B20BB265D67",
-        "METRIC-C49215E6C85EE38D",
-        "METRIC-99FB58ACEC1F4AEF",
-        "METRIC-1FDFFA66B42F38BB",
-        "METRIC-3F304BEC234085EF",
-        "METRIC-DD24A8DAA654D90F",
-        "METRIC-D79B709C8F5BFD5F",
-        "METRIC-15B64D636E34F29E",
-        "METRIC-38B4F65928B6E4EB",
-        "METRIC-747ED579D43D9117"
-      ],
+      "metric_item_ids": [],
       "relationship_item_ids": [
         "REL-B5E977E1338ECC95",
         "REL-4DBF312810894F2B",
@@ -1525,11 +1336,12 @@
     }
   },
   "last_validation_batch": {
-    "batch_id": "LD_ENGINEERING_BATCH_1",
-    "reviewed_at": "2026-09-11T04:27:10.073Z",
-    "reviewer": "ELIMFILTERS AI Engineering Validation — Standards Corroboration",
-    "relationship_approvals": 21,
+    "batch_id": "LD_ENGINEERING_BATCH_2",
+    "reviewed_at": "2026-09-11T04:36:07.041Z",
+    "reviewer": "ELIMFILTERS AI Engineering Validation — OEM/Standards Corroboration",
+    "relationship_approvals": 11,
+    "procedure_approvals": 11,
     "metric_rejections": 21,
-    "independent_evidence_registry": "hermes/validation-evidence/ld-engineering-standards-batch1.json"
+    "independent_evidence_registry": "hermes/validation-evidence/ld-engineering-oem-batch2.json"
   }
 }

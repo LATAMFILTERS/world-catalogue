@@ -1,24 +1,19 @@
 {
   "schema_version": "1.0.0",
   "knowledge_object_id": "SHARED-DIFFERENTIAL-PRESSURE",
-  "review_status": "pending",
-  "reviewer": null,
-  "reviewed_at": null,
+  "review_status": "approved",
+  "reviewer": "ELIMFILTERS AI Engineering Validation — Canonical Scope Review",
+  "reviewed_at": "2026-09-11T04:40:31.265Z",
   "scope_review": {
-    "official_system_registry_verified": false,
-    "technical_scope_verified": false,
-    "source_neutrality_verified": false,
-    "no_proprietary_external_claims_verified": false,
-    "public_language_reviewed": false,
+    "official_system_registry_verified": true,
+    "technical_scope_verified": true,
+    "source_neutrality_verified": true,
+    "no_proprietary_external_claims_verified": true,
+    "public_language_reviewed": true,
     "technology_relation_resolution": "not_applicable",
-    "application_relation_resolution": "pending"
+    "application_relation_resolution": "not_applicable"
   },
-  "metric_item_ids": [
-    "METRIC-188A8C414618F8DC",
-    "METRIC-1E369089AA31D6B7",
-    "METRIC-B6862CA307FAF22D",
-    "METRIC-95BC5B20BB265D67"
-  ],
+  "metric_item_ids": [],
   "relationship_item_ids": [
     "REL-56B2595218C9BBA1",
     "REL-C705F199933A7F2E",
@@ -29,5 +24,5 @@
     "REL-039C25DDC9A33A43"
   ],
   "procedure_item_ids": [],
-  "final_notes": null
+  "final_notes": "Scope approved after independent technical validation. Numeric source claims rejected from generic canonical use remain only in the private validation ledger."
 }

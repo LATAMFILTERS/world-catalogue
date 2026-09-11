@@ -65,24 +65,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Source-Reported Technical Value: 000 miles | evidence: EVID-72D284E4ECE1163A | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-72D284E4ECE1163A | status: awaiting_validation
-- Source-Reported Technical Value: 99 % | evidence: EVID-72D284E4ECE1163A | status: awaiting_validation
-- Filtration Efficiency: 99 % | evidence: EVID-CD272EDFE1E0DAFA | status: awaiting_validation
-- Filtration Efficiency: 95 % | evidence: EVID-CD272EDFE1E0DAFA | status: awaiting_validation
-- Filtration Efficiency: 12 months | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
-- Service Interval: 12 months | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
-- Source-Reported Technical Value: 000 miles | evidence: EVID-D9470D17137F3A38 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-D9470D17137F3A38 | status: awaiting_validation
-- Filtration Efficiency: 10 psi | evidence: EVID-788F5F06C1DF74D5 | status: awaiting_validation
-- Filtration Efficiency: 3 % | evidence: EVID-788F5F06C1DF74D5 | status: awaiting_validation
-- Service Interval: 2-6 % | evidence: EVID-788F5F06C1DF74D5 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-282C617439439F74 | status: awaiting_validation
-- Source-Reported Technical Value: 10 % | evidence: EVID-282C617439439F74 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-5C13CCE9F1A838E3 | status: awaiting_validation
-- Source-Reported Technical Value: 98 % | evidence: EVID-5C13CCE9F1A838E3 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-F6A9C3B365AE75C2 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

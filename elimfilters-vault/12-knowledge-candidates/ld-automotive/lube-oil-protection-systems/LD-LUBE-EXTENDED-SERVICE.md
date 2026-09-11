@@ -67,14 +67,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Service Interval: 000 miles | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation
-- Source-Reported Technical Value: 000 miles | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation
-- Filtration Efficiency: 99 % | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation
-- Filtration Efficiency: 20 microns | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation
-- Service Interval: 500 miles | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation
-- Particle Size / Micron Rating: 99 % | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation
-- Particle Size / Micron Rating: 20 microns | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation
-- Particle Size / Micron Rating: 000 miles | evidence: EVID-2F3BC965CF628B50 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

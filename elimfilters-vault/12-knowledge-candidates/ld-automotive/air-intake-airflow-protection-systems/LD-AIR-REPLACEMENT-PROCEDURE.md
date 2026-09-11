@@ -72,7 +72,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Source-Reported Technical Value: 000 miles | evidence: EVID-27D9EF3AE43281EA | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

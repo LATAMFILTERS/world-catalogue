@@ -66,14 +66,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Filtration Efficiency: 95 % | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation
-- Filtration Efficiency: 20 microns | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation
-- Filtration Efficiency: 50 % | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation
-- Filtration Efficiency: 10 microns | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation
-- Particle Size / Micron Rating: 25 microns | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation
-- Particle Size / Micron Rating: 5 microns | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation
-- Filtration Efficiency: 90 % | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation
-- Filtration Efficiency: 5 microns | evidence: EVID-A1C56F9F8441935E | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

@@ -65,11 +65,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Filtration Efficiency: 20 micron | evidence: EVID-DCBD3469FB0F59BA | status: awaiting_validation
-- Filtration Efficiency: 99 % | evidence: EVID-67A8BAD7601A4B36 | status: awaiting_validation
-- Source-Reported Technical Value: 000 miles | evidence: EVID-27D9EF3AE43281EA | status: awaiting_validation
-- Source-Reported Technical Value: 000 miles | evidence: EVID-D9470D17137F3A38 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-D9470D17137F3A38 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 

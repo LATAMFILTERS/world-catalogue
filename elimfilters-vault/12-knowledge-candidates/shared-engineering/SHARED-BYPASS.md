@@ -65,11 +65,8 @@ cross_reference_write_allowed: false
 
 ## Metrics — Awaiting Validation
 
-- Pressure / Bypass Setting: 15 psi | evidence: EVID-6768CDB55306D1F8 | status: awaiting_validation
-- Filtration Efficiency: 20 micron | evidence: EVID-DCBD3469FB0F59BA | status: awaiting_validation
-- Filtration Efficiency: 12 months | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
-- Service Interval: 12 months | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
-- Service Interval: 000 miles | evidence: EVID-AFC8451BE949EFA3 | status: awaiting_validation
+
+- None recorded
 
 ## Technical Relationships — Awaiting Validation
 
