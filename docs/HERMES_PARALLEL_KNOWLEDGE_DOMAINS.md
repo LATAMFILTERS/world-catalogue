@@ -149,7 +149,7 @@ A vehicle, engine, model, year, OE number or part number found in external evide
 
 ## FRAM automotive technical corpus
 
-The user-approved FRAM automotive corpus is registered in:
+The approved FRAM automotive corpus is registered in:
 
 `lib/knowledge-governance/fram-automotive-source-corpus.js`
 
@@ -168,7 +168,7 @@ application_relation default = candidate
 approval_required = true
 ```
 
-FRAM is evidence provenance, not public ELIMFILTERS copy. Technical facts must be extracted, normalized, validated and rewritten into ELIMFILTERS-neutral engineering language before any reviewed public use.
+FRAM is internal evidence provenance, not public ELIMFILTERS copy. Technical facts must be extracted, normalized, validated and rewritten into ELIMFILTERS-neutral engineering language before any reviewed public use.
 
 ## LD corpus classification
 
@@ -193,12 +193,26 @@ Cross-system/general maintenance material
 
 The technology relationship remains `probable` at ingestion. Classification is not approval.
 
+For compatibility, HERMES keeps the existing `candidate_type` taxonomy. A second field, `knowledge_content_type`, supplies the technical document classification used by the Knowledge Center:
+
+```text
+Engineering Reference
+Failure Analysis Guide
+Installation Procedure
+Application Note
+Service Reference
+```
+
+This avoids changing historical HERMES workflow enums while allowing engineering-grade content organization.
+
 ## Operational collector
 
-Run:
+Project commands:
 
 ```powershell
-node scripts/hermes/collect-automotive-knowledge-corpus.mjs
+npm run hermes:ld:baseline
+npm run hermes:ld:collect
+npm run test:hermes-knowledge-domains
 ```
 
 The collector uses the existing HERMES collection engine and maintains dedicated LD automotive source state:
@@ -211,19 +225,45 @@ The collector uses the existing HERMES collection engine and maintains dedicated
 
 Default behavior follows the global HERMES dry-run rule. A dry run creates previews rather than approved knowledge.
 
-Optional baseline-only initialization:
+`npm run hermes:ld:baseline` records/refreshes the dedicated corpus baseline and generates no intelligence candidate.
 
-```powershell
-$env:HERMES_LD_BASELINE_MODE='true'
-node scripts/hermes/collect-automotive-knowledge-corpus.mjs
-Remove-Item Env:HERMES_LD_BASELINE_MODE
+`npm run hermes:ld:collect` performs the governed comparison/first semantic harvest. Every generated candidate is enriched with its knowledge domain, Automotive industry, systems, technical content type, technology candidates and relationship states, then validated again using the central HERMES candidate validator.
+
+No mode of this collector directly writes catalogue data, creates product crosses, writes pgvector data or authorizes publication.
+
+## Source visibility governance
+
+Source provenance must be retained internally. Public source exposure follows an explicit-deny-by-default policy.
+
+`lib/knowledge-governance/obsidian-publication-contract.js` sets:
+
+```text
+public_source_policy = explicit_allow_only
 ```
 
-No mode of this collector directly writes catalogue data or authorizes publication.
+Every approved source defaults to:
+
+```text
+public_reference_allowed = false
+```
+
+A public renderer may receive a publisher or source URL only when editorial review explicitly changes that source to `public_reference_allowed = true`.
+
+For HERMES candidates, `scripts/hermes/publish-approved-candidate.mjs` records:
+
+```text
+public_source_visibility = internal_only
+```
+
+unless the candidate explicitly carries `source_governance.public_brand_reference = true`.
+
+The canonical DRAFT note retains publisher, URL and source hash under `Internal evidence provenance` for auditability, but that section is marked not for public rendering when visibility is internal-only.
+
+This preserves evidence provenance without exposing competitor/source branding in ELIMFILTERS-facing content.
 
 ## HERMES research contract
 
-`lib/knowledge-governance/hermes-research-contract.js` now carries optional governed context:
+`lib/knowledge-governance/hermes-research-contract.js` carries optional governed context:
 
 - `knowledge_domain`
 - `industry`
@@ -240,28 +280,25 @@ Invalid mixed-domain requests are rejected, for example `LIGHT_DUTY + Mining`.
 
 ## Nodal Center target model
 
-The logical knowledge graph should expose the following branches without duplicating facts:
+The knowledge-domain indexes are materialized under:
+
+`elimfilters-vault/00-meta/knowledge-domains/`
+
+They provide governed domain navigation without restructuring the established canonical folders.
+
+The logical knowledge graph remains:
 
 ```text
-01 Products
-02 Systems
-03 Industries
-04 Problems
-05 Intelligence
-06 Components
-07 Knowledge Domains
-   / Heavy Duty
-   / Light Duty
-   / Shared Engineering
-08 Diagnostics
-09 Procedures
-10 Standards
-11 Applications
-12 Technical Bulletins
-13 Source Evidence
+Industry
+<-> System
+<-> Technology
+<-> Component
+<-> Problem
+<-> Application
+<-> Technical Knowledge
 ```
 
-These are logical publication targets. Creating or restructuring physical Obsidian folders remains subject to the existing Obsidian review/write contract; HERMES does not bypass that authority.
+Knowledge-domain membership is contextual metadata, not a second copy of the same technical fact.
 
 ## Publication sequence
 
@@ -274,6 +311,7 @@ SOURCE
 -> DOMAIN CLASSIFICATION
 -> INDUSTRY
 -> SYSTEM
+-> KNOWLEDGE CONTENT TYPE
 -> TECHNOLOGY RELATION
 -> COMPONENT
 -> PROBLEM / FAILURE MODE
