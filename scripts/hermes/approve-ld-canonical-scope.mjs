@@ -48,7 +48,7 @@ function refsApproved(review){
 
 const results=[];
 for(const file of walk(candidateRoot)){
-  let text=fs.readFileSync(file,'utf8');
+  const text=fs.readFileSync(file,'utf8');
   const candidate=parseCandidateNote(text);
   if(!candidate.knowledge_object_id) continue;
   const rp=reviewPath(candidate.knowledge_object_id);
@@ -72,8 +72,6 @@ for(const file of walk(candidateRoot)){
   });
   review.final_notes='Scope approved after independent technical validation. Numeric source claims rejected from generic canonical use remain only in the private validation ledger.';
   fs.writeFileSync(rp,JSON.stringify(review,null,2)+'\n','utf8');
-  text=text.replace(/\| status: awaiting_validation/g,'| status: approved');
-  fs.writeFileSync(file,text,'utf8');
 }
 console.log(`[LD canonical scope] mode=${apply?'APPLY':'DRY_RUN'} total=${results.length} scope_ready=${results.filter(x=>x.ready).length} blocked=${results.filter(x=>!x.ready).length}`);
 for(const item of results.filter(x=>!x.ready)) console.log(`[LD canonical scope] BLOCKED ${item.id} official=${item.official} neutral=${item.neutral} technology=${item.techOk} technical=${item.technicalOk}`);
