@@ -14,6 +14,17 @@ export {
   getKnowledgeGraphSummary,
 } from './knowledge-service';
 
+// Universal Public Knowledge Governance
+export type { PublicKnowledgeValidation } from './public-knowledge-gateway';
+export {
+  sanitizeKnowledgeValue,
+  findPublicKnowledgeLeaks,
+  isPublicGraphNode,
+  toPublicGraphNode,
+  validatePublicKnowledgeValue,
+  PUBLIC_KNOWLEDGE_GOVERNANCE,
+} from './public-knowledge-gateway';
+
 // Search Service
 export type { SearchResult, SearchOptions, SearchEntityType } from './search-service';
 export { search, searchByType, findById } from './search-service';
@@ -43,6 +54,7 @@ export type {
   RelationshipProvenance,
   VersionHistoryEntry,
   GovernanceSummary,
+  EntityListingOptions,
 } from './provenance-service';
 export {
   getEntityProvenance,
