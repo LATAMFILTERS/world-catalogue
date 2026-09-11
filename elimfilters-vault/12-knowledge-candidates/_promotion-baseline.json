@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "package": "LD_AUTOMOTIVE_STRUCTURED_KNOWLEDGE",
+  "candidate_notes": 34,
+  "metric_occurrences_captured": 47,
+  "unique_source_metric_claims": 42,
+  "unique_technical_metric_values": 29,
+  "technical_relationships": 32,
+  "procedures": 11,
+  "promotion_policy": {
+    "metric_occurrences_must_be_accounted_for": true,
+    "duplicate_metric_occurrences_may_share_one_review_decision": true,
+    "technical_relationships_require_individual_approval": true,
+    "procedures_require_individual_approval": true,
+    "bulk_promotion_allowed": false,
+    "knowledge_center_auto_publish": false
+  }
+}
