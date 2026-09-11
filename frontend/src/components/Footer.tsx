@@ -57,6 +57,7 @@ const getFooterNavigation = (t: any) => [
   {
     title: t('footer.legal', 'LEGAL'),
     links: [
+      { label: t('footer.warranty', 'Product Warranty'), href: '/legal/warranty', external: false },
       { label: t('footer.termsOfService', 'Terms of Service'), href: '/legal/terms', external: false },
       { label: t('footer.privacyPolicy', 'Privacy Policy'), href: '/legal/privacy', external: false },
       { label: t('footer.aiPolicy', 'AI Use Policy'), href: '/legal/ai-policy', external: false },
@@ -117,62 +118,61 @@ export function Footer() {
             }}>
               {t('footer.tagline', 'Asset protection through industrial contamination control.')}
             </p>
-
           </div>
 
           {navColumns.map((col, i) => (
             <div key={i}>
-                <h3 style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  letterSpacing: '0.15em',
-                  textTransform: 'uppercase',
-                  color: '#FFF12D',
-                  margin: '0 0 16px 0',
-                }}>
-                  {col.title}
-                </h3>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {col.links.map((link, j) => (
-                    <li key={j}>
-                      {link.external ? (
-                        <a
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            fontSize: '13px',
-                            color: 'rgba(255,255,255,0.6)',
-                            textDecoration: 'none',
-                            transition: 'color 0.2s',
-                          }}
-                          onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
-                          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
-                        >
-                          {link.label}
-                        </a>
-                      ) : (
-                        <Link
-                          href={link.href}
-                          style={{
-                            fontSize: '13px',
-                            color: 'rgba(255,255,255,0.6)',
-                            textDecoration: 'none',
-                            transition: 'color 0.2s',
-                            display: 'inline-block',
-                          }}
-                          onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
-                          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
-                        >
-                          {link.label}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              <h3 style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                color: '#FFF12D',
+                margin: '0 0 16px 0',
+              }}>
+                {col.title}
+              </h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {col.links.map((link, j) => (
+                  <li key={j}>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: '13px',
+                          color: 'rgba(255,255,255,0.6)',
+                          textDecoration: 'none',
+                          transition: 'color 0.2s',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        style={{
+                          fontSize: '13px',
+                          color: 'rgba(255,255,255,0.6)',
+                          textDecoration: 'none',
+                          transition: 'color 0.2s',
+                          display: 'inline-block',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         <div style={{
@@ -256,6 +256,19 @@ export function Footer() {
             </p>
           </div>
           <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Link
+              href="/legal/warranty"
+              style={{
+                fontSize: '12px',
+                color: 'rgba(255,255,255,0.65)',
+                textDecoration: 'none',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,241,45,0.8)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
+            >
+              Warranty
+            </Link>
             <Link
               href="/legal/privacy"
               style={{
