@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const {
   createPublicationRequest,
   validatePublicationRequest,
+  buildPublicSourceReferences,
   transitionReviewStatus,
   isValidReviewTransition,
   publishToObsidianStub
@@ -22,6 +23,7 @@ function baseRequest(overrides = {}) {
 test('a publication request starts pending review', () => {
   const request = baseRequest();
   assert.equal(request.review_status, 'pending');
+  assert.equal(request.public_source_policy, 'explicit_allow_only');
 });
 
 test('pending cannot jump directly to a terminal state without going through the transition function validation', () => {
@@ -34,6 +36,27 @@ test('approving a request requires at least one approved source', () => {
   const request = baseRequest({ approved_sources: [] });
   const approved = transitionReviewStatus(request, 'approved', { reviewer: 'reviewer@elimfilters.com' });
   assert.equal(validatePublicationRequest(approved).valid, false);
+});
+
+test('source provenance is private by default and only explicit allow can reach a public renderer', () => {
+  const request = baseRequest({
+    approved_sources: [
+      { title: 'Internal Evidence A', publisher: 'External Source A', url: 'https://example.com/a' },
+      { title: 'Public Reference B', publisher: 'Standards Body', url: 'https://example.com/b', public_reference_allowed: true }
+    ]
+  });
+
+  assert.equal(request.approved_sources[0].public_reference_allowed, false);
+  assert.equal(request.approved_sources[1].public_reference_allowed, true);
+  const publicSources = buildPublicSourceReferences(request);
+  assert.equal(publicSources.length, 1);
+  assert.equal(publicSources[0].title, 'Public Reference B');
+});
+
+test('tampering with public source policy fails validation', () => {
+  const request = baseRequest();
+  request.public_source_policy = 'allow_all';
+  assert.equal(validatePublicationRequest(request).valid, false);
 });
 
 test('rejecting a request requires review notes', () => {
