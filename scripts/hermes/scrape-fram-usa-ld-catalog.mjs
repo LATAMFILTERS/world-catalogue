@@ -174,9 +174,9 @@ async function normalizeCandidate(candidate, config) {
 
 const notifier = createJobNotifier({
   jobKey: 'fram-usa-ld-catalog-harvest',
-  title: 'HERMES — FRAM USA LD',
+  title: 'HERMES — FRAM LD Multi-Region',
   module: 'HERMES',
-  metadata: { market_scope: 'USA_NORTH_AMERICA', families: ['LUBE','AIR','CABIN','FUEL'] }
+  metadata: { market_scope: 'MULTI_REGION', source_catalog_scope: 'FRAM_LD_MULTI_REGION', families: ['LUBE','AIR','CABIN','FUEL'] }
 });
 
 async function notify(method, ...values) {
@@ -185,7 +185,7 @@ async function notify(method, ...values) {
 
 async function main() {
   const config = await loadPublicCatalogConfig();
-  await notify('started', 'Cosecha estructurada FRAM USA LD iniciada; catálogo público sin escrituras automáticas.');
+  await notify('started', 'Cosecha estructurada FRAM LD multirregional iniciada; catálogo público sin escrituras automáticas.');
   let candidates = await enumerateCandidates(config);
   if (limit > 0) candidates = candidates.slice(0, limit);
   const results = [];
@@ -230,7 +230,7 @@ async function main() {
 
   const manifest = {
     schema_version: '1.0.0', run_id: runId, harvested_at: new Date().toISOString(),
-    market_scope: 'USA_NORTH_AMERICA', allowed_families: ['LUBE','AIR','CABIN','FUEL'],
+    market_scope: 'MULTI_REGION', source_catalog_scope: 'FRAM_LD_MULTI_REGION', allowed_families: ['LUBE','AIR','CABIN','FUEL'],
     case_pack_policy: casePack, public_media_policy: 'Genuine Media', gtin_promoted: false,
     evidence_only: true, database_write: false, public_catalog_auto_write: false,
     candidates: candidates.length,
@@ -242,13 +242,13 @@ async function main() {
     results
   };
   fs.writeFileSync(path.join(runDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
-  await notify('completed', `FRAM USA LD: ${manifest.unique_authorities} autoridades; OK=${manifest.ok}; errores=${manifest.errors}.`, { metadata: manifest });
+  await notify('completed', `FRAM LD multi-region: ${manifest.unique_authorities} autoridades; OK=${manifest.ok}; errores=${manifest.errors}.`, { metadata: manifest });
   console.log(JSON.stringify({ run_id: runId, run_dir: path.relative(process.cwd(), runDir).replaceAll('\\','/'), ...manifest }, null, 2));
   if (manifest.errors) process.exitCode = 1;
 }
 
 main().catch(async error => {
-  console.error(`[HERMES FRAM USA LD] ${error.stack || error.message}`);
+  console.error(`[HERMES FRAM LD MULTI-REGION] ${error.stack || error.message}`);
   await notify('failed', error.message, { metadata: { run_id: runId } });
   process.exit(1);
 });

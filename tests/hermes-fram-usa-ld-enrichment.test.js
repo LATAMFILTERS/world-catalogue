@@ -78,6 +78,8 @@ test('Extra Guard is authority before Tough Guard and Synthetic Endurance', () =
 
 test('public proposal protects media secret and excludes GTIN/logistics', () => {
   const enriched = buildFramLdEnrichment(bundle, { family: 'LUBE', casePack: 12 });
+  assert.equal(enriched.market_scope, 'MULTI_REGION');
+  assert.equal(enriched.source_catalog_scope, 'FRAM_LD_MULTI_REGION');
   const specs = enriched.public_catalog_proposal.technical_specifications;
   assert.equal(specs.media_type, PUBLIC_MEDIA_TYPE);
   assert.equal(specs.outer_diameter_in, 2.688);
