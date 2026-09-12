@@ -117,3 +117,103 @@ export async function diagnoseFramWidgetDns(host = FRAM_WIDGET_HOST) {
   const globallyMissing = results.every(item => item.status === 'NOT_RESOLVED');
   return { host, results, classification: globallyMissing ? 'UPSTREAM_PUBLIC_DNS_RECORD_MISSING' : 'DNS_RESOLUTION_AVAILABLE' };
 }
+export function parseTotalRecords(xml = '') {
+  const match = String(xml).match(/\btotalrecords="(\d+)"/i);
+  return match ? Number.parseInt(match[1], 10) : 0;
+}
+
+function decodeXmlText(value = '') {
+  let text = String(value);
+  for (let i = 0; i < 2; i += 1) {
+    text = text
+      .replace(/&amp;/gi, '&')
+      .replace(/&quot;/gi, '"')
+      .replace(/&apos;|&#39;/gi, "'")
+      .replace(/&lt;/gi, '<')
+      .replace(/&gt;/gi, '>')
+      .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+      .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)));
+  }
+  return text.trim();
+}
+
+export function parsePartAttributes(xml = '') {
+  const records = [];
+  for (const match of String(xml).matchAll(/<partsAttributes>([\s\S]*?)<\/partsAttributes>/gi)) {
+    records.push({
+      attribute: decodeXmlText(textTag(match[1], 'attribute') || ''),
+      value: decodeXmlText(textTag(match[1], 'value') || ''),
+      recno: textTag(match[1], 'recno')
+    });
+  }
+  return records.filter(record => record.attribute);
+}
+
+export function parseApplications(xml = '') {
+  const records = [];
+  for (const match of String(xml).matchAll(/<partsapps>([\s\S]*?)<\/partsapps>/gi)) {
+    const block = match[1];
+    records.push({
+      make: decodeXmlText(textTag(block, 'make') || ''),
+      model: decodeXmlText(textTag(block, 'model') || ''),
+      year: decodeXmlText(textTag(block, 'year') || ''),
+      engine: decodeXmlText(textTag(block, 'engine') || ''),
+      part_type: decodeXmlText(textTag(block, 'parttype') || ''),
+      application_type: textTag(block, 'apptype') || null,
+      quantity: Number.parseInt(textTag(block, 'Qty') || '1', 10) || 1
+    });
+  }
+  return records.filter(record => record.make || record.model);
+}
+
+export function parseCrossReferences(xml = '') {
+  const records = [];
+  for (const match of String(xml).matchAll(/<interchangepartdata>([\s\S]*?)<\/interchangepartdata>/gi)) {
+    const block = match[1];
+    records.push({
+      manufacturer: decodeXmlText(textTag(block, 'mfg') || ''),
+      part_number: decodeXmlText(textTag(block, 'comp_no') || ''),
+      source_part_number: decodeXmlText(textTag(block, 'part_no') || ''),
+      part_key: textTag(block, 'part_key') || null,
+      supplier: decodeXmlText(textTag(block, 'supplier') || ''),
+      brand_id: textTag(block, 'smtp_brandid') || null,
+      aaia_brand_id: textTag(block, 'aaiabrandid') || null,
+      part_type: decodeXmlText(textTag(block, 'part_type') || '')
+    });
+  }
+  return records.filter(record => record.manufacturer && record.part_number);
+}
+
+function normalizePartNumber(value = '') {
+  return String(value).toUpperCase().replace(/[^A-Z0-9]/g, '');
+}
+
+export async function fetchFramPartBundle(partNumber, { config, timeout = 30000 } = {}) {
+  const cfg = config || await loadPublicCatalogConfig();
+  const requested = normalizePartNumber(partNumber);
+  const list = await queryCatalog(`lookup=partlist&partno=${encodeURIComponent(partNumber)}`, { config: cfg, limit: 100, timeout });
+  const candidates = parsePartList(list.xml).filter(record => /^Fram Filters$/i.test(record.supplier || ''));
+  const part = candidates.find(record => normalizePartNumber(record.part_number) === requested) || null;
+  if (!part) return { found: false, requested_part_number: partNumber, candidates, config: cfg };
+
+  const [detail, applications, crosses] = await Promise.all([
+    queryCatalog(`lookup=partdetail&part=${encodeURIComponent(part.part_key)}`, { config: cfg, limit: 500, timeout }),
+    queryCatalog(`lookup=app&part=${encodeURIComponent(part.part_key)}`, { config: cfg, limit: 5000, timeout }),
+    queryCatalog(`lookup=partcross&part=${encodeURIComponent(part.part_key)}`, { config: cfg, limit: 5000, timeout })
+  ]);
+
+  return {
+    found: true,
+    requested_part_number: partNumber,
+    part,
+    attributes: parsePartAttributes(detail.xml),
+    applications: parseApplications(applications.xml),
+    cross_references: parseCrossReferences(crosses.xml),
+    totals: {
+      attributes: parseTotalRecords(detail.xml),
+      applications: parseTotalRecords(applications.xml),
+      cross_references: parseTotalRecords(crosses.xml)
+    },
+    source: { backend: cfg.dataUrl, catalog_id: cfg.catalogId, config_url: cfg.source }
+  };
+}
