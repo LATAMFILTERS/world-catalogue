@@ -105,6 +105,13 @@ async function start() {
   const r90ReferenceSanitation = await applyR90ReferenceSanitation();
   console.log('[r90-reference-sanitation]', JSON.stringify(r90ReferenceSanitation));
 
+  // Strip any residual MANN-FILTER brand text carried over verbatim from
+  // source datasheet copy into public product descriptions. Part Search
+  // must never present a competitor brand as the author of ELIMFILTERS copy.
+  const { applyDescriptionBrandSanitation } = require('./scripts/migrations/run_107_description_brand_sanitation');
+  const descriptionBrandSanitation = await applyDescriptionBrandSanitation();
+  console.log('[description-brand-sanitation]', JSON.stringify(descriptionBrandSanitation));
+
   const { applyGlobalSkuCertificationAudit } = require('./scripts/migrations/run_093_global_sku_certification_audit');
   const globalSkuCertification = await applyGlobalSkuCertificationAudit();
   console.log('[global-sku-certification-audit]', JSON.stringify(globalSkuCertification));
