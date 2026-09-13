@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
@@ -37,7 +38,7 @@ for (const source of hd) {
 }
 
 // Prevent private external provenance from entering generated/public surfaces.
-const repo = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicRoots = [path.join(repo, 'frontend', 'public'), path.join(repo, 'frontend', 'src', 'generated')].filter(fs.existsSync);
 const privateSignatures = [/fram_ld_pdf_/i, /fram_hd_/i, /91-private-evidence\/fram-/i, /consumer_tech_docs/i, /commercial_tech_docs/i];
 function walk(dir) {
