@@ -1,0 +1,30 @@
+name: Donaldson Lube EL8 Scrape
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/discover_donaldson_lube_el8_20260913.js'
+      - '.github/workflows/donaldson-lube-el8-scrape.yml'
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx patchright install --with-deps chromium
+      - name: Discover 553-entry Lube universe
+        run: node scripts/discover_donaldson_lube_el8_20260913.js
+      - name: Upload discovery artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: donaldson-lube-el8-discovery
+          path: |
+            scripts/donaldson_lube_el8_discovery_20260913.json
+            scripts/donaldson_lube_el8_pages_20260913.jsonl
+          if-no-files-found: warn
