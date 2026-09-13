@@ -4,14 +4,9 @@
  *
  * Phase 6F: Engineering Intelligence Dashboard
  *
- * Computes all dashboard widget data from:
- *   - getKCRecommendationGraph() — edge counts and graph topology
- *   - KC_SEARCH_INDEX / KC_SEARCH_TYPE_COUNTS — entity census
- *   - KC_STANDARDS, KC_CALCULATORS, ENGINEERING_DIAGRAMS — type-specific metadata
- *   - KC_GRAPH_METADATA — graphVersion
- *
- * Built once at module scope — all analytics are deterministic and identical
- * for identical graph + registry state.
+ * Dashboard analytics are intentionally independent from the public search index.
+ * Search remains canonical-only; dashboard census and rankings come from the
+ * recommendation graph and governed entity registries.
  *
  * Zero runtime APIs. Static export compatible.
  */
@@ -19,11 +14,12 @@
 import {
   KC_STANDARDS,
   KC_CALCULATORS,
+  KC_INDUSTRIES,
 } from '@/lib/knowledge-center-data';
 import { ENGINEERING_DIAGRAMS } from '@/lib/knowledge-center-data/diagram-registry';
+import { PROBLEM_STUBS } from './article-registry';
 import { KC_GRAPH_METADATA } from './navigation-index';
 import { getKCRecommendationGraph } from './recommendation-graph';
-import { KC_SEARCH_INDEX, KC_SEARCH_TYPE_COUNTS } from './search-index';
 import type {
   KCDashboardData,
   KCGraphSummary,
@@ -51,8 +47,6 @@ function buildGraphSummary(): KCGraphSummary {
   const graph = getKCRecommendationGraph();
   const totalNodes = graph.nodes.size;
 
-  // Count total undirected edge pairs: each edge stored in both directions,
-  // so sum of all Set sizes / 2 gives unique pairs.
   let directedSum = 0;
   for (const edgeSet of Array.from(graph.edges.values())) {
     directedSum += edgeSet.size;
@@ -78,6 +72,24 @@ function buildGraphSummary(): KCGraphSummary {
   return { totalNodes, totalEdges, connectedNodes, isolatedNodes, avgConnections, connectivityPct };
 }
 
+// ── Entity census ─────────────────────────────────────────────────────────────
+
+function buildEntityCounts(): Record<string, number> {
+  const graph = getKCRecommendationGraph();
+  const counts: Record<string, number> = {};
+
+  for (const node of Array.from(graph.nodes.values())) {
+    counts[node.type] = (counts[node.type] ?? 0) + 1;
+  }
+
+  // Industries and problem guides are public governed entities but are not
+  // recommendation-graph node types, so count them from their source registries.
+  counts.industry = KC_INDUSTRIES.length;
+  counts.problem = PROBLEM_STUBS.length;
+
+  return counts;
+}
+
 // ── Per-type connectivity ─────────────────────────────────────────────────────
 
 function buildTypeConnectivity(): KCTypeConnectivity[] {
@@ -101,20 +113,21 @@ function buildTypeConnectivity(): KCTypeConnectivity[] {
   });
 }
 
-// ── Top-N by edge count per type ─────────────────────────────────────────────
+// ── Top-N by edge count per graph type ───────────────────────────────────────
 
 function topByType(type: string, n: number): KCRankedNode[] {
-  return KC_SEARCH_INDEX
-    .filter(doc => doc.type === type)
-    .map(doc => ({
-      key:       doc.id,
-      type:      doc.type,
-      slug:      doc.slug,
-      label:     doc.label,
-      href:      doc.href,
-      edgeCount: doc.edgeCount,
-      code:      doc.code,
-      meta:      doc.domain,
+  const graph = getKCRecommendationGraph();
+
+  return Array.from(graph.nodes.values())
+    .filter(node => node.type === type)
+    .map(node => ({
+      key:       node.key,
+      type:      node.type,
+      slug:      node.slug,
+      label:     node.label,
+      href:      node.href,
+      edgeCount: edgesFor(node.key),
+      code:      node.type === 'standard' ? node.label : undefined,
     }))
     .sort((a, b) => b.edgeCount - a.edgeCount || a.label.localeCompare(b.label))
     .slice(0, n);
@@ -183,7 +196,7 @@ function buildDiagramNodes(n: number): KCRankedNode[] {
  */
 export const KC_DASHBOARD_DATA: KCDashboardData = {
   graphSummary:     buildGraphSummary(),
-  entityCounts:     KC_SEARCH_TYPE_COUNTS,
+  entityCounts:     buildEntityCounts(),
   typeConnectivity: buildTypeConnectivity(),
   topStandards:     topByType('standard',    6),
   topTechnologies:  topByType('technology',  6),
