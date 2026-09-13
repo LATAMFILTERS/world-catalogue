@@ -60,7 +60,6 @@ function buildArticleDocs(): KCSearchDocument[] {
     }));
 }
 
-
 function buildCanonicalKnowledgeDocs(): KCSearchDocument[] {
   return listCanonicalKnowledge().map(record => ({
     id: nk('article', `canonical-${record.slug}`), type: 'article' as const,
@@ -260,7 +259,17 @@ function buildProblemDocs(): KCSearchDocument[] {
 }
 
 export const KC_SEARCH_INDEX: KCSearchDocument[] = [
+  ...buildArticleDocs(),
   ...buildCanonicalKnowledgeDocs(),
+  ...buildStandardDocs(),
+  ...buildTechnologyDocs(),
+  ...buildTermDocs(),
+  ...buildSystemDocs(),
+  ...buildDiagramDocs(),
+  ...buildCalculatorDocs(),
+  ...buildComparisonDocs(),
+  ...buildIndustryDocs(),
+  ...buildProblemDocs(),
 ];
 
 export const KC_SEARCH_TYPE_COUNTS: Record<string, number> = KC_SEARCH_INDEX.reduce(
