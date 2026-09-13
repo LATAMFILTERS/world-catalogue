@@ -25,7 +25,7 @@ import SchemaMarkup from '@/components/SchemaMarkup';
 import SkipNavigation from '@/components/SkipNavigation';
 
 const BASE_URL = 'https://elimfilters.com';
-const GA_ID = 'G-0XJP6FLV55';
+const GA_ID = 'G-T7STY4TY9C';
 const BRAND_TITLE = 'ELIMFILTERS | Total Asset Protection Systems';
 const BRAND_DESCRIPTION = 'ELIMFILTERS engineers Total Asset Protection Systems that control contamination, reduce equipment wear, minimize downtime, improve reliability, and extend the operational life of critical industrial assets across mining, construction, agriculture, power generation, marine, and heavy-duty transportation.';
 
