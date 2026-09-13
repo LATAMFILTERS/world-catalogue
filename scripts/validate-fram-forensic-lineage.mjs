@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import process from 'node:process';
 import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
@@ -8,7 +9,7 @@ const require = createRequire(import.meta.url);
 const { buildForensicLineageLedger } = require('../lib/knowledge-governance/fram-automotive-forensic-lineage');
 const { buildHermesCorpusSources } = require('../lib/knowledge-governance/fram-automotive-source-corpus');
 
-const repo = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const canonicalPath = path.join(repo, 'frontend', 'src', 'generated', 'canonical-knowledge.json');
 const canonical = JSON.parse(fs.readFileSync(canonicalPath, 'utf8'));
 const canonicalIds = new Set((canonical.records || []).map((r) => r.id));

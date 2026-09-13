@@ -1,9 +1,207 @@
 {
   "schemaVersion": "1.0.0",
   "sourceAuthority": "13-canonical-knowledge",
-  "generatedAt": "2026-09-11T05:04:57.414Z",
-  "count": 34,
+  "generatedAt": "2026-09-13T20:20:30.335Z",
+  "count": 40,
   "records": [
+    {
+      "id": "HD-AIR-RADIAL-SEAL-HOUSING-COMPATIBILITY",
+      "slug": "hd-air-radial-seal-housing-compatibility",
+      "title": "Heavy-Duty Radial-Seal Air Filter Housing Compatibility",
+      "domain": "HEAVY_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "medium",
+      "industries": [
+        "Truck Fleets",
+        "Bus & Coach",
+        "Construction",
+        "Agriculture",
+        "Mining",
+        "Power Generation",
+        "Waste Municipal"
+      ],
+      "systems": [
+        "Air Intake & Airflow Protection Systems"
+      ],
+      "technologies": [
+        "MACROCORE™"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Inspect the radial sealing surface and housing for damage, contamination or incomplete seating.",
+        "Confirm the element is fully engaged in the intended housing before evaluating restriction or dust-ingress symptoms."
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Radial-seal air-filter compatibility depends on the intended housing interface and sealing engagement, not only on element dimensions.",
+        "A replacement element must preserve sealing geometry, seating depth and housing engagement required by the specific heavy-duty intake system.",
+        "Visual similarity is insufficient evidence of interchangeability when housing or sealing architecture differs.",
+        "Heavy-duty air-intake application validation must remain scoped to the specific housing/application configuration."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [],
+      "keywords": [
+        "Heavy-Duty Radial-Seal Air Filter Housing Compatibility",
+        "HEAVY_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Truck Fleets",
+        "Bus & Coach",
+        "Construction",
+        "Agriculture",
+        "Mining",
+        "Power Generation",
+        "Waste Municipal",
+        "Air Intake & Airflow Protection Systems",
+        "MACROCORE™",
+        "Inspect the radial sealing surface and housing for damage, contamination or incomplete seating.",
+        "Confirm the element is fully engaged in the intended housing before evaluating restriction or dust-ingress symptoms.",
+        "Radial-seal air-filter compatibility depends on the intended housing interface and sealing engagement, not only on element dimensions.",
+        "A replacement element must preserve sealing geometry, seating depth and housing engagement required by the specific heavy-duty intake system.",
+        "Visual similarity is insufficient evidence of interchangeability when housing or sealing architecture differs.",
+        "Heavy-duty air-intake application validation must remain scoped to the specific housing/application configuration."
+      ]
+    },
+    {
+      "id": "HD-DESIGN-CHANGE-FUNCTIONAL-EQUIVALENCE",
+      "slug": "hd-design-change-functional-equivalence",
+      "title": "Heavy-Duty Filter Design Change and Functional Equivalence",
+      "domain": "HEAVY_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "medium",
+      "industries": [
+        "Truck Fleets",
+        "Bus & Coach",
+        "Construction",
+        "Agriculture",
+        "Mining",
+        "Power Generation",
+        "Waste Municipal"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems",
+        "Fuel Cleanliness Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™",
+        "HYDROCORE™"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Verify sealing interfaces, threads, housing engagement, required flow path and application scope.",
+        "Distinguish cosmetic/production changes from changes that alter functional interfaces."
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "A visible design change does not by itself prove a change in fit, form or function.",
+        "Changes in profile, baseplate construction, thread-ring construction, drain features or element geometry require application and functional verification before equivalence is accepted or rejected.",
+        "Functional equivalence must be based on interface compatibility and required system behavior, not visual similarity alone.",
+        "A running design change must not be converted into a universal supersession rule without application scope."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [],
+      "keywords": [
+        "Heavy-Duty Filter Design Change and Functional Equivalence",
+        "HEAVY_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Truck Fleets",
+        "Bus & Coach",
+        "Construction",
+        "Agriculture",
+        "Mining",
+        "Power Generation",
+        "Waste Municipal",
+        "Lube/Oil Protection Systems",
+        "Fuel Cleanliness Protection Systems",
+        "SYNTRAX™",
+        "HYDROCORE™",
+        "Verify sealing interfaces, threads, housing engagement, required flow path and application scope.",
+        "Distinguish cosmetic/production changes from changes that alter functional interfaces.",
+        "A visible design change does not by itself prove a change in fit, form or function.",
+        "Changes in profile, baseplate construction, thread-ring construction, drain features or element geometry require application and functional verification before equivalence is accepted or rejected.",
+        "Functional equivalence must be based on interface compatibility and required system behavior, not visual similarity alone.",
+        "A running design change must not be converted into a universal supersession rule without application scope."
+      ]
+    },
+    {
+      "id": "HD-FUEL-SEALING-INTERFACE-COMPATIBILITY",
+      "slug": "hd-fuel-sealing-interface-compatibility",
+      "title": "Heavy-Duty Fuel Filter Sealing and Housing Interface Compatibility",
+      "domain": "HEAVY_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "medium",
+      "industries": [
+        "Truck Fleets",
+        "Bus & Coach",
+        "Construction",
+        "Agriculture",
+        "Mining",
+        "Power Generation",
+        "Waste Municipal"
+      ],
+      "systems": [
+        "Fuel Cleanliness Protection Systems"
+      ],
+      "technologies": [
+        "HYDROCORE™"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Verify gasket location and contact surface.",
+        "Verify center-tube/housing engagement and thread or bowl compatibility where present.",
+        "Confirm that the intended flow path is preserved after installation."
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Correct heavy-duty fuel filtration depends on sealing geometry and housing interface compatibility, not merely on external dimensions.",
+        "Center-tube, gasket-seat, thread-ring and bowl interfaces can affect whether a filter seals and routes fuel correctly.",
+        "A component that appears physically similar may still be incompatible if a sealing or engagement feature differs.",
+        "Housing and interface configuration must be treated as application-specific evidence during fitment validation."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [],
+      "keywords": [
+        "Heavy-Duty Fuel Filter Sealing and Housing Interface Compatibility",
+        "HEAVY_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Truck Fleets",
+        "Bus & Coach",
+        "Construction",
+        "Agriculture",
+        "Mining",
+        "Power Generation",
+        "Waste Municipal",
+        "Fuel Cleanliness Protection Systems",
+        "HYDROCORE™",
+        "Verify gasket location and contact surface.",
+        "Verify center-tube/housing engagement and thread or bowl compatibility where present.",
+        "Confirm that the intended flow path is preserved after installation.",
+        "Correct heavy-duty fuel filtration depends on sealing geometry and housing interface compatibility, not merely on external dimensions.",
+        "Center-tube, gasket-seat, thread-ring and bowl interfaces can affect whether a filter seals and routes fuel correctly.",
+        "A component that appears physically similar may still be incompatible if a sealing or engagement feature differs.",
+        "Housing and interface configuration must be treated as application-specific evidence during fitment validation."
+      ]
+    },
     {
       "id": "LD-AIR-FILTER-ARCHITECTURE",
       "slug": "ld-air-filter-architecture",
@@ -1123,6 +1321,128 @@
       ]
     },
     {
+      "id": "LD-LUBE-POST-SERVICE-PRESSURE-DIAGNOSIS",
+      "slug": "ld-lube-post-service-pressure-diagnosis",
+      "title": "Post-Service Oil Pressure and Pump-Prime Diagnosis",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Failure Analysis Guide",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Verify oil level and obvious leakage.",
+        "Confirm correct filter/application and sealing condition.",
+        "Verify actual oil pressure with an appropriate diagnostic method when a warning persists.",
+        "Evaluate pump-prime and pressure-control conditions according to the specific engine service procedure."
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Low or delayed oil pressure after service is not sufficient evidence that the replacement filter is restrictive or defective.",
+        "Loss of pump prime, low oil level, pickup-side problems, pressure-regulation faults, drain-back behavior and filter/application mismatch are distinct diagnostic branches.",
+        "Diagnosis should verify actual lubrication-system pressure and system condition before assigning causation to the filter."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [],
+      "keywords": [
+        "Post-Service Oil Pressure and Pump-Prime Diagnosis",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Failure Analysis Guide",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Verify oil level and obvious leakage.",
+        "Confirm correct filter/application and sealing condition.",
+        "Verify actual oil pressure with an appropriate diagnostic method when a warning persists.",
+        "Evaluate pump-prime and pressure-control conditions according to the specific engine service procedure.",
+        "Low or delayed oil pressure after service is not sufficient evidence that the replacement filter is restrictive or defective.",
+        "Loss of pump prime, low oil level, pickup-side problems, pressure-regulation faults, drain-back behavior and filter/application mismatch are distinct diagnostic branches.",
+        "Diagnosis should verify actual lubrication-system pressure and system condition before assigning causation to the filter."
+      ]
+    },
+    {
+      "id": "LD-LUBE-PRESSURE-CONTROL-ARCHITECTURE",
+      "slug": "ld-lube-pressure-control-architecture",
+      "title": "Lubrication Pressure-Control Valve Architecture",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [
+        "Oil Pump Pressure-Regulating Valve",
+        "Oil Filter Bypass/Relief Valve",
+        "Anti-Drainback Valve",
+        "Engine Oil Filter"
+      ],
+      "problems": [],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Identify which valve function is implicated before attributing abnormal pressure or delayed pressure build-up to the filter.",
+        "Confirm the engine/filter housing architecture before applying any valve-specific conclusion."
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "The pressure-regulating valve, filter bypass valve and anti-drainback valve perform different functions and should not be treated as interchangeable components.",
+        "A pressure-regulating valve controls system pressure, while a filter bypass valve protects lubrication continuity when filter restriction becomes excessive.",
+        "An anti-drainback valve is intended to limit reverse drainage through the filter after engine shutdown where the application architecture requires it.",
+        "Valve presence, location and operating thresholds are application-specific and must not be inferred from a generic filter description."
+      ],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Differential Pressure",
+        "Bypass",
+        "Flow Rate"
+      ],
+      "keywords": [
+        "Lubrication Pressure-Control Valve Architecture",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Oil Pump Pressure-Regulating Valve",
+        "Oil Filter Bypass/Relief Valve",
+        "Anti-Drainback Valve",
+        "Engine Oil Filter",
+        "Identify which valve function is implicated before attributing abnormal pressure or delayed pressure build-up to the filter.",
+        "Confirm the engine/filter housing architecture before applying any valve-specific conclusion.",
+        "The pressure-regulating valve, filter bypass valve and anti-drainback valve perform different functions and should not be treated as interchangeable components.",
+        "A pressure-regulating valve controls system pressure, while a filter bypass valve protects lubrication continuity when filter restriction becomes excessive.",
+        "An anti-drainback valve is intended to limit reverse drainage through the filter after engine shutdown where the application architecture requires it.",
+        "Valve presence, location and operating thresholds are application-specific and must not be inferred from a generic filter description.",
+        "Differential Pressure",
+        "Bypass",
+        "Flow Rate"
+      ]
+    },
+    {
       "id": "LD-LUBE-SEAL-LEAKAGE",
       "slug": "ld-lube-seal-leakage",
       "title": "Oil Filter Sealing and Leakage",
@@ -1250,6 +1570,68 @@
         "Gasket / Seal",
         "Installation",
         "Sealing"
+      ]
+    },
+    {
+      "id": "LD-LUBE-STRUCTURAL-FAILURE-DIAGNOSIS",
+      "slug": "ld-lube-structural-failure-diagnosis",
+      "title": "Oil Filter Structural Failure Diagnosis",
+      "domain": "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+      "contentType": "Failure Analysis Guide",
+      "confidence": "medium",
+      "industries": [
+        "Automotive"
+      ],
+      "systems": [
+        "Lube/Oil Protection Systems"
+      ],
+      "technologies": [
+        "SYNTRAX™"
+      ],
+      "components": [],
+      "problems": [],
+      "failureModes": [
+        "Center-tube or element structural collapse",
+        "Seal displacement associated with abnormal loading",
+        "Media deformation under excessive pressure differential"
+      ],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Inspect the failed element and housing for deformation pattern and sealing condition.",
+        "Review oil condition, service interval, cold-start history and evidence of excessive restriction.",
+        "Verify bypass/regulating valve architecture and application suitability."
+      ],
+      "correctiveActions": [
+        "Correct the system or application condition that produced abnormal loading before installing a replacement element."
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [],
+      "operatingConditions": [],
+      "standards": [],
+      "sharedEngineering": [
+        "Differential Pressure",
+        "Restriction",
+        "Failure Analysis"
+      ],
+      "keywords": [
+        "Oil Filter Structural Failure Diagnosis",
+        "LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+        "Failure Analysis Guide",
+        "Automotive",
+        "Lube/Oil Protection Systems",
+        "SYNTRAX™",
+        "Center-tube or element structural collapse",
+        "Seal displacement associated with abnormal loading",
+        "Media deformation under excessive pressure differential",
+        "Inspect the failed element and housing for deformation pattern and sealing condition.",
+        "Review oil condition, service interval, cold-start history and evidence of excessive restriction.",
+        "Verify bypass/regulating valve architecture and application suitability.",
+        "Correct the system or application condition that produced abnormal loading before installing a replacement element.",
+        "Differential Pressure",
+        "Restriction",
+        "Failure Analysis"
       ]
     },
     {
