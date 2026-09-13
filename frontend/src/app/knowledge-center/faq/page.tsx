@@ -77,7 +77,7 @@ export default function FAQHubPage() {
           <div className="mt-8 flex flex-wrap gap-3 text-sm text-neutral-300">
             <span className="border border-neutral-700 px-3 py-2">{entries.length} governed questions</span>
             <span className="border border-neutral-700 px-3 py-2">5 protection systems</span>
-            <span className="border border-neutral-700 px-3 py-2">9 technologies</span>
+            <span className="border border-neutral-700 px-3 py-2">10 technologies</span>
             <span className="border border-neutral-700 px-3 py-2">Search-demand signals included</span>
           </div>
         </div>

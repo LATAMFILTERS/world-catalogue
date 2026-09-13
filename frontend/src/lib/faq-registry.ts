@@ -1,5 +1,6 @@
 import { getSystemEditorial } from './system-editorial';
 import { getTechnologyEditorial } from './technology-editorial';
+import { HYDROCORE_EDITORIAL } from './hydrocore-editorial';
 import { TURBOCORE_EDITORIAL } from './turbocore-editorial';
 import { KC_STANDARDS } from './knowledge-center-data/standards-registry';
 
@@ -190,7 +191,9 @@ function normalizeQuestion(question: string): string {
 }
 
 function technologyEditorial(slug: string) {
-  return slug === 'turbocore' ? TURBOCORE_EDITORIAL : getTechnologyEditorial(slug);
+  if (slug === 'hydrocore') return HYDROCORE_EDITORIAL;
+  if (slug === 'turbocore') return TURBOCORE_EDITORIAL;
+  return getTechnologyEditorial(slug);
 }
 
 export function getFAQRegistry(): FAQRegistryEntry[] {
