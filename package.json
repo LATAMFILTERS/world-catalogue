@@ -7,7 +7,7 @@
   },
   "scripts": {
     "postinstall": "node scripts/postinstall-safe.js && node --test tests/omnichannel-canonical-taxonomy.test.js tests/bot-protocol-postgres-rich-response.test.js",
-    "start": "node server-protocol.js",
+    "start": "node server-entry.js",
     "dev": "node server-protocol.js",
     "build": "cd frontend && npm ci && npm run build",
     "notifications:install": "node scripts/migrations/run_102_native_notifications.js",
