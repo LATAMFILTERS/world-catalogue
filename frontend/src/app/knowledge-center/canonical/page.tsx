@@ -1,10 +1,11 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { listCanonicalKnowledge, CANONICAL_KNOWLEDGE_COUNT } from '@/lib/services/canonical-knowledge-service';
 
 export const metadata: Metadata = {
   title: 'Canonical Engineering Knowledge | ELIMFILTERS',
   description: 'Approved ELIMFILTERS engineering knowledge for filtration, diagnostics, service and asset protection.',
+  alternates: { canonical: 'https://elimfilters.com/knowledge-center/canonical/' },
 };
 
 export default function CanonicalKnowledgePage() {

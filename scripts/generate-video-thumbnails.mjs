@@ -14,7 +14,6 @@ const __dirname = path.dirname(__filename);
 
 // Video configurations with branding info
 const VIDEOS = {
-  moleculas: { title: 'Molecular Contamination Control', industry: 'hero', color: '#FFF12D' },
   agriculture: { title: 'Agricultural Equipment Protection', industry: 'agriculture', color: '#8BC34A' },
   automotive: { title: 'Automotive Filtration Systems', industry: 'automotive', color: '#2196F3' },
   mining: { title: 'Mining Equipment Asset Protection', industry: 'mining', color: '#FF9800' },
@@ -26,7 +25,6 @@ const VIDEOS = {
   'power-generation': { title: 'Power Generation Backup Systems', industry: 'power', color: '#FF5722' },
   'oil-gas': { title: 'Oil & Gas Equipment Protection', industry: 'oil-gas', color: '#424242' },
   'bus-coach': { title: 'Transit Bus & Coach Protection', industry: 'bus', color: '#9C27B0' },
-  'product-elimf': { title: 'ELIMFILTERS Product Overview', industry: 'products', color: '#FFF12D' },
 };
 
 /**

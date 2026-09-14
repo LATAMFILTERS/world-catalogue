@@ -72,6 +72,56 @@ if (migrationHtml) {
   }
 }
 
+const BASE_URL = 'https://elimfilters.com';
+const decodeXml = (value) => String(value || '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&apos;/g, "'");
+const normalizeUrl = (value) => {
+  const parsed = new URL(decodeXml(value), BASE_URL);
+  const pathName = parsed.pathname === '/' ? '/' : `${parsed.pathname.replace(/\/+$/, '')}/`;
+  return `${parsed.origin}${pathName}`;
+};
+const extractLocs = (xml) => [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => decodeXml(match[1]));
+const htmlForLoc = (loc) => {
+  const pathname = new URL(loc).pathname;
+  return pathname === '/' ? path.join(out, 'index.html') : path.join(out, pathname.replace(/^\/+|\/+$/g, ''), 'index.html');
+};
+
+const mainLocs = extractLocs(sitemap);
+const mainSet = new Set(mainLocs.map(normalizeUrl));
+for (const loc of mainLocs) {
+  const normalized = normalizeUrl(loc);
+  const pathname = new URL(normalized).pathname;
+  if (pathname.startsWith('/videos/') && pathname !== '/videos/') violations.push(`sitemap.xml contains secondary video watch route: ${pathname}`);
+  const htmlPath = htmlForLoc(normalized);
+  if (!fs.existsSync(htmlPath)) continue;
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  if (/<meta[^>]+name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(html)) violations.push(`sitemap.xml contains noindex page: ${pathname}`);
+  const canonicalTag = (html.match(/<link\b[^>]*rel=["']canonical["'][^>]*>/i) || html.match(/<link\b[^>]*href=["'][^"']+["'][^>]*rel=["']canonical["'][^>]*>/i) || [])[0];
+  const href = canonicalTag?.match(/href=["']([^"']+)["']/i)?.[1];
+  if (href && normalizeUrl(href) !== normalized) violations.push(`sitemap canonical mismatch: ${pathname} -> ${href}`);
+}
+
+const videoSitemap = read('video-sitemap.xml');
+for (const retired of ['moleculas', '/products', '/video-thumbnails/']) {
+  if (videoSitemap.includes(retired)) violations.push(`video-sitemap.xml contains retired/invalid signal: ${retired}`);
+}
+const videoBlocks = [...videoSitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => match[1]);
+if (videoBlocks.length !== 11) violations.push(`video-sitemap.xml expected 11 governed videos, found ${videoBlocks.length}`);
+const tagValue = (block, tag) => block.match(new RegExp(`<${tag}>([^<]+)<\\/${tag}>`))?.[1];
+for (const block of videoBlocks) {
+  const loc = tagValue(block, 'loc');
+  const thumbnail = tagValue(block, 'video:thumbnail_loc');
+  const content = tagValue(block, 'video:content_loc');
+  if (!loc || !thumbnail || !content) {
+    violations.push('video-sitemap.xml entry missing loc, thumbnail_loc, or content_loc');
+    continue;
+  }
+  if (!mainSet.has(normalizeUrl(loc))) violations.push(`video sitemap loc is not a canonical main-sitemap URL: ${loc}`);
+  for (const [kind, assetUrl] of [['thumbnail', thumbnail], ['content', content]]) {
+    const pathname = decodeURIComponent(new URL(decodeXml(assetUrl)).pathname).replace(/^\/+/, '');
+    if (!fs.existsSync(path.join(out, pathname))) violations.push(`video ${kind} asset missing from build output: ${assetUrl}`);
+  }
+}
+
 if (violations.length) {
   console.error('[validate-index-hygiene] FAILED');
   for (const violation of violations) console.error(` - ${violation}`);
