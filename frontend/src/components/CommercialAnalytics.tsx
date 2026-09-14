@@ -8,6 +8,7 @@ import { sendCommercialIntelligenceEvent } from '@/lib/commercial-intelligence';
 type EventParams = Record<string, string | number | boolean | undefined>;
 
 const CAMPAIGN_KEY = 'elimfilters_campaign_attribution';
+const COMMERCIAL_REF_KEY = 'elimfilters_commercial_account_code';
 const SOCIAL_HOSTS = ['instagram.com', 'facebook.com', 'linkedin.com', 'youtube.com', 'youtu.be', 'tiktok.com', 'x.com', 'twitter.com'];
 const DOWNLOAD_EXTENSIONS = ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.csv', '.zip'];
 const CONVERSION_EVENTS: Record<string, string> = {
@@ -16,6 +17,20 @@ const CONVERSION_EVENTS: Record<string, string> = {
   'distributor-locator': 'conversion_distributor_locator',
   'partner-application': 'conversion_partner_application',
 };
+
+function readCommercialRef(): string | undefined {
+  if (typeof window === 'undefined') return undefined;
+  const query = new URLSearchParams(window.location.search);
+  const current = (query.get('ref') || '').trim().toUpperCase();
+  if (/^[A-Z]{2}-[0-9]{6}$/.test(current)) {
+    try { sessionStorage.setItem(COMMERCIAL_REF_KEY, current); } catch {}
+    return current;
+  }
+  try {
+    const stored = sessionStorage.getItem(COMMERCIAL_REF_KEY) || '';
+    return /^[A-Z]{2}-[0-9]{6}$/.test(stored) ? stored : undefined;
+  } catch { return undefined; }
+}
 
 function readCampaign(): EventParams {
   if (typeof window === 'undefined') return {};
@@ -54,6 +69,7 @@ function sendEvent(name: string, params: EventParams = {}) {
     page_location: window.location.href,
     page_title: document.title,
     ...readCampaign(),
+    commercialAccountCode: readCommercialRef(),
     ...params,
   };
 
@@ -153,6 +169,7 @@ export default function CommercialAnalytics() {
     if (consent !== 'accepted') return;
 
     readCampaign();
+    if (readCommercialRef()) sendEvent('commercial_ref_page_view');
 
     const onClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null;

@@ -1,6 +1,7 @@
 const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://api.elimfilters.com').replace(/\/$/, '');
 
 const BACKEND_EVENTS = new Set([
+  'commercial_ref_page_view',
   'conversion_product_intelligence',
   'conversion_application_support',
   'conversion_distributor_locator',
