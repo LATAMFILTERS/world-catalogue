@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getCanonicalKnowledgeBySlug, listCanonicalKnowledge } from '@/lib/services/canonical-knowledge-service';
@@ -7,7 +7,8 @@ export function generateStaticParams() { return listCanonicalKnowledge().map(rec
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params; const record = getCanonicalKnowledgeBySlug(slug);
   if (!record) return { title: 'Knowledge Record | ELIMFILTERS' };
-  return { title: `${record.title} | ELIMFILTERS Knowledge Center`, description: record.technicalRelationships[0] || record.problems[0] || 'Approved ELIMFILTERS engineering knowledge.' };
+  const canonical = `https://elimfilters.com/knowledge-center/canonical/${record.slug}/`;
+  return { title: `${record.title} | ELIMFILTERS Knowledge Center`, description: record.technicalRelationships[0] || record.problems[0] || 'Approved ELIMFILTERS engineering knowledge.', alternates: { canonical } };
 }
 function Section({ title, items }: { title: string; items: string[] }) {
   if (!items.length) return null;

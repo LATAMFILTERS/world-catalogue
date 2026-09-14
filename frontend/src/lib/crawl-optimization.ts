@@ -7,10 +7,7 @@ const BASE_URL = 'https://elimfilters.com';
 
 export const STATIC_CRAWL_ROUTES = [
   '/', '/systems', '/technologies', '/families', '/industries', '/knowledge-center',
-  '/knowledge-center/faq', '/videos', '/videos/moleculas', '/videos/agriculture',
-  '/videos/automotive', '/videos/mining', '/videos/construction', '/videos/trucks-fleets',
-  '/videos/railway', '/videos/marine', '/videos/manufacturing', '/videos/power-generation',
-  '/videos/oil-gas', '/videos/bus-coach', '/about', '/contact', '/distributors',
+  '/knowledge-center/faq', '/videos', '/about', '/contact', '/distributors',
   '/commercial-lines', '/commercial-lines/duratech', '/commercial-lines/marineclean',
   '/engineering/dust-ingestion', '/distributor-application', '/warranty',
 ] as const;
