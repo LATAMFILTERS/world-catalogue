@@ -562,7 +562,176 @@
         "part_number": "1833690C1"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89070"
+      ],
+      "AC-DELCO": [
+        "WF108"
+      ],
+      "ALLIANCE": [
+        "ABPN10GWF2077"
+      ],
+      "AMERICAN-PARTS": [
+        "96045",
+        "96070"
+      ],
+      "BALDWIN": [
+        "B5134"
+      ],
+      "BIG-A": [
+        "96045",
+        "96064",
+        "96069",
+        "96070",
+        "96087"
+      ],
+      "BLUEBIRD": [
+        "64641"
+      ],
+      "CATERPILLAR": [
+        "3I1300",
+        "9Y4528"
+      ],
+      "CHAMP-LAB": [
+        "LFW4011",
+        "LFW4685",
+        "PW4011"
+      ],
+      "COACH-GUARD": [
+        "T061011"
+      ],
+      "CUMMINS": [
+        "33000721",
+        "3300721",
+        "3300724",
+        "3827423"
+      ],
+      "DAF": [
+        "1296929"
+      ],
+      "DETROIT-DIESEL": [
+        "23524403"
+      ],
+      "FLEETGUARD": [
+        "WF2077",
+        "WF2101"
+      ],
+      "FLEETRITE": [
+        "WFR82077",
+        "WFR82101"
+      ],
+      "FLXIBLE": [
+        "97520500196"
+      ],
+      "FORD": [
+        "E7NN8A469AA",
+        "EGNN8A424BA"
+      ],
+      "FRAM": [
+        "PR3383"
+      ],
+      "GENERAL-MOTORS": [
+        "25010844",
+        "25010845"
+      ],
+      "GONHER": [
+        "GP2077W"
+      ],
+      "GRAINGER": [
+        "2KYF5"
+      ],
+      "HASTINGS": [
+        "WC8"
+      ],
+      "HENGST": [
+        "H35WF"
+      ],
+      "HIFI": [
+        "WE2077"
+      ],
+      "HINO": [
+        "163041015",
+        "1630441015"
+      ],
+      "IHC-CASE": [
+        "1820358C1"
+      ],
+      "JOHN-DEERE": [
+        "RE11992"
+      ],
+      "KENWORTH": [
+        "KW2011"
+      ],
+      "KOMATSU": [
+        "8853260644"
+      ],
+      "KRALINATOR": [
+        "CM1"
+      ],
+      "LIEBHERR": [
+        "7025830"
+      ],
+      "LUBERFINER": [
+        "5134",
+        "LFW4685"
+      ],
+      "MACK": [
+        "3076PR3383",
+        "5839WF2077"
+      ],
+      "MANN": [
+        "WA94018"
+      ],
+      "MOTORCRAFT": [
+        "FW12"
+      ],
+      "NAPA": [
+        "4045",
+        "4069",
+        "4070",
+        "4087"
+      ],
+      "NATIONAL-STOCK-NUMBER": [
+        "2940012741915"
+      ],
+      "NEW-HOLLAND": [
+        "83960185",
+        "9609182"
+      ],
+      "NEWSTAR": [
+        "SSWF2077"
+      ],
+      "ORENSTEIN-KOPPEL": [
+        "A010001"
+      ],
+      "PERRY": [
+        "PFC4",
+        "S3",
+        "S4",
+        "S4A"
+      ],
+      "PUROLATOR": [
+        "PW4451",
+        "W54451"
+      ],
+      "SAKURA": [
+        "WC5714"
+      ],
+      "SURE": [
+        "SFC4685"
+      ],
+      "WIX": [
+        "24045",
+        "24070",
+        "24087",
+        "524069",
+        "524087"
+      ],
+      "WOODGATE": [
+        "WGW2077"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EW74085 Coolant filter for engine cooling circuits. THERMACORE™ micro-filtration media removes particulate and helps maintain coolant additive balance, reducing corrosion, cavitation, and scale buildup in the cooling system.",
     "sku_elimfilters": "EW74085",
     "category": "coolant",
@@ -971,7 +1140,461 @@
         "part_number": "11ND70211"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89071"
+      ],
+      "AC-DELCO": [
+        "WF100",
+        "WF100F",
+        "WF4"
+      ],
+      "AG-CHEM-EQUIPMENT": [
+        "16295",
+        "600709"
+      ],
+      "AIR-MAZE": [
+        "AMW2051"
+      ],
+      "ALLIANCE": [
+        "ABPN10GWF2051"
+      ],
+      "ALLIS-CHALMERS": [
+        "4029089",
+        "4029099",
+        "4029120",
+        "4393505",
+        "4681776",
+        "4734562",
+        "681546"
+      ],
+      "AMERICAN-PARTS": [
+        "131",
+        "132",
+        "134"
+      ],
+      "AP-LOCKHEED": [
+        "LK3539"
+      ],
+      "ASAHI": [
+        "KO1541",
+        "KO1580"
+      ],
+      "ATLAS-COPCO": [
+        "97101788"
+      ],
+      "BALDWIN": [
+        "BW5137"
+      ],
+      "BIG-A": [
+        "131",
+        "132",
+        "134",
+        "96022",
+        "96071",
+        "96071MP"
+      ],
+      "BOMAG": [
+        "31701010",
+        "31701051"
+      ],
+      "BUDA": [
+        "4029089",
+        "4029099",
+        "4029120",
+        "4393505",
+        "4681776",
+        "4734562",
+        "681546"
+      ],
+      "CASE": [
+        "1329039C1"
+      ],
+      "CATERPILLAR": [
+        "1112369",
+        "1112370",
+        "1W1310",
+        "2W3326",
+        "3I1302",
+        "8N0099",
+        "9N3368",
+        "9N3659",
+        "9N3717",
+        "9N3719"
+      ],
+      "CHAMPION": [
+        "WF202"
+      ],
+      "CHAMP-LAB": [
+        "LFW4744",
+        "PW2901"
+      ],
+      "CLARK": [
+        "949097",
+        "949418",
+        "960044",
+        "960978"
+      ],
+      "CO-OP": [
+        "W473"
+      ],
+      "COACH-GUARD": [
+        "T061012"
+      ],
+      "COLES": [
+        "8753934",
+        "8757435",
+        "8767435"
+      ],
+      "COOPERS": [
+        "AZW002",
+        "CSM6500"
+      ],
+      "CROSLAND": [
+        "7701",
+        "9342"
+      ],
+      "CUMMINS": [
+        "209606",
+        "259453",
+        "299084",
+        "3315789",
+        "3864148",
+        "4936016",
+        "CW1010",
+        "CW2010"
+      ],
+      "CYCLONE": [
+        "W473"
+      ],
+      "DELUXE": [
+        "7010",
+        "7473",
+        "WD7010",
+        "WD7320",
+        "WD7453",
+        "WD7473"
+      ],
+      "ERF": [
+        "C3305367"
+      ],
+      "EUCLID": [
+        "4054555"
+      ],
+      "FAUN-FRISCH": [
+        "4786765"
+      ],
+      "FIAAM": [
+        "FT4858"
+      ],
+      "FIAT": [
+        "1930549",
+        "4029084",
+        "70681546",
+        "70697135",
+        "74029120",
+        "74393505",
+        "74681776",
+        "74734562",
+        "76106535"
+      ],
+      "FLEETGUARD": [
+        "WF2010",
+        "WF2011",
+        "WF2023",
+        "WF2024",
+        "WF2051",
+        "WF2059",
+        "WF2067",
+        "WF2088"
+      ],
+      "FLEETRITE": [
+        "WFR82010",
+        "WFR82023",
+        "WFR82051",
+        "WFR82059",
+        "WFR82067",
+        "WFR82088"
+      ],
+      "FLXIBLE": [
+        "97520500163"
+      ],
+      "FMC": [
+        "3A10522"
+      ],
+      "FODEN": [
+        "Y02729203"
+      ],
+      "FORD": [
+        "1602113",
+        "749F8A469AAA",
+        "819F8A469AA",
+        "D2HZ8A424A",
+        "D5HZ8A424A",
+        "SFD28031"
+      ],
+      "FRAM": [
+        "PR3304"
+      ],
+      "GENERAL-MOTORS": [
+        "23507545",
+        "6438919",
+        "6439692",
+        "6439766",
+        "6493692",
+        "681955",
+        "681956"
+      ],
+      "GONHER": [
+        "GP1010Q"
+      ],
+      "GRAINGER": [
+        "2KXR9"
+      ],
+      "GUARDIAN": [
+        "G024071"
+      ],
+      "HASTINGS": [
+        "WC6"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA17001",
+        "HDA17003"
+      ],
+      "HENGST": [
+        "H13WF12"
+      ],
+      "HIFI": [
+        "WE2059"
+      ],
+      "IHC-CASE": [
+        "1801090C1",
+        "423870C1",
+        "427713C1",
+        "441365C1",
+        "441365C2",
+        "462816C1",
+        "462816C2",
+        "993445C1"
+      ],
+      "INGERSOLL-RAND": [
+        "35312396",
+        "35362268",
+        "58194747",
+        "91780510"
+      ],
+      "IVECO": [
+        "1907694"
+      ],
+      "JOHN-DEERE": [
+        "AR87113",
+        "AR89380"
+      ],
+      "KENWORTH": [
+        "K251C271",
+        "K251C342",
+        "KW2010",
+        "KW2051"
+      ],
+      "KOMATSU": [
+        "6004111010",
+        "6004111020",
+        "6004111191",
+        "6004111320",
+        "6004111571",
+        "6710618112",
+        "CUWF2010"
+      ],
+      "KORODY-COLYER": [
+        "FBW5137"
+      ],
+      "KRALINATOR": [
+        "C16",
+        "C22",
+        "C24",
+        "W320",
+        "W373",
+        "W453",
+        "W473"
+      ],
+      "LB": [
+        "WF2010"
+      ],
+      "LEDERER": [
+        "2752",
+        "C20",
+        "C30",
+        "C32"
+      ],
+      "LEE": [
+        "C20",
+        "C30",
+        "C32"
+      ],
+      "LETOURNEAU-WESTINGHOUSE": [
+        "PB0447",
+        "VJ7034",
+        "VS7382"
+      ],
+      "LEYLAND": [
+        "13692",
+        "CU3314581"
+      ],
+      "LIEBHERR": [
+        "5602719",
+        "7361501"
+      ],
+      "LTH": [
+        "LTH1010H"
+      ],
+      "LUBERFINER": [
+        "LFW4740",
+        "LFW4744"
+      ],
+      "MACK": [
+        "3076PR3304",
+        "5839WF2051"
+      ],
+      "MAHLE": [
+        "WF1"
+      ],
+      "MASSEY-FERGUSON": [
+        "1055916M1"
+      ],
+      "MELROE": [
+        "900010"
+      ],
+      "MOTORCRAFT": [
+        "FW2"
+      ],
+      "NALCOOL": [
+        "NF3000"
+      ],
+      "NAPA": [
+        "4022",
+        "4071"
+      ],
+      "NISSAN": [
+        "2191595000"
+      ],
+      "OFSA": [
+        "OF12010"
+      ],
+      "ORENSTEIN-KOPPEL": [
+        "104403",
+        "4799709",
+        "765638"
+      ],
+      "PBR": [
+        "BW2005"
+      ],
+      "PERMATIC": [
+        "FH306V"
+      ],
+      "PERRY": [
+        "PFC16",
+        "PFC24A",
+        "PFC8A",
+        "S320",
+        "S330",
+        "S331",
+        "S373",
+        "S473"
+      ],
+      "PETERBILT": [
+        "PM2051"
+      ],
+      "PH-HARNISCHFEGER": [
+        "221046Z37"
+      ],
+      "PIERCE": [
+        "425376",
+        "SD13399"
+      ],
+      "POCLAIN": [
+        "V1350570",
+        "V1350579"
+      ],
+      "PREVOST-CAR": [
+        "550630"
+      ],
+      "PUROLATOR": [
+        "PW2010",
+        "PW4452"
+      ],
+      "QUAKER-STATE": [
+        "QS3304"
+      ],
+      "RICKEL": [
+        "F016295"
+      ],
+      "SANDVIK": [
+        "1002075"
+      ],
+      "SAVARA": [
+        "92900117"
+      ],
+      "SCANIA": [
+        "661302"
+      ],
+      "SISU": [
+        "1696300311"
+      ],
+      "STEIGER": [
+        "28031"
+      ],
+      "TECNOCAR": [
+        "RA148"
+      ],
+      "TRACTOMOTIVE": [
+        "4029089",
+        "4029099",
+        "4029120",
+        "4393505",
+        "4681776",
+        "4734562",
+        "681546"
+      ],
+      "VERSATILE": [
+        "15802",
+        "22936",
+        "25881"
+      ],
+      "VOLVO-CARS": [
+        "200973329",
+        "366822",
+        "79250031",
+        "8390135"
+      ],
+      "WABCO": [
+        "PB0447",
+        "VJ7034",
+        "VS7382"
+      ],
+      "WANDERLODGE": [
+        "6082416"
+      ],
+      "WGB": [
+        "S320",
+        "S330",
+        "S331",
+        "S453"
+      ],
+      "WHITE": [
+        "200973329",
+        "207015003",
+        "27073723",
+        "27074037",
+        "27074039",
+        "27077520",
+        "7074037"
+      ],
+      "WIX": [
+        "24022",
+        "24071",
+        "524071"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EW74088 Coolant filter for engine cooling circuits. THERMACORE™ micro-filtration media removes particulate and helps maintain coolant additive balance, reducing corrosion, cavitation, and scale buildup in the cooling system.",
     "sku_elimfilters": "EW74088",
     "category": "coolant",
@@ -1118,7 +1741,176 @@
         "part_number": "1843659PE"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89070"
+      ],
+      "AC-DELCO": [
+        "WF108"
+      ],
+      "ALLIANCE": [
+        "ABPN10GWF2077"
+      ],
+      "AMERICAN-PARTS": [
+        "96045",
+        "96070"
+      ],
+      "BALDWIN": [
+        "B5134"
+      ],
+      "BIG-A": [
+        "96045",
+        "96064",
+        "96069",
+        "96070",
+        "96087"
+      ],
+      "BLUEBIRD": [
+        "64641"
+      ],
+      "CATERPILLAR": [
+        "3I1300",
+        "9Y4528"
+      ],
+      "CHAMP-LAB": [
+        "LFW4011",
+        "LFW4685",
+        "PW4011"
+      ],
+      "COACH-GUARD": [
+        "T061011"
+      ],
+      "CUMMINS": [
+        "33000721",
+        "3300721",
+        "3300724",
+        "3827423"
+      ],
+      "DAF": [
+        "1296929"
+      ],
+      "DETROIT-DIESEL": [
+        "23524403"
+      ],
+      "FLEETGUARD": [
+        "WF2077",
+        "WF2101"
+      ],
+      "FLEETRITE": [
+        "WFR82077",
+        "WFR82101"
+      ],
+      "FLXIBLE": [
+        "97520500196"
+      ],
+      "FORD": [
+        "E7NN8A469AA",
+        "EGNN8A424BA"
+      ],
+      "FRAM": [
+        "PR3383"
+      ],
+      "GENERAL-MOTORS": [
+        "25010844",
+        "25010845"
+      ],
+      "GONHER": [
+        "GP2077W"
+      ],
+      "GRAINGER": [
+        "2KYF5"
+      ],
+      "HASTINGS": [
+        "WC8"
+      ],
+      "HENGST": [
+        "H35WF"
+      ],
+      "HIFI": [
+        "WE2077"
+      ],
+      "HINO": [
+        "163041015",
+        "1630441015"
+      ],
+      "IHC-CASE": [
+        "1820358C1"
+      ],
+      "JOHN-DEERE": [
+        "RE11992"
+      ],
+      "KENWORTH": [
+        "KW2011"
+      ],
+      "KOMATSU": [
+        "8853260644"
+      ],
+      "KRALINATOR": [
+        "CM1"
+      ],
+      "LIEBHERR": [
+        "7025830"
+      ],
+      "LUBERFINER": [
+        "5134",
+        "LFW4685"
+      ],
+      "MACK": [
+        "3076PR3383",
+        "5839WF2077"
+      ],
+      "MANN": [
+        "WA94018"
+      ],
+      "MOTORCRAFT": [
+        "FW12"
+      ],
+      "NAPA": [
+        "4045",
+        "4069",
+        "4070",
+        "4087"
+      ],
+      "NATIONAL-STOCK-NUMBER": [
+        "2940012741915"
+      ],
+      "NEW-HOLLAND": [
+        "83960185",
+        "9609182"
+      ],
+      "NEWSTAR": [
+        "SSWF2077"
+      ],
+      "ORENSTEIN-KOPPEL": [
+        "A010001"
+      ],
+      "PERRY": [
+        "PFC4",
+        "S3",
+        "S4",
+        "S4A"
+      ],
+      "PUROLATOR": [
+        "PW4451",
+        "W54451"
+      ],
+      "SAKURA": [
+        "WC5714"
+      ],
+      "SURE": [
+        "SFC4685"
+      ],
+      "WIX": [
+        "24045",
+        "24070",
+        "24087",
+        "524069",
+        "524087"
+      ],
+      "WOODGATE": [
+        "WGW2077"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EW74785 Coolant filter for engine cooling circuits. THERMACORE™ micro-filtration media removes particulate and helps maintain coolant additive balance, reducing corrosion, cavitation, and scale buildup in the cooling system.",
     "sku_elimfilters": "EW74785",
     "category": "coolant",
@@ -7948,7 +8740,461 @@
         "part_number": "31701003"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89071"
+      ],
+      "AC-DELCO": [
+        "WF100",
+        "WF100F",
+        "WF4"
+      ],
+      "AG-CHEM-EQUIPMENT": [
+        "16295",
+        "600709"
+      ],
+      "AIR-MAZE": [
+        "AMW2051"
+      ],
+      "ALLIANCE": [
+        "ABPN10GWF2051"
+      ],
+      "ALLIS-CHALMERS": [
+        "4029089",
+        "4029099",
+        "4029120",
+        "4393505",
+        "4681776",
+        "4734562",
+        "681546"
+      ],
+      "AMERICAN-PARTS": [
+        "131",
+        "132",
+        "134"
+      ],
+      "AP-LOCKHEED": [
+        "LK3539"
+      ],
+      "ASAHI": [
+        "KO1541",
+        "KO1580"
+      ],
+      "ATLAS-COPCO": [
+        "97101788"
+      ],
+      "BALDWIN": [
+        "BW5137"
+      ],
+      "BIG-A": [
+        "131",
+        "132",
+        "134",
+        "96022",
+        "96071",
+        "96071MP"
+      ],
+      "BOMAG": [
+        "31701010",
+        "31701051"
+      ],
+      "BUDA": [
+        "4029089",
+        "4029099",
+        "4029120",
+        "4393505",
+        "4681776",
+        "4734562",
+        "681546"
+      ],
+      "CASE": [
+        "1329039C1"
+      ],
+      "CATERPILLAR": [
+        "1112369",
+        "1112370",
+        "1W1310",
+        "2W3326",
+        "3I1302",
+        "8N0099",
+        "9N3368",
+        "9N3659",
+        "9N3717",
+        "9N3719"
+      ],
+      "CHAMPION": [
+        "WF202"
+      ],
+      "CHAMP-LAB": [
+        "LFW4744",
+        "PW2901"
+      ],
+      "CLARK": [
+        "949097",
+        "949418",
+        "960044",
+        "960978"
+      ],
+      "CO-OP": [
+        "W473"
+      ],
+      "COACH-GUARD": [
+        "T061012"
+      ],
+      "COLES": [
+        "8753934",
+        "8757435",
+        "8767435"
+      ],
+      "COOPERS": [
+        "AZW002",
+        "CSM6500"
+      ],
+      "CROSLAND": [
+        "7701",
+        "9342"
+      ],
+      "CUMMINS": [
+        "209606",
+        "259453",
+        "299084",
+        "3315789",
+        "3864148",
+        "4936016",
+        "CW1010",
+        "CW2010"
+      ],
+      "CYCLONE": [
+        "W473"
+      ],
+      "DELUXE": [
+        "7010",
+        "7473",
+        "WD7010",
+        "WD7320",
+        "WD7453",
+        "WD7473"
+      ],
+      "ERF": [
+        "C3305367"
+      ],
+      "EUCLID": [
+        "4054555"
+      ],
+      "FAUN-FRISCH": [
+        "4786765"
+      ],
+      "FIAAM": [
+        "FT4858"
+      ],
+      "FIAT": [
+        "1930549",
+        "4029084",
+        "70681546",
+        "70697135",
+        "74029120",
+        "74393505",
+        "74681776",
+        "74734562",
+        "76106535"
+      ],
+      "FLEETGUARD": [
+        "WF2010",
+        "WF2011",
+        "WF2023",
+        "WF2024",
+        "WF2051",
+        "WF2059",
+        "WF2067",
+        "WF2088"
+      ],
+      "FLEETRITE": [
+        "WFR82010",
+        "WFR82023",
+        "WFR82051",
+        "WFR82059",
+        "WFR82067",
+        "WFR82088"
+      ],
+      "FLXIBLE": [
+        "97520500163"
+      ],
+      "FMC": [
+        "3A10522"
+      ],
+      "FODEN": [
+        "Y02729203"
+      ],
+      "FORD": [
+        "1602113",
+        "749F8A469AAA",
+        "819F8A469AA",
+        "D2HZ8A424A",
+        "D5HZ8A424A",
+        "SFD28031"
+      ],
+      "FRAM": [
+        "PR3304"
+      ],
+      "GENERAL-MOTORS": [
+        "23507545",
+        "6438919",
+        "6439692",
+        "6439766",
+        "6493692",
+        "681955",
+        "681956"
+      ],
+      "GONHER": [
+        "GP1010Q"
+      ],
+      "GRAINGER": [
+        "2KXR9"
+      ],
+      "GUARDIAN": [
+        "G024071"
+      ],
+      "HASTINGS": [
+        "WC6"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA17001",
+        "HDA17003"
+      ],
+      "HENGST": [
+        "H13WF12"
+      ],
+      "HIFI": [
+        "WE2059"
+      ],
+      "IHC-CASE": [
+        "1801090C1",
+        "423870C1",
+        "427713C1",
+        "441365C1",
+        "441365C2",
+        "462816C1",
+        "462816C2",
+        "993445C1"
+      ],
+      "INGERSOLL-RAND": [
+        "35312396",
+        "35362268",
+        "58194747",
+        "91780510"
+      ],
+      "IVECO": [
+        "1907694"
+      ],
+      "JOHN-DEERE": [
+        "AR87113",
+        "AR89380"
+      ],
+      "KENWORTH": [
+        "K251C271",
+        "K251C342",
+        "KW2010",
+        "KW2051"
+      ],
+      "KOMATSU": [
+        "6004111010",
+        "6004111020",
+        "6004111191",
+        "6004111320",
+        "6004111571",
+        "6710618112",
+        "CUWF2010"
+      ],
+      "KORODY-COLYER": [
+        "FBW5137"
+      ],
+      "KRALINATOR": [
+        "C16",
+        "C22",
+        "C24",
+        "W320",
+        "W373",
+        "W453",
+        "W473"
+      ],
+      "LB": [
+        "WF2010"
+      ],
+      "LEDERER": [
+        "2752",
+        "C20",
+        "C30",
+        "C32"
+      ],
+      "LEE": [
+        "C20",
+        "C30",
+        "C32"
+      ],
+      "LETOURNEAU-WESTINGHOUSE": [
+        "PB0447",
+        "VJ7034",
+        "VS7382"
+      ],
+      "LEYLAND": [
+        "13692",
+        "CU3314581"
+      ],
+      "LIEBHERR": [
+        "5602719",
+        "7361501"
+      ],
+      "LTH": [
+        "LTH1010H"
+      ],
+      "LUBERFINER": [
+        "LFW4740",
+        "LFW4744"
+      ],
+      "MACK": [
+        "3076PR3304",
+        "5839WF2051"
+      ],
+      "MAHLE": [
+        "WF1"
+      ],
+      "MASSEY-FERGUSON": [
+        "1055916M1"
+      ],
+      "MELROE": [
+        "900010"
+      ],
+      "MOTORCRAFT": [
+        "FW2"
+      ],
+      "NALCOOL": [
+        "NF3000"
+      ],
+      "NAPA": [
+        "4022",
+        "4071"
+      ],
+      "NISSAN": [
+        "2191595000"
+      ],
+      "OFSA": [
+        "OF12010"
+      ],
+      "ORENSTEIN-KOPPEL": [
+        "104403",
+        "4799709",
+        "765638"
+      ],
+      "PBR": [
+        "BW2005"
+      ],
+      "PERMATIC": [
+        "FH306V"
+      ],
+      "PERRY": [
+        "PFC16",
+        "PFC24A",
+        "PFC8A",
+        "S320",
+        "S330",
+        "S331",
+        "S373",
+        "S473"
+      ],
+      "PETERBILT": [
+        "PM2051"
+      ],
+      "PH-HARNISCHFEGER": [
+        "221046Z37"
+      ],
+      "PIERCE": [
+        "425376",
+        "SD13399"
+      ],
+      "POCLAIN": [
+        "V1350570",
+        "V1350579"
+      ],
+      "PREVOST-CAR": [
+        "550630"
+      ],
+      "PUROLATOR": [
+        "PW2010",
+        "PW4452"
+      ],
+      "QUAKER-STATE": [
+        "QS3304"
+      ],
+      "RICKEL": [
+        "F016295"
+      ],
+      "SANDVIK": [
+        "1002075"
+      ],
+      "SAVARA": [
+        "92900117"
+      ],
+      "SCANIA": [
+        "661302"
+      ],
+      "SISU": [
+        "1696300311"
+      ],
+      "STEIGER": [
+        "28031"
+      ],
+      "TECNOCAR": [
+        "RA148"
+      ],
+      "TRACTOMOTIVE": [
+        "4029089",
+        "4029099",
+        "4029120",
+        "4393505",
+        "4681776",
+        "4734562",
+        "681546"
+      ],
+      "VERSATILE": [
+        "15802",
+        "22936",
+        "25881"
+      ],
+      "VOLVO-CARS": [
+        "200973329",
+        "366822",
+        "79250031",
+        "8390135"
+      ],
+      "WABCO": [
+        "PB0447",
+        "VJ7034",
+        "VS7382"
+      ],
+      "WANDERLODGE": [
+        "6082416"
+      ],
+      "WGB": [
+        "S320",
+        "S330",
+        "S331",
+        "S453"
+      ],
+      "WHITE": [
+        "200973329",
+        "207015003",
+        "27073723",
+        "27074037",
+        "27074039",
+        "27077520",
+        "7074037"
+      ],
+      "WIX": [
+        "24022",
+        "24071",
+        "524071"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EW72071 Coolant filter for engine cooling circuits. THERMACORE™ micro-filtration media removes particulate and helps maintain coolant additive balance, reducing corrosion, cavitation, and scale buildup in the cooling system.",
     "sku_elimfilters": "EW72071",
     "category": "coolant",
@@ -8306,7 +9552,17 @@
         "part_number": "1257937H1"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "CARQUEST": [
+        "89370"
+      ],
+      "FRAM": [
+        "PR3414"
+      ],
+      "PARKER": [
+        "RA-2070"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EW72072 Coolant filter for engine cooling circuits. THERMACORE™ micro-filtration media removes particulate and helps maintain coolant additive balance, reducing corrosion, cavitation, and scale buildup in the cooling system.",
     "sku_elimfilters": "EW72072",
     "category": "coolant",

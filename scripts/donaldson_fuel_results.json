@@ -567,7 +567,30 @@
     ],
     "equipment": [],
     "oem_codes": [],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "HENGST": [
+        "E535KPD852"
+      ],
+      "BALDWIN": [
+        "PF46171"
+      ],
+      "DETROIT-DIESEL": [
+        "0000904851",
+        "A0000904851"
+      ],
+      "FLEETGUARD": [
+        "FS20081"
+      ],
+      "FREIGHTLINER": [
+        "A245007"
+      ],
+      "LUBER-FINER": [
+        "L20081F"
+      ],
+      "WIX": [
+        "WF10635"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EF90694 Fuel filter for diesel injection systems. SYNTAPORE™ media removes particulate and water contamination before fuel reaches high-pressure injectors, protecting against injector wear and stalling caused by dirty fuel.",
     "sku_elimfilters": "EF90694",
     "category": "fuel",
@@ -602,7 +625,27 @@
     ],
     "equipment": [],
     "oem_codes": [],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "HENGST": [
+        "E524KPD773"
+      ],
+      "BALDWIN": [
+        "PF46145"
+      ],
+      "DETROIT-DIESEL": [
+        "0000905051",
+        "A0000905051"
+      ],
+      "FLEETGUARD": [
+        "FS20083"
+      ],
+      "FREIGHTLINER": [
+        "A485007"
+      ],
+      "SAKURA": [
+        "SF-73020"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EF90710 Fuel filter for diesel injection systems. SYNTAPORE™ media removes particulate and water contamination before fuel reaches high-pressure injectors, protecting against injector wear and stalling caused by dirty fuel.",
     "sku_elimfilters": "EF90710",
     "category": "fuel",
@@ -1853,7 +1896,160 @@
         "part_number": "BH8101"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "ATLAS-WEYHAUSEN": [
+        "2653231452",
+        "3222999092"
+      ],
+      "BALDWIN": [
+        "BF7813",
+        "BF7940",
+        "BF7957",
+        "BF7966"
+      ],
+      "CARQUEST": [
+        "86654"
+      ],
+      "CLEAN": [
+        "DN1962"
+      ],
+      "COOPERS": [
+        "FSM4166"
+      ],
+      "CUMMINS": [
+        "4897833"
+      ],
+      "DAF": [
+        "1399760"
+      ],
+      "DELPHI": [
+        "HDF308"
+      ],
+      "DIESEL-TECHNIC": [
+        "545126"
+      ],
+      "DOOSAN": [
+        "65125035026",
+        "A408064"
+      ],
+      "FEBI-BILSTEIN": [
+        "35373"
+      ],
+      "FIL": [
+        "ZP3043FMB"
+      ],
+      "FILTRON": [
+        "PP8616"
+      ],
+      "FLEETGUARD": [
+        "FF165",
+        "FF5420",
+        "FF5421",
+        "FF5485",
+        "FF5612"
+      ],
+      "FRAM": [
+        "P9697"
+      ],
+      "GROVE": [
+        "9414101755"
+      ],
+      "GUD": [
+        "Z604"
+      ],
+      "HASTINGS": [
+        "FF1202"
+      ],
+      "HENGST": [
+        "H18WK05",
+        "H191WK"
+      ],
+      "HIFI": [
+        "SN40529"
+      ],
+      "IVECO": [
+        "2992241",
+        "504033400"
+      ],
+      "JURA": [
+        "SN40529"
+      ],
+      "KENWORTH": [
+        "K1399760PAC"
+      ],
+      "KNECHT": [
+        "KC188"
+      ],
+      "KOMATSU": [
+        "6754716130",
+        "6754716140",
+        "6754796130",
+        "6754796140"
+      ],
+      "LUBER-FINER": [
+        "LFF5485"
+      ],
+      "MAGNETI-MARELLI": [
+        "153071760535",
+        "154768226210"
+      ],
+      "MAHLE": [
+        "KC188",
+        "KC440"
+      ],
+      "MANN": [
+        "WK950%2F21",
+        "WK95021"
+      ],
+      "MANN-HUMMEL": [
+        "WK95021"
+      ],
+      "MECAFILTER": [
+        "ELG5537"
+      ],
+      "NAPA": [
+        "3654"
+      ],
+      "SCHUPP": [
+        "SK3297"
+      ],
+      "SOFIMA": [
+        "S2220NR"
+      ],
+      "SOLARIS": [
+        "4894548"
+      ],
+      "SOLBUS": [
+        "4894548"
+      ],
+      "UFI": [
+        "2434900"
+      ],
+      "UNICO": [
+        "FI917021"
+      ],
+      "VMC": [
+        "FF550881"
+      ],
+      "VOLVO": [
+        "14559479",
+        "43919943"
+      ],
+      "VW-AUDI-PORSCHE": [
+        "2R0127177B"
+      ],
+      "WIX": [
+        "33654",
+        "33956",
+        "33966",
+        "533654",
+        "95041E",
+        "WF33654"
+      ],
+      "YANMAR": [
+        "12990755801"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EF95812 Fuel filter for diesel injection systems. SYNTAPORE™ media removes particulate and water contamination before fuel reaches high-pressure injectors, protecting against injector wear and stalling caused by dirty fuel.",
     "sku_elimfilters": "EF95812",
     "category": "fuel",
@@ -1932,7 +2128,156 @@
     ],
     "equipment": [],
     "oem_codes": [],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "AGCO": [
+        "AG121852"
+      ],
+      "ALCO": [
+        "SP1358"
+      ],
+      "ALLIANCE": [
+        "ABPN10GFF53",
+        "ABPN10GFF5321",
+        "ABPN10GFF5324"
+      ],
+      "AMERICAN-PARTS": [
+        "95377"
+      ],
+      "ATLAS-COPCO": [
+        "3222310756"
+      ],
+      "ATLAS-WEYHAUSEN": [
+        "3222310756",
+        "P9772040079"
+      ],
+      "BALDWIN": [
+        "BF7530MPG",
+        "BF7632",
+        "BF7634"
+      ],
+      "BIG-A": [
+        "95377",
+        "95626"
+      ],
+      "CARQUEST": [
+        "86377",
+        "86626",
+        "86626MP"
+      ],
+      "CATERPILLAR": [
+        "1R0751",
+        "1R0759",
+        "6I4783"
+      ],
+      "CHARLES-MACHINE-WORKS": [
+        "5001789"
+      ],
+      "FIL": [
+        "ZP518AF"
+      ],
+      "FLEETGUARD": [
+        "FF5309",
+        "FF5321",
+        "FF5324"
+      ],
+      "FLEETRITE": [
+        "FFR85309",
+        "FFR85321",
+        "FFR85324",
+        "FSR81006"
+      ],
+      "FRAM": [
+        "P8264",
+        "P8451",
+        "P8490"
+      ],
+      "GREY-FRIARS": [
+        "868S"
+      ],
+      "HASTINGS": [
+        "FF1049",
+        "FF1076",
+        "FF1087"
+      ],
+      "HENGST": [
+        "H178WK"
+      ],
+      "HIFI": [
+        "SN55421"
+      ],
+      "KRALINATOR": [
+        "F377"
+      ],
+      "LOESING": [
+        "025136"
+      ],
+      "LUBER-FINER": [
+        "LFF4783",
+        "LFF4783RD"
+      ],
+      "MACK": [
+        "2191P551315"
+      ],
+      "MAHLE": [
+        "KC134"
+      ],
+      "MANN": [
+        "WK850%2F3",
+        "WK8503"
+      ],
+      "MIJACK": [
+        "23150003"
+      ],
+      "NAPA": [
+        "3377",
+        "3626"
+      ],
+      "PARTMO-FILTERS": [
+        "A1R0751"
+      ],
+      "PUROLATOR": [
+        "F65214",
+        "F66014"
+      ],
+      "SAKURA": [
+        "FC5516"
+      ],
+      "SCT": [
+        "ST6043"
+      ],
+      "SURE": [
+        "SFF0293"
+      ],
+      "TAYLOR": [
+        "5597098"
+      ],
+      "TIM": [
+        "1R0759"
+      ],
+      "UFI": [
+        "2414000"
+      ],
+      "VMC": [
+        "FF551315"
+      ],
+      "VOLVO": [
+        "85114066"
+      ],
+      "WALGAHN-MOTOREN": [
+        "00811865"
+      ],
+      "WIRTGEN": [
+        "77338"
+      ],
+      "WIX": [
+        "33377",
+        "33626",
+        "33626MP"
+      ],
+      "WOODGATE": [
+        "WGF4783"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EF95816 Fuel filter for diesel injection systems. SYNTAPORE™ media removes particulate and water contamination before fuel reaches high-pressure injectors, protecting against injector wear and stalling caused by dirty fuel.",
     "sku_elimfilters": "EF95816",
     "category": "fuel",
@@ -2800,7 +3145,15 @@
         "part_number": "800161380"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "HIFI": [
+        "SN70497"
+      ],
+      "MTU": [
+        "59408300030",
+        "X59408300030"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EF98727 Fuel filter for diesel injection systems. SYNTAPORE™ media removes particulate and water contamination before fuel reaches high-pressure injectors, protecting against injector wear and stalling caused by dirty fuel.",
     "sku_elimfilters": "EF98727",
     "category": "fuel",
@@ -258470,7 +258823,42 @@
         "part_number": "2517615C91"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PF7986"
+      ],
+      "CARQUEST": [
+        "86991"
+      ],
+      "FLEETGUARD": [
+        "FS19869"
+      ],
+      "FRAM": [
+        "CS10853"
+      ],
+      "HASTINGS": [
+        "FF1211"
+      ],
+      "HENGST": [
+        "E422KP02",
+        "E422KP02D168"
+      ],
+      "HIFI": [
+        "SN40652"
+      ],
+      "LUBER-FINER": [
+        "L7694F"
+      ],
+      "NAPA": [
+        "3991"
+      ],
+      "NAVISTAR": [
+        "3004473C91"
+      ],
+      "WIX": [
+        "33991"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EF92500 Fuel filter for diesel injection systems. SYNTAPORE™ media removes particulate and water contamination before fuel reaches high-pressure injectors, protecting against injector wear and stalling caused by dirty fuel.",
     "sku_elimfilters": "EF92500",
     "category": "fuel",
@@ -260333,7 +260721,32 @@
       }
     ],
     "oem_codes": [],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PF9804"
+      ],
+      "CARQUEST": [
+        "86655"
+      ],
+      "HASTINGS": [
+        "FF1293"
+      ],
+      "HENGST": [
+        "E497KPD543"
+      ],
+      "HIFI": [
+        "SN40793"
+      ],
+      "LUBER-FINER": [
+        "L9915F"
+      ],
+      "UFI": [
+        "2619000"
+      ],
+      "WIX": [
+        "33655"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EF94520 Fuel filter for diesel injection systems. SYNTAPORE™ media removes particulate and water contamination before fuel reaches high-pressure injectors, protecting against injector wear and stalling caused by dirty fuel.",
     "sku_elimfilters": "EF94520",
     "category": "fuel",
@@ -260373,7 +260786,32 @@
     ],
     "equipment": [],
     "oem_codes": [],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PF9804"
+      ],
+      "CARQUEST": [
+        "86655"
+      ],
+      "HASTINGS": [
+        "FF1293"
+      ],
+      "HENGST": [
+        "E497KPD543"
+      ],
+      "HIFI": [
+        "SN40793"
+      ],
+      "LUBER-FINER": [
+        "L9915F"
+      ],
+      "UFI": [
+        "2619000"
+      ],
+      "WIX": [
+        "33655"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EF94521 Fuel filter for diesel injection systems. SYNTAPORE™ media removes particulate and water contamination before fuel reaches high-pressure injectors, protecting against injector wear and stalling caused by dirty fuel.",
     "sku_elimfilters": "EF94521",
     "category": "fuel",
@@ -271765,7 +272203,187 @@
         "part_number": "6060009317"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "TP1296"
+      ],
+      "AMERICAN-PARTS": [
+        "95690"
+      ],
+      "BALDWIN": [
+        "BF7539",
+        "BF7644",
+        "BF7653",
+        "BF7997"
+      ],
+      "BIG-A": [
+        "95690"
+      ],
+      "BOSCH": [
+        "1457434294"
+      ],
+      "CARQUEST": [
+        "86690"
+      ],
+      "CLEAN": [
+        "DN997"
+      ],
+      "COOPERS": [
+        "FSM4111"
+      ],
+      "CROSLAND": [
+        "5042"
+      ],
+      "DIESEL-TECHNIC": [
+        "212231",
+        "545123"
+      ],
+      "FEBI-BILSTEIN": [
+        "39214"
+      ],
+      "FIAAM": [
+        "FT5317"
+      ],
+      "FIL": [
+        "ZP67F"
+      ],
+      "FILTRON": [
+        "PP964"
+      ],
+      "FLEETGUARD": [
+        "FF5272",
+        "FF5702",
+        "LF3974"
+      ],
+      "FLEETRITE": [
+        "FFR85272"
+      ],
+      "FRAM": [
+        "P5694"
+      ],
+      "FREIGHTLINER": [
+        "DNP550372"
+      ],
+      "GENERAL-MOTORS": [
+        "25313757"
+      ],
+      "GUD": [
+        "Z317"
+      ],
+      "HASTINGS": [
+        "FF1077"
+      ],
+      "HENGST": [
+        "H18WK03"
+      ],
+      "HIFI": [
+        "SN5272"
+      ],
+      "JURA": [
+        "SN5272"
+      ],
+      "KAGER": [
+        "110054"
+      ],
+      "KALMAR": [
+        "9239760126"
+      ],
+      "KNECHT": [
+        "KC75"
+      ],
+      "KOLBENSCHMIDT": [
+        "50013481"
+      ],
+      "KRALINATOR": [
+        "F290"
+      ],
+      "LOESING": [
+        "022045"
+      ],
+      "LUBER-FINER": [
+        "LFF3584",
+        "LFF5874"
+      ],
+      "MACK": [
+        "2191P550372"
+      ],
+      "MAGNETI-MARELLI": [
+        "154087987380"
+      ],
+      "MAHLE": [
+        "KC75"
+      ],
+      "MANN": [
+        "WDK9621",
+        "WK962%2F7",
+        "WK9627"
+      ],
+      "MANN-HUMMEL": [
+        "WK9627"
+      ],
+      "MECAFILTER": [
+        "ELG5522"
+      ],
+      "NAPA": [
+        "3690"
+      ],
+      "PARKER": [
+        "RC-339"
+      ],
+      "PTPJM": [
+        "J8620799"
+      ],
+      "PUROLATOR": [
+        "F65910"
+      ],
+      "SAKURA": [
+        "FC7102",
+        "J8620799"
+      ],
+      "SCHUPP": [
+        "SK3623"
+      ],
+      "SCT": [
+        "ST358"
+      ],
+      "SOFIMA": [
+        "S5020NR"
+      ],
+      "SOGEFI": [
+        "FT5317"
+      ],
+      "SURE": [
+        "SFF0799"
+      ],
+      "UFI": [
+        "2433600"
+      ],
+      "UNICO": [
+        "FI92107"
+      ],
+      "VMC": [
+        "FF550372",
+        "LF550372"
+      ],
+      "VOLVO": [
+        "420799",
+        "4207993",
+        "4207999",
+        "80676462",
+        "8193841",
+        "85114092",
+        "VOE20805349"
+      ],
+      "WIX": [
+        "33690",
+        "33690E",
+        "533690",
+        "WF33690"
+      ],
+      "WOODGATE": [
+        "WGF5272"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EF99195 Fuel filter for diesel injection systems. SYNTAPORE™ media removes particulate and water contamination before fuel reaches high-pressure injectors, protecting against injector wear and stalling caused by dirty fuel.",
     "sku_elimfilters": "EF99195",
     "category": "fuel",
