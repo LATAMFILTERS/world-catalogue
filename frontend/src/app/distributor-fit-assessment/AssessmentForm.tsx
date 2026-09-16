@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { sendCommercialIntelligenceEvent } from '@/lib/commercial-intelligence';
 
 const API_URL=(process.env.NEXT_PUBLIC_API_URL||'https://api.elimfilters.com').replace(/\/$/,'');
 const initial={companyName:'',contactName:'',email:'',country:'',yearsInBusiness:'',employees:'',branches:'',warehouseCapacity:'',importCapability:'',industriesServed:'',territoryCoverage:'',salesTeamSize:'',annualPurchaseRange:'',notes:''};
@@ -15,7 +14,7 @@ export default function AssessmentForm(){
  async function submit(e:React.FormEvent){e.preventDefault();setStatus('sending');
   const eventId=crypto.randomUUID();
   const payload={eventName:'distributor_fit_assessment_submit',eventId,pagePath:location.pathname,pageLocation:location.href,pageTitle:document.title,commercialAccountCode,conversionAction:'distributor_fit_assessment',metadata:{...data,source:'distributor_fit_assessment_v1'}};
-  try{const r=await fetch(`${API_URL}/api/conversion-event`,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':eventId},body:JSON.stringify(payload)});if(!r.ok)throw new Error('submit_failed');sendCommercialIntelligenceEvent('distributor_fit_assessment_submit',{commercialAccountCode});setStatus('done');setData(initial);}catch{setStatus('error');}
+  try{const r=await fetch(`${API_URL}/api/conversion-event`,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':eventId},body:JSON.stringify(payload)});if(!r.ok)throw new Error('submit_failed');setStatus('done');setData(initial);}catch{setStatus('error');}
  }
  const input={width:'100%',padding:'.9rem',background:'#080808',border:'1px solid #333',color:'#fff',boxSizing:'border-box' as const};
  return <form onSubmit={submit} style={{display:'grid',gap:'1rem'}}>
