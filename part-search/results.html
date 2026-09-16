@@ -1510,7 +1510,7 @@ async function executeSearch() {
       clearTimeout(warmupTimer);
       if (!r.ok) throw new Error();
       const data = await r.json();
-      data.results = primaryOnlyResults(data.results, query);
+      data.results = await primaryResultsWithDiscoveredAlternatives(data.results, query);
 
       // mixed_duty: API found both HD and LD — show duty selection prompt
       if (data.mixed_duty) {
@@ -1604,6 +1604,65 @@ function primaryOnlyResults(results, rawReference) {
   primary.alternatives = linkedSkus.map(sku => ({ sku }));
   primary.is_primary = true;
   return [primary];
+}
+
+const ALTERNATIVE_DISCOVERY_BRANDS = [
+  'FLEETGUARD', 'DONALDSON', 'BALDWIN', 'WIX', 'FRAM', 'NAPA', 'MANN'
+];
+
+function alternativeDiscoveryReferences(product, rawReference) {
+  const byBrand = product && product.brand_crossrefs && typeof product.brand_crossrefs === 'object'
+    ? product.brand_crossrefs
+    : {};
+  const searched = normalizePartReference(rawReference);
+  const entries = Object.entries(byBrand);
+  const ordered = ALTERNATIVE_DISCOVERY_BRANDS.flatMap(preferredBrand =>
+    entries.filter(([brand]) => normalizePartReference(brand) === preferredBrand)
+  );
+
+  return [...new Set(ordered.flatMap(([, references]) => Array.isArray(references) ? references : []))]
+    .filter(reference => normalizePartReference(reference) !== searched)
+    .slice(0, 8);
+}
+
+async function primaryResultsWithDiscoveredAlternatives(results, rawReference) {
+  const primaryResults = primaryOnlyResults(results, rawReference);
+  if (primaryResults.length !== 1 || (Array.isArray(results) && results.length > 1)) return primaryResults;
+
+  const primary = primaryResults[0];
+  if (Array.isArray(primary.alternatives) && primary.alternatives.length) return primaryResults;
+
+  const primarySku = resultSku(primary);
+  const references = alternativeDiscoveryReferences(primary, rawReference);
+  const discoveredSkus = new Set();
+  const families = await Promise.all(references.map(async reference => {
+    try {
+      let url = `${API}/api/search?q=${encodeURIComponent(reference)}&lang=${currentLang}`;
+      if (dutyParam) url += `&duty=${encodeURIComponent(dutyParam)}`;
+      const response = await fetch(url);
+      if (!response.ok) return [];
+      const related = await response.json();
+      return Array.isArray(related.results) ? related.results : [];
+    } catch (_) {
+      return [];
+    }
+  }));
+
+  for (const family of families) {
+    const familySkus = [...new Set(family.map(resultSku).filter(Boolean))];
+    if (!familySkus.includes(primarySku)) continue;
+    familySkus.forEach(sku => {
+      if (sku !== primarySku) discoveredSkus.add(sku);
+    });
+  }
+
+  if (discoveredSkus.size) {
+    primary.alternatives = [...discoveredSkus].map(sku => ({ sku }));
+    primary.is_primary = true;
+    return [primary];
+  }
+
+  return primaryResults;
 }
 
 // executeSearch() is called by detectLang().then() above — no boot call needed
