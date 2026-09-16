@@ -9585,7 +9585,11 @@
     ],
     "equipment": [],
     "oem_codes": [],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "HIFI": [
+        "SAH01D09AEP001"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EA20187 Complete air intake housing assembly for heavy-duty and off-road equipment. INTEKCORE™ housing accepts MACROCORE™ primary and safety elements to give the engine a sealed, two-stage barrier against dust and debris before intake air reaches the turbocharger and cylinders.",
     "sku_elimfilters": "EA20187",
     "category": "air-intake",
