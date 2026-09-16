@@ -22,6 +22,17 @@
  *   donaldson_<category>_results.json             (brand_crossrefs per product)
  * Never overwrites a code that already has crossrefs; never touches any
  * other category's files.
+ *
+ * STATUS (2026-09-16): 171/171 codes tested across 6 categories came back
+ * HTTP 404 -- air-dryer (1/1), cabin (12/12), air (38/38), coolant (39/39),
+ * fuel (51/51), and a 30-code even sample of hydraulic (30/30). This is a
+ * systemic dead end for the *-crossreference.com source family, not a
+ * per-category or code-age issue (hydraulic's gap codes overlap numerically
+ * with codes that ARE resolved there, so "too new" doesn't explain it).
+ * Running the remaining ~558 hydraulic codes through this script is very
+ * unlikely to find anything; closing these ~730 real gaps for real needs
+ * either manual lookup (as done for a handful of Lube/cabin/air codes) or a
+ * different source entirely (e.g. Donaldson's own cross-reference tool).
  */
 'use strict';
 
