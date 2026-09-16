@@ -23,11 +23,15 @@
  * STATUS (2026-09-16): all 16 codes confirmed HTTP 404 on
  * oilfilter-crossreference.com, both before and after fixing the parser
  * below (the 404 happens pre-parse, so the fix didn't change this). This
- * source simply does not have pages for these 16 Donaldson P-codes — it's
- * a confirmed dead end, not a scraper fault. Re-running this script against
- * the same source is pointless unless the site adds these products later;
- * resolving the gap for real requires a different source (Donaldson's own
- * cross-reference tool, or a competitor brand's site directly).
+ * source simply does not have pages for these 16 Donaldson P-codes.
+ * Re-running this script against the same source is pointless unless the
+ * site adds these products later.
+ *
+ * The gap itself is closed: 15 of the 16 were resolved by manual lookup
+ * against Fleetguard's own site and other manufacturers' own crossref
+ * tools -- see apply-manual-lube-crossrefs.js. The 16th (P579275) is
+ * confirmed empty for real: Fleetguard's own site says it knows the part
+ * but has no active crossref, so {} is correct there, not a gap.
  */
 'use strict';
 

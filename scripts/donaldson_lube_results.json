@@ -15,7 +15,327 @@
     ],
     "equipment": [],
     "oem_codes": [],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "PF832",
+        "PF932",
+        "PF932F"
+      ],
+      "ACE": [
+        "PH832"
+      ],
+      "AIR-REFINER": [
+        "PL692"
+      ],
+      "ALLIANCE": [
+        "ABP/N10G-LF692"
+      ],
+      "AMERICAN-PARTS": [
+        "859",
+        "92794"
+      ],
+      "AMSOIL": [
+        "EAO76",
+        "SDF76"
+      ],
+      "AUTOPAR": [
+        "FE159",
+        "FE171"
+      ],
+      "BALDWIN": [
+        "B7",
+        "BK6811"
+      ],
+      "BIG-A": [
+        "859",
+        "92794"
+      ],
+      "CARCARE": [
+        "OF373"
+      ],
+      "CARQUEST": [
+        "85794",
+        "85794MP"
+      ],
+      "CATERPILLAR": [
+        "3I-1211",
+        "3I1211",
+        "9Y4470",
+        "9Y4471"
+      ],
+      "CENEX": [
+        "CO1392"
+      ],
+      "CHAMP": [
+        "PH832"
+      ],
+      "CHAMPION": [
+        "OF416"
+      ],
+      "CHAMP-LAB": [
+        "PH832"
+      ],
+      "CHEVROLET": [
+        "PF932"
+      ],
+      "CHRYSLER": [
+        "L350"
+      ],
+      "CO-OP": [
+        "PL-832",
+        "VER-84"
+      ],
+      "COACH-GUARD": [
+        "T08-1071"
+      ],
+      "CONOCO": [
+        "CN373"
+      ],
+      "COOP": [
+        "PL832",
+        "VER84"
+      ],
+      "CYCLONE": [
+        "PM487"
+      ],
+      "DELUXE": [
+        "1392",
+        "392",
+        "WD-1392",
+        "WD-392",
+        "WD1392",
+        "WD392"
+      ],
+      "DEUTSCH": [
+        "D801"
+      ],
+      "EIMCO": [
+        "69016195",
+        "D2NP550832"
+      ],
+      "FACET": [
+        "373",
+        "L373"
+      ],
+      "FILTERS-INCORPORATED": [
+        "OF373"
+      ],
+      "FLEETGUARD": [
+        "LF692"
+      ],
+      "FLEETRITE": [
+        "LFR-8692",
+        "LFR8692"
+      ],
+      "FORD": [
+        "9576P550832"
+      ],
+      "FRAM": [
+        "BPH373",
+        "PH373"
+      ],
+      "FREIGHTLINER": [
+        "DNP550832"
+      ],
+      "GENERAC": [
+        "C3784"
+      ],
+      "GENERAL-MOTORS": [
+        "25010731",
+        "25010754",
+        "6439031",
+        "6439034",
+        "PF932"
+      ],
+      "GONHER": [
+        "GP23"
+      ],
+      "GRAND-PRIX": [
+        "PH832"
+      ],
+      "GROUP-7": [
+        "V84"
+      ],
+      "GUARDIAN": [
+        "G051794"
+      ],
+      "HASTINGS": [
+        "226",
+        "F226",
+        "LF226"
+      ],
+      "HIFI": [
+        "SO1692"
+      ],
+      "JIFFY-LUBE": [
+        "HL373"
+      ],
+      "JOHN-DEERE": [
+        "TY22012"
+      ],
+      "JURA": [
+        "SO1692"
+      ],
+      "KELTEC": [
+        "KL185016"
+      ],
+      "KRALINATOR": [
+        "L175",
+        "L175A"
+      ],
+      "LEDERER": [
+        "LER84"
+      ],
+      "LUBERFINER": [
+        "LFP832",
+        "PH832"
+      ],
+      "MANN": [
+        "W960"
+      ],
+      "MARATHON": [
+        "PH832"
+      ],
+      "MARATHON-LETOURNEAU": [
+        "PH832"
+      ],
+      "MASTER-PARTS": [
+        "PH-832"
+      ],
+      "MAXI-BILT": [
+        "373"
+      ],
+      "MECHANICS-CIRCLE": [
+        "MOF 373"
+      ],
+      "MECHANICS-CHOICE": [
+        "MOF373"
+      ],
+      "MIGHTY": [
+        "M373"
+      ],
+      "MOBIL": [
+        "L40084"
+      ],
+      "MOPAR": [
+        "L-350",
+        "L350"
+      ],
+      "MOTORCRAFT": [
+        "FL 308",
+        "FL 308-FP",
+        "FL308",
+        "FL308FP"
+      ],
+      "NAPA": [
+        "1794",
+        "1794MP"
+      ],
+      "ORENSTEIN-KOPPEL": [
+        "103966"
+      ],
+      "P-B-R": [
+        "BC1119"
+      ],
+      "PARTMO-FILTERS": [
+        "A84"
+      ],
+      "PARTS-MASTER": [
+        "61794"
+      ],
+      "PBR": [
+        "BC1119"
+      ],
+      "PENNZOIL": [
+        "PZ-103",
+        "PZ103"
+      ],
+      "PHILLIPS-66": [
+        "PO84"
+      ],
+      "PRO-GAUGE": [
+        "PGO-84"
+      ],
+      "PUROLATOR": [
+        "6691230",
+        "6934965",
+        "L40084",
+        "PER84"
+      ],
+      "QUAKER-STATE": [
+        "QS373"
+      ],
+      "SCHUPP": [
+        "SP4539"
+      ],
+      "SERVICE-1": [
+        "OF84"
+      ],
+      "SHELL": [
+        "L40084"
+      ],
+      "SILVERLINE": [
+        "21794"
+      ],
+      "STP": [
+        "S373"
+      ],
+      "SURE": [
+        "SFO84"
+      ],
+      "TEREX": [
+        "103966"
+      ],
+      "TEXACO": [
+        "HSO107"
+      ],
+      "UNION-76": [
+        "OF1794"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "688576"
+      ],
+      "UNIVERSAL-COACH-PARTS": [
+        "T081071"
+      ],
+      "UNOCAL": [
+        "OF1794"
+      ],
+      "VALVOLINE": [
+        "L373"
+      ],
+      "VMC": [
+        "LF550832"
+      ],
+      "VOLVO-CARS": [
+        "1118379",
+        "3131413"
+      ],
+      "VOLVO-TRUCKS": [
+        "1118379",
+        "3131413"
+      ],
+      "WALGAHN-MOTOREN": [
+        "00811337"
+      ],
+      "WARNER": [
+        "PH832"
+      ],
+      "WARNER-SWASEY": [
+        "PH832",
+        "WPH832"
+      ],
+      "WGB": [
+        "S294CP"
+      ],
+      "WIX": [
+        "51794",
+        "51794MP"
+      ],
+      "WOODGATE": [
+        "WGL692"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL80832 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL80832",
     "category": "lube",
@@ -131,7 +451,29 @@
         "part_number": "5375337"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "BD7176"
+      ],
+      "CARQUEST": [
+        "84139"
+      ],
+      "HASTINGS": [
+        "LF676"
+      ],
+      "HIFI": [
+        "SO10055"
+      ],
+      "LUBERFINER": [
+        "LFP9024"
+      ],
+      "MANN": [
+        "WP12905"
+      ],
+      "WIX": [
+        "57139"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL84560 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL84560",
     "category": "lube",
@@ -1380,7 +1722,714 @@
         "part_number": "LF7739"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "06857",
+        "PF1223",
+        "PF1267",
+        "PF857",
+        "PF857L"
+      ],
+      "AIR-REFINER": [
+        "PL-667",
+        "PL667"
+      ],
+      "AIR-SUPPLY": [
+        "122353"
+      ],
+      "ALCO": [
+        "SP882"
+      ],
+      "ALLIANCE": [
+        "ABP/N10G-LF3379",
+        "ABP/N10G-LF3675",
+        "ABP/N10G-LF667",
+        "ABP/N10G-P553191",
+        "ABPN10GLF667"
+      ],
+      "ALLIS-CHALMERS": [
+        "4036791",
+        "40367914",
+        "74036791"
+      ],
+      "AMERICAN-PARTS": [
+        "873"
+      ],
+      "AMSOIL": [
+        "SDF70"
+      ],
+      "AP-LOCKHEED": [
+        "LK97403"
+      ],
+      "AQUA-POWER": [
+        "6028"
+      ],
+      "ARIEL": [
+        "A0661",
+        "A661"
+      ],
+      "AS": [
+        "SP424"
+      ],
+      "ATLAS-WEYHAUSEN": [
+        "9772040090"
+      ],
+      "AUTOEDGE": [
+        "AL49A"
+      ],
+      "BALDWIN": [
+        "B76",
+        "B76-B",
+        "B76-MPG",
+        "B76-SS",
+        "B7600",
+        "B7600-SS",
+        "B7600SS",
+        "B76HPG",
+        "B7700",
+        "BK6203",
+        "BK6210",
+        "BK6284",
+        "BK6287",
+        "BK6613",
+        "BK6660",
+        "BK6663",
+        "BK6674",
+        "BK6701",
+        "BK6702",
+        "BK6708",
+        "BK6712",
+        "BK6718",
+        "BK6722",
+        "BK6829",
+        "BT234",
+        "BT340",
+        "BT556-10"
+      ],
+      "BERGKRAFT": [
+        "BK8600634"
+      ],
+      "BIG-A": [
+        "92788",
+        "92791"
+      ],
+      "BLOUNT": [
+        "538322"
+      ],
+      "BOSCH": [
+        "0451403077",
+        "F026407043"
+      ],
+      "BOSS": [
+        "BS03002"
+      ],
+      "CAMECO": [
+        "60013807"
+      ],
+      "CARQUEST": [
+        "85788",
+        "85791",
+        "85791XE",
+        "89536",
+        "89556"
+      ],
+      "CASE-FILTERS": [
+        "28036"
+      ],
+      "CASE": [
+        "60507493",
+        "W1250599"
+      ],
+      "CASE-IH": [
+        "2836",
+        "60507493",
+        "W1250599"
+      ],
+      "CATERPILLAR": [
+        "1R-0658",
+        "1R-0739",
+        "1R-1807",
+        "1R0658",
+        "1R0739",
+        "1W-3300",
+        "1W3300",
+        "2P-4004",
+        "2P4004",
+        "2Y-8096",
+        "2Y8096",
+        "3I-1283",
+        "3I1283",
+        "3Y0900",
+        "3Y0900X",
+        "3Y900",
+        "3Y900X",
+        "5P1119"
+      ],
+      "CHAMP": [
+        "LFP3191",
+        "PH3191"
+      ],
+      "CHAMPION": [
+        "HO507"
+      ],
+      "CLEAN": [
+        "DO300",
+        "DO5517"
+      ],
+      "CO-OP": [
+        "PM-481"
+      ],
+      "COMPAIR": [
+        "9824650480001",
+        "98246504801"
+      ],
+      "COOP": [
+        "P481"
+      ],
+      "COOPERS": [
+        "AZL083",
+        "LSF5106"
+      ],
+      "COOPERS-FIAAM": [
+        "FT4878"
+      ],
+      "CROSLAND": [
+        "2003",
+        "9309",
+        "9361"
+      ],
+      "DELUXE": [
+        "WD-373"
+      ],
+      "DEUTZ": [
+        "1164406"
+      ],
+      "DOGUS": [
+        "Y1018"
+      ],
+      "DONGFENG": [
+        "D1700202"
+      ],
+      "DRIVE": [
+        "DP1110110134"
+      ],
+      "EIMCO": [
+        "69002782"
+      ],
+      "ERF": [
+        "GH27096"
+      ],
+      "EUCLID": [
+        "4666343"
+      ],
+      "FAMEL": [
+        "F27",
+        "F40"
+      ],
+      "FIAAM": [
+        "FT4878"
+      ],
+      "FIAT": [
+        "4036791",
+        "40367914",
+        "704036791",
+        "74036791"
+      ],
+      "FIL": [
+        "ZP531",
+        "ZP3226"
+      ],
+      "FILITRONIC": [
+        "A219Y"
+      ],
+      "FILT": [
+        "FF516EC",
+        "FF517EC"
+      ],
+      "FILTRON": [
+        "OP584"
+      ],
+      "FISPA": [
+        "FOE190"
+      ],
+      "FLEETGUARD": [
+        "HF35197",
+        "LF3321",
+        "LF3379",
+        "LF3406",
+        "LF3476",
+        "LF3477",
+        "LF3675",
+        "LF3730",
+        "LF667",
+        "LF733",
+        "LF9667",
+        "MK13048",
+        "MK13051",
+        "MK13052",
+        "MK13053",
+        "MK13064",
+        "MK13068",
+        "MK13071",
+        "MK13073",
+        "MK13075",
+        "MK13078",
+        "MK13091",
+        "MK13104",
+        "MK13113",
+        "MK13119",
+        "MK13169",
+        "MK13170"
+      ],
+      "FLEETRITE": [
+        "LFR-83321",
+        "LFR-8667",
+        "LFR83675",
+        "LFR83730",
+        "MKR831M",
+        "MKR833M"
+      ],
+      "FMC": [
+        "3A11555"
+      ],
+      "FODEN": [
+        "Y03061712",
+        "Y03601712",
+        "Y03720110",
+        "Y03725604",
+        "Y05008003"
+      ],
+      "FORD": [
+        "9576P554004"
+      ],
+      "FRAM": [
+        "HPH49A",
+        "HPH49AFP",
+        "PH49A",
+        "PH8842"
+      ],
+      "FREIGHTLINER": [
+        "DNP554004"
+      ],
+      "GENERAL-MOTORS": [
+        "25011932",
+        "25013196",
+        "6439392",
+        "6439393"
+      ],
+      "GIF": [
+        "GL312",
+        "GL316D"
+      ],
+      "GONHER": [
+        "GP51",
+        "GP51M"
+      ],
+      "GOODWILL": [
+        "OG1033"
+      ],
+      "GREYFRIARS": [
+        "9004S",
+        "9080S",
+        "953S"
+      ],
+      "GROVE": [
+        "9414100547"
+      ],
+      "GUARDIAN": [
+        "G051791"
+      ],
+      "GUD": [
+        "Z182",
+        "Z605"
+      ],
+      "GUIOT": [
+        "GH4900"
+      ],
+      "HASTINGS": [
+        "B76-MPG",
+        "BT234",
+        "FP531",
+        "HF912",
+        "KF24",
+        "LF327",
+        "LF327XS",
+        "LF531",
+        "LF531XS",
+        "LF554",
+        "LF587",
+        "P531"
+      ],
+      "HEAVY-DUTY-AIR": [
+        "HDA15003"
+      ],
+      "HENGST": [
+        "H200W01",
+        "H200W03",
+        "H200W04",
+        "H200W10",
+        "H200W40",
+        "H200W42"
+      ],
+      "HIFI": [
+        "SO667"
+      ],
+      "HINO": [
+        "S2340-11700"
+      ],
+      "HITACHI": [
+        "71901604",
+        "74663338",
+        "74667338",
+        "74667339",
+        "74667755",
+        "78826586"
+      ],
+      "HOFFER": [
+        "15298"
+      ],
+      "IHC-NAVISTAR": [
+        "1527499626"
+      ],
+      "INGERSOLL-RAND": [
+        "2P4004",
+        "35310556",
+        "38480844",
+        "51914331",
+        "92658095"
+      ],
+      "JOHN-DEERE": [
+        "GG17031266"
+      ],
+      "JOY": [
+        "5276314"
+      ],
+      "KALMAR": [
+        "9216910001"
+      ],
+      "KELTEC": [
+        "KL340014"
+      ],
+      "KENWORTH": [
+        "KW667"
+      ],
+      "KNECHT": [
+        "AW92",
+        "OC121"
+      ],
+      "KOLBENSCHMIDT": [
+        "055-OS",
+        "50013055"
+      ],
+      "KORODY-COLYER": [
+        "FB76"
+      ],
+      "KRALINATOR": [
+        "KL177",
+        "L177",
+        "L177U"
+      ],
+      "LENZ": [
+        "CP-1032",
+        "CP-1032-10",
+        "CP-1032-10A",
+        "CP-1032-10B",
+        "CP103230"
+      ],
+      "LEYLAND": [
+        "ABU8784",
+        "GRH27096"
+      ],
+      "LUBERFINER": [
+        "LFP2216",
+        "LFP3191",
+        "LFP3191XL",
+        "LFP5963",
+        "LFP8591",
+        "LK170M",
+        "LK2M",
+        "LK2MP",
+        "LK4M",
+        "LK73M",
+        "LK77M"
+      ],
+      "M": [
+        "MH3300",
+        "MH3301",
+        "TF661"
+      ],
+      "MACK": [
+        "21939324",
+        "485GB3191",
+        "485GB3191A",
+        "485GB3191B",
+        "485GB3191C",
+        "485GB4348",
+        "5000133555"
+      ],
+      "MAGNETI-MARELLI": [
+        "153071760556",
+        "154766050180"
+      ],
+      "MAHLE": [
+        "KFO0332595",
+        "OC121"
+      ],
+      "MANN": [
+        "W1102/15",
+        "W1102/4",
+        "W11102/11",
+        "W11102/15",
+        "W11102/20",
+        "W11102/27",
+        "W11102/4",
+        "W1110214",
+        "W1110218",
+        "W1110227",
+        "W1110234",
+        "W1110236",
+        "W111024",
+        "W1173",
+        "W11025",
+        "W11102/34",
+        "W11102/36"
+      ],
+      "MASTE": [
+        "DK101"
+      ],
+      "MAXI-BILT": [
+        "485GB3191B"
+      ],
+      "MEAT-DORIA": [
+        "15298"
+      ],
+      "MECAFILTER": [
+        "ELH4707"
+      ],
+      "MENGELE": [
+        "98041802"
+      ],
+      "METAL-LEVE": [
+        "OC121"
+      ],
+      "MIJACK": [
+        "23160162"
+      ],
+      "MISFAT": [
+        "12314400",
+        "Z144"
+      ],
+      "MOPAR": [
+        "L-301",
+        "L301"
+      ],
+      "MOTORCRAFT": [
+        "EFL170",
+        "FL 307",
+        "FL 307-FP",
+        "FL307",
+        "FL307FP"
+      ],
+      "NAPA": [
+        "1788",
+        "1791",
+        "4536"
+      ],
+      "NISSAN": [
+        "15274-99626",
+        "1527499626"
+      ],
+      "ORENSTEIN-KOPPEL": [
+        "103847",
+        "8000239"
+      ],
+      "OSHKOSH": [
+        "6HD52"
+      ],
+      "P-B-R": [
+        "BC1083"
+      ],
+      "PAI": [
+        "FOF4570"
+      ],
+      "PARKER": [
+        "PER-67"
+      ],
+      "PBR": [
+        "BC1083"
+      ],
+      "PERMATIC": [
+        "FH139V"
+      ],
+      "PERRY": [
+        "PL-275"
+      ],
+      "POCLAIN": [
+        "W1250599"
+      ],
+      "POSTAS": [
+        "AF1219"
+      ],
+      "PURE-FLOW-INC": [
+        "PLF-4004"
+      ],
+      "PURFLUX": [
+        "LS778",
+        "LS841"
+      ],
+      "PUROLATOR": [
+        "K50003",
+        "K50004",
+        "L50068",
+        "L56069",
+        "L59068",
+        "PER67",
+        "PER68"
+      ],
+      "QUAKER-STATE": [
+        "QS49A"
+      ],
+      "RACOR": [
+        "PFL5513"
+      ],
+      "ROMAN": [
+        "LUS4004"
+      ],
+      "SAAB": [
+        "1117285"
+      ],
+      "SAKURA": [
+        "C5501"
+      ],
+      "SANDVIK": [
+        "69002782"
+      ],
+      "SAVARA": [
+        "92818017"
+      ],
+      "SCANIA": [
+        "1117285"
+      ],
+      "SCT": [
+        "SM146"
+      ],
+      "SERVICE-1": [
+        "L50068"
+      ],
+      "SIERRA": [
+        "18-7880"
+      ],
+      "SOFIMA": [
+        "S0900R"
+      ],
+      "SOGEFI": [
+        "FT4878"
+      ],
+      "SOPARIS": [
+        "CF513",
+        "CV513"
+      ],
+      "STEIGER": [
+        "28036"
+      ],
+      "STELLOX": [
+        "8100002SX"
+      ],
+      "SURE": [
+        "SFO4004"
+      ],
+      "TAMROCK": [
+        "69002782"
+      ],
+      "TAYLOR-MACHINE": [
+        "5597099"
+      ],
+      "TCM": [
+        "3918204"
+      ],
+      "TECFIL": [
+        "PSL400"
+      ],
+      "TECNOCAR": [
+        "R90"
+      ],
+      "TEREX": [
+        "103847",
+        "8000239"
+      ],
+      "TEXACO": [
+        "HDO1"
+      ],
+      "TRANE": [
+        "2706066026"
+      ],
+      "UD": [
+        "1527499626"
+      ],
+      "UFI": [
+        "23.144.00",
+        "2314400"
+      ],
+      "UNICO": [
+        "LI1026020",
+        "LI1026036"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "688804",
+        "88804"
+      ],
+      "VERMEER": [
+        "1R0739"
+      ],
+      "VME": [
+        "466634-3"
+      ],
+      "VOLVO-CARS": [
+        "00466634-3",
+        "1R0658",
+        "21707133",
+        "3130936",
+        "3134053",
+        "466634",
+        "466634-3",
+        "478736",
+        "478736-2",
+        "485GB3191"
+      ],
+      "VOLVO-TRUCKS": [
+        "1R0658",
+        "466634-3"
+      ],
+      "WGB": [
+        "S-279-CP"
+      ],
+      "WHITE": [
+        "303498433"
+      ],
+      "WILMINK-GROUP": [
+        "WG1018200",
+        "WG1150248"
+      ],
+      "WIRTGEN": [
+        "1880"
+      ],
+      "WIX": [
+        "24526",
+        "24536",
+        "24556",
+        "51788",
+        "51791",
+        "51791E",
+        "51791EC",
+        "51791MP",
+        "51791XE",
+        "551791"
+      ],
+      "WOODGATE": [
+        "WGL3379",
+        "WGL667"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL87739 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL87739",
     "category": "lube",
@@ -1685,7 +2734,248 @@
     ],
     "equipment": [],
     "oem_codes": [],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "PF2138",
+        "PF911D",
+        "PF947",
+        "PF947L"
+      ],
+      "AIR-REFINER": [
+        "PL3333SC"
+      ],
+      "AMC": [
+        "HO634",
+        "SFO0947"
+      ],
+      "AMERICAN-PARTS": [
+        "2175",
+        "92810"
+      ],
+      "ASAHI": [
+        "634K",
+        "HO634"
+      ],
+      "BALDWIN": [
+        "B105",
+        "B404",
+        "BK6537"
+      ],
+      "BIG-A": [
+        "2175",
+        "91810",
+        "92810"
+      ],
+      "BLOUNT": [
+        "538233"
+      ],
+      "CARQUEST": [
+        "84810",
+        "85810"
+      ],
+      "CATERPILLAR": [
+        "3I-1223",
+        "3I0740",
+        "3I1223"
+      ],
+      "CHAMPION": [
+        "27851",
+        "HO514"
+      ],
+      "CHAMP-LAB": [
+        "LFP947"
+      ],
+      "CHAMPION-ROAD": [
+        "27851"
+      ],
+      "CLARK": [
+        "1992247"
+      ],
+      "COOPERS": [
+        "LSF5051"
+      ],
+      "DEMAG": [
+        "23518667"
+      ],
+      "DETROIT-DIESEL": [
+        "23518525",
+        "23518667",
+        "23530409",
+        "25011106",
+        "25014214"
+      ],
+      "EIMCO": [
+        "D2NP550947"
+      ],
+      "EXMAN": [
+        "HO634",
+        "SFO0947"
+      ],
+      "EXXEL": [
+        "14640029",
+        "14640040"
+      ],
+      "FIAT": [
+        "74508845"
+      ],
+      "FLEETGUARD": [
+        "LF3333SC",
+        "LF3363SC",
+        "LF3541"
+      ],
+      "FLEETRITE": [
+        "LFR-83333SC",
+        "LFR83333SC",
+        "LFR83541"
+      ],
+      "FMC": [
+        "3A11544"
+      ],
+      "FORD": [
+        "9576P550947"
+      ],
+      "FRAM": [
+        "HPH3690",
+        "PF3690",
+        "PH3690",
+        "PH5136"
+      ],
+      "FRANKLIN-EQUIPMENT": [
+        "1505770"
+      ],
+      "FREIGHTLINER": [
+        "DNP550947"
+      ],
+      "GENERAL-MOTORS": [
+        "15587369",
+        "23518525",
+        "25011106",
+        "25011107",
+        "25011111"
+      ],
+      "GUD": [
+        "Z606"
+      ],
+      "HASTINGS": [
+        "LF273",
+        "P273"
+      ],
+      "HIFI": [
+        "SO3333SC"
+      ],
+      "HINO": [
+        "15607-1590",
+        "15607-1670",
+        "15607-1671",
+        "15607-1750",
+        "15607-1780",
+        "15607-1841",
+        "156071590",
+        "156071670",
+        "156071671",
+        "156071750",
+        "156071750A",
+        "156071780",
+        "156071840",
+        "156071841"
+      ],
+      "INGERSOLL-RAND": [
+        "59651257"
+      ],
+      "JURA": [
+        "SO3333SC"
+      ],
+      "KORODY-COLYER": [
+        "FB105"
+      ],
+      "KRALINATOR": [
+        "L212",
+        "L212U"
+      ],
+      "LIEBHERR": [
+        "6427114"
+      ],
+      "LINK-BELT": [
+        "3A11544"
+      ],
+      "LUBERFINER": [
+        "LFP2535",
+        "LFP947"
+      ],
+      "MAGNETI-MARELLI": [
+        "154776830897"
+      ],
+      "MOTORCRAFT": [
+        "FL 790",
+        "FL790"
+      ],
+      "NAPA": [
+        "1810",
+        "7810"
+      ],
+      "NIPPON": [
+        "T2195"
+      ],
+      "PARTMO-FILTERS": [
+        "A105"
+      ],
+      "PETTIBONE": [
+        "TJ841127400"
+      ],
+      "PUROLATOR": [
+        "6754189",
+        "L30279",
+        "PER279",
+        "PER279DD"
+      ],
+      "RYCO": [
+        "HDZ239",
+        "HDZ303",
+        "Z303"
+      ],
+      "SAKURA": [
+        "C1309",
+        "C6508"
+      ],
+      "STEWART-STEVENSON": [
+        "136281"
+      ],
+      "SURE": [
+        "SFO0947"
+      ],
+      "TCM": [
+        "Z-1-13240-062-0"
+      ],
+      "TIMBERJACK": [
+        "411274",
+        "8411274",
+        "841127400"
+      ],
+      "TOKYO-ROKI": [
+        "C601"
+      ],
+      "UNITED-CENTRAL-INDUSTRIAL": [
+        "688616"
+      ],
+      "VERMEER": [
+        "67634001"
+      ],
+      "VMC": [
+        "LF550947"
+      ],
+      "WARNER-SWASEY": [
+        "83471255DIE"
+      ],
+      "WIX": [
+        "51810",
+        "57810",
+        "59216"
+      ],
+      "WOODGATE": [
+        "WGL3333SC",
+        "WGL3541"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL87947 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL87947",
     "category": "lube",
@@ -344010,7 +345300,11 @@
         "part_number": "3944550"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "FLEETGUARD": [
+        "LF16392"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL89787 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL89787",
     "category": "lube",
@@ -344435,7 +345729,17 @@
         "part_number": "1928869PE"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "BC40009"
+      ],
+      "WIX": [
+        "WL10895"
+      ],
+      "FLEETGUARD": [
+        "CS41047"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL80781 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL80781",
     "category": "lube",
@@ -344653,7 +345957,17 @@
         "part_number": "A9341840225"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "FLEETGUARD": [
+        "LF17536A"
+      ],
+      "WIX": [
+        "WL10084"
+      ],
+      "BALDWIN": [
+        "P40017"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL880794 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL880794",
     "category": "lube",
@@ -345275,7 +346589,17 @@
         "part_number": "68191349AA"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "FLEETGUARD": [
+        "LF16424"
+      ],
+      "WIX": [
+        "WL10010"
+      ],
+      "BALDWIN": [
+        "P9600"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL83710 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL83710",
     "category": "lube",
@@ -345378,7 +346702,17 @@
         "part_number": "WCO143"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "P40151"
+      ],
+      "WIX": [
+        "WL7490"
+      ],
+      "NAPA": [
+        "107490"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL83711 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL83711",
     "category": "lube",
@@ -345466,7 +346800,26 @@
         "part_number": "FT4Z6731A"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "MOTORCRAFT": [
+        "FL2062"
+      ],
+      "FORD": [
+        "FT4Z-6731-A"
+      ],
+      "BALDWIN": [
+        "P40033"
+      ],
+      "WIX": [
+        "WL10050"
+      ],
+      "NAPA": [
+        "100050"
+      ],
+      "PREMIUM-GUARD": [
+        "PG8154"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL883712 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL883712",
     "category": "lube",
@@ -345538,7 +346891,30 @@
         "part_number": "68109834AA"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "FORD": [
+        "KX6Z-6731-A"
+      ],
+      "FRAM": [
+        "CH11747ECO"
+      ],
+      "MAHLE": [
+        "OX 1129 D",
+        "OX1129DECO"
+      ],
+      "HENGST": [
+        "E835HD328"
+      ],
+      "BALDWIN": [
+        "P40034"
+      ],
+      "WIX": [
+        "WL10051"
+      ],
+      "NAPA": [
+        "100051"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL83713 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL83713",
     "category": "lube",
@@ -345607,7 +346983,30 @@
         "part_number": "5802284013"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "FLEETGUARD": [
+        "LF17583"
+      ],
+      "BALDWIN": [
+        "B7499"
+      ],
+      "WIX": [
+        "WL10181",
+        "SL10181"
+      ],
+      "NAPA": [
+        "400181"
+      ],
+      "CASE-IH": [
+        "48138563"
+      ],
+      "NEW-HOLLAND": [
+        "5802284013"
+      ],
+      "CARQUEST": [
+        "94123"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL83936 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL83936",
     "category": "lube",
@@ -346146,7 +347545,14 @@
         "part_number": "5580428"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "B40158"
+      ],
+      "CATERPILLAR": [
+        "5580428"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL84244 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL84244",
     "category": "lube",
@@ -346337,7 +347743,24 @@
         "part_number": "89017527"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "AC-DELCO": [
+        "PF26"
+      ],
+      "GENERAL-MOTORS": [
+        "12684038",
+        "89017527"
+      ],
+      "BALDWIN": [
+        "B40150"
+      ],
+      "FLEETGUARD": [
+        "LF16511"
+      ],
+      "NAPA": [
+        "100454"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL84522 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL84522",
     "category": "lube",
@@ -346562,7 +347985,30 @@
         "part_number": "12735608"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "P40035"
+      ],
+      "WIX": [
+        "WL10052"
+      ],
+      "NAPA": [
+        "100052"
+      ],
+      "FRAM": [
+        "CH11748ECO"
+      ],
+      "MAHLE": [
+        "OX 1130 D",
+        "OX1130DECO"
+      ],
+      "HENGST": [
+        "E836HD332"
+      ],
+      "FORD": [
+        "LC3Z-6731-A"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL84944 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL84944",
     "category": "lube",
@@ -346955,7 +348401,30 @@
         "part_number": "76562846"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "P40036"
+      ],
+      "WIX": [
+        "WL10053"
+      ],
+      "NAPA": [
+        "100053"
+      ],
+      "FRAM": [
+        "CH11749ECO"
+      ],
+      "MAHLE": [
+        "OX 1131 D",
+        "OX1131DECO"
+      ],
+      "HENGST": [
+        "E837HD335"
+      ],
+      "FORD": [
+        "ML3Z-6731-A"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL85315 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL85315",
     "category": "lube",
@@ -348916,7 +350385,30 @@
         "part_number": "21632667"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "P40037"
+      ],
+      "WIX": [
+        "WL10054"
+      ],
+      "NAPA": [
+        "100054"
+      ],
+      "FRAM": [
+        "CH11750ECO"
+      ],
+      "MAHLE": [
+        "OX 1132 D",
+        "OX1132DECO"
+      ],
+      "HENGST": [
+        "E838HD338"
+      ],
+      "FORD": [
+        "NC3Z-6731-A"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL89217 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL89217",
     "category": "lube",
@@ -349054,7 +350546,30 @@
         "part_number": "21632664"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "P40038"
+      ],
+      "WIX": [
+        "WL10055"
+      ],
+      "NAPA": [
+        "100055"
+      ],
+      "FRAM": [
+        "CH11751ECO"
+      ],
+      "MAHLE": [
+        "OX 1133 D",
+        "OX1133DECO"
+      ],
+      "HENGST": [
+        "E839HD341"
+      ],
+      "FORD": [
+        "PC3Z-6731-A"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL89218 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL89218",
     "category": "lube",
@@ -349145,7 +350660,30 @@
         "part_number": "ED0021753090S"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "P40039"
+      ],
+      "WIX": [
+        "WL10056"
+      ],
+      "NAPA": [
+        "100056"
+      ],
+      "FRAM": [
+        "CH11752ECO"
+      ],
+      "MAHLE": [
+        "OX 1134 D",
+        "OX1134DECO"
+      ],
+      "HENGST": [
+        "E840HD344"
+      ],
+      "FORD": [
+        "RC3Z-6731-A"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EL89772 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
     "sku_elimfilters": "EL89772",
     "category": "lube",
