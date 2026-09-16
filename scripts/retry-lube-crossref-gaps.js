@@ -19,6 +19,15 @@
  *   donaldson_lube_results.json             (brand_crossrefs field per product)
  * Never overwrites a code that already has crossrefs; never touches any
  * other category's files.
+ *
+ * STATUS (2026-09-16): all 16 codes confirmed HTTP 404 on
+ * oilfilter-crossreference.com, both before and after fixing the parser
+ * below (the 404 happens pre-parse, so the fix didn't change this). This
+ * source simply does not have pages for these 16 Donaldson P-codes — it's
+ * a confirmed dead end, not a scraper fault. Re-running this script against
+ * the same source is pointless unless the site adds these products later;
+ * resolving the gap for real requires a different source (Donaldson's own
+ * cross-reference tool, or a competitor brand's site directly).
  */
 'use strict';
 
