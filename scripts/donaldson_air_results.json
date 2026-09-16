@@ -25965,7 +25965,11 @@
         "part_number": "D371037"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "PACCAR": [
+        "D37-1061"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EA16329 Engine air filter for heavy-duty intake systems. MACROCORE™ progressive density media captures dust and airborne particles before they reach the combustion chamber, protecting cylinders, rings, and turbochargers from abrasive wear.",
     "sku_elimfilters": "EA16329",
     "category": "air",

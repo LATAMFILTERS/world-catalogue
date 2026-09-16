@@ -24213,7 +24213,17 @@
         "part_number": "3535058"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA30185"
+      ],
+      "CATERPILLAR": [
+        "3535058"
+      ],
+      "WIX": [
+        "WP10365"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EC14953 Cabin air filter for the operator compartment. MICROKAPPA™ media blocks dust, PM10, and airborne contaminants before they reach the cab, protecting operator health and visibility during long shifts.",
     "sku_elimfilters": "EC14953",
     "category": "cabin",
@@ -28555,7 +28565,27 @@
         "part_number": "EB3G9601AA"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "FORD": [
+        "EB3G-9601-AA",
+        "EB3G9601AA"
+      ],
+      "AC-DELCO": [
+        "ACA390"
+      ],
+      "BALDWIN": [
+        "PA10413"
+      ],
+      "WIX": [
+        "WA10909"
+      ],
+      "RYCO": [
+        "A1957"
+      ],
+      "SAKURA": [
+        "A50320"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EC13809 Cabin air filter for the operator compartment. MICROKAPPA™ media blocks dust, PM10, and airborne contaminants before they reach the cab, protecting operator health and visibility during long shifts.",
     "sku_elimfilters": "EC13809",
     "category": "cabin",
@@ -29416,7 +29446,11 @@
         "part_number": "W2084001"
       }
     ],
-    "brand_crossrefs": {},
+    "brand_crossrefs": {
+      "BALDWIN": [
+        "PA30107"
+      ]
+    },
     "description_elimfilters": "ELIMFILTERS® EC10024 Cabin air filter for the operator compartment. MICROKAPPA™ media blocks dust, PM10, and airborne contaminants before they reach the cab, protecting operator health and visibility during long shifts.",
     "sku_elimfilters": "EC10024",
     "category": "cabin",
