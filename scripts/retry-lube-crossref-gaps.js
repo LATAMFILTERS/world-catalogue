@@ -61,24 +61,20 @@ function fetch(url, redirectsLeft = 5) {
   });
 }
 
-// Same table parser as build-competitor-matrix.js, but grouped by brand
-// (list per manufacturer) to match donaldson_lube_crossref_progress.json's
-// existing on-disk shape: { "MANUFACTURER": ["code1", "code2"], ... }
+// The live page is a <li><a href="/convert/BRAND/CODE">...</a></li> list, not
+// a <table>. Extract brand/code straight from the href slug, since that's what
+// donaldson_lube_crossref_progress.json's existing entries already key on
+// (e.g. href="/convert/LUBERFINER/..." -> "LUBERFINER", not the link text
+// "LUBER-FINER"). Grouped by brand to match that file's on-disk shape:
+// { "MANUFACTURER": ["code1", "code2"], ... }
 function parseCrossRefs(html) {
   const grouped = {};
-  const strip = (s) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').trim();
-  const trPattern = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
-  let trMatch;
-  while ((trMatch = trPattern.exec(html)) !== null) {
-    const cells = [];
-    const tdPattern = /<td[^>]*>([\s\S]*?)<\/td>/gi;
-    let td;
-    while ((td = tdPattern.exec(trMatch[1])) !== null) cells.push(strip(td[1]));
-    if (cells.length < 2) continue;
-    const manufacturer = cells[0].toUpperCase().trim();
-    const code = cells[1].toUpperCase().trim();
+  const linkPattern = /<a\s+href="\/convert\/([^\/"]+)\/([^"]+)"/gi;
+  let m;
+  while ((m = linkPattern.exec(html)) !== null) {
+    const manufacturer = decodeURIComponent(m[1]).toUpperCase().trim();
+    const code = decodeURIComponent(m[2]).toUpperCase().trim();
     if (!manufacturer || !code) continue;
-    if (['MANUFACTURER', 'BRAND', 'MAKE', 'MARCA'].includes(manufacturer)) continue;
     if (manufacturer === 'DONALDSON') continue;
     if (!grouped[manufacturer]) grouped[manufacturer] = [];
     if (!grouped[manufacturer].includes(code)) grouped[manufacturer].push(code);
