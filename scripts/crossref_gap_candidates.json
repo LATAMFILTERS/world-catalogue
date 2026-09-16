@@ -1,0 +1,3729 @@
+{
+  "air": [
+    {
+      "code": "P606735",
+      "dimension_twins": [
+        "P541575"
+      ],
+      "candidate_brands_to_check": [
+        "FREIGHTLINER (1/1 gemelos)",
+        "HIFI (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P643118",
+      "dimension_twins": [
+        "DBA5397"
+      ],
+      "candidate_brands_to_check": [
+        "HENGST (1/1 gemelos)",
+        "UFI (1/1 gemelos)"
+      ]
+    }
+  ],
+  "fuel": [
+    {
+      "code": "DBF4245",
+      "dimension_twins": [
+        "P550774",
+        "P550879"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (2/2 gemelos)",
+        "CARQUEST (2/2 gemelos)",
+        "CUMMINS (2/2 gemelos)",
+        "FLEETGUARD (2/2 gemelos)",
+        "FRAM (2/2 gemelos)",
+        "HASTINGS (2/2 gemelos)",
+        "HENGST (2/2 gemelos)",
+        "HIFI (2/2 gemelos)",
+        "LUBER-FINER (2/2 gemelos)",
+        "MANN (2/2 gemelos)",
+        "NAPA (2/2 gemelos)",
+        "VMC (2/2 gemelos)",
+        "WIX (2/2 gemelos)",
+        "ATLAS-COPCO (1/2 gemelos)",
+        "ATLAS-WEYHAUSEN (1/2 gemelos)",
+        "CASE (1/2 gemelos)",
+        "CNH (1/2 gemelos)",
+        "FIL (1/2 gemelos)",
+        "PARKER (1/2 gemelos)",
+        "PUROLATOR (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P959291",
+      "dimension_twins": [
+        "P959143"
+      ],
+      "candidate_brands_to_check": [
+        "HENGST (1/1 gemelos)",
+        "UFI (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P959292",
+      "dimension_twins": [
+        "P959143"
+      ],
+      "candidate_brands_to_check": [
+        "HENGST (1/1 gemelos)",
+        "UFI (1/1 gemelos)"
+      ]
+    }
+  ],
+  "hydraulic": [
+    {
+      "code": "P560715",
+      "dimension_twins": [
+        "P560713",
+        "P560714"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (2/2 gemelos)",
+        "HYDAC (2/2 gemelos)",
+        "MAHLE (2/2 gemelos)",
+        "PARKER (2/2 gemelos)",
+        "PTI (2/2 gemelos)",
+        "STAUFF (2/2 gemelos)",
+        "FILTREC (1/2 gemelos)",
+        "HIFI (1/2 gemelos)",
+        "HY-PRO (1/2 gemelos)",
+        "MANN (1/2 gemelos)",
+        "PALL (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P561342",
+      "dimension_twins": [
+        "P561346"
+      ],
+      "candidate_brands_to_check": [
+        "EPPENSTEINER (1/1 gemelos)",
+        "FILTREC (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P561344",
+      "dimension_twins": [
+        "P561346"
+      ],
+      "candidate_brands_to_check": [
+        "EPPENSTEINER (1/1 gemelos)",
+        "FILTREC (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P561352",
+      "dimension_twins": [
+        "P561353"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "EPE (1/1 gemelos)",
+        "REXROTH (1/1 gemelos)",
+        "SF (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P561412",
+      "dimension_twins": [
+        "P561407"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (1/1 gemelos)",
+        "EPPENSTEINER (1/1 gemelos)",
+        "FILTREC (1/1 gemelos)",
+        "GRAINGER (1/1 gemelos)",
+        "HIFI (1/1 gemelos)",
+        "INTERNORMEN (1/1 gemelos)",
+        "REXROTH (1/1 gemelos)",
+        "SEPARATION-TECHNOLOGIES (1/1 gemelos)",
+        "SF (1/1 gemelos)",
+        "STAUFF (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P561419",
+      "dimension_twins": [
+        "P561421",
+        "P561427"
+      ],
+      "candidate_brands_to_check": [
+        "EPPENSTEINER (2/2 gemelos)",
+        "FILTREC (2/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P561428",
+      "dimension_twins": [
+        "P561421",
+        "P561427"
+      ],
+      "candidate_brands_to_check": [
+        "EPPENSTEINER (2/2 gemelos)",
+        "FILTREC (2/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P561430",
+      "dimension_twins": [
+        "P561421",
+        "P561427"
+      ],
+      "candidate_brands_to_check": [
+        "EPPENSTEINER (2/2 gemelos)",
+        "FILTREC (2/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P561432",
+      "dimension_twins": [
+        "P561421",
+        "P561427"
+      ],
+      "candidate_brands_to_check": [
+        "EPPENSTEINER (2/2 gemelos)",
+        "FILTREC (2/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P561437",
+      "dimension_twins": [
+        "P561421",
+        "P561427"
+      ],
+      "candidate_brands_to_check": [
+        "EPPENSTEINER (2/2 gemelos)",
+        "FILTREC (2/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P561475",
+      "dimension_twins": [
+        "P562995"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "EPE (1/1 gemelos)",
+        "HY-PRO (1/1 gemelos)",
+        "INTERNORMEN (1/1 gemelos)",
+        "REXROTH (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P561479",
+      "dimension_twins": [
+        "P562995"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "EPE (1/1 gemelos)",
+        "HY-PRO (1/1 gemelos)",
+        "INTERNORMEN (1/1 gemelos)",
+        "REXROTH (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P561484",
+      "dimension_twins": [
+        "P562995"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "EPE (1/1 gemelos)",
+        "HY-PRO (1/1 gemelos)",
+        "INTERNORMEN (1/1 gemelos)",
+        "REXROTH (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P561485",
+      "dimension_twins": [
+        "P562995"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "EPE (1/1 gemelos)",
+        "HY-PRO (1/1 gemelos)",
+        "INTERNORMEN (1/1 gemelos)",
+        "REXROTH (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P562231",
+      "dimension_twins": [
+        "P562228",
+        "P562229"
+      ],
+      "candidate_brands_to_check": [
+        "LHA (2/2 gemelos)",
+        "HIFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P562232",
+      "dimension_twins": [
+        "P562233"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "LHA (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P562243",
+      "dimension_twins": [
+        "P562242"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P562250",
+      "dimension_twins": [
+        "P562249"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "GENIE (1/1 gemelos)",
+        "HYDAC (1/1 gemelos)",
+        "LENZ (1/1 gemelos)",
+        "LHA (1/1 gemelos)",
+        "NEUSON (1/1 gemelos)",
+        "WACKER (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P562259",
+      "dimension_twins": [
+        "P562256",
+        "P562257"
+      ],
+      "candidate_brands_to_check": [
+        "LHA (2/2 gemelos)",
+        "HIFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P562264",
+      "dimension_twins": [
+        "P562260"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "LHA (1/1 gemelos)",
+        "LUBERFINER (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P562272",
+      "dimension_twins": [
+        "P562271",
+        "P562273"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "LHA (2/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P562275",
+      "dimension_twins": [
+        "P562274"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "LHA (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P564440",
+      "dimension_twins": [
+        "P561267"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "EPE (1/1 gemelos)",
+        "HYDAC (1/1 gemelos)",
+        "REXROTH (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P565929",
+      "dimension_twins": [
+        "P565928"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "EPE (1/1 gemelos)",
+        "HYDAC (1/1 gemelos)",
+        "INTERNORMEN (1/1 gemelos)",
+        "MAHLE (1/1 gemelos)",
+        "MANN (1/1 gemelos)",
+        "MTS (1/1 gemelos)",
+        "PALL (1/1 gemelos)",
+        "PARKER (1/1 gemelos)",
+        "REXROTH (1/1 gemelos)",
+        "SF (1/1 gemelos)",
+        "SOFRANCE (1/1 gemelos)",
+        "UNIFLUX-FILTERS (1/1 gemelos)",
+        "WISMET (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P566259",
+      "dimension_twins": [
+        "P566261",
+        "P566262"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "BOSCH (2/2 gemelos)",
+        "EPE (2/2 gemelos)",
+        "FINN (2/2 gemelos)",
+        "FLEETGUARD (2/2 gemelos)",
+        "HYDAC (2/2 gemelos)",
+        "INTERNORMEN (2/2 gemelos)",
+        "PALL (2/2 gemelos)",
+        "PARKER (2/2 gemelos)",
+        "SF (2/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P566355",
+      "dimension_twins": [
+        "P566356"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "PALL (1/1 gemelos)",
+        "SF (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P566357",
+      "dimension_twins": [
+        "P566356"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "PALL (1/1 gemelos)",
+        "SF (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P566358",
+      "dimension_twins": [
+        "P566356"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "PALL (1/1 gemelos)",
+        "SF (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P566372",
+      "dimension_twins": [
+        "P566373",
+        "P566374",
+        "P566375",
+        "P566378",
+        "P566379",
+        "P566380",
+        "P566383",
+        "P566384",
+        "P566385"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "PALL (8/9 gemelos)",
+        "PARKER (8/9 gemelos)",
+        "SF (8/9 gemelos)",
+        "FLEETGUARD (6/9 gemelos)",
+        "BALDWIN (3/9 gemelos)",
+        "CATERPILLAR (2/9 gemelos)",
+        "RUSTON-BUCYRUS (2/9 gemelos)",
+        "HY-PRO (1/9 gemelos)",
+        "WESTERN (1/9 gemelos)",
+        "EUCLID (1/9 gemelos)",
+        "KOMATSU (1/9 gemelos)",
+        "TEREX (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P566376",
+      "dimension_twins": [
+        "P566373",
+        "P566374",
+        "P566375",
+        "P566378",
+        "P566379",
+        "P566380",
+        "P566383",
+        "P566384",
+        "P566385"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "PALL (8/9 gemelos)",
+        "PARKER (8/9 gemelos)",
+        "SF (8/9 gemelos)",
+        "FLEETGUARD (6/9 gemelos)",
+        "BALDWIN (3/9 gemelos)",
+        "CATERPILLAR (2/9 gemelos)",
+        "RUSTON-BUCYRUS (2/9 gemelos)",
+        "HY-PRO (1/9 gemelos)",
+        "WESTERN (1/9 gemelos)",
+        "EUCLID (1/9 gemelos)",
+        "KOMATSU (1/9 gemelos)",
+        "TEREX (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P566377",
+      "dimension_twins": [
+        "P566373",
+        "P566374",
+        "P566375",
+        "P566378",
+        "P566379",
+        "P566380",
+        "P566383",
+        "P566384",
+        "P566385"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "PALL (8/9 gemelos)",
+        "PARKER (8/9 gemelos)",
+        "SF (8/9 gemelos)",
+        "FLEETGUARD (6/9 gemelos)",
+        "BALDWIN (3/9 gemelos)",
+        "CATERPILLAR (2/9 gemelos)",
+        "RUSTON-BUCYRUS (2/9 gemelos)",
+        "HY-PRO (1/9 gemelos)",
+        "WESTERN (1/9 gemelos)",
+        "EUCLID (1/9 gemelos)",
+        "KOMATSU (1/9 gemelos)",
+        "TEREX (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P566381",
+      "dimension_twins": [
+        "P566373",
+        "P566374",
+        "P566375",
+        "P566378",
+        "P566379",
+        "P566380",
+        "P566383",
+        "P566384",
+        "P566385"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "PALL (8/9 gemelos)",
+        "PARKER (8/9 gemelos)",
+        "SF (8/9 gemelos)",
+        "FLEETGUARD (6/9 gemelos)",
+        "BALDWIN (3/9 gemelos)",
+        "CATERPILLAR (2/9 gemelos)",
+        "RUSTON-BUCYRUS (2/9 gemelos)",
+        "HY-PRO (1/9 gemelos)",
+        "WESTERN (1/9 gemelos)",
+        "EUCLID (1/9 gemelos)",
+        "KOMATSU (1/9 gemelos)",
+        "TEREX (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P566386",
+      "dimension_twins": [
+        "P566373",
+        "P566374",
+        "P566375",
+        "P566378",
+        "P566379",
+        "P566380",
+        "P566383",
+        "P566384",
+        "P566385"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "PALL (8/9 gemelos)",
+        "PARKER (8/9 gemelos)",
+        "SF (8/9 gemelos)",
+        "FLEETGUARD (6/9 gemelos)",
+        "BALDWIN (3/9 gemelos)",
+        "CATERPILLAR (2/9 gemelos)",
+        "RUSTON-BUCYRUS (2/9 gemelos)",
+        "HY-PRO (1/9 gemelos)",
+        "WESTERN (1/9 gemelos)",
+        "EUCLID (1/9 gemelos)",
+        "KOMATSU (1/9 gemelos)",
+        "TEREX (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P566447",
+      "dimension_twins": [
+        "P566445",
+        "P566446",
+        "P566448",
+        "P566450",
+        "P566451",
+        "P566452",
+        "P566453",
+        "P566457"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (8/8 gemelos)",
+        "FLEETGUARD (8/8 gemelos)",
+        "CARQUEST (5/8 gemelos)",
+        "LUBERFINER (5/8 gemelos)",
+        "HIFI (5/8 gemelos)",
+        "HYDAC (5/8 gemelos)",
+        "PALL (5/8 gemelos)",
+        "PARKER (5/8 gemelos)",
+        "DIAGNETICS (4/8 gemelos)",
+        "FLUITEK (4/8 gemelos)",
+        "GFK (4/8 gemelos)",
+        "SCHROEDER (4/8 gemelos)",
+        "SCHUPP (4/8 gemelos)",
+        "STAUFF (4/8 gemelos)",
+        "WIX (3/8 gemelos)",
+        "HASTINGS (3/8 gemelos)",
+        "HY-PRO (3/8 gemelos)",
+        "MP-FILTRI (3/8 gemelos)",
+        "VMC (3/8 gemelos)",
+        "WALGAHN-MOTOREN (3/8 gemelos)",
+        "MANN (3/8 gemelos)",
+        "COMMERCIAL (2/8 gemelos)",
+        "FRAM (2/8 gemelos)",
+        "LETOURNEAU-WESTINGHOUSE (2/8 gemelos)",
+        "MARATHON (2/8 gemelos)",
+        "SEPARATION-TECHNOLOGIES (2/8 gemelos)",
+        "UNITED-CENTRAL-INDUSTRIAL (2/8 gemelos)",
+        "WABCO (2/8 gemelos)",
+        "EUCLID (1/8 gemelos)",
+        "PTI (1/8 gemelos)",
+        "PUROLATOR (1/8 gemelos)",
+        "COMEX (1/8 gemelos)",
+        "EPE (1/8 gemelos)",
+        "INTERNORMEN (1/8 gemelos)",
+        "PRO-FILTERS (1/8 gemelos)",
+        "SF (1/8 gemelos)",
+        "WISMET (1/8 gemelos)"
+      ]
+    },
+    {
+      "code": "P566455",
+      "dimension_twins": [
+        "P566445",
+        "P566446",
+        "P566448",
+        "P566450",
+        "P566451",
+        "P566452",
+        "P566453",
+        "P566457"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (8/8 gemelos)",
+        "FLEETGUARD (8/8 gemelos)",
+        "CARQUEST (5/8 gemelos)",
+        "LUBERFINER (5/8 gemelos)",
+        "HIFI (5/8 gemelos)",
+        "HYDAC (5/8 gemelos)",
+        "PALL (5/8 gemelos)",
+        "PARKER (5/8 gemelos)",
+        "DIAGNETICS (4/8 gemelos)",
+        "FLUITEK (4/8 gemelos)",
+        "GFK (4/8 gemelos)",
+        "SCHROEDER (4/8 gemelos)",
+        "SCHUPP (4/8 gemelos)",
+        "STAUFF (4/8 gemelos)",
+        "WIX (3/8 gemelos)",
+        "HASTINGS (3/8 gemelos)",
+        "HY-PRO (3/8 gemelos)",
+        "MP-FILTRI (3/8 gemelos)",
+        "VMC (3/8 gemelos)",
+        "WALGAHN-MOTOREN (3/8 gemelos)",
+        "MANN (3/8 gemelos)",
+        "COMMERCIAL (2/8 gemelos)",
+        "FRAM (2/8 gemelos)",
+        "LETOURNEAU-WESTINGHOUSE (2/8 gemelos)",
+        "MARATHON (2/8 gemelos)",
+        "SEPARATION-TECHNOLOGIES (2/8 gemelos)",
+        "UNITED-CENTRAL-INDUSTRIAL (2/8 gemelos)",
+        "WABCO (2/8 gemelos)",
+        "EUCLID (1/8 gemelos)",
+        "PTI (1/8 gemelos)",
+        "PUROLATOR (1/8 gemelos)",
+        "COMEX (1/8 gemelos)",
+        "EPE (1/8 gemelos)",
+        "INTERNORMEN (1/8 gemelos)",
+        "PRO-FILTERS (1/8 gemelos)",
+        "SF (1/8 gemelos)",
+        "WISMET (1/8 gemelos)"
+      ]
+    },
+    {
+      "code": "P566456",
+      "dimension_twins": [
+        "P566445",
+        "P566446",
+        "P566448",
+        "P566450",
+        "P566451",
+        "P566452",
+        "P566453",
+        "P566457"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (8/8 gemelos)",
+        "FLEETGUARD (8/8 gemelos)",
+        "CARQUEST (5/8 gemelos)",
+        "LUBERFINER (5/8 gemelos)",
+        "HIFI (5/8 gemelos)",
+        "HYDAC (5/8 gemelos)",
+        "PALL (5/8 gemelos)",
+        "PARKER (5/8 gemelos)",
+        "DIAGNETICS (4/8 gemelos)",
+        "FLUITEK (4/8 gemelos)",
+        "GFK (4/8 gemelos)",
+        "SCHROEDER (4/8 gemelos)",
+        "SCHUPP (4/8 gemelos)",
+        "STAUFF (4/8 gemelos)",
+        "WIX (3/8 gemelos)",
+        "HASTINGS (3/8 gemelos)",
+        "HY-PRO (3/8 gemelos)",
+        "MP-FILTRI (3/8 gemelos)",
+        "VMC (3/8 gemelos)",
+        "WALGAHN-MOTOREN (3/8 gemelos)",
+        "MANN (3/8 gemelos)",
+        "COMMERCIAL (2/8 gemelos)",
+        "FRAM (2/8 gemelos)",
+        "LETOURNEAU-WESTINGHOUSE (2/8 gemelos)",
+        "MARATHON (2/8 gemelos)",
+        "SEPARATION-TECHNOLOGIES (2/8 gemelos)",
+        "UNITED-CENTRAL-INDUSTRIAL (2/8 gemelos)",
+        "WABCO (2/8 gemelos)",
+        "EUCLID (1/8 gemelos)",
+        "PTI (1/8 gemelos)",
+        "PUROLATOR (1/8 gemelos)",
+        "COMEX (1/8 gemelos)",
+        "EPE (1/8 gemelos)",
+        "INTERNORMEN (1/8 gemelos)",
+        "PRO-FILTERS (1/8 gemelos)",
+        "SF (1/8 gemelos)",
+        "WISMET (1/8 gemelos)"
+      ]
+    },
+    {
+      "code": "P566470",
+      "dimension_twins": [
+        "P566460",
+        "P566461",
+        "P566463",
+        "P566465",
+        "P566466",
+        "P566467",
+        "P566468"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (7/7 gemelos)",
+        "HIFI (7/7 gemelos)",
+        "WIX (7/7 gemelos)",
+        "FLEETGUARD (4/7 gemelos)",
+        "HYDAC (4/7 gemelos)",
+        "PALL (4/7 gemelos)",
+        "PARKER (4/7 gemelos)",
+        "CARQUEST (3/7 gemelos)",
+        "HASTINGS (3/7 gemelos)"
+      ]
+    },
+    {
+      "code": "P566471",
+      "dimension_twins": [
+        "P566460",
+        "P566461",
+        "P566463",
+        "P566465",
+        "P566466",
+        "P566467",
+        "P566468"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (7/7 gemelos)",
+        "HIFI (7/7 gemelos)",
+        "WIX (7/7 gemelos)",
+        "FLEETGUARD (4/7 gemelos)",
+        "HYDAC (4/7 gemelos)",
+        "PALL (4/7 gemelos)",
+        "PARKER (4/7 gemelos)",
+        "CARQUEST (3/7 gemelos)",
+        "HASTINGS (3/7 gemelos)"
+      ]
+    },
+    {
+      "code": "P566472",
+      "dimension_twins": [
+        "P566460",
+        "P566461",
+        "P566463",
+        "P566465",
+        "P566466",
+        "P566467",
+        "P566468"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (7/7 gemelos)",
+        "HIFI (7/7 gemelos)",
+        "WIX (7/7 gemelos)",
+        "FLEETGUARD (4/7 gemelos)",
+        "HYDAC (4/7 gemelos)",
+        "PALL (4/7 gemelos)",
+        "PARKER (4/7 gemelos)",
+        "CARQUEST (3/7 gemelos)",
+        "HASTINGS (3/7 gemelos)"
+      ]
+    },
+    {
+      "code": "P566473",
+      "dimension_twins": [
+        "P566460",
+        "P566461",
+        "P566463",
+        "P566465",
+        "P566466",
+        "P566467",
+        "P566468"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (7/7 gemelos)",
+        "HIFI (7/7 gemelos)",
+        "WIX (7/7 gemelos)",
+        "FLEETGUARD (4/7 gemelos)",
+        "HYDAC (4/7 gemelos)",
+        "PALL (4/7 gemelos)",
+        "PARKER (4/7 gemelos)",
+        "CARQUEST (3/7 gemelos)",
+        "HASTINGS (3/7 gemelos)"
+      ]
+    },
+    {
+      "code": "P566476",
+      "dimension_twins": [
+        "P566484",
+        "P566485",
+        "P566486",
+        "P566487",
+        "P566488"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (5/5 gemelos)",
+        "BALDWIN (5/5 gemelos)",
+        "CARQUEST (5/5 gemelos)",
+        "FLEETGUARD (5/5 gemelos)",
+        "HASTINGS (4/5 gemelos)",
+        "LUBERFINER (4/5 gemelos)"
+      ]
+    },
+    {
+      "code": "P566480",
+      "dimension_twins": [
+        "P566484",
+        "P566485",
+        "P566486",
+        "P566487",
+        "P566488"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (5/5 gemelos)",
+        "BALDWIN (5/5 gemelos)",
+        "CARQUEST (5/5 gemelos)",
+        "FLEETGUARD (5/5 gemelos)",
+        "HASTINGS (4/5 gemelos)",
+        "LUBERFINER (4/5 gemelos)"
+      ]
+    },
+    {
+      "code": "P566481",
+      "dimension_twins": [
+        "P566484",
+        "P566485",
+        "P566486",
+        "P566487",
+        "P566488"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (5/5 gemelos)",
+        "BALDWIN (5/5 gemelos)",
+        "CARQUEST (5/5 gemelos)",
+        "FLEETGUARD (5/5 gemelos)",
+        "HASTINGS (4/5 gemelos)",
+        "LUBERFINER (4/5 gemelos)"
+      ]
+    },
+    {
+      "code": "P566482",
+      "dimension_twins": [
+        "P566484",
+        "P566485",
+        "P566486",
+        "P566487",
+        "P566488"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (5/5 gemelos)",
+        "BALDWIN (5/5 gemelos)",
+        "CARQUEST (5/5 gemelos)",
+        "FLEETGUARD (5/5 gemelos)",
+        "HASTINGS (4/5 gemelos)",
+        "LUBERFINER (4/5 gemelos)"
+      ]
+    },
+    {
+      "code": "P566483",
+      "dimension_twins": [
+        "P566484",
+        "P566485",
+        "P566486",
+        "P566487",
+        "P566488"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (5/5 gemelos)",
+        "BALDWIN (5/5 gemelos)",
+        "CARQUEST (5/5 gemelos)",
+        "FLEETGUARD (5/5 gemelos)",
+        "HASTINGS (4/5 gemelos)",
+        "LUBERFINER (4/5 gemelos)"
+      ]
+    },
+    {
+      "code": "P566506",
+      "dimension_twins": [
+        "P566491",
+        "P566492",
+        "P566493",
+        "P566494",
+        "P566495",
+        "P566497",
+        "P566498",
+        "P566499",
+        "P566500",
+        "P566501",
+        "P566502",
+        "P566503",
+        "P566510",
+        "P566511",
+        "P566512"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (13/15 gemelos)",
+        "WIX (10/15 gemelos)",
+        "BALDWIN (9/15 gemelos)",
+        "FLEETGUARD (9/15 gemelos)",
+        "PARKER (9/15 gemelos)",
+        "HYDAC (8/15 gemelos)",
+        "PALL (8/15 gemelos)",
+        "INTERNORMEN (7/15 gemelos)",
+        "EPE (6/15 gemelos)",
+        "HY-PRO (6/15 gemelos)",
+        "SF (6/15 gemelos)",
+        "CARQUEST (4/15 gemelos)",
+        "MANN (3/15 gemelos)",
+        "FLUITEK (2/15 gemelos)",
+        "GFK (2/15 gemelos)",
+        "SCHROEDER (2/15 gemelos)",
+        "VICKERS (2/15 gemelos)",
+        "HYCON (2/15 gemelos)",
+        "SOFIMA (2/15 gemelos)",
+        "IMPREFIL (1/15 gemelos)",
+        "GRAINGER (1/15 gemelos)",
+        "MP-FILTRI (1/15 gemelos)",
+        "HASTINGS (1/15 gemelos)",
+        "JURA (1/15 gemelos)",
+        "PTI (1/15 gemelos)"
+      ]
+    },
+    {
+      "code": "P566507",
+      "dimension_twins": [
+        "P566491",
+        "P566492",
+        "P566493",
+        "P566494",
+        "P566495",
+        "P566497",
+        "P566498",
+        "P566499",
+        "P566500",
+        "P566501",
+        "P566502",
+        "P566503",
+        "P566510",
+        "P566511",
+        "P566512"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (13/15 gemelos)",
+        "WIX (10/15 gemelos)",
+        "BALDWIN (9/15 gemelos)",
+        "FLEETGUARD (9/15 gemelos)",
+        "PARKER (9/15 gemelos)",
+        "HYDAC (8/15 gemelos)",
+        "PALL (8/15 gemelos)",
+        "INTERNORMEN (7/15 gemelos)",
+        "EPE (6/15 gemelos)",
+        "HY-PRO (6/15 gemelos)",
+        "SF (6/15 gemelos)",
+        "CARQUEST (4/15 gemelos)",
+        "MANN (3/15 gemelos)",
+        "FLUITEK (2/15 gemelos)",
+        "GFK (2/15 gemelos)",
+        "SCHROEDER (2/15 gemelos)",
+        "VICKERS (2/15 gemelos)",
+        "HYCON (2/15 gemelos)",
+        "SOFIMA (2/15 gemelos)",
+        "IMPREFIL (1/15 gemelos)",
+        "GRAINGER (1/15 gemelos)",
+        "MP-FILTRI (1/15 gemelos)",
+        "HASTINGS (1/15 gemelos)",
+        "JURA (1/15 gemelos)",
+        "PTI (1/15 gemelos)"
+      ]
+    },
+    {
+      "code": "P566630",
+      "dimension_twins": [
+        "P566633",
+        "P566634",
+        "P566667",
+        "P566668",
+        "P566669",
+        "P566671",
+        "P566672",
+        "P566673"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (8/8 gemelos)",
+        "BALDWIN (7/8 gemelos)",
+        "CARQUEST (4/8 gemelos)",
+        "MANN (3/8 gemelos)",
+        "EPE (2/8 gemelos)",
+        "HYDAC (2/8 gemelos)",
+        "MDF (2/8 gemelos)",
+        "PALL (2/8 gemelos)",
+        "SF (2/8 gemelos)",
+        "WIX (2/8 gemelos)",
+        "BEPCO-GROUP (1/8 gemelos)",
+        "CM (1/8 gemelos)",
+        "DEUTZ (1/8 gemelos)",
+        "IMPREFIL (1/8 gemelos)",
+        "MAIN (1/8 gemelos)",
+        "PZL-SEDZISZOW (1/8 gemelos)",
+        "SAME (1/8 gemelos)",
+        "UNIFLUX-FILTERS (1/8 gemelos)",
+        "COMEX (1/8 gemelos)",
+        "E-CRANE (1/8 gemelos)",
+        "FBO (1/8 gemelos)",
+        "FLEETGUARD (1/8 gemelos)",
+        "INTERNORMEN (1/8 gemelos)",
+        "MAHLE (1/8 gemelos)",
+        "PARKER (1/8 gemelos)",
+        "REXROTH (1/8 gemelos)",
+        "STEP-FILTERS (1/8 gemelos)",
+        "HENGST (1/8 gemelos)"
+      ]
+    },
+    {
+      "code": "P566631",
+      "dimension_twins": [
+        "P566633",
+        "P566634",
+        "P566667",
+        "P566668",
+        "P566669",
+        "P566671",
+        "P566672",
+        "P566673"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (8/8 gemelos)",
+        "BALDWIN (7/8 gemelos)",
+        "CARQUEST (4/8 gemelos)",
+        "MANN (3/8 gemelos)",
+        "EPE (2/8 gemelos)",
+        "HYDAC (2/8 gemelos)",
+        "MDF (2/8 gemelos)",
+        "PALL (2/8 gemelos)",
+        "SF (2/8 gemelos)",
+        "WIX (2/8 gemelos)",
+        "BEPCO-GROUP (1/8 gemelos)",
+        "CM (1/8 gemelos)",
+        "DEUTZ (1/8 gemelos)",
+        "IMPREFIL (1/8 gemelos)",
+        "MAIN (1/8 gemelos)",
+        "PZL-SEDZISZOW (1/8 gemelos)",
+        "SAME (1/8 gemelos)",
+        "UNIFLUX-FILTERS (1/8 gemelos)",
+        "COMEX (1/8 gemelos)",
+        "E-CRANE (1/8 gemelos)",
+        "FBO (1/8 gemelos)",
+        "FLEETGUARD (1/8 gemelos)",
+        "INTERNORMEN (1/8 gemelos)",
+        "MAHLE (1/8 gemelos)",
+        "PARKER (1/8 gemelos)",
+        "REXROTH (1/8 gemelos)",
+        "STEP-FILTERS (1/8 gemelos)",
+        "HENGST (1/8 gemelos)"
+      ]
+    },
+    {
+      "code": "P566632",
+      "dimension_twins": [
+        "P566633",
+        "P566634",
+        "P566667",
+        "P566668",
+        "P566669",
+        "P566671",
+        "P566672",
+        "P566673"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (8/8 gemelos)",
+        "BALDWIN (7/8 gemelos)",
+        "CARQUEST (4/8 gemelos)",
+        "MANN (3/8 gemelos)",
+        "EPE (2/8 gemelos)",
+        "HYDAC (2/8 gemelos)",
+        "MDF (2/8 gemelos)",
+        "PALL (2/8 gemelos)",
+        "SF (2/8 gemelos)",
+        "WIX (2/8 gemelos)",
+        "BEPCO-GROUP (1/8 gemelos)",
+        "CM (1/8 gemelos)",
+        "DEUTZ (1/8 gemelos)",
+        "IMPREFIL (1/8 gemelos)",
+        "MAIN (1/8 gemelos)",
+        "PZL-SEDZISZOW (1/8 gemelos)",
+        "SAME (1/8 gemelos)",
+        "UNIFLUX-FILTERS (1/8 gemelos)",
+        "COMEX (1/8 gemelos)",
+        "E-CRANE (1/8 gemelos)",
+        "FBO (1/8 gemelos)",
+        "FLEETGUARD (1/8 gemelos)",
+        "INTERNORMEN (1/8 gemelos)",
+        "MAHLE (1/8 gemelos)",
+        "PARKER (1/8 gemelos)",
+        "REXROTH (1/8 gemelos)",
+        "STEP-FILTERS (1/8 gemelos)",
+        "HENGST (1/8 gemelos)"
+      ]
+    },
+    {
+      "code": "P566636",
+      "dimension_twins": [
+        "P566633",
+        "P566634",
+        "P566667",
+        "P566668",
+        "P566669",
+        "P566671",
+        "P566672",
+        "P566673"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (8/8 gemelos)",
+        "BALDWIN (7/8 gemelos)",
+        "CARQUEST (4/8 gemelos)",
+        "MANN (3/8 gemelos)",
+        "EPE (2/8 gemelos)",
+        "HYDAC (2/8 gemelos)",
+        "MDF (2/8 gemelos)",
+        "PALL (2/8 gemelos)",
+        "SF (2/8 gemelos)",
+        "WIX (2/8 gemelos)",
+        "BEPCO-GROUP (1/8 gemelos)",
+        "CM (1/8 gemelos)",
+        "DEUTZ (1/8 gemelos)",
+        "IMPREFIL (1/8 gemelos)",
+        "MAIN (1/8 gemelos)",
+        "PZL-SEDZISZOW (1/8 gemelos)",
+        "SAME (1/8 gemelos)",
+        "UNIFLUX-FILTERS (1/8 gemelos)",
+        "COMEX (1/8 gemelos)",
+        "E-CRANE (1/8 gemelos)",
+        "FBO (1/8 gemelos)",
+        "FLEETGUARD (1/8 gemelos)",
+        "INTERNORMEN (1/8 gemelos)",
+        "MAHLE (1/8 gemelos)",
+        "PARKER (1/8 gemelos)",
+        "REXROTH (1/8 gemelos)",
+        "STEP-FILTERS (1/8 gemelos)",
+        "HENGST (1/8 gemelos)"
+      ]
+    },
+    {
+      "code": "P566637",
+      "dimension_twins": [
+        "P566633",
+        "P566634",
+        "P566667",
+        "P566668",
+        "P566669",
+        "P566671",
+        "P566672",
+        "P566673"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (8/8 gemelos)",
+        "BALDWIN (7/8 gemelos)",
+        "CARQUEST (4/8 gemelos)",
+        "MANN (3/8 gemelos)",
+        "EPE (2/8 gemelos)",
+        "HYDAC (2/8 gemelos)",
+        "MDF (2/8 gemelos)",
+        "PALL (2/8 gemelos)",
+        "SF (2/8 gemelos)",
+        "WIX (2/8 gemelos)",
+        "BEPCO-GROUP (1/8 gemelos)",
+        "CM (1/8 gemelos)",
+        "DEUTZ (1/8 gemelos)",
+        "IMPREFIL (1/8 gemelos)",
+        "MAIN (1/8 gemelos)",
+        "PZL-SEDZISZOW (1/8 gemelos)",
+        "SAME (1/8 gemelos)",
+        "UNIFLUX-FILTERS (1/8 gemelos)",
+        "COMEX (1/8 gemelos)",
+        "E-CRANE (1/8 gemelos)",
+        "FBO (1/8 gemelos)",
+        "FLEETGUARD (1/8 gemelos)",
+        "INTERNORMEN (1/8 gemelos)",
+        "MAHLE (1/8 gemelos)",
+        "PARKER (1/8 gemelos)",
+        "REXROTH (1/8 gemelos)",
+        "STEP-FILTERS (1/8 gemelos)",
+        "HENGST (1/8 gemelos)"
+      ]
+    },
+    {
+      "code": "P566638",
+      "dimension_twins": [
+        "P566633",
+        "P566634",
+        "P566667",
+        "P566668",
+        "P566669",
+        "P566671",
+        "P566672",
+        "P566673"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (8/8 gemelos)",
+        "BALDWIN (7/8 gemelos)",
+        "CARQUEST (4/8 gemelos)",
+        "MANN (3/8 gemelos)",
+        "EPE (2/8 gemelos)",
+        "HYDAC (2/8 gemelos)",
+        "MDF (2/8 gemelos)",
+        "PALL (2/8 gemelos)",
+        "SF (2/8 gemelos)",
+        "WIX (2/8 gemelos)",
+        "BEPCO-GROUP (1/8 gemelos)",
+        "CM (1/8 gemelos)",
+        "DEUTZ (1/8 gemelos)",
+        "IMPREFIL (1/8 gemelos)",
+        "MAIN (1/8 gemelos)",
+        "PZL-SEDZISZOW (1/8 gemelos)",
+        "SAME (1/8 gemelos)",
+        "UNIFLUX-FILTERS (1/8 gemelos)",
+        "COMEX (1/8 gemelos)",
+        "E-CRANE (1/8 gemelos)",
+        "FBO (1/8 gemelos)",
+        "FLEETGUARD (1/8 gemelos)",
+        "INTERNORMEN (1/8 gemelos)",
+        "MAHLE (1/8 gemelos)",
+        "PARKER (1/8 gemelos)",
+        "REXROTH (1/8 gemelos)",
+        "STEP-FILTERS (1/8 gemelos)",
+        "HENGST (1/8 gemelos)"
+      ]
+    },
+    {
+      "code": "P566662",
+      "dimension_twins": [
+        "P566658",
+        "P566659",
+        "P566660",
+        "P566661",
+        "P566664",
+        "P566665"
+      ],
+      "candidate_brands_to_check": [
+        "CARQUEST (6/6 gemelos)",
+        "HIFI (6/6 gemelos)",
+        "WIX (4/6 gemelos)",
+        "MANN (3/6 gemelos)",
+        "BALDWIN (3/6 gemelos)",
+        "COMEX (2/6 gemelos)",
+        "FINN (2/6 gemelos)",
+        "HYDAC (2/6 gemelos)",
+        "IMPREFIL (2/6 gemelos)",
+        "INTERNORMEN (2/6 gemelos)",
+        "PALL (2/6 gemelos)",
+        "PARKER (2/6 gemelos)",
+        "SF (2/6 gemelos)",
+        "STEP-FILTERS (2/6 gemelos)",
+        "UNIFLUX-FILTERS (2/6 gemelos)",
+        "HENGST (1/6 gemelos)",
+        "CIFA (1/6 gemelos)",
+        "FASSI (1/6 gemelos)",
+        "FLEETGUARD (1/6 gemelos)",
+        "HSM (1/6 gemelos)",
+        "MAHLE (1/6 gemelos)",
+        "MDF (1/6 gemelos)",
+        "PALFINGER (1/6 gemelos)",
+        "PRO-FILTERS (1/6 gemelos)",
+        "VOLVO-CARS (1/6 gemelos)",
+        "WISMET (1/6 gemelos)",
+        "ABG (1/6 gemelos)",
+        "AIRFIL (1/6 gemelos)",
+        "MAIN (1/6 gemelos)",
+        "METSO (1/6 gemelos)",
+        "PLASSER (1/6 gemelos)"
+      ]
+    },
+    {
+      "code": "P566688",
+      "dimension_twins": [
+        "P566689"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (1/1 gemelos)",
+        "CARQUEST (1/1 gemelos)",
+        "HIFI (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P566709",
+      "dimension_twins": [
+        "P566706",
+        "P566707",
+        "P566708"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (3/3 gemelos)",
+        "HIFI (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "NAPA (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P566710",
+      "dimension_twins": [
+        "P566706",
+        "P566707",
+        "P566708"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (3/3 gemelos)",
+        "HIFI (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "NAPA (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P566711",
+      "dimension_twins": [
+        "P566706",
+        "P566707",
+        "P566708"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (3/3 gemelos)",
+        "HIFI (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "NAPA (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P566712",
+      "dimension_twins": [
+        "P566706",
+        "P566707",
+        "P566708"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (3/3 gemelos)",
+        "HIFI (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "NAPA (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P566713",
+      "dimension_twins": [
+        "P566706",
+        "P566707",
+        "P566708"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (3/3 gemelos)",
+        "HIFI (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "NAPA (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P567068",
+      "dimension_twins": [
+        "P567067",
+        "P567071",
+        "P567072"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "SCHROEDER (2/3 gemelos)",
+        "WESTERN (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "CARQUEST (1/3 gemelos)",
+        "UFI (1/3 gemelos)",
+        "FLEETGUARD (1/3 gemelos)",
+        "SF (1/3 gemelos)",
+        "WISMET (1/3 gemelos)",
+        "WIX (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P567069",
+      "dimension_twins": [
+        "P567067",
+        "P567071",
+        "P567072"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "SCHROEDER (2/3 gemelos)",
+        "WESTERN (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "CARQUEST (1/3 gemelos)",
+        "UFI (1/3 gemelos)",
+        "FLEETGUARD (1/3 gemelos)",
+        "SF (1/3 gemelos)",
+        "WISMET (1/3 gemelos)",
+        "WIX (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P567077",
+      "dimension_twins": [
+        "P567073",
+        "P567075",
+        "P567076",
+        "P573185",
+        "P575086"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (5/5 gemelos)",
+        "SCHROEDER (5/5 gemelos)",
+        "SF (2/5 gemelos)",
+        "BALDWIN (1/5 gemelos)",
+        "CATERPILLAR (1/5 gemelos)",
+        "FLEETGUARD (1/5 gemelos)",
+        "PARKER (1/5 gemelos)",
+        "SUPERIOR (1/5 gemelos)",
+        "WISMET (1/5 gemelos)"
+      ]
+    },
+    {
+      "code": "P567078",
+      "dimension_twins": [
+        "P567079"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "CONAIR-FRANKLIN (1/1 gemelos)",
+        "SCHROEDER (1/1 gemelos)",
+        "SF (1/1 gemelos)",
+        "WIX (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P567080",
+      "dimension_twins": [
+        "P567073",
+        "P567075",
+        "P567076",
+        "P573185",
+        "P575086"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (5/5 gemelos)",
+        "SCHROEDER (5/5 gemelos)",
+        "SF (2/5 gemelos)",
+        "BALDWIN (1/5 gemelos)",
+        "CATERPILLAR (1/5 gemelos)",
+        "FLEETGUARD (1/5 gemelos)",
+        "PARKER (1/5 gemelos)",
+        "SUPERIOR (1/5 gemelos)",
+        "WISMET (1/5 gemelos)"
+      ]
+    },
+    {
+      "code": "P567093",
+      "dimension_twins": [
+        "P567094",
+        "P567095",
+        "P567096",
+        "P567099",
+        "P567100",
+        "P567101",
+        "P567102",
+        "P567103",
+        "P567104"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "HYDAC (7/9 gemelos)",
+        "INTERNORMEN (7/9 gemelos)",
+        "MAHLE (7/9 gemelos)",
+        "PALL (7/9 gemelos)",
+        "PARKER (7/9 gemelos)",
+        "PTI (7/9 gemelos)",
+        "SF (7/9 gemelos)",
+        "STEP-FILTERS (7/9 gemelos)",
+        "EPE (6/9 gemelos)",
+        "BALDWIN (5/9 gemelos)",
+        "MDF (5/9 gemelos)",
+        "MANN (4/9 gemelos)",
+        "WIX (4/9 gemelos)",
+        "CARQUEST (3/9 gemelos)",
+        "REXROTH (3/9 gemelos)",
+        "MP-FILTRI (3/9 gemelos)",
+        "COMEX (2/9 gemelos)",
+        "ENGEL (2/9 gemelos)",
+        "IMPREFIL (2/9 gemelos)",
+        "FILTRATION-GROUP (1/9 gemelos)",
+        "HOFMEISTER-MEINCKE (1/9 gemelos)",
+        "AIRFIL (1/9 gemelos)",
+        "DEMAG (1/9 gemelos)",
+        "HAEGGLUNDS (1/9 gemelos)",
+        "PRO-FILTERS (1/9 gemelos)",
+        "KRAUSS-MAFFEI (1/9 gemelos)",
+        "UNIFLUX-FILTERS (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P567098",
+      "dimension_twins": [
+        "P567094",
+        "P567095",
+        "P567096",
+        "P567099",
+        "P567100",
+        "P567101",
+        "P567102",
+        "P567103",
+        "P567104"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "HYDAC (7/9 gemelos)",
+        "INTERNORMEN (7/9 gemelos)",
+        "MAHLE (7/9 gemelos)",
+        "PALL (7/9 gemelos)",
+        "PARKER (7/9 gemelos)",
+        "PTI (7/9 gemelos)",
+        "SF (7/9 gemelos)",
+        "STEP-FILTERS (7/9 gemelos)",
+        "EPE (6/9 gemelos)",
+        "BALDWIN (5/9 gemelos)",
+        "MDF (5/9 gemelos)",
+        "MANN (4/9 gemelos)",
+        "WIX (4/9 gemelos)",
+        "CARQUEST (3/9 gemelos)",
+        "REXROTH (3/9 gemelos)",
+        "MP-FILTRI (3/9 gemelos)",
+        "COMEX (2/9 gemelos)",
+        "ENGEL (2/9 gemelos)",
+        "IMPREFIL (2/9 gemelos)",
+        "FILTRATION-GROUP (1/9 gemelos)",
+        "HOFMEISTER-MEINCKE (1/9 gemelos)",
+        "AIRFIL (1/9 gemelos)",
+        "DEMAG (1/9 gemelos)",
+        "HAEGGLUNDS (1/9 gemelos)",
+        "PRO-FILTERS (1/9 gemelos)",
+        "KRAUSS-MAFFEI (1/9 gemelos)",
+        "UNIFLUX-FILTERS (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P567414",
+      "dimension_twins": [
+        "P568046"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "BALDWIN (1/1 gemelos)",
+        "HY-PRO (1/1 gemelos)",
+        "INTERNORMEN (1/1 gemelos)",
+        "PALL (1/1 gemelos)",
+        "SF (1/1 gemelos)",
+        "WIX (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P567873",
+      "dimension_twins": [
+        "P170095"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (1/1 gemelos)",
+        "CARQUEST (1/1 gemelos)",
+        "FLEETGUARD (1/1 gemelos)",
+        "HIFI (1/1 gemelos)",
+        "HY-PRO (1/1 gemelos)",
+        "PARKER (1/1 gemelos)",
+        "SEPARATION-TECHNOLOGIES (1/1 gemelos)",
+        "VMC (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P568091",
+      "dimension_twins": [
+        "P568081"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "LHA (1/1 gemelos)",
+        "MCNEILUS (1/1 gemelos)",
+        "SCHROEDER (1/1 gemelos)",
+        "SF (1/1 gemelos)",
+        "WIX (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P569091",
+      "dimension_twins": [
+        "P569092",
+        "P569093"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "FLEETGUARD (2/2 gemelos)",
+        "HY-PRO (2/2 gemelos)",
+        "SCHROEDER (2/2 gemelos)",
+        "WISMET (2/2 gemelos)",
+        "PRO-FILTERS (1/2 gemelos)",
+        "HYDAC (1/2 gemelos)",
+        "PARKER (1/2 gemelos)",
+        "SUPERIOR (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P569094",
+      "dimension_twins": [
+        "P569092",
+        "P569093"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "FLEETGUARD (2/2 gemelos)",
+        "HY-PRO (2/2 gemelos)",
+        "SCHROEDER (2/2 gemelos)",
+        "WISMET (2/2 gemelos)",
+        "PRO-FILTERS (1/2 gemelos)",
+        "HYDAC (1/2 gemelos)",
+        "PARKER (1/2 gemelos)",
+        "SUPERIOR (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P570312",
+      "dimension_twins": [
+        "P570313",
+        "P570860"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "EPE (2/2 gemelos)",
+        "HYDAC (2/2 gemelos)",
+        "SF (2/2 gemelos)",
+        "WIX (2/2 gemelos)",
+        "ARGO (1/2 gemelos)",
+        "BALDWIN (1/2 gemelos)",
+        "CARQUEST (1/2 gemelos)",
+        "CATERPILLAR (1/2 gemelos)",
+        "COMEX (1/2 gemelos)",
+        "FLEETGUARD (1/2 gemelos)",
+        "HY-PRO (1/2 gemelos)",
+        "IMPREFIL (1/2 gemelos)",
+        "INTERNORMEN (1/2 gemelos)",
+        "LIUGONG (1/2 gemelos)",
+        "LUBERFINER (1/2 gemelos)",
+        "MAHLE (1/2 gemelos)",
+        "MANN (1/2 gemelos)",
+        "NORMAN-EQUIPMENT (1/2 gemelos)",
+        "PALL (1/2 gemelos)",
+        "PARKER (1/2 gemelos)",
+        "PZL-SEDZISZOW (1/2 gemelos)",
+        "QUALITY-FILTRATION (1/2 gemelos)",
+        "REXROTH (1/2 gemelos)",
+        "STEP-FILTERS (1/2 gemelos)",
+        "WESTERN (1/2 gemelos)",
+        "WOODGATE (1/2 gemelos)",
+        "UNIFLUX-FILTERS (1/2 gemelos)",
+        "WISMET (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P570315",
+      "dimension_twins": [
+        "P567001",
+        "P567002",
+        "P567003",
+        "P567004",
+        "P584346"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (5/5 gemelos)",
+        "CARQUEST (5/5 gemelos)",
+        "HIFI (4/5 gemelos)",
+        "COMEX (4/5 gemelos)",
+        "ENGEMAI-FILTROS (4/5 gemelos)",
+        "EPE (4/5 gemelos)",
+        "FILTER-SOURCE (4/5 gemelos)",
+        "HY-PRO (4/5 gemelos)",
+        "HYDAC (4/5 gemelos)",
+        "INTERNORMEN (4/5 gemelos)",
+        "PALL (4/5 gemelos)",
+        "PARKER (4/5 gemelos)",
+        "REXROTH (4/5 gemelos)",
+        "SF (4/5 gemelos)"
+      ]
+    },
+    {
+      "code": "P570326",
+      "dimension_twins": [
+        "P570313",
+        "P570860"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "EPE (2/2 gemelos)",
+        "HYDAC (2/2 gemelos)",
+        "SF (2/2 gemelos)",
+        "WIX (2/2 gemelos)",
+        "ARGO (1/2 gemelos)",
+        "BALDWIN (1/2 gemelos)",
+        "CARQUEST (1/2 gemelos)",
+        "CATERPILLAR (1/2 gemelos)",
+        "COMEX (1/2 gemelos)",
+        "FLEETGUARD (1/2 gemelos)",
+        "HY-PRO (1/2 gemelos)",
+        "IMPREFIL (1/2 gemelos)",
+        "INTERNORMEN (1/2 gemelos)",
+        "LIUGONG (1/2 gemelos)",
+        "LUBERFINER (1/2 gemelos)",
+        "MAHLE (1/2 gemelos)",
+        "MANN (1/2 gemelos)",
+        "NORMAN-EQUIPMENT (1/2 gemelos)",
+        "PALL (1/2 gemelos)",
+        "PARKER (1/2 gemelos)",
+        "PZL-SEDZISZOW (1/2 gemelos)",
+        "QUALITY-FILTRATION (1/2 gemelos)",
+        "REXROTH (1/2 gemelos)",
+        "STEP-FILTERS (1/2 gemelos)",
+        "WESTERN (1/2 gemelos)",
+        "WOODGATE (1/2 gemelos)",
+        "UNIFLUX-FILTERS (1/2 gemelos)",
+        "WISMET (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P571041",
+      "dimension_twins": [
+        "P167180",
+        "P167181"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (2/2 gemelos)",
+        "CARQUEST (2/2 gemelos)",
+        "COMMERCIAL (2/2 gemelos)",
+        "DIAGNETICS (2/2 gemelos)",
+        "FAIREY-ARLON (2/2 gemelos)",
+        "FILTREC (2/2 gemelos)",
+        "FLEETGUARD (2/2 gemelos)",
+        "FLUITEK (2/2 gemelos)",
+        "FRAM (2/2 gemelos)",
+        "GFK (2/2 gemelos)",
+        "HIFI (2/2 gemelos)",
+        "HY-PRO (2/2 gemelos)",
+        "HYDAC (2/2 gemelos)",
+        "LHA (2/2 gemelos)",
+        "MANN (2/2 gemelos)",
+        "MOOG (2/2 gemelos)",
+        "MP-FILTRI (2/2 gemelos)",
+        "OMT (2/2 gemelos)",
+        "PALL (2/2 gemelos)",
+        "PARKER (2/2 gemelos)",
+        "PTI (2/2 gemelos)",
+        "PUROLATOR (2/2 gemelos)",
+        "SCHROEDER (2/2 gemelos)",
+        "SCHUPP (2/2 gemelos)",
+        "SEPARATION-TECHNOLOGIES (2/2 gemelos)",
+        "STAUFF (2/2 gemelos)",
+        "VICKERS (2/2 gemelos)",
+        "VMC (2/2 gemelos)",
+        "WIX (2/2 gemelos)",
+        "ZINGA (2/2 gemelos)",
+        "INTERNORMEN (1/2 gemelos)",
+        "JURA (1/2 gemelos)",
+        "LUBERFINER (1/2 gemelos)",
+        "BOMAG (1/2 gemelos)",
+        "COMPACTION-AMERICA (1/2 gemelos)",
+        "GENERAL-ELECTRIC (1/2 gemelos)",
+        "HASTINGS (1/2 gemelos)",
+        "JLG (1/2 gemelos)",
+        "UFI (1/2 gemelos)",
+        "WESTERN (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P571242",
+      "dimension_twins": [
+        "P571238",
+        "P571239",
+        "P571240",
+        "P571241"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (4/4 gemelos)",
+        "EPE (4/4 gemelos)",
+        "HY-PRO (4/4 gemelos)",
+        "HYDAC (4/4 gemelos)",
+        "INTERNORMEN (4/4 gemelos)",
+        "MP-FILTRI (4/4 gemelos)",
+        "PARKER (4/4 gemelos)",
+        "REXROTH (4/4 gemelos)",
+        "SF (4/4 gemelos)",
+        "MAHLE (3/4 gemelos)",
+        "SOFRANCE (3/4 gemelos)",
+        "PALL (2/4 gemelos)",
+        "WISMET (2/4 gemelos)",
+        "WIX (1/4 gemelos)",
+        "BALDWIN (1/4 gemelos)",
+        "BCB-FILTRATION (1/4 gemelos)",
+        "CARQUEST (1/4 gemelos)",
+        "MANITOWOC (1/4 gemelos)"
+      ]
+    },
+    {
+      "code": "P571243",
+      "dimension_twins": [
+        "P571238",
+        "P571239",
+        "P571240",
+        "P571241"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (4/4 gemelos)",
+        "EPE (4/4 gemelos)",
+        "HY-PRO (4/4 gemelos)",
+        "HYDAC (4/4 gemelos)",
+        "INTERNORMEN (4/4 gemelos)",
+        "MP-FILTRI (4/4 gemelos)",
+        "PARKER (4/4 gemelos)",
+        "REXROTH (4/4 gemelos)",
+        "SF (4/4 gemelos)",
+        "MAHLE (3/4 gemelos)",
+        "SOFRANCE (3/4 gemelos)",
+        "PALL (2/4 gemelos)",
+        "WISMET (2/4 gemelos)",
+        "WIX (1/4 gemelos)",
+        "BALDWIN (1/4 gemelos)",
+        "BCB-FILTRATION (1/4 gemelos)",
+        "CARQUEST (1/4 gemelos)",
+        "MANITOWOC (1/4 gemelos)"
+      ]
+    },
+    {
+      "code": "P571365",
+      "dimension_twins": [
+        "P571367"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "MANN (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P571366",
+      "dimension_twins": [
+        "P571367"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "MANN (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P571368",
+      "dimension_twins": [
+        "P571367"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "MANN (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P572303",
+      "dimension_twins": [
+        "P567067",
+        "P567071",
+        "P567072"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "SCHROEDER (2/3 gemelos)",
+        "WESTERN (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "CARQUEST (1/3 gemelos)",
+        "UFI (1/3 gemelos)",
+        "FLEETGUARD (1/3 gemelos)",
+        "SF (1/3 gemelos)",
+        "WISMET (1/3 gemelos)",
+        "WIX (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P572304",
+      "dimension_twins": [
+        "P567067",
+        "P567071",
+        "P567072"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "SCHROEDER (2/3 gemelos)",
+        "WESTERN (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "CARQUEST (1/3 gemelos)",
+        "UFI (1/3 gemelos)",
+        "FLEETGUARD (1/3 gemelos)",
+        "SF (1/3 gemelos)",
+        "WISMET (1/3 gemelos)",
+        "WIX (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P572305",
+      "dimension_twins": [
+        "P567067",
+        "P567071",
+        "P567072"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "SCHROEDER (2/3 gemelos)",
+        "WESTERN (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "CARQUEST (1/3 gemelos)",
+        "UFI (1/3 gemelos)",
+        "FLEETGUARD (1/3 gemelos)",
+        "SF (1/3 gemelos)",
+        "WISMET (1/3 gemelos)",
+        "WIX (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P572306",
+      "dimension_twins": [
+        "P567067",
+        "P567071",
+        "P567072"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "SCHROEDER (2/3 gemelos)",
+        "WESTERN (2/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "CARQUEST (1/3 gemelos)",
+        "UFI (1/3 gemelos)",
+        "FLEETGUARD (1/3 gemelos)",
+        "SF (1/3 gemelos)",
+        "WISMET (1/3 gemelos)",
+        "WIX (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P573095",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P573096",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P573097",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P573098",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P573099",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P573100",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P573101",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P573102",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P573103",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P573104",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P573352",
+      "dimension_twins": [
+        "P173789",
+        "P573353"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "COUGLAR-INDUSTRIES (1/2 gemelos)",
+        "DRESSER (1/2 gemelos)",
+        "KOMATSU (1/2 gemelos)",
+        "LUBERFINER (1/2 gemelos)",
+        "WESTERN (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573729",
+      "dimension_twins": [
+        "P573733",
+        "P573734",
+        "P573736"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "HY-PRO (3/3 gemelos)",
+        "PARKER (3/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P573730",
+      "dimension_twins": [
+        "P573733",
+        "P573734",
+        "P573736"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "HY-PRO (3/3 gemelos)",
+        "PARKER (3/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P573731",
+      "dimension_twins": [
+        "P573733",
+        "P573734",
+        "P573736"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "HY-PRO (3/3 gemelos)",
+        "PARKER (3/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P573732",
+      "dimension_twins": [
+        "P573733",
+        "P573734",
+        "P573736"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "HY-PRO (3/3 gemelos)",
+        "PARKER (3/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P573786",
+      "dimension_twins": [
+        "P573784",
+        "P573785"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "PARKER (2/2 gemelos)",
+        "SF (2/2 gemelos)",
+        "FILTREC (1/2 gemelos)",
+        "AIRMARREL (1/2 gemelos)",
+        "HY-PRO (1/2 gemelos)",
+        "MAIN (1/2 gemelos)",
+        "MDF (1/2 gemelos)",
+        "UCC (1/2 gemelos)",
+        "UFI (1/2 gemelos)",
+        "WISMET (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573787",
+      "dimension_twins": [
+        "P573784",
+        "P573785"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "PARKER (2/2 gemelos)",
+        "SF (2/2 gemelos)",
+        "FILTREC (1/2 gemelos)",
+        "AIRMARREL (1/2 gemelos)",
+        "HY-PRO (1/2 gemelos)",
+        "MAIN (1/2 gemelos)",
+        "MDF (1/2 gemelos)",
+        "UCC (1/2 gemelos)",
+        "UFI (1/2 gemelos)",
+        "WISMET (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573788",
+      "dimension_twins": [
+        "P573784",
+        "P573785"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "PARKER (2/2 gemelos)",
+        "SF (2/2 gemelos)",
+        "FILTREC (1/2 gemelos)",
+        "AIRMARREL (1/2 gemelos)",
+        "HY-PRO (1/2 gemelos)",
+        "MAIN (1/2 gemelos)",
+        "MDF (1/2 gemelos)",
+        "UCC (1/2 gemelos)",
+        "UFI (1/2 gemelos)",
+        "WISMET (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573789",
+      "dimension_twins": [
+        "P573784",
+        "P573785"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "PARKER (2/2 gemelos)",
+        "SF (2/2 gemelos)",
+        "FILTREC (1/2 gemelos)",
+        "AIRMARREL (1/2 gemelos)",
+        "HY-PRO (1/2 gemelos)",
+        "MAIN (1/2 gemelos)",
+        "MDF (1/2 gemelos)",
+        "UCC (1/2 gemelos)",
+        "UFI (1/2 gemelos)",
+        "WISMET (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573790",
+      "dimension_twins": [
+        "P573792",
+        "P573796"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "IMPREFIL (1/2 gemelos)",
+        "JCB (1/2 gemelos)",
+        "MAIN (1/2 gemelos)",
+        "MDF (1/2 gemelos)",
+        "PARKER (1/2 gemelos)",
+        "SF (1/2 gemelos)",
+        "TEREX (1/2 gemelos)",
+        "UCC (1/2 gemelos)",
+        "WISMET (1/2 gemelos)",
+        "BALDWIN (1/2 gemelos)",
+        "UFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573791",
+      "dimension_twins": [
+        "P573792",
+        "P573796"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "IMPREFIL (1/2 gemelos)",
+        "JCB (1/2 gemelos)",
+        "MAIN (1/2 gemelos)",
+        "MDF (1/2 gemelos)",
+        "PARKER (1/2 gemelos)",
+        "SF (1/2 gemelos)",
+        "TEREX (1/2 gemelos)",
+        "UCC (1/2 gemelos)",
+        "WISMET (1/2 gemelos)",
+        "BALDWIN (1/2 gemelos)",
+        "UFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573794",
+      "dimension_twins": [
+        "P573792",
+        "P573796"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "IMPREFIL (1/2 gemelos)",
+        "JCB (1/2 gemelos)",
+        "MAIN (1/2 gemelos)",
+        "MDF (1/2 gemelos)",
+        "PARKER (1/2 gemelos)",
+        "SF (1/2 gemelos)",
+        "TEREX (1/2 gemelos)",
+        "UCC (1/2 gemelos)",
+        "WISMET (1/2 gemelos)",
+        "BALDWIN (1/2 gemelos)",
+        "UFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573795",
+      "dimension_twins": [
+        "P573792",
+        "P573796"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "IMPREFIL (1/2 gemelos)",
+        "JCB (1/2 gemelos)",
+        "MAIN (1/2 gemelos)",
+        "MDF (1/2 gemelos)",
+        "PARKER (1/2 gemelos)",
+        "SF (1/2 gemelos)",
+        "TEREX (1/2 gemelos)",
+        "UCC (1/2 gemelos)",
+        "WISMET (1/2 gemelos)",
+        "BALDWIN (1/2 gemelos)",
+        "UFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573797",
+      "dimension_twins": [
+        "P573792",
+        "P573796"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "IMPREFIL (1/2 gemelos)",
+        "JCB (1/2 gemelos)",
+        "MAIN (1/2 gemelos)",
+        "MDF (1/2 gemelos)",
+        "PARKER (1/2 gemelos)",
+        "SF (1/2 gemelos)",
+        "TEREX (1/2 gemelos)",
+        "UCC (1/2 gemelos)",
+        "WISMET (1/2 gemelos)",
+        "BALDWIN (1/2 gemelos)",
+        "UFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573798",
+      "dimension_twins": [
+        "P573800",
+        "P573804"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (2/2 gemelos)",
+        "CARQUEST (2/2 gemelos)",
+        "HIFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573799",
+      "dimension_twins": [
+        "P573800",
+        "P573804"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (2/2 gemelos)",
+        "CARQUEST (2/2 gemelos)",
+        "HIFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573802",
+      "dimension_twins": [
+        "P573800",
+        "P573804"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (2/2 gemelos)",
+        "CARQUEST (2/2 gemelos)",
+        "HIFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573803",
+      "dimension_twins": [
+        "P573800",
+        "P573804"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (2/2 gemelos)",
+        "CARQUEST (2/2 gemelos)",
+        "HIFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573805",
+      "dimension_twins": [
+        "P573800",
+        "P573804"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (2/2 gemelos)",
+        "CARQUEST (2/2 gemelos)",
+        "HIFI (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P573930",
+      "dimension_twins": [
+        "P574410",
+        "P574412",
+        "P574416"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "FINN (3/3 gemelos)",
+        "FLEETGUARD (3/3 gemelos)",
+        "HYDAC (3/3 gemelos)",
+        "PALL (3/3 gemelos)",
+        "PARKER (3/3 gemelos)",
+        "SF (3/3 gemelos)",
+        "HY-PRO (1/3 gemelos)",
+        "HYCON (1/3 gemelos)",
+        "MANN (1/3 gemelos)",
+        "PUROLATOR (1/3 gemelos)",
+        "WIX (1/3 gemelos)",
+        "UNIFLUX-FILTERS (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P573932",
+      "dimension_twins": [
+        "P574410",
+        "P574412",
+        "P574416"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "FINN (3/3 gemelos)",
+        "FLEETGUARD (3/3 gemelos)",
+        "HYDAC (3/3 gemelos)",
+        "PALL (3/3 gemelos)",
+        "PARKER (3/3 gemelos)",
+        "SF (3/3 gemelos)",
+        "HY-PRO (1/3 gemelos)",
+        "HYCON (1/3 gemelos)",
+        "MANN (1/3 gemelos)",
+        "PUROLATOR (1/3 gemelos)",
+        "WIX (1/3 gemelos)",
+        "UNIFLUX-FILTERS (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P573934",
+      "dimension_twins": [
+        "P174792"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (1/1 gemelos)",
+        "CARQUEST (1/1 gemelos)",
+        "FAIREY-ARLON (1/1 gemelos)",
+        "FLEETGUARD (1/1 gemelos)",
+        "FLUID-CONTROL-SERVICES (1/1 gemelos)",
+        "HIFI (1/1 gemelos)",
+        "HY-PRO (1/1 gemelos)",
+        "HYDAC (1/1 gemelos)",
+        "PALL (1/1 gemelos)",
+        "PARKER (1/1 gemelos)",
+        "PTI (1/1 gemelos)",
+        "STAUFF (1/1 gemelos)",
+        "UNIFLUX-FILTERS (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P573936",
+      "dimension_twins": [
+        "P574410",
+        "P574412",
+        "P574416"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "FINN (3/3 gemelos)",
+        "FLEETGUARD (3/3 gemelos)",
+        "HYDAC (3/3 gemelos)",
+        "PALL (3/3 gemelos)",
+        "PARKER (3/3 gemelos)",
+        "SF (3/3 gemelos)",
+        "HY-PRO (1/3 gemelos)",
+        "HYCON (1/3 gemelos)",
+        "MANN (1/3 gemelos)",
+        "PUROLATOR (1/3 gemelos)",
+        "WIX (1/3 gemelos)",
+        "UNIFLUX-FILTERS (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P573997",
+      "dimension_twins": [
+        "P551323",
+        "P573998",
+        "P573999"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "CARQUEST (2/3 gemelos)",
+        "FLEETGUARD (2/3 gemelos)",
+        "WIX (2/3 gemelos)",
+        "AC-DELCO (1/3 gemelos)",
+        "ALCO (1/3 gemelos)",
+        "AMC (1/3 gemelos)",
+        "AMERICAN-PARTS (1/3 gemelos)",
+        "AP-LOCKHEED (1/3 gemelos)",
+        "BALDWIN (1/3 gemelos)",
+        "BIG-A (1/3 gemelos)",
+        "CASE-IH (1/3 gemelos)",
+        "COOPERS (1/3 gemelos)",
+        "CROSLAND (1/3 gemelos)",
+        "EXMAN (1/3 gemelos)",
+        "FIAT (1/3 gemelos)",
+        "FLEETRITE (1/3 gemelos)",
+        "FORD (1/3 gemelos)",
+        "FRAM (1/3 gemelos)",
+        "GENERAL-MOTORS (1/3 gemelos)",
+        "GREYFRIARS (1/3 gemelos)",
+        "GUD (1/3 gemelos)",
+        "HASTINGS (1/3 gemelos)",
+        "HENGST (1/3 gemelos)",
+        "IACOVOU (1/3 gemelos)",
+        "KRALINATOR (1/3 gemelos)",
+        "LUBERFINER (1/3 gemelos)",
+        "MASSEY-FERGUSON (1/3 gemelos)",
+        "MOTORCRAFT (1/3 gemelos)",
+        "NAPA (1/3 gemelos)",
+        "NEW-HOLLAND (1/3 gemelos)",
+        "PUROLATOR (1/3 gemelos)",
+        "ROMAN (1/3 gemelos)",
+        "SAKURA (1/3 gemelos)",
+        "TECFIL (1/3 gemelos)",
+        "VALMET (1/3 gemelos)",
+        "VAPORMATIC (1/3 gemelos)",
+        "VMC (1/3 gemelos)",
+        "WOODGATE (1/3 gemelos)",
+        "SF (1/3 gemelos)",
+        "VICKERS (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P574134",
+      "dimension_twins": [
+        "P174790"
+      ],
+      "candidate_brands_to_check": [
+        "BALDWIN (1/1 gemelos)",
+        "FAIREY-ARLON (1/1 gemelos)",
+        "FLEETGUARD (1/1 gemelos)",
+        "HIFI (1/1 gemelos)",
+        "HY-PRO (1/1 gemelos)",
+        "HYDAC (1/1 gemelos)",
+        "MANN (1/1 gemelos)",
+        "PALL (1/1 gemelos)",
+        "PTI (1/1 gemelos)",
+        "STAUFF (1/1 gemelos)",
+        "VMC (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P574136",
+      "dimension_twins": [
+        "P574410",
+        "P574412",
+        "P574416"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "FINN (3/3 gemelos)",
+        "FLEETGUARD (3/3 gemelos)",
+        "HYDAC (3/3 gemelos)",
+        "PALL (3/3 gemelos)",
+        "PARKER (3/3 gemelos)",
+        "SF (3/3 gemelos)",
+        "HY-PRO (1/3 gemelos)",
+        "HYCON (1/3 gemelos)",
+        "MANN (1/3 gemelos)",
+        "PUROLATOR (1/3 gemelos)",
+        "WIX (1/3 gemelos)",
+        "UNIFLUX-FILTERS (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P574140",
+      "dimension_twins": [
+        "P574410",
+        "P574412",
+        "P574416"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "FINN (3/3 gemelos)",
+        "FLEETGUARD (3/3 gemelos)",
+        "HYDAC (3/3 gemelos)",
+        "PALL (3/3 gemelos)",
+        "PARKER (3/3 gemelos)",
+        "SF (3/3 gemelos)",
+        "HY-PRO (1/3 gemelos)",
+        "HYCON (1/3 gemelos)",
+        "MANN (1/3 gemelos)",
+        "PUROLATOR (1/3 gemelos)",
+        "WIX (1/3 gemelos)",
+        "UNIFLUX-FILTERS (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P574181",
+      "dimension_twins": [
+        "P574182",
+        "P574183"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "SCHROEDER (2/2 gemelos)",
+        "BALDWIN (1/2 gemelos)",
+        "BELLE (1/2 gemelos)",
+        "CARQUEST (1/2 gemelos)",
+        "CM (1/2 gemelos)",
+        "FLEETGUARD (1/2 gemelos)",
+        "JACOBSEN (1/2 gemelos)",
+        "RANSOMES (1/2 gemelos)",
+        "SF (1/2 gemelos)",
+        "WISMET (1/2 gemelos)",
+        "WIX (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P574184",
+      "dimension_twins": [
+        "P574182",
+        "P574183"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (2/2 gemelos)",
+        "SCHROEDER (2/2 gemelos)",
+        "BALDWIN (1/2 gemelos)",
+        "BELLE (1/2 gemelos)",
+        "CARQUEST (1/2 gemelos)",
+        "CM (1/2 gemelos)",
+        "FLEETGUARD (1/2 gemelos)",
+        "JACOBSEN (1/2 gemelos)",
+        "RANSOMES (1/2 gemelos)",
+        "SF (1/2 gemelos)",
+        "WISMET (1/2 gemelos)",
+        "WIX (1/2 gemelos)"
+      ]
+    },
+    {
+      "code": "P574414",
+      "dimension_twins": [
+        "P574410",
+        "P574412",
+        "P574416"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "FINN (3/3 gemelos)",
+        "FLEETGUARD (3/3 gemelos)",
+        "HYDAC (3/3 gemelos)",
+        "PALL (3/3 gemelos)",
+        "PARKER (3/3 gemelos)",
+        "SF (3/3 gemelos)",
+        "HY-PRO (1/3 gemelos)",
+        "HYCON (1/3 gemelos)",
+        "MANN (1/3 gemelos)",
+        "PUROLATOR (1/3 gemelos)",
+        "WIX (1/3 gemelos)",
+        "UNIFLUX-FILTERS (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P575084",
+      "dimension_twins": [
+        "P566633",
+        "P566634",
+        "P566667",
+        "P566668",
+        "P566669",
+        "P566671",
+        "P566672",
+        "P566673"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (8/8 gemelos)",
+        "BALDWIN (7/8 gemelos)",
+        "CARQUEST (4/8 gemelos)",
+        "MANN (3/8 gemelos)",
+        "EPE (2/8 gemelos)",
+        "HYDAC (2/8 gemelos)",
+        "MDF (2/8 gemelos)",
+        "PALL (2/8 gemelos)",
+        "SF (2/8 gemelos)",
+        "WIX (2/8 gemelos)",
+        "BEPCO-GROUP (1/8 gemelos)",
+        "CM (1/8 gemelos)",
+        "DEUTZ (1/8 gemelos)",
+        "IMPREFIL (1/8 gemelos)",
+        "MAIN (1/8 gemelos)",
+        "PZL-SEDZISZOW (1/8 gemelos)",
+        "SAME (1/8 gemelos)",
+        "UNIFLUX-FILTERS (1/8 gemelos)",
+        "COMEX (1/8 gemelos)",
+        "E-CRANE (1/8 gemelos)",
+        "FBO (1/8 gemelos)",
+        "FLEETGUARD (1/8 gemelos)",
+        "INTERNORMEN (1/8 gemelos)",
+        "MAHLE (1/8 gemelos)",
+        "PARKER (1/8 gemelos)",
+        "REXROTH (1/8 gemelos)",
+        "STEP-FILTERS (1/8 gemelos)",
+        "HENGST (1/8 gemelos)"
+      ]
+    },
+    {
+      "code": "P575474",
+      "dimension_twins": [
+        "P568045"
+      ],
+      "candidate_brands_to_check": [
+        "WIX (1/1 gemelos)",
+        "BALDWIN (1/1 gemelos)",
+        "CARQUEST (1/1 gemelos)",
+        "FLEETGUARD (1/1 gemelos)",
+        "HASTINGS (1/1 gemelos)",
+        "HIFI (1/1 gemelos)",
+        "LUBERFINER (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P575655",
+      "dimension_twins": [
+        "P575656"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "CATERPILLAR (1/1 gemelos)",
+        "SAKURA (1/1 gemelos)",
+        "SF (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P575938",
+      "dimension_twins": [
+        "P571373",
+        "P571374",
+        "P571375"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "HY-PRO (3/3 gemelos)",
+        "HYDAC (3/3 gemelos)",
+        "PARKER (3/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P580592",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580593",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580594",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580595",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580596",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580597",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580598",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580599",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580600",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580601",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580602",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580603",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580604",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580605",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580606",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580607",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580608",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580609",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580610",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580611",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580612",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580613",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580614",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580615",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580616",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580620",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580621",
+      "dimension_twins": [
+        "P573085",
+        "P573086",
+        "P573087",
+        "P573088",
+        "P573089",
+        "P573090",
+        "P573092",
+        "P573093",
+        "P573094"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (9/9 gemelos)",
+        "MAHLE (9/9 gemelos)",
+        "PALL (9/9 gemelos)",
+        "PARKER (9/9 gemelos)",
+        "REGELTECHNIK (9/9 gemelos)",
+        "SF (9/9 gemelos)",
+        "OLAER (4/9 gemelos)",
+        "SEMAT (3/9 gemelos)",
+        "STEP-FILTERS (1/9 gemelos)",
+        "HY-PRO (1/9 gemelos)"
+      ]
+    },
+    {
+      "code": "P580835",
+      "dimension_twins": [
+        "P580834"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "FILPRO (1/1 gemelos)",
+        "HY-PRO (1/1 gemelos)",
+        "HYDAC (1/1 gemelos)",
+        "HYDRAFIL (1/1 gemelos)",
+        "MP-FILTRI (1/1 gemelos)",
+        "PARKER (1/1 gemelos)",
+        "SF (1/1 gemelos)",
+        "SWIFT (1/1 gemelos)",
+        "VICKERS (1/1 gemelos)",
+        "WIX (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P582921",
+      "dimension_twins": [
+        "P575656"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "CATERPILLAR (1/1 gemelos)",
+        "SAKURA (1/1 gemelos)",
+        "SF (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P582922",
+      "dimension_twins": [
+        "P575656"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (1/1 gemelos)",
+        "CATERPILLAR (1/1 gemelos)",
+        "SAKURA (1/1 gemelos)",
+        "SF (1/1 gemelos)"
+      ]
+    },
+    {
+      "code": "P583549",
+      "dimension_twins": [
+        "P767084",
+        "P767104",
+        "P767106"
+      ],
+      "candidate_brands_to_check": [
+        "HIFI (3/3 gemelos)",
+        "ALLISON (1/3 gemelos)",
+        "SAKURA (1/3 gemelos)",
+        "SURE (1/3 gemelos)"
+      ]
+    },
+    {
+      "code": "P584374",
+      "dimension_twins": [
+        "P162766"
+      ],
+      "candidate_brands_to_check": [
+        "AC-DELCO (1/1 gemelos)",
+        "ADVANCE-MACHINE (1/1 gemelos)",
+        "AMERICAN-PARTS (1/1 gemelos)",
+        "ATLAS-COPCO (1/1 gemelos)",
+        "BALDWIN (1/1 gemelos)",
+        "BIG-A (1/1 gemelos)",
+        "BLAW-KNOX (1/1 gemelos)",
+        "BOBCAT (1/1 gemelos)",
+        "CARQUEST (1/1 gemelos)",
+        "CASE (1/1 gemelos)",
+        "CASE-IH (1/1 gemelos)",
+        "CATERPILLAR (1/1 gemelos)",
+        "CHAMPION (1/1 gemelos)",
+        "CHAMPION-ROAD (1/1 gemelos)",
+        "CHAR-LYNN (1/1 gemelos)",
+        "CIM-TEK (1/1 gemelos)",
+        "CLARK (1/1 gemelos)",
+        "CLARKE (1/1 gemelos)",
+        "COLT-INDUSTRIES (1/1 gemelos)",
+        "COOPERS (1/1 gemelos)",
+        "DELUXE (1/1 gemelos)",
+        "DOMINION (1/1 gemelos)",
+        "EATON-CORPORATION (1/1 gemelos)",
+        "EPPENSTEINER (1/1 gemelos)",
+        "FLEETGUARD (1/1 gemelos)",
+        "FLEETRITE (1/1 gemelos)",
+        "FRAM (1/1 gemelos)",
+        "FRANK-J-ZAMBONI (1/1 gemelos)",
+        "GEHL (1/1 gemelos)",
+        "GENERAL-MOTORS (1/1 gemelos)",
+        "GREYFRIARS (1/1 gemelos)",
+        "GROVE (1/1 gemelos)",
+        "HASTINGS (1/1 gemelos)",
+        "HAVAM (1/1 gemelos)",
+        "HIFI (1/1 gemelos)",
+        "HYDAC (1/1 gemelos)",
+        "INGERSOLL-RAND (1/1 gemelos)",
+        "JACOBSEN (1/1 gemelos)",
+        "JOHN-DEERE (1/1 gemelos)",
+        "JURA (1/1 gemelos)",
+        "LOADMASTER (1/1 gemelos)",
+        "LOESING (1/1 gemelos)",
+        "LUBERFINER (1/1 gemelos)",
+        "MANITOWOC (1/1 gemelos)",
+        "MANN (1/1 gemelos)",
+        "MASSEY-FERGUSON (1/1 gemelos)",
+        "NAPA (1/1 gemelos)",
+        "NEW-HOLLAND (1/1 gemelos)",
+        "NILFISK-ADVANCE (1/1 gemelos)",
+        "P-H (1/1 gemelos)",
+        "POWER-BOSS (1/1 gemelos)",
+        "PUROLATOR (1/1 gemelos)",
+        "RAYGO (1/1 gemelos)",
+        "SAKURA (1/1 gemelos)",
+        "SCHUPP (1/1 gemelos)",
+        "SURE (1/1 gemelos)",
+        "TAYLOR-MACHINE (1/1 gemelos)",
+        "UNITED-CENTRAL-INDUSTRIAL (1/1 gemelos)",
+        "VMC (1/1 gemelos)",
+        "WAGNER-MINING (1/1 gemelos)",
+        "WALGAHN-MOTOREN (1/1 gemelos)",
+        "WIX (1/1 gemelos)",
+        "WOODGATE (1/1 gemelos)",
+        "ZINGA (1/1 gemelos)"
+      ]
+    }
+  ]
+}
