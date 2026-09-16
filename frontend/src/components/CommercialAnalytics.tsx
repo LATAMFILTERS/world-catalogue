@@ -249,7 +249,7 @@ export default function CommercialAnalytics() {
       }
 
       if (DOWNLOAD_EXTENSIONS.some((extension) => lowerPath.endsWith(extension))) {
-        sendEvent('document_downloaded', {
+        sendEvent(lowerPath.includes('/assets/distributor/') ? 'distributor_brief_downloaded' : 'document_downloaded', {
           file_name: lowerPath.split('/').pop() || 'document',
           file_extension: lowerPath.split('.').pop() || '',
           destination: url.href,
