@@ -138,12 +138,9 @@ function primaryOnlySearchBody(body, rawReference) {
   };
 }
 
-function shouldNormalizePartSearchResponse(req, target, proxyRes) {
-  const contentType = String(proxyRes.headers['content-type'] || '').toLowerCase();
+function shouldNormalizePartSearchResponse(req, target) {
   return req.method === 'GET'
-    && target.pathname === '/api/search'
-    && proxyRes.statusCode === 200
-    && contentType.includes('application/json');
+    && target.pathname === '/api/search';
 }
 
 function createBridgeServer(upstreamUrl) {
@@ -177,7 +174,7 @@ function createBridgeServer(upstreamUrl) {
       path: `${target.pathname}${target.search}`,
       headers: cleanRequestHeaders(req, target)
     }, (proxyRes) => {
-      if (shouldNormalizePartSearchResponse(req, target, proxyRes)) {
+      if (shouldNormalizePartSearchResponse(req, target)) {
         const chunks = [];
         proxyRes.on('data', chunk => chunks.push(chunk));
         proxyRes.on('end', () => {
@@ -186,14 +183,17 @@ function createBridgeServer(upstreamUrl) {
             const repairedBody = primaryOnlySearchBody(upstreamBody, target.searchParams.get('q'));
             const body = Buffer.from(JSON.stringify(repairedBody));
             const headers = cleanResponseHeaders(proxyRes.headers);
+            delete headers['content-encoding'];
             delete headers['content-length'];
             delete headers.etag;
             headers['cache-control'] = 'no-store';
+            headers['x-elim-primary-policy'] = repairedBody.result_policy || 'UNCHANGED_SINGLE_RESULT';
             headers['content-length'] = body.length;
-            res.writeHead(200, headers);
+            res.writeHead(proxyRes.statusCode || 200, headers);
             res.end(body);
           } catch (error) {
             const body = Buffer.concat(chunks);
+            console.error('[search-bridge-primary-policy]', error.message);
             res.writeHead(proxyRes.statusCode || 502, cleanResponseHeaders(proxyRes.headers));
             res.end(body);
           }
