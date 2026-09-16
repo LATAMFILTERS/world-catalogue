@@ -44,23 +44,30 @@ function hasNonEmpty(code) {
   return rec && rec.brand_crossrefs && Object.keys(rec.brand_crossrefs).length > 0;
 }
 
-const empty = results.filter((r) => !r.brand_crossrefs || Object.keys(r.brand_crossrefs).length === 0);
+// Multiple passes: propagating one alias can resolve a chained one whose
+// only resolved neighbor is the code just filled in this same run (e.g.
+// A links to B, B links to C; C resolves before B is visited).
 let propagated = 0;
+let changedInPass = true;
+while (changedInPass) {
+  changedInPass = false;
+  const empty = results.filter((r) => !r.brand_crossrefs || Object.keys(r.brand_crossrefs).length === 0);
+  for (const r of empty) {
+    const code = r.part_number;
+    const neighbors = adj.get(code) || new Set();
+    let source = null;
+    for (const n of neighbors) {
+      if (hasNonEmpty(n)) { source = n; break; }
+    }
+    if (!source) continue;
 
-for (const r of empty) {
-  const code = r.part_number;
-  const neighbors = adj.get(code) || new Set();
-  let source = null;
-  for (const n of neighbors) {
-    if (hasNonEmpty(n)) { source = n; break; }
+    const refs = byCode.get(source).brand_crossrefs;
+    r.brand_crossrefs = refs;
+    if (progress) progress[code] = refs;
+    console.log(`${code} <- copied ${Object.keys(refs).length} brands from ${source}`);
+    propagated++;
+    changedInPass = true;
   }
-  if (!source) continue;
-
-  const refs = byCode.get(source).brand_crossrefs;
-  r.brand_crossrefs = refs;
-  if (progress) progress[code] = refs;
-  console.log(`${code} <- copied ${Object.keys(refs).length} brands from ${source}`);
-  propagated++;
 }
 
 fs.writeFileSync(resultsFile, JSON.stringify(results, null, 2));
