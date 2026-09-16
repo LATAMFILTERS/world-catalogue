@@ -19,6 +19,15 @@
  *   donaldson_air-intake_results.json             (brand_crossrefs field per product)
  * Never overwrites a code that already has crossrefs; never touches any
  * other category's files.
+ *
+ * STATUS (2026-09-16): all 67 codes confirmed HTTP 404 on
+ * airfilter-crossreference.com. The site itself works fine for this
+ * category (verified live against A052526, an already-resolved code,
+ * which returns 200 with real crossref data) -- these 67 specific codes
+ * are just not indexed there. Confirmed dead end for this source; closing
+ * the gap for real needs manual lookup per code (as done for the last 2
+ * Lube stragglers) or a different source, which at this volume (67) is a
+ * separate effort decision, not a re-run of this script.
  */
 'use strict';
 
