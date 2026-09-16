@@ -14,6 +14,8 @@
  * Run (from world-catalogue/scripts, on the Lenovo, real internet access):
  *   node retry-crossref-gaps.js <category>
  *   node retry-crossref-gaps.js <category> --dry
+ *   node retry-crossref-gaps.js <category> --limit=30   (sample N codes,
+ *     evenly spread across the numeric range, before committing to a full run)
  *
  * Effect: merges any newly-found crossrefs into
  *   donaldson_<category>_crossref_progress.json   (if that cache file exists)
@@ -30,6 +32,8 @@ const path = require('path');
 const category = process.argv[2];
 const DRY_RUN = process.argv.includes('--dry');
 const DELAY_MS = 2500;
+const limitArg = process.argv.find((a) => a.startsWith('--limit='));
+const LIMIT = limitArg ? parseInt(limitArg.split('=')[1], 10) : null;
 
 const DOMAIN_MAP = {
   air: 'https://www.airfilter-crossreference.com/convert/DONALDSON/',
@@ -125,7 +129,13 @@ async function main() {
   const results = loadJson(RESULTS_FILE, null);
   if (!results) { console.error(`Cannot read ${RESULTS_FILE}`); process.exit(1); }
 
-  const GAP_CODES = computeRealGaps(results);
+  let GAP_CODES = computeRealGaps(results);
+  if (LIMIT) {
+    // Sample evenly across the list rather than just the first N, so a
+    // small test run isn't biased toward one part of the numeric range.
+    const step = Math.max(1, Math.floor(GAP_CODES.length / LIMIT));
+    GAP_CODES = GAP_CODES.filter((_, i) => i % step === 0).slice(0, LIMIT);
+  }
   const hasProgressFile = fs.existsSync(PROGRESS_FILE);
   const progress = hasProgressFile ? loadJson(PROGRESS_FILE, {}) : null;
   const resultsByCode = new Map(results.map((r) => [r.part_number, r]));
