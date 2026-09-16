@@ -8,6 +8,10 @@ const HOP_BY_HOP = new Set([
   'te','trailer','transfer-encoding','upgrade','expect'
 ]);
 
+const PRIMARY_SKU_BY_REFERENCE = Object.freeze({
+  LF3620: 'EL82100'
+});
+
 const APPROVED_UI = `
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
@@ -96,6 +100,52 @@ function cleanResponseHeaders(headers) {
   return out;
 }
 
+function normalizeReference(value) {
+  return String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+}
+
+function productSku(product) {
+  return String(product && (product.elimfilters_sku || product.sku) || '').toUpperCase();
+}
+
+function primaryOnlySearchBody(body, rawReference) {
+  if (!body || !Array.isArray(body.results) || body.results.length <= 1) return body;
+
+  const requestedPrimary = PRIMARY_SKU_BY_REFERENCE[normalizeReference(rawReference)];
+  const primaryIndex = requestedPrimary
+    ? body.results.findIndex(product => productSku(product) === requestedPrimary)
+    : 0;
+  const resolvedIndex = primaryIndex >= 0 ? primaryIndex : 0;
+  const primary = { ...body.results[resolvedIndex] };
+  const secondary = body.results.filter((_, index) => index !== resolvedIndex);
+  const existingAlternatives = Array.isArray(primary.alternatives) ? primary.alternatives : [];
+  const alternativeSkus = [...new Set([
+    ...existingAlternatives.map(alternative => typeof alternative === 'object'
+      ? (alternative.sku || alternative.elimfilters_sku || alternative.code)
+      : alternative),
+    ...secondary.map(productSku)
+  ].filter(Boolean).map(value => String(value).toUpperCase()))];
+
+  primary.alternatives = alternativeSkus.map(sku => ({ sku }));
+  primary.is_primary = true;
+
+  return {
+    ...body,
+    results: [primary],
+    primary_sku: productSku(primary),
+    alternative_skus: alternativeSkus,
+    result_policy: 'PRIMARY_ONLY_WITH_LINKED_ALTERNATIVES'
+  };
+}
+
+function shouldNormalizePartSearchResponse(req, target, proxyRes) {
+  const contentType = String(proxyRes.headers['content-type'] || '').toLowerCase();
+  return req.method === 'GET'
+    && target.pathname === '/api/search'
+    && proxyRes.statusCode === 200
+    && contentType.includes('application/json');
+}
+
 function createBridgeServer(upstreamUrl) {
   const upstream = new URL(upstreamUrl);
   if (!['http:','https:'].includes(upstream.protocol)) {
@@ -127,6 +177,29 @@ function createBridgeServer(upstreamUrl) {
       path: `${target.pathname}${target.search}`,
       headers: cleanRequestHeaders(req, target)
     }, (proxyRes) => {
+      if (shouldNormalizePartSearchResponse(req, target, proxyRes)) {
+        const chunks = [];
+        proxyRes.on('data', chunk => chunks.push(chunk));
+        proxyRes.on('end', () => {
+          try {
+            const upstreamBody = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+            const repairedBody = primaryOnlySearchBody(upstreamBody, target.searchParams.get('q'));
+            const body = Buffer.from(JSON.stringify(repairedBody));
+            const headers = cleanResponseHeaders(proxyRes.headers);
+            delete headers['content-length'];
+            delete headers.etag;
+            headers['cache-control'] = 'no-store';
+            headers['content-length'] = body.length;
+            res.writeHead(200, headers);
+            res.end(body);
+          } catch (error) {
+            const body = Buffer.concat(chunks);
+            res.writeHead(proxyRes.statusCode || 502, cleanResponseHeaders(proxyRes.headers));
+            res.end(body);
+          }
+        });
+        return;
+      }
       res.writeHead(proxyRes.statusCode || 502, cleanResponseHeaders(proxyRes.headers));
       proxyRes.pipe(res);
     });
@@ -141,4 +214,4 @@ function createBridgeServer(upstreamUrl) {
   });
 }
 
-module.exports = { createBridgeServer };
+module.exports = { createBridgeServer, primaryOnlySearchBody };
