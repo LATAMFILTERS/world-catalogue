@@ -20,6 +20,7 @@ test('results UI renders alternate SKUs as existing see-also links', () => {
 test('single primary results discover their alternate family through shared cross-references', () => {
   assert.match(html, /function alternativeDiscoveryReferences\(/);
   assert.match(html, /product\.brand_crossrefs/);
+  assert.match(html, /product\.competitor_codes/);
   assert.match(html, /familySkus\.includes\(primarySku\)/);
   assert.match(html, /primary\.alternatives\s*=\s*\[\.\.\.discoveredSkus\]/);
 });

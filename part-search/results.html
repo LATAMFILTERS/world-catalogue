@@ -1614,13 +1614,21 @@ function alternativeDiscoveryReferences(product, rawReference) {
   const byBrand = product && product.brand_crossrefs && typeof product.brand_crossrefs === 'object'
     ? product.brand_crossrefs
     : {};
+  const competitorCodes = product && Array.isArray(product.competitor_codes)
+    ? product.competitor_codes
+    : [];
   const searched = normalizePartReference(rawReference);
   const entries = Object.entries(byBrand);
-  const ordered = ALTERNATIVE_DISCOVERY_BRANDS.flatMap(preferredBrand =>
-    entries.filter(([brand]) => normalizePartReference(brand) === preferredBrand)
-  );
+  const ordered = ALTERNATIVE_DISCOVERY_BRANDS.flatMap(preferredBrand => [
+    ...entries
+      .filter(([brand]) => normalizePartReference(brand) === preferredBrand)
+      .flatMap(([, references]) => Array.isArray(references) ? references : []),
+    ...competitorCodes
+      .filter(item => normalizePartReference(item && item.manufacturer) === preferredBrand)
+      .map(item => item && (item.code || item.part_number))
+  ]);
 
-  return [...new Set(ordered.flatMap(([, references]) => Array.isArray(references) ? references : []))]
+  return [...new Set(ordered.filter(Boolean))]
     .filter(reference => normalizePartReference(reference) !== searched)
     .slice(0, 8);
 }
