@@ -67,6 +67,7 @@ function approvedHomeHtml() {
 
 function approvedResultsHtml() {
   return normalizeMojibake(fs.readFileSync(path.join(__dirname, 'part-search', 'results.html'), 'utf8'))
+    .replace("const API = '';", "const API = '/bridge';")
     .replace(
       'const items = data.products || data.filters || [];',
       'const items = data.results || data.products || data.filters || [];'
@@ -77,6 +78,14 @@ function localPageFor(target) {
   if (target.pathname === '/' || target.pathname === '/index.html') return approvedHomeHtml();
   if (target.pathname === '/results.html') return approvedResultsHtml();
   return null;
+}
+
+function upstreamTargetFor(requestUrl, upstream) {
+  const target = new URL(requestUrl || '/', upstream);
+  if (target.pathname.startsWith('/bridge/api/')) {
+    target.pathname = target.pathname.slice('/bridge'.length);
+  }
+  return target;
 }
 
 function cleanRequestHeaders(req, target) {
@@ -150,10 +159,11 @@ function createBridgeServer(upstreamUrl) {
   }
   const transport = upstream.protocol === 'https:' ? https : http;
   return http.createServer((req, res) => {
-    const target = new URL(req.url || '/', upstream);
+    const requestTarget = new URL(req.url || '/', upstream);
+    const target = upstreamTargetFor(req.url, upstream);
 
     if (req.method === 'GET') {
-      const localHtml = localPageFor(target);
+      const localHtml = localPageFor(requestTarget);
       if (localHtml != null) {
         const body = Buffer.from(localHtml, 'utf8');
         res.writeHead(200, {
@@ -214,4 +224,4 @@ function createBridgeServer(upstreamUrl) {
   });
 }
 
-module.exports = { createBridgeServer, primaryOnlySearchBody };
+module.exports = { createBridgeServer, primaryOnlySearchBody, upstreamTargetFor };
