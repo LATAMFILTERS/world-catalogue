@@ -1510,6 +1510,7 @@ async function executeSearch() {
       clearTimeout(warmupTimer);
       if (!r.ok) throw new Error();
       const data = await r.json();
+      data.results = primaryOnlyResults(data.results, query);
 
       // mixed_duty: API found both HD and LD — show duty selection prompt
       if (data.mixed_duty) {
@@ -1571,9 +1572,42 @@ async function executeSearch() {
   }
 }
 
+const PRIMARY_SKU_BY_REFERENCE = Object.freeze({
+  LF3620: 'EL82100'
+});
+
+function normalizePartReference(value) {
+  return String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+}
+
+function resultSku(product) {
+  return String(product && (product.elimfilters_sku || product.sku) || '').toUpperCase();
+}
+
+function primaryOnlyResults(results, rawReference) {
+  if (!Array.isArray(results) || results.length <= 1) return results || [];
+
+  const requestedPrimary = PRIMARY_SKU_BY_REFERENCE[normalizePartReference(rawReference)];
+  const requestedIndex = requestedPrimary
+    ? results.findIndex(product => resultSku(product) === requestedPrimary)
+    : 0;
+  const primaryIndex = requestedIndex >= 0 ? requestedIndex : 0;
+  const primary = { ...results[primaryIndex] };
+  const existingAlternatives = Array.isArray(primary.alternatives) ? primary.alternatives : [];
+  const linkedSkus = [...new Set([
+    ...existingAlternatives.map(alternative => typeof alternative === 'object'
+      ? (alternative.sku || alternative.elimfilters_sku || alternative.code)
+      : alternative),
+    ...results.filter((_, index) => index !== primaryIndex).map(resultSku)
+  ].filter(Boolean).map(value => String(value).toUpperCase()))];
+
+  primary.alternatives = linkedSkus.map(sku => ({ sku }));
+  primary.is_primary = true;
+  return [primary];
+}
+
 // executeSearch() is called by detectLang().then() above — no boot call needed
 </script>
 
 </body>
 </html>
-
