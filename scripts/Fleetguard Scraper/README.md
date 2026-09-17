@@ -15,9 +15,17 @@ Fleetguard scrapeados, por categoría.
 
 - `air-precleaners` ✅ (37 productos) — ÚNICA categoría obtenida hasta ahora
 
-> Las demás categorías (lube, fuel, hydraulic, primary/safety air) NO están
-> hechas. Para agregar una hay que copiar su URL real desde fleetguard.com
-> (con el ID Salesforce) y añadirla a `CATEGORIES` en `scraper_fleetguard.py`.
+> Las demás categorías (lube, fuel, hydraulic, primary/safety air,
+> **turbina/ET9**) NO están hechas. Para agregar una hay que copiar su URL
+> real desde fleetguard.com (con el ID Salesforce) y añadirla a
+> `CATEGORIES` en `scraper_fleetguard.py`.
+>
+> `scraper_fleetguard.py` estaba ausente del repo (solo sobrevivían estos
+> JSON de salida) y se reconstruyó en 2026-09 a partir de este README y del
+> formato de `fleetguard_air-precleaners_*.json`. Los selectores CSS del
+> script reconstruido son placeholders sin verificar contra el DOM real —
+> hay que corregirlos con el navegador abierto en una página real de
+> fleetguard.com antes de confiar en cualquier salida nueva.
 
 ## Uso
 
