@@ -1,205 +1,28 @@
+# ELIMFILTERS World Catalogue - Render bridge only
+# Lenovo/ELIMSERVER is the PRIMARY runtime and database owner.
+# Cloudflare publishes the Lenovo services. Render owns no database,
+# scheduler, Knowledge runtime, catalogue writer, or production secret.
+
 services:
   - type: web
     name: elimfilters-search-pro
     runtime: node
-    plan: starter
-    buildCommand: npm install
-    startCommand: node server.js
+    repo: https://github.com/LATAMFILTERS/world-catalogue
+    branch: main
+    plan: free
+    buildCommand: node --version
+    startCommand: node scripts/validate-hybrid-runtime.js && node scripts/render-bridge.js
     healthCheckPath: /api/status
     envVars:
-      - key: NODE_VERSION
-        value: "20"
       - key: NODE_ENV
         value: production
-      - key: DATABASE_URL
-        sync: false
-      - key: AZURE_CLIENT_ID
-        sync: false
-      - key: AZURE_CLIENT_SECRET
-        sync: false
-      - key: AZURE_TENANT_ID
-        sync: false
-      - key: OUTLOOK_MAILBOX_EMAIL
-        value: vabreu@elimfilters.com
-      - key: OUTLOOK_SMTP_PASSWORD
-        sync: false
-      - key: NVIDIA_NIM_API_KEY
-        sync: false
-      - key: KNOWLEDGE_CENTER_API_URL
-        sync: false
-      - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
-      - key: KNOWLEDGE_ENGINE_RUNTIME_URL
-        sync: false
-      - key: ENGINE_API_KEY
-        sync: false
-
-  - type: web
-    name: elimfilters-frontend
-    runtime: static
-    rootDir: frontend
-    buildCommand: npm ci && npm run build
-    staticPublishPath: ./out
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: DENY
-      - path: /*
-        name: X-Content-Type-Options
-        value: nosniff
-      - path: /*
-        name: X-XSS-Protection
-        value: "1; mode=block"
-      - path: /*
-        name: Referrer-Policy
-        value: strict-origin-when-cross-origin
-      - path: /*
-        name: Permissions-Policy
-        value: "camera=(), microphone=(), geolocation=()"
-      - path: /*
-        name: Strict-Transport-Security
-        value: "max-age=31536000; includeSubDomains; preload"
-      - path: /*
-        name: Content-Security-Policy
-        value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://part-search.elimfilters.com https://elimfilters-search-pro.onrender.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
-    routes:
-      - type: redirect
-        source: /fuel-filter-separator
-        destination: /technologies/hydrocore/
-      - type: redirect
-        source: /es/productos
-        destination: /families/
-      - type: redirect
-        source: /es/transporte
-        destination: /industries/truck-fleets/
-      - type: redirect
-        source: /manufacturing-industrial
-        destination: /industries/manufacturing/
-      - type: redirect
-        source: /premium-preview
-        destination: /technologies/
-      - type: redirect
-        source: /knowledge-system/contamination
-        destination: /knowledge-center/engineering/
-      - type: redirect
-        source: /knowledge-system/contamination/particle-wear
-        destination: /knowledge-center/engineering/contamination-control/
-      - type: redirect
-        source: /knowledge-system/contamination/diesel-water
-        destination: /knowledge-center/engineering/fluid-cleanliness/
-      - type: redirect
-        source: /knowledge-system/contamination/hydraulic-system
-        destination: /knowledge-center/engineering/contamination-control/
-      - type: redirect
-        source: /knowledge-system/standards
-        destination: /knowledge-center/standards/
-      - type: redirect
-        source: /knowledge-system/standards/iso-16889
-        destination: /knowledge-center/standards/iso-16889/
-      - type: redirect
-        source: /knowledge-system/standards/iso-4406
-        destination: /knowledge-center/standards/iso-4406/
-      - type: redirect
-        source: /knowledge-system/standards/astm-d6304
-        destination: /knowledge-center/standards/astm-d6304/
-      - type: redirect
-        source: /knowledge-system/standards/iso-12937
-        destination: /knowledge-center/standards/iso-12937/
-      - type: redirect
-        source: /knowledge-system/standards/iso-5011
-        destination: /knowledge-center/standards/iso-5011/
-      - type: redirect
-        source: /knowledge-system/standards/din-51524
-        destination: /knowledge-center/standards/din-51524/
-      - type: redirect
-        source: /knowledge-system/standards/iso-16332
-        destination: /knowledge-center/standards/iso-16332/
-      - type: redirect
-        source: /knowledge-system/standards/nfpa-t2-14
-        destination: /knowledge-center/standards/nfpa-t2-14/
-      - type: redirect
-        source: /knowledge-system/standards/astm-d6210
-        destination: /knowledge-center/standards/astm-d6210/
-      - type: redirect
-        source: /knowledge-system/standards/eu-dir-2019-130
-        destination: /knowledge-center/standards/eu-dir-2019-130/
-      - type: redirect
-        source: /knowledge-system/standards/iso-11155
-        destination: /knowledge-center/standards/iso-11155/
-      - type: redirect
-        source: /knowledge-system/standards/iso-8573-1
-        destination: /knowledge-center/standards/iso-8573-1/
-      - type: redirect
-        source: /knowledge-system/standards/sae-j1539
-        destination: /knowledge-center/standards/sae-j1539/
-      - type: redirect
-        source: /knowledge-center/engineering/operator-health
-        destination: /knowledge-center/systems/cabin-air-protection/
-
-  - type: web
-    name: knowledge-center-api-staging
-    runtime: node
-    rootDir: services/knowledge-center-api
-    plan: starter
-    buildCommand: npm ci && npm run build
-    startCommand: bash scripts/run.sh
-    healthCheckPath: /health
-    envVars:
-      - key: NODE_VERSION
-        value: "20"
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: "3002"
-      - key: DATABASE_URL
-        fromDatabase:
-          name: knowledge_center_staging
-          property: connectionString
-      - key: DATABASE_SSL
-        value: "true"
-      - key: KNOWLEDGE_API_KEYS
-        sync: false
-      - key: KNOWLEDGE_CENTER_API_KEY
-        sync: false
-      - key: KNOWLEDGE_REVIEW_BASE_URL
-        value: https://internal.elimfilters.com
-      - key: KNOWLEDGE_REVIEW_MAILBOX
-        value: support@elimfilters.com
-      - key: REQUEST_BODY_LIMIT
-        value: 1mb
-
-  - type: web
-    name: knowledge-engine-runtime-staging
-    runtime: node
-    rootDir: services/knowledge-engine-runtime
-    plan: starter
-    buildCommand: npm ci && npm run build
-    startCommand: node dist/server.js
-    healthCheckPath: /health
-    envVars:
-      - key: NODE_VERSION
-        value: "20"
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: "8086"
-      - key: DATABASE_URL
-        fromDatabase:
-          name: knowledge_center_staging
-          property: connectionString
-      - key: DATABASE_SSL
-        value: "true"
-      - key: ENGINE_API_KEY
-        sync: false
-      - key: LOG_LEVEL
-        value: info
-      - key: MAX_RETRIEVAL_RECORDS
-        value: "12"
-      - key: MIN_ANSWER_CONFIDENCE
-        value: "0.72"
-      - key: MIN_PRODUCTION_CONFIDENCE
-        value: "0.85"
-
-databases:
-  - name: knowledge_center_staging
-    plan: starter
+      - key: ELIM_RUNTIME_NODE
+        value: RENDER
+      - key: ELIM_RUNTIME_ROLE
+        value: STANDBY
+      - key: ELIM_DOMAIN
+        value: WORLD_CATALOGUE
+      - key: ELIM_SCHEDULER_ENABLED
+        value: "false"
+      - key: BRIDGE_UPSTREAM_URL
+        value: https://search-api.elimfilters.com
