@@ -3,18 +3,30 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
+function lines(command) {
+  try {
+    return execSync(command, { encoding: 'utf8' }).split(/\r?\n/).filter(Boolean);
+  } catch (_) {
+    return [];
+  }
+}
+
 function changedFiles() {
   const base = process.env.GITHUB_BASE_REF;
-  const commands = base
-    ? [`git diff --name-only origin/${base}...HEAD`]
-    : ['git diff --name-only HEAD^ HEAD'];
-  for (const cmd of commands) {
-    try {
-      return execSync(cmd, { encoding: 'utf8' }).split(/\r?\n/).filter(Boolean);
-    } catch (_) {}
+  if (base) {
+    const files = lines(`git diff --name-only origin/${base}...HEAD`);
+    if (files.length) return files;
   }
-  return [];
+  return lines('git diff --name-only HEAD^ HEAD');
 }
+
+function allTrackedFiles() {
+  return lines('git ls-files');
+}
+
+const scanMode = String(process.env.CATALOG_BOUNDARY_SCAN || 'changed').toLowerCase();
+const reportOnly = String(process.env.CATALOG_BOUNDARY_REPORT_ONLY || 'false').toLowerCase() === 'true';
+const filesToScan = scanMode === 'all' ? allTrackedFiles() : changedFiles();
 
 const exempt = [
   /^scripts\/migrations\/run_07\d+_catalog_.*\.js$/,
@@ -43,7 +55,7 @@ const applicationWriteRisk = [
 ];
 
 const violations = [];
-for (const file of changedFiles()) {
+for (const file of filesToScan) {
   if (!/\.(js|mjs|cjs|ts|py)$/.test(file) || !fs.existsSync(file)) continue;
   if (exempt.some((re) => re.test(file))) continue;
   const text = fs.readFileSync(file, 'utf8');
@@ -59,11 +71,18 @@ for (const file of changedFiles()) {
   }
 }
 
-if (violations.length) {
-  console.error('CATALOG_WRITE_BOUNDARY_VIOLATION');
-  for (const file of [...new Set(violations)]) console.error(` - ${file}`);
+const unique = [...new Set(violations)].sort();
+if (unique.length) {
+  const label = scanMode === 'all' ? 'CATALOG_WRITE_BOUNDARY_DEBT' : 'CATALOG_WRITE_BOUNDARY_VIOLATION';
+  console.error(label);
+  for (const file of unique) console.error(` - ${file}`);
+  console.error(`scan_mode=${scanMode} files_scanned=${filesToScan.length} violations=${unique.length}`);
   console.error('Catalog and application writes must pass the canonical evidence-governed gateway path.');
-  process.exit(1);
+  if (!reportOnly) process.exit(1);
+} else {
+  console.log(`[catalog-write-boundaries] PASS scan_mode=${scanMode} files_scanned=${filesToScan.length}`);
 }
 
-console.log('[catalog-write-boundaries] PASS');
+if (reportOnly && unique.length) {
+  console.log(`[catalog-write-boundaries] REPORT_ONLY legacy_debt=${unique.length}`);
+}
