@@ -1,9 +1,9 @@
 {
-  "_status": "PENDING — needs SKU numbering decision before insert. Do not load into elimfilters_catalog as-is; `sku` is not a real value.",
+  "_status": "SKU DECIDED by user (ET93029, keep consistent ET9<digits> structure). Awaiting collision check against live elimfilters_catalog before insert — not confirmed as of this write.",
   "_source_url": "https://www.fleetguard.com/es/category/productos/filtraci%C3%B3n-de-combustible/procesadores-de-combustible/0ZGPL0000000FSi4AM",
   "_scraped_manually_by_user": "2026-09-17",
-  "_open_question": "Existing ET9 turbine SKUs follow <digits><letters> -> ET9<digits> (e.g. 900FH -> ET90900, 500FG2 -> ET95002). FH23029 is <letters><digits>, which the deterministic mapping in run_068_enforce_turbine_et9.js and validate-et9-precarga.js does not cover. Two options were proposed to the user, awaiting decision: (1) ET9 + last digits of 23029 (e.g. ET93029) — risk: collides with the ET930xx-ET93223 HYDROCORE(tm) range already in use; (2) a distinct sub-block for the Fuel Pro FH2xxxx series (e.g. ET9FH23029) to avoid mixing ranges with a different technology.",
-  "sku": null,
+  "_numbering_note": "Existing ET9 turbine SKUs follow <digits><letters> -> ET9<digits> (e.g. 900FH -> ET90900, 500FG2 -> ET95002). FH23029 is <letters><digits>; user chose to keep the ET9<digits> structure using the trailing digits of 23029, landing in the same numeric block already used by the ET93202-ET93223 HYDROCORE(tm) family (different technology, same SKU range). Not present in the 50-row ET9 inventory audited on 2026-09-17, but re-verify against the live table before insert.",
+  "sku": "ET93029",
   "codigo_base": "FH23029",
   "name": "CARCASA DE COMBUSTIBLE",
   "description": "Fleetguard Fuel Pro series, tecnologia EleMax; separador de combustible/agua premium que elimina agua y contaminacion antes de la bomba de combustible.",
