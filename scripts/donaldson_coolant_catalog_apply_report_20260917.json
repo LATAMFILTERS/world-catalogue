@@ -1,0 +1,33 @@
+{
+  "migration": "104_DONALDSON_COOLANT_29_20260917",
+  "requested": 29,
+  "inserted": 0,
+  "updated": 29,
+  "moved_family": 0,
+  "alias_consolidated": [
+    {
+      "sku": "EW72073",
+      "from": "WF2073",
+      "to": "P552073"
+    },
+    {
+      "sku": "EW72096",
+      "from": "WF2096",
+      "to": "P552096"
+    }
+  ],
+  "rejected": [],
+  "before": {
+    "n": 27,
+    "ew7": 27
+  },
+  "verify": {
+    "rows": 29,
+    "unique_skus": 29,
+    "ew7": 29,
+    "thermacore": 29,
+    "evidenced": 29,
+    "category_in_description": 0
+  },
+  "ok": true
+}
