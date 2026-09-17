@@ -80,13 +80,14 @@ async function main(){
     const existingComp=(await client.query(`SELECT elimfilters_sku,competitor_brand,competitor_part_number FROM ld_catalog.ld_competitor_cross_references`)).rows;
     const owner=new Map();
     for(const x of existingComp){const k=norm(x.competitor_brand)+'|'+norm(x.competitor_part_number);if(!owner.has(k))owner.set(k,new Set());owner.get(k).add(x.elimfilters_sku)}
-    const planOwners=new Map();
-    for(const x of plan.comp){const k=norm(x.brand)+'|'+norm(x.part);if(!planOwners.has(k))planOwners.set(k,new Set());planOwners.get(k).add(x.sku)}
+    const planOwners=new Map(), canonicalPlanOwner=new Map();
+    for(const x of plan.comp){const k=norm(x.brand)+'|'+norm(x.part);if(!planOwners.has(k))planOwners.set(k,new Set());planOwners.get(k).add(x.sku);if(x.canonical){if(canonicalPlanOwner.has(k)&&canonicalPlanOwner.get(k)!==x.sku)throw new Error(`CANONICAL_PLAN_DUPLICATE ${x.part}`);canonicalPlanOwner.set(k,x.sku);}}
     const compRows=[]; let existingConflicts=0,intraConflicts=0;
     for(const x of plan.comp){
-      const k=norm(x.brand)+'|'+norm(x.part), old=owner.get(k)||new Set(), own=planOwners.get(k)||new Set();
+      const k=norm(x.brand)+'|'+norm(x.part),old=owner.get(k)||new Set(),own=planOwners.get(k)||new Set(),canonicalOwner=canonicalPlanOwner.get(k);
       if([...old].some(s=>s!==x.sku)){if(x.canonical)throw new Error(`CANONICAL_FRAM_CONFLICT ${x.part}`);existingConflicts++;continue}
-      if(own.size>1){if(x.canonical)throw new Error(`CANONICAL_PLAN_CONFLICT ${x.part}`);intraConflicts++;continue}
+      if(canonicalOwner&&canonicalOwner!==x.sku){if(x.canonical)throw new Error(`CANONICAL_PLAN_CONFLICT ${x.part}`);intraConflicts++;continue}
+      if(!canonicalOwner&&own.size>1){intraConflicts++;continue}
       if(x.brand&&x.part)compRows.push({elimfilters_sku:x.sku,source_sku:x.source,competitor_brand:x.brand,competitor_part_number:x.part});
     }
     report.skipped.competitor_existing_conflicts=existingConflicts;

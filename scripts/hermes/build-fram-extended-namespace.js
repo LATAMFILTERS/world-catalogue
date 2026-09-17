@@ -1,0 +1,23 @@
+'use strict';
+const fs=require('fs'),path=require('path'),crypto=require('crypto');
+const ROOT=path.resolve(__dirname,'../..');
+const MATRIX_DIR=path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-final-disposition');
+const OUT_DIR=path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-extended-namespace');
+const PREFIX={AIR:'EA3',CABIN:'EC3',FUEL:'EF3',LUBE:'EL3'};
+const norm=v=>String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+const latest=fs.readdirSync(MATRIX_DIR).filter(f=>/^fram-ld-final-matrix-.*\.json$/.test(f)).map(f=>path.join(MATRIX_DIR,f)).sort((a,b)=>fs.statSync(b).mtimeMs-fs.statSync(a).mtimeMs)[0];
+if(!latest)throw new Error('No final FRAM matrix found');
+const m=JSON.parse(fs.readFileSync(latest,'utf8'));
+const pending=m.rows.filter(r=>r.final_disposition==='QUARANTINE_FINAL');
+const crossFamily=pending.filter(r=>r.analyzer_status==='CROSS_FAMILY_DIRECT_CONFLICT');
+const source=pending.filter(r=>r.analyzer_status!=='CROSS_FAMILY_DIRECT_CONFLICT').sort((a,b)=>a.family.localeCompare(b.family)||a.authority.localeCompare(b.authority));
+const used=new Set();
+const create=source.map(r=>{let n=Number(BigInt('0x'+crypto.createHash('sha256').update(norm(r.authority)).digest('hex').slice(0,12))%1000000n);let sku;do{sku=`${PREFIX[r.family]}${String(n).padStart(6,'0')}`;n=(n+1)%1000000;}while(used.has(sku));used.add(sku);return{family:r.family,authority:r.authority,sku,variants:[],file:r.source_file,previous_status:r.analyzer_status};});
+if(used.size!==create.length)throw new Error('Extended SKU collision');fs.mkdirSync(OUT_DIR,{recursive:true});
+const stamp=new Date().toISOString().replace(/[:.]/g,'-');
+const gap={generated_at:new Date().toISOString(),harvested:create.length,counts:{REAL_GAP_CREATE_SAFE:create.length},by_family:{},existing_covered:0,variants:0,create_safe:create.length,quarantine:0,safe_candidates:create.map(({previous_status,...x})=>x),results:[]};
+for(const x of create){gap.by_family[x.family]??={};gap.by_family[x.family].REAL_GAP_CREATE_SAFE=(gap.by_family[x.family].REAL_GAP_CREATE_SAFE||0)+1;}
+const gapPath=path.join(OUT_DIR,`fram-ld-extended-gap-${stamp}.json`),mapPath=path.join(OUT_DIR,`fram-ld-extended-map-${stamp}.json`);
+fs.writeFileSync(gapPath,JSON.stringify(gap,null,2));
+fs.writeFileSync(mapPath,JSON.stringify({source_matrix:latest,policy:'LD_EXTENDED_NAMESPACE_V2',format:'<LD_PREFIX><6-digit deterministic authority hash>',create_count:create.length,cross_family_count:crossFamily.length,rows:create,cross_family:crossFamily},null,2));
+console.log(JSON.stringify({source_matrix:latest,pending:pending.length,create_extended:create.length,cross_family:crossFamily.length,unique_skus:used.size,gap:gapPath,map:mapPath,by_status:create.reduce((o,x)=>(o[x.previous_status]=(o[x.previous_status]||0)+1,o),{})},null,2));

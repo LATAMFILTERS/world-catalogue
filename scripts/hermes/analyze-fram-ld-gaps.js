@@ -61,6 +61,8 @@ async function main() {
   const comp = (await client.query(`SELECT x.elimfilters_sku,x.competitor_brand,x.competitor_part_number,COALESCE(c.duty,CASE WHEN p.elimfilters_sku IS NOT NULL THEN 'LIGHT_DUTY' END) duty,COALESCE(c.filter_type,CASE p.segment WHEN 'Air Filter' THEN 'air' WHEN 'Cabin Filter' THEN 'cabin' WHEN 'Fuel Filter' THEN 'fuel' WHEN 'Oil Filter' THEN 'oil' END) filter_type FROM ld_catalog.ld_competitor_cross_references x LEFT JOIN public.elimfilters_catalog c ON c.sku=x.elimfilters_sku LEFT JOIN ld_catalog.ld_product_catalog p ON p.elimfilters_sku=x.elimfilters_sku WHERE c.sku IS NOT NULL OR p.elimfilters_sku IS NOT NULL`)).rows;
   const oem = (await client.query(`SELECT x.elimfilters_sku,x.oem_brand,x.oem_part_number,COALESCE(c.duty,CASE WHEN p.elimfilters_sku IS NOT NULL THEN 'LIGHT_DUTY' END) duty,COALESCE(c.filter_type,CASE p.segment WHEN 'Air Filter' THEN 'air' WHEN 'Cabin Filter' THEN 'cabin' WHEN 'Fuel Filter' THEN 'fuel' WHEN 'Oil Filter' THEN 'oil' END) filter_type FROM ld_catalog.ld_oem_cross_references x LEFT JOIN public.elimfilters_catalog c ON c.sku=x.elimfilters_sku LEFT JOIN ld_catalog.ld_product_catalog p ON p.elimfilters_sku=x.elimfilters_sku WHERE c.sku IS NOT NULL OR p.elimfilters_sku IS NOT NULL`)).rows;
   const identities = (await client.query(`SELECT i.elimfilters_sku,i.canonical_brand,i.canonical_part_number,c.duty,c.filter_type FROM ld_catalog.ld_canonical_product_identity i JOIN public.elimfilters_catalog c ON c.sku=i.elimfilters_sku WHERE i.status='ACTIVE'`)).rows;
+  const finalQuarantine = (await client.query(`SELECT authority_normalized,analyzer_status,final_reason,policy_version FROM ld_catalog.ld_fram_final_quarantine`)).rows;
+  const finalQuarantineByAuthority = new Map(finalQuarantine.map(r => [r.authority_normalized,r]));
   const catalogBySku = new Map(catalog.map(r => [r.sku,r]));
   const directLd = new Map(), directHd = new Map(), refLd = new Map();
 
@@ -90,6 +92,8 @@ async function main() {
     const crossFamilyLdOwners = allLdDirect.filter(v => !v.endsWith(`|${expected}`)).map(v => v.split('|')[0]);
     const hdOwners = [...(directHd.get(h.authorityKey)||[])].map(v => v.split('|')[0]);
     if (ldOwners.length === 1) { results.push({...h,status:'EXISTING_DIRECT',resolvedSku:ldOwners[0],hdOwners}); continue; }
+    const finalQ = finalQuarantineByAuthority.get(h.authorityKey);
+    if (finalQ) { results.push({...h,status:'FINAL_QUARANTINE',finalReason:finalQ.final_reason,previousStatus:finalQ.analyzer_status,policyVersion:finalQ.policy_version}); continue; }
     if (ldOwners.length === 0 && crossFamilyLdOwners.length) { results.push({...h,status:'CROSS_FAMILY_DIRECT_CONFLICT',owners:crossFamilyLdOwners,hdOwners}); continue; }
     if (ldOwners.length > 1) { results.push({...h,status:'AMBIGUOUS_DIRECT',owners:ldOwners,hdOwners}); continue; }
     if (hdOwners.length) { results.push({...h,status:'HD_REFERENCE_CONFLICT',hdOwners}); continue; }
@@ -152,7 +156,9 @@ async function main() {
     existing_covered:results.filter(r=>r.status.startsWith('EXISTING_')).length,
     variants:results.filter(r=>r.status==='VARIANT_OF_AUTHORITY').length,
     create_safe:safe.length,
-    quarantine:results.filter(r=>!['EXISTING_DIRECT','EXISTING_MULTI_CROSS','VARIANT_OF_AUTHORITY','REAL_GAP_CREATE_SAFE'].includes(r.status)).length,
+    final_quarantine:results.filter(r=>r.status==='FINAL_QUARANTINE').length,
+    open_pending:results.filter(r=>!['EXISTING_DIRECT','EXISTING_MULTI_CROSS','VARIANT_OF_AUTHORITY','REAL_GAP_CREATE_SAFE','FINAL_QUARANTINE'].includes(r.status)).length,
+    quarantine:results.filter(r=>!['EXISTING_DIRECT','EXISTING_MULTI_CROSS','VARIANT_OF_AUTHORITY','REAL_GAP_CREATE_SAFE','FINAL_QUARANTINE'].includes(r.status)).length,
     safe_candidates:safe.map(r=>({family:r.family,authority:r.authority,sku:r.proposedSku,variants:r.variants||[],file:r.file})),
     results:results.map(({coreHash,appHash,competitor,oem,alternatives,...r})=>r)
   };
@@ -160,7 +166,7 @@ async function main() {
   const stamp=new Date().toISOString().replace(/[:.]/g,'-');
   const out=path.join(REPORT_DIR,`fram-ld-gap-${stamp}.json`);
   fs.writeFileSync(out,JSON.stringify(report,null,2));
-  console.log(JSON.stringify({report:out,harvested:report.harvested,counts:report.counts,by_family:report.by_family,existing_covered:report.existing_covered,variants:report.variants,create_safe:report.create_safe,quarantine:report.quarantine},null,2));
+  console.log(JSON.stringify({report:out,harvested:report.harvested,counts:report.counts,by_family:report.by_family,existing_covered:report.existing_covered,variants:report.variants,create_safe:report.create_safe,final_quarantine:report.final_quarantine,open_pending:report.open_pending,quarantine:report.quarantine},null,2));
   await client.end();
 }
 main().catch(e=>{console.error(e.stack||e.message);process.exit(1);});
