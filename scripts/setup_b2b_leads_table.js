@@ -1,31 +1,31 @@
 /**
  * setup_b2b_leads_table.js
- * ─────────────────────────────────────────────────────────────────────────────
  * Migration script to create the b2b_distributor_leads table in PostgreSQL.
  */
 
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
 const { Client } = require('pg');
 
-let connectionString = process.env.DATABASE_URL || 'postgresql://catalogo_elimfilters_user:d1Ioo8q0tkdgGccNDF0axZ8mQVmduCBf@dpg-d86ju1p9rddc739lc230.oregon-postgres.render.com/catalogo_elimfilters?ssl=true';
+let connectionString = String(process.env.DATABASE_URL || '').trim();
+if (!connectionString) {
+  throw new Error('DATABASE_URL is required; database credentials must come from the runtime secret store.');
+}
 
 if (connectionString.includes('-a.oregon-postgres.render.com')) {
   connectionString = connectionString.replace('-a.oregon-postgres.render.com', '.oregon-postgres.render.com');
 }
 
 const client = new Client({
-  connectionString: connectionString,
-  ssl: { rejectUnauthorized: false }
+  connectionString,
+  ssl: {
+    rejectUnauthorized: String(process.env.DB_SSL_VERIFY || 'true').toLowerCase() !== 'false'
+  }
 });
 
 async function main() {
   await client.connect();
-  console.log('🔌 Connected to PostgreSQL for b2b_distributor_leads Migration...\n');
-
-  const createTableQuery = `
+  console.log('Connected to PostgreSQL for b2b_distributor_leads migration.');  const createTableQuery = `
     CREATE TABLE IF NOT EXISTS b2b_distributor_leads (
       id SERIAL PRIMARY KEY,
       source_channel TEXT NOT NULL,
@@ -41,12 +41,12 @@ async function main() {
   `;
 
   await client.query(createTableQuery);
-  console.log('✅ Table b2b_distributor_leads is ready in PostgreSQL database.');
-
+  console.log('Table b2b_distributor_leads is ready.');
   await client.end();
 }
 
-main().catch(err => {
-  console.error('❌ Migration Error:', err);
-  client.end().catch(() => {});
+main().catch(async (err) => {
+  console.error('Migration Error:', err.message);
+  try { await client.end(); } catch (_) {}
+  process.exitCode = 1;
 });
