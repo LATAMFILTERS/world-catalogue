@@ -39,7 +39,7 @@ OUTPUT_DIR = Path(__file__).parent / "Fleetguard Scraper"
 # guess it.
 CATEGORIES = {
     "air-precleaners": "https://www.fleetguard.com/category/air-precleaners",
-    # "turbine": "<PASTE REAL FLEETGUARD.COM TURBINE CATEGORY URL HERE>",
+    "fuel-processors": "https://www.fleetguard.com/es/category/productos/filtraci%C3%B3n-de-combustible/procesadores-de-combustible/0ZGPL0000000FSi4AM",
 }
 
 # VERIFY every selector below against the live DOM before trusting results.
