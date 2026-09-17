@@ -4,7 +4,7 @@ services:
     runtime: node
     plan: starter
     buildCommand: npm install
-    startCommand: node server.js
+    startCommand: npm start
     healthCheckPath: /api/status
     envVars:
       - key: NODE_VERSION
@@ -132,9 +132,6 @@ services:
       - type: redirect
         source: /knowledge-system/standards/sae-j1539
         destination: /knowledge-center/standards/sae-j1539/
-      - type: redirect
-        source: /knowledge-center/engineering/operator-health
-        destination: /knowledge-center/systems/cabin-air-protection/
 
   - type: web
     name: knowledge-center-api-staging
