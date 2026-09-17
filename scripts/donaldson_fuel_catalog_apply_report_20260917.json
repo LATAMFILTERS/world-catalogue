@@ -1,0 +1,24 @@
+{
+  "migration": "103_DONALDSON_FUEL_499_20260917",
+  "requested": 499,
+  "inserted": 0,
+  "updated": 499,
+  "moved_family": 0,
+  "rejected": [],
+  "before": {
+    "n": 530,
+    "ef9": 255,
+    "es9": 252
+  },
+  "verify": {
+    "rows": 499,
+    "unique_skus": 499,
+    "ef9": 248,
+    "es9": 251,
+    "syntapore": 248,
+    "hydrocore": 251,
+    "evidenced": 499,
+    "category_in_description": 0
+  },
+  "ok": true
+}
