@@ -21,7 +21,11 @@ if (!connectionString) {
   process.exit(1);
 }
 
-const pool = new Pool({ connectionString, ssl: { rejectUnauthorized: false } });
+const isLocalHost = /@(localhost|127\.0\.0\.1)(:|\/)/.test(connectionString);
+const pool = new Pool({
+  connectionString,
+  ssl: isLocalHost ? false : { rejectUnauthorized: false },
+});
 
 async function main() {
   const r = await pool.query(`
