@@ -49,6 +49,41 @@ ET93222, ET93222B, ET93223 — falta oem, crossref, applications
 ET95002, ET95010, ET95030 — falta oem, crossref
 ```
 
+## Inventario completo (las 50 filas, exportado de pgAdmin y verificado)
+
+**Hallazgo adicional, no capturado por `audit_et9_completeness.js`:** el
+campo `name` viene **vacío en las 50 filas, sin excepción**. Ningún SKU
+ET9 tiene nombre de producto poblado. Vale la pena agregarlo como columna
+chequeada en una futura versión del script de auditoría.
+
+**17 completos** (oem + cross-ref + aplicaciones, no aparecen en la lista
+de specs faltantes): `ET932003, ET932004P, ET932004S, ET932004T,
+ET932007P, ET93201P, ET93201S, ET93201T, ET93203, ET93204P, ET93204S,
+ET93204T, ET93205, ET93206, ET93207P, ET93209P, ET93209T`
+
+**1 caso límite** — `ET92020T`: completo en oem/crossref/aplicaciones
+(oem:8, comp:14, equip:10) pero le falta `specs`. Es el único motivo por
+el que el conteo de "verdaderamente completo" es 17 y no 18.
+
+**32 con gaps:**
+
+| SKU | codigo_base | Falta |
+|---|---|---|
+| ET90900, ET90902, ET91000, ET91002 | 900FH/902FH/1000FH/1002FH | oem, crossref |
+| ET92010P, ET92010S, ET92010T | 2010*M-OR | crossref |
+| ET92020P, ET92020S | 2020P/SM-OR | crossref, specs |
+| ET92040P, ET92040S, ET92040T | 2040*M-OR | crossref, specs |
+| ET932002, ET93202 | P553202 | oem, crossref |
+| ET93207S, ET93207T | P553207 | oem, crossref |
+| ET93208T | P553004 | oem, crossref |
+| ET93211 | P553201 | oem, crossref |
+| ET93212, ET93212B | P550936 | oem |
+| ET93216P, ET93216PB, ET93216S, ET93216SB, ET93216T, ET93216TB | 3216 | oem, applications |
+| ET93222, ET93222B, ET93223 | 3222/3223 | oem, crossref, applications |
+| ET95002, ET95010, ET95030 | 500FG2/10/30 | oem, crossref |
+
+17 + 1 + 32 = 50, cuadra con el total real.
+
 ## Corrección aplicada durante esta auditoría
 
 `ET91844P` no era un producto de turbina Fleetguard: `codigo_base =
