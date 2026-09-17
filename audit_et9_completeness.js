@@ -36,29 +36,37 @@ async function main() {
       technology,
       jsonb_array_length(COALESCE(oem_codes, '[]'::jsonb)) AS oem_cnt,
       jsonb_array_length(COALESCE(competitor_codes, '[]'::jsonb)) AS comp_cnt,
+      jsonb_array_length(COALESCE(brand_crossrefs, '[]'::jsonb)) AS brand_crossref_cnt,
       jsonb_array_length(COALESCE(equipment_applications, '[]'::jsonb)) AS equip_cnt,
       jsonb_array_length(COALESCE(vehicle_applications, '[]'::jsonb)) AS vehicle_cnt,
-      (technical_specifications IS NOT NULL
-        AND technical_specifications <> '{}'::jsonb) AS has_specs
+      (
+        (specs IS NOT NULL AND specs <> '{}'::jsonb)
+        OR micron_rating IS NOT NULL
+        OR filter_media IS NOT NULL
+        OR nominal_efficiency IS NOT NULL
+        OR height_mm IS NOT NULL
+        OR outer_diameter_mm IS NOT NULL
+      ) AS has_specs
     FROM elimfilters_catalog
     WHERE sku LIKE 'ET9%'
     ORDER BY sku
   `);
 
   const total = r.rows.length;
+  const hasCrossref = row => row.comp_cnt > 0 || row.brand_crossref_cnt > 0;
   const missingSpecs = r.rows.filter(row => !row.has_specs);
   const missingOem = r.rows.filter(row => row.oem_cnt === 0);
-  const missingComp = r.rows.filter(row => row.comp_cnt === 0);
+  const missingComp = r.rows.filter(row => !hasCrossref(row));
   const missingApps = r.rows.filter(row => row.equip_cnt === 0 && row.vehicle_cnt === 0);
   const fullyComplete = r.rows.filter(row =>
-    row.has_specs && row.oem_cnt > 0 && row.comp_cnt > 0 && (row.equip_cnt > 0 || row.vehicle_cnt > 0)
+    row.has_specs && row.oem_cnt > 0 && hasCrossref(row) && (row.equip_cnt > 0 || row.vehicle_cnt > 0)
   );
 
   console.log(`ET9 total: ${total}`);
   console.log(`Fully complete (specs + OEM + cross-ref + applications): ${fullyComplete.length}/${total}`);
-  console.log(`Missing technical_specifications: ${missingSpecs.length}`);
+  console.log(`Missing specs (specs jsonb + core spec columns all empty): ${missingSpecs.length}`);
   console.log(`Missing oem_codes: ${missingOem.length}`);
-  console.log(`Missing competitor_codes: ${missingComp.length}`);
+  console.log(`Missing competitor_codes AND brand_crossrefs: ${missingComp.length}`);
   console.log(`Missing equipment_applications AND vehicle_applications: ${missingApps.length}`);
 
   console.log('\n--- per-SKU gap detail (incomplete only) ---');
@@ -66,7 +74,7 @@ async function main() {
     const gaps = [];
     if (!row.has_specs) gaps.push('specs');
     if (row.oem_cnt === 0) gaps.push('oem');
-    if (row.comp_cnt === 0) gaps.push('crossref');
+    if (!hasCrossref(row)) gaps.push('crossref');
     if (row.equip_cnt === 0 && row.vehicle_cnt === 0) gaps.push('applications');
     if (gaps.length) {
       console.log(`  ${row.sku} | ${row.duty || '-'} | ${row.technology || '-'} | missing: ${gaps.join(', ')} | ${row.name.substring(0, 50)}`);
