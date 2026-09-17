@@ -8,13 +8,21 @@
   "discovery": {
     "donaldson_header_positions": 5842,
     "rendered_positions": 5837,
-    "suppressed_index_positions": [3749, 4033, 4034, 4035, 5113],
+    "suppressed_index_positions": [
+      3749,
+      4033,
+      4034,
+      4035,
+      5113
+    ],
     "suppressed_index_count": 5,
     "unique_rendered_codes": 5828,
     "pages_completed": 293,
     "page_errors": 0,
     "active_total": 2035,
-    "active_nonfilter_excluded": ["P568857"],
+    "active_nonfilter_excluded": [
+      "P568857"
+    ],
     "active_target_filters": 2034
   },
   "catalog": {
@@ -64,12 +72,29 @@
     "HPKL18-3MB": "EH63183"
   },
   "part_search_verified_examples": [
-    "EH60011", "HPDEL11",
-    "EH63183", "HPKL18-3MB",
-    "EH63856", "P583856",
-    "EH66644", "P566644",
-    "EH61949", "EH62949"
+    "EH60011",
+    "HPDEL11",
+    "EH63183",
+    "HPKL18-3MB",
+    "EH63856",
+    "P583856",
+    "EH66644",
+    "P566644",
+    "EH61949",
+    "EH62949"
   ],
   "ghost_policy": "Index-suppressed positions have no public part identity and are excluded from the public identifiable product universe; no code or SKU is fabricated.",
-  "closure_statement": "DONALDSON HYDRAULIC — EH6 / NANOFORCE™: CERRADO 100%"
+  "closure_statement": "DONALDSON HYDRAULIC — EH6 / NANOFORCE™: CERRADO 100%",
+  "cross_category_additions": [
+    {
+      "code": "P173489",
+      "sku": "EH63489",
+      "technology": "NANOFORCE™",
+      "discovered_in": "Donaldson Lube category",
+      "classification": "HYDRAULIC FILTER, CARTRIDGE",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P173489/17376"
+    }
+  ],
+  "catalog_scope_note": "Hydraulic category closure remains 2034/2034. P173489 is an additional hydraulic product discovered in the Lube category and is cataloged separately as EH63489.",
+  "donaldson_hydraulic_catalog_with_cross_category_additions": 2035
 }

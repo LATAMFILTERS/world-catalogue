@@ -74,3 +74,14 @@ test('alternative products resolve by ELIMFILTERS SKU as well as codigo_base', (
   assert.ok(helper.includes('UPPER(codigo_base) = ANY($1) OR UPPER(sku) = ANY($1)'), 'alternative lookup must support SKU and codigo_base');
   assert.ok(helper.includes('if (r.sku) altMap[r.sku.toUpperCase()] = r;'), 'resolved alternatives must be indexed by ELIMFILTERS SKU');
 });
+
+
+test('Part Search resolves governed Donaldson exact_part_reference aliases', () => {
+  const server = read('server-original.js');
+  const start = server.indexOf("// 1c. Exact governed reference match");
+  assert.ok(start >= 0, 'exact_part_reference lookup block missing');
+  const route = server.slice(start, server.indexOf('// Equipment class filter', start));
+  assert.ok(route.includes('FROM exact_part_reference e'), 'must query exact_part_reference');
+  assert.ok(route.includes("UPPER(e.brand) = 'DONALDSON'"), 'Donaldson exact references must be scoped by brand');
+  assert.ok(route.includes("source: 'exact_part_reference'"), 'must expose exact reference source');
+});

@@ -1767,6 +1767,23 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       return res.json({ success: true, results: products, source: 'codigo_base' });
     }
 
+    // 1c. Exact governed reference match (e.g. Donaldson listing aliases / consolidated source codes)
+    const byExactRef = await client.query(
+      `SELECT DISTINCT ON (c.sku) c.*
+       FROM exact_part_reference e
+       JOIN elimfilters_catalog c ON c.sku = e.sku
+       WHERE UPPER(e.brand) = 'DONALDSON'
+         AND UPPER(REPLACE(REPLACE(e.part_number,'-',''),' ','')) = $1
+       ORDER BY c.sku, e.id DESC
+       LIMIT 10`,
+      [q]
+    );
+    if (byExactRef.rows.length > 0) {
+      const products = byExactRef.rows.map(r => buildFilterData(r, lang));
+      await enrichAlternatives(products, client);
+      return res.json({ success: true, results: products, source: 'exact_part_reference' });
+    }
+
     // Equipment class filter — HD and LD parts must never be mixed in a single
     // result set (different thread sizes / bypass pressures). When the caller
     // doesn't specify one and a cross-reference code hits both classes, the
