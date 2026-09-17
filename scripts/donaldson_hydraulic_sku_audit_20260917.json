@@ -1,0 +1,1481 @@
+{
+  "rule_version": "HYDRAULIC_EH6_COLLISION_V4_2026-09-17",
+  "rule": {
+    "normal": "EH6 + last 4 numeric digits of source code",
+    "collision": "For repeated last-4 groups across all Hydraulic products, including DBH alternatives, first keeps natural last4; subsequent distinct products use EH6 + collision index + last 3 digits (1,2,3...).",
+    "uniqueness_extension": "Published EH6 mappings are sticky. A new code never displaces an existing SKU; if its preferred slot is occupied, skip to the next free discriminator 1..9 while preserving the last 3 digits and 7-character SKU.",
+    "dbh_classification": "Donaldson DBH references are ALTERNATIVE_PRODUCT but retain their own independent EH6 SKU, exactly like DBL alternative products in Lube. Their official P-code relationships are retained in alternative_to_codes.",
+    "alternative_sku_policy": "Alternative-product status never removes product identity or SKU. Distinct Donaldson codes keep distinct ELIMFILTERS SKUs. DBH↔P relationships are materialized as reciprocal EH6 alternative_skus, matching the existing Lube DBL navigation pattern.",
+    "alphanumeric_short_codes": "When a source code contains 1-3 numeric digits, left-pad the numeric payload to four digits and apply the same EH6 collision rule. Example: 11 -> 0011. Global occupied EH6 slots are skipped deterministically to the next free discriminator."
+  },
+  "target_references": 2034,
+  "primary_references": 2034,
+  "alternative_product_references": 9,
+  "canonical_classes": 2034,
+  "assigned_references": 2034,
+  "unique_assigned_skus": 2034,
+  "pending_references": 0,
+  "pending_codes": [],
+  "alternative_product_codes": [
+    "DBH0949",
+    "DBH3542",
+    "DBH5875",
+    "DBH6018",
+    "DBH6019",
+    "DBH6020",
+    "DBH6138",
+    "DBH6139",
+    "DBH6140"
+  ],
+  "alternative_navigation_links": 186,
+  "collision_groups_last4": 126,
+  "merged_equivalent_pairs": [],
+  "method_counts": {
+    "NATURAL_OR_GLOBAL_COLLISION": 172,
+    "PUBLISHED_DB_STICKY": 1823,
+    "COLLISION_GROUP_INDEX": 21,
+    "NATURAL_LAST4_COLLISION_GROUP": 18
+  },
+  "displacement_count": 149,
+  "displacement_log": [
+    {
+      "representative": "P550133",
+      "source_last4": "0133",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61133",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP60L13-3MB",
+      "source_last4": "0133",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 2,
+      "sku": "EH62133",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "P170308",
+      "source_last4": "0308",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61308",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "P170313",
+      "source_last4": "0313",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61313",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP110NL11-10MB",
+      "source_last4": "1110",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 2,
+      "sku": "EH62110",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP21L4-15MV",
+      "source_last4": "1415",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 2,
+      "sku": "EH62415",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP81L4-15MV",
+      "source_last4": "1415",
+      "preferred_discriminator": 2,
+      "assigned_discriminator": 3,
+      "sku": "EH63415",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP102L18-12MB",
+      "source_last4": "1812",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 2,
+      "sku": "EH62812",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HPKL18-12MB",
+      "source_last4": "1812",
+      "preferred_discriminator": 2,
+      "assigned_discriminator": 3,
+      "sku": "EH63812",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP107L36-10MV",
+      "source_last4": "3610",
+      "preferred_discriminator": 3,
+      "assigned_discriminator": 4,
+      "sku": "EH64610",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "P575189",
+      "source_last4": "5189",
+      "preferred_discriminator": 5,
+      "assigned_discriminator": 1,
+      "sku": "EH61189",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "P176207",
+      "source_last4": "6207",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61207",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "P566410",
+      "source_last4": "6410",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61410",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP76L4-10CB",
+      "source_last4": "6410",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 2,
+      "sku": "EH62410",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "P566710",
+      "source_last4": "6710",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61710",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP107L36-VTM710V",
+      "source_last4": "6710",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 2,
+      "sku": "EH62710",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "P567010",
+      "source_last4": "7010",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61010",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "P567011",
+      "source_last4": "7011",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 3,
+      "sku": "EH63011",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "P567012",
+      "source_last4": "7012",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61012",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP107L36-3MB",
+      "source_last4": "7363",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 3,
+      "sku": "EH63363",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP107L36-3MV",
+      "source_last4": "7363",
+      "preferred_discriminator": 2,
+      "assigned_discriminator": 4,
+      "sku": "EH64363",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "HP107L18-VTM710V",
+      "source_last4": "8710",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 3,
+      "sku": "EH63710",
+      "reason": "collision-group priority / occupied EH6 slot"
+    },
+    {
+      "representative": "P170061",
+      "source_last4": "0061",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61061",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P760155",
+      "source_last4": "0155",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61155",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "HPKL18-3MB",
+      "source_last4": "0183",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 3,
+      "sku": "EH63183",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P550223",
+      "source_last4": "0223",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61223",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P550232",
+      "source_last4": "0232",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61232",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P550274",
+      "source_last4": "0274",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61274",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P550275",
+      "source_last4": "0275",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61275",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P560400",
+      "source_last4": "0400",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61400",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P560401",
+      "source_last4": "0401",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61401",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P560406",
+      "source_last4": "0406",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61406",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P550486",
+      "source_last4": "0486",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61486",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P550542",
+      "source_last4": "0542",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 2,
+      "sku": "EH62542",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P580598",
+      "source_last4": "0598",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61598",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P580600",
+      "source_last4": "0600",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61600",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P580603",
+      "source_last4": "0603",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61603",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P580604",
+      "source_last4": "0604",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61604",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P580607",
+      "source_last4": "0607",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61607",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P580624",
+      "source_last4": "0624",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61624",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P550787",
+      "source_last4": "0787",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61787",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P580835",
+      "source_last4": "0835",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61835",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P580901",
+      "source_last4": "0901",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61901",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P550921",
+      "source_last4": "0921",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 3,
+      "sku": "EH63921",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P580939",
+      "source_last4": "0939",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61939",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "HP409L9-6MB",
+      "source_last4": "0996",
+      "preferred_discriminator": 0,
+      "assigned_discriminator": 1,
+      "sku": "EH61996",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P561217",
+      "source_last4": "1217",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 2,
+      "sku": "EH62217",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P561237",
+      "source_last4": "1237",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 2,
+      "sku": "EH62237",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P561247",
+      "source_last4": "1247",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 2,
+      "sku": "EH62247",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P561267",
+      "source_last4": "1267",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 2,
+      "sku": "EH62267",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "HP482RNL11-VTM710-V",
+      "source_last4": "1710",
+      "preferred_discriminator": 1,
+      "assigned_discriminator": 4,
+      "sku": "EH64710",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "HP33RNL8-12MB",
+      "source_last4": "3812",
+      "preferred_discriminator": 3,
+      "assigned_discriminator": 4,
+      "sku": "EH64812",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P165185",
+      "source_last4": "5185",
+      "preferred_discriminator": 5,
+      "assigned_discriminator": 6,
+      "sku": "EH66185",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P165338",
+      "source_last4": "5338",
+      "preferred_discriminator": 5,
+      "assigned_discriminator": 1,
+      "sku": "EH61338",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "HP75L8-12MB",
+      "source_last4": "5812",
+      "preferred_discriminator": 5,
+      "assigned_discriminator": 6,
+      "sku": "EH66812",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P576047",
+      "source_last4": "6047",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 2,
+      "sku": "EH62047",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566189",
+      "source_last4": "6189",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 3,
+      "sku": "EH63189",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566190",
+      "source_last4": "6190",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61190",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566192",
+      "source_last4": "6192",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61192",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566211",
+      "source_last4": "6211",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61211",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566216",
+      "source_last4": "6216",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61216",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566238",
+      "source_last4": "6238",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 4,
+      "sku": "EH64238",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566391",
+      "source_last4": "6391",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 2,
+      "sku": "EH62391",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566401",
+      "source_last4": "6401",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 3,
+      "sku": "EH63401",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566405",
+      "source_last4": "6405",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61405",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566452",
+      "source_last4": "6452",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61452",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566455",
+      "source_last4": "6455",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61455",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566456",
+      "source_last4": "6456",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61456",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566458",
+      "source_last4": "6458",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61458",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566463",
+      "source_last4": "6463",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 3,
+      "sku": "EH63463",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566466",
+      "source_last4": "6466",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 3,
+      "sku": "EH63466",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566468",
+      "source_last4": "6468",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 3,
+      "sku": "EH63468",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566470",
+      "source_last4": "6470",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 2,
+      "sku": "EH62470",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566471",
+      "source_last4": "6471",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61471",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566472",
+      "source_last4": "6472",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61472",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566484",
+      "source_last4": "6484",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 3,
+      "sku": "EH63484",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566487",
+      "source_last4": "6487",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61487",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566490",
+      "source_last4": "6490",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61490",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566673",
+      "source_last4": "6673",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61673",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566683",
+      "source_last4": "6683",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61683",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P566708",
+      "source_last4": "6708",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61708",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P176749",
+      "source_last4": "6749",
+      "preferred_discriminator": 6,
+      "assigned_discriminator": 1,
+      "sku": "EH61749",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567003",
+      "source_last4": "7003",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61003",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567004",
+      "source_last4": "7004",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61004",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567006",
+      "source_last4": "7006",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61006",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567007",
+      "source_last4": "7007",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61007",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567008",
+      "source_last4": "7008",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61008",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567013",
+      "source_last4": "7013",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 2,
+      "sku": "EH62013",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567014",
+      "source_last4": "7014",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61014",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567015",
+      "source_last4": "7015",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61015",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567016",
+      "source_last4": "7016",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 2,
+      "sku": "EH62016",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567024",
+      "source_last4": "7024",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61024",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567025",
+      "source_last4": "7025",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61025",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567026",
+      "source_last4": "7026",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61026",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567029",
+      "source_last4": "7029",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61029",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567030",
+      "source_last4": "7030",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61030",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567036",
+      "source_last4": "7036",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61036",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567037",
+      "source_last4": "7037",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61037",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567039",
+      "source_last4": "7039",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61039",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567048",
+      "source_last4": "7048",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61048",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567049",
+      "source_last4": "7049",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61049",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567050",
+      "source_last4": "7050",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61050",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567051",
+      "source_last4": "7051",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61051",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567056",
+      "source_last4": "7056",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61056",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567065",
+      "source_last4": "7065",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61065",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567066",
+      "source_last4": "7066",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61066",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567067",
+      "source_last4": "7067",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61067",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567068",
+      "source_last4": "7068",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61068",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567070",
+      "source_last4": "7070",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61070",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567071",
+      "source_last4": "7071",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61071",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567072",
+      "source_last4": "7072",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61072",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567073",
+      "source_last4": "7073",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61073",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567074",
+      "source_last4": "7074",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61074",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567075",
+      "source_last4": "7075",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61075",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567076",
+      "source_last4": "7076",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61076",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567077",
+      "source_last4": "7077",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61077",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567078",
+      "source_last4": "7078",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61078",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567079",
+      "source_last4": "7079",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61079",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567082",
+      "source_last4": "7082",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61082",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567083",
+      "source_last4": "7083",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61083",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567087",
+      "source_last4": "7087",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61087",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567091",
+      "source_last4": "7091",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61091",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567092",
+      "source_last4": "7092",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61092",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567093",
+      "source_last4": "7093",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61093",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567094",
+      "source_last4": "7094",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 2,
+      "sku": "EH62094",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567095",
+      "source_last4": "7095",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 2,
+      "sku": "EH62095",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567099",
+      "source_last4": "7099",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61099",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567100",
+      "source_last4": "7100",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61100",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567101",
+      "source_last4": "7101",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61101",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567102",
+      "source_last4": "7102",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61102",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P767128",
+      "source_last4": "7128",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61128",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P767129",
+      "source_last4": "7129",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61129",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P767130",
+      "source_last4": "7130",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61130",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P767131",
+      "source_last4": "7131",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61131",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P167411",
+      "source_last4": "7411",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61411",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P167514",
+      "source_last4": "7514",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61514",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P167516",
+      "source_last4": "7516",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61516",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P167522",
+      "source_last4": "7522",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61522",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P567805",
+      "source_last4": "7805",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 2,
+      "sku": "EH62805",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P557826",
+      "source_last4": "7826",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 2,
+      "sku": "EH62826",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P767941",
+      "source_last4": "7941",
+      "preferred_discriminator": 7,
+      "assigned_discriminator": 1,
+      "sku": "EH61941",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P568081",
+      "source_last4": "8081",
+      "preferred_discriminator": 8,
+      "assigned_discriminator": 1,
+      "sku": "EH61081",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P568091",
+      "source_last4": "8091",
+      "preferred_discriminator": 8,
+      "assigned_discriminator": 2,
+      "sku": "EH62091",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P568093",
+      "source_last4": "8093",
+      "preferred_discriminator": 8,
+      "assigned_discriminator": 2,
+      "sku": "EH62093",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P568094",
+      "source_last4": "8094",
+      "preferred_discriminator": 8,
+      "assigned_discriminator": 4,
+      "sku": "EH64094",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P578277",
+      "source_last4": "8277",
+      "preferred_discriminator": 8,
+      "assigned_discriminator": 2,
+      "sku": "EH62277",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P958792",
+      "source_last4": "8792",
+      "preferred_discriminator": 8,
+      "assigned_discriminator": 1,
+      "sku": "EH61792",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P578909",
+      "source_last4": "8909",
+      "preferred_discriminator": 8,
+      "assigned_discriminator": 1,
+      "sku": "EH61909",
+      "reason": "global EH6 namespace collision"
+    },
+    {
+      "representative": "P169015",
+      "source_last4": "9015",
+      "preferred_discriminator": 9,
+      "assigned_discriminator": 2,
+      "sku": "EH62015",
+      "reason": "global EH6 namespace collision"
+    }
+  ],
+  "duplicate_canonical_sku_conflicts": [],
+  "db_existing_target_rows": 1823,
+  "db_remap_count": 0,
+  "db_keep_count": 1823,
+  "examples": {
+    "P170084": {
+      "code": "P170084",
+      "status": "ACTIVE",
+      "description": "HYDRAULIC FILTER, CARTRIDGE",
+      "url": "https://shop.donaldson.com/store/en-us/product/P170084/16490",
+      "class_hint": "EH6",
+      "page": 189,
+      "family": "EH6",
+      "technology": "NANOFORCE™",
+      "kind": "HYDRAULIC_FILTER",
+      "sku": "EH60084",
+      "sku_method": "PUBLISHED_DB_STICKY",
+      "classification": "CANONICAL_PRODUCT",
+      "canonical_code": "P170084",
+      "alias_of": null,
+      "alternative_to_codes": null,
+      "source_last4": "0084",
+      "source_tail3": "084",
+      "discriminator": 0,
+      "alternative_skus": []
+    },
+    "P550084": {
+      "code": "P550084",
+      "status": "ACTIVE",
+      "description": "HYDRAULIC FILTER, CARTRIDGE",
+      "url": "https://shop.donaldson.com/store/en-us/product/P550084/20085",
+      "class_hint": "EH6",
+      "page": 210,
+      "family": "EH6",
+      "technology": "NANOFORCE™",
+      "kind": "HYDRAULIC_FILTER",
+      "sku": "EH61084",
+      "sku_method": "PUBLISHED_DB_STICKY",
+      "classification": "CANONICAL_PRODUCT",
+      "canonical_code": "P550084",
+      "alias_of": null,
+      "alternative_to_codes": null,
+      "source_last4": "0084",
+      "source_tail3": "084",
+      "discriminator": 1,
+      "alternative_skus": []
+    },
+    "P170312": {
+      "code": "P170312",
+      "status": "ACTIVE",
+      "description": "HYDRAULIC FILTER, SPIN-ON DURAMAX",
+      "url": "https://shop.donaldson.com/store/en-us/product/P170312/16509",
+      "class_hint": "EH6",
+      "page": 190,
+      "family": "EH6",
+      "technology": "NANOFORCE™",
+      "kind": "HYDRAULIC_FILTER",
+      "sku": "EH60312",
+      "sku_method": "PUBLISHED_DB_STICKY",
+      "classification": "CANONICAL_PRODUCT",
+      "canonical_code": "P170312",
+      "alias_of": null,
+      "alternative_to_codes": null,
+      "source_last4": "0312",
+      "source_tail3": "312",
+      "discriminator": 0,
+      "alternative_skus": []
+    },
+    "P570312": {
+      "code": "P570312",
+      "status": "ACTIVE",
+      "description": "HYDRAULIC FILTER, CARTRIDGE DT",
+      "url": "https://shop.donaldson.com/store/en-us/product/P570312/62401",
+      "class_hint": "EH6",
+      "page": 256,
+      "family": "EH6",
+      "technology": "NANOFORCE™",
+      "kind": "HYDRAULIC_FILTER",
+      "sku": "EH61312",
+      "sku_method": "PUBLISHED_DB_STICKY",
+      "classification": "CANONICAL_PRODUCT",
+      "canonical_code": "P570312",
+      "alias_of": null,
+      "alternative_to_codes": null,
+      "source_last4": "0312",
+      "source_tail3": "312",
+      "discriminator": 1,
+      "alternative_skus": []
+    },
+    "P170592": {
+      "code": "P170592",
+      "status": "ACTIVE",
+      "description": "HYDRAULIC FILTER, CARTRIDGE",
+      "url": "https://shop.donaldson.com/store/en-us/product/P170592/16531",
+      "class_hint": "EH6",
+      "page": 190,
+      "family": "EH6",
+      "technology": "NANOFORCE™",
+      "kind": "HYDRAULIC_FILTER",
+      "sku": "EH60592",
+      "sku_method": "PUBLISHED_DB_STICKY",
+      "classification": "CANONICAL_PRODUCT",
+      "canonical_code": "P170592",
+      "alias_of": null,
+      "alternative_to_codes": null,
+      "source_last4": "0592",
+      "source_tail3": "592",
+      "discriminator": 0,
+      "alternative_skus": []
+    },
+    "P550592": {
+      "code": "P550592",
+      "status": "ACTIVE",
+      "description": "HYDRAULIC FILTER, SPIN-ON",
+      "url": "https://shop.donaldson.com/store/en-us/product/P550592/23072",
+      "class_hint": "EH6",
+      "page": 212,
+      "family": "EH6",
+      "technology": "NANOFORCE™",
+      "kind": "HYDRAULIC_FILTER",
+      "sku": "EH61592",
+      "sku_method": "PUBLISHED_DB_STICKY",
+      "classification": "CANONICAL_PRODUCT",
+      "canonical_code": "P550592",
+      "alias_of": null,
+      "alternative_to_codes": null,
+      "source_last4": "0592",
+      "source_tail3": "592",
+      "discriminator": 1,
+      "alternative_skus": []
+    },
+    "P580592": {
+      "code": "P580592",
+      "status": "ACTIVE",
+      "description": "HYDRAULIC FILTER, CARTRIDGE",
+      "url": "https://shop.donaldson.com/store/en-us/product/P580592/prod1620113",
+      "class_hint": "EH6",
+      "page": 271,
+      "family": "EH6",
+      "technology": "NANOFORCE™",
+      "kind": "HYDRAULIC_FILTER",
+      "sku": "EH62592",
+      "sku_method": "PUBLISHED_DB_STICKY",
+      "classification": "CANONICAL_PRODUCT",
+      "canonical_code": "P580592",
+      "alias_of": null,
+      "alternative_to_codes": null,
+      "source_last4": "0592",
+      "source_tail3": "592",
+      "discriminator": 2,
+      "alternative_skus": []
+    },
+    "DBH0949": {
+      "code": "DBH0949",
+      "status": "ACTIVE",
+      "description": "HYDRAULIC FILTER, SPIN-ON DONALDSON BLUE",
+      "url": "https://shop.donaldson.com/store/product/DBH0949/prod2190133",
+      "class_hint": "EH6",
+      "page": 1,
+      "family": "EH6",
+      "technology": "NANOFORCE™",
+      "kind": "HYDRAULIC_FILTER",
+      "sku": "EH62949",
+      "sku_method": "PUBLISHED_DB_STICKY",
+      "classification": "ALTERNATIVE_PRODUCT",
+      "canonical_code": "DBH0949",
+      "alias_of": null,
+      "alternative_to_codes": [
+        "P564468",
+        "P179763",
+        "P170949",
+        "P173789",
+        "P573353",
+        "P165185",
+        "P165569",
+        "P165659",
+        "P165672",
+        "P165675",
+        "P171274",
+        "P171276",
+        "P176207",
+        "P179075",
+        "P573996"
+      ],
+      "source_last4": "0949",
+      "source_tail3": "949",
+      "discriminator": 2,
+      "alternative_skus": [
+        "EH61207",
+        "EH61276",
+        "EH61949",
+        "EH62274",
+        "EH63353",
+        "EH63789",
+        "EH63996",
+        "EH64468",
+        "EH65569",
+        "EH65659",
+        "EH65672",
+        "EH65675",
+        "EH66185",
+        "EH69075",
+        "EH69763"
+      ]
+    },
+    "DBH6018": {
+      "code": "DBH6018",
+      "status": "ACTIVE",
+      "description": "HYDRAULIC FILTER, CARTRIDGE DONALDSON BLUE",
+      "url": "https://shop.donaldson.com/store/product/DBH6018/prod150133",
+      "class_hint": "EH6",
+      "page": 1,
+      "family": "EH6",
+      "technology": "NANOFORCE™",
+      "kind": "HYDRAULIC_FILTER",
+      "sku": "EH66018",
+      "sku_method": "PUBLISHED_DB_STICKY",
+      "classification": "ALTERNATIVE_PRODUCT",
+      "canonical_code": "DBH6018",
+      "alias_of": null,
+      "alternative_to_codes": [
+        "P566271",
+        "DBH6019",
+        "P566270",
+        "P566273",
+        "P568816",
+        "P566272",
+        "P169344",
+        "P163910",
+        "P163903"
+      ],
+      "source_last4": "6018",
+      "source_tail3": "018",
+      "discriminator": 6,
+      "alternative_skus": [
+        "EH61019",
+        "EH63903",
+        "EH63910",
+        "EH66270",
+        "EH66271",
+        "EH66272",
+        "EH66273",
+        "EH68816",
+        "EH69344"
+      ]
+    }
+  }
+}

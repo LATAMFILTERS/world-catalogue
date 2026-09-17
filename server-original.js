@@ -1190,7 +1190,7 @@ function parseRefs(arr){
 
 // ── Shared: resolve alternatives[] P-codes → ELIMFILTERS SKUs + inherit data ──
 // Called from every search endpoint so all modes (part / VIN / equipment) benefit.
-// alternatives[] is stored as codigo_base values ("P552100"). This function resolves
+// alternatives[] may store codigo_base values ("P552100") or ELIMFILTERS SKUs ("EL82100" / "EH62949"). This function resolves
 // them to EL-SKUs in one batch query and inherits equipment_applications /
 // competitor_codes from the source product when the current product has none.
 async function enrichAlternatives(products, client) {
@@ -1211,12 +1211,15 @@ async function enrichAlternatives(products, client) {
     `SELECT sku, codigo_base, description, filter_type, sub_type, technology, duty,
             oem_codes, competitor_codes, equipment_applications
      FROM elimfilters_catalog
-     WHERE UPPER(codigo_base) = ANY($1)`,
+     WHERE UPPER(codigo_base) = ANY($1) OR UPPER(sku) = ANY($1)`,
     [altCodes]
   );
 
   const altMap = {};
-  rows.forEach(r => { if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r; });
+  rows.forEach(r => {
+    if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r;
+    if (r.sku) altMap[r.sku.toUpperCase()] = r;
+  });
 
   for (const p of withAlts) {
     const resolvedSkus = [];

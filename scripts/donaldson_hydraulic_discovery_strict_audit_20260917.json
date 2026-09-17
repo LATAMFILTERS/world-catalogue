@@ -1,0 +1,51 @@
+{
+  "family": "HYDRAULIC",
+  "source": "https://shop.donaldson.com/store/en-us/search?N=2076725065&catNav=true",
+  "closure_scope": "PUBLIC_IDENTIFIABLE_ACTIVE_FILTER_PRODUCTS",
+  "donaldson_header_count": 5842,
+  "rendered_raw_entries": 5837,
+  "index_suppressed_records": 5,
+  "header_render_delta": 5,
+  "index_suppressed_positions": [
+    {"raw_offset": 3749, "classification": "INDEX_SUPPRESSED_NO_PUBLIC_RECORD"},
+    {"raw_offset": 4033, "classification": "INDEX_SUPPRESSED_NO_PUBLIC_RECORD"},
+    {"raw_offset": 4034, "classification": "INDEX_SUPPRESSED_NO_PUBLIC_RECORD"},
+    {"raw_offset": 4035, "classification": "INDEX_SUPPRESSED_NO_PUBLIC_RECORD"},
+    {"raw_offset": 5113, "classification": "INDEX_SUPPRESSED_NO_PUBLIC_RECORD"}
+  ],
+  "index_suppressed_evidence": {
+    "method": "overlapping one-position pagination windows",
+    "ghost_3749": "No=3729 returns 20; No=3730..3749 return 19; No=3750 returns 20",
+    "ghosts_4033_4035": "No=4013 returns 20; 4014=19; 4015=18; 4016..4033=17; 4034=18; 4035=19; 4036=20",
+    "ghost_5113": "No=5093 returns 20; No=5094..5113 return 19; No=5114 returns 20",
+    "html_check": "suppressed positions expose no code, product URL, description or public status in full returned HTML",
+    "language_filter_check": "same deficits occur with and without Nr=product.language:English"
+  },
+  "unique_rendered_codes": 5828,
+  "duplicate_extra_occurrences": 9,
+  "duplicate_codes": [
+    {"code": "75L7-12MB", "occurrences": 2},
+    {"code": "13L18-12MB", "occurrences": 2},
+    {"code": "13L18-6MB", "occurrences": 2},
+    {"code": "5L36-6MB", "occurrences": 3},
+    {"code": "18L18-6MB", "occurrences": 2},
+    {"code": "5L14-12MB", "occurrences": 2},
+    {"code": "5L14-25MB", "occurrences": 2},
+    {"code": "5L36-6MV", "occurrences": 2}
+  ],
+  "pages_expected": 293,
+  "pages_completed": 293,
+  "page_errors": 0,
+  "active_total": 2035,
+  "active_target_filters": 2034,
+  "active_excluded_nonfilter": 1,
+  "excluded_nonfilter_codes": ["P568857"],
+  "discontinued": 3707,
+  "recognized_no_online": 86,
+  "family_code": "EH6",
+  "technology": "NANOFORCE™",
+  "closure_interpretation": "Donaldson header positions reconcile exactly: 5842 = 5837 rendered positions + 5 suppressed index positions. The five suppressed positions have no public product identity and are excluded from the identifiable product universe rather than fabricated as missing filters.",
+  "evidence_policy": "Close against all publicly identifiable active filter products rendered by Donaldson; record non-public index positions separately and never invent part numbers or SKUs for them.",
+  "header_delta_resolved": true,
+  "discovery_closed": true
+}
