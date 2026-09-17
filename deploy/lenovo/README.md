@@ -75,8 +75,33 @@ cd deploy/lenovo
 docker compose up -d --build
 ```
 
+## Publishing part-search.elimfilters.com through Cloudflare Tunnel
+
+`part-search.elimfilters.com` must resolve to this Lenovo node, not directly to
+the Render standby. The compose stack includes a `cloudflared` service that
+does this:
+
+1. In Cloudflare Zero Trust → Networks → Tunnels, create a tunnel (e.g.
+   `elimfilters-lenovo`) and copy its token.
+2. Set `CLOUDFLARE_TUNNEL_TOKEN=<token>` in `deploy/lenovo/.env`.
+3. In the tunnel's Public Hostname config, route `part-search.elimfilters.com`
+   → `http://world-catalogue:3000` (the compose service name/port).
+4. In Cloudflare DNS, the CNAME for `part-search` should be the
+   `<tunnel-id>.cfargotunnel.com` target Cloudflare creates automatically —
+   **not** a direct CNAME to `elimfilters-search-pro.onrender.com`. Render
+   stays wired as STANDBY/failover only, never as the primary DNS target.
+
+`scripts/validate-hybrid-runtime.js` enforces this at container start: with
+`ELIM_RUNTIME_ROLE=PRIMARY` and no `CLOUDFLARE_TUNNEL_TOKEN`, the
+`world-catalogue` container refuses to boot instead of silently running
+PRIMARY with nothing actually published — the failure mode that let
+`part-search.elimfilters.com` fall through to Render's raw cold-start page.
+
 ## Separation and failover
 
-The main service binds only to localhost on port 3100 and should be published through the Lenovo reverse proxy/Cloudflare Tunnel. The notification service binds only to localhost on port 8791.
+The main service is published to the internet only through the `cloudflared`
+tunnel above; its host port (127.0.0.1:3100) stays loopback-only. The
+notification service binds only to localhost on port 8791 and is never
+tunneled.
 
 Do not share CRM runtime volumes or turn `world-catalogue` into a writer of CRM commercial state. Keep cloud continuity available, but never run the same recurring technical/catalogue mutation job actively on Lenovo and cloud at the same time.

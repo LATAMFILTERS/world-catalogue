@@ -15,12 +15,23 @@ services:
       ELIM_RUNTIME_ROLE: ${ELIM_RUNTIME_ROLE:-PRIMARY}
       ELIM_DOMAIN: WORLD_CATALOGUE
       ELIM_SCHEDULER_ENABLED: ${ELIM_SCHEDULER_ENABLED:-true}
+      CLOUDFLARE_TUNNEL_REQUIRED: "true"
+      CLOUDFLARE_TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:-}
     command: ["sh", "-c", "node scripts/validate-hybrid-runtime.js && npm start"]
     ports:
       - "127.0.0.1:${WORLD_CATALOGUE_HOST_PORT:-3100}:3000"
     volumes:
       - ../../hermes:/app/hermes
       - ../../logs:/app/logs
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: ["tunnel", "--no-autoupdate", "run"]
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:?CLOUDFLARE_TUNNEL_TOKEN is required to publish Lenovo (part-search) through Cloudflare — see deploy/lenovo/README.md}
+    depends_on:
+      - world-catalogue
 
   world-notifications:
     build:
