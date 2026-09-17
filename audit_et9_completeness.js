@@ -34,11 +34,11 @@ async function main() {
       COALESCE(name, '') AS name,
       duty,
       technology,
-      jsonb_array_length(COALESCE(oem_codes, '[]'::jsonb)) AS oem_cnt,
-      jsonb_array_length(COALESCE(competitor_codes, '[]'::jsonb)) AS comp_cnt,
-      jsonb_array_length(COALESCE(brand_crossrefs, '[]'::jsonb)) AS brand_crossref_cnt,
-      jsonb_array_length(COALESCE(equipment_applications, '[]'::jsonb)) AS equip_cnt,
-      jsonb_array_length(COALESCE(vehicle_applications, '[]'::jsonb)) AS vehicle_cnt,
+      CASE WHEN jsonb_typeof(oem_codes) = 'array' THEN jsonb_array_length(oem_codes) ELSE 0 END AS oem_cnt,
+      CASE WHEN jsonb_typeof(competitor_codes) = 'array' THEN jsonb_array_length(competitor_codes) ELSE 0 END AS comp_cnt,
+      CASE WHEN jsonb_typeof(brand_crossrefs) = 'array' THEN jsonb_array_length(brand_crossrefs) ELSE 0 END AS brand_crossref_cnt,
+      CASE WHEN jsonb_typeof(equipment_applications) = 'array' THEN jsonb_array_length(equipment_applications) ELSE 0 END AS equip_cnt,
+      CASE WHEN jsonb_typeof(vehicle_applications) = 'array' THEN jsonb_array_length(vehicle_applications) ELSE 0 END AS vehicle_cnt,
       (
         (specs IS NOT NULL AND specs <> '{}'::jsonb)
         OR micron_rating IS NOT NULL
