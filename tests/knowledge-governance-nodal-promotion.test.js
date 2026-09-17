@@ -1,12 +1,14 @@
 'use strict';
 
+const crypto = require('crypto');
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
   parseCandidateNote,
   reviewTemplateForCandidate,
   evaluatePromotion,
-  renderApprovedCanonicalNote
+  renderApprovedCanonicalNote,
+  reviewerIdentityPayload
 } = require('../lib/knowledge-governance/nodal-promotion-gate');
 
 const NOTE = `---
@@ -58,18 +60,7 @@ function approve(items, method = 'engineering_review') {
   return items.map((item) => ({ ...item, decision: 'approved', validation_method: method, supporting_evidence_ids: ['EVID-ABC123', 'EVID-DEF456'], reviewer: 'Technical Reviewer', reviewed_at: '2026-09-10T23:00:00-05:00' }));
 }
 
-test('review templates begin blocked and require item-level decisions', () => {
-  const candidate = parseCandidateNote(NOTE);
-  const review = reviewTemplateForCandidate(candidate);
-  const result = evaluatePromotion(candidate, review);
-  assert.equal(result.ready, false);
-  assert.equal(result.counts.metrics, 1);
-  assert.equal(result.counts.relationships, 1);
-  assert.equal(result.counts.procedures, 1);
-});
-
-test('promotion requires all metrics, relationships and procedures to be approved', () => {
-  const candidate = parseCandidateNote(NOTE);
+function fullyApprovedReview(candidate) {
   const review = reviewTemplateForCandidate(candidate);
   review.review_status = 'approved';
   review.reviewer = 'Technical Reviewer';
@@ -86,6 +77,22 @@ test('promotion requires all metrics, relationships and procedures to be approve
   review.metric_reviews = approve(review.metric_reviews, 'cross_source_validation');
   review.relationship_reviews = approve(review.relationship_reviews, 'engineering_review');
   review.procedure_reviews = approve(review.procedure_reviews, 'engineering_review');
+  return review;
+}
+
+test('review templates begin blocked and require item-level decisions', () => {
+  const candidate = parseCandidateNote(NOTE);
+  const review = reviewTemplateForCandidate(candidate);
+  const result = evaluatePromotion(candidate, review);
+  assert.equal(result.ready, false);
+  assert.equal(result.counts.metrics, 1);
+  assert.equal(result.counts.relationships, 1);
+  assert.equal(result.counts.procedures, 1);
+});
+
+test('promotion requires all metrics, relationships and procedures to be approved', () => {
+  const candidate = parseCandidateNote(NOTE);
+  const review = fullyApprovedReview(candidate);
   const result = evaluatePromotion(candidate, review);
   assert.equal(result.ready, true, result.blockers.join('; '));
   const approved = renderApprovedCanonicalNote(NOTE, review);
@@ -123,4 +130,38 @@ test('external source signatures remain a hard blocker', () => {
   const result = evaluatePromotion(candidate, review);
   assert.equal(result.ready, false);
   assert.ok(result.blockers.some((x) => x.includes('source leakage')));
+});
+
+test('live promotion fails closed without signed reviewer identity and accepts a valid reviewer-specific signature', () => {
+  const priorLive = process.env.HERMES_CANONICAL_PROMOTION_LIVE;
+  const priorKeys = process.env.NODAL_REVIEWER_KEYS_JSON;
+  process.env.HERMES_CANONICAL_PROMOTION_LIVE = 'true';
+  try {
+    const candidate = parseCandidateNote(NOTE);
+    const review = fullyApprovedReview(candidate);
+    let result = evaluatePromotion(candidate, review);
+    assert.equal(result.ready, false);
+    assert.ok(result.blockers.some((x) => x.includes('reviewer_identity')));
+
+    const secret = 'unit-test-reviewer-secret';
+    process.env.NODAL_REVIEWER_KEYS_JSON = JSON.stringify({ 'Technical Reviewer': secret });
+    review.reviewer_identity = {
+      id: 'Technical Reviewer',
+      role: 'TECHNICAL_REVIEWER',
+      auth_method: 'hmac_reviewer_key_v1',
+      signature: ''
+    };
+    review.reviewer_identity.signature = crypto
+      .createHmac('sha256', secret)
+      .update(reviewerIdentityPayload(candidate, review))
+      .digest('hex');
+
+    result = evaluatePromotion(candidate, review);
+    assert.equal(result.ready, true, result.blockers.join('; '));
+  } finally {
+    if (priorLive == null) delete process.env.HERMES_CANONICAL_PROMOTION_LIVE;
+    else process.env.HERMES_CANONICAL_PROMOTION_LIVE = priorLive;
+    if (priorKeys == null) delete process.env.NODAL_REVIEWER_KEYS_JSON;
+    else process.env.NODAL_REVIEWER_KEYS_JSON = priorKeys;
+  }
 });
