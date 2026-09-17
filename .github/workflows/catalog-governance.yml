@@ -41,6 +41,8 @@ jobs:
       - run: npm ci --ignore-scripts
       - name: Canonical catalog governance regressions
         run: npm run catalog:governance:test
+      - name: Agency domain authority contract
+        run: node --test tests/agency-domain-contract.test.js
       - name: Fail if a changed file introduces a forbidden direct catalog write
         run: node scripts/verify-catalog-write-boundaries.js
       - name: Inventory all legacy catalog write bypass debt
