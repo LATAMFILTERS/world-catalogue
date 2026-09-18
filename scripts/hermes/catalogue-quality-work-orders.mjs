@@ -30,6 +30,7 @@ function familyRank(item){
   const i=SOURCE_FAMILY_ORDER.findIndex(([d,t])=>item.duty===d && tech.includes(t));
   return i<0?90:i;
 }
+function hdCompetitorOnlyBrand(value){ const n=norm(value); return n==='MANN FILTER' || n==='FRAM'; }
 function officialHost(value){
   try{return new URL(value).hostname.toLowerCase().replace(/^www\./,'');}catch{return null;}
 }
@@ -46,9 +47,11 @@ try{
   const rows=(await db.query(`
     SELECT b.backlog_id,b.sku,b.gap_type,b.priority,b.manufacturer_candidates,b.organization_candidates,
            b.discovery_hints,b.recommended_action,b.research_attempts,b.next_attempt_at,
-           r.duty,r.technology,r.filter_type
+           r.duty,r.technology,r.filter_type,
+           d.canonical_role AS dossier_canonical_role,d.canonical_role_reason AS dossier_role_reason,d.source_code AS dossier_source_code
     FROM hermes_catalogue_backlog b
     JOIN hermes_catalogue_readiness r USING(sku)
+    LEFT JOIN hermes_catalogue_dossier d ON d.sku=b.sku
     WHERE b.status='OPEN'
       AND (b.next_attempt_at IS NULL OR b.next_attempt_at<=now())
     ORDER BY b.priority,b.gap_type,r.duty,r.technology,b.sku
@@ -63,7 +66,21 @@ try{
   }
 
   const items=rows.map(row=>{
-    const target=selectOrg(row);
+    const rawHints=row.discovery_hints||{};
+    const rejectedCandidate=Boolean(
+      row.dossier_canonical_role &&
+      ['COMPETITOR_CODE','REVIEW_REQUIRED'].includes(row.dossier_canonical_role) &&
+      row.dossier_source_code && rawHints.source_candidate_code &&
+      norm(row.dossier_source_code)===norm(rawHints.source_candidate_code)
+    );
+    const discoveryHints=rejectedCandidate?{...rawHints,
+      rejected_source_candidate_brand:rawHints.source_candidate_brand||null,
+      rejected_source_candidate_code:rawHints.source_candidate_code||null,
+      rejected_source_candidate_reason:row.dossier_role_reason||row.dossier_canonical_role,
+      source_candidate_brand:null,source_candidate_code:null,source_candidate_state:'REJECTED_BY_DOSSIER'
+    }:rawHints;
+    const workRow={...row,discovery_hints:discoveryHints};
+    const target=selectOrg(workRow);
     const endpoints=target.organization ? (endpointsByOrg.get(target.organization.organization_id)||[]) : [];
     const source=endpoints[0] || (target.organization?.official_domain ? {endpoint_id:null,url:target.organization.official_domain,endpoint_type:'official_domain',source_type:'html'} : null);
     return {
@@ -73,7 +90,8 @@ try{
       source,source_host:source?officialHost(source.url):null,
       manufacturer_candidates:row.manufacturer_candidates||[],
       organization_candidates:row.organization_candidates||[],
-      discovery_hints:row.discovery_hints||{},
+      discovery_hints:discoveryHints,
+      competitor_hint:target.competitor_hint||discoveryHints.rejected_source_candidate_brand||null,
       recommended_action:row.recommended_action,
       research_attempts:row.research_attempts||0
     };

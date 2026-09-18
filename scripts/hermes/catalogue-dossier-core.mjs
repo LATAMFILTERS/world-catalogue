@@ -12,6 +12,16 @@ export const RESOLVED_AXIS_STATUSES = new Set([
   'NOT_PUBLISHED_BY_SOURCE'
 ]);
 
+export const HD_COMPETITOR_ONLY_BRANDS = new Set(['MANN FILTER','MANN-FILTER','FRAM']);
+
+function brandKey(value) {
+  return String(value || '').trim().toUpperCase().replace(/[^A-Z0-9]+/g,' ');
+}
+
+function segment(value) {
+  return String(value || '').trim().toUpperCase();
+}
+
 function arr(value) {
   return Array.isArray(value) ? value : [];
 }
@@ -44,6 +54,7 @@ export function validateAxis(name, axis = {}) {
       && text(axis.manufacturer)
       && text(axis.source_code)
       && text(axis.product_type)
+      && ['LIGHT_DUTY','HEAVY_DUTY','INDUSTRIAL'].includes(segment(axis.market_segment))
       && sourceUrls.length > 0;
     return { name, status, resolved:Boolean(ok), source_urls:sourceUrls, records };
   }
@@ -104,4 +115,20 @@ export function assessDossier(raw = {}) {
 export function canPromoteCanonicalIdentity(raw = {}) {
   const assessment = assessDossier(raw);
   return assessment.complete && assessment.axes.identity.status === 'VERIFIED';
+}
+
+export function canonicalRoleForDossier(item = {}, raw = {}) {
+  const dossier=normalizeDossier(raw);
+  const brand=brandKey(dossier.identity?.manufacturer);
+  const productSegment=segment(dossier.identity?.market_segment);
+  const duty=segment(item.duty);
+  const competitorOnly=HD_COMPETITOR_ONLY_BRANDS.has(brand);
+  if(!['LIGHT_DUTY','HEAVY_DUTY','INDUSTRIAL'].includes(productSegment)) return {role:'REVIEW_REQUIRED',reason:'product-segment-unverified'};
+  if(duty && productSegment!==duty) {
+    if(competitorOnly && productSegment==='HEAVY_DUTY') return {role:'COMPETITOR_CODE',reason:'confirmed-hd-mann-fram-candidate-cannot-be-ld-base',duty_review_required:true,duty,product_segment:productSegment};
+    return {role:'REVIEW_REQUIRED',reason:'duty-segment-mismatch',duty,product_segment:productSegment};
+  }
+  if(duty==='HEAVY_DUTY' && competitorOnly) return {role:'COMPETITOR_CODE',reason:'mann-fram-are-competitor-codes-in-hd'};
+  if(duty==='LIGHT_DUTY' && competitorOnly) return {role:'CANONICAL_BASE',reason:'mann-fram-allowed-as-ld-codigo-base'};
+  return {role:'CANONICAL_BASE',reason:'canonical-source-authority'};
 }

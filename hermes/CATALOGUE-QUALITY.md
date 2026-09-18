@@ -54,3 +54,13 @@ A SOURCE backlog item is not closed by manufacturer identity alone.
 HERMES must complete one defensible product dossier covering identity, technical specifications, dimensions, OEM codes, cross references, applications and provenance. Identity must be VERIFIED. Every other required axis must be VERIFIED or NOT_PUBLISHED_BY_SOURCE with the official sources checked recorded. Consistency must be VERIFIED with zero unresolved conflicts.
 
 Only a complete dossier may create a review candidate for codigo_base, source_identity and the validated catalogue payload. Partial dossiers remain research work and cannot promote canonical catalogue truth.
+
+## LD vs HD canonical source rule
+
+MANN-FILTER and FRAM have different roles by duty.
+
+For LIGHT_DUTY, a fully verified MANN-FILTER or FRAM dossier may provide the canonical `codigo_base`.
+
+For HEAVY_DUTY, MANN-FILTER and FRAM part numbers are competitor references only. They must never become the canonical `codigo_base` or canonical source identity. HERMES records a complete MANN/FRAM HD dossier as CROSS_REFERENCES evidence and keeps SOURCE open while it searches for the actual HD canonical source.
+
+The dossier must also classify `market_segment`. If official evidence shows that a proposed LD MANN/FRAM candidate is actually HEAVY_DUTY, that candidate is rejected as the LD base, preserved as competitor evidence, and the SKU is flagged for duty/source review.

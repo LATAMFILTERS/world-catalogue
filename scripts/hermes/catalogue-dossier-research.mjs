@@ -4,7 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import pg from 'file:///C:/ELIMSERVER/repos/world-catalogue/node_modules/pg/lib/index.js';
-import { assessDossier } from './catalogue-dossier-core.mjs';
+import { assessDossier, canonicalRoleForDossier } from './catalogue-dossier-core.mjs';
 
 const { Client } = pg;
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
@@ -39,6 +39,7 @@ function dossierShape(){
       source_code:'official exact part number',
       product_name:'official product name',
       product_type:'official filter/product type',
+      market_segment:'LIGHT_DUTY | HEAVY_DUTY | INDUSTRIAL',
       records:['additional official identity facts'],
       source_urls:['https:// official evidence URL'],
       checked_sources:['https:// official pages checked'],
@@ -60,6 +61,10 @@ Use live web search and website visiting. Prefer the manufacturer's official pro
 official PDFs, technical data sheets, OEM catalogues and official application data.
 Never infer facts from part-number shape, similarity, marketplace listings, SEO snippets, or unverified cross references.
 The current ELIMFILTERS codigo_base may be a placeholder. If source_candidate_code is supplied, validate that candidate.
+Classify the product market_segment from official applications/product context as LIGHT_DUTY, HEAVY_DUTY, or INDUSTRIAL.
+Policy: MANN-FILTER and FRAM are canonical codigo_base authorities only for LIGHT_DUTY. In HEAVY_DUTY, MANN-FILTER and FRAM part numbers are competitor cross-reference codes, not canonical codigo_base.
+If the target duty and the confirmed product market_segment conflict, set consistency.status=CONFLICTING and describe the duty mismatch.
+For a HEAVY_DUTY target, if the supplied candidate is MANN-FILTER or FRAM, use it only as a competitor clue and continue searching for the actual canonical HD source manufacturer.
 Collect ALL source-published technical specifications, dimensions, OEM numbers, cross-reference numbers, and applications.
 For vehicle applications capture make, model, year range and engine when published. Preserve source wording and units.
 If an official source genuinely does not publish an axis, mark it NOT_PUBLISHED_BY_SOURCE and list the official pages checked.
@@ -90,6 +95,7 @@ async function research(item){
     },
     selected_organization:item.organization||null,
     selected_source:item.source||null,
+    competitor_hint:item.competitor_hint||null,
     required_json:dossierShape()
   };
   let requestModel=model;
@@ -140,7 +146,7 @@ async function validateIdentity(item,dossier){
   const expected=String(item.discovery_hints?.source_candidate_code||'').trim();
   const code=String(identity.source_code||'').trim();
   const urls=Array.isArray(identity.source_urls)?identity.source_urls.filter(Boolean):[];
-  if(identity.status!=='VERIFIED' || !identity.manufacturer || !code || !identity.product_type || urls.length===0){
+  if(identity.status!=='VERIFIED' || !identity.manufacturer || !code || !identity.product_type || !identity.market_segment || urls.length===0){
     return {ok:false,reason:'identity-axis-incomplete'};
   }
   if(expected && norm(expected)!==norm(code)) return {ok:false,reason:'identity-code-does-not-match-governed-candidate'};
@@ -170,6 +176,7 @@ async function persistDossier(db,item,dossier,assessment,identityCheck,attemptEr
   const payload=[
     item.sku,item.backlog_id,identity.manufacturer||null,identity.source_code||null,
     identity.product_type||null,identity.product_name||null,status,
+    identity.market_segment||null,identityCheck?.canonicalRole?.role||null,identityCheck?.canonicalRole?.reason||null,
     axisStatus(dossier,'identity'),axisStatus(dossier,'technical_specs'),axisStatus(dossier,'dimensions'),
     axisStatus(dossier,'oem_codes'),axisStatus(dossier,'cross_references'),axisStatus(dossier,'applications'),
     String(dossier?.consistency?.status||'').toUpperCase()||null,
@@ -181,16 +188,16 @@ async function persistDossier(db,item,dossier,assessment,identityCheck,attemptEr
     sha(dossier),now,status==='DOSSIER_COMPLETE'?now:null
   ];
   await db.query(`INSERT INTO hermes_catalogue_dossier
-    (sku,backlog_id,manufacturer,source_code,product_type,product_name,dossier_status,
+    (sku,backlog_id,manufacturer,source_code,product_type,product_name,dossier_status,market_segment,canonical_role,canonical_role_reason,
      identity_status,technical_specs_status,dimensions_status,oem_codes_status,cross_references_status,applications_status,
      consistency_status,provenance_status,unresolved_axes,conflicts,identity,technical_specs,dimensions,oem_codes,
      cross_references,applications,provenance,consistency,source_urls,dossier_hash,research_attempts,
      first_researched_at,last_researched_at,completed_at,updated_at)
-    VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16::jsonb,$17::jsonb,$18::jsonb,$19::jsonb,$20::jsonb,
-      $21::jsonb,$22::jsonb,$23::jsonb,$24::jsonb,$25::jsonb,$26::jsonb,$27,1,$28,$28,$29,now())
+    VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18::jsonb,$19::jsonb,$20::jsonb,$21::jsonb,$22::jsonb,
+      $23::jsonb,$24::jsonb,$25::jsonb,$26::jsonb,$27::jsonb,$28::jsonb,$29,1,$30,$30,$31,now())
     ON CONFLICT(sku) DO UPDATE SET
       backlog_id=excluded.backlog_id,manufacturer=excluded.manufacturer,source_code=excluded.source_code,
-      product_type=excluded.product_type,product_name=excluded.product_name,dossier_status=excluded.dossier_status,
+      product_type=excluded.product_type,product_name=excluded.product_name,dossier_status=excluded.dossier_status,market_segment=excluded.market_segment,canonical_role=excluded.canonical_role,canonical_role_reason=excluded.canonical_role_reason,
       identity_status=excluded.identity_status,technical_specs_status=excluded.technical_specs_status,
       dimensions_status=excluded.dimensions_status,oem_codes_status=excluded.oem_codes_status,
       cross_references_status=excluded.cross_references_status,applications_status=excluded.applications_status,
@@ -242,6 +249,7 @@ const db=new Client({connectionString:url});
 await db.connect();
 const migration=fs.readFileSync(path.join(root,'scripts/migrations/run_110_hermes_catalogue_dossier_20260918.sql'),'utf8');
 await db.query(migration);
+await db.query(fs.readFileSync(path.join(root,'scripts/migrations/run_111_hermes_duty_source_role_20260918.sql'),'utf8'));
 const run={schema_version:'2.0.0',generated_at:new Date().toISOString(),selected:selected.length,results:[]};
 
 try{
@@ -263,13 +271,29 @@ try{
     const dossier=researched.dossier||{};
     const assessment=assessDossier(dossier);
     const identityCheck=await validateIdentity(item,dossier);
-    const status=await persistDossier(db,item,dossier,assessment,identityCheck);
-    if(status!=='DOSSIER_COMPLETE'){
-      const reason=[...assessment.unresolved_axes,identityCheck.ok?null:identityCheck.reason].filter(Boolean).join('; ');
+    const canonicalRole=canonicalRoleForDossier(item,dossier);
+    const canonicalEligible=canonicalRole.role==='CANONICAL_BASE';
+    const status=await persistDossier(db,item,dossier,assessment,{...identityCheck,canonicalRole});
+    if(status!=='DOSSIER_COMPLETE' || !canonicalEligible){
+      const reason=[...assessment.unresolved_axes,identityCheck.ok?null:identityCheck.reason,canonicalEligible?null:canonicalRole.reason].filter(Boolean).join('; ');
+      let competitorEvidenceId=null;
+      if(status==='DOSSIER_COMPLETE' && canonicalRole.role==='COMPETITOR_CODE'){
+        competitorEvidenceId='CQR_'+stableId(item.sku+'|'+dossier.identity.manufacturer+'|'+dossier.identity.source_code+'|'+sha(dossier));
+        await db.query(`INSERT INTO hermes_catalogue_evidence
+          (evidence_id,sku,field_group,field_name,authority,source_type,source_url,source_hash,verification_status,payload,provenance,captured_at,updated_at)
+          VALUES($1,$2,'CROSS_REFERENCES','complete_competitor_dossier',$3,'HERMES_COMPLETE_DOSSIER',$4,$5,'VERIFIED',$6::jsonb,$7::jsonb,now(),now())
+          ON CONFLICT(evidence_id) DO UPDATE SET payload=excluded.payload,provenance=excluded.provenance,updated_at=now()`,
+          [competitorEvidenceId,item.sku,dossier.identity.manufacturer,dossier.identity.source_urls?.[0]||null,sha(dossier),
+           JSON.stringify({manufacturer:dossier.identity.manufacturer,part_number:dossier.identity.source_code,market_segment:dossier.identity.market_segment,dossier}),
+           JSON.stringify({engine:'HERMES_COMPLETE_DOSSIER',canonical_role:canonicalRole})]);
+        await db.query(`UPDATE hermes_catalogue_dossier SET evidence_ids=$2::jsonb,updated_at=now() WHERE sku=$1`,
+          [item.sku,JSON.stringify([competitorEvidenceId])]);
+      }
+      const retryInterval=canonicalRole.role==='COMPETITOR_CODE'?'1 hour':'24 hours';
       await db.query(`UPDATE hermes_catalogue_backlog SET research_attempts=research_attempts+1,
-        last_research_at=now(),next_attempt_at=now()+interval '24 hours',last_research_error=$2,updated_at=now()
-        WHERE backlog_id=$1`,[item.backlog_id,reason||'dossier-incomplete']);
-      run.results.push({sku:item.sku,status:'DOSSIER_INCOMPLETE',unresolved_axes:assessment.unresolved_axes,reason});
+        last_research_at=now(),next_attempt_at=now()+($2::text)::interval,last_research_error=$3,last_evidence_id=coalesce($4,last_evidence_id),updated_at=now()
+        WHERE backlog_id=$1`,[item.backlog_id,retryInterval,reason||'dossier-incomplete',competitorEvidenceId]);
+      run.results.push({sku:item.sku,status:canonicalRole.role==='COMPETITOR_CODE'?'COMPETITOR_CODE':'DOSSIER_INCOMPLETE',canonical_role:canonicalRole,unresolved_axes:assessment.unresolved_axes,reason,evidence_id:competitorEvidenceId});
       continue;
     }
 
@@ -304,6 +328,7 @@ try{
       change_type:'catalogue_correction',
       workflow_status:'REVIEW_REQUIRED',
       dossier_status:'DOSSIER_COMPLETE',
+      canonical_role:canonicalRole,
       approval_required:true,
       automatic_publication_allowed:false,
       evidence_id:evidenceId,

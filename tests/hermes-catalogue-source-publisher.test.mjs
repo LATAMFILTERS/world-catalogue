@@ -38,3 +38,20 @@ test('catalogue snapshot carries canonical source identity',()=>{
   assert.match(source,/canonical_source_brand/);
   assert.match(source,/canonical_source_evidence|canonical_evidence/);
 });
+
+test('HD publisher rejects MANN/FRAM as canonical codigo_base',()=>{
+  const approvedAt='2026-09-18T07:00:00.000Z';
+  const bundle={
+    research_bundle_id:'RB_HD_MANN',
+    knowledge_candidate:{research_bundle_id:'RB_HD_MANN',workflow_status:'APPROVED',approval_required:true,approved_by:'Victor Abreu',approved_at:approvedAt},
+    catalogue_candidate:{
+      research_bundle_id:'RB_HD_MANN',status:'APPROVED_FOR_PUBLICATION',change_type:'catalogue_correction',
+      approval:{approved_by:'Victor Abreu',approved_at:approvedAt,approved_fields:['codigo_base','source_identity']},
+      publication:{target_sku:'EH60001',approved_fields:['codigo_base','source_identity'],proposed_values:{
+        codigo_base:'C40001',
+        source_identity:{canonical_source_brand:'MANN-FILTER',canonical_source_code:'C40001',canonical_source_url:'https://www.mann-filter.com/example',canonical_source_status:'VERIFIED'}
+      }},evidence:[],source_urls:['https://www.mann-filter.com/example']
+    }
+  };
+  assert.throws(()=>buildCataloguePublicationPlan({bundle,catalog:[{sku:'EH60001',duty:'HEAVY_DUTY'}],generatedAt:approvedAt}),/competitor codes in HEAVY_DUTY/);
+});
