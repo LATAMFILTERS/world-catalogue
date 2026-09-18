@@ -7,7 +7,7 @@ import { pathToFileURL } from 'node:url';
 export const PUBLISHABLE_CATALOGUE_FIELDS = new Set([
   'filter_type', 'duty', 'technology', 'dimensions', 'technical_specs',
   'equipment_applications', 'oem_codes', 'competitor_codes',
-  'brand_crossrefs', 'source_identity'
+  'brand_crossrefs', 'source_identity', 'codigo_base', 'vehicle_applications'
 ]);
 
 function canonical(value) {

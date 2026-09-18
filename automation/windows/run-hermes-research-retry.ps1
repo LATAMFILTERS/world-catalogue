@@ -73,7 +73,7 @@ try {
   $env:HERMES_COLLECTION_DRY_RUN = 'false'
   $env:HERMES_GROQ_MODEL = 'groq/compound'
   $env:HERMES_CATALOGUE_QUALITY_SYNC = 'true'
-  $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '4'
+  $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '1'
   $env:HERMES_CATALOGUE_RESEARCH_PACING_MS = '20000'
   $env:HERMES_CATALOGUE_RESEARCH_RETRIES = '2'
   $env:HERMES_REVIEW_BASE_URL = 'https://elimfilters-search-pro.onrender.com/hermes/review'
