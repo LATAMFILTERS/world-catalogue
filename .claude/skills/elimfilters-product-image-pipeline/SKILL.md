@@ -1,6 +1,6 @@
 ---
 name: elimfilters-product-image-pipeline
-description: Blocking fail-closed workflow for ELIMFILTERS product imagery. Uses fresh verified official manufacturer source images, live catalog SKU resolution, technology/asset resolution, validated AUTHORIZED_RENDER_PACKET PASS, phased approvals, protected-view locks, and automatic post-approval persistence.
+description: Blocking fail-closed workflow for ELIMFILTERS product imagery. Uses fresh verified official manufacturer source images, live catalog SKU resolution, technology/asset resolution, validated AUTHORIZED_RENDER_PACKET PASS, Branding-owned autonomous policy approval, protected-view locks, and automatic R2/catalog persistence.
 activation: Trigger for every ELIMFILTERS filter image generation, edit, rebrand, approval, or batch workflow.
 ---
 
@@ -62,11 +62,11 @@ Missing any required geometry evidence = `STOP_RENDER`.
 Only after Steps 1–3 PASS:
 - resolve the homologous ELIMFILTERS SKU live from PostgreSQL/world catalogue;
 - resolve filter type and technology live;
-- load the exact current repository logo `frontend/public/assets/logo-elimfilters.png`;
+- load the exact current repository logo `frontend/public/assets/elimfilters-logo-white.png`;
 - load the official technology asset from `frontend/public/assets/`;
 - apply body `#414141`, semi-matte industrial coating;
 - apply lithography `#CBCBCB`, metallic silver satin;
-- use `TOTAL ASSET PROTECTION`;
+- use `TOTAL ASSETS PROTECTION`;
 - use the live-resolved ELIMFILTERS SKU;
 - use the live-resolved descriptor/filter type;
 - use the exact resolved technology;
@@ -75,7 +75,7 @@ Only after Steps 1–3 PASS:
 The final image transformation must preserve the source geometry. It may change paint and authorized lithography only; it must not redesign the mechanical object or create an infographic/catalog sheet.
 
 ## Required chain
-`FLEETGUARD_SPINON_LUBE_CATALOG -> PAGE_POSITION_SKU -> CURRENT_SKU_PRODUCT_PAGE -> CURRENT_SKU_SCREENSHOT -> CURRENT_SKU_OFFICIAL_SOURCE_IMAGE -> HASH_BINDING -> VERTICAL_GEOMETRY -> HORIZONTAL_GEOMETRY -> CAP_BASE_THREAD_GASKET_INLET_GEOMETRY -> LIVE_DB_LOOKUP -> ELIMFILTERS_SKU -> FILTER_TYPE -> TECHNOLOGY -> OFFICIAL_LOGO_ASSET -> OFFICIAL_TECHNOLOGY_ASSET -> AUTHORIZED_RENDER_PACKET_PASS -> SOURCE_REFERENCED_IMAGE_TRANSFORMATION -> POST_RENDER_VALIDATION -> USER_APPROVAL -> ATOMIC_APPROVAL_PERSISTENCE -> R2_PUBLICATION_VERIFICATION -> PERSISTED`.
+`FLEETGUARD_SPINON_LUBE_CATALOG -> PAGE_POSITION_SKU -> CURRENT_SKU_PRODUCT_PAGE -> CURRENT_SKU_SCREENSHOT -> CURRENT_SKU_OFFICIAL_SOURCE_IMAGE -> HASH_BINDING -> VERTICAL_GEOMETRY -> HORIZONTAL_GEOMETRY -> CAP_BASE_THREAD_GASKET_INLET_GEOMETRY -> LIVE_DB_LOOKUP -> ELIMFILTERS_SKU -> FILTER_TYPE -> TECHNOLOGY -> OFFICIAL_LOGO_ASSET -> OFFICIAL_TECHNOLOGY_ASSET -> AUTHORIZED_RENDER_PACKET_PASS -> SOURCE_REFERENCED_IMAGE_TRANSFORMATION -> POST_RENDER_VALIDATION -> BRANDING_POLICY_APPROVAL -> APPROVED_GOLDEN_MASTER -> R2_PUBLICATION_VERIFICATION -> CATALOG_VISUAL_LIVE`.
 
 Every filter is an individual mechanical object. Never assume cap, baseplate, thread, gasket, inlet-hole pattern, central support, overall dimensions, body proportions, or composition from another SKU, even within the same family.
 
@@ -90,13 +90,13 @@ Never infer, remember, copy, or hardcode SKU, technology, color, geometry, or ar
 5. `CURRENT_SKU_GEOMETRY_REQUIRED`: a geometry evidence JSON bound to the current image hash + screenshot hash must contain every mandatory vertical/horizontal/cap/base/thread/gasket/inlet/support/perspective/composition field.
 6. `DATABASE_SKU_REQUIRED`: run `resolve-competitor-sku.mjs` against `world_catalogue.elimfilters_catalog`; resolution must be authoritative and non-arbitrary. The returned ELIMFILTERS SKU is authoritative.
 7. `TECHNOLOGY_ASSET_REQUIRED`: run `resolve-technology-asset.mjs`; technology must derive from live catalog filter type/technology and resolve to the official asset under `frontend/public/assets/`.
-8. `LOGO_ASSET_REQUIRED`: official `frontend/public/assets/logo-elimfilters.png` must exist as binary. This exact current repository asset is the only ELIMFILTERS brand logo authority.
+8. `LOGO_ASSET_REQUIRED`: official `frontend/public/assets/elimfilters-logo-white.png` must exist as binary. This exact current repository asset is the only ELIMFILTERS brand logo authority.
 9. `AUTHORIZED_RENDER_PACKET_REQUIRED`: run `prepare-product-render.mjs` with catalogue URL/page/position and geometry-evidence path. Required status: `PASS`.
 10. `IMAGE_TOOL_CALL_GATE`: image generator may be called only after reading the exact current SKU PASS packet and using the packet values. No free-form substitutions.
 11. `POST_RENDER_VALIDATION_REQUIRED`: reject before presentation if SKU, technology, colors, artwork, geometry, source binding, screenshot binding, official logo, or protected views drift from packet.
-12. `USER_APPROVAL_REQUIRED`: only explicit user approval creates FINAL_APPROVED state.
-13. `ATOMIC_APPROVAL_PERSISTENCE_REQUIRED`: explicit approval immediately updates source JSON, production master, canonical approved PNG, R2 publication, R2 verification, master storage fields and supersession.
-14. `APPROVAL_NO_MANUAL_UPLOAD_REQUIRED`: user must not be asked to manually upload an approved render when publisher is configured.
+12. `BRANDING_POLICY_APPROVAL_REQUIRED`: Branding may autonomously approve a routine image only when all mandatory audits are PASS, unresolved findings are zero and policy exceptions are zero. Human escalation is exception-only.
+13. `ATOMIC_BRANDING_RELEASE_REQUIRED`: Branding approval immediately freezes the exact audited bytes as Golden Master and drives R2 publication, verification and catalog visual writeback.
+14. `NO_PER_IMAGE_HUMAN_REVIEW_REQUIRED`: Victor is not a routine product-image reviewer; only policy exceptions, unresolved ambiguity, new visual families or out-of-policy supersession escalate.
 
 Any failed gate disables image generation. Do not substitute a simulated image, dashboard, infographic, generic filter, remembered product, or a newly invented spin-on body.
 
@@ -114,23 +114,23 @@ A result must never be shown as a candidate if any of the following occurs:
 - infographic, spec sheet, right-side panel, QR, cross-reference table, OEM data, website, claims or unrelated text is added.
 
 ## State machine
-`CATALOG_LOCKED -> SOURCE_SCREENSHOT_LOCKED -> GEOMETRY_LOCKED -> AUTHORIZED_RENDER_PACKET_PASS -> RENDER_CANDIDATE -> USER_APPROVED -> FINAL_APPROVED -> R2_PUBLISHED -> PERSISTED`.
+`CATALOG_LOCKED -> SOURCE_SCREENSHOT_LOCKED -> GEOMETRY_LOCKED -> AUTHORIZED_RENDER_PACKET_PASS -> RENDER_CANDIDATE -> CANDIDATE_AUDIT_PASS -> BRANDING_APPROVED -> APPROVED_GOLDEN_MASTER -> R2_PUBLISHED_VERIFIED -> CATALOG_VISUAL_LIVE`.
 
-## Approval persistence — atomic command
-Explicit approval means execute immediately, in the same workflow:
+## Branding release persistence — atomic command
+A policy-compliant Branding approval means execute immediately, in the same workflow:
 1. replace/supersede prior source-image JSON;
 2. replace/supersede prior production-master JSON;
 3. preserve approved gen ID, SHA-256, dimensions, source/screenshot/geometry binding, logo asset SHA/path and approval timestamp;
-4. persist exact approved PNG under `product-identity/approved-images/`;
+4. persist exact approved PNG under `product-identity/approved-masters/<SKU>/approved-master.png` with its Branding approval record;
 5. publish through `.github/workflows/publish-approved-render-r2.yml` to `elimfilters-renders`;
 6. verify R2 object exists;
 7. write exact R2 key and `https://cdn.elimfilters.com/<key>` URL to master;
 8. mark older same-SKU render `SUPERSEDED`;
-9. only then report approval fully persisted.
+9. only then report `CATALOG_VISUAL_LIVE`; routine release does not wait for Victor review.
 
 ## Authority
 Canonical machine contract: `product-identity/pipelines/manufacturer-source-rebrand.v2.json`.
 Canonical hard gates: `product-identity/pipelines/render-hard-gates.v1.json`.
 Canonical executor: `product-identity/scripts/prepare-product-render.mjs`.
-Canonical publisher: `.github/workflows/publish-approved-render-r2.yml`.
-Operational authority: `product-identity/PIPELINE_PRODUCT_IMAGE_AUTHORITY.md`.
+Canonical publisher tool: `.github/workflows/publish-approved-render-r2.yml`.
+Release authority: `product-identity/branding/BRANDING_RELEASE_AUTHORITY.v1.json` owned by the Branding Subagent. Render pipelines, auditors and publishers are subordinate tools, not release authorities.

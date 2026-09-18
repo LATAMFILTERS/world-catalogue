@@ -84,16 +84,12 @@ jobs:
             record="product-identity/approved-masters/${sku}/approval-record.json"
             test -f "$record"
 
-            status="$(node -e "const j=require('./$record');process.stdout.write(String(j.status||''))")"
-            record_sha="$(node -e "const j=require('./$record');process.stdout.write(String(j.approved_master_sha256||''))")"
             approved_at="$(node -e "const j=require('./$record');process.stdout.write(String(j.approved_on||''))")"
             sha256="$(sha256sum "$image" | awk '{print $1}')"
 
-            test "$status" = "APPROVED_GOLDEN_MASTER"
-            if [ "$record_sha" != "$sha256" ]; then
-              echo "APPROVAL_HASH_MISMATCH:$sku" >&2
-              exit 2
-            fi
+            node product-identity/scripts/validate-branding-approval-record.mjs \
+              "--record=${record}" \
+              "--image-sha=${sha256}"
             image_key="products/${sku}/approved/${sha256}.png"
             manifest_key="products/${sku}/manifest.json"
             image_url="${CDN_BASE}/${image_key}"
