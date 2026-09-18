@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "authority_id": "ELIMFILTERS_BRANDING_RELEASE_AUTHORITY_V1",
+  "status": "ACTIVE_EXCLUSIVE",
+  "organizational_chain": [
+    "chief_commercial",
+    "marketing",
+    "branding"
+  ],
+  "release_authority": "branding",
+  "human_review_policy": {
+    "routine_policy_compliant_images_require_human_review": false,
+    "escalate_only": [
+      "policy_exception",
+      "new_visual_family",
+      "unresolved_reference_ambiguity",
+      "contradictory_mandatory_audit_evidence",
+      "out_of_policy_visual_master_supersession"
+    ]
+  },
+  "routine_release_requirements": {
+    "status": "APPROVED_GOLDEN_MASTER",
+    "approval_method": "POLICY_COMPLIANT_AUTONOMOUS",
+    "responsible_subagent": "branding",
+    "branding_decision": "APPROVED_BY_POLICY",
+    "policy_compliance_status": "PASS",
+    "unresolved_findings": 0,
+    "exception_count": 0,
+    "source_identity_status": "PASS",
+    "brand_identity_status": "PASS",
+    "geometry_status": "PASS",
+    "audit_bundle_sha256_required": true,
+    "approved_master_sha256_required": true
+  },
+  "r2_release": {
+    "publisher_is_tool_not_authority": true,
+    "bucket": "elimfilters-renders",
+    "public_base": "https://cdn.elimfilters.com",
+    "image_key_pattern": "products/{sku}/approved/{sha256}.png",
+    "manifest_key_pattern": "products/{sku}/manifest.json",
+    "head_verification_required": true,
+    "public_url_verification_required": true
+  },
+  "catalog_activation": {
+    "authority": "branding",
+    "visual_fields_only": true,
+    "canonical_product_identity_mutation_forbidden": true,
+    "required_prior_state": "R2_PUBLISHED_VERIFIED",
+    "success_state": "CATALOG_VISUAL_LIVE"
+  },
+  "legacy": {
+    "allow_explicit_user_approval_records_created_before_or_on": "2026-09-18",
+    "legacy_method": "LEGACY_EXPLICIT_USER_APPROVAL"
+  }
+}
