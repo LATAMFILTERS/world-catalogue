@@ -85,3 +85,13 @@ test('Part Search resolves governed Donaldson exact_part_reference aliases', () 
   assert.ok(route.includes("UPPER(e.brand) = 'DONALDSON'"), 'Donaldson exact references must be scoped by brand');
   assert.ok(route.includes("source: 'exact_part_reference'"), 'must expose exact reference source');
 });
+
+test('public search excludes catalog-inactive hardware', () => {
+  const server = read('server-original.js');
+  const searchStart = server.indexOf("app.get('/api/search'");
+  const debugStart = server.indexOf("app.get('/api/debug/bad-jsonb-applications'", searchStart);
+  const publicSearch = server.slice(searchStart, debugStart);
+  assert.ok(publicSearch.includes('elimfilters_catalog_active_v'), 'public routes must use active catalog view');
+  assert.ok(publicSearch.includes("catalog_active = false"), 'search must fail closed for explicitly excluded SKU/base');
+  assert.ok(publicSearch.includes("source: 'catalog_scope_excluded'"), 'excluded scope must return explicit empty resolution');
+});
