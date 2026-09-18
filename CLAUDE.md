@@ -79,3 +79,11 @@ A `STANDBY` or `CI` node must not run recurring production schedulers. Before ad
 - In engineering, product, validation, performance, and technical-claim contexts, artificial intelligence may be described only as mathematical/computational engineering support for evaluating demanding operating conditions; it does not replace physical validation, documented testing, or professional engineering judgment.
 - In corporate leadership and governance contexts, ELIMFILTERS may accurately disclose specialized Executive AI Agents as AI-operated executive functions under the human-governed Chief Executive Office. They must never be represented as undisclosed human employees or natural persons, and agent autonomy must not be overstated.
 - Public descriptions of the executive-agent model must emphasize defined responsibility, delegated authority, accountability, traceability, escalation, and human intervention rather than novelty or fictional staffing.
+
+## Context-free ELIMFILTERS product-image entry
+
+Any ELIMFILTERS product-image generation, edit, rebrand, approval, or publication request must activate the existing `.claude/skills/elimfilters-product-image-pipeline/SKILL.md` before any image-generation call. This applies even in a fresh conversation with no prior context.
+
+If the request names the Branding Subagent, or otherwise asks for an ELIMFILTERS product image, the commercial authority chain is owned in sibling repository `LATAMFILTERS/elimfilters-crm` as `chief_commercial -> marketing -> branding -> branding_product_image_release_v1`. This repository remains the canonical source for SKU/product truth, official-reference acquisition, render hard gates, brand assets used by the product-image pipeline, and catalog visual writeback.
+
+Do not ask the user to restate routine colors, logo, technology, release procedure, or per-image approval when those values resolve from the canonical catalog, Branding governance, and the authorized render packet. Fail closed only when required product identity, official mechanical reference, or mandatory evidence cannot be resolved.
