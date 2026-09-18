@@ -10,7 +10,8 @@ export const COLUMN_GROUPS = {
   equipment_applications: ['equipment_applications'], oem_codes: ['oem_codes'],
   competitor_codes: ['competitor_codes'], brand_crossrefs: ['brand_crossrefs'],
   dimensions: ['thread_size', 'height_mm', 'outer_diameter_mm', 'inner_diameter_mm', 'gasket_od_mm', 'gasket_id_mm'],
-  technical_specs: ['micron_rating', 'bypass_valve_psi', 'iso_test_method', 'anti_drainback_valve', 'nominal_efficiency', 'filter_media', 'burst_pressure_psi', 'collapse_pressure_psi', 'installation_type', 'attachment_type', 'is_primary']
+  technical_specs: ['micron_rating', 'bypass_valve_psi', 'iso_test_method', 'anti_drainback_valve', 'nominal_efficiency', 'filter_media', 'burst_pressure_psi', 'collapse_pressure_psi', 'installation_type', 'attachment_type', 'is_primary'],
+  source_identity: ['canonical_source_brand','canonical_source_code','canonical_source_url','canonical_source_status','canonical_verified_at','canonical_evidence']
 };
 
 function canonical(value) {
@@ -54,7 +55,7 @@ export function validateCataloguePublicationPlan(plan, { now = Date.now(), maxAg
 }
 
 export function logicalValue(row, field) {
-  if (field === 'dimensions' || field === 'technical_specs') {
+  if (field === 'dimensions' || field === 'technical_specs' || field === 'source_identity') {
     return Object.fromEntries(COLUMN_GROUPS[field].filter((column) => row[column] !== null && row[column] !== undefined).map((column) => [column, row[column]]));
   }
   return row[field] ?? null;

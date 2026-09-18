@@ -72,6 +72,8 @@ try {
   $env:HERMES_EMAIL_LIVE = 'true'
   $env:HERMES_COLLECTION_DRY_RUN = 'false'
   $env:HERMES_GROQ_MODEL = 'groq/compound'
+  $env:HERMES_CATALOGUE_QUALITY_SYNC = 'true'
+  $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '20'
   $env:HERMES_REVIEW_BASE_URL = 'https://elimfilters-search-pro.onrender.com/hermes/review'
   $env:HERMES_STATE_ROOT = (Join-Path $StateDir 'research')
 
@@ -100,6 +102,11 @@ try {
   }
   Remove-Item Env:GITHUB_OUTPUT -ErrorAction SilentlyContinue
 
+  npm run hermes:catalogue:quality:sync | Tee-Object -FilePath $log -Append
+  if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue quality sync failed' }
+  npm run hermes:catalogue:work-orders | Tee-Object -FilePath $log -Append
+  if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue work-order dispatch failed' }
+  try { npm run hermes:catalogue:research | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
   npm run hermes:research | Tee-Object -FilePath $log -Append
   $researchExit = $LASTEXITCODE
   if ($researchExit -ne 0) {

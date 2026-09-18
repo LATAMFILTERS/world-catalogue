@@ -52,6 +52,8 @@ try {
   $env:HERMES_COLLECTION_DRY_RUN = 'false'
   $env:HERMES_BASELINE_MODE = 'false'
   $env:HERMES_GROQ_MODEL = 'groq/compound'
+  $env:HERMES_CATALOGUE_QUALITY_SYNC = 'true'
+  $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '20'
   $env:HERMES_REVIEW_BASE_URL = 'https://elimfilters-search-pro.onrender.com/hermes/review'
 
   if (-not (Test-Path (Join-Path $RepoPath '.git'))) {
@@ -115,6 +117,11 @@ try {
     node scripts\hermes\import-seo-knowledge-gaps.mjs seo-geo-audit-out\hermes-knowledge-gaps.json | Tee-Object -FilePath $log -Append
   } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
 
+  npm run hermes:catalogue:quality:sync | Tee-Object -FilePath $log -Append
+  if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue quality sync failed' }
+  npm run hermes:catalogue:work-orders | Tee-Object -FilePath $log -Append
+  if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue work-order dispatch failed' }
+  try { npm run hermes:catalogue:research | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
   try { npm run hermes:research | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
   try { npm run hermes:validate:real | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
   try { npm run hermes:report:real | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
