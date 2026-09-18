@@ -2276,6 +2276,21 @@ app.get('/api/debug/suspects-equipment', adminLimiter, requireAdmin, async (req,
   }
 });
 
+// ─── CATALOG MUTATION HTTP GATE ─────────────────────────────────────────────────────────────────────
+// The public Search runtime is read-only by default. Legacy /api/import and /api/admin
+// mutation routes remain available only during an explicit maintenance window.
+// Local governed scripts may still write through the catalog write gateway; this gate
+// only prevents the long-running HTTP surface from becoming an implicit writer.
+app.use(['/api/import', '/api/admin'], (req, res, next) => {
+  const mutating = ['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method);
+  if (!mutating) return next();
+  if (String(process.env.ELIM_CATALOG_MUTATION_API_ENABLED || '').toLowerCase() === 'true') return next();
+  return res.status(503).json({
+    error: 'CATALOG_MUTATION_API_DISABLED',
+    message: 'Catalog HTTP mutations are disabled on the production Search runtime; use the governed Lenovo maintenance path.'
+  });
+});
+
 // ─── POST /api/import/donaldson ─────────────────────────────────────────────────────────────────────────
 const FILTER_TYPE_CANONICAL = {
   'Air Filter':                'air',
