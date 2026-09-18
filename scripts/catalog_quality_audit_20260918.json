@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-18",
+  "total_skus": 13948,
+  "unique_skus": 13948,
+  "structural_corrections": {
+    "p550990": "ES90990 -> EL80990 / SYNTRAX™ / oil",
+    "et9_hydrocore_to_turbocore": 35,
+    "ef3_syntrax_to_syntapore": 100,
+    "ed4_air_to_air_dryer": 13,
+    "ew7_other_to_coolant": 47,
+    "canonical_source_case_normalized": 101
+  },
+  "source_traceability": {
+    "verified_primary_governance_backfill": 924,
+    "verified_fallback_governance_backfill": 384,
+    "closed_donaldson_universe_backfill": 3712,
+    "explicit_p550990_backfill": 1,
+    "canonical_verified": 6877,
+    "missing_canonical_source": 7070,
+    "brands": {
+      "DONALDSON": 4665,
+      "FRAM": 987,
+      "MANN-FILTER": 842,
+      "FLEETGUARD": 373,
+      "RACOR": 9,
+      "CATERPILLAR": 1,
+      "PARKER": 1
+    }
+  },
+  "readiness": {
+    "HEAVY_DUTY": {
+      "total": 7392,
+      "core_ready": 3935,
+      "needs_source": 2344,
+      "needs_applications": 623,
+      "needs_crossrefs": 2291,
+      "needs_image": 6859,
+      "needs_dimensions": 2035,
+      "needs_packaging": 7392
+    },
+    "LIGHT_DUTY": {
+      "total": 6556,
+      "core_ready": 731,
+      "needs_source": 4727,
+      "needs_applications": 984,
+      "needs_crossrefs": 3093,
+      "needs_image": 6553,
+      "needs_dimensions": 1955,
+      "needs_packaging": 6556
+    }
+  },
+  "reference_quality": {
+    "safe_duplicate_groups": 1673,
+    "safe_duplicate_skus": 475,
+    "provenance_conflict_groups": 119,
+    "provenance_conflict_skus": 103,
+    "auto_cleanup_applied": false
+  },
+  "ld_application_channel": {
+    "equipment_applications": 0,
+    "EA3_vehicle_apps": 2728,
+    "EC3_vehicle_apps": 530,
+    "EF3_vehicle_apps": 1078,
+    "EL3_vehicle_apps": 1236
+  },
+  "rules": [
+    "No canonical source inferred from part-number shape",
+    "Only exact closed-universe or pre-verified governance evidence is auto-promoted",
+    "Provenance conflicts are never collapsed automatically"
+  ]
+}
