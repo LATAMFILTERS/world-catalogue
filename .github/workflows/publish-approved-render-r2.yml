@@ -1,14 +1,14 @@
-name: Publish Approved Render to R2
+name: Publish Approved Master to R2
 
 on:
   push:
     branches: [main]
     paths:
-      - 'product-identity/approved-images/*.png'
+      - 'product-identity/approved-masters/*/approved-master.png'
   workflow_dispatch:
     inputs:
       image_path:
-        description: 'Repository path to one approved PNG'
+        description: 'Repository path to one approved-master.png'
         required: true
         type: string
 
@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: publish-approved-render-r2-${{ github.ref }}
+  group: publish-approved-master-r2-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -35,13 +35,15 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Validate secrets
+      - name: Validate R2 configuration
         shell: bash
         run: |
           set -euo pipefail
           test -n "$R2_ACCOUNT_ID"
           test -n "$AWS_ACCESS_KEY_ID"
           test -n "$AWS_SECRET_ACCESS_KEY"
+          test -n "$R2_BUCKET"
+          test -n "$CDN_BASE"
 
       - name: Ensure AWS CLI
         shell: bash
@@ -51,21 +53,20 @@ jobs:
             echo "$HOME/.local/bin" >> "$GITHUB_PATH"
           fi
 
-      - name: Resolve approved images
-        id: images
+      - name: Resolve approved masters
         shell: bash
         run: |
           set -euo pipefail
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             printf '%s\n' "${{ inputs.image_path }}" > /tmp/approved-images.txt
           else
-            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'product-identity/approved-images/*.png' > /tmp/approved-images.txt
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" --               'product-identity/approved-masters/*/approved-master.png' > /tmp/approved-images.txt
           fi
           sed -i '/^[[:space:]]*$/d' /tmp/approved-images.txt
           test -s /tmp/approved-images.txt
           cat /tmp/approved-images.txt
 
-      - name: Upload, verify and record
+      - name: Upload image and JSON manifest
         shell: bash
         run: |
           set -euo pipefail
@@ -73,55 +74,79 @@ jobs:
 
           while IFS= read -r image; do
             test -f "$image"
-            base="$(basename "$image")"
 
-            if [[ ! "$base" =~ ^(EL[0-9A-Z]+)-([A-Z0-9-]+)-([0-9]+)of([0-9]+)-approved\.png$ ]]; then
-              echo "INVALID_APPROVED_FILENAME:$base" >&2
+            if [[ ! "$image" =~ ^product-identity/approved-masters/([A-Z0-9-]+)/approved-master\.png$ ]]; then
+              echo "INVALID_APPROVED_MASTER_PATH:$image" >&2
               exit 2
             fi
 
             sku="${BASH_REMATCH[1]}"
-            competitor="${BASH_REMATCH[2]}"
-            pos="${BASH_REMATCH[3]}"
-            total="${BASH_REMATCH[4]}"
-            printf -v pos2 '%02d' "$pos"
-            printf -v total2 '%02d' "$total"
+            record="product-identity/approved-masters/${sku}/approval-record.json"
+            test -f "$record"
 
-            key="fleetguard/page-1/${pos2}-${total2}/${base}"
+            status="$(node -e "const j=require('./$record');process.stdout.write(String(j.status||''))")"
+            record_sha="$(node -e "const j=require('./$record');process.stdout.write(String(j.approved_master_sha256||''))")"
+            approved_at="$(node -e "const j=require('./$record');process.stdout.write(String(j.approved_on||''))")"
             sha256="$(sha256sum "$image" | awk '{print $1}')"
-            cdn_url="${CDN_BASE}/${key}"
 
-            aws s3 cp "$image" "s3://${R2_BUCKET}/${key}" \
-              --endpoint-url "$endpoint" \
-              --content-type image/png \
-              --cache-control 'public,max-age=31536000,immutable' \
-              --only-show-errors
+            test "$status" = "APPROVED_GOLDEN_MASTER"
+            if [ "$record_sha" != "$sha256" ]; then
+              echo "APPROVAL_HASH_MISMATCH:$sku" >&2
+              exit 2
+            fi
+            image_key="products/${sku}/approved/${sha256}.png"
+            manifest_key="products/${sku}/manifest.json"
+            image_url="${CDN_BASE}/${image_key}"
+            manifest_url="${CDN_BASE}/${manifest_key}"
+            manifest_tmp="$(mktemp)"
 
-            aws s3api head-object \
-              --bucket "$R2_BUCKET" \
-              --key "$key" \
-              --endpoint-url "$endpoint" >/tmp/r2-head.json
-
-            node product-identity/scripts/update-r2-storage-record.mjs \
+            node product-identity/scripts/build-r2-image-manifest.mjs \
               "--sku=${sku}" \
-              "--bucket=${R2_BUCKET}" \
-              "--key=${key}" \
-              "--cdn-url=${cdn_url}" \
-              "--sha256=${sha256}"
+              "--image-url=${image_url}" \
+              "--image-key=${image_key}" \
+              "--sha256=${sha256}" \
+              "--manifest-url=${manifest_url}" \
+              "--manifest-key=${manifest_key}" \
+              "--approved-at=${approved_at}" \
+              "--out=${manifest_tmp}"
 
-            echo "PUBLISHED ${sku} ${competitor} -> ${cdn_url}"
+            aws s3 cp "$image" "s3://${R2_BUCKET}/${image_key}"               --endpoint-url "$endpoint"               --content-type image/png               --cache-control 'public,max-age=31536000,immutable'               --only-show-errors
+            aws s3 cp "$manifest_tmp" "s3://${R2_BUCKET}/${manifest_key}"               --endpoint-url "$endpoint"               --content-type application/json               --cache-control 'public,max-age=60,must-revalidate'               --only-show-errors
+
+            aws s3api head-object               --bucket "$R2_BUCKET"               --key "$image_key"               --endpoint-url "$endpoint" >/tmp/r2-image-head.json
+
+            aws s3api head-object               --bucket "$R2_BUCKET"               --key "$manifest_key"               --endpoint-url "$endpoint" >/tmp/r2-manifest-head.json
+
+            image_ok=0
+            manifest_ok=0
+            for attempt in 1 2 3 4 5 6; do
+              curl -fsSI "$image_url" >/dev/null && image_ok=1 || true
+              curl -fsS "$manifest_url" >/tmp/public-manifest.json && manifest_ok=1 || true
+              if [ "$image_ok" = 1 ] && [ "$manifest_ok" = 1 ]; then break; fi
+              sleep 5
+            done
+            test "$image_ok" = 1
+            test "$manifest_ok" = 1
+
+            node -e "const j=require('/tmp/public-manifest.json'); if(j.sku!=='$sku'||j.image?.sha256!=='$sha256') process.exit(2)"
+            node product-identity/scripts/update-r2-storage-record.mjs               "--sku=${sku}"               "--bucket=${R2_BUCKET}"               "--key=${image_key}"               "--cdn-url=${image_url}"               "--sha256=${sha256}"               "--manifest-key=${manifest_key}"               "--manifest-url=${manifest_url}"
+
+            echo "R2_PUBLISHED ${sku}"
+            echo "IMAGE_URL ${image_url}"
+            echo "JSON_URL ${manifest_url}"
+            rm -f "$manifest_tmp"
           done < /tmp/approved-images.txt
 
-      - name: Commit publication records
+      - name: Commit verified publication records
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet -- product-identity/production-master product-identity/source-images; then
-            echo 'No JSON publication changes.'
+          if git diff --quiet -- product-identity/production-master product-identity/approved-masters; then
+            echo 'No publication-record changes.'
             exit 0
           fi
-          git config user.name 'ELIMFILTERS Render Publisher'
+          git config user.name 'ELIMFILTERS R2 Publisher'
           git config user.email 'actions@users.noreply.github.com'
-          git add product-identity/production-master product-identity/source-images
-          git commit -m 'chore(product-images): record verified R2 publication [skip ci]'
+          git add product-identity/production-master product-identity/approved-masters
+          git commit -m 'chore(product-images): record verified R2 golden master [skip ci]'
           git push
