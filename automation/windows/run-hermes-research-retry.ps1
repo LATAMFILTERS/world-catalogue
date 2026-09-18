@@ -88,6 +88,11 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'npm ci failed' }
   }
 
+  npm run hermes:catalogue:quality:sync | Tee-Object -FilePath $log -Append
+  if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue quality sync failed' }
+  npm run hermes:catalogue:work-orders | Tee-Object -FilePath $log -Append
+  if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue work-order dispatch failed' }
+  try { npm run hermes:catalogue:research | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
   node scripts\hermes\apply-review-decisions-from-db.mjs | Tee-Object -FilePath $log -Append
   if ($LASTEXITCODE -ne 0) { throw 'Failed to apply one or more HERMES review decisions from durable queue' }
 
@@ -102,11 +107,6 @@ try {
   }
   Remove-Item Env:GITHUB_OUTPUT -ErrorAction SilentlyContinue
 
-  npm run hermes:catalogue:quality:sync | Tee-Object -FilePath $log -Append
-  if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue quality sync failed' }
-  npm run hermes:catalogue:work-orders | Tee-Object -FilePath $log -Append
-  if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue work-order dispatch failed' }
-  try { npm run hermes:catalogue:research | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
   npm run hermes:research | Tee-Object -FilePath $log -Append
   $researchExit = $LASTEXITCODE
   if ($researchExit -ne 0) {
