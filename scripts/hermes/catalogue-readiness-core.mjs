@@ -64,7 +64,11 @@ const ACTION={
   IMAGE:'Locate an official product image or approved manufacturer media asset and preserve provenance.',
   PACKAGING:'Obtain official/factory packaging evidence; derived calculations remain non-verified until confirmation.'
 };
-export function buildBacklog(row, readiness, exactRefs, orgIndex) {
-  const manufacturers=manufacturerCandidates(row,exactRefs), organizations=organizationCandidates(manufacturers,orgIndex), gov=row.enrichment_data?.codigo_base_governance||{};
-  return readiness.gaps.slice(0,1).map(gap=>({backlog_id:stableId(row.sku,gap),sku:row.sku,gap_type:gap,priority:PRIORITY[gap],status:'OPEN',manufacturer_candidates:manufacturers,organization_candidates:organizations,discovery_hints:{codigo_base:row.codigo_base,duty:row.duty,technology:row.technology,filter_type:row.filter_type,governance_state:gov.state||null,approved_manufacturer_candidate:gov.approved_manufacturer||null,canonical_source_brand:row.canonical_source_brand||null,exact_reference_sources:[...new Set(exactRefs.map(x=>x.source))].slice(0,10)},recommended_action:ACTION[gap]}));
+export function buildBacklog(row, readiness, exactRefs, orgIndex, sourceCandidate=null) {
+  const gov=row.enrichment_data?.codigo_base_governance||{};
+  const governedSourceCandidate = sourceCandidate && ['READY_SOURCE_MANN','READY_SINGLE_FRAM'].includes(sourceCandidate.candidate_state) && sourceCandidate.canonical_brand && sourceCandidate.canonical_part_number ? sourceCandidate : null;
+  const manufacturers=manufacturerCandidates(row,exactRefs);
+  if(governedSourceCandidate && !manufacturers.some(x=>norm(x)===norm(governedSourceCandidate.canonical_brand))) manufacturers.unshift(governedSourceCandidate.canonical_brand);
+  const organizations=organizationCandidates(manufacturers,orgIndex);
+  return readiness.gaps.slice(0,1).map(gap=>({backlog_id:stableId(row.sku,gap),sku:row.sku,gap_type:gap,priority:PRIORITY[gap],status:'OPEN',manufacturer_candidates:manufacturers,organization_candidates:organizations,discovery_hints:{codigo_base:row.codigo_base,duty:row.duty,technology:row.technology,filter_type:row.filter_type,governance_state:gov.state||null,required_authority:gov.required_authority||null,approved_manufacturer_candidate:gov.approved_manufacturer||null,canonical_source_brand:row.canonical_source_brand||null,source_candidate_state:governedSourceCandidate?.candidate_state||null,source_candidate_brand:governedSourceCandidate?.canonical_brand||null,source_candidate_code:governedSourceCandidate?.canonical_part_number||null,source_candidate_origin_group:governedSourceCandidate?.origin_group||null,exact_reference_sources:[...new Set(exactRefs.map(x=>x.source))].slice(0,10)},recommended_action:ACTION[gap]}));
 }

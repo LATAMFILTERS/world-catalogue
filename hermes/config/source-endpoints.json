@@ -518,6 +518,18 @@
       "verified_at": "2026-09-08T15:45:31.857Z",
       "http_status_observed": 200,
       "notes": "Auto-discovered on Lenovo using governed same-domain endpoint validation. normalized_length=1173; redirect_count=1."
+    },
+    {
+      "id": "mann_filter__catalog",
+      "organization_id": "mann_filter",
+      "url": "https://www.mann-filter.com/en/catalog.html",
+      "endpoint_type": "official_catalogue",
+      "source_type": "html",
+      "status": "ACTIVE",
+      "enabled": true,
+      "verified_at": "2026-09-18T00:00:00.000Z",
+      "http_status_observed": 200,
+      "notes": "Official MANN-FILTER online catalogue."
     }
   ]
 }

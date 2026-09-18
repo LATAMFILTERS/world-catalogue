@@ -15,11 +15,26 @@ const norm=v=>String(v||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toU
 const stableId=v=>crypto.createHash('sha256').update(String(v)).digest('hex').slice(0,20);
 const safe=v=>String(v||'NONE').replace(/[^A-Za-z0-9_-]+/g,'_').replace(/^_+|_+$/g,'').slice(0,64)||'NONE';
 
+const SOURCE_FAMILY_ORDER=[
+  ['LIGHT_DUTY','MACROCORE'],
+  ['LIGHT_DUTY','SYNTRAX'],
+  ['LIGHT_DUTY','SYNTAPORE'],
+  ['HEAVY_DUTY','SYNTAPORE'],
+  ['HEAVY_DUTY','NANOFORCE'],
+  ['LIGHT_DUTY','MICROKAPPA'],
+  ['HEAVY_DUTY','MACROCORE']
+];
+function familyRank(item){
+  if(item.gap_type!=='SOURCE') return 100;
+  const tech=norm(item.technology);
+  const i=SOURCE_FAMILY_ORDER.findIndex(([d,t])=>item.duty===d && tech.includes(t));
+  return i<0?90:i;
+}
 function officialHost(value){
   try{return new URL(value).hostname.toLowerCase().replace(/^www\./,'');}catch{return null;}
 }
 function selectOrg(row){
-  const hint=row.discovery_hints?.approved_manufacturer_candidate || row.discovery_hints?.canonical_source_brand || null;
+  const hint=row.discovery_hints?.source_candidate_brand || row.discovery_hints?.approved_manufacturer_candidate || row.discovery_hints?.canonical_source_brand || null;
   if(!hint) return {mode:'IDENTITY_DISCOVERY',authority_hint:null,organization:null};
   const n=norm(hint);
   const org=(row.organization_candidates||[]).find(x=>norm(x.name)===n || norm(x.organization_id?.replace(/_/g,' '))===n) || null;
@@ -63,6 +78,13 @@ try{
       research_attempts:row.research_attempts||0
     };
   });
+  items.sort((a,b)=>
+    familyRank(a)-familyRank(b) ||
+    (a.mode==='AUTHORITATIVE_TARGET'?0:1)-(b.mode==='AUTHORITATIVE_TARGET'?0:1) ||
+    a.priority-b.priority ||
+    String(a.gap_type).localeCompare(String(b.gap_type)) ||
+    String(a.sku).localeCompare(String(b.sku))
+  );
   const groups=new Map();
   for(const item of items){
     const orgId=item.organization?.organization_id||'NONE';

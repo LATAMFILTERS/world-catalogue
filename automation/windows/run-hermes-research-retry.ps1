@@ -73,7 +73,9 @@ try {
   $env:HERMES_COLLECTION_DRY_RUN = 'false'
   $env:HERMES_GROQ_MODEL = 'groq/compound'
   $env:HERMES_CATALOGUE_QUALITY_SYNC = 'true'
-  $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '20'
+  $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '4'
+  $env:HERMES_CATALOGUE_RESEARCH_PACING_MS = '20000'
+  $env:HERMES_CATALOGUE_RESEARCH_RETRIES = '2'
   $env:HERMES_REVIEW_BASE_URL = 'https://elimfilters-search-pro.onrender.com/hermes/review'
   $env:HERMES_STATE_ROOT = (Join-Path $StateDir 'research')
 
@@ -88,11 +90,26 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'npm ci failed' }
   }
 
-  npm run hermes:catalogue:quality:sync | Tee-Object -FilePath $log -Append
-  if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue quality sync failed' }
-  npm run hermes:catalogue:work-orders | Tee-Object -FilePath $log -Append
-  if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue work-order dispatch failed' }
-  try { npm run hermes:catalogue:research | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
+  $catalogueOldEap = $ErrorActionPreference
+  $ErrorActionPreference = 'Continue'
+  $catalogueQualityOldDatabaseUrl = $env:DATABASE_URL
+  $catalogueQualityOldCatalogDatabaseUrl = $env:CATALOG_DATABASE_URL
+  try {
+    $env:DATABASE_URL = 'postgresql://catalog_admin@127.0.0.1:5441/catalogo_elimfilters?sslmode=disable'
+    $env:CATALOG_DATABASE_URL = $env:DATABASE_URL
+    $catalogueOldEap = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    npm run hermes:catalogue:quality:sync 2>&1 | Tee-Object -FilePath $log -Append
+    $catalogueQualityExit = $LASTEXITCODE
+    $ErrorActionPreference = $catalogueOldEap
+    if ($catalogueQualityExit -ne 0) { throw 'HERMES catalogue quality sync failed' }
+    npm run hermes:catalogue:work-orders 2>&1 | Tee-Object -FilePath $log -Append
+    if ($LASTEXITCODE -ne 0) { throw 'HERMES catalogue work-order dispatch failed' }
+    try { npm run hermes:catalogue:research 2>&1 | Tee-Object -FilePath $log -Append } catch { $_ | Out-String | Tee-Object -FilePath $log -Append }
+  } finally {
+    $env:DATABASE_URL = $catalogueQualityOldDatabaseUrl
+    $env:CATALOG_DATABASE_URL = $catalogueQualityOldCatalogDatabaseUrl
+  }
   node scripts\hermes\apply-review-decisions-from-db.mjs | Tee-Object -FilePath $log -Append
   if ($LASTEXITCODE -ne 0) { throw 'Failed to apply one or more HERMES review decisions from durable queue' }
 

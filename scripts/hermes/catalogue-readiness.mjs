@@ -23,9 +23,11 @@ try {
   const catalog = (await db.query("SELECT sku,codigo_base,duty,technology,filter_type,canonical_source_brand,canonical_source_code,canonical_source_url,canonical_source_status,canonical_verified_at,canonical_evidence,vehicle_applications,equipment_applications,oem_codes,competitor_codes,brand_crossrefs,height_mm,product_length_mm,outer_diameter_mm,inner_diameter_mm,gasket_od_mm,gasket_id_mm,product_dimensions_source,product_dimensions_validation_status,image_url,enrichment_data,units_per_case,unit_packaged_weight_kg,unit_packaged_volume_m3,master_carton_length_cm,packaging_type,packaging_source,packaging_source_url,packaging_validation_status,packaging_validated_at FROM elimfilters_catalog WHERE catalog_active=true ORDER BY sku")).rows;
   const appRows = (await db.query("SELECT id,sku,application_kind,payload_hash,evidence_authority,source_url,evidence_hash,verified_at,metadata,created_at FROM catalog_application_evidence WHERE verified=true")).rows;
   const refRows = (await db.query("SELECT id,reference_type,brand,part_number,sku,source,created_at FROM exact_part_reference")).rows;
-  const appBySku=new Map(), refBySku=new Map();
+  const sourceCandidateRows = (await db.query("SELECT elimfilters_sku,origin_group,canonical_brand,canonical_part_number,candidate_state,updated_at FROM ld_catalog.ld_canonical_backfill_candidates WHERE candidate_state IN ('READY_SOURCE_MANN','READY_SINGLE_FRAM')")).rows;
+  const appBySku=new Map(), refBySku=new Map(), sourceCandidateBySku=new Map();
   for(const x of appRows){ if(!appBySku.has(x.sku)) appBySku.set(x.sku,[]); appBySku.get(x.sku).push(x); }
   for(const x of refRows){ if(!refBySku.has(x.sku)) refBySku.set(x.sku,[]); refBySku.get(x.sku).push(x); }
+  for(const x of sourceCandidateRows) sourceCandidateBySku.set(x.elimfilters_sku,x);
 
   const orgDoc=JSON.parse(fs.readFileSync(path.join(root,'hermes/config/source-organizations.json'),'utf8'));
   const orgIndex=buildOrganizationIndex(orgDoc.organizations||[]);
@@ -35,7 +37,7 @@ try {
     const apps=appBySku.get(row.sku)||[], refs=refBySku.get(row.sku)||[];
     const state=assessSku(row,{appVerifiedCount:apps.length,exactRefs:refs});
     readiness.push(state);
-    backlog.push(...buildBacklog(row,state,refs,orgIndex));
+    backlog.push(...buildBacklog(row,state,refs,orgIndex,sourceCandidateBySku.get(row.sku)||null));
 
     if(state.source_verified){
       const payload={brand:row.canonical_source_brand,code:row.canonical_source_code,status:row.canonical_source_status,evidence:row.canonical_evidence||{}};

@@ -10,7 +10,10 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const url=process.env.CATALOG_DATABASE_URL || process.env.ELIMFILTERS_DATABASE_URL || process.env.DATABASE_URL;
 const apiKey=process.env.GROQ_API_KEY;
 const model=process.env.HERMES_GROQ_MODEL || 'groq/compound';
-const limit=Math.max(1,Math.min(100,Number(process.env.HERMES_CATALOGUE_RESEARCH_LIMIT||20)));
+const fallbackModel=process.env.HERMES_GROQ_FALLBACK_MODEL || 'groq/compound-mini';
+const maxResearchRetries=Math.max(0,Math.min(3,Number(process.env.HERMES_CATALOGUE_RESEARCH_RETRIES||2)));
+const pacingMs=Math.max(0,Number(process.env.HERMES_CATALOGUE_RESEARCH_PACING_MS||20000));
+const limit=Math.max(1,Math.min(100,Number(process.env.HERMES_CATALOGUE_RESEARCH_LIMIT||4)));
 const timeoutMs=Math.max(5000,Number(process.env.HERMES_CATALOGUE_RESEARCH_TIMEOUT_MS||25000));
 const retryHours=Math.max(6,Number(process.env.HERMES_CATALOGUE_RESEARCH_RETRY_HOURS||168));
 if(!url) throw new Error('DATABASE_URL/CATALOG_DATABASE_URL is required');
@@ -45,7 +48,7 @@ Your job is evidence acquisition, not catalogue editing.
 Use live web search and website visiting. Never infer manufacturer, compatibility, dimensions, applications, cross references, images, or packaging from code shape or similarity.
 Prefer primary manufacturer/OEM catalogues, official product pages, official PDFs, technical bulletins and official service/application documentation.
 Candidate manufacturers and organizations are hints only.
-For SOURCE identity, verify the exact supplied base code on an official source and identify the manufacturer that owns/reports that exact code.
+For SOURCE identity, when source_candidate_code is supplied, verify that governed candidate code on the selected official authority. The current codigo_base may be a legacy placeholder and must not be treated as a manufacturer part number. If no governed source candidate is supplied, establish identity from primary evidence without inferring from cross-references.
 For every gap, return only facts supported by the evidence URL.
 If exact evidence cannot be established, return UNRESOLVED.
 Return strict JSON only.`;
@@ -67,42 +70,54 @@ function requiredShape(item){
     unresolved_reason:'string or null'
   };
 }
+async function sleep(ms){ return new Promise(resolve=>setTimeout(resolve,ms)); }
+function retryDelayMs(status,text,attempt){
+  if(status!==429) return 0;
+  const m=String(text||'').match(/try again in ([0-9.]+)s/i);
+  return Math.ceil((m?Number(m[1]):15)*1000)+1500+(attempt*1000);
+}
 async function researchOne(item){
   const input={
     instruction:'Resolve this exact ELIMFILTERS catalogue evidence gap. Do not propose a catalogue change unless exact primary evidence exists.',
     target:{
       sku:item.sku,
       codigo_base:item.discovery_hints?.codigo_base||null,
-      duty:item.duty,
-      technology:item.technology,
-      filter_type:item.filter_type,
-      gap_type:item.gap_type
+      source_candidate_code:item.discovery_hints?.source_candidate_code||null,
+      source_candidate_brand:item.discovery_hints?.source_candidate_brand||null,
+      source_candidate_state:item.discovery_hints?.source_candidate_state||null,
+      duty:item.duty,technology:item.technology,filter_type:item.filter_type,gap_type:item.gap_type
     },
-    authority_hint:item.authority_hint||null,
-    selected_organization:item.organization||null,
-    selected_source:item.source||null,
-    manufacturer_candidates:item.manufacturer_candidates||[],
-    organization_candidates:item.organization_candidates||[],
+    authority_hint:item.authority_hint||null,selected_organization:item.organization||null,selected_source:item.source||null,
+    manufacturer_candidates:item.manufacturer_candidates||[],organization_candidates:item.organization_candidates||[],
     required_json:requiredShape(item)
   };
-  const controller=new AbortController();
-  const timer=setTimeout(()=>controller.abort(),timeoutMs*2);
-  try{
-    const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{
-      method:'POST',
-      signal:controller.signal,
-      headers:{Authorization:`Bearer ${apiKey}`,'Content-Type':'application/json','Groq-Model-Version':'latest'},
-      body:JSON.stringify({
-        model,temperature:0,max_completion_tokens:2200,response_format:{type:'json_object'},
-        messages:[{role:'system',content:systemPrompt()},{role:'user',content:JSON.stringify(input)}]
-      })
-    });
-    if(!r.ok) throw new Error(`Groq HTTP ${r.status}: ${(await r.text()).slice(0,500)}`);
-    const body=await r.json();
-    const content=body?.choices?.[0]?.message?.content;
-    if(!content) throw new Error('Groq returned no content');
-    return {result:JSON.parse(stripFence(content)),tool_calls:body?.choices?.[0]?.message?.executed_tools?.length||0};
-  } finally { clearTimeout(timer); }
+  let requestModel=model;
+  let lastError=null;
+  for(let attempt=0;attempt<=maxResearchRetries;attempt++){
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),timeoutMs*2);
+    try{
+      const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{
+        method:'POST',signal:controller.signal,
+        headers:{Authorization:'Bearer '+apiKey,'Content-Type':'application/json','Groq-Model-Version':'latest'},
+        body:JSON.stringify({model:requestModel,temperature:0,max_completion_tokens:1000,response_format:{type:'json_object'},messages:[{role:'system',content:systemPrompt()},{role:'user',content:JSON.stringify(input)}]})
+      });
+      if(!r.ok){
+        const body=(await r.text()).slice(0,1200);
+        if(r.status===413 && requestModel!==fallbackModel){ requestModel=fallbackModel; lastError=new Error('Groq HTTP 413; retrying '+fallbackModel); continue; }
+        const waitMs=retryDelayMs(r.status,body,attempt);
+        lastError=new Error('Groq HTTP '+r.status+': '+body);
+        if(waitMs>0 && attempt<maxResearchRetries){ await sleep(waitMs); continue; }
+        throw lastError;
+      }
+      const body=await r.json();
+      const content=body?.choices?.[0]?.message?.content;
+      if(!content) throw new Error('Groq returned no content');
+      return {result:JSON.parse(stripFence(content)),tool_calls:body?.choices?.[0]?.message?.executed_tools?.length||0,model:requestModel};
+    }catch(error){ lastError=error; if(attempt>=maxResearchRetries) throw error; }
+    finally{ clearTimeout(timer); }
+  }
+  throw lastError||new Error('HERMES research failed');
 }
 
 function findOrganization(result,organizations,item){
@@ -128,7 +143,7 @@ async function validateResearch(item,raw,organizations){
   const base=String(item.discovery_hints?.codigo_base||'').trim();
   const sourceCode=String(result.source_code||base||'').trim();
   const pageHasCode=Boolean(sourceCode && page.ok && norm(page.text).includes(norm(sourceCode)));
-  const sourceOwnsCode=item.gap_type!=='SOURCE' ? true : Boolean(sourceCode && norm(sourceCode)===norm(base));
+  const sourceOwnsCode=item.gap_type!=='SOURCE' ? true : Boolean(sourceCode && expectedSourceCode && norm(sourceCode)===norm(expectedSourceCode));
 
   const verified=Boolean(domainOk && page.ok && pageHasCode && sourceOwnsCode);
   return {
@@ -137,7 +152,7 @@ async function validateResearch(item,raw,organizations){
       !domainOk?'official-domain-match-not-established':null,
       !page.ok?'evidence-page-fetch-failed':null,
       !pageHasCode?'exact-code-not-observed-on-fetched-page':null,
-      !sourceOwnsCode?'returned-source-code-does-not-match-base-code':null
+      !sourceOwnsCode?'returned-source-code-does-not-match-governed-expected-code':null
     ].filter(Boolean).join('; '),
     result,
     organization:authoritativeOrg||null,
@@ -213,7 +228,8 @@ try{
     }
 
     if(validation.status==='UNRESOLVED'){
-      const next=new Date(Date.now()+retryHours*3600_000).toISOString();
+      const transient=/Groq HTTP (413|429|5\d\d)|ECONNRESET|fetch failed|aborted/i.test(String(validation.reason||''));
+      const next=new Date(Date.now()+(transient?1:retryHours)*3600_000).toISOString();
       await db.query(`UPDATE hermes_catalogue_backlog
         SET research_attempts=research_attempts+1,last_research_at=now(),next_attempt_at=$2,last_research_error=$3,updated_at=now()
         WHERE backlog_id=$1`,[item.backlog_id,next,validation.reason]);
