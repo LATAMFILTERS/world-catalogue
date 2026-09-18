@@ -10,7 +10,7 @@ const { Client } = pg;
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const url=process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
 const apiKey=process.env.GROQ_API_KEY;
-const model=process.env.HERMES_GROQ_MODEL || 'groq/compound';
+const model=process.env.HERMES_CATALOGUE_DOSSIER_MODEL || 'groq/compound-mini';
 const fallbackModel=process.env.HERMES_GROQ_FALLBACK_MODEL || 'groq/compound-mini';
 const limit=Math.max(1,Math.min(20,Number(process.env.HERMES_CATALOGUE_RESEARCH_LIMIT||1)));
 const pacingMs=Math.max(0,Number(process.env.HERMES_CATALOGUE_RESEARCH_PACING_MS||20000));
@@ -207,8 +207,7 @@ async function persistDossier(db,item,dossier,assessment,identityCheck,attemptEr
 
 function proposedValues(dossier,evidenceId,capturedAt){
   const identity=dossier.identity;
-  const appField='vehicle_applications';
-  return {
+  const values={
     codigo_base:identity.source_code,
     source_identity:{
       canonical_source_brand:identity.manufacturer,
@@ -217,13 +216,14 @@ function proposedValues(dossier,evidenceId,capturedAt){
       canonical_source_status:'VERIFIED',
       canonical_verified_at:capturedAt,
       canonical_evidence:{evidence_id:evidenceId,dossier_complete:true}
-    },
-    dimensions:dossier.dimensions.status==='VERIFIED'?Object.assign({},...dossier.dimensions.records):{},
-    technical_specs:dossier.technical_specs.status==='VERIFIED'?Object.assign({},...dossier.technical_specs.records):{},
-    oem_codes:dossier.oem_codes.status==='VERIFIED'?dossier.oem_codes.records:[],
-    competitor_codes:dossier.cross_references.status==='VERIFIED'?dossier.cross_references.records:[],
-    [appField]:dossier.applications.status==='VERIFIED'?dossier.applications.records:[]
+    }
   };
+  if(dossier.dimensions.status==='VERIFIED') values.dimensions=Object.assign({},...dossier.dimensions.records);
+  if(dossier.technical_specs.status==='VERIFIED') values.technical_specs=Object.assign({},...dossier.technical_specs.records);
+  if(dossier.oem_codes.status==='VERIFIED') values.oem_codes=dossier.oem_codes.records;
+  if(dossier.cross_references.status==='VERIFIED') values.competitor_codes=dossier.cross_references.records;
+  if(dossier.applications.status==='VERIFIED') values.vehicle_applications=dossier.applications.records;
+  return values;
 }
 const orgDoc=JSON.parse(fs.readFileSync(path.join(root,'hermes/config/source-organizations.json'),'utf8'));
 const index=JSON.parse(fs.readFileSync(path.join(root,'hermes/catalogue-quality/work-orders/index.json'),'utf8'));
