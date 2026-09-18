@@ -7,6 +7,7 @@ import pg from 'pg';
 import { normalizeManufacturer } from './catalogue-coverage-audit.mjs';
 
 const require = createRequire(import.meta.url);
+const { assertGovernedCatalogPatch } = require('../../lib/catalog-write-gateway.js');
 const {
   policyFromEnv,
   selectCase,
@@ -325,6 +326,25 @@ async function main() {
 
       if (APPLY) {
         const note = `HERMES HD packaging enrichment; family=${family}; evidence_id=${proposal.evidence_id || 'n/a'}; source=${proposal.source_url}; selected_grid=${proposal.selected_grid.join('x')}; factory confirmation required before production release`;
+        assertGovernedCatalogPatch(row, {
+          unit_packaged_length_cm: proposal.unit_packaging.unit_packaged_length_cm,
+          unit_packaged_width_cm: proposal.unit_packaging.unit_packaged_width_cm,
+          unit_packaged_height_cm: proposal.unit_packaging.unit_packaged_height_cm,
+          unit_packaged_weight_kg: proposal.unit_packaging.unit_packaged_weight_kg,
+          unit_packaged_volume_m3: proposal.unit_packaging.unit_packaged_volume_m3,
+          units_per_case: proposal.units_per_case,
+          master_carton_length_cm: proposal.master_carton_length_cm,
+          master_carton_width_cm: proposal.master_carton_width_cm,
+          master_carton_height_cm: proposal.master_carton_height_cm,
+          master_carton_net_weight_kg: proposal.master_carton_net_weight_kg,
+          master_carton_gross_weight_kg: proposal.master_carton_gross_weight_kg,
+          master_carton_volume_m3: proposal.master_carton_volume_m3,
+          packaging_type: 'HD_SHRINK_WRAPPED_MASTER_CARTON',
+          packaging_source: 'OFFICIAL_SOURCE_SCRAPE',
+          packaging_source_url: proposal.source_url,
+          packaging_validation_status: 'CALCULATED_PENDING_FACTORY_CONFIRMATION',
+          packaging_notes: note,
+        });
         await pool.query(`UPDATE elimfilters_catalog SET
           unit_packaged_length_cm=COALESCE(unit_packaged_length_cm,$1),
           unit_packaged_width_cm=COALESCE(unit_packaged_width_cm,$2),

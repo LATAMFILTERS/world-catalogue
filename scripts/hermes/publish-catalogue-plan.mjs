@@ -3,7 +3,11 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { createRequire } from 'node:module';
 import { PUBLISHABLE_CATALOGUE_FIELDS } from './catalogue-publication-plan.mjs';
+
+const require = createRequire(import.meta.url);
+const { assertGovernedCatalogPatch } = require('../../lib/catalog-write-gateway.js');
 
 export const COLUMN_GROUPS = {
   filter_type: ['filter_type'], duty: ['duty'], technology: ['technology'],
@@ -61,6 +65,21 @@ export function logicalValue(row, field) {
   return row[field] ?? null;
 }
 
+export function cataloguePlanPatch(plan) {
+  const patch = {};
+  for (const operation of plan.operations) {
+    const columns = COLUMN_GROUPS[operation.field];
+    assert(columns, `No database mapping for ${operation.field}`);
+    if (columns.length === 1) {
+      patch[columns[0]] = operation.after;
+      continue;
+    }
+    assert(operation.after && typeof operation.after === 'object' && !Array.isArray(operation.after), `${operation.field} must be an object`);
+    for (const column of columns.filter((name) => Object.hasOwn(operation.after, name))) patch[column] = operation.after[column];
+  }
+  return patch;
+}
+
 export function compileUpdate(plan) {
   const assignments = [];
   const values = [];
@@ -103,6 +122,8 @@ export async function executeCataloguePublicationPlan({ plan, pool, backupDir = 
     const backup = { schema_version: '1.0.0', created_at: new Date().toISOString(), plan_sha256: plan.plan_sha256, research_bundle_id: plan.research_bundle_id, target_sku: plan.target_sku, operations: plan.operations, before: row };
     backup.backup_sha256 = catalogueBackupHash(backup);
     fs.writeFileSync(backupPath, `${JSON.stringify(backup, null, 2)}\n`, { flag: 'wx' });
+    const patch = cataloguePlanPatch(plan);
+    assertGovernedCatalogPatch(row, patch, { applicationWrite: false });
     const update = compileUpdate(plan);
     const changed = await client.query(update.sql, update.values);
     assert(changed.rowCount === 1, 'Catalogue update did not affect exactly one row');

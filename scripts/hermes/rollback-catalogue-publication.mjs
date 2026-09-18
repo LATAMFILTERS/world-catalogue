@@ -3,7 +3,11 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { createRequire } from 'node:module';
 import { COLUMN_GROUPS, catalogueBackupHash, logicalValue } from './publish-catalogue-plan.mjs';
+
+const require = createRequire(import.meta.url);
+const { assertGovernedCatalogPatch } = require('../../lib/catalog-write-gateway.js');
 
 function canonical(value) {
   if (Array.isArray(value)) return value.map(canonical);
@@ -22,6 +26,14 @@ export function validateCatalogueBackup(backup) {
   assert(typeof backup.backup_sha256 === 'string' && /^[a-f0-9]{64}$/.test(backup.backup_sha256), 'Backup checksum is invalid');
   assert(catalogueBackupHash(backup) === backup.backup_sha256, 'Catalogue backup checksum mismatch');
   return true;
+}
+
+export function catalogueRestorePatch(backup) {
+  const patch = {};
+  for (const operation of backup.operations) {
+    for (const column of COLUMN_GROUPS[operation.field]) patch[column] = backup.before[column] ?? null;
+  }
+  return patch;
 }
 
 function compileRestore(backup) {
@@ -48,6 +60,8 @@ export async function rollbackCataloguePublication({ backup, pool, apply = false
     const locked=await client.query('SELECT * FROM elimfilters_catalog WHERE sku = $1 FOR UPDATE',[backup.target_sku]);
     assert(locked.rowCount === 1, `Expected exactly one row for ${backup.target_sku}`);
     for (const operation of backup.operations) assert(hash(logicalValue(locked.rows[0],operation.field)) === hash(operation.after), `Current ${operation.field} no longer matches the published plan; rollback aborted`);
+    const restorePatch = catalogueRestorePatch(backup);
+    assertGovernedCatalogPatch(locked.rows[0], restorePatch, { applicationWrite: false });
     const restore=compileRestore(backup);
     const changed=await client.query(restore.sql,restore.values);
     assert(changed.rowCount === 1,'Rollback did not affect exactly one row');
