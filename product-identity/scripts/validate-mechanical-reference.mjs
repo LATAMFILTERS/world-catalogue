@@ -94,15 +94,16 @@ export function buildMechanicalEvidence({ code, productUrl, source, specs }) {
     screenshot_path: source.screenshot_path,
     screenshot_sha256: source.screenshot_sha256,
     official_specs: specs,
-    vertical_filter_geometry: 'Preserve the exact upright LF691A canister silhouette, end contours, diameter, height-to-diameter ratio and all visible seams from the fresh official source image.',
-    horizontal_filter_geometry: 'Preserve the exact horizontal LF691A body and the complete front-facing mounting interface from the fresh official source image; no generic substitute or redraw is permitted.',
-    overall_silhouette: 'Exact LF691A silhouette from the current Fleetguard source image is immutable.',
+    vertical_filter_geometry: `Preserve the exact upright ${code} canister silhouette, end contours, diameter, height-to-diameter ratio and all visible seams from the fresh official source image.`,
+    horizontal_filter_geometry: `Preserve the exact horizontal ${code} body and the complete front-facing mounting interface from the fresh official source image; no generic substitute or redraw is permitted.`,
+    overall_silhouette: `Exact ${code} silhouette from the current Fleetguard source image is immutable.`,
     body_proportions: `Official largest OD ${specs.largest_outside_diameter}; official height ${specs.height}. Preserve the source-image proportions exactly.`,
     top_rim: 'Preserve the exact rolled/rimmed end geometry visible in the current official source image.'
   };
 }
 export function completeMechanicalEvidence(base) {
   const specs = base.official_specs;
+  const code = base.competitor_code;
   return {
     ...base,
     baseplate_or_open_end: 'The horizontal filter mounting face is a hard mechanical lock. Preserve the exact metal plate contour, recesses, reliefs, central opening, surrounding ports and their spatial relationships from the official source image.',
@@ -112,8 +113,8 @@ export function completeMechanicalEvidence(base) {
     support_pattern: 'Preserve every visible stamped-metal support, recess, land and relief on the mounting face exactly as shown by the official source.',
     central_support_or_perforation_pattern: 'Preserve the exact central opening and all immediately surrounding mechanical detail from the official source; no generic spin-on baseplate pattern is allowed.',
     camera_perspective: 'Preserve the official source perspective and the mounting-face viewing angle so the mechanical interface remains directly auditable.',
-    relative_scale: 'Both depicted filters represent LF691A; preserve their source-relative scale and common physical proportions.',
-    composition: 'Use the fresh Fleetguard LF691A source image as the sole geometry authority. Rendering must be an edit of this source, not a newly invented product.',
+    relative_scale: `Both depicted filters represent ${code}; preserve their source-relative scale and common physical proportions.`,
+    composition: `Use the fresh Fleetguard ${code} source image as the sole geometry authority. Rendering must be an edit of this source, not a newly invented product.`,
     mechanical_lock: {
       mounting_face_exact_match_required: true,
       central_thread_exact_match_required: true,

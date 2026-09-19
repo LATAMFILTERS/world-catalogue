@@ -47,6 +47,26 @@ test('mechanical evidence hard-locks the mounting face to the fresh source', () 
   assert.match(evidence.thread_geometry, /1\.00 1\/2-16 UNF 2B/);
 });
 
+test('mechanical evidence never leaks another SKU into the active reference', () => {
+  const specs = parseFleetguardMechanicalSpecs(sample);
+  const base = buildMechanicalEvidence({
+    code: 'FF5776',
+    productUrl: 'https://www.fleetguard.com/product/FF5776',
+    source: {
+      resolved_official_page_url: 'https://www.fleetguard.com/product/FF5776',
+      source_image_path: 'source.jpg',
+      source_image_sha256: 'a'.repeat(64),
+      screenshot_path: 'page.png',
+      screenshot_sha256: 'b'.repeat(64)
+    },
+    specs
+  });
+  const evidence = completeMechanicalEvidence(base);
+  const serialized = JSON.stringify(evidence);
+  assert.match(serialized, /FF5776/);
+  assert.doesNotMatch(serialized, /LF691A/);
+});
+
 test('fails closed when an official mechanical field is absent', () => {
   assert.throws(
     () => assertCompleteMechanicalSpecs({ thread_size: '1 1/2-16' }),

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "evidence_type": "ELIMFILTERS_MECHANICAL_REFERENCE",
+  "status": "PASS",
+  "manufacturer": "FLEETGUARD",
+  "competitor_code": "FF5776",
+  "product_page": "https://www.fleetguard.com/product/FF5776",
+  "resolved_official_page_url": "https://www.fleetguard.com/product/FF5776",
+  "source_image_path": "product-identity\\source-assets\\FF5776\\FF5776-official-source.jpg",
+  "source_image_sha256": "f3144c77fc24c2c3ef8a48cf4dafc5c5a3dbed20824b4edc4b8a7cc12904de22",
+  "screenshot_path": "product-identity\\source-assets\\FF5776\\FF5776-official-page.png",
+  "screenshot_sha256": "82e0e5b4abe740b86a8e99cc9754df99b7e32e0a18491e8a09115fb33866765f",
+  "official_specs": {
+    "thread_size": "M90 X 2-7H INT",
+    "gasket_inside_diameter": "4.00 inch / 101.60 mm",
+    "largest_outside_diameter": "4.72 inch / 119.89 mm",
+    "gasket_outside_diameter": "4.68 inch / 118.87 mm",
+    "height": "8.92 inch / 226.52 mm"
+  },
+  "vertical_filter_geometry": "Preserve the exact upright FF5776 canister silhouette, end contours, diameter, height-to-diameter ratio and all visible seams from the fresh official source image.",
+  "horizontal_filter_geometry": "Preserve the exact horizontal FF5776 body and the complete front-facing mounting interface from the fresh official source image; no generic substitute or redraw is permitted.",
+  "overall_silhouette": "Exact FF5776 silhouette from the current Fleetguard source image is immutable.",
+  "body_proportions": "Official largest OD 4.72 inch / 119.89 mm; official height 8.92 inch / 226.52 mm. Preserve the source-image proportions exactly.",
+  "top_rim": "Preserve the exact rolled/rimmed end geometry visible in the current official source image.",
+  "baseplate_or_open_end": "The horizontal filter mounting face is a hard mechanical lock. Preserve the exact metal plate contour, recesses, reliefs, central opening, surrounding ports and their spatial relationships from the official source image.",
+  "thread_geometry": "Official Fleetguard thread size: M90 X 2-7H INT. Preserve the exact central threaded opening geometry shown in the source; generic threaded faces are forbidden.",
+  "gasket_geometry": "Official gasket ID: 4.00 inch / 101.60 mm; official gasket OD: 4.68 inch / 118.87 mm. Preserve exact annular gasket placement and proportions from the source image.",
+  "inlet_hole_count_shape_and_positions": "Preserve the exact visible inlet-port count, individual shapes, diameters, angular positions and spacing from the source image. Do not infer, add, remove, regularize or substitute holes.",
+  "support_pattern": "Preserve every visible stamped-metal support, recess, land and relief on the mounting face exactly as shown by the official source.",
+  "central_support_or_perforation_pattern": "Preserve the exact central opening and all immediately surrounding mechanical detail from the official source; no generic spin-on baseplate pattern is allowed.",
+  "camera_perspective": "Preserve the official source perspective and the mounting-face viewing angle so the mechanical interface remains directly auditable.",
+  "relative_scale": "Both depicted filters represent FF5776; preserve their source-relative scale and common physical proportions.",
+  "composition": "Use the fresh Fleetguard FF5776 source image as the sole geometry authority. Rendering must be an edit of this source, not a newly invented product.",
+  "mechanical_lock": {
+    "mounting_face_exact_match_required": true,
+    "central_thread_exact_match_required": true,
+    "gasket_exact_match_required": true,
+    "inlet_ports_exact_match_required": true,
+    "body_geometry_exact_match_required": true,
+    "generic_spin_on_face_forbidden": true,
+    "other_sku_geometry_forbidden": true
+  }
+}

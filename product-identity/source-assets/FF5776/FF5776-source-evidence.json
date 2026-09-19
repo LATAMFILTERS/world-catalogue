@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "acquisition_mode": "AUTOMATED_OFFICIAL_SOURCE_RESILIENT",
+  "manufacturer": "FLEETGUARD",
+  "part_number": "FF5776",
+  "requested_product_url": "https://www.fleetguard.com/product/FF5776",
+  "requested_product_host": "www.fleetguard.com",
+  "resolved_official_page_url": "https://www.fleetguard.com/product/FF5776",
+  "resolved_official_page_host": "www.fleetguard.com",
+  "product_page_part_match": true,
+  "transient_http_fallback_used": false,
+  "acquisition_attempts": [
+    {
+      "url": "https://www.fleetguard.com/product/FF5776",
+      "ok": true,
+      "status": 200
+    }
+  ],
+  "source_image_url": "https://www.fleetguard.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=800/https://atmus.widen.net/content/6kctosfnj5/original/FF5776.jpg",
+  "source_image_final_url": "https://www.fleetguard.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=800/https://atmus.widen.net/content/6kctosfnj5/original/FF5776.jpg",
+  "source_image_match_evidence": "NETWORK_RESOURCE_PART_MATCH",
+  "source_image_path": "product-identity\\source-assets\\FF5776\\FF5776-official-source.jpg",
+  "source_image_sha256": "f3144c77fc24c2c3ef8a48cf4dafc5c5a3dbed20824b4edc4b8a7cc12904de22",
+  "source_image_bytes": 44646,
+  "screenshot_path": "product-identity\\source-assets\\FF5776\\FF5776-official-page.png",
+  "screenshot_sha256": "82e0e5b4abe740b86a8e99cc9754df99b7e32e0a18491e8a09115fb33866765f",
+  "screenshot_role": "BEST_EFFORT_AUTOMATED_AUDIT_EVIDENCE_NOT_RENDER_GATE",
+  "cache_used": false,
+  "previous_master_used": false,
+  "verified_fresh_source": true
+}

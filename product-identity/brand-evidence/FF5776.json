@@ -4,11 +4,13 @@
   "status": "PASS",
   "manufacturer": "FLEETGUARD",
   "competitor_code": "FF5776",
-  "catalog_identity_status": "STOP_REVIEW",
-  "catalog_identity_reason": "NO_EXACT_CATALOG_MATCH",
-  "candidate_skus": [],
-  "canonical_sku_resolved": false,
-  "brand_identity_source": "ACTIVE_PILOT_FILTER_TYPE_AUTHORITY",
+  "catalog_identity_status": "RESOLVED",
+  "catalog_identity_reason": null,
+  "candidate_skus": [
+    "EF95776"
+  ],
+  "canonical_sku_resolved": true,
+  "brand_identity_source": "LIVE_POSTGRES_WORLD_CATALOGUE",
   "filter_type": "FUEL",
   "technology": "SYNTAPORE™",
   "technology_key": "SYNTAPORE",
