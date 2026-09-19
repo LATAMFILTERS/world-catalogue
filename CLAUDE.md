@@ -79,3 +79,22 @@ A `STANDBY` or `CI` node must not run recurring production schedulers. Before ad
 - In engineering, product, validation, performance, and technical-claim contexts, artificial intelligence may be described only as mathematical/computational engineering support for evaluating demanding operating conditions; it does not replace physical validation, documented testing, or professional engineering judgment.
 - In corporate leadership and governance contexts, ELIMFILTERS may accurately disclose specialized Executive AI Agents as AI-operated executive functions under the human-governed Chief Executive Office. They must never be represented as undisclosed human employees or natural persons, and agent autonomy must not be overstated.
 - Public descriptions of the executive-agent model must emphasize defined responsibility, delegated authority, accountability, traceability, escalation, and human intervention rather than novelty or fictional staffing.
+
+## Ponytail implementation rule
+
+Ponytail is the default code-simplification discipline for agentic changes in this repository. Apply it after understanding and tracing the real flow, never instead of analysis.
+
+Before creating code, infrastructure, schema, scripts, workers, agents, endpoints, dependencies or configuration:
+
+1. Ask whether the new artifact needs to exist at all.
+2. Search this repository for an existing implementation and extend/reuse it when possible.
+3. Check the authorized adjacent repository (`elimfilters-crm`) when the capability may already belong there.
+4. Prefer language/runtime standard library and native platform features before adding abstractions.
+5. Prefer already-installed dependencies before introducing another dependency.
+6. Prefer the smallest implementation that satisfies the actual requirement.
+7. Preserve validation, security boundaries, data-loss protections, observability and required accessibility; simplification must never remove these safeguards.
+8. Do not create a temporary script when a canonical operational path already exists. If a temporary artifact is truly necessary, label it clearly and remove it after validation unless it becomes an approved maintained tool.
+9. Do not create a second source of truth, scheduler, worker, runtime owner or canonical data path merely because doing so is easier locally.
+10. At completion, report what was reused, what was created, why creation was necessary, and any temporary artifacts left behind.
+
+For catalogue work specifically, reuse canonical registries, mappings, ingestion paths, evidence models and Part Search logic before adding parallel structures. Product truth remains governed by this repository's existing canonical contracts.

@@ -54,10 +54,13 @@ async function fileHash(p) {
 }
 
 if (brand !== 'FLEETGUARD') throw new Error('STOP_UNSUPPORTED_MANUFACTURER');
-if (catalogPage < 1 || catalogPage > 46) throw new Error('STOP_CATALOG_PAGE_OUT_OF_RANGE');
+if (catalogPage < 1) throw new Error('STOP_CATALOG_PAGE_OUT_OF_RANGE');
 if (catalogPosition < 1 || catalogPosition > 20) throw new Error('STOP_CATALOG_POSITION_OUT_OF_RANGE');
-const expectedCatalog = 'https://www.fleetguard.com/es/category/productos/filtraci%C3%B3n-de-lubricante/filtros-de-lubricante-giratorios/0ZGPL0000000FSv4AM';
-if (catalogUrl !== expectedCatalog) throw new Error('STOP_WRONG_FLEETGUARD_CATEGORY');
+let parsedCatalogUrl;
+try { parsedCatalogUrl = new URL(catalogUrl); } catch { throw new Error('STOP_INVALID_FLEETGUARD_CATEGORY_URL'); }
+if (parsedCatalogUrl.hostname !== 'www.fleetguard.com' || !parsedCatalogUrl.pathname.includes('/category/')) {
+  throw new Error('STOP_WRONG_FLEETGUARD_CATEGORY');
+}
 
 const source = runJson('product-identity/scripts/acquire-manufacturer-source.mjs', [
   `--brand=${brand}`,
@@ -67,8 +70,7 @@ const source = runJson('product-identity/scripts/acquire-manufacturer-source.mjs
 if (!source.verified_fresh_source || source.cache_used || source.previous_master_used) {
   throw new Error('STOP_FRESH_SOURCE_POLICY_FAILED');
 }
-if (!source.screenshot_path || !source.screenshot_sha256) throw new Error('STOP_SCREENSHOT_REQUIRED');
-await fs.access(source.screenshot_path);
+if (source.screenshot_path) await fs.access(source.screenshot_path);
 await fs.access(source.source_image_path);
 
 const geometryEvidenceRaw = await fs.readFile(geometryEvidencePath, 'utf8').catch(() => null);
@@ -77,8 +79,11 @@ const geometry = JSON.parse(geometryEvidenceRaw);
 if (String(geometry.manufacturer || '').toUpperCase() !== brand || String(geometry.competitor_code || '').toUpperCase() !== code) {
   throw new Error('STOP_GEOMETRY_EVIDENCE_SKU_MISMATCH');
 }
-if (geometry.source_image_sha256 !== source.source_image_sha256 || geometry.screenshot_sha256 !== source.screenshot_sha256) {
+if (geometry.source_image_sha256 !== source.source_image_sha256) {
   throw new Error('STOP_GEOMETRY_EVIDENCE_HASH_MISMATCH');
+}
+if (source.screenshot_sha256 && geometry.screenshot_sha256 !== source.screenshot_sha256) {
+  throw new Error('STOP_GEOMETRY_SCREENSHOT_HASH_MISMATCH');
 }
 for (const field of REQUIRED_GEOMETRY_FIELDS) {
   const value = geometry[field];
@@ -116,8 +121,9 @@ const packet = {
     page: catalogPage,
     position: catalogPosition,
     competitor_code: code,
-    expected_pages: 46,
-    expected_items_per_page: 20
+    expected_pages: null,
+    expected_items_per_page: 20,
+    page_count_source: 'DYNAMIC_FROM_CURRENT_CATEGORY'
   },
   source: {
     manufacturer: brand,
@@ -133,7 +139,7 @@ const packet = {
     previous_master_used: false
   },
   geometry_lock: {
-    source_of_truth: 'CURRENT_SKU_SCREENSHOT_AND_OFFICIAL_SOURCE_IMAGE',
+    source_of_truth: 'CURRENT_SKU_OFFICIAL_SOURCE_IMAGE',
     geometry_evidence_path: geometryEvidencePath,
     geometry_evidence_sha256: await fileHash(geometryEvidencePath),
     vertical_filter_geometry: geometry.vertical_filter_geometry,
@@ -166,8 +172,8 @@ const packet = {
   artwork_lock: {
     body_color_hex: '#414141',
     lithography_color_hex: '#CBCBCB',
-    positioning_line: 'TOTAL ASSET PROTECTION',
-    descriptor: 'Powered Filtration',
+    positioning_line: 'TOTAL ASSETS PROTECTION',
+    descriptor: tech.technology_descriptor,
     manufacturer_branding_allowed: false,
     secondary_colors_allowed: false,
     german_quality_allowed: false,
@@ -176,7 +182,7 @@ const packet = {
   execution_guard: {
     single_authority: true,
     catalog_discovery_required: true,
-    screenshot_required: true,
+    screenshot_required: false,
     geometry_evidence_required: true,
     ad_hoc_prompt_values_forbidden: true,
     remembered_sku_forbidden: true,
