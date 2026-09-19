@@ -1,0 +1,31 @@
+{
+  "family": "COOLANT",
+  "standard": "STRICT_DEEP_PARITY",
+  "universe_filters": 33,
+  "active_filters": 29,
+  "discontinued_filters": 4,
+  "pagination_omission": [
+    "P551309"
+  ],
+  "target": 29,
+  "EW7": 29,
+  "technology": "THERMACORE™",
+  "unique_results": 29,
+  "unique_skus": 29,
+  "pass": 29,
+  "fail": 0,
+  "missing": 0,
+  "error": 0,
+  "partial": 0,
+  "deep_product_pages": 29,
+  "competitor_rows": 29,
+  "competitor_with_refs": 15,
+  "competitor_not_found": 14,
+  "competitor_errors": 0,
+  "total_competitor_refs": 593,
+  "complete": true,
+  "failures": [],
+  "evidence_policy": "No fabricated values. All active EW7 products require complete official Donaldson product-page evidence; competitor NOT_FOUND is recorded as verified absence.",
+  "sha256": "d47b4bd01c9f283fa08db3d1f8bff2cf6cc4add9f1372d538fe728aca5bc625c",
+  "verified_at": "2026-09-17T16:26:13.479Z"
+}

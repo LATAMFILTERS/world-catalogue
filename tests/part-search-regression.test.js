@@ -62,3 +62,36 @@ test('/api/search remains independent of Redis cache', () => {
   assert.doesNotMatch(route, /cacheSet\s*\(/, '/api/search must not depend on cacheSet');
   assert.doesNotMatch(route, /_redis\b/, '/api/search must not depend directly on Redis');
 });
+
+
+test('alternative products resolve by ELIMFILTERS SKU as well as codigo_base', () => {
+  const server = read('server-original.js');
+  const start = server.indexOf('async function enrichAlternatives');
+  const end = server.indexOf('// Split a combined refs array', start);
+  assert.ok(start >= 0 && end > start, 'unable to locate enrichAlternatives');
+  const helper = server.slice(start, end);
+
+  assert.ok(helper.includes('UPPER(codigo_base) = ANY($1) OR UPPER(sku) = ANY($1)'), 'alternative lookup must support SKU and codigo_base');
+  assert.ok(helper.includes('if (r.sku) altMap[r.sku.toUpperCase()] = r;'), 'resolved alternatives must be indexed by ELIMFILTERS SKU');
+});
+
+
+test('Part Search resolves governed Donaldson exact_part_reference aliases', () => {
+  const server = read('server-original.js');
+  const start = server.indexOf("// 1c. Exact governed reference match");
+  assert.ok(start >= 0, 'exact_part_reference lookup block missing');
+  const route = server.slice(start, server.indexOf('// Equipment class filter', start));
+  assert.ok(route.includes('FROM exact_part_reference e'), 'must query exact_part_reference');
+  assert.ok(route.includes("UPPER(e.brand) = 'DONALDSON'"), 'Donaldson exact references must be scoped by brand');
+  assert.ok(route.includes("source: 'exact_part_reference'"), 'must expose exact reference source');
+});
+
+test('public search excludes catalog-inactive hardware', () => {
+  const server = read('server-original.js');
+  const searchStart = server.indexOf("app.get('/api/search'");
+  const debugStart = server.indexOf("app.get('/api/debug/bad-jsonb-applications'", searchStart);
+  const publicSearch = server.slice(searchStart, debugStart);
+  assert.ok(publicSearch.includes('elimfilters_catalog_active_v'), 'public routes must use active catalog view');
+  assert.ok(publicSearch.includes("catalog_active = false"), 'search must fail closed for explicitly excluded SKU/base');
+  assert.ok(publicSearch.includes("source: 'catalog_scope_excluded'"), 'excluded scope must return explicit empty resolution');
+});

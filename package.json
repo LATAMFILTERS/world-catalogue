@@ -79,7 +79,11 @@
     "knowledge:canonical:validate": "node scripts/validate-canonical-knowledge-consumption.mjs",
     "hermes:nodal:review:init": "node scripts/hermes/nodal-promotion.mjs --init-reviews",
     "hermes:nodal:promotion:audit": "node scripts/hermes/nodal-promotion.mjs",
-    "hermes:nodal:promote": "node scripts/hermes/nodal-promotion.mjs --apply"
+    "hermes:nodal:promote": "node scripts/hermes/nodal-promotion.mjs --apply",
+    "hermes:catalogue:quality": "node scripts/hermes/catalogue-readiness.mjs",
+    "hermes:catalogue:quality:sync": "node scripts/hermes/catalogue-readiness.mjs --sync",
+    "hermes:catalogue:work-orders": "node scripts/hermes/catalogue-quality-work-orders.mjs",
+    "hermes:catalogue:research": "node scripts/hermes/catalogue-dossier-research.mjs"
   },
   "dependencies": {
     "axios": "^1.7.7",

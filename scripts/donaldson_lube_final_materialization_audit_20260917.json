@@ -1,0 +1,156 @@
+{
+  "family": "DONALDSON LUBE CATEGORY",
+  "technology": "SYNTRAX™",
+  "closure_date": "2026-09-17",
+  "status": "CLOSED_100_PERCENT",
+  "category_filter_like_targets": 352,
+  "lube_native_el8_targets": 351,
+  "cross_family_rerouted_count": 1,
+  "cross_family_rerouted": [
+    {
+      "code": "P173489",
+      "from": "EL83489 / SYNTRAX™",
+      "to": "EH63489 / NANOFORCE™",
+      "classification": "HYDRAULIC FILTER, CARTRIDGE",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P173489/17376"
+    }
+  ],
+  "postgres_resolution": {
+    "resolved": 351,
+    "canonical_codigo_base": 334,
+    "exact_donaldson_reference": 17,
+    "unresolved": 0,
+    "missing": []
+  },
+  "consolidated_equivalent_donaldson_codes": [
+    {
+      "code": "P550562",
+      "sku": "EL80562"
+    },
+    {
+      "code": "P550636",
+      "sku": "EL80636"
+    },
+    {
+      "code": "P550639",
+      "sku": "EL80639"
+    },
+    {
+      "code": "P550671",
+      "sku": "EL80671"
+    },
+    {
+      "code": "P550707",
+      "sku": "EL80707"
+    },
+    {
+      "code": "P550710",
+      "sku": "EL80710"
+    },
+    {
+      "code": "P550712",
+      "sku": "EL80712"
+    },
+    {
+      "code": "P550750",
+      "sku": "EL80750"
+    },
+    {
+      "code": "P550763",
+      "sku": "EL80763"
+    },
+    {
+      "code": "P550765",
+      "sku": "EL80765"
+    },
+    {
+      "code": "P550777",
+      "sku": "EL80777"
+    },
+    {
+      "code": "P556352",
+      "sku": "EL86352"
+    },
+    {
+      "code": "P557500",
+      "sku": "EL87500"
+    },
+    {
+      "code": "P584063",
+      "sku": "EL84063"
+    }
+  ],
+  "listing_aliases": [
+    {
+      "code": "P550761SP",
+      "canonical_code": "P550761",
+      "sku": "EL80761"
+    },
+    {
+      "code": "P550768SP",
+      "canonical_code": "P550768",
+      "sku": "EL80768"
+    },
+    {
+      "code": "P550963-",
+      "canonical_code": "P550963",
+      "sku": "EL80963"
+    }
+  ],
+  "new_el8_products": [
+    {
+      "code": "P553871",
+      "sku": "EL853871",
+      "official_xrefs": 38,
+      "equipment_applications": 39
+    },
+    {
+      "code": "P557564",
+      "sku": "EL87564",
+      "official_xrefs": 2,
+      "equipment_applications": 16
+    },
+    {
+      "code": "P585126",
+      "sku": "EL85126",
+      "official_xrefs": 1,
+      "equipment_applications": 11
+    },
+    {
+      "code": "P585127",
+      "sku": "EL85127",
+      "official_xrefs": 2,
+      "equipment_applications": 9
+    }
+  ],
+  "reroute_verification": {
+    "sku": "EH63489",
+    "codigo_base": "P173489",
+    "filter_type": "hydraulic",
+    "technology": "NANOFORCE™",
+    "donaldson_url": "https://shop.donaldson.com/store/en-us/product/P173489/17376",
+    "old_el83489_rows": 0,
+    "application_evidence": [
+      {
+        "application_kind": "ENGINE",
+        "payload_hash": "c74abc2d47b4b74438141428f38d58f8",
+        "verified": true
+      },
+      {
+        "application_kind": "EQUIPMENT",
+        "payload_hash": "c74abc2d47b4b74438141428f38d58f8",
+        "verified": true
+      }
+    ]
+  },
+  "part_search_verified": {
+    "P550761SP": "EL80761",
+    "P550768SP": "EL80768",
+    "P550963-": "EL80963",
+    "P550562": "EL80562",
+    "P553871": "EL853871",
+    "P173489": "EH63489",
+    "EH63489": "EH63489"
+  },
+  "closure_statement": "DONALDSON LUBE CATEGORY: 352/352 ACCOUNTED — 351 EL8 / SYNTRAX™ + 1 HYDRAULIC REROUTE TO EH6 / NANOFORCE™"
+}

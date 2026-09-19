@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "acquisition_mode": "AUTOMATED_OFFICIAL_SOURCE_RESILIENT",
+  "manufacturer": "FLEETGUARD",
+  "part_number": "LF691A",
+  "requested_product_url": "https://www.fleetguard.com/product/LF691A",
+  "requested_product_host": "www.fleetguard.com",
+  "resolved_official_page_url": "https://www.fleetguard.com/product/LF691A",
+  "resolved_official_page_host": "www.fleetguard.com",
+  "product_page_part_match": true,
+  "transient_http_fallback_used": false,
+  "acquisition_attempts": [
+    {
+      "url": "https://www.fleetguard.com/product/LF691A",
+      "ok": true,
+      "status": 200
+    }
+  ],
+  "source_image_url": "https://www.fleetguard.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=800/https://atmus.widen.net/content/safzuocelh/original/LF691A.jpg",
+  "source_image_final_url": "https://www.fleetguard.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,width=800/https://atmus.widen.net/content/safzuocelh/original/LF691A.jpg",
+  "source_image_match_evidence": "NETWORK_RESOURCE_PART_MATCH",
+  "source_image_path": "product-identity\\source-assets\\LF691A\\LF691A-official-source.jpg",
+  "source_image_sha256": "bf140bd94e79c0ddf8bd70c010b932d5e1cf8cbf94800459ea3ecccff57e1ae6",
+  "source_image_bytes": 43673,
+  "screenshot_path": "product-identity\\source-assets\\LF691A\\LF691A-official-page.png",
+  "screenshot_sha256": "8717471783181e0dc46e07fdbdbab38e7d8e0a9162e9da68ff45d27db1767256",
+  "screenshot_role": "BEST_EFFORT_AUTOMATED_AUDIT_EVIDENCE_NOT_RENDER_GATE",
+  "cache_used": false,
+  "previous_master_used": false,
+  "verified_fresh_source": true
+}

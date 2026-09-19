@@ -1,0 +1,337 @@
+{
+  "date": "2026-09-18",
+  "policy": "Standalone metal/hardware pieces are excluded. Complete filtration/separation units and replacement elements remain active.",
+  "inventory": {
+    "physical": 13948,
+    "active": 13897,
+    "excluded": 51,
+    "hd_active": 7341,
+    "ld_active": 6556,
+    "et9_active": 370,
+    "et9_excluded": 51
+  },
+  "et9": {
+    "physical": 421,
+    "active": 370,
+    "excluded_hardware_only": 51,
+    "unclassified": 0
+  },
+  "protected_examples": {
+    "complete_unit": [
+      "ET92002",
+      "ET97860",
+      "ET97862"
+    ],
+    "replacement_element": [
+      "ET93202"
+    ]
+  },
+  "excluded": [
+    {
+      "sku": "ET90011",
+      "codigo_base": "3890011S",
+      "canonical_source_code": "3890011S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET90103",
+      "codigo_base": "HA103",
+      "canonical_source_code": "HA103",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET90125",
+      "codigo_base": "FH125",
+      "canonical_source_code": "FH125",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET90126",
+      "codigo_base": "FH126",
+      "canonical_source_code": "FH126",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET90134",
+      "codigo_base": "3920134",
+      "canonical_source_code": "3920134",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET90618",
+      "codigo_base": "3930618S",
+      "canonical_source_code": "3930618S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET90647",
+      "codigo_base": "3970647",
+      "canonical_source_code": "3970647",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET91305",
+      "codigo_base": "3321305S",
+      "canonical_source_code": "3321305S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET91402",
+      "codigo_base": "FH21402",
+      "canonical_source_code": "FH21402",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET91505",
+      "codigo_base": "3311505S",
+      "canonical_source_code": "3311505S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET91894",
+      "codigo_base": "3911894S",
+      "canonical_source_code": "3911894S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92005",
+      "codigo_base": "FH22005",
+      "canonical_source_code": "FH22005",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92006",
+      "codigo_base": "FH22006",
+      "canonical_source_code": "FH22006",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92008",
+      "codigo_base": "FH22008",
+      "canonical_source_code": "FH22008",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92011",
+      "codigo_base": "FH22011",
+      "canonical_source_code": "FH22011",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92012",
+      "codigo_base": "FH22012",
+      "canonical_source_code": "FH22012",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92013",
+      "codigo_base": "212013S",
+      "canonical_source_code": "212013S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92014",
+      "codigo_base": "FH22014",
+      "canonical_source_code": "FH22014",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92088",
+      "codigo_base": "FH22088",
+      "canonical_source_code": "FH22088",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92091",
+      "codigo_base": "3312091S",
+      "canonical_source_code": "3312091S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92092",
+      "codigo_base": "3312092S",
+      "canonical_source_code": "3312092S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92309",
+      "codigo_base": "3902309",
+      "canonical_source_code": "3902309",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92319",
+      "codigo_base": "3962319S",
+      "canonical_source_code": "3962319S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92367",
+      "codigo_base": "3302367S",
+      "canonical_source_code": "3302367S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET92717",
+      "codigo_base": "3912717S",
+      "canonical_source_code": "3912717S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET93199",
+      "codigo_base": "3833199S",
+      "canonical_source_code": "3833199S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET93352",
+      "codigo_base": "3973352",
+      "canonical_source_code": "3973352",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET93820",
+      "codigo_base": "3923820",
+      "canonical_source_code": "3923820",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET93925",
+      "codigo_base": "3303925S",
+      "canonical_source_code": "3303925S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET94144",
+      "codigo_base": "3974144",
+      "canonical_source_code": "3974144",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET94287",
+      "codigo_base": "3944287S",
+      "canonical_source_code": "3944287S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET94315",
+      "codigo_base": "3304315S",
+      "canonical_source_code": "3304315S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET94450",
+      "codigo_base": "3934450S",
+      "canonical_source_code": "3934450S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET94694",
+      "codigo_base": "3944694",
+      "canonical_source_code": "3944694",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET94711",
+      "codigo_base": "154711S",
+      "canonical_source_code": "154711S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET94795",
+      "codigo_base": "3944795S",
+      "canonical_source_code": "3944795S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET94842",
+      "codigo_base": "3934842",
+      "canonical_source_code": "3934842",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET94848",
+      "codigo_base": "3914848S",
+      "canonical_source_code": "3914848S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET95498",
+      "codigo_base": "3905498",
+      "canonical_source_code": "3905498",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET96171",
+      "codigo_base": "156171S",
+      "canonical_source_code": "156171S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET96248",
+      "codigo_base": "3946248S",
+      "canonical_source_code": "3946248S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET97034",
+      "codigo_base": "3947034S",
+      "canonical_source_code": "3947034S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET97232",
+      "codigo_base": "3947232",
+      "canonical_source_code": "3947232",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET97299",
+      "codigo_base": "3977299",
+      "canonical_source_code": "3977299",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET97737",
+      "codigo_base": "3957737",
+      "canonical_source_code": "3957737",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET97905",
+      "codigo_base": "3967905S",
+      "canonical_source_code": "3967905S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET97937",
+      "codigo_base": "3967937",
+      "canonical_source_code": "3967937",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET98190",
+      "codigo_base": "3918190",
+      "canonical_source_code": "3918190",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET98559",
+      "codigo_base": "3958559",
+      "canonical_source_code": "3958559",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET99114",
+      "codigo_base": "3959114",
+      "canonical_source_code": "3959114",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    },
+    {
+      "sku": "ET993200",
+      "codigo_base": "3833200S",
+      "canonical_source_code": "3833200S",
+      "catalog_scope_reason": "EXCLUDED_HARDWARE_ONLY_FLEETGUARD_FUEL_FILTER_HEADS"
+    }
+  ]
+}

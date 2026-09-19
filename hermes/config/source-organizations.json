@@ -4182,6 +4182,46 @@
       "notes": "",
       "status": "DISCOVERY_REQUIRED",
       "discovery_required": true
+    },
+    {
+      "id": "mann_filter",
+      "name": "MANN-FILTER",
+      "category": "filtration_competitor",
+      "parent_company": "MANN+HUMMEL",
+      "region": "Europe",
+      "official_domain": "https://www.mann-filter.com",
+      "monitored_urls": [
+        "https://www.mann-filter.com/en/catalog.html"
+      ],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "light_duty",
+        "heavy_duty",
+        "industrial"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "hydraulic_filters",
+        "cabin_filters",
+        "coolant_filters",
+        "fuel_water_separators"
+      ],
+      "aliases": [
+        "MANN",
+        "MANN FILTER",
+        "MANN-FILTER",
+        "MANNFILTER",
+        "MANN HUMMEL"
+      ],
+      "notes": "Official MANN-FILTER product catalogue authority for filter identity verification.",
+      "status": "ACTIVE",
+      "discovery_required": false
     }
   ]
 }

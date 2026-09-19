@@ -2,7 +2,9 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { validateCanonicalWrite } = require('../lib/catalog-write-gateway');
+const fs = require('node:fs');
+const path = require('node:path');
+const { validateCanonicalWrite, validateGovernedCatalogPatch, assertGovernedCatalogPatch } = require('../lib/catalog-write-gateway');
 
 function baseRow(overrides = {}) {
   return {
@@ -84,4 +86,39 @@ test('LD fallback requires verified MANN absence and OEM classification', () => 
     } },
   };
   assert.equal(validateCanonicalWrite(row).valid, true);
+});
+
+
+test('non-canonical patches can pass without forcing unrelated legacy governance', () => {
+  const result = validateGovernedCatalogPatch(
+    { sku: 'EA10001', description: 'legacy row' },
+    { packaging_source: 'OFFICIAL_SOURCE_SCRAPE', units_per_case: 6 }
+  );
+  assert.equal(result.valid, true);
+  assert.equal(result.scope, 'NON_CANONICAL_PATCH');
+  assert.deepEqual(result.canonical_fields_touched, []);
+});
+
+test('canonical patches are evaluated against the complete post-write row', () => {
+  const result = validateGovernedCatalogPatch(baseRow(), { duty: 'LIGHT_DUTY' });
+  assert.equal(result.valid, false);
+  assert.equal(result.scope, 'CANONICAL_PATCH');
+  assert.ok(result.reasons.includes('MANN_ABSENCE_NOT_VERIFIED'));
+  assert.throws(() => assertGovernedCatalogPatch(baseRow(), { duty: 'LIGHT_DUTY' }), /CATALOG_PATCH_GATEWAY_BLOCKED/);
+});
+
+test('active HERMES catalogue writers invoke the patch gateway before direct SQL', () => {
+  const files = [
+    'scripts/hermes/publish-catalogue-plan.mjs',
+    'scripts/hermes/rollback-catalogue-publication.mjs',
+    'scripts/hermes/hd-packaging-enrichment-engine.mjs',
+  ];
+  for (const relative of files) {
+    const source = fs.readFileSync(path.join(__dirname, '..', relative), 'utf8');
+    const gate = source.indexOf('assertGovernedCatalogPatch');
+    const write = source.indexOf('UPDATE elimfilters_catalog');
+    assert.ok(gate >= 0, `${relative} must import/use the gateway`);
+    assert.ok(write >= 0, `${relative} is expected to contain a catalogue writer`);
+    assert.ok(source.indexOf('assertGovernedCatalogPatch', gate + 1) >= 0, `${relative} must call the gateway`);
+  }
 });

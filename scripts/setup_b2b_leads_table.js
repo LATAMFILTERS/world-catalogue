@@ -10,10 +10,9 @@ const fs = require('fs');
 const path = require('path');
 const { Client } = require('pg');
 
-let connectionString = process.env.DATABASE_URL || 'postgresql://catalogo_elimfilters_user:d1Ioo8q0tkdgGccNDF0axZ8mQVmduCBf@dpg-d86ju1p9rddc739lc230.oregon-postgres.render.com/catalogo_elimfilters?ssl=true';
-
-if (connectionString.includes('-a.oregon-postgres.render.com')) {
-  connectionString = connectionString.replace('-a.oregon-postgres.render.com', '.oregon-postgres.render.com');
+const connectionString = String(process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL || '').trim();
+if (!connectionString) {
+  throw new Error('CATALOG_DATABASE_URL or DATABASE_URL is required; database credentials must come from the runtime secret store.');
 }
 
 const client = new Client({

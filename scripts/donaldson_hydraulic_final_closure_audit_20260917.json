@@ -1,0 +1,100 @@
+{
+  "family": "DONALDSON HYDRAULIC",
+  "family_code": "EH6",
+  "technology": "NANOFORCE™",
+  "closure_date": "2026-09-17",
+  "closure_scope": "ALL_PUBLICLY_IDENTIFIABLE_ACTIVE_HYDRAULIC_FILTER_PRODUCTS",
+  "status": "CLOSED_100_PERCENT",
+  "discovery": {
+    "donaldson_header_positions": 5842,
+    "rendered_positions": 5837,
+    "suppressed_index_positions": [
+      3749,
+      4033,
+      4034,
+      4035,
+      5113
+    ],
+    "suppressed_index_count": 5,
+    "unique_rendered_codes": 5828,
+    "pages_completed": 293,
+    "page_errors": 0,
+    "active_total": 2035,
+    "active_nonfilter_excluded": [
+      "P568857"
+    ],
+    "active_target_filters": 2034
+  },
+  "catalog": {
+    "target_codes": 2034,
+    "postgres_rows": 2034,
+    "unique_codigo_base": 2034,
+    "unique_eh6_skus": 2034,
+    "nanoforce_rows": 2034,
+    "sku_length_7_rows": 2034,
+    "mismatches": 0,
+    "self_references": 0,
+    "pending_skus": 0
+  },
+  "deep_scrape": {
+    "critical_targets": 107,
+    "ok": 107,
+    "partial": 0,
+    "errors": 0,
+    "expansion_complete": 107
+  },
+  "competitor_direct": {
+    "checked": 2034,
+    "ok_with_refs": 1170,
+    "not_found": 864,
+    "errors": 0,
+    "raw_references": 30184
+  },
+  "alternative_products": {
+    "dbh_count": 9,
+    "dbh_have_own_eh6_sku": true,
+    "classification": "ALTERNATIVE_PRODUCT",
+    "navigation": "RECIPROCAL_EH6_ALTERNATIVES"
+  },
+  "sku_rule": {
+    "normal": "EH6 + last four numeric digits",
+    "collision": "second uses EH6 + 1 + last 3; third uses EH6 + 2 + last 3; continue with next free discriminator",
+    "published_mapping_policy": "STICKY_NEVER_DISPLACE",
+    "short_numeric_policy": "left-pad 1-3 numeric digits to four then apply same collision rule",
+    "reserved_99xxx_fallback": false
+  },
+  "short_code_examples": {
+    "HPDEL11": "EH60011",
+    "HPWEL11": "EH61011",
+    "HPDEL22": "EH60022",
+    "HPPEL22": "EH61022",
+    "HPWEL22": "EH62022",
+    "HPKL18-3MB": "EH63183"
+  },
+  "part_search_verified_examples": [
+    "EH60011",
+    "HPDEL11",
+    "EH63183",
+    "HPKL18-3MB",
+    "EH63856",
+    "P583856",
+    "EH66644",
+    "P566644",
+    "EH61949",
+    "EH62949"
+  ],
+  "ghost_policy": "Index-suppressed positions have no public part identity and are excluded from the public identifiable product universe; no code or SKU is fabricated.",
+  "closure_statement": "DONALDSON HYDRAULIC — EH6 / NANOFORCE™: CERRADO 100%",
+  "cross_category_additions": [
+    {
+      "code": "P173489",
+      "sku": "EH63489",
+      "technology": "NANOFORCE™",
+      "discovered_in": "Donaldson Lube category",
+      "classification": "HYDRAULIC FILTER, CARTRIDGE",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P173489/17376"
+    }
+  ],
+  "catalog_scope_note": "Hydraulic category closure remains 2034/2034. P173489 is an additional hydraulic product discovered in the Lube category and is cataloged separately as EH63489.",
+  "donaldson_hydraulic_catalog_with_cross_category_additions": 2035
+}

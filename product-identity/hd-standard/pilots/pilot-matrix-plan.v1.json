@@ -13,9 +13,14 @@
       "order": 1,
       "pilot_id": "HD_PILOT_SPIN_ON_10",
       "family": "spin_on",
+      "filter_type": "fuel",
       "target_count": 10,
       "status": "active",
-      "selection_goal": "Representative spread from smallest to largest HD spin-on geometry, including oil, fuel, coolant and hydraulic spin-on products when applicable."
+      "manufacturer": "FLEETGUARD",
+      "category_id": "0ZGPL0000000FTP4A2",
+      "category_url": "https://www.fleetguard.com/category/products/fuel-filtration/spin-on-fuel-filters/0ZGPL0000000FTP4A2",
+      "eligible_product_description_prefix": "Fuel Filter, Spin-On",
+      "selection_goal": "Sequential Fleetguard Spin On Fuel Filters only; exclude housings, in-line filters, service parts and fuel/water separators from this pilot."
     },
     {
       "order": 2,

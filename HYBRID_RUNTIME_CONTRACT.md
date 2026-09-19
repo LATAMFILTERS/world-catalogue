@@ -1,15 +1,15 @@
 # ELIMFILTERS Hybrid Runtime Contract
 
-`world-catalogue` is part of a hybrid ELIMFILTERS platform. Lenovo and cloud are complementary nodes; neither is automatically a replacement for the other.
+`world-catalogue` is part of the ELIMFILTERS hybrid platform. Lenovo/ELIMSERVER is the production execution primary; cloud components provide routing, source control and stateless bridge capacity.
 
 ## Topology
 
 | Layer | Primary purpose |
 |---|---|
-| Lenovo | preferred primary node for continuous/private catalogue, Part Search and technical HERMES execution |
+| Lenovo / ELIMSERVER | PRIMARY runtime for catalogue, Part Search, technical HERMES, Knowledge services and local PostgreSQL |
+| Cloudflare | public TLS/routing directly to Lenovo localhost services through the managed tunnel |
+| Render | STANDBY bridge-only proxy; no production database, scheduler, catalogue writer or application secrets |
 | GitHub | source control, audit, selected CI/manual workflows |
-| Render | retained cloud runtime/failover where justified |
-| Cloudflare | public routing, TLS and access/security controls |
 | R2 | object storage/evidence/archive/backup where configured |
 
 ## Domain ownership
@@ -28,9 +28,11 @@ Do not create or mutate CRM commercial records from this repository except throu
 
 ## Runtime invariant
 
-A recurring production capability has exactly one ACTIVE execution owner at a time. Lenovo is preferred for continuous jobs; Render or GitHub may remain standby, CI, manual trigger or failover.
+A recurring production capability has exactly one ACTIVE execution owner at a time. In the current production topology Lenovo is that owner. Render is transport-only STANDBY and GitHub is CI/manual automation; neither may start production schedulers or writers.
 
-Use these labels in new runtime definitions:
+Current production labels are `LENOVO / PRIMARY / ELIM_SCHEDULER_ENABLED=true` for the active runtime and `RENDER / STANDBY / ELIM_SCHEDULER_ENABLED=false` for the bridge.
+
+Use these labels in runtime definitions:
 
 ```text
 ELIM_RUNTIME_NODE=LENOVO|RENDER|GITHUB
@@ -52,4 +54,4 @@ Cross-domain exchange must be explicit and idempotent. A technical finding may b
 
 ## Failover
 
-Cloud services are not to be removed merely because Lenovo is active. Promotion of a standby node to primary must ensure the former primary recurring scheduler is stopped or fenced. All mutation paths remain idempotent.
+Render bridge availability is not compute failover: it remains a stateless proxy to Lenovo and must fail closed if the upstream is unavailable. Any future promotion of another node to PRIMARY is an explicit operational action and must first fence Lenovo writers/schedulers. All mutation paths remain idempotent.

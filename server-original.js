@@ -1190,7 +1190,7 @@ function parseRefs(arr){
 
 // ── Shared: resolve alternatives[] P-codes → ELIMFILTERS SKUs + inherit data ──
 // Called from every search endpoint so all modes (part / VIN / equipment) benefit.
-// alternatives[] is stored as codigo_base values ("P552100"). This function resolves
+// alternatives[] may store codigo_base values ("P552100") or ELIMFILTERS SKUs ("EL82100" / "EH62949"). This function resolves
 // them to EL-SKUs in one batch query and inherits equipment_applications /
 // competitor_codes from the source product when the current product has none.
 async function enrichAlternatives(products, client) {
@@ -1210,13 +1210,16 @@ async function enrichAlternatives(products, client) {
   const { rows } = await client.query(
     `SELECT sku, codigo_base, description, filter_type, sub_type, technology, duty,
             oem_codes, competitor_codes, equipment_applications
-     FROM elimfilters_catalog
-     WHERE UPPER(codigo_base) = ANY($1)`,
+     FROM elimfilters_catalog_active_v
+     WHERE UPPER(codigo_base) = ANY($1) OR UPPER(sku) = ANY($1)`,
     [altCodes]
   );
 
   const altMap = {};
-  rows.forEach(r => { if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r; });
+  rows.forEach(r => {
+    if (r.codigo_base) altMap[r.codigo_base.toUpperCase()] = r;
+    if (r.sku) altMap[r.sku.toUpperCase()] = r;
+  });
 
   for (const p of withAlts) {
     const resolvedSkus = [];
@@ -1439,7 +1442,7 @@ app.post('/api/kits', adminLimiter, requireAdmin, async (req, res) => {
 
     // Determine duty from the first filter found
     const sample = await client.query(
-      'SELECT duty FROM elimfilters_catalog WHERE sku = ANY($1) AND duty IS NOT NULL LIMIT 1',
+      'SELECT duty FROM elimfilters_catalog_active_v WHERE sku = ANY($1) AND duty IS NOT NULL LIMIT 1',
       [filter_skus]
     );
     const duty = sample.rows[0]?.duty || 'LIGHT_DUTY';
@@ -1515,7 +1518,7 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
 
     const components = await client.query(
       `SELECT c.*, kc.kit_sku, kc.qty
-       FROM elimfilters_catalog c
+       FROM elimfilters_catalog_active_v c
        JOIN kit_components kc ON kc.filter_sku = c.sku
        WHERE kc.kit_sku = $1`,
       [kit_sku]
@@ -1523,7 +1526,7 @@ app.get('/api/kits/:kit_sku', searchLimiter, async (req, res) => {
 
     const addons = await client.query(
       `SELECT c.*, ka.kit_sku, ka.note
-       FROM elimfilters_catalog c
+       FROM elimfilters_catalog_active_v c
        JOIN kit_suggested_addons ka ON ka.filter_sku = c.sku
        WHERE ka.kit_sku = $1`,
       [kit_sku]
@@ -1622,7 +1625,7 @@ app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
       `SELECT sku, codigo_base, description, filter_type, sub_type, technology,
               duty, oem_codes, competitor_codes, brand_crossrefs,
               alternatives, equipment_applications
-       FROM elimfilters_catalog
+       FROM elimfilters_catalog_active_v
        WHERE sku = $1`,
       [sku]
     );
@@ -1640,7 +1643,7 @@ app.get('/api/filters/alternatives', searchLimiter, async (req, res) => {
       `SELECT sku, codigo_base, description, filter_type, sub_type, technology,
               duty, oem_codes, competitor_codes, brand_crossrefs,
               alternatives, equipment_applications
-       FROM elimfilters_catalog
+       FROM elimfilters_catalog_active_v
        WHERE UPPER(codigo_base) = ANY($1)`,
       [altCodes]
     );
@@ -1694,19 +1697,19 @@ app.get('/api/autocomplete', searchLimiter, async (req, res) => {
     const { rows } = await client.query(
       `SELECT DISTINCT ON (val) val, type FROM (
          SELECT sku AS val, 'SKU' AS type
-         FROM elimfilters_catalog
+         FROM elimfilters_catalog_active_v
          WHERE UPPER(REPLACE(sku,'-','')) LIKE $1
          UNION ALL
          SELECT codigo_base AS val, 'BASE CODE' AS type
-         FROM elimfilters_catalog
+         FROM elimfilters_catalog_active_v
          WHERE codigo_base IS NOT NULL AND UPPER(REPLACE(codigo_base,'-','')) LIKE $1
          UNION ALL
          SELECT ref->>'code' AS val, 'OEM' AS type
-         FROM elimfilters_catalog, jsonb_array_elements(oem_codes) AS ref
+         FROM elimfilters_catalog_active_v, jsonb_array_elements(oem_codes) AS ref
          WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
          UNION ALL
          SELECT ref->>'code' AS val, 'CROSS-REF' AS type
-         FROM elimfilters_catalog, jsonb_array_elements(competitor_codes) AS ref
+         FROM elimfilters_catalog_active_v, jsonb_array_elements(competitor_codes) AS ref
          WHERE UPPER(REPLACE(ref->>'code','-','')) LIKE $1
        ) matches
        WHERE val IS NOT NULL AND val <> ''
@@ -1742,9 +1745,21 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     await client.query("SET client_encoding = 'UTF8'");
     const q = raw.toUpperCase().replace(/[-\s]/g, '');
 
+
+    const excludedSku = await client.query(
+      `SELECT 1 FROM elimfilters_catalog
+       WHERE catalog_active = false
+         AND UPPER(REPLACE(sku,'-','')) = $1
+       LIMIT 1`,
+      [q]
+    );
+    if (excludedSku.rows.length > 0) {
+      return res.json({ success: true, results: [], source: 'catalog_scope_excluded' });
+    }
+
     // 1. Exact SKU match
     const exact = await client.query(
-      `SELECT * FROM elimfilters_catalog WHERE UPPER(REPLACE(sku,'-','')) = $1 LIMIT 1`,
+      `SELECT * FROM elimfilters_catalog_active_v WHERE UPPER(REPLACE(sku,'-','')) = $1 LIMIT 1`,
       [q]
     );
     if (exact.rows.length > 0) {
@@ -1755,13 +1770,42 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
     // 1b. codigo_base match (Donaldson base code e.g. P552100)
     const byBase = await client.query(
-      `SELECT * FROM elimfilters_catalog WHERE UPPER(REPLACE(codigo_base,'-','')) = $1 LIMIT 10`,
+      `SELECT * FROM elimfilters_catalog_active_v WHERE UPPER(REPLACE(codigo_base,'-','')) = $1 LIMIT 10`,
       [q]
     );
     if (byBase.rows.length > 0) {
       const products = byBase.rows.map(r => buildFilterData(r, lang));
       await enrichAlternatives(products, client);
       return res.json({ success: true, results: products, source: 'codigo_base' });
+    }
+
+
+    const excludedBase = await client.query(
+      `SELECT 1 FROM elimfilters_catalog
+       WHERE catalog_active = false
+         AND UPPER(REPLACE(codigo_base,'-','')) = $1
+       LIMIT 1`,
+      [q]
+    );
+    if (excludedBase.rows.length > 0) {
+      return res.json({ success: true, results: [], source: 'catalog_scope_excluded' });
+    }
+
+    // 1c. Exact governed reference match (e.g. Donaldson listing aliases / consolidated source codes)
+    const byExactRef = await client.query(
+      `SELECT DISTINCT ON (c.sku) c.*
+       FROM exact_part_reference e
+       JOIN elimfilters_catalog_active_v c ON c.sku = e.sku
+       WHERE UPPER(e.brand) = 'DONALDSON'
+         AND UPPER(REPLACE(REPLACE(e.part_number,'-',''),' ','')) = $1
+       ORDER BY c.sku, e.id DESC
+       LIMIT 10`,
+      [q]
+    );
+    if (byExactRef.rows.length > 0) {
+      const products = byExactRef.rows.map(r => buildFilterData(r, lang));
+      await enrichAlternatives(products, client);
+      return res.json({ success: true, results: products, source: 'exact_part_reference' });
     }
 
     // Equipment class filter — HD and LD parts must never be mixed in a single
@@ -1783,7 +1827,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
          (v.score + COALESCE(p.priority, 0)) AS resolver_score,
          v.manufacturer AS resolver_manufacturer
        FROM v_api_resolver_v5 v
-       JOIN elimfilters_catalog c ON c.sku = v.sku
+       JOIN elimfilters_catalog_active_v c ON c.sku = v.sku
        LEFT JOIN search_result_priority p
          ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
         AND p.sku = v.sku
@@ -1865,7 +1909,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
            (v.score + COALESCE(p.priority, 0)) AS resolver_score,
            v.manufacturer AS resolver_manufacturer
          FROM v_api_resolver_v5 v
-         JOIN elimfilters_catalog c ON c.sku = v.sku
+         JOIN elimfilters_catalog_active_v c ON c.sku = v.sku
          LEFT JOIN search_result_priority p
            ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
           AND p.sku = v.sku
@@ -1914,7 +1958,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     // turning every true no-match search into a 500 instead of an empty
     // result. Cast directly to text before building the tsvector.
     const desc = await client.query(
-      `SELECT * FROM elimfilters_catalog
+      `SELECT * FROM elimfilters_catalog_active_v
        WHERE to_tsvector('english', COALESCE(description::text, ''))
          @@ plainto_tsquery('english', $1)
        LIMIT 10`,
@@ -1989,7 +2033,7 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
 
     const { rows } = await client.query(`
       SELECT DISTINCT ON (c.sku) c.*
-      FROM elimfilters_catalog c
+      FROM elimfilters_catalog_active_v c
       WHERE
         -- Light Duty: search in vehicle_applications
         (
@@ -2117,14 +2161,14 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
         FROM kg_product_equipment kpe
         JOIN kg_equipment_models km ON kpe.model_id = km.id
         LEFT JOIN kg_equipment_makes kmk ON km.make_id = kmk.id
-        WHERE kpe.product_sku = elimfilters_catalog.sku
+        WHERE kpe.product_sku = elimfilters_catalog_active_v.sku
           AND ${kgConds.join(' AND ')}
       )`);
     }
 
     const whereClause = conditions.length > 0 ? 'WHERE (' + conditions.join(') OR (') + ')' : '';
     const { rows } = await client.query(
-      `SELECT DISTINCT ON (sku) * FROM elimfilters_catalog ${whereClause} ORDER BY sku LIMIT 30`,
+      `SELECT DISTINCT ON (sku) * FROM elimfilters_catalog_active_v ${whereClause} ORDER BY sku LIMIT 30`,
       params
     );
 
@@ -2230,6 +2274,21 @@ app.get('/api/debug/suspects-equipment', adminLimiter, requireAdmin, async (req,
   } finally {
     client.release();
   }
+});
+
+// ─── CATALOG MUTATION HTTP GATE ─────────────────────────────────────────────────────────────────────
+// The public Search runtime is read-only by default. Legacy /api/import and /api/admin
+// mutation routes remain available only during an explicit maintenance window.
+// Local governed scripts may still write through the catalog write gateway; this gate
+// only prevents the long-running HTTP surface from becoming an implicit writer.
+app.use(['/api/import', '/api/admin'], (req, res, next) => {
+  const mutating = ['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method);
+  if (!mutating) return next();
+  if (String(process.env.ELIM_CATALOG_MUTATION_API_ENABLED || '').toLowerCase() === 'true') return next();
+  return res.status(503).json({
+    error: 'CATALOG_MUTATION_API_DISABLED',
+    message: 'Catalog HTTP mutations are disabled on the production Search runtime; use the governed Lenovo maintenance path.'
+  });
 });
 
 // ─── POST /api/import/donaldson ─────────────────────────────────────────────────────────────────────────
@@ -3267,9 +3326,21 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
     await client.query("SET client_encoding = 'UTF8'");
     const q = raw.toUpperCase().replace(/[-\s]/g, '');
 
+
+    const excludedSku = await client.query(
+      `SELECT 1 FROM elimfilters_catalog
+       WHERE catalog_active = false
+         AND UPPER(REPLACE(sku,'-','')) = $1
+       LIMIT 1`,
+      [q]
+    );
+    if (excludedSku.rows.length > 0) {
+      return res.json({ success: true, results: [], source: 'catalog_scope_excluded' });
+    }
+
     // Try exact SKU match
     const exact = await client.query(
-      `SELECT * FROM elimfilters_catalog WHERE UPPER(REPLACE(sku,'-','')) = $1 LIMIT 1`, [q]
+      `SELECT * FROM elimfilters_catalog_active_v WHERE UPPER(REPLACE(sku,'-','')) = $1 LIMIT 1`, [q]
     );
     if (exact.rows.length > 0) {
       const products = exact.rows.map(r => buildFilterData(r, lang));
@@ -3285,7 +3356,7 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
          (v.score + COALESCE(p.priority, 0)) AS resolver_score,
          v.manufacturer AS resolver_manufacturer
        FROM v_api_resolver_v5 v
-       JOIN elimfilters_catalog c ON c.sku = v.sku
+       JOIN elimfilters_catalog_active_v c ON c.sku = v.sku
        LEFT JOIN search_result_priority p
          ON UPPER(REPLACE(p.query_code, '-', '')) = v.code
         AND p.sku = v.sku

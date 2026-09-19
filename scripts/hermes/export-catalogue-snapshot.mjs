@@ -68,6 +68,7 @@ export function normalizeCatalogueRow(row) {
     enrichment_data: row.enrichment_data ?? {},
     image_url: row.image_url ?? null,
     donaldson_url: row.donaldson_url ?? null,
+    source_identity: compactObject({ canonical_source_brand: row.canonical_source_brand ?? null, canonical_source_code: row.canonical_source_code ?? null, canonical_source_url: row.canonical_source_url ?? null, canonical_source_status: row.canonical_source_status ?? null, canonical_verified_at: row.canonical_verified_at ?? null, canonical_evidence: row.canonical_evidence ?? null }),
     source_created_at: row.created_at ?? null
   };
 }
@@ -96,6 +97,7 @@ const SELECT_COLUMNS = `
   equipment_applications, burst_pressure_psi, collapse_pressure_psi, created_at,
   alternative_products, description, enrichment_data, specs, duty, image_url,
   donaldson_url, sub_type, vehicle_applications, is_primary, name,
+  canonical_source_brand, canonical_source_code, canonical_source_url, canonical_source_status, canonical_verified_at, canonical_evidence,
   installation_type, attachment_type, brand_crossrefs, alternatives
 `;
 

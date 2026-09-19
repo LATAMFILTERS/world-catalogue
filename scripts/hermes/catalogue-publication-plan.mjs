@@ -7,7 +7,7 @@ import { pathToFileURL } from 'node:url';
 export const PUBLISHABLE_CATALOGUE_FIELDS = new Set([
   'filter_type', 'duty', 'technology', 'dimensions', 'technical_specs',
   'equipment_applications', 'oem_codes', 'competitor_codes',
-  'brand_crossrefs'
+  'brand_crossrefs', 'source_identity', 'codigo_base', 'vehicle_applications'
 ]);
 
 function canonical(value) {
@@ -32,6 +32,10 @@ function assert(condition, message) {
 
 function normalizeSku(value) {
   return String(value || '').trim().toUpperCase();
+}
+function isHdCompetitorOnlyBrand(value) {
+  const k=String(value||'').trim().toUpperCase().replace(/[^A-Z0-9]+/g,' ');
+  return k==='MANN FILTER' || k==='FRAM';
 }
 
 function snapshotValue(product, field) {
@@ -69,6 +73,13 @@ export function buildCataloguePublicationPlan({ bundle, catalog, generatedAt = n
   assert(approvedFields.every((field) => Object.hasOwn(proposedValues, field)), 'Every approved field must have an explicit proposed value');
   if (candidate.approval.approved_fields) {
     assert(hash([...candidate.approval.approved_fields].sort()) === hash([...approvedFields].sort()), 'Publication fields do not match the approved field list');
+  }
+
+  const currentDuty=String(current.duty||'').trim().toUpperCase();
+  const proposedSource=proposedValues.source_identity||null;
+  if(currentDuty==='HEAVY_DUTY' && approvedFields.includes('codigo_base')) {
+    assert(approvedFields.includes('source_identity') && proposedSource, 'HEAVY_DUTY codigo_base changes require source_identity');
+    assert(!isHdCompetitorOnlyBrand(proposedSource.canonical_source_brand), 'MANN-FILTER/FRAM are competitor codes in HEAVY_DUTY and cannot be canonical codigo_base');
   }
 
   const operations = approvedFields.map((field) => ({

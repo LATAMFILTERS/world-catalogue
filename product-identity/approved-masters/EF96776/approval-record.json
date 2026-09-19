@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "sku": "EF96776",
+  "status": "APPROVED_GOLDEN_MASTER",
+  "approved_on": "2026-09-18",
+  "approved_master_sha256": "4d1085f113a54289268f7e88aaddfec2a16e11a6e467ba95d86efab162b802be",
+  "image_dimensions": "1254x1254",
+  "generation_id": "056c7164-0343-46b5-a7ad-25e7a501a76e",
+  "persistent_library_path": "/ELIMFILTERS/product-identity/approved-masters/EF96776/approved-master.png",
+  "persistent_library_file_id": "libfile_0f530e58c0908191a8fe4cb4393451e7",
+  "persistent_file_id": "file_00000000f0c481f6a4caf323db34b6cd",
+  "locked_visual_authority": true,
+  "regenerate_master_forbidden": true,
+  "approved_elements": [
+    "vertical_filter_geometry",
+    "vertical_filter_lithography",
+    "logo",
+    "sku",
+    "product_type",
+    "technology_art",
+    "installation_marks",
+    "titanium_body_color",
+    "horizontal_filter_geometry",
+    "horizontal_baseplate_thread_cap"
+  ],
+  "future_behavior": "REUSE_EXACT_APPROVED_MASTER_BYTES; DO_NOT REGENERATE OR REINTERPRET",
+  "storage": {
+    "provider": "CLOUDFLARE_R2",
+    "bucket": "elimfilters-renders",
+    "image_key": "products/EF96776/approved/4d1085f113a54289268f7e88aaddfec2a16e11a6e467ba95d86efab162b802be.png",
+    "image_url": "https://cdn.elimfilters.com/products/EF96776/approved/4d1085f113a54289268f7e88aaddfec2a16e11a6e467ba95d86efab162b802be.png",
+    "image_sha256": "4d1085f113a54289268f7e88aaddfec2a16e11a6e467ba95d86efab162b802be",
+    "manifest_key": "products/EF96776/manifest.json",
+    "manifest_url": "https://cdn.elimfilters.com/products/EF96776/manifest.json",
+    "catalog_json_url": "https://cdn.elimfilters.com/products/EF96776/manifest.json",
+    "publication_status": "PENDING_R2_UPLOAD"
+  },
+  "approval_method": "LEGACY_EXPLICIT_USER_APPROVAL",
+  "approved_by": "victor",
+  "release_authority": "legacy_user_approval",
+  "responsible_subagent": "branding",
+  "escalation_policy": "EXCEPTIONS_ONLY"
+}

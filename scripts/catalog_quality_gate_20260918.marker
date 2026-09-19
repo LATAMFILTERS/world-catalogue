@@ -1,0 +1,7 @@
+CATALOG_QUALITY_GATE_ACTIVE
+DATE=2026-09-18
+TOTAL_SKUS=13948
+UNIQUE_SKUS=13948
+READINESS_VIEW=catalog_customer_readiness_v
+REFERENCE_CONFLICT_VIEW=catalog_reference_payload_conflicts_v
+AUDIT=catalog_quality_audit_20260918.json

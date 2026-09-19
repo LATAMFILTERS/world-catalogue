@@ -63,16 +63,47 @@ export async function resolveCompetitorSku({
   try {
     const like = `%${String(sourceCode).trim()}%`;
     const { rows } = await pool.query(`
-      SELECT sku, filter_type, duty, technology, competitor_codes, brand_crossrefs, oem_codes
+      SELECT sku, codigo_base, filter_type, duty, technology, competitor_codes, brand_crossrefs, oem_codes
       FROM elimfilters_catalog
       WHERE COALESCE(UPPER(duty), 'HEAVY_DUTY') = UPPER($1)
         AND (
-          competitor_codes::text ILIKE $2
+          UPPER(COALESCE(codigo_base, '')) = UPPER($3)
+          OR competitor_codes::text ILIKE $2
           OR brand_crossrefs::text ILIKE $2
           OR oem_codes::text ILIKE $2
         )
       ORDER BY sku
-    `, [duty, like]);
+    `, [duty, like, String(sourceCode).trim()]);
+
+    const baseMatches = rows.filter((row) => String(row.codigo_base || '').trim().toUpperCase() === String(sourceCode).trim().toUpperCase());
+    if (baseMatches.length === 1) {
+      const row = baseMatches[0];
+      return {
+        status: 'RESOLVED',
+        source_code: sourceCode,
+        source_brand: sourceBrand,
+        elimfilters_sku: row.sku,
+        filter_type: row.filter_type,
+        duty: row.duty,
+        catalog_technology: row.technology ?? null,
+        match_method: 'CODIGO_BASE_EXACT',
+        source: 'world_catalogue.elimfilters_catalog'
+      };
+    }
+    if (baseMatches.length > 1) {
+      return {
+        status: 'STOP_REVIEW',
+        reason: 'AMBIGUOUS_CODIGO_BASE_MATCH',
+        source_code: sourceCode,
+        source_brand: sourceBrand,
+        matches: baseMatches.map((row) => ({
+          sku: row.sku,
+          filter_type: row.filter_type,
+          duty: row.duty,
+          catalog_technology: row.technology ?? null
+        }))
+      };
+    }
 
     const exact = rows.filter((row) => exactMatches(row, sourceCode, sourceBrand));
 
@@ -85,7 +116,12 @@ export async function resolveCompetitorSku({
         reason: 'AMBIGUOUS_EXACT_CATALOG_MATCH',
         source_code: sourceCode,
         source_brand: sourceBrand,
-        matches: exact.map((row) => ({ sku: row.sku, filter_type: row.filter_type, duty: row.duty }))
+        matches: exact.map((row) => ({
+          sku: row.sku,
+          filter_type: row.filter_type,
+          duty: row.duty,
+          catalog_technology: row.technology ?? null
+        }))
       };
     }
 

@@ -16,9 +16,11 @@ const catalogUrl = args['catalog-url'];
 const catalogPage = Number(args['catalog-page'] || 0);
 const catalogPosition = Number(args['catalog-position'] || 0);
 const geometryEvidencePath = args['geometry-evidence'];
+const brandEvidencePath = args['brand-evidence'];
 const phase = String(args.phase || 'PHASE_2').toUpperCase();
-if (!brand || !code || !productUrl || !catalogUrl || !catalogPage || !catalogPosition || !geometryEvidencePath) {
-  throw new Error('Usage: --brand=<manufacturer> --code=<competitor-code> --product-url=<official-url> --catalog-url=<official-category-url> --catalog-page=<1..46> --catalog-position=<1..20> --geometry-evidence=<json> [--phase=PHASE_2]');
+const PILOT_PLAN_PATH = 'product-identity/hd-standard/pilots/pilot-matrix-plan.v1.json';
+if (!brand || !code || !productUrl || !catalogUrl || !catalogPage || !catalogPosition || !geometryEvidencePath || !brandEvidencePath) {
+  throw new Error('Usage: --brand=<manufacturer> --code=<competitor-code> --product-url=<official-url> --catalog-url=<official-category-url> --catalog-page=<n> --catalog-position=<n> --geometry-evidence=<json> --brand-evidence=<json> [--phase=PHASE_2]');
 }
 
 const REQUIRED_GEOMETRY_FIELDS = [
@@ -54,22 +56,14 @@ async function fileHash(p) {
 }
 
 if (brand !== 'FLEETGUARD') throw new Error('STOP_UNSUPPORTED_MANUFACTURER');
-if (catalogPage < 1 || catalogPage > 46) throw new Error('STOP_CATALOG_PAGE_OUT_OF_RANGE');
-if (catalogPosition < 1 || catalogPosition > 20) throw new Error('STOP_CATALOG_POSITION_OUT_OF_RANGE');
-const expectedCatalog = 'https://www.fleetguard.com/es/category/productos/filtraci%C3%B3n-de-lubricante/filtros-de-lubricante-giratorios/0ZGPL0000000FSv4AM';
-if (catalogUrl !== expectedCatalog) throw new Error('STOP_WRONG_FLEETGUARD_CATEGORY');
+if (catalogPage < 1) throw new Error('STOP_CATALOG_PAGE_OUT_OF_RANGE');
+if (catalogPosition < 1) throw new Error('STOP_CATALOG_POSITION_OUT_OF_RANGE');
 
-const source = runJson('product-identity/scripts/acquire-manufacturer-source.mjs', [
-  `--brand=${brand}`,
-  `--code=${code}`,
-  `--product-url=${productUrl}`
-]);
-if (!source.verified_fresh_source || source.cache_used || source.previous_master_used) {
-  throw new Error('STOP_FRESH_SOURCE_POLICY_FAILED');
-}
-if (!source.screenshot_path || !source.screenshot_sha256) throw new Error('STOP_SCREENSHOT_REQUIRED');
-await fs.access(source.screenshot_path);
-await fs.access(source.source_image_path);
+const pilotPlan = JSON.parse(await fs.readFile(PILOT_PLAN_PATH, 'utf8'));
+const activePilot = pilotPlan.sequence?.find((item) => item.status === 'active');
+if (!activePilot) throw new Error('STOP_NO_ACTIVE_PRODUCT_IMAGE_PILOT');
+if (String(activePilot.manufacturer || '').toUpperCase() !== brand) throw new Error('STOP_ACTIVE_PILOT_MANUFACTURER_MISMATCH');
+if (activePilot.category_url !== catalogUrl) throw new Error('STOP_WRONG_ACTIVE_PILOT_CATEGORY');
 
 const geometryEvidenceRaw = await fs.readFile(geometryEvidencePath, 'utf8').catch(() => null);
 if (!geometryEvidenceRaw) throw new Error('STOP_GEOMETRY_EVIDENCE_MISSING');
@@ -77,8 +71,18 @@ const geometry = JSON.parse(geometryEvidenceRaw);
 if (String(geometry.manufacturer || '').toUpperCase() !== brand || String(geometry.competitor_code || '').toUpperCase() !== code) {
   throw new Error('STOP_GEOMETRY_EVIDENCE_SKU_MISMATCH');
 }
-if (geometry.source_image_sha256 !== source.source_image_sha256 || geometry.screenshot_sha256 !== source.screenshot_sha256) {
-  throw new Error('STOP_GEOMETRY_EVIDENCE_HASH_MISMATCH');
+if (geometry.status !== 'PASS') throw new Error('STOP_GEOMETRY_EVIDENCE_NOT_PASS');
+if (geometry.product_page !== productUrl) throw new Error('STOP_GEOMETRY_PRODUCT_URL_MISMATCH');
+if (!geometry.source_image_path || !geometry.screenshot_path || !geometry.source_image_sha256 || !geometry.screenshot_sha256) {
+  throw new Error('STOP_GEOMETRY_SOURCE_BINDING_INCOMPLETE');
+}
+await fs.access(geometry.source_image_path);
+await fs.access(geometry.screenshot_path);
+if (await fileHash(geometry.source_image_path) !== geometry.source_image_sha256) {
+  throw new Error('STOP_SOURCE_IMAGE_HASH_MISMATCH');
+}
+if (await fileHash(geometry.screenshot_path) !== geometry.screenshot_sha256) {
+  throw new Error('STOP_SCREENSHOT_HASH_MISMATCH');
 }
 for (const field of REQUIRED_GEOMETRY_FIELDS) {
   const value = geometry[field];
@@ -100,9 +104,31 @@ const tech = runJson('product-identity/scripts/resolve-technology-asset.mjs', [
 ]);
 if (!tech.technology || !tech.technology_asset_path) throw new Error('STOP_TECHNOLOGY_NOT_RESOLVED');
 
-const logoPath = 'frontend/public/assets/logo-elimfilters.png';
+const brandEvidenceRaw = await fs.readFile(brandEvidencePath, 'utf8').catch(() => null);
+if (!brandEvidenceRaw) throw new Error('STOP_BRAND_EVIDENCE_MISSING');
+const brandEvidence = JSON.parse(brandEvidenceRaw);
+if (
+  brandEvidence.status !== 'PASS'
+  || brandEvidence.brand_identity_status !== 'PASS'
+  || String(brandEvidence.manufacturer || '').toUpperCase() !== brand
+  || String(brandEvidence.competitor_code || '').toUpperCase() !== code
+) {
+  throw new Error('STOP_BRAND_EVIDENCE_NOT_PASS');
+}
+if (!brandEvidence.canonical_sku_resolved) throw new Error('STOP_BRAND_EVIDENCE_SKU_NOT_RESOLVED');
+if (!brandEvidence.candidate_skus?.includes(db.elimfilters_sku)) throw new Error('STOP_BRAND_EVIDENCE_SKU_MISMATCH');
+if (String(brandEvidence.filter_type || '').toUpperCase() !== String(db.filter_type || '').toUpperCase()) {
+  throw new Error('STOP_BRAND_EVIDENCE_FILTER_TYPE_MISMATCH');
+}
+if (brandEvidence.technology !== tech.technology) throw new Error('STOP_BRAND_EVIDENCE_TECHNOLOGY_MISMATCH');
+
+const logoPath = brandEvidence.logo_asset_path;
+const technologyAssetPath = brandEvidence.technology_asset_path;
 await fs.access(logoPath);
-await fs.access(tech.technology_asset_path);
+await fs.access(technologyAssetPath);
+if (await fileHash(logoPath) !== brandEvidence.logo_asset_sha256) throw new Error('STOP_LOGO_HASH_MISMATCH');
+if (await fileHash(technologyAssetPath) !== brandEvidence.technology_asset_sha256) throw new Error('STOP_TECHNOLOGY_ASSET_HASH_MISMATCH');
+if (technologyAssetPath !== tech.technology_asset_path) throw new Error('STOP_TECHNOLOGY_ASSET_PATH_MISMATCH');
 
 const packet = {
   schema_version: '2.0',
@@ -112,23 +138,24 @@ const packet = {
   generated_at: new Date().toISOString(),
   phase,
   catalog: {
+    pilot_id: activePilot.pilot_id,
+    category_id: activePilot.category_id ?? null,
     category_url: catalogUrl,
+    filter_type: activePilot.filter_type ?? db.filter_type,
     page: catalogPage,
     position: catalogPosition,
-    competitor_code: code,
-    expected_pages: 46,
-    expected_items_per_page: 20
+    competitor_code: code
   },
   source: {
     manufacturer: brand,
     competitor_code: code,
     requested_product_url: productUrl,
-    resolved_official_page_url: source.resolved_official_page_url,
-    official_image_path: source.source_image_path,
-    official_image_sha256: source.source_image_sha256 || await fileHash(source.source_image_path),
-    screenshot_path: source.screenshot_path,
-    screenshot_sha256: source.screenshot_sha256,
-    source_evidence_path: source.evidence_path,
+    resolved_official_page_url: geometry.resolved_official_page_url,
+    official_image_path: geometry.source_image_path,
+    official_image_sha256: geometry.source_image_sha256,
+    screenshot_path: geometry.screenshot_path,
+    screenshot_sha256: geometry.screenshot_sha256,
+    geometry_evidence_path: geometryEvidencePath,
     cache_used: false,
     previous_master_used: false
   },
@@ -156,18 +183,22 @@ const packet = {
   },
   identity: {
     elimfilters_sku: db.elimfilters_sku,
+    sku_resolution_source: db.source,
+    sku_resolution_method: db.match_method ?? 'EXACT_CROSS_REFERENCE',
     filter_type: db.filter_type,
     technology: tech.technology,
-    technology_asset_path: tech.technology_asset_path,
-    technology_asset_sha256: await fileHash(tech.technology_asset_path),
+    technology_asset_path: technologyAssetPath,
+    technology_asset_sha256: brandEvidence.technology_asset_sha256,
     logo_asset_path: logoPath,
-    logo_asset_sha256: await fileHash(logoPath)
+    logo_asset_sha256: brandEvidence.logo_asset_sha256,
+    brand_evidence_path: brandEvidencePath,
+    brand_evidence_sha256: await fileHash(brandEvidencePath)
   },
   artwork_lock: {
-    body_color_hex: '#414141',
-    lithography_color_hex: '#CBCBCB',
-    positioning_line: 'TOTAL ASSET PROTECTION',
-    descriptor: 'Powered Filtration',
+    body_color_hex: brandEvidence.container_color_hex,
+    lithography_color_hex: brandEvidence.lithography_color_hex,
+    positioning_line: brandEvidence.brand_claim,
+    descriptor: brandEvidence.technology_descriptor,
     manufacturer_branding_allowed: false,
     secondary_colors_allowed: false,
     german_quality_allowed: false,
@@ -178,6 +209,8 @@ const packet = {
     catalog_discovery_required: true,
     screenshot_required: true,
     geometry_evidence_required: true,
+    brand_evidence_required: true,
+    sku_resolution_required: true,
     ad_hoc_prompt_values_forbidden: true,
     remembered_sku_forbidden: true,
     remembered_colors_forbidden: true,

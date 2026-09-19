@@ -3,14 +3,19 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { createRequire } from 'node:module';
 import { PUBLISHABLE_CATALOGUE_FIELDS } from './catalogue-publication-plan.mjs';
 
+const require = createRequire(import.meta.url);
+const { assertGovernedCatalogPatch } = require('../../lib/catalog-write-gateway.js');
+
 export const COLUMN_GROUPS = {
-  filter_type: ['filter_type'], duty: ['duty'], technology: ['technology'],
-  equipment_applications: ['equipment_applications'], oem_codes: ['oem_codes'],
+  filter_type: ['filter_type'], duty: ['duty'], technology: ['technology'], codigo_base: ['codigo_base'],
+  equipment_applications: ['equipment_applications'], vehicle_applications: ['vehicle_applications'], oem_codes: ['oem_codes'],
   competitor_codes: ['competitor_codes'], brand_crossrefs: ['brand_crossrefs'],
   dimensions: ['thread_size', 'height_mm', 'outer_diameter_mm', 'inner_diameter_mm', 'gasket_od_mm', 'gasket_id_mm'],
-  technical_specs: ['micron_rating', 'bypass_valve_psi', 'iso_test_method', 'anti_drainback_valve', 'nominal_efficiency', 'filter_media', 'burst_pressure_psi', 'collapse_pressure_psi', 'installation_type', 'attachment_type', 'is_primary']
+  technical_specs: ['micron_rating', 'bypass_valve_psi', 'iso_test_method', 'anti_drainback_valve', 'nominal_efficiency', 'filter_media', 'burst_pressure_psi', 'collapse_pressure_psi', 'installation_type', 'attachment_type', 'is_primary'],
+  source_identity: ['canonical_source_brand','canonical_source_code','canonical_source_url','canonical_source_status','canonical_verified_at','canonical_evidence']
 };
 
 function canonical(value) {
@@ -54,10 +59,25 @@ export function validateCataloguePublicationPlan(plan, { now = Date.now(), maxAg
 }
 
 export function logicalValue(row, field) {
-  if (field === 'dimensions' || field === 'technical_specs') {
+  if (field === 'dimensions' || field === 'technical_specs' || field === 'source_identity') {
     return Object.fromEntries(COLUMN_GROUPS[field].filter((column) => row[column] !== null && row[column] !== undefined).map((column) => [column, row[column]]));
   }
   return row[field] ?? null;
+}
+
+export function cataloguePlanPatch(plan) {
+  const patch = {};
+  for (const operation of plan.operations) {
+    const columns = COLUMN_GROUPS[operation.field];
+    assert(columns, `No database mapping for ${operation.field}`);
+    if (columns.length === 1) {
+      patch[columns[0]] = operation.after;
+      continue;
+    }
+    assert(operation.after && typeof operation.after === 'object' && !Array.isArray(operation.after), `${operation.field} must be an object`);
+    for (const column of columns.filter((name) => Object.hasOwn(operation.after, name))) patch[column] = operation.after[column];
+  }
+  return patch;
 }
 
 export function compileUpdate(plan) {
@@ -102,6 +122,8 @@ export async function executeCataloguePublicationPlan({ plan, pool, backupDir = 
     const backup = { schema_version: '1.0.0', created_at: new Date().toISOString(), plan_sha256: plan.plan_sha256, research_bundle_id: plan.research_bundle_id, target_sku: plan.target_sku, operations: plan.operations, before: row };
     backup.backup_sha256 = catalogueBackupHash(backup);
     fs.writeFileSync(backupPath, `${JSON.stringify(backup, null, 2)}\n`, { flag: 'wx' });
+    const patch = cataloguePlanPatch(plan);
+    assertGovernedCatalogPatch(row, patch, { applicationWrite: false });
     const update = compileUpdate(plan);
     const changed = await client.query(update.sql, update.values);
     assert(changed.rowCount === 1, 'Catalogue update did not affect exactly one row');

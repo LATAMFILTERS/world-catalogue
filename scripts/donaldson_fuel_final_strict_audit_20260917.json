@@ -1,0 +1,22 @@
+{
+  "target": 499,
+  "EF9": 248,
+  "ES9": 251,
+  "unique_results": 499,
+  "unique_skus": 499,
+  "pass": 499,
+  "fail": 0,
+  "missing": 0,
+  "error": 0,
+  "partial": 0,
+  "deep_product_pages": 496,
+  "official_listing_only": 3,
+  "competitor_rows": 499,
+  "competitor_with_refs": 439,
+  "competitor_http404": 60,
+  "total_competitor_refs": 10890,
+  "complete": true,
+  "failures": [],
+  "evidence_policy": "No fabricated values; unavailable Donaldson detail sections remain empty and are explicitly marked listing-only.",
+  "sha256": "19d80a5b7b743b69ff1abf83e18833ce6ab219af998c99185dc2be9eb2506a05"
+}
