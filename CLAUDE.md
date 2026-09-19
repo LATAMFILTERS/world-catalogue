@@ -87,3 +87,22 @@ Any ELIMFILTERS product-image generation, edit, rebrand, approval, or publicatio
 If the request names the Branding Subagent, or otherwise asks for an ELIMFILTERS product image, the commercial authority chain is owned in sibling repository `LATAMFILTERS/elimfilters-crm` as `chief_commercial -> marketing -> branding -> branding_product_image_release_v1`. This repository remains the canonical source for SKU/product truth, official-reference acquisition, render hard gates, brand assets used by the product-image pipeline, and catalog visual writeback.
 
 Do not ask the user to restate routine colors, logo, technology, release procedure, or per-image approval when those values resolve from the canonical catalog, Branding governance, and the authorized render packet. Fail closed only when required product identity, official mechanical reference, or mandatory evidence cannot be resolved.
+
+## Ponytail implementation rule
+
+Ponytail is the default code-simplification discipline for agentic changes in this repository. Apply it after understanding and tracing the real flow, never instead of analysis.
+
+Before creating code, infrastructure, schema, scripts, workers, agents, endpoints, dependencies or configuration:
+
+1. Ask whether the new artifact needs to exist at all.
+2. Search this repository for an existing implementation and extend/reuse it when possible.
+3. Check the authorized adjacent repository (`elimfilters-crm`) when the capability may already belong there.
+4. Prefer language/runtime standard library and native platform features before adding abstractions.
+5. Prefer already-installed dependencies before introducing another dependency.
+6. Prefer the smallest implementation that satisfies the actual requirement.
+7. Preserve validation, security boundaries, data-loss protections, observability and required accessibility; simplification must never remove these safeguards.
+8. Do not create a temporary script when a canonical operational path already exists. If a temporary artifact is truly necessary, label it clearly and remove it after validation unless it becomes an approved maintained tool.
+9. Do not create a second source of truth, scheduler, worker, runtime owner or canonical data path merely because doing so is easier locally.
+10. At completion, report what was reused, what was created, why creation was necessary, and any temporary artifacts left behind.
+
+For catalogue work specifically, reuse canonical registries, mappings, ingestion paths, evidence models and Part Search logic before adding parallel structures. Product truth remains governed by this repository's existing canonical contracts.

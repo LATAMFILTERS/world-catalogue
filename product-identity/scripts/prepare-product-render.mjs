@@ -144,7 +144,9 @@ const packet = {
     filter_type: activePilot.filter_type ?? db.filter_type,
     page: catalogPage,
     position: catalogPosition,
-    competitor_code: code
+    competitor_code: code,
+    expected_pages: null,
+    page_count_source: 'DYNAMIC_FROM_CURRENT_CATEGORY'
   },
   source: {
     manufacturer: brand,
@@ -160,7 +162,7 @@ const packet = {
     previous_master_used: false
   },
   geometry_lock: {
-    source_of_truth: 'CURRENT_SKU_SCREENSHOT_AND_OFFICIAL_SOURCE_IMAGE',
+    source_of_truth: 'CURRENT_SKU_OFFICIAL_SOURCE_IMAGE',
     geometry_evidence_path: geometryEvidencePath,
     geometry_evidence_sha256: await fileHash(geometryEvidencePath),
     vertical_filter_geometry: geometry.vertical_filter_geometry,
@@ -198,7 +200,7 @@ const packet = {
     body_color_hex: brandEvidence.container_color_hex,
     lithography_color_hex: brandEvidence.lithography_color_hex,
     positioning_line: brandEvidence.brand_claim,
-    descriptor: brandEvidence.technology_descriptor,
+    descriptor: brandEvidence.technology_descriptor ?? tech.technology_descriptor,
     manufacturer_branding_allowed: false,
     secondary_colors_allowed: false,
     german_quality_allowed: false,
