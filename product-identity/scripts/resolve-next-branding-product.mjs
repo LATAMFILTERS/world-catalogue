@@ -120,23 +120,11 @@ async function discoverOfficialPageOne() {
     for (let attempt = 0; attempt < 30; attempt += 1) {
       const snapshot = await page.evaluate(() => ({
         text: document.body?.innerText || '',
-        links: [...document.querySelectorAll('a[href*="/product/"]')].map((a) => a.href)
+        productCodes: [...document.querySelectorAll('h2.product-name')]
+          .map((element) => String(element.textContent || '').trim().toUpperCase())
+          .filter((code) => /^LF[A-Z0-9-]+$/.test(code))
       }));
-      const ordered = [];
-      const seen = new Set();
-      const pushCode = (raw) => {
-        const code = String(raw || '').toUpperCase();
-        if (!/^LF[A-Z0-9-]+$/.test(code) || seen.has(code)) return;
-        seen.add(code);
-        ordered.push(code);
-      };
-      for (const href of snapshot.links) {
-        const match = href.match(/\/product\/([^/?#]+)/i);
-        if (match?.[1]) pushCode(match[1]);
-      }
-      if (ordered.length < 20) {
-        for (const code of (snapshot.text.match(/\bLF[A-Z0-9-]+\b/gi) || [])) pushCode(code);
-      }
+      const ordered = [...new Set(snapshot.productCodes)];
       if (ordered.length >= 20) {
         const pageMatch = snapshot.text.match(/P[aá]gina\s+1\s+de\s+(\d+)/i);
         return {
