@@ -19,6 +19,7 @@ const geometryEvidencePath = args['geometry-evidence'];
 const brandEvidencePath = args['brand-evidence'];
 const phase = String(args.phase || 'PHASE_2').toUpperCase();
 const PILOT_PLAN_PATH = 'product-identity/hd-standard/pilots/pilot-matrix-plan.v1.json';
+const PRINT_AUTHORITY_PATH = 'data/product-identity/authorities/cylindrical-print-layout-authority.json';
 if (!brand || !code || !productUrl || !catalogUrl || !catalogPage || !catalogPosition || !geometryEvidencePath || !brandEvidencePath) {
   throw new Error('Usage: --brand=<manufacturer> --code=<competitor-code> --product-url=<official-url> --catalog-url=<official-category-url> --catalog-page=<n> --catalog-position=<n> --geometry-evidence=<json> --brand-evidence=<json> [--phase=PHASE_2]');
 }
@@ -107,6 +108,12 @@ if (!tech.technology || !tech.technology_asset_path) throw new Error('STOP_TECHN
 const brandEvidenceRaw = await fs.readFile(brandEvidencePath, 'utf8').catch(() => null);
 if (!brandEvidenceRaw) throw new Error('STOP_BRAND_EVIDENCE_MISSING');
 const brandEvidence = JSON.parse(brandEvidenceRaw);
+const printAuthorityRaw = await fs.readFile(PRINT_AUTHORITY_PATH, 'utf8').catch(() => null);
+if (!printAuthorityRaw) throw new Error('STOP_LITHOGRAPHY_AUTHORITY_MISSING');
+const printAuthority = JSON.parse(printAuthorityRaw);
+if (printAuthority.authorityStatus !== 'ACTIVE' || printAuthority.recordType !== 'ELIMFILTERS_CYLINDRICAL_PRINT_LAYOUT_AUTHORITY') {
+  throw new Error('STOP_LITHOGRAPHY_AUTHORITY_NOT_ACTIVE');
+}
 if (
   brandEvidence.status !== 'PASS'
   || brandEvidence.brand_identity_status !== 'PASS'
@@ -129,6 +136,14 @@ await fs.access(technologyAssetPath);
 if (await fileHash(logoPath) !== brandEvidence.logo_asset_sha256) throw new Error('STOP_LOGO_HASH_MISMATCH');
 if (await fileHash(technologyAssetPath) !== brandEvidence.technology_asset_sha256) throw new Error('STOP_TECHNOLOGY_ASSET_HASH_MISMATCH');
 if (technologyAssetPath !== tech.technology_asset_path) throw new Error('STOP_TECHNOLOGY_ASSET_PATH_MISMATCH');
+if (printAuthority.containerColorAuthority?.digitalMaster?.hex !== '#414141') throw new Error('STOP_LITHOGRAPHY_AUTHORITY_CONTAINER_COLOR_CONFLICT');
+if (printAuthority.lithographyColorAuthority?.digitalMaster?.hex !== '#CBCBCB') throw new Error('STOP_LITHOGRAPHY_AUTHORITY_PRINT_COLOR_CONFLICT');
+if (printAuthority.lockedArtwork?.brandLogoAsset !== logoPath) throw new Error('STOP_LITHOGRAPHY_AUTHORITY_LOGO_CONFLICT');
+if (printAuthority.lockedArtwork?.brandClaim !== brandEvidence.brand_claim) throw new Error('STOP_LITHOGRAPHY_AUTHORITY_CLAIM_CONFLICT');
+if (printAuthority.lockedArtwork?.technologyDescriptor !== (brandEvidence.technology_descriptor ?? tech.technology_descriptor)) throw new Error('STOP_LITHOGRAPHY_AUTHORITY_DESCRIPTOR_CONFLICT');
+if (printAuthority.coreRule?.allOtherArtworkLocked !== true || printAuthority.coreRule?.sameArtworkBothSides !== true) {
+  throw new Error('STOP_LITHOGRAPHY_AUTHORITY_LAYOUT_NOT_LOCKED');
+}
 
 const packet = {
   schema_version: '2.0',
@@ -197,10 +212,25 @@ const packet = {
     brand_evidence_sha256: await fileHash(brandEvidencePath)
   },
   artwork_lock: {
-    body_color_hex: brandEvidence.container_color_hex,
-    lithography_color_hex: brandEvidence.lithography_color_hex,
-    positioning_line: brandEvidence.brand_claim,
-    descriptor: brandEvidence.technology_descriptor ?? tech.technology_descriptor,
+    authority_id: printAuthority.recordType,
+    authority_path: PRINT_AUTHORITY_PATH,
+    authority_sha256: await fileHash(PRINT_AUTHORITY_PATH),
+    layout_mode: 'LOCKED_CYLINDRICAL_PRINT_LAYOUT',
+    body_color_hex: '#414141',
+    body_finish: printAuthority.containerColorAuthority?.finish,
+    lithography_color_hex: '#CBCBCB',
+    lithography_finish: printAuthority.lithographyColorAuthority?.finish,
+    positioning_line: printAuthority.lockedArtwork?.brandClaim,
+    descriptor: printAuthority.lockedArtwork?.technologyDescriptor,
+    official_logo_asset: printAuthority.lockedArtwork?.brandLogoAsset,
+    same_artwork_both_sides: true,
+    only_variable_fields: printAuthority.coreRule?.onlyVariableFields,
+    all_other_artwork_locked: true,
+    installation_rotation_direction_marks_required: printAuthority.installationRotationDirectionMarks?.required === true,
+    preserve_artwork_hierarchy: true,
+    proportional_scaling_only: true,
+    extra_text_allowed: false,
+    extra_icons_allowed: false,
     manufacturer_branding_allowed: false,
     secondary_colors_allowed: false,
     german_quality_allowed: false,
@@ -217,6 +247,11 @@ const packet = {
     remembered_sku_forbidden: true,
     remembered_colors_forbidden: true,
     remembered_technology_forbidden: true,
+    lithography_authority_required: true,
+    exact_master_colors_required: true,
+    locked_artwork_layout_required: true,
+    direct_image_generation_forbidden: true,
+    source_referenced_transformation_only: true,
     chat_generation_without_this_packet_forbidden: true
   }
 };

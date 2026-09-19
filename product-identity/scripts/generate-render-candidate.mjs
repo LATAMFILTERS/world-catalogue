@@ -16,6 +16,27 @@ async function fileHash(p) {
   return crypto.createHash('sha256').update(bytes).digest('hex');
 }
 
+export async function validateArtworkAuthorityBinding(packet) {
+  const a = packet?.artwork_lock;
+  const g = packet?.execution_guard;
+  if (!a?.authority_path || !a?.authority_sha256) throw new Error('STOP_LITHOGRAPHY_AUTHORITY_BINDING_MISSING');
+  if (g?.lithography_authority_required !== true || g?.exact_master_colors_required !== true || g?.locked_artwork_layout_required !== true || g?.direct_image_generation_forbidden !== true || g?.source_referenced_transformation_only !== true) {
+    throw new Error('STOP_LITHOGRAPHY_EXECUTION_GUARD_INCOMPLETE');
+  }
+  if (await fileHash(a.authority_path) !== a.authority_sha256) throw new Error('STOP_LITHOGRAPHY_AUTHORITY_HASH_MISMATCH');
+  const authority = JSON.parse(await fs.readFile(a.authority_path, 'utf8'));
+  if (authority.authorityStatus !== 'ACTIVE' || authority.recordType !== a.authority_id) throw new Error('STOP_LITHOGRAPHY_AUTHORITY_NOT_ACTIVE');
+  if (a.layout_mode !== 'LOCKED_CYLINDRICAL_PRINT_LAYOUT' || a.all_other_artwork_locked !== true || a.same_artwork_both_sides !== true || a.preserve_artwork_hierarchy !== true || a.proportional_scaling_only !== true) {
+    throw new Error('STOP_LITHOGRAPHY_LAYOUT_NOT_LOCKED');
+  }
+  if (a.body_color_hex !== '#414141' || a.lithography_color_hex !== '#CBCBCB') throw new Error('STOP_MASTER_COLOR_MISMATCH');
+  if (a.body_finish !== 'SEMI_MATTE_INDUSTRIAL_COATING' || a.lithography_finish !== 'METALLIC_SILVER_SATIN') throw new Error('STOP_MASTER_FINISH_MISMATCH');
+  if (a.extra_text_allowed !== false || a.extra_icons_allowed !== false || a.secondary_colors_allowed !== false) throw new Error('STOP_UNAUTHORIZED_ARTWORK_CONTENT_ALLOWED');
+  if (a.official_logo_asset !== packet?.identity?.logo_asset_path) throw new Error('STOP_LITHOGRAPHY_LOGO_BINDING_MISMATCH');
+  if (a.positioning_line !== authority.lockedArtwork?.brandClaim || a.descriptor !== authority.lockedArtwork?.technologyDescriptor) throw new Error('STOP_LITHOGRAPHY_COPY_BINDING_MISMATCH');
+  return { authority, authority_sha256: a.authority_sha256 };
+}
+
 export function buildPrompt(packet) {
   const g = packet.geometry_lock;
   const a = packet.artwork_lock;
@@ -35,13 +56,17 @@ export function buildPrompt(packet) {
     `- Camera perspective and composition: ${g.camera_perspective} ${g.composition}`,
     '',
     'Change only:',
-    `- Body/container color to ${a.body_color_hex} (semi-matte industrial coating)`,
-    `- Lithography/label color to ${a.lithography_color_hex} (metallic silver satin)`,
-    '- Replace any manufacturer branding with the attached ELIMFILTERS logo, used exactly as provided',
-    '- Add the attached technology asset badge exactly as provided',
-    `- Add label text: SKU ${id.elimfilters_sku}, technology ${id.technology}, descriptor "${a.descriptor}", claim "${a.positioning_line}"`,
+    `- Repaint the can body to the exact master ${a.body_color_hex}; finish is ${a.body_finish}. Do not create a lighter gray, gradient redesign, gloss redesign, or alternative metallic paint.`,
+    `- Apply all printed artwork in the single exact lithography master ${a.lithography_color_hex}; finish is ${a.lithography_finish}. No pure white and no secondary print color.`,
+    '- Replace manufacturer branding with the attached ELIMFILTERS logo asset exactly as provided. Never retype, redraw, restyle, approximate, or substitute the logo.',
+    '- Use the attached technology artwork exactly as provided. Never retype, redraw, restyle, approximate, or substitute the technology mark.',
+    `- Variable fields only: SKU ${id.elimfilters_sku} and technology ${id.technology}.`,
+    `- Locked copy: claim "${a.positioning_line}" and descriptor "${a.descriptor}".`,
+    '- Preserve the approved artwork hierarchy and relative positions; proportional scaling only to fit the exact container printable area.',
+    '- Preserve approved installation rotation-direction marks in the upper print band when visible in the authorized layout.',
+    '- The same approved artwork system applies on both sides of the cylindrical filter.',
     '',
-    'Forbidden: any manufacturer branding, secondary colors, invented generic spin-on geometry, spec-sheet/infographic elements (tables, QR codes, cross-reference panels), or any change to framing/perspective. The result must read as the same physical object from the source image, repainted and relabeled — not a new product.'
+    'Forbidden: free-form label design, invented icons, feature badges, rewritten typography, reflowed hierarchy, extra text, manufacturer branding, secondary colors, invented generic spin-on geometry, spec-sheet/infographic elements (tables, QR codes, cross-reference panels), or any change to framing/perspective. The result must read as the same physical object from the source image, repainted and relabeled under the locked ELIMFILTERS cylindrical print authority — not a new product design.'
   ].join('\n');
 }
 
@@ -88,6 +113,10 @@ export async function validateExistingCandidate({
     || metadata.generated_sku !== packet.identity.elimfilters_sku
     || metadata.competitor_code !== packet.source.competitor_code
     || metadata.render_spec_sha256 !== packetSha256
+    || metadata.lithography_authority_sha256 !== packet.artwork_lock?.authority_sha256
+    || metadata.body_color_hex !== '#414141'
+    || metadata.lithography_color_hex !== '#CBCBCB'
+    || metadata.artwork_layout_mode !== 'LOCKED_CYLINDRICAL_PRINT_LAYOUT'
   ) {
     throw new Error('STOP_EXISTING_CANDIDATE_STALE');
   }
@@ -114,6 +143,9 @@ async function main() {
     || packet.execution_guard?.geometry_evidence_required !== true
     || packet.execution_guard?.brand_evidence_required !== true
     || packet.execution_guard?.sku_resolution_required !== true
+    || packet.execution_guard?.lithography_authority_required !== true
+    || packet.execution_guard?.direct_image_generation_forbidden !== true
+    || packet.execution_guard?.source_referenced_transformation_only !== true
   ) {
     throw new Error('STOP_PACKET_EXECUTION_GUARD_INCOMPLETE');
   }
@@ -124,6 +156,7 @@ async function main() {
   ) {
     throw new Error('STOP_PACKET_IDENTITY_INCONSISTENT');
   }
+  const artworkAuthority = await validateArtworkAuthorityBinding(packet);
 
   // Re-verify hashes at generation time (defense in depth, the packet could be stale on disk)
   const s = packet.source;
@@ -154,6 +187,9 @@ async function main() {
       generated_sku: id.elimfilters_sku,
       technology: id.technology,
       render_spec_sha256: packetSha256,
+      lithography_authority_sha256: artworkAuthority.authority_sha256,
+      body_color_hex: packet.artwork_lock.body_color_hex,
+      lithography_color_hex: packet.artwork_lock.lithography_color_hex,
       model,
       quality,
       size,
@@ -192,6 +228,9 @@ async function main() {
         candidate_path: validated.candidate_path,
         candidate_sha256: validated.candidate_sha256,
         render_spec_sha256: validated.render_spec_sha256,
+        lithography_authority_sha256: validated.lithography_authority_sha256,
+        body_color_hex: validated.body_color_hex,
+        lithography_color_hex: validated.lithography_color_hex,
         metadata_path: metadataPath,
         metadata: validated
       }, null, 2));
@@ -255,6 +294,11 @@ async function main() {
     source_image_sha256: s.official_image_sha256,
     logo_asset_sha256: id.logo_asset_sha256,
     technology_asset_sha256: id.technology_asset_sha256,
+    lithography_authority_id: packet.artwork_lock.authority_id,
+    lithography_authority_sha256: artworkAuthority.authority_sha256,
+    body_color_hex: packet.artwork_lock.body_color_hex,
+    lithography_color_hex: packet.artwork_lock.lithography_color_hex,
+    artwork_layout_mode: packet.artwork_lock.layout_mode,
     source_input_mime: sourcePart.mime,
     logo_input_mime: logoPart.mime,
     technology_input_mime: technologyPart.mime,
@@ -273,6 +317,9 @@ async function main() {
     candidate_path: imagePath,
     candidate_sha256: imageSha256,
     render_spec_sha256: packetSha256,
+    lithography_authority_sha256: artworkAuthority.authority_sha256,
+    body_color_hex: packet.artwork_lock.body_color_hex,
+    lithography_color_hex: packet.artwork_lock.lithography_color_hex,
     metadata_path: metadataPath,
     metadata
   }, null, 2));
