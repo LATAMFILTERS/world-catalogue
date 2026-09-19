@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import pg from 'pg';
 
 const { Pool } = pg;
@@ -116,7 +117,8 @@ async function main() {
   console.log(JSON.stringify(pilot, null, 2));
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+const isDirectRun = process.argv[1] ? import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href : false;
+if (isDirectRun) {
   main().catch((error) => {
     console.error(`[spin-on pilot selector] ${error.message}`);
     process.exit(1);
