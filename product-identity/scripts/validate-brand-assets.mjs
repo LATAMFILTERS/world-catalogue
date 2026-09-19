@@ -65,7 +65,8 @@ export async function buildBrandAssetEvidence({
   manufacturer,
   competitorCode,
   catalogResolution,
-  consensus
+  consensus,
+  identityAuthority = 'LIVE_POSTGRES_WORLD_CATALOGUE'
 }) {
   const brandDna = JSON.parse(await fs.readFile(BRAND_DNA_PATH, 'utf8'));
   const imageRules = JSON.parse(await fs.readFile(IMAGE_RULES_PATH, 'utf8'));
@@ -88,11 +89,16 @@ export async function buildBrandAssetEvidence({
   const lithographyHex = brandDna.cylindrical_product_colors?.lithography?.hex;
   if (bodyHex !== imageRules.color_policy?.container?.hex || bodyHex !== '#414141') {
     throw new Error('STOP_BRAND_ASSET_CONTAINER_COLOR_CONFLICT');
-  }  if (lithographyHex !== imageRules.color_policy?.lithography?.hex || lithographyHex !== '#CBCBCB') {
+  }
+  if (lithographyHex !== imageRules.color_policy?.lithography?.hex || lithographyHex !== '#CBCBCB') {
     throw new Error('STOP_BRAND_ASSET_LITHOGRAPHY_COLOR_CONFLICT');
   }
 
-  const candidateSkus = catalogCandidates(catalogResolution).map((row) => row.sku).filter(Boolean);
+  const candidateSkus = catalogResolution?.status === 'RESOLVED'
+    ? [catalogResolution.elimfilters_sku].filter(Boolean)
+    : Array.isArray(catalogResolution?.matches)
+      ? catalogResolution.matches.map((row) => row.sku).filter(Boolean)
+      : [];
   return {
     schema_version: '1.0',
     evidence_type: 'ELIMFILTERS_BRAND_ASSET_EVIDENCE',
@@ -103,6 +109,7 @@ export async function buildBrandAssetEvidence({
     catalog_identity_reason: catalogResolution.reason ?? null,
     candidate_skus: candidateSkus,
     canonical_sku_resolved: catalogResolution.status === 'RESOLVED',
+    brand_identity_source: identityAuthority,
     filter_type: consensus.filter_type,
     technology: consensus.technology,
     technology_key: consensus.technology_key,
@@ -137,13 +144,29 @@ async function main() {
     sourceBrand: manufacturer,
     duty: args.duty || 'HEAVY_DUTY'
   });
-  const candidates = catalogCandidates(catalogResolution);
-  const consensus = await resolveBrandConsensus(candidates);
+
+  let consensus;
+  let identityAuthority = 'LIVE_POSTGRES_WORLD_CATALOGUE';
+  if (catalogResolution.status === 'RESOLVED' || catalogResolution.reason === 'AMBIGUOUS_EXACT_CATALOG_MATCH') {
+    consensus = await resolveBrandConsensus(catalogCandidates(catalogResolution));
+  } else if (catalogResolution.reason === 'NO_EXACT_CATALOG_MATCH' && args['filter-type']) {
+    consensus = await resolveBrandConsensus([{
+      sku: null,
+      filter_type: args['filter-type'],
+      duty: args.duty || 'HEAVY_DUTY',
+      catalog_technology: null
+    }]);
+    identityAuthority = 'ACTIVE_PILOT_FILTER_TYPE_AUTHORITY';
+  } else {
+    throw new Error(`STOP_BRAND_ASSET_CATALOG_REFERENCE_UNRESOLVED:${catalogResolution.reason || catalogResolution.status}`);
+  }
+
   const evidence = await buildBrandAssetEvidence({
     manufacturer,
     competitorCode,
     catalogResolution,
-    consensus
+    consensus,
+    identityAuthority
   });
 
   const outDir = args['out-dir'] || path.join('product-identity', 'brand-evidence');

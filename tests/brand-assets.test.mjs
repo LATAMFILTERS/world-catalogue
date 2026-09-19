@@ -50,6 +50,29 @@ test('ambiguous SKU matches may lock brand assets only with one family and techn
   assert.match(evidence.logo_asset_sha256, /^[a-f0-9]{64}$/);
   assert.match(evidence.technology_asset_sha256, /^[a-f0-9]{64}$/);
 });
+test('missing SKU cross-reference may lock brand assets from governed pilot filter type only', async () => {
+  const consensus = await resolveBrandConsensus([
+    { sku: null, filter_type: 'fuel', duty: 'HEAVY_DUTY', catalog_technology: null }
+  ]);
+  assert.equal(consensus.technology, 'SYNTAPORE™');
+
+  const evidence = await buildBrandAssetEvidence({
+    manufacturer: 'FLEETGUARD',
+    competitorCode: 'FF5776',
+    catalogResolution: {
+      status: 'STOP_REVIEW',
+      reason: 'NO_EXACT_CATALOG_MATCH',
+      matches: []
+    },
+    consensus,
+    identityAuthority: 'ACTIVE_PILOT_FILTER_TYPE_AUTHORITY'
+  });
+  assert.equal(evidence.canonical_sku_resolved, false);
+  assert.equal(evidence.brand_identity_source, 'ACTIVE_PILOT_FILTER_TYPE_AUTHORITY');
+  assert.deepEqual(evidence.candidate_skus, []);
+  assert.equal(evidence.technology, 'SYNTAPORE™');
+});
+
 test('brand asset gate fails closed when catalog candidates disagree on family', async () => {
   await assert.rejects(
     resolveBrandConsensus([
