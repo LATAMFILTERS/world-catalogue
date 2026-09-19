@@ -8,7 +8,8 @@ import { resolveCompetitorSku } from './resolve-competitor-sku.mjs';
 const ROOT = process.cwd();
 const PILOT_PLAN = 'product-identity/hd-standard/pilots/pilot-matrix-plan.v1.json';
 const MASTER_DIR = 'product-identity/production-master';
-const CATEGORY_URL = 'https://www.fleetguard.com/es/category/SpinOnLubeFilters';
+const WEBSTORE_ID = '0ZEPL0000001Jv34AE';
+const COMMERCE_API_VERSION = 'v67.0';
 const APPROVED = new Set(['FINAL_APPROVED', 'APPROVED_GOLDEN_MASTER']);
 
 const norm = (value) => String(value || '').trim().toUpperCase();
@@ -45,30 +46,26 @@ export function pilotPositionFromMaster(master = {}) {
   );
 }
 
-export function deriveNextSequenceProduct({ orderedCodes, masters, targetCount }) {
-  if (!Array.isArray(orderedCodes) || orderedCodes.length < targetCount) {
+export function deriveNextSequenceProduct({ orderedProducts, masters, targetCount }) {
+  if (!Array.isArray(orderedProducts) || orderedProducts.length < targetCount) {
     throw new Error('STOP_OFFICIAL_SEQUENCE_INCOMPLETE');
   }
 
-  const approvedByPosition = new Map();
+  const approvedCodes = new Set();
   for (const master of masters) {
-    const pilot = pilotPositionFromMaster(master);
     const code = sourceCodeFromMaster(master);
     const state = approvalStateFromMaster(master);
-    if (!pilot || !code || !APPROVED.has(state)) continue;
-    approvedByPosition.set(pilot.position, { code, state, sku: master.sku ?? null });
+    if (!code || !APPROVED.has(state)) continue;
+    approvedCodes.add(code);
   }
 
   let completedPrefix = 0;
-  for (let position = 1; position <= targetCount; position += 1) {
-    const approved = approvedByPosition.get(position);
-    if (!approved) break;
-    const official = norm(orderedCodes[position - 1]);
-    if (official !== approved.code) {
-      throw new Error(`STOP_SEQUENCE_CONTINUITY_MISMATCH:${position}:${approved.code}:${official}`);
-    }
-    completedPrefix = position;
+  for (let index = 0; index < targetCount; index += 1) {
+    const product = orderedProducts[index];
+    if (!approvedCodes.has(norm(product?.code))) break;
+    completedPrefix = index + 1;
   }
+
   if (completedPrefix >= targetCount) {
     return {
       status: 'PILOT_SEQUENCE_COMPLETE',
@@ -78,17 +75,20 @@ export function deriveNextSequenceProduct({ orderedCodes, masters, targetCount }
     };
   }
 
-  const nextPosition = completedPrefix + 1;
+  const product = orderedProducts[completedPrefix];
   return {
     status: 'REFERENCE_SELECTED',
     completed_prefix: completedPrefix,
     target_count: targetCount,
     next: {
-      position: nextPosition,
-      total: 20,
+      position: completedPrefix + 1,
+      total: targetCount,
+      catalog_page: product.catalog_page,
+      catalog_position: product.catalog_position,
       competitor_brand: 'FLEETGUARD',
-      competitor_code: norm(orderedCodes[nextPosition - 1]),
-      product_url: `https://www.fleetguard.com/product/${norm(orderedCodes[nextPosition - 1])}`
+      competitor_code: norm(product.code),
+      product_description: product.description,
+      product_url: `https://www.fleetguard.com/product/${norm(product.code)}`
     }
   };
 }
@@ -110,43 +110,103 @@ async function loadProductionMasters() {
   }
   return masters;
 }
-async function discoverOfficialPageOne() {
+async function fetchFleetguardJson(url) {
+  const response = await fetch(url, {
+    headers: { accept: 'application/json', 'user-agent': 'ELIMFILTERS-branding-sequence/1.0' }
+  });
+  if (!response.ok) throw new Error(`STOP_FLEETGUARD_API_HTTP_${response.status}`);
+  return response.json();
+}
+
+async function discoverOfficialSequence(activePilot) {
+  const eligibleDescriptionPrefix = String(activePilot.eligible_product_description_prefix || '').trim().toLowerCase();
+  if (!activePilot.category_id || !activePilot.category_url || !eligibleDescriptionPrefix) {
+    throw new Error('STOP_ACTIVE_PILOT_SOURCE_SCOPE_INCOMPLETE');
+  }
+
   const browser = await chromium.launch({ headless: true });
+  let snapshot = null;
   try {
-    const page = await browser.newPage({ locale: 'es-ES', viewport: { width: 1440, height: 1200 } });
-    const response = await page.goto(CATEGORY_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    const page = await browser.newPage({ locale: 'en-US', viewport: { width: 1440, height: 1200 } });
+    const response = await page.goto(activePilot.category_url, { waitUntil: 'domcontentloaded', timeout: 60000 });
     if (!response?.ok()) throw new Error(`STOP_FLEETGUARD_CATEGORY_HTTP_${response?.status() || 0}`);
 
     for (let attempt = 0; attempt < 30; attempt += 1) {
-      const snapshot = await page.evaluate(() => ({
+      snapshot = await page.evaluate(() => ({
         text: document.body?.innerText || '',
-        productCodes: [...document.querySelectorAll('h2.product-name')]
-          .map((element) => String(element.textContent || '').trim().toUpperCase())
-          .filter((code) => /^LF[A-Z0-9-]+$/.test(code))
+        cards: [...document.querySelectorAll('h2.product-name')].map((element, index) => ({
+          code: String(element.textContent || '').trim().toUpperCase(),
+          product_id: element.getAttribute('data-id') || '',
+          catalog_position: index + 1
+        }))
       }));
-      const ordered = [...new Set(snapshot.productCodes)];
-      if (ordered.length >= 20) {
-        const pageMatch = snapshot.text.match(/P[aá]gina\s+1\s+de\s+(\d+)/i);
-        return {
-          category_url: CATEGORY_URL,
-          reported_pages: pageMatch ? Number(pageMatch[1]) : null,
-          ordered_codes: ordered.slice(0, 20)
-        };
-      }
+      if (snapshot.cards.length >= 20) break;
       await page.mouse.wheel(0, 1400);
       await page.waitForTimeout(1000);
     }
-    throw new Error('STOP_FLEETGUARD_SEQUENCE_NOT_RENDERED');
   } finally {
     await browser.close();
   }
+
+  if (!snapshot || snapshot.cards.length < 20) {
+    throw new Error('STOP_FLEETGUARD_SEQUENCE_NOT_RENDERED');
+  }
+
+  const ids = snapshot.cards.map((card) => card.product_id).filter(Boolean);
+  if (ids.length !== snapshot.cards.length) {
+    throw new Error('STOP_FLEETGUARD_PRODUCT_IDS_INCOMPLETE');
+  }
+
+  const batchParams = new URLSearchParams({
+    ids: ids.join(','),
+    includeAttributeSetInfo: 'true',
+    includeQuantityRule: 'true',
+    includeProductSellingModels: 'true',
+    includeGroupByAttributeVariationInfo: 'true',
+    language: 'en',
+    asGuest: 'true',
+    htmlEncode: 'false'
+  });
+  const batchUrl = `https://www.fleetguard.com/webruntime/api/services/data/${COMMERCE_API_VERSION}/commerce/webstores/${WEBSTORE_ID}/products?${batchParams}`;
+  const batch = await fetchFleetguardJson(batchUrl);
+  const byId = new Map((batch.products || []).map((product) => [product.id, product]));
+
+  const eligible = snapshot.cards.flatMap((card) => {
+    const product = byId.get(card.product_id) || {};
+    const fields = product.fields || {};
+    const code = norm(fields.ProductCode || fields.StockKeepingUnit || product.name || card.code);
+    const description = String(fields.CNPR_ShortDescRT__c || fields.Description || '').trim();
+    if (!code || !description.toLowerCase().startsWith(eligibleDescriptionPrefix)) return [];
+    return [{
+      code,
+      description,
+      catalog_page: 1,
+      catalog_position: card.catalog_position
+    }];
+  });
+
+  if (eligible.length < activePilot.target_count) {
+    throw new Error('STOP_OFFICIAL_SEQUENCE_INCOMPLETE');
+  }
+
+  const pageMatch =
+    snapshot.text.match(/Page\s+1\s+of\s+(\d+)/i) ||
+    snapshot.text.match(/P[aá]gina\s+1\s+de\s+(\d+)/i);
+
+  return {
+    category_url: activePilot.category_url,
+    category_id: activePilot.category_id,
+    raw_total: null,
+    reported_pages: pageMatch ? Number(pageMatch[1]) : null,
+    ordered_products: eligible
+  };
 }
 async function main() {
   const activePilot = await loadActivePilot();
-  const official = await discoverOfficialPageOne();
+  const official = await discoverOfficialSequence(activePilot);
   const masters = await loadProductionMasters();
   const selection = deriveNextSequenceProduct({
-    orderedCodes: official.ordered_codes,
+    orderedProducts: official.ordered_products,
     masters,
     targetCount: activePilot.target_count
   });
@@ -166,7 +226,12 @@ async function main() {
     authority: {
       pilot_plan: PILOT_PLAN,
       active_pilot_id: activePilot.pilot_id,
+      manufacturer: activePilot.manufacturer,
+      filter_type: activePilot.filter_type,
+      eligible_product_description_prefix: activePilot.eligible_product_description_prefix,
+      category_id: official.category_id,
       category_url: official.category_url,
+      raw_category_total: official.raw_total,
       official_reported_pages: official.reported_pages
     },
     completed_prefix: selection.completed_prefix,

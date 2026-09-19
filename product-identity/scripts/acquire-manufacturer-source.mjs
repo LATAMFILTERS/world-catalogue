@@ -37,7 +37,10 @@ function pageCandidates(){
 
 let chromium;
 try { ({ chromium } = await import('playwright')); }
-catch { throw new Error('STOP_SOURCE_BROWSER_TOOL_MISSING: install playwright'); }
+catch {
+  try { ({ chromium } = await import('patchright')); }
+  catch { throw new Error('STOP_SOURCE_BROWSER_TOOL_MISSING: playwright or patchright required'); }
+}
 
 async function gotoResilient(page, url){
   let last = null;
