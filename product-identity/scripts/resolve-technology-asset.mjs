@@ -1,30 +1,72 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 
-const args = Object.fromEntries(process.argv.slice(2).map(a => { const [k,...v]=a.replace(/^--/,'').split('='); return [k,v.join('=')]; }));
-const filterType = String(args['filter-type'] || '').trim().toUpperCase();
-const catalogTechnology = String(args.technology || '').trim();
-if (!filterType && !catalogTechnology) throw new Error('Usage: --filter-type=<type> [--technology=<catalog-tech>]');
-
-const map = new Map([
-  ['LUBE','SINTRAX'], ['OIL','SINTRAX'], ['OIL_FILTER','SINTRAX'], ['LUBE_FILTER','SINTRAX'],
-  ['FUEL','SYNTAPORE'], ['FUEL_FILTER','SYNTAPORE'],
-  ['HYDRAULIC','NANOFORCE'], ['HYDRAULIC_FILTER','NANOFORCE'],
-  ['FUEL_WATER_SEPARATOR','HYDRACORE'], ['FUEL/WATER_SEPARATOR','HYDRACORE'], ['WATER_SEPARATOR','HYDRACORE'],
-  ['COOLANT','THERMACORE'], ['COOLANT_FILTER','THERMACORE'],
-  ['AIR_DRYER','DRYCORE'], ['AIR DRYER','DRYCORE']
+const TYPE_TO_TECH = new Map([
+  ['LUBE', 'SYNTRAX'], ['OIL', 'SYNTRAX'], ['OIL_FILTER', 'SYNTRAX'], ['LUBE_FILTER', 'SYNTRAX'],
+  ['FUEL', 'SYNTAPORE'], ['FUEL_FILTER', 'SYNTAPORE'],
+  ['HYDRAULIC', 'NANOFORCE'], ['HYDRAULIC_FILTER', 'NANOFORCE'],
+  ['FUEL_WATER_SEPARATOR', 'HYDROCORE'], ['FUEL/WATER_SEPARATOR', 'HYDROCORE'], ['WATER_SEPARATOR', 'HYDROCORE'],
+  ['COOLANT', 'THERMACORE'], ['COOLANT_FILTER', 'THERMACORE'],
+  ['AIR_DRYER', 'DRYCORE'], ['AIR DRYER', 'DRYCORE']
 ]);
-const normalizedCatalog = catalogTechnology.toUpperCase().replace(/[®™]/g,'').trim();
-const tech = normalizedCatalog || map.get(filterType);
-if (!tech) throw new Error(`STOP_TECHNOLOGY_UNRESOLVED:${filterType}`);
-const approved = new Set(['SINTRAX','SYNTAPORE','NANOFORCE','HYDRACORE','THERMACORE','DRYCORE']);
-if (!approved.has(tech)) throw new Error(`STOP_TECHNOLOGY_NOT_APPROVED:${tech}`);
-const dir = 'frontend/public/assets';
-const files = await fs.readdir(dir);
-const candidates = files.filter(f => f.toUpperCase().replace(/[^A-Z0-9]/g,'').includes(tech.replace(/[^A-Z0-9]/g,'')) && /\.(png|svg|webp|jpg|jpeg)$/i.test(f));
-if (candidates.length !== 1) throw new Error(`STOP_TECHNOLOGY_ASSET_${candidates.length === 0 ? 'MISSING' : 'AMBIGUOUS'}:${tech}:${candidates.join(',')}`);
-const asset = path.posix.join(dir, candidates[0]);
-const stat = await fs.stat(asset);
-if (!stat.isFile() || stat.size === 0) throw new Error(`STOP_TECHNOLOGY_ASSET_INVALID:${asset}`);
-console.log(JSON.stringify({ ok:true, technology:`${tech}®`, technology_key:tech, technology_asset_path:asset, bytes:stat.size }, null, 2));
+
+const LEGACY_ALIASES = new Map([
+  ['SINTRAX', 'SYNTRAX'],
+  ['HYDRACORE', 'HYDROCORE']
+]);
+
+const APPROVED = new Set(['SYNTRAX', 'SYNTAPORE', 'NANOFORCE', 'HYDROCORE', 'THERMACORE', 'DRYCORE']);
+
+function normalize(value) {
+  const raw = String(value || '').toUpperCase().replace(/[®™]/g, '').trim();
+  return LEGACY_ALIASES.get(raw) || raw;
+}
+export async function resolveTechnologyAsset({
+  filterType = '',
+  catalogTechnology = '',
+  assetsDir = 'frontend/public/assets'
+} = {}) {
+  const normalizedType = String(filterType || '').trim().toUpperCase();
+  const catalogTech = normalize(catalogTechnology);
+  const technologyKey = catalogTech || TYPE_TO_TECH.get(normalizedType);
+  if (!technologyKey) throw new Error(`STOP_TECHNOLOGY_UNRESOLVED:${normalizedType}`);
+  if (!APPROVED.has(technologyKey)) throw new Error(`STOP_TECHNOLOGY_NOT_APPROVED:${technologyKey}`);
+
+  const files = await fs.readdir(assetsDir);
+  const needle = technologyKey.replace(/[^A-Z0-9]/g, '');
+  const candidates = files.filter((file) =>
+    file.toUpperCase().replace(/[^A-Z0-9]/g, '').includes(needle)
+    && /\.(png|svg|webp|jpg|jpeg|avif)$/i.test(file)
+  );
+  if (candidates.length !== 1) {
+    throw new Error(`STOP_TECHNOLOGY_ASSET_${candidates.length === 0 ? 'MISSING' : 'AMBIGUOUS'}:${technologyKey}:${candidates.join(',')}`);
+  }
+  const asset = path.posix.join(assetsDir.replace(/\\/g, '/'), candidates[0]);
+  const stat = await fs.stat(asset);
+  if (!stat.isFile() || stat.size === 0) throw new Error(`STOP_TECHNOLOGY_ASSET_INVALID:${asset}`);
+  return { ok: true, technology: `${technologyKey}™`, technology_key: technologyKey, technology_asset_path: asset, bytes: stat.size };
+}
+async function main() {
+  const args = Object.fromEntries(process.argv.slice(2).map((arg) => {
+    const [key, ...value] = arg.replace(/^--/, '').split('=');
+    return [key, value.join('=')];
+  }));
+  const filterType = String(args['filter-type'] || '').trim();
+  const catalogTechnology = String(args.technology || '').trim();
+  if (!filterType && !catalogTechnology) {
+    throw new Error('Usage: --filter-type=<type> [--technology=<catalog-tech>]');
+  }
+  const result = await resolveTechnologyAsset({ filterType, catalogTechnology });
+  console.log(JSON.stringify(result, null, 2));
+}
+
+const direct = process.argv[1]
+  ? import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
+  : false;
+
+if (direct) main().catch((error) => {
+  console.error(error.message);
+  process.exit(1);
+});

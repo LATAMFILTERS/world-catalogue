@@ -85,7 +85,12 @@ export async function resolveCompetitorSku({
         reason: 'AMBIGUOUS_EXACT_CATALOG_MATCH',
         source_code: sourceCode,
         source_brand: sourceBrand,
-        matches: exact.map((row) => ({ sku: row.sku, filter_type: row.filter_type, duty: row.duty }))
+        matches: exact.map((row) => ({
+          sku: row.sku,
+          filter_type: row.filter_type,
+          duty: row.duty,
+          catalog_technology: row.technology ?? null
+        }))
       };
     }
 

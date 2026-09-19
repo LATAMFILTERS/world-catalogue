@@ -6,7 +6,10 @@
   "scope": "All cylindrical direct-print ELIMFILTERS filters using this approved visual system",
   "coreRule": {
     "sameArtworkBothSides": true,
-    "onlyVariableFields": ["sku", "technology"],
+    "onlyVariableFields": [
+      "sku",
+      "technology"
+    ],
     "allOtherArtworkLocked": true
   },
   "brandArtworkAuthority": {
@@ -20,7 +23,14 @@
     "branch": "main",
     "authoritativeDirectory": "frontend/public/assets/",
     "rule": "Technology visual assets must be sourced exclusively from frontend/public/assets/. Do not recreate, redraw, restyle, substitute, or infer technology artwork when an authoritative asset exists there.",
-    "appliesTo": ["SINTRAX®", "SYNTAPORE®", "NANOFORCE®", "HYDRACORE®", "THERMACORE®", "DRYCORE®"]
+    "appliesTo": [
+      "SYNTRAX™",
+      "SYNTAPORE™",
+      "NANOFORCE™",
+      "HYDROCORE™",
+      "THERMACORE™",
+      "DRYCORE™"
+    ]
   },
   "sourceGeometryAuthority": {
     "required": true,
@@ -54,15 +64,37 @@
     "status": "MASTER_LOCKED",
     "officialName": "ELIMFILTERS DARK CHARCOAL",
     "visualReference": "APPROVED_GRAY_FILTER_MASTER",
-    "digitalMaster": {"hex": "#414141", "rgb": [65, 65, 65]},
+    "digitalMaster": {
+      "hex": "#414141",
+      "rgb": [
+        65,
+        65,
+        65
+      ]
+    },
     "finish": "SEMI_MATTE_INDUSTRIAL_COATING"
   },
   "lithographyColorAuthority": {
     "status": "MASTER_LOCKED",
     "officialName": "ELIMFILTERS LITHOGRAPHY SILVER",
-    "digitalMaster": {"hex": "#CBCBCB", "rgb": [203, 203, 203]},
+    "digitalMaster": {
+      "hex": "#CBCBCB",
+      "rgb": [
+        203,
+        203,
+        203
+      ]
+    },
     "finish": "METALLIC_SILVER_SATIN",
-    "appliesTo": ["OFFICIAL_LOGO", "TOTAL_ASSET_PROTECTION", "SKU", "PRODUCT_DESCRIPTOR", "TECHNOLOGY_ARTWORK", "POWERED_FILTRATION", "INSTALLATION_ROTATION_DIRECTION_MARKS"],
+    "appliesTo": [
+      "OFFICIAL_LOGO",
+      "TOTAL_ASSET_PROTECTION",
+      "SKU",
+      "PRODUCT_DESCRIPTOR",
+      "TECHNOLOGY_ARTWORK",
+      "POWERED_FILTRATION",
+      "INSTALLATION_ROTATION_DIRECTION_MARKS"
+    ],
     "rules": {
       "singleLithographyColorSystem": true,
       "doNotUsePureWhite": true,
@@ -114,12 +146,36 @@
     "extraIconsAllowed": false
   },
   "technologyMatrix": {
-    "LUBE_OIL": {"technology": "SINTRAX®", "display": "SINTRAX®", "descriptor": "Powered Filtration"},
-    "FUEL": {"technology": "SYNTAPORE®", "display": "SYNTAPORE®", "descriptor": "Powered Filtration"},
-    "HYDRAULIC": {"technology": "NANOFORCE®", "display": "NANOFORCE®", "descriptor": "Powered Filtration"},
-    "FUEL_WATER_SEPARATOR": {"technology": "HYDRACORE®", "display": "HYDRACORE®", "descriptor": "Powered Filtration"},
-    "COOLANT": {"technology": "THERMACORE®", "display": "THERMACORE®", "descriptor": "Powered Filtration"},
-    "AIR_DRYER": {"technology": "DRYCORE®", "display": "DRYCORE®", "descriptor": "Powered Filtration"}
+    "LUBE_OIL": {
+      "technology": "SYNTRAX™",
+      "display": "SYNTRAX™",
+      "descriptor": "Powered Filtration"
+    },
+    "FUEL": {
+      "technology": "SYNTAPORE™",
+      "display": "SYNTAPORE™",
+      "descriptor": "Powered Filtration"
+    },
+    "HYDRAULIC": {
+      "technology": "NANOFORCE™",
+      "display": "NANOFORCE™",
+      "descriptor": "Powered Filtration"
+    },
+    "FUEL_WATER_SEPARATOR": {
+      "technology": "HYDROCORE™",
+      "display": "HYDROCORE™",
+      "descriptor": "Powered Filtration"
+    },
+    "COOLANT": {
+      "technology": "THERMACORE™",
+      "display": "THERMACORE™",
+      "descriptor": "Powered Filtration"
+    },
+    "AIR_DRYER": {
+      "technology": "DRYCORE™",
+      "display": "DRYCORE™",
+      "descriptor": "Powered Filtration"
+    }
   },
   "pilotApprovalGate": {
     "enabled": true,
@@ -132,8 +188,25 @@
   "unattendedExecutionPolicy": {
     "required": true,
     "mode": "AUTHORITY_DRIVEN",
-    "allowedAutomaticChanges": ["SKU_VALUE_FROM_DATABASE", "TECHNOLOGY_BY_CATEGORY", "PROPORTIONAL_SCALE_TO_EXACT_CONTAINER_PRINTABLE_AREA", "CONTAINER_RECOLOR_TO_MASTER"],
-    "forbiddenAutomaticChanges": ["SOURCE_GEOMETRY", "BASEPLATE", "THREAD", "HOLE_PATTERN", "GASKET", "LOGO", "BRAND_CLAIM", "COLOR_SYSTEM", "TECHNOLOGY_ARTWORK_SOURCE", "INSTALLATION_ROTATION_DIRECTION_MARKS", "ARTWORK_HIERARCHY"],
+    "allowedAutomaticChanges": [
+      "SKU_VALUE_FROM_DATABASE",
+      "TECHNOLOGY_BY_CATEGORY",
+      "PROPORTIONAL_SCALE_TO_EXACT_CONTAINER_PRINTABLE_AREA",
+      "CONTAINER_RECOLOR_TO_MASTER"
+    ],
+    "forbiddenAutomaticChanges": [
+      "SOURCE_GEOMETRY",
+      "BASEPLATE",
+      "THREAD",
+      "HOLE_PATTERN",
+      "GASKET",
+      "LOGO",
+      "BRAND_CLAIM",
+      "COLOR_SYSTEM",
+      "TECHNOLOGY_ARTWORK_SOURCE",
+      "INSTALLATION_ROTATION_DIRECTION_MARKS",
+      "ARTWORK_HIERARCHY"
+    ],
     "validationBeforeRender": {
       "realManufacturerSourceImageConfirmed": true,
       "skuConfirmedInCatalogDatabase": true,
