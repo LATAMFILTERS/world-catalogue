@@ -292,3 +292,25 @@ Rejected / avoided:
 - HYDREVA™, HYDRAVEX™, HYDREON™, LUBRION™, DEHYRA™, DRYVEX™, VARNEXA™
 
 All preferred marks remain subject to formal trademark clearance.
+
+
+### AQUVEXIS™ — Family Naming Shortlist
+
+Preferred working family marks:
+- CARBEXIS™ — Adsorptive Carbon Treatment — TC-WAT-03
+- MEMBREXIS™ — Membrane Separation — TC-WAT-04 / TC-WAT-05 / TC-WAT-06
+- IONVEXA™ — Ion Exchange — TC-WAT-07
+
+Descriptive families / subfamilies:
+- Depth Filtration — TC-WAT-01
+- Reverse Osmosis — TC-WAT-04
+- Ultrafiltration — TC-WAT-05
+- Nanofiltration — TC-WAT-06
+- Electrodeionization — TC-WAT-08
+
+Avoided:
+- CARBEXA™
+- IONEXIS™
+- IONELIS™
+
+All preferred marks remain subject to formal trademark clearance.
