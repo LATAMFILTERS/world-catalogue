@@ -2907,3 +2907,188 @@ Air Filtration Solutions:
 
 Next source family:
 - Cleanroom & HVAC Air Filtration
+
+
+### 17.7 Cleanroom & HVAC Air Filtration — Architecture v1
+
+Status: SOURCE FAMILY STRUCTURE CONFIRMED; TECHNICAL CLASSIFICATION BENCHMARKED; COMMERCIAL TECHNOLOGY NAMES NOT ASSIGNED.
+
+Source condition:
+- REIKE exposes the following subfamilies:
+  1. Ultra-Low Penetration Air (ULPA) Filter
+  2. HEPA Filter
+  3. EPA Air Filters (E10–E12) for HVAC Systems
+  4. Medium Efficiency Air Filters for HVAC Systems
+  5. Pre-Filters (G3-G4) for HVAC Systems
+- REIKE repeats supplier-level claims of safe/reliable, long-term stable, and custom filter manufacturing.
+- No REIKE test reports, efficiencies, pressure-drop curves, media construction, dimensions, or standards evidence were supplied in the source text.
+
+#### Canonical Interpretation
+
+Cleanroom & HVAC Air Filtration spans two distinct technical regimes:
+
+1. General Ventilation / HVAC Filtration
+2. High-Efficiency / Cleanroom Filtration
+
+These regimes MUST remain separate in ELIMFILTERS because they use different classification and test frameworks.
+
+#### General Ventilation / HVAC
+
+Canonical functions:
+- Coarse Prefiltration
+- General Ventilation Particle Filtration
+- Fine HVAC Particle Filtration
+
+Current international benchmark:
+- ISO 16890 classification based on particulate-matter efficiency (ePM)
+- ISO 16890-2 covers fractional efficiency and air-flow resistance
+- ISO 16890-3 covers gravimetric efficiency and resistance versus captured dust mass
+- ISO 16890-4 covers conditioning for minimum fractional efficiency
+
+Governance:
+- Legacy G3/G4 and other EN 779 labels may appear in source data or installed-base references.
+- Legacy classes MUST be stored as source / legacy classification, not as the primary canonical modern classification.
+- Canonical modern HVAC records should prefer ISO 16890 ePM classification when verified.
+
+Important standards boundary:
+ISO 16890 applies to general-ventilation particulate filters up to the scope limits defined by the standard. Higher-efficiency filters above that range are evaluated under high-efficiency filter standards such as ISO 29463.
+
+#### High-Efficiency / Cleanroom
+
+Canonical functions:
+- EPA High-Efficiency Particle Filtration
+- HEPA High-Efficiency Particle Filtration
+- ULPA Ultra-High-Efficiency Particle Filtration
+
+Primary international benchmark:
+- ISO 29463-1:2024 — classification, performance, testing, and marking of high-efficiency air filters
+- ISO 29463 classification is based on measured filter performance with the related ISO 29463 test methods
+- The ISO 29463 series uses particle-counting methods and MPPS-based performance concepts for high-efficiency filters
+
+Source mapping:
+- REIKE "EPA E10–E12" → preserve as source classification pending exact standard / test evidence
+- REIKE "HEPA Filter" → high-efficiency filter family; exact class must be verified
+- REIKE "ULPA Filter" → ultra-high-efficiency family; exact class must be verified
+
+Rule:
+The words EPA, HEPA, and ULPA are insufficient by themselves for ELIMFILTERS approval. Each product must carry:
+- exact class
+- exact test standard / edition
+- overall efficiency
+- local efficiency / leak-test requirement where applicable
+- MPPS test condition
+- rated airflow
+- initial pressure drop
+- final / terminal pressure drop
+- dimensions
+- media / frame / seal construction
+
+#### Provisional Technology Cores
+
+TC-AIR-01 — Industrial General Ventilation Particle Control
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Scope:
+- Prefilters
+- Medium / fine HVAC filters
+- ISO 16890 ePM-based classification
+
+TC-AIR-02 — Industrial High-Efficiency Air Filtration
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Scope:
+- EPA / HEPA / ULPA high-efficiency particulate filtration
+- ISO 29463 / equivalent validated classification
+- Cleanroom and critical-environment protection
+
+These two cores are separate because general ventilation and cleanroom/high-efficiency filtration have materially different test standards, efficiency regimes, leakage requirements, and application consequences.
+
+#### Cleanroom / HVAC Product Configurations
+
+Canonical configurations may include:
+- Panel Prefilter
+- Pleated HVAC Filter
+- Pocket / Bag Filter
+- Compact / V-Bank Filter
+- HEPA Panel Filter
+- HEPA Terminal Filter
+- ULPA Terminal Filter
+- Fan Filter Unit (FFU) filter module where applicable
+- High-temperature HEPA where independently qualified
+- Gel-seal / gasket-seal terminal filters where applicable
+
+Configuration labels are not technology names.
+
+#### HERMES Inputs — Cleanroom & HVAC
+
+Minimum inputs:
+- Application / room type
+- Required cleanliness objective
+- Filter stage
+- Existing classification system
+- Required ISO 16890 ePM class OR high-efficiency class
+- Rated airflow
+- Face velocity
+- Initial ΔP
+- Terminal ΔP
+- Available fan static pressure
+- Temperature
+- Relative humidity
+- Chemical environment
+- Frame material
+- Seal / gasket type
+- Fire / smoke requirement
+- Installation interface
+- Leak-test requirement
+- Scan-test requirement
+- OEM / competitor reference
+
+Expected logic:
+Application
+→ Filtration Stage
+→ General HVAC or High-Efficiency Regime
+→ Required Standard / Class
+→ Flow / ΔP Envelope
+→ Media / Construction
+→ Seal / Frame / Installation
+→ Candidate Filter
+→ Validation State
+
+#### Evidence and Classification Governance
+
+Required fields:
+- Source Classification
+- Canonical Classification
+- Standard
+- Standard Edition
+- Efficiency Metric
+- Overall Efficiency
+- Local Efficiency
+- MPPS
+- Rated Airflow
+- Initial ΔP
+- Final ΔP
+- Leak-Test Method
+- Source Evidence
+- Validation Status
+
+Rules:
+- Do not convert G3/G4 directly to ISO 16890 without evidence.
+- Do not convert E10–E12, HEPA, or ULPA labels into exact ISO 29463 classes without product test data.
+- Do not infer MERV, EN 779, ISO 16890, EN 1822, or ISO 29463 equivalence from a marketing label alone.
+- A class conversion may only be stored when it is supported by the applicable test standard / product evidence.
+
+#### Closure State — Cleanroom & HVAC Air Filtration
+
+- REIKE family discovery: COMPLETE
+- Five source subfamilies: COMPLETE
+- General-HVAC architecture: CLOSED v1
+- High-efficiency architecture: CLOSED v1
+- Standards architecture: CLOSED v1
+- Technology-core discovery: CLOSED v1
+- REIKE product-level performance validation: OPEN
+- Commercial technology naming: BLOCKED
+- SKU / OEM mapping: OPEN
+
+Next Air Filtration source family:
+- Semiconductor & Photovoltaic Manufacturing Filter
