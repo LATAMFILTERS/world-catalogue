@@ -425,3 +425,35 @@ Descriptive families / subfamilies remain:
 - Electrodeionization — TC-WAT-08
 
 These names are frozen for internal brand architecture only. Formal trademark clearance / filing remains a separate downstream gate.
+
+
+## Industrial & Process — Canonical External Representation v1
+
+The Internal Commercial Naming Freeze v1 is the authoritative naming layer for external representation.
+
+Platforms:
+- AEREMIS™ — Air Technologies
+- PARTION™ — Dust & Fume Technologies
+- COALVEX™ — Gas Conditioning Technologies
+- FLUREXIS™ — Fluid Conditioning Technologies
+- AQUVEXIS™ — Water Treatment Technologies
+
+Canonical branded families:
+- HE-CRIVA™
+- MA-TREA™
+- FUMEVRA™
+- COALERIS™
+- HYLTRIS™
+- LUBREVA™
+- DEWATIS™
+- OILREVEX™
+- ADSOVEX™
+- MEMBRAVEX™
+- IONVEXA™
+
+Representation rule:
+Platform names identify the customer-facing technology universe.
+Family marks identify the specific treatment / filtration mechanism family.
+Internal Technology Core IDs remain engineering metadata and are not customer-facing by default.
+
+Earlier working candidates in this registry are historical only and MUST NOT override the frozen names above.
