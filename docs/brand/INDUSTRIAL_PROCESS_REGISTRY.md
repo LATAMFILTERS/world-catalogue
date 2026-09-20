@@ -2761,3 +2761,149 @@ Industrial & Process status after this closure:
 - Filtration Equipment & Systems: CLOSED v1
 - Air Filtration Solutions: OPEN
 - Additive Manufacturing Filtration Solutions: OPEN
+
+
+## 17. Air Filtration Solutions — Source Discovery v0.1
+
+Status: SOURCE FAMILY DISCOVERY COMPLETE; TECHNICAL DECOMPOSITION PENDING.
+
+Primary source:
+- Xinxiang Filter / REIKE
+- Source category: Air Filtration Solutions
+- Source site: http://www.rkfilter.com/
+
+### 17.1 Source Families Observed
+
+REIKE currently exposes five source families under Air Filtration Solutions:
+
+1. Cleanroom & HVAC Air Filtration
+2. Semiconductor & Photovoltaic Manufacturing Filter
+3. Aviation Air Filtration
+4. Laser Cutting Dust Filtration
+5. Welding Fume Extraction Filtration
+
+Repeated supplier-level commercial attributes:
+- Safe & Reliable
+- Long-term Stable
+- Custom Filter Manufacturer
+
+These remain SOURCE / MANUFACTURER-DECLARED and are not canonical ELIMFILTERS performance claims.
+
+### 17.2 Initial Canonical Interpretation
+
+The REIKE source menu mixes application sectors, filtration environments, and dust/fume-control use cases.
+
+Therefore the source family labels MUST NOT be converted one-to-one into ELIMFILTERS technology names.
+
+Preliminary normalization:
+
+- Cleanroom & HVAC Air Filtration
+  - application / environment family
+  - likely functions: particulate air filtration, high-efficiency air filtration, cleanroom contamination control
+  - technical decomposition pending source or benchmark evidence
+
+- Semiconductor & Photovoltaic Manufacturing Filter
+  - industry / process application family
+  - likely functions: high-purity air contamination control, process-environment particulate control
+  - semiconductor and photovoltaic applications must remain separate application dimensions even if they share filter constructions
+
+- Aviation Air Filtration
+  - application family
+  - exact scope must be verified before canonicalization
+  - do not assume cabin, avionics, engine intake, ground support, or process-air duty without source evidence
+
+- Laser Cutting Dust Filtration
+  - application family
+  - likely function: particulate / fume extraction from laser-cutting processes
+  - likely system relationship: dust collector / extraction system
+  - technical decomposition pending
+
+- Welding Fume Extraction Filtration
+  - application family
+  - likely function: welding-fume and particulate extraction
+  - technical decomposition pending
+
+### 17.3 Taxonomy Rule
+
+Air Filtration Solutions must separate:
+
+Industry / Environment
+→ Process / Application
+→ Contaminant
+→ Filtration Function
+→ Product Configuration
+→ Media / Mechanism
+→ Performance
+→ System Configuration
+
+Examples:
+- Cleanroom is an ENVIRONMENT / APPLICATION.
+- Semiconductor manufacturing is an INDUSTRY / PROCESS APPLICATION.
+- Laser cutting is a PROCESS APPLICATION.
+- Welding fume is a CONTAMINANT / PROCESS-EMISSION context.
+- HEPA, depth filtration, surface filtration, pulse-jet cleaning, antistatic media, flame-retardant media, or high-temperature media are technical mechanisms / capabilities only when supported by evidence.
+
+### 17.4 Industrial Technology Separation
+
+Existing ELIMFILTERS On-Road / Off-Road air technologies are not inherited automatically by Industrial & Process.
+
+Industrial & Process Air Filtration starts with no assigned commercial ELIMFILTERS technology.
+
+Any new industrial air technology must satisfy the existing Technology Naming Gate:
+1. Distinct physical mechanism
+2. Measurable technical benefit
+3. Verifiable performance evidence
+4. Repeatable use across a meaningful product/application family
+
+### 17.5 Required Technical Extraction Sequence
+
+Recommended order:
+
+1. Cleanroom & HVAC Air Filtration
+2. Semiconductor & Photovoltaic Manufacturing Filter
+3. Laser Cutting Dust Filtration
+4. Welding Fume Extraction Filtration
+5. Aviation Air Filtration
+
+For each family, capture:
+- Source product name
+- Application / industry
+- Air stream type
+- Contaminant type
+- Particle-size range
+- Filtration efficiency
+- Filter class / rating
+- Test standard
+- Rated flow
+- Face velocity
+- Initial ΔP
+- Final / terminal ΔP
+- Media
+- Support / frame
+- Seal / gasket
+- Temperature
+- Humidity
+- Chemical compatibility
+- Antistatic capability
+- Flame-retardant capability
+- High-temperature capability
+- Cleaning / pulse-jet compatibility
+- Regenerable / disposable
+- Housing / collector compatibility
+- OEM / competitor cross
+- Source claim status
+- Validation status
+
+### 17.6 Current Closure State
+
+Air Filtration Solutions:
+- Source category discovery: COMPLETE
+- Five REIKE source families identified: COMPLETE
+- Canonical technical architecture: OPEN
+- Technology-core discovery: OPEN
+- Commercial technology naming: BLOCKED pending technical evidence
+- Product-level specification: OPEN
+- OEM / competitor mapping: OPEN
+
+Next source family:
+- Cleanroom & HVAC Air Filtration
