@@ -4286,3 +4286,431 @@ Air Filtration Solutions v1 is now ARCHITECTURALLY CLOSED, with product-level va
 
 Next Industrial & Process source family:
 - Additive Manufacturing Filtration Solutions
+
+
+## 18. Additive Manufacturing Filtration Solutions — Architecture v1
+
+Status: REIKE SOURCE PRODUCT SET CONFIRMED; EXTERNAL METAL-AM SAFETY / DUST-COLLECTION ARCHITECTURE COMPLETE; COMMERCIAL TECHNOLOGY NAMES NOT ASSIGNED.
+
+Primary source:
+- Xinxiang Filter / REIKE
+- Source category: Additive Manufacturing Filtration Solutions
+
+REIKE exposes seven source families:
+1. SLM & DMLS Powder Recovery Filter Cartridges
+2. HEPA Filters for Metal 3D Printing
+3. Antistatic Filters
+4. Flame-Retardant Antistatic Filters
+5. High-Temperature Filters
+6. Pulse Jet Dust Collectors
+7. Customized Additive Manufacturing Filters
+
+Repeated supplier claims:
+- Safe & Reliable
+- Long-term Stable
+- Custom Filter Manufacturer
+
+The source page provides family names but no validated efficiency, pressure-drop, dust-loading, electrical resistance, fire-performance, temperature, cleaning-cycle, collector, or alloy-specific safety evidence.
+
+### 18.1 Canonical Interpretation
+
+Additive Manufacturing Filtration is an INDUSTRY / PROCESS APPLICATION layer, not one filtration technology.
+
+Canonical domain:
+Industrial & Process
+→ Additive Manufacturing Filtration Solutions
+
+Primary process contexts:
+- Metal Powder Handling
+- Build-Chamber / Machine Exhaust
+- Powder Recovery
+- Post-Processing Dust Capture
+- Local Extraction
+- Central Dust Collection
+- Secondary / Safety HEPA Filtration
+
+Canonical functions:
+- Fine Metal Powder Capture
+- Surface-Loading Dust Filtration
+- Powder Recovery
+- High-Efficiency Final Filtration
+- Pulse-Jet Cleaning
+- Static-Charge Mitigation
+- Flame-Retardant Capability
+- High-Temperature Capability
+- Combustible-Metal Dust Risk Control at system level
+
+### 18.2 SLM / DMLS Powder Recovery
+
+REIKE source:
+- SLM & DMLS Powder Recovery Filter Cartridges
+
+Canonical application:
+- Powder Recovery / Metal AM Process Dust Control
+
+Potential contaminants:
+- Titanium alloy powder
+- Aluminum alloy powder
+- Nickel alloy powder
+- Stainless-steel powder
+- Cobalt-chrome and other metal powders
+- Process fines / partially fused particles
+
+Critical rule:
+Powder composition MUST be an explicit selection input. Different alloy powders can have materially different combustibility, toxicity, electrical, handling, and recovery requirements.
+
+Canonical product attributes:
+- Alloy / powder type
+- Particle-size distribution
+- Bulk density
+- Dust loading
+- Fine-particle fraction
+- Reusable-powder recovery requirement
+- Media
+- Surface treatment
+- Conductivity / resistivity
+- Filtration efficiency
+- Initial / terminal ΔP
+- Cleaning method
+- Pulse pressure
+- Cartridge geometry
+- Collector / printer interface
+- Temperature
+- Inert-gas compatibility
+- Grounding / bonding requirement
+
+### 18.3 Metal Powder Combustible-Dust Governance
+
+External benchmark:
+OSHA explicitly identifies additive manufacturing / 3D printing with combustible metal powders as a combustible-dust hazard. OSHA's technical guidance notes that very fine metal powders can be highly reactive, and it specifically identifies 3D printing with combustible metals as a hazardous process.
+
+OSHA enforcement history for metal AM has also documented hazards from:
+- electrostatic ignition
+- insufficient bonding / grounding
+- inadequate inerting
+- combustible titanium-alloy powder
+- powder handling near printers / recovery equipment
+
+Canonical safety dimensions:
+- Metal / alloy
+- Kst / Pmax where applicable
+- Minimum ignition energy
+- Minimum ignition temperature
+- Dust explosibility
+- Oxygen concentration
+- Inert-gas type
+- Inerting strategy
+- Grounding / bonding
+- Conductive components
+- Ignition-source control
+- Collector location
+- Explosion isolation / venting / suppression requirement
+- Wet vs dry collection strategy
+- Authority Having Jurisdiction
+
+Critical rule:
+An antistatic or flame-retardant filter cartridge does NOT make a metal-powder collection system explosion-safe.
+
+### 18.4 Antistatic Filters
+
+REIKE source:
+- Antistatic Filters
+
+Canonical capability:
+AS-DUST — Anti-Static Dust Filtration Capability
+
+This capability is reused from Laser Cutting / Welding Fume and is especially important in metal powder handling.
+
+Required attributes:
+- Surface resistivity
+- Volume resistivity
+- Conductive-path continuity
+- Grounding point
+- Bonding requirement
+- Media conductive treatment
+- End-cap / core conductivity
+- Collector grounding
+- Verification method
+
+External safety basis:
+OSHA has cited lack of ESD bonding / grounding around metal additive-manufacturing operations using fine titanium alloy powders as an ignition hazard.
+
+### 18.5 Flame-Retardant Antistatic Filters
+
+REIKE source:
+- Flame-Retardant Antistatic Filters
+
+Canonical capabilities:
+- FR-DUST — Flame-Retardant Dust Filtration Capability
+- AS-DUST — Anti-Static Dust Filtration Capability
+
+No new technology core is created.
+
+Governance:
+- Flame retardancy = media / material behavior
+- Antistatic = electrostatic-control capability
+- Explosion protection = system architecture
+
+These three concepts MUST remain separate.
+
+### 18.6 High-Temperature Filters
+
+REIKE source:
+- High-Temperature Filters
+
+Canonical capability:
+HT-DUST — High-Temperature Dust Filtration Capability
+
+No additive-manufacturing-specific high-temperature technology is created.
+
+Required attributes:
+- Continuous temperature
+- Peak temperature
+- Thermal cycling
+- Media
+- Resin / adhesive
+- Gasket / seal
+- Metal hardware
+- Spark / hot-particle exposure
+- Efficiency retention after thermal exposure
+
+### 18.7 HEPA Filters for Metal 3D Printing
+
+REIKE source:
+- HEPA Filters for Metal 3D Printing
+
+Canonical function:
+- High-Efficiency Final / Safety Particle Filtration
+
+Parent core:
+TC-AIR-02 — Industrial High-Efficiency Air Filtration
+
+Potential system positions:
+- Printer exhaust
+- Local extraction final stage
+- Dust collector secondary filter
+- Room / enclosure final filtration
+
+Required attributes:
+- Exact HEPA class
+- Test standard
+- MPPS efficiency
+- Overall / local efficiency
+- Rated airflow
+- Initial / final ΔP
+- Media
+- Frame / seal
+- Leak test
+- Metal-powder compatibility
+- Safe-change requirement where applicable
+
+Canonical rule:
+HEPA is a final filtration function and does not replace upstream combustible-dust hazard controls.
+
+### 18.8 Pulse Jet Dust Collectors
+
+REIKE source:
+- Pulse Jet Dust Collectors
+
+Canonical system configuration:
+- Pulse-Jet Cartridge Dust Collector
+
+External benchmark:
+Donaldson and Camfil industrial cartridge collectors use reverse-pulse / pulse-jet cleaning to remove surface-loaded dust and maintain airflow. Their systems also show that collector design, cartridge arrangement, cleaning energy, airflow management, and dust discharge are independent engineering variables.
+
+Canonical attributes:
+- Collector airflow
+- Cartridge count
+- Media area
+- Air-to-media ratio
+- Cleaning pressure
+- Pulse duration
+- Pulse sequence
+- ΔP cleaning trigger
+- Hopper / dust discharge
+- Dust containment
+- Inerting compatibility
+- Explosion-protection architecture
+- Secondary HEPA option
+- Monitoring / alarms
+- Collector location
+
+Technology relationship:
+- Collector system consumes TC-DUST-01.
+- Pulse jet is a CLEANING / SYSTEM MECHANISM, not a filtration technology.
+
+### 18.9 Customized Additive Manufacturing Filters
+
+REIKE source:
+- Customized Additive Manufacturing Filters
+
+Canonical interpretation:
+Customization is a MANUFACTURING / APPLICATION-ENGINEERING capability, not a technology.
+
+Required custom-design inputs:
+- Printer OEM
+- Printer model
+- Build volume
+- Powder alloy
+- Powder particle distribution
+- Process gas
+- Filter envelope
+- Mounting interface
+- Airflow
+- ΔP limit
+- Cleaning method
+- Grounding requirement
+- Temperature
+- Recovery / disposal strategy
+- Safety architecture
+- Changeout method
+
+### 18.10 Core Reuse and New-Core Decision
+
+Additive Manufacturing does NOT require a duplicate dust-filtration core.
+
+Reused:
+- TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+- TC-AIR-02 — Industrial High-Efficiency Air Filtration
+
+Reused capabilities:
+- AS-DUST — Anti-Static Dust Filtration Capability
+- FR-DUST — Flame-Retardant Dust Filtration Capability
+- HT-DUST — High-Temperature Dust Filtration Capability
+
+New application-layer concept:
+AM-POWDER — Additive Manufacturing Powder Recovery / Containment Architecture
+Status: APPLICATION / SYSTEM ARCHITECTURE, NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Reason:
+The distinct value in Additive Manufacturing is the integration of powder recovery, containment, inerting, static control, final filtration, and collector safety around combustible metal powders — not a new fundamental particle-capture mechanism.
+
+### 18.11 HERMES Inputs — Additive Manufacturing
+
+Minimum inputs:
+- Printer manufacturer
+- Printer model
+- AM process
+- Alloy / powder chemistry
+- Particle-size distribution
+- Powder combustibility data
+- Powder toxicity / exposure data
+- Build / powder-handling stage
+- Reuse / recovery requirement
+- Process gas
+- Oxygen concentration
+- Inerting requirement
+- Required filtration efficiency
+- HEPA requirement
+- Airflow
+- ΔP
+- Temperature
+- Cleaning / pulse requirement
+- Antistatic requirement
+- Flame-retardant requirement
+- Grounding / bonding architecture
+- Collector type
+- Explosion / fire protection requirement
+- Safe-change / containment requirement
+- OEM / competitor reference
+
+Expected logic:
+AM Process
+→ Powder / Alloy Hazard
+→ Recovery vs Disposal
+→ Dust-Capture Function
+→ Surface Filtration
+→ Static / FR / HT Capability
+→ Pulse-Jet / Collector Architecture
+→ HEPA Final Stage
+→ Inerting / Explosion-Protection Requirement
+→ OEM Interface
+→ Candidate Filter / System
+→ Validation State
+
+### 18.12 Canonical Product / System Record Additions
+
+Additive Manufacturing records require:
+- AM Process
+- Powder Alloy
+- Particle-Size Distribution
+- Powder Recovery Required
+- Powder Reuse Allowed
+- Process Gas
+- Oxygen Limit
+- Antistatic Requirement
+- Surface Resistivity
+- Grounding Method
+- Flame-Retardant Requirement
+- High-Temperature Requirement
+- HEPA Final Stage
+- Pulse-Cleaning Requirement
+- Collector Type
+- Collector Location
+- Explosion Protection
+- Inerting Strategy
+- Safe-Change Requirement
+- Disposal / Recovery Method
+
+### 18.13 Evidence Governance
+
+Required evidence states:
+- SOURCE_ONLY
+- EXTERNAL_BENCHMARK
+- HAZARD_VALIDATED
+- TECHNICALLY_VALIDATED
+- APPLICATION_VALIDATED
+- ELIMFILTERS_APPROVED
+
+Rules:
+- REIKE source pages establish product-family existence only.
+- No REIKE safety or performance claim is accepted without product evidence.
+- OSHA / external benchmark evidence defines process hazards and engineering requirements, not product approval.
+- Filter media capability and explosion safety must remain separate.
+- Powder handling, filtration, recovery, grounding, inerting, and explosion protection must be evaluated as one system.
+
+### 18.14 Additive Manufacturing Filtration — Family Closure v1
+
+- REIKE source-family discovery: COMPLETE
+- SLM / DMLS powder-recovery architecture: CLOSED v1
+- HEPA final-filtration architecture: CLOSED v1
+- Anti-static architecture: CLOSED v1
+- Flame-retardant architecture: CLOSED v1
+- High-temperature architecture: CLOSED v1
+- Pulse-jet collector architecture: CLOSED v1
+- Custom-filter engineering architecture: CLOSED v1
+- Combustible-metal powder safety governance: CLOSED v1
+- Technology-core reuse decision: CLOSED v1
+- Commercial technology naming: BLOCKED
+- Product-level specification: OPEN
+- OEM / printer mapping: OPEN
+
+## 19. Industrial & Process — Architecture Closure v1
+
+All six primary REIKE source domains now have a canonical ELIMFILTERS architecture:
+
+- Air Filtration Solutions — CLOSED v1
+- Additive Manufacturing Filtration Solutions — CLOSED v1
+- Gas & Natural Gas Filtration — CLOSED v1
+- Hydraulic & Lubrication Filtration — CLOSED v1
+- Industrial Water Filtration Solutions — CLOSED v1
+- Filtration Equipment & Systems — CLOSED v1
+
+Global status:
+- Source-family discovery: COMPLETE v1
+- Canonical function architecture: COMPLETE v1
+- Application / industry separation: COMPLETE v1
+- Technology-core discovery: COMPLETE v1
+- Existing On-Road / Off-Road technology separation: CLOSED
+- HERMES selection dimensions: DEFINED v1
+- Evidence governance: DEFINED v1
+- Commercial Industrial & Process technology naming: OPEN / BLOCKED
+- Product-level technical validation: OPEN
+- OEM / competitor / printer / housing mapping: OPEN
+- Canonical SKU population: OPEN
+
+Next governance phase:
+- Review all discovered technology cores together.
+- Consolidate duplicates.
+- Decide which cores justify commercial ELIMFILTERS Industrial & Process technology names.
+- Keep system configurations, capabilities, applications, and technologies as separate layers.
