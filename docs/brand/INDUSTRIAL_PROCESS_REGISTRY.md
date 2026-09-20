@@ -9698,3 +9698,235 @@ The 17 internal Technology Cores remain unchanged beneath these five commercial 
 Status:
 INDUSTRIAL & PROCESS PLATFORM NAMING APPROVED v1.
 FORMAL TRADEMARK FILING / LEGAL CLEARANCE: PENDING.
+
+
+## 38. Commercial Family Branding Architecture — CLOSED v1
+
+Status: COMMERCIAL FAMILY BRANDING ARCHITECTURE CLOSED v1.
+Purpose: determine which of the 15 customer-facing Industrial & Process families require their own branded technology name and which should remain descriptive subfamilies beneath the five approved platforms.
+
+Canonical rule:
+A family receives its own commercial technology name only when a distinct mechanism, value proposition, and repeatable product portfolio justify customer-facing differentiation. Families that are primarily classification levels, operating modes, or sufficiently clear technical descriptors remain descriptive.
+
+### 38.1 AEREMIS™ — Air Technologies
+
+Internal cores:
+- TC-AIR-01 — Industrial General Ventilation Particle Control
+- TC-AIR-02 — Industrial High-Efficiency Air Filtration
+- TC-AIR-03 — Industrial Molecular Air Contamination Control
+
+Commercial-family decisions:
+
+General Air Filtration
+→ DESCRIPTIVE SUBFAMILY.
+Reason:
+Broad navigation / duty category. It does not require a separate trademark to communicate value.
+
+High-Efficiency / Critical Air Filtration
+→ BRANDED TECHNOLOGY FAMILY REQUIRED.
+Reason:
+Distinct high-efficiency regime, media / sealing / leakage / scan-test requirements, and repeatable use across HEPA / ULPA / critical-air applications.
+
+Molecular Air Treatment
+→ BRANDED TECHNOLOGY FAMILY REQUIRED.
+Reason:
+Distinct gas-phase adsorption / chemisorption mechanism and different performance language from particulate filtration.
+
+AEREMIS branded-family count:
+2 branded
+1 descriptive
+
+### 38.2 PARTION™ — Dust & Fume Technologies
+
+Internal core:
+- TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+
+Commercial-family decision:
+
+Fine Dust & Fume Filtration
+→ BRANDED TECHNOLOGY FAMILY REQUIRED.
+
+Reason:
+This is the platform's central differentiating mechanism and must unify nanofiber, fine-fiber, ePTFE / membrane, pulse-cleanable, antistatic, flame-retardant, and high-temperature variants without turning those capabilities into separate marks.
+
+PARTION branded-family count:
+1 branded
+
+### 38.3 COALVEX™ — Gas Conditioning Technologies
+
+Internal cores:
+- TC-NG-01 — Gas-Liquid Coalescence
+- TC-NG-02 — Gas-Liquid Separation
+
+Commercial-family decisions:
+
+Gas Coalescence
+→ BRANDED TECHNOLOGY FAMILY REQUIRED.
+Reason:
+Distinct fine aerosol / droplet coalescence mechanism with measurable performance and repeatability across compressor, pipeline, process gas, and fuel-gas duties.
+
+Gas-Liquid Separation
+→ DESCRIPTIVE SUBFAMILY.
+Reason:
+Separation includes several physical implementations and system stages. Retain descriptive terminology until ELIMFILTERS validates a sufficiently differentiated proprietary separation platform.
+
+COALVEX branded-family count:
+1 branded
+1 descriptive
+
+### 38.4 FLUREXIS™ — Fluid Conditioning Technologies
+
+Internal cores:
+- TC-HYD-01 — Industrial Hydraulic Contamination Control
+- TC-LUB-01 — Industrial Lubricant Cleanliness Control
+- TC-OIL-01 — Industrial Oil Water Removal / Dehydration
+- TC-OIL-02 — Industrial Oil Condition Remediation
+
+Commercial-family decisions:
+
+Hydraulic Fluid Filtration
+→ BRANDED TECHNOLOGY FAMILY REQUIRED.
+Reason:
+Large repeatable product universe, beta-rated engineering performance, hydraulic-specific fatigue / collapse / bypass requirements, and broad industrial relevance.
+
+Industrial Lubrication Filtration
+→ BRANDED TECHNOLOGY FAMILY REQUIRED.
+Reason:
+Distinct lubricant cleanliness / viscosity / capacity / service environment from hydraulic filtration.
+
+Oil Dehydration & Water Removal
+→ BRANDED TECHNOLOGY FAMILY REQUIRED.
+Reason:
+Distinct water-control value proposition and multiple physical submechanisms including absorption and vacuum / mass-transfer dehydration.
+
+Oil Condition Remediation
+→ BRANDED TECHNOLOGY FAMILY REQUIRED.
+Reason:
+Distinct varnish / degradation-product remediation mechanism separate from ordinary particulate filtration.
+
+FLUREXIS branded-family count:
+4 branded
+
+### 38.5 AQUVEXIS™ — Water Treatment Technologies
+
+Internal cores:
+- TC-WAT-01 — Industrial Depth Particulate Filtration
+- TC-WAT-03 — Industrial Adsorptive Carbon Treatment
+- TC-WAT-04 — Reverse Osmosis Dissolved-Solids Separation
+- TC-WAT-05 — Ultrafiltration Membrane Separation
+- TC-WAT-06 — Nanofiltration Selective Ion / Solute Separation
+- TC-WAT-07 — Ion Exchange Water Conditioning
+- TC-WAT-08 — Electrodeionization Polishing
+
+Commercial-family decisions:
+
+Depth Filtration
+→ DESCRIPTIVE SUBFAMILY.
+Reason:
+Melt-blown, string-wound, and related depth constructions are important product families but do not require a separate trademark at this stage.
+
+Adsorptive Carbon Treatment
+→ BRANDED TECHNOLOGY FAMILY REQUIRED.
+Reason:
+Distinct adsorption mechanism, target-species capacity / breakthrough performance, and broad process-water / membrane-protection value.
+
+Membrane Separation
+→ BRANDED UMBRELLA TECHNOLOGY FAMILY REQUIRED.
+Reason:
+Customer-facing value can be unified under a membrane platform while HERMES preserves RO, UF, and NF as distinct technical cores.
+
+Subfamilies beneath the branded membrane family:
+- Reverse Osmosis — DESCRIPTIVE
+- Ultrafiltration — DESCRIPTIVE
+- Nanofiltration — DESCRIPTIVE
+
+Ion Exchange
+→ BRANDED TECHNOLOGY FAMILY REQUIRED.
+Reason:
+Distinct ionic-exchange mechanism, resin chemistry, regeneration, and broad industrial-water applicability.
+
+Electrodeionization
+→ DESCRIPTIVE SUBFAMILY FOR NOW.
+Reason:
+Technically distinct, but narrower portfolio breadth and strong customer recognition of the generic technical term reduce the immediate need for an independent mark.
+
+AQUVEXIS branded-family count:
+3 branded
+4 descriptive, counting RO / UF / NF as descriptive subfamilies beneath Membrane Separation.
+
+### 38.6 Final Branded-Family Count
+
+The original 15 visible commercial families do NOT become 15 independent marks.
+
+Approved branding architecture:
+
+AEREMIS™
+- High-Efficiency / Critical Air Filtration → BRAND REQUIRED
+- Molecular Air Treatment → BRAND REQUIRED
+- General Air Filtration → descriptive
+
+PARTION™
+- Fine Dust & Fume Filtration → BRAND REQUIRED
+
+COALVEX™
+- Gas Coalescence → BRAND REQUIRED
+- Gas-Liquid Separation → descriptive
+
+FLUREXIS™
+- Hydraulic Fluid Filtration → BRAND REQUIRED
+- Industrial Lubrication Filtration → BRAND REQUIRED
+- Oil Dehydration & Water Removal → BRAND REQUIRED
+- Oil Condition Remediation → BRAND REQUIRED
+
+AQUVEXIS™
+- Adsorptive Carbon Treatment → BRAND REQUIRED
+- Membrane Separation → BRAND REQUIRED
+- Ion Exchange → BRAND REQUIRED
+- Depth Filtration → descriptive
+- Electrodeionization → descriptive
+- RO / UF / NF → descriptive subfamilies under Membrane Separation
+
+Total branded technology families required now:
+11
+
+Descriptive families / subfamilies:
+- General Air Filtration
+- Gas-Liquid Separation
+- Depth Filtration
+- Electrodeionization
+- Reverse Osmosis
+- Ultrafiltration
+- Nanofiltration
+
+### 38.7 Naming Sequence
+
+Next commercial naming round should create candidate marks only for these 11 families:
+
+1. High-Efficiency / Critical Air Filtration
+2. Molecular Air Treatment
+3. Fine Dust & Fume Filtration
+4. Gas Coalescence
+5. Hydraulic Fluid Filtration
+6. Industrial Lubrication Filtration
+7. Oil Dehydration & Water Removal
+8. Oil Condition Remediation
+9. Adsorptive Carbon Treatment
+10. Membrane Separation
+11. Ion Exchange
+
+Do NOT create marks at this stage for the seven descriptive families / subfamilies listed above.
+
+### 38.8 Governance
+
+- Platform names remain AEREMIS™, PARTION™, COALVEX™, FLUREXIS™, AQUVEXIS™.
+- Family marks must map to one or more validated Technology Cores.
+- Family marks must not duplicate platform names.
+- Family marks must not reuse existing On-Road / Off-Road technology marks.
+- Capability badges remain unbranded unless separately approved.
+- Applications remain descriptive.
+- System architectures remain descriptive or follow a future system-platform naming program.
+- All family marks require public knockout screening and formal trademark clearance before final adoption.
+
+Status:
+COMMERCIAL FAMILY BRANDING ARCHITECTURE CLOSED v1.
+FAMILY NAMING GATE OPEN FOR 11 TECHNOLOGY FAMILIES.
