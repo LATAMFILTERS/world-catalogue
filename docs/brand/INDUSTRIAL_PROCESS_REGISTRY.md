@@ -1475,3 +1475,210 @@ Donaldson:
 
 Next source family:
 - OEM Replacement Filter Elements
+
+
+### 14.10 OEM Replacement Filter Elements — External Benchmark Architecture v1
+
+Status: REIKE SOURCE FAMILY CONFIRMED BUT PRODUCT PAGE EMPTY; REPLACEMENT-INTELLIGENCE ARCHITECTURE DEFINED FROM ESTABLISHED MANUFACTURER PROGRAMS.
+
+Source condition:
+- REIKE lists "OEM Replacement Filter Elements" under Hydraulic & Lubrication Filtration.
+- The REIKE product page contains no technical specification content.
+- Therefore no REIKE interchangeability, performance, or OEM-equivalence claim is accepted from this page.
+
+External benchmark basis:
+- Parker Par Fit™
+- HYDAC Betterfit
+- Donaldson hydraulic cross-reference / replacement programs
+- Supporting market cross-reference practices from established replacement suppliers
+
+#### Canonical Interpretation
+
+OEM Replacement Filter Elements is NOT a filtration technology.
+
+It is a commercial / engineering replacement-intelligence layer that maps an original element to a technically qualified alternative.
+
+Canonical domain:
+Industrial & Process
+→ Replacement Intelligence
+→ OEM / Competitor Interchange
+
+This layer may serve hydraulic, lubrication, power-generation, gas, water, and other Industrial & Process families, but it must never override the engineering requirements of the underlying filtration function.
+
+#### Established Market Evidence
+
+Parker Par Fit™ demonstrates that industrial interchange is a formal product strategy rather than an informal dimensional lookup. Parker publishes replacement coverage for a very large multi-brand universe and states that its interchange elements are engineered to be fully interchangeable with original elements while conforming to applicable ISO manufacturing and testing standards.
+
+HYDAC Betterfit publishes replacement-element families organized against competing manufacturers, including Pall, Parker, Eaton, Mahle, Schroeder, Donaldson, Internormen, and others.
+
+Donaldson publishes hydraulic cross-reference tables that map its elements against Schroeder, HYDAC, Pall, Parker, and other competitor references.
+
+Canonical conclusion:
+A serious Industrial & Process cross-reference engine must be built as structured interchange intelligence, not a text alias table.
+
+#### Minimum Qualification Dimensions
+
+An OEM / competitor replacement candidate must be evaluated across three independent layers:
+
+1. Form / Interface
+- Overall length
+- Outside diameter
+- Inside diameter
+- End-cap geometry
+- Open / closed end configuration
+- Thread or attachment type where applicable
+- Seal location
+- Seal dimensions
+- Housing interface
+- Flow direction
+
+2. Filtration Performance
+- Media type
+- Micron(c) rating
+- Beta ratio
+- ISO 16889 test basis where applicable
+- Dirt-holding capacity
+- Clean pressure drop
+- Terminal pressure drop
+- Water-removal or special-media function where applicable
+- Anti-static or other special capability where required
+
+3. Mechanical / Chemical Duty
+- Element collapse differential pressure
+- Housing / system pressure compatibility
+- Bypass compatibility
+- Flow-fatigue requirement
+- Operating temperature
+- Fluid chemistry
+- Seal material
+- Adhesive / resin compatibility
+- Core / support construction
+
+Rule:
+Dimensional similarity alone is NEVER sufficient for canonical OEM interchange approval.
+
+#### Cross-Reference Evidence States
+
+Required states for every Industrial & Process interchange record:
+
+- CANDIDATE_MATCH
+- DIMENSIONALLY_VALIDATED
+- FUNCTIONALLY_VALIDATED
+- PERFORMANCE_VALIDATED
+- APPLICATION_VALIDATED
+- ELIMFILTERS_APPROVED_INTERCHANGE
+
+Optional negative states:
+- REJECTED_DIMENSION
+- REJECTED_MEDIA
+- REJECTED_BETA
+- REJECTED_COLLAPSE
+- REJECTED_SEAL
+- REJECTED_FLUID
+- REJECTED_APPLICATION
+
+#### Canonical Interchange Record
+
+Minimum fields:
+
+- Source Manufacturer
+- Source Part Number
+- Source Product Family
+- Source Application
+- Source Housing
+- Candidate ELIMFILTERS Part Number
+- Cross-Reference Status
+- Evidence Source
+- Evidence Date
+- OD
+- ID
+- Length
+- End-Cap Configuration
+- Seal Dimensions
+- Seal Material
+- Media
+- Micron(c)
+- Beta Ratio
+- Test Standard
+- Dirt-Holding Capacity
+- Clean ΔP
+- Collapse Differential Pressure
+- Bypass Requirement
+- Flow Direction
+- Rated Flow
+- Operating Temperature
+- Fluid Compatibility
+- Special Capability
+- Application Validation
+- Notes / Exceptions
+- Approval State
+
+#### HERMES Replacement Logic
+
+Input:
+OEM / Competitor Part Number
+→ Manufacturer
+→ Product Family
+→ Application / Housing
+
+HERMES must then resolve:
+Interface Match
+→ Filtration Function Match
+→ Beta / Efficiency Match
+→ Pressure / Collapse Match
+→ Fluid / Seal Match
+→ Temperature Match
+→ Special Capability Match
+→ Application Match
+→ Candidate Ranking by evidence completeness
+→ ELIMFILTERS Approved Interchange or NO APPROVED MATCH
+
+Critical rule:
+HERMES must be allowed to return NO APPROVED MATCH.
+
+The system must never force an interchange solely because dimensions or part-number aliases match.
+
+#### Relationship to Industrial Technology
+
+Replacement Intelligence is orthogonal to technology.
+
+Examples:
+- A TC-HYD-01 hydraulic element may have many OEM interchanges.
+- A TC-LUB-01 lubrication element may have many OEM interchanges.
+- A future gas-coalescence technology may also have OEM interchanges.
+
+The interchange layer identifies equivalence / compatibility.
+The technology layer identifies physical protection mechanism and performance.
+
+They must remain separate.
+
+#### Brand and Legal Handling
+
+Competitor trademarks and part numbers may be stored for cross-reference and compatibility identification, but:
+- competitor names remain attributed to their owners
+- no implication of sponsorship or affiliation
+- "replacement for" / "interchange for" language must be evidence-backed
+- "equivalent" or "superior" performance claims require test evidence
+- proprietary competitor technology names are not inherited into ELIMFILTERS taxonomy
+
+#### Closure State — OEM Replacement Filter Elements
+
+- REIKE family existence: CONFIRMED
+- REIKE technical product page: EMPTY / NO SPECIFICATION DATA
+- External benchmark research: COMPLETE v1
+- Replacement-intelligence architecture: COMPLETE v1
+- Cross-reference evidence states: COMPLETE v1
+- HERMES interchange logic: COMPLETE v1
+- Relationship to technology taxonomy: CLOSED v1
+- Commercial technology naming: NOT APPLICABLE
+- ELIMFILTERS interchange database population: OPEN
+- Competitor/OEM source ingestion: OPEN
+- Product-level approval: OPEN
+
+Hydraulic & Lubrication Filtration family status:
+- Lubrication Oil Filter Elements: DECOMPOSED v1
+- Hydraulic Oil Filter Elements: ARCHITECTURE CLOSED v1
+- High Temperature Hydraulic Filter Elements: DECOMPOSED v1
+- Power Generation Filtration: ARCHITECTURE CLOSED v1
+- OEM Replacement Filter Elements: ARCHITECTURE CLOSED v1
+- Industrial Engine Oil Filter Elements: STILL OPEN
