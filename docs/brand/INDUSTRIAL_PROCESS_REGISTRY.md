@@ -1926,3 +1926,402 @@ Hydraulic & Lubrication Filtration v1:
 
 Next Industrial & Process source family:
 - Industrial Water Filtration Solutions
+
+
+## 15. Industrial Water Filtration Solutions — External Benchmark Architecture v1
+
+Status: REIKE SOURCE FAMILIES CONFIRMED; ALL SIX PRODUCT PAGES EMPTY; EXTERNAL BENCHMARK ARCHITECTURE COMPLETE; COMMERCIAL TECHNOLOGY NAMES NOT ASSIGNED.
+
+Source condition:
+- REIKE lists six families under Industrial Water Filtration Solutions:
+  1. PP Melt Blown Filter Cartridges
+  2. String Wound Filter Cartridges
+  3. Pleated Filter Cartridges
+  4. Activated Carbon Filter Cartridges
+  5. Reverse Osmosis Membrane Elements
+  6. Ultrafiltration Membrane Modules
+- The REIKE family pages currently provide no usable technical specification content.
+- Therefore no REIKE micron ratings, capacities, rejection rates, flow values, pressure ratings, membrane chemistry, or service-life claims are accepted from these empty pages.
+
+External benchmark basis:
+- Pall
+- DuPont Water Solutions
+- Established industrial cartridge-filtration practice
+
+### 15.1 Canonical Water-Filtration Architecture
+
+Industrial Water Filtration is not a single technology.
+
+Canonical domain:
+Industrial & Process
+→ Industrial Water Filtration Solutions
+
+Canonical functional layers:
+- Depth Particulate Filtration
+- Surface / Pleated Particulate Filtration
+- Adsorptive Carbon Treatment
+- Ultrafiltration
+- Reverse Osmosis
+- Pretreatment / Protection of Downstream Membranes
+
+Canonical process logic:
+Raw / Process Water
+→ Coarse / Depth Pretreatment
+→ Fine Cartridge Filtration
+→ Adsorptive Treatment where required
+→ Ultrafiltration where required
+→ Reverse Osmosis where required
+→ Final Process-Water Quality Target
+
+Not every system uses every stage.
+
+### 15.2 PP Melt Blown Filter Cartridges
+
+Canonical family:
+- Polypropylene Melt-Blown Depth Filter
+
+Canonical function:
+- Depth Particulate Filtration
+
+Engineering interpretation:
+- Graded-density polypropylene depth media captures particulate throughout the media thickness.
+- Typical use is pretreatment / clarification rather than final dissolved-contaminant removal.
+- Selection must distinguish nominal and absolute retention where available.
+
+Canonical attributes:
+- Media: polypropylene
+- Depth architecture
+- Nominal / absolute micron rating
+- OD / ID / length
+- Coreless or supported construction
+- Flow
+- Clean ΔP
+- Change-out ΔP
+- Dirt-holding capacity
+- Temperature
+- Chemical compatibility
+- End configuration
+
+Technology-core candidate:
+TC-WAT-01 — Industrial Depth Particulate Filtration
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+### 15.3 String Wound Filter Cartridges
+
+Canonical family:
+- String-Wound Depth Filter
+
+Canonical function:
+- Depth Particulate Filtration
+
+Engineering interpretation:
+- Fibrous yarn is wound around a core to create a controlled depth-filtration structure.
+- Performance depends on yarn material, winding pattern, core material, micron grade, fluid compatibility, and differential pressure.
+- String-wound cartridges share the same fundamental depth-filtration function as melt-blown elements but use a different construction method.
+
+Canonical attributes:
+- Yarn / fiber material
+- Core material
+- Winding geometry
+- Micron rating
+- Temperature
+- Chemical compatibility
+- Flow / ΔP
+- Dimensions
+- Dirt-holding capacity
+
+Technology relationship:
+- Same parent core TC-WAT-01.
+- Construction subtype, not a separate technology by default.
+
+### 15.4 Pleated Filter Cartridges
+
+Canonical family:
+- Pleated Particulate / Membrane Cartridge
+
+Canonical functions:
+- Surface Particulate Filtration
+- Pleated Depth Filtration
+- Final / membrane filtration depending media
+
+External benchmark evidence from Pall:
+- Pleated cartridges are used as prefilters for particulate removal and as membrane filters for final or microbial reduction applications.
+- Common pleated media include polypropylene, polyester, glass fiber, polysulfone, PES, PTFE, PVDF, and nylon.
+- Support / drainage layers and element cages are used to maintain performance under differential pressure.
+- Pall pleated-depth families span approximately 0.8–100 μm, while specific pleated families can be substantially finer.
+
+Canonical rule:
+"Pleated" describes geometry / construction, not one universal filtration mechanism.
+
+Technology-core candidates:
+TC-WAT-02 — Industrial Pleated Particle Control
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Potential membrane-grade pleated products remain under membrane-specific cores when the media performs true membrane separation.
+
+### 15.5 Activated Carbon Filter Cartridges
+
+Canonical family:
+- Activated Carbon Cartridge
+
+Canonical function:
+- Adsorptive Water Treatment
+
+Primary target classes:
+- Chlorine / oxidant reduction
+- Taste / odor compounds where applicable
+- Organic contaminant reduction where media and contact time support it
+- Protection of downstream membranes from oxidants where applicable
+
+Canonical engineering dimensions:
+- Carbon type
+- Carbon form: granular / block / composite
+- Iodine number / adsorption properties where available
+- Chlorine capacity
+- Flow
+- Empty-bed / contact-time equivalent
+- Pressure drop
+- Fines release control
+- Binder / support materials
+- Temperature
+- Water chemistry
+- Service capacity
+
+Technology-core candidate:
+TC-WAT-03 — Industrial Adsorptive Carbon Treatment
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Canonical rule:
+Activated carbon treatment is adsorption, not particulate filtration alone.
+
+### 15.6 Reverse Osmosis Membrane Elements
+
+Canonical family:
+- Spiral-Wound Reverse Osmosis Membrane Element
+
+Canonical function:
+- Dissolved Solids / Ionic Separation
+
+External benchmark evidence from DuPont:
+- FilmTec™ RO elements use spiral-wound thin-film composite polyamide membranes.
+- Industrial RO is used for process-water treatment and removal / rejection of soluble salts and other dissolved species.
+- DuPont publishes product families optimized for high rejection, low-energy operation, brackish water, seawater, and other feed conditions.
+
+Canonical engineering dimensions:
+- Membrane chemistry
+- Element diameter / length
+- Active area
+- Feed spacer
+- Permeate flow
+- Salt rejection
+- Test conditions
+- Feed pressure
+- Recovery
+- Feed salinity
+- Temperature
+- pH range
+- Chlorine / oxidant tolerance
+- Fouling tendency
+- Scaling tendency
+- Pretreatment requirement
+- Cleaning limits
+- Pressure-drop limit
+
+Technology-core candidate:
+TC-WAT-04 — Reverse Osmosis Dissolved-Solids Separation
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Critical governance rule:
+RO performance values are meaningless without their specified test conditions.
+
+### 15.7 Ultrafiltration Membrane Modules
+
+Canonical family:
+- Ultrafiltration Module
+
+Canonical function:
+- Colloid / Particulate / Microbial Barrier
+
+External benchmark evidence from DuPont:
+- IntegraTec™ / IntegraFlux™ industrial UF modules use PVDF hollow fibers.
+- A representative current module uses 0.03 μm nominal pore size.
+- DuPont describes UF as separating particulate matter from soluble compounds.
+- Key applications include industrial utility water, wastewater reuse, municipal wastewater filtration, and RO/NF pretreatment.
+- Pressurized outside-in hollow-fiber designs are used with backwash / air-scour cleaning.
+
+Canonical engineering dimensions:
+- Membrane material
+- Pore size
+- Hollow-fiber or other geometry
+- Inside-out / outside-in flow
+- Active membrane area
+- Design flux
+- Transmembrane pressure
+- Recovery
+- Backwash flux
+- Air-scour requirement
+- Chemical cleaning protocol
+- Temperature
+- pH
+- Chlorine tolerance
+- Feed turbidity / solids tolerance
+- Integrity-testing method
+- Module dimensions / connection interface
+
+Technology-core candidate:
+TC-WAT-05 — Ultrafiltration Membrane Separation
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+### 15.8 Canonical Separation Hierarchy
+
+The six REIKE source families collapse into four real physical mechanism groups:
+
+1. Depth Particulate Filtration
+   - PP Melt Blown
+   - String Wound
+
+2. Pleated Particle / Membrane Filtration
+   - Pleated Filter Cartridges
+
+3. Adsorption
+   - Activated Carbon
+
+4. Membrane Separation
+   - Ultrafiltration
+   - Reverse Osmosis
+
+Canonical rule:
+Product construction names must not become technology names automatically.
+
+### 15.9 HERMES Inputs — Industrial Water
+
+Minimum input model:
+- Water source
+- Application
+- Feed-water analysis
+- Target product-water quality
+- Suspended solids
+- Turbidity
+- Particle-size distribution
+- SDI where relevant
+- TDS / conductivity
+- Hardness
+- Silica
+- Iron / manganese
+- TOC / organics
+- Free chlorine / oxidants
+- Microbiological load
+- Oil / hydrocarbon contamination where applicable
+- pH
+- Temperature
+- Flow
+- Operating pressure
+- Required recovery
+- Required rejection / removal
+- Available pretreatment
+- Cleaning / CIP constraints
+- Housing / vessel interface
+- Existing OEM / competitor reference
+
+Expected logic:
+Feed Water
+→ Contaminant Class
+→ Required Separation Mechanism
+→ Pretreatment Need
+→ Cartridge / Membrane Family
+→ Micron / Pore / Rejection Requirement
+→ Flow / Pressure / Compatibility
+→ Housing / Module Interface
+→ Candidate Product
+→ Validation State
+
+### 15.10 Canonical Water Product Record
+
+Required fields:
+- Canonical Product ID
+- Source Manufacturer
+- Source SKU
+- Product Family
+- Filtration Mechanism
+- Application
+- Feed-Water Type
+- Target Contaminant
+- Micron Rating
+- Nominal / Absolute Rating
+- Pore Size
+- Removal / Rejection Efficiency
+- Salt Rejection
+- Permeate Flow
+- Design Flux
+- Recovery
+- Active Area
+- Media / Membrane Material
+- Core / Support
+- Seal Material
+- Feed Pressure
+- Maximum Differential Pressure
+- Transmembrane Pressure
+- Clean ΔP
+- Change-Out ΔP
+- Temperature Range
+- pH Range
+- Chlorine / Oxidant Tolerance
+- Chemical Compatibility
+- Dirt-Holding Capacity
+- Adsorption Capacity
+- Backwash Requirement
+- Air-Scour Requirement
+- CIP Protocol
+- Integrity Test
+- Housing / Vessel Interface
+- OEM / Competitor Cross
+- Source Evidence
+- Validation Status
+- Technology Core
+- ELIMFILTERS Technology
+- Canonical SKU
+
+### 15.11 Evidence Governance
+
+Required evidence states:
+- SOURCE_ONLY
+- EXTERNAL_BENCHMARK
+- CROSS_VALIDATED
+- TECHNICALLY_VALIDATED
+- ELIMFILTERS_APPROVED
+
+Rules:
+- REIKE empty pages establish only family existence.
+- Pall / DuPont evidence defines external engineering benchmarks, not REIKE specifications.
+- No competitor performance value may be copied into an ELIMFILTERS product without product-specific validation.
+- RO and UF claims must preserve exact test conditions.
+- Activated-carbon performance must preserve water chemistry, flow, and capacity basis.
+- Cartridge micron ratings must distinguish nominal, absolute, and beta-rated definitions where applicable.
+
+### 15.12 Technology-Core Summary — Industrial Water
+
+- TC-WAT-01 — Industrial Depth Particulate Filtration
+- TC-WAT-02 — Industrial Pleated Particle Control
+- TC-WAT-03 — Industrial Adsorptive Carbon Treatment
+- TC-WAT-04 — Reverse Osmosis Dissolved-Solids Separation
+- TC-WAT-05 — Ultrafiltration Membrane Separation
+
+All five remain internal technology-core candidates.
+No commercial ELIMFILTERS technology name is approved.
+
+### 15.13 Industrial Water Filtration — Family Closure v1
+
+- REIKE family discovery: COMPLETE
+- REIKE technical product pages: EMPTY
+- External benchmark research: COMPLETE v1
+- Canonical function architecture: CLOSED v1
+- Product-family architecture: CLOSED v1
+- Membrane architecture: CLOSED v1
+- HERMES selection model: CLOSED v1
+- Technology-core discovery: CLOSED v1
+- Commercial technology naming: intentionally OPEN / BLOCKED
+- Product-level specification and SKU population: OPEN
+- OEM / competitor mapping: OPEN
+
+Next Industrial & Process source family:
+- Filtration Equipment & Systems
