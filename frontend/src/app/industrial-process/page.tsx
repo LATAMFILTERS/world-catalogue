@@ -183,32 +183,6 @@ export default function IndustrialProcessPage() {
           </div>
         </section>
 
-        <section style={{ ...section, background: '#050505' }} aria-labelledby="representation-title">
-          <div style={container}>
-            <p style={eyebrow}>CATALOGUE + PDP + TECHNICAL DOCUMENTATION</p>
-            <h2 id="representation-title" style={sectionTitle}>One identity system from lead to product.</h2>
-            <div style={threeCol}>
-              <article style={specCard}>
-                <p style={cardLabel}>PRODUCT CARD / PDP</p>
-                {productIdentity.map((item, i) => <div key={item} style={specRow}><span>{String(i + 1).padStart(2, '0')}</span>{item}</div>)}
-              </article>
-              <article style={specCard}>
-                <p style={cardLabel}>TECHNICAL DATASHEET</p>
-                {datasheetBlocks.map((item, i) => <div key={item} style={specRow}><span>{String(i + 1).padStart(2, '0')}</span>{item}</div>)}
-              </article>
-              <article style={specCard}>
-                <p style={cardLabel}>PACKAGING</p>
-                <div style={specRow}><span>01</span>ELIMFILTERS</div>
-                <div style={specRow}><span>02</span>SKU + Product Name</div>
-                <div style={specRow}><span>03</span>Platform</div>
-                <div style={specRow}><span>04</span>Technology Family</div>
-                <div style={specRow}><span>05</span>Validated core data</div>
-                <div style={specRow}><span>06</span>Traceability / digital reference</div>
-              </article>
-            </div>
-          </div>
-        </section>
-
         <section style={{ ...section, borderTop: '1px solid rgba(255,241,45,0.22)' }}>
           <div style={{ ...container, textAlign: 'center' }}>
             <p style={{ ...eyebrow, textAlign: 'center' }}>INDUSTRIAL PROJECT INTAKE</p>
