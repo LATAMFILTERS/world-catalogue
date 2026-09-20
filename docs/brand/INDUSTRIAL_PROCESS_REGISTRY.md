@@ -8271,3 +8271,560 @@ Global benchmark state:
 
 Next phase:
 Cross-domain Technology Core consolidation and naming-gate review.
+
+
+## 28. Cross-Domain Technology Core Consolidation — CLOSED v1
+
+Status: CROSS-DOMAIN CONSOLIDATION CLOSED v1.
+
+Purpose:
+Consolidate all Industrial & Process mechanism candidates discovered through REIKE and cross-manufacturer benchmarking, remove overlaps, separate true filtration / treatment mechanisms from capabilities and system architectures, and determine which cores are sufficiently distinct to proceed to the ELIMFILTERS commercial technology naming gate.
+
+### 28.1 Commercial Technology Qualification Gate
+
+A candidate may proceed to commercial technology naming only if it satisfies all four criteria:
+
+1. Distinct physical / chemical mechanism
+2. Measurable technical benefit
+3. Verifiable performance evidence
+4. Repeatable use across a meaningful product or application family
+
+A candidate is NOT eligible for commercial technology naming if it is primarily:
+- an application
+- an industry
+- an equipment configuration
+- an operating envelope
+- a safety capability
+- a cleaning method
+- a monitoring layer
+- an interchange / replacement layer
+- a deployment mode
+- a packaging / skid architecture
+
+### 28.2 Final Layer Model
+
+Industrial & Process is governed in six separate layers:
+
+1. APPLICATION / INDUSTRY
+2. FILTRATION / TREATMENT MECHANISM
+3. PRODUCT CONFIGURATION
+4. CAPABILITY / OPERATING ENVELOPE
+5. SYSTEM ARCHITECTURE
+6. MONITORING / VALIDATION / INTERCHANGE
+
+Only Layer 2 is eligible by default to become an ELIMFILTERS commercial Technology family.
+
+### 28.3 AIR — Consolidated Cores
+
+#### TC-AIR-01 — Industrial General Ventilation Particle Control
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- distinct particulate-filtration duty
+- governed by measurable general-ventilation efficiency / pressure-drop performance
+- repeatable across prefilters, medium / fine HVAC filters, cleanroom prefiltration, make-up air, recirculation air
+- physically and commercially distinct from high-efficiency HEPA / ULPA filtration
+
+Do NOT merge with TC-AIR-02.
+
+#### TC-AIR-02 — Industrial High-Efficiency Air Filtration
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- distinct high-efficiency filtration regime
+- separate test / classification framework
+- repeatable across EPA / HEPA / ULPA products, terminal modules, cleanroom, aviation, semiconductor, additive-manufacturing safety stages
+- materially different sealing, leak-test, media, and installation requirements
+
+#### TC-AIR-03 — Industrial Molecular Air Contamination Control
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- adsorption / chemisorption / molecular contaminant control is physically different from particulate filtration
+- measurable by target-species removal / breakthrough / capacity
+- repeatable across semiconductor AMC, VOC, ozone / odor / gas-phase treatment applications
+
+Boundary:
+Ozone catalytic destruction may use a separate catalyst mechanism. Do not assume all gas-phase treatment is activated-carbon adsorption.
+
+#### TC-AIR-04 — Aviation Air Water Separation
+
+Decision:
+DO NOT create a standalone commercial technology at this stage.
+
+Reason:
+- water separation is real, but current evidence is concentrated in aviation / NGS
+- likely overlaps physically with broader gas-liquid / coalescing mechanisms
+- insufficient evidence of a reusable Industrial & Process air-family platform independent from TC-NG-01 / TC-NG-02
+
+Disposition:
+MERGE FOR CORE REVIEW into broader fluid-phase separation mechanism family; retain Aviation Water Removal as APPLICATION CAPABILITY.
+
+#### TC-AIR-05 — Industrial / Aerospace Ozone Destruction
+
+Decision:
+QUALIFIES AS A DISTINCT FUNCTION CORE CANDIDATE, but HOLD commercial naming.
+
+Why:
+- catalytic ozone destruction is physically distinct from particulate filtration and adsorptive AMC control
+- measurable through ozone-removal efficiency / catalyst life
+
+Why HOLD:
+- portfolio breadth is not yet proven beyond limited aviation / specialized air-treatment applications
+
+Status:
+TECHNOLOGY CORE VALID / COMMERCIAL NAMING DEFERRED.
+
+### 28.4 INDUSTRIAL DUST — Consolidated Core
+
+#### TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- distinct surface-loading mechanism
+- repeatable across laser cutting, welding, additive manufacturing, process dust, fine fume
+- independently supported by fine-fiber / nanofiber and ePTFE implementations
+- measurable through efficiency, pressure drop, cleanability, pulse performance, dust release, media life
+
+Media implementation is NOT itself the technology name:
+- nanofiber
+- fine fiber
+- ePTFE / PTFE membrane
+- treated polyester
+
+These belong beneath the core.
+
+### 28.5 NATURAL GAS — Consolidated Cores
+
+#### TC-NG-01 — Gas-Liquid Coalescence
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- distinct droplet-growth / coalescing mechanism
+- repeatable across compressor, pipeline, city gate, turbine fuel gas, process gas
+- measurable by aerosol removal, outlet liquid, ΔP, re-entrainment, liquid-loading capacity
+
+#### TC-NG-02 — Gas-Liquid Separation
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- physically distinct bulk separation / final separation mechanism
+- repeatable across gas separators, knockout / vane / centrifugal / separation stages
+- measurable by droplet cut size, liquid load, carryover, pressure drop
+
+Boundary:
+Do not collapse bulk separation and fine coalescence into one technology.
+
+#### TC-NG-03 — High-Pressure Gas Particulate Filtration
+
+Decision:
+DO NOT create a standalone commercial technology under this name.
+
+Reason:
+- particulate filtration is real
+- "high pressure" is an operating envelope, not a physical filtration mechanism
+
+Disposition:
+Reclassify to:
+GAS PARTICULATE FILTRATION FUNCTION
++
+HIGH-PRESSURE GAS CAPABILITY
+
+Commercial naming may later be considered if a genuinely distinct gas-particulate media platform is validated.
+
+#### TC-NG-04 — Integrated Gas Conditioning
+
+Decision:
+NOT A TECHNOLOGY.
+
+Disposition:
+SYSTEM ARCHITECTURE.
+
+It may combine:
+- particulate filtration
+- bulk separation
+- coalescence
+- final separation
+- drainage
+- instrumentation
+
+### 28.6 HYDRAULIC / LUBRICATION / OIL CONDITION — Consolidated Cores
+
+#### TC-HYD-01 — Industrial Hydraulic Contamination Control
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- distinct high-performance liquid particulate-filtration domain
+- ISO 16889 beta performance
+- hydraulic-specific collapse, bypass, fatigue, viscosity, and circuit-position requirements
+- broad repeatability across pressure, return, suction, tank-top, offline, and duplex systems
+
+Boundary:
+Do not inherit NANOFORCE™; Industrial & Process remains a separate technology universe.
+
+#### TC-LUB-01 — Industrial Lubricant Cleanliness Control
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- repeatable across turbine oil, gearboxes, bearings, compressors, industrial engines, paper machines, wind, process lubrication
+- distinct lubricant viscosity / cleanliness / capacity / service constraints
+- broad cross-industry applicability
+
+Boundary:
+Do not inherit SYNTRAX™.
+
+#### TC-OIL-01 — Industrial Oil Water Removal / Dehydration
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING, but commercial architecture must contain at least two sub-mechanisms.
+
+Sub-mechanisms:
+A. Water Absorption
+B. Vacuum / Mass-Transfer Dehydration
+
+Reason:
+Both solve water contamination but are physically different.
+
+Governance:
+Do not market absorption and vacuum dehydration as equivalent performance.
+
+#### TC-OIL-02 — Industrial Oil Condition Remediation
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- varnish / degradation-product removal is not ordinary particulate filtration
+- supported by dedicated adsorptive / remediation media
+- repeatable across turbine, EHC, lubrication, and high-performance oil systems
+
+Boundary:
+Keep specific chemistry / remediation mechanism beneath the core.
+
+#### TC-OIL-03 — Acid / Ionic Contaminant Removal from Functional Fluids
+
+Decision:
+VALID CORE, COMMERCIAL NAMING DEFERRED.
+
+Why:
+- ion-exchange treatment of acidic / ionic degradation products is physically distinct
+- especially relevant to phosphate-ester EHC fluids
+
+Why HOLD:
+- current portfolio evidence is narrower than TC-OIL-01 / 02
+- broader repeatability outside EHC / specialized fluids remains to be established
+
+Status:
+TECHNOLOGY CORE VALID / COMMERCIAL NAMING DEFERRED.
+
+### 28.7 INDUSTRIAL WATER — Consolidated Cores
+
+#### TC-WAT-01 — Industrial Depth Particulate Filtration
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Covers:
+- melt blown
+- string wound
+- other depth-loading constructions
+
+Construction method stays below the core.
+
+#### TC-WAT-02 — Industrial Pleated Particle Control
+
+Decision:
+MERGE / REDEFINE BEFORE COMMERCIAL NAMING.
+
+Reason:
+"Pleated" is geometry, not a fundamental mechanism.
+
+Final disposition:
+- Pleated depth / surface particulate products should map to the applicable particle-filtration core based on actual media mechanism.
+- Membrane-grade pleated products should map to the relevant membrane core.
+
+Therefore:
+TC-WAT-02 is RETIRED AS AN INDEPENDENT TECHNOLOGY CORE.
+
+Pleated geometry remains a PRODUCT CONFIGURATION attribute.
+
+#### TC-WAT-03 — Industrial Adsorptive Carbon Treatment
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- adsorption is a distinct physical-chemical mechanism
+- measurable by target-species capacity / breakthrough / contact conditions
+- repeatable across chlorine, organics, odor, membrane protection, selected process-water duties
+
+#### TC-WAT-04 — Reverse Osmosis Dissolved-Solids Separation
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- distinct pressure-driven membrane mechanism
+- broad industrial applicability
+- measurable salt rejection / permeate / recovery under defined test conditions
+
+#### TC-WAT-05 — Ultrafiltration Membrane Separation
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- distinct membrane / pore-scale separation regime
+- repeatable across pretreatment, reuse, UPW, process water, wastewater applications
+
+#### TC-WAT-06 — Nanofiltration Selective Ion / Solute Separation
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- distinct separation regime between UF and RO
+- selective multivalent / solute rejection creates a materially different use case and value proposition
+
+#### TC-WAT-07 — Ion Exchange Water Conditioning
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- true ionic exchange mechanism
+- repeatable across softening, demineralization, condensate polishing, trace contaminant removal
+
+#### TC-WAT-08 — Electrodeionization Polishing
+
+Decision:
+QUALIFIES FOR COMMERCIAL TECHNOLOGY NAMING.
+
+Why:
+- electrochemical polishing mechanism
+- continuous operation
+- distinct from conventional ion exchange and RO
+
+#### TC-WAT-09 — Membrane Bioreactor Solids Separation / Biological Treatment Architecture
+
+Decision:
+DO NOT move to commercial filtration technology naming yet.
+
+Reason:
+- combines biological treatment + membrane separation
+- crosses from filtration into wastewater process engineering
+- would materially expand ELIMFILTERS business scope
+
+Status:
+ADJACENT TECHNOLOGY / PORTFOLIO DECISION REQUIRED.
+
+#### TC-WAT-10 — Membrane Aerated Biological Treatment
+
+Decision:
+DO NOT move to commercial filtration technology naming.
+
+Reason:
+- primarily biological-treatment process architecture
+- outside current filtration-centered portfolio boundary
+
+Status:
+ADJACENT DOMAIN / DEFERRED.
+
+#### TC-WAT-11 — Membrane Degasification
+
+Decision:
+VALID TECHNOLOGY CORE CANDIDATE; COMMERCIAL NAMING DEFERRED.
+
+Why:
+- physically distinct membrane gas-transfer mechanism
+- relevant to boiler feed, EDI optimization, UPW, corrosion control
+
+Why HOLD:
+- product / supplier / application breadth not yet established sufficiently for immediate commercial platform launch
+
+### 28.8 SYSTEM ARCHITECTURES — Explicitly Excluded from Technology Naming
+
+The following are confirmed SYSTEM ARCHITECTURES and MUST NOT become commercial filtration technologies merely by naming:
+
+- Integrated Gas Conditioning
+- Filter-Separator System
+- Cyclone + Filter System
+- Duplex / Changeover
+- Parallel / Manifold
+- Offline / Kidney Loop
+- Fluid Purification Skid
+- EHC Fluid Conditioning
+- Flushing / Commissioning
+- Reservoir Ingress Control
+- CCRO
+- MLD
+- UPW Loop
+- Water Reuse Train
+- MBR system architecture
+- Pulse-Jet Dust Collector
+- AM Powder Recovery / Containment
+- Terminal Filter Module
+- Fan Filter Unit
+- Modular Filtration Skid
+- High-Flow Skid
+- Coalescer / Separator Skid
+- Sanitary / Sterile Skid
+- Temporary / Rental Filtration
+
+These may later receive system-platform branding, but under a separate naming governance from filtration Technology Cores.
+
+### 28.9 CAPABILITIES — Explicitly Excluded from Technology Naming by Default
+
+The following remain CAPABILITIES / OPERATING ENVELOPES:
+
+- HT-HYD — High-Temperature Hydraulic
+- HT-DUST — High-Temperature Dust
+- AS-DUST — Anti-Static Dust
+- FR-DUST — Flame-Retardant Dust
+- ESD-OIL — Electrostatic Discharge Mitigation
+- ENG-LUB — Industrial Engine Lube specialization
+- Low-Outgassing Construction
+- High-Pressure Gas Service
+- Oil / Aerosol Tolerance
+- Safe-Change / Containment
+- Pulse-Cleaning Compatibility
+- Hazardous-Area Compatibility
+- Sanitary / Hygienic Construction
+
+These may appear as badges / capability descriptors but must not be confused with core technology families.
+
+### 28.10 APPLICATIONS — Explicitly Excluded from Technology Naming
+
+Applications / industries remain:
+- Cleanroom
+- Semiconductor
+- Photovoltaic
+- Aviation
+- Laser Cutting
+- Welding
+- Additive Manufacturing
+- City Gate
+- Pipeline Gas
+- Compressor Inlet / Outlet
+- Turbine Fuel Gas
+- Power Generation
+- EHC
+- Industrial Engine
+- Boiler Feed
+- UPW
+- Wastewater Reuse
+
+Applications consume technologies. They are not technologies.
+
+### 28.11 Final Commercial Technology Candidate Set
+
+The following cores pass the ELIMFILTERS Commercial Technology Qualification Gate:
+
+AIR:
+- TC-AIR-01 — Industrial General Ventilation Particle Control
+- TC-AIR-02 — Industrial High-Efficiency Air Filtration
+- TC-AIR-03 — Industrial Molecular Air Contamination Control
+
+DUST:
+- TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+
+GAS:
+- TC-NG-01 — Gas-Liquid Coalescence
+- TC-NG-02 — Gas-Liquid Separation
+
+HYDRAULIC / LUBE / OIL CONDITION:
+- TC-HYD-01 — Industrial Hydraulic Contamination Control
+- TC-LUB-01 — Industrial Lubricant Cleanliness Control
+- TC-OIL-01 — Industrial Oil Water Removal / Dehydration
+- TC-OIL-02 — Industrial Oil Condition Remediation
+
+WATER:
+- TC-WAT-01 — Industrial Depth Particulate Filtration
+- TC-WAT-03 — Industrial Adsorptive Carbon Treatment
+- TC-WAT-04 — Reverse Osmosis Dissolved-Solids Separation
+- TC-WAT-05 — Ultrafiltration Membrane Separation
+- TC-WAT-06 — Nanofiltration Selective Ion / Solute Separation
+- TC-WAT-07 — Ion Exchange Water Conditioning
+- TC-WAT-08 — Electrodeionization Polishing
+
+Total immediate commercial technology candidates:
+17
+
+### 28.12 Valid Cores Held from Commercial Naming
+
+Technically valid but deferred:
+
+- TC-AIR-05 — Ozone Destruction
+- TC-OIL-03 — Acid / Ionic Contaminant Removal from Functional Fluids
+- TC-WAT-11 — Membrane Degasification
+
+Reason:
+mechanism is valid, but current portfolio / application breadth is not yet sufficient to justify immediate standalone commercial branding.
+
+### 28.13 Retired / Reclassified Cores
+
+- TC-AIR-04 — Aviation Air Water Separation
+  → RECLASSIFIED as application capability / merge candidate under broader separation mechanisms.
+
+- TC-NG-03 — High-Pressure Gas Particulate Filtration
+  → RECLASSIFIED as Gas Particulate Function + High-Pressure Capability.
+
+- TC-NG-04 — Integrated Gas Conditioning
+  → RECLASSIFIED as System Architecture.
+
+- TC-WAT-02 — Industrial Pleated Particle Control
+  → RETIRED as independent core; pleating is product geometry.
+
+- TC-WAT-09 — MBR
+  → ADJACENT portfolio domain; not immediate filtration core.
+
+- TC-WAT-10 — MABR
+  → ADJACENT biological-treatment domain; deferred.
+
+### 28.14 Commercial Naming Gate — NOW OPEN
+
+Cross-domain consolidation is complete.
+
+Commercial technology naming may now proceed ONLY for the 17 immediate candidate cores.
+
+Naming rules:
+- one name per validated core unless a deliberate umbrella / subtechnology hierarchy is approved
+- name must refer to the mechanism / value, not the application
+- no reuse of existing On-Road / Off-Road technology names
+- no accidental overlap with MARINECLEAN™, DURATECH™, SYNTRAX™, NANOFORCE™, HYDROCORE™, TURBOCORE™, MACROCORE™, MICROKAPPA™, DRYCORE™, INTEKCORE™, THERMACORE™
+- candidate names require trademark / availability screening before approval
+- system architectures may later receive a separate platform-branding review
+- capabilities may later receive descriptors / badges but not core technology status by default
+
+### 28.15 Closure
+
+Cross-Domain Technology Core Consolidation:
+- Duplicate / overlap review: COMPLETE
+- Mechanism vs capability separation: COMPLETE
+- Mechanism vs system architecture separation: COMPLETE
+- Application vs technology separation: COMPLETE
+- Immediate commercial candidates: 17
+- Deferred valid cores: 3
+- Retired / reclassified cores: 6
+- Commercial naming gate: OPEN
+- Trademark / naming research: NEXT
+- Technology Registry update with approved commercial names: PENDING naming approval
+
+Status:
+CROSS-DOMAIN TECHNOLOGY CORE CONSOLIDATION CLOSED v1.
