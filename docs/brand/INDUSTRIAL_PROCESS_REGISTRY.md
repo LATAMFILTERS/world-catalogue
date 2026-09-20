@@ -3356,3 +3356,302 @@ Process-dust treatment for alumina powder remains under further evaluation befor
 
 Next Air Filtration source family:
 - Laser Cutting Dust Filtration
+
+
+### 17.9 Aviation Air Filtration — Architecture v1
+
+Status: REIKE SOURCE PRODUCT SET CONFIRMED; EXTERNAL AEROSPACE BENCHMARK ARCHITECTURE COMPLETE; COMMERCIAL TECHNOLOGY NAMES NOT ASSIGNED.
+
+Source condition:
+REIKE exposes seven aviation-air products:
+1. Avionics Bay Pre-filter
+2. Cabin HEPA Filter
+3. Cabin Panel HEPA Filter
+4. Avionics Bay Water Removal Cartridge
+5. NGS Filter Cartridge
+6. NGS Ozone Removal Cartridge
+7. NGS Water Removal Cartridge
+
+Repeated supplier claims:
+- Safe & Reliable
+- Long-term Stable
+- Custom Filter Manufacturer
+
+No source-level technical performance, dimensions, certification, pressure-drop, service-life, or aircraft-eligibility evidence was provided in the extracted page text.
+
+#### Canonical Interpretation
+
+Aviation Air Filtration is an APPLICATION / SYSTEM domain and contains several physically distinct functions.
+
+Canonical domain:
+Industrial & Process
+→ Air Filtration Solutions
+→ Aviation Air Filtration
+
+Canonical aerospace air-treatment functions:
+- Cabin High-Efficiency Particle Filtration
+- Avionics Cooling Air Particulate Filtration
+- Avionics Cooling Air Water Removal
+- NGS Particulate / Aerosol Pretreatment
+- NGS Water Removal
+- NGS Ozone Destruction
+- Optional VOC / Molecular Contaminant Adsorption where validated
+
+These functions MUST remain separate in the taxonomy.
+
+#### Cabin Air Filtration
+
+REIKE source products:
+- Cabin HEPA Filter
+- Cabin Panel HEPA Filter
+
+Canonical function:
+- Cabin Recirculation High-Efficiency Particle Filtration
+
+External benchmark:
+Pall Aerospace confirms that cabin-air filters are installed in recirculation ducting and that HEPA filtration is used in commercial-aircraft cabin systems.
+
+Canonical attributes:
+- Aircraft platform
+- Cabin / cockpit location
+- HEPA class / test basis
+- Overall efficiency
+- Local efficiency / leak test where applicable
+- Rated airflow
+- Initial / terminal ΔP
+- Dirt-holding capacity
+- Media
+- Frame
+- Seal / gasket
+- Weight
+- Service interval
+- Fire / smoke requirement
+- OEM approval / aircraft eligibility
+
+Critical rule:
+Aviation HEPA approval is application-specific. A generic HEPA class does not establish airworthiness or installation eligibility.
+
+#### Avionics Bay Filtration
+
+REIKE source products:
+- Avionics Bay Pre-filter
+- Avionics Bay Water Removal Cartridge
+
+Canonical functions:
+- Avionics Cooling Air Particulate Control
+- Avionics Cooling Air Water Separation
+
+External benchmark:
+Pall Aerospace identifies avionics cooling as requiring dry, contamination-controlled cooling air and documents particulate filtration plus water separation for avionics / E-E cooling systems.
+
+Canonical attributes:
+- Aircraft platform
+- Cooling-system location
+- Particle filtration requirement
+- Water-removal requirement
+- Flow
+- ΔP
+- Moisture load
+- Hydrophobic capability
+- Separation mechanism
+- Temperature
+- Housing / panel interface
+- Service / cleaning requirement
+- OEM approval state
+
+Technology-core relationship:
+- Particulate stage may reuse TC-AIR-01 or TC-AIR-02 depending actual efficiency regime.
+- Water removal is a separate physical function and must not be treated as HEPA filtration.
+
+Potential internal function core:
+TC-AIR-04 — Aviation Air Water Separation
+Status: FUNCTION CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+#### Nitrogen Generation System (NGS)
+
+REIKE source products:
+- NGS Filter Cartridge
+- NGS Ozone Removal Cartridge
+- NGS Water Removal Cartridge
+
+External benchmark confirms NGS means Nitrogen Generating System in commercial aircraft. Pall identifies NGS filtration as protecting the Air Separation Module (ASM) from particulate, oil / water mist, ozone, and in advanced configurations VOC contamination.
+
+Canonical NGS process:
+Bleed Air
+→ Particulate / Aerosol Pretreatment
+→ Water Removal
+→ Ozone Destruction
+→ Optional VOC Adsorption
+→ Air Separation Module (ASM)
+
+The exact sequence may vary by aircraft / system design.
+
+Canonical NGS functions:
+- Particulate Filtration
+- Oil / Water Aerosol Control
+- Bulk Water Removal
+- Ozone Catalytic Destruction
+- VOC Adsorption where required
+
+#### NGS Ozone Removal
+
+REIKE source:
+- NGS Ozone Removal Cartridge
+
+Canonical function:
+- Ozone Destruction / Catalytic Gas Treatment
+
+External benchmark:
+Pall documents aircraft NGS prefiltration with an ozone-catalyst stage and states that ozone can damage ASM membrane performance.
+
+Potential technology core:
+TC-AIR-05 — Industrial / Aerospace Ozone Destruction
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Canonical attributes:
+- Ozone inlet concentration
+- Ozone removal / destruction efficiency
+- Rated flow
+- Pressure
+- Temperature
+- Catalyst media
+- Pressure drop
+- Life / exposure capacity
+- Contaminant tolerance
+- Aircraft qualification / approval
+
+#### NGS Water Removal
+
+REIKE source:
+- NGS Water Removal Cartridge
+
+Canonical function:
+- Moisture / Liquid Water Removal from NGS feed air
+
+Potential relationship:
+- May reuse TC-AIR-04 if the physical separation mechanism is equivalent.
+- Must remain unmerged until source data confirms whether the cartridge is coalescing, hydrophobic, inertial, or another mechanism.
+
+#### NGS Filter Cartridge
+
+REIKE source:
+- NGS Filter Cartridge
+
+Canonical provisional function:
+- NGS Feed-Air Contamination Control
+
+Technical scope remains OPEN because the source page name alone does not prove whether it performs particulate-only, coalescing, oil-mist, or multi-stage filtration.
+
+Required evidence:
+- contaminants removed
+- filtration efficiency
+- media
+- flow
+- pressure
+- temperature
+- ΔP
+- separation mechanism
+- aircraft / ASM interface
+
+#### Molecular / VOC Treatment
+
+External benchmark:
+Pall documents advanced NGS prefiltration that adds carbon adsorption for VOC removal alongside ozone treatment.
+
+Canonical rule:
+VOC adsorption is MOLECULAR AIR TREATMENT and must remain separate from particulate filtration and ozone catalysis.
+
+Potential relationship:
+- may reuse TC-AIR-03 — Industrial Molecular Air Contamination Control
+- exact aerospace specialization remains to be validated
+
+#### Airworthiness / Approval Governance
+
+Aviation products require a stricter governance layer than ordinary Industrial & Process products.
+
+Canonical approval fields:
+- Aircraft Manufacturer
+- Aircraft Model
+- ATA Chapter / System
+- OEM Part Number
+- Approved Replacement Part Number
+- TSO / TSOA applicability where relevant
+- PMA applicability where relevant
+- STC applicability where relevant
+- EASA approval / eligibility where relevant
+- Form-Fit-Function evidence
+- Airworthiness limitation
+- Installation approval state
+
+FAA governance note:
+A TSO Authorization establishes that an article meets a minimum performance standard and authorizes manufacture; it does not by itself approve installation on a specific aircraft.
+
+Critical rule:
+No ELIMFILTERS aviation product may be represented as aircraft-approved solely from dimensional or filtration equivalence.
+
+#### HERMES Inputs — Aviation Air
+
+Minimum inputs:
+- Aircraft manufacturer
+- Aircraft model / series
+- Aircraft system
+- ATA chapter
+- Application: cabin / avionics / NGS
+- OEM part number
+- Required filtration / separation function
+- Contaminant type
+- Rated airflow
+- Operating pressure
+- Temperature
+- Initial / terminal ΔP
+- Moisture load
+- Ozone load
+- VOC requirement
+- HEPA / efficiency requirement
+- Weight / envelope
+- Housing / interface
+- Certification / approval requirement
+- Existing approval basis
+
+Expected logic:
+Aircraft Platform
+→ System / ATA
+→ Application
+→ Contaminant
+→ Required Physical Function
+→ Performance / Flow / ΔP
+→ Interface
+→ Approval Basis
+→ Candidate Product
+→ Airworthiness Validation State
+
+#### Technology-Core Summary — Aviation Air
+
+Existing parent cores:
+- TC-AIR-01 — Industrial General Ventilation Particle Control
+- TC-AIR-02 — Industrial High-Efficiency Air Filtration
+- TC-AIR-03 — Industrial Molecular Air Contamination Control
+
+New candidates:
+- TC-AIR-04 — Aviation Air Water Separation
+- TC-AIR-05 — Industrial / Aerospace Ozone Destruction
+
+All remain internal candidates.
+No commercial ELIMFILTERS technology name is approved.
+
+#### Closure State — Aviation Air Filtration
+
+- REIKE source product discovery: COMPLETE
+- Cabin HEPA architecture: CLOSED v1
+- Avionics cooling filtration architecture: CLOSED v1
+- Avionics water-removal architecture: CLOSED v1
+- NGS architecture: CLOSED v1
+- Ozone-destruction architecture: CLOSED v1
+- Molecular / VOC relationship: IDENTIFIED
+- Aviation approval governance: CLOSED v1
+- Product-level REIKE validation: OPEN
+- Aircraft eligibility / certification mapping: OPEN
+- Commercial technology naming: BLOCKED
+
+Next Air Filtration source family:
+- Laser Cutting Dust Filtration
