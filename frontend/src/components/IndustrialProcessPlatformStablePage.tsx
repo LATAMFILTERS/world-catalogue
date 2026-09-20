@@ -63,7 +63,7 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
               <p className={styles.lead}>{platform.summary}</p>
             </div>
             <figure className={styles.mediaFigure}>
-              <img className={styles.mediaImage} src={platform.heroImage} alt={`${platform.descriptor} industrial application context`} />
+              <img className={styles.mediaImage} src={platform.mediaImage ?? platform.heroImage} alt={`${platform.descriptor} industrial application context`} />
               <figcaption>Representative industrial application context. Final solution remains project-specific.</figcaption>
             </figure>
           </div>
