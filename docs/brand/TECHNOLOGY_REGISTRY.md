@@ -59,11 +59,15 @@ Protection role: Turbine-style fuel/water separation exclusively for approved FH
 System: Lubrication Protection
 Products: Lube Filters
 Protection role: Lubricant cleanliness and engine/component protection.
+Governed scope: On-Road and Off-Road only.
+Industrial & Process exclusion: SYNTRAX™ must not be reused, extended, or inherited by Industrial & Process products.
 
 ## NANOFORCE™
 System: Hydraulic Protection
 Products: Hydraulic Filters
 Protection role: Hydraulic-fluid contamination control and hydraulic-component protection.
+Governed scope: On-Road and Off-Road only.
+Industrial & Process exclusion: NANOFORCE™ must not be reused, extended, or inherited by Industrial & Process products.
 
 ## THERMACORE™
 System: Cooling System Protection
