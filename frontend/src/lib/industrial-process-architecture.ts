@@ -115,6 +115,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ['Unexpected cleanliness loss', 'Premature final-stage loading', 'Seal or frame leakage', 'Pressure drop outside expected trend'],
         '/images/air-filters-lab.avif',
         '/images/HE-CRIVA.png',
+        undefined,
+        '/images/HE-CRIVA-%20VIDEO%20(1).mp4',
       ),
       tech(
         'ma-trea',
