@@ -25,7 +25,7 @@ for(const file of walk(root)){
  const id=meta.knowledge_object_id; if(!id) throw new Error(`Missing knowledge_object_id: ${file}`);
  const rec={
   id, slug:slug(id), title:meta.title, domain:meta.domain, contentType:meta.knowledge_content_type, confidence:meta.confidence,
-  industries:position(text,'Industries'), systems:position(text,'Systems'), technologies:position(text,'Technologies'),
+  industries:position(text,'Industries'), systems:position(text,'Systems'), platforms:position(text,'Platforms'), technologies:position(text,'Technologies'),
   components:section(text,'Components'), problems:section(text,'Problems'), failureModes:section(text,'Failure Modes'), symptoms:section(text,'Symptoms'),
   rootCauses:section(text,'Root Causes'), diagnosticMethods:section(text,'Diagnostic Methods'), correctiveActions:section(text,'Corrective Actions'),
   maintenanceProcedures:section(text,'Maintenance Procedures'), procedures:section(text,'Procedures'), technicalRelationships:section(text,'Technical Relationships — Validated'),
@@ -37,5 +37,5 @@ for(const file of walk(root)){
  records.push(rec);
 }
 records.sort((a,b)=>a.id.localeCompare(b.id));
-fs.mkdirSync(path.dirname(out),{recursive:true}); fs.writeFileSync(out,JSON.stringify({schemaVersion:'1.0.0',sourceAuthority:'13-canonical-knowledge',generatedAt:new Date().toISOString(),count:records.length,records},null,2)+'\n');
+fs.mkdirSync(path.dirname(out),{recursive:true}); fs.writeFileSync(out,JSON.stringify({schemaVersion:'1.1.0',sourceAuthority:'13-canonical-knowledge',generatedAt:new Date().toISOString(),count:records.length,records},null,2)+'\n');
 console.log(`[canonical index] records=${records.length} authority=13-canonical-knowledge output=${path.relative(process.cwd(),out).replaceAll('\\','/')}`);
