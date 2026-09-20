@@ -1682,3 +1682,247 @@ Hydraulic & Lubrication Filtration family status:
 - Power Generation Filtration: ARCHITECTURE CLOSED v1
 - OEM Replacement Filter Elements: ARCHITECTURE CLOSED v1
 - Industrial Engine Oil Filter Elements: STILL OPEN
+
+
+### 14.11 Industrial Engine Oil Filter Elements — External Benchmark Architecture v1
+
+Status: REIKE SOURCE FAMILY CONFIRMED BUT PRODUCT PAGE EMPTY; EXTERNAL BENCHMARK ARCHITECTURE COMPLETE; COMMERCIAL TECHNOLOGY NAME NOT ASSIGNED.
+
+Source condition:
+- REIKE lists "Industrial Engine Oil Filter Elements" under Hydraulic & Lubrication Filtration.
+- The REIKE product page currently contains no usable technical specification content.
+- Therefore no REIKE efficiency, flow, pressure, media, or service-life claim is accepted for this family.
+
+External benchmark basis:
+- Donaldson Engine Lube Filtration
+- MANN+HUMMEL engine oil filtration for stationary/mobile equipment
+- Supporting heavy-duty engine filtration literature
+
+#### Canonical Interpretation
+
+Industrial Engine Oil Filtration is an APPLICATION / PRODUCT-FAMILY DOMAIN within Industrial & Process.
+
+Canonical domain:
+Industrial & Process
+→ Industrial Engine Lubrication
+→ Engine Oil Filtration
+
+This family is intentionally separate from SYNTRAX™, which remains governed for On-Road and Off-Road only.
+
+#### Canonical Filtration Architectures
+
+Established engine-lube systems use three distinct architectures:
+
+1. Full-Flow Filtration
+- Receives nearly 100% of regulated engine oil flow.
+- Primary objective: protect engine components while preserving required lubrication flow.
+- Engineering balance: efficiency vs contaminant capacity vs restriction.
+
+2. By-Pass / Secondary Filtration
+- Diverts a small portion of total lube flow, typically around 5–10%, through a higher-efficiency path and returns it to the sump.
+- Used for finer contamination control / oil polishing.
+- Higher restriction than the full-flow path is acceptable because it does not carry the engine's total lubrication flow.
+
+3. Two-Stage / Combination Filtration
+- Combines full-flow and by-pass functions in one package.
+- Must be evaluated carefully because added restriction can affect cold-flow behavior and service life.
+
+Canonical rule:
+"Bypass valve" inside a full-flow filter is NOT the same thing as a by-pass / secondary filtration circuit.
+
+#### Primary Protection Functions
+
+Canonical functions:
+- Engine-Lubricant Particulate Contamination Control
+- Soot / Carbonaceous Contaminant Management
+- Wear-Particle Capture
+- Lubricant Cleanliness Maintenance
+- Optional Secondary Oil Polishing
+
+Observed contamination sources:
+- Metallic wear debris
+- Carbonaceous combustion byproducts
+- External dirt
+- Oil degradation products
+- Contaminants introduced during servicing or fill
+
+#### Critical Engineering Balance
+
+Industrial engine lube filtration must optimize three variables simultaneously:
+
+- Efficiency
+- Contaminant-holding capacity
+- Restriction / pressure drop
+
+External manufacturer guidance explicitly warns that excessive efficiency without sufficient flow capacity can increase restriction and cause premature bypass.
+
+Canonical rule:
+Industrial engine oil filters cannot be selected by micron value alone.
+
+#### Cold-Start / High-Viscosity Behavior
+
+Cold or highly viscous oil can sharply increase pressure drop across the element.
+
+Required canonical attributes:
+- Clean-element ΔP
+- Cold-flow capability
+- Oil viscosity
+- Oil temperature
+- Bypass-valve opening pressure
+- Media type
+- Rated flow
+
+Selection must ensure lubrication flow is maintained during startup and transient viscosity conditions.
+
+#### Media Architecture
+
+External benchmark observations:
+- Cellulose media remains common in standard-duty engine lube filtration.
+- Synthetic / fine-fiber media can provide higher efficiency and contaminant capacity while maintaining lower restriction.
+- Media choice is an engineering tradeoff and must not be treated as a technology name by itself.
+
+Canonical attributes:
+- Media composition
+- Efficiency
+- Dirt-holding capacity
+- Clean ΔP
+- Flow capacity
+- Temperature compatibility
+- Oil compatibility
+- Structural support
+
+#### Canonical Industrial Engine Applications
+
+Industrial engine scope may include:
+- Stationary diesel generator sets
+- Gas-engine generator sets
+- Industrial pump drives
+- Compressor-drive engines
+- Marine auxiliary stationary power units where classified under Industrial & Process
+- Fixed process-engine installations
+- Emergency / standby power engines
+- Prime-power industrial engines
+
+Application classification must be based on the installed industrial duty, not simply on engine manufacturer or displacement.
+
+#### System / Product Configurations
+
+Canonical product configurations:
+- Spin-On Full-Flow Lube Filter
+- Cartridge Full-Flow Lube Element
+- By-Pass / Secondary Lube Filter
+- Combination / Two-Stage Lube Filter
+- Engine Lube Filter Assembly / Head
+- Remote / Auxiliary Oil-Polishing Loop where used
+
+These are PRODUCT / SYSTEM CONFIGURATIONS, not technologies.
+
+#### Pressure and Valve Architecture
+
+Industrial engine records must keep separate:
+- Normal lube-system pressure
+- Filter housing pressure rating
+- Element differential pressure
+- Internal bypass-valve opening pressure
+- High-pressure relief-valve function
+
+Canonical rule:
+Do not confuse engine oil-system pressure with element collapse differential pressure or bypass-valve setpoint.
+
+#### HERMES Inputs — Industrial Engine Oil
+
+Minimum inputs:
+- Engine manufacturer
+- Engine model
+- Industrial application
+- Fuel type
+- Rated power / duty class
+- Lube system configuration
+- Full-flow / by-pass / combination requirement
+- Oil specification / viscosity grade
+- Operating oil temperature
+- Cold-start temperature
+- Rated oil flow
+- Normal lube pressure
+- Bypass-valve requirement / setting
+- Required filtration efficiency
+- Contaminant-capacity target
+- Service interval
+- Housing / thread / cartridge interface
+- OEM part number
+- Competitor reference
+
+Expected HERMES logic:
+Engine / Application
+→ Lube Circuit Architecture
+→ Oil / Viscosity
+→ Flow / Pressure
+→ Efficiency-Capacity-Restriction Balance
+→ Full-Flow / By-Pass Configuration
+→ Physical Interface
+→ OEM / Competitor Cross
+→ Candidate Element
+→ Validation State
+
+#### Technology-Core Relationship
+
+Parent Industrial & Process core:
+TC-LUB-01 — Industrial Lubricant Cleanliness Control
+
+Industrial-engine specialization:
+ENG-LUB — Industrial Engine Lube Filtration Capability
+
+Status:
+APPLICATION CAPABILITY / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+This specialization is separate by governance from SYNTRAX™.
+
+#### External Benchmark Notes
+
+Donaldson:
+- Defines full-flow, by-pass, and two-stage engine lube architectures.
+- States that full-flow filtration handles nearly all regulated flow.
+- States that by-pass filtration typically handles roughly 5–10% of system flow.
+- Emphasizes the required balance among efficiency, capacity, and restriction.
+- Highlights cold-flow and bypass behavior as critical engine-protection considerations.
+- Offers full-flow and by-pass assemblies with application-specific flow and filtration-performance choices.
+
+MANN+HUMMEL:
+- Identifies engine oil filtration as removal of solid particles accumulated in the lubrication circuit from contamination and wear.
+- Supplies engine oil filtration solutions in stationary as well as mobile equipment contexts.
+
+#### Closure State — Industrial Engine Oil Filter Elements
+
+- REIKE family existence: CONFIRMED
+- REIKE product page: EMPTY / NO USABLE TECHNICAL DATA
+- External benchmark research: COMPLETE v1
+- Full-flow architecture: COMPLETE v1
+- By-pass architecture: COMPLETE v1
+- Combination architecture: COMPLETE v1
+- Cold-flow / bypass governance: COMPLETE v1
+- Technology-core relationship: CLOSED v1
+- Commercial technology naming: BLOCKED
+- ELIMFILTERS product specification: OPEN
+- OEM / competitor mapping: OPEN
+- Canonical SKU mapping: OPEN
+
+#### Hydraulic & Lubrication Filtration — Family Closure v1
+
+All six REIKE source families now have an Industrial & Process architecture:
+
+- Lubrication Oil Filter Elements — DECOMPOSED v1
+- Industrial Engine Oil Filter Elements — ARCHITECTURE CLOSED v1
+- High Temperature Hydraulic Filter Elements — DECOMPOSED v1
+- Hydraulic Oil Filter Elements — ARCHITECTURE CLOSED v1
+- Power Generation Filtration — ARCHITECTURE CLOSED v1
+- OEM Replacement Filter Elements — ARCHITECTURE CLOSED v1
+
+Hydraulic & Lubrication Filtration v1:
+- Source-family discovery: COMPLETE
+- Canonical architecture: CLOSED v1
+- Industrial technology-core discovery: CLOSED v1
+- Commercial technology naming: intentionally OPEN / BLOCKED pending validation and portfolio design
+- Product-level specification and SKU population: OPEN
+
+Next Industrial & Process source family:
+- Industrial Water Filtration Solutions
