@@ -582,3 +582,190 @@ Hydraulic Filtration:
 - Existing-technology reuse assessment: CLOSED — SYNTRAX™ and NANOFORCE™ excluded from Industrial & Process
 - Commercial technology naming: BLOCKED pending technical evidence
 - Next source page: Lubricating oil filter element
+
+
+### 14.6 Lubricating Oil Filter Element — Technical Decomposition v1
+
+Status: SOURCE TECHNICAL EXTRACTION COMPLETE; CANONICAL TECHNOLOGY NAME NOT ASSIGNED.
+
+Source:
+- Xinxiang Filter Co., Ltd. / REIKE
+- Source product: Lubricating oil filter element
+- Source page: http://xxslqq.xx207.cxjs.net.cn/product/42.html
+
+#### Source-Declared Function
+
+The source describes the element as removing:
+- Metal wear particles, including iron, copper, and tin
+- External dust
+- Moisture
+- Colloids
+- Carbon deposits caused by oil oxidation
+
+The stated protection objective is lubricant cleanliness control to support equipment life and reduce unplanned downtime.
+
+The supplier references ISO 4406 cleanliness control and also uses the text "NAS16388 or better." This exact wording is retained as SOURCE TEXT and must not be normalized into a standard claim until the intended standard/reference is verified.
+
+#### Source-Declared Construction and Performance
+
+Manufacturer-declared characteristics:
+- Multi-layer composite glass-fiber media
+- Filtration range stated as 1–180 μm
+- Filtration ratio βx ≥ 200, where x is the nominal accuracy
+- Filtration efficiency stated as >99.5%
+- Operating temperature stated as -30°C to +110°C
+- Initial differential pressure stated as ≤0.05 MPa at rated flow
+- Working pressure stated as up to 21 MPa
+- Frame: galvanized carbon steel or stainless-steel perforated structure
+- End caps: galvanized carbon steel or nylon plastic
+- Seal options: fluororubber or nitrile rubber
+- Compatible fluids claimed:
+  - Mineral oil
+  - Synthetic oil
+  - Phosphate-ester hydraulic oil
+  - Water-ethylene glycol
+
+All values above remain MANUFACTURER_DECLARED until independently validated.
+
+#### Canonical Applications Observed
+
+Application contexts identified by the source:
+
+- Gearbox Lubrication
+  - reducers
+  - rolling-mill gearboxes
+  - recommended source range: 10–20 μm
+  - source requirement: fatigue and heat resistance
+
+- Bearing Lubrication
+  - fan bearings
+  - motor bearings
+  - recommended source range: 5–10 μm
+  - source requirement: low resistance / high reliability
+
+- Compressor Lubrication
+  - screw compressors
+  - reciprocating compressors
+  - recommended source range: 5–15 μm
+  - source requirement: compatibility with oil-gas separation
+
+- Turbine Oil Systems
+  - turbine lubricating-oil stations
+  - recommended source range: 5–10 μm
+  - source requirement: oxidation resistance / long life
+
+- Paper-Machine Circulating Lubrication
+  - recommended source range: 10–30 μm
+  - source requirement: high contaminant capacity
+
+- Coal-Mill Lubrication
+  - medium-speed coal-mill gearboxes
+  - recommended source range: 10–20 μm
+  - source requirement: vibration and impact resistance
+
+Additional industries/applications explicitly listed by the source:
+- Steel and metallurgy
+- Power and energy
+- Cement and building materials
+- General industry
+- Wind-power gearboxes
+- Hydroturbine bearing lubrication
+- Vacuum-pump lubrication
+- Mining machinery reducers
+
+#### Maintenance Logic Observed
+
+Supplier-declared replacement trigger:
+- Replace when differential pressure reaches 0.2–0.35 MPa, or according to the equipment maintenance interval.
+
+Supplier-declared viscosity guidance:
+- High-viscosity oils such as ISO VG 320 gear oil: 10–30 μm
+- Medium/low-viscosity oils such as ISO VG 68 turbine oil: 5–10 μm
+
+The supplier explicitly notes that unnecessarily fine filtration can increase flow resistance.
+
+#### Canonical ELIMFILTERS Interpretation
+
+Canonical domain:
+Industrial & Process
+→ Industrial Lubrication Filtration
+
+Canonical filtration function:
+- Lubricant Particulate Contamination Control
+
+Secondary contamination concerns observed:
+- Moisture
+- Oxidation byproducts
+- Colloids
+- Carbonaceous deposits
+
+Canonical application dimensions:
+- Gearbox Lubrication
+- Bearing Lubrication
+- Compressor Lubrication
+- Turbine Oil Systems
+- Paper-Machine Circulating Lubrication
+- Coal-Mill Lubrication
+- Wind-Power Gearbox Lubrication
+- Hydroturbine Bearing Lubrication
+- Vacuum-Pump Lubrication
+- Mining Reducer Lubrication
+
+Important taxonomy rule:
+- "Lubricating oil filter element" is a product/function family.
+- Gearbox, compressor, turbine, paper machine, coal mill, wind power, and similar terms are APPLICATIONS.
+- High temperature, fatigue resistance, oxidation resistance, vibration resistance, and chemical compatibility are CAPABILITIES / OPERATING REQUIREMENTS.
+- None of these labels are approved technology names.
+
+#### Technology-Core Discovery
+
+Provisional internal core:
+
+TC-LUB-01 — Industrial Lubricant Cleanliness Control
+
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Observed engineering dimensions:
+- High-efficiency particulate removal
+- Beta-ratio governed filtration
+- Dirt-holding capacity
+- Low initial differential pressure
+- Viscosity-sensitive micron selection
+- Broad lubricant compatibility
+- Mechanical pressure resistance
+- Temperature and seal compatibility
+- Application-specific cleanliness targets
+
+This core is distinct from SYNTRAX™ by governance. SYNTRAX™ remains On-Road / Off-Road only and is not inherited by this Industrial & Process family.
+
+#### Required Validation Before ELIMFILTERS Approval
+
+Still missing or unverified:
+- Exact ISO 4406 target classes by application
+- Exact interpretation of "NAS16388"
+- Test method supporting βx ≥ 200
+- Beta-ratio test standard / multipass method
+- Dirt-holding capacity values
+- Rated flow values
+- Collapse / burst / fatigue data
+- Exact pressure qualification method for the 21 MPa claim
+- Media grade by reference
+- Seal selection by fluid
+- Water-removal capability, if any, versus simple moisture tolerance
+- Housing compatibility
+- OEM / competitor cross-reference
+- Individual source SKU structure
+
+#### Closure State — Lubricating Oil Filter Element
+
+- Source technical extraction: COMPLETE
+- Application mapping: COMPLETE v1
+- Canonical function mapping: COMPLETE v1
+- Technology-core discovery: COMPLETE v1
+- Commercial technology naming: BLOCKED
+- Supplier performance validation: OPEN
+- OEM / competitor mapping: OPEN
+- Canonical SKU mapping: OPEN
+
+Next source page:
+- Hydraulic oil filter element
