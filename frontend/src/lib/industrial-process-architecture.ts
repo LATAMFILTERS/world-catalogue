@@ -22,6 +22,7 @@ export interface IndustrialProcessPlatform {
   descriptor: string;
   summary: string;
   heroImage: string;
+  heroVideo?: string;
   mediaImage?: string;
   technologies: readonly IndustrialProcessTechnology[];
 }
@@ -77,6 +78,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     descriptor: 'Air Technologies',
     summary: 'Industrial air treatment for ventilation, critical environments and molecular contamination control.',
     heroImage: '/images/air-filters-lab.avif',
+    heroVideo: '/images/Air%20Industrial-aviation%20(1).mp4',
     mediaImage: '/images/air%20industrial.jpg',
     technologies: [
       tech(

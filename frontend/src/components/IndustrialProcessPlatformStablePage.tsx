@@ -11,7 +11,22 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
   return (
     <main id="main-content" className={styles.page}>
       <section className={styles.hero} aria-labelledby="industrial-platform-title">
-        <img className={styles.heroBackground} src={platform.heroImage} alt="" aria-hidden="true" />
+        {platform.heroVideo ? (
+          <video
+            className={styles.heroBackground}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={platform.heroImage}
+            aria-hidden="true"
+          >
+            <source src={platform.heroVideo} type="video/mp4" />
+          </video>
+        ) : (
+          <img className={styles.heroBackground} src={platform.heroImage} alt="" aria-hidden="true" />
+        )}
         <div className={styles.heroShade} aria-hidden="true" />
         <h1 id="industrial-platform-title" className={styles.srOnly}>{platform.name} {platform.descriptor}</h1>
         <div
