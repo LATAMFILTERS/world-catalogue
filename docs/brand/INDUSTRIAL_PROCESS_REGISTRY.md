@@ -10262,3 +10262,110 @@ System configurations remain descriptive:
 - Turbine Fuel Gas
 
 Formal trademark clearance remains required before final adoption.
+
+
+## 45. FLUREXIS™ Family Naming — Four Fluid-Conditioning Families
+
+Status: WORKING SHORTLIST. No family mark finally approved.
+
+Platform:
+FLUREXIS™ — Fluid Conditioning Technologies
+
+Internal cores:
+- TC-HYD-01 — Industrial Hydraulic Contamination Control
+- TC-LUB-01 — Industrial Lubricant Cleanliness Control
+- TC-OIL-01 — Industrial Oil Water Removal / Dehydration
+- TC-OIL-02 — Industrial Oil Condition Remediation
+
+### 45.1 Hydraulic Fluid Filtration
+
+Preferred working candidate:
+HYDREXIS™
+
+Rationale:
+- evokes hydraulic service without reducing the family to one circuit position or element geometry;
+- broad enough for pressure, return, tank-top, offline, and duplex hydraulic filtration;
+- first exact public knockout searches found no material hydraulic-filtration or trademark conflict.
+
+Secondary candidates:
+- HYLTRIS™
+- HYDREXON™
+
+Rejected / avoided:
+- HYDREVA™ — existing registered U.S. trademark covering water filters / water softening.
+- HYDRAVEX™ — registered EU / UK trademark.
+- HYDREON™ — registered and renewed U.S. trademark.
+
+Status:
+HYDREXIS™ — PREFERRED WORKING CANDIDATE / FORMAL CLEARANCE REQUIRED.
+
+### 45.2 Industrial Lubrication Filtration
+
+Preferred working candidate:
+LUBREXIS™
+
+Rationale:
+- clear lubricant / lubrication semantic without copying a generic filter term;
+- broad enough for turbine oil, gearboxes, industrial engines, bearings, compressors, wind, and circulating-lube systems;
+- first exact public knockout searches found no material lubrication-filtration or trademark conflict.
+
+Secondary candidates:
+- LUBRAVEX™
+- LUBREVA™
+
+Rejected:
+- LUBRION™ — active 2026 EU trademark filing covering lubricants, industrial lubricants, greases, and fuel; also active commercial industrial-lubrication use.
+
+Status:
+LUBREXIS™ — PREFERRED WORKING CANDIDATE / FORMAL CLEARANCE REQUIRED.
+
+### 45.3 Oil Dehydration & Water Removal
+
+Preferred working candidate:
+DEWATIS™
+
+Rationale:
+- evokes dewatering / water removal without tying the family to absorption or vacuum dehydration alone;
+- broad enough for free, emulsified, and dissolved-water treatment architectures when technically validated;
+- first exact public knockout searches found no material oil-dehydration or filtration-sector conflict.
+
+Secondary candidates:
+- DRYLEXIS™
+- DEHYVEX™
+
+Rejected / avoided:
+- DEHYRA™ — active consumer brand exact-name use.
+- DRYVEX™ — existing trademark history and current live trademark activity; also documented moisture-removal/dehumidifier goods in trademark records.
+
+Status:
+DEWATIS™ — PREFERRED WORKING CANDIDATE / FORMAL CLEARANCE REQUIRED.
+
+### 45.4 Oil Condition Remediation
+
+Preferred working candidate:
+VARREXIS™
+
+Rationale:
+- derived from varnish / remediation without locking the family to one adsorbent chemistry;
+- broad enough for varnish, soft contaminants, degradation products, and other validated oil-condition remediation media;
+- first exact public knockout searches found no material oil-treatment / filtration-sector conflict.
+
+Secondary candidates:
+- VARNEXIS™
+- OILREVEX™
+
+Avoided:
+- VARNEXA™ — historical U.S. trademark filing exists in another field; exact-name reuse is unnecessary when cleaner candidates exist.
+
+Status:
+VARREXIS™ — PREFERRED WORKING CANDIDATE / FORMAL CLEARANCE REQUIRED.
+
+### 45.5 FLUREXIS™ Family Board
+
+- HYDREXIS™ — Hydraulic Fluid Filtration
+- LUBREXIS™ — Industrial Lubrication Filtration
+- DEWATIS™ — Oil Dehydration & Water Removal
+- VARREXIS™ — Oil Condition Remediation
+
+All four are preferred working candidates only.
+Formal trademark clearance remains required before external adoption or filing.
