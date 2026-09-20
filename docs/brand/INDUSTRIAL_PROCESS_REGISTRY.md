@@ -4714,3 +4714,127 @@ Next governance phase:
 - Consolidate duplicates.
 - Decide which cores justify commercial ELIMFILTERS Industrial & Process technology names.
 - Keep system configurations, capabilities, applications, and technologies as separate layers.
+
+
+## 20. Cross-Manufacturer Benchmark Enrichment — Phase Open
+
+Decision:
+Do NOT move directly from REIKE source-family discovery to commercial Technology Core review.
+
+Reason:
+REIKE provides useful breadth and product-family discovery, but a single supplier is insufficient to define the canonical ELIMFILTERS Industrial & Process architecture. Before consolidating Technology Cores, compare multiple established manufacturers to identify mechanisms, performance metrics, system architectures, safety layers, condition-monitoring concepts, and adjacent technologies that REIKE does not expose.
+
+### 20.1 Benchmark Objective
+
+Use external manufacturers to answer:
+- What filtration mechanisms are missing?
+- What system configurations are missing?
+- What measurable performance attributes should HERMES store?
+- What monitoring / predictive-maintenance data matters?
+- What standards and test methods govern each family?
+- What safety / compliance layers are application-critical?
+- What technologies are genuinely distinct versus only marketing names?
+- What functions can be reused across industries instead of duplicated?
+- What adjacent processes should Industrial & Process include even if REIKE does not sell them?
+
+### 20.2 Priority Benchmark Manufacturers
+
+Air / Cleanroom / Semiconductor:
+- Camfil
+- MANN+HUMMEL Air Filtration
+- Freudenberg Filtration Technologies
+- AAF / Daikin where technically relevant
+
+Industrial Dust / Welding / Laser / Additive:
+- Donaldson
+- Camfil APC
+- Nederman
+- other specialist manufacturers only where they add a distinct mechanism or safety architecture
+
+Hydraulic / Lubrication / Power Generation:
+- Pall
+- Parker Hannifin
+- Eaton
+- HYDAC
+- Donaldson where relevant
+
+Gas / Natural Gas:
+- Pall
+- Parker
+- Eaton / specialist coalescing-separation manufacturers where technically relevant
+
+Industrial Water:
+- DuPont Water Solutions
+- Pall
+- Pentair / specialist process-water manufacturers where they add a distinct mechanism
+
+Equipment / Systems:
+- Eaton
+- Pall
+- HYDAC
+- Donaldson
+- Parker
+
+### 20.3 Initial Value-Add Findings
+
+Cross-manufacturer benchmarking already shows several dimensions that should be considered before Technology Core consolidation:
+
+1. Cleanroom / Semiconductor
+- Particle filtration alone is insufficient.
+- Semiconductor fabs require separate Airborne Molecular Contamination control in addition to prefilters and HEPA / ULPA.
+- Terminal cleanroom filters include media, seal, leak-test, outgassing, and installation-interface considerations.
+
+2. Power Generation / Oil Condition
+- Particulate filtration is only one layer.
+- Pall separates water removal / dehydration, dissolved-gas removal, varnish remediation, cleanliness monitoring, water sensing, and fluid-condition monitoring.
+- This supports keeping Oil Condition Remediation and Water Removal separate from ordinary particulate filtration.
+
+3. Hydraulic / Lubrication
+- Eaton and HYDAC reinforce that system position, offline filtration, duplex operation, contamination monitoring, and fluid analysis are distinct architecture dimensions.
+- Offline / kidney-loop filtration is a system strategy and may use specialized high-capacity media architectures.
+- Beta ratio, dirt-holding capacity, pressure loss, flow fatigue, bypass, and collapse remain separate qualification dimensions.
+
+4. Industrial Water
+- DuPont expands the mechanism set beyond REIKE's visible RO / UF products.
+- Relevant adjacent separation technologies include Nanofiltration, Ion Exchange, and Electrodeionization in integrated water-treatment trains.
+- These must be evaluated as potential Industrial & Process functions before the technology map is considered complete.
+
+5. Equipment & Systems
+- Benchmark manufacturers reinforce that duplex, parallel, automatic/self-cleaning, offline, skid, monitoring, and condition-sensing layers are system architectures rather than media technologies.
+
+### 20.4 Governance for External Benchmark Evidence
+
+Evidence from competitor / benchmark manufacturers must be stored as:
+- EXTERNAL_BENCHMARK
+
+It may define:
+- canonical engineering fields
+- mechanism candidates
+- system configurations
+- test / validation requirements
+- safety and monitoring dimensions
+
+It MUST NOT be used to:
+- assign competitor performance to an ELIMFILTERS product
+- claim ELIMFILTERS equivalence
+- create a commercial technology name without validation
+- infer REIKE performance
+- bypass product-specific testing
+
+### 20.5 Benchmark Sequence Before Technology Core Review
+
+Recommended research sequence:
+1. Air / Cleanroom / Semiconductor
+2. Industrial Dust / Welding / Laser / Additive
+3. Gas / Natural Gas
+4. Hydraulic / Lubrication / Power Generation
+5. Industrial Water
+6. Equipment / Systems
+7. Cross-domain consolidation
+8. Technology Core review and naming gate
+
+Status:
+- Cross-manufacturer benchmark phase: OPEN
+- Initial benchmark sources identified: COMPLETE
+- Domain-by-domain enrichment: OPEN
+- Technology Core final review: BLOCKED until benchmark enrichment is complete
