@@ -357,3 +357,34 @@ Naming-similarity governance:
 - The architecture and Technology Core mapping remain valid even if one of those working marks is later renamed.
 
 Formal trademark clearance and external visual hierarchy validation remain pending.
+
+
+## Industrial & Process — Final Identity Diversification Review
+
+Decision:
+Platform names remain unchanged, but child-family naming is diversified. "-EXIS" is not a mandatory cross-family suffix.
+
+Preserved working family marks:
+- HE-CRIVA™ — TC-AIR-02
+- MA-TREA™ — TC-AIR-03
+- COALERIS™ — TC-NG-01
+- DEWATIS™ — TC-OIL-01
+- IONVEXA™ — TC-WAT-07
+
+Reopened / not frozen:
+- FUMEXIS™ — TC-DUST-01 — removed due same-sector FUMEX adjacency
+- HYDREXIS™ — TC-HYD-01
+- LUBREXIS™ — TC-LUB-01
+- VARREXIS™ — TC-OIL-02
+- CARBEXIS™ — TC-WAT-03
+- MEMBREXIS™ — TC-WAT-04 / TC-WAT-05 / TC-WAT-06
+
+Preliminary replacement finalists:
+- FUMEVRA™ — Fine Dust & Fume Filtration
+- HYVORIS™ — Hydraulic Fluid Filtration
+- LUBREVA™ — Industrial Lubrication Filtration
+- OILREVEX™ — Oil Condition Remediation
+- ADSOVEX™ — Adsorptive Carbon Treatment
+- MEMBRAVEX™ — Membrane Separation
+
+These six replacements remain subject to user selection and deeper trademark clearance before external freeze.
