@@ -72,7 +72,7 @@ export function Navigation() {
           </Link>
         </motion.div>
 
-        <nav style={{ display: 'flex', alignItems: 'center', gap: 'clamp(1rem, 1.35vw, 1.65rem)', flex: 1, justifyContent: 'flex-end', minWidth: 0, marginLeft: 'clamp(1rem, 2vw, 2rem)' }} className="hidden-mobile" aria-label="Main navigation">
+        <nav style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.9rem, 1vw, 1.25rem)', flex: 1, justifyContent: 'space-between', minWidth: 0, marginLeft: 'clamp(1.25rem, 2.4vw, 2.5rem)' }} className="hidden-mobile" aria-label="Main navigation">
           <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
@@ -81,7 +81,7 @@ export function Navigation() {
           <NavLink href="/about">{t('nav.about', 'Company')}</NavLink>
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
-          <motion.a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.18 }} style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.78rem', letterSpacing: '0.07em', padding: '0.38rem 0.72rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase', marginLeft: 'auto', flexShrink: 0, whiteSpace: 'nowrap' }}>
+          <motion.a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.18 }} style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.80rem', letterSpacing: '0.07em', padding: '0.38rem 0.72rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase', flexShrink: 0, whiteSpace: 'nowrap' }}>
             {t('nav.findMyFilter', 'FIND MY FILTER')}
           </motion.a>
         </nav>
@@ -135,7 +135,7 @@ function NavLink({ href, children, accent = false }: { href: string; children: R
   const [hovered, setHovered] = useState(false);
   return (
     <motion.div onHoverStart={() => setHovered(true)} onHoverEnd={() => setHovered(false)} style={{ position: 'relative', display: 'inline-block' }}>
-      <Link href={href} style={{ color: accent ? '#FFF12D' : (hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)'), textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '0.95rem', fontWeight: accent ? 700 : 600, letterSpacing: accent ? '0.04em' : '0.025em', transition: 'color 0.2s ease', display: 'block', paddingBottom: '3px' }}>{children}</Link>
+      <Link href={href} style={{ color: accent ? '#FFF12D' : (hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)'), textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '0.97rem', fontWeight: accent ? 700 : 600, letterSpacing: accent ? '0.04em' : '0.025em', transition: 'color 0.2s ease', display: 'block', paddingBottom: '3px' }}>{children}</Link>
       <motion.span animate={{ scaleX: hovered ? 1 : 0 }} transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }} style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '1px', background: '#FFF12D', transformOrigin: 'left', display: 'block' }} />
     </motion.div>
   );
