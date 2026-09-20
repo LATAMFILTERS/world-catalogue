@@ -10465,3 +10465,192 @@ IONVEXA™ — PREFERRED WORKING CANDIDATE / FORMAL CLEARANCE REQUIRED.
 
 All three branded family names remain preferred working candidates only.
 Formal trademark clearance remains required before external adoption or filing.
+
+
+## 47. Industrial & Process Commercial Technology Architecture v1 — CONSOLIDATED
+
+Status: COMMERCIAL TECHNOLOGY ARCHITECTURE CLOSED v1.
+Trademark legal clearance remains a separate downstream gate.
+
+Purpose:
+Consolidate the complete customer-facing hierarchy for Industrial & Process and verify hierarchy, naming collisions, over-branding, and internal consistency before declaring Architecture v1 closed.
+
+### 47.1 Canonical Hierarchy
+
+Industrial & Process
+→ Commercial Platform
+→ Branded Technology Family or Descriptive Family
+→ Descriptive Subfamily where needed
+→ Internal Technology Core
+→ Capability / Operating Envelope
+→ Product Configuration
+→ SKU / System
+
+Only Platform and selected Technology Family layers carry commercial marks in v1.
+
+### 47.2 Platform Board
+
+AEREMIS™ — Air Technologies
+PARTION™ — Dust & Fume Technologies
+COALVEX™ — Gas Conditioning Technologies
+FLUREXIS™ — Fluid Conditioning Technologies
+AQUVEXIS™ — Water Treatment Technologies
+
+### 47.3 Family Board
+
+AEREMIS™
+- General Air Filtration — descriptive — TC-AIR-01
+- HE-CRIVA™ — High-Efficiency / Critical Air Filtration — TC-AIR-02
+- MA-TREA™ — Molecular Air Treatment — TC-AIR-03
+
+PARTION™
+- FUMEXIS™ — Fine Dust & Fume Filtration — TC-DUST-01
+
+COALVEX™
+- COALERIS™ — Gas Coalescence — TC-NG-01
+- Gas-Liquid Separation — descriptive — TC-NG-02
+
+FLUREXIS™
+- HYDREXIS™ — Hydraulic Fluid Filtration — TC-HYD-01
+- LUBREXIS™ — Industrial Lubrication Filtration — TC-LUB-01
+- DEWATIS™ — Oil Dehydration & Water Removal — TC-OIL-01
+- VARREXIS™ — Oil Condition Remediation — TC-OIL-02
+
+AQUVEXIS™
+- Depth Filtration — descriptive — TC-WAT-01
+- CARBEXIS™ — Adsorptive Carbon Treatment — TC-WAT-03
+- MEMBREXIS™ — Membrane Separation — TC-WAT-04 / TC-WAT-05 / TC-WAT-06
+  - Reverse Osmosis — descriptive
+  - Ultrafiltration — descriptive
+  - Nanofiltration — descriptive
+- IONVEXA™ — Ion Exchange — TC-WAT-07
+- Electrodeionization — descriptive — TC-WAT-08
+
+### 47.4 Hierarchy Review
+
+No structural hierarchy conflict found.
+
+Validated separations:
+- Platforms group commercial families.
+- Families map to one or more validated Technology Cores.
+- Applications remain outside the Technology layer.
+- System architectures remain outside the Technology layer.
+- Capabilities remain outside the Technology layer.
+- RO / UF / NF remain separate internal cores but one branded customer-facing Membrane Separation family.
+- General Air, Gas-Liquid Separation, Depth Filtration, Electrodeionization, RO, UF, and NF remain descriptive.
+
+### 47.5 Naming-Similarity Review
+
+A material naming-pattern issue exists and is now explicitly governed:
+
+The suffix family "-EXIS" appears repeatedly across the current preferred marks:
+- FUMEXIS
+- HYDREXIS
+- LUBREXIS
+- CARBEXIS
+- MEMBREXIS
+
+and also in platform marks:
+- FLUREXIS
+- AQUVEXIS
+
+This repetition creates family resemblance, but excessive reuse can blur the distinction between:
+- platform vs family,
+- one mechanism vs another,
+- one commercial family vs another.
+
+Architecture v1 therefore adopts the following rule:
+
+- Existing preferred marks are preserved as WORKING COMMERCIAL MARKS.
+- The suffix "-EXIS" is NOT established as a mandatory naming system.
+- No additional Industrial & Process family mark may use "-EXIS" by default.
+- Before external rollout, each repeated "-EXIS" family mark must pass a final distinctiveness review against its parent platform and sibling families.
+- If confusion is found, the family mark is renamed without changing the architecture, Technology Core, or platform mapping.
+
+This prevents naming grammar from becoming a parallel hierarchy or overpowering technical meaning.
+
+### 47.6 Platform-vs-Family Collision Review
+
+Potentially confusing pairs:
+- FLUREXIS / HYDREXIS / LUBREXIS
+- AQUVEXIS / CARBEXIS / MEMBREXIS
+
+Decision:
+These are acceptable for INTERNAL v1 architecture because the hierarchy is explicit, but they are NOT frozen for packaging / external trademark filing until final visual / phonetic distinctiveness review.
+
+No equivalent concern exists for:
+- AEREMIS / HE-CRIVA / MA-TREA
+- PARTION / FUMEXIS
+- COALVEX / COALERIS
+- FLUREXIS / DEWATIS / VARREXIS
+- AQUVEXIS / IONVEXA
+
+### 47.7 Commercial Architecture Counts
+
+Platforms:
+5
+
+Branded technology families:
+11
+
+Descriptive families / subfamilies:
+7
+
+Internal validated Technology Cores:
+17
+
+Deferred valid cores:
+3
+
+Retired / reclassified cores:
+6
+
+### 47.8 Naming Status
+
+Platform names:
+APPROVED FOR INTERNAL BRAND ARCHITECTURE v1.
+
+Family names:
+APPROVED AS WORKING COMMERCIAL MARKS v1, subject to:
+- formal trademark clearance,
+- final visual / phonetic distinctiveness review,
+- packaging / catalogue hierarchy test,
+- no-confusion validation between parent platform and child family.
+
+Descriptive family names:
+APPROVED v1.
+
+### 47.9 Firewall
+
+Industrial & Process remains separate from existing On-Road / Off-Road technology names.
+
+No Industrial & Process platform or family may inherit, replace, or broaden:
+- MACROCORE™
+- MICROKAPPA™
+- DRYCORE™
+- INTEKCORE™
+- SYNTAPORE™
+- HYDROCORE™
+- TURBOCORE™
+- SYNTRAX™
+- NANOFORCE™
+- THERMACORE™
+- MARINECLEAN™
+- DURATECH™
+
+### 47.10 Closure
+
+Industrial & Process Commercial Technology Architecture v1:
+- Platform hierarchy — CLOSED
+- Family hierarchy — CLOSED
+- Descriptive subfamily hierarchy — CLOSED
+- Internal core mapping — CLOSED
+- Application / capability / system separation — CLOSED
+- Naming-similarity review — CLOSED
+- Over-branding review — CLOSED
+- Platform / family collision governance — DEFINED
+- Formal trademark clearance — PENDING
+- Final external visual / packaging hierarchy validation — PENDING
+
+Status:
+INDUSTRIAL & PROCESS COMMERCIAL TECHNOLOGY ARCHITECTURE v1 — CLOSED.
