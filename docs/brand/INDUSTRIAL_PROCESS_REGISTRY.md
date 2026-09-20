@@ -9088,3 +9088,179 @@ Commercial grouping:
 
 Status:
 COMMERCIAL TECHNOLOGY GROUPING CLOSED v1.
+
+
+## 30. Commercial Naming — Round 1
+
+Status: NAMING ARCHITECTURE DEFINED; CANDIDATE GENERATION OPEN; NO COMMERCIAL NAME APPROVED YET.
+
+Purpose:
+Begin commercial naming only after the 17 technical cores were consolidated into 5 commercial platforms and 15 visible technology families.
+
+### 30.1 Naming Strategy
+
+Decision:
+Do NOT create 17 unrelated trademarks.
+
+Preferred commercial model:
+- Keep the 5 platform labels as clear descriptive navigation categories.
+- Create branded technology names selectively at the family level where they create differentiation.
+- Permit one branded family to represent multiple validated internal cores when the customer-facing value proposition is coherent.
+- Preserve the internal Technology Core IDs beneath every branded family.
+
+Platform labels remain descriptive for now:
+1. Air Technologies
+2. Dust & Fume Technologies
+3. Gas Conditioning Technologies
+4. Fluid Conditioning Technologies
+5. Water Treatment Technologies
+
+These platform labels are not being submitted as trademarks in this phase.
+
+### 30.2 Naming Language
+
+Industrial & Process should have its own naming universe.
+
+Required characteristics:
+- technical / industrial
+- premium
+- globally pronounceable
+- short enough for filter labels and technical documentation
+- distinctive enough for trademark screening
+- mechanism-led rather than application-led
+- no reuse or semantic imitation of existing On-Road / Off-Road technology names
+
+Avoid:
+- generic combinations that describe the product directly
+- names already strongly associated with filtration competitors
+- names that sound too close to HYDROCORE™, SYNTRAX™, NANOFORCE™, etc.
+- obvious descriptive terms such as HEPA-TECH, GAS-FILTER, WATER-CORE
+- naming applications instead of mechanisms
+
+### 30.3 First-Pass Conflict Screening — Rejected / High-Risk Names
+
+The following candidate directions were screened and are NOT recommended:
+
+- DUSTLOCK
+  - active / historic filtration and dust-control use exists.
+  - REJECTED.
+
+- MEMBRION
+  - existing industrial wastewater / membrane treatment company.
+  - REJECTED.
+
+- AERIVON
+  - current US trademark registration exists and active commercial use also exists in air-purification.
+  - REJECTED.
+
+- AERISYN
+  - active commercial names / trademark activity exist.
+  - REJECTED.
+
+- LUBRION
+  - existing lubricant product family.
+  - REJECTED.
+
+- FLUXARA
+  - active technology / software brand.
+  - REJECTED.
+
+- AQUAVANTA
+  - active water / equipment / other commercial uses.
+  - REJECTED.
+
+- AQUASEL
+  - established water-treatment technology / company usage.
+  - REJECTED.
+
+- AQUORIS
+  - active water / wastewater engineering company.
+  - REJECTED.
+
+- IONEXA
+  - existing registered trademark / active commercial identity.
+  - REJECTED.
+
+- VENTRACORE
+  - live US trademark application exists.
+  - REJECTED.
+
+### 30.4 Working Naming System — First Direction
+
+A deliberately coined naming language using a shared '-LYX' phonetic ending is being tested because it:
+- creates family resemblance without copying the existing '-CORE' architecture;
+- separates Industrial & Process visually from On-Road / Off-Road;
+- supports compact trademark forms;
+- allows each platform / family to retain mechanism-specific roots.
+
+FIRST WORKING PLATFORM-NAME DIRECTION ONLY — NOT APPROVED:
+
+- AERELYX™ — Air technology naming universe
+- FUMELYX™ — Dust & Fume naming universe
+- COALELYX™ — Gas conditioning / coalescence naming universe
+- FLUIDELYX™ — Fluid conditioning naming universe
+- HYDRELYX™ — Water treatment naming universe
+
+Current screening status:
+- AERELYX: no industrial-filtration trademark conflict surfaced in the first broad web screen; unrelated gaming / fictional uses exist.
+- FUMELYX: no material conflict surfaced in first broad screen.
+- COALELYX: no material conflict surfaced in first broad screen.
+- FLUIDELYX: no material conflict surfaced in first broad screen.
+- HYDRELYX: no material conflict surfaced in first broad screen.
+
+Governance:
+Absence of a broad-web conflict is NOT legal clearance.
+USPTO / WIPO / relevant-market trademark screening is still required before approval.
+
+### 30.5 Family-Level Naming — Next Step
+
+The next naming block will create 2–3 candidate marks for each of the 15 commercial families:
+
+AIR:
+- General Air Filtration
+- High-Efficiency / Critical Air Filtration
+- Molecular Air Treatment
+
+DUST:
+- Fine Dust & Fume Filtration
+
+GAS:
+- Gas Coalescence
+- Gas-Liquid Separation
+
+FLUID:
+- Hydraulic Fluid Filtration
+- Industrial Lubrication Filtration
+- Oil Dehydration & Water Removal
+- Oil Condition Remediation
+
+WATER:
+- Depth Filtration
+- Adsorptive Carbon Treatment
+- Membrane Separation
+- Ion Exchange
+- Electrodeionization
+
+Each candidate must carry:
+- proposed mark
+- intended mechanism / family
+- rationale
+- phonetic / semantic risk
+- obvious competitor conflict check
+- broad web conflict check
+- trademark-search status
+- APPROVE / HOLD / REJECT state
+
+### 30.6 Approval Gate
+
+No name becomes an ELIMFILTERS technology until:
+1. technical family mapping is confirmed
+2. first-pass conflict screen is clean
+3. trademark database screen is completed
+4. no material conflict with existing ELIMFILTERS naming exists
+5. brand-governance approval is recorded
+6. TECHNOLOGY_REGISTRY.md is updated
+
+Status:
+COMMERCIAL NAMING ROUND 1 OPEN.
+NO INDUSTRIAL & PROCESS COMMERCIAL TECHNOLOGY NAME IS APPROVED YET.
