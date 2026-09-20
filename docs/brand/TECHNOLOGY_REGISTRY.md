@@ -120,3 +120,52 @@ Governance:
 - Existing On-Road / Off-Road marks remain in their governed scopes and are not reused in Industrial & Process.
 - Public knockout screening found no known material exact conflict for these five marks as of 2026-09-20.
 - Formal trademark filing / legal clearance remains pending before registration or reliance on exclusive rights.
+
+
+## Industrial & Process — Family Branding Architecture
+
+Status: APPROVED v1.
+
+The five approved Industrial & Process platform names remain:
+- AEREMIS™
+- PARTION™
+- COALVEX™
+- FLUREXIS™
+- AQUVEXIS™
+
+Only eleven customer-facing technology families currently require independent branded names:
+
+AEREMIS™:
+- High-Efficiency / Critical Air Filtration
+- Molecular Air Treatment
+
+PARTION™:
+- Fine Dust & Fume Filtration
+
+COALVEX™:
+- Gas Coalescence
+
+FLUREXIS™:
+- Hydraulic Fluid Filtration
+- Industrial Lubrication Filtration
+- Oil Dehydration & Water Removal
+- Oil Condition Remediation
+
+AQUVEXIS™:
+- Adsorptive Carbon Treatment
+- Membrane Separation
+- Ion Exchange
+
+The following remain descriptive and do not receive independent marks at this stage:
+- General Air Filtration
+- Gas-Liquid Separation
+- Depth Filtration
+- Electrodeionization
+- Reverse Osmosis
+- Ultrafiltration
+- Nanofiltration
+
+RO, UF, and NF remain distinct internal Technology Cores / subfamilies beneath the branded Membrane Separation family.
+
+Governance:
+Family marks do not replace internal Technology Core IDs. HERMES continues to use the technical core model for mechanism-level validation and product selection.
