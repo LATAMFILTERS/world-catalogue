@@ -9541,3 +9541,78 @@ Retain only as a user-selected working finalist.
 - Water Treatment → AQUVORA — USER-SELECTED / HOLD
 
 No mark is finally approved at this stage.
+
+
+## 36. Low-Risk Finalist Reset — Remove Known Conflicts
+
+User requirement:
+Do not carry forward platform names with known or material public-use conflict.
+
+Governance clarification:
+Absolute zero legal risk cannot be guaranteed by public-search screening alone. For ELIMFILTERS governance, "low-risk finalist" means:
+- no exact conflict found in broad public web search;
+- no exact indexed match found in USPTO/WIPO-focused searches;
+- no material filtration / fluid / water competitor use found;
+- no known active adjacent industrial use discovered in the screening;
+- still subject to formal legal trademark clearance before registration.
+
+### 36.1 Removed from Finalist Board
+
+FLUDEXA:
+REMOVED.
+Reason:
+High similarity to FLUDEXSA, an active industrial lubrication / oil-conditioning business.
+
+AQUVORA:
+REMOVED.
+Reason:
+Exact active public use exists in swim-care, maritime, and technology sectors.
+
+These names are no longer ELIMFILTERS finalists.
+
+### 36.2 Replacement Finalists
+
+Fluid Conditioning Technologies:
+FLUREXIS
+
+First-pass / focused screening:
+- no exact material public commercial conflict surfaced;
+- no exact indexed USPTO result surfaced in focused web search;
+- no exact indexed WIPO result surfaced in focused web search;
+- no filtration / lubrication / oil-conditioning competitor surfaced under the exact name.
+
+Status:
+LOW-RISK WORKING FINALIST / FORMAL CLEARANCE STILL REQUIRED.
+
+Water Treatment Technologies:
+AQUVEXIS
+
+First-pass / focused screening:
+- no exact material public commercial conflict surfaced;
+- no exact indexed USPTO result surfaced in focused web search;
+- no exact indexed WIPO result surfaced in focused web search;
+- no water-filtration / membrane / treatment competitor surfaced under the exact name.
+
+Status:
+LOW-RISK WORKING FINALIST / FORMAL CLEARANCE STILL REQUIRED.
+
+### 36.3 Five-Platform Finalist Board
+
+- Air Technologies → AEREMIS
+- Dust & Fume Technologies → PARTION
+- Gas Conditioning Technologies → COALVEX
+- Fluid Conditioning Technologies → FLUREXIS
+- Water Treatment Technologies → AQUVEXIS
+
+Current screening interpretation:
+- AEREMIS: no material filtration conflict found in broad / focused public screening.
+- PARTION: no material dust / filtration conflict found in broad / focused public screening.
+- COALVEX: no material gas / filtration conflict found; minor unrelated username / non-commercial web use exists.
+- FLUREXIS: no material exact conflict found.
+- AQUVEXIS: no material exact conflict found.
+
+No mark is legally cleared or registered by this document.
+Formal trademark clearance remains mandatory before adoption or filing.
+
+Status:
+LOW-RISK FIVE-PLATFORM NAMING BOARD ESTABLISHED v1.
