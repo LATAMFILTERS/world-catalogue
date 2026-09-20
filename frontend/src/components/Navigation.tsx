@@ -53,8 +53,8 @@ export function Navigation() {
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : 'none',
       }}
     >
-      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: 'clamp(0.65rem, 2.4vw, 1.4rem) clamp(0.65rem, 2vw, 1rem) clamp(0.5rem, 1.7vw, 0.9rem) clamp(1rem, 4vw, 2rem)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} role="banner">
-        <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }} style={{ marginLeft: 'calc(7vw - clamp(1rem, 4vw, 2rem) - 16px)', transform: 'translateY(-10px) scale(0.8568)', transformOrigin: 'bottom left' }}>
+      <div style={{ width: '100%', maxWidth: 'none', margin: 0, padding: 'clamp(0.65rem, 2.4vw, 1.4rem) 0.75rem clamp(0.5rem, 1.7vw, 0.9rem) clamp(1rem, 2vw, 1.75rem)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} role="banner">
+        <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }} style={{ marginLeft: 0, transform: 'translateY(-10px) scale(0.8568)', transformOrigin: 'bottom left', flexShrink: 0 }}>
           <Link href="/" aria-label="ELIMFILTERS — home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             {logoError ? (
               <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>ELIMFILTERS</span>
@@ -72,7 +72,7 @@ export function Navigation() {
           </Link>
         </motion.div>
 
-        <nav style={{ display: 'flex', alignItems: 'center', gap: 'clamp(1.25rem, 1.7vw, 2rem)', flex: 1, justifyContent: 'flex-end', minWidth: 0 }} className="hidden-mobile" aria-label="Main navigation">
+        <nav style={{ display: 'flex', alignItems: 'center', gap: 'clamp(1rem, 1.35vw, 1.65rem)', flex: 1, justifyContent: 'flex-end', minWidth: 0, marginLeft: 'clamp(1rem, 2vw, 2rem)' }} className="hidden-mobile" aria-label="Main navigation">
           <NavLink href="/industrial-process">Industrial & Process</NavLink>
           <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
@@ -81,7 +81,7 @@ export function Navigation() {
           <NavLink href="/about">{t('nav.about', 'Company')}</NavLink>
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
-          <motion.a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.18 }} style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.8rem', letterSpacing: '0.08em', padding: '0.48rem 0.95rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase', marginLeft: 'auto', flexShrink: 0, whiteSpace: 'nowrap' }}>
+          <motion.a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.18 }} style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.78rem', letterSpacing: '0.07em', padding: '0.38rem 0.72rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase', marginLeft: 'auto', flexShrink: 0, whiteSpace: 'nowrap' }}>
             {t('nav.findMyFilter', 'FIND MY FILTER')}
           </motion.a>
         </nav>
