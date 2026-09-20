@@ -7604,3 +7604,670 @@ CROSS-MANUFACTURER BENCHMARK CLOSED v1
 
 Next benchmark domain:
 Filtration Equipment & Systems
+
+
+## 26. Cross-Manufacturer Benchmark — Filtration Equipment & Systems CLOSED v1
+
+Status: CROSS-MANUFACTURER BENCHMARK CLOSED v1.
+
+Purpose:
+Complete the final Industrial & Process benchmark domain with a deep review of equipment, housings, skids, automatic cleaning, duplex/parallel architectures, monitoring, and packaged filtration systems after confirming that the REIKE category is technically empty.
+
+Benchmark manufacturers reviewed:
+- Eaton
+- Pall
+- Donaldson
+- Parker / HYDAC architecture carried forward where relevant to offline / hydraulic systems
+
+Evidence state:
+Manufacturer findings below are EXTERNAL_BENCHMARK.
+They define equipment architecture, engineering fields, system-selection logic, and validation requirements.
+No competitor design, pressure rating, code stamp, or performance value transfers to ELIMFILTERS without product-specific engineering validation.
+
+### 26.1 Eaton Benchmark Contribution
+
+Eaton's industrial filtration portfolio explicitly separates:
+- Automatic self-cleaning filters
+- Bag filter housings
+- Cartridge housings
+- Gas-liquid separators
+- Hydraulic and lubrication filters
+- Hydraulic contamination monitoring
+- Hydraulic filtration systems
+- Manual pipeline strainers
+- Measuring / testing devices
+- Sheet-filter systems
+- Stacked-disc cartridge housings
+
+Canonical impact:
+"Filtration Equipment & Systems" is confirmed as a multi-architecture SYSTEM LAYER rather than a Technology Core.
+
+#### Automatic Self-Cleaning
+
+Eaton identifies multiple distinct self-cleaning mechanisms:
+- tubular backwashing
+- mechanically cleaned filtration
+
+The DCF 3000 example confirms mechanically cleaned filtration can be applied to:
+- viscous liquids
+- abrasive liquids
+- sticky liquids
+- elevated-temperature service
+
+Canonical function:
+- Continuous / Low-Intervention Solids Removal
+
+Required fields:
+- cleaning mechanism
+- backwash / mechanical cleaning method
+- actuator type
+- trigger logic
+- purge volume
+- solids concentration in purge
+- minimum operating pressure
+- viscosity envelope
+- temperature envelope
+- abrasive / sticky duty
+- waste handling
+- cleaning cycle time
+
+Critical rule:
+"Self-cleaning" is not one technology. Backwashing, scraping / mechanical cleaning, and other self-cleaning methods must remain distinct system mechanisms.
+
+#### Continuous-Flow Architecture
+
+Eaton's self-cleaning product architecture confirms that continuous process flow and reduced operator intervention are system-level design goals.
+
+Canonical decision:
+PROCESS CONTINUITY REQUIREMENT
+→ Simplex
+→ Duplex / Changeover
+→ Parallel
+→ Automatic Self-Cleaning
+
+This must be solved before housing / element selection.
+
+### 26.2 Pall Benchmark Contribution
+
+#### Duplex / Parallel High-Flow Skids
+
+Pall's current high-flow rental skid architecture provides a strong equipment-level benchmark:
+- duplex vessels
+- one-duty / one-standby or parallel operation
+- fully valved / piped skid
+- dirty-side and clean-side vents / drains
+- local differential-pressure measurement
+- influent / effluent sample ports
+- pressure-vessel code basis
+- process-piping code basis
+- lifting / portability provisions
+- spill-containment skid frame
+
+Canonical impact:
+A packaged filtration skid must be modeled as more than vessels + filters.
+
+Required skid fields:
+- operating mode
+- vessel count
+- duty / standby logic
+- parallel operation
+- isolation valves
+- inlet / outlet manifolds
+- clean-side vent
+- dirty-side vent
+- drain architecture
+- PSV connection
+- sampling ports
+- local instrumentation
+- spill containment
+- lifting points
+- transport / forklift provisions
+- maintenance clearance
+- dry weight
+- operating / wet weight
+
+#### Pressure-Vessel / Piping Code Separation
+
+Pall's skid example separately identifies:
+- vessel code
+- piping code
+- pressure design
+- temperature design
+
+Canonical rule:
+A skid requires distinct engineering records for:
+1. filter element
+2. vessel
+3. process piping
+4. valving
+5. structural skid
+
+No single "pressure rating" field is sufficient.
+
+#### Rental / Temporary Filtration
+
+Pall maintains mobile / rental fleets for:
+- particulate removal
+- liquid/liquid coalescence
+- sour-water / hydrocarbon cleanup
+- caustic / hydrocarbon separation
+- temporary process treatment
+
+Canonical impact:
+TEMPORARY / RENTAL FILTRATION becomes a system deployment mode.
+
+New canonical field:
+DEPLOYMENT_MODE =
+- Permanent
+- Portable
+- Mobile Cart
+- Rental / Temporary
+- Commissioning / Turnaround
+
+This is not a Technology Core.
+
+#### Flow-Field Engineering
+
+Pall polymer systems document use of flow modeling to minimize:
+- pressure drop
+- stagnant / low-flow regions
+- uneven loading
+
+Canonical impact:
+Flow distribution inside housings and manifolds is a first-class equipment-design parameter.
+
+Required fields:
+- inlet distribution
+- element loading uniformity
+- dead-zone risk
+- manifold balancing
+- flow velocity
+- residence time where relevant
+- computational / hydraulic validation status
+
+### 26.3 Donaldson Benchmark Contribution
+
+#### Modular Liquid Skids
+
+Donaldson's current liquid filtration systems document:
+- modular point-of-use skids
+- configurable filtration stages
+- pre-mounted valves / pressure gauges
+- CIP connection
+- plug-and-play integration
+- parallel configuration
+- automated filling
+- automated venting
+- product recovery
+- process-parameter monitoring
+- automated flow changeover
+
+Canonical impact:
+Modularity and sanitation / cleaning architecture belong in the system model.
+
+Required fields:
+- number of stages
+- stage function
+- parallel redundancy
+- CIP capability
+- SIP capability
+- integrity-test capability
+- automated venting
+- automated filling
+- product-recovery logic
+- flow-changeover automation
+- turbidity monitoring where relevant
+- booster pump
+- sanitary construction
+
+#### High-Flow Skid Architecture
+
+Donaldson documents current High Flow Skids with:
+- horizontal or vertical installation configuration
+- reversible inlet / outlet options
+- flow / differential-pressure monitoring options
+- stainless hygienic construction
+- large-scale process-water / pre-RO service
+
+Canonical impact:
+Housing orientation and process integration are selection dimensions, not cosmetic attributes.
+
+Required fields:
+- horizontal / vertical architecture
+- connection orientation
+- reversible-flow capability
+- hygienic finish
+- surface roughness
+- material grade
+- cleanability
+- monitoring package
+- modular expansion capability
+
+#### Bulk-Fluid Carts / Kits
+
+Donaldson documents:
+- dispenser filtration kits
+- portable fuel carts
+- kidney-loop filtration
+- fluid transfer
+- water-absorbing stages
+- service indicators
+
+Canonical impact:
+Portable bulk-fluid filtration is a distinct EQUIPMENT CONFIGURATION.
+
+Required fields:
+- portable / fixed
+- pump type
+- AC / DC power
+- rated flow
+- hose length
+- inlet / outlet filtration stages
+- water-removal stage
+- service indicator
+- target cleanliness
+- tank-turnover capability
+
+### 26.4 System Architecture Classes
+
+Canonical equipment classes after cross-manufacturer review:
+
+1. Simplex Housing
+2. Duplex / Changeover Housing
+3. Parallel / Manifold Housing Bank
+4. Automatic Backwash Filter
+5. Mechanically Cleaned Filter
+6. Manual Pipeline Strainer
+7. Cartridge Housing
+8. Bag Housing
+9. Gas-Liquid Separator Vessel
+10. Hydraulic / Lube Filter Assembly
+11. Offline / Kidney-Loop Unit
+12. Portable Filter Cart
+13. Bulk-Fuel / Bulk-Lube Filtration Unit
+14. Modular Process Filtration Skid
+15. High-Flow Filtration Skid
+16. Coalescer / Separator Skid
+17. Sanitary / Sterile Filtration Skid
+18. Temporary / Rental Filtration Skid
+19. Monitoring / Instrumentation Package
+20. Integrated Filtration + Conditioning Package
+
+None of these are automatically Technology Cores.
+
+### 26.5 System Functional Layers
+
+Canonical packaged-system stack:
+
+PROCESS DUTY
+→ Pretreatment / Straining
+→ Primary Filtration / Separation
+→ Secondary / Polishing Stage
+→ Redundancy / Continuity Architecture
+→ Pumping / Flow Control
+→ Instrumentation / Monitoring
+→ Drain / Waste / Product Recovery
+→ Cleaning / CIP / Backwash
+→ Safety / Relief
+→ Automation / Controls
+→ Mechanical / Pressure-Vessel Design
+→ Structural / Installation Design
+
+HERMES must treat each layer independently.
+
+### 26.6 Instrumentation Architecture
+
+Minimum system instrumentation:
+- inlet pressure
+- outlet pressure
+- differential pressure
+- flow
+- temperature
+- liquid level where applicable
+- drain / valve status
+- filter-change alarm
+- pump status
+- motor status
+- cleaning-cycle state
+- high / low pressure alarm
+- flow alarm
+
+Advanced instrumentation:
+- particle count
+- water / moisture
+- turbidity
+- conductivity
+- pH
+- oil quality
+- gas / vapor monitoring
+- remote telemetry
+- event history
+- trend data
+
+Canonical rule:
+Instrumentation is a system-capability layer and must not be embedded invisibly inside product descriptions.
+
+### 26.7 Controls / Automation Architecture
+
+Canonical control modes:
+- Manual
+- Local Automatic
+- PLC Controlled
+- Remote / SCADA Integrated
+- Condition-Based
+
+Required fields:
+- control platform
+- I/O
+- alarm logic
+- interlocks
+- valve actuation
+- cleaning sequence
+- pump control
+- redundancy logic
+- automatic changeover
+- remote communications
+- historian / data logging
+- fail-safe state
+
+Automation capability is not a filtration technology.
+
+### 26.8 Cleaning / Maintenance Architecture
+
+System maintenance modes:
+- Disposable element changeout
+- Backwash
+- Mechanical cleaning
+- Pulse cleaning
+- CIP
+- SIP
+- Offline flush
+- Manual wash
+- Regeneration where applicable
+
+Required fields:
+- cleaning method
+- chemical cleaning
+- cleaning temperature
+- cleaning pressure
+- cleaning duration
+- rinse requirement
+- waste volume
+- downtime
+- cleaning validation
+- safe-access requirement
+
+Canonical rule:
+Filter media selection must be compatible with the intended cleaning / sanitation architecture.
+
+### 26.9 Continuous-Service / Availability Governance
+
+Criticality classification:
+- Non-Critical / Batch
+- Critical Intermittent
+- Continuous Duty
+- No-Interruption Duty
+
+HERMES architecture:
+Criticality
+→ Redundancy Requirement
+→ Simplex / Duplex / Parallel / Self-Cleaning
+→ Isolation / Changeover Method
+→ Maintenance Strategy
+
+Availability fields:
+- required uptime
+- permissible downtime
+- redundancy class
+- N+1 requirement
+- online serviceability
+- bypass policy
+- spare vessel / spare pump
+- changeover time
+
+### 26.10 Mechanical / Code Governance
+
+Required equipment-design layers:
+- filter-element rating
+- housing rating
+- vessel design code
+- piping code
+- valve class
+- structural skid design
+- lifting design
+- relief-system design
+
+Canonical fields:
+- MAWP
+- design pressure
+- test pressure
+- design temperature
+- MDMT where relevant
+- corrosion allowance
+- material specification
+- flange / connection class
+- vessel code
+- piping code
+- NACE / sour-service requirement where applicable
+- sanitary / hygienic requirement
+- hazardous-area requirement
+- relief-device basis
+- weld / NDE requirement
+- surface finish
+- drainability
+
+Critical rule:
+Competitor code compliance must never be inherited by an ELIMFILTERS system.
+
+### 26.11 Hydraulic / Process Performance Governance
+
+System pressure drop must be decomposed:
+
+TOTAL SYSTEM ΔP =
+- inlet piping
+- valves
+- housing
+- clean element
+- loaded element
+- outlet piping
+- optional treatment stages
+
+Required performance fields:
+- rated flow
+- minimum flow
+- maximum flow
+- clean system ΔP
+- terminal system ΔP
+- viscosity
+- density
+- operating temperature
+- turndown
+- parallel flow balance
+- pump head
+- NPSH where pumping applies
+
+Canonical rule:
+Element ΔP and total skid ΔP are separate values.
+
+### 26.12 Sampling / Validation Architecture
+
+Pall's skid architecture reinforces integrated upstream / downstream sampling.
+
+Canonical sample points:
+- untreated inlet
+- post-prefilter
+- post-main filter
+- post-polisher
+- final outlet
+- drain / waste where useful
+
+Required fields:
+- sample port location
+- sample method
+- test parameter
+- baseline value
+- outlet value
+- acceptance criterion
+- timestamp
+
+This supports evidence-based commissioning and HERMES validation.
+
+### 26.13 Life-Cycle / Maintainability Layer
+
+Cross-manufacturer architecture shows total value depends on more than purchase price.
+
+Canonical life-cycle fields:
+- filter consumption
+- cleaning frequency
+- compressed-air consumption
+- backwash water
+- CIP chemical consumption
+- pump energy
+- fan energy
+- downtime
+- maintenance labor
+- waste volume
+- lost product
+- disposal cost
+- spare parts
+- service interval
+- expected equipment life
+
+HERMES can later optimize:
+Technical Compliance
++ Reliability
++ Energy
++ Maintenance
++ Waste
++ Total Cost of Ownership
+
+### 26.14 Technology-Core Impact
+
+Filtration Equipment & Systems creates NO new fundamental media Technology Core.
+
+Confirmed system-level mechanisms / architectures:
+- Duplex / Changeover
+- Parallel / Manifold
+- Automatic Backwash
+- Mechanical Self-Cleaning
+- Offline / Kidney Loop
+- Portable Cart
+- Modular Skid
+- High-Flow Skid
+- Coalescer / Separator Skid
+- Sanitary / Sterile Skid
+- Rental / Temporary Deployment
+- Monitoring / Condition-Based Control
+
+These consume existing mechanism cores.
+
+Potential future system-branding opportunities may exist, but commercial system brands must remain separate from filtration Technology Core naming.
+
+### 26.15 Canonical Data-Model Enrichment
+
+Add / confirm:
+- Equipment Class
+- Deployment Mode
+- Criticality
+- Availability Requirement
+- Redundancy Class
+- Vessel Count
+- Stage Count
+- Operating Mode
+- Parallel Mode
+- Changeover Logic
+- Cleaning Mechanism
+- CIP / SIP
+- Sampling Ports
+- Product Recovery
+- Drain / Waste Route
+- Spill Containment
+- Automation Level
+- Control Platform
+- Remote Connectivity
+- Instrumentation Package
+- Vessel Code
+- Piping Code
+- Valve Class
+- MAWP
+- Design Temperature
+- MDMT
+- Corrosion Allowance
+- Surface Finish
+- Flow Distribution
+- Clean System ΔP
+- Terminal System ΔP
+- Pump Head
+- Energy Use
+- Maintenance Labor
+- Waste Volume
+- Total Cost of Ownership
+- Commissioning Evidence
+
+### 26.16 Open Product-Level Work
+
+Still open:
+- ELIMFILTERS standard housing platform
+- duplex valve / changeover platform
+- self-cleaning filter platform
+- bag / cartridge housing portfolio
+- high-flow housing platform
+- skid frame standards
+- pump / valve / instrumentation vendor stack
+- PLC / controls standard
+- sanitary-skid strategy
+- ASME / PED / regional code strategy
+- hazardous-area strategy
+- rental / temporary fleet strategy
+- digital monitoring implementation
+- OEM / competitor system mapping
+- engineering calculation templates
+- canonical equipment SKUs
+
+These do not block architectural closure.
+
+### 26.17 Closure
+
+Filtration Equipment & Systems Cross-Manufacturer Benchmark:
+- Eaton benchmark: COMPLETE v1
+- Pall benchmark: COMPLETE v1
+- Donaldson benchmark: COMPLETE v1
+- Offline / hydraulic equipment architecture: CONSOLIDATED v1
+- Continuous-service architecture: COMPLETE v1
+- Automatic-cleaning architecture: COMPLETE v1
+- Packaged-skid architecture: COMPLETE v1
+- Instrumentation / automation architecture: COMPLETE v1
+- Mechanical / code governance: COMPLETE v1
+- Life-cycle / maintainability architecture: COMPLETE v1
+- Technology-core impact assessment: COMPLETE v1
+- Product-specific engineering: OPEN
+- Commercial technology naming: BLOCKED pending cross-domain consolidation
+
+Status:
+CROSS-MANUFACTURER BENCHMARK CLOSED v1
+
+## 27. Cross-Manufacturer Benchmark — Global Closure v1
+
+All six Industrial & Process benchmark domains are now closed at architecture level:
+
+- Air / Cleanroom / Semiconductor — CLOSED v1
+- Industrial Dust / Welding / Laser / Additive Manufacturing — CLOSED v1
+- Gas / Natural Gas — CLOSED v1
+- Hydraulic / Lubrication / Power Generation — CLOSED v1
+- Industrial Water — CLOSED v1
+- Filtration Equipment & Systems — CLOSED v1
+
+Global benchmark state:
+- REIKE source-family discovery: COMPLETE
+- Cross-manufacturer enrichment: COMPLETE v1
+- Canonical mechanism discovery: COMPLETE v1
+- Canonical system-architecture discovery: COMPLETE v1
+- Safety / compliance dimensions: DEFINED v1
+- Monitoring / condition-data layer: DEFINED v1
+- HERMES canonical input dimensions: DEFINED v1
+- Product-specific validation: OPEN
+- Technology Core cross-domain consolidation: READY
+- Commercial Technology naming: STILL BLOCKED until core consolidation is complete
+
+Next phase:
+Cross-domain Technology Core consolidation and naming-gate review.
