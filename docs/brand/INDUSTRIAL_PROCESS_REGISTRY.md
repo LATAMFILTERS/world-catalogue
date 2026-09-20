@@ -5739,3 +5739,461 @@ CROSS-MANUFACTURER BENCHMARK CLOSED v1
 
 Next benchmark domain:
 Gas / Natural Gas
+
+
+## 23. Cross-Manufacturer Benchmark — Gas / Natural Gas CLOSED v1
+
+Status: CROSS-MANUFACTURER BENCHMARK CLOSED v1.
+
+Purpose:
+Validate and enrich the Gas & Natural Gas architecture after confirming that the current REIKE family pages are effectively empty at technical-detail level.
+
+Primary source-family state:
+REIKE exposes six Gas & Natural Gas families:
+1. Gas Coalescing Filters
+2. Gas-Liquid Separation Filters
+3. City Gate Station Filters
+4. Pipeline Gas Filters
+5. Fuel Gas Filters for Gas Turbines
+6. Oilfield & Industrial Gas Filters
+
+REIKE currently provides family names and generic supplier claims but no usable product-level technical data for these pages.
+
+Benchmark manufacturers reviewed:
+- Pall
+- Parker PECO
+- Eaton
+
+Evidence state:
+All manufacturer findings below are EXTERNAL_BENCHMARK and define engineering architecture, required data fields, and mechanism boundaries. They do not establish ELIMFILTERS product performance.
+
+### 23.1 Pall Benchmark Contribution
+
+#### Coalescence vs Bulk Separation
+
+Pall explicitly distinguishes:
+- bulk liquid separation
+- liquid/gas coalescence for fine aerosols
+
+Canonical interpretation:
+- Bulk liquid separation removes larger droplets / slugs.
+- Coalescence targets fine liquid aerosols that remain entrained after gravity / centrifugal separation.
+
+This confirms:
+- TC-NG-01 — Gas-Liquid Coalescence
+- TC-NG-02 — Gas-Liquid Separation
+
+as physically distinct mechanism domains.
+
+#### Coalescer Operating Variables
+
+Pall identifies separation performance as dependent on:
+- gas velocity
+- droplet-size distribution
+- operating pressure
+- liquid loading
+- system design
+- drainage / re-entrainment behavior
+
+Canonical impact:
+Gas coalescer selection must not be based only on nominal micron rating.
+
+Required fields:
+- Gas composition
+- Gas molecular weight / density
+- Flow
+- Operating / design pressure
+- Temperature
+- Liquid loading
+- Aerosol droplet-size distribution
+- Surface tension where relevant
+- Solid contamination loading
+- Coalescer orientation
+- Drainage design
+- Re-entrainment limit
+- Clean ΔP
+- Terminal ΔP
+- Outlet liquid target
+
+#### Fuel-Gas Treatment
+
+Pall's gas-turbine fuel treatment combines:
+- particulate filtration
+- liquid aerosol coalescence
+
+Canonical impact:
+Fuel Gas Conditioning remains a SYSTEM / APPLICATION architecture that consumes multiple cores rather than becoming a single Technology Core.
+
+Typical contamination classes:
+- solids
+- liquid hydrocarbons
+- water / moisture
+- aerosols
+- gels / process carryover
+
+### 23.2 Parker PECO Benchmark Contribution
+
+#### Vertical Gas Coalescers
+
+Parker PECO Series 77V architecture documents:
+- vertical reverse-flow coalescence
+- free-liquid knockout section
+- aerosol / mist coalescence
+- compressor discharge lube-oil recovery
+- compressor fuel gas
+- molecular-sieve protection
+- turbine fuel gas
+
+Canonical impact:
+A gas coalescer vessel can include BOTH:
+- bulk knockout
+- fine coalescence
+
+Therefore element function and vessel function must be modeled separately.
+
+Required vessel fields:
+- Vessel orientation
+- Free-liquid knockout stage
+- Stilling / flow-distribution stage
+- Coalescer element stage
+- Drain configuration
+- Liquid-holdup capacity
+- Quick-opening closure
+- Design code
+- Pressure class
+
+#### Gas Filter-Separators
+
+Parker Series 85 / PEACH DynaSep and related filter-separator architecture show:
+- combined solids removal
+- liquid separation
+- natural-gas / compressor-fuel-gas service
+- code-stamped vessels
+
+Canonical impact:
+Gas filter-separator is a SYSTEM CONFIGURATION:
+Particulate Filtration
++ Bulk Separation
++ Coalescence / Fine Separation where fitted
+
+It is not a new technology core.
+
+#### Application-Point Architecture
+
+Parker documents coalescing / filter-coalescing applications at:
+- compressor inlet
+- compressor outlet
+- fuel gas
+- molecular-sieve protection
+- amine-system protection
+- refinery / process gas
+- turbine fuel gas
+
+Canonical impact:
+Application point is a first-class HERMES dimension.
+
+Required field:
+GAS_TREATMENT_POSITION
+
+Values may include:
+- Upstream Production
+- Compressor Inlet
+- Compressor Outlet
+- Fuel Gas
+- Amine Protection
+- Molecular-Sieve Protection
+- Metering
+- City Gate
+- Turbine Fuel Gas
+- Pipeline
+- Storage Injection / Withdrawal
+- Process-Gas Polishing
+
+### 23.3 Eaton Benchmark Contribution
+
+#### Two-Stage Separator / Filter Architecture
+
+Eaton Type TF documents a two-stage gas/liquid separator:
+- centrifugal first-stage removal of slugs / heavy liquid loads
+- downstream fine filter stage for remaining droplets / solids
+
+Eaton Type CLC similarly separates:
+- centrifugal bulk removal
+- secondary coalescing-pad removal of finer droplets
+
+Canonical impact:
+Multi-stage gas conditioning is confirmed as a system architecture, not a single-element function.
+
+Canonical stages:
+1. Knockout / centrifugal pre-separation
+2. Fine particulate filtration where required
+3. Coalescence
+4. Final separation / drainage
+
+#### Code / Vessel Layer
+
+Eaton gas-separation equipment includes pressure-vessel construction, material choice, ASME code options, and pressure-class variants.
+
+Canonical impact:
+Mechanical vessel qualification is independent from element separation performance.
+
+Required fields:
+- Vessel material
+- Design code
+- Code stamp
+- Design pressure
+- MAWP
+- Design temperature
+- Corrosion allowance
+- Connection class
+- Closure type
+- Drain / level-control architecture
+
+### 23.4 City Gate / Pipeline Architecture Enrichment
+
+Cross-manufacturer evidence supports the following canonical structure for city-gate and pipeline applications:
+
+Pipeline / Transmission Gas
+→ Bulk Liquid / Slug Removal
+→ Solids Removal
+→ Fine Aerosol Coalescence where required
+→ Pressure Regulation / Metering
+→ Downstream Protection
+
+City Gate is therefore an APPLICATION / STATION context.
+
+Pipeline Gas Filter is likewise an APPLICATION / PRODUCT POSITION, not a unique filtration mechanism.
+
+Required HERMES fields:
+- Pipeline service
+- Gas composition
+- Upstream pigging exposure
+- Slug risk
+- Solids loading
+- Corrosion-product loading
+- Condensate loading
+- Regulator / meter protection requirement
+- Maximum allowable ΔP
+- Pressure class
+- Station layout
+
+### 23.5 Compressor Protection Architecture
+
+Cross-manufacturer consensus:
+Compressors require protection from:
+- fine liquid aerosols
+- lube-oil carryover
+- solids
+- process-liquid entrainment
+
+Canonical distinction:
+- Compressor Inlet Protection
+- Compressor Discharge Oil-Mist Recovery
+- Fuel-Gas Protection for Engine / Turbine Drives
+
+These are separate applications even where the same coalescing mechanism is reused.
+
+Required fields:
+- Compressor type
+- Inlet / outlet position
+- Lube-oil carryover risk
+- Aerosol load
+- Liquid chemistry
+- Fouling sensitivity
+- downstream equipment
+- gas velocity
+
+### 23.6 Molecular-Sieve / Adsorbent Protection
+
+Parker explicitly documents gas filter-coalescers upstream of molecular-sieve beds to prevent oil / solid carryover.
+
+Canonical impact:
+Protecting adsorbent beds is a distinct application branch:
+Gas Pretreatment
+→ Aerosol / Liquid Removal
+→ Particulate Removal
+→ Molecular Sieve / Adsorbent Bed
+
+HERMES should store:
+- downstream adsorbent type
+- fouling sensitivity
+- oil carryover limit
+- solid carryover limit
+- required outlet liquid target
+
+### 23.7 Re-Entrainment / Drainage as First-Class Variables
+
+Pall explicitly identifies drainage and re-entrainment as key factors in gas/liquid separation performance.
+
+Canonical impact:
+A coalescer record requires more than efficiency.
+
+Required fields:
+- drainage path
+- liquid-holdup geometry
+- orientation
+- re-entrainment threshold
+- maximum face / superficial gas velocity
+- liquid load capacity
+- drain connection
+- level-control requirement
+
+### 23.8 Performance-Metric Governance
+
+Canonical gas-performance metrics:
+- particulate efficiency
+- liquid aerosol removal efficiency
+- droplet-size basis
+- outlet liquid concentration / carryover
+- clean ΔP
+- terminal ΔP
+- gas flow
+- operating pressure
+- operating temperature
+- liquid loading
+- solids loading
+
+Rules:
+- "0.3 µm" may refer to droplet or particle challenge depending product / test method.
+- Never normalize a source micron value without knowing contaminant phase and test basis.
+- Efficiency must preserve the source test method and challenge condition.
+- Vessel working pressure is independent from element differential-pressure capability.
+
+### 23.9 Mechanical / Pressure-Vessel Governance
+
+Gas systems require explicit separation between:
+- element performance
+- vessel mechanical design
+- piping / connection design
+- pressure-relief / drainage systems
+
+Canonical mechanical fields:
+- Design code
+- ASME / PED / other code basis
+- MAWP
+- Hydrotest / test pressure
+- Design temperature
+- Corrosion allowance
+- Material
+- Closure
+- Nozzle / connection class
+- Relief-device requirement
+- Liquid level instrumentation
+- Drain / blowdown
+
+No benchmark manufacturer's code stamp may be inherited by ELIMFILTERS.
+
+### 23.10 Condition Monitoring / Instrumentation
+
+Canonical instrumentation:
+- inlet pressure
+- outlet pressure
+- differential pressure
+- liquid level
+- drain status
+- temperature
+- flow
+- high-high liquid alarm
+- automatic drain state
+- filter change / ΔP alarm
+
+Advanced systems may include remote monitoring, but this remains a system capability rather than a Technology Core.
+
+### 23.11 Cross-Manufacturer Consensus
+
+Strong agreement across Pall, Parker PECO, and Eaton:
+
+1. Bulk separation and fine coalescence are distinct physical functions.
+2. Multi-stage gas treatment is often required.
+3. Gas velocity, droplet size, liquid load, pressure, temperature, and drainage strongly affect separation performance.
+4. Application point matters: compressor inlet, outlet, city gate, pipeline, adsorbent protection, and turbine fuel gas are not interchangeable contexts.
+5. Vessel architecture and element architecture must remain separate.
+6. Particulate filtration and liquid-aerosol removal may coexist in one vessel without becoming one mechanism.
+7. Pressure-vessel code / MAWP is not filter-element collapse capability.
+8. Drainage and re-entrainment deserve explicit canonical fields.
+
+### 23.12 Technology-Core Impact
+
+TC-NG-01 — Gas-Liquid Coalescence
+- CONFIRMED as distinct mechanism core.
+
+TC-NG-02 — Gas-Liquid Separation
+- CONFIRMED as distinct mechanism core.
+
+TC-NG-03 — High-Pressure Gas Particulate Filtration
+- REMAINS a CAPABILITY / PARTICULATE-DUTY CORE candidate, not automatically a commercial technology.
+- External benchmark confirms particulate filtration as a separate function, but high pressure itself is an operating envelope.
+
+TC-NG-04 — Integrated Gas Conditioning
+- CONFIRMED as SYSTEM ARCHITECTURE.
+- MUST NOT become a standalone filtration technology merely because multiple stages are packaged together.
+
+No additional fundamental gas-separation Technology Core is justified by this benchmark.
+
+### 23.13 Canonical Data-Model Enrichment
+
+Add / confirm:
+- Gas Composition
+- Gas Molecular Weight / Density
+- Gas Treatment Position
+- Liquid Phase Type
+- Liquid Loading
+- Droplet-Size Distribution
+- Solids Loading
+- Surface Tension where relevant
+- Superficial Gas Velocity
+- Vessel Orientation
+- Knockout Stage
+- Coalescer Stage
+- Separator Stage
+- Drainage Path
+- Re-Entrainment Limit
+- Liquid-Holdup Capacity
+- Outlet Liquid Target
+- Molecular-Sieve / Adsorbent Protection
+- Compressor Position
+- Lube-Oil Carryover Risk
+- Design Code
+- MAWP
+- Design Temperature
+- Corrosion Allowance
+- Pressure Class
+- Liquid-Level Instrumentation
+- Drain / Blowdown Architecture
+
+### 23.14 Open Product-Level Work
+
+Still open:
+- exact ELIMFILTERS coalescing media platform
+- product-specific aerosol-efficiency curves
+- liquid load capacity
+- re-entrainment limits
+- verified pressure-drop curves
+- pressure-vessel designs
+- code-stamp / certification strategy
+- exact gas compatibility
+- element / vessel OEM cross mapping
+- City Gate / pipeline product configuration
+- turbine-fuel-gas validated performance
+- oilfield / industrial-gas detailed product taxonomy
+
+These do not block architectural closure.
+
+### 23.15 Closure
+
+Gas / Natural Gas Cross-Manufacturer Benchmark:
+- Pall benchmark: COMPLETE v1
+- Parker PECO benchmark: COMPLETE v1
+- Eaton benchmark: COMPLETE v1
+- Cross-manufacturer consensus: COMPLETE v1
+- Mechanical / pressure-vessel governance: COMPLETE v1
+- Canonical data-model enrichment: COMPLETE v1
+- Technology-core impact assessment: COMPLETE v1
+- Product-specific validation: OPEN
+- Commercial technology naming: BLOCKED until remaining benchmark domains are closed
+
+Status:
+CROSS-MANUFACTURER BENCHMARK CLOSED v1
+
+Next benchmark domain:
+Hydraulic / Lubrication / Power Generation
