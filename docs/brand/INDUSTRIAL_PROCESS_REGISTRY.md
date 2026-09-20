@@ -9986,3 +9986,47 @@ AEREMIS™ commercial family architecture:
 - SORBEXIS™ — Molecular Air Treatment
 
 No other AEREMIS family mark is created in this round.
+
+
+## 40. AEREMIS™ Family Naming — User Revision
+
+User-selected replacements:
+- HE-CRAF™ — High-Efficiency / Critical Air Filtration
+- MA-TREA™ — Molecular Air Treatment
+
+### HE-CRAF™
+
+Status:
+HOLD / TECHNICAL-CONFUSION RISK.
+
+Public technical screening:
+- CRAF is already an established acronym in air-filtration engineering for Control Room Area Filtration systems in nuclear-facility technical documentation.
+- The existing CRAF usage explicitly refers to redundant high-efficiency air-filtration subsystems serving protected control-room environments.
+
+Risk:
+HE-CRAF is not an exact known trademark conflict from the current public search, but it can be read as a variant of an already-established air-filtration acronym in a critical-air context.
+
+Decision:
+Do not approve HE-CRAF as the final family mark without resolving this technical-confusion issue.
+Record as USER-SELECTED WORKING CANDIDATE / HOLD.
+
+### MA-TREA™
+
+Status:
+PREFERRED WORKING CANDIDATE / DEEP CLEARANCE REQUIRED.
+
+Public screening:
+- no exact material commercial or filtration-sector conflict surfaced for MA-TREA;
+- no exact trademark result surfaced in the public knockout search performed;
+- the separate string TREA appears in unrelated contexts, but no molecular-air-treatment conflict was identified.
+
+Decision:
+Retain MA-TREA as the preferred user-selected candidate for Molecular Air Treatment, subject to formal clearance.
+
+### AEREMIS™ family state
+
+- General Air Filtration — descriptive
+- High-Efficiency / Critical Air Filtration — HE-CRAF™ — HOLD
+- Molecular Air Treatment — MA-TREA™ — PREFERRED WORKING CANDIDATE
+
+Previous working marks CRITENZA™ and SORBEXIS™ are superseded as active preferences but retained in history.
