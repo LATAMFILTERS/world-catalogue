@@ -10121,3 +10121,77 @@ AEREMIS™ current state:
 - MA-TREA™ — Molecular Air Treatment — preferred working candidate
 
 Formal trademark clearance remains required before final approval.
+
+
+## 43. PARTION™ Family Naming — Fine Dust & Fume Filtration
+
+Status: WORKING SHORTLIST. No mark approved.
+
+Platform:
+PARTION™ — Dust & Fume Technologies
+
+Commercial family:
+Fine Dust & Fume Filtration
+
+Internal mapping:
+- TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+
+### Candidate Set
+
+1. FUMEXIS™
+   - Concept: fume + technical coined suffix.
+   - Broad public search: no exact material commercial result surfaced.
+   - No exact filtration / dust-collection competitor surfaced.
+   - Status: PREFERRED WORKING CANDIDATE.
+
+2. PARTIVEX™
+   - Concept: particle control + technical coined suffix.
+   - Broad public search: no exact material filtration-sector conflict surfaced.
+   - Status: STRONG SECONDARY CANDIDATE.
+
+3. FUMEVRA™
+   - Concept: fume capture / control.
+   - Broad public search: no exact material filtration-sector conflict surfaced.
+   - Status: WORKING CANDIDATE.
+
+4. DUSTVEX™
+   - Concept: dust control.
+   - Public exact-name use exists in recorded music / entertainment.
+   - No industrial-filtration conflict surfaced, but exact active public use reduces distinctiveness.
+   - Status: HOLD / NOT PREFERRED.
+
+5. FUMERON™
+   - Existing surname / common-word usage in French and unrelated contexts.
+   - Search noise is high and semantic control is poor.
+   - Status: REJECT.
+
+### Exclusions
+
+- PARTEXA™ — rejected due active automotive-parts commercial use.
+- DUSTEXA™ — rejected due existing DAF paint / color usage and historical public use.
+- AEROFUME™ — rejected because AEROFUME is an established air-care brand and registered mark in multiple jurisdictions.
+
+### Preferred Direction
+
+Current preferred candidate:
+FUMEXIS™
+
+Reason:
+- directly signals fume without being purely descriptive;
+- broad enough for welding fume, laser dust, additive-manufacturing powder, and fine process dust;
+- does not lock the family to nanofiber, ePTFE, or one media implementation;
+- first public knockout screen found no material exact sector conflict.
+
+PARTION™ current family architecture:
+- FUMEXIS™ — Fine Dust & Fume Filtration — preferred working candidate
+
+Capabilities remain unbranded:
+- Nanofiber / Fine-Fiber Media
+- ePTFE / PTFE Surface Media
+- Anti-Static
+- Flame-Retardant
+- High-Temperature
+- Pulse-Cleanable
+- Oil / Aerosol Tolerance
+
+Formal trademark clearance remains required before final approval.
