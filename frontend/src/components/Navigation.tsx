@@ -73,11 +73,11 @@ export function Navigation() {
         </motion.div>
 
         <nav style={{ display: 'flex', alignItems: 'center', gap: 'clamp(1rem, 1.35vw, 1.65rem)', flex: 1, justifyContent: 'flex-end', minWidth: 0, marginLeft: 'clamp(1rem, 2vw, 2rem)' }} className="hidden-mobile" aria-label="Main navigation">
-          <NavLink href="/industrial-process">Industrial & Process</NavLink>
           <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
           <NavLink href="/knowledge-center/">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
+          <NavLink href="/industrial-process" accent>Industrial & Process</NavLink>
           <NavLink href="/about">{t('nav.about', 'Company')}</NavLink>
           <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
 
@@ -100,16 +100,16 @@ export function Navigation() {
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }} style={{ overflow: 'hidden', background: 'rgba(0,0,0,0.98)', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }} style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               {[
-                { href: '/industrial-process', label: 'Industrial & Process' },
                 { href: '/industries', label: t('nav.industries', 'Industries') },
                 { href: '/systems', label: t('nav.systems', 'Systems') },
                 { href: '/technologies', label: t('nav.technologies', 'Technologies') },
                 { href: '/knowledge-center/', label: t('nav.knowledge', 'Knowledge') },
+                { href: '/industrial-process', label: 'Industrial & Process', accent: true },
                 { href: '/about', label: t('nav.about', 'Company') },
                 { href: '/contact', label: t('nav.contact', 'Contact') },
               ].map((item) => (
                 <motion.div key={item.href} variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
-                  <Link href={item.href} style={mobileLinkStyle} onClick={() => setMenuOpen(false)}>{item.label}</Link>
+                  <Link href={item.href} style={{ ...mobileLinkStyle, ...(item.accent ? { color: '#FFF12D', fontWeight: 700 } : {}) }} onClick={() => setMenuOpen(false)}>{item.label}</Link>
                 </motion.div>
               ))}
               <motion.div variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
@@ -131,11 +131,11 @@ export function Navigation() {
   );
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({ href, children, accent = false }: { href: string; children: React.ReactNode; accent?: boolean }) {
   const [hovered, setHovered] = useState(false);
   return (
     <motion.div onHoverStart={() => setHovered(true)} onHoverEnd={() => setHovered(false)} style={{ position: 'relative', display: 'inline-block' }}>
-      <Link href={href} style={{ color: hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)', textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '0.95rem', fontWeight: 600, letterSpacing: '0.025em', transition: 'color 0.2s ease', display: 'block', paddingBottom: '3px' }}>{children}</Link>
+      <Link href={href} style={{ color: accent ? '#FFF12D' : (hovered ? '#FFF12D' : 'rgba(255,255,255,0.75)'), textDecoration: 'none', fontFamily: HEADER_DISPLAY_FONT, fontSize: '0.95rem', fontWeight: accent ? 700 : 600, letterSpacing: accent ? '0.04em' : '0.025em', transition: 'color 0.2s ease', display: 'block', paddingBottom: '3px' }}>{children}</Link>
       <motion.span animate={{ scaleX: hovered ? 1 : 0 }} transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }} style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '1px', background: '#FFF12D', transformOrigin: 'left', display: 'block' }} />
     </motion.div>
   );
