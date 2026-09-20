@@ -10195,3 +10195,70 @@ Capabilities remain unbranded:
 - Oil / Aerosol Tolerance
 
 Formal trademark clearance remains required before final approval.
+
+
+## 44. COALVEX™ Family Naming — Gas Coalescence
+
+Status: WORKING SHORTLIST. No family mark finally approved.
+
+Platform:
+COALVEX™ — Gas Conditioning Technologies
+
+Commercial family:
+Gas Coalescence
+
+Internal mapping:
+- TC-NG-01 — Gas-Liquid Coalescence
+
+### Candidate Set
+
+1. COALERIS™
+   - Concept: derived from coalescence / coalescing action without copying the generic word directly.
+   - Broad public search: no exact gas-filtration / coalescer commercial conflict surfaced.
+   - Exact-search noise is limited mainly to Latin lexical forms, not industrial filtration.
+   - Status: PREFERRED WORKING CANDIDATE.
+
+2. COALEXIS™
+   - Concept: coalescence + technical coined suffix.
+   - Broad public search: no exact material filtration-sector conflict surfaced.
+   - Status: STRONG SECONDARY CANDIDATE.
+
+3. COALVIA™
+   - Concept: gas-flow path through coalescing treatment.
+   - Broad public search surfaced historical company-name use unrelated to filtration.
+   - Status: HOLD / NOT PREFERRED.
+
+4. COALENZA™
+   - Concept: coalescence + engineered separation.
+   - Public company-name use exists historically in Spain.
+   - Status: REJECT / NOT PREFERRED.
+
+5. COALIS™
+   - Existing active company / investment usage and broader public use.
+   - Status: REJECT.
+
+### Preferred Direction
+
+Current preferred candidate:
+COALERIS™
+
+Reason:
+- directly evokes coalescence while remaining coined;
+- broad enough for compressor, pipeline, city-gate, turbine-fuel-gas, and process-gas duties;
+- does not lock the family to one vessel design or media implementation;
+- first public knockout screen found no material exact gas-filtration conflict.
+
+COALVEX™ current family architecture:
+- COALERIS™ — Gas Coalescence — preferred working candidate
+- Gas-Liquid Separation — descriptive
+
+System configurations remain descriptive:
+- Filter-Separator
+- Integrated Gas Conditioning
+- Cyclonic Pre-Separation
+- City Gate
+- Pipeline
+- Compressor
+- Turbine Fuel Gas
+
+Formal trademark clearance remains required before final adoption.
