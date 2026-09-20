@@ -6902,3 +6902,705 @@ CROSS-MANUFACTURER BENCHMARK CLOSED v1
 
 Next benchmark domain:
 Industrial Water
+
+
+## 25. Cross-Manufacturer Benchmark — Industrial Water CLOSED v1
+
+Status: CROSS-MANUFACTURER BENCHMARK CLOSED v1.
+
+Purpose:
+Perform a deep external benchmark of Industrial Water because the current REIKE product pages are effectively empty at technical-detail level.
+
+Primary REIKE source-family state:
+REIKE exposes six source families:
+1. PP Melt Blown Filter Cartridges
+2. String Wound Filter Cartridges
+3. Pleated Filter Cartridges
+4. Activated Carbon Filter Cartridges
+5. Reverse Osmosis Membrane Elements
+6. Ultrafiltration Membrane Modules
+
+The current REIKE pages provide family names and generic supplier claims but no usable product-level specifications for architecture closure.
+
+Benchmark manufacturers reviewed:
+- DuPont Water Solutions
+- Pall
+- Veolia Water Technologies
+- Pentair Engineered Filtration
+
+Evidence state:
+All manufacturer findings below are EXTERNAL_BENCHMARK.
+They define treatment mechanisms, system architecture, canonical engineering fields, and validation requirements.
+No competitor performance value is transferable to an ELIMFILTERS product without product-specific evidence.
+
+### 25.1 Cross-Manufacturer Expansion Beyond REIKE
+
+REIKE's visible family set covers:
+- depth / cartridge filtration
+- activated carbon
+- RO
+- UF
+
+The external benchmark shows that a complete Industrial Water architecture must also explicitly support:
+- Nanofiltration (NF)
+- Ion Exchange (IX / IER)
+- Electrodeionization (EDI / CEDI)
+- Membrane Bioreactor (MBR) where wastewater treatment is in scope
+- Membrane Aerated Biofilm Reactor (MABR) where biological wastewater treatment is in scope
+- Membrane Degasification / CO2 removal
+- Closed-Circuit Reverse Osmosis (CCRO) / high-recovery RO architecture
+- Resin Trap filtration
+- Ultrapure Water (UPW) polishing / loop filtration
+- Water reuse / wastewater-recovery architectures
+- Minimal Liquid Discharge (MLD) / high-recovery treatment trains
+
+Canonical rule:
+Industrial Water must be modeled as a TREATMENT TRAIN of distinct mechanisms, not as six isolated product families.
+
+### 25.2 DuPont Benchmark Contribution
+
+DuPont's current Water Solutions portfolio explicitly integrates:
+- Ultrafiltration
+- Ion Exchange
+- Reverse Osmosis
+- Nanofiltration
+- Electrodeionization
+
+Its 2026 WAVE PRO platform models UF, IER, RO, and NF together in one treatment-design environment.
+
+Architecture impact:
+Industrial Water must support cross-stage mass balance and performance dependencies.
+
+Canonical system sequence:
+Feed Water
+→ Pretreatment
+→ UF / Cartridge / Media Filtration where required
+→ IX / Softening where required
+→ RO / NF
+→ EDI / Polishing where required
+→ Final Quality Target
+
+Not every system requires every stage.
+
+#### Nanofiltration
+
+Canonical function:
+- Selective Dissolved-Species Separation
+
+NF must remain separate from RO.
+
+Potential applications:
+- hardness / multivalent-ion removal
+- sulfate reduction
+- selective salt separation
+- organic-molecule rejection
+- process-water conditioning
+
+New technology core candidate:
+TC-WAT-06 — Nanofiltration Selective Ion / Solute Separation
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Required fields:
+- membrane chemistry
+- MWCO / rejection behavior
+- monovalent rejection
+- divalent rejection
+- sulfate rejection
+- feed pressure
+- flux
+- recovery
+- feed composition
+- temperature
+- pH
+- fouling / scaling index
+- cleaning protocol
+
+#### Ion Exchange
+
+DuPont describes ion-exchange resins for:
+- softening
+- bulk demineralization
+- trace-contaminant removal
+- condensate polishing
+
+Canonical function:
+- Selective Ionic Exchange / Removal
+
+New technology core candidate:
+TC-WAT-07 — Ion Exchange Water Conditioning
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Required fields:
+- resin chemistry
+- cation / anion / mixed bed
+- strong / weak functionality
+- exchange capacity
+- operating form
+- regeneration chemistry
+- bed volume
+- service flow
+- breakthrough criterion
+- target ion
+- competing ions
+- feed TDS
+- temperature
+- pH
+- fouling risk
+
+#### Electrodeionization
+
+DuPont identifies EDI as a polishing technology for boiler and ultrapure-water makeup, producing very low conductivity / sodium / silica without chemical regeneration.
+
+Canonical function:
+- Continuous Electrochemical Deionization / Polishing
+
+New technology core candidate:
+TC-WAT-08 — Electrodeionization Polishing
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Required fields:
+- feed conductivity
+- feed hardness
+- silica
+- CO2
+- feed pressure
+- product resistivity / conductivity target
+- concentrate flow
+- DC power
+- stack configuration
+- pretreatment requirement
+- recovery
+- sanitization / cleaning method
+
+### 25.3 High-Recovery / MLD Architecture
+
+DuPont describes Minimal Liquid Discharge as an integrated approach using technologies such as UF, RO, NF, and IX.
+
+Canonical function:
+- Water Recovery Maximization
+
+This is a SYSTEM ARCHITECTURE, not one filtration mechanism.
+
+Canonical MLD fields:
+- feed flow
+- permeate recovery
+- concentrate flow
+- total dissolved solids
+- scaling species
+- antiscalant strategy
+- recycle path
+- overall water recovery
+- energy consumption
+- waste volume
+- disposal route
+- economics / operating cost
+
+Potential system configuration:
+MLD / High-Recovery Water Treatment
+
+No new Technology Core is created solely for MLD.
+
+### 25.4 Closed-Circuit RO / High-Recovery RO
+
+DuPont's portfolio includes CCRO as a system architecture for high-recovery reverse osmosis.
+
+Canonical interpretation:
+CCRO is a RO SYSTEM CONFIGURATION.
+
+It consumes:
+TC-WAT-04 — Reverse Osmosis Dissolved-Solids Separation
+
+Required fields:
+- batch / closed-circuit mode
+- cycle recovery
+- recirculation ratio
+- feed / brine pressure
+- conductivity profile
+- scaling control
+- purge fraction
+- energy per volume
+- cleaning frequency
+
+CCRO MUST NOT become a separate membrane Technology Core.
+
+### 25.5 Wastewater Biological Membrane Architecture
+
+DuPont also includes MBR and MABR technologies.
+
+#### MBR
+
+Canonical function:
+- Biological Wastewater Treatment + Membrane Solids Separation
+
+Potential technology / system classification:
+TC-WAT-09 — Membrane Bioreactor Solids Separation / Biological Treatment Architecture
+Status: CROSS-DOMAIN SYSTEM / TECHNOLOGY CANDIDATE.
+
+Required fields:
+- biological process
+- membrane type
+- MLSS
+- SRT
+- HRT
+- flux
+- TMP
+- aeration
+- backwash
+- chemical cleaning
+- BOD / COD
+- nitrogen target
+- phosphorus target
+- permeate quality
+
+Governance:
+MBR combines biological treatment and membrane separation; it is not just a filter cartridge family.
+
+#### MABR
+
+Canonical function:
+- Membrane-Assisted Biological Aeration
+
+Potential classification:
+TC-WAT-10 — Membrane Aerated Biological Treatment
+Status: TECHNOLOGY CORE CANDIDATE / ADJACENT WATER TREATMENT DOMAIN.
+
+This lies beyond REIKE's current visible product set and should be evaluated only if ELIMFILTERS intends to enter wastewater-biological treatment systems.
+
+### 25.6 Membrane Degasification
+
+DuPont and Veolia architectures include degasification / CO2-removal options around demineralized-water systems.
+
+Canonical function:
+- Dissolved Gas Removal from Water
+
+Potential new core:
+TC-WAT-11 — Membrane Degasification
+Status: TECHNOLOGY CORE CANDIDATE.
+
+Required fields:
+- target gas
+- dissolved-gas concentration
+- inlet / outlet target
+- membrane material
+- sweep gas / vacuum mode
+- pressure
+- temperature
+- pH
+- flow
+- CO2 load
+- oxygen target
+
+Use cases:
+- boiler-feed polishing
+- EDI pretreatment / optimization
+- ultrapure water
+- corrosion control
+
+### 25.7 Veolia Benchmark Contribution
+
+Veolia confirms multi-stage industrial-water architecture.
+
+Sirion RO systems are explicitly designed to integrate with:
+- pressure filters or UF upstream
+- IX or EDI downstream
+
+Terion combines:
+- cartridge prefiltration
+- RO
+- EDI
+- optional membrane degassing
+
+Architecture impact:
+The canonical ELIMFILTERS model must represent:
+PRETREATMENT
+→ PRIMARY DISSOLVED-SOLIDS SEPARATION
+→ POLISHING
+
+as separate system layers.
+
+#### High-Purity / Boiler Feed
+
+Veolia Terion architecture confirms:
+5 µm cartridge pretreatment
+→ RO
+→ EDI
+→ optional membrane degassing
+
+Canonical application:
+- Boiler Feed / High-Purity Industrial Water
+
+Required HERMES inputs:
+- feed conductivity
+- hardness
+- silica
+- sodium
+- chloride / sulfate
+- alkalinity
+- CO2
+- TOC
+- turbidity
+- SDI
+- product conductivity
+- product silica target
+- boiler pressure class
+- makeup-water flow
+- regeneration / chemical constraints
+
+### 25.8 Pall Benchmark Contribution
+
+Pall ultrapure-water architecture adds critical high-purity functions beyond general industrial water.
+
+Pall identifies:
+- Pre-RO filtration
+- Resin Trap filters
+- UF prefilters
+- Central / Loop UF
+- Point-of-Use filtration
+- Tank Vent filtration
+- Cooling-water filtration
+- UPW polishing
+
+Architecture impact:
+Industrial Water requires an ULTRAPURE WATER subdomain.
+
+Canonical UPW treatment positions:
+- Raw-water pretreatment
+- Pre-RO
+- Post-IX resin trap
+- UF prefilter
+- Central UPW loop
+- Point of Use
+- Tank vent
+- Final polishing
+
+#### Resin Trap
+
+Canonical function:
+- Ion-Exchange Resin Bead / Fines Protection
+
+System position:
+Immediately downstream of ion-exchange beds.
+
+This is a PRODUCT / PROTECTION FUNCTION, not a new Technology Core.
+
+Required fields:
+- resin bead size
+- fines size
+- cartridge rating
+- flow
+- ΔP
+- cleanroom / extractables requirement
+- downstream sensitivity
+
+#### UPW Ultrafine Filtration
+
+Pall's semiconductor UPW architecture includes UF modules and submicron membrane cartridges for removal of colloids, silica-related contaminants, bacterial fragments, and fine particles.
+
+Architecture impact:
+TC-WAT-05 — Ultrafiltration Membrane Separation remains valid, but UPW requires additional material-purity fields.
+
+Required UPW fields:
+- extractables
+- TOC rinse-up
+- resistivity rinse-up
+- ionic contamination
+- metal extractables
+- particle shedding
+- integrity-test method
+- cleanroom manufacturing state
+- point-of-use / loop position
+
+### 25.9 Pentair Benchmark Contribution
+
+Pentair Engineered Filtration adds useful cartridge-engineering detail.
+
+Its Biflex industrial cartridges distinguish:
+- nominal vs absolute ratings
+- beta-rated efficiency
+- pleated geometry
+- gradient-density structure
+- high-flow / large-diameter formats
+- low pressure drop
+- reduced changeout frequency
+
+Canonical impact:
+TC-WAT-01 and TC-WAT-02 need stronger cartridge-performance governance.
+
+Required cartridge fields:
+- nominal vs absolute
+- beta ratio where published
+- efficiency
+- rated micron
+- flow direction
+- depth-loading vs surface-loading behavior
+- media blend
+- binder
+- core / cage
+- large-format / high-flow architecture
+- flow per element
+- ΔP
+- dirt-holding capacity
+- changeout frequency
+- element count per housing
+
+#### Combined Particulate + Carbon Media
+
+Pentair documents carbon-impregnated pleated media that combines:
+- sediment filtration
+- chlorine / taste / odor reduction
+
+Canonical impact:
+A single cartridge may implement two functions:
+- particulate filtration
+- adsorption
+
+The data model must permit MULTI-FUNCTION ELEMENTS without collapsing the underlying mechanisms.
+
+### 25.10 Activated Carbon Architecture Enrichment
+
+Cross-manufacturer practice confirms activated carbon performance depends on:
+- carbon type
+- activated-carbon mass
+- iodine / adsorption characteristics where applicable
+- target species
+- contact time
+- flow
+- temperature
+- pH
+- competing organics
+- chlorine / chloramine load
+- breakthrough criterion
+
+Canonical rule:
+"Activated Carbon Filter" is insufficient as an engineering specification.
+
+TC-WAT-03 remains valid:
+Industrial Adsorptive Carbon Treatment.
+
+Potential target classes:
+- free chlorine
+- chloramine
+- taste / odor compounds
+- VOC / organics
+- oxidant protection for downstream membranes
+
+Each target requires specific evidence.
+
+### 25.11 Pretreatment as a First-Class Architecture
+
+Cross-manufacturer consensus:
+RO / NF / EDI performance depends strongly on feed-water pretreatment.
+
+Canonical pretreatment dimensions:
+- turbidity
+- SDI
+- TSS
+- colloids
+- hardness
+- silica
+- iron
+- manganese
+- organics / TOC
+- oil
+- chlorine / oxidants
+- microbiological load
+- scaling potential
+- antiscalant
+- cartridge rating
+- UF requirement
+- softening / IX requirement
+
+HERMES logic:
+Feed Analysis
+→ Fouling / Scaling / Oxidation Risk
+→ Pretreatment Train
+→ RO / NF
+→ EDI / IX / polishing
+→ Product Water Target
+
+### 25.12 Membrane Performance Governance
+
+RO / NF / UF product claims MUST preserve exact test conditions.
+
+Required fields:
+- feed composition
+- feed concentration / salinity
+- pressure
+- temperature
+- pH
+- recovery
+- flux
+- active area
+- rejection / removal
+- permeate flow
+- concentration polarization assumptions
+- membrane age / condition
+- test standard / protocol
+- cleaning state
+
+Canonical rule:
+A rejection or permeate-flow number without test conditions is not canonical technical evidence.
+
+### 25.13 Fouling / Scaling / Cleaning Layer
+
+Industrial Water requires explicit fouling and cleaning data.
+
+Canonical fouling classes:
+- particulate / colloidal
+- organic
+- biological
+- mineral scale
+- metal oxide
+- silica
+- oil / hydrocarbon
+
+Required fields:
+- fouling index
+- SDI
+- scaling index
+- CIP chemistry
+- CIP pH
+- CIP temperature
+- cleaning frequency
+- normalized permeate flow
+- normalized salt passage
+- normalized ΔP
+- post-clean recovery
+
+Condition monitoring is a SYSTEM layer.
+
+### 25.14 Cross-Manufacturer Consensus
+
+Strong agreement across DuPont, Veolia, Pall, and Pentair:
+
+1. Industrial water is a multi-stage treatment architecture.
+2. Pretreatment must be designed from feed-water chemistry, not only flow.
+3. RO, NF, UF, IX, and EDI are distinct separation / polishing mechanisms.
+4. NF is not simply 'low-pressure RO'.
+5. EDI is a continuous polishing mechanism distinct from IX.
+6. IX is a true ionic-exchange mechanism and deserves its own core.
+7. Cartridge filtration must distinguish nominal, absolute, and beta-rated performance where applicable.
+8. Activated carbon is adsorption, not merely a particulate-media variant.
+9. UPW introduces extractables, rinse-up, ionic purity, and point-of-use requirements beyond standard water filtration.
+10. MLD and CCRO are system architectures, not new basic separation mechanisms.
+11. Resin traps and vent filters are protection functions / product positions.
+12. Membrane performance data without test conditions is insufficient.
+13. Multi-function elements must be modeled as one product implementing multiple mechanisms.
+14. Water reuse / recovery requires system-level mass balance and concentrate handling.
+
+### 25.15 Technology-Core Impact
+
+Previously identified:
+- TC-WAT-01 — Industrial Depth Particulate Filtration: CONFIRMED
+- TC-WAT-02 — Industrial Pleated Particle Control: CONFIRMED
+- TC-WAT-03 — Industrial Adsorptive Carbon Treatment: CONFIRMED
+- TC-WAT-04 — Reverse Osmosis Dissolved-Solids Separation: CONFIRMED
+- TC-WAT-05 — Ultrafiltration Membrane Separation: CONFIRMED
+
+New candidates from deep benchmark:
+- TC-WAT-06 — Nanofiltration Selective Ion / Solute Separation: ADDED / SUPPORTED
+- TC-WAT-07 — Ion Exchange Water Conditioning: ADDED / SUPPORTED
+- TC-WAT-08 — Electrodeionization Polishing: ADDED / SUPPORTED
+- TC-WAT-09 — Membrane Bioreactor Solids Separation / Biological Treatment Architecture: ADDED / CONDITIONAL
+- TC-WAT-10 — Membrane Aerated Biological Treatment: ADDED / ADJACENT / CONDITIONAL
+- TC-WAT-11 — Membrane Degasification: ADDED / SUPPORTED
+
+System architectures:
+- MLD
+- CCRO
+- Boiler Feed / High-Purity Water Train
+- UPW Loop / Point-of-Use
+- Water Reuse Train
+
+These MUST NOT be promoted automatically to Technology Cores.
+
+### 25.16 Canonical Data-Model Enrichment
+
+Add / confirm:
+- Feed Water Source
+- Feed Chemistry
+- TDS
+- Conductivity
+- Hardness
+- Silica
+- Alkalinity
+- Iron / Manganese
+- TOC
+- Oil & Grease
+- TSS
+- Turbidity
+- SDI
+- Scaling Index
+- Chlorine / Chloramine
+- Microbiological Load
+- Pretreatment Train
+- Membrane Type
+- Membrane Chemistry
+- Active Area
+- Flux
+- Recovery
+- Rejection
+- Permeate Flow
+- Concentrate Flow
+- NF Selectivity
+- IX Resin Chemistry
+- IX Capacity
+- IX Regeneration
+- EDI Feed / Product Conductivity
+- EDI Product Resistivity
+- DC Power
+- Degassing Target
+- Dissolved Gas Inlet / Outlet
+- UPW Extractables
+- TOC Rinse-Up
+- Resistivity Rinse-Up
+- Resin Trap
+- Vent Filter
+- Multi-Function Element
+- CIP Method
+- Normalized Performance
+- Water Recovery
+- Waste / Concentrate Route
+- Energy Consumption
+
+### 25.17 Open Product-Level Work
+
+Still open:
+- exact ELIMFILTERS PP / string / pleated media platforms
+- activated-carbon chemistry and capacity
+- RO membrane platform
+- UF membrane platform
+- NF membrane platform
+- IX resin portfolio
+- EDI stack strategy
+- membrane-degassing platform
+- MBR / MABR portfolio decision
+- UPW product strategy
+- exact membrane performance data
+- CIP / chemical compatibility
+- housing / vessel mapping
+- OEM / competitor interchange
+- canonical SKU population
+- system-skid engineering
+- water-chemistry modeling integration into HERMES
+
+These do not block architectural closure.
+
+### 25.18 Closure
+
+Industrial Water Cross-Manufacturer Benchmark:
+- DuPont benchmark: COMPLETE v1
+- Pall benchmark: COMPLETE v1
+- Veolia benchmark: COMPLETE v1
+- Pentair benchmark: COMPLETE v1
+- Cross-manufacturer consensus: COMPLETE v1
+- Canonical data-model enrichment: COMPLETE v1
+- Technology-core impact assessment: COMPLETE v1
+- Product-specific validation: OPEN
+- Commercial technology naming: BLOCKED until remaining benchmark domains are closed
+
+Status:
+CROSS-MANUFACTURER BENCHMARK CLOSED v1
+
+Next benchmark domain:
+Filtration Equipment & Systems
