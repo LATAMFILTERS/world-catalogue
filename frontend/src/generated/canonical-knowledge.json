@@ -1,8 +1,8 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "sourceAuthority": "13-canonical-knowledge",
-  "generatedAt": "2026-09-13T20:20:30.335Z",
-  "count": 40,
+  "generatedAt": "2026-09-20T23:30:00.000Z",
+  "count": 44,
   "records": [
     {
       "id": "HD-AIR-RADIAL-SEAL-HOUSING-COMPATIBILITY",
@@ -66,7 +66,8 @@
         "A replacement element must preserve sealing geometry, seating depth and housing engagement required by the specific heavy-duty intake system.",
         "Visual similarity is insufficient evidence of interchangeability when housing or sealing architecture differs.",
         "Heavy-duty air-intake application validation must remain scoped to the specific housing/application configuration."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "HD-DESIGN-CHANGE-FUNCTIONAL-EQUIVALENCE",
@@ -134,7 +135,8 @@
         "Changes in profile, baseplate construction, thread-ring construction, drain features or element geometry require application and functional verification before equivalence is accepted or rejected.",
         "Functional equivalence must be based on interface compatibility and required system behavior, not visual similarity alone.",
         "A running design change must not be converted into a universal supersession rule without application scope."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "HD-FUEL-SEALING-INTERFACE-COMPATIBILITY",
@@ -200,6 +202,396 @@
         "Center-tube, gasket-seat, thread-ring and bowl interfaces can affect whether a filter seals and routes fuel correctly.",
         "A component that appears physically similar may still be incompatible if a sealing or engagement feature differs.",
         "Housing and interface configuration must be treated as application-specific evidence during fitment validation."
+      ],
+      "platforms": []
+    },
+    {
+      "id": "IP-AEREMIS-AIR-TREATMENT-ARCHITECTURE",
+      "slug": "ip-aeremis-air-treatment-architecture",
+      "title": "AEREMIS Air Treatment Architecture",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Manufacturing"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "AEREMIS™"
+      ],
+      "technologies": [
+        "HE-CRIVA™",
+        "MA-TREA™"
+      ],
+      "components": [
+        "General particulate filtration stages",
+        "High-efficiency final filtration stages",
+        "Molecular treatment media and housings",
+        "Air-handling housings and sealing interfaces"
+      ],
+      "problems": [
+        "Airborne particulate contamination",
+        "High-cleanliness or critical-air requirements",
+        "Gas, vapor, odor or corrosive molecular contamination",
+        "Excessive system resistance or uncontrolled bypass"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Identify whether the primary challenge is particulate, critical-cleanliness particulate, molecular, or a combination.",
+        "Review airflow, available static pressure, differential-pressure trend, housing condition, sealing and service access.",
+        "Confirm the required outlet condition or protected-space requirement before selecting the treatment path."
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "AEREMIS™ organizes industrial air treatment by contaminant challenge and required air condition rather than by a single filter form.",
+        "General Air Filtration is the descriptive AEREMIS™ path for general particulate control and maps to TC-AIR-01.",
+        "HE-CRIVA™ is the AEREMIS™ family for high-efficiency and critical-air particulate filtration and maps to TC-AIR-02.",
+        "MA-TREA™ is the AEREMIS™ family for molecular air treatment and maps to TC-AIR-03.",
+        "Treatment-path selection depends on the air-quality target, contaminant profile, operating envelope, pressure-drop boundary, system integration and required verification method."
+      ],
+      "operatingConditions": [
+        "Airflow rate and duty profile",
+        "Available static pressure and allowable system resistance",
+        "Temperature and humidity range",
+        "Outdoor, recirculated or process-air source",
+        "Particle size, concentration and loading pattern",
+        "Gas, vapor or odor chemistry when molecular treatment is required"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Differential Pressure",
+        "Filtration Efficiency",
+        "Contaminant Loading",
+        "Sealing",
+        "Service Life"
+      ],
+      "keywords": [
+        "AEREMIS Air Treatment Architecture",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Manufacturing",
+        "Industrial & Process",
+        "AEREMIS™",
+        "HE-CRIVA™",
+        "MA-TREA™",
+        "General particulate filtration stages",
+        "High-efficiency final filtration stages",
+        "Molecular treatment media and housings",
+        "Air-handling housings and sealing interfaces",
+        "Airborne particulate contamination",
+        "High-cleanliness or critical-air requirements",
+        "Gas, vapor, odor or corrosive molecular contamination",
+        "Excessive system resistance or uncontrolled bypass",
+        "Identify whether the primary challenge is particulate, critical-cleanliness particulate, molecular, or a combination.",
+        "Review airflow, available static pressure, differential-pressure trend, housing condition, sealing and service access.",
+        "Confirm the required outlet condition or protected-space requirement before selecting the treatment path.",
+        "AEREMIS™ organizes industrial air treatment by contaminant challenge and required air condition rather than by a single filter form.",
+        "General Air Filtration is the descriptive AEREMIS™ path for general particulate control and maps to TC-AIR-01.",
+        "HE-CRIVA™ is the AEREMIS™ family for high-efficiency and critical-air particulate filtration and maps to TC-AIR-02.",
+        "MA-TREA™ is the AEREMIS™ family for molecular air treatment and maps to TC-AIR-03.",
+        "Treatment-path selection depends on the air-quality target, contaminant profile, operating envelope, pressure-drop boundary, system integration and required verification method.",
+        "Airflow rate and duty profile",
+        "Available static pressure and allowable system resistance",
+        "Temperature and humidity range",
+        "Outdoor, recirculated or process-air source",
+        "Particle size, concentration and loading pattern",
+        "Gas, vapor or odor chemistry when molecular treatment is required",
+        "Differential Pressure",
+        "Filtration Efficiency",
+        "Contaminant Loading",
+        "Sealing",
+        "Service Life"
+      ]
+    },
+    {
+      "id": "IP-AEREMIS-GENERAL-AIR-FILTRATION",
+      "slug": "ip-aeremis-general-air-filtration",
+      "title": "General Air Filtration for Industrial Ventilation",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Manufacturing"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "AEREMIS™"
+      ],
+      "technologies": [],
+      "components": [],
+      "problems": [
+        "Airborne particulate loading",
+        "Visible dust downstream",
+        "Unexpected pressure-drop rise",
+        "Short service intervals",
+        "Bypass or sealing evidence"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Review differential-pressure trend and visible loading across the installed stages.",
+        "Inspect housing, sealing surfaces and filter seating for bypass paths.",
+        "Compare service interval behavior with actual dust loading and airflow duty."
+      ],
+      "correctiveActions": [
+        "Re-evaluate staging when upstream loading is prematurely consuming the final filter stage.",
+        "Correct housing or sealing defects before attributing downstream dust solely to media performance.",
+        "Re-select media or stage arrangement when allowable pressure drop and contaminant loading are mismatched."
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "General Air Filtration controls airborne particulate in industrial ventilation, make-up air and general air-handling duties.",
+        "The treatment path may use prefiltration and staged particulate capture selected around dust loading and allowable pressure drop.",
+        "Filter configuration must be resolved together with the existing air-handling system, housing condition and service-access constraints.",
+        "General Air Filtration is descriptive, maps to TC-AIR-01 and must not be represented as HE-CRIVA™ critical-air filtration."
+      ],
+      "operatingConditions": [
+        "Variable outdoor-air dust loading",
+        "Continuous or intermittent ventilation duty",
+        "Space and service-access constraints",
+        "Pressure-drop limits across the air-handling system"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Differential Pressure",
+        "Contaminant Loading",
+        "Sealing",
+        "Service Life"
+      ],
+      "keywords": [
+        "General Air Filtration for Industrial Ventilation",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Manufacturing",
+        "Industrial & Process",
+        "AEREMIS™",
+        "Airborne particulate loading",
+        "Visible dust downstream",
+        "Unexpected pressure-drop rise",
+        "Short service intervals",
+        "Bypass or sealing evidence",
+        "Review differential-pressure trend and visible loading across the installed stages.",
+        "Inspect housing, sealing surfaces and filter seating for bypass paths.",
+        "Compare service interval behavior with actual dust loading and airflow duty.",
+        "Re-evaluate staging when upstream loading is prematurely consuming the final filter stage.",
+        "Correct housing or sealing defects before attributing downstream dust solely to media performance.",
+        "Re-select media or stage arrangement when allowable pressure drop and contaminant loading are mismatched.",
+        "General Air Filtration controls airborne particulate in industrial ventilation, make-up air and general air-handling duties.",
+        "The treatment path may use prefiltration and staged particulate capture selected around dust loading and allowable pressure drop.",
+        "Filter configuration must be resolved together with the existing air-handling system, housing condition and service-access constraints.",
+        "General Air Filtration is descriptive, maps to TC-AIR-01 and must not be represented as HE-CRIVA™ critical-air filtration.",
+        "Variable outdoor-air dust loading",
+        "Continuous or intermittent ventilation duty",
+        "Space and service-access constraints",
+        "Pressure-drop limits across the air-handling system",
+        "Differential Pressure",
+        "Contaminant Loading",
+        "Sealing",
+        "Service Life"
+      ]
+    },
+    {
+      "id": "IP-AEREMIS-HE-CRIVA-CRITICAL-AIR",
+      "slug": "ip-aeremis-he-criva-critical-air",
+      "title": "HE-CRIVA High-Efficiency and Critical Air Filtration",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Manufacturing"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "AEREMIS™"
+      ],
+      "technologies": [
+        "HE-CRIVA™"
+      ],
+      "components": [],
+      "problems": [
+        "Unexpected cleanliness loss",
+        "Premature final-stage loading",
+        "Seal or frame leakage",
+        "Pressure drop outside expected trend"
+      ],
+      "failureModes": [
+        "Filter-to-housing bypass",
+        "Damaged or improperly seated final-stage filter",
+        "Premature loading caused by inadequate upstream particulate control"
+      ],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Inspect final-stage sealing surfaces, frame seating and housing condition.",
+        "Trend differential pressure rather than relying only on elapsed service time.",
+        "Verify that upstream stages are controlling loading as intended.",
+        "Use the project-defined integrity or cleanliness verification method when required."
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "HE-CRIVA™ addresses fine airborne particulate where the required cleanliness level is more demanding than general ventilation duty.",
+        "Final-stage performance depends on the filtration media together with filter integrity, sealing and bypass control at the housing interface.",
+        "Staged prefiltration may be used to protect final high-efficiency stages from premature loading.",
+        "Selection requires a defined cleanliness requirement, fine-particle challenge, pressure-drop boundary and verification method.",
+        "HE-CRIVA™ maps to TC-AIR-02 within the AEREMIS™ platform."
+      ],
+      "operatingConditions": [
+        "Defined cleanliness requirement",
+        "Fine-particle challenge",
+        "Strict bypass control",
+        "Final-stage pressure-drop sensitivity",
+        "Controlled production or critical ventilation environment"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Filtration Efficiency",
+        "Differential Pressure",
+        "Sealing",
+        "Contaminant Loading",
+        "Service Life"
+      ],
+      "keywords": [
+        "HE-CRIVA High-Efficiency and Critical Air Filtration",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Manufacturing",
+        "Industrial & Process",
+        "AEREMIS™",
+        "HE-CRIVA™",
+        "Unexpected cleanliness loss",
+        "Premature final-stage loading",
+        "Seal or frame leakage",
+        "Pressure drop outside expected trend",
+        "Filter-to-housing bypass",
+        "Damaged or improperly seated final-stage filter",
+        "Premature loading caused by inadequate upstream particulate control",
+        "Inspect final-stage sealing surfaces, frame seating and housing condition.",
+        "Trend differential pressure rather than relying only on elapsed service time.",
+        "Verify that upstream stages are controlling loading as intended.",
+        "Use the project-defined integrity or cleanliness verification method when required.",
+        "HE-CRIVA™ addresses fine airborne particulate where the required cleanliness level is more demanding than general ventilation duty.",
+        "Final-stage performance depends on the filtration media together with filter integrity, sealing and bypass control at the housing interface.",
+        "Staged prefiltration may be used to protect final high-efficiency stages from premature loading.",
+        "Selection requires a defined cleanliness requirement, fine-particle challenge, pressure-drop boundary and verification method.",
+        "HE-CRIVA™ maps to TC-AIR-02 within the AEREMIS™ platform.",
+        "Defined cleanliness requirement",
+        "Fine-particle challenge",
+        "Strict bypass control",
+        "Final-stage pressure-drop sensitivity",
+        "Controlled production or critical ventilation environment",
+        "Filtration Efficiency",
+        "Differential Pressure",
+        "Sealing",
+        "Contaminant Loading",
+        "Service Life"
+      ]
+    },
+    {
+      "id": "IP-AEREMIS-MA-TREA-MOLECULAR-AIR",
+      "slug": "ip-aeremis-ma-trea-molecular-air",
+      "title": "MA-TREA Molecular Air Treatment",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Manufacturing"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "AEREMIS™"
+      ],
+      "technologies": [
+        "MA-TREA™"
+      ],
+      "components": [],
+      "problems": [
+        "Odor or gas breakthrough",
+        "Corrosive-gas exposure",
+        "Accelerated media exhaustion",
+        "Unstable outlet quality",
+        "Unexpected humidity sensitivity"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Confirm the target gas, vapor or odor chemistry before evaluating media suitability.",
+        "Review contaminant concentration, humidity, airflow and contact-time conditions.",
+        "Distinguish molecular-media exhaustion from particulate-stage restriction."
+      ],
+      "correctiveActions": [
+        "Re-evaluate media chemistry when breakthrough occurs before the expected treatment endpoint.",
+        "Review contact conditions and stage arrangement when airflow or humidity changes materially alter performance.",
+        "Separate particulate prefiltration issues from molecular-media capacity or chemistry issues."
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "MA-TREA™ treats molecular contaminants such as target gases, vapors or odors that are not resolved by particulate filtration alone.",
+        "Adsorptive media selection depends on target contaminant chemistry, concentration, humidity, contact conditions and required treatment outcome.",
+        "Molecular media exhaustion and breakthrough behavior must be evaluated separately from particulate-filter pressure drop.",
+        "MA-TREA™ maps to TC-AIR-03 within the AEREMIS™ platform."
+      ],
+      "operatingConditions": [
+        "Known contaminant chemistry",
+        "Variable concentration and humidity",
+        "Required contact time",
+        "Media exhaustion and replacement planning"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Media Saturation",
+        "Service Life",
+        "Installation"
+      ],
+      "keywords": [
+        "MA-TREA Molecular Air Treatment",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Manufacturing",
+        "Industrial & Process",
+        "AEREMIS™",
+        "MA-TREA™",
+        "Odor or gas breakthrough",
+        "Corrosive-gas exposure",
+        "Accelerated media exhaustion",
+        "Unstable outlet quality",
+        "Unexpected humidity sensitivity",
+        "Confirm the target gas, vapor or odor chemistry before evaluating media suitability.",
+        "Review contaminant concentration, humidity, airflow and contact-time conditions.",
+        "Distinguish molecular-media exhaustion from particulate-stage restriction.",
+        "Re-evaluate media chemistry when breakthrough occurs before the expected treatment endpoint.",
+        "Review contact conditions and stage arrangement when airflow or humidity changes materially alter performance.",
+        "Separate particulate prefiltration issues from molecular-media capacity or chemistry issues.",
+        "MA-TREA™ treats molecular contaminants such as target gases, vapors or odors that are not resolved by particulate filtration alone.",
+        "Adsorptive media selection depends on target contaminant chemistry, concentration, humidity, contact conditions and required treatment outcome.",
+        "Molecular media exhaustion and breakthrough behavior must be evaluated separately from particulate-filter pressure drop.",
+        "MA-TREA™ maps to TC-AIR-03 within the AEREMIS™ platform.",
+        "Known contaminant chemistry",
+        "Variable concentration and humidity",
+        "Required contact time",
+        "Media exhaustion and replacement planning",
+        "Flow Rate",
+        "Media Saturation",
+        "Service Life",
+        "Installation"
       ]
     },
     {
@@ -259,7 +651,8 @@
         "Flow Rate",
         "Restriction",
         "Sealing"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-AIR-REPLACEMENT-PROCEDURE",
@@ -317,7 +710,8 @@
         "Air Filter Housing",
         "Installation",
         "Sealing"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-AIR-RESTRICTION-SYMPTOMS",
@@ -384,7 +778,8 @@
         "Restriction",
         "Contaminant Loading",
         "Failure Analysis"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-AIR-SERVICE-INTERVAL",
@@ -450,7 +845,8 @@
         "Restriction",
         "Contaminant Loading",
         "Service Life"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-CABIN-AIRFLOW-DIRECTION",
@@ -517,7 +913,8 @@
         "Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice.",
         "Installation",
         "Flow Rate"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-CABIN-CARBON-MEDIA",
@@ -572,7 +969,8 @@
         "Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function.",
         "Flow Rate",
         "Service Life"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-CABIN-FUNDAMENTALS",
@@ -629,7 +1027,8 @@
         "Flow Rate",
         "Contaminant Loading",
         "Service Life"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-CABIN-LOADING-SYMPTOMS",
@@ -695,7 +1094,8 @@
         "Restriction",
         "Contaminant Loading",
         "Failure Analysis"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-CABIN-SERVICE-INTERVAL",
@@ -757,7 +1157,8 @@
         "Contaminant Loading",
         "Service Life",
         "Restriction"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-BYPASS-OPERATION",
@@ -833,7 +1234,8 @@
         "Restriction",
         "Bypass",
         "Flow Rate"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-COLD-START",
@@ -895,7 +1297,8 @@
         "Differential Pressure",
         "Restriction",
         "Bypass"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-COMPONENT-ARCHITECTURE",
@@ -964,7 +1367,8 @@
         "Bypass",
         "Sealing",
         "Installation"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-CONTAMINANT-LOADING",
@@ -1049,7 +1453,8 @@
         "Media Saturation",
         "Restriction",
         "Service Life"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-EXTENDED-SERVICE",
@@ -1123,7 +1528,8 @@
         "Service Life",
         "Dirt Holding Capacity",
         "Flow Rate"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-FITMENT-COMPATIBILITY",
@@ -1196,7 +1602,8 @@
         "Sealing",
         "Flow Rate",
         "Bypass"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-LOW-PRESSURE-DIAGNOSIS",
@@ -1259,7 +1666,8 @@
         "Differential Pressure",
         "Restriction",
         "Failure Analysis"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-PERFORMANCE-BALANCE",
@@ -1318,7 +1726,8 @@
         "Dirt Holding Capacity",
         "Flow Rate",
         "Restriction"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-POST-SERVICE-PRESSURE-DIAGNOSIS",
@@ -1372,7 +1781,8 @@
         "Low or delayed oil pressure after service is not sufficient evidence that the replacement filter is restrictive or defective.",
         "Loss of pump prime, low oil level, pickup-side problems, pressure-regulation faults, drain-back behavior and filter/application mismatch are distinct diagnostic branches.",
         "Diagnosis should verify actual lubrication-system pressure and system condition before assigning causation to the filter."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-PRESSURE-CONTROL-ARCHITECTURE",
@@ -1440,7 +1850,8 @@
         "Differential Pressure",
         "Bypass",
         "Flow Rate"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-SEAL-LEAKAGE",
@@ -1510,7 +1921,8 @@
         "Sealing",
         "Installation",
         "Failure Analysis"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-SERVICE-ACCESS",
@@ -1570,7 +1982,8 @@
         "Gasket / Seal",
         "Installation",
         "Sealing"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-LUBE-STRUCTURAL-FAILURE-DIAGNOSIS",
@@ -1632,7 +2045,8 @@
         "Differential Pressure",
         "Restriction",
         "Failure Analysis"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-SHARED-SEASONAL-FILTRATION",
@@ -1698,7 +2112,8 @@
         "Restriction",
         "Contaminant Loading",
         "Flow Rate"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "LD-SHARED-TOTAL-VEHICLE-PROTECTION",
@@ -1757,7 +2172,8 @@
         "Contaminant Loading",
         "Service Life",
         "Installation"
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-BYPASS",
@@ -1815,7 +2231,8 @@
         "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
         "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
         "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-CONTAMINANT-LOADING",
@@ -1879,7 +2296,8 @@
         "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval.",
         "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
         "Correct selection, installation and service condition are common requirements across these filtration systems."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-DIFFERENTIAL-PRESSURE",
@@ -1933,7 +2351,8 @@
         "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes.",
         "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
         "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-DIRT-HOLDING-CAPACITY",
@@ -1981,7 +2400,8 @@
         "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
         "Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress.",
         "Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-FAILURE-ANALYSIS",
@@ -2025,7 +2445,8 @@
         "None assigned",
         "A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis.",
         "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-FILTRATION-EFFICIENCY",
@@ -2081,7 +2502,8 @@
         "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
         "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
         "Correct selection, installation and service condition are common requirements across these filtration systems."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-FLOW-RATE",
@@ -2161,7 +2583,8 @@
         "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
         "Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination.",
         "Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-INSTALLATION",
@@ -2211,7 +2634,8 @@
         "Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice.",
         "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
         "Correct selection, installation and service condition are common requirements across these filtration systems."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-MEDIA-SATURATION",
@@ -2255,7 +2679,8 @@
         "None assigned",
         "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
         "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-MICRON-RATING",
@@ -2299,7 +2724,8 @@
         "None assigned",
         "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
         "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-RESTRICTION",
@@ -2377,7 +2803,8 @@
         "High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions.",
         "Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems.",
         "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-SEALING",
@@ -2429,7 +2856,8 @@
         "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
         "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
         "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment."
-      ]
+      ],
+      "platforms": []
     },
     {
       "id": "SHARED-SERVICE-LIFE",
@@ -2501,7 +2929,8 @@
         "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval.",
         "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
         "Correct selection, installation and service condition are common requirements across these filtration systems."
-      ]
+      ],
+      "platforms": []
     }
   ]
 }
