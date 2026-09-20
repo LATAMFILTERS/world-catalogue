@@ -1,13 +1,15 @@
-# HERMES Parallel Knowledge Domains — HD / LD
+# HERMES Parallel Knowledge Domains — HD / LD / Industrial & Process
 
 ## Purpose
 
-ELIMFILTERS operates one governed knowledge system with two parallel application domains and one shared engineering layer:
+ELIMFILTERS operates one governed knowledge system with three parallel application domains and one shared engineering layer:
 
 ```text
 HEAVY_DUTY_KNOWLEDGE_DOMAIN     LIGHT_DUTY_KNOWLEDGE_DOMAIN
               \                     /
                \                   /
+        INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN
+                       |
                 SHARED_ENGINEERING_KNOWLEDGE
                            |
                          HERMES
@@ -77,6 +79,25 @@ Primary technologies:
 - MACROCORE™ — engine air intake context when technically confirmed
 - MICROKAPPA™ — cabin air context when technically confirmed
 - HYDROCORE™ — only when a validated Light Duty fuel/water application supports the relationship
+
+### INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN
+
+Division / system:
+- Industrial & Process
+
+Initial governed industries:
+- Manufacturing
+- Oil & Gas
+- Power Generation
+
+Commercial platform layer:
+- AEREMIS™ — Air Technologies
+- PARTION™ — Dust & Fume Technologies
+- COALVEX™ — Gas Conditioning Technologies
+- FLUREXIS™ — Fluid Conditioning Technologies
+- AQUVEXIS™ — Water Treatment Technologies
+
+The platform layer is routing and semantic context, not a technology claim. Family technologies remain governed separately. For AEREMIS™, General Air Filtration remains descriptive, while HE-CRIVA™ and MA-TREA™ are branded family identifiers. HERMES may carry the platform context during research, but it still cannot approve publication, applications, products or claims.
 
 ## Shared engineering layer
 
