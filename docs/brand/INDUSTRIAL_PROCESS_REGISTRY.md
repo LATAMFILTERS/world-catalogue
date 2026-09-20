@@ -3092,3 +3092,267 @@ Rules:
 
 Next Air Filtration source family:
 - Semiconductor & Photovoltaic Manufacturing Filter
+
+
+### 17.8 Semiconductor & Photovoltaic Manufacturing Filter — Architecture v1
+
+Status: SOURCE PRODUCT SET CONFIRMED; APPLICATION ARCHITECTURE BENCHMARKED; COMMERCIAL TECHNOLOGY NAMES NOT ASSIGNED.
+
+Source condition:
+REIKE exposes three products under Semiconductor & Photovoltaic Manufacturing Filter:
+1. Alumina Powder Filter Cartridge
+2. H13-H14 Grade HEPA Filters
+3. F8-F9 Grade Medium Efficiency Air Filters
+
+The source text provides product-family names but no test reports, pressure-drop curves, dimensions, media specifications, service-life data, or validated standards evidence.
+
+#### Canonical Interpretation
+
+Semiconductor & Photovoltaic Manufacturing is an INDUSTRY / PROCESS APPLICATION layer, not a filtration mechanism.
+
+Canonical domain:
+Industrial & Process
+→ Air Filtration Solutions
+→ Electronics / Semiconductor / Photovoltaic Manufacturing
+
+This application can consume multiple technical mechanisms:
+- General ventilation / prefiltration
+- High-efficiency HEPA / ULPA filtration
+- Process dust capture
+- Airborne molecular contamination (AMC) control
+- Process exhaust filtration
+- Tool-level air filtration
+
+The REIKE family itself confirms only the first three source products listed above. AMC and other process-control functions are external benchmark architecture and must not be represented as REIKE claims.
+
+#### Cleanroom / Particle-Control Architecture
+
+Primary cleanroom benchmark:
+- ISO 14644-1:2015 classifies air cleanliness by airborne particle concentration.
+- The standard covers cumulative particle populations in the 0.1 μm to 5 μm range for classification purposes.
+- ISO 14644-2 governs monitoring plans for cleanroom performance related to airborne particle concentration.
+
+External semiconductor benchmark:
+- Established semiconductor cleanroom systems use prefilters, HEPA / ULPA filters, and tool-level filtration.
+- Semiconductor fabs may require very high particle cleanliness levels, including ISO Class 1 in advanced applications.
+- High-efficiency cleanroom filters are typically installed in terminal, recirculation, make-up air, or process-tool positions depending facility architecture.
+
+Canonical rule:
+The required cleanroom class belongs to the APPLICATION / ENVIRONMENT record.
+The HEPA / ULPA class belongs to the FILTER PRODUCT record.
+These two classifications must not be conflated.
+
+#### High-Efficiency Filter Architecture
+
+REIKE source:
+- H13-H14 Grade HEPA Filters
+
+Canonical function:
+- High-Efficiency Particle Filtration
+
+Parent core:
+TC-AIR-02 — Industrial High-Efficiency Air Filtration
+
+External benchmark:
+- ISO 29463 provides the high-efficiency filter classification / testing framework.
+- ISO 29463-5 specifies filter-element efficiency testing at MPPS.
+- Semiconductor cleanroom panels commonly use mini-pleat glass-fiber or membrane media and require controlled sealing and leakage verification.
+
+Required product attributes:
+- Exact source class
+- Canonical standard / class
+- MPPS efficiency
+- Overall efficiency
+- Local efficiency / leak test
+- Rated airflow
+- Initial ΔP
+- Final ΔP
+- Face velocity
+- Media
+- Frame
+- Separator
+- Seal / gasket / gel
+- Outgassing characteristics where relevant
+- Temperature / humidity limits
+
+Governance:
+REIKE's "H13-H14" wording is preserved as SOURCE CLASSIFICATION until exact standard and test evidence are available.
+
+#### Medium-Efficiency Prefiltration
+
+REIKE source:
+- F8-F9 Grade Medium Efficiency Air Filters
+
+Canonical function:
+- General Ventilation / Prefiltration
+
+Parent core:
+TC-AIR-01 — Industrial General Ventilation Particle Control
+
+Canonical role:
+- Protect downstream HEPA / ULPA stages
+- Reduce particulate loading
+- Extend final-filter service life
+- Support make-up / recirculation air cleanliness
+
+Governance:
+F8-F9 is a legacy/source classification label. It must not be converted automatically to ISO 16890 ePM classes without verified test data.
+
+#### Alumina Powder Filter Cartridge
+
+REIKE source:
+- Alumina Powder Filter Cartridge
+
+Canonical interpretation:
+- Process Dust Filtration
+- Powder Capture / Dust Collector Cartridge
+
+Application context:
+- Powder-handling / material-processing environment associated by REIKE with semiconductor and photovoltaic manufacturing
+
+Important boundary:
+The source provides no technical data proving exact particle size, efficiency, antistatic design, flame resistance, media, cleaning method, or collector type.
+
+Therefore the following remain OPEN:
+- whether the cartridge is pulse-jet cleanable
+- whether it uses conductive / antistatic media
+- whether it is surface-loaded or depth-loaded
+- exact micron / efficiency performance
+- dust explosibility / hazardous-area requirements
+- exact alumina process step
+
+Canonical attributes required:
+- Dust type
+- Particle-size distribution
+- Dust loading
+- Abrasiveness
+- Hygroscopicity
+- Combustibility / explosibility
+- Required efficiency
+- Media
+- Surface treatment
+- Antistatic capability
+- Flame-retardant capability
+- Cleaning method
+- Pulse pressure
+- Face velocity / air-to-cloth ratio
+- Initial / terminal ΔP
+- Cartridge dimensions
+- End-cap / mounting geometry
+- Collector interface
+- Temperature
+- Humidity
+
+#### Semiconductor-Specific Contamination Architecture
+
+External benchmark evidence shows semiconductor filtration must distinguish two contamination classes:
+
+1. Airborne Particulate Contamination
+   - controlled by prefilters, HEPA / ULPA, tool filters, and cleanroom airflow systems
+
+2. Airborne Molecular Contamination (AMC)
+   - acids
+   - bases
+   - organics
+   - dopants / molecular contaminants
+   - requires molecular / adsorptive filtration, not HEPA alone
+
+Canonical rule:
+HEPA / ULPA filtration and AMC filtration are different mechanisms and MUST remain separate in the taxonomy.
+
+Potential future technology core:
+TC-AIR-03 — Industrial Molecular Air Contamination Control
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+This core is introduced from external benchmark research, not from the current REIKE product list, and requires further dedicated source research before closure.
+
+#### Photovoltaic Manufacturing
+
+External electronics / optics benchmark includes solar-panel manufacturing within high-cleanliness electronics production.
+
+Canonical application contexts may include:
+- Clean manufacturing areas
+- Make-up air
+- Recirculation air
+- Process equipment
+- Exhaust air
+- Powder / material handling
+
+Canonical rule:
+Photovoltaic manufacturing must remain a separate application dimension from semiconductor manufacturing even where filter technologies overlap.
+
+#### Low-Outgassing / Material Compatibility
+
+External semiconductor benchmark identifies low-outgassing filter construction as important because adhesives, media, and filter materials can themselves introduce molecular contamination.
+
+Canonical capability attributes:
+- Low-outgassing construction
+- Boron-free / contaminant-controlled materials where application requires
+- Seal integrity
+- Particle shedding
+- Chemical compatibility
+
+These are CAPABILITIES, not standalone technologies.
+
+#### HERMES Inputs — Semiconductor / Photovoltaic Air
+
+Minimum inputs:
+- Industry: semiconductor / photovoltaic
+- Process step
+- Cleanroom / process-tool location
+- Required ISO 14644 cleanliness class
+- Contaminant class: particle / molecular / process dust
+- Particle-size distribution
+- AMC target species where relevant
+- Rated airflow
+- Face velocity
+- Initial / final ΔP
+- Temperature
+- Humidity
+- Outgassing requirement
+- Seal / leak-test requirement
+- Filter stage
+- Exhaust / recirculation / make-up-air position
+- Dust loading where process dust is present
+- Antistatic / flame-retardant requirement
+- Collector / housing interface
+- OEM / competitor reference
+
+Expected logic:
+Process Application
+→ Contaminant Class
+→ Cleanroom / Exhaust / Dust-Control Position
+→ Required Filtration Mechanism
+→ Standard / Class
+→ Flow / ΔP
+→ Media / Materials / Seal
+→ Special Capability
+→ Candidate Product
+→ Validation State
+
+#### Technology-Core Relationship
+
+Confirmed parent cores:
+- TC-AIR-01 — Industrial General Ventilation Particle Control
+- TC-AIR-02 — Industrial High-Efficiency Air Filtration
+
+New candidate from external benchmark:
+- TC-AIR-03 — Industrial Molecular Air Contamination Control
+
+Process-dust treatment for alumina powder remains under further evaluation before deciding whether it reuses a general Industrial Dust core discovered in Laser Cutting / Welding / Additive Manufacturing or requires a specialized branch.
+
+#### Closure State — Semiconductor & Photovoltaic Manufacturing Filter
+
+- REIKE source product discovery: COMPLETE
+- Alumina Powder Filter Cartridge: SOURCE IDENTIFIED / TECHNICAL DATA OPEN
+- H13-H14 HEPA family: ARCHITECTURE CLOSED v1 / PRODUCT VALIDATION OPEN
+- F8-F9 medium-efficiency family: ARCHITECTURE CLOSED v1 / PRODUCT VALIDATION OPEN
+- Semiconductor cleanroom architecture: CLOSED v1
+- Photovoltaic application architecture: CLOSED v1
+- AMC architecture: IDENTIFIED / FURTHER RESEARCH REQUIRED
+- Technology-core relationship: CLOSED v1
+- Commercial technology naming: BLOCKED
+- OEM / SKU mapping: OPEN
+
+Next Air Filtration source family:
+- Laser Cutting Dust Filtration
