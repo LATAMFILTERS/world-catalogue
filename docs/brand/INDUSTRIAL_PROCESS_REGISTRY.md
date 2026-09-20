@@ -10930,3 +10930,227 @@ Before external trademark filing or reliance on exclusivity:
 
 Status:
 INDUSTRIAL & PROCESS COMMERCIAL NAMING — INTERNAL FREEZE v1 COMPLETE.
+
+
+## 50. Industrial & Process Representation Contract v1
+
+Status: REPRESENTATION ARCHITECTURE CLOSED v1.
+
+Purpose:
+Define how the frozen Industrial & Process commercial technology architecture is represented consistently across catalogue, technical datasheets, packaging, and web navigation without creating parallel taxonomies.
+
+Canonical source of truth:
+- Platform / family naming: TECHNOLOGY_REGISTRY.md
+- Industrial technical hierarchy / core mapping: INDUSTRIAL_PROCESS_REGISTRY.md
+- Product-to-family assignment: PRODUCT_REGISTRY.md
+- System / protection context: SYSTEM_REGISTRY.md
+
+### 50.1 Universal Display Hierarchy
+
+Every customer-facing Industrial & Process product must resolve through:
+
+Industrial & Process
+→ Platform
+→ Technology Family
+→ Descriptive Subfamily where applicable
+→ Product Family / Configuration
+→ SKU
+
+Internal-only metadata remains available to HERMES but is not printed by default:
+- Technology Core ID
+- validation status
+- source evidence state
+- system architecture IDs
+- internal capability codes
+
+### 50.2 Catalogue Representation
+
+Catalogue cards / product listings must show, in this order:
+
+1. ELIMFILTERS
+2. Product Name
+3. SKU
+4. Industrial & Process
+5. Platform mark
+6. Technology-family mark OR descriptive family
+7. Descriptive subfamily where required
+8. Primary application / system context
+9. Key validated performance values
+10. Evidence / certification only when validated and approved
+
+Example:
+ELIMFILTERS
+Industrial Hydraulic Filter Element
+SKU: [canonical SKU]
+Industrial & Process
+FLUREXIS™
+HYLTRIS™ — Hydraulic Fluid Filtration
+Application: Pressure-Line Hydraulic Filtration
+Performance: βx(c), flow, ΔP, collapse rating, temperature
+
+Rule:
+Platform and family must never be shown as if they were two peer technologies.
+
+### 50.3 Technical Datasheet Representation
+
+Technical datasheets must use a fixed identity block:
+
+ELIMFILTERS
+Industrial & Process
+Platform: [platform mark + descriptor]
+Technology Family: [family mark + descriptor]
+Descriptive Subfamily: [only if applicable]
+Product Family: [configuration]
+SKU: [canonical SKU]
+Technology Core: [internal reference; may appear in technical metadata section]
+Validation State: [internal or controlled technical section]
+
+Required technical sections:
+- Product identity
+- Application / duty
+- Filtration or treatment mechanism
+- Performance
+- Operating envelope
+- Materials / construction
+- Dimensions / connections
+- Compatibility
+- Applicable standards / test methods
+- Evidence / validation state
+- OEM / competitor interchange only when approved
+- Ordering information
+
+Rule:
+Commercial mark appears once in the identity block and once, if needed, in the technology-description section. Avoid decorative repetition.
+
+### 50.4 Packaging Representation
+
+Packaging hierarchy:
+
+Primary face:
+1. ELIMFILTERS master brand
+2. SKU
+3. Product Family / Product Name
+4. Platform mark
+5. Technology-family mark, only when branded
+
+Secondary face / side panel:
+- Industrial & Process
+- family descriptor in plain English
+- core performance data
+- installation / handling information
+- traceability / batch / serial as applicable
+- validated standards / claims
+- QR / digital product reference if implemented
+
+Do NOT print:
+- internal Technology Core IDs
+- supplier names
+- source-evidence states
+- unvalidated manufacturer claims
+- internal HERMES taxonomy
+- application names as if they were technology marks
+
+Descriptive families are printed without trademark styling.
+
+### 50.5 Web Navigation Representation
+
+Canonical navigation:
+
+Industrial & Process
+├─ AEREMIS™ — Air Technologies
+│  ├─ General Air Filtration
+│  ├─ HE-CRIVA™ — High-Efficiency / Critical Air Filtration
+│  └─ MA-TREA™ — Molecular Air Treatment
+├─ PARTION™ — Dust & Fume Technologies
+│  └─ FUMEVRA™ — Fine Dust & Fume Filtration
+├─ COALVEX™ — Gas Conditioning Technologies
+│  ├─ COALERIS™ — Gas Coalescence
+│  └─ Gas-Liquid Separation
+├─ FLUREXIS™ — Fluid Conditioning Technologies
+│  ├─ HYLTRIS™ — Hydraulic Fluid Filtration
+│  ├─ LUBREVA™ — Industrial Lubrication Filtration
+│  ├─ DEWATIS™ — Oil Dehydration & Water Removal
+│  └─ OILREVEX™ — Oil Condition Remediation
+└─ AQUVEXIS™ — Water Treatment Technologies
+   ├─ Depth Filtration
+   ├─ ADSOVEX™ — Adsorptive Carbon Treatment
+   ├─ MEMBRAVEX™ — Membrane Separation
+   │  ├─ Reverse Osmosis
+   │  ├─ Ultrafiltration
+   │  └─ Nanofiltration
+   ├─ IONVEXA™ — Ion Exchange
+   └─ Electrodeionization
+
+Rule:
+Web navigation follows customer comprehension, not internal database normalization.
+
+### 50.6 Search / Facet Representation
+
+Web / catalogue search facets should expose:
+- Platform
+- Technology Family
+- Product Type
+- Application
+- Industry
+- Contaminant / Treatment Objective
+- Flow
+- Pressure
+- Temperature
+- Micron / efficiency / beta / membrane class as applicable
+- Material
+- OEM / competitor reference where approved
+
+Internal Technology Core may drive search logic but should not be exposed as a primary customer facet.
+
+### 50.7 Trademark Styling
+
+Use ™ only on branded platform and branded family names.
+
+Do not apply ™ to:
+- descriptive families
+- applications
+- systems
+- capabilities
+- product configurations
+- RO / UF / NF
+- Electrodeionization
+- General Air Filtration
+- Gas-Liquid Separation
+- Depth Filtration
+
+### 50.8 Canonical Freeze Precedence
+
+The Internal Commercial Naming Freeze v1 overrides earlier working-name sections.
+
+Canonical family marks now are:
+- HE-CRIVA™
+- MA-TREA™
+- FUMEVRA™
+- COALERIS™
+- HYLTRIS™
+- LUBREVA™
+- DEWATIS™
+- OILREVEX™
+- ADSOVEX™
+- MEMBRAVEX™
+- IONVEXA™
+
+Historical candidates remain history only and must not appear in new catalogue, packaging, datasheet, or web work.
+
+### 50.9 Reuse / No-Parallel-System Rule
+
+Reused:
+- existing TECHNOLOGY_REGISTRY
+- existing PRODUCT_REGISTRY
+- existing SYSTEM_REGISTRY
+- existing INDUSTRIAL_PROCESS_REGISTRY
+- existing HERMES technical-core model
+
+Created:
+- only a representation contract and cross-registry mappings.
+
+Why:
+The architecture needs presentation rules, not another taxonomy or parallel registry.
+
+Status:
+INDUSTRIAL & PROCESS REPRESENTATION CONTRACT v1 — CLOSED.
