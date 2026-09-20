@@ -8,7 +8,7 @@ import {
 } from '@/lib/industrial-process-architecture';
 
 function coreLabel(core: string | readonly string[]) {
-  return Array.isArray(core) ? core.join(' / ') : core;
+  return typeof core === 'string' ? core : core.join(' / ');
 }
 
 function faqItems(platform: IndustrialProcessPlatform, technology: IndustrialProcessTechnology) {

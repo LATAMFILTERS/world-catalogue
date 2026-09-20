@@ -147,7 +147,7 @@ export default function IndustrialProcessPage() {
             <h2 id="platform-title" style={sectionTitle}>Navigate by treatment function.</h2>
             <div style={platformGrid}>
               {INDUSTRIAL_PROCESS_PLATFORMS.map((platform, index) => (
-                <article key={platform.mark} style={platformCard}>
+                <article key={platform.slug} style={platformCard}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'baseline' }}>
                     <span style={numberStyle}>{String(index + 1).padStart(2, '0')}</span>
                     <span style={platformDescriptor}>{platform.descriptor}</span>
