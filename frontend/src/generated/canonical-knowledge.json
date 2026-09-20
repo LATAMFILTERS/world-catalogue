@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.1.0",
   "sourceAuthority": "13-canonical-knowledge",
-  "generatedAt": "2026-09-20T23:30:00.000Z",
+  "generatedAt": "2026-09-20T23:19:25.207Z",
   "count": 44,
   "records": [
     {
@@ -23,6 +23,7 @@
       "systems": [
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "MACROCORE™"
       ],
@@ -66,8 +67,7 @@
         "A replacement element must preserve sealing geometry, seating depth and housing engagement required by the specific heavy-duty intake system.",
         "Visual similarity is insufficient evidence of interchangeability when housing or sealing architecture differs.",
         "Heavy-duty air-intake application validation must remain scoped to the specific housing/application configuration."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "HD-DESIGN-CHANGE-FUNCTIONAL-EQUIVALENCE",
@@ -89,6 +89,7 @@
         "Lube/Oil Protection Systems",
         "Fuel Cleanliness Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™",
         "HYDROCORE™"
@@ -135,8 +136,7 @@
         "Changes in profile, baseplate construction, thread-ring construction, drain features or element geometry require application and functional verification before equivalence is accepted or rejected.",
         "Functional equivalence must be based on interface compatibility and required system behavior, not visual similarity alone.",
         "A running design change must not be converted into a universal supersession rule without application scope."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "HD-FUEL-SEALING-INTERFACE-COMPATIBILITY",
@@ -157,6 +157,7 @@
       "systems": [
         "Fuel Cleanliness Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "HYDROCORE™"
       ],
@@ -202,8 +203,7 @@
         "Center-tube, gasket-seat, thread-ring and bowl interfaces can affect whether a filter seals and routes fuel correctly.",
         "A component that appears physically similar may still be incompatible if a sealing or engagement feature differs.",
         "Housing and interface configuration must be treated as application-specific evidence during fitment validation."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "IP-AEREMIS-AIR-TREATMENT-ARCHITECTURE",
@@ -607,6 +607,7 @@
       "systems": [
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "MACROCORE™"
       ],
@@ -651,8 +652,7 @@
         "Flow Rate",
         "Restriction",
         "Sealing"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-AIR-REPLACEMENT-PROCEDURE",
@@ -667,6 +667,7 @@
       "systems": [
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "MACROCORE™"
       ],
@@ -710,8 +711,7 @@
         "Air Filter Housing",
         "Installation",
         "Sealing"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-AIR-RESTRICTION-SYMPTOMS",
@@ -726,6 +726,7 @@
       "systems": [
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "MACROCORE™"
       ],
@@ -778,8 +779,7 @@
         "Restriction",
         "Contaminant Loading",
         "Failure Analysis"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-AIR-SERVICE-INTERVAL",
@@ -794,6 +794,7 @@
       "systems": [
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "MACROCORE™"
       ],
@@ -845,8 +846,7 @@
         "Restriction",
         "Contaminant Loading",
         "Service Life"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-CABIN-AIRFLOW-DIRECTION",
@@ -861,6 +861,7 @@
       "systems": [
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "MICROKAPPA™"
       ],
@@ -913,8 +914,7 @@
         "Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice.",
         "Installation",
         "Flow Rate"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-CABIN-CARBON-MEDIA",
@@ -929,6 +929,7 @@
       "systems": [
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "MICROKAPPA™"
       ],
@@ -969,8 +970,7 @@
         "Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function.",
         "Flow Rate",
         "Service Life"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-CABIN-FUNDAMENTALS",
@@ -985,6 +985,7 @@
       "systems": [
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "MICROKAPPA™"
       ],
@@ -1027,8 +1028,7 @@
         "Flow Rate",
         "Contaminant Loading",
         "Service Life"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-CABIN-LOADING-SYMPTOMS",
@@ -1043,6 +1043,7 @@
       "systems": [
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "MICROKAPPA™"
       ],
@@ -1094,8 +1095,7 @@
         "Restriction",
         "Contaminant Loading",
         "Failure Analysis"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-CABIN-SERVICE-INTERVAL",
@@ -1110,6 +1110,7 @@
       "systems": [
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "MICROKAPPA™"
       ],
@@ -1157,8 +1158,7 @@
         "Contaminant Loading",
         "Service Life",
         "Restriction"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-BYPASS-OPERATION",
@@ -1173,6 +1173,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1234,8 +1235,7 @@
         "Restriction",
         "Bypass",
         "Flow Rate"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-COLD-START",
@@ -1250,6 +1250,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1297,8 +1298,7 @@
         "Differential Pressure",
         "Restriction",
         "Bypass"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-COMPONENT-ARCHITECTURE",
@@ -1313,6 +1313,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1367,8 +1368,7 @@
         "Bypass",
         "Sealing",
         "Installation"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-CONTAMINANT-LOADING",
@@ -1383,6 +1383,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1453,8 +1454,7 @@
         "Media Saturation",
         "Restriction",
         "Service Life"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-EXTENDED-SERVICE",
@@ -1469,6 +1469,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1528,8 +1529,7 @@
         "Service Life",
         "Dirt Holding Capacity",
         "Flow Rate"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-FITMENT-COMPATIBILITY",
@@ -1544,6 +1544,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1602,8 +1603,7 @@
         "Sealing",
         "Flow Rate",
         "Bypass"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-LOW-PRESSURE-DIAGNOSIS",
@@ -1618,6 +1618,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1666,8 +1667,7 @@
         "Differential Pressure",
         "Restriction",
         "Failure Analysis"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-PERFORMANCE-BALANCE",
@@ -1682,6 +1682,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1726,8 +1727,7 @@
         "Dirt Holding Capacity",
         "Flow Rate",
         "Restriction"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-POST-SERVICE-PRESSURE-DIAGNOSIS",
@@ -1742,6 +1742,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1781,8 +1782,7 @@
         "Low or delayed oil pressure after service is not sufficient evidence that the replacement filter is restrictive or defective.",
         "Loss of pump prime, low oil level, pickup-side problems, pressure-regulation faults, drain-back behavior and filter/application mismatch are distinct diagnostic branches.",
         "Diagnosis should verify actual lubrication-system pressure and system condition before assigning causation to the filter."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-PRESSURE-CONTROL-ARCHITECTURE",
@@ -1797,6 +1797,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1850,8 +1851,7 @@
         "Differential Pressure",
         "Bypass",
         "Flow Rate"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-SEAL-LEAKAGE",
@@ -1866,6 +1866,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1921,8 +1922,7 @@
         "Sealing",
         "Installation",
         "Failure Analysis"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-SERVICE-ACCESS",
@@ -1937,6 +1937,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -1982,8 +1983,7 @@
         "Gasket / Seal",
         "Installation",
         "Sealing"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-LUBE-STRUCTURAL-FAILURE-DIAGNOSIS",
@@ -1998,6 +1998,7 @@
       "systems": [
         "Lube/Oil Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™"
       ],
@@ -2045,8 +2046,7 @@
         "Differential Pressure",
         "Restriction",
         "Failure Analysis"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-SHARED-SEASONAL-FILTRATION",
@@ -2063,6 +2063,7 @@
         "Air Intake & Airflow Protection Systems",
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™",
         "MACROCORE™",
@@ -2112,8 +2113,7 @@
         "Restriction",
         "Contaminant Loading",
         "Flow Rate"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "LD-SHARED-TOTAL-VEHICLE-PROTECTION",
@@ -2130,6 +2130,7 @@
         "Air Intake & Airflow Protection Systems",
         "Air Intake & Airflow Protection Systems"
       ],
+      "platforms": [],
       "technologies": [
         "SYNTRAX™",
         "MACROCORE™",
@@ -2172,8 +2173,7 @@
         "Contaminant Loading",
         "Service Life",
         "Installation"
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-BYPASS",
@@ -2188,6 +2188,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2231,8 +2232,7 @@
         "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
         "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
         "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-CONTAMINANT-LOADING",
@@ -2247,6 +2247,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2296,8 +2297,7 @@
         "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval.",
         "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
         "Correct selection, installation and service condition are common requirements across these filtration systems."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-DIFFERENTIAL-PRESSURE",
@@ -2312,6 +2312,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2351,8 +2352,7 @@
         "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes.",
         "Lower lubricant temperature generally increases viscosity, which can increase resistance to flow during cold-start conditions.",
         "Cold-start flow demand can increase pressure differential across the filter and make correct application-specific flow and bypass characteristics important."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-DIRT-HOLDING-CAPACITY",
@@ -2367,6 +2367,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2400,8 +2401,7 @@
         "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size.",
         "Longer lubricant drain intervals increase the time the filter remains exposed to contaminant loading, pressure cycling and thermal stress.",
         "Lubricant chemistry alone does not determine filter compatibility; service interval, application requirements and filter durability must also be considered."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-FAILURE-ANALYSIS",
@@ -2416,6 +2416,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2445,8 +2446,7 @@
         "None assigned",
         "A restricted or incorrectly specified filter can be one contributor to abnormal lubrication pressure, but low oil pressure requires system-level diagnosis.",
         "Diagnosis should separate filter restriction from lubricant, pump, engine-clearance and other lubrication-system causes."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-FILTRATION-EFFICIENCY",
@@ -2461,6 +2461,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2502,8 +2503,7 @@
         "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
         "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
         "Correct selection, installation and service condition are common requirements across these filtration systems."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-FLOW-RATE",
@@ -2518,6 +2518,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2583,8 +2584,7 @@
         "As contaminant loading increases, airflow through the element can decline and service replacement becomes necessary.",
         "Activated-carbon cabin media adds adsorption capability for selected gases and odors while the filter structure continues to manage particulate contamination.",
         "Adsorption capacity is finite and should be treated as a service-life property rather than a permanent function."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-INSTALLATION",
@@ -2599,6 +2599,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2634,8 +2635,7 @@
         "Layered cabin-filter media can be designed for a specific airflow direction, so installation orientation is a functional requirement rather than a cosmetic choice.",
         "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
         "Correct selection, installation and service condition are common requirements across these filtration systems."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-MEDIA-SATURATION",
@@ -2650,6 +2650,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2679,8 +2680,7 @@
         "None assigned",
         "Increasing contaminant loading consumes available media capacity and can raise flow restriction.",
         "Media saturation can increase pressure differential and raise the likelihood of bypass operation in systems designed with a bypass function."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-MICRON-RATING",
@@ -2695,6 +2695,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2724,8 +2725,7 @@
         "None assigned",
         "Oil-filter protection depends on balancing particle capture efficiency, contaminant-holding capacity and lubricant flow rather than optimizing a single parameter.",
         "A micron value does not define filtration performance unless it is paired with capture efficiency at that particle size."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-RESTRICTION",
@@ -2740,6 +2740,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2803,8 +2804,7 @@
         "High contaminant exposure can shorten effective cabin-filter service life compared with operation in cleaner conditions.",
         "Seasonal temperature and airborne-contamination changes can alter filtration loading, fluid-flow behavior and maintenance demand across multiple vehicle systems.",
         "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-SEALING",
@@ -2819,6 +2819,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2856,8 +2857,7 @@
         "Spin-on and cartridge designs package these functions differently even when both perform engine-lubricant filtration.",
         "Engine-air-filter designs must provide particle capture while maintaining acceptable airflow and sealing within the intake housing.",
         "Media construction and filter geometry affect contaminant capacity, restriction behavior and fitment."
-      ],
-      "platforms": []
+      ]
     },
     {
       "id": "SHARED-SERVICE-LIFE",
@@ -2872,6 +2872,7 @@
       "systems": [
         "Shared / none"
       ],
+      "platforms": [],
       "technologies": [
         "None assigned"
       ],
@@ -2929,8 +2930,7 @@
         "Seasonal maintenance should verify filter condition and application requirements rather than rely on one universal replacement interval.",
         "Engine lubrication, engine air intake and cabin-air filtration protect different exposure paths and should be managed as coordinated protection systems rather than unrelated service items.",
         "Correct selection, installation and service condition are common requirements across these filtration systems."
-      ],
-      "platforms": []
+      ]
     }
   ]
 }

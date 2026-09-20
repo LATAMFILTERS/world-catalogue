@@ -31,7 +31,7 @@ for(const file of walk(root)){
   maintenanceProcedures:section(text,'Maintenance Procedures'), procedures:section(text,'Procedures'), technicalRelationships:section(text,'Technical Relationships — Validated'),
   operatingConditions:section(text,'Operating Conditions'), standards:section(text,'Standards'), sharedEngineering:section(text,'Shared Engineering').map(x=>x.replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g,'$2')),
  };
- rec.keywords=dedupe([rec.title,rec.domain,rec.contentType,...rec.industries,...rec.systems,...rec.technologies,...rec.components,...rec.problems,...rec.failureModes,...rec.symptoms,...rec.rootCauses,...rec.diagnosticMethods,...rec.correctiveActions,...rec.technicalRelationships,...rec.operatingConditions,...rec.standards,...rec.sharedEngineering]);
+ rec.keywords=dedupe([rec.title,rec.domain,rec.contentType,...rec.industries,...rec.systems,...rec.platforms,...rec.technologies,...rec.components,...rec.problems,...rec.failureModes,...rec.symptoms,...rec.rootCauses,...rec.diagnosticMethods,...rec.correctiveActions,...rec.technicalRelationships,...rec.operatingConditions,...rec.standards,...rec.sharedEngineering]);
  const publicText=JSON.stringify(rec);
  if(/\bFRAM\b|fram\.com|https?:\/\/|EVID-|source_evidence|validation_sources|12-knowledge-candidates/i.test(publicText)) throw new Error(`Public canonical projection leak: ${id}`);
  records.push(rec);

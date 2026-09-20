@@ -8,11 +8,12 @@ const {
   buildCanonicalKnowledgeAnswer
 } = require('../lib/knowledge-governance/canonical-knowledge-repository');
 const { queryApprovedTechnicalKnowledge } = require('../lib/knowledge-governance/obsidian-knowledge-client');
+const generatedCanonicalKnowledge = require('../frontend/src/generated/canonical-knowledge.json');
 
-test('backend canonical repository loads only the 34 approved records', () => {
+test('backend canonical repository matches the approved public projection', () => {
   const records = loadCanonicalRecords();
-  assert.equal(records.length, 34);
-  assert.equal(/FRAM|fram\.com|https?:\/\/|EVID-|12-knowledge-candidates/i.test(JSON.stringify(records.map(r => ({ id:r.id, title:r.title, body:r.body })))), false);
+  assert.equal(records.length, generatedCanonicalKnowledge.count);
+  assert.equal(/\bFRAM\b|fram\.com|https?:\/\/|EVID-|12-knowledge-candidates/i.test(JSON.stringify(records.map(r => ({ id:r.id, title:r.title, body:r.body })))), false);
 });
 
 test('backend canonical search resolves validated bypass engineering knowledge', () => {
