@@ -9616,3 +9616,85 @@ Formal trademark clearance remains mandatory before adoption or filing.
 
 Status:
 LOW-RISK FIVE-PLATFORM NAMING BOARD ESTABLISHED v1.
+
+
+## 37. Deep Final Public-Screening — Five Platform Names
+
+Status: PUBLIC CLEARANCE SCREENING COMPLETE v1.
+
+Final platform candidates:
+- AEREMIS — Air Technologies
+- PARTION — Dust & Fume Technologies
+- COALVEX — Gas Conditioning Technologies
+- FLUREXIS — Fluid Conditioning Technologies
+- AQUVEXIS — Water Treatment Technologies
+
+### 37.1 Screening Method
+
+For each exact mark, the final public screen covered:
+- exact-name broad web search;
+- exact-name + trademark search;
+- exact-name + relevant filtration / treatment sector search;
+- exact-name searches focused on USPTO-indexed material;
+- exact-name searches focused on WIPO-indexed material;
+- exact-name searches focused on major public trademark aggregators.
+
+### 37.2 Results
+
+AEREMIS:
+- no exact industrial air-filtration / cleanroom / HVAC commercial conflict surfaced;
+- no exact indexed USPTO / WIPO / major public trademark-database result surfaced;
+- unrelated historical usernames / gaming-community uses exist.
+Decision: PASS PUBLIC SCREENING.
+
+PARTION:
+- no exact dust / fume / industrial-filtration commercial conflict surfaced;
+- no exact indexed USPTO / WIPO / major public trademark-database result surfaced;
+- the term appears as a misspelling / lexical form in unrelated content, increasing search noise but not creating an identified filtration conflict.
+Decision: PASS PUBLIC SCREENING WITH DISTINCTIVENESS NOTE.
+
+COALVEX:
+- no exact gas-conditioning / coalescence / filtration commercial conflict surfaced;
+- no exact indexed USPTO / WIPO / major public trademark-database result surfaced.
+Decision: PASS PUBLIC SCREENING.
+
+FLUREXIS:
+- no exact fluid-conditioning / hydraulic / lubrication / oil-treatment commercial conflict surfaced;
+- no exact indexed USPTO / WIPO / major public trademark-database result surfaced.
+Decision: PASS PUBLIC SCREENING.
+
+AQUVEXIS:
+- no exact industrial-water / membrane / ion-exchange / filtration commercial conflict surfaced;
+- no exact indexed USPTO / WIPO / major public trademark-database result surfaced.
+Decision: PASS PUBLIC SCREENING.
+
+### 37.3 Governance Decision
+
+All five names have no known material conflict from the completed public knockout screen.
+
+They are therefore approved as ELIMFILTERS Industrial & Process PLATFORM NAMES for internal brand architecture and product-development use:
+
+- AEREMIS™
+- PARTION™
+- COALVEX™
+- FLUREXIS™
+- AQUVEXIS™
+
+Legal boundary:
+This approval is NOT a legal opinion, trademark registration, or guarantee of zero legal risk.
+Before external trademark filing / final market launch, perform formal clearance using authoritative trademark databases and, where appropriate, trademark counsel.
+
+### 37.4 Canonical Mapping
+
+Industrial & Process
+→ AEREMIS™ — Air Technologies
+→ PARTION™ — Dust & Fume Technologies
+→ COALVEX™ — Gas Conditioning Technologies
+→ FLUREXIS™ — Fluid Conditioning Technologies
+→ AQUVEXIS™ — Water Treatment Technologies
+
+The 17 internal Technology Cores remain unchanged beneath these five commercial platforms.
+
+Status:
+INDUSTRIAL & PROCESS PLATFORM NAMING APPROVED v1.
+FORMAL TRADEMARK FILING / LEGAL CLEARANCE: PENDING.
