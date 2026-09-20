@@ -9286,3 +9286,91 @@ No commercial mark is approved yet.
 
 Next action:
 Generate replacements for AEROVA, FLUVION, and AQUAVEX while retaining PARTION and COALVEX for deeper screening.
+
+
+## 32. Replacement Platform Candidates — Air / Fluid / Water
+
+Status: WORKING SHORTLIST. No mark approved.
+
+Existing preferred candidates retained:
+- Dust & Fume → PARTION
+- Gas Conditioning → COALVEX
+
+Replacement generation focuses only on Air, Fluid, and Water.
+
+### 32.1 Air Technologies — Replacement Candidates
+
+Preferred replacement direction:
+1. AERENTIS
+2. AERENZA
+3. AERIVIS
+4. AEREMIS
+5. AERELIS
+
+Rationale:
+- all preserve an air / atmosphere root without reusing the existing ELIMFILTERS '-CORE' grammar;
+- all are broad enough to cover general ventilation, high-efficiency filtration, and molecular air treatment;
+- none is tied to a single product form such as HEPA, cartridge, FFU, or cleanroom.
+
+First-pass notes:
+- AEROVA remains HOLD due current live / pending trademark activity.
+- AERION / AERIONE direction is avoided because American Air Filter has a live AERION application and AERIONE is in current air-purification use.
+- AERAVA is avoided because a live U.S. application exists.
+- AEROVANT is avoided because it is an active industrial / aviation brand.
+
+### 32.2 Fluid Conditioning Technologies — Replacement Candidates
+
+Preferred replacement direction:
+1. FLUVARA
+2. FLUVERA
+3. FLUIDEXA
+4. FLUENTRA
+5. FLUVARON
+
+Rationale:
+- broad enough to cover hydraulic filtration, industrial lubrication, oil dehydration, and oil-condition remediation;
+- avoids locking the platform to hydraulics or lubrication only;
+- roots suggest flow / fluid management rather than a specific media or product.
+
+First-pass notes:
+- FLUVION remains HOLD due live U.S. and Canadian applications.
+- FLUENTA is avoided due existing registered marks including flow / measurement-related goods.
+- FLUXARA is avoided due an active technology trademark.
+- FLUMERA is avoided because it is already in active water / flow-control use.
+- FLUVARIS is avoided because a live U.S. application exists.
+
+### 32.3 Water Treatment Technologies — Replacement Candidates
+
+Preferred replacement direction:
+1. AQUVEXA
+2. AQUERON
+3. AQUAVARA
+4. AQUENTRA
+5. AQUELIS
+
+Rationale:
+- broad enough to cover depth filtration, carbon adsorption, RO / UF / NF, ion exchange, and EDI;
+- avoids tying the platform solely to membranes or purification;
+- maintains strong water semantics while remaining more distinctive than generic AQUA + TECH / CORE constructions.
+
+First-pass notes:
+- AQUAVEX remains REPLACE due existing registered mark.
+- AQUANEX is rejected because Thermo Fisher has a registered mark covering water-purification filters and related equipment.
+- AQUANTE / AQUENTA direction is avoided because live water-treatment filings exist.
+- HYDRIVA is rejected because it is actively used for water-filtration / water-treatment offerings.
+
+### 32.4 Working Selection Gate
+
+Air:
+AERENTIS / AERENZA / AERIVIS / AEREMIS / AERELIS
+
+Fluid:
+FLUVARA / FLUVERA / FLUIDEXA / FLUENTRA / FLUVARON
+
+Water:
+AQUVEXA / AQUERON / AQUAVARA / AQUENTRA / AQUELIS
+
+Next gate:
+Select 1–2 finalists per platform, then perform deeper USPTO / international / competitor screening before approval.
+
+No commercial mark is approved in this block.
