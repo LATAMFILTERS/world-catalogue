@@ -22,6 +22,7 @@ const getFooterNavigation = (t: any) => [
       { label: t('footer.aboutUs', 'About Us'), href: '/about', external: false },
       { label: t('footer.philosophy', 'Our Philosophy'), href: '/about/philosophy', external: false },
       { label: t('footer.industries', 'Industries'), href: '/industries', external: false },
+      { label: 'Industrial & Process', href: '/industrial-process/', external: false },
       { label: t('footer.protectionSystems', 'Protection Systems'), href: '/systems', external: false },
       { label: t('footer.distributors', 'Distributors'), href: '/distributors', external: false },
       { label: t('footer.contact', 'Contact'), href: '/contact', external: false },
