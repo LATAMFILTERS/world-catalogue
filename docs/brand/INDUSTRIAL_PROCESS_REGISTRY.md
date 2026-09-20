@@ -9264,3 +9264,25 @@ No name becomes an ELIMFILTERS technology until:
 Status:
 COMMERCIAL NAMING ROUND 1 OPEN.
 NO INDUSTRIAL & PROCESS COMMERCIAL TECHNOLOGY NAME IS APPROVED YET.
+
+
+## 31. Preferred Platform Naming Shortlist
+
+Selected working candidates:
+- Air Technologies: AEROVA
+- Dust & Fume Technologies: PARTION
+- Gas Conditioning Technologies: COALVEX
+- Fluid Conditioning Technologies: FLUVION
+- Water Treatment Technologies: AQUAVEX
+
+Screening status:
+- AEROVA: HOLD. Multiple live/pending U.S. filings exist in 2026, including air-adjacent goods.
+- PARTION: PROVISIONAL. No clear filtration conflict surfaced in the first broad search; deeper screening required.
+- COALVEX: PROVISIONAL. No material gas/coalescence conflict surfaced in the first broad search; deeper screening required.
+- FLUVION: HOLD. Live U.S. and Canadian applications were filed in May 2026.
+- AQUAVEX: REPLACE. Existing U.S. registration is registered and renewed.
+
+No commercial mark is approved yet.
+
+Next action:
+Generate replacements for AEROVA, FLUVION, and AQUAVEX while retaining PARTION and COALVEX for deeper screening.
