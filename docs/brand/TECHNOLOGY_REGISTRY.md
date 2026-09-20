@@ -185,3 +185,13 @@ General Air Filtration remains descriptive and maps to TC-AIR-01.
 Governance:
 - CRITENZA™ and SORBEXIS™ are approved as preferred internal working marks after public knockout screening.
 - Formal trademark clearance remains required before filing, registration, or reliance on exclusive rights.
+
+
+### AEREMIS™ — User-Selected Family Naming Revision
+
+- HE-CRAF™ — High-Efficiency / Critical Air Filtration — maps to TC-AIR-02 — HOLD due existing CRAF technical acronym usage in critical-air filtration.
+- MA-TREA™ — Molecular Air Treatment — maps to TC-AIR-03 — preferred working candidate pending formal clearance.
+
+General Air Filtration remains descriptive and maps to TC-AIR-01.
+
+Previous working marks CRITENZA™ and SORBEXIS™ are no longer the active preferred names.
