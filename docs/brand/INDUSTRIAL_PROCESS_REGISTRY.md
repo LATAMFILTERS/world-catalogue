@@ -2325,3 +2325,439 @@ No commercial ELIMFILTERS technology name is approved.
 
 Next Industrial & Process source family:
 - Filtration Equipment & Systems
+
+
+## 16. Filtration Equipment & Systems — External Benchmark Architecture v1
+
+Status: REIKE CATEGORY CONFIRMED BUT PRODUCT PAGE EMPTY; EXTERNAL BENCHMARK ARCHITECTURE COMPLETE; COMMERCIAL TECHNOLOGY NAMES NOT ASSIGNED.
+
+Source condition:
+- REIKE lists "Filtration Equipment & Systems" as a top-level Industrial & Process family.
+- The REIKE category page currently contains no usable technical subfamily or specification content.
+- Therefore no REIKE housing, skid, separator, pressure, flow, material, certification, or system-performance claim is accepted from this empty page.
+
+External benchmark basis:
+- Eaton industrial filtration systems and strainers
+- Donaldson industrial / hydraulic / bulk-fluid system practice
+
+### 16.1 Canonical Interpretation
+
+Filtration Equipment & Systems is a SYSTEM / EQUIPMENT LAYER, not a filtration technology.
+
+Canonical domain:
+Industrial & Process
+→ Filtration Equipment & Systems
+
+Its role is to integrate one or more physical separation mechanisms into engineered equipment.
+
+Canonical system families:
+- Cartridge Filter Housings
+- Bag Filter Housings
+- Duplex / Changeover Filter Systems
+- Multi-Housing / Manifold Filter Systems
+- Hydraulic / Lubrication Filter Assemblies
+- Automatic Self-Cleaning Filters
+- Manual Pipeline Strainers
+- Gas-Liquid Separators
+- Oil Purification / Conditioning Systems
+- Bulk Fuel / Lube Filtration Systems
+- Filtration Skids / Packaged Systems
+- Monitoring / Differential-Pressure Instrumentation
+
+Canonical rule:
+A housing, skid, separator, manifold, or duplex assembly is not itself a filtration technology. It is equipment that implements one or more filtration functions.
+
+### 16.2 Cartridge Filter Housings
+
+External benchmark evidence from Eaton shows single- and multi-cartridge housings in industrial service with stainless-steel construction, multiple cartridge lengths and connection arrangements, and application-specific pressure / temperature limits.
+
+Canonical attributes:
+- Number of cartridges
+- Cartridge length
+- Cartridge interface / end configuration
+- Housing material
+- Seal material
+- Design pressure
+- Maximum operating pressure
+- Design / operating temperature
+- Connection type
+- Closure type
+- Vent / drain
+- Code / certification requirement
+- Flow capacity
+- Internal support / restrainer
+- Corrosion allowance
+- Surface finish where relevant
+
+Canonical rule:
+Housing pressure rating and element collapse differential pressure must remain separate fields.
+
+### 16.3 Bag Filter Housings
+
+External benchmark evidence from Eaton identifies:
+- Single-bag housings
+- Multi-bag housings
+- High-flow industrial service
+- Stainless steel and other materials
+- Multiple closure and connection configurations
+
+Canonical functions:
+- Coarse / fine particulate filtration depending bag media
+- High-flow industrial liquid filtration
+
+Canonical equipment attributes:
+- Bag size / count
+- Basket geometry
+- Housing material
+- Closure design
+- Inlet / outlet size
+- Flow
+- Pressure
+- Temperature
+- Seal material
+- Differential-pressure monitoring
+- Code stamp / certification where required
+
+### 16.4 Duplex / Changeover Systems
+
+Eaton's DUOLINE and hydraulic duplex products confirm the canonical architecture of two filter chambers connected through a changeover arrangement to permit continuous operation while one chamber is serviced.
+
+Canonical system function:
+- Continuous-Service Filtration
+
+Canonical components:
+- Duty housing
+- Standby housing
+- Changeover valve
+- Common inlet / outlet
+- Differential-pressure indication
+- Isolation / drain / vent
+- Service access
+
+Critical rule:
+"Duplex" is a SYSTEM CONFIGURATION, not a filtration mechanism.
+
+### 16.5 Multi-Housing / Manifold Systems
+
+External benchmark evidence from Eaton MODULINE shows multiple housings connected through a common manifold to increase total flow capacity.
+
+Canonical function:
+- Parallel Capacity Expansion
+
+Canonical attributes:
+- Housing count
+- Manifold material
+- Flow split
+- Total system flow
+- Pressure-drop distribution
+- Expandability
+- Isolation strategy
+- Footprint
+- Drain / vent
+- Maintenance access
+
+Critical rule:
+Parallelization changes system capacity, not media filtration efficiency.
+
+### 16.6 Hydraulic / Lubrication Filter Assemblies
+
+Eaton's hydraulic and lubrication portfolio confirms system-level configurations including:
+- Return-line filters
+- Suction filters
+- Pressure filters
+- Tank-mounted filters
+- Inline filters
+- Flange-mounted filters
+- Manifold-mounted pressure filters
+- Air breathers
+- Suction strainers
+- Single and duplex versions
+
+Canonical rule:
+System position is part of equipment architecture and must be stored independently from element media / technology.
+
+### 16.7 Automatic Self-Cleaning Filters
+
+Canonical system function:
+- Continuous or semi-continuous solids removal with reduced manual element replacement
+
+Potential cleaning mechanisms:
+- Mechanical scraping
+- Backwashing
+- Internal flushing
+- Differential-pressure triggered cleaning
+
+Canonical attributes:
+- Cleaning mechanism
+- Trigger logic
+- Backwash / purge flow
+- Waste volume
+- Screen / element rating
+- System flow
+- Pressure loss
+- Minimum operating pressure
+- Solids loading
+- Cleaning cycle
+- Automation interface
+
+No commercial ELIMFILTERS technology is assigned at this stage.
+
+### 16.8 Manual Pipeline Strainers
+
+Canonical function:
+- Coarse Solids Protection
+
+Typical configurations:
+- Basket strainer
+- Y-strainer
+- Temporary / startup strainer
+
+Canonical attributes:
+- Screen opening
+- Open-area ratio
+- Body material
+- Design pressure / temperature
+- Connection class
+- Blowdown / drain
+- Clean / dirty ΔP
+- Service fluid
+
+Canonical rule:
+A strainer is coarse mechanical protection and must not be conflated with fine cartridge filtration.
+
+### 16.9 Gas-Liquid Separators
+
+Eaton explicitly includes gas-liquid separators in its industrial filtration systems portfolio.
+
+Canonical system function:
+- Bulk Gas-Liquid Separation
+
+Potential uses:
+- Compressed gas
+- Air
+- Steam
+- Natural gas / process gas depending certified design
+
+Relationship to existing Industrial & Process cores:
+- May precede or follow TC-NG-01 Gas-Liquid Coalescence
+- May complement TC-NG-02 Gas-Liquid Separation
+
+Canonical rule:
+Bulk separator vessel performance and replaceable coalescing / separation element performance must remain separate.
+
+### 16.10 Bulk Fuel / Lube Filtration Systems
+
+Donaldson publishes packaged bulk fuel and lubrication filtration systems with defined:
+- Fluid type
+- Flow
+- Target ISO cleanliness
+- Filter efficiency
+- Housing working pressure
+- Element collapse rating
+
+Canonical architecture:
+Storage / Transfer Fluid
+→ Pre-Filtration / Water Control as required
+→ High-Efficiency Filtration
+→ Clean Fluid Transfer
+→ Target ISO Cleanliness
+
+Potential applications:
+- Bulk diesel
+- Lubricants
+- Hydraulic oils
+- Transmission oils
+- Coolants / thin oils where qualified
+
+Relationship:
+- Uses TC-LUB-01 / TC-HYD-01 or other fluid-specific cores
+- Equipment system itself is not a technology core
+
+### 16.11 Packaged Filtration Skids
+
+Canonical definition:
+An engineered skid integrates housings, pumps, valves, instrumentation, piping, controls, and one or more filtration / separation stages.
+
+Minimum skid architecture:
+- Inlet isolation
+- Pump where required
+- Prefilter where required
+- Main filtration / separation stage
+- Bypass / recirculation logic
+- Differential-pressure instrumentation
+- Pressure / temperature instrumentation
+- Sampling ports
+- Drain / vent
+- Controls / alarms
+- Outlet isolation
+- Structural frame / skid
+
+Optional:
+- Duplex operation
+- Heater
+- Cooler
+- Vacuum dehydration
+- Coalescer / separator
+- Water sensor
+- Particle counter
+- PLC / remote telemetry
+
+Canonical rule:
+Skid design is system engineering, not media technology.
+
+### 16.12 Instrumentation / Monitoring
+
+Canonical monitoring fields:
+- Inlet pressure
+- Outlet pressure
+- Differential pressure
+- Temperature
+- Flow
+- Particle count / ISO cleanliness where relevant
+- Water content where relevant
+- Conductivity / pressure / pH for water systems where relevant
+- Alarm setpoints
+- Change-out setpoints
+- Remote signal type
+
+HERMES should treat instrumentation as part of system qualification and maintenance logic.
+
+### 16.13 Engineering / Code Governance
+
+Industrial filtration equipment may require pressure-vessel, piping, electrical, sanitary, hazardous-area, or regional conformity depending application.
+
+Canonical compliance fields:
+- Design code
+- Pressure-vessel code / stamp where applicable
+- Connection standard
+- Material certification
+- Welding qualification
+- NDE requirement
+- Hazardous-area classification
+- ATEX / IECEx / NEC requirement where applicable
+- Food / sanitary requirement where applicable
+- PED / CE / local pressure-equipment requirement where applicable
+
+Rule:
+No compliance claim is inherited from a benchmark manufacturer. ELIMFILTERS must validate the exact system design and jurisdiction.
+
+### 16.14 HERMES Inputs — Equipment & Systems
+
+Minimum input model:
+- Industry
+- Application
+- Fluid / gas
+- Contaminant
+- Required filtration / separation mechanism
+- Flow
+- Operating pressure
+- Design pressure
+- Operating temperature
+- Design temperature
+- Viscosity / density
+- Solids loading
+- Required micron / beta / removal efficiency
+- Continuous-service requirement
+- Redundancy requirement
+- Number of filtration stages
+- Housing / element family
+- Material compatibility
+- Corrosion requirement
+- Connection standard
+- Code / certification requirement
+- Footprint / installation constraints
+- Power availability
+- Automation requirement
+- Monitoring requirement
+- Drain / waste handling requirement
+
+Expected logic:
+Process Duty
+→ Separation Function
+→ Element / Media Technology
+→ Housing Type
+→ Single / Duplex / Parallel Architecture
+→ Pressure / Temperature Class
+→ Materials
+→ Instrumentation
+→ Code / Certification
+→ Packaged System Configuration
+→ Validation State
+
+### 16.15 Canonical Equipment Record
+
+Required fields:
+- Canonical Equipment ID
+- Equipment Family
+- System Configuration
+- Filtration Function
+- Compatible Technology Core
+- Housing / Vessel Material
+- Number of Elements / Bags
+- Element / Bag Size
+- Rated Flow
+- Design Pressure
+- MAWP
+- Test Pressure
+- Operating Temperature
+- Design Temperature
+- Connection Type / Class
+- Seal Material
+- Closure Type
+- Bypass / Changeover Arrangement
+- Clean ΔP
+- Terminal ΔP
+- Instrumentation
+- Alarm Setpoints
+- Drain / Vent
+- Code / Certification
+- Hazardous-Area Classification
+- Weight
+- Footprint
+- Service Access Requirement
+- Source Evidence
+- Validation Status
+
+### 16.16 Technology-Core Relationship
+
+Filtration Equipment & Systems does not create a new media technology core by itself.
+
+It consumes previously discovered mechanism cores such as:
+- TC-NG-01 — Gas-Liquid Coalescence
+- TC-NG-02 — Gas-Liquid Separation
+- TC-LUB-01 — Industrial Lubricant Cleanliness Control
+- TC-HYD-01 — Industrial Hydraulic Contamination Control
+- TC-WAT-01 — Industrial Depth Particulate Filtration
+- TC-WAT-02 — Industrial Pleated Particle Control
+- TC-WAT-03 — Industrial Adsorptive Carbon Treatment
+- TC-WAT-04 — Reverse Osmosis Dissolved-Solids Separation
+- TC-WAT-05 — Ultrafiltration Membrane Separation
+
+System-level capability classes may later be branded, but only after portfolio and engineering validation.
+
+### 16.17 Filtration Equipment & Systems — Family Closure v1
+
+- REIKE category existence: CONFIRMED
+- REIKE technical content: EMPTY
+- External benchmark research: COMPLETE v1
+- Housing architecture: CLOSED v1
+- Duplex / continuous-service architecture: CLOSED v1
+- Parallel / manifold architecture: CLOSED v1
+- Strainer architecture: CLOSED v1
+- Gas-liquid separator architecture: CLOSED v1
+- Bulk-fluid system architecture: CLOSED v1
+- Packaged skid architecture: CLOSED v1
+- Instrumentation architecture: CLOSED v1
+- Compliance / code governance: CLOSED v1
+- Technology-core relationship: CLOSED v1
+- Commercial technology naming: intentionally OPEN / BLOCKED
+- Product-level specification and SKU population: OPEN
+- OEM / competitor mapping: OPEN
+
+Industrial & Process status after this closure:
+- Natural Gas Filtration: CLOSED v1
+- Hydraulic & Lubrication Filtration: CLOSED v1
+- Industrial Water Filtration Solutions: CLOSED v1
+- Filtration Equipment & Systems: CLOSED v1
+- Air Filtration Solutions: OPEN
+- Additive Manufacturing Filtration Solutions: OPEN
