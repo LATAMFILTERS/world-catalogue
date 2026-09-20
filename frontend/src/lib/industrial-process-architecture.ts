@@ -114,7 +114,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ['Defined cleanliness requirement', 'Fine-particle challenge', 'Strict bypass control', 'Final-stage pressure-drop sensitivity'],
         ['Unexpected cleanliness loss', 'Premature final-stage loading', 'Seal or frame leakage', 'Pressure drop outside expected trend'],
         '/images/air-filters-lab.avif',
-        '/images/dossier-filters.avif',
+        '/images/HE-CRIVA.png',
       ),
       tech(
         'ma-trea',
