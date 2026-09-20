@@ -272,3 +272,23 @@ Rejected:
 Gas-Liquid Separation remains descriptive and maps to TC-NG-02.
 
 No vessel architecture, application point, or system configuration becomes an independent technology mark.
+
+
+### FLUREXIS™ — Family Naming Shortlist
+
+Preferred working family marks:
+- HYDREXIS™ — Hydraulic Fluid Filtration — TC-HYD-01
+- LUBREXIS™ — Industrial Lubrication Filtration — TC-LUB-01
+- DEWATIS™ — Oil Dehydration & Water Removal — TC-OIL-01
+- VARREXIS™ — Oil Condition Remediation — TC-OIL-02
+
+Secondary candidates:
+- Hydraulic: HYLTRIS™, HYDREXON™
+- Lubrication: LUBRAVEX™, LUBREVA™
+- Dehydration: DRYLEXIS™, DEHYVEX™
+- Remediation: VARNEXIS™, OILREVEX™
+
+Rejected / avoided:
+- HYDREVA™, HYDRAVEX™, HYDREON™, LUBRION™, DEHYRA™, DRYVEX™, VARNEXA™
+
+All preferred marks remain subject to formal trademark clearance.
