@@ -5263,3 +5263,479 @@ CROSS-MANUFACTURER BENCHMARK CLOSED v1
 
 Next benchmark domain:
 Industrial Dust / Welding / Laser / Additive Manufacturing
+
+
+## 22. Cross-Manufacturer Benchmark — Industrial Dust / Welding / Laser / Additive Manufacturing CLOSED v1
+
+Status: CROSS-MANUFACTURER BENCHMARK CLOSED v1.
+
+Purpose:
+Validate and enrich the Industrial Dust, Welding Fume, Laser / Plasma Cutting, and Additive Manufacturing architecture with established manufacturers and safety authorities before Technology Core consolidation.
+
+Benchmark manufacturers / authorities reviewed:
+- Donaldson Industrial Air Filtration
+- Camfil Air Pollution Control (APC)
+- Nederman
+- OSHA
+
+Evidence state:
+Manufacturer findings are EXTERNAL_BENCHMARK.
+OSHA findings define recognized hazard / regulatory context and do not constitute product certification.
+No benchmark performance value is transferable to an ELIMFILTERS product without product-specific evidence.
+
+### 22.1 Donaldson Benchmark Contribution
+
+#### Fine-Fiber Surface Filtration
+
+Donaldson documents Ultra-Web® fine-fiber media for welding and thermal-cutting applications:
+- sub-micron fume / particulate capture
+- fine-fiber surface loading
+- pulse-cleanable dust cake
+- lower penetration of fine particulate into the substrate
+- longer effective filter life / airflow stability versus media where fine dust embeds deeper
+
+Canonical impact:
+TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration is confirmed as a distinct physical / performance mechanism.
+
+Required canonical media fields:
+- substrate
+- fine-fiber / nanofiber layer
+- fiber diameter where published
+- surface-loading behavior
+- air permeability
+- initial ΔP
+- operating ΔP
+- particle-size efficiency
+- pulse-cleanability
+- dust release
+- media area
+- media geometry
+
+#### Airflow Direction / Collector Aerodynamics
+
+Donaldson identifies downward airflow as a significant factor in thermal-cutting collectors because it assists cleaned dust and fume to move away from the filter surface after pulse cleaning.
+
+Canonical impact:
+Collector airflow pattern is a SYSTEM DESIGN DIMENSION independent of filter media.
+
+Required fields:
+- airflow pattern
+- inlet geometry
+- dropout / pre-separation zone
+- cartridge orientation
+- downward / cross-flow / up-flow architecture
+
+#### Collector Cleaning Energy
+
+Donaldson Downflo® Evolution documents engineered pulse-cleaning geometry and reports increased cleaning energy to the media.
+
+Canonical impact:
+Pulse cleaning cannot be stored as a simple Boolean.
+
+Required fields:
+- cleaning method
+- pulse pressure
+- pulse duration
+- pulse sequence
+- nozzle / pulse geometry
+- on-demand vs timed cleaning
+- compressed-air consumption
+- ΔP trigger
+- effective cleaning-energy basis where available
+
+#### Welding Fume Architecture
+
+Donaldson separates:
+- source / point-of-use extraction
+- centralized cartridge collectors
+- compact filter-pack collectors
+- ambient weld-fume collection
+
+Canonical impact:
+Welding fume requires a CAPTURE ARCHITECTURE layer before filter selection.
+
+Canonical capture modes:
+- On-Torch / On-Tool
+- Extraction Arm
+- Hood / Enclosure
+- Downdraft / Backdraft
+- Point-of-Use Collector
+- Central Collector
+- Ambient Air Filtration
+
+#### Connected Filtration / Condition Monitoring
+
+Donaldson iCue™ architecture tracks collector performance, operating data, alerts, and maintenance-relevant information.
+
+Canonical impact:
+Industrial dust collection requires a DIGITAL / CONDITION-MONITORING layer.
+
+New canonical monitoring fields:
+- differential pressure
+- fan / airflow status
+- particulate / emissions monitor where equipped
+- compressed-air system state
+- cleaning-cycle count
+- hopper / dust-bin state
+- alarm history
+- maintenance event
+- remote connectivity
+- data timestamp
+
+This is a SYSTEM CAPABILITY, not a filtration technology.
+
+### 22.2 Camfil APC Benchmark Contribution
+
+#### Thermal Cutting System Architecture
+
+Camfil Quantum Laser confirms a dedicated thermal-cutting architecture using:
+- integrated spark arrestor
+- separate spark discharge
+- fine-dust cartridge filtration
+- dual pulse cleaning
+- compact integrated fan / controls
+
+Canonical impact:
+Spark management must be a distinct PRE-FILTRATION / SAFETY FUNCTION before fine filtration.
+
+Required fields:
+- spark arrestor present
+- spark discharge / separation path
+- hot-particle bin
+- inlet temperature
+- spark load
+- filter ignition sensitivity
+
+#### PTFE Surface Filtration
+
+Camfil documents PTFE cartridge filtration for very fine laser dust.
+
+Canonical impact:
+TC-DUST-01 must support multiple surface-filtration implementations:
+- fine-fiber / nanofiber layer
+- ePTFE / PTFE membrane
+- other validated surface media
+
+These are MEDIA IMPLEMENTATIONS under one physical core, not separate commercial technologies by default.
+
+#### HEPA Post-Filtration
+
+Camfil thermal-cutting systems offer H14 post-filter configurations for high-risk / recirculation applications.
+
+Canonical impact:
+Add a SECONDARY / SAFETY FILTRATION stage to dust-collector architecture.
+
+Required fields:
+- secondary-filter present
+- HEPA class
+- test standard
+- final-stage ΔP
+- exhaust vs recirculation
+- occupational-exposure rationale
+
+#### Multistage Mobile Extraction
+
+Camfil Zephyr architecture documents:
+- source-capture arm
+- multi-stage filtration
+- pulse-cleanable primary filtration
+- optional HEPA
+- optional carbon stage for odour / ozone depending configuration
+
+Canonical impact:
+Welding systems may require PARTICULATE + MOLECULAR + FINAL SAFETY filtration in one train.
+
+#### Collector Cartridge Geometry
+
+Camfil Gold Cone / HemiPleat architecture shows that:
+- usable media area
+- pleat geometry
+- inner-cone / cartridge geometry
+- vertical orientation
+can materially affect dust loading, cleaning, pressure drop, and footprint.
+
+Canonical impact:
+Element geometry must be stored independently from media chemistry.
+
+Required fields:
+- cartridge geometry
+- pleat depth
+- pleat spacing
+- usable media area
+- cartridge orientation
+- internal cone / support architecture
+- cleaning accessibility
+
+### 22.3 Nederman Benchmark Contribution
+
+#### Source Capture Is a First-Class Engineering Layer
+
+Nederman strongly separates capture methods:
+- On-Torch
+- Extraction Arm
+- Downdraft / Backdraft
+- Local Containment / Hood
+- Robotic-Cell Extraction
+- Ambient Air Filtration
+
+Nederman explicitly treats capture at source as the preferred control strategy where practical.
+
+Canonical impact:
+HERMES must solve CAPTURE METHOD before COLLECTOR and FILTER selection.
+
+Required fields:
+- source mobility
+- process geometry
+- operator movement
+- capture distance
+- required capture airflow
+- hood / arm geometry
+- number of extraction points
+- simultaneous-use factor
+
+#### Nanofiber / ePTFE Surface Media
+
+Nederman documents surface-loading nanofiber and ePTFE media for very fine weld fume and links these media to better pulse cleaning, lower pressure drop, and longer operating life.
+
+Architecture impact:
+Further cross-manufacturer confirmation of TC-DUST-01.
+
+#### SmartFilter / Digital Monitoring
+
+Nederman SmartFilter systems add:
+- sensors
+- filter-performance monitoring
+- airflow / ΔP monitoring
+- cloud-based service / maintenance insight
+- alarm / maintenance support
+
+Architecture impact:
+Condition monitoring is now confirmed by multiple manufacturers and becomes a canonical system layer.
+
+#### High-Temperature Capture
+
+Nederman NEX HD documents extraction of hotter fumes with application-specific temperature limits.
+
+Architecture impact:
+HT-DUST must apply to BOTH:
+- filter-media / element thermal capability
+- upstream capture / duct / hood thermal capability
+
+Do not collapse these into one temperature field.
+
+Canonical temperature fields:
+- inlet gas temperature
+- capture-device temperature limit
+- duct temperature limit
+- collector temperature limit
+- filter continuous temperature
+- filter peak temperature
+
+#### Combustible Dust / EX Architecture
+
+Nederman offers dedicated combustible-dust capture / collector variants and emphasizes system-level ATEX / NFPA design when combustible dust applies.
+
+Architecture impact:
+AS-DUST and FR-DUST remain media / element capabilities only.
+Combustible-dust compliance remains a SYSTEM SAFETY architecture.
+
+### 22.4 Additive Manufacturing / Combustible Metal Powder Safety Baseline
+
+OSHA explicitly includes additive manufacturing / 3D printing among processes with combustible-dust hazards.
+
+A documented OSHA metal-AM case involving combustible titanium / aluminum alloy powders identified hazards associated with:
+- insufficient electrostatic bonding / grounding
+- dry dust collection
+- reverse-pulse cleaning creating suspended combustible dust
+- insufficient inert-gas monitoring
+- inadequate oxygen monitoring
+- unsafe powder handling
+- inadequate wet-separator controls
+
+Canonical impact:
+Metal AM filtration cannot be qualified from cartridge media alone.
+
+Mandatory AM system fields:
+- powder alloy
+- combustible-dust status
+- minimum ignition energy where available
+- Kst / Pmax where available
+- process atmosphere
+- inert gas
+- oxygen concentration
+- oxygen-monitoring method
+- inert-gas monitoring
+- grounding / bonding verification
+- dry vs wet collector
+- pulse-cleaning state
+- collector indoor / outdoor
+- explosion isolation
+- explosion venting / suppression
+- wet-separator liquid level / interlock where applicable
+- powder recovery / disposal path
+
+Critical rule:
+A reverse-pulse filter may temporarily create a suspended dust cloud inside the collector; this must be included in hazard analysis for combustible powders.
+
+### 22.5 Wet vs Dry Collection
+
+Camfil and OSHA evidence together reinforce that dry cartridge collection is not universally appropriate for every combustible metal powder.
+
+Canonical system decision:
+Dust / Powder Hazard
+→ Determine Dry vs Wet Collection Strategy
+→ Apply Compatible Filtration / Separation Architecture
+
+New required HERMES decision field:
+- COLLECTION_MODE = DRY | WET | OTHER_VALIDATED
+
+Supporting fields:
+- water reactivity
+- hydrogen-generation risk
+- sludge handling
+- liquid-level control
+- disposal method
+- recovery requirement
+
+No universal default is permitted.
+
+### 22.6 Energy / Operating-Cost Layer
+
+Cross-manufacturer evidence from Donaldson, Camfil, and Nederman shows that:
+- pressure drop
+- pulse-cleaning demand
+- compressed-air consumption
+- fan static pressure
+- media area
+- airflow control
+directly affect operating energy and maintenance cost.
+
+Canonical HERMES optimization must therefore include:
+- required capture performance
+- filtration performance
+- pressure drop
+- fan power
+- compressed-air consumption
+- expected cleaning frequency
+- expected service interval
+- filter-change labor
+- dust-disposal burden
+
+This creates a LIFE-CYCLE PERFORMANCE layer separate from filtration efficiency.
+
+### 22.7 Cross-Manufacturer Consensus
+
+Strong agreement across Donaldson, Camfil APC, and Nederman:
+
+1. Fine thermal-process fume requires surface-loading high-efficiency media.
+2. Nanofiber / fine-fiber and ePTFE / PTFE are different media implementations of the same broad surface-filtration mechanism.
+3. Pulse cleaning is a system / cleaning mechanism, not a filtration technology.
+4. Capture method is a first-order design decision.
+5. Filter efficiency alone is insufficient; airflow, ΔP, collector aerodynamics, media area, and cleanability matter.
+6. Spark / hot-particle control must precede fine filtration in relevant thermal-cutting duty.
+7. HEPA post-filtration may be required where toxic fume / recirculation risk justifies it.
+8. Digital monitoring / predictive maintenance is an increasingly mature system layer.
+9. Combustible-dust safety is a complete-system design problem, not a cartridge-media attribute.
+10. Additive Manufacturing with combustible metal powder requires alloy-specific hazard analysis, static control, atmosphere control, and collector strategy.
+
+### 22.8 Technology-Core Impact
+
+TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+- CONFIRMED as distinct physical / performance core.
+- Supports fine-fiber / nanofiber and membrane / ePTFE implementations.
+
+AS-DUST — Anti-Static Dust Filtration Capability
+- CONFIRMED as capability.
+- MUST NOT become a standalone filtration technology merely because a cartridge is conductive.
+
+FR-DUST — Flame-Retardant Dust Filtration Capability
+- CONFIRMED as capability.
+- MUST remain separate from explosion protection.
+
+HT-DUST — High-Temperature Dust Filtration Capability
+- CONFIRMED as capability.
+- Temperature limits must be resolved independently for capture device, duct, collector, and element.
+
+WGAS — Welding Fume Gas-Phase Adsorption Capability
+- REMAINS VALID as capability candidate.
+- External multistage systems support particulate + molecular treatment where required.
+- Target gas / adsorbent chemistry / breakthrough validation still required.
+
+AM-POWDER — Additive Manufacturing Powder Recovery / Containment Architecture
+- CONFIRMED as system / application architecture.
+- NOT a new filtration technology.
+
+No additional fundamental particulate Technology Core is justified by this benchmark.
+
+### 22.9 Canonical Data-Model Enrichment
+
+Add / confirm:
+- Capture Method
+- Capture Airflow
+- Capture Distance
+- Number of Extraction Points
+- Simultaneous-Use Factor
+- Collector Airflow Pattern
+- Cartridge Orientation
+- Media Geometry
+- Usable Media Area
+- Air-to-Media Ratio
+- Surface Media Type
+- Pulse Pressure
+- Pulse Duration
+- Pulse Sequence
+- Pulse Trigger
+- Compressed-Air Consumption
+- Spark Arrestor
+- Hot-Particle Discharge
+- Secondary HEPA Stage
+- Exhaust / Recirculation Mode
+- Fan Static Pressure
+- Fan Power
+- Digital Monitoring
+- Alarm History
+- Cleaning-Cycle Count
+- Filter Condition
+- Dry / Wet Collection Mode
+- Inert-Gas Monitoring
+- Oxygen Monitoring
+- Grounding / Bonding Verification
+- Explosion Isolation / Venting / Suppression
+- Life-Cycle Energy / Maintenance Metrics
+
+### 22.10 Open Product-Level Work
+
+Still open:
+- exact ELIMFILTERS media platform
+- product-specific nanofiber / ePTFE performance
+- conductive-media resistance limits
+- flame-retardance test evidence
+- high-temperature media qualification
+- cartridge geometry / collector mappings
+- collector / printer OEM interchanges
+- validated welding gas-phase media
+- alloy-specific AM qualification
+- exact OSHA / NFPA / ATEX / local compliance applicability per installed system
+- product-specific HEPA afterfilter validation
+- predictive-monitoring implementation
+
+These do not block architectural closure.
+
+### 22.11 Closure
+
+Industrial Dust / Welding / Laser / Additive Manufacturing Cross-Manufacturer Benchmark:
+- Donaldson benchmark: COMPLETE v1
+- Camfil APC benchmark: COMPLETE v1
+- Nederman benchmark: COMPLETE v1
+- OSHA combustible-dust / metal-AM safety baseline: COMPLETE v1
+- Cross-manufacturer consensus: COMPLETE v1
+- Canonical data-model enrichment: COMPLETE v1
+- Technology-core impact assessment: COMPLETE v1
+- Product-specific validation: OPEN
+- Commercial technology naming: BLOCKED until remaining benchmark domains are closed
+
+Status:
+CROSS-MANUFACTURER BENCHMARK CLOSED v1
+
+Next benchmark domain:
+Gas / Natural Gas
