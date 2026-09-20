@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { KC_TECHNOLOGIES } from '@/lib/knowledge-center-data';
+import { heroBackgroundImage } from '@/lib/hero-media';
 
 export default function TechnologiesPage() {
   return (
@@ -16,7 +17,7 @@ export default function TechnologiesPage() {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#050505',
-        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.70) 36%, rgba(0,0,0,0.42) 68%, rgba(0,0,0,0.20) 100%), url('/images/elimfilters_back2.jpg')",
+        backgroundImage: heroBackgroundImage('/images/elimfilters_back2.jpg'),
         backgroundSize: '100% 100%, contain',
         backgroundPosition: 'center, 72% center',
         backgroundRepeat: 'no-repeat, no-repeat',

@@ -3,6 +3,7 @@ import { GlobalCommercialModel } from '@/components/GlobalCommercialModel';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
+import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
 
 export const metadata: Metadata = {
   title: 'Industrial Filtration Distributors & B2B Partners | ELIMFILTERS',
@@ -249,12 +250,12 @@ const hero: CSSProperties = {
 };
 
 const heroImage: CSSProperties = {
-  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.28,
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity,
 };
 
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.52) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 36%)',
+  background: HERO_MEDIA_TREATMENT.overlayBackground,
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };

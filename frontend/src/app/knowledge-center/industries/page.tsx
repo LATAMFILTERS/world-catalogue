@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { KC_INDUSTRIES } from '@/lib/knowledge-center-data';
+import { heroBackgroundImage } from '@/lib/hero-media';
 
 const DUST_COLORS: Record<string, string> = {
   'Extreme': '#ff4444',
@@ -23,7 +24,7 @@ export default function IndustriesPage() {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#050505',
-        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.70) 36%, rgba(0,0,0,0.42) 68%, rgba(0,0,0,0.20) 100%), url('/images/elementos-oil.avif')",
+        backgroundImage: heroBackgroundImage('/images/elementos-oil.avif'),
         backgroundSize: '100% 100%, contain',
         backgroundPosition: 'center, 72% center',
         backgroundRepeat: 'no-repeat, no-repeat',

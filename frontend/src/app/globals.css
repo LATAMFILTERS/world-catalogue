@@ -16,6 +16,8 @@ main p {
   --surface: #050505;
   --surface-2: #0a0a0a;
   --surface-3: #111111;
+  --hero-media-opacity: 1;
+  --hero-media-overlay: rgba(0, 0, 0, 0.08);
   --surface-light: #000000;
   --surface-light-2: rgba(255, 255, 255, 0.04);
   --border: rgba(255, 255, 255, 0.08);

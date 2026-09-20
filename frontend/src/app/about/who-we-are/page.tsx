@@ -5,6 +5,7 @@ import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
 import '@/i18n';
+import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
 
 export default function WhoWeArePage() {
   const { i18n } = useTranslation();
@@ -105,8 +106,8 @@ export default function WhoWeArePage() {
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' };
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%' };
 const heroSection: CSSProperties = { minHeight: '76vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', padding: 'clamp(6rem,10vw,9rem) clamp(1.25rem,6vw,6rem)' };
-const heroImage: CSSProperties = { position: 'absolute', inset: 0, backgroundImage: 'url(/images/grupo-filters.avif)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: .38 };
-const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.48) 58%,rgba(0,0,0,.2)),radial-gradient(circle at 80% 15%,rgba(255,241,45,.14),transparent 32%)' };
+const heroImage: CSSProperties = { position: 'absolute', inset: 0, backgroundImage: 'url(/images/grupo-filters.avif)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity };
+const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: HERO_MEDIA_TREATMENT.overlayBackground };
 const eyebrow: CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-display)', fontSize: '.72rem', fontWeight: 700, letterSpacing: '.16em', margin: '0 0 1rem', textTransform: 'uppercase', position: 'relative', zIndex: 2 };
 const darkEyebrow: CSSProperties = { ...eyebrow, color: '#6c6100' };
 const heroTitle: CSSProperties = { position: 'relative', zIndex: 2, fontFamily: 'var(--font-display)', fontWeight: 700, letterSpacing: '-.05em', lineHeight: .92, fontSize: 'clamp(3.2rem,7vw,7rem)', margin: 0, textTransform: 'uppercase' };

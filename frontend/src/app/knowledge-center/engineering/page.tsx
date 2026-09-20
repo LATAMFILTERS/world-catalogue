@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ENGINEERING_ARTICLES } from '@/lib/knowledge-center-data';
 import { isConsolidatedEngineeringTopic } from '@/lib/knowledge-center/canonical-article-ownership';
+import { heroBackgroundImage } from '@/lib/hero-media';
 
 const miningSeries = [
   {
@@ -42,7 +43,7 @@ export default function EngineeringHubPage() {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#050505',
-        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.70) 36%, rgba(0,0,0,0.42) 68%, rgba(0,0,0,0.20) 100%), url('/images/operador-bancopruebas.png')",
+        backgroundImage: heroBackgroundImage('/images/operador-bancopruebas.png'),
         backgroundSize: '100% 100%, contain',
         backgroundPosition: 'center, 72% center',
         backgroundRepeat: 'no-repeat, no-repeat',

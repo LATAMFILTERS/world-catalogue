@@ -5,6 +5,7 @@ import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
 import '@/i18n';
+import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
 
 const STATS_KEYS = ['warranty.statValue1', 'warranty.statValue2', 'warranty.statValue3', 'warranty.statValue4'];
 const STATS_LABELS = ['warranty.statLabel1', 'warranty.statLabel2', 'warranty.statLabel3', 'warranty.statLabel4'];
@@ -190,12 +191,12 @@ const hero: CSSProperties = {
 };
 
 const heroImage: CSSProperties = {
-  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.42,
+  position: 'absolute', inset: 0, backgroundSize: 'cover', backgroundPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity,
 };
 
 const heroOverlay: CSSProperties = {
   position: 'absolute', inset: 0,
-  background: 'linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.32) 48%, rgba(0,0,0,0.12) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 36%)',
+  background: HERO_MEDIA_TREATMENT.overlayBackground,
 };
 
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };

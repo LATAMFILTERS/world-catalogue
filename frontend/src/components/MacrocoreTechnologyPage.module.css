@@ -29,12 +29,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: var(--hero-media-opacity);
 }
 
 .heroShade {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.16) 58%, rgba(0, 0, 0, 0.06) 100%);
+  background: var(--hero-media-overlay);
 }
 
 .heroMark {

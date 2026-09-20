@@ -6,6 +6,7 @@ import { PRODUCT_FAMILY_LIST, getFamilyBySlug } from '@/lib/product-families-dat
 import { getProtectionSystemBySlug } from '@/lib/protection-systems-data';
 import { getTechnologyEngineering } from '@/lib/canonical-engineering';
 import { FAILURE_KNOWLEDGE } from '@/lib/failure-knowledge';
+import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
 
 const BASE_URL = 'https://elimfilters.com';
 const displayFont = 'var(--font-display)';
@@ -362,8 +363,8 @@ const main: CSSProperties = { background: '#050505', color: '#fff', minHeight: '
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
 const backButton: CSSProperties = { position: 'fixed', top: '1rem', left: '1.2rem', zIndex: 50, background: 'rgba(0,0,0,0.72)', border: '1px solid rgba(255,255,255,0.16)', color: '#fff', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.14em', fontSize: '0.72rem', padding: '0.72rem 1rem', backdropFilter: 'blur(12px)' };
 const hero: CSSProperties = { minHeight: '82vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', padding: 'clamp(7rem, 12vw, 10rem) clamp(1.25rem, 6vw, 6rem) clamp(4rem, 8vw, 7rem)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
-const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'contrast(1.04) saturate(0.92)' };
-const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.08) 18%, rgba(0,0,0,0.22) 48%, rgba(0,0,0,0.88) 100%)' };
+const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity, filter: 'none' };
+const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: HERO_MEDIA_TREATMENT.overlayBackground };
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 const eyebrow: CSSProperties = { color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.18em', fontSize: '0.72rem' };
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, letterSpacing: '-0.05em', lineHeight: 0.9, fontSize: 'clamp(3.2rem, 7vw, 7rem)', maxWidth: '980px', margin: '0.8rem 0 0', textTransform: 'uppercase' };

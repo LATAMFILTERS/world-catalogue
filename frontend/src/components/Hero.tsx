@@ -104,7 +104,7 @@ export function Hero({
           .industry-hero-bg {
             transform: none !important;
             background-position: center center !important;
-            filter: brightness(1.18) contrast(1.06) !important;
+            filter: none !important;
           }
         }
       `}</style>
@@ -142,8 +142,8 @@ export function Hero({
             backgroundPosition,
             backgroundRepeat: 'no-repeat',
             transform: 'none',
-            opacity: industryChrome ? 0.48 : 1,
-            filter: industryChrome ? 'none' : 'brightness(1.14) contrast(1.05)',
+            opacity: VIDEO_HERO_TREATMENT.opacity,
+            filter: 'none',
           }}
         />
       )}
@@ -152,11 +152,7 @@ export function Hero({
         style={{
           position: 'absolute',
           inset: 0,
-          background: backgroundVideo
-            ? VIDEO_HERO_TREATMENT.overlayBackground
-            : industryChrome
-              ? 'linear-gradient(90deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.40) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)'
-              : 'linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.46) 48%, rgba(0,0,0,0.14) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
+          background: VIDEO_HERO_TREATMENT.overlayBackground,
         }}
       />
 

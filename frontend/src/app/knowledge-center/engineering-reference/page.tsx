@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ERL_SECTIONS } from '@/lib/engineering-reference-data';
+import { heroBackgroundImage } from '@/lib/hero-media';
 
 const displayFont = 'Chakra Petch, Arial Narrow, monospace';
 const bodyFont = 'Barlow, Arial, sans-serif';
@@ -73,8 +74,7 @@ export default function EngineeringReferencePage() {
           padding: 'clamp(5rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
           backgroundColor: '#050505',
-          backgroundImage:
-            "linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.70) 36%, rgba(0,0,0,0.42) 68%, rgba(0,0,0,0.20) 100%), url('/images/oil-instalado.avif')",
+          backgroundImage: heroBackgroundImage('/images/oil-instalado.avif'),
           backgroundSize: '100% 100%, contain',
           backgroundPosition: 'center, 72% center',
           backgroundRepeat: 'no-repeat, no-repeat',

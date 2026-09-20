@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { getPublishedTerms, termIdToSlug, TERM_CATEGORY_LABELS } from '@/lib/knowledge-center';
 import type { TermCategory } from '@/lib/knowledge-center';
+import { heroBackgroundImage } from '@/lib/hero-media';
 
 export default function GlossaryPage() {
   const allTerms = getPublishedTerms(); // already sorted alphabetically
@@ -27,7 +28,7 @@ export default function GlossaryPage() {
         display: 'flex',
         alignItems: 'center',
         backgroundColor: '#050505',
-        backgroundImage: "linear-gradient(90deg, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.70) 36%, rgba(0,0,0,0.42) 68%, rgba(0,0,0,0.20) 100%), url('/images/system-hero.avif')",
+        backgroundImage: heroBackgroundImage('/images/system-hero.avif'),
         backgroundSize: '100% 100%, contain',
         backgroundPosition: 'center, 72% center',
         backgroundRepeat: 'no-repeat, no-repeat',

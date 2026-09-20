@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
+import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/systems/lubrication/`;
@@ -180,8 +181,8 @@ const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 const main: CSSProperties = { background: '#000', color: '#fff', minHeight: '100vh', fontFamily: bodyFont, overflowX: 'hidden' };
 const hero: CSSProperties = { minHeight: '86vh', position: 'relative', display: 'flex', alignItems: 'center', padding: 'clamp(6rem, 10vw, 9rem) clamp(1.25rem, 6vw, 6rem)', overflow: 'hidden', borderBottom: '1px solid rgba(255,255,255,.08)' };
-const heroMedia: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: .5 };
-const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.7) 55%, rgba(0,0,0,.3))' };
+const heroMedia: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: HERO_MEDIA_TREATMENT.opacity };
+const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: HERO_MEDIA_TREATMENT.overlayBackground };
 const heroInner: CSSProperties = { maxWidth: '1180px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 2 };
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(3rem,7vw,6.8rem)', lineHeight: .9, letterSpacing: '-.05em', textTransform: 'uppercase', margin: 0 };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.1rem,2vw,1.45rem)', maxWidth: '800px', lineHeight: 1.35, margin: '1.6rem 0 0' };
