@@ -4838,3 +4838,428 @@ Status:
 - Initial benchmark sources identified: COMPLETE
 - Domain-by-domain enrichment: OPEN
 - Technology Core final review: BLOCKED until benchmark enrichment is complete
+
+
+## 21. Cross-Manufacturer Benchmark — Air / Cleanroom / Semiconductor CLOSED v1
+
+Status: CROSS-MANUFACTURER BENCHMARK CLOSED v1.
+
+Purpose:
+Convert the Air / Cleanroom / Semiconductor domain from a REIKE-led source map into a multi-manufacturer, evidence-backed ELIMFILTERS engineering architecture before Technology Core review.
+
+Benchmark manufacturers / authorities reviewed:
+- Camfil
+- MANN+HUMMEL Air Filtration
+- Freudenberg Filtration Technologies
+- AAF International
+- ISO
+
+Evidence state:
+All findings below are EXTERNAL_BENCHMARK unless explicitly marked as an ISO standard requirement. They define canonical fields, system architecture, validation requirements, and potential technology mechanisms. They do not establish ELIMFILTERS product performance.
+
+### 21.1 Standards Baseline
+
+#### ISO 14644-1:2015 — Cleanroom Classification
+
+ISO states that ISO 14644-1:2015 classifies air cleanliness by concentration of airborne particles in cleanrooms, clean zones, and separative devices.
+
+Canonical use:
+- Application / environment cleanliness classification
+- Particle concentration target
+- Sampling / monitoring basis
+
+Canonical boundary:
+- This standard classifies the cleanroom environment.
+- It is NOT a filter-product efficiency classification.
+- It covers classification particle sizes from 0.1 µm to 5 µm.
+- It does not characterize the physical, chemical, viable, radiological, or other nature of those particles.
+
+Required HERMES fields:
+- ISO cleanroom class
+- particle size threshold(s)
+- allowed concentration
+- room / zone
+- sampling basis
+- standard edition
+
+#### ISO 29463-1:2024 — High-Efficiency Filter Classification
+
+ISO 29463-1:2024 is the current published classification / performance / testing / marking framework for high-efficiency air filters, used together with ISO 29463 Parts 2–5.
+
+Canonical use:
+- EPA / HEPA / ULPA product classification
+- filter-element performance
+- test / marking evidence
+- MPPS-related performance validation via the associated test methods
+
+Required product evidence:
+- exact class
+- standard and edition
+- overall efficiency
+- local / leakage performance where applicable
+- MPPS test basis
+- airflow
+- pressure drop
+- individual scan / test evidence where required
+
+#### ISO 16890-1 — General Ventilation Filters
+
+Current published baseline:
+- ISO 16890-1:2016 remains published but is in revision.
+
+Current development status as of September 2026:
+- ISO/FDIS 16890-1 Edition 2 is in final approval and is intended to replace ISO 16890-1:2016.
+
+Canonical governance:
+- Store both the standard number and edition / publication status.
+- Do not hard-code 2016 as permanently current.
+- HERMES / catalogue must be able to migrate to the new edition when formally published.
+
+Scope boundary:
+- ISO 16890 covers general-ventilation particulate filters based on ePM performance.
+- Filters with higher initial efficiency above the ISO 16890 scope are evaluated under high-efficiency methods such as ISO 29463.
+
+### 21.2 Camfil Benchmark Contribution
+
+#### Semiconductor System Architecture
+
+Camfil defines semiconductor clean-air control as a combination of:
+- particle pre-filters
+- HEPA / ULPA filters
+- Airborne Molecular Contamination (AMC) control
+
+Camfil states that advanced semiconductor environments may target ISO Class 1 particle cleanliness and sub-ppb AMC control.
+
+Architecture impact:
+REIKE's visible semiconductor family was incomplete because particulate filtration alone cannot define the semiconductor contamination-control problem.
+
+Canonical semiconductor contaminant classes:
+1. Airborne particulate contamination
+2. Airborne molecular contamination
+
+#### AMC Taxonomy
+
+Camfil identifies semiconductor AMC classes including:
+- acids
+- bases
+- organics
+- refractories
+- dopants
+
+Canonical HERMES expansion:
+- AMC species / class
+- inlet concentration
+- target outlet concentration
+- ppb / ppt basis
+- adsorbent chemistry
+- adsorption capacity
+- breakthrough criterion
+- humidity
+- temperature
+- residence time
+- media mass
+- process sensitivity
+
+Technology implication:
+TC-AIR-03 — Industrial Molecular Air Contamination Control remains a legitimate distinct mechanism candidate.
+
+#### Cleanroom Terminal Filter Construction
+
+Camfil cleanroom panels show:
+- terminal HEPA / ULPA architecture
+- glass-fiber media
+- membrane media
+- multilayer synthetic / membrane composite media
+- aluminum / metal frames
+- multiple depths / dimensions
+- minipleat construction
+- application-specific semiconductor variants
+
+Architecture impact:
+Media chemistry and terminal-module construction must be separate from filter efficiency class.
+
+Required fields added:
+- media platform
+- minipleat geometry
+- frame material
+- terminal-module type
+- gasket / gel interface
+- installation depth
+- cleanroom ceiling / housing interface
+
+#### Energy / Pressure-Drop Dimension
+
+Camfil offers energy-saving cleanroom filter variants and documents terminal filters across efficiency / pressure-drop combinations.
+
+Architecture impact:
+For cleanroom products, HERMES must not optimize on efficiency alone.
+
+Required optimization dimensions:
+- required class
+- rated airflow
+- initial ΔP
+- operating ΔP
+- available fan static
+- energy-consumption consequence
+- service-life target
+
+### 21.3 MANN+HUMMEL Benchmark Contribution
+
+MANN+HUMMEL explicitly separates particle and molecular filtration for electronics and semiconductor manufacturing.
+
+Benchmark architecture:
+- EPA / HEPA / ULPA particle filtration
+- AMC control
+- cleanroom terminal modules
+- FFU / fan-filter-unit configurations
+
+#### Cleanroom Module / FFU Layer
+
+MANN+HUMMEL cleanroom modules include:
+- gasket and gel-seal versions
+- scan-tested modules
+- low-profile modules
+- integrated fan-filter units
+- low chemical off-gassing construction for critical cleanroom applications
+
+Architecture impact:
+Add a distinct SYSTEM CONFIGURATION layer:
+- Terminal Filter Module
+- Fan Filter Unit (FFU)
+
+Canonical FFU fields:
+- fan type
+- motor type
+- airflow / face velocity
+- acoustic level
+- power consumption
+- filter class
+- media
+- module dimensions
+- plenum
+- controls
+- low-outgassing requirement
+
+#### Low-Outgassing / Material-Control Dimension
+
+MANN+HUMMEL documents low chemical off-gassing construction for cleanroom FFU modules.
+
+Architecture impact:
+Low-outgassing is not merely an optional marketing descriptor. It is a critical MATERIAL / CONTAMINATION-CONTROL CAPABILITY for semiconductor environments.
+
+Canonical capability fields:
+- outgassing requirement
+- material declaration
+- adhesive / potting chemistry
+- gasket / seal chemistry
+- boron / ionic contamination requirement where applicable
+- molecular emission evidence
+
+### 21.4 Freudenberg Benchmark Contribution
+
+Freudenberg's cleanroom architecture confirms a multi-stage filtration train rather than a single final filter.
+
+Typical benchmark sequence:
+Coarse / Fine Prefiltration
+→ EPA / HEPA / ULPA Final Filtration
+
+Freudenberg describes a common two-stage prefiltration concept using pocket and cassette filters before EPA / HEPA / ULPA final stages.
+
+Architecture impact:
+ELIMFILTERS must model CLEANROOM FILTRATION AS A TRAIN, not merely as individual filter SKUs.
+
+Canonical train fields:
+- stage number
+- stage function
+- filter class
+- airflow
+- initial ΔP
+- terminal ΔP
+- replacement threshold
+- downstream protection objective
+- cumulative system ΔP
+
+#### Verified Product-Level Benchmark Example
+
+Freudenberg publishes U15 products with:
+- EN 1822 U15
+- ISO 29463 ISO 55 U
+- MPPS efficiency ≥99.9995%
+- rated airflow by size
+- initial ΔP
+- frame / seal construction
+
+Architecture impact:
+Product records must support simultaneous source classifications under multiple standards without collapsing them into a guessed conversion.
+
+Required fields:
+- Classification System A
+- Class A
+- Classification System B
+- Class B
+- direct test evidence
+- MPPS efficiency
+- nominal flow
+- initial ΔP
+
+#### Cleanroom Verification Services
+
+Freudenberg documents:
+- filter leak / impermeability testing
+- integrity testing
+- airflow determination
+- ISO 14644-1 cleanroom classification
+- documented acceptance / certification services
+
+Architecture impact:
+The ELIMFILTERS data model needs an INSTALLATION / COMMISSIONING VALIDATION layer separate from factory product certification.
+
+Canonical commissioning fields:
+- installed filter ID
+- installation date
+- leak test
+- integrity test
+- airflow test
+- room classification
+- test date
+- technician / authority
+- report reference
+- pass / fail
+
+### 21.5 AAF Benchmark Contribution
+
+AAF's microelectronics architecture confirms that both fine particulate and AMC must be controlled for semiconductor yield.
+
+AAF benchmark stages:
+- prefilters
+- fine filters
+- HEPA
+- ULPA
+- AMC filters
+- filter housings
+
+AAF AMC taxonomy:
+- acids
+- bases
+- condensables
+- dopants
+
+Architecture impact:
+AMC taxonomy is supplier-dependent in naming detail. Therefore ELIMFILTERS should store:
+- source AMC class
+- canonical molecular contaminant family
+- target chemical species
+
+Canonical AMC normalized families:
+- Acidic
+- Basic
+- Organic / Condensable
+- Dopant / Process-Specific
+- Other validated molecular contaminant
+
+Do not force every supplier's AMC marketing taxonomy into one unqualified label.
+
+### 21.6 Cross-Manufacturer Consensus
+
+Strong agreement across Camfil, MANN+HUMMEL, Freudenberg, and AAF:
+
+1. Semiconductor air quality requires multi-stage filtration.
+2. HEPA / ULPA particulate filtration alone is insufficient.
+3. Molecular contamination must be treated as a separate physical mechanism.
+4. Terminal filter sealing / installation geometry matters.
+5. Filter class and cleanroom class are separate concepts.
+6. Pressure drop / energy consequence is an engineering selection dimension.
+7. Final installed-system validation is separate from factory filter performance.
+8. Cleanroom systems may include terminal modules and FFUs, not only replaceable filter panels.
+
+### 21.7 New Canonical Data Added
+
+Air / Cleanroom / Semiconductor records now require support for:
+- Cleanroom Class
+- Filter Class
+- Filter Standard
+- Standard Edition
+- MPPS Efficiency
+- Local Efficiency
+- Scan-Test Status
+- Leak-Test Status
+- Media Platform
+- Terminal Module Type
+- Seal Type
+- Gel / Gasket Interface
+- Low-Outgassing Requirement
+- Molecular Contaminant Family
+- Target Molecular Species
+- AMC Inlet Concentration
+- AMC Target Concentration
+- Adsorbent Chemistry
+- Adsorption Capacity
+- Breakthrough Criterion
+- Stage Number
+- Stage Function
+- Cumulative System ΔP
+- FFU Configuration
+- Installed-System Validation
+- Commissioning Report Reference
+
+### 21.8 Technology-Core Impact Before Final Review
+
+Current position after cross-manufacturer evidence:
+
+TC-AIR-01 — Industrial General Ventilation Particle Control
+- CONFIRMED AS DISTINCT PHYSICAL / PERFORMANCE DOMAIN
+- governed primarily by ISO 16890 for general ventilation
+
+TC-AIR-02 — Industrial High-Efficiency Air Filtration
+- CONFIRMED AS DISTINCT PHYSICAL / PERFORMANCE DOMAIN
+- governed by ISO 29463 / equivalent validated high-efficiency framework
+- includes EPA / HEPA / ULPA applications
+
+TC-AIR-03 — Industrial Molecular Air Contamination Control
+- CONFIRMED AS DISTINCT PHYSICAL MECHANISM DOMAIN
+- external manufacturer consensus supports separate AMC / molecular filtration architecture
+
+System / capability layers that MUST NOT become duplicate technologies:
+- Terminal Filter Module
+- Fan Filter Unit
+- Cleanroom Filter Train
+- Low-Outgassing Construction
+- Gel-Seal / Gasket-Seal Interface
+- Scan Testing
+- Installed Leak Testing
+- Cleanroom Classification
+
+### 21.9 Open Research Items
+
+Still open before product commercialization:
+- exact ELIMFILTERS media platform(s)
+- exact AMC adsorbent chemistry
+- supplier-specific test data
+- service-life / breakthrough data
+- product-level pressure-drop curves
+- FFU platform decision
+- semiconductor-specific material emission requirements by customer / process
+- exact product-to-cleanroom-stage mapping
+- canonical SKU mapping
+
+These are product-development / validation items and do not block architectural closure.
+
+### 21.10 Closure
+
+Air / Cleanroom / Semiconductor Cross-Manufacturer Benchmark:
+- Camfil benchmark: COMPLETE v1
+- MANN+HUMMEL benchmark: COMPLETE v1
+- Freudenberg benchmark: COMPLETE v1
+- AAF benchmark: COMPLETE v1
+- ISO standards baseline: COMPLETE v1
+- Cross-manufacturer consensus: COMPLETE v1
+- Canonical data-model enrichment: COMPLETE v1
+- Technology-core impact assessment: COMPLETE v1
+- Product-specific technical validation: OPEN
+- Commercial Technology naming: BLOCKED until all benchmark domains are closed
+
+Status:
+CROSS-MANUFACTURER BENCHMARK CLOSED v1
+
+Next benchmark domain:
+Industrial Dust / Welding / Laser / Additive Manufacturing
