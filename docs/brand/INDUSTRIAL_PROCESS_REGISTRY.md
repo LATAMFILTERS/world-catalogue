@@ -9488,3 +9488,56 @@ All require deeper trademark-database screening before approval.
 - Water Treatment → AQUVEXA / AQUELON / AQUERON — WORKING FINALISTS
 
 No mark is approved until deeper clearance is completed.
+
+
+## 35. User Selection Update — FLUDEXA / AQUVORA
+
+User-selected preferences:
+- Fluid Conditioning Technologies → FLUDEXA
+- Water Treatment Technologies → AQUVORA
+
+These are recorded as USER-SELECTED WORKING FINALISTS, not approved marks.
+
+### FLUDEXA
+
+Status:
+HOLD / HIGH CONFUSION RISK.
+
+Public screening findings:
+- A highly similar industrial name, FLUDEXSA, is actively used by a company specializing in lubrication and tribological engineering.
+- FLUDEXSA describes its mission around industrial lubrication, process optimization, and equipment-life extension.
+
+Risk:
+Although FLUDEXA and FLUDEXSA are not identical, they are visually and phonetically close and operate in an adjacent industrial lubrication / fluid-conditioning space.
+
+Decision:
+Do not approve FLUDEXA without formal trademark clearance.
+Retain only as a user-selected working finalist.
+
+### AQUVORA
+
+Status:
+HOLD / ACTIVE PRIOR USE.
+
+Public screening findings:
+- AQUVORA is actively used as a swim-care brand focused on chlorine / saltwater protection for hair and skin.
+- AQUVORA-branded products are currently offered commercially online.
+- Additional active public use exists under Aquvora Solutions for technology / AI services.
+- aquvora.com has also been used for water-fixture / faucet retailing.
+
+Risk:
+The exact mark is already in active public use across multiple sectors, including water-adjacent consumer use.
+
+Decision:
+Do not approve AQUVORA without formal trademark clearance.
+Retain only as a user-selected working finalist.
+
+### Current Naming Board
+
+- Air → AEREMIS — PREFERRED FINALIST
+- Dust & Fume → PARTION — PREFERRED FINALIST
+- Gas Conditioning → COALVEX — PREFERRED FINALIST
+- Fluid Conditioning → FLUDEXA — USER-SELECTED / HOLD
+- Water Treatment → AQUVORA — USER-SELECTED / HOLD
+
+No mark is finally approved at this stage.
