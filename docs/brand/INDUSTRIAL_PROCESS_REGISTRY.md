@@ -1029,3 +1029,240 @@ Add these fields to Industrial hydraulic records:
 
 Next source family:
 - High-temperature resistant filter cartridge
+
+
+### 14.8 High-Temperature Resistant Hydraulic Filter Cartridge — Technical Decomposition v1
+
+Status: SOURCE TECHNICAL EXTRACTION COMPLETE; CLASSIFIED AS HIGH-TEMPERATURE HYDRAULIC CAPABILITY FAMILY; NO COMMERCIAL TECHNOLOGY NAME ASSIGNED.
+
+Source:
+- Xinxiang Filter Co., Ltd. / REIKE
+- Source product: Hydraulic high-temperature resistant filter element
+- Source page: http://xxslqq.xx207.cxjs.net.cn/product/44.html
+
+#### Source-Declared Failure Mode / Design Rationale
+
+The source states that conventional hydraulic elements may suffer loss of media strength, adhesive softening, and seal aging when oil temperature rises above approximately 90°C. The resulting risks described are:
+- media displacement
+- filtration-accuracy degradation
+- structural deformation or collapse
+- loss of contamination control
+
+The supplier therefore positions this product as a material-and-structure adaptation for sustained high-temperature hydraulic service.
+
+#### Source-Declared Construction
+
+Manufacturer-declared materials and construction:
+- High-temperature glass-fiber filtration media
+- Media thermal stability stated up to 200°C
+- Metal-reinforced structure
+- Stainless-steel internal frame
+- Carbon-steel galvanized end-cap option
+- Fluororubber / Viton® high-temperature sealing
+- Thermosetting adhesive / resin process
+
+Canonical interpretation:
+High-temperature performance depends on the complete material stack, not media temperature rating alone.
+
+Required material stack:
+Media
+→ Adhesive / Resin
+→ Core / Support
+→ End Caps
+→ Seal
+→ Fluid Compatibility
+
+#### Source-Declared Performance
+
+Manufacturer-declared characteristics:
+- Continuous media temperature capability: up to 200°C
+- Claimed high-temperature compatibility verification: ISO 2943
+- Supplier claim: after 150°C continuous operation for 1000 hours, filtration-performance degradation ≤10%
+- Crush / collapse strength stated up to 21 MPa
+- Standard filtration accuracy stated as 1–25 μm
+- Filtration ratio stated as βx ≥ 200
+- Low initial-pressure-drop design claimed
+
+Governance:
+- These values remain MANUFACTURER_DECLARED.
+- The exact ISO 2943 test report, specimen configuration, fluid, temperature profile, acceptance criteria, and test laboratory have not been independently verified.
+- The supplier's use of the term "crush strength 21 MPa" must not be normalized automatically as ISO 2941 collapse differential pressure until the test method and pressure definition are confirmed.
+
+#### Canonical Applications Observed
+
+1. Injection-Molding Machine Hydraulic Systems
+- Oil temperature: 80–120°C
+- Fluid: anti-wear hydraulic oil
+- Recommended source accuracy: 10–20 μm
+- Source requirement: fatigue resistance / long life
+
+2. Die-Casting Machine Hydraulic Systems
+- Oil temperature: 100–150°C
+- Fluid: flame-resistant hydraulic oil
+- Recommended source accuracy: 15–25 μm
+- Source requirement: chemical compatibility
+
+3. Continuous-Casting Machine Hydraulic Systems
+- Oil temperature: 80–110°C
+- Fluid: anti-wear hydraulic oil
+- Recommended source accuracy: 10–20 μm
+- Source requirement: resistance to high-temperature water vapor
+
+4. Hot-Rolling-Line Hydraulic Systems
+- Oil temperature: 90–130°C
+- Fluid: anti-wear hydraulic oil
+- Recommended source accuracy: 5–10 μm
+- Source requirement: high precision / high reliability
+
+5. Industrial-Furnace Hydraulic Systems
+- Oil temperature: 120–180°C
+- Fluid: flame-resistant hydraulic oil
+- Recommended source accuracy: 15–30 μm
+- Source requirement: heat-radiation tolerance
+
+6. Asphalt-Paver Hydraulic Systems
+- Oil temperature: 80–120°C
+- Fluid: anti-wear hydraulic oil
+- Recommended source accuracy: 10–20 μm
+- Source requirement: vibration resistance / outdoor service
+
+Additional application areas:
+- Metallurgical continuous-casting vibration systems
+- Hot-rolling AGC hydraulic systems
+- Furnace-door hydraulic systems
+- Extrusion machines
+- Blow-molding machines
+- Cold-chamber die-casting machines
+- Hot-chamber die-casting machines
+- Magnesium-alloy die-casting machines
+- Hot presses
+- Autoclave hydraulic systems
+- Rubber vulcanizing-machine hydraulic systems
+
+#### Fluid / Seal Compatibility
+
+The supplier explicitly states that phosphate-ester fire-resistant fluids are not compatible with conventional nitrile seals and require fluororubber seals and media selected for phosphate-ester compatibility.
+
+Canonical rule:
+High-temperature hydraulic qualification requires explicit pairing of:
+- Fluid chemistry
+- Seal material
+- Media
+- Resin / adhesive
+- Temperature range
+
+No high-temperature product may be approved with temperature rating alone.
+
+#### Failure Indicators
+
+Supplier-declared indicators of thermal failure include:
+- Abnormal increase in differential pressure
+- Abnormal decrease in differential pressure
+- Media collapse or deformation
+- Loose end caps
+- Adhesive separation
+- Persistently contaminated oil downstream
+
+Canonical interpretation:
+High-temperature service adds thermal-degradation failure modes to standard hydraulic differential-pressure and contamination monitoring.
+
+#### Canonical ELIMFILTERS Interpretation
+
+Canonical domain:
+Industrial & Process
+→ Hydraulic Filtration
+→ High-Temperature Hydraulic Service
+
+Canonical filtration function:
+- Hydraulic Fluid Particulate Contamination Control
+
+Capability overlay:
+- High-Temperature Hydraulic Filtration
+
+Important taxonomy rule:
+"High-temperature resistant" is a CAPABILITY / OPERATING-ENVIRONMENT CLASS, not a standalone filtration mechanism.
+
+It therefore extends TC-HYD-01 rather than creating a second hydraulic mechanism automatically.
+
+#### Technology-Core Relationship
+
+Parent core:
+TC-HYD-01 — Industrial Hydraulic Contamination Control
+
+Capability extension:
+HT-HYD — High-Temperature Hydraulic Capability
+
+Status:
+CAPABILITY EXTENSION / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Required engineering dimensions:
+- Sustained oil-temperature capability
+- Media thermal stability
+- Adhesive / resin thermal stability
+- Seal thermal and chemical compatibility
+- High-temperature collapse stability
+- Differential-pressure stability
+- Beta-ratio retention after thermal aging
+- Vibration / fatigue resistance where application requires it
+- Heat-radiation or steam exposure where applicable
+
+#### Required HERMES Inputs — High-Temperature Hydraulic
+
+Add to the standard Industrial hydraulic input model:
+- Continuous oil temperature
+- Peak oil temperature
+- Exposure duration
+- Fluid chemistry
+- Fire-resistant fluid type
+- Seal material requirement
+- Thermal cycling profile
+- Steam / moisture exposure
+- Radiant-heat exposure
+- Vibration / shock environment
+- Required post-aging beta-ratio retention
+
+Expected selection logic:
+Hydraulic Application
+→ Circuit Position
+→ Fluid Chemistry
+→ Continuous / Peak Temperature
+→ Required βx(c)
+→ Thermal Material Stack
+→ Seal Compatibility
+→ Collapse / Fatigue Class
+→ Housing Compatibility
+→ Candidate Element
+→ Validation State
+
+#### Required Validation Before ELIMFILTERS Approval
+
+Still required:
+- Full ISO 2943 test report
+- Exact βx(c) test standard and data at elevated temperature
+- ISO 16889 multipass data before and after thermal aging
+- ISO 2941 collapse data and confirmation of the 21 MPa claim
+- ISO 3724 flow-fatigue data where relevant
+- Pressure-drop-versus-flow curves by temperature / viscosity
+- Exact media grade
+- Exact resin / adhesive specification
+- Seal compound identification by fluid class
+- Fire-resistant fluid compatibility matrix
+- Thermal-cycle test data
+- Application-specific housing / interface data
+- OEM / competitor cross-reference
+
+#### Closure State — High-Temperature Resistant Filter Cartridge
+
+- Source technical extraction: COMPLETE
+- Application mapping: COMPLETE v1
+- Canonical function mapping: COMPLETE v1
+- Capability classification: COMPLETE v1
+- Technology-core relationship: COMPLETE v1
+- Commercial technology naming: BLOCKED
+- Supplier performance validation: OPEN
+- ELIMFILTERS product specification: OPEN
+- OEM / competitor mapping: OPEN
+- Canonical SKU mapping: OPEN
+
+Next source family:
+- Coal power filter element
