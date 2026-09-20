@@ -11154,3 +11154,39 @@ The architecture needs presentation rules, not another taxonomy or parallel regi
 
 Status:
 INDUSTRIAL & PROCESS REPRESENTATION CONTRACT v1 — CLOSED.
+
+
+## 51. Industrial & Process Dedicated Web Entry Point
+
+Canonical URL:
+- https://elimfilters.com/industrial-process/
+
+Role:
+- dedicated commercial and engineering entry point for high-value Industrial & Process leads;
+- separate entry path from generic heavy-duty replacement filtration and part-number search;
+- primary web home for the five Industrial & Process commercial platforms;
+- starting point for future industrial catalogue, PDP, technical-datasheet, packaging and project-intake experiences.
+
+Lead-intake principle:
+Industrial prospects enter through operating conditions, treatment objectives, process risk, application context and system requirements rather than a generic SKU-first journey.
+
+Frontend hierarchy:
+Industrial & Process
+→ Platform
+→ Technology Family
+→ Product Family / Configuration
+→ SKU / System
+
+Primary audiences:
+- industrial plants and operators
+- OEMs
+- EPCs
+- system integrators
+- industrial distributors
+- project / maintenance / reliability teams
+
+Governance:
+This URL is a presentation and lead-entry layer. It does not create a new taxonomy or source of truth; the existing Industrial & Process, Technology, Product and System registries remain authoritative.
+
+Status:
+INDUSTRIAL & PROCESS DEDICATED WEB ENTRY POINT — IMPLEMENTED v1.
