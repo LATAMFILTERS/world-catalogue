@@ -1266,3 +1266,212 @@ Still required:
 
 Next source family:
 - Coal power filter element
+
+
+### 14.9 Power Generation Filtration — External Benchmark Architecture v1
+
+Status: REIKE SOURCE FAMILY CONFIRMED BUT PRODUCT PAGE EMPTY; EXTERNAL BENCHMARK ARCHITECTURE COMPLETE; COMMERCIAL TECHNOLOGY NAME NOT ASSIGNED.
+
+Source condition:
+- REIKE lists "Power Generation Filtration" under Hydraulic & Lubrication Filtration.
+- The REIKE product page currently contains no technical product content.
+- Therefore no REIKE performance values are assigned to this family.
+
+External benchmark basis:
+- Pall
+- Eaton
+- Parker
+- Donaldson
+
+#### Canonical Interpretation
+
+Power Generation Filtration is an APPLICATION / INDUSTRY SOLUTION LAYER, not a single filtration mechanism.
+
+Canonical domain:
+Industrial & Process
+→ Power Generation Filtration
+
+Canonical subdomains observed across established manufacturers:
+- Turbine Lubrication Oil Filtration
+- Electro-Hydraulic Control (EHC) Fluid Filtration
+- Seal Oil Filtration
+- Gearbox Lubrication Filtration
+- Hydraulic Power Unit Filtration
+- Offline / Kidney-Loop Oil Conditioning
+- Water Removal / Dehydration
+- Varnish / Oil Degradation Control
+- Cooling Water Filtration
+- Compressed Air / Gas Treatment
+- Transformer Oil / Auxiliary Fluid Filtration where applicable
+
+This registry block focuses on the hydraulic and lubrication portion because REIKE places the family under Hydraulic & Lubrication Filtration.
+
+#### Power-Generation Lubrication Architecture
+
+External manufacturer evidence supports these critical lubrication applications:
+
+- Turbine bearing lube oil
+- Turbine lube oil flushing
+- Hydrogen seal oil
+- Steam turbine lubrication
+- Gas turbine lubrication
+- Gearboxes
+- Lubrication modules
+- Compressors
+- Hydraulic power units
+
+Protection objectives:
+- Maintain oil cleanliness
+- Reduce particulate contamination
+- Control water contamination
+- Reduce varnish / degradation risk where applicable
+- Protect bearings, shafts, valves, servo components, and hydraulic controls
+- Support continuous operation and reduce unplanned downtime
+
+#### Continuous-Service / Duplex Architecture
+
+Power-generation equipment frequently requires filtration without process shutdown.
+
+Canonical configuration:
+- Duplex / change-over filter
+- Parallel filter chambers
+- On-line changeover
+- Differential-pressure monitoring
+- Element replacement while the protected system remains in service
+
+Governance:
+"Duplex" is a SYSTEM CONFIGURATION, not a filtration technology.
+
+#### Water Removal and Oil Conditioning
+
+External benchmark evidence shows power-generation oil conditioning can include:
+- Particulate filtration
+- Free-water removal
+- Emulsified-water removal
+- Dissolved-water reduction
+- Dissolved-gas removal
+- Vacuum dehydration / purification
+- Offline filtration
+
+Canonical functions:
+- Oil Particulate Contamination Control
+- Oil-Water Separation / Water Removal
+- Oil Dehydration
+- Oil Condition Remediation
+
+These functions must remain separate in the taxonomy.
+
+#### Electrostatic / Varnish Control
+
+Established power-generation filtration suppliers identify electrostatic discharge and varnish / oil-degradation risk in modern turbine and hydraulic fluids.
+
+Canonical treatment:
+- Electrostatic-charge mitigation = CAPABILITY / DESIGN FEATURE
+- Varnish remediation = OIL CONDITIONING FUNCTION
+- Neither is automatically a standalone commercial technology
+
+#### Canonical Power-Generation System Positions
+
+- Main Turbine Lube Oil Loop
+- Bearing Supply / Return
+- Seal Oil Loop
+- EHC / Servo-Hydraulic Circuit
+- Gearbox Lubrication Loop
+- Compressor Lubrication Loop
+- Offline Conditioning Loop
+- Reservoir / Tank Conditioning
+- Oil Transfer / Fill Loop
+- Oil Flushing Loop
+
+#### Technology-Core Relationship
+
+Power Generation does not justify an independent core solely because of industry.
+
+It consumes and combines existing Industrial & Process technical cores:
+
+- TC-LUB-01 — Industrial Lubricant Cleanliness Control
+- TC-HYD-01 — Industrial Hydraulic Contamination Control
+
+Additional functional-core candidates identified by the external research:
+
+TC-OIL-01 — Industrial Oil Water Removal / Dehydration
+Status: FUNCTION CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+TC-OIL-02 — Industrial Oil Condition Remediation
+Scope candidate:
+- varnish reduction
+- oil-degradation byproduct control
+- electrostatic-risk mitigation where technically applicable
+Status: FUNCTION CORE CANDIDATE / REQUIRES FURTHER SOURCE RESEARCH.
+
+No commercial technology names are approved.
+
+#### Minimum HERMES Inputs — Power Generation
+
+- Plant type
+- Turbine / equipment type
+- Protected component
+- Oil / fluid type
+- Circuit position
+- Required ISO cleanliness target
+- Required beta ratio / micron(c)
+- Flow
+- Operating pressure
+- System MAWP
+- Element collapse requirement
+- Clean and terminal ΔP
+- Oil viscosity
+- Operating / peak temperature
+- Water content
+- Water state: free / emulsified / dissolved
+- Varnish potential / oil degradation indicators
+- Electrostatic-risk condition
+- Continuous-service requirement
+- Duplex / changeover requirement
+- Seal compatibility
+- Housing interface
+- OEM / competitor reference
+
+Expected logic:
+Power-Generation Application
+→ Circuit / Protected Component
+→ Contaminant Type
+→ Required Filtration / Conditioning Function
+→ Efficiency / Water-Removal Target
+→ Element / System Configuration
+→ Duplex / Offline Requirement
+→ Material / Fluid Compatibility
+→ Candidate System / Element
+→ Validation State
+
+#### External Benchmark Notes
+
+Pall:
+- Power-generation turbine management explicitly separates turbine bearing lube oil, turbine lube-oil flush, hydrogen seal oil, water removal, oil monitoring, and varnish remediation.
+
+Eaton:
+- Power-plant filtration literature identifies turbine hydraulic and lubrication oil filtration as a key protection area.
+- Eaton also documents duplex filtration, offline filtration, water-absorption media, oil purification, and differential-pressure monitoring in power-generation service.
+
+Parker:
+- Power-generation portfolio includes hydraulic, lube, and transformer-oil filtration with in-line, in-tank, portable, and condition-monitoring options across combustion turbines, combined cycle, fossil plants, wind, and portable power.
+
+Donaldson:
+- Hydraulic contamination-control principles remain applicable to power-generation hydraulic circuits, with cleanliness and contaminant control treated as system-reliability requirements rather than a single filter type.
+
+#### Closure State — Power Generation Filtration
+
+- REIKE category existence: CONFIRMED
+- REIKE technical product page: EMPTY / NO SPECIFICATION DATA
+- External benchmark research: COMPLETE v1
+- Canonical application architecture: COMPLETE v1
+- Lubrication / hydraulic relationship: COMPLETE v1
+- Duplex / continuous-service architecture: COMPLETE v1
+- Water-removal architecture: COMPLETE v1
+- Commercial technology naming: BLOCKED
+- ELIMFILTERS product specification: OPEN
+- OEM / competitor mapping: OPEN
+- Canonical SKU mapping: OPEN
+
+Next source family:
+- OEM Replacement Filter Elements
