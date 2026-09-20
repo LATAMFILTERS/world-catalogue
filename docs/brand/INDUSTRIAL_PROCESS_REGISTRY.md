@@ -10774,3 +10774,159 @@ User selection + deeper clearance of the six replacement family marks before cat
 Status:
 FINAL COMMERCIAL IDENTITY REVIEW v1 — COMPLETE.
 DIVERSIFICATION DECISION — APPROVED.
+
+
+## 49. Six Reopened Family Marks — Final Public Knockout Selection
+
+Status: SIX REPLACEMENT FAMILY MARKS SELECTED FOR INTERNAL FREEZE v1.
+
+Objective:
+Resolve the six family names reopened during the final identity review and complete a public knockout screen before freezing the commercial architecture for catalogue / packaging development.
+
+### 49.1 PARTION™ — Fine Dust & Fume Filtration
+
+Selected mark:
+FUMEVRA™
+
+Mapping:
+- TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+
+Public knockout result:
+- no material exact industrial dust / welding-fume / laser-fume / additive-manufacturing filtration conflict surfaced;
+- no material exact trademark result surfaced in the public search performed;
+- isolated OCR / historical text noise exists and is not an identified commercial conflict.
+
+Decision:
+FUMEVRA™ — SELECTED FOR INTERNAL FREEZE.
+
+### 49.2 FLUREXIS™ — Hydraulic Fluid Filtration
+
+Selected mark:
+HYLTRIS™
+
+Mapping:
+- TC-HYD-01 — Industrial Hydraulic Contamination Control
+
+Reason for changing from preliminary HYVORIS:
+HYVORIS has exact unrelated historical / entertainment use as a proper name / fictional location. Although not a filtration conflict, a cleaner coined mark is preferable before freeze.
+
+Public knockout result for HYLTRIS:
+- no material exact hydraulic / filtration / industrial-fluid commercial conflict surfaced;
+- no material exact trademark result surfaced in the public search performed;
+- search results that resemble the string are chemistry-text fragments rather than exact commercial brand use.
+
+Decision:
+HYLTRIS™ — SELECTED FOR INTERNAL FREEZE.
+
+### 49.3 FLUREXIS™ — Industrial Lubrication Filtration
+
+Selected mark:
+LUBREVA™
+
+Mapping:
+- TC-LUB-01 — Industrial Lubricant Cleanliness Control
+
+Public knockout result:
+- no material exact industrial lubrication / filtration commercial conflict surfaced;
+- no material exact trademark result surfaced in the public search performed;
+- search noise is primarily OCR / personal-name variation, not identified industrial brand use.
+
+Decision:
+LUBREVA™ — SELECTED FOR INTERNAL FREEZE.
+
+### 49.4 FLUREXIS™ — Oil Condition Remediation
+
+Selected mark:
+OILREVEX™
+
+Mapping:
+- TC-OIL-02 — Industrial Oil Condition Remediation
+
+Public knockout result:
+- no material exact oil-condition / varnish-remediation / filtration commercial conflict surfaced;
+- no material exact trademark result surfaced in the public search performed.
+
+Decision:
+OILREVEX™ — SELECTED FOR INTERNAL FREEZE.
+
+### 49.5 AQUVEXIS™ — Adsorptive Carbon Treatment
+
+Selected mark:
+ADSOVEX™
+
+Mapping:
+- TC-WAT-03 — Industrial Adsorptive Carbon Treatment
+
+Public knockout result:
+- no material exact activated-carbon / adsorption / water-treatment commercial conflict surfaced;
+- no material exact trademark result surfaced in the public search performed.
+
+Decision:
+ADSOVEX™ — SELECTED FOR INTERNAL FREEZE.
+
+### 49.6 AQUVEXIS™ — Membrane Separation
+
+Selected mark:
+MEMBRAVEX™
+
+Mapping:
+- TC-WAT-04 — Reverse Osmosis
+- TC-WAT-05 — Ultrafiltration
+- TC-WAT-06 — Nanofiltration
+
+Public knockout result:
+- no material exact membrane-filtration / industrial-water commercial conflict surfaced;
+- no material exact trademark result surfaced in the public search performed.
+
+Decision:
+MEMBRAVEX™ — SELECTED FOR INTERNAL FREEZE.
+
+RO / UF / NF remain descriptive technical subfamilies beneath MEMBRAVEX™.
+
+### 49.7 Complete Internal Freeze Board
+
+AEREMIS™
+- General Air Filtration — descriptive
+- HE-CRIVA™ — High-Efficiency / Critical Air Filtration
+- MA-TREA™ — Molecular Air Treatment
+
+PARTION™
+- FUMEVRA™ — Fine Dust & Fume Filtration
+
+COALVEX™
+- COALERIS™ — Gas Coalescence
+- Gas-Liquid Separation — descriptive
+
+FLUREXIS™
+- HYLTRIS™ — Hydraulic Fluid Filtration
+- LUBREVA™ — Industrial Lubrication Filtration
+- DEWATIS™ — Oil Dehydration & Water Removal
+- OILREVEX™ — Oil Condition Remediation
+
+AQUVEXIS™
+- Depth Filtration — descriptive
+- ADSOVEX™ — Adsorptive Carbon Treatment
+- MEMBRAVEX™ — Membrane Separation
+  - Reverse Osmosis — descriptive
+  - Ultrafiltration — descriptive
+  - Nanofiltration — descriptive
+- IONVEXA™ — Ion Exchange
+- Electrodeionization — descriptive
+
+### 49.8 Freeze Governance
+
+The above names are now frozen for:
+- internal catalogue architecture,
+- packaging architecture development,
+- commercial content structure,
+- HERMES technology-family mapping.
+
+They are NOT yet represented as legally cleared / registered trademarks.
+
+Before external trademark filing or reliance on exclusivity:
+- authoritative trademark-database clearance remains required;
+- relevant classes / goods-and-services descriptions must be defined;
+- jurisdiction-by-jurisdiction legal review may still change a mark without changing the technical architecture.
+
+Status:
+INDUSTRIAL & PROCESS COMMERCIAL NAMING — INTERNAL FREEZE v1 COMPLETE.
