@@ -19,7 +19,6 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
             loop
             playsInline
             preload="auto"
-            poster={platform.heroImage}
             aria-hidden="true"
           >
             <source src={platform.heroVideo} type="video/mp4" />
