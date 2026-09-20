@@ -94,7 +94,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ['Variable outdoor-air dust loading', 'Continuous or intermittent ventilation duty', 'Space and service-access constraints', 'Pressure-drop limits across the air-handling system'],
         ['Unexpected pressure-drop rise', 'Visible dust downstream', 'Short service intervals', 'Bypass or sealing evidence'],
         '/images/air-filters-lab.avif',
-        '/images/mecanica-air.avif',
+        '/images/General%20Air%20Filtration.png',
       ),
       tech(
         'he-criva',
