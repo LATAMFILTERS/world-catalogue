@@ -195,3 +195,16 @@ Governance:
 General Air Filtration remains descriptive and maps to TC-AIR-01.
 
 Previous working marks CRITENZA™ and SORBEXIS™ are no longer the active preferred names.
+
+
+### AEREMIS™ — HE-KRAF Screening Result
+
+HE-KRAF™ — High-Efficiency / Critical Air Filtration — REJECTED.
+
+Reason:
+KRAF is already used in the air-filtration sector, including Khanfilter's KRAF (Khanfilter Regenerative Air Filter) and documented HEPA / medium-filter configurations.
+
+Current AEREMIS state:
+- General Air Filtration — descriptive
+- High-Efficiency / Critical Air Filtration — naming OPEN
+- MA-TREA™ — Molecular Air Treatment — preferred working candidate pending formal clearance
