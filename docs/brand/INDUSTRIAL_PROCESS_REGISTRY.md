@@ -6197,3 +6197,708 @@ CROSS-MANUFACTURER BENCHMARK CLOSED v1
 
 Next benchmark domain:
 Hydraulic / Lubrication / Power Generation
+
+
+## 24. Cross-Manufacturer Benchmark — Hydraulic / Lubrication / Power Generation CLOSED v1
+
+Status: CROSS-MANUFACTURER BENCHMARK CLOSED v1.
+
+Purpose:
+Perform a deep external benchmark of hydraulic, lubrication, industrial engine oil, and power-generation fluid conditioning because the current REIKE family pages are effectively empty at technical-detail level.
+
+Primary REIKE source-family state:
+REIKE exposes six source families:
+1. Lubrication Oil Filter Elements
+2. Industrial Engine Oil Filter Elements
+3. High Temperature Hydraulic Filter Elements
+4. Hydraulic Oil Filter Elements
+5. Power Generation Filtration
+6. OEM Replacement Filter Elements
+
+The current source pages provide family names and generic supplier claims but no usable product-level specifications for benchmark closure.
+
+Benchmark manufacturers / authorities reviewed:
+- Pall
+- Parker Hannifin
+- Eaton
+- HYDAC
+- Donaldson
+- Cummins / Fleetguard
+- ISO
+
+Evidence state:
+Manufacturer findings are EXTERNAL_BENCHMARK.
+ISO references define current standardized test / reporting frameworks.
+No competitor performance value is transferable to an ELIMFILTERS product without product-specific validation.
+
+### 24.1 Standards Baseline
+
+#### ISO 16889:2022
+
+Current published edition:
+ISO 16889:2022, Edition 3.
+
+Canonical purpose:
+- multi-pass testing of hydraulic filter elements
+- contaminant capacity
+- particulate-removal performance
+- differential-pressure behavior
+- filtration ratio / beta performance
+
+Governance:
+ISO 16889:2008 is withdrawn and MUST NOT be stored as the current edition when new ELIMFILTERS data is created.
+
+Required fields:
+- Standard = ISO 16889
+- Edition = 2022
+- beta ratio
+- particle size µm(c)
+- efficiency
+- contaminant capacity
+- test flow
+- terminal ΔP
+- test condition
+
+#### ISO 4406:2021
+
+Current published edition:
+ISO 4406:2021, Edition 4; ISO confirms it remained current after review in 2026.
+
+Canonical purpose:
+- coding solid-particle contamination level in hydraulic fluids
+
+Required fields:
+- Cleanliness Code
+- Standard Edition
+- Sampling Point
+- Measurement Method
+- Timestamp
+- Before / After Filtration State
+
+#### ISO 3968:2017
+
+Canonical purpose:
+- differential pressure versus flow evaluation for hydraulic filters
+- separates housing / element / valve pressure losses under specified viscosity and flow conditions
+
+Architecture impact:
+Clean ΔP must be stored as a function of:
+- flow
+- viscosity
+- density
+- element construction
+- housing geometry
+
+A single generic pressure-drop number is insufficient.
+
+#### ISO 2941:2009
+
+Canonical purpose:
+- verification of filter-element collapse / burst differential-pressure rating
+
+Governance:
+Element collapse differential pressure MUST remain separate from:
+- system operating pressure
+- housing MAWP
+- bypass-valve setting
+
+#### ISO 2943:1998
+
+Canonical purpose:
+- verification of filter-element material compatibility with a designated fluid after high / low temperature exposure
+
+Architecture impact:
+Fluid compatibility is a validated material property, not a generic catalog claim.
+
+#### ISO 3724:2007
+
+Canonical purpose:
+- flow-fatigue resistance under cyclic differential-pressure loading after contaminant loading
+
+Architecture impact:
+Cyclic-duty robustness requires explicit validation separate from static collapse rating.
+
+### 24.2 Pall Benchmark Contribution
+
+#### High-Efficiency Hydraulic / Lube Filtration
+
+Pall power-generation architecture documents Athalon™ hydraulic / lube filters with high beta performance, anti-static behavior, high dirt capacity, and resistance to cyclic-flow stress.
+
+Canonical impact:
+TC-HYD-01 and TC-LUB-01 remain distinct valid particulate-control cores.
+
+Required filter fields:
+- beta ratio
+- µm(c)
+- dirt-holding capacity
+- clean ΔP
+- terminal ΔP
+- collapse rating
+- flow-fatigue qualification
+- anti-static capability
+- media geometry
+- fluid compatibility
+
+#### Water / Gas Removal Is Separate from Particulate Filtration
+
+Pall oil purifiers remove:
+- free water
+- dissolved water
+- entrained / free gases
+- dissolved gases
+- particulate contamination
+
+Mechanism:
+vacuum dehydration / mass transfer plus particulate filtration.
+
+Architecture impact:
+TC-OIL-01 — Industrial Oil Water Removal / Dehydration is confirmed as a distinct physical process core.
+
+Required canonical fields:
+- free water
+- dissolved water
+- water ppm
+- relative saturation
+- free / entrained gas
+- dissolved gas
+- purifier flow
+- vacuum level
+- fluid temperature
+- inlet / outlet water content
+- dehydration rate
+
+#### Varnish Remediation
+
+Pall documents dedicated varnish remediation in turbine lube systems using adsorptive media in an offline kidney-loop system, separate from particulate filtration.
+
+Architecture impact:
+TC-OIL-02 — Industrial Oil Condition Remediation is confirmed as distinct from ordinary particle removal.
+
+Required fields:
+- varnish potential indicator
+- oil degradation product level
+- MPC / membrane-patch result where used
+- fluid temperature
+- adsorptive media
+- treatment flow
+- reservoir volume
+- before / after condition
+- servo-valve / bearing risk
+- treatment duration
+
+#### EHC / Phosphate Ester Conditioning
+
+Pall power-generation architecture shows that Electrohydraulic Control (EHC) fluid requires:
+- fine particulate filtration
+- water removal
+- acid removal
+- fluid-condition monitoring
+
+Phosphate ester degradation:
+water promotes hydrolysis, creating acidic degradation products.
+
+Pall documents:
+- vacuum dehydration
+- ion-exchange resin for acid removal
+- particulate filtration
+- dedicated EHC treatment
+
+Architecture impact:
+EHC Fluid Conditioning becomes a distinct APPLICATION / SYSTEM ARCHITECTURE consuming multiple cores:
+- TC-HYD-01
+- TC-OIL-01
+- TC-OIL-02 / chemical-condition remediation
+
+Potential additional function core:
+TC-OIL-03 — Acid / Ionic Contaminant Removal from Functional Fluids
+Status: FUNCTION CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Reason:
+Ion exchange removes acidic / ionic degradation products through a different physical-chemical mechanism from particulate filtration, dehydration, and varnish adsorption.
+
+### 24.3 Eaton Benchmark Contribution
+
+#### Duplex Turbine-Oil Filtration
+
+Eaton power-generation guidance confirms duplex filters as the canonical continuous-service architecture when filter changeout cannot interrupt turbine operation.
+
+Key engineering dimensions:
+- low pressure drop
+- required process flow
+- dirt-holding capacity
+- operating pressure
+- changeover integrity
+- bypass philosophy
+- serviceability
+
+Canonical rule:
+Duplex = SYSTEM CONFIGURATION, not filtration technology.
+
+#### Offline Filtration
+
+Eaton stationary and mobile offline units confirm:
+- secondary-flow filtration
+- filling
+- flushing
+- kidney-loop conditioning
+- particle removal
+- optional water-absorbing media
+
+Canonical impact:
+Offline / Kidney Loop is a SYSTEM STRATEGY reusable across:
+- hydraulics
+- turbine lube oil
+- gearbox oil
+- industrial lubrication
+
+#### Vacuum / Offline Fluid Purification
+
+Eaton's current IFPM purifier family removes:
+- free water
+- emulsified water
+- dissolved water
+- free / dissolved gases
+- particles
+
+Architecture impact:
+Independent manufacturer confirmation of TC-OIL-01.
+
+#### Water-Absorbing Filter Media
+
+Eaton Watersorp elements combine:
+- glass-fiber particulate filtration
+- absorbent layer for free / emulsified water
+
+Canonical distinction:
+Water-absorbing elements and vacuum dehydration MUST remain separate solution classes.
+
+Water-absorbing element:
+- finite absorption capacity
+- element-based
+
+Vacuum dehydration:
+- continuous process equipment
+- free + dissolved-water removal
+
+HERMES must distinguish both.
+
+### 24.4 HYDAC Benchmark Contribution
+
+#### Condition Monitoring
+
+HYDAC CS1000 provides continuous online particulate-contamination measurement for predictive maintenance.
+
+HYDAC also combines particle monitoring with water sensing.
+
+Canonical impact:
+Condition monitoring is a first-class system layer, not an accessory.
+
+Required fields:
+- ISO cleanliness
+- particle counts
+- water saturation / moisture
+- sensor type
+- sampling location
+- online / offline mode
+- alarm thresholds
+- trend
+- calibration state
+- communication interface
+- timestamp
+
+#### Kidney-Loop / Offline Filtration
+
+HYDAC OLF and other offline systems confirm dedicated high-capacity kidney-loop filtration as an independent system architecture.
+
+Canonical impact:
+Offline filtration should be modeled by:
+- flow
+- reservoir volume
+- target turnover rate
+- target cleanliness
+- media rating
+- water-removal capability
+- viscosity limit
+- operating temperature
+- pump architecture
+
+#### Electrostatic Discharge / Oil Aging
+
+HYDAC documents Stat-Free® filtration technology to reduce electrostatic discharge and links electrostatic discharge to accelerated oil aging and system damage.
+
+Canonical impact:
+Electrostatic-charge mitigation is an important hydraulic / lube CAPABILITY.
+
+Potential capability:
+ESD-OIL — Electrostatic Discharge Mitigation Capability
+Status: CAPABILITY / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Required fields:
+- low-conductivity oil risk
+- filter charging tendency
+- discharge evidence
+- anti-static media
+- grounding architecture
+- oil conductivity where available
+- varnish / degradation linkage
+
+#### Varnish / Degradation Product Removal
+
+HYDAC independently documents VarnishMitigation / offline solutions for removing oil degradation products.
+
+Architecture impact:
+Independent confirmation that TC-OIL-02 is not merely a Pall-specific product concept.
+
+### 24.5 Parker Benchmark Contribution
+
+#### ISO 16889 / Beta-Ratio Architecture
+
+Parker's hydraulic filtration literature explicitly maps:
+- beta ratio
+- efficiency
+- dirt-holding capacity
+- element pressure differential
+
+Parker examples use ISO 16889 ratings through βx(c)=1000.
+
+Canonical impact:
+The HERMES hydraulic selector must rank performance using beta + µm(c), not nominal micron alone.
+
+#### Continuous Particle Monitoring
+
+Parker iCountPD provides continuous laser-based particle monitoring and can report cleanliness against ISO cleanliness codes.
+
+Parker monitoring options also include moisture / relative-humidity indication in oil.
+
+Architecture impact:
+Cross-manufacturer confirmation of the Fluid Condition Monitoring layer.
+
+#### High-Pressure Inline Filtration
+
+Parker iProtect EPF demonstrates high-pressure inline architecture with ISO 16889 performance qualification.
+
+Canonical distinction:
+High-pressure service is an OPERATING ENVELOPE / HOUSING architecture, not a new particle-filtration mechanism.
+
+### 24.6 Donaldson Benchmark Contribution
+
+#### ISO 16889 Media Qualification
+
+Donaldson hydraulic literature publishes beta ratings based on ISO 16889 and distinguishes synthetic versus cellulose media.
+
+Architecture impact:
+Media chemistry and beta efficiency remain separate dimensions.
+
+#### Offline / Kidney Loop
+
+Donaldson Filter Cart, Filter Buddy, and Filter Panel confirm offline filtration for:
+- fluid transfer
+- flushing
+- supplemental contamination control
+- achieving / maintaining ISO cleanliness
+
+Canonical impact:
+Further independent confirmation that offline filtration is a system strategy.
+
+### 24.7 Industrial Engine Oil Benchmark
+
+Donaldson defines three lube-filtration strategies:
+
+1. Full-Flow
+- processes nearly all regulated oil flow
+- must prioritize low restriction and cold-flow protection
+
+2. By-Pass / Secondary
+- typically treats roughly 5–10% of system oil flow
+- uses a separate restrictive, high-efficiency path
+- returns polished oil to the sump
+
+3. Combination / Two-Stage
+- integrates full-flow and bypass behavior
+- can increase restriction and degrade cold-start performance depending design
+
+Cummins / Fleetguard provides real engine examples using combination full-flow / bypass elements.
+
+Canonical impact:
+Industrial Engine Oil remains an APPLICATION specialization under TC-LUB-01.
+
+Critical rules:
+- By-pass filter ≠ internal bypass valve
+- cold-start viscosity is a first-class selection input
+- efficiency / capacity / restriction must be balanced
+- oil starvation risk has priority over theoretical filter fineness
+
+Required fields:
+- full-flow / secondary / combination
+- regulated oil flow
+- secondary-flow percentage
+- cold-start viscosity
+- cold-start ΔP
+- internal bypass-valve setpoint
+- system relief pressure
+- oil temperature
+- filter capacity
+- service interval
+
+### 24.8 Power Generation Canonical Architecture
+
+Cross-manufacturer evidence supports the following canonical power-generation fluid domains:
+
+#### Turbine Lube Oil
+Functions:
+- particulate control
+- water removal
+- gas removal
+- varnish / degradation control
+- ESD mitigation
+- fluid monitoring
+
+#### Electrohydraulic Control (EHC)
+Functions:
+- very fine particulate control
+- water removal
+- acid / ionic degradation removal
+- fluid-condition monitoring
+- phosphate-ester compatibility
+
+#### Generator Seal Oil
+Functions:
+- particulate control
+- water control
+- seal-system protection
+
+#### Gearbox Lubrication / Wind
+Functions:
+- particulate control
+- water control
+- offline kidney-loop conditioning
+- desiccant / reservoir-breather protection where applicable
+- condition monitoring
+
+#### Auxiliary Hydraulic Systems
+Functions:
+- high-pressure particulate filtration
+- return / pressure / offline filtration
+- water monitoring
+- cleanliness monitoring
+
+#### Flushing / Commissioning
+Functions:
+- temporary high-flow cleanup
+- target ISO cleanliness achievement
+- particle monitoring
+- documented acceptance
+
+Power Generation remains an APPLICATION / INDUSTRY SOLUTION layer and must not become one filtration technology.
+
+### 24.9 Reservoir Breathing / Ingress Control
+
+Parker and other hydraulic benchmark architectures show that atmospheric reservoirs can ingest moisture and particles through breathing.
+
+Canonical function:
+- Reservoir Air Ingress Control
+
+Potential capability / product family:
+- Desiccant Breather
+- Particulate Breather
+
+Architecture impact:
+Ingress prevention should be modeled upstream of fluid cleanup.
+
+Required fields:
+- reservoir volume
+- breathing rate
+- humidity
+- particulate environment
+- desiccant capacity
+- breather efficiency
+- service indicator
+- connection
+
+This is a contamination-prevention function, not part of TC-HYD-01 particulate removal inside the liquid circuit.
+
+### 24.10 Fluid Condition Monitoring as a Canonical Layer
+
+Cross-manufacturer consensus from Pall, HYDAC, and Parker establishes monitoring as an independent canonical layer.
+
+Required monitored variables may include:
+- ISO cleanliness code
+- particle count
+- water ppm
+- relative saturation
+- temperature
+- pressure
+- differential pressure
+- varnish / degradation indicator
+- TAN
+- conductivity
+- sensor health
+- alarm state
+- trend / rate of change
+
+Canonical HERMES architecture:
+Filtration
++ Fluid Conditioning
++ Monitoring
++ Maintenance Decision
+
+Monitoring is not a Technology Core.
+
+### 24.11 Replacement / Interchange Enrichment
+
+OEM Replacement remains an interchange-intelligence layer.
+
+Cross-manufacturer evidence reinforces that replacement qualification must include:
+- exact dimensions
+- end-cap / thread / seal interface
+- media
+- beta performance
+- ISO 16889 basis
+- collapse differential
+- bypass setting
+- flow / viscosity / ΔP
+- fluid compatibility
+- temperature
+- application position
+- housing pressure compatibility
+
+No interchange can be approved from part-number lookup or dimensions alone.
+
+### 24.12 Cross-Manufacturer Consensus
+
+Strong agreement across Pall, Parker, Eaton, HYDAC, and Donaldson:
+
+1. Beta ratio + µm(c) is the correct primary particulate-performance language for hydraulic filters.
+2. ISO cleanliness is a system-fluid condition target, not a filter rating.
+3. Offline / kidney-loop filtration is a reusable system strategy.
+4. Water removal must distinguish absorbent media from vacuum dehydration.
+5. Dissolved water requires different treatment from free-water absorption.
+6. Varnish / degradation products are not equivalent to ordinary solid particulate contamination.
+7. Phosphate-ester EHC fluid requires separate water, acid, particulate, and material-compatibility control.
+8. Monitoring belongs in the architecture as a first-class layer.
+9. Housing operating pressure, element collapse differential, bypass setpoint, and cyclic fatigue are distinct variables.
+10. Duplex filtration is a continuous-service configuration, not a media technology.
+11. Electrostatic-discharge mitigation is a capability that can materially affect fluid aging.
+12. Industrial engine lube filtration must balance efficiency, capacity, and cold-flow restriction.
+
+### 24.13 Technology-Core Impact
+
+TC-HYD-01 — Industrial Hydraulic Contamination Control
+- CONFIRMED as distinct particulate-control core.
+
+TC-LUB-01 — Industrial Lubricant Cleanliness Control
+- CONFIRMED as distinct lubricant particulate-control core.
+
+TC-OIL-01 — Industrial Oil Water Removal / Dehydration
+- CONFIRMED as distinct physical process core.
+- Must distinguish absorption from vacuum / mass-transfer dehydration.
+
+TC-OIL-02 — Industrial Oil Condition Remediation
+- CONFIRMED as distinct function core for varnish / degradation-product remediation.
+
+New candidate:
+TC-OIL-03 — Acid / Ionic Contaminant Removal from Functional Fluids
+- SUPPORTED by EHC phosphate-ester ion-exchange architecture.
+- Status: FUNCTION CORE CANDIDATE.
+- Further cross-domain review required before commercial naming.
+
+Capabilities:
+- HT-HYD — High-Temperature Hydraulic Capability: CONFIRMED as capability.
+- ESD-OIL — Electrostatic Discharge Mitigation Capability: ADDED / CONFIRMED as capability.
+- ENG-LUB — Industrial Engine Lube Filtration Capability: CONFIRMED as application specialization.
+
+System architectures:
+- Offline / Kidney Loop
+- Duplex / Continuous Service
+- Fluid Purification
+- EHC Fluid Conditioning
+- Fluid Condition Monitoring
+- Flushing / Commissioning
+- Reservoir Ingress Control
+
+These MUST NOT be promoted automatically to technology names.
+
+### 24.14 Canonical Data-Model Enrichment
+
+Add / confirm:
+- ISO 16889 Edition
+- ISO 4406 Edition
+- Beta Ratio
+- Particle Size µm(c)
+- Dirt-Holding Capacity
+- Test Flow
+- Terminal ΔP
+- Clean ΔP
+- ISO Cleanliness Target
+- Fluid Sampling Point
+- Water ppm
+- Relative Saturation
+- Free / Emulsified / Dissolved Water State
+- Gas State
+- Vacuum Dehydration
+- Water-Absorbing Media
+- TAN
+- Varnish / MPC Indicator
+- Adsorptive Remediation Media
+- Ion-Exchange Resin
+- Phosphate-Ester Compatibility
+- Oil Conductivity / ESD Risk
+- Collapse Differential
+- Bypass Setpoint
+- Flow-Fatigue Qualification
+- Housing MAWP
+- System Relief Pressure
+- Cold-Start Viscosity
+- Fluid Temperature
+- Offline Flow
+- Reservoir Volume
+- Turnover Rate
+- Condition-Monitoring Sensor
+- Alarm Threshold
+- Trend
+- Calibration State
+- Reservoir Breather
+- Commissioning / Flush Acceptance
+
+### 24.15 Open Product-Level Work
+
+Still open:
+- exact ELIMFILTERS industrial hydraulic media platform
+- exact lube media platform
+- beta / DHC / ΔP curves by element
+- fluid compatibility testing
+- high-temperature qualification
+- ESD-specific media qualification
+- dehydration-equipment platform
+- water-removal capacities
+- varnish-remediation media platform
+- ion-exchange media platform
+- EHC fluid product architecture
+- condition-monitoring hardware integration
+- turbine / gearbox / hydraulic OEM interchanges
+- industrial-engine product mapping
+- canonical SKU population
+
+These do not block architectural closure.
+
+### 24.16 Closure
+
+Hydraulic / Lubrication / Power Generation Cross-Manufacturer Benchmark:
+- Pall benchmark: COMPLETE v1
+- Parker benchmark: COMPLETE v1
+- Eaton benchmark: COMPLETE v1
+- HYDAC benchmark: COMPLETE v1
+- Donaldson benchmark: COMPLETE v1
+- Industrial Engine Oil benchmark: COMPLETE v1
+- ISO standards baseline: COMPLETE v1
+- Cross-manufacturer consensus: COMPLETE v1
+- Canonical data-model enrichment: COMPLETE v1
+- Technology-core impact assessment: COMPLETE v1
+- Product-specific validation: OPEN
+- Commercial technology naming: BLOCKED until remaining benchmark domains are closed
+
+Status:
+CROSS-MANUFACTURER BENCHMARK CLOSED v1
+
+Next benchmark domain:
+Industrial Water
