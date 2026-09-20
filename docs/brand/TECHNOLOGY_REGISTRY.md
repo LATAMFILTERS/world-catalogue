@@ -252,3 +252,23 @@ Rejected:
 - AEROFUME™
 
 Capabilities such as nanofiber, ePTFE, anti-static, flame-retardant, high-temperature, pulse-cleanable, and oil/aerosol tolerance remain capability descriptors rather than independent technology marks.
+
+
+### COALVEX™ — Gas Coalescence Family Naming
+
+Preferred working candidate:
+- COALERIS™ — Gas Coalescence — maps to TC-NG-01
+
+Secondary candidate:
+- COALEXIS™
+
+Hold:
+- COALVIA™
+
+Rejected:
+- COALENZA™
+- COALIS™
+
+Gas-Liquid Separation remains descriptive and maps to TC-NG-02.
+
+No vessel architecture, application point, or system configuration becomes an independent technology mark.
