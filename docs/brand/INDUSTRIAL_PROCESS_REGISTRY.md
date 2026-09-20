@@ -9416,3 +9416,75 @@ The semantic direction is accepted, but the exact mark is unavailable / too risk
 - Water Treatment → OPEN
 
 No mark is finally approved until deeper clearance is completed.
+
+
+## 34. Replacement Naming Round — Fluid / Water
+
+Status: WORKING SHORTLIST. No mark approved.
+
+Retained preferred finalists:
+- Air Technologies → AEREMIS
+- Dust & Fume Technologies → PARTION
+- Gas Conditioning Technologies → COALVEX
+
+### 34.1 Fluid Conditioning Technologies — New Candidate Set
+
+Preferred working candidates:
+1. FLUVARON
+2. FLUVELIS
+3. FLUVORIS
+4. FLUDEXA
+5. FLUIDARA
+
+Selection logic:
+- broad enough for hydraulic filtration, lubrication, oil dehydration, and oil-condition remediation;
+- avoids naming the platform only around hydraulics or lubrication;
+- retains a fluid / flow semantic without using the already-conflicted FLUVION or FLUIDEXA exact marks.
+
+First-pass public-search notes:
+- FLUVARA is not preferred because active public use now exists.
+- FLUENTRA is not preferred because current trademark activity exists.
+- FLUVANTA is not preferred because active commercial use exists.
+- FLUVEXA is not preferred because active public commercial use exists.
+- FLUVIDA is not preferred because a live U.S. application exists.
+
+Current preferred direction from this set:
+FLUVARON / FLUVELIS
+
+Both require deeper trademark-database screening before approval.
+
+### 34.2 Water Treatment Technologies — New Candidate Set
+
+Preferred working candidates:
+1. AQUVEXA
+2. AQUELON
+3. AQUELIS
+4. AQUVORA
+5. AQUERON
+
+Selection logic:
+- broad enough for particulate filtration, carbon adsorption, RO / UF / NF, ion exchange, and EDI;
+- avoids locking the platform to membranes alone;
+- retains a recognizable water semantic while remaining coined.
+
+First-pass public-search notes:
+- AQUERIS is rejected because a current UK filing and active water-capture technology company exist.
+- AQUENZA is rejected because active trademark applications and water-related commercial use exist.
+- AQUVANTA is avoided because current active app / brand use exists.
+- AQUVORA is currently in active consumer swim-care use and therefore is HOLD, not preferred.
+- AQUELIS has active consumer-product use and therefore is HOLD, not preferred.
+
+Current preferred direction from this set:
+AQUVEXA / AQUELON / AQUERON
+
+All require deeper trademark-database screening before approval.
+
+### 34.3 Current Platform Naming Board
+
+- Air → AEREMIS — PREFERRED FINALIST
+- Dust & Fume → PARTION — PREFERRED FINALIST
+- Gas Conditioning → COALVEX — PREFERRED FINALIST
+- Fluid Conditioning → FLUVARON / FLUVELIS — WORKING FINALISTS
+- Water Treatment → AQUVEXA / AQUELON / AQUERON — WORKING FINALISTS
+
+No mark is approved until deeper clearance is completed.
