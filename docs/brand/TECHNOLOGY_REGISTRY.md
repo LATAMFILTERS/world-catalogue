@@ -231,3 +231,24 @@ Current AEREMIS family board:
 - MA-TREA™ — Molecular Air Treatment — TC-AIR-03 — preferred working candidate
 
 All marks remain subject to formal trademark clearance.
+
+
+### PARTION™ — Fine Dust & Fume Family Naming
+
+Preferred working candidate:
+- FUMEXIS™ — Fine Dust & Fume Filtration — maps to TC-DUST-01
+
+Secondary candidates:
+- PARTIVEX™
+- FUMEVRA™
+
+Hold:
+- DUSTVEX™
+
+Rejected:
+- FUMERON™
+- PARTEXA™
+- DUSTEXA™
+- AEROFUME™
+
+Capabilities such as nanofiber, ePTFE, anti-static, flame-retardant, high-temperature, pulse-cleanable, and oil/aerosol tolerance remain capability descriptors rather than independent technology marks.
