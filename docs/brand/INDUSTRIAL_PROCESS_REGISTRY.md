@@ -8828,3 +8828,263 @@ Cross-Domain Technology Core Consolidation:
 
 Status:
 CROSS-DOMAIN TECHNOLOGY CORE CONSOLIDATION CLOSED v1.
+
+
+## 29. Commercial Technology Grouping — CLOSED v1
+
+Status: COMMERCIAL GROUPING CLOSED v1.
+Commercial naming itself remains OPEN.
+
+Purpose:
+Correct the prior interpretation that all 17 validated technical cores should become 17 customer-facing technology brands.
+
+Decision:
+The 17 validated technical cores remain INTERNAL ENGINEERING CORES for HERMES, product qualification, evidence, catalogue logic, and technical validation.
+
+They are grouped commercially into a smaller number of customer-facing technology platforms and families.
+
+Canonical hierarchy:
+
+Industrial & Process
+→ Commercial Technology Platform
+→ Commercial Technology Family
+→ Internal Technology Core
+→ Capability / Operating Envelope
+→ Product Configuration
+→ SKU / System
+
+### 29.1 Platform 1 — Air Technologies
+
+Commercial scope:
+- General Ventilation Particle Control
+- High-Efficiency Air Filtration
+- Molecular Air Contamination Control
+
+Internal cores:
+- TC-AIR-01
+- TC-AIR-02
+- TC-AIR-03
+
+Visible commercial-family structure:
+A. General Air Filtration
+B. High-Efficiency / Critical Air Filtration
+C. Molecular Air Treatment
+
+Not promoted as separate technologies:
+- cleanroom
+- semiconductor
+- photovoltaic
+- aviation
+- terminal modules
+- FFUs
+- low-outgassing
+- gel seal / gasket seal
+
+These remain applications, system configurations, or capabilities.
+
+### 29.2 Platform 2 — Dust & Fume Technologies
+
+Commercial scope:
+- Surface-Loading Fine Dust Filtration
+
+Internal core:
+- TC-DUST-01
+
+Visible commercial-family structure:
+A. Fine Dust & Fume Filtration
+
+Capabilities beneath the family:
+- Nanofiber / Fine-Fiber Media
+- ePTFE / PTFE Surface Media
+- Anti-Static
+- Flame-Retardant
+- High-Temperature
+- Pulse-Cleanable
+- Oil / Aerosol Tolerance
+
+Applications beneath the family:
+- Laser Cutting
+- Welding
+- Additive Manufacturing
+- Process Dust
+
+No separate technology brand is created for each application or media treatment.
+
+### 29.3 Platform 3 — Gas Conditioning Technologies
+
+Commercial scope:
+- Gas-Liquid Coalescence
+- Gas-Liquid Separation
+
+Internal cores:
+- TC-NG-01
+- TC-NG-02
+
+Visible commercial-family structure:
+A. Gas Coalescence
+B. Gas-Liquid Separation
+
+System architectures beneath the platform:
+- Filter-Separator
+- Integrated Gas Conditioning
+- Cyclonic Pre-Separation
+- City Gate
+- Pipeline
+- Compressor
+- Turbine Fuel Gas
+
+These are application / system layers, not core technologies.
+
+### 29.4 Platform 4 — Fluid Conditioning Technologies
+
+Commercial scope:
+- Hydraulic Particulate Control
+- Lubricant Cleanliness
+- Oil Water Removal / Dehydration
+- Oil Condition / Varnish Remediation
+
+Internal cores:
+- TC-HYD-01
+- TC-LUB-01
+- TC-OIL-01
+- TC-OIL-02
+
+Visible commercial-family structure:
+A. Hydraulic Fluid Filtration
+B. Industrial Lubrication Filtration
+C. Oil Dehydration & Water Removal
+D. Oil Condition Remediation
+
+Deferred under this platform:
+- TC-OIL-03 Acid / Ionic Contaminant Removal
+- ESD-OIL capability
+- High-Temperature Hydraulic capability
+- Industrial Engine Lube specialization
+
+These remain internal / capability layers until portfolio breadth justifies commercial elevation.
+
+### 29.5 Platform 5 — Water Treatment Technologies
+
+Commercial scope:
+- Depth Particulate Filtration
+- Adsorptive Carbon Treatment
+- Membrane Separation
+- Ion Exchange
+- Electrodeionization
+
+Internal cores:
+- TC-WAT-01
+- TC-WAT-03
+- TC-WAT-04
+- TC-WAT-05
+- TC-WAT-06
+- TC-WAT-07
+- TC-WAT-08
+
+Visible commercial-family structure:
+A. Depth Filtration
+B. Adsorptive Carbon Treatment
+C. Membrane Separation
+   - Reverse Osmosis
+   - Ultrafiltration
+   - Nanofiltration
+D. Ion Exchange
+E. Electrodeionization
+
+Commercial grouping decision:
+RO, UF, and NF remain three distinct internal cores because HERMES must understand their different mechanisms, operating envelopes, and selection logic.
+
+Commercially they are grouped under one umbrella family:
+MEMBRANE SEPARATION
+
+They may later receive subfamily descriptors, but they do not require three unrelated top-level technology brands.
+
+Deferred:
+- TC-WAT-11 Membrane Degasification
+- MBR / MABR adjacent domains
+
+### 29.6 Final Commercial Surface
+
+Customer-facing Industrial & Process architecture:
+
+1. Air Technologies
+2. Dust & Fume Technologies
+3. Gas Conditioning Technologies
+4. Fluid Conditioning Technologies
+5. Water Treatment Technologies
+
+Expected visible technology families:
+- General Air Filtration
+- High-Efficiency / Critical Air Filtration
+- Molecular Air Treatment
+- Fine Dust & Fume Filtration
+- Gas Coalescence
+- Gas-Liquid Separation
+- Hydraulic Fluid Filtration
+- Industrial Lubrication Filtration
+- Oil Dehydration & Water Removal
+- Oil Condition Remediation
+- Depth Filtration
+- Adsorptive Carbon Treatment
+- Membrane Separation
+- Ion Exchange
+- Electrodeionization
+
+Commercially visible families:
+15
+
+Internal validated cores supporting them:
+17
+
+Reason for difference:
+RO / UF / NF remain three internal cores but one commercial family.
+
+### 29.7 Naming Governance
+
+The next naming exercise must NOT generate 17 unrelated trademarks.
+
+Naming sequence:
+1. Decide whether the 5 commercial platforms need branded names or remain descriptive navigation categories.
+2. Create commercial technology names only for the 15 visible families where branding adds real value.
+3. Allow one umbrella technology to contain multiple validated technical cores when the customer-facing value proposition is coherent.
+4. Preserve the internal core ID underneath every branded family.
+5. Screen candidate names for:
+   - overlap with existing ELIMFILTERS technologies
+   - trademark conflicts
+   - obvious competitor conflicts
+   - semantic confusion across filtration sectors
+   - domain / digital usability where relevant
+
+### 29.8 Existing Technology Firewall
+
+Industrial & Process naming MUST NOT inherit or repurpose:
+- MACROCORE™
+- MICROKAPPA™
+- DRYCORE™
+- INTEKCORE™
+- SYNTAPORE™
+- HYDROCORE™
+- TURBOCORE™
+- SYNTRAX™
+- NANOFORCE™
+- THERMACORE™
+- MARINECLEAN™
+- DURATECH™
+
+These retain their existing governed scopes.
+
+### 29.9 Closure
+
+Commercial grouping:
+- 17 technical cores preserved internally
+- 5 commercial platforms approved as grouping architecture
+- 15 customer-facing technology families identified
+- applications removed from technology naming
+- capabilities removed from technology naming
+- system architectures removed from technology naming
+- RO / UF / NF consolidated commercially under Membrane Separation
+- commercial naming strategy: READY
+- trademark / availability screening: NEXT
+
+Status:
+COMMERCIAL TECHNOLOGY GROUPING CLOSED v1.
