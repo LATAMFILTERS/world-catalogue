@@ -73,6 +73,7 @@ export function Navigation() {
         </motion.div>
 
         <nav style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden-mobile" aria-label="Main navigation">
+          <NavLink href="/industrial-process">Industrial & Process</NavLink>
           <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
@@ -99,6 +100,7 @@ export function Navigation() {
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }} style={{ overflow: 'hidden', background: 'rgba(0,0,0,0.98)', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }} style={{ padding: '1.5rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               {[
+                { href: '/industrial-process', label: 'Industrial & Process' },
                 { href: '/industries', label: t('nav.industries', 'Industries') },
                 { href: '/systems', label: t('nav.systems', 'Systems') },
                 { href: '/technologies', label: t('nav.technologies', 'Technologies') },
