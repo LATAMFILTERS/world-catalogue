@@ -9,6 +9,7 @@ const {
 const {
   KNOWLEDGE_DOMAINS,
   SYSTEMS,
+  PLATFORMS,
   TECHNOLOGIES
 } = require('../lib/knowledge-governance/knowledge-domain-registry');
 
@@ -61,4 +62,38 @@ test('confirmed technology relation requires a named technology', () => {
   const validation = validateHermesResearchRequest(request);
   assert.equal(validation.valid, false);
   assert.equal(validation.errors.includes('confirmed technology_relation requires technology'), true);
+});
+
+
+test('Hermes accepts governed Industrial & Process AEREMIS research context', () => {
+  const request = createHermesResearchRequest({
+    knowledge_gap_request_id: 'gap-ip-air-001',
+    research_type: 'technical_knowledge',
+    knowledge_domain: KNOWLEDGE_DOMAINS.INDUSTRIAL_PROCESS,
+    industry: 'Manufacturing',
+    system: SYSTEMS.INDUSTRIAL_PROCESS,
+    platform: PLATFORMS.AEREMIS,
+    technology: TECHNOLOGIES.HE_CRIVA,
+    technology_relation: 'confirmed',
+    application_relation: 'verified',
+    research_question: 'What system conditions affect high-efficiency critical-air filtration performance?'
+  });
+
+  assert.equal(validateHermesResearchRequest(request).valid, true);
+  assert.equal(request.platform, PLATFORMS.AEREMIS);
+});
+
+test('Hermes rejects an AEREMIS platform inside Light Duty', () => {
+  const request = createHermesResearchRequest({
+    knowledge_gap_request_id: 'gap-invalid-ip-001',
+    knowledge_domain: KNOWLEDGE_DOMAINS.LIGHT_DUTY,
+    industry: 'Automotive',
+    system: SYSTEMS.AIR_INTAKE,
+    platform: PLATFORMS.AEREMIS,
+    research_question: 'Invalid mixed-domain platform request'
+  });
+
+  const validation = validateHermesResearchRequest(request);
+  assert.equal(validation.valid, false);
+  assert.equal(validation.errors.includes('platform is not allowed for knowledge_domain'), true);
 });
