@@ -1,0 +1,256 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { Navigation } from '@/components/Navigation';
+import { Footer } from '@/components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Industrial & Process Filtration | ELIMFILTERS',
+  description:
+    'ELIMFILTERS Industrial & Process is the engineering entry point for high-value filtration, separation, fluid conditioning, gas conditioning, air treatment and industrial water projects.',
+  alternates: { canonical: '/industrial-process/' },
+  openGraph: {
+    title: 'Industrial & Process Filtration | ELIMFILTERS',
+    description:
+      'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.',
+    url: 'https://elimfilters.com/industrial-process/',
+    type: 'website',
+  },
+};
+
+const platforms = [
+  {
+    mark: 'AEREMIS™',
+    descriptor: 'Air Technologies',
+    intro: 'Industrial air treatment for ventilation, critical environments and molecular contamination control.',
+    families: ['General Air Filtration', 'HE-CRIVA™ — High-Efficiency / Critical Air Filtration', 'MA-TREA™ — Molecular Air Treatment'],
+  },
+  {
+    mark: 'PARTION™',
+    descriptor: 'Dust & Fume Technologies',
+    intro: 'Fine-dust and fume control for demanding industrial processes and production environments.',
+    families: ['FUMEVRA™ — Fine Dust & Fume Filtration'],
+  },
+  {
+    mark: 'COALVEX™',
+    descriptor: 'Gas Conditioning Technologies',
+    intro: 'Gas-stream conditioning for liquid aerosol control, coalescence and separation duties.',
+    families: ['COALERIS™ — Gas Coalescence', 'Gas-Liquid Separation'],
+  },
+  {
+    mark: 'FLUREXIS™',
+    descriptor: 'Fluid Conditioning Technologies',
+    intro: 'Contamination, water and degradation-product control for hydraulic and lubrication systems.',
+    families: ['HYLTRIS™ — Hydraulic Fluid Filtration', 'LUBREVA™ — Industrial Lubrication Filtration', 'DEWATIS™ — Oil Dehydration & Water Removal', 'OILREVEX™ — Oil Condition Remediation'],
+  },
+  {
+    mark: 'AQUVEXIS™',
+    descriptor: 'Water Treatment Technologies',
+    intro: 'Industrial water treatment through particulate, adsorption, membrane and ionic separation mechanisms.',
+    families: ['Depth Filtration', 'ADSOVEX™ — Adsorptive Carbon Treatment', 'MEMBRAVEX™ — Membrane Separation', 'IONVEXA™ — Ion Exchange', 'Electrodeionization'],
+  },
+] as const;
+
+const projectInputs = [
+  'Process fluid or gas',
+  'Contaminant / treatment objective',
+  'Flow rate',
+  'Operating and design pressure',
+  'Temperature',
+  'Required efficiency / quality target',
+  'Materials and chemical compatibility',
+  'Existing housing, vessel or system',
+];
+
+const productIdentity = [
+  'ELIMFILTERS master brand',
+  'Canonical SKU + product name',
+  'Industrial & Process',
+  'Platform',
+  'Technology family',
+  'Application / duty',
+  'Validated performance',
+];
+
+const datasheetBlocks = [
+  'Product identity',
+  'Application / duty',
+  'Treatment mechanism',
+  'Performance',
+  'Operating envelope',
+  'Materials / construction',
+  'Dimensions / connections',
+  'Compatibility',
+  'Standards / test methods',
+  'Ordering information',
+];
+
+export default function IndustrialProcessPage() {
+  const inquiryHref =
+    'mailto:info@elimfilters.com?subject=Industrial%20%26%20Process%20Engineering%20Review&body=Company%3A%0ACountry%3A%0AIndustry%20%2F%20process%3A%0AApplication%3A%0AFluid%20or%20gas%3A%0AFlow%3A%0APressure%3A%0ATemperature%3A%0AContaminant%20or%20treatment%20objective%3A%0AExisting%20equipment%20%2F%20reference%3A%0AProject%20timing%3A';
+
+  return (
+    <>
+      <Navigation />
+      <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+        <section
+          style={{
+            minHeight: '82vh',
+            display: 'flex',
+            alignItems: 'end',
+            padding: 'clamp(8rem, 16vw, 13rem) var(--section-px) clamp(4.5rem, 9vw, 7rem)',
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
+            background:
+              'radial-gradient(circle at 82% 22%, rgba(255,241,45,0.12), transparent 27%), linear-gradient(145deg,#000 0%,#050505 62%,#0b0b0b 100%)',
+          }}
+        >
+          <div style={{ width: '100%', maxWidth: 1400, margin: '0 auto' }}>
+            <p style={eyebrow}>INDUSTRIAL & PROCESS</p>
+            <h1 style={heroTitle}>
+              ENGINEER THE PROCESS.
+              <span style={{ display: 'block', color: '#FFF12D' }}>PROTECT THE ASSET.</span>
+            </h1>
+            <p style={heroCopy}>
+              A dedicated engineering entry point for industrial filtration, separation and process conditioning projects. Start with the operating problem, process conditions and required outcome — not with a generic filter list.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 28 }}>
+              <a href={inquiryHref} data-conversion-action="industrial-engineering-review" style={primaryButton}>
+                REQUEST ENGINEERING REVIEW
+              </a>
+              <a href="#platforms" style={secondaryButton}>EXPLORE TECHNOLOGIES</a>
+            </div>
+          </div>
+        </section>
+
+        <section style={section} aria-labelledby="industrial-entry-title">
+          <div style={container}>
+            <div style={twoCol}>
+              <div>
+                <p style={eyebrow}>HIGH-VALUE INDUSTRIAL PROJECTS</p>
+                <h2 id="industrial-entry-title" style={sectionTitle}>A different entry path from heavy-duty replacement filtration.</h2>
+              </div>
+              <div>
+                <p style={lead}>
+                  Industrial & Process projects are qualified by duty, operating envelope, contamination mechanism, process risk and system compatibility. This page is the commercial and technical front door for plants, OEMs, EPCs, integrators, operators and industrial distributors.
+                </p>
+                <p style={bodyCopy}>
+                  Product selection is resolved through validated technology cores and application evidence. Supplier claims are not presented as ELIMFILTERS performance until approved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="platforms" style={{ ...section, background: '#050505' }} aria-labelledby="platform-title">
+          <div style={container}>
+            <p style={eyebrow}>FIVE COMMERCIAL TECHNOLOGY PLATFORMS</p>
+            <h2 id="platform-title" style={sectionTitle}>Navigate by treatment function.</h2>
+            <div style={platformGrid}>
+              {platforms.map((platform, index) => (
+                <article key={platform.mark} style={platformCard}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'baseline' }}>
+                    <span style={numberStyle}>{String(index + 1).padStart(2, '0')}</span>
+                    <span style={platformDescriptor}>{platform.descriptor}</span>
+                  </div>
+                  <h3 style={platformMark}>{platform.mark}</h3>
+                  <p style={bodyCopy}>{platform.intro}</p>
+                  <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 22, paddingTop: 16 }}>
+                    {platform.families.map((family) => (
+                      <div key={family} style={familyRow}>{family}</div>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={section} aria-labelledby="qualification-title">
+          <div style={container}>
+            <div style={twoCol}>
+              <div>
+                <p style={eyebrow}>ENGINEERING QUALIFICATION</p>
+                <h2 id="qualification-title" style={sectionTitle}>What we need to evaluate an industrial project.</h2>
+              </div>
+              <div style={{ display: 'grid', gap: 0 }}>
+                {projectInputs.map((item, index) => (
+                  <div key={item} style={requirementRow}>
+                    <span style={numberStyle}>{String(index + 1).padStart(2, '0')}</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ ...section, background: '#050505' }} aria-labelledby="representation-title">
+          <div style={container}>
+            <p style={eyebrow}>CATALOGUE + PDP + TECHNICAL DOCUMENTATION</p>
+            <h2 id="representation-title" style={sectionTitle}>One identity system from lead to product.</h2>
+            <div style={threeCol}>
+              <article style={specCard}>
+                <p style={cardLabel}>PRODUCT CARD / PDP</p>
+                {productIdentity.map((item, i) => <div key={item} style={specRow}><span>{String(i + 1).padStart(2, '0')}</span>{item}</div>)}
+              </article>
+              <article style={specCard}>
+                <p style={cardLabel}>TECHNICAL DATASHEET</p>
+                {datasheetBlocks.map((item, i) => <div key={item} style={specRow}><span>{String(i + 1).padStart(2, '0')}</span>{item}</div>)}
+              </article>
+              <article style={specCard}>
+                <p style={cardLabel}>PACKAGING</p>
+                <div style={specRow}><span>01</span>ELIMFILTERS</div>
+                <div style={specRow}><span>02</span>SKU + Product Name</div>
+                <div style={specRow}><span>03</span>Platform</div>
+                <div style={specRow}><span>04</span>Technology Family</div>
+                <div style={specRow}><span>05</span>Validated core data</div>
+                <div style={specRow}><span>06</span>Traceability / digital reference</div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ ...section, borderTop: '1px solid rgba(255,241,45,0.22)' }}>
+          <div style={{ ...container, textAlign: 'center' }}>
+            <p style={{ ...eyebrow, textAlign: 'center' }}>INDUSTRIAL PROJECT INTAKE</p>
+            <h2 style={{ ...sectionTitle, maxWidth: 900, margin: '0 auto 20px' }}>Bring us the operating conditions. We resolve the filtration architecture.</h2>
+            <p style={{ ...lead, maxWidth: 820, margin: '0 auto 28px', textAlign: 'center' }}>
+              For new installations, difficult contamination problems, retrofit programs, OEM requirements and recurring industrial supply opportunities.
+            </p>
+            <a href={inquiryHref} data-conversion-action="industrial-engineering-review" style={primaryButton}>
+              START INDUSTRIAL ENGINEERING REVIEW
+            </a>
+            <div style={{ marginTop: 18 }}>
+              <Link href="/contact/" style={{ color: 'rgba(255,255,255,0.55)', fontSize: 14 }}>
+                General contact
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+const container: React.CSSProperties = { maxWidth: 1400, margin: '0 auto' };
+const section: React.CSSProperties = { padding: 'var(--section-py) var(--section-px)', borderBottom: '1px solid rgba(255,255,255,0.07)' };
+const eyebrow: React.CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-mono)', fontWeight: 700, letterSpacing: '0.2em', fontSize: '0.73rem', textTransform: 'uppercase', margin: '0 0 14px' };
+const heroTitle: React.CSSProperties = { maxWidth: 1120, fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(3.2rem,8vw,7.8rem)', lineHeight: 0.88, letterSpacing: '-0.055em', textTransform: 'uppercase', margin: 0 };
+const heroCopy: React.CSSProperties = { maxWidth: 850, color: 'rgba(255,255,255,0.72)', fontSize: 'clamp(1.05rem,2vw,1.35rem)', lineHeight: 1.65, marginTop: 28 };
+const sectionTitle: React.CSSProperties = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 0.98, letterSpacing: '-0.04em', textTransform: 'uppercase', margin: '0 0 24px' };
+const lead: React.CSSProperties = { color: 'rgba(255,255,255,0.82)', fontSize: 'clamp(1.05rem,1.7vw,1.24rem)', lineHeight: 1.7, fontWeight: 600, marginTop: 0 };
+const bodyCopy: React.CSSProperties = { color: 'rgba(255,255,255,0.62)', lineHeight: 1.7 };
+const twoCol: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'minmax(0,0.9fr) minmax(0,1.1fr)', gap: 'clamp(2.5rem,7vw,7rem)', alignItems: 'start' };
+const threeCol: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16 };
+const platformGrid: React.CSSProperties = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: 16, marginTop: 34 };
+const platformCard: React.CSSProperties = { border: '1px solid rgba(255,255,255,0.1)', background: '#090909', padding: 'clamp(1.4rem,3vw,2rem)', minHeight: 360 };
+const platformMark: React.CSSProperties = { fontFamily: 'var(--font-display)', color: '#fff', fontSize: 'clamp(2rem,4vw,3.4rem)', textTransform: 'uppercase', margin: '22px 0 12px' };
+const platformDescriptor: React.CSSProperties = { color: 'rgba(255,255,255,0.48)', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.11em', textAlign: 'right' };
+const numberStyle: React.CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', letterSpacing: '0.12em' };
+const familyRow: React.CSSProperties = { padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.055)', color: 'rgba(255,255,255,0.78)', fontWeight: 600 };
+const requirementRow: React.CSSProperties = { display: 'grid', gridTemplateColumns: '48px 1fr', gap: 16, padding: '15px 0', borderBottom: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.78)' };
+const specCard: React.CSSProperties = { border: '1px solid rgba(255,255,255,0.1)', background: '#090909', padding: 24 };
+const cardLabel: React.CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-mono)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 16 };
+const specRow: React.CSSProperties = { display: 'grid', gridTemplateColumns: '38px 1fr', gap: 10, padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.68)', fontSize: '0.9rem' };
+const primaryButton: React.CSSProperties = { display: 'inline-block', background: '#FFF12D', color: '#000', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.1em', padding: '0.9rem 1.4rem', textTransform: 'uppercase' };
+const secondaryButton: React.CSSProperties = { display: 'inline-block', border: '1px solid rgba(255,255,255,0.18)', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.1em', padding: '0.9rem 1.4rem', textTransform: 'uppercase' };
