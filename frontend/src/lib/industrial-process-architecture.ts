@@ -22,9 +22,19 @@ export interface IndustrialProcessPlatform {
   name: string;
   descriptor: string;
   summary: string;
+  positioning?: string;
   heroImage: string;
   heroVideo?: string;
   mediaImage?: string;
+  selectionGuide?: readonly {
+    title: string;
+    body: string;
+    technologySlug: string;
+  }[];
+  qualificationGroups?: readonly {
+    title: string;
+    items: readonly string[];
+  }[];
   technologies: readonly IndustrialProcessTechnology[];
 }
 
@@ -79,10 +89,42 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     slug: 'aeremis',
     name: 'AEREMIS™',
     descriptor: 'Air Technologies',
-    summary: 'Industrial air treatment for ventilation, critical environments and molecular contamination control.',
+    summary: 'Industrial air treatment for general ventilation, high-cleanliness environments and molecular contamination control.',
+    positioning: 'AEREMIS™ organizes industrial air treatment by contaminant challenge and required air condition—from general particulate control, through high-efficiency critical-air stages, to molecular treatment for gases, vapors and odors. It is not a single filter or a universal efficiency class; the treatment path follows the air-quality target, contaminant profile, operating envelope and system boundary.',
     heroImage: '/images/air-filters-lab.avif',
     heroVideo: '/images/Air%20Industrial-aviation%20(1).mp4',
     mediaImage: '/images/air%20industrial.jpg',
+    selectionGuide: [
+      {
+        title: 'General particulate control',
+        body: 'For industrial ventilation, make-up air and general air-handling duties where the primary challenge is airborne particulate loading and acceptable system pressure drop.',
+        technologySlug: 'general-air-filtration',
+      },
+      {
+        title: 'Critical cleanliness control',
+        body: 'For final-stage or high-cleanliness applications where fine-particle control, filter integrity, sealing and bypass prevention become part of the treatment requirement.',
+        technologySlug: 'he-criva',
+      },
+      {
+        title: 'Molecular contamination control',
+        body: 'For gas, vapor, odor or corrosive molecular challenges that are not resolved by particulate filtration alone and require media selected around contaminant chemistry and contact conditions.',
+        technologySlug: 'ma-trea',
+      },
+    ],
+    qualificationGroups: [
+      {
+        title: 'Airflow & environment',
+        items: ['Airflow rate and duty profile', 'Available static pressure and allowable system resistance', 'Temperature and humidity range', 'Outdoor, recirculated or process-air source'],
+      },
+      {
+        title: 'Contamination challenge',
+        items: ['Particle size, concentration and loading pattern', 'Required cleanliness or protected-space condition', 'Gas, vapor or odor chemistry when molecular treatment is required', 'Downstream process, equipment or occupant sensitivity'],
+      },
+      {
+        title: 'Integration & verification',
+        items: ['Prefilter, final-stage and molecular-treatment sequence', 'Housing condition, sealing and bypass control', 'Differential-pressure or condition monitoring strategy', 'Service access, replacement planning and verification method'],
+      },
+    ],
     technologies: [
       tech(
         'general-air-filtration',

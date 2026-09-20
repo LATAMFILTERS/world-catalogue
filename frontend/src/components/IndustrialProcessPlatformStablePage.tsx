@@ -63,7 +63,7 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
           <h2 className={styles.displayTitle}>{platform.name}</h2>
           <p className={styles.applicationLine}><strong>{platform.descriptor}</strong></p>
           <p className={styles.lead}>{platform.summary}</p>
-          <p className={styles.bodyWide}>The platform groups validated Industrial &amp; Process treatment families by engineering function. Select the treatment mechanism first; product and system configuration follow the operating conditions and required outcome.</p>
+          <p className={styles.bodyWide}>{platform.positioning ?? 'The platform groups validated Industrial & Process treatment families by engineering function. Select the treatment mechanism first; product and system configuration follow the operating conditions and required outcome.'}</p>
 
           <div className={styles.mediaGrid}>
             <div className={styles.mediaCopy}>
@@ -83,6 +83,25 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
           </div>
         </div>
       </section>
+
+      {platform.selectionGuide?.length ? (
+        <section className={styles.bandAlt}><div className={styles.inner}>
+          <p className={styles.eyebrow}>AIR TREATMENT SCOPE</p>
+          <h2 className={styles.h2}>Match the contamination problem to the treatment path.</h2>
+          <p className={styles.lead}>AEREMIS™ separates general particulate control, critical-air filtration and molecular treatment so each application starts from the actual air-quality problem instead of a generic filter form.</p>
+          <div className={styles.editorialColumns}>
+            {platform.selectionGuide.map((item) => (
+              <div key={item.technologySlug}>
+                <h3 className={styles.h3}>{item.title}</h3>
+                <p className={styles.body}>{item.body}</p>
+                <div className={styles.textLinks}>
+                  <Link href={industrialProcessTechnologyUrl(platform.slug, item.technologySlug)}>EXPLORE TREATMENT PATH →</Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div></section>
+      ) : null}
 
       <section className={styles.bandAlt}><div className={styles.inner}>
         <p className={styles.eyebrow}>TECHNOLOGY FAMILIES</p>
@@ -113,9 +132,16 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         <p className={styles.eyebrow}>ENGINEERING QUALIFICATION</p>
         <h2 className={styles.h2}>What must be known before a treatment architecture is selected.</h2>
         <div className={styles.editorialColumns}>
-          <div><h3 className={styles.h3}>Process</h3><ul className={styles.list}>{['Fluid, gas, air or water composition','Flow rate and duty profile','Operating and design pressure','Temperature range'].map(x=><li key={x}>{x}</li>)}</ul></div>
-          <div><h3 className={styles.h3}>Contamination</h3><ul className={styles.list}>{['Contaminant type and concentration','Loading pattern and variability','Required removal or treatment objective','Upstream and downstream process sensitivity'].map(x=><li key={x}>{x}</li>)}</ul></div>
-          <div><h3 className={styles.h3}>Integration</h3><ul className={styles.list}>{['Materials and chemical compatibility','Existing housing, vessel or skid','Connections and installation envelope','Required outlet quality and verification method'].map(x=><li key={x}>{x}</li>)}</ul></div>
+          {(platform.qualificationGroups ?? [
+            { title: 'Process', items: ['Fluid, gas, air or water composition','Flow rate and duty profile','Operating and design pressure','Temperature range'] },
+            { title: 'Contamination', items: ['Contaminant type and concentration','Loading pattern and variability','Required removal or treatment objective','Upstream and downstream process sensitivity'] },
+            { title: 'Integration', items: ['Materials and chemical compatibility','Existing housing, vessel or skid','Connections and installation envelope','Required outlet quality and verification method'] },
+          ]).map((group) => (
+            <div key={group.title}>
+              <h3 className={styles.h3}>{group.title}</h3>
+              <ul className={styles.list}>{group.items.map((x)=><li key={x}>{x}</li>)}</ul>
+            </div>
+          ))}
         </div>
       </div></section>
 
