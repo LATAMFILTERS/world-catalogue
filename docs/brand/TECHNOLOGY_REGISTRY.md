@@ -208,3 +208,26 @@ Current AEREMIS state:
 - General Air Filtration — descriptive
 - High-Efficiency / Critical Air Filtration — naming OPEN
 - MA-TREA™ — Molecular Air Treatment — preferred working candidate pending formal clearance
+
+
+### AEREMIS™ — High-Efficiency Family Replacement Shortlist
+
+Preferred working candidate:
+- HE-CRIVA™ — High-Efficiency / Critical Air Filtration — TC-AIR-02
+
+Secondary working candidates:
+- HE-VALTA™
+- HE-KRIT™
+- HE-VEXA™
+- HE-ZENIS™
+
+Rejected:
+- HE-CRAF™
+- HE-KRAF™
+
+Current AEREMIS family board:
+- General Air Filtration — descriptive — TC-AIR-01
+- HE-CRIVA™ — High-Efficiency / Critical Air — TC-AIR-02 — preferred working candidate
+- MA-TREA™ — Molecular Air Treatment — TC-AIR-03 — preferred working candidate
+
+All marks remain subject to formal trademark clearance.
