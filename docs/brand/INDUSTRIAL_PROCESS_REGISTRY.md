@@ -10654,3 +10654,123 @@ Industrial & Process Commercial Technology Architecture v1:
 
 Status:
 INDUSTRIAL & PROCESS COMMERCIAL TECHNOLOGY ARCHITECTURE v1 — CLOSED.
+
+
+## 48. Final Commercial Identity Review — EXIS Diversification
+
+Status: DIVERSIFICATION REQUIRED BEFORE EXTERNAL FREEZE.
+
+Decision:
+The repeated "-EXIS" pattern will NOT be frozen across both platform and family layers.
+
+Reason:
+- FLUREXIS™ and AQUVEXIS™ already use "-EXIS" at platform level.
+- Repeating the same ending in child families weakens visual hierarchy and makes platform / family relationships harder to distinguish.
+- A family mark should be identifiable as a child technology, not look like another peer platform.
+- PARTION™ → FUMEXIS™ has an additional, more serious issue: FUMEX is an established industrial fume / dust / gas extraction and filtration company operating in the same application space.
+
+### 48.1 Platform Names Preserved
+
+The five platform names remain unchanged:
+- AEREMIS™
+- PARTION™
+- COALVEX™
+- FLUREXIS™
+- AQUVEXIS™
+
+### 48.2 Family Marks Preserved
+
+These current family marks remain structurally distinct from their parent platforms and are preserved:
+- HE-CRIVA™ — High-Efficiency / Critical Air Filtration
+- MA-TREA™ — Molecular Air Treatment
+- COALERIS™ — Gas Coalescence
+- DEWATIS™ — Oil Dehydration & Water Removal
+- IONVEXA™ — Ion Exchange
+
+### 48.3 Family Marks Reopened
+
+The following working family marks are reopened before external freeze:
+
+- FUMEXIS™ — REMOVE.
+  Reason: direct same-sector adjacency to established FUMEX industrial fume / dust / gas filtration and extraction.
+
+- HYDREXIS™ — REOPEN.
+  Reason: excessive phonetic / visual similarity to parent FLUREXIS™; "-EXIS" should remain platform-level here.
+
+- LUBREXIS™ — REOPEN.
+  Reason: same hierarchy issue under FLUREXIS™.
+
+- VARREXIS™ — REOPEN.
+  Reason: same hierarchy issue under FLUREXIS™.
+
+- CARBEXIS™ — REOPEN.
+  Reason: same hierarchy issue under AQUVEXIS™.
+
+- MEMBREXIS™ — REOPEN.
+  Reason: same hierarchy issue under AQUVEXIS™.
+
+These names remain historical working candidates only and are not frozen for catalogue, packaging, or trademark filing.
+
+### 48.4 Replacement Direction — Preliminary Knockout Round
+
+Current low-noise replacement directions after focused public search:
+
+PARTION™ / Fine Dust & Fume:
+- FUMEVRA™ — preliminary replacement finalist.
+
+FLUREXIS™ / Hydraulic Fluid Filtration:
+- HYVORIS™ — preliminary replacement finalist.
+
+FLUREXIS™ / Industrial Lubrication Filtration:
+- LUBREVA™ — preliminary replacement finalist.
+
+FLUREXIS™ / Oil Condition Remediation:
+- OILREVEX™ — preliminary replacement finalist.
+
+AQUVEXIS™ / Adsorptive Carbon Treatment:
+- ADSOVEX™ — preliminary replacement finalist.
+
+AQUVEXIS™ / Membrane Separation:
+- MEMBRAVEX™ — preliminary replacement finalist.
+
+Public knockout note:
+No material exact industrial-filtration conflict surfaced for these six replacement directions in the focused public searches performed. This is not formal legal clearance.
+
+### 48.5 Naming Grammar After Review
+
+Canonical commercial naming grammar:
+
+- Platform layer may use coined broad names, including "-EXIS" where already approved.
+- Child family layer should normally use a different phonetic ending from its parent platform.
+- No suffix is mandatory across Industrial & Process.
+- Mechanism recognition and hierarchy clarity take priority over artificial family resemblance.
+- Exact same-sector competitor adjacency is a hard rejection trigger.
+
+### 48.6 Freeze State
+
+READY TO FREEZE:
+- AEREMIS™ platform
+- PARTION™ platform
+- COALVEX™ platform
+- FLUREXIS™ platform
+- AQUVEXIS™ platform
+- HE-CRIVA™
+- MA-TREA™
+- COALERIS™
+- DEWATIS™
+- IONVEXA™
+
+NOT READY TO FREEZE:
+- Fine Dust & Fume family
+- Hydraulic Fluid Filtration family
+- Industrial Lubrication Filtration family
+- Oil Condition Remediation family
+- Adsorptive Carbon Treatment family
+- Membrane Separation family
+
+Next gate:
+User selection + deeper clearance of the six replacement family marks before catalogue / packaging / filing freeze.
+
+Status:
+FINAL COMMERCIAL IDENTITY REVIEW v1 — COMPLETE.
+DIVERSIFICATION DECISION — APPROVED.
