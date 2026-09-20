@@ -314,3 +314,46 @@ Avoided:
 - IONELIS™
 
 All preferred marks remain subject to formal trademark clearance.
+
+
+## Industrial & Process Commercial Technology Architecture v1
+
+Status: CLOSED FOR INTERNAL BRAND ARCHITECTURE.
+
+Platforms and current family mappings:
+
+AEREMIS™
+- General Air Filtration — descriptive — TC-AIR-01
+- HE-CRIVA™ — High-Efficiency / Critical Air Filtration — TC-AIR-02
+- MA-TREA™ — Molecular Air Treatment — TC-AIR-03
+
+PARTION™
+- FUMEXIS™ — Fine Dust & Fume Filtration — TC-DUST-01
+
+COALVEX™
+- COALERIS™ — Gas Coalescence — TC-NG-01
+- Gas-Liquid Separation — descriptive — TC-NG-02
+
+FLUREXIS™
+- HYDREXIS™ — Hydraulic Fluid Filtration — TC-HYD-01
+- LUBREXIS™ — Industrial Lubrication Filtration — TC-LUB-01
+- DEWATIS™ — Oil Dehydration & Water Removal — TC-OIL-01
+- VARREXIS™ — Oil Condition Remediation — TC-OIL-02
+
+AQUVEXIS™
+- Depth Filtration — descriptive — TC-WAT-01
+- CARBEXIS™ — Adsorptive Carbon Treatment — TC-WAT-03
+- MEMBREXIS™ — Membrane Separation — TC-WAT-04 / TC-WAT-05 / TC-WAT-06
+  - Reverse Osmosis — descriptive
+  - Ultrafiltration — descriptive
+  - Nanofiltration — descriptive
+- IONVEXA™ — Ion Exchange — TC-WAT-07
+- Electrodeionization — descriptive — TC-WAT-08
+
+Naming-similarity governance:
+- Repeated '-EXIS' marks are working commercial marks, not a mandatory naming grammar.
+- No new family mark should adopt '-EXIS' by default.
+- FLUREXIS / HYDREXIS / LUBREXIS and AQUVEXIS / CARBEXIS / MEMBREXIS require final visual / phonetic distinctiveness review before external filing or packaging rollout.
+- The architecture and Technology Core mapping remain valid even if one of those working marks is later renamed.
+
+Formal trademark clearance and external visual hierarchy validation remain pending.
