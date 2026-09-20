@@ -9374,3 +9374,45 @@ Next gate:
 Select 1–2 finalists per platform, then perform deeper USPTO / international / competitor screening before approval.
 
 No commercial mark is approved in this block.
+
+
+## 33. User Selection Update — AEREMIS / FLUIDEXA
+
+User-selected preferences:
+- Air Technologies → AEREMIS
+- Fluid Conditioning Technologies → FLUIDEXA
+
+### AEREMIS
+
+Status:
+PREFERRED FINALIST / DEEP CLEARANCE REQUIRED.
+
+Current first-pass public screening:
+- no clear air-filtration or industrial-filtration conflict surfaced in the broad search;
+- unrelated uses of the word exist outside filtration.
+
+Decision:
+Retain AEREMIS as the preferred Air finalist and proceed to deeper trademark screening before approval.
+
+### FLUIDEXA
+
+Status:
+REJECT / REPLACE.
+
+Current public screening:
+- FLUIDEXA is already in active public commercial use as a company / website name in Europe;
+- public corporate records also show historical company registration under FLUIDEXA in France.
+
+Decision:
+Do not use FLUIDEXA as an ELIMFILTERS Fluid Conditioning technology mark.
+The semantic direction is accepted, but the exact mark is unavailable / too risky for brand adoption.
+
+### Current Platform Naming State
+
+- Air → AEREMIS — PREFERRED FINALIST
+- Dust & Fume → PARTION — PREFERRED FINALIST
+- Gas Conditioning → COALVEX — PREFERRED FINALIST
+- Fluid Conditioning → OPEN — FLUIDEXA REJECTED
+- Water Treatment → OPEN
+
+No mark is finally approved until deeper clearance is completed.
