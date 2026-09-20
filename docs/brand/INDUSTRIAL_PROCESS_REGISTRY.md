@@ -10030,3 +10030,30 @@ Retain MA-TREA as the preferred user-selected candidate for Molecular Air Treatm
 - Molecular Air Treatment — MA-TREA™ — PREFERRED WORKING CANDIDATE
 
 Previous working marks CRITENZA™ and SORBEXIS™ are superseded as active preferences but retained in history.
+
+
+## 41. AEREMIS™ Family Naming — HE-KRAF Screening
+
+User-proposed candidate:
+- HE-KRAF™ — High-Efficiency / Critical Air Filtration
+
+Screening result:
+REJECT.
+
+Reason:
+KRAF is already used directly in air-filtration products and systems.
+
+Public evidence:
+- Khanfilter uses KRAF for "Khanfilter Regenerative Air Filter".
+- New York City Department of Environmental Protection approved-equipment documentation lists KRAF as a Khanfilter air-filtration system, including configurations with HEPA / medium filtration.
+- KRAF is also used in ventilation equipment naming elsewhere.
+
+Risk:
+HE-KRAF would place ELIMFILTERS immediately adjacent to an existing air-filtration identifier in the same technical field.
+This is a direct sector-confusion problem, not merely an unrelated lexical collision.
+
+Decision:
+- HE-KRAF is not eligible for approval.
+- HE-CRAF remains superseded and on hold.
+- High-Efficiency / Critical Air Filtration naming remains OPEN.
+- MA-TREA remains the preferred working candidate for Molecular Air Treatment.
