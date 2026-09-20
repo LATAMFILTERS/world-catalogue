@@ -99,3 +99,24 @@ On-Road differentiation:
 Canonical positioning:
 
 DURATECH™ does not sell a set of filters as the end value. It delivers an integrated asset-protection interval.
+
+
+## Industrial & Process — Commercial Platform Names
+
+Status: APPROVED FOR INTERNAL BRAND ARCHITECTURE v1.
+
+The Industrial & Process segment uses five commercial platform names. These platform names do not replace or modify the existing On-Road / Off-Road technology system.
+
+- AEREMIS™ — Air Technologies
+- PARTION™ — Dust & Fume Technologies
+- COALVEX™ — Gas Conditioning Technologies
+- FLUREXIS™ — Fluid Conditioning Technologies
+- AQUVEXIS™ — Water Treatment Technologies
+
+Governance:
+- Platform names group multiple validated Industrial & Process Technology Cores.
+- Internal Technology Core IDs remain authoritative for mechanism-level engineering, HERMES validation, evidence, and catalog logic.
+- System architectures, applications, product configurations, and capabilities do not automatically inherit technology status.
+- Existing On-Road / Off-Road marks remain in their governed scopes and are not reused in Industrial & Process.
+- Public knockout screening found no known material exact conflict for these five marks as of 2026-09-20.
+- Formal trademark filing / legal clearance remains pending before registration or reliance on exclusive rights.
