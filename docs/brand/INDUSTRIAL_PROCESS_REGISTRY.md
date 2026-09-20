@@ -10369,3 +10369,99 @@ VARREXIS™ — PREFERRED WORKING CANDIDATE / FORMAL CLEARANCE REQUIRED.
 
 All four are preferred working candidates only.
 Formal trademark clearance remains required before external adoption or filing.
+
+
+## 46. AQUVEXIS™ Family Naming — Carbon / Membrane / Ion Exchange
+
+Status: WORKING SHORTLIST. No family mark finally approved.
+
+Platform:
+AQUVEXIS™ — Water Treatment Technologies
+
+Internal cores:
+- TC-WAT-03 — Industrial Adsorptive Carbon Treatment
+- TC-WAT-04 / 05 / 06 — RO / UF / NF Membrane Separation
+- TC-WAT-07 — Ion Exchange Water Conditioning
+
+### 46.1 Adsorptive Carbon Treatment
+
+Preferred working candidate:
+CARBEXIS™
+
+Rationale:
+- evokes carbon-based adsorption without reducing the family to one cartridge geometry;
+- broad enough for chlorine, organics, odor, oxidant protection, and other validated adsorption duties;
+- does not lock the family to granular, block, or impregnated-carbon construction;
+- first exact public knockout searches found no material water-treatment / filtration-sector conflict.
+
+Secondary candidates:
+- ADSOVEX™
+- SORBVEX™
+
+Avoided:
+- CARBEXA™ — current trademark / commercial use exists in another sector.
+- CARBION™ — active commercial / scientific usage creates excessive naming noise.
+
+Status:
+CARBEXIS™ — PREFERRED WORKING CANDIDATE / FORMAL CLEARANCE REQUIRED.
+
+### 46.2 Membrane Separation
+
+Preferred working candidate:
+MEMBREXIS™
+
+Rationale:
+- directly evokes membrane separation while remaining coined;
+- broad enough to contain RO, UF, and NF beneath one customer-facing family;
+- does not collapse the three internal cores or imply one membrane chemistry;
+- first exact public knockout searches found no material membrane-filtration / water-treatment conflict.
+
+Secondary candidates:
+- MEMBRAVEX™
+- MEMBRIVA™
+
+Note:
+MEMBRIVA appears in unrelated naming-generator / lexical contexts; therefore it is not preferred despite no identified filtration conflict.
+
+Status:
+MEMBREXIS™ — PREFERRED WORKING CANDIDATE / FORMAL CLEARANCE REQUIRED.
+
+Commercial subfamilies remain descriptive:
+- Reverse Osmosis
+- Ultrafiltration
+- Nanofiltration
+
+### 46.3 Ion Exchange
+
+Preferred working candidate:
+IONVEXA™
+
+Rationale:
+- evokes ion-selective treatment without copying the generic phrase "ion exchange";
+- broad enough for softening, demineralization, condensate polishing, and selective ion removal;
+- first exact public knockout searches found no material ion-exchange / water-treatment commercial conflict.
+
+Secondary candidates:
+- IONVARA™
+- IONELIS™
+
+Avoided:
+- IONEXIS™ — active 2026 U.S. trademark application and multiple active public commercial uses.
+- IONELIS™ — existing exact company names in Europe create avoidable naming noise.
+
+Status:
+IONVEXA™ — PREFERRED WORKING CANDIDATE / FORMAL CLEARANCE REQUIRED.
+
+### 46.4 AQUVEXIS™ Family Board
+
+- Depth Filtration — descriptive
+- CARBEXIS™ — Adsorptive Carbon Treatment
+- MEMBREXIS™ — Membrane Separation
+  - Reverse Osmosis — descriptive
+  - Ultrafiltration — descriptive
+  - Nanofiltration — descriptive
+- IONVEXA™ — Ion Exchange
+- Electrodeionization — descriptive
+
+All three branded family names remain preferred working candidates only.
+Formal trademark clearance remains required before external adoption or filing.
