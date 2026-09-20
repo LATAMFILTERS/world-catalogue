@@ -19,12 +19,14 @@ Rule:
 
 ## 2. Protected Existing Technology Scope
 
-The following existing technologies keep their current governed scope and MUST NOT be repurposed as generic Industrial & Process technologies:
+The following existing technologies keep their current governed scope and MUST NOT be repurposed as Industrial & Process technologies:
 
 - DURATECH™ — Integrated Maintenance and Asset Protection Kits.
 - MARINECLEAN™ — Marine filtration systems / filters for marine vessel applications.
+- SYNTRAX™ — reserved for On-Road and Off-Road lubrication filtration.
+- NANOFORCE™ — reserved for On-Road and Off-Road hydraulic filtration.
 
-Other existing ELIMFILTERS technologies may only be reused in Industrial & Process when their current technical definition actually matches the industrial product being normalized.
+Industrial & Process is governed as a separate technology universe. Existing On-Road / Off-Road technology names are not inherited automatically, even when the physical filtration function appears similar. Industrial technologies must be discovered, validated, and named from the engineering evidence of the Industrial & Process segment itself.
 
 ## 3. Primary Discovery Source
 
@@ -519,18 +521,18 @@ Preliminary interpretation:
   - commercial / sourcing strategy, not a filtration mechanism
   - must be modeled as OEM / competitor replacement intelligence, not as an ELIMFILTERS technology or product family
 
-### 14.3 Existing Technology Reuse Gate
+### 14.3 Industrial Technology Separation Rule
 
-The existing ELIMFILTERS TECHNOLOGY_REGISTRY already defines:
+SYNTRAX™ and NANOFORCE™ are explicitly reserved for On-Road and Off-Road applications and MUST NOT be reused, extended, inherited, or referenced as Industrial & Process technologies.
 
-- SYNTRAX™ — Lubrication Protection / Lube Filters
-- NANOFORCE™ — Hydraulic Protection / Hydraulic Filters
+Industrial & Process is treated as a new technology universe.
 
-Before creating any new Industrial & Process hydraulic or lubrication technology, each REIKE family must be tested against the governed technical scope of SYNTRAX™ and NANOFORCE™.
-
-Rule:
-- Reuse SYNTRAX™ or NANOFORCE™ only if the industrial product's filtration function and technical performance fit the existing governed technology definition.
-- Do not extend either technology solely because the source product contains oil or is physically shaped like an existing filter.
+Rules:
+- Industrial lubrication filtration starts with no assigned ELIMFILTERS technology.
+- Industrial hydraulic filtration starts with no assigned ELIMFILTERS technology.
+- Technical similarity to On-Road or Off-Road products does not authorize reuse of SYNTRAX™ or NANOFORCE™.
+- Industrial technology cores must be discovered from industrial mechanisms, operating conditions, materials, performance requirements, and repeatable applications.
+- New commercial technology names remain blocked until the Technology Naming Gate is satisfied.
 - High-temperature, power-generation, or import-substitution labels alone do not justify a new technology.
 
 ### 14.4 Required Technical Extraction Sequence
@@ -577,6 +579,6 @@ Hydraulic Filtration:
 - Six REIKE source families identified: COMPLETE
 - Canonical technical architecture: OPEN
 - Technology-core discovery: OPEN
-- Existing-technology reuse assessment: OPEN
+- Existing-technology reuse assessment: CLOSED — SYNTRAX™ and NANOFORCE™ excluded from Industrial & Process
 - Commercial technology naming: BLOCKED pending technical evidence
 - Next source page: Lubricating oil filter element
