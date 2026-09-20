@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const approvedDisplayFont = "Chakra Petch, Arial Narrow, monospace";
@@ -40,7 +41,7 @@ export default function CinematicHero() {
           height: "100%",
           objectFit: "cover",
           objectPosition: "center",
-          opacity: 0.52,
+          opacity: VIDEO_HERO_TREATMENT.opacity,
           zIndex: 0,
         }}
       >
@@ -52,8 +53,7 @@ export default function CinematicHero() {
         style={{
           position: "absolute",
           inset: 0,
-          background:
-            "linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.32) 48%, rgba(0,0,0,0.12) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.26), transparent 40%)",
+          background: VIDEO_HERO_TREATMENT.overlayBackground,
           zIndex: 1,
         }}
       />

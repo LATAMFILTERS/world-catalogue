@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageHeader } from '@/components/PageHeader';
 import { PROTECTION_SYSTEM_LIST } from '@/lib/protection-systems-data';
+import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/systems/`;
@@ -128,8 +129,8 @@ const wrapNarrow: CSSProperties = { maxWidth: '980px', margin: '0 auto' };
 const section: CSSProperties = { padding: 'clamp(4.5rem, 8vw, 7.5rem) clamp(1.25rem, 6vw, 6rem)' };
 const eyebrow: CSSProperties = { margin: 0, color: '#FFF12D', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.16em', fontSize: '0.74rem', textTransform: 'uppercase' };
 const hero: CSSProperties = { minHeight: '88vh', position: 'relative', display: 'flex', alignItems: 'center', padding: 'clamp(7rem, 11vw, 10rem) clamp(1.25rem, 6vw, 6rem)', borderBottom: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden' };
-const heroVideo: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.46 };
-const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,.68) 54%, rgba(0,0,0,.42) 100%), linear-gradient(0deg, #000 0%, transparent 24%)' };
+const heroVideo: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: VIDEO_HERO_TREATMENT.opacity };
+const heroOverlay: CSSProperties = { position: 'absolute', inset: 0, background: VIDEO_HERO_TREATMENT.overlayBackground };
 const heroInner: CSSProperties = { position: 'relative', zIndex: 2, maxWidth: '1180px', width: '100%', margin: '0 auto' };
 const heroTitle: CSSProperties = { fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(3rem, 7vw, 6.8rem)', lineHeight: 0.92, letterSpacing: '-0.055em', textTransform: 'uppercase', maxWidth: '1050px', margin: '1rem 0 0' };
 const heroPromise: CSSProperties = { fontFamily: displayFont, fontSize: 'clamp(1.2rem, 2.4vw, 1.8rem)', lineHeight: 1.3, color: '#fff', fontWeight: 700, maxWidth: '800px', margin: '1.8rem 0 0' };

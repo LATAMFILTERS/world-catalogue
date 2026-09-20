@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 
 interface HeroTag {
   label: string;
@@ -124,8 +125,8 @@ export function Hero({
             objectFit: 'cover',
             objectPosition: backgroundPosition,
             transform: 'none',
-            opacity: industryChrome ? 0.48 : 1,
-            filter: industryChrome ? 'none' : 'brightness(1.14) contrast(1.05)',
+            opacity: VIDEO_HERO_TREATMENT.opacity,
+            filter: 'none',
           }}
         >
           <source src={backgroundVideo} type="video/mp4" />
@@ -151,9 +152,11 @@ export function Hero({
         style={{
           position: 'absolute',
           inset: 0,
-          background: industryChrome
-            ? 'linear-gradient(90deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.40) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)'
-            : 'linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.46) 48%, rgba(0,0,0,0.14) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
+          background: backgroundVideo
+            ? VIDEO_HERO_TREATMENT.overlayBackground
+            : industryChrome
+              ? 'linear-gradient(90deg, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.40) 48%, rgba(0,0,0,0.20) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.22), transparent 36%)'
+              : 'linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.46) 48%, rgba(0,0,0,0.14) 100%), radial-gradient(circle at top right, rgba(255,241,45,0.20), transparent 36%)',
         }}
       />
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
+import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 
 export const metadata: Metadata = {
   title: 'Industrial & Process Filtration | ELIMFILTERS',
@@ -118,7 +119,7 @@ export default function IndustrialProcessPage() {
               height: '100%',
               objectFit: 'cover',
               objectPosition: 'center',
-              opacity: 0.58,
+              opacity: VIDEO_HERO_TREATMENT.opacity,
               zIndex: 0,
             }}
           >
@@ -130,8 +131,7 @@ export default function IndustrialProcessPage() {
             style={{
               position: 'absolute',
               inset: 0,
-              background:
-                'linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.50) 48%, rgba(0,0,0,0.24) 100%), radial-gradient(circle at 82% 22%, rgba(255,241,45,0.14), transparent 30%)',
+              background: VIDEO_HERO_TREATMENT.overlayBackground,
               zIndex: 1,
             }}
           />
