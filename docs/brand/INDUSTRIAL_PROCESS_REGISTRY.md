@@ -9930,3 +9930,59 @@ Do NOT create marks at this stage for the seven descriptive families / subfamili
 Status:
 COMMERCIAL FAMILY BRANDING ARCHITECTURE CLOSED v1.
 FAMILY NAMING GATE OPEN FOR 11 TECHNOLOGY FAMILIES.
+
+
+## 39. AEREMIS™ Family Naming — Round 1
+
+Status: TWO FAMILY NAMES SELECTED FOR AEREMIS™.
+
+Platform:
+AEREMIS™ — Air Technologies
+
+### CRITENZA™
+Commercial family:
+High-Efficiency / Critical Air Filtration
+
+Internal mapping:
+- TC-AIR-02 — Industrial High-Efficiency Air Filtration
+
+Naming rationale:
+- derived conceptually from critical-air protection and controlled high-efficiency environments;
+- broad enough for HEPA / ULPA, terminal filters, critical-process air, semiconductor, cleanroom, aviation, and high-efficiency safety stages;
+- does not lock the family to HEPA as a single classification;
+- distinct from existing ELIMFILTERS On-Road / Off-Road naming.
+
+Public knockout screen:
+- no material exact filtration / HVAC / cleanroom commercial conflict surfaced;
+- no material exact trademark result surfaced in the public web screening performed;
+- unrelated lexical / dialect occurrences exist and are not considered sector conflicts.
+
+Status:
+PREFERRED FAMILY MARK / FORMAL TRADEMARK CLEARANCE REQUIRED.
+
+### SORBEXIS™
+Commercial family:
+Molecular Air Treatment
+
+Internal mapping:
+- TC-AIR-03 — Industrial Molecular Air Contamination Control
+
+Naming rationale:
+- root evokes sorption without reducing the mechanism to activated carbon alone;
+- can encompass adsorption, chemisorption, impregnated media, molecular contaminant control, selected VOC / acid / base / dopant control, and other validated gas-phase media;
+- technically aligned with the family while remaining coined and distinctive.
+
+Public knockout screen:
+- no exact public commercial result surfaced in broad search;
+- no exact filtration / molecular-air / adsorption competitor result surfaced;
+- no exact trademark result surfaced in the public web screening performed.
+
+Status:
+PREFERRED FAMILY MARK / FORMAL TRADEMARK CLEARANCE REQUIRED.
+
+AEREMIS™ commercial family architecture:
+- General Air Filtration — descriptive
+- CRITENZA™ — High-Efficiency / Critical Air Filtration
+- SORBEXIS™ — Molecular Air Treatment
+
+No other AEREMIS family mark is created in this round.
