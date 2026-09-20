@@ -388,3 +388,40 @@ Preliminary replacement finalists:
 - MEMBRAVEX™ — Membrane Separation
 
 These six replacements remain subject to user selection and deeper trademark clearance before external freeze.
+
+
+## Industrial & Process — Internal Commercial Naming Freeze v1
+
+Final working family marks for internal catalogue / packaging architecture:
+
+AEREMIS™
+- HE-CRIVA™ — High-Efficiency / Critical Air Filtration — TC-AIR-02
+- MA-TREA™ — Molecular Air Treatment — TC-AIR-03
+
+PARTION™
+- FUMEVRA™ — Fine Dust & Fume Filtration — TC-DUST-01
+
+COALVEX™
+- COALERIS™ — Gas Coalescence — TC-NG-01
+
+FLUREXIS™
+- HYLTRIS™ — Hydraulic Fluid Filtration — TC-HYD-01
+- LUBREVA™ — Industrial Lubrication Filtration — TC-LUB-01
+- DEWATIS™ — Oil Dehydration & Water Removal — TC-OIL-01
+- OILREVEX™ — Oil Condition Remediation — TC-OIL-02
+
+AQUVEXIS™
+- ADSOVEX™ — Adsorptive Carbon Treatment — TC-WAT-03
+- MEMBRAVEX™ — Membrane Separation — TC-WAT-04 / TC-WAT-05 / TC-WAT-06
+- IONVEXA™ — Ion Exchange — TC-WAT-07
+
+Descriptive families / subfamilies remain:
+- General Air Filtration — TC-AIR-01
+- Gas-Liquid Separation — TC-NG-02
+- Depth Filtration — TC-WAT-01
+- Reverse Osmosis — TC-WAT-04
+- Ultrafiltration — TC-WAT-05
+- Nanofiltration — TC-WAT-06
+- Electrodeionization — TC-WAT-08
+
+These names are frozen for internal brand architecture only. Formal trademark clearance / filing remains a separate downstream gate.
