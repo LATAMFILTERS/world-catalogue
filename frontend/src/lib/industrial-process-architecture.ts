@@ -13,6 +13,7 @@ export interface IndustrialProcessTechnology {
   serviceSignals: readonly string[];
   heroImage: string;
   mediaImage: string;
+  heroVideo?: string;
   subfamilies?: readonly string[];
 }
 
@@ -53,6 +54,7 @@ const tech = (
   heroImage: string,
   mediaImage: string,
   subfamilies?: readonly string[],
+  heroVideo?: string,
 ): IndustrialProcessTechnology => ({
   slug,
   name,
@@ -68,6 +70,7 @@ const tech = (
   serviceSignals,
   heroImage,
   mediaImage,
+  heroVideo,
   subfamilies,
 });
 
@@ -95,6 +98,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ['Unexpected pressure-drop rise', 'Visible dust downstream', 'Short service intervals', 'Bypass or sealing evidence'],
         '/images/air-filters-lab.avif',
         '/images/General%20Air%20Filtration.png',
+        undefined,
+        '/images/general%20filters%20(1).mp4',
       ),
       tech(
         'he-criva',

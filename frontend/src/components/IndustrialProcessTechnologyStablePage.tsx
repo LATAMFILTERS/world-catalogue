@@ -81,7 +81,22 @@ export function IndustrialProcessTechnologyStablePage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <section className={styles.hero} aria-labelledby="industrial-tech-title">
-        <img className={styles.heroBackground} src={technology.heroImage} alt="" aria-hidden="true" />
+        {technology.heroVideo ? (
+          <video
+            className={styles.heroBackground}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={technology.heroImage}
+            aria-hidden="true"
+          >
+            <source src={technology.heroVideo} type="video/mp4" />
+          </video>
+        ) : (
+          <img className={styles.heroBackground} src={technology.heroImage} alt="" aria-hidden="true" />
+        )}
         <div className={styles.heroShade} aria-hidden="true" />
         <h1 id="industrial-tech-title" className={styles.srOnly}>{technology.name} {technology.title}</h1>
         <div
