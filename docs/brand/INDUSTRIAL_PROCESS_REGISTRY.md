@@ -769,3 +769,263 @@ Still missing or unverified:
 
 Next source page:
 - Hydraulic oil filter element
+
+
+### 14.7 Hydraulic Oil Filter Element — External Benchmark Research v1
+
+Status: EXTERNAL TECHNICAL BENCHMARK COMPLETE; REIKE-SPECIFIC PRODUCT DATA NOT AVAILABLE; CANONICAL INDUSTRIAL ARCHITECTURE DEFINED FROM MULTIPLE ESTABLISHED MANUFACTURERS.
+
+Research basis:
+- Pall
+- Parker
+- Donaldson
+- Eaton
+
+Research-governance rule:
+- Values below are external benchmark evidence, not REIKE specifications.
+- Brand-specific performance remains attributed to the source manufacturer.
+- Canonical ELIMFILTERS architecture may use the common engineering dimensions validated across multiple manufacturers, but no competitor-specific proprietary technology claim is inherited.
+
+#### Canonical Domain
+
+Industrial & Process
+→ Hydraulic Filtration
+
+Canonical filtration function:
+- Hydraulic Fluid Particulate Contamination Control
+
+Secondary engineering functions that may apply by product:
+- Electrostatic charge mitigation
+- Water / mixed-fluid compatibility
+- Cold-start / high-viscosity stability
+- Flow-fatigue resistance
+- High-collapse protection
+- Low differential-pressure operation
+
+#### Canonical Hydraulic Circuit Positions
+
+Hydraulic filtration must model circuit location because operating pressure, collapse strength, bypass logic, and contamination duty change by location.
+
+Canonical positions:
+- Suction Line
+- Pressure Line
+- Return Line
+- Offline / Kidney Loop
+- Tank-Top Return
+- Duplex / Continuous-Service Circuit
+
+These are APPLICATION / SYSTEM POSITIONS, not technology names.
+
+#### Canonical Performance Model
+
+Primary efficiency metric:
+- Beta ratio βx(c) according to ISO 16889 multi-pass testing
+
+Reference conversion:
+- β=2 ≈ 50% efficiency
+- β=10 ≈ 90%
+- β=75 ≈ 98.7%
+- β=100 ≈ 99%
+- β=200 ≈ 99.5%
+- β=1000 ≈ 99.9%
+
+Observed benchmark levels:
+- Pall Coralon / Ultipor families: βx(c) ≥1000
+- Pall Athalon / Supralon families: βx(c) ≥2000
+- Eaton publishes hydraulic media performance using ISO 16889 and β=200 as a principal reference level
+- Donaldson publishes hydraulic media ratings using ISO 16889 with β200 and β1000 points
+- Parker publishes Ecoglass III media performance through ISO 16889 beta ratings
+
+Canonical rule:
+Nominal micron statements alone are insufficient for Industrial & Process hydraulic qualification. A canonical record should store the particle size x together with its beta ratio and test standard.
+
+#### Canonical Test-Standard Set
+
+Observed repeatedly across established hydraulic filtration manufacturers:
+
+- ISO 16889 — multi-pass filtration performance / beta ratio
+- ISO 2941 — element collapse / burst resistance
+- ISO 2942 — fabrication integrity / bubble point
+- ISO 2943 — material / fluid compatibility
+- ISO 3724 — flow-fatigue characteristics
+- ISO 3968 — pressure-drop versus flow characteristics
+
+Additional stress / cyclic performance:
+- SAE ARP4205 — cyclic stabilization / stress-resistance benchmark used by Pall
+- NFPA T2.06.01R2 — fatigue qualification appears in some hydraulic housing applications
+
+These standards form the minimum external benchmark set for future ELIMFILTERS Industrial hydraulic validation where applicable.
+
+#### Media and Construction Benchmark
+
+Common engineering pattern across Pall, Parker, Donaldson, and Eaton:
+- Synthetic / inorganic glass-fiber depth media for high-efficiency filtration
+- Pleated construction
+- Upstream and downstream support layers or mesh
+- Corrosion-protected metallic hardware or engineered polymer / coreless structures depending product
+- Nitrile or fluorocarbon sealing options
+- Media and pleat geometry optimized for low ΔP, contaminant capacity, and fatigue stability
+
+Industrial hydraulic design must therefore treat the following as independent attributes:
+- Media composition
+- Pleat geometry
+- Support layers
+- Core type
+- End-cap material
+- Seal material
+- Collapse rating
+- Flow-fatigue rating
+
+#### Pressure and Collapse Architecture
+
+External benchmark evidence shows that hydraulic element pressure capability is not one universal number.
+
+Examples:
+- Pall Ultipor III lists element collapse ratings ranging from about 7–20 bar for conventional elements and much higher values for high-collapse variants.
+- Pall coreless elements and product families carry different collapse values.
+- Pall complete hydraulic filter assemblies span low, medium, and high system-pressure classes.
+- Parker return/suction systems may use low-pressure housings while pressure-line products operate in materially different pressure regimes.
+
+Canonical rule:
+Store separately:
+- System / housing maximum allowable working pressure
+- Element collapse differential pressure
+- Bypass-valve setting
+- Rated fatigue pressure / cycles where available
+
+Never interpret housing working pressure as element collapse pressure.
+
+#### Fluid Compatibility Benchmark
+
+Common compatibility classes found across established suppliers:
+- Petroleum / mineral hydraulic oils
+- Water-glycol fluids
+- Water-oil emulsions
+- High-water-content fluids
+- Selected synthetic hydraulic fluids
+- Phosphate esters with appropriate seal / material selection
+
+Canonical rule:
+Fluid compatibility must be tied to:
+- Media
+- Adhesive / resin
+- End caps
+- Core
+- Seal material
+- Temperature range
+
+"Compatible with hydraulic oil" is insufficient as a canonical industrial specification.
+
+#### Temperature and Seal Benchmark
+
+Established suppliers commonly differentiate nitrile and fluorocarbon seal configurations and publish operating temperature limits by material.
+
+Canonical attributes:
+- Minimum operating temperature
+- Maximum operating temperature
+- Seal material
+- Fluid/seal compatibility
+- Cold-start viscosity condition
+
+Cold start is a separate operating condition because high viscosity increases element differential pressure and mechanical stress.
+
+#### Electrostatic Control
+
+Pall explicitly offers anti-static hydraulic elements to reduce electrostatic charging and associated fluid degradation / varnish risk.
+
+Canonical interpretation:
+- Anti-static construction is a CAPABILITY / DESIGN FEATURE.
+- It is not by itself a standalone Industrial & Process technology.
+- Future ELIMFILTERS products may require an electrostatic-control attribute when the application, fluid conductivity, flow velocity, and media create a justified need.
+
+#### Provisional Technology-Core Discovery
+
+TC-HYD-01 — Industrial Hydraulic Contamination Control
+
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Physical / engineering scope:
+- High-efficiency particulate removal under hydraulic flow
+- Beta-ratio controlled performance
+- Stable cleanliness under changing differential pressure
+- High contaminant holding capacity
+- Low clean-element pressure drop
+- Structural resistance to collapse
+- Flow-fatigue resistance
+- Fluid and temperature compatibility
+- Application-specific pressure class
+- Optional electrostatic-charge mitigation
+
+This technology core is completely separate from NANOFORCE™, which remains governed for On-Road and Off-Road only.
+
+#### Required HERMES Inputs — Industrial Hydraulic
+
+Minimum selection inputs:
+- Circuit position
+- Hydraulic fluid type
+- Target ISO cleanliness code
+- Required beta ratio / micron(c)
+- Rated flow
+- Operating pressure
+- Maximum system pressure
+- Allowable clean ΔP
+- Terminal / change-out ΔP
+- Required element collapse differential
+- Bypass setting
+- Fluid viscosity
+- Operating temperature
+- Cold-start condition
+- Seal compatibility
+- Water-content / fluid chemistry
+- Duty cycle / pulsation / fatigue
+- Housing interface
+- OEM / competitor reference
+
+Expected HERMES output:
+Application
+→ Circuit Position
+→ Required Cleanliness
+→ Required βx(c)
+→ Media Class
+→ Pressure / Collapse Class
+→ Seal / Fluid Compatibility
+→ Element Configuration
+→ Housing Compatibility
+→ OEM / Competitor Cross
+→ ELIMFILTERS Candidate
+→ Validation State
+
+#### Canonical Record Additions for Hydraulic Products
+
+Add these fields to Industrial hydraulic records:
+- Circuit Position
+- ISO Cleanliness Target
+- Beta Ratio
+- Beta Particle Size μm(c)
+- Multipass Test Standard
+- Element Collapse Differential Pressure
+- Housing MAWP
+- Bypass Valve Setting
+- Flow Fatigue Standard
+- Rated Fatigue Cycles
+- Clean Element ΔP
+- Terminal ΔP
+- Fluid Viscosity
+- Cold Start Condition
+- Anti-Static Capability
+
+#### Closure State — Hydraulic Oil Filter Element
+
+- REIKE-specific technical extraction: NOT AVAILABLE
+- External benchmark research: COMPLETE v1
+- Canonical hydraulic function architecture: COMPLETE v1
+- Circuit-position architecture: COMPLETE v1
+- Test-standard architecture: COMPLETE v1
+- Technology-core discovery: COMPLETE v1
+- Commercial technology naming: BLOCKED
+- ELIMFILTERS product specification: OPEN
+- OEM / competitor mapping: OPEN
+- Canonical SKU mapping: OPEN
+
+Next source family:
+- High-temperature resistant filter cartridge
