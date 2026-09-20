@@ -1,15 +1,15 @@
-﻿import data from '@/generated/canonical-knowledge.json';
+import data from '@/generated/canonical-knowledge.json';
 
 export interface CanonicalKnowledgeRecord {
   id: string; slug: string; title: string; domain: string; contentType: string; confidence: string;
-  industries: string[]; systems: string[]; technologies: string[]; components: string[]; problems: string[];
+  industries: string[]; systems: string[]; platforms: string[]; technologies: string[]; components: string[]; problems: string[];
   failureModes: string[]; symptoms: string[]; rootCauses: string[]; diagnosticMethods: string[]; correctiveActions: string[];
   maintenanceProcedures: string[]; procedures: string[]; technicalRelationships: string[]; operatingConditions: string[];
   standards: string[]; sharedEngineering: string[]; keywords: string[];
 }
 
 const AUTHORITY = '13-canonical-knowledge' as const;
-const records = Object.freeze((data.records as CanonicalKnowledgeRecord[]).map((record) => Object.freeze(record)));
+const records = Object.freeze((data.records as CanonicalKnowledgeRecord[]).map((record) => Object.freeze({ ...record, platforms: record.platforms ?? [] })));
 
 function normalize(value: string): string {
   return String(value || '').toLowerCase().normalize('NFKD').replace(/™/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
@@ -38,7 +38,7 @@ export function resolveCanonicalKnowledgeForEntities(entityIds: readonly string[
   for(const entityId of entityIds){
     const tokens=entityTokens(entityId);
     for(const record of records){
-      const hay=normalize([record.id,record.title,...record.systems,...record.technologies,...record.components,...record.problems,...record.failureModes,...record.sharedEngineering].join(' '));
+      const hay=normalize([record.id,record.title,...record.systems,...record.platforms,...record.technologies,...record.components,...record.problems,...record.failureModes,...record.sharedEngineering].join(' '));
       const score=tokens.reduce((sum,t)=>sum+(hay.includes(t)?1:0),0);
       if(score>0 && score>(scores.get(record.id)?.score??0)) scores.set(record.id,{record,score});
     }
