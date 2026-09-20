@@ -3942,3 +3942,347 @@ These cores and capabilities are expected to be evaluated for reuse across Weldi
 
 Next Air Filtration source family:
 - Welding Fume Extraction Filtration
+
+
+### 17.11 Welding Fume Extraction Filtration — Architecture v1
+
+Status: REIKE SOURCE PRODUCT SET CONFIRMED; EXTERNAL WELDING-FUME BENCHMARK ARCHITECTURE COMPLETE; COMMERCIAL TECHNOLOGY NAMES NOT ASSIGNED.
+
+Source condition:
+REIKE exposes five source products:
+1. Composite Carbon Filter Cartridge
+2. High-Temperature Dust Filter Cartridge
+3. Flame Retardant Filter Cartridge
+4. Antistatic Filter Cartridge
+5. Polyester Filter Cartridge
+
+Repeated supplier claims:
+- Safe & Reliable
+- Long-term Stable
+- Custom Filter Manufacturer
+
+The source page provides family names but no validated efficiency, media, airflow, pressure-drop, temperature, carbon capacity, conductivity, flame-retardance, or occupational-exposure performance evidence.
+
+#### Canonical Interpretation
+
+Welding Fume Extraction Filtration is a PROCESS APPLICATION domain.
+
+Canonical domain:
+Industrial & Process
+→ Air Filtration Solutions
+→ Welding Fume Extraction Filtration
+
+Primary physical / process functions:
+- Source Capture
+- Fine Particulate / Fume Filtration
+- Surface-Loading Cartridge Filtration
+- Pulse-Jet Cleaning where applicable
+- Molecular / Gas Adsorption where required
+- High-Temperature / Spark-Risk Handling
+- Static-Control / Flame-Retardant Capability where justified
+
+#### Welding Fume Hazard Architecture
+
+External benchmark:
+OSHA identifies welding fumes as containing particulate matter and gases. Depending on base metal, filler, coatings, and process, fumes may include manganese, chromium compounds including hexavalent chromium, nickel, iron compounds, and other hazardous constituents. Gases such as ozone, nitrogen oxides, carbon monoxide, and shielding gases may also be relevant.
+
+Canonical contaminant dimensions:
+- Welding process
+- Base metal
+- Filler / wire / electrode
+- Surface coating / plating
+- Fume particle-size distribution
+- Heavy-metal content
+- Cr(VI) potential
+- Manganese content
+- Ozone / NOx / CO
+- Oil / aerosol content
+- Dust loading
+- Spark / hot-particle load
+
+Critical rule:
+A welding-fume filter cannot be selected solely from a generic "welding" application label. Process and material composition determine the hazard and treatment requirement.
+
+#### Source Capture
+
+External benchmark from OSHA and Camfil:
+Effective control should prioritize capturing fumes as close to the welding source as practicable before dispersion into the general workspace.
+
+Canonical source-capture configurations:
+- Extraction Arm
+- On-Torch Extraction
+- Extraction Hood
+- Downdraft / Backdraft Table
+- Enclosed Robotic Cell Extraction
+- Central Ducted Extraction
+
+Source capture is a SYSTEM CONFIGURATION, not a filter technology.
+
+#### Particulate / Fume Filtration
+
+REIKE source:
+- Polyester Filter Cartridge
+
+Canonical function:
+- Fine Welding-Fume Particulate Filtration
+
+Parent core:
+TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+
+External benchmark:
+Donaldson cartridge media uses fine-fiber surface filtration to capture submicron particulate and improve cleanability. Welding fumes often contain very fine particles, so surface-loading behavior and stable ΔP under pulse cleaning are important.
+
+Canonical attributes:
+- Media substrate
+- Fine-fiber / nanofiber layer
+- Efficiency
+- Particle-size performance
+- Air permeability
+- Initial ΔP
+- Stable operating ΔP
+- Dust / fume holding
+- Pulse-cleaning behavior
+- Moisture / oil tolerance
+- Cartridge dimensions
+- Collector interface
+
+#### Composite Carbon Filter Cartridge
+
+REIKE source:
+- Composite Carbon Filter Cartridge
+
+Canonical provisional functions:
+- Fine Particulate Filtration
+- Molecular / Gas Adsorption
+
+External benchmark:
+Activated carbon and activated-alumina molecular filters are used to adsorb VOCs, odors, ozone, nitrogen dioxide, sulfur dioxide, and other gas-phase contaminants depending media formulation.
+
+Critical governance rule:
+A carbon cartridge does not automatically remove all welding gases. Gas-removal performance must be tied to:
+- target gas / vapor
+- carbon / adsorbent chemistry
+- bed mass
+- residence time
+- humidity
+- temperature
+- inlet concentration
+- breakthrough / service capacity
+- test method
+
+Relationship:
+- Particulate stage → TC-DUST-01
+- Molecular stage → TC-AIR-03 Industrial Molecular Air Contamination Control
+
+Potential specialized capability:
+WGAS — Welding Fume Gas-Phase Adsorption Capability
+Status: CAPABILITY CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+#### High-Temperature Dust Filter Cartridge
+
+REIKE source:
+- High-Temperature Dust Filter Cartridge
+
+Canonical capability:
+HT-DUST — High-Temperature Dust Filtration Capability
+
+This reuses the capability already identified under Laser Cutting.
+
+Required attributes:
+- Continuous / peak temperature
+- Spark / hot-particle exposure
+- Media
+- Resin / adhesive
+- Gasket / seal
+- Metal hardware
+- Thermal cycling
+- Efficiency retention after heat exposure
+
+No duplicate welding-specific high-temperature technology is created.
+
+#### Flame-Retardant Filter Cartridge
+
+REIKE source:
+- Flame Retardant Filter Cartridge
+
+Canonical capability:
+FR-DUST — Flame-Retardant Dust Filtration Capability
+
+No duplicate core is created.
+
+Required evidence:
+- exact flame / fire test standard
+- media qualification
+- application limit
+- collector safety architecture
+
+Critical rule:
+Flame-retardant media does not make a collector fire-safe.
+
+#### Antistatic Filter Cartridge
+
+REIKE source:
+- Antistatic Filter Cartridge
+
+Canonical capability:
+AS-DUST — Anti-Static Dust Filtration Capability
+
+No duplicate core is created.
+
+Required evidence:
+- surface / volume resistivity
+- grounding continuity
+- conductive treatment
+- collector bonding / grounding
+- dust combustibility characteristics
+
+Critical rule:
+Antistatic media is one part of electrostatic-risk control, not a complete combustible-dust safety solution.
+
+#### Oily Welding Fume
+
+External benchmark from Camfil:
+Some welding operations produce oily fumes / aerosols, requiring media and collector selection that tolerate sticky or oil-laden particulate.
+
+Canonical capability:
+- Oil / Aerosol Tolerance
+
+Required attributes:
+- Oil loading
+- Agglomeration tendency
+- Media oleophobic / hydrophobic properties where applicable
+- Cleanability
+- ΔP rise
+- Drainage / pre-separation if required
+
+This remains a capability, not a standalone technology.
+
+#### Health / Exposure Governance
+
+OSHA notes that welding fume hazards can include manganese and hexavalent chromium and that hot work on stainless steel or chromium-containing alloys can generate Cr(VI).
+
+Canonical HERMES safety fields:
+- Applicable occupational exposure limit
+- Cr(VI) potential
+- Manganese exposure concern
+- Nickel / other metal concern
+- Ventilation requirement
+- Respiratory-protection dependency
+- Exhaust / recirculation policy
+- Local regulatory jurisdiction
+
+Critical rule:
+ELIMFILTERS filtration claims must not be presented as guaranteeing worker exposure compliance without a validated system-level industrial hygiene assessment.
+
+#### Dust Collector System Architecture
+
+Canonical path:
+Welding Source
+→ Source Capture
+→ Ducting
+→ Spark / Hot-Particle Management where required
+→ Cartridge Collector
+→ Pulse Cleaning
+→ Secondary HEPA / Safety Stage where required
+→ Gas-Phase Adsorption where required
+→ Exhaust / Recirculation
+
+System attributes:
+- Capture velocity
+- Airflow
+- Duct velocity
+- Collector airflow
+- Cartridge count
+- Air-to-media ratio
+- Cleaning pressure / logic
+- Initial / stable / terminal ΔP
+- Dust discharge
+- Spark management
+- Secondary filtration
+- Molecular filtration
+- Exhaust / recirculation
+- Monitoring / alarms
+
+#### HERMES Inputs — Welding Fume
+
+Minimum inputs:
+- Welding process
+- Base metal
+- Filler / electrode
+- Coating / plating
+- Welding current / duty cycle
+- Number of welding stations
+- Manual / robotic operation
+- Fume composition
+- Cr(VI) potential
+- Manganese / nickel / other metal concerns
+- Ozone / NOx / VOC requirement
+- Oil / aerosol content
+- Spark / hot-particle load
+- Required capture airflow
+- Required particulate efficiency
+- Molecular adsorption requirement
+- Initial / terminal ΔP
+- Temperature
+- Flame-retardant requirement
+- Antistatic requirement
+- Collector model / cartridge interface
+- Exhaust / recirculation mode
+- Occupational exposure / regulatory requirement
+- OEM / competitor reference
+
+Expected logic:
+Welding Process
+→ Material / Fume Hazard
+→ Source-Capture Method
+→ Particulate vs Gas-Phase Treatment
+→ Surface Filtration
+→ FR / Anti-Static / High-Temp / Oil Capability
+→ Secondary / Carbon Stage if required
+→ Collector Interface
+→ Safety / Exposure Validation
+→ Candidate Cartridge / System
+→ Validation State
+
+#### Technology-Core Relationship
+
+Reused existing Industrial & Process cores:
+- TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+- TC-AIR-03 — Industrial Molecular Air Contamination Control
+
+Reused capabilities:
+- AS-DUST — Anti-Static Dust Filtration Capability
+- FR-DUST — Flame-Retardant Dust Filtration Capability
+- HT-DUST — High-Temperature Dust Filtration Capability
+
+New capability candidate:
+- WGAS — Welding Fume Gas-Phase Adsorption Capability
+
+No duplicate welding-specific particulate technology core is created.
+
+#### Closure State — Welding Fume Extraction Filtration
+
+- REIKE source product discovery: COMPLETE
+- Welding-fume particulate architecture: CLOSED v1
+- Source-capture architecture: CLOSED v1
+- Carbon / molecular treatment architecture: CLOSED v1
+- Anti-static / flame-retardant / high-temperature reuse: CLOSED v1
+- Occupational-hazard governance: CLOSED v1
+- Oily-fume capability: IDENTIFIED
+- Product-level REIKE performance validation: OPEN
+- Commercial technology naming: BLOCKED
+- OEM / collector mapping: OPEN
+
+#### Air Filtration Solutions — Remaining Open Family
+
+Completed:
+- Cleanroom & HVAC Air Filtration
+- Semiconductor & Photovoltaic Manufacturing Filter
+- Aviation Air Filtration
+- Laser Cutting Dust Filtration
+- Welding Fume Extraction Filtration
+
+Air Filtration Solutions v1 is now ARCHITECTURALLY CLOSED, with product-level validation and commercial technology naming still open.
+
+Next Industrial & Process source family:
+- Additive Manufacturing Filtration Solutions
