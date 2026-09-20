@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { INDUSTRIAL_PROCESS_PLATFORMS, industrialProcessPlatformUrl, industrialProcessTechnologyUrl } from '@/lib/industrial-process-architecture';
 
 export const metadata: Metadata = {
   title: 'Industrial & Process Filtration | ELIMFILTERS',
@@ -16,39 +17,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
-
-const platforms = [
-  {
-    mark: 'AEREMIS™',
-    descriptor: 'Air Technologies',
-    intro: 'Industrial air treatment for ventilation, critical environments and molecular contamination control.',
-    families: ['General Air Filtration', 'HE-CRIVA™ — High-Efficiency / Critical Air Filtration', 'MA-TREA™ — Molecular Air Treatment'],
-  },
-  {
-    mark: 'PARTION™',
-    descriptor: 'Dust & Fume Technologies',
-    intro: 'Fine-dust and fume control for demanding industrial processes and production environments.',
-    families: ['FUMEVRA™ — Fine Dust & Fume Filtration'],
-  },
-  {
-    mark: 'COALVEX™',
-    descriptor: 'Gas Conditioning Technologies',
-    intro: 'Gas-stream conditioning for liquid aerosol control, coalescence and separation duties.',
-    families: ['COALERIS™ — Gas Coalescence', 'Gas-Liquid Separation'],
-  },
-  {
-    mark: 'FLUREXIS™',
-    descriptor: 'Fluid Conditioning Technologies',
-    intro: 'Contamination, water and degradation-product control for hydraulic and lubrication systems.',
-    families: ['HYLTRIS™ — Hydraulic Fluid Filtration', 'LUBREVA™ — Industrial Lubrication Filtration', 'DEWATIS™ — Oil Dehydration & Water Removal', 'OILREVEX™ — Oil Condition Remediation'],
-  },
-  {
-    mark: 'AQUVEXIS™',
-    descriptor: 'Water Treatment Technologies',
-    intro: 'Industrial water treatment through particulate, adsorption, membrane and ionic separation mechanisms.',
-    families: ['Depth Filtration', 'ADSOVEX™ — Adsorptive Carbon Treatment', 'MEMBRAVEX™ — Membrane Separation', 'IONVEXA™ — Ion Exchange', 'Electrodeionization'],
-  },
-] as const;
 
 const projectInputs = [
   'Process fluid or gas',
@@ -178,17 +146,25 @@ export default function IndustrialProcessPage() {
             <p style={eyebrow}>FIVE COMMERCIAL TECHNOLOGY PLATFORMS</p>
             <h2 id="platform-title" style={sectionTitle}>Navigate by treatment function.</h2>
             <div style={platformGrid}>
-              {platforms.map((platform, index) => (
+              {INDUSTRIAL_PROCESS_PLATFORMS.map((platform, index) => (
                 <article key={platform.mark} style={platformCard}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'baseline' }}>
                     <span style={numberStyle}>{String(index + 1).padStart(2, '0')}</span>
                     <span style={platformDescriptor}>{platform.descriptor}</span>
                   </div>
-                  <h3 style={platformMark}>{platform.mark}</h3>
-                  <p style={bodyCopy}>{platform.intro}</p>
+                  <Link href={industrialProcessPlatformUrl(platform.slug)} style={{ color: '#fff', textDecoration: 'none' }}>
+                    <h3 style={platformMark}>{platform.name}</h3>
+                  </Link>
+                  <p style={bodyCopy}>{platform.summary}</p>
                   <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 22, paddingTop: 16 }}>
-                    {platform.families.map((family) => (
-                      <div key={family} style={familyRow}>{family}</div>
+                    {platform.technologies.map((technology) => (
+                      <Link
+                        key={technology.slug}
+                        href={industrialProcessTechnologyUrl(platform.slug, technology.slug)}
+                        style={{ ...familyRow, display: 'block', textDecoration: 'none' }}
+                      >
+                        {technology.name === technology.title ? technology.name : `${technology.name} — ${technology.title}`}
+                      </Link>
                     ))}
                   </div>
                 </article>
