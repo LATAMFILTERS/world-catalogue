@@ -75,3 +75,24 @@ Technology:
 
 Products:
 - Coolant Filters
+
+
+---
+
+## 6. Industrial & Process
+
+Purpose:
+Protect industrial processes, fluids, gas streams, air systems, and water-treatment assets through validated filtration, separation, adsorption, conditioning, and membrane-treatment mechanisms.
+
+Commercial platforms:
+- AEREMIS™ — Air Technologies
+- PARTION™ — Dust & Fume Technologies
+- COALVEX™ — Gas Conditioning Technologies
+- FLUREXIS™ — Fluid Conditioning Technologies
+- AQUVEXIS™ — Water Treatment Technologies
+
+System rule:
+Industrial & Process platforms are commercial grouping layers. System architectures such as duplex, skid, FFU, filter-separator, kidney loop, CCRO, UPW loop, and integrated gas conditioning remain system configurations and do not become technology marks.
+
+Navigation rule:
+Web and catalogue navigation must enter through Industrial & Process → Platform → Technology Family → Product Family / SKU.
