@@ -3655,3 +3655,290 @@ No commercial ELIMFILTERS technology name is approved.
 
 Next Air Filtration source family:
 - Laser Cutting Dust Filtration
+
+
+### 17.10 Laser Cutting Dust Filtration — Architecture v1
+
+Status: REIKE SOURCE PRODUCT SET CONFIRMED; EXTERNAL DUST-COLLECTION BENCHMARK ARCHITECTURE COMPLETE; COMMERCIAL TECHNOLOGY NAMES NOT ASSIGNED.
+
+Source condition:
+REIKE exposes four source products:
+1. High-Temp Filter Cartridge
+2. Flame Retardant & Anti-Static Filter Cartridge
+3. Cylindrical Filter Cartridge
+4. Dust Filter Cartridge
+
+Repeated supplier claims:
+- Safe & Reliable
+- Long-term Stable
+- Custom Filter Manufacturer
+
+The source page provides product-family names but no validated media composition, efficiency, airflow, pressure-drop, temperature, conductivity, flame-retardance, collector-interface, or safety-standard evidence.
+
+#### Canonical Interpretation
+
+Laser Cutting Dust Filtration is a PROCESS APPLICATION domain, not a filtration technology.
+
+Canonical domain:
+Industrial & Process
+→ Air Filtration Solutions
+→ Laser Cutting Dust Filtration
+
+Primary physical function:
+- Fine Dry Particulate / Fume Capture
+
+System function:
+- Source Capture
+- Dust Collection
+- Surface Filtration
+- Pulse-Jet Cleaning where applicable
+- Safe handling of thermally generated and potentially combustible particulate
+
+#### Process Hazard / Particle Architecture
+
+External benchmark from Donaldson and Camfil shows that laser and plasma cutting generate very fine thermally generated particulate and fumes, including sub-micron particles.
+
+Canonical contaminant dimensions:
+- Material being cut
+- Alloy composition
+- Particle-size distribution
+- Fine / sub-micron fraction
+- Dust loading
+- Spark generation
+- Combustibility / explosibility
+- Toxic-metal content
+- Hygroscopic / agglomerative behavior
+
+Canonical rule:
+Filter selection must be based on the actual cut material and process duty. Carbon steel, stainless steel, aluminum, ceramics, plastics, and other materials may create materially different dust, fume, fire, toxicity, and explosion hazards.
+
+#### Surface-Loading Media
+
+External benchmark:
+Donaldson recommends high-efficiency cartridge collectors with surface-loading fine-fiber media for fine thermal-cutting particulate. Camfil similarly recommends nanofiber surface filtration for laser-cutting dust, noting that this helps keep fine dust near the media surface and improves pulse-cleaning behavior.
+
+Canonical function:
+- Surface-Loading Fine Particle Filtration
+
+Potential technology core:
+TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+Status: TECHNOLOGY CORE CANDIDATE / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+Engineering attributes:
+- Base substrate
+- Fine-fiber / nanofiber layer
+- Membrane / surface treatment
+- Particle efficiency
+- Dust release
+- Pulse-cleaning compatibility
+- Air permeability
+- Initial ΔP
+- Stable operating ΔP
+- Dust-holding behavior
+- Abrasion resistance
+- Moisture resistance
+
+#### Flame-Retardant / Anti-Static Cartridge
+
+REIKE source:
+- Flame Retardant & Anti-Static Filter Cartridge
+
+Canonical capabilities:
+- Flame-Retardant Media
+- Static-Charge Dissipation
+
+External benchmark:
+Donaldson and Camfil publish conductive / anti-static and flame-retardant media for industrial dust collection, particularly where combustible dust and static buildup may create ignition risk.
+
+Canonical rule:
+Flame retardancy and antistatic behavior are CAPABILITIES, not standalone filtration mechanisms.
+
+Required attributes:
+- Media flame-retardant qualification
+- Surface / volume resistivity
+- Grounding path / bonding requirement
+- Conductive treatment
+- Collector grounding
+- Dust explosibility data
+- Hazardous-area classification
+- Applicable fire / explosion protection standard
+
+Critical safety rule:
+An anti-static or flame-retardant cartridge does not by itself make a dust-collection system explosion-safe.
+
+#### Combustible-Dust / Fire Governance
+
+External benchmark:
+Donaldson explicitly recommends hazard analysis for thermal cutting because sparks are normally present and collected metal dust may be combustible. Applicable NFPA requirements may include combustible-metal and explosion-protection standards depending material and system design.
+
+Canonical safety inputs:
+- Dust Kst / Pmax where applicable
+- Minimum ignition energy
+- Material explosibility
+- Spark load
+- Deflagration venting requirement
+- Explosion isolation requirement
+- Suppression requirement
+- Grounding / bonding
+- Collector indoor / outdoor location
+- Air recirculation policy
+- Authority Having Jurisdiction (AHJ)
+
+Governance:
+No ELIMFILTERS product or system may be represented as ATEX-, NFPA-, explosion-, or fire-compliant solely from media selection.
+
+#### High-Temperature Filter Cartridge
+
+REIKE source:
+- High-Temp Filter Cartridge
+
+Canonical capability:
+- High-Temperature Dust Filtration
+
+External benchmark:
+Donaldson publishes cartridge media families selected by operating temperature and distinguishes standard polyester / fine-fiber options from higher-temperature materials.
+
+Canonical attributes:
+- Continuous operating temperature
+- Peak temperature
+- Exposure duration
+- Base media
+- Surface layer / membrane
+- Adhesive / resin
+- Gasket / seal material
+- Metal hardware
+- Thermal cycling
+- Spark exposure
+
+Capability code:
+HT-DUST — High-Temperature Dust Filtration Capability
+Status: CAPABILITY EXTENSION / NOT A COMMERCIAL TECHNOLOGY NAME.
+
+#### Cylindrical / Dust Filter Cartridge
+
+REIKE source:
+- Cylindrical Filter Cartridge
+- Dust Filter Cartridge
+
+Canonical interpretation:
+These are PRODUCT CONFIGURATION labels, not technologies.
+
+Canonical attributes:
+- Cylindrical / conical geometry
+- OD
+- ID
+- Length
+- Pleat count / depth
+- Open / closed end
+- Mounting geometry
+- Gasket / seal
+- Core
+- End-cap material
+- Collector compatibility
+- Media area
+- Cleaning direction
+- Pulse-cleaning compatibility
+
+#### Dust Collector System Architecture
+
+External benchmark from Donaldson / Nederman:
+Laser cutting commonly uses dedicated cartridge dust collectors with source capture at the cutting table, ducting, high-efficiency cartridges, pulse cleaning, fan / airflow control, differential-pressure monitoring, dust discharge, and safety provisions.
+
+Canonical system path:
+Cutting Table / Enclosure
+→ Capture Airflow
+→ Ducting / Spark-Control Strategy
+→ Dust Collector
+→ Cartridge Surface Filtration
+→ Pulse Cleaning
+→ Dust Discharge
+→ Secondary / Safety Filtration where required
+→ Exhaust or Recirculation
+
+System attributes:
+- Capture airflow
+- Table size / zone control
+- Duct velocity
+- Fan static pressure
+- Air-to-media ratio
+- Cartridge count
+- Cleaning pressure / sequence
+- Differential pressure
+- Hopper / dust discharge
+- Spark mitigation
+- Explosion protection
+- Secondary filter
+- Exhaust / recirculation mode
+- Monitoring / alarms
+
+#### HERMES Inputs — Laser Cutting Dust
+
+Minimum inputs:
+- Cutting process
+- Laser type / power
+- Material
+- Material thickness
+- Cutting rate / duty cycle
+- Table size
+- Dust / fume composition
+- Particle-size distribution
+- Dust loading
+- Toxic-metal content
+- Combustibility data
+- Spark generation
+- Required capture airflow
+- Required filtration efficiency
+- Air-to-media ratio
+- Initial / terminal ΔP
+- Operating temperature
+- Moisture / agglomeration
+- Antistatic requirement
+- Flame-retardant requirement
+- Collector model / cartridge interface
+- Indoor / outdoor location
+- Exhaust / recirculation strategy
+- Safety / code requirement
+- OEM / competitor reference
+
+Expected logic:
+Cutting Process
+→ Material / Hazard
+→ Dust Characteristics
+→ Capture Requirement
+→ Media / Surface Filtration
+→ FR / Anti-Static / High-Temp Capability
+→ Collector Interface
+→ System Safety Architecture
+→ Candidate Cartridge / System
+→ Validation State
+
+#### Technology-Core Relationship
+
+New parent core:
+- TC-DUST-01 — Industrial Surface-Loading Fine Dust Filtration
+
+Capability overlays:
+- AS-DUST — Anti-Static Dust Filtration Capability
+- FR-DUST — Flame-Retardant Dust Filtration Capability
+- HT-DUST — High-Temperature Dust Filtration Capability
+
+Status:
+INTERNAL CANDIDATES / NOT COMMERCIAL TECHNOLOGY NAMES.
+
+These cores and capabilities are expected to be evaluated for reuse across Welding Fume Extraction and Additive Manufacturing rather than duplicated by application.
+
+#### Closure State — Laser Cutting Dust Filtration
+
+- REIKE source product discovery: COMPLETE
+- Dust/fume architecture: CLOSED v1
+- Surface-loading filtration architecture: CLOSED v1
+- Anti-static / flame-retardant capability architecture: CLOSED v1
+- High-temperature capability architecture: CLOSED v1
+- Dust collector system architecture: CLOSED v1
+- Safety / combustible-dust governance: CLOSED v1
+- Product-level REIKE performance validation: OPEN
+- Commercial technology naming: BLOCKED
+- OEM / collector mapping: OPEN
+
+Next Air Filtration source family:
+- Welding Fume Extraction Filtration
