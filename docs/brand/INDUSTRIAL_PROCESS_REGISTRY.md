@@ -456,3 +456,127 @@ Natural Gas Filtration v1:
 - Commercial technology naming: intentionally NOT CLOSED.
 - Supplier technical claims: retained as manufacturer-declared pending validation.
 - Next block: Hydraulic Filtration.
+
+
+## 14. Hydraulic Filtration — Source Discovery v0.1
+
+Status: SOURCE FAMILY DISCOVERY COMPLETE; TECHNICAL DECOMPOSITION PENDING.
+
+Primary source:
+- Xinxiang Filter Co., Ltd. / REIKE
+- Source category: Hydraulic filtration
+- Source page: http://xxslqq.xx207.cxjs.net.cn/product/19.html
+
+### 14.1 Source Families Observed
+
+REIKE currently exposes six source families under Hydraulic filtration:
+
+1. Lubricating oil filter element
+2. Oil filter / Engine oil filter cartridge
+3. High-temperature resistant filter cartridge
+4. Hydraulic oil filter element
+5. Coal power filter element
+6. Import substitution of oil filter elements
+
+Supplier-level commercial attributes repeated across these families:
+- Supports non-standard items
+- Customization supported
+- Safe and reliable
+- Long-lasting stability
+
+These attributes remain SOURCE / MANUFACTURER-DECLARED and are not canonical ELIMFILTERS performance claims.
+
+### 14.2 Initial Normalization Rules
+
+The REIKE source menu mixes physical filtration domains, operating-condition variants, application-specific products, and commercial replacement strategies.
+
+Therefore these source labels MUST NOT be copied one-to-one into the ELIMFILTERS canonical taxonomy.
+
+Preliminary interpretation:
+
+- Lubricating oil filter element
+  - likely product/function domain: Lubrication Filtration
+  - technical decomposition pending product-page evidence
+
+- Oil filter / Engine oil filter cartridge
+  - likely product/function domain: Engine / Industrial Engine Lubrication Filtration
+  - must not be merged automatically with existing mobile-equipment lube products until application, media, pressure, flow, and cross-reference evidence are reviewed
+
+- High-temperature resistant filter cartridge
+  - operating-condition / capability label, not automatically a standalone product family or technology
+  - requires evidence for fluid, temperature range, media, seals, pressure, and application
+
+- Hydraulic oil filter element
+  - likely product/function domain: Hydraulic Fluid Contamination Control
+  - technical decomposition pending
+
+- Coal power filter element
+  - application-specific label
+  - application context: Power Generation / Coal Power
+  - underlying filtration function must be determined from source technical data before normalization
+
+- Import substitution of oil filter elements
+  - commercial / sourcing strategy, not a filtration mechanism
+  - must be modeled as OEM / competitor replacement intelligence, not as an ELIMFILTERS technology or product family
+
+### 14.3 Existing Technology Reuse Gate
+
+The existing ELIMFILTERS TECHNOLOGY_REGISTRY already defines:
+
+- SYNTRAX™ — Lubrication Protection / Lube Filters
+- NANOFORCE™ — Hydraulic Protection / Hydraulic Filters
+
+Before creating any new Industrial & Process hydraulic or lubrication technology, each REIKE family must be tested against the governed technical scope of SYNTRAX™ and NANOFORCE™.
+
+Rule:
+- Reuse SYNTRAX™ or NANOFORCE™ only if the industrial product's filtration function and technical performance fit the existing governed technology definition.
+- Do not extend either technology solely because the source product contains oil or is physically shaped like an existing filter.
+- High-temperature, power-generation, or import-substitution labels alone do not justify a new technology.
+
+### 14.4 Required Technical Extraction Sequence
+
+Technical pages must be reviewed in this order:
+
+1. Lubricating oil filter element
+2. Hydraulic oil filter element
+3. High-temperature resistant filter cartridge
+4. Coal power filter element
+5. Import substitution of oil filter elements
+6. Oil filter / Engine oil filter cartridge
+
+For each source family, capture:
+- Source product name
+- Source SKU / reference if present
+- Intended fluid
+- Application
+- Filtration function
+- Micron rating
+- Beta ratio / efficiency if declared
+- Flow
+- Operating pressure
+- Collapse / burst / fatigue data if declared
+- Operating temperature
+- Initial / terminal ΔP if declared
+- Media
+- Core / support
+- End caps
+- Seal material
+- Dirt-holding capacity
+- Fluid compatibility
+- Test standard
+- Housing compatibility
+- OEM / competitor cross
+- Customization / non-standard capability
+- Source claim status
+- Validation status
+
+### 14.5 Current Closure State
+
+Hydraulic Filtration:
+- Source category discovery: COMPLETE
+- Six REIKE source families identified: COMPLETE
+- Canonical technical architecture: OPEN
+- Technology-core discovery: OPEN
+- Existing-technology reuse assessment: OPEN
+- Commercial technology naming: BLOCKED pending technical evidence
+- Next source page: Lubricating oil filter element
