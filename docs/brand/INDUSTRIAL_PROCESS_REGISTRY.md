@@ -10057,3 +10057,67 @@ Decision:
 - HE-CRAF remains superseded and on hold.
 - High-Efficiency / Critical Air Filtration naming remains OPEN.
 - MA-TREA remains the preferred working candidate for Molecular Air Treatment.
+
+
+## 42. AEREMIS™ — High-Efficiency / Critical Air Replacement Naming
+
+Status: WORKING SHORTLIST. No mark approved.
+
+Objective:
+Replace rejected HE-CRAF™ / HE-KRAF™ while preserving the user's preferred short technical naming style beginning with HE-.
+
+### Candidate Set
+
+1. HE-CRIVA™
+   - Concept: High-Efficiency + Critical / Vital Air.
+   - Broad public search: no material exact air-filtration / HVAC / cleanroom conflict surfaced.
+   - No material exact trademark result surfaced in the public screening performed.
+   - Status: PREFERRED WORKING CANDIDATE.
+
+2. HE-VALTA™
+   - Concept: High-Efficiency + elevated / high-value protection.
+   - Broad public search: no material exact filtration-sector conflict surfaced.
+   - Status: WORKING CANDIDATE.
+
+3. HE-KRIT™
+   - Concept: direct phonetic reference to critical-duty filtration.
+   - Broad public search surfaced unrelated personal-name / lexical uses, not filtration use.
+   - Risk: more descriptive / abrupt phonetics and weaker premium feel.
+   - Status: SECONDARY WORKING CANDIDATE.
+
+4. HE-VEXA™
+   - Concept: high-efficiency performance / technical platform.
+   - Broad public search surfaced unrelated VEXA uses outside filtration.
+   - Risk: greater cross-sector naming noise.
+   - Status: HOLD / SECONDARY.
+
+5. HE-ZENIS™
+   - Concept: coined high-efficiency family identifier.
+   - Broad public search surfaced unrelated lexical / social uses but no filtration-sector conflict.
+   - Status: SECONDARY WORKING CANDIDATE.
+
+### Candidate Exclusions
+
+- HE-CRAF™ — rejected due established CRAF critical-air filtration acronym.
+- HE-KRAF™ — rejected due existing KRAF air-filtration product / system usage.
+- HE-CERTA™ — avoided due active CERTA brand usage in other sectors.
+- HE-AERVA™ — avoided due existing AERVA business / IP usage.
+- HE-PRIVA™ — avoided due established PRIVA brand.
+
+### Preferred Direction
+
+Current preferred candidate:
+HE-CRIVA™
+
+Reason:
+- preserves the concise HE- structure;
+- avoids CRAF / KRAF sector collision;
+- supports High-Efficiency / Critical Air without tying the name to HEPA only;
+- first public knockout screen found no material exact filtration conflict.
+
+AEREMIS™ current state:
+- General Air Filtration — descriptive
+- HE-CRIVA™ — High-Efficiency / Critical Air — preferred working candidate
+- MA-TREA™ — Molecular Air Treatment — preferred working candidate
+
+Formal trademark clearance remains required before final approval.
