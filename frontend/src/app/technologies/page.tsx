@@ -185,7 +185,6 @@ export default function TechnologiesPage() {
           <p style={heroPromise}>Technology defines how contamination is controlled. The protected system defines where that technology belongs.</p>
           <p style={heroLead}>ELIMFILTERS® organizes ten filtration technologies across five protection systems: air intake and airflow, fuel cleanliness, lubrication, hydraulic and cooling-system protection. Each technology is connected to a defined contamination-control function, product family and validated application path.</p>
           <div style={buttonRow}>
-            <a href="#technology-architecture" style={yellowButton}>SELECT A TECHNOLOGY</a>
             <Link href="/systems/" style={darkButton}>START WITH A PROTECTION SYSTEM</Link>
           </div>
         </div>
