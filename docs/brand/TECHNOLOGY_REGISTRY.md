@@ -169,3 +169,19 @@ RO, UF, and NF remain distinct internal Technology Cores / subfamilies beneath t
 
 Governance:
 Family marks do not replace internal Technology Core IDs. HERMES continues to use the technical core model for mechanism-level validation and product selection.
+
+
+### AEREMIS™ — Approved Working Family Marks
+
+Platform:
+AEREMIS™ — Air Technologies
+
+Working family marks:
+- CRITENZA™ — High-Efficiency / Critical Air Filtration — maps to TC-AIR-02
+- SORBEXIS™ — Molecular Air Treatment — maps to TC-AIR-03
+
+General Air Filtration remains descriptive and maps to TC-AIR-01.
+
+Governance:
+- CRITENZA™ and SORBEXIS™ are approved as preferred internal working marks after public knockout screening.
+- Formal trademark clearance remains required before filing, registration, or reliance on exclusive rights.
