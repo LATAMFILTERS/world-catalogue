@@ -93,16 +93,50 @@ export default function IndustrialProcessPage() {
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
         <section
           style={{
+            position: 'relative',
             minHeight: '82vh',
             display: 'flex',
             alignItems: 'end',
+            overflow: 'hidden',
             padding: 'clamp(8rem, 16vw, 13rem) var(--section-px) clamp(4.5rem, 9vw, 7rem)',
             borderBottom: '1px solid rgba(255,255,255,0.08)',
             background:
               'radial-gradient(circle at 82% 22%, rgba(255,241,45,0.12), transparent 27%), linear-gradient(145deg,#000 0%,#050505 62%,#0b0b0b 100%)',
           }}
         >
-          <div style={{ width: '100%', maxWidth: 1400, margin: '0 auto' }}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+              opacity: 0.58,
+              zIndex: 0,
+            }}
+          >
+            <source src="/images/Industrial%20Process%20(1).mp4" type="video/mp4" />
+          </video>
+
+          <div
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background:
+                'linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.50) 48%, rgba(0,0,0,0.24) 100%), radial-gradient(circle at 82% 22%, rgba(255,241,45,0.14), transparent 30%)',
+              zIndex: 1,
+            }}
+          />
+
+          <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1400, margin: '0 auto' }}>
             <p style={eyebrow}>INDUSTRIAL & PROCESS</p>
             <h1 style={heroTitle}>
               ENGINEER THE PROCESS.
