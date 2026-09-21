@@ -26,6 +26,7 @@ const projectInputs = [
   'Operating and design pressure',
   'Temperature',
   'Required efficiency / quality target',
+  'Applicable standard / test method / target class',
   'Materials and chemical compatibility',
   'Existing housing, vessel or system',
 ];
