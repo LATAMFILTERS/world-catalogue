@@ -827,8 +827,10 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     descriptor: 'Water Treatment Technologies',
     summary: 'Industrial water treatment through particulate, adsorption, membrane and ionic separation mechanisms.',
     heroImage: '/images/turbine-plant.avif',
+    knowledgeCenterSlug: 'ip-aquvexis-water-treatment-architecture',
     technologies: [
-      tech(
+      {
+        ...tech(
         'depth-filtration',
         'Depth Filtration',
         'Depth Filtration',
@@ -842,8 +844,11 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ['Rapid plugging', 'Solids breakthrough', 'Uneven loading', 'Downstream fouling persists'],
         '/images/turbine-plant.avif',
         '/images/planta_converted.avif',
-      ),
-      tech(
+        ),
+        knowledgeCenterSlug: 'ip-aquvexis-depth-filtration',
+      },
+      {
+        ...tech(
         'adsovex',
         'ADSOVEX™',
         'Adsorptive Carbon Treatment',
@@ -857,8 +862,11 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ['Early breakthrough', 'Unexpected media exhaustion', 'Outlet quality drifts', 'Downstream treatment remains unstable'],
         '/images/turbine-plant.avif',
         '/images/planta_converted.avif',
-      ),
-      tech(
+        ),
+        knowledgeCenterSlug: 'ip-aquvexis-adsovex-adsorptive-carbon',
+      },
+      {
+        ...tech(
         'membravex',
         'MEMBRAVEX™',
         'Membrane Separation',
@@ -873,8 +881,11 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         '/images/turbine-plant.avif',
         '/images/planta_converted.avif',
         ['Reverse Osmosis', 'Ultrafiltration', 'Nanofiltration'],
-      ),
-      tech(
+        ),
+        knowledgeCenterSlug: 'ip-aquvexis-membravex-membrane-separation',
+      },
+      {
+        ...tech(
         'ionvexa',
         'IONVEXA™',
         'Ion Exchange',
@@ -888,8 +899,11 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ['Short service cycle', 'Hardness or ion leakage', 'Poor regeneration recovery', 'Outlet quality varies unexpectedly'],
         '/images/turbine-plant.avif',
         '/images/planta_converted.avif',
-      ),
-      tech(
+        ),
+        knowledgeCenterSlug: 'ip-aquvexis-ionvexa-ion-exchange',
+      },
+      {
+        ...tech(
         'electrodeionization',
         'Electrodeionization',
         'Electrodeionization',
@@ -903,7 +917,9 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ['Product-water resistivity or conductivity drifts', 'Pressure drop rises', 'Current demand changes unexpectedly', 'Scaling or fouling evidence develops'],
         '/images/turbine-plant.avif',
         '/images/planta_converted.avif',
-      ),
+        ),
+        knowledgeCenterSlug: 'ip-aquvexis-electrodeionization',
+      },
     ],
   },
 ] as const;
