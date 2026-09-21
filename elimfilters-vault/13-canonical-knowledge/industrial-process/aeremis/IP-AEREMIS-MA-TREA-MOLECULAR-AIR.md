@@ -100,6 +100,12 @@ cross_reference_write_allowed: false
 - Required outlet condition or protected-process objective
 - Media exhaustion, monitoring and replacement planning
 
+## Standards
+
+- ISO 10121-1:2014 — laboratory performance assessment of gas-phase air-cleaning media for general ventilation.
+- ISO 10121-2:2013 — laboratory performance assessment of gas-phase air-cleaning devices for general ventilation.
+- ISO 10121-3:2022 — classification system for gas-phase air-cleaning devices used to treat outdoor air.
+
 ## Shared Engineering
 
 - Flow Rate
