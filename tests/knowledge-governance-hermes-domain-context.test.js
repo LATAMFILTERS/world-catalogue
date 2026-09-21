@@ -117,3 +117,23 @@ test('Hermes accepts governed Industrial & Process PARTION research context', ()
   assert.equal(request.platform, PLATFORMS.PARTION);
   assert.equal(request.technology, TECHNOLOGIES.FUMEVRA);
 });
+
+
+test('Hermes accepts governed Industrial & Process COALVEX research context', () => {
+  const request = createHermesResearchRequest({
+    knowledge_gap_request_id: 'gap-ip-gas-001',
+    research_type: 'technical_knowledge',
+    knowledge_domain: KNOWLEDGE_DOMAINS.INDUSTRIAL_PROCESS,
+    industry: 'Oil & Gas',
+    system: SYSTEMS.INDUSTRIAL_PROCESS,
+    platform: PLATFORMS.COALVEX,
+    technology: TECHNOLOGIES.COALERIS,
+    technology_relation: 'confirmed',
+    application_relation: 'verified',
+    research_question: 'What gas and liquid conditions affect gas coalescence performance?'
+  });
+
+  assert.equal(validateHermesResearchRequest(request).valid, true);
+  assert.equal(request.platform, PLATFORMS.COALVEX);
+  assert.equal(request.technology, TECHNOLOGIES.COALERIS);
+});

@@ -86,9 +86,9 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
 
       {platform.selectionGuide?.length ? (
         <section className={styles.bandAlt}><div className={styles.inner}>
-          <p className={styles.eyebrow}>AIR TREATMENT SCOPE</p>
-          <h2 className={styles.h2}>Match the contamination problem to the treatment path.</h2>
-          <p className={styles.lead}>AEREMIS™ separates general particulate control, critical-air filtration and molecular treatment so each application starts from the actual air-quality problem instead of a generic filter form.</p>
+          <p className={styles.eyebrow}>{platform.selectionContext?.eyebrow ?? 'TREATMENT SCOPE'}</p>
+          <h2 className={styles.h2}>{platform.selectionContext?.title ?? 'Match the process problem to the treatment path.'}</h2>
+          <p className={styles.lead}>{platform.selectionContext?.lead ?? `${platform.name} organizes the available treatment mechanisms so selection begins with the actual process condition, contaminant behavior and required outcome.`}</p>
           <div className={styles.editorialColumns}>
             {platform.selectionGuide.map((item) => (
               <div key={item.technologySlug}>
@@ -144,6 +144,24 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
           ))}
         </div>
       </div></section>
+
+      {platform.knowledgeCenterSlug ? (
+        <section className={styles.band}><div className={styles.inner}>
+          <p className={styles.eyebrow}>TECHNICAL BASIS</p>
+          <h2 className={styles.h2}>Governed platform engineering reference</h2>
+          <div className={styles.twoColumnNotes}>
+            <article className={styles.noteBlock}>
+              <h3 className={styles.h3}>Canonical Knowledge Center reference</h3>
+              <p className={styles.body}>Approved treatment relationships, operating conditions and diagnostic guidance for {platform.name} are maintained in the governed ELIMFILTERS Knowledge Center.</p>
+              <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${platform.knowledgeCenterSlug}/`}>OPEN ENGINEERING REFERENCE →</Link></div>
+            </article>
+            <article className={styles.noteBlock}>
+              <h3 className={styles.h3}>Evidence before claims</h3>
+              <p className={styles.body}>Numeric performance, capacity, pressure-drop, service-life and outlet-condition claims remain tied to validated product or project evidence.</p>
+            </article>
+          </div>
+        </div></section>
+      ) : null}
 
       <section className={styles.ctaSection}><div className={styles.inner}>
         <p className={styles.eyebrow}>APPLICATION SUPPORT</p>

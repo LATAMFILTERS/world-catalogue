@@ -33,6 +33,12 @@ export interface IndustrialProcessPlatform {
   heroImage: string;
   heroVideo?: string;
   mediaImage?: string;
+  knowledgeCenterSlug?: string;
+  selectionContext?: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+  };
   selectionGuide?: readonly {
     title: string;
     body: string;
@@ -101,6 +107,12 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     heroImage: '/images/air-filters-lab.avif',
     heroVideo: '/images/Air%20Industrial-aviation%20(1).mp4',
     mediaImage: '/images/air%20industrial.jpg',
+    knowledgeCenterSlug: 'ip-aeremis-air-treatment-architecture',
+    selectionContext: {
+      eyebrow: 'AIR TREATMENT SCOPE',
+      title: 'Match the contamination problem to the treatment path.',
+      lead: 'AEREMIS™ separates general particulate control, critical-air filtration and molecular treatment so each application starts from the actual air-quality problem instead of a generic filter form.',
+    },
     selectionGuide: [
       {
         title: 'General particulate control',
@@ -232,6 +244,12 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     heroImage: '/images/planta_converted.avif',
     heroVideo: '/images/PARTION-VIDEO.mp4',
     mediaImage: '/images/PARTION%E2%84%A2.png',
+    knowledgeCenterSlug: 'ip-partion-dust-fume-architecture',
+    selectionContext: {
+      eyebrow: 'DUST & FUME TREATMENT SCOPE',
+      title: 'Match the process-generated particulate to the filtration path.',
+      lead: 'PARTION™ starts with the actual process source and particulate behavior so dust and fume filtration is resolved around loading, cleaning, airflow and service conditions rather than general ventilation duty.',
+    },
     selectionGuide: [
       {
         title: 'Fine dust & fume control',
@@ -331,39 +349,150 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     slug: 'coalvex',
     name: 'COALVEX™',
     descriptor: 'Gas Conditioning Technologies',
-    summary: 'Gas-stream conditioning for liquid aerosol control, coalescence and separation duties.',
+    summary: 'Gas-stream conditioning for entrained liquid aerosols, droplets and free-liquid carryover in natural-gas and industrial process-gas duties.',
+    positioning: 'COALVEX™ organizes gas conditioning by the liquid phase carried in the gas stream. Fine aerosols and small droplets are addressed through COALERIS™ gas coalescence, while bulk free liquid and larger-droplet carryover are addressed through the descriptive Gas-Liquid Separation path. Selection follows gas composition, flow, pressure, temperature, liquid loading, droplet behavior, turndown, drainage and the required downstream condition.',
     heroImage: '/images/oil&gas.avif',
+    knowledgeCenterSlug: 'ip-coalvex-gas-conditioning-architecture',
+    selectionContext: {
+      eyebrow: 'GAS CONDITIONING SCOPE',
+      title: 'Match the liquid carryover problem to the separation mechanism.',
+      lead: 'COALVEX™ separates fine aerosol coalescence from bulk gas-liquid separation so each project begins with the actual liquid form, loading pattern and downstream protection requirement.',
+    },
+    selectionGuide: [
+      {
+        title: 'Fine aerosol & droplet coalescence',
+        body: 'For fine liquid aerosols and small entrained droplets that require capture, coalescence into larger droplets and reliable drainage before the gas reaches sensitive downstream equipment.',
+        technologySlug: 'coaleris',
+      },
+      {
+        title: 'Bulk gas-liquid separation',
+        body: 'For free liquid, larger droplets, slugs or intermediate liquid carryover that should be removed before finer coalescing stages or downstream process equipment.',
+        technologySlug: 'gas-liquid-separation',
+      },
+    ],
+    qualificationGroups: [
+      {
+        title: 'Gas stream',
+        items: ['Gas composition and contaminants', 'Operating and design pressure', 'Temperature range', 'Flow rate, turndown and duty profile'],
+      },
+      {
+        title: 'Liquid challenge',
+        items: ['Aerosol or droplet size distribution', 'Liquid composition and loading rate', 'Continuous, intermittent or slug loading', 'Required downstream liquid condition'],
+      },
+      {
+        title: 'Integration & drainage',
+        items: ['Existing vessel or housing interface', 'Element orientation and sealing', 'Drainage path and liquid removal strategy', 'Materials compatibility, service access and pressure-system requirements'],
+      },
+    ],
     technologies: [
-      tech(
-        'coaleris',
-        'COALERIS™',
-        'Gas Coalescence',
-        true,
-        'TC-NG-01',
-        'Coalescing treatment for liquid aerosols and fine droplets carried in process or natural-gas streams.',
-        'Promote droplet capture and coalescence so entrained liquid can be separated from the gas stream.',
-        ['Fine aerosol capture', 'Droplet coalescence and drainage', 'Media and vessel selection around gas conditions'],
-        ['Natural-gas conditioning', 'Compressor protection', 'Gas transmission and distribution', 'Process-gas aerosol control'],
-        ['Gas composition and pressure', 'Aerosol size and liquid loading', 'Flow turndown', 'Drainage and vessel orientation'],
-        ['Liquid carryover downstream', 'Unexpected pressure-drop rise', 'Poor drainage', 'Short element life'],
-        '/images/oil&gas.avif',
-        '/images/separator-elimf.avif',
-      ),
-      tech(
-        'gas-liquid-separation',
-        'Gas-Liquid Separation',
-        'Gas-Liquid Separation',
-        false,
-        'TC-NG-02',
-        'Bulk and intermediate gas-liquid separation for free liquid, larger droplets and process carryover.',
-        'Separate free liquid and entrained droplets from a gas stream before finer coalescing or downstream equipment.',
-        ['Inertial separation', 'Droplet disengagement', 'Vessel and internals selection around flow and liquid loading'],
-        ['Natural-gas separation', 'Knockout and pre-separation duties', 'Compressor upstream protection', 'Process-gas conditioning'],
-        ['Variable gas and liquid flow', 'Slug or intermittent liquid loading', 'Pressure and temperature range', 'Available vessel residence and disengagement space'],
-        ['Liquid carryover', 'Flooding or poor drainage', 'Unstable separation at turndown', 'Unexpected downstream liquid loading'],
-        '/images/oil&gas.avif',
-        '/images/planta_converted.avif',
-      ),
+      {
+        ...tech(
+          'coaleris',
+          'COALERIS™',
+          'Gas Coalescence',
+          true,
+          'TC-NG-01',
+          'Gas coalescence for fine liquid aerosols and small entrained droplets in natural-gas and industrial process-gas streams.',
+          'Capture fine liquid aerosols, promote droplet growth through coalescence, and allow the separated liquid to drain away from the gas stream before sensitive downstream equipment.',
+          ['Fine aerosol capture within coalescing media', 'Droplet growth through fiber-media coalescence', 'Gravity-assisted drainage after droplet formation', 'Element sealing and flow-path control'],
+          ['Natural-gas conditioning', 'Compressor protection', 'Gas transmission and distribution', 'Process-gas aerosol control', 'Downstream equipment protection'],
+          ['Gas composition, pressure and temperature', 'Fine aerosol size and liquid loading', 'Flow rate and turndown', 'Liquid properties and drainage behavior', 'Continuous or variable process duty'],
+          ['Liquid carryover downstream', 'Unexpected differential-pressure rise', 'Poor drainage or re-entrainment', 'Short element service life', 'Evidence of bypass or seal failure'],
+          '/images/oil&gas.avif',
+          '/images/separator-elimf.avif',
+        ),
+        selectionInputs: [
+          'Gas composition and target liquid contaminant',
+          'Operating and design pressure',
+          'Temperature range',
+          'Gas flow rate and turndown',
+          'Aerosol or droplet size distribution',
+          'Liquid loading rate and variability',
+          'Liquid physical properties and drainage behavior',
+          'Existing vessel, housing, element orientation and sealing interface',
+          'Required downstream liquid condition or protected-equipment objective',
+          'Service access, drain arrangement and materials compatibility',
+        ],
+        engineeringNotes: [
+          {
+            title: 'Coalescence targets fine entrained liquid',
+            body: 'COALERIS™ is selected when the gas stream carries fine liquid aerosols or small droplets that are not reliably removed by bulk separation alone. The media captures droplets and promotes their growth so they can drain from the gas stream.',
+          },
+          {
+            title: 'Drainage is part of coalescing performance',
+            body: 'Captured liquid must leave the coalescing stage. Poor drainage, flooding or re-entrainment can undermine otherwise suitable media and increase downstream carryover.',
+          },
+          {
+            title: 'Gas conditions change element duty',
+            body: 'Pressure, temperature, gas composition, flow turndown, aerosol loading and liquid properties influence coalescence, differential pressure and service behavior. Selection cannot be reduced to element dimensions alone.',
+          },
+          {
+            title: 'The element is not the pressure vessel',
+            body: 'COALERIS™ identifies the ELIMFILTERS coalescing element family. Pressure vessels, separators, drains, instrumentation and piping remain system equipment unless separately specified.',
+          },
+        ],
+        knowledgeCenterSlug: 'ip-coalvex-coaleris-gas-coalescence',
+        customFaqs: [
+          ['What does COALERIS™ remove from a gas stream?', 'COALERIS™ is intended for fine liquid aerosols and small entrained droplets carried in natural-gas or industrial process-gas streams. The specific element and media depend on the gas conditions, liquid properties and required downstream condition.'],
+          ['How is gas coalescence different from bulk gas-liquid separation?', 'Bulk separation removes free liquid and larger droplets using vessel and disengagement mechanisms. Gas coalescence targets finer aerosols and small droplets by capturing them in coalescing media, growing them into larger droplets and allowing them to drain.'],
+          ['Why is drainage important in a coalescing element?', 'Coalesced liquid has to leave the media and the separation stage. Restricted drainage, flooding or re-entrainment can increase differential pressure and carry liquid downstream.'],
+          ['Can COALERIS™ be selected from a cross-reference or element size alone?', 'No. Selection requires gas composition, pressure, temperature, flow and turndown, aerosol size and loading, liquid properties, housing interface, drainage conditions and the required downstream result.'],
+        ],
+      },
+      {
+        ...tech(
+          'gas-liquid-separation',
+          'Gas-Liquid Separation',
+          'Gas-Liquid Separation',
+          false,
+          'TC-NG-02',
+          'Bulk and intermediate separation for free liquid, larger droplets and process carryover in gas streams.',
+          'Remove free liquid and larger entrained droplets from a gas stream before finer coalescence or downstream process equipment.',
+          ['Inertial or directional separation of heavier liquid phases', 'Droplet disengagement and gravity settling', 'Vessel residence, internals and drainage selected around flow and liquid loading'],
+          ['Natural-gas separation', 'Knockout and pre-separation duties', 'Compressor upstream protection', 'Process-gas conditioning', 'Upstream protection of fine coalescing stages'],
+          ['Variable gas and liquid flow', 'Slug or intermittent liquid loading', 'Pressure and temperature range', 'Available vessel residence and disengagement space', 'Drainage and level-control behavior'],
+          ['Liquid carryover downstream', 'Flooding or poor drainage', 'Unstable separation at turndown', 'Unexpected downstream liquid loading', 'Level-control or drain problems'],
+          '/images/oil&gas.avif',
+          '/images/planta_converted.avif',
+        ),
+        selectionInputs: [
+          'Gas composition and process duty',
+          'Operating and design pressure',
+          'Temperature range',
+          'Gas flow rate and turndown',
+          'Free-liquid rate, droplet size and slug potential',
+          'Liquid composition and density behavior',
+          'Available vessel volume, orientation and disengagement space',
+          'Drain, level-control and liquid-removal strategy',
+          'Required downstream liquid condition',
+          'Materials compatibility and pressure-system constraints',
+        ],
+        engineeringNotes: [
+          {
+            title: 'Bulk separation comes before fine coalescence when the duty requires it',
+            body: 'Free liquid, large droplets and slugs can overload a fine coalescing stage. Gas-Liquid Separation provides the descriptive pre-separation path where bulk liquid removal is needed before finer treatment.',
+          },
+          {
+            title: 'Residence and disengagement matter',
+            body: 'Separation behavior depends on gas velocity, liquid loading, droplet behavior, available disengagement space, internals and drainage. The mechanism belongs to the complete vessel duty rather than the filter element alone.',
+          },
+          {
+            title: 'Turndown can change separation behavior',
+            body: 'Changes in gas flow and liquid loading can alter residence, droplet trajectories and drainage behavior. Stable operation must be evaluated across the expected operating range.',
+          },
+          {
+            title: 'Gas-Liquid Separation remains descriptive',
+            body: 'This is an engineering treatment family beneath COALVEX™, not an independent ELIMFILTERS technology mark. Vessel architecture and application point do not become separate technology brands.',
+          },
+        ],
+        knowledgeCenterSlug: 'ip-coalvex-gas-liquid-separation',
+        customFaqs: [
+          ['What is Gas-Liquid Separation within COALVEX™?', 'It is the descriptive treatment path for removing free liquid, larger droplets and intermediate liquid carryover from a gas stream before finer coalescence or downstream equipment.'],
+          ['When is bulk separation used ahead of COALERIS™?', 'When the gas stream contains free liquid, large droplets, slugs or liquid loading that could overwhelm or destabilize a fine coalescing stage, a bulk separation step may be required first.'],
+          ['What conditions control gas-liquid separation performance?', 'Gas flow and turndown, pressure, temperature, liquid loading, droplet behavior, vessel geometry, disengagement space, internals and drainage all influence the result.'],
+          ['Is Gas-Liquid Separation an independent ELIMFILTERS technology brand?', 'No. It remains a descriptive engineering treatment family beneath COALVEX™ and maps to TC-NG-02.'],
+        ],
+      },
     ],
   },
   {
