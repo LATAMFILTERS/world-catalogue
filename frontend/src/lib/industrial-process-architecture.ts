@@ -483,7 +483,10 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Liquid carryover downstream', 'Unexpected differential-pressure change', 'Uneven element loading or fouling', 'Evidence of bypass or poor element seating', 'Restricted drainage or re-entrainment'],
           '/images/oil&gas.avif',
           '/images/Gas-Liquid%20Separation.png',
+          undefined,
+          '/images/Planta%20(1).mp4',
         ),
+        hideHeroPoster: true,
         selectionInputs: [
           'Gas composition and process duty',
           'Operating pressure and temperature range',
