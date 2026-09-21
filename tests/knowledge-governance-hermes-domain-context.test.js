@@ -166,3 +166,42 @@ test('Hermes accepts governed Industrial & Process FLUREXIS research context', (
     assert.equal(request.technology, technology);
   }
 });
+
+test('Hermes preserves the governed FLUREXIS to LUBREVA technology relation', () => {
+  const request = createHermesResearchRequest({
+    knowledge_gap_request_id: 'gap-ip-lubreva-001',
+    research_type: 'technical_knowledge',
+    knowledge_domain: KNOWLEDGE_DOMAINS.INDUSTRIAL_PROCESS,
+    industry: 'Manufacturing',
+    system: SYSTEMS.INDUSTRIAL_PROCESS,
+    platform: PLATFORMS.FLUREXIS,
+    technology: TECHNOLOGIES.LUBREVA,
+    technology_relation: 'confirmed',
+    application_relation: 'verified',
+    research_question: 'What lubrication-oil particulate and wear-debris conditions affect LUBREVA filtration duty?'
+  });
+
+  const validation = validateHermesResearchRequest(request);
+  assert.equal(validation.valid, true);
+  assert.equal(request.platform, PLATFORMS.FLUREXIS);
+  assert.equal(request.technology, TECHNOLOGIES.LUBREVA);
+});
+
+test('Hermes rejects a branded technology assigned to the wrong Industrial & Process platform', () => {
+  const request = createHermesResearchRequest({
+    knowledge_gap_request_id: 'gap-ip-cross-platform-001',
+    research_type: 'technical_knowledge',
+    knowledge_domain: KNOWLEDGE_DOMAINS.INDUSTRIAL_PROCESS,
+    industry: 'Manufacturing',
+    system: SYSTEMS.INDUSTRIAL_PROCESS,
+    platform: PLATFORMS.FLUREXIS,
+    technology: TECHNOLOGIES.HE_CRIVA,
+    technology_relation: 'confirmed',
+    application_relation: 'verified',
+    research_question: 'Invalid cross-platform technology relation'
+  });
+
+  const validation = validateHermesResearchRequest(request);
+  assert.equal(validation.valid, false);
+  assert.equal(validation.errors.includes('technology is not allowed for platform'), true);
+});
