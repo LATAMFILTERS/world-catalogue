@@ -482,7 +482,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Variable gas flow and turndown', 'Free-liquid, large-droplet or intermittent liquid loading', 'Pressure and temperature range', 'Existing housing and internal-element interface', 'Drainage path and liquid-removal conditions'],
           ['Liquid carryover downstream', 'Unexpected differential-pressure change', 'Uneven element loading or fouling', 'Evidence of bypass or poor element seating', 'Restricted drainage or re-entrainment'],
           '/images/oil&gas.avif',
-          '/images/planta_converted.avif',
+          '/images/Gas-Liquid%20Separation.png',
         ),
         selectionInputs: [
           'Gas composition and process duty',
