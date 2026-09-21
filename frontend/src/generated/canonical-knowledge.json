@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.1.0",
   "sourceAuthority": "13-canonical-knowledge",
-  "generatedAt": "2026-09-21T04:15:01.562Z",
-  "count": 46,
+  "generatedAt": "2026-09-21T05:00:17.623Z",
+  "count": 49,
   "records": [
     {
       "id": "HD-AIR-RADIAL-SEAL-HOUSING-COMPATIBILITY",
@@ -652,6 +652,459 @@
         "Media Saturation",
         "Service Life",
         "Installation"
+      ]
+    },
+    {
+      "id": "IP-COALVEX-COALERIS-GAS-COALESCENCE",
+      "slug": "ip-coalvex-coaleris-gas-coalescence",
+      "title": "COALERIS Gas Coalescence",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Oil & Gas",
+        "Manufacturing",
+        "Power Generation"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "COALVEX™"
+      ],
+      "technologies": [
+        "COALERIS™"
+      ],
+      "components": [
+        "Gas coalescing element",
+        "Coalescing media",
+        "Structural support and flow-path features",
+        "Element sealing interface",
+        "Liquid drainage path in the installed system"
+      ],
+      "problems": [
+        "Liquid aerosol carryover downstream",
+        "Unexpected differential-pressure rise",
+        "Poor drainage",
+        "Liquid re-entrainment",
+        "Short element life",
+        "Bypass or sealing evidence"
+      ],
+      "failureModes": [
+        "Coalescing-media saturation or overload",
+        "Poor liquid drainage or flooding",
+        "Re-entrainment of separated liquid",
+        "Element-to-housing bypass",
+        "Media or element mismatch to gas and liquid conditions"
+      ],
+      "symptoms": [
+        "Liquid appears downstream of the coalescing stage",
+        "Differential pressure rises outside the expected duty trend",
+        "Drainage becomes unstable or liquid accumulates in the stage",
+        "Element service interval shortens after gas or liquid conditions change",
+        "Downstream equipment shows evidence of liquid exposure"
+      ],
+      "rootCauses": [
+        "Fine-aerosol loading exceeds the validated element duty",
+        "Liquid properties or gas conditions differ from the selection basis",
+        "Drain path is restricted or unable to remove separated liquid",
+        "Gas velocity or turndown behavior promotes re-entrainment",
+        "Element sealing or seating allows bypass"
+      ],
+      "diagnosticMethods": [
+        "Confirm gas composition, pressure, temperature, flow and turndown.",
+        "Characterize aerosol size, liquid loading and liquid physical properties.",
+        "Inspect element seating, seals and intended flow path.",
+        "Inspect drainage behavior and evidence of flooding or re-entrainment.",
+        "Distinguish fine-aerosol coalescing problems from upstream bulk-liquid carryover."
+      ],
+      "correctiveActions": [
+        "Re-evaluate element and media selection when gas or liquid conditions differ from the selection basis.",
+        "Correct sealing or seating defects before attributing carryover solely to media performance.",
+        "Restore reliable drainage and remove causes of flooding or liquid accumulation.",
+        "Add or requalify upstream bulk separation when incoming free liquid or large-droplet loading overwhelms the coalescing stage."
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "COALERIS™ addresses fine liquid aerosols and small entrained droplets carried in natural-gas and industrial process-gas streams.",
+        "Coalescing media captures fine liquid droplets and promotes their growth into larger droplets that can drain away from the gas stream.",
+        "Reliable drainage is part of coalescing performance because retained liquid, flooding or re-entrainment can increase carryover and differential pressure.",
+        "Gas composition, pressure, temperature, flow turndown, aerosol loading and liquid properties affect coalescing duty and service behavior.",
+        "Element sealing and the intended flow path must be preserved to prevent bypass around the coalescing media.",
+        "COALERIS™ identifies the filter-element family and does not by itself represent the pressure vessel, separator, drains, instrumentation or piping as ELIMFILTERS products.",
+        "COALERIS™ maps to TC-NG-01 within the COALVEX™ platform."
+      ],
+      "operatingConditions": [
+        "Gas composition",
+        "Operating and design pressure",
+        "Temperature range",
+        "Gas flow and turndown",
+        "Aerosol size distribution",
+        "Liquid loading and variability",
+        "Liquid properties and drainage behavior",
+        "Required downstream liquid condition"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Differential Pressure",
+        "Sealing",
+        "Service Life",
+        "Installation",
+        "Failure Analysis"
+      ],
+      "keywords": [
+        "COALERIS Gas Coalescence",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Oil & Gas",
+        "Manufacturing",
+        "Power Generation",
+        "Industrial & Process",
+        "COALVEX™",
+        "COALERIS™",
+        "Gas coalescing element",
+        "Coalescing media",
+        "Structural support and flow-path features",
+        "Element sealing interface",
+        "Liquid drainage path in the installed system",
+        "Liquid aerosol carryover downstream",
+        "Unexpected differential-pressure rise",
+        "Poor drainage",
+        "Liquid re-entrainment",
+        "Short element life",
+        "Bypass or sealing evidence",
+        "Coalescing-media saturation or overload",
+        "Poor liquid drainage or flooding",
+        "Re-entrainment of separated liquid",
+        "Element-to-housing bypass",
+        "Media or element mismatch to gas and liquid conditions",
+        "Liquid appears downstream of the coalescing stage",
+        "Differential pressure rises outside the expected duty trend",
+        "Drainage becomes unstable or liquid accumulates in the stage",
+        "Element service interval shortens after gas or liquid conditions change",
+        "Downstream equipment shows evidence of liquid exposure",
+        "Fine-aerosol loading exceeds the validated element duty",
+        "Liquid properties or gas conditions differ from the selection basis",
+        "Drain path is restricted or unable to remove separated liquid",
+        "Gas velocity or turndown behavior promotes re-entrainment",
+        "Element sealing or seating allows bypass",
+        "Confirm gas composition, pressure, temperature, flow and turndown.",
+        "Characterize aerosol size, liquid loading and liquid physical properties.",
+        "Inspect element seating, seals and intended flow path.",
+        "Inspect drainage behavior and evidence of flooding or re-entrainment.",
+        "Distinguish fine-aerosol coalescing problems from upstream bulk-liquid carryover.",
+        "Re-evaluate element and media selection when gas or liquid conditions differ from the selection basis.",
+        "Correct sealing or seating defects before attributing carryover solely to media performance.",
+        "Restore reliable drainage and remove causes of flooding or liquid accumulation.",
+        "Add or requalify upstream bulk separation when incoming free liquid or large-droplet loading overwhelms the coalescing stage.",
+        "COALERIS™ addresses fine liquid aerosols and small entrained droplets carried in natural-gas and industrial process-gas streams.",
+        "Coalescing media captures fine liquid droplets and promotes their growth into larger droplets that can drain away from the gas stream.",
+        "Reliable drainage is part of coalescing performance because retained liquid, flooding or re-entrainment can increase carryover and differential pressure.",
+        "Gas composition, pressure, temperature, flow turndown, aerosol loading and liquid properties affect coalescing duty and service behavior.",
+        "Element sealing and the intended flow path must be preserved to prevent bypass around the coalescing media.",
+        "COALERIS™ identifies the filter-element family and does not by itself represent the pressure vessel, separator, drains, instrumentation or piping as ELIMFILTERS products.",
+        "COALERIS™ maps to TC-NG-01 within the COALVEX™ platform.",
+        "Gas composition",
+        "Operating and design pressure",
+        "Temperature range",
+        "Gas flow and turndown",
+        "Aerosol size distribution",
+        "Liquid loading and variability",
+        "Liquid properties and drainage behavior",
+        "Required downstream liquid condition",
+        "Flow Rate",
+        "Differential Pressure",
+        "Sealing",
+        "Service Life",
+        "Installation",
+        "Failure Analysis"
+      ]
+    },
+    {
+      "id": "IP-COALVEX-GAS-CONDITIONING-ARCHITECTURE",
+      "slug": "ip-coalvex-gas-conditioning-architecture",
+      "title": "COALVEX Gas Conditioning Architecture",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Oil & Gas",
+        "Manufacturing",
+        "Power Generation"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "COALVEX™"
+      ],
+      "technologies": [
+        "COALERIS™"
+      ],
+      "components": [
+        "Gas coalescing elements and media",
+        "Bulk or intermediate separation internals where applicable",
+        "Element-to-housing sealing interfaces",
+        "Liquid drainage path",
+        "Installed pressure vessel, separator, drains and instrumentation as system context"
+      ],
+      "problems": [
+        "Fine liquid aerosol carryover",
+        "Free-liquid or large-droplet carryover",
+        "Downstream compressor or equipment liquid exposure",
+        "Poor drainage or liquid re-entrainment",
+        "Unexpected differential-pressure rise",
+        "Unstable separation across flow turndown"
+      ],
+      "failureModes": [],
+      "symptoms": [],
+      "rootCauses": [],
+      "diagnosticMethods": [
+        "Determine whether the incoming liquid challenge is fine aerosol, larger entrained droplets, free liquid or a combination.",
+        "Review gas composition, pressure, temperature, flow rate and turndown.",
+        "Characterize liquid loading, droplet behavior and liquid physical properties.",
+        "Inspect element seating, sealing, vessel condition and the liquid drainage path.",
+        "Distinguish coalescing-media problems from bulk-separation, drainage or vessel-operating problems."
+      ],
+      "correctiveActions": [],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "COALVEX™ organizes gas conditioning around the liquid phase carried by natural-gas and industrial process-gas streams.",
+        "COALERIS™ is the COALVEX™ family for fine liquid-aerosol and small-droplet coalescence and maps to TC-NG-01.",
+        "Gas-Liquid Separation is the descriptive COALVEX™ path for free liquid, larger droplets and bulk or intermediate separation and maps to TC-NG-02.",
+        "Bulk separation and fine coalescence are distinct mechanisms and may be staged when the incoming liquid load requires pre-separation before fine aerosol treatment.",
+        "Treatment selection depends on gas composition, flow, pressure, temperature, liquid form and loading, droplet behavior, turndown, drainage and required downstream condition.",
+        "Vessel architecture, application point and system configuration do not become independent technology marks."
+      ],
+      "operatingConditions": [
+        "Natural-gas or industrial process-gas duty",
+        "Gas composition",
+        "Operating and design pressure",
+        "Temperature range",
+        "Gas flow rate and turndown",
+        "Aerosol or droplet size distribution",
+        "Liquid loading and variability",
+        "Drainage and liquid-removal behavior"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Differential Pressure",
+        "Sealing",
+        "Service Life",
+        "Installation",
+        "Failure Analysis"
+      ],
+      "keywords": [
+        "COALVEX Gas Conditioning Architecture",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Oil & Gas",
+        "Manufacturing",
+        "Power Generation",
+        "Industrial & Process",
+        "COALVEX™",
+        "COALERIS™",
+        "Gas coalescing elements and media",
+        "Bulk or intermediate separation internals where applicable",
+        "Element-to-housing sealing interfaces",
+        "Liquid drainage path",
+        "Installed pressure vessel, separator, drains and instrumentation as system context",
+        "Fine liquid aerosol carryover",
+        "Free-liquid or large-droplet carryover",
+        "Downstream compressor or equipment liquid exposure",
+        "Poor drainage or liquid re-entrainment",
+        "Unexpected differential-pressure rise",
+        "Unstable separation across flow turndown",
+        "Determine whether the incoming liquid challenge is fine aerosol, larger entrained droplets, free liquid or a combination.",
+        "Review gas composition, pressure, temperature, flow rate and turndown.",
+        "Characterize liquid loading, droplet behavior and liquid physical properties.",
+        "Inspect element seating, sealing, vessel condition and the liquid drainage path.",
+        "Distinguish coalescing-media problems from bulk-separation, drainage or vessel-operating problems.",
+        "COALVEX™ organizes gas conditioning around the liquid phase carried by natural-gas and industrial process-gas streams.",
+        "COALERIS™ is the COALVEX™ family for fine liquid-aerosol and small-droplet coalescence and maps to TC-NG-01.",
+        "Gas-Liquid Separation is the descriptive COALVEX™ path for free liquid, larger droplets and bulk or intermediate separation and maps to TC-NG-02.",
+        "Bulk separation and fine coalescence are distinct mechanisms and may be staged when the incoming liquid load requires pre-separation before fine aerosol treatment.",
+        "Treatment selection depends on gas composition, flow, pressure, temperature, liquid form and loading, droplet behavior, turndown, drainage and required downstream condition.",
+        "Vessel architecture, application point and system configuration do not become independent technology marks.",
+        "Natural-gas or industrial process-gas duty",
+        "Gas composition",
+        "Operating and design pressure",
+        "Temperature range",
+        "Gas flow rate and turndown",
+        "Aerosol or droplet size distribution",
+        "Liquid loading and variability",
+        "Drainage and liquid-removal behavior",
+        "Flow Rate",
+        "Differential Pressure",
+        "Sealing",
+        "Service Life",
+        "Installation",
+        "Failure Analysis"
+      ]
+    },
+    {
+      "id": "IP-COALVEX-GAS-LIQUID-SEPARATION",
+      "slug": "ip-coalvex-gas-liquid-separation",
+      "title": "Gas-Liquid Separation for Industrial Gas Conditioning",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Oil & Gas",
+        "Manufacturing",
+        "Power Generation"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "COALVEX™"
+      ],
+      "technologies": [
+        "None assigned"
+      ],
+      "components": [
+        "Gas-liquid separation vessel or chamber",
+        "Separation internals where applicable",
+        "Liquid disengagement volume",
+        "Drain and level-control path",
+        "Downstream interface to finer coalescing or process equipment"
+      ],
+      "problems": [
+        "Free-liquid carryover",
+        "Large-droplet carryover",
+        "Slug or intermittent liquid loading",
+        "Flooding",
+        "Poor drainage",
+        "Unstable separation across turndown"
+      ],
+      "failureModes": [
+        "Insufficient disengagement for the actual gas and liquid duty",
+        "Flooding caused by excessive liquid load or poor drainage",
+        "Re-entrainment at unfavorable gas velocity",
+        "Level-control or drain malfunction",
+        "Bulk separation stage undersized for slug or variable loading"
+      ],
+      "symptoms": [
+        "Free liquid appears downstream",
+        "Separation becomes unstable as gas flow changes",
+        "Liquid level rises unexpectedly",
+        "Drainage cannot keep pace with incoming liquid",
+        "Fine downstream coalescing stages overload prematurely"
+      ],
+      "rootCauses": [
+        "Gas or liquid loading differs from the design basis",
+        "Vessel residence or disengagement space is inadequate for the actual duty",
+        "Drain or level-control function is restricted",
+        "Gas velocity promotes droplet carryover or re-entrainment",
+        "Slug loading was not included in the separation basis"
+      ],
+      "diagnosticMethods": [
+        "Review gas flow, turndown, pressure and temperature.",
+        "Quantify free-liquid rate, larger-droplet loading and slug potential.",
+        "Inspect drain and level-control behavior.",
+        "Review vessel orientation, internals and available disengagement space.",
+        "Check whether downstream fine coalescers are receiving excessive bulk liquid."
+      ],
+      "correctiveActions": [
+        "Restore drainage and level-control function before changing downstream coalescing elements.",
+        "Re-evaluate vessel duty when actual gas or liquid loading differs materially from the selection basis.",
+        "Requalify the separation architecture when slug loading or turndown exceeds the original operating envelope.",
+        "Protect fine coalescing stages from bulk-liquid loading when the process requires staged separation."
+      ],
+      "maintenanceProcedures": [],
+      "procedures": [],
+      "technicalRelationships": [
+        "Gas-Liquid Separation addresses free liquid, larger entrained droplets and bulk or intermediate liquid carryover in gas streams.",
+        "Bulk separation can be used upstream of fine coalescence when free-liquid, large-droplet or slug loading would overload a coalescing stage.",
+        "Separation behavior depends on gas velocity and turndown, liquid loading, droplet behavior, vessel geometry, disengagement space, internals and drainage.",
+        "Stable drainage and level control are required to prevent flooding and downstream liquid carryover.",
+        "Gas-Liquid Separation remains descriptive and maps to TC-NG-02 beneath COALVEX™."
+      ],
+      "operatingConditions": [
+        "Gas flow and turndown",
+        "Operating and design pressure",
+        "Temperature range",
+        "Free-liquid rate",
+        "Droplet-size distribution",
+        "Slug or intermittent liquid loading",
+        "Vessel residence and disengagement space",
+        "Drainage and level-control behavior"
+      ],
+      "standards": [],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Differential Pressure",
+        "Service Life",
+        "Installation",
+        "Failure Analysis"
+      ],
+      "keywords": [
+        "Gas-Liquid Separation for Industrial Gas Conditioning",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Oil & Gas",
+        "Manufacturing",
+        "Power Generation",
+        "Industrial & Process",
+        "COALVEX™",
+        "None assigned",
+        "Gas-liquid separation vessel or chamber",
+        "Separation internals where applicable",
+        "Liquid disengagement volume",
+        "Drain and level-control path",
+        "Downstream interface to finer coalescing or process equipment",
+        "Free-liquid carryover",
+        "Large-droplet carryover",
+        "Slug or intermittent liquid loading",
+        "Flooding",
+        "Poor drainage",
+        "Unstable separation across turndown",
+        "Insufficient disengagement for the actual gas and liquid duty",
+        "Flooding caused by excessive liquid load or poor drainage",
+        "Re-entrainment at unfavorable gas velocity",
+        "Level-control or drain malfunction",
+        "Bulk separation stage undersized for slug or variable loading",
+        "Free liquid appears downstream",
+        "Separation becomes unstable as gas flow changes",
+        "Liquid level rises unexpectedly",
+        "Drainage cannot keep pace with incoming liquid",
+        "Fine downstream coalescing stages overload prematurely",
+        "Gas or liquid loading differs from the design basis",
+        "Vessel residence or disengagement space is inadequate for the actual duty",
+        "Drain or level-control function is restricted",
+        "Gas velocity promotes droplet carryover or re-entrainment",
+        "Slug loading was not included in the separation basis",
+        "Review gas flow, turndown, pressure and temperature.",
+        "Quantify free-liquid rate, larger-droplet loading and slug potential.",
+        "Inspect drain and level-control behavior.",
+        "Review vessel orientation, internals and available disengagement space.",
+        "Check whether downstream fine coalescers are receiving excessive bulk liquid.",
+        "Restore drainage and level-control function before changing downstream coalescing elements.",
+        "Re-evaluate vessel duty when actual gas or liquid loading differs materially from the selection basis.",
+        "Requalify the separation architecture when slug loading or turndown exceeds the original operating envelope.",
+        "Protect fine coalescing stages from bulk-liquid loading when the process requires staged separation.",
+        "Gas-Liquid Separation addresses free liquid, larger entrained droplets and bulk or intermediate liquid carryover in gas streams.",
+        "Bulk separation can be used upstream of fine coalescence when free-liquid, large-droplet or slug loading would overload a coalescing stage.",
+        "Separation behavior depends on gas velocity and turndown, liquid loading, droplet behavior, vessel geometry, disengagement space, internals and drainage.",
+        "Stable drainage and level control are required to prevent flooding and downstream liquid carryover.",
+        "Gas-Liquid Separation remains descriptive and maps to TC-NG-02 beneath COALVEX™.",
+        "Gas flow and turndown",
+        "Operating and design pressure",
+        "Temperature range",
+        "Free-liquid rate",
+        "Droplet-size distribution",
+        "Vessel residence and disengagement space",
+        "Drainage and level-control behavior",
+        "Flow Rate",
+        "Differential Pressure",
+        "Service Life",
+        "Installation",
+        "Failure Analysis"
       ]
     },
     {
