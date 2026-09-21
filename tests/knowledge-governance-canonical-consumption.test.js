@@ -68,6 +68,26 @@ test('canonical projection contains governed FLUREXIS fluid-conditioning knowled
   }
 });
 
+test('canonical search resolves LUBREVA industrial lubrication knowledge', () => {
+  const hits = searchCanonicalKnowledge('LUBREVA industrial lubrication filtration wear debris viscosity');
+  assert.ok(hits.length > 0);
+  assert.equal(hits[0].id, 'IP-FLUREXIS-LUBREVA-LUBRICATION-FILTRATION');
+  assert.match(hits[0].body, /wear debris/i);
+  assert.match(hits[0].body, /viscosity/i);
+});
+
+test('approved technical knowledge serves LUBREVA canonical knowledge before external retrieval', async () => {
+  const result = await queryApprovedTechnicalKnowledge({
+    question: 'How does LUBREVA handle wear debris in industrial lubrication filtration?',
+    equipment: {},
+    system: 'Industrial & Process'
+  });
+  assert.equal(result.status, 'validated');
+  assert.equal(result.canonical_authority, '13-canonical-knowledge');
+  assert.equal(result.source_count, 1);
+  assert.match(result.evidence[0].source_title, /LUBREVA Industrial Lubrication Filtration/);
+});
+
 test('AI governance client consumes canonical Nodal knowledge before external retrieval for generic questions', async () => {
   const result = await queryApprovedTechnicalKnowledge({ question: 'How does oil filter bypass restriction work?', equipment: {}, system: 'Lube/Oil Protection Systems' });
   assert.equal(result.status, 'validated');
