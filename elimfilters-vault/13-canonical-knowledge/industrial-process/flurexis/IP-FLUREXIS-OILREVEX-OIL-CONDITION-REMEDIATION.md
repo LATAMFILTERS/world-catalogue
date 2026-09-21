@@ -118,6 +118,13 @@ cross_reference_write_allowed: false
 - Offline flow and reservoir turnover
 - Required treatment endpoint
 
+## Standards
+
+- ASTM D7843-25e1 — membrane-patch colorimetry for lubricant-generated insoluble color bodies in in-service turbine oils.
+- ASTM D664-24 — acid number of petroleum products and lubricants by potentiometric titration.
+- ASTM D2272-22 — oxidation stability of steam-turbine oils by rotating pressure vessel.
+- These methods diagnose or trend oil condition; they do not by themselves certify the removal performance or service life of OILREVEX™ remediation media.
+
 ## Shared Engineering
 
 - Contaminant Loading
