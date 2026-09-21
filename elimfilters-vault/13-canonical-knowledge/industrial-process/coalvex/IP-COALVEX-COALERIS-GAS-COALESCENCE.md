@@ -132,6 +132,13 @@ cross_reference_write_allowed: false
 - Required downstream liquid condition
 - Existing vessel, element orientation, sealing and drain arrangement
 
+## Standards
+
+- ISO 13686:2013 — natural-gas quality designation used as process context for natural-gas applications; it is not a coalescer-element performance certification.
+- ISO 12500-1:2007 — coalescing-filter pressure-drop and oil-aerosol removal testing for compressed-air duty only; applicability must not be extended automatically to natural gas.
+- ISO 8573-1:2010 — compressed-air purity classes where the COALERIS™ duty is compressed air.
+- ISO 8573-2:2018 — compressed-air liquid-oil and oil-aerosol measurement where that contaminant and duty apply.
+
 ## Shared Engineering
 
 - Flow Rate
