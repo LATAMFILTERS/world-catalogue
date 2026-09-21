@@ -164,6 +164,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/general%20filters%20(1).mp4',
         ),
         hideHeroPoster: true,
+        knowledgeCenterSlug: 'ip-aeremis-general-air-filtration',
       },
       {
         ...tech(
@@ -184,6 +185,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/HE-CRIVA-%20VIDEO%20(1).mp4',
         ),
         hideHeroPoster: true,
+        knowledgeCenterSlug: 'ip-aeremis-he-criva-critical-air',
       },
       {
         ...tech(
