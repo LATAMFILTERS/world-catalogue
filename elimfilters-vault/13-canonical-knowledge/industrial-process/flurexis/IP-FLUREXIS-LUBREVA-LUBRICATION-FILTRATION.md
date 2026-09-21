@@ -116,6 +116,16 @@ cross_reference_write_allowed: false
 - Full-flow or offline architecture
 - Coexisting water or degradation condition
 
+## Standards
+
+- ISO 16889:2022 — multi-pass filter-element performance method where the LUBREVA™ element and test fluid are qualified within that methodology; it is not a universal in-service lubrication certification.
+- ISO 4406:2021 — solid-particle cleanliness coding where the lubrication program specifies ISO cleanliness reporting.
+- ISO 3968:2017 — differential-pressure-versus-flow evaluation where the filter configuration is within scope.
+- ISO 2941:2009 — collapse/burst pressure verification for applicable filter-element constructions.
+- ISO 2942:2018 — fabrication-integrity and first-bubble-point verification for applicable filter elements.
+- ISO 2943:1998 — material compatibility verification where hydraulic-fluid-power element methodology is applicable to the designated lubricant.
+- ISO 11171:2022 — calibration of automatic particle counters; its scope includes engine oil and other petroleum-based fluids.
+
 ## Shared Engineering
 
 - Filtration Efficiency
