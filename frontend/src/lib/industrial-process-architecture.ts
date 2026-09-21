@@ -174,6 +174,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ['Odor or gas breakthrough', 'Accelerated media exhaustion', 'Unstable outlet quality', 'Unexpected humidity sensitivity'],
         '/images/air-filters-lab.avif',
         '/images/MATREA.png',
+        undefined,
+        '/images/MA_TREA-VIDEO.mp4',
       ),
     ],
   },
