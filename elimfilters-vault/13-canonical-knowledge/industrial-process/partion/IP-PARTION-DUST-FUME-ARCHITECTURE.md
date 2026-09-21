@@ -70,6 +70,13 @@ cross_reference_write_allowed: false
 - Cleaning or replacement strategy
 - Required downstream, recirculation or discharge condition
 
+## Standards
+
+- ISO 16891:2016 — evaluation of degradation characteristics of cleanable industrial filter media.
+- ISO 22031:2021 — sampling and testing of cleanable filter media taken from operating filter systems.
+- ISO 21904 series — welding-fume capture/separation equipment requirements where the application is welding or an allied process; equipment-level scope must not be represented as independent cartridge certification.
+- ASTM D6830-02(2022) — pressure-drop and filtration-performance characterization of cleanable filter media.
+
 ## Shared Engineering
 
 - Differential Pressure
