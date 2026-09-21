@@ -524,6 +524,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     summary: 'Industrial hydraulic- and lubrication-fluid conditioning for solid contamination, water and selected oil-degradation products.',
     positioning: 'FLUREXIS™ organizes fluid conditioning by the contamination mechanism that must be controlled. HYLTRIS™ and LUBREVA™ address solid-particle cleanliness in hydraulic and lubrication circuits, DEWATIS™ addresses water in its relevant forms, and OILREVEX™ addresses selected degradation products that conventional particulate filtration does not resolve. Selection follows fluid chemistry, viscosity and temperature, flow and pressure duty, cleanliness objective, water state, degradation mechanism, equipment sensitivity and the required verification method.',
     heroImage: '/images/oil-hand.avif',
+    mediaImage: '/images/FLUREXIS%E2%84%A2.png',
     knowledgeCenterSlug: 'ip-flurexis-fluid-conditioning-architecture',
     selectionContext: {
       eyebrow: 'FLUID CONDITIONING SCOPE',
