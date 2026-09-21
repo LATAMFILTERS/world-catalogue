@@ -14,6 +14,7 @@ export interface IndustrialProcessTechnology {
   heroImage: string;
   mediaImage: string;
   heroVideo?: string;
+  hideHeroPoster?: boolean;
   subfamilies?: readonly string[];
   engineeringNotes?: readonly {
     title: string;
@@ -269,6 +270,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/planta_converted.avif',
           '/images/FUMEVRA%E2%84%A2.png',
         ),
+        heroVideo: '/images/fumevra-%20video.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Process generating the dust or fume and source-capture position',
           'Particle size, morphology, concentration and loading variability',

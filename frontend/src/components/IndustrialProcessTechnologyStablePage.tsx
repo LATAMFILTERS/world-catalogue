@@ -90,7 +90,7 @@ export function IndustrialProcessTechnologyStablePage({
             loop
             playsInline
             preload="auto"
-            poster={technology.heroImage}
+            poster={technology.hideHeroPoster ? undefined : technology.heroImage}
             aria-hidden="true"
           >
             <source src={technology.heroVideo} type="video/mp4" />
