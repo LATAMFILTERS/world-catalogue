@@ -88,6 +88,57 @@ test('approved technical knowledge serves LUBREVA canonical knowledge before ext
   assert.match(result.evidence[0].source_title, /LUBREVA Industrial Lubrication Filtration/);
 });
 
+test('all Industrial & Process canonical records expose governed standards', () => {
+  const records = generatedCanonicalKnowledge.records.filter(
+    r => r.domain === 'INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN'
+  );
+  assert.equal(records.length, 20);
+  for (const record of records) {
+    assert.ok(record.standards.length > 0, `${record.id} must expose applicable standards`);
+  }
+});
+
+test('AQUVEXIS canonical projection covers platform and treatment families', () => {
+  const ids = [
+    'IP-AQUVEXIS-WATER-TREATMENT-ARCHITECTURE',
+    'IP-AQUVEXIS-DEPTH-FILTRATION',
+    'IP-AQUVEXIS-ADSOVEX-ADSORPTIVE-CARBON',
+    'IP-AQUVEXIS-MEMBRAVEX-MEMBRANE-SEPARATION',
+    'IP-AQUVEXIS-IONVEXA-ION-EXCHANGE',
+    'IP-AQUVEXIS-ELECTRODEIONIZATION',
+  ];
+  for (const id of ids) {
+    const record = generatedCanonicalKnowledge.records.find(r => r.id === id);
+    assert.ok(record);
+    assert.deepEqual(record.platforms, ['AQUVEXIS™']);
+    assert.ok(record.standards.length > 0);
+  }
+});
+
+test('approved technical knowledge carries governed LUBREVA standards into HERMES context', async () => {
+  const result = await queryApprovedTechnicalKnowledge({
+    question: 'Which standards and test methods govern LUBREVA industrial lubrication filtration?',
+    equipment: {},
+    system: 'Industrial & Process'
+  });
+  assert.equal(result.status, 'validated');
+  assert.equal(result.canonical_authority, '13-canonical-knowledge');
+  assert.match(result.answer, /ISO 16889:2022/);
+  assert.match(result.answer, /ISO 4406:2021/);
+});
+
+test('approved technical knowledge carries governed AQUVEXIS standards into HERMES context', async () => {
+  const result = await queryApprovedTechnicalKnowledge({
+    question: 'Which standards apply to MEMBRAVEX membrane separation in AQUVEXIS?',
+    equipment: {},
+    system: 'Industrial & Process'
+  });
+  assert.equal(result.status, 'validated');
+  assert.equal(result.canonical_authority, '13-canonical-knowledge');
+  assert.match(result.answer, /ISO 20468-5:2021/);
+  assert.match(result.answer, /ISO 25175:2026/);
+});
+
 test('AI governance client consumes canonical Nodal knowledge before external retrieval for generic questions', async () => {
   const result = await queryApprovedTechnicalKnowledge({ question: 'How does oil filter bypass restriction work?', equipment: {}, system: 'Lube/Oil Protection Systems' });
   assert.equal(result.status, 'validated');
