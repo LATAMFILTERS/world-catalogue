@@ -101,6 +101,13 @@ cross_reference_write_allowed: false
 - Vessel residence and disengagement space
 - Drainage and level-control behavior
 
+## Standards
+
+- ISO 13686:2013 — natural-gas quality designation used as process context for natural-gas applications; it is not a separation-element certification.
+- ISO 8573-1:2010 — compressed-air purity classes where the separation duty is compressed air.
+- ISO 8573-9:2004 — compressed-air liquid-water measurement where free-water separation is being verified.
+- ISO 8573-2:2018 — compressed-air liquid-oil and oil-aerosol measurement where oil carryover is the measured challenge.
+
 ## Shared Engineering
 
 - Flow Rate
