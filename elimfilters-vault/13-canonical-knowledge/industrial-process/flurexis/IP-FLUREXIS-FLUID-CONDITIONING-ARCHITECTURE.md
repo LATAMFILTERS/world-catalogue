@@ -122,6 +122,16 @@ cross_reference_write_allowed: false
 - Equipment sensitivity
 - Required verification method
 
+## Standards
+
+- ISO 16889:2022 — multi-pass evaluation of hydraulic filter-element particulate-removal, contaminant-capacity and differential-pressure performance where that element test method applies.
+- ISO 4406:2021 — coding of solid-particle contamination level in hydraulic fluids; also used as a cleanliness-reporting reference where specified for industrial fluid programs.
+- ISO 3968:2017 — differential-pressure-versus-flow evaluation of hydraulic filters.
+- ISO 2941:2009 / ISO 2942:2018 / ISO 2943:1998 — collapse/burst, fabrication integrity/bubble point and material-compatibility verification for hydraulic filter elements.
+- ISO 11171:2022 and ISO 11500:2022 with Amendment 1:2026 — particle-counter calibration and liquid-sample particle counting where the fluid and measurement method are within scope.
+- ISO 12937:2000 and ASTM D6304-25 — water determination by coulometric Karl Fischer where applicable to DEWATIS™ verification.
+- ASTM D7843-25e1, ASTM D664-24 and ASTM D2272-22 — oil-condition diagnostic methods applicable to selected OILREVEX™ duties.
+
 ## Shared Engineering
 
 - Flow Rate
