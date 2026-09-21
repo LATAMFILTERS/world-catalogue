@@ -97,3 +97,23 @@ test('Hermes rejects an AEREMIS platform inside Light Duty', () => {
   assert.equal(validation.valid, false);
   assert.equal(validation.errors.includes('platform is not allowed for knowledge_domain'), true);
 });
+
+
+test('Hermes accepts governed Industrial & Process PARTION research context', () => {
+  const request = createHermesResearchRequest({
+    knowledge_gap_request_id: 'gap-ip-dust-001',
+    research_type: 'technical_knowledge',
+    knowledge_domain: KNOWLEDGE_DOMAINS.INDUSTRIAL_PROCESS,
+    industry: 'Manufacturing',
+    system: SYSTEMS.INDUSTRIAL_PROCESS,
+    platform: PLATFORMS.PARTION,
+    technology: TECHNOLOGIES.FUMEVRA,
+    technology_relation: 'confirmed',
+    application_relation: 'verified',
+    research_question: 'What process conditions affect fine-dust and fume filtration performance?'
+  });
+
+  assert.equal(validateHermesResearchRequest(request).valid, true);
+  assert.equal(request.platform, PLATFORMS.PARTION);
+  assert.equal(request.technology, TECHNOLOGIES.FUMEVRA);
+});
