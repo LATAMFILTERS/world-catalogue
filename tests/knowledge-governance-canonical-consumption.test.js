@@ -25,6 +25,15 @@ test('backend canonical search resolves validated bypass engineering knowledge',
   assert.match(answer.sourceId, /^CANONICAL-/);
 });
 
+test('canonical projection contains governed FUMEVRA process-dust knowledge', () => {
+  const record = generatedCanonicalKnowledge.records.find(r => r.id === 'IP-PARTION-FUMEVRA-FINE-DUST-FUME');
+  assert.ok(record);
+  assert.deepEqual(record.platforms, ['PARTION™']);
+  assert.deepEqual(record.technologies, ['FUMEVRA™']);
+  assert.ok(record.technicalRelationships.some(x => /pulse-jet cleaning/i.test(x)));
+  assert.ok(record.maintenanceProcedures.some(x => /differential pressure/i.test(x)));
+});
+
 test('AI governance client consumes canonical Nodal knowledge before external retrieval for generic questions', async () => {
   const result = await queryApprovedTechnicalKnowledge({ question: 'How does oil filter bypass restriction work?', equipment: {}, system: 'Lube/Oil Protection Systems' });
   assert.equal(result.status, 'validated');
