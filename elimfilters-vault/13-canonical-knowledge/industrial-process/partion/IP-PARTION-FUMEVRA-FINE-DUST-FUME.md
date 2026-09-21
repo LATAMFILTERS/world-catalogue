@@ -128,6 +128,13 @@ cross_reference_write_allowed: false
 - Source-capture and airflow-distribution condition
 - Required downstream or discharge condition
 
+## Standards
+
+- ISO 16891:2016 — degradation testing for cleanable industrial filter media under standardized simulated conditions.
+- ISO 22031:2021 — sampling and test method for cleanable filter media removed from systems in operation.
+- ISO 21904-2:2020 — separation-efficiency testing for welding-fume separation equipment when that system duty applies; the standard explicitly does not test filter cartridges independently of their equipment.
+- ASTM D6830-02(2022) — pressure-drop and filtration-performance characterization of cleanable filter media.
+
 ## Shared Engineering
 
 - Differential Pressure
