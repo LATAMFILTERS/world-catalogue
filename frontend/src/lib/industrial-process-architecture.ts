@@ -173,7 +173,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ['Known contaminant chemistry', 'Variable concentration and humidity', 'Required contact time', 'Media exhaustion and replacement planning'],
         ['Odor or gas breakthrough', 'Accelerated media exhaustion', 'Unstable outlet quality', 'Unexpected humidity sensitivity'],
         '/images/air-filters-lab.avif',
-        '/images/planta_converted.avif',
+        '/images/MATREA.png',
       ),
     ],
   },
