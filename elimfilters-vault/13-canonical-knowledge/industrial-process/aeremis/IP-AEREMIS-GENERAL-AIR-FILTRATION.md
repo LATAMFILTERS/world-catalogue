@@ -60,6 +60,14 @@ cross_reference_write_allowed: false
 - Space and service-access constraints
 - Pressure-drop limits across the air-handling system
 
+## Standards
+
+- ISO 16890-1:2016 — ePM-based classification and general requirements for air filters used in general ventilation.
+- ISO 16890-2:2022 — measurement of fractional efficiency and airflow resistance.
+- ISO 16890-3:2024 — gravimetric efficiency and airflow resistance versus captured test-dust mass.
+- ISO 16890-4:2022 — conditioning method used to determine minimum fractional test efficiency.
+- ISO 29462:2022 — in-situ field testing of general ventilation filtration devices and systems where field verification is required.
+
 ## Shared Engineering
 
 - Differential Pressure
