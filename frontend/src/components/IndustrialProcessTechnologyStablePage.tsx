@@ -6,6 +6,7 @@ import {
   industrialProcessPlatformUrl,
   industrialProcessTechnologyUrl,
 } from '@/lib/industrial-process-architecture';
+import { getCanonicalKnowledgeBySlug } from '@/lib/services/canonical-knowledge-service';
 
 function coreLabel(core: string | readonly string[]) {
   return typeof core === 'string' ? core : core.join(' / ');
@@ -47,6 +48,8 @@ export function IndustrialProcessTechnologyStablePage({
 }) {
   const url = `https://elimfilters.com${industrialProcessTechnologyUrl(platform.slug, technology.slug)}`;
   const faqs = faqItems(platform, technology);
+  const canonicalKnowledge = technology.knowledgeCenterSlug ? getCanonicalKnowledgeBySlug(technology.knowledgeCenterSlug) : null;
+  const standards = canonicalKnowledge?.standards ?? [];
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
@@ -253,6 +256,17 @@ export function IndustrialProcessTechnologyStablePage({
         <h2 className={styles.h2}>Direct answers before an Industrial &amp; Process selection.</h2>
         <div className={styles.faqList}>{faqs.map(([q,a])=><details className={styles.faqItem} key={q}><summary>{q}</summary><p>{a}</p></details>)}</div>
       </div></section>
+
+      {standards.length ? (
+        <section className={styles.bandAlt}><div className={styles.inner}>
+          <p className={styles.eyebrow}>STANDARDS &amp; TEST GOVERNANCE</p>
+          <h2 className={styles.h2}>Applicable standards and test methods</h2>
+          <p className={styles.lead}>The standards below are resolved from the governed ELIMFILTERS Knowledge Center for this treatment family. Applicability remains product-, fluid-, contaminant- and duty-specific.</p>
+          <ul className={`${styles.list} ${styles.serviceList}`}>{standards.map((standard)=><li key={standard}>{standard}</li>)}</ul>
+          <p className={styles.bodyWide}>A listed standard identifies a relevant engineering or verification method. It does not mean every {technology.name} element is certified, qualified or tested to every listed method. Product claims require the corresponding validated test evidence.</p>
+          {technology.knowledgeCenterSlug ? <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}>OPEN GOVERNED STANDARD CONTEXT →</Link></div> : null}
+        </div></section>
+      ) : null}
 
       <section className={styles.band}><div className={styles.inner}>
         <p className={styles.eyebrow}>TECHNICAL BASIS</p>
