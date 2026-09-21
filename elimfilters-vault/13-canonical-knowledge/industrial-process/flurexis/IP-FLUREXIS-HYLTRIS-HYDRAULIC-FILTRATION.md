@@ -116,6 +116,17 @@ cross_reference_write_allowed: false
 - Installation location
 - Housing and bypass arrangement
 
+## Standards
+
+- ISO 16889:2022 — multi-pass method for evaluating hydraulic filter-element filtration performance, contaminant capacity and differential-pressure behavior.
+- ISO 4406:2021 — coding of hydraulic-fluid solid-particle contamination level for cleanliness targets and verification.
+- ISO 3968:2017 — evaluation of hydraulic-filter differential pressure versus flow.
+- ISO 2941:2009 — verification of filter-element collapse/burst pressure rating.
+- ISO 2942:2018 — fabrication-integrity and first-bubble-point verification for hydraulic filter elements.
+- ISO 2943:1998 — verification of hydraulic filter-element material compatibility with designated fluids.
+- ISO 11171:2022 — calibration of automatic particle counters for liquids.
+- ISO 11500:2022 with Amendment 1:2026 — determination of particulate contamination in hydraulic-fluid samples by automatic particle counting.
+
 ## Shared Engineering
 
 - Filtration Efficiency
