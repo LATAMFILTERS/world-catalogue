@@ -63,6 +63,13 @@ cross_reference_write_allowed: false
 - Particle size, concentration and loading pattern
 - Gas, vapor or odor chemistry when molecular treatment is required
 
+## Standards
+
+- ISO 16890 series — general-ventilation air-filter classification and performance testing; applicable to general particulate stages.
+- ISO 29463 series — high-efficiency filter/media classification and element testing; applicable to HE-CRIVA™ duties.
+- ISO 10121 series — gas-phase air-cleaning media/device performance and classification; applicable to MA-TREA™ duties.
+- ISO 29462:2022 — in-situ field testing of general ventilation filtration devices and systems where field verification is required.
+
 ## Shared Engineering
 
 - Differential Pressure
