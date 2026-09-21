@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.1.0",
   "sourceAuthority": "13-canonical-knowledge",
-  "generatedAt": "2026-09-21T14:08:03.816Z",
-  "count": 54,
+  "generatedAt": "2026-09-21T22:37:00.000Z",
+  "count": 60,
   "records": [
     {
       "id": "HD-AIR-RADIAL-SEAL-HOUSING-COMPATIBILITY",
@@ -263,7 +263,12 @@
         "Particle size, concentration and loading pattern",
         "Gas, vapor or odor chemistry when molecular treatment is required"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 16890 series — general-ventilation air-filter classification and performance testing; applicable to general particulate stages.",
+        "ISO 29463 series — high-efficiency filter/media classification and element testing; applicable to HE-CRIVA™ duties.",
+        "ISO 10121 series — gas-phase air-cleaning media/device performance and classification; applicable to MA-TREA™ duties.",
+        "ISO 29462:2022 — in-situ field testing of general ventilation filtration devices and systems where field verification is required."
+      ],
       "sharedEngineering": [
         "Differential Pressure",
         "Filtration Efficiency",
@@ -306,7 +311,11 @@
         "Filtration Efficiency",
         "Contaminant Loading",
         "Sealing",
-        "Service Life"
+        "Service Life",
+        "ISO 16890 series — general-ventilation air-filter classification and performance testing; applicable to general particulate stages.",
+        "ISO 29463 series — high-efficiency filter/media classification and element testing; applicable to HE-CRIVA™ duties.",
+        "ISO 10121 series — gas-phase air-cleaning media/device performance and classification; applicable to MA-TREA™ duties.",
+        "ISO 29462:2022 — in-situ field testing of general ventilation filtration devices and systems where field verification is required."
       ]
     },
     {
@@ -361,7 +370,13 @@
         "Space and service-access constraints",
         "Pressure-drop limits across the air-handling system"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 16890-1:2016 — ePM-based classification and general requirements for air filters used in general ventilation.",
+        "ISO 16890-2:2022 — measurement of fractional efficiency and airflow resistance.",
+        "ISO 16890-3:2024 — gravimetric efficiency and airflow resistance versus captured test-dust mass.",
+        "ISO 16890-4:2022 — conditioning method used to determine minimum fractional test efficiency.",
+        "ISO 29462:2022 — in-situ field testing of general ventilation filtration devices and systems where field verification is required."
+      ],
       "sharedEngineering": [
         "Differential Pressure",
         "Contaminant Loading",
@@ -397,7 +412,12 @@
         "Differential Pressure",
         "Contaminant Loading",
         "Sealing",
-        "Service Life"
+        "Service Life",
+        "ISO 16890-1:2016 — ePM-based classification and general requirements for air filters used in general ventilation.",
+        "ISO 16890-2:2022 — measurement of fractional efficiency and airflow resistance.",
+        "ISO 16890-3:2024 — gravimetric efficiency and airflow resistance versus captured test-dust mass.",
+        "ISO 16890-4:2022 — conditioning method used to determine minimum fractional test efficiency.",
+        "ISO 29462:2022 — in-situ field testing of general ventilation filtration devices and systems where field verification is required."
       ]
     },
     {
@@ -456,7 +476,13 @@
         "Final-stage pressure-drop sensitivity",
         "Controlled production or critical ventilation environment"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 29463-1:2024 — classification, performance, testing and marking of high-efficiency filters and filter media.",
+        "ISO 29463-2:2011 — aerosol production, measuring equipment and particle-counting statistics used by the ISO 29463 test family.",
+        "ISO 29463-3:2011 — testing of flat-sheet high-efficiency filter media.",
+        "ISO 29463-4:2011 — filter-element leakage testing within the ISO 29463 test family.",
+        "ISO 29463-5:2022 — test method for high-efficiency filter elements."
+      ],
       "sharedEngineering": [
         "Filtration Efficiency",
         "Differential Pressure",
@@ -497,7 +523,12 @@
         "Differential Pressure",
         "Sealing",
         "Contaminant Loading",
-        "Service Life"
+        "Service Life",
+        "ISO 29463-1:2024 — classification, performance, testing and marking of high-efficiency filters and filter media.",
+        "ISO 29463-2:2011 — aerosol production, measuring equipment and particle-counting statistics used by the ISO 29463 test family.",
+        "ISO 29463-3:2011 — testing of flat-sheet high-efficiency filter media.",
+        "ISO 29463-4:2011 — filter-element leakage testing within the ISO 29463 test family.",
+        "ISO 29463-5:2022 — test method for high-efficiency filter elements."
       ]
     },
     {
@@ -586,7 +617,11 @@
         "Required outlet condition or protected-process objective",
         "Media exhaustion, monitoring and replacement planning"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 10121-1:2014 — laboratory performance assessment of gas-phase air-cleaning media for general ventilation.",
+        "ISO 10121-2:2013 — laboratory performance assessment of gas-phase air-cleaning devices for general ventilation.",
+        "ISO 10121-3:2022 — classification system for gas-phase air-cleaning devices used to treat outdoor air."
+      ],
       "sharedEngineering": [
         "Flow Rate",
         "Media Saturation",
@@ -651,7 +686,1027 @@
         "Flow Rate",
         "Media Saturation",
         "Service Life",
-        "Installation"
+        "Installation",
+        "ISO 10121-1:2014 — laboratory performance assessment of gas-phase air-cleaning media for general ventilation.",
+        "ISO 10121-2:2013 — laboratory performance assessment of gas-phase air-cleaning devices for general ventilation.",
+        "ISO 10121-3:2022 — classification system for gas-phase air-cleaning devices used to treat outdoor air."
+      ]
+    },
+    {
+      "id": "IP-AQUVEXIS-ADSOVEX-ADSORPTIVE-CARBON",
+      "slug": "ip-aquvexis-adsovex-adsorptive-carbon",
+      "title": "ADSOVEX Adsorptive Carbon Treatment",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "AQUVEXIS™"
+      ],
+      "technologies": [
+        "ADSOVEX™"
+      ],
+      "components": [
+        "Activated-carbon media or element",
+        "Housing or media-retention interface",
+        "Upstream particulate pretreatment where required",
+        "Inlet and outlet sampling points"
+      ],
+      "problems": [
+        "Selected dissolved-organic challenge",
+        "Residual oxidant challenge",
+        "Premature breakthrough",
+        "Excessive media pressure drop"
+      ],
+      "failureModes": [
+        "Media not matched to target chemistry",
+        "Capacity exhausted",
+        "Competing constituents consume capacity",
+        "Particulate loading blinds the media"
+      ],
+      "symptoms": [
+        "Target constituent appears downstream",
+        "Service interval shortens",
+        "Pressure drop rises",
+        "Outlet quality becomes unstable"
+      ],
+      "rootCauses": [
+        "Feed chemistry changed",
+        "Media capacity undersized",
+        "Contact conditions insufficient",
+        "Pretreatment ineffective"
+      ],
+      "diagnosticMethods": [
+        "Identify target constituent and inlet concentration.",
+        "Review competing species and contact conditions.",
+        "Trend target breakthrough with media duty.",
+        "Inspect particulate loading and pressure drop."
+      ],
+      "correctiveActions": [
+        "Correct upstream contamination where practical.",
+        "Requalify carbon media against the target chemistry.",
+        "Requalify media quantity and contact duty.",
+        "Improve particulate pretreatment where required."
+      ],
+      "maintenanceProcedures": [
+        "Trend inlet/outlet target constituent.",
+        "Track media duty and breakthrough.",
+        "Inspect loading and flow distribution.",
+        "Replace media using validated service criteria."
+      ],
+      "procedures": [],
+      "technicalRelationships": [
+        "ADSOVEX™ uses application-qualified adsorptive carbon media for selected dissolved constituents and residual oxidants.",
+        "Carbon media properties such as particle size, ash and iodine number characterize the media but do not by themselves prove capacity for every target contaminant.",
+        "Breakthrough depends on target chemistry, concentration, competing constituents, contact conditions and media loading.",
+        "Pretreatment and solids control can materially affect carbon-bed or carbon-element service behavior."
+      ],
+      "operatingConditions": [
+        "Target constituent",
+        "Inlet concentration",
+        "Water chemistry",
+        "Competing constituents",
+        "Flow and contact conditions",
+        "Temperature and pH",
+        "Particulate loading"
+      ],
+      "standards": [
+        "ASTM D4607-14 — iodine number of activated carbon as a relative porosity indicator; it is not a universal measure of adsorption capacity for other species.",
+        "ASTM D2862-16(2022) — particle-size distribution of granular activated carbon.",
+        "ASTM D2866-11(2025) — total ash content of activated carbon.",
+        "ISO 20468-1:2018 — general treatment-performance evaluation where ADSOVEX™ is used within a water-reuse system."
+      ],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Contaminant Loading",
+        "Differential Pressure",
+        "Media Saturation",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ],
+      "keywords": [
+        "ADSOVEX Adsorptive Carbon Treatment",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation",
+        "Industrial & Process",
+        "AQUVEXIS™",
+        "ADSOVEX™",
+        "Activated-carbon media or element",
+        "Housing or media-retention interface",
+        "Upstream particulate pretreatment where required",
+        "Inlet and outlet sampling points",
+        "Selected dissolved-organic challenge",
+        "Residual oxidant challenge",
+        "Premature breakthrough",
+        "Excessive media pressure drop",
+        "Media not matched to target chemistry",
+        "Capacity exhausted",
+        "Competing constituents consume capacity",
+        "Particulate loading blinds the media",
+        "Target constituent appears downstream",
+        "Service interval shortens",
+        "Pressure drop rises",
+        "Outlet quality becomes unstable",
+        "Feed chemistry changed",
+        "Media capacity undersized",
+        "Contact conditions insufficient",
+        "Pretreatment ineffective",
+        "Identify target constituent and inlet concentration.",
+        "Review competing species and contact conditions.",
+        "Trend target breakthrough with media duty.",
+        "Inspect particulate loading and pressure drop.",
+        "Correct upstream contamination where practical.",
+        "Requalify carbon media against the target chemistry.",
+        "Requalify media quantity and contact duty.",
+        "Improve particulate pretreatment where required.",
+        "ADSOVEX™ uses application-qualified adsorptive carbon media for selected dissolved constituents and residual oxidants.",
+        "Carbon media properties such as particle size, ash and iodine number characterize the media but do not by themselves prove capacity for every target contaminant.",
+        "Breakthrough depends on target chemistry, concentration, competing constituents, contact conditions and media loading.",
+        "Pretreatment and solids control can materially affect carbon-bed or carbon-element service behavior.",
+        "Target constituent",
+        "Inlet concentration",
+        "Water chemistry",
+        "Competing constituents",
+        "Flow and contact conditions",
+        "Temperature and pH",
+        "Particulate loading",
+        "ASTM D4607-14 — iodine number of activated carbon as a relative porosity indicator; it is not a universal measure of adsorption capacity for other species.",
+        "ASTM D2862-16(2022) — particle-size distribution of granular activated carbon.",
+        "ASTM D2866-11(2025) — total ash content of activated carbon.",
+        "ISO 20468-1:2018 — general treatment-performance evaluation where ADSOVEX™ is used within a water-reuse system.",
+        "Flow Rate",
+        "Contaminant Loading",
+        "Differential Pressure",
+        "Media Saturation",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ]
+    },
+    {
+      "id": "IP-AQUVEXIS-DEPTH-FILTRATION",
+      "slug": "ip-aquvexis-depth-filtration",
+      "title": "AQUVEXIS Depth Filtration",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "AQUVEXIS™"
+      ],
+      "technologies": [],
+      "components": [
+        "Depth-filtration element",
+        "Housing interface and seals",
+        "Differential-pressure monitoring point",
+        "Upstream and downstream sampling points"
+      ],
+      "problems": [
+        "Suspended solids",
+        "Premature downstream fouling",
+        "Rapid element plugging",
+        "Solids breakthrough"
+      ],
+      "failureModes": [
+        "Element loading beyond duty",
+        "Incorrect media grade",
+        "Seal or seating bypass",
+        "Flow above qualified range"
+      ],
+      "symptoms": [
+        "Differential pressure rises rapidly",
+        "Outlet solids increase",
+        "Service interval shortens",
+        "Downstream equipment fouls"
+      ],
+      "rootCauses": [
+        "Feed solids exceed design basis",
+        "Particle distribution changed",
+        "Element area is insufficient",
+        "Housing bypass or seal defect"
+      ],
+      "diagnosticMethods": [
+        "Characterize feed solids and required outlet condition.",
+        "Trend differential pressure at comparable flow.",
+        "Inspect element seating and seals.",
+        "Compare actual flow and loading with the selection basis."
+      ],
+      "correctiveActions": [
+        "Correct upstream solids source where practical.",
+        "Requalify media grade and element area.",
+        "Correct seal or seating defects.",
+        "Verify downstream water condition after service."
+      ],
+      "maintenanceProcedures": [
+        "Trend differential pressure.",
+        "Inspect used elements for loading pattern and bypass evidence.",
+        "Preserve representative water sampling.",
+        "Investigate unexpectedly short element life."
+      ],
+      "procedures": [],
+      "technicalRelationships": [
+        "Depth Filtration addresses suspended solids by capturing particulate through the thickness of a porous medium.",
+        "Element selection depends on particle loading, target outlet condition, flow, allowable pressure drop and downstream sensitivity.",
+        "Depth-media efficiency and capacity are product-specific and cannot be inferred from nominal micron wording alone.",
+        "Depth Filtration can serve as standalone particulate control or pretreatment ahead of downstream water-treatment stages."
+      ],
+      "operatingConditions": [
+        "Feed-water solids loading",
+        "Particle-size distribution",
+        "Flow",
+        "Allowable differential pressure",
+        "Temperature",
+        "Required outlet condition",
+        "Housing interface"
+      ],
+      "standards": [
+        "ISO 20468-1:2018 — general performance-evaluation framework where depth filtration is part of a water-reuse treatment system.",
+        "No universal ISO element-performance standard is assigned across generic AQUVEXIS depth cartridges; removal efficiency, capacity and differential-pressure claims require validated product-specific test evidence."
+      ],
+      "sharedEngineering": [
+        "Filtration Efficiency",
+        "Flow Rate",
+        "Differential Pressure",
+        "Contaminant Loading",
+        "Sealing",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ],
+      "keywords": [
+        "AQUVEXIS Depth Filtration",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation",
+        "Industrial & Process",
+        "AQUVEXIS™",
+        "Depth-filtration element",
+        "Housing interface and seals",
+        "Differential-pressure monitoring point",
+        "Upstream and downstream sampling points",
+        "Suspended solids",
+        "Premature downstream fouling",
+        "Rapid element plugging",
+        "Solids breakthrough",
+        "Element loading beyond duty",
+        "Incorrect media grade",
+        "Seal or seating bypass",
+        "Flow above qualified range",
+        "Differential pressure rises rapidly",
+        "Outlet solids increase",
+        "Service interval shortens",
+        "Downstream equipment fouls",
+        "Feed solids exceed design basis",
+        "Particle distribution changed",
+        "Element area is insufficient",
+        "Housing bypass or seal defect",
+        "Characterize feed solids and required outlet condition.",
+        "Trend differential pressure at comparable flow.",
+        "Inspect element seating and seals.",
+        "Compare actual flow and loading with the selection basis.",
+        "Correct upstream solids source where practical.",
+        "Requalify media grade and element area.",
+        "Correct seal or seating defects.",
+        "Verify downstream water condition after service.",
+        "Depth Filtration addresses suspended solids by capturing particulate through the thickness of a porous medium.",
+        "Element selection depends on particle loading, target outlet condition, flow, allowable pressure drop and downstream sensitivity.",
+        "Depth-media efficiency and capacity are product-specific and cannot be inferred from nominal micron wording alone.",
+        "Depth Filtration can serve as standalone particulate control or pretreatment ahead of downstream water-treatment stages.",
+        "Feed-water solids loading",
+        "Particle-size distribution",
+        "Flow",
+        "Allowable differential pressure",
+        "Temperature",
+        "Required outlet condition",
+        "Housing interface",
+        "ISO 20468-1:2018 — general performance-evaluation framework where depth filtration is part of a water-reuse treatment system.",
+        "No universal ISO element-performance standard is assigned across generic AQUVEXIS depth cartridges; removal efficiency, capacity and differential-pressure claims require validated product-specific test evidence.",
+        "Filtration Efficiency",
+        "Flow Rate",
+        "Differential Pressure",
+        "Contaminant Loading",
+        "Sealing",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ]
+    },
+    {
+      "id": "IP-AQUVEXIS-ELECTRODEIONIZATION",
+      "slug": "ip-aquvexis-electrodeionization",
+      "title": "AQUVEXIS Electrodeionization",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "AQUVEXIS™"
+      ],
+      "technologies": [],
+      "components": [
+        "Electrodeionization module",
+        "Ion-exchange media",
+        "Ion-selective membranes",
+        "Electrical power interface",
+        "Feed and product-water monitoring points"
+      ],
+      "problems": [
+        "Product-water conductivity drift",
+        "Ionic leakage",
+        "Scaling or fouling",
+        "Unstable electrical demand"
+      ],
+      "failureModes": [
+        "Pretreatment insufficient",
+        "Feed conductivity outside qualified range",
+        "Scaling or fouling develops",
+        "Electrical operating condition outside qualified duty"
+      ],
+      "symptoms": [
+        "Product resistivity declines",
+        "Current demand changes",
+        "Pressure drop rises",
+        "Product quality becomes unstable"
+      ],
+      "rootCauses": [
+        "RO or upstream pretreatment deterioration",
+        "Feed chemistry changed",
+        "Scaling control insufficient",
+        "Module contamination or degradation"
+      ],
+      "diagnosticMethods": [
+        "Trend feed and product conductivity/resistivity.",
+        "Review flow, pressure and electrical conditions.",
+        "Analyze feed chemistry and scaling potential.",
+        "Confirm upstream RO or pretreatment performance."
+      ],
+      "correctiveActions": [
+        "Correct upstream pretreatment.",
+        "Requalify feed and operating window.",
+        "Correct scaling or fouling source.",
+        "Service or replace the module according to validated condition evidence."
+      ],
+      "maintenanceProcedures": [
+        "Trend conductivity/resistivity and operating current.",
+        "Monitor pressure and flow.",
+        "Maintain upstream membrane and pretreatment stages.",
+        "Verify product-water quality after service."
+      ],
+      "procedures": [],
+      "technicalRelationships": [
+        "Electrodeionization is an electrically assisted ionic-polishing treatment used after suitable upstream treatment.",
+        "Continuous electrodeionization performance depends on feed conductivity, ionic loading, pretreatment quality, flow and electrical operating conditions.",
+        "Conductivity or resistivity verification is part of performance assessment but does not alone diagnose all fouling or chemistry problems.",
+        "Electrodeionization remains a descriptive AQUVEXIS™ treatment family and is not an independent ELIMFILTERS technology mark."
+      ],
+      "operatingConditions": [
+        "Feed conductivity",
+        "Ionic composition",
+        "Flow",
+        "Pressure",
+        "Temperature",
+        "Electrical operating window",
+        "Scaling potential",
+        "Required product-water resistivity"
+      ],
+      "standards": [
+        "ISO 23044:2020 — guidance for industrial-wastewater softening/desalination for reuse and explicitly includes electrodeionization among the covered processes.",
+        "ASTM D6807-17(2026) — operating-performance test method for continuous electrodeionization devices on qualifying reverse-osmosis permeate.",
+        "ASTM D1125-23 — electrical conductivity and resistivity measurement of water for applicable feed/product verification.",
+        "Standard scope and feed-water limits must be respected; these methods do not create a universal EDI performance claim."
+      ],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Differential Pressure",
+        "Compatibility",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ],
+      "keywords": [
+        "AQUVEXIS Electrodeionization",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation",
+        "Industrial & Process",
+        "AQUVEXIS™",
+        "Electrodeionization module",
+        "Ion-exchange media",
+        "Ion-selective membranes",
+        "Electrical power interface",
+        "Feed and product-water monitoring points",
+        "Product-water conductivity drift",
+        "Ionic leakage",
+        "Scaling or fouling",
+        "Unstable electrical demand",
+        "Pretreatment insufficient",
+        "Feed conductivity outside qualified range",
+        "Scaling or fouling develops",
+        "Electrical operating condition outside qualified duty",
+        "Product resistivity declines",
+        "Current demand changes",
+        "Pressure drop rises",
+        "Product quality becomes unstable",
+        "RO or upstream pretreatment deterioration",
+        "Feed chemistry changed",
+        "Scaling control insufficient",
+        "Module contamination or degradation",
+        "Trend feed and product conductivity/resistivity.",
+        "Review flow, pressure and electrical conditions.",
+        "Analyze feed chemistry and scaling potential.",
+        "Confirm upstream RO or pretreatment performance.",
+        "Correct upstream pretreatment.",
+        "Requalify feed and operating window.",
+        "Correct scaling or fouling source.",
+        "Service or replace the module according to validated condition evidence.",
+        "Electrodeionization is an electrically assisted ionic-polishing treatment used after suitable upstream treatment.",
+        "Continuous electrodeionization performance depends on feed conductivity, ionic loading, pretreatment quality, flow and electrical operating conditions.",
+        "Conductivity or resistivity verification is part of performance assessment but does not alone diagnose all fouling or chemistry problems.",
+        "Electrodeionization remains a descriptive AQUVEXIS™ treatment family and is not an independent ELIMFILTERS technology mark.",
+        "Feed conductivity",
+        "Ionic composition",
+        "Flow",
+        "Pressure",
+        "Temperature",
+        "Electrical operating window",
+        "Scaling potential",
+        "Required product-water resistivity",
+        "ISO 23044:2020 — guidance for industrial-wastewater softening/desalination for reuse and explicitly includes electrodeionization among the covered processes.",
+        "ASTM D6807-17(2026) — operating-performance test method for continuous electrodeionization devices on qualifying reverse-osmosis permeate.",
+        "ASTM D1125-23 — electrical conductivity and resistivity measurement of water for applicable feed/product verification.",
+        "Standard scope and feed-water limits must be respected; these methods do not create a universal EDI performance claim.",
+        "Flow Rate",
+        "Differential Pressure",
+        "Compatibility",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ]
+    },
+    {
+      "id": "IP-AQUVEXIS-IONVEXA-ION-EXCHANGE",
+      "slug": "ip-aquvexis-ionvexa-ion-exchange",
+      "title": "IONVEXA Ion Exchange",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "AQUVEXIS™"
+      ],
+      "technologies": [
+        "IONVEXA™"
+      ],
+      "components": [
+        "Ion-exchange resin or cartridge",
+        "Media-retention interface",
+        "Regeneration path where applicable",
+        "Inlet and outlet sampling points"
+      ],
+      "problems": [
+        "Hardness leakage",
+        "Target-ion breakthrough",
+        "Short service cycle",
+        "Resin fouling"
+      ],
+      "failureModes": [
+        "Capacity exhausted",
+        "Regeneration incomplete",
+        "Competing ions consume capacity",
+        "Resin fouled or degraded"
+      ],
+      "symptoms": [
+        "Target ion appears downstream",
+        "Service cycle shortens",
+        "Regeneration recovery declines",
+        "Outlet quality varies"
+      ],
+      "rootCauses": [
+        "Feed ionic composition changed",
+        "Resin selection mismatched",
+        "Regeneration conditions incorrect",
+        "Fouling load increased"
+      ],
+      "diagnosticMethods": [
+        "Analyze feed and outlet ionic composition.",
+        "Trend service capacity and breakthrough.",
+        "Review regenerant concentration and dose where used.",
+        "Inspect for fouling or media degradation."
+      ],
+      "correctiveActions": [
+        "Requalify resin against feed chemistry.",
+        "Correct regeneration conditions.",
+        "Address fouling source.",
+        "Replace exhausted or degraded media."
+      ],
+      "maintenanceProcedures": [
+        "Trend outlet quality and capacity.",
+        "Track regeneration performance.",
+        "Preserve representative sampling.",
+        "Inspect media condition on service."
+      ],
+      "procedures": [],
+      "technicalRelationships": [
+        "IONVEXA™ uses ion-exchange media selected around target ions, feed-water chemistry and outlet requirement.",
+        "Exchange capacity and regeneration behavior are media- and chemistry-specific.",
+        "Competing ions, fouling and regeneration conditions affect effective operating capacity.",
+        "Ion-exchange performance must be verified using the applicable resin/material test and representative water conditions."
+      ],
+      "operatingConditions": [
+        "Feed ionic composition",
+        "Target ions",
+        "Competing ions",
+        "Flow",
+        "Temperature",
+        "pH",
+        "Regeneration strategy",
+        "Required outlet quality"
+      ],
+      "standards": [
+        "ISO 20468-6:2021 — performance evaluation of ion exchange and electrodialysis in water-reuse systems, including ion-exchange resin and membrane.",
+        "ISO 23044:2020 — industrial-wastewater softening/desalination guidance including ion exchange where reuse is the project context.",
+        "ASTM D1782-26 — operating performance of particulate cation-exchange materials.",
+        "Additional anion- or mixed-bed test methods are selected according to the actual resin configuration rather than assigned universally across IONVEXA™."
+      ],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Contaminant Loading",
+        "Media Saturation",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ],
+      "keywords": [
+        "IONVEXA Ion Exchange",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation",
+        "Industrial & Process",
+        "AQUVEXIS™",
+        "IONVEXA™",
+        "Ion-exchange resin or cartridge",
+        "Media-retention interface",
+        "Regeneration path where applicable",
+        "Inlet and outlet sampling points",
+        "Hardness leakage",
+        "Target-ion breakthrough",
+        "Short service cycle",
+        "Resin fouling",
+        "Capacity exhausted",
+        "Regeneration incomplete",
+        "Competing ions consume capacity",
+        "Resin fouled or degraded",
+        "Target ion appears downstream",
+        "Service cycle shortens",
+        "Regeneration recovery declines",
+        "Outlet quality varies",
+        "Feed ionic composition changed",
+        "Resin selection mismatched",
+        "Regeneration conditions incorrect",
+        "Fouling load increased",
+        "Analyze feed and outlet ionic composition.",
+        "Trend service capacity and breakthrough.",
+        "Review regenerant concentration and dose where used.",
+        "Inspect for fouling or media degradation.",
+        "Requalify resin against feed chemistry.",
+        "Correct regeneration conditions.",
+        "Address fouling source.",
+        "Replace exhausted or degraded media.",
+        "IONVEXA™ uses ion-exchange media selected around target ions, feed-water chemistry and outlet requirement.",
+        "Exchange capacity and regeneration behavior are media- and chemistry-specific.",
+        "Competing ions, fouling and regeneration conditions affect effective operating capacity.",
+        "Ion-exchange performance must be verified using the applicable resin/material test and representative water conditions.",
+        "Feed ionic composition",
+        "Target ions",
+        "Competing ions",
+        "Flow",
+        "Temperature",
+        "pH",
+        "Regeneration strategy",
+        "Required outlet quality",
+        "ISO 20468-6:2021 — performance evaluation of ion exchange and electrodialysis in water-reuse systems, including ion-exchange resin and membrane.",
+        "ISO 23044:2020 — industrial-wastewater softening/desalination guidance including ion exchange where reuse is the project context.",
+        "ASTM D1782-26 — operating performance of particulate cation-exchange materials.",
+        "Additional anion- or mixed-bed test methods are selected according to the actual resin configuration rather than assigned universally across IONVEXA™.",
+        "Flow Rate",
+        "Contaminant Loading",
+        "Media Saturation",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ]
+    },
+    {
+      "id": "IP-AQUVEXIS-MEMBRAVEX-MEMBRANE-SEPARATION",
+      "slug": "ip-aquvexis-membravex-membrane-separation",
+      "title": "MEMBRAVEX Membrane Separation",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "AQUVEXIS™"
+      ],
+      "technologies": [
+        "MEMBRAVEX™"
+      ],
+      "components": [
+        "Membrane element",
+        "Pressure-vessel or module interface",
+        "Pretreatment filtration",
+        "Feed, permeate and concentrate sampling points",
+        "Pressure and flow monitoring"
+      ],
+      "problems": [
+        "Permeate-quality deterioration",
+        "Membrane fouling",
+        "Scaling",
+        "Loss of normalized flow or rejection"
+      ],
+      "failureModes": [
+        "Pretreatment inadequate",
+        "Membrane chemistry incompatible",
+        "Scaling potential uncontrolled",
+        "Element integrity or sealing defect"
+      ],
+      "symptoms": [
+        "Permeate conductivity rises",
+        "Pressure demand rises",
+        "Recovery declines",
+        "Cleaning frequency increases"
+      ],
+      "rootCauses": [
+        "Feed-water condition changed",
+        "Fouling load increased",
+        "Scaling control insufficient",
+        "Oxidant or chemical exposure exceeded compatibility"
+      ],
+      "diagnosticMethods": [
+        "Characterize feed, permeate and concentrate.",
+        "Normalize flow and quality against operating conditions where applicable.",
+        "Review pressure, recovery and fouling trends.",
+        "Inspect sealing and element integrity."
+      ],
+      "correctiveActions": [
+        "Correct pretreatment or scaling control.",
+        "Requalify membrane chemistry and operating envelope.",
+        "Correct sealing or integrity defects.",
+        "Verify post-service permeate performance."
+      ],
+      "maintenanceProcedures": [
+        "Trend normalized membrane performance.",
+        "Maintain pretreatment.",
+        "Monitor pressure, recovery and permeate quality.",
+        "Apply validated cleaning and replacement criteria."
+      ],
+      "procedures": [],
+      "technicalRelationships": [
+        "MEMBRAVEX™ covers reverse-osmosis, ultrafiltration and nanofiltration treatment paths.",
+        "Membrane selection follows feed-water analysis, target permeate condition, pressure, recovery, fouling and scaling potential.",
+        "Pretreatment is part of membrane protection and cannot be separated from membrane performance assessment.",
+        "RO/NF element test methods must not be represented as universal ultrafiltration standards."
+      ],
+      "operatingConditions": [
+        "Feed-water chemistry",
+        "Temperature",
+        "Pressure",
+        "Recovery",
+        "Fouling potential",
+        "Scaling potential",
+        "Required permeate quality",
+        "Membrane material compatibility"
+      ],
+      "standards": [
+        "ISO 20468-5:2021 — membrane-filtration performance evaluation for water-reuse systems.",
+        "ISO 25175:2026 — air-tightness, permeation and salt-rejection test methods for RO and NF membrane elements within its marine-technology scope; it does not cover UF.",
+        "ISO 23044:2020 — industrial-wastewater softening/desalination guidance including NF and RO where reuse is the project context.",
+        "ASTM D6908-25 — integrity testing of water-filtration membrane systems where that system test applies."
+      ],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Differential Pressure",
+        "Compatibility",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ],
+      "keywords": [
+        "MEMBRAVEX Membrane Separation",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation",
+        "Industrial & Process",
+        "AQUVEXIS™",
+        "MEMBRAVEX™",
+        "Membrane element",
+        "Pressure-vessel or module interface",
+        "Pretreatment filtration",
+        "Feed, permeate and concentrate sampling points",
+        "Pressure and flow monitoring",
+        "Permeate-quality deterioration",
+        "Membrane fouling",
+        "Scaling",
+        "Loss of normalized flow or rejection",
+        "Pretreatment inadequate",
+        "Membrane chemistry incompatible",
+        "Scaling potential uncontrolled",
+        "Element integrity or sealing defect",
+        "Permeate conductivity rises",
+        "Pressure demand rises",
+        "Recovery declines",
+        "Cleaning frequency increases",
+        "Feed-water condition changed",
+        "Fouling load increased",
+        "Scaling control insufficient",
+        "Oxidant or chemical exposure exceeded compatibility",
+        "Characterize feed, permeate and concentrate.",
+        "Normalize flow and quality against operating conditions where applicable.",
+        "Review pressure, recovery and fouling trends.",
+        "Inspect sealing and element integrity.",
+        "Correct pretreatment or scaling control.",
+        "Requalify membrane chemistry and operating envelope.",
+        "Correct sealing or integrity defects.",
+        "Verify post-service permeate performance.",
+        "MEMBRAVEX™ covers reverse-osmosis, ultrafiltration and nanofiltration treatment paths.",
+        "Membrane selection follows feed-water analysis, target permeate condition, pressure, recovery, fouling and scaling potential.",
+        "Pretreatment is part of membrane protection and cannot be separated from membrane performance assessment.",
+        "RO/NF element test methods must not be represented as universal ultrafiltration standards.",
+        "Feed-water chemistry",
+        "Temperature",
+        "Pressure",
+        "Recovery",
+        "Fouling potential",
+        "Scaling potential",
+        "Required permeate quality",
+        "Membrane material compatibility",
+        "ISO 20468-5:2021 — membrane-filtration performance evaluation for water-reuse systems.",
+        "ISO 25175:2026 — air-tightness, permeation and salt-rejection test methods for RO and NF membrane elements within its marine-technology scope; it does not cover UF.",
+        "ISO 23044:2020 — industrial-wastewater softening/desalination guidance including NF and RO where reuse is the project context.",
+        "ASTM D6908-25 — integrity testing of water-filtration membrane systems where that system test applies.",
+        "Flow Rate",
+        "Differential Pressure",
+        "Compatibility",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ]
+    },
+    {
+      "id": "IP-AQUVEXIS-WATER-TREATMENT-ARCHITECTURE",
+      "slug": "ip-aquvexis-water-treatment-architecture",
+      "title": "AQUVEXIS Water Treatment Architecture",
+      "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+      "contentType": "Engineering Reference",
+      "confidence": "high",
+      "industries": [
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation"
+      ],
+      "systems": [
+        "Industrial & Process"
+      ],
+      "platforms": [
+        "AQUVEXIS™"
+      ],
+      "technologies": [
+        "ADSOVEX™",
+        "MEMBRAVEX™",
+        "IONVEXA™"
+      ],
+      "components": [
+        "Depth-filtration element",
+        "Activated-carbon treatment media or element",
+        "Membrane element",
+        "Ion-exchange resin or cartridge",
+        "Electrodeionization module where applicable",
+        "Water-quality sampling and monitoring points"
+      ],
+      "problems": [
+        "Suspended solids",
+        "Dissolved organic or oxidant challenge",
+        "Dissolved salts",
+        "Hardness or target ionic species",
+        "Membrane fouling or scaling",
+        "Product-water quality instability"
+      ],
+      "failureModes": [
+        "Treatment mechanism does not match the contaminant",
+        "Pretreatment is insufficient",
+        "Media or membrane loading exceeds duty",
+        "Scaling, fouling or channeling develops",
+        "Ion-exchange capacity is exhausted",
+        "Product-water verification is not representative"
+      ],
+      "symptoms": [
+        "Outlet turbidity or solids increase",
+        "Adsorptive breakthrough occurs",
+        "Permeate quality degrades",
+        "Pressure demand or differential pressure increases",
+        "Ionic leakage increases",
+        "Service interval shortens unexpectedly"
+      ],
+      "rootCauses": [
+        "Feed-water condition differs from the selection basis",
+        "Inadequate upstream particulate control",
+        "Incompatible chemistry or oxidant exposure",
+        "Scaling or fouling potential not controlled",
+        "Treatment media exhausted",
+        "Incorrect flow, recovery or regeneration duty"
+      ],
+      "diagnosticMethods": [
+        "Characterize feed and product water under representative conditions.",
+        "Separate suspended, dissolved organic, ionic and membrane-separation challenges.",
+        "Trend flow, pressure, differential pressure, conductivity and quality indicators appropriate to the treatment stage.",
+        "Review pretreatment, fouling, scaling and chemical compatibility.",
+        "Confirm media, element or membrane condition against the selected duty.",
+        "Verify results with an applicable standard or validated project test method."
+      ],
+      "correctiveActions": [
+        "Correct the upstream source or pretreatment deficiency.",
+        "Select the AQUVEXIS™ treatment path that matches the confirmed contaminant mechanism.",
+        "Requalify element, media or membrane duty for actual flow and water chemistry.",
+        "Correct scaling, fouling, channeling or regeneration problems.",
+        "Replace exhausted treatment media or elements using condition and performance evidence.",
+        "Verify the post-treatment result using an applicable test method."
+      ],
+      "maintenanceProcedures": [
+        "Trend inlet and outlet water quality under comparable conditions.",
+        "Monitor pressure, differential pressure and flow as appropriate to the treatment stage.",
+        "Inspect element seating, seals, media condition and membrane integrity at service.",
+        "Maintain representative sampling and analytical methods.",
+        "Investigate shortened media or element life before changing treatment aggressiveness."
+      ],
+      "procedures": [],
+      "technicalRelationships": [
+        "AQUVEXIS™ organizes industrial water treatment by treatment mechanism rather than by one universal filter form.",
+        "Depth Filtration addresses suspended particulate through depth-media capture.",
+        "ADSOVEX™ addresses selected dissolved constituents through application-qualified adsorptive carbon media.",
+        "MEMBRAVEX™ covers membrane-separation paths including reverse osmosis, ultrafiltration and nanofiltration.",
+        "IONVEXA™ addresses selective ionic removal through ion-exchange media.",
+        "Electrodeionization is a descriptive treatment family for electrically assisted ionic polishing after suitable pretreatment.",
+        "Feed-water analysis, pretreatment, fouling potential, pressure, recovery, compatibility and required product-water quality govern selection.",
+        "Performance standards and test methods are applied according to the specific treatment mechanism and product scope."
+      ],
+      "operatingConditions": [
+        "Feed-water composition",
+        "Suspended and dissolved contaminant loading",
+        "Flow and pressure",
+        "Temperature",
+        "pH and oxidant exposure",
+        "Fouling and scaling potential",
+        "Required product-water quality",
+        "Treatment recovery and service strategy"
+      ],
+      "standards": [
+        "ISO 20468-1:2018 — general performance-evaluation framework for treatment technologies in water-reuse systems where that system scope applies.",
+        "ISO 20468-5:2021 — membrane-filtration performance evaluation for water-reuse systems.",
+        "ISO 20468-6:2021 — ion-exchange and electrodialysis performance evaluation for water-reuse systems.",
+        "ISO 23044:2020 — guidance for softening and desalination of industrial wastewater for reuse, including ion exchange, NF, RO, ED and EDI.",
+        "ISO 25175:2026 — RO/NF membrane-element air-tightness, permeation and salt-rejection test methods within its marine-technology scope; applicability is not extended to ultrafiltration.",
+        "ASTM D1782-26 — operating performance of particulate cation-exchange materials.",
+        "ASTM D6807-17(2026) — operating performance of continuous electrodeionization systems on qualifying RO permeate."
+      ],
+      "sharedEngineering": [
+        "Flow Rate",
+        "Differential Pressure",
+        "Contaminant Loading",
+        "Compatibility",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
+      ],
+      "keywords": [
+        "AQUVEXIS Water Treatment Architecture",
+        "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
+        "Engineering Reference",
+        "Manufacturing",
+        "Oil & Gas",
+        "Power Generation",
+        "Industrial & Process",
+        "AQUVEXIS™",
+        "ADSOVEX™",
+        "MEMBRAVEX™",
+        "IONVEXA™",
+        "Depth-filtration element",
+        "Activated-carbon treatment media or element",
+        "Membrane element",
+        "Ion-exchange resin or cartridge",
+        "Electrodeionization module where applicable",
+        "Water-quality sampling and monitoring points",
+        "Suspended solids",
+        "Dissolved organic or oxidant challenge",
+        "Dissolved salts",
+        "Hardness or target ionic species",
+        "Membrane fouling or scaling",
+        "Product-water quality instability",
+        "Treatment mechanism does not match the contaminant",
+        "Pretreatment is insufficient",
+        "Media or membrane loading exceeds duty",
+        "Scaling, fouling or channeling develops",
+        "Ion-exchange capacity is exhausted",
+        "Product-water verification is not representative",
+        "Outlet turbidity or solids increase",
+        "Adsorptive breakthrough occurs",
+        "Permeate quality degrades",
+        "Pressure demand or differential pressure increases",
+        "Ionic leakage increases",
+        "Service interval shortens unexpectedly",
+        "Feed-water condition differs from the selection basis",
+        "Inadequate upstream particulate control",
+        "Incompatible chemistry or oxidant exposure",
+        "Scaling or fouling potential not controlled",
+        "Treatment media exhausted",
+        "Incorrect flow, recovery or regeneration duty",
+        "Characterize feed and product water under representative conditions.",
+        "Separate suspended, dissolved organic, ionic and membrane-separation challenges.",
+        "Trend flow, pressure, differential pressure, conductivity and quality indicators appropriate to the treatment stage.",
+        "Review pretreatment, fouling, scaling and chemical compatibility.",
+        "Confirm media, element or membrane condition against the selected duty.",
+        "Verify results with an applicable standard or validated project test method.",
+        "Correct the upstream source or pretreatment deficiency.",
+        "Select the AQUVEXIS™ treatment path that matches the confirmed contaminant mechanism.",
+        "Requalify element, media or membrane duty for actual flow and water chemistry.",
+        "Correct scaling, fouling, channeling or regeneration problems.",
+        "Replace exhausted treatment media or elements using condition and performance evidence.",
+        "Verify the post-treatment result using an applicable test method.",
+        "AQUVEXIS™ organizes industrial water treatment by treatment mechanism rather than by one universal filter form.",
+        "Depth Filtration addresses suspended particulate through depth-media capture.",
+        "ADSOVEX™ addresses selected dissolved constituents through application-qualified adsorptive carbon media.",
+        "MEMBRAVEX™ covers membrane-separation paths including reverse osmosis, ultrafiltration and nanofiltration.",
+        "IONVEXA™ addresses selective ionic removal through ion-exchange media.",
+        "Electrodeionization is a descriptive treatment family for electrically assisted ionic polishing after suitable pretreatment.",
+        "Feed-water analysis, pretreatment, fouling potential, pressure, recovery, compatibility and required product-water quality govern selection.",
+        "Performance standards and test methods are applied according to the specific treatment mechanism and product scope.",
+        "Feed-water composition",
+        "Suspended and dissolved contaminant loading",
+        "Flow and pressure",
+        "Temperature",
+        "pH and oxidant exposure",
+        "Fouling and scaling potential",
+        "Required product-water quality",
+        "Treatment recovery and service strategy",
+        "ISO 20468-1:2018 — general performance-evaluation framework for treatment technologies in water-reuse systems where that system scope applies.",
+        "ISO 20468-5:2021 — membrane-filtration performance evaluation for water-reuse systems.",
+        "ISO 20468-6:2021 — ion-exchange and electrodialysis performance evaluation for water-reuse systems.",
+        "ISO 23044:2020 — guidance for softening and desalination of industrial wastewater for reuse, including ion exchange, NF, RO, ED and EDI.",
+        "ISO 25175:2026 — RO/NF membrane-element air-tightness, permeation and salt-rejection test methods within its marine-technology scope; applicability is not extended to ultrafiltration.",
+        "ASTM D1782-26 — operating performance of particulate cation-exchange materials.",
+        "ASTM D6807-17(2026) — operating performance of continuous electrodeionization systems on qualifying RO permeate.",
+        "Flow Rate",
+        "Differential Pressure",
+        "Contaminant Loading",
+        "Compatibility",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
       ]
     },
     {
@@ -772,7 +1827,12 @@
         "Required downstream liquid condition",
         "Existing vessel, element orientation, sealing and drain arrangement"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 13686:2013 — natural-gas quality designation used as process context for natural-gas applications; it is not a coalescer-element performance certification.",
+        "ISO 12500-1:2007 — coalescing-filter pressure-drop and oil-aerosol removal testing for compressed-air duty only; applicability must not be extended automatically to natural gas.",
+        "ISO 8573-1:2010 — compressed-air purity classes where the COALERIS™ duty is compressed air.",
+        "ISO 8573-2:2018 — compressed-air liquid-oil and oil-aerosol measurement where that contaminant and duty apply."
+      ],
       "sharedEngineering": [
         "Flow Rate",
         "Differential Pressure",
@@ -867,7 +1927,11 @@
         "Sealing",
         "Service Life",
         "Installation",
-        "Failure Analysis"
+        "Failure Analysis",
+        "ISO 13686:2013 — natural-gas quality designation used as process context for natural-gas applications; it is not a coalescer-element performance certification.",
+        "ISO 12500-1:2007 — coalescing-filter pressure-drop and oil-aerosol removal testing for compressed-air duty only; applicability must not be extended automatically to natural gas.",
+        "ISO 8573-1:2010 — compressed-air purity classes where the COALERIS™ duty is compressed air.",
+        "ISO 8573-2:2018 — compressed-air liquid-oil and oil-aerosol measurement where that contaminant and duty apply."
       ]
     },
     {
@@ -937,7 +2001,13 @@
         "Liquid loading and variability",
         "Drainage and liquid-removal behavior"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 13686:2013 — natural-gas quality designation; process/gas-quality context rather than a filter-element certification.",
+        "ISO 12500-1:2007 — oil-aerosol performance testing of coalescing filters in compressed-air systems only.",
+        "ISO 8573-1:2010 — compressed-air purity classes for particles, water and oil where the duty is compressed air.",
+        "ISO 8573-2:2018 — compressed-air oil-aerosol measurement where applicable.",
+        "ISO 8573-9:2004 — compressed-air liquid-water measurement where applicable."
+      ],
       "sharedEngineering": [
         "Flow Rate",
         "Differential Pressure",
@@ -991,7 +2061,12 @@
         "Sealing",
         "Service Life",
         "Installation",
-        "Failure Analysis"
+        "Failure Analysis",
+        "ISO 13686:2013 — natural-gas quality designation; process/gas-quality context rather than a filter-element certification.",
+        "ISO 12500-1:2007 — oil-aerosol performance testing of coalescing filters in compressed-air systems only.",
+        "ISO 8573-1:2010 — compressed-air purity classes for particles, water and oil where the duty is compressed air.",
+        "ISO 8573-2:2018 — compressed-air oil-aerosol measurement where applicable.",
+        "ISO 8573-9:2004 — compressed-air liquid-water measurement where applicable."
       ]
     },
     {
@@ -1083,7 +2158,12 @@
         "Vessel residence and disengagement space",
         "Drainage and level-control behavior"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 13686:2013 — natural-gas quality designation used as process context for natural-gas applications; it is not a separation-element certification.",
+        "ISO 8573-1:2010 — compressed-air purity classes where the separation duty is compressed air.",
+        "ISO 8573-9:2004 — compressed-air liquid-water measurement where free-water separation is being verified.",
+        "ISO 8573-2:2018 — compressed-air liquid-oil and oil-aerosol measurement where oil carryover is the measured challenge."
+      ],
       "sharedEngineering": [
         "Flow Rate",
         "Differential Pressure",
@@ -1152,7 +2232,11 @@
         "Differential Pressure",
         "Service Life",
         "Installation",
-        "Failure Analysis"
+        "Failure Analysis",
+        "ISO 13686:2013 — natural-gas quality designation used as process context for natural-gas applications; it is not a separation-element certification.",
+        "ISO 8573-1:2010 — compressed-air purity classes where the separation duty is compressed air.",
+        "ISO 8573-9:2004 — compressed-air liquid-water measurement where free-water separation is being verified.",
+        "ISO 8573-2:2018 — compressed-air liquid-oil and oil-aerosol measurement where oil carryover is the measured challenge."
       ]
     },
     {
@@ -1258,7 +2342,11 @@
         "Water ingress rate",
         "Required final moisture condition"
       ],
-      "standards": [],
+      "standards": [
+        "ASTM D6304-25 — determination of water in petroleum products, lubricating oils and additives by coulometric Karl Fischer titration.",
+        "ISO 12937:2000 — coulometric Karl Fischer water determination for petroleum products; applicability and precision limits must be respected for the specific oil.",
+        "Moisture-removal efficiency, final water content and treatment time remain product/project claims and are not inferred solely from the analytical test standard."
+      ],
       "sharedEngineering": [
         "Flow Rate",
         "Contaminant Loading",
@@ -1336,7 +2424,10 @@
         "Contaminant Loading",
         "Service Life",
         "Installation",
-        "Failure Analysis"
+        "Failure Analysis",
+        "ASTM D6304-25 — determination of water in petroleum products, lubricating oils and additives by coulometric Karl Fischer titration.",
+        "ISO 12937:2000 — coulometric Karl Fischer water determination for petroleum products; applicability and precision limits must be respected for the specific oil.",
+        "Moisture-removal efficiency, final water content and treatment time remain product/project claims and are not inferred solely from the analytical test standard."
       ]
     },
     {
@@ -1446,7 +2537,15 @@
         "Equipment sensitivity",
         "Required verification method"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 16889:2022 — multi-pass evaluation of hydraulic filter-element particulate-removal, contaminant-capacity and differential-pressure performance where that element test method applies.",
+        "ISO 4406:2021 — coding of solid-particle contamination level in hydraulic fluids; also used as a cleanliness-reporting reference where specified for industrial fluid programs.",
+        "ISO 3968:2017 — differential-pressure-versus-flow evaluation of hydraulic filters.",
+        "ISO 2941:2009 / ISO 2942:2018 / ISO 2943:1998 — collapse/burst, fabrication integrity/bubble point and material-compatibility verification for hydraulic filter elements.",
+        "ISO 11171:2022 and ISO 11500:2022 with Amendment 1:2026 — particle-counter calibration and liquid-sample particle counting where the fluid and measurement method are within scope.",
+        "ISO 12937:2000 and ASTM D6304-25 — water determination by coulometric Karl Fischer where applicable to DEWATIS™ verification.",
+        "ASTM D7843-25e1, ASTM D664-24 and ASTM D2272-22 — oil-condition diagnostic methods applicable to selected OILREVEX™ duties."
+      ],
       "sharedEngineering": [
         "Flow Rate",
         "Differential Pressure",
@@ -1533,7 +2632,14 @@
         "Sealing",
         "Service Life",
         "Failure Analysis",
-        "Standards"
+        "Standards",
+        "ISO 16889:2022 — multi-pass evaluation of hydraulic filter-element particulate-removal, contaminant-capacity and differential-pressure performance where that element test method applies.",
+        "ISO 4406:2021 — coding of solid-particle contamination level in hydraulic fluids; also used as a cleanliness-reporting reference where specified for industrial fluid programs.",
+        "ISO 3968:2017 — differential-pressure-versus-flow evaluation of hydraulic filters.",
+        "ISO 2941:2009 / ISO 2942:2018 / ISO 2943:1998 — collapse/burst, fabrication integrity/bubble point and material-compatibility verification for hydraulic filter elements.",
+        "ISO 11171:2022 and ISO 11500:2022 with Amendment 1:2026 — particle-counter calibration and liquid-sample particle counting where the fluid and measurement method are within scope.",
+        "ISO 12937:2000 and ASTM D6304-25 — water determination by coulometric Karl Fischer where applicable to DEWATIS™ verification.",
+        "ASTM D7843-25e1, ASTM D664-24 and ASTM D2272-22 — oil-condition diagnostic methods applicable to selected OILREVEX™ duties."
       ]
     },
     {
@@ -1638,7 +2744,16 @@
         "Installation location",
         "Housing and bypass arrangement"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 16889:2022 — multi-pass method for evaluating hydraulic filter-element filtration performance, contaminant capacity and differential-pressure behavior.",
+        "ISO 4406:2021 — coding of hydraulic-fluid solid-particle contamination level for cleanliness targets and verification.",
+        "ISO 3968:2017 — evaluation of hydraulic-filter differential pressure versus flow.",
+        "ISO 2941:2009 — verification of filter-element collapse/burst pressure rating.",
+        "ISO 2942:2018 — fabrication-integrity and first-bubble-point verification for hydraulic filter elements.",
+        "ISO 2943:1998 — verification of hydraulic filter-element material compatibility with designated fluids.",
+        "ISO 11171:2022 — calibration of automatic particle counters for liquids.",
+        "ISO 11500:2022 with Amendment 1:2026 — determination of particulate contamination in hydraulic-fluid samples by automatic particle counting."
+      ],
       "sharedEngineering": [
         "Filtration Efficiency",
         "Beta Ratio",
@@ -1721,7 +2836,15 @@
         "Contaminant Loading",
         "Sealing",
         "Service Life",
-        "Failure Analysis"
+        "Failure Analysis",
+        "ISO 16889:2022 — multi-pass method for evaluating hydraulic filter-element filtration performance, contaminant capacity and differential-pressure behavior.",
+        "ISO 4406:2021 — coding of hydraulic-fluid solid-particle contamination level for cleanliness targets and verification.",
+        "ISO 3968:2017 — evaluation of hydraulic-filter differential pressure versus flow.",
+        "ISO 2941:2009 — verification of filter-element collapse/burst pressure rating.",
+        "ISO 2942:2018 — fabrication-integrity and first-bubble-point verification for hydraulic filter elements.",
+        "ISO 2943:1998 — verification of hydraulic filter-element material compatibility with designated fluids.",
+        "ISO 11171:2022 — calibration of automatic particle counters for liquids.",
+        "ISO 11500:2022 with Amendment 1:2026 — determination of particulate contamination in hydraulic-fluid samples by automatic particle counting."
       ]
     },
     {
@@ -1826,7 +2949,15 @@
         "Full-flow or offline architecture",
         "Coexisting water or degradation condition"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 16889:2022 — multi-pass filter-element performance method where the LUBREVA™ element and test fluid are qualified within that methodology; it is not a universal in-service lubrication certification.",
+        "ISO 4406:2021 — solid-particle cleanliness coding where the lubrication program specifies ISO cleanliness reporting.",
+        "ISO 3968:2017 — differential-pressure-versus-flow evaluation where the filter configuration is within scope.",
+        "ISO 2941:2009 — collapse/burst pressure verification for applicable filter-element constructions.",
+        "ISO 2942:2018 — fabrication-integrity and first-bubble-point verification for applicable filter elements.",
+        "ISO 2943:1998 — material compatibility verification where hydraulic-fluid-power element methodology is applicable to the designated lubricant.",
+        "ISO 11171:2022 — calibration of automatic particle counters; its scope includes engine oil and other petroleum-based fluids."
+      ],
       "sharedEngineering": [
         "Filtration Efficiency",
         "Flow Rate",
@@ -1907,7 +3038,14 @@
         "Contaminant Loading",
         "Sealing",
         "Service Life",
-        "Failure Analysis"
+        "Failure Analysis",
+        "ISO 16889:2022 — multi-pass filter-element performance method where the LUBREVA™ element and test fluid are qualified within that methodology; it is not a universal in-service lubrication certification.",
+        "ISO 4406:2021 — solid-particle cleanliness coding where the lubrication program specifies ISO cleanliness reporting.",
+        "ISO 3968:2017 — differential-pressure-versus-flow evaluation where the filter configuration is within scope.",
+        "ISO 2941:2009 — collapse/burst pressure verification for applicable filter-element constructions.",
+        "ISO 2942:2018 — fabrication-integrity and first-bubble-point verification for applicable filter elements.",
+        "ISO 2943:1998 — material compatibility verification where hydraulic-fluid-power element methodology is applicable to the designated lubricant.",
+        "ISO 11171:2022 — calibration of automatic particle counters; its scope includes engine oil and other petroleum-based fluids."
       ]
     },
     {
@@ -2014,7 +3152,12 @@
         "Offline flow and reservoir turnover",
         "Required treatment endpoint"
       ],
-      "standards": [],
+      "standards": [
+        "ASTM D7843-25e1 — membrane-patch colorimetry for lubricant-generated insoluble color bodies in in-service turbine oils.",
+        "ASTM D664-24 — acid number of petroleum products and lubricants by potentiometric titration.",
+        "ASTM D2272-22 — oxidation stability of steam-turbine oils by rotating pressure vessel.",
+        "These methods diagnose or trend oil condition; they do not by themselves certify the removal performance or service life of OILREVEX™ remediation media."
+      ],
       "sharedEngineering": [
         "Contaminant Loading",
         "Differential Pressure",
@@ -2091,7 +3234,11 @@
         "Contaminant Loading",
         "Differential Pressure",
         "Service Life",
-        "Failure Analysis"
+        "Failure Analysis",
+        "ASTM D7843-25e1 — membrane-patch colorimetry for lubricant-generated insoluble color bodies in in-service turbine oils.",
+        "ASTM D664-24 — acid number of petroleum products and lubricants by potentiometric titration.",
+        "ASTM D2272-22 — oxidation stability of steam-turbine oils by rotating pressure vessel.",
+        "These methods diagnose or trend oil condition; they do not by themselves certify the removal performance or service life of OILREVEX™ remediation media."
       ]
     },
     {
@@ -2158,7 +3305,12 @@
         "Cleaning or replacement strategy",
         "Required downstream, recirculation or discharge condition"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 16891:2016 — evaluation of degradation characteristics of cleanable industrial filter media.",
+        "ISO 22031:2021 — sampling and testing of cleanable filter media taken from operating filter systems.",
+        "ISO 21904 series — welding-fume capture/separation equipment requirements where the application is welding or an allied process; equipment-level scope must not be represented as independent cartridge certification.",
+        "ASTM D6830-02(2022) — pressure-drop and filtration-performance characterization of cleanable filter media."
+      ],
       "sharedEngineering": [
         "Differential Pressure",
         "Contaminant Loading",
@@ -2209,7 +3361,11 @@
         "Sealing",
         "Service Life",
         "Installation",
-        "Failure Analysis"
+        "Failure Analysis",
+        "ISO 16891:2016 — evaluation of degradation characteristics of cleanable industrial filter media.",
+        "ISO 22031:2021 — sampling and testing of cleanable filter media taken from operating filter systems.",
+        "ISO 21904 series — welding-fume capture/separation equipment requirements where the application is welding or an allied process; equipment-level scope must not be represented as independent cartridge certification.",
+        "ASTM D6830-02(2022) — pressure-drop and filtration-performance characterization of cleanable filter media."
       ]
     },
     {
@@ -2324,7 +3480,12 @@
         "Source-capture and airflow-distribution condition",
         "Required downstream or discharge condition"
       ],
-      "standards": [],
+      "standards": [
+        "ISO 16891:2016 — degradation testing for cleanable industrial filter media under standardized simulated conditions.",
+        "ISO 22031:2021 — sampling and test method for cleanable filter media removed from systems in operation.",
+        "ISO 21904-2:2020 — separation-efficiency testing for welding-fume separation equipment when that system duty applies; the standard explicitly does not test filter cartridges independently of their equipment.",
+        "ASTM D6830-02(2022) — pressure-drop and filtration-performance characterization of cleanable filter media."
+      ],
       "sharedEngineering": [
         "Differential Pressure",
         "Contaminant Loading",
@@ -2413,7 +3574,11 @@
         "Sealing",
         "Service Life",
         "Installation",
-        "Failure Analysis"
+        "Failure Analysis",
+        "ISO 16891:2016 — degradation testing for cleanable industrial filter media under standardized simulated conditions.",
+        "ISO 22031:2021 — sampling and test method for cleanable filter media removed from systems in operation.",
+        "ISO 21904-2:2020 — separation-efficiency testing for welding-fume separation equipment when that system duty applies; the standard explicitly does not test filter cartridges independently of their equipment.",
+        "ASTM D6830-02(2022) — pressure-drop and filtration-performance characterization of cleanable filter media."
       ]
     },
     {
