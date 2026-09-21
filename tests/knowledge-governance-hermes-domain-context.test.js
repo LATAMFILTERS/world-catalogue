@@ -137,3 +137,32 @@ test('Hermes accepts governed Industrial & Process COALVEX research context', ()
   assert.equal(request.platform, PLATFORMS.COALVEX);
   assert.equal(request.technology, TECHNOLOGIES.COALERIS);
 });
+
+
+test('Hermes accepts governed Industrial & Process FLUREXIS research context', () => {
+  const technologies = [
+    TECHNOLOGIES.HYLTRIS,
+    TECHNOLOGIES.LUBREVA,
+    TECHNOLOGIES.DEWATIS,
+    TECHNOLOGIES.OILREVEX,
+  ];
+
+  for (const technology of technologies) {
+    const request = createHermesResearchRequest({
+      knowledge_gap_request_id: `gap-ip-fluid-${technology}`,
+      research_type: 'technical_knowledge',
+      knowledge_domain: KNOWLEDGE_DOMAINS.INDUSTRIAL_PROCESS,
+      industry: 'Manufacturing',
+      system: SYSTEMS.INDUSTRIAL_PROCESS,
+      platform: PLATFORMS.FLUREXIS,
+      technology,
+      technology_relation: 'confirmed',
+      application_relation: 'verified',
+      research_question: 'What fluid condition, contamination and operating conditions affect this FLUREXIS treatment duty?'
+    });
+
+    assert.equal(validateHermesResearchRequest(request).valid, true);
+    assert.equal(request.platform, PLATFORMS.FLUREXIS);
+    assert.equal(request.technology, technology);
+  }
+});

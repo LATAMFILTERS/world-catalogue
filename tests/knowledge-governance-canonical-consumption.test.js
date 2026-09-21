@@ -46,6 +46,28 @@ test('canonical projection contains governed COALERIS gas-coalescence knowledge'
   assert.ok(record.maintenanceProcedures.some(x => /drain/i.test(x)));
 });
 
+test('canonical projection contains governed FLUREXIS fluid-conditioning knowledge', () => {
+  const platform = generatedCanonicalKnowledge.records.find(r => r.id === 'IP-FLUREXIS-FLUID-CONDITIONING-ARCHITECTURE');
+  assert.ok(platform);
+  assert.deepEqual(platform.platforms, ['FLUREXIS™']);
+
+  const expected = [
+    ['IP-FLUREXIS-HYLTRIS-HYDRAULIC-FILTRATION', 'HYLTRIS™'],
+    ['IP-FLUREXIS-LUBREVA-LUBRICATION-FILTRATION', 'LUBREVA™'],
+    ['IP-FLUREXIS-DEWATIS-OIL-DEHYDRATION', 'DEWATIS™'],
+    ['IP-FLUREXIS-OILREVEX-OIL-CONDITION-REMEDIATION', 'OILREVEX™'],
+  ];
+
+  for (const [id, technology] of expected) {
+    const record = generatedCanonicalKnowledge.records.find(r => r.id === id);
+    assert.ok(record);
+    assert.deepEqual(record.platforms, ['FLUREXIS™']);
+    assert.deepEqual(record.technologies, [technology]);
+    assert.ok(record.diagnosticMethods.length > 0);
+    assert.ok(record.maintenanceProcedures.length > 0);
+  }
+});
+
 test('AI governance client consumes canonical Nodal knowledge before external retrieval for generic questions', async () => {
   const result = await queryApprovedTechnicalKnowledge({ question: 'How does oil filter bypass restriction work?', equipment: {}, system: 'Lube/Oil Protection Systems' });
   assert.equal(result.status, 'validated');
