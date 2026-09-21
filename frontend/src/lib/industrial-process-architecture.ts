@@ -352,6 +352,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     summary: 'Gas-stream conditioning for entrained liquid aerosols, droplets and free-liquid carryover in natural-gas and industrial process-gas duties.',
     positioning: 'COALVEX™ organizes gas conditioning by the liquid phase carried in the gas stream. Fine aerosols and small droplets are addressed through COALERIS™ gas coalescence, while bulk free liquid and larger-droplet carryover are addressed through the descriptive Gas-Liquid Separation path. Selection follows gas composition, flow, pressure, temperature, liquid loading, droplet behavior, turndown, drainage and the required downstream condition.',
     heroImage: '/images/oil&gas.avif',
+    mediaImage: '/images/coalvex.png',
     knowledgeCenterSlug: 'ip-coalvex-gas-conditioning-architecture',
     selectionContext: {
       eyebrow: 'GAS CONDITIONING SCOPE',
