@@ -187,6 +187,34 @@ test('Hermes preserves the governed FLUREXIS to LUBREVA technology relation', ()
   assert.equal(request.technology, TECHNOLOGIES.LUBREVA);
 });
 
+test('Hermes accepts governed Industrial & Process AQUVEXIS research context', () => {
+  const technologies = [
+    TECHNOLOGIES.ADSOVEX,
+    TECHNOLOGIES.MEMBRAVEX,
+    TECHNOLOGIES.IONVEXA,
+  ];
+
+  for (const technology of technologies) {
+    const request = createHermesResearchRequest({
+      knowledge_gap_request_id: `gap-ip-water-${technology}`,
+      research_type: 'technical_knowledge',
+      knowledge_domain: KNOWLEDGE_DOMAINS.INDUSTRIAL_PROCESS,
+      industry: 'Manufacturing',
+      system: SYSTEMS.INDUSTRIAL_PROCESS,
+      platform: PLATFORMS.AQUVEXIS,
+      technology,
+      technology_relation: 'confirmed',
+      application_relation: 'verified',
+      research_question: 'Which treatment mechanism and standards apply to this AQUVEXIS water-treatment duty?'
+    });
+
+    const validation = validateHermesResearchRequest(request);
+    assert.equal(validation.valid, true);
+    assert.equal(request.platform, PLATFORMS.AQUVEXIS);
+    assert.equal(request.technology, technology);
+  }
+});
+
 test('Hermes rejects a branded technology assigned to the wrong Industrial & Process platform', () => {
   const request = createHermesResearchRequest({
     knowledge_gap_request_id: 'gap-ip-cross-platform-001',
