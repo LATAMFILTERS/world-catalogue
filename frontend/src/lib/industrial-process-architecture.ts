@@ -267,7 +267,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Fine or mixed particle-size loading', 'Continuous or cyclic production duty', 'Dry, sticky, abrasive, hygroscopic or oil-bearing particulate behavior', 'Temperature, moisture and aerosol exposure', 'Cleaning or replacement strategy', 'Combustible or reactive particulate classification where applicable'],
           ['Rapid differential-pressure increase', 'Visible particulate downstream', 'Poor pressure-drop recovery after a validated cleaning cycle', 'Unexpected media damage, blinding or caking', 'Service interval materially shorter than expected', 'Evidence of bypass or poor element seating', 'Uneven dust loading across the installed element bank'],
           '/images/planta_converted.avif',
-          '/images/dossier-filters.avif',
+          '/images/FUMEVRA%E2%84%A2.png',
         ),
         selectionInputs: [
           'Process generating the dust or fume and source-capture position',
