@@ -1,0 +1,89 @@
+{
+  "asset_id": "technical_value_brief",
+  "version": "1.0.0",
+  "status": "approved_master",
+  "purpose": "Touch 2 - technical capability / intelligence in distributor acquisition",
+  "owner": "Chief Commercial / Customer Acquisition Intelligence",
+  "entrypoint_url": "https://elimfilters.com/distributors/technical-value-brief/",
+  "personalization_policy": {
+    "language": "agent_resolved",
+    "content_emphasis": "agent_resolved",
+    "country_is_not_language_authority": true,
+    "unsupported_language": "block_and_require_approved_variant"
+  },
+  "variants": {
+    "es": {
+      "locale": "es",
+      "status": "approved_master",
+      "content_profile": "general_asset_protection",
+      "asset_url": "https://elimfilters.com/commercial/distributor-acquisition/technical-value-brief/es/ELIMFILTERS_Technical_Value_Brief_ES_v1.pdf",
+      "sha256": "2baaa0024fa0db02b942774464177e5413c4a007faff3741fee515d766721a36"
+    }
+  },
+  "brand_assets": {
+    "wordmark": "/assets/elimfilters-logo-transparent.png",
+    "wordmark_inverse": "/assets/elimfilters-logo-white.png",
+    "monogram": "/assets/elimfilters-e.png",
+    "palette": [
+      "#000000",
+      "#FFFFFF",
+      "#FFD400"
+    ],
+    "product_gray_only": true
+  },
+  "product_sources": [
+    {
+      "sku": "EL87900",
+      "url": "https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EL87900.png"
+    },
+    {
+      "sku": "EL81807",
+      "url": "https://cdn.elimfilters.com/fleetguard/page-1/01-20/EL81807.png"
+    },
+    {
+      "sku": "EA10489",
+      "technology": "MACROCORE",
+      "url": "https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EA10489-MACROCORE-approved-opt.png"
+    },
+    {
+      "sku": "EA17557",
+      "technology": "MACROCORE",
+      "url": "https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EA17557-MACROCORE-approved-opt.png"
+    },
+    {
+      "sku": "EC18643",
+      "technology": "MICROKAPPA",
+      "url": "https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EC18643-MICROKAPPA-approved-opt.png"
+    },
+    {
+      "sku": "EF90529",
+      "url": "https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EF90529.png"
+    },
+    {
+      "sku": "EF91311",
+      "url": "https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/EF91311.png"
+    },
+    {
+      "sku": "EH60388",
+      "technology": "NANOFORCE",
+      "url": "https://cdn.elimfilters.com/fleetguard/page-1/01-20/EH60388-NANOFORCE-approved-opt.png"
+    },
+    {
+      "sku": "ES99030",
+      "url": "https://cdn.elimfilters.com/fleetguard/page-1/01-20/ES99030.png"
+    },
+    {
+      "sku": "ES91242",
+      "url": "https://cdn.elimfilters.com/fleetguard/page-1/01-20/ES91242.png"
+    },
+    {
+      "sku": "EW74685",
+      "url": "https://cdn.elimfilters.com/fleetguard/page-1/01-20/EW74685.png"
+    },
+    {
+      "sku": "ED43571",
+      "url": "https://pub-fee72f3f35274550bd8a47b181823e33.r2.dev/fleetguard/page-1/01-20/ED43571.png"
+    }
+  ],
+  "outbound_authorization": false
+}

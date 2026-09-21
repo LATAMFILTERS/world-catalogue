@@ -170,6 +170,9 @@ export default function CommercialAnalytics() {
 
     readCampaign();
     if (readCommercialRef()) sendEvent('commercial_ref_page_view');
+    if (window.location.pathname.replace(/\/+$/, '') === '/distributors/technical-value-brief') {
+      sendEvent('technical_value_brief_page_view', { asset_id: 'technical_value_brief', asset_version: '1.0.0' });
+    }
 
     const onClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null;
