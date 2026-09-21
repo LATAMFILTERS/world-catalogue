@@ -402,7 +402,10 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Liquid carryover downstream', 'Unexpected differential-pressure rise', 'Poor drainage, flooding or liquid accumulation', 'Re-entrainment after apparent separation', 'Short element service life', 'Evidence of bypass or seal failure', 'Performance changes after gas, liquid or flow conditions shift'],
           '/images/oil&gas.avif',
           '/images/COALERIS.png',
+          undefined,
+          '/images/COALERS-VIDEO.mp4',
         ),
+        hideHeroPoster: true,
         selectionInputs: [
           'Gas composition and target liquid contaminant',
           'Operating and design pressure',
