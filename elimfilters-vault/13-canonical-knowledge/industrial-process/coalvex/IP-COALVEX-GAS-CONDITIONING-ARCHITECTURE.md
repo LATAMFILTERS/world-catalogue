@@ -71,6 +71,14 @@ cross_reference_write_allowed: false
 - Liquid loading and variability
 - Drainage and liquid-removal behavior
 
+## Standards
+
+- ISO 13686:2013 — natural-gas quality designation; process/gas-quality context rather than a filter-element certification.
+- ISO 12500-1:2007 — oil-aerosol performance testing of coalescing filters in compressed-air systems only.
+- ISO 8573-1:2010 — compressed-air purity classes for particles, water and oil where the duty is compressed air.
+- ISO 8573-2:2018 — compressed-air oil-aerosol measurement where applicable.
+- ISO 8573-9:2004 — compressed-air liquid-water measurement where applicable.
+
 ## Shared Engineering
 
 - Flow Rate
