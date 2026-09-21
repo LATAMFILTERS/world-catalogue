@@ -13,7 +13,7 @@ function coreLabel(core: string | readonly string[]) {
 
 function faqItems(platform: IndustrialProcessPlatform, technology: IndustrialProcessTechnology) {
   const familyWord = technology.branded ? 'technology' : 'treatment family';
-  return [
+  const base = [
     [
       `What is ${technology.name}?`,
       `${technology.name} is the ELIMFILTERS Industrial & Process ${familyWord} for ${technology.title.toLowerCase()}. Its role is to ${technology.treatmentFunction.charAt(0).toLowerCase() + technology.treatmentFunction.slice(1)}`,
@@ -31,6 +31,7 @@ function faqItems(platform: IndustrialProcessPlatform, technology: IndustrialPro
       'No universal performance value is assigned across the family. Numeric efficiency, capacity, pressure-drop, service-life or outlet-quality claims must remain tied to validated product or project evidence.',
     ],
   ] as const;
+  return [...base, ...(technology.customFaqs ?? [])];
 }
 
 export function IndustrialProcessTechnologyStablePage({
@@ -221,6 +222,21 @@ export function IndustrialProcessTechnologyStablePage({
         </div></section>
       ) : null}
 
+      {technology.engineeringNotes?.length ? (
+        <section className={styles.bandAlt}><div className={styles.inner}>
+          <p className={styles.eyebrow}>ENGINEERING GUIDANCE</p>
+          <h2 className={styles.h2}>What matters in {technology.title.toLowerCase()}</h2>
+          <div className={styles.twoColumnNotes}>
+            {technology.engineeringNotes.map((note) => (
+              <article className={styles.noteBlock} key={note.title}>
+                <h3 className={styles.h3}>{note.title}</h3>
+                <p className={styles.body}>{note.body}</p>
+              </article>
+            ))}
+          </div>
+        </div></section>
+      ) : null}
+
       <section className={styles.band}><div className={styles.inner}>
         <p className={styles.eyebrow}>SERVICE &amp; DIAGNOSIS</p>
         <h2 className={styles.h2}>What abnormal treatment behavior may be telling you</h2>
@@ -240,6 +256,13 @@ export function IndustrialProcessTechnologyStablePage({
         <div className={styles.twoColumnNotes}>
           <article className={styles.noteBlock}><h3 className={styles.h3}>Engineering core</h3><p className={styles.body}>{coreLabel(technology.technologyCore)} remains the mechanism-level engineering identifier behind the customer-facing family.</p></article>
           <article className={styles.noteBlock}><h3 className={styles.h3}>Claim governance</h3><p className={styles.body}>No universal efficiency, capacity, micron rating, separation percentage, service-life multiplier or outlet-quality value is assigned across {technology.name} without validated evidence for the specific product or project.</p></article>
+          {technology.knowledgeCenterSlug ? (
+            <article className={styles.noteBlock}>
+              <h3 className={styles.h3}>Canonical Knowledge Center reference</h3>
+              <p className={styles.body}>Approved engineering relationships, operating conditions and diagnostic guidance for {technology.name} are maintained in the governed ELIMFILTERS Knowledge Center.</p>
+              <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}>OPEN ENGINEERING REFERENCE →</Link></div>
+            </article>
+          ) : null}
         </div>
       </div></section>
 

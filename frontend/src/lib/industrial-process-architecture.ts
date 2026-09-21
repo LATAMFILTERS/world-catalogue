@@ -15,6 +15,12 @@ export interface IndustrialProcessTechnology {
   mediaImage: string;
   heroVideo?: string;
   subfamilies?: readonly string[];
+  engineeringNotes?: readonly {
+    title: string;
+    body: string;
+  }[];
+  knowledgeCenterSlug?: string;
+  customFaqs?: readonly (readonly [string, string])[];
 }
 
 export interface IndustrialProcessPlatform {
@@ -160,23 +166,60 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         undefined,
         '/images/HE-CRIVA-%20VIDEO%20(1).mp4',
       ),
-      tech(
-        'ma-trea',
-        'MA-TREA™',
-        'Molecular Air Treatment',
-        true,
-        'TC-AIR-03',
-        'Molecular-phase air treatment using media selected for the target gas, vapor or odor challenge.',
-        'Treat molecular contaminants that are not resolved by particulate filtration alone.',
-        ['Adsorptive media treatment', 'Media selection around target contaminant chemistry', 'Contact-time and loading evaluation'],
-        ['Industrial odor control', 'Corrosive-gas mitigation', 'Process ventilation polishing', 'Molecular contamination control'],
-        ['Known contaminant chemistry', 'Variable concentration and humidity', 'Required contact time', 'Media exhaustion and replacement planning'],
-        ['Odor or gas breakthrough', 'Accelerated media exhaustion', 'Unstable outlet quality', 'Unexpected humidity sensitivity'],
-        '/images/air-filters-lab.avif',
-        '/images/MATREA.png',
-        undefined,
-        '/images/MA_TREA-VIDEO.mp4',
-      ),
+      {
+        ...tech(
+          'ma-trea',
+          'MA-TREA™',
+          'Molecular Air Treatment',
+          true,
+          'TC-AIR-03',
+          'Molecular-phase air treatment for gases, vapors, odors and corrosive molecular contaminants using media selected around the actual contaminant challenge.',
+          'Treat identified molecular contaminants that are not resolved by particulate filtration alone, while integrating media chemistry, contact conditions, housing integrity and service strategy.',
+          ['Adsorption or chemisorption using application-selected media', 'Media selection around target contaminant chemistry and competing species', 'Contact-time, airflow and contaminant-loading evaluation', 'Integration with particulate prefiltration, sealing and service access'],
+          ['Industrial odor control', 'Corrosive-gas mitigation for sensitive equipment and control environments', 'Process ventilation polishing', 'Target gas and vapor reduction', 'Airborne molecular contamination control'],
+          ['Known target contaminant chemistry', 'Inlet concentration and loading profile', 'Airflow and required contact conditions', 'Temperature and relative-humidity range', 'Competing contaminants and upstream particulate load', 'Media exhaustion and replacement planning'],
+          ['Odor or target-gas breakthrough', 'Accelerated media exhaustion', 'Outlet condition drifts from the required target', 'Unexpected humidity sensitivity', 'Uneven loading or suspected bypass', 'Service interval materially shorter than the validated duty expectation'],
+          '/images/air-filters-lab.avif',
+          '/images/MATREA.png',
+          undefined,
+          '/images/MA_TREA-VIDEO.mp4',
+        ),
+        selectionInputs: [
+          'Target gas, vapor, odor or corrosive molecular contaminant',
+          'Inlet concentration, variability and exposure profile',
+          'Airflow rate, face velocity and required contact conditions',
+          'Temperature and relative-humidity operating range',
+          'Competing gases, vapors and upstream particulate loading',
+          'Required outlet condition or protected-process objective',
+          'Existing housing, sealing, bypass and installation constraints',
+          'Media monitoring, testing and replacement strategy',
+        ],
+        engineeringNotes: [
+          {
+            title: 'Molecular treatment is not particulate filtration',
+            body: 'Particle filters and molecular media solve different contamination problems. MA-TREA™ is selected when the controlled challenge is a gas, vapor, odor or corrosive molecular contaminant, while particulate stages may remain necessary upstream or downstream.',
+          },
+          {
+            title: 'Media chemistry follows the contaminant',
+            body: 'Activated-carbon, impregnated or other adsorptive / reactive media cannot be treated as universally interchangeable. Selection follows the target chemistry, concentration, humidity, competing contaminants and required treatment endpoint.',
+          },
+          {
+            title: 'Breakthrough matters more than appearance',
+            body: 'Molecular media may approach exhaustion without looking visibly loaded. Condition review therefore considers contaminant breakthrough, monitoring or media testing, duty history and operating conditions rather than appearance or differential pressure alone.',
+          },
+          {
+            title: 'Installation remains part of performance',
+            body: 'Housing integrity, module seating, sealing, airflow distribution and service access affect whether the air stream actually receives the intended molecular treatment. Bypass can undermine otherwise suitable media.',
+          },
+        ],
+        knowledgeCenterSlug: 'ip-aeremis-ma-trea-molecular-air',
+        customFaqs: [
+          ['What does MA-TREA™ treat?', 'MA-TREA™ is intended for identified molecular contaminants such as target gases, vapors, odors or corrosive airborne compounds. The specific media and configuration depend on the contaminant chemistry and operating conditions.'],
+          ['Is MA-TREA™ the same as HEPA or high-efficiency particulate filtration?', 'No. MA-TREA™ addresses molecular-phase contamination, while particulate filtration addresses suspended particles. A project may require both treatment mechanisms in a staged air-treatment system.'],
+          ['How is molecular-media exhaustion evaluated?', 'Exhaustion is evaluated from the application duty and evidence such as target-contaminant breakthrough, monitoring, media testing, exposure history and operating conditions. Differential pressure alone does not establish remaining molecular capacity.'],
+          ['What information is needed to select a MA-TREA™ treatment path?', 'At minimum, identify the target contaminant, expected concentration and variability, airflow, temperature, humidity, required outlet condition, competing contaminants, existing housing constraints and the intended monitoring or replacement strategy.'],
+        ],
+      },
     ],
   },
   {
