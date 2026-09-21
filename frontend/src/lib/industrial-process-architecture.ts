@@ -401,7 +401,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Gas composition, pressure and temperature', 'Gas flow rate, velocity and turndown', 'Fine aerosol size distribution and liquid loading', 'Liquid viscosity, density, surface behavior and drainage characteristics', 'Upstream free-liquid or slug potential', 'Upstream solids that can load or foul the coalescing media', 'Continuous, variable or upset process duty'],
           ['Liquid carryover downstream', 'Unexpected differential-pressure rise', 'Poor drainage, flooding or liquid accumulation', 'Re-entrainment after apparent separation', 'Short element service life', 'Evidence of bypass or seal failure', 'Performance changes after gas, liquid or flow conditions shift'],
           '/images/oil&gas.avif',
-          '/images/separator-elimf.avif',
+          '/images/COALERIS.png',
         ),
         selectionInputs: [
           'Gas composition and target liquid contaminant',
