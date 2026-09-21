@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 import { INDUSTRIAL_PROCESS_PLATFORMS, industrialProcessPlatformUrl, industrialProcessTechnologyUrl } from '@/lib/industrial-process-architecture';
+import { getCanonicalKnowledgeBySlug } from '@/lib/services/canonical-knowledge-service';
 
 export const metadata: Metadata = {
   title: 'Industrial & Process Filtration | ELIMFILTERS',
@@ -53,6 +54,10 @@ const datasheetBlocks = [
 ];
 
 export default function IndustrialProcessPage() {
+  const platformStandards = INDUSTRIAL_PROCESS_PLATFORMS.map((platform) => ({
+    platform,
+    standards: platform.knowledgeCenterSlug ? (getCanonicalKnowledgeBySlug(platform.knowledgeCenterSlug)?.standards ?? []) : [],
+  })).filter((item) => item.standards.length > 0);
   const inquiryHref =
     'mailto:info@elimfilters.com?subject=Industrial%20%26%20Process%20Engineering%20Review&body=Company%3A%0ACountry%3A%0AIndustry%20%2F%20process%3A%0AApplication%3A%0AFluid%20or%20gas%3A%0AFlow%3A%0APressure%3A%0ATemperature%3A%0AContaminant%20or%20treatment%20objective%3A%0AExisting%20equipment%20%2F%20reference%3A%0AProject%20timing%3A';
 
@@ -167,6 +172,38 @@ export default function IndustrialProcessPage() {
                       </Link>
                     ))}
                   </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={{ ...section, background: '#050505' }} aria-labelledby="standards-title">
+          <div style={container}>
+            <p style={eyebrow}>STANDARDS & TEST GOVERNANCE</p>
+            <h2 id="standards-title" style={sectionTitle}>Industrial elements are specified against the applicable test method.</h2>
+            <p style={{ ...lead, maxWidth: 980 }}>
+              ELIMFILTERS Industrial &amp; Process links each platform and treatment family to the governed ISO, ASTM and other test methods that actually apply to that mechanism. Standards are engineering references, not blanket certification claims.
+            </p>
+            <div style={platformGrid}>
+              {platformStandards.map(({ platform, standards }) => (
+                <article key={platform.slug} style={platformCard}>
+                  <Link href={industrialProcessPlatformUrl(platform.slug)} style={{ color: '#fff', textDecoration: 'none' }}>
+                    <h3 style={{ ...platformMark, marginTop: 0 }}>{platform.name}</h3>
+                  </Link>
+                  <p style={bodyCopy}>{platform.descriptor}</p>
+                  <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 18, paddingTop: 12 }}>
+                    {standards.map((standard) => (
+                      <div key={standard} style={specRow}><span>—</span><span>{standard}</span></div>
+                    ))}
+                  </div>
+                  {platform.knowledgeCenterSlug ? (
+                    <div style={{ marginTop: 18 }}>
+                      <Link href={`/knowledge-center/canonical/${platform.knowledgeCenterSlug}/`} style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none' }}>
+                        OPEN GOVERNED ENGINEERING REFERENCE →
+                      </Link>
+                    </div>
+                  ) : null}
                 </article>
               ))}
             </div>
