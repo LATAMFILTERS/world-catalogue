@@ -197,6 +197,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           undefined,
           '/images/MA_TREA-VIDEO.mp4',
         ),
+        hideHeroPoster: true,
         selectionInputs: [
           'Target gas, vapor, odor or corrosive molecular contaminant',
           'Inlet concentration, variability and exposure profile',
