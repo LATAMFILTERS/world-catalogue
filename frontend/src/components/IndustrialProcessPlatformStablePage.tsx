@@ -4,9 +4,12 @@ import {
   type IndustrialProcessPlatform,
   industrialProcessTechnologyUrl,
 } from '@/lib/industrial-process-architecture';
+import { getCanonicalKnowledgeBySlug } from '@/lib/services/canonical-knowledge-service';
 
 export function IndustrialProcessPlatformStablePage({ platform }: { platform: IndustrialProcessPlatform }) {
   const inquiryHref = `mailto:applications@elimfilters.com?subject=${encodeURIComponent(`${platform.name} Industrial & Process Platform Review`)}`;
+  const canonicalKnowledge = platform.knowledgeCenterSlug ? getCanonicalKnowledgeBySlug(platform.knowledgeCenterSlug) : null;
+  const standards = canonicalKnowledge?.standards ?? [];
 
   return (
     <main id="main-content" className={styles.page}>
@@ -144,6 +147,16 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
           ))}
         </div>
       </div></section>
+
+      {standards.length ? (
+        <section className={styles.bandAlt}><div className={styles.inner}>
+          <p className={styles.eyebrow}>STANDARDS &amp; TEST GOVERNANCE</p>
+          <h2 className={styles.h2}>Standards that govern this platform</h2>
+          <p className={styles.lead}>This platform inherits the applicable ISO, ASTM and other validated test methods maintained in its canonical Knowledge Center record. Individual family pages narrow the list to the actual element or treatment mechanism.</p>
+          <ul className={styles.list}>{standards.map((standard)=><li key={standard}>{standard}</li>)}</ul>
+          <p className={styles.bodyWide}>A standard is applied only within its published scope and the validated product duty. Listing it here is not a blanket certification claim for every ELIMFILTERS element in the platform.</p>
+        </div></section>
+      ) : null}
 
       {platform.knowledgeCenterSlug ? (
         <section className={styles.band}><div className={styles.inner}>
