@@ -11,6 +11,10 @@ function coreLabel(core: string | readonly string[]) {
   return typeof core === 'string' ? core : core.join(' / ');
 }
 
+function technologyName(name: string, branded: boolean) {
+  return branded ? <span className={styles.technologyName}>{name}</span> : name;
+}
+
 function faqItems(platform: IndustrialProcessPlatform, technology: IndustrialProcessTechnology) {
   const familyWord = technology.branded ? 'technology' : 'treatment family';
   const base = [
@@ -117,7 +121,7 @@ export function IndustrialProcessTechnologyStablePage({
             textShadow: '0 8px 28px rgba(0,0,0,.5)',
           }}
         >
-          {technology.name}
+          {technologyName(technology.name, technology.branded)}
         </div>
       </section>
 
@@ -126,14 +130,14 @@ export function IndustrialProcessTechnologyStablePage({
           <Link href="/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>HOME</Link><span>→</span>
           <Link href="/industrial-process/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>INDUSTRIAL &amp; PROCESS</Link><span>→</span>
           <Link href={industrialProcessPlatformUrl(platform.slug)} style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>{platform.name}</Link><span>→</span>
-          <span style={{color:'#fff12d'}}>{technology.name}</span>
+          <span style={{color:'#fff12d'}}>{technologyName(technology.name, technology.branded)}</span>
         </div>
       </nav>
 
       <section className={styles.introSection}>
         <div className={styles.inner}>
           <p className={styles.eyebrow}>{technology.branded ? 'FILTRATION TECHNOLOGY' : 'TREATMENT FAMILY'}</p>
-          <h2 className={styles.displayTitle}>{technology.name}</h2>
+          <h2 className={styles.displayTitle}>{technologyName(technology.name, technology.branded)}</h2>
           <p className={styles.applicationLine}><strong>{technology.title}</strong></p>
           <p className={styles.lead}>{technology.summary}</p>
           <p className={styles.bodyWide}>{technology.treatmentFunction}</p>
@@ -141,7 +145,7 @@ export function IndustrialProcessTechnologyStablePage({
           <div className={styles.mediaGrid}>
             <div className={styles.mediaCopy}>
               <div className={styles.metaStack}>
-                <p><span>{technology.branded ? 'Technology:' : 'Treatment family:'}</span> {technology.name}</p>
+                <p><span>{technology.branded ? 'Technology:' : 'Treatment family:'}</span> {technologyName(technology.name, technology.branded)}</p>
                 <p><span>Platform:</span> {platform.name} — {platform.descriptor}</p>
                 <p><span>Engineering core:</span> {coreLabel(technology.technologyCore)}</p>
               </div>
@@ -171,14 +175,14 @@ export function IndustrialProcessTechnologyStablePage({
         <h2 className={styles.h2}>Treatment performance depends on the complete process boundary.</h2>
         <p className={styles.lead}>The filter, element, media, vessel or treatment device is only one part of the result. Flow, contaminant loading, pressure, temperature, chemistry, housing condition, drainage, sealing and upstream/downstream process behavior can materially change performance.</p>
         <div className={styles.twoColumnNotes}>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>A useful distinction</h3><p className={styles.body}>{technology.name} identifies a treatment function. It does not make every product or system inside that category technically interchangeable.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>A useful distinction</h3><p className={styles.body}>{technologyName(technology.name, technology.branded)} identifies a treatment function. It does not make every product or system inside that category technically interchangeable.</p></article>
           <article className={styles.noteBlock}><h3 className={styles.h3}>Evidence before claims</h3><p className={styles.body}>Efficiency, capacity, pressure drop, outlet quality, service interval and compatibility remain tied to validated product or project evidence.</p></article>
         </div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
         <p className={styles.eyebrow}>APPLICATION ENVIRONMENT</p>
-        <h2 className={styles.h2}>Where {technology.name} belongs</h2>
+        <h2 className={styles.h2}>Where {technologyName(technology.name, technology.branded)} belongs</h2>
         <div className={styles.editorialColumns}>
           <div><h3 className={styles.h3}>Application positions</h3><ul className={styles.list}>{technology.applications.map((x)=><li key={x}>{x}</li>)}</ul></div>
           <div><h3 className={styles.h3}>Conditions that change treatment duty</h3><ul className={styles.list}>{technology.conditions.map((x)=><li key={x}>{x}</li>)}</ul></div>
@@ -215,9 +219,9 @@ export function IndustrialProcessTechnologyStablePage({
       {technology.subfamilies?.length ? (
         <section className={styles.band}><div className={styles.inner}>
           <p className={styles.eyebrow}>DESCRIPTIVE SUBFAMILIES</p>
-          <h2 className={styles.h2}>{technology.name} includes distinct engineering paths.</h2>
+          <h2 className={styles.h2}>{technologyName(technology.name, technology.branded)} includes distinct engineering paths.</h2>
           <div className={styles.editorialColumns}>
-            {technology.subfamilies.map((item) => <div key={item}><h3 className={styles.h3}>{item}</h3><p className={styles.body}>Descriptive engineering subfamily beneath {technology.name}; it does not create an additional independent ELIMFILTERS technology mark.</p></div>)}
+            {technology.subfamilies.map((item) => <div key={item}><h3 className={styles.h3}>{item}</h3><p className={styles.body}>Descriptive engineering subfamily beneath {technologyName(technology.name, technology.branded)}; it does not create an additional independent ELIMFILTERS technology mark.</p></div>)}
           </div>
         </div></section>
       ) : null}
@@ -255,11 +259,11 @@ export function IndustrialProcessTechnologyStablePage({
         <h2 className={styles.h2}>Technical reference and claim governance</h2>
         <div className={styles.twoColumnNotes}>
           <article className={styles.noteBlock}><h3 className={styles.h3}>Engineering core</h3><p className={styles.body}>{coreLabel(technology.technologyCore)} remains the mechanism-level engineering identifier behind the customer-facing family.</p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Claim governance</h3><p className={styles.body}>No universal efficiency, capacity, micron rating, separation percentage, service-life multiplier or outlet-quality value is assigned across {technology.name} without validated evidence for the specific product or project.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>Claim governance</h3><p className={styles.body}>No universal efficiency, capacity, micron rating, separation percentage, service-life multiplier or outlet-quality value is assigned across {technologyName(technology.name, technology.branded)} without validated evidence for the specific product or project.</p></article>
           {technology.knowledgeCenterSlug ? (
             <article className={styles.noteBlock}>
               <h3 className={styles.h3}>Canonical Knowledge Center reference</h3>
-              <p className={styles.body}>Approved engineering relationships, operating conditions and diagnostic guidance for {technology.name} are maintained in the governed ELIMFILTERS Knowledge Center.</p>
+              <p className={styles.body}>Approved engineering relationships, operating conditions and diagnostic guidance for {technologyName(technology.name, technology.branded)} are maintained in the governed ELIMFILTERS Knowledge Center.</p>
               <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}>OPEN ENGINEERING REFERENCE →</Link></div>
             </article>
           ) : null}
@@ -277,7 +281,7 @@ export function IndustrialProcessTechnologyStablePage({
         <h2 className={styles.h2}>{platform.name} — {platform.descriptor}</h2>
         <div className={styles.systemGrid}>
           <div><p className={styles.lead}>{platform.summary}</p><Link className={styles.systemButton} href={industrialProcessPlatformUrl(platform.slug)}>EXPLORE PLATFORM</Link></div>
-          <p className={styles.bodyWide}>{technology.name} is resolved inside the {platform.name} platform. Final selection connects the treatment mechanism to operating conditions, contamination load, compatibility, required outcome and validated product evidence.</p>
+          <p className={styles.bodyWide}>{technologyName(technology.name, technology.branded)} is resolved inside the {platform.name} platform. Final selection connects the treatment mechanism to operating conditions, contamination load, compatibility, required outcome and validated product evidence.</p>
         </div>
       </div></section>
 
@@ -293,7 +297,7 @@ export function IndustrialProcessTechnologyStablePage({
         <h2 className={styles.h2}>Continue within {platform.name}.</h2>
         <div className={styles.editorialColumns}>
           {related.slice(0,3).map((item) => (
-            <div key={item.slug}><h3 className={styles.h3}><Link href={industrialProcessTechnologyUrl(platform.slug,item.slug)} style={{color:'#fff',textDecoration:'none'}}>{item.name}</Link></h3><p className={styles.body}>{item.title}</p></div>
+            <div key={item.slug}><h3 className={styles.h3}><Link href={industrialProcessTechnologyUrl(platform.slug,item.slug)} style={{color:'#fff',textDecoration:'none'}}>{technologyName(item.name, item.branded)}</Link></h3><p className={styles.body}>{item.title}</p></div>
           ))}
           {related.length === 0 ? <div><h3 className={styles.h3}><Link href={industrialProcessPlatformUrl(platform.slug)} style={{color:'#fff',textDecoration:'none'}}>Back to {platform.name}</Link></h3><p className={styles.body}>Review the platform context and engineering qualification path.</p></div> : null}
         </div>
