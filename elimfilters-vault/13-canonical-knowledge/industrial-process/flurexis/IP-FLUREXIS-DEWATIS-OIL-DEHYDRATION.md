@@ -117,6 +117,12 @@ cross_reference_write_allowed: false
 - Water ingress rate
 - Required final moisture condition
 
+## Standards
+
+- ASTM D6304-25 — determination of water in petroleum products, lubricating oils and additives by coulometric Karl Fischer titration.
+- ISO 12937:2000 — coulometric Karl Fischer water determination for petroleum products; applicability and precision limits must be respected for the specific oil.
+- Moisture-removal efficiency, final water content and treatment time remain product/project claims and are not inferred solely from the analytical test standard.
+
 ## Shared Engineering
 
 - Flow Rate
