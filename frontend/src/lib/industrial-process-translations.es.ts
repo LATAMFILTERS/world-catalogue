@@ -84,6 +84,7 @@ export const INDUSTRIAL_PROCESS_ES: Record<string, PlatformEsOverride> = {
     ],
     technologies: {
       'general-air-filtration': {
+        title: 'Filtración General de Aire',
         summary: 'Filtración particulada para ventilación industrial, aire de reposición y trabajos generales de manejo de aire.',
         treatmentFunction: 'Controlar la partícula aérea antes de que llegue a espacios ocupados, salas de equipo o etapas de tratamiento de aire aguas abajo.',
         mechanisms: ['Prefiltración y captura particulada por etapas', 'Selección de medio por carga de polvo y caída de presión permisible', 'Configuración alrededor del sistema de manejo de aire existente'],
@@ -93,6 +94,7 @@ export const INDUSTRIAL_PROCESS_ES: Record<string, PlatformEsOverride> = {
         engineeringNotes: [],
       },
       'he-criva': {
+        title: 'Filtración de Aire Crítico / Alta Eficiencia',
         summary: 'Control particulado de alta eficiencia para aplicaciones de aire crítico y de alta limpieza.',
         treatmentFunction: 'Reducir la partícula fina aérea donde la limpieza requerida es más exigente que el duty de ventilación general.',
         mechanisms: ['Medio particulado de alta eficiencia', 'Prefiltración por etapas para proteger las etapas finales', 'Control de sellado y bypass en la interfaz filtro-housing'],
@@ -101,6 +103,7 @@ export const INDUSTRIAL_PROCESS_ES: Record<string, PlatformEsOverride> = {
         serviceSignals: ['Pérdida inesperada de limpieza', 'Carga prematura de etapa final', 'Fuga de sello o marco', 'Caída de presión fuera de tendencia esperada'],
       },
       'ma-trea': {
+        title: 'Tratamiento Molecular de Aire',
         summary: 'Tratamiento de aire en fase molecular para gases, vapores, olores y contaminantes moleculares corrosivos usando medios seleccionados según el desafío real del contaminante.',
         treatmentFunction: 'Tratar contaminantes moleculares identificados que no se resuelven solo con filtración particulada, integrando química del medio, condiciones de contacto, integridad del housing y estrategia de servicio.',
         mechanisms: ['Adsorción o quimisorción usando medios seleccionados por aplicación', 'Selección de medio según la química del contaminante objetivo y especies competidoras', 'Evaluación de tiempo de contacto, caudal y carga de contaminante', 'Integración con prefiltración particulada, sellado y acceso de servicio'],
@@ -153,6 +156,7 @@ export const INDUSTRIAL_PROCESS_ES: Record<string, PlatformEsOverride> = {
     ],
     technologies: {
       fumevra: {
+        title: 'Filtración Fina de Polvo y Humo',
         summary: 'Filtración de polvo fino y humo generados por proceso para sistemas industriales de extracción y colección de polvo, con selección de medio y elemento resuelta según el comportamiento y duty real de la partícula.',
         treatmentFunction: 'Capturar la partícula fina y el humo generados por el proceso dentro del sistema de extracción o colección de polvo instalado antes de la recirculación, descarga o tratamiento aguas abajo, preservando el caudal, sellado y comportamiento de servicio requeridos de la interfaz del colector validado.',
         mechanisms: ['Filtración superficial o profunda seleccionada por comportamiento de partícula', 'Geometría de medio y elemento emparejada al mecanismo de carga', 'Compatibilidad con limpieza por pulso de aire u otro método solo donde el elemento y el sistema instalado están validados para regeneración', 'Gestión de carga de polvo, liberación de torta y presión diferencial', 'Control de sellado y bypass en la interfaz elemento-colector'],
@@ -205,6 +209,7 @@ export const INDUSTRIAL_PROCESS_ES: Record<string, PlatformEsOverride> = {
     ],
     technologies: {
       coaleris: {
+        title: 'Coalescencia de Gas',
         summary: 'Coalescencia de aerosol líquido fino y gota entrapada para corrientes de gas natural y gas de proceso industrial donde el equipo aguas abajo requiere arrastre de líquido controlado.',
         treatmentFunction: 'Capturar aerosoles líquidos finos y gotas pequeñas entrapadas dentro de medio coalescente, promover el crecimiento de la gota, y proveer una vía de drenaje confiable para que el líquido separado salga de la corriente de gas antes de equipo sensible aguas abajo.',
         mechanisms: ['Captura de aerosol fino y gota pequeña dentro de medio coalescente fibroso o poroso', 'Crecimiento de gota mediante intercepción y coalescencia repetida', 'Drenaje asistido por gravedad tras la formación de gota', 'Control de trayectoria de flujo, sellado de elemento y prevención de bypass', 'Control de re-entrada mediante velocidad de gas y condiciones de drenaje correctas'],
@@ -232,6 +237,7 @@ export const INDUSTRIAL_PROCESS_ES: Record<string, PlatformEsOverride> = {
         ],
       },
       'gas-liquid-separation': {
+        title: 'Separación Gas-Líquido',
         summary: 'Elementos de filtración y separación diseñados para remover líquido libre y gotas entrapadas de corrientes de gas industrial antes de equipo aguas abajo o etapas coalescentes más finas.',
         treatmentFunction: 'Proveer el elemento interno de filtración y separación que captura líquido libre, gotas entrapadas más grandes y arrastre antes de la coalescencia fina COALERIS™ o equipo sensible aguas abajo.',
         mechanisms: ['Impacto inercial y cambio direccional a través del elemento de separación', 'Captura de gota y disengagement de la corriente de gas en la superficie activa del elemento', 'Drenaje asistido por gravedad del líquido separado lejos del elemento activo', 'Desempeño del elemento evaluado contra carga de líquido, velocidad de gas y caída de presión permisible'],
