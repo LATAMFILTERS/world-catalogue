@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "mission": "Continuously sweep the complete engine, vehicle, equipment and industrial filtration ecosystem; discover verifiable developments; compare them with ELIMFILTERS existing knowledge; and propose new knowledge or reinforcement of existing knowledge without duplication. LinkedIn is an explicit weekly discovery/radar source: HERMES may use official company, OEM, technical-institution and industry LinkedIn posts to detect signals, but a LinkedIn post must never be treated as final technical evidence by itself. For every LinkedIn-origin signal, HERMES must follow the post or independently locate a primary or technically verifiable source such as an official product page, case study, technical bulletin, white paper, standard, regulatory document or recognized technical publication before creating a verified candidate. If no such corroborating source is found, retain the signal as INTERNAL_ONLY / unresolved intelligence and do not propose canonical Knowledge Center or catalogue changes.",
   "coverage_policy": "EXPANSIVE_NOT_CLOSED_LIST",
   "lookback_days": 7,
@@ -163,7 +163,7 @@
     },
     {
       "id": "industrial_air_filtration",
-      "label": "Industrial air filtration: dust, fume and mist",
+      "label": "Industrial air filtration: ventilation, critical air, dust, fume and mist",
       "topics": [
         "industrial dust collection",
         "fine dust filtration",
@@ -189,14 +189,28 @@
         "mist filter media",
         "combustible dust",
         "dust hazard analysis",
-        "industrial air filtration case studies"
+        "industrial air filtration case studies",
+        "general ventilation filtration",
+        "ISO 16890",
+        "HEPA filtration",
+        "ULPA filtration",
+        "ISO 29463",
+        "EN 1822",
+        "molecular air filtration",
+        "gas phase air cleaning",
+        "adsorption",
+        "ISO 10121",
+        "activated carbon air media"
       ],
       "research_mode": "EVERGREEN_TECHNICAL_LIBRARY",
       "preferred_source_urls": [
         "https://www.donaldson.com/en/resources/technical-articles/?pg=donaldson:product-group/industrial-air-filtration",
-        "https://www.donaldson.com/en/resources/case-studies/?pg=donaldson:product-group/industrial-air-filtration"
+        "https://www.donaldson.com/en/resources/case-studies/?pg=donaldson:product-group/industrial-air-filtration",
+        "https://www.camfil.com/en-us/products/general-ventilation-filters",
+        "https://www.camfil.com/en-us/products/epa-hepa--ulpa-filters",
+        "https://www.camfil.com/en-us/products/molecular-filters"
       ],
-      "research_goal": "Systematically close Industrial & Process knowledge gaps using primary technical articles, case studies and linked official product literature. Older primary evidence may be used as engineering evidence but must not be misrepresented as a new development."
+      "research_goal": "Systematically close AEREMIS™ and PARTION™ knowledge gaps using primary technical libraries, individual articles, case studies and official product documentation. Preserve the boundary between particulate dust/fume and liquid-droplet mist, and do not generalize source-specific performance."
     },
     {
       "id": "fuel_filtration",
@@ -379,6 +393,102 @@
         "new laboratories",
         "new testing capabilities",
         "supply chain developments"
+      ]
+    },
+    {
+      "id": "industrial_gas_conditioning",
+      "label": "Industrial gas conditioning and liquid/gas separation",
+      "research_mode": "EVERGREEN_TECHNICAL_LIBRARY",
+      "preferred_source_urls": [
+        "https://www.pall.com/en/oil-gas/seprasol-plus-liquid-gas-coalescer.html",
+        "https://www.pall.com/en/oil-gas.html"
+      ],
+      "research_goal": "Close COALVEX™ knowledge gaps for gas particulate filtration, bulk gas-liquid separation, fine aerosol coalescence, drainage, turndown, carryover and protected downstream equipment without turning vessel or skid architecture into an ELIMFILTERS element claim.",
+      "topics": [
+        "natural gas filtration",
+        "fuel gas filtration",
+        "gas particulate filtration",
+        "liquid gas coalescence",
+        "fine liquid aerosol",
+        "droplet coalescence",
+        "drainage",
+        "gas liquid separation",
+        "bulk liquid separation",
+        "slug liquid",
+        "turndown",
+        "re-entrainment",
+        "compressor protection",
+        "amine carryover",
+        "pipeline gas conditioning"
+      ]
+    },
+    {
+      "id": "industrial_fluid_conditioning",
+      "label": "Industrial hydraulic, lubrication and oil conditioning",
+      "research_mode": "EVERGREEN_TECHNICAL_LIBRARY",
+      "preferred_source_urls": [
+        "https://www.pall.com/en/industrial-manufacturing/general-industrial/medium-light-hydraulic.html",
+        "https://www.pall.com/en/industrial-manufacturing/general-industrial/medium-light-lubrication.html",
+        "https://www.pall.com/en/industrial-manufacturing/automotive/oil-purifiers1.html",
+        "https://www.pall.com/en/industrial-manufacturing/blog/varnish-in-oil.html"
+      ],
+      "research_goal": "Close FLUREXIS™ knowledge gaps across particulate cleanliness, water state and removal, oil degradation and varnish remediation. Keep purifier/skid equipment as context and keep supplier numeric performance product-specific.",
+      "topics": [
+        "hydraulic filtration",
+        "industrial lubrication filtration",
+        "ISO 16889",
+        "ISO 4406",
+        "differential pressure",
+        "viscosity",
+        "offline filtration",
+        "kidney loop",
+        "water in oil",
+        "free water",
+        "emulsified water",
+        "dissolved water",
+        "vacuum dehydration",
+        "Karl Fischer",
+        "oil varnish",
+        "oil degradation products",
+        "adsorptive varnish removal",
+        "membrane patch colorimetry",
+        "antistatic filter media"
+      ]
+    },
+    {
+      "id": "industrial_water_treatment",
+      "label": "Industrial water filtration and treatment media",
+      "research_mode": "EVERGREEN_TECHNICAL_LIBRARY",
+      "preferred_source_urls": [
+        "https://shop.pall.com/us/en/products/filter-cartridges/depth-filters/profile-ii",
+        "https://www.dupont.com/water/technologies.html",
+        "https://www.dupont.com/water/technologies/ion-exchange-ix.html",
+        "https://www.dupont.com/water/technologies/electrodeionization-edi.html",
+        "https://www.calgoncarbon.com/products/filtrasorb/"
+      ],
+      "research_goal": "Close AQUVEXIS™ knowledge gaps across depth filtration, activated-carbon adsorption, RO/NF/UF membrane separation, ion exchange and EDI while keeping complete water-treatment skids and EDI systems outside ELIMFILTERS product scope unless separately approved.",
+      "topics": [
+        "industrial water depth filtration",
+        "graded pore depth media",
+        "suspended solids",
+        "activated carbon adsorption",
+        "granular activated carbon",
+        "breakthrough",
+        "reverse osmosis",
+        "nanofiltration",
+        "ultrafiltration",
+        "membrane pretreatment",
+        "fouling",
+        "scaling",
+        "normalized membrane performance",
+        "ion exchange resin",
+        "softening",
+        "demineralization",
+        "selective ion removal",
+        "electrodeionization",
+        "RO permeate polishing",
+        "conductivity",
+        "resistivity"
       ]
     }
   ],
