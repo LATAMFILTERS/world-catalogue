@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Search normalization only. This registry does not assert filter fitment or cross-brand mechanical equivalence.",
+  "markets": [
+    {
+      "market": "US",
+      "make": "ISUZU",
+      "make_aliases": [
+        "ISUZU",
+        "ISUZU (USA)",
+        "ISUZU TRUCK",
+        "ISUZU COMMERCIAL TRUCK",
+        "ISUZU COMMERCIAL TRUCK OF AMERICA"
+      ],
+      "platform": "N-SERIES",
+      "models": [
+        {
+          "canonical": "NPR",
+          "aliases": [
+            "NPR"
+          ]
+        },
+        {
+          "canonical": "NPR-HD",
+          "aliases": [
+            "NPR-HD",
+            "NPR HD",
+            "NPRHD"
+          ]
+        },
+        {
+          "canonical": "NPR-XD",
+          "aliases": [
+            "NPR-XD",
+            "NPR XD",
+            "NPRXD"
+          ]
+        },
+        {
+          "canonical": "NQR",
+          "aliases": [
+            "NQR"
+          ]
+        },
+        {
+          "canonical": "NRR",
+          "aliases": [
+            "NRR"
+          ]
+        }
+      ]
+    }
+  ]
+}

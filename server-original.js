@@ -13,6 +13,7 @@ const {
 } = require('./lib/alternative-functional-family');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
 const TranslationService = require('./lib/translation-service');
+const { findPlatform, parseVehicleSearchText, normalizeAlphaNum } = require('./lib/vehicle-application-normalizer');
 
 // ─── Rate Limiters ────────────────────────────────────────────────────────────
 const searchLimiter = rateLimit({
@@ -2096,7 +2097,18 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
 //   - equipment_applications JSONB (Heavy Duty)
 //   - vehicle_applications   JSONB (Light Duty – industrial machines stored here)
 app.get('/api/search/equipment', searchLimiter, async (req, res) => {
-  const { make, model, year, engine } = req.query;
+  let { make, model, year, engine } = req.query;
+  const { market, q } = req.query;
+  const conversational = q ? parseVehicleSearchText(q, market || 'US') : null;
+  const identity = findPlatform({
+    make: make || conversational?.make,
+    model: model || conversational?.model,
+    market: market || conversational?.market || 'US',
+  });
+  make = identity.matched ? identity.make : (make || conversational?.make || null);
+  model = identity.matched ? identity.model : (model || conversational?.model || null);
+  year = year || conversational?.year || null;
+  engine = engine || conversational?.engine || null;
   if (!make && !model) return res.status(400).json({ success: false, error: 'make or model required' });
 
   const lang   = detectLang(req);
@@ -2143,6 +2155,45 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     // LD: vehicle_applications (industrial equipment also stored here)
     conditions.push(buildJsonbCond('vehicle_applications'));
 
+    // Canonical relational vehicle applications. This reuses the existing LD fitment
+    // authority; it does not create a parallel vehicle catalogue.
+    const vehicleConds = [];
+    if (make) {
+      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_make', va.make, ''), '[^A-Z0-9]', '', 'g')) LIKE $${idx}`);
+      params.push('%' + normalizeAlphaNum(make) + '%');
+      idx++;
+    }
+    if (model) {
+      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_model', va.model_family, ''), '[^A-Z0-9]', '', 'g')) LIKE $${idx}`);
+      params.push('%' + normalizeAlphaNum(model) + '%');
+      idx++;
+    }
+    if (year) {
+      vehicleConds.push(`(
+        trim(coalesce(va.year,'')) = $${idx}::text
+        OR (
+          coalesce(to_jsonb(va)->>'year_from','') ~ '^(19|20)[0-9]{2}$'
+          AND coalesce(to_jsonb(va)->>'year_to','') ~ '^(19|20)[0-9]{2}$'
+          AND (to_jsonb(va)->>'year_from')::int <= $${idx}::int
+          AND (to_jsonb(va)->>'year_to')::int >= $${idx}::int
+        )
+      )`);
+      params.push(String(year));
+      idx++;
+    }
+    if (engine) {
+      vehicleConds.push(`upper(regexp_replace(coalesce(va.engine_code, va.model_type, ''), '[^A-Z0-9]', '', 'g')) LIKE $${idx}`);
+      params.push('%' + normalizeAlphaNum(engine) + '%');
+      idx++;
+    }
+    if (vehicleConds.length > 0) {
+      conditions.push(`EXISTS (
+        SELECT 1 FROM ld_catalog.ld_vehicle_applications va
+        WHERE va.elimfilters_sku = elimfilters_catalog_active_v.sku
+          AND ${vehicleConds.join(' AND ')}
+      )`);
+    }
+
     // Relational Knowledge Graph: kg_product_equipment + kg_equipment_models + kg_equipment_makes
     const kgConds = [];
     if (make) {
@@ -2174,7 +2225,20 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
 
     const products = rows.map(r => buildFilterData(r, lang));
     await enrichAlternatives(products, client);
-    res.json({ success: true, results: products, source: 'equipment' });
+    res.json({
+      success: true,
+      results: products,
+      source: 'equipment',
+      vehicle_resolution: {
+        market: market || conversational?.market || null,
+        make: make || null,
+        model: model || null,
+        year: year || null,
+        engine: engine || null,
+        platform: identity.platform || null,
+        normalized: identity.matched === true,
+      },
+    });
   } catch (e) {
     console.error('[search/equipment]', e.message);
     res.status(500).json({ success: false, error: 'Internal server error' });
