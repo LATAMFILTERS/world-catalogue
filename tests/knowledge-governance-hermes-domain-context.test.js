@@ -215,6 +215,34 @@ test('Hermes accepts governed Industrial & Process AQUVEXIS research context', (
   }
 });
 
+test('Hermes accepts descriptive AQUVEXIS treatment paths without inventing branded technology ownership', () => {
+  const descriptiveFamilies = [
+    ['Depth Filtration', 'How should suspended-solids depth filtration be qualified before downstream water treatment?'],
+    ['Electrodeionization', 'What upstream water condition and operating evidence are required before electrodeionization polishing?'],
+  ];
+
+  for (const [component, researchQuestion] of descriptiveFamilies) {
+    const request = createHermesResearchRequest({
+      knowledge_gap_request_id: `gap-ip-water-descriptive-${component.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+      research_type: 'technical_knowledge',
+      knowledge_domain: KNOWLEDGE_DOMAINS.INDUSTRIAL_PROCESS,
+      industry: 'Manufacturing',
+      system: SYSTEMS.INDUSTRIAL_PROCESS,
+      platform: PLATFORMS.AQUVEXIS,
+      technology_relation: 'none',
+      component,
+      application_relation: 'verified',
+      research_question: researchQuestion
+    });
+
+    const validation = validateHermesResearchRequest(request);
+    assert.equal(validation.valid, true);
+    assert.equal(request.platform, PLATFORMS.AQUVEXIS);
+    assert.equal(request.technology, null);
+    assert.equal(request.technology_relation, 'none');
+  }
+});
+
 test('Hermes rejects a branded technology assigned to the wrong Industrial & Process platform', () => {
   const request = createHermesResearchRequest({
     knowledge_gap_request_id: 'gap-ip-cross-platform-001',
