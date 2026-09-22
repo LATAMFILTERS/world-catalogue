@@ -54,6 +54,8 @@ const datasheetBlocks = [
   'Ordering information',
 ];
 
+const BASE_URL = 'https://elimfilters.com';
+
 export default function IndustrialProcessPage() {
   const platformStandards = INDUSTRIAL_PROCESS_PLATFORMS.map((platform) => ({
     platform,
@@ -62,9 +64,40 @@ export default function IndustrialProcessPage() {
   const inquiryHref =
     'mailto:info@elimfilters.com?subject=Industrial%20%26%20Process%20Engineering%20Review&body=Company%3A%0ACountry%3A%0AIndustry%20%2F%20process%3A%0AApplication%3A%0AFluid%20or%20gas%3A%0AFlow%3A%0APressure%3A%0ATemperature%3A%0AContaminant%20or%20treatment%20objective%3A%0AExisting%20equipment%20%2F%20reference%3A%0AProject%20timing%3A';
 
+  const url = `${BASE_URL}/industrial-process/`;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${url}#collection`,
+    url,
+    name: 'Industrial & Process Filtration | ELIMFILTERS',
+    description:
+      'ELIMFILTERS Industrial & Process is the engineering entry point for high-value filtration, separation, fluid conditioning, gas conditioning, air treatment and industrial water projects.',
+    isPartOf: { '@id': `${BASE_URL}/#website` },
+    publisher: { '@id': `${BASE_URL}/#organization` },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Industrial & Process', item: url },
+      ],
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: INDUSTRIAL_PROCESS_PLATFORMS.length,
+      itemListElement: INDUSTRIAL_PROCESS_PLATFORMS.map((platform, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: `${platform.name} — ${platform.descriptor}`,
+        url: `${BASE_URL}${industrialProcessPlatformUrl(platform.slug)}`,
+      })),
+    },
+  };
+
   return (
     <>
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
         <section
           style={{
