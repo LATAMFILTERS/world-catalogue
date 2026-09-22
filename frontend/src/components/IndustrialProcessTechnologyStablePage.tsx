@@ -35,6 +35,10 @@ function faqItems(platform: IndustrialProcessPlatform, technology: IndustrialPro
       `Does ${technology.name} have one universal efficiency or service-life claim?`,
       'No universal performance value is assigned across the family. Numeric efficiency, capacity, pressure-drop, service-life or outlet-quality claims must remain tied to validated product or project evidence.',
     ],
+    [
+      `Does this page mean ELIMFILTERS supplies the complete process equipment for ${technology.name}?`,
+      'No. ELIMFILTERS Industrial & Process is centered on the validated filtration, separation or treatment media and replacement element. Housings, vessels, collectors, skids, pumps, fans, ductwork, controls and other process equipment are application context unless a separate ELIMFILTERS system scope is explicitly approved.',
+    ],
   ] as const;
   return [...base, ...(technology.customFaqs ?? [])];
 }
@@ -181,6 +185,12 @@ export function IndustrialProcessTechnologyStablePage({
           <article className={styles.noteBlock}><h3 className={styles.h3}>A useful distinction</h3><p className={styles.body}>{technologyName(technology.name, technology.branded)} identifies a treatment function. It does not make every product or system inside that category technically interchangeable.</p></article>
           <article className={styles.noteBlock}><h3 className={styles.h3}>Evidence before claims</h3><p className={styles.body}>Efficiency, capacity, pressure drop, outlet quality, service interval and compatibility remain tied to validated product or project evidence.</p></article>
         </div>
+      </div></section>
+
+      <section className={styles.bandAlt}><div className={styles.inner}>
+        <p className={styles.eyebrow}>ELIMFILTERS PRODUCT SCOPE</p>
+        <h2 className={styles.h2}>Replacement treatment media and elements remain distinct from the surrounding equipment.</h2>
+        <p className={styles.lead}>For this Industrial &amp; Process family, the ELIMFILTERS commercial focus is the validated filtration, separation or treatment medium and replaceable element appropriate to the application. Existing housings, vessels, collectors, skids, pumps, fans, ductwork, controls and other plant equipment define interfaces and operating conditions; they are not presented as ELIMFILTERS-manufactured equipment unless separately approved.</p>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
