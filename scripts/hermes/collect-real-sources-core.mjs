@@ -81,6 +81,7 @@ export const ENDPOINT_TYPE_PRIORITY = {
   standards_updates: 1,
   technical_bulletins: 1,
   documentation: 1,
+  official_catalogue: 1,
   service_information: 2,
   technology_pages: 2,
   product_announcements: 3,
