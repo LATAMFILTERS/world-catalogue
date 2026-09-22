@@ -2159,22 +2159,30 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     // authority; it does not create a parallel vehicle catalogue.
     const vehicleConds = [];
     if (make) {
-      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_make', va.make, ''), '[^A-Z0-9]', '', 'g')) = ${idx}`);
-      params.push(normalizeAlphaNum(make));
+      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_make', va.make, ''), '[^A-Z0-9]', '', 'g')) LIKE $${idx}`);
+      params.push('%' + normalizeAlphaNum(make) + '%');
       idx++;
     }
     if (model) {
-      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_model', va.model_family, ''), '[^A-Z0-9]', '', 'g')) = ${idx}`);
-      params.push(normalizeAlphaNum(model));
+      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_model', va.model_family, ''), '[^A-Z0-9]', '', 'g')) LIKE $${idx}`);
+      params.push('%' + normalizeAlphaNum(model) + '%');
       idx++;
     }
     if (year) {
-      vehicleConds.push(`trim(coalesce(va.year,'')) = ${idx}::text`);
+      vehicleConds.push(`(
+        trim(coalesce(va.year,'')) = $${idx}::text
+        OR (
+          coalesce(to_jsonb(va)->>'year_from','') ~ '^(19|20)[0-9]{2}$'
+          AND coalesce(to_jsonb(va)->>'year_to','') ~ '^(19|20)[0-9]{2}$'
+          AND (to_jsonb(va)->>'year_from')::int <= $${idx}::int
+          AND (to_jsonb(va)->>'year_to')::int >= $${idx}::int
+        )
+      )`);
       params.push(String(year));
       idx++;
     }
     if (engine) {
-      vehicleConds.push(`upper(regexp_replace(coalesce(va.engine_code, va.model_type, ''), '[^A-Z0-9]', '', 'g')) LIKE ${idx}`);
+      vehicleConds.push(`upper(regexp_replace(coalesce(va.engine_code, va.model_type, ''), '[^A-Z0-9]', '', 'g')) LIKE $${idx}`);
       params.push('%' + normalizeAlphaNum(engine) + '%');
       idx++;
     }
@@ -2217,7 +2225,20 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
 
     const products = rows.map(r => buildFilterData(r, lang));
     await enrichAlternatives(products, client);
-    res.json({ success: true, results: products, source: 'equipment' });
+    res.json({
+      success: true,
+      results: products,
+      source: 'equipment',
+      vehicle_resolution: {
+        market: market || conversational?.market || null,
+        make: make || null,
+        model: model || null,
+        year: year || null,
+        engine: engine || null,
+        platform: identity.platform || null,
+        normalized: identity.matched === true,
+      },
+    });
   } catch (e) {
     console.error('[search/equipment]', e.message);
     res.status(500).json({ success: false, error: 'Internal server error' });
