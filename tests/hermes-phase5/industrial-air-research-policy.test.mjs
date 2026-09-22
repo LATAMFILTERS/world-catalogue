@@ -24,7 +24,12 @@ test('HERMES mission contains a dedicated Industrial Air domain including mist m
   assert.ok(domain.topics.includes('coalescence'));
   assert.ok(domain.topics.includes('liquid drainage'));
   assert.equal(domain.research_mode, 'EVERGREEN_TECHNICAL_LIBRARY');
-  assert.equal(domain.preferred_source_urls.length, 2);
+  assert.ok(domain.preferred_source_urls.length >= 5);
+  assert.ok(domain.preferred_source_urls.includes('https://www.donaldson.com/en/resources/technical-articles/?pg=donaldson:product-group/industrial-air-filtration'));
+  assert.ok(domain.preferred_source_urls.includes('https://www.donaldson.com/en/resources/case-studies/?pg=donaldson:product-group/industrial-air-filtration'));
+  assert.ok(domain.preferred_source_urls.includes('https://www.camfil.com/en-us/products/general-ventilation-filters'));
+  assert.ok(domain.preferred_source_urls.includes('https://www.camfil.com/en-us/products/epa-hepa--ulpa-filters'));
+  assert.ok(domain.preferred_source_urls.includes('https://www.camfil.com/en-us/products/molecular-filters'));
   assert.equal(mission.evidence_policy.follow_same_domain_article_and_case_study_pages, true);
   assert.equal(mission.evidence_policy.case_study_results_are_application_specific, true);
 });

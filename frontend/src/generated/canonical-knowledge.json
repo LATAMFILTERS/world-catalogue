@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.1.0",
   "sourceAuthority": "13-canonical-knowledge",
-  "generatedAt": "2026-09-22T15:37:00.000Z",
+  "generatedAt": "2026-09-22T17:14:51.168Z",
   "count": 61,
   "records": [
     {
@@ -307,15 +307,15 @@
         "Outdoor, recirculated or process-air source",
         "Particle size, concentration and loading pattern",
         "Gas, vapor or odor chemistry when molecular treatment is required",
+        "ISO 16890 series — general-ventilation air-filter classification and performance testing; applicable to general particulate stages.",
+        "ISO 29463 series — high-efficiency filter/media classification and element testing; applicable to HE-CRIVA™ duties.",
+        "ISO 10121 series — gas-phase air-cleaning media/device performance and classification; applicable to MA-TREA™ duties.",
+        "ISO 29462:2022 — in-situ field testing of general ventilation filtration devices and systems where field verification is required.",
         "Differential Pressure",
         "Filtration Efficiency",
         "Contaminant Loading",
         "Sealing",
-        "Service Life",
-        "ISO 16890 series — general-ventilation air-filter classification and performance testing; applicable to general particulate stages.",
-        "ISO 29463 series — high-efficiency filter/media classification and element testing; applicable to HE-CRIVA™ duties.",
-        "ISO 10121 series — gas-phase air-cleaning media/device performance and classification; applicable to MA-TREA™ duties.",
-        "ISO 29462:2022 — in-situ field testing of general ventilation filtration devices and systems where field verification is required."
+        "Service Life"
       ]
     },
     {
@@ -409,15 +409,15 @@
         "Continuous or intermittent ventilation duty",
         "Space and service-access constraints",
         "Pressure-drop limits across the air-handling system",
-        "Differential Pressure",
-        "Contaminant Loading",
-        "Sealing",
-        "Service Life",
         "ISO 16890-1:2016 — ePM-based classification and general requirements for air filters used in general ventilation.",
         "ISO 16890-2:2022 — measurement of fractional efficiency and airflow resistance.",
         "ISO 16890-3:2024 — gravimetric efficiency and airflow resistance versus captured test-dust mass.",
         "ISO 16890-4:2022 — conditioning method used to determine minimum fractional test efficiency.",
-        "ISO 29462:2022 — in-situ field testing of general ventilation filtration devices and systems where field verification is required."
+        "ISO 29462:2022 — in-situ field testing of general ventilation filtration devices and systems where field verification is required.",
+        "Differential Pressure",
+        "Contaminant Loading",
+        "Sealing",
+        "Service Life"
       ]
     },
     {
@@ -519,16 +519,16 @@
         "Strict bypass control",
         "Final-stage pressure-drop sensitivity",
         "Controlled production or critical ventilation environment",
-        "Filtration Efficiency",
-        "Differential Pressure",
-        "Sealing",
-        "Contaminant Loading",
-        "Service Life",
         "ISO 29463-1:2024 — classification, performance, testing and marking of high-efficiency filters and filter media.",
         "ISO 29463-2:2011 — aerosol production, measuring equipment and particle-counting statistics used by the ISO 29463 test family.",
         "ISO 29463-3:2011 — testing of flat-sheet high-efficiency filter media.",
         "ISO 29463-4:2011 — filter-element leakage testing within the ISO 29463 test family.",
-        "ISO 29463-5:2022 — test method for high-efficiency filter elements."
+        "ISO 29463-5:2022 — test method for high-efficiency filter elements.",
+        "Filtration Efficiency",
+        "Differential Pressure",
+        "Sealing",
+        "Contaminant Loading",
+        "Service Life"
       ]
     },
     {
@@ -683,13 +683,13 @@
         "Upstream particulate loading",
         "Required outlet condition or protected-process objective",
         "Media exhaustion, monitoring and replacement planning",
+        "ISO 10121-1:2014 — laboratory performance assessment of gas-phase air-cleaning media for general ventilation.",
+        "ISO 10121-2:2013 — laboratory performance assessment of gas-phase air-cleaning devices for general ventilation.",
+        "ISO 10121-3:2022 — classification system for gas-phase air-cleaning devices used to treat outdoor air.",
         "Flow Rate",
         "Media Saturation",
         "Service Life",
-        "Installation",
-        "ISO 10121-1:2014 — laboratory performance assessment of gas-phase air-cleaning media for general ventilation.",
-        "ISO 10121-2:2013 — laboratory performance assessment of gas-phase air-cleaning devices for general ventilation.",
-        "ISO 10121-3:2022 — classification system for gas-phase air-cleaning devices used to treat outdoor air."
+        "Installation"
       ]
     },
     {
@@ -1922,16 +1922,16 @@
         "Upstream free-liquid and solid-contamination conditions",
         "Required downstream liquid condition",
         "Existing vessel, element orientation, sealing and drain arrangement",
+        "ISO 13686:2013 — natural-gas quality designation used as process context for natural-gas applications; it is not a coalescer-element performance certification.",
+        "ISO 12500-1:2007 — coalescing-filter pressure-drop and oil-aerosol removal testing for compressed-air duty only; applicability must not be extended automatically to natural gas.",
+        "ISO 8573-1:2010 — compressed-air purity classes where the COALERIS™ duty is compressed air.",
+        "ISO 8573-2:2018 — compressed-air liquid-oil and oil-aerosol measurement where that contaminant and duty apply.",
         "Flow Rate",
         "Differential Pressure",
         "Sealing",
         "Service Life",
         "Installation",
-        "Failure Analysis",
-        "ISO 13686:2013 — natural-gas quality designation used as process context for natural-gas applications; it is not a coalescer-element performance certification.",
-        "ISO 12500-1:2007 — coalescing-filter pressure-drop and oil-aerosol removal testing for compressed-air duty only; applicability must not be extended automatically to natural gas.",
-        "ISO 8573-1:2010 — compressed-air purity classes where the COALERIS™ duty is compressed air.",
-        "ISO 8573-2:2018 — compressed-air liquid-oil and oil-aerosol measurement where that contaminant and duty apply."
+        "Failure Analysis"
       ]
     },
     {
@@ -2056,17 +2056,17 @@
         "Aerosol or droplet size distribution",
         "Liquid loading and variability",
         "Drainage and liquid-removal behavior",
+        "ISO 13686:2013 — natural-gas quality designation; process/gas-quality context rather than a filter-element certification.",
+        "ISO 12500-1:2007 — oil-aerosol performance testing of coalescing filters in compressed-air systems only.",
+        "ISO 8573-1:2010 — compressed-air purity classes for particles, water and oil where the duty is compressed air.",
+        "ISO 8573-2:2018 — compressed-air oil-aerosol measurement where applicable.",
+        "ISO 8573-9:2004 — compressed-air liquid-water measurement where applicable.",
         "Flow Rate",
         "Differential Pressure",
         "Sealing",
         "Service Life",
         "Installation",
-        "Failure Analysis",
-        "ISO 13686:2013 — natural-gas quality designation; process/gas-quality context rather than a filter-element certification.",
-        "ISO 12500-1:2007 — oil-aerosol performance testing of coalescing filters in compressed-air systems only.",
-        "ISO 8573-1:2010 — compressed-air purity classes for particles, water and oil where the duty is compressed air.",
-        "ISO 8573-2:2018 — compressed-air oil-aerosol measurement where applicable.",
-        "ISO 8573-9:2004 — compressed-air liquid-water measurement where applicable."
+        "Failure Analysis"
       ]
     },
     {
@@ -2228,15 +2228,15 @@
         "Droplet-size distribution",
         "Vessel residence and disengagement space",
         "Drainage and level-control behavior",
+        "ISO 13686:2013 — natural-gas quality designation used as process context for natural-gas applications; it is not a separation-element certification.",
+        "ISO 8573-1:2010 — compressed-air purity classes where the separation duty is compressed air.",
+        "ISO 8573-9:2004 — compressed-air liquid-water measurement where free-water separation is being verified.",
+        "ISO 8573-2:2018 — compressed-air liquid-oil and oil-aerosol measurement where oil carryover is the measured challenge.",
         "Flow Rate",
         "Differential Pressure",
         "Service Life",
         "Installation",
-        "Failure Analysis",
-        "ISO 13686:2013 — natural-gas quality designation used as process context for natural-gas applications; it is not a separation-element certification.",
-        "ISO 8573-1:2010 — compressed-air purity classes where the separation duty is compressed air.",
-        "ISO 8573-9:2004 — compressed-air liquid-water measurement where free-water separation is being verified.",
-        "ISO 8573-2:2018 — compressed-air liquid-oil and oil-aerosol measurement where oil carryover is the measured challenge."
+        "Failure Analysis"
       ]
     },
     {
@@ -2420,14 +2420,14 @@
         "Recirculation flow",
         "Water ingress rate",
         "Required final moisture condition",
+        "ASTM D6304-25 — determination of water in petroleum products, lubricating oils and additives by coulometric Karl Fischer titration.",
+        "ISO 12937:2000 — coulometric Karl Fischer water determination for petroleum products; applicability and precision limits must be respected for the specific oil.",
+        "Moisture-removal efficiency, final water content and treatment time remain product/project claims and are not inferred solely from the analytical test standard.",
         "Flow Rate",
         "Contaminant Loading",
         "Service Life",
         "Installation",
-        "Failure Analysis",
-        "ASTM D6304-25 — determination of water in petroleum products, lubricating oils and additives by coulometric Karl Fischer titration.",
-        "ISO 12937:2000 — coulometric Karl Fischer water determination for petroleum products; applicability and precision limits must be respected for the specific oil.",
-        "Moisture-removal efficiency, final water content and treatment time remain product/project claims and are not inferred solely from the analytical test standard."
+        "Failure Analysis"
       ]
     },
     {
@@ -2626,20 +2626,20 @@
         "Degradation mechanism and contaminant state",
         "Equipment sensitivity",
         "Required verification method",
-        "Flow Rate",
-        "Differential Pressure",
-        "Contaminant Loading",
-        "Sealing",
-        "Service Life",
-        "Failure Analysis",
-        "Standards",
         "ISO 16889:2022 — multi-pass evaluation of hydraulic filter-element particulate-removal, contaminant-capacity and differential-pressure performance where that element test method applies.",
         "ISO 4406:2021 — coding of solid-particle contamination level in hydraulic fluids; also used as a cleanliness-reporting reference where specified for industrial fluid programs.",
         "ISO 3968:2017 — differential-pressure-versus-flow evaluation of hydraulic filters.",
         "ISO 2941:2009 / ISO 2942:2018 / ISO 2943:1998 — collapse/burst, fabrication integrity/bubble point and material-compatibility verification for hydraulic filter elements.",
         "ISO 11171:2022 and ISO 11500:2022 with Amendment 1:2026 — particle-counter calibration and liquid-sample particle counting where the fluid and measurement method are within scope.",
         "ISO 12937:2000 and ASTM D6304-25 — water determination by coulometric Karl Fischer where applicable to DEWATIS™ verification.",
-        "ASTM D7843-25e1, ASTM D664-24 and ASTM D2272-22 — oil-condition diagnostic methods applicable to selected OILREVEX™ duties."
+        "ASTM D7843-25e1, ASTM D664-24 and ASTM D2272-22 — oil-condition diagnostic methods applicable to selected OILREVEX™ duties.",
+        "Flow Rate",
+        "Differential Pressure",
+        "Contaminant Loading",
+        "Sealing",
+        "Service Life",
+        "Failure Analysis",
+        "Standards"
       ]
     },
     {
@@ -2829,14 +2829,6 @@
         "Cleanliness objective",
         "Installation location",
         "Housing and bypass arrangement",
-        "Filtration Efficiency",
-        "Beta Ratio",
-        "Flow Rate",
-        "Differential Pressure",
-        "Contaminant Loading",
-        "Sealing",
-        "Service Life",
-        "Failure Analysis",
         "ISO 16889:2022 — multi-pass method for evaluating hydraulic filter-element filtration performance, contaminant capacity and differential-pressure behavior.",
         "ISO 4406:2021 — coding of hydraulic-fluid solid-particle contamination level for cleanliness targets and verification.",
         "ISO 3968:2017 — evaluation of hydraulic-filter differential pressure versus flow.",
@@ -2844,7 +2836,15 @@
         "ISO 2942:2018 — fabrication-integrity and first-bubble-point verification for hydraulic filter elements.",
         "ISO 2943:1998 — verification of hydraulic filter-element material compatibility with designated fluids.",
         "ISO 11171:2022 — calibration of automatic particle counters for liquids.",
-        "ISO 11500:2022 with Amendment 1:2026 — determination of particulate contamination in hydraulic-fluid samples by automatic particle counting."
+        "ISO 11500:2022 with Amendment 1:2026 — determination of particulate contamination in hydraulic-fluid samples by automatic particle counting.",
+        "Filtration Efficiency",
+        "Beta Ratio",
+        "Flow Rate",
+        "Differential Pressure",
+        "Contaminant Loading",
+        "Sealing",
+        "Service Life",
+        "Failure Analysis"
       ]
     },
     {
@@ -3032,20 +3032,20 @@
         "Cleanliness objective",
         "Full-flow or offline architecture",
         "Coexisting water or degradation condition",
-        "Filtration Efficiency",
-        "Flow Rate",
-        "Differential Pressure",
-        "Contaminant Loading",
-        "Sealing",
-        "Service Life",
-        "Failure Analysis",
         "ISO 16889:2022 — multi-pass filter-element performance method where the LUBREVA™ element and test fluid are qualified within that methodology; it is not a universal in-service lubrication certification.",
         "ISO 4406:2021 — solid-particle cleanliness coding where the lubrication program specifies ISO cleanliness reporting.",
         "ISO 3968:2017 — differential-pressure-versus-flow evaluation where the filter configuration is within scope.",
         "ISO 2941:2009 — collapse/burst pressure verification for applicable filter-element constructions.",
         "ISO 2942:2018 — fabrication-integrity and first-bubble-point verification for applicable filter elements.",
         "ISO 2943:1998 — material compatibility verification where hydraulic-fluid-power element methodology is applicable to the designated lubricant.",
-        "ISO 11171:2022 — calibration of automatic particle counters; its scope includes engine oil and other petroleum-based fluids."
+        "ISO 11171:2022 — calibration of automatic particle counters; its scope includes engine oil and other petroleum-based fluids.",
+        "Filtration Efficiency",
+        "Flow Rate",
+        "Differential Pressure",
+        "Contaminant Loading",
+        "Sealing",
+        "Service Life",
+        "Failure Analysis"
       ]
     },
     {
@@ -3231,14 +3231,14 @@
         "Contaminant loading",
         "Offline flow and reservoir turnover",
         "Required treatment endpoint",
-        "Contaminant Loading",
-        "Differential Pressure",
-        "Service Life",
-        "Failure Analysis",
         "ASTM D7843-25e1 — membrane-patch colorimetry for lubricant-generated insoluble color bodies in in-service turbine oils.",
         "ASTM D664-24 — acid number of petroleum products and lubricants by potentiometric titration.",
         "ASTM D2272-22 — oxidation stability of steam-turbine oils by rotating pressure vessel.",
-        "These methods diagnose or trend oil condition; they do not by themselves certify the removal performance or service life of OILREVEX™ remediation media."
+        "These methods diagnose or trend oil condition; they do not by themselves certify the removal performance or service life of OILREVEX™ remediation media.",
+        "Contaminant Loading",
+        "Differential Pressure",
+        "Service Life",
+        "Failure Analysis"
       ]
     },
     {
@@ -3451,12 +3451,6 @@
         "Correct the upstream contamination source where recurring ingress, oxidation, water entry, scaling or process carryover is confirmed.",
         "Replace, regenerate or service media only according to the validated treatment family and condition evidence.",
         "Escalate mixed-phase or unresolved duties for engineering review rather than assigning a branded technology by analogy.",
-        "Trend the condition variable appropriate to the mechanism: differential pressure, particle count, downstream carryover, water content, fluid analysis, target-contaminant breakthrough, conductivity/resistivity or normalized membrane performance.",
-        "Inspect replaceable elements, seals, supports and seating at service events.",
-        "Record process conditions with each condition measurement so trends remain comparable.",
-        "Confirm drainage and liquid-removal paths where coalescence is used.",
-        "Verify upstream pretreatment and process conditions before attributing repeated short life solely to the replaceable element.",
-        "Preserve product-specific test evidence and service history for any published performance or interval claim.",
         "Industrial & Process selection begins with the carrier phase, contaminant phase, treatment objective and required downstream condition before a product family is selected.",
         "AEREMIS™ routes industrial air duties among general particulate filtration, high-efficiency or critical-air particulate filtration and molecular gas/vapor treatment.",
         "PARTION™ routes process-generated dust and fume particulate; liquid oil mist and coolant aerosol require separate phase-specific treatment qualification and are not automatically FUMEVRA™.",
@@ -3538,11 +3532,11 @@
       "rootCauses": [],
       "diagnosticMethods": [
         "Identify the process generating the particulate and characterize the particle behavior before evaluating media suitability.",
+        "Determine whether the dominant airborne contaminant is solid particulate, oil-bearing particulate, liquid oil/coolant droplets, or a mixed solid-liquid aerosol before assigning a treatment path.",
         "Review airflow, loading pattern, temperature, moisture or aerosol exposure and duty cycle.",
         "Trend differential pressure and cleaning recovery together rather than relying on one pressure reading.",
         "Inspect element seating, sealing surfaces and evidence of bypass.",
-        "Distinguish media loading or blinding from collector, cleaning-system or process changes.",
-        "Determine whether the dominant airborne contaminant is solid particulate, oil-bearing particulate, liquid oil/coolant droplets, or a mixed solid-liquid aerosol before assigning a treatment path."
+        "Distinguish media loading or blinding from collector, cleaning-system or process changes."
       ],
       "correctiveActions": [],
       "maintenanceProcedures": [],
@@ -3600,11 +3594,11 @@
         "Media blinding, caking or damage",
         "Bypass or poor element seating",
         "Identify the process generating the particulate and characterize the particle behavior before evaluating media suitability.",
+        "Determine whether the dominant airborne contaminant is solid particulate, oil-bearing particulate, liquid oil/coolant droplets, or a mixed solid-liquid aerosol before assigning a treatment path.",
         "Review airflow, loading pattern, temperature, moisture or aerosol exposure and duty cycle.",
         "Trend differential pressure and cleaning recovery together rather than relying on one pressure reading.",
         "Inspect element seating, sealing surfaces and evidence of bypass.",
         "Distinguish media loading or blinding from collector, cleaning-system or process changes.",
-        "Determine whether the dominant airborne contaminant is solid particulate, oil-bearing particulate, liquid oil/coolant droplets, or a mixed solid-liquid aerosol before assigning a treatment path.",
         "PARTION™ organizes filtration for particulate generated by industrial processes, including fine dust, fume and mixed production loading.",
         "PARTION™ is distinct from general ventilation filtration because process-generated particulate can impose different loading, cleaning, temperature, moisture and safety constraints.",
         "FUMEVRA™ is the PARTION™ family for fine-dust and fume filtration and maps to TC-DUST-01.",
@@ -3620,16 +3614,16 @@
         "Allowable pressure-drop range",
         "Cleaning or replacement strategy",
         "Required downstream, recirculation or discharge condition",
+        "ISO 16891:2016 — evaluation of degradation characteristics of cleanable industrial filter media.",
+        "ISO 22031:2021 — sampling and testing of cleanable filter media taken from operating filter systems.",
+        "ISO 21904 series — welding-fume capture/separation equipment requirements where the application is welding or an allied process; equipment-level scope must not be represented as independent cartridge certification.",
+        "ASTM D6830-02(2022) — pressure-drop and filtration-performance characterization of cleanable filter media.",
         "Differential Pressure",
         "Contaminant Loading",
         "Sealing",
         "Service Life",
         "Installation",
-        "Failure Analysis",
-        "ISO 16891:2016 — evaluation of degradation characteristics of cleanable industrial filter media.",
-        "ISO 22031:2021 — sampling and testing of cleanable filter media taken from operating filter systems.",
-        "ISO 21904 series — welding-fume capture/separation equipment requirements where the application is welding or an allied process; equipment-level scope must not be represented as independent cartridge certification.",
-        "ASTM D6830-02(2022) — pressure-drop and filtration-performance characterization of cleanable filter media."
+        "Failure Analysis"
       ]
     },
     {
@@ -3700,13 +3694,13 @@
       ],
       "diagnosticMethods": [
         "Confirm the process generating the dust or fume and characterize particle behavior.",
+        "Determine whether the airborne contaminant is predominantly solid particulate, oil-bearing particulate, liquid droplets, or a mixed aerosol; liquid-droplet mist requires a separate treatment-path review.",
         "Review airflow, concentration, loading variability, temperature, moisture and duty cycle.",
         "Trend differential pressure before and after the validated cleaning event where applicable.",
         "Inspect media, element geometry, sealing surfaces and seating for damage or bypass.",
         "Review process changes before attributing abnormal behavior solely to the filter element.",
         "Where pulse cleaning is part of the validated collector design, verify that a cleaning event produces the expected pressure-drop recovery without damaging or unseating the element.",
-        "Check for strongly uneven loading that may indicate airflow-distribution, capture or collector-interface problems.",
-        "Determine whether the airborne contaminant is predominantly solid particulate, oil-bearing particulate, liquid droplets, or a mixed aerosol; liquid-droplet mist requires a separate treatment-path review."
+        "Check for strongly uneven loading that may indicate airflow-distribution, capture or collector-interface problems."
       ],
       "correctiveActions": [
         "Re-evaluate media and element configuration when the actual contaminant behavior differs from the selection basis.",
@@ -3810,24 +3804,19 @@
         "Source capture, duct transport or airflow balance is insufficient before the filter stage",
         "Liquid mist or coolant aerosol is misclassified as a particulate-only filtration duty",
         "Confirm the process generating the dust or fume and characterize particle behavior.",
+        "Determine whether the airborne contaminant is predominantly solid particulate, oil-bearing particulate, liquid droplets, or a mixed aerosol; liquid-droplet mist requires a separate treatment-path review.",
         "Review airflow, concentration, loading variability, temperature, moisture and duty cycle.",
         "Trend differential pressure before and after the validated cleaning event where applicable.",
         "Inspect media, element geometry, sealing surfaces and seating for damage or bypass.",
         "Review process changes before attributing abnormal behavior solely to the filter element.",
         "Where pulse cleaning is part of the validated collector design, verify that a cleaning event produces the expected pressure-drop recovery without damaging or unseating the element.",
         "Check for strongly uneven loading that may indicate airflow-distribution, capture or collector-interface problems.",
-        "Determine whether the airborne contaminant is predominantly solid particulate, oil-bearing particulate, liquid droplets, or a mixed aerosol; liquid-droplet mist requires a separate treatment-path review.",
         "Re-evaluate media and element configuration when the actual contaminant behavior differs from the selection basis.",
         "Correct sealing or seating defects before attributing downstream particulate solely to media performance.",
         "Reassess cleaning strategy and the installed cleaning interface when differential-pressure recovery is persistently poor.",
         "Review source capture and airflow transport when particulate control is poor even though the filter elements remain serviceable.",
         "Requalify the treatment path after material changes in process, airflow, temperature, moisture or contaminant loading.",
         "Route droplet-dominant oil mist or coolant aerosol away from an automatic FUMEVRA™ assignment and evaluate coalescence, drainage, liquid loading and media compatibility.",
-        "Trend differential pressure against operating duty and, where applicable, before and after the validated cleaning cycle.",
-        "Inspect pleats, support structure, sealing surfaces and seating for caking, damage, deformation or bypass evidence.",
-        "For pulse-cleaned cartridge systems, verify cleaning recovery as a system behavior rather than assuming the filter is clean because a pulse occurred.",
-        "Replace or clean an element only according to the validated media, collector interface and service criteria for that application.",
-        "Follow site-specific isolation, dust-handling and disposal procedures before opening or servicing the collector.",
         "FUMEVRA™ addresses process-generated fine dust and fume particulate handled by industrial extraction, dust-collection and production-exhaust systems.",
         "Media selection depends on particle size and morphology, concentration, loading pattern, temperature, moisture or aerosol exposure and the required downstream condition.",
         "Fine, sticky, hygroscopic, abrasive or oil-bearing particulate can materially change loading, cake release, differential-pressure behavior and service life.",
@@ -3850,16 +3839,16 @@
         "Source-capture and airflow-distribution condition",
         "Required downstream or discharge condition",
         "Dominant contaminant phase: dry particulate, oil-bearing particulate, liquid mist/coolant aerosol, or mixed solid-liquid aerosol",
+        "ISO 16891:2016 — degradation testing for cleanable industrial filter media under standardized simulated conditions.",
+        "ISO 22031:2021 — sampling and test method for cleanable filter media removed from systems in operation.",
+        "ISO 21904-2:2020 — separation-efficiency testing for welding-fume separation equipment when that system duty applies; the standard explicitly does not test filter cartridges independently of their equipment.",
+        "ASTM D6830-02(2022) — pressure-drop and filtration-performance characterization of cleanable filter media.",
         "Differential Pressure",
         "Contaminant Loading",
         "Sealing",
         "Service Life",
         "Installation",
-        "Failure Analysis",
-        "ISO 16891:2016 — degradation testing for cleanable industrial filter media under standardized simulated conditions.",
-        "ISO 22031:2021 — sampling and test method for cleanable filter media removed from systems in operation.",
-        "ISO 21904-2:2020 — separation-efficiency testing for welding-fume separation equipment when that system duty applies; the standard explicitly does not test filter cartridges independently of their equipment.",
-        "ASTM D6830-02(2022) — pressure-drop and filtration-performance characterization of cleanable filter media."
+        "Failure Analysis"
       ]
     },
     {

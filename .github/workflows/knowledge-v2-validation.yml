@@ -6,6 +6,20 @@ on:
       - 'knowledge/**'
       - 'scripts/validate-knowledge-v2.mjs'
       - 'docs/knowledge-graph/**'
+      - 'elimfilters-vault/13-canonical-knowledge/industrial-process/**'
+      - 'docs/brand/INDUSTRIAL_PROCESS_*.md'
+      - 'frontend/src/lib/industrial-process-architecture.ts'
+      - 'frontend/src/generated/canonical-knowledge.json'
+      - 'frontend/src/app/industrial-process/**'
+      - 'frontend/src/components/IndustrialProcessPlatformStablePage.tsx'
+      - 'frontend/src/components/IndustrialProcessTechnologyStablePage.tsx'
+      - 'hermes/config/source-organizations.json'
+      - 'hermes/config/source-endpoints.json'
+      - 'hermes/config/intelligence-mission.json'
+      - 'scripts/hermes/industrial-research-policy.mjs'
+      - 'scripts/hermes/source-registry-core.mjs'
+      - 'scripts/hermes/collect-real-sources-core.mjs'
+      - 'tests/hermes-phase5/industrial-process-technical-closure.test.mjs'
       - '.github/workflows/knowledge-v2-validation.yml'
   push:
     branches:
@@ -14,6 +28,20 @@ on:
       - 'knowledge/**'
       - 'scripts/validate-knowledge-v2.mjs'
       - 'docs/knowledge-graph/**'
+      - 'elimfilters-vault/13-canonical-knowledge/industrial-process/**'
+      - 'docs/brand/INDUSTRIAL_PROCESS_*.md'
+      - 'frontend/src/lib/industrial-process-architecture.ts'
+      - 'frontend/src/generated/canonical-knowledge.json'
+      - 'frontend/src/app/industrial-process/**'
+      - 'frontend/src/components/IndustrialProcessPlatformStablePage.tsx'
+      - 'frontend/src/components/IndustrialProcessTechnologyStablePage.tsx'
+      - 'hermes/config/source-organizations.json'
+      - 'hermes/config/source-endpoints.json'
+      - 'hermes/config/intelligence-mission.json'
+      - 'scripts/hermes/industrial-research-policy.mjs'
+      - 'scripts/hermes/source-registry-core.mjs'
+      - 'scripts/hermes/collect-real-sources-core.mjs'
+      - 'tests/hermes-phase5/industrial-process-technical-closure.test.mjs'
       - '.github/workflows/knowledge-v2-validation.yml'
   workflow_dispatch:
 
@@ -34,6 +62,9 @@ jobs:
 
       - name: Validate canonical knowledge
         run: node scripts/validate-knowledge-v2.mjs
+
+      - name: 'Validate Industrial & Process technical closure'
+        run: node --test tests/hermes-phase5/industrial-process-technical-closure.test.mjs
 
       - name: Confirm governing files
         shell: bash
