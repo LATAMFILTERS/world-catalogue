@@ -494,5 +494,53 @@
     "link4Label": "Visit ELIMFILTERS.com",
     "link4Desc": "Explore systems, technologies, and industries.",
     "footerText": "Every Micron Matters."
+  },
+  "industrialProcess": {
+    "hero": {
+      "eyebrow": "INDUSTRIAL Y PROCESO",
+      "titleLine1": "DISEÑA EL PROCESO.",
+      "titleLine2": "PROTEGE EL ACTIVO.",
+      "copy": "Un punto de entrada de ingeniería dedicado para proyectos industriales de filtración, separación y acondicionamiento de proceso. Empieza por el problema operativo, las condiciones del proceso y el resultado requerido, no por una lista genérica de filtros.",
+      "ctaPrimary": "SOLICITAR REVISIÓN DE INGENIERÍA",
+      "ctaSecondary": "EXPLORAR TECNOLOGÍAS"
+    },
+    "entry": {
+      "eyebrow": "PROYECTOS INDUSTRIALES DE ALTO VALOR",
+      "title": "Una vía de entrada distinta a la filtración de reemplazo heavy-duty.",
+      "lead": "Los proyectos Industrial & Process se califican por duty, envolvente operativa, mecanismo de contaminación, riesgo de proceso y compatibilidad con el sistema. Esta página es la puerta comercial y técnica para plantas, OEMs, EPCs, integradores, operadores y distribuidores industriales.",
+      "body": "La selección del producto se resuelve mediante núcleos de tecnología validados y evidencia de aplicación. Los claims del proveedor no se presentan como desempeño ELIMFILTERS hasta ser aprobados."
+    },
+    "platforms": {
+      "eyebrow": "CINCO PLATAFORMAS TECNOLÓGICAS COMERCIALES",
+      "title": "Navega por función de tratamiento."
+    },
+    "standards": {
+      "eyebrow": "NORMAS Y GOBERNANZA DE ENSAYOS",
+      "title": "Los elementos industriales se especifican contra el método de ensayo aplicable.",
+      "lead": "ELIMFILTERS Industrial & Process vincula cada plataforma y familia de tratamiento con las normas ISO, ASTM y otros métodos de ensayo gobernados que realmente aplican a ese mecanismo. Las normas son referencias de ingeniería, no certificaciones generales.",
+      "openReference": "ABRIR REFERENCIA DE INGENIERÍA GOBERNADA"
+    },
+    "qualification": {
+      "eyebrow": "CALIFICACIÓN DE INGENIERÍA",
+      "title": "Lo que necesitamos para evaluar un proyecto industrial.",
+      "inputs": {
+        "processFluidOrGas": "Fluido o gas de proceso",
+        "contaminantObjective": "Contaminante / objetivo de tratamiento",
+        "flowRate": "Caudal",
+        "operatingPressure": "Presión de operación y de diseño",
+        "temperature": "Temperatura",
+        "efficiencyTarget": "Eficiencia requerida / objetivo de calidad",
+        "applicableStandard": "Norma aplicable / método de ensayo / clase objetivo",
+        "materialsCompatibility": "Materiales y compatibilidad química",
+        "existingHousing": "Housing, vessel o sistema existente"
+      }
+    },
+    "intake": {
+      "eyebrow": "INGRESO DE PROYECTO INDUSTRIAL",
+      "title": "Tráenos las condiciones de operación. Nosotros resolvemos la arquitectura de filtración.",
+      "lead": "Para instalaciones nuevas, problemas de contaminación difíciles, programas de retrofit, requisitos OEM y oportunidades recurrentes de suministro industrial.",
+      "cta": "INICIAR REVISIÓN DE INGENIERÍA INDUSTRIAL",
+      "generalContact": "Contacto general"
+    }
   }
 }

@@ -505,5 +505,53 @@
     "link4Label": "Visit ELIMFILTERS.com",
     "link4Desc": "Explore systems, technologies, and industries.",
     "footerText": "Every Micron Matters."
+  },
+  "industrialProcess": {
+    "hero": {
+      "eyebrow": "INDUSTRIAL & PROCESS",
+      "titleLine1": "ENGINEER THE PROCESS.",
+      "titleLine2": "PROTECT THE ASSET.",
+      "copy": "A dedicated engineering entry point for industrial filtration, separation and process conditioning projects. Start with the operating problem, process conditions and required outcome — not with a generic filter list.",
+      "ctaPrimary": "REQUEST ENGINEERING REVIEW",
+      "ctaSecondary": "EXPLORE TECHNOLOGIES"
+    },
+    "entry": {
+      "eyebrow": "HIGH-VALUE INDUSTRIAL PROJECTS",
+      "title": "A different entry path from heavy-duty replacement filtration.",
+      "lead": "Industrial & Process projects are qualified by duty, operating envelope, contamination mechanism, process risk and system compatibility. This page is the commercial and technical front door for plants, OEMs, EPCs, integrators, operators and industrial distributors.",
+      "body": "Product selection is resolved through validated technology cores and application evidence. Supplier claims are not presented as ELIMFILTERS performance until approved."
+    },
+    "platforms": {
+      "eyebrow": "FIVE COMMERCIAL TECHNOLOGY PLATFORMS",
+      "title": "Navigate by treatment function."
+    },
+    "standards": {
+      "eyebrow": "STANDARDS & TEST GOVERNANCE",
+      "title": "Industrial elements are specified against the applicable test method.",
+      "lead": "ELIMFILTERS Industrial & Process links each platform and treatment family to the governed ISO, ASTM and other test methods that actually apply to that mechanism. Standards are engineering references, not blanket certification claims.",
+      "openReference": "OPEN GOVERNED ENGINEERING REFERENCE"
+    },
+    "qualification": {
+      "eyebrow": "ENGINEERING QUALIFICATION",
+      "title": "What we need to evaluate an industrial project.",
+      "inputs": {
+        "processFluidOrGas": "Process fluid or gas",
+        "contaminantObjective": "Contaminant / treatment objective",
+        "flowRate": "Flow rate",
+        "operatingPressure": "Operating and design pressure",
+        "temperature": "Temperature",
+        "efficiencyTarget": "Required efficiency / quality target",
+        "applicableStandard": "Applicable standard / test method / target class",
+        "materialsCompatibility": "Materials and chemical compatibility",
+        "existingHousing": "Existing housing, vessel or system"
+      }
+    },
+    "intake": {
+      "eyebrow": "INDUSTRIAL PROJECT INTAKE",
+      "title": "Bring us the operating conditions. We resolve the filtration architecture.",
+      "lead": "For new installations, difficult contamination problems, retrofit programs, OEM requirements and recurring industrial supply opportunities.",
+      "cta": "START INDUSTRIAL ENGINEERING REVIEW",
+      "generalContact": "General contact"
+    }
   }
 }
