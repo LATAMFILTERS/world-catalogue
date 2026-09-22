@@ -21,27 +21,34 @@ function years() {
 }
 
 function stageQuestion(stage, year) {
-  if (stage.id === '2A_MODEL_UNIVERSE') {
+  if (stage.id === 'PHASE_1_DIESEL_VEHICLE_UNIVERSE') {
     return [
-      `Using only Isuzu Commercial Truck of America primary sources, identify every Isuzu commercial-truck model sold in the United States for model year ${year}.`,
-      'Preserve the exact Isuzu model designation. Candidate names are search clues only.',
-      'Do not use Donaldson, Fleetguard, WIX, MANN, Baldwin, FRAM or any aftermarket source to define the OEM model universe.',
-      'Return source URL(s), exact source wording, model designation, series/family, and evidence status. If Isuzu primary evidence is not found, return unresolved.'
+      `Using only Isuzu Commercial Truck of America primary sources, identify every DIESEL Isuzu commercial-truck model sold in the United States for model year ${year}.`,
+      'For each verified diesel model, close the exact Isuzu designation, series, diesel engine family, displacement and relevant configuration.',
+      'Exclude gasoline vehicles completely.',
+      'Candidate names are search clues only; never infer continuity across model years.',
+      'Do not use Donaldson, Fleetguard, WIX, MANN, Baldwin or FRAM to define the OEM vehicle universe.',
+      'Return unresolved when Isuzu primary evidence does not prove the exact year/model/diesel powertrain.'
     ].join(' ');
   }
-  if (stage.id === '2B_POWERTRAIN_CONFIGURATION') {
+
+  if (stage.id === 'PHASE_2_DIESEL_OEM_FILTER_OEN') {
     return [
-      `For every Isuzu USA model verified for model year ${year}, use only Isuzu primary sources to close fuel type, exact engine family, displacement, cab/configuration and model-specific technical distinctions.`,
-      'Do not infer that two Isuzu models share an engine or service parts merely because they are in the same series.',
-      'Return one record per exact year/model/configuration with source URL(s) and exact source wording. Unproven fields remain unresolved.'
+      `For every Phase 1 verified DIESEL Isuzu USA year/model/engine configuration for model year ${year}, use only Isuzu primary parts/service sources to capture genuine OE/OEN references for: ${stage.required_positions.join(', ')}.`,
+      'Exclude gasoline vehicles completely.',
+      'Preserve published year, model, engine and filter-position scope exactly.',
+      'Do not consult Donaldson, Fleetguard or other aftermarket catalogs in this phase.',
+      'Do not inherit an OE/OEN between NPR/NPR-HD/NPR-XD/NQR/NRR/F-Series models without Isuzu evidence.',
+      'Return unresolved for any position that Isuzu primary evidence does not close.'
     ].join(' ');
   }
+
   return [
-    `For every Isuzu USA year/model/engine configuration verified for model year ${year}, use only Isuzu primary parts/service sources to capture genuine OE/OEN references for: ${stage.required_positions.join(', ')}.`,
-    'Preserve published year, model, engine and filter-position scope exactly.',
-    'Do not consult Donaldson, Fleetguard or other aftermarket catalogs in this phase.',
-    'Do not inherit an OE/OEN from one NPR/NQR/NRR/F-Series model to another without Isuzu evidence.',
-    'Return unresolved for any position that Isuzu primary evidence does not close.'
+    `For every Phase 2 verified DIESEL Isuzu OE/OEN for model year ${year}, resolve aftermarket references in strict order: Donaldson first, Fleetguard second if Donaldson does not manufacture or cannot close the reference, then MANN-FILTER/Baldwin/WIX/FRAM only as supporting corroboration.`,
+    'The verified Isuzu vehicle/application scope from Phases 1 and 2 is immutable; aftermarket sources may not redefine it.',
+    'A cross-reference alone must never establish vehicle fitment.',
+    'Apply the HD base rule: Donaldson if manufactured; otherwise Fleetguard.',
+    'Return unresolved rather than guessing.'
   ].join(' ');
 }
 
@@ -68,6 +75,7 @@ function buildPhase2WorkOrders({ requestedAt = new Date().toISOString(), stageId
         channel: 'catalogue_governance',
         now: requestedAt,
       });
+      const isAftermarketPhase = stage.id === 'PHASE_3_AFTERMARKET_RESOLUTION';
       const research = createHermesResearchRequest({
         research_request_id: `isuzu-us-phase2-research-${deterministic}`,
         knowledge_gap_request_id: gap.request_id,
@@ -75,10 +83,14 @@ function buildPhase2WorkOrders({ requestedAt = new Date().toISOString(), stageId
         platform: 'ON ROAD',
         equipment: gap.equipment,
         research_question: question,
-        required_source_types: ['Isuzu Commercial Truck of America official vehicle, service, parts, brochure, specification, or manual source'],
-        preferred_manufacturer_domains: ['isuzucv.com'],
-        minimum_independent_sources: 1,
-        allow_competitor_sources: false,
+        required_source_types: isAftermarketPhase
+          ? ['Official Donaldson/Fleetguard/manufacturer product or cross-reference catalog']
+          : ['Isuzu Commercial Truck of America official vehicle, service, parts, brochure, specification, or manual source'],
+        preferred_manufacturer_domains: isAftermarketPhase
+          ? ['donaldson.com', 'fleetguard.com', 'mann-filter.com', 'baldwinfilters.com', 'wixfilters.com', 'fram.com']
+          : ['isuzucv.com'],
+        minimum_independent_sources: isAftermarketPhase ? 2 : 1,
+        allow_competitor_sources: isAftermarketPhase,
         allow_industry_sources: false,
         priority: gap.priority,
         requested_at: requestedAt,
@@ -90,8 +102,10 @@ function buildPhase2WorkOrders({ requestedAt = new Date().toISOString(), stageId
         phase_id: manifest.phase_id,
         stage_id: stage.id,
         year,
-        source_policy: 'OEM_ONLY_UNTIL_PHASE2_COMPLETE',
-        aftermarket_allowed: false,
+        source_policy: stage.id === 'PHASE_3_AFTERMARKET_RESOLUTION'
+          ? 'VERIFIED_OEN_REQUIRED__DONALDSON_THEN_FLEETGUARD'
+          : 'OEM_ONLY',
+        aftermarket_allowed: stage.id === 'PHASE_3_AFTERMARKET_RESOLUTION',
         gap,
         research,
       });
@@ -167,14 +181,15 @@ async function main() {
       year_to: manifest.year_to,
       stages: [...new Set(workOrders.map(x => x.stage_id))],
       work_orders: workOrders.length,
-      aftermarket_allowed: false,
+      fuel_scope: manifest.fuel_scope,
+      aftermarket_allowed: workOrders.some(x => x.aftermarket_allowed),
       direct_catalog_writes: 0,
     }, null, 2));
     return;
   }
 
   if (!stageId) {
-    throw new Error('--apply requires one explicit --stage so Phase 2 executes sequentially');
+    throw new Error('--apply requires one explicit --stage so the three diesel phases execute sequentially');
   }
 
   const results = await applyPhase2WorkOrders(workOrders);
