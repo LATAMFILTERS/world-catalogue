@@ -99,6 +99,39 @@ Commercial platform layer:
 
 The platform layer is routing and semantic context, not a technology claim. Family technologies remain governed separately. For AEREMIS™, General Air Filtration remains descriptive, while HE-CRIVA™ and MA-TREA™ are branded family identifiers. HERMES may carry the platform context during research, but it still cannot approve publication, applications, products or claims.
 
+### Industrial Air phase boundary
+
+HERMES must classify the dominant contaminant phase before confirming a PARTION™ / FUMEVRA™ relationship:
+
+```text
+dry dust / fume / particle-dominant oil-bearing particulate
+-> may be evaluated against PARTION™ / FUMEVRA™
+
+liquid oil mist / coolant mist / metalworking-fluid droplets
+-> separate treatment-path evaluation
+-> droplet capture + coalescence + drainage + liquid loading + media compatibility
+
+mixed solid-liquid aerosol
+-> determine dominant phase and treatment mechanism
+-> staged treatment may be required
+-> if unresolved, do not auto-confirm a branded technology
+```
+
+"Oil-bearing particulate" is not a synonym for oil mist. The presence of the word aerosol alone is also insufficient to determine whether the duty is particle-dominant or liquid-droplet-dominant.
+
+### Donaldson Industrial Air technical evidence
+
+The governed Donaldson organization now includes two high-value Industrial Air discovery endpoints:
+
+- Industrial Air Filtration Technical Article Library
+- Industrial Air Filtration Case Study Library
+
+HERMES must work beyond the library index. During research it follows the relevant same-domain article or case-study page and extracts the supported process, contaminant, mechanism, operating conditions, filter/media architecture, maintenance behavior, measured outcomes and limitations.
+
+Case-study performance is application-specific evidence. Numeric results from one installation must not become universal ELIMFILTERS claims. Competitor names and proprietary technology remain internal provenance unless public-source governance explicitly authorizes otherwise.
+
+Primary product literature such as official mist-collector technical PDFs may be used to validate treatment mechanisms and element architecture. For oil/coolant mist, HERMES must specifically look for droplet capture, coalescence, drainage, liquid loading, airflow and final-stage requirements before proposing a treatment relationship.
+
 ## Shared engineering layer
 
 The following concepts are defined once and contextualized by domain instead of duplicated:
