@@ -2125,22 +2125,22 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     const buildJsonbCond = (col) => {
       const conds = [];
       if (resolvedMake) {
-        conds.push(`UPPER(ea->>'make') LIKE ${idx}`);
+        conds.push(`UPPER(ea->>'make') LIKE $${idx}`);
         params.push('%' + resolvedMake.toUpperCase() + '%');
         idx++;
       }
       if (resolvedModel) {
-        conds.push(`UPPER(COALESCE(ea->>'model', ea->>'machine')) LIKE ${idx}`);
+        conds.push(`UPPER(COALESCE(ea->>'model', ea->>'machine')) LIKE $${idx}`);
         params.push('%' + resolvedModel.toUpperCase() + '%');
         idx++;
       }
       if (resolvedYear) {
-        conds.push(`(ea->>'year_from')::int <= ${idx} AND (ea->>'year_to')::int >= ${idx}`);
+        conds.push(`(ea->>'year_from')::int <= $${idx} AND (ea->>'year_to')::int >= $${idx}`);
         params.push(parseInt(resolvedYear, 10));
         idx++;
       }
       if (resolvedEngine) {
-        conds.push(`UPPER(COALESCE(ea->>'engine_code', ea->>'engine')) LIKE ${idx}`);
+        conds.push(`UPPER(COALESCE(ea->>'engine_code', ea->>'engine')) LIKE $${idx}`);
         params.push('%' + resolvedEngine.toUpperCase() + '%');
         idx++;
       }
@@ -2162,25 +2162,24 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     // a second fitment source of truth.
     const vehicleConds = [];
     if (resolvedMake) {
-      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_make', va.make, ''), '[^A-Z0-9]', '', 'g')) = ${idx}`);
+      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_make', va.make, ''), '[^A-Z0-9]', '', 'g')) = $${idx}`);
       params.push(normalizeAlphaNum(resolvedMake));
       idx++;
     }
     if (resolvedModel) {
-      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_model', va.model_family, ''), '[^A-Z0-9]', '', 'g')) = ${idx}`);
+      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_model', va.model_family, ''), '[^A-Z0-9]', '', 'g')) = $${idx}`);
       params.push(normalizeAlphaNum(resolvedModel));
       idx++;
     }
     if (resolvedYear) {
       vehicleConds.push(`(
-        (va.year_from IS NOT NULL AND va.year_to IS NOT NULL AND va.year_from <= ${idx} AND va.year_to >= ${idx})
-        OR trim(coalesce(va.year,'')) = ${idx}::text
-      )`);
+        (
+          (to_jsonb(va)->>'year_from') ~ '^(19|20)[0-9]{2}
       params.push(parseInt(resolvedYear, 10));
       idx++;
     }
     if (resolvedEngine) {
-      vehicleConds.push(`upper(regexp_replace(coalesce(va.engine_code, va.model_type, ''), '[^A-Z0-9]', '', 'g')) LIKE ${idx}`);
+      vehicleConds.push(`upper(regexp_replace(coalesce(va.engine_code, va.model_type, ''), '[^A-Z0-9]', '', 'g')) LIKE $${idx}`);
       params.push('%' + normalizeAlphaNum(resolvedEngine) + '%');
       idx++;
     }
@@ -2196,12 +2195,136 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     // Relational Knowledge Graph: kg_product_equipment + kg_equipment_models + kg_equipment_makes
     const kgConds = [];
     if (resolvedMake) {
-      kgConds.push(`UPPER(kmk.display_name) LIKE ${idx}`);
+      kgConds.push(`UPPER(kmk.display_name) LIKE $${idx}`);
       params.push('%' + resolvedMake.toUpperCase() + '%');
       idx++;
     }
     if (resolvedModel) {
-      kgConds.push(`UPPER(km.display_name) LIKE ${idx}`);
+      kgConds.push(`UPPER(km.display_name) LIKE $${idx}`);
+      params.push('%' + resolvedModel.toUpperCase() + '%');
+      idx++;
+    }
+    if (kgConds.length > 0) {
+      conditions.push(`EXISTS (
+        SELECT 1
+        FROM kg_product_equipment kpe
+        JOIN kg_equipment_models km ON kpe.model_id = km.id
+        LEFT JOIN kg_equipment_makes kmk ON km.make_id = kmk.id
+        WHERE kpe.product_sku = elimfilters_catalog_active_v.sku
+          AND ${kgConds.join(' AND ')}
+      )`);
+    }
+
+    const whereClause = conditions.length > 0 ? 'WHERE (' + conditions.join(') OR (') + ')' : '';
+    const { rows } = await client.query(
+      `SELECT DISTINCT ON (sku) * FROM elimfilters_catalog_active_v ${whereClause} ORDER BY sku LIMIT 30`,
+      params
+    );
+
+    const products = rows.map(r => buildFilterData(r, lang));
+    await enrichAlternatives(products, client);
+    res.json({ success: true, results: products, source: 'equipment' });
+  } catch (e) {
+    console.error('[search/equipment]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
+
+
+          AND (to_jsonb(va)->>'year_to') ~ '^(19|20)[0-9]{2}
+      params.push(parseInt(resolvedYear, 10));
+      idx++;
+    }
+    if (resolvedEngine) {
+      vehicleConds.push(`upper(regexp_replace(coalesce(va.engine_code, va.model_type, ''), '[^A-Z0-9]', '', 'g')) LIKE $${idx}`);
+      params.push('%' + normalizeAlphaNum(resolvedEngine) + '%');
+      idx++;
+    }
+    if (vehicleConds.length > 0) {
+      conditions.push(`EXISTS (
+        SELECT 1
+        FROM ld_catalog.ld_vehicle_applications va
+        WHERE va.elimfilters_sku = elimfilters_catalog_active_v.sku
+          AND ${vehicleConds.join(' AND ')}
+      )`);
+    }
+
+    // Relational Knowledge Graph: kg_product_equipment + kg_equipment_models + kg_equipment_makes
+    const kgConds = [];
+    if (resolvedMake) {
+      kgConds.push(`UPPER(kmk.display_name) LIKE $${idx}`);
+      params.push('%' + resolvedMake.toUpperCase() + '%');
+      idx++;
+    }
+    if (resolvedModel) {
+      kgConds.push(`UPPER(km.display_name) LIKE $${idx}`);
+      params.push('%' + resolvedModel.toUpperCase() + '%');
+      idx++;
+    }
+    if (kgConds.length > 0) {
+      conditions.push(`EXISTS (
+        SELECT 1
+        FROM kg_product_equipment kpe
+        JOIN kg_equipment_models km ON kpe.model_id = km.id
+        LEFT JOIN kg_equipment_makes kmk ON km.make_id = kmk.id
+        WHERE kpe.product_sku = elimfilters_catalog_active_v.sku
+          AND ${kgConds.join(' AND ')}
+      )`);
+    }
+
+    const whereClause = conditions.length > 0 ? 'WHERE (' + conditions.join(') OR (') + ')' : '';
+    const { rows } = await client.query(
+      `SELECT DISTINCT ON (sku) * FROM elimfilters_catalog_active_v ${whereClause} ORDER BY sku LIMIT 30`,
+      params
+    );
+
+    const products = rows.map(r => buildFilterData(r, lang));
+    await enrichAlternatives(products, client);
+    res.json({ success: true, results: products, source: 'equipment' });
+  } catch (e) {
+    console.error('[search/equipment]', e.message);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  } finally {
+    client.release();
+  }
+});
+
+
+
+          AND (to_jsonb(va)->>'year_from')::int <= ${idx}
+          AND (to_jsonb(va)->>'year_to')::int >= ${idx}
+        )
+        OR trim(coalesce(va.year,'')) = ${idx}::text
+      )`);
+      params.push(parseInt(resolvedYear, 10));
+      idx++;
+    }
+    if (resolvedEngine) {
+      vehicleConds.push(`upper(regexp_replace(coalesce(va.engine_code, va.model_type, ''), '[^A-Z0-9]', '', 'g')) LIKE $${idx}`);
+      params.push('%' + normalizeAlphaNum(resolvedEngine) + '%');
+      idx++;
+    }
+    if (vehicleConds.length > 0) {
+      conditions.push(`EXISTS (
+        SELECT 1
+        FROM ld_catalog.ld_vehicle_applications va
+        WHERE va.elimfilters_sku = elimfilters_catalog_active_v.sku
+          AND ${vehicleConds.join(' AND ')}
+      )`);
+    }
+
+    // Relational Knowledge Graph: kg_product_equipment + kg_equipment_models + kg_equipment_makes
+    const kgConds = [];
+    if (resolvedMake) {
+      kgConds.push(`UPPER(kmk.display_name) LIKE $${idx}`);
+      params.push('%' + resolvedMake.toUpperCase() + '%');
+      idx++;
+    }
+    if (resolvedModel) {
+      kgConds.push(`UPPER(km.display_name) LIKE $${idx}`);
       params.push('%' + resolvedModel.toUpperCase() + '%');
       idx++;
     }
