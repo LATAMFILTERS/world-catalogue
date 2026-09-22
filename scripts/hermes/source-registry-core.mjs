@@ -21,7 +21,7 @@ export const ALLOWED_STATUSES = new Set(['ACTIVE', 'DISCOVERY_REQUIRED', 'PAUSED
 
 export const ALLOWED_ENDPOINT_TYPES = new Set([
   'newsroom', 'news', 'press_releases', 'product_announcements', 'technical_bulletins',
-  'documentation', 'service_information', 'recalls', 'standards_updates', 'technology_pages'
+  'documentation', 'service_information', 'recalls', 'standards_updates', 'technology_pages', 'official_catalogue'
 ]);
 
 // Known filtration competitor org ids that must never be filed under an
