@@ -74,7 +74,10 @@ test('source registry validates and contains the governed Industrial & Process p
     'pall__oil_purifiers',
     'pall__varnish_removal',
     'pall__depth_filtration',
+    'parker__wind_filtration',
+    'parker__industrial_hydraulic_press_filtration',
     'dupont_water__technologies',
+    'dupont_water__filmtec',
     'dupont_water__ion_exchange',
     'dupont_water__edi',
     'calgon__filtrasorb',
@@ -112,6 +115,8 @@ test('technical closure registry and primary source registry are present', () =>
   assert.match(registry, /ip-industrial-process-architecture/i);
   assert.match(sources, /EXTERNAL-PRIMARY-CAMFIL-GENERAL-VENTILATION/);
   assert.match(sources, /EXTERNAL-PRIMARY-PALL-LIQUID-GAS-COALESCENCE/);
+  assert.match(sources, /EXTERNAL-PRIMARY-PARKER-PAR-FIT-INTERCHANGE/);
+  assert.match(sources, /EXTERNAL-PRIMARY-DUPONT-FILMTEC/);
   assert.match(sources, /EXTERNAL-PRIMARY-DUPONT-EDI/);
   assert.match(sources, /EXTERNAL-PRIMARY-CALGON-ACTIVATED-CARBON/);
 });
