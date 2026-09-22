@@ -606,6 +606,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/HYITRIS-image.png',
         ),
         heroVideo: '/images/HYLTRIS-VIDEO.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Hydraulic fluid type and additive chemistry',
           'Target cleanliness or protected-component requirement',
