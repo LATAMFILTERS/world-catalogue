@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0.0",
+  "authority": "ISUZU COMMERCIAL TRUCK OF AMERICA",
+  "market": "US",
+  "platform": "N-SERIES",
+  "governance": {
+    "oem_first": true,
+    "shared_engine_does_not_imply_shared_filters": true,
+    "exact_model_year_powertrain_required": true,
+    "aftermarket_lookup_blocked_until_oem_identity_closed": true
+  },
+  "sources": [
+    {
+      "model_year": 2022,
+      "url": "https://isuzucv.com/pdfs/n_brochure_2022.pdf",
+      "type": "official_oem_brochure"
+    },
+    {
+      "model_year": 2023,
+      "url": "https://www.isuzucv.com/app/site/pdf?file=2023ProductBrochure_Final.pdf",
+      "type": "official_oem_brochure"
+    },
+    {
+      "model_year": 2024,
+      "url": "https://www.isuzucv.com/pdfs/2024N-SeriesDieselProductBrochure_Final.pdf",
+      "type": "official_oem_brochure"
+    },
+    {
+      "model_year": 2025,
+      "url": "https://www.isuzucv.com/pdfs/2025NSeriesDieselBrochure.pdf",
+      "type": "official_oem_brochure"
+    },
+    {
+      "model_year": 2026,
+      "url": "https://isuzucv.com/pdfs/2026N-SeriesDiesel_specs.pdf",
+      "type": "official_oem_specification"
+    },
+    {
+      "model_year": "current",
+      "url": "https://www.isuzucv.com/en/service/psmp",
+      "type": "official_oem_service_program"
+    }
+  ],
+  "diesel_matrix": [
+    {
+      "year": 2022,
+      "models": ["NPR-HD", "NPR-XD", "NQR", "NRR"],
+      "fuel": "DIESEL",
+      "engine_displacement": "5.2L",
+      "engine_description": "I4 TURBOCHARGED",
+      "engine_family": "4HK",
+      "status": "OEM_VERIFIED"
+    },
+    {
+      "year": 2023,
+      "models": ["NPR-HD", "NPR-XD", "NQR", "NRR"],
+      "fuel": "DIESEL",
+      "engine_displacement": "5.2L",
+      "engine_description": "I4 TURBOCHARGED",
+      "engine_family": null,
+      "status": "OEM_VERIFIED"
+    },
+    {
+      "year": 2024,
+      "models": ["NPR-HD", "NPR-XD", "NQR", "NRR"],
+      "fuel": "DIESEL",
+      "engine_displacement": "5.2L",
+      "engine_description": "I4 TURBOCHARGED",
+      "engine_family": "4HK",
+      "status": "OEM_VERIFIED"
+    },
+    {
+      "year": 2025,
+      "models": ["NPR-HD", "NPR-XD", "NRR DERATE", "NRR"],
+      "fuel": "DIESEL",
+      "engine_displacement": "5.2L",
+      "engine_description": "I4 TURBOCHARGED",
+      "engine_family": "4HK1-TC",
+      "status": "OEM_VERIFIED"
+    },
+    {
+      "year": 2026,
+      "models": ["NPR-HD", "NPR-XD", "NRR DERATE", "NRR"],
+      "fuel": "DIESEL",
+      "engine_displacement": "5.2L",
+      "engine_description": "I4 TURBOCHARGED",
+      "engine_family": "4HK1-TC",
+      "status": "OEM_VERIFIED"
+    }
+  ],
+  "gas_matrix": [
+    {
+      "year": 2023,
+      "models": ["NPR", "NPR-HD"],
+      "fuel": "GASOLINE",
+      "engine_displacement": "6.6L",
+      "engine_description": "V8 GMPT L8T GEN V",
+      "status": "OEM_VERIFIED"
+    }
+  ],
+  "customer_search_rules": {
+    "generic_npr_without_fuel_or_engine": "AMBIGUOUS",
+    "generic_npr_with_5_2l_or_diesel": "DO_NOT_MAP_TO_PLAIN_NPR",
+    "generic_npr_with_6_6l_or_gas": "PLAIN_NPR_ALLOWED_WHERE_OEM_MATRIX_SUPPORTS_IT",
+    "npr_hd_exact": "EXACT_MODEL",
+    "npr_xd_exact": "EXACT_MODEL"
+  }
+}
