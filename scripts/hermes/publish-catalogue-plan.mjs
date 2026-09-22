@@ -4,10 +4,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
-import { PUBLISHABLE_CATALOGUE_FIELDS } from './catalogue-publication-plan.mjs';
+import { PUBLISHABLE_CATALOGUE_FIELDS, APPLICATION_PUBLICATION_FIELDS } from './catalogue-publication-plan.mjs';
 
 const require = createRequire(import.meta.url);
 const { assertGovernedCatalogPatch } = require('../../lib/catalog-write-gateway.js');
+const { applyVerifiedApplications } = require('../../lib/catalog-application-write-service.js');
 
 export const COLUMN_GROUPS = {
   filter_type: ['filter_type'], duty: ['duty'], technology: ['technology'], codigo_base: ['codigo_base'],
@@ -35,13 +36,15 @@ export function catalogueBackupHash(backup) { return hash(catalogueBackupCore(ba
 function assert(condition, message) { if (!condition) throw new Error(message); }
 
 function planCore(plan) {
-  return {
+  const core = {
     schema_version: plan.schema_version, research_bundle_id: plan.research_bundle_id,
     target_sku: plan.target_sku, change_type: plan.change_type,
     approval: plan.approval, knowledge_approval: plan.knowledge_approval,
     snapshot_sha256: plan.snapshot_sha256, operations: plan.operations,
     evidence: plan.evidence, source_urls: plan.source_urls
   };
+  if (Object.hasOwn(plan, 'application_evidence')) core.application_evidence = plan.application_evidence;
+  return core;
 }
 
 export function validateCataloguePublicationPlan(plan, { now = Date.now(), maxAgeMs = 7 * 24 * 60 * 60 * 1000 } = {}) {
@@ -54,6 +57,17 @@ export function validateCataloguePublicationPlan(plan, { now = Date.now(), maxAg
   assert(new Set(plan.operations.map((op) => op.field)).size === plan.operations.length, 'Plan contains duplicate field operations');
   assert(Array.isArray(plan.approval.approved_fields), 'approved_fields is required');
   assert(hash([...plan.operations.map((op) => op.field)].sort()) === hash([...plan.approval.approved_fields].sort()), 'Plan operations do not match approved_fields');
+
+  const applicationOperations = plan.operations.filter((op) => APPLICATION_PUBLICATION_FIELDS.has(op.field));
+  if (applicationOperations.length) {
+    const evidence = plan.application_evidence;
+    assert(evidence && typeof evidence === 'object' && !Array.isArray(evidence), 'Application publication requires application_evidence');
+    assert(String(evidence.authority || '').trim(), 'Application evidence authority is required');
+    assert(String(evidence.source_url || '').trim(), 'Application evidence source_url is required');
+    assert(String(evidence.evidence_hash || '').trim(), 'Application evidence evidence_hash is required');
+    assert((plan.source_urls || []).includes(evidence.source_url), 'Application evidence source_url must be present in source_urls');
+  }
+
   assert(hash(planCore(plan)) === plan.plan_sha256, 'Publication plan hash mismatch');
   return true;
 }
@@ -80,10 +94,11 @@ export function cataloguePlanPatch(plan) {
   return patch;
 }
 
-export function compileUpdate(plan) {
+export function compileUpdate(plan, { excludeFields = new Set() } = {}) {
   const assignments = [];
   const values = [];
   for (const operation of plan.operations) {
+    if (excludeFields.has(operation.field)) continue;
     const columns = COLUMN_GROUPS[operation.field];
     assert(columns, `No database mapping for ${operation.field}`);
     if (columns.length === 1) {
@@ -122,11 +137,37 @@ export async function executeCataloguePublicationPlan({ plan, pool, backupDir = 
     const backup = { schema_version: '1.0.0', created_at: new Date().toISOString(), plan_sha256: plan.plan_sha256, research_bundle_id: plan.research_bundle_id, target_sku: plan.target_sku, operations: plan.operations, before: row };
     backup.backup_sha256 = catalogueBackupHash(backup);
     fs.writeFileSync(backupPath, `${JSON.stringify(backup, null, 2)}\n`, { flag: 'wx' });
-    const patch = cataloguePlanPatch(plan);
-    assertGovernedCatalogPatch(row, patch, { applicationWrite: false });
-    const update = compileUpdate(plan);
-    const changed = await client.query(update.sql, update.values);
-    assert(changed.rowCount === 1, 'Catalogue update did not affect exactly one row');
+    const applicationOperations = plan.operations.filter((operation) => APPLICATION_PUBLICATION_FIELDS.has(operation.field));
+    const genericOperations = plan.operations.filter((operation) => !APPLICATION_PUBLICATION_FIELDS.has(operation.field));
+
+    if (genericOperations.length) {
+      const genericPlan = { ...plan, operations: genericOperations };
+      const patch = cataloguePlanPatch(genericPlan);
+      assertGovernedCatalogPatch(row, patch, { applicationWrite: false });
+      const update = compileUpdate(genericPlan);
+      const changed = await client.query(update.sql, update.values);
+      assert(changed.rowCount === 1, 'Catalogue update did not affect exactly one row');
+    }
+
+    if (applicationOperations.length) {
+      const applicationParams = {
+        sku: plan.target_sku,
+        evidence: {
+          authority: plan.application_evidence.authority,
+          source_url: plan.application_evidence.source_url,
+          evidence_hash: plan.application_evidence.evidence_hash,
+          metadata: {
+            ...(plan.application_evidence.metadata || {}),
+            research_bundle_id: plan.research_bundle_id,
+            publication_plan_sha256: plan.plan_sha256,
+            approved_by: plan.approval.approved_by,
+          },
+        },
+      };
+      for (const operation of applicationOperations) applicationParams[operation.field] = operation.after;
+      await applyVerifiedApplications(client, applicationParams);
+    }
+
     const verified = await client.query(`SELECT ${columns.join(', ')} FROM elimfilters_catalog WHERE sku = $1`, [plan.target_sku]);
     for (const operation of plan.operations) assert(hash(logicalValue(verified.rows[0], operation.field)) === hash(operation.after), `Post-write verification failed for ${operation.field}`);
     await client.query('COMMIT');

@@ -9,6 +9,7 @@ export const PUBLISHABLE_CATALOGUE_FIELDS = new Set([
   'equipment_applications', 'oem_codes', 'competitor_codes',
   'brand_crossrefs', 'source_identity', 'codigo_base', 'vehicle_applications'
 ]);
+export const APPLICATION_PUBLICATION_FIELDS = new Set(['equipment_applications', 'vehicle_applications']);
 
 function canonical(value) {
   if (Array.isArray(value)) return value.map(canonical);
@@ -82,6 +83,18 @@ export function buildCataloguePublicationPlan({ bundle, catalog, generatedAt = n
     assert(!isHdCompetitorOnlyBrand(proposedSource.canonical_source_brand), 'MANN-FILTER/FRAM are competitor codes in HEAVY_DUTY and cannot be canonical codigo_base');
   }
 
+  const applicationFields = approvedFields.filter((field) => APPLICATION_PUBLICATION_FIELDS.has(field));
+  const applicationEvidence = applicationFields.length ? candidate.application_evidence : null;
+  if (applicationFields.length) {
+    assert(applicationEvidence && typeof applicationEvidence === 'object' && !Array.isArray(applicationEvidence),
+      'Application publication requires explicit application_evidence');
+    assert(String(applicationEvidence.authority || '').trim(), 'Application evidence authority is required');
+    assert(String(applicationEvidence.source_url || '').trim(), 'Application evidence source_url is required');
+    assert(String(applicationEvidence.evidence_hash || '').trim(), 'Application evidence evidence_hash is required');
+    assert((candidate.source_urls || []).includes(applicationEvidence.source_url),
+      'Application evidence source_url must be present in candidate source_urls');
+  }
+
   const operations = approvedFields.map((field) => ({
     field,
     before: snapshotValue(current, field),
@@ -98,6 +111,7 @@ export function buildCataloguePublicationPlan({ bundle, catalog, generatedAt = n
     snapshot_sha256: hash(snapshotIdentity), operations,
     evidence: candidate.evidence || [], source_urls: candidate.source_urls || []
   };
+  if (applicationEvidence) planCore.application_evidence = applicationEvidence;
   return {
     ...planCore, generated_at: generatedAt,
     plan_sha256: hash(planCore), dry_run: true, database_write: false,
