@@ -23,7 +23,7 @@
   "problem": {
     "tag": "REALTÀ DEL CAMPO",
     "title": "Cosa succede quando la protezione fallisce?",
-    "badge": "L'80% dei guasti prematuri sono causati dalla contaminazione.",
+    "badge": "La contaminazione può accelerare l'usura prematura dei componenti e il degrado dell'apparecchiatura.",
     "items": {
       "injector": {
         "title": "Erosione degli iniettori",
@@ -31,11 +31,11 @@
       },
       "bearing": {
         "title": "Attrito critico del cuscinetto",
-        "desc": "L'olio contaminato accelera l'usura dei metalli, riducendo la durata del blocco motore fino al 40%."
+        "desc": "Il lubrificante contaminato può accelerare l'usura abrasiva su cuscinetti e altre superfici lubrificate."
       },
       "fuel": {
         "title": "Drenaggio del carburante",
-        "desc": "Un motore limitato consuma fino all'8% in più di diesel solo per mantenere gli stessi livelli di coppia."
+        "desc": "La contaminazione e la restrizione del sistema del carburante possono ridurre l'affidabilità e l'efficienza operativa del sistema di combustione."
       }
     }
   },
@@ -44,16 +44,16 @@
     "p1": "ELIMFILTERS® è più di un produttore di filtri. Siamo un'azienda specializzata in",
     "p1highlight": "Tecnologia di protezione patrimoniale",
     "p1after": ", progettando soluzioni che preservano il valore e l'operatività delle vostre apparecchiature negli ambienti più esigenti.",
-    "p2": "Ogni prodotto che sviluppiamo risponde a una realtà: la riparazione delle apparecchiature che bloccano le vostre attività costa centinaia di migliaia di dollari. Un filtro è il custode di tale investimento.",
+    "p2": "Ogni decisione di protezione deve essere valutata in base al valore, al ciclo di utilizzo, all'esposizione alla contaminazione e ai requisiti di affidabilità dell'asset protetto.",
     "card": {
       "tag": "TECNOLOGIA PER LA PROTEZIONE DEL PATRIMONIO",
       "title": "Progettiamo sistemi di protezione. Componenti non standardizzati.",
       "desc": "ELIMFILTERS® progetta tecnologie di protezione multistrato calibrate per difendere le risorse industriali critiche: ogni sistema è una soluzione appositamente creata, non un sostituto delle materie prime.",
       "items": [
-        "Matrice di protezione multistrato formulata con AI",
-        "Architettura zero bypass su ogni sistema",
-        "Certificato ISO 5011 · 16332 · 16889 · 19438",
-        "Oltre 20.000 riferimenti incrociati di risorse OEM"
+        "Controllo della contaminazione a livello di sistema",
+        "Architettura di protezione governata dall'applicazione",
+        "Standard di ingegneria internazionali come riferimenti tecnici",
+        "Relazioni canoniche tra apparecchiatura e applicazione"
       ]
     }
   },
@@ -63,16 +63,16 @@
     "titleHighlight": "OLTRE LO STANDARD",
     "items": {
       "media": {
-        "title": "Supporti ibridi formulati con intelligenza artificiale",
-        "desc": "Fibre sintetiche e cellulosiche progettate tramite algoritmi AI per ottenere la massima capacità di sporco mantenendo una protezione bypass pari a zero."
+        "title": "Media di Filtrazione Progettati",
+        "desc": "La selezione del media è governata dal sistema protetto, dal profilo di contaminazione, dai requisiti di flusso, dalla caduta di pressione, dalla capacità e dalle condizioni di servizio."
       },
       "hydrophobic": {
-        "title": "Sistemi di separazione idrofobica",
-        "desc": "Tecnologia avanzata di separazione dell'acqua che rimuove l'acqua libera, emulsionata e disciolta prima che raggiunga i sistemi di iniezione critici."
+        "title": "Controllo della Contaminazione del Carburante",
+        "desc": "La protezione del carburante combina il controllo delle particelle e, quando l'applicazione approvata lo richiede, un'architettura dedicata di separazione acqua-carburante."
       },
       "antibypass": {
-        "title": "Strutture anti-bypass",
-        "desc": "Geometrie di tenuta progettate che garantiscono un bypass a contaminazione zero nelle condizioni di pressione e temperatura più estreme."
+        "title": "Integrità di Tenuta e Alloggiamento",
+        "desc": "La geometria dell'alloggiamento, la ritenzione dell'elemento, il carico della tenuta e l'integrità dell'installazione aiutano a preservare il confine di contaminazione protetto."
       }
     }
   },
@@ -127,8 +127,8 @@
     "technologiesIncluded": "Tecnologie incluse",
     "performanceMetrics": "METRICHE DELLE PRESTAZIONI",
     "readyToUpgrade": "Pronto per l'aggiornamento?",
-    "readyDesc": "Trova il filtro esatto per la tua applicazione. Riferimenti incrociati di oltre 500.000 parti.",
-    "engineeringDesc": "L'ingegneria ELIMFILTERS® applica standard di precisione ad ogni componente. I nostri sistemi di filtrazione sono progettati per superare le specifiche OEM, garantendo la massima protezione e prestazioni durante cicli di lavoro impegnativi.",
+    "readyDesc": "Trova il componente di filtrazione corretto per l'apparecchiatura, l'applicazione e il sistema protetto.",
+    "engineeringDesc": "L'ingegneria ELIMFILTERS allinea la selezione della filtrazione con il sistema protetto, il rischio di contaminazione, i riferimenti tecnici applicabili e il ciclo di utilizzo operativo.",
     "home": "CASA"
   },
   "language": {
@@ -164,9 +164,9 @@
     "problemTag": "DIAGNOSI DEL RISCHIO OPERATIVO",
     "problemH1": "CIÒ CHE NON PUOI VEDERE",
     "problemH2": "STA FERMANDO LA TUA OPERAZIONE.",
-    "problemIntro": "Fino all'80% dei guasti prematuri dei componenti idraulici sono causati dalla contaminazione. La filtrazione inefficiente consente a particelle invisibili di agire come carta vetrata all'interno dei componenti critici — superfici dei cuscinetti, orifizi degli iniettori, bobine idrauliche.",
-    "problemBadgeNum": "80%",
-    "problemBadgeDesc": "Dei guasti prematuri dei componenti idraulici sono causati dalla contaminazione.",
+    "problemIntro": "La contaminazione può agire su interfacce critiche dei componenti e accelerare l'usura in motori, sistemi del carburante, circuiti di lubrificazione e apparecchiature idrauliche.",
+    "problemBadgeNum": "RISCHIO",
+    "problemBadgeDesc": "La contaminazione è un fattore controllabile che contribuisce al degrado prematuro dell'apparecchiatura.",
     "failModes": [
       {
         "title": "Erosione degli Iniettori",
@@ -174,56 +174,56 @@
       },
       {
         "title": "Attrito Critico dei Cuscinetti",
-        "desc": "L'olio contaminato accelera l'usura del metallo, riducendo la durata del blocco motore fino al 40%."
+        "desc": "Le particelle solide più grandi dello spessore del film d'olio penetrano nei cuscinetti a strisciamento e a rotolamento, causando usura abrasiva e vaiolatura sulle superfici portanti."
       },
       {
         "title": "Perdita di Efficienza del Carburante",
-        "desc": "I sistemi di carburante contaminati costringono i motori a consumare fino all'8% in più di diesel per mantenere la stessa coppia."
+        "desc": "Il carico di particelle limita le tolleranze di flusso dell'iniettore del carburante, alterando il pattern di spruzzo e l'atomizzazione e degradando l'efficienza di combustione."
       }
     ],
     "whyTitle1": "PROTEZIONE DEGLI ASSET",
     "whyTitle2": "TECNOLOGIA",
-    "whyP1": "ELIMFILTERS non è un'azienda di filtri. ELIMFILTERS è un'azienda di ",
+    "whyP1": "ELIMFILTERS® non è un'azienda di filtri. È un'azienda di ",
     "whyP1hl": "Tecnologia di Protezione degli Asset",
-    "whyP1after": " — sistemi ingegneristici che controllano la contaminazione, prevengono il degrado e proteggono il valore degli asset industriali critici.",
-    "whyP2": "Ogni tecnologia che sviluppiamo affronta una minaccia di contaminazione misurabile. Le apparecchiature che si guastano costano centinaia di migliaia in riparazioni. Proteggiamo quell'investimento a livello di sistema, non di prodotto.",
+    "whyP1after": ", che progetta sistemi ingegneristici che controllano la contaminazione, prevengono il degrado e proteggono il valore degli asset industriali critici.",
+    "whyP2": "Ogni tecnologia ELIMFILTERS affronta una funzione definita di controllo della contaminazione all'interno di un sistema protetto. L'obiettivo è l'affidabilità dell'apparecchiatura e la protezione dell'asset, non affermazioni di prestazioni universali senza supporto.",
     "whyCheckItems": [
       "Controllo della contaminazione a livello di sistema, non sostituzione di prodotti",
-      "25+ anni a proteggere asset industriali di alto valore",
-      "Standard ingegneristici: ISO 5011 · 16889 · 19438 · 4406",
-      "Implementato in 12 industrie — miniere, marina, agricoltura e altro"
+      "Ingegneria focalizzata su asset industriali di alto valore",
+      "I riferimenti tecnici includono ISO 5011, ISO 16889, ISO 19438 e ISO 4406 quando applicabile",
+      "Architettura di protezione organizzata nei domini di applicazione industriale di ELIMFILTERS"
     ],
     "whyCardTag": "TECNOLOGIA DI PROTEZIONE DEGLI ASSET",
     "whyCardTitle1": "Il tuo equipaggiamento vale milioni.",
     "whyCardTitle2": "Proteggilo di conseguenza.",
     "whyCardDesc": "Ogni tecnologia ELIMFILTERS esiste per proteggere gli asset critici, ridurre i tempi di fermo e prolungare la vita operativa.",
     "whyCardItems": [
-      "Supporti Ibridi Formulati con IA",
-      "Sistemi di Separazione Idrofobica",
-      "Strutture Anti-Bypass",
-      "20.000+ riferimenti OEM validati"
+      "Controllo della contaminazione a livello di sistema",
+      "Architettura canonica della tecnologia di protezione",
+      "Conoscenza ingegneristica supportata da fonti",
+      "Supporto tecnico focalizzato sull'applicazione"
     ],
     "techTag": "TECNOLOGIA COMPROVATA",
     "techTitle": "Protezione degli Asset",
     "techHighlight": "Tecnologia",
     "techItems": [
       {
-        "title": "Supporti Ibridi Formulati con IA",
-        "desc": "Tecnologia di supporti proprietaria sviluppata con algoritmi matematici e scenari testati in laboratorio. La formulazione unica offre prestazioni eccezionali che non possono essere replicate."
+        "title": "Architettura di Controllo della Contaminazione",
+        "desc": "Iniziamo dal sistema protetto stesso: quali contaminanti affronta, a quale portata e in quali condizioni operative. L'architettura di filtrazione ne deriva."
       },
       {
-        "title": "Sistemi di Separazione Idrofobica",
-        "desc": "Eliminazione avanzata di acqua e umidità da carburanti e lubrificanti. Previene corrosione, ossidazione e degradazione della viscosità garantendo un funzionamento affidabile a lungo termine."
+        "title": "Protezione a Livello di Sistema",
+        "desc": "I sistemi di aria, carburante, lubrificazione, idraulico, raffreddamento, cabina e pneumatico falliscono ciascuno in modo diverso. Abbiniamo ciascuno alla tecnologia ELIMFILTERS costruita per esso."
       },
       {
-        "title": "Strutture Anti-Bypass",
-        "desc": "Sicurezza 100% garantita: se si verifica bypass, il filtro fallisce in modo sicuro. Rischio zero di eventi improvvisi di contaminazione. Protezione assoluta delle apparecchiature critiche."
+        "title": "Selezione Governata dall'Applicazione",
+        "desc": "Il componente corretto dipende dall'apparecchiatura, dall'applicazione e da quanto intensamente opera. Dimensioniamo e specifichiamo in base a quella realtà, non a un numero di parte generico."
       }
     ],
-    "ctaDealerTag": "RETE RIVENDITORI",
-    "ctaDealerTitle": "SOLO IL MEGLIO",
-    "ctaDealerHl": "VENDE ELIMFILTERS.",
-    "ctaDealerBtn": "DIVENTA RIVENDITORE",
+    "ctaDealerTag": "// DISTRIBUZIONE PER PAESE",
+    "ctaDealerTitle": "SVILUPPA ELIMFILTERS",
+    "ctaDealerHl": "NEL TUO PAESE.",
+    "ctaDealerBtn": "RICHIEDI LA DISTRIBUZIONE NAZIONALE",
     "ctaSearchTag": "RICERCA TECNICA",
     "ctaSearchTitle": "IL FILTRO GIUSTO.",
     "ctaSearchHl": "CERCA COME UN PROFESSIONISTA.",
@@ -272,21 +272,21 @@
     "economicDesc": "ELIMFILTERS aiuta le organizzazioni a ridurre i rischi legati alla contaminazione attraverso strategie di protezione progettate per affidabilità, disponibilità e continuità operativa.",
     "economicStats": [
       {
-        "value": "$240K",
-        "label": "Costo medio di un fermo non pianificato per incidente"
+        "value": "TEMPO DI INATTIVITÀ",
+        "label": "Le fermate non pianificate dell'apparecchiatura generano costi operativi e di manutenzione."
       },
       {
-        "value": "80%",
-        "label": "Dei guasti prematuri di apparecchiature causati dalla contaminazione"
+        "value": "CONTAMINAZIONE",
+        "label": "Particelle, acqua, calore e prodotti di degrado possono accelerare l'usura dei componenti."
       },
       {
-        "value": "3–5×",
-        "label": "Estensione della vita utile degli asset con controllo sistemico della contaminazione"
+        "value": "AFFIDABILITÀ",
+        "label": "Il controllo della contaminazione favorisce l'affidabilità dell'apparecchiatura e la continuità del servizio."
       }
     ],
     "sciTag": "STANDARD DI INGEGNERIA",
     "sciTitle": "La Scienza alla Base della Protezione degli Asset",
-    "sciDesc": "I sistemi di controllo della contaminazione ELIMFILTERS sono progettati secondo standard internazionali, validati con test di laboratorio rigorosi e implementati in ambienti industriali critici.",
+    "sciDesc": "Il Centro di Conoscenza ELIMFILTERS fa riferimento a standard internazionali di filtrazione, pulizia e prova come quadri tecnici quando applicabili a un sistema protetto o argomento di ingegneria.",
     "sciStandards": [
       {
         "code": "ISO 16889",
@@ -311,8 +311,8 @@
     ],
     "llmTag": "PROTEZIONE DEGLI ASSET DEFINITA",
     "llmTitle": "Cos'è la Protezione degli Asset Industriali?",
-    "llmP1": "La protezione degli asset industriali è l'approccio ingegneristico sistematico per identificare, misurare e controllare le fonti di contaminazione che degradano le apparecchiature meccaniche. Nelle operazioni industriali, la contaminazione — particelle, acqua, calore e sottoprodotti chimici — è il principale fattore di guasto prematuro in motori, sistemi idraulici, circuiti carburante, trasmissioni e ambienti cabina.",
-    "llmP2": "La contaminazione accelera l'usura a livello microscopico. Le particelle inferiori a 10 micron causano usura abrasiva sulle superfici dei cuscinetti, sugli steli delle valvole e sugli orifizi degli iniettori — riducendo la vita dei componenti del 30–50% se non controllate. La contaminazione da acqua nei sistemi carburante favorisce la crescita microbica, la corrosione degli iniettori e l'instabilità della combustione. Nei circuiti idraulici, anche una contaminazione minima superiore ai valori target di pulizia ISO altera la risposta delle valvole, accelera il degrado delle tenute e aumenta il rischio di guasto del sistema.",
+    "llmP1": "La protezione degli asset industriali è un approccio ingegneristico a livello di sistema per identificare e controllare le fonti di contaminazione che degradano l'apparecchiatura meccanica. Particelle, acqua, calore e prodotti di degrado possono contribuire all'usura e alla perdita di affidabilità in motori, sistemi idraulici, circuiti del carburante, sistemi di lubrificazione, sistemi di raffreddamento e ambienti dell'operatore.",
+    "llmP2": "La contaminazione può accelerare l'usura in giochi e superfici critiche. La contaminazione da particelle può influire su cuscinetti, cursori delle valvole e componenti degli iniettori; l'acqua può influire sull'affidabilità del sistema del carburante; e una condizione del fluido degradata può ridurre la stabilità dei sistemi idraulico, di lubrificazione e di raffreddamento. L'obiettivo di pulizia applicabile e il metodo di controllo dipendono dal componente protetto e dal regime operativo.",
     "llmP3": "La protezione degli asset industriali non è una categoria di prodotto. È una strategia di controllo della contaminazione che inizia dalla comprensione degli obiettivi di contaminazione di ciascun sistema, dalla selezione delle tecnologie ingegneristiche in grado di raggiungerli e dal monitoraggio delle prestazioni per l'intero ciclo di vita dell'apparecchiatura.",
     "llmP4": "Il risultato: maggiore durata degli asset, meno guasti non pianificati, costi di manutenzione ridotti e maggiore disponibilità operativa — misurata non in filtri sostituiti, ma in asset protetti.",
     "trustTag": "IMPLEMENTAZIONE INDUSTRIALE GLOBALE",

@@ -23,7 +23,7 @@
   "problem": {
     "tag": "REALIDAD DE CAMPO",
     "title": "¿Qué ocurre cuando falla la protección?",
-    "badge": "El 80% de las fallas prematuras son causadas por contaminación.",
+    "badge": "La contaminación puede acelerar el desgaste prematuro de componentes y la degradación del equipo.",
     "items": {
       "injector": {
         "title": "Erosión de Inyectores",
@@ -31,11 +31,11 @@
       },
       "bearing": {
         "title": "Fricción Crítica en Cojinetes",
-        "desc": "El aceite contaminado acelera el desgaste metálico, reduciendo la vida del bloque motor hasta en un 40%."
+        "desc": "El lubricante contaminado puede acelerar el desgaste abrasivo en cojinetes y otras superficies lubricadas."
       },
       "fuel": {
         "title": "Consumo Excesivo de Combustible",
-        "desc": "Un motor con restricción consume hasta un 8% más de diésel para mantener los mismos niveles de torque."
+        "desc": "La contaminación y restricción del sistema de combustible pueden reducir la confiabilidad y la eficiencia operativa del sistema de combustión."
       }
     }
   },
@@ -44,16 +44,16 @@
     "p1": "ELIMFILTERS® es más que un fabricante de filtros. Somos una empresa especializada en",
     "p1highlight": "Tecnología de Protección de Activos",
     "p1after": ", diseñando soluciones que preservan el valor y la operatividad de sus equipos en los entornos más exigentes.",
-    "p2": "Cada producto que desarrollamos responde a una realidad: el equipo que detiene su operación cuesta cientos de miles en reparaciones. Un sistema de filtración es el guardián de esa inversión.",
+    "p2": "Cada decisión de protección debe evaluarse frente al valor, el ciclo de trabajo, la exposición a contaminación y los requisitos de confiabilidad del activo protegido.",
     "card": {
       "tag": "TECNOLOGÍA DE PROTECCIÓN DE ACTIVOS",
       "title": "Diseñamos sistemas de protección. No componentes de repuesto.",
       "desc": "ELIMFILTERS® desarrolla tecnologías de protección multicapa calibradas para defender activos industriales críticos — cada sistema es una solución de ingeniería específica, no un reemplazo genérico.",
       "items": [
-        "Matriz de protección multicapa formulada con IA",
-        "Arquitectura de cero bypass en cada sistema",
-        "Certificado ISO 5011 · 16332 · 16889 · 19438",
-        "Más de 20,000 referencias cruzadas OEM"
+        "Control de contaminación a nivel de sistema",
+        "Arquitectura de protección gobernada por la aplicación",
+        "Estándares de ingeniería internacionales como referencias técnicas",
+        "Relaciones canónicas de equipo y aplicación"
       ]
     }
   },
@@ -63,16 +63,16 @@
     "titleHighlight": "MÁS ALLÁ DEL ESTÁNDAR",
     "items": {
       "media": {
-        "title": "Medio Híbrido Formulado con IA",
-        "desc": "Fibras sintéticas y de celulosa diseñadas mediante algoritmos de IA para lograr máxima capacidad de retención con protección de cero bypass."
+        "title": "Medios de Filtración de Ingeniería",
+        "desc": "La selección del medio está gobernada por el sistema protegido, el perfil de contaminación, los requisitos de flujo, la caída de presión, la capacidad y las condiciones de servicio."
       },
       "hydrophobic": {
-        "title": "Sistemas de Separación Hidrófoba",
-        "desc": "Tecnología avanzada de separación de agua que elimina el agua libre, emulsionada y disuelta antes de que llegue a los sistemas críticos de inyección."
+        "title": "Control de Contaminación de Combustible",
+        "desc": "La protección de combustible combina el control de partículas y, cuando la aplicación aprobada lo requiere, una arquitectura dedicada de separación de agua y combustible."
       },
       "antibypass": {
-        "title": "Estructuras Anti-Bypass",
-        "desc": "Geometrías de sello diseñadas para garantizar cero contaminación de bypass bajo las condiciones más extremas de presión y temperatura."
+        "title": "Integridad de Sellado y Alojamiento",
+        "desc": "La geometría del alojamiento, la retención del elemento, la carga del sello y la integridad de la instalación ayudan a preservar el límite de contaminación protegido."
       }
     }
   },
@@ -127,8 +127,8 @@
     "technologiesIncluded": "Tecnologías Incluidas",
     "performanceMetrics": "MÉTRICAS DE RENDIMIENTO",
     "readyToUpgrade": "¿Listo para Mejorar?",
-    "readyDesc": "Encuentre el sistema exacto para su aplicación. Referencias cruzadas de más de 500,000 piezas.",
-    "engineeringDesc": "La ingeniería ELIMFILTERS® aplica estándares de precisión a cada componente. Nuestros sistemas están diseñados para superar las especificaciones OEM, garantizando máxima protección y rendimiento en ciclos de trabajo exigentes.",
+    "readyDesc": "Encuentre el componente de filtración correcto para el equipo, la aplicación y el sistema protegido.",
+    "engineeringDesc": "La ingeniería de ELIMFILTERS alinea la selección de filtración con el sistema protegido, el riesgo de contaminación, las referencias técnicas aplicables y el ciclo de trabajo operativo.",
     "home": "INICIO"
   },
   "language": {
@@ -164,9 +164,9 @@
     "problemTag": "DIAGNÓSTICO DE RIESGO OPERATIVO",
     "problemH1": "LO QUE NO PUEDES VER",
     "problemH2": "ESTÁ DETENIENDO TU OPERACIÓN.",
-    "problemIntro": "Hasta el 80% de las fallas prematuras de componentes hidráulicos son causadas por contaminación. La filtración ineficiente permite que partículas invisibles actúen como papel de lija dentro de componentes críticos — superficies de cojinetes, orificios de inyectores, carretes hidráulicos.",
-    "problemBadgeNum": "80%",
-    "problemBadgeDesc": "De las fallas prematuras de componentes hidráulicos son causadas por contaminación.",
+    "problemIntro": "La contaminación puede actuar en interfaces críticas de componentes y acelerar el desgaste en motores, sistemas de combustible, circuitos de lubricación y equipos hidráulicos.",
+    "problemBadgeNum": "RIESGO",
+    "problemBadgeDesc": "La contaminación es un factor controlable que contribuye a la degradación prematura del equipo.",
     "failModes": [
       {
         "title": "Erosión de Inyectores",
@@ -174,56 +174,56 @@
       },
       {
         "title": "Fricción Crítica en Cojinetes",
-        "desc": "El aceite contaminado acelera el desgaste metálico, reduciendo la vida del bloque motor hasta un 40%."
+        "desc": "Las partículas sólidas de mayor tamaño que el espesor de la película de aceite penetran los cojinetes de fricción y de elementos rodantes, causando desgaste abrasivo y picaduras en las superficies de carga."
       },
       {
         "title": "Pérdida de Eficiencia de Combustible",
-        "desc": "Los sistemas de combustible contaminados obligan a los motores a consumir hasta un 8% más de diésel para mantener el mismo torque."
+        "desc": "La carga de partículas restringe las tolerancias de flujo del inyector de combustible, alterando el patrón de rociado y la atomización, y degradando la eficiencia de combustión."
       }
     ],
     "whyTitle1": "PROTECCIÓN DE ACTIVOS",
     "whyTitle2": "TECNOLOGÍA",
-    "whyP1": "ELIMFILTERS no es una empresa de filtros. ELIMFILTERS es una empresa de ",
+    "whyP1": "ELIMFILTERS® no es una empresa de filtros. Es una empresa de ",
     "whyP1hl": "Tecnología de Protección de Activos",
-    "whyP1after": " — sistemas de ingeniería que controlan la contaminación, previenen la degradación y protegen el valor de los activos industriales críticos.",
-    "whyP2": "Cada tecnología que desarrollamos aborda una amenaza de contaminación medible. Los equipos que fallan cuestan cientos de miles en reparación. Protegemos esa inversión a nivel de sistema, no de producto.",
+    "whyP1after": ", que diseña sistemas de ingeniería que controlan la contaminación, previenen la degradación y protegen el valor de los activos industriales críticos.",
+    "whyP2": "Cada tecnología ELIMFILTERS aborda una función definida de control de contaminación dentro de un sistema protegido. El objetivo es la confiabilidad del equipo y la protección del activo, no afirmaciones de rendimiento universal sin respaldo.",
     "whyCheckItems": [
       "Control de contaminación a nivel de sistema, no reemplazo de productos",
-      "Más de 25 años protegiendo activos industriales de alto valor",
-      "Normas de ingeniería: ISO 5011 · 16889 · 19438 · 4406",
-      "Implementado en 12 industrias — minería, marina, agricultura y más"
+      "Ingeniería enfocada en activos industriales de alto valor",
+      "Las referencias técnicas incluyen ISO 5011, ISO 16889, ISO 19438 e ISO 4406 cuando corresponde",
+      "Arquitectura de protección organizada en los dominios de aplicación industrial de ELIMFILTERS"
     ],
     "whyCardTag": "TECNOLOGÍA DE PROTECCIÓN DE ACTIVOS",
     "whyCardTitle1": "Su equipo vale millones.",
     "whyCardTitle2": "Protéjalo como se merece.",
     "whyCardDesc": "Cada tecnología ELIMFILTERS existe para proteger activos críticos, reducir el tiempo de inactividad y extender la vida operativa.",
     "whyCardItems": [
-      "Medio Híbrido Formulado con IA",
-      "Sistemas de Separación Hidrófoba",
-      "Estructuras Anti-Bypass",
-      "Más de 20,000 referencias OEM validadas"
+      "Control de contaminación a nivel de sistema",
+      "Arquitectura canónica de tecnología de protección",
+      "Conocimiento de ingeniería respaldado por fuentes",
+      "Soporte técnico enfocado en la aplicación"
     ],
     "techTag": "TECNOLOGÍA PROBADA",
     "techTitle": "Protección de Activos",
     "techHighlight": "Tecnología",
     "techItems": [
       {
-        "title": "Medio Híbrido Formulado con IA",
-        "desc": "Tecnología de medios propietaria desarrollada con algoritmos matemáticos y escenarios de laboratorio. La formulación única ofrece un rendimiento excepcional que no puede ser replicado."
+        "title": "Arquitectura de Control de Contaminación",
+        "desc": "Comenzamos con el sistema protegido en sí: qué contaminantes enfrenta, a qué caudal y bajo qué condiciones de operación. La arquitectura de filtración se define a partir de ahí."
       },
       {
-        "title": "Sistemas de Separación Hidrófoba",
-        "desc": "Eliminación avanzada de agua y humedad de combustibles y lubricantes. Previene corrosión, oxidación y degradación de viscosidad garantizando operación confiable a largo plazo."
+        "title": "Protección a Nivel de Sistema",
+        "desc": "Los sistemas de aire, combustible, lubricación, hidráulico, enfriamiento, cabina y neumático fallan cada uno de forma distinta. Emparejamos cada uno con la tecnología ELIMFILTERS diseñada para él."
       },
       {
-        "title": "Estructuras Anti-Bypass",
-        "desc": "Seguridad 100% garantizada: si ocurre bypass, el filtro falla de forma segura. Cero riesgo de eventos de contaminación repentina. Protección absoluta del equipo crítico."
+        "title": "Selección Gobernada por la Aplicación",
+        "desc": "El componente correcto depende del equipo, la aplicación y qué tan exigente sea su operación. Dimensionamos y especificamos según esa realidad, no un número de parte genérico."
       }
     ],
-    "ctaDealerTag": "RED DE DISTRIBUIDORES",
-    "ctaDealerTitle": "SOLO LOS MEJORES",
-    "ctaDealerHl": "VENDEN ELIMFILTERS.",
-    "ctaDealerBtn": "CONVIÉRTASE EN DISTRIBUIDOR",
+    "ctaDealerTag": "// DISTRIBUCIÓN POR PAÍS",
+    "ctaDealerTitle": "DESARROLLA ELIMFILTERS",
+    "ctaDealerHl": "EN TU PAÍS.",
+    "ctaDealerBtn": "SOLICITAR DISTRIBUCIÓN NACIONAL",
     "ctaSearchTag": "BÚSQUEDA TÉCNICA",
     "ctaSearchTitle": "EL SISTEMA CORRECTO.",
     "ctaSearchHl": "BÚSQUEDA PROFESIONAL.",
@@ -272,21 +272,21 @@
     "economicDesc": "ELIMFILTERS ayuda a las organizaciones a reducir riesgos relacionados con la contaminación mediante estrategias de protección diseñadas para la confiabilidad, el tiempo de operación y la continuidad operativa.",
     "economicStats": [
       {
-        "value": "$240K",
-        "label": "Costo promedio de parada no planificada por incidente"
+        "value": "TIEMPO DE INACTIVIDAD",
+        "label": "Las paradas no planificadas del equipo generan costos operativos y de mantenimiento."
       },
       {
-        "value": "80%",
-        "label": "De las fallas prematuras de equipos causadas por contaminación"
+        "value": "CONTAMINACIÓN",
+        "label": "Las partículas, el agua, el calor y los productos de degradación pueden acelerar el desgaste de los componentes."
       },
       {
-        "value": "3–5×",
-        "label": "Extensión de vida del activo con control de contaminación a nivel de sistema"
+        "value": "CONFIABILIDAD",
+        "label": "El control de contaminación respalda la confiabilidad del equipo y la continuidad del servicio."
       }
     ],
     "sciTag": "NORMAS DE INGENIERÍA",
     "sciTitle": "La Ciencia Detrás de la Protección de Activos",
-    "sciDesc": "Los sistemas de control de contaminación ELIMFILTERS están diseñados conforme a normas internacionales, validados mediante ensayos de laboratorio rigurosos y desplegados en entornos industriales críticos.",
+    "sciDesc": "El Centro de Conocimiento de ELIMFILTERS hace referencia a estándares internacionales de filtración, limpieza y prueba como marcos técnicos cuando aplican a un sistema protegido o tema de ingeniería.",
     "sciStandards": [
       {
         "code": "ISO 16889",
@@ -311,8 +311,8 @@
     ],
     "llmTag": "PROTECCIÓN DE ACTIVOS DEFINIDA",
     "llmTitle": "¿Qué es la Protección de Activos Industriales?",
-    "llmP1": "La protección de activos industriales es el enfoque de ingeniería sistemático para identificar, medir y controlar las fuentes de contaminación que degradan los equipos mecánicos. En las operaciones industriales, la contaminación —partículas, agua, calor y subproductos químicos— es el principal factor de falla prematura en motores, sistemas hidráulicos, circuitos de combustible, trenes de transmisión y entornos de cabina.",
-    "llmP2": "La contaminación acelera el desgaste a nivel microscópico. Las partículas menores de 10 micrones provocan desgaste abrasivo en superficies de cojinetes, carretes de válvulas y orificios de inyectores, reduciendo la vida de los componentes entre un 30 y un 50% cuando no se controlan. La contaminación por agua en los sistemas de combustible favorece el crecimiento microbiano, la corrosión de inyectores y la inestabilidad en la combustión. En circuitos hidráulicos, incluso una contaminación menor que supere los objetivos de limpieza ISO altera la respuesta de las válvulas, acelera la degradación de sellos y aumenta el riesgo de falla del sistema.",
+    "llmP1": "La protección de activos industriales es un enfoque de ingeniería a nivel de sistema para identificar y controlar las fuentes de contaminación que degradan el equipo mecánico. Las partículas, el agua, el calor y los productos de degradación pueden contribuir al desgaste y la pérdida de confiabilidad en motores, sistemas hidráulicos, circuitos de combustible, sistemas de lubricación, sistemas de enfriamiento y entornos del operador.",
+    "llmP2": "La contaminación puede acelerar el desgaste en holguras y superficies críticas. La contaminación por partículas puede afectar cojinetes, carretes de válvulas y componentes de inyectores; el agua puede afectar la confiabilidad del sistema de combustible; y la condición degradada del fluido puede reducir la estabilidad de los sistemas hidráulicos, de lubricación y de enfriamiento. El objetivo de limpieza aplicable y el método de control dependen del componente protegido y del servicio operativo.",
     "llmP3": "La protección de activos industriales no es una categoría de producto. Es una estrategia de control de contaminación que comienza por comprender los objetivos de contaminación de cada sistema, seleccionar las tecnologías de ingeniería capaces de alcanzarlos y supervisar el rendimiento del sistema durante todo el ciclo de vida del equipo.",
     "llmP4": "El resultado: mayor vida útil de los equipos, menos fallas no planificadas, menores costos de mantenimiento y mayor disponibilidad operativa —medida no en filtros reemplazados, sino en activos protegidos.",
     "trustTag": "DESPLIEGUE INDUSTRIAL GLOBAL",

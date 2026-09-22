@@ -23,7 +23,7 @@
   "problem": {
     "tag": "VELDREALITEIT",
     "title": "Wat gebeurt er als de bescherming mislukt?",
-    "badge": "80% van de voortijdige uitval wordt veroorzaakt door vervuiling.",
+    "badge": "Vervuiling kan voortijdige slijtage van onderdelen en degradatie van apparatuur versnellen.",
     "items": {
       "injector": {
         "title": "Injector-erosie",
@@ -31,11 +31,11 @@
       },
       "bearing": {
         "title": "Kritische lagerwrijving",
-        "desc": "Vervuilde olie versnelt de metaalslijtage, waardoor de levensduur van het motorblok met wel 40% wordt verkort."
+        "desc": "Verontreinigd smeermiddel kan abrasieve slijtage aan lagers en andere gesmeerde oppervlakken versnellen."
       },
       "fuel": {
         "title": "Brandstofafvoer",
-        "desc": "Een beperkte motor verbruikt tot 8% meer diesel om hetzelfde koppelniveau te behouden."
+        "desc": "Vervuiling en beperking van het brandstofsysteem kunnen de betrouwbaarheid en operationele efficiëntie van het verbrandingssysteem verminderen."
       }
     }
   },
@@ -44,16 +44,16 @@
     "p1": "ELIMFILTERS® is meer dan een filterfabrikant. Wij zijn een bedrijf gespecialiseerd in",
     "p1highlight": "Technologie voor activabescherming",
     "p1after": ", het ontwerpen van oplossingen die de waarde en bruikbaarheid van uw apparatuur in de meest veeleisende omgevingen behouden.",
-    "p2": "Elk product dat we ontwikkelen, beantwoordt aan één realiteit: de apparatuur die uw bedrijf stopzet, kost honderdduizenden euro’s om te repareren. Een filter is de bewaker van die investering.",
+    "p2": "Elke beschermingsbeslissing moet worden geëvalueerd tegen de waarde, gebruikscyclus, blootstelling aan vervuiling en betrouwbaarheidseisen van het beschermde activum.",
     "card": {
       "tag": "TECHNOLOGIE VOOR ACTIVABESCHERMING",
       "title": "Wij ontwerpen beveiligingssystemen. Geen kant-en-klare componenten.",
       "desc": "ELIMFILTERS® ontwikkelt meerlaagse beschermingstechnologieën die zijn gekalibreerd om kritieke industriële activa te beschermen – elk systeem is een speciaal gebouwde oplossing, geen standaardvervanging.",
       "items": [
-        "AI-geformuleerde meerlaagse beschermingsmatrix",
-        "Zero bypass-architectuur op elk systeem",
-        "ISO 5011 · 16332 · 16889 · 19438 gecertificeerd",
-        "Meer dan 20.000 kruisverwijzingen naar OEM-middelen"
+        "Vervuilingsbeheer op systeemniveau",
+        "Door de toepassing bepaalde beschermingsarchitectuur",
+        "Internationale technische normen als technische referenties",
+        "Canonieke relaties tussen apparatuur en toepassing"
       ]
     }
   },
@@ -63,16 +63,16 @@
     "titleHighlight": "VOORBIJ DE STANDAARD",
     "items": {
       "media": {
-        "title": "AI-geformuleerde hybride media",
-        "desc": "Synthetische vezels en cellulosevezels die zijn ontwikkeld met behulp van AI-algoritmen om een ​​maximale vuilcapaciteit te bereiken en tegelijkertijd een nul-bypass-bescherming te behouden."
+        "title": "Technisch Ontworpen Filtermedia",
+        "desc": "De keuze van het medium wordt bepaald door het beschermde systeem, het vervuilingsprofiel, de doorstroomvereisten, de drukval, de capaciteit en de servicecondities."
       },
       "hydrophobic": {
-        "title": "Hydrofobe scheidingssystemen",
-        "desc": "Geavanceerde waterscheidingstechnologie die vrij, geëmulgeerd en opgelost water verwijdert voordat het kritische injectiesystemen bereikt."
+        "title": "Beheersing van Brandstofvervuiling",
+        "desc": "Brandstofbescherming combineert deeltjesbeheersing en, waar de goedgekeurde toepassing dit vereist, een specifieke architectuur voor water-brandstofscheiding."
       },
       "antibypass": {
-        "title": "Anti-bypass-structuren",
-        "desc": "Speciaal ontworpen afdichtingsgeometrieën die een bypass zonder verontreiniging garanderen onder de meest extreme druk- en temperatuuromstandigheden."
+        "title": "Afdichtings- en Behuizingsintegriteit",
+        "desc": "De geometrie van de behuizing, de bevestiging van het element, de afdichtingsbelasting en de installatie-integriteit helpen de beschermde vervuilingsgrens te behouden."
       }
     }
   },
@@ -127,8 +127,8 @@
     "technologiesIncluded": "Technologieën inbegrepen",
     "performanceMetrics": "PRESTATIEMETRIEKEN",
     "readyToUpgrade": "Klaar om te upgraden?",
-    "readyDesc": "Vind het exacte filter voor uw toepassing. Kruisverwijzing naar meer dan 500.000 onderdelen.",
-    "engineeringDesc": "ELIMFILTERS® engineering past precisienormen toe op elk onderdeel. Onze filtersystemen zijn ontworpen om de OEM-specificaties te overtreffen en maximale bescherming en prestaties te garanderen tijdens veeleisende bedrijfscycli.",
+    "readyDesc": "Vind het juiste filtratieonderdeel voor de apparatuur, toepassing en het beschermde systeem.",
+    "engineeringDesc": "De engineering van ELIMFILTERS stemt de filtratiekeuze af op het beschermde systeem, het vervuilingsrisico, de toepasselijke technische referenties en de operationele gebruikscyclus.",
     "home": "THUIS"
   },
   "language": {
@@ -164,9 +164,9 @@
     "problemTag": "OPERATIONELE RISICODIAGNOSE",
     "problemH1": "WAT U NIET KUNT ZIEN",
     "problemH2": "STOPT UW OPERATIE.",
-    "problemIntro": "Tot 80% van de vroegtijdige storingen van hydraulische componenten wordt veroorzaakt door verontreiniging. Inefficiënte filtratie laat onzichtbare deeltjes werken als schuurpapier binnen kritieke componenten — lagervlakken, injecteuropeningen, hydraulische spoelen.",
-    "problemBadgeNum": "80%",
-    "problemBadgeDesc": "Van voortijdige storingen van hydraulische componenten wordt veroorzaakt door verontreiniging.",
+    "problemIntro": "Vervuiling kan invloed hebben op kritieke onderdeelinterfaces en slijtage versnellen in motoren, brandstofsystemen, smeercircuits en hydraulische apparatuur.",
+    "problemBadgeNum": "RISICO",
+    "problemBadgeDesc": "Vervuiling is een beheersbare factor die bijdraagt aan voortijdige degradatie van apparatuur.",
     "failModes": [
       {
         "title": "Injector-erosie",
@@ -174,56 +174,56 @@
       },
       {
         "title": "Kritische Lagerwrijving",
-        "desc": "Vervuilde olie versnelt de metaalslijtage, waardoor de levensduur van het motorblok met maximaal 40% wordt verkort."
+        "desc": "Vaste deeltjes die groter zijn dan de dikte van de oliefilm dringen door in glij- en rollagers, wat abrasieve slijtage en putvorming op draagvlakken veroorzaakt."
       },
       {
         "title": "Verlies van Brandstofefficiëntie",
-        "desc": "Verontreinigde brandstofsystemen dwingen motoren om tot 8% meer diesel te verbruiken om hetzelfde koppeloutput te behouden."
+        "desc": "Deeltjesbelasting beperkt de doorstroomtoleranties van de brandstofinjector, wat het spraypatroon en de verneveling verstoort en de verbrandingsefficiëntie vermindert."
       }
     ],
     "whyTitle1": "ACTIVABESCHERMING",
     "whyTitle2": "TECHNOLOGIE",
-    "whyP1": "ELIMFILTERS is geen filterbedrijf. ELIMFILTERS is een bedrijf van ",
+    "whyP1": "ELIMFILTERS® is geen filterbedrijf. Het is een ",
     "whyP1hl": "Activabeschermingstechnologie",
-    "whyP1after": " — ingenieurssystemen die verontreiniging beheersen, degradatie voorkomen en de waarde van kritieke industriële activa beschermen.",
-    "whyP2": "Elke technologie die wij ontwikkelen pakt een meetbare verontreinigingsdreiging aan. Defect raakende apparatuur kost honderdduizenden aan reparaties. Wij beschermen die investering op systeemniveau, niet op productniveau.",
+    "whyP1after": "-bedrijf, dat technische systemen ontwerpt die vervuiling beheersen, degradatie voorkomen en de waarde van kritieke industriële activa beschermen.",
+    "whyP2": "Elke ELIMFILTERS-technologie richt zich op een bepaalde vervuilingsbeheersingsfunctie binnen een beschermd systeem. Het doel is de betrouwbaarheid van apparatuur en de bescherming van activa, geen ongefundeerde universele prestatieclaims.",
     "whyCheckItems": [
       "Contaminatiebeheersing op systeemniveau, geen productvervanging",
-      "25+ jaar bescherming van hoogwaardige industriële activa",
-      "Technische normen: ISO 5011 · 16889 · 19438 · 4406",
-      "Ingezet in 12 industrieën — mijnbouw, marine, landbouw en meer"
+      "Engineering gericht op industriële activa van hoge waarde",
+      "Technische referenties omvatten ISO 5011, ISO 16889, ISO 19438 en ISO 4406 waar toepasselijk",
+      "Beschermingsarchitectuur georganiseerd over de industriële toepassingsdomeinen van ELIMFILTERS"
     ],
     "whyCardTag": "ACTIVABESCHERMINGSTECHNOLOGIE",
     "whyCardTitle1": "Uw apparatuur is miljoenen waard.",
     "whyCardTitle2": "Bescherm het dienovereenkomstig.",
     "whyCardDesc": "Elke ELIMFILTERS-technologie bestaat om kritieke activa te beschermen, downtime te verminderen en de operationele levensduur te verlengen.",
     "whyCardItems": [
-      "AI-geformuleerde Hybride Media",
-      "Hydrofobe Scheidingssystemen",
-      "Anti-bypass-structuren",
-      "20.000+ OEM-kruisreferenties gevalideerd"
+      "Vervuilingsbeheer op systeemniveau",
+      "Canonieke architectuur van beschermingstechnologie",
+      "Door bronnen onderbouwde technische kennis",
+      "Op de toepassing gerichte technische ondersteuning"
     ],
     "techTag": "BEWEZEN TECHNOLOGIE",
     "techTitle": "Activabescherming",
     "techHighlight": "Technologie",
     "techItems": [
       {
-        "title": "AI-geformuleerde Hybride Media",
-        "desc": "Propriëtaire mediatechnologie ontwikkeld met wiskundige algoritmen en laboratoriumgeteste scenario's. Unieke formulering levert uitzonderlijke prestaties die niet kunnen worden gerepliceerd."
+        "title": "Architectuur voor Vervuilingsbeheer",
+        "desc": "We beginnen met het beschermde systeem zelf: welke verontreinigingen het tegenkomt, bij welk debiet en onder welke bedrijfsomstandigheden. De filtratiearchitectuur volgt daaruit."
       },
       {
-        "title": "Hydrofobe Scheidingssystemen",
-        "desc": "Geavanceerde verwijdering van water en vocht uit brandstoffen en smeermiddelen. Voorkomt corrosie, oxidatie en viscositeitsdegradatie terwijl betrouwbare werking op lange termijn wordt gegarandeerd."
+        "title": "Bescherming op Systeemniveau",
+        "desc": "Lucht-, brandstof-, smerings-, hydraulische, koelings-, cabine- en pneumatische systemen falen elk op een andere manier. We koppelen elk aan de ELIMFILTERS-technologie die daarvoor is gebouwd."
       },
       {
-        "title": "Anti-bypass-structuren",
-        "desc": "100% gegarandeerde veiligheid: als bypass optreedt, faalt het filter veilig. Nul risico op plotselinge verontreinigingsgebeurtenissen. Absolute bescherming van kritieke apparatuur."
+        "title": "Door de Toepassing Bepaalde Selectie",
+        "desc": "Het juiste onderdeel hangt af van de apparatuur, de toepassing en hoe zwaar deze wordt belast. We dimensioneren en specificeren op basis van die realiteit, niet op basis van een generiek onderdeelnummer."
       }
     ],
-    "ctaDealerTag": "DEALERNETWERK",
-    "ctaDealerTitle": "ALLEEN HET BESTE",
-    "ctaDealerHl": "VERKOOPT ELIMFILTERS.",
-    "ctaDealerBtn": "WORD EEN DEALER",
+    "ctaDealerTag": "// DISTRIBUTIE PER LAND",
+    "ctaDealerTitle": "BOUW ELIMFILTERS",
+    "ctaDealerHl": "IN UW LAND.",
+    "ctaDealerBtn": "AANVRAGEN VOOR NATIONALE DISTRIBUTIE",
     "ctaSearchTag": "TECHNISCH ZOEKEN",
     "ctaSearchTitle": "HET JUISTE FILTER.",
     "ctaSearchHl": "ZOEKEN ALS EEN PRO.",
@@ -272,21 +272,21 @@
     "economicDesc": "ELIMFILTERS helpt organisaties verontreinigingsgerelateerde risico's te verminderen via beschermingsstrategieën gericht op betrouwbaarheid, beschikbaarheid en operationele continuïteit.",
     "economicStats": [
       {
-        "value": "$240K",
-        "label": "Gemiddelde kosten van ongeplande uitvaltijd per incident"
+        "value": "STILSTAND",
+        "label": "Ongeplande stilstand van apparatuur veroorzaakt operationele en onderhoudskosten."
       },
       {
-        "value": "80%",
-        "label": "Van vroegtijdige apparatuurfouten veroorzaakt door verontreiniging"
+        "value": "VERVUILING",
+        "label": "Deeltjes, water, warmte en degradatieproducten kunnen slijtage van onderdelen versnellen."
       },
       {
-        "value": "3–5×",
-        "label": "Verlenging van de levensduur van bedrijfsmiddelen via systeemlevel verontreinigingsbeheersing"
+        "value": "BETROUWBAARHEID",
+        "label": "Vervuilingsbeheer ondersteunt de betrouwbaarheid van apparatuur en de continuïteit van de service."
       }
     ],
     "sciTag": "ENGINEERINGNORMEN",
     "sciTitle": "De Wetenschap achter Asset Protection",
-    "sciDesc": "De verontreinigingsbeheersingsystemen van ELIMFILTERS zijn ontworpen conform internationale normen, gevalideerd door rigoureuze laboratoriumtesten en ingezet in kritische industriële omgevingen.",
+    "sciDesc": "Het ELIMFILTERS Knowledge Center verwijst naar internationale normen voor filtratie, reinheid en testen als technische kaders wanneer deze van toepassing zijn op een beschermd systeem of technisch onderwerp.",
     "sciStandards": [
       {
         "code": "ISO 16889",
@@ -311,8 +311,8 @@
     ],
     "llmTag": "ASSET PROTECTION GEDEFINIEERD",
     "llmTitle": "Wat Is Industriële Asset Protection?",
-    "llmP1": "Industriële asset protection is de systematische engineeringaanpak voor het identificeren, meten en beheersen van verontreinigingsbronnen die mechanische apparatuur degraderen. In industriële operaties is verontreiniging — deeltjes, water, warmte en chemische bijproducten — de belangrijkste oorzaak van vroegtijdig falen van motoren, hydraulische systemen, brandstofcircuits, aandrijflijnen en cabineomgevingen.",
-    "llmP2": "Verontreiniging versnelt slijtage op microscopisch niveau. Deeltjes kleiner dan 10 micrometer veroorzaken abrasieve slijtage aan lageroppervlakken, klepspoelen en injectoropeningen — waardoor de levensduur van componenten met 30–50% wordt verkort bij gebrek aan beheersing. Waterverontreiniging in brandstofsystemen bevordert microbiële groei, corrosie van injectors en verbrandingsinstabiliteit. In hydraulische circuits verstoort zelfs minimale verontreiniging boven de ISO-reinheidsgrenswaarden de kleprespons, versnelt het de afdichtingsdegradatie en vergroot het risico op systeemfalen.",
+    "llmP1": "Industriële activabescherming is een technische aanpak op systeemniveau om vervuilingsbronnen te identificeren en te beheersen die mechanische apparatuur doen degraderen. Deeltjes, water, warmte en degradatieproducten kunnen bijdragen aan slijtage en verlies van betrouwbaarheid in motoren, hydraulische systemen, brandstofcircuits, smeersystemen, koelsystemen en operatoromgevingen.",
+    "llmP2": "Vervuiling kan slijtage versnellen bij kritieke speling en oppervlakken. Deeltjesvervuiling kan lagers, klepspoelen en injectorcomponenten aantasten; water kan de betrouwbaarheid van het brandstofsysteem aantasten; en een verslechterde vloeistoftoestand kan de stabiliteit van hydraulische, smerings- en koelsystemen verminderen. Het toepasselijke reinheidsdoel en de beheersmethode zijn afhankelijk van het beschermde onderdeel en de bedrijfsbelasting.",
     "llmP3": "Industriële asset protection is geen productcategorie. Het is een strategie voor verontreinigingsbeheersing die begint met het begrijpen van de verontreinigingsdoelen voor elk systeem, het selecteren van de geschikte engineeringtechnologieën en het bewaken van de systeemprestaties gedurende de volledige levensduur van de apparatuur.",
     "llmP4": "Het resultaat: langere levensduur van apparatuur, minder ongeplande storingen, lagere onderhoudskosten en hogere operationele beschikbaarheid — gemeten niet in vervangen filters, maar in beschermde bedrijfsmiddelen.",
     "trustTag": "WERELDWIJDE INDUSTRIËLE INZET",
