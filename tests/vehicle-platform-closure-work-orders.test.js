@@ -47,9 +47,11 @@ test('vehicle closure is OEM-first and aftermarket begins with Donaldson then Fl
     waveId: 'NPR_US_PRIORITY',
     requestedAt: '2026-09-22T00:00:00.000Z',
   });
-  assert.equal(item.brand_search_strategy.stage_1_oem.id, 'isuzu');
-  assert.equal(item.brand_search_strategy.stage_2_aftermarket[0].brand, 'DONALDSON');
-  assert.equal(item.brand_search_strategy.stage_2_aftermarket[1].brand, 'FLEETGUARD');
+  assert.equal(item.source_first_strategy.stage_1_oem.id, 'isuzu_commercial_truck_usa');
+  assert.equal(item.source_first_strategy.stage_1_oem.official_domain, 'https://www.isuzucv.com');
+  assert.equal(item.research.source_first_strategy.stage_1_oem.id, 'isuzu_commercial_truck_usa');
+  assert.equal(item.source_first_strategy.stage_2_aftermarket[0].brand, 'DONALDSON');
+  assert.equal(item.source_first_strategy.stage_2_aftermarket[1].brand, 'FLEETGUARD');
   assert.match(item.gap.question, /equipment manufacturer first/i);
   assert.match(item.gap.question, /Donaldson first, Fleetguard second/i);
   assert.match(item.gap.question, /WIX.*must not lead/i);

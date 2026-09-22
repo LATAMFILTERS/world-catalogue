@@ -46,7 +46,7 @@ function buildVehicleClosureWorkOrders({ waveId = 'NPR_US_PRIORITY', requestedAt
         displacement: wave.engine_displacement,
         positions: wave.required_positions,
       });
-      const brand_search_strategy = buildEquipmentResearchStrategy({
+      const source_first_strategy = buildEquipmentResearchStrategy({
         equipmentBrand: manifest.make,
         market: manifest.market,
       });
@@ -100,6 +100,7 @@ function buildVehicleClosureWorkOrders({ waveId = 'NPR_US_PRIORITY', requestedAt
           'fleetguard.com',
           'mann-filter.com'
         ],
+        source_first_strategy,
         minimum_independent_sources: 2,
         allow_competitor_sources: true,
         allow_industry_sources: false,
@@ -115,7 +116,7 @@ function buildVehicleClosureWorkOrders({ waveId = 'NPR_US_PRIORITY', requestedAt
         platform_id: manifest.platform_id,
         wave_id: wave.id,
         promotion_policy: 'EXACT_APPLICATION_EVIDENCE_REQUIRED__NO_CROSS_REFERENCE_INHERITANCE',
-        brand_search_strategy,
+        source_first_strategy,
         gap,
         research,
       });

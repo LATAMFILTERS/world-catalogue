@@ -9,7 +9,7 @@ const {
   buildEquipmentResearchStrategy,
 } = require('../lib/hermes-brand-search-router');
 
-test('routes WIX to its official vehicle application engine first', () => {
+test('an explicit WIX query resolves WIX, but WIX is not the equipment-research lead source', () => {
   const result = resolveBrandSearchEngines('WIX', { market: 'US', capability: 'vehicle_to_filter' });
   assert.equal(result.matched, true);
   assert.equal(result.engines[0].id, 'wix_vehicle_lookup');
@@ -48,8 +48,8 @@ test('research strategy preserves specialized-first and generic-web discovery-on
 
 test('equipment research starts with the OEM source and only then enters aftermarket', () => {
   const strategy = buildEquipmentResearchStrategy({ equipmentBrand: 'ISUZU', market: 'US' });
-  assert.equal(strategy.stage_1_oem.id, 'isuzu');
-  assert.equal(strategy.stage_1_oem.official_domain, 'https://www.isuzu.com');
+  assert.equal(strategy.stage_1_oem.id, 'isuzu_commercial_truck_usa');
+  assert.equal(strategy.stage_1_oem.official_domain, 'https://www.isuzucv.com');
   assert.deepEqual(strategy.phase_order, [
     'OEM_EQUIPMENT_SOURCE',
     'OEM_PART_NUMBERS',

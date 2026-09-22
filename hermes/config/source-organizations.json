@@ -966,6 +966,38 @@
       "discovery_required": true
     },
     {
+      "id": "isuzu_commercial_truck_usa",
+      "name": "Isuzu Commercial Truck of America",
+      "category": "oem_heavy_duty",
+      "parent_company": "Isuzu Motors Limited",
+      "region": "North America",
+      "official_domain": "https://www.isuzucv.com",
+      "monitored_urls": [
+        "https://www.isuzucv.com/en/nseries/nseries_diesel_specifications",
+        "https://www.isuzucv.com/en/app/site/pdf?file=FVGenuineCrossRef.pdf"
+      ],
+      "source_type": "html_pdf",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "vocational_trucks",
+        "light_trucks",
+        "us_n_series"
+      ],
+      "product_scope": [
+        "air_filters",
+        "oil_filters",
+        "fuel_filters",
+        "fuel_water_separators",
+        "coolant_filters"
+      ],
+      "notes": "Primary OEM authority for U.S. Isuzu commercial-truck model/year/engine identity and published genuine/OE service part numbers.",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
       "id": "isuzu",
       "name": "Isuzu Motors",
       "category": "oem_heavy_duty",

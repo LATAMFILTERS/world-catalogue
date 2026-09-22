@@ -3,8 +3,6 @@
 
 require('dotenv').config();
 const crypto = require('crypto');
-const { Pool } = require('pg');
-const { applyVerifiedRelationalVehicleApplications } = require('../../lib/catalog-application-write-service');
 const { resolveBrandSearchEngines } = require('../../lib/hermes-brand-search-router');
 
 const wixRoute = resolveBrandSearchEngines('WIX', { market: 'US', capability: 'vehicle_to_filter' });
@@ -152,86 +150,35 @@ function applicationsFromEvidence(checked) {
   });
 }
 
-async function closeAirApplications({ apply = false } = {}) {
+async function corroborateAirApplications({ apply = false } = {}) {
+  if (apply) {
+    throw new Error('WIX is corroboration-only. It cannot directly publish or close an Isuzu vehicle application. Start with Isuzu OEM/OE evidence, then Donaldson, then Fleetguard.');
+  }
   const evidence = await fetchOfficialEvidence();
   const applications = applicationsFromEvidence(evidence.checked);
-  const report = {
-    outcome: apply ? 'PENDING_TRANSACTION' : 'DRY_RUN',
+  return {
+    outcome: 'CORROBORATION_ONLY',
+    source_role: 'SUPPORTING_AFTERMARKET_AUTHORITY',
     source: SOURCE,
     source_hash: evidence.source_hash,
     source_part_number: AIR_CLOSURE.source_part_number,
-    canonical_base: AIR_CLOSURE.canonical_base,
+    observed_donaldson_cross_reference: AIR_CLOSURE.canonical_base,
     interchange_verified: true,
-    elimfilters_sku: AIR_CLOSURE.elimfilters_sku,
-    exact_models: applications.map(item => item.model),
+    elimfilters_sku_candidate: AIR_CLOSURE.elimfilters_sku,
+    exact_models_observed_by_wix: applications.map(item => item.model),
     plain_npr_observed: evidence.checked.plain_npr_observed,
     applications,
     database_write: false,
+    promotion_allowed: false,
+    next_required_stage: 'ISUZU_OEM_OEN_THEN_DONALDSON_THEN_FLEETGUARD',
   };
-
-  if (!apply) return report;
-  if (String(process.env.HERMES_CATALOGUE_PUBLISH_LIVE || '').toLowerCase() !== 'true') {
-    throw new Error('HERMES_CATALOGUE_PUBLISH_LIVE=true is required');
-  }
-
-  const databaseUrl = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
-  if (!databaseUrl) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
-  const pool = new Pool({ connectionString: databaseUrl, ssl: sslFor(databaseUrl), max: 1 });
-  const client = await pool.connect();
-
-  try {
-    await client.query('BEGIN');
-    await client.query("SET LOCAL lock_timeout = '5s'");
-    await client.query("SET LOCAL statement_timeout = '30s'");
-
-    const result = await applyVerifiedRelationalVehicleApplications(client, {
-      sku: AIR_CLOSURE.elimfilters_sku,
-      source_sku: AIR_CLOSURE.source_part_number,
-      applications,
-      evidence: {
-        authority: SOURCE.authority,
-        source_url: SOURCE.url,
-        evidence_hash: evidence.source_hash,
-        metadata: {
-          source_type: 'official_filter_manufacturer_vehicle_application',
-          market: 'US',
-          source_section: SOURCE.section,
-          source_year: SOURCE.year,
-          source_make_id: SOURCE.make_id,
-          source_model_id: SOURCE.model_id,
-          source_engine_id: SOURCE.engine_id,
-          source_part_number: AIR_CLOSURE.source_part_number,
-          canonical_base: AIR_CLOSURE.canonical_base,
-          interchange_source_url: SOURCE.interchange_url,
-          interchange_manufacturer: evidence.interchange.Manufacturer,
-          interchange_parent_part: evidence.interchange.PartNumber,
-          interchange_child_part: evidence.interchange.ChildPartNumber,
-          source_filter_type: 'Air',
-        },
-      },
-    });
-
-    await client.query('COMMIT');
-    return {
-      ...report,
-      outcome: 'VERIFIED_APPLICATIONS_WRITTEN',
-      database_write: true,
-      result,
-    };
-  } catch (error) {
-    try { await client.query('ROLLBACK'); } catch {}
-    throw error;
-  } finally {
-    client.release();
-    await pool.end();
-  }
 }
 
 if (require.main === module) {
-  closeAirApplications({ apply: process.argv.includes('--apply') })
+  corroborateAirApplications({ apply: process.argv.includes('--apply') })
     .then(report => console.log(JSON.stringify(report, null, 2)))
     .catch(error => {
-      console.error('[isuzu-n-series-us-wix-closure] failed', error);
+      console.error('[isuzu-n-series-us-wix-corroboration] failed', error);
       process.exit(1);
     });
 }
@@ -246,5 +193,5 @@ module.exports = {
   validateOfficialInterchange,
   applicationsFromEvidence,
   fetchOfficialEvidence,
-  closeAirApplications,
+  corroborateAirApplications,
 };

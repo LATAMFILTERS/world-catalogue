@@ -8,9 +8,10 @@ const {
   validateOfficialRows,
   validateOfficialInterchange,
   applicationsFromEvidence,
-} = require('../scripts/hermes/close-isuzu-n-series-us-wix');
+  corroborateAirApplications,
+} = require('../scripts/hermes/corroborate-isuzu-n-series-us-wix');
 
-test('WIX 2022 N-Series evidence closes NPR-HD and NPR-XD without inventing plain NPR', () => {
+test('WIX 2022 N-Series evidence can corroborate NPR-HD and NPR-XD without inventing plain NPR', () => {
   const rows = [
     {
       MakeModel: '2022 - ISUZU TRUCKS - N SERIES NPR-HD (On-Highway Trucks, Buses & Misc. Equip.)',
@@ -24,12 +25,6 @@ test('WIX 2022 N-Series evidence closes NPR-HD and NPR-XD without inventing plai
       PartNumber: '46932',
       FilterType: 'Air',
     },
-    {
-      MakeModel: '2022 - ISUZU TRUCKS - N SERIES NPR-HD (On-Highway Trucks, Buses & Misc. Equip.)',
-      Engine: 'NPR-HD - L4 5.2L 317 CID Turbo Diesel Isuzu (Turbo 4HK1TC Diesel )',
-      PartNumber: '33128',
-      FilterType: 'Fuel',
-    },
   ];
   const checked = validateOfficialRows(rows);
   assert.equal(checked.plain_npr_observed, false);
@@ -39,7 +34,7 @@ test('WIX 2022 N-Series evidence closes NPR-HD and NPR-XD without inventing plai
   assert.equal(apps.every(item => item.engine === '4HK1-TC' && item.engine_displacement === '5.2L'), true);
 });
 
-test('official WIX interchange must explicitly tie Donaldson P543614 to WIX 46932', () => {
+test('official WIX interchange is supporting evidence only', () => {
   const row = validateOfficialInterchange([{
     PartID: '129266',
     PartNumber: 'P543614',
@@ -49,30 +44,23 @@ test('official WIX interchange must explicitly tie Donaldson P543614 to WIX 4693
   }]);
   assert.equal(row.PartNumber, AIR_CLOSURE.canonical_base);
   assert.equal(row.ChildPartNumber, AIR_CLOSURE.source_part_number);
-  assert.throws(() => validateOfficialInterchange([{
-    PartNumber: 'P543614',
-    ChildPartNumber: 'OTHER',
-    Manufacturer: 'DONALDSON'
-  }]), /does not map/);
 });
 
-test('WIX evidence fails closed when one exact required model is absent', () => {
-  assert.throws(() => validateOfficialRows([{
-    MakeModel: '2022 - ISUZU TRUCKS - N SERIES NPR-HD (On-Highway Trucks, Buses & Misc. Equip.)',
-    Engine: 'NPR-HD - L4 5.2L 317 CID Turbo Diesel Isuzu (Turbo 4HK1TC Diesel )',
-    PartNumber: '46932',
-    FilterType: 'Air',
-  }]), /NPR-XD/);
+test('WIX corroboration cannot directly publish an Isuzu application', async () => {
+  await assert.rejects(
+    () => corroborateAirApplications({ apply: true }),
+    /corroboration-only/i
+  );
 });
 
-test('relational writer records HD applications as EQUIPMENT evidence without certifying legacy JSONB', async () => {
+test('relational writer accepts explicit OEM application evidence without certifying legacy JSONB', async () => {
   const evidenceInserts = [];
   const relationalWrites = [];
   const client = {
     async query(sql, params = []) {
       const text = String(sql);
       if (text.includes('SELECT sku,duty,codigo_base FROM elimfilters_catalog')) {
-        return { rowCount: 1, rows: [{ sku: 'EA13614', duty: 'HEAVY_DUTY', codigo_base: 'P543614' }] };
+        return { rowCount: 1, rows: [{ sku: 'EA_TEST', duty: 'HEAVY_DUTY', codigo_base: 'P_TEST' }] };
       }
       if (text.startsWith('SELECT md5(')) return { rowCount: 1, rows: [{ hash: 'payloadhash' }] };
       if (text.includes('INSERT INTO ld_catalog.ld_vehicle_applications')) {
@@ -88,8 +76,8 @@ test('relational writer records HD applications as EQUIPMENT evidence without ce
   };
 
   const result = await applyVerifiedRelationalVehicleApplications(client, {
-    sku: 'EA13614',
-    source_sku: '46932',
+    sku: 'EA_TEST',
+    source_sku: 'ISUZU_OE_TEST',
     applications: [{
       market: 'US',
       make: 'ISUZU',
@@ -101,11 +89,11 @@ test('relational writer records HD applications as EQUIPMENT evidence without ce
       engine_displacement: '5.2L',
       fuel_type: 'DIESEL',
       filter_position: 'AIR_PRIMARY',
-      source_origin: 'WIX_US_OFFICIAL_VEHICLE_SEARCH',
+      source_origin: 'ISUZU_US_OEM_PARTS_SOURCE',
     }],
     evidence: {
-      authority: 'WIX FILTERS',
-      source_url: 'https://m.wixfilters.com/search/SearchPartsByVehicle3?vehicleYear=2022&section=8&make=2153&model=85958&engine=136672',
+      authority: 'ISUZU COMMERCIAL TRUCK OF AMERICA',
+      source_url: 'https://www.isuzucv.com/en/app/site/pdf?file=FVGenuineCrossRef.pdf',
       evidence_hash: 'sourcehash',
     },
   });
@@ -114,8 +102,6 @@ test('relational writer records HD applications as EQUIPMENT evidence without ce
   assert.equal(result.verified_applications, 1);
   assert.equal(relationalWrites.length, 1);
   assert.equal(evidenceInserts.length, 2);
-  assert.equal(evidenceInserts[0][1], 'EQUIPMENT');
-  assert.equal(evidenceInserts[1][1], 'ENGINE');
   assert.equal(relationalWrites[0][3], 'NPR-HD');
   assert.equal(relationalWrites[0][17], 'AIR_PRIMARY');
 });

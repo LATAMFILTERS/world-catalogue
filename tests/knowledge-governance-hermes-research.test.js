@@ -58,3 +58,38 @@ test('a HERMES response that claims approved_for_bot_use fails validation', () =
   response.approved_for_bot_use = true; // simulate a tampered/malicious payload
   assert.equal(validateHermesResearchResponse(response).valid, false);
 });
+
+
+test('vehicle application closure fails validation without an OEM-first strategy', () => {
+  const request = createHermesResearchRequest({
+    knowledge_gap_request_id: 'gap-vehicle-1',
+    research_type: 'VEHICLE_FILTER_APPLICATION_CLOSURE',
+    research_question: 'Close 2022 Isuzu NPR-HD filter applications.'
+  });
+  const result = validateHermesResearchRequest(request);
+  assert.equal(result.valid, false);
+  assert.match(result.errors.join(' | '), /source_first_strategy/);
+});
+
+test('vehicle application closure validates only with OEM then Donaldson then Fleetguard', () => {
+  const request = createHermesResearchRequest({
+    knowledge_gap_request_id: 'gap-vehicle-2',
+    research_type: 'VEHICLE_FILTER_APPLICATION_CLOSURE',
+    research_question: 'Close 2022 Isuzu NPR-HD filter applications.',
+    source_first_strategy: {
+      stage_1_oem: {
+        id: 'isuzu_commercial_truck_usa',
+        official_domain: 'https://www.isuzucv.com'
+      },
+      stage_2_aftermarket: [
+        { brand: 'DONALDSON', rank: 1 },
+        { brand: 'FLEETGUARD', rank: 2 },
+        { brand: 'WIX', rank: 5 }
+      ],
+      rules: {
+        oem_part_numbers_required_before_aftermarket: true
+      }
+    }
+  });
+  assert.equal(validateHermesResearchRequest(request).valid, true);
+});
