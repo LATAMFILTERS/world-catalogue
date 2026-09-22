@@ -124,11 +124,13 @@ cross_reference_write_allowed: false
 - TECHNICAL-REFERENCE-ISO-20468-5
 - TECHNICAL-REFERENCE-ISO-25175
 - TECHNICAL-REFERENCE-ISO-23044
+- EXTERNAL-PRIMARY-DUPONT-WATER-TECHNOLOGIES
 
 ## Governance
 
 - MEMBRAVEX™ does not assign one universal rejection, recovery, pressure or service-life value across RO, UF and NF.
 - Standard scope follows the membrane process and project; RO/NF methods are not transferred automatically to UF.
+- MEMBRAVEX™ describes membrane-element treatment paths; complete membrane trains, pressure vessels, pumps and controls remain application equipment unless separately approved.
 
 ## Canonical Approval
 
