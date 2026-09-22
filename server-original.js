@@ -13,6 +13,7 @@ const {
 } = require('./lib/alternative-functional-family');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
 const TranslationService = require('./lib/translation-service');
+const { findPlatform, parseVehicleSearchText, normalizeAlphaNum } = require('./lib/vehicle-application-normalizer');
 
 // ─── Rate Limiters ────────────────────────────────────────────────────────────
 const searchLimiter = rateLimit({
@@ -2096,8 +2097,21 @@ app.get('/api/search/vin', searchLimiter, async (req, res) => {
 //   - equipment_applications JSONB (Heavy Duty)
 //   - vehicle_applications   JSONB (Light Duty – industrial machines stored here)
 app.get('/api/search/equipment', searchLimiter, async (req, res) => {
-  const { make, model, year, engine } = req.query;
-  if (!make && !model) return res.status(400).json({ success: false, error: 'make or model required' });
+  const { make, model, year, engine, market, q } = req.query;
+  const conversational = q ? parseVehicleSearchText(q, market || 'US') : null;
+  const identity = findPlatform({
+    make: make || conversational?.make,
+    model: model || conversational?.model,
+    market: market || conversational?.market || 'US',
+  });
+  const resolvedMake = identity.matched ? identity.make : (make || conversational?.make || null);
+  const resolvedModel = identity.matched ? identity.model : (model || conversational?.model || null);
+  const resolvedYear = year || conversational?.year || null;
+  const resolvedEngine = engine || conversational?.engine || null;
+
+  if (!resolvedMake && !resolvedModel) {
+    return res.status(400).json({ success: false, error: 'make or model required' });
+  }
 
   const lang   = detectLang(req);
   const client = await pool.connect();
@@ -2110,24 +2124,24 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
 
     const buildJsonbCond = (col) => {
       const conds = [];
-      if (make) {
-        conds.push(`UPPER(ea->>'make') LIKE $${idx}`);
-        params.push('%' + make.toUpperCase() + '%');
+      if (resolvedMake) {
+        conds.push(`UPPER(ea->>'make') LIKE ${idx}`);
+        params.push('%' + resolvedMake.toUpperCase() + '%');
         idx++;
       }
-      if (model) {
-        conds.push(`UPPER(COALESCE(ea->>'model', ea->>'machine')) LIKE $${idx}`);
-        params.push('%' + model.toUpperCase() + '%');
+      if (resolvedModel) {
+        conds.push(`UPPER(COALESCE(ea->>'model', ea->>'machine')) LIKE ${idx}`);
+        params.push('%' + resolvedModel.toUpperCase() + '%');
         idx++;
       }
-      if (year) {
-        conds.push(`(ea->>'year_from')::int <= $${idx} AND (ea->>'year_to')::int >= $${idx}`);
-        params.push(parseInt(year));
+      if (resolvedYear) {
+        conds.push(`(ea->>'year_from')::int <= ${idx} AND (ea->>'year_to')::int >= ${idx}`);
+        params.push(parseInt(resolvedYear, 10));
         idx++;
       }
-      if (engine) {
-        conds.push(`UPPER(COALESCE(ea->>'engine_code', ea->>'engine')) LIKE $${idx}`);
-        params.push('%' + engine.toUpperCase() + '%');
+      if (resolvedEngine) {
+        conds.push(`UPPER(COALESCE(ea->>'engine_code', ea->>'engine')) LIKE ${idx}`);
+        params.push('%' + resolvedEngine.toUpperCase() + '%');
         idx++;
       }
       // CASE guard: jsonb_array_elements() throws if the column holds a
@@ -2143,16 +2157,52 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     // LD: vehicle_applications (industrial equipment also stored here)
     conditions.push(buildJsonbCond('vehicle_applications'));
 
-    // Relational Knowledge Graph: kg_product_equipment + kg_equipment_models + kg_equipment_makes
-    const kgConds = [];
-    if (make) {
-      kgConds.push(`UPPER(kmk.display_name) LIKE $${idx}`);
-      params.push('%' + make.toUpperCase() + '%');
+    // Canonical relational vehicle applications. This is the existing LD application
+    // authority; normalization only makes the existing rows searchable without creating
+    // a second fitment source of truth.
+    const vehicleConds = [];
+    if (resolvedMake) {
+      vehicleConds.push(`upper(regexp_replace(coalesce(va.canonical_make, va.make, ''), '[^A-Z0-9]', '', 'g')) = ${idx}`);
+      params.push(normalizeAlphaNum(resolvedMake));
       idx++;
     }
-    if (model) {
-      kgConds.push(`UPPER(km.display_name) LIKE $${idx}`);
-      params.push('%' + model.toUpperCase() + '%');
+    if (resolvedModel) {
+      vehicleConds.push(`upper(regexp_replace(coalesce(va.canonical_model, va.model_family, ''), '[^A-Z0-9]', '', 'g')) = ${idx}`);
+      params.push(normalizeAlphaNum(resolvedModel));
+      idx++;
+    }
+    if (resolvedYear) {
+      vehicleConds.push(`(
+        (va.year_from IS NOT NULL AND va.year_to IS NOT NULL AND va.year_from <= ${idx} AND va.year_to >= ${idx})
+        OR trim(coalesce(va.year,'')) = ${idx}::text
+      )`);
+      params.push(parseInt(resolvedYear, 10));
+      idx++;
+    }
+    if (resolvedEngine) {
+      vehicleConds.push(`upper(regexp_replace(coalesce(va.engine_code, va.model_type, ''), '[^A-Z0-9]', '', 'g')) LIKE ${idx}`);
+      params.push('%' + normalizeAlphaNum(resolvedEngine) + '%');
+      idx++;
+    }
+    if (vehicleConds.length > 0) {
+      conditions.push(`EXISTS (
+        SELECT 1
+        FROM ld_catalog.ld_vehicle_applications va
+        WHERE va.elimfilters_sku = elimfilters_catalog_active_v.sku
+          AND ${vehicleConds.join(' AND ')}
+      )`);
+    }
+
+    // Relational Knowledge Graph: kg_product_equipment + kg_equipment_models + kg_equipment_makes
+    const kgConds = [];
+    if (resolvedMake) {
+      kgConds.push(`UPPER(kmk.display_name) LIKE ${idx}`);
+      params.push('%' + resolvedMake.toUpperCase() + '%');
+      idx++;
+    }
+    if (resolvedModel) {
+      kgConds.push(`UPPER(km.display_name) LIKE ${idx}`);
+      params.push('%' + resolvedModel.toUpperCase() + '%');
       idx++;
     }
     if (kgConds.length > 0) {
