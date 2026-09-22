@@ -123,11 +123,13 @@ cross_reference_write_allowed: false
 - TECHNICAL-REFERENCE-ISO-23044
 - TECHNICAL-REFERENCE-ASTM-D6807
 - TECHNICAL-REFERENCE-ASTM-D1125
+- EXTERNAL-PRIMARY-DUPONT-EDI
 
 ## Governance
 
 - Electrodeionization remains descriptive within AQUVEXIS™.
 - Product-water quality, recovery, capacity and service-life claims remain tied to validated modules and projects.
+- Electrodeionization remains a descriptive treatment path. This knowledge object does not establish an ELIMFILTERS EDI module, pressure vessel, electrical stack or skid product.
 
 ## Canonical Approval
 
