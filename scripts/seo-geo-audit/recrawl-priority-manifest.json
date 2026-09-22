@@ -14,7 +14,8 @@
         "/technologies",
         "/systems",
         "/industries",
-        "/families"
+        "/families",
+        "/industrial-process"
       ],
       "prefixes": []
     },
@@ -34,7 +35,8 @@
         "/technologies/",
         "/systems/",
         "/industries/",
-        "/families/"
+        "/families/",
+        "/industrial-process/"
       ]
     },
     "P2": {

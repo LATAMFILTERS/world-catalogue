@@ -6,6 +6,7 @@ import {
   INDUSTRIAL_PROCESS_PLATFORMS,
   getIndustrialProcessPlatform,
   getIndustrialProcessTechnology,
+  industrialProcessPlatformUrl,
   industrialProcessTechnologyUrl,
 } from '@/lib/industrial-process-architecture';
 
@@ -47,9 +48,36 @@ export default async function IndustrialProcessTechnologyRoute({ params }: Props
   const platform = getIndustrialProcessPlatform(platformSlug);
   const technology = getIndustrialProcessTechnology(platformSlug, technologySlug);
   if (!platform || !technology) notFound();
+  const url = `${BASE_URL}${industrialProcessTechnologyUrl(platform.slug, technology.slug)}`;
+  const platformUrl = `${BASE_URL}${industrialProcessPlatformUrl(platform.slug)}`;
+  const techArticleSchema = {
+    '@type': 'TechArticle',
+    '@id': `${url}#technology`,
+    url,
+    name: technology.name === technology.title ? technology.name : `${technology.name} — ${technology.title}`,
+    description: technology.summary,
+    isPartOf: { '@id': `${platformUrl}#platform` },
+    publisher: { '@id': `${BASE_URL}/#organization` },
+  };
+  const faqSchema = technology.customFaqs && technology.customFaqs.length > 0
+    ? {
+        '@type': 'FAQPage',
+        '@id': `${url}#faq`,
+        mainEntity: technology.customFaqs.map(([question, answer]) => ({
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: { '@type': 'Answer', text: answer },
+        })),
+      }
+    : null;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': faqSchema ? [techArticleSchema, faqSchema] : [techArticleSchema],
+  };
   return (
     <>
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <IndustrialProcessTechnologyStablePage platform={platform} technology={technology} />
     </>
   );
