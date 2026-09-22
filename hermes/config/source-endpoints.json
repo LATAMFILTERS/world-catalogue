@@ -722,6 +722,42 @@
       "verified_at": "2026-09-22T15:37:00.000Z",
       "http_status_observed": 200,
       "notes": "Official primary technical source. Granular activated-carbon adsorption in water and industrial liquid treatment. Public competitor/source branding remains governed."
+    },
+    {
+      "id": "parker__wind_filtration",
+      "organization_id": "parker_hannifin_filtration",
+      "url": "https://discover.parker.com/windfiltration",
+      "endpoint_type": "technology_pages",
+      "source_type": "html",
+      "status": "ACTIVE",
+      "enabled": true,
+      "verified_at": "2026-09-22T18:07:00.000Z",
+      "http_status_observed": 200,
+      "notes": "Official Parker industrial hydraulic/lube filtration source. Par Fit references are interchange evidence unless Parker is the proven original or the approved family anchor is used because the original is unresolved."
+    },
+    {
+      "id": "parker__industrial_hydraulic_press_filtration",
+      "organization_id": "parker_hannifin_filtration",
+      "url": "https://corpapps.parker.com/interactive-media/industry/industrial-manufacturing-equipment/industrial-manufacturing-hydraulic-press-products-equipment-supplier/Hydraulic-Press-Industrial-Manufacturing-Equipment.asp",
+      "endpoint_type": "technology_pages",
+      "source_type": "html",
+      "status": "ACTIVE",
+      "enabled": true,
+      "verified_at": "2026-09-22T18:07:00.000Z",
+      "http_status_observed": 200,
+      "notes": "Official Parker industrial manufacturing application source containing Par Fit hydraulic replacement-element context."
+    },
+    {
+      "id": "dupont_water__filmtec",
+      "organization_id": "dupont_water_solutions",
+      "url": "https://www.dupont.com/brands/filmtec.html",
+      "endpoint_type": "technology_pages",
+      "source_type": "html",
+      "status": "ACTIVE",
+      "enabled": true,
+      "verified_at": "2026-09-22T18:07:00.000Z",
+      "http_status_observed": 200,
+      "notes": "Official DuPont FilmTec™ RO/NF portfolio source; family-anchor evidence when original membrane identity is unavailable and exact element evidence is complete."
     }
   ]
 }
