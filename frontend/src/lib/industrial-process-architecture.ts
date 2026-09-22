@@ -773,6 +773,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Why can water return after treatment?', 'Water can re-enter through condensation, coolers, seals, washdown, reservoir breathing or process ingress. The source must be identified and controlled or the moisture condition can rebound after successful treatment.'],
           ['Is vacuum dehydration always required?', 'No. Vacuum dehydration is one treatment path. The correct method depends on whether water is free, emulsified or dissolved, along with oil chemistry, viscosity, temperature, water load and the required outlet condition.'],
           ['Can one universal final water value be assigned to DEWATIS™?', 'No. The acceptable moisture condition depends on the fluid, equipment, operating temperature and project requirement. Numeric limits must be tied to validated product or application evidence.'],
+          ['Does DEWATIS™ mean ELIMFILTERS supplies the dehydration machine?', 'No. DEWATIS™ defines the water-removal treatment family and the validated replacement media or element scope. Vacuum-dehydration machines, pumps, skids and controls shown in application context are not presented as ELIMFILTERS-manufactured equipment unless separately approved.'],
         ],
       },
       {
@@ -833,6 +834,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Is OILREVEX™ simply a finer oil filter?', 'No. It is a remediation family selected from the diagnosed oil condition. Depending on the fluid and contaminant, the treatment can involve adsorption, ion exchange or another validated offline medium in addition to particulate control.'],
           ['Why is laboratory analysis required before treatment?', 'Different symptoms can originate from oxidation, water, particles, additive changes, acidity or deposit-forming degradation products. The treatment mechanism should match the confirmed cause rather than the visual symptom.'],
           ['What causes remediation results to rebound?', 'If oxidation, thermal stress, electrostatic effects, contamination or another degradation source remains active, the target contaminant can regenerate after treatment. Root-cause correction is therefore part of the remediation plan.'],
+          ['Does OILREVEX™ include the complete varnish-remediation skid?', 'No. OILREVEX™ centers on the validated remediation media and replacement element function. Pumps, coolers, housings, skids and controls may define the operating context but are not represented as ELIMFILTERS-manufactured equipment unless separately approved.'],
         ],
       },
     ],
@@ -1169,6 +1171,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Is electrodeionization a substitute for all upstream demineralization?', 'No. EDI depends on qualified upstream treatment and is not presented as a universal raw-water treatment mechanism.'],
           ['What should be checked when EDI product-water quality drifts?', 'Review feed-water quality, upstream treatment, flow, pressure, electrical operating data, scaling or fouling evidence and the product-water trend before assigning a root cause.'],
           ['Does one conductivity or resistivity reading define module condition?', 'No. A single reading should be interpreted with operating conditions and trend data. Feed quality, flow, pressure and electrical behavior can all affect the observed result.'],
+          ['Does this Electrodeionization page mean ELIMFILTERS sells complete EDI modules or skids?', 'No. Electrodeionization is maintained here as a descriptive AQUVEXIS™ treatment path and engineering context. This page does not establish an ELIMFILTERS EDI module, electrical stack, pressure vessel or complete skid product.'],
         ],
       },
     ],
