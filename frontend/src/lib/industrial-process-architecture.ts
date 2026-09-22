@@ -784,7 +784,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Confirmed degradation mechanism', 'Fluid chemistry, base stock and additive compatibility', 'Soluble, insoluble or deposit-forming contamination state', 'Temperature and oxidation history', 'Contaminant loading and rebound potential', 'Required treatment endpoint and laboratory verification'],
           ['Fluid-condition indicators do not improve', 'Varnish or deposit tendency returns rapidly', 'Remediation media exhausts unexpectedly', 'Differential pressure rises from released or captured deposits', 'Additive or fluid compatibility concerns emerge', 'Deposits persist because the root oxidation or thermal stress remains active'],
           '/images/oil-hand.avif',
-          '/images/grupo1-oil.avif',
+          '/images/OILREVEX.png',
         ),
         selectionInputs: [
           'Fluid type, base stock and additive chemistry',
