@@ -404,3 +404,44 @@ When public technical documentation is produced, images may be requested for spe
 - contamination path diagrams
 
 If an approved asset is not present in GitHub, its exact subject, orientation and intended article/section should be specified before generating or sourcing it.
+
+## Industrial & Process technical closure routing
+
+Industrial & Process is now covered by four evergreen HERMES research domains that reuse the existing industry-sweep and evidence-review pipeline:
+
+```text
+industrial_air_filtration
+-> AEREMIS™ + PARTION™
+-> Camfil + Donaldson primary evidence
+
+industrial_gas_conditioning
+-> COALVEX™
+-> Pall liquid/gas coalescence and oil & gas primary evidence
+
+industrial_fluid_conditioning
+-> FLUREXIS™
+-> Pall hydraulic, lubrication, oil purification and varnish-remediation primary evidence
+
+industrial_water_treatment
+-> AQUVEXIS™
+-> Pall depth filtration + DuPont Water + Calgon Carbon primary evidence
+```
+
+All four domains use `research_mode = EVERGREEN_TECHNICAL_LIBRARY`. This permits HERMES to use older but still relevant primary engineering evidence to close a knowledge gap without misrepresenting that evidence as a current news development.
+
+Shared routing policy lives in:
+
+`scripts/hermes/industrial-research-policy.mjs`
+
+The policy requires carrier-medium, contaminant-phase and treatment-mechanism classification before a branded family can be proposed. It also enforces the ELIMFILTERS commercial boundary: replaceable media/elements are the default product scope; collectors, air handlers, pressure vessels, separators, skids, pumps, fans, ductwork, reservoirs, piping, controls, complete membrane trains and complete EDI systems remain application context unless separately approved.
+
+The root governed engineering object is:
+
+`IP-INDUSTRIAL-PROCESS-ARCHITECTURE`
+
+and the technical source map is:
+
+`docs/brand/INDUSTRIAL_PROCESS_TECHNICAL_SOURCE_REGISTRY.md`
+
+No new scheduler, candidate store, knowledge graph, publication path or catalogue writer was created for this closure.
+
