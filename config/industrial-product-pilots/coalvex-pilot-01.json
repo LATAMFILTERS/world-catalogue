@@ -47,6 +47,11 @@
         "Gas sweetening/dehydration protection",
         "Instrument gas",
         "Process gas"
+      ],
+      "industries": [
+        "Oil & Gas",
+        "Chemicals",
+        "Polymers"
       ]
     },
     "seprasol_plus": {
@@ -80,6 +85,11 @@
         "Desiccant and catalyst protection",
         "Gas purification",
         "Gas injection service"
+      ],
+      "industries": [
+        "Oil & Gas",
+        "Chemicals",
+        "Process Gas"
       ]
     },
     "medallion_hp": {
@@ -112,6 +122,10 @@
         "Sales gas",
         "Transmission pipeline gas",
         "Pipeline metering/compression stations"
+      ],
+      "industries": [
+        "Oil & Gas",
+        "Process Industry"
       ]
     }
   },
@@ -149,7 +163,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Polymers"
       ],
       "application": [
         "Compressor and turbine protection",
@@ -264,7 +279,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Polymers"
       ],
       "application": [
         "Compressor and turbine protection",
@@ -380,7 +396,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Polymers"
       ],
       "application": [
         "Compressor and turbine protection",
@@ -496,7 +513,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Process Gas"
       ],
       "application": [
         "Compressor and turbine protection",
@@ -616,7 +634,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Process Gas"
       ],
       "application": [
         "Compressor and turbine protection",
@@ -736,7 +755,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Process Gas"
       ],
       "application": [
         "Compressor and turbine protection",
@@ -856,7 +876,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Process Gas"
       ],
       "application": [
         "Compressor and turbine protection",
@@ -977,7 +998,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Process Gas"
       ],
       "application": [
         "Compressor and turbine protection",
@@ -1098,7 +1120,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Process Gas"
       ],
       "application": [
         "Compressor and turbine protection",
@@ -1219,7 +1242,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Process Gas"
       ],
       "application": [
         "Compressor and turbine protection",
@@ -1339,7 +1363,8 @@
       "oem_competitor_cross": [],
       "industry": [
         "Oil & Gas",
-        "Process Industry"
+        "Chemicals",
+        "Process Gas"
       ],
       "application": [
         "Compressor and turbine protection",
