@@ -17,7 +17,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import { runCollection, sourcesFromRegistry, loadSourcesConfig, DEFAULT_MAX_BYTES, DEFAULT_TIMEOUT_MS, DEFAULT_MAX_SOURCES_PER_RUN, SOURCE_PRIORITY, DEFAULT_SOURCE_PRIORITY_TIER } from './collect-real-sources-core.mjs';
+import { runCollection, sourcesFromRegistry, loadSourcesConfig, DEFAULT_MAX_BYTES, DEFAULT_TIMEOUT_MS, DEFAULT_MAX_SOURCES_PER_RUN, sourcePriorityTier } from './collect-real-sources-core.mjs';
 import { DEFAULT_MIN_CONTENT_LENGTH } from './source-baseline-core.mjs';
 import { loadRegistry, validateRegistry } from './source-registry-core.mjs';
 import { isDryRunActive } from './hermes-core.mjs';
@@ -66,7 +66,7 @@ function applyWeeklyFairRotation(allSources, cap, slots, rotationKey = isoWeekKe
   const indexed = allSources.map((source, index) => ({
     source,
     index,
-    tier: SOURCE_PRIORITY[source.category] ?? DEFAULT_SOURCE_PRIORITY_TIER
+    tier: sourcePriorityTier(source)
   }));
   indexed.sort((a, b) => (a.tier - b.tier) || (a.index - b.index));
 
