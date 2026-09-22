@@ -13,7 +13,7 @@ const {
   createHermesResearchRequest: buildHermesResearchContract,
   validateHermesResearchRequest,
 } = require('../../lib/knowledge-governance/hermes-research-contract');
-const { buildBrandResearchStrategy } = require('../../lib/hermes-brand-search-router');
+const { buildEquipmentResearchStrategy } = require('../../lib/hermes-brand-search-router');
 
 function stableId(parts) {
   return crypto.createHash('sha256').update(parts.join('|')).digest('hex').slice(0, 24);
@@ -23,7 +23,8 @@ function buildQuestion({ model, year, engineFamily, displacement, positions }) {
   return [
     `Close the US filter application for ${year} Isuzu ${model} with ${engineFamily} ${displacement}.`,
     `Research these positions: ${positions.join(', ')}.`,
-    'Search through specialized official brand engines first: Isuzu US vehicle resources for platform/engine identity; WIX, Donaldson, Fleetguard and MANN official catalogs/application engines for filter fitment. Generic web search may discover a source but cannot replace the specialized brand engine when one exists.',
+    'Research the equipment manufacturer first. For Isuzu vehicles, use the official Isuzu US source to establish the exact model, model year, engine, configuration, maintenance requirements, and published OEM/OE part numbers before consulting any aftermarket catalog.',
+    'Only after OEM identity and OE/OEN part numbers are established, resolve aftermarket in this order: Donaldson first, Fleetguard second, then other manufacturers as supporting evidence. WIX, MANN, Baldwin or FRAM must not lead the investigation or override OEM evidence.',
     'Use US OEM or official filter-manufacturer application evidence for the exact model year and engine.',
     'Do not inherit fitment from a competitor cross-reference, similar model, non-US catalogue, or part-number similarity.',
     'For every position return the exact source part number, filter role, year/model/engine evidence, source URL, and whether the evidence is sufficient for ELIMFILTERS application promotion.',
@@ -45,8 +46,8 @@ function buildVehicleClosureWorkOrders({ waveId = 'NPR_US_PRIORITY', requestedAt
         displacement: wave.engine_displacement,
         positions: wave.required_positions,
       });
-      const brand_search_strategy = buildBrandResearchStrategy({
-        brands: ['ISUZU', 'WIX', 'DONALDSON', 'FLEETGUARD', 'MANN-FILTER'],
+      const brand_search_strategy = buildEquipmentResearchStrategy({
+        equipmentBrand: manifest.make,
         market: manifest.market,
       });
       const deterministic = stableId([manifest.platform_id, model, String(year), wave.engine_family, wave.engine_displacement]);
