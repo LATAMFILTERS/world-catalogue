@@ -530,6 +530,30 @@
       "verified_at": "2026-09-18T00:00:00.000Z",
       "http_status_observed": 200,
       "notes": "Official MANN-FILTER online catalogue."
+    },
+    {
+      "id": "donaldson__industrial_air_technical_articles",
+      "organization_id": "donaldson",
+      "url": "https://www.donaldson.com/en/resources/technical-articles/?pg=donaldson:product-group/industrial-air-filtration",
+      "endpoint_type": "technical_bulletins",
+      "source_type": "html",
+      "status": "ACTIVE",
+      "enabled": true,
+      "verified_at": "2026-09-22T00:00:00.000Z",
+      "http_status_observed": 200,
+      "notes": "Official Industrial Air Filtration technical-article library. The index is a governed discovery/baseline source; HERMES research must follow relevant same-domain article pages and verify engineering context before proposing knowledge changes."
+    },
+    {
+      "id": "donaldson__industrial_air_case_studies",
+      "organization_id": "donaldson",
+      "url": "https://www.donaldson.com/en/resources/case-studies/?pg=donaldson:product-group/industrial-air-filtration",
+      "endpoint_type": "documentation",
+      "source_type": "html",
+      "status": "ACTIVE",
+      "enabled": true,
+      "verified_at": "2026-09-22T00:00:00.000Z",
+      "http_status_observed": 200,
+      "notes": "Official Industrial Air Filtration case-study library. HERMES must inspect the specific case-study page, retain operating/application context, and never generalize application-specific performance results into universal claims."
     }
   ]
 }
