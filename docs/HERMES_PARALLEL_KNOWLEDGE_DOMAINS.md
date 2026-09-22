@@ -420,7 +420,7 @@ industrial_gas_conditioning
 
 industrial_fluid_conditioning
 -> FLUREXIS™
--> Pall hydraulic, lubrication, oil purification and varnish-remediation primary evidence
+-> Parker HYLTRIS™ / LUBREVA™ family-anchor evidence + Pall dehydration/remediation evidence
 
 industrial_water_treatment
 -> AQUVEXIS™
@@ -444,4 +444,19 @@ and the technical source map is:
 `docs/brand/INDUSTRIAL_PROCESS_TECHNICAL_SOURCE_REGISTRY.md`
 
 No new scheduler, candidate store, knowledge graph, publication path or catalogue writer was created for this closure.
+
+
+### Industrial product base-code authority
+
+Product identity research reuses the same HERMES research paths but adds one shared authority policy:
+
+`scripts/hermes/industrial-product-base-policy.mjs`
+
+Strict precedence:
+
+`ORIGINAL_BASE > FAMILY_ANCHOR_BASE > COMPETITOR_CROSS > SOURCE_ONLY`
+
+A confirmed original element/equipment reference always wins. Family anchors are fallback authorities only when the original cannot be established and primary evidence is complete. Interchange programmes such as Parker Par Fit remain cross-reference evidence when another manufacturer's original element is known. REIKE and other discovery suppliers remain `SOURCE_ONLY` by default.
+
+The family-anchor matrix is keyed by existing Industrial Technology Core IDs, so no parallel product taxonomy is created. The policy does not mint SKUs. Industrial product development remains `pre-SKU` in the existing EBP Product Engineering Passport until SKU nomenclature is separately approved.
 
