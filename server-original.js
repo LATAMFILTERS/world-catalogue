@@ -2174,7 +2174,13 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     if (resolvedYear) {
       vehicleConds.push(`(
         (
-          (to_jsonb(va)->>'year_from') ~ '^(19|20)[0-9]{2}
+          (to_jsonb(va)->>'year_from') ~ '^(19|20)[0-9]{2}$'
+          AND (to_jsonb(va)->>'year_to') ~ '^(19|20)[0-9]{2}$'
+          AND (to_jsonb(va)->>'year_from')::int <= $${idx}
+          AND (to_jsonb(va)->>'year_to')::int >= $${idx}
+        )
+        OR trim(coalesce(va.year,'')) = $${idx}::text
+      )`);
       params.push(parseInt(resolvedYear, 10));
       idx++;
     }
