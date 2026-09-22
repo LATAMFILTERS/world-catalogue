@@ -82,6 +82,7 @@ cross_reference_write_allowed: false
 
 - INTERNAL-BRAND-TECHNOLOGY-REGISTRY
 - INTERNAL-WEB-AEREMIS-HE-CRIVA
+- EXTERNAL-PRIMARY-CAMFIL-HEPA-ULPA
 
 ## Governance
 
