@@ -12,7 +12,14 @@ function fixture() {
         research_bundle_id: id, status: 'APPROVED_FOR_PUBLICATION', change_type: 'application_update',
         approval: { approved_by: 'Victor Abreu', approved_at: '2026-08-11T12:01:00Z', approved_fields: ['equipment_applications'] },
         publication: { target_sku: 'EA10001', approved_fields: ['equipment_applications'], proposed_values: { equipment_applications: [{ make: 'VOLVO', model: 'NEW 2027' }] } },
-        evidence: [{ evidence_id: 'OFFICIAL-1', source_hash: 'a'.repeat(64) }], source_urls: ['https://example.com/bulletin']
+        evidence: [{ evidence_id: 'OFFICIAL-1', source_hash: 'a'.repeat(64) }],
+        source_urls: ['https://example.com/bulletin'],
+        application_evidence: {
+          authority: 'VOLVO',
+          source_url: 'https://example.com/bulletin',
+          evidence_hash: 'b'.repeat(64),
+          metadata: { evidence_id: 'OFFICIAL-1' }
+        }
       }
     },
     catalog: [{ sku: 'EA10001', equipment_applications: [{ make: 'VOLVO', model: 'OLD' }] }]
@@ -52,6 +59,18 @@ test('blocks unapproved and non-publishable fields', () => {
   const input = fixture();
   input.bundle.catalogue_candidate.publication.proposed_values.sku = 'EA39999';
   assert.throws(() => buildCataloguePublicationPlan(input), /was not approved/);
+});
+
+test('rejects application publication without explicit application evidence', () => {
+  const input = fixture();
+  delete input.bundle.catalogue_candidate.application_evidence;
+  assert.throws(() => buildCataloguePublicationPlan(input), /application_evidence/);
+});
+
+test('rejects application evidence whose source is outside the reviewed source set', () => {
+  const input = fixture();
+  input.bundle.catalogue_candidate.application_evidence.source_url = 'https://other.example.com/unreviewed';
+  assert.throws(() => buildCataloguePublicationPlan(input), /source_url must be present/);
 });
 
 test('rejects a no-op plan', () => {

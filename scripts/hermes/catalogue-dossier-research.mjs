@@ -168,6 +168,36 @@ function uniqueUrls(dossier){
   for(const s of dossier?.provenance?.sources||[]) if(s?.url&&!urls.includes(s.url)) urls.push(s.url);
   return urls;
 }
+
+function applicationEvidenceForDossier(dossier,evidenceId){
+  if(String(dossier?.applications?.status||'').toUpperCase()!=='VERIFIED') return null;
+  const sourceUrl=(dossier.applications.source_urls||[]).find(Boolean)||null;
+  if(!sourceUrl) return null;
+  const sources=Array.isArray(dossier?.provenance?.sources)?dossier.provenance.sources:[];
+  const provenance=sources.find((source)=>{
+    if(source?.url!==sourceUrl) return false;
+    const supports=Array.isArray(source.supports)?source.supports.map((value)=>String(value).toLowerCase()):[];
+    return supports.some((value)=>value.includes('application'));
+  }) || sources.find((source)=>source?.url===sourceUrl) || null;
+  const authority=String(provenance?.authority||'').trim();
+  if(!authority) return null;
+  return {
+    authority,
+    source_url:sourceUrl,
+    evidence_hash:sha({
+      evidence_id:evidenceId,
+      applications:dossier.applications.records||[],
+      source_url:sourceUrl,
+      authority
+    }),
+    metadata:{
+      hermes_evidence_id:evidenceId,
+      source_type:provenance?.source_type||null,
+      dossier_axis:'applications',
+      exact_application_evidence:true
+    }
+  };
+}
 async function persistDossier(db,item,dossier,assessment,identityCheck,attemptError=null){
   const now=new Date().toISOString();
   const urls=uniqueUrls(dossier);
@@ -212,7 +242,7 @@ async function persistDossier(db,item,dossier,assessment,identityCheck,attemptEr
   return status;
 }
 
-function proposedValues(dossier,evidenceId,capturedAt){
+function proposedValues(dossier,evidenceId,capturedAt,applicationEvidence=null){
   const identity=dossier.identity;
   const values={
     codigo_base:identity.source_code,
@@ -229,7 +259,7 @@ function proposedValues(dossier,evidenceId,capturedAt){
   if(dossier.technical_specs.status==='VERIFIED') values.technical_specs=Object.assign({},...dossier.technical_specs.records);
   if(dossier.oem_codes.status==='VERIFIED') values.oem_codes=dossier.oem_codes.records;
   if(dossier.cross_references.status==='VERIFIED') values.competitor_codes=dossier.cross_references.records;
-  if(dossier.applications.status==='VERIFIED') values.vehicle_applications=dossier.applications.records;
+  if(dossier.applications.status==='VERIFIED' && applicationEvidence) values.vehicle_applications=dossier.applications.records;
   return values;
 }
 const orgDoc=JSON.parse(fs.readFileSync(path.join(root,'hermes/config/source-organizations.json'),'utf8'));
@@ -318,7 +348,8 @@ try{
         last_evidence_id=$2,updated_at=now() WHERE backlog_id=$1`,[item.backlog_id,evidenceId]);
       await db.query('COMMIT');
     }catch(error){await db.query('ROLLBACK');throw error;}
-    const values=proposedValues(dossier,evidenceId,capturedAt);
+    const applicationEvidence=applicationEvidenceForDossier(dossier,evidenceId);
+    const values=proposedValues(dossier,evidenceId,capturedAt,applicationEvidence);
     const approvedFields=Object.keys(values);
     const candidate={
       schema_version:'2.0.0',
@@ -333,6 +364,7 @@ try{
       automatic_publication_allowed:false,
       evidence_id:evidenceId,
       source_urls:uniqueUrls(dossier),
+      application_evidence:applicationEvidence,
       dossier,
       publication:{
         target_sku:item.sku,
