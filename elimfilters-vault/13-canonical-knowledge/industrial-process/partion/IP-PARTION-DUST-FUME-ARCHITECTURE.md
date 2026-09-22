@@ -33,6 +33,8 @@ cross_reference_write_allowed: false
 - FUMEVRA™ is the PARTION™ family for fine-dust and fume filtration and maps to TC-DUST-01. | status: approved
 - Treatment-path selection depends on the generating process, particle behavior, concentration, airflow, operating conditions, allowable pressure drop, installed collector interface and required downstream condition. | status: approved
 - Combustible-dust or reactive-process hazards, where applicable, require separate validation against the governing process-safety requirements and are not established by the filter family name alone. | status: approved
+- Oil-bearing particulate is not equivalent to liquid oil mist or coolant aerosol. FUMEVRA™ may remain applicable when the dominant contaminant phase is particulate, but liquid-droplet mist requires separate evaluation of capture, coalescence, drainage, liquid loading and media compatibility. | status: approved
+- Mixed solid-liquid aerosol duties require phase-dominance evaluation and may require staged treatment. If the dominant phase or treatment mechanism is unresolved, HERMES must not auto-confirm FUMEVRA™. | status: approved
 
 ## Components
 
@@ -54,6 +56,7 @@ cross_reference_write_allowed: false
 ## Diagnostic Methods
 
 - Identify the process generating the particulate and characterize the particle behavior before evaluating media suitability.
+- Determine whether the dominant airborne contaminant is solid particulate, oil-bearing particulate, liquid oil/coolant droplets, or a mixed solid-liquid aerosol before assigning a treatment path.
 - Review airflow, loading pattern, temperature, moisture or aerosol exposure and duty cycle.
 - Trend differential pressure and cleaning recovery together rather than relying on one pressure reading.
 - Inspect element seating, sealing surfaces and evidence of bypass.
@@ -90,17 +93,21 @@ cross_reference_write_allowed: false
 
 - INTERNAL-BRAND-TECHNOLOGY-REGISTRY
 - INTERNAL-WEB-PARTION-ARCHITECTURE
+- EXTERNAL-PRIMARY-DONALDSON-INDUSTRIAL-AIR-TECHNICAL-ARTICLES
+- EXTERNAL-PRIMARY-DONALDSON-INDUSTRIAL-AIR-CASE-STUDIES
+- EXTERNAL-PRIMARY-DONALDSON-DRYFLO-MIST-COLLECTOR-F118137
 
 ## Governance
 
 - PARTION™ is a commercial platform, not a universal dust class, efficiency rating or safety certification.
 - FUMEVRA™ performance claims remain tied to validated product or project evidence.
 - No universal cleaning method, pressure-drop limit, service interval or recirculation suitability is inherited across the platform.
+- Liquid oil mist, coolant mist and droplet-dominant aerosol applications must not be auto-classified as FUMEVRA™ solely because they occur in industrial air. They require a separate treatment-path determination.
 
 ## Canonical Approval
 
 - Reviewer: ELIMFILTERS Brand & Engineering Governance
 - Reviewed at: 2026-09-21T02:30:00Z
 - Metrics approved: 0
-- Technical relationships approved: 5
+- Technical relationships approved: 7
 - Promotion gate: PASS
