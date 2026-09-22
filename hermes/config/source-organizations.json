@@ -2802,7 +2802,10 @@
       "parent_company": null,
       "region": "North America",
       "official_domain": "https://www.donaldson.com",
-      "monitored_urls": [],
+      "monitored_urls": [
+        "https://www.donaldson.com/en/resources/technical-articles/?pg=donaldson:product-group/industrial-air-filtration",
+        "https://www.donaldson.com/en/resources/case-studies/?pg=donaldson:product-group/industrial-air-filtration"
+      ],
       "source_type": "html",
       "enabled": true,
       "official": true,
@@ -2820,9 +2823,13 @@
         "hydraulic_filters",
         "cabin_filters",
         "coolant_filters",
-        "fuel_water_separators"
+        "fuel_water_separators",
+        "industrial_air_filtration",
+        "dust_collectors",
+        "mist_collectors",
+        "replacement_filters"
       ],
-      "notes": "",
+      "notes": "Official Donaldson source coverage includes Industrial Air Filtration technical articles and case studies for HERMES governed technical research; competitor identity remains internal provenance.",
       "status": "ACTIVE",
       "discovery_required": false
     },
