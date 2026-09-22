@@ -661,7 +661,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Oil viscosity and temperature range', 'Wear-debris generation and external ingression', 'Continuous circulation or intermittent duty', 'Bearing, gear or servo cleanliness sensitivity', 'Oxidation products or water that may coexist with particles', 'Available pressure drop and pump behavior'],
           ['Wear-debris trend increases', 'Persistent particle contamination', 'Short filter service intervals', 'Restriction outside expected temperature/flow behavior', 'Downstream deposits continue despite acceptable particle control', 'Seal or bypass evidence'],
           '/images/oil-hand.avif',
-          '/images/elementos-oil.avif',
+          '/images/LUBREVA.png',
         ),
         selectionInputs: [
           'Lubricant type, viscosity grade and additive chemistry',
