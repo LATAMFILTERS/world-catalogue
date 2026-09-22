@@ -149,12 +149,17 @@ cross_reference_write_allowed: false
 - TECHNICAL-REFERENCE-PALL-HYDRAULIC-LUBRICATION
 - TECHNICAL-REFERENCE-PALL-OIL-PURIFICATION
 - TECHNICAL-REFERENCE-PARKER-OIL-CONDITIONING
+- EXTERNAL-PRIMARY-PALL-HYDRAULIC-LUBRICATION
+- EXTERNAL-PRIMARY-PALL-INDUSTRIAL-LUBRICATION
+- EXTERNAL-PRIMARY-PALL-OIL-PURIFICATION
+- EXTERNAL-PRIMARY-PALL-VARNISH-REMOVAL
 
 ## Governance
 
 - FLUREXIS™ is a commercial Industrial & Process platform, not one universal product or performance claim.
 - Numeric efficiency, cleanliness, moisture, capacity, pressure-drop and service-life values remain tied to validated products or projects.
 - External technical references support mechanism understanding but do not authorize automatic catalogue writes or cross-references.
+- Purifiers, dehydration units, varnish-remediation skids, pumps and reservoirs are application equipment; FLUREXIS™ commercial scope is centered on validated media and replacement elements unless a separate system scope is explicitly approved.
 
 ## Canonical Approval
 
