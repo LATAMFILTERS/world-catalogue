@@ -23,6 +23,8 @@ test('HERMES mission contains a dedicated Industrial Air domain including mist m
   assert.ok(domain.topics.includes('oil mist filtration'));
   assert.ok(domain.topics.includes('coalescence'));
   assert.ok(domain.topics.includes('liquid drainage'));
+  assert.equal(domain.research_mode, 'EVERGREEN_TECHNICAL_LIBRARY');
+  assert.equal(domain.preferred_source_urls.length, 2);
   assert.equal(mission.evidence_policy.follow_same_domain_article_and_case_study_pages, true);
   assert.equal(mission.evidence_policy.case_study_results_are_application_specific, true);
 });
