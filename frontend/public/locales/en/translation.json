@@ -552,6 +552,82 @@
       "lead": "For new installations, difficult contamination problems, retrofit programs, OEM requirements and recurring industrial supply opportunities.",
       "cta": "START INDUSTRIAL ENGINEERING REVIEW",
       "generalContact": "General contact"
+    },
+    "platformPage": {
+      "breadcrumbHome": "HOME",
+      "breadcrumbIndustrialProcess": "INDUSTRIAL & PROCESS",
+      "commercialTechnologyPlatform": "COMMERCIAL TECHNOLOGY PLATFORM",
+      "defaultPositioning": "The platform groups validated Industrial & Process treatment families by engineering function. Select the treatment mechanism first; product and system configuration follow the operating conditions and required outcome.",
+      "platformLabel": "Platform",
+      "domainLabel": "Domain",
+      "divisionLabel": "Division",
+      "divisionValue": "Industrial & Process",
+      "platformRole": "PLATFORM ROLE",
+      "navigateByTreatmentFunction": "Navigate by treatment function.",
+      "mediaCaption": "Representative industrial application context. Final solution remains project-specific.",
+      "defaultTreatmentScope": "TREATMENT SCOPE",
+      "defaultTreatmentScopeTitle": "Match the process problem to the treatment path.",
+      "defaultTreatmentScopeLead": "{{name}} organizes the available treatment mechanisms so selection begins with the actual process condition, contaminant behavior and required outcome.",
+      "exploreTreatmentPath": "EXPLORE TREATMENT PATH",
+      "technologyFamilies": "TECHNOLOGY FAMILIES",
+      "selectTreatmentMechanism": "Select the treatment mechanism.",
+      "exploreTechnology": "EXPLORE TECHNOLOGY",
+      "operatingReality": "OPERATING REALITY",
+      "operatingRealityTitle": "Industrial treatment starts with the process problem.",
+      "operatingRealityLead": "Flow, pressure, temperature, chemistry, contaminant form, duty cycle, compatibility, existing equipment and required outlet condition determine which treatment family and physical configuration belong in the project.",
+      "platformFirst": "Platform first",
+      "platformFirstBody": "{{name}} narrows the project to the correct treatment universe without forcing an early product choice.",
+      "technologySecond": "Technology second",
+      "technologySecondBody": "The family page defines the mechanism, application context and evidence required before product or system specification.",
+      "engineeringQualification": "ENGINEERING QUALIFICATION",
+      "engineeringQualificationTitle": "What must be known before a treatment architecture is selected.",
+      "defaultQualification": {
+        "process": {
+          "title": "Process",
+          "items": {
+            "fluidComposition": "Fluid, gas, air or water composition",
+            "flowRate": "Flow rate and duty profile",
+            "operatingPressure": "Operating and design pressure",
+            "temperatureRange": "Temperature range"
+          }
+        },
+        "contamination": {
+          "title": "Contamination",
+          "items": {
+            "contaminantType": "Contaminant type and concentration",
+            "loadingPattern": "Loading pattern and variability",
+            "treatmentObjective": "Required removal or treatment objective",
+            "processSensitivity": "Upstream and downstream process sensitivity"
+          }
+        },
+        "integration": {
+          "title": "Integration",
+          "items": {
+            "materialsCompatibility": "Materials and chemical compatibility",
+            "existingHousing": "Existing housing, vessel or skid",
+            "connections": "Connections and installation envelope",
+            "outletQuality": "Required outlet quality and verification method"
+          }
+        }
+      },
+      "standardsAndTestGovernance": "STANDARDS & TEST GOVERNANCE",
+      "standardsThatGovernPlatform": "Standards that govern this platform",
+      "standardsLead": "This platform inherits the applicable ISO, ASTM and other validated test methods maintained in its canonical Knowledge Center record. Individual family pages narrow the list to the actual element or treatment mechanism.",
+      "standardsFootnote": "A standard is applied only within its published scope and the validated product duty. Listing it here is not a blanket certification claim for every ELIMFILTERS element in the platform.",
+      "technicalBasis": "TECHNICAL BASIS",
+      "governedPlatformEngineeringReference": "Governed platform engineering reference",
+      "canonicalKnowledgeCenterReference": "Canonical Knowledge Center reference",
+      "canonicalKnowledgeCenterReferenceBody": "Approved treatment relationships, operating conditions and diagnostic guidance for {{name}} are maintained in the governed ELIMFILTERS Knowledge Center.",
+      "openEngineeringReference": "OPEN ENGINEERING REFERENCE",
+      "evidenceBeforeClaims": "Evidence before claims",
+      "evidenceBeforeClaimsBody": "Numeric performance, capacity, pressure-drop, service-life and outlet-condition claims remain tied to validated product or project evidence.",
+      "applicationSupport": "APPLICATION SUPPORT",
+      "applicationSupportTitle": "Bring us the operating conditions. We resolve the treatment architecture.",
+      "applicationSupportLead": "Industrial & Process projects are qualified by duty, operating envelope, contamination mechanism, process risk and compatibility before the physical solution is selected.",
+      "technicalReviewPath": "TECHNICAL REVIEW PATH",
+      "exploreIndustrialProcess": "EXPLORE INDUSTRIAL & PROCESS",
+      "returnToFivePlatforms": "Return to the five commercial technology platforms.",
+      "industrialProcessHome": "INDUSTRIAL & PROCESS HOME"
     }
   }
 }

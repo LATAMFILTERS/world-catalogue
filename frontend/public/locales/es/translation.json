@@ -541,6 +541,82 @@
       "lead": "Para instalaciones nuevas, problemas de contaminación difíciles, programas de retrofit, requisitos OEM y oportunidades recurrentes de suministro industrial.",
       "cta": "INICIAR REVISIÓN DE INGENIERÍA INDUSTRIAL",
       "generalContact": "Contacto general"
+    },
+    "platformPage": {
+      "breadcrumbHome": "INICIO",
+      "breadcrumbIndustrialProcess": "INDUSTRIAL Y PROCESO",
+      "commercialTechnologyPlatform": "PLATAFORMA TECNOLÓGICA COMERCIAL",
+      "defaultPositioning": "La plataforma agrupa familias de tratamiento Industrial & Process validadas por función de ingeniería. Selecciona primero el mecanismo de tratamiento; la configuración de producto y sistema sigue de las condiciones de operación y el resultado requerido.",
+      "platformLabel": "Plataforma",
+      "domainLabel": "Dominio",
+      "divisionLabel": "División",
+      "divisionValue": "Industrial y Proceso",
+      "platformRole": "ROL DE LA PLATAFORMA",
+      "navigateByTreatmentFunction": "Navega por función de tratamiento.",
+      "mediaCaption": "Contexto de aplicación industrial representativo. La solución final sigue siendo específica del proyecto.",
+      "defaultTreatmentScope": "ALCANCE DE TRATAMIENTO",
+      "defaultTreatmentScopeTitle": "Empareja el problema de proceso con la vía de tratamiento.",
+      "defaultTreatmentScopeLead": "{{name}} organiza los mecanismos de tratamiento disponibles para que la selección comience por la condición real del proceso, el comportamiento del contaminante y el resultado requerido.",
+      "exploreTreatmentPath": "EXPLORAR VÍA DE TRATAMIENTO",
+      "technologyFamilies": "FAMILIAS DE TECNOLOGÍA",
+      "selectTreatmentMechanism": "Selecciona el mecanismo de tratamiento.",
+      "exploreTechnology": "EXPLORAR TECNOLOGÍA",
+      "operatingReality": "REALIDAD OPERATIVA",
+      "operatingRealityTitle": "El tratamiento industrial empieza por el problema de proceso.",
+      "operatingRealityLead": "Caudal, presión, temperatura, química, forma del contaminante, ciclo de trabajo, compatibilidad, equipo existente y condición de salida requerida determinan qué familia de tratamiento y configuración física corresponden al proyecto.",
+      "platformFirst": "Plataforma primero",
+      "platformFirstBody": "{{name}} acota el proyecto al universo de tratamiento correcto sin forzar una elección temprana de producto.",
+      "technologySecond": "Tecnología después",
+      "technologySecondBody": "La página de familia define el mecanismo, el contexto de aplicación y la evidencia requerida antes de especificar producto o sistema.",
+      "engineeringQualification": "CALIFICACIÓN DE INGENIERÍA",
+      "engineeringQualificationTitle": "Qué se debe conocer antes de seleccionar una arquitectura de tratamiento.",
+      "defaultQualification": {
+        "process": {
+          "title": "Proceso",
+          "items": {
+            "fluidComposition": "Composición del fluido, gas, aire o agua",
+            "flowRate": "Caudal y perfil de trabajo",
+            "operatingPressure": "Presión de operación y de diseño",
+            "temperatureRange": "Rango de temperatura"
+          }
+        },
+        "contamination": {
+          "title": "Contaminación",
+          "items": {
+            "contaminantType": "Tipo y concentración del contaminante",
+            "loadingPattern": "Patrón de carga y variabilidad",
+            "treatmentObjective": "Objetivo de remoción o tratamiento requerido",
+            "processSensitivity": "Sensibilidad del proceso aguas arriba y aguas abajo"
+          }
+        },
+        "integration": {
+          "title": "Integración",
+          "items": {
+            "materialsCompatibility": "Materiales y compatibilidad química",
+            "existingHousing": "Housing, vessel o skid existente",
+            "connections": "Conexiones y envolvente de instalación",
+            "outletQuality": "Calidad de salida requerida y método de verificación"
+          }
+        }
+      },
+      "standardsAndTestGovernance": "NORMAS Y GOBERNANZA DE ENSAYOS",
+      "standardsThatGovernPlatform": "Normas que gobiernan esta plataforma",
+      "standardsLead": "Esta plataforma hereda las normas ISO, ASTM y otros métodos de ensayo validados y mantenidos en su registro canónico del Knowledge Center. Las páginas de cada familia acotan la lista al elemento o mecanismo de tratamiento real.",
+      "standardsFootnote": "Una norma se aplica solo dentro de su alcance publicado y el duty validado del producto. Incluirla aquí no es un claim de certificación general para cada elemento ELIMFILTERS de la plataforma.",
+      "technicalBasis": "BASE TÉCNICA",
+      "governedPlatformEngineeringReference": "Referencia de ingeniería de plataforma gobernada",
+      "canonicalKnowledgeCenterReference": "Referencia canónica del Knowledge Center",
+      "canonicalKnowledgeCenterReferenceBody": "Las relaciones de tratamiento aprobadas, condiciones de operación y guía diagnóstica para {{name}} se mantienen en el Knowledge Center gobernado de ELIMFILTERS.",
+      "openEngineeringReference": "ABRIR REFERENCIA DE INGENIERÍA",
+      "evidenceBeforeClaims": "Evidencia antes que claims",
+      "evidenceBeforeClaimsBody": "Los claims numéricos de desempeño, capacidad, caída de presión, vida útil y condición de salida siguen atados a evidencia validada de producto o proyecto.",
+      "applicationSupport": "SOPORTE DE APLICACIÓN",
+      "applicationSupportTitle": "Tráenos las condiciones de operación. Nosotros resolvemos la arquitectura de tratamiento.",
+      "applicationSupportLead": "Los proyectos Industrial & Process se califican por duty, envolvente operativa, mecanismo de contaminación, riesgo de proceso y compatibilidad antes de seleccionar la solución física.",
+      "technicalReviewPath": "VÍA DE REVISIÓN TÉCNICA",
+      "exploreIndustrialProcess": "EXPLORAR INDUSTRIAL Y PROCESO",
+      "returnToFivePlatforms": "Vuelve a las cinco plataformas tecnológicas comerciales.",
+      "industrialProcessHome": "INICIO INDUSTRIAL Y PROCESO"
     }
   }
 }
