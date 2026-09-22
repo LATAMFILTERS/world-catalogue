@@ -3,9 +3,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
 import pg from 'file:///C:/ELIMSERVER/repos/world-catalogue/node_modules/pg/lib/index.js';
 import { assessDossier, canonicalRoleForDossier } from './catalogue-dossier-core.mjs';
 
+const require = createRequire(import.meta.url);
+const { buildBrandResearchStrategy } = require('../../lib/hermes-brand-search-router');
 const { Client } = pg;
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const url=process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
@@ -57,8 +60,9 @@ function dossierShape(){
 function systemPrompt(){
   return `You are HERMES performing a complete canonical product dossier investigation for ELIMFILTERS.
 Research ONE exact product deeply in a single investigation. This is not a simple manufacturer lookup.
-Use live web search and website visiting. Prefer the manufacturer's official product page, official catalogue,
-official PDFs, technical data sheets, OEM catalogues and official application data.
+Use the supplied brand_search_strategy before generic web search. For every known manufacturer/OEM, enter through its specialized official catalogue, vehicle lookup, product search, parts system, or application engine first.
+Generic web search is discovery-only: use it to locate an official specialized engine or official document, never as the final authority when a specialized engine exists.
+Prefer the manufacturer's official product page, official catalogue, official PDFs, technical data sheets, OEM catalogues and official application data.
 Never infer facts from part-number shape, similarity, marketplace listings, SEO snippets, or unverified cross references.
 The current ELIMFILTERS codigo_base may be a placeholder. If source_candidate_code is supplied, validate that candidate.
 Classify the product market_segment from official applications/product context as LIGHT_DUTY, HEAVY_DUTY, or INDUSTRIAL.
@@ -81,6 +85,16 @@ function retryDelay(status,body,attempt){
   return Math.ceil((m?Number(m[1]):15)*1000)+1500+(attempt*1000);
 }
 async function research(item){
+  const strategyBrands = [
+    item.discovery_hints?.source_candidate_brand,
+    item.organization?.name,
+    item.competitor_hint?.manufacturer,
+    item.competitor_hint?.brand,
+  ].filter(Boolean);
+  const brandSearchStrategy = buildBrandResearchStrategy({
+    brands: strategyBrands,
+    market: item.discovery_hints?.market || null,
+  });
   const input={
     instruction:'Build the complete defensible product dossier. Do not close the product if any required axis remains unresolved.',
     target:{
@@ -96,6 +110,7 @@ async function research(item){
     selected_organization:item.organization||null,
     selected_source:item.source||null,
     competitor_hint:item.competitor_hint||null,
+    brand_search_strategy:brandSearchStrategy,
     required_json:dossierShape()
   };
   let requestModel=model;

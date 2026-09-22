@@ -40,3 +40,20 @@ test('current Isuzu platform source is identity evidence, not filter fitment evi
   assert.equal(source.market_scope, 'US');
   assert.equal(source.fitment_promotion_allowed, false);
 });
+
+
+test('vehicle closure carries specialized official brand engines before generic web research', () => {
+  const [item] = buildVehicleClosureWorkOrders({
+    waveId: 'NPR_US_PRIORITY',
+    requestedAt: '2026-09-22T00:00:00.000Z',
+  });
+  assert.equal(item.brand_search_strategy.specialized_engine_first, true);
+  assert.equal(item.brand_search_strategy.generic_web_is_discovery_only, true);
+  const ids = item.brand_search_strategy.routes.flatMap(route => route.engines.map(engine => engine.id));
+  assert.ok(ids.includes('isuzu_us_nseries'));
+  assert.ok(ids.includes('wix_vehicle_lookup'));
+  assert.ok(ids.includes('donaldson_product_search'));
+  assert.ok(ids.includes('fleetguard_product_search'));
+  assert.ok(ids.includes('mann_online_catalog'));
+  assert.match(item.gap.question, /specialized official brand engines first/i);
+});

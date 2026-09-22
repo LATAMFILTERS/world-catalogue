@@ -13,6 +13,7 @@ const {
   createHermesResearchRequest: buildHermesResearchContract,
   validateHermesResearchRequest,
 } = require('../../lib/knowledge-governance/hermes-research-contract');
+const { buildBrandResearchStrategy } = require('../../lib/hermes-brand-search-router');
 
 function stableId(parts) {
   return crypto.createHash('sha256').update(parts.join('|')).digest('hex').slice(0, 24);
@@ -22,6 +23,7 @@ function buildQuestion({ model, year, engineFamily, displacement, positions }) {
   return [
     `Close the US filter application for ${year} Isuzu ${model} with ${engineFamily} ${displacement}.`,
     `Research these positions: ${positions.join(', ')}.`,
+    'Search through specialized official brand engines first: Isuzu US vehicle resources for platform/engine identity; WIX, Donaldson, Fleetguard and MANN official catalogs/application engines for filter fitment. Generic web search may discover a source but cannot replace the specialized brand engine when one exists.',
     'Use US OEM or official filter-manufacturer application evidence for the exact model year and engine.',
     'Do not inherit fitment from a competitor cross-reference, similar model, non-US catalogue, or part-number similarity.',
     'For every position return the exact source part number, filter role, year/model/engine evidence, source URL, and whether the evidence is sufficient for ELIMFILTERS application promotion.',
@@ -42,6 +44,10 @@ function buildVehicleClosureWorkOrders({ waveId = 'NPR_US_PRIORITY', requestedAt
         engineFamily: wave.engine_family,
         displacement: wave.engine_displacement,
         positions: wave.required_positions,
+      });
+      const brand_search_strategy = buildBrandResearchStrategy({
+        brands: ['ISUZU', 'WIX', 'DONALDSON', 'FLEETGUARD', 'MANN-FILTER'],
+        market: manifest.market,
       });
       const deterministic = stableId([manifest.platform_id, model, String(year), wave.engine_family, wave.engine_displacement]);
       const gap = createKnowledgeGap({
@@ -108,6 +114,7 @@ function buildVehicleClosureWorkOrders({ waveId = 'NPR_US_PRIORITY', requestedAt
         platform_id: manifest.platform_id,
         wave_id: wave.id,
         promotion_policy: 'EXACT_APPLICATION_EVIDENCE_REQUIRED__NO_CROSS_REFERENCE_INHERITANCE',
+        brand_search_strategy,
         gap,
         research,
       });
