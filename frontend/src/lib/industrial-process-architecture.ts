@@ -726,6 +726,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/oil-hand.avif',
           '/images/oilfilvw.avif',
         ),
+        heroVideo: '/images/dewaits%20video.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Oil type, base stock and additive chemistry',
           'Water state: free, emulsified or dissolved',
