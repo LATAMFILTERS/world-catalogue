@@ -3412,20 +3412,33 @@
       "parent_company": "Danaher Corporation",
       "region": "North America",
       "official_domain": "https://www.pall.com",
-      "monitored_urls": [],
+      "monitored_urls": [
+        "https://www.pall.com/en/oil-gas/seprasol-plus-liquid-gas-coalescer.html",
+        "https://www.pall.com/en/industrial-manufacturing/general-industrial/medium-light-hydraulic.html",
+        "https://www.pall.com/en/industrial-manufacturing/general-industrial/medium-light-lubrication.html",
+        "https://www.pall.com/en/industrial-manufacturing/automotive/oil-purifiers1.html",
+        "https://www.pall.com/en/industrial-manufacturing/blog/varnish-in-oil.html",
+        "https://shop.pall.com/us/en/products/filter-cartridges/depth-filters/profile-ii"
+      ],
       "source_type": "html",
-      "enabled": false,
+      "enabled": true,
       "official": true,
       "trust_level": "high",
       "priority": 2,
       "market_scope": null,
       "product_scope": [
         "industrial_filtration",
-        "aerospace_filtration"
+        "aerospace_filtration",
+        "gas_coalescence",
+        "hydraulic_filtration",
+        "lubrication_filtration",
+        "oil_purification",
+        "varnish_remediation",
+        "depth_filtration"
       ],
-      "notes": "",
-      "status": "DISCOVERY_REQUIRED",
-      "discovery_required": true
+      "notes": "Primary Industrial & Process evidence source for COALVEX™, FLUREXIS™ and depth-filtration mechanisms. Product-specific performance remains source-specific.",
+      "status": "ACTIVE",
+      "discovery_required": false
     },
     {
       "id": "camfil",
@@ -3434,19 +3447,27 @@
       "parent_company": null,
       "region": "Europe",
       "official_domain": "https://www.camfil.com",
-      "monitored_urls": [],
+      "monitored_urls": [
+        "https://www.camfil.com/en-us/products/general-ventilation-filters",
+        "https://www.camfil.com/en-us/products/epa-hepa--ulpa-filters",
+        "https://www.camfil.com/en-us/products/molecular-filters",
+        "https://www.camfil.com/en-us/insights/standard-and-regulations/iso-10121-3---2022"
+      ],
       "source_type": "html",
-      "enabled": false,
+      "enabled": true,
       "official": true,
-      "trust_level": "medium",
+      "trust_level": "high",
       "priority": 2,
       "market_scope": null,
       "product_scope": [
-        "industrial_air_filtration"
+        "industrial_air_filtration",
+        "general_ventilation",
+        "hepa_ulpa",
+        "molecular_air_filtration"
       ],
-      "notes": "",
-      "status": "DISCOVERY_REQUIRED",
-      "discovery_required": true
+      "notes": "Primary Industrial & Process air-filtration evidence source for AEREMIS™ mechanism and standards context. External brand remains internal provenance.",
+      "status": "ACTIVE",
+      "discovery_required": false
     },
     {
       "id": "ahlstrom",
@@ -4227,6 +4248,67 @@
         "MANN HUMMEL"
       ],
       "notes": "Official MANN-FILTER product catalogue authority for filter identity verification.",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "dupont_water_solutions",
+      "name": "DuPont Water Solutions",
+      "category": "filtration_components",
+      "parent_company": "DuPont",
+      "region": "Global",
+      "official_domain": "https://www.dupont.com",
+      "monitored_urls": [
+        "https://www.dupont.com/water/technologies.html",
+        "https://www.dupont.com/water/technologies/ion-exchange-ix.html",
+        "https://www.dupont.com/water/technologies/electrodeionization-edi.html"
+      ],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 1,
+      "market_scope": [
+        "industrial",
+        "water_treatment",
+        "power_generation",
+        "oil_gas"
+      ],
+      "product_scope": [
+        "reverse_osmosis",
+        "nanofiltration",
+        "ultrafiltration",
+        "ion_exchange",
+        "electrodeionization"
+      ],
+      "notes": "Primary AQUVEXIS™ mechanism evidence. External proprietary product names remain internal provenance.",
+      "status": "ACTIVE",
+      "discovery_required": false
+    },
+    {
+      "id": "calgon_carbon",
+      "name": "Calgon Carbon Corporation",
+      "category": "filter_media",
+      "parent_company": "Kuraray",
+      "region": "North America",
+      "official_domain": "https://www.calgoncarbon.com",
+      "monitored_urls": [
+        "https://www.calgoncarbon.com/products/filtrasorb/"
+      ],
+      "source_type": "html",
+      "enabled": true,
+      "official": true,
+      "trust_level": "high",
+      "priority": 2,
+      "market_scope": [
+        "industrial",
+        "water_treatment"
+      ],
+      "product_scope": [
+        "activated_carbon",
+        "adsorptive_media"
+      ],
+      "notes": "Primary activated-carbon mechanism evidence for AQUVEXIS™ ADSOVEX™. Product-specific capacity remains source-specific.",
       "status": "ACTIVE",
       "discovery_required": false
     }
