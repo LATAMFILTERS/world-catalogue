@@ -1172,7 +1172,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         ],
       },
     ],
-
+  },
 ] as const;
 
 export function getIndustrialProcessPlatform(slug: string) {
