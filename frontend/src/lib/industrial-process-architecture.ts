@@ -603,7 +603,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Component cleanliness sensitivity', 'System pressure and cyclic pressure duty', 'Flow rate and flow transients', 'Fluid viscosity and cold-start temperature', 'Ingression rate and wear-debris generation', 'Target cleanliness and monitoring method'],
           ['Recurring valve, pump or actuator contamination', 'Cleanliness code does not recover as expected', 'Unexpected differential-pressure rise', 'Frequent bypass indication or short element life', 'Cold-start restriction', 'Visible bypass, seal or installation evidence'],
           '/images/hidraulic.avif',
-          '/images/hidraulic.avif',
+          '/images/HYITRIS-image.png',
         ),
         selectionInputs: [
           'Hydraulic fluid type and additive chemistry',
