@@ -55,6 +55,25 @@ test('pilot has unique exact Pall source codes and does not invent ELIMFILTERS S
   }
 });
 
+test('minimum canonical product record has no silent gaps', () => {
+  for (const row of pilot.elements) {
+    for (const field of pilot.minimum_record_fields) {
+      assert.equal(Object.prototype.hasOwnProperty.call(row, field), true, `${row.source_code}: missing field ${field}`);
+    }
+    assert.ok(row.canonical_product_id.startsWith('COALVEX-P01-'));
+    assert.equal(row.supplier_sku, row.source_code);
+    assert.ok(Array.isArray(row.application) && row.application.length > 0);
+    assert.ok(Array.isArray(row.industry) && row.industry.length > 0);
+    assert.ok(Array.isArray(row.research_gaps) && row.research_gaps.length > 0);
+    assert.equal(row.flow.value, null);
+    assert.match(row.flow.status, /REQUIRED/);
+    assert.equal(row.operating_pressure.value, null);
+    assert.match(row.operating_pressure.status, /DEPENDENT/);
+    assert.equal(row.maximum_design_pressure.value, null);
+    assert.match(row.maximum_design_pressure.status, /DEPENDENT/);
+  }
+});
+
 test('all numeric/product performance stays manufacturer-declared and uses Pall primary evidence', () => {
   assert.equal(pilot.evidence_policy.performance_claim_state, 'MANUFACTURER_DECLARED');
   for (const row of pilot.elements) {
