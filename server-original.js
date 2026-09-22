@@ -2162,12 +2162,12 @@ app.get('/api/search/equipment', searchLimiter, async (req, res) => {
     // a second fitment source of truth.
     const vehicleConds = [];
     if (resolvedMake) {
-      vehicleConds.push(`upper(regexp_replace(coalesce(va.canonical_make, va.make, ''), '[^A-Z0-9]', '', 'g')) = ${idx}`);
+      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_make', va.make, ''), '[^A-Z0-9]', '', 'g')) = ${idx}`);
       params.push(normalizeAlphaNum(resolvedMake));
       idx++;
     }
     if (resolvedModel) {
-      vehicleConds.push(`upper(regexp_replace(coalesce(va.canonical_model, va.model_family, ''), '[^A-Z0-9]', '', 'g')) = ${idx}`);
+      vehicleConds.push(`upper(regexp_replace(coalesce(to_jsonb(va)->>'canonical_model', va.model_family, ''), '[^A-Z0-9]', '', 'g')) = ${idx}`);
       params.push(normalizeAlphaNum(resolvedModel));
       idx++;
     }
