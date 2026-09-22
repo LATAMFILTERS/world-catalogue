@@ -5,51 +5,62 @@ const assert = require('node:assert/strict');
 const manifest = require('../config/vehicle-platform-closure/isuzu-us-phase2-oem.json');
 const { years, buildPhase2WorkOrders } = require('../scripts/hermes/isuzu-us-phase2-oem-work-orders');
 
-test('phase 2 covers every Isuzu USA model year from 2000 through 2026', () => {
+test('diesel closure covers every Isuzu USA model year from 2000 through 2026', () => {
   const range = years();
   assert.equal(range.length, 27);
   assert.equal(range[0], 2000);
   assert.equal(range.at(-1), 2026);
+  assert.equal(manifest.fuel_scope, 'DIESEL_ONLY');
 });
 
-test('phase 2 creates 81 OEM-only work orders for 27 years x 3 stages', () => {
-  const items = buildPhase2WorkOrders({ requestedAt: '2026-09-22T00:00:00.000Z' });
-  assert.equal(items.length, 81);
-  assert.equal(items.every(x => x.aftermarket_allowed === false), true);
-  assert.equal(items.every(x => x.research.allow_competitor_sources === false), true);
-  assert.equal(items.every(x => x.research.preferred_manufacturer_domains.length === 1), true);
-  assert.equal(items.every(x => x.research.preferred_manufacturer_domains[0] === 'isuzucv.com'), true);
+test('workflow is exactly three phases', () => {
+  assert.deepEqual(manifest.stages.map(x => x.id), [
+    'PHASE_1_DIESEL_VEHICLE_UNIVERSE',
+    'PHASE_2_DIESEL_OEM_FILTER_OEN',
+    'PHASE_3_AFTERMARKET_RESOLUTION'
+  ]);
 });
 
-test('2A defines models only from Isuzu primary evidence', () => {
+test('phase 1 is Isuzu-only and excludes gasoline', () => {
   const [item] = buildPhase2WorkOrders({
     requestedAt: '2026-09-22T00:00:00.000Z',
-    stageId: '2A_MODEL_UNIVERSE',
+    stageId: 'PHASE_1_DIESEL_VEHICLE_UNIVERSE',
   });
-  assert.match(item.gap.question, /only Isuzu Commercial Truck of America primary sources/i);
-  assert.match(item.gap.question, /aftermarket source to define the OEM model universe/i);
+  assert.equal(item.aftermarket_allowed, false);
+  assert.equal(item.research.allow_competitor_sources, false);
+  assert.deepEqual(item.research.preferred_manufacturer_domains, ['isuzucv.com']);
+  assert.match(item.gap.question, /DIESEL/i);
+  assert.match(item.gap.question, /Exclude gasoline vehicles completely/i);
 });
 
-test('2C requires OEN before Donaldson or Fleetguard', () => {
+test('phase 2 captures Isuzu OEN before aftermarket', () => {
   const [item] = buildPhase2WorkOrders({
     requestedAt: '2026-09-22T00:00:00.000Z',
-    stageId: '2C_OEM_FILTER_OEN',
+    stageId: 'PHASE_2_DIESEL_OEM_FILTER_OEN',
   });
+  assert.equal(item.aftermarket_allowed, false);
   assert.match(item.gap.question, /genuine OE\/OEN/i);
   assert.match(item.gap.question, /Do not consult Donaldson, Fleetguard/i);
-  assert.equal(item.source_policy, 'OEM_ONLY_UNTIL_PHASE2_COMPLETE');
 });
 
-test('candidate historical names never become accepted applications by presence in manifest', () => {
-  assert.ok(manifest.candidate_model_names.includes('FBR'));
-  assert.match(manifest.candidate_policy, /search terms only/i);
-  assert.match(manifest.candidate_policy, /not accepted/i);
+test('phase 3 resolves Donaldson before Fleetguard', () => {
+  const [item] = buildPhase2WorkOrders({
+    requestedAt: '2026-09-22T00:00:00.000Z',
+    stageId: 'PHASE_3_AFTERMARKET_RESOLUTION',
+  });
+  assert.equal(item.aftermarket_allowed, true);
+  assert.equal(item.research.allow_competitor_sources, true);
+  assert.equal(item.research.minimum_independent_sources, 2);
+  assert.equal(item.research.preferred_manufacturer_domains[0], 'donaldson.com');
+  assert.equal(item.research.preferred_manufacturer_domains[1], 'fleetguard.com');
+  assert.match(item.gap.question, /Donaldson first, Fleetguard second/i);
+  assert.match(item.gap.question, /cross-reference alone must never establish vehicle fitment/i);
 });
 
-test('downstream order after phase 2 is Donaldson then Fleetguard', () => {
-  assert.deepEqual(manifest.downstream_after_phase2.slice(0,2), [
-    'DONALDSON_BY_VERIFIED_OEN',
-    'FLEETGUARD_BY_VERIFIED_OEN_IF_NEEDED'
-  ]);
+test('gasoline sources are removed from authoritative source registry', () => {
+  assert.equal(manifest.authoritative_sources.some(x => /GAS/.test(x.id)), false);
+});
+
+test('HD canonical base rule remains Donaldson then Fleetguard', () => {
   assert.equal(manifest.canonical_hd_rule, 'DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD');
 });
