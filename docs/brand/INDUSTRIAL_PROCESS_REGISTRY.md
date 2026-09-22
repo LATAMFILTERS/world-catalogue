@@ -2,7 +2,7 @@
 
 Status: Active
 Scope: ELIMFILTERS Industrial & Process
-Governance state: Natural Gas Filtration v1 CLOSED; remaining Industrial & Process families pending source extraction and validation.
+Governance state: Industrial & Process technical architecture v1 CLOSED across AEREMIS™, PARTION™, COALVEX™, FLUREXIS™ and AQUVEXIS™. Product-specific numeric performance, SKU, cross-reference and application claims remain evidence- and approval-gated.
 
 ## 1. Purpose
 
@@ -432,7 +432,7 @@ Natural Gas v1 currently identifies two technology candidates:
 - TC-NG-01 — Gas-Liquid Coalescence
 - TC-NG-02 — Gas-Liquid Separation
 
-No commercial names are assigned yet.
+Historical v1 note: no commercial names were assigned at this stage. Superseded by the Internal Commercial Naming Freeze in Sections 49–50.
 
 ## 12. Next Industrial & Process Family
 
@@ -11190,3 +11190,133 @@ This URL is a presentation and lead-entry layer. It does not create a new taxono
 
 Status:
 INDUSTRIAL & PROCESS DEDICATED WEB ENTRY POINT — IMPLEMENTED v1.
+
+
+## 52. Industrial & Process Technical Closure v1 — 2026-09-22
+
+Status: TECHNICAL ARCHITECTURE CLOSED v1.
+
+This closure supersedes earlier statements that the remaining Industrial & Process families were still pending source extraction. Historical discovery and naming sections remain in this registry as an audit trail, but current technical authority is the approved canonical knowledge layer under `elimfilters-vault/13-canonical-knowledge/industrial-process/`.
+
+### 52.1 Root engineering doctrine
+
+Canonical object:
+- `IP-INDUSTRIAL-PROCESS-ARCHITECTURE`
+- Knowledge Center slug: `ip-industrial-process-architecture`
+
+Universal selection sequence:
+
+Carrier medium
+→ Contaminant phase
+→ Treatment objective
+→ Operating envelope
+→ Treatment mechanism
+→ Replaceable media / element
+→ Existing equipment interface
+→ Verification method
+→ Product-specific validated claim
+
+Mixed contamination may require staged treatment. One mechanism must not be assumed to resolve solid particulate, liquid droplets, dissolved molecular species, dissolved ions, water states and oil-degradation products simultaneously.
+
+### 52.2 Commercial product boundary
+
+Default ELIMFILTERS Industrial & Process commercial scope:
+- filtration media and replacement filters
+- dust/fume filter elements
+- gas coalescing and separation elements
+- hydraulic and lubrication filter elements
+- oil-dehydration and oil-remediation replacement media/elements where approved
+- depth-filter cartridges
+- activated-carbon media/elements
+- membrane elements
+- ion-exchange media/resins
+
+Context unless separately approved:
+- collectors
+- air handlers
+- pressure vessels
+- separators
+- skids
+- pumps
+- fans
+- ductwork
+- reservoirs
+- piping
+- controls and instrumentation
+- complete RO/NF/UF treatment trains
+- complete EDI modules/stacks/skids
+
+Equipment shown in imagery or discussed in application engineering must not be represented as ELIMFILTERS-manufactured equipment solely because an ELIMFILTERS media or replacement element operates inside that equipment.
+
+### 52.3 Canonical closure matrix
+
+Root:
+- Industrial & Process — `ip-industrial-process-architecture` — CLOSED
+
+AEREMIS™:
+- platform architecture — `ip-aeremis-air-treatment-architecture` — CLOSED
+- General Air Filtration — `ip-aeremis-general-air-filtration` — CLOSED
+- HE-CRIVA™ — `ip-aeremis-he-criva-critical-air` — CLOSED
+- MA-TREA™ — `ip-aeremis-ma-trea-molecular-air` — CLOSED
+
+PARTION™:
+- platform architecture — `ip-partion-dust-fume-architecture` — CLOSED
+- FUMEVRA™ — `ip-partion-fumevra-fine-dust-fume` — CLOSED
+- Oil mist / coolant mist — UNBRANDED TREATMENT PATH; phase-specific research active; not automatically FUMEVRA™
+
+COALVEX™:
+- platform architecture — `ip-coalvex-gas-conditioning-architecture` — CLOSED
+- COALERIS™ — `ip-coalvex-coaleris-gas-coalescence` — CLOSED
+- Gas-Liquid Separation — `ip-coalvex-gas-liquid-separation` — CLOSED
+
+FLUREXIS™:
+- platform architecture — `ip-flurexis-fluid-conditioning-architecture` — CLOSED
+- HYLTRIS™ — `ip-flurexis-hyltris-hydraulic-filtration` — CLOSED
+- LUBREVA™ — `ip-flurexis-lubreva-lubrication-filtration` — CLOSED
+- DEWATIS™ — `ip-flurexis-dewatis-oil-dehydration` — CLOSED
+- OILREVEX™ — `ip-flurexis-oilrevex-oil-condition-remediation` — CLOSED
+
+AQUVEXIS™:
+- platform architecture — `ip-aquvexis-water-treatment-architecture` — CLOSED
+- Depth Filtration — `ip-aquvexis-depth-filtration` — CLOSED
+- ADSOVEX™ — `ip-aquvexis-adsovex-adsorptive-carbon` — CLOSED
+- MEMBRAVEX™ — `ip-aquvexis-membravex-membrane-separation` — CLOSED
+- IONVEXA™ — `ip-aquvexis-ionvexa-ion-exchange` — CLOSED
+- Electrodeionization — `ip-aquvexis-electrodeionization` — CLOSED AS DESCRIPTIVE TREATMENT PATH; does not establish an ELIMFILTERS EDI equipment product
+
+### 52.4 Primary evidence coverage
+
+Primary technical evidence is centrally mapped in:
+- `docs/brand/INDUSTRIAL_PROCESS_TECHNICAL_SOURCE_REGISTRY.md`
+
+Governed primary sources currently include:
+- Camfil for general ventilation, HEPA/ULPA and molecular air treatment
+- Donaldson Industrial Air technical articles, case studies and mist-collection literature
+- Pall for liquid/gas coalescence, industrial hydraulic/lubrication filtration, oil purification, varnish remediation and depth filtration
+- DuPont Water Solutions for membrane, ion-exchange and EDI treatment mechanisms
+- Calgon Carbon for activated-carbon water treatment
+
+HERMES consumes these sources as internal technical provenance. Supplier brands and proprietary performance remain governed and are not automatically published as ELIMFILTERS claims.
+
+### 52.5 Closure meaning
+
+CLOSED means:
+- treatment mechanism and family boundary are defined;
+- page-to-canonical-Knowledge-Center linkage exists;
+- operating inputs and diagnostic boundaries are defined;
+- equipment-versus-replacement-element scope is defined;
+- applicable standards context is defined;
+- primary-source research paths are defined in HERMES.
+
+CLOSED does NOT mean:
+- every future SKU is validated;
+- every supplier performance figure is an ELIMFILTERS claim;
+- every application or cross-reference is approved;
+- every contextual machine or skid is an ELIMFILTERS product;
+- future standards, source evidence or technology discoveries are frozen.
+
+HERMES remains responsible for continued evidence research and gap detection under the existing approval gates.
+
+Status:
+INDUSTRIAL & PROCESS TECHNICAL ARCHITECTURE v1 — CLOSED.
+
