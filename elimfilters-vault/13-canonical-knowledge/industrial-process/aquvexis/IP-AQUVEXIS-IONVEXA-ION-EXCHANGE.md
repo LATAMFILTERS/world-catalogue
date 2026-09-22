@@ -123,11 +123,13 @@ cross_reference_write_allowed: false
 - TECHNICAL-REFERENCE-ISO-20468-6
 - TECHNICAL-REFERENCE-ISO-23044
 - TECHNICAL-REFERENCE-ASTM-D1782
+- EXTERNAL-PRIMARY-DUPONT-ION-EXCHANGE
 
 ## Governance
 
 - Resin capacity, leakage and service-life claims remain product- and water-chemistry-specific.
 - A standards reference does not imply universal certification across all IONVEXA™ media.
+- IONVEXA™ commercial scope is ion-exchange media/resin and validated replacement configurations; complete regeneration vessels and chemical systems remain application context unless separately approved.
 
 ## Canonical Approval
 
