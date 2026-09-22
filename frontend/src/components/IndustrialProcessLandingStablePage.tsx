@@ -8,6 +8,7 @@ import {
   INDUSTRIAL_PROCESS_PLATFORMS,
   industrialProcessPlatformUrl,
   industrialProcessTechnologyUrl,
+  localizeIndustrialProcessPlatform,
   type IndustrialProcessPlatform,
 } from '@/lib/industrial-process-architecture';
 
@@ -32,7 +33,12 @@ const inquiryHref =
   'mailto:info@elimfilters.com?subject=Industrial%20%26%20Process%20Engineering%20Review&body=Company%3A%0ACountry%3A%0AIndustry%20%2F%20process%3A%0AApplication%3A%0AFluid%20or%20gas%3A%0AFlow%3A%0APressure%3A%0ATemperature%3A%0AContaminant%20or%20treatment%20objective%3A%0AExisting%20equipment%20%2F%20reference%3A%0AProject%20timing%3A';
 
 export function IndustrialProcessLandingStablePage({ platformStandards }: { platformStandards: PlatformStandards[] }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const platforms = INDUSTRIAL_PROCESS_PLATFORMS.map((platform) => localizeIndustrialProcessPlatform(platform, i18n.language));
+  const localizedPlatformStandards = platformStandards.map(({ platform, standards }) => ({
+    platform: localizeIndustrialProcessPlatform(platform, i18n.language),
+    standards,
+  }));
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
@@ -116,7 +122,7 @@ export function IndustrialProcessLandingStablePage({ platformStandards }: { plat
           <p style={eyebrow}>{t('industrialProcess.platforms.eyebrow')}</p>
           <h2 id="platform-title" style={sectionTitle}>{t('industrialProcess.platforms.title')}</h2>
           <div style={platformGrid}>
-            {INDUSTRIAL_PROCESS_PLATFORMS.map((platform, index) => (
+            {platforms.map((platform, index) => (
               <article key={platform.slug} style={platformCard}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16, alignItems: 'baseline' }}>
                   <span style={numberStyle}>{String(index + 1).padStart(2, '0')}</span>
@@ -149,7 +155,7 @@ export function IndustrialProcessLandingStablePage({ platformStandards }: { plat
           <h2 id="standards-title" style={sectionTitle}>{t('industrialProcess.standards.title')}</h2>
           <p style={{ ...lead, maxWidth: 980 }}>{t('industrialProcess.standards.lead')}</p>
           <div style={platformGrid}>
-            {platformStandards.map(({ platform, standards }) => (
+            {localizedPlatformStandards.map(({ platform, standards }) => (
               <article key={platform.slug} style={platformCard}>
                 <Link href={industrialProcessPlatformUrl(platform.slug)} style={{ color: '#fff', textDecoration: 'none' }}>
                   <h3 style={{ ...platformMark, marginTop: 0 }}>{platform.name}</h3>

@@ -7,6 +7,7 @@ import styles from './MacrocoreTechnologyPage.module.css';
 import {
   type IndustrialProcessPlatform,
   industrialProcessTechnologyUrl,
+  localizeIndustrialProcessPlatform,
 } from '@/lib/industrial-process-architecture';
 import { getCanonicalKnowledgeBySlug } from '@/lib/services/canonical-knowledge-service';
 
@@ -17,8 +18,9 @@ const DEFAULT_QUALIFICATION_ITEM_KEYS: Record<(typeof DEFAULT_QUALIFICATION_GROU
   integration: ['materialsCompatibility', 'existingHousing', 'connections', 'outletQuality'],
 };
 
-export function IndustrialProcessPlatformStablePage({ platform }: { platform: IndustrialProcessPlatform }) {
-  const { t } = useTranslation();
+export function IndustrialProcessPlatformStablePage({ platform: rawPlatform }: { platform: IndustrialProcessPlatform }) {
+  const { t, i18n } = useTranslation();
+  const platform = localizeIndustrialProcessPlatform(rawPlatform, i18n.language);
   const inquiryHref = `mailto:applications@elimfilters.com?subject=${encodeURIComponent(`${platform.name} Industrial & Process Platform Review`)}`;
   const canonicalKnowledge = platform.knowledgeCenterSlug ? getCanonicalKnowledgeBySlug(platform.knowledgeCenterSlug) : null;
   const standards = canonicalKnowledge?.standards ?? [];

@@ -1,3 +1,5 @@
+import { INDUSTRIAL_PROCESS_ES, COMMON_SELECTION_ES, type TechnologyEsOverride } from './industrial-process-translations.es';
+
 export interface IndustrialProcessTechnology {
   slug: string;
   name: string;
@@ -949,4 +951,56 @@ export function industrialProcessPlatformUrl(platformSlug: string) {
 
 export function industrialProcessTechnologyUrl(platformSlug: string, technologySlug: string) {
   return `/industrial-process/${platformSlug}/${technologySlug}/`;
+}
+
+function localizeTechnology(technology: IndustrialProcessTechnology, override?: TechnologyEsOverride): IndustrialProcessTechnology {
+  if (!override) return technology;
+  return {
+    ...technology,
+    title: override.title ?? technology.title,
+    summary: override.summary ?? technology.summary,
+    treatmentFunction: override.treatmentFunction ?? technology.treatmentFunction,
+    mechanisms: override.mechanisms ?? technology.mechanisms,
+    applications: override.applications ?? technology.applications,
+    conditions: override.conditions ?? technology.conditions,
+    selectionInputs: override.selectionInputs ?? technology.selectionInputs,
+    serviceSignals: override.serviceSignals ?? technology.serviceSignals,
+    subfamilies: override.subfamilies ?? technology.subfamilies,
+    engineeringNotes: override.engineeringNotes?.length ? override.engineeringNotes : technology.engineeringNotes,
+    customFaqs: override.customFaqs ?? technology.customFaqs,
+  };
+}
+
+/**
+ * Returns the platform with Spanish content overlaid where a translation exists in
+ * industrial-process-translations.es.ts, falling back to the English source field by field.
+ * Any other locale currently falls back entirely to English via this same function.
+ */
+export function localizeIndustrialProcessPlatform(platform: IndustrialProcessPlatform, lang: string): IndustrialProcessPlatform {
+  if (lang !== 'es') return platform;
+  const override = INDUSTRIAL_PROCESS_ES[platform.slug];
+  if (!override) return platform;
+
+  const selectionGuide = platform.selectionGuide?.map((item) => {
+    const guideOverride = override.selectionGuide?.[item.technologySlug];
+    return guideOverride ? { ...item, title: guideOverride.title, body: guideOverride.body } : item;
+  });
+
+  const technologies = platform.technologies.map((technology) => {
+    const techOverride = override.technologies?.[technology.slug];
+    const localized = localizeTechnology(technology, techOverride);
+    return technology.selectionInputs === commonSelection
+      ? { ...localized, selectionInputs: techOverride?.selectionInputs ?? COMMON_SELECTION_ES }
+      : localized;
+  });
+
+  return {
+    ...platform,
+    summary: override.summary ?? platform.summary,
+    positioning: override.positioning ?? platform.positioning,
+    selectionContext: override.selectionContext ?? platform.selectionContext,
+    selectionGuide: selectionGuide ?? platform.selectionGuide,
+    qualificationGroups: override.qualificationGroups ?? platform.qualificationGroups,
+    technologies,
+  };
 }

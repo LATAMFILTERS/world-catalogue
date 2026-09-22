@@ -9,6 +9,7 @@ import {
   type IndustrialProcessTechnology,
   industrialProcessPlatformUrl,
   industrialProcessTechnologyUrl,
+  localizeIndustrialProcessPlatform,
 } from '@/lib/industrial-process-architecture';
 import { getCanonicalKnowledgeBySlug } from '@/lib/services/canonical-knowledge-service';
 
@@ -49,14 +50,16 @@ function faqItems(
 }
 
 export function IndustrialProcessTechnologyStablePage({
-  platform,
-  technology,
+  platform: rawPlatform,
+  technology: rawTechnology,
 }: {
   platform: IndustrialProcessPlatform;
   technology: IndustrialProcessTechnology;
 }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const p = 'industrialProcess.technologyPage';
+  const platform = localizeIndustrialProcessPlatform(rawPlatform, i18n.language);
+  const technology = platform.technologies.find((item) => item.slug === rawTechnology.slug) ?? rawTechnology;
   const url = `https://elimfilters.com${industrialProcessTechnologyUrl(platform.slug, technology.slug)}`;
   const faqs = faqItems(t, p, platform, technology);
   const canonicalKnowledge = technology.knowledgeCenterSlug ? getCanonicalKnowledgeBySlug(technology.knowledgeCenterSlug) : null;
