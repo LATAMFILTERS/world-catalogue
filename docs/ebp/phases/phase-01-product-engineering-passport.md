@@ -149,8 +149,9 @@ All tables live in the existing Postgres database under the `ebp_`
 prefix, added via additive migrations under `migrations/ebp-phase1/`
 (`001_schema.sql` creates the 5 tables; `002_seed_applicability_matrix.sql`
 seeds the matrix; `003_actor_identity_and_applicability_approval.sql`
-adds the declared-actor and applicability-approval columns described
-below), following the same convention as `migrations/kg-phase1/
+adds the declared-actor and applicability-approval columns; and
+`004_industrial_process_duty.sql` adds the governed `INDUSTRIAL_PROCESS`
+duty without reclassifying Industrial products as Heavy Duty), following the same convention as `migrations/kg-phase1/
 001_schema.sql` (idempotent `CREATE TABLE`/`ADD COLUMN IF NOT EXISTS`,
 `COMMENT ON TABLE`/`COMMENT ON COLUMN`, explicit indexes). See those
 files plus `validate.sql` and `rollback.sql` for the exact, executable
