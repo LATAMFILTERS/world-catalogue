@@ -190,7 +190,13 @@
         "combustible dust",
         "dust hazard analysis",
         "industrial air filtration case studies"
-      ]
+      ],
+      "research_mode": "EVERGREEN_TECHNICAL_LIBRARY",
+      "preferred_source_urls": [
+        "https://www.donaldson.com/en/resources/technical-articles/?pg=donaldson:product-group/industrial-air-filtration",
+        "https://www.donaldson.com/en/resources/case-studies/?pg=donaldson:product-group/industrial-air-filtration"
+      ],
+      "research_goal": "Systematically close Industrial & Process knowledge gaps using primary technical articles, case studies and linked official product literature. Older primary evidence may be used as engineering evidence but must not be misrepresented as a new development."
     },
     {
       "id": "fuel_filtration",
