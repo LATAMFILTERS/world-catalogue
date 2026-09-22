@@ -17,6 +17,8 @@ on:
       - 'hermes/config/source-endpoints.json'
       - 'hermes/config/intelligence-mission.json'
       - 'scripts/hermes/industrial-research-policy.mjs'
+      - 'scripts/hermes/industrial-product-base-policy.mjs'
+      - 'tests/hermes-phase5/industrial-product-base-policy.test.mjs'
       - 'scripts/hermes/source-registry-core.mjs'
       - 'scripts/hermes/collect-real-sources-core.mjs'
       - 'tests/hermes-phase5/industrial-process-technical-closure.test.mjs'
@@ -39,6 +41,8 @@ on:
       - 'hermes/config/source-endpoints.json'
       - 'hermes/config/intelligence-mission.json'
       - 'scripts/hermes/industrial-research-policy.mjs'
+      - 'scripts/hermes/industrial-product-base-policy.mjs'
+      - 'tests/hermes-phase5/industrial-product-base-policy.test.mjs'
       - 'scripts/hermes/source-registry-core.mjs'
       - 'scripts/hermes/collect-real-sources-core.mjs'
       - 'tests/hermes-phase5/industrial-process-technical-closure.test.mjs'
@@ -65,6 +69,9 @@ jobs:
 
       - name: 'Validate Industrial & Process technical closure'
         run: node --test tests/hermes-phase5/industrial-process-technical-closure.test.mjs
+
+      - name: 'Validate Industrial product base-code authority'
+        run: node --test tests/hermes-phase5/industrial-product-base-policy.test.mjs
 
       - name: Confirm governing files
         shell: bash
