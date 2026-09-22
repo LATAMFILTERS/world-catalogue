@@ -55,6 +55,7 @@ const datasheetBlocks = [
 ];
 
 export default function IndustrialProcessPage() {
+  const rootCanonicalKnowledge = getCanonicalKnowledgeBySlug('ip-industrial-process-architecture');
   const platformStandards = INDUSTRIAL_PROCESS_PLATFORMS.map((platform) => ({
     platform,
     standards: platform.knowledgeCenterSlug ? (getCanonicalKnowledgeBySlug(platform.knowledgeCenterSlug)?.standards ?? []) : [],
@@ -142,6 +143,32 @@ export default function IndustrialProcessPage() {
                 <p style={bodyCopy}>
                   Product selection is resolved through validated technology cores and application evidence. Supplier claims are not presented as ELIMFILTERS performance until approved.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ ...section, background: '#050505' }} aria-labelledby="scope-title">
+          <div style={container}>
+            <div style={twoCol}>
+              <div>
+                <p style={eyebrow}>GOVERNED TREATMENT ARCHITECTURE</p>
+                <h2 id="scope-title" style={sectionTitle}>Select the mechanism first. Keep the element separate from the equipment.</h2>
+              </div>
+              <div>
+                <p style={lead}>
+                  Industrial &amp; Process selection starts with the carrier medium, contaminant phase, operating envelope and required downstream condition. Mixed contamination can require staged treatment rather than one universal filter family.
+                </p>
+                <p style={bodyCopy}>
+                  ELIMFILTERS commercial scope is centered on validated filtration, separation and treatment media and replacement elements. Housings, pressure vessels, collectors, skids, pumps, fans, ductwork, controls and other process equipment are application context unless a separate ELIMFILTERS system scope is explicitly approved.
+                </p>
+                {rootCanonicalKnowledge ? (
+                  <div style={{ marginTop: 20 }}>
+                    <Link href="/knowledge-center/canonical/ip-industrial-process-architecture/" style={{ color: '#FFF12D', fontWeight: 700, textDecoration: 'none' }}>
+                      OPEN INDUSTRIAL &amp; PROCESS ENGINEERING REFERENCE →
+                    </Link>
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>
