@@ -786,6 +786,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/oil-hand.avif',
           '/images/OILREVEX.png',
         ),
+        heroVideo: '/images/OILREVEX%20video.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Fluid type, base stock and additive chemistry',
           'Laboratory evidence identifying the degradation or contamination mechanism',
