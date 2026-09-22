@@ -73,6 +73,22 @@ const TRUST_CONFIDENCE = { high: 0.65, medium: 0.5, low: 0.35 };
 // lowest tier rather than erroring, so a newly-added registry category
 // never breaks collection.
 export const DEFAULT_SOURCE_PRIORITY_TIER = 9;
+
+// Endpoint-level priority lets high-value technical documentation outrank a
+// generic competitor newsroom without reclassifying the organization itself.
+// Lower number = earlier processing under the weekly cap.
+export const ENDPOINT_TYPE_PRIORITY = {
+  standards_updates: 1,
+  technical_bulletins: 1,
+  documentation: 1,
+  service_information: 2,
+  technology_pages: 2,
+  product_announcements: 3,
+  press_releases: 4,
+  newsroom: 5,
+  news: 5
+};
+
 export const SOURCE_PRIORITY = {
   standards: 1,
   regulation: 1,
@@ -97,6 +113,12 @@ export const SOURCE_PRIORITY = {
   filtration_manufacturers: 5
 };
 
+export function sourcePriorityTier(source = {}) {
+  const categoryTier = SOURCE_PRIORITY[source.category] ?? DEFAULT_SOURCE_PRIORITY_TIER;
+  const endpointTier = ENDPOINT_TYPE_PRIORITY[source.endpoint_type];
+  return Number.isFinite(endpointTier) ? Math.min(categoryTier, endpointTier) : categoryTier;
+}
+
 export const DEFAULT_MAX_SOURCES_PER_RUN = 35;
 
 /**
@@ -108,7 +130,7 @@ export const DEFAULT_MAX_SOURCES_PER_RUN = 35;
  */
 export function applySourceCap(sources, maxSources = DEFAULT_MAX_SOURCES_PER_RUN) {
   if (!Number.isFinite(maxSources) || maxSources <= 0 || sources.length <= maxSources) return sources;
-  const withIndex = sources.map((source, index) => ({ source, index, tier: SOURCE_PRIORITY[source.category] ?? DEFAULT_SOURCE_PRIORITY_TIER }));
+  const withIndex = sources.map((source, index) => ({ source, index, tier: sourcePriorityTier(source) }));
   withIndex.sort((a, b) => (a.tier - b.tier) || (a.index - b.index));
   return withIndex.slice(0, maxSources).sort((a, b) => a.index - b.index).map((entry) => entry.source);
 }
@@ -154,6 +176,7 @@ export function sourcesFromRegistry({ organizations, endpoints }) {
       trust_level: org.trust_level,
       organization_id: org.id,
       endpoint_id: endpoint.id,
+      endpoint_type: endpoint.endpoint_type,
       region: org.region,
       // Only ever tried when the primary url returns successfully but with
       // empty/insufficient content — never on a network failure. Optional;
