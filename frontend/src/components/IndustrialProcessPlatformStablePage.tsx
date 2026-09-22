@@ -131,6 +131,16 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         </div>
       </div></section>
 
+      <section className={styles.band}><div className={styles.inner}>
+        <p className={styles.eyebrow}>ELIMFILTERS PRODUCT SCOPE</p>
+        <h2 className={styles.h2}>The treatment element is the product. Process equipment is the application context.</h2>
+        <p className={styles.lead}>ELIMFILTERS Industrial &amp; Process is centered on validated filtration, separation and treatment media and replacement elements. Housings, pressure vessels, collectors, skids, pumps, fans, ductwork, controls and other process equipment shown or referenced on these pages remain application context unless a separate ELIMFILTERS system scope is explicitly approved.</p>
+        <div className={styles.twoColumnNotes}>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>What ELIMFILTERS defines</h3><p className={styles.body}>The page defines the treatment mechanism, replaceable media or element function, operating inputs, interface requirements and evidence needed to qualify the application.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>What is not implied</h3><p className={styles.body}>Showing or discussing a collector, vessel, skid, air handler, purifier, membrane train or other plant equipment does not represent that equipment as an ELIMFILTERS-manufactured product.</p></article>
+        </div>
+      </div></section>
+
       <section className={styles.bandAlt}><div className={styles.inner}>
         <p className={styles.eyebrow}>ENGINEERING QUALIFICATION</p>
         <h2 className={styles.h2}>What must be known before a treatment architecture is selected.</h2>
