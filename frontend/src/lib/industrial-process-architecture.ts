@@ -724,7 +724,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Free, emulsified or dissolved water state', 'Oil chemistry, viscosity and additive compatibility', 'Operating temperature', 'Water loading and re-entry rate', 'Reservoir volume and recirculation path', 'Required final moisture condition and verification method'],
           ['Water content does not decline as expected', 'Rapid water re-entry after treatment', 'Persistent emulsion', 'Foaming or entrained gas accompanies the water problem', 'Fluid condition remains unstable after treatment', 'Treatment causes unexpected additive or compatibility concerns'],
           '/images/oil-hand.avif',
-          '/images/oilfilvw.avif',
+          '/images/dewatis.png',
         ),
         heroVideo: '/images/dewaits%20video.mp4',
         hideHeroPoster: true,
