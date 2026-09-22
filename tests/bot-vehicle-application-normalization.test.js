@@ -43,7 +43,7 @@ test('unified bot extracts canonical Isuzu vehicle entities', () => {
   assert.equal(result.vehicleContext.matched, true);
 });
 
-test('verified vehicle application lookup fails closed through application governance and filters by system', async () => {
+test('verified vehicle lookup uses exact relational evidence and filters by system', async () => {
   let capturedSql = '';
   let capturedParams = null;
   __setProtocolPoolForTests({
@@ -59,21 +59,15 @@ test('verified vehicle application lookup fails closed through application gover
               id: 1,
               sku: 'EA_TEST',
               codigo_base: 'P_TEST',
-              duty: 'LIGHT_DUTY',
+              duty: 'HEAVY_DUTY',
               filter_type: 'Air Filter',
               equipment_applications: [],
-              vehicle_applications: [{
-                make: 'ISUZU',
-                model: 'NPR-HD',
-                year: '2022',
-                engine: '4HK1-TC',
-                displacement: '5.2L'
-              }],
+              vehicle_applications: [],
               oem_codes: [],
               competitor_codes: [],
               brand_crossrefs: {},
               specs: {},
-              enrichment_data: { application_governance: { vehicle_verified: true } },
+              enrichment_data: {},
               is_primary: true
             },
             {
@@ -83,18 +77,12 @@ test('verified vehicle application lookup fails closed through application gover
               duty: 'LIGHT_DUTY',
               filter_type: 'Cabin Air Filter',
               equipment_applications: [],
-              vehicle_applications: [{
-                make: 'ISUZU',
-                model: 'NPR-HD',
-                year: '2022',
-                engine: '4HK1-TC',
-                displacement: '5.2L'
-              }],
+              vehicle_applications: [],
               oem_codes: [],
               competitor_codes: [],
               brand_crossrefs: {},
               specs: {},
-              enrichment_data: { application_governance: { vehicle_verified: true } },
+              enrichment_data: {},
               is_primary: false
             }
           ]
@@ -108,43 +96,24 @@ test('verified vehicle application lookup fails closed through application gover
   const result = await searchByApplication(['ISUZU', 'NPR-HD', '5.2L'], 2022, 'air', vehicleContext);
 
   assert.equal(result.lookupStatus, 'completed');
-  assert.equal(result.applicationScope, 'VERIFIED_VEHICLE');
+  assert.equal(result.applicationScope, 'VERIFIED_RELATIONAL_VEHICLE');
   assert.equal(result.products.length, 1);
   assert.equal(result.products[0].sku, 'EA_TEST');
-  assert.match(capturedSql, /vehicle_applications::text/);
-  assert.match(capturedSql, /application_governance/);
-  assert.match(capturedSql, /vehicle_verified/);
-  assert.deepEqual(capturedParams, ['%ISUZU%', '%NPR-HD%', '%5.2L%', '%2022%']);
+  assert.match(capturedSql, /ld_catalog\.ld_vehicle_applications/);
+  assert.match(capturedSql, /evidence_status = 'VERIFIED'/);
+  assert.match(capturedSql, /catalog_application_evidence/);
+  assert.deepEqual(capturedParams, ['ISUZU', 'NPRHD', 2022, '%52L%']);
 });
 
 test('generic NPR does not silently widen to NPR-HD', async () => {
+  let capturedParams = null;
   __setProtocolPoolForTests({
     connect: async () => ({
-      async query(sql) {
+      async query(sql, params = []) {
         const text = String(sql);
         if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(text)) return { rows: [] };
-        return {
-          rows: [{
-            id: 3,
-            sku: 'EA_NPRHD_ONLY',
-            codigo_base: 'P_NPRHD',
-            duty: 'LIGHT_DUTY',
-            filter_type: 'Air Filter',
-            equipment_applications: [],
-            vehicle_applications: [{
-              make: 'ISUZU',
-              model: 'NPR-HD',
-              year: '2022',
-              displacement: '5.2L'
-            }],
-            oem_codes: [],
-            competitor_codes: [],
-            brand_crossrefs: {},
-            specs: {},
-            enrichment_data: { application_governance: { vehicle_verified: true } },
-            is_primary: true
-          }]
-        };
+        capturedParams = params;
+        return { rows: [] };
       },
       release() {}
     })
@@ -154,6 +123,7 @@ test('generic NPR does not silently widen to NPR-HD', async () => {
   const result = await searchByApplication(['ISUZU', 'NPR', '5.2L'], 2022, 'air', vehicleContext);
   assert.equal(vehicleContext.model, 'NPR');
   assert.equal(result.products.length, 0);
+  assert.equal(capturedParams[1], 'NPR');
 });
 
 test('legacy equipment lookup remains backward compatible and does not claim vehicle verification', async () => {
