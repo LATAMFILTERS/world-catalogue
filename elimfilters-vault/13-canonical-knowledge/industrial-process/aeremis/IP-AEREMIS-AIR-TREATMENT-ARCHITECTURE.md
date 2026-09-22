@@ -83,12 +83,16 @@ cross_reference_write_allowed: false
 - INTERNAL-BRAND-TECHNOLOGY-REGISTRY
 - INTERNAL-BRAND-PRODUCT-REGISTRY
 - INTERNAL-WEB-AEREMIS-ARCHITECTURE
+- EXTERNAL-PRIMARY-CAMFIL-GENERAL-VENTILATION
+- EXTERNAL-PRIMARY-CAMFIL-HEPA-ULPA
+- EXTERNAL-PRIMARY-CAMFIL-MOLECULAR-AIR
 
 ## Governance
 
 - AEREMIS™ is a commercial platform, not a universal efficiency class.
 - General Air Filtration remains descriptive and is not represented as an independent trademarked technology.
 - No universal efficiency, capacity, pressure-drop or service-life claim is inherited across the platform.
+- Air handlers, housings, fans, ductwork, air cleaners and other ventilation equipment remain application context unless a separate ELIMFILTERS system scope is explicitly approved.
 
 ## Canonical Approval
 
