@@ -5,11 +5,19 @@ import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 import { INDUSTRIAL_PROCESS_PLATFORMS, industrialProcessPlatformUrl, industrialProcessTechnologyUrl } from '@/lib/industrial-process-architecture';
 import { getCanonicalKnowledgeBySlug } from '@/lib/services/canonical-knowledge-service';
 
+const INDUSTRIAL_PROCESS_URL = 'https://elimfilters.com/industrial-process/';
+
 export const metadata: Metadata = {
   title: 'Industrial & Process Filtration | ELIMFILTERS',
   description:
     'ELIMFILTERS Industrial & Process is the engineering entry point for high-value filtration, separation, fluid conditioning, gas conditioning, air treatment and industrial water projects.',
-  alternates: { canonical: '/industrial-process/' },
+  alternates: {
+    canonical: '/industrial-process/',
+    languages: {
+      'x-default': INDUSTRIAL_PROCESS_URL,
+      en: INDUSTRIAL_PROCESS_URL,
+    },
+  },
   openGraph: {
     title: 'Industrial & Process Filtration | ELIMFILTERS',
     description:
@@ -62,9 +70,41 @@ export default function IndustrialProcessPage() {
   const inquiryHref =
     'mailto:info@elimfilters.com?subject=Industrial%20%26%20Process%20Engineering%20Review&body=Company%3A%0ACountry%3A%0AIndustry%20%2F%20process%3A%0AApplication%3A%0AFluid%20or%20gas%3A%0AFlow%3A%0APressure%3A%0ATemperature%3A%0AContaminant%20or%20treatment%20objective%3A%0AExisting%20equipment%20%2F%20reference%3A%0AProject%20timing%3A';
 
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${INDUSTRIAL_PROCESS_URL}#collection`,
+    url: INDUSTRIAL_PROCESS_URL,
+    name: 'Industrial & Process Filtration | ELIMFILTERS',
+    description:
+      'ELIMFILTERS Industrial & Process is the engineering entry point for high-value filtration, separation, fluid conditioning, gas conditioning, air treatment and industrial water projects.',
+    isPartOf: { '@id': 'https://elimfilters.com/#website' },
+    publisher: { '@id': 'https://elimfilters.com/#organization' },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: INDUSTRIAL_PROCESS_PLATFORMS.length,
+      itemListElement: INDUSTRIAL_PROCESS_PLATFORMS.map((platform, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: `${platform.name} — ${platform.descriptor}`,
+        url: `https://elimfilters.com${industrialProcessPlatformUrl(platform.slug)}`,
+      })),
+    },
+  };
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://elimfilters.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Industrial & Process', item: INDUSTRIAL_PROCESS_URL },
+    ],
+  };
+
   return (
     <>
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
         <section
           style={{

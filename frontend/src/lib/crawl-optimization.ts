@@ -10,6 +10,18 @@ export const STATIC_CRAWL_ROUTES = [
   '/knowledge-center/faq', '/videos', '/about', '/contact', '/distributors',
   '/commercial-lines', '/commercial-lines/duratech', '/commercial-lines/marineclean',
   '/engineering/dust-ingestion', '/distributor-application', '/warranty',
+  '/industrial-process',
+  '/industrial-process/aeremis', '/industrial-process/aeremis/general-air-filtration',
+  '/industrial-process/aeremis/he-criva', '/industrial-process/aeremis/ma-trea',
+  '/industrial-process/partion', '/industrial-process/partion/fumevra',
+  '/industrial-process/coalvex', '/industrial-process/coalvex/coaleris',
+  '/industrial-process/coalvex/gas-liquid-separation',
+  '/industrial-process/flurexis', '/industrial-process/flurexis/hyltris',
+  '/industrial-process/flurexis/lubreva', '/industrial-process/flurexis/dewatis',
+  '/industrial-process/flurexis/oilrevex',
+  '/industrial-process/aquvexis', '/industrial-process/aquvexis/depth-filtration',
+  '/industrial-process/aquvexis/adsovex', '/industrial-process/aquvexis/membravex',
+  '/industrial-process/aquvexis/ionvexa', '/industrial-process/aquvexis/electrodeionization',
 ] as const;
 
 export const NOINDEX_PUBLIC_ROUTES = RECRAWL_EXCLUDED_PATHS;
