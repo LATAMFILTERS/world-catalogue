@@ -63,7 +63,7 @@ jobs:
       - name: Validate canonical knowledge
         run: node scripts/validate-knowledge-v2.mjs
 
-      - name: Validate Industrial & Process technical closure
+      - name: 'Validate Industrial & Process technical closure'
         run: node --test tests/hermes-phase5/industrial-process-technical-closure.test.mjs
 
       - name: Confirm governing files
