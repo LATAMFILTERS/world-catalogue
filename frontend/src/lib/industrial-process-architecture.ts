@@ -662,7 +662,10 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Wear-debris trend increases', 'Persistent particle contamination', 'Short filter service intervals', 'Restriction outside expected temperature/flow behavior', 'Downstream deposits continue despite acceptable particle control', 'Seal or bypass evidence'],
           '/images/oil-hand.avif',
           '/images/LUBREVA.png',
+          undefined,
+          '/images/LUBREVA%20TECNICO.mp4',
         ),
+        hideHeroPoster: true,
         selectionInputs: [
           'Lubricant type, viscosity grade and additive chemistry',
           'Operating and startup temperature',
