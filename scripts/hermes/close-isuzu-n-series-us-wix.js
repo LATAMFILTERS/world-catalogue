@@ -5,16 +5,35 @@ require('dotenv').config();
 const crypto = require('crypto');
 const { Pool } = require('pg');
 const { applyVerifiedRelationalVehicleApplications } = require('../../lib/catalog-application-write-service');
+const { resolveBrandSearchEngines } = require('../../lib/hermes-brand-search-router');
+
+const wixRoute = resolveBrandSearchEngines('WIX', { market: 'US', capability: 'vehicle_to_filter' });
+if (!wixRoute.matched || !wixRoute.engines[0]) throw new Error('WIX specialized search engine is not configured');
+const wixEngine = wixRoute.engines[0];
+const wixPartsEndpoint = wixEngine.endpoints?.parts;
+if (!wixPartsEndpoint) throw new Error('WIX specialized vehicle application endpoint is not configured');
+
+function renderEndpoint(template, values) {
+  return String(template).replace(/\{([a-z_]+)\}/gi, (_, key) => encodeURIComponent(values[key] ?? ''));
+}
 
 const SOURCE = Object.freeze({
   authority: 'WIX FILTERS',
+  search_engine_id: wixEngine.id,
+  search_engine_type: wixEngine.type,
   section: 8,
   year: 2022,
   make_id: 2153,
   model_id: 85958,
   engine_id: 136672,
-  url: 'https://m.wixfilters.com/search/SearchPartsByVehicle3?vehicleYear=2022&section=8&make=2153&model=85958&engine=136672',
-  interchange_url: 'https://m.wixfilters.com/Search/InterchangeSearch?partnumber=P543614',
+  url: wixEngine.base_url + renderEndpoint(wixPartsEndpoint, {
+    section: 8,
+    year: 2022,
+    make_id: 2153,
+    model_id: 85958,
+    engine_id: 136672,
+  }),
+  interchange_url: wixEngine.base_url + '/Search/InterchangeSearch?partnumber=P543614',
 });
 
 const AIR_CLOSURE = Object.freeze({
