@@ -2991,9 +2991,12 @@
       "parent_company": "Parker Hannifin Corporation",
       "region": "North America",
       "official_domain": "https://www.parker.com",
-      "monitored_urls": [],
+      "monitored_urls": [
+        "https://discover.parker.com/windfiltration",
+        "https://corpapps.parker.com/interactive-media/industry/industrial-manufacturing-equipment/industrial-manufacturing-hydraulic-press-products-equipment-supplier/Hydraulic-Press-Industrial-Manufacturing-Equipment.asp"
+      ],
       "source_type": "html",
-      "enabled": false,
+      "enabled": true,
       "official": true,
       "trust_level": "high",
       "priority": 1,
@@ -3009,11 +3012,14 @@
         "hydraulic_filters",
         "cabin_filters",
         "coolant_filters",
-        "fuel_water_separators"
+        "fuel_water_separators",
+        "industrial_hydraulic_filter_elements",
+        "industrial_lube_filter_elements",
+        "par_fit_interchanges"
       ],
-      "notes": "Includes Racor, Village Marine, Balston.",
-      "status": "DISCOVERY_REQUIRED",
-      "discovery_required": true
+      "notes": "Primary FLUREXIS™ HYLTRIS™/LUBREVA™ family-anchor evidence. Parker Par Fit is explicitly interchange evidence when another manufacturer is the confirmed original.",
+      "status": "ACTIVE",
+      "discovery_required": false
     },
     {
       "id": "baldwin_filters",
@@ -4261,7 +4267,8 @@
       "monitored_urls": [
         "https://www.dupont.com/water/technologies.html",
         "https://www.dupont.com/water/technologies/ion-exchange-ix.html",
-        "https://www.dupont.com/water/technologies/electrodeionization-edi.html"
+        "https://www.dupont.com/water/technologies/electrodeionization-edi.html",
+        "https://www.dupont.com/brands/filmtec.html"
       ],
       "source_type": "html",
       "enabled": true,
@@ -4281,7 +4288,7 @@
         "ion_exchange",
         "electrodeionization"
       ],
-      "notes": "Primary AQUVEXIS™ mechanism evidence. External proprietary product names remain internal provenance.",
+      "notes": "Primary AQUVEXIS™ mechanism and family-anchor evidence for FilmTec™ RO/NF, DuPont Water Solutions UF, AmberLite™ ion exchange and EDI treatment context. Proprietary product identity remains internal provenance.",
       "status": "ACTIVE",
       "discovery_required": false
     },

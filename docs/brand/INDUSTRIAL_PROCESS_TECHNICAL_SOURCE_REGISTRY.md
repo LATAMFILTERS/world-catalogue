@@ -16,6 +16,18 @@ This registry maps stable internal evidence identifiers to primary manufacturer 
 - Equipment shown by a source may establish process context without becoming an ELIMFILTERS product.
 - Public ELIMFILTERS copy must use neutral engineering language unless external brand exposure is separately approved.
 
+## Base-code authority use
+
+This registry supplies evidence; it does not by itself assign base-code authority.
+
+Base identity follows `INDUSTRIAL_PROCESS_REGISTRY.md §53`:
+
+`ORIGINAL_BASE > FAMILY_ANCHOR_BASE > COMPETITOR_CROSS > SOURCE_ONLY`
+
+A confirmed original element always outranks the family anchor. Interchange catalogues are evidence of equivalence, not proof that the interchange manufacturer is the original source.
+
+Approved family-anchor brands are consumed by HERMES from `scripts/hermes/industrial-product-base-policy.mjs`.
+
 ## AEREMIS™ — Industrial Air
 
 ### EXTERNAL-PRIMARY-CAMFIL-GENERAL-VENTILATION
@@ -60,6 +72,15 @@ Scope: gas particulate filtration, liquid/gas coalescence, liquid/liquid separat
 
 ## FLUREXIS™ — Fluid Conditioning
 
+### EXTERNAL-PRIMARY-PARKER-PAR-FIT-INTERCHANGE
+URL: https://www.parker.com/content/dam/Parker-com/Literature/EMHFF/HFD_Catalog/HFD_Catalog_Par_Fit.pdf  
+Scope: official Parker Par Fit interchange catalogue. Used to validate Parker interchange identity and equivalent-element relationships. It explicitly remains interchange evidence when another manufacturer's original element is established.
+
+### EXTERNAL-PRIMARY-PARKER-PAR-FIT-POWER-GENERATION
+URL: https://www.parker.com/content/dam/Parker-com/Literature/Power-Generation-Market/PDF-Files/Par-Fit-Filtration.pdf  
+Scope: official Parker hydraulic/lube replacement-element application evidence for industrial and power-generation service. Used as primary Parker family-anchor evidence for HYLTRIS™ / LUBREVA™ when original identity is unavailable and the product record is otherwise complete.
+
+
 ### EXTERNAL-PRIMARY-PALL-HYDRAULIC-LUBRICATION
 URL: https://www.pall.com/en/industrial-manufacturing/general-industrial/medium-light-hydraulic.html  
 Scope: hydraulic particulate filtration and ISO 16889 context.
@@ -88,11 +109,15 @@ Scope: graded-pore depth-filter cartridge construction, particle capture and con
 
 ### EXTERNAL-PRIMARY-DUPONT-WATER-TECHNOLOGIES
 URL: https://www.dupont.com/water/technologies.html  
-Scope: UF, RO/NF, ion exchange and EDI technology boundaries.
+Scope: UF, RO/NF, ion exchange and EDI technology boundaries. DuPont Water Solutions is the approved family anchor for MEMBRAVEX™ ultrafiltration when original identity is unavailable and evidence is complete.
+
+### EXTERNAL-PRIMARY-DUPONT-FILMTEC
+URL: https://www.dupont.com/water/technologies/bwro-solutions.html  
+Scope: FilmTec™ reverse-osmosis element families and published element specifications. FilmTec is the approved family anchor for MEMBRAVEX™ RO/NF base identity when original identity is unavailable and the exact element evidence is complete.
 
 ### EXTERNAL-PRIMARY-DUPONT-ION-EXCHANGE
 URL: https://www.dupont.com/water/technologies/ion-exchange-ix.html  
-Scope: ion-exchange mechanism and application context.
+Scope: ion-exchange mechanism and application context. AmberLite™ is the approved IONVEXA™ family anchor when original identity is unavailable and the exact resin/product evidence is complete.
 
 ### EXTERNAL-PRIMARY-DUPONT-EDI
 URL: https://www.dupont.com/water/technologies/electrodeionization-edi.html  

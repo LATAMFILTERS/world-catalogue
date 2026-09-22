@@ -1,3 +1,5 @@
+import { INDUSTRIAL_BASE_CODE_RESEARCH_POLICY, formatIndustrialFamilyAnchorsForPrompt } from './industrial-product-base-policy.mjs';
+
 // Shared HERMES industrial-research guardrails.
 // This is descriptive research routing policy only. It does not grant
 // publication, technology, application or catalogue authority.
@@ -34,4 +36,4 @@ OFFICIAL TECHNICAL LIBRARY / CASE-STUDY RESEARCH
 `;
 
 export const HERMES_INDUSTRIAL_RESEARCH_POLICY =
-  `${INDUSTRIAL_PROCESS_ROUTING_POLICY}\n${INDUSTRIAL_AIR_RESEARCH_POLICY}\n${DEEP_TECHNICAL_LIBRARY_POLICY}`;
+  `${INDUSTRIAL_PROCESS_ROUTING_POLICY}\n${INDUSTRIAL_BASE_CODE_RESEARCH_POLICY}\nAPPROVED INDUSTRIAL FAMILY ANCHORS\n${formatIndustrialFamilyAnchorsForPrompt()}\n${INDUSTRIAL_AIR_RESEARCH_POLICY}\n${DEEP_TECHNICAL_LIBRARY_POLICY}`;

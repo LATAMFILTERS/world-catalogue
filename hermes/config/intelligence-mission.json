@@ -427,12 +427,14 @@
       "label": "Industrial hydraulic, lubrication and oil conditioning",
       "research_mode": "EVERGREEN_TECHNICAL_LIBRARY",
       "preferred_source_urls": [
+        "https://discover.parker.com/windfiltration",
+        "https://corpapps.parker.com/interactive-media/industry/industrial-manufacturing-equipment/industrial-manufacturing-hydraulic-press-products-equipment-supplier/Hydraulic-Press-Industrial-Manufacturing-Equipment.asp",
         "https://www.pall.com/en/industrial-manufacturing/general-industrial/medium-light-hydraulic.html",
         "https://www.pall.com/en/industrial-manufacturing/general-industrial/medium-light-lubrication.html",
         "https://www.pall.com/en/industrial-manufacturing/automotive/oil-purifiers1.html",
         "https://www.pall.com/en/industrial-manufacturing/blog/varnish-in-oil.html"
       ],
-      "research_goal": "Close FLUREXIS™ knowledge gaps across particulate cleanliness, water state and removal, oil degradation and varnish remediation. Keep purifier/skid equipment as context and keep supplier numeric performance product-specific.",
+      "research_goal": "Close FLUREXIS™ knowledge and product-identity gaps across particulate cleanliness, water state/removal and oil-degradation remediation. Apply the Industrial base-code authority rule: confirmed original first; Parker as HYLTRIS™/LUBREVA™ family anchor only when original identity is unresolved; Pall as DEWATIS™/OILREVEX™ family anchor; interchange references remain crosses.",
       "topics": [
         "hydraulic filtration",
         "industrial lubrication filtration",
@@ -460,13 +462,14 @@
       "label": "Industrial water filtration and treatment media",
       "research_mode": "EVERGREEN_TECHNICAL_LIBRARY",
       "preferred_source_urls": [
+        "https://www.dupont.com/brands/filmtec.html",
         "https://shop.pall.com/us/en/products/filter-cartridges/depth-filters/profile-ii",
         "https://www.dupont.com/water/technologies.html",
         "https://www.dupont.com/water/technologies/ion-exchange-ix.html",
         "https://www.dupont.com/water/technologies/electrodeionization-edi.html",
         "https://www.calgoncarbon.com/products/filtrasorb/"
       ],
-      "research_goal": "Close AQUVEXIS™ knowledge gaps across depth filtration, activated-carbon adsorption, RO/NF/UF membrane separation, ion exchange and EDI while keeping complete water-treatment skids and EDI systems outside ELIMFILTERS product scope unless separately approved.",
+      "research_goal": "Close AQUVEXIS™ knowledge and product-identity gaps across depth filtration, activated-carbon adsorption, RO/NF/UF membrane separation, ion exchange and EDI. Apply approved family anchors only when original identity is unresolved; keep EDI descriptive with no commercial base until separately approved.",
       "topics": [
         "industrial water depth filtration",
         "graded pore depth media",
