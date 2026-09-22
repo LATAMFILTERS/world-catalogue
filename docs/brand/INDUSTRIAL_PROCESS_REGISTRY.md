@@ -11292,8 +11292,9 @@ Primary technical evidence is centrally mapped in:
 Governed primary sources currently include:
 - Camfil for general ventilation, HEPA/ULPA and molecular air treatment
 - Donaldson Industrial Air technical articles, case studies and mist-collection literature
-- Pall for liquid/gas coalescence, industrial hydraulic/lubrication filtration, oil purification, varnish remediation and depth filtration
-- DuPont Water Solutions for membrane, ion-exchange and EDI treatment mechanisms
+- Pall for liquid/gas coalescence, oil purification, varnish remediation and depth filtration
+- Parker for industrial hydraulic/lubrication reference identity and validated interchange research
+- DuPont Water Solutions / FilmTec / AmberLite for membrane, ion-exchange and EDI treatment mechanisms
 - Calgon Carbon for activated-carbon water treatment
 
 HERMES consumes these sources as internal technical provenance. Supplier brands and proprietary performance remain governed and are not automatically published as ELIMFILTERS claims.
@@ -11320,3 +11321,131 @@ HERMES remains responsible for continued evidence research and gap detection und
 Status:
 INDUSTRIAL & PROCESS TECHNICAL ARCHITECTURE v1 — CLOSED.
 
+
+
+## 53. Industrial & Process Base-Code Authority Policy v1 — 2026-09-22
+
+Status: APPROVED / FROZEN v1.
+
+Purpose:
+Define which external reference may become the base identity for an Industrial & Process product before an ELIMFILTERS SKU is minted. This extends the same canonical-identity discipline already used in HD/LD without forcing one manufacturer across unrelated industrial treatment mechanisms.
+
+### 53.1 Authority precedence
+
+Strict precedence:
+
+Confirmed original element/equipment reference
+→ Approved family anchor
+→ Validated competitor cross-reference
+→ Source-only observation
+
+Authority states:
+
+- `ORIGINAL_BASE`
+  - Primary evidence confirms the exact original element/code used by the equipment, housing, vessel, collector or module.
+  - This status outranks every family anchor.
+  - The original reference remains the base even if Parker, Pall, Donaldson or another manufacturer publishes an interchangeable replacement.
+
+- `FAMILY_ANCHOR_BASE`
+  - Used only when the true original cannot be established.
+  - The reference must belong to the approved anchor manufacturer for the Technology Core.
+  - Primary product evidence must be complete enough to defend identity, geometry, treatment function and technical specification.
+
+- `COMPETITOR_CROSS`
+  - A validated equivalent/interchange reference.
+  - It is not the base merely because it is common, dimensionally similar, commercially dominant or appears in an interchange catalogue.
+
+- `SOURCE_ONLY`
+  - A code observed in a supplier/source with insufficient authority to define canonical product identity.
+  - It remains research evidence until upgraded by primary evidence.
+
+### 53.2 Approved family anchors
+
+AEREMIS™:
+- TC-AIR-01 — General Air Filtration → CAMFIL
+- TC-AIR-02 — HE-CRIVA™ → CAMFIL
+- TC-AIR-03 — MA-TREA™ → CAMFIL
+
+PARTION™:
+- TC-DUST-01 — FUMEVRA™ → DONALDSON
+- Oil Mist / Coolant Mist candidate path → DONALDSON as RESEARCH ANCHOR ONLY; no commercial base is approved until the treatment family is separately approved
+
+COALVEX™:
+- TC-NG-01 — COALERIS™ → PALL
+- TC-NG-02 — Gas-Liquid Separation → PALL
+
+FLUREXIS™:
+- TC-HYD-01 — HYLTRIS™ → PARKER
+- TC-LUB-01 — LUBREVA™ → PARKER
+- TC-OIL-01 — DEWATIS™ → PALL; Parker remains a secondary technical/interchange reference
+- TC-OIL-02 — OILREVEX™ → PALL
+
+AQUVEXIS™:
+- TC-WAT-01 — Depth Filtration → PALL
+- TC-WAT-03 — ADSOVEX™ → CALGON CARBON
+- TC-WAT-04 — MEMBRAVEX™ / Reverse Osmosis → DUPONT FILMTEC
+- TC-WAT-05 — MEMBRAVEX™ / Ultrafiltration → DUPONT WATER SOLUTIONS
+- TC-WAT-06 — MEMBRAVEX™ / Nanofiltration → DUPONT FILMTEC
+- TC-WAT-07 — IONVEXA™ → DUPONT AMBERLITE
+- TC-WAT-08 — Electrodeionization → NO COMMERCIAL BASE APPROVED
+
+### 53.3 Parker interchange rule
+
+Parker Par Fit is treated as high-value interchange evidence because it is explicitly an interchange programme covering other manufacturers' elements.
+
+Therefore:
+- if the Parker code is the confirmed original element, it may be `ORIGINAL_BASE`;
+- if the original is unknown and Parker is the approved family anchor for the Technology Core, a Parker product with complete primary evidence may be `FAMILY_ANCHOR_BASE`;
+- if Parker is replacing a confirmed HYDAC, Pall, Donaldson, Mahle, Eaton or other original element, the Parker code remains `COMPETITOR_CROSS`.
+
+An interchange catalogue never overrides a proven original manufacturer.
+
+### 53.4 Discovery-supplier rule
+
+REIKE and other discovery/sourcing suppliers are `SOURCE_ONLY` by default.
+
+A discovery supplier can become:
+- `ORIGINAL_BASE` only when primary evidence establishes that the referenced code is genuinely its original product for the target application/equipment; or
+- `FAMILY_ANCHOR_BASE` only if that supplier is explicitly approved as the family anchor in a future governance revision.
+
+REIKE is not an approved family anchor in v1.
+
+### 53.5 HERMES product identity rules
+
+For every Industrial & Process product candidate HERMES must preserve:
+
+- base authority status
+- canonical source brand
+- canonical source code
+- canonical source URL
+- original-equipment relationship evidence
+- approved family anchor
+- competitor cross-references
+- source-only references
+- evidence completeness
+- validation state
+- Technology Core
+- product family/configuration
+- pre-SKU / canonical-SKU state
+
+HERMES must not:
+- promote the first code found into base identity;
+- use dimensions alone to select a base;
+- promote a supplier replacement code over a proven original;
+- convert a competitor cross into canonical identity without the authority gate;
+- mint an Industrial & Process SKU from this policy.
+
+### 53.6 SKU gate
+
+Industrial & Process product development proceeds through the existing EBP Product Engineering Passport as `pre-SKU` until the Industrial SKU nomenclature itself is separately approved.
+
+A product may move toward SKU minting only after:
+- product family/configuration is defined;
+- base authority is resolved;
+- primary technical evidence is complete;
+- cross-references are separated from the base identity;
+- application and mechanical compatibility are defendable;
+- ELIMFILTERS engineering approval is obtained.
+
+Status:
+INDUSTRIAL & PROCESS BASE-CODE AUTHORITY POLICY v1 — APPROVED / FROZEN.
