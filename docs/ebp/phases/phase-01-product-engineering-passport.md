@@ -171,7 +171,7 @@ and the same auditability guarantee.
 | `base_brand` | `VARCHAR(100)` | |
 | `product_category` | `VARCHAR(100) NOT NULL` | |
 | `product_subtype` | `VARCHAR(100) NOT NULL` | |
-| `duty` | `VARCHAR(20) NOT NULL` | `CHECK (duty IN ('HEAVY_DUTY','LIGHT_DUTY'))`. |
+| `duty` | `VARCHAR(20) NOT NULL` | `CHECK (duty IN ('HEAVY_DUTY','LIGHT_DUTY','INDUSTRIAL_PROCESS'))`. Industrial & Process pre-SKU Passports use `INDUSTRIAL_PROCESS`; they must not be mislabeled as Heavy Duty. |
 | `technology_code` | `TEXT` | `REFERENCES technologies(code)`. |
 | `engineering_revision` | `INTEGER NOT NULL` | Starts at 1; increments per new revision in a lineage. |
 | `status` | `VARCHAR(20) NOT NULL DEFAULT 'DRAFT'` | `CHECK (status IN ('DRAFT','ACTIVE','SUPERSEDED','RETIRED'))`. |
