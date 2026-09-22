@@ -1,4 +1,8 @@
+'use client';
+
 import Link from 'next/link';
+import { useTranslation, type TFunction } from 'react-i18next';
+import '@/i18n';
 import styles from './MacrocoreTechnologyPage.module.css';
 import {
   type IndustrialProcessPlatform,
@@ -16,26 +20,31 @@ function technologyName(name: string, branded: boolean) {
   return branded ? <span className={styles.technologyName}>{name}</span> : name;
 }
 
-function faqItems(platform: IndustrialProcessPlatform, technology: IndustrialProcessTechnology) {
-  const familyWord = technology.branded ? 'technology' : 'treatment family';
-  const base = [
+function faqItems(
+  t: TFunction,
+  p: string,
+  platform: IndustrialProcessPlatform,
+  technology: IndustrialProcessTechnology,
+) {
+  const familyWord = technology.branded ? t(`${p}.faq.wordTechnology`) : t(`${p}.faq.wordTreatmentFamily`);
+  const base: (readonly [string, string])[] = [
     [
-      `What is ${technology.name}?`,
-      `${technology.name} is the ELIMFILTERS Industrial & Process ${familyWord} for ${technology.title.toLowerCase()}. Its role is to ${technology.treatmentFunction.charAt(0).toLowerCase() + technology.treatmentFunction.slice(1)}`,
+      t(`${p}.faq.q1`, { name: technology.name }),
+      t(`${p}.faq.a1`, { name: technology.name, familyWord, title: technology.title.toLowerCase(), function: technology.treatmentFunction.charAt(0).toLowerCase() + technology.treatmentFunction.slice(1) }),
     ],
     [
-      `Where does ${technology.name} fit within ELIMFILTERS Industrial & Process?`,
-      `${technology.name} belongs to ${platform.name} — ${platform.descriptor}. The platform defines the commercial treatment universe while the family identifies the specific mechanism or treatment function.`,
+      t(`${p}.faq.q2`, { name: technology.name }),
+      t(`${p}.faq.a2`, { name: technology.name, platformName: platform.name, platformDescriptor: platform.descriptor }),
     ],
     [
-      `Can ${technology.name} be selected from a part number alone?`,
-      'No. Industrial & Process selection starts with the operating problem, process conditions, contaminant, flow, pressure, temperature, compatibility requirements and required outcome. Product configuration follows the validated application.',
+      t(`${p}.faq.q3`, { name: technology.name }),
+      t(`${p}.faq.a3`),
     ],
     [
-      `Does ${technology.name} have one universal efficiency or service-life claim?`,
-      'No universal performance value is assigned across the family. Numeric efficiency, capacity, pressure-drop, service-life or outlet-quality claims must remain tied to validated product or project evidence.',
+      t(`${p}.faq.q4`, { name: technology.name }),
+      t(`${p}.faq.a4`),
     ],
-  ] as const;
+  ];
   return [...base, ...(technology.customFaqs ?? [])];
 }
 
@@ -46,8 +55,10 @@ export function IndustrialProcessTechnologyStablePage({
   platform: IndustrialProcessPlatform;
   technology: IndustrialProcessTechnology;
 }) {
+  const { t } = useTranslation();
+  const p = 'industrialProcess.technologyPage';
   const url = `https://elimfilters.com${industrialProcessTechnologyUrl(platform.slug, technology.slug)}`;
-  const faqs = faqItems(platform, technology);
+  const faqs = faqItems(t, p, platform, technology);
   const canonicalKnowledge = technology.knowledgeCenterSlug ? getCanonicalKnowledgeBySlug(technology.knowledgeCenterSlug) : null;
   const standards = canonicalKnowledge?.standards ?? [];
   const articleSchema = {
@@ -81,6 +92,7 @@ export function IndustrialProcessTechnologyStablePage({
   };
   const inquiryHref = `mailto:applications@elimfilters.com?subject=${encodeURIComponent(`${technology.name} Industrial & Process Application Assessment`)}`;
   const related = platform.technologies.filter((item) => item.slug !== technology.slug);
+  const commonSelectionErrors = t(`${p}.commonSelectionErrors`, { returnObjects: true }) as string[];
 
   return (
     <main id="main-content" className={styles.page}>
@@ -130,8 +142,8 @@ export function IndustrialProcessTechnologyStablePage({
 
       <nav aria-label="Breadcrumb" style={{padding:'1rem clamp(1.15rem,6vw,6rem)',borderBottom:'1px solid rgba(255,255,255,.12)',background:'#020202'}}>
         <div className={styles.inner} style={{display:'flex',gap:'.65rem',fontSize:'.72rem',letterSpacing:'.08em',flexWrap:'wrap'}}>
-          <Link href="/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>HOME</Link><span>→</span>
-          <Link href="/industrial-process/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>INDUSTRIAL &amp; PROCESS</Link><span>→</span>
+          <Link href="/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>{t('industrialProcess.platformPage.breadcrumbHome')}</Link><span>→</span>
+          <Link href="/industrial-process/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>{t('industrialProcess.platformPage.breadcrumbIndustrialProcess')}</Link><span>→</span>
           <Link href={industrialProcessPlatformUrl(platform.slug)} style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>{platform.name}</Link><span>→</span>
           <span style={{color:'#fff12d'}}>{technologyName(technology.name, technology.branded)}</span>
         </div>
@@ -139,7 +151,7 @@ export function IndustrialProcessTechnologyStablePage({
 
       <section className={styles.introSection}>
         <div className={styles.inner}>
-          <p className={styles.eyebrow}>{technology.branded ? 'FILTRATION TECHNOLOGY' : 'TREATMENT FAMILY'}</p>
+          <p className={styles.eyebrow}>{technology.branded ? t(`${p}.filtrationTechnology`) : t(`${p}.treatmentFamily`)}</p>
           <h2 className={styles.displayTitle}>{technologyName(technology.name, technology.branded)}</h2>
           <p className={styles.applicationLine}><strong>{technology.title}</strong></p>
           <p className={styles.lead}>{technology.summary}</p>
@@ -148,17 +160,17 @@ export function IndustrialProcessTechnologyStablePage({
           <div className={styles.mediaGrid}>
             <div className={styles.mediaCopy}>
               <div className={styles.metaStack}>
-                <p><span>{technology.branded ? 'Technology:' : 'Treatment family:'}</span> {technologyName(technology.name, technology.branded)}</p>
-                <p><span>Platform:</span> {platform.name} — {platform.descriptor}</p>
-                <p><span>Engineering core:</span> {coreLabel(technology.technologyCore)}</p>
+                <p><span>{technology.branded ? t(`${p}.technologyLabel`) : t(`${p}.treatmentFamilyLabel`)}:</span> {technologyName(technology.name, technology.branded)}</p>
+                <p><span>{t(`${p}.platformLabel`)}:</span> {platform.name} — {platform.descriptor}</p>
+                <p><span>{t(`${p}.engineeringCoreLabel`)}:</span> {coreLabel(technology.technologyCore)}</p>
               </div>
-              <p className={styles.eyebrow}>DESCRIPTION</p>
+              <p className={styles.eyebrow}>{t(`${p}.description`)}</p>
               <h3 className={styles.featureTitle}>{technology.title}</h3>
               <p className={styles.lead}>{technology.treatmentFunction}</p>
             </div>
             <figure className={styles.mediaFigure}>
               <img className={styles.mediaImage} src={technology.mediaImage} alt={`${technology.title} industrial treatment context`} />
-              <figcaption>Representative industrial treatment context. Final configuration remains application-specific.</figcaption>
+              <figcaption>{t(`${p}.mediaCaption`)}</figcaption>
             </figure>
           </div>
 
@@ -166,7 +178,7 @@ export function IndustrialProcessTechnologyStablePage({
             {technology.mechanisms.map((item, index) => (
               <article className={styles.noteBlock} key={item}>
                 <h3 className={styles.h3}>{String(index + 1).padStart(2, '0')} / {item}</h3>
-                <p className={styles.body}>This mechanism is evaluated together with the operating envelope, contamination load, compatibility and required treatment outcome.</p>
+                <p className={styles.body}>{t(`${p}.mechanismNoteBody`)}</p>
               </article>
             ))}
           </div>
@@ -174,65 +186,65 @@ export function IndustrialProcessTechnologyStablePage({
       </section>
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}>OPERATING REALITY</p>
-        <h2 className={styles.h2}>Treatment performance depends on the complete process boundary.</h2>
-        <p className={styles.lead}>The filter, element, media, vessel or treatment device is only one part of the result. Flow, contaminant loading, pressure, temperature, chemistry, housing condition, drainage, sealing and upstream/downstream process behavior can materially change performance.</p>
+        <p className={styles.eyebrow}>{t(`${p}.operatingReality`)}</p>
+        <h2 className={styles.h2}>{t(`${p}.operatingRealityTitle`)}</h2>
+        <p className={styles.lead}>{t(`${p}.operatingRealityLead`)}</p>
         <div className={styles.twoColumnNotes}>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>A useful distinction</h3><p className={styles.body}>{technologyName(technology.name, technology.branded)} identifies a treatment function. It does not make every product or system inside that category technically interchangeable.</p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Evidence before claims</h3><p className={styles.body}>Efficiency, capacity, pressure drop, outlet quality, service interval and compatibility remain tied to validated product or project evidence.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>{t(`${p}.usefulDistinction`)}</h3><p className={styles.body}>{t(`${p}.usefulDistinctionBody`)}</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>{t(`${p}.evidenceBeforeClaims`)}</h3><p className={styles.body}>{t(`${p}.evidenceBeforeClaimsBody`)}</p></article>
         </div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>APPLICATION ENVIRONMENT</p>
-        <h2 className={styles.h2}>Where {technologyName(technology.name, technology.branded)} belongs</h2>
+        <p className={styles.eyebrow}>{t(`${p}.applicationEnvironment`)}</p>
+        <h2 className={styles.h2}>{t(`${p}.whereItBelongs`, { name: technology.name })}</h2>
         <div className={styles.editorialColumns}>
-          <div><h3 className={styles.h3}>Application positions</h3><ul className={styles.list}>{technology.applications.map((x)=><li key={x}>{x}</li>)}</ul></div>
-          <div><h3 className={styles.h3}>Conditions that change treatment duty</h3><ul className={styles.list}>{technology.conditions.map((x)=><li key={x}>{x}</li>)}</ul></div>
-          <div><h3 className={styles.h3}>Platform context</h3><ul className={styles.list}><li>{platform.name}</li><li>{platform.descriptor}</li><li>Industrial &amp; Process</li><li>Application-specific engineering validation</li></ul></div>
+          <div><h3 className={styles.h3}>{t(`${p}.applicationPositions`)}</h3><ul className={styles.list}>{technology.applications.map((x)=><li key={x}>{x}</li>)}</ul></div>
+          <div><h3 className={styles.h3}>{t(`${p}.conditionsThatChangeDuty`)}</h3><ul className={styles.list}>{technology.conditions.map((x)=><li key={x}>{x}</li>)}</ul></div>
+          <div><h3 className={styles.h3}>{t(`${p}.platformContext`)}</h3><ul className={styles.list}><li>{platform.name}</li><li>{platform.descriptor}</li><li>{t('industrialProcess.platformPage.divisionValue')}</li><li>{t(`${p}.applicationSpecificValidation`)}</li></ul></div>
         </div>
       </div></section>
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}>SPECIFICATION &amp; SELECTION</p>
-        <h2 className={styles.h2}>Questions before specifying {technology.title.toLowerCase()}</h2>
+        <p className={styles.eyebrow}>{t(`${p}.specificationAndSelection`)}</p>
+        <h2 className={styles.h2}>{t(`${p}.questionsBeforeSpecifying`, { title: technology.title.toLowerCase() })}</h2>
         <div className={styles.editorialColumns}>
-          <div><h3 className={styles.h3}>Key engineering inputs</h3><ul className={styles.list}>{technology.selectionInputs.slice(0,4).map((x)=><li key={x}>{x}</li>)}</ul></div>
-          <div><h3 className={styles.h3}>System compatibility</h3><ul className={styles.list}>{technology.selectionInputs.slice(4).map((x)=><li key={x}>{x}</li>)}</ul></div>
-          <div><h3 className={styles.h3}>Common selection errors</h3><ul className={styles.list}>{['Choosing by nominal category alone','Ignoring operating-envelope limits','Using unvalidated performance claims','Treating cross-reference as complete application validation'].map((x)=><li key={x}>{x}</li>)}</ul></div>
+          <div><h3 className={styles.h3}>{t(`${p}.keyEngineeringInputs`)}</h3><ul className={styles.list}>{technology.selectionInputs.slice(0,4).map((x)=><li key={x}>{x}</li>)}</ul></div>
+          <div><h3 className={styles.h3}>{t(`${p}.systemCompatibility`)}</h3><ul className={styles.list}>{technology.selectionInputs.slice(4).map((x)=><li key={x}>{x}</li>)}</ul></div>
+          <div><h3 className={styles.h3}>{t(`${p}.commonSelectionErrorsTitle`)}</h3><ul className={styles.list}>{commonSelectionErrors.map((x)=><li key={x}>{x}</li>)}</ul></div>
         </div>
         <div className={styles.inlineCta}>
-          <p><strong>Known project conditions?</strong> Send the operating data. <strong>Uncertain process or treatment path?</strong> Use the engineering review.</p>
-          <div className={styles.buttonRow}><a className={styles.primaryButton} href={inquiryHref} data-conversion-action="application-support">TECHNICAL REVIEW</a></div>
+          <p><strong>{t(`${p}.knownConditionsQuestion`)}</strong> {t(`${p}.sendOperatingData`)} <strong>{t(`${p}.uncertainPathQuestion`)}</strong> {t(`${p}.useEngineeringReview`)}</p>
+          <div className={styles.buttonRow}><a className={styles.primaryButton} href={inquiryHref} data-conversion-action="application-support">{t(`${p}.technicalReview`)}</a></div>
         </div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>HOW THE SYSTEM BEHAVES</p>
-        <h2 className={styles.h2}>Mechanism, loading and process conditions have to be resolved together.</h2>
+        <p className={styles.eyebrow}>{t(`${p}.howTheSystemBehaves`)}</p>
+        <h2 className={styles.h2}>{t(`${p}.mechanismLoadingTitle`)}</h2>
         <p className={styles.lead}>{technology.treatmentFunction}</p>
         <div className={styles.twoColumnNotes}>
           {technology.mechanisms.map((item) => (
-            <article className={styles.noteBlock} key={item}><h3 className={styles.h3}>{item}</h3><p className={styles.body}>Final design depends on the project operating window and the validated configuration selected for the application.</p></article>
+            <article className={styles.noteBlock} key={item}><h3 className={styles.h3}>{item}</h3><p className={styles.body}>{t(`${p}.mechanismDesignBody`)}</p></article>
           ))}
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Protected process outcome</h3><p className={styles.body}>The objective is controlled contamination or conditioning performance at the required process boundary—not simply installation of a familiar filter form.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>{t(`${p}.protectedProcessOutcome`)}</h3><p className={styles.body}>{t(`${p}.protectedProcessOutcomeBody`)}</p></article>
         </div>
       </div></section>
 
       {technology.subfamilies?.length ? (
         <section className={styles.band}><div className={styles.inner}>
-          <p className={styles.eyebrow}>DESCRIPTIVE SUBFAMILIES</p>
-          <h2 className={styles.h2}>{technologyName(technology.name, technology.branded)} includes distinct engineering paths.</h2>
+          <p className={styles.eyebrow}>{t(`${p}.descriptiveSubfamilies`)}</p>
+          <h2 className={styles.h2}>{t(`${p}.includesDistinctPaths`, { name: technology.name })}</h2>
           <div className={styles.editorialColumns}>
-            {technology.subfamilies.map((item) => <div key={item}><h3 className={styles.h3}>{item}</h3><p className={styles.body}>Descriptive engineering subfamily beneath {technologyName(technology.name, technology.branded)}; it does not create an additional independent ELIMFILTERS technology mark.</p></div>)}
+            {technology.subfamilies.map((item) => <div key={item}><h3 className={styles.h3}>{item}</h3><p className={styles.body}>{t(`${p}.subfamilyBody`, { name: technology.name })}</p></div>)}
           </div>
         </div></section>
       ) : null}
 
       {technology.engineeringNotes?.length ? (
         <section className={styles.bandAlt}><div className={styles.inner}>
-          <p className={styles.eyebrow}>ENGINEERING GUIDANCE</p>
-          <h2 className={styles.h2}>What matters in {technology.title.toLowerCase()}</h2>
+          <p className={styles.eyebrow}>{t(`${p}.engineeringGuidance`)}</p>
+          <h2 className={styles.h2}>{t(`${p}.whatMattersIn`, { title: technology.title.toLowerCase() })}</h2>
           <div className={styles.twoColumnNotes}>
             {technology.engineeringNotes.map((note) => (
               <article className={styles.noteBlock} key={note.title}>
@@ -245,75 +257,75 @@ export function IndustrialProcessTechnologyStablePage({
       ) : null}
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}>SERVICE &amp; DIAGNOSIS</p>
-        <h2 className={styles.h2}>What abnormal treatment behavior may be telling you</h2>
+        <p className={styles.eyebrow}>{t(`${p}.serviceAndDiagnosis`)}</p>
+        <h2 className={styles.h2}>{t(`${p}.abnormalBehaviorTitle`)}</h2>
         <ul className={`${styles.list} ${styles.serviceList}`}>{technology.serviceSignals.map((x)=><li key={x}>{x}</li>)}</ul>
-        <div className={styles.inlineCta}><p>Repeated breakthrough, pressure-drop problems, unstable outlet quality or short service intervals justify reviewing the whole process boundary.</p><a href={inquiryHref} data-conversion-action="application-support">REQUEST PROCESS REVIEW</a></div>
+        <div className={styles.inlineCta}><p>{t(`${p}.diagnosisCtaLead`)}</p><a href={inquiryHref} data-conversion-action="application-support">{t(`${p}.requestProcessReview`)}</a></div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>QUESTIONS FROM THE FIELD</p>
-        <h2 className={styles.h2}>Direct answers before an Industrial &amp; Process selection.</h2>
+        <p className={styles.eyebrow}>{t(`${p}.questionsFromTheField`)}</p>
+        <h2 className={styles.h2}>{t(`${p}.directAnswersTitle`)}</h2>
         <div className={styles.faqList}>{faqs.map(([q,a])=><details className={styles.faqItem} key={q}><summary>{q}</summary><p>{a}</p></details>)}</div>
       </div></section>
 
       {standards.length ? (
         <section className={styles.bandAlt}><div className={styles.inner}>
-          <p className={styles.eyebrow}>STANDARDS &amp; TEST GOVERNANCE</p>
-          <h2 className={styles.h2}>Applicable standards and test methods</h2>
-          <p className={styles.lead}>The standards below are resolved from the governed ELIMFILTERS Knowledge Center for this treatment family. Applicability remains product-, fluid-, contaminant- and duty-specific.</p>
+          <p className={styles.eyebrow}>{t('industrialProcess.platformPage.standardsAndTestGovernance')}</p>
+          <h2 className={styles.h2}>{t(`${p}.applicableStandardsTitle`)}</h2>
+          <p className={styles.lead}>{t(`${p}.applicableStandardsLead`)}</p>
           <ul className={`${styles.list} ${styles.serviceList}`}>{standards.map((standard)=><li key={standard}>{standard}</li>)}</ul>
-          <p className={styles.bodyWide}>A listed standard identifies a relevant engineering or verification method. It does not mean every {technology.name} element is certified, qualified or tested to every listed method. Product claims require the corresponding validated test evidence.</p>
-          {technology.knowledgeCenterSlug ? <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}>OPEN GOVERNED STANDARD CONTEXT →</Link></div> : null}
+          <p className={styles.bodyWide}>{t(`${p}.applicableStandardsFootnote`, { name: technology.name })}</p>
+          {technology.knowledgeCenterSlug ? <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}>{t(`${p}.openGovernedStandardContext`)} →</Link></div> : null}
         </div></section>
       ) : null}
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}>TECHNICAL BASIS</p>
-        <h2 className={styles.h2}>Technical reference and claim governance</h2>
+        <p className={styles.eyebrow}>{t('industrialProcess.platformPage.technicalBasis')}</p>
+        <h2 className={styles.h2}>{t(`${p}.technicalReferenceTitle`)}</h2>
         <div className={styles.twoColumnNotes}>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Engineering core</h3><p className={styles.body}>{coreLabel(technology.technologyCore)} remains the mechanism-level engineering identifier behind the customer-facing family.</p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Claim governance</h3><p className={styles.body}>No universal efficiency, capacity, micron rating, separation percentage, service-life multiplier or outlet-quality value is assigned across {technologyName(technology.name, technology.branded)} without validated evidence for the specific product or project.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>{t(`${p}.engineeringCore`)}</h3><p className={styles.body}>{t(`${p}.engineeringCoreBody`, { core: coreLabel(technology.technologyCore) })}</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>{t(`${p}.claimGovernance`)}</h3><p className={styles.body}>{t(`${p}.claimGovernanceBody`, { name: technology.name })}</p></article>
           {technology.knowledgeCenterSlug ? (
             <article className={styles.noteBlock}>
-              <h3 className={styles.h3}>Canonical Knowledge Center reference</h3>
-              <p className={styles.body}>Approved engineering relationships, operating conditions and diagnostic guidance for {technologyName(technology.name, technology.branded)} are maintained in the governed ELIMFILTERS Knowledge Center.</p>
-              <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}>OPEN ENGINEERING REFERENCE →</Link></div>
+              <h3 className={styles.h3}>{t('industrialProcess.platformPage.canonicalKnowledgeCenterReference')}</h3>
+              <p className={styles.body}>{t(`${p}.canonicalReferenceBody`, { name: technology.name })}</p>
+              <div className={styles.textLinks}><Link href={`/knowledge-center/canonical/${technology.knowledgeCenterSlug}/`}>{t('industrialProcess.platformPage.openEngineeringReference')} →</Link></div>
             </article>
           ) : null}
         </div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>WHEN A TECHNICAL REVIEW MAKES SENSE</p>
-        <h2 className={styles.h2}>When the treatment problem is larger than the element itself</h2>
-        <p className={styles.lead}>Repeated failures, unstable process quality, short service intervals, unexpected pressure drop, contamination breakthrough or uncertain compatibility justify reviewing the complete operating environment and treatment architecture.</p>
+        <p className={styles.eyebrow}>{t(`${p}.whenReviewMakesSense`)}</p>
+        <h2 className={styles.h2}>{t(`${p}.whenReviewMakesSenseTitle`)}</h2>
+        <p className={styles.lead}>{t(`${p}.whenReviewMakesSenseLead`)}</p>
       </div></section>
 
       <section className={styles.band}><div className={styles.inner}>
-        <p className={styles.eyebrow}>PLATFORM INTEGRATION</p>
+        <p className={styles.eyebrow}>{t(`${p}.platformIntegration`)}</p>
         <h2 className={styles.h2}>{platform.name} — {platform.descriptor}</h2>
         <div className={styles.systemGrid}>
-          <div><p className={styles.lead}>{platform.summary}</p><Link className={styles.systemButton} href={industrialProcessPlatformUrl(platform.slug)}>EXPLORE PLATFORM</Link></div>
-          <p className={styles.bodyWide}>{technologyName(technology.name, technology.branded)} is resolved inside the {platform.name} platform. Final selection connects the treatment mechanism to operating conditions, contamination load, compatibility, required outcome and validated product evidence.</p>
+          <div><p className={styles.lead}>{platform.summary}</p><Link className={styles.systemButton} href={industrialProcessPlatformUrl(platform.slug)}>{t(`${p}.explorePlatform`)}</Link></div>
+          <p className={styles.bodyWide}>{t(`${p}.platformIntegrationBody`, { name: technology.name, platformName: platform.name })}</p>
         </div>
       </div></section>
 
       <section className={styles.ctaSection}><div className={styles.inner}>
-        <p className={styles.eyebrow}>APPLICATION SUPPORT</p>
-        <h2 className={styles.h2}>Bring us the process conditions and required outcome — not just a generic filter description.</h2>
-        <p className={styles.lead}>Industrial &amp; Process projects are qualified by duty, operating envelope, contamination mechanism, process risk and system compatibility before the physical solution is selected.</p>
-        <div className={styles.buttonRow}><a className={styles.primaryButton} href={inquiryHref} data-conversion-action="application-support">TECHNICAL REVIEW PATH</a></div>
+        <p className={styles.eyebrow}>{t('industrialProcess.platformPage.applicationSupport')}</p>
+        <h2 className={styles.h2}>{t(`${p}.applicationSupportTitle`)}</h2>
+        <p className={styles.lead}>{t('industrialProcess.platformPage.applicationSupportLead')}</p>
+        <div className={styles.buttonRow}><a className={styles.primaryButton} href={inquiryHref} data-conversion-action="application-support">{t('industrialProcess.platformPage.technicalReviewPath')}</a></div>
       </div></section>
 
       <section className={styles.bandAlt}><div className={styles.inner}>
-        <p className={styles.eyebrow}>EXPLORE RELATED TECHNOLOGIES</p>
-        <h2 className={styles.h2}>Continue within {platform.name}.</h2>
+        <p className={styles.eyebrow}>{t(`${p}.exploreRelatedTechnologies`)}</p>
+        <h2 className={styles.h2}>{t(`${p}.continueWithin`, { platformName: platform.name })}</h2>
         <div className={styles.editorialColumns}>
           {related.slice(0,3).map((item) => (
             <div key={item.slug}><h3 className={styles.h3}><Link href={industrialProcessTechnologyUrl(platform.slug,item.slug)} style={{color:'#fff',textDecoration:'none'}}>{technologyName(item.name, item.branded)}</Link></h3><p className={styles.body}>{item.title}</p></div>
           ))}
-          {related.length === 0 ? <div><h3 className={styles.h3}><Link href={industrialProcessPlatformUrl(platform.slug)} style={{color:'#fff',textDecoration:'none'}}>Back to {platform.name}</Link></h3><p className={styles.body}>Review the platform context and engineering qualification path.</p></div> : null}
+          {related.length === 0 ? <div><h3 className={styles.h3}><Link href={industrialProcessPlatformUrl(platform.slug)} style={{color:'#fff',textDecoration:'none'}}>{t(`${p}.backToPlatform`, { platformName: platform.name })}</Link></h3><p className={styles.body}>{t(`${p}.reviewPlatformContext`)}</p></div> : null}
         </div>
       </div></section>
     </main>
