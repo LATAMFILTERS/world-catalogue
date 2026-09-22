@@ -92,6 +92,8 @@ cross_reference_write_allowed: false
 
 - INTERNAL-BRAND-TECHNOLOGY-REGISTRY
 - INTERNAL-WEB-COALVEX-ARCHITECTURE
+- EXTERNAL-PRIMARY-PALL-LIQUID-GAS-COALESCENCE
+- EXTERNAL-PRIMARY-PALL-OIL-GAS
 
 ## Governance
 
@@ -99,6 +101,7 @@ cross_reference_write_allowed: false
 - COALERIS™ is the branded gas-coalescence family; Gas-Liquid Separation remains descriptive.
 - No universal efficiency, carryover, pressure-drop, capacity or service-life claim is inherited across the platform.
 - Pressure-vessel and hazardous-gas system requirements remain project- and jurisdiction-specific.
+- Pressure vessels, separators, drains, instrumentation, piping and skids remain system context; ELIMFILTERS product scope is the validated filtration or separation element unless separately approved.
 
 ## Canonical Approval
 
