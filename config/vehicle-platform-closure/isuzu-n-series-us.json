@@ -1,16 +1,28 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "platform_id": "ISUZU_N_SERIES_US",
   "market": "US",
   "make": "ISUZU",
   "platform": "N-SERIES",
-  "purpose": "Close US vehicle-to-filter applications with primary evidence. Cross-reference evidence alone must never promote a fitment.",
+  "purpose": "Close US Isuzu N-Series applications source-first: Isuzu OEM model/year/engine and genuine/OE part numbers first; Donaldson second; Fleetguard third; other aftermarket sources corroboration only.",
   "waves": [
     {
       "id": "NPR_US_PRIORITY",
       "priority": "high",
-      "models": ["NPR-HD", "NPR-XD"],
-      "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "models": [
+        "NPR-HD",
+        "NPR-XD"
+      ],
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
       "engine_family": "4HK1-TC",
       "engine_displacement": "5.2L",
       "required_positions": [
@@ -25,8 +37,20 @@
     {
       "id": "N_SERIES_FOLLOWUP",
       "priority": "medium",
-      "models": ["NQR", "NRR"],
-      "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "models": [
+        "NQR",
+        "NRR"
+      ],
+      "years": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
       "engine_family": "4HK1-TC",
       "engine_displacement": "5.2L",
       "required_positions": [
@@ -45,15 +69,53 @@
       "url": "https://isuzucv.com/en/nseries/nseries_diesel_specifications",
       "role": "PLATFORM_IDENTITY",
       "market_scope": "US",
-      "supports": ["CURRENT_MODEL_NAMES", "4HK1-TC", "5.2L"],
+      "supports": [
+        "CURRENT_MODEL_NAMES",
+        "4HK1-TC",
+        "5.2L"
+      ],
       "fitment_promotion_allowed": false
+    },
+    {
+      "authority": "ISUZU_COMMERCIAL_TRUCK_OF_AMERICA",
+      "url": "https://www.isuzucv.com/en/app/site/pdf?file=n_brochure_2022.pdf",
+      "role": "MODEL_YEAR_PLATFORM_IDENTITY",
+      "market_scope": "US",
+      "supports": [
+        "2022_NPR-HD",
+        "2022_NPR-XD",
+        "2022_NQR",
+        "2022_NRR",
+        "4HK1-TC",
+        "5.2L"
+      ],
+      "fitment_promotion_allowed": false,
+      "reason": "Defines the 2022 US model/engine universe; it does not by itself prove that different models share filters."
+    },
+    {
+      "authority": "ISUZU_COMMERCIAL_TRUCK_OF_AMERICA",
+      "url": "https://www.isuzucv.com/en/app/site/pdf?file=FVGenuineCrossRef.pdf",
+      "role": "OEM_GENUINE_PART_NUMBER_SOURCE",
+      "market_scope": "US",
+      "supports": [
+        "AIR_FILTER_OEN",
+        "LUBE_FILTER_OEN",
+        "FUEL_FILTER_OEN",
+        "FUEL_WATER_SEPARATOR_OEN",
+        "YEAR_ENGINE_SCOPE"
+      ],
+      "fitment_promotion_allowed": true,
+      "reason": "Primary OEM parts source. Exact year/engine/model applicability must be preserved as published; no model-to-model inheritance."
     },
     {
       "authority": "ISUZU_COMMERCIAL_TRUCK_OF_AMERICA",
       "url": "https://www.isuzucv.com/pdfs/2026N-SeriesDiesel_specs.pdf",
       "role": "MODEL_YEAR_PLATFORM_IDENTITY",
       "market_scope": "US",
-      "supports": ["2026_MODEL_LINEUP", "5.2L_POWERTRAIN"],
+      "supports": [
+        "2026_MODEL_LINEUP",
+        "5.2L_POWERTRAIN"
+      ],
       "fitment_promotion_allowed": false
     },
     {
@@ -61,7 +123,10 @@
       "url": "https://www.fleetguard.com/product/AF27693",
       "role": "APPLICATION_CLUE_ONLY",
       "market_scope": "MULTI_REGION",
-      "supports": ["AIR_PRIMARY", "ISUZU_APPLICATION_ROWS"],
+      "supports": [
+        "AIR_PRIMARY",
+        "ISUZU_APPLICATION_ROWS"
+      ],
       "fitment_promotion_allowed": false,
       "reason": "A competitor application cannot be inherited by an ELIMFILTERS SKU merely through a cross-reference."
     },
@@ -70,7 +135,10 @@
       "url": "https://www.fleetguard.com/product/FF5877",
       "role": "APPLICATION_CLUE_ONLY",
       "market_scope": "MULTI_REGION",
-      "supports": ["FUEL", "ISUZU_APPLICATION_ROWS"],
+      "supports": [
+        "FUEL",
+        "ISUZU_APPLICATION_ROWS"
+      ],
       "fitment_promotion_allowed": false,
       "reason": "A competitor application cannot be inherited by an ELIMFILTERS SKU merely through a cross-reference."
     },
@@ -79,7 +147,10 @@
       "url": "https://www.fleetguard.com/product/FF5165",
       "role": "APPLICATION_CLUE_ONLY",
       "market_scope": "MULTI_REGION",
-      "supports": ["FUEL", "ISUZU_APPLICATION_ROWS"],
+      "supports": [
+        "FUEL",
+        "ISUZU_APPLICATION_ROWS"
+      ],
       "fitment_promotion_allowed": false,
       "reason": "A competitor application cannot be inherited by an ELIMFILTERS SKU merely through a cross-reference."
     },
@@ -88,9 +159,22 @@
       "url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/australasia/industries-markets/f111672-eng/Japanese-Truck-Filter-Guide.pdf",
       "role": "NON_US_APPLICATION_CLUE",
       "market_scope": "AUSTRALASIA",
-      "supports": ["N_SERIES", "4HK1", "FILTER_POSITIONS"],
+      "supports": [
+        "N_SERIES",
+        "4HK1",
+        "FILTER_POSITIONS"
+      ],
       "fitment_promotion_allowed": false,
       "reason": "Market-specific evidence must not be promoted into a US application without US-compatible evidence."
     }
-  ]
+  ],
+  "source_policy": {
+    "stage_1": "ISUZU_OEM_MODEL_ENGINE_OEN",
+    "stage_2": "DONALDSON_BY_OEN",
+    "stage_3": "FLEETGUARD_BY_OEN",
+    "stage_4": "SECONDARY_AFTERMARKET_CORROBORATION",
+    "canonical_hd_rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+    "prohibit_model_name_equivalence": true,
+    "prohibit_aftermarket_defining_oem_model_scope": true
+  }
 }
