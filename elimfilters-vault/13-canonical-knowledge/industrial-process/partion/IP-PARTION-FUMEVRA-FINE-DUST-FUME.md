@@ -38,6 +38,8 @@ cross_reference_write_allowed: false
 - Source capture, duct transport, airflow balance and collector condition can limit overall process-dust control independently of the filter element. | status: approved
 - FUMEVRA™ identifies the filtration family within an installed collection or extraction system and does not by itself represent the collector housing, fan, ductwork or hopper as ELIMFILTERS products. | status: approved
 - FUMEVRA™ maps to TC-DUST-01 within the PARTION™ platform. | status: approved
+- Oil-bearing particulate can remain within FUMEVRA™ when the dominant filtration duty is particle capture. Liquid oil mist and coolant aerosol are droplet-dominant duties and require separate qualification for coalescence, drainage and liquid loading rather than automatic FUMEVRA™ assignment. | status: approved
+- A mixed dust/fume/mist stream must be classified by dominant phase and treatment mechanism; unresolved mixed-phase duties remain unconfirmed until engineering review. | status: approved
 
 ## Components
 
@@ -89,10 +91,12 @@ cross_reference_write_allowed: false
 - Production duty or airflow changed without requalifying the filtration stage
 - Compressed-air cleaning conditions or pulse controls are not operating within the validated system duty
 - Source capture, duct transport or airflow balance is insufficient before the filter stage
+- Liquid mist or coolant aerosol is misclassified as a particulate-only filtration duty
 
 ## Diagnostic Methods
 
 - Confirm the process generating the dust or fume and characterize particle behavior.
+- Determine whether the airborne contaminant is predominantly solid particulate, oil-bearing particulate, liquid droplets, or a mixed aerosol; liquid-droplet mist requires a separate treatment-path review.
 - Review airflow, concentration, loading variability, temperature, moisture and duty cycle.
 - Trend differential pressure before and after the validated cleaning event where applicable.
 - Inspect media, element geometry, sealing surfaces and seating for damage or bypass.
@@ -107,6 +111,7 @@ cross_reference_write_allowed: false
 - Reassess cleaning strategy and the installed cleaning interface when differential-pressure recovery is persistently poor.
 - Review source capture and airflow transport when particulate control is poor even though the filter elements remain serviceable.
 - Requalify the treatment path after material changes in process, airflow, temperature, moisture or contaminant loading.
+- Route droplet-dominant oil mist or coolant aerosol away from an automatic FUMEVRA™ assignment and evaluate coalescence, drainage, liquid loading and media compatibility.
 
 ## Maintenance Procedures
 
@@ -127,6 +132,7 @@ cross_reference_write_allowed: false
 - Collector cleaning method and pulse conditions where applicable
 - Source-capture and airflow-distribution condition
 - Required downstream or discharge condition
+- Dominant contaminant phase: dry particulate, oil-bearing particulate, liquid mist/coolant aerosol, or mixed solid-liquid aerosol
 
 ## Standards
 
@@ -148,6 +154,9 @@ cross_reference_write_allowed: false
 
 - INTERNAL-BRAND-TECHNOLOGY-REGISTRY
 - INTERNAL-WEB-PARTION-FUMEVRA
+- EXTERNAL-PRIMARY-DONALDSON-INDUSTRIAL-AIR-TECHNICAL-ARTICLES
+- EXTERNAL-PRIMARY-DONALDSON-INDUSTRIAL-AIR-CASE-STUDIES
+- EXTERNAL-PRIMARY-DONALDSON-DRYFLO-MIST-COLLECTOR-F118137
 
 ## Governance
 
@@ -156,11 +165,12 @@ cross_reference_write_allowed: false
 - Pulse-jet cleaning may only be represented where the filter element and collector interface are validated for that cleaning duty.
 - Numeric efficiency, pressure-drop, emission, cleaning-cycle and service-life claims remain tied to validated product or project evidence.
 - Recirculation or discharge suitability must be established by the applicable project, process and regulatory requirements.
+- "Oil-bearing particulate" must not be used as a synonym for oil mist. Droplet-dominant oil/coolant aerosols require a distinct engineering qualification and must remain outside confirmed FUMEVRA™ scope unless a separate approved treatment path explicitly establishes otherwise.
 
 ## Canonical Approval
 
 - Reviewer: ELIMFILTERS Brand & Engineering Governance
 - Reviewed at: 2026-09-21T02:30:00Z
 - Metrics approved: 0
-- Technical relationships approved: 10
+- Technical relationships approved: 12
 - Promotion gate: PASS
