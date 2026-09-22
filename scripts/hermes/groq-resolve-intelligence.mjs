@@ -5,6 +5,7 @@ import path from 'node:path';
 import process from 'node:process';
 import crypto from 'node:crypto';
 import { resolveRealCandidatesInputDir, validateCandidate } from './hermes-core.mjs';
+import { HERMES_INDUSTRIAL_RESEARCH_POLICY } from './industrial-research-policy.mjs';
 
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const DEFAULT_MODEL = process.env.HERMES_GROQ_MODEL || 'llama-3.3-70b-versatile';
@@ -60,6 +61,9 @@ MANDATORY PROCEDURE
 8. Produce neutral technical language suitable for ELIMFILTERS internal review. Competitor names may remain in internal provenance/evidence, but the public-facing neutral_fact must not market or promote a competitor and must not copy proprietary claims.
 9. A finding is READY only when there is a concrete item, a supporting evidence URL, at least one verifiable fact, a relevance statement and a specific proposed action.
 10. If the supplied evidence truly cannot resolve the change after examining all available pages, return RESOLUTION_BLOCKED with a precise reason. This is an exceptional failure state, not a normal outcome.
+
+INDUSTRIAL RESEARCH POLICY
+${HERMES_INDUSTRIAL_RESEARCH_POLICY}
 
 AFTERMARKET EMPHASIS
 Do not overlook aftermarket developments. Treat new replacement coverage, application tables, cross-reference relationships, dimensional/specification changes, supersessions, service-part additions and catalogue expansions as high-value findings when evidence is reliable.
