@@ -59,6 +59,12 @@ async function start() {
   const ldOriginCandidates = await applyLdOriginCandidateBackfill();
   console.log('[ld-origin-candidate-backfill]', JSON.stringify(ldOriginCandidates));
 
+  // Extend the existing LD fitment table with canonical vehicle-search fields.
+  // This remains one source of truth: no parallel fitment catalogue is created.
+  const { applyVehicleApplicationNormalization } = require('./scripts/migrations/run_112_vehicle_application_normalization');
+  const vehicleApplicationNormalization = await applyVehicleApplicationNormalization();
+  console.log('[vehicle-application-normalization]', JSON.stringify(vehicleApplicationNormalization));
+
   const { applyLdFkUpdateCascade } = require('./scripts/migrations/run_086_ld_fk_update_cascade');
   const ldFkCascade = await applyLdFkUpdateCascade();
   console.log('[ld-fk-update-cascade]', JSON.stringify(ldFkCascade));
