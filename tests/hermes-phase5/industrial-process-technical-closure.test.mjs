@@ -18,7 +18,7 @@ test('Industrial & Process root plus every internal page resolves to approved ca
   assert.ok(industrial.some((record) => record.slug === 'ip-industrial-process-architecture'));
 
   const canonicalSlugs = new Set(industrial.map((record) => record.slug));
-  const platformBlocks = [...architecture.matchAll(/^  \{\n    slug: '([^']+)'/gm)];
+  const platformBlocks = [...architecture.matchAll(/^  \{\r?\n    slug: '([^']+)'/gm)];
   assert.equal(platformBlocks.length, 5);
 
   const platformSlugs = platformBlocks.map((match) => match[1]);
