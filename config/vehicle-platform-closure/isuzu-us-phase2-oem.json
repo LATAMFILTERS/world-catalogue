@@ -1,39 +1,39 @@
 {
-  "schema_version": "1.0.0",
-  "phase_id": "ISUZU_US_PHASE2_OEM_CLOSURE",
+  "schema_version": "2.0.0",
+  "phase_id": "ISUZU_US_DIESEL_THREE_PHASE_CLOSURE",
   "market": "US",
   "make": "ISUZU",
   "year_from": 2000,
   "year_to": 2026,
-  "purpose": "Close Isuzu USA vehicle identity, exact configuration, and genuine OE/OEN filter references before any aftermarket lookup.",
+  "purpose": "Close Isuzu USA diesel applications from 2000-2026 in three gated phases: OEM vehicle identity, OEM OE/OEN filters, then aftermarket resolution.",
   "stages": [
     {
-      "id": "2A_MODEL_UNIVERSE",
-      "objective": "For each model year, identify every Isuzu commercial-truck model sold in the US and preserve the exact Isuzu designation.",
+      "id": "PHASE_1_DIESEL_VEHICLE_UNIVERSE",
+      "objective": "Using Isuzu USA primary evidence only, identify every diesel commercial-truck model by model year and close exact diesel engine family, displacement, and relevant configuration.",
       "allowed_sources": [
         "ISUZU_COMMERCIAL_TRUCK_OF_AMERICA"
       ],
+      "required_output": [
+        "MODEL_YEAR",
+        "SERIES",
+        "MODEL",
+        "FUEL_DIESEL",
+        "ENGINE_FAMILY",
+        "DISPLACEMENT",
+        "CONFIGURATION",
+        "SOURCE_URL",
+        "EVIDENCE_STATUS"
+      ],
       "prohibited_actions": [
+        "GASOLINE_RESEARCH",
         "AFTERMARKET_LOOKUP",
         "MODEL_EQUIVALENCE_INFERENCE",
         "FILTER_PROMOTION"
       ]
     },
     {
-      "id": "2B_POWERTRAIN_CONFIGURATION",
-      "objective": "For each verified year/model, close fuel type, exact engine family, displacement, cab/configuration and any model-specific technical distinction that can affect service parts.",
-      "allowed_sources": [
-        "ISUZU_COMMERCIAL_TRUCK_OF_AMERICA"
-      ],
-      "prohibited_actions": [
-        "AFTERMARKET_LOOKUP",
-        "CROSS_REFERENCE_INHERITANCE",
-        "FILTER_PROMOTION"
-      ]
-    },
-    {
-      "id": "2C_OEM_FILTER_OEN",
-      "objective": "For each verified year/model/engine configuration, capture genuine Isuzu OE/OEN references by filter position exactly as published.",
+      "id": "PHASE_2_DIESEL_OEM_FILTER_OEN",
+      "objective": "For each Phase 1 verified diesel year/model/engine configuration, capture genuine Isuzu OE/OEN references by filter position exactly as published.",
       "required_positions": [
         "AIR_PRIMARY",
         "LUBE_PRIMARY",
@@ -45,19 +45,59 @@
       "allowed_sources": [
         "ISUZU_COMMERCIAL_TRUCK_OF_AMERICA"
       ],
+      "required_output": [
+        "VERIFIED_VEHICLE_KEY",
+        "FILTER_POSITION",
+        "ISUZU_OE_OEN",
+        "SOURCE_URL",
+        "YEAR_ENGINE_SCOPE",
+        "EVIDENCE_STATUS"
+      ],
       "prohibited_actions": [
+        "GASOLINE_RESEARCH",
         "DONALDSON_LOOKUP",
         "FLEETGUARD_LOOKUP",
         "OTHER_AFTERMARKET_LOOKUP",
         "MODEL_TO_MODEL_INHERITANCE"
       ]
+    },
+    {
+      "id": "PHASE_3_AFTERMARKET_RESOLUTION",
+      "objective": "Resolve every Phase 2 verified Isuzu OE/OEN through aftermarket in fixed order: Donaldson first, Fleetguard second if needed, then other manufacturers as corroboration.",
+      "allowed_sources": [
+        "DONALDSON",
+        "FLEETGUARD",
+        "MANN-FILTER",
+        "BALDWIN",
+        "WIX",
+        "FRAM"
+      ],
+      "source_order": [
+        "DONALDSON",
+        "FLEETGUARD",
+        "MANN-FILTER",
+        "BALDWIN",
+        "WIX",
+        "FRAM"
+      ],
+      "required_output": [
+        "VERIFIED_VEHICLE_KEY",
+        "FILTER_POSITION",
+        "ISUZU_OE_OEN",
+        "DONALDSON_REFERENCE",
+        "FLEETGUARD_REFERENCE",
+        "SUPPORTING_REFERENCES",
+        "ELIMFILTERS_BASE_DECISION",
+        "EVIDENCE_STATUS"
+      ],
+      "prohibited_actions": [
+        "GASOLINE_RESEARCH",
+        "AFTERMARKET_DEFINING_OEM_SCOPE",
+        "CROSS_REFERENCE_ONLY_FITMENT_PROMOTION"
+      ]
     }
   ],
-  "downstream_after_phase2": [
-    "DONALDSON_BY_VERIFIED_OEN",
-    "FLEETGUARD_BY_VERIFIED_OEN_IF_NEEDED",
-    "OTHER_AFTERMARKET_CORROBORATION"
-  ],
+  "downstream_after_phase2": [],
   "canonical_hd_rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
   "candidate_families": [
     "N-SERIES",
@@ -76,7 +116,7 @@
     "FSR",
     "FBR"
   ],
-  "candidate_policy": "Candidate names are search terms only. They are not accepted for a model year until Isuzu USA primary evidence proves that exact year/designation.",
+  "candidate_policy": "Candidate diesel model names are search terms only. They are not accepted for a model year until Isuzu USA primary evidence proves that exact year/designation and diesel powertrain.",
   "authoritative_sources": [
     {
       "id": "ISUZU_US_CURRENT_N_DIESEL",
@@ -84,15 +124,6 @@
       "supports": [
         "CURRENT_N_SERIES_DIESEL_MODEL_NAMES",
         "CURRENT_4HK1-TC_5.2L"
-      ],
-      "authority_level": "primary"
-    },
-    {
-      "id": "ISUZU_US_CURRENT_N_GAS",
-      "url": "https://www.isuzucv.com/en/nseries/nseries_gas_specifications",
-      "supports": [
-        "CURRENT_N_SERIES_GAS_MODEL_NAMES",
-        "CURRENT_L8T_6.6L"
       ],
       "authority_level": "primary"
     },
@@ -138,30 +169,6 @@
       "authority_level": "primary"
     },
     {
-      "id": "ISUZU_US_2024_N_GAS",
-      "url": "https://www.isuzucv.com/pdfs/2024N-SeriesGasProductBrochure_Final_ca.pdf",
-      "supports": [
-        "2024_NPR_GAS",
-        "2024_NPR-HD_GAS",
-        "2024_NQR_GAS",
-        "2024_NRR_GAS",
-        "2024_6.6L_V8"
-      ],
-      "authority_level": "primary"
-    },
-    {
-      "id": "ISUZU_US_2025_N_GAS",
-      "url": "https://isuzucv.com/pdfs/2025N-SeriesGas_specs.pdf",
-      "supports": [
-        "2025_NPR_GAS",
-        "2025_NPR-HD_GAS",
-        "2025_NQR_GAS",
-        "2025_NRR_GAS",
-        "2025_6.6L_V8"
-      ],
-      "authority_level": "primary"
-    },
-    {
       "id": "ISUZU_US_GENUINE_CROSSREF",
       "url": "https://www.isuzucv.com/en/app/site/pdf?file=FVGenuineCrossRef.pdf",
       "supports": [
@@ -174,5 +181,6 @@
       "authority_level": "primary",
       "restriction": "Year/engine scope published in this document must not be expanded to a model unless separate Isuzu model-year evidence links that exact model to the published engine/range."
     }
-  ]
+  ],
+  "fuel_scope": "DIESEL_ONLY"
 }
