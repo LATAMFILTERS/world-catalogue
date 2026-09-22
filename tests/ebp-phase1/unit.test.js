@@ -38,6 +38,17 @@ test('validateLockedIdentification rejects an invalid duty value', () => {
   assert.ok(errors.some((e) => e.startsWith('duty must be one of')));
 });
 
+test('validateLockedIdentification accepts INDUSTRIAL_PROCESS duty for governed pre-SKU work', () => {
+  const errors = validation.validateLockedIdentification({
+    elimfilters_code: 'PRE-SKU-COALVEX-TEST',
+    product_category: 'PROCESS_GAS',
+    product_subtype: 'LIQUID_GAS_COALESCER',
+    duty: 'INDUSTRIAL_PROCESS',
+    is_pre_sku_draft: true,
+  });
+  assert.deepEqual(errors, []);
+});
+
 test('resolveFieldApplicability: matrix value used when no override given, tagged source MATRIX', () => {
   const { resolved, source } = validation.resolveFieldApplicability(
     [{ field_name: 'bypass_valve_applicability', applicability: 'REQUIRED', approval_status: 'PROVISIONAL_REQUIRES_ELIMFILTERS_ENGINEERING_APPROVAL' }],
