@@ -758,6 +758,30 @@
       "verified_at": "2026-09-22T18:07:00.000Z",
       "http_status_observed": 200,
       "notes": "Official DuPont FilmTec™ RO/NF portfolio source; family-anchor evidence when original membrane identity is unavailable and exact element evidence is complete."
+    },
+    {
+      "id": "pall__seprasol_current_family",
+      "organization_id": "pall_corporation",
+      "url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol",
+      "endpoint_type": "technology_pages",
+      "source_type": "html",
+      "status": "ACTIVE",
+      "enabled": true,
+      "verified_at": "2026-09-22T19:14:00.000Z",
+      "http_status_observed": 200,
+      "notes": "Current official Pall SepraSol liquid/gas coalescer family and ordering evidence for COALVEX Pilot 01. Exact source codes remain manufacturer identity; performance remains source-attributed."
+    },
+    {
+      "id": "pall__medallion_hp_current_family",
+      "organization_id": "pall_corporation",
+      "url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp",
+      "endpoint_type": "technology_pages",
+      "source_type": "html",
+      "status": "ACTIVE",
+      "enabled": true,
+      "verified_at": "2026-09-22T19:14:00.000Z",
+      "http_status_observed": 200,
+      "notes": "Current official Pall Medallion HP liquid/gas coalescer family and ordering evidence for COALVEX Pilot 01. Product performance is manufacturer-declared."
     }
   ]
 }
