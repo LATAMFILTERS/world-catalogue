@@ -7,6 +7,8 @@ authority: canonical
 owner: ELIMFILTERS Engineering
 source:
   - docs/brand/TECHNOLOGY_REGISTRY.md
+last_reviewed: 2026-09-22
+evidence_status: validated
 system: Fuel Cleanliness Protection
 slug: syntapore
 ---
