@@ -21,7 +21,7 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-hidden="true"
           >
             <source src={platform.heroVideo} type="video/mp4" />
