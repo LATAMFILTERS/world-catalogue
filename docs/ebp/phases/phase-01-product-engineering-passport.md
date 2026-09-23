@@ -13,7 +13,13 @@ audit correction, approve v1.0").
 **Frozen scope:** the data model, API surface, declared-actor semantics,
 and the ADR-0014 applicability-approval gate described in this document
 may not change without a new ADR that explicitly supersedes the relevant
-prior entry. The seeded applicability-matrix *values* (not the mechanism)
+prior entry.
+
+**2026-09-22 additive extension:** ADR-0076 authorizes one narrowly scoped
+change to the frozen Phase 1 identification vocabulary: `INDUSTRIAL_PROCESS`
+is added as a third duty value so Industrial & Process products are not
+misclassified as Heavy Duty. No existing duty semantics, SKU rules,
+Passport lifecycle, API, packaging behavior or activation gate are changed. The seeded applicability-matrix *values* (not the mechanism)
 remain explicitly provisional and are expected to change as ELIMFILTERS
 engineering reviews them — that is normal, gated data maintenance, not an
 architecture change.
@@ -358,7 +364,7 @@ create) or `changed_by` (on every status transition), but that value is a
 
 - **Locked identification:** `elimfilters_code` non-empty;
   `product_category`/`product_subtype` non-empty; `duty` ∈
-  `{HEAVY_DUTY, LIGHT_DUTY}`; if `is_pre_sku_draft = false`, the SKU must
+  `{HEAVY_DUTY, LIGHT_DUTY, INDUSTRIAL_PROCESS}`; if `is_pre_sku_draft = false`, the SKU must
   exist in `elimfilters_catalog` (checked at the DB layer at create time,
   not merely at the pure-function layer).
 - **Required engineering completeness:** for every field the applicability
