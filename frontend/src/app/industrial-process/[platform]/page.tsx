@@ -73,10 +73,20 @@ export default async function IndustrialProcessPlatformRoute({ params }: Props) 
     isPartOf: { '@id': `${url}#platform` },
     publisher: { '@id': `${BASE_URL}/#organization` },
   } : null;
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Industrial & Process', item: `${BASE_URL}/industrial-process/` },
+      { '@type': 'ListItem', position: 3, name: platform.name, item: url },
+    ],
+  };
   return (
     <>
       <Navigation />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {videoSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} /> : null}
       <IndustrialProcessPlatformStablePage platform={platform} />
     </>
