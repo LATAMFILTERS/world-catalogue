@@ -1107,6 +1107,21 @@
         "Engine 6HK1-TC; Overhead Cam, In-line, 6-Cylinder Diesel; Horsepower 250-300 HP @ 2,200 rpm (Gross); Torque 800-860 lbs./ft. @ 1,450 rpm; Displacement 7.8 L"
       ],
       "note": "CLOSURE PASS 2026-09-23 source."
+    },
+    {
+      "source_id": "ISUZU_NRR_CREW_SPECS_RECOVERED_2019JUN",
+      "title": "Isuzu NRR Diesel Crew Cab Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/en/app/site/pdf?file=nrr_crew_specs.pdf",
+      "capture_url": "https://web.archive.org/web/20190606141727/https://www.isuzucv.com/en/app/site/pdf?file=nrr_crew_specs.pdf",
+      "captured_at": "2019-06-06",
+      "supports": [
+        "NRR DIESEL CREW CAB, GVWR/GCWR 19,500/25,500 lbs",
+        "ENGINE Isuzu 4HK1-TC turbocharged; Engine Power 215 hp @ 2,500 rpm; Engine Torque 452 lb.-ft. @ 1,850 rpm"
+      ],
+      "note": "QUALIFIER-CLOSING PASS 2026-09-23 source. The document actually captured inside the MY2021 window (2020-11-27, same URL) is truncated at the storage level by Wayback (HTTP header 'warning: 299 wayback content truncated by \"length\"', Content-Length 1,048,576 of a true 1,601,457 bytes). This 2019-06-06 memento is untruncated and was proven to be the byte-identical file via a Last-Modified match: every capture of this URL from 2019-06-06 through the target 2020-11-27 capture shares the exact same origin Last-Modified header (Tue, 02 Apr 2019 20:12:04 GMT), and only a later, distinctly-different file version (Last-Modified 2021-12-02) appears from January 2022 onward. This is therefore the complete, unaltered content of the same document that was live and captured (but truncated) throughout the MY2021 selling window, recovered via an earlier untruncated memento of the identical file rather than by inference from a different model year."
     }
   ]
 }

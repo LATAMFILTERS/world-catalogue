@@ -4,6 +4,7 @@
 **Manifest:** `config/vehicle-platform-closure/isuzu-us-phase2-oem.json` (existing, unchanged)
 **Phase 1 initial pass:** 2026-09-22
 **Phase 1 closure pass:** 2026-09-23
+**Phase 1 technical-qualifier pass:** 2026-09-23
 **Scope:** USA market, Isuzu, diesel only, model years 2000-2026 inclusive.
 
 This is the research output for the three gated phases the manifest already defines. It
@@ -39,25 +40,80 @@ and `FBR` discovery items and the outstanding NQR MY2000-2001 gap. Phase 2 and P
 | 4 | NRR MY2004 (`CONF-NRR-2004`) | CONFLICTING | VERIFIED | Isuzu's own `n_specs.html` nav shows NRR added between the 2003-12-09 and 2004-04-11 captures; NHTSA is corroboration-only and does not override an existing Isuzu primary source |
 | 5 | NPR-HD/NQR/NRR MY2014 | PARTIAL | VERIFIED | `pdfs/nseries_specs.pdf` captured 2014-01-14, prints `Isuzu 4HK1-TC turbocharged intercooled diesel` |
 | 6 | NPR ECO-MAX MY2014 | PARTIAL | VERIFIED | Same 2014-01-14 PDF, prints `Isuzu 4JJ1-TC turbocharged intercooled diesel`, 3.0L |
-| 7 | NPR-HD/NPR-XD/NQR/NRR MY2021 | PARTIAL | VERIFIED | `npr-xd_crew_specs.pdf` and `nqr_crew_specs.pdf`, both captured 2020-11-27, print `Isuzu 4HK1-TC`; NPR-HD/NRR close on same-batch sibling evidence plus a documented technical download blocker (below) |
+| 7 | NPR-HD/NPR-XD/NQR/NRR MY2021 | PARTIAL | VERIFIED | `npr-xd_crew_specs.pdf`, `nqr_crew_specs.pdf` and (as of the technical-qualifier pass) `nrr_crew_specs.pdf` all print `Isuzu 4HK1-TC` directly; NPR-HD alone closes on sibling evidence plus a documented technical blocker (below) |
 | 8 | FTR MY2018 | PARTIAL | VERIFIED | `en/fseries/specs` captured 2018-01-31, prints `Isuzu 4HK1-TC turbocharged intercooled diesel` |
 | 9 | H-SERIES (critical) | open discovery item | **VERIFIED, incorporated** | Full Isuzu H-Series microsite, `isuzucv.com/hseries/*`, 2005-03-18 through 2009-06-16 |
 | 10 | FBR | open discovery item | CLOSED_NOT_FOUND | Zero hits across isuzucv.com (all-time URL search), NHTSA's full Isuzu model list, and general web search |
 
-### A documented technical blocker (NPR-HD and NRR MY2021)
+### A documented technical blocker, since reduced to one model (NPR-HD MY2021)
 
-Two of the four MY2021 N-Series documents (`npr-hd_diesel_crew_specs.pdf`,
-`nrr_crew_specs.pdf`) are confirmed to exist on Wayback — real Isuzu USA URLs, real 200
-status, three different capture timestamps tried for the NPR-HD file alone — but every
-retrieval attempt (curl with `id_`/`if_`/default replay, PowerShell `Invoke-WebRequest`,
-a range-resume attempt) reproducibly truncated at exactly 1,048,576 bytes. This is recorded
-as a genuine access blocker, not missing evidence. NPR-HD and NRR MY2021 close VERIFIED on:
-their own standard-cab sheets (independently confirming model identity, GVWR and 5.2L
-inside MY2021) plus the explicit `4HK1-TC` code confirmed the same batch-day for their
-NPR-XD/NQR platform siblings, against a zero-exception pattern in which every other
-VERIFIED year from 2005-2026 shows all four N-Series diesel models sharing one engine
-code. This is same-year, same-batch sibling evidence — not inference from an adjacent
-model year (2019 or 2022), which remains prohibited and was not used.
+The initial closure pass (2026-09-22/23) found that two of the four MY2021 N-Series
+documents (`npr-hd_diesel_crew_specs.pdf`, `nrr_crew_specs.pdf`) existed on Wayback — real
+Isuzu USA URLs, real 200 status — but every retrieval attempt truncated at exactly
+1,048,576 bytes, and closed both models on same-batch sibling evidence instead.
+
+## PHASE 1 TECHNICAL QUALIFIER PASS — 2026-09-23
+
+A dedicated follow-up eliminated the residual qualifier on **NRR MY2021** and made the
+**NPR-HD MY2021** and **NRR MY2004** qualifiers explicit and auditable rather than implicit.
+Phase 1's own status counts (181/181 VERIFIED, 0 PARTIAL/UNRESOLVED/CONFLICTING) are
+**unchanged** — this pass only adds or resolves the qualifier layer underneath the existing
+VERIFIED status. No filters, no aftermarket, Phase 2/3 untouched.
+
+**NRR MY2021 — RESOLVED to VERIFIED_DIRECT.** HTTP response headers from the truncated
+capture revealed Wayback's own diagnostic: `warning: 299 wayback content truncated by
+"length"`, with `x-archive-orig-x-crawler-content-length: 1601457` against a served
+`Content-Length: 1048576` — proof the truncation happened inside Wayback's own storage at
+crawl time, not in any client. The same file's `Last-Modified` header (`Tue, 02 Apr 2019
+20:12:04 GMT`) is identical across every capture from 2019-06-06 through the 2020-11-27
+MY2021 capture, proving Isuzu never touched the file across that whole span. The
+**2019-06-06 memento of the same URL is not truncated** (1,601,457 bytes, no warning) and
+shares that exact Last-Modified fingerprint — it is the byte-identical file. Downloaded in
+full, it reads directly: `GVWR/GCWR 19,500/25,500 lbs.`, `ENGINE Isuzu 4HK1-TC
+turbocharged`, `215 hp @ 2,500 rpm`, `452 lb.-ft. @ 1,850 rpm` — an exact match to this
+closure's existing NRR MY2021 GVWR/GCWR. NRR now closes on its **own** document, not on its
+NPR-XD/NQR siblings.
+
+**NPR-HD MY2021 — remains QUALIFIED_CLOSED.** The identical recovery technique does not
+work for `npr-hd_diesel_crew_specs.pdf`: its file version (also `Last-Modified` 2019-04-02)
+has **no untruncated memento anywhere in Wayback's history of the URL**. Five mementos were
+checked via HTTP header forensics — 2016-03-28 and 2024-06-29 are real, complete files but
+are *different, later-modified* versions (proven by a different Last-Modified), so using
+them would silently substitute a different document rather than recover this one; the
+three mementos of the correct 2019-04-02 version (2019-10-16, 2020-11-27, 2021-04-20, plus
+2021-06-21) are all truncated at the identical byte count. Confirmed independently across
+four HTTP clients: curl (`id_`/`if_`/default replay), PowerShell `Invoke-WebRequest`, a
+curl range-resume attempt, and Python `urllib.request` (used to read the diagnostic
+headers directly). NPR-HD MY2021 remains closed on its own standard-cab sheet (model,
+GVWR, 5.2L confirmed) plus the `4HK1-TC` code now confirmed directly for all three of its
+NPR-XD/NQR/NRR platform siblings from the same 2020-11-27 batch.
+
+**NRR MY2004 — remains QUALIFIED_CLOSED.** A relevant California Air Resources Board
+Executive Order was located: **A-020-0218**, "ISUZU MOTORS LIMITED — New On-Road
+Heavy-Duty Engines," executed 2003-12-22, certifying engine family `4SZXH05.23AA` —
+model code `4HK1TC/523AA-1`, 190 hp — explicitly for **"MODEL YEAR 2004"**, for on-road
+vehicles over 14,000 lbs GVWR (the class NRR's 19,500 lbs falls into). The 190 hp rating
+matches Isuzu's own mid-2004 NRR literature (`n_specs.pdf`, captured 2004-07-25: "190 HP @
+2,600 RPM") exactly. This is genuine, relevant, government-certified evidence — but it
+certifies the **engine family's** model-year basis, not the **NRR vehicle's** model year by
+name, and no distinct MY2005 Executive Order for the same weight class was found
+superseding it (the next one located is A-020-0242, dated 2008), meaning a MY2005-launched
+NRR could equally have shipped on the carried-forward 2004-based certification without a
+new EO being required. NHTSA's recalls API returned zero campaigns for NRR at either model
+year, so no recall notice exists to check either. No isuzucv.com brochure, owner's manual,
+service manual or press release with a printed model year was found for this era (Wayback's
+entire PDF index for isuzucv.com 2003-2006 holds exactly two files, neither dated). The
+qualifier is preserved rather than resolved; the block's VERIFIED status stands on the
+site-navigation/continuous-publication evidence from the prior closure pass, not on an
+explicit model-year label.
+
+**PHASE 1 TECHNICAL AUDIT = CLOSED WITH QUALIFIER.** Of the two qualifiers scoped for this
+pass, one (NRR MY2021) is fully resolved; the other two flagged points (NPR-HD MY2021,
+NRR MY2004) remain honestly reported as `QUALIFIED_CLOSED` — real, relevant evidence was
+found for both, in neither case did that evidence rise to the "explicit model-year label"
+or "direct recoverable document" bar the task set. See `technical_qualifier` objects on
+blocks `N-2004-NRR` and `N-2019-2021` in the Phase 1 artefact for the complete, structured
+record of every source checked, every timestamp tried and every method used.
 
 ## Artefacts
 
@@ -69,7 +125,7 @@ model year (2019 or 2022), which remains prohibited and was not used.
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 attempt, access blockers, and why no base decision was taken |
 | `config/isuzu-n-series-us-oem-matrix.json` | Extended from 2022-2026 to 2000-2026 so the existing bot resolver answers the whole range |
 | `lib/isuzu-us-diesel-closure.js` | Reader, validator and the canonical filter-set answer |
-| `tests/isuzu-us-diesel-closure.test.js` | 31 tests over the governance invariants and the answer, including the 10 mandatory closure-pass validations |
+| `tests/isuzu-us-diesel-closure.test.js` | 37 tests over the governance invariants and the answer: the 10 mandatory closure-pass validations plus 6 technical-qualifier validations |
 
 ## Phase 1 — diesel vehicle universe
 
