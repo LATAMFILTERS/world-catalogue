@@ -83,6 +83,17 @@ export function IndustrialProcessTechnologyStablePage({
     '@type': 'FAQPage',
     mainEntity: faqs.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
   };
+  const videoSchema = technology.heroVideo ? {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    '@id': `${url}#hero-video`,
+    name: `${technology.name} — ${technology.title}`,
+    description: technology.summary,
+    contentUrl: `https://elimfilters.com${technology.heroVideo}`,
+    thumbnailUrl: [`https://elimfilters.com${technology.mediaImage}`],
+    isPartOf: { '@id': `${url}#article` },
+    publisher: { '@id': 'https://elimfilters.com/#organization' },
+  } : null;
   const inquiryHref = `mailto:applications@elimfilters.com?subject=${encodeURIComponent(`${technology.name} Industrial & Process Application Assessment`)}`;
   const related = platform.technologies.filter((item) => item.slug !== technology.slug);
 
@@ -91,6 +102,7 @@ export function IndustrialProcessTechnologyStablePage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      {videoSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} /> : null}
 
       <section className={styles.hero} aria-labelledby="industrial-tech-title">
         {technology.heroVideo ? (
