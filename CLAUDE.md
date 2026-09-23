@@ -87,7 +87,10 @@ Industrial preferred SKU = approved three-character Technology-Core prefix +
 the last four numeric digits from the canonical base code, left-padded when
 needed. Collisions use the existing sticky discriminator pattern: the first
 published mapping keeps its natural slot; later distinct products use prefix +
-discriminator `1..9` + last three digits, skipping occupied slots. If the
+discriminator `1..9` + last three digits, skipping occupied slots. For a new
+batch with multiple products competing for one natural slot, the reviewed
+publication order must be explicitly frozen before allocation; raw query/array
+order is never an identity rule. If the
 source has no numeric payload, the core is blocked, or collision capacity is
 exhausted, fail closed with `STOP_REVIEW`.
 
