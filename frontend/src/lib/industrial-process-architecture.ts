@@ -966,7 +966,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Known target constituent and inlet concentration', 'Competing dissolved species', 'Flow and contact conditions', 'Temperature and pH', 'Particulate loading', 'Required outlet condition and breakthrough criterion'],
           ['Target constituent appears downstream', 'Unexpectedly early breakthrough', 'Pressure drop rises', 'Media service interval shortens', 'Outlet quality becomes unstable', 'Downstream treatment remains affected'],
           '/images/turbine-plant.avif',
-          '/images/planta_converted.avif',
+          '/images/ADSOVEX.png',
         ),
         selectionInputs: [
           'Target dissolved constituent or residual oxidant',
