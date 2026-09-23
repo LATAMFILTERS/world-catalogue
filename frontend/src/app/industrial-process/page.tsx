@@ -169,7 +169,7 @@ export default function IndustrialProcessPage() {
 
           <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1400, margin: '0 auto' }}>
             <p style={eyebrow}>INDUSTRIAL & PROCESS</p>
-            <h1 style={heroTitle}>
+            <h1 className="industrial-process-hero-title" style={heroTitle}>
               ENGINEER THE PROCESS.
               <span style={{ display: 'block', color: '#FFF12D' }}>PROTECT THE ASSET.</span>
             </h1>
@@ -358,7 +358,7 @@ export default function IndustrialProcessPage() {
 const container: React.CSSProperties = { maxWidth: 1400, margin: '0 auto' };
 const section: React.CSSProperties = { padding: 'var(--section-py) var(--section-px)', borderBottom: '1px solid rgba(255,255,255,0.07)' };
 const eyebrow: React.CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-mono)', fontWeight: 700, letterSpacing: '0.2em', fontSize: '0.73rem', textTransform: 'uppercase', margin: '0 0 14px' };
-const heroTitle: React.CSSProperties = { maxWidth: 1120, fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(3.2rem,8vw,7.8rem)', lineHeight: 0.88, letterSpacing: '-0.055em', textTransform: 'uppercase', margin: 0 };
+const heroTitle: React.CSSProperties = { maxWidth: 1120, fontFamily: 'var(--font-technology-wordmark)', fontWeight: 900, fontSize: 'clamp(3.2rem,8vw,7.8rem)', lineHeight: 0.86, letterSpacing: '-0.045em', textTransform: 'uppercase', margin: 0, WebkitTextStroke: '0.012em currentColor' };
 const heroCopy: React.CSSProperties = { maxWidth: 850, color: 'rgba(255,255,255,0.72)', fontSize: 'clamp(1.05rem,2vw,1.35rem)', lineHeight: 1.65, marginTop: 28 };
 const sectionTitle: React.CSSProperties = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 0.98, letterSpacing: '-0.04em', textTransform: 'uppercase', margin: '0 0 24px' };
 const lead: React.CSSProperties = { color: 'rgba(255,255,255,0.82)', fontSize: 'clamp(1.05rem,1.7vw,1.24rem)', lineHeight: 1.7, fontWeight: 600, marginTop: 0 };
