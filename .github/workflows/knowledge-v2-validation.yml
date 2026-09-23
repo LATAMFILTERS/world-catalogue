@@ -19,6 +19,10 @@ on:
       - 'scripts/hermes/industrial-research-policy.mjs'
       - 'scripts/hermes/industrial-product-base-policy.mjs'
       - 'tests/hermes-phase5/industrial-product-base-policy.test.mjs'
+      - 'tests/hermes-phase5/coalvex-product-pilot-01.test.mjs'
+      - 'config/industrial-product-pilots/**'
+      - 'ebp/phase1/validation.js'
+      - 'migrations/ebp-phase1/004_industrial_process_duty.sql'
       - 'scripts/hermes/source-registry-core.mjs'
       - 'scripts/hermes/collect-real-sources-core.mjs'
       - 'tests/hermes-phase5/industrial-process-technical-closure.test.mjs'
@@ -43,6 +47,10 @@ on:
       - 'scripts/hermes/industrial-research-policy.mjs'
       - 'scripts/hermes/industrial-product-base-policy.mjs'
       - 'tests/hermes-phase5/industrial-product-base-policy.test.mjs'
+      - 'tests/hermes-phase5/coalvex-product-pilot-01.test.mjs'
+      - 'config/industrial-product-pilots/**'
+      - 'ebp/phase1/validation.js'
+      - 'migrations/ebp-phase1/004_industrial_process_duty.sql'
       - 'scripts/hermes/source-registry-core.mjs'
       - 'scripts/hermes/collect-real-sources-core.mjs'
       - 'tests/hermes-phase5/industrial-process-technical-closure.test.mjs'
@@ -72,6 +80,9 @@ jobs:
 
       - name: 'Validate Industrial product base-code authority'
         run: node --test tests/hermes-phase5/industrial-product-base-policy.test.mjs
+
+      - name: 'Validate COALVEX product pilot 01'
+        run: node --test tests/hermes-phase5/coalvex-product-pilot-01.test.mjs
 
       - name: Confirm governing files
         shell: bash
