@@ -968,6 +968,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/turbine-plant.avif',
           '/images/ADSOVEX.png',
         ),
+        heroVideo: '/images/ADSOVEX%20video.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Target dissolved constituent or residual oxidant',
           'Inlet concentration and expected variability',
