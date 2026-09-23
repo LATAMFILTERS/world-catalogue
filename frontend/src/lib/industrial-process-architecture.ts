@@ -1087,6 +1087,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/turbine-plant.avif',
           '/images/IONVEXA%E2%84%A2.png',
         ),
+        heroVideo: '/images/IONVEXA%E2%84%A2.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Feed-water ionic composition and concentration',
           'Target ion or required demineralized-water condition',
