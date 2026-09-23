@@ -112,7 +112,7 @@ export function IndustrialProcessTechnologyStablePage({
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             poster={technology.hideHeroPoster ? undefined : technology.heroImage}
             aria-hidden="true"
           >
