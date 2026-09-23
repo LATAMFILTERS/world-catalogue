@@ -182,7 +182,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/air-filters-lab.avif',
           '/images/HE-CRIVA.png',
           undefined,
-          '/images/HE-CRIVA-%20VIDEO%20(1).mp4',
+          '/images/HE-CRIVA-%20VIDEO.mp4',
         ),
         hideHeroPoster: true,
         knowledgeCenterSlug: 'ip-aeremis-he-criva-critical-air',
