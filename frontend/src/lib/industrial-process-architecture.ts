@@ -1025,6 +1025,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/MEMBRAVEX.png',
           ['Reverse Osmosis', 'Ultrafiltration', 'Nanofiltration'],
         ),
+        heroVideo: '/images/MEMBRAVEX.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Feed-water source and complete available water analysis',
           'Required permeate quality and protected downstream process',
