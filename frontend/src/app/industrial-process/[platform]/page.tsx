@@ -31,9 +31,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       type: 'website',
       siteName: 'ELIMFILTERS',
-      images: [{ url: `${BASE_URL}${platform.heroImage}`, width: 1200, height: 630, alt: `${platform.name} ${platform.descriptor}` }],
+      images: [{ url: `${BASE_URL}${platform.mediaImage ?? platform.heroImage}`, width: 1200, height: 630, alt: `${platform.name} ${platform.descriptor}` }],
     },
-    twitter: { card: 'summary_large_image', title, description: platform.summary, images: [`${BASE_URL}${platform.heroImage}`] },
+    twitter: { card: 'summary_large_image', title, description: platform.summary, images: [`${BASE_URL}${platform.mediaImage ?? platform.heroImage}`] },
   };
 }
 
