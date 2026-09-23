@@ -99,7 +99,7 @@ export default function IndustrialProcessPage() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-hidden="true"
             style={{
               position: 'absolute',
