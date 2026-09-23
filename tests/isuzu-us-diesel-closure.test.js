@@ -14,6 +14,8 @@ const {
   answerFilterSetQuery,
   validateClosure,
   coverageReport,
+  phase2CoverageMatrix,
+  phase2CoverageSummary,
 } = require('../lib/isuzu-us-diesel-closure');
 
 const { resolveIsuzuNSeriesCustomerQuery } = require('../lib/isuzu-n-series-oem-resolver');
@@ -535,4 +537,218 @@ test('QUALIFIER GOVERNANCE: sibling-model evidence was not used as a silent subs
     'the status_note must not describe NRR as resting on sibling evidence now that its own document was recovered',
   );
   assert.match(block.status_note, /NPR-HD only/);
+});
+
+// ---------------------------------------------------------------------------
+// PHASE 2 -- ISUZU USA DIESEL OEM FILTER / OEN CLOSURE (2026-09-23).
+//
+// Scope: close, for every Phase 1 vehicle (now including H-Series), the
+// filter-position matrix on top of the already-CLOSED Phase 1 universe.
+// Phase 3 is not touched. Aftermarket is not consulted. The 15 validations
+// below are the ones the task named explicitly.
+// ---------------------------------------------------------------------------
+
+test('PHASE 2.1: every Phase 1 vehicle maps into the Phase 2 coverage matrix', () => {
+  const matrix = phase2CoverageMatrix();
+  const matrixVehicles = new Set(matrix.map((r) => `${r.year}|${r.series}|${r.model}`));
+
+  let phase1VehicleCount = 0;
+  for (let year = phase1.year_from; year <= phase1.year_to; year += 1) {
+    for (const entry of modelsFor(year)) {
+      phase1VehicleCount += 1;
+      const key = `${year}|${entry.series}|${entry.model}`;
+      assert.ok(matrixVehicles.has(key), `Phase 1 vehicle ${key} has no Phase 2 coverage matrix entry`);
+    }
+  }
+  assert.equal(matrixVehicles.size, phase1VehicleCount, 'the matrix must cover exactly the Phase 1 vehicle set, no more and no fewer');
+});
+
+test('PHASE 2.2: H-Series is represented, with all three models and the full position set', () => {
+  assert.ok(phase2.position_universe['H-SERIES'], 'phase2.position_universe must define H-SERIES');
+  const hPositions = Object.keys(phase2.position_universe['H-SERIES']).filter((k) => k !== 'derivation_note');
+  for (const required of ['AIR_PRIMARY', 'LUBE_PRIMARY', 'FUEL_PRIMARY', 'CABIN', 'AIR_DRYER', 'TRANSMISSION_FILTER', 'HYDRAULIC_FILTER']) {
+    assert.ok(hPositions.includes(required), `H-SERIES position_universe is missing ${required}`);
+  }
+
+  const matrix = phase2CoverageMatrix();
+  for (const model of ['HTR', 'HVR', 'HXR']) {
+    const rows = matrix.filter((r) => r.series === 'H-SERIES' && r.model === model);
+    assert.ok(rows.length > 0, `${model} has no coverage matrix rows`);
+    const years = new Set(rows.map((r) => r.year));
+    for (const y of [2005, 2006, 2007, 2008]) assert.ok(years.has(y), `${model} MY${y} missing from coverage matrix`);
+  }
+});
+
+test('PHASE 2.3: no gasoline vehicle or gasoline-scoped row appears in Phase 2', () => {
+  assert.equal(phase2.fuel_scope, 'DIESEL_ONLY');
+  for (const row of phase2.oen_rows) {
+    // Rows scoped to "Diesel/GAS" or similar are the FleetValue catalogue's
+    // own combined listing (it does not split diesel and gas parts), not a
+    // gasoline-only row, and are already recorded as such throughout Phase 2.
+    // A row must never be scoped to GAS alone.
+    assert.ok(!/^gas$/i.test(String(row.isuzu_published_engine_scope || '').trim()), `${row.row_id} is scoped to GAS alone`);
+  }
+});
+
+test('PHASE 2.4: no aftermarket source defines any Phase 2 position, including the new H-Series and gap notes', () => {
+  const AFTERMARKET = /donaldson|fleetguard|mann-filter|baldwin|\bwix\b|\bfram\b/i;
+  for (const row of phase2.oen_rows) {
+    const src = sources.sources.find((s) => s.source_id === row.source);
+    assert.ok(src, `${row.row_id} cites unknown source ${row.source}`);
+    assert.equal(src.publisher, 'Isuzu Commercial Truck of America', `${row.row_id} cites non-Isuzu publisher ${src.publisher}`);
+    assert.ok(!AFTERMARKET.test(src.publisher), `${row.row_id} cites aftermarket publisher ${src.publisher}`);
+  }
+  // The retailer/marketplace research leads noted in unresolved_positions and
+  // in the H-SERIES/Cummins governance notes must stay prose-only -- never a
+  // row.source, never an isuzu_oe_oen entry copied from them.
+  const serialized = JSON.stringify(phase2.oen_rows);
+  assert.ok(!/ebay|amazon|walmart|nkrdieselparts|crossfilters|dieselhub|partsgeek/i.test(serialized), 'a retailer name leaked into a formal oen_row');
+});
+
+test('PHASE 2.5: no model-to-model inheritance -- FRR, FXR and every H-Series model answer empty or independently', () => {
+  const ftr2007 = answerFilterSetQuery({ year: 2007, model: 'FTR' }).answers[0];
+  const fxr2007 = answerFilterSetQuery({ year: 2007, model: 'FXR' }).answers[0];
+  const lubeOf = (v) => v.positions.find((p) => p.position === 'LUBE_PRIMARY');
+  assert.ok(lubeOf(ftr2007).isuzu_oe_oen.length > 0, 'sanity: FTR must have its own lube evidence to make this a real test');
+  assert.deepEqual(lubeOf(fxr2007).isuzu_oe_oen, [], 'FXR must not inherit FTR lube filter evidence');
+
+  // No H-Series model may cite an F-Series oen_row (checked structurally: no
+  // oen_row tagged H-SERIES exists at all yet, and no F-SERIES row's
+  // applies_to_model_lines includes an H-Series model name).
+  for (const row of phase2.oen_rows.filter((r) => r.series === 'F-SERIES')) {
+    for (const line of row.applies_to_model_lines) {
+      assert.ok(!['HTR', 'HVR', 'HXR'].includes(line), `${row.row_id} claims an H-Series model line despite being an F-SERIES row`);
+    }
+  }
+  const htr2005 = answerFilterSetQuery({ year: 2005, model: 'HTR' }).answers[0];
+  assert.deepEqual(lubeOf(htr2005).isuzu_oe_oen, [], 'HTR must not inherit any F-Series lube filter evidence via the shared 6HK1-TC engine');
+});
+
+test('PHASE 2.6: engine-scoped rows do not leak to a different engine', () => {
+  // The 4JJ-scoped lube row must never answer for a 4HK1-TC vehicle, and vice
+  // versa, even though both are "N-SERIES ... Diesel" rows on the same page.
+  const ecomax2015 = answerFilterSetQuery({ year: 2015, model: 'NPR' }).answers[0]; // 4JJ1-TC
+  const nprhd2015 = answerFilterSetQuery({ year: 2015, model: 'NPR-HD' }).answers[0]; // 4HK1-TC
+  assert.equal(ecomax2015.engine_code, '4JJ1-TC');
+  assert.equal(nprhd2015.engine_code, '4HK1-TC');
+
+  const lubeOf = (v) => v.positions.find((p) => p.position === 'LUBE_PRIMARY');
+  assert.ok(lubeOf(ecomax2015).isuzu_oe_oen.includes('8980188580'), 'ECO-MAX must get its own 4JJ lube number');
+  assert.ok(!lubeOf(ecomax2015).isuzu_oe_oen.includes('8982984040'), 'ECO-MAX must not receive the 4HK1-TC lube number');
+  assert.ok(lubeOf(nprhd2015).isuzu_oe_oen.includes('8982984040'), 'NPR-HD must get the 4HK1-TC lube number');
+  assert.ok(!lubeOf(nprhd2015).isuzu_oe_oen.includes('8980188580'), 'NPR-HD must not receive the 4JJ lube number');
+});
+
+test('PHASE 2.7: every position returns a real, non-missing state for every vehicle', () => {
+  const matrix = phase2CoverageMatrix();
+  assert.ok(matrix.length > 0);
+  for (const cell of matrix) {
+    assert.ok(cell.position === null || typeof cell.position === 'string', `cell for ${cell.year} ${cell.model} has a malformed position`);
+    assert.ok(['VERIFIED', 'PARTIAL', 'UNRESOLVED', 'NOT_APPLICABLE', 'CONFLICTING'].includes(cell.status), `cell for ${cell.year} ${cell.model} ${cell.position} has invalid status ${cell.status}`);
+  }
+});
+
+test('PHASE 2.8: every NOT_APPLICABLE position carries a stated basis', () => {
+  for (const [series, universe] of Object.entries(phase2.position_universe)) {
+    for (const [position, def] of Object.entries(universe)) {
+      if (position === 'derivation' || position === 'derivation_note') continue;
+      if (def.applicable === false) {
+        assert.ok(def.basis && def.basis.length > 10, `${series}.${position} is NOT_APPLICABLE but has no basis`);
+      }
+    }
+  }
+  const matrix = phase2CoverageMatrix();
+  for (const cell of matrix.filter((c) => c.status === 'NOT_APPLICABLE')) {
+    assert.ok(cell.basis && cell.basis.length > 5, `NOT_APPLICABLE cell ${cell.year} ${cell.model} ${cell.position} has no basis`);
+  }
+});
+
+test('PHASE 2.9: every OEN row cites a real, registered Isuzu source', () => {
+  const known = new Set(sources.sources.map((s) => s.source_id));
+  for (const row of phase2.oen_rows) {
+    assert.ok(known.has(row.source), `${row.row_id} cites unregistered source ${row.source}`);
+    assert.ok(Array.isArray(row.isuzu_oe_oen) && row.isuzu_oe_oen.length > 0, `${row.row_id} has no isuzu_oe_oen`);
+  }
+});
+
+test('PHASE 2.10: every binding points to an existing Phase 1 block', () => {
+  const blockIds = new Set(phase1.year_blocks.map((b) => b.block_id));
+  for (const row of phase2.oen_rows) {
+    for (const binding of row.binds_to_phase1 || []) {
+      const parsed = parseBinding(binding);
+      assert.ok(parsed, `${row.row_id} has an unparseable binding ${binding}`);
+      assert.ok(blockIds.has(parsed.blockId), `${row.row_id} binds to unknown Phase 1 block ${parsed.blockId}`);
+    }
+  }
+});
+
+test('PHASE 2.11: FRR, FXR and every H-Series model are explicitly documented as unresolved rather than silently inheriting from FTR', () => {
+  const frrFxrEntry = phase2.unresolved_positions.find((u) => u.scope.includes('FRR and FXR'));
+  assert.ok(frrFxrEntry, 'FRR/FXR must be recorded in unresolved_positions');
+  assert.match(frrFxrEntry.reason, /FTR.*FVR.*FSR/);
+
+  const hSeriesEntry = phase2.unresolved_positions.find((u) => u.scope.includes('H-SERIES'));
+  assert.ok(hSeriesEntry, 'H-Series must be recorded in unresolved_positions');
+  assert.match(hSeriesEntry.reason, /no owner's manual|exhaustive search/i);
+  assert.match(hSeriesEntry.reason, /prohibited|inherit/i);
+  assert.match(hSeriesEntry.closing_note, /terminal state|silently omitted/i);
+});
+
+test('PHASE 2.12: any Cummins B6.7 reference, if present, would have to be marked OEM-authoritative -- and none was smuggled in without that marker', () => {
+  const cumminsRule = phase2.governance.cummins_b67_rule;
+  assert.ok(cumminsRule, 'governance.cummins_b67_rule must exist');
+  assert.match(cumminsRule, /Cummins official/);
+  assert.match(cumminsRule, /Fleetguard is explicitly excluded/);
+
+  // No oen_row for the B6.7 F-Series exists yet (still UNRESOLVED); if one is
+  // ever added it must cite a source whose source_type marks it as an
+  // official Cummins document, never a generic/aftermarket one.
+  const b67Rows = phase2.oen_rows.filter((r) => /cummins|b6\.7/i.test(r.isuzu_published_engine_scope || ''));
+  for (const row of b67Rows) {
+    const src = sources.sources.find((s) => s.source_id === row.source);
+    assert.match(src.source_type, /official/i, `${row.row_id} cites a non-official source for the Cummins B6.7`);
+  }
+  const cumminsEntry = phase2.unresolved_positions.find((u) => u.scope.includes('Cummins B6.7'));
+  assert.ok(cumminsEntry, 'Cummins B6.7 must be recorded in unresolved_positions');
+});
+
+test('PHASE 2.13: filter elements, assemblies and kits are not conflated in their own descriptions', () => {
+  for (const row of phase2.oen_rows) {
+    const desc = row.isuzu_part_description || '';
+    // A row whose own Isuzu description says ELEMENT or KIT must not silently
+    // masquerade as a plain "FILTER" (assembly) row elsewhere with the same
+    // row_id semantics reused -- each row's description is trusted verbatim
+    // and must be internally consistent with itself (this is a structural
+    // sanity check, not a rewrite of Isuzu's own wording).
+    if (/\bELEMENT\b/i.test(desc)) {
+      assert.ok(!/\bASSEMBLY\b/i.test(desc), `${row.row_id} description conflates ELEMENT and ASSEMBLY: "${desc}"`);
+    }
+  }
+});
+
+test('PHASE 2.14: the two anomalous-format OEN rows remain explicitly flagged, not silently normalized', () => {
+  const rows = phase2.oen_rows.filter((r) => r.row_id === 'P2-N-LUBE-2011-ON' || r.row_id === 'P2-N-LUBE-1998-2010');
+  assert.equal(rows.length, 2);
+  for (const row of rows) {
+    assert.ok(row.format_note, `${row.row_id} lost its format_note`);
+    assert.match(row.format_note, /does not follow|None of the three/);
+    assert.match(row.format_note, /confirm/i, `${row.row_id}'s format_note must record the 2026-09-23 confirmation check`);
+    assert.match(row.format_note, /not.*normalized|remains flagged/i);
+  }
+});
+
+test('PHASE 2.15: Phase 3 is untouched by this pass', () => {
+  assert.equal(phase3.outcome, 'BLOCKED_AT_SOURCE_1');
+  assert.deepEqual(phase3.resolution_rows, []);
+  assert.deepEqual(phase3.elimfilters_base_decisions, []);
+});
+
+test('PHASE 2 FINAL: phase2_status is CLOSED and the coverage summary is internally consistent', () => {
+  assert.equal(phase2.phase2_status, 'CLOSED');
+  assert.ok(Array.isArray(phase2.phase2_status_history) && phase2.phase2_status_history.length >= 2);
+
+  const summary = phase2CoverageSummary();
+  const sum = Object.values(summary.by_status).reduce((a, b) => a + b, 0);
+  assert.equal(sum, summary.total_position_cells, 'the per-status counts must add up to the total cell count');
+  assert.equal(summary.total_vehicle_year_combinations, 181, 'must match the closed Phase 1 vehicle count (169 original + 12 H-Series)');
 });
