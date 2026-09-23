@@ -435,3 +435,104 @@ test('CLOSURE FINAL: phase_status is CLOSED and the history records why', () => 
   const finalEntry = phase1.phase_status_history[phase1.phase_status_history.length - 1];
   assert.equal(finalEntry.phase_status, 'CLOSED');
 });
+
+// ---------------------------------------------------------------------------
+// PHASE 1 TECHNICAL QUALIFIER CLOSURE (2026-09-23) -- follow-up micro-pass.
+//
+// Scope: eliminate or explicitly document the two remaining technical
+// qualifiers (NRR MY2004's model-year label, NPR-HD/NRR MY2021's direct
+// document) that VERIFIED status alone did not capture. Phase 1's own
+// VERIFIED/PARTIAL/UNRESOLVED/CONFLICTING statuses are unchanged by this
+// pass -- only the qualifier layer is added or resolved.
+// ---------------------------------------------------------------------------
+
+test('QUALIFIER 1: NRR MY2004 has explicit model-year evidence, or an explicit documented qualifier', () => {
+  const nrr2004 = phase1.year_blocks.find((b) => b.block_id === 'N-2004-NRR');
+  assert.equal(nrr2004.evidence_status['2004'], 'VERIFIED');
+
+  const q = nrr2004.technical_qualifier;
+  assert.ok(q, 'NRR MY2004 must carry an explicit technical_qualifier record');
+  assert.equal(q.status, 'QUALIFIED_CLOSED');
+  assert.match(q['search_pass_2026-09-23'], /CARB/);
+  assert.match(q['search_pass_2026-09-23'], /Executive Order/);
+  assert.ok(q.disposition && q.disposition.length > 20, 'the qualifier must state its disposition, not just its question');
+});
+
+test('QUALIFIER 2: NPR-HD MY2021 has direct engine-code evidence, or an explicit documented qualifier', () => {
+  const block = phase1.year_blocks.find((b) => b.block_id === 'N-2019-2021');
+  assert.equal(block.evidence_status['2021'], 'VERIFIED');
+
+  const q = block.technical_qualifier;
+  assert.ok(q, 'the N-2019-2021 block must carry an explicit technical_qualifier for NPR-HD');
+  assert.equal(q.id, 'QUAL-NPRHD-MY2021-DIRECT-DOCUMENT');
+  assert.equal(q.status, 'QUALIFIED_CLOSED');
+  assert.ok(Array.isArray(q.archived_timestamps_checked) && q.archived_timestamps_checked.length >= 5, 'must document every memento checked');
+  assert.match(q.truncation_behaviour, /truncated/i);
+  assert.match(q.verification_methods.join(','), /curl/i);
+  assert.match(q.verification_methods.join(','), /PowerShell/i);
+  assert.match(q.verification_methods.join(','), /Python/i);
+});
+
+test('QUALIFIER 3: NRR MY2021 now has direct engine-code evidence from its own document, not sibling-only', () => {
+  const block = phase1.year_blocks.find((b) => b.block_id === 'N-2019-2021');
+  assert.ok(block.evidence.includes('ISUZU_NRR_CREW_SPECS_RECOVERED_2019JUN'), 'NRR MY2021 must cite its own recovered document, not just NPR-XD/NQR siblings');
+
+  const src = sources.sources.find((s) => s.source_id === 'ISUZU_NRR_CREW_SPECS_RECOVERED_2019JUN');
+  assert.ok(src, 'the recovered NRR source must be registered in sources.json');
+  assert.equal(src.publisher, 'Isuzu Commercial Truck of America');
+  assert.ok(src.supports.some((s) => /4HK1-TC/.test(s)), 'the recovered document must itself print the engine code');
+  assert.ok(src.supports.some((s) => /19,500\/25,500/.test(s)), "the recovered document must itself carry NRR's own GVWR/GCWR, confirming it is NRR's document and not a substitution");
+
+  // NPR-HD must not silently acquire its own "recovered" source the way NRR
+  // just did, without the qualifier being updated too.
+  assert.ok(!block.evidence.some((id) => /NPRHD.*RECOVERED|NPR_HD.*RECOVERED/i.test(id)), 'NPR-HD has no recovered direct source; its qualifier must remain in force');
+});
+
+test('QUALIFIER GOVERNANCE: no aftermarket source was introduced while closing these qualifiers', () => {
+  const AFTERMARKET = /donaldson|fleetguard|mann-filter|baldwin|\bwix\b|\bfram\b/i;
+  const nrr2004 = phase1.year_blocks.find((b) => b.block_id === 'N-2004-NRR');
+  const block2021 = phase1.year_blocks.find((b) => b.block_id === 'N-2019-2021');
+  for (const block of [nrr2004, block2021]) {
+    for (const id of [...(block.evidence || []), ...(block.corroboration || [])]) {
+      const src = sources.sources.find((s) => s.source_id === id);
+      assert.ok(src, `${block.block_id} cites unknown source ${id}`);
+      assert.ok(!AFTERMARKET.test(src.publisher), `${block.block_id} cites aftermarket publisher ${src.publisher}`);
+    }
+  }
+  // The CARB Executive Order researched for the NRR MY2004 qualifier is
+  // deliberately NOT a registered source and NOT cited from evidence[] or
+  // corroboration[] -- it is government regulatory material, not Isuzu and
+  // not the one named NHTSA corroboration source, and it was inconclusive.
+  // It must only ever appear as descriptive text inside the qualifier, never
+  // as if it were formal evidence.
+  for (const src of sources.sources) {
+    if (/CARB|Air Resources Board/i.test(src.publisher || '')) {
+      assert.fail(`a CARB source ${src.source_id} was registered as formal evidence; it must remain qualifier-only prose`);
+    }
+  }
+});
+
+test('QUALIFIER GOVERNANCE: the qualifier pass did not inherit a year by continuity', () => {
+  // The NRR MY2021 recovery must be dated to a capture whose own
+  // Last-Modified fingerprint places it inside (or provably unchanged
+  // through) the MY2021 window -- not simply borrowed from an adjacent
+  // model year's document.
+  const src = sources.sources.find((s) => s.source_id === 'ISUZU_NRR_CREW_SPECS_RECOVERED_2019JUN');
+  assert.match(src.note, /Last-Modified/);
+  assert.match(src.note, /byte-identical|identical file/);
+  assert.match(src.note, /2020-11-27/);
+});
+
+test('QUALIFIER GOVERNANCE: sibling-model evidence was not used as a silent substitute once direct evidence existed', () => {
+  // Before this pass, NRR MY2021 evidence rested only on NPR-XD/NQR sibling
+  // documents (per the prior status_note). After this pass, NRR must cite
+  // its OWN document explicitly, and the block's prose must no longer claim
+  // NRR itself is closed on sibling evidence.
+  const block = phase1.year_blocks.find((b) => b.block_id === 'N-2019-2021');
+  assert.doesNotMatch(
+    block.status_note,
+    /NRR MY2021 are closed VERIFIED on:.*sibling/s,
+    'the status_note must not describe NRR as resting on sibling evidence now that its own document was recovered',
+  );
+  assert.match(block.status_note, /NPR-HD only/);
+});
