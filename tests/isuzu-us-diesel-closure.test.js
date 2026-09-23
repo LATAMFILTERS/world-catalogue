@@ -16,6 +16,8 @@ const {
   coverageReport,
   phase2CoverageMatrix,
   phase2CoverageSummary,
+  validatePhase3,
+  phase3CoverageMatrix,
 } = require('../lib/isuzu-us-diesel-closure');
 
 const { resolveIsuzuNSeriesCustomerQuery } = require('../lib/isuzu-n-series-oem-resolver');
@@ -126,14 +128,12 @@ test('N-Series has no air dryer and F-Series does, and both are stated rather th
   assert.equal(phase2.position_universe['F-SERIES'].AIR_DRYER.status, 'UNRESOLVED');
 });
 
-test('Phase 3 is blocked and therefore publishes no base decision', () => {
-  assert.equal(phase3.outcome, 'BLOCKED_AT_SOURCE_1');
-  assert.deepEqual(phase3.resolution_rows, []);
-  assert.deepEqual(phase3.elimfilters_base_decisions, []);
+test('Phase 3 keeps the first blocked attempt on record and the canonical source order', () => {
+  assert.equal(phase3.phase3_status_history[0].outcome, 'BLOCKED_AT_SOURCE_1');
   assert.equal(phase3.canonical_hd_rule, 'DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD');
   assert.equal(phase3.source_order[0], 'DONALDSON');
   assert.equal(phase3.source_order[1], 'FLEETGUARD');
-  assert.ok(phase3.unresolved_aftermarket.length > 0);
+  assert.ok(phase3.access_blockers.length > 0, 'the live-route blockers must stay documented');
   assert.equal(phase3.engine_level_donaldson_evidence.status, 'RECORDED_BUT_NOT_USABLE_FOR_A_BASE_DECISION');
 });
 
@@ -167,13 +167,14 @@ test('the closure answers the question it exists to answer', () => {
   // Positions that exist but are not closed say so instead of going missing.
   assert.equal(byPosition.CABIN.status, 'UNRESOLVED');
 
-  // No position may claim an aftermarket answer while Phase 3 is blocked.
-  for (const position of vehicle.positions) {
-    if (position.aftermarket) {
-      assert.equal(position.aftermarket.donaldson_reference, null);
-      assert.equal(position.aftermarket.elimfilters_base_decision, null);
-    }
-  }
+  // Aftermarket is attached per Phase 2 row, unpublished, and only where
+  // Phase 2 has an Isuzu number.
+  const air = byPosition.AIR_PRIMARY.aftermarket;
+  assert.equal(air.length, 1);
+  assert.equal(air[0].donaldson_reference, 'P543614');
+  assert.equal(air[0].elimfilters_base_decision.sku, 'EA13614');
+  assert.equal(air[0].elimfilters_base_decision.published, false);
+  assert.equal(byPosition.CABIN.aftermarket, null);
 });
 
 test('FXR and FRR answer empty even though they share a block and an engine with FTR', () => {
@@ -737,10 +738,10 @@ test('PHASE 2.14: the two anomalous-format OEN rows remain explicitly flagged, n
   }
 });
 
-test('PHASE 2.15: Phase 3 is untouched by this pass', () => {
-  assert.equal(phase3.outcome, 'BLOCKED_AT_SOURCE_1');
-  assert.deepEqual(phase3.resolution_rows, []);
-  assert.deepEqual(phase3.elimfilters_base_decisions, []);
+test('PHASE 2.15: Phase 3 reads Phase 2 by reference and adds no Phase 2 row', () => {
+  assert.equal(phase3.phase2_file, 'config/vehicle-platform-closure/isuzu-us-diesel-phase2-oen.json');
+  const phase2Ids = new Set(phase2.oen_rows.map((r) => r.row_id));
+  for (const row of phase3.resolution_rows) assert.ok(phase2Ids.has(row.phase2_row_id));
 });
 
 test('PHASE 2 FINAL: phase2_status is CLOSED and the coverage summary is internally consistent', () => {
@@ -751,4 +752,212 @@ test('PHASE 2 FINAL: phase2_status is CLOSED and the coverage summary is interna
   const sum = Object.values(summary.by_status).reduce((a, b) => a + b, 0);
   assert.equal(sum, summary.total_position_cells, 'the per-status counts must add up to the total cell count');
   assert.equal(summary.total_vehicle_year_combinations, 181, 'must match the closed Phase 1 vehicle count (169 original + 12 H-Series)');
+});
+
+// ---------------------------------------------------------------------------
+// PHASE 3 — aftermarket resolution and ELIMFILTERS base decision
+// ---------------------------------------------------------------------------
+
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+
+const eligiblePhase2 = phase2.oen_rows.filter((r) => r.evidence_status !== 'NOT_APPLICABLE');
+const phase2ById = new Map(phase2.oen_rows.map((r) => [r.row_id, r]));
+
+test('PHASE 3.0: governance validator passes and every eligible Phase 2 row has exactly one decision', () => {
+  assert.deepEqual(validatePhase3().errors, []);
+  assert.equal(phase3.resolution_rows.length, eligiblePhase2.length);
+  const matrix = phase3CoverageMatrix();
+  assert.equal(matrix.length, eligiblePhase2.length);
+  for (const cell of matrix) assert.notEqual(cell.decision_status, 'MISSING', `${cell.phase2_row_id} is a silent gap`);
+});
+
+test('PHASE 3.1: Phase 3 does not redefine vehicle fitment', () => {
+  for (const row of phase3.resolution_rows) {
+    const p2 = phase2ById.get(row.phase2_row_id);
+    assert.equal(row.oem_scope.scope_authority, 'PHASE_2_UNCHANGED');
+    assert.deepEqual(row.oem_scope.binds_to_phase1, p2.binds_to_phase1);
+    assert.deepEqual(row.oem_scope.model_lines, p2.applies_to_model_lines);
+    assert.equal(row.oem_scope.published_year_scope, p2.isuzu_published_year_scope);
+    assert.equal(row.oem_scope.published_engine_scope, p2.isuzu_published_engine_scope);
+  }
+  assert.equal(phase3.governance.cross_reference_alone_never_establishes_vehicle_fitment, true);
+  const src = sources.sources.find((s) => s.source_id === 'DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07');
+  assert.match(src.scope_restriction, /never establishes USA vehicle fitment/);
+});
+
+test('PHASE 3.2: every resolution row points to a real Phase 2 row with the same OEN and position', () => {
+  for (const row of phase3.resolution_rows) {
+    const p2 = phase2ById.get(row.phase2_row_id);
+    assert.ok(p2, `${row.row_id} points to a missing Phase 2 row`);
+    assert.deepEqual(row.isuzu_oe_oen, p2.isuzu_oe_oen);
+    assert.equal(row.filter_position, p2.filter_position);
+  }
+});
+
+test('PHASE 3.3: no base exists without an Isuzu OEN', () => {
+  for (const row of [...phase3.resolution_rows, ...phase3.blocked_oem_rows]) {
+    if (row.base_source_part || row.elimfilters_base_decision) assert.ok(row.isuzu_oe_oen.length > 0, row.row_id);
+  }
+});
+
+test('PHASE 3.4: Donaldson has priority -- whenever Donaldson is verified it is the base', () => {
+  for (const row of phase3.resolution_rows) {
+    if (row.donaldson_status === 'DONALDSON_VERIFIED') {
+      assert.equal(row.base_source_brand, 'DONALDSON', row.row_id);
+      assert.equal(row.base_source_part, row.donaldson_part);
+      assert.equal(row.fleetguard_part, null);
+    }
+  }
+});
+
+test('PHASE 3.5: Fleetguard defines a base only when Donaldson absence is verified', () => {
+  for (const row of phase3.resolution_rows) {
+    if (row.base_source_brand === 'FLEETGUARD') assert.equal(row.donaldson_status, 'DONALDSON_NOT_MANUFACTURED_VERIFIED');
+  }
+  const rogue = { ...phase3.resolution_rows.find((r) => r.donaldson_status === 'DONALDSON_NOT_FOUND'), base_source_brand: 'FLEETGUARD' };
+  const original = phase3.resolution_rows.slice();
+  phase3.resolution_rows.splice(0, phase3.resolution_rows.length, ...original.map((r) => (r.row_id === rogue.row_id ? rogue : r)));
+  try {
+    assert.ok(validatePhase3().errors.some((e) => /Fleetguard base without verified Donaldson absence/.test(e)));
+  } finally {
+    phase3.resolution_rows.splice(0, phase3.resolution_rows.length, ...original);
+  }
+});
+
+test('PHASE 3.6: NOT_FOUND is never treated as NOT_MANUFACTURED', () => {
+  const notFound = phase3.resolution_rows.filter((r) => ['DONALDSON_NOT_FOUND', 'DONALDSON_SOURCE_BLOCKED', 'DONALDSON_AMBIGUOUS'].includes(r.donaldson_status));
+  assert.ok(notFound.length > 0);
+  for (const row of notFound) {
+    assert.equal(row.base_source_brand, null, row.row_id);
+    assert.equal(row.elimfilters_base_decision, null, row.row_id);
+    assert.equal(row.fleetguard_status, 'NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED', row.row_id);
+  }
+  assert.equal(phase3.coverage.donaldson.DONALDSON_NOT_MANUFACTURED_VERIFIED, 0);
+});
+
+test('PHASE 3.7: MANN-FILTER, Baldwin, WIX and FRAM never define an HD base', () => {
+  for (const row of phase3.resolution_rows) {
+    assert.ok([null, 'DONALDSON', 'FLEETGUARD'].includes(row.base_source_brand), row.row_id);
+    for (const ref of row.supporting_crossrefs) {
+      assert.ok(['MANN-FILTER', 'BALDWIN', 'WIX', 'FRAM'].includes(ref.manufacturer));
+      assert.equal(ref.fitment_role, 'CORROBORATION_ONLY');
+      assert.equal(ref.relationship_type, 'UNVERIFIED');
+    }
+  }
+  assert.equal(phase3.governance.supporting_brands_may_define_base, false);
+});
+
+test('PHASE 3.8: H-Series without an OEN stays BLOCKED_OEM', () => {
+  const h = phase3.blocked_oem_rows.find((r) => /H-SERIES/.test(r.phase2_unresolved_scope));
+  assert.ok(h);
+  assert.equal(h.decision_status, 'BLOCKED_OEM');
+  assert.deepEqual(h.isuzu_oe_oen, []);
+  assert.equal(h.base_source_part, null);
+  assert.ok(!phase3.resolution_rows.some((r) => r.oem_scope.series === 'H-SERIES'));
+});
+
+test('PHASE 3.9: FRR/FXR and the Cummins B6.7 F-Series without an OEN stay BLOCKED_OEM', () => {
+  for (const pattern of [/FRR and FXR/, /Cummins B6\.7/]) {
+    const row = phase3.blocked_oem_rows.find((r) => pattern.test(r.phase2_unresolved_scope));
+    assert.ok(row, `missing BLOCKED_OEM row for ${pattern}`);
+    assert.equal(row.decision_status, 'BLOCKED_OEM');
+    assert.equal(row.elimfilters_base_decision, null);
+  }
+  for (const row of phase3.resolution_rows) {
+    assert.ok(!row.oem_scope.model_lines.some((m) => m === 'FRR' || m === 'FXR'), row.row_id);
+  }
+});
+
+test('PHASE 3.10: assembly, element and kit are not mixed', () => {
+  for (const row of phase3.resolution_rows) {
+    if (!row.base_source_part) continue;
+    const base = row.donaldson_candidates.find((c) => c.part === row.base_source_part);
+    assert.ok(base, row.row_id);
+    if (/KIT/i.test(row.isuzu_part_form)) {
+      assert.equal(row.donaldson_relationship_type, 'KIT_CROSS', `${row.row_id}: kit OEN must not be a direct cross`);
+      assert.notEqual(row.decision_status, 'VERIFIED_BASE');
+    }
+    if (/CARTRIDGE/i.test(row.isuzu_part_form)) assert.equal(base.form.style, 'Cartridge', row.row_id);
+    if (/\bELEMENT\b/i.test(row.isuzu_part_form) && base.form.style === 'Spin-On') assert.notEqual(row.decision_status, 'VERIFIED_BASE', row.row_id);
+  }
+  const trans = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-TRANS');
+  assert.equal(trans.decision_status, 'CONFLICTING', 'a cartridge OEN mapped only to a spin-on must not become a base');
+});
+
+test('PHASE 3.11: no gasoline scope enters Phase 3', () => {
+  assert.equal(phase3.fuel_scope, 'DIESEL_ONLY');
+  for (const row of phase3.resolution_rows) {
+    assert.ok(!/^gas$/i.test(String(row.oem_scope.published_engine_scope).trim()), row.row_id);
+    assert.ok(row.oem_scope.binds_to_phase1.length > 0, `${row.row_id} binds to no diesel vehicle`);
+  }
+});
+
+test('PHASE 3.12: no direct SQL writes and no catalogue writes', () => {
+  assert.deepEqual(phase3.governance.catalog_writes_performed, []);
+  assert.match(phase3.governance.catalog_write_path_if_approved, /catalog-write-gateway/);
+  const lib = fs.readFileSync(path.join(__dirname, '..', 'lib', 'isuzu-us-diesel-closure.js'), 'utf8');
+  assert.ok(!/\b(INSERT|UPDATE|DELETE)\s+(INTO\s+|FROM\s+)?\w+/.test(lib), 'the closure read model must not carry SQL');
+  assert.ok(!/require\(['"](pg|\.\/db|\.\.\/db)/.test(lib), 'the closure read model must not open a database');
+});
+
+test('PHASE 3.13: nothing is published automatically', () => {
+  assert.equal(phase3.governance.publication_authorized, false);
+  assert.equal(phase3.governance.review_state, 'READY_FOR_REVIEW');
+  assert.equal(phase3.governance.hermes_output_class, 'CANDIDATE_INTELLIGENCE');
+  for (const d of phase3.elimfilters_base_decisions) assert.equal(d.published, false);
+  for (const row of phase3.resolution_rows) {
+    if (row.elimfilters_base_decision) assert.equal(row.elimfilters_base_decision.published, false);
+  }
+});
+
+test('PHASE 3.14: an existing ELIMFILTERS SKU is reused, never minted', () => {
+  const catalogue = new Set(fs.readFileSync(path.join(__dirname, '..', 'data', 'dims.csv'), 'utf8').split('\n').map((l) => l.split(',')[0]));
+  assert.deepEqual(phase3.coverage.elimfilters_new_sku_candidates, []);
+  for (const row of phase3.resolution_rows) {
+    if (!row.elimfilters_base_decision) continue;
+    assert.equal(row.elimfilters_base_decision.action, 'REUSE_EXISTING_SKU');
+    assert.ok(catalogue.has(row.elimfilters_existing_sku), `${row.elimfilters_existing_sku} is not in the catalogue export`);
+    assert.equal(row.elimfilters_base_decision.sku, row.elimfilters_existing_sku);
+  }
+});
+
+test('PHASE 3.15: no duplicate ELIMFILTERS SKU -- one Donaldson base, one SKU', () => {
+  const skuByBase = new Map();
+  for (const row of phase3.resolution_rows) {
+    if (!row.base_source_part) continue;
+    const prior = skuByBase.get(row.base_source_part);
+    if (prior) assert.equal(prior, row.elimfilters_existing_sku, `${row.base_source_part} resolves to two SKUs`);
+    skuByBase.set(row.base_source_part, row.elimfilters_existing_sku);
+  }
+  const skus = [...skuByBase.values()];
+  assert.equal(new Set(skus).size, skus.length, 'two different Donaldson bases share one SKU');
+  assert.deepEqual([...new Set(skus)].sort(), [...phase3.coverage.elimfilters_skus_reused].sort());
+});
+
+test('PHASE 3.16: Phase 1 and Phase 2 are intact', () => {
+  const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
+  assert.equal(digest(phase1), 'f8c58b44aca6fec67ba640a2330a8a34c34db73e1654d7c410137cb6dbde30d6');
+  assert.equal(digest(phase2), '0140e1a75cec66d1845d8c430123037088d1d262f6032a9d6f28a641e61c24b1');
+  assert.equal(phase2.phase2_status, 'CLOSED');
+});
+
+test('PHASE 3.17: anomalous Isuzu numbers are documented, not normalised', () => {
+  const lube = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-1998-2010');
+  assert.deepEqual(lube.isuzu_oe_oen, ['2906542701', '2906548000', '2906548100']);
+  assert.ok(lube.caveats.some((c) => /2-90654-800-0/.test(c) && /NOT used to normalise/.test(c)));
+  const lube2011 = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-2011-ON');
+  assert.ok(lube2011.isuzu_oe_oen.includes('2906544040'));
+  assert.equal(lube2011.decision_status, 'BLOCKED_DONALDSON');
+});
+
+test('PHASE 3 FINAL: CLOSED means every eligible row is explicit, not every base resolved', () => {
+  assert.equal(phase3.phase3_status, 'CLOSED');
+  const counts = phase3.coverage.decision_status;
+  const explicit = counts.VERIFIED_BASE + counts.PARTIAL + counts.CONFLICTING + counts.BLOCKED_DONALDSON + counts.NO_ELIMFILTERS_SKU_YET;
+  assert.equal(explicit, eligiblePhase2.length);
+  assert.equal(counts.BLOCKED_OEM, phase3.blocked_oem_rows.length);
+  assert.equal(phase3.coverage.base_decisions.fleetguard_based, 0);
+  assert.ok(counts.VERIFIED_BASE < eligiblePhase2.length, 'closure must not claim 100% resolution');
 });
