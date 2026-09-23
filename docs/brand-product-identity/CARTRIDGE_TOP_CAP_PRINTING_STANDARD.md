@@ -52,7 +52,7 @@ The SKU prefix must correspond to the actual product application. Technology ide
 
 ### Fuel filtration
 
-- `EF5` through `EF9` = **Fuel Filter**
+- Active fuel-filter prefixes under this standard: `EF3` and `EF6`–`EF9` = **Fuel Filter**. `EF5` is retired and must not be minted or restored.
 - Approved fuel-filter technology in this cartridge standard: **SYNTAPORE™**, unless another released product specification states otherwise.
 
 ### Fuel / water separation
@@ -157,4 +157,5 @@ That file is the implementation reference for internal systems that need the app
 
 | Revision | Date | Change | Status |
 |---|---|---|---|
-| 1.0 | 2026-09-04 | Initial controlled release. Includes circular cap artwork, two-end cylindrical rule, EF5–EF9 / ES5–ES9 family logic, and explicit HYDROCORE™ rules for ES9 and EH6. | APPROVED |
+| 1.0 | 2026-09-04 | Initial controlled release. Includes circular cap artwork, two-end cylindrical rule, fuel / separator family logic, and explicit HYDROCORE™ rules for ES9 and EH6. | APPROVED |
+| 1.1 | 2026-09-23 | Removes retired EF5 from active fuel-prefix guidance; EA5/EC5/EF5/EL5 remain retired after migration to prefix 3. | APPROVED |

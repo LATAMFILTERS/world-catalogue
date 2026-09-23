@@ -26,6 +26,14 @@ test('HD verified Donaldson authority passes gateway', () => {
   assert.equal(validateCanonicalWrite(baseRow()).valid, true);
 });
 
+test('retired LD prefix-5 SKU families are blocked permanently', () => {
+  for (const sku of ['EA51234', 'EC51234', 'EF51234', 'EL51234']) {
+    const result = validateCanonicalWrite(baseRow({ sku }));
+    assert.equal(result.valid, false, `${sku} must be rejected`);
+    assert.ok(result.reasons.includes('RETIRED_LD_PREFIX'));
+  }
+});
+
 test('HD fallback cannot pass without verified Donaldson absence', () => {
   const row = baseRow({
     sku: 'EF91234', codigo_base: 'FF1234',
@@ -71,6 +79,22 @@ test('aftermarket reference in oem_codes is blocked', () => {
   const result = validateCanonicalWrite(row);
   assert.equal(result.valid, false);
   assert.ok(result.reasons.includes('AFTERMARKET_IN_OEM_CODES'));
+});
+
+test('LD non-European regional authority accepts verified FRAM canonical source', () => {
+  const row = baseRow({
+    sku: 'EL36350',
+    codigo_base: 'CH12811',
+    duty: 'LIGHT_DUTY',
+    enrichment_data: { codigo_base_governance: {
+      origin_group: 'NON_EUROPEAN',
+      approved_manufacturer: 'FRAM',
+      approved_codigo_base: 'CH12811',
+      approved_source_column: 'CANONICAL_POLICY',
+      primary_manufacturer_verified: true,
+    } },
+  });
+  assert.equal(validateCanonicalWrite(row).valid, true);
 });
 
 test('LD fallback requires verified MANN absence and OEM classification', () => {
