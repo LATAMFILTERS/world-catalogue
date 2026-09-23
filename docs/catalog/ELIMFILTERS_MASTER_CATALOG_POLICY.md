@@ -276,8 +276,9 @@ Rule:
 2. Extract numbers only from the canonical base code.
 3. Use the last 4 numeric digits; left-pad 1–3 digit payloads with zeros.
 4. Preferred SKU = approved Industrial 3-character prefix + 4-digit payload.
-5. If the preferred slot is occupied by a different published product, retain the published mapping and use prefix + collision discriminator 1–9 + last 3 digits, skipping occupied slots.
-6. If no numeric payload exists, the core is blocked/unapproved, or the collision namespace is exhausted: STOP_REVIEW.
+5. If a first-publication batch contains two or more products competing for the same preferred slot, the reviewed publication order must be frozen before collision allocation. Input/query order is never an identity rule.
+6. If the preferred slot is occupied by a different published product, retain the published mapping and use prefix + collision discriminator 1–9 + last 3 digits, skipping occupied slots.
+7. If no numeric payload exists, the core is blocked/unapproved, the first-publication collision order is not frozen, or the collision namespace is exhausted: STOP_REVIEW.
 7. Never hash a reference, convert source letters into pseudo-numbers, or invent a fallback SKU.
 
 Example COALVEX™ preview:
