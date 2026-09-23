@@ -70,6 +70,22 @@ Scope: liquid/gas coalescence mechanism, treated fibrous media, droplet growth a
 URL: https://www.pall.com/en/oil-gas.html  
 Scope: gas particulate filtration, liquid/gas coalescence, liquid/liquid separation and process-position context.
 
+### EXTERNAL-PRIMARY-PALL-SEPRASOL-CURRENT
+URL: https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol  
+Scope: current official SepraSol™ L/G family ordering evidence used by COALVEX™ Product Pilot 01, including exact CC3LGA7H13, CC3LGB7H13 and CC3LG02H13 identities, dimensions and supported configuration distinctions.
+
+### EXTERNAL-PRIMARY-PALL-SEPRASOL-DOE
+URL: https://shop.pall.com/us/en/attachment?DirectoryPath=pdfs%2FFuels-and-Chemicals&FileName=FCSEP02EN.pdf&LocaleId=en_US&UnitName=PALL  
+Scope: official double-open-ended SepraSol™ technical evidence for CC3LG02H13 and its manufacturer-declared performance envelope.
+
+### EXTERNAL-PRIMARY-PALL-SEPRASOL-PLUS
+URL: https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf  
+Scope: official SepraSol™ Plus ordering/performance evidence for 6 × 40 inch SOE/DOE and amine-compatible variants. Values remain Pall manufacturer-declared claims.
+
+### EXTERNAL-PRIMARY-PALL-MEDALLION-HP
+URL: https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp  
+Scope: current official Medallion™ HP L/G family ordering, construction, application and test-method evidence for the T2 pilot variants.
+
 ## FLUREXIS™ — Fluid Conditioning
 
 ### EXTERNAL-PRIMARY-PARKER-PAR-FIT-INTERCHANGE

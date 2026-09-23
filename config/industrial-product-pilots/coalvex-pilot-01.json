@@ -1,0 +1,2001 @@
+{
+  "schema_version": "1.0.0",
+  "pilot_id": "COALVEX-PILOT-01",
+  "status": "CLOSED_PRE_SKU_PILOT",
+  "platform": "COALVEX™",
+  "technology_family": "COALERIS™",
+  "technology_core": "TC-NG-01",
+  "product_category": "PROCESS_GAS",
+  "product_subtype": "LIQUID_GAS_COALESCER",
+  "duty": "INDUSTRIAL_PROCESS",
+  "anchor_brand": "PALL",
+  "base_authority_status": "FAMILY_ANCHOR_BASE",
+  "sku_minting_allowed": false,
+  "canonical_sku_rule": "NULL_UNTIL_INDUSTRIAL_SKU_NOMENCLATURE_IS_APPROVED",
+  "evidence_policy": {
+    "identity_requirement": "Exact Pall code must be present in a current official Pall catalogue page or an official Pall technical datasheet.",
+    "performance_claim_state": "MANUFACTURER_DECLARED",
+    "original_equipment_claim": false,
+    "competitor_cross_policy": "No cross-reference is accepted without separate primary evidence.",
+    "public_claim_policy": "Pall performance values remain source-attributed evidence and are not ELIMFILTERS claims."
+  },
+  "family_evidence": {
+    "seprasol": {
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol",
+      "technical_pdf_url": "https://shop.pall.com/us/en/attachment?DirectoryPath=pdfs%2FFuels-and-Chemicals&FileName=FCSEP02EN.pdf&LocaleId=en_US&UnitName=PALL",
+      "mechanism": "Liquid/gas coalescence",
+      "manufacturer_declared_performance": {
+        "solids": "0.3 µm (99.99%)",
+        "max_temperature_dry_c": 82,
+        "max_temperature_with_water_c": 65
+      },
+      "materials": {
+        "medium": "Specially-treated resin-bonded glass",
+        "support_drainage_A_style": "Polyester",
+        "support_drainage_B_style": "Polypropylene",
+        "core": "304 stainless steel",
+        "soe_end_caps": "Glass-filled polypropylene",
+        "doe_end_caps": "Acetal"
+      },
+      "test_methods": [
+        "Pall published solid-removal test basis; exact method must remain source-attributed"
+      ],
+      "applications": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine/glycol loss control",
+        "Gas sweetening/dehydration protection",
+        "Instrument gas",
+        "Process gas"
+      ],
+      "industries": [
+        "Oil & Gas",
+        "Chemicals",
+        "Polymers"
+      ]
+    },
+    "seprasol_plus": {
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+      "technical_pdf_url": "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf",
+      "mechanism": "High-liquid-load liquid/gas coalescence",
+      "manufacturer_declared_performance": {
+        "solids": "99.7% at ≥0.3 µm, sodium-chloride challenge",
+        "liquids_lase": "0.01 ppm downstream liquid",
+        "liquids_cagi": "1 ppb downstream liquid",
+        "liquids_dop": "99.999% at 0.3 µm",
+        "max_temperature_dry_c": 82,
+        "max_temperature_with_water_c": 65
+      },
+      "materials": {
+        "medium": "Resin-bonded glass fiber",
+        "drainage_media": "Polymeric outer drainage layer",
+        "treatment": "Oleophobic/hydrophobic",
+        "support": "Stainless steel"
+      },
+      "test_methods": [
+        "NaCl challenge for solids",
+        "Pall LASE",
+        "modified ANSI/CAGI-400-1999",
+        "DOP monodisperse 0.3 µm aerosol"
+      ],
+      "applications": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine sweetening/dehydration protection",
+        "Desiccant and catalyst protection",
+        "Gas purification",
+        "Gas injection service"
+      ],
+      "industries": [
+        "Oil & Gas",
+        "Chemicals",
+        "Process Gas"
+      ]
+    },
+    "medallion_hp": {
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp",
+      "mechanism": "Process-industry liquid/gas coalescence",
+      "manufacturer_declared_performance": {
+        "liquids_dop": "99.999% at 0.3 µm",
+        "liquids_cagi": "1 ppb downstream liquid",
+        "solids": "99.7% for particles >0.3 µm, NaCl test",
+        "max_burst_pressure_psid": 50,
+        "max_temperature_dry_c": 82.2,
+        "max_temperature_with_water_c": 60
+      },
+      "materials": {
+        "medium": "Glass microfiber",
+        "end_caps": "300-series stainless steel"
+      },
+      "test_methods": [
+        "DOP 0.3 µm liquid-aerosol test",
+        "modified ANSI/CAGI-400-1999",
+        "NaCl solids test"
+      ],
+      "applications": [
+        "Reciprocating compressor inlet/outlet",
+        "Turbine protection",
+        "Amine contactor inlet/outlet",
+        "Glycol contactor inlet/outlet",
+        "Gas-separation membrane protection",
+        "Molecular-sieve protection",
+        "Sales gas",
+        "Transmission pipeline gas",
+        "Pipeline metering/compression stations"
+      ],
+      "industries": [
+        "Oil & Gas",
+        "Process Industry"
+      ]
+    }
+  },
+  "elements": [
+    {
+      "pilot_record_id": "COALVEX-P01-01",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CC3LGA7H13",
+      "source_product_line": "SepraSol",
+      "source_product_name": "SepraSol Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "SOE",
+      "hardware_material": "Polymeric",
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 70,
+      "nominal_length_mm": 762,
+      "amine_ammonia_compatible": false,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CC3LGA7H13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Polymers"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine/glycol loss control",
+        "Gas sweetening/dehydration protection",
+        "Instrument gas",
+        "Process gas"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Single open-ended liquid/gas coalescer",
+      "solid_micron_rating": "0.3 µm test point",
+      "solid_efficiency": "0.3 µm (99.99%)",
+      "liquid_droplet_rating": null,
+      "liquid_removal_efficiency": null,
+      "outlet_liquid_content": null,
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Specially-treated resin-bonded glass",
+      "drainage_media": "Polyester",
+      "core_support_material": "304 stainless steel",
+      "end_cap_material": "Glass-filled polypropylene",
+      "chemical_compatibility": [
+        "Application-specific compatibility review required"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "Pall published solid-removal test basis; exact method must remain source-attributed"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-02",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CC3LGB7H13",
+      "source_product_line": "SepraSol",
+      "source_product_name": "SepraSol Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "SOE",
+      "hardware_material": null,
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 70,
+      "nominal_length_mm": 762,
+      "amine_ammonia_compatible": true,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CC3LGB7H13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Polymers"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine/glycol loss control",
+        "Gas sweetening/dehydration protection",
+        "Instrument gas",
+        "Process gas"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Single open-ended liquid/gas coalescer",
+      "solid_micron_rating": "0.3 µm test point",
+      "solid_efficiency": "0.3 µm (99.99%)",
+      "liquid_droplet_rating": null,
+      "liquid_removal_efficiency": null,
+      "outlet_liquid_content": null,
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Specially-treated resin-bonded glass",
+      "drainage_media": "Polypropylene",
+      "core_support_material": "304 stainless steel",
+      "end_cap_material": "Glass-filled polypropylene",
+      "chemical_compatibility": [
+        "Amine compatible",
+        "Ammonia compatible"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "Pall published solid-removal test basis; exact method must remain source-attributed"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-03",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CC3LG02H13",
+      "source_product_line": "SepraSol",
+      "source_product_name": "SepraSol Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "DOE",
+      "hardware_material": "Polymeric",
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 70,
+      "nominal_length_mm": 762,
+      "amine_ammonia_compatible": false,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE_AND_DATASHEET",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CC3LG02H13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Polymers"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine/glycol loss control",
+        "Gas sweetening/dehydration protection",
+        "Instrument gas",
+        "Process gas"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Double open-ended liquid/gas coalescer",
+      "solid_micron_rating": "0.3 µm test point",
+      "solid_efficiency": "0.3 µm (99.99%)",
+      "liquid_droplet_rating": null,
+      "liquid_removal_efficiency": null,
+      "outlet_liquid_content": null,
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Specially-treated resin-bonded glass",
+      "drainage_media": "Polyester",
+      "core_support_material": "304 stainless steel",
+      "end_cap_material": "Acetal",
+      "chemical_compatibility": [
+        "Application-specific compatibility review required"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "Pall published solid-removal test basis; exact method must remain source-attributed"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-04",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGH",
+      "source_product_line": "SepraSol Plus",
+      "source_product_name": "SepraSol Plus Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "SOE",
+      "hardware_material": "304 stainless steel",
+      "seal_material": "Viton",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": false,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGH",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Process Gas"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine sweetening/dehydration protection",
+        "Desiccant and catalyst protection",
+        "Gas purification",
+        "Gas injection service"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Single open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% at ≥0.3 µm, sodium-chloride challenge",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "0.01 ppm downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Resin-bonded glass fiber",
+      "drainage_media": "Polymeric outer drainage layer",
+      "core_support_material": "Stainless steel",
+      "end_cap_material": "Stainless steel",
+      "chemical_compatibility": [
+        "Application-specific compatibility review required"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "NaCl challenge for solids",
+        "Pall LASE",
+        "modified ANSI/CAGI-400-1999",
+        "DOP monodisperse 0.3 µm aerosol"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-05",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGH1",
+      "source_product_line": "SepraSol Plus",
+      "source_product_name": "SepraSol Plus Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "SOE",
+      "hardware_material": "304 stainless steel",
+      "seal_material": "PTFE Encapsulated Viton",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": false,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGH1",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Process Gas"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine sweetening/dehydration protection",
+        "Desiccant and catalyst protection",
+        "Gas purification",
+        "Gas injection service"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Single open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% at ≥0.3 µm, sodium-chloride challenge",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "0.01 ppm downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Resin-bonded glass fiber",
+      "drainage_media": "Polymeric outer drainage layer",
+      "core_support_material": "Stainless steel",
+      "end_cap_material": "Stainless steel",
+      "chemical_compatibility": [
+        "Application-specific compatibility review required"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "NaCl challenge for solids",
+        "Pall LASE",
+        "modified ANSI/CAGI-400-1999",
+        "DOP monodisperse 0.3 µm aerosol"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-06",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGH13",
+      "source_product_line": "SepraSol Plus",
+      "source_product_name": "SepraSol Plus Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "SOE",
+      "hardware_material": "304 stainless steel",
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": false,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE_AND_DATASHEET",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGH13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Process Gas"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine sweetening/dehydration protection",
+        "Desiccant and catalyst protection",
+        "Gas purification",
+        "Gas injection service"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Single open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% at ≥0.3 µm, sodium-chloride challenge",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "0.01 ppm downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Resin-bonded glass fiber",
+      "drainage_media": "Polymeric outer drainage layer",
+      "core_support_material": "Stainless steel",
+      "end_cap_material": "Stainless steel",
+      "chemical_compatibility": [
+        "Application-specific compatibility review required"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "NaCl challenge for solids",
+        "Pall LASE",
+        "modified ANSI/CAGI-400-1999",
+        "DOP monodisperse 0.3 µm aerosol"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-07",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGBH",
+      "source_product_line": "SepraSol Plus",
+      "source_product_name": "SepraSol Plus Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "SOE",
+      "hardware_material": "304 stainless steel",
+      "seal_material": "Viton",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": true,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGBH",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Process Gas"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine sweetening/dehydration protection",
+        "Desiccant and catalyst protection",
+        "Gas purification",
+        "Gas injection service"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Single open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% at ≥0.3 µm, sodium-chloride challenge",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "0.01 ppm downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Resin-bonded glass fiber",
+      "drainage_media": "Polymeric outer drainage layer",
+      "core_support_material": "Stainless steel",
+      "end_cap_material": "Stainless steel",
+      "chemical_compatibility": [
+        "Amine compatible",
+        "Ammonia compatible"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "NaCl challenge for solids",
+        "Pall LASE",
+        "modified ANSI/CAGI-400-1999",
+        "DOP monodisperse 0.3 µm aerosol"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-08",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGBH1",
+      "source_product_line": "SepraSol Plus",
+      "source_product_name": "SepraSol Plus Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "SOE",
+      "hardware_material": "304 stainless steel",
+      "seal_material": "PTFE Encapsulated Viton",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": true,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGBH1",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Process Gas"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine sweetening/dehydration protection",
+        "Desiccant and catalyst protection",
+        "Gas purification",
+        "Gas injection service"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Single open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% at ≥0.3 µm, sodium-chloride challenge",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "0.01 ppm downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Resin-bonded glass fiber",
+      "drainage_media": "Polymeric outer drainage layer",
+      "core_support_material": "Stainless steel",
+      "end_cap_material": "Stainless steel",
+      "chemical_compatibility": [
+        "Amine compatible",
+        "Ammonia compatible"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "NaCl challenge for solids",
+        "Pall LASE",
+        "modified ANSI/CAGI-400-1999",
+        "DOP monodisperse 0.3 µm aerosol"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-09",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGBH13",
+      "source_product_line": "SepraSol Plus",
+      "source_product_name": "SepraSol Plus Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "SOE",
+      "hardware_material": "304 stainless steel",
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": true,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE_AND_DATASHEET",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGBH13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Process Gas"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine sweetening/dehydration protection",
+        "Desiccant and catalyst protection",
+        "Gas purification",
+        "Gas injection service"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Single open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% at ≥0.3 µm, sodium-chloride challenge",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "0.01 ppm downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Resin-bonded glass fiber",
+      "drainage_media": "Polymeric outer drainage layer",
+      "core_support_material": "Stainless steel",
+      "end_cap_material": "Stainless steel",
+      "chemical_compatibility": [
+        "Amine compatible",
+        "Ammonia compatible"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "NaCl challenge for solids",
+        "Pall LASE",
+        "modified ANSI/CAGI-400-1999",
+        "DOP monodisperse 0.3 µm aerosol"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-10",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGDH13",
+      "source_product_line": "SepraSol Plus",
+      "source_product_name": "SepraSol Plus Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "DOE",
+      "hardware_material": "304 stainless steel",
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": false,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE_AND_DATASHEET",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGDH13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Process Gas"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine sweetening/dehydration protection",
+        "Desiccant and catalyst protection",
+        "Gas purification",
+        "Gas injection service"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Double open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% at ≥0.3 µm, sodium-chloride challenge",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "0.01 ppm downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Resin-bonded glass fiber",
+      "drainage_media": "Polymeric outer drainage layer",
+      "core_support_material": "Stainless steel",
+      "end_cap_material": "Stainless steel",
+      "chemical_compatibility": [
+        "Application-specific compatibility review required"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "NaCl challenge for solids",
+        "Pall LASE",
+        "modified ANSI/CAGI-400-1999",
+        "DOP monodisperse 0.3 µm aerosol"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-11",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGBDH13",
+      "source_product_line": "SepraSol Plus",
+      "source_product_name": "SepraSol Plus Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "DOE",
+      "hardware_material": "304 stainless steel",
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": true,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "OFFICIAL_DATASHEET",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGBDH13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Chemicals",
+        "Process Gas"
+      ],
+      "application": [
+        "Compressor and turbine protection",
+        "Fuel-gas cleaning",
+        "Amine sweetening/dehydration protection",
+        "Desiccant and catalyst protection",
+        "Gas purification",
+        "Gas injection service"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Double open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% at ≥0.3 µm, sodium-chloride challenge",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "0.01 ppm downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82,
+        "max_with_water_c": 65,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Resin-bonded glass fiber",
+      "drainage_media": "Polymeric outer drainage layer",
+      "core_support_material": "Stainless steel",
+      "end_cap_material": "Stainless steel",
+      "chemical_compatibility": [
+        "Amine compatible",
+        "Ammonia compatible"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "NaCl challenge for solids",
+        "Pall LASE",
+        "modified ANSI/CAGI-400-1999",
+        "DOP monodisperse 0.3 µm aerosol"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
+        "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-12",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGT2H13",
+      "source_product_line": "Medallion HP",
+      "source_product_name": "Medallion HP Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "SOE",
+      "hardware_material": "304 stainless steel",
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": false,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGT2H13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Process Industry"
+      ],
+      "application": [
+        "Reciprocating compressor inlet/outlet",
+        "Turbine protection",
+        "Amine contactor inlet/outlet",
+        "Glycol contactor inlet/outlet",
+        "Gas-separation membrane protection",
+        "Molecular-sieve protection",
+        "Sales gas",
+        "Transmission pipeline gas",
+        "Pipeline metering/compression stations"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Single open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% for particles >0.3 µm, NaCl test",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "1 ppb downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82.2,
+        "max_with_water_c": 60,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Glass microfiber",
+      "drainage_media": null,
+      "core_support_material": "304 stainless steel",
+      "end_cap_material": "300-series stainless steel",
+      "chemical_compatibility": [
+        "Application-specific compatibility review required"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "DOP 0.3 µm liquid-aerosol test",
+        "modified ANSI/CAGI-400-1999",
+        "NaCl solids test"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-13",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGT2DH13",
+      "source_product_line": "Medallion HP",
+      "source_product_name": "Medallion HP Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "DOE",
+      "hardware_material": "304 stainless steel",
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": false,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_CATALOGUE",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGT2DH13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Process Industry"
+      ],
+      "application": [
+        "Reciprocating compressor inlet/outlet",
+        "Turbine protection",
+        "Amine contactor inlet/outlet",
+        "Glycol contactor inlet/outlet",
+        "Gas-separation membrane protection",
+        "Molecular-sieve protection",
+        "Sales gas",
+        "Transmission pipeline gas",
+        "Pipeline metering/compression stations"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Double open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% for particles >0.3 µm, NaCl test",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "1 ppb downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82.2,
+        "max_with_water_c": 60,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Glass microfiber",
+      "drainage_media": null,
+      "core_support_material": "304 stainless steel",
+      "end_cap_material": "300-series stainless steel",
+      "chemical_compatibility": [
+        "Application-specific compatibility review required"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "DOP 0.3 µm liquid-aerosol test",
+        "modified ANSI/CAGI-400-1999",
+        "NaCl solids test"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-14",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGBT2H13",
+      "source_product_line": "Medallion HP",
+      "source_product_name": "Medallion HP Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "SOE",
+      "hardware_material": "300-series stainless steel",
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": true,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_FAMILY_CATALOGUE",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGBT2H13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Process Industry"
+      ],
+      "application": [
+        "Reciprocating compressor inlet/outlet",
+        "Turbine protection",
+        "Amine contactor inlet/outlet",
+        "Glycol contactor inlet/outlet",
+        "Gas-separation membrane protection",
+        "Molecular-sieve protection",
+        "Sales gas",
+        "Transmission pipeline gas",
+        "Pipeline metering/compression stations"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Single open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% for particles >0.3 µm, NaCl test",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "1 ppb downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82.2,
+        "max_with_water_c": 60,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Glass microfiber",
+      "drainage_media": null,
+      "core_support_material": "300-series stainless steel",
+      "end_cap_material": "300-series stainless steel",
+      "chemical_compatibility": [
+        "Amine compatible",
+        "Ammonia compatible"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "DOP 0.3 µm liquid-aerosol test",
+        "modified ANSI/CAGI-400-1999",
+        "NaCl solids test"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    },
+    {
+      "pilot_record_id": "COALVEX-P01-15",
+      "canonical_product_id": null,
+      "source_brand": "PALL",
+      "source_code": "CS604LGBT2DH13",
+      "source_product_line": "Medallion HP",
+      "source_product_name": "Medallion HP Liquid/Gas Coalescer",
+      "platform": "COALVEX™",
+      "technology_family": "COALERIS™",
+      "technology_core": "TC-NG-01",
+      "filtration_function": "GAS_LIQUID_COALESCENCE",
+      "configuration": "DOE",
+      "hardware_material": "300-series stainless steel",
+      "seal_material": "Nitrile",
+      "nominal_outer_diameter_mm": 152.4,
+      "nominal_length_mm": 1016,
+      "amine_ammonia_compatible": true,
+      "base_authority_status": "FAMILY_ANCHOR_BASE",
+      "original_confirmed": false,
+      "primary_evidence_complete": true,
+      "source_claim_status": "MANUFACTURER_DECLARED",
+      "validation_status": "TECHNICAL_IDENTITY_VALIDATED",
+      "sku_state": "PRE_SKU_CANDIDATE",
+      "canonical_sku": null,
+      "competitor_crosses": [],
+      "evidence_scope": "CURRENT_OFFICIAL_FAMILY_CATALOGUE",
+      "source_urls": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
+      ],
+      "supplier": "PALL",
+      "supplier_sku": "CS604LGBT2DH13",
+      "oem_competitor_cross": [],
+      "industry": [
+        "Oil & Gas",
+        "Process Industry"
+      ],
+      "application": [
+        "Reciprocating compressor inlet/outlet",
+        "Turbine protection",
+        "Amine contactor inlet/outlet",
+        "Glycol contactor inlet/outlet",
+        "Gas-separation membrane protection",
+        "Molecular-sieve protection",
+        "Sales gas",
+        "Transmission pipeline gas",
+        "Pipeline metering/compression stations"
+      ],
+      "gas_type": "Application-dependent process gas; natural/fuel/pipeline gas where supported by family evidence",
+      "contaminant_type": [
+        "Entrained liquid aerosol/droplets",
+        "Solid particulate"
+      ],
+      "product_configuration": "Double open-ended liquid/gas coalescer",
+      "solid_micron_rating": "> or ≥0.3 µm test point",
+      "solid_efficiency": "99.7% for particles >0.3 µm, NaCl test",
+      "liquid_droplet_rating": "0.3 µm DOP test point",
+      "liquid_removal_efficiency": "99.999% at 0.3 µm",
+      "outlet_liquid_content": "1 ppb downstream liquid",
+      "flow": {
+        "value": null,
+        "status": "APPLICATION_HOUSING_SIZING_REQUIRED"
+      },
+      "operating_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "maximum_design_pressure": {
+        "value": null,
+        "status": "HOUSING_AND_PROCESS_DEPENDENT"
+      },
+      "temperature": {
+        "max_dry_c": 82.2,
+        "max_with_water_c": 60,
+        "claim_state": "MANUFACTURER_DECLARED"
+      },
+      "initial_differential_pressure": {
+        "value": null,
+        "status": "APPLICATION_SIZING_REQUIRED"
+      },
+      "changeout_differential_pressure": {
+        "value": null,
+        "status": "NO_UNIVERSAL_ELEMENT_VALUE_PROMOTED_IN_PILOT"
+      },
+      "media": "Glass microfiber",
+      "drainage_media": null,
+      "core_support_material": "300-series stainless steel",
+      "end_cap_material": "300-series stainless steel",
+      "chemical_compatibility": [
+        "Amine compatible",
+        "Ammonia compatible"
+      ],
+      "antistatic_capability": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "housing_compatibility": "Pall liquid/gas coalescer housing family; exact housing fit must be verified per application",
+      "service_interval": {
+        "value": null,
+        "status": "CONDITION_AND_DIFFERENTIAL_PRESSURE_DEPENDENT"
+      },
+      "regenerable": {
+        "value": null,
+        "status": "NOT_ESTABLISHED_BY_PILOT_EVIDENCE"
+      },
+      "test_standard": [
+        "DOP 0.3 µm liquid-aerosol test",
+        "modified ANSI/CAGI-400-1999",
+        "NaCl solids test"
+      ],
+      "source_url": "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp",
+      "source_evidence": [
+        "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
+      ],
+      "elimfilters_technology": "COALERIS™",
+      "research_gaps": [
+        "Application flow/housing sizing",
+        "Operating and design pressure at system level",
+        "Exact installed housing compatibility",
+        "Service interval at actual contaminant load",
+        "Any OEM-equipment original relationship"
+      ]
+    }
+  ],
+  "audit_standard": "Every minimum canonical product field is either evidenced or explicitly unresolved; no silent gaps.",
+  "minimum_record_fields": [
+    "pilot_record_id",
+    "canonical_product_id",
+    "supplier",
+    "supplier_sku",
+    "source_product_name",
+    "oem_competitor_cross",
+    "industry",
+    "application",
+    "gas_type",
+    "contaminant_type",
+    "filtration_function",
+    "product_configuration",
+    "solid_micron_rating",
+    "solid_efficiency",
+    "liquid_droplet_rating",
+    "liquid_removal_efficiency",
+    "outlet_liquid_content",
+    "flow",
+    "operating_pressure",
+    "maximum_design_pressure",
+    "temperature",
+    "initial_differential_pressure",
+    "changeout_differential_pressure",
+    "media",
+    "drainage_media",
+    "core_support_material",
+    "end_cap_material",
+    "seal_material",
+    "chemical_compatibility",
+    "antistatic_capability",
+    "housing_compatibility",
+    "service_interval",
+    "regenerable",
+    "test_standard",
+    "source_url",
+    "source_evidence",
+    "source_claim_status",
+    "validation_status",
+    "technology_core",
+    "elimfilters_technology",
+    "canonical_sku"
+  ],
+  "identity_governance": {
+    "rule": "No parallel ELIMFILTERS product identifier is created during the pilot.",
+    "canonical_product_id_status": "PENDING_CANONICAL_SKU",
+    "pilot_record_id_semantics": "Manifest-local audit locator only; never a SKU, catalogue identity or cross-reference key."
+  }
+}

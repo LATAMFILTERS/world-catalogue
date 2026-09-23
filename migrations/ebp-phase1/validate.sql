@@ -80,3 +80,10 @@ SELECT column_name
 FROM information_schema.columns
 WHERE table_name = 'ebp_passport_engineering' AND column_name = 'field_applicability_source';
 -- Expected: 1 row
+
+-- 10. INDUSTRIAL_PROCESS duty is present alongside the original HD/LD values
+SELECT pg_get_constraintdef(oid) AS duty_constraint
+FROM pg_constraint
+WHERE conrelid = 'ebp_engineering_passports'::regclass
+  AND conname = 'ebp_engineering_passports_duty_check';
+-- Expected: CHECK duty includes HEAVY_DUTY, LIGHT_DUTY, and INDUSTRIAL_PROCESS

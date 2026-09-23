@@ -11449,3 +11449,135 @@ A product may move toward SKU minting only after:
 
 Status:
 INDUSTRIAL & PROCESS BASE-CODE AUTHORITY POLICY v1 — APPROVED / FROZEN.
+
+
+## 54. COALVEX™ Product Pilot 01 — Phase 2 Closure
+
+Status: CLOSED / PASS — 2026-09-22.
+
+Scope:
+- Platform: COALVEX™
+- Technology family: COALERIS™
+- Technology Core: TC-NG-01
+- Function: liquid/gas coalescence
+- Family anchor: Pall
+- Pilot size: 15 exact Pall source references
+- SKU state: PRE-SKU ONLY
+- ELIMFILTERS SKUs minted: 0
+
+### 54.1 Audit → implementation → audit result
+
+Initial audit established:
+- no existing COALVEX™ / COALERIS™ commercial SKU universe existed in the active catalogue;
+- no sibling COALVEX product architecture existed in `elimfilters-crm`;
+- the existing EBP Product Engineering Passport is the correct pre-SKU mechanism and must be reused;
+- frozen EBP Phase 1 incorrectly lacked an Industrial & Process duty and would otherwise force false `HEAVY_DUTY` classification;
+- source identity must follow the approved Industrial base-authority policy rather than first-code-found behavior.
+
+Implemented:
+- `INDUSTRIAL_PROCESS` duty support in the existing EBP validation layer;
+- additive EBP migration `004_industrial_process_duty.sql`;
+- ADR-0076 authorizing that narrow frozen-Phase-1 vocabulary extension;
+- governed Pall evidence endpoints and source-registry entries;
+- `config/industrial-product-pilots/coalvex-pilot-01.json`;
+- regression coverage for the pilot, base authority, no-invented-SKU rule and EBP duty.
+
+Post-implementation audit corrected one identity-governance issue before closure:
+- pilot-local `COALVEX-P01-xx` locators were explicitly demoted to audit-only `pilot_record_id` values;
+- `canonical_product_id` and `canonical_sku` remain null;
+- no parallel ELIMFILTERS product identity was created, consistent with ADR-0003.
+
+### 54.2 Closed pilot reference set
+
+SepraSol:
+- CC3LGA7H13
+- CC3LGB7H13
+- CC3LG02H13
+
+SepraSol Plus:
+- CS604LGH
+- CS604LGH1
+- CS604LGH13
+- CS604LGBH
+- CS604LGBH1
+- CS604LGBH13
+- CS604LGDH13
+- CS604LGBDH13
+
+Medallion HP:
+- CS604LGT2H13
+- CS604LGT2DH13
+- CS604LGBT2H13
+- CS604LGBT2DH13
+
+Every row is:
+- source brand: PALL;
+- base authority: `FAMILY_ANCHOR_BASE`;
+- original-equipment relationship: not claimed;
+- performance state: `MANUFACTURER_DECLARED`;
+- validation state: `TECHNICAL_IDENTITY_VALIDATED`;
+- SKU state: `PRE_SKU_CANDIDATE`;
+- competitor crosses: empty until separately evidenced.
+
+### 54.3 No-silent-gap rule
+
+The pilot explicitly records unresolved application-specific values rather than inventing them.
+
+Examples intentionally left application-/housing-dependent:
+- actual flow sizing;
+- operating pressure;
+- maximum/design pressure;
+- initial differential pressure where not product-universal;
+- change-out differential pressure;
+- exact installed housing compatibility;
+- service interval;
+- any OEM-original relationship.
+
+These gaps are not closure failures. They are variables that cannot become universal element specifications without a defined installation or project.
+
+### 54.4 Database and EBP verification
+
+The local Lenovo catalogue PostgreSQL authority was restored on its existing governed port `5441`.
+
+Production catalogue audit:
+- active catalogue rows: 13,948 at audit time;
+- COALVEX™ / COALERIS™ product rows: 0;
+- the production catalogue was not populated with pilot SKUs;
+- no Industrial SKU was invented.
+
+A disposable PostgreSQL database was created on the same local PostgreSQL 18 runtime to validate the existing EBP Phase 1 schema plus the new additive duty migration.
+
+Verified from scratch:
+- core taxonomy bootstrap: PASS;
+- EBP Phase 1 migrations 001–004: PASS;
+- EBP validation SQL including the three-value duty constraint: PASS;
+- complete EBP Phase 1 test suite: 60/60 PASS.
+
+The disposable test database is test infrastructure only. The pilot manifest remains the authority for Phase 2 evidence until Industrial SKU nomenclature is approved.
+
+### 54.5 Final regression
+
+Final post-merge-with-current-main validation:
+- COALVEX / Industrial / HERMES regression set: 28/28 PASS;
+- EBP Phase 1 suite against real PostgreSQL: 60/60 PASS;
+- HERMES source registry: PASS — 159 organizations / 65 endpoints;
+- Knowledge v2 canonical validation: PASS — 55 files / 55 unique IDs;
+- relevant Node syntax checks: PASS.
+
+The Knowledge v2 gate exposed four pre-existing canonical metadata defects unrelated to COALVEX. They were repaired structurally (authority/owner/source/review/evidence metadata only) before this phase was allowed to close.
+
+### 54.6 Phase gate
+
+Phase 2 is CLOSED.
+
+What this authorizes next:
+- Phase 3 may define the Industrial & Process SKU nomenclature against this evidence-backed product universe.
+
+What this does NOT authorize:
+- arbitrary Industrial SKU creation;
+- publication of Pall manufacturer claims as ELIMFILTERS claims;
+- unverified OEM/cross-reference relationships;
+- COALVEX product activation in the public catalogue.
+
+Status:
+COALVEX™ PRODUCT PILOT 01 / PHASE 2 — CLOSED / PASS.

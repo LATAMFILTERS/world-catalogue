@@ -3,7 +3,13 @@ id: contaminant:water
 type: Contaminant
 name: Water Contamination
 status: approved
-authority: ELIMFILTERS Engineering
+authority: canonical
+owner: ELIMFILTERS Engineering
+source:
+  - docs/brand/SYSTEM_REGISTRY.md
+  - docs/brand/TECHNOLOGY_REGISTRY.md
+last_reviewed: 2026-09-22
+evidence_status: validated
 ---
 
 # Water Contamination

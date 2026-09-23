@@ -5,7 +5,7 @@
 // service.js. See docs/ebp/phases/phase-01-product-engineering-passport.md.
 
 const VALVE_APPLICABILITY_VALUES = new Set(['REQUIRED', 'NOT_APPLICABLE']);
-const DUTY_VALUES = new Set(['HEAVY_DUTY', 'LIGHT_DUTY']);
+const DUTY_VALUES = new Set(['HEAVY_DUTY', 'LIGHT_DUTY', 'INDUSTRIAL_PROCESS']);
 const PACKAGING_CLASS_VALUES = new Set(['AUTOMOTIVE', 'INDUSTRIAL']);
 const VALVE_FIELDS = ['bypass_valve_applicability', 'antidrainback_valve_applicability'];
 
