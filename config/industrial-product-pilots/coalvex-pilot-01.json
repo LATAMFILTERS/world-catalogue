@@ -131,6 +131,8 @@
   },
   "elements": [
     {
+      "pilot_record_id": "COALVEX-P01-01",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CC3LGA7H13",
       "source_product_line": "SepraSol",
@@ -157,7 +159,6 @@
       "source_urls": [
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol"
       ],
-      "canonical_product_id": "COALVEX-P01-01",
       "supplier": "PALL",
       "supplier_sku": "CC3LGA7H13",
       "oem_competitor_cross": [],
@@ -247,6 +248,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-02",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CC3LGB7H13",
       "source_product_line": "SepraSol",
@@ -273,7 +276,6 @@
       "source_urls": [
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol"
       ],
-      "canonical_product_id": "COALVEX-P01-02",
       "supplier": "PALL",
       "supplier_sku": "CC3LGB7H13",
       "oem_competitor_cross": [],
@@ -364,6 +366,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-03",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CC3LG02H13",
       "source_product_line": "SepraSol",
@@ -390,7 +394,6 @@
       "source_urls": [
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol"
       ],
-      "canonical_product_id": "COALVEX-P01-03",
       "supplier": "PALL",
       "supplier_sku": "CC3LG02H13",
       "oem_competitor_cross": [],
@@ -480,6 +483,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-04",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGH",
       "source_product_line": "SepraSol Plus",
@@ -507,7 +512,6 @@
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
         "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
       ],
-      "canonical_product_id": "COALVEX-P01-04",
       "supplier": "PALL",
       "supplier_sku": "CS604LGH",
       "oem_competitor_cross": [],
@@ -601,6 +605,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-05",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGH1",
       "source_product_line": "SepraSol Plus",
@@ -628,7 +634,6 @@
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
         "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
       ],
-      "canonical_product_id": "COALVEX-P01-05",
       "supplier": "PALL",
       "supplier_sku": "CS604LGH1",
       "oem_competitor_cross": [],
@@ -722,6 +727,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-06",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGH13",
       "source_product_line": "SepraSol Plus",
@@ -749,7 +756,6 @@
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
         "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
       ],
-      "canonical_product_id": "COALVEX-P01-06",
       "supplier": "PALL",
       "supplier_sku": "CS604LGH13",
       "oem_competitor_cross": [],
@@ -843,6 +849,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-07",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGBH",
       "source_product_line": "SepraSol Plus",
@@ -870,7 +878,6 @@
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
         "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
       ],
-      "canonical_product_id": "COALVEX-P01-07",
       "supplier": "PALL",
       "supplier_sku": "CS604LGBH",
       "oem_competitor_cross": [],
@@ -965,6 +972,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-08",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGBH1",
       "source_product_line": "SepraSol Plus",
@@ -992,7 +1001,6 @@
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
         "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
       ],
-      "canonical_product_id": "COALVEX-P01-08",
       "supplier": "PALL",
       "supplier_sku": "CS604LGBH1",
       "oem_competitor_cross": [],
@@ -1087,6 +1095,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-09",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGBH13",
       "source_product_line": "SepraSol Plus",
@@ -1114,7 +1124,6 @@
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
         "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
       ],
-      "canonical_product_id": "COALVEX-P01-09",
       "supplier": "PALL",
       "supplier_sku": "CS604LGBH13",
       "oem_competitor_cross": [],
@@ -1209,6 +1218,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-10",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGDH13",
       "source_product_line": "SepraSol Plus",
@@ -1236,7 +1247,6 @@
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
         "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
       ],
-      "canonical_product_id": "COALVEX-P01-10",
       "supplier": "PALL",
       "supplier_sku": "CS604LGDH13",
       "oem_competitor_cross": [],
@@ -1330,6 +1340,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-11",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGBDH13",
       "source_product_line": "SepraSol Plus",
@@ -1357,7 +1369,6 @@
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol-plus",
         "https://www.pall.com/content/dam/pall/oil-gas/literature-library/non-gated/Datasheet/seprasol-plus-en.pdf"
       ],
-      "canonical_product_id": "COALVEX-P01-11",
       "supplier": "PALL",
       "supplier_sku": "CS604LGBDH13",
       "oem_competitor_cross": [],
@@ -1452,6 +1463,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-12",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGT2H13",
       "source_product_line": "Medallion HP",
@@ -1478,7 +1491,6 @@
       "source_urls": [
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
       ],
-      "canonical_product_id": "COALVEX-P01-12",
       "supplier": "PALL",
       "supplier_sku": "CS604LGT2H13",
       "oem_competitor_cross": [],
@@ -1572,6 +1584,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-13",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGT2DH13",
       "source_product_line": "Medallion HP",
@@ -1598,7 +1612,6 @@
       "source_urls": [
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
       ],
-      "canonical_product_id": "COALVEX-P01-13",
       "supplier": "PALL",
       "supplier_sku": "CS604LGT2DH13",
       "oem_competitor_cross": [],
@@ -1692,6 +1705,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-14",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGBT2H13",
       "source_product_line": "Medallion HP",
@@ -1718,7 +1733,6 @@
       "source_urls": [
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
       ],
-      "canonical_product_id": "COALVEX-P01-14",
       "supplier": "PALL",
       "supplier_sku": "CS604LGBT2H13",
       "oem_competitor_cross": [],
@@ -1813,6 +1827,8 @@
       ]
     },
     {
+      "pilot_record_id": "COALVEX-P01-15",
+      "canonical_product_id": null,
       "source_brand": "PALL",
       "source_code": "CS604LGBT2DH13",
       "source_product_line": "Medallion HP",
@@ -1839,7 +1855,6 @@
       "source_urls": [
         "https://shop.pall.com/us/en/products/coalescers/liquid-gas/medallion/medallion-hp"
       ],
-      "canonical_product_id": "COALVEX-P01-15",
       "supplier": "PALL",
       "supplier_sku": "CS604LGBT2DH13",
       "oem_competitor_cross": [],
@@ -1936,6 +1951,7 @@
   ],
   "audit_standard": "Every minimum canonical product field is either evidenced or explicitly unresolved; no silent gaps.",
   "minimum_record_fields": [
+    "pilot_record_id",
     "canonical_product_id",
     "supplier",
     "supplier_sku",
@@ -1976,5 +1992,10 @@
     "technology_core",
     "elimfilters_technology",
     "canonical_sku"
-  ]
+  ],
+  "identity_governance": {
+    "rule": "No parallel ELIMFILTERS product identifier is created during the pilot.",
+    "canonical_product_id_status": "PENDING_CANONICAL_SKU",
+    "pilot_record_id_semantics": "Manifest-local audit locator only; never a SKU, catalogue identity or cross-reference key."
+  }
 }
