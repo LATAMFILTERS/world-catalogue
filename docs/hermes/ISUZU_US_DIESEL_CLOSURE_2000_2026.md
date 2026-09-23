@@ -5,6 +5,7 @@
 **Phase 1 initial pass:** 2026-09-22
 **Phase 1 closure pass:** 2026-09-23
 **Phase 1 technical-qualifier pass:** 2026-09-23
+**Phase 2 closure pass:** 2026-09-23
 **Scope:** USA market, Isuzu, diesel only, model years 2000-2026 inclusive.
 
 This is the research output for the three gated phases the manifest already defines. It
@@ -125,7 +126,7 @@ record of every source checked, every timestamp tried and every method used.
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 attempt, access blockers, and why no base decision was taken |
 | `config/isuzu-n-series-us-oem-matrix.json` | Extended from 2022-2026 to 2000-2026 so the existing bot resolver answers the whole range |
 | `lib/isuzu-us-diesel-closure.js` | Reader, validator and the canonical filter-set answer |
-| `tests/isuzu-us-diesel-closure.test.js` | 37 tests over the governance invariants and the answer: the 10 mandatory closure-pass validations plus 6 technical-qualifier validations |
+| `tests/isuzu-us-diesel-closure.test.js` | 53 tests: the 10 Phase 1 closure-pass validations, 6 Phase 1 technical-qualifier validations, and 15 Phase 2 OEM/OEN closure validations |
 
 ## Phase 1 — diesel vehicle universe
 
@@ -249,10 +250,95 @@ publishes FTR alone. The 2022 specification brochure introduces FVR. FVR starts 
   final exhaustive search across isuzucv.com, NHTSA's complete Isuzu model list and general
   web search, all with zero hits.
 
+## PHASE 2 — OFFICIALLY CLOSED
+
+**`"phase2_status": "CLOSED"`** in `config/vehicle-platform-closure/isuzu-us-diesel-phase2-oen.json`.
+
+"Closed" here means what the task that requested this pass defined it to mean: **every
+Phase 1 vehicle x position cell carries a real, non-missing, terminal state** -- VERIFIED,
+NOT_APPLICABLE, or an honestly documented PARTIAL/UNRESOLVED/CONFLICTING. It does **not**
+mean every position has a confirmed Isuzu part number; Isuzu's own public-facing literature
+genuinely does not cover most of this matrix, and this pass reports that plainly rather
+than inventing coverage to reach a higher number.
+
+### Coverage (from `lib/isuzu-us-diesel-closure.js`'s `phase2CoverageSummary()`)
+
+| | Count |
+|---|---|
+| Phase 1 vehicle/year combinations represented | **181 of 181** |
+| Total position cells | **1,942** |
+| VERIFIED | **142** |
+| PARTIAL | **281** |
+| NOT_APPLICABLE | **505** |
+| UNRESOLVED | **1,014** |
+| CONFLICTING | **0** |
+
+Every cell in that 1,942 comes from `phase2CoverageMatrix()`, which is built entirely on
+top of the existing `modelsFor()` / `answerFilterSetQuery()` machinery -- it adds no new
+matching logic, only aggregation, so it cannot silently diverge from what a single-vehicle
+query already returns.
+
+### H-Series -- the new mandatory addition
+
+H-Series (`HTR`, `HVR`, `HXR`, MY2005-2008, `6HK1-TC` 7.8L, Class 6-8) is now fully
+represented in Phase 2's `position_universe`, independently of both N-Series and F-Series,
+per the task's own rule that H-Series may not inherit from F-Series merely because both
+share the 6HK1-TC. An exhaustive search (isuzucv.com's complete archived history for any
+H-Series manual, service document or parts catalogue; general web search for HTR/HVR/HXR
+filter part numbers) found **zero Isuzu-published filter part numbers for any H-Series
+position** -- the only Isuzu documents that exist for this product line are the marketing
+microsite pages already used to close Phase 1 (engine, GVWR, transmission, brake
+configuration), never a maintenance schedule or parts listing.
+
+One genuine, Isuzu-sourced finding did come out of re-reading those pages: **H-Series brake
+configuration is per-model, not uniform**, which changes how `AIR_DRYER` must be
+represented --
+
+| Model | Standard brakes | Optional brakes |
+|---|---|---|
+| HTR | Hydraulic 4-piston | ABS Full Air |
+| HVR | Hydraulic 4-piston | Air brake |
+| HXR | Air brake | Air brake |
+
+`AIR_DRYER` is recorded as `CONDITIONAL_BY_MODEL`: applicable only on the optional full-air
+configuration for HTR/HVR, applicable as standard for HXR -- and UNRESOLVED for a part
+number in every case, since Isuzu never published one.
+
+A retailer listing was found associating the F-Series/H-Series-shared engine's lube filter
+number (`1132004872`) with HTR specifically by engine family. This is exactly the kind of
+model-to-model inheritance this closure prohibits (H-Series may not inherit from F-Series
+merely by sharing `6HK1-TC`), so it is recorded only as a research lead in
+`unresolved_positions`, never applied.
+
+### Cummins B6.7 F-Series (MY2022-2026)
+
+Confirmed from Phase 1's own Isuzu brochures that MY2022-2026 F-Series uses the Cummins
+B6.7. A targeted search for Cummins-official filter part numbers tied explicitly to the
+Isuzu chassis application -- the bar this closure's own rules set before Cummins literature
+may serve as OEM evidence -- did not locate a qualifying document. General Cummins B6.7
+filter listings exist but none establishes the Isuzu-chassis linkage; using them without it
+would violate the same no-inheritance principle applied everywhere else in this closure.
+**Fleetguard is explicitly excluded from Phase 2** even though Cummins-owned, per the
+task's own instruction; it belongs to Phase 3. Remains UNRESOLVED.
+
+### The two anomalous OEN numbers -- confirmed, not resolved
+
+`2906542701`, `2906548000`, `2906548100` and `2906544040` were re-examined this pass. The
+source PDF was re-extracted with `pdftotext` in both `-table` and `-raw` mode, which agree
+on these exact numbers in these exact cells, and the adjacent RADIATOR block on the same
+page carries its own, completely different genuine numbers with zero overlap -- ruling out
+a column-bleed extraction error as the explanation. The anomaly is confirmed present in
+Isuzu's own document as printed. It remains flagged, not normalized: no second Isuzu source
+confirming these numbers was located in this pass.
+
 ## Phase 2 — Isuzu OE/OEN filter sets
 
 21 rows, all from Isuzu sources. 6 VERIFIED, 13 PARTIAL, 2 NOT_APPLICABLE. 8 groups of
-positions are recorded as UNRESOLVED.
+positions are recorded as UNRESOLVED. (These per-row counts are unchanged from the initial
+2026-09-22 pass -- no new `oen_rows` were added this pass, only the H-Series
+`position_universe`, governance notes, and the coverage matrix built on top of the existing
+rows. See **PHASE 2 — OFFICIALLY CLOSED** above for the full coverage-matrix numbers across
+all three series.)
 
 The position universe was **derived, not assumed**. It comes from the maintenance
 schedules in the 2006 and 2007 NPR diesel owner's manuals and from the F-Series Priority
@@ -322,11 +408,15 @@ vehicles that fall inside them.
 - **F-Series air, cabin, air dryer, water separator and transmission** are unresolved for
   all years; no F-Series owner's manual or parts listing was retrieved.
 - **The Cummins B6.7 F-Series (MY2022-2026) has no Isuzu-published filter number at all.**
+- **H-Series has no Isuzu-published filter number for any position, in any of its three
+  models.** See **PHASE 2 — OFFICIALLY CLOSED** above for the full H-Series findings,
+  including the per-model brake configuration that shapes `AIR_DRYER`.
 
 Two format anomalies are flagged rather than silently accepted: the lube rows carrying
 `2906542701 / 2906548000 / 2906548100` and `2906544040` do not follow the usual Isuzu
-genuine pattern. They are reproduced exactly as published and marked for confirmation
-against an Isuzu parts catalogue before any downstream use.
+genuine pattern. They were re-confirmed against a second extraction algorithm this pass
+(see above) and remain reproduced exactly as published, marked for confirmation against a
+second Isuzu source before any downstream use.
 
 ## Phase 3 — aftermarket resolution
 
