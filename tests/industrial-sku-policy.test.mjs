@@ -116,3 +116,23 @@ test('COALVEX pilot preview is deterministic, unique, format-valid and not minte
   assert.deepEqual(preview.mappings.map(r=>r.publication_order),Array.from({length:15},(_,i)=>i+1));
   for(const row of preview.mappings) assert.equal(row.status,'PREVIEW_ONLY_NOT_MINTED');
 });
+
+test('canonical governance documents publish the same Industrial SKU namespace', () => {
+  const master=fs.readFileSync('docs/catalog/ELIMFILTERS_MASTER_CATALOG_POLICY.md','utf8');
+  const product=fs.readFileSync('docs/brand/PRODUCT_REGISTRY.md','utf8');
+  const root=fs.readFileSync('CLAUDE.md','utf8');
+  for(const text of [master,product,root]) {
+    assert.match(text,/IA1/);
+    assert.match(text,/IG1/);
+    assert.match(text,/IH1/);
+    assert.match(text,/IL1/);
+    assert.match(text,/IO1/);
+    assert.match(text,/IW7/);
+    assert.match(text,/IW8/);
+    assert.match(text,/STOP_REVIEW/);
+  }
+  assert.match(master,/three governed product-identity domains/i);
+  assert.match(product,/first-publication batch contains a collision group/i);
+  assert.match(root,/raw query\/array\s+order is never an identity rule/i);
+});
+
