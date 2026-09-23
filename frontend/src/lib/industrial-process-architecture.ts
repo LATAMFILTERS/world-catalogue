@@ -105,7 +105,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     summary: 'Industrial air treatment for general ventilation, high-cleanliness environments and molecular contamination control.',
     positioning: 'AEREMIS™ organizes industrial air treatment by contaminant challenge and required air condition—from general particulate control, through high-efficiency critical-air stages, to molecular treatment for gases, vapors and odors. It is not a single filter or a universal efficiency class; the treatment path follows the air-quality target, contaminant profile, operating envelope and system boundary.',
     heroImage: '/images/air-filters-lab.avif',
-    heroVideo: '/images/Air%20Industrial-aviation%20(1).mp4',
+    heroVideo: '/images/AEREMIS.mp4',
     mediaImage: '/images/air%20industrial.jpg',
     knowledgeCenterSlug: 'ip-aeremis-air-treatment-architecture',
     selectionContext: {
