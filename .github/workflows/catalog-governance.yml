@@ -8,6 +8,11 @@ on:
       - 'scripts/catalog-historical-sanitation.js'
       - 'scripts/migrations/run_07*.js'
       - 'tests/catalog-*.test.js'
+      - 'tests/industrial-sku-policy.test.mjs'
+      - 'product-identity/lib/industrial-sku-policy.mjs'
+      - 'config/industrial-product-pilots/*-sku-preview.json'
+      - 'docs/catalog/ELIMFILTERS_MASTER_CATALOG_POLICY.md'
+      - 'docs/brand/PRODUCT_REGISTRY.md'
       - 'import_donaldson.py'
       - 'frontend/src/scripts/ingest-*-production.ts'
       - '.github/CODEOWNERS'
@@ -21,6 +26,11 @@ on:
       - 'scripts/catalog-historical-sanitation.js'
       - 'scripts/migrations/run_07*.js'
       - 'tests/catalog-*.test.js'
+      - 'tests/industrial-sku-policy.test.mjs'
+      - 'product-identity/lib/industrial-sku-policy.mjs'
+      - 'config/industrial-product-pilots/*-sku-preview.json'
+      - 'docs/catalog/ELIMFILTERS_MASTER_CATALOG_POLICY.md'
+      - 'docs/brand/PRODUCT_REGISTRY.md'
       - 'import_donaldson.py'
       - 'frontend/src/scripts/ingest-*-production.ts'
       - '.github/CODEOWNERS'
@@ -43,5 +53,7 @@ jobs:
       - run: npm ci --ignore-scripts
       - name: Canonical catalog governance regressions
         run: npm run catalog:governance:test
+      - name: Industrial SKU nomenclature regression
+        run: node --test tests/industrial-sku-policy.test.mjs
       - name: Fail if forbidden direct catalog write patterns are introduced
         run: node scripts/verify-catalog-write-boundaries.js
