@@ -610,7 +610,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/hidraulic.avif',
           '/images/HYITRIS-image.png',
         ),
-        heroVideo: '/images/HYLTRIS-VIDEO.mp4',
+        heroVideo: '/images/HYLTRIS.mp4',
         hideHeroPoster: true,
         selectionInputs: [
           'Hydraulic fluid type and additive chemistry',
