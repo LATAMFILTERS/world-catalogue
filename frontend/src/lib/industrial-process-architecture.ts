@@ -1127,6 +1127,15 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
   },
 ] as const;
 
+export function industrialProcessMetaDescription(value: string, maxLength = 158) {
+  const normalized = value.replace(/\s+/g, ' ').trim();
+  if (normalized.length <= maxLength) return normalized;
+  const candidate = normalized.slice(0, maxLength - 1);
+  const breakAt = candidate.lastIndexOf(' ');
+  const trimmed = candidate.slice(0, breakAt > 110 ? breakAt : maxLength - 1).replace(/[,:;.-]+$/g, '');
+  return `${trimmed}…`;
+}
+
 export function getIndustrialProcessPlatform(slug: string) {
   return INDUSTRIAL_PROCESS_PLATFORMS.find((platform) => platform.slug === slug);
 }
