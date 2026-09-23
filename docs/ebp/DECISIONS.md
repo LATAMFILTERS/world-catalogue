@@ -3651,3 +3651,40 @@ any freeze:
 - Phase 6 work may begin only on the project owner's own explicit,
   separate authorization — not as a continuation of this session or this
   ADR.
+
+## ADR-0076 — Industrial & Process is a distinct EBP duty
+
+**Date:** 2026-09-22  
+**Status:** Accepted  
+**Authority:** Project owner approval during Industrial & Process product-family implementation.
+
+**Context:** Phase 1 was frozen with only `HEAVY_DUTY` and
+`LIGHT_DUTY` in `ebp_engineering_passports.duty`. The Industrial &
+Process architecture is now a separately governed commercial/engineering
+domain. Reusing `HEAVY_DUTY` for COALVEX™, FLUREXIS™, AEREMIS™,
+PARTION™ or AQUVEXIS™ would encode a false taxonomy relationship and
+would make later analytics, sourcing and product engineering ambiguous.
+
+**Decision:**
+1. Phase 1's duty vocabulary is extended additively with
+   `INDUSTRIAL_PROCESS`.
+2. Existing `HEAVY_DUTY` and `LIGHT_DUTY` values and semantics are
+   unchanged.
+3. Industrial & Process pre-SKU Passports must use
+   `INDUSTRIAL_PROCESS`; they must not be collapsed into Heavy Duty.
+4. The extension is implemented by additive migration
+   `migrations/ebp-phase1/004_industrial_process_duty.sql`, the existing
+   Phase 1 validation layer, documentation and regression tests.
+5. This ADR does **not** authorize an Industrial SKU nomenclature, SKU
+   minting, a parallel product identifier, or catalogue activation.
+   Industrial product work remains `pre-SKU` until the separately
+   approved SKU-governance phase.
+6. Pilot-local row locators used for evidence auditing are not product
+   identities and may never be exposed as ELIMFILTERS SKUs, canonical
+   product IDs or cross-reference keys.
+
+**Consequences:** Phase 1 remains frozen except for this explicit,
+narrowly superseding vocabulary extension. Product Engineering Passport
+remains the single EBP specification mechanism; no parallel Industrial
+Passport table or service is created.
+
