@@ -198,9 +198,9 @@ export function IndustrialProcessTechnologyStablePage({
       <section className={styles.band}><div className={styles.inner}>
         <p className={styles.eyebrow}>OPERATING REALITY</p>
         <h2 className={styles.h2}>Treatment performance depends on the complete process boundary.</h2>
-        <p className={styles.lead}>The filter, element, media, vessel or treatment device is only one part of the result. Flow, contaminant loading, pressure, temperature, chemistry, housing condition, drainage, sealing and upstream/downstream process behavior can materially change performance.</p>
+        <p className={styles.lead}>The filtration, separation or treatment element/media is one part of the complete process result. Flow, contaminant loading, pressure, temperature, chemistry, housing condition, drainage, sealing and upstream/downstream process behavior can materially change performance.</p>
         <div className={styles.twoColumnNotes}>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>A useful distinction</h3><p className={styles.body}>{technologyName(technology.name, technology.branded)} identifies a treatment function. It does not make every product or system inside that category technically interchangeable.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>A useful distinction</h3><p className={styles.body}>{technologyName(technology.name, technology.branded)} identifies a treatment function. It does not make every replacement element or treatment medium inside that category technically interchangeable.</p></article>
           <article className={styles.noteBlock}><h3 className={styles.h3}>Evidence before claims</h3><p className={styles.body}>Efficiency, capacity, pressure drop, outlet quality, service interval and compatibility remain tied to validated product or project evidence.</p></article>
         </div>
       </div></section>
