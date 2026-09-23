@@ -43,6 +43,16 @@ test('all pilot base identities resolve through the approved Pall family anchor'
   }
 });
 
+test('pilot record locators never become a parallel ELIMFILTERS product identity', () => {
+  assert.match(pilot.identity_governance.rule, /No parallel ELIMFILTERS product identifier/i);
+  for (const row of pilot.elements) {
+    assert.match(row.pilot_record_id, /^COALVEX-P01-\d{2}$/);
+    assert.equal(row.canonical_product_id, null);
+    assert.equal(row.canonical_sku, null);
+    assert.notEqual(row.pilot_record_id, row.source_code);
+  }
+});
+
 test('pilot has unique exact Pall source codes and does not invent ELIMFILTERS SKUs or crosses', () => {
   const codes = pilot.elements.map((row) => row.source_code);
   assert.equal(new Set(codes).size, codes.length);
@@ -60,7 +70,8 @@ test('minimum canonical product record has no silent gaps', () => {
     for (const field of pilot.minimum_record_fields) {
       assert.equal(Object.prototype.hasOwnProperty.call(row, field), true, `${row.source_code}: missing field ${field}`);
     }
-    assert.ok(row.canonical_product_id.startsWith('COALVEX-P01-'));
+    assert.ok(row.pilot_record_id.startsWith('COALVEX-P01-'));
+    assert.equal(row.canonical_product_id, null);
     assert.equal(row.supplier_sku, row.source_code);
     assert.ok(Array.isArray(row.application) && row.application.length > 0);
     assert.ok(Array.isArray(row.industry) && row.industry.length > 0);
