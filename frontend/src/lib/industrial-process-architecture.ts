@@ -912,6 +912,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/turbine-plant.avif',
           '/images/Depth%20Filtration.png',
         ),
+        heroVideo: '/images/Depth%20Filtration-video.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Feed-water source and suspended-solids condition',
           'Particle-size distribution and variability where known',
