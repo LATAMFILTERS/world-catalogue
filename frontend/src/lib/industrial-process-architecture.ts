@@ -1022,7 +1022,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Feed-water chemistry and fouling potential', 'Required permeate quality', 'Operating pressure and temperature', 'Recovery target', 'Scaling potential', 'Pretreatment and cleaning strategy', 'Membrane-material compatibility'],
           ['Permeate quality deteriorates', 'Normalized pressure demand rises', 'Normalized permeate flow declines', 'Recovery becomes unstable', 'Cleaning frequency increases', 'Evidence of scaling, fouling or integrity loss develops'],
           '/images/turbine-plant.avif',
-          '/images/planta_converted.avif',
+          '/images/MEMBRAVEX.png',
           ['Reverse Osmosis', 'Ultrafiltration', 'Nanofiltration'],
         ),
         selectionInputs: [
