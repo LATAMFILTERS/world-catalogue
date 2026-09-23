@@ -69,6 +69,39 @@ Use these labels for new runtime definitions:
 
 A `STANDBY` or `CI` node must not run recurring production schedulers. Before adding a cron, worker, queue consumer or recurring research job, search both repositories and existing GitHub/Render/Lenovo execution paths to ensure the function does not already have an active owner.
 
+## Product Catalog SKU Architecture
+
+Product identity is separated by governed domain:
+
+- Heavy Duty: existing HD prefixes and canonical-source rules remain unchanged.
+- Light Duty: existing LD prefixes and canonical-source rules remain unchanged.
+- Industrial & Process: dedicated Technology-Core prefixes are `IA1/IA2/IA3`,
+  `ID1`, `IG1/IG2`, `IH1`, `IL1`, `IO1/IO2`,
+  `IW1/IW3/IW4/IW5/IW6/IW7`; `IW8` is reserved but blocked while
+  Electrodeionization has no approved commercial product base.
+
+Industrial base authority must resolve before SKU planning:
+`ORIGINAL_BASE > FAMILY_ANCHOR_BASE > COMPETITOR_CROSS > SOURCE_ONLY`.
+
+Industrial preferred SKU = approved three-character Technology-Core prefix +
+the last four numeric digits from the canonical base code, left-padded when
+needed. Collisions use the existing sticky discriminator pattern: the first
+published mapping keeps its natural slot; later distinct products use prefix +
+discriminator `1..9` + last three digits, skipping occupied slots. For a new
+batch with multiple products competing for one natural slot, the reviewed
+publication order must be explicitly frozen before allocation; raw query/array
+order is never an identity rule. If the
+source has no numeric payload, the core is blocked, or collision capacity is
+exhausted, fail closed with `STOP_REVIEW`.
+
+Never reuse HD/LD prefixes for Industrial & Process. Never invent a fallback
+SKU. Planning is not publication; catalogue minting remains separately gated.
+
+Canonical detail:
+- `docs/catalog/ELIMFILTERS_MASTER_CATALOG_POLICY.md`
+- `docs/brand/PRODUCT_REGISTRY.md`
+- `product-identity/lib/industrial-sku-policy.mjs`
+
 ## Hard rules
 
 - Resolve technology names and scopes from canonical registries only.

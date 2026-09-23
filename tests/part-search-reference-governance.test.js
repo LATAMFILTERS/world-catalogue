@@ -115,15 +115,17 @@ test('1R1808 fail-closed response removes contaminated LD candidates', () => {
   assert.equal(body.reference_safety_removed, 2);
 });
 
-test('runtime applies governed duty before the original search handler', () => {
+test('runtime applies governed duty and strict certified-canonical guard before the original search handler', () => {
   const fs = require('fs');
   const path = require('path');
   const source = fs.readFileSync(path.join(__dirname, '..', 'lib',
     'part-search-runtime-hardening.js'), 'utf8');
   assert.match(source, /governedDutyForReference\(raw, req\.query\?\.duty\)/);
   assert.match(source, /req\.query\.duty = governedDuty/);
-  assert.match(source, /quarantineForReference\(raw\)/);
-  assert.match(source, /resolution:\s*'EVIDENCE_REQUIRED'/);
+  assert.match(source, /catalog_sku_certification/);
+  assert.match(source, /certification_state='CERTIFIED'/);
+  assert.match(source, /v_api_resolver_v7/);
+  assert.match(source, /EVIDENCE_REQUIRED/);
 });
 
 test('unreviewed cross-duty reference is loaded into fail-closed quarantine', () => {

@@ -44,7 +44,7 @@ This document establishes:
 
 
 
-ELIMFILTERS operates under a dual catalog architecture:
+ELIMFILTERS operates under three governed product-identity domains:
 
 
 
@@ -117,6 +117,24 @@ Only the following LD categories are accepted:
 \- Oil Filter
 
 
+
+\---
+
+
+\## INDUSTRIAL & PROCESS
+
+Industrial & Process does not use one universal master manufacturer.
+
+Canonical source authority follows the approved family-specific base-code policy:
+
+Confirmed Original
+→ Approved Family Anchor
+→ Validated Competitor Cross
+→ Source Only
+
+Approved anchor families include Camfil, Donaldson, Pall, Parker, DuPont/FilmTec/AmberLite and Calgon Carbon according to Technology Core. A confirmed original element always outranks the family anchor.
+
+Industrial & Process uses a dedicated `I*` SKU namespace and must never reuse HD or LD prefixes.
 
 \---
 
@@ -219,6 +237,58 @@ P164200 → EH6200
 P181099 → EA1099
 
 
+
+\---
+
+
+
+\# INDUSTRIAL & PROCESS SKU STRUCTURE
+
+Industrial & Process SKU identity is Technology-Core scoped.
+
+Official prefixes:
+
+| Technology Core | Family | Prefix |
+|---|---|---|
+| TC-AIR-01 | General Air Filtration | IA1 |
+| TC-AIR-02 | HE-CRIVA™ | IA2 |
+| TC-AIR-03 | MA-TREA™ | IA3 |
+| TC-DUST-01 | FUMEVRA™ | ID1 |
+| TC-NG-01 | COALERIS™ | IG1 |
+| TC-NG-02 | Gas-Liquid Separation | IG2 |
+| TC-HYD-01 | HYLTRIS™ | IH1 |
+| TC-LUB-01 | LUBREVA™ | IL1 |
+| TC-OIL-01 | DEWATIS™ | IO1 |
+| TC-OIL-02 | OILREVEX™ | IO2 |
+| TC-WAT-01 | Depth Filtration | IW1 |
+| TC-WAT-03 | ADSOVEX™ | IW3 |
+| TC-WAT-04 | MEMBRAVEX™ / RO | IW4 |
+| TC-WAT-05 | MEMBRAVEX™ / UF | IW5 |
+| TC-WAT-06 | MEMBRAVEX™ / NF | IW6 |
+| TC-WAT-07 | IONVEXA™ | IW7 |
+| TC-WAT-08 | Electrodeionization | IW8 — RESERVED / MINTING BLOCKED |
+
+Oil Mist / Coolant Mist has no SKU prefix until its commercial treatment family is separately approved.
+
+Rule:
+
+1. Resolve canonical base authority before SKU planning.
+2. Extract numbers only from the canonical base code.
+3. Use the last 4 numeric digits; left-pad 1–3 digit payloads with zeros.
+4. Preferred SKU = approved Industrial 3-character prefix + 4-digit payload.
+5. If a first-publication batch contains two or more products competing for the same preferred slot, the reviewed publication order must be frozen before collision allocation. Input/query order is never an identity rule.
+6. If the preferred slot is occupied by a different published product, retain the published mapping and use prefix + collision discriminator 1–9 + last 3 digits, skipping occupied slots.
+7. If no numeric payload exists, the core is blocked/unapproved, the first-publication collision order is not frozen, or the collision namespace is exhausted: STOP_REVIEW.
+7. Never hash a reference, convert source letters into pseudo-numbers, or invent a fallback SKU.
+
+Example COALVEX™ preview:
+
+Pall `CC3LGA7H13`
+→ numeric payload `3713`
+→ TC-NG-01 / IG1
+→ `IG13713`
+
+This rule plans identity only. Catalogue writes require the separately approved publication phase.
 
 \---
 
@@ -596,9 +666,15 @@ MANN-FILTER
 
 
 
+INDUSTRIAL & PROCESS:
+
+CONFIRMED ORIGINAL FIRST; OTHERWISE APPROVED TECHNOLOGY-CORE FAMILY ANCHOR
+
+
+
 ENRICHMENT:
 
-FLEETGUARD
+FLEETGUARD / GOVERNED INDUSTRIAL CROSS-REFERENCE SOURCES
 
 
 

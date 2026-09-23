@@ -137,7 +137,37 @@ PARTION™ Oil Mist / Coolant Mist may use DONALDSON as a research anchor, but n
 Rule:
 A discovery supplier such as REIKE is `SOURCE_ONLY` by default. It becomes `ORIGINAL_BASE` only when original-manufacturer status is proven by primary evidence. Parker Par Fit or any other interchange programme remains `COMPETITOR_CROSS` when the original element is known.
 
-Industrial SKU nomenclature remains separately governed. Product development may proceed as an EBP `pre-SKU` Product Engineering Passport; this policy does not mint or invent an ELIMFILTERS SKU.
+Industrial SKU nomenclature v1 is governed as follows. SKU planning is allowed; catalogue minting remains a separate publication phase.
+
+Industrial Technology-Core prefixes:
+- TC-AIR-01 → IA1
+- TC-AIR-02 → IA2
+- TC-AIR-03 → IA3
+- TC-DUST-01 → ID1
+- TC-NG-01 → IG1
+- TC-NG-02 → IG2
+- TC-HYD-01 → IH1
+- TC-LUB-01 → IL1
+- TC-OIL-01 → IO1
+- TC-OIL-02 → IO2
+- TC-WAT-01 → IW1
+- TC-WAT-03 → IW3
+- TC-WAT-04 → IW4
+- TC-WAT-05 → IW5
+- TC-WAT-06 → IW6
+- TC-WAT-07 → IW7
+- TC-WAT-08 → IW8 RESERVED; minting blocked
+
+Rule:
+- preferred SKU = Industrial prefix + last four numeric digits from the approved canonical base code;
+- 1–3 digit numeric payloads are left-padded;
+- collisions reuse the governed sticky mapping rule: existing mapping keeps its slot; later distinct products use prefix + discriminator 1–9 + last three digits, skipping occupied slots;
+- when a first-publication batch contains a collision group, its reviewed publication order must be frozen before allocation; database/query/array order cannot decide which new product receives the natural slot;
+- no numeric payload / no approved core / blocked core / exhausted collision namespace = `STOP_REVIEW`;
+- Oil Mist / Coolant Mist has no SKU namespace while the commercial family remains unapproved;
+- SKU planning never substitutes for canonical-source evidence or ELIMFILTERS engineering approval.
+
+Product development continues through the existing EBP `pre-SKU` Product Engineering Passport until the separate catalogue-publication phase mints the approved SKU.
 
 ## AEREMIS™ — Air Technologies
 
