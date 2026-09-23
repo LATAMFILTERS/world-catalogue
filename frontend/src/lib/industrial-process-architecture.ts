@@ -417,7 +417,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/oil&gas.avif',
           '/images/COALERIS.png',
           undefined,
-          '/images/COALERS-VIDEO.mp4',
+          '/images/COALERIS.mp4',
         ),
         hideHeroPoster: true,
         selectionInputs: [
