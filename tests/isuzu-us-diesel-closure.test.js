@@ -235,13 +235,22 @@ test('a model year with no F-Series reports absence rather than a gap', () => {
   assert.ok(!modelsFor(2013).some((m) => m.series === 'F-SERIES'));
 });
 
-test('the conflicts that were found are recorded, not silently resolved', () => {
+test('the conflicts that were found are recorded, with their final resolution', () => {
   const ids = phase1.conflicts.map((c) => c.conflict_id);
   assert.ok(ids.includes('CONF-NRR-2004'));
   assert.ok(ids.includes('CONF-FVR-2020'));
 
+  // CLOSURE PASS 2026-09-23: CONF-NRR-2004 was resolved in favour of Isuzu's
+  // own site-navigation evidence (NRR added to n_specs.html nav between the
+  // 2003-12-09 and 2004-04-11 captures) rather than left open. The conflict
+  // record itself must still exist and explain the resolution -- it is never
+  // deleted, only closed.
+  const nrrConflict = phase1.conflicts.find((c) => c.conflict_id === 'CONF-NRR-2004');
+  assert.match(nrrConflict.resolution, /RESOLVED in favour of Isuzu/);
+  assert.match(nrrConflict.resolution, /VERIFIED/);
+
   const nrr2004 = phase1.year_blocks.find((b) => b.block_id === 'N-2004-NRR');
-  assert.equal(nrr2004.evidence_status['2004'], 'CONFLICTING');
+  assert.equal(nrr2004.evidence_status['2004'], 'VERIFIED');
   assert.equal(nrr2004.conflict_id, 'CONF-NRR-2004');
 });
 
@@ -271,4 +280,158 @@ test('the resolver now closes the years the extension added', () => {
   // Outside the closed range nothing is invented.
   const before = resolveIsuzuNSeriesCustomerQuery({ year: 1999, model: 'NPR', engine: 'diesel' });
   assert.equal(before.status, 'OEM_YEAR_NOT_CLOSED');
+});
+
+// ---------------------------------------------------------------------------
+// PHASE 1 CLOSURE PASS (2026-09-23) -- mandatory validations.
+//
+// These ten tests are the explicit closure gate requested for this pass: the
+// closure task named exactly these ten conditions and required each to be
+// demonstrated by test before Phase 1 could be declared officially CLOSED.
+// ---------------------------------------------------------------------------
+
+test('CLOSURE 1: no PARTIAL status remains anywhere in Phase 1', () => {
+  for (const block of phase1.year_blocks) {
+    for (const [year, status] of Object.entries(block.evidence_status)) {
+      assert.notEqual(status, 'PARTIAL', `${block.block_id} ${year} is still PARTIAL`);
+    }
+  }
+});
+
+test('CLOSURE 2: no UNRESOLVED status remains anywhere in Phase 1', () => {
+  for (const block of phase1.year_blocks) {
+    for (const [year, status] of Object.entries(block.evidence_status)) {
+      assert.notEqual(status, 'UNRESOLVED', `${block.block_id} ${year} is still UNRESOLVED`);
+    }
+  }
+});
+
+test('CLOSURE 3: no CONFLICTING status remains anywhere in Phase 1', () => {
+  for (const block of phase1.year_blocks) {
+    for (const [year, status] of Object.entries(block.evidence_status)) {
+      assert.notEqual(status, 'CONFLICTING', `${block.block_id} ${year} is still CONFLICTING`);
+    }
+  }
+  // Every declared status must be one of the two terminal "closed" states.
+  for (const block of phase1.year_blocks) {
+    for (const status of Object.values(block.evidence_status)) {
+      assert.ok(['VERIFIED', 'VERIFIED_ABSENT'].includes(status), `${block.block_id} has non-terminal status ${status}`);
+    }
+  }
+});
+
+test('CLOSURE 4: every open_discovery_item is in a terminal state', () => {
+  const TERMINAL = ['VERIFIED', 'VERIFIED_ABSENT', 'CLOSED_NOT_FOUND'];
+  assert.ok(phase1.open_discovery_items.length > 0, 'expected discovery items to still be listed, with terminal status, not deleted');
+  for (const item of phase1.open_discovery_items) {
+    assert.ok(TERMINAL.includes(item.status), `${item.item} has non-terminal status ${item.status}`);
+    assert.ok(item.resolution && item.resolution.length > 20, `${item.item} has no documented resolution`);
+  }
+});
+
+test('CLOSURE 5: gasoline remains excluded after the closure pass', () => {
+  for (const block of phase1.year_blocks) {
+    assert.equal(block.fuel, 'DIESEL', `${block.block_id} is not diesel`);
+  }
+  assert.equal(phase1.governance.gasoline_excluded, true);
+});
+
+test('CLOSURE 6: no aftermarket source was used to define or close any Phase 1 case', () => {
+  const AFTERMARKET = /donaldson|fleetguard|mann-filter|baldwin|\bwix\b|\bfram\b/i;
+  for (const block of phase1.year_blocks) {
+    for (const id of [...(block.evidence || []), ...(block.corroboration || [])]) {
+      const src = sources.sources.find((s) => s.source_id === id);
+      assert.ok(src, `${block.block_id} cites unknown source ${id}`);
+      assert.ok(!AFTERMARKET.test(src.publisher), `${block.block_id} cites aftermarket publisher ${src.publisher} via ${id}`);
+    }
+  }
+  // Phase 1 evidence entries must all be Isuzu primary or the one named
+  // secondary-tier corroboration source (NHTSA); nothing else is permitted
+  // to appear in a block's own evidence/corroboration arrays.
+  const allowedCorroboration = new Set(sources.source_policy.corroboration_only);
+  for (const block of phase1.year_blocks) {
+    for (const id of block.evidence || []) {
+      const src = sources.sources.find((s) => s.source_id === id);
+      assert.equal(src.publisher, sources.source_policy.phase_1_and_2_defining_publisher, `${block.block_id} evidence[] contains non-Isuzu source ${id}`);
+    }
+    for (const id of block.corroboration || []) {
+      const src = sources.sources.find((s) => s.source_id === id);
+      assert.ok(allowedCorroboration.has(src.publisher), `${block.block_id} corroboration[] contains unlisted publisher ${src.publisher}`);
+    }
+  }
+});
+
+test('CLOSURE 7: no year was inherited from an adjacent year by continuity', () => {
+  // Every case this pass closed must cite a source captured/dated inside the
+  // model year it closes, not merely a neighbouring year's document. This
+  // guards specifically against the four inheritance patterns the closure
+  // task explicitly prohibited: 2000->2001, 2013->2014, 2019/2020->2021,
+  // 2017/2019->2018.
+  const capturedInsideYear = (sourceId, year) => {
+    const src = sources.sources.find((s) => s.source_id === sourceId);
+    if (!src || !src.captured_at) return false;
+    return String(src.captured_at).startsWith(String(year));
+  };
+
+  const npr2001 = phase1.year_blocks.find((b) => b.block_id === 'N-2000-2001');
+  assert.ok(npr2001.evidence.some((id) => capturedInsideYear(id, 2001)), 'MY2001 NPR/NPR-HD must cite a source dated inside 2001');
+
+  const nqr = phase1.year_blocks.find((b) => b.block_id === 'N-2000-2001-NQR');
+  assert.ok(nqr.evidence.some((id) => capturedInsideYear(id, 2000)), 'MY2000 NQR must cite a source dated inside 2000');
+  assert.ok(nqr.evidence.some((id) => capturedInsideYear(id, 2001)), 'MY2001 NQR must cite a source dated inside 2001');
+
+  const my2014a = phase1.year_blocks.find((b) => b.block_id === 'N-2011-2014');
+  assert.ok(my2014a.evidence.some((id) => capturedInsideYear(id, 2014)), 'MY2014 N-2011-2014 must cite a source dated inside 2014');
+
+  const my2014b = phase1.year_blocks.find((b) => b.block_id === 'N-2011-2018-ECOMAX');
+  assert.ok(my2014b.evidence.some((id) => capturedInsideYear(id, 2014)), 'MY2014 ECO-MAX must cite a source dated inside 2014');
+
+  const my2021 = phase1.year_blocks.find((b) => b.block_id === 'N-2019-2021');
+  assert.ok(my2021.evidence.some((id) => capturedInsideYear(id, 2020) || capturedInsideYear(id, 2021)), 'MY2021 N-Series must cite a source dated inside the MY2021 selling window (captured late 2020 or in 2021)');
+
+  const ftr2018 = phase1.year_blocks.find((b) => b.block_id === 'F-2017-2021');
+  assert.ok(ftr2018.evidence.some((id) => capturedInsideYear(id, 2018)), 'MY2018 FTR must cite a source dated inside 2018');
+});
+
+test('CLOSURE 8: no non-USA / global-market model was introduced without Isuzu USA evidence', () => {
+  // Every block's evidence must trace back only to isuzucv.com (Isuzu
+  // Commercial Truck of America's own USA domain), never a global/regional
+  // Isuzu site or an aftermarket catalogue's non-USA model column.
+  for (const block of phase1.year_blocks) {
+    for (const id of block.evidence || []) {
+      const src = sources.sources.find((s) => s.source_id === id);
+      assert.match(src.origin_url, /isuzucv\.com/, `${block.block_id} evidence ${id} does not originate from isuzucv.com`);
+    }
+  }
+  // The one non-USA document in the source file (the Donaldson Australasia
+  // catalogue) must never be cited as evidence for a Phase 1 vehicle block.
+  const referencedEverywhere = new Set(phase1.year_blocks.flatMap((b) => [...(b.evidence || []), ...(b.corroboration || [])]));
+  assert.ok(!referencedEverywhere.has('DONALDSON_TRUCK_SERVICE_KITS_AU'), 'the non-USA Donaldson catalogue must not be used to define the Phase 1 vehicle universe');
+});
+
+test('CLOSURE 9: H-Series is explicitly included, with exact years, models and engine', () => {
+  const hSeries = phase1.year_blocks.find((b) => b.series === 'H-SERIES');
+  assert.ok(hSeries, 'H-Series must be incorporated into year_blocks, not left as a discovery item only');
+  assert.deepEqual(hSeries.models.slice().sort(), ['HTR', 'HVR', 'HXR']);
+  assert.equal(hSeries.engine_code, '6HK1-TC');
+  assert.equal(hSeries.displacement_published, '7.8 L');
+  assert.deepEqual(hSeries.model_years, [2005, 2006, 2007, 2008]);
+  for (const status of Object.values(hSeries.evidence_status)) assert.equal(status, 'VERIFIED');
+
+  const item = phase1.open_discovery_items.find((d) => d.item === 'H-SERIES');
+  assert.equal(item.status, 'VERIFIED');
+});
+
+test('CLOSURE 10: FBR is explicitly closed as CLOSED_NOT_FOUND', () => {
+  const item = phase1.open_discovery_items.find((d) => d.item === 'FBR');
+  assert.ok(item, 'FBR must still be tracked as a discovery item with a terminal disposition');
+  assert.equal(item.status, 'CLOSED_NOT_FOUND');
+  assert.ok(!phase1.year_blocks.some((b) => (b.models || []).includes('FBR')), 'FBR must not appear as an included model without evidence');
+});
+
+test('CLOSURE FINAL: phase_status is CLOSED and the history records why', () => {
+  assert.equal(phase1.phase_status, 'CLOSED');
+  assert.ok(Array.isArray(phase1.phase_status_history) && phase1.phase_status_history.length >= 2);
+  const finalEntry = phase1.phase_status_history[phase1.phase_status_history.length - 1];
+  assert.equal(finalEntry.phase_status, 'CLOSED');
 });

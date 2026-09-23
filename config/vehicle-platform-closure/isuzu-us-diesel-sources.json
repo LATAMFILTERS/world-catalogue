@@ -866,6 +866,247 @@
         "Donaldson fuel and lube references indexed by Isuzu engine designation, e.g. 4HK1-TCN/TCC 5.2L 2008-2015 fuel P506095 and P551855, oil P502042; 4HK1-TCN/TCC 5.2L 2016- oil P848076; 6HK1-TCC/TSN/TCS 7.8L oil P550408; 4JJ1 3.0L oil P502597"
       ],
       "scope_restriction": "Australasia edition. Its model column lists Australian and New Zealand Isuzu designations (NLR, NMR, NPS, FRD, FSS, FVZ and similar). It is engine-level evidence only and must never be used to establish USA vehicle fitment."
+    },
+    {
+      "source_id": "ISUZU_NPRDSPECS_2001_MAR",
+      "title": "Isuzu NPR Diesel Trucks - Specs",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nprdspecs.htm",
+      "capture_url": "https://web.archive.org/web/20010331075507/http://www.isuzucv.com/nprdspecs.htm",
+      "captured_at": "2001-03-31",
+      "supports": [
+        "NPR DIESEL 12,000 lbs GVWR; NPR HD DIESEL 14,500 lbs GVWR",
+        "Engine -Type: Turbo/Intercooled Diesel/4HE1-TC; -Displacement 4.75 L (290 CID)",
+        "142 HP @ 2,800 rpm M/T, 275 lb-ft; 175 HP @ 2,700 rpm A/T, 347 lb-ft"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source. Same URL as ISUZU_NPRDSPECS_2000 but an independently dated capture squarely inside calendar 2001, used to close MY2001 on its own evidence rather than the 2000 page."
+    },
+    {
+      "source_id": "ISUZU_NQRDSPECS_2000_SEP",
+      "title": "Isuzu CV - NQR Diesel Trucks - Specs",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nqrdspecs.htm",
+      "capture_url": "https://web.archive.org/web/20000902170550/http://www.isuzucv.com/nqrdspecs.htm",
+      "captured_at": "2000-09-02",
+      "supports": [
+        "NQR DIESEL 17,950 lbs GVWR / 20,950 lbs GCWR (A/T)",
+        "Engine -Type: Turbo/Intercooled Diesel 4HE1-TC; -Displacement 4.8L (290 CID)",
+        "175 HP @ 2,700 rpm, 347 lb-ft @ 2,000 rpm"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source. The Phase 1 PR's original source list for this URL/timestamp pair pointed to a malformed double-domain 404 artifact (isuzucv.com/isuzucv.com/nqrdspecs.htm); this is the corrected, real 200-status capture of the canonical URL at the same date."
+    },
+    {
+      "source_id": "ISUZU_NQRDSPECS_2001_FEB",
+      "title": "Isuzu CV - NQR Diesel Trucks - Specs",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nqrdspecs.htm",
+      "capture_url": "https://web.archive.org/web/20010205104100/http://www.isuzucv.com/nqrdspecs.htm",
+      "captured_at": "2001-02-05",
+      "supports": [
+        "NQR DIESEL 17,950 lbs GVWR, identical content to the 2000-09-02 capture",
+        "Engine -Type: Turbo/Intercooled Diesel 4HE1-TC; -Displacement 4.8L (290 CID)"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source. Closes MY2001 for NQR on a capture squarely inside calendar 2001."
+    },
+    {
+      "source_id": "ISUZU_N_SPECS_NAV_2003_DEC",
+      "title": "Isuzu Commercial Vehicles - N-Series Specifications (navigation/index page)",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_site_state",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/n_specs.html",
+      "capture_url": "https://web.archive.org/web/20031209152956/http://www.isuzucv.com/nseries/n_specs.html",
+      "captured_at": "2003-12-09",
+      "supports": [
+        "N-Series navigation lists: NPR Gas, NPR Diesel, NQR Diesel -- no NRR entry",
+        "Footer: Copyright 2003 American Isuzu Motors Inc."
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source, used to resolve CONF-NRR-2004. Establishes the 'before' state of Isuzu's own site navigation prior to NRR's addition."
+    },
+    {
+      "source_id": "ISUZU_N_SPECS_NAV_2004_APR",
+      "title": "Isuzu Commercial Vehicles - N-Series Specifications (navigation/index page)",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_site_state",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/n_specs.html",
+      "capture_url": "https://web.archive.org/web/20040411210953/http://www.isuzucv.com/nseries/n_specs.html",
+      "captured_at": "2004-04-11",
+      "supports": [
+        "N-Series navigation lists: NPR Gas, NPR Diesel, NQR Diesel, NRR Diesel -- NRR now present",
+        "Footer: Copyright 2004 American Isuzu Motors Inc."
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source, used to resolve CONF-NRR-2004. Establishes the 'after' state, dating NRR's addition to Isuzu's own site structure to between 2003-12-09 and 2004-04-11, consistent with the NRR specification page's own first capture of 2004-03-22."
+    },
+    {
+      "source_id": "ISUZU_NSERIES_SPECS_PDF_2014",
+      "title": "Isuzu N-Series Truck Specifications (comparison PDF: Gas and Diesel)",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/pdfs/nseries_specs.pdf",
+      "capture_url": "https://web.archive.org/web/20140114103728/http://www.isuzucv.com/pdfs/nseries_specs.pdf",
+      "captured_at": "2014-01-14",
+      "supports": [
+        "Diesel N-Series Truck Specifications table, columns: NPR ECO-MAX / NPR-HD / NPR-HD Crew Cab / NQR / NQR Crew Cab / NRR",
+        "NPR ECO-MAX: ENGINE Isuzu 4JJ1-TC turbocharged intercooled diesel; Displacement 3.0L (183 in.3); Engine Power 150hp@2,800 rpm",
+        "NPR-HD / NPR-HD Crew Cab / NQR / NQR Crew Cab / NRR: ENGINE Isuzu 4HK1-TC turbocharged intercooled diesel; Displacement 5.2L (317 in.3); Engine Power 215hp@2,500 rpm",
+        "GVWR/GCWR by model matches the values already recorded in blocks N-2011-2014 and N-2011-2018-ECOMAX"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source. Closes MY2014 for both the N-2011-2014 block (NPR-HD/NQR/NRR) and the N-2011-2018-ECOMAX block (NPR ECO-MAX) with a single document dated inside that model year, replacing interpolation between the 2013 and 2015 pages. The PDF carries no printed model year or copyright date; captured 2014-01-14, read per the same 'captured X supports X' standard used throughout this closure."
+    },
+    {
+      "source_id": "ISUZU_NPR_XD_CREW_SPECS_2020NOV",
+      "title": "Isuzu NPR-XD Diesel Crew Cab Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/en/app/site/pdf?file=npr-xd_crew_specs.pdf",
+      "capture_url": "https://web.archive.org/web/20201127002233/https://www.isuzucv.com/en/app/site/pdf?file=npr-xd_crew_specs.pdf",
+      "captured_at": "2020-11-27",
+      "supports": [
+        "NPR-XD DIESEL CREW CAB, GVWR/GCWR 16,000/22,000 lbs",
+        "ENGINE Isuzu 4HK1-TC turbocharged intercooled diesel; Displacement 5.2L (317 in.3); Engine Power 215 hp @ 2,500 rpm; Engine Torque 452 lb.-ft. @ 1,850 rpm",
+        "FUEL/WATER SEPARATOR: Dual fuel filter with dash mounted indicator light"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source. Closes NPR-XD MY2021 with an explicit printed engine code, captured inside the MY2021 selling window."
+    },
+    {
+      "source_id": "ISUZU_NQR_CREW_SPECS_2020NOV",
+      "title": "Isuzu NQR Diesel Crew Cab Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/en/app/site/pdf?file=nqr_crew_specs.pdf",
+      "capture_url": "https://web.archive.org/web/20201126235602/https://www.isuzucv.com/en/app/site/pdf?file=nqr_crew_specs.pdf",
+      "captured_at": "2020-11-26",
+      "supports": [
+        "NQR DIESEL CREW CAB",
+        "ENGINE Isuzu 4HK1-TC turbocharged intercooled diesel; Engine Power 215 hp @ 2,500 rpm; Engine Torque 452 lb.-ft. @ 1,850 rpm"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source. Closes NQR MY2021 with an explicit printed engine code, captured inside the MY2021 selling window, from the same publication batch as ISUZU_NPR_XD_CREW_SPECS_2020NOV."
+    },
+    {
+      "source_id": "ISUZU_FSERIES_SPECS_2018",
+      "title": "Isuzu Commercial Vehicles - F-Series Specs (FTR)",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/en/fseries/specs",
+      "capture_url": "https://web.archive.org/web/20180131135101/http://www.isuzucv.com/en/fseries/specs",
+      "captured_at": "2018-01-31",
+      "supports": [
+        "FTR: GVWR/GCWR 25,950/30,000 lbs",
+        "Engine & Transmission -- Engine: Isuzu 4HK1-TC turbocharged intercooled diesel",
+        "Displacement 5.2 L (317 in.3); Engine Power 215 HP @ 2,500 rpm; Engine Torque 520 lbs./ft. @ 1,600 rpm"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source. Closes FTR MY2018 with the exact engine code, captured inside the model year."
+    },
+    {
+      "source_id": "ISUZU_FSERIES_INDEX_2018",
+      "title": "Isuzu Commercial Vehicles - F-Series FTR Overview",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/en/fseries/index",
+      "capture_url": "https://web.archive.org/web/20180216032142/https://www.isuzucv.com/en/fseries/index",
+      "captured_at": "2018-02-16",
+      "supports": [
+        "'The FTR is truly a game-changer that raises the standard for Class 6 medium duty trucks. ... Its four-cylinder diesel engine is environmentally friendly'",
+        "FTR (Diesel): GVWR 25,950 lbs.; Class 6; Engine 5.2-liter; Cab Standard; Body Application 16 to 30 ft.",
+        "Footer: Copyright 2018 Isuzu Commercial Truck of America Website by 1969 Communications",
+        "Model Line-Up section confirms the full contemporaneous N-Series line: NPR Gas, NPR Gas Crew Cab, NPR-HD Gas, NPR-HD Gas Crew Cab, NPR Diesel, NPR-HD Diesel, NPR-HD Diesel Crew Cab, NPR-XD Diesel, NPR-XD Diesel Crew Cab, NQR Diesel, NQR Diesel Crew Cab, NRR Diesel, NRR Diesel Crew Cab"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source. Independently corroborates FTR MY2018 with a printed 2018 copyright date."
+    },
+    {
+      "source_id": "ISUZU_HSERIES_INDEX_2005",
+      "title": "Isuzu Commercial Vehicles - H-Series Overview",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/hseries/index.html",
+      "capture_url": "https://web.archive.org/web/20050318124824/http://www.isuzucv.com/hseries/index.html",
+      "captured_at": "2005-03-18",
+      "supports": [
+        "H-Series: Class 6-8 trucks pre-engineered to meet needs of today's most demanding applications",
+        "GVWR's from 25,950 - 54,600 lbs.",
+        "Isuzu 6HK1-TC diesel engine",
+        "Allison automatic transmission or Eaton Fuller manual transmission",
+        "Top-level site navigation lists N-SERIES, F-SERIES, H-SERIES as three parallel product lines",
+        "Footer: Copyright 2005 American Isuzu Motors Inc."
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source. Primary discovery document establishing H-Series as a real Isuzu Commercial Truck of America USA product line, resolving the critical H-SERIES open discovery item."
+    },
+    {
+      "source_id": "ISUZU_HSERIES_HSPECS_2005",
+      "title": "Isuzu Commercial Vehicles - H-Series Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/hseries/h_specs.html",
+      "capture_url": "https://web.archive.org/web/20050318152446/http://www.isuzucv.com/hseries/h_specs.html",
+      "captured_at": "2005-03-18",
+      "supports": [
+        "H-Series Regular Cab -- Model: HTR / HVR / HXR -- GVWR Range: 25,950 lbs. / 25,950-33,000 lbs. / 35,000 lbs.",
+        "H-Series Crew Cab -- Model: HTR / HVR -- GVWR Range: 25,950 lbs. / 25,950-33,000 lbs.",
+        "H-Series Tandem Regular Cab -- Model: HXR -- GVWR Range: 54,600 lbs.",
+        "Footer: Copyright 2005 American Isuzu Motors Inc."
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source. Re-checked unchanged at capture timestamps 20060521144435, 20070701090611, 20080513015354 and 20090616033110 (last capture found), establishing the stable MY2005-2008 (site-live-through-2009) window."
+    },
+    {
+      "source_id": "ISUZU_HTRSPECS_2005",
+      "title": "Isuzu Commercial Vehicles - HTR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/hseries/htrspecs.html",
+      "capture_url": "https://web.archive.org/web/20050318182137/http://www.isuzucv.com/hseries/htrspecs.html",
+      "captured_at": "2005-03-18",
+      "supports": [
+        "HTR: GVWR 25,950 lbs.; GCWR 30,000 lbs. (A/T) 45,000 lbs. (M/T)",
+        "Engine 6HK1-TC; Type Overhead Cam, In-line, 6-Cylinder Diesel; Horsepower 200 HP @ 2,200 rpm (Gross); Torque 520 lbs./ft. @ 1,450 rpm (Gross); Displacement 7.8 L",
+        "Transmission: Allison 2400 HS/RDS 5-speed (A/T), Allison 2500 HS/RDS 5-speed (A/T), Eaton Fuller 6-speed (M/T)"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source."
+    },
+    {
+      "source_id": "ISUZU_HVRSPECS_2005",
+      "title": "Isuzu Commercial Vehicles - HVR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/hseries/hvrspecs.html",
+      "capture_url": "https://web.archive.org/web/20050318182447/http://www.isuzucv.com/hseries/hvrspecs.html",
+      "captured_at": "2005-03-18",
+      "supports": [
+        "HVR: GVWR 25,950-33,000 lbs.; GCWR 30,000 lbs. (A/T) 45,000 lbs. (M/T)",
+        "Engine 6HK1-TC; Overhead Cam, In-line, 6-Cylinder Diesel; Horsepower 215-250 HP @ 2,200 rpm (Gross); Torque 520-800 lbs./ft. @ 1,450 rpm; Displacement 7.8 L",
+        "Transmission: Allison 2400/2500 HS/RDS, Allison 3000/3500 RDS 5-/6-speed (A/T), Eaton Fuller 6-speed (M/T)"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source."
+    },
+    {
+      "source_id": "ISUZU_HXRSPECS_2005",
+      "title": "Isuzu Commercial Vehicles - HXR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/hseries/hxrspecs.html",
+      "capture_url": "https://web.archive.org/web/20050318182547/http://www.isuzucv.com/hseries/hxrspecs.html",
+      "captured_at": "2005-03-18",
+      "supports": [
+        "HXR: GVWR 35,000 lbs. Regular Cab, 54,600 lbs. Tandem Regular Cab; GCWR 30,000 lbs. (A/T) 45,000 lbs. (M/T)",
+        "Engine 6HK1-TC; Overhead Cam, In-line, 6-Cylinder Diesel; Horsepower 250-300 HP @ 2,200 rpm (Gross); Torque 800-860 lbs./ft. @ 1,450 rpm; Displacement 7.8 L"
+      ],
+      "note": "CLOSURE PASS 2026-09-23 source."
     }
   ]
 }
