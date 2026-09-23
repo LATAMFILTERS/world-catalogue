@@ -11581,3 +11581,153 @@ What this does NOT authorize:
 
 Status:
 COALVEX™ PRODUCT PILOT 01 / PHASE 2 — CLOSED / PASS.
+
+## 55. Industrial & Process SKU Nomenclature v1 — Phase 3 Closure
+
+Status: CLOSED / PASS — 2026-09-22.
+
+Purpose:
+Define a dedicated ELIMFILTERS SKU namespace for Industrial & Process without reusing HD/LD identity, without forcing one manufacturer across unrelated industrial mechanisms, and without writing any SKU before publication governance is approved.
+
+### 55.1 Initial audit
+
+The Phase 3 audit established:
+
+- the active catalogue contained 13,948 rows at audit time;
+- no active SKU beginning with the Industrial `I*` namespace existed;
+- all 15 proposed COALVEX™ Pilot 01 SKUs were absent from the active catalogue;
+- the active catalogue SKU constraint is `^[A-Z]{2}[0-9]{4,7}[A-Z]{0,2}$`;
+- HD and LD already use stable three-character semantic prefixes plus numeric payload;
+- the existing EH6 collision policy already provides the correct sticky collision discipline and is reused rather than reimplemented as a second identity system;
+- the existing master catalogue policy still described only HD/LD and therefore required an explicit Industrial extension.
+
+### 55.2 Approved Industrial namespace
+
+AEREMIS™:
+- TC-AIR-01 → IA1
+- TC-AIR-02 → IA2
+- TC-AIR-03 → IA3
+
+PARTION™:
+- TC-DUST-01 → ID1
+- Oil Mist / Coolant Mist → no prefix until commercial family approval
+
+COALVEX™:
+- TC-NG-01 → IG1
+- TC-NG-02 → IG2
+
+FLUREXIS™:
+- TC-HYD-01 → IH1
+- TC-LUB-01 → IL1
+- TC-OIL-01 → IO1
+- TC-OIL-02 → IO2
+
+AQUVEXIS™:
+- TC-WAT-01 → IW1
+- TC-WAT-03 → IW3
+- TC-WAT-04 → IW4
+- TC-WAT-05 → IW5
+- TC-WAT-06 → IW6
+- TC-WAT-07 → IW7
+- TC-WAT-08 → IW8 RESERVED; minting blocked
+
+### 55.3 Generation rule
+
+Prerequisite:
+- canonical base identity must already have passed the Phase 1 Industrial base-code authority gate.
+
+Preferred SKU:
+- approved Industrial three-character prefix;
+- extract numbers only from the canonical base code;
+- take the last four numeric digits;
+- left-pad a 1–3 digit payload with zeros.
+
+Collision rule:
+- published mappings are sticky;
+- a later product never displaces an existing mapping;
+- when a first-publication batch contains multiple new products competing for one natural slot, the reviewed publication order must be explicitly frozen before allocation;
+- once frozen, later products use prefix + collision discriminator 1–9 + last three digits, skipping occupied slots;
+- raw query/database/array order must never silently decide product identity.
+
+Fail-closed:
+- no numeric payload → `STOP_REVIEW`;
+- unapproved or blocked Technology Core → `STOP_REVIEW`;
+- unfrozen first-publication collision order → `STOP_REVIEW`;
+- exhausted collision namespace → `STOP_REVIEW`;
+- no hash, source-letter conversion or invented fallback is permitted.
+
+### 55.4 COALVEX™ Pilot 01 frozen preview
+
+The 15-reference Phase 2 pilot produces the following reviewed Phase 3 preview:
+
+- CC3LGA7H13 → IG13713
+- CC3LGB7H13 → IG11713
+- CC3LG02H13 → IG10213
+- CS604LGH → IG10604
+- CS604LGH1 → IG16041
+- CS604LGH13 → IG10413
+- CS604LGBH → IG11604
+- CS604LGBH1 → IG11041
+- CS604LGBH13 → IG11413
+- CS604LGDH13 → IG12413
+- CS604LGBDH13 → IG13413
+- CS604LGT2H13 → IG14213
+- CS604LGT2DH13 → IG11213
+- CS604LGBT2H13 → IG12213
+- CS604LGBT2DH13 → IG13213
+
+The allocation sequence is frozen in:
+`config/industrial-product-pilots/coalvex-pilot-01-sku-preview.json`
+
+This file is a publication preview, not a catalogue write. At Phase 3 closure:
+- `catalogue_write_allowed = false`;
+- 15/15 preview SKUs are unique;
+- 15/15 match the active catalogue SKU format;
+- 0/15 exist in the active catalogue;
+- active Industrial `I*` SKU rows remain 0.
+
+### 55.5 Post-implementation audit and correction
+
+The first implementation audit found a nondeterminism risk: two new products sharing a preferred last-four slot could otherwise inherit natural/collision position from incidental input order.
+
+Correction:
+- `planIndustrialSkus()` now refuses a first-publication collision batch unless `publicationOrderLocked=true`;
+- the COALVEX preview freezes publication order 1–15;
+- Phase 4 must consume the frozen preview rather than recomputing collision winners from unordered research results.
+
+The catalogue-governance regression run also exposed three pre-existing Part Search governance failures unrelated to Industrial SKU generation. Because this phase activates the existing Catalog Governance workflow, those failures were not left open:
+- governed mixed-duty selection now chooses the bucket matching the governed duty instead of whichever duty bucket is non-empty first;
+- missing governed products fail closed instead of synthesizing product records;
+- the stale runtime regression was aligned to the newer strict certified-canonical v7 guard.
+
+### 55.6 Validation
+
+Final Phase 3 validation:
+- Industrial SKU + Phase 1/2 focused regression: PASS;
+- Industrial SKU policy tests: PASS;
+- complete Catalog Governance suite including Industrial SKU regression: 112/112 PASS;
+- Catalog Write Boundary verification: PASS;
+- active catalogue `I*` namespace rows: 0;
+- COALVEX preview collisions with active catalogue: 0;
+- active SKU constraint compatibility: PASS.
+
+### 55.7 Phase gate
+
+Phase 3 is CLOSED.
+
+Phase 3 authorizes:
+- use of the frozen Industrial SKU nomenclature and the reviewed COALVEX preview as input to the next publication phase.
+
+Phase 3 does NOT authorize:
+- direct catalogue inserts;
+- activation of the 15 COALVEX SKUs;
+- publication of Pall manufacturer performance as ELIMFILTERS performance;
+- automatic cross-reference inheritance;
+- any SKU for Oil Mist / Coolant Mist or EDI.
+
+Next phase:
+Phase 4 — COALVEX™ Pilot 01 controlled SKU minting + Product Engineering Passport creation, using the frozen Phase 3 mappings and existing catalogue write governance.
+
+Status:
+INDUSTRIAL & PROCESS SKU NOMENCLATURE v1 / PHASE 3 — CLOSED / PASS.
+
