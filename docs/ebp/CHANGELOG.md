@@ -1,3 +1,11 @@
+## 2026-09-22 — Industrial & Process pre-SKU duty support
+
+- Added additive migration `migrations/ebp-phase1/004_industrial_process_duty.sql`.
+- EBP Phase 1 now accepts `INDUSTRIAL_PROCESS` in addition to `HEAVY_DUTY` and `LIGHT_DUTY`.
+- This prevents COALVEX™ and later Industrial & Process pre-SKU Passports from being mislabeled as Heavy Duty.
+- No SKU is minted and no new product-identity table is introduced; the existing EBP Passport remains the pre-SKU workflow.
+- `validate.sql` now checks the duty constraint explicitly.
+
 # CHANGELOG — ELIMFILTERS Business Platform (EBP)
 
 All notable changes to the EBP documentation and, later, implementation are
