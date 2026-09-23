@@ -39,6 +39,8 @@ const REDIRECTS = new Map([
   ["/knowledge-system/standards/sae-j1539/", "/knowledge-center/standards/sae-j1539/"],
   ["/knowledge-center/engineering/operator-health", "/knowledge-center/systems/cabin-air-protection/"],
   ["/knowledge-center/engineering/operator-health/", "/knowledge-center/systems/cabin-air-protection/"],
+  ["/industrial-process/aquvexis/electrodeionization", "/industrial-process/aquvexis/"],
+  ["/industrial-process/aquvexis/electrodeionization/", "/industrial-process/aquvexis/"],
 ]);
 
 function permanentRedirect(url, destinationPath) {
