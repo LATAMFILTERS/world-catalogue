@@ -910,7 +910,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Feed-water solids loading and particle-size distribution', 'Nominal and peak flow', 'Allowable differential pressure', 'Temperature and water chemistry', 'Required outlet solids condition', 'Downstream equipment sensitivity'],
           ['Rapid differential-pressure rise', 'Solids breakthrough', 'Uneven element loading', 'Unexpectedly short service interval', 'Downstream fouling persists', 'Evidence of seal or seating bypass'],
           '/images/turbine-plant.avif',
-          '/images/planta_converted.avif',
+          '/images/Depth%20Filtration.png',
         ),
         selectionInputs: [
           'Feed-water source and suspended-solids condition',
