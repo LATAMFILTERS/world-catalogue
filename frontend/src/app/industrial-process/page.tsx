@@ -5,6 +5,8 @@ import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 import { INDUSTRIAL_PROCESS_PLATFORMS, industrialProcessPlatformUrl, industrialProcessTechnologyUrl } from '@/lib/industrial-process-architecture';
 import { getCanonicalKnowledgeBySlug } from '@/lib/services/canonical-knowledge-service';
 
+const BASE_URL = 'https://elimfilters.com';
+
 export const metadata: Metadata = {
   title: 'Industrial & Process Filtration | ELIMFILTERS',
   description:
@@ -56,6 +58,17 @@ const datasheetBlocks = [
 
 export default function IndustrialProcessPage() {
   const rootCanonicalKnowledge = getCanonicalKnowledgeBySlug('ip-industrial-process-architecture');
+  const videoSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    '@id': `${BASE_URL}/industrial-process/#hero-video`,
+    name: 'Industrial & Process Filtration | ELIMFILTERS',
+    description: 'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.',
+    contentUrl: `${BASE_URL}/images/presentacion.mp4`,
+    thumbnailUrl: [`${BASE_URL}/images/planta_converted.avif`],
+    isPartOf: { '@id': `${BASE_URL}/industrial-process/#page` },
+    publisher: { '@id': `${BASE_URL}/#organization` },
+  };
   const platformStandards = INDUSTRIAL_PROCESS_PLATFORMS.map((platform) => ({
     platform,
     standards: platform.knowledgeCenterSlug ? (getCanonicalKnowledgeBySlug(platform.knowledgeCenterSlug)?.standards ?? []) : [],
@@ -66,6 +79,7 @@ export default function IndustrialProcessPage() {
   return (
     <>
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
         <section
           style={{
