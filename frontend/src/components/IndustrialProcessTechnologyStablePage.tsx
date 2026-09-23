@@ -173,8 +173,14 @@ export function IndustrialProcessTechnologyStablePage({
               <p className={styles.lead}>{technology.treatmentFunction}</p>
             </div>
             <figure className={styles.mediaFigure}>
-              <img className={styles.mediaImage} src={technology.mediaImage} alt={`${technology.title} industrial treatment context`} />
-              <figcaption>Representative industrial treatment context. Final configuration remains application-specific.</figcaption>
+              <img
+                className={styles.mediaImage}
+                src={technology.mediaImage}
+                alt={`${technology.name} ${technology.title} filtration or treatment elements`}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Representative filtration, separation or treatment elements/media. Final element and media selection remains application-specific.</figcaption>
             </figure>
           </div>
 
