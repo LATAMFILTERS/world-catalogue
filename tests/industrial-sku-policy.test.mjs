@@ -80,16 +80,29 @@ test('collision namespace exhaustion fails closed without a fallback identity', 
   assert.equal(rows[0].sku_reason,'INDUSTRIAL_PREFIX_COLLISION_NAMESPACE_EXHAUSTED');
 });
 
+test('a first-publication collision batch fails closed until allocation order is explicitly frozen', () => {
+  const rows=planIndustrialSkus([
+    {technology_core:'TC-NG-01',source_brand:'PALL',source_code:'CC3LGA7H13'},
+    {technology_core:'TC-NG-01',source_brand:'PALL',source_code:'CC3LGB7H13'},
+  ]);
+  assert.equal(rows.length,2);
+  for(const row of rows) {
+    assert.equal(row.planned_sku,null);
+    assert.equal(row.sku_status,'STOP_REVIEW');
+    assert.equal(row.sku_reason,'COLLISION_ALLOCATION_ORDER_NOT_FROZEN');
+  }
+});
+
 test('duplicate canonical base identity within one batch fails closed', () => {
   const row={technology_core:'TC-NG-01',source_brand:'PALL',source_code:'CS604LGH'};
-  const rows=planIndustrialSkus([row,row]);
+  const rows=planIndustrialSkus([row,row],{publicationOrderLocked:true});
   assert.equal(rows[0].sku_status,'PLANNED');
   assert.equal(rows[1].sku_status,'STOP_REVIEW');
   assert.equal(rows[1].sku_reason,'DUPLICATE_CANONICAL_BASE_IDENTITY_IN_BATCH');
 });
 
 test('COALVEX pilot preview is deterministic, unique, format-valid and not minted', () => {
-  const planned=planIndustrialSkus(pilot.elements);
+  const planned=planIndustrialSkus(pilot.elements,{publicationOrderLocked:true});
   assert.equal(planned.length,15);
   assert.equal(preview.mappings.length,15);
   const generated=planned.map(r=>[r.source_code,r.planned_sku,r.sku_method]);
@@ -99,5 +112,7 @@ test('COALVEX pilot preview is deterministic, unique, format-valid and not minte
   assert.equal(new Set(skus).size,15);
   for(const sku of skus) assert.match(sku,INDUSTRIAL_SKU_FORMAT);
   assert.equal(preview.catalogue_write_allowed,false);
+  assert.equal(preview.rule.publication_order_locked,true);
+  assert.deepEqual(preview.mappings.map(r=>r.publication_order),Array.from({length:15},(_,i)=>i+1));
   for(const row of preview.mappings) assert.equal(row.status,'PREVIEW_ONLY_NOT_MINTED');
 });
