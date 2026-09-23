@@ -1,0 +1,871 @@
+{
+  "schema_version": "1.0.0",
+  "phase_id": "ISUZU_US_DIESEL_THREE_PHASE_CLOSURE",
+  "purpose": "Every source actually retrieved and read for the Isuzu USA diesel 2000-2026 closure. Phase 1 and Phase 2 records may only cite sources whose authority_level is 'primary' and whose publisher is Isuzu Commercial Truck of America; everything else is corroboration and is marked as such.",
+  "retrieved_on": "2026-09-22",
+  "source_policy": {
+    "phase_1_and_2_defining_publisher": "Isuzu Commercial Truck of America",
+    "corroboration_only": ["U.S. National Highway Traffic Safety Administration"],
+    "prohibited_for_defining_the_oem_universe": ["Donaldson", "Fleetguard", "MANN-FILTER", "Baldwin", "WIX", "FRAM", "retailers", "forums", "generic cross-reference sites"],
+    "archived_capture_rule": "An isuzucv.com page with no printed model year is evidence of what Isuzu published on the capture date. It supports the model year then current; it is never treated as proof of an adjacent model year."
+  },
+  "sources": [
+    {
+      "source_id": "ISUZU_NPRDSPECS_2000",
+      "title": "Isuzu CV - NPR Diesel Trucks - Specs",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nprdspecs.htm",
+      "capture_url": "https://web.archive.org/web/20001018200326/http://www.isuzucv.com/nprdspecs.htm",
+      "captured_at": "2000-10-18",
+      "supports": [
+        "NPR DIESEL 12,000 lbs GVWR / 18,000 lbs GCWR",
+        "NPR HD DIESEL 14,500 lbs GVWR / 19,500 lbs GCWR (A/T)",
+        "Engine -Type: Turbo/Intercooled Diesel/4HE1-TC; -Displacement 4.75 L (290 CID); 142 HP @ 2,800 RPM M/T"
+      ]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2002",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20020401231700/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2002-04-01",
+      "supports": ["NPR and NPR HD diesel published with 4HE1-TC", "NQR listed in the N-Series navigation"]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2003",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20030206193031/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2003-02-06",
+      "supports": ["NPR and NPR HD diesel published with 4HE1-TC"]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2004",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20040207224827/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2004-02-07",
+      "supports": ["NPR and NPR HD diesel still published with 4HE1-TC in February 2004"]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2005",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20050106024956/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2005-01-06",
+      "supports": ["NPR and NPR HD diesel published with 4HK1-TC", "NRR Diesel present in the N-Series navigation"]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2006",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20060108171542/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2006-01-08",
+      "supports": ["NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2007",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20070101185914/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2007-01-01",
+      "supports": ["NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2008",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20080102151330/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2008-01-02",
+      "supports": ["NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2009",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20090201173256/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2009-02-01",
+      "supports": ["NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2010",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/2010/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2010",
+      "supports": ["NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2011",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/2011/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2011",
+      "supports": ["NPR-HD, NPR, NQR, NRR diesel published with 4HK1-TC; NPR-HD now written with a hyphen"]
+    },
+    {
+      "source_id": "ISUZU_NPRDIESELSPECS_2012",
+      "title": "Isuzu N-Series NPR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/2012/http://www.isuzucv.com/nseries/nprdieselspecs.html",
+      "captured_at": "2012",
+      "supports": ["NPR-HD, NPR, NQR, NRR diesel published with 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_NQRDIESELSPECS_2002",
+      "title": "Isuzu N-Series NQR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20020604115420/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "captured_at": "2002-06-04",
+      "supports": ["NQR diesel 17,950 lbs GVWR / 20,950 lbs GCWR with 4HE1-TC"]
+    },
+    {
+      "source_id": "ISUZU_NQRDIESELSPECS_2003",
+      "title": "Isuzu N-Series NQR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20030206193644/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "captured_at": "2003-02-06",
+      "supports": ["NQR diesel 17,950 lbs GVWR with 4HE1-TC"]
+    },
+    {
+      "source_id": "ISUZU_NQRDIESELSPECS_2004",
+      "title": "Isuzu N-Series NQR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20040218040127/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "captured_at": "2004-02-18",
+      "supports": ["NQR diesel 17,950 lbs GVWR still with 4HE1-TC in February 2004"]
+    },
+    {
+      "source_id": "ISUZU_NQRDIESELSPECS_2005",
+      "title": "Isuzu N-Series NQR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20050208180908/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "captured_at": "2005-02-08",
+      "supports": ["NQR diesel 17,950 lbs GVWR with 4HK1-TC 5.2L", "NRR present in the N-Series navigation"]
+    },
+    {
+      "source_id": "ISUZU_NQRDIESELSPECS_2007",
+      "title": "Isuzu N-Series NQR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20070104024713/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "captured_at": "2007-01-04",
+      "supports": ["NQR diesel 17,950 lbs GVWR with 4HK1-TC 5.2L"]
+    },
+    {
+      "source_id": "ISUZU_NQRDIESELSPECS_2009",
+      "title": "Isuzu N-Series NQR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20090129125656/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
+      "captured_at": "2009-01-29",
+      "supports": ["NQR diesel 23,950 lbs GCWR with 4HK1-TC 5.2L"]
+    },
+    {
+      "source_id": "ISUZU_NQR_DIESEL_SPECS_2013",
+      "title": "Isuzu N-Series NQR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nqr_diesel_specs",
+      "capture_url": "https://web.archive.org/web/2013/http://www.isuzucv.com/nseries/nqr_diesel_specs",
+      "captured_at": "2013",
+      "supports": ["NQR diesel with 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_NRRDIESELSPECS_2004",
+      "title": "Isuzu Commercial Vehicles - NRR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nrrdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20040322184529/http://www.isuzucv.com/nseries/nrrdieselspecs.html",
+      "captured_at": "2004-03-22",
+      "supports": [
+        "NRR DIESEL 19,500 lbs GVWR / 20,950 lbs GCWR (A/T), hydraulic boosted brakes with 4-channel ABS",
+        "4HK1-TC 5.2L published for NRR in March 2004, while the NPR and NQR pages of February 2004 still published 4HE1-TC"
+      ],
+      "note": "Page carries no printed model year. See conflict CONF-NRR-2004."
+    },
+    {
+      "source_id": "ISUZU_NRRDIESELSPECS_2005",
+      "title": "Isuzu Commercial Vehicles - NRR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nrrdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20050208181116/http://www.isuzucv.com/nseries/nrrdieselspecs.html",
+      "captured_at": "2005-02-08",
+      "supports": ["NRR diesel 19,500 lbs GVWR with 4HK1-TC 5.2L"]
+    },
+    {
+      "source_id": "ISUZU_NRRDIESELSPECS_2008",
+      "title": "Isuzu Commercial Vehicles - NRR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nrrdieselspecs.html",
+      "capture_url": "https://web.archive.org/web/20080118181731/http://www.isuzucv.com/nseries/nrrdieselspecs.html",
+      "captured_at": "2008-01-18",
+      "supports": ["NRR diesel 25,500 lbs GCWR with 4HK1-TC 5.2L"]
+    },
+    {
+      "source_id": "ISUZU_NRR_DIESEL_SPECS_2013",
+      "title": "Isuzu N-Series NRR Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/nrr_diesel_specs",
+      "capture_url": "https://web.archive.org/web/2013/http://www.isuzucv.com/nseries/nrr_diesel_specs",
+      "captured_at": "2013",
+      "supports": ["NRR diesel 25,500 lbs GCWR with 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_CREWCABSPECS_2002",
+      "title": "Isuzu N-Series Crew Cab Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/crewcabspecs.html",
+      "capture_url": "https://web.archive.org/web/20020409143500/http://www.isuzucv.com/nseries/crewcabspecs.html",
+      "captured_at": "2002-04-09",
+      "supports": ["Crew Cab published for NPR, NPR HD and NQR with 4HE1-TC"]
+    },
+    {
+      "source_id": "ISUZU_CREWCABSPECS_2005",
+      "title": "Isuzu N-Series Crew Cab Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/crewcabspecs.html",
+      "capture_url": "https://web.archive.org/web/20050212104742/http://www.isuzucv.com/nseries/crewcabspecs.html",
+      "captured_at": "2005-02-12",
+      "supports": ["Crew Cab published for NPR, NPR HD, NQR and NRR with 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_4H_SPECS_2006",
+      "title": "Isuzu Commercial Vehicles - 4HK1-TC 5.2L Diesel Specs",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/engines/4h_specs.html",
+      "capture_url": "https://web.archive.org/web/20060824162721/http://www.isuzucv.com/engines/4h_specs.html",
+      "captured_at": "2006-08-24",
+      "supports": ["4H diesel: inline 4 cylinder, direct injection, dry cylinder liner, bore x stroke 115 (4.53) x 125 (4.92) mm, displacement 5193 cc (317 cu.in), 190 HP @ 2600 rpm, 387 lb-ft @ 1500 rpm, compression ratio 18.5"]
+    },
+    {
+      "source_id": "ISUZU_6H_SPECS_2006",
+      "title": "Isuzu Commercial Vehicles - 6H Diesel Specs",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/engines/6h_specs.html",
+      "capture_url": "https://web.archive.org/web/20060903101140/http://www.isuzucv.com/engines/6h_specs.html",
+      "captured_at": "2006-09-03",
+      "supports": ["6HK1-TC 7.8L six-cylinder turbocharged intercooled diesel"]
+    },
+    {
+      "source_id": "ISUZU_FRRSPEC_1998",
+      "title": "Isuzu F-Series FRR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/frrspec.htm",
+      "capture_url": "https://web.archive.org/web/1998/http://www.isuzucv.com/frrspec.htm",
+      "captured_at": "1998",
+      "supports": ["FRR, FSR, FTR, FVR published with 6HE1-TC before the 6HK1-TC transition"],
+      "note": "Outside the 2000-2026 scope; retained only to date the 6HE1-TC to 6HK1-TC cut."
+    },
+    {
+      "source_id": "ISUZU_FRRSPEC_1999",
+      "title": "Isuzu F-Series FRR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/frrspec.htm",
+      "capture_url": "https://web.archive.org/web/1999/http://www.isuzucv.com/frrspec.htm",
+      "captured_at": "1999",
+      "supports": ["FRR, FSR, FTR, FVR published with 6HK1-TC"],
+      "note": "Outside the 2000-2026 scope; dates the 6HK1-TC introduction to calendar 1999."
+    },
+    {
+      "source_id": "ISUZU_FRRSPECS_2000",
+      "title": "Isuzu F-Series FRR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/frrspecs.htm",
+      "capture_url": "https://web.archive.org/web/2000/http://www.isuzucv.com/frrspecs.htm",
+      "captured_at": "2000",
+      "supports": ["FRR 18,000 and 19,500 lbs GVWR with 6HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_FSRSPECS_2000",
+      "title": "Isuzu F-Series FSR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fsrspecs.htm",
+      "capture_url": "https://web.archive.org/web/2000/http://www.isuzucv.com/fsrspecs.htm",
+      "captured_at": "2000",
+      "supports": ["FSR 23,100 lbs GVWR with 6HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_FTRSPECS_2000",
+      "title": "Isuzu F-Series FTR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/ftrspecs.htm",
+      "capture_url": "https://web.archive.org/web/20000902170640/http://www.isuzucv.com/ftrspecs.htm",
+      "captured_at": "2000-09-02",
+      "supports": ["FTR 25,950 and 30,000 lbs GVWR with 6HK1-TC; air brakes"]
+    },
+    {
+      "source_id": "ISUZU_FVRSPECS_2000",
+      "title": "Isuzu F-Series FVR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fvrspecs.htm",
+      "capture_url": "https://web.archive.org/web/2000/http://www.isuzucv.com/fvrspecs.htm",
+      "captured_at": "2000",
+      "supports": ["FVR 33,000 lbs GVWR / 45,000 lbs GCWR with 6HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_F_SPECS_2002",
+      "title": "Isuzu F-Series Truck Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
+      "capture_url": "https://web.archive.org/web/20020323181727/http://www.isuzucv.com/fseries/f_specs.html",
+      "captured_at": "2002-03-23",
+      "supports": ["F-Series line published as FRR, FSR, FTR, FVR, all 6HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_F_SPECS_PDF_2003",
+      "title": "Isuzu F-Series Truck Specifications (PDF)",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/f_specs.pdf",
+      "capture_url": "https://web.archive.org/web/20031210061627/http://www.isuzucv.com/fseries/f_specs.pdf",
+      "captured_at": "2003-12-10",
+      "supports": [
+        "FRR 18,000 and 19,500; FSR 23,100; FTR 25,950 and 30,000; FVR 33,000 lbs GVWR",
+        "Engine 6HK1-TC, displacement 7.8L (475 CID), 200 HP @ 2400 rpm (FVR 230 HP @ 2400), 441 lb-ft @ 1500 rpm (FVR 506)"
+      ]
+    },
+    {
+      "source_id": "ISUZU_F_SPECS_PDF_2004",
+      "title": "Isuzu F-Series Truck Specifications (PDF)",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/f_specs.pdf",
+      "capture_url": "https://web.archive.org/web/20040725035335/http://www.isuzucv.com/fseries/f_specs.pdf",
+      "captured_at": "2004-07-25",
+      "supports": ["F-Series line published as FRR, FSR, FTR, FVR with 6HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_FXRSPECS_2004",
+      "title": "Isuzu F-Series FXR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/fxrspecs.html",
+      "capture_url": "https://web.archive.org/web/20040405131738/http://www.isuzucv.com/fseries/fxrspecs.html",
+      "captured_at": "2004-04-05",
+      "supports": ["FXR published by Isuzu USA at 33,001 lbs GVWR with 6HK1-TC; F-Series navigation lists FRR, FSR, FTR, FVR, FXR"]
+    },
+    {
+      "source_id": "ISUZU_F_SPECS_2005",
+      "title": "Isuzu F-Series Truck Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
+      "capture_url": "https://web.archive.org/web/2005/http://www.isuzucv.com/fseries/f_specs.html",
+      "captured_at": "2005",
+      "supports": ["F-Series line published as FRR, FSR, FTR, FVR, FXR with 6HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_F_SPECS_2006",
+      "title": "Isuzu F-Series Truck Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
+      "capture_url": "https://web.archive.org/web/2006/http://www.isuzucv.com/fseries/f_specs.html",
+      "captured_at": "2006",
+      "supports": ["F-Series line published as FTR, FVR, FXR only; FRR and FSR no longer published"]
+    },
+    {
+      "source_id": "ISUZU_FTRSPECS_2007",
+      "title": "Isuzu F-Series FTR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/ftrspecs.html",
+      "capture_url": "https://web.archive.org/web/20070216210835/http://www.isuzucv.com/fseries/ftrspecs.html",
+      "captured_at": "2007-02-16",
+      "supports": ["FTR, FVR, FXR published with 6HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_FTRSPECS_2010",
+      "title": "Isuzu F-Series FTR Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/ftrspecs.html",
+      "capture_url": "https://web.archive.org/web/2010/http://www.isuzucv.com/fseries/ftrspecs.html",
+      "captured_at": "2010",
+      "supports": ["FTR, FVR, FXR published with 6HK1-TC 7.8L"]
+    },
+    {
+      "source_id": "ISUZU_F_SPECS_2011_ERROR",
+      "title": "Isuzu F-Series specification page returns the Isuzu error page",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_site_state",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
+      "capture_url": "https://web.archive.org/web/2011/http://www.isuzucv.com/fseries/f_specs.html",
+      "captured_at": "2011",
+      "supports": [
+        "All /fseries/ specification pages return 'We're sorry, but we cannot locate the page you requested' with the footer 'Copyright 2011 Isuzu Commercial Truck of America'",
+        "The site navigation of 2011 and 2012 lists N-SERIES and REACH VAN but no F-SERIES"
+      ]
+    },
+    {
+      "source_id": "ISUZU_PR_ECOMAX_2010",
+      "title": "Isuzu Truck Introduces 2011 N-Series Featuring NPR ECO-MAX Truck",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_press_release",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/images/news/02-10-PressRel_Isuzu_EcoMaxTruck_3-FINAL.pdf",
+      "capture_url": "https://web.archive.org/web/20120819094858/http://www.isuzucv.com/images/news/02-10-PressRel_Isuzu_EcoMaxTruck_3-FINAL.pdf",
+      "captured_at": "2010-03-09",
+      "supports": [
+        "12,000-lbs GVWR NPR ECO-MAX low cab forward truck",
+        "The new 2011 model year truck is powered by Isuzu's next-generation 4JJ1-TC diesel engine",
+        "Turbocharged, 4-cylinder, 3-liter, 150 horsepower, 282 lb-ft; first time the engine will be utilized in the U.S. market",
+        "2010 EPA and CARB OBD compliant; Aisin heavy-duty six-speed automatic"
+      ]
+    },
+    {
+      "source_id": "ISUZU_EMISSIONS_BROCHURE_2006",
+      "title": "Meeting the 2007 Emissions Standards Challenge",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_technical_brochure",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/images/engines/EmissionsBro_Isuzu.pdf",
+      "capture_url": "https://web.archive.org/web/20061016015906/http://www.isuzucv.com/images/engines/EmissionsBro_Isuzu.pdf",
+      "captured_at": "2006-10-16",
+      "supports": [
+        "All diesel engines produced starting January 1, 2007 must meet the 2007 standard",
+        "Isuzu 4H and 6H diesel engines gain a Diesel Particulate Filter for 2007",
+        "Accumulated ash must eventually be removed by special service"
+      ]
+    },
+    {
+      "source_id": "ISUZU_OM_NPR_2006",
+      "title": "2006 Owner's Manual, Isuzu NPR (Diesel)",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_owner_manual",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/images/manuals/2006%20N-Series%20Diesel%20NPR.pdf",
+      "capture_url": "https://web.archive.org/web/20131228094322/http://www.isuzucv.com/images/manuals/2006%20N-Series%20Diesel%20NPR.pdf",
+      "captured_at": "2006",
+      "supports": [
+        "Maintenance Schedule items 3 Engine Oil & Oil Filter, 4 Fuel Filter / Water Separator, 5 Air Cleaner Filter, 21 External Automatic Transmission Filter, 32 Air Conditioner Blower Filter (Cleaned once a month)",
+        "No secondary air element, no secondary fuel filter and no air dryer appear anywhere in the NPR maintenance schedule"
+      ]
+    },
+    {
+      "source_id": "ISUZU_OM_NPR_2007",
+      "title": "2007 Owner's Manual, N-Series Medium Duty Truck (Low Cab Forward)",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_owner_manual",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/manuals/2007_N_Series_Diesel_NPR.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": [
+        "Maintenance Schedule for the NPR items 3 Engine Oil & Oil Filter (or every 12 months), 4 Fuel Filter / Water Separator, 5 Air Cleaner Filter (by indicator), 13 DPF clean filter every 100,000 miles (160,000 km) or every 3,000 hours, 23 External Automatic Transmission Filter (or every 24 months), 34 Air Conditioner Blower Filter cleaned once a month",
+        "FUEL FILTER/WATER SEPARATOR - Replace the fuel filter and drain water from the water separator every 15,000 miles (24,000 km)",
+        "AUTOMATIC TRANSMISSION FLUID AND FILTER - replace fluid and external filter every 30,000 miles (48,000 km)"
+      ]
+    },
+    {
+      "source_id": "ISUZU_DIESEL_SPECS_2013",
+      "title": "Isuzu N-Series Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/nseries/diesel_specs",
+      "capture_url": "https://web.archive.org/web/20130211231857/http://www.isuzucv.com/nseries/diesel_specs",
+      "captured_at": "2013-02-11",
+      "supports": ["N-Series diesel line published with both 4JJ1-TC and 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_F_SPECS_2014",
+      "title": "Isuzu specification index listing the N-Series line",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
+      "capture_url": "https://web.archive.org/web/20140325182039/http://www.isuzucv.com/fseries/f_specs.html",
+      "captured_at": "2014-03-25",
+      "supports": ["Published line = NPR, NPR-HD, NQR, NRR. No NPR-XD and no F-Series model."]
+    },
+    {
+      "source_id": "ISUZU_F_SPECS_2015",
+      "title": "Isuzu specification index listing the N-Series line",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
+      "capture_url": "https://web.archive.org/web/20150404031546/http://www.isuzucv.com/fseries/f_specs.html",
+      "captured_at": "2015-04-04",
+      "supports": ["Published line = NPR, NPR-HD, NPR-XD, NQR, NRR. NPR-XD present for the first time."]
+    },
+    {
+      "source_id": "ISUZU_NPR_XD_SPECS_2015",
+      "title": "Isuzu NPR-XD Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/pdfs/npr-xd_specs.pdf",
+      "capture_url": "https://web.archive.org/web/20150314060738/http://www.isuzucv.com/pdfs/npr-xd_specs.pdf",
+      "captured_at": "2015-03-14",
+      "supports": ["NPR-XD standalone specification sheet with Isuzu 4HK1-TC 5.2L"]
+    },
+    {
+      "source_id": "ISUZU_DIESEL_SPECS_2015",
+      "title": "Isuzu N-Series Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/en/nseries/diesel_specs",
+      "capture_url": "https://web.archive.org/web/20151218233828/http://www.isuzucv.com/en/nseries/diesel_specs",
+      "captured_at": "2015-12-18",
+      "supports": ["N-Series diesel = NPR (4JJ1-TC) plus NPR-HD, NPR-XD, NQR, NRR (4HK1-TC)"]
+    },
+    {
+      "source_id": "ISUZU_DIESEL_SPECS_2016",
+      "title": "Isuzu N-Series Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/en/nseries/diesel_specs",
+      "capture_url": "https://web.archive.org/web/20160104184312/http://www.isuzucv.com/en/nseries/diesel_specs",
+      "captured_at": "2016-01-04",
+      "supports": ["N-Series diesel = NPR (4JJ1-TC) plus NPR-HD, NPR-XD, NQR, NRR (4HK1-TC)"]
+    },
+    {
+      "source_id": "ISUZU_DIESEL_SPECS_2017",
+      "title": "Isuzu N-Series Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "http://isuzucv.com/en/nseries/diesel_specs",
+      "capture_url": "https://web.archive.org/web/20170113210437/http://isuzucv.com/en/nseries/diesel_specs",
+      "captured_at": "2017-01-13",
+      "supports": ["N-Series diesel = NPR (4JJ1-TC) plus NPR-HD, NPR-XD, NQR, NRR (4HK1-TC)"],
+      "note": "The token 'FTR' also occurs on this page, but only as the marketing phrase 'FTR Tour'. It was not treated as model-year evidence."
+    },
+    {
+      "source_id": "ISUZU_DIESEL_SPECS_2018",
+      "title": "Isuzu N-Series Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/en/nseries/diesel_specs",
+      "capture_url": "https://web.archive.org/web/20180216031941/https://www.isuzucv.com/en/nseries/diesel_specs",
+      "captured_at": "2018-02-16",
+      "supports": ["N-Series diesel still published with both 4JJ1-TC and 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_DIESEL_SPECS_2019",
+      "title": "Isuzu N-Series Diesel Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/en/nseries/diesel_specs",
+      "capture_url": "https://web.archive.org/web/20190421100209/https://www.isuzucv.com/en/nseries/diesel_specs",
+      "captured_at": "2019-04-21",
+      "supports": [
+        "Isuzu 4HK1-TC 5.2 liter diesel engine is the only diesel engine listed",
+        "NPR-HD 14,500/20,500; NPR-XD 16,000/22,000; NQR 17,950/23,950; NRR 19,500/25,500 lbs GVWR/GCWR"
+      ]
+    },
+    {
+      "source_id": "ISUZU_N_DIESEL_SPEC_SHEETS_2021",
+      "title": "Isuzu NPR-HD, NPR-XD, NQR and NRR diesel specification sheets",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/{npr-hd_diesel_specs,npr-xd_specs,nqr_specs,nrr_specs}.pdf",
+      "capture_url": "https://web.archive.org/web/20210226211821/https://www.isuzucv.com/en/app/site/pdf?file=npr-hd_diesel_specs.pdf",
+      "captured_at": "2021",
+      "supports": [
+        "NPR-HD 14,500 LBS. GVWR and NQR 17,950 LBS. GVWR",
+        "5.2L I4 TURBOCHARGED, 215 HP @ 2,500 RPM"
+      ],
+      "note": "These sheets print the displacement and the engine description but not the engine code, and carry no model year. They are why model year 2021 is PARTIAL rather than VERIFIED."
+    },
+    {
+      "source_id": "ISUZU_FULL_LINE_BROCHURE_2019",
+      "title": "Isuzu Full Line Brochure",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_brochure",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/full_line_brochure.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": [
+        "Copyright 2019 Isuzu Commercial Truck of America, Inc.",
+        "NPR, NPR-HD, NPR-XD, NQR, NRR and FTR are trademarks of Isuzu Motors Limited",
+        "2020 ISUZU N-SERIES DIESEL: NPR-HD / NPR-XD / NQR / NRR"
+      ]
+    },
+    {
+      "source_id": "ISUZU_FTR_BROCHURE_2016",
+      "title": "Isuzu's Newest Family Member - the Isuzu FTR (F-Series brochure)",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_brochure",
+      "authority_level": "primary",
+      "origin_url": "http://www.isuzucv.com/pdfs/ftr_brochure.pdf",
+      "capture_url": "https://web.archive.org/web/20160331084003/http://www.isuzucv.com/en/app/site/pdf?file=ftr_brochure.pdf",
+      "captured_at": "2016-03-31",
+      "supports": [
+        "Copyright 2016 Isuzu Commercial Truck of America, Inc.",
+        "The F-Series Class 6 LCF Truck, 5.2L diesel engine, rear air brake, parking air brake, Allison 2000 Series, 100 gallon aluminium tank, 11R 22.5 tyres"
+      ]
+    },
+    {
+      "source_id": "ISUZU_FTR_BROCHURE_2021",
+      "title": "Isuzu F-Series FTR brochure (2021 model year)",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_brochure",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/ftr_brochure.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": [
+        "Copyright 2020 Isuzu Commercial Truck of America, Inc.; page header 2021 ISUZU F-SERIES",
+        "FTR 25,950 LBS. GVWR, CLASS 6, 30,000 lbs GCWR, DIESEL 5.2 L, 215 HP @ 2,500 RPM, 520 LB.-FT. @ 1,600 RPM, 50/100 GAL fuel tank, 6-speed automatic",
+        "Priority Service Maintenance Program: oil and filter change every 10,000 miles or 300 engine hours, lubricating the chassis, replacing engine and chassis fuel filters"
+      ]
+    },
+    {
+      "source_id": "ISUZU_FTR_SPECS_BROCHURE_2022",
+      "title": "2022 F-Series specification brochure",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/ftr_specs_brochure_2022.pdf",
+      "capture_url": "https://web.archive.org/web/20211023234032/https://www.isuzucv.com/en/app/site/pdf?file=ftr_specs_brochure_2022.pdf",
+      "captured_at": "2021-10-23",
+      "supports": [
+        "2022 F-Series: FTR 25,950 LBS. GVWR; FVR 25,950 LBS. GVWR; FVR 33,000 LBS. GVWR",
+        "B6.7L DIESEL ENGINE on all three"
+      ]
+    },
+    {
+      "source_id": "ISUZU_2023_PRODUCT_BROCHURE",
+      "title": "2023 Isuzu Product Brochure",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_brochure",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/2023ProductBrochure_Final.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": ["2023 F-Series with Cummins B6.7; 2023 N-Series diesel and gas line-up"]
+    },
+    {
+      "source_id": "ISUZU_2024_N_DIESEL_BROCHURE",
+      "title": "2024 N-Series Diesel Product Brochure",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_brochure",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/2024N-SeriesDieselProductBrochure_Final.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": ["2024 N-Series diesel line-up"]
+    },
+    {
+      "source_id": "ISUZU_2024_F_BROCHURE",
+      "title": "2024 Isuzu F-Series Product Brochure",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_brochure",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/2024F-SeriesProductBrochure_Final.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": ["2024 F-Series with Cummins B6.7"]
+    },
+    {
+      "source_id": "ISUZU_2025_F_BROCHURE",
+      "title": "2025 Isuzu F-Series Product Brochure",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_brochure",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/2025F-SeriesProductBrochure_Final.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": [
+        "Three models - the Class 6 FTR (25,950 lbs. GVWR), Class 6 FVR Derate (25,950 lbs. GVWR) and Class 7 FVR (33,000 lbs. GVWR)",
+        "Every Isuzu F-Series truck has a Cummins B6.7 diesel engine; 6.7-litre turbocharged inline 6, 260 horsepower, 660 lb-ft, Allison 2000-series RDS automatic",
+        "Eight wheelbases from 152 to 248 inches; 50- or 100-gallon fuel tank; optional air suspension"
+      ]
+    },
+    {
+      "source_id": "ISUZU_2026_F_BROCHURE",
+      "title": "2026 Isuzu F-Series Brochure",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_brochure",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/2026F-SeriesBrochure_Final.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": ["2026 F-Series FTR and FVR with Cummins B6.7"]
+    },
+    {
+      "source_id": "ISUZU_2026_N_DIESEL_BROCHURE",
+      "title": "2026 Isuzu N-Series Diesel Brochure",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_brochure",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/2026N-SeriesDieselBrochure_Final.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": ["2026 N-Series diesel with Isuzu 4HK1-TC"]
+    },
+    {
+      "source_id": "ISUZU_2026_POCKET_GUIDE",
+      "title": "2026 Isuzu Model Line-up Pocket Guide",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/2026_Pocket_Guide.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": [
+        "NPR-HD - Class 4 14,500 lbs.; NPR-XD - Class 4 16,000 lbs.; NRR DERATE 17,950 lbs. (PIO option); NRR - Class 5 19,500 lbs.",
+        "TYPE Isuzu 4HK1-TC on NPR-HD, NPR-XD, NRR Derate and NRR",
+        "Standard Cab and Crew Cab dimensions published for NPR-HD, NPR-XD and NRR"
+      ]
+    },
+    {
+      "source_id": "ISUZU_N_DIESEL_SPECS_CURRENT",
+      "title": "Isuzu N-Series Diesel Trucks Specifications",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/en/nseries/nseries_diesel_specifications",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": [
+        "NPR-HD 14,500 lbs.; NPR-XD 16,000 lbs.; NRR Derate 17,950 lbs.; NRR 19,500 lbs.",
+        "Engine Code Isuzu 4HK1-TC, 5.2L (317 cu. in.), 215 hp @ 2,500 rpm, 452 lb.-ft. @ 1,850 rpm",
+        "Standard Cab and Crew Cab available across all four"
+      ]
+    },
+    {
+      "source_id": "ISUZU_FV_GENUINE_CROSSREF",
+      "title": "FleetValue / Genuine Isuzu Parts Cross Reference",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_parts_cross_reference",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/en/app/site/pdf?file=FVGenuineCrossRef.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "document_revision": "Last Updated 11/15/2025",
+      "supports": [
+        "Pages 1-4 carry the section heading 'N-SERIES NPR / NRR / NQR'; pages 5-6 carry 'F-SERIES FTR / FVR / FSR'",
+        "Each row gives PART DESCRIPTION, FV PART NUMBER, GENUINE PART NUMBER, YEAR and ENGINE"
+      ],
+      "extraction_note": "Text was taken with xpdf pdftotext in both -table and -raw mode; the two modes agree row-for-row. The -layout mode misaligns this document's columns by whole rows and was discarded. Two rows were independently confirmed against external listings of the same Isuzu numbers (8-98018858-0 as the 4JJ1 lube filter and 1-13200-487-2 as the 6B/6H lube cartridge) before the table was trusted.",
+      "scope_restriction": "The YEAR and ENGINE columns are this document's own published scope. They must not be widened to a model unless separate Isuzu model-year evidence links that exact model to the published engine and range."
+    },
+    {
+      "source_id": "NHTSA_VPIC_ISUZU",
+      "title": "NHTSA vPIC GetModelsForMakeYear, make=isuzu, model years 2000-2026",
+      "publisher": "U.S. National Highway Traffic Safety Administration",
+      "source_type": "government_regulatory_database",
+      "authority_level": "secondary",
+      "origin_url": "https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/isuzu/modelyear/{YEAR}?format=json",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": ["Manufacturer-submitted US model-year model list for Isuzu"],
+      "note": "Not an Isuzu source. Used only to corroborate or to raise a conflict against Isuzu-published evidence, never to define the universe."
+    },
+    {
+      "source_id": "DONALDSON_TRUCK_SERVICE_KITS_AU",
+      "title": "Fuel and Oil Truck Service Kits (F111610)",
+      "publisher": "Donaldson Company, Inc.",
+      "source_type": "official_manufacturer_catalogue",
+      "authority_level": "primary",
+      "origin_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/australasia/filter-kits/f111610/Fuel-and-Oil-Truck-Filter-Maintenance-Kits_Web.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-22",
+      "supports": [
+        "Donaldson fuel and lube references indexed by Isuzu engine designation, e.g. 4HK1-TCN/TCC 5.2L 2008-2015 fuel P506095 and P551855, oil P502042; 4HK1-TCN/TCC 5.2L 2016- oil P848076; 6HK1-TCC/TSN/TCS 7.8L oil P550408; 4JJ1 3.0L oil P502597"
+      ],
+      "scope_restriction": "Australasia edition. Its model column lists Australian and New Zealand Isuzu designations (NLR, NMR, NPS, FRD, FSS, FVZ and similar). It is engine-level evidence only and must never be used to establish USA vehicle fitment."
+    }
+  ]
+}
