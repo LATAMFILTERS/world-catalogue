@@ -1085,7 +1085,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Feed-water ionic composition', 'Target ion and outlet requirement', 'Competing ions', 'Resin capacity', 'Flow and service cycle', 'Regeneration chemistry', 'Fouling and pretreatment condition'],
           ['Service cycle shortens', 'Hardness or target-ion leakage increases', 'Regeneration recovery deteriorates', 'Pressure drop rises', 'Outlet quality varies unexpectedly', 'Resin fouling or channeling is suspected'],
           '/images/turbine-plant.avif',
-          '/images/planta_converted.avif',
+          '/images/IONVEXA%E2%84%A2.png',
         ),
         selectionInputs: [
           'Feed-water ionic composition and concentration',
