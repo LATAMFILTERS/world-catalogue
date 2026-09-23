@@ -161,7 +161,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/air-filters-lab.avif',
           '/images/General%20Air%20Filtration.png',
           undefined,
-          '/images/general%20filters%20(1).mp4',
+          '/images/General%20Air%20Filtration.mp4',
         ),
         hideHeroPoster: true,
         knowledgeCenterSlug: 'ip-aeremis-general-air-filtration',
