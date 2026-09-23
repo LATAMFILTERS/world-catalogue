@@ -652,6 +652,21 @@
       ]
     },
     {
+      "source_id": "ISUZU_N_DIESEL_SPEC_SHEETS_2021",
+      "title": "Isuzu NPR-HD, NPR-XD, NQR and NRR diesel specification sheets",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_specification",
+      "authority_level": "primary",
+      "origin_url": "https://www.isuzucv.com/pdfs/{npr-hd_diesel_specs,npr-xd_specs,nqr_specs,nrr_specs}.pdf",
+      "capture_url": "https://web.archive.org/web/20210226211821/https://www.isuzucv.com/en/app/site/pdf?file=npr-hd_diesel_specs.pdf",
+      "captured_at": "2021",
+      "supports": [
+        "NPR-HD 14,500 LBS. GVWR and NQR 17,950 LBS. GVWR",
+        "5.2L I4 TURBOCHARGED, 215 HP @ 2,500 RPM"
+      ],
+      "note": "These sheets print the displacement and the engine description but not the engine code, and carry no model year. They are why model year 2021 is PARTIAL rather than VERIFIED."
+    },
+    {
       "source_id": "ISUZU_FULL_LINE_BROCHURE_2019",
       "title": "Isuzu Full Line Brochure",
       "publisher": "Isuzu Commercial Truck of America",

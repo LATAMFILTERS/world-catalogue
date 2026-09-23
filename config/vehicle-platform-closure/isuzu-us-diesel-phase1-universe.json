@@ -189,11 +189,11 @@
       "cab_configuration": ["Standard Cab", "Crew Cab"],
       "gvwr_lbs": { "NPR-HD": 14500, "NPR-XD": 16000, "NQR": 17950, "NRR": 19500 },
       "gcwr_lbs": { "NPR-HD": 20500, "NPR-XD": 22000, "NQR": 23950, "NRR": 25500 },
-      "evidence": ["ISUZU_DIESEL_SPECS_2019", "ISUZU_FULL_LINE_BROCHURE_2019"],
+      "evidence": ["ISUZU_DIESEL_SPECS_2019", "ISUZU_FULL_LINE_BROCHURE_2019", "ISUZU_N_DIESEL_SPEC_SHEETS_2021"],
       "corroboration": ["NHTSA_VPIC_ISUZU"],
-      "exact_evidence_summary": "The N-Series diesel page captured 2019-04-21 publishes 'Isuzu 4HK1-TC 5.2 liter diesel engine' as the only diesel engine and lists NPR-HD 14,500/20,500, NPR-XD 16,000/22,000, NQR 17,950/23,950 and NRR 19,500/25,500. The full-line brochure with Copyright 2019 carries a '2020 ISUZU N-SERIES DIESEL: NPR-HD / NPR-XD / NQR / NRR' section.",
+      "exact_evidence_summary": "The N-Series diesel page captured 2019-04-21 publishes 'Isuzu 4HK1-TC 5.2 liter diesel engine' as the only diesel engine and lists NPR-HD 14,500/20,500, NPR-XD 16,000/22,000, NQR 17,950/23,950 and NRR 19,500/25,500. The full-line brochure with Copyright 2019 carries a '2020 ISUZU N-SERIES DIESEL: NPR-HD / NPR-XD / NQR / NRR' section. The individual specification sheets captured through 2021 publish the same four models at the same ratings with '5.2L I4 TURBOCHARGED, 215 HP @ 2,500 RPM'.",
       "evidence_status": { "2019": "VERIFIED", "2020": "VERIFIED", "2021": "PARTIAL" },
-      "status_note": "MY2021 is carried by the 2021 captures of the individual npr-hd, npr-xd, nqr and nrr specification sheets, which publish the same four models and the same engine but print no model year."
+      "status_note": "MY2021 is PARTIAL because the 2021 specification sheets print the displacement and engine description but not the engine code 4HK1-TC, and carry no model year. The engine code for 2021 is carried over from the 2019 page and the 2022 brochure rather than proven by a 2021 document."
     },
     {
       "block_id": "N-2022-2024",
