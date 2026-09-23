@@ -18,6 +18,14 @@ export const metadata: Metadata = {
       'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.',
     url: 'https://elimfilters.com/industrial-process/',
     type: 'website',
+    siteName: 'ELIMFILTERS',
+    images: [{ url: '/images/planta_converted.avif', width: 1200, height: 630, alt: 'ELIMFILTERS Industrial & Process filtration' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Industrial & Process Filtration | ELIMFILTERS',
+    description: 'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.',
+    images: ['/images/planta_converted.avif'],
   },
 };
 
@@ -69,6 +77,35 @@ export default function IndustrialProcessPage() {
     isPartOf: { '@id': `${BASE_URL}/industrial-process/#page` },
     publisher: { '@id': `${BASE_URL}/#organization` },
   };
+  const pageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${BASE_URL}/industrial-process/#page`,
+    url: `${BASE_URL}/industrial-process/`,
+    name: 'Industrial & Process Filtration | ELIMFILTERS',
+    description: metadata.description,
+    isPartOf: { '@id': `${BASE_URL}/#website` },
+    publisher: { '@id': `${BASE_URL}/#organization` },
+    about: INDUSTRIAL_PROCESS_PLATFORMS.map((platform) => ({ '@type': 'DefinedTerm', name: platform.name })),
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: INDUSTRIAL_PROCESS_PLATFORMS.length,
+      itemListElement: INDUSTRIAL_PROCESS_PLATFORMS.map((platform, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: platform.name,
+        url: `${BASE_URL}${industrialProcessPlatformUrl(platform.slug)}`,
+      })),
+    },
+  };
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Industrial & Process', item: `${BASE_URL}/industrial-process/` },
+    ],
+  };
   const platformStandards = INDUSTRIAL_PROCESS_PLATFORMS.map((platform) => ({
     platform,
     standards: platform.knowledgeCenterSlug ? (getCanonicalKnowledgeBySlug(platform.knowledgeCenterSlug)?.standards ?? []) : [],
@@ -79,6 +116,8 @@ export default function IndustrialProcessPage() {
   return (
     <>
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
         <section
