@@ -1,24 +1,92 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "phase_id": "ISUZU_US_DIESEL_THREE_PHASE_CLOSURE",
   "stage_id": "PHASE_3_AFTERMARKET_RESOLUTION",
   "market": "USA",
   "make": "ISUZU",
   "fuel_scope": "DIESEL_ONLY",
   "sources_file": "config/vehicle-platform-closure/isuzu-us-diesel-sources.json",
+  "phase1_file": "config/vehicle-platform-closure/isuzu-us-diesel-phase1-universe.json",
   "phase2_file": "config/vehicle-platform-closure/isuzu-us-diesel-phase2-oen.json",
   "attempted_on": "2026-09-22",
+  "closed_on": "2026-09-23",
   "canonical_hd_rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
   "canonical_rule_origin": "config/vehicle-platform-closure/isuzu-us-phase2-oem.json — reused unchanged, no new rule created",
-  "source_order": ["DONALDSON", "FLEETGUARD", "MANN-FILTER", "BALDWIN", "WIX", "FRAM"],
+  "source_order": [
+    "DONALDSON",
+    "FLEETGUARD",
+    "MANN-FILTER",
+    "BALDWIN",
+    "WIX",
+    "FRAM"
+  ],
   "governance": {
     "aftermarket_may_not_redefine_oem_scope": true,
     "cross_reference_alone_never_establishes_vehicle_fitment": true,
-    "vehicle_fitment_comes_from": ["PHASE_1_DIESEL_VEHICLE_UNIVERSE", "PHASE_2_DIESEL_OEM_FILTER_OEN"],
-    "elimfilters_base_decision_requires": "A Donaldson or Fleetguard reference tied to a specific Isuzu OE/OEN by that manufacturer's own published evidence. An engine-level or vehicle-level match is not sufficient."
+    "vehicle_fitment_comes_from": [
+      "PHASE_1_DIESEL_VEHICLE_UNIVERSE",
+      "PHASE_2_DIESEL_OEM_FILTER_OEN"
+    ],
+    "elimfilters_base_decision_requires": "A Donaldson or Fleetguard reference tied to a specific Isuzu OE/OEN by that manufacturer's own published evidence. An engine-level or vehicle-level match is not sufficient.",
+    "hermes_output_class": "CANDIDATE_INTELLIGENCE",
+    "review_state": "READY_FOR_REVIEW",
+    "publication_authorized": false,
+    "catalog_writes_performed": [],
+    "catalog_write_path_if_approved": "lib/catalog-write-gateway.js via lib/catalog-application-write-service.js; never direct SQL",
+    "fleetguard_base_requires": "DONALDSON_NOT_MANUFACTURED_VERIFIED",
+    "supporting_brands_may_define_base": false,
+    "elimfilters_sku_policy": "Reuse an existing ELIMFILTERS SKU for the Donaldson base part. No new SKU is minted in this phase.",
+    "elimfilters_sku_evidence": "data/dims.csv catalogue export and scripts/donaldson_import_ready.jsonl in this repository. Live PostgreSQL was not queried in this pass (no Render workspace confirmed for the session); a reviewer must confirm each SKU is live before publication."
   },
-  "outcome": "BLOCKED_AT_SOURCE_1",
-  "outcome_summary": "Phase 3 could not be executed. Donaldson is first in the mandated order and its OE cross-reference is not retrievable. Because the order is fixed and the ELIMFILTERS base rule is Donaldson-first, no base decision was taken for any position, and no lower-priority manufacturer was substituted.",
+  "phase3_status": "CLOSED",
+  "phase3_status_history": [
+    {
+      "on": "2026-09-22",
+      "outcome": "BLOCKED_AT_SOURCE_1",
+      "note": "Live Donaldson routes returned 403. No rows produced. Preserved below as access_blockers."
+    },
+    {
+      "on": "2026-09-23",
+      "outcome": "CLOSED",
+      "note": "Donaldson OE cross-reference taken from the repository-held capture of shop.donaldson.com (DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07). Every eligible Phase 2 row now carries an explicit, governed decision. CLOSED does not mean every base is resolved."
+    }
+  ],
+  "outcome": "CLOSED_WITH_EXPLICIT_BLOCKERS",
+  "outcome_summary": "19 eligible Phase 2 OEN rows, each with an explicit decision: 4 VERIFIED_BASE, 5 PARTIAL, 7 CONFLICTING, 3 BLOCKED_DONALDSON. 9 Phase 2 unresolved groups carried as BLOCKED_OEM. All bases are Donaldson; no Fleetguard base; 6 existing ELIMFILTERS SKUs reused, none minted. Nothing published.",
+  "coverage": {
+    "eligible_phase2_rows": 19,
+    "excluded_phase2_rows": 2,
+    "donaldson": {
+      "DONALDSON_VERIFIED": 9,
+      "DONALDSON_NOT_MANUFACTURED_VERIFIED": 0,
+      "DONALDSON_NOT_FOUND": 3,
+      "DONALDSON_SOURCE_BLOCKED": 0,
+      "DONALDSON_AMBIGUOUS": 7
+    },
+    "fleetguard_verified_base": 0,
+    "decision_status": {
+      "VERIFIED_BASE": 4,
+      "PARTIAL": 5,
+      "CONFLICTING": 7,
+      "BLOCKED_DONALDSON": 3,
+      "NO_ELIMFILTERS_SKU_YET": 0,
+      "BLOCKED_OEM": 9
+    },
+    "base_decisions": {
+      "donaldson_based": 9,
+      "fleetguard_based": 0,
+      "no_base_yet": 10
+    },
+    "elimfilters_skus_reused": [
+      "EA16773",
+      "EA13614",
+      "EL82597",
+      "EF92564",
+      "EF92599",
+      "EF92427"
+    ],
+    "elimfilters_new_sku_candidates": []
+  },
   "access_blockers": [
     {
       "manufacturer": "DONALDSON",
@@ -52,6 +120,13 @@
       "resource": "https://www2.wixfilters.com/Lookup/filterlookup.aspx",
       "observed": "HTTP 200, server-rendered, reachable without JavaScript.",
       "conclusion": "Reachable but not queried, for the same ordering reason."
+    },
+    {
+      "manufacturer": "DONALDSON, FLEETGUARD, MANN-FILTER, WIX",
+      "observed_on": "2026-09-23",
+      "resource": "https://ecatalog.donaldson.com, https://shop.donaldson.com, https://www.fleetguard.com, https://www2.wixfilters.com, https://catalog.mann-filter.com",
+      "observed": "The research environment's network proxy refused CONNECT with HTTP 403 for every host. Web search restricted to donaldson.com / fleetguard.com / cummins.com returned no cross-reference rows for 8982984040.",
+      "conclusion": "Live routes unavailable. Donaldson identity was taken from DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07. A number absent from that capture is DONALDSON_NOT_FOUND, never NOT_MANUFACTURED."
     }
   ],
   "engine_level_donaldson_evidence": {
@@ -64,31 +139,2281 @@
     ],
     "source": "DONALDSON_TRUCK_SERVICE_KITS_AU",
     "rows": [
-      { "isuzu_engine_as_published": "4JJ1 3.0L", "donaldson_kit": "X900173", "donaldson_fuel": ["P506095", "P551855"], "donaldson_oil": ["P502597"], "published_vehicle_column": "NLR, NLS, NMR, NNR 2008 - onwards" },
-      { "isuzu_engine_as_published": "4HK1 5.2L", "donaldson_kit": "X903229", "donaldson_fuel": ["P550390"], "donaldson_oil": ["P502042"], "published_vehicle_column": "SiTEC 150/175 2005-2007" },
-      { "isuzu_engine_as_published": "4HK1-TCN, TCC 5.2L", "donaldson_kit": "X900172", "donaldson_fuel": ["P506095", "P551855"], "donaldson_oil": ["P502042"], "published_vehicle_column": "NPR, NPS, NQR 2008-2015" },
-      { "isuzu_engine_as_published": "4HK1-TCN TCC 5.2L", "donaldson_kit": "X900260", "donaldson_fuel": ["P506095", "P551855"], "donaldson_oil": ["P848076"], "published_vehicle_column": "NBPR, NPS, NQR 2016 -" },
-      { "isuzu_engine_as_published": "6HK1-TCC, TSN, TCS 7.8L", "donaldson_kit": "X900176", "donaldson_fuel": ["P506095", "P551855"], "donaldson_oil": ["P550408"], "published_vehicle_column": "FR, FS, FT, FV 09/07 - 10/15" },
-      { "isuzu_engine_as_published": "6HE1 7.1L, 6HH1 8.2L, 6HK1 TCC, TCS 7.8L", "donaldson_kit": "X903222", "donaldson_fuel": ["P502226", "P552564"], "donaldson_oil": ["P550408"], "published_vehicle_column": "FRR 96-02, FSR, FTR 00-02, FRD, FRR, FSR, FTR, FTS, FVD 03-07" }
+      {
+        "isuzu_engine_as_published": "4JJ1 3.0L",
+        "donaldson_kit": "X900173",
+        "donaldson_fuel": [
+          "P506095",
+          "P551855"
+        ],
+        "donaldson_oil": [
+          "P502597"
+        ],
+        "published_vehicle_column": "NLR, NLS, NMR, NNR 2008 - onwards"
+      },
+      {
+        "isuzu_engine_as_published": "4HK1 5.2L",
+        "donaldson_kit": "X903229",
+        "donaldson_fuel": [
+          "P550390"
+        ],
+        "donaldson_oil": [
+          "P502042"
+        ],
+        "published_vehicle_column": "SiTEC 150/175 2005-2007"
+      },
+      {
+        "isuzu_engine_as_published": "4HK1-TCN, TCC 5.2L",
+        "donaldson_kit": "X900172",
+        "donaldson_fuel": [
+          "P506095",
+          "P551855"
+        ],
+        "donaldson_oil": [
+          "P502042"
+        ],
+        "published_vehicle_column": "NPR, NPS, NQR 2008-2015"
+      },
+      {
+        "isuzu_engine_as_published": "4HK1-TCN TCC 5.2L",
+        "donaldson_kit": "X900260",
+        "donaldson_fuel": [
+          "P506095",
+          "P551855"
+        ],
+        "donaldson_oil": [
+          "P848076"
+        ],
+        "published_vehicle_column": "NBPR, NPS, NQR 2016 -"
+      },
+      {
+        "isuzu_engine_as_published": "6HK1-TCC, TSN, TCS 7.8L",
+        "donaldson_kit": "X900176",
+        "donaldson_fuel": [
+          "P506095",
+          "P551855"
+        ],
+        "donaldson_oil": [
+          "P550408"
+        ],
+        "published_vehicle_column": "FR, FS, FT, FV 09/07 - 10/15"
+      },
+      {
+        "isuzu_engine_as_published": "6HE1 7.1L, 6HH1 8.2L, 6HK1 TCC, TCS 7.8L",
+        "donaldson_kit": "X903222",
+        "donaldson_fuel": [
+          "P502226",
+          "P552564"
+        ],
+        "donaldson_oil": [
+          "P550408"
+        ],
+        "published_vehicle_column": "FRR 96-02, FSR, FTR 00-02, FRD, FRR, FSR, FTR, FTS, FVD 03-07"
+      }
     ]
   },
-  "resolution_rows": [],
-  "elimfilters_base_decisions": [],
-  "unresolved_aftermarket": [
-    { "isuzu_oe_oen": ["8970622940", "8981772710", "29007N0000"], "position": "AIR_PRIMARY", "scope": "N-Series 2006-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8944302500", "2906469100"], "position": "AIR_PRIMARY", "scope": "N-Series 1986-2005", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8982984040", "2906544040"], "position": "LUBE_PRIMARY", "scope": "N-Series 2011-, F-Series 4HK 2018-2021", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8980188580"], "position": "LUBE_PRIMARY", "scope": "N-Series 4JJ 2010-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["2906542701", "2906548000", "2906548100"], "position": "LUBE_PRIMARY", "scope": "N-Series 1998-2010", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE and the Isuzu numbers themselves are format-flagged in Phase 2" },
-    { "isuzu_oe_oen": ["1132400791", "1132400740"], "position": "FUEL_PRIMARY", "scope": "N-Series 4HE 1998-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8975425390", "8981475250", "8943692993", "8980374810", "5873109370", "8980370110", "8982035990", "8981628970", "8980318470"], "position": "FUEL_PRIMARY / FUEL_SECONDARY", "scope": "N-Series and F-Series 2013-2021", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE and the primary/secondary split is itself unresolved in Phase 2" },
-    { "isuzu_oe_oen": ["8982373410"], "position": "FUEL_WATER_SEPARATOR", "scope": "N-Series 2022i-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8943924750", "1132004872", "8943924740"], "position": "LUBE_PRIMARY / FUEL_PRIMARY", "scope": "F-Series 1987-2008 and 1994-2004", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8971822820"], "position": "TRANSMISSION_FILTER", "scope": "N-Series 1998-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" }
+  "known_historical_candidates": [
+    {
+      "candidate": "AF27693 <-> P543614 -> EA13614",
+      "outcome": "LINKED",
+      "isuzu_oe_oen": "8970622940",
+      "resolution_row": "P2-N-AIR-2006-ON"
+    },
+    {
+      "candidate": "FF5877 <-> P502599 -> EF92599",
+      "outcome": "LINKED_PARTIAL",
+      "isuzu_oe_oen": "8975425390 / 8981475250",
+      "resolution_row": "P2-N-FUEL-2013-2021-A, P2-F-FUEL-2018-2020-C"
+    },
+    {
+      "candidate": "FF5165 <-> P550390 -> EF90390",
+      "outcome": "NOT_CANONICAL_CONFLICTING",
+      "isuzu_oe_oen": "8980374810",
+      "resolution_row": "P2-N-FUEL-2013-2021-B, P2-N-FUEL-HIGHCAP-2013-2021, P2-F-FUEL-2018-2020-A/B"
+    },
+    {
+      "candidate": "P502042 -> EL82042",
+      "outcome": "NOT_CANONICAL_CONFLICTING",
+      "isuzu_oe_oen": "2906548000",
+      "resolution_row": "P2-N-LUBE-1998-2010"
+    },
+    {
+      "candidate": "P551855 -> ES91855",
+      "outcome": "NOT_LINKED",
+      "isuzu_oe_oen": null,
+      "resolution_row": null,
+      "note": "Only evidence is the Australasia engine-level kit catalogue. No Isuzu OE/OEN in Phase 2 maps to P551855."
+    }
+  ],
+  "resolution_rows": [
+    {
+      "row_id": "P3-01-N-AIR-1986-2005",
+      "phase2_row_id": "P2-N-AIR-1986-2005",
+      "phase2_evidence_status": "VERIFIED",
+      "isuzu_oe_oen": [
+        "8944302500",
+        "2906469100"
+      ],
+      "filter_position": "AIR_PRIMARY",
+      "isuzu_part_form": "AIR FILTER",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "1986-2005",
+        "published_engine_scope": "Diesel/GAS",
+        "binds_to_phase1": [
+          "N-2000-2001",
+          "N-2002-2004",
+          "N-2005-2010(2005 only)"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P636773",
+      "donaldson_candidates": [
+        {
+          "part": "P636773",
+          "form": {
+            "style": "Round",
+            "type": "Primary",
+            "thread": null,
+            "od": "8.71 inch (221.2 mm)",
+            "length": "13.02 inch (330.7 mm)"
+          },
+          "existing_elimfilters_sku": "EA16773"
+        }
+      ],
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P636773",
+      "elimfilters_existing_sku": "EA16773",
+      "elimfilters_base_decision": {
+        "sku": "EA16773",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "VERIFIED_BASE",
+      "confidence": "high",
+      "caveats": [
+        "Donaldson publishes 8944302500 under the manufacturer label CHEVROLET (the GM-badged W-Series twin of the N-Series) and 2906469100 as the Primary Application ISUZU 2906469100 of the same part. Both Isuzu numbers in the Phase 2 row resolve to P636773.",
+        "Isuzu describes the part as AIR FILTER; Donaldson publishes P636773 as a round primary air element. Element to element."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8944302500",
+          "part": "P636773",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "CHEVROLET",
+          "published_as": "8944302500"
+        },
+        {
+          "isuzu_oe_oen": "2906469100",
+          "part": "P636773",
+          "channel": "DONALDSON_PRIMARY_APPLICATION",
+          "published_under": "ISUZU",
+          "published_as": "ISUZU 2906469100"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-02-N-AIR-2006-ON",
+      "phase2_row_id": "P2-N-AIR-2006-ON",
+      "phase2_evidence_status": "VERIFIED",
+      "isuzu_oe_oen": [
+        "8970622940",
+        "8981772710",
+        "29007N0000"
+      ],
+      "filter_position": "AIR_PRIMARY",
+      "isuzu_part_form": "AIR FILTER",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "2006-",
+        "published_engine_scope": "Diesel/GAS",
+        "binds_to_phase1": [
+          "N-2005-2010(2006-2010)",
+          "N-2011-2014",
+          "N-2015-2018",
+          "N-2019-2021",
+          "N-2022-2024",
+          "N-2025-2026"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P543614",
+      "donaldson_candidates": [
+        {
+          "part": "P543614",
+          "form": {
+            "style": "Radialseal",
+            "type": "Primary",
+            "thread": null,
+            "od": "9.33 inch (237 mm)",
+            "length": "10.91 inch (277.1 mm)"
+          },
+          "existing_elimfilters_sku": "EA13614"
+        }
+      ],
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [
+        {
+          "manufacturer": "FLEETGUARD",
+          "part_number": "AF27693",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P543614; Fleetguard's own catalogue not reached",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "supporting_crossrefs": [
+        {
+          "manufacturer": "MANN-FILTER",
+          "part_number": "C24101",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P543614; not confirmed in MANN-FILTER's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "RS5434",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P543614; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "46932",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P543614; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P543614",
+      "elimfilters_existing_sku": "EA13614",
+      "elimfilters_base_decision": {
+        "sku": "EA13614",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "VERIFIED_BASE",
+      "confidence": "high",
+      "caveats": [
+        "Donaldson recognises 8970622940 (cross-reference list and Primary Application). The other two numbers Isuzu prints in the same cell, 8981772710 and 29007N0000, are not in the Donaldson capture. The base rests on 8970622940 alone; the other two are recorded as Isuzu-published alternates of the same Isuzu entry, not as independently cross-referenced by Donaldson.",
+        "Radialseal primary element to Isuzu AIR FILTER element.",
+        "Known historical candidate AF27693 <-> P543614 -> EA13614 is now tied to Isuzu 8970622940 by Donaldson-published evidence."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8970622940",
+          "part": "P543614",
+          "channel": "DONALDSON_PRIMARY_APPLICATION",
+          "published_under": "ISUZU",
+          "published_as": "ISUZU 8970622940"
+        },
+        {
+          "isuzu_oe_oen": "8970622940",
+          "part": "P543614",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8970622940"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-03-N-LUBE-4JJ",
+      "phase2_row_id": "P2-N-LUBE-4JJ",
+      "phase2_evidence_status": "VERIFIED",
+      "isuzu_oe_oen": [
+        "8980188580"
+      ],
+      "filter_position": "LUBE_PRIMARY",
+      "isuzu_part_form": "OIL FILTER",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "2010-",
+        "published_engine_scope": "Diesel / 4JJ",
+        "binds_to_phase1": [
+          "N-2011-2018-ECOMAX"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502597",
+      "donaldson_candidates": [
+        {
+          "part": "P502597",
+          "form": {
+            "style": "Cartridge",
+            "type": null,
+            "thread": null,
+            "od": "2.68 inch (68 mm)",
+            "length": "5.91 inch (150 mm)"
+          },
+          "existing_elimfilters_sku": "EL82597"
+        }
+      ],
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [
+        {
+          "manufacturer": "MANN-FILTER",
+          "part_number": "HU7074X",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502597; not confirmed in MANN-FILTER's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "WL10007",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502597; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502597",
+      "elimfilters_existing_sku": "EL82597",
+      "elimfilters_base_decision": {
+        "sku": "EL82597",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "VERIFIED_BASE",
+      "confidence": "high",
+      "caveats": [
+        "Donaldson lists 8980188580 in its own OEM list for P502597, a cartridge element. The Australasia kit catalogue (engine-level only) also pairs P502597 with the 4JJ1, which is consistent but is not what the decision rests on."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8980188580",
+          "part": "P502597",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8980188580"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-04-N-LUBE-2011-ON",
+      "phase2_row_id": "P2-N-LUBE-2011-ON",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "2906544040",
+        "8982984040"
+      ],
+      "filter_position": "LUBE_PRIMARY",
+      "isuzu_part_form": "OIL FILTER",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "2011-",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "N-2011-2014",
+          "N-2015-2018",
+          "N-2019-2021",
+          "N-2022-2024",
+          "N-2025-2026"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_candidates": [],
+      "donaldson_relationship_type": null,
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_DONALDSON",
+      "confidence": null,
+      "caveats": [
+        "Neither 8982984040 nor 2906544040 appears in the Donaldson capture, and the live Donaldson routes are blocked from this environment. NOT_FOUND is not NOT_MANUFACTURED, so Fleetguard cannot define the base.",
+        "The Australasia kit catalogue pairs 4HK1 engines with P502042 / P848076 at engine level only; it is not an OE/OEN link and is not used.",
+        "Web search surfaced retailer text pairing 8982984040 with Fleetguard LF17537. That is a research lead only and is not recorded as a Fleetguard cross-reference."
+      ],
+      "evidence": []
+    },
+    {
+      "row_id": "P3-05-N-LUBE-1998-2010",
+      "phase2_row_id": "P2-N-LUBE-1998-2010",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "2906542701",
+        "2906548000",
+        "2906548100"
+      ],
+      "filter_position": "LUBE_PRIMARY",
+      "isuzu_part_form": "OIL FILTER",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "1998-2010",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "N-2000-2001",
+          "N-2002-2004",
+          "N-2005-2010"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_AMBIGUOUS",
+      "donaldson_part": null,
+      "donaldson_candidates": [
+        {
+          "part": "P502042",
+          "form": {
+            "style": "Spin-On",
+            "type": "Combination",
+            "thread": "1 1/2-12 UN",
+            "od": "4.88 inch (124 mm)",
+            "length": "4.72 inch (120 mm)"
+          },
+          "existing_elimfilters_sku": "EL82042"
+        },
+        {
+          "part": "P550973",
+          "form": {
+            "style": "Spin-On",
+            "type": "Combination",
+            "thread": "1 1/2-12 UN",
+            "od": "4.84 inch (123 mm)",
+            "length": "5.87 inch (149 mm)"
+          },
+          "existing_elimfilters_sku": "EL80973"
+        }
+      ],
+      "donaldson_relationship_type": null,
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "CONFLICTING",
+      "confidence": null,
+      "caveats": [
+        "Donaldson publishes 2906548000 (also printed by Donaldson as 2-90654-800-0) in the cross-reference lists of two different spin-on parts, P502042 (length 120 mm, gasket OD 116.5 mm) and P550973 (length 149 mm, gasket OD 110 mm). Two physically different filters for one Isuzu number is an ambiguity, not a base.",
+        "Donaldson does not recognise 2906542701 or 2906548100.",
+        "ANOMALOUS OEN SEMANTICS: Donaldson printing 2906548000 as 2-90654-800-0 shows the number exists as an Isuzu 2-xxxxx-xxx-x style reference in Donaldson data. It is recorded here and is NOT used to normalise the Phase 2 row.",
+        "Known historical candidate P502042 -> EL82042 is not canonical for Isuzu: its only Isuzu link in this row is the ambiguous 2906548000."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "2906548000",
+          "part": "P502042",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "2-90654-800-0"
+        },
+        {
+          "isuzu_oe_oen": "2906548000",
+          "part": "P502042",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "2906548000"
+        },
+        {
+          "isuzu_oe_oen": "2906548000",
+          "part": "P550973",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "2-90654-800-0"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-06-N-FUEL-4HE",
+      "phase2_row_id": "P2-N-FUEL-4HE",
+      "phase2_evidence_status": "VERIFIED",
+      "isuzu_oe_oen": [
+        "1132400791",
+        "1132400740"
+      ],
+      "filter_position": "FUEL_PRIMARY",
+      "isuzu_part_form": "FUEL FILTER",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "1998-",
+        "published_engine_scope": "Diesel / 4HE",
+        "binds_to_phase1": [
+          "N-2000-2001",
+          "N-2002-2004"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P552564",
+      "donaldson_candidates": [
+        {
+          "part": "P552564",
+          "form": {
+            "style": "Spin-On",
+            "type": "Primary",
+            "thread": "3/4-16 UN",
+            "od": "3.66 inch (93 mm)",
+            "length": "4.92 inch (125 mm)"
+          },
+          "existing_elimfilters_sku": "EF92564"
+        },
+        {
+          "part": "P550047",
+          "form": {
+            "style": "Spin-On",
+            "type": "Full-Flow",
+            "thread": "M18 x 1.5",
+            "od": "2.99 inch (76 mm)",
+            "length": "3.39 inch (86 mm)"
+          },
+          "existing_elimfilters_sku": null
+        }
+      ],
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [
+        {
+          "manufacturer": "FLEETGUARD",
+          "part_number": "FF5108",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; Fleetguard's own catalogue not reached",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "FLEETGUARD",
+          "part_number": "FF5141",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; Fleetguard's own catalogue not reached",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "supporting_crossrefs": [
+        {
+          "manufacturer": "MANN-FILTER",
+          "part_number": "WK9059",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in MANN-FILTER's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "BF719",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "BF7559",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "BF7602",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "33343",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "33382",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "33398",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "39063",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "FRAM",
+          "part_number": "P4139PL",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in FRAM's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "FRAM",
+          "part_number": "P6904",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in FRAM's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "FRAM",
+          "part_number": "P8263",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in FRAM's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P552564",
+      "elimfilters_existing_sku": "EF92564",
+      "elimfilters_base_decision": {
+        "sku": "EF92564",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "VERIFIED_BASE",
+      "confidence": "medium",
+      "caveats": [
+        "Both Isuzu numbers, 1132400791 and 1132400740, are in Donaldson's cross-reference list for P552564 under ISUZU. Neither is in Donaldson's own OEM list, so confidence is medium.",
+        "1132400740 also appears in Donaldson's cross-reference for P550047 under the manufacturer FIAT. That is a FIAT number that happens to share the digits, not an Isuzu mapping, and does not make the Isuzu link ambiguous."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "1132400791",
+          "part": "P552564",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "1132400791"
+        },
+        {
+          "isuzu_oe_oen": "1132400740",
+          "part": "P552564",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "GENERAL-MOTORS",
+          "published_as": "1132400740"
+        },
+        {
+          "isuzu_oe_oen": "1132400740",
+          "part": "P552564",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "1132400740"
+        },
+        {
+          "isuzu_oe_oen": "1132400740",
+          "part": "P550047",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "FIAT",
+          "published_as": "1132400740"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-07-N-FUEL-2013-2021-A",
+      "phase2_row_id": "P2-N-FUEL-2013-2021-A",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8975425390",
+        "8981475250"
+      ],
+      "filter_position": "FUEL_PRIMARY",
+      "isuzu_part_form": "FUEL FILTER",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "2013-2021",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "N-2011-2014(2013-2014)",
+          "N-2015-2018",
+          "N-2019-2021"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502599",
+      "donaldson_candidates": [
+        {
+          "part": "P502599",
+          "form": {
+            "style": "Spin-On",
+            "type": null,
+            "thread": null,
+            "od": "2.68 inch (68 mm)",
+            "length": "4.25 inch (108 mm)"
+          },
+          "existing_elimfilters_sku": "EF92599"
+        }
+      ],
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [
+        {
+          "manufacturer": "FLEETGUARD",
+          "part_number": "FF5877",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502599; Fleetguard's own catalogue not reached",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "supporting_crossrefs": [
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "PF46059",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502599; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "WF10185",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502599; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502599",
+      "elimfilters_existing_sku": "EF92599",
+      "elimfilters_base_decision": {
+        "sku": "EF92599",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "high",
+      "caveats": [
+        "Both Isuzu numbers are in Donaldson's own OEM list for P502599. The Donaldson identity is settled.",
+        "Decision is PARTIAL only because the Phase 2 row is PARTIAL: Isuzu has not settled whether the several 2013-2021 fuel rows are alternates, a primary/secondary pair or revisions. Phase 3 does not resolve that."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8975425390",
+          "part": "P502599",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8975425390"
+        },
+        {
+          "isuzu_oe_oen": "8981475250",
+          "part": "P502599",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8981475250"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-08-N-FUEL-2013-2021-B",
+      "phase2_row_id": "P2-N-FUEL-2013-2021-B",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8943692993",
+        "8980374810",
+        "5873109370"
+      ],
+      "filter_position": "FUEL_PRIMARY",
+      "isuzu_part_form": "FUEL FILTER",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "2013-2021",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "N-2011-2014(2013-2014)",
+          "N-2015-2018",
+          "N-2019-2021"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_AMBIGUOUS",
+      "donaldson_part": null,
+      "donaldson_candidates": [
+        {
+          "part": "P550390",
+          "form": {
+            "style": "Spin-On",
+            "type": "Water Separator",
+            "thread": "M20 x 1.5",
+            "od": "3.88 inch (98.5 mm)",
+            "length": "5.51 inch (140 mm)"
+          },
+          "existing_elimfilters_sku": "EF90390"
+        }
+      ],
+      "donaldson_relationship_type": null,
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "CONFLICTING",
+      "confidence": null,
+      "caveats": [
+        "8980374810 maps to P550390 under ISUZU, but Isuzu also prints 8980374810 and 5873109370 in the separate HIGH CAPACITY row (P2-N-FUEL-HIGHCAP-2013-2021). The only number unique to this row, 8943692993, appears in Donaldson data solely under the manufacturer label KOMATSU. No Isuzu-labelled Donaldson evidence separates the standard filter from the high-capacity one.",
+        "P550390 is published by Donaldson as a Water Separator spin-on; Isuzu describes the row as FUEL FILTER. Function label differs.",
+        "Known historical candidate FF5165 <-> P550390 -> EF90390 is therefore not canonical for this Isuzu row."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8943692993",
+          "part": "P550390",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "KOMATSU",
+          "published_as": "8943692993"
+        },
+        {
+          "isuzu_oe_oen": "8980374810",
+          "part": "P550390",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8980374810"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-09-N-FUEL-2013-2021-C",
+      "phase2_row_id": "P2-N-FUEL-2013-2021-C",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8980370110",
+        "8982035990",
+        "8981628970"
+      ],
+      "filter_position": "FUEL_PRIMARY",
+      "isuzu_part_form": "FUEL FILTER",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "2013-2021",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "N-2011-2014(2013-2014)",
+          "N-2015-2018",
+          "N-2019-2021"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502427",
+      "donaldson_candidates": [
+        {
+          "part": "P502427",
+          "form": {
+            "style": "Cartridge",
+            "type": null,
+            "thread": null,
+            "od": "3.94 inch (100 mm)",
+            "length": "3.78 inch (96 mm)"
+          },
+          "existing_elimfilters_sku": "EF92427"
+        }
+      ],
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "PF9919",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502427; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "33937",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502427; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502427",
+      "elimfilters_existing_sku": "EF92427",
+      "elimfilters_base_decision": {
+        "sku": "EF92427",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "high",
+      "caveats": [
+        "All three Isuzu numbers are in Donaldson's own OEM list for P502427 and 8980370110 is its Primary Application. The Donaldson identity is settled.",
+        "Decision is PARTIAL only because the Phase 2 row is PARTIAL (primary/secondary split unresolved by Isuzu)."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8980370110",
+          "part": "P502427",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8980370110"
+        },
+        {
+          "isuzu_oe_oen": "8980370110",
+          "part": "P502427",
+          "channel": "DONALDSON_PRIMARY_APPLICATION",
+          "published_under": "ISUZU",
+          "published_as": "ISUZU 8980370110"
+        },
+        {
+          "isuzu_oe_oen": "8980370110",
+          "part": "P502427",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8980370110"
+        },
+        {
+          "isuzu_oe_oen": "8982035990",
+          "part": "P502427",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8982035990"
+        },
+        {
+          "isuzu_oe_oen": "8981628970",
+          "part": "P502427",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8981628970"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-10-N-FUEL-HIGHCAP-2013-2021",
+      "phase2_row_id": "P2-N-FUEL-HIGHCAP-2013-2021",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8980374810",
+        "5873109370",
+        "8980318470"
+      ],
+      "filter_position": "FUEL_PRIMARY",
+      "isuzu_part_form": "FUEL FILTER (HIGH CAPACITY)",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "2013-2021",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "N-2011-2014(2013-2014)",
+          "N-2015-2018",
+          "N-2019-2021"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_AMBIGUOUS",
+      "donaldson_part": null,
+      "donaldson_candidates": [
+        {
+          "part": "P550390",
+          "form": {
+            "style": "Spin-On",
+            "type": "Water Separator",
+            "thread": "M20 x 1.5",
+            "od": "3.88 inch (98.5 mm)",
+            "length": "5.51 inch (140 mm)"
+          },
+          "existing_elimfilters_sku": "EF90390"
+        }
+      ],
+      "donaldson_relationship_type": null,
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "CONFLICTING",
+      "confidence": null,
+      "caveats": [
+        "The only number Donaldson recognises here, 8980374810, is shared with the standard-capacity row P2-N-FUEL-2013-2021-B. 8980318470 and 5873109370 are not in the Donaldson capture. A high-capacity filter cannot be equated with P550390 when the same Donaldson part also answers the standard row."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8980374810",
+          "part": "P550390",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8980374810"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-11-N-FWS-2022i-ON",
+      "phase2_row_id": "P2-N-FWS-2022i-ON",
+      "phase2_evidence_status": "VERIFIED",
+      "isuzu_oe_oen": [
+        "8982373410"
+      ],
+      "filter_position": "FUEL_WATER_SEPARATOR",
+      "isuzu_part_form": "FUEL/WATER SEP; HIGH EFF",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "2022i -",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "N-2022-2024",
+          "N-2025-2026"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_candidates": [],
+      "donaldson_relationship_type": null,
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_DONALDSON",
+      "confidence": null,
+      "caveats": [
+        "8982373410 is not in the Donaldson capture and the live Donaldson routes are blocked. Retailer listings surfaced by web search are leads only. Fleetguard cannot define the base because Donaldson absence is not verified.",
+        "Standard fuel/water separator scope; no technology is assigned in this phase."
+      ],
+      "evidence": []
+    },
+    {
+      "row_id": "P3-12-N-TRANS",
+      "phase2_row_id": "P2-N-TRANS",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8971822820"
+      ],
+      "filter_position": "TRANSMISSION_FILTER",
+      "isuzu_part_form": "OIL FILTER; TRANS (CARTRIDGE)",
+      "oem_scope": {
+        "series": "N-SERIES",
+        "model_lines": [
+          "NPR",
+          "NQR",
+          "NRR"
+        ],
+        "published_year_scope": "1998-",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "N-2000-2001",
+          "N-2002-2004",
+          "N-2005-2010",
+          "N-2011-2014",
+          "N-2011-2018-ECOMAX",
+          "N-2015-2018",
+          "N-2019-2021",
+          "N-2022-2024",
+          "N-2025-2026"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_AMBIGUOUS",
+      "donaldson_part": null,
+      "donaldson_candidates": [
+        {
+          "part": "P550008",
+          "form": {
+            "style": "Spin-On",
+            "type": "Full-Flow",
+            "thread": "3/4-16 UN",
+            "od": "3.74 inch (95 mm)",
+            "length": "5.35 inch (136 mm)"
+          },
+          "existing_elimfilters_sku": "EL80008"
+        }
+      ],
+      "donaldson_relationship_type": null,
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "CONFLICTING",
+      "confidence": null,
+      "caveats": [
+        "ASSEMBLY/ELEMENT CONFLICT. Isuzu publishes 8971822820 as OIL FILTER; TRANS (CARTRIDGE). The only Donaldson hit is P550008, a full-flow engine-oil spin-on (3/4-16 UN) whose cross-reference list carries several hundred numbers. A cartridge cannot be declared equivalent to a spin-on, so no base is taken."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8971822820",
+          "part": "P550008",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8971822820"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-13-F-LUBE-1987-2008",
+      "phase2_row_id": "P2-F-LUBE-1987-2008",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8943924750",
+        "1132004872"
+      ],
+      "filter_position": "LUBE_PRIMARY",
+      "isuzu_part_form": "ELEMENT; OIL FILTER",
+      "oem_scope": {
+        "series": "F-SERIES",
+        "model_lines": [
+          "FTR",
+          "FVR",
+          "FSR"
+        ],
+        "published_year_scope": "1987-2008",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "F-2000-2003",
+          "F-2004-2005",
+          "F-2006-2010(2006-2008)"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_AMBIGUOUS",
+      "donaldson_part": null,
+      "donaldson_candidates": [
+        {
+          "part": "P550420",
+          "form": {
+            "style": "Spin-On",
+            "type": "Full-Flow",
+            "thread": "1 1/8-16 UN",
+            "od": "4.33 inch (110 mm)",
+            "length": "6.38 inch (162 mm)"
+          },
+          "existing_elimfilters_sku": "EL80420"
+        },
+        {
+          "part": "P551263",
+          "form": {
+            "style": "Spin-On",
+            "type": "Full-Flow",
+            "thread": "1 1/8-16 UN",
+            "od": "4.25 inch (108 mm)",
+            "length": "7.01 inch (178 mm)"
+          },
+          "existing_elimfilters_sku": "EL81263"
+        },
+        {
+          "part": "P559128",
+          "form": {
+            "style": "Spin-On",
+            "type": "Full-Flow",
+            "thread": "1 1/8-16 UN",
+            "od": "4.21 inch (107 mm)",
+            "length": "5.79 inch (147 mm)"
+          },
+          "existing_elimfilters_sku": "EL89128"
+        }
+      ],
+      "donaldson_relationship_type": null,
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "CONFLICTING",
+      "confidence": null,
+      "caveats": [
+        "Donaldson lists 1132004872 in its own OEM list for P550420, but both 1132004872 (printed 1-13200-487-2) and 8943924750 (printed 8-94392-475-0) also appear in the cross-reference lists of P551263 and P559128. The three are spin-ons with lengths 162, 178 and 147 mm. Three physically different filters is an ambiguity.",
+        "Isuzu describes the row as ELEMENT; OIL FILTER while every Donaldson candidate is a spin-on. This is not resolved as a direct equivalence."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8943924750",
+          "part": "P550420",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8-94392-475-0"
+        },
+        {
+          "isuzu_oe_oen": "8943924750",
+          "part": "P551263",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8-94392-475-0"
+        },
+        {
+          "isuzu_oe_oen": "8943924750",
+          "part": "P559128",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8-94392-475-0"
+        },
+        {
+          "isuzu_oe_oen": "1132004872",
+          "part": "P550420",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "1132004872"
+        },
+        {
+          "isuzu_oe_oen": "1132004872",
+          "part": "P550420",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "1-13200-487-2"
+        },
+        {
+          "isuzu_oe_oen": "1132004872",
+          "part": "P550420",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "1132004872"
+        },
+        {
+          "isuzu_oe_oen": "1132004872",
+          "part": "P551263",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "1-13200-487-2"
+        },
+        {
+          "isuzu_oe_oen": "1132004872",
+          "part": "P559128",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "1-13200-487-2"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-14-F-LUBE-2018-2021",
+      "phase2_row_id": "P2-F-LUBE-2018-2021",
+      "phase2_evidence_status": "VERIFIED",
+      "isuzu_oe_oen": [
+        "8982984040"
+      ],
+      "filter_position": "LUBE_PRIMARY",
+      "isuzu_part_form": "ELEMENT; OIL FILTER",
+      "oem_scope": {
+        "series": "F-SERIES",
+        "model_lines": [
+          "FTR",
+          "FVR",
+          "FSR"
+        ],
+        "published_year_scope": "2018-2021",
+        "published_engine_scope": "Diesel / 4HK",
+        "binds_to_phase1": [
+          "F-2017-2021(2018-2021)"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_candidates": [],
+      "donaldson_relationship_type": null,
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_DONALDSON",
+      "confidence": null,
+      "caveats": [
+        "8982984040 is not in the Donaldson capture and the live Donaldson routes are blocked. NOT_FOUND is not NOT_MANUFACTURED. Same Isuzu number as the N-Series 2011- lube row, so the same block applies."
+      ],
+      "evidence": []
+    },
+    {
+      "row_id": "P3-15-F-FUEL-1994-2004",
+      "phase2_row_id": "P2-F-FUEL-1994-2004",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8943924740",
+        "1132400791"
+      ],
+      "filter_position": "FUEL_PRIMARY",
+      "isuzu_part_form": "ELEMENT; FUEL FILTER",
+      "oem_scope": {
+        "series": "F-SERIES",
+        "model_lines": [
+          "FTR",
+          "FVR",
+          "FSR"
+        ],
+        "published_year_scope": "1994-2004",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "F-2000-2003",
+          "F-2004-2005(2004 only)"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P552564",
+      "donaldson_candidates": [
+        {
+          "part": "P552564",
+          "form": {
+            "style": "Spin-On",
+            "type": "Primary",
+            "thread": "3/4-16 UN",
+            "od": "3.66 inch (93 mm)",
+            "length": "4.92 inch (125 mm)"
+          },
+          "existing_elimfilters_sku": "EF92564"
+        }
+      ],
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [
+        {
+          "manufacturer": "FLEETGUARD",
+          "part_number": "FF5108",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; Fleetguard's own catalogue not reached",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "FLEETGUARD",
+          "part_number": "FF5141",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; Fleetguard's own catalogue not reached",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "supporting_crossrefs": [
+        {
+          "manufacturer": "MANN-FILTER",
+          "part_number": "WK9059",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in MANN-FILTER's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "BF719",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "BF7559",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "BF7602",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "33343",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "33382",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "33398",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "39063",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "FRAM",
+          "part_number": "P4139PL",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in FRAM's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "FRAM",
+          "part_number": "P6904",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in FRAM's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "FRAM",
+          "part_number": "P8263",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P552564; not confirmed in FRAM's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P552564",
+      "elimfilters_existing_sku": "EF92564",
+      "elimfilters_base_decision": {
+        "sku": "EF92564",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "medium",
+      "caveats": [
+        "Both Isuzu numbers are in Donaldson's cross-reference list for P552564 under ISUZU; 1132400791 is the same Isuzu number as the N-Series 4HE row.",
+        "Isuzu calls this ELEMENT; FUEL FILTER while Donaldson publishes a spin-on. The identical Isuzu number 1132400791 is printed as plain FUEL FILTER in the N-Series section of the same Isuzu document, which indicates a naming difference rather than a different part, but that is an inference, so the decision is PARTIAL, not VERIFIED_BASE.",
+        "Phase 2 row is PARTIAL."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8943924740",
+          "part": "P552564",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8943924740"
+        },
+        {
+          "isuzu_oe_oen": "1132400791",
+          "part": "P552564",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "1132400791"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-16-F-FUEL-2018-2020-A",
+      "phase2_row_id": "P2-F-FUEL-2018-2020-A",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8943692993",
+        "8980374810",
+        "8943691993"
+      ],
+      "filter_position": "FUEL_PRIMARY",
+      "isuzu_part_form": "FUEL FILTER",
+      "oem_scope": {
+        "series": "F-SERIES",
+        "model_lines": [
+          "FTR",
+          "FVR",
+          "FSR"
+        ],
+        "published_year_scope": "2018-2020",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "F-2017-2021(2018-2020)"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_AMBIGUOUS",
+      "donaldson_part": null,
+      "donaldson_candidates": [
+        {
+          "part": "P550390",
+          "form": {
+            "style": "Spin-On",
+            "type": "Water Separator",
+            "thread": "M20 x 1.5",
+            "od": "3.88 inch (98.5 mm)",
+            "length": "5.51 inch (140 mm)"
+          },
+          "existing_elimfilters_sku": "EF90390"
+        }
+      ],
+      "donaldson_relationship_type": null,
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "CONFLICTING",
+      "confidence": null,
+      "caveats": [
+        "Isuzu prints the identical OEN list (8943692993, 8980374810, 8943691993) for this row and for the HIGH CAPACITY row P2-F-FUEL-2018-2020-B. The Isuzu numbers cannot tell the two filters apart, so a single Donaldson part (P550390, via 8980374810) cannot be assigned to either."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8943692993",
+          "part": "P550390",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "KOMATSU",
+          "published_as": "8943692993"
+        },
+        {
+          "isuzu_oe_oen": "8980374810",
+          "part": "P550390",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8980374810"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-17-F-FUEL-2018-2020-B",
+      "phase2_row_id": "P2-F-FUEL-2018-2020-B",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8943692993",
+        "8980374810",
+        "8943691993"
+      ],
+      "filter_position": "FUEL_PRIMARY",
+      "isuzu_part_form": "FUEL FILTER (HIGH CAPACITY)",
+      "oem_scope": {
+        "series": "F-SERIES",
+        "model_lines": [
+          "FTR",
+          "FVR",
+          "FSR"
+        ],
+        "published_year_scope": "2018-2020",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "F-2017-2021(2018-2020)"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_AMBIGUOUS",
+      "donaldson_part": null,
+      "donaldson_candidates": [
+        {
+          "part": "P550390",
+          "form": {
+            "style": "Spin-On",
+            "type": "Water Separator",
+            "thread": "M20 x 1.5",
+            "od": "3.88 inch (98.5 mm)",
+            "length": "5.51 inch (140 mm)"
+          },
+          "existing_elimfilters_sku": "EF90390"
+        }
+      ],
+      "donaldson_relationship_type": null,
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "CONFLICTING",
+      "confidence": null,
+      "caveats": [
+        "Same OEN list as P2-F-FUEL-2018-2020-A (standard capacity). See that row."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8943692993",
+          "part": "P550390",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "KOMATSU",
+          "published_as": "8943692993"
+        },
+        {
+          "isuzu_oe_oen": "8980374810",
+          "part": "P550390",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8980374810"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-18-F-FUEL-2018-2020-C",
+      "phase2_row_id": "P2-F-FUEL-2018-2020-C",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8975425390",
+        "8981475250"
+      ],
+      "filter_position": "FUEL_SECONDARY",
+      "isuzu_part_form": "ELEMENT KIT; FUEL FILTER",
+      "oem_scope": {
+        "series": "F-SERIES",
+        "model_lines": [
+          "FTR",
+          "FVR",
+          "FSR"
+        ],
+        "published_year_scope": "2018-2020",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "F-2017-2021(2018-2020)"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502599",
+      "donaldson_candidates": [
+        {
+          "part": "P502599",
+          "form": {
+            "style": "Spin-On",
+            "type": null,
+            "thread": null,
+            "od": "2.68 inch (68 mm)",
+            "length": "4.25 inch (108 mm)"
+          },
+          "existing_elimfilters_sku": "EF92599"
+        }
+      ],
+      "donaldson_relationship_type": "KIT_CROSS",
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [
+        {
+          "manufacturer": "FLEETGUARD",
+          "part_number": "FF5877",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502599; Fleetguard's own catalogue not reached",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "supporting_crossrefs": [
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "PF46059",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502599; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "WF10185",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502599; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502599",
+      "elimfilters_existing_sku": "EF92599",
+      "elimfilters_base_decision": {
+        "sku": "EF92599",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "medium",
+      "caveats": [
+        "KIT VS ELEMENT. Isuzu publishes this row as ELEMENT KIT; FUEL FILTER. Donaldson maps both Isuzu numbers to the single filter P502599 in its own OEM list. The filter identity is settled; the kit contents (seals, O-rings) are not, so the relationship is recorded as KIT_CROSS and the decision is PARTIAL.",
+        "Same Isuzu numbers as N-Series row P2-N-FUEL-2013-2021-A, where Isuzu prints them as plain FUEL FILTER."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8975425390",
+          "part": "P502599",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8975425390"
+        },
+        {
+          "isuzu_oe_oen": "8981475250",
+          "part": "P502599",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8981475250"
+        }
+      ]
+    },
+    {
+      "row_id": "P3-19-F-FUEL-2018-2020-D",
+      "phase2_row_id": "P2-F-FUEL-2018-2020-D",
+      "phase2_evidence_status": "PARTIAL",
+      "isuzu_oe_oen": [
+        "8980370110"
+      ],
+      "filter_position": "FUEL_SECONDARY",
+      "isuzu_part_form": "ELEMENT KIT; FUEL FILTER",
+      "oem_scope": {
+        "series": "F-SERIES",
+        "model_lines": [
+          "FTR",
+          "FVR",
+          "FSR"
+        ],
+        "published_year_scope": "2018-2020",
+        "published_engine_scope": "Diesel",
+        "binds_to_phase1": [
+          "F-2017-2021(2018-2020)"
+        ],
+        "scope_authority": "PHASE_2_UNCHANGED"
+      },
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502427",
+      "donaldson_candidates": [
+        {
+          "part": "P502427",
+          "form": {
+            "style": "Cartridge",
+            "type": null,
+            "thread": null,
+            "od": "3.94 inch (100 mm)",
+            "length": "3.78 inch (96 mm)"
+          },
+          "existing_elimfilters_sku": "EF92427"
+        }
+      ],
+      "donaldson_relationship_type": "KIT_CROSS",
+      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "fleetguard_corroboration": [],
+      "supporting_crossrefs": [
+        {
+          "manufacturer": "BALDWIN",
+          "part_number": "PF9919",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502427; not confirmed in BALDWIN's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        },
+        {
+          "manufacturer": "WIX",
+          "part_number": "33937",
+          "relationship_type": "UNVERIFIED",
+          "source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+          "source_scope": "Listed in Donaldson's own cross-reference for P502427; not confirmed in WIX's own catalogue",
+          "confidence": "low",
+          "fitment_role": "CORROBORATION_ONLY"
+        }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502427",
+      "elimfilters_existing_sku": "EF92427",
+      "elimfilters_base_decision": {
+        "sku": "EF92427",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "medium",
+      "caveats": [
+        "KIT VS ELEMENT. Isuzu publishes ELEMENT KIT; FUEL FILTER; Donaldson maps 8980370110 to the single cartridge P502427 (own OEM list and Primary Application). Kit contents are not established, so KIT_CROSS / PARTIAL."
+      ],
+      "evidence": [
+        {
+          "isuzu_oe_oen": "8980370110",
+          "part": "P502427",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8980370110"
+        },
+        {
+          "isuzu_oe_oen": "8980370110",
+          "part": "P502427",
+          "channel": "DONALDSON_PRIMARY_APPLICATION",
+          "published_under": "ISUZU",
+          "published_as": "ISUZU 8980370110"
+        },
+        {
+          "isuzu_oe_oen": "8980370110",
+          "part": "P502427",
+          "channel": "DONALDSON_CROSSREF_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8980370110"
+        }
+      ]
+    }
+  ],
+  "blocked_oem_rows": [
+    {
+      "row_id": "P3-BLOCKED-H-SERIES",
+      "phase2_row_id": null,
+      "phase2_unresolved_scope": "H-SERIES HTR / HVR / HXR MY2005-2008",
+      "isuzu_oe_oen": [],
+      "filter_position": "ALL",
+      "donaldson_status": "NOT_EVALUATED_NO_OEN",
+      "donaldson_part": null,
+      "fleetguard_status": "NOT_EVALUATED_NO_OEN",
+      "fleetguard_part": null,
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_OEM",
+      "caveats": [
+        "Phase 2 has no Isuzu-published OEN for any H-Series position. No equivalence is resolved from the shared 6HK1-TC engine."
+      ]
+    },
+    {
+      "row_id": "P3-BLOCKED-FRR-FXR",
+      "phase2_row_id": null,
+      "phase2_unresolved_scope": "F-SERIES FRR and FXR, all years",
+      "isuzu_oe_oen": [],
+      "filter_position": "ALL",
+      "donaldson_status": "NOT_EVALUATED_NO_OEN",
+      "donaldson_part": null,
+      "fleetguard_status": "NOT_EVALUATED_NO_OEN",
+      "fleetguard_part": null,
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_OEM",
+      "caveats": [
+        "Isuzu names no filter row for FRR or FXR. FTR/FVR/FSR cross-references are not borrowed."
+      ]
+    },
+    {
+      "row_id": "P3-BLOCKED-F-B67",
+      "phase2_row_id": null,
+      "phase2_unresolved_scope": "F-SERIES MY2022-2026 Cummins B6.7",
+      "isuzu_oe_oen": [],
+      "filter_position": "ALL",
+      "donaldson_status": "NOT_EVALUATED_NO_OEN",
+      "donaldson_part": null,
+      "fleetguard_status": "NOT_EVALUATED_NO_OEN",
+      "fleetguard_part": null,
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_OEM",
+      "caveats": [
+        "No Isuzu or Cummins document ties a genuine service filter to the Isuzu F-Series B6.7 chassis. Fleetguard B6.7 listings are not used to fill it."
+      ]
+    },
+    {
+      "row_id": "P3-BLOCKED-F-GAP-YEARS",
+      "phase2_row_id": null,
+      "phase2_unresolved_scope": "F-SERIES MY2009-2010, 2017, 2021",
+      "isuzu_oe_oen": [],
+      "filter_position": "LUBE_PRIMARY, FUEL_PRIMARY",
+      "donaldson_status": "NOT_EVALUATED_NO_OEN",
+      "donaldson_part": null,
+      "fleetguard_status": "NOT_EVALUATED_NO_OEN",
+      "fleetguard_part": null,
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_OEM",
+      "caveats": [
+        "Years fall between Isuzu-published ranges; no OEN."
+      ]
+    },
+    {
+      "row_id": "P3-BLOCKED-F-OTHER",
+      "phase2_row_id": null,
+      "phase2_unresolved_scope": "F-SERIES all years",
+      "isuzu_oe_oen": [],
+      "filter_position": "AIR_PRIMARY, AIR_SECONDARY, CABIN, AIR_DRYER, FUEL_WATER_SEPARATOR, TRANSMISSION_FILTER",
+      "donaldson_status": "NOT_EVALUATED_NO_OEN",
+      "donaldson_part": null,
+      "fleetguard_status": "NOT_EVALUATED_NO_OEN",
+      "fleetguard_part": null,
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_OEM",
+      "caveats": [
+        "No Isuzu F-Series OEN for these positions."
+      ]
+    },
+    {
+      "row_id": "P3-BLOCKED-N-CABIN",
+      "phase2_row_id": null,
+      "phase2_unresolved_scope": "N-SERIES all years",
+      "isuzu_oe_oen": [],
+      "filter_position": "CABIN",
+      "donaldson_status": "NOT_EVALUATED_NO_OEN",
+      "donaldson_part": null,
+      "fleetguard_status": "NOT_EVALUATED_NO_OEN",
+      "fleetguard_part": null,
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_OEM",
+      "caveats": [
+        "Isuzu publishes no cabin filter part number."
+      ]
+    },
+    {
+      "row_id": "P3-BLOCKED-N-FUEL-2005-2012",
+      "phase2_row_id": null,
+      "phase2_unresolved_scope": "N-SERIES MY2005-2012 (4HK1-TC)",
+      "isuzu_oe_oen": [],
+      "filter_position": "FUEL_PRIMARY",
+      "donaldson_status": "NOT_EVALUATED_NO_OEN",
+      "donaldson_part": null,
+      "fleetguard_status": "NOT_EVALUATED_NO_OEN",
+      "fleetguard_part": null,
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_OEM",
+      "caveats": [
+        "Isuzu publishes no fuel filter OEN for these years."
+      ]
+    },
+    {
+      "row_id": "P3-BLOCKED-N-ECOMAX",
+      "phase2_row_id": null,
+      "phase2_unresolved_scope": "N-SERIES NPR ECO-MAX 2011-2018",
+      "isuzu_oe_oen": [],
+      "filter_position": "FUEL_PRIMARY, AIR_PRIMARY",
+      "donaldson_status": "NOT_EVALUATED_NO_OEN",
+      "donaldson_part": null,
+      "fleetguard_status": "NOT_EVALUATED_NO_OEN",
+      "fleetguard_part": null,
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_OEM",
+      "caveats": [
+        "No 4JJ-scoped Isuzu fuel or air OEN."
+      ]
+    },
+    {
+      "row_id": "P3-BLOCKED-N-2022-2026",
+      "phase2_row_id": null,
+      "phase2_unresolved_scope": "N-SERIES MY2022-2026",
+      "isuzu_oe_oen": [],
+      "filter_position": "FUEL_PRIMARY, LUBE_PRIMARY",
+      "donaldson_status": "NOT_EVALUATED_NO_OEN",
+      "donaldson_part": null,
+      "fleetguard_status": "NOT_EVALUATED_NO_OEN",
+      "fleetguard_part": null,
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": null,
+      "decision_status": "BLOCKED_OEM",
+      "caveats": [
+        "Published fuel rows end 2021; lube continuation after 2022i not confirmed by Isuzu."
+      ]
+    }
+  ],
+  "excluded_phase2_rows": [
+    {
+      "phase2_row_id": "P2-N-LUBE-6BG",
+      "isuzu_oe_oen": [
+        "1132004872"
+      ],
+      "reason": "Phase 2 NOT_APPLICABLE: the row binds to no Phase 1 vehicle (engine outside the USA diesel universe), so it is not an eligible Phase 3 input."
+    },
+    {
+      "phase2_row_id": "P2-N-LUBE-4BD",
+      "isuzu_oe_oen": [
+        "8970254642"
+      ],
+      "reason": "Phase 2 NOT_APPLICABLE: the row binds to no Phase 1 vehicle (engine outside the USA diesel universe), so it is not an eligible Phase 3 input."
+    }
+  ],
+  "elimfilters_base_decisions": [
+    {
+      "phase2_row_id": "P2-N-AIR-1986-2005",
+      "sku": "EA16773",
+      "donaldson_part": "P636773",
+      "decision_status": "VERIFIED_BASE",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-N-AIR-2006-ON",
+      "sku": "EA13614",
+      "donaldson_part": "P543614",
+      "decision_status": "VERIFIED_BASE",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-N-LUBE-4JJ",
+      "sku": "EL82597",
+      "donaldson_part": "P502597",
+      "decision_status": "VERIFIED_BASE",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-N-FUEL-4HE",
+      "sku": "EF92564",
+      "donaldson_part": "P552564",
+      "decision_status": "VERIFIED_BASE",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-N-FUEL-2013-2021-A",
+      "sku": "EF92599",
+      "donaldson_part": "P502599",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-N-FUEL-2013-2021-C",
+      "sku": "EF92427",
+      "donaldson_part": "P502427",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-F-FUEL-1994-2004",
+      "sku": "EF92564",
+      "donaldson_part": "P552564",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-F-FUEL-2018-2020-C",
+      "sku": "EF92599",
+      "donaldson_part": "P502599",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-F-FUEL-2018-2020-D",
+      "sku": "EF92427",
+      "donaldson_part": "P502427",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    }
   ],
   "next_actions": [
-    "Obtain Donaldson OE cross-reference data through a channel that is not blocked at the Akamai edge: a Donaldson distributor account, the Donaldson e-catalog at ecatalog.donaldson.com, or the North America edition of the Donaldson filter kit literature if one exists.",
-    "Only after Donaldson is settled per OE/OEN, apply DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD and take the ELIMFILTERS base decisions.",
-    "MANN-FILTER and WIX are reachable now and can supply corroboration once the first two are settled."
+    "Obtain Donaldson data for 8982984040, 2906544040 and 8982373410 through a non-blocked Donaldson channel; until then those rows stay BLOCKED_DONALDSON.",
+    "Only a verified DONALDSON_NOT_MANUFACTURED determination may open a Fleetguard base.",
+    "Reviewer: confirm each reused SKU is live in PostgreSQL, then decide on publication through catalog-write-gateway.",
+    "Resolve Isuzu standard vs high-capacity fuel identity (Phase 2 scope) before any P550390 decision."
   ]
 }
