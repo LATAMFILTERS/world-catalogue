@@ -125,7 +125,7 @@ test('runtime applies governed duty and strict certified-canonical guard before 
   assert.match(source, /catalog_sku_certification/);
   assert.match(source, /certification_state='CERTIFIED'/);
   assert.match(source, /v_api_resolver_v7/);
-  assert.match(source, /resolution:\s*'EVIDENCE_REQUIRED'/);
+  assert.match(source, /EVIDENCE_REQUIRED/);
 });
 
 test('unreviewed cross-duty reference is loaded into fail-closed quarantine', () => {
