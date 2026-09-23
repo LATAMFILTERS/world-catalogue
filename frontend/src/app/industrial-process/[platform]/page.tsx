@@ -5,6 +5,7 @@ import { IndustrialProcessPlatformStablePage } from '@/components/IndustrialProc
 import {
   INDUSTRIAL_PROCESS_PLATFORMS,
   getIndustrialProcessPlatform,
+  industrialProcessMetaDescription,
   industrialProcessPlatformUrl,
 } from '@/lib/industrial-process-architecture';
 
@@ -23,17 +24,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${platform.name} ${platform.descriptor} | ELIMFILTERS`;
   return {
     title,
-    description: platform.summary,
+    description: industrialProcessMetaDescription(platform.summary),
     alternates: { canonical: url },
     openGraph: {
       title,
-      description: platform.summary,
+      description: industrialProcessMetaDescription(platform.summary),
       url,
       type: 'website',
       siteName: 'ELIMFILTERS',
       images: [{ url: `${BASE_URL}${platform.mediaImage ?? platform.heroImage}`, width: 1200, height: 630, alt: `${platform.name} ${platform.descriptor}` }],
     },
-    twitter: { card: 'summary_large_image', title, description: platform.summary, images: [`${BASE_URL}${platform.mediaImage ?? platform.heroImage}`] },
+    twitter: { card: 'summary_large_image', title, description: industrialProcessMetaDescription(platform.summary), images: [`${BASE_URL}${platform.mediaImage ?? platform.heroImage}`] },
   };
 }
 
