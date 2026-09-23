@@ -19,7 +19,7 @@ evidence and states, for every model year, what is closed and what is not.
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 attempt, access blockers, and why no base decision was taken |
 | `config/isuzu-n-series-us-oem-matrix.json` | Extended from 2022-2026 to 2000-2026 so the existing bot resolver answers the whole range |
 | `lib/isuzu-us-diesel-closure.js` | Reader, validator and the canonical filter-set answer |
-| `tests/isuzu-us-diesel-closure.test.js` | 17 tests over the governance invariants and the answer |
+| `tests/isuzu-us-diesel-closure.test.js` | 20 tests over the governance invariants and the answer |
 
 ## Phase 1 — diesel vehicle universe
 
@@ -134,7 +134,21 @@ Service Maintenance Program text, rather than from the manifest's position list.
   Conditioner Blower Filter for monthly *cleaning* and publishes no replacement part
   number. That makes it an unresolved position, not a non-existent one.
 - **DPF is recorded and excluded.** Isuzu schedules it for cleaning every 100,000 miles.
-  It is an emissions device, not a maintenance filter in the ELIMFILTERS sense.
+  It is an emissions device, not a maintenance filter in the ELIMFILTERS sense, so the
+  answer reports it separately instead of counting it as a filter-set position.
+
+### The model-line rule
+
+Isuzu heads its parts sections with model **lines**: "N-SERIES NPR / NRR / NQR" and
+"F-SERIES FTR / FVR / FSR". A suffix variant belongs to its line — NPR-HD and NPR-XD to
+NPR, NRR Derate to NRR, FVR Derate to FVR — so those resolve. A model line Isuzu does not
+name is not covered.
+
+That is what keeps **FRR and FXR empty**: they sit in the same Phase 1 block as FTR and FVR
+and run the same 6HK1-TC, and a block-level binding would have handed them the FTR's lube
+filter. They are separate model lines, Isuzu does not name them, and they come back
+UNRESOLVED. This is asserted by test, because it is exactly the kind of inheritance that
+looks harmless and is not.
 
 ### Closed numbers
 

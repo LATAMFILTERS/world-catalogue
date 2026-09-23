@@ -174,6 +174,46 @@ test('the closure answers the question it exists to answer', () => {
   }
 });
 
+test('FXR and FRR answer empty even though they share a block and an engine with FTR', () => {
+  const ftr = answerFilterSetQuery({ year: 2007, model: 'FTR' }).answers[0];
+  const fxr = answerFilterSetQuery({ year: 2007, model: 'FXR' }).answers[0];
+  const frr = answerFilterSetQuery({ year: 2005, model: 'FRR' }).answers[0];
+
+  // Same block, same 6HK1-TC.
+  assert.equal(ftr.engine_code, '6HK1-TC');
+  assert.equal(fxr.engine_code, '6HK1-TC');
+  assert.equal(ftr.block_id, fxr.block_id);
+
+  const lubeOf = (v) => v.positions.find((p) => p.position === 'LUBE_PRIMARY');
+  assert.equal(lubeOf(ftr).status, 'PARTIAL');
+  assert.ok(lubeOf(ftr).isuzu_oe_oen.length > 0);
+
+  // Isuzu's section heading names FTR / FVR / FSR. FXR and FRR are separate
+  // model lines and must come back with nothing rather than inherit.
+  assert.equal(lubeOf(fxr).status, 'UNRESOLVED');
+  assert.deepEqual(lubeOf(fxr).isuzu_oe_oen, []);
+  assert.equal(lubeOf(frr).status, 'UNRESOLVED');
+  assert.deepEqual(lubeOf(frr).isuzu_oe_oen, []);
+});
+
+test('a suffix variant does resolve through its own model line', () => {
+  const derate = answerFilterSetQuery({ year: 2026, model: 'NRR DERATE' }).answers[0];
+  const separator = derate.positions.find((p) => p.position === 'FUEL_WATER_SEPARATOR');
+  assert.equal(separator.status, 'VERIFIED');
+  assert.ok(separator.isuzu_oe_oen.includes('8982373410'));
+
+  const hd = answerFilterSetQuery({ year: 2019, model: 'NPR-HD' }).answers[0];
+  assert.equal(hd.positions.find((p) => p.position === 'AIR_PRIMARY').status, 'VERIFIED');
+});
+
+test('the DPF is reported as informational, not as a filter-set position', () => {
+  const vehicle = answerFilterSetQuery({ year: 2019, model: 'NPR-HD' }).answers[0];
+  assert.ok(!vehicle.positions.some((p) => p.position === 'DPF'));
+  const dpf = vehicle.informational.find((i) => i.position === 'DPF');
+  assert.ok(dpf, 'the DPF must still be reported');
+  assert.match(dpf.service, /100,000 miles/);
+});
+
 test('a 2011-2018 NPR answers on the 3.0L, not on the 5.2L', () => {
   const answer = answerFilterSetQuery({ year: 2015, model: 'NPR' });
   assert.equal(answer.status, 'ANSWERED');
