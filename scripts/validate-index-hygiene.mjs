@@ -105,7 +105,12 @@ for (const retired of ['moleculas', '/products', '/video-thumbnails/']) {
   if (videoSitemap.includes(retired)) violations.push(`video-sitemap.xml contains retired/invalid signal: ${retired}`);
 }
 const videoBlocks = [...videoSitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => match[1]);
-if (videoBlocks.length !== 11) violations.push(`video-sitemap.xml expected 11 governed videos, found ${videoBlocks.length}`);
+const industrialProcessVideoBlocks = videoBlocks.filter((block) => {
+  const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1] || '';
+  return loc.includes('/industrial-process');
+});
+if (videoBlocks.length !== 31) violations.push(`video-sitemap.xml expected 31 governed videos, found ${videoBlocks.length}`);
+if (industrialProcessVideoBlocks.length !== 20) violations.push(`video-sitemap.xml expected 20 Industrial & Process videos, found ${industrialProcessVideoBlocks.length}`);
 const tagValue = (block, tag) => block.match(new RegExp(`<${tag}>([^<]+)<\\/${tag}>`))?.[1];
 for (const block of videoBlocks) {
   const loc = tagValue(block, 'loc');
