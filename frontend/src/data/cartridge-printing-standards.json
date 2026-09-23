@@ -36,7 +36,7 @@
   },
   "skuRules": [
     {
-      "prefixFamily": "EF5-EF9",
+      "prefixFamily": "EF3,EF6-EF9",
       "productType": "Fuel Filter",
       "technology": "SYNTAPORE",
       "technologyAsset": "frontend/public/assets/SYNTAPORE_final.avif"
