@@ -201,6 +201,26 @@ export default function IndustrialProcessPage() {
           </div>
         </section>
 
+        <section style={section} aria-labelledby="industrial-direct-answer-title">
+          <div style={container}>
+            <div style={twoCol}>
+              <div>
+                <p style={eyebrow}>DIRECT ANSWER</p>
+                <h2 id="industrial-direct-answer-title" style={sectionTitle}>What is ELIMFILTERS Industrial &amp; Process?</h2>
+              </div>
+              <div>
+                <p style={lead}>
+                  ELIMFILTERS Industrial &amp; Process is the commercial engineering division for replacement filtration, separation and treatment media used in industrial air, dust and fume, gas, fluid-conditioning and water-treatment applications.
+                </p>
+                <h3 style={{ ...sectionTitle, fontSize: 'clamp(1.4rem,2.3vw,2.2rem)', marginTop: 28 }}>Does ELIMFILTERS sell complete process equipment?</h3>
+                <p style={bodyCopy}>
+                  No. The commercial scope is centered on validated replacement media and filtration, separation or treatment elements. Housings, vessels, collectors, skids, pumps, fans, ductwork and controls are application context unless a separate ELIMFILTERS system scope is explicitly approved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section style={{ ...section, background: '#050505' }} aria-labelledby="scope-title">
           <div style={container}>
             <div style={twoCol}>
