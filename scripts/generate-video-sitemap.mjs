@@ -30,7 +30,7 @@ const VIDEOS = [
   { id:'partion', title:'PARTION™ Dust & Fume Technologies', description:'Industrial dust and fume filtration for process-generated particulate and extraction duties.', page:'/industrial-process/partion/', content:'/images/PARTION-VIDEO.mp4', thumbnail:'/images/PARTION%E2%84%A2.png' },
   { id:'fumevra', title:'FUMEVRA™ Fine Dust & Fume Filtration', description:'Process-generated fine dust and fume filtration for industrial extraction and dust-collection systems.', page:'/industrial-process/partion/fumevra/', content:'/images/fumevra-%20video.mp4', thumbnail:'/images/FUMEVRA%E2%84%A2.png' },
 
-  { id:'coalvex', title:'COALVEX™ Gas Conditioning Technologies', description:'Gas conditioning architecture for coalescence and gas-liquid separation duties.', page:'/industrial-process/coalvex/', content:'/images/Oil%26Gas(1).mp4', thumbnail:'/images/coalvex.png' },
+  { id:'coalvex', title:'COALVEX™ Gas Conditioning Technologies', description:'Gas conditioning architecture for coalescence and gas-liquid separation duties.', page:'/industrial-process/coalvex/', content:'/images/COALVEX.mp4', thumbnail:'/images/coalvex.png' },
   { id:'coaleris', title:'COALERIS™ Gas Coalescence', description:'Gas coalescence treatment for entrained liquid aerosols and fine droplets in gas streams.', page:'/industrial-process/coalvex/coaleris/', content:'/images/COALERIS.mp4', thumbnail:'/images/COALERIS.png' },
   { id:'gas-liquid-separation', title:'Gas-Liquid Separation', description:'Gas-liquid separation treatment for bulk or entrained liquid removal in gas-process applications.', page:'/industrial-process/coalvex/gas-liquid-separation/', content:'/images/Gas%20Liquid.mp4', thumbnail:'/images/Gas-Liquid%20Separation.png' },
 
