@@ -99,7 +99,7 @@ const searchNoindex = /name=["']robots["'][^>]+content=["'][^"']*noindex/i.test(
 const searchAbsent = !byUrl.has(`${BASE_URL}/knowledge-center/search/`);
 gate('06 Internal search isolation', searchNoindex && searchAbsent, `noindex=${searchNoindex}; sitemapAbsent=${searchAbsent}`);
 
-// 7. Citation API exposes all ten canonical technologies, including TURBOCORE.
+// 7. Citation API exposes all ten Asset Protection technologies and llms guidance exposes Industrial & Process as a separate governed domain.
 const technologyIndexPath = path.join(ROOT, 'frontend', 'public', 'api', 'citation', 'type', 'technology.json');
 let citationKeys = [];
 if (fs.existsSync(technologyIndexPath)) {
@@ -108,7 +108,19 @@ if (fs.existsSync(technologyIndexPath)) {
 }
 const requiredTech = ['MACROCORE','MICROKAPPA','DRYCORE','INTEKCORE','SYNTAPORE','HYDROCORE','TURBOCORE','SYNTRAX','NANOFORCE','THERMACORE'];
 const missingTech = requiredTech.filter((key) => !citationKeys.includes(key));
-gate('07 GEO citation technology coverage', missingTech.length === 0, missingTech.length ? `missing ${missingTech.join(', ')}` : '10/10 canonical technologies citation-grade');
+const llms = fs.readFileSync(path.join(ROOT, 'frontend', 'public', 'llms.txt'), 'utf8');
+const llmsIndustrialUrlCount = new Set(
+  [...llms.matchAll(/https:\/\/elimfilters\.com\/industrial-process\/[^\s]*/g)].map((match) => match[0].replace(/[),.;]+$/, '')),
+).size;
+const llmsIndustrialOk =
+  llms.includes('Industrial & Process — separate commercial engineering domain') &&
+  llms.includes('Canonical Asset Protection core technologies — exactly 10') &&
+  llmsIndustrialUrlCount === 20;
+gate(
+  '07 GEO citation and Industrial Process coverage',
+  missingTech.length === 0 && llmsIndustrialOk,
+  `assetProtectionMissing=${missingTech.length}; industrialLlmsUrls=${llmsIndustrialUrlCount}/20`,
+);
 
 // 8. Retired NFPA authority surfaces are not generated as indexable pages.
 const retiredFiles = [
@@ -121,19 +133,52 @@ const retiredIndexable = retiredFiles.filter((rel) => {
 });
 gate('08 Retired authority removal', retiredIndexable.length === 0, retiredIndexable.length ? `indexable retired surfaces: ${retiredIndexable.join(', ')}` : 'NFPA T2.14 authority surfaces absent or non-indexable');
 
-// 9. AEO FAQ hub is indexable and exposes FAQ structured data.
+// 9. AEO answer surfaces: FAQ hub plus Industrial & Process direct-answer/schema surface.
 const faqHtml = read('knowledge-center/faq/index.html');
 const faqSchema = faqHtml.includes('FAQPage');
 const faqNoindex = faqHtml.includes('noindex');
 const faqInSitemap = byUrl.has(`${BASE_URL}/knowledge-center/faq/`);
-gate('09 AEO answer surface', faqSchema && !faqNoindex && faqInSitemap, `FAQPage=${faqSchema}; indexable=${!faqNoindex}; sitemap=${faqInSitemap}`);
+const industrialHtml = read('industrial-process/index.html');
+const industrialAeoOk =
+  industrialHtml.includes('What is ELIMFILTERS Industrial') &&
+  industrialHtml.includes('Does ELIMFILTERS sell complete process equipment?') &&
+  industrialHtml.includes('CollectionPage') &&
+  industrialHtml.includes('BreadcrumbList') &&
+  industrialHtml.includes('VideoObject');
+gate(
+  '09 AEO answer surfaces',
+  faqSchema && !faqNoindex && faqInSitemap && industrialAeoOk,
+  `FAQPage=${faqSchema}; faqIndexable=${!faqNoindex}; faqSitemap=${faqInSitemap}; industrialAeo=${industrialAeoOk}`,
+);
 
-// 10. Sitemap index and robots discovery are wired to current canonical sitemaps.
+// 10. Sitemap index and robots discovery are wired, and all 20 Industrial & Process pages are exposed consistently.
 const sitemapIndex = read('sitemap-index.xml');
 const robots = read('robots.txt');
+const aiSitemap = read('sitemap-ai.xml');
+const videoSitemap = read('video-sitemap.xml');
 const sitemapIndexOk = ['sitemap.xml', 'sitemap-ai.xml', 'video-sitemap.xml'].every((name) => sitemapIndex.includes(`${BASE_URL}/${name}`));
 const robotsOk = robots.includes(`${BASE_URL}/sitemap-index.xml`) || robots.includes(`${BASE_URL}/sitemap.xml`);
-gate('10 Discovery wiring', sitemapIndexOk && robotsOk, `sitemapIndex=${sitemapIndexOk}; robots=${robotsOk}`);
+const industrialMainUrls = urls.filter((url) => new URL(url).pathname.startsWith('/industrial-process'));
+const industrialAiUrls = [...aiSitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
+  .map((match) => match[1])
+  .filter((url) => new URL(url).pathname.startsWith('/industrial-process'));
+const industrialVideoUrls = [...videoSitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
+  .map((match) => match[1])
+  .filter((url) => new URL(url).pathname.startsWith('/industrial-process'));
+const canonicalIndustrialSet = new Set(industrialMainUrls.map((url) => url.replace(/\/$/, '')));
+const sameIndustrialSet = (candidates) => {
+  const set = new Set(candidates.map((url) => url.replace(/\/$/, '')));
+  return set.size === canonicalIndustrialSet.size && [...canonicalIndustrialSet].every((url) => set.has(url));
+};
+const industrialDiscoveryOk =
+  canonicalIndustrialSet.size === 20 &&
+  sameIndustrialSet(industrialAiUrls) &&
+  sameIndustrialSet(industrialVideoUrls);
+gate(
+  '10 Discovery wiring',
+  sitemapIndexOk && robotsOk && industrialDiscoveryOk,
+  `sitemapIndex=${sitemapIndexOk}; robots=${robotsOk}; industrialMain=${canonicalIndustrialSet.size}/20; industrialAI=${new Set(industrialAiUrls).size}/20; industrialVideo=${new Set(industrialVideoUrls).size}/20`,
+);
 
 const score = gates.reduce((sum, item) => sum + item.score, 0);
 const report = {
