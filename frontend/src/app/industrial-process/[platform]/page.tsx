@@ -62,10 +62,22 @@ export default async function IndustrialProcessPlatformRoute({ params }: Props) 
       })),
     },
   };
+  const videoSchema = platform.heroVideo ? {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    '@id': `${url}#hero-video`,
+    name: `${platform.name} — ${platform.descriptor}`,
+    description: platform.summary,
+    contentUrl: `${BASE_URL}${platform.heroVideo}`,
+    thumbnailUrl: [`${BASE_URL}${platform.mediaImage ?? platform.heroImage}`],
+    isPartOf: { '@id': `${url}#platform` },
+    publisher: { '@id': `${BASE_URL}/#organization` },
+  } : null;
   return (
     <>
       <Navigation />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      {videoSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} /> : null}
       <IndustrialProcessPlatformStablePage platform={platform} />
     </>
   );
