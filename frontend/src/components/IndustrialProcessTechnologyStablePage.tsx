@@ -62,7 +62,7 @@ export function IndustrialProcessTechnologyStablePage({
     name: technology.name,
     url,
     description: technology.summary,
-    image: `https://elimfilters.com${technology.heroImage}`,
+    image: `https://elimfilters.com${technology.mediaImage}`,
     author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
     publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
     about: technology.mechanisms.map((name) => ({ '@type': 'Thing', name })),
