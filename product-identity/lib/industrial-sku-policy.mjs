@@ -90,10 +90,33 @@ export function collisionCandidates({ technologyCore, baseCode } = {}) {
   return out;
 }
 
-export function planIndustrialSkus(candidates = [], { occupiedSkus = [] } = {}) {
+export function planIndustrialSkus(candidates = [], { occupiedSkus = [], publicationOrderLocked = false } = {}) {
   const occupied = new Set([...occupiedSkus].map((value) => String(value || '').trim().toUpperCase()).filter(Boolean));
   const seenIdentity = new Set();
   const result = [];
+
+  // A collision decision is identity governance: when a batch contains
+  // multiple new products competing for one preferred slot, array order must
+  // never become an accidental business rule. The caller must explicitly
+  // attest that candidate order is the reviewed/frozen publication order.
+  const preferredCounts = new Map();
+  for (const candidate of candidates) {
+    const technologyCore = normalizeCore(candidate?.technology_core ?? candidate?.technologyCore);
+    const baseCode = normalizeSourceCode(candidate?.source_code ?? candidate?.baseCode);
+    const preferred = preferredIndustrialSku({ technologyCore, baseCode });
+    if (preferred.status === 'PREFERRED') {
+      preferredCounts.set(preferred.sku, (preferredCounts.get(preferred.sku) || 0) + 1);
+    }
+  }
+  const hasInBatchCollision = [...preferredCounts.values()].some((count) => count > 1);
+  if (hasInBatchCollision && publicationOrderLocked !== true) {
+    return candidates.map((candidate) => ({
+      ...candidate,
+      planned_sku: null,
+      sku_status: 'STOP_REVIEW',
+      sku_reason: 'COLLISION_ALLOCATION_ORDER_NOT_FROZEN',
+    }));
+  }
 
   for (const candidate of candidates) {
     const technologyCore = normalizeCore(candidate?.technology_core ?? candidate?.technologyCore);
@@ -165,7 +188,7 @@ INDUSTRIAL & PROCESS SKU NOMENCLATURE v1
 - Preferred SKU = approved 3-character Industrial prefix + last four numeric digits extracted from the canonical base code; 1–3 digits are left-padded with zeros.
 - Letters and punctuation from the external base code are never treated as ELIMFILTERS product identity. The complete external brand/code remains in canonical-source fields.
 - If two distinct products in the same Industrial prefix prefer the same last-four payload, the first published mapping keeps the natural slot. Later distinct products use prefix + collision discriminator 1..9 + the last three numeric digits, skipping occupied slots.
-- Published mappings are sticky: a later discovery never displaces an existing Industrial SKU.
+- Published mappings are sticky: a later discovery never displaces an existing Industrial SKU. A first-publication batch containing collisions must freeze its reviewed publication order before allocation; array/input order is never allowed to become an accidental identity rule.
 - If a base code has no numeric payload, the core has no approved prefix, minting is blocked, or all collision slots are occupied, STOP_REVIEW. Never hash, truncate letters into pseudo-numbers, or invent a fallback SKU.
 - SKU format must remain compatible with the catalogue constraint ^[A-Z]{2}[0-9]{4,7}[A-Z]{0,2}$.
 - Planning does not write the catalogue. Catalogue minting requires the separate approved publication phase.
