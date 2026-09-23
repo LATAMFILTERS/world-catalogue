@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0.0",
+  "policy_version": "INDUSTRIAL_SKU_NOMENCLATURE_V1_2026-09-22",
+  "pilot_id": "COALVEX-PILOT-01",
+  "phase": "PHASE_3_SKU_NOMENCLATURE",
+  "status": "PREVIEW_ONLY",
+  "catalogue_write_allowed": false,
+  "source_manifest": "config/industrial-product-pilots/coalvex-pilot-01.json",
+  "rule": {
+    "prefix": "IG1",
+    "natural": "IG1 + last four numeric digits from canonical base code; left-pad to four digits when needed",
+    "collision": "IG1 + collision discriminator 1..9 + last three digits; skip occupied slots",
+    "sticky": true,
+    "failure_mode": "STOP_REVIEW",
+    "no_numeric_payload": "STOP_REVIEW",
+    "namespace_exhausted": "STOP_REVIEW"
+  },
+  "mappings": [
+    {
+      "source_brand": "PALL",
+      "source_code": "CC3LGA7H13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG13713",
+      "sku_method": "NATURAL_LAST4",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CC3LGB7H13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG11713",
+      "sku_method": "COLLISION_INDEX_PLUS_LAST3",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CC3LG02H13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG10213",
+      "sku_method": "NATURAL_LAST4",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGH",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG10604",
+      "sku_method": "NATURAL_LAST4",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGH1",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG16041",
+      "sku_method": "NATURAL_LAST4",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGH13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG10413",
+      "sku_method": "NATURAL_LAST4",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGBH",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG11604",
+      "sku_method": "COLLISION_INDEX_PLUS_LAST3",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGBH1",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG11041",
+      "sku_method": "COLLISION_INDEX_PLUS_LAST3",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGBH13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG11413",
+      "sku_method": "COLLISION_INDEX_PLUS_LAST3",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGDH13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG12413",
+      "sku_method": "COLLISION_INDEX_PLUS_LAST3",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGBDH13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG13413",
+      "sku_method": "COLLISION_INDEX_PLUS_LAST3",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGT2H13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG14213",
+      "sku_method": "NATURAL_LAST4",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGT2DH13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG11213",
+      "sku_method": "COLLISION_INDEX_PLUS_LAST3",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGBT2H13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG12213",
+      "sku_method": "COLLISION_INDEX_PLUS_LAST3",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    },
+    {
+      "source_brand": "PALL",
+      "source_code": "CS604LGBT2DH13",
+      "technology_core": "TC-NG-01",
+      "sku_prefix": "IG1",
+      "planned_sku": "IG13213",
+      "sku_method": "COLLISION_INDEX_PLUS_LAST3",
+      "status": "PREVIEW_ONLY_NOT_MINTED"
+    }
+  ]
+}
