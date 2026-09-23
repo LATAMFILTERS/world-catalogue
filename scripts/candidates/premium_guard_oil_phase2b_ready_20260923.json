@@ -1,0 +1,1003 @@
+[
+  {
+    "premium_guard_code": "HG50011",
+    "target_sku": "EL30036",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH36A",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/hg50011/",
+    "source_html_sha256": "7262c3629b788b937e6f5779ddae2e877237a1cd5f977008f95f7f3d15b39562",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "HG50039",
+    "target_sku": "EL38910",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH8910",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/hg50039/",
+    "source_html_sha256": "90465d8960fe979c43bb5292d93e94f3866cbd41487be9ef2fe830320ee4a663",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "HG50056",
+    "target_sku": "EL33306",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH3306A",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/hg50056/",
+    "source_html_sha256": "f43dc3c5ae2f2b72b9f4637204f47d66280711391649c9c13a4f4e63c37c42a7",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "HG50071",
+    "target_sku": "EL39116",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH9116",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/hg50071/",
+    "source_html_sha256": "c9dbf4abd5649c7efa9fd5fdb631f8c3e0c1984e423ecba349d924fb2beed4d1",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "HG50079",
+    "target_sku": "EL32110",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU12110X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/hg50079/",
+    "source_html_sha256": "9356947e83356fd4a8c1fff52f2c25b8f9a46883e6070b54526133a9bf241803",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "HG50106",
+    "target_sku": "EL39007",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU9007Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/hg50106/",
+    "source_html_sha256": "61129ef721288d0cec889bf32fe7a0ed14a4af27637ad75c1752c434215f1daf",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG11C",
+    "target_sku": "EL37329",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH7329",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg11c/",
+    "source_html_sha256": "229391ff21afca9191f4f554c03a6b962d4eb4921f05d785f092006a02b1517a",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG183",
+    "target_sku": "EL31220",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "W71220",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg183/",
+    "source_html_sha256": "3b7d764fe5373b779c98414dea28a412a470db3eb4f9df5717bc0755b704d604",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG195",
+    "target_sku": "EL31912",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "W71912",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg195/",
+    "source_html_sha256": "6e150d2e04e91d55e55670a0d42408e21f6c5d0975534daf7d0eaa2785c14fcf",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG2222",
+    "target_sku": "EL30060",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH10060",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg2222/",
+    "source_html_sha256": "3c638b56837fe1bb033edb1da5be367affb5542992e0dd71322edf5cda1ed9f9",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG241",
+    "target_sku": "EL31295",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "W71295",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg241/",
+    "source_html_sha256": "791099fc6f0fd8ca730689e4a45625346ebab18f1ed1eb030f4e853ff79e2b11",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG2500",
+    "target_sku": "EL30575",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH10575",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg2500/",
+    "source_html_sha256": "8b618217f7bc1d1609a10003efadbd5cdbad592bd5f5ff4a12f4960f916e8347",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG288",
+    "target_sku": "EL33766",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH3766",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg288/",
+    "source_html_sha256": "07d04f4ae9e552066dc9c771e3998023a1da21618e5f420378defe7ed6417c90",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG3056",
+    "target_sku": "EL32930",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH2930",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg3056/",
+    "source_html_sha256": "4e84bbd24dfc2cf4957cb997e62e30d82eb13c6eac64bfa4640289383bc824ac",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG40084",
+    "target_sku": "EL30373",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH373",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg40084/",
+    "source_html_sha256": "bca3409c812df4dad07d24e40f24020685832297a88f54327643b67ca9928552",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG4457",
+    "target_sku": "EL33682",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH3682",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg4457/",
+    "source_html_sha256": "67b2b98350c947176f93313374808ed81b5167e1e450141101c0af67cbcb7191",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG4459",
+    "target_sku": "EL33593",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH3593A",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg4459/",
+    "source_html_sha256": "524f9b8fd430e770d965122a23869abec73ea96660bf0584e869147fd50506b2",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG4476",
+    "target_sku": "EL34967",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH4967",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg4476/",
+    "source_html_sha256": "1fd431520e5eb0b33e8f799cd8398f1a6274fe90b55c2dc71207c283bad9780d",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG4484",
+    "target_sku": "EL38212",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH8212",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg4484/",
+    "source_html_sha256": "0bb7069a8fa963dd2ddc3372a7b8c430c5eb17740326b58cbe6370fd68dbb911",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG4756",
+    "target_sku": "EL36847",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH6847",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg4756/",
+    "source_html_sha256": "ba0ee54370af6cbc8ead6ed4cd016ca5f1784fa31284214f11da213dc6299af0",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG4757",
+    "target_sku": "EL37271",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7271X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg4757/",
+    "source_html_sha256": "65c4e929d2638c21144256f16d38ced5f2402cdfcaf96d0539e3b0960d55c57d",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG4798",
+    "target_sku": "EL37732",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH7732",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg4798/",
+    "source_html_sha256": "1f888d0801c05b7a01498b07964284eb022bf5945f49582183333473366076e4",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG4872",
+    "target_sku": "EL33786",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH3786",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg4872/",
+    "source_html_sha256": "3b7720ef688c890b6e6e3ca22e68e09bd04dcddc1e43d697e53afaf06f5addc9",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG4875",
+    "target_sku": "EL39142",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "W9142",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg4875/",
+    "source_html_sha256": "810b877e3b2fa58fe46683114118f971e683795f2d2c6e14b3294597dafe41f5",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5247",
+    "target_sku": "EL39254",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU9254X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5247/",
+    "source_html_sha256": "cc1bc6286cfb7c0650b0749951f10b8feb7e1b157dc319b006e5c01003405ce8",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5251",
+    "target_sku": "EL37154",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7154X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5251/",
+    "source_html_sha256": "5181c3a51813c2241adbf367cd351ace23d248b5b5b78ded75af1de8d0a659a3",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5259",
+    "target_sku": "EL30951",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU951X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5259/",
+    "source_html_sha256": "90d2099e7c00ecffc2cb73b5613d6c0be75945729445e486602cc801e91e55c9",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5280",
+    "target_sku": "EL39384",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU9384X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5280/",
+    "source_html_sha256": "ae53237816e4d78df0c03c2b8d76083c2cad9b9de64887f0878a59a26f8c8ad6",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5335",
+    "target_sku": "EL33976",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH3976A",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5335/",
+    "source_html_sha256": "933567b056e83bedc99e1f8ae34cf697d0e19bf34e307d732e2e2e7f8c53a063",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5401",
+    "target_sku": "EL33021",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "W93021",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5401/",
+    "source_html_sha256": "43670e8ab3256102bdc25785a15494b2f358a53560e60de3bf57d92639378409",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5436",
+    "target_sku": "EL30692",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU692",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5436/",
+    "source_html_sha256": "1d4318de1dc652daa7859dd738019bacff90bfd4650c4a4f06aaa4c19f0cd847",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5438",
+    "target_sku": "EL34967",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH4967",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5438/",
+    "source_html_sha256": "01009aed577bd75eab051a3599b1353d671e934a68589bd71de31a36b5510b05",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5476",
+    "target_sku": "EL39447",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH9447",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5476/",
+    "source_html_sha256": "df21e4012acded705350546b4ca4796ef62af6b5e81f5551735d86b084eba493",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5511EX",
+    "target_sku": "EL37155",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7155X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5511ex/",
+    "source_html_sha256": "139bf274c5f37c79bfa1adfe4f7254bb2a76de06788cf4f73108c39dfaaae0e0",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5514",
+    "target_sku": "EL30514",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU514X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5514/",
+    "source_html_sha256": "602c4018a2bda47f25cc087f0458efd630e76c8f4ae25c500351352471b7cda7",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5526",
+    "target_sku": "EL39549",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH9549",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5526/",
+    "source_html_sha256": "f527fb5ad57ae08f9d99113dff0de2cb281a1fbc027eaf57da04980ce86fd14f",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5544",
+    "target_sku": "EL37213",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7213X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5544/",
+    "source_html_sha256": "d67ac9a187c3599170c4e5600a6fb4b1d68738e76df0c5037ad5c2eb7a0ad717",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5545EX",
+    "target_sku": "EL39326",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU9326N",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5545ex/",
+    "source_html_sha256": "a1b15e7a93e3ed64ed17ea1abc003b80ac517e8f83d1042abe5bd1b8a9606d7c",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5564EX",
+    "target_sku": "EL30823",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU823X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5564ex/",
+    "source_html_sha256": "9edcc4556cfcb78d7b6caee034460da4c3e41439d7229136b6f3c089b2b7ac02",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5579EX",
+    "target_sku": "EL38351",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU8351Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5579ex/",
+    "source_html_sha256": "c23c3778159d77900f287c223abde50c99b0fa0be43982f161810f5cca99fa39",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5598EX",
+    "target_sku": "EL37029",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7029Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5598ex/",
+    "source_html_sha256": "64da24eb6c942b102360674f4078abd0b23f33503da64fcab19cb4c378efe37d",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5610",
+    "target_sku": "EL39999",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH9999",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5610/",
+    "source_html_sha256": "cf6b931761b20fd79757b511ab9b28aefa5313abe02950b06f80c0ef6219aaa1",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5690",
+    "target_sku": "EL39264",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU9264X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5690/",
+    "source_html_sha256": "a851919ec19f87c02e5f98da14f5fc213fd77ecde421e0a906754e82d3c0301a",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5702",
+    "target_sku": "EL30295",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH10295",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5702/",
+    "source_html_sha256": "59886a2da834352f40551a8cbf30f309e4aa4e6cb982b84467c758d12486add1",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5830EX",
+    "target_sku": "EL31151",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU71151X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5830ex/",
+    "source_html_sha256": "1a15fc57fb796b027d24c012d5382d207ae38fa9e1351b154d267b72d41936dd",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5843",
+    "target_sku": "EL37005",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7005X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5843/",
+    "source_html_sha256": "1ae476b6d673f9151136af4d4468eb730b5c7eecbeb5908c5454591f4ca0c2e4",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5844",
+    "target_sku": "EL36121",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU6121X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5844/",
+    "source_html_sha256": "976b209201b13b13ab7adf0f244972518988db7ef31382fc7f2ee3be8cdca44e",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5890",
+    "target_sku": "EL38010",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU8010Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5890/",
+    "source_html_sha256": "8a61d63f3857640c1dfbb38e8c17304c01ed56ab446ca27bef1f7a7e4957828f",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5895",
+    "target_sku": "EL31945",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "W71945",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5895/",
+    "source_html_sha256": "bf7a8673a116640eb3a51137df9df5b4b80e8e9dc6f4d0864a4aba54698e88d5",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5906EX",
+    "target_sku": "EL38012",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU8012Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5906ex/",
+    "source_html_sha256": "7c32154293a8ae7c49170e6c7863e82564265a20daab92cf27ba521405bfcedd",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5909",
+    "target_sku": "EL37214",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7214X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5909/",
+    "source_html_sha256": "8148e778cdbb769b2a1f9b808da1f5b55c235bc62497ae962d41e465d91d8612",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG63798",
+    "target_sku": "EL36065",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH6065B",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg63798/",
+    "source_html_sha256": "a278d4bd1f41c016da8412acf73e74f753684f5daa491eb3fc22ad7bf9694118",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG6822",
+    "target_sku": "EL36065",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH6065B",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg6822/",
+    "source_html_sha256": "f798dc59c7698820e8410aa71b34cdcca05be32547102349510cc21a09d4a2c0",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG7019",
+    "target_sku": "EL37328",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH7328",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg7019/",
+    "source_html_sha256": "92a43646a17c072b5a2410180eb47049c0a6a06f778d94c0bf7c3b2a5aaab63e",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG7212",
+    "target_sku": "EL38157",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH8157",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg7212/",
+    "source_html_sha256": "12d7907c8b4ac316766e16014c21c51ad7e097980e7b11730d15ed654984eee9",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG7662",
+    "target_sku": "EL39897",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH9897",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg7662/",
+    "source_html_sha256": "6be71b4f43d0d89f38087db1fc468aa474a602c56650f91f61ab148083cdc1c8",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG7819",
+    "target_sku": "EL31328",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "W71328",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg7819/",
+    "source_html_sha256": "c7e8781791a1e16ec6f78cbd6ab4de6c392b408707d49192db20cb1f24fe4ad1",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG8113EX",
+    "target_sku": "EL37197",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7197X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg8113ex/",
+    "source_html_sha256": "b0a097f80ec6408742f4a619fa43d856b6d9bcae0ded1f0233c09d032baa5c3e",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG8154",
+    "target_sku": "EL31955",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH11955",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg8154/",
+    "source_html_sha256": "103e9baf490e30a84aacc4eb3d2ce9bb27cab69617243d5a81e14835a4648de2",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG8154EX",
+    "target_sku": "EL31955",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH11955",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg8154ex/",
+    "source_html_sha256": "543cc290b04118d9523b8d51f7375f27ccce974281171748bbf7f380af4c4440",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG8157EX",
+    "target_sku": "EL31794",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH11794",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg8157ex/",
+    "source_html_sha256": "074d80bbf0b82fdac37c1739bcf636b9f6c652e2953a239d97ea17a75065b7eb",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG8161EX",
+    "target_sku": "EL36002",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU6002Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg8161ex/",
+    "source_html_sha256": "ec918b9332239d1ba8dc7889116f857ae690950d030e114a53d583627afa44e1",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG8176EX",
+    "target_sku": "EL37020",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7020Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg8176ex/",
+    "source_html_sha256": "d2a550890d257f0e6aff073fff601a0a20405d2c160b27447b02cdaba0514221",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG84",
+    "target_sku": "EL39303",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU9303X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg84/",
+    "source_html_sha256": "3b9e49fd643b1423730c2c7b13e188bfe177c0a5af68a784afb8d378fdd61cfe",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG85",
+    "target_sku": "EL33970",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH3970",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg85/",
+    "source_html_sha256": "b8502032c092172597a1b6a2c22d5caf0b5a635fc9fe731b53dfc46e96f13e0d",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG8812",
+    "target_sku": "EL39263",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU9263X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg8812/",
+    "source_html_sha256": "50205d37f5f10c255c1a1fafcb04783cc259768edce4b9bd33773015daedd671",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG90012EX",
+    "target_sku": "EL36020",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU6020Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg90012ex/",
+    "source_html_sha256": "b4a6f83800314de477f55ace85902a8d082ebf3e01fa070b7f60dcc290908e9a",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG90022EX",
+    "target_sku": "EL33013",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "W93013",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg90022ex/",
+    "source_html_sha256": "34b1c7782d1c4824db8b1e1253eb06bf9705376a2b3c2a5723ab441368e5fab3",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99034EX",
+    "target_sku": "EL31935",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH11935",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99034ex/",
+    "source_html_sha256": "1d2969f741ebe2c65333777f43958e555df1cd8265e638abbd1cf284e9258360",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG9904EX",
+    "target_sku": "EL37025",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7025Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg9904ex/",
+    "source_html_sha256": "395c35448f36f5b08174e6151e665ad18b4dea1e61aa986fead09e55ee14f8e0",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99090EX",
+    "target_sku": "EL37026",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7026Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99090ex/",
+    "source_html_sha256": "a29b5ff4e4b2eed9aa604ea23051cf0de68ec0ad588afdaa32a21cf5994a5bc9",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99139",
+    "target_sku": "EL32069",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH12069",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99139/",
+    "source_html_sha256": "6480a62d3196fabe07db01c44fc3cb12aa18490260007f9ff23672f0b67f6c41",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99221EX",
+    "target_sku": "EL31792",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH11792",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99221ex/",
+    "source_html_sha256": "f91793a7694323cbbde574c7ad18fddc9a9c83d21d0f93d5e859d94b0320b4bd",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99354EX",
+    "target_sku": "EL30730",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "W730",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99354ex/",
+    "source_html_sha256": "579c64f1d21b3e90f5f9e6f6b9c06c1b897d393ae38d1fbc48d7be6434e2700e",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99356EX",
+    "target_sku": "EL37051",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7051Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99356ex/",
+    "source_html_sha256": "80db627a5e2096da7caaae68fb475b51cc712e01496118666a83dfe68b7e462a",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99460EX",
+    "target_sku": "EL36014",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU6014Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99460ex/",
+    "source_html_sha256": "a0d8fa5e789b8a2db43c97053e3f2cb15b899f26749ebb25df244dc1dc3798a5",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99462",
+    "target_sku": "EL37212",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7212X",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99462/",
+    "source_html_sha256": "9e966c6d62e4a6e106ca6ed4a4db27c7e765369603620f385f7d2c032c2deb2a",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99495",
+    "target_sku": "EL32447",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH12447",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99495/",
+    "source_html_sha256": "91f53cefcc7e335e7df566caf59e938adf17f5f2e42ebd8e47fbc2ab7f84ea14",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99518EX",
+    "target_sku": "EL32782",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH12782",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99518ex/",
+    "source_html_sha256": "3157d918aff3a0f5e101316968986a0189801abdd0de2094f06d292ff7a1ee3e",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG9953",
+    "target_sku": "EL30267",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH10267",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg9953/",
+    "source_html_sha256": "8efeff3dcd0bf8043e4ee84c3e181fb579e6464807b9bb219ac302cfe2fc018e",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99550EX",
+    "target_sku": "EL36032",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU6032Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99550ex/",
+    "source_html_sha256": "67faa01871e1e2078615d0e5fb6a7f9e98b49a96b756462aeae74da6f94838a5",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99571EX",
+    "target_sku": "EL32939",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH12939",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99571ex/",
+    "source_html_sha256": "d3b45b68b2d49e2ea44ec3837495dc55fe4d61ccc8c6d568f005ea0adfbc8795",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99602EX",
+    "target_sku": "EL32812",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH12812",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99602ex/",
+    "source_html_sha256": "0fa944f65855885c67151fcbf62f62ad9e43dcefaa42a5dfc5c59851d6350ce2",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99638EX",
+    "target_sku": "EL36028",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU6028Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99638ex/",
+    "source_html_sha256": "b6489255aba667bb0dcdf3ba6a815348e8c7f8fd97e197193ed7117cf3d5cdc8",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99684",
+    "target_sku": "EL32865",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH2865A",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99684/",
+    "source_html_sha256": "0b8977860021119bf046ba93f06c844544d57c3f6e539780823121b7f5b1fd23",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG9981EX",
+    "target_sku": "EL31791",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH11791",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg9981ex/",
+    "source_html_sha256": "c84341923eed341e3eeb304bfc9484a53068605ae557d2b913be80fe719457cc",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG9982EX",
+    "target_sku": "EL38002",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU8002XKIT",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg9982ex/",
+    "source_html_sha256": "26ad7f2b4a6fd473e4b8acfba95b6d7f5818ebbe766ff812a3485a8770b99671",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG9983EX",
+    "target_sku": "EL31816",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH11816",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg9983ex/",
+    "source_html_sha256": "8f3b7e0d6baca062d02e7a6032a2f99ab8128f55b58e567f410d3369354c8e9b",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99879EX",
+    "target_sku": "EL36033",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU6033Z",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99879ex/",
+    "source_html_sha256": "de8aad0acc07d6ef5095f313356bc1a18dd9458e638c1df8dd3d0f5018607ef2",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99939EX",
+    "target_sku": "EL32795",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH12795",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99939ex/",
+    "source_html_sha256": "7175a84c6819a6176697d1ac2fd1847f20279c03e89c73a15531ec713352c7a0",
+    "part_types": [
+      "Oil Filter"
+    ]
+  },
+  {
+    "premium_guard_code": "UPG63R",
+    "target_sku": "EL32750",
+    "canonical_brand": "FRAM",
+    "canonical_code": "PH12750",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/upg63r/",
+    "source_html_sha256": "899f66a9424d7237409cdf5b5765cf5f0945b05078ab42e0ad35e427bc72cb04",
+    "part_types": [
+      "Oil Filter"
+    ]
+  }
+]

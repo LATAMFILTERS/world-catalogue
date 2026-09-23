@@ -146,3 +146,33 @@ test('active HERMES catalogue writers invoke the patch gateway before direct SQL
     assert.ok(source.indexOf('assertGovernedCatalogPatch', gate + 1) >= 0, `${relative} must call the gateway`);
   }
 });
+
+
+test('cross-reference-only patch does not fail on untouched legacy vehicle applications', () => {
+  const current = baseRow({
+    vehicle_applications: [{ year: '2020' }],
+  });
+  const result = validateGovernedCatalogPatch(current, {
+    competitor_codes: [{ manufacturer: 'PREMIUM GUARD', code: 'PG1234', classification: 'AFTERMARKET' }],
+  });
+  assert.equal(result.valid, true);
+  assert.equal(result.application_validation.skipped, true);
+});
+
+test('cross-reference-only patch treats untouched null alternate array as empty', () => {
+  const current = baseRow({
+    oem_codes: null,
+  });
+  const result = validateGovernedCatalogPatch(current, {
+    competitor_codes: [{ manufacturer: 'PREMIUM GUARD', code: 'PG1234', classification: 'AFTERMARKET' }],
+  });
+  assert.equal(result.valid, true);
+});
+
+test('application patch still validates application identity fail-closed', () => {
+  const result = validateGovernedCatalogPatch(baseRow(), {
+    vehicle_applications: [{ year: '2020' }],
+  });
+  assert.equal(result.valid, false);
+  assert.ok(result.reasons.includes('VEHICLE_IDENTITY_MISSING'));
+});
