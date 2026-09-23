@@ -4,6 +4,7 @@ import { Navigation } from '@/components/Navigation';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 import { INDUSTRIAL_PROCESS_PLATFORMS, industrialProcessPlatformUrl, industrialProcessTechnologyUrl } from '@/lib/industrial-process-architecture';
 import { getCanonicalKnowledgeBySlug } from '@/lib/services/canonical-knowledge-service';
+import { INDUSTRIAL_PROCESS_ENTITY_NODES } from '@/lib/industrial-process-entity-graph';
 
 const BASE_URL = 'https://elimfilters.com';
 
@@ -86,7 +87,9 @@ export default function IndustrialProcessPage() {
     description: metadata.description,
     isPartOf: { '@id': `${BASE_URL}/#website` },
     publisher: { '@id': `${BASE_URL}/#organization` },
-    about: INDUSTRIAL_PROCESS_PLATFORMS.map((platform) => ({ '@type': 'DefinedTerm', name: platform.name })),
+    about: INDUSTRIAL_PROCESS_ENTITY_NODES
+      .filter((node) => node.kind !== 'industrial-process')
+      .map((node) => ({ '@type': 'DefinedTerm', name: node.name, url: `${BASE_URL}${node.href}` })),
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: INDUSTRIAL_PROCESS_PLATFORMS.length,
