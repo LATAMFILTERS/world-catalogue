@@ -58,7 +58,7 @@ or with each other. This section is the tie-breaker.
 | **Engineering Compliance Validation** | The gate that checks whether a specific Manufacturer Offer revision satisfies a Passport's required fields. Operates on **Passport Version × Manufacturer Code × Offer ID × Offer Revision**. Formerly drafted as "Validation Engine" against a Supplier model — corrected by ADR-0005; bound to a specific Offer revision — corrected by ADR-0007. Defined in Phase 4. | Manufacturer *qualification* (Phase 2, family-level, not offer-specific). Also not Offer Commercial Approval (§7) — Validation is technical only. |
 | **Supplier** (raw material/component vendor) | **Not an MVP entity.** Explicitly out of scope for Phases 00-09. See ADR-0005. If ever modeled, it would be a Manufacturer-internal concern (e.g., evidence attached to an Offer), not an independently validated EBP entity. | Do not design any Phase 01-09 deliverable to depend on a Supplier record. |
 | **Distributor** | A B2B account that sees only ELIMFILTERS-approved products at their final approved price. Never sees Manufacturer identity, `EFM-XXXX` code, FOB, margin, or confidential engineering. Defined in Phase 8. | Internal ELIMFILTERS staff, who may see full Manufacturer/Offer/cost detail depending on role (role model itself is a Phase 8 open question, not decided here). |
-| **Duty (HD/LD)** | Heavy Duty / Light Duty classification per root `CLAUDE.md`. | Not redefined by EBP; EBP inherits it as-is. |
+| **Duty (HD/LD/Industrial & Process)** | Heavy Duty / Light Duty / Industrial & Process classification under canonical catalogue governance. | EBP inherits the product domain; ADR-0076 adds `INDUSTRIAL_PROCESS` without collapsing it into HD. |
 
 ## 2. SKU and Catalog Rules (inherited, not modified)
 
@@ -67,10 +67,15 @@ inherits, verbatim, the rules in root `CLAUDE.md` under "Product Catalog SKU
 Architecture":
 
 - HD prefixes (`EA1`, `EA2`, `ED4`, `EH6`, `EL8`, `EM9`, `ES9`, `EC1`, `EF9`,
-  `EW7`, `ET9`) and LD prefixes (`EL3`, `EA3`, `EC3`, `EF3`) are fixed.
-- LD SKU generation (last-4-digits rule, collision-rejection rule) is
-  unchanged.
-- No HD/LD mixing. No invented SKUs. No duplicate SKUs.
+  `EW7`, `ET9`) and LD prefixes (`EL3`, `EA3`, `EC3`, `EF3`) remain fixed.
+- Industrial & Process prefixes are separately fixed by Technology Core:
+  `IA1`, `IA2`, `IA3`, `ID1`, `IG1`, `IG2`, `IH1`, `IL1`,
+  `IO1`, `IO2`, `IW1`, `IW3`, `IW4`, `IW5`, `IW6`, `IW7`;
+  `IW8` is reserved but blocked from minting.
+- LD SKU generation remains unchanged. Industrial SKU planning follows the
+  approved Technology-Core prefix + numeric-payload/collision policy and does
+  not modify HD/LD mappings.
+- No HD/LD/Industrial mixing. No invented SKUs. No duplicate SKUs.
 - OEM codes vs. competitor codes remain separate fields; EBP does not merge
   them.
 
@@ -78,8 +83,7 @@ Architecture":
 must reference an *existing* SKU, identified by its permanent, immutable
 `elimfilters_code`, or an explicitly flagged *pre-SKU* draft product (a
 product in engineering review before a SKU is minted). A Passport may never
-invent or duplicate a SKU; SKU minting remains governed by the existing
-rules above.
+invent or duplicate a SKU; SKU minting remains governed by the canonical catalogue rules above and the separate publication gate.
 
 ## 3. Product Engineering Passport (PEP) Rules
 
