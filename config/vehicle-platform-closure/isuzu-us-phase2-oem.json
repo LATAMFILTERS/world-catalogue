@@ -1,0 +1,186 @@
+{
+  "schema_version": "2.0.0",
+  "phase_id": "ISUZU_US_DIESEL_THREE_PHASE_CLOSURE",
+  "market": "US",
+  "make": "ISUZU",
+  "year_from": 2000,
+  "year_to": 2026,
+  "purpose": "Close Isuzu USA diesel applications from 2000-2026 in three gated phases: OEM vehicle identity, OEM OE/OEN filters, then aftermarket resolution.",
+  "stages": [
+    {
+      "id": "PHASE_1_DIESEL_VEHICLE_UNIVERSE",
+      "objective": "Using Isuzu USA primary evidence only, identify every diesel commercial-truck model by model year and close exact diesel engine family, displacement, and relevant configuration.",
+      "allowed_sources": [
+        "ISUZU_COMMERCIAL_TRUCK_OF_AMERICA"
+      ],
+      "required_output": [
+        "MODEL_YEAR",
+        "SERIES",
+        "MODEL",
+        "FUEL_DIESEL",
+        "ENGINE_FAMILY",
+        "DISPLACEMENT",
+        "CONFIGURATION",
+        "SOURCE_URL",
+        "EVIDENCE_STATUS"
+      ],
+      "prohibited_actions": [
+        "GASOLINE_RESEARCH",
+        "AFTERMARKET_LOOKUP",
+        "MODEL_EQUIVALENCE_INFERENCE",
+        "FILTER_PROMOTION"
+      ]
+    },
+    {
+      "id": "PHASE_2_DIESEL_OEM_FILTER_OEN",
+      "objective": "For each Phase 1 verified diesel year/model/engine configuration, capture genuine Isuzu OE/OEN references by filter position exactly as published.",
+      "required_positions": [
+        "AIR_PRIMARY",
+        "LUBE_PRIMARY",
+        "FUEL_PRIMARY",
+        "FUEL_SECONDARY",
+        "FUEL_WATER_SEPARATOR",
+        "CABIN_IF_EQUIPPED"
+      ],
+      "allowed_sources": [
+        "ISUZU_COMMERCIAL_TRUCK_OF_AMERICA"
+      ],
+      "required_output": [
+        "VERIFIED_VEHICLE_KEY",
+        "FILTER_POSITION",
+        "ISUZU_OE_OEN",
+        "SOURCE_URL",
+        "YEAR_ENGINE_SCOPE",
+        "EVIDENCE_STATUS"
+      ],
+      "prohibited_actions": [
+        "GASOLINE_RESEARCH",
+        "DONALDSON_LOOKUP",
+        "FLEETGUARD_LOOKUP",
+        "OTHER_AFTERMARKET_LOOKUP",
+        "MODEL_TO_MODEL_INHERITANCE"
+      ]
+    },
+    {
+      "id": "PHASE_3_AFTERMARKET_RESOLUTION",
+      "objective": "Resolve every Phase 2 verified Isuzu OE/OEN through aftermarket in fixed order: Donaldson first, Fleetguard second if needed, then other manufacturers as corroboration.",
+      "allowed_sources": [
+        "DONALDSON",
+        "FLEETGUARD",
+        "MANN-FILTER",
+        "BALDWIN",
+        "WIX",
+        "FRAM"
+      ],
+      "source_order": [
+        "DONALDSON",
+        "FLEETGUARD",
+        "MANN-FILTER",
+        "BALDWIN",
+        "WIX",
+        "FRAM"
+      ],
+      "required_output": [
+        "VERIFIED_VEHICLE_KEY",
+        "FILTER_POSITION",
+        "ISUZU_OE_OEN",
+        "DONALDSON_REFERENCE",
+        "FLEETGUARD_REFERENCE",
+        "SUPPORTING_REFERENCES",
+        "ELIMFILTERS_BASE_DECISION",
+        "EVIDENCE_STATUS"
+      ],
+      "prohibited_actions": [
+        "GASOLINE_RESEARCH",
+        "AFTERMARKET_DEFINING_OEM_SCOPE",
+        "CROSS_REFERENCE_ONLY_FITMENT_PROMOTION"
+      ]
+    }
+  ],
+  "downstream_after_phase2": [],
+  "canonical_hd_rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+  "candidate_families": [
+    "N-SERIES",
+    "F-SERIES"
+  ],
+  "candidate_model_names": [
+    "NPR",
+    "NPR-HD",
+    "NPR-XD",
+    "NQR",
+    "NRR",
+    "NRR DERATE",
+    "FTR",
+    "FVR",
+    "FVR DERATE",
+    "FSR",
+    "FBR"
+  ],
+  "candidate_policy": "Candidate diesel model names are search terms only. They are not accepted for a model year until Isuzu USA primary evidence proves that exact year/designation and diesel powertrain.",
+  "authoritative_sources": [
+    {
+      "id": "ISUZU_US_CURRENT_N_DIESEL",
+      "url": "https://www.isuzucv.com/en/nseries/nseries_diesel_specifications",
+      "supports": [
+        "CURRENT_N_SERIES_DIESEL_MODEL_NAMES",
+        "CURRENT_4HK1-TC_5.2L"
+      ],
+      "authority_level": "primary"
+    },
+    {
+      "id": "ISUZU_US_CURRENT_COMPARE",
+      "url": "https://www.isuzucv.com/en/app/comparison",
+      "supports": [
+        "CURRENT_N_SERIES",
+        "CURRENT_F_SERIES",
+        "POWERTRAIN_GROUPING"
+      ],
+      "authority_level": "primary"
+    },
+    {
+      "id": "ISUZU_US_2007_NPR_MANUAL",
+      "url": "https://www.isuzucv.com/pdfs/manuals/2007_N_Series_Diesel_NPR.pdf",
+      "supports": [
+        "2007_NPR",
+        "2007_4HK1-TC",
+        "VIN_MODEL_ENGINE_IDENTITY"
+      ],
+      "authority_level": "primary"
+    },
+    {
+      "id": "ISUZU_US_2019_NPRHD_DIESEL",
+      "url": "https://www.isuzucv.com/pdfs/npr-hd_diesel_crew_specs.pdf",
+      "supports": [
+        "2019_NPR-HD",
+        "2019_4HK1-TC_5.2L"
+      ],
+      "authority_level": "primary"
+    },
+    {
+      "id": "ISUZU_US_2022_N_DIESEL",
+      "url": "https://isuzucv.com/pdfs/n_brochure.pdf",
+      "supports": [
+        "2022_NPR-HD",
+        "2022_NPR-XD",
+        "2022_NQR",
+        "2022_NRR",
+        "2022_4HK1-TC_5.2L"
+      ],
+      "authority_level": "primary"
+    },
+    {
+      "id": "ISUZU_US_GENUINE_CROSSREF",
+      "url": "https://www.isuzucv.com/en/app/site/pdf?file=FVGenuineCrossRef.pdf",
+      "supports": [
+        "N_SERIES_AIR_OEN_RANGES",
+        "N_SERIES_LUBE_OEN_RANGES",
+        "N_SERIES_FUEL_OEN_RANGES",
+        "N_SERIES_FUEL_WATER_OEN",
+        "F_SERIES_FILTER_OEN_RANGES"
+      ],
+      "authority_level": "primary",
+      "restriction": "Year/engine scope published in this document must not be expanded to a model unless separate Isuzu model-year evidence links that exact model to the published engine/range."
+    }
+  ],
+  "fuel_scope": "DIESEL_ONLY"
+}

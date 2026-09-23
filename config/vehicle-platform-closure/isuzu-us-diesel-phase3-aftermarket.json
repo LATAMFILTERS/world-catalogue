@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "phase_id": "ISUZU_US_DIESEL_THREE_PHASE_CLOSURE",
+  "stage_id": "PHASE_3_AFTERMARKET_RESOLUTION",
+  "market": "USA",
+  "make": "ISUZU",
+  "fuel_scope": "DIESEL_ONLY",
+  "sources_file": "config/vehicle-platform-closure/isuzu-us-diesel-sources.json",
+  "phase2_file": "config/vehicle-platform-closure/isuzu-us-diesel-phase2-oen.json",
+  "attempted_on": "2026-09-22",
+  "canonical_hd_rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+  "canonical_rule_origin": "config/vehicle-platform-closure/isuzu-us-phase2-oem.json — reused unchanged, no new rule created",
+  "source_order": ["DONALDSON", "FLEETGUARD", "MANN-FILTER", "BALDWIN", "WIX", "FRAM"],
+  "governance": {
+    "aftermarket_may_not_redefine_oem_scope": true,
+    "cross_reference_alone_never_establishes_vehicle_fitment": true,
+    "vehicle_fitment_comes_from": ["PHASE_1_DIESEL_VEHICLE_UNIVERSE", "PHASE_2_DIESEL_OEM_FILTER_OEN"],
+    "elimfilters_base_decision_requires": "A Donaldson or Fleetguard reference tied to a specific Isuzu OE/OEN by that manufacturer's own published evidence. An engine-level or vehicle-level match is not sufficient."
+  },
+  "outcome": "BLOCKED_AT_SOURCE_1",
+  "outcome_summary": "Phase 3 could not be executed. Donaldson is first in the mandated order and its OE cross-reference is not retrievable. Because the order is fixed and the ELIMFILTERS base rule is Donaldson-first, no base decision was taken for any position, and no lower-priority manufacturer was substituted.",
+  "access_blockers": [
+    {
+      "manufacturer": "DONALDSON",
+      "resource": "https://shop.donaldson.com/store/en-us/product/{PART} and its cross-reference endpoint /store/rest/fetchproductcrossreflist",
+      "observed": "HTTP 403 Access Denied from the Akamai edge on every request, including with full browser headers. The reference id returned is of the form 18.85f92917.<epoch>.<hex>. https://shop.donaldson.com/sitemap.xml also returns 403.",
+      "secondary_attempt": "https://www.donaldson.com/en-us/engine/filters/products/{PART}/ returns HTTP 200 but serves the generic /en/products/ page; the product record is not present in the HTML.",
+      "tertiary_attempt": "The Wayback Machine holds captures of shop.donaldson.com product pages, but the cross-reference table on those pages is loaded by XHR from /store/rest/fetchproductcrossreflist and is therefore absent from the archived HTML.",
+      "quaternary_attempt": "Web search restricted to donaldson.com and shop.donaldson.com returns Donaldson product titles and descriptions but no OE cross-reference rows.",
+      "conclusion": "Donaldson's OE-to-Donaldson mapping is not obtainable through any route available in this environment."
+    },
+    {
+      "manufacturer": "FLEETGUARD",
+      "resource": "https://www.fleetguard.com and catalog.fleetguard.com",
+      "observed": "catalog.fleetguard.com does not resolve. www.fleetguard.com serves the site shell; the global search path returns HTTP 404 and the catalogue is behind a client-side application.",
+      "conclusion": "Not reached. Not attempted further, because Fleetguard is only consulted where Donaldson does not manufacture, and that determination itself requires Donaldson."
+    },
+    {
+      "manufacturer": "BALDWIN",
+      "resource": "https://www.baldwinfilter.com",
+      "observed": "HTTP 403 on the site root and on search.",
+      "conclusion": "Not reached."
+    },
+    {
+      "manufacturer": "MANN-FILTER",
+      "resource": "https://catalog.mann-filter.com/NA/eng/oenumbers and https://www.mann-filter.com/us-en/catalog.html",
+      "observed": "Both return HTTP 200 and are reachable.",
+      "conclusion": "Reachable but not queried. MANN-FILTER is fourth in the mandated order and may only be used as corroboration after Donaldson and Fleetguard are settled."
+    },
+    {
+      "manufacturer": "WIX",
+      "resource": "https://www2.wixfilters.com/Lookup/filterlookup.aspx",
+      "observed": "HTTP 200, server-rendered, reachable without JavaScript.",
+      "conclusion": "Reachable but not queried, for the same ordering reason."
+    }
+  ],
+  "engine_level_donaldson_evidence": {
+    "status": "RECORDED_BUT_NOT_USABLE_FOR_A_BASE_DECISION",
+    "why_recorded": "It is genuine Donaldson-published material found during the attempt and is preserved so the next pass does not repeat the search.",
+    "why_not_usable": [
+      "It maps a Donaldson part to an Isuzu ENGINE, not to an Isuzu OE/OEN. Phase 3 requires the OE/OEN linkage.",
+      "It is the Australasia edition. Its model column lists Australian and New Zealand designations (NLR, NLS, NMR, NNR, NPS, FRD, FSS, FVD, FVZ, GXD and similar), none of which is a USA Phase 1 vehicle.",
+      "Using it would let an aftermarket catalogue define USA vehicle scope, which the manifest prohibits."
+    ],
+    "source": "DONALDSON_TRUCK_SERVICE_KITS_AU",
+    "rows": [
+      { "isuzu_engine_as_published": "4JJ1 3.0L", "donaldson_kit": "X900173", "donaldson_fuel": ["P506095", "P551855"], "donaldson_oil": ["P502597"], "published_vehicle_column": "NLR, NLS, NMR, NNR 2008 - onwards" },
+      { "isuzu_engine_as_published": "4HK1 5.2L", "donaldson_kit": "X903229", "donaldson_fuel": ["P550390"], "donaldson_oil": ["P502042"], "published_vehicle_column": "SiTEC 150/175 2005-2007" },
+      { "isuzu_engine_as_published": "4HK1-TCN, TCC 5.2L", "donaldson_kit": "X900172", "donaldson_fuel": ["P506095", "P551855"], "donaldson_oil": ["P502042"], "published_vehicle_column": "NPR, NPS, NQR 2008-2015" },
+      { "isuzu_engine_as_published": "4HK1-TCN TCC 5.2L", "donaldson_kit": "X900260", "donaldson_fuel": ["P506095", "P551855"], "donaldson_oil": ["P848076"], "published_vehicle_column": "NBPR, NPS, NQR 2016 -" },
+      { "isuzu_engine_as_published": "6HK1-TCC, TSN, TCS 7.8L", "donaldson_kit": "X900176", "donaldson_fuel": ["P506095", "P551855"], "donaldson_oil": ["P550408"], "published_vehicle_column": "FR, FS, FT, FV 09/07 - 10/15" },
+      { "isuzu_engine_as_published": "6HE1 7.1L, 6HH1 8.2L, 6HK1 TCC, TCS 7.8L", "donaldson_kit": "X903222", "donaldson_fuel": ["P502226", "P552564"], "donaldson_oil": ["P550408"], "published_vehicle_column": "FRR 96-02, FSR, FTR 00-02, FRD, FRR, FSR, FTR, FTS, FVD 03-07" }
+    ]
+  },
+  "resolution_rows": [],
+  "elimfilters_base_decisions": [],
+  "unresolved_aftermarket": [
+    { "isuzu_oe_oen": ["8970622940", "8981772710", "29007N0000"], "position": "AIR_PRIMARY", "scope": "N-Series 2006-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
+    { "isuzu_oe_oen": ["8944302500", "2906469100"], "position": "AIR_PRIMARY", "scope": "N-Series 1986-2005", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
+    { "isuzu_oe_oen": ["8982984040", "2906544040"], "position": "LUBE_PRIMARY", "scope": "N-Series 2011-, F-Series 4HK 2018-2021", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
+    { "isuzu_oe_oen": ["8980188580"], "position": "LUBE_PRIMARY", "scope": "N-Series 4JJ 2010-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
+    { "isuzu_oe_oen": ["2906542701", "2906548000", "2906548100"], "position": "LUBE_PRIMARY", "scope": "N-Series 1998-2010", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE and the Isuzu numbers themselves are format-flagged in Phase 2" },
+    { "isuzu_oe_oen": ["1132400791", "1132400740"], "position": "FUEL_PRIMARY", "scope": "N-Series 4HE 1998-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
+    { "isuzu_oe_oen": ["8975425390", "8981475250", "8943692993", "8980374810", "5873109370", "8980370110", "8982035990", "8981628970", "8980318470"], "position": "FUEL_PRIMARY / FUEL_SECONDARY", "scope": "N-Series and F-Series 2013-2021", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE and the primary/secondary split is itself unresolved in Phase 2" },
+    { "isuzu_oe_oen": ["8982373410"], "position": "FUEL_WATER_SEPARATOR", "scope": "N-Series 2022i-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
+    { "isuzu_oe_oen": ["8943924750", "1132004872", "8943924740"], "position": "LUBE_PRIMARY / FUEL_PRIMARY", "scope": "F-Series 1987-2008 and 1994-2004", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
+    { "isuzu_oe_oen": ["8971822820"], "position": "TRANSMISSION_FILTER", "scope": "N-Series 1998-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" }
+  ],
+  "next_actions": [
+    "Obtain Donaldson OE cross-reference data through a channel that is not blocked at the Akamai edge: a Donaldson distributor account, the Donaldson e-catalog at ecatalog.donaldson.com, or the North America edition of the Donaldson filter kit literature if one exists.",
+    "Only after Donaldson is settled per OE/OEN, apply DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD and take the ELIMFILTERS base decisions.",
+    "MANN-FILTER and WIX are reachable now and can supply corroboration once the first two are settled."
+  ]
+}

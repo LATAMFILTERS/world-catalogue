@@ -40,3 +40,17 @@ test('current Isuzu platform source is identity evidence, not filter fitment evi
   assert.equal(source.market_scope, 'US');
   assert.equal(source.fitment_promotion_allowed, false);
 });
+
+
+test('vehicle closure is OEM-first and aftermarket begins with Donaldson then Fleetguard', () => {
+  const [item] = buildVehicleClosureWorkOrders({
+    waveId: 'NPR_US_PRIORITY',
+    requestedAt: '2026-09-22T00:00:00.000Z',
+  });
+  assert.equal(item.brand_search_strategy.stage_1_oem.id, 'isuzu');
+  assert.equal(item.brand_search_strategy.stage_2_aftermarket[0].brand, 'DONALDSON');
+  assert.equal(item.brand_search_strategy.stage_2_aftermarket[1].brand, 'FLEETGUARD');
+  assert.match(item.gap.question, /equipment manufacturer first/i);
+  assert.match(item.gap.question, /Donaldson first, Fleetguard second/i);
+  assert.match(item.gap.question, /WIX.*must not lead/i);
+});

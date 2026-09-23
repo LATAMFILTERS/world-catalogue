@@ -846,6 +846,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     summary: 'Industrial water treatment organized by contaminant state and treatment mechanism—from suspended-solids control through adsorption, membrane separation, ion exchange and final ionic polishing.',
     positioning: 'AQUVEXIS™ resolves industrial water treatment from the actual feed-water condition and required product-water outcome. Suspended solids, adsorbable dissolved constituents, dissolved salts, target ions and residual ionic load require different treatment mechanisms, so pretreatment, chemistry, pressure, recovery, regeneration, fouling control and verification are treated as part of one engineered treatment train rather than as interchangeable filter choices.',
     heroImage: '/images/turbine-plant.avif',
+    heroVideo: '/images/AQUVEXIS-video.mp4',
     mediaImage: '/images/AQUVEXIS%E2%84%A2.png',
     knowledgeCenterSlug: 'ip-aquvexis-water-treatment-architecture',
     selectionContext: {
@@ -909,8 +910,10 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Feed-water solids loading and particle-size distribution', 'Nominal and peak flow', 'Allowable differential pressure', 'Temperature and water chemistry', 'Required outlet solids condition', 'Downstream equipment sensitivity'],
           ['Rapid differential-pressure rise', 'Solids breakthrough', 'Uneven element loading', 'Unexpectedly short service interval', 'Downstream fouling persists', 'Evidence of seal or seating bypass'],
           '/images/turbine-plant.avif',
-          '/images/planta_converted.avif',
+          '/images/Depth%20Filtration.png',
         ),
+        heroVideo: '/images/Depth%20Filtration-video.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Feed-water source and suspended-solids condition',
           'Particle-size distribution and variability where known',
@@ -963,8 +966,10 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Known target constituent and inlet concentration', 'Competing dissolved species', 'Flow and contact conditions', 'Temperature and pH', 'Particulate loading', 'Required outlet condition and breakthrough criterion'],
           ['Target constituent appears downstream', 'Unexpectedly early breakthrough', 'Pressure drop rises', 'Media service interval shortens', 'Outlet quality becomes unstable', 'Downstream treatment remains affected'],
           '/images/turbine-plant.avif',
-          '/images/planta_converted.avif',
+          '/images/ADSOVEX.png',
         ),
+        heroVideo: '/images/ADSOVEX%20video.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Target dissolved constituent or residual oxidant',
           'Inlet concentration and expected variability',
@@ -1017,7 +1022,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Feed-water chemistry and fouling potential', 'Required permeate quality', 'Operating pressure and temperature', 'Recovery target', 'Scaling potential', 'Pretreatment and cleaning strategy', 'Membrane-material compatibility'],
           ['Permeate quality deteriorates', 'Normalized pressure demand rises', 'Normalized permeate flow declines', 'Recovery becomes unstable', 'Cleaning frequency increases', 'Evidence of scaling, fouling or integrity loss develops'],
           '/images/turbine-plant.avif',
-          '/images/planta_converted.avif',
+          '/images/MEMBRAVEX.png',
           ['Reverse Osmosis', 'Ultrafiltration', 'Nanofiltration'],
         ),
         selectionInputs: [
