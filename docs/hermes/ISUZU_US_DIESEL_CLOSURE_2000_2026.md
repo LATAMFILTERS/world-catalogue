@@ -6,6 +6,7 @@
 **Phase 1 closure pass:** 2026-09-23
 **Phase 1 technical-qualifier pass:** 2026-09-23
 **Phase 2 closure pass:** 2026-09-23
+**Phase 3 aftermarket pass:** 2026-09-23
 **Scope:** USA market, Isuzu, diesel only, model years 2000-2026 inclusive.
 
 This is the research output for the three gated phases the manifest already defines. It
@@ -123,10 +124,10 @@ record of every source checked, every timestamp tried and every method used.
 | `config/vehicle-platform-closure/isuzu-us-diesel-sources.json` | Every source read, with the exact capture used and what each one supports |
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase1-universe.json` | Phase 1 vehicle universe, conflicts, exclusions, open discovery items |
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase2-oen.json` | Phase 2 position universe and Isuzu OE/OEN rows |
-| `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 attempt, access blockers, and why no base decision was taken |
+| `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 resolution rows, access blockers, coverage summary and blocked OEM scopes |
 | `config/isuzu-n-series-us-oem-matrix.json` | Extended from 2022-2026 to 2000-2026 so the existing bot resolver answers the whole range |
-| `lib/isuzu-us-diesel-closure.js` | Reader, validator and the canonical filter-set answer |
-| `tests/isuzu-us-diesel-closure.test.js` | 53 tests: the 10 Phase 1 closure-pass validations, 6 Phase 1 technical-qualifier validations, and 15 Phase 2 OEM/OEN closure validations |
+| `lib/isuzu-us-diesel-closure.js` | Reader, validator and the canonical filter-set answer, including Phase 3 resolution lookup |
+| `tests/isuzu-us-diesel-closure.test.js` | 70 tests: the 10 Phase 1 closure-pass validations, 6 Phase 1 technical-qualifier validations, 15 Phase 2 OEM/OEN closure validations, and 16 Phase 3 aftermarket-resolution validations, plus pre-existing structural/governance tests |
 
 ## Phase 1 — diesel vehicle universe
 
@@ -420,33 +421,61 @@ second Isuzu source before any downstream use.
 
 ## Phase 3 — aftermarket resolution
 
-**Outcome: `BLOCKED_AT_SOURCE_1`. No resolution row and no ELIMFILTERS base decision was
-produced for any position.**
+**Outcome: `PARTIALLY_RESOLVED`. `phase3_status: CLOSED` as of `CLOSURE PASS 2026-09-23`.**
 
-Donaldson is first in the mandated order and the canonical rule is
-`DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD`, so Fleetguard cannot be substituted without
-first establishing that Donaldson does not manufacture the equivalence. That determination
-requires Donaldson, and Donaldson's OE cross-reference could not be reached:
+The 2026-09-22 attempt found `shop.donaldson.com` fully blocked (HTTP 403 from the Akamai
+edge on every request, including with full browser headers) and treated Donaldson as
+inaccessible end to end, leaving `BLOCKED_AT_SOURCE_1` with zero resolution rows. The
+`CLOSURE PASS 2026-09-23` did not solve that block — `shop.donaldson.com` and
+`catalog.donaldson.com` (which redirects straight into it) are still both unreachable — but
+found a second, usable Donaldson channel: `donaldsontoolbox.com.au`, Donaldson Australia's
+own cross-reference tool, generates SEO-friendly URLs and page titles with the Isuzu OE
+numbers embedded directly in the slug (for example
+`P552564-P552564-ISUZU-1132400740-HITACHI-4206080`), and Google's index carries a real
+number of them. A URL/title hit there is Donaldson's own generated identifier, so it counts
+as `DONALDSON_VERIFIED`, and every one used in this pass was additionally corroborated
+against at least one independent Donaldson distributor page (Western Filters, Total Parts,
+Filters Plus WA, GFC/Petroil, CYU Auto, Filters King and similar) that reproduces the same
+mapping traceably — the same bar this manifest already set for distributor literature.
 
-- `shop.donaldson.com` returns HTTP 403 from the Akamai edge on every request, including
-  with full browser headers. Its `sitemap.xml` and its cross-reference REST endpoint
-  return 403 as well.
-- `www.donaldson.com/en-us/engine/filters/products/{PART}/` returns 200 but serves the
-  generic products page; the product record is not in the HTML.
-- Wayback holds `shop.donaldson.com` product pages, but the cross-reference table is
-  loaded by XHR and is absent from the archived HTML.
-- Web search restricted to donaldson.com returns product titles but no cross-reference rows.
+Of the **19 eligible Phase 2 OE/OEN rows** (21 total minus 2 `NOT_APPLICABLE`), this pass
+resolved:
 
-Baldwin returns 403. Fleetguard's catalogue subdomain does not resolve. MANN-FILTER and
-WIX are reachable but were not queried, because they are fourth and fifth in the order and
-may only corroborate once the first two are settled.
+| Result | Rows |
+|---|---|
+| `VERIFIED_BASE` (Donaldson confirmed, existing ELIMFILTERS SKU reused) | 3 |
+| `PARTIAL` (Donaldson confirmed but not every OEN in the row, or linked only transitively via a known Fleetguard equivalence) | 4 |
+| `NO_ELIMFILTERS_SKU_YET` (Donaldson confirmed, no SKU found in the checked-in catalog export, none invented without live DB access) | 3 |
+| `BLOCKED_DONALDSON` (genuinely not found despite search) | 9 |
 
-One genuine Donaldson document was found and is preserved in the Phase 3 file: the
-Australasia *Fuel and Oil Truck Service Kits* catalogue, which maps Donaldson references to
-Isuzu **engines**. It is recorded as `RECORDED_BUT_NOT_USABLE_FOR_A_BASE_DECISION`, because
-it maps to an engine rather than to an Isuzu OE/OEN, and because its model column lists
-Australian and New Zealand designations. Using it would let an aftermarket catalogue define
-USA vehicle scope, which the manifest prohibits.
+Four whole scopes stay `BLOCKED_OEM`, carried forward explicitly rather than silently
+dropped: **H-Series**, **FRR**, **FXR**, and **Cummins B6.7 F-Series MY2022-2026** — none of
+these has a Phase 2 Isuzu OE/OEN to resolve against aftermarket in the first place, and none
+was filled by inheriting a sibling model's or sibling engine's aftermarket data.
+
+**Zero rows are Fleetguard-based.** The canonical rule (`DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD`)
+requires `DONALDSON_NOT_MANUFACTURED_VERIFIED` before Fleetguard can become base; this pass
+found real `DONALDSON_NOT_FOUND` cases but proved zero cases of verified non-manufacture, so
+Fleetguard references found along the way (LF17537, FF5877) are recorded as informational
+corroboration only, never as a base.
+
+**One existing-catalog find upgraded the evidence quality of this pass**: the repository's
+own `competitor_cross_references_ld.csv` already carries `"EF50953","WK953","Fuel
+Filter","DONALDSON","P552564",...` and `"EF50953","WK953","Fuel Filter","ISUZU","1132400740",...`
+— catalog ground truth, not external research — so `P2-N-FUEL-4HE` and
+`P2-F-FUEL-1994-2004` reuse `EF50953` directly rather than waiting on a new SKU.
+
+Baldwin, MANN-FILTER, WIX and FRAM references appear throughout as `supporting_crossrefs`
+only; none was used to select a base, and `validateClosure()` now asserts this structurally.
+
+One genuine Donaldson document from the 2026-09-22 attempt is preserved in the Phase 3 file:
+the Australasia *Fuel and Oil Truck Service Kits* catalogue, which maps Donaldson references
+to Isuzu **engines**. It is still recorded as `RECORDED_BUT_NOT_USABLE_FOR_A_BASE_DECISION`,
+because it maps to an engine rather than to an Isuzu OE/OEN, and because its model column
+lists Australian and New Zealand designations. Using it would let an aftermarket catalogue
+define USA vehicle scope, which the manifest prohibits — this pass's new OE/OEN-level finding
+for `P552564` (used above) happens to be consistent with that table's engine-level entry for
+the same part, which is a useful but non-defining corroboration, not the source of the result.
 
 ## Evidence that the rules were kept
 
@@ -488,25 +517,34 @@ answerFilterSetQuery({ year: 2019, model: 'NPR-HD' });
 
 returns every position the vehicle's series can have, each with a status, so a caller sees
 the shape of what is closed rather than a silently short list: `AIR_PRIMARY` VERIFIED with
-`8981772710`, `AIR_SECONDARY` and `AIR_DRYER` and `HYDRAULIC_FILTER` NOT_APPLICABLE,
-`CABIN` UNRESOLVED, and every aftermarket field null while Phase 3 is blocked.
+`8981772710`, and now — since `CLOSURE PASS 2026-09-23` — its `aftermarket` field carries the
+real Phase 3 result (`VERIFIED_BASE`, Donaldson `P828633`/`P543614`, ELIMFILTERS SKU
+`EA13614`) instead of a placeholder; `AIR_SECONDARY` and `AIR_DRYER` and `HYDRAULIC_FILTER`
+stay NOT_APPLICABLE, `CABIN` stays UNRESOLVED with `aftermarket: null`, because a position
+Phase 2 never closed can never claim a Phase 3 answer.
 
 ## Next actions
 
-Phase 1 is closed; nothing further is needed there. Remaining work is Phase 2/Phase 3, out
-of scope for the `CLOSURE PASS 2026-09-23`:
+Phase 1 and Phase 2 are closed; nothing further is needed there. Phase 3 is `CLOSED` in the
+sense that every eligible row has an explicit decision, but 9 of 19 rows are honestly
+`BLOCKED_DONALDSON` and 4 whole scopes are `BLOCKED_OEM`. Remaining work, out of scope for
+this pass:
 
-1. Obtain Donaldson OE cross-reference data through a channel that is not blocked at the
-   Akamai edge — a distributor account, the `ecatalog.donaldson.com` e-catalog, or a North
-   America edition of the Donaldson filter-kit literature.
-2. Only then apply `DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD` and take the base decisions.
-3. Obtain an Isuzu F-Series owner's or parts manual to close F-Series air, cabin, air
-   dryer, water separator and transmission.
-4. Obtain Isuzu parts data for the 4HK1-TC N-Series MY2005-2012 fuel filter, for the
-   ECO-MAX fuel and air filters, and for the N-Series MY2022-2026 fuel filter.
-5. Perform Phase 2 (OE/OEN filter positions) and Phase 3 (aftermarket resolution) for the
-   newly-incorporated H-Series (`HTR`/`HVR`/`HXR`, `block_id: H-2005-2008`), which currently
-   has zero Phase 2 rows and zero Phase 3 coverage.
+1. Obtain live PostgreSQL/catalog access so the 3 `NO_ELIMFILTERS_SKU_YET` rows (Donaldson
+   `P502597`, `P502427` twice) can be checked against the full HD catalog — not just the
+   checked-in LD CSV export used in this pass — before any new SKU is assigned.
+2. Obtain credentialed or reverse-engineered access to the `api.autoinfo.com.au` backend
+   behind `donaldsontoolbox.com.au`, so its cross-reference tables can be read directly
+   instead of via Google-indexed URL slugs plus distributor corroboration.
+3. Reconcile `P3-N-AIR-1986-2005`'s two unreconciled Donaldson candidates (`R804759` vs
+   `P500179`) if a Donaldson-first-party source is found for `P500179`.
+4. Resolve the 9 `BLOCKED_DONALDSON` rows and the `DONALDSON_NOT_FOUND` items in
+   `unresolved_aftermarket` if Donaldson ever catalogues an equivalent — several are for
+   Isuzu numbers scoped `2022i-` or later and may simply be too new yet.
+5. Any future Phase 2 pass that produces an Isuzu OE/OEN for H-Series, FRR, FXR or Cummins
+   B6.7 should have this same Phase 3 process re-run against it; nothing in this pass should
+   be used to retroactively justify inheriting F-Series or N-Series aftermarket data onto
+   those scopes.
 6. Obtain NPR-HD and NRR's own MY2021 crew-cab specification PDFs through a route that does
    not hit the reproducible 1,048,576-byte truncation documented above, to replace the
    same-batch sibling-evidence closure with each model's own document.

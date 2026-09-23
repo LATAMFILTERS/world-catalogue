@@ -16,6 +16,9 @@ const {
   coverageReport,
   phase2CoverageMatrix,
   phase2CoverageSummary,
+  phase3ResolutionFor,
+  phase3CoverageMatrix,
+  phase3CoverageSummary,
 } = require('../lib/isuzu-us-diesel-closure');
 
 const { resolveIsuzuNSeriesCustomerQuery } = require('../lib/isuzu-n-series-oem-resolver');
@@ -126,10 +129,17 @@ test('N-Series has no air dryer and F-Series does, and both are stated rather th
   assert.equal(phase2.position_universe['F-SERIES'].AIR_DRYER.status, 'UNRESOLVED');
 });
 
-test('Phase 3 is blocked and therefore publishes no base decision', () => {
-  assert.equal(phase3.outcome, 'BLOCKED_AT_SOURCE_1');
-  assert.deepEqual(phase3.resolution_rows, []);
-  assert.deepEqual(phase3.elimfilters_base_decisions, []);
+test('Phase 3 is partially resolved, still Donaldson-first, and still honest about what is blocked', () => {
+  // Phase 3 was BLOCKED_AT_SOURCE_1 when this test was first written (Donaldson
+  // fully inaccessible, zero rows resolved). The 2026-09-23 pass found a usable
+  // Donaldson channel for some rows (see PHASE 3.* tests) without weakening any
+  // of the invariants this test originally guarded: the canonical rule is still
+  // reused unchanged, Donaldson is still first in source_order, engine-level
+  // evidence that cannot support a base decision is still recorded as such
+  // rather than promoted, and genuinely unresolved items are still carried
+  // forward rather than disappearing.
+  assert.equal(phase3.outcome, 'PARTIALLY_RESOLVED');
+  assert.ok(phase3.resolution_rows.length > 0);
   assert.equal(phase3.canonical_hd_rule, 'DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD');
   assert.equal(phase3.source_order[0], 'DONALDSON');
   assert.equal(phase3.source_order[1], 'FLEETGUARD');
@@ -167,13 +177,17 @@ test('the closure answers the question it exists to answer', () => {
   // Positions that exist but are not closed say so instead of going missing.
   assert.equal(byPosition.CABIN.status, 'UNRESOLVED');
 
-  // No position may claim an aftermarket answer while Phase 3 is blocked.
-  for (const position of vehicle.positions) {
-    if (position.aftermarket) {
-      assert.equal(position.aftermarket.donaldson_reference, null);
-      assert.equal(position.aftermarket.elimfilters_base_decision, null);
-    }
-  }
+  // A position Phase 2 never closed (no matched isuzu_oe_oen row) can never
+  // claim a Phase 3 aftermarket answer, whatever Phase 3 itself later
+  // resolved elsewhere -- it comes back null, not a placeholder object.
+  assert.equal(byPosition.CABIN.aftermarket, null);
+
+  // AIR_PRIMARY, by contrast, IS Phase-2-VERIFIED for this vehicle and now
+  // also has a real Phase 3 resolution (P2-N-AIR-2006-ON / P3-N-AIR-2006-ON),
+  // so its aftermarket answer must be the genuine one, not a placeholder.
+  assert.equal(byPosition.AIR_PRIMARY.aftermarket.status, 'VERIFIED_BASE');
+  assert.equal(byPosition.AIR_PRIMARY.aftermarket.base_source_brand, 'DONALDSON');
+  assert.equal(byPosition.AIR_PRIMARY.aftermarket.elimfilters_existing_sku, 'EA13614');
 });
 
 test('FXR and FRR answer empty even though they share a block and an engine with FTR', () => {
@@ -737,10 +751,17 @@ test('PHASE 2.14: the two anomalous-format OEN rows remain explicitly flagged, n
   }
 });
 
-test('PHASE 2.15: Phase 3 is untouched by this pass', () => {
-  assert.equal(phase3.outcome, 'BLOCKED_AT_SOURCE_1');
-  assert.deepEqual(phase3.resolution_rows, []);
-  assert.deepEqual(phase3.elimfilters_base_decisions, []);
+test('PHASE 2.15: Phase 3\'s pre-2026-09-23 access-blocker history was preserved, not deleted', () => {
+  // The Phase 2 pass this test was originally written for left Phase 3
+  // untouched (Phase 3 was BLOCKED_AT_SOURCE_1 at that time). The Phase 3
+  // pass on 2026-09-23 legitimately changed phase3.outcome and populated
+  // resolution_rows -- that is its own job, guarded by the PHASE 3.* tests
+  // below, not a regression of this test. What this test still guards is
+  // that the original shop.donaldson.com access-blocker record was kept for
+  // the historical record rather than being deleted when Phase 3 was later
+  // worked.
+  assert.ok(Array.isArray(phase3.access_blockers) && phase3.access_blockers.length >= 5);
+  assert.ok(phase3.access_blockers.some((b) => b.manufacturer === 'DONALDSON' && /403/.test(b.observed)));
 });
 
 test('PHASE 2 FINAL: phase2_status is CLOSED and the coverage summary is internally consistent', () => {
@@ -751,4 +772,213 @@ test('PHASE 2 FINAL: phase2_status is CLOSED and the coverage summary is interna
   const sum = Object.values(summary.by_status).reduce((a, b) => a + b, 0);
   assert.equal(sum, summary.total_position_cells, 'the per-status counts must add up to the total cell count');
   assert.equal(summary.total_vehicle_year_combinations, 181, 'must match the closed Phase 1 vehicle count (169 original + 12 H-Series)');
+});
+
+// ---------------------------------------------------------------------------
+// PHASE 3 — ISUZU USA DIESEL AFTERMARKET RESOLUTION AND ELIMFILTERS BASE
+// DECISION, run over the Phase 2 closure above. See config/vehicle-platform-
+// closure/isuzu-us-diesel-phase3-aftermarket.json for the resolution rows
+// these tests validate.
+// ---------------------------------------------------------------------------
+
+test('PHASE 3.1: Phase 3 never redefines vehicle fitment', () => {
+  // A resolution row's own fields never carry year/model/engine identity --
+  // that comes exclusively from Phase 1/2 via phase2_row_id. If a future
+  // edit ever adds a year/model/engine field directly to a resolution row,
+  // this is the guard that catches it.
+  const FITMENT_FIELDS = ['year', 'model', 'model_year', 'engine', 'engine_code', 'vehicle'];
+  for (const row of phase3.resolution_rows) {
+    for (const field of FITMENT_FIELDS) {
+      assert.equal(row[field], undefined, `${row.row_id} carries a ${field} field; fitment must come only from phase2_row_id`);
+    }
+  }
+});
+
+test('PHASE 3.2: every resolution row points back to a real Phase 2 row', () => {
+  const phase2Ids = new Set(phase2.oen_rows.map((r) => r.row_id));
+  assert.ok(phase3.resolution_rows.length > 0, 'this pass must have produced resolution rows');
+  for (const row of phase3.resolution_rows) {
+    assert.ok(phase2Ids.has(row.phase2_row_id), `${row.row_id}: phase2_row_id ${row.phase2_row_id} is not a real Phase 2 row`);
+  }
+});
+
+test('PHASE 3.3: no base decision exists without an Isuzu OE/OEN behind it', () => {
+  for (const row of phase3.resolution_rows) {
+    assert.ok(Array.isArray(row.isuzu_oe_oen) && row.isuzu_oe_oen.length > 0, `${row.row_id} has no isuzu_oe_oen`);
+    if (row.base_source_brand) {
+      assert.ok(row.isuzu_oe_oen.length > 0, `${row.row_id} takes a base decision with no OE/OEN`);
+    }
+  }
+  const result = validateClosure();
+  assert.deepEqual(result.errors, []);
+});
+
+test('PHASE 3.4: Donaldson has priority — every VERIFIED_BASE/PARTIAL row with a base is Donaldson unless Fleetguard absence was verified', () => {
+  for (const row of phase3.resolution_rows) {
+    if (row.base_source_brand === 'DONALDSON') {
+      assert.equal(row.donaldson_status, 'DONALDSON_VERIFIED', `${row.row_id} bases on Donaldson without DONALDSON_VERIFIED`);
+    }
+  }
+  assert.equal(phase3.coverage_summary.by_decision_status.VERIFIED_BASE, 3);
+  assert.equal(phase3.coverage_summary.by_decision_status.PARTIAL, 4);
+});
+
+test('PHASE 3.5: Fleetguard only defines a base when Donaldson absence is itself verified', () => {
+  const fleetguardBased = phase3.resolution_rows.filter((r) => r.base_source_brand === 'FLEETGUARD');
+  assert.equal(fleetguardBased.length, 0, 'this pass found zero cases of DONALDSON_NOT_MANUFACTURED_VERIFIED, so zero Fleetguard bases are expected');
+  for (const row of fleetguardBased) {
+    assert.equal(row.donaldson_status, 'DONALDSON_NOT_MANUFACTURED_VERIFIED');
+  }
+});
+
+test('PHASE 3.6: NOT_FOUND is never treated as equivalent to NOT_MANUFACTURED', () => {
+  const notFoundRows = phase3.resolution_rows.filter((r) => r.donaldson_status === 'DONALDSON_NOT_FOUND');
+  assert.ok(notFoundRows.length > 0, 'this pass must have genuinely unresolved Donaldson rows');
+  for (const row of notFoundRows) {
+    assert.notEqual(row.base_source_brand, 'FLEETGUARD', `${row.row_id} promoted Fleetguard to base on a mere NOT_FOUND`);
+    assert.equal(row.decision_status, 'BLOCKED_DONALDSON', `${row.row_id} is DONALDSON_NOT_FOUND but not BLOCKED_DONALDSON`);
+  }
+});
+
+test('PHASE 3.7: MANN-FILTER, Baldwin, WIX and FRAM never define an HD base', () => {
+  const HD_BASE_BRANDS = new Set(['DONALDSON', 'FLEETGUARD']);
+  for (const row of phase3.resolution_rows) {
+    if (row.base_source_brand) {
+      assert.ok(HD_BASE_BRANDS.has(row.base_source_brand), `${row.row_id} uses ${row.base_source_brand} as a base brand`);
+    }
+    for (const ref of row.supporting_crossrefs || []) {
+      assert.notEqual(ref.fitment_role, 'base', `${row.row_id}: supporting_crossrefs entry for ${ref.manufacturer} is marked as a base`);
+    }
+  }
+});
+
+test('PHASE 3.8: H-Series without a Phase 2 OEN stays BLOCKED_OEM', () => {
+  assert.equal(phase2.oen_rows.filter((r) => r.series === 'H-SERIES').length, 0, 'Phase 2 must carry zero H-Series oen_rows for this test to be meaningful');
+  const hSeries = phase3.blocked_oem_scopes.find((b) => b.scope.includes('H-SERIES'));
+  assert.ok(hSeries, 'H-Series must appear in blocked_oem_scopes');
+  assert.equal(hSeries.status, 'BLOCKED_OEM');
+  assert.equal(hSeries.no_equivalence_invented, true);
+  assert.match(hSeries.reason, /6HK1-TC|does not create/i);
+});
+
+test('PHASE 3.9: FRR and FXR without a Phase 2 OEN stay BLOCKED_OEM', () => {
+  for (const line of ['FRR', 'FXR']) {
+    assert.ok(!phase2.oen_rows.some((r) => (r.applies_to_model_lines || []).includes(line)), `Phase 2 must not carry a ${line} oen_row for this test to be meaningful`);
+    const entry = phase3.blocked_oem_scopes.find((b) => b.scope.startsWith(line));
+    assert.ok(entry, `${line} must appear in blocked_oem_scopes`);
+    assert.equal(entry.status, 'BLOCKED_OEM');
+    assert.equal(entry.no_equivalence_invented, true);
+  }
+});
+
+test('PHASE 3.10: assembly and element are not conflated in the Donaldson evidence', () => {
+  const airRow = phase3.resolution_rows.find((r) => r.row_id === 'P3-N-AIR-1986-2005');
+  assert.ok(airRow, 'P3-N-AIR-1986-2005 must exist');
+  const r804759 = (airRow.donaldson_candidates || []).find((c) => c.part === 'R804759');
+  assert.ok(r804759, 'R804759 candidate must be documented');
+  assert.match(r804759.type, /element/i, 'R804759 must be typed as an element, not left ambiguous with an assembly');
+
+  const fuelRow = phase3.resolution_rows.find((r) => r.row_id === 'P3-N-FUEL-4HE');
+  assert.match(fuelRow.donaldson_part, /spin-on/i);
+  assert.doesNotMatch(fuelRow.donaldson_part, /\bassembly\b/i);
+});
+
+test('PHASE 3.11: no gasoline scope entered Phase 3', () => {
+  assert.equal(phase3.fuel_scope, 'DIESEL_ONLY');
+  const GASOLINE_ENGINES = /VORTEC|L8T|GMPT|6\.6L gas/i;
+  for (const row of phase3.resolution_rows) {
+    assert.ok(!GASOLINE_ENGINES.test(row.oem_scope || ''), `${row.row_id} carries a gasoline engine hint in oem_scope`);
+  }
+});
+
+test('PHASE 3.12: this pass performs no direct SQL writes', () => {
+  assert.equal(phase3.governance.no_direct_sql_writes, true);
+});
+
+test('PHASE 3.13: this pass does not automatically publish to production', () => {
+  assert.ok(typeof phase3.governance.no_automatic_production_publication === 'string' && phase3.governance.no_automatic_production_publication.length > 0);
+  assert.match(phase3.governance.no_automatic_production_publication, /candidate|ready-for-review/i);
+});
+
+test('PHASE 3.14: an existing ELIMFILTERS SKU is reused rather than re-invented', () => {
+  // These four SKUs are catalog ground truth (three from the task's own known
+  // historical candidates, one -- EF50953 -- found directly in this
+  // repository's competitor_cross_references_ld.csv during this pass) and
+  // must be reused verbatim, never replaced with a freshly-minted SKU.
+  const expectedReuse = {
+    'P3-N-AIR-2006-ON': 'EA13614',
+    'P3-N-LUBE-1998-2010': 'EL82042',
+    'P3-N-FUEL-4HE': 'EF50953',
+    'P3-F-FUEL-1994-2004': 'EF50953',
+    'P3-N-FUEL-2013-2021-A': 'EF92599',
+    'P3-F-FUEL-2018-2020-C': 'EF92599',
+  };
+  for (const [rowId, sku] of Object.entries(expectedReuse)) {
+    const row = phase3.resolution_rows.find((r) => r.row_id === rowId);
+    assert.ok(row, `${rowId} must exist`);
+    assert.equal(row.elimfilters_existing_sku, sku, `${rowId} must reuse ${sku}`);
+    assert.match(row.elimfilters_base_decision, /REUSE_EXISTING_SKU/, `${rowId} must document the reuse explicitly`);
+  }
+  assert.deepEqual(phase3.coverage_summary.elimfilters_skus_reused.slice().sort(), ['EA13614', 'EF50953', 'EF92599', 'EL82042'].sort());
+  assert.equal(phase3.coverage_summary.elimfilters_new_skus_created, 0);
+});
+
+test('PHASE 3.15: no ELIMFILTERS SKU is attached to more than one physical base part', () => {
+  const skuToParts = new Map();
+  for (const row of phase3.resolution_rows) {
+    if (!row.elimfilters_existing_sku) continue;
+    if (!skuToParts.has(row.elimfilters_existing_sku)) skuToParts.set(row.elimfilters_existing_sku, new Set());
+    if (row.base_source_part) skuToParts.get(row.elimfilters_existing_sku).add(row.base_source_part);
+  }
+  for (const [sku, parts] of skuToParts) {
+    assert.equal(parts.size, 1, `SKU ${sku} is attached to ${parts.size} different base parts: ${[...parts].join(', ')}`);
+  }
+  const result = validateClosure();
+  assert.deepEqual(result.errors, []);
+});
+
+test('PHASE 3.16: Phase 1 and Phase 2 remain intact after the Phase 3 pass', () => {
+  assert.equal(phase1.year_blocks.filter((b) => b.series === 'H-SERIES').length > 0, true, 'Phase 1 H-Series blocks must still be present');
+  assert.equal(phase2.oen_rows.length, 21, 'Phase 2 must still carry exactly the 21 oen_rows closed in the prior pass');
+  assert.equal(phase2.phase2_status, 'CLOSED', 'Phase 2 status must remain CLOSED');
+  const p2 = phase2CoverageSummary();
+  assert.equal(p2.total_vehicle_year_combinations, 181, 'Phase 2 coverage must be unchanged by the Phase 3 pass');
+});
+
+test('PHASE 3 FINAL: phase3_status is CLOSED and every eligible Phase 2 row has an explicit Phase 3 decision', () => {
+  assert.equal(phase3.phase3_status, 'CLOSED');
+  assert.ok(Array.isArray(phase3.phase3_status_history) && phase3.phase3_status_history.length >= 2);
+
+  const matrix = phase3CoverageMatrix();
+  assert.equal(matrix.length, phase2.oen_rows.length, 'every Phase 2 oen_row must appear in the Phase 3 coverage matrix, none silently absent');
+  for (const cell of matrix) {
+    assert.notEqual(cell.decision_status, undefined, `${cell.phase2_row_id} has no explicit Phase 3 decision_status`);
+    if (cell.eligible) {
+      assert.notEqual(cell.decision_status, 'NO_PHASE3_ROW', `${cell.phase2_row_id} is eligible but has no Phase 3 resolution row`);
+    }
+  }
+
+  const summary = phase3CoverageSummary();
+  assert.equal(summary.eligible_phase2_oen_rows, 19);
+  assert.equal(summary.not_applicable_phase2_oen_rows, 2);
+  const sumByDecision = Object.values(summary.by_decision_status).reduce((a, b) => a + b, 0);
+  assert.equal(sumByDecision, summary.eligible_phase2_oen_rows, 'per-decision-status counts must add up to the eligible row count');
+  // The JSON's coverage_summary spells out every possible status with an
+  // explicit 0 for the ones that did not occur; the JS-computed summary only
+  // adds a key when it actually saw that status. Comparing them means
+  // treating an absent JS key as 0, not requiring identical object shape.
+  assert.equal(summary.total_phase2_oen_rows, phase2.oen_rows.length);
+  assert.equal(summary.eligible_phase2_oen_rows, phase3.coverage_summary.eligible_phase2_oen_rows);
+  assert.equal(summary.not_applicable_phase2_oen_rows, phase3.coverage_summary.not_applicable_phase2_oen_rows);
+  for (const [status, count] of Object.entries(phase3.coverage_summary.by_decision_status)) {
+    assert.equal(summary.by_decision_status[status] || 0, count, `by_decision_status.${status} mismatch between JS and JSON`);
+  }
+  for (const [status, count] of Object.entries(phase3.coverage_summary.by_donaldson_status)) {
+    assert.equal(summary.by_donaldson_status[status] || 0, count, `by_donaldson_status.${status} mismatch between JS and JSON`);
+  }
+
+  assert.equal(phase3.blocked_oem_scopes.length, 4);
+  for (const scope of phase3.blocked_oem_scopes) {
+    assert.equal(scope.status, 'BLOCKED_OEM');
+  }
 });

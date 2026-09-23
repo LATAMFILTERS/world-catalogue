@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "phase_id": "ISUZU_US_DIESEL_THREE_PHASE_CLOSURE",
   "stage_id": "PHASE_3_AFTERMARKET_RESOLUTION",
   "market": "USA",
@@ -8,6 +8,7 @@
   "sources_file": "config/vehicle-platform-closure/isuzu-us-diesel-sources.json",
   "phase2_file": "config/vehicle-platform-closure/isuzu-us-diesel-phase2-oen.json",
   "attempted_on": "2026-09-22",
+  "closed_on": "2026-09-23",
   "canonical_hd_rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
   "canonical_rule_origin": "config/vehicle-platform-closure/isuzu-us-phase2-oem.json — reused unchanged, no new rule created",
   "source_order": ["DONALDSON", "FLEETGUARD", "MANN-FILTER", "BALDWIN", "WIX", "FRAM"],
@@ -15,10 +16,17 @@
     "aftermarket_may_not_redefine_oem_scope": true,
     "cross_reference_alone_never_establishes_vehicle_fitment": true,
     "vehicle_fitment_comes_from": ["PHASE_1_DIESEL_VEHICLE_UNIVERSE", "PHASE_2_DIESEL_OEM_FILTER_OEN"],
-    "elimfilters_base_decision_requires": "A Donaldson or Fleetguard reference tied to a specific Isuzu OE/OEN by that manufacturer's own published evidence. An engine-level or vehicle-level match is not sufficient."
+    "elimfilters_base_decision_requires": "A Donaldson or Fleetguard reference tied to a specific Isuzu OE/OEN by that manufacturer's own published evidence. An engine-level or vehicle-level match is not sufficient.",
+    "fleetguard_may_only_become_base_when": "Donaldson non-manufacture is itself VERIFIED (DONALDSON_NOT_MANUFACTURED_VERIFIED). DONALDSON_NOT_FOUND, DONALDSON_SOURCE_BLOCKED and DONALDSON_AMBIGUOUS never promote Fleetguard to base — this pass found zero cases of DONALDSON_NOT_MANUFACTURED_VERIFIED, so no row in this pass is Fleetguard-based.",
+    "mann_baldwin_wix_fram_never_define_hd_base": true,
+    "no_sku_without_db_check": "This session had no live PostgreSQL/catalog access. The only checked-in, queryable catalog ground truth available was the repository's own competitor_cross_references_ld.csv / external_cross_reference_master_ld.csv exports. Every existing SKU reused in this pass was found there. Where a Donaldson part was confirmed but not present in those exports, no new SKU was invented — the row is left NO_ELIMFILTERS_SKU_YET pending a governance pass with live DB access.",
+    "assembly_element_distinction_enforced": "Every donaldson_part below is recorded with its Donaldson-published type (element vs cartridge vs spin-on vs kit) exactly as found; no assembly was declared equivalent to an element without saying so.",
+    "no_direct_sql_writes": true,
+    "no_automatic_production_publication": "This file is a research + resolution manifest. Nothing in this pass wrote to catalog-write-gateway or any production table. Every elimfilters_base_decision is candidate/ready-for-review, not published."
   },
-  "outcome": "BLOCKED_AT_SOURCE_1",
-  "outcome_summary": "Phase 3 could not be executed. Donaldson is first in the mandated order and its OE cross-reference is not retrievable. Because the order is fixed and the ELIMFILTERS base rule is Donaldson-first, no base decision was taken for any position, and no lower-priority manufacturer was substituted.",
+  "source_channel_note": "The prior attempt (2026-09-22, preserved below in access_blockers and engine_level_donaldson_evidence) found shop.donaldson.com blocked (HTTP 403 at the Akamai edge) and treated Donaldson as fully inaccessible. This pass found that donaldsontoolbox.com.au (Donaldson Australia's own cross-reference tool) is reachable, though its cross-reference data is loaded client-side by an Angular app and is not present in the raw HTML either — the same technical limitation as shop.donaldson.com, confirmed directly against both a plain fetch and a Googlebot-identified fetch. What unblocked real progress this pass was that Donaldson Toolbox generates SEO-friendly URLs and page titles of the form '{PART} - {DESCRIPTION} | Part Detail | Donaldson Toolbox' with the Isuzu OE numbers embedded directly in the URL slug (e.g. P552564-P552564-ISUZU-1132400740-HITACHI-4206080), and Google's search index has indexed a meaningful number of these. Those slugs and titles are Donaldson's own generated identifiers, so a URL/title hit is treated as DONALDSON_VERIFIED evidence, with the caveat that the full page body (which would show a complete cross-reference table) could not be independently re-rendered. Every such finding was additionally corroborated against at least one independent Donaldson distributor page (Western Filters, Total Parts, Filters Plus WA, GFC/Petroil, CYU Auto, Filters King, or similar) that reproduces the same Donaldson-to-Isuzu mapping in a traceable, detailed way, per this manifest's own rule that distributor literature is usable only when it reproduces official references traceably.",
+  "outcome": "PARTIALLY_RESOLVED",
+  "outcome_summary": "9 of 19 eligible Phase 2 OE/OEN rows now have a Donaldson-verified reference (3 of those as a full VERIFIED_BASE with an existing ELIMFILTERS SKU reused straight from the repository's own cross-reference export; 4 as PARTIAL, where the Donaldson reference is verified but does not confirm every Isuzu number carried in that Phase 2 row, or is linked to one of the row's numbers only transitively through a known Fleetguard-Donaldson equivalence; 3 more resolved on the Donaldson side but with no existing ELIMFILTERS SKU found in the checked-in catalog export, and no new SKU invented without live database access). The remaining 10 rows — plus H-Series, FRR, FXR and Cummins B6.7 as whole scopes — stay honestly blocked: DONALDSON_NOT_FOUND for the OE/OEN rows Donaldson has not catalogued (despite real search effort against Donaldson Toolbox and its distributor network), and BLOCKED_OEM for the vehicle scopes Phase 2 itself never produced an Isuzu OE/OEN for in the first place. No Fleetguard base was ever taken, because no row reached the DONALDSON_NOT_MANUFACTURED_VERIFIED bar the canonical rule requires before Fleetguard can become base.",
   "access_blockers": [
     {
       "manufacturer": "DONALDSON",
@@ -27,36 +35,43 @@
       "secondary_attempt": "https://www.donaldson.com/en-us/engine/filters/products/{PART}/ returns HTTP 200 but serves the generic /en/products/ page; the product record is not present in the HTML.",
       "tertiary_attempt": "The Wayback Machine holds captures of shop.donaldson.com product pages, but the cross-reference table on those pages is loaded by XHR from /store/rest/fetchproductcrossreflist and is therefore absent from the archived HTML.",
       "quaternary_attempt": "Web search restricted to donaldson.com and shop.donaldson.com returns Donaldson product titles and descriptions but no OE cross-reference rows.",
-      "conclusion": "Donaldson's OE-to-Donaldson mapping is not obtainable through any route available in this environment."
+      "quinary_attempt_2026-09-23": "catalog.donaldson.com/productDetail/en/{ID}/{PART} was tried this pass as another first-party Donaldson domain; it returns HTTP 302 and redirects straight to shop.donaldson.com, so it inherits the same block.",
+      "conclusion": "Donaldson's shop.donaldson.com / catalog.donaldson.com domains remain fully inaccessible. This pass did not solve that block — it routed around it via donaldsontoolbox.com.au and Donaldson's own distributor network instead (see source_channel_note)."
+    },
+    {
+      "manufacturer": "DONALDSON_TOOLBOX_AU",
+      "resource": "https://donaldsontoolbox.com.au/search/partdetail/view/{slug}",
+      "observed_2026-09-23": "HTTP 200 on every part-detail URL tried, including with a Googlebot user agent, but the response is an Angular SPA shell (app-root with no server-rendered content); the actual cross-reference table is fetched client-side from an api.autoinfo.com.au backend whose REST paths could not be reverse-engineered from the minified bundle in the time available.",
+      "conclusion": "The live page body is not independently fetchable in this environment, same limitation class as shop.donaldson.com. What is usable is Google's own index of this site's URLs and titles, and third-party distributor pages that mirror the same data — both used and disclosed per-row below."
     },
     {
       "manufacturer": "FLEETGUARD",
       "resource": "https://www.fleetguard.com and catalog.fleetguard.com",
       "observed": "catalog.fleetguard.com does not resolve. www.fleetguard.com serves the site shell; the global search path returns HTTP 404 and the catalogue is behind a client-side application.",
-      "conclusion": "Not reached. Not attempted further, because Fleetguard is only consulted where Donaldson does not manufacture, and that determination itself requires Donaldson."
+      "conclusion": "Not reached directly. Not needed directly this pass either: no row reached DONALDSON_NOT_MANUFACTURED_VERIFIED, so Fleetguard never became eligible to define a base, and only appears below as informational corroboration sourced from distributor pages."
     },
     {
       "manufacturer": "BALDWIN",
       "resource": "https://www.baldwinfilter.com",
       "observed": "HTTP 403 on the site root and on search.",
-      "conclusion": "Not reached."
+      "conclusion": "Not reached. Baldwin references below are corroboration only, sourced from distributor cross-reference pages, never from baldwinfilter.com directly."
     },
     {
       "manufacturer": "MANN-FILTER",
       "resource": "https://catalog.mann-filter.com/NA/eng/oenumbers and https://www.mann-filter.com/us-en/catalog.html",
       "observed": "Both return HTTP 200 and are reachable.",
-      "conclusion": "Reachable but not queried. MANN-FILTER is fourth in the mandated order and may only be used as corroboration after Donaldson and Fleetguard are settled."
+      "conclusion": "Reachable but not queried directly this pass. MANN-FILTER is fourth in the mandated order and may only be used as corroboration after Donaldson and Fleetguard are settled; the repository's own MANN-sourced competitor_cross_references_ld.csv did supply one high-value hit (EF50953 / P552564) used below."
     },
     {
       "manufacturer": "WIX",
       "resource": "https://www2.wixfilters.com/Lookup/filterlookup.aspx",
       "observed": "HTTP 200, server-rendered, reachable without JavaScript.",
-      "conclusion": "Reachable but not queried, for the same ordering reason."
+      "conclusion": "Reachable but not queried directly this pass, for the same ordering reason. WIX references below are corroboration only, sourced from distributor cross-reference pages."
     }
   ],
   "engine_level_donaldson_evidence": {
     "status": "RECORDED_BUT_NOT_USABLE_FOR_A_BASE_DECISION",
-    "why_recorded": "It is genuine Donaldson-published material found during the attempt and is preserved so the next pass does not repeat the search.",
+    "why_recorded": "It is genuine Donaldson-published material found during the 2026-09-22 attempt and is preserved so this and future passes do not repeat the search.",
     "why_not_usable": [
       "It maps a Donaldson part to an Isuzu ENGINE, not to an Isuzu OE/OEN. Phase 3 requires the OE/OEN linkage.",
       "It is the Australasia edition. Its model column lists Australian and New Zealand designations (NLR, NLS, NMR, NNR, NPS, FRD, FSS, FVD, FVZ, GXD and similar), none of which is a USA Phase 1 vehicle.",
@@ -70,25 +85,557 @@
       { "isuzu_engine_as_published": "4HK1-TCN TCC 5.2L", "donaldson_kit": "X900260", "donaldson_fuel": ["P506095", "P551855"], "donaldson_oil": ["P848076"], "published_vehicle_column": "NBPR, NPS, NQR 2016 -" },
       { "isuzu_engine_as_published": "6HK1-TCC, TSN, TCS 7.8L", "donaldson_kit": "X900176", "donaldson_fuel": ["P506095", "P551855"], "donaldson_oil": ["P550408"], "published_vehicle_column": "FR, FS, FT, FV 09/07 - 10/15" },
       { "isuzu_engine_as_published": "6HE1 7.1L, 6HH1 8.2L, 6HK1 TCC, TCS 7.8L", "donaldson_kit": "X903222", "donaldson_fuel": ["P502226", "P552564"], "donaldson_oil": ["P550408"], "published_vehicle_column": "FRR 96-02, FSR, FTR 00-02, FRD, FRR, FSR, FTR, FTS, FVD 03-07" }
-    ]
+    ],
+    "2026-09-23_note": "P552564 appears in this AU engine-level table (row 6, 6HE1/6HH1/6HK1 kit X903222) and is now ALSO independently confirmed this pass, by OE/OEN, as the Donaldson part for Isuzu 1132400791/1132400740/8943924740 (see P3-N-FUEL-4HE and P3-F-FUEL-1994-2004 below). The engine-level table did not define that result — the OE/OEN-level evidence did — but the two are consistent with each other, which is a useful (non-defining) corroboration."
   },
-  "resolution_rows": [],
-  "elimfilters_base_decisions": [],
+  "resolution_rows": [
+    {
+      "row_id": "P3-N-AIR-1986-2005",
+      "phase2_row_id": "P2-N-AIR-1986-2005",
+      "isuzu_oe_oen": ["8944302500", "2906469100"],
+      "filter_position": "AIR_PRIMARY",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 1986-2005, Diesel/GAS (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_AMBIGUOUS",
+      "donaldson_part": null,
+      "donaldson_candidates": [
+        { "part": "R804759", "type": "Air filter, primary round (element)", "confirmed_isuzu_cross": ["2906469100"], "sources": ["donaldsontoolbox.com.au part-detail slug R804759-R804759-ISUZU-2-90646-910-0 (Google-indexed title/slug)", "https://www.filtersplus.co/product/r804759/ (Donaldson-authorized AU distributor, states primary application ISUZU 2-90646-910-0)"] },
+        { "part": "P500179", "type": "Air filter (type not independently confirmed)", "confirmed_isuzu_cross": ["2906469100"], "sources": ["Amazon aftermarket resellers only (Chamixx, generic no-name listings) claiming 'Replaces...Donaldson P500179'; not found on any Donaldson-controlled or Donaldson-distributor page"] }
+      ],
+      "donaldson_source": "See donaldson_candidates above; neither candidate is confirmed against 8944302500, only against 2906469100.",
+      "fleetguard_status": "NOT_CONSULTED_DONALDSON_AMBIGUOUS",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [
+        { "manufacturer": "FLEETGUARD", "part_number": "AF4739", "relationship_type": "UNVERIFIED", "source": "Amazon aftermarket listing", "source_scope": "informational only", "confidence": "low", "fitment_role": "corroboration" },
+        { "manufacturer": "LUBERFINER", "part_number": "LAF1947", "relationship_type": "UNVERIFIED", "source": "Amazon aftermarket listing", "source_scope": "informational only", "confidence": "low", "fitment_role": "corroboration" },
+        { "manufacturer": "WIX", "part_number": "46506", "relationship_type": "UNVERIFIED", "source": "Amazon aftermarket listing", "source_scope": "informational only", "confidence": "low", "fitment_role": "corroboration" }
+      ],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "NO_BASE_DECISION — two distinct Donaldson-side candidates (R804759, an element confirmed by two independent Donaldson/distributor sources; P500179, claimed only by aftermarket resellers) were not reconciled to a single part, and neither is confirmed against 8944302500. Taking a base decision here would risk picking the wrong physical filter.",
+      "decision_status": "PARTIAL",
+      "caveats": "Do not merge R804759 and P500179 as if they were the same part without a direct Donaldson-side statement that one supersedes the other (unlike the P543614/P828633 pair below, no supersession language was found for this pair). 8944302500 is Phase 2's own older/paired Isuzu number for this row and is not independently confirmed against either Donaldson candidate.",
+      "evidence": [
+        "https://donaldsontoolbox.com.au/search/partdetail/view/R804759 (title/slug, Google-indexed)",
+        "https://www.filtersplus.co/product/r804759/",
+        "https://www.amazon.com/2906469100-Luberfiner-Fleetguard-Donaldson-Compatible/dp/B0F95YQSJ6"
+      ]
+    },
+    {
+      "row_id": "P3-N-AIR-2006-ON",
+      "phase2_row_id": "P2-N-AIR-2006-ON",
+      "isuzu_oe_oen": ["8970622940", "8981772710", "29007N0000"],
+      "filter_position": "AIR_PRIMARY",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 2006-, Diesel/GAS (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P828633 (current Donaldson production number)",
+      "donaldson_source": "donaldsontoolbox.com.au part-detail slug P828633-P828633-ISUZU-8970622940 (Google-indexed title/slug); onlinefiltersupply.com and filterfinderonline.com list the same Isuzu cross",
+      "relationship_type": "SUPERSESSION",
+      "supersession_note": "P828633 is documented by an independent Donaldson distributor (usa.petroil.net) as the current replacement for the older Donaldson number P543614, for the same Isuzu application 8970622940. P543614 itself is confirmed against ALL THREE Isuzu numbers in this row by fcpsolutions.com.au's Sakura cross-reference table (P543614, A1377, AF27693, RS5434 all listed as equivalents) and by crossfilters.com's explicit statement 'P543614 Donaldson Air Filter, Primary Radialseal (Replaces: Isuzu 8-97062-294-0)'.",
+      "fleetguard_status": "NOT_REQUIRED_DONALDSON_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [
+        { "manufacturer": "BALDWIN", "part_number": "RS5434", "relationship_type": "ELEMENT_CROSS", "source": "fcpsolutions.com.au", "source_scope": "AU distributor cross-reference table", "confidence": "medium", "fitment_role": "corroboration" },
+        { "manufacturer": "SAKURA", "part_number": "FA-6020M / A-6020M", "relationship_type": "ELEMENT_CROSS", "source": "fcpsolutions.com.au", "source_scope": "AU distributor cross-reference table", "confidence": "medium", "fitment_role": "corroboration" },
+        { "manufacturer": "FLEETGUARD", "part_number": "AF27693", "relationship_type": "UNVERIFIED", "source": "fcpsolutions.com.au page title (Xref list)", "source_scope": "AU distributor", "confidence": "low", "fitment_role": "corroboration", "note": "This is the same AF27693 named as a known historical candidate in the task's own reference list (AF27693 ↔ P543614 → EA13614), now confirmed against this exact Isuzu OE set." }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P543614",
+      "elimfilters_existing_sku": "EA13614",
+      "elimfilters_base_decision": "REUSE_EXISTING_SKU: EA13614 — assigned to Donaldson P543614, which crosses to all three Isuzu numbers in this row per an independent AU distributor's cross-reference table. Donaldson's current catalog number for the same physical filter is P828633 (a supersession, not a competing base); EA13614 stays bound to the historical part per existing catalog convention and is not moved to a new SKU.",
+      "decision_status": "VERIFIED_BASE",
+      "caveats": "P828633 and P543614 are treated as the same physical filter (supersession), not two candidate bases, because a Donaldson distributor states the replacement relationship explicitly. If a future pass finds Donaldson's own site stating otherwise, this must be revisited.",
+      "evidence": [
+        "https://www.fcpsolutions.com.au/p/Engine-Filters/Sakura-FA6020M-Air-Filter-Ryco-A1377-donaldson-p543614-fleetguard-af27693-baldwin-rs5434",
+        "https://crossfilters.com/products/p543614-donaldson-air-filter-primary-radialseal",
+        "https://donaldsontoolbox.com.au/search/partdetail/view/P828633-P828633-ISUZU-8970622940",
+        "https://usa.petroil.net/products/air-filters/donaldson-powercore-type/162070=p543614-donaldson-filter-air-camion-isuzu-npr-turbo-replacement-p828633-46932-47001-rs5434",
+        "https://www.totalparts.com.au/products/donaldson-air-filter-primary-radialseal-p543614"
+      ]
+    },
+    {
+      "row_id": "P3-N-LUBE-4JJ",
+      "phase2_row_id": "P2-N-LUBE-4JJ",
+      "isuzu_oe_oen": ["8980188580"],
+      "filter_position": "LUBE_PRIMARY",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 2010-, Diesel/4JJ (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502597 (LUBE FILTER, CARTRIDGE — element, not an assembly)",
+      "donaldson_source": "Three independent AU/NZ distributor pages agree: westernfilters.net.au, totalparts.com.au and filterdiscounters.com.au all state P502597 crosses to Isuzu 8980188580 (Truck ELF N Series 4JJ1T/4JJ1TCS); finditparts.com corroborates the part identity.",
+      "fleetguard_status": "NOT_REQUIRED_DONALDSON_VERIFIED",
+      "fleetguard_part": "LF17501",
+      "fleetguard_source": "filters-king.com cross-reference listing (informational corroboration, not used to select base)",
+      "supporting_crossrefs": [
+        { "manufacturer": "ALCO", "part_number": "MD793", "relationship_type": "UNVERIFIED", "source": "filters-king.com", "source_scope": "distributor cross-reference listing", "confidence": "low", "fitment_role": "corroboration" }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502597",
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "DONALDSON_RESOLVED_NO_SKU_ASSIGNED — P502597 is Donaldson-confirmed by three independent distributors agreeing, but it was not found in the checked-in LD cross-reference export (competitor_cross_references_ld.csv / external_cross_reference_master_ld.csv), and this session had no live PostgreSQL/catalog access to check the HD side. Per governance, a new SKU is not invented here; this is left for a governance pass with database access to assign (or find an existing) EL-series SKU and confirm no duplicate exists.",
+      "decision_status": "NO_ELIMFILTERS_SKU_YET",
+      "caveats": null,
+      "evidence": [
+        "https://www.westernfilters.net.au/p502597-donaldson-oil-filter-cartridge-for-isuzu-truck-elf-n-series-4jj1t-4jj1tcs-872000810-8980188580/",
+        "https://www.totalparts.com.au/products/donaldson-lube-filter-cartridge-p502597",
+        "https://www.filterdiscounters.com.au/p502597-donaldson-lube-filter-cartridge/",
+        "https://www.finditparts.com/products/15673247/donaldson-p502597"
+      ]
+    },
+    {
+      "row_id": "P3-N-LUBE-2011-ON",
+      "phase2_row_id": "P2-N-LUBE-2011-ON",
+      "isuzu_oe_oen": ["2906544040", "8982984040"],
+      "filter_position": "LUBE_PRIMARY",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 2011-, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_source": null,
+      "fleetguard_status": "FOUND_BUT_NOT_ELIGIBLE_FOR_BASE",
+      "fleetguard_part": "LF17537",
+      "fleetguard_source": "spareto.com and crossfilters.com list Fleetguard LF17537 against Isuzu 8982984040",
+      "supporting_crossrefs": [
+        { "manufacturer": "FLEETGUARD", "part_number": "LF17537", "relationship_type": "DIRECT_OE_CROSS", "source": "spareto.com", "source_scope": "OE cross-reference aggregator", "confidence": "medium", "fitment_role": "informational_only_not_base_eligible" }
+      ],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "BLOCKED_DONALDSON — no Donaldson reference found despite genuine search effort (Donaldson Toolbox, distributor network, general web). Fleetguard LF17537 exists in aftermarket literature but cannot become base: the canonical rule requires DONALDSON_NOT_MANUFACTURED_VERIFIED, and NOT_FOUND is explicitly not equivalent to NOT_MANUFACTURED.",
+      "decision_status": "BLOCKED_DONALDSON",
+      "caveats": "Same physical Isuzu part (8982984040) also appears in P2-F-LUBE-2018-2021 below; the result is identical for both rows.",
+      "evidence": [
+        "https://spareto.com/oe/8982984040"
+      ]
+    },
+    {
+      "row_id": "P3-N-LUBE-1998-2010",
+      "phase2_row_id": "P2-N-LUBE-1998-2010",
+      "isuzu_oe_oen": ["2906542701", "2906548000", "2906548100"],
+      "filter_position": "LUBE_PRIMARY",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 1998-2010, Diesel (Phase 2 published scope; this row carries the four Phase-2-flagged anomalous OEN numbers)",
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502042 (LUBE FILTER, SPIN-ON COMBINATION)",
+      "donaldson_source": "donaldsontoolbox.com.au part-detail slug P502042-P502042-ISUZU-8970967770-2906548000-97148270 (Google-indexed title/slug); westernfilters.net.au corroborates: 'P502042 Donaldson Oil Filter Spin-On Combination for Isuzu Trucks ELF NPR UNPR 4H Engines 8970967770'",
+      "fleetguard_status": "NOT_REQUIRED_DONALDSON_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502042",
+      "elimfilters_existing_sku": "EL82042",
+      "elimfilters_base_decision": "REUSE_EXISTING_SKU: EL82042, bound specifically to the confirmed Isuzu number 2906548000 within this row (EL82042 → P502042 is the task's own known historical candidate pairing, now independently corroborated by Donaldson's own Toolbox slug).",
+      "decision_status": "PARTIAL",
+      "caveats": "ANOMALOUS_OEN_SEMANTICS (per this manifest's explicit instruction not to silently normalize): Donaldson's own cross-reference for P502042 lists Isuzu 8970967770, 2906548000 and 97148270. Of the three numbers Phase 2 carries in this row, ONLY 2906548000 is recognized by Donaldson. 2906542701 and 2906548100 — the two numbers Phase 2 already flagged as format-anomalous relative to Isuzu's own printed document — are ALSO absent from Donaldson's independent OE cross-reference for the same physical filter. This is new evidence, not a resolution of the anomaly: even a manufacturer's cross-reference index, which typically absorbs superseded and alternate Isuzu numbers, does not carry 2906542701 or 2906548100. The Phase 2 flag stands; it is reinforced, not explained away.",
+      "evidence": [
+        "https://donaldsontoolbox.com.au/search/partdetail/view/P502042-P502042-ISUZU-8970967770-2906548000-97148270",
+        "https://www.westernfilters.net.au/p502042-donaldson-oil-filter-spin-on-combination-for-isuzu-trucks-elf-npr-unpr-4h-engines-8970967770/"
+      ]
+    },
+    {
+      "row_id": "P3-N-FUEL-4HE",
+      "phase2_row_id": "P2-N-FUEL-4HE",
+      "isuzu_oe_oen": ["1132400791", "1132400740"],
+      "filter_position": "FUEL_PRIMARY",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 1998-, Diesel/4HE (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P552564 (FUEL FILTER, WATER SEPARATOR SPIN-ON)",
+      "donaldson_source": "donaldsontoolbox.com.au part-detail slug P552564-P552564-ISUZU-1132400740-HITACHI-4206080 (Google-indexed title/slug, confirms 1132400740 directly); cyuauto.com reproduces a full Isuzu cross-reference list for P552564 that includes both 1132400740 and 1132400791; GFC/petroil.net (Latin American Donaldson distributor) independently states 'P552564 Filtro Donaldson Combustible Roscado Isuzu 1132400791 FVR33G FSR...' confirming 1132400791 and, separately, the F-Series application",
+      "fleetguard_status": "NOT_REQUIRED_DONALDSON_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [
+        { "manufacturer": "BALDWIN", "part_number": "BF7602 / BF719", "relationship_type": "ELEMENT_CROSS", "source": "cyuauto.com", "source_scope": "distributor cross-reference table", "confidence": "medium", "fitment_role": "corroboration" },
+        { "manufacturer": "HENGST", "part_number": "H184WK", "relationship_type": "UNVERIFIED", "source": "cyuauto.com", "source_scope": "distributor cross-reference table", "confidence": "low", "fitment_role": "corroboration" },
+        { "manufacturer": "FRAM", "part_number": "P4139", "relationship_type": "UNVERIFIED", "source": "cyuauto.com", "source_scope": "distributor cross-reference table", "confidence": "low", "fitment_role": "corroboration" }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P552564",
+      "elimfilters_existing_sku": "EF50953",
+      "elimfilters_base_decision": "REUSE_EXISTING_SKU: EF50953 — found directly in the repository's own competitor_cross_references_ld.csv (duplicated in external_cross_reference_master_ld.csv): the row \"EF50953\",\"WK953\",\"Fuel Filter\",\"DONALDSON\",\"P552564\",... and \"EF50953\",\"WK953\",\"Fuel Filter\",\"ISUZU\",\"1132400740\",... already exist in ELIMFILTERS' own catalog export (sourced there from a MANN WK953 cross-reference). This is catalog ground truth, the strongest evidence available in this pass, not external research.",
+      "decision_status": "VERIFIED_BASE",
+      "caveats": null,
+      "evidence": [
+        "https://donaldsontoolbox.com.au/search/partdetail/view/P552564-P552564-ISUZU-1132400740-HITACHI-4206080",
+        "https://www.cyuauto.com/filters/fuel-filter-p552564/",
+        "https://www.petroil.net/productos/filtros-de-combustible/6214=p552564-filtro-donaldson-combustible-roscado-isuzu-1132400791-fvr33g-fsr-encava-ent610-ff5108-33398-f9071",
+        "repo:competitor_cross_references_ld.csv (elimfilters_sku EF50953, source_sku WK953)"
+      ]
+    },
+    {
+      "row_id": "P3-N-FUEL-2013-2021-A",
+      "phase2_row_id": "P2-N-FUEL-2013-2021-A",
+      "isuzu_oe_oen": ["8975425390", "8981475250"],
+      "filter_position": "FUEL_PRIMARY",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 2013-2021, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502599 (FUEL FILTER, CARTRIDGE)",
+      "donaldson_source": "parts-machining.com and petroil.net (GFC, Latin American Donaldson distributor) both state P502599 crosses directly to Isuzu 8981475250; shop.donaldson.com's own (blocked) product title confirms 'Donaldson P502599 – FUEL FILTER, CARTRIDGE' exists as a real catalog part",
+      "fleetguard_status": "CORROBORATED_NOT_BASE",
+      "fleetguard_part": "FF5877",
+      "fleetguard_source": "allprodiesel.net states Fleetguard FF5877 replaces Isuzu 8981475250, 2945611040, 97780197 AND 8975425390",
+      "supporting_crossrefs": [
+        { "manufacturer": "BALDWIN", "part_number": "PF46059 / BF46069", "relationship_type": "ELEMENT_CROSS", "source": "crossfilters.com", "source_scope": "distributor cross-reference table", "confidence": "medium", "fitment_role": "corroboration" },
+        { "manufacturer": "SAKURA", "part_number": "EF-15010", "relationship_type": "UNVERIFIED", "source": "search aggregation", "source_scope": "distributor cross-reference", "confidence": "low", "fitment_role": "corroboration" }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502599",
+      "elimfilters_existing_sku": "EF92599",
+      "elimfilters_base_decision": "REUSE_EXISTING_SKU: EF92599 — this is the task's own known historical candidate pairing (FF5877 ↔ P502599 → EF92599), now linked to this exact Isuzu OE/OEN pair for the first time. 8981475250 is confirmed directly against P502599 by two independent Donaldson distributors. 8975425390 is linked only transitively, through Fleetguard FF5877's own documented Isuzu cross-reference plus the known FF5877=P502599 equivalence; this is a two-step linkage, not a direct Donaldson-to-8975425390 statement.",
+      "decision_status": "PARTIAL",
+      "caveats": "8975425390's link to P502599 is transitive (via FF5877), not direct. If a future pass finds Donaldson's own site listing 8975425390 directly (or explicitly NOT listing it), this row must be revisited.",
+      "evidence": [
+        "https://www.parts-machining.com/isuzu-trucks-fuel-filter-8-98147525-0_sp",
+        "https://www.petroil.net/productos/ver-petroilnet/ver-petroilnet/89697=p502599-filtro-combustible-donaldson-tcartucho-camiones-isuzu--elfnlrnprnmrnnrkr",
+        "https://www.allprodiesel.net/products/isuzu-8981475250-fuel-filter-replacement-by-fleetguard",
+        "https://www.crossfilters.com/products/pf46059-baldwin-fuel-element-replaces-general-motors-corp-94561104-98147525"
+      ]
+    },
+    {
+      "row_id": "P3-N-FUEL-2013-2021-B",
+      "phase2_row_id": "P2-N-FUEL-2013-2021-B",
+      "isuzu_oe_oen": ["8943692993", "8980374810", "5873109370"],
+      "filter_position": "FUEL_PRIMARY",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 2013-2021, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_source": null,
+      "fleetguard_status": "NOT_FOUND",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "BLOCKED_DONALDSON — no Donaldson reference found for any of the three Isuzu numbers despite repeated, differently-worded search attempts against Donaldson Toolbox and its distributor network.",
+      "decision_status": "BLOCKED_DONALDSON",
+      "caveats": null,
+      "evidence": []
+    },
+    {
+      "row_id": "P3-N-FUEL-2013-2021-C",
+      "phase2_row_id": "P2-N-FUEL-2013-2021-C",
+      "isuzu_oe_oen": ["8980370110", "8982035990", "8981628970"],
+      "filter_position": "FUEL_PRIMARY",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 2013-2021, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502427 (FUEL FILTER, CARTRIDGE)",
+      "donaldson_source": "filters-king.com reproduces a full, detailed Isuzu OE/OEM cross-reference list for P502427 that includes all three of this row's numbers verbatim: 8980370110 (8-98037011-0), 8981628970 (8-98162897-0 / 898162897A), 8982035990 (8-98203-599-0)",
+      "fleetguard_status": "NOT_REQUIRED_DONALDSON_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [
+        { "manufacturer": "BALDWIN", "part_number": "PF9919", "relationship_type": "ELEMENT_CROSS", "source": "filters-king.com", "source_scope": "distributor cross-reference table", "confidence": "medium", "fitment_role": "corroboration" },
+        { "manufacturer": "WIX", "part_number": "33937", "relationship_type": "ELEMENT_CROSS", "source": "filters-king.com", "source_scope": "distributor cross-reference table", "confidence": "medium", "fitment_role": "corroboration" },
+        { "manufacturer": "SAKURA", "part_number": "EF1509", "relationship_type": "UNVERIFIED", "source": "filters-king.com", "source_scope": "distributor cross-reference table", "confidence": "low", "fitment_role": "corroboration" }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502427",
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "DONALDSON_RESOLVED_NO_SKU_ASSIGNED — P502427 is Donaldson-confirmed against all three Isuzu numbers by a single, detailed distributor cross-reference table, but was not found in the checked-in LD cross-reference export and this session had no live PostgreSQL/catalog access. No new SKU is invented; left for a governance pass with database access.",
+      "decision_status": "NO_ELIMFILTERS_SKU_YET",
+      "caveats": "The evidence for this row comes from a single distributor source (filters-king.com), not two independent ones; it is nonetheless treated as DONALDSON_VERIFIED because that one source reproduces a complete, internally consistent, Donaldson-attributed cross-reference table covering all three Isuzu numbers exactly, not a partial or inferred match.",
+      "evidence": [
+        "https://www.filters-king.com/fuel-filter-8-98037011-0-pf9919-p502427-ef-1509-16403-89t0c_p1876.html"
+      ]
+    },
+    {
+      "row_id": "P3-N-FUEL-HIGHCAP-2013-2021",
+      "phase2_row_id": "P2-N-FUEL-HIGHCAP-2013-2021",
+      "isuzu_oe_oen": ["8980374810", "5873109370", "8980318470"],
+      "filter_position": "FUEL_PRIMARY",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 2013-2021, Diesel, high-capacity fuel filter variant (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_source": null,
+      "fleetguard_status": "NOT_FOUND",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "BLOCKED_DONALDSON — a candidate linking Donaldson P550390 to 8980374810/5873109370 surfaced in one search-engine-synthesized summary but could not be independently verified on any single traceable page, and P550390 was already documented in the 2026-09-22 attempt as an Australia-only, engine-level (SiTEC 150/175) kit reference, not an OE/OEN-linked one. Not used, consistent with this manifest's rule against letting an aftermarket or engine-level source stand in for a direct OE/OEN match.",
+      "decision_status": "BLOCKED_DONALDSON",
+      "caveats": "Do not reuse P550390 for this row without a directly-verifiable, OE/OEN-level Donaldson source; the existing evidence for P550390 is engine/kit-level only.",
+      "evidence": []
+    },
+    {
+      "row_id": "P3-N-FWS-2022i-ON",
+      "phase2_row_id": "P2-N-FWS-2022i-ON",
+      "isuzu_oe_oen": ["8982373410"],
+      "filter_position": "FUEL_WATER_SEPARATOR",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 2022i-, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_source": null,
+      "fleetguard_status": "NOT_FOUND",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "BLOCKED_DONALDSON — no Donaldson-side cross-reference was found in any channel searched. This Isuzu number is among the newest in the entire closure (Phase 2 scopes it 2022i-on); plausibly Donaldson has not yet catalogued an equivalent element.",
+      "decision_status": "BLOCKED_DONALDSON",
+      "caveats": null,
+      "evidence": []
+    },
+    {
+      "row_id": "P3-N-TRANS",
+      "phase2_row_id": "P2-N-TRANS",
+      "isuzu_oe_oen": ["8971822820"],
+      "filter_position": "TRANSMISSION_FILTER",
+      "oem_scope": "N-SERIES NPR/NRR/NQR, 1998-, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_source": null,
+      "fleetguard_status": "NOT_FOUND",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [
+        { "manufacturer": "DONALDSON", "part_number": "P560971 / P560972", "relationship_type": "KIT_CROSS", "source": "shop.truckline.com.au, dieselequipmentinc.com", "source_scope": "generic 'Transmission Filter Kit Suits Allison Isuzu' — not tied to a specific Isuzu OE number", "confidence": "low", "fitment_role": "not_base_eligible" }
+      ],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "BLOCKED_DONALDSON — Donaldson P560971/P560972 kits are documented as suiting Allison transmissions in Isuzu trucks generically, but neither is confirmed against this specific Isuzu OE number 8971822820. Per governance, an engine/transmission-level match is not sufficient to establish a base.",
+      "decision_status": "BLOCKED_DONALDSON",
+      "caveats": "Do not use P560971/P560972 as the base without a direct 8971822820 cross-reference; they are recorded only to save the next pass from re-finding them.",
+      "evidence": [
+        "https://shop.truckline.com.au/products/donaldson-transmission-filter-kit-suits-allison-isuzu-p560971"
+      ]
+    },
+    {
+      "row_id": "P3-F-LUBE-1987-2008",
+      "phase2_row_id": "P2-F-LUBE-1987-2008",
+      "isuzu_oe_oen": ["8943924750", "1132004872"],
+      "filter_position": "LUBE_PRIMARY",
+      "oem_scope": "F-SERIES FTR/FVR/FSR, 1987-2008, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_source": null,
+      "fleetguard_status": "NOT_FOUND",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "BLOCKED_DONALDSON — no Donaldson reference found for either number despite search; only aftermarket-reseller listings (Amazon) were found for 8943924750, none Donaldson-attributed.",
+      "decision_status": "BLOCKED_DONALDSON",
+      "caveats": null,
+      "evidence": []
+    },
+    {
+      "row_id": "P3-F-LUBE-2018-2021",
+      "phase2_row_id": "P2-F-LUBE-2018-2021",
+      "isuzu_oe_oen": ["8982984040"],
+      "filter_position": "LUBE_PRIMARY",
+      "oem_scope": "F-SERIES FTR/FVR/FSR, 2018-2021, Diesel/4HK (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_source": null,
+      "fleetguard_status": "FOUND_BUT_NOT_ELIGIBLE_FOR_BASE",
+      "fleetguard_part": "LF17537",
+      "fleetguard_source": "spareto.com and crossfilters.com (same evidence as P3-N-LUBE-2011-ON, which shares this exact Isuzu OE number)",
+      "supporting_crossrefs": [
+        { "manufacturer": "FLEETGUARD", "part_number": "LF17537", "relationship_type": "DIRECT_OE_CROSS", "source": "spareto.com", "source_scope": "OE cross-reference aggregator", "confidence": "medium", "fitment_role": "informational_only_not_base_eligible" }
+      ],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "BLOCKED_DONALDSON — identical result to P3-N-LUBE-2011-ON, which shares this exact Isuzu OE number (8982984040): no Donaldson reference found, Fleetguard LF17537 not eligible for base without a verified Donaldson non-manufacture finding.",
+      "decision_status": "BLOCKED_DONALDSON",
+      "caveats": null,
+      "evidence": []
+    },
+    {
+      "row_id": "P3-F-FUEL-1994-2004",
+      "phase2_row_id": "P2-F-FUEL-1994-2004",
+      "isuzu_oe_oen": ["8943924740", "1132400791"],
+      "filter_position": "FUEL_PRIMARY",
+      "oem_scope": "F-SERIES FTR/FVR/FSR, 1994-2004, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P552564 (FUEL FILTER, WATER SEPARATOR SPIN-ON — same physical part as P3-N-FUEL-4HE)",
+      "donaldson_source": "cyuauto.com's full Isuzu cross-reference list for P552564 includes 8943924740 explicitly, alongside 1132400791 (see P3-N-FUEL-4HE for the 1132400791 evidence, which applies identically here)",
+      "fleetguard_status": "NOT_REQUIRED_DONALDSON_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [
+        { "manufacturer": "GENERAL_MOTORS", "part_number": "94392474", "relationship_type": "UNVERIFIED", "source": "cyuauto.com", "source_scope": "distributor cross-reference table", "confidence": "low", "fitment_role": "corroboration" }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P552564",
+      "elimfilters_existing_sku": "EF50953",
+      "elimfilters_base_decision": "REUSE_EXISTING_SKU: EF50953 — same Donaldson part and same catalog-confirmed SKU as P3-N-FUEL-4HE (see that row for the CSV citation); this row's 8943924740 is additionally, independently confirmed against P552564 by cyuauto.com's detailed list.",
+      "decision_status": "VERIFIED_BASE",
+      "caveats": null,
+      "evidence": [
+        "https://www.cyuauto.com/filters/fuel-filter-p552564/"
+      ]
+    },
+    {
+      "row_id": "P3-F-FUEL-2018-2020-A",
+      "phase2_row_id": "P2-F-FUEL-2018-2020-A",
+      "isuzu_oe_oen": ["8943692993", "8980374810", "8943691993"],
+      "filter_position": "FUEL_PRIMARY",
+      "oem_scope": "F-SERIES FTR/FVR/FSR, 2018-2020, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_source": null,
+      "fleetguard_status": "NOT_FOUND",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "BLOCKED_DONALDSON — no Donaldson reference found for any of the three Isuzu numbers.",
+      "decision_status": "BLOCKED_DONALDSON",
+      "caveats": null,
+      "evidence": []
+    },
+    {
+      "row_id": "P3-F-FUEL-2018-2020-B",
+      "phase2_row_id": "P2-F-FUEL-2018-2020-B",
+      "isuzu_oe_oen": ["8943692993", "8980374810", "8943691993"],
+      "filter_position": "FUEL_PRIMARY",
+      "oem_scope": "F-SERIES FTR/FVR/FSR, 2018-2020, Diesel (Phase 2 published scope; distinct Phase 2 row from -A with an identical OE/OEN set)",
+      "donaldson_status": "DONALDSON_NOT_FOUND",
+      "donaldson_part": null,
+      "donaldson_source": null,
+      "fleetguard_status": "NOT_FOUND",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [],
+      "base_source_brand": null,
+      "base_source_part": null,
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "BLOCKED_DONALDSON — identical Isuzu OE/OEN set to P2-F-FUEL-2018-2020-A; same Donaldson result applies.",
+      "decision_status": "BLOCKED_DONALDSON",
+      "caveats": null,
+      "evidence": []
+    },
+    {
+      "row_id": "P3-F-FUEL-2018-2020-C",
+      "phase2_row_id": "P2-F-FUEL-2018-2020-C",
+      "isuzu_oe_oen": ["8975425390", "8981475250"],
+      "filter_position": "FUEL_SECONDARY",
+      "oem_scope": "F-SERIES FTR/FVR/FSR, 2018-2020, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502599 (FUEL FILTER, CARTRIDGE — same physical part and same evidence as P3-N-FUEL-2013-2021-A)",
+      "donaldson_source": "See P3-N-FUEL-2013-2021-A; this row shares its exact Isuzu OE/OEN pair.",
+      "fleetguard_status": "CORROBORATED_NOT_BASE",
+      "fleetguard_part": "FF5877",
+      "fleetguard_source": "See P3-N-FUEL-2013-2021-A",
+      "supporting_crossrefs": [
+        { "manufacturer": "BALDWIN", "part_number": "PF46059 / BF46069", "relationship_type": "ELEMENT_CROSS", "source": "crossfilters.com", "source_scope": "distributor cross-reference table", "confidence": "medium", "fitment_role": "corroboration" }
+      ],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502599",
+      "elimfilters_existing_sku": "EF92599",
+      "elimfilters_base_decision": "REUSE_EXISTING_SKU: EF92599 — same reasoning and same transitive-linkage caveat as P3-N-FUEL-2013-2021-A.",
+      "decision_status": "PARTIAL",
+      "caveats": "Same transitive-linkage caveat as P3-N-FUEL-2013-2021-A for 8975425390.",
+      "evidence": []
+    },
+    {
+      "row_id": "P3-F-FUEL-2018-2020-D",
+      "phase2_row_id": "P2-F-FUEL-2018-2020-D",
+      "isuzu_oe_oen": ["8980370110"],
+      "filter_position": "FUEL_SECONDARY",
+      "oem_scope": "F-SERIES FTR/FVR/FSR, 2018-2020, Diesel (Phase 2 published scope)",
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502427 (FUEL FILTER, CARTRIDGE — same physical part and same evidence as P3-N-FUEL-2013-2021-C)",
+      "donaldson_source": "filters-king.com's cross-reference list for P502427 includes 8980370110 directly (see P3-N-FUEL-2013-2021-C)",
+      "fleetguard_status": "NOT_REQUIRED_DONALDSON_VERIFIED",
+      "fleetguard_part": null,
+      "fleetguard_source": null,
+      "supporting_crossrefs": [],
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502427",
+      "elimfilters_existing_sku": null,
+      "elimfilters_base_decision": "DONALDSON_RESOLVED_NO_SKU_ASSIGNED — same reasoning as P3-N-FUEL-2013-2021-C; no new SKU invented without live database access.",
+      "decision_status": "NO_ELIMFILTERS_SKU_YET",
+      "caveats": null,
+      "evidence": []
+    }
+  ],
+  "not_applicable_in_phase2": [
+    { "phase2_row_id": "P2-N-LUBE-6BG", "isuzu_oe_oen": ["1132004872"], "filter_position": "LUBE_PRIMARY", "reason": "Phase 2 evidence_status is NOT_APPLICABLE for this engine/model combination; no aftermarket resolution is needed or attempted." },
+    { "phase2_row_id": "P2-N-LUBE-4BD", "isuzu_oe_oen": ["8970254642"], "filter_position": "LUBE_PRIMARY", "reason": "Phase 2 evidence_status is NOT_APPLICABLE for this engine/model combination; no aftermarket resolution is needed or attempted." }
+  ],
+  "blocked_oem_scopes": [
+    {
+      "scope": "H-SERIES (HTR/HVR/HXR), MY2005-2008, 6HK1-TC 7.8L, USA",
+      "status": "BLOCKED_OEM",
+      "reason": "Phase 2 records zero Isuzu OE/OEN part numbers for any H-Series position (see phase2 unresolved_positions, H-Series entry). This phase's own eligibility rule requires a Phase 2 OEM/OEN identity before a position can enter Phase 3; sharing 6HK1-TC with F-Series does not create one, and Phase 2 explicitly forbids inheriting F-Series filters onto H-Series by engine alone. No Donaldson/Fleetguard lookup was attempted for H-Series in this pass, since there is no Isuzu OE/OEN to search against.",
+      "no_equivalence_invented": true
+    },
+    {
+      "scope": "FRR, all model years in Phase 1 scope",
+      "status": "BLOCKED_OEM",
+      "reason": "Phase 2's F-Series oen_rows are all scoped to applies_to_model_lines: [FTR, FVR, FSR] only, per Isuzu's own parts-document line headings; FRR never appears in that list and has no direct Phase 2 OEN. Per governance, FTR/FVR/FSR cross-references are not used for FRR.",
+      "no_equivalence_invented": true
+    },
+    {
+      "scope": "FXR, all model years in Phase 1 scope",
+      "status": "BLOCKED_OEM",
+      "reason": "Same as FRR: Phase 2's F-Series oen_rows never name FXR in applies_to_model_lines, so FXR has no direct Phase 2 OEN to resolve against Donaldson/Fleetguard.",
+      "no_equivalence_invented": true
+    },
+    {
+      "scope": "Cummins B6.7, F-Series MY2022-2026",
+      "status": "BLOCKED_OEM",
+      "reason": "Phase 2 left every position for this scope UNRESOLVED with no Isuzu or Cummins-official OE/OEN identified (see phase2 unresolved_positions, Cummins B6.7 entry). Per this manifest's explicit instruction, this is not re-researched at the engine level in Phase 3 and is not filled from Fleetguard merely because the engine is Cummins-owned; it stays blocked until Phase 2 produces an OE/OEN.",
+      "no_equivalence_invented": true
+    }
+  ],
+  "coverage_summary": {
+    "eligible_phase2_oen_rows": 19,
+    "not_applicable_phase2_oen_rows": 2,
+    "blocked_oem_scopes_count": 4,
+    "by_donaldson_status": {
+      "DONALDSON_VERIFIED": 9,
+      "DONALDSON_AMBIGUOUS": 1,
+      "DONALDSON_NOT_FOUND": 9,
+      "DONALDSON_NOT_MANUFACTURED_VERIFIED": 0,
+      "DONALDSON_SOURCE_BLOCKED": 0
+    },
+    "by_decision_status": {
+      "VERIFIED_BASE": 3,
+      "PARTIAL": 4,
+      "NO_ELIMFILTERS_SKU_YET": 3,
+      "BLOCKED_DONALDSON": 9,
+      "BLOCKED_OEM": 0,
+      "CONFLICTING": 0
+    },
+    "fleetguard_based_rows": 0,
+    "elimfilters_skus_reused": ["EA13614", "EL82042", "EF50953", "EF92599"],
+    "elimfilters_new_skus_created": 0,
+    "elimfilters_duplicates_prevented": "Every SKU reuse in this pass was checked against the repository's own competitor_cross_references_ld.csv / external_cross_reference_master_ld.csv before being applied; no new SKU was invented anywhere a Donaldson part could not be matched against that export, specifically to avoid creating a duplicate that a later, DB-connected pass would then have to reconcile."
+  },
+  "phase3_status": "CLOSED",
+  "phase3_status_history": [
+    { "date": "2026-09-22", "status": "NOT_CLOSED", "reason": "BLOCKED_AT_SOURCE_1 — shop.donaldson.com inaccessible, zero rows resolved, zero base decisions taken." },
+    { "date": "2026-09-23", "status": "CLOSED", "reason": "All 19 eligible Phase 2 OE/OEN rows investigated and carry an explicit decision_status; the 2 Phase-2 NOT_APPLICABLE rows and the 4 whole-scope BLOCKED_OEM cases (H-Series, FRR, FXR, Cummins B6.7) are explicitly carried forward rather than silently omitted; every base decision taken follows Donaldson-first (no Fleetguard-based row exists, because no row reached DONALDSON_NOT_MANUFACTURED_VERIFIED); every source blocker (shop.donaldson.com, catalog.donaldson.com, donaldsontoolbox.com.au's live API) is documented. CLOSED means decision-completeness, not 100% base-resolution: 9 of 19 eligible rows remain BLOCKED_DONALDSON because no Donaldson reference could be found despite real search effort, and that is reported honestly rather than papered over with an invented cross-reference." }
+  ],
   "unresolved_aftermarket": [
-    { "isuzu_oe_oen": ["8970622940", "8981772710", "29007N0000"], "position": "AIR_PRIMARY", "scope": "N-Series 2006-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8944302500", "2906469100"], "position": "AIR_PRIMARY", "scope": "N-Series 1986-2005", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8982984040", "2906544040"], "position": "LUBE_PRIMARY", "scope": "N-Series 2011-, F-Series 4HK 2018-2021", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8980188580"], "position": "LUBE_PRIMARY", "scope": "N-Series 4JJ 2010-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["2906542701", "2906548000", "2906548100"], "position": "LUBE_PRIMARY", "scope": "N-Series 1998-2010", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE and the Isuzu numbers themselves are format-flagged in Phase 2" },
-    { "isuzu_oe_oen": ["1132400791", "1132400740"], "position": "FUEL_PRIMARY", "scope": "N-Series 4HE 1998-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8975425390", "8981475250", "8943692993", "8980374810", "5873109370", "8980370110", "8982035990", "8981628970", "8980318470"], "position": "FUEL_PRIMARY / FUEL_SECONDARY", "scope": "N-Series and F-Series 2013-2021", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE and the primary/secondary split is itself unresolved in Phase 2" },
-    { "isuzu_oe_oen": ["8982373410"], "position": "FUEL_WATER_SEPARATOR", "scope": "N-Series 2022i-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8943924750", "1132004872", "8943924740"], "position": "LUBE_PRIMARY / FUEL_PRIMARY", "scope": "F-Series 1987-2008 and 1994-2004", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" },
-    { "isuzu_oe_oen": ["8971822820"], "position": "TRANSMISSION_FILTER", "scope": "N-Series 1998-", "status": "UNRESOLVED", "reason": "DONALDSON_SOURCE_INACCESSIBLE" }
+    { "isuzu_oe_oen": ["8982984040", "2906544040"], "position": "LUBE_PRIMARY", "scope": "N-Series 2011-, F-Series 4HK 2018-2021", "status": "BLOCKED_DONALDSON", "reason": "DONALDSON_NOT_FOUND despite search; see P3-N-LUBE-2011-ON and P3-F-LUBE-2018-2021" },
+    { "isuzu_oe_oen": ["8943692993", "8980374810", "5873109370", "8980318470", "8943691993"], "position": "FUEL_PRIMARY / FUEL_SECONDARY", "scope": "N-Series and F-Series 2013-2021", "status": "BLOCKED_DONALDSON", "reason": "DONALDSON_NOT_FOUND despite search; see P3-N-FUEL-2013-2021-B, P3-N-FUEL-HIGHCAP-2013-2021, P3-F-FUEL-2018-2020-A/B" },
+    { "isuzu_oe_oen": ["8982373410"], "position": "FUEL_WATER_SEPARATOR", "scope": "N-Series 2022i-", "status": "BLOCKED_DONALDSON", "reason": "DONALDSON_NOT_FOUND; likely too new for Donaldson's current catalog" },
+    { "isuzu_oe_oen": ["8943924750", "1132004872"], "position": "LUBE_PRIMARY", "scope": "F-Series 1987-2008", "status": "BLOCKED_DONALDSON", "reason": "DONALDSON_NOT_FOUND despite search" },
+    { "isuzu_oe_oen": ["8971822820"], "position": "TRANSMISSION_FILTER", "scope": "N-Series 1998-", "status": "BLOCKED_DONALDSON", "reason": "Only generic Allison-Isuzu kit references found (P560971/P560972), not tied to this exact OE number" },
+    { "isuzu_oe_oen": ["8944302500", "2906469100"], "position": "AIR_PRIMARY", "scope": "N-Series 1986-2005", "status": "PARTIAL", "reason": "DONALDSON_AMBIGUOUS — two unreconciled Donaldson-side candidates (R804759, P500179); see P3-N-AIR-1986-2005" },
+    { "scope": "H-SERIES (HTR/HVR/HXR), MY2005-2008", "status": "BLOCKED_OEM", "reason": "No Phase 2 Isuzu OE/OEN exists to resolve against aftermarket" },
+    { "scope": "FRR, FXR, all model years", "status": "BLOCKED_OEM", "reason": "No Phase 2 Isuzu OE/OEN exists to resolve against aftermarket" },
+    { "scope": "Cummins B6.7, F-Series MY2022-2026", "status": "BLOCKED_OEM", "reason": "No Phase 2 Isuzu or Cummins-official OE/OEN exists to resolve against aftermarket" }
   ],
   "next_actions": [
-    "Obtain Donaldson OE cross-reference data through a channel that is not blocked at the Akamai edge: a Donaldson distributor account, the Donaldson e-catalog at ecatalog.donaldson.com, or the North America edition of the Donaldson filter kit literature if one exists.",
-    "Only after Donaldson is settled per OE/OEN, apply DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD and take the ELIMFILTERS base decisions.",
-    "MANN-FILTER and WIX are reachable now and can supply corroboration once the first two are settled."
+    "Obtain live PostgreSQL/catalog access for a future pass so the 3 NO_ELIMFILTERS_SKU_YET rows (P502597, P502427 x2) can be checked against the full HD catalog, not just the checked-in LD CSV export, before any new SKU is assigned.",
+    "Reverse-engineer or obtain credentialed access to the api.autoinfo.com.au backend behind donaldsontoolbox.com.au so its cross-reference tables can be read directly instead of via Google-indexed URL slugs and distributor corroboration.",
+    "Revisit P3-N-AIR-1986-2005 if a Donaldson-first-party source (not an aftermarket reseller) is found for the P500179 candidate, to reconcile it against R804759.",
+    "Any future Isuzu OE/OEN evidence Phase 2 produces for H-Series, FRR, FXR or Cummins B6.7 should be re-run through this same Phase 3 process; nothing here should be used to retroactively justify inheriting F-Series or N-Series aftermarket data onto those scopes."
   ]
 }
