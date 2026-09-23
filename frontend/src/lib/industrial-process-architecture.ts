@@ -491,7 +491,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/oil&gas.avif',
           '/images/Gas-Liquid%20Separation.png',
           undefined,
-          '/images/Planta%20(1).mp4',
+          '/images/Gas%20Liquid.mp4',
         ),
         hideHeroPoster: true,
         selectionInputs: [
