@@ -162,6 +162,7 @@ Rule:
 - preferred SKU = Industrial prefix + last four numeric digits from the approved canonical base code;
 - 1–3 digit numeric payloads are left-padded;
 - collisions reuse the governed sticky mapping rule: existing mapping keeps its slot; later distinct products use prefix + discriminator 1–9 + last three digits, skipping occupied slots;
+- when a first-publication batch contains a collision group, its reviewed publication order must be frozen before allocation; database/query/array order cannot decide which new product receives the natural slot;
 - no numeric payload / no approved core / blocked core / exhausted collision namespace = `STOP_REVIEW`;
 - Oil Mist / Coolant Mist has no SKU namespace while the commercial family remains unapproved;
 - SKU planning never substitutes for canonical-source evidence or ELIMFILTERS engineering approval.
