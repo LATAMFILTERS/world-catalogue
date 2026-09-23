@@ -127,7 +127,7 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         <p className={styles.lead}>Flow, pressure, temperature, chemistry, contaminant form, duty cycle, compatibility, existing equipment and required outlet condition determine which treatment family and physical configuration belong in the project.</p>
         <div className={styles.twoColumnNotes}>
           <article className={styles.noteBlock}><h3 className={styles.h3}>Platform first</h3><p className={styles.body}>{platform.name} narrows the project to the correct treatment universe without forcing an early product choice.</p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Technology second</h3><p className={styles.body}>The family page defines the mechanism, application context and evidence required before product or system specification.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>Technology second</h3><p className={styles.body}>The family page defines the mechanism, application context and evidence required before replacement-element or treatment-media specification.</p></article>
         </div>
       </div></section>
 
