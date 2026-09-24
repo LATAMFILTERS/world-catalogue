@@ -1858,5 +1858,9 @@ test('LIVEPUB 2: live publication records the governed writer and resolver outco
   assert.equal(row.live_catalog_publication.catalog_backend_validation.public_product, true);
   assert.equal(row.live_catalog_publication.catalog_backend_validation.canonical_base, 'RESOLVED_CANONICAL_BASE');
   assert.equal(row.live_catalog_publication.catalog_backend_validation.oem_refs, 'RESOLVED_SINGLE');
-  assert.equal(row.live_catalog_publication.part_search_http_validation.status, 'BLOCKED_LOCAL_RUNTIME_SCHEMA_MISMATCH');
+  assert.equal(row.live_catalog_publication.part_search_http_validation.status, 'LIVE_VERIFIED');
+  assert.equal(row.live_catalog_publication.part_search_http_validation.queries.P848076.sku, 'EL88076');
+  assert.equal(row.live_catalog_publication.part_search_http_validation.queries.EL88076.source, 'exact_sku');
+  assert.equal(row.live_catalog_publication.part_search_http_validation.queries['2906544040'].resolution, 'RESOLVED');
+  assert.equal(row.live_catalog_publication.part_search_http_validation.queries['8982984040'].sku, 'EL88076');
 });

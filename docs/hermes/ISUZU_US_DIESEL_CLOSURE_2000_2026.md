@@ -949,11 +949,13 @@ references, six relational applications, six specifications, and two cache rows.
 Resolver validation returns `P848076 → EL88076` as `RESOLVED_CANONICAL_BASE`
 and both Isuzu OENs as single resolutions to `EL88076`.
 
-End-to-end HTTP Part Search was not claimed in this publication pass: the local
-catalog database exposes the resolver views but does not contain the
-`public.elimfilters_catalog_active_v` view that the current `server-original.js`
-search route expects. That runtime/schema mismatch is documented separately from
-the successful catalogue publication.
+The local Part Search runtime/schema mismatch was subsequently closed on ELIMSERVER.
+The already-versioned `scripts/catalog_et9_scope_correction_20260918.sql` was applied
+to the local catalogue, adding the `catalog_active` scope columns and creating
+`public.elimfilters_catalog_active_v`; `server-original.js` was also corrected to
+disable PostgreSQL SSL for loopback database URLs while preserving the existing
+remote-SSL behavior. End-to-end HTTP checks then returned HTTP 200 for `P848076`,
+`EL88076`, `2906544040`, and `8982984040`, all resolving to `EL88076`.
 
 The Phase 3 `elimfilters_base_decision.published` flag remains `false` by
 design: it is the no-auto-publication guard for research decisions, not the live
