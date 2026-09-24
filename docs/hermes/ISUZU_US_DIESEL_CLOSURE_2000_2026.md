@@ -930,3 +930,32 @@ the documented gaps:
 9. Obtain NPR-HD and NRR's own MY2021 crew-cab specification PDFs through a route that does
    not hit the reproducible 1,048,576-byte truncation documented above, to replace the
    same-batch sibling-evidence closure with each model's own document.
+
+### Live catalogue publication — P848076 / EL88076 (2026-09-24)
+
+The governed candidate created in PR #749 was published on ELIMSERVER to the local
+`catalogo_elimfilters` PostgreSQL catalogue through migration
+`scripts/migrations/run_119_create_el88076_p848076.js`. The pre-write audit found
+no existing owner for `EL88076`, `P848076`, `2906544040`, or `8982984040`.
+
+The live row is `EL88076` with canonical source `DONALDSON / P848076`,
+`HEAVY_DUTY`, `oil`, and `SYNTRAX™`. Thread, efficiency, and bypass setting
+remain unpublished because no verified specification source was available.
+Two Isuzu OEM references and six Phase-1/Phase-2-governed USA 4HK1-TC application
+ranges were written through the existing catalogue/application governance layer.
+
+Post-write audit returned one public product, one relational catalog parent, two OEM
+references, six relational applications, six specifications, and two cache rows.
+Resolver validation returns `P848076 → EL88076` as `RESOLVED_CANONICAL_BASE`
+and both Isuzu OENs as single resolutions to `EL88076`.
+
+End-to-end HTTP Part Search was not claimed in this publication pass: the local
+catalog database exposes the resolver views but does not contain the
+`public.elimfilters_catalog_active_v` view that the current `server-original.js`
+search route expects. That runtime/schema mismatch is documented separately from
+the successful catalogue publication.
+
+The Phase 3 `elimfilters_base_decision.published` flag remains `false` by
+design: it is the no-auto-publication guard for research decisions, not the live
+catalogue publication state. Live publication is recorded separately under
+`live_catalog_publication`.

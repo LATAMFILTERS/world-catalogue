@@ -1840,3 +1840,23 @@ test('SKUCASE FINAL: NO_ELIMFILTERS_SKU_YET is 0 and only the 2 genuine BLOCKED_
   const result = validateClosure();
   assert.deepEqual(result.errors, []);
 });
+
+test('LIVEPUB 1: P848076/EL88076 is recorded as live without weakening the Phase 3 no-auto-publish guard', () => {
+  for (const id of P848076_ROW_IDS) {
+    const row = phase3.resolution_rows.find((r) => r.phase2_row_id === id);
+    assert.equal(row.live_catalog_publication.status, 'LIVE');
+    assert.equal(row.live_catalog_publication.sku, 'EL88076');
+    assert.equal(row.live_catalog_publication.canonical_source_brand, 'DONALDSON');
+    assert.equal(row.live_catalog_publication.canonical_source_part, 'P848076');
+    assert.equal(row.elimfilters_base_decision.published, false);
+  }
+});
+
+test('LIVEPUB 2: live publication records the governed writer and resolver outcome', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-F-LUBE-2018-2021');
+  assert.equal(row.live_catalog_publication.migration, 'scripts/migrations/run_119_create_el88076_p848076.js');
+  assert.equal(row.live_catalog_publication.catalog_backend_validation.public_product, true);
+  assert.equal(row.live_catalog_publication.catalog_backend_validation.canonical_base, 'RESOLVED_CANONICAL_BASE');
+  assert.equal(row.live_catalog_publication.catalog_backend_validation.oem_refs, 'RESOLVED_SINGLE');
+  assert.equal(row.live_catalog_publication.part_search_http_validation.status, 'BLOCKED_LOCAL_RUNTIME_SCHEMA_MISMATCH');
+});
