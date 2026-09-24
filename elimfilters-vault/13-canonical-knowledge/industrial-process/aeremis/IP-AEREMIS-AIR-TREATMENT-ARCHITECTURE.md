@@ -24,12 +24,12 @@ cross_reference_write_allowed: false
 - Industries: Manufacturing
 - Systems: Industrial & Process
 - Platforms: AEREMIS™
-- Technologies: HE-CRIVA™; MA-TREA™
+- Technologies: GAIRFIL™; HE-CRIVA™; MA-TREA™
 
 ## Technical Relationships — Validated
 
 - AEREMIS™ organizes industrial air treatment by contaminant challenge and required air condition rather than by a single filter form. | status: approved
-- General Air Filtration is the descriptive AEREMIS™ path for general particulate control and maps to TC-AIR-01. | status: approved
+- GAIRFIL™ is the AEREMIS™ General Air Filtration technology for general particulate control and maps to TC-AIR-01. | status: approved
 - HE-CRIVA™ is the AEREMIS™ family for high-efficiency and critical-air particulate filtration and maps to TC-AIR-02. | status: approved
 - MA-TREA™ is the AEREMIS™ family for molecular air treatment and maps to TC-AIR-03. | status: approved
 - Treatment-path selection depends on the air-quality target, contaminant profile, operating envelope, pressure-drop boundary, system integration and required verification method. | status: approved
@@ -90,7 +90,7 @@ cross_reference_write_allowed: false
 ## Governance
 
 - AEREMIS™ is a commercial platform, not a universal efficiency class.
-- General Air Filtration remains descriptive and is not represented as an independent trademarked technology.
+- GAIRFIL™ is the branded family identifier for General Air Filtration. The descriptive phrase General Air Filtration remains attached to the mark for technical and discovery clarity.
 - No universal efficiency, capacity, pressure-drop or service-life claim is inherited across the platform.
 - Air handlers, housings, fans, ductwork, air cleaners and other ventilation equipment remain application context unless a separate ELIMFILTERS system scope is explicitly approved.
 
