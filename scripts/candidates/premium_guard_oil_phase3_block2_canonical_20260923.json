@@ -1,0 +1,2135 @@
+[
+  {
+    "sku": "EL30075",
+    "codigo_base": "MW75",
+    "origin_group": "EUROPEAN",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/mw75_mann-filter.html",
+    "canonical_evidence_hash": "cf912a52ab331d126caca7729efd419d1d2c2dc5790816f0e207f7518d46b3f1",
+    "premium_guard_code": "PG164EX",
+    "specs": {
+      "style": "Spin-On",
+      "height_mm": 53.34,
+      "height_in": 2.1,
+      "outer_diameter_mm": 76.2,
+      "outer_diameter_in": 3,
+      "gasket_id_mm": 63.5,
+      "gasket_id_in": 2.5,
+      "gasket_od_mm": 71.12,
+      "gasket_od_in": 2.8,
+      "thread_size": "3/4-16 UNF",
+      "bypass_setting_psi": 31.908
+    },
+    "oem_codes": [
+      {
+        "manufacturer": "Bad Boy Mowers",
+        "code": "063200400",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "BMW",
+        "code": "11 42 7 673 541",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Case",
+        "code": "ND103597",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Dixie Chopper",
+        "code": "900862",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Husqvarna",
+        "code": "531300938",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Husqvarna",
+        "code": "531307043",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Husqvarna",
+        "code": "531307389",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Kohler",
+        "code": "2805001",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "MTD Products",
+        "code": "95112690",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      }
+    ],
+    "competitor_codes": [
+      {
+        "manufacturer": "Autopart International",
+        "code": "5001-548061",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Autopart International",
+        "code": "5001-548057",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "code": "B7294",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "code": "B7310",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "code": "041-0879",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "CARQUEST",
+        "code": "95468",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Cartek",
+        "code": "CTK164XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Cartek",
+        "code": "CTK164",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "code": "S12017",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "code": "SE-1",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Federated",
+        "code": "PG164",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "FRAM",
+        "code": "PH8170",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "K&N",
+        "code": "KN-164",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "code": "OC306",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "code": "PG164",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pronto",
+        "code": "PG164",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "code": "PG164EX",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Stens",
+        "code": "120-480",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Stens",
+        "code": "055-807",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "S3656XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "SL3656XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "SL3656",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "S3656",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Wix",
+        "code": "WL10245",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "PREMIUM GUARD",
+        "code": "PG164EX",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+        "evidence_hash": "5dc00b46a461ded2ea1bd918666ea48b9e450c012ab33cb42d7032c98c1aa6f4",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      }
+    ],
+    "vehicle_applications": [
+      {
+        "make": "BMW",
+        "model": "i3",
+        "year": "2014-2021",
+        "engine": "0.6L 2Cyl L Electric",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "BMW",
+        "model": "i3s",
+        "year": "2018-2021",
+        "engine": "0.6L 2Cyl L Electric",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      }
+    ],
+    "application_source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/applications?format=ranges",
+    "application_evidence_hash": "1675e7e63daea64be7a0559ffdaa45dcfb6e8789c57d37a44bfd725a8d13afc8",
+    "cross_reference_rejections": [
+      {
+        "manufacturer": "Wix",
+        "code": "57035",
+        "status": "REJECTED_PHYSICAL_MISMATCH",
+        "reason": "WIX 57035 matches MANN W77 dimensions/bypass, not MW75",
+        "wix_url": "https://www2.wixfilters.com/Lookup/PartDetails.aspx?Part=209331",
+        "mann_mw75_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/mw75_mann-filter.html",
+        "mann_w77_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/w77_mann-filter.html"
+      }
+    ],
+    "reference_governance": {
+      "status": "CLOSED_WITH_AMBIGUOUS_REFERENCES_HELD",
+      "publication_rule": "FAIL_CLOSED_UNTIL_SINGLE_CANONICAL_OWNER",
+      "held_codes": [
+        "100245",
+        "1077817",
+        "1180815",
+        "1182236",
+        "120485",
+        "17524",
+        "2934616",
+        "36563",
+        "5102278X1",
+        "AM119567",
+        "AM125424",
+        "B7165",
+        "B7222",
+        "PH3656"
+      ],
+      "closed_at": "2026-09-24"
+    }
+  },
+  {
+    "sku": "EL37195",
+    "codigo_base": "HU719/5X",
+    "origin_group": "EUROPEAN",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu719/5x_mann-filter.html",
+    "canonical_evidence_hash": "f2fbe026e65a911b5c6510d53a3d15c180f5f717e40e377ac4a8d9c574cc72c1",
+    "premium_guard_code": "PG5316",
+    "specs": {
+      "style": "Cartridge",
+      "height_mm": 113,
+      "outer_diameter_mm": 61,
+      "inner_diameter_mm": 30,
+      "inner_diameter_1_mm": 30,
+      "gasket_id_mm": 71.37,
+      "gasket_thickness_mm": 3.56,
+      "bypass_relief_valve": "No",
+      "anti_drainback_valve": "No",
+      "filter_media": "Synthetic"
+    },
+    "oem_codes": [
+      {
+        "manufacturer": "General Motors",
+        "code": "19112642",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Porsche",
+        "code": "996 107 225 53",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Porsche",
+        "code": "948 107 020 00",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Porsche",
+        "code": "996 107 020 52",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Porsche",
+        "code": "996 107 020 53",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Porsche",
+        "code": "996 107 020 54",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Porsche",
+        "code": "996 107 225 52",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Porsche",
+        "code": "996 107 020 55",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Porsche",
+        "code": "996 107 225 60",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "code": "996 107 225 60",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "code": "996 107 225 52",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "code": "996 107 225 53",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      }
+    ],
+    "competitor_codes": [
+      {
+        "manufacturer": "ACDelco",
+        "code": "PF1708",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "code": "PF1706",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Autopart International",
+        "code": "5001-204151",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Autopart International",
+        "code": "5001-27617",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "code": "P40094",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Bosch",
+        "code": "72207",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "CARQUEST",
+        "code": "84211",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Cartek",
+        "code": "CTK5316XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Cartek",
+        "code": "CTK5316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Champ",
+        "code": "P838",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Champ filters",
+        "code": "P838",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "code": "COC8278",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "code": "55211T",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Duralast",
+        "code": "DC8278",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "code": "S5316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "code": "X5316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Febi-Bilstein",
+        "code": "101442",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Federated",
+        "code": "PG5316F",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Federated",
+        "code": "PG5316EXF",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "FRAM",
+        "code": "CH8278",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "FVP",
+        "code": "G7211",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Group 7",
+        "code": "V5316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Hastings",
+        "code": "LF519",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Hengst",
+        "code": "E14H D77",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "code": "MN8278",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "K&N",
+        "code": "HP-7011",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Knecht",
+        "code": "OX 128/1D",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "code": "P838",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "code": "OX 128/1D",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "code": "MGL57211",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "code": "MSL57211",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "code": "P838",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "NAPA",
+        "code": "7211",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "NAPA Proformer",
+        "code": "27211",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "code": "67211",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "code": "P838",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "code": "P838EX",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pentius",
+        "code": "PCB8278",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "code": "725",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "code": "PXL57211",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Promotive",
+        "code": "PH5316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pronto",
+        "code": "PO5316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pronto",
+        "code": "PO5316EX",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "code": "PL5316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Purflux",
+        "code": "L448",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Purolator",
+        "code": "L25316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "code": "CF5316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "code": "M5316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "S8278",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "S8278XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "SL8278",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "SL8278XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "code": "S8278",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "UFI",
+        "code": "25.165.00",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "VAICO",
+        "code": "V45-0031",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Valucraft",
+        "code": "VC8278",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "code": "VO-127",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Wix",
+        "code": "57211",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "PREMIUM GUARD",
+        "code": "PG5316",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      }
+    ],
+    "vehicle_applications": [
+      {
+        "make": "Porsche",
+        "model": "911",
+        "year": "1999-2001",
+        "engine": "3.4L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "911",
+        "year": "2001-2011",
+        "engine": "3.6L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "911",
+        "year": "2005-2008",
+        "engine": "3.8L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "911",
+        "year": "2010-2011",
+        "engine": "3.8L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "911",
+        "year": "2011",
+        "engine": "4.0L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "918 Spyder",
+        "year": "2015",
+        "engine": "4.6L 8Cyl V Hybrid",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "Boxster",
+        "year": "1997-2000",
+        "engine": "2.5L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "Boxster",
+        "year": "2000-2008",
+        "engine": "2.7L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "Boxster",
+        "year": "2000-2006",
+        "engine": "3.2L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "Boxster",
+        "year": "2007-2008",
+        "engine": "3.4L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "Carrera GT",
+        "year": "2004-2006",
+        "engine": "5.7L 10Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "Cayenne",
+        "year": "2003-2006",
+        "engine": "4.5L 8Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "Cayman",
+        "year": "2007-2008",
+        "engine": "2.7L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Porsche",
+        "model": "Cayman",
+        "year": "2006-2008",
+        "engine": "3.4L 6Cyl H Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      }
+    ],
+    "application_source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/applications?format=ranges",
+    "application_evidence_hash": "a4f78bdb02fc6c02b867a6bed55072374846c8cc327885301666c200f17537e4"
+  },
+  {
+    "sku": "EL30158",
+    "codigo_base": "CH10158",
+    "origin_group": "NON_EUROPEAN",
+    "canonical_brand": "FRAM",
+    "canonical_source_url": "https://www.fram.com/parts-search",
+    "canonical_evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+    "premium_guard_code": "PG5609EX",
+    "fram_source_part_key": "000991634",
+    "specs": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": 70.1,
+      "height_in": 3.228,
+      "height_mm": 81.99,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": 86.11,
+      "gasket_id_in": null,
+      "gasket_id_mm": 78.99,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": 3.56,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null,
+      "premium_guard_micron_rating": 25,
+      "premium_guard_media_material": "Synthetic Blend Media"
+    },
+    "oem_codes": [
+      {
+        "manufacturer": "Toyota",
+        "code": "04152-31060",
+        "classification": "OEM",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Toyota",
+        "code": "04152-38010",
+        "classification": "OEM",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Toyota",
+        "code": "04152-YZZA2",
+        "classification": "OEM",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Toyota",
+        "code": "04152-YZZA3",
+        "classification": "OEM",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Toyota",
+        "code": "04152-31080",
+        "classification": "OEM",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Toyota",
+        "code": "04152-YZZA5",
+        "classification": "OEM",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Lexus",
+        "code": "0415231060",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Lexus",
+        "code": "0415231080",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Lexus",
+        "code": "0415238010",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      }
+    ],
+    "competitor_codes": [
+      {
+        "manufacturer": "ACDelco",
+        "code": "PF2260",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "code": "P7418",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Bosch",
+        "code": "72251WS",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Champion",
+        "code": "COC10158",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "code": "OX790D",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "NAPA",
+        "code": "7173",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Purolator",
+        "code": "L25609",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Wix",
+        "code": "57173",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "8c51d7e2bc79f9150a9f9420b00882c0e7c4d820453d891403d864ea578dee05",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "MANN-FILTER",
+        "code": "HU7009Z",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/hu7009z_mann-filter.html",
+        "evidence_hash": "ee1d98024335889af95b207d34973759c3e1d38cf96d74c087b5ffa42a0faa89",
+        "evidence_authority": "MANN_FILTER_OFFICIAL_EQUIVALENCE"
+      },
+      {
+        "manufacturer": "Autopart International",
+        "code": "5011-658686",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "CARQUEST",
+        "code": "P84173",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "CARQUEST",
+        "code": "84173",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "CARQUEST",
+        "code": "R84173",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Cartek",
+        "code": "CTK10158XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Cartek",
+        "code": "CTK10158",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Duralast",
+        "code": "DC10158",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "code": "X5609",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "code": "S5609",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Federated",
+        "code": "PG5609EXF",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Federated",
+        "code": "PG5609F",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "FRAM Titanium",
+        "code": "FS10158",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "K&N",
+        "code": "PS-7023",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "code": "MGL57173",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "code": "MSL57173",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "NAPA Proformer",
+        "code": "27173",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "code": "P968",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "code": "P968EX",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pro-Series",
+        "code": "PRS10158",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pronto",
+        "code": "PO5609",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pronto",
+        "code": "PO5609EX",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "PureZone",
+        "code": "8-57173",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "code": "PBL25609",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "code": "E5609",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "code": "M5609",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "S10158ML",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "SL10158XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "SL10158",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "S10158XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "S10158",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "code": "S10158XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "TradeCRAFT",
+        "code": "TC5609",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Valucraft",
+        "code": "VC10158",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "code": "VO-87",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Wix",
+        "code": "57173XP",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "PREMIUM GUARD",
+        "code": "PG5609EX",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
+        "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      }
+    ],
+    "vehicle_applications": [
+      {
+        "make": "Lexus",
+        "model": "GS300",
+        "year": "2006",
+        "engine": "3.0L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "GS350",
+        "year": "2007-2011",
+        "engine": "3.5L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "GS350",
+        "year": "2013-2020",
+        "engine": "3.5L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "GS450h",
+        "year": "2007-2011",
+        "engine": "3.5L 6Cyl V Hybrid",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "GS450h",
+        "year": "2013-2018",
+        "engine": "3.5L 6Cyl V Hybrid",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "GS460",
+        "year": "2008-2011",
+        "engine": "4.6L 8Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "GX460",
+        "year": "2010-2023",
+        "engine": "4.6L 8Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "IS250",
+        "year": "2006-2015",
+        "engine": "2.5L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "IS300",
+        "year": "2016-2025",
+        "engine": "3.5L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "IS350",
+        "year": "2006-2027",
+        "engine": "3.5L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "LS460",
+        "year": "2007-2017",
+        "engine": "4.6L 8Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "LS500",
+        "year": "2018-2026",
+        "engine": "3.4L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "LS600h",
+        "year": "2008-2016",
+        "engine": "5.0L 8Cyl V Hybrid",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "RC300",
+        "year": "2016-2025",
+        "engine": "3.5L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Lexus",
+        "model": "RC350",
+        "year": "2015-2025",
+        "engine": "3.5L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Toyota",
+        "model": "4Runner",
+        "year": "2010-2024",
+        "engine": "4.0L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Toyota",
+        "model": "FJ Cruiser",
+        "year": "2010-2014",
+        "engine": "4.0L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Toyota",
+        "model": "Tundra",
+        "year": "2011-2014",
+        "engine": "4.0L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      }
+    ],
+    "application_source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/applications?format=ranges",
+    "application_evidence_hash": "3b9b0c60c9b7b7b79f01802abc3f09d5226e865b4364ab26bbcc9472066bab1f"
+  },
+  {
+    "sku": "EL39999",
+    "codigo_base": "CH9999",
+    "origin_group": "NON_EUROPEAN",
+    "canonical_brand": "FRAM",
+    "canonical_source_url": "https://www.fram.com/parts-search",
+    "canonical_evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+    "premium_guard_code": "PG5610EX",
+    "fram_source_part_key": "000991626",
+    "specs": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": 72.9,
+      "height_in": 5.17,
+      "height_mm": 131.32,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": 89.92,
+      "gasket_id_in": null,
+      "gasket_id_mm": 83.06,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": 3.56,
+      "media_type": "Genuine Media",
+      "style": "Full-Flow Lube Cartridge",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null,
+      "premium_guard_micron_rating": 25,
+      "premium_guard_media_material": "Synthetic Blend Media"
+    },
+    "oem_codes": [
+      {
+        "manufacturer": "Hyundai",
+        "code": "26320-3C100",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Kia",
+        "code": "26320-3C100",
+        "classification": "OEM",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      }
+    ],
+    "competitor_codes": [
+      {
+        "manufacturer": "ACDelco",
+        "code": "PF2261",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "code": "P7400",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Bosch",
+        "code": "3411",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Bosch",
+        "code": "72246WS",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Champion",
+        "code": "55061T",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Champion",
+        "code": "COC9999",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "code": "OX773D",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "MANN-FILTER",
+        "code": "ML 1037",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "NAPA",
+        "code": "7061",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Purolator",
+        "code": "L35610",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Purolator",
+        "code": "PL35610",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "Wix",
+        "code": "57061",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.fram.com/parts-search",
+        "evidence_hash": "696b4b348b28a136005e511f39f173be66cf8757eee14f6e3a4e146ceac42272",
+        "evidence_authority": "FRAM_LD_MULTI_REGION"
+      },
+      {
+        "manufacturer": "CARQUEST",
+        "code": "84061",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "CARQUEST",
+        "code": "R84061",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Cartek",
+        "code": "CTK9999XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Cartek",
+        "code": "CTK9999",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Duralast",
+        "code": "DG9999",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "code": "X5610",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "code": "S5610",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Federated",
+        "code": "PG5610EXF",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Federated",
+        "code": "PG5610F",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "FRAM",
+        "code": "TG9999",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "K&N",
+        "code": "PS-7022",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "code": "MGL57061",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "code": "MSL57061",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "code": "M1C-454",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "NAPA Proformer",
+        "code": "27061",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "code": "P972",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "code": "P972EX",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pro-Series",
+        "code": "PRS9999",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pronto",
+        "code": "PO5610EX",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pronto",
+        "code": "PO5610",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "PureZone",
+        "code": "8-57061",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "code": "PL35610",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "code": "M5610",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "code": "E5610",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "SL9999",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "SL9999XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "S9999XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP",
+        "code": "S9999",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "code": "S9999XL",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "TradeCRAFT",
+        "code": "TC5610",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Valucraft",
+        "code": "VC9999",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "code": "VO-90",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Wix",
+        "code": "57061XP",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "PREMIUM GUARD",
+        "code": "PG5610EX",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
+        "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      }
+    ],
+    "vehicle_applications": [
+      {
+        "make": "Hyundai",
+        "model": "Azera",
+        "year": "2007-2010",
+        "engine": "3.3L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Hyundai",
+        "model": "Azera",
+        "year": "2006-2009",
+        "engine": "3.8L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Hyundai",
+        "model": "Entourage",
+        "year": "2007",
+        "engine": "3.8L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Hyundai",
+        "model": "Santa Fe",
+        "year": "2007-2009",
+        "engine": "3.3L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Hyundai",
+        "model": "Sonata",
+        "year": "2006-2009",
+        "engine": "3.3L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Hyundai",
+        "model": "Veracruz",
+        "year": "2007",
+        "engine": "3.8L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Kia",
+        "model": "Amanti",
+        "year": "2007-2009",
+        "engine": "3.8L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Kia",
+        "model": "Sedona",
+        "year": "2006-2009",
+        "engine": "3.8L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Kia",
+        "model": "Sorento",
+        "year": "2008-2009",
+        "engine": "3.3L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      },
+      {
+        "make": "Kia",
+        "model": "Sorento",
+        "year": "2007-2009",
+        "engine": "3.8L 6Cyl V Gas",
+        "source": "PREMIUM_GUARD_PUBLIC_CATALOG"
+      }
+    ],
+    "application_source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/applications?format=ranges",
+    "application_evidence_hash": "cf19f2c0d41fa103dc1b2c9fad1098cddc470969b4c34faf0a809aafc70e223b"
+  }
+]

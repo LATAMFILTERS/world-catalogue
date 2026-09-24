@@ -31,6 +31,52 @@ function sha(value) {
   return crypto.createHash('sha256').update(String(value || '')).digest('hex');
 }
 
+function stableJson(value) {
+  if (Array.isArray(value)) return '[' + value.map(stableJson).join(',') + ']';
+  if (value && typeof value === 'object') {
+    return '{' + Object.keys(value).sort().map((key) => JSON.stringify(key) + ':' + stableJson(value[key])).join(',') + '}';
+  }
+  return JSON.stringify(value);
+}
+
+function buildPreflightFingerprint(queue, dbContext) {
+  const canonical = [...dbContext.canonicalIndex.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([key, rows]) => [key, [...rows]
+      .map((row) => ({
+        elimfilters_sku: row.elimfilters_sku,
+        origin_group: row.origin_group,
+        canonical_brand: row.canonical_brand,
+        canonical_part_number: row.canonical_part_number,
+        identity_filter_type: row.identity_filter_type,
+        catalog_filter_type: row.catalog_filter_type,
+        duty: row.duty,
+        technology: row.technology,
+        match_source: row.match_source,
+      }))
+      .sort((a, b) => stableJson(a).localeCompare(stableJson(b)))]);
+  const makePolicies = [...dbContext.makePolicies]
+    .map((row) => ({ ...row }))
+    .sort((a, b) => stableJson(a).localeCompare(stableJson(b)));
+  return sha(stableJson({ queue, canonical, makePolicies }));
+}
+
+function collisionSignature(results) {
+  const material = (results || []).map((row) => ({
+    premium_guard_code: normalizeCode(row.premium_guard_code),
+    state: row.state,
+    target_sku: row.target_sku || null,
+    existing_matches: (row.existing_canonical_matches || []).map((match) => ({
+      sku: match.elimfilters_sku,
+      brand: match.canonical_brand,
+      code: match.canonical_part_number,
+      source: match.match_source,
+    })).sort((a, b) => stableJson(a).localeCompare(stableJson(b))),
+    reasons: [...(row.reasons || [])].sort(),
+  })).sort((a, b) => a.premium_guard_code.localeCompare(b.premium_guard_code));
+  return sha(stableJson(material));
+}
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -86,7 +132,6 @@ function expectedFilterType(partTypes) {
   if (normalized.has('air filter')) return 'air';
   if (normalized.has('cabin air filter')) return 'cabin';
   if (normalized.has('fuel filter')) return 'fuel';
-  if (normalized.has('transmission filter')) return 'transmission';
   return null;
 }
 
@@ -132,15 +177,60 @@ async function loadDbContext(client) {
       i.filter_type AS identity_filter_type,
       c.filter_type AS catalog_filter_type,
       c.duty,
-      c.technology
+      c.technology,
+      'CANONICAL_IDENTITY'::text AS match_source
     FROM ld_catalog.ld_canonical_product_identity i
     JOIN public.elimfilters_catalog c ON c.sku=i.elimfilters_sku
     WHERE i.status='ACTIVE'
+      AND c.duty='LIGHT_DUTY'
+  `);
+
+  const relational = await client.query(`
+    SELECT
+      r.elimfilters_sku,
+      NULL::text AS origin_group,
+      r.competitor_brand AS canonical_brand,
+      r.competitor_part_number AS canonical_part_number,
+      NULL::text AS identity_filter_type,
+      c.filter_type AS catalog_filter_type,
+      c.duty,
+      c.technology,
+      'RELATIONAL_COMPETITOR'::text AS match_source
+    FROM ld_catalog.ld_competitor_cross_references r
+    JOIN public.elimfilters_catalog c ON c.sku=r.elimfilters_sku
+    WHERE c.duty='LIGHT_DUTY'
+  `);
+
+  const publicRefs = await client.query(`
+    SELECT
+      c.sku AS elimfilters_sku,
+      NULL::text AS origin_group,
+      COALESCE(x->>'manufacturer',x->>'brand','') AS canonical_brand,
+      COALESCE(x->>'code',x->>'part_number',x->>'reference','') AS canonical_part_number,
+      NULL::text AS identity_filter_type,
+      c.filter_type AS catalog_filter_type,
+      c.duty,
+      c.technology,
+      'PUBLIC_COMPETITOR'::text AS match_source
+    FROM public.elimfilters_catalog c
+    CROSS JOIN LATERAL jsonb_array_elements(COALESCE(c.competitor_codes,'[]'::jsonb)) x
+    WHERE c.duty='LIGHT_DUTY'
   `);
 
   const canonicalIndex = new Map();
-  for (const row of identities.rows) {
-    const key = normalizeBrand(row.canonical_brand) + '|' + normalizeCode(row.canonical_part_number);
+  const seen = new Set();
+  for (const row of [...identities.rows, ...relational.rows, ...publicRefs.rows]) {
+    const brandKey = isFramBrand(row.canonical_brand)
+      ? 'FRAM'
+      : isMannBrand(row.canonical_brand)
+        ? 'MANNFILTER'
+        : null;
+    const codeKey = normalizeCode(row.canonical_part_number);
+    if (!brandKey || !codeKey) continue;
+    const key = brandKey + '|' + codeKey;
+    const unique = key + '|' + row.elimfilters_sku + '|' + row.match_source;
+    if (seen.has(unique)) continue;
+    seen.add(unique);
     if (!canonicalIndex.has(key)) canonicalIndex.set(key, []);
     canonicalIndex.get(key).push(row);
   }
@@ -180,6 +270,18 @@ function canonicalMatches(interchanges, canonicalIndex) {
   return out;
 }
 
+function preferredExistingMatches(matches, expectedType) {
+  const sameFamily = matches.filter((m) => {
+    const targetType = String(m.catalog_filter_type || m.identity_filter_type || '').toLowerCase();
+    return !expectedType || targetType === expectedType;
+  });
+  for (const source of ['CANONICAL_IDENTITY','RELATIONAL_COMPETITOR','PUBLIC_COMPETITOR']) {
+    const rows = sameFamily.filter((m) => m.match_source === source);
+    if (rows.length) return { rows, source, sameFamily, ignoredWrongFamily: matches.filter((m) => !sameFamily.includes(m)) };
+  }
+  return { rows: [], source: null, sameFamily, ignoredWrongFamily: matches.filter((m) => !sameFamily.includes(m)) };
+}
+
 function inferOrigin(applications, makePolicies) {
   const mapped = [];
   const unmapped = new Set();
@@ -204,7 +306,9 @@ function inferOrigin(applications, makePolicies) {
 }
 function resolveOne({ item, interchanges, applications, dbContext, pageUrl, htmlHash }) {
   const expectedType = expectedFilterType(item.part_types);
-  const matches = canonicalMatches(interchanges, dbContext.canonicalIndex);
+  const allMatches = canonicalMatches(interchanges, dbContext.canonicalIndex);
+  const preferred = preferredExistingMatches(allMatches, expectedType);
+  const matches = preferred.rows;
   const uniqueSkus = [...new Set(matches.map((m) => m.elimfilters_sku))];
   const origin = inferOrigin(applications, dbContext.makePolicies);
   const framRefs = [...new Set(interchanges.filter((x) => isFramBrand(x.brand)).map((x) => x.part_number))];
@@ -214,23 +318,25 @@ function resolveOne({ item, interchanges, applications, dbContext, pageUrl, html
   let targetSku = null;
   let canonicalBrand = null;
   let canonicalCode = null;
+  let matchedReferenceBrand = null;
+  let matchedReferenceCode = null;
   const reasons = [];
 
   if (uniqueSkus.length > 1) {
-    state = 'CONFLICT_EXISTING_CANONICAL';
-    reasons.push('MULTIPLE_EXISTING_CANONICAL_SKUS');
+    state = 'CONFLICT_EXISTING_REFERENCE';
+    reasons.push('MULTIPLE_EXISTING_SAME_FAMILY_SKUS');
+    reasons.push('MATCH_SOURCE_' + preferred.source);
   } else if (uniqueSkus.length === 1) {
     const target = matches.find((m) => m.elimfilters_sku === uniqueSkus[0]);
-    const targetType = String(target.catalog_filter_type || target.identity_filter_type || '').toLowerCase();
-    if (expectedType && targetType && expectedType !== targetType) {
-      state = 'CONFLICT_FILTER_TYPE';
-      reasons.push(`PG_${expectedType}_VS_CATALOG_${targetType}`);
-    } else {
-      state = 'ENRICH_EXISTING_READY';
-      targetSku = target.elimfilters_sku;
+    state = 'ENRICH_EXISTING_READY';
+    targetSku = target.elimfilters_sku;
+    matchedReferenceBrand = target.canonical_brand;
+    matchedReferenceCode = target.canonical_part_number;
+    if (target.match_source === 'CANONICAL_IDENTITY') {
       canonicalBrand = target.canonical_brand;
       canonicalCode = target.canonical_part_number;
     }
+    reasons.push('EXISTING_' + target.match_source);
   } else if (origin.origin_group === 'MIXED') {
     state = 'MIXED_ORIGIN_REVIEW';
     reasons.push('APPLICATIONS_SPAN_MULTIPLE_ORIGIN_GROUPS');
@@ -270,10 +376,15 @@ function resolveOne({ item, interchanges, applications, dbContext, pageUrl, html
     unmapped_makes: origin.unmapped_makes,
     expected_canonical_brand: origin.expected_brand,
     existing_canonical_matches: matches,
+    existing_reference_matches_all: allMatches,
+    preferred_match_source: preferred.source,
+    ignored_wrong_family_matches: preferred.ignoredWrongFamily,
     state,
     target_sku: targetSku,
     canonical_brand: canonicalBrand,
     canonical_code: canonicalCode,
+    matched_reference_brand: matchedReferenceBrand,
+    matched_reference_code: matchedReferenceCode,
     reasons,
   };
 }
@@ -292,10 +403,52 @@ async function main() {
   if (!Array.isArray(queue)) throw new Error('queue must be a JSON array');
   if (limit > 0) queue = queue.slice(0, limit);
 
+  const phaseKey = argValue('phase-key', argValue('sku')
+    ? `PREMIUM_GUARD_SKU:${normalizeCode(argValue('sku'))}`
+    : `PREMIUM_GUARD_QUEUE:${sha(queuePath).slice(0, 24)}`);
+
   const client = new Client({ connectionString: databaseUrl, ssl: false });
   await client.connect();
+  await client.query('BEGIN');
+  const lockResult = await client.query(
+    'SELECT pg_try_advisory_xact_lock(hashtext($1)) AS acquired',
+    [phaseKey]
+  );
+  if (!lockResult.rows[0]?.acquired) {
+    await client.query('ROLLBACK');
+    await client.end();
+    const error = new Error(`PHASE_ALREADY_ACTIVE phase_key=${phaseKey}`);
+    error.code = 'PHASE_ALREADY_ACTIVE';
+    throw error;
+  }
+
   const dbContext = await loadDbContext(client);
-  await client.end();
+  const preflightFingerprint = buildPreflightFingerprint(queue, dbContext);
+  const stateDir = path.resolve(
+    __dirname,
+    '../../elimfilters-vault/91-private-evidence/premium-guard-gap-resolution/_state'
+  );
+  fs.mkdirSync(stateDir, { recursive: true });
+  const statePath = path.join(stateDir, sha(phaseKey).slice(0, 32) + '.json');
+
+  if (fs.existsSync(statePath)) {
+    const prior = JSON.parse(fs.readFileSync(statePath, 'utf8'));
+    if (
+      prior.preflight_fingerprint === preflightFingerprint &&
+      ['COMPLETE', 'BLOCKED_WITH_REASON'].includes(prior.terminal_state)
+    ) {
+      await client.query('COMMIT');
+      await client.end();
+      console.log('[premium-guard-resolver] REUSED_PREVIOUS_PREFLIGHT ' + JSON.stringify({
+        phase_key: phaseKey,
+        preflight_fingerprint: preflightFingerprint,
+        terminal_state: prior.terminal_state,
+        collision_signature: prior.collision_signature || null,
+        state_path: statePath,
+      }));
+      return;
+    }
+  }
 
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
   const reportDir = path.resolve(__dirname, '../../elimfilters-vault/91-private-evidence/premium-guard-gap-resolution', stamp);
@@ -369,9 +522,15 @@ async function main() {
   const counts = {};
   for (const row of finalResults) counts[row.state] = (counts[row.state] || 0) + 1;
 
+  const terminalState = errors.length === 0 ? 'COMPLETE' : 'BLOCKED_WITH_REASON';
+  const collisionsHash = collisionSignature(finalResults);
   const summary = {
     phase: 'PHASE_2A_PREMIUM_GUARD_CANONICAL_RESOLUTION',
     status: errors.length === 0 ? 'COMPLETE' : 'INCOMPLETE_FAIL_CLOSED',
+    terminal_state: terminalState,
+    phase_key: phaseKey,
+    preflight_fingerprint: preflightFingerprint,
+    collision_signature: collisionsHash,
     generated_at: new Date().toISOString(),
     queue_source: queuePath,
     queue_size: queue.length,
@@ -387,12 +546,20 @@ async function main() {
   fs.writeFileSync(path.join(reportDir, 'canonical-source-candidates.json'), JSON.stringify(finalResults.filter((r) => r.state === 'CANONICAL_SOURCE_CANDIDATE'), null, 2));
   fs.writeFileSync(path.join(reportDir, 'review-required.json'), JSON.stringify(finalResults.filter((r) => !['ENRICH_EXISTING_READY','CANONICAL_SOURCE_CANDIDATE'].includes(r.state)), null, 2));
 
+  fs.writeFileSync(statePath, JSON.stringify({ phase_key: phaseKey, preflight_fingerprint: preflightFingerprint, collision_signature: collisionsHash, terminal_state: terminalState, report_dir: reportDir, summary_file: path.join(reportDir, 'summary.json'), results_file: path.join(reportDir, 'results.json'), completed_at: summary.generated_at }, null, 2));
+
+  await client.query('COMMIT');
+  await client.end();
   console.log('[premium-guard-resolver] SUMMARY ' + JSON.stringify(summary));
   console.log('[premium-guard-resolver] REPORT_DIR ' + reportDir);
   if (errors.length) throw new Error(`RESOLUTION_INCOMPLETE errors=${errors.length}`);
 }
 
-main().catch((error) => {
-  console.error('[premium-guard-resolver] FAILED', error.stack || error.message);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch((error) => {
+    console.error('[premium-guard-resolver] FAILED', error.stack || error.message);
+    process.exit(1);
+  });
+}
+
+module.exports = { stableJson, buildPreflightFingerprint, collisionSignature };
