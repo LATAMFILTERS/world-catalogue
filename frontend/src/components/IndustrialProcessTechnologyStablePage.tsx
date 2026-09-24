@@ -96,6 +96,7 @@ export function IndustrialProcessTechnologyStablePage({
   } : null;
   const inquiryHref = `mailto:applications@elimfilters.com?subject=${encodeURIComponent(`${technology.name} Industrial & Process Application Assessment`)}`;
   const related = platform.technologies.filter((item) => item.slug !== technology.slug);
+  const mediaIsBrandAsset = technology.mediaImage.startsWith('/assets/');
 
   return (
     <main id="main-content" className={styles.page}>
@@ -176,13 +177,15 @@ export function IndustrialProcessTechnologyStablePage({
             </div>
             <figure className={styles.mediaFigure}>
               <img
-                className={styles.mediaImage}
+                className={`${styles.mediaImage} ${mediaIsBrandAsset ? styles.brandMediaImage : ''}`}
                 src={technology.mediaImage}
-                alt={`${technology.name} ${technology.title} filtration or treatment elements`}
+                alt={mediaIsBrandAsset ? `${technology.name} — ${technology.title}` : `${technology.name} ${technology.title} filtration or treatment elements`}
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>Representative filtration, separation or treatment elements/media. Final element and media selection remains application-specific.</figcaption>
+              {mediaIsBrandAsset ? null : (
+                <figcaption>Representative filtration, separation or treatment elements/media. Final element and media selection remains application-specific.</figcaption>
+              )}
             </figure>
           </div>
 
