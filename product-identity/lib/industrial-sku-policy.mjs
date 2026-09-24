@@ -6,7 +6,7 @@
 export const INDUSTRIAL_SKU_FORMAT = /^[A-Z]{2}[0-9]{4,7}[A-Z]{0,2}$/;
 
 export const INDUSTRIAL_SKU_PREFIX_POLICY = Object.freeze({
-  'TC-AIR-01': Object.freeze({ prefix: 'IA1', label: 'General Air Filtration', minting_enabled: true }),
+  'TC-AIR-01': Object.freeze({ prefix: 'IA1', label: 'GAIRFIL™ — General Air Filtration', minting_enabled: true }),
   'TC-AIR-02': Object.freeze({ prefix: 'IA2', label: 'HE-CRIVA™', minting_enabled: true }),
   'TC-AIR-03': Object.freeze({ prefix: 'IA3', label: 'MA-TREA™', minting_enabled: true }),
 

@@ -133,9 +133,10 @@ The five approved Industrial & Process platform names remain:
 - FLUREXIS™
 - AQUVEXIS™
 
-Only eleven customer-facing technology families currently require independent branded names:
+Twelve customer-facing technology families currently require independent branded names:
 
 AEREMIS™:
+- GAIRFIL™ — General Air Filtration
 - High-Efficiency / Critical Air Filtration
 - Molecular Air Treatment
 
@@ -157,7 +158,6 @@ AQUVEXIS™:
 - Ion Exchange
 
 The following remain descriptive and do not receive independent marks at this stage:
-- General Air Filtration
 - Gas-Liquid Separation
 - Depth Filtration
 - Electrodeionization
@@ -180,7 +180,7 @@ Working family marks:
 - CRITENZA™ — High-Efficiency / Critical Air Filtration — maps to TC-AIR-02
 - SORBEXIS™ — Molecular Air Treatment — maps to TC-AIR-03
 
-General Air Filtration remains descriptive and maps to TC-AIR-01.
+GAIRFIL™ — General Air Filtration — maps to TC-AIR-01. User-selected family mark; formal trademark clearance remains a separate gate.
 
 Governance:
 - CRITENZA™ and SORBEXIS™ are approved as preferred internal working marks after public knockout screening.
@@ -192,7 +192,7 @@ Governance:
 - HE-CRAF™ — High-Efficiency / Critical Air Filtration — maps to TC-AIR-02 — HOLD due existing CRAF technical acronym usage in critical-air filtration.
 - MA-TREA™ — Molecular Air Treatment — maps to TC-AIR-03 — preferred working candidate pending formal clearance.
 
-General Air Filtration remains descriptive and maps to TC-AIR-01.
+GAIRFIL™ — General Air Filtration — maps to TC-AIR-01. User-selected family mark; formal trademark clearance remains a separate gate.
 
 Previous working marks CRITENZA™ and SORBEXIS™ are no longer the active preferred names.
 
@@ -205,7 +205,7 @@ Reason:
 KRAF is already used in the air-filtration sector, including Khanfilter's KRAF (Khanfilter Regenerative Air Filter) and documented HEPA / medium-filter configurations.
 
 Current AEREMIS state:
-- General Air Filtration — descriptive
+- GAIRFIL™ — General Air Filtration — TC-AIR-01 — user-selected family mark; formal trademark clearance pending
 - High-Efficiency / Critical Air Filtration — naming OPEN
 - MA-TREA™ — Molecular Air Treatment — preferred working candidate pending formal clearance
 
@@ -226,7 +226,7 @@ Rejected:
 - HE-KRAF™
 
 Current AEREMIS family board:
-- General Air Filtration — descriptive — TC-AIR-01
+- GAIRFIL™ — General Air Filtration — TC-AIR-01
 - HE-CRIVA™ — High-Efficiency / Critical Air — TC-AIR-02 — preferred working candidate
 - MA-TREA™ — Molecular Air Treatment — TC-AIR-03 — preferred working candidate
 
@@ -323,7 +323,7 @@ Status: CLOSED FOR INTERNAL BRAND ARCHITECTURE.
 Platforms and current family mappings:
 
 AEREMIS™
-- General Air Filtration — descriptive — TC-AIR-01
+- GAIRFIL™ — General Air Filtration — TC-AIR-01
 - HE-CRIVA™ — High-Efficiency / Critical Air Filtration — TC-AIR-02
 - MA-TREA™ — Molecular Air Treatment — TC-AIR-03
 
@@ -416,7 +416,6 @@ AQUVEXIS™
 - IONVEXA™ — Ion Exchange — TC-WAT-07
 
 Descriptive families / subfamilies remain:
-- General Air Filtration — TC-AIR-01
 - Gas-Liquid Separation — TC-NG-02
 - Depth Filtration — TC-WAT-01
 - Reverse Osmosis — TC-WAT-04

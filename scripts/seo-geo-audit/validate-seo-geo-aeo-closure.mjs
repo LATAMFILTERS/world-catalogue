@@ -115,6 +115,7 @@ const llmsIndustrialUrlCount = new Set(
 const llmsIndustrialOk =
   llms.includes('Industrial & Process — separate commercial engineering domain') &&
   llms.includes('Canonical Asset Protection core technologies — exactly 10') &&
+  llms.includes('GAIRFIL™ — General Air Filtration — Engineered Air Protection') &&
   llmsIndustrialUrlCount === 20;
 gate(
   '07 GEO citation and Industrial Process coverage',
@@ -139,6 +140,13 @@ const faqSchema = faqHtml.includes('FAQPage');
 const faqNoindex = faqHtml.includes('noindex');
 const faqInSitemap = byUrl.has(`${BASE_URL}/knowledge-center/faq/`);
 const industrialHtml = read('industrial-process/index.html');
+const gairfilHtml = read('industrial-process/aeremis/general-air-filtration/index.html');
+const gairfilAeoOk =
+  gairfilHtml.includes('GAIRFIL') &&
+  gairfilHtml.includes('General Air Filtration') &&
+  gairfilHtml.includes('TechArticle') &&
+  gairfilHtml.includes('FAQPage') &&
+  gairfilHtml.includes('BreadcrumbList');
 const industrialAeoOk =
   industrialHtml.includes('What is ELIMFILTERS Industrial') &&
   industrialHtml.includes('Does ELIMFILTERS sell complete process equipment?') &&
@@ -147,8 +155,8 @@ const industrialAeoOk =
   industrialHtml.includes('VideoObject');
 gate(
   '09 AEO answer surfaces',
-  faqSchema && !faqNoindex && faqInSitemap && industrialAeoOk,
-  `FAQPage=${faqSchema}; faqIndexable=${!faqNoindex}; faqSitemap=${faqInSitemap}; industrialAeo=${industrialAeoOk}`,
+  faqSchema && !faqNoindex && faqInSitemap && industrialAeoOk && gairfilAeoOk,
+  `FAQPage=${faqSchema}; faqIndexable=${!faqNoindex}; faqSitemap=${faqInSitemap}; industrialAeo=${industrialAeoOk}; gairfilAeo=${gairfilAeoOk}`,
 );
 
 // 10. Sitemap index and robots discovery are wired, and all 20 Industrial & Process pages are exposed consistently.

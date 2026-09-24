@@ -2,7 +2,7 @@
 type: canonical_knowledge
 status: approved
 knowledge_object_id: "IP-AEREMIS-GENERAL-AIR-FILTRATION"
-title: "General Air Filtration for Industrial Ventilation"
+title: "GAIRFIL General Air Filtration for Industrial Ventilation"
 domain: "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN"
 knowledge_content_type: "Engineering Reference"
 confidence: "high"
@@ -14,9 +14,9 @@ catalog_write_allowed: false
 cross_reference_write_allowed: false
 ---
 
-# General Air Filtration for Industrial Ventilation
+# GAIRFIL™ — General Air Filtration for Industrial Ventilation
 
-> **ELIMFILTERS CANONICAL KNOWLEDGE.** Approved AEREMIS™ descriptive treatment-family knowledge.
+> **ELIMFILTERS CANONICAL KNOWLEDGE.** Approved AEREMIS™ / GAIRFIL™ General Air Filtration technology knowledge.
 
 ## Knowledge Position
 
@@ -24,14 +24,14 @@ cross_reference_write_allowed: false
 - Industries: Manufacturing
 - Systems: Industrial & Process
 - Platforms: AEREMIS™
-- Technologies:
+- Technologies: GAIRFIL™
 
 ## Technical Relationships — Validated
 
-- General Air Filtration controls airborne particulate in industrial ventilation, make-up air and general air-handling duties. | status: approved
+- GAIRFIL™ is the ELIMFILTERS General Air Filtration technology for airborne particulate control in industrial ventilation, make-up air and general air-handling duties. | status: approved
 - The treatment path may use prefiltration and staged particulate capture selected around dust loading and allowable pressure drop. | status: approved
 - Filter configuration must be resolved together with the existing air-handling system, housing condition and service-access constraints. | status: approved
-- General Air Filtration is descriptive, maps to TC-AIR-01 and must not be represented as HE-CRIVA™ critical-air filtration. | status: approved
+- GAIRFIL™ maps to TC-AIR-01 and remains distinct from HE-CRIVA™ critical-air filtration; the General Air Filtration descriptor is retained for technical classification and discovery clarity. | status: approved
 
 ## Problems
 

@@ -59,7 +59,7 @@ Each portfolio URL and Knowledge Center definition below describes the same cano
 Industrial & Process is separate from the 10 Asset Protection core technologies above. It is organized as five commercial technology platforms containing filtration, separation, conditioning and treatment families for industrial applications.
 
 - AEREMIS™ — Air Technologies — https://elimfilters.com/industrial-process/aeremis/
-  - General Air Filtration — https://elimfilters.com/industrial-process/aeremis/general-air-filtration/
+  - GAIRFIL™ — General Air Filtration — Engineered Air Protection — https://elimfilters.com/industrial-process/aeremis/general-air-filtration/
   - HE-CRIVA™ — High-Efficiency / Critical Air Filtration — https://elimfilters.com/industrial-process/aeremis/he-criva/
   - MA-TREA™ — Molecular Air Treatment — https://elimfilters.com/industrial-process/aeremis/ma-trea/
 - PARTION™ — Dust & Fume Technologies — https://elimfilters.com/industrial-process/partion/
