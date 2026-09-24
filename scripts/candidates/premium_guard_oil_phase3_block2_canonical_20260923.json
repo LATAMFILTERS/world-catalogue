@@ -643,14 +643,6 @@
         "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
       },
       {
-        "manufacturer": "Hastings",
-        "code": "LF519",
-        "classification": "AFTERMARKET",
-        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
-        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
-        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
-      },
-      {
         "manufacturer": "Hengst",
         "code": "E14H D77",
         "classification": "AFTERMARKET",
@@ -772,14 +764,6 @@
       },
       {
         "manufacturer": "Pro-Tec",
-        "code": "725",
-        "classification": "AFTERMARKET",
-        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
-        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
-        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
-      },
-      {
-        "manufacturer": "Pro-Tec",
         "code": "PXL57211",
         "classification": "AFTERMARKET",
         "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
@@ -813,14 +797,6 @@
       {
         "manufacturer": "PUREPRO",
         "code": "PL5316",
-        "classification": "AFTERMARKET",
-        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
-        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
-        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
-      },
-      {
-        "manufacturer": "Purflux",
-        "code": "L448",
         "classification": "AFTERMARKET",
         "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
         "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
@@ -937,6 +913,30 @@
         "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
         "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
         "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Hastings",
+        "code": "LF519",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "code": "725",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Purflux",
+        "code": "L448",
+        "classification": "AFTERMARKET",
+        "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+        "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+        "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
       }
     ],
     "vehicle_applications": [
@@ -1040,7 +1040,20 @@
       }
     ],
     "application_source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/applications?format=ranges",
-    "application_evidence_hash": "a4f78bdb02fc6c02b867a6bed55072374846c8cc327885301666c200f17537e4"
+    "application_evidence_hash": "a4f78bdb02fc6c02b867a6bed55072374846c8cc327885301666c200f17537e4",
+    "reference_governance": {
+      "status": "RESOLVED_CONTAMINATION_CLEANUP",
+      "publication_rule": "EL37195_IS_APPROVED_LD_OWNER",
+      "resolved_codes": [
+        "725",
+        "L448",
+        "LF519"
+      ],
+      "authority": "PREMIUM_GUARD_PUBLIC_API_PG5316",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5316/interchanges",
+      "evidence_hash": "d4812da46a11f435b66b2b4892e5d581e993c370522a8617edb4b7e53e9a02b5",
+      "resolved_at": "2026-09-24"
+    }
   },
   {
     "sku": "EL30158",
