@@ -222,6 +222,7 @@
         "AEREMIS™"
       ],
       "technologies": [
+        "GAIRFIL™",
         "HE-CRIVA™",
         "MA-TREA™"
       ],
@@ -250,7 +251,7 @@
       "procedures": [],
       "technicalRelationships": [
         "AEREMIS™ organizes industrial air treatment by contaminant challenge and required air condition rather than by a single filter form.",
-        "General Air Filtration is the descriptive AEREMIS™ path for general particulate control and maps to TC-AIR-01.",
+        "GAIRFIL™ is the AEREMIS™ General Air Filtration technology for general particulate control and maps to TC-AIR-01.",
         "HE-CRIVA™ is the AEREMIS™ family for high-efficiency and critical-air particulate filtration and maps to TC-AIR-02.",
         "MA-TREA™ is the AEREMIS™ family for molecular air treatment and maps to TC-AIR-03.",
         "Treatment-path selection depends on the air-quality target, contaminant profile, operating envelope, pressure-drop boundary, system integration and required verification method."
@@ -297,7 +298,7 @@
         "Review airflow, available static pressure, differential-pressure trend, housing condition, sealing and service access.",
         "Confirm the required outlet condition or protected-space requirement before selecting the treatment path.",
         "AEREMIS™ organizes industrial air treatment by contaminant challenge and required air condition rather than by a single filter form.",
-        "General Air Filtration is the descriptive AEREMIS™ path for general particulate control and maps to TC-AIR-01.",
+        "GAIRFIL™ is the AEREMIS™ General Air Filtration technology for general particulate control and maps to TC-AIR-01.",
         "HE-CRIVA™ is the AEREMIS™ family for high-efficiency and critical-air particulate filtration and maps to TC-AIR-02.",
         "MA-TREA™ is the AEREMIS™ family for molecular air treatment and maps to TC-AIR-03.",
         "Treatment-path selection depends on the air-quality target, contaminant profile, operating envelope, pressure-drop boundary, system integration and required verification method.",
@@ -321,7 +322,7 @@
     {
       "id": "IP-AEREMIS-GENERAL-AIR-FILTRATION",
       "slug": "ip-aeremis-general-air-filtration",
-      "title": "General Air Filtration for Industrial Ventilation",
+      "title": "GAIRFIL General Air Filtration for Industrial Ventilation",
       "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
       "contentType": "Engineering Reference",
       "confidence": "high",
@@ -334,7 +335,9 @@
       "platforms": [
         "AEREMIS™"
       ],
-      "technologies": [],
+      "technologies": [
+        "GAIRFIL™"
+      ],
       "components": [],
       "problems": [
         "Airborne particulate loading",
@@ -359,10 +362,10 @@
       "maintenanceProcedures": [],
       "procedures": [],
       "technicalRelationships": [
-        "General Air Filtration controls airborne particulate in industrial ventilation, make-up air and general air-handling duties.",
+        "GAIRFIL™ is the ELIMFILTERS General Air Filtration technology for airborne particulate control in industrial ventilation, make-up air and general air-handling duties.",
         "The treatment path may use prefiltration and staged particulate capture selected around dust loading and allowable pressure drop.",
         "Filter configuration must be resolved together with the existing air-handling system, housing condition and service-access constraints.",
-        "General Air Filtration is descriptive, maps to TC-AIR-01 and must not be represented as HE-CRIVA™ critical-air filtration."
+        "GAIRFIL™ maps to TC-AIR-01 and remains distinct from HE-CRIVA™ critical-air filtration; the General Air Filtration descriptor is retained for technical clarity, SEO, GEO and AEO discoverability."
       ],
       "operatingConditions": [
         "Variable outdoor-air dust loading",
@@ -401,10 +404,10 @@
         "Re-evaluate staging when upstream loading is prematurely consuming the final filter stage.",
         "Correct housing or sealing defects before attributing downstream dust solely to media performance.",
         "Re-select media or stage arrangement when allowable pressure drop and contaminant loading are mismatched.",
-        "General Air Filtration controls airborne particulate in industrial ventilation, make-up air and general air-handling duties.",
+        "GAIRFIL™ is the ELIMFILTERS General Air Filtration technology for airborne particulate control in industrial ventilation, make-up air and general air-handling duties.",
         "The treatment path may use prefiltration and staged particulate capture selected around dust loading and allowable pressure drop.",
         "Filter configuration must be resolved together with the existing air-handling system, housing condition and service-access constraints.",
-        "General Air Filtration is descriptive, maps to TC-AIR-01 and must not be represented as HE-CRIVA™ critical-air filtration.",
+        "GAIRFIL™ maps to TC-AIR-01 and remains distinct from HE-CRIVA™ critical-air filtration; the General Air Filtration descriptor is retained for technical clarity, SEO, GEO and AEO discoverability.",
         "Variable outdoor-air dust loading",
         "Continuous or intermittent ventilation duty",
         "Space and service-access constraints",
