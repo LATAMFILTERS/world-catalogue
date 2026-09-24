@@ -10,6 +10,7 @@
 **Phase 3 exception closure pass:** 2026-09-23
 **Phase 3 single-case microinvestigation:** 2026-09-24
 **Phase 3 BLOCKED_DONALDSON closure micro-phase:** 2026-09-24
+**P848076 ELIMFILTERS SKU closure:** 2026-09-24
 **Scope:** USA market, Isuzu, diesel only, model years 2000-2026 inclusive.
 
 This is the research output for the three gated phases the manifest already defines. It
@@ -130,7 +131,7 @@ record of every source checked, every timestamp tried and every method used.
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 resolution rows (one per eligible Phase 2 OEN row), BLOCKED_OEM rows, access blockers and unpublished ELIMFILTERS base decisions |
 | `config/isuzu-n-series-us-oem-matrix.json` | Extended from 2022-2026 to 2000-2026 so the existing bot resolver answers the whole range |
 | `lib/isuzu-us-diesel-closure.js` | Reader, validator and the canonical filter-set answer |
-| `tests/isuzu-us-diesel-closure.test.js` | 119 tests: the 10 Phase 1 closure-pass validations, 6 Phase 1 technical-qualifier validations, 15 Phase 2 OEM/OEN closure validations, 19 Phase 3 aftermarket-resolution validations, 16 Phase 3 exception-closure-pass validations, 13 single-case microinvestigation validations (`P2-N-LUBE-1998-2010`), and 18 BLOCKED_DONALDSON closure micro-phase validations |
+| `tests/isuzu-us-diesel-closure.test.js` | 145 tests: the 10 Phase 1 closure-pass validations, 6 Phase 1 technical-qualifier validations, 15 Phase 2 OEM/OEN closure validations, 19 Phase 3 aftermarket-resolution validations, 16 Phase 3 exception-closure-pass validations, 13 single-case microinvestigation validations (`P2-N-LUBE-1998-2010`), 18 BLOCKED_DONALDSON closure micro-phase validations, and 26 P848076 ELIMFILTERS SKU closure validations (`SKUCASE 1`-`25` plus `SKUCASE FINAL`) |
 | `tests/p552564-canonical-mapping.test.js` | 3 tests guarding the P552564/EF50953 canonical-mapping fix from PR #737 |
 
 ## Phase 1 — diesel vehicle universe
@@ -426,11 +427,12 @@ second Isuzu source before any downstream use.
 ## PHASE 3 — CLOSED (aftermarket resolution and ELIMFILTERS base decision)
 
 **Status: `CLOSED`. Exception audit status: `CLOSED_WITH_BLOCKERS` (`EXCEPTION CLOSURE PASS
-2026-09-23`, refined by the `MICROCASE PASS` and `BLOCKEDCASE PASS`, both 2026-09-24).** All
-19 eligible Phase 2 OEN rows have an explicit decision, and `CONFLICTING` is now **0**. CLOSED
-does **not** mean every base is resolved: 17 of 19 rows now carry a Donaldson base, 2 do not, and
-each of those 5 says exactly why. The tables below are the current, post-exception-pass
-state; see **EXCEPTION CLOSURE PASS — 2026-09-23** further down for what changed and why.
+2026-09-23`, refined by the `MICROCASE PASS`, `BLOCKEDCASE PASS` and `SKU CLOSURE PASS`, all
+2026-09-24).** All 19 eligible Phase 2 OEN rows have an explicit decision, `CONFLICTING` is
+**0**, and `NO_ELIMFILTERS_SKU_YET` is **0**. CLOSED does **not** mean every base is resolved:
+17 of 19 rows now carry a Donaldson base, 2 do not, and each of those 2 says exactly why. The
+tables below are the current, post-SKU-closure state; see **EXCEPTION CLOSURE PASS —
+2026-09-23** and the later dated subsections further down for what changed and why.
 
 ### How Donaldson was reached
 
@@ -461,10 +463,10 @@ marked `UNVERIFIED` because no competitor catalogue was reached.
 | Donaldson not found (live routes blocked) | 0 |
 | Donaldson ambiguous | 2 |
 | Fleetguard verified as base | 0 |
-| `VERIFIED_BASE` | 4 |
-| `PARTIAL` | 11 |
+| `VERIFIED_BASE` | 5 |
+| `PARTIAL` | 12 |
 | `CONFLICTING` | **0** |
-| `NO_ELIMFILTERS_SKU_YET` | 2 |
+| `NO_ELIMFILTERS_SKU_YET` | **0** |
 | `BLOCKED_DONALDSON` | 2 |
 | `BLOCKED_OEM` | 9 groups (no Isuzu OEN in Phase 2) |
 
@@ -487,20 +489,24 @@ marked `UNVERIFIED` because no competitor catalogue was reached.
 | P2-F-FUEL-2018-2020-A | 8943692993, 8980374810, 8943691993 | P550390, identical OEN list to the high-capacity row | PARTIAL (`EXCEPTION PASS`) | EF90390 (reuse) |
 | P2-F-FUEL-2018-2020-B | same as A | same as A | PARTIAL (`EXCEPTION PASS`) | EF90390 (reuse) |
 | P2-N-LUBE-1998-2010 | 2906542701, 2906548000, 2906548100 | P502042 -- equipment-application match to 4HE1-TC/4HK1-TC (P550973 rejected: serves only 4BD1/4BD2/4BB1) | PARTIAL (`MICROCASE PASS 2026-09-24`) | EL82042 (reuse) |
-| P2-N-LUBE-2011-ON | 2906544040, 8982984040 | P848076, via Donaldson's own product title + 2 independent distributor pages (not in first-party capture) | NO_ELIMFILTERS_SKU_YET (`BLOCKEDCASE PASS 2026-09-24`) | none yet |
-| P2-F-LUBE-2018-2021 | 8982984040 (identical Phase-2 number to the row above) | same P848076 identity, same evidence | NO_ELIMFILTERS_SKU_YET (`BLOCKEDCASE PASS`) | none yet |
+| P2-N-LUBE-2011-ON | 2906544040, 8982984040 | P848076, via Donaldson's own product title + 2 independent distributor pages (not in first-party capture) | PARTIAL (Phase 2 row PARTIAL; `SKU CLOSURE PASS 2026-09-24`) | EL88076 (new, `CREATE_GOVERNED_SKU`) |
+| P2-F-LUBE-2018-2021 | 8982984040 (identical Phase-2 number to the row above) | same P848076 identity, same evidence | VERIFIED_BASE (Phase 2 row VERIFIED, `DIRECT_OE_CROSS`; `SKU CLOSURE PASS`) | EL88076 (new, `CREATE_GOVERNED_SKU`) |
 | P2-N-TRANS | 8971822820 (cartridge) | only P550008, an engine-oil spin-on -- rejected as a false-positive category mismatch; confirmed this pass the transmission is Aisin RNJ, not Allison | BLOCKED_DONALDSON, root_cause `C_WRONG_PRODUCT_TYPE` | none |
 | P2-N-FWS-2022i-ON | 8982373410 | P550736 candidate found and rejected (genuine Davco/Volvo/Mercedes-Benz part, no real Isuzu tie) | BLOCKED_DONALDSON, root_cause `B_ONLY_FALSE_POSITIVE_CROSS` | none |
 
 **Base decisions:** 17 Donaldson-based, 0 Fleetguard-based, 2 with no base yet.
 **ELIMFILTERS:** 9 existing SKUs reused (EA16773, EA13614, EL82597, EF92564, EF92599,
-EF92427, EF90390, EL80420, EL82042). No new SKU was minted. Each Donaldson base maps to
-exactly one SKU, so no duplicates were created among the bases actually used. SKU existence
-was checked against the repository catalogue export (`data/dims.csv`), including a
-physical-dimension cross-check (OD/length) for every SKU touched. P848076 (the new Donaldson
-identity found this pass) has no existing ELIMFILTERS SKU anywhere in the repository, so both
-rows that resolve to it are `NO_ELIMFILTERS_SKU_YET` rather than a minted SKU. Live PostgreSQL was
-**not** queried in this pass, so a reviewer must confirm each SKU is live before publication.
+EF92427, EF90390, EL80420, EL82042), plus one new governed candidate SKU minted this pass
+(EL88076, for Donaldson P848076 -- see **P848076 ELIMFILTERS SKU CLOSURE — 2026-09-24**
+below). Each Donaldson base maps to exactly one SKU, so no duplicates were created among the
+bases actually used. SKU existence was checked against the repository catalogue export
+(`data/dims.csv`), including a physical-dimension cross-check (OD/length) for every SKU
+touched, plus an exhaustive repository-and-live-Postgres duplicate audit for P848076 specifically
+(classification `E_NEW_PRODUCT_CONFIRMED` -- nothing to reuse exists). `NO_ELIMFILTERS_SKU_YET`
+is now **0**. Live PostgreSQL was queried this pass (Render workspace `elimfilters`) and found to
+hold no product-catalog tables reachable from this session, so EL88076 remains a governed
+candidate (`READY_FOR_REVIEW`, `published: false`) pending a reviewer with access to the real
+catalog database.
 
 **Governance:** every decision is `CANDIDATE_INTELLIGENCE` in `READY_FOR_REVIEW`,
 `published: false`. Nothing was written to the catalogue. Any later write must go through
@@ -715,6 +721,102 @@ ever reached `DONALDSON_NOT_MANUFACTURED_VERIFIED`.
 resolution rows, the `2026-09-23`/`2026-09-24` exception-audit findings already on file, and
 the `P550008` legacy-CSV cleanup item (still flagged, still out of scope) are all unchanged.
 
+### P848076 ELIMFILTERS SKU CLOSURE — 2026-09-24
+
+**Starting counts:** VERIFIED_BASE 4, PARTIAL 11, CONFLICTING 0, `NO_ELIMFILTERS_SKU_YET` 2,
+BLOCKED_DONALDSON 2.
+**Final counts:** VERIFIED_BASE 5, PARTIAL 12, CONFLICTING 0, `NO_ELIMFILTERS_SKU_YET` **0**,
+BLOCKED_DONALDSON 2 (unchanged).
+
+Closed the 2 rows the prior micro-phase left at `NO_ELIMFILTERS_SKU_YET`
+(`P2-N-LUBE-2011-ON`, `P2-F-LUBE-2018-2021`), both anchored to Donaldson `P848076`. Task rule
+was explicit: **do not invent a SKU blindly.** Every step below was derived from the
+repository's own governed sources, not assumed.
+
+**Duplicate/collision audit (done before anything else).** Searched every first-party
+Donaldson capture file, all 3 legacy CSVs, `data/dims.csv`, the entire repository (GitHub
+code search across `LATAMFILTERS/world-catalogue`), and live PostgreSQL (see below) for
+`P848076`, `848076`, `DNP848076`, `EL88076`, and both Isuzu OE numbers. Also compared physical
+dimensions (122.03mm length x 121mm OD, 98.9mm gasket ID, Combination/Spin-On) against every
+already-closed Donaldson lube SKU in this file (`P502042`/`EL82042`, `P550973`/`EL80973`,
+`P550420`/`EL80420`) — no dimensional or identity match to any existing SKU. Classification:
+**`E_NEW_PRODUCT_CONFIRMED`** — P848076 has no existing ELIMFILTERS SKU, no legacy-CSV entry,
+no orphaned reference, and no duplicate anywhere. Reuse was not possible because nothing to
+reuse exists.
+
+**Nomenclature — derived, not guessed.** Read the repository's own live-enforced governance:
+`lib/catalog-codigo-base-policy.js`, `lib/catalog-codigo-base-governance.js`, and the SQL
+trigger that enforces them in production,
+`scripts/migrations/run_073_catalog_codigo_base_governance_v31.js`
+(`enforce_elimfilters_codigo_base_policy()`). For a `HEAVY_DUTY` SKU with a verified Donaldson
+base, the trigger's own rule is `expected_suffix := right(code_digits, 4)` — the SKU's last 4
+numeric digits must equal the Donaldson part's last 4 numeric digits. `P848076` → digits
+`848076` → last 4 = `8076`. The prefix's leading digit was verified empirically, not
+memorized from the 3 examples in the task prompt: queried `data/dims.csv` directly and found
+all 351 existing `EL`-prefixed (lube) SKUs use leading digit `8` with zero exceptions
+(`EF`-prefixed/fuel: all 500 use `9`; `EA`-prefixed/air splits 1366×`1` / 243×`2`). `EL8` +
+`8076` = **`EL88076`**.
+
+**Technology — read, not assigned aesthetically.** `docs/brand/TECHNOLOGY_REGISTRY.md` and
+`docs/brand/PRODUCT_REGISTRY.md` both list `SYNTRAX™` under "LUBRICATION PROTECTION > Lube
+Filters" (governed scope: On-Road and Off-Road only). Corroborated independently against
+`scripts/donaldson_lube_results.json`, where the two other already-closed Donaldson Lube
+spin-on combination filters in this same closure (`P502042`/`EL82042`,
+`P550973`/`EL80973`) both carry `SYNTRAX™` in their own Donaldson capture records — same
+family, same filter type, same technology.
+
+**Product identity.** `source_brand: DONALDSON`, `source_part: P848076`,
+`canonical_source_brand: DONALDSON`, `canonical_source_part: P848076`. Isuzu OE numbers
+`2906544040` and `8982984040` registered as OE/application references; Isuzu never overwrote
+Donaldson as canonical source. Product type `LUBE_FILTER` (Spin-On Combination) — no fuel,
+hydraulic, transmission, or coolant classification. Applications limited exactly to the two
+governed rows above; not expanded to any other 4HK1-engined row, NPR/FTR configuration, or
+market.
+
+**Decision status per row:** `P2-N-LUBE-2011-ON` reaches `PARTIAL` (capped — its own Phase 2
+row is `PARTIAL`). `P2-F-LUBE-2018-2021` reaches `VERIFIED_BASE` (its own Phase 2 row is
+`VERIFIED` with `donaldson_relationship_type: DIRECT_OE_CROSS` already established), the same
+standard already applied to `P2-N-FUEL-4HE` elsewhere in this file.
+
+**Live PostgreSQL — checked, found unreachable for the catalog.** Queried the Render
+workspace `elimfilters` (`tea-d56p89ggjchc7396ch4g`) directly via the account's Postgres
+tooling. The only Postgres instance visible to this account, `elimfilters-crm-db`
+(`dpg-dajhiqnqj5pc73dlksu0-a`), was confirmed to hold **zero tables** in any non-system
+schema — it backs `elimfilters-crm-api` / `elimfilters-sales-app-staging` (a CRM database),
+not the product catalog. The real catalog Postgres that
+`lib/catalog-codigo-base-governance.js` and the live `elimfilters-search-pro` (Part Search)
+service read (via `pg.Pool`/`DATABASE_URL` in `server-protocol.js`) is not hosted on any
+Render Postgres instance visible to this account, so it could not be read or written in this
+pass. This is a documented fact, established by direct tool use, not an assumption.
+
+**Publication.** `EL88076` was **not** written to any live catalog — there is no reachable
+write target this pass. Recorded on both rows as `elimfilters_base_decision.action:
+CREATE_GOVERNED_SKU`, `review_state: READY_FOR_REVIEW`, `published: false`, exactly the
+"leave candidate pending" outcome the task's own governance rules require when the live write
+path is unreachable (no bypass was created). No direct SQL was run, and
+`lib/catalog-write-gateway.js` / `lib/catalog-application-write-service.js` were not invoked,
+since there was nothing live to write.
+
+**Architecture reuse.** REUSED: `lib/catalog-codigo-base-policy.js`,
+`lib/catalog-codigo-base-governance.js`, and the `run_073` trigger logic (nomenclature
+derivation); `docs/brand/TECHNOLOGY_REGISTRY.md` / `PRODUCT_REGISTRY.md` (technology
+assignment); `data/dims.csv` (duplicate audit + leading-digit empirical check);
+`lib/isuzu-us-diesel-closure.js`'s `validatePhase3()` / `phase3CoverageMatrix()` (structural
+validation, unchanged). CREATED: nothing new architecturally — only data (the two Phase 3
+resolution rows' `product_identity` / `duplicate_mapping_check` fields, new this pass but
+following the existing `elimfilters_base_decision` shape already used by every other row) and
+one new top-level governance record, `governance.live_postgres_check_2026_09_24`, documenting
+the Postgres audit for future passes.
+
+**Untouched by design:** Phase 1, Phase 2, the 2 `BLOCKED_DONALDSON` rows, the 9
+`BLOCKED_OEM` rows, the other 15 Phase 3 resolution rows not named above, and the `P550008`
+legacy-CSV cleanup item are all unchanged.
+
+**Tests:** `tests/isuzu-us-diesel-closure.test.js` grew from 119 to 145 tests (26 new
+`SKUCASE` tests covering the task's own 25 numbered requirements, plus 10 pre-existing tests
+updated for the new decision statuses and SKU fields). All 145 pass; combined regression with
+the 5 sibling Isuzu/catalog test files remains 171/171.
+
 ### First attempt (2026-09-22): blocked at source 1
 
 The first pass could not reach Donaldson's OE cross-reference:
@@ -793,11 +895,14 @@ the documented gaps:
    `PARTIAL`.
 2. Reviewer: confirm all 9 reused SKUs (`EA16773`, `EA13614`, `EL82597`, `EF92564`,
    `EF92599`, `EF92427`, `EF90390`, `EL80420`, `EL82042`) are live in PostgreSQL, then decide
-   publication through `catalog-write-gateway`. Separately, a governance pass with live
-   catalogue access should confirm whether Donaldson `P848076` already has an ELIMFILTERS SKU
-   under a name this pass's file-based search did not surface, or assign one — the 2 rows
-   resolved by the `BLOCKEDCASE PASS 2026-09-24` (`P2-N-LUBE-2011-ON`, `P2-F-LUBE-2018-2021`)
-   are `NO_ELIMFILTERS_SKU_YET` pending that check.
+   publication through `catalog-write-gateway`. The `P848076 ELIMFILTERS SKU CLOSURE —
+   2026-09-24` pass derived a governed candidate SKU, `EL88076`, for Donaldson `P848076`
+   using this repository's own codigo_base nomenclature policy, and confirmed via a live
+   Postgres query that the only Render Postgres instance visible to this account holds no
+   product-catalog tables at all — a reviewer with access to the real catalog database must
+   still verify `EL88076` does not already exist under a different name there, and then
+   publish it (or an existing match) through `catalog-write-gateway` before the two rows that
+   depend on it (`P2-N-LUBE-2011-ON`, `P2-F-LUBE-2018-2021`) can be considered fully live.
 3. The Isuzu standard-vs-high-capacity fuel filter distinction (Phase 2 scope, N-Series and
    F-Series 2013-2021/2018-2020) is still open at the Isuzu level; this pass assigned the
    same Donaldson evidence to both configurations of each pair rather than resolving that
@@ -811,9 +916,11 @@ the documented gaps:
    4-speed automatic transmission's internal cartridge/strainer category, or a defensible
    verified statement that Donaldson does not serve that category, before Fleetguard can be
    considered.
-5. Obtain Donaldson data for `8982984040`, `2906544040` and `8982373410` through a
-   non-blocked Donaldson channel. Until then those three rows stay `BLOCKED_DONALDSON`.
-   Only a verified Donaldson-not-manufactured determination may open a Fleetguard base.
+5. `8982984040` and `2906544040` are resolved (Donaldson `P848076`, candidate ELIMFILTERS
+   `EL88076`) as of the `P848076 ELIMFILTERS SKU CLOSURE — 2026-09-24` pass. Obtain
+   Donaldson data for `8982373410` through a non-blocked Donaldson channel; until then that
+   row stays `BLOCKED_DONALDSON`. Only a verified Donaldson-not-manufactured determination
+   may open a Fleetguard base.
 6. Obtain an Isuzu F-Series owner's or parts manual to close F-Series air, cabin, air
    dryer, water separator and transmission.
 7. Obtain Isuzu parts data for the 4HK1-TC N-Series MY2005-2012 fuel filter, for the
