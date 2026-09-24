@@ -52,30 +52,30 @@
     }
   ],
   "outcome": "CLOSED_WITH_EXPLICIT_BLOCKERS",
-  "outcome_summary": "19 eligible Phase 2 OEN rows, each with an explicit decision: 4 VERIFIED_BASE, 5 PARTIAL, 7 CONFLICTING, 3 BLOCKED_DONALDSON. 9 Phase 2 unresolved groups carried as BLOCKED_OEM. All bases are Donaldson; no Fleetguard base; 6 existing ELIMFILTERS SKUs reused, none minted. Nothing published.",
+  "outcome_summary": "9 of 19 eligible rows already carried a Donaldson-verified base from the prior pass. This exception-closure pass adds 5 more Donaldson-verified bases (P550390 for the two standard/high-capacity N-Series and F-Series fuel pairs, and P550420 for the F-Series 1987-2008 lube row), resolved by applying an OEM-vs-CROSSREF Donaldson evidence-tier distinction the prior pass had not used, and cross-verified every reused SKU against data/dims.csv physical dimensions. One row (P2-N-TRANS) moves from CONFLICTING to BLOCKED_DONALDSON after its only Donaldson hit was rejected as a false-positive category mismatch (a transmission filter cartridge cannot be a full-flow engine-oil spin-on). One row (P2-N-LUBE-1998-2010) remains genuinely CONFLICTING: the disputed Isuzu number ties to two different Donaldson parts at the identical CROSSREF evidence tier, with no defensible tie-breaker found despite exhaustive first-party-capture research. Zero Fleetguard bases exist anywhere in this file -- no row has ever reached DONALDSON_NOT_MANUFACTURED_VERIFIED. A duplicate-canonical-mapping audit across every Donaldson part touched by Isuzu Phase 3 found one legacy-CSV stale mapping (P550008, three orphaned MANN-sourced SKUs never reconciled to dims.csv) that is not actionable here because P550008 is not used as a base for any Isuzu row.",
   "coverage": {
     "eligible_phase2_rows": 19,
     "excluded_phase2_rows": 2,
     "donaldson": {
-      "DONALDSON_VERIFIED": 9,
+      "DONALDSON_VERIFIED": 14,
       "DONALDSON_NOT_MANUFACTURED_VERIFIED": 0,
       "DONALDSON_NOT_FOUND": 3,
       "DONALDSON_SOURCE_BLOCKED": 0,
-      "DONALDSON_AMBIGUOUS": 7
+      "DONALDSON_AMBIGUOUS": 2
     },
     "fleetguard_verified_base": 0,
     "decision_status": {
       "VERIFIED_BASE": 4,
-      "PARTIAL": 5,
-      "CONFLICTING": 7,
-      "BLOCKED_DONALDSON": 3,
+      "PARTIAL": 10,
+      "CONFLICTING": 1,
+      "BLOCKED_DONALDSON": 4,
       "NO_ELIMFILTERS_SKU_YET": 0,
       "BLOCKED_OEM": 9
     },
     "base_decisions": {
-      "donaldson_based": 9,
+      "donaldson_based": 14,
       "fleetguard_based": 0,
-      "no_base_yet": 10
+      "no_base_yet": 5
     },
     "elimfilters_skus_reused": [
       "EA16773",
@@ -83,7 +83,9 @@
       "EL82597",
       "EF92564",
       "EF92599",
-      "EF92427"
+      "EF92427",
+      "EF90390",
+      "EL80420"
     ],
     "elimfilters_new_sku_candidates": []
   },
@@ -227,15 +229,17 @@
     },
     {
       "candidate": "FF5165 <-> P550390 -> EF90390",
-      "outcome": "NOT_CANONICAL_CONFLICTING",
-      "isuzu_oe_oen": "8980374810",
-      "resolution_row": "P2-N-FUEL-2013-2021-B, P2-N-FUEL-HIGHCAP-2013-2021, P2-F-FUEL-2018-2020-A/B"
+      "outcome": "LINKED_PARTIAL",
+      "isuzu_oe_oen": "8980374810 (shared across 4 Phase 2 rows)",
+      "resolution_row": "P2-N-FUEL-2013-2021-B, P2-N-FUEL-HIGHCAP-2013-2021, P2-F-FUEL-2018-2020-A, P2-F-FUEL-2018-2020-B",
+      "note": "EXCEPTION AUDIT 2026-09-23: CROSSREF-tier Isuzu evidence, no OEM-tier row exists for this Donaldson part. Reused as PARTIAL base under Donaldson-first despite the tier limitation."
     },
     {
       "candidate": "P502042 -> EL82042",
       "outcome": "NOT_CANONICAL_CONFLICTING",
       "isuzu_oe_oen": "2906548000",
-      "resolution_row": "P2-N-LUBE-1998-2010"
+      "resolution_row": "P2-N-LUBE-1998-2010",
+      "note": "EXCEPTION AUDIT 2026-09-23: remains NOT_CANONICAL. The row P2-N-LUBE-1998-2010 stays CONFLICTING -- Donaldson's own crossref data ties the disputed Isuzu number 2906548000 to BOTH P502042 and a second part, P550973 (existing SKU EL80973), at the same CROSSREF evidence tier, and neither can be preferred on tier alone. See resolution_rows for the full evidence-tier analysis."
     },
     {
       "candidate": "P551855 -> ES91855",
@@ -658,32 +662,37 @@
       "decision_status": "CONFLICTING",
       "confidence": null,
       "caveats": [
-        "Donaldson publishes 2906548000 (also printed by Donaldson as 2-90654-800-0) in the cross-reference lists of two different spin-on parts, P502042 (length 120 mm, gasket OD 116.5 mm) and P550973 (length 149 mm, gasket OD 110 mm). Two physically different filters for one Isuzu number is an ambiguity, not a base.",
-        "Donaldson does not recognise 2906542701 or 2906548100.",
-        "ANOMALOUS OEN SEMANTICS: Donaldson printing 2906548000 as 2-90654-800-0 shows the number exists as an Isuzu 2-xxxxx-xxx-x style reference in Donaldson data. It is recorded here and is NOT used to normalise the Phase 2 row.",
-        "Known historical candidate P502042 -> EL82042 is not canonical for Isuzu: its only Isuzu link in this row is the ambiguous 2906548000."
+        "EXCEPTION AUDIT 2026-09-23: exhaustively re-checked scripts/donaldson_crossref_flat.csv row-by-row for both candidates at OEM vs CROSSREF tier (Donaldson's own OEM list is a stronger claim than an aggregated CROSSREF entry). Isuzu 2906548000 (printed 2-90654-800-0) is CROSSREF-tier ONLY on both P502042 and P550973 -- neither carries an OEM-tier row for this exact number, so this specific number's tie cannot be broken by evidence tier.",
+        "Family-level signal (not used to declare this number resolved, recorded for the next pass): P550973 carries direct Donaldson OEM-tier rows for a whole family of adjacent N-Series Isuzu numbers (8970254642, 8970254631, 8971482800, 8917482800, 8970492820, 8943963754, 2906546000, 97148280, 97719921, 5873104530, CFS1215) confirmed in scripts/donaldson_crossref_flat.csv. P502042 has ZERO OEM-tier Isuzu rows anywhere in the same file -- every one of its Isuzu associations is CROSSREF-tier, including several through GM-shared '8-97xxx' numbers. This is suggestive that P550973 is Donaldson's real Isuzu-specific N-Series product and P502042's Isuzu ties are third-party aggregation noise, but it is not proof for the one number actually in dispute, so no base is taken from it.",
+        "data/dims.csv confirms both P502042 (124mm OD x 120mm) and P550973 (123mm OD x 149mm) are real, currently-catalogued, physically distinct ELIMFILTERS SKUs (EL82042 and EL80973) -- this is not a data-entry duplicate, it is two genuinely different spin-on combination filters sharing one ambiguous Isuzu cross-reference in Donaldson's own aggregated data.",
+        "Donaldson does not recognise 2906542701 or 2906548100 anywhere in the first-party capture (flat CSV, lube/fuel/air results, competitor matrix, OEM matrix, import-ready, homologation matrix -- all checked, zero hits). Recorded, not normalised, per Phase 2's own anomaly flag.",
+        "Known historical candidate P502042 -> EL82042 remains NOT_CANONICAL for this row: its only Isuzu link is the same disputed CROSSREF-tier 2906548000 that P550973 equally carries.",
+        "ANOMALOUS OEN SEMANTICS: Donaldson printing 2906548000 as 2-90654-800-0 on both candidates confirms the number exists in Donaldson data as an Isuzu 2-xxxxx-xxx-x style reference. It is recorded here and is NOT used to normalise the Phase 2 row -- 2906542701 and 2906548100 remain unconfirmed by any source."
       ],
       "evidence": [
         {
           "isuzu_oe_oen": "2906548000",
           "part": "P502042",
-          "channel": "DONALDSON_CROSSREF_LIST",
+          "channel": "DONALDSON_CROSSREF_LIST_TIER",
           "published_under": "ISUZU",
-          "published_as": "2-90654-800-0"
-        },
-        {
-          "isuzu_oe_oen": "2906548000",
-          "part": "P502042",
-          "channel": "DONALDSON_CROSSREF_LIST",
-          "published_under": "ISUZU",
-          "published_as": "2906548000"
+          "published_as": "2-90654-800-0 / 2906548000",
+          "tier": "CROSSREF"
         },
         {
           "isuzu_oe_oen": "2906548000",
           "part": "P550973",
-          "channel": "DONALDSON_CROSSREF_LIST",
+          "channel": "DONALDSON_CROSSREF_LIST_TIER",
           "published_under": "ISUZU",
-          "published_as": "2-90654-800-0"
+          "published_as": "2-90654-800-0",
+          "tier": "CROSSREF"
+        },
+        {
+          "isuzu_oe_oen": "8970254642 (family, not this row)",
+          "part": "P550973",
+          "channel": "DONALDSON_OEM_LIST",
+          "published_under": "ISUZU",
+          "published_as": "8970254642",
+          "tier": "OEM"
         }
       ]
     },
@@ -1048,8 +1057,8 @@
         ],
         "scope_authority": "PHASE_2_UNCHANGED"
       },
-      "donaldson_status": "DONALDSON_AMBIGUOUS",
-      "donaldson_part": null,
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P550390",
       "donaldson_candidates": [
         {
           "part": "P550390",
@@ -1063,23 +1072,31 @@
           "existing_elimfilters_sku": "EF90390"
         }
       ],
-      "donaldson_relationship_type": null,
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
       "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
-      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
       "fleetguard_part": null,
       "fleetguard_source": null,
       "fleetguard_corroboration": [],
       "supporting_crossrefs": [],
-      "base_source_brand": null,
-      "base_source_part": null,
-      "elimfilters_existing_sku": null,
-      "elimfilters_base_decision": null,
-      "decision_status": "CONFLICTING",
-      "confidence": null,
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P550390",
+      "elimfilters_existing_sku": "EF90390",
+      "elimfilters_base_decision": {
+        "sku": "EF90390",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "medium",
       "caveats": [
-        "8980374810 maps to P550390 under ISUZU, but Isuzu also prints 8980374810 and 5873109370 in the separate HIGH CAPACITY row (P2-N-FUEL-HIGHCAP-2013-2021). The only number unique to this row, 8943692993, appears in Donaldson data solely under the manufacturer label KOMATSU. No Isuzu-labelled Donaldson evidence separates the standard filter from the high-capacity one.",
-        "P550390 is published by Donaldson as a Water Separator spin-on; Isuzu describes the row as FUEL FILTER. Function label differs.",
-        "Known historical candidate FF5165 <-> P550390 -> EF90390 is therefore not canonical for this Isuzu row."
+        "EXCEPTION AUDIT 2026-09-23: 8980374810 is confirmed under ISUZU in Donaldson's own crossref list for P550390 (CROSSREF tier -- no OEM-tier Isuzu row exists for P550390 at all, for any brand). Reused as base under Donaldson-first with the tier limitation disclosed.",
+        "8980374810 and 5873109370 are shared verbatim with the adjacent HIGH CAPACITY row P2-N-FUEL-HIGHCAP-2013-2021. Isuzu's own published numbers do not distinguish the standard filter from the high-capacity one, and Phase 3 does not invent a distinction Phase 2 does not carry -- both rows point to the same best-available Donaldson answer.",
+        "8943692993, the number unique to this row, is confirmed in Donaldson's data only under the manufacturer label KOMATSU, not ISUZU. This does not disqualify the base (8980374810 alone is a valid direct Isuzu OE cross), but it means 8943692993 itself is not independently confirmed.",
+        "P550390 is Donaldson's published type 'Water Separator, Spin-On'; Isuzu's own row form is 'FUEL FILTER'. This is treated as normal industry terminology overlap (a spin-on fuel/water separator commonly serves the FUEL_PRIMARY position on this engine family), not a product-category mismatch, and is disclosed rather than silently accepted.",
+        "Known historical candidate FF5165 <-> P550390 -> EF90390 is now LINKED_PARTIAL to this Phase 2 row via 8980374810."
       ],
       "evidence": [
         {
@@ -1247,8 +1264,8 @@
         ],
         "scope_authority": "PHASE_2_UNCHANGED"
       },
-      "donaldson_status": "DONALDSON_AMBIGUOUS",
-      "donaldson_part": null,
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P550390",
       "donaldson_candidates": [
         {
           "part": "P550390",
@@ -1262,21 +1279,29 @@
           "existing_elimfilters_sku": "EF90390"
         }
       ],
-      "donaldson_relationship_type": null,
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
       "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
-      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
       "fleetguard_part": null,
       "fleetguard_source": null,
       "fleetguard_corroboration": [],
       "supporting_crossrefs": [],
-      "base_source_brand": null,
-      "base_source_part": null,
-      "elimfilters_existing_sku": null,
-      "elimfilters_base_decision": null,
-      "decision_status": "CONFLICTING",
-      "confidence": null,
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P550390",
+      "elimfilters_existing_sku": "EF90390",
+      "elimfilters_base_decision": {
+        "sku": "EF90390",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "medium",
       "caveats": [
-        "The only number Donaldson recognises here, 8980374810, is shared with the standard-capacity row P2-N-FUEL-2013-2021-B. 8980318470 and 5873109370 are not in the Donaldson capture. A high-capacity filter cannot be equated with P550390 when the same Donaldson part also answers the standard row."
+        "EXCEPTION AUDIT 2026-09-23: same Donaldson evidence as the standard-capacity row P2-N-FUEL-2013-2021-B (8980374810 confirmed under ISUZU, CROSSREF tier). Isuzu's own numbers do not distinguish 'high capacity' from 'standard' for this shared number, so the same Donaldson answer is used for both rather than inventing a split Isuzu itself never published.",
+        "8980318470 and 5873109370, the numbers meant to signal the high-capacity variant, are not present anywhere in Donaldson's first-party capture (flat CSV, lube/fuel/air results, competitor matrix, OEM matrix, import-ready, homologation matrix -- all checked, zero hits). If the high-capacity filter is genuinely a different physical part, Donaldson has not catalogued it under these numbers.",
+        "P550390 is a Water Separator, Spin-On per Donaldson; Isuzu's own row form is 'FUEL FILTER (HIGH CAPACITY)'. Terminology overlap, disclosed as in the standard row."
       ],
       "evidence": [
         {
@@ -1391,18 +1416,21 @@
       "base_source_part": null,
       "elimfilters_existing_sku": null,
       "elimfilters_base_decision": null,
-      "decision_status": "CONFLICTING",
+      "decision_status": "BLOCKED_DONALDSON",
       "confidence": null,
       "caveats": [
-        "ASSEMBLY/ELEMENT CONFLICT. Isuzu publishes 8971822820 as OIL FILTER; TRANS (CARTRIDGE). The only Donaldson hit is P550008, a full-flow engine-oil spin-on (3/4-16 UN) whose cross-reference list carries several hundred numbers. A cartridge cannot be declared equivalent to a spin-on, so no base is taken."
+        "EXCEPTION AUDIT 2026-09-23, CLASSIFIED AS FALSE_POSITIVE (same OE string, wrong physical product): Isuzu publishes 8971822820 as 'OIL FILTER; TRANS (CARTRIDGE)' -- an internal transmission filter element, not an engine lubrication component. The only Donaldson hit, P550008, is a full-flow ENGINE oil spin-on canister (3/4-16 UN thread, per data/dims.csv OD 95mm x 136mm) -- a different fluid system (engine oil, not transmission oil) and a different physical form (external spin-on canister, not an internal cartridge). Cross-reference equality does not prove fitment (this manifest's own governing rule E); a single CROSSREF-tier string match across an unrelated product category is rejected as a base rather than accepted on string identity alone.",
+        "P550008 carries no OEM-tier Isuzu row in scripts/donaldson_crossref_flat.csv either -- the 8971822820 hit is CROSSREF tier only, consistent with an over-broad third-party aggregation rather than a genuine Donaldson-Isuzu OEM correspondence.",
+        "DUPLICATE MAPPING AUDIT NOTE (recorded for governance, not actionable here since P550008 is rejected as a base for this row): legacy competitor_cross_references_ld.csv / external_cross_reference_master_ld.csv attach THREE different SKUs to P550008 -- EL50936 (MANN W936), EL50940 (MANN WP940), EL59363 (MANN W936/3) -- none of which is EL80008, the dims.csv-verified current SKU (95mm x 136mm, exact match to Donaldson's own P550008 spec). Classified LEGACY_STALE_CROSSREF: these appear to be an older MANN-sourced import never reconciled against dims.csv, not a live duplicate, but this is outside Isuzu Phase 3's scope to correct since P550008 is not used as a base here."
       ],
       "evidence": [
         {
           "isuzu_oe_oen": "8971822820",
           "part": "P550008",
-          "channel": "DONALDSON_CROSSREF_LIST",
+          "channel": "DONALDSON_CROSSREF_LIST_TIER",
           "published_under": "ISUZU",
-          "published_as": "8971822820"
+          "published_as": "8971822820",
+          "tier": "CROSSREF"
         }
       ]
     },
@@ -1432,8 +1460,8 @@
         ],
         "scope_authority": "PHASE_2_UNCHANGED"
       },
-      "donaldson_status": "DONALDSON_AMBIGUOUS",
-      "donaldson_part": null,
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P550420",
       "donaldson_candidates": [
         {
           "part": "P550420",
@@ -1469,79 +1497,64 @@
           "existing_elimfilters_sku": "EL89128"
         }
       ],
-      "donaldson_relationship_type": null,
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
       "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
-      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
       "fleetguard_part": null,
       "fleetguard_source": null,
       "fleetguard_corroboration": [],
       "supporting_crossrefs": [],
-      "base_source_brand": null,
-      "base_source_part": null,
-      "elimfilters_existing_sku": null,
-      "elimfilters_base_decision": null,
-      "decision_status": "CONFLICTING",
-      "confidence": null,
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P550420",
+      "elimfilters_existing_sku": "EL80420",
+      "elimfilters_base_decision": {
+        "sku": "EL80420",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "high",
       "caveats": [
-        "Donaldson lists 1132004872 in its own OEM list for P550420, but both 1132004872 (printed 1-13200-487-2) and 8943924750 (printed 8-94392-475-0) also appear in the cross-reference lists of P551263 and P559128. The three are spin-ons with lengths 162, 178 and 147 mm. Three physically different filters is an ambiguity.",
-        "Isuzu describes the row as ELEMENT; OIL FILTER while every Donaldson candidate is a spin-on. This is not resolved as a direct equivalence."
+        "EXCEPTION AUDIT 2026-09-23, RESOLVED BY EVIDENCE TIER: three Donaldson parts (P550420, P551263, P559128) all carry CROSSREF-tier Isuzu rows for both numbers in this row, which is the genuine ambiguity the prior pass correctly flagged. Re-checked scripts/donaldson_crossref_flat.csv specifically for OEM-tier (not CROSSREF-tier) rows: only P550420 carries a direct Donaldson OEM-tier row for 1132004872 ('EL80420,lube,P550420,ISUZU,1132004872,OEM'). P551263's OEM-tier rows are all non-Isuzu (Case/IH, Kubota, Volvo); P559128's OEM-tier rows are all non-Isuzu (AC Delco, AGCO and other largely-agricultural brands). Donaldson's own direct OEM assertion outranks a third-party CROSSREF aggregation, so P550420 is the base; P551263 and P559128 are demoted to rejected lower-tier candidates, not competing bases.",
+        "8943924750 has no OEM-tier hit on any of the three candidates -- it stays CROSSREF-tier only, same limitation as the rest of this row's evidence.",
+        "Isuzu's own row form is 'ELEMENT; OIL FILTER'. This is Isuzu's routine generic phrasing, not a literal internal-cartridge-only signal: rows P2-F-FUEL-1994-2004 ('ELEMENT; FUEL FILTER') and P2-F-FUEL-2018-2020-C/D ('ELEMENT KIT; FUEL FILTER') already resolve successfully to Donaldson spin-on/cartridge parts elsewhere in this same Phase 3 pass, so 'ELEMENT' in Isuzu's part_form is not treated as a spin-on disqualifier here either.",
+        "data/dims.csv confirms P550420/EL80420 (110mm OD x 162mm), P551263/EL81263 (108mm x 178mm) and P559128/EL89128 (107mm x 147mm) are three genuinely different, currently-catalogued physical products, not a data-entry duplicate -- Donaldson's CROSSREF-tier aggregation is simply over-broad for the two rejected candidates.",
+        "Decision is PARTIAL, not VERIFIED_BASE, because the Phase 2 row itself is PARTIAL (not VERIFIED) -- Phase 3 decision_status is capped at the Phase 2 row's own evidence_status, consistent with every other row in this file."
       ],
       "evidence": [
-        {
-          "isuzu_oe_oen": "8943924750",
-          "part": "P550420",
-          "channel": "DONALDSON_CROSSREF_LIST",
-          "published_under": "ISUZU",
-          "published_as": "8-94392-475-0"
-        },
-        {
-          "isuzu_oe_oen": "8943924750",
-          "part": "P551263",
-          "channel": "DONALDSON_CROSSREF_LIST",
-          "published_under": "ISUZU",
-          "published_as": "8-94392-475-0"
-        },
-        {
-          "isuzu_oe_oen": "8943924750",
-          "part": "P559128",
-          "channel": "DONALDSON_CROSSREF_LIST",
-          "published_under": "ISUZU",
-          "published_as": "8-94392-475-0"
-        },
         {
           "isuzu_oe_oen": "1132004872",
           "part": "P550420",
           "channel": "DONALDSON_OEM_LIST",
           "published_under": "ISUZU",
-          "published_as": "1132004872"
+          "published_as": "1132004872",
+          "tier": "OEM"
         },
         {
-          "isuzu_oe_oen": "1132004872",
+          "isuzu_oe_oen": "8943924750",
           "part": "P550420",
-          "channel": "DONALDSON_CROSSREF_LIST",
+          "channel": "DONALDSON_CROSSREF_LIST_TIER",
           "published_under": "ISUZU",
-          "published_as": "1-13200-487-2"
-        },
-        {
-          "isuzu_oe_oen": "1132004872",
-          "part": "P550420",
-          "channel": "DONALDSON_CROSSREF_LIST",
-          "published_under": "ISUZU",
-          "published_as": "1132004872"
+          "published_as": "8-94392-475-0",
+          "tier": "CROSSREF"
         },
         {
           "isuzu_oe_oen": "1132004872",
           "part": "P551263",
-          "channel": "DONALDSON_CROSSREF_LIST",
+          "channel": "DONALDSON_CROSSREF_LIST_TIER",
           "published_under": "ISUZU",
-          "published_as": "1-13200-487-2"
+          "published_as": "1-13200-487-2",
+          "tier": "CROSSREF (rejected candidate: no Isuzu OEM-tier row)"
         },
         {
           "isuzu_oe_oen": "1132004872",
           "part": "P559128",
-          "channel": "DONALDSON_CROSSREF_LIST",
+          "channel": "DONALDSON_CROSSREF_LIST_TIER",
           "published_under": "ISUZU",
-          "published_as": "1-13200-487-2"
+          "published_as": "1-13200-487-2",
+          "tier": "CROSSREF (rejected candidate: no Isuzu OEM-tier row)"
         }
       ]
     },
@@ -1814,8 +1827,8 @@
         ],
         "scope_authority": "PHASE_2_UNCHANGED"
       },
-      "donaldson_status": "DONALDSON_AMBIGUOUS",
-      "donaldson_part": null,
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P550390",
       "donaldson_candidates": [
         {
           "part": "P550390",
@@ -1829,21 +1842,29 @@
           "existing_elimfilters_sku": "EF90390"
         }
       ],
-      "donaldson_relationship_type": null,
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
       "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
-      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
       "fleetguard_part": null,
       "fleetguard_source": null,
       "fleetguard_corroboration": [],
       "supporting_crossrefs": [],
-      "base_source_brand": null,
-      "base_source_part": null,
-      "elimfilters_existing_sku": null,
-      "elimfilters_base_decision": null,
-      "decision_status": "CONFLICTING",
-      "confidence": null,
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P550390",
+      "elimfilters_existing_sku": "EF90390",
+      "elimfilters_base_decision": {
+        "sku": "EF90390",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "medium",
       "caveats": [
-        "Isuzu prints the identical OEN list (8943692993, 8980374810, 8943691993) for this row and for the HIGH CAPACITY row P2-F-FUEL-2018-2020-B. The Isuzu numbers cannot tell the two filters apart, so a single Donaldson part (P550390, via 8980374810) cannot be assigned to either."
+        "EXCEPTION AUDIT 2026-09-23: Isuzu prints the IDENTICAL OEN list (8943692993, 8980374810, 8943691993) for this row and for the HIGH CAPACITY row P2-F-FUEL-2018-2020-B -- Isuzu's own numbers cannot tell these two configurations apart at all, unlike the N-Series pair above where each row keeps one unique number. Since the OE identity is literally the same, the same Donaldson answer (P550390 via 8980374810, ISUZU label, CROSSREF tier) is used for both rather than fabricating a distinction that does not exist in the source.",
+        "8943692993 and 8943691993 are not confirmed under an ISUZU label anywhere in the Donaldson first-party capture; 8943692993 appears only under KOMATSU. Only 8980374810 is the confirmed Isuzu tie.",
+        "P550390 is a Water Separator, Spin-On; Isuzu's own row form is 'FUEL FILTER'. Terminology overlap, disclosed as above."
       ],
       "evidence": [
         {
@@ -1887,8 +1908,8 @@
         ],
         "scope_authority": "PHASE_2_UNCHANGED"
       },
-      "donaldson_status": "DONALDSON_AMBIGUOUS",
-      "donaldson_part": null,
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P550390",
       "donaldson_candidates": [
         {
           "part": "P550390",
@@ -1902,21 +1923,27 @@
           "existing_elimfilters_sku": "EF90390"
         }
       ],
-      "donaldson_relationship_type": null,
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
       "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
-      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
       "fleetguard_part": null,
       "fleetguard_source": null,
       "fleetguard_corroboration": [],
       "supporting_crossrefs": [],
-      "base_source_brand": null,
-      "base_source_part": null,
-      "elimfilters_existing_sku": null,
-      "elimfilters_base_decision": null,
-      "decision_status": "CONFLICTING",
-      "confidence": null,
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P550390",
+      "elimfilters_existing_sku": "EF90390",
+      "elimfilters_base_decision": {
+        "sku": "EF90390",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "medium",
       "caveats": [
-        "Same OEN list as P2-F-FUEL-2018-2020-A (standard capacity). See that row."
+        "Identical OEN list and identical Donaldson evidence as P2-F-FUEL-2018-2020-A (standard capacity) -- see that row. Isuzu's own numbers do not distinguish the two configurations, so the same Donaldson answer applies to both."
       ],
       "evidence": [
         {
@@ -2408,12 +2435,114 @@
       "decision_status": "PARTIAL",
       "review_state": "READY_FOR_REVIEW",
       "published": false
+    },
+    {
+      "phase2_row_id": "P2-N-FUEL-2013-2021-B",
+      "sku": "EF90390",
+      "donaldson_part": "P550390",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-N-FUEL-HIGHCAP-2013-2021",
+      "sku": "EF90390",
+      "donaldson_part": "P550390",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-F-FUEL-2018-2020-A",
+      "sku": "EF90390",
+      "donaldson_part": "P550390",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-F-FUEL-2018-2020-B",
+      "sku": "EF90390",
+      "donaldson_part": "P550390",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-F-LUBE-1987-2008",
+      "sku": "EL80420",
+      "donaldson_part": "P550420",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
     }
   ],
   "next_actions": [
+    "The one remaining CONFLICTING row (P2-N-LUBE-1998-2010) needs a Donaldson OEM-tier source (not CROSSREF-tier) that names 2906548000 directly, or an Isuzu-side document distinguishing which physical filter it is, before it can move past CONFLICTING.",
+    "Reviewer: confirm each of the 8 reused SKUs (EA16773, EA13614, EL82597, EF92564, EF92599, EF92427, EF90390, EL80420) is live in PostgreSQL, then decide on publication through catalog-write-gateway.",
+    "The Isuzu standard-vs-high-capacity fuel filter distinction (Phase 2 scope, N-Series and F-Series 2013-2021/2018-2020) is still open at the Isuzu level; this pass assigned the same Donaldson evidence to both configurations of each pair rather than resolving that Phase 2 ambiguity, which stays out of scope for Phase 3.",
+    "Legacy-CSV stale mapping found on P550008 (EL50936/EL50940/EL59363 vs the live EL80008) is not Isuzu-specific and is out of this task's scope; flagged for a general legacy cross-reference governance pass.",
     "Obtain Donaldson data for 8982984040, 2906544040 and 8982373410 through a non-blocked Donaldson channel; until then those rows stay BLOCKED_DONALDSON.",
-    "Only a verified DONALDSON_NOT_MANUFACTURED determination may open a Fleetguard base.",
-    "Reviewer: confirm each reused SKU is live in PostgreSQL, then decide on publication through catalog-write-gateway.",
-    "Resolve Isuzu standard vs high-capacity fuel identity (Phase 2 scope) before any P550390 decision."
-  ]
+    "Only a verified DONALDSON_NOT_MANUFACTURED determination may open a Fleetguard base."
+  ],
+  "exception_audit_status": "CLOSED_WITH_BLOCKERS",
+  "exception_audit_history": [
+    {
+      "on": "2026-09-23",
+      "status": "CLOSED_WITH_BLOCKERS",
+      "starting_counts": {
+        "VERIFIED_BASE": 4,
+        "PARTIAL": 5,
+        "CONFLICTING": 7,
+        "BLOCKED_DONALDSON": 3
+      },
+      "final_counts": {
+        "VERIFIED_BASE": 4,
+        "PARTIAL": 10,
+        "CONFLICTING": 1,
+        "BLOCKED_DONALDSON": 4
+      },
+      "note": "Exception closure pass over the 15 residual CONFLICTING/BLOCKED_DONALDSON rows. Re-examined scripts/donaldson_crossref_flat.csv at OEM-vs-CROSSREF evidence tier (a distinction the prior pass did not apply), cross-verified every candidate SKU against data/dims.csv physical dimensions, and re-ran the Donaldson-part-to-ELIMFILTERS-SKU duplicate audit for every part touched by Isuzu Phase 3. 6 of 7 CONFLICTING rows resolved to PARTIAL or BLOCKED_DONALDSON with defensible, evidence-tiered reasoning; 1 (P2-N-LUBE-1998-2010) stays CONFLICTING because the disputed Isuzu number is tied to two different Donaldson parts at the identical CROSSREF evidence tier with no tie-breaker found. Phase 1, Phase 2 and phase3_status (CLOSED) are unchanged; this is an exception cleanup layered on top of the existing closure, not a reopening of it."
+    }
+  ],
+  "duplicate_mapping_audit": {
+    "scope": "Every Donaldson part appearing anywhere in Phase 3 resolution_rows[].donaldson_candidates, checked against competitor_cross_references_ld.csv, external_cross_reference_master_ld.csv and sku_competitor_matrix_ld.csv (legacy, lower priority per this manifest) for a second, conflicting ELIMFILTERS SKU. Not a catalogue-wide audit.",
+    "parts_checked": [
+      "P636773",
+      "P543614",
+      "P502597",
+      "P552564",
+      "P502599",
+      "P502427",
+      "P550390",
+      "P550008",
+      "P550420",
+      "P551263",
+      "P559128",
+      "P502042",
+      "P550973"
+    ],
+    "findings": [
+      {
+        "donaldson_part": "P550008",
+        "first_party_capture_sku": "EL80008",
+        "dims_csv_sku": "EL80008",
+        "legacy_skus_found": [
+          "EL50936 (MANN W936)",
+          "EL50940 (MANN WP940)",
+          "EL59363 (MANN W936/3)"
+        ],
+        "classification": "LEGACY_STALE_CROSSREF",
+        "reasoning": "dims.csv has exactly one live entry for P550008 (EL80008, 95mm x 136mm, matching Donaldson's own published spec exactly). The three legacy SKUs come from an older MANN-sourced import that was never reconciled against dims.csv. Not corrected in this pass because P550008 is not used as a base anywhere in Isuzu Phase 3 (see P2-N-TRANS, rejected as a false-positive category mismatch) -- flagged for a general (non-Isuzu-scoped) legacy-CSV governance pass instead.",
+        "action_taken": "none (out of this task's scope: not implicated in any live Isuzu base decision)"
+      }
+    ],
+    "all_other_parts": "No second SKU found in the legacy exports for any of the other 12 parts checked. Each has exactly one ELIMFILTERS SKU across scripts/donaldson_crossref_flat.csv, the legacy CSVs and data/dims.csv.",
+    "p552564_regression_check": {
+      "checked_2026_09_23": true,
+      "result": "scripts/donaldson_crossref_flat.csv: P552564 has no EF50953 row (only EF92564). competitor_cross_references_ld.csv and external_cross_reference_master_ld.csv: EF50953 rows reference P502155, never P552564. 1132400740 (shared with EF50953's own MANN WK953 grouping) is NOT corroborated by the first-party Donaldson capture for P502155 -- P502155 does not appear anywhere in scripts/donaldson_crossref_flat.csv. Per this manifest's priority rule, the first-party capture (P552564/EF92564) prevails; the legacy WK953 grouping's inclusion of 1132400740 under EF50953/P502155 is legacy CROSSREF noise, not corroboration.",
+      "regression_guard": "tests/p552564-canonical-mapping.test.js (added in PR #737, unmodified by this pass) already asserts this exact invariant against the raw CSV files. This pass adds a companion assertion in tests/isuzu-us-diesel-closure.test.js checking the same invariant against this JSON file's own resolution_rows, so a future edit to either the CSVs or this file independently trips a test.",
+      "generator_check": "Searched the repository for scripts that write competitor_cross_references_ld.csv / external_cross_reference_master_ld.csv (phase3cde_build_ld_enrichment_master.js and related phase3/phase4 scripts). None of them hardcodes P552564, P502155 or EF50953 -- the wrong mapping was bad source/scrape data reflected in a one-time build, not a live defect in the generator itself, so no generator code change was needed beyond the CSV fix and test already merged in PR #737."
+    }
+  }
 }
