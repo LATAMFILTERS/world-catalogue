@@ -86,3 +86,19 @@ test('HD non-MANN/FRAM canonical source remains eligible',()=>{
   const role=canonicalRoleForDossier({duty:'HEAVY_DUTY'},d);
   assert.equal(role.role,'CANONICAL_BASE');
 });
+
+test('Industrial Process duty matches HERMES INDUSTRIAL dossier segment without collapsing into HD',()=>{
+  const d=structuredClone(complete);
+  d.identity.manufacturer='PALL';
+  d.identity.source_code='CC3LGA7H13';
+  d.identity.product_name='SepraSol Liquid/Gas Coalescer';
+  d.identity.product_type='liquid/gas coalescer';
+  d.identity.market_segment='INDUSTRIAL';
+  const role=canonicalRoleForDossier({duty:'INDUSTRIAL_PROCESS'},d);
+  assert.equal(role.role,'CANONICAL_BASE');
+  assert.equal(role.reason,'canonical-source-authority');
+
+  d.identity.market_segment='INDUSTRIAL_PROCESS';
+  const aliasRole=canonicalRoleForDossier({duty:'INDUSTRIAL_PROCESS'},d);
+  assert.equal(aliasRole.role,'CANONICAL_BASE');
+});

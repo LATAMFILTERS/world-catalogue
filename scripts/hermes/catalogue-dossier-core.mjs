@@ -19,7 +19,8 @@ function brandKey(value) {
 }
 
 function segment(value) {
-  return String(value || '').trim().toUpperCase();
+  const normalized = String(value || '').trim().toUpperCase();
+  return normalized === 'INDUSTRIAL_PROCESS' ? 'INDUSTRIAL' : normalized;
 }
 
 function arr(value) {

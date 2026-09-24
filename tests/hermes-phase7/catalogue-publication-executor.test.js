@@ -4,7 +4,17 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { compileUpdate, executeCataloguePublicationPlan, validateCataloguePublicationPlan } from '../../scripts/hermes/publish-catalogue-plan.mjs';
+import {
+  compileUpdate,
+  executeCataloguePublicationPlan,
+  validateCataloguePublicationPlan,
+  validateIndustrialCreateBatchPlan,
+} from '../../scripts/hermes/publish-catalogue-plan.mjs';
+import { buildIndustrialCreateBatchPlan } from '../../scripts/hermes/catalogue-publication-plan.mjs';
+import {
+  rollbackCataloguePublication,
+  validateIndustrialCreateBackup,
+} from '../../scripts/hermes/rollback-catalogue-publication.mjs';
 
 const canonical = (v) => Array.isArray(v) ? v.map(canonical) : (v && typeof v === 'object' ? Object.fromEntries(Object.keys(v).sort().map((k) => [k, canonical(v[k])])) : v);
 const hash = (v) => crypto.createHash('sha256').update(JSON.stringify(canonical(v))).digest('hex');
@@ -171,5 +181,161 @@ test('application publication reuses the dedicated evidence writer and records v
   } finally {
     fs.rmSync(dir,{ recursive:true, force:true });
     delete process.env.HERMES_CATALOGUE_PUBLISH_LIVE;
+  }
+});
+
+
+const industrialAuthorization = JSON.parse(fs.readFileSync(
+  path.join(process.cwd(), 'config/industrial-product-pilots/coalvex-pilot-01-publication-authorization.json'),
+  'utf8',
+));
+const industrialPilot = JSON.parse(fs.readFileSync(
+  path.join(process.cwd(), 'config/industrial-product-pilots/coalvex-pilot-01.json'),
+  'utf8',
+));
+const industrialPreview = JSON.parse(fs.readFileSync(
+  path.join(process.cwd(), 'config/industrial-product-pilots/coalvex-pilot-01-sku-preview.json'),
+  'utf8',
+));
+
+function industrialPlan() {
+  return buildIndustrialCreateBatchPlan({
+    authorization: industrialAuthorization,
+    pilot: industrialPilot,
+    preview: industrialPreview,
+    generatedAt: new Date().toISOString(),
+  });
+}
+
+test('builds the frozen 15-product COALVEX Industrial create plan without recomputing identity', () => {
+  const value = industrialPlan();
+  assert.equal(value.plan_type, 'INDUSTRIAL_CREATE_BATCH');
+  assert.equal(value.products.length, 15);
+  assert.equal(value.products[0].sku, 'IG13713');
+  assert.equal(value.products[0].codigo_base, 'CC3LGA7H13');
+  assert.equal(value.products[1].sku, 'IG11713');
+  assert.equal(value.products[1].codigo_base, 'CC3LGB7H13');
+  assert.equal(new Set(value.products.map((row) => row.sku)).size, 15);
+  for (const row of value.products) {
+    assert.equal(row.duty, 'INDUSTRIAL_PROCESS');
+    assert.equal(row.technology, 'COALERIS™');
+    assert.equal(row.canonical_source_brand, 'PALL');
+    assert.equal(row.canonical_source_status, 'VERIFIED');
+    assert.deepEqual(row.oem_codes, []);
+    assert.deepEqual(row.competitor_codes, []);
+    assert.deepEqual(row.equipment_applications, []);
+    assert.deepEqual(row.vehicle_applications, []);
+    assert.equal(row.enrichment_data.industrial_claim_governance.performance_promoted_as_elimfilters_claim, false);
+  }
+  assert.equal(validateIndustrialCreateBatchPlan(value), true);
+});
+
+test('Industrial create plan fails closed when one frozen identity is tampered after hashing', () => {
+  const value = industrialPlan();
+  value.products[0].sku = 'IG19999';
+  assert.throws(() => validateIndustrialCreateBatchPlan(value), /hash mismatch/);
+});
+
+test('Industrial create plan is dry-run by default through the existing catalogue publisher', async () => {
+  const value = industrialPlan();
+  const out = await executeCataloguePublicationPlan({ plan:value, apply:false });
+  assert.deepEqual(out, {
+    outcome:'DRY_RUN',
+    database_write:false,
+    plan_type:'INDUSTRIAL_CREATE_BATCH',
+    batch_id:'COALVEX-PILOT-01-PHASE4',
+    products:15,
+  });
+});
+
+function fakeIndustrialCreatePool(planValue) {
+  const queries = [];
+  const state = [];
+  let insertIndex = 0;
+  const client = {
+    async query(sql) {
+      const text = String(sql);
+      queries.push(text);
+      if (text === 'BEGIN' || text === 'COMMIT' || text === 'ROLLBACK' || text.startsWith('SET LOCAL') || text.startsWith('LOCK TABLE')) {
+        return { rowCount:null, rows:[] };
+      }
+      if (text.startsWith('SELECT sku, codigo_base, canonical_source_brand, canonical_source_code')) {
+        return { rowCount:0, rows:[] };
+      }
+      if (text.startsWith('INSERT INTO elimfilters_catalog')) {
+        state.push(structuredClone(planValue.products[insertIndex]));
+        insertIndex += 1;
+        return { rowCount:1, rows:[] };
+      }
+      if (text.startsWith('SELECT * FROM elimfilters_catalog')) {
+        return {
+          rowCount:state.length,
+          rows:[...state].sort((a,b)=>a.sku.localeCompare(b.sku)),
+        };
+      }
+      throw new Error('Unexpected Industrial publisher query: ' + text);
+    },
+    release(){ queries.push('RELEASE'); },
+  };
+  return { queries, state, pool:{ async connect(){ return client; } } };
+}
+
+function fakeIndustrialRollbackPool(rows) {
+  const queries = [];
+  const state = rows.map((row) => structuredClone(row));
+  const client = {
+    async query(sql) {
+      const text = String(sql);
+      queries.push(text);
+      if (text === 'BEGIN' || text === 'COMMIT' || text === 'ROLLBACK' || text.startsWith('SET LOCAL') || text.startsWith('LOCK TABLE')) {
+        return { rowCount:null, rows:[] };
+      }
+      if (text.startsWith('SELECT * FROM elimfilters_catalog')) {
+        return {
+          rowCount:state.length,
+          rows:[...state].sort((a,b)=>a.sku.localeCompare(b.sku)),
+        };
+      }
+      if (text.startsWith('DELETE FROM elimfilters_catalog')) {
+        const count = state.length;
+        state.splice(0, state.length);
+        return { rowCount:count, rows:[] };
+      }
+      throw new Error('Unexpected Industrial rollback query: ' + text);
+    },
+    release(){ queries.push('RELEASE'); },
+  };
+  return { queries, state, pool:{ async connect(){ return client; } } };
+}
+
+test('Industrial create batch publishes atomically, writes a verifiable backup, and can roll back only unchanged rows', async () => {
+  process.env.HERMES_CATALOGUE_PUBLISH_LIVE = 'true';
+  const value = industrialPlan();
+  const fake = fakeIndustrialCreatePool(value);
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-industrial-publish-'));
+  try {
+    const out = await executeCataloguePublicationPlan({ plan:value, pool:fake.pool, backupDir:dir, apply:true });
+    assert.equal(out.outcome, 'PUBLISHED');
+    assert.equal(out.products, 15);
+    assert.equal(fake.state.length, 15);
+    assert.ok(fake.queries.includes('COMMIT'));
+    assert.ok(!fake.queries.includes('ROLLBACK'));
+    assert.ok(fs.existsSync(out.backup_path));
+
+    const backup = JSON.parse(fs.readFileSync(out.backup_path, 'utf8'));
+    assert.equal(validateIndustrialCreateBackup(backup), true);
+    assert.equal(backup.after.length, 15);
+
+    process.env.HERMES_CATALOGUE_ROLLBACK_LIVE = 'true';
+    const rollbackFake = fakeIndustrialRollbackPool(fake.state);
+    const rolledBack = await rollbackCataloguePublication({ backup, pool:rollbackFake.pool, apply:true });
+    assert.equal(rolledBack.outcome, 'ROLLED_BACK');
+    assert.equal(rolledBack.products, 15);
+    assert.equal(rollbackFake.state.length, 0);
+    assert.ok(rollbackFake.queries.includes('COMMIT'));
+  } finally {
+    fs.rmSync(dir, { recursive:true, force:true });
+    delete process.env.HERMES_CATALOGUE_PUBLISH_LIVE;
+    delete process.env.HERMES_CATALOGUE_ROLLBACK_LIVE;
   }
 });

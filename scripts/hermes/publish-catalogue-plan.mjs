@@ -4,11 +4,37 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
-import { PUBLISHABLE_CATALOGUE_FIELDS, APPLICATION_PUBLICATION_FIELDS } from './catalogue-publication-plan.mjs';
+import {
+  PUBLISHABLE_CATALOGUE_FIELDS,
+  APPLICATION_PUBLICATION_FIELDS,
+  INDUSTRIAL_CREATE_PLAN_TYPE,
+} from './catalogue-publication-plan.mjs';
 
 const require = createRequire(import.meta.url);
-const { assertGovernedCatalogPatch } = require('../../lib/catalog-write-gateway.js');
+const {
+  assertGovernedCatalogPatch,
+  assertCanonicalWrite,
+} = require('../../lib/catalog-write-gateway.js');
 const { applyVerifiedApplications } = require('../../lib/catalog-application-write-service.js');
+
+export const INDUSTRIAL_INSERT_COLUMNS = Object.freeze([
+  'sku', 'codigo_base', 'filter_type', 'sub_type', 'technology', 'attachment_type',
+  'outer_diameter_mm', 'height_mm', 'duty',
+  'oem_codes', 'competitor_codes', 'brand_crossrefs', 'alternatives',
+  'equipment_applications', 'vehicle_applications',
+  'canonical_source_brand', 'canonical_source_code', 'canonical_source_url',
+  'canonical_source_status', 'canonical_verified_at', 'canonical_evidence',
+  'enrichment_data', 'catalog_active', 'catalog_scope_reason',
+  'catalog_scope_verified_at', 'is_primary',
+]);
+
+const INDUSTRIAL_JSON_COLUMNS = new Set([
+  'oem_codes', 'competitor_codes', 'brand_crossrefs', 'alternatives',
+  'equipment_applications', 'vehicle_applications',
+  'canonical_evidence', 'enrichment_data',
+]);
+
+const INDUSTRIAL_NUMERIC_COLUMNS = new Set(['outer_diameter_mm', 'height_mm']);
 
 export const COLUMN_GROUPS = {
   filter_type: ['filter_type'], duty: ['duty'], technology: ['technology'], codigo_base: ['codigo_base'],
@@ -117,7 +143,214 @@ export function compileUpdate(plan, { excludeFields = new Set() } = {}) {
   return { sql: `UPDATE elimfilters_catalog SET ${assignments.join(', ')} WHERE sku = $${values.length}`, values };
 }
 
+
+function industrialPlanCore(plan) {
+  return {
+    schema_version: plan.schema_version,
+    plan_type: plan.plan_type,
+    batch_id: plan.batch_id,
+    pilot_id: plan.pilot_id,
+    approval: plan.approval,
+    source_manifest: plan.source_manifest,
+    source_manifest_sha256: plan.source_manifest_sha256,
+    sku_preview: plan.sku_preview,
+    sku_preview_sha256: plan.sku_preview_sha256,
+    authorization_sha256: plan.authorization_sha256,
+    products: plan.products,
+  };
+}
+
+export function validateIndustrialCreateBatchPlan(plan, { now = Date.now(), maxAgeMs = 7 * 24 * 60 * 60 * 1000 } = {}) {
+  assert(plan?.schema_version === '1.0.0', 'Unsupported Industrial create-plan schema');
+  assert(plan.plan_type === INDUSTRIAL_CREATE_PLAN_TYPE, 'Industrial create-plan type mismatch');
+  assert(plan.batch_id && plan.pilot_id, 'Industrial batch_id and pilot_id are required');
+  assert(plan.approval?.approved_by === 'Victor Abreu', 'Victor approval is required for Industrial catalogue creation');
+  assert(!Number.isNaN(Date.parse(plan.approval?.approved_at)), 'Industrial approval timestamp is invalid');
+  assert(!Number.isNaN(Date.parse(plan.generated_at))
+    && now - Date.parse(plan.generated_at) <= maxAgeMs
+    && Date.parse(plan.generated_at) <= now + 60_000,
+  'Industrial create plan is expired or future-dated');
+  assert(Array.isArray(plan.products) && plan.products.length > 0 && plan.products.length <= 100,
+    'Industrial create plan must contain 1-100 products');
+  assert(typeof plan.plan_sha256 === 'string' && /^[a-f0-9]{64}$/.test(plan.plan_sha256),
+    'Industrial create plan hash is invalid');
+  assert(hash(industrialPlanCore(plan)) === plan.plan_sha256, 'Industrial create plan hash mismatch');
+
+  const allowedColumns = new Set(INDUSTRIAL_INSERT_COLUMNS);
+  const skus = new Set();
+  const sourceIdentities = new Set();
+  for (const row of plan.products) {
+    assert(row && typeof row === 'object' && !Array.isArray(row), 'Industrial product row must be an object');
+    assert(Object.keys(row).every((key) => allowedColumns.has(key)), `Industrial product ${row.sku || '?'} contains a non-approved insert field`);
+    assert(row.duty === 'INDUSTRIAL_PROCESS', `${row.sku}: duty must be INDUSTRIAL_PROCESS`);
+    assert(row.catalog_active === true, `${row.sku}: Phase 4 activation requires catalog_active=true`);
+    assert(Array.isArray(row.oem_codes) && row.oem_codes.length === 0, `${row.sku}: OEM codes must remain empty in the pilot publication`);
+    assert(Array.isArray(row.competitor_codes) && row.competitor_codes.length === 0, `${row.sku}: competitor codes must remain empty in the pilot publication`);
+    assert(Array.isArray(row.equipment_applications) && row.equipment_applications.length === 0,
+      `${row.sku}: equipment applications must not be inferred during Phase 4`);
+    assert(Array.isArray(row.vehicle_applications) && row.vehicle_applications.length === 0,
+      `${row.sku}: vehicle applications must remain empty for Industrial Process`);
+    assert(row.canonical_source_status === 'VERIFIED', `${row.sku}: canonical source must be VERIFIED`);
+    assert(row.canonical_evidence?.source_claim_status === 'MANUFACTURER_DECLARED',
+      `${row.sku}: manufacturer performance must remain source-attributed`);
+    assert(row.enrichment_data?.industrial_claim_governance?.performance_promoted_as_elimfilters_claim === false,
+      `${row.sku}: manufacturer performance cannot be promoted as an ELIMFILTERS claim`);
+    assertCanonicalWrite(row, { applicationWrite: false });
+
+    const sku = String(row.sku || '').trim().toUpperCase();
+    const sourceIdentity = `${String(row.canonical_source_brand || '').trim().toUpperCase()}|${String(row.canonical_source_code || '').trim().toUpperCase()}`;
+    assert(!skus.has(sku), `Duplicate Industrial SKU in create plan: ${sku}`);
+    assert(!sourceIdentities.has(sourceIdentity), `Duplicate Industrial canonical source identity in create plan: ${sourceIdentity}`);
+    skus.add(sku);
+    sourceIdentities.add(sourceIdentity);
+  }
+  return true;
+}
+
+function compileIndustrialInsert(row) {
+  const columns = INDUSTRIAL_INSERT_COLUMNS.filter((column) => Object.hasOwn(row, column) && row[column] !== undefined);
+  const values = columns.map((column) => row[column]);
+  const placeholders = columns.map((column, index) => `${index + 1}${INDUSTRIAL_JSON_COLUMNS.has(column) ? '::jsonb' : ''}`);
+  return {
+    sql: `INSERT INTO elimfilters_catalog (${columns.map((column) => `"${column}"`).join(', ')}) VALUES (${placeholders.join(', ')})`,
+    values,
+  };
+}
+
+export function industrialVerificationCore(row = {}) {
+  const core = {};
+  for (const column of INDUSTRIAL_INSERT_COLUMNS) {
+    if (!Object.hasOwn(row, column) || row[column] === undefined) continue;
+    if (INDUSTRIAL_NUMERIC_COLUMNS.has(column)) {
+      core[column] = row[column] == null ? null : Number(row[column]);
+      continue;
+    }
+    if (column === 'canonical_verified_at' || column === 'catalog_scope_verified_at') {
+      core[column] = row[column] == null ? null : new Date(row[column]).toISOString();
+      continue;
+    }
+    core[column] = row[column];
+  }
+  return core;
+}
+
+export function industrialCreateBackupCore(backup) {
+  return {
+    schema_version: backup.schema_version,
+    backup_type: backup.backup_type,
+    created_at: backup.created_at,
+    plan_sha256: backup.plan_sha256,
+    batch_id: backup.batch_id,
+    pilot_id: backup.pilot_id,
+    before: backup.before,
+    after: backup.after,
+  };
+}
+
+export function industrialCreateBackupHash(backup) {
+  return hash(industrialCreateBackupCore(backup));
+}
+
+export async function executeIndustrialCreateBatchPublication({
+  plan,
+  pool,
+  backupDir = 'hermes/backups/catalogue-publication',
+  apply = false,
+} = {}) {
+  validateIndustrialCreateBatchPlan(plan);
+  if (!apply) {
+    return {
+      outcome: 'DRY_RUN',
+      database_write: false,
+      plan_type: plan.plan_type,
+      batch_id: plan.batch_id,
+      products: plan.products.length,
+    };
+  }
+
+  assert(String(process.env.HERMES_CATALOGUE_PUBLISH_LIVE || '').toLowerCase() === 'true',
+    'HERMES_CATALOGUE_PUBLISH_LIVE=true is required');
+
+  const client = await pool.connect();
+  let backupPath = null;
+  try {
+    await client.query('BEGIN');
+    await client.query("SET LOCAL lock_timeout = '5s'");
+    await client.query("SET LOCAL statement_timeout = '30s'");
+    await client.query('LOCK TABLE elimfilters_catalog IN SHARE ROW EXCLUSIVE MODE');
+
+    const skus = plan.products.map((row) => String(row.sku).trim().toUpperCase());
+    const baseCodes = plan.products.map((row) => String(row.canonical_source_code).trim().toUpperCase());
+    const conflicts = await client.query(
+      `SELECT sku, codigo_base, canonical_source_brand, canonical_source_code
+       FROM elimfilters_catalog
+       WHERE UPPER(COALESCE(sku, '')) = ANY($1::text[])
+          OR UPPER(COALESCE(canonical_source_code, '')) = ANY($2::text[])
+          OR UPPER(COALESCE(codigo_base, '')) = ANY($2::text[])`,
+      [skus, baseCodes],
+    );
+    assert(conflicts.rowCount === 0,
+      `Industrial create batch conflicts with existing catalogue identity: ${JSON.stringify(conflicts.rows)}`);
+
+    fs.mkdirSync(backupDir, { recursive: true });
+    backupPath = path.join(backupDir, `${plan.batch_id}-${Date.now()}-${plan.plan_sha256.slice(0, 12)}.json`);
+    const backup = {
+      schema_version: '1.0.0',
+      backup_type: INDUSTRIAL_CREATE_PLAN_TYPE,
+      created_at: new Date().toISOString(),
+      plan_sha256: plan.plan_sha256,
+      batch_id: plan.batch_id,
+      pilot_id: plan.pilot_id,
+      before: [],
+      after: plan.products.map((row) => industrialVerificationCore(row)),
+    };
+    backup.backup_sha256 = industrialCreateBackupHash(backup);
+    fs.writeFileSync(backupPath, `${JSON.stringify(backup, null, 2)}\n`, { flag: 'wx' });
+
+    for (const row of plan.products) {
+      assertCanonicalWrite(row, { applicationWrite: false });
+      const insert = compileIndustrialInsert(row);
+      const changed = await client.query(insert.sql, insert.values);
+      assert(changed.rowCount === 1, `Industrial insert did not affect exactly one row for ${row.sku}`);
+    }
+
+    const verified = await client.query(
+      'SELECT * FROM elimfilters_catalog WHERE UPPER(sku) = ANY($1::text[]) ORDER BY sku',
+      [skus],
+    );
+    assert(verified.rowCount === plan.products.length,
+      `Industrial post-write verification expected ${plan.products.length} rows and found ${verified.rowCount}`);
+    const bySku = new Map(verified.rows.map((row) => [String(row.sku).trim().toUpperCase(), row]));
+    for (const expected of plan.products) {
+      const actual = bySku.get(String(expected.sku).trim().toUpperCase());
+      assert(actual, `Industrial post-write row missing for ${expected.sku}`);
+      assert(hash(industrialVerificationCore(actual)) === hash(industrialVerificationCore(expected)),
+        `Industrial post-write verification failed for ${expected.sku}`);
+    }
+
+    await client.query('COMMIT');
+    return {
+      outcome: 'PUBLISHED',
+      database_write: true,
+      plan_type: plan.plan_type,
+      batch_id: plan.batch_id,
+      products: plan.products.length,
+      backup_path: backupPath,
+      plan_sha256: plan.plan_sha256,
+    };
+  } catch (error) {
+    try { await client.query('ROLLBACK'); } catch {}
+    error.backup_path = backupPath;
+    throw error;
+  } finally {
+    client.release();
+  }
+}
+
 export async function executeCataloguePublicationPlan({ plan, pool, backupDir = 'hermes/backups/catalogue-publication', apply = false }) {
+  if (plan?.plan_type === INDUSTRIAL_CREATE_PLAN_TYPE) {
+    return executeIndustrialCreateBatchPublication({ plan, pool, backupDir, apply });
+  }
   validateCataloguePublicationPlan(plan);
   if (!apply) return { outcome: 'DRY_RUN', database_write: false, target_sku: plan.target_sku, operations: plan.operations.length };
   assert(String(process.env.HERMES_CATALOGUE_PUBLISH_LIVE || '').toLowerCase() === 'true', 'HERMES_CATALOGUE_PUBLISH_LIVE=true is required');

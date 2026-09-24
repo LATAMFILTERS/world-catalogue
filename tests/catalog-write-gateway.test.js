@@ -4,7 +4,13 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const { validateCanonicalWrite, validateGovernedCatalogPatch, assertGovernedCatalogPatch } = require('../lib/catalog-write-gateway');
+const {
+  validateCanonicalWrite,
+  validateGovernedCatalogPatch,
+  assertGovernedCatalogPatch,
+  validateIndustrialCanonicalWrite,
+  INDUSTRIAL_SKU_POLICY_VERSION,
+} = require('../lib/catalog-write-gateway');
 
 function baseRow(overrides = {}) {
   return {
@@ -22,8 +28,114 @@ function baseRow(overrides = {}) {
   };
 }
 
+function industrialRow(overrides = {}) {
+  return {
+    sku: 'IG13713',
+    codigo_base: 'CC3LGA7H13',
+    duty: 'INDUSTRIAL_PROCESS',
+    filter_type: 'process_gas',
+    sub_type: 'liquid_gas_coalescer',
+    technology: 'COALERIS™',
+    oem_codes: [],
+    competitor_codes: [],
+    equipment_applications: [],
+    vehicle_applications: [],
+    canonical_source_brand: 'PALL',
+    canonical_source_code: 'CC3LGA7H13',
+    canonical_source_status: 'VERIFIED',
+    canonical_source_url: 'https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol',
+    enrichment_data: {
+      industrial_base_governance: {
+        authority_status: 'FAMILY_ANCHOR_BASE',
+        base_eligible: true,
+        technology_core: 'TC-NG-01',
+        approved_anchor_brand: 'PALL',
+        approved_source_brand: 'PALL',
+        approved_base_code: 'CC3LGA7H13',
+        primary_evidence_complete: true,
+        original_confirmed: false,
+        source_urls: ['https://shop.pall.com/us/en/products/coalescers/liquid-gas/seprasol'],
+      },
+      industrial_sku_governance: {
+        policy_version: INDUSTRIAL_SKU_POLICY_VERSION,
+        technology_core: 'TC-NG-01',
+        planned_sku: 'IG13713',
+        publication_order_locked: true,
+        publication_order: 1,
+      },
+    },
+    ...overrides,
+  };
+}
+
 test('HD verified Donaldson authority passes gateway', () => {
   assert.equal(validateCanonicalWrite(baseRow()).valid, true);
+});
+
+test('Industrial Process family-anchor row passes the canonical gateway only with frozen source and SKU governance', () => {
+  const row = industrialRow();
+  assert.equal(validateIndustrialCanonicalWrite(row).valid, true);
+  const result = validateCanonicalWrite(row);
+  assert.equal(result.valid, true);
+  assert.equal(result.industrial_validation.authority_status, 'FAMILY_ANCHOR_BASE');
+  assert.equal(result.industrial_validation.technology_core, 'TC-NG-01');
+});
+
+test('Industrial Process row fails closed when canonical source, base authority, or planned SKU drifts', () => {
+  const row = industrialRow({
+    sku: 'IG19999',
+    canonical_source_status: 'OBSERVED',
+    enrichment_data: {
+      industrial_base_governance: {
+        authority_status: 'COMPETITOR_CROSS',
+        base_eligible: false,
+        technology_core: 'TC-NG-01',
+        approved_anchor_brand: 'PALL',
+        approved_source_brand: 'PALL',
+        approved_base_code: 'WRONG',
+        primary_evidence_complete: false,
+        original_confirmed: false,
+        source_urls: [],
+      },
+      industrial_sku_governance: {
+        policy_version: 'WRONG',
+        technology_core: 'TC-NG-01',
+        planned_sku: 'IG13713',
+        publication_order_locked: false,
+        publication_order: 0,
+      },
+    },
+  });
+  const result = validateCanonicalWrite(row);
+  assert.equal(result.valid, false);
+  for (const reason of [
+    'INDUSTRIAL_BASE_AUTHORITY_NOT_ELIGIBLE',
+    'INDUSTRIAL_BASE_NOT_ELIGIBLE',
+    'INDUSTRIAL_PRIMARY_EVIDENCE_INCOMPLETE',
+    'INDUSTRIAL_APPROVED_BASE_MISMATCH',
+    'INDUSTRIAL_CANONICAL_SOURCE_NOT_VERIFIED',
+    'INDUSTRIAL_SOURCE_EVIDENCE_MISSING',
+    'INDUSTRIAL_SKU_POLICY_VERSION_MISMATCH',
+    'INDUSTRIAL_PLANNED_SKU_MISMATCH',
+    'INDUSTRIAL_PUBLICATION_ORDER_NOT_LOCKED',
+    'INDUSTRIAL_PUBLICATION_ORDER_INVALID',
+  ]) assert.ok(result.reasons.includes(reason), reason);
+});
+
+test('Industrial Process ORIGINAL_BASE requires explicit original confirmation', () => {
+  const row = industrialRow({
+    enrichment_data: {
+      ...industrialRow().enrichment_data,
+      industrial_base_governance: {
+        ...industrialRow().enrichment_data.industrial_base_governance,
+        authority_status: 'ORIGINAL_BASE',
+        original_confirmed: false,
+      },
+    },
+  });
+  const result = validateCanonicalWrite(row);
+  assert.equal(result.valid, false);
+  assert.ok(result.reasons.includes('INDUSTRIAL_ORIGINAL_BASE_NOT_CONFIRMED'));
 });
 
 test('retired LD prefix-5 SKU families are blocked permanently', () => {
