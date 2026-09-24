@@ -217,7 +217,7 @@ function compileIndustrialInsert(row) {
   };
 }
 
-function industrialVerificationCore(row = {}) {
+export function industrialVerificationCore(row = {}) {
   const core = {};
   for (const column of INDUSTRIAL_INSERT_COLUMNS) {
     if (!Object.hasOwn(row, column) || row[column] === undefined) continue;
