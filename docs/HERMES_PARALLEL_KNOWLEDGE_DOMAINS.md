@@ -97,7 +97,7 @@ Commercial platform layer:
 - FLUREXIS™ — Fluid Conditioning Technologies
 - AQUVEXIS™ — Water Treatment Technologies
 
-The platform layer is routing and semantic context, not a technology claim. Family technologies remain governed separately. For AEREMIS™, General Air Filtration remains descriptive, while HE-CRIVA™ and MA-TREA™ are branded family identifiers. HERMES may carry the platform context during research, but it still cannot approve publication, applications, products or claims.
+The platform layer is routing and semantic context, not a technology claim. Family technologies remain governed separately. For AEREMIS™, GAIRFIL™ is the branded General Air Filtration family, alongside HE-CRIVA™ and MA-TREA™. HERMES may carry the platform context during research, but it still cannot approve publication, applications, products or claims.
 
 ### Industrial Air phase boundary
 
