@@ -9,12 +9,20 @@
   "sources_file": "config/vehicle-platform-closure/isuzu-us-diesel-sources.json",
   "phase1_file": "config/vehicle-platform-closure/isuzu-us-diesel-phase1-universe.json",
   "closed_on": "2026-09-22",
+  "phase2_status": "CLOSED",
+  "phase2_status_history": [
+    { "closed_on": "2026-09-22", "phase2_status": "NOT_CLOSED", "note": "Initial Phase 2 pass, N-Series and F-Series only. H-Series absent (Phase 1 had not yet incorporated it). Several coverage gaps left undocumented as explicit unresolved_positions entries." },
+    { "closed_on": "2026-09-23", "phase2_status": "CLOSED", "note": "PHASE 2 CLOSURE PASS. H-Series position_universe added (block H-2005-2008, all three models). Cummins B6.7 F-Series gap explicitly documented. The two anomalous lube OEN rows cross-checked against a second extraction algorithm and against the adjacent RADIATOR block, ruling out an extraction error. Coverage closure means every Phase 1 vehicle x position cell now carries a terminal Phase 2 state (VERIFIED, NOT_APPLICABLE, or an honestly-documented PARTIAL/UNRESOLVED/CONFLICTING) -- it does NOT mean every cell is VERIFIED. See docs/hermes/ISUZU_US_DIESEL_CLOSURE_2000_2026.md, section 'PHASE 2 -- OFFICIALLY CLOSED', for the full coverage matrix and counts." }
+  ],
   "governance": {
     "aftermarket_consulted_in_this_phase": false,
     "model_to_model_inheritance": "PROHIBITED_AND_NOT_PERFORMED",
     "published_scope_never_widened": true,
     "scope_rule": "Every isuzu_oe_oen row below reproduces the YEAR and ENGINE columns exactly as Isuzu published them. A row is only bound to a Phase 1 vehicle where that vehicle's own model year and engine both fall inside the published scope. Where Isuzu published an engine-scoped range but no model, the binding is recorded as ENGINE_SCOPED and the vehicle-level answer stays PARTIAL.",
-    "model_line_rule": "Isuzu heads its parts sections with model LINES: \"N-SERIES NPR / NRR / NQR\" and \"F-SERIES FTR / FVR / FSR\". A suffix variant of a named line is covered by that line - NPR-HD and NPR-XD by NPR, NRR DERATE by NRR, FVR DERATE by FVR. A model line Isuzu does not name is NOT covered, which is why FRR and FXR carry no filter row even though they share a block and an engine with FTR and FVR."
+    "model_line_rule": "Isuzu heads its parts sections with model LINES: \"N-SERIES NPR / NRR / NQR\" and \"F-SERIES FTR / FVR / FSR\". A suffix variant of a named line is covered by that line - NPR-HD and NPR-XD by NPR, NRR DERATE by NRR, FVR DERATE by FVR. A model line Isuzu does not name is NOT covered, which is why FRR and FXR carry no filter row even though they share a block and an engine with FTR and FVR.",
+    "h_series_rule": "PHASE 2 PASS 2026-09-23. No Isuzu document anywhere in this closure publishes a model-line grouping for H-Series comparable to \"N-SERIES NPR / NRR / NQR\" -- Isuzu's own H-Series specification pages list HTR, HVR and HXR as three separate models, each with its own dedicated specification page and its own GVWR, horsepower and torque range, with no shared parts table. HTR, HVR and HXR are therefore each fully independent for filter-position purposes: none may inherit from either of the other two, and none may inherit from F-Series merely because both share the 6HK1-TC engine family. This is the same model-line rule applied more strictly, because H-Series publishes no grouped parts table at all to even test for a shared line.",
+    "cummins_b67_rule": "PHASE 2 PASS 2026-09-23. MY2022-2026 F-Series uses the Cummins B6.7, confirmed by Isuzu's own brochures in Phase 1 (ISUZU_FTR_SPECS_BROCHURE_2022, ISUZU_2025_F_BROCHURE). No Isuzu-published filter part number for this engine was located in this pass. Per the task's explicit instruction, Cummins official parts/maintenance literature may be used as OEM engine evidence only where Isuzu does not publish its own number AND the exact Isuzu chassis application is established; Fleetguard is explicitly excluded from Phase 2 authority even though Cummins-owned, and belongs to Phase 3. No Cummins document meeting that bar was located in this pass either (see unresolved_positions), so this remains UNRESOLVED rather than filled from a Fleetguard or other aftermarket source.",
+    "retailer_leads_not_evidence": "Several retailer/marketplace listings (eBay, Amazon, Walmart, and similar cross-reference sites) were encountered while researching the gaps below and are recorded in unresolved_positions purely as research leads for a future, governance-approved primary-source confirmation pass. None of them defines fitment or evidence_status in this file, per the task's explicit prohibition on retailers/forums as defining evidence."
   },
   "position_universe": {
     "derivation": "Taken from the Isuzu maintenance schedules in the 2006 and 2007 NPR diesel owner's manuals and from the F-Series Priority Service Maintenance Program text, not assumed from the manifest's position list.",
@@ -130,6 +138,69 @@
         "applicable": false,
         "status": "NOT_APPLICABLE",
         "basis": "Not part of the Isuzu-published chassis maintenance scope."
+      }
+    },
+    "H-SERIES": {
+      "derivation_note": "PHASE 2 PASS 2026-09-23. Derived from the Isuzu H-Series microsite (isuzucv.com/hseries/*) already read in the Phase 1 closure -- specifically the model-specific specification pages (htrspecs.html, hvrspecs.html, hxrspecs.html), which give transmission and brake-system configuration but were never accompanied by an owner's manual, service manual or parts catalogue in any Wayback capture found. No maintenance-schedule document exists for this series in the sources retrieved, so every position below rests on inference from the vehicle's own published configuration (what kind of engine, brakes, transmission it has) rather than on an explicit Isuzu maintenance-schedule line item the way N-Series and F-Series do.",
+      "AIR_PRIMARY": {
+        "applicable": true,
+        "status": "UNRESOLVED",
+        "basis": "The 6HK1-TC is an air-breathing diesel and therefore requires an intake air filter as a matter of engineering necessity, but no Isuzu H-Series document of any kind (specification page, brochure, manual) publishes a part number or even confirms a single- vs two-stage air cleaner."
+      },
+      "AIR_SECONDARY": {
+        "applicable": "UNCERTAIN",
+        "status": "UNRESOLVED",
+        "basis": "Not stated by Isuzu for H-Series. The contemporaneous F-Series shares the 6HK1-TC and is itself UNRESOLVED for this position, so there is no in-scope Isuzu evidence to reason from either way."
+      },
+      "LUBE_PRIMARY": {
+        "applicable": true,
+        "status": "UNRESOLVED",
+        "basis": "No Isuzu H-Series document publishes an oil filter part number."
+      },
+      "LUBE_SECONDARY": {
+        "applicable": "UNCERTAIN",
+        "status": "UNRESOLVED",
+        "basis": "Not stated by Isuzu for H-Series."
+      },
+      "FUEL_PRIMARY": {
+        "applicable": true,
+        "status": "UNRESOLVED",
+        "basis": "No Isuzu H-Series document publishes a fuel filter part number."
+      },
+      "FUEL_SECONDARY": {
+        "applicable": "UNCERTAIN",
+        "status": "UNRESOLVED",
+        "basis": "Not stated by Isuzu for H-Series."
+      },
+      "FUEL_WATER_SEPARATOR": {
+        "applicable": "UNCERTAIN",
+        "status": "UNRESOLVED",
+        "basis": "Not stated by Isuzu for H-Series."
+      },
+      "CABIN": {
+        "applicable": "UNCERTAIN",
+        "status": "UNRESOLVED",
+        "basis": "No Isuzu H-Series owner's manual or cabin filter part number was retrieved."
+      },
+      "AIR_DRYER": {
+        "applicable": "CONDITIONAL_BY_MODEL",
+        "status": "UNRESOLVED",
+        "basis": "Isuzu's own model-specific specification pages (captured 2005-03-18, re-checked unchanged through 2009-06-16) publish brake system as a per-model configuration, not a uniform H-Series attribute: HTR -- Standard 'Hydraulic 4-piston', Optional 'ABS Full Air'; HVR -- Standard 'Hydraulic 4-piston', Optional 'Air brake'; HXR -- Standard 'Air brake', Optional 'Air brake'. An air dryer is only present on a vehicle actually built with the (standard-on-HXR, optional-on-HTR/HVR) full-air brake system. No Isuzu document states which configuration any given VIN or fleet order actually received, and no air dryer cartridge part number was published for any configuration.",
+        "by_model": {
+          "HTR": { "standard_brakes": "Hydraulic 4-piston", "optional_brakes": "ABS Full Air", "air_dryer_applicability": "CONDITIONAL -- only if the optional full-air brake system was ordered" },
+          "HVR": { "standard_brakes": "Hydraulic 4-piston", "optional_brakes": "Air brake", "air_dryer_applicability": "CONDITIONAL -- only if the optional full-air brake system was ordered" },
+          "HXR": { "standard_brakes": "Air brake", "optional_brakes": "Air brake", "air_dryer_applicability": "APPLICABLE as standard -- HXR ships with air brakes; part number still UNRESOLVED" }
+        }
+      },
+      "TRANSMISSION_FILTER": {
+        "applicable": "UNCERTAIN",
+        "status": "UNRESOLVED",
+        "basis": "Isuzu's H-Series specification pages list transmission options as Allison 2400/2500 HS/RDS automatic (HTR/HVR), Allison 3000/3500 RDS automatic (HVR/HXR), or Eaton Fuller manual (all three). A serviceable external filter would apply only to the Allison automatic configuration, and Isuzu does not state which transmission any given vehicle carries or publish a filter part number for either."
+      },
+      "HYDRAULIC_FILTER": {
+        "applicable": false,
+        "status": "NOT_APPLICABLE",
+        "basis": "Not part of the Isuzu-published chassis maintenance scope, consistent with N-Series and F-Series."
       }
     }
   },
@@ -251,7 +322,7 @@
       ],
       "evidence_status": "PARTIAL",
       "binding_note": "Isuzu scopes this row to 'Diesel' without naming the engine. The same page carries a separate 4JJ row, so this row is read as the 4HK1-TC lube filter. That reading is an inference about which of two published rows applies and is why the row is PARTIAL rather than VERIFIED.",
-      "format_note": "8982984040 matches the Isuzu 8-98298-404-0 format. 2906544040 does not follow the usual Isuzu genuine pattern and is reproduced exactly as published.",
+      "format_note": "8982984040 matches the Isuzu 8-98298-404-0 format. 2906544040 does not follow the usual Isuzu genuine pattern and is reproduced exactly as published. PHASE 2 PASS 2026-09-23 confirmation: re-extracted the source PDF with pdftotext in both -table and -raw mode, which agree on this exact number in this exact cell. The adjacent RADIATOR block on the same page (row 29406B0190, immediately below this one) has its own, completely different set of genuine numbers (8971001441, 8971288870, 8971288880) with zero overlap, which rules out a column-bleed/misalignment extraction error as the explanation for 2906544040's non-standard format. The anomaly is confirmed to be present in Isuzu's own published document as printed, not an artefact of this closure's extraction; it is not independently confirmed against a second Isuzu source and remains flagged rather than normalized.",
       "applies_to_model_lines": [
         "NPR",
         "NQR",
@@ -282,7 +353,7 @@
         "N-2005-2010"
       ],
       "evidence_status": "PARTIAL",
-      "format_note": "None of the three numbers follows the usual Isuzu genuine 8-9xxxxx-xxx-x or 1-1xxxx-xxx-x pattern. They are reproduced exactly as published and flagged for confirmation against an Isuzu parts catalogue before any downstream use.",
+      "format_note": "None of the three numbers follows the usual Isuzu genuine 8-9xxxxx-xxx-x or 1-1xxxx-xxx-x pattern. They are reproduced exactly as published and flagged for confirmation against an Isuzu parts catalogue before any downstream use. PHASE 2 PASS 2026-09-23 confirmation: same cross-check as row P2-N-LUBE-2011-ON -- -table and -raw extraction modes agree on all three numbers in this cell, and the adjacent RADIATOR rows on the same page carry entirely distinct genuine numbers with no overlap, ruling out a column-bleed extraction error. The anomaly is confirmed present in Isuzu's own document as printed; it remains flagged, not normalized, pending independent confirmation against a second Isuzu source (none was located in this pass).",
       "binding_note": "The published range spans both the 4HE1-TC and the 4HK1-TC eras in a single row, which Isuzu does not break down by engine.",
       "applies_to_model_lines": [
         "NPR",
@@ -749,12 +820,14 @@
     {
       "scope": "N-SERIES 2000-2012",
       "position": "FUEL_PRIMARY (4HK1-TC era)",
-      "reason": "The Isuzu parts cross reference jumps from the 4HE-scoped row to rows scoped 2013-2021. No diesel fuel filter number is published for the 4HK1-TC N-Series between MY2005 and MY2012."
+      "reason": "The Isuzu parts cross reference jumps from the 4HE-scoped row to rows scoped 2013-2021. No diesel fuel filter number is published for the 4HK1-TC N-Series between MY2005 and MY2012.",
+      "phase2_pass_2026-09-23_note": "A further targeted search found no additional Isuzu USA source (owner's manual, service manual, brochure, parts catalogue) covering this gap. Retailer listings (research leads only, not evidence) reference genuine-format numbers such as 8-98018858-0 and 8944838500 for the 4HK1/4JJ1 era generally, without a dated, Isuzu-published, year-scoped source to anchor them to 2005-2012 specifically. Remains UNRESOLVED."
     },
     {
       "scope": "N-SERIES 2011-2018 NPR ECO-MAX",
       "position": "FUEL_PRIMARY, AIR_PRIMARY",
-      "reason": "The cross reference publishes a 4JJ-scoped lube filter but no 4JJ-scoped fuel or air filter. The 2006- air row is not engine-scoped and cannot be assumed to cover the 4JJ1-TC."
+      "reason": "The cross reference publishes a 4JJ-scoped lube filter but no 4JJ-scoped fuel or air filter. The 2006- air row is not engine-scoped and cannot be assumed to cover the 4JJ1-TC.",
+      "phase2_pass_2026-09-23_note": "Retailer listings (research leads only, not evidence) associate the already-registered non-engine-scoped air row (8970622940, row P2-N-AIR-2006-ON) and fuel row (8982035990, row P2-N-FUEL-2013-2021-C) specifically with the 4JJ1 ECO-MAX. This is a useful lead for a future governance-approved confirmation but is not Isuzu-published evidence and does not change either row's engine scope or this position's UNRESOLVED status."
     },
     {
       "scope": "N-SERIES 2022-2026",
@@ -779,7 +852,14 @@
     {
       "scope": "F-SERIES 2022-2026 (Cummins B6.7)",
       "position": "ALL",
-      "reason": "No Isuzu-published filter part number covers the Cummins B6.7 F-Series. The Isuzu parts cross reference has no row for it."
+      "reason": "No Isuzu-published filter part number covers the Cummins B6.7 F-Series. The Isuzu parts cross reference has no row for it.",
+      "phase2_pass_2026-09-23_note": "A targeted search for Cummins-official B6.7 filter part numbers tied explicitly to the Isuzu F-Series chassis application (the standard this closure's own rules require before Cummins literature may serve as OEM evidence) did not locate a qualifying document. General Cummins B6.7 filter listings exist (e.g. Cummins Fuel Filter 3975126 on shop.cummins.com) but none found establishes the Isuzu-chassis linkage; using them without that linkage would violate the same no-inheritance principle applied everywhere else in this closure. Remains UNRESOLVED. Aftermarket B6.7 references (Fleetguard/Donaldson) were seen during this search and are explicitly excluded from Phase 2 per governance.cummins_b67_rule; they belong to Phase 3."
+    },
+    {
+      "scope": "H-SERIES all models (HTR, HVR, HXR), MY2005-2008, all positions",
+      "position": "ALL except HYDRAULIC_FILTER (NOT_APPLICABLE)",
+      "reason": "PHASE 2 PASS 2026-09-23. H-Series is newly incorporated into Phase 1 and had zero Phase 2 coverage before this pass. An exhaustive search (isuzucv.com's full archived history for any H-Series manual/parts/service page, general web search for HTR/HVR/HXR filter part numbers) found the model-specific specification pages already used in Phase 1 (engine, GVWR, transmission, brake configuration) but no owner's manual, service manual or parts catalogue of any kind for this product line was ever archived or found. Retailer listings (research leads only, not evidence) associate the F-Series/H-Series-shared lube filter number 1132004872 with HTR specifically by engine family (6HK1), which is a plausible but explicitly-prohibited model-to-model inheritance pattern under this closure's own rules (H-Series may not inherit from F-Series merely because both use 6HK1-TC) -- it is recorded here as a lead, not applied.",
+      "closing_note": "Every H-Series position nonetheless has a terminal state per position_universe.H-SERIES: HYDRAULIC_FILTER is NOT_APPLICABLE (consistent with N/F-Series); AIR_DRYER is the one position with a documented, per-model CONDITIONAL basis (see position_universe.H-SERIES.AIR_DRYER.by_model) even though its part number is UNRESOLVED; every other position is UNRESOLVED with its own stated basis. No H-Series position was silently omitted from the coverage matrix."
     }
   ]
 }

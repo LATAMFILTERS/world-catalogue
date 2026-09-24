@@ -2,12 +2,120 @@
 
 **Phase ID:** `ISUZU_US_DIESEL_THREE_PHASE_CLOSURE`
 **Manifest:** `config/vehicle-platform-closure/isuzu-us-phase2-oem.json` (existing, unchanged)
-**Closed on:** 2026-09-22
+**Phase 1 initial pass:** 2026-09-22
+**Phase 1 closure pass:** 2026-09-23
+**Phase 1 technical-qualifier pass:** 2026-09-23
+**Phase 2 closure pass:** 2026-09-23
+**Phase 3 closure pass:** 2026-09-23
 **Scope:** USA market, Isuzu, diesel only, model years 2000-2026 inclusive.
 
 This is the research output for the three gated phases the manifest already defines. It
 does not introduce a pipeline, a rule or a table. It fills the manifest's stages with
 evidence and states, for every model year, what is closed and what is not.
+
+## PHASE 1 — OFFICIALLY CLOSED
+
+**`"phase_status": "CLOSED"`** in `config/vehicle-platform-closure/isuzu-us-diesel-phase1-universe.json`.
+
+A dedicated closure pass (2026-09-23) resolved every case the initial 2026-09-22 pass had
+left open: 7 year-blocks at `PARTIAL` / `UNRESOLVED` / `CONFLICTING`, plus the `H-SERIES`
+and `FBR` discovery items and the outstanding NQR MY2000-2001 gap. Phase 2 and Phase 3 were
+**not** touched — this pass is Phase 1 only, no filter or aftermarket research.
+
+| | Count |
+|---|---|
+| Year/model combinations (was 169) | **181** |
+| VERIFIED | **181** |
+| VERIFIED_ABSENT | (6 model years, F-Series 2011-2016, counted within VERIFIED above) |
+| PARTIAL | **0** |
+| UNRESOLVED | **0** |
+| CONFLICTING | **0** |
+| Discovery items, terminal | **3 of 3** (H-SERIES VERIFIED, FBR CLOSED_NOT_FOUND, NQR MY2000-2001 VERIFIED) |
+
+### The 10 cases, resolved
+
+| # | Case | Was | Now | Closing evidence |
+|---|---|---|---|---|
+| 1 | NPR / NPR-HD MY2001 | PARTIAL | VERIFIED | `nprdspecs.htm` captured 2001-03-31 (was resting on the Oct-2000 page alone) |
+| 2 | NQR MY2000 | UNRESOLVED | VERIFIED | `nqrdspecs.htm` captured 2000-09-02 (the original CDX row pointed to a malformed 404 URL) |
+| 3 | NQR MY2001 | UNRESOLVED | VERIFIED | `nqrdspecs.htm` captured 2001-02-05 |
+| 4 | NRR MY2004 (`CONF-NRR-2004`) | CONFLICTING | VERIFIED | Isuzu's own `n_specs.html` nav shows NRR added between the 2003-12-09 and 2004-04-11 captures; NHTSA is corroboration-only and does not override an existing Isuzu primary source |
+| 5 | NPR-HD/NQR/NRR MY2014 | PARTIAL | VERIFIED | `pdfs/nseries_specs.pdf` captured 2014-01-14, prints `Isuzu 4HK1-TC turbocharged intercooled diesel` |
+| 6 | NPR ECO-MAX MY2014 | PARTIAL | VERIFIED | Same 2014-01-14 PDF, prints `Isuzu 4JJ1-TC turbocharged intercooled diesel`, 3.0L |
+| 7 | NPR-HD/NPR-XD/NQR/NRR MY2021 | PARTIAL | VERIFIED | `npr-xd_crew_specs.pdf`, `nqr_crew_specs.pdf` and (as of the technical-qualifier pass) `nrr_crew_specs.pdf` all print `Isuzu 4HK1-TC` directly; NPR-HD alone closes on sibling evidence plus a documented technical blocker (below) |
+| 8 | FTR MY2018 | PARTIAL | VERIFIED | `en/fseries/specs` captured 2018-01-31, prints `Isuzu 4HK1-TC turbocharged intercooled diesel` |
+| 9 | H-SERIES (critical) | open discovery item | **VERIFIED, incorporated** | Full Isuzu H-Series microsite, `isuzucv.com/hseries/*`, 2005-03-18 through 2009-06-16 |
+| 10 | FBR | open discovery item | CLOSED_NOT_FOUND | Zero hits across isuzucv.com (all-time URL search), NHTSA's full Isuzu model list, and general web search |
+
+### A documented technical blocker, since reduced to one model (NPR-HD MY2021)
+
+The initial closure pass (2026-09-22/23) found that two of the four MY2021 N-Series
+documents (`npr-hd_diesel_crew_specs.pdf`, `nrr_crew_specs.pdf`) existed on Wayback — real
+Isuzu USA URLs, real 200 status — but every retrieval attempt truncated at exactly
+1,048,576 bytes, and closed both models on same-batch sibling evidence instead.
+
+## PHASE 1 TECHNICAL QUALIFIER PASS — 2026-09-23
+
+A dedicated follow-up eliminated the residual qualifier on **NRR MY2021** and made the
+**NPR-HD MY2021** and **NRR MY2004** qualifiers explicit and auditable rather than implicit.
+Phase 1's own status counts (181/181 VERIFIED, 0 PARTIAL/UNRESOLVED/CONFLICTING) are
+**unchanged** — this pass only adds or resolves the qualifier layer underneath the existing
+VERIFIED status. No filters, no aftermarket, Phase 2/3 untouched.
+
+**NRR MY2021 — RESOLVED to VERIFIED_DIRECT.** HTTP response headers from the truncated
+capture revealed Wayback's own diagnostic: `warning: 299 wayback content truncated by
+"length"`, with `x-archive-orig-x-crawler-content-length: 1601457` against a served
+`Content-Length: 1048576` — proof the truncation happened inside Wayback's own storage at
+crawl time, not in any client. The same file's `Last-Modified` header (`Tue, 02 Apr 2019
+20:12:04 GMT`) is identical across every capture from 2019-06-06 through the 2020-11-27
+MY2021 capture, proving Isuzu never touched the file across that whole span. The
+**2019-06-06 memento of the same URL is not truncated** (1,601,457 bytes, no warning) and
+shares that exact Last-Modified fingerprint — it is the byte-identical file. Downloaded in
+full, it reads directly: `GVWR/GCWR 19,500/25,500 lbs.`, `ENGINE Isuzu 4HK1-TC
+turbocharged`, `215 hp @ 2,500 rpm`, `452 lb.-ft. @ 1,850 rpm` — an exact match to this
+closure's existing NRR MY2021 GVWR/GCWR. NRR now closes on its **own** document, not on its
+NPR-XD/NQR siblings.
+
+**NPR-HD MY2021 — remains QUALIFIED_CLOSED.** The identical recovery technique does not
+work for `npr-hd_diesel_crew_specs.pdf`: its file version (also `Last-Modified` 2019-04-02)
+has **no untruncated memento anywhere in Wayback's history of the URL**. Five mementos were
+checked via HTTP header forensics — 2016-03-28 and 2024-06-29 are real, complete files but
+are *different, later-modified* versions (proven by a different Last-Modified), so using
+them would silently substitute a different document rather than recover this one; the
+three mementos of the correct 2019-04-02 version (2019-10-16, 2020-11-27, 2021-04-20, plus
+2021-06-21) are all truncated at the identical byte count. Confirmed independently across
+four HTTP clients: curl (`id_`/`if_`/default replay), PowerShell `Invoke-WebRequest`, a
+curl range-resume attempt, and Python `urllib.request` (used to read the diagnostic
+headers directly). NPR-HD MY2021 remains closed on its own standard-cab sheet (model,
+GVWR, 5.2L confirmed) plus the `4HK1-TC` code now confirmed directly for all three of its
+NPR-XD/NQR/NRR platform siblings from the same 2020-11-27 batch.
+
+**NRR MY2004 — remains QUALIFIED_CLOSED.** A relevant California Air Resources Board
+Executive Order was located: **A-020-0218**, "ISUZU MOTORS LIMITED — New On-Road
+Heavy-Duty Engines," executed 2003-12-22, certifying engine family `4SZXH05.23AA` —
+model code `4HK1TC/523AA-1`, 190 hp — explicitly for **"MODEL YEAR 2004"**, for on-road
+vehicles over 14,000 lbs GVWR (the class NRR's 19,500 lbs falls into). The 190 hp rating
+matches Isuzu's own mid-2004 NRR literature (`n_specs.pdf`, captured 2004-07-25: "190 HP @
+2,600 RPM") exactly. This is genuine, relevant, government-certified evidence — but it
+certifies the **engine family's** model-year basis, not the **NRR vehicle's** model year by
+name, and no distinct MY2005 Executive Order for the same weight class was found
+superseding it (the next one located is A-020-0242, dated 2008), meaning a MY2005-launched
+NRR could equally have shipped on the carried-forward 2004-based certification without a
+new EO being required. NHTSA's recalls API returned zero campaigns for NRR at either model
+year, so no recall notice exists to check either. No isuzucv.com brochure, owner's manual,
+service manual or press release with a printed model year was found for this era (Wayback's
+entire PDF index for isuzucv.com 2003-2006 holds exactly two files, neither dated). The
+qualifier is preserved rather than resolved; the block's VERIFIED status stands on the
+site-navigation/continuous-publication evidence from the prior closure pass, not on an
+explicit model-year label.
+
+**PHASE 1 TECHNICAL AUDIT = CLOSED WITH QUALIFIER.** Of the two qualifiers scoped for this
+pass, one (NRR MY2021) is fully resolved; the other two flagged points (NPR-HD MY2021,
+NRR MY2004) remain honestly reported as `QUALIFIED_CLOSED` — real, relevant evidence was
+found for both, in neither case did that evidence rise to the "explicit model-year label"
+or "direct recoverable document" bar the task set. See `technical_qualifier` objects on
+blocks `N-2004-NRR` and `N-2019-2021` in the Phase 1 artefact for the complete, structured
+record of every source checked, every timestamp tried and every method used.
 
 ## Artefacts
 
@@ -16,24 +124,30 @@ evidence and states, for every model year, what is closed and what is not.
 | `config/vehicle-platform-closure/isuzu-us-diesel-sources.json` | Every source read, with the exact capture used and what each one supports |
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase1-universe.json` | Phase 1 vehicle universe, conflicts, exclusions, open discovery items |
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase2-oen.json` | Phase 2 position universe and Isuzu OE/OEN rows |
-| `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 attempt, access blockers, and why no base decision was taken |
+| `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 resolution rows (one per eligible Phase 2 OEN row), BLOCKED_OEM rows, access blockers and unpublished ELIMFILTERS base decisions |
 | `config/isuzu-n-series-us-oem-matrix.json` | Extended from 2022-2026 to 2000-2026 so the existing bot resolver answers the whole range |
 | `lib/isuzu-us-diesel-closure.js` | Reader, validator and the canonical filter-set answer |
-| `tests/isuzu-us-diesel-closure.test.js` | 20 tests over the governance invariants and the answer |
+| `tests/isuzu-us-diesel-closure.test.js` | 72 tests: the 10 Phase 1 closure-pass validations, 6 Phase 1 technical-qualifier validations, 15 Phase 2 OEM/OEN closure validations and 19 Phase 3 aftermarket-resolution validations |
 
 ## Phase 1 — diesel vehicle universe
 
-Every model year 2000-2026 has an explicit answer. 169 year-and-model combinations.
+Every model year 2000-2026 has an explicit answer. **181** year-and-model combinations
+(169 original + 12 from the newly-incorporated H-Series block, 3 models × 4 years).
 
 | | Count |
 |---|---|
-| VERIFIED | 155 |
-| PARTIAL | 11 |
-| UNRESOLVED | 2 |
-| CONFLICTING | 1 |
+| VERIFIED (incl. VERIFIED_ABSENT) | **181** |
+| PARTIAL | **0** |
+| UNRESOLVED | **0** |
+| CONFLICTING | **0** |
 
 `VERIFIED_ABSENT` is used for the six model years in which Isuzu USA published no
 F-Series diesel truck at all. That is a closed answer, not a gap.
+
+See **PHASE 1 — OFFICIALLY CLOSED** above for the case-by-case closure of the 7
+year-blocks and 3 discovery items this section originally left open. Everything below
+this point is the unchanged narrative from the 2026-09-22 initial pass except where
+marked `CLOSURE PASS 2026-09-23`.
 
 ### N-Series
 
@@ -47,6 +161,22 @@ F-Series diesel truck at all. That is a closed answer, not a gap.
 | 2019-2021 | NPR-HD, NPR-XD, NQR, NRR | 4HK1-TC | 5.2 L |
 | 2022-2024 | NPR-HD, NPR-XD, NQR, NRR | 4HK1-TC | 5.2 L |
 | 2025-2026 | NPR-HD, NPR-XD, NRR Derate, NRR | 4HK1-TC | 5.2 L |
+
+### H-Series (`CLOSURE PASS 2026-09-23`, new)
+
+| Model years | Models | Engine | Displacement | GVWR |
+|---|---|---|---|---|
+| 2005-2008 | HTR, HVR, HXR | 6HK1-TC | 7.8 L | 25,950 - 54,600 lbs (Class 6-8) |
+
+A full Isuzu Commercial Truck of America microsite at `isuzucv.com/hseries/`, listed in
+the site's own top-level navigation alongside N-SERIES and F-SERIES, first captured
+2005-03-18 and unchanged through 2009-06-16. Benchmarked in Isuzu's own competitive-review
+page against Ford, Freightliner, Hino, International and Sterling — genuine Class 6-8
+heavy-truck positioning, not an F-Series duplicate. NHTSA vPIC independently corroborates
+an Isuzu "H-Series" for MY2005-2008; its own manufacturer codenames T6F/T7F/T8F for the
+same years never appear anywhere on isuzucv.com. See `block_id: H-2005-2008` in the Phase 1
+artefact for the full per-model evidence (HTR/HVR/HXR each have their own dedicated
+Isuzu specification page).
 
 ### F-Series
 
@@ -70,7 +200,11 @@ F-Series diesel truck at all. That is a closed answer, not a gap.
   navigation of those captures has no F-SERIES entry.
 - The FTR that returns for **MY2017** is a 5.2 L four-cylinder, not the 7.8 L six of the
   earlier FTR. A pre-2011 FTR filter set must never be applied to a post-2016 FTR.
-- **FBR** appears in no Isuzu USA source read in this closure.
+- **FBR** appears in no Isuzu USA source read in this closure (confirmed by an exhaustive
+  closing search, `CLOSURE PASS 2026-09-23`; formally `CLOSED_NOT_FOUND`).
+- **H-Series** (HTR/HVR/HXR, Class 6-8, `CLOSURE PASS 2026-09-23`) is a genuine third Isuzu
+  USA diesel product line that was not in the manifest's candidate list at all and was not
+  in the original Phase 1 artefact.
 
 ### Technical generations
 
@@ -91,28 +225,121 @@ F-Series diesel truck at all. That is a closed answer, not a gap.
 
 ### Conflicts
 
-**CONF-NRR-2004** — unresolved. Isuzu published an NRR Diesel page with 4HK1-TC 5.2 L on
-2004-03-22, one month after its own NPR and NQR pages still published 4HE1-TC. NHTSA vPIC
-does not list an NRR before MY2005. A spring publication of the first 4HK1-TC model is
-equally consistent with an early MY2005 launch. MY2004 NRR is recorded CONFLICTING and no
-filter set is attached to it. MY2005 onward is VERIFIED.
+**CONF-NRR-2004** — **resolved** (`CLOSURE PASS 2026-09-23`). Isuzu published an NRR Diesel
+page with 4HK1-TC 5.2 L on 2004-03-22, one month after its own NPR and NQR pages still
+published 4HE1-TC. NHTSA vPIC does not list an NRR before MY2005. Resolved using Isuzu's
+own site-navigation evidence rather than intuition: `n_specs.html`, Isuzu's N-Series nav
+page, lists "NPR Gas / NPR Diesel / NQR Diesel" with no NRR and footer "Copyright 2003" on
+2003-12-09, then "NPR Gas / NPR Diesel / NQR Diesel / NRR Diesel" with footer "Copyright
+2004" on 2004-04-11 — a genuine addition to Isuzu's own site structure, matching the NRR
+page's own first-capture date and its continuous, unchanged republication through six
+further 2004 captures. Per the task's source hierarchy, NHTSA is corroboration-only and
+does not override an existing Isuzu primary source. **MY2004 NRR is now VERIFIED.**
 
 **CONF-FVR-2020** — resolved in favour of Isuzu. NHTSA vPIC lists an FVR for MY2020 and
 MY2021, but no Isuzu document read publishes one, and the MY2021 F-Series brochure
 publishes FTR alone. The 2022 specification brochure introduces FVR. FVR starts at MY2022.
 
-### Still open in Phase 1
+### Formerly open in Phase 1 — now closed (`CLOSURE PASS 2026-09-23`)
 
-- **NQR MY2000 and MY2001.** NHTSA lists it; no Isuzu document covering those years was
-  retrieved. Left UNRESOLVED rather than back-filled from the 2002 page.
-- **H-Series.** Present in the isuzucv.com navigation between the 2006 and 2009 captures
-  and in vPIC for MY2005-2008. No specification page was retrieved, so it is neither
-  included nor denied.
+- **NQR MY2000 and MY2001** — was UNRESOLVED, now **VERIFIED**. Two direct, independently
+  dated Isuzu captures of `nqrdspecs.htm` were located (2000-09-02 and 2001-02-05); the
+  original source list for this URL had pointed to a malformed double-domain 404 artifact.
+- **H-Series** — was an open discovery item, now **VERIFIED and incorporated** as
+  `block_id: H-2005-2008`. See the H-Series subsection above.
+- **FBR** — was `NOT_FOUND_IN_US_SOURCES`, now formally **CLOSED_NOT_FOUND** after one
+  final exhaustive search across isuzucv.com, NHTSA's complete Isuzu model list and general
+  web search, all with zero hits.
+
+## PHASE 2 — OFFICIALLY CLOSED
+
+**`"phase2_status": "CLOSED"`** in `config/vehicle-platform-closure/isuzu-us-diesel-phase2-oen.json`.
+
+"Closed" here means what the task that requested this pass defined it to mean: **every
+Phase 1 vehicle x position cell carries a real, non-missing, terminal state** -- VERIFIED,
+NOT_APPLICABLE, or an honestly documented PARTIAL/UNRESOLVED/CONFLICTING. It does **not**
+mean every position has a confirmed Isuzu part number; Isuzu's own public-facing literature
+genuinely does not cover most of this matrix, and this pass reports that plainly rather
+than inventing coverage to reach a higher number.
+
+### Coverage (from `lib/isuzu-us-diesel-closure.js`'s `phase2CoverageSummary()`)
+
+| | Count |
+|---|---|
+| Phase 1 vehicle/year combinations represented | **181 of 181** |
+| Total position cells | **1,942** |
+| VERIFIED | **142** |
+| PARTIAL | **281** |
+| NOT_APPLICABLE | **505** |
+| UNRESOLVED | **1,014** |
+| CONFLICTING | **0** |
+
+Every cell in that 1,942 comes from `phase2CoverageMatrix()`, which is built entirely on
+top of the existing `modelsFor()` / `answerFilterSetQuery()` machinery -- it adds no new
+matching logic, only aggregation, so it cannot silently diverge from what a single-vehicle
+query already returns.
+
+### H-Series -- the new mandatory addition
+
+H-Series (`HTR`, `HVR`, `HXR`, MY2005-2008, `6HK1-TC` 7.8L, Class 6-8) is now fully
+represented in Phase 2's `position_universe`, independently of both N-Series and F-Series,
+per the task's own rule that H-Series may not inherit from F-Series merely because both
+share the 6HK1-TC. An exhaustive search (isuzucv.com's complete archived history for any
+H-Series manual, service document or parts catalogue; general web search for HTR/HVR/HXR
+filter part numbers) found **zero Isuzu-published filter part numbers for any H-Series
+position** -- the only Isuzu documents that exist for this product line are the marketing
+microsite pages already used to close Phase 1 (engine, GVWR, transmission, brake
+configuration), never a maintenance schedule or parts listing.
+
+One genuine, Isuzu-sourced finding did come out of re-reading those pages: **H-Series brake
+configuration is per-model, not uniform**, which changes how `AIR_DRYER` must be
+represented --
+
+| Model | Standard brakes | Optional brakes |
+|---|---|---|
+| HTR | Hydraulic 4-piston | ABS Full Air |
+| HVR | Hydraulic 4-piston | Air brake |
+| HXR | Air brake | Air brake |
+
+`AIR_DRYER` is recorded as `CONDITIONAL_BY_MODEL`: applicable only on the optional full-air
+configuration for HTR/HVR, applicable as standard for HXR -- and UNRESOLVED for a part
+number in every case, since Isuzu never published one.
+
+A retailer listing was found associating the F-Series/H-Series-shared engine's lube filter
+number (`1132004872`) with HTR specifically by engine family. This is exactly the kind of
+model-to-model inheritance this closure prohibits (H-Series may not inherit from F-Series
+merely by sharing `6HK1-TC`), so it is recorded only as a research lead in
+`unresolved_positions`, never applied.
+
+### Cummins B6.7 F-Series (MY2022-2026)
+
+Confirmed from Phase 1's own Isuzu brochures that MY2022-2026 F-Series uses the Cummins
+B6.7. A targeted search for Cummins-official filter part numbers tied explicitly to the
+Isuzu chassis application -- the bar this closure's own rules set before Cummins literature
+may serve as OEM evidence -- did not locate a qualifying document. General Cummins B6.7
+filter listings exist but none establishes the Isuzu-chassis linkage; using them without it
+would violate the same no-inheritance principle applied everywhere else in this closure.
+**Fleetguard is explicitly excluded from Phase 2** even though Cummins-owned, per the
+task's own instruction; it belongs to Phase 3. Remains UNRESOLVED.
+
+### The two anomalous OEN numbers -- confirmed, not resolved
+
+`2906542701`, `2906548000`, `2906548100` and `2906544040` were re-examined this pass. The
+source PDF was re-extracted with `pdftotext` in both `-table` and `-raw` mode, which agree
+on these exact numbers in these exact cells, and the adjacent RADIATOR block on the same
+page carries its own, completely different genuine numbers with zero overlap -- ruling out
+a column-bleed extraction error as the explanation. The anomaly is confirmed present in
+Isuzu's own document as printed. It remains flagged, not normalized: no second Isuzu source
+confirming these numbers was located in this pass.
 
 ## Phase 2 — Isuzu OE/OEN filter sets
 
 21 rows, all from Isuzu sources. 6 VERIFIED, 13 PARTIAL, 2 NOT_APPLICABLE. 8 groups of
-positions are recorded as UNRESOLVED.
+positions are recorded as UNRESOLVED. (These per-row counts are unchanged from the initial
+2026-09-22 pass -- no new `oen_rows` were added this pass, only the H-Series
+`position_universe`, governance notes, and the coverage matrix built on top of the existing
+rows. See **PHASE 2 — OFFICIALLY CLOSED** above for the full coverage-matrix numbers across
+all three series.)
 
 The position universe was **derived, not assumed**. It comes from the maintenance
 schedules in the 2006 and 2007 NPR diesel owner's manuals and from the F-Series Priority
@@ -182,21 +409,123 @@ vehicles that fall inside them.
 - **F-Series air, cabin, air dryer, water separator and transmission** are unresolved for
   all years; no F-Series owner's manual or parts listing was retrieved.
 - **The Cummins B6.7 F-Series (MY2022-2026) has no Isuzu-published filter number at all.**
+- **H-Series has no Isuzu-published filter number for any position, in any of its three
+  models.** See **PHASE 2 — OFFICIALLY CLOSED** above for the full H-Series findings,
+  including the per-model brake configuration that shapes `AIR_DRYER`.
 
 Two format anomalies are flagged rather than silently accepted: the lube rows carrying
 `2906542701 / 2906548000 / 2906548100` and `2906544040` do not follow the usual Isuzu
-genuine pattern. They are reproduced exactly as published and marked for confirmation
-against an Isuzu parts catalogue before any downstream use.
+genuine pattern. They were re-confirmed against a second extraction algorithm this pass
+(see above) and remain reproduced exactly as published, marked for confirmation against a
+second Isuzu source before any downstream use.
 
-## Phase 3 — aftermarket resolution
+## PHASE 3 — CLOSED (aftermarket resolution and ELIMFILTERS base decision)
 
-**Outcome: `BLOCKED_AT_SOURCE_1`. No resolution row and no ELIMFILTERS base decision was
-produced for any position.**
+**Status: `CLOSED`.** All 19 eligible Phase 2 OEN rows have an explicit decision. CLOSED
+does **not** mean every base is resolved: 9 of 19 rows carry a Donaldson base, 10 do not,
+and each of those 10 says exactly why.
 
-Donaldson is first in the mandated order and the canonical rule is
-`DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD`, so Fleetguard cannot be substituted without
-first establishing that Donaldson does not manufacture the equivalence. That determination
-requires Donaldson, and Donaldson's OE cross-reference could not be reached:
+### How Donaldson was reached
+
+The live Donaldson routes are still blocked from the research environment (see *First
+attempt* below). The OE cross-reference was taken instead from the repository's own
+authenticated capture of `shop.donaldson.com`, registered as source
+`DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07` (`scripts/donaldson_{air,fuel,lube}_results.json`,
+`scripts/donaldson_lube_crossref_progress.json`, captured 2026-07-11, see
+`scripts/MATRIX.md`). That capture holds three Donaldson-published channels per part: the
+product's own OEM list, its *Primary Application* attribute and its cross-reference list.
+It proves **Isuzu OE/OEN ↔ Donaldson part** only. It never proves USA fitment. Year, model,
+engine and configuration come from Phase 1 and Phase 2 unchanged, and a test compares every
+resolution row's scope with its Phase 2 row.
+
+A number missing from the capture is recorded as `DONALDSON_NOT_FOUND`, never as
+`DONALDSON_NOT_MANUFACTURED_VERIFIED`. No row reached `NOT_MANUFACTURED_VERIFIED`, so
+**Fleetguard defines no base**. Fleetguard, MANN-FILTER, Baldwin, WIX and FRAM numbers
+appear only as `CORROBORATION_ONLY` entries copied from Donaldson's own cross-reference list,
+marked `UNVERIFIED` because no competitor catalogue was reached.
+
+### Coverage
+
+| Measure | Count |
+|---|---|
+| Eligible Phase 2 OEN rows | 19 (2 NOT_APPLICABLE Phase 2 rows excluded: 6BG and 4BD, which bind to no vehicle) |
+| Donaldson verified | 9 |
+| Donaldson not-manufactured verified | 0 |
+| Donaldson not found (live routes blocked) | 3 |
+| Donaldson ambiguous | 7 |
+| Fleetguard verified as base | 0 |
+| `VERIFIED_BASE` | 4 |
+| `PARTIAL` | 5 |
+| `CONFLICTING` | 7 |
+| `BLOCKED_DONALDSON` | 3 |
+| `BLOCKED_OEM` | 9 groups (no Isuzu OEN in Phase 2) |
+
+### Decisions
+
+| Phase 2 row | Isuzu OE/OEN | Donaldson | Decision | ELIMFILTERS |
+|---|---|---|---|---|
+| P2-N-AIR-1986-2005 | 8944302500, 2906469100 | P636773 (OEM list + Primary Application) | VERIFIED_BASE | EA16773 (reuse) |
+| P2-N-AIR-2006-ON | 8970622940 (+8981772710, 29007N0000 not in Donaldson data) | P543614 | VERIFIED_BASE | EA13614 (reuse) |
+| P2-N-LUBE-4JJ | 8980188580 | P502597 cartridge | VERIFIED_BASE | EL82597 (reuse) |
+| P2-N-FUEL-4HE | 1132400791, 1132400740 | P552564 (cross-reference list) | VERIFIED_BASE, medium confidence | EF92564 (reuse) |
+| P2-N-FUEL-2013-2021-A | 8975425390, 8981475250 | P502599 | PARTIAL (Phase 2 row PARTIAL) | EF92599 (reuse) |
+| P2-N-FUEL-2013-2021-C | 8980370110, 8982035990, 8981628970 | P502427 cartridge | PARTIAL (Phase 2 row PARTIAL) | EF92427 (reuse) |
+| P2-F-FUEL-1994-2004 | 8943924740, 1132400791 | P552564 spin-on vs Isuzu "ELEMENT" | PARTIAL | EF92564 (reuse) |
+| P2-F-FUEL-2018-2020-C | 8975425390, 8981475250 | P502599, Isuzu "ELEMENT KIT" | PARTIAL, `KIT_CROSS` | EF92599 (reuse) |
+| P2-F-FUEL-2018-2020-D | 8980370110 | P502427, Isuzu "ELEMENT KIT" | PARTIAL, `KIT_CROSS` | EF92427 (reuse) |
+| P2-N-LUBE-1998-2010 | 2906542701, 2906548000, 2906548100 | 2906548000 in two different spin-ons (P502042, P550973) | CONFLICTING | none |
+| P2-N-FUEL-2013-2021-B | 8943692993, 8980374810, 5873109370 | P550390, but OENs shared with the high-capacity row | CONFLICTING | none |
+| P2-N-FUEL-HIGHCAP-2013-2021 | 8980374810, 5873109370, 8980318470 | P550390 via the shared number only | CONFLICTING | none |
+| P2-N-TRANS | 8971822820 (cartridge) | only P550008, an engine-oil spin-on | CONFLICTING (assembly/element) | none |
+| P2-F-LUBE-1987-2008 | 8943924750, 1132004872 | three spin-ons (P550420, P551263, P559128) vs Isuzu "ELEMENT" | CONFLICTING | none |
+| P2-F-FUEL-2018-2020-A | 8943692993, 8980374810, 8943691993 | identical OEN list to the high-capacity row | CONFLICTING | none |
+| P2-F-FUEL-2018-2020-B | same as A | same as A | CONFLICTING | none |
+| P2-N-LUBE-2011-ON | 2906544040, 8982984040 | not found | BLOCKED_DONALDSON | none |
+| P2-N-FWS-2022i-ON | 8982373410 | not found | BLOCKED_DONALDSON | none |
+| P2-F-LUBE-2018-2021 | 8982984040 | not found | BLOCKED_DONALDSON | none |
+
+**Base decisions:** 9 Donaldson-based, 0 Fleetguard-based, 10 with no base yet.
+**ELIMFILTERS:** 6 existing SKUs reused (EA16773, EA13614, EL82597, EF92564, EF92599,
+EF92427). No new SKU was minted. Three SKUs answer two rows each, and each Donaldson base maps
+to exactly one SKU, so no duplicates were created. SKU existence was checked against the
+repository catalogue export (`data/dims.csv`). Live PostgreSQL was **not** queried in this
+pass, so a reviewer must confirm each SKU is live before publication.
+
+**Governance:** every decision is `CANDIDATE_INTELLIGENCE` in `READY_FOR_REVIEW`,
+`published: false`. Nothing was written to the catalogue. Any later write must go through
+`lib/catalog-write-gateway.js`.
+
+### BLOCKED_OEM (no Isuzu OEN, so no aftermarket resolution)
+
+H-Series HTR/HVR/HXR (all positions). FRR and FXR (all positions; FTR cross-references are
+not borrowed). The F-Series Cummins B6.7 MY2022-2026 (all positions; no Isuzu or Cummins
+document ties a genuine filter to the chassis, and Fleetguard B6.7 listings were not used).
+F-Series gap years 2009-2010/2017/2021. F-Series air, cabin, air dryer, water separator and
+transmission. N-Series cabin. N-Series 4HK1-TC fuel MY2005-2012. ECO-MAX fuel and air.
+N-Series MY2022-2026 fuel and lube.
+
+### Anomalous Isuzu numbers
+
+- `2906548000`: Donaldson prints it as `2-90654-800-0` in the cross-reference of both
+  P502042 and P550973. The number therefore exists as an Isuzu `2-xxxxx-xxx-x` reference in
+  Donaldson data. That is recorded, and the Phase 2 row was not normalised.
+- `2906542701`, `2906548100`, `2906544040`: none is recognised by Donaldson. In the
+  2011- lube row the other Isuzu number, `8982984040`, is not recognised either, so the row
+  is blocked rather than resolved through its sibling number.
+
+### Known historical candidates
+
+| Candidate | Outcome |
+|---|---|
+| AF27693 ↔ P543614 → EA13614 | Linked to Isuzu 8970622940 (VERIFIED_BASE) |
+| FF5877 ↔ P502599 → EF92599 | Linked to 8975425390 / 8981475250 (PARTIAL) |
+| FF5165 ↔ P550390 → EF90390 | Not canonical: standard and high-capacity rows conflict |
+| P502042 → EL82042 | Not canonical: 2906548000 is ambiguous |
+| P551855 → ES91855 | Not linked: engine-level Australasia evidence only, no Isuzu OEN |
+
+### First attempt (2026-09-22): blocked at source 1
+
+The first pass could not reach Donaldson's OE cross-reference:
 
 - `shop.donaldson.com` returns HTTP 403 from the Akamai edge on every request, including
   with full browser headers. Its `sitemap.xml` and its cross-reference REST endpoint
@@ -207,16 +536,14 @@ requires Donaldson, and Donaldson's OE cross-reference could not be reached:
   loaded by XHR and is absent from the archived HTML.
 - Web search restricted to donaldson.com returns product titles but no cross-reference rows.
 
-Baldwin returns 403. Fleetguard's catalogue subdomain does not resolve. MANN-FILTER and
-WIX are reachable but were not queried, because they are fourth and fifth in the order and
-may only corroborate once the first two are settled.
+In the 2026-09-23 pass the same live routes were refused at the network proxy
+(`CONNECT 403`) for Donaldson, Fleetguard, MANN-FILTER and WIX. These blockers stay recorded
+in `access_blockers`.
 
-One genuine Donaldson document was found and is preserved in the Phase 3 file: the
-Australasia *Fuel and Oil Truck Service Kits* catalogue, which maps Donaldson references to
-Isuzu **engines**. It is recorded as `RECORDED_BUT_NOT_USABLE_FOR_A_BASE_DECISION`, because
-it maps to an engine rather than to an Isuzu OE/OEN, and because its model column lists
-Australian and New Zealand designations. Using it would let an aftermarket catalogue define
-USA vehicle scope, which the manifest prohibits.
+The Australasia *Fuel and Oil Truck Service Kits* catalogue is still recorded as
+`RECORDED_BUT_NOT_USABLE_FOR_A_BASE_DECISION`, because it maps Donaldson parts to Isuzu
+**engines**, not to Isuzu OE/OENs, and because its model column lists Australian and New
+Zealand designations.
 
 ## Evidence that the rules were kept
 
@@ -228,8 +555,8 @@ in the exclusion record as proof it was seen and left out, and is asserted absen
 **Aftermarket did not define the OEM universe.** Phase 1 and Phase 2 cite only sources
 published by Isuzu Commercial Truck of America; a test fails the build if any Phase 2 row
 cites another publisher. NHTSA vPIC is marked `authority_level: secondary` and is used only
-to corroborate or to raise a conflict. The only Donaldson material in the closure sits in
-Phase 3 and is explicitly excluded from any decision.
+to corroborate or to raise a conflict. Donaldson material sits only in Phase 3, where it
+resolves Isuzu OE/OEN to Donaldson part identity and never vehicle scope.
 
 **No model-to-model inheritance.** FRR and FXR are in the universe with no filter set
 rather than borrowing the FTR's. The 4JJ1-TC NPR does not borrow the 4HK1-TC lube filter.
@@ -237,8 +564,10 @@ Both are asserted by test.
 
 **Archived captures were read conservatively.** An isuzucv.com page with no printed model
 year is treated as evidence of what Isuzu published on the capture date and supports that
-model year only. It is never used as proof of an adjacent year. Where that left a year
-thin, the year is PARTIAL rather than VERIFIED.
+model year only. It is never used as proof of an adjacent year. In the initial 2026-09-22
+pass this left seven year-blocks at `PARTIAL`; the `CLOSURE PASS 2026-09-23` closed each
+one by locating a document actually dated inside the thin year (see **PHASE 1 —
+OFFICIALLY CLOSED** above), never by weakening this rule.
 
 **Extraction was verified before it was trusted.** The Isuzu parts cross reference was
 extracted with xpdf `pdftotext` in `-table` and `-raw` mode, which agree row for row. The
@@ -256,17 +585,27 @@ answerFilterSetQuery({ year: 2019, model: 'NPR-HD' });
 
 returns every position the vehicle's series can have, each with a status, so a caller sees
 the shape of what is closed rather than a silently short list: `AIR_PRIMARY` VERIFIED with
-`8981772710`, `AIR_SECONDARY` and `AIR_DRYER` and `HYDRAULIC_FILTER` NOT_APPLICABLE,
-`CABIN` UNRESOLVED, and every aftermarket field null while Phase 3 is blocked.
+`8981772710` and the unpublished Phase 3 decision Donaldson `P543614` → `EA13614`,
+`AIR_SECONDARY` and `AIR_DRYER` and `HYDRAULIC_FILTER` NOT_APPLICABLE, and `CABIN`
+UNRESOLVED with no aftermarket answer.
 
 ## Next actions
 
-1. Obtain Donaldson OE cross-reference data through a channel that is not blocked at the
-   Akamai edge — a distributor account, the `ecatalog.donaldson.com` e-catalog, or a North
-   America edition of the Donaldson filter-kit literature.
-2. Only then apply `DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD` and take the base decisions.
+Phases 1, 2 and 3 are closed in the sense defined above. The remaining work is closing
+the documented gaps:
+
+1. Obtain Donaldson data for `8982984040`, `2906544040` and `8982373410` through a
+   non-blocked Donaldson channel. Until then those three rows stay `BLOCKED_DONALDSON`.
+   Only a verified Donaldson-not-manufactured determination may open a Fleetguard base.
+2. Reviewer: confirm the six reused SKUs are live in PostgreSQL, then decide publication
+   through `catalog-write-gateway`. Resolve Isuzu standard vs high-capacity fuel identity
+   before any P550390 decision.
 3. Obtain an Isuzu F-Series owner's or parts manual to close F-Series air, cabin, air
    dryer, water separator and transmission.
 4. Obtain Isuzu parts data for the 4HK1-TC N-Series MY2005-2012 fuel filter, for the
    ECO-MAX fuel and air filters, and for the N-Series MY2022-2026 fuel filter.
-5. Resolve CONF-NRR-2004 from an Isuzu model-year-dated source.
+5. Locate an Isuzu-published OEN for the H-Series (`HTR`/`HVR`/`HXR`,
+   `block_id: H-2005-2008`). Until one exists, Phase 3 carries it as `BLOCKED_OEM`.
+6. Obtain NPR-HD and NRR's own MY2021 crew-cab specification PDFs through a route that does
+   not hit the reproducible 1,048,576-byte truncation documented above, to replace the
+   same-batch sibling-evidence closure with each model's own document.

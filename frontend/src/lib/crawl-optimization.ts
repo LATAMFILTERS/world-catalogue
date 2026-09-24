@@ -2,6 +2,11 @@ import type { MetadataRoute } from 'next';
 import { ENTITY_NODES, getConnectedEntities } from './entity-graph';
 import { getEntityAuthorityScore } from './entity-authority';
 import { getRecrawlConfig, RECRAWL_EXCLUDED_PATHS } from './recrawl-priority';
+import {
+  INDUSTRIAL_PROCESS_PLATFORMS,
+  industrialProcessPlatformUrl,
+  industrialProcessTechnologyUrl,
+} from './industrial-process-architecture';
 
 const BASE_URL = 'https://elimfilters.com';
 
@@ -9,7 +14,7 @@ export const STATIC_CRAWL_ROUTES = [
   '/', '/systems', '/technologies', '/families', '/industries', '/knowledge-center',
   '/knowledge-center/faq', '/videos', '/about', '/contact', '/distributors',
   '/commercial-lines', '/commercial-lines/duratech', '/commercial-lines/marineclean',
-  '/engineering/dust-ingestion', '/distributor-application', '/warranty',
+  '/engineering/dust-ingestion', '/distributor-application', '/warranty', '/industrial-process',
 ] as const;
 
 export const NOINDEX_PUBLIC_ROUTES = RECRAWL_EXCLUDED_PATHS;
@@ -79,6 +84,18 @@ export function getCrawlProfiles(): CrawlProfile[] {
     const profile = staticProfile(path);
     return profile ? [profile] : [];
   });
+  const industrialProcessProfiles = INDUSTRIAL_PROCESS_PLATFORMS.flatMap((platform) => {
+    const paths = [
+      industrialProcessPlatformUrl(platform.slug),
+      ...platform.technologies.map((technology) =>
+        industrialProcessTechnologyUrl(platform.slug, technology.slug),
+      ),
+    ];
+    return paths.flatMap((path) => {
+      const profile = profileFor(path, 80, 0);
+      return profile ? [profile] : [];
+    });
+  });
   const entityProfiles = ENTITY_NODES
     .filter((node) => node.kind !== 'organization')
     .flatMap((node) => {
@@ -87,7 +104,7 @@ export function getCrawlProfiles(): CrawlProfile[] {
     });
 
   return Array.from(
-    new Map([...staticProfiles, ...entityProfiles].map((profile) => [profile.url, profile])).values(),
+    new Map([...staticProfiles, ...industrialProcessProfiles, ...entityProfiles].map((profile) => [profile.url, profile])).values(),
   ).sort((a, b) => a.crawlTier - b.crawlTier || b.authority - a.authority || a.url.localeCompare(b.url));
 }
 

@@ -105,7 +105,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     summary: 'Industrial air treatment for general ventilation, high-cleanliness environments and molecular contamination control.',
     positioning: 'AEREMIS™ organizes industrial air treatment by contaminant challenge and required air condition—from general particulate control, through high-efficiency critical-air stages, to molecular treatment for gases, vapors and odors. It is not a single filter or a universal efficiency class; the treatment path follows the air-quality target, contaminant profile, operating envelope and system boundary.',
     heroImage: '/images/air-filters-lab.avif',
-    heroVideo: '/images/Air%20Industrial-aviation%20(1).mp4',
+    heroVideo: '/images/AEREMIS.mp4',
     mediaImage: '/images/air%20industrial.jpg',
     knowledgeCenterSlug: 'ip-aeremis-air-treatment-architecture',
     selectionContext: {
@@ -161,7 +161,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/air-filters-lab.avif',
           '/images/General%20Air%20Filtration.png',
           undefined,
-          '/images/general%20filters%20(1).mp4',
+          '/images/General%20Air%20Filtration.mp4',
         ),
         hideHeroPoster: true,
         knowledgeCenterSlug: 'ip-aeremis-general-air-filtration',
@@ -182,7 +182,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/air-filters-lab.avif',
           '/images/HE-CRIVA.png',
           undefined,
-          '/images/HE-CRIVA-%20VIDEO%20(1).mp4',
+          '/images/HE-CRIVA.mp4',
         ),
         hideHeroPoster: true,
         knowledgeCenterSlug: 'ip-aeremis-he-criva-critical-air',
@@ -366,7 +366,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     summary: 'Gas-stream conditioning for entrained liquid aerosols, droplets and free-liquid carryover in natural-gas and industrial process-gas duties.',
     positioning: 'COALVEX™ organizes gas conditioning by the liquid phase carried in the gas stream. Fine aerosols and small droplets are addressed through COALERIS™ gas coalescence, while bulk free liquid and larger-droplet carryover are addressed through the descriptive Gas-Liquid Separation path. Selection follows gas composition, flow, pressure, temperature, liquid loading, droplet behavior, turndown, drainage and the required downstream condition.',
     heroImage: '/images/oil&gas.avif',
-    heroVideo: '/images/Oil%26Gas(1).mp4',
+    heroVideo: '/images/COALVEX.mp4',
     mediaImage: '/images/coalvex.png',
     knowledgeCenterSlug: 'ip-coalvex-gas-conditioning-architecture',
     selectionContext: {
@@ -417,7 +417,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/oil&gas.avif',
           '/images/COALERIS.png',
           undefined,
-          '/images/COALERS-VIDEO.mp4',
+          '/images/COALERIS.mp4',
         ),
         hideHeroPoster: true,
         selectionInputs: [
@@ -491,7 +491,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/oil&gas.avif',
           '/images/Gas-Liquid%20Separation.png',
           undefined,
-          '/images/Planta%20(1).mp4',
+          '/images/Gas%20Liquid.mp4',
         ),
         hideHeroPoster: true,
         selectionInputs: [
@@ -610,7 +610,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/hidraulic.avif',
           '/images/HYITRIS-image.png',
         ),
-        heroVideo: '/images/HYLTRIS-VIDEO.mp4',
+        heroVideo: '/images/HYLTRIS.mp4',
         hideHeroPoster: true,
         selectionInputs: [
           'Hydraulic fluid type and additive chemistry',
@@ -843,16 +843,16 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     slug: 'aquvexis',
     name: 'AQUVEXIS™',
     descriptor: 'Water Treatment Technologies',
-    summary: 'Industrial water treatment organized by contaminant state and treatment mechanism—from suspended-solids control through adsorption, membrane separation, ion exchange and final ionic polishing.',
-    positioning: 'AQUVEXIS™ resolves industrial water treatment from the actual feed-water condition and required product-water outcome. Suspended solids, adsorbable dissolved constituents, dissolved salts, target ions and residual ionic load require different treatment mechanisms, so pretreatment, chemistry, pressure, recovery, regeneration, fouling control and verification are treated as part of one engineered treatment train rather than as interchangeable filter choices.',
+    summary: 'Industrial water treatment organized by contaminant state and treatment mechanism—from suspended-solids control through adsorption, membrane separation and ion exchange.',
+    positioning: 'AQUVEXIS™ resolves industrial water treatment from the actual feed-water condition and required product-water outcome. Suspended solids, adsorbable dissolved constituents, dissolved salts and target ions require different treatment mechanisms, so pretreatment, chemistry, pressure, recovery, regeneration, fouling control and verification are treated as part of one engineered treatment train rather than as interchangeable filter choices.',
     heroImage: '/images/turbine-plant.avif',
-    heroVideo: '/images/AQUVEXIS-video.mp4',
+    heroVideo: '/images/AQUVEXIS.mp4',
     mediaImage: '/images/AQUVEXIS%E2%84%A2.png',
     knowledgeCenterSlug: 'ip-aquvexis-water-treatment-architecture',
     selectionContext: {
       eyebrow: 'WATER TREATMENT SCOPE',
       title: 'Match the water condition to the treatment mechanism.',
-      lead: 'AQUVEXIS™ separates particulate capture, adsorptive treatment, membrane separation, ion exchange and electrodeionization so selection begins with measured feed-water chemistry and the required outlet condition.',
+      lead: 'AQUVEXIS™ separates particulate capture, adsorptive treatment, membrane separation and ion exchange so selection begins with measured feed-water chemistry and the required outlet condition.',
     },
     selectionGuide: [
       {
@@ -874,11 +874,6 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         title: 'Selective ionic treatment',
         body: 'For softening, demineralization or selective-ion duties where resin chemistry, exchange capacity, competing ions and regeneration strategy define the service cycle.',
         technologySlug: 'ionvexa',
-      },
-      {
-        title: 'Final ionic polishing',
-        body: 'For suitably pretreated high-purity water where continuous electrically assisted ionic polishing is required after upstream treatment has established a stable feed condition.',
-        technologySlug: 'electrodeionization',
       },
     ],
     qualificationGroups: [
@@ -1025,6 +1020,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           '/images/MEMBRAVEX.png',
           ['Reverse Osmosis', 'Ultrafiltration', 'Nanofiltration'],
         ),
+        heroVideo: '/images/MEMBRAVEX.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Feed-water source and complete available water analysis',
           'Required permeate quality and protected downstream process',
@@ -1083,8 +1080,10 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Feed-water ionic composition', 'Target ion and outlet requirement', 'Competing ions', 'Resin capacity', 'Flow and service cycle', 'Regeneration chemistry', 'Fouling and pretreatment condition'],
           ['Service cycle shortens', 'Hardness or target-ion leakage increases', 'Regeneration recovery deteriorates', 'Pressure drop rises', 'Outlet quality varies unexpectedly', 'Resin fouling or channeling is suspected'],
           '/images/turbine-plant.avif',
-          '/images/planta_converted.avif',
+          '/images/IONVEXA%E2%84%A2.png',
         ),
+        heroVideo: '/images/IONVEXA%E2%84%A2.mp4',
+        hideHeroPoster: true,
         selectionInputs: [
           'Feed-water ionic composition and concentration',
           'Target ion or required demineralized-water condition',
@@ -1124,64 +1123,18 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
           ['Is regeneration chemistry interchangeable between resin systems?', 'No. Regeneration method and chemistry depend on the resin type, target service and validated system design.'],
         ],
       },
-      {
-        ...tech(
-          'electrodeionization',
-          'Electrodeionization',
-          'Electrodeionization',
-          false,
-          'TC-WAT-08',
-          'Continuous electrically assisted ionic polishing for suitably pretreated high-purity water systems.',
-          'Reduce residual ionic species using ion-exchange media, ion-selective membranes and an applied electrical potential after upstream treatment has established a stable feed-water condition.',
-          ['Ion-exchange media for residual-ion capture and transport', 'Ion-selective membranes separating concentrate and diluting paths', 'Applied electrical potential driving continuous ionic transport', 'Hydraulic and electrical operating-window control'],
-          ['High-purity water polishing', 'Post-membrane deionization', 'Industrial utility-water systems', 'Process-water final conditioning', 'Continuous polishing after suitable upstream treatment'],
-          ['Stable pretreated feed quality', 'Residual ionic load', 'Required product-water conductivity or resistivity', 'Electrical and hydraulic operating window', 'Scaling and fouling control', 'Temperature and flow stability'],
-          ['Product-water resistivity or conductivity drifts', 'Pressure drop rises', 'Current demand changes unexpectedly', 'Scaling or fouling evidence develops', 'Product-water quality becomes unstable after an upstream change'],
-          '/images/turbine-plant.avif',
-          '/images/planta_converted.avif',
-        ),
-        selectionInputs: [
-          'Upstream treatment train and stability of the EDI feed',
-          'Feed conductivity and residual ionic load',
-          'Required product-water conductivity or resistivity',
-          'Nominal and peak flow through the module',
-          'Feed temperature and hydraulic operating window',
-          'Scaling and fouling potential remaining after pretreatment',
-          'Electrical operating requirements and available controls',
-          'Module interface, pressure-drop budget and flow distribution',
-          'Feed and product-water monitoring points',
-          'Required verification method and response to upstream excursions',
-        ],
-        engineeringNotes: [
-          {
-            title: 'Electrodeionization is a polishing stage',
-            body: 'EDI is not positioned as a universal raw-water treatment step. It is used after suitable upstream treatment has reduced the feed burden to a condition compatible with continuous ionic polishing.',
-          },
-          {
-            title: 'Hydraulic and electrical conditions work together',
-            body: 'Flow, pressure, feed quality and applied electrical conditions jointly affect ionic transport and product-water stability. A change in one part of the operating window can appear as a water-quality or current-demand change.',
-          },
-          {
-            title: 'Upstream instability can appear as EDI instability',
-            body: 'A deterioration in membrane pretreatment, scaling control or feed-water chemistry can increase the burden on the EDI module. Diagnosis should therefore include the upstream treatment train rather than isolating the module.',
-          },
-          {
-            title: 'Product-water quality must be trended',
-            body: 'Conductivity or resistivity is part of EDI performance verification, but the trend should be interpreted together with feed condition, flow, pressure and electrical operating data.',
-          },
-        ],
-        knowledgeCenterSlug: 'ip-aquvexis-electrodeionization',
-        customFaqs: [
-          ['Where does electrodeionization belong in AQUVEXIS™?', 'It is a descriptive final ionic-polishing treatment family used after suitable upstream treatment has produced a stable, compatible feed-water condition.'],
-          ['Is electrodeionization a substitute for all upstream demineralization?', 'No. EDI depends on qualified upstream treatment and is not presented as a universal raw-water treatment mechanism.'],
-          ['What should be checked when EDI product-water quality drifts?', 'Review feed-water quality, upstream treatment, flow, pressure, electrical operating data, scaling or fouling evidence and the product-water trend before assigning a root cause.'],
-          ['Does one conductivity or resistivity reading define module condition?', 'No. A single reading should be interpreted with operating conditions and trend data. Feed quality, flow, pressure and electrical behavior can all affect the observed result.'],
-          ['Does this Electrodeionization page mean ELIMFILTERS sells complete EDI modules or skids?', 'No. Electrodeionization is maintained here as a descriptive AQUVEXIS™ treatment path and engineering context. This page does not establish an ELIMFILTERS EDI module, electrical stack, pressure vessel or complete skid product.'],
-        ],
-      },
     ],
   },
 ] as const;
+
+export function industrialProcessMetaDescription(value: string, maxLength = 158) {
+  const normalized = value.replace(/\s+/g, ' ').trim();
+  if (normalized.length <= maxLength) return normalized;
+  const candidate = normalized.slice(0, maxLength - 1);
+  const breakAt = candidate.lastIndexOf(' ');
+  const trimmed = candidate.slice(0, breakAt > 110 ? breakAt : maxLength - 1).replace(/[,:;.-]+$/g, '');
+  return `${trimmed}…`;
+}
 
 export function getIndustrialProcessPlatform(slug: string) {
   return INDUSTRIAL_PROCESS_PLATFORMS.find((platform) => platform.slug === slug);

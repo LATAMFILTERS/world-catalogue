@@ -21,7 +21,7 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-hidden="true"
           >
             <source src={platform.heroVideo} type="video/mp4" />
@@ -33,20 +33,7 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         <h1 id="industrial-platform-title" className={styles.srOnly}>{platform.name} {platform.descriptor}</h1>
         <div
           aria-hidden="true"
-          style={{
-            position: 'relative',
-            zIndex: 3,
-            width: 'min(980px, 86vw)',
-            textAlign: 'center',
-            fontFamily: 'var(--font-display)',
-            fontWeight: 750,
-            fontSize: 'clamp(3.4rem, 9vw, 7.6rem)',
-            lineHeight: 0.9,
-            letterSpacing: '-0.055em',
-            color: '#fff',
-            textTransform: 'uppercase',
-            textShadow: '0 8px 28px rgba(0,0,0,.5)',
-          }}
+          className={`${styles.technologyHeroWordmark} ${styles.technologyHeroWordmarkPlatform}`}
         >
           {platform.name}
         </div>
@@ -127,7 +114,7 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         <p className={styles.lead}>Flow, pressure, temperature, chemistry, contaminant form, duty cycle, compatibility, existing equipment and required outlet condition determine which treatment family and physical configuration belong in the project.</p>
         <div className={styles.twoColumnNotes}>
           <article className={styles.noteBlock}><h3 className={styles.h3}>Platform first</h3><p className={styles.body}>{platform.name} narrows the project to the correct treatment universe without forcing an early product choice.</p></article>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>Technology second</h3><p className={styles.body}>The family page defines the mechanism, application context and evidence required before product or system specification.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>Technology second</h3><p className={styles.body}>The family page defines the mechanism, application context and evidence required before replacement-element or treatment-media specification.</p></article>
         </div>
       </div></section>
 

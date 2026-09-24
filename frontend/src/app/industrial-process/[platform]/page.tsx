@@ -5,6 +5,7 @@ import { IndustrialProcessPlatformStablePage } from '@/components/IndustrialProc
 import {
   INDUSTRIAL_PROCESS_PLATFORMS,
   getIndustrialProcessPlatform,
+  industrialProcessMetaDescription,
   industrialProcessPlatformUrl,
 } from '@/lib/industrial-process-architecture';
 
@@ -23,17 +24,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${platform.name} ${platform.descriptor} | ELIMFILTERS`;
   return {
     title,
-    description: platform.summary,
+    description: industrialProcessMetaDescription(platform.summary),
     alternates: { canonical: url },
     openGraph: {
       title,
-      description: platform.summary,
+      description: industrialProcessMetaDescription(platform.summary),
       url,
       type: 'website',
       siteName: 'ELIMFILTERS',
-      images: [{ url: `${BASE_URL}${platform.heroImage}`, width: 1200, height: 630, alt: `${platform.name} ${platform.descriptor}` }],
+      images: [{ url: `${BASE_URL}${platform.mediaImage ?? platform.heroImage}`, width: 1200, height: 630, alt: `${platform.name} ${platform.descriptor}` }],
     },
-    twitter: { card: 'summary_large_image', title, description: platform.summary, images: [`${BASE_URL}${platform.heroImage}`] },
+    twitter: { card: 'summary_large_image', title, description: industrialProcessMetaDescription(platform.summary), images: [`${BASE_URL}${platform.mediaImage ?? platform.heroImage}`] },
   };
 }
 
@@ -62,10 +63,32 @@ export default async function IndustrialProcessPlatformRoute({ params }: Props) 
       })),
     },
   };
+  const videoSchema = platform.heroVideo ? {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    '@id': `${url}#hero-video`,
+    name: `${platform.name} — ${platform.descriptor}`,
+    description: platform.summary,
+    contentUrl: `${BASE_URL}${platform.heroVideo}`,
+    thumbnailUrl: [`${BASE_URL}${platform.mediaImage ?? platform.heroImage}`],
+    isPartOf: { '@id': `${url}#platform` },
+    publisher: { '@id': `${BASE_URL}/#organization` },
+  } : null;
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Industrial & Process', item: `${BASE_URL}/industrial-process/` },
+      { '@type': 'ListItem', position: 3, name: platform.name, item: url },
+    ],
+  };
   return (
     <>
       <Navigation />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {videoSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} /> : null}
       <IndustrialProcessPlatformStablePage platform={platform} />
     </>
   );

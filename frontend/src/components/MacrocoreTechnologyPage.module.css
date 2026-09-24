@@ -51,6 +51,37 @@
   filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.28));
 }
 
+.technologyHeroWordmark {
+  position: relative;
+  z-index: 3;
+  width: min(980px, 86vw);
+  text-align: center;
+  font-family: var(--font-technology-wordmark);
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 0.012em currentColor;
+  transform: scaleX(1.04);
+  transform-origin: center;
+}
+
+.technologyHeroWordmarkPlatform {
+  font-size: clamp(3.4rem, 9vw, 7.6rem);
+}
+
+@media (max-width: 640px) {
+  .technologyHeroWordmark {
+    width: min(92vw, 760px);
+    font-size: clamp(2.35rem, 11vw, 4.6rem);
+    letter-spacing: -0.035em;
+    transform: none;
+  }
+}
+
 .srOnly {
   position: absolute;
   width: 1px;

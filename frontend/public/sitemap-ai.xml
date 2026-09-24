@@ -62,6 +62,28 @@
   <url><loc>https://elimfilters.com/knowledge-center/technologies/nanoforce/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://elimfilters.com/knowledge-center/technologies/thermacore/</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
+  <!-- Industrial & Process: five commercial platforms and fourteen treatment families -->
+  <url><loc>https://elimfilters.com/industrial-process/</loc><lastmod>2026-09-23</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/aeremis/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/aeremis/general-air-filtration/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/aeremis/he-criva/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/aeremis/ma-trea/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/partion/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/partion/fumevra/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/coalvex/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/coalvex/coaleris/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/coalvex/gas-liquid-separation/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/flurexis/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/flurexis/hyltris/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/flurexis/lubreva/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/flurexis/dewatis/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/flurexis/oilrevex/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/aquvexis/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/aquvexis/depth-filtration/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/aquvexis/adsovex/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/aquvexis/membravex/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://elimfilters.com/industrial-process/aquvexis/ionvexa/</loc><lastmod>2026-09-23</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
   <!-- Specialized commercial solutions: explicitly outside the technology portfolio -->
   <url><loc>https://elimfilters.com/commercial-lines/duratech/</loc><lastmod>2026-08-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://elimfilters.com/commercial-lines/marineclean/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>

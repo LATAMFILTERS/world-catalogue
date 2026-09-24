@@ -39,6 +39,8 @@ main p {
   --font-body: 'Barlow', Arial, sans-serif;
   --font-display: 'Chakra Petch', 'Arial Narrow', monospace;
   --font-mono: 'Chakra Petch', 'Arial Narrow', monospace;
+  /* Industrial hero typography must use the approved, web-loaded ELIM display face on every device. */
+  --font-technology-wordmark: var(--font-display);
 
   --text-xs: clamp(0.7rem, 1.5vw, 0.75rem);
   --text-sm: clamp(0.85rem, 1.8vw, 0.9rem);
@@ -190,6 +192,17 @@ main > section:first-of-type h1 {
 main > a[href="/"] + section h1 span,
 main > section:first-of-type h1 span {
   font-size: 0.94em !important;
+}
+
+/* Industrial & Process hero titles use the technology wordmark system.
+ * This route-specific override intentionally wins over the generic internal-page hero rule.
+ */
+main > section:first-of-type h1.industrial-process-hero-title,
+main > section:first-of-type h1.industrial-process-hero-title span {
+  font-family: var(--font-technology-wordmark) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.86 !important;
 }
 
 main > a[href="/"] + section p,

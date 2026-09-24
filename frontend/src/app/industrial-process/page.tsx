@@ -4,6 +4,9 @@ import { Navigation } from '@/components/Navigation';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 import { INDUSTRIAL_PROCESS_PLATFORMS, industrialProcessPlatformUrl, industrialProcessTechnologyUrl } from '@/lib/industrial-process-architecture';
 import { getCanonicalKnowledgeBySlug } from '@/lib/services/canonical-knowledge-service';
+import { INDUSTRIAL_PROCESS_ENTITY_NODES } from '@/lib/industrial-process-entity-graph';
+
+const BASE_URL = 'https://elimfilters.com';
 
 export const metadata: Metadata = {
   title: 'Industrial & Process Filtration | ELIMFILTERS',
@@ -16,6 +19,14 @@ export const metadata: Metadata = {
       'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.',
     url: 'https://elimfilters.com/industrial-process/',
     type: 'website',
+    siteName: 'ELIMFILTERS',
+    images: [{ url: '/images/planta_converted.avif', width: 1200, height: 630, alt: 'ELIMFILTERS Industrial & Process filtration' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Industrial & Process Filtration | ELIMFILTERS',
+    description: 'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.',
+    images: ['/images/planta_converted.avif'],
   },
 };
 
@@ -56,6 +67,48 @@ const datasheetBlocks = [
 
 export default function IndustrialProcessPage() {
   const rootCanonicalKnowledge = getCanonicalKnowledgeBySlug('ip-industrial-process-architecture');
+  const videoSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    '@id': `${BASE_URL}/industrial-process/#hero-video`,
+    name: 'Industrial & Process Filtration | ELIMFILTERS',
+    description: 'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.',
+    contentUrl: `${BASE_URL}/images/Industrial%20Process.mp4`,
+    thumbnailUrl: [`${BASE_URL}/images/planta_converted.avif`],
+    isPartOf: { '@id': `${BASE_URL}/industrial-process/#page` },
+    publisher: { '@id': `${BASE_URL}/#organization` },
+  };
+  const pageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${BASE_URL}/industrial-process/#page`,
+    url: `${BASE_URL}/industrial-process/`,
+    name: 'Industrial & Process Filtration | ELIMFILTERS',
+    description: metadata.description,
+    isPartOf: { '@id': `${BASE_URL}/#website` },
+    publisher: { '@id': `${BASE_URL}/#organization` },
+    about: INDUSTRIAL_PROCESS_ENTITY_NODES
+      .filter((node) => node.kind !== 'industrial-process')
+      .map((node) => ({ '@type': 'DefinedTerm', name: node.name, url: `${BASE_URL}${node.href}` })),
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: INDUSTRIAL_PROCESS_PLATFORMS.length,
+      itemListElement: INDUSTRIAL_PROCESS_PLATFORMS.map((platform, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: platform.name,
+        url: `${BASE_URL}${industrialProcessPlatformUrl(platform.slug)}`,
+      })),
+    },
+  };
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Industrial & Process', item: `${BASE_URL}/industrial-process/` },
+    ],
+  };
   const platformStandards = INDUSTRIAL_PROCESS_PLATFORMS.map((platform) => ({
     platform,
     standards: platform.knowledgeCenterSlug ? (getCanonicalKnowledgeBySlug(platform.knowledgeCenterSlug)?.standards ?? []) : [],
@@ -66,6 +119,9 @@ export default function IndustrialProcessPage() {
   return (
     <>
       <Navigation />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
       <main style={{ background: '#000', color: '#fff', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
         <section
           style={{
@@ -85,7 +141,7 @@ export default function IndustrialProcessPage() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-hidden="true"
             style={{
               position: 'absolute',
@@ -98,7 +154,7 @@ export default function IndustrialProcessPage() {
               zIndex: 0,
             }}
           >
-            <source src="/images/presentacion.mp4" type="video/mp4" />
+            <source src="/images/Industrial%20Process.mp4" type="video/mp4" />
           </video>
 
           <div
@@ -113,7 +169,7 @@ export default function IndustrialProcessPage() {
 
           <div style={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: 1400, margin: '0 auto' }}>
             <p style={eyebrow}>INDUSTRIAL & PROCESS</p>
-            <h1 style={heroTitle}>
+            <h1 className="industrial-process-hero-title" style={heroTitle}>
               ENGINEER THE PROCESS.
               <span style={{ display: 'block', color: '#FFF12D' }}>PROTECT THE ASSET.</span>
             </h1>
@@ -142,6 +198,26 @@ export default function IndustrialProcessPage() {
                 </p>
                 <p style={bodyCopy}>
                   Product selection is resolved through validated technology cores and application evidence. Supplier claims are not presented as ELIMFILTERS performance until approved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style={section} aria-labelledby="industrial-direct-answer-title">
+          <div style={container}>
+            <div style={twoCol}>
+              <div>
+                <p style={eyebrow}>DIRECT ANSWER</p>
+                <h2 id="industrial-direct-answer-title" style={sectionTitle}>What is ELIMFILTERS Industrial &amp; Process?</h2>
+              </div>
+              <div>
+                <p style={lead}>
+                  ELIMFILTERS Industrial &amp; Process is the commercial engineering division for replacement filtration, separation and treatment media used in industrial air, dust and fume, gas, fluid-conditioning and water-treatment applications.
+                </p>
+                <h3 style={{ ...sectionTitle, fontSize: 'clamp(1.4rem,2.3vw,2.2rem)', marginTop: 28 }}>Does ELIMFILTERS sell complete process equipment?</h3>
+                <p style={bodyCopy}>
+                  No. The commercial scope is centered on validated replacement media and filtration, separation or treatment elements. Housings, vessels, collectors, skids, pumps, fans, ductwork and controls are application context unless a separate ELIMFILTERS system scope is explicitly approved.
                 </p>
               </div>
             </div>
@@ -282,7 +358,7 @@ export default function IndustrialProcessPage() {
 const container: React.CSSProperties = { maxWidth: 1400, margin: '0 auto' };
 const section: React.CSSProperties = { padding: 'var(--section-py) var(--section-px)', borderBottom: '1px solid rgba(255,255,255,0.07)' };
 const eyebrow: React.CSSProperties = { color: '#FFF12D', fontFamily: 'var(--font-mono)', fontWeight: 700, letterSpacing: '0.2em', fontSize: '0.73rem', textTransform: 'uppercase', margin: '0 0 14px' };
-const heroTitle: React.CSSProperties = { maxWidth: 1120, fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(3.2rem,8vw,7.8rem)', lineHeight: 0.88, letterSpacing: '-0.055em', textTransform: 'uppercase', margin: 0 };
+const heroTitle: React.CSSProperties = { maxWidth: 1120, fontFamily: 'var(--font-technology-wordmark)', fontWeight: 900, fontSize: 'clamp(3.2rem,8vw,7.8rem)', lineHeight: 0.86, letterSpacing: '-0.045em', textTransform: 'uppercase', margin: 0, WebkitTextStroke: '0.012em currentColor' };
 const heroCopy: React.CSSProperties = { maxWidth: 850, color: 'rgba(255,255,255,0.72)', fontSize: 'clamp(1.05rem,2vw,1.35rem)', lineHeight: 1.65, marginTop: 28 };
 const sectionTitle: React.CSSProperties = { fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(2rem,4vw,4rem)', lineHeight: 0.98, letterSpacing: '-0.04em', textTransform: 'uppercase', margin: '0 0 24px' };
 const lead: React.CSSProperties = { color: 'rgba(255,255,255,0.82)', fontSize: 'clamp(1.05rem,1.7vw,1.24rem)', lineHeight: 1.7, fontWeight: 600, marginTop: 0 };

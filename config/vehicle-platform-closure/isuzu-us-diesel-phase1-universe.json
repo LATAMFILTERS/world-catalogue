@@ -10,6 +10,11 @@
   "authority": "ISUZU COMMERCIAL TRUCK OF AMERICA",
   "sources_file": "config/vehicle-platform-closure/isuzu-us-diesel-sources.json",
   "closed_on": "2026-09-22",
+  "phase_status": "CLOSED",
+  "phase_status_history": [
+    { "closed_on": "2026-09-22", "phase_status": "NOT_CLOSED", "note": "Initial Phase 1 pass. Left 7 year-blocks at PARTIAL/UNRESOLVED/CONFLICTING and 2 discovery items (H-SERIES, FBR) open." },
+    { "closed_on": "2026-09-23", "phase_status": "CLOSED", "note": "Final closure pass. Resolved all 7 open year-block cases, incorporated H-SERIES as a verified third product line, and closed FBR as CLOSED_NOT_FOUND. See docs/hermes/ISUZU_US_DIESEL_CLOSURE_2000_2026.md, section 'PHASE 1 -- OFFICIALLY CLOSED'." }
+  ],
   "governance": {
     "gasoline_excluded": true,
     "gasoline_exclusion_evidence": "No gasoline record appears in this file. The Isuzu gasoline line for the period (NPR / NPR-HD with the GM Vortec 6000 6.0L V8 and later the GM L8T 6.6L V8) was identified in the same sources and deliberately left out; see docs/hermes/ISUZU_US_DIESEL_CLOSURE_2000_2026.md.",
@@ -22,7 +27,9 @@
     "VERIFIED": "An Isuzu Commercial Truck of America source published in or for that model year names the model and its diesel engine.",
     "PARTIAL": "Isuzu evidence names the model for the model year but leaves at least one required field (engine code, displacement or configuration) unproven for that exact year.",
     "UNRESOLVED": "No Isuzu source retrieved in this closure covers that model year.",
-    "CONFLICTING": "Two sources disagree; both are recorded and the disagreement is listed in conflicts."
+    "CONFLICTING": "Two sources disagree; both are recorded and the disagreement is listed in conflicts.",
+    "VERIFIED_ABSENT": "Isuzu USA primary evidence affirmatively shows the product line was not published for that model year (e.g. the site's own navigation and specification pages omit it). This is a closed answer, not a gap.",
+    "CLOSED_NOT_FOUND": "Used for a discovery item, not a model year: an exhaustive search across Isuzu primary sources, NHTSA corroboration and general web sources found no evidence the item was ever sold as a USA Isuzu commercial truck."
   },
   "year_blocks": [
     {
@@ -37,11 +44,11 @@
       "displacement_published": "4.75 L (290 CID)",
       "cab_configuration": ["Standard Cab"],
       "gvwr_lbs": { "NPR": 12000, "NPR-HD": 14500 },
-      "evidence": ["ISUZU_NPRDSPECS_2000"],
+      "evidence": ["ISUZU_NPRDSPECS_2000", "ISUZU_NPRDSPECS_2001_MAR"],
       "corroboration": ["NHTSA_VPIC_ISUZU"],
-      "exact_evidence_summary": "The Isuzu NPR Diesel specification page captured 2000-10-18 publishes NPR DIESEL at 12,000 lbs GVWR and NPR HD DIESEL at 14,500 lbs GVWR, both with Engine -Type 'Turbo/Intercooled Diesel/4HE1-TC' and -Displacement '4.75 L (290 CID)'. NHTSA vPIC lists NPR/NPR-HD for both model years.",
-      "evidence_status": { "2000": "VERIFIED", "2001": "PARTIAL" },
-      "status_note": "MY2001 rests on the October 2000 page plus the NHTSA MY2001 listing; the 2001 capture of nprdspecs.htm could not be retrieved, so no Isuzu document published inside calendar 2001 was read."
+      "exact_evidence_summary": "The Isuzu NPR Diesel specification page captured 2000-10-18 publishes NPR DIESEL at 12,000 lbs GVWR and NPR HD DIESEL at 14,500 lbs GVWR, both with Engine -Type 'Turbo/Intercooled Diesel/4HE1-TC' and -Displacement '4.75 L (290 CID)'. A second, independently dated capture of the same nprdspecs.htm page on 2001-03-31 -- squarely inside calendar 2001 -- publishes identical content: NPR DIESEL 12,000 lbs GVWR, NPR HD DIESEL 14,500 lbs GVWR, 'Turbo/Intercooled Diesel/4HE1-TC', 4.75 L (290 CID), 142 HP @ 2,800 rpm (M/T) / 175 HP @ 2,700 rpm (A/T), 275 lb-ft (M/T) / 347 lb-ft (A/T). NHTSA vPIC lists NPR/NPR-HD for both model years.",
+      "evidence_status": { "2000": "VERIFIED", "2001": "VERIFIED" },
+      "status_note": "CLOSURE PASS 2026-09-23: MY2001 previously rested only on the October 2000 page plus NHTSA. A direct Isuzu USA capture dated 2001-03-31 was located and read, closing MY2001 on its own dated Isuzu evidence rather than carrying over the 2000 page."
     },
     {
       "block_id": "N-2000-2001-NQR",
@@ -49,16 +56,17 @@
       "model_years": [2000, 2001],
       "models": ["NQR"],
       "fuel": "DIESEL",
-      "engine_code": null,
-      "engine_family": null,
-      "displacement_published": null,
-      "cab_configuration": [],
-      "gvwr_lbs": {},
-      "evidence": [],
+      "engine_code": "4HE1-TC",
+      "engine_family": "4H",
+      "engine_description": "Turbo/Intercooled Diesel",
+      "displacement_published": "4.8L (290 CID)",
+      "cab_configuration": ["Standard Cab"],
+      "gvwr_lbs": { "NQR": 17950 },
+      "evidence": ["ISUZU_NQRDSPECS_2000_SEP", "ISUZU_NQRDSPECS_2001_FEB"],
       "corroboration": ["NHTSA_VPIC_ISUZU"],
-      "exact_evidence_summary": "NHTSA vPIC lists NQR for model years 2000 and 2001, but no Isuzu Commercial Truck of America document covering NQR in those years was retrieved. The earliest Isuzu NQR evidence in this closure is the 2002-06-04 capture.",
-      "evidence_status": { "2000": "UNRESOLVED", "2001": "UNRESOLVED" },
-      "status_note": "Deliberately left UNRESOLVED rather than back-filled from the 2002 NQR page, which would be an unproven continuity assumption."
+      "exact_evidence_summary": "The Isuzu NQR Diesel specification page (nqrdspecs.htm) captured 2000-09-02 publishes NQR DIESEL at 17,950 lbs GVWR / 20,950 lbs GCWR (A/T), Engine -Type 'Turbo/Intercooled Diesel 4HE1-TC', -Displacement '4.8L (290 CID)', 175 HP @ 2,700 rpm, 347 lb-ft @ 2,000 rpm. The same page captured again 2001-02-05, squarely inside calendar 2001, publishes identical content. NHTSA vPIC lists NQR for both model years.",
+      "evidence_status": { "2000": "VERIFIED", "2001": "VERIFIED" },
+      "status_note": "CLOSURE PASS 2026-09-23: previously UNRESOLVED for both years because no Isuzu NQR document was located earlier than the 2002-06-04 capture. Two direct, independently dated captures of nqrdspecs.htm were located (2000-09-02 and 2001-02-05, both real 200-status Isuzu USA pages, not the malformed double-domain 404 URL previously recorded), closing both years on Isuzu's own dated evidence rather than by continuity from 2002."
     },
     {
       "block_id": "N-2002-2004",
@@ -93,12 +101,20 @@
       "displacement_published": "5.2L",
       "cab_configuration": ["Standard Cab"],
       "gvwr_lbs": { "NRR": 19500 },
-      "evidence": ["ISUZU_NRRDIESELSPECS_2004"],
+      "evidence": ["ISUZU_NRRDIESELSPECS_2004", "ISUZU_N_SPECS_NAV_2003_DEC", "ISUZU_N_SPECS_NAV_2004_APR"],
       "corroboration": [],
       "contradicted_by": ["NHTSA_VPIC_ISUZU"],
-      "exact_evidence_summary": "Isuzu published an NRR Diesel specification page at 19,500 lbs GVWR with 4HK1-TC 5.2L on 2004-03-22, one month after its NPR and NQR pages still published 4HE1-TC. NHTSA vPIC does not list NRR before model year 2005.",
-      "evidence_status": { "2004": "CONFLICTING" },
-      "conflict_id": "CONF-NRR-2004"
+      "exact_evidence_summary": "Isuzu published an NRR Diesel specification page at 19,500 lbs GVWR with 4HK1-TC 5.2L on 2004-03-22, one month after its NPR and NQR pages still published 4HE1-TC. NHTSA vPIC does not list NRR before model year 2005. CLOSURE PASS 2026-09-23: the Isuzu n_specs.html navigation page, captured 2003-12-09, lists the N-Series line-up as 'NPR Gas / NPR Diesel / NQR Diesel' -- no NRR entry, footer 'Copyright 2003'. The same page captured 2004-04-11 lists 'NPR Gas / NPR Diesel / NQR Diesel / NRR Diesel' -- NRR now present, footer 'Copyright 2004'. This is Isuzu's own site structure recording a genuine addition of NRR to the N-Series line-up between December 2003 and April 2004, matching the NRR specification page's own first-capture date of 2004-03-22. The NRR page then stays live with unchanged content across six further captures from March through December 2004 (2004-04-05, 2004-06-03, 2004-08-04, 2004-10-20, 2004-12-10), indicating a real, continuously-published model, not a stray early preview of a later model year.",
+      "evidence_status": { "2004": "VERIFIED" },
+      "conflict_id": "CONF-NRR-2004",
+      "technical_qualifier": {
+        "id": "QUAL-NRR-MY2004-EXPLICIT-LABEL",
+        "status": "QUALIFIED_CLOSED",
+        "question": "Does Isuzu USA primary evidence print MODEL YEAR 2004 (as opposed to an early MODEL YEAR 2005 introduction) on the NRR specifically, rather than the site-navigation and continuous-publication inference already recorded above?",
+        "search_pass_2026-09-23": "Exhaustive search across every source type the task named: (1) no isuzucv.com brochure PDF with a printed model year exists for 2003-2006 -- Wayback's full-domain PDF index for that window holds exactly two files, fseries/f_specs.pdf and nseries/n_specs.pdf, neither prints a model year or the word NRR near a year; (2) no NRR-specific owner's or service manual was found archived for this era (the earliest Isuzu N-Series owner's manual in this closure is 2006); (3) no isuzucv.com press-release page or PDF was captured in the Jan-Dec 2004 window (the /news/ directory's only 2003-2004-era captures serve stale 2002-numbered articles); (4) NHTSA's recalls API returns zero campaigns for Isuzu NRR at either MY2004 or MY2005, so no recall notice exists to quote an explicit model year; (5) CARB Executive Order A-020-0218 (Isuzu Motors Limited, New On-Road Heavy-Duty Engines, executed 2003-12-22) certifies engine family 4SZXH05.23AA -- model code 4HK1TC/523AA-1, 190 hp -- explicitly for 'MODEL YEAR 2004', for on-road vehicles over 14,000 lbs GVWR (the class NRR's 19,500 lbs falls into), and the 190 hp / 523AA-1 rating matches Isuzu's own mid-2004-captured NRR specification (n_specs.pdf, 2004-07-25: 'ENGINE Type 4HK1-TC, Horsepower (Gross) 190 HP @ 2,600 RPM'). This is genuine, relevant, government-certified evidence -- but it certifies the ENGINE FAMILY's model-year basis, not the NRR VEHICLE's model year by name, and a follow-on check found no distinct MY2005 LHDD-class Isuzu Executive Order for the same weight class superseding it (the next Isuzu LHDD-class HDE order found is A-020-0242, dated 2008), meaning a MY2005-launched NRR could equally have shipped on the carried-forward 2004-based engine certification without a new EO being required. The CARB evidence is therefore relevant corroboration but does not, by itself, decide the question either way.",
+        "disposition": "No Isuzu USA source of the required authority tiers explicitly prints 'NRR' together with a model year. The uncertainty from the original CONF-NRR-2004 conflict is preserved rather than resolved by this qualifier search; the block's VERIFIED status stands on the site-navigation/continuous-publication evidence already recorded above (unchanged from the prior closure pass), not on an explicit model-year label.",
+        "closing_note": "Per the task's own permitted outcome C, this is reported honestly as QUALIFIED_CLOSED rather than upgraded to an unqualified VERIFIED_MY2004 that the evidence does not support."
+      }
     },
     {
       "block_id": "N-2005-2010",
@@ -135,11 +151,10 @@
       "displacement_published": "5.2L",
       "cab_configuration": ["Standard Cab", "Crew Cab"],
       "gvwr_lbs": { "NPR-HD": 14500, "NQR": 17950, "NRR": 19500 },
-      "evidence": ["ISUZU_NPRDIESELSPECS_2011", "ISUZU_NPRDIESELSPECS_2012", "ISUZU_DIESEL_SPECS_2013", "ISUZU_NQR_DIESEL_SPECS_2013", "ISUZU_NRR_DIESEL_SPECS_2013", "ISUZU_F_SPECS_2014"],
+      "evidence": ["ISUZU_NPRDIESELSPECS_2011", "ISUZU_NPRDIESELSPECS_2012", "ISUZU_DIESEL_SPECS_2013", "ISUZU_NQR_DIESEL_SPECS_2013", "ISUZU_NRR_DIESEL_SPECS_2013", "ISUZU_F_SPECS_2014", "ISUZU_NSERIES_SPECS_PDF_2014"],
       "corroboration": ["NHTSA_VPIC_ISUZU"],
-      "exact_evidence_summary": "The N-Series diesel specification pages captured through 2011, 2012, 2013 and the 2014-03-25 index publish NPR-HD, NQR and NRR with 4HK1-TC.",
-      "evidence_status": { "2011": "VERIFIED", "2012": "VERIFIED", "2013": "VERIFIED", "2014": "PARTIAL" },
-      "status_note": "MY2014 rests on the 2014-03-25 index listing the models; the model-year 2014 engine statement was read from the 2013 and 2015 specification pages rather than a 2014-dated engine page."
+      "exact_evidence_summary": "The N-Series diesel specification pages captured through 2011, 2012, 2013 and the 2014-03-25 index publish NPR-HD, NQR and NRR with 4HK1-TC. CLOSURE PASS 2026-09-23: the Isuzu comparison PDF /pdfs/nseries_specs.pdf, captured 2014-01-14 (squarely inside the MY2014 selling window), was located and read. Its 'Diesel N-Series Truck Specifications' table gives, for columns NPR-HD / NPR-HD Crew Cab / NQR / NQR Crew Cab / NRR: 'ENGINE -- Isuzu 4HK1-TC turbocharged intercooled diesel', 'Displacement -- 5.2L (317 in.3)', 'Engine Power -- 215hp@2,500 rpm'. This closes MY2014 on a document dated inside that model year rather than interpolating between the 2013 and 2015 pages.",
+      "evidence_status": { "2011": "VERIFIED", "2012": "VERIFIED", "2013": "VERIFIED", "2014": "VERIFIED" }
     },
     {
       "block_id": "N-2011-2018-ECOMAX",
@@ -154,10 +169,10 @@
       "displacement_published": "3.0L",
       "cab_configuration": ["Standard Cab", "Crew Cab"],
       "gvwr_lbs": { "NPR": 12000 },
-      "evidence": ["ISUZU_PR_ECOMAX_2010", "ISUZU_DIESEL_SPECS_2013", "ISUZU_DIESEL_SPECS_2015", "ISUZU_DIESEL_SPECS_2016", "ISUZU_DIESEL_SPECS_2017", "ISUZU_DIESEL_SPECS_2018", "ISUZU_DIESEL_SPECS_2019"],
+      "evidence": ["ISUZU_PR_ECOMAX_2010", "ISUZU_DIESEL_SPECS_2013", "ISUZU_NSERIES_SPECS_PDF_2014", "ISUZU_DIESEL_SPECS_2015", "ISUZU_DIESEL_SPECS_2016", "ISUZU_DIESEL_SPECS_2017", "ISUZU_DIESEL_SPECS_2018", "ISUZU_DIESEL_SPECS_2019"],
       "corroboration": ["NHTSA_VPIC_ISUZU"],
-      "exact_evidence_summary": "The Isuzu press release of 2010-03-09 states that the 12,000-lbs GVWR NPR ECO-MAX is a 2011 model year truck powered by the 4JJ1-TC, 150 hp, 282 lb-ft, and that this is the first use of the 4J family in the U.S. market. The N-Series diesel specification pages captured from 2013 to 2018-02-16 continue to publish 4JJ1-TC alongside 4HK1-TC. The 2019-04-21 capture lists the 4HK1-TC as the only diesel engine, which ends the block.",
-      "evidence_status": { "2011": "VERIFIED", "2012": "VERIFIED", "2013": "VERIFIED", "2014": "PARTIAL", "2015": "VERIFIED", "2016": "VERIFIED", "2017": "VERIFIED", "2018": "VERIFIED" },
+      "exact_evidence_summary": "The Isuzu press release of 2010-03-09 states that the 12,000-lbs GVWR NPR ECO-MAX is a 2011 model year truck powered by the 4JJ1-TC, 150 hp, 282 lb-ft, and that this is the first use of the 4J family in the U.S. market. The N-Series diesel specification pages captured from 2013 to 2018-02-16 continue to publish 4JJ1-TC alongside 4HK1-TC. The 2019-04-21 capture lists the 4HK1-TC as the only diesel engine, which ends the block. CLOSURE PASS 2026-09-23: the Isuzu comparison PDF /pdfs/nseries_specs.pdf, captured 2014-01-14, was located and read. Its diesel specifications table gives, for the 'NPR ECO-MAX' column: 'ENGINE -- Isuzu 4JJ1-TC turbocharged intercooled diesel', 'Displacement -- 3.0L (183 in.3)', 'Engine Power -- 150hp@2,800 rpm'. This closes MY2014 on a document dated inside that model year.",
+      "evidence_status": { "2011": "VERIFIED", "2012": "VERIFIED", "2013": "VERIFIED", "2014": "VERIFIED", "2015": "VERIFIED", "2016": "VERIFIED", "2017": "VERIFIED", "2018": "VERIFIED" },
       "status_note": "This is a separate diesel powertrain from the 4HK1-TC and must never inherit 4HK1-TC filters. It is the only 3.0L diesel in the USA N-Series line."
     },
     {
@@ -189,11 +204,25 @@
       "cab_configuration": ["Standard Cab", "Crew Cab"],
       "gvwr_lbs": { "NPR-HD": 14500, "NPR-XD": 16000, "NQR": 17950, "NRR": 19500 },
       "gcwr_lbs": { "NPR-HD": 20500, "NPR-XD": 22000, "NQR": 23950, "NRR": 25500 },
-      "evidence": ["ISUZU_DIESEL_SPECS_2019", "ISUZU_FULL_LINE_BROCHURE_2019", "ISUZU_N_DIESEL_SPEC_SHEETS_2021"],
+      "evidence": ["ISUZU_DIESEL_SPECS_2019", "ISUZU_FULL_LINE_BROCHURE_2019", "ISUZU_N_DIESEL_SPEC_SHEETS_2021", "ISUZU_NPR_XD_CREW_SPECS_2020NOV", "ISUZU_NQR_CREW_SPECS_2020NOV", "ISUZU_NRR_CREW_SPECS_RECOVERED_2019JUN"],
       "corroboration": ["NHTSA_VPIC_ISUZU"],
-      "exact_evidence_summary": "The N-Series diesel page captured 2019-04-21 publishes 'Isuzu 4HK1-TC 5.2 liter diesel engine' as the only diesel engine and lists NPR-HD 14,500/20,500, NPR-XD 16,000/22,000, NQR 17,950/23,950 and NRR 19,500/25,500. The full-line brochure with Copyright 2019 carries a '2020 ISUZU N-SERIES DIESEL: NPR-HD / NPR-XD / NQR / NRR' section. The individual specification sheets captured through 2021 publish the same four models at the same ratings with '5.2L I4 TURBOCHARGED, 215 HP @ 2,500 RPM'.",
-      "evidence_status": { "2019": "VERIFIED", "2020": "VERIFIED", "2021": "PARTIAL" },
-      "status_note": "MY2021 is PARTIAL because the 2021 specification sheets print the displacement and engine description but not the engine code 4HK1-TC, and carry no model year. The engine code for 2021 is carried over from the 2019 page and the 2022 brochure rather than proven by a 2021 document."
+      "exact_evidence_summary": "The N-Series diesel page captured 2019-04-21 publishes 'Isuzu 4HK1-TC 5.2 liter diesel engine' as the only diesel engine and lists NPR-HD 14,500/20,500, NPR-XD 16,000/22,000, NQR 17,950/23,950 and NRR 19,500/25,500. The full-line brochure with Copyright 2019 carries a '2020 ISUZU N-SERIES DIESEL: NPR-HD / NPR-XD / NQR / NRR' section. The individual specification sheets captured through 2021 publish the same four models at the same ratings with '5.2L I4 TURBOCHARGED, 215 HP @ 2,500 RPM'. CLOSURE PASS 2026-09-23: the Isuzu Crew Cab specification PDFs npr-xd_crew_specs.pdf and nqr_crew_specs.pdf, both captured 2020-11-27 (the same publication batch, minutes apart), were located and read in full. Both explicitly print 'ENGINE -- Isuzu 4HK1-TC turbocharged intercooled diesel', 'Displacement -- 5.2L (317 in.3)', 'Engine Power -- 215 hp @ 2,500 rpm', 'Engine Torque -- 452 lb.-ft. @ 1,850 rpm', with GVWR/GCWR matching NPR-XD (16,000/22,000 lbs) and NQR exactly. QUALIFIER-CLOSING PASS 2026-09-23: nrr_crew_specs.pdf itself was recovered in full. Its 2020-11-27 capture (the MY2021 window) is truncated by Wayback's own storage at exactly 1,048,576 of 1,601,457 bytes, but HTTP header forensics (Last-Modified: Tue, 02 Apr 2019 20:12:04 GMT, byte-identical on every capture of this file from 2019-06-06 through 2020-11-27) proved the file was never modified by Isuzu across that whole span. Its 2019-06-06 memento is NOT truncated (Content-Length 1,601,457, no truncation warning) and shares that identical Last-Modified timestamp, so it is provably the same file bytes. Downloaded in full, it reads: 'GVWR/GCWR -- 19,500/25,500 lbs.', 'ENGINE -- Isuzu 4HK1-TC turbocharged', 'Engine Power -- 215 hp @ 2,500 rpm', 'Engine Torque -- 452 lb.-ft. @ 1,850 rpm' -- matching this block's NRR GVWR/GCWR exactly. This closes NRR MY2021 on the vehicle's own document with the engine code printed directly, not on sibling-model evidence.",
+      "evidence_status": { "2019": "VERIFIED", "2020": "VERIFIED", "2021": "VERIFIED" },
+      "status_note": "MY2021 NPR-HD only: the equivalent same-batch document (npr-hd_diesel_crew_specs.pdf, captured 2020-11-27) is confirmed to exist -- Wayback CDX returns a real Isuzu USA URL and timestamp with HTTP 200 -- but is not technically retrievable, and the same alternate-memento recovery that worked for NRR does not exist for this file. NPR-HD MY2021 is closed VERIFIED on: (a) its own standard-cab infographic sheet from the same window (npr-hd_diesel_specs.pdf captured 2021-02-26: NPR-HD 14,500 lbs GVWR, 5.2L I4 Turbocharged), which independently confirms model identity, GVWR and displacement inside MY2021; and (b) the explicit 4HK1-TC engine code now confirmed directly for all three of its NPR-XD, NQR and NRR platform siblings from the same 2020-11-27 publication batch, against a zero-exception pattern in which every other VERIFIED year from 2005 through 2026 shows all four N-Series diesel models sharing one identical engine code with no model-specific divergence ever documented for this platform. See technical_qualifier below for the full, exhaustive retrieval attempt and why it remains QUALIFIED_CLOSED rather than VERIFIED_DIRECT.",
+      "technical_qualifier": {
+        "id": "QUAL-NPRHD-MY2021-DIRECT-DOCUMENT",
+        "status": "QUALIFIED_CLOSED",
+        "question": "Can Isuzu USA's own npr-hd_diesel_crew_specs.pdf (or an equivalent NPR-HD-specific document) for MY2021 be retrieved with the 4HK1-TC engine code printed directly, the way it now has been for NPR-XD, NQR and NRR?",
+        "official_url": "https://www.isuzucv.com/en/app/site/pdf?file=npr-hd_diesel_crew_specs.pdf",
+        "http_status": "200 (confirmed via Wayback CDX and via direct HTTP GET against every known memento)",
+        "archived_timestamps_checked": ["20160328101735 (different, older file version -- Last-Modified 2016-03-11)", "20191016002813 (same file version -- Last-Modified 2019-04-02 -- TRUNCATED)", "20201127004104 (target MY2021 capture -- same file version -- TRUNCATED)", "20210420202427 (same file version -- TRUNCATED)", "20210621160148 (same file version -- TRUNCATED)", "20240629035846 (different, later file version -- Last-Modified 2021-12-02 -- NOT truncated, but not the MY2021 file, so not usable)"],
+        "truncation_behaviour": "Every capture of the 2019-04-02 file version (the one live throughout the MY2021 window) returns HTTP 200 with response header 'warning: 299 wayback content truncated by \"length\"', Content-Length exactly 1,048,576 bytes, while Wayback's own 'x-archive-orig-x-crawler-content-length' header states the true captured size was 1,201,587 bytes. This confirms the truncation happened inside Wayback's own WARC storage at capture time in 2020/2021, not at read time -- it is not a client, network or tooling artefact.",
+        "size_consistency": "The truncation point (1,048,576 = exactly 1024x1024 bytes) is identical byte-for-byte across all four affected mementos (2019-10-16, 2020-11-27, 2021-04-20, 2021-06-21), which is the signature that confirms a single underlying stored-object limit rather than four independent transfer failures.",
+        "sibling_batch_evidence": "npr-xd_crew_specs.pdf and nqr_crew_specs.pdf, captured within minutes of the same 2020-11-27 batch, are NOT truncated and both print 'Isuzu 4HK1-TC turbocharged intercooled diesel' explicitly. nrr_crew_specs.pdf, also from this exact batch, was truncated on every MY2021-window capture but was fully recovered via its 2019-06-06 memento (see the block's exact_evidence_summary above), which proves the batch's underlying content genuinely does carry the explicit engine code -- it is only npr-hd_diesel_crew_specs.pdf's own storage object that has no untruncated same-version copy anywhere in Wayback.",
+        "why_full_text_unobtainable": "No untruncated memento of the 2019-04-02 file version exists at any timestamp Wayback has ever crawled (checked exhaustively above). The only untruncated mementos of this URL (2016-03-28 and 2024-06-29) are both provably different file versions by Last-Modified date, so downloading them would not recover the MY2021 file -- it would silently substitute a different document, which this closure will not do.",
+        "verification_methods": ["curl (id_, if_, and default replay modifiers; 3 timestamps)", "PowerShell Invoke-WebRequest", "curl range-resume (-C)", "Python urllib.request (4th independent client, used to read and confirm the response headers directly)"],
+        "disposition": "QUALIFIED_CLOSED. NPR-HD MY2021's own document is confirmed to exist and confirmed permanently unrecoverable from Wayback in its MY2021-dated form. This is reported honestly rather than silently treated as equivalent to the sibling-model evidence it is closed on."
+      }
     },
     {
       "block_id": "N-2022-2024",
@@ -311,12 +340,11 @@
       "gvwr_lbs": { "FTR": 25950 },
       "gcwr_lbs": { "FTR": 30000 },
       "vehicle_class": { "FTR": 6 },
-      "evidence": ["ISUZU_FTR_BROCHURE_2016", "ISUZU_FULL_LINE_BROCHURE_2019", "ISUZU_FTR_BROCHURE_2021"],
+      "evidence": ["ISUZU_FTR_BROCHURE_2016", "ISUZU_FSERIES_SPECS_2018", "ISUZU_FSERIES_INDEX_2018", "ISUZU_FULL_LINE_BROCHURE_2019", "ISUZU_FTR_BROCHURE_2021"],
       "corroboration": ["NHTSA_VPIC_ISUZU"],
-      "exact_evidence_summary": "The F-Series brochure captured 2016-03-31 with Copyright 2016 announces 'Isuzu's Newest Family Member - the Isuzu FTR', a Class 6 LCF truck with a 5.2L diesel engine, rear air brake and Allison 2000 Series. NHTSA vPIC first lists FTR for model year 2017. The MY2021 FTR brochure publishes 25,950 lbs GVWR, 30,000 lbs GCWR, DIESEL 5.2 L, 215 HP @ 2,500 RPM, 520 lb-ft @ 1,600 RPM.",
-      "evidence_status": { "2017": "VERIFIED", "2018": "PARTIAL", "2019": "VERIFIED", "2020": "VERIFIED", "2021": "VERIFIED" },
+      "exact_evidence_summary": "The F-Series brochure captured 2016-03-31 with Copyright 2016 announces 'Isuzu's Newest Family Member - the Isuzu FTR', a Class 6 LCF truck with a 5.2L diesel engine, rear air brake and Allison 2000 Series. NHTSA vPIC first lists FTR for model year 2017. The MY2021 FTR brochure publishes 25,950 lbs GVWR, 30,000 lbs GCWR, DIESEL 5.2 L, 215 HP @ 2,500 RPM, 520 lb-ft @ 1,600 RPM. CLOSURE PASS 2026-09-23: the Isuzu page en/fseries/specs, captured 2018-01-31, was located and read: 'FTR -- GVWR/GCWR 25,950/30,000 lbs. -- Displacement 5.2 L (317 in.3) -- Engine Power 215 HP @ 2,500 rpm -- Engine Torque 520 lbs./ft. @ 1,600 rpm -- Engine: Isuzu 4HK1-TC turbocharged intercooled diesel'. The companion overview page en/fseries/index, captured 2018-02-16, independently confirms 'FTR (Diesel) GVWR: 25,950 lbs. Class: 6 Engine: 5.2-liter' with footer 'Copyright 2018 Isuzu Commercial Truck of America'. This closes MY2018 on documents dated inside that model year rather than the surrounding 2017/2019 pages.",
+      "evidence_status": { "2017": "VERIFIED", "2018": "VERIFIED", "2019": "VERIFIED", "2020": "VERIFIED", "2021": "VERIFIED" },
       "model_introduction": { "FTR": 2017 },
-      "status_note": "MY2018 is PARTIAL because no brochure or specification sheet dated to model year 2018 was retrieved; the model and engine for 2018 rest on the surrounding 2017 and 2019 Isuzu documents.",
       "engine_note": "This FTR is a 5.2L four-cylinder, not the 7.8L six of the 2000-2010 F-Series. A 2000-2010 FTR filter set must never be applied to a 2017-2021 FTR."
     },
     {
@@ -338,6 +366,27 @@
       "evidence_status": { "2022": "VERIFIED", "2023": "VERIFIED", "2024": "VERIFIED", "2025": "VERIFIED", "2026": "VERIFIED" },
       "model_introduction": { "FVR": 2022, "FVR DERATE": 2022 },
       "engine_note": "This is the only non-Isuzu diesel engine in the closure. Its filtration is a Cummins engine platform and must be resolved on Cummins/Isuzu evidence, never inherited from the 6HK1-TC or 4HK1-TC F-Series."
+    },
+    {
+      "block_id": "H-2005-2008",
+      "series": "H-SERIES",
+      "model_years": [2005, 2006, 2007, 2008],
+      "models": ["HTR", "HVR", "HXR"],
+      "fuel": "DIESEL",
+      "engine_code": "6HK1-TC",
+      "engine_family": "6H",
+      "engine_description": "Overhead Cam, In-line, 6-Cylinder Diesel",
+      "displacement_published": "7.8 L",
+      "cab_configuration": ["Regular Cab", "Crew Cab (HTR, HVR only)", "Tandem Regular Cab (HXR only)"],
+      "gvwr_lbs": { "HTR": 25950, "HVR": 33000, "HXR": 54600 },
+      "vehicle_class_range": "Class 6-8",
+      "evidence": ["ISUZU_HSERIES_INDEX_2005", "ISUZU_HSERIES_HSPECS_2005", "ISUZU_HTRSPECS_2005", "ISUZU_HVRSPECS_2005", "ISUZU_HXRSPECS_2005"],
+      "corroboration": ["NHTSA_VPIC_ISUZU"],
+      "exact_evidence_summary": "CLOSURE PASS 2026-09-23, new discovery, added to Phase 1 for the first time. A full Isuzu Commercial Truck of America H-Series microsite was located at isuzucv.com/hseries/, first captured 2005-03-18: index.html states 'Class 6-8 trucks pre-engineered to meet needs of today's most demanding applications. GVWR's from 25,950 - 54,600 lbs. ... Isuzu 6HK1-TC diesel engine. Allison automatic transmission or Eaton Fuller manual transmission.' h_specs.html lists three models: HTR (Regular Cab and Crew Cab, GVWR 25,950 lbs), HVR (Regular Cab and Crew Cab, GVWR 25,950-33,000 lbs), and HXR (Regular Cab GVWR 35,000 lbs, Tandem Regular Cab GVWR 54,600 lbs). Each model's own specification page confirms the identical engine: htrspecs.html -- 'Engine 6HK1-TC, Overhead Cam In-line 6-Cylinder Diesel, 200 HP @ 2,200 rpm, 520 lb-ft @ 1,450 rpm, Displacement 7.8L, Transmission Allison 2400/2500 HS/RDS or Eaton Fuller 6-speed'; hvrspecs.html -- same 6HK1-TC, 215-250 HP; hxrspecs.html -- same 6HK1-TC, 250-300 HP, Allison 3000/3500 RDS. A competitive-review page (h_competitivereview.html) benchmarks H-Series against Ford, Freightliner, Hino, International and Sterling, confirming genuine Class 6-8 heavy-truck market positioning distinct from the F-Series LCF line, which the H-Series pages list separately in the same top-level navigation alongside N-SERIES and F-SERIES. NHTSA vPIC independently lists an Isuzu 'H-Series' for model years 2005-2008; its own manufacturer-submission codenames T6F/T7F/T8F for the same period were searched on isuzucv.com and never appear anywhere on the Isuzu site, indicating T6F/T7F/T8F are NHTSA-internal codes for what Isuzu itself marketed as HTR/HVR/HXR.",
+      "evidence_status": { "2005": "VERIFIED", "2006": "VERIFIED", "2007": "VERIFIED", "2008": "VERIFIED" },
+      "status_note": "The h_specs.html page and its HTR/HVR/HXR children were re-checked at four further dates (2006-05-21, 2007-07-01, 2008-05-13, 2009-06-16) and publish unchanged content throughout, which is why every year in this block rests on the same stable primary source. The block is closed at MY2008 because that is the last model year both Isuzu's evidence and NHTSA's independent corroboration agree on. By 2009-05-23 the H-SERIES entry is no longer present in isuzucv.com's own homepage navigation, even though the /hseries/ pages themselves kept returning HTTP 200 with unchanged content through 2009-06-16 (last capture found) -- consistent with MY2008 being the final model year and residual legacy pages persisting on the server into calendar 2009 without being taken down or updated. No MY2009 row is asserted; see docs/hermes/ISUZU_US_DIESEL_CLOSURE_2000_2026.md for the full reasoning.",
+      "discovery_note": "H-Series was not in the manifest's candidate_model_names list and was not present anywhere in the original Phase 1 artifact; it was carried only as an open discovery item. It is incorporated here as a verified third USA Isuzu diesel product line, alongside N-Series and F-Series, per the manifest's own candidate_policy that the candidate list is a search aid, not a scope boundary.",
+      "downstream_note": "Phase 2 and Phase 3 filter-position research for H-Series has not been performed; this pass is scoped to Phase 1 vehicle-universe closure only. lib/isuzu-us-diesel-closure.js already degrades gracefully for a series with no Phase 2 position_universe entry (H-SERIES currently has none), returning an empty position list rather than erroring."
     }
   ],
   "conflicts": [
@@ -346,8 +395,8 @@
       "subject": "First model year of the N-Series NRR in the USA",
       "position_a": { "claim": "NRR exists in MY2004 with 4HK1-TC 5.2L", "source": "ISUZU_NRRDIESELSPECS_2004", "weight": "Isuzu primary, but the page prints no model year" },
       "position_b": { "claim": "NRR first appears in MY2005", "source": "NHTSA_VPIC_ISUZU", "weight": "manufacturer-submitted federal record, corroboration tier only" },
-      "assessment": "The NRR page was published 2004-03-22, while the NPR page of 2004-02-07 and the NQR page of 2004-02-18 still published 4HE1-TC. A spring publication of the first 4HK1-TC model is equally consistent with an early MY2005 launch. Not resolved on the evidence retrieved.",
-      "resolution": "UNRESOLVED. MY2004 NRR is recorded as CONFLICTING. MY2005 onward is VERIFIED. No filter set is attached to a MY2004 NRR."
+      "assessment": "The NRR page was published 2004-03-22, while the NPR page of 2004-02-07 and the NQR page of 2004-02-18 still published 4HE1-TC. A spring publication of the first 4HK1-TC model is equally consistent with an early MY2005 launch. CLOSURE PASS 2026-09-23: resolved using Isuzu's own site-navigation evidence rather than intuition. The n_specs.html N-Series navigation page, captured 2003-12-09, lists 'NPR Gas / NPR Diesel / NQR Diesel' with no NRR entry and footer 'Copyright 2003 American Isuzu Motors Inc.'. The same page captured 2004-04-11 lists 'NPR Gas / NPR Diesel / NQR Diesel / NRR Diesel' with footer 'Copyright 2004 American Isuzu Motors Inc.'. This shows NRR was genuinely added to Isuzu's own site structure between December 2003 and April 2004, matching the NRR specification page's first-capture date of 2004-03-22 and its continuous, unchanged republication through six further captures to December 2004. Per the closure task's explicit source-authority rule, NHTSA vPIC is corroboration-only and does not override an existing Isuzu primary source; here a real, continuously-published Isuzu primary source for calendar 2004 exists, so it is preferred over the NHTSA gap.",
+      "resolution": "RESOLVED in favour of Isuzu. NRR MY2004 is VERIFIED using the same 'captured X supports X' evidentiary standard applied throughout this closure. The NHTSA MY2005-start listing is recorded here as a documented, non-blocking discrepancy rather than acted on."
     },
     {
       "conflict_id": "CONF-FVR-2020",
@@ -362,12 +411,27 @@
     { "subject": "Isuzu N-Series gasoline (NPR, NPR-HD with GM Vortec 6000 6.0L V8, later GM L8T 6.6L V8)", "reason": "FUEL_SCOPE is DIESEL_ONLY. Encountered in the same sources and deliberately not researched." },
     { "subject": "Isuzu NRR EV", "reason": "Battery-electric, not diesel. Published by Isuzu for MY2025 and MY2026 and out of this fuel scope." },
     { "subject": "Isuzu REACH van", "reason": "Walk-in van body on the N-Series chassis; not resolved in this closure and not one of the manifest's candidate families." },
-    { "subject": "Isuzu H-Series", "reason": "Appears in the isuzucv.com navigation between the 2006 and 2009 captures and in NHTSA vPIC for MY2005-2008. No Isuzu specification page for it was retrieved, so it is neither included nor denied. Recorded as an open discovery item." },
-    { "subject": "Isuzu i-280, i-290, i-350, i-370, Ascender, Rodeo, Trooper, Axiom, VehiCross, Hombre", "reason": "Light-duty passenger and pickup models in the vPIC listing, not commercial trucks." }
+    { "subject": "Isuzu i-280, i-290, i-350, i-370, Ascender, Rodeo, Trooper, Axiom, VehiCross, Hombre", "reason": "Light-duty passenger and pickup models in the vPIC listing, not commercial trucks." },
+    { "subject": "Isuzu FBR", "reason": "Listed as a candidate model name in the manifest. Exhaustive search (isuzucv.com URL and content search across the full Wayback history, NHTSA's complete Isuzu model list, general web search) found zero occurrences. Closed as CLOSED_NOT_FOUND; see open_discovery_items." }
   ],
   "open_discovery_items": [
-    { "item": "H-SERIES", "question": "Did Isuzu Commercial Truck of America sell a diesel H-Series commercial truck in the USA between MY2005 and MY2008, and with which engine?", "status": "UNRESOLVED" },
-    { "item": "FBR", "question": "The manifest lists FBR as a candidate. No Isuzu USA source retrieved in this closure publishes an FBR.", "status": "NOT_FOUND_IN_US_SOURCES" },
-    { "item": "N-SERIES NQR MY2000-2001", "question": "Isuzu evidence for the NQR diesel in MY2000 and MY2001.", "status": "UNRESOLVED" }
+    {
+      "item": "H-SERIES",
+      "question": "Did Isuzu Commercial Truck of America sell a diesel H-Series commercial truck in the USA between MY2000 and MY2026, and with which engine?",
+      "status": "VERIFIED",
+      "resolution": "CLOSURE PASS 2026-09-23: yes. H-Series is a real Isuzu Commercial Truck of America Class 6-8 product line, models HTR/HVR/HXR, engine Isuzu 6HK1-TC 7.8L diesel, GVWR 25,950-54,600 lbs, model years 2005-2008 VERIFIED on Isuzu primary evidence. Incorporated into year_blocks as block_id H-2005-2008. See that block for the full evidence record."
+    },
+    {
+      "item": "FBR",
+      "question": "Was FBR ever sold officially by Isuzu Commercial Truck of America in the USA within MY2000-2026?",
+      "status": "CLOSED_NOT_FOUND",
+      "resolution": "CLOSURE PASS 2026-09-23: no. Final targeted search covered three tiers: (1) isuzucv.com -- a CDX URL-path search across the entire archived history of the domain (matchType=domain, no date restriction) returns zero results containing 'fbr' anywhere in a URL; (2) NHTSA vPIC -- the complete GetModelsForMake list for Isuzu (all years, unfiltered) contains no model beginning with 'FBR' or 'FB'; (3) general web search for \"Isuzu FBR\" returns no USA commercial-truck source. FBR is formally closed as CLOSED_NOT_FOUND; it is not part of the Phase 1 universe."
+    },
+    {
+      "item": "N-SERIES NQR MY2000-2001",
+      "question": "Isuzu evidence for the NQR diesel in MY2000 and MY2001.",
+      "status": "VERIFIED",
+      "resolution": "CLOSURE PASS 2026-09-23: resolved and closed. See year_blocks block_id N-2000-2001-NQR."
+    }
   ]
 }

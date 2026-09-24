@@ -62,7 +62,7 @@ export function IndustrialProcessTechnologyStablePage({
     name: technology.name,
     url,
     description: technology.summary,
-    image: `https://elimfilters.com${technology.heroImage}`,
+    image: `https://elimfilters.com${technology.mediaImage}`,
     author: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
     publisher: { '@type': 'Organization', '@id': 'https://elimfilters.com/#organization', name: 'ELIMFILTERS' },
     about: technology.mechanisms.map((name) => ({ '@type': 'Thing', name })),
@@ -83,6 +83,17 @@ export function IndustrialProcessTechnologyStablePage({
     '@type': 'FAQPage',
     mainEntity: faqs.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
   };
+  const videoSchema = technology.heroVideo ? {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    '@id': `${url}#hero-video`,
+    name: `${technology.name} — ${technology.title}`,
+    description: technology.summary,
+    contentUrl: `https://elimfilters.com${technology.heroVideo}`,
+    thumbnailUrl: [`https://elimfilters.com${technology.mediaImage}`],
+    isPartOf: { '@id': `${url}#article` },
+    publisher: { '@id': 'https://elimfilters.com/#organization' },
+  } : null;
   const inquiryHref = `mailto:applications@elimfilters.com?subject=${encodeURIComponent(`${technology.name} Industrial & Process Application Assessment`)}`;
   const related = platform.technologies.filter((item) => item.slug !== technology.slug);
 
@@ -91,6 +102,7 @@ export function IndustrialProcessTechnologyStablePage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      {videoSchema ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} /> : null}
 
       <section className={styles.hero} aria-labelledby="industrial-tech-title">
         {technology.heroVideo ? (
@@ -100,7 +112,7 @@ export function IndustrialProcessTechnologyStablePage({
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             poster={technology.hideHeroPoster ? undefined : technology.heroImage}
             aria-hidden="true"
           >
@@ -113,20 +125,7 @@ export function IndustrialProcessTechnologyStablePage({
         <h1 id="industrial-tech-title" className={styles.srOnly}>{technology.name} {technology.title}</h1>
         <div
           aria-hidden="true"
-          style={{
-            position: 'relative',
-            zIndex: 3,
-            width: 'min(980px, 86vw)',
-            textAlign: 'center',
-            fontFamily: 'var(--font-display)',
-            fontWeight: 750,
-            fontSize: 'clamp(3rem, 8vw, 7rem)',
-            lineHeight: 0.9,
-            letterSpacing: '-0.055em',
-            color: '#fff',
-            textTransform: 'uppercase',
-            textShadow: '0 8px 28px rgba(0,0,0,.5)',
-          }}
+          className={styles.technologyHeroWordmark}
         >
           {technologyName(technology.name, technology.branded)}
         </div>
@@ -161,8 +160,14 @@ export function IndustrialProcessTechnologyStablePage({
               <p className={styles.lead}>{technology.treatmentFunction}</p>
             </div>
             <figure className={styles.mediaFigure}>
-              <img className={styles.mediaImage} src={technology.mediaImage} alt={`${technology.title} industrial treatment context`} />
-              <figcaption>Representative industrial treatment context. Final configuration remains application-specific.</figcaption>
+              <img
+                className={styles.mediaImage}
+                src={technology.mediaImage}
+                alt={`${technology.name} ${technology.title} filtration or treatment elements`}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Representative filtration, separation or treatment elements/media. Final element and media selection remains application-specific.</figcaption>
             </figure>
           </div>
 
@@ -180,9 +185,9 @@ export function IndustrialProcessTechnologyStablePage({
       <section className={styles.band}><div className={styles.inner}>
         <p className={styles.eyebrow}>OPERATING REALITY</p>
         <h2 className={styles.h2}>Treatment performance depends on the complete process boundary.</h2>
-        <p className={styles.lead}>The filter, element, media, vessel or treatment device is only one part of the result. Flow, contaminant loading, pressure, temperature, chemistry, housing condition, drainage, sealing and upstream/downstream process behavior can materially change performance.</p>
+        <p className={styles.lead}>The filtration, separation or treatment element/media is one part of the complete process result. Flow, contaminant loading, pressure, temperature, chemistry, housing condition, drainage, sealing and upstream/downstream process behavior can materially change performance.</p>
         <div className={styles.twoColumnNotes}>
-          <article className={styles.noteBlock}><h3 className={styles.h3}>A useful distinction</h3><p className={styles.body}>{technologyName(technology.name, technology.branded)} identifies a treatment function. It does not make every product or system inside that category technically interchangeable.</p></article>
+          <article className={styles.noteBlock}><h3 className={styles.h3}>A useful distinction</h3><p className={styles.body}>{technologyName(technology.name, technology.branded)} identifies a treatment function. It does not make every replacement element or treatment medium inside that category technically interchangeable.</p></article>
           <article className={styles.noteBlock}><h3 className={styles.h3}>Evidence before claims</h3><p className={styles.body}>Efficiency, capacity, pressure drop, outlet quality, service interval and compatibility remain tied to validated product or project evidence.</p></article>
         </div>
       </div></section>
