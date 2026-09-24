@@ -51,25 +51,6 @@
   filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.28));
 }
 
-.technologyHeroWordmark {
-  position: relative;
-  z-index: 3;
-  width: min(980px, 86vw);
-  text-align: center;
-  font-family: var(--font-technology-wordmark);
-  font-weight: 750;
-  font-size: clamp(3rem, 8vw, 7rem);
-  line-height: 0.9;
-  letter-spacing: -0.055em;
-  color: #fff;
-  text-transform: uppercase;
-  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
-}
-
-.technologyHeroWordmarkPlatform {
-  font-size: clamp(3.4rem, 9vw, 7.6rem);
-}
-
 .srOnly {
   position: absolute;
   width: 1px;
