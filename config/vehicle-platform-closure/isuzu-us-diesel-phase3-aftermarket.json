@@ -52,30 +52,30 @@
     }
   ],
   "outcome": "CLOSED_WITH_EXPLICIT_BLOCKERS",
-  "outcome_summary": "9 of 19 eligible rows already carried a Donaldson-verified base from the prior pass. This exception-closure pass adds 5 more Donaldson-verified bases (P550390 for the two standard/high-capacity N-Series and F-Series fuel pairs, and P550420 for the F-Series 1987-2008 lube row), resolved by applying an OEM-vs-CROSSREF Donaldson evidence-tier distinction the prior pass had not used, and cross-verified every reused SKU against data/dims.csv physical dimensions. One row (P2-N-TRANS) moves from CONFLICTING to BLOCKED_DONALDSON after its only Donaldson hit was rejected as a false-positive category mismatch (a transmission filter cartridge cannot be a full-flow engine-oil spin-on). One row (P2-N-LUBE-1998-2010) remains genuinely CONFLICTING: the disputed Isuzu number ties to two different Donaldson parts at the identical CROSSREF evidence tier, with no defensible tie-breaker found despite exhaustive first-party-capture research. Zero Fleetguard bases exist anywhere in this file -- no row has ever reached DONALDSON_NOT_MANUFACTURED_VERIFIED. A duplicate-canonical-mapping audit across every Donaldson part touched by Isuzu Phase 3 found one legacy-CSV stale mapping (P550008, three orphaned MANN-sourced SKUs never reconciled to dims.csv) that is not actionable here because P550008 is not used as a base for any Isuzu row.",
+  "outcome_summary": "9 of 19 eligible rows already carried a Donaldson-verified base from the prior pass. This exception-closure pass adds 5 more Donaldson-verified bases (P550390 for the two standard/high-capacity N-Series and F-Series fuel pairs, and P550420 for the F-Series 1987-2008 lube row), resolved by applying an OEM-vs-CROSSREF Donaldson evidence-tier distinction the prior pass had not used, and cross-verified every reused SKU against data/dims.csv physical dimensions. One row (P2-N-TRANS) moves from CONFLICTING to BLOCKED_DONALDSON after its only Donaldson hit was rejected as a false-positive category mismatch (a transmission filter cartridge cannot be a full-flow engine-oil spin-on). One row (P2-N-LUBE-1998-2010) remains genuinely CONFLICTING: the disputed Isuzu number ties to two different Donaldson parts at the identical CROSSREF evidence tier, with no defensible tie-breaker found despite exhaustive first-party-capture research. Zero Fleetguard bases exist anywhere in this file -- no row has ever reached DONALDSON_NOT_MANUFACTURED_VERIFIED. A duplicate-canonical-mapping audit across every Donaldson part touched by Isuzu Phase 3 found one legacy-CSV stale mapping (P550008, three orphaned MANN-sourced SKUs never reconciled to dims.csv) that is not actionable here because P550008 is not used as a base for any Isuzu row. SINGLE-CASE MICROINVESTIGATION 2026-09-24 then resolved the file's one remaining CONFLICTING row (P2-N-LUBE-1998-2010) using Donaldson equipment-application records: P502042 (ELIMFILTERS EL82042, reused) explicitly serves the 4HE1-TC/4HK1-TC engines this row is scoped to, while the competing candidate P550973 explicitly serves only an unrelated older Isuzu engine family and is rejected. CONFLICTING is now 0 across the entire file.",
   "coverage": {
     "eligible_phase2_rows": 19,
     "excluded_phase2_rows": 2,
     "donaldson": {
-      "DONALDSON_VERIFIED": 14,
+      "DONALDSON_VERIFIED": 15,
       "DONALDSON_NOT_MANUFACTURED_VERIFIED": 0,
       "DONALDSON_NOT_FOUND": 3,
       "DONALDSON_SOURCE_BLOCKED": 0,
-      "DONALDSON_AMBIGUOUS": 2
+      "DONALDSON_AMBIGUOUS": 1
     },
     "fleetguard_verified_base": 0,
     "decision_status": {
       "VERIFIED_BASE": 4,
-      "PARTIAL": 10,
-      "CONFLICTING": 1,
+      "PARTIAL": 11,
+      "CONFLICTING": 0,
       "BLOCKED_DONALDSON": 4,
       "NO_ELIMFILTERS_SKU_YET": 0,
       "BLOCKED_OEM": 9
     },
     "base_decisions": {
-      "donaldson_based": 14,
+      "donaldson_based": 15,
       "fleetguard_based": 0,
-      "no_base_yet": 5
+      "no_base_yet": 4
     },
     "elimfilters_skus_reused": [
       "EA16773",
@@ -85,7 +85,8 @@
       "EF92599",
       "EF92427",
       "EF90390",
-      "EL80420"
+      "EL80420",
+      "EL82042"
     ],
     "elimfilters_new_sku_candidates": []
   },
@@ -236,10 +237,10 @@
     },
     {
       "candidate": "P502042 -> EL82042",
-      "outcome": "NOT_CANONICAL_CONFLICTING",
+      "outcome": "LINKED_PARTIAL",
       "isuzu_oe_oen": "2906548000",
       "resolution_row": "P2-N-LUBE-1998-2010",
-      "note": "EXCEPTION AUDIT 2026-09-23: remains NOT_CANONICAL. The row P2-N-LUBE-1998-2010 stays CONFLICTING -- Donaldson's own crossref data ties the disputed Isuzu number 2906548000 to BOTH P502042 and a second part, P550973 (existing SKU EL80973), at the same CROSSREF evidence tier, and neither can be preferred on tier alone. See resolution_rows for the full evidence-tier analysis."
+      "note": "SINGLE-CASE MICROINVESTIGATION 2026-09-24: RECONFIRMED CANONICAL. P502042's own equipment-application records (scripts/donaldson_lube_results.json) name the 4HE1-TC and 4HK1-TC engines this Phase 2 row is scoped to; the competing candidate P550973 (existing SKU EL80973) only serves the unrelated older 4BB1/4BD1/4BD2 engine family and is rejected. Superseded prior notes describing this as NOT_CANONICAL_CONFLICTING (they had not yet examined equipment-application data, only the OEM-vs-CROSSREF evidence tier, which is tied on this exact number)."
     },
     {
       "candidate": "P551855 -> ES91855",
@@ -622,8 +623,8 @@
         ],
         "scope_authority": "PHASE_2_UNCHANGED"
       },
-      "donaldson_status": "DONALDSON_AMBIGUOUS",
-      "donaldson_part": null,
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P502042",
       "donaldson_candidates": [
         {
           "part": "P502042",
@@ -634,7 +635,21 @@
             "od": "4.88 inch (124 mm)",
             "length": "4.72 inch (120 mm)"
           },
-          "existing_elimfilters_sku": "EL82042"
+          "existing_elimfilters_sku": "EL82042",
+          "primary_application": "ISUZU 8970967770",
+          "bypass_valve": true,
+          "efficiency": "16 micron @ 50% (JIS D 1611)",
+          "equipment_applications_matching_this_row_engine_scope": [
+            "ISUZU NPR70 / engine ISUZU 4HE1 4.8L",
+            "ISUZU NQR70 / engine ISUZU 4HE1-TC 4.8L (and 4HE1-T 4.8L)",
+            "ISUZU NPR75 / engine ISUZU 4HK1-TCN 5.2L (multiple records) and 4HK1-TCC 5.2L",
+            "ISUZU NPR45 / engine ISUZU 4HK1-TCC 5.2L (and 4HK1-TCN 5.2L)",
+            "ISUZU NQR75 / engine ISUZU 4HK1-TCN, TCC 5.2L (and 4HK1-XS 5.2L)",
+            "ISUZU NPS75 / engine ISUZU 4HK1-TCN 5.2L (multiple records) and 4HK1-TCC 5.2L",
+            "CHEVROLET NPR / engine ISUZU 4HE1T and 4HK1T (GM-badged twin of the same Isuzu truck)"
+          ],
+          "equipment_applications_not_matching": [],
+          "verdict": "DIRECT_MATCH: equipment list explicitly names 4HE1-TC and 4HK1-TC engines in NPR/NQR/NPS trucks, which are exactly the two engines Phase 1 assigns to blocks N-2000-2001, N-2002-2004 (4HE1-TC) and N-2005-2010 (4HK1-TC) -- the three blocks this Phase 2 row binds to."
         },
         {
           "part": "P550973",
@@ -645,29 +660,48 @@
             "od": "4.84 inch (123 mm)",
             "length": "5.87 inch (149 mm)"
           },
-          "existing_elimfilters_sku": "EL80973"
+          "existing_elimfilters_sku": "EL80973",
+          "primary_application": "ISUZU 8970492820",
+          "bypass_valve": false,
+          "efficiency": "50 micron @ 99% (JIS D 1611) -- a coarser, lower-efficiency media than P502042",
+          "equipment_applications_matching_this_row_engine_scope": [],
+          "equipment_applications_not_matching": [
+            "ISUZU NPR / engine ISUZU 4BD1T",
+            "ISUZU NPR / engine ISUZU 4BD2T",
+            "ISUZU 4BB1T (engine record)",
+            "ISUZU 4BD2T (engine record)",
+            "ISUZU 4BD2TC (engine record)",
+            "ISUZU W4 (engine record)"
+          ],
+          "verdict": "MISMATCH, REJECTED AS BASE: every equipment record for P550973 is the 4BB1/4BD1/4BD2 engine family, an older, smaller-displacement Isuzu N-Series generation that Phase 1 never assigns to any of the three blocks this row binds to (N-2000-2001/N-2002-2004/N-2005-2010 are 4HE1-TC then 4HK1-TC only). P550973 is a real Donaldson product for a real, different Isuzu platform -- not a data-entry duplicate of P502042, and not applicable to this row."
         }
       ],
-      "donaldson_relationship_type": null,
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
       "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
-      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_status": "NOT_BASE_DONALDSON_MANUFACTURES",
       "fleetguard_part": null,
       "fleetguard_source": null,
       "fleetguard_corroboration": [],
       "supporting_crossrefs": [],
-      "base_source_brand": null,
-      "base_source_part": null,
-      "elimfilters_existing_sku": null,
-      "elimfilters_base_decision": null,
-      "decision_status": "CONFLICTING",
-      "confidence": null,
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P502042",
+      "elimfilters_existing_sku": "EL82042",
+      "elimfilters_base_decision": {
+        "sku": "EL82042",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "high",
       "caveats": [
-        "EXCEPTION AUDIT 2026-09-23: exhaustively re-checked scripts/donaldson_crossref_flat.csv row-by-row for both candidates at OEM vs CROSSREF tier (Donaldson's own OEM list is a stronger claim than an aggregated CROSSREF entry). Isuzu 2906548000 (printed 2-90654-800-0) is CROSSREF-tier ONLY on both P502042 and P550973 -- neither carries an OEM-tier row for this exact number, so this specific number's tie cannot be broken by evidence tier.",
-        "Family-level signal (not used to declare this number resolved, recorded for the next pass): P550973 carries direct Donaldson OEM-tier rows for a whole family of adjacent N-Series Isuzu numbers (8970254642, 8970254631, 8971482800, 8917482800, 8970492820, 8943963754, 2906546000, 97148280, 97719921, 5873104530, CFS1215) confirmed in scripts/donaldson_crossref_flat.csv. P502042 has ZERO OEM-tier Isuzu rows anywhere in the same file -- every one of its Isuzu associations is CROSSREF-tier, including several through GM-shared '8-97xxx' numbers. This is suggestive that P550973 is Donaldson's real Isuzu-specific N-Series product and P502042's Isuzu ties are third-party aggregation noise, but it is not proof for the one number actually in dispute, so no base is taken from it.",
-        "data/dims.csv confirms both P502042 (124mm OD x 120mm) and P550973 (123mm OD x 149mm) are real, currently-catalogued, physically distinct ELIMFILTERS SKUs (EL82042 and EL80973) -- this is not a data-entry duplicate, it is two genuinely different spin-on combination filters sharing one ambiguous Isuzu cross-reference in Donaldson's own aggregated data.",
-        "Donaldson does not recognise 2906542701 or 2906548100 anywhere in the first-party capture (flat CSV, lube/fuel/air results, competitor matrix, OEM matrix, import-ready, homologation matrix -- all checked, zero hits). Recorded, not normalised, per Phase 2's own anomaly flag.",
-        "Known historical candidate P502042 -> EL82042 remains NOT_CANONICAL for this row: its only Isuzu link is the same disputed CROSSREF-tier 2906548000 that P550973 equally carries.",
-        "ANOMALOUS OEN SEMANTICS: Donaldson printing 2906548000 as 2-90654-800-0 on both candidates confirms the number exists in Donaldson data as an Isuzu 2-xxxxx-xxx-x style reference. It is recorded here and is NOT used to normalise the Phase 2 row -- 2906542701 and 2906548100 remain unconfirmed by any source."
+        "SINGLE-CASE MICROINVESTIGATION 2026-09-24: the tie between P502042 and P550973 for the disputed number 2906548000 is resolved not by evidence tier (both are CROSSREF-tier for this exact number, as the prior pass found) and not by family-level OEM-tie count (which favoured P550973 and was explicitly NOT used as proof), but by direct EQUIPMENT-APPLICATION evidence from scripts/donaldson_lube_results.json: P502042's own equipment list names 4HE1-TC and 4HK1-TC engines in NPR/NQR/NPS trucks -- the exact two engines Phase 1 assigns to every block this row binds to (N-2000-2001, N-2002-2004: 4HE1-TC; N-2005-2010: 4HK1-TC). P550973's equipment list names only the 4BB1/4BD1/4BD2 engine family, which Phase 1 never assigns to any Isuzu diesel block in this closure. This is an objective platform mismatch, not a preference.",
+        "Donaldson's own 'Primary Application' field further distinguishes the two products: P502042's is ISUZU 8970967770, P550973's is ISUZU 8970492820 -- two different designated primary Isuzu references, neither of which is the disputed 2906548000 itself. Both parts' 'alternatives' arrays are empty in Donaldson's data, so Donaldson itself does not declare a supersession or alternate relationship between them: they are two distinct, unrelated products that happen to share a thread size (1 1/2-12 UN) and both absorbed the same third-party-aggregated Isuzu CROSSREF entry for 2906548000.",
+        "Physical comparison confirms two different products, not a data duplicate: P502042 is 124mm x 120mm with a bypass valve and 16-micron/50% efficiency media (JIS D 1611); P550973 is 123mm x 149mm (29mm longer) with no bypass valve and a coarser 50-micron/99% media. Both are dims.csv-verified, currently-catalogued, distinct ELIMFILTERS SKUs (EL82042, EL80973) -- selecting P502042 does not create or resolve a duplicate mapping, it simply declines to use P550973 for this specific Isuzu row.",
+        "2906542701 and 2906548100, the other two numbers in this Phase 2 row, remain unconfirmed by Donaldson anywhere in the first-party capture (checked again this pass: flat CSV, lube/fuel/air results, competitor matrix, OEM matrix, import-ready, homologation matrix -- zero hits). Only 2906548000 is Donaldson-recognised, and only via the CROSSREF tier on P502042 (and, rejected, on P550973). This is why the decision is PARTIAL rather than a full closure of the row, independent of the Phase 2 row's own PARTIAL evidence_status which caps decision_status at PARTIAL regardless.",
+        "Known historical candidate P502042 -> EL82042 is RECONFIRMED CANONICAL for this row on equipment-application grounds, reversing the EXCEPTION AUDIT 2026-09-23 pass's conclusion, which had correctly identified the CROSSREF-tier/OEM-tier ambiguity but had not yet pulled the full equipment-application records for either candidate.",
+        "ANOMALOUS OEN SEMANTICS (unchanged): Donaldson printing 2906548000 as 2-90654-800-0 confirms the number exists in Donaldson data as an Isuzu 2-xxxxx-xxx-x style reference. It is recorded here and is NOT used to normalise the Phase 2 row -- 2906542701 and 2906548100 remain unconfirmed by any source."
       ],
       "evidence": [
         {
@@ -684,15 +718,25 @@
           "channel": "DONALDSON_CROSSREF_LIST_TIER",
           "published_under": "ISUZU",
           "published_as": "2-90654-800-0",
-          "tier": "CROSSREF"
+          "tier": "CROSSREF (rejected candidate: equipment mismatch)"
         },
         {
-          "isuzu_oe_oen": "8970254642 (family, not this row)",
+          "isuzu_oe_oen": "N/A -- equipment record, not an OE number",
+          "part": "P502042",
+          "channel": "DONALDSON_EQUIPMENT_APPLICATION",
+          "published_under": "ISUZU NPR70/NQR70/NPR75/NQR75/NPS75",
+          "published_as": "4HE1(-TC) 4.8L, 4HK1-TCN/TCC/XS 5.2L",
+          "tier": "EQUIPMENT_APPLICATION",
+          "source_file": "scripts/donaldson_lube_results.json"
+        },
+        {
+          "isuzu_oe_oen": "N/A -- equipment record, not an OE number",
           "part": "P550973",
-          "channel": "DONALDSON_OEM_LIST",
-          "published_under": "ISUZU",
-          "published_as": "8970254642",
-          "tier": "OEM"
+          "channel": "DONALDSON_EQUIPMENT_APPLICATION",
+          "published_under": "ISUZU NPR / W4",
+          "published_as": "4BD1T, 4BD2T, 4BD2TC, 4BB1T",
+          "tier": "EQUIPMENT_APPLICATION (does not match this row engine scope)",
+          "source_file": "scripts/donaldson_lube_results.json"
         }
       ]
     },
@@ -2475,6 +2519,14 @@
       "decision_status": "PARTIAL",
       "review_state": "READY_FOR_REVIEW",
       "published": false
+    },
+    {
+      "phase2_row_id": "P2-N-LUBE-1998-2010",
+      "sku": "EL82042",
+      "donaldson_part": "P502042",
+      "decision_status": "PARTIAL",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
     }
   ],
   "next_actions": [
@@ -2503,6 +2555,23 @@
         "BLOCKED_DONALDSON": 4
       },
       "note": "Exception closure pass over the 15 residual CONFLICTING/BLOCKED_DONALDSON rows. Re-examined scripts/donaldson_crossref_flat.csv at OEM-vs-CROSSREF evidence tier (a distinction the prior pass did not apply), cross-verified every candidate SKU against data/dims.csv physical dimensions, and re-ran the Donaldson-part-to-ELIMFILTERS-SKU duplicate audit for every part touched by Isuzu Phase 3. 6 of 7 CONFLICTING rows resolved to PARTIAL or BLOCKED_DONALDSON with defensible, evidence-tiered reasoning; 1 (P2-N-LUBE-1998-2010) stays CONFLICTING because the disputed Isuzu number is tied to two different Donaldson parts at the identical CROSSREF evidence tier with no tie-breaker found. Phase 1, Phase 2 and phase3_status (CLOSED) are unchanged; this is an exception cleanup layered on top of the existing closure, not a reopening of it."
+    },
+    {
+      "on": "2026-09-24",
+      "status": "CLOSED_WITH_BLOCKERS",
+      "starting_counts": {
+        "VERIFIED_BASE": 4,
+        "PARTIAL": 10,
+        "CONFLICTING": 1,
+        "BLOCKED_DONALDSON": 4
+      },
+      "final_counts": {
+        "VERIFIED_BASE": 4,
+        "PARTIAL": 11,
+        "CONFLICTING": 0,
+        "BLOCKED_DONALDSON": 4
+      },
+      "note": "SINGLE-CASE MICROINVESTIGATION: resolved the one remaining CONFLICTING row, P2-N-LUBE-1998-2010 / 2906548000, by pulling full Donaldson equipment-application records (scripts/donaldson_lube_results.json) for both candidates rather than relying on evidence tier or family-level OEM-tie count alone, both of which were tied or ambiguous on this exact number. P502042 (existing SKU EL82042) explicitly serves 4HE1-TC/4HK1-TC-engined NPR/NQR/NPS trucks, matching every Phase 1 block this row binds to; P550973 (existing SKU EL80973) explicitly serves only the unrelated, older 4BB1/4BD1/4BD2 engine family and is rejected as a base. This did not reopen Phase 1, Phase 2, the rest of Phase 3, or the P550008 legacy-cleanup item; those remain exactly as the 2026-09-23 exception-closure pass left them. CONFLICTING is now 0."
     }
   ],
   "duplicate_mapping_audit": {
@@ -2543,6 +2612,7 @@
       "result": "scripts/donaldson_crossref_flat.csv: P552564 has no EF50953 row (only EF92564). competitor_cross_references_ld.csv and external_cross_reference_master_ld.csv: EF50953 rows reference P502155, never P552564. 1132400740 (shared with EF50953's own MANN WK953 grouping) is NOT corroborated by the first-party Donaldson capture for P502155 -- P502155 does not appear anywhere in scripts/donaldson_crossref_flat.csv. Per this manifest's priority rule, the first-party capture (P552564/EF92564) prevails; the legacy WK953 grouping's inclusion of 1132400740 under EF50953/P502155 is legacy CROSSREF noise, not corroboration.",
       "regression_guard": "tests/p552564-canonical-mapping.test.js (added in PR #737, unmodified by this pass) already asserts this exact invariant against the raw CSV files. This pass adds a companion assertion in tests/isuzu-us-diesel-closure.test.js checking the same invariant against this JSON file's own resolution_rows, so a future edit to either the CSVs or this file independently trips a test.",
       "generator_check": "Searched the repository for scripts that write competitor_cross_references_ld.csv / external_cross_reference_master_ld.csv (phase3cde_build_ld_enrichment_master.js and related phase3/phase4 scripts). None of them hardcodes P552564, P502155 or EF50953 -- the wrong mapping was bad source/scrape data reflected in a one-time build, not a live defect in the generator itself, so no generator code change was needed beyond the CSV fix and test already merged in PR #737."
-    }
+    },
+    "p2_n_lube_1998_2010_note": "Resolved 2026-09-24 by equipment-application evidence (see resolution_rows[P3-05-N-LUBE-1998-2010]). No duplicate ELIMFILTERS mapping was created or found: EL82042 maps 1:1 to P502042 and EL80973 maps 1:1 to P550973 in every source checked (scripts/donaldson_crossref_flat.csv, donaldson_oem_matrix.json, donaldson_competitor_matrix.json) -- selecting P502042 as base for this row does not affect EL80973's own separate identity."
   }
 }

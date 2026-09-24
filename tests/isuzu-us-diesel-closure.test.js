@@ -1074,8 +1074,14 @@ test('EXCEPTION 9: no change to the Phase 2 OEN truth', () => {
 
 test('EXCEPTION 10: assembly, element and kit candidates are not fused across the re-resolved rows', () => {
   const lube = phase3.resolution_rows.find((r) => r.row_id === 'P3-05-N-LUBE-1998-2010');
-  assert.equal(lube.base_source_part, null, 'the disputed 2906548000 candidates stay documented, not merged into a base');
+  // SINGLE-CASE MICROINVESTIGATION 2026-09-24 resolved this row to P502042 on
+  // equipment-application grounds; both candidates stay documented in
+  // donaldson_candidates (P550973 explicitly marked rejected), never silently
+  // dropped even though only one became the base.
+  assert.equal(lube.base_source_part, 'P502042');
   assert.ok(lube.donaldson_candidates.some((c) => c.part === 'P502042') && lube.donaldson_candidates.some((c) => c.part === 'P550973'));
+  const rejected = lube.donaldson_candidates.find((c) => c.part === 'P550973');
+  assert.match(rejected.verdict, /MISMATCH|REJECTED/);
   const trans = phase3.resolution_rows.find((r) => r.row_id === 'P3-12-N-TRANS');
   assert.equal(trans.base_source_part, null, 'a transmission cartridge OEN must never resolve to an engine-oil spin-on base');
   const fLube = phase3.resolution_rows.find((r) => r.row_id === 'P3-13-F-LUBE-1987-2008');
@@ -1099,10 +1105,21 @@ test('EXCEPTION 12: nothing from this pass is auto-published', () => {
 });
 
 test('EXCEPTION 13: every CONFLICTING row ends resolved or carries an explicit, evidence-tiered justification', () => {
+  // SINGLE-CASE MICROINVESTIGATION 2026-09-24 resolved the one row this
+  // exception pass had left CONFLICTING (P2-N-LUBE-1998-2010) using Donaldson
+  // equipment-application evidence, so CONFLICTING is now 0 across the file.
   const conflicting = phase3.resolution_rows.filter((r) => r.decision_status === 'CONFLICTING');
-  assert.equal(conflicting.length, 1, 'the exception pass must reduce CONFLICTING from 7 to 1');
-  assert.equal(conflicting[0].row_id, 'P3-05-N-LUBE-1998-2010');
-  assert.ok(conflicting[0].caveats.some((c) => /CROSSREF/.test(c) && /OEM/.test(c)), 'the remaining CONFLICTING row must document the evidence-tier reason it cannot be resolved');
+  assert.equal(conflicting.length, 0, 'the single-case microinvestigation must resolve the last CONFLICTING row');
+
+  const lube = phase3.resolution_rows.find((r) => r.row_id === 'P3-05-N-LUBE-1998-2010');
+  assert.equal(lube.decision_status, 'PARTIAL');
+  assert.equal(lube.base_source_part, 'P502042');
+  assert.equal(lube.elimfilters_existing_sku, 'EL82042');
+  // The resolution rests on equipment-application evidence, not the tied
+  // OEM-vs-CROSSREF tier or the rejected family-level inference -- both must
+  // still be documented (task requirement: don't hide that they were tied).
+  assert.ok(lube.caveats.some((c) => /CROSSREF/.test(c)), 'must still document that evidence tier alone was tied on this number');
+  assert.ok(lube.caveats.some((c) => /EQUIPMENT[- ]APPLICATION/i.test(c) || /4HE1-TC/.test(c)), 'must document the equipment-application evidence that actually broke the tie');
 });
 
 test('EXCEPTION 14: every BLOCKED_DONALDSON row shows exact search evidence', () => {
@@ -1127,9 +1144,14 @@ test('EXCEPTION 15: no active generator can recreate the P552564/EF50953 stale m
 });
 
 test('EXCEPTION AUDIT FINAL: counts match the reported starting and final tallies', () => {
+  assert.ok(phase3.exception_audit_history.length >= 2, 'must carry both the 2026-09-23 exception pass and the 2026-09-24 single-case microinvestigation as separate history entries');
+  const first = phase3.exception_audit_history[0];
+  assert.deepEqual(first.starting_counts, { VERIFIED_BASE: 4, PARTIAL: 5, CONFLICTING: 7, BLOCKED_DONALDSON: 3 });
+  assert.deepEqual(first.final_counts, { VERIFIED_BASE: 4, PARTIAL: 10, CONFLICTING: 1, BLOCKED_DONALDSON: 4 });
+
   const history = phase3.exception_audit_history[phase3.exception_audit_history.length - 1];
-  assert.deepEqual(history.starting_counts, { VERIFIED_BASE: 4, PARTIAL: 5, CONFLICTING: 7, BLOCKED_DONALDSON: 3 });
-  assert.deepEqual(history.final_counts, { VERIFIED_BASE: 4, PARTIAL: 10, CONFLICTING: 1, BLOCKED_DONALDSON: 4 });
+  assert.deepEqual(history.starting_counts, { VERIFIED_BASE: 4, PARTIAL: 10, CONFLICTING: 1, BLOCKED_DONALDSON: 4 });
+  assert.deepEqual(history.final_counts, { VERIFIED_BASE: 4, PARTIAL: 11, CONFLICTING: 0, BLOCKED_DONALDSON: 4 });
 
   const counts = phase3.coverage.decision_status;
   assert.equal(counts.VERIFIED_BASE, history.final_counts.VERIFIED_BASE);
@@ -1140,6 +1162,147 @@ test('EXCEPTION AUDIT FINAL: counts match the reported starting and final tallie
   assert.equal(phase3.exception_audit_status, 'CLOSED_WITH_BLOCKERS');
   assert.equal(phase3.phase3_status, 'CLOSED', 'phase3_status must not be degraded by an exception cleanup pass');
 
+  const result = validateClosure();
+  assert.deepEqual(result.errors, []);
+});
+
+// ---------------------------------------------------------------------------
+// SINGLE-CASE MICROINVESTIGATION (2026-09-24) -- resolves the one remaining
+// CONFLICTING row from the 2026-09-23 exception pass, P2-N-LUBE-1998-2010 /
+// disputed Isuzu OE 2906548000, using Donaldson equipment-application
+// records rather than evidence tier or family-level inference (both of which
+// were genuinely tied on this exact number).
+// ---------------------------------------------------------------------------
+
+test('MICROCASE 1: 2906548000 has a single resolution, not a silent conflict', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-1998-2010');
+  assert.equal(row.decision_status, 'PARTIAL');
+  assert.notEqual(row.decision_status, 'CONFLICTING');
+  assert.equal(row.donaldson_status, 'DONALDSON_VERIFIED');
+  assert.equal(row.base_source_brand, 'DONALDSON');
+  assert.equal(row.base_source_part, 'P502042');
+});
+
+test('MICROCASE 2: P502042 was selected on evidence superior to P550973', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-1998-2010');
+  const p502042 = row.donaldson_candidates.find((c) => c.part === 'P502042');
+  const p550973 = row.donaldson_candidates.find((c) => c.part === 'P550973');
+  assert.ok(p502042.equipment_applications_matching_this_row_engine_scope.length > 0, 'P502042 must have a direct engine-scope match');
+  assert.equal(p550973.equipment_applications_matching_this_row_engine_scope.length, 0, 'P550973 must have no match to this row\'s engine scope');
+  assert.match(p502042.verdict, /DIRECT_MATCH/);
+  assert.match(p550973.verdict, /MISMATCH|REJECTED/);
+});
+
+test('MICROCASE 3: the rejected candidate P550973 is documented, not silently dropped', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-1998-2010');
+  const p550973 = row.donaldson_candidates.find((c) => c.part === 'P550973');
+  assert.ok(p550973, 'P550973 must still appear as a documented, considered candidate');
+  assert.notEqual(row.base_source_part, 'P550973');
+  assert.ok(p550973.equipment_applications_not_matching.length > 0);
+});
+
+test('MICROCASE 4: the decision was not made by counting cross-references', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-1998-2010');
+  // P550973 has strictly MORE Isuzu OEM-tier crossref entries in the raw
+  // capture than P502042 has of any tier -- if crossref count had decided
+  // this, P550973 would have won. It did not win, which is itself proof the
+  // decision was not made on crossref volume.
+  const flat = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'donaldson_crossref_flat.csv'), 'utf8');
+  const p550973IsuzuLines = flat.split('\n').filter((l) => l.startsWith('EL80973,') && l.includes(',ISUZU,')).length;
+  const p502042IsuzuLines = flat.split('\n').filter((l) => l.startsWith('EL82042,') && l.includes(',ISUZU,')).length;
+  assert.ok(p550973IsuzuLines > p502042IsuzuLines, 'sanity check: P550973 must genuinely have more raw Isuzu crossref lines than P502042');
+  assert.equal(row.base_source_part, 'P502042', 'the part with FEWER Isuzu crossref lines was correctly selected on equipment-application grounds, not crossref volume');
+});
+
+test('MICROCASE 5: family-level inference was not used as a substitute for direct evidence', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-1998-2010');
+  // The 2026-09-23 pass explicitly found the family-level OEM-tie signal
+  // favoured P550973 and explicitly declined to use it as proof. This pass's
+  // caveats must still carry that history rather than silently erasing it,
+  // while the actual decision must rest on the (different, direct) equipment
+  // evidence, not on family ties.
+  assert.ok(row.caveats.some((c) => /CROSSREF-tier ONLY|CROSSREF-tier for this exact number/.test(c) || /tied/.test(c)));
+  const p502042 = row.donaldson_candidates.find((c) => c.part === 'P502042');
+  assert.match(p502042.verdict, /equipment list|engine/i);
+  assert.doesNotMatch(p502042.verdict, /family/i);
+});
+
+test('MICROCASE 6: Phase 1 is not altered', () => {
+  const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
+  assert.equal(digest(phase1), 'f8c58b44aca6fec67ba640a2330a8a34c34db73e1654d7c410137cb6dbde30d6');
+});
+
+test('MICROCASE 7: Phase 2 is not altered', () => {
+  const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
+  assert.equal(digest(phase2), '0140e1a75cec66d1845d8c430123037088d1d262f6032a9d6f28a641e61c24b1');
+  const p2 = phase2.oen_rows.find((r) => r.row_id === 'P2-N-LUBE-1998-2010');
+  assert.deepEqual(p2.isuzu_oe_oen, ['2906542701', '2906548000', '2906548100']);
+});
+
+test('MICROCASE 8: no other Phase 3 row is affected', () => {
+  const untouchedIds = ['P3-01-N-AIR-1986-2005', 'P3-02-N-AIR-2006-ON', 'P3-03-N-LUBE-4JJ', 'P3-04-N-LUBE-2011-ON', 'P3-06-N-FUEL-4HE', 'P3-07-N-FUEL-2013-2021-A', 'P3-08-N-FUEL-2013-2021-B', 'P3-09-N-FUEL-2013-2021-C', 'P3-10-N-FUEL-HIGHCAP-2013-2021', 'P3-11-N-FWS-2022i-ON', 'P3-12-N-TRANS', 'P3-13-F-LUBE-1987-2008', 'P3-14-F-LUBE-2018-2021', 'P3-15-F-FUEL-1994-2004', 'P3-16-F-FUEL-2018-2020-A', 'P3-17-F-FUEL-2018-2020-B', 'P3-18-F-FUEL-2018-2020-C', 'P3-19-F-FUEL-2018-2020-D'];
+  assert.equal(untouchedIds.length, 18, 'sanity: every row except P3-05 itself');
+  const expectedDecisionStatus = {
+    'P3-01-N-AIR-1986-2005': 'VERIFIED_BASE', 'P3-02-N-AIR-2006-ON': 'VERIFIED_BASE', 'P3-03-N-LUBE-4JJ': 'VERIFIED_BASE', 'P3-06-N-FUEL-4HE': 'VERIFIED_BASE',
+    'P3-04-N-LUBE-2011-ON': 'BLOCKED_DONALDSON', 'P3-11-N-FWS-2022i-ON': 'BLOCKED_DONALDSON', 'P3-12-N-TRANS': 'BLOCKED_DONALDSON', 'P3-14-F-LUBE-2018-2021': 'BLOCKED_DONALDSON',
+    'P3-07-N-FUEL-2013-2021-A': 'PARTIAL', 'P3-08-N-FUEL-2013-2021-B': 'PARTIAL', 'P3-09-N-FUEL-2013-2021-C': 'PARTIAL', 'P3-10-N-FUEL-HIGHCAP-2013-2021': 'PARTIAL',
+    'P3-13-F-LUBE-1987-2008': 'PARTIAL', 'P3-15-F-FUEL-1994-2004': 'PARTIAL', 'P3-16-F-FUEL-2018-2020-A': 'PARTIAL', 'P3-17-F-FUEL-2018-2020-B': 'PARTIAL',
+    'P3-18-F-FUEL-2018-2020-C': 'PARTIAL', 'P3-19-F-FUEL-2018-2020-D': 'PARTIAL'
+  };
+  for (const id of untouchedIds) {
+    const row = phase3.resolution_rows.find((r) => r.row_id === id);
+    assert.ok(row, id);
+    assert.equal(row.decision_status, expectedDecisionStatus[id], `${id} must be unaffected by the P3-05 microinvestigation`);
+  }
+});
+
+test('MICROCASE 9: Fleetguard is not used as a base for this row', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-1998-2010');
+  assert.equal(row.fleetguard_status, 'NOT_BASE_DONALDSON_MANUFACTURES');
+  assert.notEqual(row.base_source_brand, 'FLEETGUARD');
+  assert.equal(row.fleetguard_part, null);
+});
+
+test('MICROCASE 10: the selected ELIMFILTERS SKU already exists and is not duplicated', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-1998-2010');
+  assert.equal(row.elimfilters_existing_sku, 'EL82042');
+  assert.equal(row.elimfilters_base_decision.action, 'REUSE_EXISTING_SKU');
+  const catalogue = new Set(fs.readFileSync(path.join(__dirname, '..', 'data', 'dims.csv'), 'utf8').split('\n').map((l) => l.split(',')[0]));
+  assert.ok(catalogue.has('EL82042'));
+  // EL80973 (the rejected candidate's SKU) is untouched and keeps its own
+  // separate identity -- selecting P502042 for this row does not remap or
+  // delete EL80973 anywhere.
+  assert.ok(catalogue.has('EL80973'));
+  const skuByBase = new Map();
+  for (const r of phase3.resolution_rows) {
+    if (!r.base_source_part) continue;
+    const prior = skuByBase.get(r.base_source_part);
+    if (prior) assert.equal(prior, r.elimfilters_existing_sku, `${r.base_source_part} resolves to two different SKUs`);
+    skuByBase.set(r.base_source_part, r.elimfilters_existing_sku);
+  }
+  assert.equal(skuByBase.get('P502042'), 'EL82042');
+});
+
+test('MICROCASE 11: physical product type is consistent with LUBE_PRIMARY', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-1998-2010');
+  assert.equal(row.filter_position, 'LUBE_PRIMARY');
+  const base = row.donaldson_candidates.find((c) => c.part === row.base_source_part);
+  assert.equal(base.form.type, 'Combination');
+  assert.equal(base.form.style, 'Spin-On');
+  assert.doesNotMatch(row.isuzu_part_form, /TRANS|CARTRIDGE \(TRANS\)/);
+});
+
+test('MICROCASE 12: no direct SQL and no auto-publish for this row', () => {
+  assert.deepEqual(phase3.governance.catalog_writes_performed, []);
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-LUBE-1998-2010');
+  assert.equal(row.elimfilters_base_decision.published, false);
+  assert.equal(phase3.governance.publication_authorized, false);
+});
+
+test('MICROCASE FINAL: P550008 legacy cleanup and the rest of the exception audit are untouched', () => {
+  assert.ok(phase3.duplicate_mapping_audit.findings.some((f) => f.donaldson_part === 'P550008' && f.action_taken === 'none (out of this task\'s scope: not implicated in any live Isuzu base decision)'));
+  assert.equal(phase3.resolution_rows.length, 19);
+  assert.equal((phase3.blocked_oem_rows || []).length, 9);
   const result = validateClosure();
   assert.deepEqual(result.errors, []);
 });
