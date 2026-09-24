@@ -11,7 +11,6 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
   const canonicalKnowledge = platform.knowledgeCenterSlug ? getCanonicalKnowledgeBySlug(platform.knowledgeCenterSlug) : null;
   const standards = canonicalKnowledge?.standards ?? [];
   const platformMedia = platform.mediaImage ?? platform.heroImage;
-  const mediaIsBrandAsset = platformMedia.startsWith('/assets/');
 
   return (
     <main id="main-content" className={styles.page}>
@@ -33,11 +32,14 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         )}
         <div className={styles.heroShade} aria-hidden="true" />
         <h1 id="industrial-platform-title" className={styles.srOnly}>{platform.name} {platform.descriptor}</h1>
-        <img
-          className={styles.heroMark}
-          src={platformMedia}
-          alt={`${platform.name} — ${platform.descriptor}`}
-        />
+        {platform.heroMarkImage ? (
+          <img
+            className={styles.heroMark}
+            src={platform.heroMarkImage}
+            alt=""
+            aria-hidden="true"
+          />
+        ) : null}
       </section>
 
       <nav aria-label="Breadcrumb" style={{padding:'1rem clamp(1.15rem,6vw,6rem)',borderBottom:'1px solid rgba(255,255,255,.12)',background:'#020202'}}>
@@ -68,14 +70,8 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
               <p className={styles.lead}>{platform.summary}</p>
             </div>
             <figure className={styles.mediaFigure}>
-              <img
-                className={`${styles.mediaImage} ${mediaIsBrandAsset ? styles.brandMediaImage : ''}`}
-                src={platformMedia}
-                alt={mediaIsBrandAsset ? `${platform.name} — ${platform.descriptor}` : `${platform.descriptor} industrial application context`}
-              />
-              {mediaIsBrandAsset ? null : (
-                <figcaption>Representative industrial application context. Final solution remains project-specific.</figcaption>
-              )}
+              <img className={styles.mediaImage} src={platformMedia} alt={`${platform.descriptor} industrial application context`} />
+              <figcaption>Representative industrial application context. Final solution remains project-specific.</figcaption>
             </figure>
           </div>
         </div>
