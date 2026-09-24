@@ -114,7 +114,7 @@ Before a Canonical SKU can be minted, the external reference used to define the 
 
 Industrial family anchors v1:
 
-- TC-AIR-01 — General Air Filtration → CAMFIL
+- TC-AIR-01 — GAIRFIL™ — General Air Filtration → CAMFIL
 - TC-AIR-02 — HE-CRIVA™ → CAMFIL
 - TC-AIR-03 — MA-TREA™ → CAMFIL
 - TC-DUST-01 — FUMEVRA™ → DONALDSON
@@ -171,8 +171,10 @@ Product development continues through the existing EBP `pre-SKU` Product Enginee
 
 ## AEREMIS™ — Air Technologies
 
-### General Air Filtration
-Technology family: descriptive
+### GAIRFIL™ — General Air Filtration
+Technology:
+- GAIRFIL™
+Tagline: Engineered Air Protection
 Core: TC-AIR-01
 
 ### High-Efficiency / Critical Air Filtration
