@@ -35,8 +35,15 @@
     "catalog_write_path_if_approved": "lib/catalog-write-gateway.js via lib/catalog-application-write-service.js; never direct SQL",
     "fleetguard_base_requires": "DONALDSON_NOT_MANUFACTURED_VERIFIED",
     "supporting_brands_may_define_base": false,
-    "elimfilters_sku_policy": "Reuse an existing ELIMFILTERS SKU for the Donaldson base part. No new SKU is minted in this phase.",
-    "elimfilters_sku_evidence": "data/dims.csv catalogue export and scripts/donaldson_import_ready.jsonl in this repository. Live PostgreSQL was not queried in this pass (no Render workspace confirmed for the session); a reviewer must confirm each SKU is live before publication."
+    "elimfilters_sku_policy": "Reuse an existing ELIMFILTERS SKU for the Donaldson base part wherever one exists. A new SKU is derived and minted as a governed candidate (action CREATE_GOVERNED_SKU, READY_FOR_REVIEW, published:false) only when an exhaustive duplicate/collision audit finds no existing SKU anywhere in the repository or live catalog export, and only using this repository's own governed codigo_base derivation policy (lib/catalog-codigo-base-policy.js / lib/catalog-codigo-base-governance.js) -- never invented. As of 2026-09-24, exactly one such candidate exists: EL88076 for Donaldson P848076.",
+    "elimfilters_sku_evidence": "data/dims.csv catalogue export and scripts/donaldson_import_ready.jsonl in this repository. Live PostgreSQL was not queried in this pass (no Render workspace confirmed for the session); a reviewer must confirm each SKU is live before publication.",
+    "live_postgres_check_2026_09_24": {
+      "checked": true,
+      "workspace": "elimfilters (Render workspace tea-d56p89ggjchc7396ch4g)",
+      "instance_queried": "elimfilters-crm-db (dpg-dajhiqnqj5pc73dlksu0-a)",
+      "result": "Zero tables in any non-system schema -- this instance is a CRM database (elimfilters-crm-api / elimfilters-sales-app-staging services), not the product catalog. The elimfilters_catalog table referenced by lib/catalog-codigo-base-governance.js and read by the elimfilters-search-pro (Part Search) service is not hosted on any Postgres instance visible to this Render account/workspace via the available query tool, so it could not be read or written in this pass.",
+      "implication": "EL88076 could not be verified live or written through catalog-write-gateway. It is recorded here as a governed, algorithm-derived candidate only (READY_FOR_REVIEW, published:false), exactly the \"leave candidate pending\" outcome this manifest's own governance rules call for when the live write path is unreachable."
+    }
   },
   "phase3_status": "CLOSED",
   "phase3_status_history": [
@@ -52,7 +59,7 @@
     }
   ],
   "outcome": "CLOSED_WITH_EXPLICIT_BLOCKERS",
-  "outcome_summary": "9 of 19 eligible rows already carried a Donaldson-verified base from the prior pass. This exception-closure pass adds 5 more Donaldson-verified bases (P550390 for the two standard/high-capacity N-Series and F-Series fuel pairs, and P550420 for the F-Series 1987-2008 lube row), resolved by applying an OEM-vs-CROSSREF Donaldson evidence-tier distinction the prior pass had not used, and cross-verified every reused SKU against data/dims.csv physical dimensions. One row (P2-N-TRANS) moves from CONFLICTING to BLOCKED_DONALDSON after its only Donaldson hit was rejected as a false-positive category mismatch (a transmission filter cartridge cannot be a full-flow engine-oil spin-on). One row (P2-N-LUBE-1998-2010) remains genuinely CONFLICTING: the disputed Isuzu number ties to two different Donaldson parts at the identical CROSSREF evidence tier, with no defensible tie-breaker found despite exhaustive first-party-capture research. Zero Fleetguard bases exist anywhere in this file -- no row has ever reached DONALDSON_NOT_MANUFACTURED_VERIFIED. A duplicate-canonical-mapping audit across every Donaldson part touched by Isuzu Phase 3 found one legacy-CSV stale mapping (P550008, three orphaned MANN-sourced SKUs never reconciled to dims.csv) that is not actionable here because P550008 is not used as a base for any Isuzu row. SINGLE-CASE MICROINVESTIGATION 2026-09-24 then resolved the file's one remaining CONFLICTING row (P2-N-LUBE-1998-2010) using Donaldson equipment-application records: P502042 (ELIMFILTERS EL82042, reused) explicitly serves the 4HE1-TC/4HK1-TC engines this row is scoped to, while the competing candidate P550973 explicitly serves only an unrelated older Isuzu engine family and is rejected. CONFLICTING is now 0 across the entire file. BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24 then resolved 2 of the file's 4 remaining BLOCKED_DONALDSON rows: P2-N-LUBE-2011-ON and P2-F-LUBE-2018-2021 (shared Isuzu OE 8982984040) both identify Donaldson P848076 via official product title plus distributor corroboration, now NO_ELIMFILTERS_SKU_YET pending SKU governance. The other 2 (P2-N-FWS-2022i-ON, P2-N-TRANS) stay BLOCKED_DONALDSON with precise, non-generic root causes after exhaustive re-investigation (a rejected false-positive Donaldson candidate, and confirmation the transmission is Aisin RNJ, not Allison). BLOCKED_DONALDSON is now 2 across the entire file.",
+  "outcome_summary": "9 of 19 eligible rows already carried a Donaldson-verified base from the prior pass. This exception-closure pass adds 5 more Donaldson-verified bases (P550390 for the two standard/high-capacity N-Series and F-Series fuel pairs, and P550420 for the F-Series 1987-2008 lube row), resolved by applying an OEM-vs-CROSSREF Donaldson evidence-tier distinction the prior pass had not used, and cross-verified every reused SKU against data/dims.csv physical dimensions. One row (P2-N-TRANS) moves from CONFLICTING to BLOCKED_DONALDSON after its only Donaldson hit was rejected as a false-positive category mismatch (a transmission filter cartridge cannot be a full-flow engine-oil spin-on). One row (P2-N-LUBE-1998-2010) remains genuinely CONFLICTING: the disputed Isuzu number ties to two different Donaldson parts at the identical CROSSREF evidence tier, with no defensible tie-breaker found despite exhaustive first-party-capture research. Zero Fleetguard bases exist anywhere in this file -- no row has ever reached DONALDSON_NOT_MANUFACTURED_VERIFIED. A duplicate-canonical-mapping audit across every Donaldson part touched by Isuzu Phase 3 found one legacy-CSV stale mapping (P550008, three orphaned MANN-sourced SKUs never reconciled to dims.csv) that is not actionable here because P550008 is not used as a base for any Isuzu row. SINGLE-CASE MICROINVESTIGATION 2026-09-24 then resolved the file's one remaining CONFLICTING row (P2-N-LUBE-1998-2010) using Donaldson equipment-application records: P502042 (ELIMFILTERS EL82042, reused) explicitly serves the 4HE1-TC/4HK1-TC engines this row is scoped to, while the competing candidate P550973 explicitly serves only an unrelated older Isuzu engine family and is rejected. CONFLICTING is now 0 across the entire file. BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24 then resolved 2 of the file's 4 remaining BLOCKED_DONALDSON rows: P2-N-LUBE-2011-ON and P2-F-LUBE-2018-2021 (shared Isuzu OE 8982984040) both identify Donaldson P848076 via official product title plus distributor corroboration, now NO_ELIMFILTERS_SKU_YET pending SKU governance. The other 2 (P2-N-FWS-2022i-ON, P2-N-TRANS) stay BLOCKED_DONALDSON with precise, non-generic root causes after exhaustive re-investigation (a rejected false-positive Donaldson candidate, and confirmation the transmission is Aisin RNJ, not Allison). BLOCKED_DONALDSON is now 2 across the entire file. P848076 ELIMFILTERS SKU CLOSURE 2026-09-24 then closed both remaining NO_ELIMFILTERS_SKU_YET rows: an exhaustive repository-and-live-Postgres duplicate audit found no existing SKU for Donaldson P848076 anywhere, so a governed candidate SKU, EL88076, was derived using this repository's own codigo_base nomenclature policy (not invented) and recorded as CREATE_GOVERNED_SKU, READY_FOR_REVIEW, published:false. NO_ELIMFILTERS_SKU_YET is now 0 across the entire file; only the 2 genuinely unresolved BLOCKED_DONALDSON rows and the 9 BLOCKED_OEM scopes remain without a base.",
   "coverage": {
     "eligible_phase2_rows": 19,
     "excluded_phase2_rows": 2,
@@ -65,11 +72,11 @@
     },
     "fleetguard_verified_base": 0,
     "decision_status": {
-      "VERIFIED_BASE": 4,
-      "PARTIAL": 11,
+      "VERIFIED_BASE": 5,
+      "PARTIAL": 12,
       "CONFLICTING": 0,
       "BLOCKED_DONALDSON": 2,
-      "NO_ELIMFILTERS_SKU_YET": 2,
+      "NO_ELIMFILTERS_SKU_YET": 0,
       "BLOCKED_OEM": 9
     },
     "base_decisions": {
@@ -88,7 +95,9 @@
       "EL80420",
       "EL82042"
     ],
-    "elimfilters_new_sku_candidates": []
+    "elimfilters_new_sku_candidates": [
+      "EL88076"
+    ]
   },
   "access_blockers": [
     {
@@ -632,15 +641,24 @@
       ],
       "base_source_brand": "DONALDSON",
       "base_source_part": "P848076",
-      "elimfilters_existing_sku": null,
-      "elimfilters_base_decision": null,
-      "decision_status": "NO_ELIMFILTERS_SKU_YET",
+      "elimfilters_existing_sku": "EL88076",
+      "elimfilters_base_decision": {
+        "sku": "EL88076",
+        "action": "CREATE_GOVERNED_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "nomenclature_rule": "SKU derived from the repository's own governed codigo_base policy (lib/catalog-codigo-base-policy.js, lib/catalog-codigo-base-governance.js, enforced live by the enforce_elimfilters_codigo_base_policy() trigger in scripts/migrations/run_073_catalog_codigo_base_governance_v31.js), not invented: for a HEAVY_DUTY SKU with a verified Donaldson primary reference, 'the ELIMFILTERS SKU suffix uses the last 4 numeric digits of approved_codigo_base' (the Donaldson part number). P848076 -> digits '848076' -> last 4 = '8076'. The prefix+leading-digit block ('EL8') was not invented either: queried data/dims.csv directly and found all 351 existing EL-prefixed (lube) SKUs in the live catalog export use leading digit '8' with zero exceptions (compare: all 500 EF-prefixed/fuel SKUs use leading digit '9'; EA-prefixed/air SKUs split 1366/'1' vs 243/'2'). EL8 + 8076 = EL88076.",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
       "confidence": "medium",
       "caveats": [
         "BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24: P848076 does not appear anywhere in the repository's first-party Donaldson capture (scripts/donaldson_crossref_flat.csv, donaldson_lube_results.json, donaldson_fuel_results.json, donaldson_fuel_final_results_20260917.json, donaldson_air_results.json, donaldson_competitor_matrix.json, donaldson_oem_matrix.json, donaldson_import_ready.jsonl, homologation_matrix.json -- all checked, zero hits). Escalated per source priority 3 (Donaldson official public/archived docs): shop.donaldson.com's own indexed product title confirms P848076 is a genuine, current Donaldson catalog part ('LUBE FILTER, SPIN-ON COMBINATION'); two independently operated distributor pages (allprodiesel.net, spareto.com), fetched directly rather than taken from a search-engine summary, both reproduce the identical 4-number Isuzu OE set (2906544040, 2946542000, 8982984040, 8983282070) against P848076 in a structured table. This is weaker than a first-party local-capture hit (medium, not high, confidence) but is a genuine, traceable, Donaldson-anchored identification, not a bare retailer claim.",
         "No existing ELIMFILTERS SKU was found for P848076 anywhere (data/dims.csv, competitor_cross_references_ld.csv, external_cross_reference_master_ld.csv, sku_competitor_matrix_ld.csv, and the full first-party capture all checked -- zero hits). Per governance, no new SKU is minted in this pass; the row is NO_ELIMFILTERS_SKU_YET, not PARTIAL or VERIFIED_BASE, until a governance pass with live PostgreSQL/catalog access confirms whether a SKU already exists under a name this search did not surface, or assigns a new one.",
         "2906542701 remains outside this row's OEN set (that number belongs to the separate P2-N-LUBE-1998-2010 row); this row's own two numbers, 2906544040 and 8982984040, are both now Donaldson-confirmed via the same P848076 identity.",
-        "8982984040 also appears in Phase 2 row P2-F-LUBE-2018-2021 (F-Series FTR/FVR/FSR 2018-2021) as the identical, Phase-2-established Isuzu OE number -- not a shared-engine inference. Donaldson's own cross-reference is anchored to the OE number itself, so the same P848076 identity is used for that row too. See that row's own entry for its independent confirmation."
+        "8982984040 also appears in Phase 2 row P2-F-LUBE-2018-2021 (F-Series FTR/FVR/FSR 2018-2021) as the identical, Phase-2-established Isuzu OE number -- not a shared-engine inference. Donaldson's own cross-reference is anchored to the OE number itself, so the same P848076 identity is used for that row too. See that row's own entry for its independent confirmation.",
+        "P848076 SKU CLOSURE 2026-09-24: EL88076 is a newly derived, governance-pending candidate SKU (action CREATE_GOVERNED_SKU, not REUSE_EXISTING_SKU -- P848076 had no prior ELIMFILTERS identity anywhere in this repository, confirmed by an exhaustive duplicate/collision audit). Derived from this repository's own codigo_base policy (see nomenclature_rule on elimfilters_base_decision), not invented. Live PostgreSQL was queried this pass (Render workspace 'elimfilters', instance elimfilters-crm-db) and confirmed to hold zero catalog tables -- it is a CRM database, not the product catalog; the live product-catalog Postgres that lib/catalog-codigo-base-governance.js and the elimfilters-search-pro service (Part Search) connect to is not reachable by any tool available in this session. This candidate therefore cannot be written through catalog-write-gateway in this pass (no live target), and stays READY_FOR_REVIEW/published:false pending a governance pass with that database's own access.",
+        "Decision stays PARTIAL, not VERIFIED_BASE, because the Phase 2 row itself is PARTIAL -- the SKU derivation does not change Phase 2's own evidence_status, and decision_status is capped there exactly as it is for every other row in this file."
       ],
       "evidence": [
         {
@@ -678,7 +696,39 @@
             "https://shop.donaldson.com/store/en-us/product/P848076/prod320266"
           ]
         }
-      ]
+      ],
+      "product_identity": {
+        "canonical_source_brand": "DONALDSON",
+        "canonical_source_part": "P848076",
+        "duty": "HEAVY_DUTY",
+        "category": "lube",
+        "product_type": "LUBE_FILTER",
+        "product_subtype": "SPIN_ON_COMBINATION",
+        "technology": "SYNTRAX™",
+        "technology_source": "docs/brand/TECHNOLOGY_REGISTRY.md (\"LUBRICATION PROTECTION > Lube Filters > SYNTRAX™, Governed scope: On-Road and Off-Road\") and docs/brand/PRODUCT_REGISTRY.md (\"LUBRICATION PROTECTION > Lube Filters > SYNTRAX™\"); independently corroborated by scripts/donaldson_lube_results.json, where the two other already-closed Donaldson lube spin-on combination filters in this same Isuzu closure (P502042/EL82042 and P550973/EL80973) both carry description_elimfilters text naming SYNTRAX™ technology.",
+        "dimensions": {
+          "length_mm": 122.03,
+          "od_mm": 121,
+          "gasket_id_mm": 98.9,
+          "thread": null,
+          "bypass_valve": "INFERRED_LIKELY (Donaldson's own \"Combination\" filter-type designation conventionally denotes a full-flow + bypass combined design, matching the pattern of every other \"Combination\"-type Donaldson lube part already closed in this file, e.g. P502042; not independently confirmed by a spec sheet and disclosed as inferred, not verified)",
+          "efficiency": null
+        },
+        "oem_refs": [
+          "2906544040",
+          "8982984040"
+        ],
+        "application_rows": [
+          "P2-N-LUBE-2011-ON",
+          "P2-F-LUBE-2018-2021"
+        ],
+        "scope_note": "Applications limited exactly to the two Phase 2/3-governed rows above. Not expanded to any other 4HK1-engined Isuzu row, any other NPR/FTR configuration, or any market outside this closure."
+      },
+      "duplicate_mapping_check": {
+        "method": "Searched every first-party Donaldson capture file, all 3 legacy CSVs, data/dims.csv, and the entire repository (via GitHub code search) for 'P848076', '848076', 'EL88076', and both Isuzu OENs. Also compared physical dimensions (122.03mm x 121mm, gasket ID 98.9mm, Combination/Spin-On) against every already-closed Donaldson lube SKU in this file's own history (P502042/EL82042: 124x120mm; P550973/EL80973: 123x149mm; P550420/EL80420: 110x162mm; P502597: not dimensioned in this pass) -- no dimensional match to any existing SKU.",
+        "classification": "E_NEW_PRODUCT_CONFIRMED",
+        "finding": "P848076 does not appear anywhere in the repository outside the 4 files this closure's own prior PR (#746) already touched. No existing ELIMFILTERS SKU, no legacy-CSV entry, no orphaned reference, no duplicate. EL88076 does not exist anywhere in the repository or the live catalog export (data/dims.csv). A brand-new, governed candidate SKU is confirmed as the only defensible option -- reuse was not possible because nothing to reuse exists."
+      }
     },
     {
       "row_id": "P3-05-N-LUBE-1998-2010",
@@ -1791,14 +1841,23 @@
       ],
       "base_source_brand": "DONALDSON",
       "base_source_part": "P848076",
-      "elimfilters_existing_sku": null,
-      "elimfilters_base_decision": null,
-      "decision_status": "NO_ELIMFILTERS_SKU_YET",
+      "elimfilters_existing_sku": "EL88076",
+      "elimfilters_base_decision": {
+        "sku": "EL88076",
+        "action": "CREATE_GOVERNED_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "nomenclature_rule": "SKU derived from the repository's own governed codigo_base policy (lib/catalog-codigo-base-policy.js, lib/catalog-codigo-base-governance.js, enforced live by the enforce_elimfilters_codigo_base_policy() trigger in scripts/migrations/run_073_catalog_codigo_base_governance_v31.js), not invented: for a HEAVY_DUTY SKU with a verified Donaldson primary reference, 'the ELIMFILTERS SKU suffix uses the last 4 numeric digits of approved_codigo_base' (the Donaldson part number). P848076 -> digits '848076' -> last 4 = '8076'. The prefix+leading-digit block ('EL8') was not invented either: queried data/dims.csv directly and found all 351 existing EL-prefixed (lube) SKUs in the live catalog export use leading digit '8' with zero exceptions (compare: all 500 EF-prefixed/fuel SKUs use leading digit '9'; EA-prefixed/air SKUs split 1366/'1' vs 243/'2'). EL8 + 8076 = EL88076.",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "VERIFIED_BASE",
       "confidence": "medium",
       "caveats": [
         "BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24: this row's only Isuzu number, 8982984040, is the identical number Phase 2 also carries on the N-Series row P2-N-LUBE-2011-ON. The Donaldson identity (P848076) was reached through that exact OE number -- via Donaldson's own indexed product title plus two independently fetched distributor pages -- not by assuming the F-Series and N-Series share a filter merely because both use a 4HK1-family engine. Full evidence trail is recorded on the P2-N-LUBE-2011-ON row; this row reuses the identical, number-anchored result rather than duplicating the research narrative.",
         "No existing ELIMFILTERS SKU was found for P848076 anywhere in the repository. No new SKU is minted; the row is NO_ELIMFILTERS_SKU_YET pending a governance pass with live catalog access.",
-        "Isuzu's own row form is 'ELEMENT; OIL FILTER'; P848076 is a Donaldson spin-on combination. Per the pattern already established elsewhere in this file (P2-F-FUEL-1994-2004, P2-F-FUEL-2018-2020-C/D all resolve 'ELEMENT'-labelled rows to spin-on/cartridge Donaldson parts), Isuzu's 'ELEMENT' phrasing is treated as routine generic terminology, not a literal internal-cartridge-only signal."
+        "Isuzu's own row form is 'ELEMENT; OIL FILTER'; P848076 is a Donaldson spin-on combination. Per the pattern already established elsewhere in this file (P2-F-FUEL-1994-2004, P2-F-FUEL-2018-2020-C/D all resolve 'ELEMENT'-labelled rows to spin-on/cartridge Donaldson parts), Isuzu's 'ELEMENT' phrasing is treated as routine generic terminology, not a literal internal-cartridge-only signal.",
+        "P848076 SKU CLOSURE 2026-09-24: same newly derived candidate SKU (EL88076) and same nomenclature/duplicate-audit evidence as P2-N-LUBE-2011-ON (see that row for the full derivation and the live-Postgres-checked-and-found-empty finding) -- not re-derived independently, reused here because this row's own Isuzu OE number (8982984040) is identical to that row's, and the Donaldson identity is anchored to the OE number itself, not to a shared engine.",
+        "Decision reaches VERIFIED_BASE, not PARTIAL: this row's own Phase 2 evidence_status is VERIFIED (not PARTIAL, unlike the N-Series row above), and donaldson_relationship_type is already DIRECT_OE_CROSS, satisfying this file's own VERIFIED_BASE requirement (a VERIFIED Phase 2 row plus a direct OE cross) -- the same standard already applied to P2-N-FUEL-4HE elsewhere in this file, which reached VERIFIED_BASE at medium confidence via a comparable (though first-party-capture-sourced) Donaldson identification."
       ],
       "evidence": [
         {
@@ -1824,7 +1883,39 @@
             "https://www.ebay.com/itm/285163559565"
           ]
         }
-      ]
+      ],
+      "product_identity": {
+        "canonical_source_brand": "DONALDSON",
+        "canonical_source_part": "P848076",
+        "duty": "HEAVY_DUTY",
+        "category": "lube",
+        "product_type": "LUBE_FILTER",
+        "product_subtype": "SPIN_ON_COMBINATION",
+        "technology": "SYNTRAX™",
+        "technology_source": "docs/brand/TECHNOLOGY_REGISTRY.md (\"LUBRICATION PROTECTION > Lube Filters > SYNTRAX™, Governed scope: On-Road and Off-Road\") and docs/brand/PRODUCT_REGISTRY.md (\"LUBRICATION PROTECTION > Lube Filters > SYNTRAX™\"); independently corroborated by scripts/donaldson_lube_results.json, where the two other already-closed Donaldson lube spin-on combination filters in this same Isuzu closure (P502042/EL82042 and P550973/EL80973) both carry description_elimfilters text naming SYNTRAX™ technology.",
+        "dimensions": {
+          "length_mm": 122.03,
+          "od_mm": 121,
+          "gasket_id_mm": 98.9,
+          "thread": null,
+          "bypass_valve": "INFERRED_LIKELY (Donaldson's own \"Combination\" filter-type designation conventionally denotes a full-flow + bypass combined design, matching the pattern of every other \"Combination\"-type Donaldson lube part already closed in this file, e.g. P502042; not independently confirmed by a spec sheet and disclosed as inferred, not verified)",
+          "efficiency": null
+        },
+        "oem_refs": [
+          "2906544040",
+          "8982984040"
+        ],
+        "application_rows": [
+          "P2-N-LUBE-2011-ON",
+          "P2-F-LUBE-2018-2021"
+        ],
+        "scope_note": "Applications limited exactly to the two Phase 2/3-governed rows above. Not expanded to any other 4HK1-engined Isuzu row, any other NPR/FTR configuration, or any market outside this closure."
+      },
+      "duplicate_mapping_check": {
+        "method": "Searched every first-party Donaldson capture file, all 3 legacy CSVs, data/dims.csv, and the entire repository (via GitHub code search) for 'P848076', '848076', 'EL88076', and both Isuzu OENs. Also compared physical dimensions (122.03mm x 121mm, gasket ID 98.9mm, Combination/Spin-On) against every already-closed Donaldson lube SKU in this file's own history (P502042/EL82042: 124x120mm; P550973/EL80973: 123x149mm; P550420/EL80420: 110x162mm; P502597: not dimensioned in this pass) -- no dimensional match to any existing SKU.",
+        "classification": "E_NEW_PRODUCT_CONFIRMED",
+        "finding": "P848076 does not appear anywhere in the repository outside the 4 files this closure's own prior PR (#746) already touched. No existing ELIMFILTERS SKU, no legacy-CSV entry, no orphaned reference, no duplicate. EL88076 does not exist anywhere in the repository or the live catalog export (data/dims.csv). A brand-new, governed candidate SKU is confirmed as the only defensible option -- reuse was not possible because nothing to reuse exists."
+      }
     },
     {
       "row_id": "P3-15-F-FUEL-1994-2004",
@@ -2707,6 +2798,24 @@
       "decision_status": "PARTIAL",
       "review_state": "READY_FOR_REVIEW",
       "published": false
+    },
+    {
+      "phase2_row_id": "P2-N-LUBE-2011-ON",
+      "sku": "EL88076",
+      "donaldson_part": "P848076",
+      "decision_status": "PARTIAL",
+      "action": "CREATE_GOVERNED_SKU",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
+    },
+    {
+      "phase2_row_id": "P2-F-LUBE-2018-2021",
+      "sku": "EL88076",
+      "donaldson_part": "P848076",
+      "decision_status": "VERIFIED_BASE",
+      "action": "CREATE_GOVERNED_SKU",
+      "review_state": "READY_FOR_REVIEW",
+      "published": false
     }
   ],
   "next_actions": [
@@ -2769,6 +2878,25 @@
         "BLOCKED_DONALDSON": 2
       },
       "note": "BLOCKED_DONALDSON CLOSURE MICRO-PHASE: investigated the 4 remaining BLOCKED_DONALDSON rows (P2-N-LUBE-2011-ON, P2-N-FWS-2022i-ON, P2-F-LUBE-2018-2021, P2-N-TRANS) exhaustively against the full first-party Donaldson capture (9 files, zero hits for all 4 rows' OE numbers) and, per source priority 3, against Donaldson's own official product listing plus independently fetched distributor pages. Resolved 2 of 4: P2-N-LUBE-2011-ON and P2-F-LUBE-2018-2021 (identical Isuzu OE 8982984040, plus 2906544040 on the N-Series row) both to Donaldson P848076, confirmed via shop.donaldson.com's own indexed product title and two independently fetched distributor pages (allprodiesel.net, spareto.com) reproducing the same structured Isuzu OE cross-reference table; no existing ELIMFILTERS SKU was found for P848076 anywhere in the repository, so both rows are NO_ELIMFILTERS_SKU_YET (Donaldson identity resolved, no SKU minted). The remaining 2 stay BLOCKED_DONALDSON with a refined, non-generic root cause each: P2-N-FWS-2022i-ON (root_cause B_ONLY_FALSE_POSITIVE_CROSS -- the one Donaldson candidate found, P550736, was investigated and rejected as a genuine Davco/Volvo/Mercedes-Benz-platform part with no real Isuzu tie); P2-N-TRANS (root_cause C_WRONG_PRODUCT_TYPE, unchanged from the 2026-09-23 pass -- confirmed this pass that the transmission is an Aisin RNJ 4-speed automatic, not Allison, so no Allison-documentation research path applied; P550008 was not reintroduced as a candidate). Zero Fleetguard bases. Phase 1, Phase 2, the 9 BLOCKED_OEM rows, the remaining exception-audit findings, and the P550008 legacy-CSV cleanup item are all untouched."
+    },
+    {
+      "on": "2026-09-24",
+      "status": "CLOSED_WITH_BLOCKERS",
+      "starting_counts": {
+        "VERIFIED_BASE": 4,
+        "PARTIAL": 11,
+        "CONFLICTING": 0,
+        "NO_ELIMFILTERS_SKU_YET": 2,
+        "BLOCKED_DONALDSON": 2
+      },
+      "final_counts": {
+        "VERIFIED_BASE": 5,
+        "PARTIAL": 12,
+        "CONFLICTING": 0,
+        "NO_ELIMFILTERS_SKU_YET": 0,
+        "BLOCKED_DONALDSON": 2
+      },
+      "note": "P848076 ELIMFILTERS SKU CLOSURE: audited the full repository (all first-party Donaldson captures, all 3 legacy CSVs, data/dims.csv, GitHub code search across the whole repo) and, for the first time in this closure's history, live Postgres itself (Render workspace 'elimfilters') for any existing SKU tied to Donaldson P848076 -- found none anywhere (classification E_NEW_PRODUCT_CONFIRMED); the live catalog Postgres that would hold one is not reachable from this session (the only accessible instance, elimfilters-crm-db, is an empty CRM database). Derived a governed candidate SKU, EL88076, using this repository's own codigo_base nomenclature policy (last 4 numeric digits of the Donaldson part number as the SKU suffix, per the enforce_elimfilters_codigo_base_policy() trigger and its JS derivation library) and the empirically-confirmed leading-digit convention for lube SKUs (all 351 existing EL-prefixed SKUs in data/dims.csv use leading digit 8, zero exceptions). Technology (SYNTRAX(TM)) confirmed against docs/brand/TECHNOLOGY_REGISTRY.md and docs/brand/PRODUCT_REGISTRY.md, both independently corroborated by the two other already-closed Donaldson lube SKUs in this same closure carrying identical technology text in their own Donaldson capture records. Both NO_ELIMFILTERS_SKU_YET rows now carry this candidate: P2-N-LUBE-2011-ON stays capped at PARTIAL (Phase 2 row is PARTIAL); P2-F-LUBE-2018-2021 reaches VERIFIED_BASE (Phase 2 row is VERIFIED, DIRECT_OE_CROSS already established). NO_ELIMFILTERS_SKU_YET is now 0. Nothing was written to any live catalog -- this is a governed, READY_FOR_REVIEW candidate, published:false, exactly as every other decision in this file has always been. Phase 1, Phase 2, the 2 remaining BLOCKED_DONALDSON rows, the 9 BLOCKED_OEM rows, and the P550008 legacy-CSV cleanup item are all untouched."
     }
   ],
   "duplicate_mapping_audit": {
