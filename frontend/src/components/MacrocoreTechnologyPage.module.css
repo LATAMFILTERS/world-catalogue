@@ -57,29 +57,17 @@
   width: min(980px, 86vw);
   text-align: center;
   font-family: var(--font-technology-wordmark);
-  font-weight: 900;
+  font-weight: 750;
   font-size: clamp(3rem, 8vw, 7rem);
-  line-height: 0.86;
-  letter-spacing: -0.045em;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
   color: #fff;
   text-transform: uppercase;
   text-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
-  -webkit-text-stroke: 0.014em currentColor;
-  transform: scaleX(1.05);
-  transform-origin: center;
 }
 
 .technologyHeroWordmarkPlatform {
   font-size: clamp(3.4rem, 9vw, 7.6rem);
-}
-
-@media (max-width: 640px) {
-  .technologyHeroWordmark {
-    width: min(92vw, 760px);
-    font-size: clamp(2.35rem, 11vw, 4.6rem);
-    letter-spacing: -0.035em;
-    transform: none;
-  }
 }
 
 .srOnly {
