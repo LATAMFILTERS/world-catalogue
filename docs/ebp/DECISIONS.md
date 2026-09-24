@@ -3688,3 +3688,30 @@ narrowly superseding vocabulary extension. Product Engineering Passport
 remains the single EBP specification mechanism; no parallel Industrial
 Passport table or service is created.
 
+## ADR-0077 — Industrial & Process uses Technology-Core SKU namespaces
+
+**Date:** 2026-09-23  
+**Status:** Accepted  
+**Authority:** Project owner approval after COALVEX™ Product Pilot 01 Phase 2 closure.
+
+**Context:** Industrial & Process now has a governed pre-SKU evidence path and a distinct `INDUSTRIAL_PROCESS` duty. Reusing HD or LD prefixes would collapse distinct product domains and create ambiguous canonical identities. Industrial product families also do not share one universal master manufacturer, so SKU generation cannot be tied to Donaldson or MANN globally.
+
+**Decision:**
+1. Industrial & Process uses a dedicated Technology-Core-scoped `I*` namespace:
+   - `IA1`, `IA2`, `IA3` — AEREMIS™ air families
+   - `ID1` — PARTION™ / FUMEVRA™
+   - `IG1`, `IG2` — COALVEX™ gas families
+   - `IH1` — HYLTRIS™
+   - `IL1` — LUBREVA™
+   - `IO1`, `IO2` — DEWATIS™ / OILREVEX™
+   - `IW1`, `IW3`, `IW4`, `IW5`, `IW6`, `IW7` — approved AQUVEXIS™ water-treatment cores
+   - `IW8` is reserved only and remains blocked while Electrodeionization has no approved commercial base.
+2. Oil Mist / Coolant Mist receives no SKU namespace until that treatment family is separately approved.
+3. Industrial base-code authority must resolve before SKU planning. `ORIGINAL_BASE` outranks `FAMILY_ANCHOR_BASE`; competitor crosses and source-only observations never drive canonical SKU identity.
+4. Preferred Industrial SKU = approved three-character Industrial prefix + the last four numeric digits from the canonical base code. One-to-three-digit numeric payloads are left-padded with zeros.
+5. A published mapping is sticky. If a preferred slot is already occupied by a different product, later products use prefix + discriminator `1..9` + last three numeric digits, skipping occupied slots.
+6. For a first-publication batch containing collisions, the reviewed publication order must be explicitly frozen before allocation. Raw SQL order, array order, scraper order, or discovery order is never an identity rule.
+7. No numeric payload, unapproved/blocked core, unfrozen collision allocation, or exhausted discriminator space causes `STOP_REVIEW`. No hashes, alphanumeric substitutions or invented fallbacks are permitted.
+8. Phase 3 defines and freezes nomenclature only. It does not authorize catalogue writes. Publication/minting remains a separate phase through the existing governed catalogue write path.
+
+**Consequences:** HD and LD rules remain unchanged. Industrial & Process gains a deterministic, auditable, format-compatible namespace without creating a parallel catalogue, product table, write gateway or identity service.
