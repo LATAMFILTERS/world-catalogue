@@ -96,7 +96,6 @@ export function IndustrialProcessTechnologyStablePage({
   } : null;
   const inquiryHref = `mailto:applications@elimfilters.com?subject=${encodeURIComponent(`${technology.name} Industrial & Process Application Assessment`)}`;
   const related = platform.technologies.filter((item) => item.slug !== technology.slug);
-  const mediaIsBrandAsset = technology.mediaImage.startsWith('/assets/');
 
   return (
     <main id="main-content" className={styles.page}>
@@ -124,11 +123,12 @@ export function IndustrialProcessTechnologyStablePage({
         )}
         <div className={styles.heroShade} aria-hidden="true" />
         <h1 id="industrial-tech-title" className={styles.srOnly}>{technology.name} {technology.title}</h1>
-        {mediaIsBrandAsset ? (
+        {technology.heroMarkImage ? (
           <img
             className={styles.heroMark}
-            src={technology.mediaImage}
-            alt={`${technology.name} — ${technology.title}`}
+            src={technology.heroMarkImage}
+            alt=""
+            aria-hidden="true"
           />
         ) : (
           <div aria-hidden="true">{technologyName(technology.name, technology.branded)}</div>
@@ -165,15 +165,13 @@ export function IndustrialProcessTechnologyStablePage({
             </div>
             <figure className={styles.mediaFigure}>
               <img
-                className={`${styles.mediaImage} ${mediaIsBrandAsset ? styles.brandMediaImage : ''}`}
+                className={styles.mediaImage}
                 src={technology.mediaImage}
-                alt={mediaIsBrandAsset ? `${technology.name} — ${technology.title}` : `${technology.name} ${technology.title} filtration or treatment elements`}
+                alt={`${technology.name} ${technology.title} filtration or treatment elements`}
                 loading="lazy"
                 decoding="async"
               />
-              {mediaIsBrandAsset ? null : (
-                <figcaption>Representative filtration, separation or treatment elements/media. Final element and media selection remains application-specific.</figcaption>
-              )}
+              <figcaption>Representative filtration, separation or treatment elements/media. Final element and media selection remains application-specific.</figcaption>
             </figure>
           </div>
 
