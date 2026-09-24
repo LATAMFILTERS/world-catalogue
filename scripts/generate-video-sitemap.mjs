@@ -20,7 +20,7 @@ const VIDEOS = [
   { id:'oil-gas', title:'Oil & Gas Operations', description:'Specialized filtration for upstream and downstream operations', page:'/industries/oil-gas/', content:'/images/Petro&Gas-1.mp4' },
   { id:'bus-coach', title:'Transit & Coach Systems', description:'Reliable filtration for public transportation and coach services', page:'/industries/bus-coach/', content:'/images/buses-2.mp4' },
 
-  { id:'industrial-process', title:'Industrial & Process Filtration', description:'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.', page:'/industrial-process/', content:'/images/Industrial%20Process.mp4', thumbnail:'/images/planta_converted.avif' },
+  { id:'industrial-process', title:'Industrial & Process Filtration', description:'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.', page:'/industrial-process/', content:'/images/industrial-process.mp4', thumbnail:'/images/planta_converted.avif' },
 
   { id:'aeremis', title:'AEREMIS™ Air Technologies', description:'Industrial air treatment for ventilation, critical-air and molecular-contamination applications.', page:'/industrial-process/aeremis/', content:'/images/AEREMIS.mp4', thumbnail:'/images/air%20industrial.jpg' },
   { id:'general-air-filtration', title:'GAIRFIL™ — General Air Filtration', description:'GAIRFIL™ Engineered Air Protection for industrial ventilation, make-up air and general air-handling duties through application-specific particulate filtration.', page:'/industrial-process/aeremis/general-air-filtration/', content:'/images/General%20Air%20Filtration.mp4', thumbnail:'/images/General%20Air%20Filtration.png' },
