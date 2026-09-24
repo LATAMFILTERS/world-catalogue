@@ -250,7 +250,7 @@ Official prefixes:
 
 | Technology Core | Family | Prefix |
 |---|---|---|
-| TC-AIR-01 | General Air Filtration | IA1 |
+| TC-AIR-01 | GAIRFIL™ — General Air Filtration | IA1 |
 | TC-AIR-02 | HE-CRIVA™ | IA2 |
 | TC-AIR-03 | MA-TREA™ | IA3 |
 | TC-DUST-01 | FUMEVRA™ | ID1 |
