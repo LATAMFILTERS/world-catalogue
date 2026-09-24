@@ -31,7 +31,7 @@ cross_reference_write_allowed: false
 - GAIRFIL™ is the ELIMFILTERS General Air Filtration technology for airborne particulate control in industrial ventilation, make-up air and general air-handling duties. | status: approved
 - The treatment path may use prefiltration and staged particulate capture selected around dust loading and allowable pressure drop. | status: approved
 - Filter configuration must be resolved together with the existing air-handling system, housing condition and service-access constraints. | status: approved
-- GAIRFIL™ maps to TC-AIR-01 and remains distinct from HE-CRIVA™ critical-air filtration; the General Air Filtration descriptor is retained for technical clarity, SEO, GEO and AEO discoverability. | status: approved
+- GAIRFIL™ maps to TC-AIR-01 and remains distinct from HE-CRIVA™ critical-air filtration; the General Air Filtration descriptor is retained for technical classification and discovery clarity. | status: approved
 
 ## Problems
 
