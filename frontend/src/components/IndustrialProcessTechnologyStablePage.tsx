@@ -125,7 +125,20 @@ export function IndustrialProcessTechnologyStablePage({
         <h1 id="industrial-tech-title" className={styles.srOnly}>{technology.name} {technology.title}</h1>
         <div
           aria-hidden="true"
-          className={styles.technologyHeroWordmark}
+          style={{
+            position: 'relative',
+            zIndex: 3,
+            width: 'min(980px, 86vw)',
+            textAlign: 'center',
+            fontFamily: 'var(--font-technology-wordmark)',
+            fontWeight: 750,
+            fontSize: 'clamp(3rem, 8vw, 7rem)',
+            lineHeight: 0.9,
+            letterSpacing: '-0.055em',
+            color: '#fff',
+            textTransform: 'uppercase',
+            textShadow: '0 8px 28px rgba(0,0,0,.5)',
+          }}
         >
           {technologyName(technology.name, technology.branded)}
         </div>
