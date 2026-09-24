@@ -728,6 +728,26 @@
         "method": "Searched every first-party Donaldson capture file, all 3 legacy CSVs, data/dims.csv, and the entire repository (via GitHub code search) for 'P848076', '848076', 'EL88076', and both Isuzu OENs. Also compared physical dimensions (122.03mm x 121mm, gasket ID 98.9mm, Combination/Spin-On) against every already-closed Donaldson lube SKU in this file's own history (P502042/EL82042: 124x120mm; P550973/EL80973: 123x149mm; P550420/EL80420: 110x162mm; P502597: not dimensioned in this pass) -- no dimensional match to any existing SKU.",
         "classification": "E_NEW_PRODUCT_CONFIRMED",
         "finding": "P848076 does not appear anywhere in the repository outside the 4 files this closure's own prior PR (#746) already touched. No existing ELIMFILTERS SKU, no legacy-CSV entry, no orphaned reference, no duplicate. EL88076 does not exist anywhere in the repository or the live catalog export (data/dims.csv). A brand-new, governed candidate SKU is confirmed as the only defensible option -- reuse was not possible because nothing to reuse exists."
+      },
+      "live_catalog_publication": {
+        "status": "LIVE",
+        "database": "catalogo_elimfilters",
+        "target": "ELIMSERVER_LOCAL_POSTGRES_127_0_0_1_5440",
+        "sku": "EL88076",
+        "canonical_source_brand": "DONALDSON",
+        "canonical_source_part": "P848076",
+        "migration": "scripts/migrations/run_119_create_el88076_p848076.js",
+        "published_at": "2026-09-24T18:30:15.437Z",
+        "note": "elimfilters_base_decision.published remains false by design: that field blocks Phase 3 auto-publication and is separate from governed live-catalog publication.",
+        "catalog_backend_validation": {
+          "public_product": true,
+          "canonical_base": "RESOLVED_CANONICAL_BASE",
+          "oem_refs": "RESOLVED_SINGLE"
+        },
+        "part_search_http_validation": {
+          "status": "BLOCKED_LOCAL_RUNTIME_SCHEMA_MISMATCH",
+          "detail": "The local catalog PostgreSQL has resolver views but no public.elimfilters_catalog_active_v; current server-original.js requires that view for /api/search. No claim of end-to-end HTTP Part Search validation is made."
+        }
       }
     },
     {
@@ -1915,6 +1935,26 @@
         "method": "Searched every first-party Donaldson capture file, all 3 legacy CSVs, data/dims.csv, and the entire repository (via GitHub code search) for 'P848076', '848076', 'EL88076', and both Isuzu OENs. Also compared physical dimensions (122.03mm x 121mm, gasket ID 98.9mm, Combination/Spin-On) against every already-closed Donaldson lube SKU in this file's own history (P502042/EL82042: 124x120mm; P550973/EL80973: 123x149mm; P550420/EL80420: 110x162mm; P502597: not dimensioned in this pass) -- no dimensional match to any existing SKU.",
         "classification": "E_NEW_PRODUCT_CONFIRMED",
         "finding": "P848076 does not appear anywhere in the repository outside the 4 files this closure's own prior PR (#746) already touched. No existing ELIMFILTERS SKU, no legacy-CSV entry, no orphaned reference, no duplicate. EL88076 does not exist anywhere in the repository or the live catalog export (data/dims.csv). A brand-new, governed candidate SKU is confirmed as the only defensible option -- reuse was not possible because nothing to reuse exists."
+      },
+      "live_catalog_publication": {
+        "status": "LIVE",
+        "database": "catalogo_elimfilters",
+        "target": "ELIMSERVER_LOCAL_POSTGRES_127_0_0_1_5440",
+        "sku": "EL88076",
+        "canonical_source_brand": "DONALDSON",
+        "canonical_source_part": "P848076",
+        "migration": "scripts/migrations/run_119_create_el88076_p848076.js",
+        "published_at": "2026-09-24T18:30:15.437Z",
+        "note": "elimfilters_base_decision.published remains false by design: that field blocks Phase 3 auto-publication and is separate from governed live-catalog publication.",
+        "catalog_backend_validation": {
+          "public_product": true,
+          "canonical_base": "RESOLVED_CANONICAL_BASE",
+          "oem_refs": "RESOLVED_SINGLE"
+        },
+        "part_search_http_validation": {
+          "status": "BLOCKED_LOCAL_RUNTIME_SCHEMA_MISMATCH",
+          "detail": "The local catalog PostgreSQL has resolver views but no public.elimfilters_catalog_active_v; current server-original.js requires that view for /api/search. No claim of end-to-end HTTP Part Search validation is made."
+        }
       }
     },
     {
