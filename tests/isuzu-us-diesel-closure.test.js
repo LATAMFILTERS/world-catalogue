@@ -816,9 +816,9 @@ test('PHASE 3.5: Fleetguard defines a base only when Donaldson absence is verifi
   for (const row of phase3.resolution_rows) {
     if (row.base_source_brand === 'FLEETGUARD') assert.equal(row.donaldson_status, 'DONALDSON_NOT_MANUFACTURED_VERIFIED');
   }
-  // BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24 resolved every
-  // DONALDSON_NOT_FOUND row, so this negative test now picks a
-  // DONALDSON_AMBIGUOUS row instead (still never eligible for a Fleetguard base).
+  // The FWS single-row closure deliberately leaves one DONALDSON_NOT_FOUND row;
+  // this negative test uses the remaining DONALDSON_AMBIGUOUS transmission row.
+  // Neither state is eligible for a Fleetguard base.
   const rogue = { ...phase3.resolution_rows.find((r) => r.donaldson_status === 'DONALDSON_AMBIGUOUS'), base_source_brand: 'FLEETGUARD' };
   const original = phase3.resolution_rows.slice();
   phase3.resolution_rows.splice(0, phase3.resolution_rows.length, ...original.map((r) => (r.row_id === rogue.row_id ? rogue : r)));
@@ -1214,10 +1214,17 @@ test('EXCEPTION AUDIT FINAL: counts match the reported starting and final tallie
 
   // P848076 ELIMFILTERS SKU CLOSURE 2026-09-24: closed both remaining
   // NO_ELIMFILTERS_SKU_YET rows with a governed candidate SKU.
-  const history = phase3.exception_audit_history[phase3.exception_audit_history.length - 1];
-  assert.equal(phase3.exception_audit_history.length, 4);
+  const history = phase3.exception_audit_history.find((h) => h.starting_counts?.NO_ELIMFILTERS_SKU_YET === 2);
+  assert.equal(phase3.exception_audit_history.length, 5);
+  assert.ok(history);
   assert.deepEqual(history.starting_counts, { VERIFIED_BASE: 4, PARTIAL: 11, CONFLICTING: 0, NO_ELIMFILTERS_SKU_YET: 2, BLOCKED_DONALDSON: 2 });
   assert.deepEqual(history.final_counts, { VERIFIED_BASE: 5, PARTIAL: 12, CONFLICTING: 0, NO_ELIMFILTERS_SKU_YET: 0, BLOCKED_DONALDSON: 2 });
+
+  const fwsHistory = phase3.exception_audit_history.find((h) => h.scope === 'P2-N-FWS-2022i-ON_ONLY');
+  assert.ok(fwsHistory);
+  assert.equal(fwsHistory.starting_donaldson_status, 'DONALDSON_AMBIGUOUS');
+  assert.equal(fwsHistory.final_donaldson_status, 'DONALDSON_NOT_FOUND');
+  assert.equal(fwsHistory.decision_status, 'BLOCKED_DONALDSON');
 
   const counts = phase3.coverage.decision_status;
   assert.equal(counts.VERIFIED_BASE, history.final_counts.VERIFIED_BASE);
@@ -1410,7 +1417,11 @@ test('BLOCKEDCASE 3: wrong product type cannot resolve a row (P550736 rejected f
   const fws = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-FWS-2022i-ON');
   assert.equal(fws.base_source_part, null);
   assert.equal(fws.decision_status, 'BLOCKED_DONALDSON');
-  assert.equal(fws.root_cause, 'B_ONLY_FALSE_POSITIVE_CROSS');
+  assert.equal(fws.root_cause, 'B_NO_VALID_DONALDSON_CROSS_AFTER_FALSE_POSITIVE_REJECTION');
+  assert.equal(fws.donaldson_status, 'DONALDSON_NOT_FOUND');
+  assert.equal(fws.microphase_closure_2026_09_24.status, 'CLOSED_WITH_BLOCKER');
+  assert.equal(fws.microphase_closure_2026_09_24.rejected_candidate.part, 'P550736');
+  assert.equal(fws.microphase_closure_2026_09_24.rejected_candidate.official_resource_family, 'DAVCO Fuel Pro');
   const rejected = fws.donaldson_candidates.find((c) => c.part === 'P550736');
   assert.ok(rejected, 'the rejected candidate must still be documented, not silently dropped');
   assert.match(rejected.verdict, /REJECTED|FALSE_POSITIVE/);
