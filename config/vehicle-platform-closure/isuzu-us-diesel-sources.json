@@ -1145,6 +1145,23 @@
         "Donaldson part form (style, type, thread, dimensions)"
       ],
       "scope_restriction": "PHASE 3 ONLY. Establishes Isuzu OE/OEN <-> Donaldson part identity. It never establishes USA vehicle fitment, year, model, engine or configuration. Competitor numbers inside Donaldson's cross-reference list are corroboration only and are not verified against each competitor's own catalogue. Absence of a number from the capture is NOT_FOUND, never NOT_MANUFACTURED."
+    },
+    {
+      "source_id": "DONALDSON_OFFICIAL_PRODUCT_TITLE_AND_DISTRIBUTOR_CORROBORATION_2026_09_24",
+      "title": "Donaldson official product title (shop.donaldson.com, indexed) plus independently fetched distributor cross-reference pages",
+      "publisher": "Donaldson Company, Inc. (product identity); allprodiesel.net and spareto.com (independent distributor corroboration, fetched directly)",
+      "source_type": "official_product_title_with_distributor_corroboration",
+      "authority_level": "secondary",
+      "origin_url": "https://shop.donaldson.com/store/en-us/product/P848076/prod320266 ; https://www.allprodiesel.net/products/fleetguard-lf17537 ; https://spareto.com/products/fleetguard-oil-filter-1/lf17537",
+      "capture_url": null,
+      "captured_at": "2026-09-24",
+      "capture_files": [],
+      "capture_method": "BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24: DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07 (the repository-held first-party capture) does not include Donaldson part P848076 at all. Per this manifest's own source priority (local first-party capture first, then Donaldson official public/archived docs, then distributor corroboration), the part's genuine current Donaldson catalogue identity was confirmed via its own indexed shop.donaldson.com product title ('Donaldson P848076 - LUBE FILTER, SPIN-ON COMBINATION'), and its Isuzu OE cross-reference was confirmed by directly fetching (not summarising) two independently operated distributor pages that each reproduce the identical 4-number Isuzu OE set (2906544040, 2946542000, 8982984040, 8983282070) in a structured cross-reference table.",
+      "supports": [
+        "Donaldson P848076 <-> Isuzu OE 2906544040 and 8982984040",
+        "Donaldson part form (style, type) for P848076"
+      ],
+      "scope_restriction": "PHASE 3 ONLY, and weaker than DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07: this is web/distributor-corroborated, not a first-party local capture hit, so rows citing it are recorded at medium confidence. It never establishes USA vehicle fitment, year, model, engine or configuration -- that remains Phase 1 and Phase 2 only. Distributor cross-reference pages are used only where they reproduce official-looking, structured, traceable data and independently agree with each other; a single, uncorroborated or contradicted distributor claim (see the P550736/Isuzu 8982373410 rejection on row P2-N-FWS-2022i-ON) is not sufficient and is explicitly not registered as a supported claim here."
     }
   ]
 }
