@@ -2098,6 +2098,14 @@
         "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/interchanges",
         "evidence_hash": "a9777812df747de60cc8c93901a96cdf85a635dc2186ac6a564a28b7ce906b3a",
         "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "MANN-FILTER",
+        "code": "HU824X",
+        "classification": "AFTERMARKET",
+        "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/hu824x_mann-filter.html",
+        "evidence_hash": "261dda722c3cb7dd76b3480fe80edcb0bb63bf29ed0ecb35d3f0939d26cdda48",
+        "evidence_authority": "MANN_FILTER_OFFICIAL_SHARED_OE"
       }
     ],
     "vehicle_applications": [
@@ -2173,6 +2181,14 @@
       }
     ],
     "application_source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5610EX/applications?format=ranges",
-    "application_evidence_hash": "cf19f2c0d41fa103dc1b2c9fad1098cddc470969b4c34faf0a809aafc70e223b"
+    "application_evidence_hash": "cf19f2c0d41fa103dc1b2c9fad1098cddc470969b4c34faf0a809aafc70e223b",
+    "reference_governance": {
+      "status": "RESOLVED_CROSS_CATEGORY_CONTAMINATION",
+      "publication_rule": "EL39999_IS_CANONICAL_CH9999_OWNER",
+      "resolved_code": "7061",
+      "verified_equivalent": "MANN-FILTER HU824X",
+      "wrong_reference_owner": "EH61818",
+      "resolved_at": "2026-09-24"
+    }
   }
 ]

@@ -4,7 +4,10 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const pg = require('pg');
 
-require('../lib/part-search-runtime-hardening');
+const {
+  isExactActiveCodigoBaseLookup,
+  shouldDeferCodigoBaseToUniqueXref,
+} = require('../lib/part-search-runtime-hardening');
 
 const DESCRIPTION_SQL = `SELECT * FROM elimfilters_catalog
   WHERE to_tsvector('english', COALESCE(description::text, ''))
@@ -52,4 +55,37 @@ test('long compact part-number no-match also skips description full-text query',
   assert.equal(result.command, 'SELECT');
   assert.equal(result.rowCount, 0);
   assert.deepEqual(result.rows, []);
+});
+
+test('exact active codigo_base lookup is recognized for deferred xref resolution', () => {
+  assert.equal(isExactActiveCodigoBaseLookup(
+    "SELECT * FROM elimfilters_catalog_active_v WHERE UPPER(REPLACE(codigo_base,'-','')) = $1 LIMIT 10"
+  ), true);
+  assert.equal(isExactActiveCodigoBaseLookup(
+    "SELECT * FROM elimfilters_catalog_active_v WHERE UPPER(REPLACE(sku,'-','')) = $1 LIMIT 1"
+  ), false);
+});
+
+test('legacy codigo_base rows defer to one different unique xref owner', () => {
+  assert.equal(
+    shouldDeferCodigoBaseToUniqueXref(
+      [{ sku: 'EA37061' }, { sku: 'EL37061' }],
+      [{ sku: 'EL39999' }]
+    ),
+    true
+  );
+  assert.equal(
+    shouldDeferCodigoBaseToUniqueXref(
+      [{ sku: 'EL39999' }],
+      [{ sku: 'EL39999' }]
+    ),
+    false
+  );
+  assert.equal(
+    shouldDeferCodigoBaseToUniqueXref(
+      [{ sku: 'EA37061' }],
+      [{ sku: 'EL39999' }, { sku: 'EL31210' }]
+    ),
+    false
+  );
 });
