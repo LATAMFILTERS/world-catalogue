@@ -255,7 +255,7 @@ Official prefixes:
 | TC-AIR-03 | MA-TREA™ | IA3 |
 | TC-DUST-01 | FUMEVRA™ | ID1 |
 | TC-NG-01 | COALERIS™ | IG1 |
-| TC-NG-02 | Gas-Liquid Separation | IG2 |
+| TC-NG-02 | GASLIQ™ — Gas-Liquid Separation | IG2 |
 | TC-HYD-01 | HYLTRIS™ | IH1 |
 | TC-LUB-01 | LUBREVA™ | IL1 |
 | TC-OIL-01 | DEWATIS™ | IO1 |
