@@ -1157,6 +1157,30 @@
         "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/interchanges",
         "evidence_hash": "355869d2cb6597ee70a3c7b254560036c4a1222eedb030c55b62fe7e4ade7ea7",
         "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+      },
+      {
+        "manufacturer": "Toyota",
+        "code": "04152-0R010",
+        "classification": "OEM",
+        "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu7009z_mann-filter.html",
+        "evidence_hash": "04cc7d3b8b60006807f6bcf11622687ea730dfa014fc6b4a4ed02d45b2eb6cd1",
+        "evidence_authority": "MANN_FILTER_OFFICIAL_EQUIVALENCE"
+      },
+      {
+        "manufacturer": "Toyota",
+        "code": "04152-26010",
+        "classification": "OEM",
+        "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu7009z_mann-filter.html",
+        "evidence_hash": "04cc7d3b8b60006807f6bcf11622687ea730dfa014fc6b4a4ed02d45b2eb6cd1",
+        "evidence_authority": "MANN_FILTER_OFFICIAL_EQUIVALENCE"
+      },
+      {
+        "manufacturer": "Toyota",
+        "code": "15613-YZZA2",
+        "classification": "OEM",
+        "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu7009z_mann-filter.html",
+        "evidence_hash": "04cc7d3b8b60006807f6bcf11622687ea730dfa014fc6b4a4ed02d45b2eb6cd1",
+        "evidence_authority": "MANN_FILTER_OFFICIAL_EQUIVALENCE"
       }
     ],
     "competitor_codes": [
@@ -1650,7 +1674,13 @@
       }
     ],
     "application_source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609EX/applications?format=ranges",
-    "application_evidence_hash": "3b9b0c60c9b7b7b79f01802abc3f09d5226e865b4364ab26bbcc9472066bab1f"
+    "application_evidence_hash": "3b9b0c60c9b7b7b79f01802abc3f09d5226e865b4364ab26bbcc9472066bab1f",
+    "reference_governance": {
+      "status": "RESOLVED_NO_ACTIVE_COLLISIONS",
+      "publication_rule": "EL30158_IS_CANONICAL_CH10158_OWNER",
+      "verified_equivalent": "MANN-FILTER HU7009Z",
+      "resolved_at": "2026-09-24"
+    }
   },
   {
     "sku": "EL39999",
