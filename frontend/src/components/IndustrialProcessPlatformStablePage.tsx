@@ -10,6 +10,8 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
   const inquiryHref = `mailto:applications@elimfilters.com?subject=${encodeURIComponent(`${platform.name} Industrial & Process Platform Review`)}`;
   const canonicalKnowledge = platform.knowledgeCenterSlug ? getCanonicalKnowledgeBySlug(platform.knowledgeCenterSlug) : null;
   const standards = canonicalKnowledge?.standards ?? [];
+  const platformMedia = platform.mediaImage ?? platform.heroImage;
+  const mediaIsBrandAsset = platformMedia.startsWith('/assets/');
 
   return (
     <main id="main-content" className={styles.page}>
@@ -82,8 +84,14 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
               <p className={styles.lead}>{platform.summary}</p>
             </div>
             <figure className={styles.mediaFigure}>
-              <img className={styles.mediaImage} src={platform.mediaImage ?? platform.heroImage} alt={`${platform.descriptor} industrial application context`} />
-              <figcaption>Representative industrial application context. Final solution remains project-specific.</figcaption>
+              <img
+                className={`${styles.mediaImage} ${mediaIsBrandAsset ? styles.brandMediaImage : ''}`}
+                src={platformMedia}
+                alt={mediaIsBrandAsset ? `${platform.name} — ${platform.descriptor}` : `${platform.descriptor} industrial application context`}
+              />
+              {mediaIsBrandAsset ? null : (
+                <figcaption>Representative industrial application context. Final solution remains project-specific.</figcaption>
+              )}
             </figure>
           </div>
         </div>
