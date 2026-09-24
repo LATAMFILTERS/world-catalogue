@@ -205,7 +205,7 @@ Reason:
 KRAF is already used in the air-filtration sector, including Khanfilter's KRAF (Khanfilter Regenerative Air Filter) and documented HEPA / medium-filter configurations.
 
 Current AEREMIS state:
-- General Air Filtration — descriptive
+- GAIRFIL™ — General Air Filtration — TC-AIR-01 — user-selected family mark; formal trademark clearance pending
 - High-Efficiency / Critical Air Filtration — naming OPEN
 - MA-TREA™ — Molecular Air Treatment — preferred working candidate pending formal clearance
 
