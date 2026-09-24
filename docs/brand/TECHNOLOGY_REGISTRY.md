@@ -133,7 +133,7 @@ The five approved Industrial & Process platform names remain:
 - FLUREXIS™
 - AQUVEXIS™
 
-Twelve customer-facing technology families currently require independent branded names:
+Thirteen customer-facing technology families currently require independent branded names:
 
 AEREMIS™:
 - GAIRFIL™ — General Air Filtration
@@ -145,6 +145,7 @@ PARTION™:
 
 COALVEX™:
 - Gas Coalescence
+- GASLIQ™ — Gas-Liquid Separation
 
 FLUREXIS™:
 - Hydraulic Fluid Filtration
@@ -158,7 +159,6 @@ AQUVEXIS™:
 - Ion Exchange
 
 The following remain descriptive and do not receive independent marks at this stage:
-- Gas-Liquid Separation
 - Depth Filtration
 - Electrodeionization
 - Reverse Osmosis
@@ -254,7 +254,7 @@ Rejected:
 Capabilities such as nanofiber, ePTFE, anti-static, flame-retardant, high-temperature, pulse-cleanable, and oil/aerosol tolerance remain capability descriptors rather than independent technology marks.
 
 
-### COALVEX™ — Gas Coalescence Family Naming
+### COALVEX™ — Family Naming
 
 Preferred working candidate:
 - COALERIS™ — Gas Coalescence — maps to TC-NG-01
@@ -269,7 +269,8 @@ Rejected:
 - COALENZA™
 - COALIS™
 
-Gas-Liquid Separation remains descriptive and maps to TC-NG-02.
+User-selected family mark:
+- GASLIQ™ — Gas-Liquid Separation — maps to TC-NG-02 — formal trademark clearance remains a separate gate.
 
 No vessel architecture, application point, or system configuration becomes an independent technology mark.
 
@@ -332,7 +333,7 @@ PARTION™
 
 COALVEX™
 - COALERIS™ — Gas Coalescence — TC-NG-01
-- Gas-Liquid Separation — descriptive — TC-NG-02
+- GASLIQ™ — Gas-Liquid Separation — TC-NG-02
 
 FLUREXIS™
 - HYDREXIS™ — Hydraulic Fluid Filtration — TC-HYD-01
@@ -416,7 +417,6 @@ AQUVEXIS™
 - IONVEXA™ — Ion Exchange — TC-WAT-07
 
 Descriptive families / subfamilies remain:
-- Gas-Liquid Separation — TC-NG-02
 - Depth Filtration — TC-WAT-01
 - Reverse Osmosis — TC-WAT-04
 - Ultrafiltration — TC-WAT-05
@@ -438,10 +438,12 @@ Platforms:
 - AQUVEXIS™ — Water Treatment Technologies
 
 Canonical branded families:
+- GAIRFIL™
 - HE-CRIVA™
 - MA-TREA™
 - FUMEVRA™
 - COALERIS™
+- GASLIQ™
 - HYLTRIS™
 - LUBREVA™
 - DEWATIS™
