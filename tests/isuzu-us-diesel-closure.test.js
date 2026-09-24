@@ -883,7 +883,14 @@ test('PHASE 3.10: assembly, element and kit are not mixed', () => {
     if (/\bELEMENT\b/i.test(row.isuzu_part_form) && base.form.style === 'Spin-On') assert.notEqual(row.decision_status, 'VERIFIED_BASE', row.row_id);
   }
   const trans = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-TRANS');
-  assert.equal(trans.decision_status, 'CONFLICTING', 'a cartridge OEN mapped only to a spin-on must not become a base');
+  // EXCEPTION AUDIT 2026-09-23 reclassified this row from CONFLICTING to
+  // BLOCKED_DONALDSON: the only Donaldson hit (P550008, a full-flow engine-oil
+  // spin-on) is a false-positive category mismatch against a transmission
+  // filter cartridge, not a genuine competing candidate -- so there is nothing
+  // left to be "conflicted" between, only an absence of a usable base.
+  assert.equal(trans.decision_status, 'BLOCKED_DONALDSON', 'a cartridge OEN mapped only to a spin-on must not become a base');
+  assert.equal(trans.base_source_part, null);
+  assert.equal(trans.base_source_brand, null);
 });
 
 test('PHASE 3.11: no gasoline scope enters Phase 3', () => {
@@ -960,4 +967,179 @@ test('PHASE 3 FINAL: CLOSED means every eligible row is explicit, not every base
   assert.equal(counts.BLOCKED_OEM, phase3.blocked_oem_rows.length);
   assert.equal(phase3.coverage.base_decisions.fleetguard_based, 0);
   assert.ok(counts.VERIFIED_BASE < eligiblePhase2.length, 'closure must not claim 100% resolution');
+});
+
+// ---------------------------------------------------------------------------
+// PHASE 3 EXCEPTION CLOSURE PASS (2026-09-23) -- re-audits the CONFLICTING /
+// BLOCKED_DONALDSON / PARTIAL residue left by the prior Phase 3 pass, using an
+// OEM-vs-CROSSREF Donaldson evidence-tier distinction and a dims.csv physical
+// cross-check the prior pass did not apply. See the "EXCEPTION AUDIT
+// 2026-09-23" caveats on the affected resolution_rows and the top-level
+// exception_audit_status / duplicate_mapping_audit fields.
+// ---------------------------------------------------------------------------
+
+test('EXCEPTION 1: no Donaldson part used by Isuzu Phase 3 has two canonical SKUs without explicit semantics', () => {
+  const skuByBase = new Map();
+  for (const row of phase3.resolution_rows) {
+    if (!row.base_source_part) continue;
+    const prior = skuByBase.get(row.base_source_part);
+    if (prior) assert.equal(prior, row.elimfilters_existing_sku, `${row.base_source_part} resolves to two different SKUs across rows`);
+    skuByBase.set(row.base_source_part, row.elimfilters_existing_sku);
+  }
+  // The one part this audit found with more than one SKU anywhere in the
+  // repository (P550008) is documented explicitly and is not used as a base
+  // for any row, so it correctly never appears in skuByBase above.
+  assert.ok(phase3.duplicate_mapping_audit.findings.some((f) => f.donaldson_part === 'P550008'));
+  assert.ok(!phase3.resolution_rows.some((r) => r.base_source_part === 'P550008'));
+});
+
+test('EXCEPTION 2: P552564 belongs only to EF92564', () => {
+  const flat = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'donaldson_crossref_flat.csv'), 'utf8');
+  assert.match(flat, /^EF92564,fuel,P552564,/m);
+  assert.doesNotMatch(flat, /^EF50953,[^\n]*,P552564,/m);
+  const fuel4he = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-FUEL-4HE');
+  const fFuel = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-F-FUEL-1994-2004');
+  for (const row of [fuel4he, fFuel]) {
+    assert.equal(row.base_source_part, 'P552564');
+    assert.equal(row.elimfilters_existing_sku, 'EF92564');
+  }
+});
+
+test('EXCEPTION 3: EF50953 keeps its separate Donaldson identity, P502155', () => {
+  for (const file of ['competitor_cross_references_ld.csv', 'external_cross_reference_master_ld.csv']) {
+    const csv = fs.readFileSync(path.join(__dirname, '..', file), 'utf8');
+    assert.doesNotMatch(csv, /^"EF50953",[^\n]*"DONALDSON","P552564"/m, file);
+    assert.match(csv, /^"EF50953",[^\n]*"DONALDSON","P502155"/m, file);
+  }
+  assert.ok(!phase3.resolution_rows.some((r) => r.elimfilters_existing_sku === 'EF50953'));
+  const p552564Regression = phase3.duplicate_mapping_audit.p552564_regression_check;
+  assert.equal(p552564Regression.checked_2026_09_23, true);
+});
+
+test('EXCEPTION 4: legacy CSV cross-references never silently override the Donaldson first-party capture', () => {
+  // For every base this pass took (or re-confirmed) from the first-party
+  // capture, the legacy exports must not carry that same Donaldson part under
+  // a different SKU -- if they did, EXCEPTION 1's duplicate check above would
+  // already have failed. This test asserts the priority rule itself: the
+  // capture wins whenever the two disagree, which is exactly the P552564 case
+  // already regression-tested in EXCEPTION 2/3.
+  assert.equal(phase3.governance.elimfilters_sku_policy, 'Reuse an existing ELIMFILTERS SKU for the Donaldson base part. No new SKU is minted in this phase.');
+  const flat = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'donaldson_crossref_flat.csv'), 'utf8');
+  assert.doesNotMatch(flat, /,DONALDSON,P502155,/, 'P502155 must not exist in the first-party capture (it is a legacy-only identity)');
+});
+
+test('EXCEPTION 5: the first-party Donaldson capture outranks third-party legacy crossref on every reused base', () => {
+  const reusedParts = new Set(phase3.resolution_rows.filter((r) => r.base_source_part).map((r) => r.base_source_part));
+  for (const row of phase3.resolution_rows) {
+    if (!row.base_source_part) continue;
+    assert.equal(row.donaldson_source, 'DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07', `${row.row_id}: base must be sourced from the first-party capture`);
+  }
+  assert.ok(reusedParts.size >= 8, 'exception pass must have left at least the 8 distinct Donaldson bases it resolved');
+});
+
+test('EXCEPTION 6: Fleetguard is never used without a verified Donaldson absence', () => {
+  for (const row of phase3.resolution_rows) {
+    if (row.base_source_brand === 'FLEETGUARD') {
+      assert.equal(row.donaldson_status, 'DONALDSON_NOT_MANUFACTURED_VERIFIED', row.row_id);
+    }
+    if (['DONALDSON_NOT_FOUND', 'DONALDSON_AMBIGUOUS', 'DONALDSON_SOURCE_BLOCKED'].includes(row.donaldson_status)) {
+      assert.notEqual(row.base_source_brand, 'FLEETGUARD', row.row_id);
+    }
+  }
+  assert.equal(phase3.coverage.base_decisions.fleetguard_based, 0);
+});
+
+test('EXCEPTION 7: MANN, Baldwin, WIX and FRAM never define a base in the exception-audited rows', () => {
+  for (const id of ['P3-05-N-LUBE-1998-2010', 'P3-08-N-FUEL-2013-2021-B', 'P3-10-N-FUEL-HIGHCAP-2013-2021', 'P3-12-N-TRANS', 'P3-13-F-LUBE-1987-2008', 'P3-16-F-FUEL-2018-2020-A', 'P3-17-F-FUEL-2018-2020-B']) {
+    const row = phase3.resolution_rows.find((r) => r.row_id === id);
+    assert.ok(row, id);
+    assert.ok([null, 'DONALDSON'].includes(row.base_source_brand), `${id} took a base from a non-Donaldson/Fleetguard brand`);
+  }
+});
+
+test('EXCEPTION 8: no change to Phase 1 fitment', () => {
+  const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
+  assert.equal(digest(phase1), 'f8c58b44aca6fec67ba640a2330a8a34c34db73e1654d7c410137cb6dbde30d6');
+});
+
+test('EXCEPTION 9: no change to the Phase 2 OEN truth', () => {
+  const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
+  assert.equal(digest(phase2), '0140e1a75cec66d1845d8c430123037088d1d262f6032a9d6f28a641e61c24b1');
+  for (const id of ['P3-05-N-LUBE-1998-2010', 'P3-08-N-FUEL-2013-2021-B', 'P3-10-N-FUEL-HIGHCAP-2013-2021', 'P3-12-N-TRANS', 'P3-13-F-LUBE-1987-2008', 'P3-16-F-FUEL-2018-2020-A', 'P3-17-F-FUEL-2018-2020-B']) {
+    const row = phase3.resolution_rows.find((r) => r.row_id === id);
+    const p2 = phase2.oen_rows.find((r) => r.row_id === row.phase2_row_id);
+    assert.deepEqual(row.isuzu_oe_oen, p2.isuzu_oe_oen, `${id}: isuzu_oe_oen must not diverge from phase2`);
+  }
+});
+
+test('EXCEPTION 10: assembly, element and kit candidates are not fused across the re-resolved rows', () => {
+  const lube = phase3.resolution_rows.find((r) => r.row_id === 'P3-05-N-LUBE-1998-2010');
+  assert.equal(lube.base_source_part, null, 'the disputed 2906548000 candidates stay documented, not merged into a base');
+  assert.ok(lube.donaldson_candidates.some((c) => c.part === 'P502042') && lube.donaldson_candidates.some((c) => c.part === 'P550973'));
+  const trans = phase3.resolution_rows.find((r) => r.row_id === 'P3-12-N-TRANS');
+  assert.equal(trans.base_source_part, null, 'a transmission cartridge OEN must never resolve to an engine-oil spin-on base');
+  const fLube = phase3.resolution_rows.find((r) => r.row_id === 'P3-13-F-LUBE-1987-2008');
+  assert.equal(fLube.base_source_part, 'P550420');
+  assert.notEqual(fLube.base_source_part, 'P551263');
+  assert.notEqual(fLube.base_source_part, 'P559128');
+});
+
+test('EXCEPTION 11: this pass performs no direct SQL writes', () => {
+  assert.deepEqual(phase3.governance.catalog_writes_performed, []);
+  const lib = fs.readFileSync(path.join(__dirname, '..', 'lib', 'isuzu-us-diesel-closure.js'), 'utf8');
+  assert.ok(!/\b(INSERT|UPDATE|DELETE)\s+(INTO\s+|FROM\s+)?\w+/.test(lib));
+});
+
+test('EXCEPTION 12: nothing from this pass is auto-published', () => {
+  assert.equal(phase3.governance.publication_authorized, false);
+  for (const id of ['P3-08-N-FUEL-2013-2021-B', 'P3-10-N-FUEL-HIGHCAP-2013-2021', 'P3-13-F-LUBE-1987-2008', 'P3-16-F-FUEL-2018-2020-A', 'P3-17-F-FUEL-2018-2020-B']) {
+    const row = phase3.resolution_rows.find((r) => r.row_id === id);
+    assert.equal(row.elimfilters_base_decision.published, false, id);
+  }
+});
+
+test('EXCEPTION 13: every CONFLICTING row ends resolved or carries an explicit, evidence-tiered justification', () => {
+  const conflicting = phase3.resolution_rows.filter((r) => r.decision_status === 'CONFLICTING');
+  assert.equal(conflicting.length, 1, 'the exception pass must reduce CONFLICTING from 7 to 1');
+  assert.equal(conflicting[0].row_id, 'P3-05-N-LUBE-1998-2010');
+  assert.ok(conflicting[0].caveats.some((c) => /CROSSREF/.test(c) && /OEM/.test(c)), 'the remaining CONFLICTING row must document the evidence-tier reason it cannot be resolved');
+});
+
+test('EXCEPTION 14: every BLOCKED_DONALDSON row shows exact search evidence', () => {
+  const blocked = phase3.resolution_rows.filter((r) => r.decision_status === 'BLOCKED_DONALDSON');
+  assert.equal(blocked.length, 4);
+  for (const row of blocked) {
+    assert.ok(row.caveats.length > 0, `${row.row_id} must document its search`);
+  }
+  const trans = blocked.find((r) => r.row_id === 'P3-12-N-TRANS');
+  assert.ok(trans.caveats.some((c) => /FALSE_POSITIVE/.test(c)), 'P3-12 must record why its one Donaldson hit was rejected, not just that none was found');
+});
+
+test('EXCEPTION 15: no active generator can recreate the P552564/EF50953 stale mapping', () => {
+  const check = phase3.duplicate_mapping_audit.p552564_regression_check;
+  assert.match(check.generator_check, /phase3cde_build_ld_enrichment_master/);
+  assert.match(check.regression_guard, /p552564-canonical-mapping\.test\.js/);
+  // Defense in depth: this file's own test file carries the same guard the
+  // dedicated regression file does, so a future edit to either the CSVs or
+  // this JSON independently trips a failure.
+  const flat = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'donaldson_crossref_flat.csv'), 'utf8');
+  assert.doesNotMatch(flat, /^EF50953,[^\n]*,P552564,/m);
+});
+
+test('EXCEPTION AUDIT FINAL: counts match the reported starting and final tallies', () => {
+  const history = phase3.exception_audit_history[phase3.exception_audit_history.length - 1];
+  assert.deepEqual(history.starting_counts, { VERIFIED_BASE: 4, PARTIAL: 5, CONFLICTING: 7, BLOCKED_DONALDSON: 3 });
+  assert.deepEqual(history.final_counts, { VERIFIED_BASE: 4, PARTIAL: 10, CONFLICTING: 1, BLOCKED_DONALDSON: 4 });
+
+  const counts = phase3.coverage.decision_status;
+  assert.equal(counts.VERIFIED_BASE, history.final_counts.VERIFIED_BASE);
+  assert.equal(counts.PARTIAL, history.final_counts.PARTIAL);
+  assert.equal(counts.CONFLICTING, history.final_counts.CONFLICTING);
+  assert.equal(counts.BLOCKED_DONALDSON, history.final_counts.BLOCKED_DONALDSON);
+
+  assert.equal(phase3.exception_audit_status, 'CLOSED_WITH_BLOCKERS');
+  assert.equal(phase3.phase3_status, 'CLOSED', 'phase3_status must not be degraded by an exception cleanup pass');
+
+  const result = validateClosure();
+  assert.deepEqual(result.errors, []);
 });

@@ -7,6 +7,7 @@
 **Phase 1 technical-qualifier pass:** 2026-09-23
 **Phase 2 closure pass:** 2026-09-23
 **Phase 3 closure pass:** 2026-09-23
+**Phase 3 exception closure pass:** 2026-09-23
 **Scope:** USA market, Isuzu, diesel only, model years 2000-2026 inclusive.
 
 This is the research output for the three gated phases the manifest already defines. It
@@ -127,7 +128,8 @@ record of every source checked, every timestamp tried and every method used.
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 resolution rows (one per eligible Phase 2 OEN row), BLOCKED_OEM rows, access blockers and unpublished ELIMFILTERS base decisions |
 | `config/isuzu-n-series-us-oem-matrix.json` | Extended from 2022-2026 to 2000-2026 so the existing bot resolver answers the whole range |
 | `lib/isuzu-us-diesel-closure.js` | Reader, validator and the canonical filter-set answer |
-| `tests/isuzu-us-diesel-closure.test.js` | 72 tests: the 10 Phase 1 closure-pass validations, 6 Phase 1 technical-qualifier validations, 15 Phase 2 OEM/OEN closure validations and 19 Phase 3 aftermarket-resolution validations |
+| `tests/isuzu-us-diesel-closure.test.js` | 88 tests: the 10 Phase 1 closure-pass validations, 6 Phase 1 technical-qualifier validations, 15 Phase 2 OEM/OEN closure validations, 19 Phase 3 aftermarket-resolution validations, and 16 Phase 3 exception-closure-pass validations |
+| `tests/p552564-canonical-mapping.test.js` | 3 tests guarding the P552564/EF50953 canonical-mapping fix from PR #737 |
 
 ## Phase 1 — diesel vehicle universe
 
@@ -421,9 +423,11 @@ second Isuzu source before any downstream use.
 
 ## PHASE 3 — CLOSED (aftermarket resolution and ELIMFILTERS base decision)
 
-**Status: `CLOSED`.** All 19 eligible Phase 2 OEN rows have an explicit decision. CLOSED
-does **not** mean every base is resolved: 9 of 19 rows carry a Donaldson base, 10 do not,
-and each of those 10 says exactly why.
+**Status: `CLOSED`. Exception audit status: `CLOSED_WITH_BLOCKERS` (`EXCEPTION CLOSURE PASS
+2026-09-23`).** All 19 eligible Phase 2 OEN rows have an explicit decision. CLOSED does
+**not** mean every base is resolved: 14 of 19 rows now carry a Donaldson base, 5 do not, and
+each of those 5 says exactly why. The tables below are the current, post-exception-pass
+state; see **EXCEPTION CLOSURE PASS — 2026-09-23** further down for what changed and why.
 
 ### How Donaldson was reached
 
@@ -449,15 +453,15 @@ marked `UNVERIFIED` because no competitor catalogue was reached.
 | Measure | Count |
 |---|---|
 | Eligible Phase 2 OEN rows | 19 (2 NOT_APPLICABLE Phase 2 rows excluded: 6BG and 4BD, which bind to no vehicle) |
-| Donaldson verified | 9 |
+| Donaldson verified | 14 |
 | Donaldson not-manufactured verified | 0 |
 | Donaldson not found (live routes blocked) | 3 |
-| Donaldson ambiguous | 7 |
+| Donaldson ambiguous | 2 |
 | Fleetguard verified as base | 0 |
 | `VERIFIED_BASE` | 4 |
-| `PARTIAL` | 5 |
-| `CONFLICTING` | 7 |
-| `BLOCKED_DONALDSON` | 3 |
+| `PARTIAL` | 10 |
+| `CONFLICTING` | 1 |
+| `BLOCKED_DONALDSON` | 4 |
 | `BLOCKED_OEM` | 9 groups (no Isuzu OEN in Phase 2) |
 
 ### Decisions
@@ -473,23 +477,24 @@ marked `UNVERIFIED` because no competitor catalogue was reached.
 | P2-F-FUEL-1994-2004 | 8943924740, 1132400791 | P552564 spin-on vs Isuzu "ELEMENT" | PARTIAL | EF92564 (reuse) |
 | P2-F-FUEL-2018-2020-C | 8975425390, 8981475250 | P502599, Isuzu "ELEMENT KIT" | PARTIAL, `KIT_CROSS` | EF92599 (reuse) |
 | P2-F-FUEL-2018-2020-D | 8980370110 | P502427, Isuzu "ELEMENT KIT" | PARTIAL, `KIT_CROSS` | EF92427 (reuse) |
-| P2-N-LUBE-1998-2010 | 2906542701, 2906548000, 2906548100 | 2906548000 in two different spin-ons (P502042, P550973) | CONFLICTING | none |
-| P2-N-FUEL-2013-2021-B | 8943692993, 8980374810, 5873109370 | P550390, but OENs shared with the high-capacity row | CONFLICTING | none |
-| P2-N-FUEL-HIGHCAP-2013-2021 | 8980374810, 5873109370, 8980318470 | P550390 via the shared number only | CONFLICTING | none |
-| P2-N-TRANS | 8971822820 (cartridge) | only P550008, an engine-oil spin-on | CONFLICTING (assembly/element) | none |
-| P2-F-LUBE-1987-2008 | 8943924750, 1132004872 | three spin-ons (P550420, P551263, P559128) vs Isuzu "ELEMENT" | CONFLICTING | none |
-| P2-F-FUEL-2018-2020-A | 8943692993, 8980374810, 8943691993 | identical OEN list to the high-capacity row | CONFLICTING | none |
-| P2-F-FUEL-2018-2020-B | same as A | same as A | CONFLICTING | none |
+| P2-N-FUEL-2013-2021-B | 8943692993, 8980374810, 5873109370 | P550390, via 8980374810 (CROSSREF tier) | PARTIAL (`EXCEPTION PASS`) | EF90390 (reuse) |
+| P2-N-FUEL-HIGHCAP-2013-2021 | 8980374810, 5873109370, 8980318470 | P550390, same shared number as the standard row | PARTIAL (`EXCEPTION PASS`) | EF90390 (reuse) |
+| P2-F-LUBE-1987-2008 | 8943924750, 1132004872 | P550420, OEM-tier for 1132004872 (P551263/P559128 rejected: CROSSREF-tier only) | PARTIAL (`EXCEPTION PASS`) | EL80420 (reuse) |
+| P2-F-FUEL-2018-2020-A | 8943692993, 8980374810, 8943691993 | P550390, identical OEN list to the high-capacity row | PARTIAL (`EXCEPTION PASS`) | EF90390 (reuse) |
+| P2-F-FUEL-2018-2020-B | same as A | same as A | PARTIAL (`EXCEPTION PASS`) | EF90390 (reuse) |
+| P2-N-LUBE-1998-2010 | 2906542701, 2906548000, 2906548100 | 2906548000 in two different spin-ons (P502042, P550973), both CROSSREF tier | CONFLICTING (unresolved after `EXCEPTION PASS`) | none |
+| P2-N-TRANS | 8971822820 (cartridge) | only P550008, an engine-oil spin-on -- rejected as a false-positive category mismatch | BLOCKED_DONALDSON (`EXCEPTION PASS`, was CONFLICTING) | none |
 | P2-N-LUBE-2011-ON | 2906544040, 8982984040 | not found | BLOCKED_DONALDSON | none |
 | P2-N-FWS-2022i-ON | 8982373410 | not found | BLOCKED_DONALDSON | none |
 | P2-F-LUBE-2018-2021 | 8982984040 | not found | BLOCKED_DONALDSON | none |
 
-**Base decisions:** 9 Donaldson-based, 0 Fleetguard-based, 10 with no base yet.
-**ELIMFILTERS:** 6 existing SKUs reused (EA16773, EA13614, EL82597, EF92564, EF92599,
-EF92427). No new SKU was minted. Three SKUs answer two rows each, and each Donaldson base maps
-to exactly one SKU, so no duplicates were created. SKU existence was checked against the
-repository catalogue export (`data/dims.csv`). Live PostgreSQL was **not** queried in this
-pass, so a reviewer must confirm each SKU is live before publication.
+**Base decisions:** 14 Donaldson-based, 0 Fleetguard-based, 5 with no base yet.
+**ELIMFILTERS:** 8 existing SKUs reused (EA16773, EA13614, EL82597, EF92564, EF92599,
+EF92427, EF90390, EL80420). No new SKU was minted. Each Donaldson base maps to exactly one
+SKU, so no duplicates were created among the bases actually used. SKU existence was checked
+against the repository catalogue export (`data/dims.csv`), including a physical-dimension
+cross-check (OD/length) for every SKU touched by the exception pass. Live PostgreSQL was
+**not** queried in this pass, so a reviewer must confirm each SKU is live before publication.
 
 **Governance:** every decision is `CANDIDATE_INTELLIGENCE` in `READY_FOR_REVIEW`,
 `published: false`. Nothing was written to the catalogue. Any later write must go through
@@ -507,11 +512,17 @@ N-Series MY2022-2026 fuel and lube.
 ### Anomalous Isuzu numbers
 
 - `2906548000`: Donaldson prints it as `2-90654-800-0` in the cross-reference of both
-  P502042 and P550973. The number therefore exists as an Isuzu `2-xxxxx-xxx-x` reference in
-  Donaldson data. That is recorded, and the Phase 2 row was not normalised.
-- `2906542701`, `2906548100`, `2906544040`: none is recognised by Donaldson. In the
-  2011- lube row the other Isuzu number, `8982984040`, is not recognised either, so the row
-  is blocked rather than resolved through its sibling number.
+  P502042 and P550973, both at CROSSREF (third-party aggregated) tier -- neither carries a
+  Donaldson OEM-tier row for this exact number, so the `EXCEPTION CLOSURE PASS` could not
+  break the tie by evidence strength. The number therefore exists as an Isuzu
+  `2-xxxxx-xxx-x` reference in Donaldson data. That is recorded, and the Phase 2 row was not
+  normalised; the row stays the one remaining `CONFLICTING` case in this file.
+- `2906542701`, `2906548100`, `2906544040`, `8982373410`: none is recognised anywhere in
+  Donaldson's first-party capture (flat cross-reference export, lube/fuel/air results,
+  competitor matrix, OEM matrix, import-ready and homologation matrix -- all checked by the
+  `EXCEPTION CLOSURE PASS`, zero hits). In the 2011- lube row the other Isuzu number,
+  `8982984040`, is not recognised either, so the row is blocked rather than resolved through
+  its sibling number.
 
 ### Known historical candidates
 
@@ -519,9 +530,79 @@ N-Series MY2022-2026 fuel and lube.
 |---|---|
 | AF27693 ↔ P543614 → EA13614 | Linked to Isuzu 8970622940 (VERIFIED_BASE) |
 | FF5877 ↔ P502599 → EF92599 | Linked to 8975425390 / 8981475250 (PARTIAL) |
-| FF5165 ↔ P550390 → EF90390 | Not canonical: standard and high-capacity rows conflict |
-| P502042 → EL82042 | Not canonical: 2906548000 is ambiguous |
+| FF5165 ↔ P550390 → EF90390 | `EXCEPTION PASS`: LINKED_PARTIAL to 8980374810 across 4 rows (CROSSREF tier, no Donaldson OEM-tier row exists for this part) |
+| P502042 → EL82042 | Still not canonical: 2906548000 ties equally to P502042 and P550973 at CROSSREF tier; no tie-breaker found |
 | P551855 → ES91855 | Not linked: engine-level Australasia evidence only, no Isuzu OEN |
+
+### EXCEPTION CLOSURE PASS — 2026-09-23
+
+**Starting counts:** VERIFIED_BASE 4, PARTIAL 5, CONFLICTING 7, BLOCKED_DONALDSON 3.
+**Final counts:** VERIFIED_BASE 4, PARTIAL 10, CONFLICTING 1, BLOCKED_DONALDSON 4.
+**`exception_audit_status`: `CLOSED_WITH_BLOCKERS`** (a new field alongside `phase3_status`,
+which stays `CLOSED` — this pass is a cleanup layered on the existing closure, not a
+reopening of it).
+
+The prior pass correctly found the ambiguity in each `CONFLICTING` row but had not applied
+one distinction available in its own evidence: `scripts/donaldson_crossref_flat.csv` tags
+every row `OEM` (Donaldson's own direct assertion) or `CROSSREF` (an aggregated third-party
+match). An `OEM`-tier row outranks a `CROSSREF`-tier one. Re-running every disputed row
+through that lens, cross-checked against `data/dims.csv` physical dimensions (OD/length) to
+confirm each candidate SKU is a real, distinct, currently-catalogued product rather than
+database noise, resolved 6 of the 7 `CONFLICTING` rows:
+
+- **P550390 group** (`P2-N-FUEL-2013-2021-B`, `-HIGHCAP`, `P2-F-FUEL-2018-2020-A/B`): all
+  four rows share the confirmed Isuzu number `8980374810` (CROSSREF tier, no OEM-tier row
+  exists for P550390 at all). Isuzu's own numbers do not distinguish the standard filter
+  from the high-capacity one — for the F-Series pair they are the *identical* OEN list — so
+  the same Donaldson answer (`P550390` → `EF90390`, reused) is assigned to all four rather
+  than inventing a split Isuzu itself never published.
+- **P2-F-LUBE-1987-2008**: of the three CROSSREF-tier candidates the prior pass found
+  (P550420, P551263, P559128), only `P550420` carries a Donaldson **OEM-tier** row for
+  `1132004872`. P551263's OEM-tier rows are all non-Isuzu (Case/IH, Kubota, Volvo); P559128's
+  are all non-Isuzu (AC Delco, AGCO, agricultural brands). `P550420` → `EL80420` (reused) is
+  the base; the other two are demoted to documented, rejected alternates.
+- **P2-N-TRANS**: reclassified `CONFLICTING` → `BLOCKED_DONALDSON`. Its one Donaldson hit,
+  `P550008`, is a full-flow **engine**-oil spin-on (per `data/dims.csv`, 95 mm × 136 mm)
+  cross-referenced (CROSSREF tier only) against an Isuzu number Isuzu itself publishes as
+  `OIL FILTER; TRANS (CARTRIDGE)` — a transmission element, wrong fluid system and wrong
+  physical form. This is a false-positive string match, not a genuine competing candidate,
+  so there is nothing left to be conflicted between: no base is taken and the row is
+  correctly `BLOCKED_DONALDSON`, not `CONFLICTING`.
+
+**Remaining `CONFLICTING` (1 of 19): `P2-N-LUBE-1998-2010`.** The disputed number
+`2906548000` is CROSSREF-tier on *both* `P502042` and `P550973` — neither carries a
+Donaldson OEM-tier row for this exact number, so the OEM-vs-CROSSREF distinction cannot
+break this specific tie. A family-level signal was found and recorded (P550973 has direct
+OEM-tier ties to a whole cluster of adjacent N-Series Isuzu numbers; P502042 has none) but is
+disclosed as suggestive, not proof, and no base was taken from it. This is the one case in
+the file where the manifest's own standard — leave it `CONFLICTING` if it cannot be resolved
+defensibly — was judged to still apply.
+
+**Duplicate canonical-mapping audit.** Every Donaldson part touched by Isuzu Phase 3 (13
+parts, including the three rejected P2-F-LUBE-1987-2008 candidates and the rejected
+`P550008`) was checked against the legacy `competitor_cross_references_ld.csv` /
+`external_cross_reference_master_ld.csv` / `sku_competitor_matrix_ld.csv` exports for a
+second, conflicting ELIMFILTERS SKU. One finding: `P550008` carries three legacy SKUs
+(`EL50936`, `EL50940`, `EL59363`, all from an older MANN-sourced import) none of which is
+`EL80008`, the `data/dims.csv`-verified current SKU. Classified `LEGACY_STALE_CROSSREF`, not
+corrected here because `P550008` is rejected as a base for every Isuzu row it touches (see
+`P2-N-TRANS` above) — flagged for a general, non-Isuzu-scoped legacy-CSV governance pass
+instead. No other part touched by Isuzu Phase 3 has more than one SKU anywhere in the
+repository.
+
+**P552564 regression check.** Re-verified the fix already merged in PR #737
+(`b93cc8b72d`): `scripts/donaldson_crossref_flat.csv` ties `P552564` only to `EF92564`;
+`P502155` (the correct owner of `EF50953`) does not appear anywhere in the first-party
+capture, so the legacy CSVs' inclusion of Isuzu `1132400740` under the `EF50953`/`P502155`
+grouping is legacy `CROSSREF` noise, not corroboration — the first-party capture prevails per
+this manifest's own priority rule. No script that writes the legacy CSVs
+(`phase3cde_build_ld_enrichment_master.js` and related phase3/phase4 scripts) hardcodes
+either mapping, so the root cause was bad one-time scrape data, not a live generator defect;
+no generator code change was needed beyond the CSV fix and `tests/p552564-canonical-mapping.test.js`
+already merged in PR #737. This pass adds a companion assertion inside
+`tests/isuzu-us-diesel-closure.test.js` (`EXCEPTION 2/3/15`) checking the same invariant
+against this JSON file directly, so a regression in either the CSVs or this file trips a
+test independently of the other.
 
 ### First attempt (2026-09-22): blocked at source 1
 
@@ -594,18 +675,28 @@ UNRESOLVED with no aftermarket answer.
 Phases 1, 2 and 3 are closed in the sense defined above. The remaining work is closing
 the documented gaps:
 
-1. Obtain Donaldson data for `8982984040`, `2906544040` and `8982373410` through a
+1. The one remaining `CONFLICTING` row (`P2-N-LUBE-1998-2010`) needs a Donaldson OEM-tier
+   source (not CROSSREF-tier) that names `2906548000` directly, or an Isuzu-side document
+   distinguishing which physical filter it is.
+2. Reviewer: confirm all 8 reused SKUs (`EA16773`, `EA13614`, `EL82597`, `EF92564`,
+   `EF92599`, `EF92427`, `EF90390`, `EL80420`) are live in PostgreSQL, then decide
+   publication through `catalog-write-gateway`.
+3. The Isuzu standard-vs-high-capacity fuel filter distinction (Phase 2 scope, N-Series and
+   F-Series 2013-2021/2018-2020) is still open at the Isuzu level; this pass assigned the
+   same Donaldson evidence to both configurations of each pair rather than resolving that
+   Phase 2 ambiguity, which stays out of scope for Phase 3.
+4. The legacy-CSV stale mapping found on `P550008` (`EL50936`/`EL50940`/`EL59363` vs the
+   live `EL80008`) is not Isuzu-specific and is out of this task's scope; flagged for a
+   general legacy cross-reference governance pass.
+5. Obtain Donaldson data for `8982984040`, `2906544040` and `8982373410` through a
    non-blocked Donaldson channel. Until then those three rows stay `BLOCKED_DONALDSON`.
    Only a verified Donaldson-not-manufactured determination may open a Fleetguard base.
-2. Reviewer: confirm the six reused SKUs are live in PostgreSQL, then decide publication
-   through `catalog-write-gateway`. Resolve Isuzu standard vs high-capacity fuel identity
-   before any P550390 decision.
-3. Obtain an Isuzu F-Series owner's or parts manual to close F-Series air, cabin, air
+6. Obtain an Isuzu F-Series owner's or parts manual to close F-Series air, cabin, air
    dryer, water separator and transmission.
-4. Obtain Isuzu parts data for the 4HK1-TC N-Series MY2005-2012 fuel filter, for the
+7. Obtain Isuzu parts data for the 4HK1-TC N-Series MY2005-2012 fuel filter, for the
    ECO-MAX fuel and air filters, and for the N-Series MY2022-2026 fuel filter.
-5. Locate an Isuzu-published OEN for the H-Series (`HTR`/`HVR`/`HXR`,
+8. Locate an Isuzu-published OEN for the H-Series (`HTR`/`HVR`/`HXR`,
    `block_id: H-2005-2008`). Until one exists, Phase 3 carries it as `BLOCKED_OEM`.
-6. Obtain NPR-HD and NRR's own MY2021 crew-cab specification PDFs through a route that does
+9. Obtain NPR-HD and NRR's own MY2021 crew-cab specification PDFs through a route that does
    not hit the reproducible 1,048,576-byte truncation documented above, to replace the
    same-batch sibling-evidence closure with each model's own document.
