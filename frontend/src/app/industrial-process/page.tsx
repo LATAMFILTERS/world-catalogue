@@ -73,7 +73,7 @@ export default function IndustrialProcessPage() {
     '@id': `${BASE_URL}/industrial-process/#hero-video`,
     name: 'Industrial & Process Filtration | ELIMFILTERS',
     description: 'Engineering-led filtration and process protection for industrial air, dust and fume, gas, fluids and water.',
-    contentUrl: `${BASE_URL}/images/Industrial%20Process.mp4`,
+    contentUrl: `${BASE_URL}/images/industrial-process.mp4`,
     thumbnailUrl: [`${BASE_URL}/images/planta_converted.avif`],
     isPartOf: { '@id': `${BASE_URL}/industrial-process/#page` },
     publisher: { '@id': `${BASE_URL}/#organization` },
@@ -154,7 +154,7 @@ export default function IndustrialProcessPage() {
               zIndex: 0,
             }}
           >
-            <source src="/images/Industrial%20Process.mp4" type="video/mp4" />
+            <source src="/images/industrial-process.mp4" type="video/mp4" />
           </video>
 
           <div
