@@ -82,7 +82,6 @@
   main#main-content > section[aria-labelledby="syntrax-title"] > h1::before,
   main#main-content > section[aria-labelledby="nanoforce-title"] > h1::before,
   main#main-content > section[aria-labelledby="thermacore-title"] > h1::before {
-    font-family: var(--font-technology-wordmark);
     font-size: clamp(3rem, 7vw, 5rem);
     font-style: italic;
     font-weight: 800;
