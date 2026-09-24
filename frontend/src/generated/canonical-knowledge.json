@@ -1956,7 +1956,8 @@
         "COALVEX™"
       ],
       "technologies": [
-        "COALERIS™"
+        "COALERIS™",
+        "GASLIQ™"
       ],
       "components": [
         "Gas coalescing elements and media",
@@ -1989,7 +1990,7 @@
       "technicalRelationships": [
         "COALVEX™ organizes gas conditioning around the liquid phase carried by natural-gas and industrial process-gas streams.",
         "COALERIS™ is the COALVEX™ family for fine liquid-aerosol and small-droplet coalescence and maps to TC-NG-01.",
-        "Gas-Liquid Separation is the descriptive COALVEX™ path for free liquid, larger droplets and bulk or intermediate separation and maps to TC-NG-02.",
+        "GASLIQ™ is the COALVEX™ Gas-Liquid Separation technology for free liquid, larger droplets and bulk or intermediate separation and maps to TC-NG-02.",
         "Bulk separation and fine coalescence are distinct mechanisms and may be staged when the incoming liquid load requires pre-separation before fine aerosol treatment.",
         "Treatment selection depends on gas composition, flow, pressure, temperature, liquid form and loading, droplet behavior, turndown, drainage and required downstream condition.",
         "Vessel architecture, application point and system configuration do not become independent technology marks."
@@ -2047,7 +2048,7 @@
         "Distinguish coalescing-media problems from bulk-separation, drainage or vessel-operating problems.",
         "COALVEX™ organizes gas conditioning around the liquid phase carried by natural-gas and industrial process-gas streams.",
         "COALERIS™ is the COALVEX™ family for fine liquid-aerosol and small-droplet coalescence and maps to TC-NG-01.",
-        "Gas-Liquid Separation is the descriptive COALVEX™ path for free liquid, larger droplets and bulk or intermediate separation and maps to TC-NG-02.",
+        "GASLIQ™ is the COALVEX™ Gas-Liquid Separation technology for free liquid, larger droplets and bulk or intermediate separation and maps to TC-NG-02.",
         "Bulk separation and fine coalescence are distinct mechanisms and may be staged when the incoming liquid load requires pre-separation before fine aerosol treatment.",
         "Treatment selection depends on gas composition, flow, pressure, temperature, liquid form and loading, droplet behavior, turndown, drainage and required downstream condition.",
         "Vessel architecture, application point and system configuration do not become independent technology marks.",
@@ -2075,7 +2076,7 @@
     {
       "id": "IP-COALVEX-GAS-LIQUID-SEPARATION",
       "slug": "ip-coalvex-gas-liquid-separation",
-      "title": "Gas-Liquid Separation for Industrial Gas Conditioning",
+      "title": "GASLIQ Gas-Liquid Separation for Industrial Gas Conditioning",
       "domain": "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
       "contentType": "Engineering Reference",
       "confidence": "high",
@@ -2091,7 +2092,7 @@
         "COALVEX™"
       ],
       "technologies": [
-        "None assigned"
+        "GASLIQ™"
       ],
       "components": [
         "Gas-liquid separation vessel or chamber",
@@ -2145,11 +2146,11 @@
       "maintenanceProcedures": [],
       "procedures": [],
       "technicalRelationships": [
-        "Gas-Liquid Separation addresses free liquid, larger entrained droplets and bulk or intermediate liquid carryover in gas streams.",
+        "GASLIQ™ is the ELIMFILTERS Gas-Liquid Separation technology for free liquid, larger entrained droplets and bulk or intermediate liquid carryover in gas streams.",
         "Bulk separation can be used upstream of fine coalescence when free-liquid, large-droplet or slug loading would overload a coalescing stage.",
         "Separation behavior depends on gas velocity and turndown, liquid loading, droplet behavior, vessel geometry, disengagement space, internals and drainage.",
         "Stable drainage and level control are required to prevent flooding and downstream liquid carryover.",
-        "Gas-Liquid Separation remains descriptive and maps to TC-NG-02 beneath COALVEX™."
+        "GASLIQ™ maps to TC-NG-02 beneath COALVEX™; the Gas-Liquid Separation descriptor remains attached for technical classification and discovery clarity."
       ],
       "operatingConditions": [
         "Gas flow and turndown",
@@ -2219,11 +2220,11 @@
         "Re-evaluate vessel duty when actual gas or liquid loading differs materially from the selection basis.",
         "Requalify the separation architecture when slug loading or turndown exceeds the original operating envelope.",
         "Protect fine coalescing stages from bulk-liquid loading when the process requires staged separation.",
-        "Gas-Liquid Separation addresses free liquid, larger entrained droplets and bulk or intermediate liquid carryover in gas streams.",
+        "GASLIQ™ is the ELIMFILTERS Gas-Liquid Separation technology for free liquid, larger entrained droplets and bulk or intermediate liquid carryover in gas streams.",
         "Bulk separation can be used upstream of fine coalescence when free-liquid, large-droplet or slug loading would overload a coalescing stage.",
         "Separation behavior depends on gas velocity and turndown, liquid loading, droplet behavior, vessel geometry, disengagement space, internals and drainage.",
         "Stable drainage and level control are required to prevent flooding and downstream liquid carryover.",
-        "Gas-Liquid Separation remains descriptive and maps to TC-NG-02 beneath COALVEX™.",
+        "GASLIQ™ maps to TC-NG-02 beneath COALVEX™; the Gas-Liquid Separation descriptor remains attached for technical classification and discovery clarity.",
         "Gas flow and turndown",
         "Operating and design pressure",
         "Temperature range",
