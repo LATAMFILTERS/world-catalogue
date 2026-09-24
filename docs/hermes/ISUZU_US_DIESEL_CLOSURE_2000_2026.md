@@ -695,14 +695,15 @@ docs) since the first-party capture is silent on this part:**
 
 **Stay `BLOCKED_DONALDSON` (2 of 4), each with a precise, non-generic root cause:**
 
-- **`P2-N-FWS-2022i-ON`** (`8982373410`), root_cause `B_ONLY_FALSE_POSITIVE_CROSS`: one
-  Donaldson candidate, `P550736`, surfaced from a single lower-tier aggregator page. Re-verified
-  directly against six further `P550736`-specific distributor pages (`finditparts.com`,
-  `crossfilters.com`, `dieselequipmentinc.com`, NAPA, Walmart, Amazon) — all agree `P550736` is
-  a Davco 382119 / Volvo 85105574 / Mercedes-Benz-platform water separator with **no** genuine
-  Isuzu application anywhere in its own detailed cross-reference set. Rejected as a false
-  positive rather than accepted on one weak source. `8982373410` is the newest Isuzu number in
-  the entire closure (`2022i-` scope); Donaldson plausibly has not yet catalogued an equivalent.
+- **`P2-N-FWS-2022i-ON`** (`8982373410`), root_cause
+  `B_NO_VALID_DONALDSON_CROSS_AFTER_FALSE_POSITIVE_REJECTION`: the earlier `P550736` lead was
+  rechecked against Donaldson's current official product page. Donaldson publishes `P550736` as a
+  **fuel-filter / water-separator cartridge** in the **DAVCO Fuel Pro** family, with no official
+  Donaldson tie to Isuzu `8982373410`. The single lower-tier aggregator pairing is therefore a
+  platform-mismatch false positive and is rejected. After that rejection there is no valid
+  Donaldson candidate, so the row is refined from `DONALDSON_AMBIGUOUS` to
+  `DONALDSON_NOT_FOUND`. This is explicitly **not** `DONALDSON_NOT_MANUFACTURED_VERIFIED`;
+  Fleetguard remains ineligible.
 - **`P2-N-TRANS`** (`8971822820`), root_cause `C_WRONG_PRODUCT_TYPE` (unchanged from the
   2026-09-23 exception pass — `P550008` was **not** reintroduced as a candidate). New this
   pass: confirmed via multiple independent retailer listings that the transmission is an

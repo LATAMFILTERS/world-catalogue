@@ -66,9 +66,9 @@
     "donaldson": {
       "DONALDSON_VERIFIED": 17,
       "DONALDSON_NOT_MANUFACTURED_VERIFIED": 0,
-      "DONALDSON_NOT_FOUND": 0,
+      "DONALDSON_NOT_FOUND": 1,
       "DONALDSON_SOURCE_BLOCKED": 0,
-      "DONALDSON_AMBIGUOUS": 2
+      "DONALDSON_AMBIGUOUS": 1
     },
     "fleetguard_verified_base": 0,
     "decision_status": {
@@ -1559,7 +1559,7 @@
         ],
         "scope_authority": "PHASE_2_UNCHANGED"
       },
-      "donaldson_status": "DONALDSON_AMBIGUOUS",
+      "donaldson_status": "DONALDSON_NOT_FOUND",
       "donaldson_part": null,
       "donaldson_candidates": [
         {
@@ -1572,11 +1572,17 @@
             "length": "6.76 in (7.03 in overall)"
           },
           "existing_elimfilters_sku": null,
-          "verdict": "REJECTED, FALSE_POSITIVE: a single lower-tier aggregator page (duallane.com) paired this part with Isuzu 8982373410, but P550736's own detailed, multi-source-confirmed cross-reference set (finditparts.com, crossfilters.com, dieselequipmentinc.com, NAPA, Walmart, Amazon -- checked directly) is entirely Davco 382119 / Volvo 85105574 / Mercedes-Benz-ecosystem, with ZERO Isuzu tie anywhere. P550736's own OEM applications (DAVCO 380/382 ELEMAX) are a completely different vehicle platform. This is a data-entry/aggregation error on the one page that suggested it, not a genuine Donaldson-Isuzu cross-reference."
+          "verdict": "REJECTED, FALSE_POSITIVE: Donaldson currently publishes P550736 as a fuel-filter/water-separator cartridge in the DAVCO Fuel Pro family. No official Donaldson mapping to Isuzu 8982373410 was found. The earlier single aggregator cross is therefore rejected as a platform mismatch, not accepted as an Isuzu base.",
+          "official_verification": {
+            "source": "DONALDSON_P550736_OFFICIAL_PUBLIC_2026_09_24",
+            "product_type": "FUEL FILTER, WATER SEPARATOR CARTRIDGE",
+            "resource_family": "DAVCO Fuel Pro",
+            "verdict": "REJECTED_PLATFORM_MISMATCH_NO_ISUZU_OE_TIE"
+          }
         }
       ],
       "donaldson_relationship_type": null,
-      "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
+      "donaldson_source": "DONALDSON_P550736_OFFICIAL_PUBLIC_2026_09_24",
       "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
       "fleetguard_part": null,
       "fleetguard_source": null,
@@ -1587,11 +1593,12 @@
       "elimfilters_existing_sku": null,
       "elimfilters_base_decision": null,
       "decision_status": "BLOCKED_DONALDSON",
-      "confidence": null,
+      "confidence": "high",
       "caveats": [
         "BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24, ROOT CAUSE B (ONLY_FALSE_POSITIVE_CROSS): 8982373410 does not appear in any of the 9 first-party Donaldson capture files (all checked, zero hits) or any of the 3 legacy CSVs (checked, zero hits). Web research (priority 3) surfaced exactly one Donaldson candidate, P550736, from a single lower-tier aggregator; independently re-verifying P550736 against six further distributor pages showed it is a Davco/Volvo/Mercedes-Benz-platform water separator with no genuine Isuzu application anywhere in its own detailed cross-reference set. This is rejected as a false positive rather than accepted on a single weak source, per this row's own filter-position rule: a FUEL_WATER_SEPARATOR row must not accept an ordinary or mismatched-platform candidate.",
         "8982373410 is the newest Isuzu number in the entire Phase 2/3 closure (scope 2022i-on); this is consistent with Donaldson not yet having catalogued an equivalent, rather than a search failure -- the same conclusion the 2026-09-23 exception pass reached, now with the false-positive candidate explicitly investigated and ruled out rather than left unexamined.",
-        "Isuzu's own row form, 'FUEL/WATER SEP; HIGH EFF', explicitly names a fuel/water separator, not a plain fuel filter; no candidate examined would have satisfied that distinction even if the OE match had held."
+        "Isuzu's own row form, 'FUEL/WATER SEP; HIGH EFF', explicitly names a fuel/water separator, not a plain fuel filter; no candidate examined would have satisfied that distinction even if the OE match had held.",
+        "SINGLE-ROW FWS CLOSURE 2026-09-24: current Donaldson public product evidence confirms P550736 is a genuine FUEL FILTER, WATER SEPARATOR CARTRIDGE in the DAVCO Fuel Pro family, but no official Donaldson tie to Isuzu 8982373410 exists in the checked current public source or repository-held capture. The row is therefore refined from DONALDSON_AMBIGUOUS to DONALDSON_NOT_FOUND. This is NOT a verified non-manufacture finding, so Fleetguard remains ineligible by policy."
       ],
       "evidence": [
         {
@@ -1608,7 +1615,20 @@
           ]
         }
       ],
-      "root_cause": "B_ONLY_FALSE_POSITIVE_CROSS"
+      "root_cause": "B_NO_VALID_DONALDSON_CROSS_AFTER_FALSE_POSITIVE_REJECTION",
+      "microphase_closure_2026_09_24": {
+        "status": "CLOSED_WITH_BLOCKER",
+        "exact_oen": "8982373410",
+        "official_donaldson_exact_oen_result": "NOT_FOUND",
+        "rejected_candidate": {
+          "part": "P550736",
+          "official_product_type": "FUEL FILTER, WATER SEPARATOR CARTRIDGE",
+          "official_resource_family": "DAVCO Fuel Pro",
+          "verdict": "REJECTED_PLATFORM_MISMATCH_NO_ISUZU_OE_TIE"
+        },
+        "fleetguard_gate": "NOT_ELIGIBLE_DONALDSON_NOT_MANUFACTURED_NOT_VERIFIED",
+        "terminal_reason": "No valid Donaldson cross-reference for Isuzu 8982373410 was found. P550736 is a genuine Donaldson water-separator cartridge, but Donaldson publishes it in the DAVCO Fuel Pro family and no official Isuzu OE tie was found. NOT_FOUND must not be promoted to NOT_MANUFACTURED."
+      }
     },
     {
       "row_id": "P3-12-N-TRANS",
@@ -2985,6 +3005,16 @@
         "BLOCKED_DONALDSON": 2
       },
       "note": "P848076 ELIMFILTERS SKU CLOSURE: audited the full repository (all first-party Donaldson captures, all 3 legacy CSVs, data/dims.csv, GitHub code search across the whole repo) and, for the first time in this closure's history, live Postgres itself (Render workspace 'elimfilters') for any existing SKU tied to Donaldson P848076 -- found none anywhere (classification E_NEW_PRODUCT_CONFIRMED); the live catalog Postgres that would hold one is not reachable from this session (the only accessible instance, elimfilters-crm-db, is an empty CRM database). Derived a governed candidate SKU, EL88076, using this repository's own codigo_base nomenclature policy (last 4 numeric digits of the Donaldson part number as the SKU suffix, per the enforce_elimfilters_codigo_base_policy() trigger and its JS derivation library) and the empirically-confirmed leading-digit convention for lube SKUs (all 351 existing EL-prefixed SKUs in data/dims.csv use leading digit 8, zero exceptions). Technology (SYNTRAX(TM)) confirmed against docs/brand/TECHNOLOGY_REGISTRY.md and docs/brand/PRODUCT_REGISTRY.md, both independently corroborated by the two other already-closed Donaldson lube SKUs in this same closure carrying identical technology text in their own Donaldson capture records. Both NO_ELIMFILTERS_SKU_YET rows now carry this candidate: P2-N-LUBE-2011-ON stays capped at PARTIAL (Phase 2 row is PARTIAL); P2-F-LUBE-2018-2021 reaches VERIFIED_BASE (Phase 2 row is VERIFIED, DIRECT_OE_CROSS already established). NO_ELIMFILTERS_SKU_YET is now 0. Nothing was written to any live catalog -- this is a governed, READY_FOR_REVIEW candidate, published:false, exactly as every other decision in this file has always been. Phase 1, Phase 2, the 2 remaining BLOCKED_DONALDSON rows, the 9 BLOCKED_OEM rows, and the P550008 legacy-CSV cleanup item are all untouched."
+    },
+    {
+      "on": "2026-09-24",
+      "status": "CLOSED_WITH_BLOCKER",
+      "scope": "P2-N-FWS-2022i-ON_ONLY",
+      "starting_donaldson_status": "DONALDSON_AMBIGUOUS",
+      "final_donaldson_status": "DONALDSON_NOT_FOUND",
+      "decision_status": "BLOCKED_DONALDSON",
+      "fleetguard_gate": "NOT_ELIGIBLE_DONALDSON_NOT_MANUFACTURED_NOT_VERIFIED",
+      "note": "Single-row FUEL_WATER_SEPARATOR closure. Rechecked Isuzu 8982373410 against current Donaldson public evidence. P550736 is a genuine Donaldson fuel-filter/water-separator cartridge, but Donaldson associates it with DAVCO Fuel Pro and no official Isuzu 8982373410 cross-reference was found. The earlier single-aggregator pairing is rejected as a platform mismatch. With no valid Donaldson candidate remaining, the row is refined to DONALDSON_NOT_FOUND. This is not a verified non-manufacture determination, so Fleetguard fallback remains prohibited. No other Phase 3 row, Phase 1, Phase 2, live catalog SKU, or application was changed."
     }
   ],
   "duplicate_mapping_audit": {

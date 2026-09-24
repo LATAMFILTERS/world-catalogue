@@ -1162,6 +1162,24 @@
         "Donaldson part form (style, type) for P848076"
       ],
       "scope_restriction": "PHASE 3 ONLY, and weaker than DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07: this is web/distributor-corroborated, not a first-party local capture hit, so rows citing it are recorded at medium confidence. It never establishes USA vehicle fitment, year, model, engine or configuration -- that remains Phase 1 and Phase 2 only. Distributor cross-reference pages are used only where they reproduce official-looking, structured, traceable data and independently agree with each other; a single, uncorroborated or contradicted distributor claim (see the P550736/Isuzu 8982373410 rejection on row P2-N-FWS-2022i-ON) is not sufficient and is explicitly not registered as a supported claim here."
+    },
+    {
+      "source_id": "DONALDSON_P550736_OFFICIAL_PUBLIC_2026_09_24",
+      "title": "Donaldson P550736 official public product page",
+      "publisher": "Donaldson Company, Inc.",
+      "source_type": "official_manufacturer_product_page",
+      "authority_level": "primary",
+      "origin_url": "https://shop.donaldson.com/store/en-us/product/P550736/23100",
+      "capture_url": null,
+      "captured_at": "2026-09-24",
+      "capture_files": [],
+      "capture_method": "Current Donaldson public product-page verification after exact Isuzu OEN 8982373410 produced no official Donaldson match. The P550736 candidate was then checked directly on Donaldson product content.",
+      "supports": [
+        "Donaldson P550736 is a FUEL FILTER, WATER SEPARATOR CARTRIDGE",
+        "Donaldson associates P550736 product resources with the DAVCO Fuel Pro family",
+        "No official Isuzu 8982373410 tie was found in the checked Donaldson public evidence"
+      ],
+      "scope_restriction": "PHASE 3 ONLY. This source is sufficient to reject P550736 as the Isuzu 8982373410 base and to classify the exact OEN lookup as DONALDSON_NOT_FOUND. Absence from current/public Donaldson evidence is NOT evidence that Donaldson does not manufacture an equivalent; it must never be upgraded to DONALDSON_NOT_MANUFACTURED_VERIFIED or used to open Fleetguard fallback."
     }
   ]
 }
