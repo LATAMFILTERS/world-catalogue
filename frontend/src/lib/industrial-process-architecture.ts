@@ -369,7 +369,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
     name: 'COALVEX™',
     descriptor: 'Gas Conditioning Technologies',
     summary: 'Gas-stream conditioning for entrained liquid aerosols, droplets and free-liquid carryover in natural-gas and industrial process-gas duties.',
-    positioning: 'COALVEX™ organizes gas conditioning by the liquid phase carried in the gas stream. Fine aerosols and small droplets are addressed through COALERIS™ gas coalescence, while bulk free liquid and larger-droplet carryover are addressed through the descriptive Gas-Liquid Separation path. Selection follows gas composition, flow, pressure, temperature, liquid loading, droplet behavior, turndown, drainage and the required downstream condition.',
+    positioning: 'COALVEX™ organizes gas conditioning by the liquid phase carried in the gas stream. Fine aerosols and small droplets are addressed through COALERIS™ gas coalescence, while bulk free liquid and larger-droplet carryover are addressed through GASLIQ™ Gas-Liquid Separation. Selection follows gas composition, flow, pressure, temperature, liquid loading, droplet behavior, turndown, drainage and the required downstream condition.',
     heroImage: '/images/oil&gas.avif',
     heroVideo: '/images/COALVEX.mp4',
     mediaImage: '/images/coalvex.png',
@@ -386,8 +386,8 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         technologySlug: 'coaleris',
       },
       {
-        title: 'Bulk gas-liquid separation',
-        body: 'For free liquid, larger droplets, slugs or intermediate liquid carryover that should be removed before finer coalescing stages or downstream process equipment.',
+        title: 'GASLIQ™ — Bulk gas-liquid separation',
+        body: 'For free liquid, larger droplets, slugs or intermediate liquid carryover that GASLIQ™ removes before finer coalescing stages or downstream process equipment.',
         technologySlug: 'gas-liquid-separation',
       },
     ],
@@ -483,11 +483,11 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
       {
         ...tech(
           'gas-liquid-separation',
+          'GASLIQ™',
           'Gas-Liquid Separation',
-          'Gas-Liquid Separation',
-          false,
+          true,
           'TC-NG-02',
-          'Filtration and separation elements engineered to remove free liquid and entrained droplets from industrial gas streams before downstream equipment or finer coalescing stages.',
+          'GASLIQ™ Gas-Liquid Separation elements engineered to remove free liquid and larger entrained droplets from industrial gas streams before downstream equipment or finer COALERIS™ coalescing stages.',
           'Provide the internal filtration and separation element that captures free liquid, larger entrained droplets and carryover before finer COALERIS™ coalescence or sensitive downstream equipment.',
           ['Inertial impingement and directional change across the separation element', 'Droplet capture and disengagement from the gas stream on the active element surface', 'Gravity-assisted drainage of separated liquid away from the active element', 'Element performance evaluated against liquid loading, gas velocity and allowable pressure drop'],
           ['Natural-gas pre-separation', 'Knockout and bulk-liquid removal duties', 'Compressor upstream protection', 'Process-gas conditioning', 'Upstream protection of fine coalescing stages'],
@@ -516,7 +516,7 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
         engineeringNotes: [
           {
             title: 'Bulk separation comes before fine coalescence when the duty requires it',
-            body: 'Free liquid, large droplets and intermittent liquid loading can overload a fine coalescing stage. Gas-Liquid Separation defines the ELIMFILTERS element path used ahead of finer COALERIS™ treatment when bulk or intermediate liquid removal is required.',
+            body: 'Free liquid, large droplets and intermittent liquid loading can overload a fine coalescing stage. GASLIQ™ defines the ELIMFILTERS Gas-Liquid Separation element path used ahead of finer COALERIS™ treatment when bulk or intermediate liquid removal is required.',
           },
           {
             title: 'The ELIMFILTERS product is the separation element, not the vessel',
@@ -531,18 +531,19 @@ export const INDUSTRIAL_PROCESS_PLATFORMS: readonly IndustrialProcessPlatform[] 
             body: 'The element is selected against gas composition, velocity, pressure, temperature, liquid loading, droplet behavior, compatibility, allowable differential pressure and the required downstream condition. Replacement or service decisions should follow validated condition evidence such as carryover, differential-pressure trend, drainage behavior, fouling, seating and the actual duty history rather than vessel appearance.',
           },
           {
-            title: 'Gas-Liquid Separation remains descriptive',
-            body: 'This is an engineering treatment family beneath COALVEX™, not an independent ELIMFILTERS technology mark. Vessel architecture and plant arrangement are application context and do not become separate ELIMFILTERS product technologies.',
+            title: 'GASLIQ™ identifies the Gas-Liquid Separation technology family',
+            body: 'GASLIQ™ is the ELIMFILTERS technology identifier for Gas-Liquid Separation beneath COALVEX™. The descriptive phrase Gas-Liquid Separation remains attached for technical clarity and search/discovery relevance. Vessel architecture and plant arrangement remain application context and do not become separate ELIMFILTERS product technologies.',
           },
         ],
         knowledgeCenterSlug: 'ip-coalvex-gas-liquid-separation',
         customFaqs: [
-          ['What does ELIMFILTERS supply for Gas-Liquid Separation?', 'The page is centered on filtration and separation elements used inside an appropriate gas-separation housing to remove free liquid, larger entrained droplets and intermediate carryover. The surrounding vessel and process equipment are application context unless separately specified.'],
-          ['How is Gas-Liquid Separation different from COALERIS™?', 'Gas-Liquid Separation is the ELIMFILTERS element path for free liquid, larger entrained droplets and intermediate carryover. COALERIS™ is the fine coalescing technology for smaller droplets and liquid aerosols. The two stages address different liquid regimes and may be used sequentially when the application requires it.'],
+          ['What is GASLIQ™?', 'GASLIQ™ is the ELIMFILTERS Gas-Liquid Separation technology within COALVEX™ for free liquid, larger entrained droplets and intermediate carryover in natural-gas and industrial process-gas streams.'],
+          ['What does ELIMFILTERS supply for GASLIQ™ Gas-Liquid Separation?', 'The page is centered on filtration and separation elements used inside an appropriate gas-separation housing to remove free liquid, larger entrained droplets and intermediate carryover. The surrounding vessel and process equipment are application context unless separately specified.'],
+          ['How is GASLIQ™ different from COALERIS™?', 'GASLIQ™ addresses free liquid, larger entrained droplets and intermediate carryover. COALERIS™ is the fine coalescing technology for smaller droplets and liquid aerosols. The two stages address different liquid regimes and may be used sequentially when the application requires it.'],
           ['What information is needed to select the separation element?', 'Selection requires gas composition, pressure, temperature, flow and turndown, liquid loading and droplet behavior, allowable element differential pressure, the existing housing and element interface, orientation and sealing, drainage conditions, media and seal compatibility, service strategy and the required downstream condition.'],
           ['Does ELIMFILTERS present the pressure vessel as the product?', 'No. Vessels, separators, housings, piping, drains, controls, instrumentation and skids shown in application imagery represent the real operating context. The ELIMFILTERS commercial product is the filtration or separation element unless a separate system scope is explicitly specified.'],
           ['How should the element be monitored or replaced?', 'Review downstream liquid carryover, differential-pressure trend, drainage behavior, fouling or contamination, element seating and seals, operating history and any change in gas or liquid duty. Replacement intervals should be based on validated application evidence rather than a universal time claim.'],
-          ['Is Gas-Liquid Separation an independent ELIMFILTERS technology brand?', 'No. It remains a descriptive engineering treatment family beneath COALVEX™ and maps to TC-NG-02.'],
+          ['Does GASLIQ™ represent a complete separator vessel?', 'No. GASLIQ™ identifies the ELIMFILTERS Gas-Liquid Separation technology family and maps to TC-NG-02. Pressure vessels, separators, housings, drains, controls and piping remain application equipment unless a separate ELIMFILTERS system scope is explicitly approved.'],
         ],
       },
     ],
