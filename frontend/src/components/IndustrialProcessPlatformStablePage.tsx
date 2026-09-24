@@ -33,27 +33,11 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         )}
         <div className={styles.heroShade} aria-hidden="true" />
         <h1 id="industrial-platform-title" className={styles.srOnly}>{platform.name} {platform.descriptor}</h1>
-        <div
-          aria-hidden="true"
-          style={{
-            position: 'relative',
-            zIndex: 3,
-            width: 'min(980px, 86vw)',
-            textAlign: 'center',
-            fontFamily: 'var(--font-technology-wordmark)',
-            fontWeight: 400,
-            WebkitTextStroke: '0.055em currentColor',
-            paintOrder: 'stroke fill',
-            fontSize: 'clamp(3.4rem, 9vw, 7.6rem)',
-            lineHeight: 0.9,
-            letterSpacing: '-0.055em',
-            color: '#fff',
-            textTransform: 'uppercase',
-            textShadow: '0 8px 28px rgba(0,0,0,.5)',
-          }}
-        >
-          {platform.name}
-        </div>
+        <img
+          className={styles.heroMark}
+          src={platformMedia}
+          alt={`${platform.name} — ${platform.descriptor}`}
+        />
       </section>
 
       <nav aria-label="Breadcrumb" style={{padding:'1rem clamp(1.15rem,6vw,6rem)',borderBottom:'1px solid rgba(255,255,255,.12)',background:'#020202'}}>
