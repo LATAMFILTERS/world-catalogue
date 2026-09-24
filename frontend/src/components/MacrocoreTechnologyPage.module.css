@@ -100,14 +100,6 @@
 .metaStack span { color: var(--yellow); font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
 .mediaFigure { margin: 0; }
 .mediaImage { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
-.brandMediaImage {
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
-  object-position: center;
-  border: 0;
-  background: transparent;
-  mix-blend-mode: screen;
-}
 .mediaFigure figcaption { margin-top: 0.8rem; color: var(--soft); font-size: 0.78rem; font-style: italic; line-height: 1.55; }
 
 .twoColumnNotes { margin-top: 2.3rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
