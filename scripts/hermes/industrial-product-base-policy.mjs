@@ -12,7 +12,7 @@ export const INDUSTRIAL_BASE_AUTHORITY_STATUS = Object.freeze({
 });
 
 export const INDUSTRIAL_FAMILY_ANCHORS = Object.freeze({
-  'TC-AIR-01': Object.freeze({ platform: 'AEREMIS™', family: 'General Air Filtration', anchor_brand: 'CAMFIL', commercial_base_allowed: true }),
+  'TC-AIR-01': Object.freeze({ platform: 'AEREMIS™', family: 'GAIRFIL™ — General Air Filtration', anchor_brand: 'CAMFIL', commercial_base_allowed: true }),
   'TC-AIR-02': Object.freeze({ platform: 'AEREMIS™', family: 'HE-CRIVA™ — High-Efficiency / Critical Air Filtration', anchor_brand: 'CAMFIL', commercial_base_allowed: true }),
   'TC-AIR-03': Object.freeze({ platform: 'AEREMIS™', family: 'MA-TREA™ — Molecular Air Treatment', anchor_brand: 'CAMFIL', commercial_base_allowed: true }),
   'TC-DUST-01': Object.freeze({ platform: 'PARTION™', family: 'FUMEVRA™ — Fine Dust & Fume Filtration', anchor_brand: 'DONALDSON', commercial_base_allowed: true }),
