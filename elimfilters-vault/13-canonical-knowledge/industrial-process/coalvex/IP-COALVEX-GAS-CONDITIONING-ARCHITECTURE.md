@@ -24,13 +24,13 @@ cross_reference_write_allowed: false
 - Industries: Oil & Gas; Manufacturing; Power Generation
 - Systems: Industrial & Process
 - Platforms: COALVEX™
-- Technologies: COALERIS™
+- Technologies: COALERIS™; GASLIQ™
 
 ## Technical Relationships — Validated
 
 - COALVEX™ organizes gas conditioning around the liquid phase carried by natural-gas and industrial process-gas streams. | status: approved
 - COALERIS™ is the COALVEX™ family for fine liquid-aerosol and small-droplet coalescence and maps to TC-NG-01. | status: approved
-- Gas-Liquid Separation is the descriptive COALVEX™ path for free liquid, larger droplets and bulk or intermediate separation and maps to TC-NG-02. | status: approved
+- GASLIQ™ is the COALVEX™ Gas-Liquid Separation technology for free liquid, larger droplets and bulk or intermediate separation and maps to TC-NG-02. | status: approved
 - Bulk separation and fine coalescence are distinct mechanisms and may be staged when the incoming liquid load requires pre-separation before fine aerosol treatment. | status: approved
 - Treatment selection depends on gas composition, flow, pressure, temperature, liquid form and loading, droplet behavior, turndown, drainage and required downstream condition. | status: approved
 - Vessel architecture, application point and system configuration do not become independent technology marks. | status: approved
@@ -98,7 +98,7 @@ cross_reference_write_allowed: false
 ## Governance
 
 - COALVEX™ is a commercial platform, not a universal separation-efficiency class.
-- COALERIS™ is the branded gas-coalescence family; Gas-Liquid Separation remains descriptive.
+- COALERIS™ is the branded gas-coalescence family; GASLIQ™ is the branded Gas-Liquid Separation family.
 - No universal efficiency, carryover, pressure-drop, capacity or service-life claim is inherited across the platform.
 - Pressure-vessel and hazardous-gas system requirements remain project- and jurisdiction-specific.
 - Pressure vessels, separators, drains, instrumentation, piping and skids remain system context; ELIMFILTERS product scope is the validated filtration or separation element unless separately approved.

@@ -13,7 +13,7 @@ export const INDUSTRIAL_SKU_PREFIX_POLICY = Object.freeze({
   'TC-DUST-01': Object.freeze({ prefix: 'ID1', label: 'FUMEVRA™', minting_enabled: true }),
 
   'TC-NG-01': Object.freeze({ prefix: 'IG1', label: 'COALERIS™', minting_enabled: true }),
-  'TC-NG-02': Object.freeze({ prefix: 'IG2', label: 'Gas-Liquid Separation', minting_enabled: true }),
+  'TC-NG-02': Object.freeze({ prefix: 'IG2', label: 'GASLIQ™ — Gas-Liquid Separation', minting_enabled: true }),
 
   'TC-HYD-01': Object.freeze({ prefix: 'IH1', label: 'HYLTRIS™', minting_enabled: true }),
   'TC-LUB-01': Object.freeze({ prefix: 'IL1', label: 'LUBREVA™', minting_enabled: true }),

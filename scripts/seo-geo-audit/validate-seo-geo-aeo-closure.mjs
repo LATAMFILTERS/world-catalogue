@@ -90,7 +90,18 @@ const duplicateUrls = urls.filter((url, index) => urls.indexOf(url) !== index);
 const invalidSlash = urls.filter((url) => url !== `${BASE_URL}/` && !url.endsWith('/'));
 const normalizedKeys = urls.map((url) => url.replace(/\/$/, ''));
 const duplicateVariants = normalizedKeys.filter((key, index) => normalizedKeys.indexOf(key) !== index);
-gate('05 Canonical URL hygiene', duplicateUrls.length === 0 && invalidSlash.length === 0 && duplicateVariants.length === 0, `duplicates=${duplicateUrls.length}; unslashed=${invalidSlash.length}; slashVariants=${duplicateVariants.length}`);
+const gasliqCanonicalUrl = `${BASE_URL}/industrial-process/coalvex/gas-liquid-separation/`;
+const gasliqSeoHtml = read('industrial-process/coalvex/gas-liquid-separation/index.html');
+const gasliqSeoOk =
+  gasliqSeoHtml.includes('GASLIQ') &&
+  gasliqSeoHtml.includes('Gas-Liquid Separation') &&
+  gasliqSeoHtml.includes('rel="canonical"') &&
+  gasliqSeoHtml.includes(gasliqCanonicalUrl);
+gate(
+  '05 Canonical URL hygiene',
+  duplicateUrls.length === 0 && invalidSlash.length === 0 && duplicateVariants.length === 0 && gasliqSeoOk,
+  `duplicates=${duplicateUrls.length}; unslashed=${invalidSlash.length}; slashVariants=${duplicateVariants.length}; gasliqSeo=${gasliqSeoOk}`,
+);
 
 // 6. Internal search is explicitly noindex and absent from sitemap.
 const searchHtml = read('knowledge-center/search/index.html');
@@ -116,6 +127,7 @@ const llmsIndustrialOk =
   llms.includes('Industrial & Process — separate commercial engineering domain') &&
   llms.includes('Canonical Asset Protection core technologies — exactly 10') &&
   llms.includes('GAIRFIL™ — General Air Filtration — Engineered Air Protection') &&
+  llms.includes('GASLIQ™ — Gas-Liquid Separation') &&
   llmsIndustrialUrlCount === 20;
 gate(
   '07 GEO citation and Industrial Process coverage',
@@ -147,6 +159,12 @@ const gairfilAeoOk =
   gairfilHtml.includes('TechArticle') &&
   gairfilHtml.includes('FAQPage') &&
   gairfilHtml.includes('BreadcrumbList');
+const gasliqAeoOk =
+  gasliqSeoHtml.includes('GASLIQ') &&
+  gasliqSeoHtml.includes('Gas-Liquid Separation') &&
+  gasliqSeoHtml.includes('TechArticle') &&
+  gasliqSeoHtml.includes('FAQPage') &&
+  gasliqSeoHtml.includes('BreadcrumbList');
 const industrialAeoOk =
   industrialHtml.includes('What is ELIMFILTERS Industrial') &&
   industrialHtml.includes('Does ELIMFILTERS sell complete process equipment?') &&
@@ -155,8 +173,8 @@ const industrialAeoOk =
   industrialHtml.includes('VideoObject');
 gate(
   '09 AEO answer surfaces',
-  faqSchema && !faqNoindex && faqInSitemap && industrialAeoOk && gairfilAeoOk,
-  `FAQPage=${faqSchema}; faqIndexable=${!faqNoindex}; faqSitemap=${faqInSitemap}; industrialAeo=${industrialAeoOk}; gairfilAeo=${gairfilAeoOk}`,
+  faqSchema && !faqNoindex && faqInSitemap && industrialAeoOk && gairfilAeoOk && gasliqAeoOk,
+  `FAQPage=${faqSchema}; faqIndexable=${!faqNoindex}; faqSitemap=${faqInSitemap}; industrialAeo=${industrialAeoOk}; gairfilAeo=${gairfilAeoOk}; gasliqAeo=${gasliqAeoOk}`,
 );
 
 // 10. Sitemap index and robots discovery are wired, and all 20 Industrial & Process pages are exposed consistently.

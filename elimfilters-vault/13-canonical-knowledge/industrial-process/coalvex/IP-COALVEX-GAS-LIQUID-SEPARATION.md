@@ -2,7 +2,7 @@
 type: canonical_knowledge
 status: approved
 knowledge_object_id: "IP-COALVEX-GAS-LIQUID-SEPARATION"
-title: "Gas-Liquid Separation for Industrial Gas Conditioning"
+title: "GASLIQ Gas-Liquid Separation for Industrial Gas Conditioning"
 domain: "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN"
 knowledge_content_type: "Engineering Reference"
 confidence: "high"
@@ -14,9 +14,9 @@ catalog_write_allowed: false
 cross_reference_write_allowed: false
 ---
 
-# Gas-Liquid Separation for Industrial Gas Conditioning
+# GASLIQ™ — Gas-Liquid Separation for Industrial Gas Conditioning
 
-> **ELIMFILTERS CANONICAL KNOWLEDGE.** Approved descriptive COALVEX™ gas-liquid separation knowledge.
+> **ELIMFILTERS CANONICAL KNOWLEDGE.** Approved COALVEX™ / GASLIQ™ Gas-Liquid Separation technology knowledge.
 
 ## Knowledge Position
 
@@ -24,15 +24,15 @@ cross_reference_write_allowed: false
 - Industries: Oil & Gas; Manufacturing; Power Generation
 - Systems: Industrial & Process
 - Platforms: COALVEX™
-- Technologies: None assigned
+- Technologies: GASLIQ™
 
 ## Technical Relationships — Validated
 
-- Gas-Liquid Separation addresses free liquid, larger entrained droplets and bulk or intermediate liquid carryover in gas streams. | status: approved
+- GASLIQ™ is the ELIMFILTERS Gas-Liquid Separation technology for free liquid, larger entrained droplets and bulk or intermediate liquid carryover in gas streams. | status: approved
 - Bulk separation can be used upstream of fine coalescence when free-liquid, large-droplet or slug loading would overload a coalescing stage. | status: approved
 - Separation behavior depends on gas velocity and turndown, liquid loading, droplet behavior, vessel geometry, disengagement space, internals and drainage. | status: approved
 - Stable drainage and level control are required to prevent flooding and downstream liquid carryover. | status: approved
-- Gas-Liquid Separation remains descriptive and maps to TC-NG-02 beneath COALVEX™. | status: approved
+- GASLIQ™ maps to TC-NG-02 beneath COALVEX™; the Gas-Liquid Separation descriptor remains attached for technical classification and discovery clarity. | status: approved
 
 ## Components
 
@@ -124,7 +124,7 @@ cross_reference_write_allowed: false
 
 ## Governance
 
-- Gas-Liquid Separation is descriptive and is not represented as an independent ELIMFILTERS technology mark.
+- GASLIQ™ is the branded family identifier for Gas-Liquid Separation beneath COALVEX™.
 - Vessel architecture, application point and system configuration do not become independent technology brands.
 - No universal separation efficiency, capacity, pressure-drop or turndown claim is assigned without validated project evidence.
 - Pressure-vessel and hazardous-gas requirements remain project- and jurisdiction-specific.

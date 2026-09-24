@@ -119,7 +119,7 @@ Industrial family anchors v1:
 - TC-AIR-03 — MA-TREA™ → CAMFIL
 - TC-DUST-01 — FUMEVRA™ → DONALDSON
 - TC-NG-01 — COALERIS™ → PALL
-- TC-NG-02 — Gas-Liquid Separation → PALL
+- TC-NG-02 — GASLIQ™ — Gas-Liquid Separation → PALL
 - TC-HYD-01 — HYLTRIS™ → PARKER
 - TC-LUB-01 — LUBREVA™ → PARKER
 - TC-OIL-01 — DEWATIS™ → PALL; Parker is a secondary technical/cross-reference source
@@ -201,8 +201,9 @@ Technology:
 - COALERIS™
 Core: TC-NG-01
 
-### Gas-Liquid Separation
-Technology family: descriptive
+### GASLIQ™ — Gas-Liquid Separation
+Technology:
+- GASLIQ™
 Core: TC-NG-02
 
 ## FLUREXIS™ — Fluid Conditioning Technologies

@@ -17,7 +17,7 @@ export const INDUSTRIAL_FAMILY_ANCHORS = Object.freeze({
   'TC-AIR-03': Object.freeze({ platform: 'AEREMIS™', family: 'MA-TREA™ — Molecular Air Treatment', anchor_brand: 'CAMFIL', commercial_base_allowed: true }),
   'TC-DUST-01': Object.freeze({ platform: 'PARTION™', family: 'FUMEVRA™ — Fine Dust & Fume Filtration', anchor_brand: 'DONALDSON', commercial_base_allowed: true }),
   'TC-NG-01': Object.freeze({ platform: 'COALVEX™', family: 'COALERIS™ — Gas Coalescence', anchor_brand: 'PALL', commercial_base_allowed: true }),
-  'TC-NG-02': Object.freeze({ platform: 'COALVEX™', family: 'Gas-Liquid Separation', anchor_brand: 'PALL', commercial_base_allowed: true }),
+  'TC-NG-02': Object.freeze({ platform: 'COALVEX™', family: 'GASLIQ™ — Gas-Liquid Separation', anchor_brand: 'PALL', commercial_base_allowed: true }),
   'TC-HYD-01': Object.freeze({ platform: 'FLUREXIS™', family: 'HYLTRIS™ — Hydraulic Fluid Filtration', anchor_brand: 'PARKER', commercial_base_allowed: true }),
   'TC-LUB-01': Object.freeze({ platform: 'FLUREXIS™', family: 'LUBREVA™ — Industrial Lubrication Filtration', anchor_brand: 'PARKER', commercial_base_allowed: true }),
   'TC-OIL-01': Object.freeze({ platform: 'FLUREXIS™', family: 'DEWATIS™ — Oil Dehydration & Water Removal', anchor_brand: 'PALL', secondary_reference_brand: 'PARKER', commercial_base_allowed: true }),

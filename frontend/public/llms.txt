@@ -66,7 +66,7 @@ Industrial & Process is separate from the 10 Asset Protection core technologies 
   - FUMEVRA™ — Fine Dust & Fume Filtration — https://elimfilters.com/industrial-process/partion/fumevra/
 - COALVEX™ — Gas Conditioning Technologies — https://elimfilters.com/industrial-process/coalvex/
   - COALERIS™ — Gas Coalescence — https://elimfilters.com/industrial-process/coalvex/coaleris/
-  - Gas-Liquid Separation — https://elimfilters.com/industrial-process/coalvex/gas-liquid-separation/
+  - GASLIQ™ — Gas-Liquid Separation — https://elimfilters.com/industrial-process/coalvex/gas-liquid-separation/
 - FLUREXIS™ — Fluid Conditioning Technologies — https://elimfilters.com/industrial-process/flurexis/
   - HYLTRIS™ — Hydraulic Fluid Filtration — https://elimfilters.com/industrial-process/flurexis/hyltris/
   - LUBREVA™ — Industrial Lubrication Filtration — https://elimfilters.com/industrial-process/flurexis/lubreva/
