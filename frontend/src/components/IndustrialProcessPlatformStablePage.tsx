@@ -33,7 +33,20 @@ export function IndustrialProcessPlatformStablePage({ platform }: { platform: In
         <h1 id="industrial-platform-title" className={styles.srOnly}>{platform.name} {platform.descriptor}</h1>
         <div
           aria-hidden="true"
-          className={`${styles.technologyHeroWordmark} ${styles.technologyHeroWordmarkPlatform}`}
+          style={{
+            position: 'relative',
+            zIndex: 3,
+            width: 'min(980px, 86vw)',
+            textAlign: 'center',
+            fontFamily: 'var(--font-technology-wordmark)',
+            fontWeight: 750,
+            fontSize: 'clamp(3.4rem, 9vw, 7.6rem)',
+            lineHeight: 0.9,
+            letterSpacing: '-0.055em',
+            color: '#fff',
+            textTransform: 'uppercase',
+            textShadow: '0 8px 28px rgba(0,0,0,.5)',
+          }}
         >
           {platform.name}
         </div>
