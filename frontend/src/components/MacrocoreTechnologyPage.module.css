@@ -64,8 +64,8 @@
   color: #fff;
   text-transform: uppercase;
   text-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
-  -webkit-text-stroke: 0.012em currentColor;
-  transform: scaleX(1.04);
+  -webkit-text-stroke: 0.014em currentColor;
+  transform: scaleX(1.05);
   transform-origin: center;
 }
 
