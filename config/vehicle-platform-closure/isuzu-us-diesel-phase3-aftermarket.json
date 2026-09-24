@@ -745,8 +745,32 @@
           "oem_refs": "RESOLVED_SINGLE"
         },
         "part_search_http_validation": {
-          "status": "BLOCKED_LOCAL_RUNTIME_SCHEMA_MISMATCH",
-          "detail": "The local catalog PostgreSQL has resolver views but no public.elimfilters_catalog_active_v; current server-original.js requires that view for /api/search. No claim of end-to-end HTTP Part Search validation is made."
+          "status": "LIVE_VERIFIED",
+          "runtime_fix": "server-original.js disables SSL for loopback PostgreSQL; existing scripts/catalog_et9_scope_correction_20260918.sql applied to local catalog DB to create catalog_active + elimfilters_catalog_active_v",
+          "queries": {
+            "2906544040": {
+              "status": 200,
+              "source": "xref_v5",
+              "resolution": "RESOLVED",
+              "sku": "EL88076"
+            },
+            "P848076": {
+              "status": 200,
+              "source": "codigo_base",
+              "sku": "EL88076"
+            },
+            "EL88076": {
+              "status": 200,
+              "source": "exact_sku",
+              "sku": "EL88076"
+            },
+            "8982984040": {
+              "status": 200,
+              "source": "xref_v5",
+              "resolution": "RESOLVED",
+              "sku": "EL88076"
+            }
+          }
         }
       }
     },
@@ -1952,8 +1976,32 @@
           "oem_refs": "RESOLVED_SINGLE"
         },
         "part_search_http_validation": {
-          "status": "BLOCKED_LOCAL_RUNTIME_SCHEMA_MISMATCH",
-          "detail": "The local catalog PostgreSQL has resolver views but no public.elimfilters_catalog_active_v; current server-original.js requires that view for /api/search. No claim of end-to-end HTTP Part Search validation is made."
+          "status": "LIVE_VERIFIED",
+          "runtime_fix": "server-original.js disables SSL for loopback PostgreSQL; existing scripts/catalog_et9_scope_correction_20260918.sql applied to local catalog DB to create catalog_active + elimfilters_catalog_active_v",
+          "queries": {
+            "2906544040": {
+              "status": 200,
+              "source": "xref_v5",
+              "resolution": "RESOLVED",
+              "sku": "EL88076"
+            },
+            "P848076": {
+              "status": 200,
+              "source": "codigo_base",
+              "sku": "EL88076"
+            },
+            "EL88076": {
+              "status": 200,
+              "source": "exact_sku",
+              "sku": "EL88076"
+            },
+            "8982984040": {
+              "status": 200,
+              "source": "xref_v5",
+              "resolution": "RESOLVED",
+              "sku": "EL88076"
+            }
+          }
         }
       }
     },

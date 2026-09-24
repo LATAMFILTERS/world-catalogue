@@ -95,3 +95,12 @@ test('public search excludes catalog-inactive hardware', () => {
   assert.ok(publicSearch.includes("catalog_active = false"), 'search must fail closed for explicitly excluded SKU/base');
   assert.ok(publicSearch.includes("source: 'catalog_scope_excluded'"), 'excluded scope must return explicit empty resolution');
 });
+
+test('local catalog runtime disables PostgreSQL SSL for loopback DATABASE_URL', () => {
+  const server = read('server-original.js');
+  assert.ok(server.includes("databaseHost === '127.0.0.1'"), 'loopback host must be detected');
+  assert.ok(server.includes("databaseHost === 'localhost'"), 'localhost must be detected');
+  assert.ok(server.includes("databaseHost === '::1'"), 'IPv6 loopback must be detected');
+  assert.ok(server.includes('ssl: localDatabase'), 'dbConfig must branch SSL behavior by database host');
+  assert.ok(server.includes('? false'), 'local PostgreSQL must receive ssl:false');
+});

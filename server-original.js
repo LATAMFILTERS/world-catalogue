@@ -969,11 +969,19 @@ app.use((req, res, next) => {
   next();
 });
 
+const databaseUrl = process.env.DATABASE_URL || '';
+let databaseHost = '';
+try {
+  databaseHost = new URL(databaseUrl).hostname.toLowerCase();
+} catch (_) {}
+const localDatabase = databaseHost === '127.0.0.1' || databaseHost === 'localhost' || databaseHost === '::1';
 const dbConfig = {
-  connectionString: process.env.DATABASE_URL,
-  ssl: process.env.DB_SSL_VERIFY === 'true'
-    ? { rejectUnauthorized: true }
-    : { rejectUnauthorized: false },
+  connectionString: databaseUrl,
+  ssl: localDatabase
+    ? false
+    : (process.env.DB_SSL_VERIFY === 'true'
+      ? { rejectUnauthorized: true }
+      : { rejectUnauthorized: false }),
   connectionTimeoutMillis: 10000,
   idleTimeoutMillis: 30000,
   max: 10,
