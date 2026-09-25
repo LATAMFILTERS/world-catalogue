@@ -1,0 +1,3209 @@
+{
+  "sku": "EL38008",
+  "codigo_base": "HU8008Z",
+  "filter_type": "oil",
+  "duty": "LIGHT_DUTY",
+  "technology": "SYNTRAX™",
+  "canonical_brand": "MANN-FILTER",
+  "canonical_source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8008z_mann-filter.html",
+  "canonical_evidence": {
+    "code": "HU8008Z",
+    "gtin": "4011558023454",
+    "authority": "MANN-FILTER",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8008z_mann-filter.html",
+    "evidence_hash": "dd94dc12ec4e78a7f29c0e7c6e8c43f126b2c3d889c88aa7368b68bd64201b1e"
+  },
+  "specs": {
+    "style": "Cartridge",
+    "height_mm": 136,
+    "with_gasket": true,
+    "inner_diameter_mm": 26,
+    "outer_diameter_mm": 71
+  },
+  "oem_codes": [
+    {
+      "code": "8W93-6A692-AC",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8008z_mann-filter.html",
+      "manufacturer": "FORD",
+      "evidence_hash": "dd94dc12ec4e78a7f29c0e7c6e8c43f126b2c3d889c88aa7368b68bd64201b1e",
+      "classification": "OEM",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    },
+    {
+      "code": "C2D 3670",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8008z_mann-filter.html",
+      "manufacturer": "JAGUAR",
+      "evidence_hash": "dd94dc12ec4e78a7f29c0e7c6e8c43f126b2c3d889c88aa7368b68bd64201b1e",
+      "classification": "OEM",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    },
+    {
+      "code": "AJ8 12351",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8008z_mann-filter.html",
+      "manufacturer": "JAGUAR",
+      "evidence_hash": "dd94dc12ec4e78a7f29c0e7c6e8c43f126b2c3d889c88aa7368b68bd64201b1e",
+      "classification": "OEM",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    },
+    {
+      "code": "LR 011279",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8008z_mann-filter.html",
+      "manufacturer": "LAND ROVER",
+      "evidence_hash": "dd94dc12ec4e78a7f29c0e7c6e8c43f126b2c3d889c88aa7368b68bd64201b1e",
+      "classification": "OEM",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    },
+    {
+      "code": "LR019477",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8008z_mann-filter.html",
+      "manufacturer": "LAND ROVER",
+      "evidence_hash": "dd94dc12ec4e78a7f29c0e7c6e8c43f126b2c3d889c88aa7368b68bd64201b1e",
+      "classification": "OEM",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    }
+  ],
+  "competitor_codes": [
+    {
+      "code": "0986AF0524",
+      "brand": "BOSCH",
+      "manufacturer": "BOSCH",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "10-0L-L10",
+      "brand": "ASHIKA",
+      "manufacturer": "ASHIKA",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "109017",
+      "brand": "FEBI-BILSTEIN",
+      "manufacturer": "FEBI-BILSTEIN",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "14159",
+      "brand": "HOFFER",
+      "manufacturer": "MEAT-DORIA",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "25.073.02",
+      "brand": "UFI",
+      "manufacturer": "UFI",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "25.073.2",
+      "brand": "UFI",
+      "manufacturer": "UFI",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "57279",
+      "brand": "WIX",
+      "manufacturer": "WIX",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "586685",
+      "brand": "VALEO",
+      "manufacturer": "VALEO",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "ALO-8739",
+      "brand": "AL",
+      "manufacturer": "AL",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "CH10992",
+      "brand": "FRAM",
+      "manufacturer": "FRAM",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "CH10992ECO",
+      "brand": "FRAM",
+      "manufacturer": "FRAM",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "CX195-01/O01",
+      "brand": "CHAMPION",
+      "manufacturer": "CHAMPION",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "E863HD360",
+      "brand": "HENGST",
+      "manufacturer": "HENGST",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "EOF272",
+      "brand": "COMLINE",
+      "manufacturer": "COMLINE",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "F026407269",
+      "brand": "BOSCH",
+      "manufacturer": "BOSCH",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "FA6113ECO",
+      "brand": "COOPERS-FIAAM",
+      "manufacturer": "COOPERS-FIAAM",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "FOBR51S",
+      "brand": "JAPANPARTS",
+      "manufacturer": "JAPANPARTS",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "FOF-10123",
+      "brand": "AMC",
+      "manufacturer": "AMC",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "FO-L10JM",
+      "brand": "ASHIKA",
+      "manufacturer": "ASHIKA",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "FO-L10JM",
+      "brand": "ASHIKA",
+      "manufacturer": "JAPANPARTS",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "FO-L10S",
+      "brand": "JAPANPARTS",
+      "manufacturer": "JAPANPARTS",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "FOP395",
+      "brand": "MULLER",
+      "manufacturer": "MULLER",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "GFO774",
+      "brand": "GUR",
+      "manufacturer": "GUR",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "L987",
+      "brand": "PURFLUX",
+      "manufacturer": "PURFLUX",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "LVFL817",
+      "brand": "MOTAQUIP",
+      "manufacturer": "MOTAQUIP",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "M138",
+      "brand": "GUD",
+      "manufacturer": "GUD",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "MD-739",
+      "brand": "ALCO",
+      "manufacturer": "ALCO",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "ML4571",
+      "brand": "CLEAN",
+      "manufacturer": "CLEAN",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "OE667/7",
+      "brand": "FILTRON",
+      "manufacturer": "FILTRON",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "OF083",
+      "brand": "MICRONAIR",
+      "manufacturer": "MICRONAIR",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "OP1127",
+      "brand": "TECNOCAR",
+      "manufacturer": "TECNOCAR",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "OX1180DECO",
+      "brand": "MAHLE",
+      "manufacturer": "MAHLE",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "OX774",
+      "brand": "MAHLE",
+      "manufacturer": "MAHLE",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "OX774D",
+      "brand": "KNECHT",
+      "manufacturer": "MAHLE",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "OX774DECO",
+      "brand": "MAHLE",
+      "manufacturer": "MAHLE",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "PB7-008",
+      "brand": "PARTS-MALL",
+      "manufacturer": "PARTS-MALL",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "PB7-009",
+      "brand": "PARTS-MALL",
+      "manufacturer": "PARTS-MALL",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "PB7-010",
+      "brand": "PARTS-MALL",
+      "manufacturer": "PARTS-MALL",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "QFL0323",
+      "brand": "QUINTON-HAZELL",
+      "manufacturer": "QUINTON-HAZELL",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "S5073PE",
+      "brand": "SOFIMA",
+      "manufacturer": "SOFIMA",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "SH4070L",
+      "brand": "SCT",
+      "manufacturer": "SCT",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "SH4070P",
+      "brand": "SCT",
+      "manufacturer": "SCT",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "SO11120",
+      "brand": "HIFI",
+      "manufacturer": "HIFI",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "V48-0501",
+      "brand": "VAICO",
+      "manufacturer": "VAICO",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "WL7579",
+      "brand": "WIX",
+      "manufacturer": "WIX",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "PG6290EX",
+      "source_url": "https://www.pgfilters.com/product-catalog/product-page/pg6290ex/",
+      "verified_at": "2026-09-23T00:00:00.000Z",
+      "manufacturer": "PREMIUM GUARD",
+      "evidence_hash": "4b4bce192afc70d0fe41a5ee310b195c8d614a3f8779510cc154b83228816bde",
+      "classification": "AFTERMARKET",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_PRODUCT_PAGE"
+    }
+  ],
+  "vehicle_applications": [
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2016 XF (V6 3.0L D.I. SuperCharged 24V)",
+      "year_range": "",
+      "engine_code": "V6"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2016 XJR (V8 5.0L D.I. SuperCharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2016 XJ (V8 5.0L D.I. SuperCharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2018 XF (V6 3.0L F.I. Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2020 F-Pace (V8 5.0L FI Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2021 F-Pace (L6 3.0L 2996cc 183 CID) Note:: Factory filled synthetic oil application",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2021 F-Pace (V8 5.0L 5000cc 305 CID) Note:: Factory filled synthetic oil application",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2021 F-Type (V6 3.0L 2995cc 183 CID) Note:: Factory filled synthetic oil application",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2021 F-Type (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2022 F-Pace (L6 3.0L 2996cc 183 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2022 F-Pace (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2022 F-Type (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2021 Range Rover (L6 3.0L 2996cc 183 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2021 Range Rover Sport (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2021 Range Rover (V8 5.0L 5000cc 305 CID) Note:: Factory filled synthetic oil applica",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2022 Defender 110 (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2022 Defender 90 (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2022 Range Rover (L6 3.0L 2996cc 183 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2022 Range Rover Sport (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2022 Range Rover (V8 4.4L 4395cc)",
+      "year_range": "",
+      "engine_code": "NC10"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2022 Range Rover (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2023 Defender 110 (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2023 Defender 90 (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2023 Range Rover Sport (V8 4.4L 4395cc)",
+      "year_range": "",
+      "engine_code": "NC10"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2023 Range Rover (V8 4.4L 4395cc)",
+      "year_range": "",
+      "engine_code": "NC10"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2024 Defender 110 (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2024 Defender 130 (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2024 Defender 90 (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2024 Range Rover Sport (V8 4.4L 4395cc)",
+      "year_range": "",
+      "engine_code": "NC11"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2024 Range Rover (V8 4.4L 4395cc)",
+      "year_range": "",
+      "engine_code": "NC10"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "model": "2025 Defender 130 (V8 5.0L 5000cc 305 CID)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2016 F-Type (V6 3.0L D.I. Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2016 XJ (V6 3.0L D.I. SuperCharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2017 F-Pace (V6 3.0L F.I. SC 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2017 F-Type (V6 3.0L F.I. SC 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2017 XE (V6 3.0L F.I. SC 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2017 XF (V6 3.0L F.I. SC 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2017 XJ (V6 3.0L F.I. SC 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2018 F-Pace (V6 3.0L F.I. Supercharged)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2018 XJ (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2019 F-Pace (V6 3.0L F.I. Supercharged)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2019 F-Type (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2019 XE (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2019 XF S (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2019 XJ (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2020 F-Type (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2020 XF S (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2016 Range Rover (V6 3.0L D.I. SC (DOHC) 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2017 Range Rover (V6 3.0L F.I. SC 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2018 Discovery (V6 3.0L FI Supercharged (VIN V))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2018 Range Rover Sport (V6 3.0L FI SC 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2019 Discovery (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2019 Range Rover Sport (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2019 Range Rover (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2019 Range Rover Velar (V6 3.0L FI Supercharged (VIN V))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2020 Range Rover Sport (6 cyl. 3.0L FI Turbo/Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XJL Supercharged (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XJL Supersport (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XJL (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XJ Supercharged (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XJ Supersport (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XJ (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XFR-S (V8 5.0L D.I. SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XFR (V8 5.0L F.I. SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XF (V8 5.0L D.I. SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XJR (V8 5.0L F.I. SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2017 F-Type (V8 5.0L F.I. Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2017 XJR (V8 5.0L D.I. Supercharged 32V (VIN K))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2017 XJ (V8 5.0L F.I. Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2018 F-Type (V8 5.0L D.I. Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2018 XJ (V8 5.0L FI Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2019 F-Type (V8 5.0L FI Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2019 XJ (V8 5.0L FI Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2020 F-Type (V8 5.0L FI Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "model": "2016 Range Rover Sport (V8 5.0L D.I. SC (DOHC) 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "model": "2016 Range Rover (V8 5.0L D.I. SC (DOHC) 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "model": "2017 Range Rover (V8 5.0L Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "model": "2018 Range Rover Sport (V8 5.0L FI SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "model": "2019 Range Rover (V8 5.0L FI Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "model": "2020 Range Rover Velar (V8 5.0L Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "310",
+      "kw": "228",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2015 LR4 (V6 3.0L F.I. Turbo)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "310",
+      "kw": "228",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2016 LR4 (V6 3.0L D.I. SC (VIN V) 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XF (V6 3.0L F.I. SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XJ L Portfolio (V6 3.0L F.I. SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XJ (V6 3.0L F.I. SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XF (V6 3.0L F.I. SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XJL Portfolio (V6 3.0L F.I. SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XJ (V6 3.0L F.I. SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XF (V6 3.0L F.I. SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XJL Portfolio (V6 3.0L F.I. SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XJ (V6 3.0L F.I. SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2015 Range Rover (V6 3.0L F.I. SC (VIN V))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "253",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2014 F-Type (V6 3.0L FI Supercharged 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "253",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "model": "2015 F-Type (V6 3.0L FI SC 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "340",
+      "kw": "253",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2015 Range Rover Sport (V6 3.0L F.I. (VIN V))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "344",
+      "kw": "253",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "model": "2016 Range Rover Sport (V6 3.0L D.I. SC (VIN V) 24V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "344",
+      "kw": "253",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2016 F-Type (V8 5.0L F.I. SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "375",
+      "kw": "276",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "model": "2015 Range Rover (V8 5.0L F.I. (VIN D))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XJ (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XF (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XJL (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XK (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XF (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XK (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XF (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XJL Portfolio (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XJ (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XK (V8 5.0L FI)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XK (V8 5.0L F.I. (VIN B))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XJL Portfolio (V8 5.0L F.I. (VIN B))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XK (V8 5.0L F.I. (VIN B))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XJL Portfolio (V8 5.0L F.I. SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XK (V8 5.0L F.I. (VIN B))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XF Supercharged (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XF (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XJL Supercharged (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XJ Supercharged (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XF (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XJL Supercharged (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XJ Supercharged (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XF (V8 5.0L F.I. (VIN B))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XJ L Supercharged (V8 5.0L F.I. SC (VIN C))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XJ Supercharged (V8 5.0L F.I. Supercharged 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XF (V8 5.0L F.I. (VIN B))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XJL Supercharged (V8 5.0L F.I. SC (VIN C))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XJ Supercharged (V8 5.0L F.I. SC (VIN C))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XJ Supercharged (V8 5.0L F.I. SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "495",
+      "kw": "369",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2014 F-Type V8S (V8 5.0L FI Supercharged (VIN L) 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "495",
+      "kw": "369",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2015 F-Type (V8 5.0L FI SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XJ Supersport (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "4998",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XJ L Ultimate (V8 5.0L F.I. SC (VIN C))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XFR (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XJL Supersport (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2010 XKR (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XFR (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2011 XKR (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XFR (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XJL Supersport (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XJ Supersport (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XKR (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XJ L Portfolio (V8 5.0L F.I. 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XJ L Supersport (V8 5.0L F.I. SC (VIN C))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XKR (V8 5.0L F.I. SC (VIN C))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XKR (V8 5.0L F.I. SC (VIN C))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XKR (V8 5.0L F.I. SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "550",
+      "kw": "405",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "model": "2012 XKR-S (V8 5.0L FI SC)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "550",
+      "kw": "405",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2013 XKR-S (V8 5.0L F.I. SC (VIN C))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "550",
+      "kw": "405",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XKR-S (V8 5.0L F.I. SC (VIN C))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "550",
+      "kw": "405",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2015 XKR-S (V8 5.0L F.I. SC 32V)",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "550",
+      "kw": "410",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "model": "2014 XJ-R (V8 5.0L F.I. SC (VIN K))",
+      "year_range": "",
+      "engine_code": ""
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Pace (L6 3.0L 2996cc 183 CID)",
+      "engine_code": "",
+      "model_family": "2022"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Pace (L6 3.0L 2996cc 183 CID) Note:: Factory filled synthetic oil application ",
+      "engine_code": "",
+      "model_family": "2021"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Pace (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2022"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Pace (V8 5.0L 5000cc 305 CID) Note:: Factory filled synthetic oil application ",
+      "engine_code": "",
+      "model_family": "2021"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Pace (V8 5.0L FI Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2020"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V6 3.0L 2995cc 183 CID) Note:: Factory filled synthetic oil application ",
+      "engine_code": "",
+      "model_family": "2021"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2021"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2022"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V6 3.0L D.I. SuperCharged 24V)",
+      "engine_code": "V6",
+      "model_family": "2016"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V6 3.0L F.I. Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2018"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJR (V8 5.0L D.I. SuperCharged 32V)",
+      "engine_code": "",
+      "model_family": "2016"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V8 5.0L D.I. SuperCharged 32V)",
+      "engine_code": "",
+      "model_family": "2016"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Defender 110 (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2022"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Defender 110 (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2023"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Defender 110 (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2024"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Defender 130 (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2024"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Defender 130 (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2025"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Defender 90 (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2022"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Defender 90 (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2023"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Defender 90 (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2024"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (L6 3.0L 2996cc 183 CID)",
+      "engine_code": "",
+      "model_family": "2021"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (L6 3.0L 2996cc 183 CID)",
+      "engine_code": "",
+      "model_family": "2022"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (V8 4.4L 4395cc)",
+      "engine_code": "NC10",
+      "model_family": "2023"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (V8 4.4L 4395cc)",
+      "engine_code": "NC11",
+      "model_family": "2024"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2021"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2022"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V8 4.4L 4395cc)",
+      "engine_code": "NC10",
+      "model_family": "2022"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V8 4.4L 4395cc)",
+      "engine_code": "NC10",
+      "model_family": "2023"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V8 4.4L 4395cc)",
+      "engine_code": "NC10",
+      "model_family": "2024"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V8 5.0L 5000cc 305 CID)",
+      "engine_code": "",
+      "model_family": "2022"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V8 5.0L 5000cc 305 CID) Note:: Factory filled synthetic oil applica",
+      "engine_code": "",
+      "model_family": "2021"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Pace (V6 3.0L F.I. SC 24V)",
+      "engine_code": "",
+      "model_family": "2017"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Pace (V6 3.0L F.I. Supercharged)",
+      "engine_code": "",
+      "model_family": "2018"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Pace (V6 3.0L F.I. Supercharged)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V6 3.0L D.I. Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2016"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V6 3.0L F.I. SC 24V)",
+      "engine_code": "",
+      "model_family": "2017"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2020"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XE (V6 3.0L F.I. SC 24V)",
+      "engine_code": "",
+      "model_family": "2017"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XE (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF S (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF S (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2020"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V6 3.0L F.I. SC 24V)",
+      "engine_code": "",
+      "model_family": "2017"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V6 3.0L D.I. SuperCharged 24V)",
+      "engine_code": "",
+      "model_family": "2016"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V6 3.0L F.I. SC 24V)",
+      "engine_code": "",
+      "model_family": "2017"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2018"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Discovery (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Discovery (V6 3.0L FI Supercharged (VIN V))",
+      "engine_code": "",
+      "model_family": "2018"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (6 cyl. 3.0L FI Turbo/Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2020"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (V6 3.0L FI SC 24V)",
+      "engine_code": "",
+      "model_family": "2018"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V6 3.0L D.I. SC (DOHC) 24V)",
+      "engine_code": "",
+      "model_family": "2016"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V6 3.0L F.I. SC 24V)",
+      "engine_code": "",
+      "model_family": "2017"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Velar (V6 3.0L FI Supercharged (VIN V))",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V8 5.0L D.I. Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2018"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V8 5.0L F.I. Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2017"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V8 5.0L FI Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V8 5.0L FI Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2020"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XFR-S (V8 5.0L D.I. SC 32V)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XFR (V8 5.0L F.I. SC 32V)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V8 5.0L D.I. SC 32V)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Supercharged (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Supersport (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJR (V8 5.0L D.I. Supercharged 32V (VIN K))",
+      "engine_code": "",
+      "model_family": "2017"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJR (V8 5.0L F.I. SC 32V)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ Supercharged (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ Supersport (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V8 5.0L F.I. Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2017"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V8 5.0L FI Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2018"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V8 5.0L FI Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (V8 5.0L D.I. SC (DOHC) 32V)",
+      "engine_code": "",
+      "model_family": "2016"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (V8 5.0L FI SC 32V)",
+      "engine_code": "",
+      "model_family": "2018"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V8 5.0L D.I. SC (DOHC) 32V)",
+      "engine_code": "",
+      "model_family": "2016"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V8 5.0L FI Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2019"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V8 5.0L Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2017"
+    },
+    {
+      "hp": "",
+      "kw": "",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Velar (V8 5.0L Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2020"
+    },
+    {
+      "hp": "310",
+      "kw": "228",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "LR4 (V6 3.0L D.I. SC (VIN V) 24V)",
+      "engine_code": "",
+      "model_family": "2016"
+    },
+    {
+      "hp": "310",
+      "kw": "228",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "LR4 (V6 3.0L F.I. Turbo)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V6 3.0L F.I. SC)",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V6 3.0L F.I. SC)",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V6 3.0L F.I. SC)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ L Portfolio (V6 3.0L F.I. SC)",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Portfolio (V6 3.0L F.I. SC)",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Portfolio (V6 3.0L F.I. SC)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V6 3.0L F.I. SC)",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V6 3.0L F.I. SC)",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V6 3.0L F.I. SC)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "340",
+      "kw": "250",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V6 3.0L F.I. SC (VIN V))",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "340",
+      "kw": "253",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V6 3.0L FI SC 24V)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "340",
+      "kw": "253",
+      "ccm": "2995",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V6 3.0L FI Supercharged 24V)",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "340",
+      "kw": "253",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (V6 3.0L F.I. (VIN V))",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "344",
+      "kw": "253",
+      "ccm": "2995",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover Sport (V6 3.0L D.I. SC (VIN V) 24V)",
+      "engine_code": "",
+      "model_family": "2016"
+    },
+    {
+      "hp": "344",
+      "kw": "253",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V8 5.0L F.I. SC 32V)",
+      "engine_code": "",
+      "model_family": "2016"
+    },
+    {
+      "hp": "375",
+      "kw": "276",
+      "ccm": "5000",
+      "make": "LAND ROVER (USA)",
+      "year": "",
+      "model_type": "Range Rover (V8 5.0L F.I. (VIN D))",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Portfolio (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Portfolio (V8 5.0L F.I. SC 32V)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Portfolio (V8 5.0L F.I. (VIN B))",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XK (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XK (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XK (V8 5.0L FI)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XK (V8 5.0L F.I. (VIN B))",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XK (V8 5.0L F.I. (VIN B))",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "385",
+      "kw": "283",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XK (V8 5.0L F.I. (VIN B))",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF Supercharged (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V8 5.0L F.I. (VIN B))",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XF (V8 5.0L F.I. (VIN B))",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Supercharged (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Supercharged (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ L Supercharged (V8 5.0L F.I. SC (VIN C))",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Supercharged (V8 5.0L F.I. SC (VIN C))",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ Supercharged (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ Supercharged (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ Supercharged (V8 5.0L F.I. SC 32V)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ Supercharged (V8 5.0L F.I. SC (VIN C))",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "470",
+      "kw": "346",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ Supercharged (V8 5.0L F.I. Supercharged 32V)",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "495",
+      "kw": "369",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type (V8 5.0L FI SC 32V)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "495",
+      "kw": "369",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "F-Type V8S (V8 5.0L FI Supercharged (VIN L) 32V)",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ Supersport (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "4998",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ L Ultimate (V8 5.0L F.I. SC (VIN C))",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XFR (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XFR (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XFR (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ L Portfolio (V8 5.0L F.I. 32V)",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Supersport (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJL Supersport (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ L Supersport (V8 5.0L F.I. SC (VIN C))",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ Supersport (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XKR (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2010"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XKR (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2011"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XKR (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XKR (V8 5.0L F.I. SC 32V)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XKR (V8 5.0L F.I. SC (VIN C))",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "510",
+      "kw": "375",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XKR (V8 5.0L F.I. SC (VIN C))",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "550",
+      "kw": "405",
+      "ccm": "",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XKR-S (V8 5.0L FI SC)",
+      "engine_code": "",
+      "model_family": "2012"
+    },
+    {
+      "hp": "550",
+      "kw": "405",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XKR-S (V8 5.0L F.I. SC 32V)",
+      "engine_code": "",
+      "model_family": "2015"
+    },
+    {
+      "hp": "550",
+      "kw": "405",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XKR-S (V8 5.0L F.I. SC (VIN C))",
+      "engine_code": "",
+      "model_family": "2013"
+    },
+    {
+      "hp": "550",
+      "kw": "405",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XKR-S (V8 5.0L F.I. SC (VIN C))",
+      "engine_code": "",
+      "model_family": "2014"
+    },
+    {
+      "hp": "550",
+      "kw": "410",
+      "ccm": "5000",
+      "make": "JAGUAR (USA)",
+      "year": "",
+      "model_type": "XJ-R (V8 5.0L F.I. SC (VIN K))",
+      "engine_code": "",
+      "model_family": "2014"
+    }
+  ],
+  "reference_governance": {
+    "status": "COMPLETE_CANONICAL_MANN_WITH_CROSS_CATEGORY_OE_CLEANUP",
+    "premium_guard_code": "PG6290EX",
+    "official_oe_owner": "EL38008",
+    "legacy_base_owner": {
+      "code": "8008",
+      "sku": "EA38008",
+      "filter_type": "air"
+    },
+    "closed_at": "2026-09-24"
+  }
+}
