@@ -2128,17 +2128,11 @@ test('PARTIAL TRIAGE: all 13 PARTIAL rows are classified', () => {
     acc[r.partial_triage.classification] = (acc[r.partial_triage.classification] || 0) + 1;
     return acc;
   }, {});
-  assert.equal(counts.ACTIONABLE_PARTIAL, 11);
-  assert.equal(counts.TERMINAL_PARTIAL, 2);
+  assert.equal(counts.ACTIONABLE_PARTIAL || 0, 0);
+  assert.equal(counts.TERMINAL_PARTIAL, 13);
   assert.equal(counts.PARTIAL_SUPERSEDED || 0, 0);
-  assert.deepEqual(
-    partial.filter((r) => r.partial_triage.classification === 'TERMINAL_PARTIAL').map((r) => r.row_id).sort(),
-    ['P3-13-F-LUBE-1987-2008','P3-15-F-FUEL-1994-2004'].sort()
-  );
-  for (const row of partial.filter((r) => r.partial_triage.classification === 'ACTIONABLE_PARTIAL')) {
-    assert.ok(row.partial_triage.question);
-    assert.ok(row.partial_triage.required_evidence);
-  }
+  assert.equal(partial.filter((r) => r.partial_triage.classification === 'TERMINAL_PARTIAL').length, 13);
+
 });
 
 
@@ -2151,25 +2145,37 @@ test('ACTIONABLE PARTIAL GROUPS: all 11 rows have exact source blockers', () => 
   assert.equal(audit.summary.rows_total, 11);
   assert.equal(audit.summary.rows_state_changed, 0);
 
-  const actionable = phase3.resolution_rows.filter((r) => r.partial_triage?.classification === 'ACTIONABLE_PARTIAL');
-  assert.equal(actionable.length, 11);
-  for (const row of actionable) {
+  const exhausted = phase3.resolution_rows.filter((r) => r.partial_triage?.terminal_subtype === 'TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED');
+  assert.equal(exhausted.length, 11);
+  for (const row of exhausted) {
     assert.equal(row.decision_status, 'PARTIAL');
-    assert.equal(row.partial_triage.group_status, 'ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER');
-    assert.ok(row.partial_triage.group_required_source);
+    assert.equal(row.partial_triage.classification, 'TERMINAL_PARTIAL');
+    assert.equal(row.partial_triage.free_evidence_pass, 'EXHAUSTED');
   }
 });
 
 
 test('EVIDENCE PACK: zero-budget mode covers all 11 actionable partial rows', () => {
   const pack = require('../config/vehicle-platform-closure/isuzu-aisin-evidence-pack.json');
-  const actionable = phase3.resolution_rows.filter((r) => r.partial_triage?.classification === 'ACTIONABLE_PARTIAL');
+  const exhausted = phase3.resolution_rows.filter((r) => r.partial_triage?.terminal_subtype === 'TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED');
   const covered = new Set(Object.values(pack.groups).flatMap((g) => g.row_ids));
   assert.equal(pack.acquisition_strategy.mode, 'FREE_FIRST_PARTY_ONLY');
   assert.equal(pack.acquisition_strategy.budget_usd, 0);
-  assert.equal(actionable.length, 11);
+  assert.equal(exhausted.length, 11);
   assert.equal(covered.size, 11);
-  for (const row of actionable) assert.ok(covered.has(row.row_id), row.row_id + ' missing from evidence pack');
+  for (const row of exhausted) assert.ok(covered.has(row.row_id), row.row_id + ' missing from evidence pack');
+  assert.equal(pack.execution_result.status, 'COMPLETE');
+  assert.equal(pack.execution_result.outcome, 'FIRST_PARTY_EVIDENCE_EXHAUSTED_FOR_RECORDED_QUESTIONS');
   assert.match(pack.extraction_contract.stop_rule, /TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED/);
   assert.match(pack.extraction_contract.stop_rule, /Paid access is out of scope/);
+});
+
+
+test('ZERO-BUDGET TERMINALIZATION: all 13 PARTIAL rows are terminal', () => {
+  const partial = phase3.resolution_rows.filter((r) => r.decision_status === 'PARTIAL');
+  assert.equal(partial.length, 13);
+  assert.equal(partial.filter((r) => r.partial_triage?.classification === 'TERMINAL_PARTIAL').length, 13);
+  assert.equal(partial.filter((r) => r.partial_triage?.terminal_subtype === 'TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED').length, 11);
+  assert.equal(phase3.partial_triage_audit.ACTIONABLE_PARTIAL, 0);
+  assert.equal(phase3.partial_triage_audit.TERMINAL_PARTIAL, 13);
 });
