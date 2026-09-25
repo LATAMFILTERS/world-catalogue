@@ -1,0 +1,17 @@
+{
+  "sku": "EA30018",
+  "codigo_base": "CA18",
+  "reason": "CANONICAL_EVIDENCE_PROVENANCE_MISSING__LEGACY_FRAM_PROMOTION_NOT_TRACEABLE_TO_CURRENT_REFERENCE",
+  "evidence": {
+    "governance_origin_group": "NON_EUROPEAN",
+    "approved_manufacturer": "FRAM",
+    "approved_codigo_base": "CA18",
+    "primary_manufacturer_verified": true,
+    "current_matching_reference_present": false
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

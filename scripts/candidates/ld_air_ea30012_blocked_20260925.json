@@ -1,0 +1,33 @@
+{
+  "sku": "EA30012",
+  "codigo_base": "0012",
+  "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C30012_MATCHES_ONLY_CAPTIVA_ANTARA_SUBSET",
+  "evidence": {
+    "mann_code": "C30012",
+    "mann_dimensions_mm": {
+      "l": 285,
+      "w": 229,
+      "h": 66
+    },
+    "catalog_dimensions_mm": {
+      "od": 110,
+      "h": 20
+    },
+    "matching_subset": [
+      "CHEVROLET",
+      "OPEL",
+      "VAUXHALL"
+    ],
+    "mixed_scope": [
+      "BOGE",
+      "TOYOTA",
+      "MERCEDES-BENZ",
+      "MAZDA"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

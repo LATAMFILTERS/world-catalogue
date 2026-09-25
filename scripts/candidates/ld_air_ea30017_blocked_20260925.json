@@ -1,0 +1,30 @@
+{
+  "sku": "EA30017",
+  "codigo_base": "0017",
+  "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C30017_MATCHES_HYUNDAI_KIA_SUBSET_BUT_CURRENT_FAMILY_IS_MIXED",
+  "evidence": {
+    "mann_code": "C30017",
+    "mann_dimensions_mm": {
+      "l": 301,
+      "w": 227,
+      "h": 37
+    },
+    "catalog_height_mm": 56,
+    "matching_subset": [
+      "HYUNDAI",
+      "KIA MOTORS"
+    ],
+    "mixed_scope": [
+      "LIEBHERR",
+      "OPEL",
+      "VAUXHALL",
+      "CHEVROLET",
+      "ANTONIO CARRARO"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

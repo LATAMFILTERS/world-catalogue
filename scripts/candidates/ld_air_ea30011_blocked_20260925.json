@@ -1,0 +1,34 @@
+{
+  "sku": "EA30011",
+  "codigo_base": "0011",
+  "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C30011_MATCHES_ONLY_SUBSET_AND_PHYSICAL_HEIGHT_MISMATCH",
+  "evidence": {
+    "mann_code": "C30011",
+    "mann_dimensions_mm": {
+      "l": 293,
+      "w": 202,
+      "h": 80
+    },
+    "catalog_height_mm": 61,
+    "matching_subset": [
+      "NISSAN",
+      "OPEL",
+      "RENAULT",
+      "RENAULT TRUCKS",
+      "VAUXHALL"
+    ],
+    "mixed_scope": [
+      "ANTONIO CARRARO",
+      "CASE-IH",
+      "JCB",
+      "MITSUBISHI",
+      "MAHINDRA",
+      "KUBOTA"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

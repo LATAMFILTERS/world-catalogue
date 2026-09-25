@@ -1,0 +1,37 @@
+{
+  "batch": "LD_AIR_B04",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE_WITH_BLOCKERS",
+  "counts": {
+    "BLOCKED_WITH_REASON": 5
+  },
+  "catalog_writes": [],
+  "candidates": [
+    {
+      "sku": "EA30011",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C30011_MATCHES_ONLY_SUBSET_AND_PHYSICAL_HEIGHT_MISMATCH"
+    },
+    {
+      "sku": "EA30012",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C30012_MATCHES_ONLY_CAPTIVA_ANTARA_SUBSET"
+    },
+    {
+      "sku": "EA30016",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_EVIDENCE_PROVENANCE_MISSING__LEGACY_FRAM_PROMOTION_NOT_TRACEABLE_TO_CURRENT_REFERENCE"
+    },
+    {
+      "sku": "EA30017",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C30017_MATCHES_HYUNDAI_KIA_SUBSET_BUT_CURRENT_FAMILY_IS_MIXED"
+    },
+    {
+      "sku": "EA30018",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_EVIDENCE_PROVENANCE_MISSING__LEGACY_FRAM_PROMOTION_NOT_TRACEABLE_TO_CURRENT_REFERENCE"
+    }
+  ],
+  "closed_at": "2026-09-25"
+}
