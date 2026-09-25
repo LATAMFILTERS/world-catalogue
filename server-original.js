@@ -1729,7 +1729,14 @@ app.get('/api/autocomplete', searchLimiter, async (req, res) => {
 // Catalog unification: an old or merged SKU (catalog_sku_alias, one hop) resolves to its current active SKU.
 // Returns the search response, or null when there is no alias, the target is not active, or the alias table
 // does not exist yet (databases where the unification has not been applied) — callers then continue as before.
+// Table existence is checked with to_regclass (no server-side error log) and cached for 60 s.
+let skuAliasTable = { exists: false, checkedAt: 0 };
 async function skuAliasSearchResult(client, normalizedSku, raw, lang) {
+  if (Date.now() - skuAliasTable.checkedAt > 60000) {
+    const { rows } = await client.query(`SELECT to_regclass('public.catalog_sku_alias') IS NOT NULL AS ok`);
+    skuAliasTable = { exists: rows[0].ok, checkedAt: Date.now() };
+  }
+  if (!skuAliasTable.exists) return null;
   let alias;
   try {
     const { rows } = await client.query(
