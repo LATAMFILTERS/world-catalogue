@@ -816,10 +816,9 @@ test('PHASE 3.5: Fleetguard defines a base only when Donaldson absence is verifi
   for (const row of phase3.resolution_rows) {
     if (row.base_source_brand === 'FLEETGUARD') assert.equal(row.donaldson_status, 'DONALDSON_NOT_MANUFACTURED_VERIFIED');
   }
-  // The FWS single-row closure deliberately leaves one DONALDSON_NOT_FOUND row;
-  // this negative test uses the remaining DONALDSON_AMBIGUOUS transmission row.
-  // Neither state is eligible for a Fleetguard base.
-  const rogue = { ...phase3.resolution_rows.find((r) => r.donaldson_status === 'DONALDSON_AMBIGUOUS'), base_source_brand: 'FLEETGUARD' };
+  // The FWS single-row closure leaves one DONALDSON_NOT_FOUND row.
+  // NOT_FOUND is still not enough to open Fleetguard as the canonical base.
+  const rogue = { ...phase3.resolution_rows.find((r) => r.donaldson_status === 'DONALDSON_NOT_FOUND'), base_source_brand: 'FLEETGUARD' };
   const original = phase3.resolution_rows.slice();
   phase3.resolution_rows.splice(0, phase3.resolution_rows.length, ...original.map((r) => (r.row_id === rogue.row_id ? rogue : r)));
   try {
@@ -882,7 +881,10 @@ test('PHASE 3.10: assembly, element and kit are not mixed', () => {
       assert.equal(row.donaldson_relationship_type, 'KIT_CROSS', `${row.row_id}: kit OEN must not be a direct cross`);
       assert.notEqual(row.decision_status, 'VERIFIED_BASE');
     }
-    if (/CARTRIDGE/i.test(row.isuzu_part_form)) assert.equal(base.form.style, 'Cartridge', row.row_id);
+    if (/CARTRIDGE/i.test(row.isuzu_part_form) && base.form.style !== 'Cartridge') {
+      assert.ok(row.microphase_closure_2026_09_24?.resolution_basis, `${row.row_id}: spin-on resolution of OEM cartridge wording needs explicit evidence`);
+      assert.match(row.microphase_closure_2026_09_24.resolution_basis, /Fleetguard|spin-on|terminology/i);
+    }
     // "ELEMENT KIT" rows are already fully handled by the /KIT/i branch above
     // (KIT_CROSS, never a direct cross); only plain "ELEMENT" (no "KIT") rows
     // need their own explicit terminology caveat checked here.
@@ -897,14 +899,13 @@ test('PHASE 3.10: assembly, element and kit are not mixed', () => {
     }
   }
   const trans = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-TRANS');
-  // EXCEPTION AUDIT 2026-09-23 reclassified this row from CONFLICTING to
-  // BLOCKED_DONALDSON: the only Donaldson hit (P550008, a full-flow engine-oil
-  // spin-on) is a false-positive category mismatch against a transmission
-  // filter cartridge, not a genuine competing candidate -- so there is nothing
-  // left to be "conflicted" between, only an absence of a usable base.
-  assert.equal(trans.decision_status, 'BLOCKED_DONALDSON', 'a cartridge OEN mapped only to a spin-on must not become a base');
-  assert.equal(trans.base_source_part, null);
-  assert.equal(trans.base_source_brand, null);
+  // SINGLE-ROW TRANSMISSION CLOSURE 2026-09-24 supersedes the earlier form-only
+  // rejection: exact Donaldson OEN cross + independent Fleetguard transmission
+  // application + near-identical spin-on geometry establish a usable base.
+  assert.equal(trans.decision_status, 'PARTIAL');
+  assert.equal(trans.base_source_part, 'P550008');
+  assert.equal(trans.base_source_brand, 'DONALDSON');
+  assert.equal(trans.elimfilters_existing_sku, 'EL80008');
 });
 
 test('PHASE 3.11: no gasoline scope enters Phase 3', () => {
@@ -1026,11 +1027,13 @@ test('EXCEPTION 1: no Donaldson part used by Isuzu Phase 3 has two canonical SKU
     if (prior) assert.equal(prior, row.elimfilters_existing_sku, `${row.base_source_part} resolves to two different SKUs across rows`);
     skuByBase.set(row.base_source_part, row.elimfilters_existing_sku);
   }
-  // The one part this audit found with more than one SKU anywhere in the
-  // repository (P550008) is documented explicitly and is not used as a base
-  // for any row, so it correctly never appears in skuByBase above.
-  assert.ok(phase3.duplicate_mapping_audit.findings.some((f) => f.donaldson_part === 'P550008'));
-  assert.ok(!phase3.resolution_rows.some((r) => r.base_source_part === 'P550008'));
+  // P550008 is now an active base, so the previously documented stale legacy
+  // mappings must be cleaned and the canonical owner must be EL80008.
+  const p550008Finding = phase3.duplicate_mapping_audit.findings.find((f) => f.donaldson_part === 'P550008');
+  assert.ok(p550008Finding);
+  assert.match(p550008Finding.action_taken, /removed 3 stale P550008 rows/);
+  const trans = phase3.resolution_rows.find((r) => r.base_source_part === 'P550008');
+  assert.equal(trans.elimfilters_existing_sku, 'EL80008');
 });
 
 test('EXCEPTION 2: P552564 belongs only to EF92564', () => {
@@ -1134,7 +1137,12 @@ test('EXCEPTION 10: assembly, element and kit candidates are not fused across th
   const rejected = lube.donaldson_candidates.find((c) => c.part === 'P550973');
   assert.match(rejected.verdict, /MISMATCH|REJECTED/);
   const trans = phase3.resolution_rows.find((r) => r.row_id === 'P3-12-N-TRANS');
-  assert.equal(trans.base_source_part, null, 'a transmission cartridge OEN must never resolve to an engine-oil spin-on base');
+  assert.equal(trans.base_source_part, 'P550008');
+  assert.equal(trans.elimfilters_existing_sku, 'EL80008');
+  assert.equal(trans.decision_status, 'PARTIAL');
+  assert.equal(trans.donaldson_relationship_type, 'DIRECT_OE_CROSS');
+  assert.ok(trans.fleetguard_corroboration.some((x) => x.part === 'LF551A'));
+  assert.match(trans.caveats.at(-1), /CARTRIDGE|spin-on|Fleetguard/i);
   const fLube = phase3.resolution_rows.find((r) => r.row_id === 'P3-13-F-LUBE-1987-2008');
   assert.equal(fLube.base_source_part, 'P550420');
   assert.notEqual(fLube.base_source_part, 'P551263');
@@ -1174,15 +1182,15 @@ test('EXCEPTION 13: every CONFLICTING row ends resolved or carries an explicit, 
 });
 
 test('EXCEPTION 14: every BLOCKED_DONALDSON row shows exact search evidence', () => {
-  // BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24 resolved 2 of the
-  // original 4 (P2-N-LUBE-2011-ON, P2-F-LUBE-2018-2021); 2 remain blocked.
+  // Later single-row closure resolved P2-N-TRANS; only the FWS row remains blocked.
   const blocked = phase3.resolution_rows.filter((r) => r.decision_status === 'BLOCKED_DONALDSON');
-  assert.equal(blocked.length, 2);
+  assert.equal(blocked.length, 1);
   for (const row of blocked) {
     assert.ok(row.caveats.length > 0, `${row.row_id} must document its search`);
   }
-  const trans = blocked.find((r) => r.row_id === 'P3-12-N-TRANS');
-  assert.ok(trans.caveats.some((c) => /FALSE_POSITIVE/.test(c)), 'P3-12 must record why its one Donaldson hit was rejected, not just that none was found');
+  const trans = phase3.resolution_rows.find((r) => r.row_id === 'P3-12-N-TRANS');
+  assert.equal(trans.decision_status, 'PARTIAL');
+  assert.equal(trans.base_source_part, 'P550008');
   const fws = blocked.find((r) => r.row_id === 'P3-11-N-FWS-2022i-ON');
   assert.ok(fws, 'P2-N-FWS-2022i-ON must still be represented as BLOCKED_DONALDSON');
 });
@@ -1215,7 +1223,7 @@ test('EXCEPTION AUDIT FINAL: counts match the reported starting and final tallie
   // P848076 ELIMFILTERS SKU CLOSURE 2026-09-24: closed both remaining
   // NO_ELIMFILTERS_SKU_YET rows with a governed candidate SKU.
   const history = phase3.exception_audit_history.find((h) => h.starting_counts?.NO_ELIMFILTERS_SKU_YET === 2);
-  assert.equal(phase3.exception_audit_history.length, 5);
+  assert.equal(phase3.exception_audit_history.length, 6);
   assert.ok(history);
   assert.deepEqual(history.starting_counts, { VERIFIED_BASE: 4, PARTIAL: 11, CONFLICTING: 0, NO_ELIMFILTERS_SKU_YET: 2, BLOCKED_DONALDSON: 2 });
   assert.deepEqual(history.final_counts, { VERIFIED_BASE: 5, PARTIAL: 12, CONFLICTING: 0, NO_ELIMFILTERS_SKU_YET: 0, BLOCKED_DONALDSON: 2 });
@@ -1226,11 +1234,18 @@ test('EXCEPTION AUDIT FINAL: counts match the reported starting and final tallie
   assert.equal(fwsHistory.final_donaldson_status, 'DONALDSON_NOT_FOUND');
   assert.equal(fwsHistory.decision_status, 'BLOCKED_DONALDSON');
 
+  const transHistory = phase3.exception_audit_history.find((h) => h.scope === 'P2-N-TRANS_ONLY');
+  assert.ok(transHistory);
+  assert.equal(transHistory.starting_decision_status, 'BLOCKED_DONALDSON');
+  assert.equal(transHistory.final_decision_status, 'PARTIAL');
+  assert.equal(transHistory.base, 'DONALDSON P550008');
+  assert.equal(transHistory.elimfilters_sku, 'EL80008');
+
   const counts = phase3.coverage.decision_status;
-  assert.equal(counts.VERIFIED_BASE, history.final_counts.VERIFIED_BASE);
-  assert.equal(counts.PARTIAL, history.final_counts.PARTIAL);
-  assert.equal(counts.CONFLICTING, history.final_counts.CONFLICTING);
-  assert.equal(counts.BLOCKED_DONALDSON, history.final_counts.BLOCKED_DONALDSON);
+  assert.equal(counts.VERIFIED_BASE, 5);
+  assert.equal(counts.PARTIAL, 13);
+  assert.equal(counts.CONFLICTING, 0);
+  assert.equal(counts.BLOCKED_DONALDSON, 1);
   assert.equal(counts.NO_ELIMFILTERS_SKU_YET, 0, 'both rows this pass resolved now carry a governed candidate SKU');
 
   assert.equal(phase3.exception_audit_status, 'CLOSED_WITH_BLOCKERS');
@@ -1322,7 +1337,7 @@ test('MICROCASE 8: no other Phase 3 row is affected', () => {
   // rows, not to freeze them at their pre-later-pass values.
   const expectedDecisionStatus = {
     'P3-01-N-AIR-1986-2005': 'VERIFIED_BASE', 'P3-02-N-AIR-2006-ON': 'VERIFIED_BASE', 'P3-03-N-LUBE-4JJ': 'VERIFIED_BASE', 'P3-06-N-FUEL-4HE': 'VERIFIED_BASE',
-    'P3-04-N-LUBE-2011-ON': 'PARTIAL', 'P3-11-N-FWS-2022i-ON': 'BLOCKED_DONALDSON', 'P3-12-N-TRANS': 'BLOCKED_DONALDSON', 'P3-14-F-LUBE-2018-2021': 'VERIFIED_BASE',
+    'P3-04-N-LUBE-2011-ON': 'PARTIAL', 'P3-11-N-FWS-2022i-ON': 'BLOCKED_DONALDSON', 'P3-12-N-TRANS': 'PARTIAL', 'P3-14-F-LUBE-2018-2021': 'VERIFIED_BASE',
     'P3-07-N-FUEL-2013-2021-A': 'PARTIAL', 'P3-08-N-FUEL-2013-2021-B': 'PARTIAL', 'P3-09-N-FUEL-2013-2021-C': 'PARTIAL', 'P3-10-N-FUEL-HIGHCAP-2013-2021': 'PARTIAL',
     'P3-13-F-LUBE-1987-2008': 'PARTIAL', 'P3-15-F-FUEL-1994-2004': 'PARTIAL', 'P3-16-F-FUEL-2018-2020-A': 'PARTIAL', 'P3-17-F-FUEL-2018-2020-B': 'PARTIAL',
     'P3-18-F-FUEL-2018-2020-C': 'PARTIAL', 'P3-19-F-FUEL-2018-2020-D': 'PARTIAL'
@@ -1377,8 +1392,10 @@ test('MICROCASE 12: no direct SQL and no auto-publish for this row', () => {
   assert.equal(phase3.governance.publication_authorized, false);
 });
 
-test('MICROCASE FINAL: P550008 legacy cleanup and the rest of the exception audit are untouched', () => {
-  assert.ok(phase3.duplicate_mapping_audit.findings.some((f) => f.donaldson_part === 'P550008' && f.action_taken === 'none (out of this task\'s scope: not implicated in any live Isuzu base decision)'));
+test('MICROCASE FINAL: P550008 legacy cleanup is explicit after the transmission row becomes live evidence', () => {
+  const p550008 = phase3.duplicate_mapping_audit.findings.find((f) => f.donaldson_part === 'P550008');
+  assert.ok(p550008);
+  assert.match(p550008.action_taken, /removed 3 stale P550008 rows/);
   assert.equal(phase3.resolution_rows.length, 19);
   assert.equal((phase3.blocked_oem_rows || []).length, 9);
   const result = validateClosure();
@@ -1427,16 +1444,16 @@ test('BLOCKEDCASE 3: wrong product type cannot resolve a row (P550736 rejected f
   assert.match(rejected.verdict, /REJECTED|FALSE_POSITIVE/);
 });
 
-test('BLOCKEDCASE 4: the transmission row cannot accept an engine-oil filter as a base', () => {
+test('BLOCKEDCASE 4: the transmission row resolves only after independent physical/application corroboration', () => {
   const trans = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-TRANS');
-  assert.equal(trans.base_source_part, null);
-  assert.equal(trans.decision_status, 'BLOCKED_DONALDSON');
-  assert.equal(trans.root_cause, 'C_WRONG_PRODUCT_TYPE');
-  // P550008 must remain a documented, rejected candidate -- not reintroduced as a base.
-  const p550008 = trans.donaldson_candidates.find((c) => c.part === 'P550008');
-  assert.ok(p550008);
-  assert.notEqual(trans.base_source_part, 'P550008');
-  assert.ok(trans.caveats.some((c) => /Aisin/.test(c)), 'must record the Aisin-not-Allison transmission finding from this pass');
+  assert.equal(trans.base_source_part, 'P550008');
+  assert.equal(trans.elimfilters_existing_sku, 'EL80008');
+  assert.equal(trans.decision_status, 'PARTIAL');
+  assert.equal(trans.donaldson_status, 'DONALDSON_VERIFIED');
+  assert.equal(trans.root_cause, null);
+  assert.ok(trans.donaldson_candidates.some((c) => c.part === 'P550008'));
+  assert.ok(trans.fleetguard_corroboration.some((c) => c.part === 'LF551A'));
+  assert.equal(trans.microphase_closure_2026_09_24.status, 'RESOLVED_PARTIAL');
 });
 
 test('BLOCKEDCASE 5: the water-separator row cannot accept an ordinary fuel-only filter', () => {
@@ -1583,20 +1600,26 @@ test('BLOCKEDCASE FINAL: BLOCKED_DONALDSON closure micro-phase counts are correc
 
   const counts = phase3.coverage.decision_status;
   assert.equal(counts.VERIFIED_BASE, 5);
-  assert.equal(counts.PARTIAL, 12);
+  assert.equal(counts.PARTIAL, 13);
   assert.equal(counts.CONFLICTING, 0);
-  assert.equal(counts.BLOCKED_DONALDSON, 2);
+  assert.equal(counts.BLOCKED_DONALDSON, 1);
   assert.equal(counts.NO_ELIMFILTERS_SKU_YET, 0, 'both rows the BLOCKED_DONALDSON pass produced were later closed by the P848076 SKU CLOSURE pass');
   assert.equal(counts.BLOCKED_OEM, 9);
 
-  // Not forced to 0: 2 genuine blockers remain, each with a precise,
-  // non-generic root_cause rather than a bare "not found".
+  // One genuine Donaldson blocker remains after the transmission row resolves.
   const stillBlocked = phase3.resolution_rows.filter((r) => r.decision_status === 'BLOCKED_DONALDSON');
-  assert.equal(stillBlocked.length, 2);
+  assert.equal(stillBlocked.length, 1);
+  assert.equal(stillBlocked[0].phase2_row_id, 'P2-N-FWS-2022i-ON');
   for (const row of stillBlocked) assert.ok(row.root_cause, `${row.row_id} must carry an explicit root_cause code`);
 
-  assert.ok(phase3.duplicate_mapping_audit.findings.some((f) => f.donaldson_part === 'P550008'));
-  assert.equal(phase3.duplicate_mapping_audit.findings.find((f) => f.donaldson_part === 'P550008').action_taken, 'none (out of this task\'s scope: not implicated in any live Isuzu base decision)');
+  const p550008Finding = phase3.duplicate_mapping_audit.findings.find((f) => f.donaldson_part === 'P550008');
+  assert.ok(p550008Finding);
+  assert.match(p550008Finding.action_taken, /removed 3 stale P550008 rows/);
+  const staleFiles = ['competitor_cross_references_ld.csv', 'external_cross_reference_master_ld.csv'];
+  for (const file of staleFiles) {
+    const text = fs.readFileSync(path.join(__dirname, '..', file), 'utf8');
+    assert.doesNotMatch(text, /"(?:EL50936|EL50940|EL59363)"[^\n]*"P550008"/);
+  }
 
   const result = validateClosure();
   assert.deepEqual(result.errors, []);
@@ -1763,7 +1786,7 @@ test('SKUCASE 19: unrelated Phase 3 rows are untouched', () => {
     'P3-05-N-LUBE-1998-2010': 'PARTIAL', 'P3-07-N-FUEL-2013-2021-A': 'PARTIAL', 'P3-08-N-FUEL-2013-2021-B': 'PARTIAL', 'P3-09-N-FUEL-2013-2021-C': 'PARTIAL',
     'P3-10-N-FUEL-HIGHCAP-2013-2021': 'PARTIAL', 'P3-13-F-LUBE-1987-2008': 'PARTIAL', 'P3-15-F-FUEL-1994-2004': 'PARTIAL', 'P3-16-F-FUEL-2018-2020-A': 'PARTIAL',
     'P3-17-F-FUEL-2018-2020-B': 'PARTIAL', 'P3-18-F-FUEL-2018-2020-C': 'PARTIAL', 'P3-19-F-FUEL-2018-2020-D': 'PARTIAL',
-    'P3-11-N-FWS-2022i-ON': 'BLOCKED_DONALDSON', 'P3-12-N-TRANS': 'BLOCKED_DONALDSON'
+    'P3-11-N-FWS-2022i-ON': 'BLOCKED_DONALDSON', 'P3-12-N-TRANS': 'PARTIAL'
   };
   for (const id of otherIds) {
     const row = phase3.resolution_rows.find((r) => r.row_id === id);
@@ -1786,13 +1809,13 @@ test('SKUCASE 21: P502042 regression still passes', () => {
   assert.equal(lube1998.decision_status, 'PARTIAL');
 });
 
-test('SKUCASE 22: P550008 remains rejected for the transmission row', () => {
+test('SKUCASE 22: P550008 resolves the transmission row to the existing EL80008 canonical SKU', () => {
   const trans = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-TRANS');
-  assert.equal(trans.base_source_part, null);
-  assert.equal(trans.decision_status, 'BLOCKED_DONALDSON');
-  const rejected = trans.donaldson_candidates.find((c) => c.part === 'P550008');
-  assert.ok(rejected);
-  assert.equal(trans.elimfilters_existing_sku, null, 'the transmission row must not have acquired a SKU while P848076 (an unrelated lube part) was closed');
+  assert.equal(trans.base_source_part, 'P550008');
+  assert.equal(trans.decision_status, 'PARTIAL');
+  assert.equal(trans.elimfilters_existing_sku, 'EL80008');
+  assert.equal(trans.elimfilters_base_decision.action, 'REUSE_EXISTING_SKU');
+  assert.equal(trans.elimfilters_base_decision.published, false);
 });
 
 test('SKUCASE 23: Part Search architecture is documented as reused, not duplicated', () => {
@@ -1826,14 +1849,14 @@ test('SKUCASE 25: EL88076 was derived from the real governed nomenclature policy
   assert.equal('EL8' + donaldsonDigits.slice(-4), 'EL88076');
 });
 
-test('SKUCASE FINAL: NO_ELIMFILTERS_SKU_YET is 0 and only the 2 genuine BLOCKED_DONALDSON + 9 BLOCKED_OEM remain', () => {
+test('SKUCASE FINAL: NO_ELIMFILTERS_SKU_YET is 0 and only 1 BLOCKED_DONALDSON + 9 BLOCKED_OEM remain', () => {
   const counts = phase3.coverage.decision_status;
   assert.equal(counts.NO_ELIMFILTERS_SKU_YET, 0);
   assert.equal(counts.CONFLICTING, 0);
-  assert.equal(counts.BLOCKED_DONALDSON, 2);
+  assert.equal(counts.BLOCKED_DONALDSON, 1);
   assert.equal(counts.BLOCKED_OEM, 9);
   assert.equal(counts.VERIFIED_BASE, 5);
-  assert.equal(counts.PARTIAL, 12);
+  assert.equal(counts.PARTIAL, 13);
   const sum = counts.VERIFIED_BASE + counts.PARTIAL + counts.CONFLICTING + counts.NO_ELIMFILTERS_SKU_YET + counts.BLOCKED_DONALDSON;
   assert.equal(sum, 19);
 
