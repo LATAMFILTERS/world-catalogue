@@ -1,0 +1,16 @@
+{
+  "sku": "EA30039",
+  "codigo_base": "0039",
+  "reason": "CANONICAL_AUTHORITY_UNRESOLVED__FORD_FAMILY_WITH_NO_TRACEABLE_MANN_OR_FRAM_REFERENCE",
+  "evidence": {
+    "application_scope": "FORD",
+    "competitor_count": 0,
+    "oem_count": 1,
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

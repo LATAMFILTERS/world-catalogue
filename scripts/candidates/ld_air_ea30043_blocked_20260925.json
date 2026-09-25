@@ -1,0 +1,28 @@
+{
+  "sku": "EA30043",
+  "codigo_base": "C20043",
+  "reason": "CANONICAL_IDENTITY_SPEC_AND_APPLICATION_CONTAMINATION__MANN_C20043_IS_FIAT_DUCATO_FAMILY",
+  "evidence": {
+    "mann_code": "C20043",
+    "official_dimensions_mm": {
+      "od": 202,
+      "id": 110,
+      "h": 183
+    },
+    "catalog_dimensions_mm": {
+      "od": 40,
+      "h": 64
+    },
+    "official_scope": "FIAT Ducato",
+    "catalog_scope": [
+      "FIAT",
+      "RIETSCHLE"
+    ],
+    "identity_source": "MIGRATION_097_RECONCILED_SINGLE_FULL_SAFE"
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

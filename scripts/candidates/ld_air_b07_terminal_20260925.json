@@ -1,0 +1,37 @@
+{
+  "batch": "LD_AIR_B07",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE_WITH_BLOCKERS",
+  "counts": {
+    "BLOCKED_WITH_REASON": 5
+  },
+  "catalog_writes": [],
+  "candidates": [
+    {
+      "sku": "EA30037",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_EVIDENCE_PROVENANCE_AND_APPLICATION_SCOPE_UNRESOLVED__LEGACY_MANN_PROMOTION_WITH_MIXED_EVOBUS_MG_RIETSCHLE_WEBasto"
+    },
+    {
+      "sku": "EA30039",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_AUTHORITY_UNRESOLVED__FORD_FAMILY_WITH_NO_TRACEABLE_MANN_OR_FRAM_REFERENCE"
+    },
+    {
+      "sku": "EA30041",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CROSS_CATEGORY_IDENTITY_ERROR__FRAM_CH10751ECO_IS_OIL_FILTER_NOT_AIR_FILTER"
+    },
+    {
+      "sku": "EA30042",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "PHYSICAL_AND_APPLICATION_MISMATCH__MANN_C42_2_IS_RIETSCHLE_BECKER_GAS_BALLAST_FILTER_NOT_MAZDA"
+    },
+    {
+      "sku": "EA30043",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_IDENTITY_SPEC_AND_APPLICATION_CONTAMINATION__MANN_C20043_IS_FIAT_DUCATO_FAMILY"
+    }
+  ],
+  "closed_at": "2026-09-25"
+}

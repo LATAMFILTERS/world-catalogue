@@ -1,0 +1,22 @@
+{
+  "sku": "EA30037",
+  "codigo_base": "C37",
+  "reason": "CANONICAL_EVIDENCE_PROVENANCE_AND_APPLICATION_SCOPE_UNRESOLVED__LEGACY_MANN_PROMOTION_WITH_MIXED_EVOBUS_MG_RIETSCHLE_WEBasto",
+  "evidence": {
+    "approved_manufacturer": "MANN-FILTER",
+    "approved_codigo_base": "C37",
+    "primary_manufacturer_verified": true,
+    "current_traceable_authority_ref": false,
+    "application_scope": [
+      "MG (SAIC)",
+      "EVOBUS",
+      "RIETSCHLE",
+      "WEBASTO-SPHEROS"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

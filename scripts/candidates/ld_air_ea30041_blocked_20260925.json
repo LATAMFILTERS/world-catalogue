@@ -1,0 +1,28 @@
+{
+  "sku": "EA30041",
+  "codigo_base": "CH10751ECO",
+  "reason": "CROSS_CATEGORY_IDENTITY_ERROR__FRAM_CH10751ECO_IS_OIL_FILTER_NOT_AIR_FILTER",
+  "evidence": {
+    "fram_code": "CH10751ECO",
+    "fram_filter_type": "oil",
+    "published_dimensions_mm": {
+      "h": 105,
+      "od": 66,
+      "id": 17
+    },
+    "catalog_dimensions_mm": {
+      "h": 178,
+      "od": 84
+    },
+    "application_scope": [
+      "RIETSCHLE",
+      "BMW",
+      "MERCEDES-BENZ"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

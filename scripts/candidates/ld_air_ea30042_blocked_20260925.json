@@ -1,0 +1,25 @@
+{
+  "sku": "EA30042",
+  "codigo_base": "C42/2",
+  "reason": "PHYSICAL_AND_APPLICATION_MISMATCH__MANN_C42_2_IS_RIETSCHLE_BECKER_GAS_BALLAST_FILTER_NOT_MAZDA",
+  "evidence": {
+    "mann_code": "C42/2",
+    "official_dimensions_mm": {
+      "od": 40,
+      "id": 12.8,
+      "id1": 5.2,
+      "h": 30
+    },
+    "catalog_dimensions_mm": {
+      "od": 233,
+      "h": 23
+    },
+    "official_scope": "RIETSCHLE/BECKER vacuum pumps",
+    "catalog_scope": "MAZDA"
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
