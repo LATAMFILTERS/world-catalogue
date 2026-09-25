@@ -10,11 +10,12 @@
   "phase2_file": "config/vehicle-platform-closure/isuzu-us-diesel-phase2-oen.json",
   "attempted_on": "2026-09-22",
   "closed_on": "2026-09-23",
-  "canonical_hd_rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
-  "canonical_rule_origin": "config/vehicle-platform-closure/isuzu-us-phase2-oem.json — reused unchanged, no new rule created",
+  "canonical_hd_rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
+  "canonical_rule_origin": "lib/catalog-codigo-base-policy.js + lib/catalog-codigo-base-governance.js — existing Heavy Duty fallback capability formally adopted by the Isuzu closure",
   "source_order": [
     "DONALDSON",
     "FLEETGUARD",
+    "OEM",
     "MANN-FILTER",
     "BALDWIN",
     "WIX",
@@ -27,7 +28,7 @@
       "PHASE_1_DIESEL_VEHICLE_UNIVERSE",
       "PHASE_2_DIESEL_OEM_FILTER_OEN"
     ],
-    "elimfilters_base_decision_requires": "A Donaldson or Fleetguard reference tied to a specific Isuzu OE/OEN by that manufacturer's own published evidence. An engine-level or vehicle-level match is not sufficient.",
+    "elimfilters_base_decision_requires": "Canonical base priority: Donaldson when manufactured; Fleetguard only after verified Donaldson non-manufacture; verified OEM/OEN only after verified non-manufacture by both Donaldson and Fleetguard. Any selected reference must be tied to the exact governed Isuzu OE/OEN/position; engine-level or sibling-vehicle similarity is insufficient.",
     "hermes_output_class": "CANDIDATE_INTELLIGENCE",
     "review_state": "READY_FOR_REVIEW",
     "publication_authorized": false,
@@ -64,7 +65,34 @@
         ],
         "note": "Published after the Phase 3 research pass under governed SKU/catalog closure. The per-row elimfilters_base_decision.published flag remains false by design because it represents Phase 3 auto-publication, not later governed catalog publication."
       }
-    ]
+    ],
+    "oem_base_requires": [
+      "DONALDSON_NOT_MANUFACTURED_VERIFIED",
+      "FLEETGUARD_NOT_MANUFACTURED_VERIFIED",
+      "OEM_OEN_VERIFIED_FIRST_PARTY",
+      "approved_source_column=OEM_CODES",
+      "approved_codigo_base equals exact verified OEM/OEN",
+      "base_source_part equals exact verified OEM/OEN"
+    ],
+    "oem_fallback_policy": {
+      "enabled": true,
+      "scope": "HEAVY_DUTY",
+      "priority": [
+        "DONALDSON",
+        "FLEETGUARD",
+        "OEM"
+      ],
+      "catalog_authority": "VERIFIED_OEM_FALLBACK",
+      "rule": "Use the exact verified OEM/OEN as codigo_base only after explicit manufacturing-absence verification for Donaldson and Fleetguard.",
+      "existing_catalog_support": "lib/catalog-codigo-base-policy.js already accepts Heavy Duty VERIFIED_OEM_FALLBACK through OEM_CODES when Donaldson absence and fallback manufacturer/commercial-code authority are verified.",
+      "sku_suffix_rule": "For a newly governed Heavy Duty OEM fallback SKU, the SKU numeric suffix must match the last four numeric digits of approved_codigo_base under the existing policy.",
+      "prohibited_inference": [
+        "DONALDSON_NOT_FOUND is not DONALDSON_NOT_MANUFACTURED_VERIFIED.",
+        "FLEETGUARD_NOT_FOUND is not FLEETGUARD_NOT_MANUFACTURED_VERIFIED.",
+        "Search-engine absence cannot establish manufacturing absence.",
+        "Aftermarket cross-reference cannot establish OEM identity or widen vehicle fitment."
+      ]
+    }
   },
   "phase3_status": "CLOSED",
   "phase3_status_history": [
@@ -103,7 +131,8 @@
     "base_decisions": {
       "donaldson_based": 21,
       "fleetguard_based": 0,
-      "no_base_yet": 2
+      "no_base_yet": 2,
+      "oem_based": 0
     },
     "elimfilters_skus_reused": [
       "EA16773",
@@ -3823,8 +3852,8 @@
   ],
   "next_actions": [
     "PHASE 3 IS CLOSED. Do not reopen resolved rows unless new first-party OEM/manufacturer evidence materially changes a terminal decision.",
-    "P3-N-FUEL-2006-NPR / Isuzu 8980284111 remains terminal BLOCKED_DONALDSON: seek either an exact Donaldson equivalent or a verified DONALDSON_NOT_MANUFACTURED determination. Fleetguard remains ineligible until non-manufacture is verified.",
-    "P3-11-N-FWS-2022i-ON / Isuzu 8982373410 remains terminal BLOCKED_DONALDSON: seek either an exact Donaldson equivalent or a verified DONALDSON_NOT_MANUFACTURED determination. P550736 remains rejected as a false positive.",
+    "P3-N-FUEL-2006-NPR / Isuzu 8980284111 remains terminal BLOCKED_DONALDSON. If Donaldson non-manufacture becomes explicitly verified, evaluate Fleetguard. If Fleetguard non-manufacture is also explicitly verified, the exact first-party Isuzu OEN 8980284111 may be evaluated as VERIFIED_OEM_FALLBACK codigo_base.",
+    "P3-11-N-FWS-2022i-ON / Isuzu 8982373410 remains terminal BLOCKED_DONALDSON. If Donaldson non-manufacture becomes explicitly verified, evaluate Fleetguard. If Fleetguard non-manufacture is also explicitly verified, the exact first-party Isuzu OEN 8982373410 may be evaluated as VERIFIED_OEM_FALLBACK codigo_base.",
     "Phase 2 follow-up only: resolve the Isuzu standard-vs-high-capacity fuel-filter distinction for N-Series 2013-2021 and F-Series 2018-2020 if first-party Isuzu evidence becomes available. This ambiguity is intentionally not reopened inside Phase 3.",
     "General catalogue-governance follow-up only: continue monitoring legacy cross-reference integrity around P550008/EL80008 outside the Isuzu closure. The three stale legacy mappings were already removed from both legacy CSV exports.",
     "OEM evidence follow-up only when new first-party material exists: H-Series, FRR/FXR, F-Series transverse positions, N-Series residual fuel scopes and N-Series cabin remain terminal BLOCKED_OEM with explicit reasons. Do not infer by continuity, sibling model or shared engine.",
@@ -4341,6 +4370,14 @@
         "Fleetguard remains closed until explicit Donaldson non-manufacture evidence exists.",
         "Do not accept a candidate that mismatches the OEM assembly/position semantics."
       ]
+    },
+    {
+      "on": "2026-09-24",
+      "status": "HD_OEM_FALLBACK_GOVERNANCE_ADOPTED",
+      "scope": "ISUZU_PHASE3_BASE_SELECTION_POLICY",
+      "canonical_hd_rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
+      "effect": "POLICY_ONLY_NO_CURRENT_ROW_STATE_CHANGE",
+      "note": "The Isuzu closure now formally consumes the repository's existing Heavy Duty OEM fallback capability. No current blocked row is promoted; both residual Donaldson blockers still lack verified Donaldson manufacturing absence."
     }
   ],
   "duplicate_mapping_audit": {
