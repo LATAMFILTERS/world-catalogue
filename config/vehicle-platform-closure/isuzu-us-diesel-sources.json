@@ -1259,6 +1259,28 @@
       "captured_at": "2026-09-24",
       "supports": ["MY2010 NPR-HD, NQR and NRR with 4HK1-TC", "Fuel filter Isuzu No. 8-98037-011-0"],
       "scope_restriction": "Exact MY2010 NPR-HD/NQR/NRR only. NPR is intentionally excluded. Mirror hosts the original Isuzu publication; no sibling-model or adjacent-year inheritance."
+    },
+    {
+      "source_id": "DONALDSON_AUSTRALASIA_JAPANESE_TRUCK_FILTER_GUIDE_2023",
+      "title": "Japanese Truck Filter Guide",
+      "publisher": "Donaldson Company, Inc.",
+      "source_type": "official_manufacturer_regional_application_catalogue",
+      "authority_level": "primary",
+      "origin_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/australasia/industries-markets/f111672-eng/Japanese-Truck-Filter-Guide.pdf",
+      "captured_at": "2026-09-25",
+      "supports": ["Australasia/Asia-Pacific Isuzu application mappings by model, engine, year and filter position", "NPR75 4HK1-TCN Sitec Series 1 5.2L 09/05-12/07 -> Fuel Filter, Primary P550390", "Multiple N-Series 4HK1 5.2L 2016-on applications -> Fuel Water Separator P551855 and Fuel Filter, Secondary P506095"],
+      "scope_restriction": "REGIONAL_APPLICATION_ONLY. This source is first-party Donaldson application evidence for Australasia/Asia-Pacific. It does not by itself establish US-market fitment or an exact Isuzu USA OEN cross-reference."
+    },
+    {
+      "source_id": "DONALDSON_AUSTRALASIA_FUEL_OIL_KITS_2024",
+      "title": "Fuel and Oil Truck Filter Maintenance Kits",
+      "publisher": "Donaldson Company, Inc.",
+      "source_type": "official_manufacturer_regional_application_catalogue",
+      "authority_level": "primary",
+      "origin_url": "https://western.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/australasia/filter-kits/f111610/Fuel-and-Oil-Truck-Filter-Maintenance-Kits_Web.pdf",
+      "captured_at": "2026-09-25",
+      "supports": ["Isuzu 4HK1 5.2L SiTEC 150/175 2005-2007 -> P550390", "Isuzu 4HK1-TCN/TCC 5.2L NPR/NPS/NQR 2008-2015 -> P506095 and P551855"],
+      "scope_restriction": "REGIONAL_APPLICATION_ONLY. Corroborates Donaldson Australasia application coverage; it does not establish an exact USA OEN mapping."
     }
   ]
 }

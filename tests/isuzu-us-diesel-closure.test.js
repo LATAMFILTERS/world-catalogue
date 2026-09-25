@@ -2194,3 +2194,17 @@ test('P550008 LEGACY CLEANUP: stale LD competitor mappings are absent', () => {
   assert.ok(history);
   assert.equal(history.canonical_mapping, 'P550008 -> EL80008');
 });
+
+
+test('DONALDSON ASIA: blocked rows retain status but gain official regional candidates', () => {
+  const p2006 = phase3.resolution_rows.find((r) => r.row_id === 'P3-N-FUEL-2006-NPR');
+  const p2022 = phase3.resolution_rows.find((r) => r.row_id === 'P3-11-N-FWS-2022i-ON');
+  assert.equal(p2006.decision_status, 'BLOCKED_DONALDSON');
+  assert.equal(p2022.decision_status, 'BLOCKED_DONALDSON');
+  assert.equal(p2006.donaldson_status, 'DONALDSON_NOT_FOUND');
+  assert.equal(p2022.donaldson_status, 'DONALDSON_NOT_FOUND');
+  assert.equal(p2006.regional_donaldson_candidates[0].candidate_part, 'P550390');
+  assert.equal(p2022.regional_donaldson_candidates[0].candidate_part, 'P551855');
+  assert.equal(p2006.regional_donaldson_candidates[0].promotion_status, 'CANDIDATE_ONLY');
+  assert.equal(p2022.regional_donaldson_candidates[0].promotion_status, 'CANDIDATE_ONLY');
+});
