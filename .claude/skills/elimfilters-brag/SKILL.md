@@ -78,6 +78,8 @@ If the user gave a commit/ref, use it.
 If not, use the current checked-out ref and record it.
 If the target is ambiguous, inspect recent changes and ask only if ambiguity remains material.
 
+For root pages, collection pages, portfolio pages, platform indexes, or any subject that canonically contains multiple governed children, resolve the canonical child set before writing the narrative. Represent the complete set with materially fair coverage unless the user explicitly narrows the scope. A preferred technology, recent asset, or visually stronger child must not silently stand in for the whole architecture. Any intentional subset must be labeled as a subset in the storyboard and copy.
+
 Terminal outcomes for this phase:
 
 - `RELEASE_LOCKED`
