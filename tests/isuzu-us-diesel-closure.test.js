@@ -2208,3 +2208,20 @@ test('DONALDSON ASIA: blocked rows retain status but gain official regional cand
   assert.equal(p2006.regional_donaldson_candidates[0].promotion_status, 'CANDIDATE_ONLY');
   assert.equal(p2022.regional_donaldson_candidates[0].promotion_status, 'CANDIDATE_ONLY');
 });
+
+
+test('DONALDSON REGIONAL POLICY: NOT_FOUND requires USA and regional completion', () => {
+  const policy = phase3.donaldson_research_sequence;
+  assert.equal(policy.scope, 'ALL_ISUZU_PHASE3_ROWS');
+  assert.deepEqual(
+    policy.sequence.map((step) => step.channel),
+    ['USA_PRIMARY','REGIONAL_OFFICIAL','FLEETGUARD','VERIFIED_OEM_FALLBACK']
+  );
+
+  const notFound = phase3.resolution_rows.filter((r) => r.donaldson_status === 'DONALDSON_NOT_FOUND');
+  assert.equal(notFound.length, 2);
+  for (const row of notFound) {
+    assert.equal(row.donaldson_research_trace.USA_PRIMARY, 'EXHAUSTED');
+    assert.ok(['EXHAUSTED_NO_CANDIDATE','CANDIDATE_ONLY_NO_US_OEN_TIE'].includes(row.donaldson_research_trace.REGIONAL_OFFICIAL));
+  }
+});

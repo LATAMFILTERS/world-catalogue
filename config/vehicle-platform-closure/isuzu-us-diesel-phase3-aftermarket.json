@@ -1281,7 +1281,12 @@
           "promotion_status": "CANDIDATE_ONLY",
           "promotion_blocker": "No exact US-market Isuzu 8980284111 -> P550390 first-party Donaldson/OEM tie has been found."
         }
-      ]
+      ],
+      "donaldson_research_trace": {
+        "USA_PRIMARY": "EXHAUSTED",
+        "REGIONAL_OFFICIAL": "CANDIDATE_ONLY_NO_US_OEN_TIE",
+        "fleetguard_gate": "CLOSED_UNLESS_DONALDSON_NOT_MANUFACTURED_VERIFIED"
+      }
     },
     {
       "row_id": "P3-N-FUEL-2007-NPR",
@@ -2084,7 +2089,12 @@
           "promotion_status": "CANDIDATE_ONLY",
           "promotion_blocker": "No exact US-market Isuzu 8982373410 -> P551855 first-party Donaldson/OEM tie has been found."
         }
-      ]
+      ],
+      "donaldson_research_trace": {
+        "USA_PRIMARY": "EXHAUSTED",
+        "REGIONAL_OFFICIAL": "CANDIDATE_ONLY_NO_US_OEN_TIE",
+        "fleetguard_gate": "CLOSED_UNLESS_DONALDSON_NOT_MANUFACTURED_VERIFIED"
+      }
     },
     {
       "row_id": "P3-12-N-TRANS",
@@ -4602,6 +4612,14 @@
       },
       "phase3_state_change": "NONE",
       "note": "Donaldson Australasia/Asia-Pacific application catalogues supply category-correct candidates for the matching Isuzu engine/year families. US-market/OEN promotion remains blocked until an exact first-party USA/OEN tie is found."
+    },
+    {
+      "on": "2026-09-25",
+      "status": "DONALDSON_REGIONAL_SEARCH_POLICY_ADOPTED",
+      "scope": "ALL_ISUZU_PHASE3_ROWS",
+      "sequence": "USA_PRIMARY -> REGIONAL_OFFICIAL(ASIA_PACIFIC/AUSTRALASIA/JAPAN) -> FLEETGUARD -> VERIFIED_OEM_FALLBACK",
+      "state_change": "NONE",
+      "note": "Regional Donaldson search is now mandatory before an Isuzu row may remain DONALDSON_NOT_FOUND. Regional evidence remains candidate-only unless an exact US-market/OEN first-party tie is established."
     }
   ],
   "duplicate_mapping_audit": {
@@ -4780,5 +4798,43 @@
       "rows_state_changed": 0
     },
     "closure": "All four groups were exhausted against free/public first-party Isuzu material, repository-held first-party captures, and public Aisin search. None produced the exact positional/application detail required. Routine research is closed."
+  },
+  "donaldson_research_sequence": {
+    "scope": "ALL_ISUZU_PHASE3_ROWS",
+    "manufacturer_priority_unchanged": true,
+    "sequence": [
+      {
+        "step": 1,
+        "channel": "USA_PRIMARY",
+        "sources": "Donaldson USA/current official product and cross-reference sources plus repository-held first-party Donaldson capture",
+        "purpose": "Resolve exact Isuzu OEN to Donaldson part for the US closure."
+      },
+      {
+        "step": 2,
+        "channel": "REGIONAL_OFFICIAL",
+        "regions": [
+          "ASIA_PACIFIC",
+          "AUSTRALASIA",
+          "JAPAN"
+        ],
+        "sources": "Official Donaldson regional application catalogues and maintenance guides",
+        "purpose": "Recover category-correct Donaldson candidates when USA exact-number research is not found.",
+        "promotion_rule": "Regional application evidence may create CANDIDATE_ONLY evidence, but may not by itself establish US-market fitment or exact USA OEN identity."
+      },
+      {
+        "step": 3,
+        "channel": "FLEETGUARD",
+        "gate": "DONALDSON_NOT_MANUFACTURED_VERIFIED",
+        "purpose": "Evaluate Fleetguard only after verified Donaldson non-manufacture."
+      },
+      {
+        "step": 4,
+        "channel": "VERIFIED_OEM_FALLBACK",
+        "gate": "DONALDSON_NOT_MANUFACTURED_VERIFIED + FLEETGUARD_NOT_MANUFACTURED_VERIFIED",
+        "purpose": "Allow exact verified Isuzu OEN fallback under existing HD governance."
+      }
+    ],
+    "not_found_rule": "DONALDSON_NOT_FOUND is valid for Isuzu only after USA_PRIMARY and REGIONAL_OFFICIAL have both been exhausted or the regional search has produced candidate-only evidence that still lacks an exact USA/OEN tie.",
+    "regional_candidate_rule": "Regional Donaldson evidence can narrow the candidate set and identify filter position/category, but cannot widen Phase 1/2 fitment or promote a US-market application without exact first-party support."
   }
 }
