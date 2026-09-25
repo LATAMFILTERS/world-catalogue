@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "HG50066XC",
+  "queue_target_sku": "EL32102",
+  "queue_authority": {
+    "code": "HPH7405"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_SEGMENT_MISMATCH__SOURCE_FAMILY_IS_HEAVY_DUTY",
+  "details": {
+    "direct_manufacturer_reference": null,
+    "resolution": "DO_NOT_WRITE_HD_FROM_LD_QUEUE"
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50066XC/interchanges",
+      "sha256": "25bcf05ab180f044f66356cedba4a3af11fa48c4fa20af100c16eea8d34e35cf"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50066XC/applications?format=ranges",
+      "sha256": "856c15f4fc317305028a4f9f535124a8b243452fd7c742e5b30ef2c802d20b05"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

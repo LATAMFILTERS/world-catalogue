@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG111",
+  "sku": "EL33387",
+  "codigo_base": "PH3387A",
+  "terminal_state": "COMPLETE_REUSED_CANONICAL_FAMILY",
+  "canonical_brand": "FRAM",
+  "action": "ADDED_PREMIUM_GUARD_REFERENCE_ONLY",
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG111/interchanges",
+      "sha256": "c5a8f3efc35780e93e72ca593418c2e9c2f13ba26cb81897bc3b5ba029dcd47a"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG111/applications?format=ranges",
+      "sha256": "efe0825d3b07f745cc188294ad381b09dfd467d7f95a9125d5c8144c55163fa8"
+    }
+  },
+  "reference_governance": {
+    "status": "COMPLETE_REUSED_CANONICAL_FAMILY",
+    "premium_guard_code": "PG111",
+    "canonical_sku": "EL33387",
+    "publication_rule": "PG111_RESOLVES_TO_EXISTING_PH3387A_CANONICAL_FAMILY",
+    "closed_at": "2026-09-25"
+  }
+}

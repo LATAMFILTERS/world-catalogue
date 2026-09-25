@@ -1,0 +1,28 @@
+{
+  "premium_guard_code": "HG50127",
+  "queue_target_sku": "EL32021",
+  "queue_authority": {
+    "code": "HU12021Z"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_SEGMENT_MISMATCH__SOURCE_FAMILY_IS_HEAVY_DUTY",
+  "details": {
+    "direct_manufacturer_reference": {
+      "brand": "DONALDSON",
+      "code": "P582506"
+    },
+    "resolution": "DO_NOT_WRITE_HD_FROM_LD_QUEUE"
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50127/interchanges",
+      "sha256": "4f9b69e14a1cb7e6cb0d31ff0a15eda13697c68ae04bdb6b3ddae8b201e41bd3"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50127/applications?format=ranges",
+      "sha256": "151663b9612e0472ebe66a2d9a24e44447d4e6442faa3f4c5e80cf7f9d42cbb3"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

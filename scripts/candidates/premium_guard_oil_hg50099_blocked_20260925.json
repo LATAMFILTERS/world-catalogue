@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "HG50099",
+  "queue_target_sku": "EL32330",
+  "queue_authority": {
+    "code": "PH8691A"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_SEGMENT_MISMATCH__SOURCE_FAMILY_IS_HEAVY_DUTY",
+  "details": {
+    "direct_manufacturer_reference": null,
+    "resolution": "DO_NOT_WRITE_HD_FROM_LD_QUEUE"
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50099/interchanges",
+      "sha256": "ed1f30c3502110c203c37b82418339a0271b328bc748eb8b81d6b9d999b6dd2e"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50099/applications?format=ranges",
+      "sha256": "52a307b5db799d0cc85a7d231b10401c0cc62984e452f7cee6ab04bdaba15f66"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
