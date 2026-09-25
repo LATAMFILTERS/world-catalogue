@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG4651",
+  "queue_target_sku": "EL31581",
+  "queue_authority": {
+    "code": "PH3531"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_AUTHORITY_NOT_TERMINAL__VERIFY_PRIMARY_ABSENCE",
+  "details": {
+    "note": "Target family is LD and uses PH3531, but governance still requires primary-manufacturer absence verification.",
+    "source": null
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4651/interchanges",
+      "sha256": "f9f9eb01475272c114b8a989bf300c9d1a4617f8e8619201f4e6ba2dce409b39"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4651/applications?format=ranges",
+      "sha256": "ee252a229b925b8ee9c34a29f3f8e63a5b85ce7d34cc8729f4038c718e8057d6"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

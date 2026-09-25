@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG4748",
+  "queue_target_sku": "EL34967",
+  "queue_authority": {
+    "code": "PH2951"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_TARGET_MISMATCH_OR_MULTI_OWNER__PH2951_NOT_PH4967",
+  "details": {
+    "note": "Queue target is canonical PH4967 while source authority is PH2951 and active ownership is multi-family.",
+    "source": null
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4748/interchanges",
+      "sha256": "97380f38f06a5791a83168af83d2ab0bd600e6e2f6e196f2f2ad94620e38db40"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4748/applications?format=ranges",
+      "sha256": "0f53e8d4a4a6351c2548bf31babda4bb3930eba9c26da6447c5bfb1112541de0"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

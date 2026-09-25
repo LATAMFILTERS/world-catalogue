@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG4651EX",
+  "queue_target_sku": "EL30002",
+  "queue_authority": {
+    "code": "FS2"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_IDENTITY_UNRESOLVED__LEGACY_BASE_0002",
+  "details": {
+    "note": "Target remains legacy base 0002 with unresolved MANN primary candidates; do not enrich until canonical identity is closed.",
+    "source": null
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4651EX/interchanges",
+      "sha256": "426f04f22077b69fec68a2d5439716cbba6b7c404789d077b14a6a67355735da"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4651EX/applications?format=ranges",
+      "sha256": "ee252a229b925b8ee9c34a29f3f8e63a5b85ce7d34cc8729f4038c718e8057d6"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

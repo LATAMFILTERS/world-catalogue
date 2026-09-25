@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG5230",
+  "queue_target_sku": "EL31927",
+  "queue_authority": {
+    "code": "PH8316"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_AUTHORITY_NOT_TERMINAL__LEGACY_BASE_1927",
+  "details": {
+    "note": "Target remains legacy base 1927 with non-terminal governance; PH8316 cannot be published until canonical identity is closed.",
+    "source": null
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5230/interchanges",
+      "sha256": "1218703794669a23a6318d8fee1854d3ab41da3d40c4a9e5a73ef90edc7161e4"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5230/applications?format=ranges",
+      "sha256": "44bf74e53bab6cc9c266e47bd69ee8f3487173758a3a6cc7f5acad6fe277aff2"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

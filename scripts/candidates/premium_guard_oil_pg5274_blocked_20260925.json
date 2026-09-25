@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG5274",
+  "queue_target_sku": "EL30694",
+  "queue_authority": {
+    "code": "CH8765"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_BASE_NOT_NORMALIZED__AUTHORITY_CH8765",
+  "details": {
+    "note": "Target is legacy base 0694; canonical FRAM cartridge authority must be normalized before enrichment.",
+    "source": null
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5274/interchanges",
+      "sha256": "44362231d41c620e3906087798e0558860599a2a7fad0a556e90f9ea3788ec1a"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5274/applications?format=ranges",
+      "sha256": "e7bcc40c5415eb7d6fadc1e52bd7c799ffcc80b0ab37184c6dcbaa1fa35e716c"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

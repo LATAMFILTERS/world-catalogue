@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG5274EX",
+  "queue_target_sku": "EL30694",
+  "queue_authority": {
+    "code": "FS8765"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_BASE_NOT_NORMALIZED__AUTHORITY_FS8765",
+  "details": {
+    "note": "Same LD family as PG5274; target remains legacy base 0694 and must be canonicalized first.",
+    "source": null
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5274EX/interchanges",
+      "sha256": "4bedf0ce61eecf423e2992788f051de3adb0bdbb0aacb6c31f08315e9e8142ce"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5274EX/applications?format=ranges",
+      "sha256": "e7bcc40c5415eb7d6fadc1e52bd7c799ffcc80b0ab37184c6dcbaa1fa35e716c"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

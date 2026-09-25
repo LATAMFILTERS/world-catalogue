@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG4674",
+  "queue_target_sku": "EL30952",
+  "queue_authority": {
+    "code": "H952X"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_TARGET_MISMATCH__MANN_H952X_GEOMETRY_CONFLICT",
+  "details": {
+    "note": "MANN H 952 x official dimensions do not match EL30952 legacy geometry; canonical target must be re-resolved.",
+    "source": "https://www.mann-filter.com/br-pt/catalogo/resultados-da-pesquisa/produto.html/hu952x_mann-filter.html"
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4674/interchanges",
+      "sha256": "5bf8b8a483e7815e647c740f184de3fe448448996e99a361727980b364c11f39"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4674/applications?format=ranges",
+      "sha256": "433267aea1cd90250fe63ca6d0bb197abc8bf712a2c8238445c74e8fd23b80d3"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

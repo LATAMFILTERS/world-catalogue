@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG4750",
+  "queue_target_sku": "EL32881",
+  "queue_authority": {
+    "code": "PH6355"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_AUTHORITY_NOT_TERMINAL__VERIFY_PRIMARY_ABSENCE",
+  "details": {
+    "note": "Target base PH6355 is plausible LD family but governance still requires primary-manufacturer absence verification.",
+    "source": null
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4750/interchanges",
+      "sha256": "cb2c5c655aa384a4adf67aa8e3002b606a6d827dcbaf95cd0dec4d1558a1c53d"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4750/applications?format=ranges",
+      "sha256": "2f81d43785cc76896c63a0ed75123362c1622045f43b97b39ad77a0072db8ae2"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

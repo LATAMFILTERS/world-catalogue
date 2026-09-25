@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG5277EX",
+  "queue_target_sku": "EL30718",
+  "queue_authority": {
+    "code": "HU718/1X"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_MANN_VARIANT_AMBIGUITY__LEGACY_BASE_0718",
+  "details": {
+    "note": "Target has many observed MANN H/HU 718 variants; HU718/1X ownership is not terminally resolved.",
+    "source": null
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5277EX/interchanges",
+      "sha256": "376a113629cb6f5b4518e99408f5f8b3ba52e58347308819c169f5c566a843ef"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5277EX/applications?format=ranges",
+      "sha256": "5df1652b98324e89acac7fbe6ca4b93438e460f17737ad8dc4f111e8aee1759c"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
