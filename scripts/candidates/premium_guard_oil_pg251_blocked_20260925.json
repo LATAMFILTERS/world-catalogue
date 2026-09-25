@@ -1,0 +1,31 @@
+{
+  "premium_guard_code": "PG251",
+  "queue_target_sku": "EL31320",
+  "queue_authority": {
+    "brand": "MANN-FILTER",
+    "code": "W71320"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_CROSS_CATEGORY_ACTIVE_OWNER_COLLISION",
+  "details": {
+    "active_code_owner": {
+      "sku": "EF90115",
+      "filter_type": "fuel",
+      "duty": "HEAVY_DUTY",
+      "codigo_base": "P550115"
+    },
+    "resolution": "DO_NOT_REAPPROPRIATE_ACTIVE_FUEL_HD_CODE_FROM_LD_OIL_QUEUE"
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG251/interchanges",
+      "sha256": "9a3cf393bba4ea646d25e7d9f1a2a84d6f18b463900bef3ab5060b09d3af4b49"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG251/applications?format=ranges",
+      "sha256": "55612678219c1bc64978d4b3d48c1838bc455170a967325871a042678a2579d9"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

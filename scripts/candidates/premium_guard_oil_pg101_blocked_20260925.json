@@ -1,0 +1,35 @@
+{
+  "premium_guard_code": "PG101",
+  "queue_target_sku": "EL30077",
+  "queue_authority": {
+    "brand": "MANN-FILTER",
+    "code": "W77"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_CROSS_CATEGORY_ACTIVE_OWNER_COLLISION",
+  "details": {
+    "authority_owners": [
+      "EL81763/P551763",
+      "EL81784/P551784",
+      "EL82051/P502051"
+    ],
+    "resolution": "DO_NOT_REAPPROPRIATE_ACTIVE_FUEL_HD_CODE_FROM_LD_OIL_QUEUE",
+    "active_code_owner": {
+      "sku": "EF90090",
+      "filter_type": "fuel",
+      "duty": "HEAVY_DUTY"
+    }
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG101/interchanges",
+      "sha256": "b1094b3f6afbbf434c1352bc3e2b4b3ea392f154270038d2fd833e378c8dd916"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG101/applications?format=ranges",
+      "sha256": "a58b09be10db6250675403bf53f51fe86a1df8a8c86557708ea85525b494f05e"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
