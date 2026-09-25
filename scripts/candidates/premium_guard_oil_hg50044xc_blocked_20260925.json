@@ -1,0 +1,26 @@
+{
+  "premium_guard_code": "HG50044XC",
+  "queue_target_sku": "EL33001",
+  "queue_authority": {
+    "brand": "FRAM",
+    "code": "HPH6349A"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_SEGMENT_MISMATCH__SOURCE_FAMILY_IS_HEAVY_DUTY",
+  "details": {
+    "canonical_hd_family": "P553000/LF3000",
+    "resolution": "DO_NOT_WRITE_HD_FROM_LD_QUEUE"
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50044XC/interchanges",
+      "sha256": "2b81e60d661dc02276908bf3095c922ed0419b9ab1e21874243973aa95b065ac"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50044XC/applications?format=ranges",
+      "sha256": "fce6ed05c91678f6408933f235ab1e2334f56be238395fe388486b8f14f3a430"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

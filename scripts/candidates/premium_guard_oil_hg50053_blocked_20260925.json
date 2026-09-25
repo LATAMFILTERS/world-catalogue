@@ -1,0 +1,29 @@
+{
+  "premium_guard_code": "HG50053",
+  "queue_target_sku": "EL30234",
+  "queue_authority": {
+    "brand": "FRAM",
+    "code": "PH8842"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_SEGMENT_MISMATCH__SOURCE_FAMILY_IS_HEAVY_DUTY",
+  "details": {
+    "direct_manufacturer_reference": {
+      "brand": "DONALDSON",
+      "code": "P554004"
+    },
+    "resolution": "DO_NOT_WRITE_HD_FROM_LD_QUEUE"
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50053/interchanges",
+      "sha256": "ccc2e0b7aa340ab361862d66a4330cdcb1fb513fb2f62fd7926efb848fd6fef3"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50053/applications?format=ranges",
+      "sha256": "b93d60088f833076b0271d37672040e4fd3072f58368436a99859379cbb757a0"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

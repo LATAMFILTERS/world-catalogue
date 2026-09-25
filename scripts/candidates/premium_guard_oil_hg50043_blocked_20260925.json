@@ -1,0 +1,34 @@
+{
+  "premium_guard_code": "HG50043",
+  "queue_target_sku": "EL31170",
+  "queue_authority": {
+    "brand": "FRAM",
+    "code": "PH7136"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_SEGMENT_MISMATCH__SOURCE_FAMILY_IS_HEAVY_DUTY",
+  "details": {
+    "canonical_hd_family": {
+      "code": "P550319"
+    },
+    "verified_equivalents": [
+      "FRAM PH7136",
+      "FLEETGUARD LF3455",
+      "BALDWIN B309",
+      "WIX 51747"
+    ],
+    "resolution": "DO_NOT_WRITE_HD_FROM_LD_QUEUE"
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50043/interchanges",
+      "sha256": "97328e5a93e63bb7b5d25f54774041a46b2f0e1500d639cf8cd2f780b7375353"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50043/applications?format=ranges",
+      "sha256": "84f1912fd6928a8a2dad30c263e14651f5111d4515063f5609ce387519aa9103"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
