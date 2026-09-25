@@ -4620,6 +4620,16 @@
       "sequence": "USA_PRIMARY -> REGIONAL_OFFICIAL(ASIA_PACIFIC/AUSTRALASIA/JAPAN) -> FLEETGUARD -> VERIFIED_OEM_FALLBACK",
       "state_change": "NONE",
       "note": "Regional Donaldson search is now mandatory before an Isuzu row may remain DONALDSON_NOT_FOUND. Regional evidence remains candidate-only unless an exact US-market/OEN first-party tie is established."
+    },
+    {
+      "on": "2026-09-25",
+      "status": "AUTONOMOUS_EXECUTION_MODE_ADOPTED",
+      "scope": "ISUZU_US_DIESEL_CLOSURE",
+      "mode": "ENABLED",
+      "operating_cycle": "AUDIT -> IMPLEMENT -> AUDIT -> CLOSE -> NEXT",
+      "external_actions": "REQUIRE_EXPLICIT_AUTHORIZATION",
+      "background_execution": false,
+      "note": "User authorized unsupervised technical continuation within the established Isuzu governance. Autonomous work remains bounded by first-party evidence, no-inference rules, publication restrictions and mandatory stop conditions."
     }
   ],
   "duplicate_mapping_audit": {
@@ -4836,5 +4846,61 @@
     ],
     "not_found_rule": "DONALDSON_NOT_FOUND is valid for Isuzu only after USA_PRIMARY and REGIONAL_OFFICIAL have both been exhausted or the regional search has produced candidate-only evidence that still lacks an exact USA/OEN tie.",
     "regional_candidate_rule": "Regional Donaldson evidence can narrow the candidate set and identify filter position/category, but cannot widen Phase 1/2 fitment or promote a US-market application without exact first-party support."
+  },
+  "autonomous_execution": {
+    "mode": "ENABLED",
+    "scope": "ISUZU_US_DIESEL_CLOSURE",
+    "authorization": "USER_APPROVED_WITH_GUARDRAILS",
+    "operating_cycle": [
+      "AUDIT",
+      "IMPLEMENT",
+      "AUDIT",
+      "CLOSE",
+      "NEXT"
+    ],
+    "batch_policy": {
+      "default": "CONTROLLED_BATCH",
+      "use_batch_when": "Rows share the same evidence source, blocker class, or deterministic transformation.",
+      "preserve_row_terminality": true,
+      "terminal_states": [
+        "COMPLETE",
+        "BLOCKED_WITH_REASON"
+      ]
+    },
+    "permitted_without_additional_confirmation": [
+      "Search and compare public first-party OEM/manufacturer evidence.",
+      "Use the canonical Donaldson research sequence including official regional Asia-Pacific/Australasia/Japan sources.",
+      "Update research manifests, source registries, tests, documentation and closure metadata.",
+      "Create branches and pull requests.",
+      "Correct regressions or stale mappings when the evidence and governance rule are deterministic.",
+      "Merge a pull request after final diff audit when it stays inside the approved technical scope and all governance checks are satisfied.",
+      "Terminalize a research row when the applicable evidence-exhaustion rule has been satisfied."
+    ],
+    "prohibited_without_explicit_user_authorization": [
+      "Publish catalogue/application changes to external customer-facing systems unless already separately authorized by an existing governed publication decision.",
+      "Send email, outreach, distributor communication or other external messages.",
+      "Make commercial positioning, pricing, distributor, legal or contractual decisions.",
+      "Override first-party evidence requirements.",
+      "Promote regional fitment to US-market fitment without exact first-party support.",
+      "Infer fitment from adjacent years, sibling models, shared engine, geometry or aftermarket cross-reference alone.",
+      "Create a new architecture, database, service, worker, scheduler or source of truth when an equivalent existing component can be reused."
+    ],
+    "mandatory_stop_conditions": [
+      "A decision requires commercial or legal judgment rather than deterministic technical governance.",
+      "Available evidence is contradictory and no current rule determines precedence.",
+      "A proposed change would widen OEM/vehicle fitment beyond explicit first-party evidence.",
+      "A destructive or external publication action lacks separate authorization.",
+      "The requested action falls outside the Isuzu closure scope."
+    ],
+    "merge_gate": [
+      "Diff audited.",
+      "No unintended OEN, SKU, base, fitment or decision-status changes.",
+      "Relevant regression coverage updated or confirmed.",
+      "No policy violation detected.",
+      "Reused-vs-created inventory recorded in closure history when architecture or assets change."
+    ],
+    "user_interruption_rule": "If the user sends new instructions, immediately adopt them and continue from the current safe state.",
+    "background_execution": false,
+    "note": "This mode authorizes autonomous execution only within active ChatGPT turns/sessions. It does not create background or asynchronous execution."
   }
 }
