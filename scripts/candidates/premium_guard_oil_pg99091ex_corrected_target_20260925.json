@@ -1,0 +1,16 @@
+[
+  {
+    "premium_guard_code": "PG99091EX",
+    "target_sku": "EL31018",
+    "authority_brand": "FRAM",
+    "authority_code": "CH11018",
+    "match_source": "RELATIONAL_COMPETITOR",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99091ex/",
+    "source_html_sha256": "c7f6b2b7093c0760036fa03901db5cfb716d6673017856095c671c81e8e7770d",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "applications_count": 1,
+    "resolution_basis": "PREMIUM_GUARD_PAGE_PLUS_EXISTING_SAME_FAMILY_FRAM_MANN_REFERENCE__TARGET_CORRECTED_TO_EXISTING_AUTHORITY_OWNER"
+  }
+]

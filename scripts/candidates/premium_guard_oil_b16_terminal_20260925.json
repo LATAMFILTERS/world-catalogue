@@ -1,0 +1,42 @@
+[
+  {
+    "premium_guard_code": "PG99231EX",
+    "terminal_state": "COMPLETE",
+    "canonical_sku": "EL30826",
+    "resolution": "ENRICH_EXISTING_READY_APPLIED",
+    "catalog_action": "REFERENCE_ENRICHMENT_COMMIT",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "premium_guard_code": "PG99359",
+    "terminal_state": "COMPLETE",
+    "canonical_sku": "EL30002",
+    "resolution": "ENRICH_EXISTING_READY_APPLIED",
+    "catalog_action": "REFERENCE_ENRICHMENT_COMMIT",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "premium_guard_code": "PG9942EX",
+    "terminal_state": "COMPLETE",
+    "canonical_sku": "EL37016",
+    "resolution": "ENRICH_EXISTING_READY_APPLIED",
+    "catalog_action": "REFERENCE_ENRICHMENT_COMMIT",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "premium_guard_code": "PG9984EX",
+    "terminal_state": "COMPLETE",
+    "canonical_sku": "EL37010",
+    "resolution": "ENRICH_EXISTING_READY_APPLIED",
+    "catalog_action": "REFERENCE_ENRICHMENT_COMMIT",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "premium_guard_code": "UPG64R",
+    "terminal_state": "COMPLETE",
+    "canonical_sku": "EL37056",
+    "resolution": "ENRICH_EXISTING_READY_APPLIED",
+    "catalog_action": "REFERENCE_ENRICHMENT_COMMIT",
+    "closed_at": "2026-09-25"
+  }
+]

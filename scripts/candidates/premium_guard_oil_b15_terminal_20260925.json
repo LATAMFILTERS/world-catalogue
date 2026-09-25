@@ -1,0 +1,56 @@
+[
+  {
+    "premium_guard_code": "PG761",
+    "terminal_state": "COMPLETE",
+    "canonical_sku": "EL30236",
+    "resolution": "ENRICH_EXISTING_READY_APPLIED",
+    "catalog_action": "REFERENCE_ENRICHMENT_COMMIT",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "premium_guard_code": "PG9093",
+    "terminal_state": "COMPLETE",
+    "canonical_sku": "EL30716",
+    "resolution": "ENRICH_EXISTING_READY_APPLIED",
+    "catalog_action": "REFERENCE_ENRICHMENT_COMMIT",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "premium_guard_code": "PG9171",
+    "terminal_state": "BLOCKED_WITH_REASON",
+    "queue_target_sku": "EL34034",
+    "blocked_reason": "LD_SCOPE_SEGMENT_MISMATCH__SOURCE_FAMILY_IS_HEAVY_DUTY",
+    "details": {
+      "authority_code": "PH3900",
+      "hd_owner": "EL88616/P558616"
+    },
+    "evidence": {
+      "interchanges_sha256": "bd619bdb670cb06aff444f99e7eacc0a4c22e73abb07f8926b2abc902682e166",
+      "applications_sha256": "bdf970fdd196a5d5f6f9fe089b5daa558fc3cd801d3bf0e50fbffa68b0a6d86d"
+    },
+    "catalog_action": "NONE_FAIL_CLOSED",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "premium_guard_code": "PG99064EX",
+    "terminal_state": "COMPLETE",
+    "canonical_sku": "EL37044",
+    "resolution": "ENRICH_EXISTING_READY_APPLIED",
+    "catalog_action": "REFERENCE_ENRICHMENT_COMMIT",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "premium_guard_code": "PG99091EX",
+    "terminal_state": "COMPLETE",
+    "canonical_sku": "EL31018",
+    "queue_target_sku": "EL39265",
+    "resolution": "TARGET_CORRECTED_TO_EXISTING_AUTHORITY_OWNER_AND_ENRICHED",
+    "authority_code": "CH11018",
+    "catalog_action": "REFERENCE_ENRICHMENT_COMMIT",
+    "evidence": {
+      "interchanges_sha256": "6a22620332e884a13d157b7e1c119b0956ae190a7bc8d128e8dc998c33dc9b4b",
+      "applications_sha256": "a4368c1ace5ddb9e170c3ea3bfa97de43cfcfa6359c52d00df63021fe52a21a7"
+    },
+    "closed_at": "2026-09-25"
+  }
+]

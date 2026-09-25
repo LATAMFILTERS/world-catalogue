@@ -1,0 +1,72 @@
+[
+  {
+    "premium_guard_code": "PG99231EX",
+    "target_sku": "EL30826",
+    "authority_brand": "Mann-Filter",
+    "authority_code": "HU 826X",
+    "match_source": "RELATIONAL_COMPETITOR",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99231ex/",
+    "source_html_sha256": "b3953bc0af58e083dee269cfef43e67bff5ee5537a8e6397bab203ba62e3bb8c",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "applications_count": 4,
+    "resolution_basis": "PREMIUM_GUARD_PAGE_PLUS_EXISTING_SAME_FAMILY_FRAM_MANN_REFERENCE"
+  },
+  {
+    "premium_guard_code": "PG99359",
+    "target_sku": "EL30002",
+    "authority_brand": "MANN",
+    "authority_code": "HU10002Z",
+    "match_source": "PUBLIC_COMPETITOR",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99359/",
+    "source_html_sha256": "41940ba8f58fb028a285a80e816bc26d0db6495f956a8c6f2760a3274a12542c",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "applications_count": 14,
+    "resolution_basis": "PREMIUM_GUARD_PAGE_PLUS_EXISTING_SAME_FAMILY_FRAM_MANN_REFERENCE"
+  },
+  {
+    "premium_guard_code": "PG9942EX",
+    "target_sku": "EL37016",
+    "authority_brand": "FRAM",
+    "authority_code": "CH10636",
+    "match_source": "RELATIONAL_COMPETITOR",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg9942ex/",
+    "source_html_sha256": "2d909dc88732a0b4e091421f12b8f607f109fcb431498210f2983cb52130b10c",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "applications_count": 7,
+    "resolution_basis": "PREMIUM_GUARD_PAGE_PLUS_EXISTING_SAME_FAMILY_FRAM_MANN_REFERENCE"
+  },
+  {
+    "premium_guard_code": "PG9984EX",
+    "target_sku": "EL37010",
+    "authority_brand": "FRAM",
+    "authority_code": "CH11277",
+    "match_source": "RELATIONAL_COMPETITOR",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg9984ex/",
+    "source_html_sha256": "b0ee3c39b5ab9a76a97a8a029faece4545905daf95208e380239857acf37a463",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "applications_count": 22,
+    "resolution_basis": "PREMIUM_GUARD_PAGE_PLUS_EXISTING_SAME_FAMILY_FRAM_MANN_REFERENCE"
+  },
+  {
+    "premium_guard_code": "UPG64R",
+    "target_sku": "EL37056",
+    "authority_brand": "FRAM",
+    "authority_code": "PH12060",
+    "match_source": "RELATIONAL_COMPETITOR",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/upg64r/",
+    "source_html_sha256": "274a6785a0c38b597a184b0174dfc6d76fa97e08b8e8ae0a99b261d4bad78ca2",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "applications_count": 58,
+    "resolution_basis": "PREMIUM_GUARD_PAGE_PLUS_EXISTING_SAME_FAMILY_FRAM_MANN_REFERENCE"
+  }
+]

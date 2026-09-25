@@ -7,7 +7,13 @@ const { assertGovernedCatalogPatch } = require('../../lib/catalog-write-gateway'
 
 const MIGRATION = '119_PREMIUM_GUARD_OIL_EXISTING_CROSS_ENRICHMENT';
 const APPLY = process.argv.includes('--apply');
-const MANIFEST = path.resolve(__dirname, '../candidates/premium_guard_oil_phase2b_ready_20260923.json');
+function argValue(name, fallback = null) {
+  const prefix = '--' + name + '=';
+  const hit = process.argv.find((v) => v.startsWith(prefix));
+  return hit ? hit.slice(prefix.length) : fallback;
+}
+const DEFAULT_MANIFEST = path.resolve(__dirname, '../candidates/premium_guard_oil_phase2b_ready_20260923.json');
+const MANIFEST = path.resolve(argValue('manifest', DEFAULT_MANIFEST));
 
 function normalizeCode(value) {
   return String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -53,8 +59,8 @@ async function run() {
   const databaseUrl = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
   if (!databaseUrl) throw new Error('Missing database URL');
   const manifest = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'));
-  if (!Array.isArray(manifest) || manifest.length !== 91) {
-    throw new Error('EXPECTED_91_MANIFEST_ROWS');
+  if (!Array.isArray(manifest) || manifest.length < 1) {
+    throw new Error('EXPECTED_NON_EMPTY_MANIFEST');
   }
 
   const client = new Client({ connectionString:databaseUrl, ssl:sslFor(databaseUrl) });
@@ -81,6 +87,11 @@ async function run() {
     if (forbidden.length) throw new Error('COLLISION_CODES_MUST_NOT_BE_APPLIED');
 
     const targetSkus = [...new Set(manifest.map((x) => x.target_sku))];
+    const ldParents = await client.query(
+      'select elimfilters_sku from ld_catalog.ld_product_catalog where elimfilters_sku=any($1::text[])',
+      [targetSkus]
+    );
+    const relationalEligible = new Set(ldParents.rows.map((row) => row.elimfilters_sku));
     const catalogRows = await client.query(
       'select * from public.elimfilters_catalog where sku=any($1::text[]) for update',
       [targetSkus]
@@ -119,7 +130,10 @@ async function run() {
       for (const item of items) nextCompetitors = mergePremiumGuardRef(nextCompetitors, item);
       const patch = { competitor_codes: nextCompetitors };
       try {
-        const validation = assertGovernedCatalogPatch(row, patch);
+        const validation = assertGovernedCatalogPatch(row, patch, {
+          referenceEnrichment:true,
+          requireReferenceEvidence:true,
+        });
         prepared.push({ sku, items, row, nextCompetitors, validation });
       } catch (error) {
         gatewayBlocked.push({
@@ -156,6 +170,7 @@ async function run() {
       publicUpdated += update.rowCount;
 
       for (const item of items) {
+        if (!relationalEligible.has(sku)) continue;
         const rel = await client.query(
           `insert into ld_catalog.ld_competitor_cross_references
             (elimfilters_sku,source_sku,competitor_brand,competitor_part_number)
@@ -173,6 +188,7 @@ async function run() {
 
     report.mutations.public_updated = publicUpdated;
     report.mutations.relational_inserted = relationalInserted;
+    report.mutations.relational_eligible_skus = relationalEligible.size;
     report.mutations.cache_refreshed_skus = targetSkus.length;
     const publicAudit = await client.query(
       `select count(*)::int n
@@ -213,8 +229,9 @@ async function run() {
     report.audit.resolver_rows = resolverAudit.rowCount;
     report.audit.resolver_failures = resolverFailures;
 
-    if (report.audit.public_pg_refs !== 91) throw new Error('PUBLIC_AUDIT_EXPECTED_91');
-    if (report.audit.relational_pg_refs !== 91) throw new Error('RELATIONAL_AUDIT_EXPECTED_91');
+    const expectedRelational = manifest.filter((item) => relationalEligible.has(item.target_sku)).length;
+    if (report.audit.public_pg_refs !== manifest.length) throw new Error('PUBLIC_AUDIT_EXPECTED_'+manifest.length);
+    if (report.audit.relational_pg_refs !== expectedRelational) throw new Error('RELATIONAL_AUDIT_EXPECTED_'+expectedRelational);
     if (resolverFailures.length) throw new Error('RESOLVER_AUDIT_FAILED:'+resolverFailures.length);
 
     await client.query('COMMIT');

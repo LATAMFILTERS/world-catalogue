@@ -1,0 +1,44 @@
+[
+  {
+    "premium_guard_code": "PG761",
+    "target_sku": "EL30236",
+    "authority_brand": "FRAM",
+    "authority_code": "CH236APL",
+    "match_source": "PUBLIC_COMPETITOR",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg761/",
+    "source_html_sha256": "bb65244beb105561ee0e8f441bed655d23dc248e7e06bb2578ed54c70c9943c6",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "applications_count": 131,
+    "resolution_basis": "PREMIUM_GUARD_PAGE_PLUS_EXISTING_SAME_FAMILY_FRAM_MANN_REFERENCE"
+  },
+  {
+    "premium_guard_code": "PG9093",
+    "target_sku": "EL30716",
+    "authority_brand": "MANN",
+    "authority_code": "HU716/2X",
+    "match_source": "PUBLIC_COMPETITOR",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg9093/",
+    "source_html_sha256": "a79a51296368268f4ed2f8fdaf4ef752f6af09966ca7c316cccb7ae9029f01e3",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "applications_count": 9,
+    "resolution_basis": "PREMIUM_GUARD_PAGE_PLUS_EXISTING_SAME_FAMILY_FRAM_MANN_REFERENCE"
+  },
+  {
+    "premium_guard_code": "PG99064EX",
+    "target_sku": "EL37044",
+    "authority_brand": "FRAM",
+    "authority_code": "FD11473",
+    "match_source": "RELATIONAL_COMPETITOR",
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99064ex/",
+    "source_html_sha256": "08cd047b088f58964c6b621558baaa7997fd5191dc7481aa1c6405f4abb465f9",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "applications_count": 63,
+    "resolution_basis": "PREMIUM_GUARD_PAGE_PLUS_EXISTING_SAME_FAMILY_FRAM_MANN_REFERENCE"
+  }
+]
