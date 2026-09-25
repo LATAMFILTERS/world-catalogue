@@ -289,5 +289,34 @@
       "NOT_FOUND_IN_ACQUIRED_PACK"
     ],
     "stop_rule": "After one exhaustive pass across all free/public first-party material plus repository-held first-party captures, unresolved rows become TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED. Paid access is out of scope."
+  },
+  "execution_result": {
+    "on": "2026-09-24",
+    "mode": "FREE_FIRST_PARTY_ONLY",
+    "status": "COMPLETE",
+    "public_isuzu_pdf": "https://www.isuzucv.com/pdfs/FVGenuineCrossRef.pdf",
+    "public_isuzu_pdf_last_updated": "2025-11-15",
+    "findings": [
+      "N-Series oil-filter rows remain published only with broad Diesel engine labels for the relevant OEN sets.",
+      "N-Series 2013-2021 fuel rows remain published without primary/secondary or engine/chassis positional assignment.",
+      "Isuzu 8971822820 remains published as OIL FILTER; TRANS (CARTRIDGE), 1998-, Diesel, without transmission-model/year breakdown.",
+      "F-Series 2018-2020 fuel rows remain published without engine/chassis positional assignment; ELEMENT KIT rows do not expose kit contents.",
+      "Public Aisin exact-OEN research did not produce first-party application evidence for 8971822820."
+    ],
+    "outcome": "FIRST_PARTY_EVIDENCE_EXHAUSTED_FOR_RECORDED_QUESTIONS",
+    "affected_rows": [
+      "P3-04-N-LUBE-2011-ON",
+      "P3-05-N-LUBE-1998-2010",
+      "P3-07-N-FUEL-2013-2021-A",
+      "P3-08-N-FUEL-2013-2021-B",
+      "P3-09-N-FUEL-2013-2021-C",
+      "P3-10-N-FUEL-HIGHCAP-2013-2021",
+      "P3-12-N-TRANS",
+      "P3-16-F-FUEL-2018-2020-A",
+      "P3-17-F-FUEL-2018-2020-B",
+      "P3-18-F-FUEL-2018-2020-C",
+      "P3-19-F-FUEL-2018-2020-D"
+    ],
+    "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED"
   }
 }

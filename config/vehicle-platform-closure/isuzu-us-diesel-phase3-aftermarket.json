@@ -828,11 +828,12 @@
         }
       },
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Bind 2906544040 / 8982984040 explicitly to 4HK1-TC versus the separate 4JJ row.",
         "required_evidence": "First-party Isuzu service/parts/maintenance source naming the engine or exact model family for this lube OEN set.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "Authorized IsuzuTruckService service/parts literature for the exact model years/engines, or equivalent first-party Isuzu parts catalog pages that name the lube OEN and engine/model application."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     },
     {
@@ -979,11 +980,12 @@
         }
       ],
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Resolve 2906542701 / 2906548100 and whether the 1998-2010 row splits by 4HE1-TC versus 4HK1-TC.",
         "required_evidence": "First-party Isuzu engine/model-year parts source or Donaldson OEM-tier evidence naming the unconfirmed OENs and engine application.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "Authorized IsuzuTruckService service/parts literature for the exact model years/engines, or equivalent first-party Isuzu parts catalog pages that name the lube OEN and engine/model application."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     },
     {
@@ -1614,11 +1616,12 @@
         }
       ],
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Determine whether this row is primary, secondary, alternate, or revision within the 2013-2021 N-Series fuel system.",
         "required_evidence": "First-party Isuzu parts illustration/service manual labeling fuel-filter position or supersession.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "First-party Isuzu N-Series fuel-system parts illustration/service manual for MY2013-2021 identifying filter location/role or supersession."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     },
     {
@@ -1707,11 +1710,12 @@
         }
       ],
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Determine exact engine/chassis/primary-secondary role after high-capacity was closed as a commercial variant.",
         "required_evidence": "First-party Isuzu fuel-system parts illustration/service manual with positional assignment.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "First-party Isuzu N-Series fuel-system parts illustration/service manual for MY2013-2021 identifying filter location/role or supersession."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     },
     {
@@ -1836,11 +1840,12 @@
         }
       ],
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Determine whether this row is primary, secondary, alternate, or revision in the N-Series fuel system.",
         "required_evidence": "First-party Isuzu fuel-system parts illustration/service manual with positional assignment or supersession.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "First-party Isuzu N-Series fuel-system parts illustration/service manual for MY2013-2021 identifying filter location/role or supersession."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     },
     {
@@ -1920,11 +1925,12 @@
         }
       ],
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Determine exact engine/chassis/kit-position role; high-capacity itself is no longer an OEM-position ambiguity.",
         "required_evidence": "First-party Isuzu fuel-system parts illustration/service manual with positional assignment.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "First-party Isuzu N-Series fuel-system parts illustration/service manual for MY2013-2021 identifying filter location/role or supersession."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     },
     {
@@ -2150,11 +2156,12 @@
         "phase2_ceiling": "PARTIAL"
       },
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Determine which N-Series transmissions/model years actually use 8971822820 across the open-ended scope.",
         "required_evidence": "First-party Isuzu/Aisin parts or service source binding 8971822820 to specific transmission models and vehicle years.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "First-party Isuzu/Aisin transmission parts or service literature naming 8971822820 and its exact transmission/model-year application."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     },
     {
@@ -2767,11 +2774,12 @@
         }
       ],
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Assign this F-Series fuel row to engine-mounted versus chassis-mounted position.",
         "required_evidence": "First-party Isuzu F-Series fuel-system diagram/parts illustration identifying engine/chassis position.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "First-party Isuzu F-Series MY2018-2020 fuel-system parts illustration/service manual showing engine/chassis location and kit contents."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     },
     {
@@ -2854,11 +2862,12 @@
         }
       ],
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Assign this commercial high-capacity variant to the underlying engine/chassis OEM service position.",
         "required_evidence": "First-party Isuzu F-Series fuel-system diagram/parts illustration identifying engine/chassis position.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "First-party Isuzu F-Series MY2018-2020 fuel-system parts illustration/service manual showing engine/chassis location and kit contents."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     },
     {
@@ -2969,11 +2978,12 @@
         }
       ],
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Confirm secondary/chassis assignment and determine kit contents versus single Donaldson element.",
         "required_evidence": "First-party Isuzu parts breakdown showing chassis/secondary location and kit contents for 8975425390 / 8981475250.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "First-party Isuzu F-Series MY2018-2020 fuel-system parts illustration/service manual showing engine/chassis location and kit contents."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     },
     {
@@ -3079,11 +3089,12 @@
         }
       ],
       "partial_triage": {
-        "classification": "ACTIONABLE_PARTIAL",
+        "classification": "TERMINAL_PARTIAL",
         "question": "Confirm secondary/chassis assignment and determine kit contents versus single Donaldson cartridge.",
         "required_evidence": "First-party Isuzu parts breakdown showing chassis/secondary location and kit contents for 8980370110.",
-        "group_status": "ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER",
-        "group_required_source": "First-party Isuzu F-Series MY2018-2020 fuel-system parts illustration/service manual showing engine/chassis location and kit contents."
+        "terminal_subtype": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+        "free_evidence_pass": "EXHAUSTED",
+        "reopen_only_if": "New first-party Isuzu/Aisin evidence becomes publicly available or is supplied directly and materially answers the recorded unresolved question."
       }
     }
   ],
@@ -3951,9 +3962,7 @@
     "General catalogue-governance follow-up only: continue monitoring legacy cross-reference integrity around P550008/EL80008 outside the Isuzu closure. The three stale legacy mappings were already removed from both legacy CSV exports.",
     "OEM evidence follow-up only when new first-party material exists: H-Series, FRR/FXR, F-Series transverse positions, N-Series residual fuel scopes and N-Series cabin remain terminal BLOCKED_OEM with explicit reasons. Do not infer by continuity, sibling model or shared engine.",
     "EL88076 / Donaldson P848076 is already LIVE and governed in catalogo_elimfilters via scripts/migrations/run_119_create_el88076_p848076.js; no publication action remains for this SKU.",
-    "PARTIAL triage is CLOSED: 11 ACTIONABLE_PARTIAL, 2 TERMINAL_PARTIAL, 0 PARTIAL_SUPERSEDED. Research only the 11 actionable rows against their recorded required_evidence; do not reopen the 2 terminal rows without new first-party contradictory/widening evidence.",
-    "The 11 ACTIONABLE_PARTIAL rows have been grouped and researched. All four groups remain ACTIONABLE_PARTIAL_WITH_EXACT_SOURCE_BLOCKER. Evidence acquisition is ZERO-BUDGET: use only free/public first-party Isuzu/Aisin material plus repository-held captures; do not use paid subscriptions, CDs or manuals.",
-    "ZERO-BUDGET BATCH MODE is canonical for the 11 ACTIONABLE_PARTIAL rows: use only free/public first-party Isuzu/Aisin material plus repository-held first-party captures, run the batch OEN extractor once, then terminalize any unresolved row as TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED. No paid subscriptions or CD/manual purchases."
+    "PARTIAL queue is CLOSED for routine research: all 13 PARTIAL rows are TERMINAL_PARTIAL. Eleven were terminalized as TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED after the bounded zero-budget Isuzu/Aisin evidence pass; the other two were already terminal by explicit OEM scope. Reopen only on genuinely new first-party evidence."
   ],
   "exception_audit_status": "CLOSED_WITH_BLOCKERS",
   "exception_audit_history": [
@@ -4524,6 +4533,22 @@
         "state_changes": 0
       },
       "note": "Public first-party Isuzu indexes identify the relevant service-literature families, but not the part-level positional/application detail needed to close the rows. No inference-based promotion was made."
+    },
+    {
+      "on": "2026-09-24",
+      "status": "ZERO_BUDGET_FIRST_PARTY_EVIDENCE_PASS_COMPLETE",
+      "scope": "ALL_11_PREVIOUSLY_ACTIONABLE_PARTIAL_ROWS",
+      "result": "TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED",
+      "evidence_summary": [
+        "Current Isuzu FleetValue/Genuine cross-reference PDF (updated 2025-11-15) was reviewed at the relevant N-Series and F-Series pages and still lacks the engine/chassis/primary-secondary/transmission granularity required for closure.",
+        "Repository-held first-party Isuzu source captures and owner-manual evidence were reused.",
+        "Public Aisin exact-OEN searches for 8971822820 did not return first-party application evidence; aftermarket results were rejected for OEM-scope promotion."
+      ],
+      "counts": {
+        "rows_terminalized": 11,
+        "decision_status_changes": 0
+      },
+      "note": "All 13 Phase 3 PARTIAL rows are now terminal for routine research. Reopen only on genuinely new first-party evidence."
     }
   ],
   "duplicate_mapping_audit": {
@@ -4608,14 +4633,10 @@
   "partial_triage_audit": {
     "on": "2026-09-24",
     "total_partial": 13,
-    "ACTIONABLE_PARTIAL": 11,
-    "TERMINAL_PARTIAL": 2,
+    "ACTIONABLE_PARTIAL": 0,
+    "TERMINAL_PARTIAL": 13,
     "PARTIAL_SUPERSEDED": 0,
     "terminal_rows": [
-      "P3-13-F-LUBE-1987-2008",
-      "P3-15-F-FUEL-1994-2004"
-    ],
-    "actionable_rows": [
       "P3-04-N-LUBE-2011-ON",
       "P3-05-N-LUBE-1998-2010",
       "P3-07-N-FUEL-2013-2021-A",
@@ -4623,16 +4644,19 @@
       "P3-09-N-FUEL-2013-2021-C",
       "P3-10-N-FUEL-HIGHCAP-2013-2021",
       "P3-12-N-TRANS",
+      "P3-13-F-LUBE-1987-2008",
+      "P3-15-F-FUEL-1994-2004",
       "P3-16-F-FUEL-2018-2020-A",
       "P3-17-F-FUEL-2018-2020-B",
       "P3-18-F-FUEL-2018-2020-C",
       "P3-19-F-FUEL-2018-2020-D"
     ],
-    "rule": "Triage classifies whether further research is justified; it does not change Phase 3 decision_status."
+    "actionable_rows": [],
+    "rule": "After the bounded zero-budget first-party evidence pass, all remaining PARTIAL rows are terminal for routine research. decision_status remains PARTIAL."
   },
   "actionable_partial_group_audit": {
     "on": "2026-09-24",
-    "status": "ACTIONABLE_PARTIAL_GROUP_RESEARCH_COMPLETE_WITH_SOURCE_BLOCKERS",
+    "status": "FREE_FIRST_PARTY_EVIDENCE_PASS_COMPLETE",
     "groups": {
       "N_SERIES_LUBE": {
         "row_ids": [
@@ -4697,9 +4721,11 @@
     "summary": {
       "groups_total": 4,
       "groups_resolved": 0,
-      "groups_actionable_with_exact_source_blocker": 4,
+      "groups_terminalized_after_free_evidence_exhausted": 4,
       "rows_total": 11,
+      "rows_terminalized_after_free_evidence_exhausted": 11,
       "rows_state_changed": 0
-    }
+    },
+    "closure": "All four groups were exhausted against free/public first-party Isuzu material, repository-held first-party captures, and public Aisin search. None produced the exact positional/application detail required. Routine research is closed."
   }
 }
