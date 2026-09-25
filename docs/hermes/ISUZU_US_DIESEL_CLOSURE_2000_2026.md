@@ -926,6 +926,19 @@ the documented gaps:
    not hit the reproducible 1,048,576-byte truncation documented above, to replace the
    same-batch sibling-evidence closure with each model's own document.
 
+### P2-N-FWS final isolated follow-up — 8982373410 (2026-09-24)
+
+This pass touched only `P2-N-FWS-2022i-ON`. Isuzu continues to publish `8982373410` as
+`FUEL/WATER SEP; HIGH EFF` for `2022i-` diesel. The previously surfaced Donaldson
+`P550736` remains rejected because Donaldson publishes it in the DAVCO Fuel Pro family and no
+official Donaldson tie to Isuzu `8982373410` was found.
+
+A fresh WIX exact-match lookup independently recognizes `8982373410` as a valid competitive
+part number but reports that there is **no replacement at this time**. That supports the
+conclusion that current aftermarket coverage is sparse, but it does not prove Donaldson
+non-manufacture. Therefore the row remains `DONALDSON_NOT_FOUND` / `BLOCKED_DONALDSON`,
+Fleetguard remains ineligible by policy, and no ELIMFILTERS SKU is created.
+
 ### P2-N-TRANS single-row closure — 8971822820 (2026-09-24)
 
 The prior `P550008` rejection was reopened only for this row. Isuzu's exact OEN remains

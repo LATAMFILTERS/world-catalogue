@@ -1223,7 +1223,7 @@ test('EXCEPTION AUDIT FINAL: counts match the reported starting and final tallie
   // P848076 ELIMFILTERS SKU CLOSURE 2026-09-24: closed both remaining
   // NO_ELIMFILTERS_SKU_YET rows with a governed candidate SKU.
   const history = phase3.exception_audit_history.find((h) => h.starting_counts?.NO_ELIMFILTERS_SKU_YET === 2);
-  assert.equal(phase3.exception_audit_history.length, 6);
+  assert.equal(phase3.exception_audit_history.length, 7);
   assert.ok(history);
   assert.deepEqual(history.starting_counts, { VERIFIED_BASE: 4, PARTIAL: 11, CONFLICTING: 0, NO_ELIMFILTERS_SKU_YET: 2, BLOCKED_DONALDSON: 2 });
   assert.deepEqual(history.final_counts, { VERIFIED_BASE: 5, PARTIAL: 12, CONFLICTING: 0, NO_ELIMFILTERS_SKU_YET: 0, BLOCKED_DONALDSON: 2 });
@@ -1897,4 +1897,21 @@ test('LIVEPUB 2: live publication records the governed writer and resolver outco
   assert.equal(row.live_catalog_publication.part_search_http_validation.queries.EL88076.source, 'exact_sku');
   assert.equal(row.live_catalog_publication.part_search_http_validation.queries['2906544040'].resolution, 'RESOLVED');
   assert.equal(row.live_catalog_publication.part_search_http_validation.queries['8982984040'].sku, 'EL88076');
+});
+
+test('FWS FINAL 1: 8982373410 exhausts current public channels without weakening Donaldson-first governance', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-FWS-2022i-ON');
+  assert.equal(row.final_followup_2026_09_24.status, 'EXHAUSTED_CURRENT_PUBLIC_CHANNELS_BLOCKED');
+  assert.equal(row.donaldson_status, 'DONALDSON_NOT_FOUND');
+  assert.equal(row.decision_status, 'BLOCKED_DONALDSON');
+  assert.equal(row.base_source_part, null);
+  assert.equal(row.fleetguard_status, 'NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED');
+});
+
+test('FWS FINAL 2: WIX no-replacement evidence is supporting only and does not open Fleetguard', () => {
+  const row = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-FWS-2022i-ON');
+  assert.equal(row.final_followup_2026_09_24.supporting_market_checks.wix.result, 'VALID_COMPETITOR_NUMBER_NO_REPLACEMENT');
+  assert.equal(row.final_followup_2026_09_24.donaldson.non_manufacture_verified, false);
+  assert.equal(row.final_followup_2026_09_24.fleetguard.gate, 'NOT_ELIGIBLE');
+  assert.equal(row.elimfilters_base_decision, null);
 });

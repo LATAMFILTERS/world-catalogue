@@ -1198,6 +1198,23 @@
         "Physical/application corroboration removes the prior assumption that Isuzu wording CARTRIDGE must mean an internal non-spin-on element"
       ],
       "scope_restriction": "CORROBORATION_ONLY. Fleetguard does not define the HD canonical base because Donaldson is verified for the exact OEN in the repository-held first-party Donaldson capture. The dieselusa.com PDF is a mirror of Fleetguard-branded application material, not a Fleetguard-hosted URL, so it may support but not outrank the Donaldson first-party capture."
+    },
+    {
+      "source_id": "WIX_EXACTMATCH_8982373410_2026_09_24",
+      "title": "WIX exact-match search for Isuzu 8982373410",
+      "publisher": "WIX Filters",
+      "source_type": "official_aftermarket_exact_match_service",
+      "authority_level": "supporting",
+      "origin_url": "https://www2.wixfilters.com/Lookup/Exactmatch.aspx?PartNo=8982373410",
+      "capture_url": null,
+      "captured_at": "2026-09-24",
+      "capture_files": [],
+      "capture_method": "Current WIX exact-match lookup for the Isuzu OEM number.",
+      "supports": [
+        "WIX recognizes 8982373410 as a valid competitive part number",
+        "WIX reports there is no replacement at this time"
+      ],
+      "scope_restriction": "SUPPORTING ONLY. WIX does not define OEM scope or the HD canonical base. No-replacement at WIX is not evidence that Donaldson does not manufacture an equivalent and cannot open Fleetguard fallback."
     }
   ]
 }
