@@ -1,0 +1,19 @@
+{
+  "sku": "EA30004",
+  "codigo_base": "C30004",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "origin_group": "EUROPEAN",
+    "brand": "MANN-FILTER",
+    "code": "C30004"
+  },
+  "resolution": "SYNC_EXISTING_VERIFIED_IDENTITY_TO_PUBLIC_CANONICAL_METADATA",
+  "evidence": {
+    "identity_source": "MIGRATION_088_EXACT_APPLICATION_UNIQUE",
+    "official_mann_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c30004_mann-filter.html"
+  },
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "closed_at": "2026-09-25"
+}

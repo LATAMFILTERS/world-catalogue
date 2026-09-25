@@ -1,0 +1,104 @@
+[
+  {
+    "sku": "EA30001",
+    "codigo_base": "0001",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA1"
+      },
+      {
+        "brand": "FRAM",
+        "code": "CA1A693C"
+      },
+      {
+        "brand": "FRAM",
+        "code": "CA1A73163"
+      }
+    ],
+    "state": "REGIONAL_AUTHORITY_REVIEW",
+    "notes": "Mixed bus/truck/equipment application evidence; verify LD scope before canonical write."
+  },
+  {
+    "sku": "EA30002",
+    "codigo_base": "0002",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA2"
+      },
+      {
+        "brand": "FRAM",
+        "code": "CA2P"
+      },
+      {
+        "brand": "FRAM",
+        "code": "CA2PL1"
+      }
+    ],
+    "state": "REGIONAL_AUTHORITY_REVIEW",
+    "notes": "Mixed European/non-European makes; market/origin authority unresolved."
+  },
+  {
+    "sku": "EA30003",
+    "codigo_base": "0003",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "MANN",
+        "code": "C30003"
+      },
+      {
+        "brand": "MANN",
+        "code": "C50003"
+      },
+      {
+        "brand": "FRAM",
+        "code": "CA3"
+      }
+    ],
+    "state": "REGIONAL_AUTHORITY_REVIEW",
+    "notes": "Both MANN and FRAM present; requires origin-group resolution."
+  },
+  {
+    "sku": "EA30004",
+    "codigo_base": "C30004",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA4"
+      }
+    ],
+    "state": "REGIONAL_AUTHORITY_REVIEW",
+    "notes": "Audi/Porsche/VW USA fitment; verify non-European market treatment before write."
+  },
+  {
+    "sku": "EA30005",
+    "codigo_base": "0005",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "MANN",
+        "code": "C10005"
+      },
+      {
+        "brand": "MANN",
+        "code": "C30005"
+      },
+      {
+        "brand": "FRAM",
+        "code": "CA5"
+      }
+    ],
+    "state": "REGIONAL_AUTHORITY_REVIEW",
+    "notes": "MANN and FRAM references coexist; resolve canonical authority first."
+  }
+]

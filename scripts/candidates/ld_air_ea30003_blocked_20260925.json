@@ -1,0 +1,38 @@
+{
+  "sku": "EA30003",
+  "codigo_base": "0003",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "MULTI_FAMILY_CONTAMINATION__MANN_C30003_AND_C50003_PHYSICALLY_INCOMPATIBLE",
+  "evidence": {
+    "mann_candidates": [
+      {
+        "code": "C30003",
+        "dimensions_mm": {
+          "length": 294,
+          "width": 202,
+          "height": 47
+        },
+        "main_application": "BMW 5/7"
+      },
+      {
+        "code": "C50003",
+        "dimensions_mm": {
+          "length": 499.6,
+          "width": 265.9,
+          "height": 404.2
+        },
+        "main_application": "CLAAS Xerion / heavy equipment"
+      }
+    ],
+    "catalog_height_mm": 24,
+    "application_scope": "CLAAS + HONDA + CITROEN + PEUGEOT + FIAT + LANCIA + BMW",
+    "contamination_flags": [
+      "COMPETITOR_CODES_HIGH_CARDINALITY"
+    ],
+    "current_governance_state": "REVIEW_PRIMARY_CANDIDATE"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

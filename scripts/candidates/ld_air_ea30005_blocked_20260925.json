@@ -1,0 +1,38 @@
+{
+  "sku": "EA30005",
+  "codigo_base": "0005",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "MULTI_FAMILY_CONTAMINATION__MANN_C10005_AND_C30005_PHYSICALLY_INCOMPATIBLE",
+  "evidence": {
+    "mann_candidates": [
+      {
+        "code": "C10005",
+        "dimensions_mm": {
+          "outer_diameter": 97.5,
+          "inner_diameter": 60,
+          "height": 263
+        },
+        "main_application": "BECKER side-channel blower"
+      },
+      {
+        "code": "C30005",
+        "dimensions_mm": {
+          "length": 292,
+          "width": 177,
+          "height": 70
+        },
+        "main_application": "AUDI/VW passenger LD"
+      }
+    ],
+    "catalog_height_mm": 44,
+    "application_scope": "AUDI/VW + BECKER + AGCO tractors + MERCEDES-BENZ",
+    "contamination_flags": [
+      "COMPETITOR_CODES_HIGH_CARDINALITY"
+    ],
+    "current_governance_state": "REVIEW_PRIMARY_CANDIDATE"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

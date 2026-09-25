@@ -1,0 +1,27 @@
+{
+  "sku": "EA30002",
+  "codigo_base": "0002",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "MULTI_SEGMENT_FAMILY_CONTAMINATION__CANONICAL_AUTHORITY_NOT_SAFE",
+  "evidence": {
+    "observed_authority_refs": [
+      "FRAM CA2",
+      "FRAM CA2AF2675",
+      "FRAM CA2P",
+      "FRAM CA2PL1",
+      "FRAM CH11442ECO"
+    ],
+    "conflicting_reference_owners": [
+      "CA2 -> EA30002 air LD + EL80203/EL80606 oil HD",
+      "CH11442ECO -> EA30002 air LD + EC30002 cabin LD"
+    ],
+    "contamination_flags": [
+      "COMPETITOR_CODES_HIGH_CARDINALITY"
+    ],
+    "application_scope": "MIXED_PASSENGER_COMMERCIAL_AND_EQUIPMENT"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

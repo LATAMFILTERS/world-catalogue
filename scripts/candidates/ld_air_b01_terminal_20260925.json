@@ -1,0 +1,34 @@
+[
+  {
+    "sku": "EA30001",
+    "terminal_state": "BLOCKED_WITH_REASON",
+    "reason": "LD_SCOPE_SEGMENT_MISMATCH__APPLICATION_UNIVERSE_IS_COMMERCIAL_HEAVY_DUTY",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "sku": "EA30002",
+    "terminal_state": "BLOCKED_WITH_REASON",
+    "reason": "MULTI_SEGMENT_FAMILY_CONTAMINATION__CANONICAL_AUTHORITY_NOT_SAFE",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "sku": "EA30003",
+    "terminal_state": "BLOCKED_WITH_REASON",
+    "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C30003_AND_C50003_PHYSICALLY_INCOMPATIBLE",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "sku": "EA30004",
+    "terminal_state": "COMPLETE",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "C30004",
+    "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+    "closed_at": "2026-09-25"
+  },
+  {
+    "sku": "EA30005",
+    "terminal_state": "BLOCKED_WITH_REASON",
+    "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C10005_AND_C30005_PHYSICALLY_INCOMPATIBLE",
+    "closed_at": "2026-09-25"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "sku": "EA30001",
+  "codigo_base": "0001",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_SEGMENT_MISMATCH__APPLICATION_UNIVERSE_IS_COMMERCIAL_HEAVY_DUTY",
+  "evidence": {
+    "observed_authority_refs": [
+      "FRAM CA1",
+      "FRAM CA1A693C",
+      "FRAM CA1A73163"
+    ],
+    "application_makes": [
+      "SCANIA BUS / SCANIA-IRIZAR",
+      "MAN BUS (NEOMAN)",
+      "IVECO BUS",
+      "EVOBUS (MERCEDES-BENZ/SETRA)",
+      "VOLVO TRUCKS",
+      "CATERPILLAR",
+      "CASE-IH",
+      "NEW HOLLAND"
+    ],
+    "current_governance_state": "VERIFY_PRIMARY_ABSENCE"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
