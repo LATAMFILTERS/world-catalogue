@@ -11,8 +11,27 @@
   "closed_on": "2026-09-22",
   "phase2_status": "CLOSED",
   "phase2_status_history": [
-    { "closed_on": "2026-09-22", "phase2_status": "NOT_CLOSED", "note": "Initial Phase 2 pass, N-Series and F-Series only. H-Series absent (Phase 1 had not yet incorporated it). Several coverage gaps left undocumented as explicit unresolved_positions entries." },
-    { "closed_on": "2026-09-23", "phase2_status": "CLOSED", "note": "PHASE 2 CLOSURE PASS. H-Series position_universe added (block H-2005-2008, all three models). Cummins B6.7 F-Series gap explicitly documented. The two anomalous lube OEN rows cross-checked against a second extraction algorithm and against the adjacent RADIATOR block, ruling out an extraction error. Coverage closure means every Phase 1 vehicle x position cell now carries a terminal Phase 2 state (VERIFIED, NOT_APPLICABLE, or an honestly-documented PARTIAL/UNRESOLVED/CONFLICTING) -- it does NOT mean every cell is VERIFIED. See docs/hermes/ISUZU_US_DIESEL_CLOSURE_2000_2026.md, section 'PHASE 2 -- OFFICIALLY CLOSED', for the full coverage matrix and counts." }
+    {
+      "closed_on": "2026-09-22",
+      "phase2_status": "NOT_CLOSED",
+      "note": "Initial Phase 2 pass, N-Series and F-Series only. H-Series absent (Phase 1 had not yet incorporated it). Several coverage gaps left undocumented as explicit unresolved_positions entries."
+    },
+    {
+      "closed_on": "2026-09-23",
+      "phase2_status": "CLOSED",
+      "note": "PHASE 2 CLOSURE PASS. H-Series position_universe added (block H-2005-2008, all three models). Cummins B6.7 F-Series gap explicitly documented. The two anomalous lube OEN rows cross-checked against a second extraction algorithm and against the adjacent RADIATOR block, ruling out an extraction error. Coverage closure means every Phase 1 vehicle x position cell now carries a terminal Phase 2 state (VERIFIED, NOT_APPLICABLE, or an honestly-documented PARTIAL/UNRESOLVED/CONFLICTING) -- it does NOT mean every cell is VERIFIED. See docs/hermes/ISUZU_US_DIESEL_CLOSURE_2000_2026.md, section 'PHASE 2 -- OFFICIALLY CLOSED', for the full coverage matrix and counts."
+    },
+    {
+      "on": "2026-09-24",
+      "outcome": "STANDARD_VS_HIGH_CAPACITY_AMBIGUITY_RESOLVED",
+      "scope": "N-SERIES_2013_2021_AND_F-SERIES_2018_2020_FUEL",
+      "finding": "COMMERCIAL_VARIANT_NOT_SEPARATE_OEM_POSITION",
+      "evidence": [
+        "N-Series: standard FleetValue 5876101570 and high-capacity 2945611151 share Genuine OEN 8980374810 and 5873109370.",
+        "F-Series: standard FleetValue 5876101570 and high-capacity 2945611151 map to the exact same Genuine OEN set 8943692993 / 8980374810 / 8943691993."
+      ],
+      "remaining_partial_reason": "Exact engine/chassis/kit-position assignment remains unresolved; this pass removes only the standard-vs-high-capacity OEM-position ambiguity."
+    }
   ],
   "governance": {
     "aftermarket_consulted_in_this_phase": false,
@@ -187,9 +206,21 @@
         "status": "UNRESOLVED",
         "basis": "Isuzu's own model-specific specification pages (captured 2005-03-18, re-checked unchanged through 2009-06-16) publish brake system as a per-model configuration, not a uniform H-Series attribute: HTR -- Standard 'Hydraulic 4-piston', Optional 'ABS Full Air'; HVR -- Standard 'Hydraulic 4-piston', Optional 'Air brake'; HXR -- Standard 'Air brake', Optional 'Air brake'. An air dryer is only present on a vehicle actually built with the (standard-on-HXR, optional-on-HTR/HVR) full-air brake system. No Isuzu document states which configuration any given VIN or fleet order actually received, and no air dryer cartridge part number was published for any configuration.",
         "by_model": {
-          "HTR": { "standard_brakes": "Hydraulic 4-piston", "optional_brakes": "ABS Full Air", "air_dryer_applicability": "CONDITIONAL -- only if the optional full-air brake system was ordered" },
-          "HVR": { "standard_brakes": "Hydraulic 4-piston", "optional_brakes": "Air brake", "air_dryer_applicability": "CONDITIONAL -- only if the optional full-air brake system was ordered" },
-          "HXR": { "standard_brakes": "Air brake", "optional_brakes": "Air brake", "air_dryer_applicability": "APPLICABLE as standard -- HXR ships with air brakes; part number still UNRESOLVED" }
+          "HTR": {
+            "standard_brakes": "Hydraulic 4-piston",
+            "optional_brakes": "ABS Full Air",
+            "air_dryer_applicability": "CONDITIONAL -- only if the optional full-air brake system was ordered"
+          },
+          "HVR": {
+            "standard_brakes": "Hydraulic 4-piston",
+            "optional_brakes": "Air brake",
+            "air_dryer_applicability": "CONDITIONAL -- only if the optional full-air brake system was ordered"
+          },
+          "HXR": {
+            "standard_brakes": "Air brake",
+            "optional_brakes": "Air brake",
+            "air_dryer_applicability": "APPLICABLE as standard -- HXR ships with air brakes; part number still UNRESOLVED"
+          }
         }
       },
       "TRANSMISSION_FILTER": {
@@ -444,16 +475,24 @@
       "isuzu_published_model_scope": "NPR",
       "filter_position": "FUEL_PRIMARY",
       "isuzu_part_description": "FUEL",
-      "isuzu_oe_oen": ["8980284111"],
+      "isuzu_oe_oen": [
+        "8980284111"
+      ],
       "isuzu_published_year_scope": "2006",
       "isuzu_published_engine_scope": "4HK1-TC diesel",
       "quantity": 1,
       "source": "ISUZU_OM_NPR_2006_FUEL",
       "source_scope": "2006 NPR Diesel Owner's Manual, Section 6 FILTER",
-      "binds_to_phase1": ["N-2005-2010(2006 only)"],
+      "binds_to_phase1": [
+        "N-2005-2010(2006 only)"
+      ],
       "evidence_status": "VERIFIED",
-      "applies_to_model_lines": ["NPR"],
-      "applies_to_models_exact": ["NPR"],
+      "applies_to_model_lines": [
+        "NPR"
+      ],
+      "applies_to_models_exact": [
+        "NPR"
+      ],
       "binding_note": "Exact MY2006 NPR owner-manual evidence only; does not extend to NPR-HD, NQR or NRR."
     },
     {
@@ -462,16 +501,24 @@
       "isuzu_published_model_scope": "NPR",
       "filter_position": "FUEL_PRIMARY",
       "isuzu_part_description": "FUEL FILTER",
-      "isuzu_oe_oen": ["8980370110"],
+      "isuzu_oe_oen": [
+        "8980370110"
+      ],
       "isuzu_published_year_scope": "2007",
       "isuzu_published_engine_scope": "4HK1-TC diesel",
       "quantity": 1,
       "source": "ISUZU_OM_NPR_2007_FUEL",
       "source_scope": "2007 N-Series NPR Owner's Manual, Section 6 FILTER",
-      "binds_to_phase1": ["N-2005-2010(2007 only)"],
+      "binds_to_phase1": [
+        "N-2005-2010(2007 only)"
+      ],
       "evidence_status": "VERIFIED",
-      "applies_to_model_lines": ["NPR"],
-      "applies_to_models_exact": ["NPR"],
+      "applies_to_model_lines": [
+        "NPR"
+      ],
+      "applies_to_models_exact": [
+        "NPR"
+      ],
       "binding_note": "Exact MY2007 NPR owner-manual evidence only; no suffix/model inheritance."
     },
     {
@@ -480,16 +527,24 @@
       "isuzu_published_model_scope": "NPR",
       "filter_position": "FUEL_PRIMARY",
       "isuzu_part_description": "FUEL FILTER",
-      "isuzu_oe_oen": ["8980370110"],
+      "isuzu_oe_oen": [
+        "8980370110"
+      ],
       "isuzu_published_year_scope": "2008",
       "isuzu_published_engine_scope": "4HK1-TC diesel",
       "quantity": 1,
       "source": "ISUZU_OM_NPR_2008_FUEL",
       "source_scope": "2008 NPR Owner's Manual, Section 6 FILTER",
-      "binds_to_phase1": ["N-2005-2010(2008 only)"],
+      "binds_to_phase1": [
+        "N-2005-2010(2008 only)"
+      ],
       "evidence_status": "VERIFIED",
-      "applies_to_model_lines": ["NPR"],
-      "applies_to_models_exact": ["NPR"],
+      "applies_to_model_lines": [
+        "NPR"
+      ],
+      "applies_to_models_exact": [
+        "NPR"
+      ],
       "binding_note": "Exact MY2008 NPR owner-manual evidence only; no suffix/model inheritance."
     },
     {
@@ -498,16 +553,28 @@
       "isuzu_published_model_scope": "NPR-HD / NQR / NRR",
       "filter_position": "FUEL_PRIMARY",
       "isuzu_part_description": "FUEL",
-      "isuzu_oe_oen": ["8980370110"],
+      "isuzu_oe_oen": [
+        "8980370110"
+      ],
       "isuzu_published_year_scope": "2010",
       "isuzu_published_engine_scope": "4HK1-TC diesel",
       "quantity": 1,
       "source": "ISUZU_OM_NSERIES_2010_FUEL",
       "source_scope": "2010 N-Series Owner's Manual, MODEL REFERENCE + Section 6 FILTER",
-      "binds_to_phase1": ["N-2005-2010(2010 only)"],
+      "binds_to_phase1": [
+        "N-2005-2010(2010 only)"
+      ],
       "evidence_status": "VERIFIED",
-      "applies_to_model_lines": ["NPR", "NQR", "NRR"],
-      "applies_to_models_exact": ["NPR-HD", "NQR", "NRR"],
+      "applies_to_model_lines": [
+        "NPR",
+        "NQR",
+        "NRR"
+      ],
+      "applies_to_models_exact": [
+        "NPR-HD",
+        "NQR",
+        "NRR"
+      ],
       "binding_note": "The 2010 owner's manual explicitly names NPR-HD, NQR and NRR; NPR is intentionally excluded."
     },
     {
@@ -566,7 +633,17 @@
         "NPR",
         "NQR",
         "NRR"
-      ]
+      ],
+      "standard_high_capacity_resolution": {
+        "status": "COMMERCIAL_VARIANT_NOT_SEPARATE_OEM_POSITION",
+        "evidence_basis": "Isuzu FleetValue/Genuine cross-reference, current first-party table",
+        "interpretation": "FleetValue standard/high-capacity labels describe commercial replacement variants mapped to Genuine OENs; they do not establish separate OEM filter positions.",
+        "phase2_effect": "Keep evidence_status PARTIAL where exact engine/chassis/kit-position assignment remains unresolved; remove standard-vs-high-capacity as a separate ambiguity.",
+        "shared_genuine_oens_with_high_capacity": [
+          "8980374810",
+          "5873109370"
+        ]
+      }
     },
     {
       "row_id": "P2-N-FUEL-2013-2021-C",
@@ -602,7 +679,7 @@
       "series": "N-SERIES",
       "isuzu_published_model_scope": "N-SERIES NPR / NRR / NQR",
       "filter_position": "FUEL_PRIMARY",
-      "filter_role": "High capacity fuel",
+      "filter_role": "FleetValue high-capacity commercial alternative for the same OEM service position; not a separate OEM filter position",
       "isuzu_part_description": "FUEL FILTER (HIGH CAPACITY)",
       "isuzu_oe_oen": [
         "8980374810",
@@ -625,7 +702,18 @@
         "NPR",
         "NQR",
         "NRR"
-      ]
+      ],
+      "standard_high_capacity_resolution": {
+        "status": "COMMERCIAL_VARIANT_NOT_SEPARATE_OEM_POSITION",
+        "evidence_basis": "Isuzu FleetValue/Genuine cross-reference, current first-party table",
+        "interpretation": "FleetValue standard/high-capacity labels describe commercial replacement variants mapped to Genuine OENs; they do not establish separate OEM filter positions.",
+        "phase2_effect": "Keep evidence_status PARTIAL where exact engine/chassis/kit-position assignment remains unresolved; remove standard-vs-high-capacity as a separate ambiguity.",
+        "shared_genuine_oens_with_standard": [
+          "8980374810",
+          "5873109370"
+        ]
+      },
+      "binding_note": "Resolved 2026-09-24: Isuzu's current FleetValue/Genuine sheet shows the high-capacity FleetValue offering sharing Genuine OEN 8980374810 and 5873109370 with the standard FleetValue row. Therefore HIGH CAPACITY is a FleetValue commercial replacement variant, not evidence of a separate OEM filter position. The row remains PARTIAL only because exact engine/chassis/kit-position assignment among the 2013-2021 fuel rows is still unresolved."
     },
     {
       "row_id": "P2-N-FWS-2022i-ON",
@@ -801,7 +889,18 @@
         "FTR",
         "FVR",
         "FSR"
-      ]
+      ],
+      "standard_high_capacity_resolution": {
+        "status": "COMMERCIAL_VARIANT_NOT_SEPARATE_OEM_POSITION",
+        "evidence_basis": "Isuzu FleetValue/Genuine cross-reference, current first-party table",
+        "interpretation": "FleetValue standard/high-capacity labels describe commercial replacement variants mapped to Genuine OENs; they do not establish separate OEM filter positions.",
+        "phase2_effect": "Keep evidence_status PARTIAL where exact engine/chassis/kit-position assignment remains unresolved; remove standard-vs-high-capacity as a separate ambiguity.",
+        "shared_genuine_oens_with_high_capacity": [
+          "8943692993",
+          "8980374810",
+          "8943691993"
+        ]
+      }
     },
     {
       "row_id": "P2-F-FUEL-2018-2020-B",
@@ -828,7 +927,20 @@
         "FTR",
         "FVR",
         "FSR"
-      ]
+      ],
+      "standard_high_capacity_resolution": {
+        "status": "COMMERCIAL_VARIANT_NOT_SEPARATE_OEM_POSITION",
+        "evidence_basis": "Isuzu FleetValue/Genuine cross-reference, current first-party table",
+        "interpretation": "FleetValue standard/high-capacity labels describe commercial replacement variants mapped to Genuine OENs; they do not establish separate OEM filter positions.",
+        "phase2_effect": "Keep evidence_status PARTIAL where exact engine/chassis/kit-position assignment remains unresolved; remove standard-vs-high-capacity as a separate ambiguity.",
+        "shared_genuine_oens_with_standard": [
+          "8943692993",
+          "8980374810",
+          "8943691993"
+        ]
+      },
+      "filter_role": "FleetValue high-capacity commercial alternative for the same OEM service position; not a separate OEM filter position",
+      "binding_note": "Resolved 2026-09-24: Isuzu publishes FUEL FILTER 5876101570 and FUEL FILTER (HIGH CAPACITY) 2945611151 against the exact same Genuine OEN set 8943692993 / 8980374810 / 8943691993 for 2018-2020. Therefore the FleetValue high-capacity label is not a distinct OEM filter position. The row remains PARTIAL because the F-Series engine-vs-chassis fuel-filter position assignment is still unresolved."
     },
     {
       "row_id": "P2-F-FUEL-2018-2020-C",
