@@ -1,0 +1,20 @@
+{
+  "sku": "EA30086",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "DUPLICATE_OWNERSHIP__FRAM_CA10086_MATCHES_MANN_C2631_FAMILY_ON_EA32631",
+  "authority_candidate": {
+    "brand": "FRAM",
+    "code": "CA10086"
+  },
+  "details": {
+    "likely_canonical_sku": "EA32631",
+    "shared_crosses": [
+      "MANN C2631",
+      "MAHLE LX1785",
+      "Purolator A25584"
+    ],
+    "resolution": "DO_NOT_CONSOLIDATE_UNTIL_EA32631_CANONICAL_IDENTITY_IS_GOVERNED"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

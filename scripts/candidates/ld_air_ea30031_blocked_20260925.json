@@ -1,0 +1,23 @@
+{
+  "sku": "EA30031",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "LD_SCOPE_SEGMENT_MISMATCH__FRAM_CA10031_IS_HD_RADIAL_SEAL_OUTER",
+  "authority_candidate": {
+    "brand": "FRAM",
+    "code": "CA10031"
+  },
+  "details": {
+    "mann_equivalents": [
+      "C30810/3",
+      "C30 810/3",
+      "C30810"
+    ],
+    "oem": [
+      "AGCO 504421D1",
+      "Caterpillar 2453818"
+    ],
+    "catalog_row_geometry": "64x136 mm incompatible with FRAM 298.2x584.2 mm"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

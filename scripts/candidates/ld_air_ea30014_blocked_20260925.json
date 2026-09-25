@@ -1,0 +1,16 @@
+{
+  "sku": "EA30014",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CANONICAL_IDENTITY_MISSING__FRAM_AUTHORITY_EVIDENCE_PRESENT_BUT_GOVERNANCE_REQUIRES_PRIMARY_AUTHORITY_RECONCILIATION",
+  "authority_candidate": {
+    "brand": "FRAM",
+    "code": "CA10014"
+  },
+  "evidence": {
+    "source": "FRAM_USA_LD_HARVEST_20260911",
+    "applications": "BUICK/CHEVROLET/PONTIAC LD",
+    "oem": "GENERAL MOTORS 10350737"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

@@ -1,0 +1,19 @@
+{
+  "sku": "EA30071",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CANONICAL_IDENTITY_MISSING__FRAM_CA10071_VALID_LD_EVIDENCE_BUT_PRIMARY_AUTHORITY_GATE_NOT_CLOSED",
+  "authority_candidate": {
+    "brand": "FRAM",
+    "code": "CA10071"
+  },
+  "details": {
+    "applications": "Ford F-250/F-350/F-450/F-550 Super Duty and chassis",
+    "oem": [
+      "Ford 5C3Z-9601-AA",
+      "Ford 6C349601AA"
+    ],
+    "governance": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

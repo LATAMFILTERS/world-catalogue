@@ -1,0 +1,14 @@
+{
+  "sku": "EA30088",
+  "terminal_state": "COMPLETE_REFERENCE_CORRECTION",
+  "canonical_brand": "MANN-FILTER",
+  "canonical_code": "C88",
+  "correction": {
+    "removed_reference": "FRAM CA10088",
+    "reason": "FRAM applications Dodge/Hyundai/Kia do not match MANN C88 BMW family",
+    "migration": "run_146_clean_ca10088_from_ea30088.js",
+    "evidence_hash": "fef4d9e29906f5a94494838250f82bc2506887716c30ff8d930b0779c7e9e13c"
+  },
+  "catalog_action": "REFERENCE_CORRECTION_COMMIT",
+  "closed_at": "2026-09-25"
+}

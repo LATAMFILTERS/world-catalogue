@@ -1,0 +1,21 @@
+{
+  "sku": "EA30015",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "MULTI_FAMILY_CONTAMINATION__FRAM_CA10015_AND_CA15_PHYSICALLY_INCOMPATIBLE",
+  "authority_candidates": [
+    {
+      "brand": "FRAM",
+      "code": "CA10015",
+      "style": "Rigid Panel Air Filter",
+      "application": "Honda Ridgeline"
+    },
+    {
+      "brand": "FRAM",
+      "code": "CA15",
+      "style": "Round Plastisol Air Filter",
+      "application": "Legacy GM"
+    }
+  ],
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

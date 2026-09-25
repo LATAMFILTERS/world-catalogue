@@ -1,0 +1,26 @@
+{
+  "sku": "EA30029",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "MULTI_FAMILY_CONTAMINATION__CA10029_CA10029SY_CA29_PHYSICALLY_INCOMPATIBLE",
+  "authority_candidates": [
+    {
+      "code": "CA10029",
+      "style": "Radial Seal Air Filter",
+      "od_mm": 219.96,
+      "height_mm": 400.56
+    },
+    {
+      "code": "CA10029SY",
+      "style": "Radial Seal Air Inner",
+      "od_mm": 119.86,
+      "height_mm": 387.35
+    },
+    {
+      "code": "CA29",
+      "style": "Round Plastisol Air Filter",
+      "height_mm": 102.39
+    }
+  ],
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

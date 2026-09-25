@@ -1,0 +1,148 @@
+[
+  {
+    "sku": "EA30014",
+    "codigo_base": "0014",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA10014"
+      }
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30015",
+    "codigo_base": "0015",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA10015"
+      },
+      {
+        "brand": "FRAM",
+        "code": "CA15"
+      }
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30022",
+    "codigo_base": "0022",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA10022"
+      }
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30029",
+    "codigo_base": "0029",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA10029"
+      },
+      {
+        "brand": "FRAM",
+        "code": "CA10029SY"
+      },
+      {
+        "brand": "FRAM",
+        "code": "CA29"
+      }
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30031",
+    "codigo_base": "0031",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA10031"
+      }
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30034",
+    "codigo_base": "0034",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA10034"
+      }
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30065",
+    "codigo_base": "0065",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA10065"
+      }
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30071",
+    "codigo_base": "0071",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA10071"
+      }
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30086",
+    "codigo_base": "0086",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA10086"
+      }
+    ],
+    "state": "AMBIGUOUS_DIRECT",
+    "owners": [
+      "EA32631",
+      "EA30086"
+    ]
+  },
+  {
+    "sku": "EA30088",
+    "codigo_base": "C88",
+    "filter_type": "air",
+    "duty": "LIGHT_DUTY",
+    "authority_candidates": [
+      {
+        "brand": "FRAM",
+        "code": "CA10088"
+      }
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  }
+]

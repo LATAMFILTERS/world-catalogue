@@ -1,0 +1,75 @@
+{
+  "batch": "LD_AIR_B02",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE_WITH_BLOCKERS",
+  "counts": {
+    "BLOCKED_WITH_REASON": 9,
+    "COMPLETE_REFERENCE_CORRECTION": 1
+  },
+  "catalog_writes": [
+    "EA30088 reference correction"
+  ],
+  "candidates": [
+    {
+      "sku": "EA30014",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_IDENTITY_MISSING__FRAM_AUTHORITY_EVIDENCE_PRESENT_BUT_GOVERNANCE_REQUIRES_PRIMARY_AUTHORITY_RECONCILIATION",
+      "file": "ld_air_ea30014_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30015",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "MULTI_FAMILY_CONTAMINATION__FRAM_CA10015_AND_CA15_PHYSICALLY_INCOMPATIBLE",
+      "file": "ld_air_ea30015_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30022",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "EUROPEAN_FAMILY__MANN_AUTHORITY_PRESENT_BUT_CANONICAL_IDENTITY_NOT_RECONCILED",
+      "file": "ld_air_ea30022_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30029",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "MULTI_FAMILY_CONTAMINATION__CA10029_CA10029SY_CA29_PHYSICALLY_INCOMPATIBLE",
+      "file": "ld_air_ea30029_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30031",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "LD_SCOPE_SEGMENT_MISMATCH__FRAM_CA10031_IS_HD_RADIAL_SEAL_OUTER",
+      "file": "ld_air_ea30031_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30034",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "LD_SCOPE_SEGMENT_MISMATCH__FRAM_CA10034_EQUIPMENT_FAMILY",
+      "file": "ld_air_ea30034_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30065",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_AUTHORITY_UNRESOLVED__NO_APPLICATION_EVIDENCE_AND_LEGACY_MANN_CANDIDATES_CONFLICT",
+      "file": "ld_air_ea30065_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30071",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_IDENTITY_MISSING__FRAM_CA10071_VALID_LD_EVIDENCE_BUT_PRIMARY_AUTHORITY_GATE_NOT_CLOSED",
+      "file": "ld_air_ea30071_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30086",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "DUPLICATE_OWNERSHIP__FRAM_CA10086_MATCHES_MANN_C2631_FAMILY_ON_EA32631",
+      "file": "ld_air_ea30086_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30088",
+      "terminal_state": "COMPLETE_REFERENCE_CORRECTION",
+      "reason": null,
+      "file": "ld_air_ea30088_complete_20260925.json"
+    }
+  ],
+  "closed_at": "2026-09-25"
+}

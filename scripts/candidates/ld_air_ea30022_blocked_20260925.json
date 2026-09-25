@@ -1,0 +1,16 @@
+{
+  "sku": "EA30022",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "EUROPEAN_FAMILY__MANN_AUTHORITY_PRESENT_BUT_CANONICAL_IDENTITY_NOT_RECONCILED",
+  "authority_candidate": {
+    "brand": "FRAM",
+    "code": "CA10022"
+  },
+  "preferred_authority_evidence": {
+    "brand": "MANN-FILTER",
+    "code": "C30139"
+  },
+  "applications": "BMW 5-Series/Z4",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

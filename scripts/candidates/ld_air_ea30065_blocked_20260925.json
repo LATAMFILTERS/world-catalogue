@@ -1,0 +1,18 @@
+{
+  "sku": "EA30065",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CANONICAL_AUTHORITY_UNRESOLVED__NO_APPLICATION_EVIDENCE_AND_LEGACY_MANN_CANDIDATES_CONFLICT",
+  "authority_candidate": {
+    "brand": "FRAM",
+    "code": "CA10065"
+  },
+  "details": {
+    "observed_primary_candidates": [
+      "C65",
+      "C65/4"
+    ],
+    "fram_applications": 0
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

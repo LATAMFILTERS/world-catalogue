@@ -1,0 +1,19 @@
+{
+  "sku": "EA30034",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "LD_SCOPE_SEGMENT_MISMATCH__FRAM_CA10034_EQUIPMENT_FAMILY",
+  "authority_candidate": {
+    "brand": "FRAM",
+    "code": "CA10034"
+  },
+  "details": {
+    "style": "Metal End Air Filter",
+    "oem": [
+      "Caterpillar 108-5330",
+      "Caterpillar 9136113300",
+      "Hyster 3111230"
+    ]
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
