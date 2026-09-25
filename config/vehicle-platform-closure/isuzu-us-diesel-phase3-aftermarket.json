@@ -1256,7 +1256,8 @@
       "caveats": [
         "Exact Isuzu MY2006 NPR owner-manual OEN recovered: 8980284111. It was absent from the repository-held Donaldson first-party capture and current exact-number Donaldson web research returned no valid equivalent. NOT_FOUND is not NOT_MANUFACTURED_VERIFIED, so Fleetguard remains ineligible.",
         "BLOCKED_DONALDSON FOLLOW-UP 2026-09-24: current exact-number public research across Donaldson domains for 8980284111 / 8-98028-411-1 returned no indexed Donaldson product or cross-reference. Independent Isuzu-oriented parts evidence identifies 8980284111 as a fuel sedimenter / fuel-filter assembly, reinforcing that a category-mismatched element cross must not be accepted. This follow-up confirms DONALDSON_NOT_FOUND only; it does not establish DONALDSON_NOT_MANUFACTURED_VERIFIED, so Fleetguard remains ineligible.",
-        "FLEETGUARD OFFICIAL FOLLOW-UP 2026-09-24: fleetguard.com product pages expose an OEM Cross Reference function, confirming that OEM-number associations are part of Fleetguard's official product data. Exact-number public searches for 8980284111 returned no indexed Fleetguard product/cross-reference. This is FLEETGUARD_NOT_FOUND only, not FLEETGUARD_NOT_MANUFACTURED_VERIFIED; OEM fallback therefore remains ineligible."
+        "FLEETGUARD OFFICIAL FOLLOW-UP 2026-09-24: fleetguard.com product pages expose an OEM Cross Reference function, confirming that OEM-number associations are part of Fleetguard's official product data. Exact-number public searches for 8980284111 returned no indexed Fleetguard product/cross-reference. This is FLEETGUARD_NOT_FOUND only, not FLEETGUARD_NOT_MANUFACTURED_VERIFIED; OEM fallback therefore remains ineligible.",
+        "ASIA/AUSTRALASIA DONALDSON FOLLOW-UP 2026-09-25: official Donaldson regional application literature maps Isuzu 4HK1 5.2L NPR75 / SiTEC 150-175, 2005-2007, Fuel Filter Primary to P550390. This materially improves the candidate set and proves Donaldson regional coverage for the matching engine/year family. It does not by itself establish US-market fitment or exact Isuzu OEN 8980284111 -> P550390, so decision_status and donaldson_status remain unchanged pending an exact USA/OEN tie."
       ],
       "evidence": [
         {
@@ -1265,6 +1266,20 @@
           "channel": "ISUZU_OWNER_MANUAL_OEM",
           "published_under": "NPR MY2006",
           "published_as": "Isuzu No. 8-98028-411-1"
+        }
+      ],
+      "regional_donaldson_candidates": [
+        {
+          "candidate_part": "P550390",
+          "evidence_class": "OFFICIAL_DONALDSON_REGIONAL_APPLICATION",
+          "region": "AUSTRALASIA_ASIA_PACIFIC",
+          "application": "Isuzu N-Series NPR75 / SiTEC 150-175, 4HK1 5.2L, 2005-2007, Fuel Filter Primary",
+          "sources": [
+            "DONALDSON_AUSTRALASIA_JAPANESE_TRUCK_FILTER_GUIDE_2023",
+            "DONALDSON_AUSTRALASIA_FUEL_OIL_KITS_2024"
+          ],
+          "promotion_status": "CANDIDATE_ONLY",
+          "promotion_blocker": "No exact US-market Isuzu 8980284111 -> P550390 first-party Donaldson/OEM tie has been found."
         }
       ]
     },
@@ -1999,7 +2014,8 @@
         "SINGLE-ROW FWS CLOSURE 2026-09-24: current Donaldson public product evidence confirms P550736 is a genuine FUEL FILTER, WATER SEPARATOR CARTRIDGE in the DAVCO Fuel Pro family, but no official Donaldson tie to Isuzu 8982373410 exists in the checked current public source or repository-held capture. The row is therefore refined from DONALDSON_AMBIGUOUS to DONALDSON_NOT_FOUND. This is NOT a verified non-manufacture finding, so Fleetguard remains ineligible by policy.",
         "FINAL FWS FOLLOW-UP 2026-09-24: Isuzu still publishes 8982373410 as FUEL/WATER SEP; HIGH EFF for 2022i-on diesel. Donaldson exact-number research remains NOT_FOUND and P550736 remains rejected. WIX current exact-match lookup independently recognizes 8982373410 as a valid competitor number but states there is no replacement at this time. This strengthens the conclusion that aftermarket coverage is sparse, but it does NOT prove Donaldson non-manufacture; Fleetguard therefore remains closed by policy.",
         "BLOCKED_DONALDSON FOLLOW-UP 2026-09-24: current exact-number public research across Donaldson domains for 8982373410 / 8-98237-341-0 returned no indexed Donaldson product or cross-reference. WIX independently recognizes 8982373410 as a valid competitor number and reports no replacement at this time, corroborating sparse aftermarket coverage but not proving Donaldson non-manufacture. P550736 remains rejected. Status stays DONALDSON_NOT_FOUND; Fleetguard remains ineligible.",
-        "FLEETGUARD OFFICIAL FOLLOW-UP 2026-09-24: fleetguard.com product pages expose an OEM Cross Reference function, confirming that OEM-number associations are part of Fleetguard's official product data. Exact-number public searches for 8982373410 returned no indexed Fleetguard product/cross-reference. This is FLEETGUARD_NOT_FOUND only, not FLEETGUARD_NOT_MANUFACTURED_VERIFIED; OEM fallback therefore remains ineligible."
+        "FLEETGUARD OFFICIAL FOLLOW-UP 2026-09-24: fleetguard.com product pages expose an OEM Cross Reference function, confirming that OEM-number associations are part of Fleetguard's official product data. Exact-number public searches for 8982373410 returned no indexed Fleetguard product/cross-reference. This is FLEETGUARD_NOT_FOUND only, not FLEETGUARD_NOT_MANUFACTURED_VERIFIED; OEM fallback therefore remains ineligible.",
+        "ASIA/AUSTRALASIA DONALDSON FOLLOW-UP 2026-09-25: official Donaldson regional application literature maps multiple Isuzu N-Series 4HK1 5.2L 2016-on applications to Fuel Water Separator P551855, with P506095 as the separate secondary fuel filter. This is a strong category-correct regional Donaldson candidate for the US 2022i-on FWS row, but no exact Isuzu USA OEN 8982373410 -> P551855 tie is published in the checked first-party material. P550736 remains rejected; decision_status and donaldson_status remain unchanged pending an exact USA/OEN tie."
       ],
       "evidence": [
         {
@@ -2054,7 +2070,21 @@
           }
         },
         "terminal_reason": "Current OEM and aftermarket public channels do not establish a valid Donaldson equivalent or verified Donaldson non-manufacture. WIX independently recognizes 8982373410 as a valid competitor number but reports no replacement. That supports scarcity of aftermarket coverage but does not satisfy the Donaldson non-manufacture gate. Preserve BLOCKED_DONALDSON."
-      }
+      },
+      "regional_donaldson_candidates": [
+        {
+          "candidate_part": "P551855",
+          "evidence_class": "OFFICIAL_DONALDSON_REGIONAL_APPLICATION",
+          "region": "AUSTRALASIA_ASIA_PACIFIC",
+          "application": "Multiple Isuzu N-Series 4HK1 5.2L 2016-on applications, Fuel Water Separator",
+          "sources": [
+            "DONALDSON_AUSTRALASIA_JAPANESE_TRUCK_FILTER_GUIDE_2023",
+            "DONALDSON_AUSTRALASIA_FUEL_OIL_KITS_2024"
+          ],
+          "promotion_status": "CANDIDATE_ONLY",
+          "promotion_blocker": "No exact US-market Isuzu 8982373410 -> P551855 first-party Donaldson/OEM tie has been found."
+        }
+      ]
     },
     {
       "row_id": "P3-12-N-TRANS",
@@ -3956,8 +3986,8 @@
   ],
   "next_actions": [
     "PHASE 3 IS CLOSED. Do not reopen resolved rows unless new first-party OEM/manufacturer evidence materially changes a terminal decision.",
-    "P3-N-FUEL-2006-NPR / Isuzu 8980284111 remains terminal BLOCKED_DONALDSON. If Donaldson non-manufacture becomes explicitly verified, evaluate Fleetguard. If Fleetguard non-manufacture is also explicitly verified, the exact first-party Isuzu OEN 8980284111 may be evaluated as VERIFIED_OEM_FALLBACK codigo_base.",
-    "P3-11-N-FWS-2022i-ON / Isuzu 8982373410 remains terminal BLOCKED_DONALDSON. If Donaldson non-manufacture becomes explicitly verified, evaluate Fleetguard. If Fleetguard non-manufacture is also explicitly verified, the exact first-party Isuzu OEN 8982373410 may be evaluated as VERIFIED_OEM_FALLBACK codigo_base.",
+    "P3-N-FUEL-2006-NPR / Isuzu 8980284111: validate regional Donaldson candidate P550390 against an exact US-market/OEN first-party source. Do not restart generic Donaldson searching; Australasia/Asia-Pacific already establishes P550390 for matching 4HK1 5.2L 2005-2007 N-Series fuel-primary applications.",
+    "P3-11-N-FWS-2022i-ON / Isuzu 8982373410: validate regional Donaldson candidate P551855 against an exact US-market/OEN first-party source. Do not restart generic Donaldson searching; Australasia/Asia-Pacific already establishes P551855 as FWS on matching 4HK1 5.2L N-Series applications.",
     "Phase 2 standard-vs-high-capacity fuel distinction is CLOSED: Isuzu first-party FleetValue/Genuine data proves HIGH CAPACITY is a commercial replacement variant, not a separate OEM position. Remaining PARTIAL status is only for exact engine/chassis/kit-position assignment.",
     "OEM evidence follow-up only when new first-party material exists: H-Series, FRR/FXR, F-Series transverse positions, N-Series residual fuel scopes and N-Series cabin remain terminal BLOCKED_OEM with explicit reasons. Do not infer by continuity, sibling model or shared engine.",
     "EL88076 / Donaldson P848076 is already LIVE and governed in catalogo_elimfilters via scripts/migrations/run_119_create_el88076_p848076.js; no publication action remains for this SKU.",
@@ -4560,6 +4590,18 @@
       ],
       "canonical_mapping": "P550008 -> EL80008",
       "note": "The two remaining stale Donaldson P550008 references were removed from the legacy LD competitor matrix. EL50940 no longer pointed to P550008 and required no change. No canonical Isuzu/Donaldson base or live SKU changed."
+    },
+    {
+      "on": "2026-09-25",
+      "status": "DONALDSON_ASIA_REGIONAL_CANDIDATES_FOUND",
+      "scope": "P3-N-FUEL-2006-NPR + P3-11-N-FWS-2022i-ON",
+      "result": "REGIONAL_FIRST_PARTY_CANDIDATES_ONLY",
+      "candidates": {
+        "P3-N-FUEL-2006-NPR": "P550390",
+        "P3-11-N-FWS-2022i-ON": "P551855"
+      },
+      "phase3_state_change": "NONE",
+      "note": "Donaldson Australasia/Asia-Pacific application catalogues supply category-correct candidates for the matching Isuzu engine/year families. US-market/OEN promotion remains blocked until an exact first-party USA/OEN tie is found."
     }
   ],
   "duplicate_mapping_audit": {
