@@ -1284,8 +1284,19 @@
       ],
       "donaldson_research_trace": {
         "USA_PRIMARY": "EXHAUSTED",
-        "REGIONAL_OFFICIAL": "CANDIDATE_ONLY_NO_US_OEN_TIE",
+        "REGIONAL_OFFICIAL": "EXHAUSTED_CANDIDATE_ONLY_NO_EXACT_US_OEN_TIE",
         "fleetguard_gate": "CLOSED_UNLESS_DONALDSON_NOT_MANUFACTURED_VERIFIED"
+      },
+      "regional_donaldson_closure": {
+        "status": "CLOSED_TERMINAL_CANDIDATE_ONLY",
+        "closed_on": "2026-09-25",
+        "candidate_part": "P550390",
+        "authority": "OFFICIAL_DONALDSON_REGIONAL_APPLICATION",
+        "usa_oen_identity_verified": false,
+        "canonical_base_promoted": false,
+        "fleetguard_gate": "CLOSED",
+        "reopen_only_if": "New first-party Donaldson or Isuzu evidence directly ties the exact US Isuzu OEN to a Donaldson part, or Donaldson explicitly verifies non-manufacture for that exact OEN.",
+        "terminal_reason": "Official Donaldson Asia-Pacific/Australasia material places P550390 on the matching Isuzu 4HK1 5.2L NPR-family 2005-2007 primary-fuel application, including the target 2006 engine/year window. It is strong category/application evidence but not an exact 8980284111 cross-reference and therefore cannot be promoted under the existing exact-OEN governance."
       }
     },
     {
@@ -2092,8 +2103,19 @@
       ],
       "donaldson_research_trace": {
         "USA_PRIMARY": "EXHAUSTED",
-        "REGIONAL_OFFICIAL": "CANDIDATE_ONLY_NO_US_OEN_TIE",
+        "REGIONAL_OFFICIAL": "EXHAUSTED_CANDIDATE_ONLY_NO_EXACT_US_OEN_TIE",
         "fleetguard_gate": "CLOSED_UNLESS_DONALDSON_NOT_MANUFACTURED_VERIFIED"
+      },
+      "regional_donaldson_closure": {
+        "status": "CLOSED_TERMINAL_CANDIDATE_ONLY",
+        "closed_on": "2026-09-25",
+        "candidate_part": "P551855",
+        "authority": "OFFICIAL_DONALDSON_REGIONAL_APPLICATION",
+        "usa_oen_identity_verified": false,
+        "canonical_base_promoted": false,
+        "fleetguard_gate": "CLOSED",
+        "reopen_only_if": "New first-party Donaldson or Isuzu evidence directly ties the exact US Isuzu OEN to a Donaldson part, or Donaldson explicitly verifies non-manufacture for that exact OEN.",
+        "terminal_reason": "Official Donaldson Asia-Pacific/Australasia material places P551855 as a fuel/water separator on later Isuzu N-Series 4HK1 applications, with a separate secondary fuel element. It is category-correct regional evidence but does not directly cross Isuzu 8982373410, so it cannot be promoted under the existing exact-OEN governance."
       }
     },
     {
@@ -4630,6 +4652,13 @@
       "external_actions": "REQUIRE_EXPLICIT_AUTHORIZATION",
       "background_execution": false,
       "note": "User authorized unsupervised technical continuation within the established Isuzu governance. Autonomous work remains bounded by first-party evidence, no-inference rules, publication restrictions and mandatory stop conditions."
+    },
+    {
+      "on": "2026-09-25",
+      "status": "REGIONAL_DONALDSON_FOLLOWUP_CLOSED",
+      "scope": "P3-N-FUEL-2006-NPR + P3-11-N-FWS-2022i-ON",
+      "result": "BOTH_TERMINAL_CANDIDATE_ONLY",
+      "note": "Asia-Pacific/Australasia official Donaldson application evidence yields P550390 and P551855 respectively, but neither source provides the exact US Isuzu OEN tie required by governance. No base/SKU/fitment promotion; no Fleetguard escalation."
     }
   ],
   "duplicate_mapping_audit": {
@@ -4902,5 +4931,26 @@
     "user_interruption_rule": "If the user sends new instructions, immediately adopt them and continue from the current safe state.",
     "background_execution": false,
     "note": "This mode authorizes autonomous execution only within active ChatGPT turns/sessions. It does not create background or asynchronous execution."
+  },
+  "regional_donaldson_terminal_closure": {
+    "status": "COMPLETE",
+    "closed_on": "2026-09-25",
+    "scope": [
+      "P3-N-FUEL-2006-NPR",
+      "P3-11-N-FWS-2022i-ON"
+    ],
+    "result": "2_TERMINAL_BLOCKED_DONALDSON_WITH_FINAL_REGIONAL_CANDIDATES",
+    "candidates": {
+      "P3-N-FUEL-2006-NPR": "P550390",
+      "P3-11-N-FWS-2022i-ON": "P551855"
+    },
+    "state_changes": {
+      "decision_status": 0,
+      "donaldson_status": 0,
+      "base_promotions": 0,
+      "sku_changes": 0
+    },
+    "governance": "Regional application evidence is exhausted and retained as candidate intelligence only. Exact US Isuzu OEN identity remains required for Donaldson base promotion; Fleetguard remains closed because Donaldson non-manufacture is not verified.",
+    "next_action": "None inside the current free/public Donaldson research path. Reopen only on new exact first-party OEN evidence or explicit Donaldson non-manufacture."
   }
 }
