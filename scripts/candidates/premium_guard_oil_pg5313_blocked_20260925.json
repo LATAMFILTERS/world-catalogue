@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5313",
+  "queue_target_sku": "EL39365",
+  "queue_authority": {
+    "code": "PH30"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_MULTI_OWNER_AMBIGUITY__PH30_SHARED_WITH_HD",
+  "details": {
+    "note": "PH30 is shared across active LD/HD families and PG lists Donaldson P550507; no safe single-owner write."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5313/interchanges",
+      "sha256": "cbfb1bc6de5f02036ea161db5efb7a70aa3a226be453a618dc78315abd56abb9"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5313/applications?format=ranges",
+      "sha256": "f3ff2eaf515cfaffcf6139e2ebbe1af5b75a1b7720cb6b7fe5cfaf48062f612d"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

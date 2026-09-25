@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5526FC",
+  "queue_target_sku": "EL39549",
+  "queue_authority": {
+    "code": "HU958/1X"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_AUTHORITY_CONFLICT__FRAM_CH9549_VS_MANN_HU9581X",
+  "details": {
+    "note": "Queue target is FRAM CH9549 while source authority is MANN HU958/1X; ownership must be reconciled before publication."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5526FC/interchanges",
+      "sha256": "93307450820d321d649c20f37d9a494c13422c8fec5738a3ee21160e3593cb52"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5526FC/applications?format=ranges",
+      "sha256": "95e4e8f67a5d20095c1ad1012789c121731469dd38a57cbd570bb03da9d5d4d4"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

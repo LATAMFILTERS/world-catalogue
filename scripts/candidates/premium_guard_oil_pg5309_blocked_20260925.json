@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5309",
+  "queue_target_sku": "EL36111",
+  "queue_authority": {
+    "code": "CH8806"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_AUTHORITY_NOT_TERMINAL__LEGACY_BASE_6111",
+  "details": {
+    "note": "Target remains legacy base 6111 with VERIFY_PRIMARY_ABSENCE; canonical FRAM authority must be normalized first."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5309/interchanges",
+      "sha256": "86e28e0ac1287695c26b34fd872a26d51b5997cd89fd08e5c9cc4bea948376d2"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5309/applications?format=ranges",
+      "sha256": "7788abf7fa478f4df36302a491e5130e529f8dee93ff1dc53c737f9c5e6a1047"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

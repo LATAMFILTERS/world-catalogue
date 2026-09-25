@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5608",
+  "queue_target_sku": "EL37019",
+  "queue_authority": {
+    "code": "CH9972"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_BASE_NOT_NORMALIZED__AUTHORITY_CH9972",
+  "details": {
+    "note": "Target remains legacy base 7019 with high-cardinality references; canonical CH9972 identity must be closed first."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5608/interchanges",
+      "sha256": "ae16af52ca2617497fbdd7cae7b1e29e272c029e9ea6c666b5e3152ecf4e75f4"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5608/applications?format=ranges",
+      "sha256": "0bf59869a1bf2d2c5246c0274748971d728260e0ef697f73b0d4463242e1ab02"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5436EX",
+  "queue_target_sku": "EL30692",
+  "queue_authority": {
+    "code": "FS9018"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_TARGET_MISMATCH__AUTHORITY_OWNER_EL39018",
+  "details": {
+    "note": "Authority FS9018 belongs to active LD family EL39018/9018, not queue target EL30692/HU692."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5436EX/interchanges",
+      "sha256": "8d0194249066e583a5817dffad69bfaded468cb50ba2c760fa899445e549c1ee"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5436EX/applications?format=ranges",
+      "sha256": "a133e873ec0c2c266a0a8b0e6b26aa15e3bf127626f545a4facd0b20fae0fef0"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5315",
+  "queue_target_sku": "EL30819",
+  "queue_authority": {
+    "code": "CH8712"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_IDENTITY_UNRESOLVED__MANN_PRIMARY_CANDIDATES",
+  "details": {
+    "note": "Target remains base 0819 with H819/H819N/HU819X candidates; resolve canonical MANN identity first."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5315/interchanges",
+      "sha256": "46cc11a74bea784a809c23a0482fee8f05bb674be5d1f13364800f40fc2d0fba"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5315/applications?format=ranges",
+      "sha256": "5286bb86c97a1319743b6d672ddb384b5d8413c5fe9bbeacf4b6993b93e8db01"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

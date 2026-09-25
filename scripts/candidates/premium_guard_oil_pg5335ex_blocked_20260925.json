@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5335EX",
+  "queue_target_sku": "EL33976",
+  "queue_authority": {
+    "code": "FS3976A"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_AUTHORITY_NOT_TERMINAL__VERIFY_PRIMARY_ABSENCE",
+  "details": {
+    "note": "FRAM PH3976A target exists but governance still requires primary-manufacturer absence verification."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5335EX/interchanges",
+      "sha256": "6046a1c36496fc06985cbedbaea5149aec9fcac50b0485d621e707596ddd52b3"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5335EX/applications?format=ranges",
+      "sha256": "15a05fcc6a4f703405f0986e43325abd6ec48af345af6878d2a91d2897059e58"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

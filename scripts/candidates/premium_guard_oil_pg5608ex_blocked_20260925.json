@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5608EX",
+  "queue_target_sku": "EL37019",
+  "queue_authority": {
+    "code": "FS9972"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_BASE_NOT_NORMALIZED__AUTHORITY_FS9972",
+  "details": {
+    "note": "Same LD family as PG5608; target remains legacy base 7019 and must be canonicalized first."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5608EX/interchanges",
+      "sha256": "c739d61583a1323095a3af28e2d0e969cadf5f8c2bffcebdada8b7f6d48a192c"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5608EX/applications?format=ranges",
+      "sha256": "0bf59869a1bf2d2c5246c0274748971d728260e0ef697f73b0d4463242e1ab02"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

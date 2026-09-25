@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5399",
+  "queue_target_sku": "EL39100",
+  "queue_authority": {
+    "code": "DL9100"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_IDENTITY_UNRESOLVED__W9100_WDK9100",
+  "details": {
+    "note": "Target base 9100 has unresolved primary candidates W9100/WDK9100 and a shared HD owner."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5399/interchanges",
+      "sha256": "e4857e952977d688b28cc9a082934279cb42ccb7ad1a2f3ffa0bf19aada1b639"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5399/applications?format=ranges",
+      "sha256": "83550377f51e059797b3c9e9be7fcb28bc1044b28180258739f36ab65589fbcd"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
