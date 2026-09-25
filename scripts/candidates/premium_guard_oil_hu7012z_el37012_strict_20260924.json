@@ -1,0 +1,638 @@
+{
+  "sku": "EL37012",
+  "codigo_base": "HU7012Z",
+  "filter_type": "oil",
+  "duty": "LIGHT_DUTY",
+  "technology": "SYNTRAX™",
+  "canonical_brand": "MANN-FILTER",
+  "canonical_source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+  "canonical_evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d",
+  "premium_guard_code": "PG99496EX",
+  "specs": {
+    "style": "Cartridge",
+    "height_mm": 123,
+    "outer_diameter_mm": 64,
+    "inner_diameter_mm": 31,
+    "inner_diameter_1_mm": 31,
+    "with_gasket": true,
+    "anti_drainback_valve": "No",
+    "bypass_relief_valve": "No"
+  },
+  "oem_codes": [
+    {
+      "manufacturer": "VW GROUP (AUDI/SEAT/SKODA/VW)",
+      "code": "059 115 561 G",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    },
+    {
+      "manufacturer": "VW GROUP (AUDI/SEAT/SKODA/VW)",
+      "code": "059 198 405 B",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    },
+    {
+      "manufacturer": "PORSCHE",
+      "code": "9A7.198.405.20",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    }
+  ],
+  "competitor_codes": [
+    {
+      "manufacturer": "Cartek",
+      "code": "CTK99496XL",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Cartek",
+      "code": "CTK99496",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Cartek Pro",
+      "code": "CTK99496XL",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "ECOGARD",
+      "code": "S12090",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Federated",
+      "code": "PG99496EX",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Hengst",
+      "code": "E219H D330",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Knecht",
+      "code": "OX 1076D",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "MAHLE",
+      "code": "OX 1076D",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Parts Plus",
+      "code": "PG99496EX",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Pronto",
+      "code": "PG99496EX",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Purflux",
+      "code": "L1075",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Service Pro",
+      "code": "PG99496EX",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP",
+      "code": "S45022",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP",
+      "code": "S45022XL",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP",
+      "code": "SL45022",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP",
+      "code": "SL45022XL",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/interchanges",
+      "evidence_hash": "4bc77072a5c8c67c8f2ed0daf4c6539eb93cb8a859a1789489f8f1a55350850c",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    }
+  ],
+  "vehicle_applications": [
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "A4 (8W, B9) 45 TDI",
+      "engine": "DCPE",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-2019",
+      "make": "AUDI",
+      "model": "A4 (8W, B9) 50 TDI",
+      "engine": "DCPC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2020-",
+      "make": "AUDI",
+      "model": "A4 (8W, B9) 50 TDI Mild Hybrid",
+      "engine": "DMGA",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2015-2018",
+      "make": "AUDI",
+      "model": "A4 (8W, B9) 3.0 TDI",
+      "engine": "CRTC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2015-2018",
+      "make": "AUDI",
+      "model": "A4 (8W, B9) 3.0 TDI",
+      "engine": "CSWB",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2016-2018",
+      "make": "AUDI",
+      "model": "A5   A5 Cabriolet   Sportback (F5) 3.0 TDI",
+      "engine": "CSWB",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2016-",
+      "make": "AUDI",
+      "model": "A5   A5 Cabriolet   Sportback (F5) 3.0 TDI 50",
+      "engine": "DCPC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2017-2017",
+      "make": "AUDI",
+      "model": "A5   A5 Cabriolet   Sportback (F5) 3.0 TDI quattro",
+      "engine": "CRTC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "A5   A5 Cabriolet   Sportback (F5) 45 TDI",
+      "engine": "DCPE",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2015-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CZVF",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CRTE, CTCC, CZVA, CZVB",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CRTD",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CRTF, CTCB",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "A6 (4A_/C8) 45 TDI Mild Hybrid  3.0 quattro",
+      "engine": "DDVE",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "A6 (4A_/C8) 45 TDI Mild Hybrid  3.0 quattro",
+      "engine": "DDVF",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2019-",
+      "make": "AUDI",
+      "model": "A6 (4A_/C8) 45 TDI e Mild Hybrid 3.0",
+      "engine": "CVMD",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "A6 (4A_/C8) 50 TDI Mild Hybrid 3.0 quattro",
+      "engine": "DDVB",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CRTE, CTCC, CZVA, CZVB",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CRTF, CTCB, CZVD",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2015-2018",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CZVE, CZVF",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CRTD",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "A7 (4K) 45 TDI 3.0 quattro",
+      "engine": "DDVF",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "A7 (4K) 45 TDI 3.0 quattro",
+      "engine": "DDVE",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2019-",
+      "make": "AUDI",
+      "model": "A7 (4K) 45 TDI 3.0 quattro",
+      "engine": "CVMD",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "A7 (4K) 50 TDI 3.0 quattro",
+      "engine": "DDVB",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2019-",
+      "make": "AUDI",
+      "model": "A7 (4K) S7 TDI Mild Hybrid 3.0 quattro",
+      "engine": "DEWA",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2019-",
+      "make": "AUDI",
+      "model": "A8 (4N) 45 TDI 3.0 quattro",
+      "engine": "CVMD",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2017-",
+      "make": "AUDI",
+      "model": "A8 (4N) 50 TDI 3.0 quattro",
+      "engine": "DDVC, DMGK",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2017-",
+      "make": "AUDI",
+      "model": "Q5 II (FY) 3.0 TDI",
+      "engine": "DCPC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "Q5 II (FY) 45 TDI",
+      "engine": "DCPE",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2015-2019",
+      "make": "AUDI",
+      "model": "Q7 (4M) 3.0 TDI quattro",
+      "engine": "CRTC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2015-",
+      "make": "AUDI",
+      "model": "Q7 (4M) 3.0 TDI quattro",
+      "engine": "CVMD",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-2019",
+      "make": "AUDI",
+      "model": "Q7 (4M) 3.0 TDI 45 Mild Hybrid quattro",
+      "engine": "DHXC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "Q7 (4M) 3.0 TDI 50 Mild Hybrid quattro",
+      "engine": "DHXA, DPXA",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2015-2019",
+      "make": "AUDI",
+      "model": "Q7 (4M) 3.0 TDI quattro",
+      "engine": "CZZA, CZZB",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2015-2019",
+      "make": "AUDI",
+      "model": "Q7 (4M) 3.0 TDI quattro / e-tron",
+      "engine": "CUEA, CVZA",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "Q8 (4M) 45 TDI 3.0 quattro",
+      "engine": "DHXC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "Q8 (4M) 50 TDI 3.0 quattro",
+      "engine": "DHXA",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "AUDI",
+      "model": "Q8 (4M) 3.0 TDI quattro",
+      "engine": "CVMD",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2016-",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Amarok (2H) 3.0 TDI V6",
+      "engine": "DDXA",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2016-",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Amarok (2H) 3.0 TDI V6",
+      "engine": "DDXB",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Amarok (2H) 3.0 TDI V6",
+      "engine": "DDXE",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2016-",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Amarok (2H) 3.0 TDI V6",
+      "engine": "DDXC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Touareg III (CR) 3.0 TDI",
+      "engine": "CVMD",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Touareg III (CR) 3.0 TDI",
+      "engine": "DEND, DPYC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Touareg III (CR) 3.0 TDI",
+      "engine": "CVMC",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Touareg III (CR) 3.0 TDI",
+      "engine": "DENA, DPYD",
+      "source": "MANN_FILTER_OFFICIAL_HU7012Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu7012z_mann-filter.html",
+      "evidence_hash": "5dc60b9a9b92fa5d754c8416cf804abd2478638503496313eb791b5b735ac63d"
+    },
+    {
+      "year": "2018-2023",
+      "make": "Volkswagen",
+      "model": "Amarok",
+      "engine": "3.0L 6Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/applications?format=ranges",
+      "evidence_hash": "fa6a3a6cf11968695dc4e0b2c4e7c69dd71b1692aac1399e9c88bb211972f6a9"
+    },
+    {
+      "year": "2018",
+      "make": "Volkswagen",
+      "model": "Touareg",
+      "engine": "3.0L 6Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99496EX/applications?format=ranges",
+      "evidence_hash": "fa6a3a6cf11968695dc4e0b2c4e7c69dd71b1692aac1399e9c88bb211972f6a9"
+    }
+  ],
+  "reference_governance": {
+    "status": "COMPLETE_CANONICAL_MANN_WITH_CROSS_CATEGORY_CLEANUP",
+    "canonical_sku": "EL37012",
+    "cross_category_sku": "EA37012",
+    "cleaned_codes": [
+      "059115561G",
+      "059198405B",
+      "E219HD330",
+      "L1075",
+      "OX1076D"
+    ],
+    "legacy_numeric_code": {
+      "code": "7012",
+      "not_claimed": true
+    },
+    "publication_rule": "HU7012Z_CANONICAL_MANN_EUROPEAN",
+    "closed_at": "2026-09-24"
+  }
+}
