@@ -437,7 +437,7 @@ This section is the authoritative current-state summary. Later dated historical 
 - `NO_ELIMFILTERS_SKU_YET: 0`
 - `BLOCKED_OEM: 9` scopes, all **9/9 structurally terminal**
 - Generic `ALL` blockers remaining: **0**
-- Fleetguard-defined bases: **0**; Fleetguard may open only after `DONALDSON_NOT_MANUFACTURED_VERIFIED`
+- Fleetguard-defined bases: **0**; Fleetguard may open only after `DONALDSON_NOT_MANUFACTURED_VERIFIED`. If Fleetguard is then also `FLEETGUARD_NOT_MANUFACTURED_VERIFIED`, the exact first-party Isuzu OEN may be evaluated as `VERIFIED_OEM_FALLBACK` codigo_base.
 - `EL88076 / P848076`: **LIVE_GOVERNED** in `catalogo_elimfilters`, published through `scripts/migrations/run_119_create_el88076_p848076.js`
 - The per-row `elimfilters_base_decision.published:false` remains the Phase 3 no-auto-publication guard and is intentionally separate from later governed live-catalog publication.
 
@@ -455,6 +455,22 @@ The two terminal `BLOCKED_DONALDSON` rows are:
 17 of 19 rows carried a Donaldson base at this historical snapshot, 2 did not, and each of those 2 said exactly why. The
 tables immediately below preserve that dated snapshot; see **EXCEPTION CLOSURE PASS —
 2026-09-23** and the later dated subsections further down for what changed and why.
+
+### Heavy Duty canonical fallback hierarchy
+
+The governed Isuzu Heavy Duty base priority is now:
+
+`DONALDSON → FLEETGUARD → VERIFIED OEM/OEN`
+
+The OEM fallback is not a shortcut around missing search results. It is allowed only when all of the following are true:
+
+- Donaldson non-manufacture is explicitly verified.
+- Fleetguard non-manufacture is explicitly verified.
+- The Isuzu OEN is first-party verified for the exact governed filter position/application.
+- The OEN is stored under `OEM_CODES` and becomes the exact `approved_codigo_base` / `base_source_part`.
+- The existing Heavy Duty catalog governance and SKU suffix rule are satisfied.
+
+`DONALDSON_NOT_FOUND` and `FLEETGUARD_NOT_FOUND` are insufficient. This policy change does not promote either current residual blocker; it only establishes the governed route when both manufacturing-absence gates are later proven.
 
 ### How Donaldson was reached
 
