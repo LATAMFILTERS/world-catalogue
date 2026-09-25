@@ -1666,7 +1666,8 @@
         "8980374810 and 5873109370 are shared verbatim with the adjacent HIGH CAPACITY row P2-N-FUEL-HIGHCAP-2013-2021. Isuzu's own published numbers do not distinguish the standard filter from the high-capacity one, and Phase 3 does not invent a distinction Phase 2 does not carry -- both rows point to the same best-available Donaldson answer.",
         "8943692993, the number unique to this row, is confirmed in Donaldson's data only under the manufacturer label KOMATSU, not ISUZU. This does not disqualify the base (8980374810 alone is a valid direct Isuzu OE cross), but it means 8943692993 itself is not independently confirmed.",
         "P550390 is Donaldson's published type 'Water Separator, Spin-On'; Isuzu's own row form is 'FUEL FILTER'. This is treated as normal industry terminology overlap (a spin-on fuel/water separator commonly serves the FUEL_PRIMARY position on this engine family), not a product-category mismatch, and is disclosed rather than silently accepted.",
-        "Known historical candidate FF5165 <-> P550390 -> EF90390 is now LINKED_PARTIAL to this Phase 2 row via 8980374810."
+        "Known historical candidate FF5165 <-> P550390 -> EF90390 is now LINKED_PARTIAL to this Phase 2 row via 8980374810.",
+        "STANDARD VS HIGH CAPACITY CLOSURE 2026-09-24: Isuzu current first-party FleetValue/Genuine data proves the high-capacity label is a FleetValue commercial replacement variant, not a separate OEM filter position. This removes that ambiguity only; decision_status remains PARTIAL because exact engine/chassis/kit-position semantics are still unresolved."
       ],
       "evidence": [
         {
@@ -1871,7 +1872,8 @@
       "caveats": [
         "EXCEPTION AUDIT 2026-09-23: same Donaldson evidence as the standard-capacity row P2-N-FUEL-2013-2021-B (8980374810 confirmed under ISUZU, CROSSREF tier). Isuzu's own numbers do not distinguish 'high capacity' from 'standard' for this shared number, so the same Donaldson answer is used for both rather than inventing a split Isuzu itself never published.",
         "8980318470 and 5873109370, the numbers meant to signal the high-capacity variant, are not present anywhere in Donaldson's first-party capture (flat CSV, lube/fuel/air results, competitor matrix, OEM matrix, import-ready, homologation matrix -- all checked, zero hits). If the high-capacity filter is genuinely a different physical part, Donaldson has not catalogued it under these numbers.",
-        "P550390 is a Water Separator, Spin-On per Donaldson; Isuzu's own row form is 'FUEL FILTER (HIGH CAPACITY)'. Terminology overlap, disclosed as in the standard row."
+        "P550390 is a Water Separator, Spin-On per Donaldson; Isuzu's own row form is 'FUEL FILTER (HIGH CAPACITY)'. Terminology overlap, disclosed as in the standard row.",
+        "STANDARD VS HIGH CAPACITY CLOSURE 2026-09-24: Isuzu current first-party FleetValue/Genuine data proves the high-capacity label is a FleetValue commercial replacement variant, not a separate OEM filter position. This removes that ambiguity only; decision_status remains PARTIAL because exact engine/chassis/kit-position semantics are still unresolved."
       ],
       "evidence": [
         {
@@ -2686,7 +2688,8 @@
       "caveats": [
         "EXCEPTION AUDIT 2026-09-23: Isuzu prints the IDENTICAL OEN list (8943692993, 8980374810, 8943691993) for this row and for the HIGH CAPACITY row P2-F-FUEL-2018-2020-B -- Isuzu's own numbers cannot tell these two configurations apart at all, unlike the N-Series pair above where each row keeps one unique number. Since the OE identity is literally the same, the same Donaldson answer (P550390 via 8980374810, ISUZU label, CROSSREF tier) is used for both rather than fabricating a distinction that does not exist in the source.",
         "8943692993 and 8943691993 are not confirmed under an ISUZU label anywhere in the Donaldson first-party capture; 8943692993 appears only under KOMATSU. Only 8980374810 is the confirmed Isuzu tie.",
-        "P550390 is a Water Separator, Spin-On; Isuzu's own row form is 'FUEL FILTER'. Terminology overlap, disclosed as above."
+        "P550390 is a Water Separator, Spin-On; Isuzu's own row form is 'FUEL FILTER'. Terminology overlap, disclosed as above.",
+        "STANDARD VS HIGH CAPACITY CLOSURE 2026-09-24: Isuzu current first-party FleetValue/Genuine data proves the high-capacity label is a FleetValue commercial replacement variant, not a separate OEM filter position. This removes that ambiguity only; decision_status remains PARTIAL because exact engine/chassis/kit-position semantics are still unresolved."
       ],
       "evidence": [
         {
@@ -2765,7 +2768,8 @@
       "decision_status": "PARTIAL",
       "confidence": "medium",
       "caveats": [
-        "Identical OEN list and identical Donaldson evidence as P2-F-FUEL-2018-2020-A (standard capacity) -- see that row. Isuzu's own numbers do not distinguish the two configurations, so the same Donaldson answer applies to both."
+        "Identical OEN list and identical Donaldson evidence as P2-F-FUEL-2018-2020-A (standard capacity) -- see that row. Isuzu's own numbers do not distinguish the two configurations, so the same Donaldson answer applies to both.",
+        "STANDARD VS HIGH CAPACITY CLOSURE 2026-09-24: Isuzu current first-party FleetValue/Genuine data proves the high-capacity label is a FleetValue commercial replacement variant, not a separate OEM filter position. This removes that ambiguity only; decision_status remains PARTIAL because exact engine/chassis/kit-position semantics are still unresolved."
       ],
       "evidence": [
         {
@@ -3856,7 +3860,7 @@
     "PHASE 3 IS CLOSED. Do not reopen resolved rows unless new first-party OEM/manufacturer evidence materially changes a terminal decision.",
     "P3-N-FUEL-2006-NPR / Isuzu 8980284111 remains terminal BLOCKED_DONALDSON. If Donaldson non-manufacture becomes explicitly verified, evaluate Fleetguard. If Fleetguard non-manufacture is also explicitly verified, the exact first-party Isuzu OEN 8980284111 may be evaluated as VERIFIED_OEM_FALLBACK codigo_base.",
     "P3-11-N-FWS-2022i-ON / Isuzu 8982373410 remains terminal BLOCKED_DONALDSON. If Donaldson non-manufacture becomes explicitly verified, evaluate Fleetguard. If Fleetguard non-manufacture is also explicitly verified, the exact first-party Isuzu OEN 8982373410 may be evaluated as VERIFIED_OEM_FALLBACK codigo_base.",
-    "Phase 2 follow-up only: resolve the Isuzu standard-vs-high-capacity fuel-filter distinction for N-Series 2013-2021 and F-Series 2018-2020 if first-party Isuzu evidence becomes available. This ambiguity is intentionally not reopened inside Phase 3.",
+    "Phase 2 standard-vs-high-capacity fuel distinction is CLOSED: Isuzu first-party FleetValue/Genuine data proves HIGH CAPACITY is a commercial replacement variant, not a separate OEM position. Remaining PARTIAL status is only for exact engine/chassis/kit-position assignment.",
     "General catalogue-governance follow-up only: continue monitoring legacy cross-reference integrity around P550008/EL80008 outside the Isuzu closure. The three stale legacy mappings were already removed from both legacy CSV exports.",
     "OEM evidence follow-up only when new first-party material exists: H-Series, FRR/FXR, F-Series transverse positions, N-Series residual fuel scopes and N-Series cabin remain terminal BLOCKED_OEM with explicit reasons. Do not infer by continuity, sibling model or shared engine.",
     "EL88076 / Donaldson P848076 is already LIVE and governed in catalogo_elimfilters via scripts/migrations/run_119_create_el88076_p848076.js; no publication action remains for this SKU."
@@ -4394,6 +4398,14 @@
       "result": "FLEETGUARD_NOT_FOUND_ONLY",
       "governance_effect": "OEM_FALLBACK_REMAINS_CLOSED",
       "note": "The new Donaldson -> Fleetguard -> OEM policy is unchanged. Absence in official search/indexing is not equivalent to FLEETGUARD_NOT_MANUFACTURED_VERIFIED."
+    },
+    {
+      "on": "2026-09-24",
+      "status": "PHASE2_STANDARD_HIGH_CAPACITY_DISTINCTION_CLOSED",
+      "scope": "N-SERIES_2013_2021_AND_F-SERIES_2018_2020",
+      "result": "COMMERCIAL_VARIANT_NOT_SEPARATE_OEM_POSITION",
+      "phase3_state_change": "NONE",
+      "note": "The four related Phase 3 rows remain PARTIAL for other position/kit semantics; standard-vs-high-capacity is no longer an open OEM-position ambiguity."
     }
   ],
   "duplicate_mapping_audit": {
