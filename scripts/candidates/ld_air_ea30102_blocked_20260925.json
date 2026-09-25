@@ -1,0 +1,10 @@
+{
+  "sku": "EA30102",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "DUPLICATE_OWNERSHIP__FRAM_CA102_RESOLVES_TO_EA16071_AND_SOURCE_RECORD_HAS_NO_USABLE_FAMILY_EVIDENCE",
+  "details": {
+    "authority": "CA102"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

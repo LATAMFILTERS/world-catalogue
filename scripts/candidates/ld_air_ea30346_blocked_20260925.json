@@ -1,0 +1,11 @@
+{
+  "sku": "EA30346",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "FRAM_SKU_COLLISION__CA10346_AND_CA346_PHYSICALLY_INCOMPATIBLE",
+  "details": {
+    "CA10346": "Flexible panel Nissan",
+    "CA346": "Round plastisol GM"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

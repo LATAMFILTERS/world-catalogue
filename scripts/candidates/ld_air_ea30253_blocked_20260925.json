@@ -1,0 +1,12 @@
+{
+  "sku": "EA30253",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CANONICAL_VARIANT_RELATION_UNPROVEN__ACTIVE_FRAM_CA253SY_IDENTITY_VS_CA10253_VOLVO_FAMILY",
+  "details": {
+    "active_canonical": "CA253SY",
+    "candidate": "CA10253",
+    "candidate_cross": "MANN C24137/1"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

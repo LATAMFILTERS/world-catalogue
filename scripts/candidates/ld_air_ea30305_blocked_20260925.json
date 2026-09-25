@@ -1,0 +1,13 @@
+{
+  "sku": "EA30305",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "MULTI_FAMILY_CONTAMINATION__CA10305_AND_CA305_DIFFERENT_FAMILIES_WITH_LEGACY_RELATIONAL_APPS",
+  "details": {
+    "CA10305": "Radial seal -> EA13336",
+    "CA305": "Round plastisol Chrysler/Dodge/Plymouth -> EA30305",
+    "public_legacy_apps": 8,
+    "relational_legacy_apps": 4
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

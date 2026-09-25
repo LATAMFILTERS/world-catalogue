@@ -1,0 +1,11 @@
+{
+  "sku": "EA30228",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "FRAM_SKU_COLLISION__CA10228_AND_CA228_PHYSICALLY_INCOMPATIBLE",
+  "details": {
+    "CA10228": "Flexible panel Dodge/Jeep",
+    "CA228": "Metal end legacy equipment family"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

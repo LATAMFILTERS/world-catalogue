@@ -1,0 +1,16 @@
+{
+  "sku": "EA30242",
+  "terminal_state": "COMPLETE_CANONICAL_PROMOTION_WITH_APPLICATION_CLEANUP",
+  "details": {
+    "canonical_brand": "FRAM",
+    "canonical_code": "CA10242",
+    "actions": [
+      "promoted 0242 -> CA10242",
+      "inserted FRAM canonical identity",
+      "removed 20 unsupported Kia/Toyota applications"
+    ],
+    "pending_enrichment": "FRAM Ford/Lincoln/Mazda/Mercury fitments require independent validation"
+  },
+  "catalog_action": "CANONICAL_PROMOTION_AND_LEGACY_APP_CLEANUP_COMMIT",
+  "closed_at": "2026-09-25"
+}

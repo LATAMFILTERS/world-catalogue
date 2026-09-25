@@ -1,0 +1,11 @@
+{
+  "sku": "EA30347",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "FRAM_SKU_COLLISION__CA10347_AND_CA347_PHYSICALLY_INCOMPATIBLE",
+  "details": {
+    "CA10347": "Rigid panel Lexus/Toyota",
+    "CA347": "Round plastisol Dodge/Plymouth"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

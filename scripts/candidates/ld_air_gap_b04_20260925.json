@@ -1,0 +1,85 @@
+[
+  {
+    "sku": "EA30102",
+    "authorities": [
+      "CA102"
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30228",
+    "authorities": [
+      "CA10228",
+      "CA228"
+    ],
+    "state": "FRAM_SKU_COLLISION"
+  },
+  {
+    "sku": "EA30242",
+    "authorities": [
+      "CA10242"
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30253",
+    "authorities": [
+      "CA10253"
+    ],
+    "state": "INSUFFICIENT_EXISTING",
+    "candidates": [
+      {
+        "sku": "EA34137",
+        "evidenceCount": 1
+      }
+    ]
+  },
+  {
+    "sku": "EA30281",
+    "authorities": [
+      "CA10281",
+      "CA10281SY"
+    ],
+    "state": "FRAM_SKU_COLLISION"
+  },
+  {
+    "sku": "EA30283",
+    "authorities": [
+      "CA10283",
+      "CA283"
+    ],
+    "state": "FRAM_SKU_COLLISION"
+  },
+  {
+    "sku": "EA30305",
+    "authorities": [
+      "CA10305",
+      "CA305"
+    ],
+    "state": "SKU_COLLISION_EXISTING"
+  },
+  {
+    "sku": "EA30328",
+    "authorities": [
+      "CA10328",
+      "CA328"
+    ],
+    "state": "FRAM_SKU_COLLISION"
+  },
+  {
+    "sku": "EA30346",
+    "authorities": [
+      "CA10346",
+      "CA346"
+    ],
+    "state": "FRAM_SKU_COLLISION"
+  },
+  {
+    "sku": "EA30347",
+    "authorities": [
+      "CA10347",
+      "CA347"
+    ],
+    "state": "FRAM_SKU_COLLISION"
+  }
+]

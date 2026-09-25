@@ -1,0 +1,11 @@
+{
+  "sku": "EA30283",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "FRAM_SKU_COLLISION__AUTHORITIES_ROUTE_TO_DIFFERENT_EXISTING_SKUS",
+  "details": {
+    "CA10283": "EA17355",
+    "CA283": "EA17246"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

@@ -1,0 +1,11 @@
+{
+  "sku": "EA30328",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "FRAM_SKU_COLLISION__CA10328_AND_CA328_PHYSICALLY_INCOMPATIBLE",
+  "details": {
+    "CA10328": "Flexible panel Audi/VW with MANN C36188 family",
+    "CA328": "Round plastisol GM family"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
