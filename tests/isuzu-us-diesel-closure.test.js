@@ -1999,3 +1999,25 @@ test('PHASE 3 CURRENT STATE: manifest is technically closed without unstructured
     assert.notEqual(row.filter_position, 'ALL', row.row_id + ' still has a generic ALL blocker');
   }
 });
+
+
+test('BLOCKED_DONALDSON FOLLOW-UP: search absence never opens Fleetguard', () => {
+  for (const id of ['P3-N-FUEL-2006-NPR','P3-11-N-FWS-2022i-ON']) {
+    const row = phase3.resolution_rows.find((r) => r.row_id === id);
+    assert.ok(row, id);
+    assert.equal(row.decision_status, 'BLOCKED_DONALDSON');
+    assert.equal(row.donaldson_status, 'DONALDSON_NOT_FOUND');
+    assert.notEqual(row.donaldson_status, 'DONALDSON_NOT_MANUFACTURED_VERIFIED');
+    assert.equal(row.fleetguard_status, 'NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED');
+    assert.equal(row.base_source_brand, null);
+    assert.equal(row.base_source_part, null);
+  }
+
+  const history = phase3.exception_audit_history.find((h) => h.status === 'BLOCKED_DONALDSON_PUBLIC_FOLLOWUP_NO_STATE_CHANGE');
+  assert.ok(history);
+  assert.equal(history.rows.length, 2);
+  for (const r of history.rows) {
+    assert.equal(r.non_manufacture_status, 'NOT_VERIFIED');
+    assert.equal(r.fleetguard_status, 'NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED');
+  }
+});
