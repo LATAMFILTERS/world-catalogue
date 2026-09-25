@@ -1,0 +1,6745 @@
+{
+  "generatedAt": "2026-09-16T20:02:07.250Z",
+  "summary": {
+    "sourceReferences": 187,
+    "canonicalSkus": 183,
+    "multiReferenceGroups": 4,
+    "withSpecs": 33,
+    "withRegions": 114,
+    "withRelated": 65,
+    "withOEM": 34,
+    "withEquipment": 18
+  },
+  "multiReferenceGroups": [
+    {
+      "sku": "ET90134",
+      "codigo_base": "3920134",
+      "references": [
+        "3920134",
+        "3920134J"
+      ],
+      "variants": [
+        "3920134J"
+      ]
+    },
+    {
+      "sku": "ET91191",
+      "codigo_base": "FH21191",
+      "references": [
+        "FH21191",
+        "FH21191NN"
+      ],
+      "variants": [
+        "FH21191NN"
+      ]
+    },
+    {
+      "sku": "ET92309",
+      "codigo_base": "3902309",
+      "references": [
+        "3902309",
+        "3902309S"
+      ],
+      "variants": [
+        "3902309S"
+      ]
+    },
+    {
+      "sku": "ET98190",
+      "codigo_base": "3918190",
+      "references": [
+        "3918190",
+        "3918190S"
+      ],
+      "variants": [
+        "3918190S"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "sku": "ET90011",
+      "codigo_base": "3890011S",
+      "sourceReferences": [
+        "3890011S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3890011S, fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3890011S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90103",
+      "codigo_base": "HA103",
+      "sourceReferences": [
+        "HA103"
+      ],
+      "officialTypes": [
+        "This product is obsolete"
+      ],
+      "descriptions": [
+        "Please log in or sign up to add this product to your cart or wishlist."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/HA103"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90108",
+      "codigo_base": "FH108",
+      "sourceReferences": [
+        "FH108"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH108"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90111",
+      "codigo_base": "FH111",
+      "sourceReferences": [
+        "FH111"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH111 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "South America"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH111"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90112",
+      "codigo_base": "FH112",
+      "sourceReferences": [
+        "FH112"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH112 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "South America"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH112"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90116",
+      "codigo_base": "FH116",
+      "sourceReferences": [
+        "FH116"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH116 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Height",
+          "value": "3.42 inch / 86.75 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        },
+        {
+          "label": "Overall Length",
+          "value": "4.93 inch / 125.28 mm"
+        },
+        {
+          "label": "Overall Width",
+          "value": "4.55 inch / 115.54 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "ISF 3.8",
+          "year": "2010",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Cummins -",
+          "engine": "QSF3.8",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Cummins -",
+          "engine": "ISB4.5 EURO 6",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Cummins -",
+          "engine": "QSF2.8",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "DAF - LF",
+          "engine": "B4.5",
+          "year": "2018",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Autosan - SANCITY 9LE",
+          "engine": "ISB4.5",
+          "year": "2016",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Wright - ROUTEMASTER HYB",
+          "engine": "ISB4.5",
+          "year": "2015",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "DAF - LF55",
+          "engine": "ISB4.5",
+          "year": "2014",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Wright - STREETLITE HYB",
+          "engine": "ISB4.5",
+          "year": "2014",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "DAF - LF45",
+          "engine": "ISB4.5",
+          "year": "2014",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "DAF - LF45 HYBRID",
+          "engine": "ISB4.5",
+          "year": "2014",
+          "qtyRequired": "1"
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH116"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90125",
+      "codigo_base": "FH125",
+      "sourceReferences": [
+        "FH125"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® FH125 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FF5421"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FF5485"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FF5612"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "5309629"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH125"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90126",
+      "codigo_base": "FH126",
+      "sourceReferences": [
+        "FH126"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® FH126 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1000"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1065"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1003"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19732"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1009"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1015B"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "5309630"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH126"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90134",
+      "codigo_base": "3920134",
+      "sourceReferences": [
+        "3920134",
+        "3920134J"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3920134 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Overall Length",
+          "value": "3.62 inch / 91.95 mm"
+        },
+        {
+          "label": "Largest Inlet Thread Diameter",
+          "value": "0.75 in / 19.05 mm"
+        },
+        {
+          "label": "Largest Outlet Thread Diameter",
+          "value": "0.75 in / 19.05 mm"
+        },
+        {
+          "label": "Largest Inlet Thread Class",
+          "value": "None"
+        },
+        {
+          "label": "Largest Inlet Thread Type",
+          "value": "Internal"
+        },
+        {
+          "label": "Largest Outlet Thread Form",
+          "value": "Pipe"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        },
+        {
+          "label": "Height",
+          "value": "2.45 inch / 62.23 mm"
+        },
+        {
+          "label": "Overall Width",
+          "value": "3.05 inch / 77.47 mm"
+        },
+        {
+          "label": "Largest Inlet Thread Pitch",
+          "value": "14.00 threads Per Inch"
+        },
+        {
+          "label": "Largest Outlet Thread Pitch",
+          "value": "14.00 threads Per Inch"
+        },
+        {
+          "label": "Largest Inlet Thread Form",
+          "value": "Pipe"
+        },
+        {
+          "label": "Largest Outlet Thread Class",
+          "value": "None"
+        },
+        {
+          "label": "Largest Outlet Thread Type",
+          "value": "Internal"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19512"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19511B"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19511"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "3093413"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3920134",
+        "https://www.fleetguard.com/product/3920134J"
+      ],
+      "variants": [
+        "3920134J"
+      ]
+    },
+    {
+      "sku": "ET90171",
+      "codigo_base": "FH171",
+      "sourceReferences": [
+        "FH171"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH171"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90284",
+      "codigo_base": "FH20284",
+      "sourceReferences": [
+        "FH20284"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH20284 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH20284"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90618",
+      "codigo_base": "3930618S",
+      "sourceReferences": [
+        "3930618S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3930618S, premium fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "3304315S"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1212"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1000"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FF105"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3930618S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET90647",
+      "codigo_base": "3970647",
+      "sourceReferences": [
+        "3970647"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3970647, fuel filter head. Fleetguard offers a one stop shop of filters, coolant, chemical and service products, covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3970647"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91001",
+      "codigo_base": "FH21001",
+      "sourceReferences": [
+        "FH21001"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Ashok Leyland",
+          "partNumber": "AENB046"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21001"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91011",
+      "codigo_base": "FH21011",
+      "sourceReferences": [
+        "FH21011"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Ashok Leyland",
+          "partNumber": "AENB092"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21011"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91022",
+      "codigo_base": "FH21022",
+      "sourceReferences": [
+        "FH21022"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Ashok Leyland",
+          "partNumber": "AENB092"
+        },
+        {
+          "manufacturer": "AENB046",
+          "partNumber": "AENB599"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21022"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91023",
+      "codigo_base": "FH21023",
+      "sourceReferences": [
+        "FH21023"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21023"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91024",
+      "codigo_base": "FH21024",
+      "sourceReferences": [
+        "FH21024"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Ashok Leyland",
+          "partNumber": "AENB747"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21024"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91032",
+      "codigo_base": "FH21032",
+      "sourceReferences": [
+        "FH21032"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Ashok Leyland",
+          "partNumber": "AENB715"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21032"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91039",
+      "codigo_base": "FH21039",
+      "sourceReferences": [
+        "FH21039"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21039"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91040",
+      "codigo_base": "FH21040",
+      "sourceReferences": [
+        "FH21040"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21040"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91041",
+      "codigo_base": "FH21041",
+      "sourceReferences": [
+        "FH21041"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21041 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "Yes"
+        },
+        {
+          "label": "Overall Width",
+          "value": "6.42 inch / 163.00 mm"
+        },
+        {
+          "label": "Mounting Orientation",
+          "value": "Vertical"
+        },
+        {
+          "label": "Height",
+          "value": "3.74 inch / 95.00 mm"
+        },
+        {
+          "label": "Overall Length",
+          "value": "8.27 inch / 210.00 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21041"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91042",
+      "codigo_base": "FH21042",
+      "sourceReferences": [
+        "FH21042"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21042"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91044",
+      "codigo_base": "FH21044",
+      "sourceReferences": [
+        "FH21044"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21044"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91045",
+      "codigo_base": "FH21045",
+      "sourceReferences": [
+        "FH21045"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21045"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91047",
+      "codigo_base": "FH21047",
+      "sourceReferences": [
+        "FH21047"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Ashok Leyland",
+          "partNumber": "AENB716"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21047"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91048",
+      "codigo_base": "FH21048",
+      "sourceReferences": [
+        "FH21048"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Ashok Leyland",
+          "partNumber": "AENB717"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21048"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91049",
+      "codigo_base": "FH21049",
+      "sourceReferences": [
+        "FH21049"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21049"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91051",
+      "codigo_base": "FH21051",
+      "sourceReferences": [
+        "FH21051"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "JCB",
+          "partNumber": "332U5302"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21051"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91052",
+      "codigo_base": "FH21052",
+      "sourceReferences": [
+        "FH21052"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21052"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91065",
+      "codigo_base": "FH21065",
+      "sourceReferences": [
+        "FH21065"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21065"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91076",
+      "codigo_base": "FH21076",
+      "sourceReferences": [
+        "FH21076"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21076 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Overall Width",
+          "value": "7.48 inch / 190.00 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        },
+        {
+          "label": "Overall Length",
+          "value": "7.48 inch / 190.00 mm"
+        },
+        {
+          "label": "Height",
+          "value": "9.42 inch / 239.15 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS19925"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "ISF 2.8",
+          "year": "2010",
+          "qtyRequired": "1"
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21076"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91077",
+      "codigo_base": "FH21077",
+      "sourceReferences": [
+        "FH21077"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21052"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS19925"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21077"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91080",
+      "codigo_base": "FH21080",
+      "sourceReferences": [
+        "FH21080"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21080 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Overall Length",
+          "value": "6.22 inch / 158.00 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        },
+        {
+          "label": "Height",
+          "value": "11.65 inch / 296.00 mm"
+        },
+        {
+          "label": "Overall Width",
+          "value": "4.69 inch / 119.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "ISF 3.8",
+          "year": "2010",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Cummins -",
+          "engine": "QSF2.8",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21080"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91095",
+      "codigo_base": "FH21095",
+      "sourceReferences": [
+        "FH21095"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21095"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91098",
+      "codigo_base": "FH21098",
+      "sourceReferences": [
+        "FH21098"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21098"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91099",
+      "codigo_base": "FH21099",
+      "sourceReferences": [
+        "FH21099"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21099 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1065"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "3965504S"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "3963500S"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "3934304S"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "3964354S"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "3960247S"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "3965502S"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21099"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91100",
+      "codigo_base": "FH21100",
+      "sourceReferences": [
+        "FH21100"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21100"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91101",
+      "codigo_base": "FH21101",
+      "sourceReferences": [
+        "FH21101"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21101"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91102",
+      "codigo_base": "FH21102",
+      "sourceReferences": [
+        "FH21102"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21102"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91103",
+      "codigo_base": "FH21103",
+      "sourceReferences": [
+        "FH21103"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21103 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "Yes"
+        },
+        {
+          "label": "Height",
+          "value": "12.91 inch / 328.00 mm"
+        },
+        {
+          "label": "Mounting Orientation",
+          "value": "Vertical"
+        },
+        {
+          "label": "Overall Width",
+          "value": "4.92 inch / 125.00 mm"
+        },
+        {
+          "label": "Overall Length",
+          "value": "6.42 inch / 163.00 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1065"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21103"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91104",
+      "codigo_base": "FH21104",
+      "sourceReferences": [
+        "FH21104"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21104"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91107",
+      "codigo_base": "FH21107",
+      "sourceReferences": [
+        "FH21107"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21107"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91108",
+      "codigo_base": "FH21108",
+      "sourceReferences": [
+        "FH21108"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21108"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91120",
+      "codigo_base": "FH21120",
+      "sourceReferences": [
+        "FH21120"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21120"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91121",
+      "codigo_base": "FH21121",
+      "sourceReferences": [
+        "FH21121"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21121"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91132",
+      "codigo_base": "FH21132",
+      "sourceReferences": [
+        "FH21132"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21132"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91190",
+      "codigo_base": "FH21190",
+      "sourceReferences": [
+        "FH21190"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21190 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21190"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91191",
+      "codigo_base": "FH21191",
+      "sourceReferences": [
+        "FH21191",
+        "FH21191NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing",
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21191 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies.",
+        "Fleetguard® FH21191NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "Yes"
+        },
+        {
+          "label": "Height",
+          "value": "18.27 inch / 464.00 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        },
+        {
+          "label": "Overall Width",
+          "value": "5.55 inch / 141.00 mm"
+        },
+        {
+          "label": "Overall Length",
+          "value": "18.27 inch / 464.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21191",
+        "https://www.fleetguard.com/product/FH21191NN"
+      ],
+      "variants": [
+        "FH21191NN"
+      ]
+    },
+    {
+      "sku": "ET91216",
+      "codigo_base": "FH21216",
+      "sourceReferences": [
+        "FH21216"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21216 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Height",
+          "value": "14.65 inch / 372.00 mm"
+        },
+        {
+          "label": "Overall Length",
+          "value": "4.57 inch / 116.00 mm"
+        },
+        {
+          "label": "Overall Width",
+          "value": "4.72 inch / 120.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Foton",
+          "partNumber": "H4110210901A0"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21216"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91278",
+      "codigo_base": "FH21278NN",
+      "sourceReferences": [
+        "FH21278NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21278NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "46.42 inch / 1179.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "QSK95",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21278NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91279",
+      "codigo_base": "FH21279NN",
+      "sourceReferences": [
+        "FH21279NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21279NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "46.42 inch / 1179.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "QSK95",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21279NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91280",
+      "codigo_base": "FH21280NN",
+      "sourceReferences": [
+        "FH21280NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21280NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "25.80 inch / 655.30 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "QSK95",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21280NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91305",
+      "codigo_base": "3321305S",
+      "sourceReferences": [
+        "3321305S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3321305S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91340",
+      "codigo_base": "FH21340",
+      "sourceReferences": [
+        "FH21340"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21340"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91346",
+      "codigo_base": "FH21346NN",
+      "sourceReferences": [
+        "FH21346NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21346NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China",
+        "Europe",
+        "South East Asia",
+        "APAC"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21346NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91356",
+      "codigo_base": "FH21356",
+      "sourceReferences": [
+        "FH21356"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21356 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21356"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91357",
+      "codigo_base": "FH21357",
+      "sourceReferences": [
+        "FH21357"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21357 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21357"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91360",
+      "codigo_base": "FH21360",
+      "sourceReferences": [
+        "FH21360"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21360 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21360"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91361",
+      "codigo_base": "FH21361",
+      "sourceReferences": [
+        "FH21361"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21361 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21361"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91362",
+      "codigo_base": "FH21362",
+      "sourceReferences": [
+        "FH21362"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21362 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21362"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91363",
+      "codigo_base": "FH21363",
+      "sourceReferences": [
+        "FH21363"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21363 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21363"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91364",
+      "codigo_base": "FH21364",
+      "sourceReferences": [
+        "FH21364"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21364 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21364"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91365",
+      "codigo_base": "FH21365",
+      "sourceReferences": [
+        "FH21365"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21365 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21365"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91366",
+      "codigo_base": "FH21366",
+      "sourceReferences": [
+        "FH21366"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21366 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21366"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91381",
+      "codigo_base": "FH21381",
+      "sourceReferences": [
+        "FH21381"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21381 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21381"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91395",
+      "codigo_base": "FH21395",
+      "sourceReferences": [
+        "FH21395"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21395 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21395"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91402",
+      "codigo_base": "FH21402",
+      "sourceReferences": [
+        "FH21402"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21402 fuel water separator spin-on works to remove water and other particulates and ensures clean fuel is delivered to your engine."
+      ],
+      "specifications": [
+        {
+          "label": "Media Type",
+          "value": "StrataPore"
+        },
+        {
+          "label": "Largest Outside Diameter",
+          "value": "4.70 inch / 119.34 mm"
+        },
+        {
+          "label": "Hydrostatic Burst Minimum",
+          "value": "145.00 psi / 1000.00 kPa"
+        },
+        {
+          "label": "Rated Flow",
+          "value": "1.50 gpm / 5.67 L/min"
+        }
+      ],
+      "applicableRegions": [
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1006"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "5279458"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21402"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91438",
+      "codigo_base": "FH21438NN",
+      "sourceReferences": [
+        "FH21438NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21438NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21438NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91442",
+      "codigo_base": "FH21442NN",
+      "sourceReferences": [
+        "FH21442NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21442NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS53048NN"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21442NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91443",
+      "codigo_base": "FH21443NN",
+      "sourceReferences": [
+        "FH21443NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21443NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21443NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91505",
+      "codigo_base": "3311505S",
+      "sourceReferences": [
+        "3311505S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        ".Service products include Fleetguard® 3311505S, fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1235"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1221"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1251"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FF5052"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FF5018"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Case IH",
+          "partNumber": "114545A1"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3311505S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91518",
+      "codigo_base": "FH21518",
+      "sourceReferences": [
+        "FH21518"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "12.54 inch / 318.60 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21518"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91526",
+      "codigo_base": "FH21526",
+      "sourceReferences": [
+        "FH21526"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21526 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "15.35 inch / 390.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21526"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91528",
+      "codigo_base": "FH21528",
+      "sourceReferences": [
+        "FH21528"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21528"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91533",
+      "codigo_base": "FH21533NN",
+      "sourceReferences": [
+        "FH21533NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21533NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China",
+        "Europe",
+        "South East Asia",
+        "APAC"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21533NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91546",
+      "codigo_base": "FH21546",
+      "sourceReferences": [
+        "FH21546"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21546 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "15.78 inch / 400.70 mm"
+        }
+      ],
+      "applicableRegions": [
+        "China",
+        "Europe"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "5621701"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21546"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91547",
+      "codigo_base": "FH21547",
+      "sourceReferences": [
+        "FH21547"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21547 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "15.78 inch / 400.70 mm"
+        }
+      ],
+      "applicableRegions": [
+        "China",
+        "South America",
+        "South Pacific"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21547"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91557",
+      "codigo_base": "FH21557",
+      "sourceReferences": [
+        "FH21557"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21557 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21557"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91585",
+      "codigo_base": "FH21585NN",
+      "sourceReferences": [
+        "FH21585NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21585NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "16.54 inch / 420.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "China"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21585NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91588",
+      "codigo_base": "FH21588",
+      "sourceReferences": [
+        "FH21588"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21588 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21588"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91593",
+      "codigo_base": "FH21593",
+      "sourceReferences": [
+        "FH21593"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21593"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91622",
+      "codigo_base": "FH21622",
+      "sourceReferences": [
+        "FH21622"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21622 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21622"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91642",
+      "codigo_base": "FH21642",
+      "sourceReferences": [
+        "FH21642"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21642 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "17.95 inch / 456.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "China"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21642"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91660",
+      "codigo_base": "FH21660NN",
+      "sourceReferences": [
+        "FH21660NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21660NN fuel housing, with NanoNet media, is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "12.60 inch / 320.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South Pacific"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21660NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91661",
+      "codigo_base": "FH21661",
+      "sourceReferences": [
+        "FH21661"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21661 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "11.54 inch / 293.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "APAC"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "ISF4.5",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21661"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91662",
+      "codigo_base": "FH21662",
+      "sourceReferences": [
+        "FH21662"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21662 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "10.31 inch / 262.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "APAC"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "3965412S"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "QSB3.3",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21662"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91671",
+      "codigo_base": "FH21671NN",
+      "sourceReferences": [
+        "FH21671NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21671NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "13.70 inch / 348.10 mm"
+        }
+      ],
+      "applicableRegions": [
+        "China"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Shacman - X5000S",
+          "engine": "M15",
+          "year": "2022",
+          "qtyRequired": "1"
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21671NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91683",
+      "codigo_base": "FH21683NN",
+      "sourceReferences": [
+        "FH21683NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21683NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine's biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21683NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91684",
+      "codigo_base": "FH21684",
+      "sourceReferences": [
+        "FH21684"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21684 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "14.26 inch / 362.10 mm"
+        }
+      ],
+      "applicableRegions": [
+        "China"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "XCMG - XE135GK",
+          "engine": "QSF4.5",
+          "year": "2023",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "XCMG - XE205GK",
+          "engine": "QSF4.5TT",
+          "year": "2023",
+          "qtyRequired": "1"
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21684"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91737",
+      "codigo_base": "FH21737NN",
+      "sourceReferences": [
+        "FH21737NN"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing, NanoNet"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21737NN fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "16.97 inch / 430.95 mm"
+        }
+      ],
+      "applicableRegions": [
+        "China",
+        "Equipment",
+        "SEE ALL EQUIPMENT SEARCH RESULTS",
+        "Equipment \tEngine\tYear\tQty. Req.",
+        "Cummins -",
+        "X13\t2023\t1"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21737NN"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91739",
+      "codigo_base": "FH21739",
+      "sourceReferences": [
+        "FH21739"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH21739 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [
+        {
+          "label": "Overall Height",
+          "value": "13.50 inch / 342.82 mm"
+        }
+      ],
+      "applicableRegions": [
+        "China",
+        "Equipment",
+        "SEE ALL EQUIPMENT SEARCH RESULTS",
+        "Equipment \tEngine\tYear\tQty. Req.",
+        "Cummins -",
+        "F4.5\t2023\t1"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH21739"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET91894",
+      "codigo_base": "3911894S",
+      "sourceReferences": [
+        "3911894S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FF105"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3911894S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92005",
+      "codigo_base": "FH22005",
+      "sourceReferences": [
+        "FH22005"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® FH22005 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Overall Length",
+          "value": "6.18 inch / 157.00 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        },
+        {
+          "label": "Overall Width",
+          "value": "4.47 inch / 113.50 mm"
+        },
+        {
+          "label": "Height",
+          "value": "5.08 inch / 129.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "China",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22005"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92006",
+      "codigo_base": "FH22006",
+      "sourceReferences": [
+        "FH22006"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® FH22006 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Overall Length",
+          "value": "6.18 inch / 157.00 mm"
+        },
+        {
+          "label": "Height",
+          "value": "5.08 inch / 129.00 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22006"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92008",
+      "codigo_base": "FH22008",
+      "sourceReferences": [
+        "FH22008"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® FH22008 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Overall Length",
+          "value": "5.60 inch / 142.30 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        },
+        {
+          "label": "Overall Width",
+          "value": "4.98 inch / 126.50 mm"
+        },
+        {
+          "label": "Height",
+          "value": "3.10 inch / 78.80 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22008"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92011",
+      "codigo_base": "FH22011",
+      "sourceReferences": [
+        "FH22011"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® FH22011 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Height",
+          "value": "5.08 inch / 129.00 mm"
+        },
+        {
+          "label": "Mounting Orientation",
+          "value": "Vertical"
+        },
+        {
+          "label": "Overall Length",
+          "value": "6.18 inch / 157.00 mm"
+        },
+        {
+          "label": "Overall Width",
+          "value": "4.47 inch / 113.50 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FF5485"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "3975498"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22011"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92012",
+      "codigo_base": "FH22012",
+      "sourceReferences": [
+        "FH22012"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® FH22012 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Overall Width",
+          "value": "4.47 inch / 113.50 mm"
+        },
+        {
+          "label": "Mounting Orientation",
+          "value": "Vertical"
+        },
+        {
+          "label": "Overall Length",
+          "value": "6.18 inch / 157.00 mm"
+        },
+        {
+          "label": "Height",
+          "value": "5.08 inch / 129.00 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "3975503"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22012"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92013",
+      "codigo_base": "212013S",
+      "sourceReferences": [
+        "212013S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        ".Service products include Fleetguard® 212013S, dual fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/212013S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92014",
+      "codigo_base": "FH22014",
+      "sourceReferences": [
+        "FH22014"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® FH22014 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Overall Length",
+          "value": "5.77 inch / 146.50 mm"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        },
+        {
+          "label": "Overall Width",
+          "value": "4.47 inch / 113.50 mm"
+        },
+        {
+          "label": "Height",
+          "value": "5.08 inch / 129.00 mm"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22014"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92037",
+      "codigo_base": "FH22037",
+      "sourceReferences": [
+        "FH22037"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22037 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FF5706"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "ISF 3.8",
+          "year": "2010",
+          "qtyRequired": "1"
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22037"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92088",
+      "codigo_base": "FH22088",
+      "sourceReferences": [
+        "FH22088"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22088"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92091",
+      "codigo_base": "3312091S",
+      "sourceReferences": [
+        "3312091S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        ".Service products include Fleetguard® 3312091S, fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Used With",
+          "partNumber": "FF5036"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3312091S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92092",
+      "codigo_base": "3312092S",
+      "sourceReferences": [
+        "3312092S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Used With",
+          "partNumber": "FF5037"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3312092S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92144",
+      "codigo_base": "FH22144",
+      "sourceReferences": [
+        "FH22144"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22144 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36220"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "SP1218"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22144"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92145",
+      "codigo_base": "FH22145",
+      "sourceReferences": [
+        "FH22145"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22145 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36215"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "SP1218"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22145"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92146",
+      "codigo_base": "FH22146",
+      "sourceReferences": [
+        "FH22146"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22146 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36226"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "SP1218"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22146"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92147",
+      "codigo_base": "FH22147",
+      "sourceReferences": [
+        "FH22147"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22147 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22147"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92148",
+      "codigo_base": "FH22148",
+      "sourceReferences": [
+        "FH22148"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22148 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36220"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22148"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92149",
+      "codigo_base": "FH22149",
+      "sourceReferences": [
+        "FH22149"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22149 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36216"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "SP1218"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22149"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92150",
+      "codigo_base": "FH22150",
+      "sourceReferences": [
+        "FH22150"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22150 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22150"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92151",
+      "codigo_base": "FH22151",
+      "sourceReferences": [
+        "FH22151"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22151 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36226"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "SP1218"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22151"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92171",
+      "codigo_base": "FH22171",
+      "sourceReferences": [
+        "FH22171"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22171 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36226"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22171"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92178",
+      "codigo_base": "FH22178",
+      "sourceReferences": [
+        "FH22178"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22178 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36215"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22178"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92182",
+      "codigo_base": "FH22182",
+      "sourceReferences": [
+        "FH22182"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22182 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36215"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "SP1218"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22182"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92185",
+      "codigo_base": "FH22185",
+      "sourceReferences": [
+        "FH22185"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22185 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36216"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22185"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92188",
+      "codigo_base": "FH22188",
+      "sourceReferences": [
+        "FH22188"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22188 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22188"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92192",
+      "codigo_base": "FH22192",
+      "sourceReferences": [
+        "FH22192"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22192 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36216"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "SP1218"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22192"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92193",
+      "codigo_base": "FH22193",
+      "sourceReferences": [
+        "FH22193"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22193 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS36220"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22193"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92209",
+      "codigo_base": "FH22209",
+      "sourceReferences": [
+        "FH22209"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22209 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22209"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92236",
+      "codigo_base": "FH22236",
+      "sourceReferences": [
+        "FH22236"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22236 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21032"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Hydrema - MX14",
+          "engine": "QSB4.5 T4I",
+          "year": "2014",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "BMC Trucks - P827",
+          "engine": "ISB 6.7",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "BMC Trucks - P625",
+          "engine": "ISB 6.7",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "BMC Trucks - P628",
+          "engine": "ISB 6.7",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "BMC Trucks - P522",
+          "engine": "ISB 6.7",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22236"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92237",
+      "codigo_base": "FH22237",
+      "sourceReferences": [
+        "FH22237"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22237 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21039"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "ISB 6.7",
+          "year": "2017",
+          "qtyRequired": "1"
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22237"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92238",
+      "codigo_base": "FH22238",
+      "sourceReferences": [
+        "FH22238"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22238 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21040"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22238"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92239",
+      "codigo_base": "FH22239",
+      "sourceReferences": [
+        "FH22239"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22239 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1003"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS19596"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1067"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1240B"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1000"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1242B"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1015B"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1065"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS1241B"
+        },
+        {
+          "relationship": "Is An Element For",
+          "partNumber": "FS19732"
+        },
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21042"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22239"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92240",
+      "codigo_base": "FH22240",
+      "sourceReferences": [
+        "FH22240"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22240 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21044"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22240"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92241",
+      "codigo_base": "FH22241",
+      "sourceReferences": [
+        "FH22241"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22241 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21045"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22241"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92242",
+      "codigo_base": "FH22242",
+      "sourceReferences": [
+        "FH22242"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22242 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21047"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Ashok Leyland",
+          "partNumber": "AENB716"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22242"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92248",
+      "codigo_base": "FH22248",
+      "sourceReferences": [
+        "FH22248"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22248 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21022"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "ISBE EURO 4",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22248"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92249",
+      "codigo_base": "FH22249",
+      "sourceReferences": [
+        "FH22249"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22249 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21023"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Alexander Dennis",
+          "partNumber": "658801"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22249"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92250",
+      "codigo_base": "FH22250",
+      "sourceReferences": [
+        "FH22250"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22250 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21024"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins Power Generation - C180 D5",
+          "engine": "6ISBEG1",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22250"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92251",
+      "codigo_base": "FH22251",
+      "sourceReferences": [
+        "FH22251"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22251 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South America",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21048"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22251"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92252",
+      "codigo_base": "FH22252",
+      "sourceReferences": [
+        "FH22252"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22252 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21049"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Dressta - 530R",
+          "engine": "QSB 6.7",
+          "year": "2014",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Dressta - TD-14M",
+          "engine": "QSB 6.7",
+          "year": "2011",
+          "qtyRequired": "1"
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22252"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92254",
+      "codigo_base": "FH22254",
+      "sourceReferences": [
+        "FH22254"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22254 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21098"
+        },
+        {
+          "relationship": "Replaces",
+          "partNumber": "Equipment"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22254"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92255",
+      "codigo_base": "FH22255",
+      "sourceReferences": [
+        "FH22255"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22255 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21120"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22255"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92256",
+      "codigo_base": "FH22256",
+      "sourceReferences": [
+        "FH22256"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22256 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21101"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22256"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92257",
+      "codigo_base": "FH22257",
+      "sourceReferences": [
+        "FH22257"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22257 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21102"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22257"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92258",
+      "codigo_base": "FH22258",
+      "sourceReferences": [
+        "FH22258"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22258 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21104"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22258"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92259",
+      "codigo_base": "FH22259",
+      "sourceReferences": [
+        "FH22259"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22259 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21100"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22259"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92260",
+      "codigo_base": "FH22260",
+      "sourceReferences": [
+        "FH22260"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22260 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21121"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22260"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92261",
+      "codigo_base": "FH22261",
+      "sourceReferences": [
+        "FH22261"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22261 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21132"
+        },
+        {
+          "relationship": "Replaces",
+          "partNumber": "Equipment"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22261"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92262",
+      "codigo_base": "FH22262",
+      "sourceReferences": [
+        "FH22262"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22262 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21147"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22262"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92263",
+      "codigo_base": "FH22263",
+      "sourceReferences": [
+        "FH22263"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22263 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21107"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "3973675S"
+        },
+        {
+          "relationship": "Used With",
+          "partNumber": "3967890S"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22263"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92264",
+      "codigo_base": "FH22264",
+      "sourceReferences": [
+        "FH22264"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22264 premium fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific",
+        "APAC"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Replaces",
+          "partNumber": "FH21108"
+        },
+        {
+          "relationship": "Replaces",
+          "partNumber": "3963500S"
+        },
+        {
+          "relationship": "Replaces",
+          "partNumber": "3964354S"
+        },
+        {
+          "relationship": "Replaces",
+          "partNumber": "3965503S"
+        },
+        {
+          "relationship": "Replaces",
+          "partNumber": "FS19732"
+        },
+        {
+          "relationship": "Replaces",
+          "partNumber": "3960247S"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "Cummins -",
+          "engine": "QSB4.5",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Cummins - DSFAA",
+          "engine": "QSB4.5",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Cummins - DSFAB",
+          "engine": "QSB4.5",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Cummins - DSFAE",
+          "engine": "QSB4.5",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Cummins - DSFAD",
+          "engine": "QSB4.5",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Hyundai - HL730-7A",
+          "engine": "QSB4.5",
+          "year": "2007",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Hyundai - HL730TM-7A",
+          "engine": "QSB4.5",
+          "year": "2007",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Dynapac - CC524CHF",
+          "engine": "QSB4.5",
+          "year": "2011",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Dynapac - CC424CHF",
+          "engine": "QSB4.5",
+          "year": "2011",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Ditch Witch - JT3020 MACH1",
+          "engine": "QSB4.5",
+          "year": "2008",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Zhejiang Hangcha - CPCD100-RW28",
+          "engine": "QSB4.5",
+          "year": "2008",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Ditch Witch - JT3020 ALL TERRAIN",
+          "engine": "QSB4.5",
+          "year": "2008",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Hitachi - ZW140",
+          "engine": "QSB4.5",
+          "year": "2008",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Zhejiang Hangcha - CPCD80-RW28",
+          "engine": "QSB4.5",
+          "year": "2008",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Hitachi - ZW140PL",
+          "engine": "QSB4.5",
+          "year": "2008",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Dynapac - CC524HF",
+          "engine": "QSB4.5",
+          "year": "2007",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Dynapac - CC424HF",
+          "engine": "QSB4.5",
+          "year": "2007",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Ditch Witch - JT3020 MACH1",
+          "engine": "QSB4.5",
+          "year": "2007",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Ditch Witch - JT3020 ALL TERRAIN",
+          "engine": "QSB4.5",
+          "year": "2007",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Dynapac - CC624HF",
+          "engine": "QSB4.5",
+          "year": "2007",
+          "qtyRequired": "1"
+        },
+        {
+          "equipment": "Dressta - TD-10M",
+          "engine": "QSB4.5",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Dressta - TD-7M",
+          "engine": "QSB4.5",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Dressta - TD-9M",
+          "engine": "QSB4.5",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Dressta - TD-8M",
+          "engine": "QSB4.5",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Nordco - SP2R DUAL RAIL SPIKE PULLER",
+          "engine": "B4.5S",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22264"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92267",
+      "codigo_base": "FH22267",
+      "sourceReferences": [
+        "FH22267"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22267 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22267"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92309",
+      "codigo_base": "3902309",
+      "sourceReferences": [
+        "3902309",
+        "3902309S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3902309 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets.",
+        "Service products include Fleetguard® 3902309S, premium fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Height",
+          "value": "2.24 inch / 57.00 mm"
+        },
+        {
+          "label": "Largest Inlet Thread Pitch",
+          "value": "0.06 inch / 1.50 mm per Thread"
+        },
+        {
+          "label": "Largest Outlet Thread Pitch",
+          "value": "0.06 inch / 1.50 mm per Thread"
+        },
+        {
+          "label": "Largest Inlet Thread Form",
+          "value": "Metric"
+        },
+        {
+          "label": "Largest Outlet Thread Class",
+          "value": "6H"
+        },
+        {
+          "label": "Largest Outlet Thread Type",
+          "value": "Internal"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        },
+        {
+          "label": "Overall Width",
+          "value": "4.02 inch / 102.00 mm"
+        },
+        {
+          "label": "Largest Inlet Thread Diameter",
+          "value": "0.55 inch / 14.00 mm"
+        },
+        {
+          "label": "Largest Outlet Thread Diameter",
+          "value": "0.55 inch / 14.00 mm"
+        },
+        {
+          "label": "Largest Inlet Thread Class",
+          "value": "6H"
+        },
+        {
+          "label": "Largest Inlet Thread Type",
+          "value": "Internal"
+        },
+        {
+          "label": "Largest Outlet Thread Form",
+          "value": "Metric"
+        },
+        {
+          "label": "Mounting Orientation",
+          "value": "Vertical"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "3902309S"
+        },
+        {
+          "relationship": "Replaces",
+          "partNumber": "3321305S"
+        },
+        {
+          "relationship": "Used With",
+          "partNumber": "3902309"
+        },
+        {
+          "relationship": "Used With",
+          "partNumber": "3917480"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "3933978S"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Liebherr",
+          "partNumber": "7368394"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3902309",
+        "https://www.fleetguard.com/product/3902309S"
+      ],
+      "variants": [
+        "3902309S"
+      ]
+    },
+    {
+      "sku": "ET92317",
+      "codigo_base": "FH22317",
+      "sourceReferences": [
+        "FH22317"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22317 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22317"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92319",
+      "codigo_base": "3962319S",
+      "sourceReferences": [
+        "3962319S"
+      ],
+      "officialTypes": [
+        "Service Part"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3962319S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92320",
+      "codigo_base": "FH22320",
+      "sourceReferences": [
+        "FH22320"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH22320 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH22320"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92367",
+      "codigo_base": "3302367S",
+      "sourceReferences": [
+        "3302367S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3302367S, filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific",
+        "Africa Middle East"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1216"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS1006"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FF202"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Perkins",
+          "partNumber": "SE429B1"
+        },
+        {
+          "manufacturer": "Motorcraft",
+          "partNumber": "FD267"
+        },
+        {
+          "manufacturer": "Versatile",
+          "partNumber": "61558"
+        },
+        {
+          "manufacturer": "Ford",
+          "partNumber": "E1HZ9155A"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3302367S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET92717",
+      "codigo_base": "3912717S",
+      "sourceReferences": [
+        "3912717S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19511"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19512"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19511B"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3912717S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET93071",
+      "codigo_base": "FH23071",
+      "sourceReferences": [
+        "FH23071"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Hyundai",
+          "partNumber": "Hyund1234"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH23071"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET93199",
+      "codigo_base": "3833199S",
+      "sourceReferences": [
+        "3833199S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3833199S, premium lube filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Used With",
+          "partNumber": "FF5207"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3833199S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET93200",
+      "codigo_base": "3833200S",
+      "sourceReferences": [
+        "3833200S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3833200S, premium fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Used With",
+          "partNumber": "FF5206"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3833200S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET93261",
+      "codigo_base": "FH33261",
+      "sourceReferences": [
+        "FH33261"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH33261 fuel housing, is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine™s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH33261"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET93352",
+      "codigo_base": "3973352",
+      "sourceReferences": [
+        "3973352"
+      ],
+      "officialTypes": [
+        "Service Part"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3973352 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3973352"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET93457",
+      "codigo_base": "FH43457",
+      "sourceReferences": [
+        "FH43457"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH43457"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET93820",
+      "codigo_base": "3923820",
+      "sourceReferences": [
+        "3923820"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3923820, fuel filter head. Fleetguard offers a one stop shop of filters, coolant, chemical and service products, covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3923820"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET93828",
+      "codigo_base": "FH33828",
+      "sourceReferences": [
+        "FH33828"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH33828 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Housing Used With",
+          "partNumber": "FS20417"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH33828"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET93862",
+      "codigo_base": "FH33862",
+      "sourceReferences": [
+        "FH33862"
+      ],
+      "officialTypes": [
+        "Fuel Filter Housing"
+      ],
+      "descriptions": [
+        "Fleetguard® FH33862 fuel module is available in several variations, including water in fuel sensors, heaters, priming pumps, top load, and bottom load options. Our comprehensive line of fuel products offers optimum protection from contaminants like dirt and water, an engine’s biggest enemies."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "China"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/FH33862"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET93925",
+      "codigo_base": "3303925S",
+      "sourceReferences": [
+        "3303925S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Caterpillar",
+          "partNumber": "8N0497"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3303925S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET94144",
+      "codigo_base": "3974144",
+      "sourceReferences": [
+        "3974144"
+      ],
+      "officialTypes": [
+        "Service Part, Filter Housing"
+      ],
+      "descriptions": [],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3974144"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET94287",
+      "codigo_base": "3944287S",
+      "sourceReferences": [
+        "3944287S"
+      ],
+      "officialTypes": [
+        "Service Part"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3944287S fuel filter head with priming pump. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia",
+        "South Pacific",
+        "APAC"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS20022"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19732"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "3947136S"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "3942834S"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "3975404"
+        },
+        {
+          "manufacturer": "Dynapac",
+          "partNumber": "4700945538"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3944287S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET94315",
+      "codigo_base": "3304315S",
+      "sourceReferences": [
+        "3304315S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Hercules",
+          "partNumber": "8395476"
+        },
+        {
+          "manufacturer": "Compair",
+          "partNumber": "982625088"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3304315S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET94450",
+      "codigo_base": "3934450S",
+      "sourceReferences": [
+        "3934450S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3934450S fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [
+        {
+          "label": "BPV OPENING DP",
+          "value": "No"
+        },
+        {
+          "label": "Overall Width",
+          "value": "3.15 inch / 80.00 mm"
+        },
+        {
+          "label": "Largest Inlet Thread Diameter",
+          "value": "0.47 inch / 12.00 mm"
+        },
+        {
+          "label": "Largest Outlet Thread Diameter",
+          "value": "0.63 inch / 16.00 mm"
+        },
+        {
+          "label": "Largest Inlet Thread Class",
+          "value": "6H"
+        },
+        {
+          "label": "Largest Inlet Thread Type",
+          "value": "Internal"
+        },
+        {
+          "label": "Largest Outlet Thread Form",
+          "value": "Metric"
+        },
+        {
+          "label": "Mounting Orientation",
+          "value": "Vertical"
+        },
+        {
+          "label": "Overall Length",
+          "value": "3.15 inch / 80.00 mm"
+        },
+        {
+          "label": "Height",
+          "value": "2.17 inch / 55.00 mm"
+        },
+        {
+          "label": "Largest Inlet Thread Pitch",
+          "value": "0.06 inch / 1.50 mm per Thread"
+        },
+        {
+          "label": "Largest Outlet Thread Pitch",
+          "value": "0.06 inch / 1.50 mm per Thread"
+        },
+        {
+          "label": "Largest Inlet Thread Form",
+          "value": "Metric"
+        },
+        {
+          "label": "Largest Outlet Thread Class",
+          "value": "6H"
+        },
+        {
+          "label": "Largest Outlet Thread Type",
+          "value": "Internal"
+        },
+        {
+          "label": "Pressure Diagnosis Port",
+          "value": "No"
+        }
+      ],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3934450S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET94694",
+      "codigo_base": "3944694",
+      "sourceReferences": [
+        "3944694"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Tennant",
+          "partNumber": "55850"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3944694"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET94711",
+      "codigo_base": "154711S",
+      "sourceReferences": [
+        "154711S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 154711S, fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Used With",
+          "partNumber": "FF105"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [
+        {
+          "equipment": "International - 2070 FLEETSTAR SERIES",
+          "engine": "Cummins",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "International - 2050 FLEETSTAR SERIES",
+          "engine": "Cummins",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 362",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 351",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 383",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 288",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 352H",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 289",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 358",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 282",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 359",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 349H",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Peterbilt - 353",
+          "engine": "NTC",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Available Trucks - 630",
+          "engine": "CUMMINS",
+          "year": "1",
+          "qtyRequired": ""
+        },
+        {
+          "equipment": "Available Trucks - 620",
+          "engine": "CUMMINS",
+          "year": "1",
+          "qtyRequired": ""
+        }
+      ],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/154711S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET94795",
+      "codigo_base": "3944795S",
+      "sourceReferences": [
+        "3944795S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3944795S, fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South America",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Case IH",
+          "partNumber": "87516348"
+        },
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "3972833"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3944795S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET94842",
+      "codigo_base": "3934842",
+      "sourceReferences": [
+        "3934842"
+      ],
+      "officialTypes": [
+        "This product is obsolete"
+      ],
+      "descriptions": [
+        "Please log in or sign up to add this product to your cart or wishlist."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3934842"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET94848",
+      "codigo_base": "3914848S",
+      "sourceReferences": [
+        "3914848S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3914848S, fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19512"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19511B"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19511"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Komatsu",
+          "partNumber": "41704A0140"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3914848S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET95498",
+      "codigo_base": "3905498",
+      "sourceReferences": [
+        "3905498"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3905498 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "3393983"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3905498"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET96171",
+      "codigo_base": "156171S",
+      "sourceReferences": [
+        "156171S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Used With",
+          "partNumber": "FF105D"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/156171S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET96248",
+      "codigo_base": "3946248S",
+      "sourceReferences": [
+        "3946248S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3946248S, fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "3976383"
+        },
+        {
+          "manufacturer": "Komatsu",
+          "partNumber": "6745716150"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3946248S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET97034",
+      "codigo_base": "3947034S",
+      "sourceReferences": [
+        "3947034S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3947034S, fuel filter head. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "3978468"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3947034S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET97232",
+      "codigo_base": "3947232",
+      "sourceReferences": [
+        "3947232"
+      ],
+      "officialTypes": [
+        "ADD TO LISTFIND A DEALER"
+      ],
+      "descriptions": [],
+      "specifications": [],
+      "applicableRegions": [
+        "South America"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3947232"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET97299",
+      "codigo_base": "3977299",
+      "sourceReferences": [
+        "3977299"
+      ],
+      "officialTypes": [
+        "Service Part"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3977299 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3977299"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET97737",
+      "codigo_base": "3957737",
+      "sourceReferences": [
+        "3957737"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "This product is obsolete"
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3957737"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET97860",
+      "codigo_base": "3937860",
+      "sourceReferences": [
+        "3937860"
+      ],
+      "officialTypes": [
+        "Head and filter assembly"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3937860 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FS19608"
+        }
+      ],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "3966139"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3937860"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET97862",
+      "codigo_base": "3937862",
+      "sourceReferences": [
+        "3937862"
+      ],
+      "officialTypes": [
+        "Head and filter assembly"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3937862 fuel filter head assembly. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "Europe",
+        "South East Asia"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "3966140"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3937862"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET97905",
+      "codigo_base": "3967905S",
+      "sourceReferences": [
+        "3967905S"
+      ],
+      "officialTypes": [
+        "Service Part"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3967905S fuel filter head, insert and plug. Fleetguard offers a one stop shop of fuel filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [
+        "North America",
+        "China",
+        "Europe",
+        "South East Asia",
+        "South Pacific"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [
+        {
+          "manufacturer": "Cummins",
+          "partNumber": "5260605"
+        }
+      ],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3967905S"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET97937",
+      "codigo_base": "3967937",
+      "sourceReferences": [
+        "3967937"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3967937, fuel filter head. Fleetguard offers a one stop shop of filters, coolant, chemical and service products, covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Head Used With",
+          "partNumber": "3944777"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3967937"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET98190",
+      "codigo_base": "3918190",
+      "sourceReferences": [
+        "3918190",
+        "3918190S"
+      ],
+      "officialTypes": [
+        "Fuel Filter Head"
+      ],
+      "descriptions": [
+        "Service products include Fleetguard® 3918190 fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets.",
+        "Service products include Fleetguard® 3918190S fuel filter head. Fleetguard offers a one stop shop of filters and service products covering the widest scope of engine applications in the on and off highway markets."
+      ],
+      "specifications": [],
+      "applicableRegions": [],
+      "relatedParts": [
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "3918190S"
+        },
+        {
+          "relationship": "Head Used With",
+          "partNumber": "FF5298"
+        },
+        {
+          "relationship": "Used With",
+          "partNumber": "3918190"
+        },
+        {
+          "relationship": "Uses Service Part",
+          "partNumber": "3933978S"
+        }
+      ],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": true,
+      "obsoleteAny": true,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3918190",
+        "https://www.fleetguard.com/product/3918190S"
+      ],
+      "variants": [
+        "3918190S"
+      ]
+    },
+    {
+      "sku": "ET98559",
+      "codigo_base": "3958559",
+      "sourceReferences": [
+        "3958559"
+      ],
+      "officialTypes": [
+        "ADD TO LISTFIND A DEALER"
+      ],
+      "descriptions": [],
+      "specifications": [],
+      "applicableRegions": [
+        "South America"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3958559"
+      ],
+      "variants": []
+    },
+    {
+      "sku": "ET99114",
+      "codigo_base": "3959114",
+      "sourceReferences": [
+        "3959114"
+      ],
+      "officialTypes": [
+        "ADD TO LISTFIND A DEALER"
+      ],
+      "descriptions": [],
+      "specifications": [],
+      "applicableRegions": [
+        "South America"
+      ],
+      "relatedParts": [],
+      "oemCrossReferences": [],
+      "equipmentApplications": [],
+      "obsoleteAll": false,
+      "obsoleteAny": false,
+      "sourceUrls": [
+        "https://www.fleetguard.com/product/3959114"
+      ],
+      "variants": []
+    }
+  ]
+}
