@@ -4630,6 +4630,31 @@
       "external_actions": "REQUIRE_EXPLICIT_AUTHORIZATION",
       "background_execution": false,
       "note": "User authorized unsupervised technical continuation within the established Isuzu governance. Autonomous work remains bounded by first-party evidence, no-inference rules, publication restrictions and mandatory stop conditions."
+    },
+    {
+      "on": "2026-09-25",
+      "status": "BLOCKED_DONALDSON_EXACT_TIE_RECHECK_COMPLETE",
+      "scope": "P3-N-FUEL-2006-NPR + P3-11-N-FWS-2022i-ON",
+      "result": "NO_STATE_CHANGE",
+      "searches": [
+        "Donaldson exact OEN: 8980284111 / 8-98028-411-1 with P550390",
+        "Donaldson exact OEN: 8982373410 / 8-98237-341-0 with P551855",
+        "Fleetguard exact OEN: 8980284111",
+        "Fleetguard exact OEN: 8982373410"
+      ],
+      "finding": "Fresh exact-number searches on official Donaldson and Fleetguard domains returned no first-party OEN-to-candidate tie. Existing regional candidates P550390 and P551855 therefore remain CANDIDATE_ONLY.",
+      "terminal_decision": "Preserve both rows as BLOCKED_DONALDSON / BLOCKED_WITH_REASON. Do not promote regional engine/year/category matches to USA fitment.",
+      "reused": [
+        "Existing Phase 3 manifest",
+        "Existing Donaldson regional candidates and research sequence",
+        "Existing first-party evidence/no-inference governance"
+      ],
+      "created": [
+        "This bounded recheck audit record only"
+      ],
+      "architecture_change": false,
+      "sku_change": false,
+      "fitment_change": false
     }
   ],
   "duplicate_mapping_audit": {
@@ -4674,7 +4699,7 @@
     "p2_n_lube_1998_2010_note": "Resolved 2026-09-24 by equipment-application evidence (see resolution_rows[P3-05-N-LUBE-1998-2010]). No duplicate ELIMFILTERS mapping was created or found: EL82042 maps 1:1 to P502042 and EL80973 maps 1:1 to P550973 in every source checked (scripts/donaldson_crossref_flat.csv, donaldson_oem_matrix.json, donaldson_competitor_matrix.json) -- selecting P502042 as base for this row does not affect EL80973's own separate identity."
   },
   "current_state_audit": {
-    "on": "2026-09-24",
+    "on": "2026-09-25",
     "status": "TECHNICALLY_CLOSED_WITH_EXPLICIT_TERMINAL_BLOCKERS",
     "phase3_resolution_rows": 23,
     "decision_counts": {
