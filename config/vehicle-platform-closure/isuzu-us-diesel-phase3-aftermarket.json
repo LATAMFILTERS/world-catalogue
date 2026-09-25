@@ -365,7 +365,7 @@
       "elimfilters_base_decision": {
         "sku": "EA16773",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -488,7 +488,7 @@
       "elimfilters_base_decision": {
         "sku": "EA13614",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -587,7 +587,7 @@
       "elimfilters_base_decision": {
         "sku": "EL82597",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -697,7 +697,7 @@
       "elimfilters_base_decision": {
         "sku": "EL88076",
         "action": "CREATE_GOVERNED_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "nomenclature_rule": "SKU derived from the repository's own governed codigo_base policy (lib/catalog-codigo-base-policy.js, lib/catalog-codigo-base-governance.js, enforced live by the enforce_elimfilters_codigo_base_policy() trigger in scripts/migrations/run_073_catalog_codigo_base_governance_v31.js), not invented: for a HEAVY_DUTY SKU with a verified Donaldson primary reference, 'the ELIMFILTERS SKU suffix uses the last 4 numeric digits of approved_codigo_base' (the Donaldson part number). P848076 -> digits '848076' -> last 4 = '8076'. The prefix+leading-digit block ('EL8') was not invented either: queried data/dims.csv directly and found all 351 existing EL-prefixed (lube) SKUs in the live catalog export use leading digit '8' with zero exceptions (compare: all 500 EF-prefixed/fuel SKUs use leading digit '9'; EA-prefixed/air SKUs split 1366/'1' vs 243/'2'). EL8 + 8076 = EL88076.",
         "review_state": "READY_FOR_REVIEW",
         "published": false
@@ -921,7 +921,7 @@
       "elimfilters_base_decision": {
         "sku": "EL82042",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -1155,7 +1155,7 @@
       "elimfilters_base_decision": {
         "sku": "EF92564",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -1303,7 +1303,7 @@
       "elimfilters_base_decision": {
         "sku": "EF92427",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -1381,7 +1381,7 @@
       "elimfilters_base_decision": {
         "sku": "EF92427",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -1463,7 +1463,7 @@
       "elimfilters_base_decision": {
         "sku": "EF92427",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -1572,7 +1572,7 @@
       "elimfilters_base_decision": {
         "sku": "EF92599",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -1654,7 +1654,7 @@
       "elimfilters_base_decision": {
         "sku": "EF90390",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -1758,7 +1758,7 @@
       "elimfilters_base_decision": {
         "sku": "EF92427",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -1861,7 +1861,7 @@
       "elimfilters_base_decision": {
         "sku": "EF90390",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -2070,7 +2070,7 @@
       "elimfilters_base_decision": {
         "sku": "EL80008",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -2180,7 +2180,7 @@
       "elimfilters_base_decision": {
         "sku": "EL80420",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -2305,7 +2305,7 @@
       "elimfilters_base_decision": {
         "sku": "EL88076",
         "action": "CREATE_GOVERNED_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "nomenclature_rule": "SKU derived from the repository's own governed codigo_base policy (lib/catalog-codigo-base-policy.js, lib/catalog-codigo-base-governance.js, enforced live by the enforce_elimfilters_codigo_base_policy() trigger in scripts/migrations/run_073_catalog_codigo_base_governance_v31.js), not invented: for a HEAVY_DUTY SKU with a verified Donaldson primary reference, 'the ELIMFILTERS SKU suffix uses the last 4 numeric digits of approved_codigo_base' (the Donaldson part number). P848076 -> digits '848076' -> last 4 = '8076'. The prefix+leading-digit block ('EL8') was not invented either: queried data/dims.csv directly and found all 351 existing EL-prefixed (lube) SKUs in the live catalog export use leading digit '8' with zero exceptions (compare: all 500 EF-prefixed/fuel SKUs use leading digit '9'; EA-prefixed/air SKUs split 1366/'1' vs 243/'2'). EL8 + 8076 = EL88076.",
         "review_state": "READY_FOR_REVIEW",
         "published": false
@@ -2594,7 +2594,7 @@
       "elimfilters_base_decision": {
         "sku": "EF92564",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -2675,7 +2675,7 @@
       "elimfilters_base_decision": {
         "sku": "EF90390",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -2756,7 +2756,7 @@
       "elimfilters_base_decision": {
         "sku": "EF90390",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -2863,7 +2863,7 @@
       "elimfilters_base_decision": {
         "sku": "EF92599",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
@@ -2960,7 +2960,7 @@
       "elimfilters_base_decision": {
         "sku": "EF92427",
         "action": "REUSE_EXISTING_SKU",
-        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
         "review_state": "READY_FOR_REVIEW",
         "published": false
       },
