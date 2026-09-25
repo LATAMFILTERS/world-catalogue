@@ -1,0 +1,983 @@
+{
+  "sku": "EL38005",
+  "codigo_base": "HU8005Z",
+  "filter_type": "oil",
+  "duty": "LIGHT_DUTY",
+  "technology": "SYNTRAX™",
+  "canonical_brand": "MANN-FILTER",
+  "canonical_source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+  "canonical_evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88",
+  "premium_guard_code": "PG9986EX",
+  "specs": {
+    "style": "Cartridge",
+    "height_mm": 128,
+    "outer_diameter_mm": 71,
+    "inner_diameter_mm": 29,
+    "inner_diameter_1_mm": 28,
+    "outer_diameter_1_mm": 76,
+    "with_gasket": true,
+    "anti_drainback_valve": "No",
+    "bypass_relief_valve": "No"
+  },
+  "oem_codes": [
+    {
+      "manufacturer": "PORSCHE",
+      "code": "958.107.222.20",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    },
+    {
+      "manufacturer": "VW GROUP (AUDI/SEAT/SKODA/VW)",
+      "code": "059 198 405",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    },
+    {
+      "manufacturer": "VW GROUP (AUDI/SEAT/SKODA/VW)",
+      "code": "059 115 561 D",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88",
+      "evidence_authority": "MANN_FILTER_OFFICIAL"
+    }
+  ],
+  "competitor_codes": [
+    {
+      "manufacturer": "Autopart International",
+      "code": "5001-538883",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Autopart International",
+      "code": "5001-479795",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Baldwin",
+      "code": "P40111",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Carquest Premium Filters",
+      "code": "94008",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Cartek",
+      "code": "CTK11490",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Cartek",
+      "code": "CTK11490XL",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Cartek Pro",
+      "code": "CTK11490XL",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Champ",
+      "code": "P1008",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Champ filters",
+      "code": "P1008",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Duralast",
+      "code": "D11490",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "ECOGARD",
+      "code": "S10234",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "ECOGARD",
+      "code": "X10234",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Federated",
+      "code": "PG9986EXF",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "FRAM",
+      "code": "CH11490",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "General Motors",
+      "code": "19385645",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "GK Industries",
+      "code": "EF591J",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Hastings",
+      "code": "LF692",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Interfil",
+      "code": "OF-5919",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "LUBER-FINER",
+      "code": "P1008",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "MAHLE",
+      "code": "OX 420D",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "MicroGard Select",
+      "code": "MSL10008",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "MotoMaster",
+      "code": "MOCH11490",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "NAPA Gold Filters",
+      "code": "100008",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Parts Plus",
+      "code": "P9986EX",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Prime Guard",
+      "code": "POF10008",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Pro-Series",
+      "code": "PRS11490",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Pronto",
+      "code": "PO9986EX",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "PureZone",
+      "code": "8-WL10008",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Service Champ",
+      "code": "WP1008",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Service Pro",
+      "code": "M10234",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP",
+      "code": "SL11490XL",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP",
+      "code": "SL11490",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP",
+      "code": "S11490XL",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP",
+      "code": "S11490",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP Filters",
+      "code": "S11490XL",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP Filters",
+      "code": "S11490",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "UFI",
+      "code": "25.141.00",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "VAICO",
+      "code": "V10-2186",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Valucraft",
+      "code": "V11490",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Valvoline",
+      "code": "VO-196",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Wix",
+      "code": "WL10008",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/interchanges",
+      "evidence_hash": "2f0d1bac428e5cdd0eb294903173fc5e6e3a309482a9319f89a4ef69ebfe69d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "PREMIUM GUARD",
+      "code": "PG9986EX",
+      "classification": "AFTERMARKET",
+      "source_url": "https://www.pgfilters.com/product-catalog/product-page/pg9986ex/",
+      "evidence_hash": "0c4a41e8e50cbb27107f152226c1ac8b2cc7e69df7f214c615f9f47b5fae8324",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_PRODUCT_PAGE"
+    }
+  ],
+  "vehicle_applications": [
+    {
+      "year": "2012-2016",
+      "make": "AUDI",
+      "model": "A4 (8K, B8) 3.0 TDI",
+      "engine": "CDUC, CKVB, CKVC",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2012-2015",
+      "make": "AUDI",
+      "model": "A4 (8K, B8) 3.0 TDI",
+      "engine": "CLAB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2017",
+      "make": "AUDI",
+      "model": "A5   Cabriolet (8T, 8F) 3.0 TDI",
+      "engine": "CLAB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2017",
+      "make": "AUDI",
+      "model": "A5   Cabriolet (8T, 8F) 3.0 TDI",
+      "engine": "CDUC, CKVC",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2015-2017",
+      "make": "AUDI",
+      "model": "A5   Cabriolet (8T, 8F) 3.0 TDI",
+      "engine": "CKVD",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CDUC, CDUD, CKVB, CKVC",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2013-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CPNB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CVUB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CLAA, CLAB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CGQB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CRTE, CTCC, CZVA, CZVB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CRTF, CTCB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A6 (4G2/4G5/4GC/4GD) 3.0 TDI",
+      "engine": "CVUA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2010-2016",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CDUC, CDUD, CKVB, CKVC",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2015",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CGQB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CRTE, CTCC, CZVA, CZVB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CRTF, CTCB, CZVD",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CVUA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2017",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CPNB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2010-2015",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CLAA, CLAB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "AUDI",
+      "model": "A7 (4GA/GF) 3.0 TDI",
+      "engine": "CVUB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2013",
+      "make": "AUDI",
+      "model": "A8 (4H) 3.0 TDI",
+      "engine": "CLAB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2010-2015",
+      "make": "AUDI",
+      "model": "A8 (4H) 3.0 TDI",
+      "engine": "CDTB, CTBB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2012-2016",
+      "make": "AUDI",
+      "model": "A8 (4H) 3.0 TDI",
+      "engine": "CPNA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2010-2018",
+      "make": "AUDI",
+      "model": "A8 (4H) 3.0 TDI",
+      "engine": "CDTA, CDTC, CMHA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2013-2018",
+      "make": "AUDI",
+      "model": "A8 (4H) 3.0 TDI",
+      "engine": "CTBA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2015-2018",
+      "make": "AUDI",
+      "model": "A8 (4H) 3.0 TDI",
+      "engine": "CTBD",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2012-",
+      "make": "AUDI",
+      "model": "Allroad III (4GH) 3.0 TDI",
+      "engine": "CGQB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2012-",
+      "make": "AUDI",
+      "model": "Allroad III (4GH) 3.0 TDI",
+      "engine": "CLAA, CLAB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2012-",
+      "make": "AUDI",
+      "model": "Allroad III (4GH) 3.0 TDI",
+      "engine": "CDUD, CKVC",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2012-2017",
+      "make": "AUDI",
+      "model": "Q5 (8R) 3.0 TDI quattro",
+      "engine": "CDUD",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2012-2017",
+      "make": "AUDI",
+      "model": "Q5 (8R) 3.0 TDI quattro",
+      "engine": "CTBA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2012-2017",
+      "make": "AUDI",
+      "model": "Q5 (8R) 3.0 TDI quattro",
+      "engine": "CTBC",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2013-",
+      "make": "AUDI",
+      "model": "Q5 (8R) 3.0 TDI quattro",
+      "engine": "CPNB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2012-2015",
+      "make": "AUDI",
+      "model": "Q5 (8R) 3.0 TDI quattro SQ5",
+      "engine": "CGQB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2013-2017",
+      "make": "AUDI",
+      "model": "Q5 (8R) 3.0 TDI quattro SQ5",
+      "engine": "CVUB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2015-2017",
+      "make": "AUDI",
+      "model": "Q5 (8R) 3.0 TDI quattro SQ5",
+      "engine": "DEHA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2007-2015",
+      "make": "AUDI",
+      "model": "Q7 (4L) 3.0 TDI V6 quattro",
+      "engine": "CASA, CCMA, CJGA, CNRB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2010-2015",
+      "make": "AUDI",
+      "model": "Q7 (4L) 3.0 TDI V6 quattro",
+      "engine": "CJGC, CJMA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2015",
+      "make": "AUDI",
+      "model": "Q7 (4L) 3.0 TDI V6 quattro",
+      "engine": "CJGD, CLZB, CRCA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2010-",
+      "make": "PORSCHE",
+      "model": "Cayenne II (92A) 3.0 V6 Diesel",
+      "engine": "M05.9E, MCN.RB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-",
+      "make": "PORSCHE",
+      "model": "Cayenne II (92A) 3.0 V6 Diesel",
+      "engine": "MCR.CA/CB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-",
+      "make": "PORSCHE",
+      "model": "Cayenne II (92A) 3.0 V6 Diesel",
+      "engine": "MCV.VB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-",
+      "make": "PORSCHE",
+      "model": "Cayenne II (92A) 3.0 V6 Diesel",
+      "engine": "MCV.VA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "PORSCHE",
+      "model": "Macan 3.0  Diesel",
+      "engine": "MCT.BB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "PORSCHE",
+      "model": "Macan 3.0 S Diesel",
+      "engine": "MCT.BA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-",
+      "make": "PORSCHE",
+      "model": "Macan 3.0 S Diesel",
+      "engine": "MCD.UD",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "PORSCHE",
+      "model": "Macan 3.0 S Diesel",
+      "engine": "MCT.BC",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2013",
+      "make": "PORSCHE",
+      "model": "Panamera I (970) 3.0 Diesel",
+      "engine": "MCR.CC",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2013",
+      "make": "PORSCHE",
+      "model": "Panamera I (970) 3.0 Diesel",
+      "engine": "MCR.CB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2013-2016",
+      "make": "PORSCHE",
+      "model": "Panamera I (970) 3.0 Diesel",
+      "engine": "MCW.JA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2010-2018",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Touareg II (7P) 3.0 TDI",
+      "engine": "CASA, CNRB",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2010-2018",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Touareg II (7P) 3.0 TDI",
+      "engine": "CASD, CJMA, CVWA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2011-2018",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Touareg II (7P) 3.0 TDI",
+      "engine": "CJGD, CRCA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2014-2018",
+      "make": "VW (VOLKSWAGEN)",
+      "model": "Touareg II (7P) 3.0 TDI",
+      "engine": "CVVA",
+      "source": "MANN_FILTER_OFFICIAL_HU8005Z",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/hu8005z_mann-filter.html",
+      "evidence_hash": "d066097ea4790a0cfa97890d8fbfbc7de032ce38f3fe596356c386e267c94e88"
+    },
+    {
+      "year": "2012-2016",
+      "make": "Audi",
+      "model": "A6 Quattro",
+      "engine": "3.0L 6Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/applications?format=ranges",
+      "evidence_hash": "c9df9496c48f1c89f8762b8755cb688f188df4c1ab992aae74b0bf6a9bc58e10"
+    },
+    {
+      "year": "2014-2016",
+      "make": "Audi",
+      "model": "A7 Quattro",
+      "engine": "3.0L 6Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/applications?format=ranges",
+      "evidence_hash": "c9df9496c48f1c89f8762b8755cb688f188df4c1ab992aae74b0bf6a9bc58e10"
+    },
+    {
+      "year": "2014-2016",
+      "make": "Audi",
+      "model": "A8 Quattro",
+      "engine": "3.0L 6Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/applications?format=ranges",
+      "evidence_hash": "c9df9496c48f1c89f8762b8755cb688f188df4c1ab992aae74b0bf6a9bc58e10"
+    },
+    {
+      "year": "2013-2017",
+      "make": "Audi",
+      "model": "Q5",
+      "engine": "3.0L 6Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/applications?format=ranges",
+      "evidence_hash": "c9df9496c48f1c89f8762b8755cb688f188df4c1ab992aae74b0bf6a9bc58e10"
+    },
+    {
+      "year": "2013-2016",
+      "make": "Audi",
+      "model": "Q7",
+      "engine": "3.0L 6Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/applications?format=ranges",
+      "evidence_hash": "c9df9496c48f1c89f8762b8755cb688f188df4c1ab992aae74b0bf6a9bc58e10"
+    },
+    {
+      "year": "2013-2014",
+      "make": "Audi",
+      "model": "Q7",
+      "engine": "4.2L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/applications?format=ranges",
+      "evidence_hash": "c9df9496c48f1c89f8762b8755cb688f188df4c1ab992aae74b0bf6a9bc58e10"
+    },
+    {
+      "year": "2011-2019",
+      "make": "Porsche",
+      "model": "Cayenne",
+      "engine": "3.0L 6Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/applications?format=ranges",
+      "evidence_hash": "c9df9496c48f1c89f8762b8755cb688f188df4c1ab992aae74b0bf6a9bc58e10"
+    },
+    {
+      "year": "2013-2017",
+      "make": "Volkswagen",
+      "model": "Touareg",
+      "engine": "3.0L 6Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG9986EX/applications?format=ranges",
+      "evidence_hash": "c9df9496c48f1c89f8762b8755cb688f188df4c1ab992aae74b0bf6a9bc58e10"
+    }
+  ],
+  "reference_governance": {
+    "status": "COMPLETE_CANONICAL_MANN_WITH_CROSS_CATEGORY_CLEANUP",
+    "canonical_sku": "EL38005",
+    "cross_category_sku": "EA38005",
+    "cleaned_air_codes": [
+      "059115561D",
+      "059198405",
+      "2514100",
+      "CH11490",
+      "OX420D",
+      "V102186"
+    ],
+    "cleaned_hd_reference": {
+      "code": "LF692",
+      "skus": [
+        "EL80832",
+        "EL850832"
+      ]
+    },
+    "legacy_numeric_code": {
+      "code": "8005",
+      "owner": "EA38005",
+      "filter_type": "air",
+      "not_claimed": true
+    },
+    "publication_rule": "HU8005Z_CANONICAL_MANN_EUROPEAN",
+    "closed_at": "2026-09-24"
+  }
+}
