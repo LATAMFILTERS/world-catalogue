@@ -2224,10 +2224,4 @@ test('DONALDSON REGIONAL POLICY: NOT_FOUND requires USA and regional completion'
     assert.equal(row.donaldson_research_trace.USA_PRIMARY, 'EXHAUSTED');
     assert.ok(['EXHAUSTED_NO_CANDIDATE','CANDIDATE_ONLY_NO_US_OEN_TIE'].includes(row.donaldson_research_trace.REGIONAL_OFFICIAL));
   }
-
-  const bad = JSON.parse(JSON.stringify(phase3));
-  const row = bad.resolution_rows.find((r) => r.donaldson_status === 'DONALDSON_NOT_FOUND');
-  row.donaldson_research_trace.REGIONAL_OFFICIAL = 'NOT_RUN';
-  const original = require.cache[require.resolve('../config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json')];
-  assert.ok(original);
 });
