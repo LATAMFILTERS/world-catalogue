@@ -1,0 +1,40 @@
+{
+  "batch": "LD_AIR_B08",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE_WITH_BLOCKERS",
+  "counts": {
+    "COMPLETE": 1,
+    "BLOCKED_WITH_REASON": 4
+  },
+  "catalog_writes": [
+    "EA30046 canonical metadata sync"
+  ],
+  "candidates": [
+    {
+      "sku": "EA30044",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "PHYSICAL_MISMATCH__MANN_C44_IS_39X12_8X40_MM_NOT_CURRENT_75_4X258_MM"
+    },
+    {
+      "sku": "EA30045",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_AUTHORITY_UNRESOLVED__MANN_C45_AND_FRAM_CA45_PRESENT_WITHOUT_PHYSICAL_PROOF"
+    },
+    {
+      "sku": "EA30046",
+      "terminal_state": "COMPLETE",
+      "reason": null
+    },
+    {
+      "sku": "EA30048",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_AUTHORITY_UNRESOLVED__MANN_C48_PRESENT_BUT_APPLICATION_AND_GEOMETRY_NOT_PROVEN"
+    },
+    {
+      "sku": "EA30050",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_EVIDENCE_PROVENANCE_UNRESOLVED__LEGACY_MANN_PROMOTION_WITH_HEAVY_EQUIPMENT_SCOPE"
+    }
+  ],
+  "closed_at": "2026-09-25"
+}

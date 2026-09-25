@@ -1,0 +1,28 @@
+{
+  "sku": "EA30046",
+  "codigo_base": "C46",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C46"
+  },
+  "resolution": "SYNC_EXISTING_VERIFIED_GOVERNANCE_TO_PUBLIC_CANONICAL_METADATA",
+  "evidence": {
+    "official_source": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c46_mann-filter.html",
+    "official_dimensions_mm": {
+      "od": 39,
+      "id": 12.8,
+      "id1": 5.2,
+      "h": 130
+    },
+    "catalog_dimensions_mm": {
+      "od": 39,
+      "h": 130
+    }
+  },
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "closed_at": "2026-09-25"
+}

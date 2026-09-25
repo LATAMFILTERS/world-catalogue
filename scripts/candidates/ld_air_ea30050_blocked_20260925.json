@@ -1,0 +1,21 @@
+{
+  "sku": "EA30050",
+  "codigo_base": "C10050",
+  "reason": "CANONICAL_EVIDENCE_PROVENANCE_UNRESOLVED__LEGACY_MANN_PROMOTION_WITH_HEAVY_EQUIPMENT_SCOPE",
+  "evidence": {
+    "approved_manufacturer": "MANN-FILTER",
+    "approved_codigo_base": "C10050",
+    "primary_manufacturer_verified": true,
+    "current_traceable_authority_ref": false,
+    "application_scope": [
+      "GEHL",
+      "NEUSON (WACKER NEUSON)",
+      "RAMMAX (AMMANN GROUP)"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

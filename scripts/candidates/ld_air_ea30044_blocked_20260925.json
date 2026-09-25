@@ -1,0 +1,27 @@
+{
+  "sku": "EA30044",
+  "codigo_base": "0044",
+  "reason": "PHYSICAL_MISMATCH__MANN_C44_IS_39X12_8X40_MM_NOT_CURRENT_75_4X258_MM",
+  "evidence": {
+    "mann_code": "C44",
+    "official_dimensions_mm": {
+      "od": 39,
+      "id": 12.8,
+      "h": 40
+    },
+    "catalog_dimensions_mm": {
+      "od": 75.4,
+      "h": 258
+    },
+    "application_scope": [
+      "BASE VAC DENTAL SYSTEMS",
+      "BECKER-KOMPRESSOREN",
+      "BUSCH VACUUM PUMPS"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

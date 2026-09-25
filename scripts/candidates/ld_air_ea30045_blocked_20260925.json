@@ -1,0 +1,19 @@
+{
+  "sku": "EA30045",
+  "codigo_base": "0045",
+  "reason": "CANONICAL_AUTHORITY_UNRESOLVED__MANN_C45_AND_FRAM_CA45_PRESENT_WITHOUT_PHYSICAL_PROOF",
+  "evidence": {
+    "authority_candidates": [
+      "MANN C45",
+      "MANN C45/2(4)",
+      "FRAM CA45"
+    ],
+    "application_scope": "BYD",
+    "required_authority": "VERIFY_MANN_MANUFACTURING_AUTHORITY"
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

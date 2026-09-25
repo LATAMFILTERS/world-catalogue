@@ -1,0 +1,27 @@
+{
+  "sku": "EA30048",
+  "codigo_base": "0048",
+  "reason": "CANONICAL_AUTHORITY_UNRESOLVED__MANN_C48_PRESENT_BUT_APPLICATION_AND_GEOMETRY_NOT_PROVEN",
+  "evidence": {
+    "mann_code": "C48",
+    "official_dimensions_mm": {
+      "od": 39,
+      "id": 12.8,
+      "id1": 5.2,
+      "h": 92
+    },
+    "catalog_dimensions_mm": {
+      "od": null,
+      "h": null
+    },
+    "application_scope": [
+      "KIA",
+      "TOYOTA"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
