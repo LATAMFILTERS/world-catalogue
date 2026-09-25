@@ -59,7 +59,7 @@
     }
   ],
   "outcome": "CLOSED_WITH_EXPLICIT_BLOCKERS",
-  "outcome_summary": "9 of 19 eligible rows already carried a Donaldson-verified base from the prior pass. This exception-closure pass adds 5 more Donaldson-verified bases (P550390 for the two standard/high-capacity N-Series and F-Series fuel pairs, and P550420 for the F-Series 1987-2008 lube row), resolved by applying an OEM-vs-CROSSREF Donaldson evidence-tier distinction the prior pass had not used, and cross-verified every reused SKU against data/dims.csv physical dimensions. One row (P2-N-TRANS) moves from CONFLICTING to BLOCKED_DONALDSON after its only Donaldson hit was rejected as a false-positive category mismatch (a transmission filter cartridge cannot be a full-flow engine-oil spin-on). One row (P2-N-LUBE-1998-2010) remains genuinely CONFLICTING: the disputed Isuzu number ties to two different Donaldson parts at the identical CROSSREF evidence tier, with no defensible tie-breaker found despite exhaustive first-party-capture research. Zero Fleetguard bases exist anywhere in this file -- no row has ever reached DONALDSON_NOT_MANUFACTURED_VERIFIED. A duplicate-canonical-mapping audit across every Donaldson part touched by Isuzu Phase 3 found one legacy-CSV stale mapping (P550008, three orphaned MANN-sourced SKUs never reconciled to dims.csv) that is not actionable here because P550008 is not used as a base for any Isuzu row. SINGLE-CASE MICROINVESTIGATION 2026-09-24 then resolved the file's one remaining CONFLICTING row (P2-N-LUBE-1998-2010) using Donaldson equipment-application records: P502042 (ELIMFILTERS EL82042, reused) explicitly serves the 4HE1-TC/4HK1-TC engines this row is scoped to, while the competing candidate P550973 explicitly serves only an unrelated older Isuzu engine family and is rejected. CONFLICTING is now 0 across the entire file. BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24 then resolved 2 of the file's 4 remaining BLOCKED_DONALDSON rows: P2-N-LUBE-2011-ON and P2-F-LUBE-2018-2021 (shared Isuzu OE 8982984040) both identify Donaldson P848076 via official product title plus distributor corroboration, now NO_ELIMFILTERS_SKU_YET pending SKU governance. The other 2 (P2-N-FWS-2022i-ON, P2-N-TRANS) stay BLOCKED_DONALDSON with precise, non-generic root causes after exhaustive re-investigation (a rejected false-positive Donaldson candidate, and confirmation the transmission is Aisin RNJ, not Allison). BLOCKED_DONALDSON is now 2 across the entire file. P848076 ELIMFILTERS SKU CLOSURE 2026-09-24 then closed both remaining NO_ELIMFILTERS_SKU_YET rows: an exhaustive repository-and-live-Postgres duplicate audit found no existing SKU for Donaldson P848076 anywhere, so a governed candidate SKU, EL88076, was derived using this repository's own codigo_base nomenclature policy (not invented) and recorded as CREATE_GOVERNED_SKU, READY_FOR_REVIEW, published:false. NO_ELIMFILTERS_SKU_YET is now 0 across the entire file; only the 2 genuinely unresolved BLOCKED_DONALDSON rows and the 9 BLOCKED_OEM scopes remain without a base. TRANSMISSION SINGLE-ROW CLOSURE 2026-09-24 then resolved P2-N-TRANS / 8971822820 to Donaldson P550008 and existing ELIMFILTERS EL80008 after independent Fleetguard LF551A transmission-application and spin-on geometry corroboration superseded the prior CARTRIDGE/internal-element assumption. Because Phase 2 is PARTIAL, the final row is PARTIAL. The three stale legacy P550008/MANN mappings were removed from both legacy CSV exports. BLOCKED_DONALDSON is now 1; only P2-N-FWS-2022i-ON remains blocked at Donaldson. FINAL FWS FOLLOW-UP 2026-09-24 exhausted the current public channels for P2-N-FWS-2022i-ON / 8982373410 without changing its terminal state: Isuzu OEM identity is verified, Donaldson remains NOT_FOUND, P550736 remains rejected, and WIX independently reports the exact competitor number has no replacement. Because Donaldson non-manufacture is still not verified, Fleetguard remains ineligible and the row remains BLOCKED_DONALDSON. N-SERIES 2005-2012 FUEL PARTIAL OEM CLOSURE 2026-09-24 recovered exact owner-manual OENs for MY2006 NPR (8980284111), MY2007 NPR (8980370110), MY2008 NPR (8980370110), and MY2010 NPR-HD/NQR/NRR (8980370110). Exact 8980370110 rows resolve through Donaldson P502427 to existing EF92427; MY2006 NPR is now BLOCKED_DONALDSON on 8980284111. The remaining model/year combinations stay BLOCKED_OEM and were not inferred by continuity. TARGETED #7 FOLLOW-UP 2026-09-24 then exhausted the current public first-party Isuzu path for the residual N-Series 4HK1-TC MY2005-2012 primary-fuel blocker. Isuzu's current FleetValue/Genuine sheet confirms 8980370110 only for 2013-2021, while the 2005 4HK1-TC service-training manual identifies the fuel-filter system but not its service-element OEN. Broad aftermarket fitment was recorded as corroboration only and rejected as an OEM-scope source. The residual row therefore remains BLOCKED_OEM with an explicit terminal reason; no continuity inference was introduced. NPR ECO-MAX TARGETED FOLLOW-UP 2026-09-24 then split P3-BLOCKED-N-ECOMAX cleanly by position. AIR_PRIMARY is no longer blocked because the existing verified N-Series 2006-on air resolution already covers NPR: Isuzu 8970622940 -> Donaldson P543614 -> EA13614. No duplicate ECO-MAX air row or SKU was created. FUEL_PRIMARY remains BLOCKED_OEM because Isuzu's public Genuine table does not tie any published 2013-2021 N-Series fuel OEN specifically to the NPR ECO-MAX / 4JJ1-TC. The blocker is now fuel-only with an explicit terminal reason. N-SERIES MY2022-2026 TARGETED FOLLOW-UP 2026-09-24 then split P3-BLOCKED-N-2022-2026 by position. LUBE_PRIMARY is no longer blocked because the existing P3-04-N-LUBE-2011-ON row already binds explicitly to N-2022-2024 and N-2025-2026: Isuzu 2906544040 / 8982984040 -> Donaldson P848076 -> EL88076. FUEL_PRIMARY remains BLOCKED_OEM. Aftermarket catalogues converge on 8981653750 for MY2022-2026 5.2L/4HK1, but that number is retained only as AFTERMARKET_CANDIDATE_ONLY and explicitly rejected for OEM promotion until direct Isuzu evidence is recovered. The blocker is now fuel-only with an exact terminal reason.",
+  "outcome_summary": "9 of 19 eligible rows already carried a Donaldson-verified base from the prior pass. This exception-closure pass adds 5 more Donaldson-verified bases (P550390 for the two standard/high-capacity N-Series and F-Series fuel pairs, and P550420 for the F-Series 1987-2008 lube row), resolved by applying an OEM-vs-CROSSREF Donaldson evidence-tier distinction the prior pass had not used, and cross-verified every reused SKU against data/dims.csv physical dimensions. One row (P2-N-TRANS) moves from CONFLICTING to BLOCKED_DONALDSON after its only Donaldson hit was rejected as a false-positive category mismatch (a transmission filter cartridge cannot be a full-flow engine-oil spin-on). One row (P2-N-LUBE-1998-2010) remains genuinely CONFLICTING: the disputed Isuzu number ties to two different Donaldson parts at the identical CROSSREF evidence tier, with no defensible tie-breaker found despite exhaustive first-party-capture research. Zero Fleetguard bases exist anywhere in this file -- no row has ever reached DONALDSON_NOT_MANUFACTURED_VERIFIED. A duplicate-canonical-mapping audit across every Donaldson part touched by Isuzu Phase 3 found one legacy-CSV stale mapping (P550008, three orphaned MANN-sourced SKUs never reconciled to dims.csv) that is not actionable here because P550008 is not used as a base for any Isuzu row. SINGLE-CASE MICROINVESTIGATION 2026-09-24 then resolved the file's one remaining CONFLICTING row (P2-N-LUBE-1998-2010) using Donaldson equipment-application records: P502042 (ELIMFILTERS EL82042, reused) explicitly serves the 4HE1-TC/4HK1-TC engines this row is scoped to, while the competing candidate P550973 explicitly serves only an unrelated older Isuzu engine family and is rejected. CONFLICTING is now 0 across the entire file. BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24 then resolved 2 of the file's 4 remaining BLOCKED_DONALDSON rows: P2-N-LUBE-2011-ON and P2-F-LUBE-2018-2021 (shared Isuzu OE 8982984040) both identify Donaldson P848076 via official product title plus distributor corroboration, now NO_ELIMFILTERS_SKU_YET pending SKU governance. The other 2 (P2-N-FWS-2022i-ON, P2-N-TRANS) stay BLOCKED_DONALDSON with precise, non-generic root causes after exhaustive re-investigation (a rejected false-positive Donaldson candidate, and confirmation the transmission is Aisin RNJ, not Allison). BLOCKED_DONALDSON is now 2 across the entire file. P848076 ELIMFILTERS SKU CLOSURE 2026-09-24 then closed both remaining NO_ELIMFILTERS_SKU_YET rows: an exhaustive repository-and-live-Postgres duplicate audit found no existing SKU for Donaldson P848076 anywhere, so a governed candidate SKU, EL88076, was derived using this repository's own codigo_base nomenclature policy (not invented) and recorded as CREATE_GOVERNED_SKU, READY_FOR_REVIEW, published:false. NO_ELIMFILTERS_SKU_YET is now 0 across the entire file; only the 2 genuinely unresolved BLOCKED_DONALDSON rows and the 9 BLOCKED_OEM scopes remain without a base. TRANSMISSION SINGLE-ROW CLOSURE 2026-09-24 then resolved P2-N-TRANS / 8971822820 to Donaldson P550008 and existing ELIMFILTERS EL80008 after independent Fleetguard LF551A transmission-application and spin-on geometry corroboration superseded the prior CARTRIDGE/internal-element assumption. Because Phase 2 is PARTIAL, the final row is PARTIAL. The three stale legacy P550008/MANN mappings were removed from both legacy CSV exports. BLOCKED_DONALDSON is now 1; only P2-N-FWS-2022i-ON remains blocked at Donaldson. FINAL FWS FOLLOW-UP 2026-09-24 exhausted the current public channels for P2-N-FWS-2022i-ON / 8982373410 without changing its terminal state: Isuzu OEM identity is verified, Donaldson remains NOT_FOUND, P550736 remains rejected, and WIX independently reports the exact competitor number has no replacement. Because Donaldson non-manufacture is still not verified, Fleetguard remains ineligible and the row remains BLOCKED_DONALDSON. N-SERIES 2005-2012 FUEL PARTIAL OEM CLOSURE 2026-09-24 recovered exact owner-manual OENs for MY2006 NPR (8980284111), MY2007 NPR (8980370110), MY2008 NPR (8980370110), and MY2010 NPR-HD/NQR/NRR (8980370110). Exact 8980370110 rows resolve through Donaldson P502427 to existing EF92427; MY2006 NPR is now BLOCKED_DONALDSON on 8980284111. The remaining model/year combinations stay BLOCKED_OEM and were not inferred by continuity. TARGETED #7 FOLLOW-UP 2026-09-24 then exhausted the current public first-party Isuzu path for the residual N-Series 4HK1-TC MY2005-2012 primary-fuel blocker. Isuzu's current FleetValue/Genuine sheet confirms 8980370110 only for 2013-2021, while the 2005 4HK1-TC service-training manual identifies the fuel-filter system but not its service-element OEN. Broad aftermarket fitment was recorded as corroboration only and rejected as an OEM-scope source. The residual row therefore remains BLOCKED_OEM with an explicit terminal reason; no continuity inference was introduced. NPR ECO-MAX TARGETED FOLLOW-UP 2026-09-24 then split P3-BLOCKED-N-ECOMAX cleanly by position. AIR_PRIMARY is no longer blocked because the existing verified N-Series 2006-on air resolution already covers NPR: Isuzu 8970622940 -> Donaldson P543614 -> EA13614. No duplicate ECO-MAX air row or SKU was created. FUEL_PRIMARY remains BLOCKED_OEM because Isuzu's public Genuine table does not tie any published 2013-2021 N-Series fuel OEN specifically to the NPR ECO-MAX / 4JJ1-TC. The blocker is now fuel-only with an explicit terminal reason. N-SERIES MY2022-2026 TARGETED FOLLOW-UP 2026-09-24 then split P3-BLOCKED-N-2022-2026 by position. LUBE_PRIMARY is no longer blocked because the existing P3-04-N-LUBE-2011-ON row already binds explicitly to N-2022-2024 and N-2025-2026: Isuzu 2906544040 / 8982984040 -> Donaldson P848076 -> EL88076. FUEL_PRIMARY remains BLOCKED_OEM. Aftermarket catalogues converge on 8981653750 for MY2022-2026 5.2L/4HK1, but that number is retained only as AFTERMARKET_CANDIDATE_ONLY and explicitly rejected for OEM promotion until direct Isuzu evidence is recovered. The blocker is now fuel-only with an exact terminal reason. H-SERIES TARGETED CLOSURE 2026-09-24 then decomposed P3-BLOCKED-H-SERIES from a monolithic ALL blocker into a terminal position matrix for HTR/HVR/HXR MY2005-2008 (6HK1-TC 7.8L). HYDRAULIC_FILTER is RESOLVED as NOT_APPLICABLE. AIR_PRIMARY, AIR_SECONDARY, LUBE_PRIMARY, LUBE_SECONDARY, FUEL_PRIMARY, FUEL_SECONDARY, FUEL_WATER_SEPARATOR, CABIN, AIR_DRYER and TRANSMISSION_FILTER remain BLOCKED_OEM with position-specific root causes. Fleetguard LF3547, FF5108 and FS20163 are preserved only as aftermarket candidate intelligence; none is promoted to Isuzu OEN or canonical base. No shared-engine inheritance from F-Series was introduced.",
   "coverage": {
     "eligible_phase2_rows": 23,
     "excluded_phase2_rows": 2,
@@ -2944,9 +2944,9 @@
     {
       "row_id": "P3-BLOCKED-H-SERIES",
       "phase2_row_id": null,
-      "phase2_unresolved_scope": "H-SERIES HTR / HVR / HXR MY2005-2008",
+      "phase2_unresolved_scope": "H-SERIES HTR / HVR / HXR MY2005-2008 — position-specific terminal matrix",
       "isuzu_oe_oen": [],
-      "filter_position": "ALL",
+      "filter_position": "AIR_PRIMARY, AIR_SECONDARY, LUBE_PRIMARY, LUBE_SECONDARY, FUEL_PRIMARY, FUEL_SECONDARY, FUEL_WATER_SEPARATOR, CABIN, AIR_DRYER, TRANSMISSION_FILTER",
       "donaldson_status": "NOT_EVALUATED_NO_OEN",
       "donaldson_part": null,
       "fleetguard_status": "NOT_EVALUATED_NO_OEN",
@@ -2957,8 +2957,107 @@
       "elimfilters_base_decision": null,
       "decision_status": "BLOCKED_OEM",
       "caveats": [
-        "Phase 2 has no Isuzu-published OEN for any H-Series position. No equivalence is resolved from the shared 6HK1-TC engine."
-      ]
+        "H-Series is verified in Phase 1 as HTR / HVR / HXR MY2005-2008 with Isuzu 6HK1-TC 7.8L, but Isuzu did not publish a retrievable H-Series owner/service/parts document that assigns service-filter OENs by model and position.",
+        "Shared 6HK1-TC engine identity is insufficient to inherit F-Series or engine-family filter OENs. Isuzu's own engine-parts guidance requires engine model plus serial number to identify the originally installed parts build.",
+        "Current Fleetguard first-party application data identifies H-Series aftermarket candidates including LF3547 (lube), FF5108 (fuel) and FS20163 (fuel/water separator). These are retained as AFTERMARKET_CANDIDATE_ONLY and do not populate isuzu_oe_oen or authorize a canonical ELIMFILTERS base.",
+        "HYDRAULIC_FILTER is closed separately as RESOLVED / NOT_APPLICABLE because Phase 2 establishes that body-builder hydraulics are outside the Isuzu-published chassis maintenance scope."
+      ],
+      "position_terminal_states": {
+        "AIR_PRIMARY": {
+          "state": "BLOCKED_OEM",
+          "applicability": "APPLICABLE",
+          "root_cause": "NO_H_SERIES_ISUZU_AIR_FILTER_OEN",
+          "note": "No Isuzu HTR/HVR/HXR document recovered publishes the primary air-cleaner element OEN. No F-Series or 6HK1 air reference is inherited."
+        },
+        "AIR_SECONDARY": {
+          "state": "BLOCKED_OEM",
+          "applicability": "UNCERTAIN",
+          "root_cause": "NO_ISUZU_EVIDENCE_OF_SECONDARY_AIR_ELEMENT_OR_OEN",
+          "note": "Isuzu H-Series material does not establish whether the air cleaner is single- or two-stage."
+        },
+        "LUBE_PRIMARY": {
+          "state": "BLOCKED_OEM",
+          "applicability": "APPLICABLE",
+          "root_cause": "NO_H_SERIES_ISUZU_LUBE_OEN",
+          "aftermarket_candidates": [
+            {
+              "manufacturer": "FLEETGUARD",
+              "part": "LF3547",
+              "role": "AFTERMARKET_CANDIDATE_ONLY",
+              "evidence_scope": "Fleetguard equipment application lists HTR/HVR/HXR with 6HK1-TC"
+            }
+          ],
+          "note": "Fleetguard LF3547 is a strong application lead but cannot establish an Isuzu H-Series OEN under Phase 2/OEM governance."
+        },
+        "LUBE_SECONDARY": {
+          "state": "BLOCKED_OEM",
+          "applicability": "UNCERTAIN",
+          "root_cause": "NO_ISUZU_EVIDENCE_OF_SECONDARY_LUBE_FILTER_OR_OEN",
+          "note": "No H-Series Isuzu source states a second/bypass lube-filter position."
+        },
+        "FUEL_PRIMARY": {
+          "state": "BLOCKED_OEM",
+          "applicability": "APPLICABLE",
+          "root_cause": "NO_H_SERIES_ISUZU_FUEL_PRIMARY_OEN",
+          "aftermarket_candidates": [
+            {
+              "manufacturer": "FLEETGUARD",
+              "part": "FF5108",
+              "role": "AFTERMARKET_CANDIDATE_ONLY",
+              "evidence_scope": "Fleetguard equipment application lists H-Series HTR/HVR and HXR/6HK1-TC records"
+            }
+          ],
+          "note": "FF5108 and its broad Isuzu cross-reference set are not promoted because no Isuzu H-Series document ties one exact Isuzu OEN to HTR/HVR/HXR."
+        },
+        "FUEL_SECONDARY": {
+          "state": "BLOCKED_OEM",
+          "applicability": "UNCERTAIN",
+          "root_cause": "NO_ISUZU_EVIDENCE_OF_SECONDARY_FUEL_POSITION_OR_OEN",
+          "note": "No H-Series maintenance schedule or parts catalogue was recovered to establish a separate secondary fuel filter."
+        },
+        "FUEL_WATER_SEPARATOR": {
+          "state": "BLOCKED_OEM",
+          "applicability": "UNCERTAIN",
+          "root_cause": "NO_H_SERIES_ISUZU_FWS_OEN",
+          "aftermarket_candidates": [
+            {
+              "manufacturer": "FLEETGUARD",
+              "part": "FS20163",
+              "role": "AFTERMARKET_CANDIDATE_ONLY",
+              "evidence_scope": "Fleetguard equipment application explicitly lists HTR/HVR/HXR with 6HK1-TC"
+            }
+          ],
+          "note": "FS20163 is preserved only as a research lead; no first-party Isuzu H-Series OEN was recovered."
+        },
+        "CABIN": {
+          "state": "BLOCKED_OEM",
+          "applicability": "UNCERTAIN",
+          "root_cause": "NO_H_SERIES_OWNER_MANUAL_OR_CABIN_FILTER_OEN",
+          "note": "No H-Series Isuzu owner/service document recovered establishes a serviceable cabin-filter element."
+        },
+        "AIR_DRYER": {
+          "state": "BLOCKED_OEM",
+          "applicability": "CONDITIONAL_BY_MODEL_AND_BUILD",
+          "root_cause": "BRAKE_CONFIGURATION_DEPENDENT_AND_NO_ISUZU_DRYER_CARTRIDGE_OEN",
+          "by_model": {
+            "HTR": "Standard hydraulic brakes; air dryer applies only if optional ABS full-air brakes were ordered.",
+            "HVR": "Standard hydraulic brakes; air dryer applies only if optional air brakes were ordered.",
+            "HXR": "Air brakes are standard, so an air-dryer service position is applicable, but no Isuzu cartridge OEN was recovered."
+          }
+        },
+        "TRANSMISSION_FILTER": {
+          "state": "BLOCKED_OEM",
+          "applicability": "CONDITIONAL_BY_TRANSMISSION",
+          "root_cause": "ALLISON_VS_EATON_CONFIGURATION_NOT_BOUND_TO_AN_ISUZU_FILTER_OEN",
+          "note": "HTR/HVR/HXR were offered with Allison automatic and Eaton Fuller manual configurations. A transmission-filter assignment requires the actual transmission/build; no Isuzu H-Series filter OEN was published."
+        },
+        "HYDRAULIC_FILTER": {
+          "state": "RESOLVED",
+          "outcome": "NOT_APPLICABLE",
+          "applicability": "NOT_APPLICABLE",
+          "reason": "Body-builder hydraulics are outside the Isuzu-published chassis maintenance scope; no chassis hydraulic-filter position is part of this governed H-Series filter set."
+        }
+      }
     },
     {
       "row_id": "P3-BLOCKED-FRR-FXR",
@@ -3481,6 +3580,53 @@
         "Do not conflate FUEL_PRIMARY with FUEL_WATER_SEPARATOR 8982373410."
       ],
       "note": "Only P3-BLOCKED-N-2022-2026 was changed. LUBE_PRIMARY was removed from the blocker by reusing the existing 2011-on lube resolution. FUEL_PRIMARY remains terminally BLOCKED_OEM. No new SKU, Donaldson base, Phase 1/2 row, live catalog record, or other BLOCKED_OEM family was changed."
+    },
+    {
+      "on": "2026-09-24",
+      "status": "POSITION_MATRIX_TERMINAL_CLOSURE",
+      "scope": "P3-BLOCKED-H-SERIES_ONLY",
+      "vehicle_scope": {
+        "series": "H-SERIES",
+        "models": [
+          "HTR",
+          "HVR",
+          "HXR"
+        ],
+        "model_years": [
+          2005,
+          2006,
+          2007,
+          2008
+        ],
+        "engine": "6HK1-TC 7.8L"
+      },
+      "resolved_positions": {
+        "HYDRAULIC_FILTER": "RESOLVED_NOT_APPLICABLE"
+      },
+      "blocked_oem_positions": [
+        "AIR_PRIMARY",
+        "AIR_SECONDARY",
+        "LUBE_PRIMARY",
+        "LUBE_SECONDARY",
+        "FUEL_PRIMARY",
+        "FUEL_SECONDARY",
+        "FUEL_WATER_SEPARATOR",
+        "CABIN",
+        "AIR_DRYER",
+        "TRANSMISSION_FILTER"
+      ],
+      "aftermarket_intelligence": {
+        "LUBE_PRIMARY": "Fleetguard LF3547",
+        "FUEL_PRIMARY": "Fleetguard FF5108",
+        "FUEL_WATER_SEPARATOR": "Fleetguard FS20163"
+      },
+      "governance": [
+        "No shared-engine inheritance from F-Series or generic 6HK1 applications.",
+        "No Fleetguard candidate is promoted into isuzu_oe_oen.",
+        "No Donaldson/Fleetguard base decision is opened without a specific Isuzu OEN tied to this H-Series scope.",
+        "Conditional air-dryer and transmission positions stay blocked until actual build configuration and OEM part identity are established."
+      ],
+      "note": "The former monolithic ALL blocker is now a terminal, position-specific matrix. No #2 BLOCKED_OEM family, Phase 1/2 row, ELIMFILTERS SKU, live catalog record, or canonical base was changed."
     }
   ],
   "duplicate_mapping_audit": {
