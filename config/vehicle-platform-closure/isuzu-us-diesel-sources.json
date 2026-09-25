@@ -1180,6 +1180,24 @@
         "No official Isuzu 8982373410 tie was found in the checked Donaldson public evidence"
       ],
       "scope_restriction": "PHASE 3 ONLY. This source is sufficient to reject P550736 as the Isuzu 8982373410 base and to classify the exact OEN lookup as DONALDSON_NOT_FOUND. Absence from current/public Donaldson evidence is NOT evidence that Donaldson does not manufacture an equivalent; it must never be upgraded to DONALDSON_NOT_MANUFACTURED_VERIFIED or used to open Fleetguard fallback."
+    },
+    {
+      "source_id": "FLEETGUARD_ISUZU_APPLICATION_CATALOG_AND_PRODUCT_2026_09_24",
+      "title": "Fleetguard Isuzu application catalogue plus current LF551A product page",
+      "publisher": "Fleetguard / Cummins Filtration",
+      "source_type": "manufacturer_application_catalogue_mirror_plus_official_product_page",
+      "authority_level": "supporting",
+      "origin_url": "https://www.fleetguard.com/product/LF551A ; https://www.dieselusa.com/productinfo/fleetguard_medium_and_heavy_duty_catalog.pdf",
+      "capture_url": null,
+      "captured_at": "2026-09-24",
+      "capture_files": [],
+      "capture_method": "Used only to corroborate the Donaldson first-party exact-OEN cross. The Fleetguard-branded Isuzu application catalogue maps Isuzu 8971822820 as Transmission Filter -> LF551A. Fleetguard current product page confirms LF551A spin-on dimensions/thread.",
+      "supports": [
+        "Isuzu 8971822820 is used as a transmission filter application in Fleetguard material",
+        "Fleetguard LF551A is a spin-on lube filter with 3/4-16 UNF thread, 96.06 mm largest OD and 137.08 mm height",
+        "Physical/application corroboration removes the prior assumption that Isuzu wording CARTRIDGE must mean an internal non-spin-on element"
+      ],
+      "scope_restriction": "CORROBORATION_ONLY. Fleetguard does not define the HD canonical base because Donaldson is verified for the exact OEN in the repository-held first-party Donaldson capture. The dieselusa.com PDF is a mirror of Fleetguard-branded application material, not a Fleetguard-hosted URL, so it may support but not outrank the Donaldson first-party capture."
     }
   ]
 }

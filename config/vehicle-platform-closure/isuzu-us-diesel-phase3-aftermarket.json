@@ -59,30 +59,30 @@
     }
   ],
   "outcome": "CLOSED_WITH_EXPLICIT_BLOCKERS",
-  "outcome_summary": "9 of 19 eligible rows already carried a Donaldson-verified base from the prior pass. This exception-closure pass adds 5 more Donaldson-verified bases (P550390 for the two standard/high-capacity N-Series and F-Series fuel pairs, and P550420 for the F-Series 1987-2008 lube row), resolved by applying an OEM-vs-CROSSREF Donaldson evidence-tier distinction the prior pass had not used, and cross-verified every reused SKU against data/dims.csv physical dimensions. One row (P2-N-TRANS) moves from CONFLICTING to BLOCKED_DONALDSON after its only Donaldson hit was rejected as a false-positive category mismatch (a transmission filter cartridge cannot be a full-flow engine-oil spin-on). One row (P2-N-LUBE-1998-2010) remains genuinely CONFLICTING: the disputed Isuzu number ties to two different Donaldson parts at the identical CROSSREF evidence tier, with no defensible tie-breaker found despite exhaustive first-party-capture research. Zero Fleetguard bases exist anywhere in this file -- no row has ever reached DONALDSON_NOT_MANUFACTURED_VERIFIED. A duplicate-canonical-mapping audit across every Donaldson part touched by Isuzu Phase 3 found one legacy-CSV stale mapping (P550008, three orphaned MANN-sourced SKUs never reconciled to dims.csv) that is not actionable here because P550008 is not used as a base for any Isuzu row. SINGLE-CASE MICROINVESTIGATION 2026-09-24 then resolved the file's one remaining CONFLICTING row (P2-N-LUBE-1998-2010) using Donaldson equipment-application records: P502042 (ELIMFILTERS EL82042, reused) explicitly serves the 4HE1-TC/4HK1-TC engines this row is scoped to, while the competing candidate P550973 explicitly serves only an unrelated older Isuzu engine family and is rejected. CONFLICTING is now 0 across the entire file. BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24 then resolved 2 of the file's 4 remaining BLOCKED_DONALDSON rows: P2-N-LUBE-2011-ON and P2-F-LUBE-2018-2021 (shared Isuzu OE 8982984040) both identify Donaldson P848076 via official product title plus distributor corroboration, now NO_ELIMFILTERS_SKU_YET pending SKU governance. The other 2 (P2-N-FWS-2022i-ON, P2-N-TRANS) stay BLOCKED_DONALDSON with precise, non-generic root causes after exhaustive re-investigation (a rejected false-positive Donaldson candidate, and confirmation the transmission is Aisin RNJ, not Allison). BLOCKED_DONALDSON is now 2 across the entire file. P848076 ELIMFILTERS SKU CLOSURE 2026-09-24 then closed both remaining NO_ELIMFILTERS_SKU_YET rows: an exhaustive repository-and-live-Postgres duplicate audit found no existing SKU for Donaldson P848076 anywhere, so a governed candidate SKU, EL88076, was derived using this repository's own codigo_base nomenclature policy (not invented) and recorded as CREATE_GOVERNED_SKU, READY_FOR_REVIEW, published:false. NO_ELIMFILTERS_SKU_YET is now 0 across the entire file; only the 2 genuinely unresolved BLOCKED_DONALDSON rows and the 9 BLOCKED_OEM scopes remain without a base.",
+  "outcome_summary": "9 of 19 eligible rows already carried a Donaldson-verified base from the prior pass. This exception-closure pass adds 5 more Donaldson-verified bases (P550390 for the two standard/high-capacity N-Series and F-Series fuel pairs, and P550420 for the F-Series 1987-2008 lube row), resolved by applying an OEM-vs-CROSSREF Donaldson evidence-tier distinction the prior pass had not used, and cross-verified every reused SKU against data/dims.csv physical dimensions. One row (P2-N-TRANS) moves from CONFLICTING to BLOCKED_DONALDSON after its only Donaldson hit was rejected as a false-positive category mismatch (a transmission filter cartridge cannot be a full-flow engine-oil spin-on). One row (P2-N-LUBE-1998-2010) remains genuinely CONFLICTING: the disputed Isuzu number ties to two different Donaldson parts at the identical CROSSREF evidence tier, with no defensible tie-breaker found despite exhaustive first-party-capture research. Zero Fleetguard bases exist anywhere in this file -- no row has ever reached DONALDSON_NOT_MANUFACTURED_VERIFIED. A duplicate-canonical-mapping audit across every Donaldson part touched by Isuzu Phase 3 found one legacy-CSV stale mapping (P550008, three orphaned MANN-sourced SKUs never reconciled to dims.csv) that is not actionable here because P550008 is not used as a base for any Isuzu row. SINGLE-CASE MICROINVESTIGATION 2026-09-24 then resolved the file's one remaining CONFLICTING row (P2-N-LUBE-1998-2010) using Donaldson equipment-application records: P502042 (ELIMFILTERS EL82042, reused) explicitly serves the 4HE1-TC/4HK1-TC engines this row is scoped to, while the competing candidate P550973 explicitly serves only an unrelated older Isuzu engine family and is rejected. CONFLICTING is now 0 across the entire file. BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24 then resolved 2 of the file's 4 remaining BLOCKED_DONALDSON rows: P2-N-LUBE-2011-ON and P2-F-LUBE-2018-2021 (shared Isuzu OE 8982984040) both identify Donaldson P848076 via official product title plus distributor corroboration, now NO_ELIMFILTERS_SKU_YET pending SKU governance. The other 2 (P2-N-FWS-2022i-ON, P2-N-TRANS) stay BLOCKED_DONALDSON with precise, non-generic root causes after exhaustive re-investigation (a rejected false-positive Donaldson candidate, and confirmation the transmission is Aisin RNJ, not Allison). BLOCKED_DONALDSON is now 2 across the entire file. P848076 ELIMFILTERS SKU CLOSURE 2026-09-24 then closed both remaining NO_ELIMFILTERS_SKU_YET rows: an exhaustive repository-and-live-Postgres duplicate audit found no existing SKU for Donaldson P848076 anywhere, so a governed candidate SKU, EL88076, was derived using this repository's own codigo_base nomenclature policy (not invented) and recorded as CREATE_GOVERNED_SKU, READY_FOR_REVIEW, published:false. NO_ELIMFILTERS_SKU_YET is now 0 across the entire file; only the 2 genuinely unresolved BLOCKED_DONALDSON rows and the 9 BLOCKED_OEM scopes remain without a base. TRANSMISSION SINGLE-ROW CLOSURE 2026-09-24 then resolved P2-N-TRANS / 8971822820 to Donaldson P550008 and existing ELIMFILTERS EL80008 after independent Fleetguard LF551A transmission-application and spin-on geometry corroboration superseded the prior CARTRIDGE/internal-element assumption. Because Phase 2 is PARTIAL, the final row is PARTIAL. The three stale legacy P550008/MANN mappings were removed from both legacy CSV exports. BLOCKED_DONALDSON is now 1; only P2-N-FWS-2022i-ON remains blocked at Donaldson.",
   "coverage": {
     "eligible_phase2_rows": 19,
     "excluded_phase2_rows": 2,
     "donaldson": {
-      "DONALDSON_VERIFIED": 17,
+      "DONALDSON_VERIFIED": 18,
       "DONALDSON_NOT_MANUFACTURED_VERIFIED": 0,
       "DONALDSON_NOT_FOUND": 1,
       "DONALDSON_SOURCE_BLOCKED": 0,
-      "DONALDSON_AMBIGUOUS": 1
+      "DONALDSON_AMBIGUOUS": 0
     },
     "fleetguard_verified_base": 0,
     "decision_status": {
       "VERIFIED_BASE": 5,
-      "PARTIAL": 12,
+      "PARTIAL": 13,
       "CONFLICTING": 0,
-      "BLOCKED_DONALDSON": 2,
+      "BLOCKED_DONALDSON": 1,
       "NO_ELIMFILTERS_SKU_YET": 0,
       "BLOCKED_OEM": 9
     },
     "base_decisions": {
-      "donaldson_based": 17,
+      "donaldson_based": 18,
       "fleetguard_based": 0,
-      "no_base_yet": 2
+      "no_base_yet": 1
     },
     "elimfilters_skus_reused": [
       "EA16773",
@@ -93,7 +93,8 @@
       "EF92427",
       "EF90390",
       "EL80420",
-      "EL82042"
+      "EL82042",
+      "EL80008"
     ],
     "elimfilters_new_sku_candidates": [
       "EL88076"
@@ -1661,8 +1662,8 @@
         ],
         "scope_authority": "PHASE_2_UNCHANGED"
       },
-      "donaldson_status": "DONALDSON_AMBIGUOUS",
-      "donaldson_part": null,
+      "donaldson_status": "DONALDSON_VERIFIED",
+      "donaldson_part": "P550008",
       "donaldson_candidates": [
         {
           "part": "P550008",
@@ -1673,28 +1674,42 @@
             "od": "3.74 inch (95 mm)",
             "length": "5.35 inch (136 mm)"
           },
-          "existing_elimfilters_sku": "EL80008"
+          "existing_elimfilters_sku": "EL80008",
+          "verdict": "ACCEPTED_AFTER_CORROBORATION: exact Donaldson first-party Isuzu OEN cross retained; Fleetguard independent transmission application and matching spin-on geometry resolve the prior form/category objection."
         }
       ],
-      "donaldson_relationship_type": null,
+      "donaldson_relationship_type": "DIRECT_OE_CROSS",
       "donaldson_source": "DONALDSON_SHOP_CROSSREF_CAPTURE_2026_07",
-      "fleetguard_status": "NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED",
+      "fleetguard_status": "CORROBORATION_ONLY_DONALDSON_VERIFIED",
       "fleetguard_part": null,
-      "fleetguard_source": null,
-      "fleetguard_corroboration": [],
+      "fleetguard_source": "FLEETGUARD_ISUZU_APPLICATION_CATALOG_AND_PRODUCT_2026_09_24",
+      "fleetguard_corroboration": [
+        {
+          "part": "LF551A",
+          "role": "CORROBORATION_ONLY",
+          "basis": "Fleetguard-branded Isuzu application catalogue maps 8971822820 as Transmission Filter -> LF551A; current Fleetguard product page confirms LF551A is a 3/4-16 UNF spin-on with 96.06 mm OD and 137.08 mm height, physically matching the Donaldson P550008 / EL80008 envelope."
+        }
+      ],
       "supporting_crossrefs": [],
-      "base_source_brand": null,
-      "base_source_part": null,
-      "elimfilters_existing_sku": null,
-      "elimfilters_base_decision": null,
-      "decision_status": "BLOCKED_DONALDSON",
-      "confidence": null,
+      "base_source_brand": "DONALDSON",
+      "base_source_part": "P550008",
+      "elimfilters_existing_sku": "EL80008",
+      "elimfilters_base_decision": {
+        "sku": "EL80008",
+        "action": "REUSE_EXISTING_SKU",
+        "rule": "DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD",
+        "review_state": "READY_FOR_REVIEW",
+        "published": false
+      },
+      "decision_status": "PARTIAL",
+      "confidence": "high",
       "caveats": [
-        "EXCEPTION AUDIT 2026-09-23, CLASSIFIED AS FALSE_POSITIVE (same OE string, wrong physical product): Isuzu publishes 8971822820 as 'OIL FILTER; TRANS (CARTRIDGE)' -- an internal transmission filter element, not an engine lubrication component. The only Donaldson hit, P550008, is a full-flow ENGINE oil spin-on canister (3/4-16 UN thread, per data/dims.csv OD 95mm x 136mm) -- a different fluid system (engine oil, not transmission oil) and a different physical form (external spin-on canister, not an internal cartridge). Cross-reference equality does not prove fitment (this manifest's own governing rule E); a single CROSSREF-tier string match across an unrelated product category is rejected as a base rather than accepted on string identity alone.",
-        "P550008 carries no OEM-tier Isuzu row in scripts/donaldson_crossref_flat.csv either -- the 8971822820 hit is CROSSREF tier only, consistent with an over-broad third-party aggregation rather than a genuine Donaldson-Isuzu OEM correspondence.",
-        "DUPLICATE MAPPING AUDIT NOTE (recorded for governance, not actionable here since P550008 is rejected as a base for this row): legacy competitor_cross_references_ld.csv / external_cross_reference_master_ld.csv attach THREE different SKUs to P550008 -- EL50936 (MANN W936), EL50940 (MANN WP940), EL59363 (MANN W936/3) -- none of which is EL80008, the dims.csv-verified current SKU (95mm x 136mm, exact match to Donaldson's own P550008 spec). Classified LEGACY_STALE_CROSSREF: these appear to be an older MANN-sourced import never reconciled against dims.csv, not a live duplicate, but this is outside Isuzu Phase 3's scope to correct since P550008 is not used as a base here.",
-        "BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24: re-investigated without reintroducing P550008 as a candidate. Web research identified the actual transmission: 8971822820 (and the related strainer 8972020670) serve an Isuzu-fitted Aisin RNJ 4-speed automatic transmission, not an Allison unit -- multiple independent retailer listings agree on 'Aisin 4Speed RNJ' across NPR/NPR-HD/NQR/NRR. This is not an Allison transmission, so the task's conditional Allison-documentation research path does not apply here. Exhaustive re-search (local first-party capture, legacy CSVs, and web, all checked again this pass) found no Donaldson product -- transmission, off-highway, or otherwise -- cross-referenced to 8971822820, 8-97182-282-0, or the related strainer number. Donaldson does not appear to publish an equivalent for this specific small-cartridge/strainer-style Aisin automatic-transmission-internal component category at all, consistent with (though not proof of) genuine non-manufacture; that determination was not verified strongly enough (no explicit Donaldson non-coverage statement was found) to promote Fleetguard to base, so the row stays BLOCKED_DONALDSON rather than moving to a Fleetguard base.",
-        "P550008 is NOT reintroduced as a candidate: no new evidence was found this pass that changes the prior pass's FALSE_POSITIVE finding (full-flow engine-oil spin-on vs. Aisin transmission-internal cartridge -- wrong fluid system and wrong physical form)."
+        "SUPERSEDED BY SINGLE-ROW TRANSMISSION CLOSURE 2026-09-24: EXCEPTION AUDIT 2026-09-23, CLASSIFIED AS FALSE_POSITIVE (same OE string, wrong physical product): Isuzu publishes 8971822820 as 'OIL FILTER; TRANS (CARTRIDGE)' -- an internal transmission filter element, not an engine lubrication component. The only Donaldson hit, P550008, is a full-flow ENGINE oil spin-on canister (3/4-16 UN thread, per data/dims.csv OD 95mm x 136mm) -- a different fluid system (engine oil, not transmission oil) and a different physical form (external spin-on canister, not an internal cartridge). Cross-reference equality does not prove fitment (this manifest's own governing rule E); a single CROSSREF-tier string match across an unrelated product category is rejected as a base rather than accepted on string identity alone.",
+        "SUPERSEDED BY SINGLE-ROW TRANSMISSION CLOSURE 2026-09-24: P550008 carries no OEM-tier Isuzu row in scripts/donaldson_crossref_flat.csv either -- the 8971822820 hit is CROSSREF tier only, consistent with an over-broad third-party aggregation rather than a genuine Donaldson-Isuzu OEM correspondence.",
+        "SUPERSEDED BY SINGLE-ROW TRANSMISSION CLOSURE 2026-09-24: DUPLICATE MAPPING AUDIT NOTE (recorded for governance, not actionable here since P550008 is rejected as a base for this row): legacy competitor_cross_references_ld.csv / external_cross_reference_master_ld.csv attach THREE different SKUs to P550008 -- EL50936 (MANN W936), EL50940 (MANN WP940), EL59363 (MANN W936/3) -- none of which is EL80008, the dims.csv-verified current SKU (95mm x 136mm, exact match to Donaldson's own P550008 spec). Classified LEGACY_STALE_CROSSREF: these appear to be an older MANN-sourced import never reconciled against dims.csv, not a live duplicate, but this is outside Isuzu Phase 3's scope to correct since P550008 is not used as a base here.",
+        "SUPERSEDED BY SINGLE-ROW TRANSMISSION CLOSURE 2026-09-24: BLOCKED_DONALDSON CLOSURE MICRO-PHASE 2026-09-24: re-investigated without reintroducing P550008 as a candidate. Web research identified the actual transmission: 8971822820 (and the related strainer 8972020670) serve an Isuzu-fitted Aisin RNJ 4-speed automatic transmission, not an Allison unit -- multiple independent retailer listings agree on 'Aisin 4Speed RNJ' across NPR/NPR-HD/NQR/NRR. This is not an Allison transmission, so the task's conditional Allison-documentation research path does not apply here. Exhaustive re-search (local first-party capture, legacy CSVs, and web, all checked again this pass) found no Donaldson product -- transmission, off-highway, or otherwise -- cross-referenced to 8971822820, 8-97182-282-0, or the related strainer number. Donaldson does not appear to publish an equivalent for this specific small-cartridge/strainer-style Aisin automatic-transmission-internal component category at all, consistent with (though not proof of) genuine non-manufacture; that determination was not verified strongly enough (no explicit Donaldson non-coverage statement was found) to promote Fleetguard to base, so the row stays BLOCKED_DONALDSON rather than moving to a Fleetguard base.",
+        "SUPERSEDED BY SINGLE-ROW TRANSMISSION CLOSURE 2026-09-24: P550008 is NOT reintroduced as a candidate: no new evidence was found this pass that changes the prior pass's FALSE_POSITIVE finding (full-flow engine-oil spin-on vs. Aisin transmission-internal cartridge -- wrong fluid system and wrong physical form).",
+        "SINGLE-ROW TRANSMISSION CLOSURE 2026-09-24: prior FALSE_POSITIVE reasoning is superseded. Isuzu calls 8971822820 OIL FILTER; TRANS (CARTRIDGE), but cartridge does not establish an internal non-spin-on form. Donaldson first-party capture directly cross-references ISUZU 8971822820 to P550008. Independent Fleetguard application evidence maps the same exact Isuzu number as Transmission Filter -> LF551A, and Fleetguard currently specifies LF551A as a 3/4-16 UNF spin-on, 96.06 mm OD x 137.08 mm high -- essentially the same physical envelope as Donaldson P550008 / EL80008 (95 mm x 136 mm, 3/4-16 UN). This resolves the earlier form/category objection. The row remains PARTIAL because Phase 2 is PARTIAL; it is not promoted to VERIFIED_BASE."
       ],
       "evidence": [
         {
@@ -1706,7 +1721,15 @@
           "tier": "CROSSREF"
         }
       ],
-      "root_cause": "C_WRONG_PRODUCT_TYPE"
+      "root_cause": null,
+      "microphase_closure_2026_09_24": {
+        "status": "RESOLVED_PARTIAL",
+        "exact_oen": "8971822820",
+        "selected_base": "P550008",
+        "selected_sku": "EL80008",
+        "resolution_basis": "The prior rejection treated Isuzu wording CARTRIDGE as proof of an internal element. That interpretation is not supported. Isuzu itself identifies the part as a transmission oil filter; Donaldson first-party capture maps exact Isuzu 8971822820 to P550008; Fleetguard independently maps the same exact OEN as a Transmission Filter to LF551A; current Fleetguard LF551A geometry is essentially the same spin-on form as P550008/EL80008. The cross-category concern is therefore resolved as a terminology/application-context issue, not a physical mismatch.",
+        "phase2_ceiling": "PARTIAL"
+      }
     },
     {
       "row_id": "P3-13-F-LUBE-1987-2008",
@@ -3015,6 +3038,18 @@
       "decision_status": "BLOCKED_DONALDSON",
       "fleetguard_gate": "NOT_ELIGIBLE_DONALDSON_NOT_MANUFACTURED_NOT_VERIFIED",
       "note": "Single-row FUEL_WATER_SEPARATOR closure. Rechecked Isuzu 8982373410 against current Donaldson public evidence. P550736 is a genuine Donaldson fuel-filter/water-separator cartridge, but Donaldson associates it with DAVCO Fuel Pro and no official Isuzu 8982373410 cross-reference was found. The earlier single-aggregator pairing is rejected as a platform mismatch. With no valid Donaldson candidate remaining, the row is refined to DONALDSON_NOT_FOUND. This is not a verified non-manufacture determination, so Fleetguard fallback remains prohibited. No other Phase 3 row, Phase 1, Phase 2, live catalog SKU, or application was changed."
+    },
+    {
+      "on": "2026-09-24",
+      "status": "RESOLVED_PARTIAL",
+      "scope": "P2-N-TRANS_ONLY",
+      "starting_donaldson_status": "DONALDSON_AMBIGUOUS",
+      "final_donaldson_status": "DONALDSON_VERIFIED",
+      "starting_decision_status": "BLOCKED_DONALDSON",
+      "final_decision_status": "PARTIAL",
+      "base": "DONALDSON P550008",
+      "elimfilters_sku": "EL80008",
+      "note": "Single-row transmission closure. Reversed the prior false-positive rejection after independent physical/application corroboration showed that the Isuzu CARTRIDGE wording does not imply an internal non-spin-on element. Donaldson first-party capture has the exact ISUZU 8971822820 -> P550008 cross-reference; Fleetguard application evidence independently calls 8971822820 a Transmission Filter and maps it to LF551A; Fleetguard current specs for LF551A are a 3/4-16 spin-on with nearly identical dimensions to P550008/EL80008. Donaldson remains the canonical base. Phase 2 PARTIAL is the evidence ceiling."
     }
   ],
   "duplicate_mapping_audit": {
@@ -3045,8 +3080,8 @@
           "EL59363 (MANN W936/3)"
         ],
         "classification": "LEGACY_STALE_CROSSREF",
-        "reasoning": "dims.csv has exactly one live entry for P550008 (EL80008, 95mm x 136mm, matching Donaldson's own published spec exactly). The three legacy SKUs come from an older MANN-sourced import that was never reconciled against dims.csv. Not corrected in this pass because P550008 is not used as a base anywhere in Isuzu Phase 3 (see P2-N-TRANS, rejected as a false-positive category mismatch) -- flagged for a general (non-Isuzu-scoped) legacy-CSV governance pass instead.",
-        "action_taken": "none (out of this task's scope: not implicated in any live Isuzu base decision)"
+        "reasoning": "dims.csv and the Donaldson first-party capture identify EL80008 as the canonical P550008 owner (95 mm x 136 mm, 3/4-16 UN). The three legacy MANN-sourced rows (EL50936/W936, EL50940/WP940, EL59363/W936/3) were stale competitor-import mappings, not separate canonical owners. Because P550008 is now an active Isuzu Phase 3 base for 8971822820, those stale rows were removed from the two legacy CSV exports to prevent canonical ambiguity.",
+        "action_taken": "removed 3 stale P550008 rows from competitor_cross_references_ld.csv and the matching 3 rows from external_cross_reference_master_ld.csv; canonical owner remains EL80008"
       }
     ],
     "all_other_parts": "No second SKU found in the legacy exports for any of the other 12 parts checked. Each has exactly one ELIMFILTERS SKU across scripts/donaldson_crossref_flat.csv, the legacy CSVs and data/dims.csv.",

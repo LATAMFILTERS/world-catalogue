@@ -491,12 +491,12 @@ marked `UNVERIFIED` because no competitor catalogue was reached.
 | P2-N-LUBE-1998-2010 | 2906542701, 2906548000, 2906548100 | P502042 -- equipment-application match to 4HE1-TC/4HK1-TC (P550973 rejected: serves only 4BD1/4BD2/4BB1) | PARTIAL (`MICROCASE PASS 2026-09-24`) | EL82042 (reuse) |
 | P2-N-LUBE-2011-ON | 2906544040, 8982984040 | P848076, via Donaldson's own product title + 2 independent distributor pages (not in first-party capture) | PARTIAL (Phase 2 row PARTIAL; `SKU CLOSURE PASS 2026-09-24`) | EL88076 (new, `CREATE_GOVERNED_SKU`) |
 | P2-F-LUBE-2018-2021 | 8982984040 (identical Phase-2 number to the row above) | same P848076 identity, same evidence | VERIFIED_BASE (Phase 2 row VERIFIED, `DIRECT_OE_CROSS`; `SKU CLOSURE PASS`) | EL88076 (new, `CREATE_GOVERNED_SKU`) |
-| P2-N-TRANS | 8971822820 (cartridge) | only P550008, an engine-oil spin-on -- rejected as a false-positive category mismatch; confirmed this pass the transmission is Aisin RNJ, not Allison | BLOCKED_DONALDSON, root_cause `C_WRONG_PRODUCT_TYPE` | none |
+| P2-N-TRANS | 8971822820 | P550008, exact Donaldson first-party Isuzu cross; Fleetguard LF551A independently corroborates the same OEN as a transmission filter and confirms matching spin-on geometry | PARTIAL (Phase 2 ceiling; `TRANSMISSION SINGLE-ROW CLOSURE 2026-09-24`) | EL80008 (reuse) |
 | P2-N-FWS-2022i-ON | 8982373410 | P550736 candidate found and rejected (genuine Davco/Volvo/Mercedes-Benz part, no real Isuzu tie) | BLOCKED_DONALDSON, root_cause `B_ONLY_FALSE_POSITIVE_CROSS` | none |
 
-**Base decisions:** 17 Donaldson-based, 0 Fleetguard-based, 2 with no base yet.
-**ELIMFILTERS:** 9 existing SKUs reused (EA16773, EA13614, EL82597, EF92564, EF92599,
-EF92427, EF90390, EL80420, EL82042), plus one new governed candidate SKU minted this pass
+**Base decisions:** 18 Donaldson-based, 0 Fleetguard-based, 1 with no base yet.
+**ELIMFILTERS:** 10 existing SKUs reused (EA16773, EA13614, EL82597, EF92564, EF92599,
+EF92427, EF90390, EL80420, EL82042, EL80008), plus one new governed candidate SKU minted this pass
 (EL88076, for Donaldson P848076 -- see **P848076 ELIMFILTERS SKU CLOSURE — 2026-09-24**
 below). Each Donaldson base maps to exactly one SKU, so no duplicates were created among the
 bases actually used. SKU existence was checked against the repository catalogue export
@@ -704,23 +704,20 @@ docs) since the first-party capture is silent on this part:**
   Donaldson candidate, so the row is refined from `DONALDSON_AMBIGUOUS` to
   `DONALDSON_NOT_FOUND`. This is explicitly **not** `DONALDSON_NOT_MANUFACTURED_VERIFIED`;
   Fleetguard remains ineligible.
-- **`P2-N-TRANS`** (`8971822820`), root_cause `C_WRONG_PRODUCT_TYPE` (unchanged from the
-  2026-09-23 exception pass — `P550008` was **not** reintroduced as a candidate). New this
-  pass: confirmed via multiple independent retailer listings that the transmission is an
-  **Aisin RNJ 4-speed automatic**, not Allison — so the task's conditional Allison-documentation
-  research path does not apply. No Donaldson product (transmission, off-highway, or otherwise)
-  was found cross-referenced to `8971822820` or the related strainer number `8972020670`
-  anywhere, consistent with (though not proof of) Donaldson not serving this small,
-  transmission-internal Aisin cartridge/strainer category at all. That non-manufacture signal
-  was not strong enough to verify formally, so Fleetguard stays ineligible as a base and the
-  row remains `BLOCKED_DONALDSON` rather than moving to a Fleetguard fallback.
+- **`P2-N-TRANS`** (`8971822820`) was still `BLOCKED_DONALDSON` at this historical pass because
+  `P550008` had been rejected on a presumed cartridge-vs-spin-on mismatch. **Superseded later on
+  2026-09-24:** the single-row transmission closure established that Isuzu's `CARTRIDGE` wording
+  does not prove an internal non-spin-on element; Donaldson's exact OEN cross plus independent
+  Fleetguard transmission-application and physical-form corroboration resolved the row to
+  `P550008 → EL80008` at `PARTIAL`.
 
 **Zero Fleetguard bases.** No row in this micro-phase — or anywhere else in the file — has
 ever reached `DONALDSON_NOT_MANUFACTURED_VERIFIED`.
 
-**Untouched by design:** Phase 1, Phase 2, the 9 `BLOCKED_OEM` rows, the other 15 Phase 3
-resolution rows, the `2026-09-23`/`2026-09-24` exception-audit findings already on file, and
-the `P550008` legacy-CSV cleanup item (still flagged, still out of scope) are all unchanged.
+**Untouched by design at that historical pass:** Phase 1, Phase 2, the 9 `BLOCKED_OEM` rows,
+the other 15 Phase 3 resolution rows, and the earlier exception-audit findings were unchanged.
+The later single-row transmission closure subsequently activated `P550008` and therefore also
+closed its stale legacy-CSV mapping debt.
 
 ### P848076 ELIMFILTERS SKU CLOSURE — 2026-09-24
 
@@ -908,15 +905,12 @@ the documented gaps:
    F-Series 2013-2021/2018-2020) is still open at the Isuzu level; this pass assigned the
    same Donaldson evidence to both configurations of each pair rather than resolving that
    Phase 2 ambiguity, which stays out of scope for Phase 3.
-4. The legacy-CSV stale mapping found on `P550008` (`EL50936`/`EL50940`/`EL59363` vs the
-   live `EL80008`) is not Isuzu-specific and is out of this task's scope; flagged for a
-   general legacy cross-reference governance pass.
-5. The 2 remaining `BLOCKED_DONALDSON` rows need, respectively: for `P2-N-FWS-2022i-ON`, a
-   genuine Donaldson equivalent for `8982373410` (likely not yet catalogued given how new the
-   part is); for `P2-N-TRANS`, any Donaldson product actually built for the Aisin RNJ
-   4-speed automatic transmission's internal cartridge/strainer category, or a defensible
-   verified statement that Donaldson does not serve that category, before Fleetguard can be
-   considered.
+4. The stale legacy `P550008` mappings (`EL50936`/`EL50940`/`EL59363`) were removed from
+   both legacy CSV exports when `P550008` became an active Isuzu base. The canonical owner is
+   `EL80008`.
+5. One `BLOCKED_DONALDSON` row remains: `P2-N-FWS-2022i-ON` / `8982373410`. It still needs a
+   genuine Donaldson equivalent or a verified Donaldson non-manufacture determination before
+   Fleetguard may be considered.
 5. `8982984040` and `2906544040` are resolved (Donaldson `P848076`, candidate ELIMFILTERS
    `EL88076`) as of the `P848076 ELIMFILTERS SKU CLOSURE — 2026-09-24` pass. Obtain
    Donaldson data for `8982373410` through a non-blocked Donaldson channel; until then that
@@ -931,6 +925,26 @@ the documented gaps:
 9. Obtain NPR-HD and NRR's own MY2021 crew-cab specification PDFs through a route that does
    not hit the reproducible 1,048,576-byte truncation documented above, to replace the
    same-batch sibling-evidence closure with each model's own document.
+
+### P2-N-TRANS single-row closure — 8971822820 (2026-09-24)
+
+The prior `P550008` rejection was reopened only for this row. Isuzu's exact OEN remains
+`8971822820`, described by Isuzu as `OIL FILTER; TRANS (CARTRIDGE)` with a `1998-` diesel scope.
+The repository-held first-party Donaldson capture directly cross-references that exact Isuzu
+number to `P550008`. Independent Fleetguard application material maps the same exact Isuzu OEN
+as a **Transmission Filter** to `LF551A`; Fleetguard's current product data identifies `LF551A`
+as a 3/4-16 UNF spin-on at 96.06 mm OD × 137.08 mm high. That physical form closely matches
+Donaldson `P550008` / ELIMFILTERS `EL80008` at 95 mm × 136 mm with a 3/4-16 UN thread.
+
+Accordingly, the earlier assumption that Isuzu's word `CARTRIDGE` necessarily meant an internal,
+non-spin-on transmission element is superseded. The row now resolves to Donaldson `P550008` as
+the canonical base and reuses existing ELIMFILTERS SKU `EL80008`. Fleetguard `LF551A` remains
+corroboration only; it does not define the base. The decision is `PARTIAL`, not `VERIFIED_BASE`,
+because Phase 2 itself is `PARTIAL` and remains the evidence ceiling.
+
+Because `P550008` is now an active Isuzu base, the three stale MANN-import mappings to `EL50936`,
+`EL50940`, and `EL59363` were removed from both legacy cross-reference CSV exports. Canonical
+ownership remains `P550008 → EL80008`.
 
 ### Live catalogue publication — P848076 / EL88076 (2026-09-24)
 
