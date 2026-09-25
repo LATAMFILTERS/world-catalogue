@@ -1,0 +1,53 @@
+{
+  "skill": "elimfilters-brag",
+  "version": 1,
+  "status": "COMPLETE_STORYBOARD_ONLY",
+  "repository": "LATAMFILTERS/world-catalogue",
+  "source_ref": "1e00a0bb89f5dda857136b956c29a637320c5946",
+  "subject": "/industrial-process/",
+  "public_url": "https://elimfilters.com/industrial-process/",
+  "audience": [
+    "industrial buyers",
+    "industrial distributors",
+    "OEM/EPC/integrator technical audiences"
+  ],
+  "language": "en",
+  "channels": [
+    "linkedin",
+    "instagram"
+  ],
+  "canonical_platforms": [
+    "AEREMIS™",
+    "PARTION™",
+    "COALVEX™",
+    "FLUREXIS™",
+    "AQUVEXIS™"
+  ],
+  "brand_sources": [
+    "docs/brand/CLAIM_REGISTRY.md",
+    "docs/brand/BRAND_MANUAL.md",
+    "frontend/src/lib/industrial-process-architecture.ts",
+    "elimfilters-vault/13-canonical-knowledge/industrial-process/IP-INDUSTRIAL-PROCESS-ARCHITECTURE.md"
+  ],
+  "reused_assets": [
+    "/images/INDUSTRIAL PROCESS.mp4",
+    "/images/planta_converted.avif",
+    "/images/AEREMIS.mp4",
+    "/images/PARTION-VIDEO.mp4",
+    "/images/COALVEX.mp4",
+    "/images/FLUREXIS-VIDEO.mp4",
+    "/images/AQUVEXIS.mp4"
+  ],
+  "generated_assets": [
+    "docs/launch/brag/industrial-process/PILOT.md",
+    "docs/launch/brag/industrial-process/manifest.v1.json"
+  ],
+  "claims": [
+    "ELIMFILTERS = Industrial Filtration Engineering",
+    "Strategic offering = Asset Protection Systems",
+    "The filter is the means. Asset protection is the objective."
+  ],
+  "capture_status": "NOT_EXECUTED_REMOTE_SHELL_UNAVAILABLE",
+  "render_status": "NOT_EXECUTED_REMOTE_SHELL_UNAVAILABLE",
+  "publication_authorized": false
+}
