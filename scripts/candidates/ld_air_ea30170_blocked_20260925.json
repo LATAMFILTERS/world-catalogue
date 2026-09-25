@@ -1,0 +1,16 @@
+{
+  "sku": "EA30170",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CANONICAL_RECONCILIATION_REQUIRED__FRAM_CA10170_CONFLICTS_WITH_EXISTING_SAAB_APPLICATION_UNIVERSE",
+  "details": {
+    "fram_family": "Ford/Mercury CA10170",
+    "public_legacy_applications": 78,
+    "relational_legacy_applications": 39,
+    "legacy_makes": [
+      "SAAB (USA)"
+    ],
+    "resolution": "DO_NOT_CLEAN_PUBLIC_ONLY_WHILE_RELATIONAL_CONTAMINATION_REMAINS"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

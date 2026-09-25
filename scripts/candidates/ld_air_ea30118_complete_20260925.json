@@ -1,0 +1,12 @@
+{
+  "sku": "EA30118",
+  "terminal_state": "COMPLETE_REFERENCE_CORRECTION",
+  "canonical_brand": "MANN-FILTER",
+  "canonical_code": "C118",
+  "correction": {
+    "removed_reference": "FRAM CA10118",
+    "reason": "FRAM CA10118 Dodge/Jeep flexible panel family is incompatible with MANN C118 canonical family",
+    "migration": "run_149_clean_b03_fram_suffix_contamination.js"
+  },
+  "closed_at": "2026-09-25"
+}

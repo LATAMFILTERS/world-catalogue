@@ -1,0 +1,18 @@
+{
+  "sku": "EA30110",
+  "terminal_state": "COMPLETE_CANONICAL_PROMOTION_WITH_APPLICATION_CLEANUP",
+  "canonical_brand": "FRAM",
+  "canonical_code": "CA10110",
+  "actions": [
+    "promoted codigo_base 0110 -> CA10110",
+    "inserted NON_EUROPEAN FRAM canonical identity",
+    "removed canonical code from alternates",
+    "removed 300 unsupported MAN TRUCK applications"
+  ],
+  "pending_enrichment": "FRAM Buick/Chevrolet/GMC/Saturn fitments/crosses require independent validation before publication",
+  "migrations": [
+    "run_150_promote_ea30110_ca10110.js",
+    "run_151_clean_ea30110_legacy_apps.js"
+  ],
+  "closed_at": "2026-09-25"
+}

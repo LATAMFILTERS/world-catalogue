@@ -1,0 +1,12 @@
+{
+  "sku": "EA30101",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "EUROPEAN_FAMILY__FRAM_CA101_EVIDENCE_PRESENT_BUT_MANN_CANONICAL_AUTHORITY_NOT_RESOLVED",
+  "authority_candidate": {
+    "brand": "FRAM",
+    "code": "CA101"
+  },
+  "applications": "FIAT 1100/1100D/1200",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

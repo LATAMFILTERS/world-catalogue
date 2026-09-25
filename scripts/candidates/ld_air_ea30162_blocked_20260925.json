@@ -1,0 +1,11 @@
+{
+  "sku": "EA30162",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "FRAM_SKU_COLLISION__CA10162_VALID_FORD_FAMILY_BUT_CA162_VARIANT_RELATION_UNPROVEN",
+  "details": {
+    "CA10162": "Ford flexible panel with OE evidence",
+    "CA162": "sparse authority record without specs/applications/crosses"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

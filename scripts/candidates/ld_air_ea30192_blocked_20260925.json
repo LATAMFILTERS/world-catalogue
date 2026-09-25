@@ -1,0 +1,11 @@
+{
+  "sku": "EA30192",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "FRAM_SKU_COLLISION__CA10192_AND_CA192_PHYSICALLY_INCOMPATIBLE",
+  "details": {
+    "CA10192": "Flexible panel Chrysler family",
+    "CA192": "Round plastisol GM/Jeep family with 369 applications"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

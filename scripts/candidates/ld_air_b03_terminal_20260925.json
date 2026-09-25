@@ -1,0 +1,79 @@
+{
+  "batch": "LD_AIR_B03",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE_WITH_BLOCKERS",
+  "counts": {
+    "COMPLETE_CANONICAL_PROMOTION_WITH_APPLICATION_CLEANUP": 2,
+    "BLOCKED_WITH_REASON": 6,
+    "COMPLETE_REFERENCE_CORRECTION": 2
+  },
+  "catalog_writes": [
+    "EA30093 canonical FRAM promotion + legacy application cleanup",
+    "EA30110 canonical FRAM promotion + legacy application cleanup",
+    "EA30118 FRAM suffix reference correction",
+    "EA30193 FRAM suffix reference correction"
+  ],
+  "candidates": [
+    {
+      "sku": "EA30093",
+      "terminal_state": "COMPLETE_CANONICAL_PROMOTION_WITH_APPLICATION_CLEANUP",
+      "reason": null,
+      "file": "ld_air_ea30093_complete_20260925.json"
+    },
+    {
+      "sku": "EA30101",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "EUROPEAN_FAMILY__FRAM_CA101_EVIDENCE_PRESENT_BUT_MANN_CANONICAL_AUTHORITY_NOT_RESOLVED",
+      "file": "ld_air_ea30101_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30110",
+      "terminal_state": "COMPLETE_CANONICAL_PROMOTION_WITH_APPLICATION_CLEANUP",
+      "reason": null,
+      "file": "ld_air_ea30110_complete_20260925.json"
+    },
+    {
+      "sku": "EA30118",
+      "terminal_state": "COMPLETE_REFERENCE_CORRECTION",
+      "reason": null,
+      "file": "ld_air_ea30118_complete_20260925.json"
+    },
+    {
+      "sku": "EA30159",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_SKU_COLLISION__CA10159_AND_CA159_PHYSICALLY_INCOMPATIBLE",
+      "file": "ld_air_ea30159_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30161",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "DUPLICATE_OWNERSHIP__FRAM_CA10161_RESOLVES_TO_EA10875_NOT_EA30161",
+      "file": "ld_air_ea30161_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30162",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_SKU_COLLISION__CA10162_VALID_FORD_FAMILY_BUT_CA162_VARIANT_RELATION_UNPROVEN",
+      "file": "ld_air_ea30162_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30170",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_RECONCILIATION_REQUIRED__FRAM_CA10170_CONFLICTS_WITH_EXISTING_SAAB_APPLICATION_UNIVERSE",
+      "file": "ld_air_ea30170_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30192",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_SKU_COLLISION__CA10192_AND_CA192_PHYSICALLY_INCOMPATIBLE",
+      "file": "ld_air_ea30192_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30193",
+      "terminal_state": "COMPLETE_REFERENCE_CORRECTION",
+      "reason": null,
+      "file": "ld_air_ea30193_complete_20260925.json"
+    }
+  ],
+  "closed_at": "2026-09-25"
+}

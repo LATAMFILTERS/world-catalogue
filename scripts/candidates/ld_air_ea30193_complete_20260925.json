@@ -1,0 +1,12 @@
+{
+  "sku": "EA30193",
+  "terminal_state": "COMPLETE_REFERENCE_CORRECTION",
+  "canonical_brand": "MANN-FILTER",
+  "canonical_code": "C40193",
+  "correction": {
+    "removed_reference": "FRAM CA10193",
+    "reason": "FRAM CA10193 Chevrolet/Suzuki family maps to MANN C3028, not canonical MANN C40193",
+    "migration": "run_149_clean_b03_fram_suffix_contamination.js"
+  },
+  "closed_at": "2026-09-25"
+}

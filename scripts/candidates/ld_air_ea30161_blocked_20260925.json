@@ -1,0 +1,11 @@
+{
+  "sku": "EA30161",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "DUPLICATE_OWNERSHIP__FRAM_CA10161_RESOLVES_TO_EA10875_NOT_EA30161",
+  "details": {
+    "current_row": "EA30161 legacy family with C20161/MAN/UFI references",
+    "fram_family": "CA10161 Chevrolet/GMC; MANN CP24333 cross"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

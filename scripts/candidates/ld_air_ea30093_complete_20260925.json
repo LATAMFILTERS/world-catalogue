@@ -1,0 +1,18 @@
+{
+  "sku": "EA30093",
+  "terminal_state": "COMPLETE_CANONICAL_PROMOTION_WITH_APPLICATION_CLEANUP",
+  "canonical_brand": "FRAM",
+  "canonical_code": "CA10093",
+  "actions": [
+    "promoted codigo_base 0093 -> CA10093",
+    "inserted NON_EUROPEAN FRAM canonical identity",
+    "removed canonical code from alternate refs",
+    "removed 20 unsupported legacy Kia/Toyota applications"
+  ],
+  "pending_enrichment": "FRAM Chevrolet HHR fitments/crosses require independent validation before publication",
+  "migrations": [
+    "run_147_promote_ea30093_ca10093.js",
+    "run_148_clean_ea30093_legacy_apps.js"
+  ],
+  "closed_at": "2026-09-25"
+}

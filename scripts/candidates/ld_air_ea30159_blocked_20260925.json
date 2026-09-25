@@ -1,0 +1,11 @@
+{
+  "sku": "EA30159",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "FRAM_SKU_COLLISION__CA10159_AND_CA159_PHYSICALLY_INCOMPATIBLE",
+  "details": {
+    "CA10159": "Rigid panel Toyota 17801-21040",
+    "CA159": "Round plastisol legacy Ford/Allis family"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
