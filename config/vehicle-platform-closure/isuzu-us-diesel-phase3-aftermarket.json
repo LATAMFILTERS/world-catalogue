@@ -3820,12 +3820,13 @@
     }
   ],
   "next_actions": [
-    "The one remaining CONFLICTING row (P2-N-LUBE-1998-2010) needs a Donaldson OEM-tier source (not CROSSREF-tier) that names 2906548000 directly, or an Isuzu-side document distinguishing which physical filter it is, before it can move past CONFLICTING.",
-    "Reviewer: confirm each of the 8 reused SKUs (EA16773, EA13614, EL82597, EF92564, EF92599, EF92427, EF90390, EL80420) is live in PostgreSQL, then decide on publication through catalog-write-gateway.",
-    "The Isuzu standard-vs-high-capacity fuel filter distinction (Phase 2 scope, N-Series and F-Series 2013-2021/2018-2020) is still open at the Isuzu level; this pass assigned the same Donaldson evidence to both configurations of each pair rather than resolving that Phase 2 ambiguity, which stays out of scope for Phase 3.",
-    "Legacy-CSV stale mapping found on P550008 (EL50936/EL50940/EL59363 vs the live EL80008) is not Isuzu-specific and is out of this task's scope; flagged for a general legacy cross-reference governance pass.",
-    "Obtain Donaldson data for 8982984040, 2906544040 and 8982373410 through a non-blocked Donaldson channel; until then those rows stay BLOCKED_DONALDSON.",
-    "Only a verified DONALDSON_NOT_MANUFACTURED determination may open a Fleetguard base."
+    "PHASE 3 IS CLOSED. Do not reopen resolved rows unless new first-party OEM/manufacturer evidence materially changes a terminal decision.",
+    "P3-N-FUEL-2006-NPR / Isuzu 8980284111 remains terminal BLOCKED_DONALDSON: seek either an exact Donaldson equivalent or a verified DONALDSON_NOT_MANUFACTURED determination. Fleetguard remains ineligible until non-manufacture is verified.",
+    "P3-11-N-FWS-2022i-ON / Isuzu 8982373410 remains terminal BLOCKED_DONALDSON: seek either an exact Donaldson equivalent or a verified DONALDSON_NOT_MANUFACTURED determination. P550736 remains rejected as a false positive.",
+    "Phase 2 follow-up only: resolve the Isuzu standard-vs-high-capacity fuel-filter distinction for N-Series 2013-2021 and F-Series 2018-2020 if first-party Isuzu evidence becomes available. This ambiguity is intentionally not reopened inside Phase 3.",
+    "General catalogue-governance follow-up only: continue monitoring legacy cross-reference integrity around P550008/EL80008 outside the Isuzu closure. The three stale legacy mappings were already removed from both legacy CSV exports.",
+    "OEM evidence follow-up only when new first-party material exists: H-Series, FRR/FXR, F-Series transverse positions, N-Series residual fuel scopes and N-Series cabin remain terminal BLOCKED_OEM with explicit reasons. Do not infer by continuity, sibling model or shared engine.",
+    "EL88076 / Donaldson P848076 is already LIVE and governed in catalogo_elimfilters via scripts/migrations/run_119_create_el88076_p848076.js; no publication action remains for this SKU."
   ],
   "exception_audit_status": "CLOSED_WITH_BLOCKERS",
   "exception_audit_history": [
