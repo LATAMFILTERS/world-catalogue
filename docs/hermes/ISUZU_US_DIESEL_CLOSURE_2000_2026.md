@@ -918,8 +918,8 @@ UNRESOLVED with no aftermarket answer.
 
 Phases 1, 2 and 3 are closed. The remaining items below are **post-closure follow-ups**, not unfinished Phase 3 work:
 
-1. **Donaldson follow-up — MY2006 NPR fuel:** `P3-N-FUEL-2006-NPR` / Isuzu `8980284111` remains terminal `BLOCKED_DONALDSON`. Reopen only if an exact Donaldson equivalent or an explicit Donaldson non-manufacture determination is found. Fleetguard remains ineligible otherwise.
-2. **Donaldson follow-up — 2022i-on N-Series FWS:** `P3-11-N-FWS-2022i-ON` / Isuzu `8982373410` remains terminal `BLOCKED_DONALDSON`. `P550736` is rejected. Reopen only on exact Donaldson evidence or verified non-manufacture.
+1. **Donaldson regional follow-up — CLOSED:** `P3-N-FUEL-2006-NPR` / Isuzu `8980284111` is terminal `BLOCKED_DONALDSON`. Official Asia-Pacific/Australasia Donaldson material identifies `P550390` on the matching 4HK1 5.2L NPR-family 2005-2007 primary-fuel application, so `P550390` is the final regional candidate. It is not promoted because the exact `8980284111 → P550390` first-party OEN tie is absent. Reopen only on that exact tie or explicit Donaldson non-manufacture.
+2. **Donaldson regional follow-up — CLOSED:** `P3-11-N-FWS-2022i-ON` / Isuzu `8982373410` is terminal `BLOCKED_DONALDSON`. `P550736` remains rejected. Official Asia-Pacific/Australasia Donaldson material identifies category-correct `P551855` on later 4HK1 N-Series fuel/water-separator applications, so `P551855` is the final regional candidate. It is not promoted because the exact `8982373410 → P551855` first-party OEN tie is absent. Reopen only on that exact tie or explicit Donaldson non-manufacture.
 3. **Phase 2 fuel-role follow-up:** the standard-vs-high-capacity distinction is CLOSED as `COMMERCIAL_VARIANT_NOT_SEPARATE_OEM_POSITION`: Isuzu publishes the standard and high-capacity FleetValue offerings against the same Genuine OEN sets. The remaining terminal PARTIAL scope is only the unresolved exact engine/chassis/kit-position assignment. Reopen only on new first-party Isuzu evidence that identifies those positions or kit contents.
 4. **OEM evidence follow-up:** H-Series, FRR/FXR, F-Series transverse positions, residual N-Series fuel scopes and N-Series cabin are terminal `BLOCKED_OEM`. Reopen only when new first-party Isuzu/Cummins evidence supplies the missing exact identity; do not infer by continuity, sibling model or shared engine.
 5. **General catalogue governance:** continue legacy cross-reference integrity checks for `P550008 / EL80008` outside the Isuzu closure. The three stale legacy mappings were already removed.
@@ -1010,3 +1010,8 @@ The Phase 3 `elimfilters_base_decision.published` flag remains `false` by
 design: it is the no-auto-publication guard for research decisions, not the live
 catalogue publication state. Live publication is recorded separately under
 `live_catalog_publication`.
+
+
+### Donaldson regional terminal closure — 2026-09-25
+
+The two remaining Isuzu `BLOCKED_DONALDSON` rows were closed against the official Donaldson regional material already registered in the repository. `P3-N-FUEL-2006-NPR` retains `P550390` as the final regional candidate because Donaldson publishes it for the matching 4HK1 5.2L NPR-family 2005-2007 primary-fuel application. `P3-11-N-FWS-2022i-ON` retains `P551855` as the final regional candidate because Donaldson publishes it as the category-correct fuel/water-separator on later N-Series 4HK1 applications. Neither candidate is promoted to canonical base because the current evidence does not publish the exact US Isuzu OEN cross (`8980284111` or `8982373410`). Under the existing exact-OEN governance, regional engine/model-family application evidence cannot substitute for that identity link. The regional research path is therefore exhausted and terminal; Fleetguard remains closed because Donaldson non-manufacture is not verified. No OEN, base, SKU, fitment, or catalogue publication changed.
