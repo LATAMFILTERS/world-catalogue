@@ -1,0 +1,22 @@
+{
+  "sku": "EA30052",
+  "codigo_base": "CA52",
+  "reason": "REGIONAL_AUTHORITY_CONFLICT__LEGACY_FRAM_PROMOTION_WITH_HYUNDAI_BMW_MINI_FORTHING_SCOPE",
+  "evidence": {
+    "approved_manufacturer": "FRAM",
+    "approved_codigo_base": "CA52",
+    "primary_manufacturer_verified": true,
+    "current_traceable_authority_ref": false,
+    "application_scope": [
+      "HYUNDAI",
+      "BMW (USA)",
+      "MINI (USA)",
+      "FORTHING"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

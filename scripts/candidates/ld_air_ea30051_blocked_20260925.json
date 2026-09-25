@@ -1,0 +1,23 @@
+{
+  "sku": "EA30051",
+  "codigo_base": "C51",
+  "reason": "CANONICAL_EVIDENCE_PROVENANCE_AND_APPLICATION_SCOPE_UNRESOLVED__LEGACY_MANN_PROMOTION_WITH_MIXED_GLOBAL_SCOPE",
+  "evidence": {
+    "approved_manufacturer": "MANN-FILTER",
+    "approved_codigo_base": "C51",
+    "primary_manufacturer_verified": true,
+    "current_traceable_authority_ref": false,
+    "application_scope": [
+      "BYD",
+      "CHERY",
+      "FORD",
+      "KOMATSU",
+      "MERCEDES-BENZ"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

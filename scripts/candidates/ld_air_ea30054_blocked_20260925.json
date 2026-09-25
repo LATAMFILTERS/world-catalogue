@@ -1,0 +1,21 @@
+{
+  "sku": "EA30054",
+  "codigo_base": "0054",
+  "reason": "CANONICAL_AUTHORITY_UNRESOLVED__MANN_C54_AND_FRAM_CA54_PRESENT_WITHOUT_GEOMETRY_PROOF",
+  "evidence": {
+    "authority_candidates": [
+      "MANN C54",
+      "FRAM CA54"
+    ],
+    "application_scope": [
+      "KIA",
+      "TOYOTA"
+    ],
+    "catalog_geometry_available": false
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

@@ -1,0 +1,31 @@
+{
+  "sku": "EA30055",
+  "codigo_base": "C55(4)",
+  "previous_codigo_base": "0055",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C55(4)",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "PROMOTE_TRACEABLE_MANN_AUTHORITY_TO_CANONICAL_IDENTITY",
+  "evidence": {
+    "official_source": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c55%284%29_mann-filter.html",
+    "official_dimensions_mm": {
+      "outer_diameter": 51,
+      "inner_diameter": 5.1,
+      "inner_diameter_1": 31,
+      "height": 92
+    },
+    "catalog_dimensions_mm": {
+      "outer_diameter": 51,
+      "height": 92
+    },
+    "application_scope": "RIETSCHLE"
+  },
+  "catalog_action": "CANONICAL_PROMOTION_COMMIT",
+  "part_search_validated": true,
+  "closed_at": "2026-09-25"
+}

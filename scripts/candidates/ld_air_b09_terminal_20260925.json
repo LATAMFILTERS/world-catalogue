@@ -1,0 +1,41 @@
+{
+  "batch": "LD_AIR_B09",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE_WITH_BLOCKERS",
+  "counts": {
+    "COMPLETE": 2,
+    "BLOCKED_WITH_REASON": 3
+  },
+  "catalog_writes": [
+    "EA30053 canonical metadata sync",
+    "EA30055 canonical MANN promotion"
+  ],
+  "candidates": [
+    {
+      "sku": "EA30051",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_EVIDENCE_PROVENANCE_AND_APPLICATION_SCOPE_UNRESOLVED__LEGACY_MANN_PROMOTION_WITH_MIXED_GLOBAL_SCOPE"
+    },
+    {
+      "sku": "EA30052",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "REGIONAL_AUTHORITY_CONFLICT__LEGACY_FRAM_PROMOTION_WITH_HYUNDAI_BMW_MINI_FORTHING_SCOPE"
+    },
+    {
+      "sku": "EA30053",
+      "terminal_state": "COMPLETE",
+      "reason": null
+    },
+    {
+      "sku": "EA30054",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_AUTHORITY_UNRESOLVED__MANN_C54_AND_FRAM_CA54_PRESENT_WITHOUT_GEOMETRY_PROOF"
+    },
+    {
+      "sku": "EA30055",
+      "terminal_state": "COMPLETE",
+      "reason": null
+    }
+  ],
+  "closed_at": "2026-09-25"
+}

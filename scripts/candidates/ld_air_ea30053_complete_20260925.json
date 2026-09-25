@@ -1,0 +1,25 @@
+{
+  "sku": "EA30053",
+  "codigo_base": "C30053",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C30053",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "SYNC_EXISTING_ACTIVE_MANN_IDENTITY_TO_PUBLIC_CANONICAL_METADATA",
+  "evidence": {
+    "official_source": "https://www.mann-filter.com/uk-en/catalogue/search-results/product.html/c30053_mann-filter.html",
+    "official_dimensions_mm": {
+      "length": 304,
+      "width": 174,
+      "height": 58
+    },
+    "application_scope": "LAND ROVER Range Rover Sport III / Range Rover V"
+  },
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "closed_at": "2026-09-25"
+}
