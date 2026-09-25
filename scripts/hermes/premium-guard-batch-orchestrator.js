@@ -58,6 +58,10 @@ async function familyOwners(client,codes){
   )).rows;
 }
 
+function manufacturerAuthorityConflict(authorityOwners,directOwners){
+  return Boolean(authorityOwners.length&&directOwners.length&&!authorityOwners.some(a=>directOwners.some(d=>d.sku===a.sku)));
+}
+
 function classifyAudit({target,owners,authorityCode}){
   const auth=norm(authorityCode);
   const authorityOil=(owners||[]).filter(x=>x.filter_type==='oil'&&x.code===auth);
@@ -86,14 +90,23 @@ async function auditOne(client,item,terminal){
   const interchanges=refs.body?.product||[];
   const interchangeCodes=interchanges.map(x=>x.partIntPartNumber||x.part_number||x.code).filter(Boolean);
   const owners=await familyOwners(client,[item.premium_guard_code,item.authority_code,...interchangeCodes]);
+  const authorityOwners=[...new Map(owners.filter(x=>x.filter_type==='oil'&&x.code===norm(item.authority_code)).map(x=>[x.sku,x])).values()];
+  const directCodes=[...new Set(interchanges.filter(x=>norm(x.interchange_name)==='DONALDSON').map(x=>norm(x.partIntPartNumber)).filter(Boolean))];
+  const directOwners=[...new Map(owners.filter(x=>x.filter_type==='oil'&&directCodes.includes(x.code)).map(x=>[x.sku,x])).values()];
+  let state=classifyAudit({target:snapshot.target,owners,authorityCode:item.authority_code});
+  if(manufacturerAuthorityConflict(authorityOwners,directOwners)){
+    state='MANUFACTURER_AUTHORITY_CONFLICT_REVIEW';
+  }
   return {
     premium_guard_code:item.premium_guard_code,
     target_sku:item.target_sku,
     authority_brand:item.authority_brand,
     authority_code:item.authority_code,
     target:snapshot.target,
-    state:classifyAudit({target:snapshot.target,owners,authorityCode:item.authority_code}),
-    authority_owners:[...new Map(owners.filter(x=>x.filter_type==='oil'&&x.code===norm(item.authority_code)).map(x=>[x.sku,x])).values()],
+    state,
+    authority_owners:authorityOwners,
+    direct_manufacturer_codes:directCodes,
+    direct_manufacturer_owners:directOwners,
     existing_owner_duties:[...new Set(owners.map(x=>x.duty).filter(Boolean))].sort(),
     existing_owners:owners,
     interchanges_count:interchanges.length,
@@ -161,4 +174,4 @@ async function main(){
 }
 
 if(require.main===module)main().catch(e=>{console.error('[premium-guard-batch] FAILED',e.stack||e.message);process.exit(1);});
-module.exports={classifyAudit,terminalIndex};
+module.exports={classifyAudit,manufacturerAuthorityConflict,terminalIndex};
