@@ -18,8 +18,9 @@ function walk(dir) {
   });
 }
 
-function normalize(value) {
-  return String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+function oenRegex(oen) {
+  const chars = String(oen || '').replace(/\D/g, '').split('');
+  return new RegExp(chars.join('\\D*'), 'i');
 }
 
 function extractContext(text, index, radius = 500) {
@@ -31,15 +32,13 @@ const files = walk(root).filter((p) => searchable.has(path.extname(p).toLowerCas
 const rows = [];
 
 for (const oen of pack.oen_targets) {
-  const wanted = normalize(oen);
+  const matcher = oenRegex(oen);
   let hits = 0;
   for (const file of files) {
     const text = fs.readFileSync(file, 'utf8');
-    const normalized = normalize(text);
-    const idx = normalized.indexOf(wanted);
-    if (idx === -1) continue;
+    const match = matcher.exec(text);
+    if (!match) continue;
     hits += 1;
-    const rawIdx = text.replace(/[^A-Za-z0-9]/g, '').toUpperCase().indexOf(wanted);
     rows.push({
       oen,
       document: path.relative(root, file).replace(/\\/g, '/'),
@@ -50,7 +49,7 @@ for (const oen of pack.oen_targets) {
       transmission: null,
       filter_position: null,
       kit_or_element: null,
-      evidence_text: extractContext(text, rawIdx >= 0 ? rawIdx : 0),
+      evidence_text: extractContext(text, match.index),
       evidence_class: 'FIRST_PARTY_PARTIAL',
       review_state: 'NEEDS_STRUCTURED_REVIEW'
     });
