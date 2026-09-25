@@ -1239,7 +1239,8 @@
       "root_cause": "B_NO_DONALDSON_CROSS_FOR_OEM_8980284111",
       "caveats": [
         "Exact Isuzu MY2006 NPR owner-manual OEN recovered: 8980284111. It was absent from the repository-held Donaldson first-party capture and current exact-number Donaldson web research returned no valid equivalent. NOT_FOUND is not NOT_MANUFACTURED_VERIFIED, so Fleetguard remains ineligible.",
-        "BLOCKED_DONALDSON FOLLOW-UP 2026-09-24: current exact-number public research across Donaldson domains for 8980284111 / 8-98028-411-1 returned no indexed Donaldson product or cross-reference. Independent Isuzu-oriented parts evidence identifies 8980284111 as a fuel sedimenter / fuel-filter assembly, reinforcing that a category-mismatched element cross must not be accepted. This follow-up confirms DONALDSON_NOT_FOUND only; it does not establish DONALDSON_NOT_MANUFACTURED_VERIFIED, so Fleetguard remains ineligible."
+        "BLOCKED_DONALDSON FOLLOW-UP 2026-09-24: current exact-number public research across Donaldson domains for 8980284111 / 8-98028-411-1 returned no indexed Donaldson product or cross-reference. Independent Isuzu-oriented parts evidence identifies 8980284111 as a fuel sedimenter / fuel-filter assembly, reinforcing that a category-mismatched element cross must not be accepted. This follow-up confirms DONALDSON_NOT_FOUND only; it does not establish DONALDSON_NOT_MANUFACTURED_VERIFIED, so Fleetguard remains ineligible.",
+        "FLEETGUARD OFFICIAL FOLLOW-UP 2026-09-24: fleetguard.com product pages expose an OEM Cross Reference function, confirming that OEM-number associations are part of Fleetguard's official product data. Exact-number public searches for 8980284111 returned no indexed Fleetguard product/cross-reference. This is FLEETGUARD_NOT_FOUND only, not FLEETGUARD_NOT_MANUFACTURED_VERIFIED; OEM fallback therefore remains ineligible."
       ],
       "evidence": [
         {
@@ -1947,7 +1948,8 @@
         "Isuzu's own row form, 'FUEL/WATER SEP; HIGH EFF', explicitly names a fuel/water separator, not a plain fuel filter; no candidate examined would have satisfied that distinction even if the OE match had held.",
         "SINGLE-ROW FWS CLOSURE 2026-09-24: current Donaldson public product evidence confirms P550736 is a genuine FUEL FILTER, WATER SEPARATOR CARTRIDGE in the DAVCO Fuel Pro family, but no official Donaldson tie to Isuzu 8982373410 exists in the checked current public source or repository-held capture. The row is therefore refined from DONALDSON_AMBIGUOUS to DONALDSON_NOT_FOUND. This is NOT a verified non-manufacture finding, so Fleetguard remains ineligible by policy.",
         "FINAL FWS FOLLOW-UP 2026-09-24: Isuzu still publishes 8982373410 as FUEL/WATER SEP; HIGH EFF for 2022i-on diesel. Donaldson exact-number research remains NOT_FOUND and P550736 remains rejected. WIX current exact-match lookup independently recognizes 8982373410 as a valid competitor number but states there is no replacement at this time. This strengthens the conclusion that aftermarket coverage is sparse, but it does NOT prove Donaldson non-manufacture; Fleetguard therefore remains closed by policy.",
-        "BLOCKED_DONALDSON FOLLOW-UP 2026-09-24: current exact-number public research across Donaldson domains for 8982373410 / 8-98237-341-0 returned no indexed Donaldson product or cross-reference. WIX independently recognizes 8982373410 as a valid competitor number and reports no replacement at this time, corroborating sparse aftermarket coverage but not proving Donaldson non-manufacture. P550736 remains rejected. Status stays DONALDSON_NOT_FOUND; Fleetguard remains ineligible."
+        "BLOCKED_DONALDSON FOLLOW-UP 2026-09-24: current exact-number public research across Donaldson domains for 8982373410 / 8-98237-341-0 returned no indexed Donaldson product or cross-reference. WIX independently recognizes 8982373410 as a valid competitor number and reports no replacement at this time, corroborating sparse aftermarket coverage but not proving Donaldson non-manufacture. P550736 remains rejected. Status stays DONALDSON_NOT_FOUND; Fleetguard remains ineligible.",
+        "FLEETGUARD OFFICIAL FOLLOW-UP 2026-09-24: fleetguard.com product pages expose an OEM Cross Reference function, confirming that OEM-number associations are part of Fleetguard's official product data. Exact-number public searches for 8982373410 returned no indexed Fleetguard product/cross-reference. This is FLEETGUARD_NOT_FOUND only, not FLEETGUARD_NOT_MANUFACTURED_VERIFIED; OEM fallback therefore remains ineligible."
       ],
       "evidence": [
         {
@@ -4378,6 +4380,20 @@
       "canonical_hd_rule": "DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM",
       "effect": "POLICY_ONLY_NO_CURRENT_ROW_STATE_CHANGE",
       "note": "The Isuzu closure now formally consumes the repository's existing Heavy Duty OEM fallback capability. No current blocked row is promoted; both residual Donaldson blockers still lack verified Donaldson manufacturing absence."
+    },
+    {
+      "on": "2026-09-24",
+      "status": "FLEETGUARD_OFFICIAL_CROSSREF_FOLLOWUP_NO_STATE_CHANGE",
+      "scope": "8980284111_AND_8982373410",
+      "findings": [
+        "Fleetguard official product pages expose OEM Cross Reference data as a supported product-data surface.",
+        "Exact-number public searches for 8980284111 returned no indexed Fleetguard product or OEM cross-reference.",
+        "Exact-number public searches for 8982373410 returned no indexed Fleetguard product or OEM cross-reference.",
+        "No explicit Fleetguard non-manufacture statement was recovered for either OEN."
+      ],
+      "result": "FLEETGUARD_NOT_FOUND_ONLY",
+      "governance_effect": "OEM_FALLBACK_REMAINS_CLOSED",
+      "note": "The new Donaldson -> Fleetguard -> OEM policy is unchanged. Absence in official search/indexing is not equivalent to FLEETGUARD_NOT_MANUFACTURED_VERIFIED."
     }
   ],
   "duplicate_mapping_audit": {
@@ -4441,12 +4457,14 @@
       {
         "row_id": "P3-N-FUEL-2006-NPR",
         "oen": "8980284111",
-        "terminal_reason": "DONALDSON_NOT_FOUND confirmed again by exact-number Donaldson-domain follow-up; non-manufacture not verified, therefore Fleetguard ineligible."
+        "terminal_reason": "DONALDSON_NOT_FOUND confirmed again by exact-number Donaldson-domain follow-up; non-manufacture not verified, therefore Fleetguard ineligible.",
+        "fleetguard_followup": "Official Fleetguard OEM-cross-reference surface checked; exact OEN not found, but non-manufacture not verified."
       },
       {
         "row_id": "P3-11-N-FWS-2022i-ON",
         "oen": "8982373410",
-        "terminal_reason": "DONALDSON_NOT_FOUND confirmed again after exact-number Donaldson-domain follow-up; WIX no-replacement corroboration does not prove non-manufacture, therefore Fleetguard ineligible."
+        "terminal_reason": "DONALDSON_NOT_FOUND confirmed again after exact-number Donaldson-domain follow-up; WIX no-replacement corroboration does not prove non-manufacture, therefore Fleetguard ineligible.",
+        "fleetguard_followup": "Official Fleetguard OEM-cross-reference surface checked; exact OEN not found, but non-manufacture not verified."
       }
     ],
     "partial_semantics": "PARTIAL is terminal where Phase 2 evidence itself is PARTIAL or where kit/role/application semantics remain unresolved. It does not indicate an unprocessed Phase 3 row.",
