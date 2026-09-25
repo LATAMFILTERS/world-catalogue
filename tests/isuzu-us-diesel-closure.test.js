@@ -2180,3 +2180,17 @@ test('ZERO-BUDGET TERMINALIZATION: all 13 PARTIAL rows are terminal', () => {
   assert.equal(phase3.partial_triage_audit.ACTIONABLE_PARTIAL, 0);
   assert.equal(phase3.partial_triage_audit.TERMINAL_PARTIAL, 13);
 });
+
+
+test('P550008 LEGACY CLEANUP: stale LD competitor mappings are absent', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const csv = fs.readFileSync(path.join(__dirname, '..', 'sku_competitor_matrix_ld.csv'), 'utf8');
+  const stale = csv.split(/\r?\n/).filter((line) =>
+    (line.startsWith('"EL50936"') || line.startsWith('"EL59363"')) && line.includes('"P550008"')
+  );
+  assert.equal(stale.length, 0);
+  const history = phase3.exception_audit_history.find((h) => h.status === 'P550008_LEGACY_STALE_MAPPING_CLEANUP_COMPLETE');
+  assert.ok(history);
+  assert.equal(history.canonical_mapping, 'P550008 -> EL80008');
+});
