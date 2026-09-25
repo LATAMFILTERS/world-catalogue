@@ -130,7 +130,7 @@ test('N-Series has no air dryer and F-Series does, and both are stated rather th
 
 test('Phase 3 keeps the first blocked attempt on record and the canonical source order', () => {
   assert.equal(phase3.phase3_status_history[0].outcome, 'BLOCKED_AT_SOURCE_1');
-  assert.equal(phase3.canonical_hd_rule, 'DONALDSON_IF_MANUFACTURED_ELSE_FLEETGUARD');
+  assert.equal(phase3.canonical_hd_rule, 'DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM');
   assert.equal(phase3.source_order[0], 'DONALDSON');
   assert.equal(phase3.source_order[1], 'FLEETGUARD');
   assert.ok(phase3.access_blockers.length > 0, 'the live-route blockers must stay documented');
@@ -2020,4 +2020,56 @@ test('BLOCKED_DONALDSON FOLLOW-UP: search absence never opens Fleetguard', () =>
     assert.equal(r.non_manufacture_status, 'NOT_VERIFIED');
     assert.equal(r.fleetguard_status, 'NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED');
   }
+});
+
+
+test('OEM FALLBACK GOVERNANCE: exact OEM base requires both manufacturing absences', () => {
+  const { evaluateOemFallbackEligibility } = require('../lib/isuzu-us-diesel-closure');
+
+  const candidate = {
+    isuzu_oe_oen: ['8980284111'],
+    base_source_brand: 'OEM',
+    base_source_part: '8980284111',
+    donaldson_status: 'DONALDSON_NOT_MANUFACTURED_VERIFIED',
+    fleetguard_status: 'FLEETGUARD_NOT_MANUFACTURED_VERIFIED',
+    oem_fallback: {
+      oem_oen_verified_first_party: true,
+      approved_source_column: 'OEM_CODES',
+      approved_codigo_base: '8980284111',
+      approved_manufacturer: 'ISUZU',
+    },
+  };
+
+  const eligible = evaluateOemFallbackEligibility(candidate);
+  assert.equal(eligible.eligible, true);
+  assert.equal(eligible.authority, 'VERIFIED_OEM_FALLBACK');
+
+  assert.equal(evaluateOemFallbackEligibility({ ...candidate, donaldson_status: 'DONALDSON_NOT_FOUND' }).eligible, false);
+  assert.equal(evaluateOemFallbackEligibility({ ...candidate, fleetguard_status: 'FLEETGUARD_NOT_FOUND' }).eligible, false);
+  assert.equal(evaluateOemFallbackEligibility({
+    ...candidate,
+    oem_fallback: { ...candidate.oem_fallback, oem_oen_verified_first_party: false },
+  }).eligible, false);
+  assert.equal(evaluateOemFallbackEligibility({
+    ...candidate,
+    base_source_part: '8980284110',
+  }).eligible, false);
+});
+
+test('OEM FALLBACK GOVERNANCE: current residual blockers do not qualify yet', () => {
+  const { evaluateOemFallbackEligibility } = require('../lib/isuzu-us-diesel-closure');
+  for (const id of ['P3-N-FUEL-2006-NPR','P3-11-N-FWS-2022i-ON']) {
+    const row = phase3.resolution_rows.find((r) => r.row_id === id);
+    assert.ok(row, id);
+    assert.equal(row.decision_status, 'BLOCKED_DONALDSON');
+    assert.equal(evaluateOemFallbackEligibility(row).eligible, false);
+    assert.notEqual(row.donaldson_status, 'DONALDSON_NOT_MANUFACTURED_VERIFIED');
+  }
+});
+
+test('OEM FALLBACK GOVERNANCE: manifest declares Donaldson -> Fleetguard -> OEM priority', () => {
+  assert.equal(phase3.canonical_hd_rule, 'DONALDSON_THEN_FLEETGUARD_THEN_VERIFIED_OEM');
+  assert.deepEqual(phase3.governance.oem_fallback_policy.priority, ['DONALDSON','FLEETGUARD','OEM']);
+  assert.equal(phase3.governance.oem_fallback_policy.catalog_authority, 'VERIFIED_OEM_FALLBACK');
+  assert.equal(phase3.coverage.base_decisions.oem_based, 0);
 });
