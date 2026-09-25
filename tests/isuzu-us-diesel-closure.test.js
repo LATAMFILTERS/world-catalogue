@@ -2225,3 +2225,18 @@ test('DONALDSON REGIONAL POLICY: NOT_FOUND requires USA and regional completion'
     assert.ok(['EXHAUSTED_NO_CANDIDATE','CANDIDATE_ONLY_NO_US_OEN_TIE'].includes(row.donaldson_research_trace.REGIONAL_OFFICIAL));
   }
 });
+
+
+test('AUTONOMOUS EXECUTION: Isuzu closure is enabled with hard guardrails', () => {
+  const auto = phase3.autonomous_execution;
+  assert.ok(auto);
+  assert.equal(auto.mode, 'ENABLED');
+  assert.equal(auto.scope, 'ISUZU_US_DIESEL_CLOSURE');
+  assert.deepEqual(auto.operating_cycle, ['AUDIT','IMPLEMENT','AUDIT','CLOSE','NEXT']);
+  assert.equal(auto.background_execution, false);
+  assert.ok(auto.permitted_without_additional_confirmation.some((x) => /Create branches and pull requests/.test(x)));
+  assert.ok(auto.permitted_without_additional_confirmation.some((x) => /Merge a pull request/.test(x)));
+  assert.ok(auto.prohibited_without_explicit_user_authorization.some((x) => /Publish catalogue\/application changes/.test(x)));
+  assert.ok(auto.prohibited_without_explicit_user_authorization.some((x) => /Send email/.test(x)));
+  assert.ok(auto.mandatory_stop_conditions.some((x) => /commercial or legal judgment/.test(x)));
+});
