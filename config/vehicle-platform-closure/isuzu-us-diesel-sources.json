@@ -5,8 +5,20 @@
   "retrieved_on": "2026-09-22",
   "source_policy": {
     "phase_1_and_2_defining_publisher": "Isuzu Commercial Truck of America",
-    "corroboration_only": ["U.S. National Highway Traffic Safety Administration"],
-    "prohibited_for_defining_the_oem_universe": ["Donaldson", "Fleetguard", "MANN-FILTER", "Baldwin", "WIX", "FRAM", "retailers", "forums", "generic cross-reference sites"],
+    "corroboration_only": [
+      "U.S. National Highway Traffic Safety Administration"
+    ],
+    "prohibited_for_defining_the_oem_universe": [
+      "Donaldson",
+      "Fleetguard",
+      "MANN-FILTER",
+      "Baldwin",
+      "WIX",
+      "FRAM",
+      "retailers",
+      "forums",
+      "generic cross-reference sites"
+    ],
     "archived_capture_rule": "An isuzucv.com page with no printed model year is evidence of what Isuzu published on the capture date. It supports the model year then current; it is never treated as proof of an adjacent model year."
   },
   "sources": [
@@ -34,7 +46,10 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20020401231700/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2002-04-01",
-      "supports": ["NPR and NPR HD diesel published with 4HE1-TC", "NQR listed in the N-Series navigation"]
+      "supports": [
+        "NPR and NPR HD diesel published with 4HE1-TC",
+        "NQR listed in the N-Series navigation"
+      ]
     },
     {
       "source_id": "ISUZU_NPRDIESELSPECS_2003",
@@ -45,7 +60,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20030206193031/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2003-02-06",
-      "supports": ["NPR and NPR HD diesel published with 4HE1-TC"]
+      "supports": [
+        "NPR and NPR HD diesel published with 4HE1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_NPRDIESELSPECS_2004",
@@ -56,7 +73,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20040207224827/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2004-02-07",
-      "supports": ["NPR and NPR HD diesel still published with 4HE1-TC in February 2004"]
+      "supports": [
+        "NPR and NPR HD diesel still published with 4HE1-TC in February 2004"
+      ]
     },
     {
       "source_id": "ISUZU_NPRDIESELSPECS_2005",
@@ -67,7 +86,10 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20050106024956/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2005-01-06",
-      "supports": ["NPR and NPR HD diesel published with 4HK1-TC", "NRR Diesel present in the N-Series navigation"]
+      "supports": [
+        "NPR and NPR HD diesel published with 4HK1-TC",
+        "NRR Diesel present in the N-Series navigation"
+      ]
     },
     {
       "source_id": "ISUZU_NPRDIESELSPECS_2006",
@@ -78,7 +100,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20060108171542/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2006-01-08",
-      "supports": ["NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"]
+      "supports": [
+        "NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_NPRDIESELSPECS_2007",
@@ -89,7 +113,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20070101185914/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2007-01-01",
-      "supports": ["NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"]
+      "supports": [
+        "NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_NPRDIESELSPECS_2008",
@@ -100,7 +126,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20080102151330/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2008-01-02",
-      "supports": ["NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"]
+      "supports": [
+        "NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_NPRDIESELSPECS_2009",
@@ -111,7 +139,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20090201173256/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2009-02-01",
-      "supports": ["NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"]
+      "supports": [
+        "NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_NPRDIESELSPECS_2010",
@@ -122,7 +152,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/2010/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2010",
-      "supports": ["NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"]
+      "supports": [
+        "NPR, NPR HD, NQR, NRR diesel published with 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_NPRDIESELSPECS_2011",
@@ -133,7 +165,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/2011/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2011",
-      "supports": ["NPR-HD, NPR, NQR, NRR diesel published with 4HK1-TC; NPR-HD now written with a hyphen"]
+      "supports": [
+        "NPR-HD, NPR, NQR, NRR diesel published with 4HK1-TC; NPR-HD now written with a hyphen"
+      ]
     },
     {
       "source_id": "ISUZU_NPRDIESELSPECS_2012",
@@ -144,7 +178,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "capture_url": "https://web.archive.org/web/2012/http://www.isuzucv.com/nseries/nprdieselspecs.html",
       "captured_at": "2012",
-      "supports": ["NPR-HD, NPR, NQR, NRR diesel published with 4HK1-TC"]
+      "supports": [
+        "NPR-HD, NPR, NQR, NRR diesel published with 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_NQRDIESELSPECS_2002",
@@ -155,7 +191,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20020604115420/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "captured_at": "2002-06-04",
-      "supports": ["NQR diesel 17,950 lbs GVWR / 20,950 lbs GCWR with 4HE1-TC"]
+      "supports": [
+        "NQR diesel 17,950 lbs GVWR / 20,950 lbs GCWR with 4HE1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_NQRDIESELSPECS_2003",
@@ -166,7 +204,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20030206193644/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "captured_at": "2003-02-06",
-      "supports": ["NQR diesel 17,950 lbs GVWR with 4HE1-TC"]
+      "supports": [
+        "NQR diesel 17,950 lbs GVWR with 4HE1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_NQRDIESELSPECS_2004",
@@ -177,7 +217,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20040218040127/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "captured_at": "2004-02-18",
-      "supports": ["NQR diesel 17,950 lbs GVWR still with 4HE1-TC in February 2004"]
+      "supports": [
+        "NQR diesel 17,950 lbs GVWR still with 4HE1-TC in February 2004"
+      ]
     },
     {
       "source_id": "ISUZU_NQRDIESELSPECS_2005",
@@ -188,7 +230,10 @@
       "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20050208180908/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "captured_at": "2005-02-08",
-      "supports": ["NQR diesel 17,950 lbs GVWR with 4HK1-TC 5.2L", "NRR present in the N-Series navigation"]
+      "supports": [
+        "NQR diesel 17,950 lbs GVWR with 4HK1-TC 5.2L",
+        "NRR present in the N-Series navigation"
+      ]
     },
     {
       "source_id": "ISUZU_NQRDIESELSPECS_2007",
@@ -199,7 +244,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20070104024713/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "captured_at": "2007-01-04",
-      "supports": ["NQR diesel 17,950 lbs GVWR with 4HK1-TC 5.2L"]
+      "supports": [
+        "NQR diesel 17,950 lbs GVWR with 4HK1-TC 5.2L"
+      ]
     },
     {
       "source_id": "ISUZU_NQRDIESELSPECS_2009",
@@ -210,7 +257,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20090129125656/http://www.isuzucv.com/nseries/nqrdieselspecs.html",
       "captured_at": "2009-01-29",
-      "supports": ["NQR diesel 23,950 lbs GCWR with 4HK1-TC 5.2L"]
+      "supports": [
+        "NQR diesel 23,950 lbs GCWR with 4HK1-TC 5.2L"
+      ]
     },
     {
       "source_id": "ISUZU_NQR_DIESEL_SPECS_2013",
@@ -221,7 +270,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nqr_diesel_specs",
       "capture_url": "https://web.archive.org/web/2013/http://www.isuzucv.com/nseries/nqr_diesel_specs",
       "captured_at": "2013",
-      "supports": ["NQR diesel with 4HK1-TC"]
+      "supports": [
+        "NQR diesel with 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_NRRDIESELSPECS_2004",
@@ -247,7 +298,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nrrdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20050208181116/http://www.isuzucv.com/nseries/nrrdieselspecs.html",
       "captured_at": "2005-02-08",
-      "supports": ["NRR diesel 19,500 lbs GVWR with 4HK1-TC 5.2L"]
+      "supports": [
+        "NRR diesel 19,500 lbs GVWR with 4HK1-TC 5.2L"
+      ]
     },
     {
       "source_id": "ISUZU_NRRDIESELSPECS_2008",
@@ -258,7 +311,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nrrdieselspecs.html",
       "capture_url": "https://web.archive.org/web/20080118181731/http://www.isuzucv.com/nseries/nrrdieselspecs.html",
       "captured_at": "2008-01-18",
-      "supports": ["NRR diesel 25,500 lbs GCWR with 4HK1-TC 5.2L"]
+      "supports": [
+        "NRR diesel 25,500 lbs GCWR with 4HK1-TC 5.2L"
+      ]
     },
     {
       "source_id": "ISUZU_NRR_DIESEL_SPECS_2013",
@@ -269,7 +324,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/nrr_diesel_specs",
       "capture_url": "https://web.archive.org/web/2013/http://www.isuzucv.com/nseries/nrr_diesel_specs",
       "captured_at": "2013",
-      "supports": ["NRR diesel 25,500 lbs GCWR with 4HK1-TC"]
+      "supports": [
+        "NRR diesel 25,500 lbs GCWR with 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_CREWCABSPECS_2002",
@@ -280,7 +337,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/crewcabspecs.html",
       "capture_url": "https://web.archive.org/web/20020409143500/http://www.isuzucv.com/nseries/crewcabspecs.html",
       "captured_at": "2002-04-09",
-      "supports": ["Crew Cab published for NPR, NPR HD and NQR with 4HE1-TC"]
+      "supports": [
+        "Crew Cab published for NPR, NPR HD and NQR with 4HE1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_CREWCABSPECS_2005",
@@ -291,7 +350,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/crewcabspecs.html",
       "capture_url": "https://web.archive.org/web/20050212104742/http://www.isuzucv.com/nseries/crewcabspecs.html",
       "captured_at": "2005-02-12",
-      "supports": ["Crew Cab published for NPR, NPR HD, NQR and NRR with 4HK1-TC"]
+      "supports": [
+        "Crew Cab published for NPR, NPR HD, NQR and NRR with 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_4H_SPECS_2006",
@@ -302,7 +363,9 @@
       "origin_url": "http://www.isuzucv.com/engines/4h_specs.html",
       "capture_url": "https://web.archive.org/web/20060824162721/http://www.isuzucv.com/engines/4h_specs.html",
       "captured_at": "2006-08-24",
-      "supports": ["4H diesel: inline 4 cylinder, direct injection, dry cylinder liner, bore x stroke 115 (4.53) x 125 (4.92) mm, displacement 5193 cc (317 cu.in), 190 HP @ 2600 rpm, 387 lb-ft @ 1500 rpm, compression ratio 18.5"]
+      "supports": [
+        "4H diesel: inline 4 cylinder, direct injection, dry cylinder liner, bore x stroke 115 (4.53) x 125 (4.92) mm, displacement 5193 cc (317 cu.in), 190 HP @ 2600 rpm, 387 lb-ft @ 1500 rpm, compression ratio 18.5"
+      ]
     },
     {
       "source_id": "ISUZU_6H_SPECS_2006",
@@ -313,7 +376,9 @@
       "origin_url": "http://www.isuzucv.com/engines/6h_specs.html",
       "capture_url": "https://web.archive.org/web/20060903101140/http://www.isuzucv.com/engines/6h_specs.html",
       "captured_at": "2006-09-03",
-      "supports": ["6HK1-TC 7.8L six-cylinder turbocharged intercooled diesel"]
+      "supports": [
+        "6HK1-TC 7.8L six-cylinder turbocharged intercooled diesel"
+      ]
     },
     {
       "source_id": "ISUZU_FRRSPEC_1998",
@@ -324,7 +389,9 @@
       "origin_url": "http://www.isuzucv.com/frrspec.htm",
       "capture_url": "https://web.archive.org/web/1998/http://www.isuzucv.com/frrspec.htm",
       "captured_at": "1998",
-      "supports": ["FRR, FSR, FTR, FVR published with 6HE1-TC before the 6HK1-TC transition"],
+      "supports": [
+        "FRR, FSR, FTR, FVR published with 6HE1-TC before the 6HK1-TC transition"
+      ],
       "note": "Outside the 2000-2026 scope; retained only to date the 6HE1-TC to 6HK1-TC cut."
     },
     {
@@ -336,7 +403,9 @@
       "origin_url": "http://www.isuzucv.com/frrspec.htm",
       "capture_url": "https://web.archive.org/web/1999/http://www.isuzucv.com/frrspec.htm",
       "captured_at": "1999",
-      "supports": ["FRR, FSR, FTR, FVR published with 6HK1-TC"],
+      "supports": [
+        "FRR, FSR, FTR, FVR published with 6HK1-TC"
+      ],
       "note": "Outside the 2000-2026 scope; dates the 6HK1-TC introduction to calendar 1999."
     },
     {
@@ -348,7 +417,9 @@
       "origin_url": "http://www.isuzucv.com/frrspecs.htm",
       "capture_url": "https://web.archive.org/web/2000/http://www.isuzucv.com/frrspecs.htm",
       "captured_at": "2000",
-      "supports": ["FRR 18,000 and 19,500 lbs GVWR with 6HK1-TC"]
+      "supports": [
+        "FRR 18,000 and 19,500 lbs GVWR with 6HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_FSRSPECS_2000",
@@ -359,7 +430,9 @@
       "origin_url": "http://www.isuzucv.com/fsrspecs.htm",
       "capture_url": "https://web.archive.org/web/2000/http://www.isuzucv.com/fsrspecs.htm",
       "captured_at": "2000",
-      "supports": ["FSR 23,100 lbs GVWR with 6HK1-TC"]
+      "supports": [
+        "FSR 23,100 lbs GVWR with 6HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_FTRSPECS_2000",
@@ -370,7 +443,9 @@
       "origin_url": "http://www.isuzucv.com/ftrspecs.htm",
       "capture_url": "https://web.archive.org/web/20000902170640/http://www.isuzucv.com/ftrspecs.htm",
       "captured_at": "2000-09-02",
-      "supports": ["FTR 25,950 and 30,000 lbs GVWR with 6HK1-TC; air brakes"]
+      "supports": [
+        "FTR 25,950 and 30,000 lbs GVWR with 6HK1-TC; air brakes"
+      ]
     },
     {
       "source_id": "ISUZU_FVRSPECS_2000",
@@ -381,7 +456,9 @@
       "origin_url": "http://www.isuzucv.com/fvrspecs.htm",
       "capture_url": "https://web.archive.org/web/2000/http://www.isuzucv.com/fvrspecs.htm",
       "captured_at": "2000",
-      "supports": ["FVR 33,000 lbs GVWR / 45,000 lbs GCWR with 6HK1-TC"]
+      "supports": [
+        "FVR 33,000 lbs GVWR / 45,000 lbs GCWR with 6HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_F_SPECS_2002",
@@ -392,7 +469,9 @@
       "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
       "capture_url": "https://web.archive.org/web/20020323181727/http://www.isuzucv.com/fseries/f_specs.html",
       "captured_at": "2002-03-23",
-      "supports": ["F-Series line published as FRR, FSR, FTR, FVR, all 6HK1-TC"]
+      "supports": [
+        "F-Series line published as FRR, FSR, FTR, FVR, all 6HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_F_SPECS_PDF_2003",
@@ -417,7 +496,9 @@
       "origin_url": "http://www.isuzucv.com/fseries/f_specs.pdf",
       "capture_url": "https://web.archive.org/web/20040725035335/http://www.isuzucv.com/fseries/f_specs.pdf",
       "captured_at": "2004-07-25",
-      "supports": ["F-Series line published as FRR, FSR, FTR, FVR with 6HK1-TC"]
+      "supports": [
+        "F-Series line published as FRR, FSR, FTR, FVR with 6HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_FXRSPECS_2004",
@@ -428,7 +509,9 @@
       "origin_url": "http://www.isuzucv.com/fseries/fxrspecs.html",
       "capture_url": "https://web.archive.org/web/20040405131738/http://www.isuzucv.com/fseries/fxrspecs.html",
       "captured_at": "2004-04-05",
-      "supports": ["FXR published by Isuzu USA at 33,001 lbs GVWR with 6HK1-TC; F-Series navigation lists FRR, FSR, FTR, FVR, FXR"]
+      "supports": [
+        "FXR published by Isuzu USA at 33,001 lbs GVWR with 6HK1-TC; F-Series navigation lists FRR, FSR, FTR, FVR, FXR"
+      ]
     },
     {
       "source_id": "ISUZU_F_SPECS_2005",
@@ -439,7 +522,9 @@
       "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
       "capture_url": "https://web.archive.org/web/2005/http://www.isuzucv.com/fseries/f_specs.html",
       "captured_at": "2005",
-      "supports": ["F-Series line published as FRR, FSR, FTR, FVR, FXR with 6HK1-TC"]
+      "supports": [
+        "F-Series line published as FRR, FSR, FTR, FVR, FXR with 6HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_F_SPECS_2006",
@@ -450,7 +535,9 @@
       "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
       "capture_url": "https://web.archive.org/web/2006/http://www.isuzucv.com/fseries/f_specs.html",
       "captured_at": "2006",
-      "supports": ["F-Series line published as FTR, FVR, FXR only; FRR and FSR no longer published"]
+      "supports": [
+        "F-Series line published as FTR, FVR, FXR only; FRR and FSR no longer published"
+      ]
     },
     {
       "source_id": "ISUZU_FTRSPECS_2007",
@@ -461,7 +548,9 @@
       "origin_url": "http://www.isuzucv.com/fseries/ftrspecs.html",
       "capture_url": "https://web.archive.org/web/20070216210835/http://www.isuzucv.com/fseries/ftrspecs.html",
       "captured_at": "2007-02-16",
-      "supports": ["FTR, FVR, FXR published with 6HK1-TC"]
+      "supports": [
+        "FTR, FVR, FXR published with 6HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_FTRSPECS_2010",
@@ -472,7 +561,9 @@
       "origin_url": "http://www.isuzucv.com/fseries/ftrspecs.html",
       "capture_url": "https://web.archive.org/web/2010/http://www.isuzucv.com/fseries/ftrspecs.html",
       "captured_at": "2010",
-      "supports": ["FTR, FVR, FXR published with 6HK1-TC 7.8L"]
+      "supports": [
+        "FTR, FVR, FXR published with 6HK1-TC 7.8L"
+      ]
     },
     {
       "source_id": "ISUZU_F_SPECS_2011_ERROR",
@@ -557,7 +648,9 @@
       "origin_url": "http://www.isuzucv.com/nseries/diesel_specs",
       "capture_url": "https://web.archive.org/web/20130211231857/http://www.isuzucv.com/nseries/diesel_specs",
       "captured_at": "2013-02-11",
-      "supports": ["N-Series diesel line published with both 4JJ1-TC and 4HK1-TC"]
+      "supports": [
+        "N-Series diesel line published with both 4JJ1-TC and 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_F_SPECS_2014",
@@ -568,7 +661,9 @@
       "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
       "capture_url": "https://web.archive.org/web/20140325182039/http://www.isuzucv.com/fseries/f_specs.html",
       "captured_at": "2014-03-25",
-      "supports": ["Published line = NPR, NPR-HD, NQR, NRR. No NPR-XD and no F-Series model."]
+      "supports": [
+        "Published line = NPR, NPR-HD, NQR, NRR. No NPR-XD and no F-Series model."
+      ]
     },
     {
       "source_id": "ISUZU_F_SPECS_2015",
@@ -579,7 +674,9 @@
       "origin_url": "http://www.isuzucv.com/fseries/f_specs.html",
       "capture_url": "https://web.archive.org/web/20150404031546/http://www.isuzucv.com/fseries/f_specs.html",
       "captured_at": "2015-04-04",
-      "supports": ["Published line = NPR, NPR-HD, NPR-XD, NQR, NRR. NPR-XD present for the first time."]
+      "supports": [
+        "Published line = NPR, NPR-HD, NPR-XD, NQR, NRR. NPR-XD present for the first time."
+      ]
     },
     {
       "source_id": "ISUZU_NPR_XD_SPECS_2015",
@@ -590,7 +687,9 @@
       "origin_url": "http://www.isuzucv.com/pdfs/npr-xd_specs.pdf",
       "capture_url": "https://web.archive.org/web/20150314060738/http://www.isuzucv.com/pdfs/npr-xd_specs.pdf",
       "captured_at": "2015-03-14",
-      "supports": ["NPR-XD standalone specification sheet with Isuzu 4HK1-TC 5.2L"]
+      "supports": [
+        "NPR-XD standalone specification sheet with Isuzu 4HK1-TC 5.2L"
+      ]
     },
     {
       "source_id": "ISUZU_DIESEL_SPECS_2015",
@@ -601,7 +700,9 @@
       "origin_url": "http://www.isuzucv.com/en/nseries/diesel_specs",
       "capture_url": "https://web.archive.org/web/20151218233828/http://www.isuzucv.com/en/nseries/diesel_specs",
       "captured_at": "2015-12-18",
-      "supports": ["N-Series diesel = NPR (4JJ1-TC) plus NPR-HD, NPR-XD, NQR, NRR (4HK1-TC)"]
+      "supports": [
+        "N-Series diesel = NPR (4JJ1-TC) plus NPR-HD, NPR-XD, NQR, NRR (4HK1-TC)"
+      ]
     },
     {
       "source_id": "ISUZU_DIESEL_SPECS_2016",
@@ -612,7 +713,9 @@
       "origin_url": "http://www.isuzucv.com/en/nseries/diesel_specs",
       "capture_url": "https://web.archive.org/web/20160104184312/http://www.isuzucv.com/en/nseries/diesel_specs",
       "captured_at": "2016-01-04",
-      "supports": ["N-Series diesel = NPR (4JJ1-TC) plus NPR-HD, NPR-XD, NQR, NRR (4HK1-TC)"]
+      "supports": [
+        "N-Series diesel = NPR (4JJ1-TC) plus NPR-HD, NPR-XD, NQR, NRR (4HK1-TC)"
+      ]
     },
     {
       "source_id": "ISUZU_DIESEL_SPECS_2017",
@@ -623,7 +726,9 @@
       "origin_url": "http://isuzucv.com/en/nseries/diesel_specs",
       "capture_url": "https://web.archive.org/web/20170113210437/http://isuzucv.com/en/nseries/diesel_specs",
       "captured_at": "2017-01-13",
-      "supports": ["N-Series diesel = NPR (4JJ1-TC) plus NPR-HD, NPR-XD, NQR, NRR (4HK1-TC)"],
+      "supports": [
+        "N-Series diesel = NPR (4JJ1-TC) plus NPR-HD, NPR-XD, NQR, NRR (4HK1-TC)"
+      ],
       "note": "The token 'FTR' also occurs on this page, but only as the marketing phrase 'FTR Tour'. It was not treated as model-year evidence."
     },
     {
@@ -635,7 +740,9 @@
       "origin_url": "https://www.isuzucv.com/en/nseries/diesel_specs",
       "capture_url": "https://web.archive.org/web/20180216031941/https://www.isuzucv.com/en/nseries/diesel_specs",
       "captured_at": "2018-02-16",
-      "supports": ["N-Series diesel still published with both 4JJ1-TC and 4HK1-TC"]
+      "supports": [
+        "N-Series diesel still published with both 4JJ1-TC and 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_DIESEL_SPECS_2019",
@@ -733,7 +840,9 @@
       "origin_url": "https://www.isuzucv.com/pdfs/2023ProductBrochure_Final.pdf",
       "capture_url": null,
       "captured_at": "2026-09-22",
-      "supports": ["2023 F-Series with Cummins B6.7; 2023 N-Series diesel and gas line-up"]
+      "supports": [
+        "2023 F-Series with Cummins B6.7; 2023 N-Series diesel and gas line-up"
+      ]
     },
     {
       "source_id": "ISUZU_2024_N_DIESEL_BROCHURE",
@@ -744,7 +853,9 @@
       "origin_url": "https://www.isuzucv.com/pdfs/2024N-SeriesDieselProductBrochure_Final.pdf",
       "capture_url": null,
       "captured_at": "2026-09-22",
-      "supports": ["2024 N-Series diesel line-up"]
+      "supports": [
+        "2024 N-Series diesel line-up"
+      ]
     },
     {
       "source_id": "ISUZU_2024_F_BROCHURE",
@@ -755,7 +866,9 @@
       "origin_url": "https://www.isuzucv.com/pdfs/2024F-SeriesProductBrochure_Final.pdf",
       "capture_url": null,
       "captured_at": "2026-09-22",
-      "supports": ["2024 F-Series with Cummins B6.7"]
+      "supports": [
+        "2024 F-Series with Cummins B6.7"
+      ]
     },
     {
       "source_id": "ISUZU_2025_F_BROCHURE",
@@ -781,7 +894,9 @@
       "origin_url": "https://www.isuzucv.com/pdfs/2026F-SeriesBrochure_Final.pdf",
       "capture_url": null,
       "captured_at": "2026-09-22",
-      "supports": ["2026 F-Series FTR and FVR with Cummins B6.7"]
+      "supports": [
+        "2026 F-Series FTR and FVR with Cummins B6.7"
+      ]
     },
     {
       "source_id": "ISUZU_2026_N_DIESEL_BROCHURE",
@@ -792,7 +907,9 @@
       "origin_url": "https://www.isuzucv.com/pdfs/2026N-SeriesDieselBrochure_Final.pdf",
       "capture_url": null,
       "captured_at": "2026-09-22",
-      "supports": ["2026 N-Series diesel with Isuzu 4HK1-TC"]
+      "supports": [
+        "2026 N-Series diesel with Isuzu 4HK1-TC"
+      ]
     },
     {
       "source_id": "ISUZU_2026_POCKET_GUIDE",
@@ -850,7 +967,9 @@
       "origin_url": "https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/isuzu/modelyear/{YEAR}?format=json",
       "capture_url": null,
       "captured_at": "2026-09-22",
-      "supports": ["Manufacturer-submitted US model-year model list for Isuzu"],
+      "supports": [
+        "Manufacturer-submitted US model-year model list for Isuzu"
+      ],
       "note": "Not an Isuzu source. Used only to corroborate or to raise a conflict against Isuzu-published evidence, never to define the universe."
     },
     {
@@ -1224,7 +1343,10 @@
       "authority_level": "primary",
       "origin_url": "https://manualzz.com/doc/27629417/2006-owner-s-manual-isuzu-npr--diesel-",
       "captured_at": "2026-09-24",
-      "supports": ["MY2006 NPR with 4HK1-TC", "Fuel filter Isuzu No. 8-98028-411-1"],
+      "supports": [
+        "MY2006 NPR with 4HK1-TC",
+        "Fuel filter Isuzu No. 8-98028-411-1"
+      ],
       "scope_restriction": "Exact MY2006 NPR only. Mirror hosts the original Isuzu publication. No sibling-model or adjacent-year inheritance."
     },
     {
@@ -1235,7 +1357,10 @@
       "authority_level": "primary",
       "origin_url": "https://www.scribd.com/document/421489519/2007-N-Series-Diesel-NPR-pdf",
       "captured_at": "2026-09-24",
-      "supports": ["MY2007 NPR with 4HK1-TC", "Fuel filter Isuzu No. 8-98037-011-0"],
+      "supports": [
+        "MY2007 NPR with 4HK1-TC",
+        "Fuel filter Isuzu No. 8-98037-011-0"
+      ],
       "scope_restriction": "Exact MY2007 NPR only. Mirror hosts the original Isuzu publication. No sibling-model or adjacent-year inheritance."
     },
     {
@@ -1246,7 +1371,10 @@
       "authority_level": "primary",
       "origin_url": "https://www.manualslib.com/manual/1327429/Isuzu-Npr-2008.html",
       "captured_at": "2026-09-24",
-      "supports": ["MY2008 NPR", "Fuel filter Isuzu No. 8-98037-011-0"],
+      "supports": [
+        "MY2008 NPR",
+        "Fuel filter Isuzu No. 8-98037-011-0"
+      ],
       "scope_restriction": "Exact MY2008 NPR only. Mirror hosts the original Isuzu publication. No sibling-model or adjacent-year inheritance."
     },
     {
@@ -1257,8 +1385,40 @@
       "authority_level": "primary",
       "origin_url": "https://manualzz.com/doc/48441290/isuzu-n-series-medium-duty-truck--npr-hd--nqr--nrr-truck-",
       "captured_at": "2026-09-24",
-      "supports": ["MY2010 NPR-HD, NQR and NRR with 4HK1-TC", "Fuel filter Isuzu No. 8-98037-011-0"],
+      "supports": [
+        "MY2010 NPR-HD, NQR and NRR with 4HK1-TC",
+        "Fuel filter Isuzu No. 8-98037-011-0"
+      ],
       "scope_restriction": "Exact MY2010 NPR-HD/NQR/NRR only. NPR is intentionally excluded. Mirror hosts the original Isuzu publication; no sibling-model or adjacent-year inheritance."
+    },
+    {
+      "source_id": "DONALDSON_AUSTRALASIA_JAPANESE_TRUCK_FILTER_GUIDE_2023",
+      "title": "Japanese Truck Filter Guide",
+      "publisher": "Donaldson Company, Inc.",
+      "source_type": "official_manufacturer_regional_application_catalogue",
+      "authority_level": "primary",
+      "origin_url": "https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/australasia/industries-markets/f111672-eng/Japanese-Truck-Filter-Guide.pdf",
+      "captured_at": "2026-09-25",
+      "supports": [
+        "Australasia/Asia-Pacific Isuzu application mappings by model, engine, year and filter position",
+        "NPR75 4HK1-TCN Sitec Series 1 5.2L 09/05-12/07 -> Fuel Filter, Primary P550390",
+        "Multiple N-Series 4HK1 5.2L 2016-on applications -> Fuel Water Separator P551855 and Fuel Filter, Secondary P506095"
+      ],
+      "scope_restriction": "REGIONAL_APPLICATION_ONLY. This source is first-party Donaldson application evidence for Australasia/Asia-Pacific. It does not by itself establish US-market fitment or an exact Isuzu USA OEN cross-reference."
+    },
+    {
+      "source_id": "DONALDSON_AUSTRALASIA_FUEL_OIL_KITS_2024",
+      "title": "Fuel and Oil Truck Filter Maintenance Kits",
+      "publisher": "Donaldson Company, Inc.",
+      "source_type": "official_manufacturer_regional_application_catalogue",
+      "authority_level": "primary",
+      "origin_url": "https://western.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/literature/australasia/filter-kits/f111610/Fuel-and-Oil-Truck-Filter-Maintenance-Kits_Web.pdf",
+      "captured_at": "2026-09-25",
+      "supports": [
+        "Isuzu 4HK1 5.2L SiTEC 150/175 2005-2007 -> P550390",
+        "Isuzu 4HK1-TCN/TCC 5.2L NPR/NPS/NQR 2008-2015 -> P506095 and P551855"
+      ],
+      "scope_restriction": "REGIONAL_APPLICATION_ONLY. Corroborates Donaldson Australasia application coverage; it does not establish an exact USA OEN mapping."
     }
   ]
 }
