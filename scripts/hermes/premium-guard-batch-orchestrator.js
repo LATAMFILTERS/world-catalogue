@@ -126,6 +126,7 @@ async function main(){
   const batchSize=Math.max(1,Math.min(20,Number(arg('batch-size','10'))));
   const batchIndex=Math.max(1,Number(arg('batch-index','1')));
   const concurrency=Math.max(1,Math.min(3,Number(arg('concurrency','2'))));
+  const scope=String(arg('scope','LD')).toUpperCase();
   const queue=JSON.parse(fs.readFileSync(queuePath,'utf8'));
   if(!Array.isArray(queue))throw new Error('queue must be an array');
   const start=(batchIndex-1)*batchSize;
@@ -142,8 +143,12 @@ async function main(){
     while(true){
       const i=cursor++;if(i>=slice.length)return;
       const item=slice[i];const terminal=terminals.get(norm(item.premium_guard_code))||null;
-      try{results[i]=await auditOne(client,item,terminal);}
-      catch(e){results[i]={premium_guard_code:item.premium_guard_code,target_sku:item.target_sku,state:'BLOCKED_FETCH_OR_AUDIT',error:e.message};}
+      try{
+        results[i]=await auditOne(client,item,terminal);
+        if(scope==='LD'&&['HD_REASSIGN_CANDIDATE','HD_TARGET_CONFIRMED','HD_REVIEW'].includes(results[i].state)){
+          results[i].state='LD_SCOPE_SEGMENT_MISMATCH';
+        }
+      }catch(e){results[i]={premium_guard_code:item.premium_guard_code,target_sku:item.target_sku,state:'BLOCKED_FETCH_OR_AUDIT',error:e.message};}
     }
   }
   await Promise.all(Array.from({length:Math.min(concurrency,slice.length)},()=>worker()));

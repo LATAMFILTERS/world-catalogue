@@ -1,0 +1,34 @@
+{
+  "premium_guard_code": "HG50024",
+  "queue_target_sku": "EL31290",
+  "queue_authority": {
+    "brand": "FRAM",
+    "code": "P3555A"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_SEGMENT_MISMATCH__SOURCE_FAMILY_IS_HEAVY_DUTY",
+  "details": {
+    "canonical_hd_family": {
+      "sku": "EL80777",
+      "code": "LF777"
+    },
+    "verified_equivalents": [
+      "DONALDSON P550777",
+      "FRAM P3555A",
+      "WIX 51749"
+    ],
+    "resolution": "DO_NOT_CONSOLIDATE_INTO_HD_FROM_LD_QUEUE"
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50024/interchanges",
+      "sha256": "0c35d7ea67948561d0804c49985fadfa60870e7bd43dd52fcdc481ebd51b65d8"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/HG50024/applications?format=ranges",
+      "sha256": "7c447d044fbf8f22494f4dd4144b222d4d3999ece1f0bf5a84649f31f2068dbe"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
