@@ -826,6 +826,11 @@
             }
           }
         }
+      },
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Bind 2906544040 / 8982984040 explicitly to 4HK1-TC versus the separate 4JJ row.",
+        "required_evidence": "First-party Isuzu service/parts/maintenance source naming the engine or exact model family for this lube OEN set."
       }
     },
     {
@@ -970,7 +975,12 @@
           "tier": "EQUIPMENT_APPLICATION (does not match this row engine scope)",
           "source_file": "scripts/donaldson_lube_results.json"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Resolve 2906542701 / 2906548100 and whether the 1998-2010 row splits by 4HE1-TC versus 4HK1-TC.",
+        "required_evidence": "First-party Isuzu engine/model-year parts source or Donaldson OEM-tier evidence naming the unconfirmed OENs and engine application."
+      }
     },
     {
       "row_id": "P3-06-N-FUEL-4HE",
@@ -1598,7 +1608,12 @@
           "published_under": "ISUZU",
           "published_as": "8981475250"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Determine whether this row is primary, secondary, alternate, or revision within the 2013-2021 N-Series fuel system.",
+        "required_evidence": "First-party Isuzu parts illustration/service manual labeling fuel-filter position or supersession."
+      }
     },
     {
       "row_id": "P3-08-N-FUEL-2013-2021-B",
@@ -1684,7 +1699,12 @@
           "published_under": "ISUZU",
           "published_as": "8980374810"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Determine exact engine/chassis/primary-secondary role after high-capacity was closed as a commercial variant.",
+        "required_evidence": "First-party Isuzu fuel-system parts illustration/service manual with positional assignment."
+      }
     },
     {
       "row_id": "P3-09-N-FUEL-2013-2021-C",
@@ -1806,7 +1826,12 @@
           "published_under": "ISUZU",
           "published_as": "8981628970"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Determine whether this row is primary, secondary, alternate, or revision in the N-Series fuel system.",
+        "required_evidence": "First-party Isuzu fuel-system parts illustration/service manual with positional assignment or supersession."
+      }
     },
     {
       "row_id": "P3-10-N-FUEL-HIGHCAP-2013-2021",
@@ -1883,7 +1908,12 @@
           "published_under": "ISUZU",
           "published_as": "8980374810"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Determine exact engine/chassis/kit-position role; high-capacity itself is no longer an OEM-position ambiguity.",
+        "required_evidence": "First-party Isuzu fuel-system parts illustration/service manual with positional assignment."
+      }
     },
     {
       "row_id": "P3-11-N-FWS-2022i-ON",
@@ -2106,6 +2136,11 @@
         "selected_sku": "EL80008",
         "resolution_basis": "The prior rejection treated Isuzu wording CARTRIDGE as proof of an internal element. That interpretation is not supported. Isuzu itself identifies the part as a transmission oil filter; Donaldson first-party capture maps exact Isuzu 8971822820 to P550008; Fleetguard independently maps the same exact OEN as a Transmission Filter to LF551A; current Fleetguard LF551A geometry is essentially the same spin-on form as P550008/EL80008. The cross-category concern is therefore resolved as a terminology/application-context issue, not a physical mismatch.",
         "phase2_ceiling": "PARTIAL"
+      },
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Determine which N-Series transmissions/model years actually use 8971822820 across the open-ended scope.",
+        "required_evidence": "First-party Isuzu/Aisin parts or service source binding 8971822820 to specific transmission models and vehicle years."
       }
     },
     {
@@ -2230,7 +2265,12 @@
           "published_as": "1-13200-487-2",
           "tier": "CROSSREF (rejected candidate: no Isuzu OEM-tier row)"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "TERMINAL_PARTIAL",
+        "reason": "Isuzu first-party scope explicitly names FTR/FVR/FSR; FRR/FXR are separate terminal blockers and the Donaldson base for the named scope is resolved.",
+        "reopen_only_if": "Reopen only on new first-party Isuzu evidence that changes/widens scope or contradicts the OEN/base identity."
+      }
     },
     {
       "row_id": "P3-14-F-LUBE-2018-2021",
@@ -2624,7 +2664,12 @@
           "published_under": "ISUZU",
           "published_as": "1132400791"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "TERMINAL_PARTIAL",
+        "reason": "Isuzu first-party scope explicitly names FTR/FVR/FSR; FRR/FXR are separate terminal blockers and the current OEN/base identity is usable.",
+        "reopen_only_if": "Reopen only on new first-party Isuzu evidence changing scope or proving a different physical service part for the same OEN."
+      }
     },
     {
       "row_id": "P3-16-F-FUEL-2018-2020-A",
@@ -2706,7 +2751,12 @@
           "published_under": "ISUZU",
           "published_as": "8980374810"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Assign this F-Series fuel row to engine-mounted versus chassis-mounted position.",
+        "required_evidence": "First-party Isuzu F-Series fuel-system diagram/parts illustration identifying engine/chassis position."
+      }
     },
     {
       "row_id": "P3-17-F-FUEL-2018-2020-B",
@@ -2786,7 +2836,12 @@
           "published_under": "ISUZU",
           "published_as": "8980374810"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Assign this commercial high-capacity variant to the underlying engine/chassis OEM service position.",
+        "required_evidence": "First-party Isuzu F-Series fuel-system diagram/parts illustration identifying engine/chassis position."
+      }
     },
     {
       "row_id": "P3-18-F-FUEL-2018-2020-C",
@@ -2894,7 +2949,12 @@
           "published_under": "ISUZU",
           "published_as": "8981475250"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Confirm secondary/chassis assignment and determine kit contents versus single Donaldson element.",
+        "required_evidence": "First-party Isuzu parts breakdown showing chassis/secondary location and kit contents for 8975425390 / 8981475250."
+      }
     },
     {
       "row_id": "P3-19-F-FUEL-2018-2020-D",
@@ -2997,7 +3057,12 @@
           "published_under": "ISUZU",
           "published_as": "8980370110"
         }
-      ]
+      ],
+      "partial_triage": {
+        "classification": "ACTIONABLE_PARTIAL",
+        "question": "Confirm secondary/chassis assignment and determine kit contents versus single Donaldson cartridge.",
+        "required_evidence": "First-party Isuzu parts breakdown showing chassis/secondary location and kit contents for 8980370110."
+      }
     }
   ],
   "blocked_oem_rows": [
@@ -3863,7 +3928,8 @@
     "Phase 2 standard-vs-high-capacity fuel distinction is CLOSED: Isuzu first-party FleetValue/Genuine data proves HIGH CAPACITY is a commercial replacement variant, not a separate OEM position. Remaining PARTIAL status is only for exact engine/chassis/kit-position assignment.",
     "General catalogue-governance follow-up only: continue monitoring legacy cross-reference integrity around P550008/EL80008 outside the Isuzu closure. The three stale legacy mappings were already removed from both legacy CSV exports.",
     "OEM evidence follow-up only when new first-party material exists: H-Series, FRR/FXR, F-Series transverse positions, N-Series residual fuel scopes and N-Series cabin remain terminal BLOCKED_OEM with explicit reasons. Do not infer by continuity, sibling model or shared engine.",
-    "EL88076 / Donaldson P848076 is already LIVE and governed in catalogo_elimfilters via scripts/migrations/run_119_create_el88076_p848076.js; no publication action remains for this SKU."
+    "EL88076 / Donaldson P848076 is already LIVE and governed in catalogo_elimfilters via scripts/migrations/run_119_create_el88076_p848076.js; no publication action remains for this SKU.",
+    "PARTIAL triage is CLOSED: 11 ACTIONABLE_PARTIAL, 2 TERMINAL_PARTIAL, 0 PARTIAL_SUPERSEDED. Research only the 11 actionable rows against their recorded required_evidence; do not reopen the 2 terminal rows without new first-party contradictory/widening evidence."
   ],
   "exception_audit_status": "CLOSED_WITH_BLOCKERS",
   "exception_audit_history": [
@@ -4406,6 +4472,21 @@
       "result": "COMMERCIAL_VARIANT_NOT_SEPARATE_OEM_POSITION",
       "phase3_state_change": "NONE",
       "note": "The four related Phase 3 rows remain PARTIAL for other position/kit semantics; standard-vs-high-capacity is no longer an open OEM-position ambiguity."
+    },
+    {
+      "on": "2026-09-24",
+      "status": "PARTIAL_TRIAGE_COMPLETE",
+      "scope": "ALL_13_PHASE3_PARTIAL_ROWS",
+      "counts": {
+        "ACTIONABLE_PARTIAL": 11,
+        "TERMINAL_PARTIAL": 2,
+        "PARTIAL_SUPERSEDED": 0
+      },
+      "terminal_rows": [
+        "P3-13-F-LUBE-1987-2008",
+        "P3-15-F-FUEL-1994-2004"
+      ],
+      "note": "No decision_status changed. Each actionable row now records the exact unresolved question and the evidence needed to close it."
     }
   ],
   "duplicate_mapping_audit": {
@@ -4486,5 +4567,30 @@
       "phase3_auto_publish_flag": "false by design"
     },
     "closure_verdict": "CLOSED_WITH_EXPLICIT_BLOCKERS_AND_NO_UNSTRUCTURED_RESIDUE"
+  },
+  "partial_triage_audit": {
+    "on": "2026-09-24",
+    "total_partial": 13,
+    "ACTIONABLE_PARTIAL": 11,
+    "TERMINAL_PARTIAL": 2,
+    "PARTIAL_SUPERSEDED": 0,
+    "terminal_rows": [
+      "P3-13-F-LUBE-1987-2008",
+      "P3-15-F-FUEL-1994-2004"
+    ],
+    "actionable_rows": [
+      "P3-04-N-LUBE-2011-ON",
+      "P3-05-N-LUBE-1998-2010",
+      "P3-07-N-FUEL-2013-2021-A",
+      "P3-08-N-FUEL-2013-2021-B",
+      "P3-09-N-FUEL-2013-2021-C",
+      "P3-10-N-FUEL-HIGHCAP-2013-2021",
+      "P3-12-N-TRANS",
+      "P3-16-F-FUEL-2018-2020-A",
+      "P3-17-F-FUEL-2018-2020-B",
+      "P3-18-F-FUEL-2018-2020-C",
+      "P3-19-F-FUEL-2018-2020-D"
+    ],
+    "rule": "Triage classifies whether further research is justified; it does not change Phase 3 decision_status."
   }
 }
