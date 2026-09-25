@@ -1726,6 +1726,32 @@ app.get('/api/autocomplete', searchLimiter, async (req, res) => {
   }
 });
 
+// Catalog unification: an old or merged SKU (catalog_sku_alias, one hop) resolves to its current active SKU.
+// Returns the search response, or null when there is no alias, the target is not active, or the alias table
+// does not exist yet (databases where the unification has not been applied) — callers then continue as before.
+async function skuAliasSearchResult(client, normalizedSku, raw, lang) {
+  let alias;
+  try {
+    const { rows } = await client.query(
+      `SELECT new_sku, relation FROM catalog_sku_alias WHERE UPPER(REPLACE(old_sku,'-','')) = $1 LIMIT 1`,
+      [normalizedSku]
+    );
+    alias = rows[0];
+  } catch (err) {
+    if (err.code === '42P01') return null; // undefined_table
+    throw err;
+  }
+  if (!alias) return null;
+  const current = await client.query(`SELECT * FROM elimfilters_catalog_active_v WHERE sku = $1 LIMIT 1`, [alias.new_sku]);
+  if (current.rows.length === 0) return null;
+  const products = current.rows.map(r => buildFilterData(r, lang));
+  await enrichAlternatives(products, client);
+  return {
+    success: true, results: products, source: 'sku_alias',
+    alias: { requested: raw, resolved: alias.new_sku, relation: alias.relation },
+  };
+}
+
 // ─── GET /api/search ──────────────────────────────────────────────────────────────────────────────
 app.get('/api/search', searchLimiter, async (req, res) => {
   const raw = (req.query.q || req.query.sku || '').trim();
@@ -1746,6 +1772,8 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     const q = raw.toUpperCase().replace(/[-\s]/g, '');
     const qNormalized = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
 
+    const aliased = await skuAliasSearchResult(client, q, raw, lang);
+    if (aliased) return res.json(aliased);
 
     const excludedSku = await client.query(
       `SELECT 1 FROM elimfilters_catalog
@@ -3353,6 +3381,8 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
     const q = raw.toUpperCase().replace(/[-\s]/g, '');
     const qNormalized = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
 
+    const aliased = await skuAliasSearchResult(client, q, raw, lang);
+    if (aliased) return res.json(aliased);
 
     const excludedSku = await client.query(
       `SELECT 1 FROM elimfilters_catalog
