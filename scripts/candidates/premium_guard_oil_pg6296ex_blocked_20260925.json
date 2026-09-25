@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG6296EX",
+  "queue_target_sku": "EL36009",
+  "queue_authority": {
+    "code": "HU6009Z"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_IDENTITY_UNRESOLVED__HU6009Z",
+  "details": {
+    "note": "Authority HU6009Z matches observed primary candidate but target is not yet canonicalized to MANN; close identity first."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6296EX/interchanges",
+      "sha256": "6c856c39635846c821e702caf6afa3b6a8238ac804f1b93c15ddb02be11d86dd"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6296EX/applications?format=ranges",
+      "sha256": "520255877fb206765ae6c0c5753c016367013b72040ac0df3295ce8c034b1351"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

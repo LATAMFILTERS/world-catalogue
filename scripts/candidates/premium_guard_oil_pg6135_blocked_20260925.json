@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG6135",
+  "queue_target_sku": "EL36009",
+  "queue_authority": {
+    "code": "CH10955"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_IDENTITY_UNRESOLVED__HU6009Z",
+  "details": {
+    "note": "Target remains legacy base 6009 with observed MANN HU6009Z; canonical MANN ownership must be closed first."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6135/interchanges",
+      "sha256": "57b7aeee644a83883c1463a0a8844cf474f244fecb63e4e0a5c6c03fa43d19cc"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6135/applications?format=ranges",
+      "sha256": "92bfc0c55c3bd460eeecf1422cd04925f4f6cb80edfa00e7b0797a5eb7d596be"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

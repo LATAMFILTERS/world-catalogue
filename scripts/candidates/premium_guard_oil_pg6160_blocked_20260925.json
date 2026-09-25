@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG6160",
+  "queue_target_sku": "EL36006",
+  "queue_authority": {
+    "code": "CH11252"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_IDENTITY_UNRESOLVED__HU6006Z",
+  "details": {
+    "note": "Target remains legacy base 6006 with observed MANN HU6006Z; canonical identity is nonterminal."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6160/interchanges",
+      "sha256": "54b9ff79f9010ae6f973683355a80095c353ad608a3463e286325ed66bd0aa3c"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6160/applications?format=ranges",
+      "sha256": "97a0bd0079bb68d8a5cff3825ddd871f5d535959612231006d120be3579953ec"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

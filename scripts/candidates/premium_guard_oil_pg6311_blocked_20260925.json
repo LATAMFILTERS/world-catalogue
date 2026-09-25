@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG6311",
+  "queue_target_sku": "EL36006",
+  "queue_authority": {
+    "code": "CH10358"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_IDENTITY_UNRESOLVED__HU6006Z",
+  "details": {
+    "note": "Target remains legacy base 6006 with HU6006Z primary candidate; no safe alternate publication before canonical closure."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6311/interchanges",
+      "sha256": "0a5c1b5e3c4af3154c1dd91ba4e800dac50affa9b7f0d8858a98c64dc5444297"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6311/applications?format=ranges",
+      "sha256": "85b38d043d642e85124fd9950bd8566fcdfa40ac6127529a12d0d9ea455a2e00"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

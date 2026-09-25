@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG6288EX",
+  "queue_target_sku": "EL37008",
+  "queue_authority": {
+    "code": "CH10759"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_MANN_VARIANT_AMBIGUITY__HU7008Z_W7008",
+  "details": {
+    "note": "Target remains legacy base 7008 with HU7008Z/W7008 primary candidates."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6288EX/interchanges",
+      "sha256": "0395bff1bb0b9de0427b0a1c36016ee23b9e3d098b4984c2bd5fcd2dfc5c5039"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6288EX/applications?format=ranges",
+      "sha256": "c7a27efdb09e012e29c073e4c88a496b2e4a39e9522285359a4eccd80dab647b"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

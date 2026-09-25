@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG6162",
+  "queue_target_sku": "EL37131",
+  "queue_authority": {
+    "code": "CH9713"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_DATA_INTEGRITY_AND_CANONICAL_AUTHORITY_UNRESOLVED",
+  "details": {
+    "note": "Target CH9713ECO has implausible stored dimensions and VERIFY_PRIMARY_ABSENCE; do not enrich until data integrity and canonical authority are repaired."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6162/interchanges",
+      "sha256": "493bf00f02f5a7281fafe126995d4202b5e5c0cb4ec9a9c734bd519bd8438a48"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6162/applications?format=ranges",
+      "sha256": "bf41ab21ae9c3b20c3082d7d5260d06928b2c8c5ef67d399c32f194a828a72e4"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

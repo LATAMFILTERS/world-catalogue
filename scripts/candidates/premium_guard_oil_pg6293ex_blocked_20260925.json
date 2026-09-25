@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG6293EX",
+  "queue_target_sku": "EL31242",
+  "queue_authority": {
+    "code": "FD11242"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_AUTHORITY_NOT_TERMINAL__VERIFY_PRIMARY_ABSENCE",
+  "details": {
+    "note": "FRAM CH11242 target exists but governance still requires primary-manufacturer absence verification."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6293EX/interchanges",
+      "sha256": "ca77f01cd79666042bbb1fd12238312b2d8afabdbf9087121150d3b18854bc59"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6293EX/applications?format=ranges",
+      "sha256": "6a0a2415791624498a6c03adaa5c58af11a0d81f94e57c301aa39ff5f9b1c11a"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

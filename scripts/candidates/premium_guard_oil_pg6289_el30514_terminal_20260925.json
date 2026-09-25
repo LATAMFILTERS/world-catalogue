@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG6289",
+  "sku": "EL30514",
+  "codigo_base": "HU514X",
+  "terminal_state": "COMPLETE_REUSED_CANONICAL_FAMILY",
+  "canonical_brand": "MANN-FILTER",
+  "action": "ADDED_PREMIUM_GUARD_REFERENCE_ONLY",
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6289/interchanges",
+      "sha256": "488366763c2211084e99afa4ff879caeb983fca8ddf41d45538dca8eab848230"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6289/applications?format=ranges",
+      "sha256": "b3417b3e29404b9c1e4de11022d825a4d2b2620da0de947dcdfabd7bef9ec54e"
+    }
+  },
+  "reference_governance": {
+    "status": "COMPLETE_REUSED_CANONICAL_FAMILY",
+    "premium_guard_code": "PG6289",
+    "canonical_sku": "EL30514",
+    "publication_rule": "EXISTING_MANN_CANONICAL_LD_FAMILY_REUSED",
+    "closed_at": "2026-09-25"
+  }
+}

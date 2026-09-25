@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG6291",
+  "queue_target_sku": "EL36021",
+  "queue_authority": {
+    "code": "PH11462"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_AUTHORITY_NOT_TERMINAL__VERIFY_PRIMARY_ABSENCE",
+  "details": {
+    "note": "Target is promoted FRAM PH11203 family but source authority PH11462 does not match its approved base; no safe write."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6291/interchanges",
+      "sha256": "8c050263e3efc4521eb1fa5c0a050b32ae735bd0e2678e86ff78c417ef9283d1"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6291/applications?format=ranges",
+      "sha256": "6905289356978a830e08b8ce05cac83e4ff12e882c88ba8a85b1eb4a70f245f6"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

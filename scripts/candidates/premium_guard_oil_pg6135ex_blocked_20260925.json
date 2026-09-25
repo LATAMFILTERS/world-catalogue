@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG6135EX",
+  "queue_target_sku": "EL36009",
+  "queue_authority": {
+    "code": "FS10955"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_IDENTITY_UNRESOLVED__HU6009Z",
+  "details": {
+    "note": "Same family as PG6135; target base 6009 remains nonterminal pending HU6009Z canonicalization."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6135EX/interchanges",
+      "sha256": "45d5fb7a7a2b379a049616d5c80cb333482bdaeaf1e8002aa1c2f6ad51b63e81"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG6135EX/applications?format=ranges",
+      "sha256": "92bfc0c55c3bd460eeecf1422cd04925f4f6cb80edfa00e7b0797a5eb7d596be"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
