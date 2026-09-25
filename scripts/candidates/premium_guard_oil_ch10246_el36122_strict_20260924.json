@@ -1,0 +1,493 @@
+{
+  "sku": "EL36122",
+  "codigo_base": "CH10246",
+  "filter_type": "oil",
+  "duty": "LIGHT_DUTY",
+  "technology": "SYNTRAX™",
+  "canonical_brand": "FRAM",
+  "canonical_source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+  "canonical_evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+  "premium_guard_code": "PG99494",
+  "specs": {
+    "style": "Cartridge",
+    "height_mm": 105,
+    "outer_diameter_mm": 57.5,
+    "inner_diameter_mm": 10,
+    "anti_drainback_valve": "No",
+    "bypass_relief_valve": "No"
+  },
+  "oem_codes": [
+    {
+      "manufacturer": "GENERAL MOTORS",
+      "code": "93185674",
+      "classification": "OEM",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+      "evidence_authority": "FRAM_OFFICIAL_CATALOG"
+    },
+    {
+      "manufacturer": "GENERAL MOTORS",
+      "code": "55594651",
+      "classification": "OEM",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+      "evidence_authority": "FRAM_OFFICIAL_CATALOG"
+    },
+    {
+      "manufacturer": "GENERAL MOTORS",
+      "code": "55588497",
+      "classification": "OEM",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "GENERAL MOTORS",
+      "code": "55485671",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu6019z_mann-filter.html",
+      "evidence_hash": "567e2abe95ef4db00e13e8894cfaf8f7682c2a73dfaf053b7c14a7ec18bd78d0",
+      "evidence_authority": "MANN_FILTER_OFFICIAL_HU6019Z"
+    },
+    {
+      "manufacturer": "OPEL",
+      "code": "650163",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu6019z_mann-filter.html",
+      "evidence_hash": "567e2abe95ef4db00e13e8894cfaf8f7682c2a73dfaf053b7c14a7ec18bd78d0",
+      "evidence_authority": "MANN_FILTER_OFFICIAL_HU6019Z"
+    },
+    {
+      "manufacturer": "OPEL",
+      "code": "95526687",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu6019z_mann-filter.html",
+      "evidence_hash": "567e2abe95ef4db00e13e8894cfaf8f7682c2a73dfaf053b7c14a7ec18bd78d0",
+      "evidence_authority": "MANN_FILTER_OFFICIAL_HU6019Z"
+    },
+    {
+      "manufacturer": "VAUXHALL",
+      "code": "55588497",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu6019z_mann-filter.html",
+      "evidence_hash": "567e2abe95ef4db00e13e8894cfaf8f7682c2a73dfaf053b7c14a7ec18bd78d0",
+      "evidence_authority": "MANN_FILTER_OFFICIAL_HU6019Z"
+    },
+    {
+      "manufacturer": "VAUXHALL",
+      "code": "95526687",
+      "classification": "OEM",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu6019z_mann-filter.html",
+      "evidence_hash": "567e2abe95ef4db00e13e8894cfaf8f7682c2a73dfaf053b7c14a7ec18bd78d0",
+      "evidence_authority": "MANN_FILTER_OFFICIAL_HU6019Z"
+    }
+  ],
+  "competitor_codes": [
+    {
+      "manufacturer": "ACDelco",
+      "code": "PF2264G",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Autopart International",
+      "code": "5001-641375",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Baldwin",
+      "code": "P7489",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Carquest Premium Filters",
+      "code": "95141",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Cartek",
+      "code": "CTK45010",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "ECOGARD",
+      "code": "X10649",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Federated",
+      "code": "PG99494F",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "GK Industries",
+      "code": "EF10246",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Hengst",
+      "code": "E650H01 D233",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "MAHLE",
+      "code": "OX 1058D",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Mann-Filter",
+      "code": "HU 6019 z",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "mann_source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu6019z_mann-filter.html",
+      "mann_evidence_hash": "567e2abe95ef4db00e13e8894cfaf8f7682c2a73dfaf053b7c14a7ec18bd78d0",
+      "mann_evidence_authority": "MANN_FILTER_OFFICIAL"
+    },
+    {
+      "manufacturer": "Mighty Distributing System",
+      "code": "MX9032",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "NAPA Gold Filters",
+      "code": "100331",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Parts Plus",
+      "code": "P99494",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Prime Guard",
+      "code": "POF5839",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Pronto",
+      "code": "PO99494",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Purolator",
+      "code": "L21406",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Service Pro",
+      "code": "M10649",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP",
+      "code": "S45010",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP",
+      "code": "SL45010",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP Filters",
+      "code": "S45010XL",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "STP Filters",
+      "code": "S45010",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "VAICO",
+      "code": "V40-1532",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Valvoline",
+      "code": "VO-98",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "Wix",
+      "code": "WL10331",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "WORLDPAC",
+      "code": "W0133-2369044-ACD",
+      "classification": "AFTERMARKET",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/interchanges",
+      "evidence_hash": "3b482c17cb9e054b4ef6e93b3c90729e799878bd2cf0d62071e5bca6f3f1af40",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "manufacturer": "PREMIUM GUARD",
+      "code": "PG99494",
+      "classification": "AFTERMARKET",
+      "source_url": "https://www.pgfilters.com/product-catalog/product-page/pg99494/",
+      "evidence_hash": "89ee1b0f60fb3b095d58390ed8491b022165622cdc0fa862a63b61804b889734",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_PRODUCT_PAGE"
+    },
+    {
+      "manufacturer": "EUROREPAR",
+      "code": "1643039280",
+      "classification": "AFTERMARKET",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+      "evidence_authority": "FRAM_OFFICIAL_CATALOG"
+    },
+    {
+      "manufacturer": "MANN-FILTER",
+      "code": "HU6122X",
+      "classification": "AFTERMARKET",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+      "evidence_authority": "FRAM_OFFICIAL_CATALOG"
+    },
+    {
+      "manufacturer": "MOTO RAD",
+      "code": "MO325",
+      "classification": "AFTERMARKET",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+      "evidence_authority": "FRAM_OFFICIAL_CATALOG"
+    },
+    {
+      "manufacturer": "PARTMO",
+      "code": "PP85674",
+      "classification": "AFTERMARKET",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+      "evidence_authority": "FRAM_OFFICIAL_CATALOG"
+    },
+    {
+      "manufacturer": "PURFLUX",
+      "code": "L387",
+      "classification": "AFTERMARKET",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+      "evidence_authority": "FRAM_OFFICIAL_CATALOG"
+    },
+    {
+      "manufacturer": "TECFIL",
+      "code": "PEL113",
+      "classification": "AFTERMARKET",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+      "evidence_authority": "FRAM_OFFICIAL_CATALOG"
+    },
+    {
+      "manufacturer": "TECNECO",
+      "code": "EOL141",
+      "classification": "AFTERMARKET",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+      "evidence_authority": "FRAM_OFFICIAL_CATALOG"
+    },
+    {
+      "manufacturer": "VINTO",
+      "code": "FT313",
+      "classification": "AFTERMARKET",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a",
+      "evidence_authority": "FRAM_OFFICIAL_CATALOG"
+    }
+  ],
+  "vehicle_applications": [
+    {
+      "year": "2012-2016",
+      "make": "Chevrolet",
+      "model": "Sonic 4P/5P (Corea)",
+      "engine": "1.6 16V NAFTA",
+      "source": "FRAM_OFFICIAL_CATALOG",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a"
+    },
+    {
+      "year": "2010-2017",
+      "make": "Chevrolet",
+      "model": "Cruze 4P/5P",
+      "engine": "1.8 16V NAFTA",
+      "source": "FRAM_OFFICIAL_CATALOG",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a"
+    },
+    {
+      "year": "2015-2017",
+      "make": "Chevrolet",
+      "model": "Tracker 4X4",
+      "engine": "1.8 16V NAFTA",
+      "source": "FRAM_OFFICIAL_CATALOG",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a"
+    },
+    {
+      "year": "2017-",
+      "make": "Chevrolet",
+      "model": "Tracker 4X4 (17') MT",
+      "engine": "1.8 16V NAFTA",
+      "source": "FRAM_OFFICIAL_CATALOG",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a"
+    },
+    {
+      "year": "2017-",
+      "make": "Chevrolet",
+      "model": "Tracker 4X2 (17')",
+      "engine": "1.8 16V NAFTA",
+      "source": "FRAM_OFFICIAL_CATALOG",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a"
+    },
+    {
+      "year": "2017-2022",
+      "make": "Chevrolet",
+      "model": "Tracker 4X4 (17') AT",
+      "engine": "1.8 16V NAFTA",
+      "source": "FRAM_OFFICIAL_CATALOG",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a"
+    },
+    {
+      "year": "2015-2016",
+      "make": "Chevrolet",
+      "model": "Sonic 4P/5P (Mexico)",
+      "engine": "1.6 16V NAFTA",
+      "source": "FRAM_OFFICIAL_CATALOG",
+      "source_url": "https://catalogo.fram.com.ar/buscar/detalle_filtro/CH10246",
+      "evidence_hash": "4305d5d0bc06c7a1863da58a9c0f7c8cb81188a0b70894de336850efe5c4cd7a"
+    },
+    {
+      "year": "2017-2019",
+      "make": "Chevrolet",
+      "model": "Cruze",
+      "engine": "1.6L 4Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/applications?format=ranges",
+      "evidence_hash": "928067ed409562662a675fb23d007529d17e300f3cd1fe163b84725a313d2f4a"
+    },
+    {
+      "year": "2018-2019",
+      "make": "Chevrolet",
+      "model": "Equinox",
+      "engine": "1.6L 4Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/applications?format=ranges",
+      "evidence_hash": "928067ed409562662a675fb23d007529d17e300f3cd1fe163b84725a313d2f4a"
+    },
+    {
+      "year": "2018-2019",
+      "make": "GMC",
+      "model": "Terrain",
+      "engine": "1.6L 4Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/PG99494/applications?format=ranges",
+      "evidence_hash": "928067ed409562662a675fb23d007529d17e300f3cd1fe163b84725a313d2f4a"
+    },
+    {
+      "year": "2014-2015",
+      "make": "Opel",
+      "model": "Astra J / Astra J GTC",
+      "engine": "1.6 CDTI B16DTL",
+      "source": "MANN_FILTER_OFFICIAL_HU6019Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu6019z_mann-filter.html",
+      "evidence_hash": "567e2abe95ef4db00e13e8894cfaf8f7682c2a73dfaf053b7c14a7ec18bd78d0"
+    },
+    {
+      "year": "2013-2015",
+      "make": "Opel",
+      "model": "Astra J / Astra J GTC",
+      "engine": "1.6 CDTI B16DTH",
+      "source": "MANN_FILTER_OFFICIAL_HU6019Z",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/hu6019z_mann-filter.html",
+      "evidence_hash": "567e2abe95ef4db00e13e8894cfaf8f7682c2a73dfaf053b7c14a7ec18bd78d0"
+    }
+  ],
+  "reference_governance": {
+    "status": "COMPLETE_CANONICAL_FRAM_WITH_DUPLICATE_CONSOLIDATION",
+    "canonical_sku": "EL36122",
+    "duplicate_sku": "EL36019",
+    "cross_category_sku": "EC36019",
+    "resolved_codes": [
+      "55588497",
+      "E650H01D233",
+      "V401532"
+    ],
+    "publication_rule": "CH10246_CANONICAL_FRAM_NON_EUROPEAN",
+    "closed_at": "2026-09-24"
+  }
+}
