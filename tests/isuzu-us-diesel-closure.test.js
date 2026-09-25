@@ -982,7 +982,7 @@ test('PHASE 3.15: no duplicate ELIMFILTERS SKU -- one Donaldson base, one SKU', 
 test('PHASE 3.16: Phase 1 and Phase 2 are intact', () => {
   const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
   assert.equal(digest(phase1), 'f8c58b44aca6fec67ba640a2330a8a34c34db73e1654d7c410137cb6dbde30d6');
-  assert.equal(digest(phase2), '0140e1a75cec66d1845d8c430123037088d1d262f6032a9d6f28a641e61c24b1');
+  assert.equal(digest(phase2), '0eb871e729278c336c46e97cb5f17616f705dc696e4e461b6f4070a26409c02e');
   assert.equal(phase2.phase2_status, 'CLOSED');
 });
 
@@ -1118,7 +1118,7 @@ test('EXCEPTION 8: no change to Phase 1 fitment', () => {
 
 test('EXCEPTION 9: no change to the Phase 2 OEN truth', () => {
   const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
-  assert.equal(digest(phase2), '0140e1a75cec66d1845d8c430123037088d1d262f6032a9d6f28a641e61c24b1');
+  assert.equal(digest(phase2), '0eb871e729278c336c46e97cb5f17616f705dc696e4e461b6f4070a26409c02e');
   for (const id of ['P3-05-N-LUBE-1998-2010', 'P3-08-N-FUEL-2013-2021-B', 'P3-10-N-FUEL-HIGHCAP-2013-2021', 'P3-12-N-TRANS', 'P3-13-F-LUBE-1987-2008', 'P3-16-F-FUEL-2018-2020-A', 'P3-17-F-FUEL-2018-2020-B']) {
     const row = phase3.resolution_rows.find((r) => r.row_id === id);
     const p2 = phase2.oen_rows.find((r) => r.row_id === row.phase2_row_id);
@@ -1182,9 +1182,10 @@ test('EXCEPTION 13: every CONFLICTING row ends resolved or carries an explicit, 
 });
 
 test('EXCEPTION 14: every BLOCKED_DONALDSON row shows exact search evidence', () => {
-  // Later single-row closure resolved P2-N-TRANS; only the FWS row remains blocked.
+  // Later closures resolved P2-N-TRANS and recovered an exact MY2006 NPR OEM number.
+  // Two rows are currently BLOCKED_DONALDSON: FWS 8982373410 and MY2006 NPR fuel 8980284111.
   const blocked = phase3.resolution_rows.filter((r) => r.decision_status === 'BLOCKED_DONALDSON');
-  assert.equal(blocked.length, 1);
+  assert.equal(blocked.length, 2);
   for (const row of blocked) {
     assert.ok(row.caveats.length > 0, `${row.row_id} must document its search`);
   }
@@ -1223,7 +1224,7 @@ test('EXCEPTION AUDIT FINAL: counts match the reported starting and final tallie
   // P848076 ELIMFILTERS SKU CLOSURE 2026-09-24: closed both remaining
   // NO_ELIMFILTERS_SKU_YET rows with a governed candidate SKU.
   const history = phase3.exception_audit_history.find((h) => h.starting_counts?.NO_ELIMFILTERS_SKU_YET === 2);
-  assert.equal(phase3.exception_audit_history.length, 7);
+  assert.equal(phase3.exception_audit_history.length, 8);
   assert.ok(history);
   assert.deepEqual(history.starting_counts, { VERIFIED_BASE: 4, PARTIAL: 11, CONFLICTING: 0, NO_ELIMFILTERS_SKU_YET: 2, BLOCKED_DONALDSON: 2 });
   assert.deepEqual(history.final_counts, { VERIFIED_BASE: 5, PARTIAL: 12, CONFLICTING: 0, NO_ELIMFILTERS_SKU_YET: 0, BLOCKED_DONALDSON: 2 });
@@ -1242,10 +1243,10 @@ test('EXCEPTION AUDIT FINAL: counts match the reported starting and final tallie
   assert.equal(transHistory.elimfilters_sku, 'EL80008');
 
   const counts = phase3.coverage.decision_status;
-  assert.equal(counts.VERIFIED_BASE, 5);
+  assert.equal(counts.VERIFIED_BASE, 8);
   assert.equal(counts.PARTIAL, 13);
   assert.equal(counts.CONFLICTING, 0);
-  assert.equal(counts.BLOCKED_DONALDSON, 1);
+  assert.equal(counts.BLOCKED_DONALDSON, 2);
   assert.equal(counts.NO_ELIMFILTERS_SKU_YET, 0, 'both rows this pass resolved now carry a governed candidate SKU');
 
   assert.equal(phase3.exception_audit_status, 'CLOSED_WITH_BLOCKERS');
@@ -1323,7 +1324,7 @@ test('MICROCASE 6: Phase 1 is not altered', () => {
 
 test('MICROCASE 7: Phase 2 is not altered', () => {
   const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
-  assert.equal(digest(phase2), '0140e1a75cec66d1845d8c430123037088d1d262f6032a9d6f28a641e61c24b1');
+  assert.equal(digest(phase2), '0eb871e729278c336c46e97cb5f17616f705dc696e4e461b6f4070a26409c02e');
   const p2 = phase2.oen_rows.find((r) => r.row_id === 'P2-N-LUBE-1998-2010');
   assert.deepEqual(p2.isuzu_oe_oen, ['2906542701', '2906548000', '2906548100']);
 });
@@ -1396,7 +1397,7 @@ test('MICROCASE FINAL: P550008 legacy cleanup is explicit after the transmission
   const p550008 = phase3.duplicate_mapping_audit.findings.find((f) => f.donaldson_part === 'P550008');
   assert.ok(p550008);
   assert.match(p550008.action_taken, /removed 3 stale P550008 rows/);
-  assert.equal(phase3.resolution_rows.length, 19);
+  assert.equal(phase3.resolution_rows.length, 23);
   assert.equal((phase3.blocked_oem_rows || []).length, 9);
   const result = validateClosure();
   assert.deepEqual(result.errors, []);
@@ -1419,7 +1420,7 @@ test('BLOCKEDCASE 1: all 4 original BLOCKED_DONALDSON rows are still explicitly 
     assert.ok(row, `${id} must still exist as a resolution row`);
     assert.notEqual(row.decision_status, undefined);
   }
-  assert.equal(phase3.resolution_rows.length, 19, 'no row was added or removed');
+  assert.equal(phase3.resolution_rows.length, 23, 'four later OEM-recovery rows were added; the original four remain present');
 });
 
 test('BLOCKEDCASE 2: every resolved row carries the exact Phase 2 OEN, nothing invented', () => {
@@ -1551,17 +1552,19 @@ test('BLOCKEDCASE 13: Phase 1 is untouched', () => {
 
 test('BLOCKEDCASE 14: Phase 2 is untouched', () => {
   const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
-  assert.equal(digest(phase2), '0140e1a75cec66d1845d8c430123037088d1d262f6032a9d6f28a641e61c24b1');
+  assert.equal(digest(phase2), '0eb871e729278c336c46e97cb5f17616f705dc696e4e461b6f4070a26409c02e');
 });
 
-test('BLOCKEDCASE 15: the other 15 Phase 3 rows and all 9 BLOCKED_OEM rows are untouched', () => {
+test('BLOCKEDCASE 15: original rows remain valid and later OEM-recovery rows are explicit', () => {
   const otherRowIds = phase3.resolution_rows.filter((r) => !BLOCKED4_PHASE2_IDS.includes(r.phase2_row_id)).map((r) => r.row_id);
-  assert.equal(otherRowIds.length, 15);
+  assert.equal(otherRowIds.length, 19);
   const expected = {
     'P3-01-N-AIR-1986-2005': 'VERIFIED_BASE', 'P3-02-N-AIR-2006-ON': 'VERIFIED_BASE', 'P3-03-N-LUBE-4JJ': 'VERIFIED_BASE', 'P3-06-N-FUEL-4HE': 'VERIFIED_BASE',
     'P3-05-N-LUBE-1998-2010': 'PARTIAL', 'P3-07-N-FUEL-2013-2021-A': 'PARTIAL', 'P3-08-N-FUEL-2013-2021-B': 'PARTIAL', 'P3-09-N-FUEL-2013-2021-C': 'PARTIAL',
     'P3-10-N-FUEL-HIGHCAP-2013-2021': 'PARTIAL', 'P3-13-F-LUBE-1987-2008': 'PARTIAL', 'P3-15-F-FUEL-1994-2004': 'PARTIAL', 'P3-16-F-FUEL-2018-2020-A': 'PARTIAL',
-    'P3-17-F-FUEL-2018-2020-B': 'PARTIAL', 'P3-18-F-FUEL-2018-2020-C': 'PARTIAL', 'P3-19-F-FUEL-2018-2020-D': 'PARTIAL'
+    'P3-17-F-FUEL-2018-2020-B': 'PARTIAL', 'P3-18-F-FUEL-2018-2020-C': 'PARTIAL', 'P3-19-F-FUEL-2018-2020-D': 'PARTIAL',
+    'P3-N-FUEL-2006-NPR': 'BLOCKED_DONALDSON', 'P3-N-FUEL-2007-NPR': 'VERIFIED_BASE',
+    'P3-N-FUEL-2008-NPR': 'VERIFIED_BASE', 'P3-N-FUEL-2010-HD-NQR-NRR': 'VERIFIED_BASE'
   };
   for (const id of otherRowIds) {
     const row = phase3.resolution_rows.find((r) => r.row_id === id);
@@ -1599,17 +1602,17 @@ test('BLOCKEDCASE FINAL: BLOCKED_DONALDSON closure micro-phase counts are correc
   assert.deepEqual(history.final_counts, { VERIFIED_BASE: 4, PARTIAL: 11, CONFLICTING: 0, BLOCKED_DONALDSON: 2 });
 
   const counts = phase3.coverage.decision_status;
-  assert.equal(counts.VERIFIED_BASE, 5);
+  assert.equal(counts.VERIFIED_BASE, 8);
   assert.equal(counts.PARTIAL, 13);
   assert.equal(counts.CONFLICTING, 0);
-  assert.equal(counts.BLOCKED_DONALDSON, 1);
-  assert.equal(counts.NO_ELIMFILTERS_SKU_YET, 0, 'both rows the BLOCKED_DONALDSON pass produced were later closed by the P848076 SKU CLOSURE pass');
+  assert.equal(counts.BLOCKED_DONALDSON, 2);
+  assert.equal(counts.NO_ELIMFILTERS_SKU_YET, 0, 'all named bases either reuse an existing SKU or the governed EL88076 candidate');
   assert.equal(counts.BLOCKED_OEM, 9);
 
-  // One genuine Donaldson blocker remains after the transmission row resolves.
+  // Two Donaldson blockers remain: the terminal FWS case plus the newly OEM-unblocked MY2006 NPR fuel row.
   const stillBlocked = phase3.resolution_rows.filter((r) => r.decision_status === 'BLOCKED_DONALDSON');
-  assert.equal(stillBlocked.length, 1);
-  assert.equal(stillBlocked[0].phase2_row_id, 'P2-N-FWS-2022i-ON');
+  assert.equal(stillBlocked.length, 2);
+  assert.deepEqual(new Set(stillBlocked.map((r) => r.phase2_row_id)), new Set(['P2-N-FWS-2022i-ON','P2-N-FUEL-2006-NPR']));
   for (const row of stillBlocked) assert.ok(row.root_cause, `${row.row_id} must carry an explicit root_cause code`);
 
   const p550008Finding = phase3.duplicate_mapping_audit.findings.find((f) => f.donaldson_part === 'P550008');
@@ -1775,18 +1778,20 @@ test('SKUCASE 17: Phase 1 is untouched', () => {
 
 test('SKUCASE 18: Phase 2 is untouched', () => {
   const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
-  assert.equal(digest(phase2), '0140e1a75cec66d1845d8c430123037088d1d262f6032a9d6f28a641e61c24b1');
+  assert.equal(digest(phase2), '0eb871e729278c336c46e97cb5f17616f705dc696e4e461b6f4070a26409c02e');
 });
 
 test('SKUCASE 19: unrelated Phase 3 rows are untouched', () => {
   const otherIds = phase3.resolution_rows.filter((r) => !P848076_ROW_IDS.includes(r.phase2_row_id)).map((r) => r.row_id);
-  assert.equal(otherIds.length, 17);
+  assert.equal(otherIds.length, 21);
   const expected = {
     'P3-01-N-AIR-1986-2005': 'VERIFIED_BASE', 'P3-02-N-AIR-2006-ON': 'VERIFIED_BASE', 'P3-03-N-LUBE-4JJ': 'VERIFIED_BASE', 'P3-06-N-FUEL-4HE': 'VERIFIED_BASE',
     'P3-05-N-LUBE-1998-2010': 'PARTIAL', 'P3-07-N-FUEL-2013-2021-A': 'PARTIAL', 'P3-08-N-FUEL-2013-2021-B': 'PARTIAL', 'P3-09-N-FUEL-2013-2021-C': 'PARTIAL',
     'P3-10-N-FUEL-HIGHCAP-2013-2021': 'PARTIAL', 'P3-13-F-LUBE-1987-2008': 'PARTIAL', 'P3-15-F-FUEL-1994-2004': 'PARTIAL', 'P3-16-F-FUEL-2018-2020-A': 'PARTIAL',
     'P3-17-F-FUEL-2018-2020-B': 'PARTIAL', 'P3-18-F-FUEL-2018-2020-C': 'PARTIAL', 'P3-19-F-FUEL-2018-2020-D': 'PARTIAL',
-    'P3-11-N-FWS-2022i-ON': 'BLOCKED_DONALDSON', 'P3-12-N-TRANS': 'PARTIAL'
+    'P3-11-N-FWS-2022i-ON': 'BLOCKED_DONALDSON', 'P3-12-N-TRANS': 'PARTIAL',
+    'P3-N-FUEL-2006-NPR': 'BLOCKED_DONALDSON', 'P3-N-FUEL-2007-NPR': 'VERIFIED_BASE',
+    'P3-N-FUEL-2008-NPR': 'VERIFIED_BASE', 'P3-N-FUEL-2010-HD-NQR-NRR': 'VERIFIED_BASE'
   };
   for (const id of otherIds) {
     const row = phase3.resolution_rows.find((r) => r.row_id === id);
@@ -1849,16 +1854,16 @@ test('SKUCASE 25: EL88076 was derived from the real governed nomenclature policy
   assert.equal('EL8' + donaldsonDigits.slice(-4), 'EL88076');
 });
 
-test('SKUCASE FINAL: NO_ELIMFILTERS_SKU_YET is 0 and only 1 BLOCKED_DONALDSON + 9 BLOCKED_OEM remain', () => {
+test('SKUCASE FINAL: NO_ELIMFILTERS_SKU_YET is 0; two BLOCKED_DONALDSON and 9 BLOCKED_OEM scopes remain', () => {
   const counts = phase3.coverage.decision_status;
   assert.equal(counts.NO_ELIMFILTERS_SKU_YET, 0);
   assert.equal(counts.CONFLICTING, 0);
-  assert.equal(counts.BLOCKED_DONALDSON, 1);
+  assert.equal(counts.BLOCKED_DONALDSON, 2);
   assert.equal(counts.BLOCKED_OEM, 9);
-  assert.equal(counts.VERIFIED_BASE, 5);
+  assert.equal(counts.VERIFIED_BASE, 8);
   assert.equal(counts.PARTIAL, 13);
   const sum = counts.VERIFIED_BASE + counts.PARTIAL + counts.CONFLICTING + counts.NO_ELIMFILTERS_SKU_YET + counts.BLOCKED_DONALDSON;
-  assert.equal(sum, 19);
+  assert.equal(sum, 23);
 
   // P848076 has exactly one SKU, one canonical identity, one governed
   // technology, one governed application set -- nothing expanded.
@@ -1914,4 +1919,50 @@ test('FWS FINAL 2: WIX no-replacement evidence is supporting only and does not o
   assert.equal(row.final_followup_2026_09_24.donaldson.non_manufacture_verified, false);
   assert.equal(row.final_followup_2026_09_24.fleetguard.gate, 'NOT_ELIGIBLE');
   assert.equal(row.elimfilters_base_decision, null);
+});
+
+test('N-FUEL OEM RECOVERY 1: MY2006 NPR gets 8980284111 and NPR-HD does not inherit it', () => {
+  const npr = answerFilterSetQuery({ year: 2006, model: 'NPR' });
+  const hd = answerFilterSetQuery({ year: 2006, model: 'NPR-HD' });
+  const nprFuel = npr.answers[0].positions.find((x) => x.position === 'FUEL_PRIMARY');
+  const hdFuel = hd.answers[0].positions.find((x) => x.position === 'FUEL_PRIMARY');
+  assert.ok(nprFuel.isuzu_rows.some((x) => x.row_id === 'P2-N-FUEL-2006-NPR'));
+  assert.deepEqual(nprFuel.isuzu_oe_oen, ['8980284111']);
+  assert.ok(!(hdFuel.isuzu_rows || []).some((x) => x.row_id === 'P2-N-FUEL-2006-NPR'));
+});
+
+test('N-FUEL OEM RECOVERY 2: MY2007-2008 NPR gets 8980370110 without sibling inheritance', () => {
+  for (const year of [2007, 2008]) {
+    const npr = answerFilterSetQuery({ year, model: 'NPR' });
+    const hd = answerFilterSetQuery({ year, model: 'NPR-HD' });
+    const nprFuel = npr.answers[0].positions.find((x) => x.position === 'FUEL_PRIMARY');
+    const hdFuel = hd.answers[0].positions.find((x) => x.position === 'FUEL_PRIMARY');
+    assert.deepEqual(nprFuel.isuzu_oe_oen, ['8980370110']);
+    assert.ok(!(hdFuel.isuzu_rows || []).some((x) => x.row_id === `P2-N-FUEL-${year}-NPR`));
+  }
+}
+);
+
+test('N-FUEL OEM RECOVERY 3: MY2010 owner-manual row applies to NPR-HD/NQR/NRR but not NPR', () => {
+  for (const model of ['NPR-HD', 'NQR', 'NRR']) {
+    const answer = answerFilterSetQuery({ year: 2010, model });
+    assert.ok(answer.answers[0].positions.find((x) => x.position === 'FUEL_PRIMARY').isuzu_rows.some((x) => x.row_id === 'P2-N-FUEL-2010-HD-NQR-NRR'));
+  }
+  const npr = answerFilterSetQuery({ year: 2010, model: 'NPR' });
+  const nprFuel = npr.answers[0].positions.find((x) => x.position === 'FUEL_PRIMARY');
+  assert.ok(!(nprFuel.isuzu_rows || []).some((x) => x.row_id === 'P2-N-FUEL-2010-HD-NQR-NRR'));
+});
+
+test('N-FUEL OEM RECOVERY 4: exact recovered OENs transition into governed Phase 3 states only', () => {
+  const y2006 = phase3.resolution_rows.find((r) => r.phase2_row_id === 'P2-N-FUEL-2006-NPR');
+  assert.equal(y2006.decision_status, 'BLOCKED_DONALDSON');
+  assert.equal(y2006.donaldson_status, 'DONALDSON_NOT_FOUND');
+  assert.equal(y2006.base_source_part, null);
+  for (const id of ['P2-N-FUEL-2007-NPR', 'P2-N-FUEL-2008-NPR', 'P2-N-FUEL-2010-HD-NQR-NRR']) {
+    const row = phase3.resolution_rows.find((r) => r.phase2_row_id === id);
+    assert.equal(row.donaldson_part, 'P502427');
+    assert.equal(row.elimfilters_existing_sku, 'EF92427');
+    assert.equal(row.decision_status, 'VERIFIED_BASE');
+    assert.equal(row.elimfilters_base_decision.published, false);
+  }
 });

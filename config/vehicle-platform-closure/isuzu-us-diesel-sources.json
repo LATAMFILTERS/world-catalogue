@@ -1215,6 +1215,50 @@
         "WIX reports there is no replacement at this time"
       ],
       "scope_restriction": "SUPPORTING ONLY. WIX does not define OEM scope or the HD canonical base. No-replacement at WIX is not evidence that Donaldson does not manufacture an equivalent and cannot open Fleetguard fallback."
+    },
+    {
+      "source_id": "ISUZU_OM_NPR_2006_FUEL",
+      "title": "2006 Isuzu NPR Diesel Owner's Manual",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_owner_manual_mirror",
+      "authority_level": "primary",
+      "origin_url": "https://manualzz.com/doc/27629417/2006-owner-s-manual-isuzu-npr--diesel-",
+      "captured_at": "2026-09-24",
+      "supports": ["MY2006 NPR with 4HK1-TC", "Fuel filter Isuzu No. 8-98028-411-1"],
+      "scope_restriction": "Exact MY2006 NPR only. Mirror hosts the original Isuzu publication. No sibling-model or adjacent-year inheritance."
+    },
+    {
+      "source_id": "ISUZU_OM_NPR_2007_FUEL",
+      "title": "2007 Isuzu N-Series NPR Owner's Manual",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_owner_manual_mirror",
+      "authority_level": "primary",
+      "origin_url": "https://www.scribd.com/document/421489519/2007-N-Series-Diesel-NPR-pdf",
+      "captured_at": "2026-09-24",
+      "supports": ["MY2007 NPR with 4HK1-TC", "Fuel filter Isuzu No. 8-98037-011-0"],
+      "scope_restriction": "Exact MY2007 NPR only. Mirror hosts the original Isuzu publication. No sibling-model or adjacent-year inheritance."
+    },
+    {
+      "source_id": "ISUZU_OM_NPR_2008_FUEL",
+      "title": "2008 Isuzu NPR Owner's Manual",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_owner_manual_mirror",
+      "authority_level": "primary",
+      "origin_url": "https://www.manualslib.com/manual/1327429/Isuzu-Npr-2008.html",
+      "captured_at": "2026-09-24",
+      "supports": ["MY2008 NPR", "Fuel filter Isuzu No. 8-98037-011-0"],
+      "scope_restriction": "Exact MY2008 NPR only. Mirror hosts the original Isuzu publication. No sibling-model or adjacent-year inheritance."
+    },
+    {
+      "source_id": "ISUZU_OM_NSERIES_2010_FUEL",
+      "title": "2010 Isuzu N-Series Owner's Manual",
+      "publisher": "Isuzu Commercial Truck of America",
+      "source_type": "official_oem_owner_manual_mirror",
+      "authority_level": "primary",
+      "origin_url": "https://manualzz.com/doc/48441290/isuzu-n-series-medium-duty-truck--npr-hd--nqr--nrr-truck-",
+      "captured_at": "2026-09-24",
+      "supports": ["MY2010 NPR-HD, NQR and NRR with 4HK1-TC", "Fuel filter Isuzu No. 8-98037-011-0"],
+      "scope_restriction": "Exact MY2010 NPR-HD/NQR/NRR only. NPR is intentionally excluded. Mirror hosts the original Isuzu publication; no sibling-model or adjacent-year inheritance."
     }
   ]
 }
