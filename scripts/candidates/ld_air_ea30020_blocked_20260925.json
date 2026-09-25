@@ -1,0 +1,14 @@
+{
+  "sku": "EA30020",
+  "codigo_base": "0020",
+  "reason": "LD_SCOPE_SEGMENT_MISMATCH__APPLICATION_UNIVERSE_IS_PRIMARILY_AG_EQUIPMENT",
+  "evidence": {
+    "application_scope": "CASE-IH + JCB + LANDINI + MANITOU + MASSEY-FERGUSON + MCCORMICK + JOHN DEERE + CATERPILLAR",
+    "note": "No MANN/FRAM canonical authority reference remains traceable in current row."
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

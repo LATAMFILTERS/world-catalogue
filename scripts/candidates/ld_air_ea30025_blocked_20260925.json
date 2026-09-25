@@ -1,0 +1,27 @@
+{
+  "sku": "EA30025",
+  "codigo_base": "C30025",
+  "reason": "CANONICAL_IDENTITY_SPEC_MISMATCH__MANN_C30025_APPLICATION_MATCHES_BUT_PHYSICAL_DATA_CONFLICTS",
+  "evidence": {
+    "identity": {
+      "origin_group": "EUROPEAN",
+      "brand": "MANN-FILTER",
+      "code": "C30025",
+      "source": "MIGRATION_088_EXACT_APPLICATION_UNIQUE"
+    },
+    "official_dimensions_mm": {
+      "length": 301,
+      "width": 135,
+      "width1": 93,
+      "height": 76
+    },
+    "catalog_height_mm": 31,
+    "applications": "MERCEDES-BENZ / MERCEDES-BENZ (USA)",
+    "official_source": "MANN-FILTER C 30 025"
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

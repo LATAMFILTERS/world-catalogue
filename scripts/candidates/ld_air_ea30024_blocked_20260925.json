@@ -1,0 +1,21 @@
+{
+  "sku": "EA30024",
+  "codigo_base": "0024",
+  "reason": "MIXED_SEGMENT_AND_AUTHORITY_UNRESOLVED__FRAM_FAMILY_SPANS_VALTRA_AND_SSANGYONG",
+  "evidence": {
+    "fram_refs": [
+      "CA24",
+      "CA24D",
+      "CA24DP",
+      "CA24F",
+      "CA24FP"
+    ],
+    "application_scope": "VALTRA/VALMET agricultural + SSANGYONG passenger",
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

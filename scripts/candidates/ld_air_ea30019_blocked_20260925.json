@@ -1,0 +1,21 @@
+{
+  "sku": "EA30019",
+  "codigo_base": "0019",
+  "reason": "LD_SCOPE_SEGMENT_MISMATCH__APPLICATION_UNIVERSE_IS_HEAVY_EQUIPMENT",
+  "evidence": {
+    "application_scope": "CATERPILLAR + JOHN DEERE",
+    "fram_refs": [
+      "CA19",
+      "CA19D",
+      "CA19DP",
+      "CA19F",
+      "CA19FP"
+    ],
+    "note": "No European MANN authority present; family is equipment-dominant."
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
