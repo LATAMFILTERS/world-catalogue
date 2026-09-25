@@ -2118,3 +2118,25 @@ test('PHASE 2 FOLLOW-UP: high-capacity commercial variant is not a separate OEM 
     assert.equal(row.decision_status, 'PARTIAL');
   }
 });
+
+
+test('PARTIAL TRIAGE: all 13 PARTIAL rows are classified', () => {
+  const partial = phase3.resolution_rows.filter((r) => r.decision_status === 'PARTIAL');
+  assert.equal(partial.length, 13);
+  const counts = partial.reduce((acc, r) => {
+    assert.ok(r.partial_triage, r.row_id + ' lacks partial_triage');
+    acc[r.partial_triage.classification] = (acc[r.partial_triage.classification] || 0) + 1;
+    return acc;
+  }, {});
+  assert.equal(counts.ACTIONABLE_PARTIAL, 11);
+  assert.equal(counts.TERMINAL_PARTIAL, 2);
+  assert.equal(counts.PARTIAL_SUPERSEDED || 0, 0);
+  assert.deepEqual(
+    partial.filter((r) => r.partial_triage.classification === 'TERMINAL_PARTIAL').map((r) => r.row_id).sort(),
+    ['P3-13-F-LUBE-1987-2008','P3-15-F-FUEL-1994-2004'].sort()
+  );
+  for (const row of partial.filter((r) => r.partial_triage.classification === 'ACTIONABLE_PARTIAL')) {
+    assert.ok(row.partial_triage.question);
+    assert.ok(row.partial_triage.required_evidence);
+  }
+});
