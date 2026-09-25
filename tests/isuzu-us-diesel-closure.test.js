@@ -2089,3 +2089,32 @@ test('OEM FALLBACK GATE: official Fleetguard not-found does not equal non-manufa
     assert.equal(row.base_source_part, null);
   }
 });
+
+
+test('PHASE 2 FOLLOW-UP: high-capacity commercial variant is not a separate OEM position', () => {
+  const nStd = phase2.oen_rows.find((r) => r.row_id === 'P2-N-FUEL-2013-2021-B');
+  const nHigh = phase2.oen_rows.find((r) => r.row_id === 'P2-N-FUEL-HIGHCAP-2013-2021');
+  const fStd = phase2.oen_rows.find((r) => r.row_id === 'P2-F-FUEL-2018-2020-A');
+  const fHigh = phase2.oen_rows.find((r) => r.row_id === 'P2-F-FUEL-2018-2020-B');
+
+  for (const row of [nStd, nHigh, fStd, fHigh]) {
+    assert.ok(row);
+    assert.equal(row.standard_high_capacity_resolution.status, 'COMMERCIAL_VARIANT_NOT_SEPARATE_OEM_POSITION');
+    assert.equal(row.evidence_status, 'PARTIAL');
+  }
+
+  assert.deepEqual(nStd.standard_high_capacity_resolution.shared_genuine_oens_with_high_capacity, ['8980374810','5873109370']);
+  assert.deepEqual(nHigh.standard_high_capacity_resolution.shared_genuine_oens_with_standard, ['8980374810','5873109370']);
+  assert.deepEqual(fStd.standard_high_capacity_resolution.shared_genuine_oens_with_high_capacity, ['8943692993','8980374810','8943691993']);
+  assert.deepEqual(fHigh.standard_high_capacity_resolution.shared_genuine_oens_with_standard, ['8943692993','8980374810','8943691993']);
+
+  const history = phase3.exception_audit_history.find((h) => h.status === 'PHASE2_STANDARD_HIGH_CAPACITY_DISTINCTION_CLOSED');
+  assert.ok(history);
+  assert.equal(history.result, 'COMMERCIAL_VARIANT_NOT_SEPARATE_OEM_POSITION');
+  assert.equal(history.phase3_state_change, 'NONE');
+
+  for (const id of ['P3-08-N-FUEL-2013-2021-B','P3-10-N-FUEL-HIGHCAP-2013-2021','P3-16-F-FUEL-2018-2020-A','P3-17-F-FUEL-2018-2020-B']) {
+    const row = phase3.resolution_rows.find((r) => r.row_id === id);
+    assert.equal(row.decision_status, 'PARTIAL');
+  }
+});
