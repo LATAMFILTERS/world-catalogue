@@ -1,0 +1,286 @@
+{
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V1",
+  "generated_at": "2026-09-25T15:06:11.552Z",
+  "eligible_count": 2669,
+  "candidates": [
+    {
+      "sku": "EA30115",
+      "codigo_base": "C30115",
+      "score": 90,
+      "reasons": [
+        "ACTIVE_IDENTITY",
+        "GOVERNANCE_VERIFIED",
+        "GEOMETRY_USABLE",
+        "HOMOGENEOUS_MAKE",
+        "SINGLE_AUTHORITY_REF"
+      ],
+      "identity": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C30115",
+        "evidence_source": "MIGRATION_088_EXACT_APPLICATION_UNIQUE"
+      },
+      "governance": {
+        "state": "CANONICAL_VERIFIED",
+        "origin_group": "EUROPEAN",
+        "evidence_note": "Normalized MANN family matched exactly one public LIGHT_DUTY SKU by complete vehicle-application coverage and filter type in migration 087.",
+        "oem_code_count": 3,
+        "policy_version": "2026-08-19-v3.1",
+        "governance_state": "CANONICAL_VERIFIED",
+        "required_authority": "VERIFIED_MANN_FILTER",
+        "contamination_flags": [],
+        "current_codigo_base": "C30115",
+        "alternate_code_model": "OEM_CODES_AND_COMPETITOR_CODES_ARE_ALTERNATES_ONLY",
+        "approved_codigo_base": "C30115",
+        "approved_manufacturer": "MANN-FILTER",
+        "competitor_code_count": 2,
+        "approved_source_column": "CANONICAL_POLICY",
+        "observed_primary_candidates": [],
+        "observed_fallback_candidates": [],
+        "observed_preferred_candidates": [],
+        "primary_manufacturer_verified": true
+      },
+      "authority_refs": [
+        {
+          "code": "CA10115",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:30:52.645949-05",
+          "manufacturer": "FRAM"
+        }
+      ],
+      "makes": [
+        "JAGUAR (USA)"
+      ],
+      "specs": {
+        "height_mm": "50.80",
+        "outer_diameter_mm": "294.64",
+        "inner_diameter_mm": null,
+        "product_length_mm": null
+      }
+    },
+    {
+      "sku": "EA30139",
+      "codigo_base": "C30139",
+      "score": 90,
+      "reasons": [
+        "ACTIVE_IDENTITY",
+        "GOVERNANCE_VERIFIED",
+        "GEOMETRY_USABLE",
+        "HOMOGENEOUS_MAKE",
+        "SINGLE_AUTHORITY_REF"
+      ],
+      "identity": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C30139",
+        "evidence_source": "MIGRATION_088_EXACT_APPLICATION_UNIQUE"
+      },
+      "governance": {
+        "state": "CANONICAL_VERIFIED",
+        "origin_group": "EUROPEAN",
+        "evidence_note": "Normalized MANN family matched exactly one public LIGHT_DUTY SKU by complete vehicle-application coverage and filter type in migration 087.",
+        "oem_code_count": 3,
+        "policy_version": "2026-08-19-v3.1",
+        "governance_state": "CANONICAL_VERIFIED",
+        "required_authority": "VERIFIED_MANN_FILTER",
+        "contamination_flags": [],
+        "current_codigo_base": "C30139",
+        "alternate_code_model": "OEM_CODES_AND_COMPETITOR_CODES_ARE_ALTERNATES_ONLY",
+        "approved_codigo_base": "C30139",
+        "approved_manufacturer": "MANN-FILTER",
+        "competitor_code_count": 2,
+        "approved_source_column": "CANONICAL_POLICY",
+        "observed_primary_candidates": [],
+        "observed_fallback_candidates": [],
+        "observed_preferred_candidates": [],
+        "primary_manufacturer_verified": true
+      },
+      "authority_refs": [
+        {
+          "code": "CA139",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:30:52.645949-05",
+          "manufacturer": "FRAM"
+        }
+      ],
+      "makes": [
+        "BMW (USA)"
+      ],
+      "specs": {
+        "height_mm": "45.72",
+        "outer_diameter_mm": "294.64",
+        "inner_diameter_mm": null,
+        "product_length_mm": null
+      }
+    },
+    {
+      "sku": "EA30195",
+      "codigo_base": "C30195",
+      "score": 90,
+      "reasons": [
+        "ACTIVE_IDENTITY",
+        "GOVERNANCE_VERIFIED",
+        "GEOMETRY_USABLE",
+        "HOMOGENEOUS_MAKE",
+        "SINGLE_AUTHORITY_REF"
+      ],
+      "identity": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C30195",
+        "evidence_source": "MIGRATION_088_EXACT_APPLICATION_UNIQUE"
+      },
+      "governance": {
+        "state": "CANONICAL_VERIFIED",
+        "origin_group": "EUROPEAN",
+        "evidence_note": "Normalized MANN family matched exactly one public LIGHT_DUTY SKU by complete vehicle-application coverage and filter type in migration 087.",
+        "oem_code_count": 3,
+        "policy_version": "2026-08-19-v3.1",
+        "governance_state": "CANONICAL_VERIFIED",
+        "required_authority": "VERIFIED_MANN_FILTER",
+        "contamination_flags": [],
+        "current_codigo_base": "C30195",
+        "alternate_code_model": "OEM_CODES_AND_COMPETITOR_CODES_ARE_ALTERNATES_ONLY",
+        "approved_codigo_base": "C30195",
+        "approved_manufacturer": "MANN-FILTER",
+        "competitor_code_count": 3,
+        "approved_source_column": "CANONICAL_POLICY",
+        "observed_primary_candidates": [
+          "C30195/2"
+        ],
+        "observed_fallback_candidates": [],
+        "observed_preferred_candidates": [],
+        "primary_manufacturer_verified": true
+      },
+      "authority_refs": [
+        {
+          "code": "C30195/2",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN"
+        }
+      ],
+      "makes": [
+        "MERCEDES-BENZ"
+      ],
+      "specs": {
+        "height_mm": "58.00",
+        "outer_diameter_mm": "294.00",
+        "inner_diameter_mm": null,
+        "product_length_mm": null
+      }
+    },
+    {
+      "sku": "EA30901",
+      "codigo_base": "C30901",
+      "score": 90,
+      "reasons": [
+        "ACTIVE_IDENTITY",
+        "GOVERNANCE_VERIFIED",
+        "GEOMETRY_USABLE",
+        "HOMOGENEOUS_MAKE",
+        "SINGLE_AUTHORITY_REF"
+      ],
+      "identity": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C30901",
+        "evidence_source": "MIGRATION_088_EXACT_APPLICATION_UNIQUE"
+      },
+      "governance": {
+        "state": "CANONICAL_VERIFIED",
+        "origin_group": "EUROPEAN",
+        "evidence_note": "Normalized MANN family matched exactly one public LIGHT_DUTY SKU by complete vehicle-application coverage and filter type in migration 087.",
+        "oem_code_count": 2,
+        "policy_version": "2026-08-19-v3.1",
+        "governance_state": "CANONICAL_VERIFIED",
+        "required_authority": "VERIFIED_MANN_FILTER",
+        "contamination_flags": [],
+        "current_codigo_base": "C30901",
+        "alternate_code_model": "OEM_CODES_AND_COMPETITOR_CODES_ARE_ALTERNATES_ONLY",
+        "approved_codigo_base": "C30901",
+        "approved_manufacturer": "MANN-FILTER",
+        "competitor_code_count": 3,
+        "approved_source_column": "CANONICAL_POLICY",
+        "observed_primary_candidates": [],
+        "observed_fallback_candidates": [],
+        "observed_preferred_candidates": [],
+        "primary_manufacturer_verified": true
+      },
+      "authority_refs": [
+        {
+          "code": "CA10901",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:30:52.645949-05",
+          "manufacturer": "FRAM"
+        }
+      ],
+      "makes": [
+        "BMW (USA)"
+      ],
+      "specs": {
+        "height_mm": "404.00",
+        "outer_diameter_mm": "425.00",
+        "inner_diameter_mm": null,
+        "product_length_mm": null
+      }
+    },
+    {
+      "sku": "EA31123",
+      "codigo_base": "C31123",
+      "score": 90,
+      "reasons": [
+        "ACTIVE_IDENTITY",
+        "GOVERNANCE_VERIFIED",
+        "GEOMETRY_USABLE",
+        "HOMOGENEOUS_MAKE",
+        "SINGLE_AUTHORITY_REF"
+      ],
+      "identity": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C31123",
+        "evidence_source": "MIGRATION_088_EXACT_APPLICATION_UNIQUE"
+      },
+      "governance": {
+        "state": "CANONICAL_VERIFIED",
+        "origin_group": "EUROPEAN",
+        "evidence_note": "Normalized MANN family matched exactly one public LIGHT_DUTY SKU by complete vehicle-application coverage and filter type in migration 087.",
+        "oem_code_count": 4,
+        "policy_version": "2026-08-19-v3.1",
+        "governance_state": "CANONICAL_VERIFIED",
+        "required_authority": "VERIFIED_MANN_FILTER",
+        "contamination_flags": [],
+        "current_codigo_base": "C31123",
+        "alternate_code_model": "OEM_CODES_AND_COMPETITOR_CODES_ARE_ALTERNATES_ONLY",
+        "approved_codigo_base": "C31123",
+        "approved_manufacturer": "MANN-FILTER",
+        "competitor_code_count": 2,
+        "approved_source_column": "CANONICAL_POLICY",
+        "observed_primary_candidates": [
+          "C41123"
+        ],
+        "observed_fallback_candidates": [],
+        "observed_preferred_candidates": [],
+        "primary_manufacturer_verified": true
+      },
+      "authority_refs": [
+        {
+          "code": "C41123",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN"
+        }
+      ],
+      "makes": [
+        "MERCEDES-BENZ (USA)"
+      ],
+      "specs": {
+        "height_mm": "43.18",
+        "outer_diameter_mm": "309.88",
+        "inner_diameter_mm": null,
+        "product_length_mm": null
+      }
+    }
+  ]
+}

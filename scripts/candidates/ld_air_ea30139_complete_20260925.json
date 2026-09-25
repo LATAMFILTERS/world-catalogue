@@ -1,0 +1,21 @@
+{
+  "sku": "EA30139",
+  "codigo_base": "C30139",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C30139",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_OFFICIAL_REVERIFY_AND_CANONICAL_METADATA_SYNC",
+  "evidence": {
+    "official_source": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c30139_mann-filter.html",
+    "application_scope": "BMW (USA)",
+    "selection_model": "LD_AIR_LIVE_PRIORITY_V1_WITH_OFFICIAL_REVERIFY"
+  },
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "closed_at": "2026-09-25"
+}

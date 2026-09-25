@@ -1,0 +1,56 @@
+{
+  "batch": "LD_AIR_B10_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V1_WITH_OFFICIAL_REVERIFY",
+  "candidates": [
+    {
+      "sku": "EA30115",
+      "code": "C30115",
+      "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c30115_mann-filter.html",
+      "official": {
+        "a_mm": 294,
+        "h_mm": 50,
+        "scope": "JAGUAR (USA)"
+      }
+    },
+    {
+      "sku": "EA30139",
+      "code": "C30139",
+      "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c30139_mann-filter.html",
+      "official": {
+        "a_mm": 295,
+        "h_mm": 46,
+        "scope": "BMW (USA)"
+      }
+    },
+    {
+      "sku": "EA30195",
+      "code": "C30195",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c30195_mann-filter.html",
+      "official": {
+        "a_mm": 294,
+        "h_mm": 58,
+        "scope": "MERCEDES-BENZ M-Class (W163)"
+      }
+    },
+    {
+      "sku": "EA31123",
+      "code": "C31123",
+      "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c31123_mann-filter.html",
+      "official": {
+        "a_mm": 309.88,
+        "h_mm": 43.18,
+        "scope": "MERCEDES-BENZ (USA)"
+      }
+    },
+    {
+      "sku": "EA31567",
+      "code": "C1567",
+      "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c1567_mann-filter.html",
+      "official": {
+        "a_mm": 142,
+        "h_mm": 162,
+        "scope": "JAGUAR (USA)"
+      }
+    }
+  ]
+}
