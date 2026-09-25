@@ -4,11 +4,22 @@
   "created_on": "2026-09-24",
   "purpose": "Batch-acquire first-party service literature once, extract all actionable OENs in one pass, and resolve the 11 ACTIONABLE_PARTIAL rows without row-by-row web research.",
   "acquisition_strategy": {
-    "mode": "DOCUMENT_FIRST_NOT_ROW_FIRST",
-    "preferred_access": "IsuzuTruckService short-term subscription",
-    "subscription_public_price_usd": 15,
-    "subscription_duration_days": 3,
-    "note": "Use one authorized access window to collect the required first-party service/parts evidence. Do not buy individual $125 CDs unless access cannot supply the required document."
+    "mode": "FREE_FIRST_PARTY_ONLY",
+    "budget_usd": 0,
+    "allowed_sources": [
+      "Public IsuzuTruckService indexes and openly accessible pages",
+      "Public Isuzu Body Builder documentation",
+      "Public Isuzu owner/service material already captured in the repository",
+      "Public Aisin technical/service documentation",
+      "Repository-held first-party captures already available to Hermes"
+    ],
+    "prohibited_actions": [
+      "Paid subscriptions",
+      "Paid service-information access",
+      "Purchasing individual CDs/manuals",
+      "Using aftermarket-only evidence to promote OEM scope/position"
+    ],
+    "note": "One bounded exhaustive free-evidence pass only. If the required exact first-party evidence is not present in the free/public pack, close the row as TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED rather than continue indefinite searching."
   },
   "oen_targets": [
     "2906544040",
@@ -39,18 +50,66 @@
         "Resolve 2906542701 / 2906548100 and whether the 1998-2010 row splits by 4HE1-TC versus 4HK1-TC."
       ],
       "target_documents": [
-        "1996-1999 NPR Diesel and F Series CD (5-IG606-0010)",
-        "2000-2004 NPR Diesel and F Series CD (5-IG606-0020)",
-        "2005 NPR Diesel CD (5-IG606-0080)",
-        "2006 NPR Diesel CD (5-IG606-0110)",
-        "2007/2008/2009/2010 NPR Diesel CD (5-IG606-0190)",
-        "2011/2012 N-Series 3.0L/5.2L Diesel CD (5-IG606-0210)",
-        "2013 N-Series 5.2L Diesel CD (5-IG606-0230)",
-        "2013/2014 N-Series 3.0L and 2014/2015 N-Series 5.2L Diesel CD (5-IG606-0250)",
-        "2015 N-Series 3.0L and 2016 N-Series 5.2L Diesel CD (5-IG606-0270)",
-        "2016 N-Series 3.0L and 2017 N-Series 5.2L Diesel CD (5-IG606-0280)",
-        "2017/2018 N-Series 3.0L and 2018/2019 N-Series 5.2L Diesel CD (5-IG606-0290)",
-        "2020/2021/2022 N-Series 5.2L Diesel CD (5-IG606-0340)"
+        {
+          "reference": "1996-1999 NPR Diesel and F Series CD (5-IG606-0010)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2000-2004 NPR Diesel and F Series CD (5-IG606-0020)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2005 NPR Diesel CD (5-IG606-0080)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2006 NPR Diesel CD (5-IG606-0110)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2007/2008/2009/2010 NPR Diesel CD (5-IG606-0190)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2011/2012 N-Series 3.0L/5.2L Diesel CD (5-IG606-0210)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2013 N-Series 5.2L Diesel CD (5-IG606-0230)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2013/2014 N-Series 3.0L and 2014/2015 N-Series 5.2L Diesel CD (5-IG606-0250)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2015 N-Series 3.0L and 2016 N-Series 5.2L Diesel CD (5-IG606-0270)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2016 N-Series 3.0L and 2017 N-Series 5.2L Diesel CD (5-IG606-0280)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2017/2018 N-Series 3.0L and 2018/2019 N-Series 5.2L Diesel CD (5-IG606-0290)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2020/2021/2022 N-Series 5.2L Diesel CD (5-IG606-0340)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        }
       ]
     },
     "N_SERIES_FUEL": {
@@ -64,12 +123,36 @@
         "Assign overlapping fuel OEN rows to primary/secondary, engine/chassis, alternate or supersession roles."
       ],
       "target_documents": [
-        "2013 N-Series 5.2L Diesel CD (5-IG606-0230)",
-        "2013/2014 N-Series 3.0L and 2014/2015 N-Series 5.2L Diesel CD (5-IG606-0250)",
-        "2015 N-Series 3.0L and 2016 N-Series 5.2L Diesel CD (5-IG606-0270)",
-        "2016 N-Series 3.0L and 2017 N-Series 5.2L Diesel CD (5-IG606-0280)",
-        "2017/2018 N-Series 3.0L and 2018/2019 N-Series 5.2L Diesel CD (5-IG606-0290)",
-        "2020/2021/2022 N-Series 5.2L Diesel CD (5-IG606-0340)"
+        {
+          "reference": "2013 N-Series 5.2L Diesel CD (5-IG606-0230)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2013/2014 N-Series 3.0L and 2014/2015 N-Series 5.2L Diesel CD (5-IG606-0250)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2015 N-Series 3.0L and 2016 N-Series 5.2L Diesel CD (5-IG606-0270)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2016 N-Series 3.0L and 2017 N-Series 5.2L Diesel CD (5-IG606-0280)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2017/2018 N-Series 3.0L and 2018/2019 N-Series 5.2L Diesel CD (5-IG606-0290)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2020/2021/2022 N-Series 5.2L Diesel CD (5-IG606-0340)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        }
       ]
     },
     "N_SERIES_TRANSMISSION": {
@@ -80,18 +163,66 @@
         "Bind 8971822820 to exact N-Series transmission models and model years."
       ],
       "target_documents": [
-        "1996-1999 NPR Diesel and F Series CD (5-IG606-0010)",
-        "2000-2004 NPR Diesel and F Series CD (5-IG606-0020)",
-        "2005 NPR Diesel CD (5-IG606-0080)",
-        "2006 NPR Diesel CD (5-IG606-0110)",
-        "2007/2008/2009/2010 NPR Diesel CD (5-IG606-0190)",
-        "2011/2012 N-Series 3.0L/5.2L Diesel CD (5-IG606-0210)",
-        "2013 N-Series 5.2L Diesel CD (5-IG606-0230)",
-        "2013/2014 N-Series 3.0L and 2014/2015 N-Series 5.2L Diesel CD (5-IG606-0250)",
-        "2015 N-Series 3.0L and 2016 N-Series 5.2L Diesel CD (5-IG606-0270)",
-        "2016 N-Series 3.0L and 2017 N-Series 5.2L Diesel CD (5-IG606-0280)",
-        "2017/2018 N-Series 3.0L and 2018/2019 N-Series 5.2L Diesel CD (5-IG606-0290)",
-        "2020/2021/2022 N-Series 5.2L Diesel CD (5-IG606-0340)"
+        {
+          "reference": "1996-1999 NPR Diesel and F Series CD (5-IG606-0010)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2000-2004 NPR Diesel and F Series CD (5-IG606-0020)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2005 NPR Diesel CD (5-IG606-0080)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2006 NPR Diesel CD (5-IG606-0110)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2007/2008/2009/2010 NPR Diesel CD (5-IG606-0190)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2011/2012 N-Series 3.0L/5.2L Diesel CD (5-IG606-0210)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2013 N-Series 5.2L Diesel CD (5-IG606-0230)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2013/2014 N-Series 3.0L and 2014/2015 N-Series 5.2L Diesel CD (5-IG606-0250)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2015 N-Series 3.0L and 2016 N-Series 5.2L Diesel CD (5-IG606-0270)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2016 N-Series 3.0L and 2017 N-Series 5.2L Diesel CD (5-IG606-0280)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2017/2018 N-Series 3.0L and 2018/2019 N-Series 5.2L Diesel CD (5-IG606-0290)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        },
+        {
+          "reference": "2020/2021/2022 N-Series 5.2L Diesel CD (5-IG606-0340)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        }
       ],
       "secondary_first_party_source": "Aisin service/parts literature if Isuzu material identifies transmission model but not filter application."
     },
@@ -106,7 +237,11 @@
         "Assign each OEN row to engine-mounted versus chassis-mounted position and resolve element-kit contents."
       ],
       "target_documents": [
-        "2018/2019/2020 FTR 5.2L Diesel CD (5-IG606-0300)"
+        {
+          "reference": "2018/2019/2020 FTR 5.2L Diesel CD (5-IG606-0300)",
+          "acquisition": "FREE_ONLY_IF_PUBLICLY_ACCESSIBLE_OR_ALREADY_CAPTURED",
+          "paid_access_required": "DO_NOT_ACQUIRE"
+        }
       ]
     }
   },
@@ -153,6 +288,6 @@
       "FIRST_PARTY_PARTIAL",
       "NOT_FOUND_IN_ACQUIRED_PACK"
     ],
-    "stop_rule": "After one exhaustive pass across the acquired first-party pack, unresolved rows become TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED unless the pack itself is incomplete."
+    "stop_rule": "After one exhaustive pass across all free/public first-party material plus repository-held first-party captures, unresolved rows become TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED. Paid access is out of scope."
   }
 }
