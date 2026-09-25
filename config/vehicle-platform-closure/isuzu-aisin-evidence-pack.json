@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0.0",
+  "pack_id": "ISUZU_AISIN_EVIDENCE_PACK_1998_2022",
+  "created_on": "2026-09-24",
+  "purpose": "Batch-acquire first-party service literature once, extract all actionable OENs in one pass, and resolve the 11 ACTIONABLE_PARTIAL rows without row-by-row web research.",
+  "acquisition_strategy": {
+    "mode": "DOCUMENT_FIRST_NOT_ROW_FIRST",
+    "preferred_access": "IsuzuTruckService short-term subscription",
+    "subscription_public_price_usd": 15,
+    "subscription_duration_days": 3,
+    "note": "Use one authorized access window to collect the required first-party service/parts evidence. Do not buy individual $125 CDs unless access cannot supply the required document."
+  },
+  "oen_targets": [
+    "2906544040",
+    "8982984040",
+    "2906542701",
+    "2906548000",
+    "2906548100",
+    "8975425390",
+    "8981475250",
+    "8943692993",
+    "8980374810",
+    "5873109370",
+    "8980370110",
+    "8982035990",
+    "8981628970",
+    "8980318470",
+    "8971822820",
+    "8943691993"
+  ],
+  "groups": {
+    "N_SERIES_LUBE": {
+      "row_ids": [
+        "P3-04-N-LUBE-2011-ON",
+        "P3-05-N-LUBE-1998-2010"
+      ],
+      "questions": [
+        "Bind 2906544040 / 8982984040 explicitly to 4HK1-TC versus the separate 4JJ1 row.",
+        "Resolve 2906542701 / 2906548100 and whether the 1998-2010 row splits by 4HE1-TC versus 4HK1-TC."
+      ],
+      "target_documents": [
+        "1996-1999 NPR Diesel and F Series CD (5-IG606-0010)",
+        "2000-2004 NPR Diesel and F Series CD (5-IG606-0020)",
+        "2005 NPR Diesel CD (5-IG606-0080)",
+        "2006 NPR Diesel CD (5-IG606-0110)",
+        "2007/2008/2009/2010 NPR Diesel CD (5-IG606-0190)",
+        "2011/2012 N-Series 3.0L/5.2L Diesel CD (5-IG606-0210)",
+        "2013 N-Series 5.2L Diesel CD (5-IG606-0230)",
+        "2013/2014 N-Series 3.0L and 2014/2015 N-Series 5.2L Diesel CD (5-IG606-0250)",
+        "2015 N-Series 3.0L and 2016 N-Series 5.2L Diesel CD (5-IG606-0270)",
+        "2016 N-Series 3.0L and 2017 N-Series 5.2L Diesel CD (5-IG606-0280)",
+        "2017/2018 N-Series 3.0L and 2018/2019 N-Series 5.2L Diesel CD (5-IG606-0290)",
+        "2020/2021/2022 N-Series 5.2L Diesel CD (5-IG606-0340)"
+      ]
+    },
+    "N_SERIES_FUEL": {
+      "row_ids": [
+        "P3-07-N-FUEL-2013-2021-A",
+        "P3-08-N-FUEL-2013-2021-B",
+        "P3-09-N-FUEL-2013-2021-C",
+        "P3-10-N-FUEL-HIGHCAP-2013-2021"
+      ],
+      "questions": [
+        "Assign overlapping fuel OEN rows to primary/secondary, engine/chassis, alternate or supersession roles."
+      ],
+      "target_documents": [
+        "2013 N-Series 5.2L Diesel CD (5-IG606-0230)",
+        "2013/2014 N-Series 3.0L and 2014/2015 N-Series 5.2L Diesel CD (5-IG606-0250)",
+        "2015 N-Series 3.0L and 2016 N-Series 5.2L Diesel CD (5-IG606-0270)",
+        "2016 N-Series 3.0L and 2017 N-Series 5.2L Diesel CD (5-IG606-0280)",
+        "2017/2018 N-Series 3.0L and 2018/2019 N-Series 5.2L Diesel CD (5-IG606-0290)",
+        "2020/2021/2022 N-Series 5.2L Diesel CD (5-IG606-0340)"
+      ]
+    },
+    "N_SERIES_TRANSMISSION": {
+      "row_ids": [
+        "P3-12-N-TRANS"
+      ],
+      "questions": [
+        "Bind 8971822820 to exact N-Series transmission models and model years."
+      ],
+      "target_documents": [
+        "1996-1999 NPR Diesel and F Series CD (5-IG606-0010)",
+        "2000-2004 NPR Diesel and F Series CD (5-IG606-0020)",
+        "2005 NPR Diesel CD (5-IG606-0080)",
+        "2006 NPR Diesel CD (5-IG606-0110)",
+        "2007/2008/2009/2010 NPR Diesel CD (5-IG606-0190)",
+        "2011/2012 N-Series 3.0L/5.2L Diesel CD (5-IG606-0210)",
+        "2013 N-Series 5.2L Diesel CD (5-IG606-0230)",
+        "2013/2014 N-Series 3.0L and 2014/2015 N-Series 5.2L Diesel CD (5-IG606-0250)",
+        "2015 N-Series 3.0L and 2016 N-Series 5.2L Diesel CD (5-IG606-0270)",
+        "2016 N-Series 3.0L and 2017 N-Series 5.2L Diesel CD (5-IG606-0280)",
+        "2017/2018 N-Series 3.0L and 2018/2019 N-Series 5.2L Diesel CD (5-IG606-0290)",
+        "2020/2021/2022 N-Series 5.2L Diesel CD (5-IG606-0340)"
+      ],
+      "secondary_first_party_source": "Aisin service/parts literature if Isuzu material identifies transmission model but not filter application."
+    },
+    "F_SERIES_FUEL": {
+      "row_ids": [
+        "P3-16-F-FUEL-2018-2020-A",
+        "P3-17-F-FUEL-2018-2020-B",
+        "P3-18-F-FUEL-2018-2020-C",
+        "P3-19-F-FUEL-2018-2020-D"
+      ],
+      "questions": [
+        "Assign each OEN row to engine-mounted versus chassis-mounted position and resolve element-kit contents."
+      ],
+      "target_documents": [
+        "2018/2019/2020 FTR 5.2L Diesel CD (5-IG606-0300)"
+      ]
+    }
+  },
+  "public_first_party_sources": [
+    {
+      "source_id": "ISUZU_TRUCK_SERVICE_STORE",
+      "url": "https://www.isuzutruckservice.com/store.php",
+      "access": "PUBLIC_INDEX"
+    },
+    {
+      "source_id": "ISUZU_BODYBUILDER_2018",
+      "url": "https://www.isuzutruckservice.com/pdf_nav_index.php?reference=BodyBuilder2018&size=80",
+      "access": "PUBLIC"
+    },
+    {
+      "source_id": "ISUZU_BODYBUILDER_2019",
+      "url": "https://www.isuzutruckservice.com/pdf_nav_index.php?reference=BodyBuilder2019",
+      "access": "PUBLIC"
+    },
+    {
+      "source_id": "ISUZU_ESI_HELP",
+      "url": "https://www.isuzutruckservice.com/esi_help.php",
+      "access": "PUBLIC"
+    }
+  ],
+  "extraction_contract": {
+    "evidence_root": "evidence/isuzu-aisin/",
+    "output_matrix": "evidence/isuzu-aisin/oen-evidence-matrix.json",
+    "required_fields": [
+      "oen",
+      "document",
+      "page_or_section",
+      "model_year",
+      "model",
+      "engine",
+      "transmission",
+      "filter_position",
+      "kit_or_element",
+      "evidence_text",
+      "evidence_class"
+    ],
+    "evidence_classes": [
+      "FIRST_PARTY_EXACT",
+      "FIRST_PARTY_PARTIAL",
+      "NOT_FOUND_IN_ACQUIRED_PACK"
+    ],
+    "stop_rule": "After one exhaustive pass across the acquired first-party pack, unresolved rows become TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED unless the pack itself is incomplete."
+  }
+}
