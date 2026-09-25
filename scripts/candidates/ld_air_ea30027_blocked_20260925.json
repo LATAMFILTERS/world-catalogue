@@ -1,0 +1,27 @@
+{
+  "sku": "EA30027",
+  "codigo_base": "0027",
+  "reason": "APPLICATION_CONTAMINATION__MANN_C20027_PHYSICALLY_MATCHES_BUT_KIA_HYUNDAI_APPS_DO_NOT_BELONG",
+  "evidence": {
+    "mann_code": "C20027",
+    "official_dimensions_mm": {
+      "l": 380,
+      "w": 296,
+      "h": 110
+    },
+    "catalog_dimensions_mm": {
+      "od": 380,
+      "h": 110
+    },
+    "official_scope": "BMW/ALPINA",
+    "extra_catalog_scope": [
+      "KIA MOTORS",
+      "HYUNDAI"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

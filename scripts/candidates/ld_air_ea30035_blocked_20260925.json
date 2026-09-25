@@ -1,0 +1,28 @@
+{
+  "sku": "EA30035",
+  "codigo_base": "0035",
+  "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C35_PHYSICALLY_MATCHES_RIETSCHLE_BUT_AUTOMOTIVE_APPLICATIONS_PRESENT",
+  "evidence": {
+    "mann_code": "C35",
+    "official_dimensions_mm": {
+      "od": 30.48,
+      "id": 10.16,
+      "h": 88.9
+    },
+    "catalog_dimensions_mm": {
+      "od": 30.48,
+      "h": 88.9
+    },
+    "official_scope": "RIETSCHLE rotary vane vacuum pumps",
+    "extra_catalog_scope": [
+      "NISSAN",
+      "RENAULT",
+      "RENAULT TRUCKS"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

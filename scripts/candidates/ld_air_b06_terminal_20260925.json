@@ -1,0 +1,37 @@
+{
+  "batch": "LD_AIR_B06",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE_WITH_BLOCKERS",
+  "counts": {
+    "BLOCKED_WITH_REASON": 5
+  },
+  "catalog_writes": [],
+  "candidates": [
+    {
+      "sku": "EA30027",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "APPLICATION_CONTAMINATION__MANN_C20027_PHYSICALLY_MATCHES_BUT_KIA_HYUNDAI_APPS_DO_NOT_BELONG"
+    },
+    {
+      "sku": "EA30028",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_IDENTITY_APPLICATION_CONTAMINATION__MANN_C20028_MATCHES_BMW_FAMILY_BUT_MERCEDES_APPS_PRESENT"
+    },
+    {
+      "sku": "EA30030",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_AUTHORITY_UNRESOLVED__MERCEDES_FAMILY_WITH_ONLY_LEGACY_FRAM_REFERENCES"
+    },
+    {
+      "sku": "EA30033",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C20033_IS_HONDA_FAMILY_BUT_CURRENT_APPLICATIONS_ARE_MIXED"
+    },
+    {
+      "sku": "EA30035",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C35_PHYSICALLY_MATCHES_RIETSCHLE_BUT_AUTOMOTIVE_APPLICATIONS_PRESENT"
+    }
+  ],
+  "closed_at": "2026-09-25"
+}

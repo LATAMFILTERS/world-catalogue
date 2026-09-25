@@ -1,0 +1,18 @@
+{
+  "sku": "EA30030",
+  "codigo_base": "0030",
+  "reason": "CANONICAL_AUTHORITY_UNRESOLVED__MERCEDES_FAMILY_WITH_ONLY_LEGACY_FRAM_REFERENCES",
+  "evidence": {
+    "fram_refs": [
+      "CA30",
+      "CA30030"
+    ],
+    "application_scope": "MERCEDES-BENZ",
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

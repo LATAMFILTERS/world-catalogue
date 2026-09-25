@@ -1,0 +1,27 @@
+{
+  "sku": "EA30028",
+  "codigo_base": "C20028",
+  "reason": "CANONICAL_IDENTITY_APPLICATION_CONTAMINATION__MANN_C20028_MATCHES_BMW_FAMILY_BUT_MERCEDES_APPS_PRESENT",
+  "evidence": {
+    "mann_code": "C20028",
+    "official_dimensions_mm": {
+      "l": 380,
+      "w": 296,
+      "h": 127
+    },
+    "catalog_dimensions_mm": {
+      "od": 380,
+      "h": 127
+    },
+    "identity_source": "MIGRATION_088_EXACT_APPLICATION_UNIQUE",
+    "official_scope": "BMW/ALPINA",
+    "extra_catalog_scope": [
+      "MERCEDES-BENZ (USA)"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

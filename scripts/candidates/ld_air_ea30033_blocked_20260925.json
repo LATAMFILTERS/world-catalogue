@@ -1,0 +1,31 @@
+{
+  "sku": "EA30033",
+  "codigo_base": "0033",
+  "reason": "MULTI_FAMILY_CONTAMINATION__MANN_C20033_IS_HONDA_FAMILY_BUT_CURRENT_APPLICATIONS_ARE_MIXED",
+  "evidence": {
+    "mann_code": "C20033",
+    "official_dimensions_mm": {
+      "l": 197,
+      "w": 141,
+      "h": 50
+    },
+    "catalog_height_mm": 23,
+    "official_scope": "HONDA HR-V II / Jazz IV",
+    "mixed_scope": [
+      "BUICK",
+      "VAUXHALL",
+      "OPEL",
+      "HONDA",
+      "CHEVROLET",
+      "GM",
+      "CADILLAC",
+      "BYD",
+      "RIETSCHLE"
+    ]
+  },
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
