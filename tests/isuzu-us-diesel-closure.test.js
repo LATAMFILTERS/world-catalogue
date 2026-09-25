@@ -924,25 +924,21 @@ test('PHASE 3.12: no direct SQL writes and no catalogue writes', () => {
   assert.ok(!/require\(['"](pg|\.\/db|\.\.\/db)/.test(lib), 'the closure read model must not open a database');
 });
 
-test('PHASE 3.13: no automatic/bulk publication; EL88076 is the governed post-closure exception', () => {
+test('PHASE 3.13: nothing is published automatically; later governed live publication is separate', () => {
   assert.equal(phase3.governance.publication_authorized, false);
   assert.equal(phase3.governance.review_state, 'READY_FOR_REVIEW');
   assert.equal(phase3.governance.hermes_output_class, 'CANDIDATE_INTELLIGENCE');
   assert.match(phase3.governance.publication_authorized_scope, /NO_AUTOMATIC_OR_BULK_PUBLICATION/);
-  const published = phase3.elimfilters_base_decisions.filter((d) => d.published);
-  assert.deepEqual([...new Set(published.map((d) => d.sku))], ['EL88076']);
-  for (const d of published) {
-    assert.equal(d.review_state, 'PUBLISHED_GOVERNED');
-    assert.equal(d.publication_evidence, 'scripts/migrations/run_119_create_el88076_p848076.js');
-  }
+  for (const d of phase3.elimfilters_base_decisions) assert.equal(d.published, false);
   for (const row of phase3.resolution_rows) {
-    if (!row.elimfilters_base_decision) continue;
-    if (row.elimfilters_existing_sku === 'EL88076') {
-      assert.equal(row.elimfilters_base_decision.published, true);
-      assert.equal(row.elimfilters_base_decision.review_state, 'PUBLISHED_GOVERNED');
-    } else {
-      assert.equal(row.elimfilters_base_decision.published, false);
-    }
+    if (row.elimfilters_base_decision) assert.equal(row.elimfilters_base_decision.published, false);
+  }
+  const live = phase3.resolution_rows.filter((r) => r.elimfilters_existing_sku === 'EL88076');
+  assert.equal(live.length, 2);
+  for (const row of live) {
+    assert.equal(row.live_catalog_publication.status, 'LIVE');
+    assert.equal(row.live_catalog_publication.migration, 'scripts/migrations/run_119_create_el88076_p848076.js');
+    assert.match(row.live_catalog_publication.note, /published remains false by design/);
   }
 });
 
@@ -952,7 +948,7 @@ test('PHASE 3.14: an existing SKU is reused where one exists; a new one is minte
   // to "never minted" -- an exhaustive duplicate audit (repo + live Postgres)
   // found no existing SKU, so a governed candidate was derived from this
   // repo's own codigo_base policy, not invented, and recorded as
-  // CREATE_GOVERNED_SKU and later published through the governed EL88076 closure migration.
+  // CREATE_GOVERNED_SKU; later governed live publication is recorded separately in live_catalog_publication while the Phase 3 published flag stays false.
   assert.deepEqual(phase3.coverage.elimfilters_new_sku_candidates, ['EL88076']);
   for (const row of phase3.resolution_rows) {
     if (!row.elimfilters_base_decision) continue;
@@ -1993,7 +1989,7 @@ test('PHASE 3 CURRENT STATE: manifest is technically closed without unstructured
   });
   assert.equal(phase3.current_state_audit.blocked_oem_scopes.structurally_terminal, 9);
   assert.equal(phase3.current_state_audit.blocked_oem_scopes.generic_all_remaining, 0);
-  assert.equal(phase3.current_state_audit.publication_state.EL88076, 'PUBLISHED_GOVERNED');
+  assert.equal(phase3.current_state_audit.publication_state.EL88076, 'LIVE_GOVERNED');
 
   const blocked = phase3.resolution_rows.filter((r) => r.decision_status === 'BLOCKED_DONALDSON');
   assert.deepEqual(blocked.map((r) => r.row_id).sort(), ['P3-11-N-FWS-2022i-ON','P3-N-FUEL-2006-NPR'].sort());
