@@ -128,10 +128,10 @@ record of every source checked, every timestamp tried and every method used.
 | `config/vehicle-platform-closure/isuzu-us-diesel-sources.json` | Every source read, with the exact capture used and what each one supports |
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase1-universe.json` | Phase 1 vehicle universe, conflicts, exclusions, open discovery items |
 | `config/vehicle-platform-closure/isuzu-us-diesel-phase2-oen.json` | Phase 2 position universe and Isuzu OE/OEN rows |
-| `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 resolution rows (one per eligible Phase 2 OEN row), BLOCKED_OEM rows, access blockers and unpublished ELIMFILTERS base decisions |
+| `config/vehicle-platform-closure/isuzu-us-diesel-phase3-aftermarket.json` | Phase 3 resolution rows, terminal BLOCKED_OEM rows, Donaldson blockers, governed base decisions, live-publication evidence and current-state audit |
 | `config/isuzu-n-series-us-oem-matrix.json` | Extended from 2022-2026 to 2000-2026 so the existing bot resolver answers the whole range |
 | `lib/isuzu-us-diesel-closure.js` | Reader, validator and the canonical filter-set answer |
-| `tests/isuzu-us-diesel-closure.test.js` | 145 tests: the 10 Phase 1 closure-pass validations, 6 Phase 1 technical-qualifier validations, 15 Phase 2 OEM/OEN closure validations, 19 Phase 3 aftermarket-resolution validations, 16 Phase 3 exception-closure-pass validations, 13 single-case microinvestigation validations (`P2-N-LUBE-1998-2010`), 18 BLOCKED_DONALDSON closure micro-phase validations, and 26 P848076 ELIMFILTERS SKU closure validations (`SKUCASE 1`-`25` plus `SKUCASE FINAL`) |
+| `tests/isuzu-us-diesel-closure.test.js` | Closure and regression tests for Phase 1, Phase 2, Phase 3, exception passes, blocker closure, SKU governance, live publication and final current-state consistency |
 | `tests/p552564-canonical-mapping.test.js` | 3 tests guarding the P552564/EF50953 canonical-mapping fix from PR #737 |
 
 ## Phase 1 — diesel vehicle universe
@@ -426,12 +426,34 @@ second Isuzu source before any downstream use.
 
 ## PHASE 3 — CLOSED (aftermarket resolution and ELIMFILTERS base decision)
 
+### Canonical current state — 2026-09-24
+
+This section is the authoritative current-state summary. Later dated historical subsections below are preserved for audit history and may describe intermediate counts or pre-publication states that have since been superseded.
+
+- `phase3_status: CLOSED`
+- `outcome: CLOSED_WITH_EXPLICIT_BLOCKERS`
+- Resolution rows: **23** = **8 VERIFIED_BASE + 13 PARTIAL + 2 BLOCKED_DONALDSON**
+- `CONFLICTING: 0`
+- `NO_ELIMFILTERS_SKU_YET: 0`
+- `BLOCKED_OEM: 9` scopes, all **9/9 structurally terminal**
+- Generic `ALL` blockers remaining: **0**
+- Fleetguard-defined bases: **0**; Fleetguard may open only after `DONALDSON_NOT_MANUFACTURED_VERIFIED`
+- `EL88076 / P848076`: **LIVE_GOVERNED** in `catalogo_elimfilters`, published through `scripts/migrations/run_119_create_el88076_p848076.js`
+- The per-row `elimfilters_base_decision.published:false` remains the Phase 3 no-auto-publication guard and is intentionally separate from later governed live-catalog publication.
+
+The two terminal `BLOCKED_DONALDSON` rows are:
+1. `P3-N-FUEL-2006-NPR` / Isuzu `8980284111` — Donaldson exact match not found; non-manufacture not verified.
+2. `P3-11-N-FWS-2022i-ON` / Isuzu `8982373410` — Donaldson exact match not found after rejecting `P550736`; non-manufacture not verified.
+
+`PARTIAL` is a terminal Phase 3 state where Phase 2 evidence itself is partial or where kit/role/application semantics remain unresolved. It does not mean the row is unprocessed.
+
+
 **Status: `CLOSED`. Exception audit status: `CLOSED_WITH_BLOCKERS` (`EXCEPTION CLOSURE PASS
 2026-09-23`, refined by the `MICROCASE PASS`, `BLOCKEDCASE PASS` and `SKU CLOSURE PASS`, all
-2026-09-24).** All 19 eligible Phase 2 OEN rows have an explicit decision, `CONFLICTING` is
+2026-09-24).** HISTORICAL SNAPSHOT: at this point in the closure, 19 eligible Phase 2 OEN rows had an explicit decision. Subsequent exact-subset recovery expanded the current Phase 3 resolution table to 23 rows. `CONFLICTING` is
 **0**, and `NO_ELIMFILTERS_SKU_YET` is **0**. CLOSED does **not** mean every base is resolved:
-17 of 19 rows now carry a Donaldson base, 2 do not, and each of those 2 says exactly why. The
-tables below are the current, post-SKU-closure state; see **EXCEPTION CLOSURE PASS —
+17 of 19 rows carried a Donaldson base at this historical snapshot, 2 did not, and each of those 2 said exactly why. The
+tables immediately below preserve that dated snapshot; see **EXCEPTION CLOSURE PASS —
 2026-09-23** and the later dated subsections further down for what changed and why.
 
 ### How Donaldson was reached
@@ -457,7 +479,7 @@ marked `UNVERIFIED` because no competitor catalogue was reached.
 
 | Measure | Count |
 |---|---|
-| Eligible Phase 2 OEN rows | 19 (2 NOT_APPLICABLE Phase 2 rows excluded: 6BG and 4BD, which bind to no vehicle) |
+| Eligible Phase 2 OEN rows | 19 at this historical snapshot (later exact-subset recovery brings the current resolution table to 23) |
 | Donaldson verified | 15 |
 | Donaldson not-manufactured verified | 0 |
 | Donaldson not found (live routes blocked) | 0 |
@@ -494,7 +516,7 @@ marked `UNVERIFIED` because no competitor catalogue was reached.
 | P2-N-TRANS | 8971822820 | P550008, exact Donaldson first-party Isuzu cross; Fleetguard LF551A independently corroborates the same OEN as a transmission filter and confirms matching spin-on geometry | PARTIAL (Phase 2 ceiling; `TRANSMISSION SINGLE-ROW CLOSURE 2026-09-24`) | EL80008 (reuse) |
 | P2-N-FWS-2022i-ON | 8982373410 | P550736 candidate found and rejected (genuine Davco/Volvo/Mercedes-Benz part, no real Isuzu tie) | BLOCKED_DONALDSON, root_cause `B_ONLY_FALSE_POSITIVE_CROSS` | none |
 
-**Base decisions:** 18 Donaldson-based, 0 Fleetguard-based, 1 with no base yet.
+**Historical snapshot base decisions:** 18 Donaldson-based, 0 Fleetguard-based, 1 with no base yet at this point in the closure.
 **ELIMFILTERS:** 10 existing SKUs reused (EA16773, EA13614, EL82597, EF92564, EF92599,
 EF92427, EF90390, EL80420, EL82042, EL80008), plus one new governed candidate SKU minted this pass
 (EL88076, for Donaldson P848076 -- see **P848076 ELIMFILTERS SKU CLOSURE — 2026-09-24**
@@ -503,14 +525,9 @@ bases actually used. SKU existence was checked against the repository catalogue 
 (`data/dims.csv`), including a physical-dimension cross-check (OD/length) for every SKU
 touched, plus an exhaustive repository-and-live-Postgres duplicate audit for P848076 specifically
 (classification `E_NEW_PRODUCT_CONFIRMED` -- nothing to reuse exists). `NO_ELIMFILTERS_SKU_YET`
-is now **0**. Live PostgreSQL was queried this pass (Render workspace `elimfilters`) and found to
-hold no product-catalog tables reachable from this session, so EL88076 remains a governed
-candidate (`READY_FOR_REVIEW`, `published: false`) pending a reviewer with access to the real
-catalog database.
+was **0** at this snapshot. The Render CRM database checked during this pass did not host the product catalog. This historical access limitation was later superseded by governed publication on ELIMSERVER; see **Live catalogue publication — P848076 / EL88076 (2026-09-24)** below.
 
-**Governance:** every decision is `CANDIDATE_INTELLIGENCE` in `READY_FOR_REVIEW`,
-`published: false`. Nothing was written to the catalogue. Any later write must go through
-`lib/catalog-write-gateway.js`.
+**Historical Phase 3 governance snapshot:** Phase 3 itself did not auto-publish any decision. Later governed catalogue publication is tracked separately; `EL88076` is now live. The no-auto-publication guard remains intact.
 
 ### BLOCKED_OEM (no Isuzu OEN, so no aftermarket resolution)
 
@@ -883,51 +900,17 @@ UNRESOLVED with no aftermarket answer.
 
 ## Next actions
 
-Phases 1, 2 and 3 are closed in the sense defined above. The remaining work is closing
-the documented gaps:
+Phases 1, 2 and 3 are closed. The remaining items below are **post-closure follow-ups**, not unfinished Phase 3 work:
 
-1. `P2-N-LUBE-1998-2010` is resolved (`PARTIAL`, Donaldson `P502042`, ELIMFILTERS `EL82042`
-   reused) as of the `MICROCASE PASS 2026-09-24`; `CONFLICTING` is 0. The row is still not
-   *fully* closed, though: `2906542701` and `2906548100` remain unconfirmed by any source, so
-   an Isuzu-side document distinguishing all three numbers would still improve it from
-   `PARTIAL`.
-2. Reviewer: confirm all 9 reused SKUs (`EA16773`, `EA13614`, `EL82597`, `EF92564`,
-   `EF92599`, `EF92427`, `EF90390`, `EL80420`, `EL82042`) are live in PostgreSQL, then decide
-   publication through `catalog-write-gateway`. The `P848076 ELIMFILTERS SKU CLOSURE —
-   2026-09-24` pass derived a governed candidate SKU, `EL88076`, for Donaldson `P848076`
-   using this repository's own codigo_base nomenclature policy, and confirmed via a live
-   Postgres query that the only Render Postgres instance visible to this account holds no
-   product-catalog tables at all — a reviewer with access to the real catalog database must
-   still verify `EL88076` does not already exist under a different name there, and then
-   publish it (or an existing match) through `catalog-write-gateway` before the two rows that
-   depend on it (`P2-N-LUBE-2011-ON`, `P2-F-LUBE-2018-2021`) can be considered fully live.
-3. The Isuzu standard-vs-high-capacity fuel filter distinction (Phase 2 scope, N-Series and
-   F-Series 2013-2021/2018-2020) is still open at the Isuzu level; this pass assigned the
-   same Donaldson evidence to both configurations of each pair rather than resolving that
-   Phase 2 ambiguity, which stays out of scope for Phase 3.
-4. The stale legacy `P550008` mappings (`EL50936`/`EL50940`/`EL59363`) were removed from
-   both legacy CSV exports when `P550008` became an active Isuzu base. The canonical owner is
-   `EL80008`.
-5. One `BLOCKED_DONALDSON` row remains: `P2-N-FWS-2022i-ON` / `8982373410`. It still needs a
-   genuine Donaldson equivalent or a verified Donaldson non-manufacture determination before
-   Fleetguard may be considered.
-5. `8982984040` and `2906544040` are resolved (Donaldson `P848076`, candidate ELIMFILTERS
-   `EL88076`) as of the `P848076 ELIMFILTERS SKU CLOSURE — 2026-09-24` pass. Obtain
-   Donaldson data for `8982373410` through a non-blocked Donaldson channel; until then that
-   row stays `BLOCKED_DONALDSON`. Only a verified Donaldson-not-manufactured determination
-   may open a Fleetguard base.
-6. Obtain an Isuzu F-Series owner's or parts manual to close F-Series air, cabin, air
-   dryer, water separator and transmission.
-7. Continue Isuzu OEM research only for the residual 4HK1-TC N-Series fuel gap:
-   MY2005; MY2006 NPR-HD/NQR/NRR; MY2007-2008 NPR-HD/NQR/NRR; MY2009 all;
-   MY2010 NPR; and MY2011-2012 NPR-HD/NQR/NRR. Exact MY2006/2007/2008 NPR and
-   MY2010 NPR-HD/NQR/NRR subsets are now closed. ECO-MAX fuel/air and N-Series
-   MY2022-2026 fuel/lube remain separate OEM gaps.
-8. Locate an Isuzu-published OEN for the H-Series (`HTR`/`HVR`/`HXR`,
-   `block_id: H-2005-2008`). Until one exists, Phase 3 carries it as `BLOCKED_OEM`.
-9. Obtain NPR-HD and NRR's own MY2021 crew-cab specification PDFs through a route that does
-   not hit the reproducible 1,048,576-byte truncation documented above, to replace the
-   same-batch sibling-evidence closure with each model's own document.
+1. **Donaldson follow-up — MY2006 NPR fuel:** `P3-N-FUEL-2006-NPR` / Isuzu `8980284111` remains terminal `BLOCKED_DONALDSON`. Reopen only if an exact Donaldson equivalent or an explicit Donaldson non-manufacture determination is found. Fleetguard remains ineligible otherwise.
+2. **Donaldson follow-up — 2022i-on N-Series FWS:** `P3-11-N-FWS-2022i-ON` / Isuzu `8982373410` remains terminal `BLOCKED_DONALDSON`. `P550736` is rejected. Reopen only on exact Donaldson evidence or verified non-manufacture.
+3. **Phase 2 research follow-up:** the Isuzu standard-vs-high-capacity fuel-filter distinction remains unresolved for N-Series 2013-2021 and F-Series 2018-2020. Do not invent a distinction from aftermarket evidence.
+4. **OEM evidence follow-up:** H-Series, FRR/FXR, F-Series transverse positions, residual N-Series fuel scopes and N-Series cabin are terminal `BLOCKED_OEM`. Reopen only when new first-party Isuzu/Cummins evidence supplies the missing exact identity; do not infer by continuity, sibling model or shared engine.
+5. **General catalogue governance:** continue legacy cross-reference integrity checks for `P550008 / EL80008` outside the Isuzu closure. The three stale legacy mappings were already removed.
+6. **No EL88076 action remains:** `EL88076 / P848076` is live in `catalogo_elimfilters` and validated through Part Search. The Phase 3 `published:false` flag remains false by design because it is the no-auto-publication guard.
+
+There is no Phase 4 defined for this closure. Any future work should be opened as a named follow-up with its own scope rather than by reopening Phase 3.
+
 
 ### P3-BLOCKED-N-FUEL-2005-2012 partial OEM closure — 2026-09-24
 
