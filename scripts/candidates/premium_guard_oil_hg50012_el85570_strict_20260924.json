@@ -1,0 +1,1099 @@
+{
+  "sku": "EL85570",
+  "superseded_sku": "EL39293",
+  "codigo_base": "P555570",
+  "filter_type": "oil",
+  "duty": "HEAVY_DUTY",
+  "technology": "SYNTRAX™",
+  "canonical_brand": "DONALDSON",
+  "premium_guard_code": "HG50012",
+  "verified_equivalents": [
+    "FRAM PH3519A",
+    "MANN-FILTER W929/3",
+    "FLEETGUARD LF3342",
+    "BALDWIN BT230",
+    "WIX 51268"
+  ],
+  "specs": {
+    "style": "Spin-On Full Flow",
+    "height_mm": 133,
+    "outer_diameter_mm": 97,
+    "gasket_od_mm": 71,
+    "gasket_id_mm": 61,
+    "thread_size": "1 1/8-16 UN",
+    "efficiency_99_percent_micron": 45
+  },
+  "oem_codes": [
+    {
+      "manufacturer": "Allison Transmission",
+      "code": "25011122",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/interchanges",
+      "evidence_hash": "7d183030d7db62f2e0659e9f310ec29f38a12d44849fe1cde2afb4d319f3a652",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "classification": "OEM"
+    },
+    {
+      "manufacturer": "Ford",
+      "code": "D9HZ-6731-B",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/interchanges",
+      "evidence_hash": "7d183030d7db62f2e0659e9f310ec29f38a12d44849fe1cde2afb4d319f3a652",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "classification": "OEM"
+    },
+    {
+      "manufacturer": "General Motors",
+      "code": "12490155",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/interchanges",
+      "evidence_hash": "7d183030d7db62f2e0659e9f310ec29f38a12d44849fe1cde2afb4d319f3a652",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "classification": "OEM"
+    },
+    {
+      "manufacturer": "Morbark",
+      "code": "29245027",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/interchanges",
+      "evidence_hash": "7d183030d7db62f2e0659e9f310ec29f38a12d44849fe1cde2afb4d319f3a652",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "classification": "OEM"
+    },
+    {
+      "manufacturer": "O&K",
+      "code": "103925",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/interchanges",
+      "evidence_hash": "7d183030d7db62f2e0659e9f310ec29f38a12d44849fe1cde2afb4d319f3a652",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "classification": "OEM"
+    },
+    {
+      "manufacturer": "Volvo",
+      "code": "11939766",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/interchanges",
+      "evidence_hash": "7d183030d7db62f2e0659e9f310ec29f38a12d44849fe1cde2afb4d319f3a652",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "classification": "OEM"
+    }
+  ],
+  "competitor_codes": [
+    {
+      "manufacturer": "Baldwin",
+      "code": "BT230",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/interchanges",
+      "evidence_hash": "7d183030d7db62f2e0659e9f310ec29f38a12d44849fe1cde2afb4d319f3a652",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "manufacturer": "Fleetguard",
+      "code": "LF3342",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/interchanges",
+      "evidence_hash": "7d183030d7db62f2e0659e9f310ec29f38a12d44849fe1cde2afb4d319f3a652",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "manufacturer": "FRAM",
+      "code": "PH3519A",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/interchanges",
+      "evidence_hash": "7d183030d7db62f2e0659e9f310ec29f38a12d44849fe1cde2afb4d319f3a652",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "manufacturer": "Purolator",
+      "code": "L30215",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/interchanges",
+      "evidence_hash": "7d183030d7db62f2e0659e9f310ec29f38a12d44849fe1cde2afb4d319f3a652",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "manufacturer": "PREMIUM GUARD",
+      "code": "HG50012",
+      "classification": "AFTERMARKET",
+      "source_url": "https://www.pgfilters.com/product-catalog/product-page/hg50012/",
+      "evidence_hash": "d966fb6541f0cfce3a6d1c73997e85910297b74273e2f390fe2af4a32c9f12d6",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_PRODUCT_PAGE"
+    }
+  ],
+  "vehicle_applications": [
+    {
+      "year": "1981-1986",
+      "make": "Autocar",
+      "model": "ACL",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1983",
+      "make": "Autocar",
+      "model": "Construcktor",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1986-1988",
+      "make": "Autocar",
+      "model": "DK",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1987",
+      "make": "Autocar",
+      "model": "DS",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1987-1992",
+      "make": "Crane Carrier",
+      "model": "Low Entry",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1989",
+      "make": "Crown Coach",
+      "model": "School Bus",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1988-1991",
+      "make": "Federal Motors",
+      "model": "Federal Motors",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1983-1987",
+      "make": "Ford",
+      "model": "B-7000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1980-1986",
+      "make": "Ford",
+      "model": "C7000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1980-1990",
+      "make": "Ford",
+      "model": "C8000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1990",
+      "make": "Ford",
+      "model": "CT8000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1980",
+      "make": "Ford",
+      "model": "F-700",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1983",
+      "make": "Ford",
+      "model": "F-700",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1987-1989",
+      "make": "Ford",
+      "model": "F-700",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1983-1987",
+      "make": "Ford",
+      "model": "F-7000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1983-1987",
+      "make": "Ford",
+      "model": "F-8000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1983-1987",
+      "make": "Ford",
+      "model": "FT8000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1988",
+      "make": "Ford",
+      "model": "L8000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1987",
+      "make": "Ford",
+      "model": "LN7000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1989",
+      "make": "Ford",
+      "model": "LN8000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1989",
+      "make": "Ford",
+      "model": "LNT8000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1987-1989",
+      "make": "Ford",
+      "model": "LS8000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1988",
+      "make": "Ford",
+      "model": "LT8000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981",
+      "make": "Ford",
+      "model": "LT9000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1989",
+      "make": "Ford",
+      "model": "LTS8000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1985-1987",
+      "make": "Gillig",
+      "model": "Motorhome",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1989-1992",
+      "make": "Gillig",
+      "model": "Motorhome",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1989-1991",
+      "make": "Gillig",
+      "model": "School Bus",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1988",
+      "make": "GMC",
+      "model": "Brigadier",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1979",
+      "make": "GMC",
+      "model": "C6000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1984",
+      "make": "GMC",
+      "model": "C6000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1979-1990",
+      "make": "GMC",
+      "model": "C7000",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1989-1991",
+      "make": "Hino",
+      "model": "FA14",
+      "engine": "3.8L 4Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1993-1997",
+      "make": "Hino",
+      "model": "FA1415",
+      "engine": "3.8L 4Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1992",
+      "make": "Hino",
+      "model": "FA15",
+      "engine": "3.8L 4Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1998-2004",
+      "make": "Hino",
+      "model": "FA1517",
+      "engine": "5.3L 4Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1987-1991",
+      "make": "Hino",
+      "model": "FB14",
+      "engine": "3.8L 4Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1998-2004",
+      "make": "Hino",
+      "model": "FB1817",
+      "engine": "5.3L 4Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1986-1987",
+      "make": "Hino",
+      "model": "FD16",
+      "engine": "5.8L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1988-1991",
+      "make": "Hino",
+      "model": "FD17",
+      "engine": "6.7L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1992",
+      "make": "Hino",
+      "model": "FD20",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1993-1997",
+      "make": "Hino",
+      "model": "FD2218",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1994-1997",
+      "make": "Hino",
+      "model": "FD2218LP",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1986-1987",
+      "make": "Hino",
+      "model": "FE16",
+      "engine": "5.8L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1984-1992",
+      "make": "Hino",
+      "model": "FE17",
+      "engine": "6.7L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1985-1992",
+      "make": "Hino",
+      "model": "FE19",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1992",
+      "make": "Hino",
+      "model": "FE20",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1993-1997",
+      "make": "Hino",
+      "model": "FE2618",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1984-1991",
+      "make": "Hino",
+      "model": "FF17",
+      "engine": "6.7L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1984-1992",
+      "make": "Hino",
+      "model": "FF19",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1989",
+      "make": "Hino",
+      "model": "FF19",
+      "engine": "6.7L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1992",
+      "make": "Hino",
+      "model": "FF20",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1992",
+      "make": "Hino",
+      "model": "FF23",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1993-1997",
+      "make": "Hino",
+      "model": "FF3018",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1993-1997",
+      "make": "Hino",
+      "model": "FF3020",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1986-1988",
+      "make": "Hino",
+      "model": "FFC1",
+      "engine": "5.9L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1985-1986",
+      "make": "Hino",
+      "model": "FG19",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1990-1991",
+      "make": "Hino",
+      "model": "GC17",
+      "engine": "6.7L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1992",
+      "make": "Hino",
+      "model": "GC20",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1988",
+      "make": "Hino",
+      "model": "SF17",
+      "engine": "6.7L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1990-1991",
+      "make": "Hino",
+      "model": "SF17",
+      "engine": "6.7L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1986-1992",
+      "make": "Hino",
+      "model": "SG19",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1992",
+      "make": "Hino",
+      "model": "SG20",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1986-1992",
+      "make": "Hino",
+      "model": "SG23",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1993-1997",
+      "make": "Hino",
+      "model": "SG3320",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1999-2000",
+      "make": "Hino",
+      "model": "SG3320",
+      "engine": "8.0L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1993-1997",
+      "make": "Hino",
+      "model": "SG3323",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1998-2004",
+      "make": "Hino",
+      "model": "SG3325",
+      "engine": "8.0L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1993-1996",
+      "make": "Hino",
+      "model": "SG5523",
+      "engine": "6.5L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1991",
+      "make": "Kenworth",
+      "model": "K100E",
+      "engine": "10.3L 6Cyl Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1982",
+      "make": "Kenworth",
+      "model": "L700",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1984-1986",
+      "make": "Kenworth",
+      "model": "L700",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1988",
+      "make": "Kenworth",
+      "model": "W900",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1983",
+      "make": "Kenworth",
+      "model": "W900",
+      "engine": "10.5L 6Cyl Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1984-1985",
+      "make": "Mack",
+      "model": "DM",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1983-1984",
+      "make": "Mack",
+      "model": "MC",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1985",
+      "make": "Mack",
+      "model": "MR",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1982",
+      "make": "Mack",
+      "model": "R",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1984-1985",
+      "make": "Mack",
+      "model": "R",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1982",
+      "make": "Mack",
+      "model": "RD",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1984-1985",
+      "make": "Mack",
+      "model": "RD",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1983",
+      "make": "Mack",
+      "model": "WS",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1982-1990",
+      "make": "Oshkosh Motor Truck Co.",
+      "model": "P",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1989",
+      "make": "Oshkosh Motor Truck Co.",
+      "model": "V",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1990-1991",
+      "make": "Oshkosh Motor Truck Co.",
+      "model": "V Line",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "2004-2005",
+      "make": "Ottawa",
+      "model": "YT50",
+      "engine": "5.9L 6Cyl L Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1985-1986",
+      "make": "Peterbilt",
+      "model": "359",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1988",
+      "make": "Peterbilt",
+      "model": "359",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1987",
+      "make": "Peterbilt",
+      "model": "379",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1993",
+      "make": "Peterbilt",
+      "model": "379",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1989-1990",
+      "make": "Pierce Mfg. Inc.",
+      "model": "Enclosed Cab",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1988-1991",
+      "make": "Thomas",
+      "model": "School Bus",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1982",
+      "make": "Western Star",
+      "model": "4800",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1984-1985",
+      "make": "Western Star",
+      "model": "4800",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1992",
+      "make": "Western Star",
+      "model": "6900",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1983",
+      "make": "White",
+      "model": "WCS",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1987-1988",
+      "make": "White",
+      "model": "WCS",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1981-1988",
+      "make": "White",
+      "model": "WX",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1987-1988",
+      "make": "White",
+      "model": "WXLL",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1988-1989",
+      "make": "White/GMC",
+      "model": "J8C0",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1990",
+      "make": "White/GMC",
+      "model": "WCM",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1988-1991",
+      "make": "White/GMC",
+      "model": "WCS",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1989",
+      "make": "White/GMC",
+      "model": "WHL",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1990",
+      "make": "White/GMC",
+      "model": "WIA",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1988-1991",
+      "make": "White/GMC",
+      "model": "WX",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    },
+    {
+      "year": "1988-1991",
+      "make": "White/GMC",
+      "model": "WXLL",
+      "engine": "10.4L 8Cyl V Diesel",
+      "source": "PREMIUM_GUARD_PUBLIC_API",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50012/applications?format=ranges",
+      "evidence_hash": "112544d7064e843d9a30b1221e01f32d757263e4fd820f85e74db8750a26b84c"
+    }
+  ],
+  "reference_governance": {
+    "status": "COMPLETE_CANONICAL_DONALDSON_WITH_DUPLICATE_CONSOLIDATION_AND_HELD_ALTERNATES",
+    "canonical_sku": "EL85570",
+    "superseded_duplicate_sku": "EL39293",
+    "held_codes": [
+      "1268",
+      "1551035110",
+      "1R0713",
+      "303498409",
+      "51268",
+      "52248895",
+      "6636137950",
+      "85268",
+      "8N9586",
+      "LFP5570",
+      "W9293"
+    ],
+    "held_reason": "ACTIVE_BASE_OR_LEGITIMATE_ALTERNATE_OWNER",
+    "publication_rule": "FAIL_CLOSED_UNTIL_SINGLE_CANONICAL_OWNER",
+    "closed_at": "2026-09-24",
+    "active_base_equivalent_owner": {
+      "code": "W929/3",
+      "sku": "EL30929"
+    }
+  }
+}
