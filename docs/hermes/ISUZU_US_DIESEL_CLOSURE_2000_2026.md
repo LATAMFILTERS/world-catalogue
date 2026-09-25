@@ -452,8 +452,8 @@ The two terminal `BLOCKED_DONALDSON` rows are:
 2026-09-23`, refined by the `MICROCASE PASS`, `BLOCKEDCASE PASS` and `SKU CLOSURE PASS`, all
 2026-09-24).** HISTORICAL SNAPSHOT: at this point in the closure, 19 eligible Phase 2 OEN rows had an explicit decision. Subsequent exact-subset recovery expanded the current Phase 3 resolution table to 23 rows. `CONFLICTING` is
 **0**, and `NO_ELIMFILTERS_SKU_YET` is **0**. CLOSED does **not** mean every base is resolved:
-17 of 19 rows now carry a Donaldson base, 2 do not, and each of those 2 says exactly why. The
-tables below are the current, post-SKU-closure state; see **EXCEPTION CLOSURE PASS —
+17 of 19 rows carried a Donaldson base at this historical snapshot, 2 did not, and each of those 2 said exactly why. The
+tables immediately below preserve that dated snapshot; see **EXCEPTION CLOSURE PASS —
 2026-09-23** and the later dated subsections further down for what changed and why.
 
 ### How Donaldson was reached
