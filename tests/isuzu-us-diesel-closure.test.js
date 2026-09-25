@@ -2073,3 +2073,19 @@ test('OEM FALLBACK GOVERNANCE: manifest declares Donaldson -> Fleetguard -> OEM 
   assert.equal(phase3.governance.oem_fallback_policy.catalog_authority, 'VERIFIED_OEM_FALLBACK');
   assert.equal(phase3.coverage.base_decisions.oem_based, 0);
 });
+
+
+test('OEM FALLBACK GATE: official Fleetguard not-found does not equal non-manufacture', () => {
+  const history = phase3.exception_audit_history.find((h) => h.status === 'FLEETGUARD_OFFICIAL_CROSSREF_FOLLOWUP_NO_STATE_CHANGE');
+  assert.ok(history);
+  assert.equal(history.result, 'FLEETGUARD_NOT_FOUND_ONLY');
+  assert.equal(history.governance_effect, 'OEM_FALLBACK_REMAINS_CLOSED');
+
+  for (const id of ['P3-N-FUEL-2006-NPR','P3-11-N-FWS-2022i-ON']) {
+    const row = phase3.resolution_rows.find((r) => r.row_id === id);
+    assert.ok(row);
+    assert.notEqual(row.fleetguard_status, 'FLEETGUARD_NOT_MANUFACTURED_VERIFIED');
+    assert.equal(row.base_source_brand, null);
+    assert.equal(row.base_source_part, null);
+  }
+});
