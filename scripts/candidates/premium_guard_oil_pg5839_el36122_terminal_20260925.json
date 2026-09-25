@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5839",
+  "sku": "EL36122",
+  "codigo_base": "CH10246",
+  "terminal_state": "COMPLETE_REUSED_CANONICAL_FAMILY",
+  "action": "ADDED_PREMIUM_GUARD_REFERENCE_ONLY",
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5839/interchanges",
+      "sha256": "474d7c6483f5a40bdf8e03c59fe8cddb700fa62734c99d0817340d36a8d3be23"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5839/applications?format=ranges",
+      "sha256": "be4f8e125269620bee0a58fb5b95ddaff3ec66e7e8d838cbc2ad9e7f52e0a80c"
+    }
+  },
+  "reference_governance": {
+    "status": "COMPLETE_REUSED_CANONICAL_FAMILY",
+    "premium_guard_code": "PG5839",
+    "canonical_sku": "EL36122",
+    "publication_rule": "EXISTING_CANONICAL_LD_FAMILY_REUSED",
+    "closed_at": "2026-09-25"
+  }
+}

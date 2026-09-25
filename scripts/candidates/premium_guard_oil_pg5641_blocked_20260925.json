@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5641",
+  "queue_target_sku": "EL30068",
+  "queue_authority": {
+    "code": "CH9024"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_IDENTITY_UNRESOLVED__LEGACY_BASE_0068",
+  "details": {
+    "note": "Target remains legacy base 0068 with unresolved H68/HU68/W68 family candidates."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5641/interchanges",
+      "sha256": "609b5861025e8121d94814efe24fc1b9ba612aaca70e2c8b3e3e6d14fbb2fba3"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5641/applications?format=ranges",
+      "sha256": "071285d07c45e6d2ec16d30b9d04f9c4eff71178e0ea45cc0f0dc60ec6203cac"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

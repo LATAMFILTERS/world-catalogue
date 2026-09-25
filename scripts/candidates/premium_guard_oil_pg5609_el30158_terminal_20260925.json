@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5609",
+  "sku": "EL30158",
+  "codigo_base": "CH10158",
+  "terminal_state": "COMPLETE_REUSED_CANONICAL_FAMILY",
+  "action": "ADDED_PREMIUM_GUARD_REFERENCE_ONLY",
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609/interchanges",
+      "sha256": "8a862940107f609debf07f927a5f82c63d93953da75a9470f6f54d660395523e"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5609/applications?format=ranges",
+      "sha256": "9f559fb9090bb810a14a8141a464f5e53b440368f7235458103808568d9961be"
+    }
+  },
+  "reference_governance": {
+    "status": "COMPLETE_REUSED_CANONICAL_FAMILY",
+    "premium_guard_code": "PG5609",
+    "canonical_sku": "EL30158",
+    "publication_rule": "EXISTING_CANONICAL_LD_FAMILY_REUSED",
+    "closed_at": "2026-09-25"
+  }
+}

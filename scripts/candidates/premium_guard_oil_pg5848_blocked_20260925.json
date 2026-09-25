@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5848",
+  "queue_target_sku": "EL37001",
+  "queue_authority": {
+    "code": "CH10515"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_TARGET_MISMATCH__AUTHORITY_OWNER_EL30515_NONTERMINAL",
+  "details": {
+    "note": "CH10515 maps to EL30515/0515, not queue target EL37001; owner EL30515 itself is not canonical-terminal."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5848/interchanges",
+      "sha256": "86cdd9dff5f96a85f3f5ec0c2f0e92c6e5180c188bd500eb14fb454faa5453dc"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5848/applications?format=ranges",
+      "sha256": "34beff42d0af6d58a2d01defd95ed89916622064aa41a4d8cfb39ce5ac533f4b"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5904",
+  "queue_target_sku": "EL38007",
+  "queue_authority": {
+    "code": "CH11007"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_MANN_VARIANT_AMBIGUITY__HU8007Z_HU8007ZKIT",
+  "details": {
+    "note": "Target remains base 8007 with unresolved MANN HU8007Z/HU8007ZKIT candidates."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5904/interchanges",
+      "sha256": "9d54872082f7204a96e34394dfc20c35911b66f3d5cf97228733d897d7761f17"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5904/applications?format=ranges",
+      "sha256": "50e173f301be1086e271a924ca5598f6e38db947c7a63aaf0e947c196e0fc1e2"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

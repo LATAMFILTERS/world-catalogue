@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5636",
+  "queue_target_sku": "EL39316",
+  "queue_authority": {
+    "code": "CH10649"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_MULTI_OWNER_AMBIGUITY__CH10649_SHARED_WITH_HD_P550768",
+  "details": {
+    "note": "Authority is shared between LD EL39316 and HD P550768 family; no safe single-owner publication."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5636/interchanges",
+      "sha256": "95285611669f5fced8e2a031bcd32b814eb128189cd70064474158adcc814ce7"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5636/applications?format=ranges",
+      "sha256": "9913cdc8d5be76c6ea7fade95d02c29ba027b8c9dc3b64116a07b774d1ecdd77"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

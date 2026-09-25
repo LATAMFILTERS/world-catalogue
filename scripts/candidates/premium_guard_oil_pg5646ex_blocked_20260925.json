@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5646EX",
+  "queue_target_sku": "EL30821",
+  "queue_authority": {
+    "code": "CH10323"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_IDENTITY_UNRESOLVED__LEGACY_BASE_0821",
+  "details": {
+    "note": "Target remains legacy base 0821 with unresolved H821/HU821X primary candidates."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5646EX/interchanges",
+      "sha256": "5b0778b3856a61bad920f165ba67a9086a10e861310c716b6e20acf94f3ff6cb"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5646EX/applications?format=ranges",
+      "sha256": "3c437e8808300d92a0b6435c18817695a6cb507f3bb5f583f3a8ca87bf597588"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

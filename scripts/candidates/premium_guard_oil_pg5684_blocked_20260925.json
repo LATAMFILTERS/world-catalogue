@@ -1,0 +1,24 @@
+{
+  "premium_guard_code": "PG5684",
+  "queue_target_sku": "EL39453",
+  "queue_authority": {
+    "code": "CH9260"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_MULTI_OWNER_AMBIGUITY__CH9260_SHARED_WITH_HD_P550761",
+  "details": {
+    "note": "Authority is shared between LD EL39453 and HD P550761 family; fail closed."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5684/interchanges",
+      "sha256": "cd4b31383dd392b9ee98917c4fa802e0e9f5284982a25e81ad05cf91976319d7"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG5684/applications?format=ranges",
+      "sha256": "a095d02732dbf84b2744bee1328938a8a022153ee81a7440ce42fcab5948f005"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
