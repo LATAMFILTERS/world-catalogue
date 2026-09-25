@@ -1,0 +1,128 @@
+{
+  "premium_guard_code": "PG99817EX",
+  "proposed_authority": {
+    "brand": "MANN-FILTER",
+    "code": "W6014"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "NO_SAFE_ELIMFILTERS_SKU__QUEUE_TARGET_EL36014_IS_INCOMPATIBLE_HU6014Z_FAMILY",
+  "queue_target_sku": "EL36014",
+  "queue_target_identity": {
+    "codigo_base": "HU6014Z",
+    "filter_type": "oil",
+    "duty": "LIGHT_DUTY",
+    "geometry": {
+      "height_mm": 134,
+      "outer_diameter_mm": 53,
+      "inner_diameter_mm": 22,
+      "inner_diameter_1_mm": 15
+    },
+    "thread_size": null,
+    "main_application": "BMW"
+  },
+  "source_family": {
+    "codigo_base": "W6014",
+    "filter_type": "oil",
+    "geometry": {
+      "height_mm": 105,
+      "outer_diameter_mm": 66,
+      "gasket_id_mm": 54,
+      "gasket_od_mm": 62,
+      "thread_size": "M20x1.5"
+    },
+    "bypass_pressure_psi": 3.6259,
+    "anti_drainback_valve": true,
+    "applications": [
+      {
+        "year": "2015-2020",
+        "make": "Alfa Romeo",
+        "model": "4C",
+        "engine": "1.7L 4Cyl L Gas"
+      },
+      {
+        "year": "2017-2021",
+        "make": "Alfa Romeo",
+        "model": "Giulietta",
+        "engine": "1.7L 4Cyl L Gas"
+      }
+    ]
+  },
+  "interchanges": [
+    {
+      "partIntPartNumber": "5001-613532",
+      "interchange_name": "Autopart International"
+    },
+    {
+      "partIntPartNumber": "5001-613534",
+      "interchange_name": "Autopart International"
+    },
+    {
+      "partIntPartNumber": "CTK99817XL",
+      "interchange_name": "Cartek"
+    },
+    {
+      "partIntPartNumber": "CTK99817XL",
+      "interchange_name": "Cartek Pro"
+    },
+    {
+      "partIntPartNumber": "68237532AA",
+      "interchange_name": "Chrysler"
+    },
+    {
+      "partIntPartNumber": "X10588",
+      "interchange_name": "ECOGARD"
+    },
+    {
+      "partIntPartNumber": "55252436",
+      "interchange_name": "Fiat"
+    },
+    {
+      "partIntPartNumber": "55256371",
+      "interchange_name": "Fiat"
+    },
+    {
+      "partIntPartNumber": "W6014",
+      "interchange_name": "Mann-Filter"
+    },
+    {
+      "partIntPartNumber": "100365",
+      "interchange_name": "NAPA Gold Filters"
+    },
+    {
+      "partIntPartNumber": "M10588",
+      "interchange_name": "Service Pro"
+    },
+    {
+      "partIntPartNumber": "S45034XL",
+      "interchange_name": "STP"
+    },
+    {
+      "partIntPartNumber": "SL45034XL",
+      "interchange_name": "STP"
+    },
+    {
+      "partIntPartNumber": "VO-106",
+      "interchange_name": "Valvoline"
+    },
+    {
+      "partIntPartNumber": "WL10365",
+      "interchange_name": "Wix"
+    }
+  ],
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG99817EX/interchanges",
+      "sha256": "fa4034bf1b5e5ab959f0c6ca0a3a767f1a89176560510e6c8611b32ef44b9bb8"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG99817EX/applications?format=ranges",
+      "sha256": "31f8bc40587d5bc92dd84f4dcc206afc54a38bce7f6274c8808cdfb29a05ad67"
+    },
+    "mann_w6014": {
+      "url": "https://www.mann-filter.com/us-es/catalogo/resultados-de-la-busqueda/producto.html/w6014_mann-filter.html",
+      "sha256": "13a3e4bdb1a52fd0c2bf9563d3b15efafbe82a51b7a5db28a43d00cae81f2300"
+    }
+  },
+  "cleanup_rule": "REMOVE_PG99817EX_W6014_FAMILY_REFERENCES_FROM_EL36014_WITHOUT_CREATING_NEW_SKU",
+  "closed_at": "2026-09-24"
+}
