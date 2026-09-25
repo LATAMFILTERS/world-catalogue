@@ -1,0 +1,76 @@
+{
+  "batch": "LD_AIR_B05",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE_WITH_BLOCKERS",
+  "counts": {
+    "BLOCKED_WITH_REASON": 9,
+    "COMPLETE_CANONICAL_PROMOTION_WITH_APPLICATION_CLEANUP": 1
+  },
+  "catalog_writes": [
+    "EA30242 canonical FRAM promotion + legacy application cleanup"
+  ],
+  "candidates": [
+    {
+      "sku": "EA30102",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "DUPLICATE_OWNERSHIP__FRAM_CA102_RESOLVES_TO_EA16071_AND_SOURCE_RECORD_HAS_NO_USABLE_FAMILY_EVIDENCE",
+      "file": "ld_air_ea30102_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30228",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_SKU_COLLISION__CA10228_AND_CA228_PHYSICALLY_INCOMPATIBLE",
+      "file": "ld_air_ea30228_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30242",
+      "terminal_state": "COMPLETE_CANONICAL_PROMOTION_WITH_APPLICATION_CLEANUP",
+      "reason": null,
+      "file": "ld_air_ea30242_complete_20260925.json"
+    },
+    {
+      "sku": "EA30253",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_VARIANT_RELATION_UNPROVEN__ACTIVE_FRAM_CA253SY_IDENTITY_VS_CA10253_VOLVO_FAMILY",
+      "file": "ld_air_ea30253_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30281",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_SKU_COLLISION__AUTHORITIES_ROUTE_TO_DIFFERENT_EXISTING_SKUS",
+      "file": "ld_air_ea30281_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30283",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_SKU_COLLISION__AUTHORITIES_ROUTE_TO_DIFFERENT_EXISTING_SKUS",
+      "file": "ld_air_ea30283_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30305",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "MULTI_FAMILY_CONTAMINATION__CA10305_AND_CA305_DIFFERENT_FAMILIES_WITH_LEGACY_RELATIONAL_APPS",
+      "file": "ld_air_ea30305_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30328",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_SKU_COLLISION__CA10328_AND_CA328_PHYSICALLY_INCOMPATIBLE",
+      "file": "ld_air_ea30328_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30346",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_SKU_COLLISION__CA10346_AND_CA346_PHYSICALLY_INCOMPATIBLE",
+      "file": "ld_air_ea30346_blocked_20260925.json"
+    },
+    {
+      "sku": "EA30347",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_SKU_COLLISION__CA10347_AND_CA347_PHYSICALLY_INCOMPATIBLE",
+      "file": "ld_air_ea30347_blocked_20260925.json"
+    }
+  ],
+  "closed_at": "2026-09-25",
+  "note": "Renumbered from concurrent B04 label to preserve existing B04 terminal manifest."
+}
