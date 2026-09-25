@@ -2240,3 +2240,23 @@ test('AUTONOMOUS EXECUTION: Isuzu closure is enabled with hard guardrails', () =
   assert.ok(auto.prohibited_without_explicit_user_authorization.some((x) => /Send email/.test(x)));
   assert.ok(auto.mandatory_stop_conditions.some((x) => /commercial or legal judgment/.test(x)));
 });
+
+
+test('DONALDSON REGIONAL TERMINAL CLOSURE: both residual Isuzu rows are closed without unsafe promotion', () => {
+  const p2006 = phase3.resolution_rows.find((r) => r.row_id === 'P3-N-FUEL-2006-NPR');
+  const p2022 = phase3.resolution_rows.find((r) => r.row_id === 'P3-11-N-FWS-2022i-ON');
+  assert.equal(phase3.regional_donaldson_terminal_closure.status, 'COMPLETE');
+  assert.equal(phase3.regional_donaldson_terminal_closure.result, '2_TERMINAL_BLOCKED_DONALDSON_WITH_FINAL_REGIONAL_CANDIDATES');
+  assert.equal(p2006.regional_donaldson_closure.status, 'CLOSED_TERMINAL_CANDIDATE_ONLY');
+  assert.equal(p2022.regional_donaldson_closure.status, 'CLOSED_TERMINAL_CANDIDATE_ONLY');
+  assert.equal(p2006.regional_donaldson_closure.candidate_part, 'P550390');
+  assert.equal(p2022.regional_donaldson_closure.candidate_part, 'P551855');
+  assert.equal(p2006.regional_donaldson_closure.canonical_base_promoted, false);
+  assert.equal(p2022.regional_donaldson_closure.canonical_base_promoted, false);
+  assert.equal(p2006.decision_status, 'BLOCKED_DONALDSON');
+  assert.equal(p2022.decision_status, 'BLOCKED_DONALDSON');
+  assert.equal(p2006.donaldson_status, 'DONALDSON_NOT_FOUND');
+  assert.equal(p2022.donaldson_status, 'DONALDSON_NOT_FOUND');
+  assert.equal(p2006.fleetguard_status, 'NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED');
+  assert.equal(p2022.fleetguard_status, 'NOT_ELIGIBLE_DONALDSON_ABSENCE_NOT_VERIFIED');
+});
