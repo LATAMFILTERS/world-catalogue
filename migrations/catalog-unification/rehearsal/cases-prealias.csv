@@ -1,0 +1,5 @@
+q,expect_source,expect_sku
+EF90463,exact_sku,EF90463
+EH650084,exact_sku,EH650084
+ES90463,no_match,
+EL30158,exact_sku,EL30158

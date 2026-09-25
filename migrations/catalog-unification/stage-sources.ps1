@@ -5,12 +5,13 @@ con CREATE TABLE AS (sin defaults, FKs ni triggers) y se transfiere solo ese esq
 
 Uso: .\stage-sources.ps1 -Dump <5441.dump> -ScratchPort 5450 -ScratchUser rehearsal_admin -ScratchSecret <clixml> `
                          -TargetPort 5450 -TargetUser rehearsal_admin -TargetSecret <clixml> -TargetDb rehearsal
+Sin -TargetSecret pide la contraseña del destino de forma interactiva (p. ej. postgres en 5432 durante la ventana).
 Reversa: DROP SCHEMA unif_src_5441 CASCADE en la base destino.
 #>
 param(
   [Parameter(Mandatory)][string]$Dump,
-  [int]$ScratchPort = 5450, [string]$ScratchUser = 'rehearsal_admin', [Parameter(Mandatory)][string]$ScratchSecret,
-  [Parameter(Mandatory)][int]$TargetPort, [Parameter(Mandatory)][string]$TargetUser, [Parameter(Mandatory)][string]$TargetSecret,
+  [int]$ScratchPort = 5450, [string]$ScratchUser = 'rehearsal_admin', [string]$ScratchSecret = 'C:\ELIMSERVER\secrets\catalog-rehearsal.clixml',
+  [Parameter(Mandatory)][int]$TargetPort, [Parameter(Mandatory)][string]$TargetUser, [string]$TargetSecret,
   [Parameter(Mandatory)][string]$TargetDb
 )
 $ErrorActionPreference = 'Stop'
@@ -26,6 +27,7 @@ $tables = @(
 $scratch = 'unif_scratch_5441'
 $sp = @('-h', '127.0.0.1', '-p', $ScratchPort, '-U', $ScratchUser, '-w')
 $tp = @('-h', '127.0.0.1', '-p', $TargetPort, '-U', $TargetUser, '-w')
+$targetPw = if (-not $TargetSecret) { Read-Host "Password for $TargetUser@$TargetPort" -AsSecureString }
 $tmp = Join-Path $env:TEMP "unif_src_5441_$(Get-Date -Format yyyyMMddHHmmss).dump"
 try {
   $env:PGPASSWORD = Plain (Import-Clixml $ScratchSecret).Password
@@ -36,7 +38,7 @@ try {
   & "$bin\pg_dump.exe" @sp -d $scratch -n unif_src_5441 -Fc --no-owner --no-privileges -f $tmp; Check 'dump staging schema'
   & "$bin\dropdb.exe" @sp $scratch; Check 'drop scratch'
 
-  $env:PGPASSWORD = Plain (Import-Clixml $TargetSecret).Password
+  $env:PGPASSWORD = Plain $(if ($TargetSecret) { (Import-Clixml $TargetSecret).Password } else { $targetPw });
   & "$bin\pg_restore.exe" @tp -d $TargetDb --no-owner --no-privileges $tmp; Check 'restore staging schema'
   "SELECT 'staged', table_name, (xpath('/row/n/text()', query_to_xml(format('SELECT count(*) AS n FROM unif_src_5441.%I', table_name), false, true, '')))[1]::text FROM information_schema.tables WHERE table_schema = 'unif_src_5441' ORDER BY 2;" |
     & "$bin\psql.exe" @tp -d $TargetDb -X -A -t -F ' '

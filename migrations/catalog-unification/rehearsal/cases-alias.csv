@@ -1,0 +1,15 @@
+q,expect_source,expect_sku
+EF90463,sku_alias,ES90463
+EF90106,sku_alias,ES90106
+EF30404,sku_alias,EF90404
+EH650084,sku_alias,EH61084
+ET932002,sku_alias,ET92002
+EH650308,sku_alias,EH62308
+ES90463,exact_sku,ES90463
+EH60011,exact_sku,EH60011
+EL30158,exact_sku,EL30158
+ET90011,catalog_scope_excluded,
+ET99114,catalog_scope_excluded,
+EL36019,catalog_scope_excluded,
+EH62366,no_match,
+P550463,codigo_base,

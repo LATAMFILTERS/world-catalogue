@@ -4,17 +4,18 @@ public.catalog_migration_log. Uso:
   .\run.ps1 -Direction up   -Port 5450 -User rehearsal_admin -Secret <clixml> -Database rehearsal [-Only 03]
   .\run.ps1 -Direction down -Port 5450 -User rehearsal_admin -Secret <clixml> -Database rehearsal
 Down recorre en orden inverso y solo revierte las migraciones aplicadas.
+Sin -Secret pide la contraseña de forma interactiva (p. ej. postgres en 5432 durante la ventana).
 #>
 param(
   [Parameter(Mandatory)][ValidateSet('up', 'down')][string]$Direction,
-  [Parameter(Mandatory)][int]$Port, [Parameter(Mandatory)][string]$User, [Parameter(Mandatory)][string]$Secret,
+  [Parameter(Mandatory)][int]$Port, [Parameter(Mandatory)][string]$User, [string]$Secret,
   [Parameter(Mandatory)][string]$Database, [string]$Only
 )
 $ErrorActionPreference = 'Stop'
 $bin = 'C:\Program Files\PostgreSQL\18\bin'; $here = Split-Path $MyInvocation.MyCommand.Path
 function Plain($v) { $b = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($v); try { [Runtime.InteropServices.Marshal]::PtrToStringBSTR($b) } finally { [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($b) } }
 $pg = @('-h', '127.0.0.1', '-p', $Port, '-U', $User, '-w', '-d', $Database, '-X', '-q', '-v', 'ON_ERROR_STOP=1')
-$env:PGPASSWORD = Plain (Import-Clixml $Secret).Password; $env:PGAPPNAME = 'catalog-unification-migrations'
+$env:PGPASSWORD = Plain $(if ($Secret) { (Import-Clixml $Secret).Password } else { Read-Host "Password for $User@$Port" -AsSecureString }); $env:PGAPPNAME = 'catalog-unification-migrations'
 $env:PGOPTIONS = '-c client_min_messages=warning'
 try {
   $files = Get-ChildItem $here -Filter "*.$Direction.sql" | Sort-Object Name
