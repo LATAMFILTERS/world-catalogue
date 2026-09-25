@@ -924,13 +924,21 @@ test('PHASE 3.12: no direct SQL writes and no catalogue writes', () => {
   assert.ok(!/require\(['"](pg|\.\/db|\.\.\/db)/.test(lib), 'the closure read model must not open a database');
 });
 
-test('PHASE 3.13: nothing is published automatically', () => {
+test('PHASE 3.13: nothing is published automatically; later governed live publication is separate', () => {
   assert.equal(phase3.governance.publication_authorized, false);
   assert.equal(phase3.governance.review_state, 'READY_FOR_REVIEW');
   assert.equal(phase3.governance.hermes_output_class, 'CANDIDATE_INTELLIGENCE');
+  assert.match(phase3.governance.publication_authorized_scope, /NO_AUTOMATIC_OR_BULK_PUBLICATION/);
   for (const d of phase3.elimfilters_base_decisions) assert.equal(d.published, false);
   for (const row of phase3.resolution_rows) {
     if (row.elimfilters_base_decision) assert.equal(row.elimfilters_base_decision.published, false);
+  }
+  const live = phase3.resolution_rows.filter((r) => r.elimfilters_existing_sku === 'EL88076');
+  assert.equal(live.length, 2);
+  for (const row of live) {
+    assert.equal(row.live_catalog_publication.status, 'LIVE');
+    assert.equal(row.live_catalog_publication.migration, 'scripts/migrations/run_119_create_el88076_p848076.js');
+    assert.match(row.live_catalog_publication.note, /published remains false by design/);
   }
 });
 
@@ -940,7 +948,7 @@ test('PHASE 3.14: an existing SKU is reused where one exists; a new one is minte
   // to "never minted" -- an exhaustive duplicate audit (repo + live Postgres)
   // found no existing SKU, so a governed candidate was derived from this
   // repo's own codigo_base policy, not invented, and recorded as
-  // CREATE_GOVERNED_SKU / READY_FOR_REVIEW / published:false.
+  // CREATE_GOVERNED_SKU; later governed live publication is recorded separately in live_catalog_publication while the Phase 3 published flag stays false.
   assert.deepEqual(phase3.coverage.elimfilters_new_sku_candidates, ['EL88076']);
   for (const row of phase3.resolution_rows) {
     if (!row.elimfilters_base_decision) continue;
@@ -1224,7 +1232,7 @@ test('EXCEPTION AUDIT FINAL: counts match the reported starting and final tallie
   // P848076 ELIMFILTERS SKU CLOSURE 2026-09-24: closed both remaining
   // NO_ELIMFILTERS_SKU_YET rows with a governed candidate SKU.
   const history = phase3.exception_audit_history.find((h) => h.starting_counts?.NO_ELIMFILTERS_SKU_YET === 2);
-  assert.equal(phase3.exception_audit_history.length, 8);
+  assert.ok(phase3.exception_audit_history.length >= 8, 'history may grow as later terminal audits are appended');
   assert.ok(history);
   assert.deepEqual(history.starting_counts, { VERIFIED_BASE: 4, PARTIAL: 11, CONFLICTING: 0, NO_ELIMFILTERS_SKU_YET: 2, BLOCKED_DONALDSON: 2 });
   assert.deepEqual(history.final_counts, { VERIFIED_BASE: 5, PARTIAL: 12, CONFLICTING: 0, NO_ELIMFILTERS_SKU_YET: 0, BLOCKED_DONALDSON: 2 });
@@ -1964,5 +1972,30 @@ test('N-FUEL OEM RECOVERY 4: exact recovered OENs transition into governed Phase
     assert.equal(row.elimfilters_existing_sku, 'EF92427');
     assert.equal(row.decision_status, 'VERIFIED_BASE');
     assert.equal(row.elimfilters_base_decision.published, false);
+  }
+});
+
+
+test('PHASE 3 CURRENT STATE: manifest is technically closed without unstructured residue', () => {
+  assert.equal(phase3.phase3_status, 'CLOSED');
+  assert.equal(phase3.outcome, 'CLOSED_WITH_EXPLICIT_BLOCKERS');
+  assert.equal(phase3.current_state_audit.closure_verdict, 'CLOSED_WITH_EXPLICIT_BLOCKERS_AND_NO_UNSTRUCTURED_RESIDUE');
+  assert.deepEqual(phase3.current_state_audit.decision_counts, {
+    VERIFIED_BASE: 8,
+    PARTIAL: 13,
+    BLOCKED_DONALDSON: 2,
+    CONFLICTING: 0,
+    NO_ELIMFILTERS_SKU_YET: 0,
+  });
+  assert.equal(phase3.current_state_audit.blocked_oem_scopes.structurally_terminal, 9);
+  assert.equal(phase3.current_state_audit.blocked_oem_scopes.generic_all_remaining, 0);
+  assert.equal(phase3.current_state_audit.publication_state.EL88076, 'LIVE_GOVERNED');
+
+  const blocked = phase3.resolution_rows.filter((r) => r.decision_status === 'BLOCKED_DONALDSON');
+  assert.deepEqual(blocked.map((r) => r.row_id).sort(), ['P3-11-N-FWS-2022i-ON','P3-N-FUEL-2006-NPR'].sort());
+
+  for (const row of phase3.blocked_oem_rows) {
+    assert.ok(row.position_terminal_states || row.position_terminal_state || row.subscope_terminal_states, row.row_id + ' lacks terminal structure');
+    assert.notEqual(row.filter_position, 'ALL', row.row_id + ' still has a generic ALL blocker');
   }
 });
