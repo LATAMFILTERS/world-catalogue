@@ -2159,3 +2159,17 @@ test('ACTIONABLE PARTIAL GROUPS: all 11 rows have exact source blockers', () => 
     assert.ok(row.partial_triage.group_required_source);
   }
 });
+
+
+test('EVIDENCE PACK: zero-budget mode covers all 11 actionable partial rows', () => {
+  const pack = require('../config/vehicle-platform-closure/isuzu-aisin-evidence-pack.json');
+  const actionable = phase3.resolution_rows.filter((r) => r.partial_triage?.classification === 'ACTIONABLE_PARTIAL');
+  const covered = new Set(Object.values(pack.groups).flatMap((g) => g.row_ids));
+  assert.equal(pack.acquisition_strategy.mode, 'FREE_FIRST_PARTY_ONLY');
+  assert.equal(pack.acquisition_strategy.budget_usd, 0);
+  assert.equal(actionable.length, 11);
+  assert.equal(covered.size, 11);
+  for (const row of actionable) assert.ok(covered.has(row.row_id), row.row_id + ' missing from evidence pack');
+  assert.match(pack.extraction_contract.stop_rule, /TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED/);
+  assert.match(pack.extraction_contract.stop_rule, /Paid access is out of scope/);
+});
