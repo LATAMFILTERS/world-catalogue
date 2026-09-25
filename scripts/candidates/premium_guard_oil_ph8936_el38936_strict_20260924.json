@@ -1,0 +1,335 @@
+{
+  "sku": "EL38936",
+  "codigo_base": "PH8936",
+  "filter_type": "oil",
+  "duty": "LIGHT_DUTY",
+  "technology": "SYNTRAX™",
+  "canonical_brand": "FRAM",
+  "canonical_source_url": "https://www.fram.com/parts-search",
+  "canonical_evidence": {
+    "authority": "PH8936",
+    "market_scope": "MULTI_REGION",
+    "evidence_sha256": "82730b8a778f9e559d08261893911d1c867a27adadc0d3ce73b680a01420ca1f",
+    "source_part_key": "001510306",
+    "premium_guard_code": "HG50040",
+    "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+    "operator_confirmed_sku": "EL38936",
+    "premium_guard_source_page": "https://www.pgfilters.com/product-catalog/product-page/hg50040/"
+  },
+  "specs": {
+    "style": "Spin-On Canister",
+    "height_in": 5.844,
+    "height_mm": 148.44,
+    "media_type": "Genuine Media",
+    "thread_size": "Metric",
+    "gasket_id_in": 2.453,
+    "gasket_id_mm": 62.31,
+    "gasket_od_in": 2.813,
+    "gasket_od_mm": 71.45,
+    "outer_diameter_in": 4.765,
+    "outer_diameter_mm": 121.03,
+    "burst_pressure_psi": null,
+    "bypass_setting_psi": 19,
+    "bypass_relief_valve": "Yes",
+    "gasket_thickness_in": 0.188,
+    "gasket_thickness_mm": 4.78,
+    "anti_drainback_valve": "No"
+  },
+  "oem_codes": [
+    {
+      "code": "1269907",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Caterpillar",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "84218257",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "CNH",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "26311-45010",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Hyundai",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "VAME215002",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Kobelco",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "2446R332D12",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Kobelco",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "2446R332D11",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Kobelco",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "ME202472",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Mitsubishi",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "ME974236",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Mitsubishi",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "ME215002",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Mitsubishi",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "ME088532",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Mitsubishi",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "ME013343",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Mitsubishi",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "ME013307",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Mitsubishi",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "OEM",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    }
+  ],
+  "competitor_codes": [
+    {
+      "code": "BD7028",
+      "manufacturer": "Baldwin",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "1675",
+      "manufacturer": "NAPA",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "L45262",
+      "manufacturer": "Purolator",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "51675",
+      "manufacturer": "Wix",
+      "classification": "AFTERMARKET"
+    },
+    {
+      "code": "HG50040",
+      "source_url": "https://www.pgfilters.com/product-catalog/product-page/hg50040/",
+      "manufacturer": "PREMIUM GUARD",
+      "evidence_hash": "78559d3b85e8aec330534a79d35fd93180b8fd8aea7c58663b82e8f3583c012c",
+      "classification": "AFTERMARKET",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_PRODUCT_PAGE"
+    },
+    {
+      "code": "85675",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Carquest",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "AFTERMARKET",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "LF3830",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Fleetguard",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "AFTERMARKET",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "LF456",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Hastings",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "AFTERMARKET",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "LFP3307",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "LUBER-FINER",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "AFTERMARKET",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "LFP8752",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "LUBER-FINER",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "AFTERMARKET",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "W9069",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "MANN-FILTER",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "AFTERMARKET",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    },
+    {
+      "code": "VO-146",
+      "source_url": "https://api.pgfilters.com/catalog/api/v1/products/HG50040/interchanges",
+      "manufacturer": "Valvoline",
+      "evidence_hash": "6a5afd9e4fcb6578e5f101fd552811a0067a30ccfdcfdc4ab1dff27c7628639d",
+      "classification": "AFTERMARKET",
+      "evidence_authority": "PREMIUM_GUARD_PUBLIC_API"
+    }
+  ],
+  "vehicle_applications": [
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "1992-2004",
+      "model": "FE",
+      "engine": "3.9L 4Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FE"
+    },
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "2001",
+      "model": "FE-CA",
+      "engine": "3.9L 4Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FE-CA"
+    },
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "1996-2004",
+      "model": "FE-HD",
+      "engine": "3.9L 4Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FE-HD"
+    },
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "1996-2004",
+      "model": "FE-SP",
+      "engine": "3.9L 4Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FE-SP"
+    },
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "2001-2004",
+      "model": "FE-SP",
+      "engine": "4.9L 4Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FE-SP"
+    },
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "1992-1993",
+      "model": "FG",
+      "engine": "3.9L 4Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FG"
+    },
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "1998-2004",
+      "model": "FG",
+      "engine": "3.9L 4Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FG"
+    },
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "2005-2011",
+      "model": "FG140",
+      "engine": "4.9L 4Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FG140"
+    },
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "2003-2004",
+      "model": "FH",
+      "engine": "4.9L 4Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FH"
+    },
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "1992-1995",
+      "model": "FH",
+      "engine": "5.0L 6Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FH"
+    },
+    {
+      "make": "Mitsubishi Fuso",
+      "year": "1996-2004",
+      "model": "FH",
+      "engine": "5.9L 6Cyl L Diesel",
+      "equipment": "Mitsubishi Fuso FH"
+    }
+  ],
+  "reference_governance": {
+    "status": "COMPLETE_CANONICAL_FRAM_WITH_ACTIVE_BASE_COLLISION_HELD",
+    "premium_guard_code": "HG50040",
+    "resolved_collision_codes": [
+      "1269907",
+      "2446R332D11",
+      "2446R332D12",
+      "2631145010",
+      "84218257",
+      "85675",
+      "LF3830",
+      "LF456",
+      "LFP3307",
+      "LFP8752",
+      "ME013307",
+      "ME013343",
+      "ME088532",
+      "ME202472",
+      "ME215002",
+      "ME974236",
+      "VAME215002",
+      "W9069"
+    ],
+    "held_codes": [
+      "P502008"
+    ],
+    "held_code_owner": {
+      "sku": "EL82008",
+      "codigo_base": "P502008",
+      "filter_type": "oil"
+    },
+    "publication_rule": "FAIL_CLOSED_UNTIL_CANONICAL_OWNER_RESOLVED",
+    "closed_at": "2026-09-24"
+  }
+}
