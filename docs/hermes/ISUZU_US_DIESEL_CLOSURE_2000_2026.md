@@ -918,13 +918,35 @@ the documented gaps:
    may open a Fleetguard base.
 6. Obtain an Isuzu F-Series owner's or parts manual to close F-Series air, cabin, air
    dryer, water separator and transmission.
-7. Obtain Isuzu parts data for the 4HK1-TC N-Series MY2005-2012 fuel filter, for the
-   ECO-MAX fuel and air filters, and for the N-Series MY2022-2026 fuel filter.
+7. Continue Isuzu OEM research only for the residual 4HK1-TC N-Series fuel gap:
+   MY2005; MY2006 NPR-HD/NQR/NRR; MY2007-2008 NPR-HD/NQR/NRR; MY2009 all;
+   MY2010 NPR; and MY2011-2012 NPR-HD/NQR/NRR. Exact MY2006/2007/2008 NPR and
+   MY2010 NPR-HD/NQR/NRR subsets are now closed. ECO-MAX fuel/air and N-Series
+   MY2022-2026 fuel/lube remain separate OEM gaps.
 8. Locate an Isuzu-published OEN for the H-Series (`HTR`/`HVR`/`HXR`,
    `block_id: H-2005-2008`). Until one exists, Phase 3 carries it as `BLOCKED_OEM`.
 9. Obtain NPR-HD and NRR's own MY2021 crew-cab specification PDFs through a route that does
    not hit the reproducible 1,048,576-byte truncation documented above, to replace the
    same-batch sibling-evidence closure with each model's own document.
+
+### P3-BLOCKED-N-FUEL-2005-2012 partial OEM closure — 2026-09-24
+
+Recovered original Isuzu owner-manual evidence closes only four exact subsets of the former
+2005-2012 4HK1-TC fuel gap: MY2006 NPR publishes `8980284111`; MY2007 NPR and MY2008 NPR
+publish `8980370110`; and the MY2010 manual explicitly covering NPR-HD/NQR/NRR publishes
+`8980370110`. The resolver now has an exact-model guard so the NPR-only rows cannot leak to
+NPR-HD/NQR/NRR, while the MY2010 NPR-HD/NQR/NRR row cannot leak to NPR.
+
+For the three `8980370110` subsets, the existing Donaldson first-party capture directly maps the
+exact Isuzu OEN to `P502427`; the existing ELIMFILTERS canonical SKU is `EF92427`. Those rows are
+`VERIFIED_BASE`. MY2006 NPR is different: its exact OEM number `8980284111` has no verified
+Donaldson equivalent in the checked first-party/current channels, so that subset moves from
+`BLOCKED_OEM` to `BLOCKED_DONALDSON`; Fleetguard is not opened because Donaldson
+non-manufacture is not verified.
+
+The OEM blocker is therefore narrowed, not eliminated. Remaining OEM-blocked combinations are
+MY2005; MY2006 NPR-HD/NQR/NRR; MY2007-2008 NPR-HD/NQR/NRR; MY2009 all; MY2010 NPR;
+and MY2011-2012 NPR-HD/NQR/NRR. No year continuity or sibling-model inheritance was used.
 
 ### P2-N-FWS final isolated follow-up — 8982373410 (2026-09-24)
 
