@@ -3959,10 +3959,10 @@
     "P3-N-FUEL-2006-NPR / Isuzu 8980284111 remains terminal BLOCKED_DONALDSON. If Donaldson non-manufacture becomes explicitly verified, evaluate Fleetguard. If Fleetguard non-manufacture is also explicitly verified, the exact first-party Isuzu OEN 8980284111 may be evaluated as VERIFIED_OEM_FALLBACK codigo_base.",
     "P3-11-N-FWS-2022i-ON / Isuzu 8982373410 remains terminal BLOCKED_DONALDSON. If Donaldson non-manufacture becomes explicitly verified, evaluate Fleetguard. If Fleetguard non-manufacture is also explicitly verified, the exact first-party Isuzu OEN 8982373410 may be evaluated as VERIFIED_OEM_FALLBACK codigo_base.",
     "Phase 2 standard-vs-high-capacity fuel distinction is CLOSED: Isuzu first-party FleetValue/Genuine data proves HIGH CAPACITY is a commercial replacement variant, not a separate OEM position. Remaining PARTIAL status is only for exact engine/chassis/kit-position assignment.",
-    "General catalogue-governance follow-up only: continue monitoring legacy cross-reference integrity around P550008/EL80008 outside the Isuzu closure. The three stale legacy mappings were already removed from both legacy CSV exports.",
     "OEM evidence follow-up only when new first-party material exists: H-Series, FRR/FXR, F-Series transverse positions, N-Series residual fuel scopes and N-Series cabin remain terminal BLOCKED_OEM with explicit reasons. Do not infer by continuity, sibling model or shared engine.",
     "EL88076 / Donaldson P848076 is already LIVE and governed in catalogo_elimfilters via scripts/migrations/run_119_create_el88076_p848076.js; no publication action remains for this SKU.",
-    "PARTIAL queue is CLOSED for routine research: all 13 PARTIAL rows are TERMINAL_PARTIAL. Eleven were terminalized as TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED after the bounded zero-budget Isuzu/Aisin evidence pass; the other two were already terminal by explicit OEM scope. Reopen only on genuinely new first-party evidence."
+    "PARTIAL queue is CLOSED for routine research: all 13 PARTIAL rows are TERMINAL_PARTIAL. Eleven were terminalized as TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED after the bounded zero-budget Isuzu/Aisin evidence pass; the other two were already terminal by explicit OEM scope. Reopen only on genuinely new first-party evidence.",
+    "P550008/EL80008 legacy governance follow-up is CLOSED: remaining stale mappings EL50936 -> P550008 and EL59363 -> P550008 were removed from sku_competitor_matrix_ld.csv; canonical P550008 -> EL80008 remains unchanged."
   ],
   "exception_audit_status": "CLOSED_WITH_BLOCKERS",
   "exception_audit_history": [
@@ -4549,6 +4549,17 @@
         "decision_status_changes": 0
       },
       "note": "All 13 Phase 3 PARTIAL rows are now terminal for routine research. Reopen only on genuinely new first-party evidence."
+    },
+    {
+      "on": "2026-09-24",
+      "status": "P550008_LEGACY_STALE_MAPPING_CLEANUP_COMPLETE",
+      "scope": "sku_competitor_matrix_ld.csv",
+      "removed_mappings": [
+        "EL50936 -> P550008",
+        "EL59363 -> P550008"
+      ],
+      "canonical_mapping": "P550008 -> EL80008",
+      "note": "The two remaining stale Donaldson P550008 references were removed from the legacy LD competitor matrix. EL50940 no longer pointed to P550008 and required no change. No canonical Isuzu/Donaldson base or live SKU changed."
     }
   ],
   "duplicate_mapping_audit": {
