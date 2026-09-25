@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG241EX",
+  "queue_target_sku": "EL31881",
+  "queue_authority": {
+    "code": "TG3614"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_AUTHORITY_NOT_TERMINAL__VERIFY_PRIMARY_ABSENCE",
+  "details": {
+    "family": "FRAM TG3614",
+    "note": "Target remains legacy numeric 1881 with VERIFY_PRIMARY_ABSENCE and high-cardinality cross-reference contamination."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG241EX/interchanges",
+      "sha256": "35e0a854734ee72555ed56e38985e9443aba1dbfdf36db77359a8fde920b14c1"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG241EX/applications?format=ranges",
+      "sha256": "063dae6d05fe9106156040b91fec710bb3b87383d894f4491f4a98102bce994c"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

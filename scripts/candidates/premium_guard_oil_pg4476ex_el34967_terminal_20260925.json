@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG4476EX",
+  "sku": "EL34967",
+  "codigo_base": "PH4967",
+  "terminal_state": "COMPLETE_REUSED_CANONICAL_FAMILY",
+  "canonical_brand": "FRAM",
+  "action": "ADDED_PREMIUM_GUARD_REFERENCE_AND_VERIFIED_APPLICATIONS",
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4476EX/interchanges",
+      "sha256": "39846c670830e8cc7801b99a39d585c6278fad88674f98876928c6174387b54e"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4476EX/applications?format=ranges",
+      "sha256": "11611d08a0162a543eb0d18f9f748650f8577d57bba5201379faa648620accc1"
+    }
+  },
+  "reference_governance": {
+    "status": "COMPLETE_REUSED_CANONICAL_FAMILY",
+    "premium_guard_code": "PG4476EX",
+    "canonical_sku": "EL34967",
+    "publication_rule": "PG4476EX_RESOLVES_TO_EXISTING_PH4967_CANONICAL_FAMILY",
+    "closed_at": "2026-09-25"
+  }
+}

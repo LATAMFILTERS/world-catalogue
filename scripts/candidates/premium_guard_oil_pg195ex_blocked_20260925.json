@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG195EX",
+  "queue_target_sku": "EL30912",
+  "queue_authority": {
+    "code": "TG3600"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_TARGET_MISMATCH_UNRESOLVED_CANONICAL_OWNER",
+  "details": {
+    "family": "FRAM PH3600/TG3600",
+    "note": "Queue target lacks physical specification and family references are contaminated across LD/HD and cross-category owners. Do not write until canonical LD owner is resolved."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG195EX/interchanges",
+      "sha256": "1154ebf8ebb6b446fd32e327db25ff0014d8072cc49791b0034df5e8c8177ebf"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG195EX/applications?format=ranges",
+      "sha256": "285da6b428877da8f7ddcda213d7b7ebe70419ca9c631b7995cf8f18bb59017d"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG2263U",
+  "queue_target_sku": "EL36042",
+  "queue_authority": {
+    "code": "CH12246"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_BASE_NOT_NORMALIZED__AUTHORITY_CH12246",
+  "details": {
+    "family": "FRAM CH12246",
+    "note": "Target remains on legacy numeric base 6042; canonical identity must be normalized before enrichment."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG2263U/interchanges",
+      "sha256": "66ab3f131589162f1a2839a9f2dc899866b4b5793991e7f9c8d7c07e0e281143"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG2263U/applications?format=ranges",
+      "sha256": "d6650757a81d397644390d2f6a15f716a085e4d9051303afcbaac397ff4dc252"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

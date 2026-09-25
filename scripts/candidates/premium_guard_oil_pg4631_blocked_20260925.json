@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG4631",
+  "queue_target_sku": "EL39365",
+  "queue_authority": {
+    "code": "PH30"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_MANUFACTURER_AUTHORITY_CONFLICT__PH30_MULTIPLE_DONALDSON_FAMILIES",
+  "details": {
+    "family": "FRAM PH30",
+    "note": "Premium Guard lists multiple Donaldson families including P550035/P550964/P559274; do not collapse into one LD owner."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4631/interchanges",
+      "sha256": "6521ea5c6a42f4acab36db1f47191e64ae78b5832b3320c9ba7b506a6b410e54"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4631/applications?format=ranges",
+      "sha256": "bfb3c82fc9fcee448c1b1892162a4c0bb9966fa8f0459fcf508b2a15f842ed9e"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

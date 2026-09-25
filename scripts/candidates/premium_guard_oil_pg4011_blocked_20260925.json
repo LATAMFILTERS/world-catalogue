@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG4011",
+  "queue_target_sku": "EL30717",
+  "queue_authority": {
+    "code": "PH3980"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_MULTI_OWNER_AMBIGUITY__PH3980_SHARED_WITH_P550051",
+  "details": {
+    "family": "FRAM PH3980",
+    "note": "Authority is shared between LD target and HD P550051 family; no safe single-owner publication from this phase."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4011/interchanges",
+      "sha256": "75d4c891ee62e4ea4e3d1640815a2095902b212f2ce3ca612dcd99e16ea7c6f8"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4011/applications?format=ranges",
+      "sha256": "f3f6359af67a2bea3503b31f515eb9d41249141b64e36fa91e9ee787bf92bf48"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

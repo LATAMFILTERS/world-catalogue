@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG33",
+  "queue_target_sku": "EL39362",
+  "queue_authority": {
+    "code": "PH25"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_MULTI_OWNER_AMBIGUITY__PH25_SHARED_WITH_HD_FAMILIES",
+  "details": {
+    "family": "FRAM PH25",
+    "note": "Authority code has multiple active LD/HD owners and Donaldson interchanges P550224/P550599; fail closed."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG33/interchanges",
+      "sha256": "b2610107086a92c3e983a997da62b2a2bdef0d47d24e02cbd679386cdbfd10dd"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG33/applications?format=ranges",
+      "sha256": "431d74874d04d8405d748c3b763518e5689e5c51e07b79ad0236cbd5a1d4c0e2"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

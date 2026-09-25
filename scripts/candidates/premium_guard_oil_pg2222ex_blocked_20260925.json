@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG2222EX",
+  "queue_target_sku": "EL30060",
+  "queue_authority": {
+    "code": "TG10060"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_CANONICAL_AUTHORITY_NOT_TERMINAL__VERIFY_PRIMARY_ABSENCE",
+  "details": {
+    "family": "FRAM PH10060/TG10060",
+    "note": "Target is LD and physically plausible but governance still requires primary-manufacturer absence verification."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG2222EX/interchanges",
+      "sha256": "c433545aab17593353bc3e47bfc140bde30873174fee986aa5172006d2efff15"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG2222EX/applications?format=ranges",
+      "sha256": "62e0750c09e49ea8d744f1f90e1058b766f276eba0dfd64cf75b1605f2b8ba01"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}

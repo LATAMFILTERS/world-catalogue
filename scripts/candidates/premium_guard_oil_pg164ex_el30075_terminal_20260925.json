@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG164EX",
+  "sku": "EL30075",
+  "codigo_base": "MW75",
+  "terminal_state": "COMPLETE_REUSED_CANONICAL_FAMILY",
+  "canonical_brand": "MANN-FILTER",
+  "action": "NO_CATALOG_CHANGE_REQUIRED",
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/interchanges",
+      "sha256": "5b97f23db514fe86e05010b860515330b836ff91119eb164f224a1e43d7598d3"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG164EX/applications?format=ranges",
+      "sha256": "e010b5ac35ba4c59da94ea0c81cbbbb767e7f969c85b0650062e881118e2df53"
+    }
+  },
+  "reference_governance": {
+    "status": "COMPLETE_REUSED_CANONICAL_FAMILY",
+    "premium_guard_code": "PG164EX",
+    "canonical_sku": "EL30075",
+    "publication_rule": "EXISTING_PUBLIC_ROUTE_REUSED",
+    "closed_at": "2026-09-25"
+  }
+}

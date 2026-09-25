@@ -1,0 +1,25 @@
+{
+  "premium_guard_code": "PG4459EX",
+  "queue_target_sku": "EL30671",
+  "queue_authority": {
+    "code": "FS9688"
+  },
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_TARGET_MISMATCH_UNRESOLVED_CANONICAL_OWNER",
+  "details": {
+    "family": "FRAM PH9688/FS9688",
+    "note": "Queue target EL30671 geometry does not match official PH9688 dimensions; several alternate LD candidates remain unresolved."
+  },
+  "evidence": {
+    "premium_guard_interchanges": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4459EX/interchanges",
+      "sha256": "a3a73c4f3094577a91e6741840e03d21670caa9619fe4d361cb88ce390a3e9cc"
+    },
+    "premium_guard_applications": {
+      "url": "https://api.pgfilters.com/catalog/api/v1/products/PG4459EX/applications?format=ranges",
+      "sha256": "43601d21057265313d9011e3610628680d7751c02a927a182a4a0cde31ebd083"
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-25"
+}
