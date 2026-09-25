@@ -2136,13 +2136,14 @@ test('PARTIAL TRIAGE: all 13 PARTIAL rows are classified', () => {
 });
 
 
-test('ACTIONABLE PARTIAL GROUPS: all 11 rows have exact source blockers', () => {
+test('ACTIONABLE PARTIAL GROUPS: zero-budget pass terminalizes all 11 rows', () => {
   const audit = phase3.actionable_partial_group_audit;
   assert.ok(audit);
   assert.equal(audit.summary.groups_total, 4);
   assert.equal(audit.summary.groups_resolved, 0);
-  assert.equal(audit.summary.groups_actionable_with_exact_source_blocker, 4);
+  assert.equal(audit.summary.groups_terminalized_after_free_evidence_exhausted, 4);
   assert.equal(audit.summary.rows_total, 11);
+  assert.equal(audit.summary.rows_terminalized_after_free_evidence_exhausted, 11);
   assert.equal(audit.summary.rows_state_changed, 0);
 
   const exhausted = phase3.resolution_rows.filter((r) => r.partial_triage?.terminal_subtype === 'TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED');
@@ -2155,7 +2156,7 @@ test('ACTIONABLE PARTIAL GROUPS: all 11 rows have exact source blockers', () => 
 });
 
 
-test('EVIDENCE PACK: zero-budget mode covers all 11 actionable partial rows', () => {
+test('EVIDENCE PACK: zero-budget mode covers all 11 terminalized research rows', () => {
   const pack = require('../config/vehicle-platform-closure/isuzu-aisin-evidence-pack.json');
   const exhausted = phase3.resolution_rows.filter((r) => r.partial_triage?.terminal_subtype === 'TERMINAL_PARTIAL_WITH_FIRST_PARTY_EVIDENCE_EXHAUSTED');
   const covered = new Set(Object.values(pack.groups).flatMap((g) => g.row_ids));
