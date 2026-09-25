@@ -23,7 +23,7 @@ Uso (siempre primero en el cluster de ensayo):
 Cada migración corre en una sola transacción (`psql -1`) y queda registrada en `public.catalog_migration_log`.
 Sin `-Secret`/`-TargetSecret` los scripts piden la contraseña de forma interactiva.
 
-Ventana real: **`WINDOW-CHECKLIST.md`**. Rechazados por política (fuera por decisión): `reports/rejected-skus-20260924.md`.
+Ventana real: **`WINDOW-CHECKLIST.md`** (fase P: desplegar antes el search con alias, rama `search-alias-resolution`; luego la ventana). Rechazados por política (fuera por decisión): `reports/rejected-skus-20260924.md`.
 
 Herramientas de ensayo (`rehearsal/`, cluster temporal 5450):
 

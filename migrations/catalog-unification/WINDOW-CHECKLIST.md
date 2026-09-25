@@ -1,11 +1,86 @@
 # Checklist de la ventana: unificación del catálogo en 5432
 
-Alcance: aplicar `01`, `01b`, `02`, `03`, `04`, `05` a `catalogo_elimfilters@5432`. **No incluye** desplegar el search con alias
-(rama `search-alias-resolution`), reapuntar CRM/HERMES a 5432 ni retirar 5441/5440: son pasos posteriores con su propia aprobación.
-Decisiones vigentes: 60 filas rechazadas quedan fuera (`reports/rejected-skus-20260924.md`); `01b` aprobada; search-api activo durante la ventana.
+Alcance: **fase P** (desplegar el search con alias, antes y por separado) y **ventana** (aplicar `01`, `01b`, `02`, `03`, `04`, `05`
+a `catalogo_elimfilters@5432`). **No incluye** reapuntar CRM/HERMES a 5432 ni retirar 5441/5440: pasos posteriores con su propia aprobación.
+Decisiones vigentes: 60 filas rechazadas quedan fuera (`reports/rejected-skus-20260924.md`); `01b` aprobada; search-api activo durante la ventana;
+el search con alias se despliega antes de la ventana (compatible sin la tabla de alias: prueba B).
 
 Ejecuta: Victor (o con él presente). Todas las rutas relativas son de `C:\ELIMSERVER\worktrees\catalog-unification\migrations\catalog-unification`.
 Duración medida en ensayo: ~85 s de migraciones; ventana total estimada 30-45 min. **No solapar con 02:00-04:00** (backups Lenovo 02:30 y UGREEN 03:15).
+
+---
+
+## P. Fase previa: desplegar el search con alias (≥ 1 día antes de la ventana)
+
+**Cómo se despliega hoy el 8821.** Tarea `\ELIMFILTERS-Search-Cutover-8821` (usuario ELIMSERVER, nivel más alto, disparador al arranque,
+reinicio automático cada 1 min hasta 999 veces, sin límite de ejecución). Ejecuta
+`powershell.exe -File C:\ELIMSERVER\state\run-search-cutover-user.ps1`, que fija las variables de entorno (incluida `DATABASE_URL` en
+texto plano, pendiente de sacar al almacén), hace `Set-Location` a `$repo='C:\ELIMSERVER\worktrees\search-cutover'` y lanza
+`node --env-file=C:\ELIMSERVER\repos\world-catalogue\.env server-protocol.js`, con log en `C:\ELIMSERVER\logs\search-local\search-8821-<fecha>.log`.
+Ese directorio está en `4723dd56b2` (detached) con 11 archivos sin commitear. `C:\ELIMSERVER\state\watchdog-search-8821.ps1` existe pero
+**ninguna tarea lo ejecuta**. El cambio consiste en apuntar esa única línea `$repo` al worktree `search-alias-resolution`
+(rama `search-alias-resolution`, commit `583c067e49`: copia exacta de lo que corre hoy + resolución de alias).
+
+Nota: cada arranque del servidor añade líneas en blanco a `part-search/index.html` y `results.html` (comportamiento preexistente, inocuo).
+
+- [ ] **P1. Prueba B con datos del día** (código nuevo contra copia fresca de 5432 sin migrar):
+  ```powershell
+  $pre = "C:\ELIMSERVER\backups\catalogo_elimfilters\predeploy-$(Get-Date -Format yyyyMMdd-HHmm)"
+  .\rehearsal\dump-and-verify.ps1 -Root $pre -Ports 5432
+  .\rehearsal\search-smoke.ps1 -SearchDir C:\ELIMSERVER\worktrees\search-alias-resolution -Database smoke_pre -FromTemplate r5432 -Cases .\rehearsal\cases-prealias.csv
+  ```
+  ✔ `ALL PASS`, `server stderr errors: 0`.
+- [ ] **P2. Dependencias**: copia exacta de las de producción (sin red, sin compartir carpeta):
+  ```powershell
+  robocopy C:\ELIMSERVER\worktrees\search-cutover\node_modules C:\ELIMSERVER\worktrees\search-alias-resolution\node_modules /MIR /NFL /NDL /NJH /NP
+  git -C C:\ELIMSERVER\worktrees\search-alias-resolution rev-parse HEAD      # anotar; debe ser 583c067e49...
+  git -C C:\ELIMSERVER\worktrees\search-alias-resolution status --short     # vacío
+  ```
+  ✔ robocopy con código < 8; worktree limpio.
+- [ ] **P3. Línea base en producción** con el código actual (solo búsquedas GET):
+  ```powershell
+  .\rehearsal\search-smoke.ps1 -BaseUrl http://127.0.0.1:8821 -Cases .\rehearsal\cases-prealias.csv   # añadir -PromptBearer si responde 403
+  ```
+  ✔ `ALL PASS` (confirma que las expectativas valen con los datos actuales de 5432).
+- [ ] **P4. Cambiar el lanzador** (una línea; no se copia el archivo porque contiene una contraseña):
+  ```powershell
+  $f = 'C:\ELIMSERVER\state\run-search-cutover-user.ps1'
+  $old = "`$repo='C:\ELIMSERVER\worktrees\search-cutover'"; $new = "`$repo='C:\ELIMSERVER\worktrees\search-alias-resolution'"
+  $c = [IO.File]::ReadAllText($f); if (-not $c.Contains($old)) { throw 'launcher is not in the expected state' }
+  [IO.File]::WriteAllText($f, $c.Replace($old, $new)); Select-String $f -Pattern '^\$repo='
+  ```
+- [ ] **P5. Reiniciar el servicio** en un momento de poco tráfico (corte medido en ensayo: pocos segundos hasta responder):
+  ```powershell
+  $task = 'ELIMFILTERS-Search-Cutover-8821'
+  Stop-ScheduledTask -TaskName $task; Start-Sleep 3
+  $l = Get-NetTCPConnection -LocalPort 8821 -State Listen -ErrorAction SilentlyContinue
+  if ($l) { $n = Get-CimInstance Win32_Process -Filter "ProcessId=$($l[0].OwningProcess)"; if ($n.Name -ne 'node.exe') { throw "8821 held by $($n.Name)" }; Stop-Process -Id $n.ProcessId }
+  Start-ScheduledTask -TaskName $task
+  for ($i = 0; $i -lt 60; $i++) { Start-Sleep 1; if ((curl.exe -s -o NUL -w '%{http_code}' -m 5 -H 'X-Forwarded-Proto: https' 'http://127.0.0.1:8821/api/search?q=EL30158') -eq '200') { "up after $i s"; break } }
+  Get-NetTCPConnection -LocalPort 8821 -State Listen | ForEach-Object { (Get-Process -Id $_.OwningProcess).StartTime }   # debe ser de ahora
+  ```
+- [ ] **P6. Verificación en producción**:
+  ```powershell
+  .\rehearsal\search-smoke.ps1 -BaseUrl http://127.0.0.1:8821 -Cases .\rehearsal\cases-prealias.csv
+  curl.exe -s -o NUL -w '%{http_code}' https://part-search.elimfilters.com/     # 200
+  Get-Content "C:\ELIMSERVER\logs\search-local\search-8821-$(Get-Date -Format yyyyMMdd).log" -Tail 40
+  ```
+  ✔ `ALL PASS`; 200; sin errores nuevos en el log más allá de los avisos de correo (AZURE_*) que ya existían.
+- [ ] **P7. Observación 24 h** antes de la ventana: sin errores nuevos en el log del search; `Get-ScheduledTaskInfo` sigue en ejecución
+      (267009) sin reinicios inesperados; sin quejas de búsqueda.
+
+**Revertir la fase P** si P5 no responde en 60 s, P6 falla algún caso, aparecen errores nuevos o hay incidencias en P7:
+```powershell
+$f = 'C:\ELIMSERVER\state\run-search-cutover-user.ps1'
+$old = "`$repo='C:\ELIMSERVER\worktrees\search-alias-resolution'"; $new = "`$repo='C:\ELIMSERVER\worktrees\search-cutover'"
+$c = [IO.File]::ReadAllText($f); if (-not $c.Contains($old)) { throw 'launcher is not in the expected state' }
+[IO.File]::WriteAllText($f, $c.Replace($old, $new)); Select-String $f -Pattern '^\$repo='
+# y repetir P5 (reinicio) y P6 (verificación con cases-prealias.csv)
+```
+`search-cutover` no se toca en ningún momento, así que volver a él devuelve exactamente el código anterior.
+
+Si la fase P no se completa (o se revierte), la ventana puede hacerse igual: en A4 usar `-SearchDir C:\ELIMSERVER\worktrees\search-cutover`
+y, en A4 y D4, `cases-window.csv` (casos sin alias) en lugar de `cases-alias.csv`.
 
 ---
 
@@ -24,14 +99,14 @@ Duración medida en ensayo: ~85 s de migraciones; ventana total estimada 30-45 m
   ✔ las 6 migraciones `ok` en UP; DOWN con `mismatched 0`; sonda con `errors=0` y ninguna lectura > 5 s.
 - [ ] **A3. Anotar los números esperados** de `validate.txt` del ciclo (SKUs totales, activos, inactivos por motivo, alias por regla,
       rechazados por política, filas HERMES). Son la referencia de la verificación D3.
-- [ ] **A4. Search con los datos migrados** (código de producción, copia desechable):
+- [ ] **A4. Search con los datos migrados** (el código que ya corre en producción tras la fase P, copia desechable):
   ```powershell
-  .\rehearsal\search-smoke.ps1 -SearchDir C:\ELIMSERVER\worktrees\search-cutover -Database smoke -FromTemplate rehearsal -Cases .\rehearsal\cases-window.csv
+  .\rehearsal\search-smoke.ps1 -SearchDir C:\ELIMSERVER\worktrees\search-alias-resolution -Database smoke -FromTemplate rehearsal -Cases .\rehearsal\cases-alias.csv
   ```
-  (`cases-window.csv`: los casos sin alias, porque producción aún no tiene ese código; el fusionado EH650308 da `catalog_scope_excluded`.) ✔ `ALL PASS`.
+  ✔ `ALL PASS` (14 casos: 6 alias, 3 exactos, 3 excluidos, 1 rechazado, 1 por `codigo_base`).
 - [ ] **A5. Avisar congelación**: hora de inicio y fin; nadie escribe en `catalogo_elimfilters@5432` (pgAdmin, sesiones de agentes,
       merges a `world-catalogue/main` que toquen el catálogo).
-- [ ] **A6. Go/No-Go** de Victor con A1-A4 en verde.
+- [ ] **A6. Go/No-Go** de Victor con P1-P7 y A1-A4 en verde.
 
 ## B. Inicio de ventana (T0): pausar y comprobar quietud
 
@@ -91,13 +166,13 @@ Duración medida en ensayo: ~85 s de migraciones; ventana total estimada 30-45 m
 - [ ] **D3. Comparar con A3**: mismos SKUs totales/activos/inactivos, alias por regla, rechazados por política, filas HERMES
       (diferencias solo si 5432 cambió entre T-1 y T0 y están explicadas); `inactive_visible = 0` en la vista activa;
       huérfanos no aumentan respecto a la huella previa.
-- [ ] **D4. Search en producción** (sin tocar el servicio; mismo camino que Cloudflare):
+- [ ] **D4. Search en producción** (solo búsquedas GET; esperar ≥ 60 s tras C4, porque el código cachea 60 s si existe la tabla de alias):
   ```powershell
-  'ET90011','EH650308','EL36019' | ForEach-Object { curl.exe -s -H 'X-Forwarded-Proto: https' "http://127.0.0.1:8821/api/search?q=$_" }   # -> catalog_scope_excluded
-  'ES90463','EH60011','EL30158','EH61084' | ForEach-Object { curl.exe -s -H 'X-Forwarded-Proto: https' "http://127.0.0.1:8821/api/search?q=$_" } # -> exact_sku
+  Start-Sleep 65
+  .\rehearsal\search-smoke.ps1 -BaseUrl http://127.0.0.1:8821 -Cases .\rehearsal\cases-alias.csv    # añadir -PromptBearer si responde 403
   curl.exe -s -o NUL -w '%{http_code}' https://part-search.elimfilters.com/   # -> 200
   ```
-  ✔ fuentes esperadas. (Nombres viejos como EF90463 darán `no_match` hasta desplegar la rama de alias: esperado.)
+  ✔ `ALL PASS` en los 14 casos (6 alias viejo→nuevo incluida la fusión EH650308→EH62308, excluidos, rechazado y `codigo_base`); 200.
 
 ## E. Criterio y procedimiento de reversa
 
@@ -117,6 +192,8 @@ $env:PGPASSWORD = [Runtime.InteropServices.Marshal]::PtrToStringBSTR([Runtime.In
 $env:PGPASSWORD = $null
 ```
 ✔ comparar con `$win\5432\source-fingerprint.txt`: 0 diferencias salvo `crossref_resolved_cache` (la escribe el search en vivo).
+El search con alias (fase P) **no hace falta revertirlo**: al desaparecer `catalog_sku_alias`, en ≤ 60 s vuelve al comportamiento previo
+(prueba B); comprobarlo con `search-smoke.ps1 -BaseUrl http://127.0.0.1:8821 -Cases .\rehearsal\cases-prealias.csv`.
 Último recurso si `down` falla: restaurar `$win\5432\catalogo_elimfilters.dump` en una base nueva `catalogo_elimfilters_restore`,
 detener el search (`Stop-ScheduledTask -TaskName ELIMFILTERS-Search-Cutover-8821`), intercambiar nombres con `ALTER DATABASE ... RENAME`,
 reanudar el search. Nunca restaurar encima de la base viva.
