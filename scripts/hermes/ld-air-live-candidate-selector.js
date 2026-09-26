@@ -6,7 +6,8 @@ const DIR=path.resolve(__dirname,'../candidates');
 const rawLimit=Number(process.argv.find(x=>x.startsWith('--limit='))?.split('=')[1]||50);
 const BATCH_LIMIT=Math.max(20,Math.min(50,Number.isFinite(rawLimit)?Math.trunc(rawLimit):50));
 const MANN_PATCH=path.resolve(__dirname,'../mann_specs_patch.jsonl');
-const close=(a,b,tol=1.5)=>Number.isFinite(Number(a))&&Number.isFinite(Number(b))&&Math.abs(Number(a)-Number(b))<=tol;
+const hasNum=v=>v!==null&&v!==undefined&&String(v).trim()!==''&&Number.isFinite(Number(v));
+const close=(a,b,tol=1.5)=>hasNum(a)&&hasNum(b)&&Math.abs(Number(a)-Number(b))<=tol;
 function loadMannPatch(){
  const map=new Map();
  if(!fs.existsSync(MANN_PATCH)) return map;
@@ -38,17 +39,22 @@ async function enrichOfficial(candidate,patchMap){
  const code=candidate.identity?.canonical_part_number||candidate.codigo_base;
  const exact=(patchMap.get(candidate.sku)||[]).find(x=>norm(x.mann_source)===norm(code));
  if(!exact)return {...candidate,official:{status:'MANN_PATCH_MISSING',geometry_ok:false,url_ok:false},lane:'REVERIFY'};
- const geometry_ok=close(candidate.specs?.outer_diameter_mm,exact.outer_diameter_mm)&&close(candidate.specs?.height_mm,exact.height_mm);
- const source_url='https://www.mann-filter.com/en/catalog/search-results/product.html/'+norm(exact.mann_source).toLowerCase()+'_mann-filter.html';
- let http=0,url_ok=false;try{const res=await fetch(source_url,{redirect:'follow'});http=res.status;url_ok=res.ok}catch(_){}
- const official={status:'MANN_PATCH_EXACT',mann_source:exact.mann_source,a_mm:exact.outer_diameter_mm,h_mm:exact.height_mm,geometry_ok,source_url,http,url_ok};
+ const geometry_complete=hasNum(candidate.specs?.outer_diameter_mm)&&hasNum(candidate.specs?.height_mm)&&hasNum(exact.outer_diameter_mm)&&hasNum(exact.height_mm);
+ const geometry_ok=geometry_complete&&close(candidate.specs.outer_diameter_mm,exact.outer_diameter_mm)&&close(candidate.specs.height_mm,exact.height_mm);
+ const sourceCode=norm(exact.mann_source),family_ok=sourceCode.startsWith('C')&&!sourceCode.startsWith('CU');
+ const source_url='https://www.mann-filter.com/en/catalog/search-results/product.html/'+sourceCode.toLowerCase()+'_mann-filter.html';
+ let http=0,url_ok=false;
+ if(geometry_ok){try{const res=await fetch(source_url,{redirect:'follow'});http=res.status;url_ok=res.ok}catch(_){}}
+ const official={status:'MANN_PATCH_EXACT',mann_source:exact.mann_source,a_mm:exact.outer_diameter_mm,h_mm:exact.height_mm,geometry_complete,geometry_ok,family_ok,source_url,http,url_ok};
  return {...candidate,official,lane:laneFor({...candidate,official})};
 }
 function laneFor(candidate){
  const reasons=candidate.reasons||[],official=candidate.official||{};
  if(reasons.includes('HEAVY_SEGMENT_SIGNAL')||reasons.includes('CONTAMINATION_FLAG')) return 'BLOCKED';
- if(official.status==='MANN_PATCH_EXACT'&&official.geometry_ok===false) return 'BLOCKED';
- if(official.status==='MANN_PATCH_EXACT'&&official.geometry_ok===true&&official.url_ok===true) return 'AUTO_CLOSE';
+ if(official.status==='MANN_PATCH_EXACT'&&official.family_ok===false) return 'BLOCKED';
+ if(official.status==='MANN_PATCH_EXACT'&&official.geometry_complete===false) return 'REVERIFY';
+ if(official.status==='MANN_PATCH_EXACT'&&official.geometry_complete===true&&official.geometry_ok===false) return 'BLOCKED';
+ if(official.status==='MANN_PATCH_EXACT'&&official.family_ok===true&&official.geometry_complete===true&&official.geometry_ok===true&&official.url_ok===true) return 'AUTO_CLOSE';
  return 'REVERIFY';
 }
 function score(row,identity){
@@ -87,8 +93,11 @@ async function main(){
     return {sku:row.sku,codigo_base:row.codigo_base,score:s.score,reasons:s.reasons,identity:identity?{origin_group:identity.origin_group,canonical_brand:identity.canonical_brand,canonical_part_number:identity.canonical_part_number,evidence_source:identity.evidence_source}:null,governance:row.enrichment_data?.codigo_base_governance||null,authority_refs:s.refs,makes:s.makes,specs:{height_mm:row.height_mm,outer_diameter_mm:row.outer_diameter_mm,inner_diameter_mm:row.inner_diameter_mm,product_length_mm:row.product_length_mm}};
   }).sort((a,b)=>b.score-a.score||a.sku.localeCompare(b.sku));
   const patchMap=loadMannPatch();
-  const selected=ranked.slice(0,BATCH_LIMIT),batch=[];
-  for(let i=0;i<selected.length;i+=10)batch.push(...await Promise.all(selected.slice(i,i+10).map(x=>enrichOfficial(x,patchMap))));
+  const poolLimit=Math.min(ranked.length,BATCH_LIMIT*4),selected=ranked.slice(0,poolLimit),enriched=[];
+  for(let i=0;i<selected.length;i+=10)enriched.push(...await Promise.all(selected.slice(i,i+10).map(x=>enrichOfficial(x,patchMap))));
+  const lanePriority={AUTO_CLOSE:0,REVERIFY:1,BLOCKED:2};
+  enriched.sort((a,b)=>lanePriority[a.lane]-lanePriority[b.lane]||b.score-a.score||a.sku.localeCompare(b.sku));
+  const batch=enriched.slice(0,BATCH_LIMIT);
   const lanes={AUTO_CLOSE:batch.filter(x=>x.lane==='AUTO_CLOSE'),REVERIFY:batch.filter(x=>x.lane==='REVERIFY'),BLOCKED:batch.filter(x=>x.lane==='BLOCKED')};
   const outPath=path.join(DIR,'ld_air_live_candidates_current.json');
   const payload={selection_model:'LD_AIR_LIVE_PRIORITY_V2_BATCH_LANES',generated_at:new Date().toISOString(),eligible_count:ranked.length,batch_limit:BATCH_LIMIT,summary:{selected:batch.length,auto_close:lanes.AUTO_CLOSE.length,reverify:lanes.REVERIFY.length,blocked:lanes.BLOCKED.length},lanes,candidates:batch};
