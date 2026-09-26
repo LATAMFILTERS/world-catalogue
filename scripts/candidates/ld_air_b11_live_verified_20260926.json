@@ -1,0 +1,57 @@
+{
+  "batch": "LD_AIR_B11_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V1_WITH_OFFICIAL_REVERIFY",
+  "candidates": [
+    {
+      "sku": "EA30124",
+      "code": "C40124",
+      "source_url": "https://www.mann-filter.com/es/catalogo/resultados-de-busqueda/producto.html/c40124_mann-filter.html",
+      "official": {
+        "a_mm": 393,
+        "h_mm": 41,
+        "scope": "BMW 3 (E36) / 3 Compact (E36)"
+      }
+    },
+    {
+      "sku": "EA30174",
+      "code": "C40174",
+      "source_url": "https://www.mann-filter.com/en/catalog/international/search-results/product.html/c40174_mann-filter.html",
+      "official": {
+        "a_mm": 395,
+        "h_mm": 80,
+        "scope": "MERCEDES-BENZ"
+      }
+    },
+    {
+      "sku": "EA30356",
+      "code": "C20356",
+      "source_url": "https://www.mann-filter.com/us-es/catalogo/resultados-de-la-busqueda/producto.html/c20356_mann-filter.html",
+      "official": {
+        "a_mm": 198,
+        "h_mm": 255,
+        "scope": "MERCEDES-BENZ LN2/LK"
+      }
+    },
+    {
+      "sku": "EA31173",
+      "code": "C41173",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c41173_mann-filter.html",
+      "official": {
+        "a_mm": 408,
+        "h_mm": 84,
+        "scope": "MERCEDES-BENZ"
+      }
+    },
+    {
+      "sku": "EA31245",
+      "code": "C1245",
+      "source_url": "https://www.mann-filter.com/es/catalogo/resultados-de-busqueda/producto.html/c1245_mann-filter.html",
+      "official": {
+        "a_mm": 118,
+        "h_mm": 204,
+        "scope": "PEUGEOT 505"
+      },
+      "expected": "BLOCK_GEOMETRY"
+    }
+  ]
+}

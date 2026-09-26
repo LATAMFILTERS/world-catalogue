@@ -1,0 +1,21 @@
+{
+  "sku": "EA31245",
+  "codigo_base": "C1245",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "OFFICIAL_GEOMETRY_MISMATCH__MANN_C1245",
+  "evidence": {
+    "official_dimensions_mm": {
+      "outer_diameter": 118,
+      "height": 204
+    },
+    "catalog_dimensions_mm": {
+      "outer_diameter": 150,
+      "height": 222
+    },
+    "official_scope": "PEUGEOT 505"
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-26"
+}
