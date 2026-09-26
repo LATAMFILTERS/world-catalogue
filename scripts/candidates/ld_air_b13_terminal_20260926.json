@@ -1,0 +1,44 @@
+{
+  "batch": "LD_AIR_B13",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE_WITH_BLOCKERS",
+  "counts": {
+    "COMPLETE": 4,
+    "BLOCKED_WITH_REASON": 1
+  },
+  "catalog_writes": [
+    "EA31272",
+    "EA31370",
+    "EA31380",
+    "EA31463"
+  ],
+  "candidates": [
+    {
+      "sku": "EA31272",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C151272"
+    },
+    {
+      "sku": "EA31370",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C1370"
+    },
+    {
+      "sku": "EA31380",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C1380"
+    },
+    {
+      "sku": "EA31463",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C181463"
+    },
+    {
+      "sku": "EA31387",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_GEOMETRY_MISMATCH__MANN_C1387"
+    }
+  ],
+  "closed_at": "2026-09-26"
+}

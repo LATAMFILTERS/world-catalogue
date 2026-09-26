@@ -1,0 +1,57 @@
+{
+  "batch": "LD_AIR_B13_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "candidates": [
+    {
+      "sku": "EA31272",
+      "code": "C151272",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/c15127/2_mann-filter.html",
+      "official": {
+        "a_mm": 150,
+        "h_mm": 221,
+        "scope": "MERCEDES-BENZ MB-Serie (631)"
+      }
+    },
+    {
+      "sku": "EA31370",
+      "code": "C1370",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1370_mann-filter.html",
+      "official": {
+        "a_mm": 143,
+        "h_mm": 197,
+        "scope": "BMW"
+      }
+    },
+    {
+      "sku": "EA31380",
+      "code": "C1380",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1380_mann-filter.html",
+      "official": {
+        "a_mm": 128,
+        "h_mm": 220,
+        "scope": "RENAULT"
+      }
+    },
+    {
+      "sku": "EA31463",
+      "code": "C181463",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/c18146/3_mann-filter.html",
+      "official": {
+        "a_mm": 176,
+        "h_mm": 139,
+        "scope": "SAAB 9-5"
+      }
+    },
+    {
+      "sku": "EA31387",
+      "code": "C1387",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1387_mann-filter.html",
+      "official": {
+        "a_mm": 131,
+        "h_mm": 207,
+        "scope": "RENAULT"
+      },
+      "expected": "BLOCK_GEOMETRY"
+    }
+  ]
+}

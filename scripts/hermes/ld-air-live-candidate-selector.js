@@ -22,7 +22,10 @@ function authorityRefs(row){
 function score(row,identity){
  const gov=row.enrichment_data?.codigo_base_governance||{};
  const refs=authorityRefs(row);
- const makes=[...new Set((row.vehicle_applications||[]).map(a=>String(a.make||'').trim()).filter(Boolean))];
+ const apps=row.vehicle_applications||[];
+ const makes=[...new Set(apps.map(a=>String(a.make||'').trim()).filter(Boolean))];
+ const appBlob=apps.map(a=>JSON.stringify(a)).join(' ').toUpperCase();
+ const heavyPattern=/(ACTROS|AXOR|TRUCK|BUS|TRACTOR|CATERPILLAR|KOMATSU|JOHN DEERE|JCB|NEW HOLLAND|CASE-IH|LIEBHERR|VOLVO TRUCKS|SCANIA|KENWORTH|PETERBILT|FREIGHTLINER|MACK|SETRA|NEOPLAN|MAN BUS|RENAULT TRUCKS|AGCO|VALTRA|BOBCAT|KOBELCO|MANITOU)/;
  let score=0;const reasons=[];
  if(identity?.status==='ACTIVE'){score+=40;reasons.push('ACTIVE_IDENTITY')}
  if(gov.state==='CANONICAL_VERIFIED'&&gov.primary_manufacturer_verified===true){score+=25;reasons.push('GOVERNANCE_VERIFIED')}
@@ -34,6 +37,7 @@ function score(row,identity){
  const traceableCanonical=refs.some(x=>norm(x.manufacturer||x.brand)===identityBrand&&norm(x.code||x.part_number||x.reference)===identityCode);
  if(traceableCanonical){score+=15;reasons.push('TRACEABLE_CANONICAL_AUTHORITY_REF')}
  else if(identity?.status==='ACTIVE'&&gov.state==='CANONICAL_VERIFIED'){score-=5;reasons.push('OFFICIAL_REVERIFY_REQUIRED')}
+ if(heavyPattern.test(appBlob)){score-=70;reasons.push('HEAVY_SEGMENT_SIGNAL')}
  if((gov.contamination_flags||[]).length){score-=30;reasons.push('CONTAMINATION_FLAG')}
  if((row.competitor_codes||[]).length>40){score-=15;reasons.push('HIGH_REF_CARDINALITY')}
  return {score,reasons,makes,refs};

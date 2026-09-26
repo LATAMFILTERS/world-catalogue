@@ -1,0 +1,21 @@
+{
+  "sku": "EA31387",
+  "codigo_base": "C1387",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "OFFICIAL_GEOMETRY_MISMATCH__MANN_C1387",
+  "evidence": {
+    "official": {
+      "outer_diameter": 131,
+      "height": 207,
+      "scope": "RENAULT"
+    },
+    "catalog": {
+      "outer_diameter": 212,
+      "height": 164
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-26"
+}
