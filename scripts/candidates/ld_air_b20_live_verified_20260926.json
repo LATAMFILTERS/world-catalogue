@@ -1,0 +1,56 @@
+{
+  "batch": "LD_AIR_B20_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "candidates": [
+    {
+      "sku": "EA32851",
+      "code": "C2851",
+      "source_url": "https://www.mann-filter.com/es/catalogo/resultados-de-busqueda/producto.html/c2851_mann-filter.html",
+      "official": {
+        "a_mm": 276,
+        "h_mm": 34,
+        "scope": "MINI Mini Cooper I"
+      }
+    },
+    {
+      "sku": "EA32880",
+      "code": "C2880",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/c2880_mann-filter.html",
+      "official": {
+        "a_mm": 279,
+        "h_mm": 36,
+        "scope": "VW Fox / XL1"
+      }
+    },
+    {
+      "sku": "EA32936",
+      "code": "C2936",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/c2936_mann-filter.html",
+      "official": {
+        "a_mm": 282,
+        "h_mm": 57,
+        "scope": "FIAT Regata/Ritmo/Tipo"
+      }
+    },
+    {
+      "sku": "EA32998",
+      "code": "C2998",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2998_mann-filter.html",
+      "official": {
+        "a_mm": 289,
+        "h_mm": 42,
+        "scope": "MERCEDES-BENZ 190-Serie (W201)"
+      }
+    },
+    {
+      "sku": "EA32999",
+      "code": "C2999",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2999_mann-filter.html",
+      "official": {
+        "a_mm": 285,
+        "h_mm": 41,
+        "scope": "SAAB 900 II"
+      }
+    }
+  ]
+}

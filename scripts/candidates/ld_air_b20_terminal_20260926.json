@@ -1,0 +1,45 @@
+{
+  "batch": "LD_AIR_B20",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 5,
+    "BLOCKED_WITH_REASON": 0
+  },
+  "catalog_writes": [
+    "EA32851",
+    "EA32880",
+    "EA32936",
+    "EA32998",
+    "EA32999"
+  ],
+  "candidates": [
+    {
+      "sku": "EA32851",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2851"
+    },
+    {
+      "sku": "EA32880",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2880"
+    },
+    {
+      "sku": "EA32936",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2936"
+    },
+    {
+      "sku": "EA32998",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2998"
+    },
+    {
+      "sku": "EA32999",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2999"
+    }
+  ],
+  "closed_at": "2026-09-26"
+}
