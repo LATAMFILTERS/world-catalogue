@@ -1,0 +1,46 @@
+{
+  "batch": "LD_AIR_B22_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "candidates": [
+    {
+      "sku": "EA33124",
+      "code": "C23124",
+      "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c23124_mann-filter.html",
+      "official": {
+        "a_mm": 225,
+        "h_mm": 62,
+        "scope": "VW (USA) 2004-2006"
+      }
+    },
+    {
+      "sku": "EA33129",
+      "code": "C23129",
+      "source_url": "https://www.mann-filter.com/es/catalogo/resultados-de-busqueda/producto.html/c23129_mann-filter.html",
+      "official": {
+        "a_mm": 226,
+        "h_mm": 68,
+        "scope": "VOLVO XC90"
+      }
+    },
+    {
+      "sku": "EA33130",
+      "code": "C33130",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c33130_mann-filter.html",
+      "official": {
+        "a_mm": 325,
+        "h_mm": 57,
+        "scope": "BMW 5 (E34)"
+      }
+    },
+    {
+      "sku": "EA33148",
+      "code": "C23148",
+      "source_url": "https://www.mann-filter.com/es/catalogo/resultados-de-busqueda/producto.html/c23148_mann-filter.html",
+      "official": {
+        "a_mm": 228,
+        "h_mm": 57,
+        "scope": "MERCEDES-BENZ W201/W124"
+      }
+    }
+  ]
+}
