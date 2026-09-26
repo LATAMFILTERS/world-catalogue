@@ -1,0 +1,56 @@
+{
+  "batch": "LD_AIR_B18_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "candidates": [
+    {
+      "sku": "EA32263",
+      "code": "C2263",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2263_mann-filter.html",
+      "official": {
+        "a_mm": 212,
+        "h_mm": 78,
+        "scope": "RENAULT R10/R4/R8"
+      }
+    },
+    {
+      "sku": "EA32282",
+      "code": "C2282",
+      "source_url": "https://www.mann-filter.com/uk-en/catalogue/search-results/product.html/c2282_mann-filter.html",
+      "official": {
+        "a_mm": 214,
+        "h_mm": 58,
+        "scope": "RENAULT Laguna I/Safrane"
+      }
+    },
+    {
+      "sku": "EA32325",
+      "code": "C2325",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/c2325_mann-filter.html",
+      "official": {
+        "a_mm": 228,
+        "h_mm": 59,
+        "scope": "RENAULT Twingo II/Wind"
+      }
+    },
+    {
+      "sku": "EA32439",
+      "code": "C2439",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2439_mann-filter.html",
+      "official": {
+        "a_mm": 247,
+        "h_mm": 58,
+        "scope": "RENAULT Megane III/Scenic III"
+      }
+    },
+    {
+      "sku": "EA32493",
+      "code": "C2493",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2493_mann-filter.html",
+      "official": {
+        "a_mm": 236,
+        "h_mm": 42,
+        "scope": "BMW 3 E36/Z3"
+      }
+    }
+  ]
+}
