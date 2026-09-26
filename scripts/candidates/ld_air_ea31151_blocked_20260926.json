@@ -1,0 +1,20 @@
+{
+  "sku": "EA31151",
+  "codigo_base": "C1151",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "OFFICIAL_GEOMETRY_MISMATCH__MANN_C1151",
+  "evidence": {
+    "official": {
+      "outer_diameter": 114,
+      "height": 239
+    },
+    "catalog": {
+      "outer_diameter": 136,
+      "height": 263
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-26"
+}

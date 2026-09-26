@@ -1,0 +1,46 @@
+{
+  "batch": "LD_AIR_B19_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "candidates": [
+    {
+      "sku": "EA32496",
+      "code": "C2496",
+      "source_url": "https://www.mann-filter.com/mea-en/catalogue/search-results/product.html/c2496_mann-filter.html",
+      "official": {
+        "a_mm": 246,
+        "h_mm": 44,
+        "scope": "FIAT Elba/Fiorino/Uno"
+      }
+    },
+    {
+      "sku": "EA32538",
+      "code": "C2538",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/c2538_mann-filter.html",
+      "official": {
+        "a_mm": 243,
+        "h_mm": 58,
+        "scope": "RENAULT Megane II/Scenic II"
+      }
+    },
+    {
+      "sku": "EA32569",
+      "code": "C2569",
+      "source_url": "https://www.mann-filter.com/it-it/catalogo/risultati-ricerca/prodotto.html/c2569_mann-filter.html",
+      "official": {
+        "a_mm": 245,
+        "h_mm": 34,
+        "scope": "FIAT Albea/Palio/Siena/Strada"
+      }
+    },
+    {
+      "sku": "EA32771",
+      "code": "C2771",
+      "source_url": "https://www.mann-filter.com/es/catalogo/resultados-de-busqueda/producto.html/c2771_mann-filter.html",
+      "official": {
+        "a_mm": 266,
+        "h_mm": 63,
+        "scope": "RENAULT Clio II/Kangoo"
+      }
+    }
+  ]
+}
