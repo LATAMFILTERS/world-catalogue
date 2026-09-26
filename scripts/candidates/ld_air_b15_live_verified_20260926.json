@@ -1,0 +1,46 @@
+{
+  "batch": "LD_AIR_B15_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "candidates": [
+    {
+      "sku": "EA31677",
+      "code": "C1677",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1677_mann-filter.html",
+      "official": {
+        "a_mm": 150,
+        "h_mm": 125,
+        "scope": "AUDI A6 (4F/C6)"
+      }
+    },
+    {
+      "sku": "EA31690",
+      "code": "C1690",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1690_mann-filter.html",
+      "official": {
+        "a_mm": 152,
+        "h_mm": 129,
+        "scope": "OPEL Rekord-D"
+      }
+    },
+    {
+      "sku": "EA31751",
+      "code": "C341751",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/c34175/1_mann-filter.html",
+      "official": {
+        "a_mm": 334,
+        "h_mm": 58,
+        "scope": "MERCEDES-BENZ E-Class/G-Class"
+      }
+    },
+    {
+      "sku": "EA31770",
+      "code": "C1770",
+      "source_url": "https://www.mann-filter.com/es/catalogo/resultados-de-busqueda/producto.html/c1770_mann-filter.html",
+      "official": {
+        "a_mm": 205,
+        "h_mm": 75,
+        "scope": "RENAULT R4/R6"
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "sku": "EA31654",
+  "codigo_base": "C151654",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "LD_SCOPE_SEGMENT_MISMATCH__MANN_C151654_IS_HEAVY_COMMERCIAL_AGRICULTURAL",
+  "evidence": {
+    "official_dimensions_mm": {
+      "outer_diameter": 150,
+      "height": 338
+    },
+    "official_scope": "MERCEDES-BENZ LN2/LK and MB trac",
+    "catalog_dimensions_mm": {
+      "outer_diameter": 149.86,
+      "height": 337.82
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-26"
+}

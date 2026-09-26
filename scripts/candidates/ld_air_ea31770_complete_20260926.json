@@ -1,0 +1,16 @@
+{
+  "sku": "EA31770",
+  "codigo_base": "C1770",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C1770",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_SEGMENT_GUARD_OFFICIAL_REVERIFY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "closed_at": "2026-09-26"
+}

@@ -1,0 +1,44 @@
+{
+  "batch": "LD_AIR_B15",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE_WITH_BLOCKERS",
+  "counts": {
+    "COMPLETE": 4,
+    "BLOCKED_WITH_REASON": 1
+  },
+  "catalog_writes": [
+    "EA31677",
+    "EA31690",
+    "EA31751",
+    "EA31770"
+  ],
+  "candidates": [
+    {
+      "sku": "EA31677",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C1677"
+    },
+    {
+      "sku": "EA31690",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C1690"
+    },
+    {
+      "sku": "EA31751",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C341751"
+    },
+    {
+      "sku": "EA31770",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C1770"
+    },
+    {
+      "sku": "EA31654",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "LD_SCOPE_SEGMENT_MISMATCH__MANN_C151654_IS_HEAVY_COMMERCIAL_AGRICULTURAL"
+    }
+  ],
+  "closed_at": "2026-09-26"
+}
