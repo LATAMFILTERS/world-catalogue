@@ -1,0 +1,56 @@
+{
+  "batch": "LD_AIR_B14_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "candidates": [
+    {
+      "sku": "EA31478",
+      "code": "C1478",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/c1478_mann-filter.html",
+      "official": {
+        "a_mm": 137,
+        "h_mm": 183,
+        "scope": "FIAT Croma (154)"
+      }
+    },
+    {
+      "sku": "EA31571",
+      "code": "C1571",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1571_mann-filter.html",
+      "official": {
+        "a_mm": 143,
+        "h_mm": 166,
+        "scope": "LAND ROVER"
+      }
+    },
+    {
+      "sku": "EA31577",
+      "code": "C1577",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1577_mann-filter.html",
+      "official": {
+        "a_mm": 150,
+        "h_mm": 150,
+        "scope": "SAAB 90/900 I/99"
+      }
+    },
+    {
+      "sku": "EA31586",
+      "code": "C1586",
+      "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c1586_mann-filter.html",
+      "official": {
+        "a_mm": 150,
+        "h_mm": 257,
+        "scope": "FIAT/LANCIA OE family"
+      }
+    },
+    {
+      "sku": "EA31596",
+      "code": "C1596",
+      "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c1596_mann-filter.html",
+      "official": {
+        "a_mm": 146,
+        "h_mm": 224,
+        "scope": "JAGUAR (USA) 1993-1996"
+      }
+    }
+  ]
+}
