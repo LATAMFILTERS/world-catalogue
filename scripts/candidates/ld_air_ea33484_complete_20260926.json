@@ -1,0 +1,22 @@
+{
+  "sku": "EA33484",
+  "codigo_base": "C3484",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C3484",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_BATCH_LANES_MANN_PATCH_HTTP",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 340.36,
+    "h_mm": 58.42,
+    "scope": "MERCEDES-BENZ (USA)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3484_mann-filter.html",
+  "closed_at": "2026-09-26"
+}

@@ -1,0 +1,22 @@
+{
+  "sku": "EA33270",
+  "codigo_base": "C3270",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C3270",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_BATCH_LANES_MANN_PATCH_HTTP",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 312.42,
+    "h_mm": 40.64,
+    "scope": "JAGUAR (USA)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3270_mann-filter.html",
+  "closed_at": "2026-09-26"
+}

@@ -1,0 +1,22 @@
+{
+  "sku": "EA34499",
+  "codigo_base": "C4499",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C4499",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_BATCH_LANES_MANN_PATCH_HTTP",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 441,
+    "h_mm": 45,
+    "scope": "RENAULT"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c4499_mann-filter.html",
+  "closed_at": "2026-09-26"
+}

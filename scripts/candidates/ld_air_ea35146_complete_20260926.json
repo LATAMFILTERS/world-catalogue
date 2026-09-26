@@ -1,0 +1,22 @@
+{
+  "sku": "EA35146",
+  "codigo_base": "C25146",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C25146",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_BATCH_LANES_MANN_PATCH_HTTP",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 246.38,
+    "h_mm": 58.42,
+    "scope": "LAND ROVER (USA)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c25146_mann-filter.html",
+  "closed_at": "2026-09-26"
+}
