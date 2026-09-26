@@ -1,0 +1,56 @@
+{
+  "batch": "LD_AIR_B16_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "candidates": [
+    {
+      "sku": "EA31781",
+      "code": "C121781",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c12178/1_mann-filter.html",
+      "official": {
+        "a_mm": 112,
+        "h_mm": 432,
+        "scope": "MERCEDES-BENZ E-Class/S-Class"
+      }
+    },
+    {
+      "sku": "EA31851",
+      "code": "C581851",
+      "source_url": "https://www.mann-filter.com/en/catalog/international/search-results/product.html/c58185/1_mann-filter.html",
+      "official": {
+        "a_mm": 576,
+        "h_mm": 49,
+        "scope": "BMW 3 (E36)"
+      }
+    },
+    {
+      "sku": "EA31869",
+      "code": "C1869",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1869_mann-filter.html",
+      "official": {
+        "a_mm": 162,
+        "h_mm": 167,
+        "scope": "PORSCHE 911/Panamera"
+      }
+    },
+    {
+      "sku": "EA31933",
+      "code": "C1933",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/c1933_mann-filter.html",
+      "official": {
+        "a_mm": 187,
+        "h_mm": 63,
+        "scope": "RENAULT R4"
+      }
+    },
+    {
+      "sku": "EA31952",
+      "code": "C301952",
+      "source_url": "https://www.mann-filter.com/es/catalogo/resultados-de-busqueda/producto.html/c30195/2_mann-filter.html",
+      "official": {
+        "a_mm": 228,
+        "h_mm": 58,
+        "scope": "MERCEDES-BENZ C-Class/CLK/SLR"
+      }
+    }
+  ]
+}
