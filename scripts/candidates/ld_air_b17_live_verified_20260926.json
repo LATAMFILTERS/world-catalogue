@@ -1,0 +1,46 @@
+{
+  "batch": "LD_AIR_B17_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_SEGMENT_GUARD",
+  "candidates": [
+    {
+      "sku": "EA32098",
+      "code": "C42098",
+      "source_url": "https://www.mann-filter.com/es-es/catalogo/resultados-de-la-busqueda/producto.html/c42098_mann-filter.html",
+      "official": {
+        "a_mm": 408,
+        "h_mm": 57,
+        "scope": "MERCEDES-BENZ W114/W115/W123"
+      }
+    },
+    {
+      "sku": "EA32151",
+      "code": "C2151",
+      "source_url": "https://www.mann-filter.com/es/catalogo/resultados-de-busqueda/producto.html/c2151_mann-filter.html",
+      "official": {
+        "a_mm": 210,
+        "h_mm": 35,
+        "scope": "AUDI A6 (4B/C5)"
+      }
+    },
+    {
+      "sku": "EA32164",
+      "code": "C32164",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c32164_mann-filter.html",
+      "official": {
+        "a_mm": 316,
+        "h_mm": 56,
+        "scope": "MERCEDES-BENZ E-Class (W/S210)"
+      }
+    },
+    {
+      "sku": "EA32237",
+      "code": "C2237",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2237_mann-filter.html",
+      "official": {
+        "a_mm": 217,
+        "h_mm": 34,
+        "scope": "MINI Cooper I / One I"
+      }
+    }
+  ]
+}

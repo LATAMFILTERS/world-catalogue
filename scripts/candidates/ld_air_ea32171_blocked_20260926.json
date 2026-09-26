@@ -1,0 +1,21 @@
+{
+  "sku": "EA32171",
+  "codigo_base": "C172171",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "blocked_reason": "OFFICIAL_GEOMETRY_MISMATCH__MANN_C172171",
+  "evidence": {
+    "official": {
+      "outer_diameter": 166,
+      "height": 230,
+      "scope": "MERCEDES-BENZ Transporter 407-410"
+    },
+    "catalog": {
+      "outer_diameter": 211,
+      "height": 89
+    }
+  },
+  "catalog_action": "NONE_FAIL_CLOSED",
+  "closed_at": "2026-09-26"
+}
