@@ -1,0 +1,22 @@
+{
+  "sku": "EA37029",
+  "codigo_base": "C27029",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C27029",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 270,
+    "h_mm": 61,
+    "scope": "DACIA (RENAULT GROUP) / RENAULT"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c27029_mann-filter.html",
+  "closed_at": "2026-09-26"
+}

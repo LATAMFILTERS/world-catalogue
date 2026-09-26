@@ -1,0 +1,22 @@
+{
+  "sku": "EA33139",
+  "codigo_base": "C43139",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C43139",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 424.18,
+    "h_mm": 27.94,
+    "scope": "MERCEDES-BENZ (USA) / BMW / BMW (USA) / 宝马(华晨宝马) / BMW (BR.BMW) / BMW ALPINA B. BOVENSIEPEN"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c43139_mann-filter.html",
+  "closed_at": "2026-09-26"
+}

@@ -1,0 +1,22 @@
+{
+  "sku": "EA32245",
+  "codigo_base": "C2245",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C2245",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 218.44,
+    "h_mm": 45.72,
+    "scope": "MINI (USA) / CITROEN / PEUGEOT / 雪铁龙(东风雪铁龙) / CITROEN (DF.C)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2245_mann-filter.html",
+  "closed_at": "2026-09-26"
+}

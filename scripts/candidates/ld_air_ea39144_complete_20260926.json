@@ -1,0 +1,22 @@
+{
+  "sku": "EA39144",
+  "codigo_base": "C29144",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C29144",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 281,
+    "h_mm": 58,
+    "scope": "MERCEDES-BENZ"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c29144_mann-filter.html",
+  "closed_at": "2026-09-26"
+}
