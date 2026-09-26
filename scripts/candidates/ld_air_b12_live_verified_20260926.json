@@ -1,0 +1,56 @@
+{
+  "batch": "LD_AIR_B12_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V1_WITH_OFFICIAL_REVERIFY",
+  "candidates": [
+    {
+      "sku": "EA31092",
+      "code": "C341092",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c34109/2_mann-filter.html",
+      "official": {
+        "a_mm": 334,
+        "h_mm": 57,
+        "scope": "VW Transporter/Bus (T3)"
+      }
+    },
+    {
+      "sku": "EA31232",
+      "code": "C241232",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c24123/2_mann-filter.html",
+      "official": {
+        "a_mm": 231,
+        "h_mm": 58,
+        "scope": "RENAULT"
+      }
+    },
+    {
+      "sku": "EA31263",
+      "code": "C291263",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c29126/3_mann-filter.html",
+      "official": {
+        "a_mm": 288,
+        "h_mm": 50,
+        "scope": "MERCEDES-BENZ"
+      }
+    },
+    {
+      "sku": "EA31271",
+      "code": "C151271",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c15127/1_mann-filter.html",
+      "official": {
+        "a_mm": 150,
+        "h_mm": 231,
+        "scope": "MERCEDES-BENZ MB-Serie (631)"
+      }
+    },
+    {
+      "sku": "EA31369",
+      "code": "C1369",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1369_mann-filter.html",
+      "official": {
+        "a_mm": 123,
+        "h_mm": 181,
+        "scope": "PORSCHE 912"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "sku": "EA31232",
+  "codigo_base": "C241232",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C241232",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_OFFICIAL_REVERIFY_AND_CANONICAL_METADATA_SYNC",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "closed_at": "2026-09-26"
+}
