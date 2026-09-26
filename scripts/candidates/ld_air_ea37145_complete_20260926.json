@@ -1,0 +1,22 @@
+{
+  "sku": "EA37145",
+  "codigo_base": "C37145",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C37145",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_BATCH_LANES_MANN_PATCH_HTTP",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 373.38,
+    "h_mm": 78.74,
+    "scope": "MERCEDES-BENZ (USA)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c37145_mann-filter.html",
+  "closed_at": "2026-09-26"
+}
