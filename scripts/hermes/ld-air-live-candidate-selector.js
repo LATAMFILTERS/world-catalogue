@@ -49,7 +49,11 @@ async function enrichOfficial(candidate,patchMap){
  return {...candidate,official,lane:laneFor({...candidate,official})};
 }
 function laneFor(candidate){
- const reasons=candidate.reasons||[],official=candidate.official||{};
+ const reasons=candidate.reasons||[],official=candidate.official||{},identity=candidate.identity||{},gov=candidate.governance||{};
+ const code=norm(candidate.codigo_base),core_ok=reasons.includes('ACTIVE_IDENTITY')&&reasons.includes('GOVERNANCE_VERIFIED')
+  &&identity.origin_group==='EUROPEAN'&&identity.canonical_brand==='MANN-FILTER'&&norm(identity.canonical_part_number)===code
+  &&gov.primary_manufacturer_verified===true&&gov.approved_manufacturer==='MANN-FILTER'&&norm(gov.approved_codigo_base)===code;
+ if(!core_ok) return 'REVERIFY';
  if(reasons.includes('HEAVY_SEGMENT_SIGNAL')||reasons.includes('CONTAMINATION_FLAG')) return 'BLOCKED';
  if(official.status==='MANN_PATCH_EXACT'&&official.family_ok===false) return 'BLOCKED';
  if(official.status==='MANN_PATCH_EXACT'&&official.geometry_complete===false) return 'REVERIFY';
