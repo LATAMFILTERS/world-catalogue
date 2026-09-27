@@ -1,0 +1,266 @@
+{
+  "batch": "LD_AIR_B39",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_BATCH_LANES",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 0,
+    "BLOCKED_WITH_REASON": 50,
+    "REVERIFY": 0,
+    "RETRYABLE": 0
+  },
+  "catalog_writes": [],
+  "candidates": [
+    {
+      "sku": "EA31963",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA31966",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32090",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32126",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32174",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32188",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32242",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32473",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32659",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32685",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32690",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32720",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32737",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32769",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32820",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA32877",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33135",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33161",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33163",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33251",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33255",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33257",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33287",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33290",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33326",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33437",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33560",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33777",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33842",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA33984",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA34031",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA34085",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA34125",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA34310",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA34371",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_CODE_COLLISION_NORMALIZED"
+    },
+    {
+      "sku": "EA34458",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA34588",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA34904",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_CODE_COLLISION_NORMALIZED"
+    },
+    {
+      "sku": "EA35017",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY"
+    },
+    {
+      "sku": "EA35178",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA35190",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA35235",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA35336",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA35508",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA35570",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA36130",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA36163",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA36480",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA37177",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA37288",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    }
+  ],
+  "closed_at": "2026-09-27"
+}

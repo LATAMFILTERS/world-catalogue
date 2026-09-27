@@ -1,0 +1,59 @@
+{
+  "sku": "EA34904",
+  "codigo_base": "C24904/1",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CANONICAL_CODE_COLLISION_NORMALIZED",
+  "official": {
+    "status": "MANN_DIRECT_CODE_PROBE",
+    "mann_source": "C24904/1",
+    "installation_type": null,
+    "patch_outer_mm": null,
+    "patch_secondary_mm": null,
+    "a_mm": 237,
+    "h_mm": 461,
+    "geometry_complete": true,
+    "geometry_ok": true,
+    "shared_conflict": false,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c24904/1_mann-filter.html",
+    "http": 200,
+    "url_ok": true,
+    "b_mm": 131,
+    "live_dimensions": {
+      "a_mm": 237,
+      "b_mm": 131,
+      "h_mm": 461,
+      "dimension_values_mm": [
+        237,
+        131
+      ],
+      "dimension_labels": [
+        {
+          "label": "Outer diameter (A)",
+          "value_mm": 237,
+          "source_value": 237,
+          "source_unit": "mm"
+        },
+        {
+          "label": "Inner diameter (B)",
+          "value_mm": 131,
+          "source_value": 131,
+          "source_unit": "mm"
+        },
+        {
+          "label": "Height (H)",
+          "value_mm": 461,
+          "source_value": 461,
+          "source_unit": "mm"
+        }
+      ]
+    },
+    "schema_dimension_candidates_mm": [
+      237,
+      131
+    ]
+  },
+  "closed_at": "2026-09-27"
+}

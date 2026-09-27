@@ -1,0 +1,34 @@
+{
+  "sku": "EA37288",
+  "codigo_base": "C57288",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS",
+  "official": {
+    "status": "MANN_DIRECT_CODE_PROBE",
+    "mann_source": "C57288",
+    "installation_type": null,
+    "patch_outer_mm": null,
+    "patch_secondary_mm": null,
+    "a_mm": null,
+    "h_mm": null,
+    "geometry_complete": false,
+    "geometry_ok": false,
+    "shared_conflict": false,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c57288_mann-filter.html",
+    "http": 200,
+    "url_ok": true,
+    "b_mm": null,
+    "live_dimensions": {
+      "a_mm": null,
+      "b_mm": null,
+      "h_mm": null,
+      "dimension_values_mm": [],
+      "dimension_labels": []
+    },
+    "schema_dimension_candidates_mm": []
+  },
+  "closed_at": "2026-09-27"
+}
