@@ -38,7 +38,12 @@ function authorityRefs(row){
 function prepareOfficialLocal(candidate,patchMap){
  const code=candidate.identity?.canonical_part_number||candidate.codigo_base;
  const exact=(patchMap.get(candidate.sku)||[]).find(x=>norm(x.mann_source)===norm(code));
- if(!exact)return {...candidate,official:{status:'MANN_PATCH_MISSING',geometry_complete:false,geometry_ok:false,shared_conflict:false,url_ok:false}};
+ if(!exact){
+  const raw=String(code||'').trim(),directOk=/^C\s*[0-9]/i.test(raw)&&!/^CS/i.test(raw);
+  if(!directOk)return {...candidate,official:{status:'MANN_PATCH_MISSING',geometry_complete:false,geometry_ok:false,shared_conflict:false,url_ok:false}};
+  const sourceSlug=raw.toLowerCase().replace(/\s+/g,'').replace(/[^a-z0-9/\-]/g,'');
+  return {...candidate,official:{status:'MANN_DIRECT_CODE_PROBE',mann_source:raw,installation_type:null,patch_outer_mm:null,patch_secondary_mm:null,a_mm:null,h_mm:null,geometry_complete:false,geometry_ok:false,shared_conflict:false,family_ok:true,source_url:'https://www.mann-filter.com/en/catalog/search-results/product.html/'+sourceSlug+'_mann-filter.html',http:0,url_ok:false}};
+ }
  const catalog=candidate.specs||{};
  const odShared=hasNum(catalog.outer_diameter_mm)&&hasNum(exact.outer_diameter_mm);
  const hShared=hasNum(catalog.height_mm)&&hasNum(exact.height_mm);
@@ -125,11 +130,12 @@ function laneFor(candidate){
   &&gov.primary_manufacturer_verified===true&&gov.approved_manufacturer==='MANN-FILTER'&&norm(gov.approved_codigo_base)===code;
  if(!core_ok) return 'REVERIFY';
  if(reasons.includes('HEAVY_SEGMENT_SIGNAL')||reasons.includes('CONTAMINATION_FLAG')) return 'BLOCKED';
- if(official.status==='MANN_PATCH_EXACT'&&official.family_ok===false) return 'BLOCKED';
- if(official.status==='MANN_PATCH_EXACT'&&official.shared_conflict===true) return 'BLOCKED';
- if(official.status==='MANN_PATCH_EXACT'&&official.geometry_complete===false) return 'REVERIFY';
- if(official.status==='MANN_PATCH_EXACT'&&official.geometry_complete===true&&official.geometry_ok===false) return 'BLOCKED';
- if(official.status==='MANN_PATCH_EXACT'&&official.family_ok===true&&official.geometry_complete===true&&official.geometry_ok===true&&official.url_ok===true) return 'AUTO_CLOSE';
+ const officialMann=['MANN_PATCH_EXACT','MANN_DIRECT_CODE_PROBE'].includes(official.status);
+ if(officialMann&&official.family_ok===false) return 'BLOCKED';
+ if(officialMann&&official.shared_conflict===true) return 'BLOCKED';
+ if(officialMann&&official.geometry_complete===false) return 'REVERIFY';
+ if(officialMann&&official.geometry_complete===true&&official.geometry_ok===false) return 'BLOCKED';
+ if(officialMann&&official.family_ok===true&&official.geometry_complete===true&&official.geometry_ok===true&&official.url_ok===true) return 'AUTO_CLOSE';
  return 'REVERIFY';
 }
 function score(row,identity){
@@ -179,7 +185,7 @@ async function main(){
   const localReady=prepared.filter(x=>{
    const o=x.official||{};
    const r=x.reasons||[];
-   return o.status==='MANN_PATCH_EXACT'&&o.family_ok===true&&o.shared_conflict!==true
+   return ['MANN_PATCH_EXACT','MANN_DIRECT_CODE_PROBE'].includes(o.status)&&o.family_ok===true&&o.shared_conflict!==true
     &&!r.includes('HEAVY_SEGMENT_SIGNAL')&&!r.includes('CONTAMINATION_FLAG');
   });
   const verifyPool=localReady.slice(0,Math.min(localReady.length,BATCH_LIMIT*3)),verified=[];

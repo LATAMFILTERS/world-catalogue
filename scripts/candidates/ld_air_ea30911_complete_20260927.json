@@ -1,0 +1,23 @@
+{
+  "sku": "EA30911",
+  "codigo_base": "C911X-2",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C911X-2",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 83,
+    "b_mm": null,
+    "h_mm": 74,
+    "scope": "KIA / TOYOTA"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c911x-2_mann-filter.html",
+  "closed_at": "2026-09-27"
+}
