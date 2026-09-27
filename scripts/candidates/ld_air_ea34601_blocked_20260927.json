@@ -1,0 +1,25 @@
+{
+  "sku": "EA34601",
+  "codigo_base": "C3314601",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C331460/1",
+    "installation_type": "Panel",
+    "patch_outer_mm": 332,
+    "patch_secondary_mm": 211,
+    "a_mm": 332,
+    "h_mm": 415,
+    "geometry_complete": true,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c331460/1_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

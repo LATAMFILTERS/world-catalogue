@@ -1,0 +1,25 @@
+{
+  "sku": "EA33034",
+  "codigo_base": "C3034",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_GEOMETRY_CONFLICT",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C3034",
+    "installation_type": "Panel",
+    "patch_outer_mm": 294,
+    "patch_secondary_mm": 251,
+    "a_mm": 294,
+    "h_mm": 48,
+    "geometry_complete": false,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3034_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

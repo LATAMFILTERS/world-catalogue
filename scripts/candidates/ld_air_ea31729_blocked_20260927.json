@@ -1,0 +1,25 @@
+{
+  "sku": "EA31729",
+  "codigo_base": "C421729",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C421729",
+    "installation_type": "Panel",
+    "patch_outer_mm": 419.1,
+    "patch_secondary_mm": 254,
+    "a_mm": 419.1,
+    "h_mm": 317.5,
+    "geometry_complete": true,
+    "geometry_ok": true,
+    "shared_conflict": false,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c421729_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

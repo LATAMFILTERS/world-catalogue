@@ -1,0 +1,25 @@
+{
+  "sku": "EA33201",
+  "codigo_base": "C203201",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C20320/1",
+    "installation_type": "Panel",
+    "patch_outer_mm": 198.12,
+    "patch_secondary_mm": null,
+    "a_mm": 198.12,
+    "h_mm": 297.18,
+    "geometry_complete": true,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c20320/1_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

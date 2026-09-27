@@ -1,0 +1,25 @@
+{
+  "sku": "EA31130",
+  "codigo_base": "C31130",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C31130",
+    "installation_type": "Panel",
+    "patch_outer_mm": 307.34,
+    "patch_secondary_mm": 182.88,
+    "a_mm": 307.34,
+    "h_mm": 48.26,
+    "geometry_complete": true,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c31130_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}
