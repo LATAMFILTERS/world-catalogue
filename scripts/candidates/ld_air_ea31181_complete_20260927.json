@@ -1,0 +1,22 @@
+{
+  "sku": "EA31181",
+  "codigo_base": "C251181",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C251181",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 246,
+    "h_mm": 67,
+    "scope": "CITROEN / PEUGEOT / 标致(东风标致雪铁龙) / PEUGEOT (DF-PSA) / 雪铁龙(东风雪铁龙) / CITROEN (DF.C)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c25118/1_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

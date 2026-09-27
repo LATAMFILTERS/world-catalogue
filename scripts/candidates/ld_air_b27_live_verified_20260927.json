@@ -1,0 +1,226 @@
+{
+  "batch": "LD_AIR_B27_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "candidates": [
+    {
+      "sku": "EA31252",
+      "code": "C301252",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c30125/2_mann-filter.html",
+      "official": {
+        "a_mm": 290,
+        "h_mm": 51,
+        "scope": "OPEL / VAUXHALL / VAUXHALL-BEDFORD (LCV)"
+      }
+    },
+    {
+      "sku": "EA31302",
+      "code": "C301302",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c30130/2_mann-filter.html",
+      "official": {
+        "a_mm": 293,
+        "h_mm": 52,
+        "scope": "OPEL / VAUXHALL / VAUXHALL-BEDFORD (LCV)"
+      }
+    },
+    {
+      "sku": "EA31681",
+      "code": "C261681",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c26168/1_mann-filter.html",
+      "official": {
+        "a_mm": 254,
+        "h_mm": 65,
+        "scope": "OPEL / VAUXHALL / HOLDEN AUTOMOTIVE"
+      }
+    },
+    {
+      "sku": "EA31881",
+      "code": "C361881",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c36188/1_mann-filter.html",
+      "official": {
+        "a_mm": 345.44,
+        "h_mm": 58.42,
+        "scope": "VW (VOLKSWAGEN) (USA) / AUDI (USA)"
+      }
+    },
+    {
+      "sku": "EA32871",
+      "code": "C42871",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c4287/1_mann-filter.html",
+      "official": {
+        "a_mm": 417,
+        "h_mm": 32,
+        "scope": "VW (VOLKSWAGEN) / SEAT / SKODA"
+      }
+    },
+    {
+      "sku": "EA32953",
+      "code": "C22953",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2295/3_mann-filter.html",
+      "official": {
+        "a_mm": 213,
+        "h_mm": 70,
+        "scope": "SEAT / SKODA / VW (VOLKSWAGEN)"
+      }
+    },
+    {
+      "sku": "EA32954",
+      "code": "C22954",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2295/4_mann-filter.html",
+      "official": {
+        "a_mm": 213,
+        "h_mm": 76,
+        "scope": "SKODA / SEAT / VW (VOLKSWAGEN)"
+      }
+    },
+    {
+      "sku": "EA33565",
+      "code": "C23565",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2356/5_mann-filter.html",
+      "official": {
+        "a_mm": 264,
+        "h_mm": 91,
+        "scope": "RENAULT / JDM (SIMPA-JDM)"
+      }
+    },
+    {
+      "sku": "EA35282",
+      "code": "C15282",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1528/2_mann-filter.html",
+      "official": {
+        "a_mm": 152,
+        "h_mm": 60,
+        "scope": "ROVER (MG ROVER GROUP LTD) / TALBOT / VOLVO CARS"
+      }
+    },
+    {
+      "sku": "EA35681",
+      "code": "C25681",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2568/1_mann-filter.html",
+      "official": {
+        "a_mm": 246,
+        "h_mm": 36,
+        "scope": "DAIHATSU / PIAGGIO / VESPA / FIAT"
+      }
+    },
+    {
+      "sku": "EA35711",
+      "code": "C25711",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2571/1_mann-filter.html",
+      "official": {
+        "a_mm": 245,
+        "h_mm": 58,
+        "scope": "ALFA ROMEO / FIAT / LANCIA (LANCIA AUTOBIANCHI)"
+      }
+    },
+    {
+      "sku": "EA35893",
+      "code": "C15893",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1589/3_mann-filter.html",
+      "official": {
+        "a_mm": 149,
+        "h_mm": 256,
+        "scope": "ALFA ROMEO / LANCIA (LANCIA AUTOBIANCHI)"
+      }
+    },
+    {
+      "sku": "EA37601",
+      "code": "C17601",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1760/1_mann-filter.html",
+      "official": {
+        "a_mm": 168,
+        "h_mm": 124,
+        "scope": "PEUGEOT / CITROEN"
+      }
+    },
+    {
+      "sku": "EA39041",
+      "code": "C249041",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c24904/1_mann-filter.html",
+      "official": {
+        "a_mm": 237,
+        "h_mm": 461,
+        "scope": "AMMANN / MERCEDES-BENZ"
+      }
+    },
+    {
+      "sku": "EA39911",
+      "code": "C29911",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2991/1_mann-filter.html",
+      "official": {
+        "a_mm": 285,
+        "h_mm": 41,
+        "scope": "GENERAL MOTORS / VAUXHALL / OPEL"
+      }
+    },
+    {
+      "sku": "EA30822",
+      "code": "C50822",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c5082/2_mann-filter.html",
+      "official": {
+        "a_mm": 495,
+        "h_mm": 56,
+        "scope": "CITROEN / DS AUTOMOBILES / MINI (BMW GROUP) / PEUGEOT"
+      }
+    },
+    {
+      "sku": "EA31181",
+      "code": "C251181",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c25118/1_mann-filter.html",
+      "official": {
+        "a_mm": 246,
+        "h_mm": 67,
+        "scope": "CITROEN / PEUGEOT / 标致(东风标致雪铁龙) / PEUGEOT (DF-PSA) / 雪铁龙(东风雪铁龙) / CITROEN (DF.C)"
+      }
+    },
+    {
+      "sku": "EA31682",
+      "code": "C261682",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c26168/2_mann-filter.html",
+      "official": {
+        "a_mm": 254,
+        "h_mm": 57,
+        "scope": "LOTUS / OPEL / VAUXHALL / HOLDEN AUTOMOTIVE / IRMSCHER / BITTER"
+      }
+    },
+    {
+      "sku": "EA32371",
+      "code": "C172371",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c17237/1_mann-filter.html",
+      "official": {
+        "a_mm": 169,
+        "h_mm": 303,
+        "scope": "CITROEN / FIAT / PEUGEOT / OPEL / VAUXHALL-BEDFORD (LCV)"
+      }
+    },
+    {
+      "sku": "EA33711",
+      "code": "C43711",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c4371/1_mann-filter.html",
+      "official": {
+        "a_mm": 425,
+        "h_mm": 46,
+        "scope": "PEUGEOT / 雪铁龙(东风雪铁龙) / CITROEN (DF.C) / 标致(东风标致雪铁龙) / PEUGEOT (DF-PSA) / CITROEN"
+      }
+    },
+    {
+      "sku": "EA33712",
+      "code": "C43712",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c4371/2_mann-filter.html",
+      "official": {
+        "a_mm": 425,
+        "h_mm": 68,
+        "scope": "雪铁龙(东风雪铁龙) / CITROEN (DF.C) / 标致(东风标致雪铁龙) / PEUGEOT (DF-PSA) / CITROEN / PEUGEOT / 东风风神 / FENGSHEN"
+      }
+    },
+    {
+      "sku": "EA31262",
+      "code": "C291262",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c29126/2_mann-filter.html",
+      "official": {
+        "a_mm": 287.02,
+        "h_mm": 50.8,
+        "scope": "STILL / MERCEDES-BENZ (USA)"
+      }
+    }
+  ]
+}
