@@ -1,0 +1,9 @@
+{
+  "sku": "EA33051",
+  "codigo_base": "C3051",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "INSUFFICIENT_LOCAL_GEOMETRY_AND_OE_TO_DISAMBIGUATE_MANN_VARIANTS",
+  "closed_at": "2026-09-27"
+}

@@ -1,0 +1,9 @@
+{
+  "sku": "EA36114",
+  "codigo_base": "C16114X",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_MANN_VARIANT_AMBIGUITY_AFTER_GEOMETRY_APPLICATION_OE",
+  "closed_at": "2026-09-27"
+}

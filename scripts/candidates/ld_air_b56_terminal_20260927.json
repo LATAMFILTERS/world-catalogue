@@ -1,0 +1,38 @@
+{
+  "batch": "LD_AIR_B56",
+  "selection_model": "LD_AIR_MANN_EXHAUSTED_EU_REVIEW_V1",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 0,
+    "BLOCKED_WITH_REASON": 4,
+    "REVERIFY": 0,
+    "RETRYABLE": 0
+  },
+  "catalog_writes": [],
+  "candidates": [
+    {
+      "sku": "EA31532",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_NO_UNIQUE_GEOMETRY_APPLICATION_OR_OE_MATCH"
+    },
+    {
+      "sku": "EA33051",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "INSUFFICIENT_LOCAL_GEOMETRY_AND_OE_TO_DISAMBIGUATE_MANN_VARIANTS"
+    },
+    {
+      "sku": "EA34116",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_VARIANT_AMBIGUITY_AFTER_GEOMETRY_APPLICATION_OE"
+    },
+    {
+      "sku": "EA36114",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_MANN_VARIANT_AMBIGUITY_AFTER_GEOMETRY_APPLICATION_OE"
+    }
+  ],
+  "reverify": [],
+  "retryable": [],
+  "closed_at": "2026-09-27"
+}

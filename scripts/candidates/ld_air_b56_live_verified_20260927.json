@@ -1,0 +1,27 @@
+{
+  "batch": "LD_AIR_B56_LIVE",
+  "selection_model": "LD_AIR_MANN_EXHAUSTED_EU_REVIEW_V1",
+  "candidates": [],
+  "preblocked": [
+    {
+      "sku": "EA31532",
+      "code": "C1532",
+      "reason": "OFFICIAL_MANN_NO_UNIQUE_GEOMETRY_APPLICATION_OR_OE_MATCH"
+    },
+    {
+      "sku": "EA33051",
+      "code": "C3051",
+      "reason": "INSUFFICIENT_LOCAL_GEOMETRY_AND_OE_TO_DISAMBIGUATE_MANN_VARIANTS"
+    },
+    {
+      "sku": "EA34116",
+      "code": "C34116",
+      "reason": "OFFICIAL_MANN_VARIANT_AMBIGUITY_AFTER_GEOMETRY_APPLICATION_OE"
+    },
+    {
+      "sku": "EA36114",
+      "code": "C16114X",
+      "reason": "OFFICIAL_MANN_VARIANT_AMBIGUITY_AFTER_GEOMETRY_APPLICATION_OE"
+    }
+  ]
+}

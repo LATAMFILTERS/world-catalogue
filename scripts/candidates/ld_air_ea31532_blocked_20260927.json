@@ -1,0 +1,9 @@
+{
+  "sku": "EA31532",
+  "codigo_base": "C1532",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_MANN_NO_UNIQUE_GEOMETRY_APPLICATION_OR_OE_MATCH",
+  "closed_at": "2026-09-27"
+}
