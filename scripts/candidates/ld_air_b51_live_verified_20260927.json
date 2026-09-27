@@ -1,0 +1,32 @@
+{
+  "batch": "LD_AIR_B51_LIVE",
+  "selection_model": "LD_AIR_FRAM_OFFICIAL_V1",
+  "candidates": [],
+  "preblocked": [
+    {
+      "sku": "EA39121",
+      "code": "CA9121",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA39492",
+      "code": "CA9492",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA39493",
+      "code": "CA9493",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA39769",
+      "code": "CA3199769",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA39912",
+      "code": "CA9912",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    }
+  ]
+}
