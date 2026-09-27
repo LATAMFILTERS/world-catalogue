@@ -1,0 +1,752 @@
+[
+  {
+    "batch": "B8",
+    "sku": "EF35016",
+    "codigo_base": "5016",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35018",
+    "codigo_base": "5018",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35019",
+    "codigo_base": "5019",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35020",
+    "codigo_base": "5020",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35021",
+    "codigo_base": "5021",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35022",
+    "codigo_base": "5022",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35023",
+    "codigo_base": "5023",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35024",
+    "codigo_base": "5024",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35025",
+    "codigo_base": "5025",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35026",
+    "codigo_base": "5026",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35027",
+    "codigo_base": "5027",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35028",
+    "codigo_base": "5028",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35029",
+    "codigo_base": "5029",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35036",
+    "codigo_base": "5036",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35112",
+    "codigo_base": "5112",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35121",
+    "codigo_base": "5121",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35211",
+    "codigo_base": "5211",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35311",
+    "codigo_base": "5311",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35313",
+    "codigo_base": "5313",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35314",
+    "codigo_base": "5314",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35316",
+    "codigo_base": "5316",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35318",
+    "codigo_base": "5318",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35321",
+    "codigo_base": "5321",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF35610",
+    "codigo_base": "5610",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36006",
+    "codigo_base": "6006",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36010",
+    "codigo_base": "6010",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36013",
+    "codigo_base": "6013",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36030",
+    "codigo_base": "6030",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36031",
+    "codigo_base": "6031",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_AUTHORITY"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36032",
+    "codigo_base": "6032",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36034",
+    "codigo_base": "6034",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36039",
+    "codigo_base": "6039",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36040",
+    "codigo_base": "6040",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36043",
+    "codigo_base": "6043",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36044",
+    "codigo_base": "6044",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36047",
+    "codigo_base": "6047",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36054",
+    "codigo_base": "6054",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36056",
+    "codigo_base": "6056",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36116",
+    "codigo_base": "6116",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36122",
+    "codigo_base": "6122",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36123",
+    "codigo_base": "6123",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36124",
+    "codigo_base": "6124",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36125",
+    "codigo_base": "6125",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36126",
+    "codigo_base": "6126",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36133",
+    "codigo_base": "6133",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36141",
+    "codigo_base": "6141",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36142",
+    "codigo_base": "6142",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36143",
+    "codigo_base": "6143",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36147",
+    "codigo_base": "6147",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  },
+  {
+    "batch": "B8",
+    "sku": "EF36148",
+    "codigo_base": "6148",
+    "terminal_state": "BLOCKED_EVIDENCE_REQUIRED",
+    "reason": "LD_CANONICAL_AUTHORITY_NOT_VERIFIED",
+    "gateway_reasons": [
+      "MANN_ABSENCE_NOT_VERIFIED",
+      "FALLBACK_MANUFACTURER_NOT_VERIFIED",
+      "FALLBACK_COMMERCIAL_CODE_NOT_VERIFIED",
+      "APPROVED_BASE_MISMATCH",
+      "LD_FALLBACK_MUST_BE_OEM"
+    ],
+    "required_authority": "VERIFY_MANN_MANUFACTURING_ABSENCE"
+  }
+]

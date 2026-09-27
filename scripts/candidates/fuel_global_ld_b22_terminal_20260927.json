@@ -1,0 +1,205 @@
+[
+  {
+    "batch": "B22",
+    "sku": "EF38543",
+    "codigo_base": "WK8543",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF38544",
+    "codigo_base": "WK8544",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF38545",
+    "codigo_base": "WK8545",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF38571",
+    "codigo_base": "WK8571",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF30880",
+    "codigo_base": "WK880",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39007",
+    "codigo_base": "WK9007",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39016",
+    "codigo_base": "WK9016",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39022",
+    "codigo_base": "WK9022",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39024",
+    "codigo_base": "WK9024",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39029",
+    "codigo_base": "WK9029",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39049",
+    "codigo_base": "WK9049Z",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39051",
+    "codigo_base": "WK9051",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39053",
+    "codigo_base": "WK9053Z",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39078",
+    "codigo_base": "WK9078",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39082",
+    "codigo_base": "WK9082Z",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39140",
+    "codigo_base": "WK9140",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39165",
+    "codigo_base": "WK9165X",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39181",
+    "codigo_base": "WK9181",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39190",
+    "codigo_base": "WK9190",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF30920",
+    "codigo_base": "WK920/3",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF30933",
+    "codigo_base": "WK933X",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39391",
+    "codigo_base": "WK9391",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF33912",
+    "codigo_base": "WK93912X",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39397",
+    "codigo_base": "WK9397",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF34015",
+    "codigo_base": "WK94015",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39401",
+    "codigo_base": "WK9401X",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF34020",
+    "codigo_base": "WK94020",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF30943",
+    "codigo_base": "WK943",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  },
+  {
+    "batch": "B22",
+    "sku": "EF39431",
+    "codigo_base": "WK9431",
+    "terminal_state": "COMPLETE_VERIFIED",
+    "reason": "GOVERNED_LD_CANONICAL_VERIFICATION_APPLIED"
+  }
+]
