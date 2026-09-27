@@ -1,0 +1,25 @@
+{
+  "sku": "EA38002",
+  "codigo_base": "C38002",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C38002",
+    "installation_type": "Panel",
+    "patch_outer_mm": 374,
+    "patch_secondary_mm": 213,
+    "a_mm": 374,
+    "h_mm": 58,
+    "geometry_complete": false,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c38002_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

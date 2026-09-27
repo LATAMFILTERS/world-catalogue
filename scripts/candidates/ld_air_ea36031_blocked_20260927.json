@@ -1,0 +1,25 @@
+{
+  "sku": "EA36031",
+  "codigo_base": "C26031X",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C26031X",
+    "installation_type": "Panel",
+    "patch_outer_mm": 261,
+    "patch_secondary_mm": 232,
+    "a_mm": 261,
+    "h_mm": 572,
+    "geometry_complete": true,
+    "geometry_ok": true,
+    "shared_conflict": false,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c26031x_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

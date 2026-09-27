@@ -1,0 +1,25 @@
+{
+  "sku": "EA38001",
+  "codigo_base": "C38001",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C38001",
+    "installation_type": "Panel",
+    "patch_outer_mm": 375,
+    "patch_secondary_mm": 144,
+    "a_mm": 375,
+    "h_mm": 60,
+    "geometry_complete": false,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c38001_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

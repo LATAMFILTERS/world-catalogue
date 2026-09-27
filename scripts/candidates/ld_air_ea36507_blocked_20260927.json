@@ -1,0 +1,25 @@
+{
+  "sku": "EA36507",
+  "codigo_base": "C246507",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C24650/7",
+    "installation_type": "Panel",
+    "patch_outer_mm": 242,
+    "patch_secondary_mm": 11,
+    "a_mm": 242,
+    "h_mm": 498,
+    "geometry_complete": true,
+    "geometry_ok": true,
+    "shared_conflict": false,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c24650/7_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

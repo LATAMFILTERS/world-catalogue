@@ -1,0 +1,25 @@
+{
+  "sku": "EA37023",
+  "codigo_base": "C17023",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C17023",
+    "installation_type": "Panel",
+    "patch_outer_mm": 153,
+    "patch_secondary_mm": 104,
+    "a_mm": 153,
+    "h_mm": 194,
+    "geometry_complete": false,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c17023_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

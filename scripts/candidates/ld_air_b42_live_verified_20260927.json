@@ -1,0 +1,257 @@
+{
+  "batch": "LD_AIR_B42_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_BATCH_LANES",
+  "candidates": [],
+  "preblocked": [
+    {
+      "sku": "EA36031",
+      "code": "C26031X",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36507",
+      "code": "C246507",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37103",
+      "code": "C257103",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37119",
+      "code": "C27119",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37130",
+      "code": "C27130",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37149",
+      "code": "C26773",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37301",
+      "code": "C257301",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37521",
+      "code": "C3217521",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA39157",
+      "code": "C19157",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31042",
+      "code": "C211042",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA32007",
+      "code": "C12007",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA32010",
+      "code": "C32010",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA35011",
+      "code": "C15011",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36002",
+      "code": "C3316002",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36004",
+      "code": "C36004",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36005",
+      "code": "C16005",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37004",
+      "code": "C17004",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37023",
+      "code": "C17023",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA39004",
+      "code": "C9004",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA39006",
+      "code": "C19006",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA39985",
+      "code": "C279985",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31127",
+      "code": "C11127",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA33013",
+      "code": "C23013",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31241",
+      "code": "C151241",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA32017",
+      "code": "C22017",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA38001",
+      "code": "C38001",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA38002",
+      "code": "C38002",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30899",
+      "code": "C30899",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31228",
+      "code": "C21228",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31240",
+      "code": "C301240",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31255",
+      "code": "C311255",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31353",
+      "code": "C301353",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31359",
+      "code": "C131359",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31390",
+      "code": "C271390",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31790",
+      "code": "C21790",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA32160",
+      "code": "C32160",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA32791",
+      "code": "C2791",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA33055",
+      "code": "C3055",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA33726",
+      "code": "C23726",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA34523",
+      "code": "C24523",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA34694",
+      "code": "C4694",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA34752",
+      "code": "C24752",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA35655",
+      "code": "C25655",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA35820",
+      "code": "C25820",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36147",
+      "code": "C16147",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36167",
+      "code": "C16167",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36670",
+      "code": "C26670",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36752",
+      "code": "C26752",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36773",
+      "code": "C26773",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37170",
+      "code": "C17170",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    }
+  ]
+}

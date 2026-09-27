@@ -1,0 +1,25 @@
+{
+  "sku": "EA36002",
+  "codigo_base": "C3316002",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C331600/2",
+    "installation_type": "Panel",
+    "patch_outer_mm": 327,
+    "patch_secondary_mm": 216,
+    "a_mm": 327,
+    "h_mm": 515,
+    "geometry_complete": false,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c331600/2_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

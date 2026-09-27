@@ -1,0 +1,25 @@
+{
+  "sku": "EA36005",
+  "codigo_base": "C16005",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C16005",
+    "installation_type": "Panel",
+    "patch_outer_mm": 154.94,
+    "patch_secondary_mm": null,
+    "a_mm": 154.94,
+    "h_mm": 187.96,
+    "geometry_complete": false,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c16005_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

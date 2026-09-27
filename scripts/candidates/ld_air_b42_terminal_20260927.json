@@ -1,0 +1,266 @@
+{
+  "batch": "LD_AIR_B42",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_BATCH_LANES",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 0,
+    "BLOCKED_WITH_REASON": 50,
+    "REVERIFY": 0,
+    "RETRYABLE": 0
+  },
+  "catalog_writes": [],
+  "candidates": [
+    {
+      "sku": "EA36031",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36507",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37103",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37119",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37130",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37149",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37301",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37521",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA39157",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31042",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA32007",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA32010",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA35011",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36002",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36004",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36005",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37004",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37023",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA39004",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA39006",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA39985",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31127",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA33013",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31241",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA32017",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA38001",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA38002",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30899",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31228",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31240",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31255",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31353",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31359",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31390",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31790",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA32160",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA32791",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA33055",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA33726",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA34523",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA34694",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA34752",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA35655",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA35820",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36147",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36167",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36670",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36752",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36773",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA37170",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    }
+  ],
+  "closed_at": "2026-09-27"
+}
