@@ -1,0 +1,25 @@
+{
+  "sku": "EA32100",
+  "codigo_base": "C12100",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C12100",
+    "installation_type": "Panel",
+    "patch_outer_mm": 116.84,
+    "patch_secondary_mm": 88.9,
+    "a_mm": 116.84,
+    "h_mm": 398.78,
+    "geometry_complete": false,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c12100_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

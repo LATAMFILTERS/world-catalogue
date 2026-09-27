@@ -1,0 +1,37 @@
+{
+  "batch": "LD_AIR_B45_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_BATCH_LANES",
+  "candidates": [],
+  "preblocked": [
+    {
+      "sku": "EA32002",
+      "code": "C42002",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA33004",
+      "code": "C33004",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31317",
+      "code": "C21317",
+      "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY"
+    },
+    {
+      "sku": "EA32102",
+      "code": "C12102",
+      "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY"
+    },
+    {
+      "sku": "EA39939",
+      "code": "C29939",
+      "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY"
+    },
+    {
+      "sku": "EA32100",
+      "code": "C12100",
+      "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "batch": "LD_AIR_B45",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_BATCH_LANES",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 0,
+    "BLOCKED_WITH_REASON": 6,
+    "REVERIFY": 0,
+    "RETRYABLE": 0
+  },
+  "catalog_writes": [],
+  "candidates": [
+    {
+      "sku": "EA32002",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA33004",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31317",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY"
+    },
+    {
+      "sku": "EA32102",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY"
+    },
+    {
+      "sku": "EA39939",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY"
+    },
+    {
+      "sku": "EA32100",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY"
+    }
+  ],
+  "closed_at": "2026-09-27"
+}
