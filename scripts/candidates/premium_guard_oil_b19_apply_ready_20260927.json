@@ -1,0 +1,155 @@
+[
+  {
+    "premium_guard_code": "PG5702",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5702/",
+    "source_html_sha256": "c226c9855d8ccee59bfae428a490f9346046eaea6f14e5b21fd8a5cb9a833f74",
+    "interchanges_count": 93,
+    "applications_count": 13,
+    "fram_refs": [
+      "CH10295",
+      "TG10295",
+      "FD10295",
+      "FF10295",
+      "FS10295"
+    ],
+    "mann_refs": [],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Lexus",
+      "Toyota"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EL30295",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CH10295",
+        "identity_filter_type": "oil",
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "CH10295"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EL30295",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CH10295",
+        "identity_filter_type": "oil",
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "CH10295"
+      },
+      {
+        "elimfilters_sku": "EL30295",
+        "origin_group": null,
+        "canonical_brand": "FRAM Titanium",
+        "canonical_part_number": "FS10295",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM Titanium",
+        "interchange_code": "FS10295"
+      },
+      {
+        "elimfilters_sku": "EL30295",
+        "origin_group": null,
+        "canonical_brand": "FRAM Titanium",
+        "canonical_part_number": "FS10295",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM Titanium",
+        "interchange_code": "FS10295"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EL30295",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH10295",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "CH10295",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PG99496EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg99496ex/",
+    "source_html_sha256": "1575f7f2b1707975c08e3681f5e7b13276a3e974a2525de61c852e5f89d72ad8",
+    "interchanges_count": 23,
+    "applications_count": 2,
+    "fram_refs": [],
+    "mann_refs": [
+      "HU 7012 z"
+    ],
+    "inferred_origin_group": "EUROPEAN",
+    "mapped_makes": [
+      "Volkswagen"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "MANN-FILTER",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EL37012",
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "HU7012Z",
+        "identity_filter_type": "oil",
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "HU 7012 z"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EL37012",
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "HU7012Z",
+        "identity_filter_type": "oil",
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "HU 7012 z"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EL37012",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "HU7012Z",
+    "matched_reference_brand": "MANN-FILTER",
+    "matched_reference_code": "HU7012Z",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  }
+]
