@@ -1,0 +1,23 @@
+{
+  "sku": "EA35110",
+  "codigo_base": "C35110",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C35110",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LD_AIR_MANN_MULTI_CANDIDATE_DISAMBIGUATION_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 358,
+    "b_mm": 152,
+    "h_mm": 59,
+    "scope": "CITROEN / PEUGEOT / 标致(东风标致雪铁龙) / PEUGEOT (DF-PSA) / 雪铁龙(东风雪铁龙) / CITROEN (DF.C)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c35110_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

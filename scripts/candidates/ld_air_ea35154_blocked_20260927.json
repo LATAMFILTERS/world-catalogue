@@ -1,0 +1,9 @@
+{
+  "sku": "EA35154",
+  "codigo_base": "C35154",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CANONICAL_RESOLVER_COLLISION_EA39711",
+  "closed_at": "2026-09-27"
+}

@@ -1,0 +1,78 @@
+{
+  "batch": "LD_AIR_B54",
+  "selection_model": "LD_AIR_MANN_MULTI_CANDIDATE_DISAMBIGUATION_V1",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 4,
+    "BLOCKED_WITH_REASON": 7,
+    "REVERIFY": 0,
+    "RETRYABLE": 0
+  },
+  "catalog_writes": [
+    "EA31149",
+    "EA32338",
+    "EA32695",
+    "EA35110"
+  ],
+  "candidates": [
+    {
+      "sku": "EA31149",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C31149"
+    },
+    {
+      "sku": "EA32338",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C32338"
+    },
+    {
+      "sku": "EA32695",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2695"
+    },
+    {
+      "sku": "EA35110",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C35110"
+    },
+    {
+      "sku": "EA31015",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31256",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31320",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31397",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31776",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA34650",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA35154",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "CANONICAL_RESOLVER_COLLISION_EA39711"
+    }
+  ],
+  "reverify": [],
+  "retryable": [],
+  "closed_at": "2026-09-27"
+}

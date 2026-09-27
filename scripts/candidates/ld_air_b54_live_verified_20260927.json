@@ -1,0 +1,127 @@
+{
+  "batch": "LD_AIR_B54_LIVE",
+  "selection_model": "LD_AIR_MANN_MULTI_CANDIDATE_DISAMBIGUATION_V1",
+  "candidates": [
+    {
+      "sku": "EA31149",
+      "code": "C31149",
+      "authority_brand": "MANN-FILTER",
+      "origin_group": "EUROPEAN",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c31149_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": null,
+      "canonical_promotion": {
+        "approved_codigo_base": "C31149",
+        "policy_version": "2026-09-27-ld-air-promotion-v1",
+        "identity_evidence_source": "LD_AIR_MANN_OFFICIAL_CANONICAL_PROMOTION",
+        "evidence_note": "Official MANN page uniquely matched candidate by geometry and vehicle manufacturer/application among all recorded MANN candidates; no base or identity collision."
+      },
+      "official": {
+        "a_mm": 312,
+        "b_mm": 275,
+        "h_mm": 42,
+        "scope": "BMW (USA)"
+      }
+    },
+    {
+      "sku": "EA32338",
+      "code": "C32338",
+      "authority_brand": "MANN-FILTER",
+      "origin_group": "EUROPEAN",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c32338_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": null,
+      "canonical_promotion": {
+        "approved_codigo_base": "C32338",
+        "policy_version": "2026-09-27-ld-air-promotion-v1",
+        "identity_evidence_source": "LD_AIR_MANN_OFFICIAL_CANONICAL_PROMOTION",
+        "evidence_note": "Official MANN page uniquely matched candidate by geometry and vehicle manufacturer/application among all recorded MANN candidates; no base or identity collision."
+      },
+      "official": {
+        "a_mm": 315,
+        "b_mm": 277,
+        "h_mm": 70,
+        "scope": "MERCEDES-BENZ (USA) / MERCEDES-BENZ"
+      }
+    },
+    {
+      "sku": "EA32695",
+      "code": "C2695",
+      "authority_brand": "MANN-FILTER",
+      "origin_group": "EUROPEAN",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2695_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": null,
+      "canonical_promotion": {
+        "approved_codigo_base": "C2695",
+        "policy_version": "2026-09-27-ld-air-promotion-v1",
+        "identity_evidence_source": "LD_AIR_MANN_OFFICIAL_CANONICAL_PROMOTION",
+        "evidence_note": "Official MANN page uniquely matched candidate by geometry and vehicle manufacturer/application among all recorded MANN candidates; no base or identity collision."
+      },
+      "official": {
+        "a_mm": 258,
+        "b_mm": 143,
+        "h_mm": 58,
+        "scope": "RENAULT"
+      }
+    },
+    {
+      "sku": "EA35110",
+      "code": "C35110",
+      "authority_brand": "MANN-FILTER",
+      "origin_group": "EUROPEAN",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c35110_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": null,
+      "canonical_promotion": {
+        "approved_codigo_base": "C35110",
+        "policy_version": "2026-09-27-ld-air-promotion-v1",
+        "identity_evidence_source": "LD_AIR_MANN_OFFICIAL_CANONICAL_PROMOTION",
+        "evidence_note": "Official MANN page uniquely matched candidate by geometry and vehicle manufacturer/application among all recorded MANN candidates; no base or identity collision."
+      },
+      "official": {
+        "a_mm": 358,
+        "b_mm": 152,
+        "h_mm": 59,
+        "scope": "CITROEN / PEUGEOT / 标致(东风标致雪铁龙) / PEUGEOT (DF-PSA) / 雪铁龙(东风雪铁龙) / CITROEN (DF.C)"
+      }
+    }
+  ],
+  "preblocked": [
+    {
+      "sku": "EA31015",
+      "code": "C31015",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31256",
+      "code": "C311256",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31320",
+      "code": "C1320",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31397",
+      "code": "C261397",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31776",
+      "code": "C1776",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA34650",
+      "code": "C24650",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA35154",
+      "code": "C35154",
+      "reason": "CANONICAL_RESOLVER_COLLISION_EA39711"
+    }
+  ]
+}

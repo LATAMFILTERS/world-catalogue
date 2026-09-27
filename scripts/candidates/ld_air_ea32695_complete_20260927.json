@@ -1,0 +1,23 @@
+{
+  "sku": "EA32695",
+  "codigo_base": "C2695",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C2695",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LD_AIR_MANN_MULTI_CANDIDATE_DISAMBIGUATION_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 258,
+    "b_mm": 143,
+    "h_mm": 58,
+    "scope": "RENAULT"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2695_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

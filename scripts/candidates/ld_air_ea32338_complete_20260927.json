@@ -1,0 +1,23 @@
+{
+  "sku": "EA32338",
+  "codigo_base": "C32338",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C32338",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LD_AIR_MANN_MULTI_CANDIDATE_DISAMBIGUATION_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 315,
+    "b_mm": 277,
+    "h_mm": 70,
+    "scope": "MERCEDES-BENZ (USA) / MERCEDES-BENZ"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c32338_mann-filter.html",
+  "closed_at": "2026-09-27"
+}
