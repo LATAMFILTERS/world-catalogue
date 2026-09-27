@@ -1074,6 +1074,7 @@ function normalizeBrandKey(s) {
   return s.toUpperCase().replace(/[®™]/g, '').replace(/[-+]/g, ' ').replace(/\s+/g, ' ').trim();
 }
 const NORMALIZED_COMPETITOR_BRANDS = new Set([...COMPETITOR_BRANDS].map(normalizeBrandKey));
+const { classifyReference } = require('./lib/cross-reference-classification');
 
 function isCompetitor(manufacturer) {
   if (!manufacturer) return false;
@@ -1237,7 +1238,7 @@ async function enrichAlternatives(products, client) {
         p.equipment_applications = src.equipment_applications;
       }
       if (p.competitor_codes.length === 0) {
-        const srcRefs = splitRefs([...parseRefs(src.oem_codes), ...parseRefs(src.competitor_codes)]);
+        const srcRefs = splitRefs(combinedRefs(src.oem_codes, src.competitor_codes));
         if (srcRefs.competitor.length) p.competitor_codes = srcRefs.competitor;
         if (p.oem_codes.length === 0 && srcRefs.oem.length) p.oem_codes = srcRefs.oem;
       }
@@ -1384,7 +1385,7 @@ function buildFilterData(row, lang = 'en'){
   // may contain competitor filter-brand codes. Merging both arrays and running
   // splitRefs() keeps OEM equipment manufacturers and competitor filter brands
   // in the correct columns regardless of what the DB stored.
-  const refs = splitRefs([...parseRefs(row.oem_codes), ...parseRefs(row.competitor_codes)]);
+  const refs = splitRefs(combinedRefs(row.oem_codes, row.competitor_codes));
 
   return {
     elimfilters_sku: row.sku,
@@ -1887,6 +1888,30 @@ app.get('/api/search', searchLimiter, async (req, res) => {
           candidates: topSkus,
           message: `Code ${raw} matches ${topSkus.length} products with equal priority. Provide duty or manufacturer to resolve.`,
           source: 'xref_ambiguous',
+        });
+      }
+
+      const singlePolicy = governanceForReferences([raw]);
+      const singleApprovedSet = singlePolicy?.approvedSkus?.length
+        ? new Set(singlePolicy.approvedSkus.map(s => s.toUpperCase()))
+        : null;
+      const singleGovernedRows = singleApprovedSet
+        ? xrows.filter(r => singleApprovedSet.has(String(r.sku).toUpperCase()))
+        : [];
+      if (singleGovernedRows.length) {
+        if (!validDuty) {
+          const mixed = await handleMixedDuty(singleGovernedRows, lang, client);
+          if (mixed) return res.json(mixed);
+        }
+        const products = singleGovernedRows.slice(0, 10).map(r => buildFilterData(r, lang));
+        await enrichAlternatives(products, client);
+        singleGovernedRows.forEach(r => recordLearning(r.resolver_manufacturer, r.resolver_status));
+        return res.json({
+          success: true,
+          results: products,
+          source: 'xref_governed',
+          resolution: 'RESOLVED',
+          governed_reference: singlePolicy.reference,
         });
       }
 
@@ -3113,8 +3138,7 @@ app.post('/api/cleanup/oem-reclassify', importLimiter, requireAdmin, async (req,
       `SELECT sku, oem_codes, competitor_codes FROM elimfilters_catalog`
     );
     for (const row of rows) {
-      const allRefs = [...parseRefs(row.oem_codes), ...parseRefs(row.competitor_codes)];
-      const split = splitRefs(allRefs);
+      const split = splitRefs(combinedRefs(row.oem_codes, row.competitor_codes));
       const newOem = JSON.stringify(split.oem);
       const newComp = JSON.stringify(split.competitor);
       const curOem = JSON.stringify(row.oem_codes || []);
