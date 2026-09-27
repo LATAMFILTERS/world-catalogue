@@ -1,0 +1,9 @@
+{
+  "sku": "EA37025",
+  "codigo_base": "CH11060",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR",
+  "closed_at": "2026-09-27"
+}

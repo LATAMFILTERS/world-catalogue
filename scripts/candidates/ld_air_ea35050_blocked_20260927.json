@@ -1,0 +1,9 @@
+{
+  "sku": "EA35050",
+  "codigo_base": "CAK5050S",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_FRAM_NONSTANDARD_CODE_NOT_FOUND",
+  "closed_at": "2026-09-27"
+}

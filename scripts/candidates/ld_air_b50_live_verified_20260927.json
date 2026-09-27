@@ -1,0 +1,257 @@
+{
+  "batch": "LD_AIR_B50_LIVE",
+  "selection_model": "LD_AIR_FRAM_OFFICIAL_V1",
+  "candidates": [],
+  "preblocked": [
+    {
+      "sku": "EA35014",
+      "code": "PH2887",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA35031",
+      "code": "CA5031",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA35050",
+      "code": "CAK5050S",
+      "reason": "OFFICIAL_FRAM_NONSTANDARD_CODE_NOT_FOUND"
+    },
+    {
+      "sku": "EA35051",
+      "code": "CAK5051S",
+      "reason": "OFFICIAL_FRAM_NONSTANDARD_CODE_NOT_FOUND"
+    },
+    {
+      "sku": "EA35069",
+      "code": "CA5069",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA35132",
+      "code": "CA5132",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA35291",
+      "code": "CA5291",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA35421",
+      "code": "CA5421",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA35451",
+      "code": "CA5451",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA35522",
+      "code": "CA5522",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA36023",
+      "code": "CH12389ECO",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA36040",
+      "code": "CA6040",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA36379",
+      "code": "CA6379VA4287",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA36504",
+      "code": "CA6504",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA36581",
+      "code": "CA6581",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA36821",
+      "code": "CA6821",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA37025",
+      "code": "CH11060",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA37030",
+      "code": "CA27030",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA37054",
+      "code": "PH12568",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA37057",
+      "code": "PH12415",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA37069",
+      "code": "PH12658",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA37074",
+      "code": "CA7074",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA37081",
+      "code": "CA7081",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA37082",
+      "code": "CAK7082",
+      "reason": "OFFICIAL_FRAM_NONSTANDARD_CODE_NOT_FOUND"
+    },
+    {
+      "sku": "EA37111",
+      "code": "CA7111S",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA37112",
+      "code": "CH9382ECO",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA37131",
+      "code": "CH9713ECO",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA37800",
+      "code": "CA7800",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38006",
+      "code": "CH11120ECO",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA38013",
+      "code": "CA8013",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38018",
+      "code": "CH12795ECO",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA38029",
+      "code": "CA8029S",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38040",
+      "code": "CA8040",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38086",
+      "code": "CA8086",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38094",
+      "code": "CA8094",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38097",
+      "code": "CA8097",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38130",
+      "code": "CA8130",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38200",
+      "code": "CAK8200S",
+      "reason": "OFFICIAL_FRAM_NONSTANDARD_CODE_NOT_FOUND"
+    },
+    {
+      "sku": "EA38331",
+      "code": "CA8331",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38522",
+      "code": "CA8522",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38561",
+      "code": "CA8561",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38562",
+      "code": "CA8562",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38581",
+      "code": "CA8581",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38601",
+      "code": "CA8601",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38602",
+      "code": "CA8602",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38606",
+      "code": "CA8606",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38609",
+      "code": "CA8609",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38612",
+      "code": "CA8612",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA38731",
+      "code": "CA8731",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA39019",
+      "code": "PH11335",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    }
+  ]
+}
