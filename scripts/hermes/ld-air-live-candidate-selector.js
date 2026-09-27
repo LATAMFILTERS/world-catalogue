@@ -42,9 +42,10 @@ async function enrichOfficial(candidate,patchMap){
  const geometry_complete=hasNum(candidate.specs?.outer_diameter_mm)&&hasNum(candidate.specs?.height_mm)&&hasNum(exact.outer_diameter_mm)&&hasNum(exact.height_mm);
  const geometry_ok=geometry_complete&&close(candidate.specs.outer_diameter_mm,exact.outer_diameter_mm)&&close(candidate.specs.height_mm,exact.height_mm);
  const sourceCode=norm(exact.mann_source),family_ok=sourceCode.startsWith('C')&&!sourceCode.startsWith('CU');
- const source_url='https://www.mann-filter.com/en/catalog/search-results/product.html/'+sourceCode.toLowerCase()+'_mann-filter.html';
+ const sourceSlug=String(exact.mann_source||'').toLowerCase().replace(/\s+/g,'').replace(/[^a-z0-9/]/g,'');
+ const source_url='https://www.mann-filter.com/en/catalog/search-results/product.html/'+sourceSlug+'_mann-filter.html';
  let http=0,url_ok=false;
- if(geometry_ok){try{const res=await fetch(source_url,{redirect:'follow'});http=res.status;url_ok=res.ok}catch(_){}}
+ if(geometry_ok){try{const res=await fetch(source_url,{redirect:'follow',signal:AbortSignal.timeout(5000)});http=res.status;url_ok=res.ok}catch(_){}}
  const official={status:'MANN_PATCH_EXACT',mann_source:exact.mann_source,a_mm:exact.outer_diameter_mm,h_mm:exact.height_mm,geometry_complete,geometry_ok,family_ok,source_url,http,url_ok};
  return {...candidate,official,lane:laneFor({...candidate,official})};
 }
