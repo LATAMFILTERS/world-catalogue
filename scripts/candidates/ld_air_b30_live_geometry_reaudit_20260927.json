@@ -1,0 +1,966 @@
+{
+  "batch": "B30",
+  "total": 50,
+  "passed": 50,
+  "failed": [],
+  "results": [
+    {
+      "sku": "EA30063",
+      "code": "C63",
+      "http": 200,
+      "catalog": {
+        "outer": 60,
+        "height": 40
+      },
+      "live": {
+        "dims": [
+          60,
+          18
+        ],
+        "h": 40
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA30824",
+      "code": "C824",
+      "http": 200,
+      "catalog": {
+        "outer": 75,
+        "height": 166
+      },
+      "live": {
+        "dims": [
+          75,
+          45
+        ],
+        "h": 166
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA30944",
+      "code": "C944",
+      "http": 200,
+      "catalog": {
+        "outer": 88.9,
+        "height": 185.42
+      },
+      "live": {
+        "dims": [
+          90,
+          45
+        ],
+        "h": 186
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA31157",
+      "code": "C1157",
+      "http": 200,
+      "catalog": {
+        "outer": 104.14,
+        "height": 172.72
+      },
+      "live": {
+        "dims": [
+          105,
+          8.5,
+          43
+        ],
+        "h": 173
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA31189",
+      "code": "C1189",
+      "http": 200,
+      "catalog": {
+        "outer": 108,
+        "height": 268
+      },
+      "live": {
+        "dims": [
+          108,
+          69
+        ],
+        "h": 268
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA31213",
+      "code": "C1213",
+      "http": 200,
+      "catalog": {
+        "outer": 116.84,
+        "height": 63.5
+      },
+      "live": {
+        "dims": [
+          118,
+          72
+        ],
+        "h": 63
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA31247",
+      "code": "C1247",
+      "http": 200,
+      "catalog": {
+        "outer": 124,
+        "height": 124
+      },
+      "live": {
+        "dims": [
+          124,
+          64
+        ],
+        "h": 124
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA31368",
+      "code": "C1368",
+      "http": 200,
+      "catalog": {
+        "outer": 129.54,
+        "height": 149.86
+      },
+      "live": {
+        "dims": [
+          130,
+          76
+        ],
+        "h": 150
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA31427",
+      "code": "C1427",
+      "http": 200,
+      "catalog": {
+        "outer": 132.08,
+        "height": 71.12
+      },
+      "live": {
+        "dims": [
+          131,
+          85
+        ],
+        "h": 71
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA31449",
+      "code": "C1449",
+      "http": 200,
+      "catalog": {
+        "outer": 136,
+        "height": 121
+      },
+      "live": {
+        "dims": [
+          136,
+          84
+        ],
+        "h": 121
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA31826",
+      "code": "C1826",
+      "http": 200,
+      "catalog": {
+        "outer": 174,
+        "height": 58
+      },
+      "live": {
+        "dims": [
+          174,
+          128
+        ],
+        "h": 58
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32033",
+      "code": "C22033",
+      "http": 200,
+      "catalog": {
+        "outer": 213.36,
+        "height": 53.34
+      },
+      "live": {
+        "dims": [
+          214,
+          135
+        ],
+        "h": 53
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32041",
+      "code": "C22041",
+      "http": 200,
+      "catalog": {
+        "outer": 262,
+        "height": 181
+      },
+      "live": {
+        "dims": [
+          262
+        ],
+        "h": 181
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32053",
+      "code": "C2053",
+      "http": 200,
+      "catalog": {
+        "outer": 198,
+        "height": 41
+      },
+      "live": {
+        "dims": [
+          198,
+          150
+        ],
+        "h": 41
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32056",
+      "code": "C2056",
+      "http": 200,
+      "catalog": {
+        "outer": 200,
+        "height": 49
+      },
+      "live": {
+        "dims": [
+          200,
+          140
+        ],
+        "h": 49
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32068",
+      "code": "C2068",
+      "http": 200,
+      "catalog": {
+        "outer": 198,
+        "height": 49
+      },
+      "live": {
+        "dims": [
+          198,
+          150
+        ],
+        "h": 49
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32074",
+      "code": "C2074",
+      "http": 200,
+      "catalog": {
+        "outer": 193,
+        "height": 49
+      },
+      "live": {
+        "dims": [
+          193,
+          158
+        ],
+        "h": 49
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32115",
+      "code": "C22115",
+      "http": 200,
+      "catalog": {
+        "outer": 217,
+        "height": 88
+      },
+      "live": {
+        "dims": [
+          217,
+          153
+        ],
+        "h": 88
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32130",
+      "code": "C32130",
+      "http": 200,
+      "catalog": {
+        "outer": 322.58,
+        "height": 66.04
+      },
+      "live": {
+        "dims": [
+          322,
+          128
+        ],
+        "h": 67
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32150",
+      "code": "C2150",
+      "http": 200,
+      "catalog": {
+        "outer": 206,
+        "height": 38
+      },
+      "live": {
+        "dims": [
+          206,
+          164
+        ],
+        "h": 38
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32181",
+      "code": "C2181",
+      "http": 200,
+      "catalog": {
+        "outer": 201,
+        "height": 101
+      },
+      "live": {
+        "dims": [
+          201,
+          110
+        ],
+        "h": 101
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32233",
+      "code": "C2233",
+      "http": 200,
+      "catalog": {
+        "outer": 206,
+        "height": 58
+      },
+      "live": {
+        "dims": [
+          206,
+          155,
+          156
+        ],
+        "h": 58
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32281",
+      "code": "C2281",
+      "http": 200,
+      "catalog": {
+        "outer": 215,
+        "height": 110
+      },
+      "live": {
+        "dims": [
+          215,
+          160
+        ],
+        "h": 110
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32287",
+      "code": "C2287",
+      "http": 200,
+      "catalog": {
+        "outer": 172.72,
+        "height": 50.8
+      },
+      "live": {
+        "dims": [
+          219,
+          174
+        ],
+        "h": 50
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32353",
+      "code": "C2353",
+      "http": 200,
+      "catalog": {
+        "outer": 275,
+        "height": 62
+      },
+      "live": {
+        "dims": [
+          275,
+          227
+        ],
+        "h": 62
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32354",
+      "code": "C2354",
+      "http": 200,
+      "catalog": {
+        "outer": 230,
+        "height": 67
+      },
+      "live": {
+        "dims": [
+          230,
+          174
+        ],
+        "h": 67
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32360",
+      "code": "C2360",
+      "http": 200,
+      "catalog": {
+        "outer": 231.14,
+        "height": 101.6
+      },
+      "live": {
+        "dims": [
+          230,
+          190
+        ],
+        "h": 102
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32428",
+      "code": "C2428",
+      "http": 200,
+      "catalog": {
+        "outer": 244,
+        "height": 36
+      },
+      "live": {
+        "dims": [
+          244,
+          14.5
+        ],
+        "h": 36
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32445",
+      "code": "C2445",
+      "http": 200,
+      "catalog": {
+        "outer": 235,
+        "height": 67
+      },
+      "live": {
+        "dims": [
+          235,
+          175
+        ],
+        "h": 67
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32460",
+      "code": "C2460",
+      "http": 200,
+      "catalog": {
+        "outer": 228,
+        "height": 71
+      },
+      "live": {
+        "dims": [
+          228,
+          161
+        ],
+        "h": 71
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32498",
+      "code": "C2498",
+      "http": 200,
+      "catalog": {
+        "outer": 235,
+        "height": 50
+      },
+      "live": {
+        "dims": [
+          235,
+          190
+        ],
+        "h": 50
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32524",
+      "code": "C2524",
+      "http": 200,
+      "catalog": {
+        "outer": 249,
+        "height": 51
+      },
+      "live": {
+        "dims": [
+          249,
+          119
+        ],
+        "h": 51
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32596",
+      "code": "C2596",
+      "http": 200,
+      "catalog": {
+        "outer": 246.38,
+        "height": 111.76
+      },
+      "live": {
+        "dims": [
+          247,
+          175
+        ],
+        "h": 112
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32619",
+      "code": "C2619",
+      "http": 200,
+      "catalog": {
+        "outer": 256,
+        "height": 41
+      },
+      "live": {
+        "dims": [
+          256,
+          21
+        ],
+        "h": 41
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32651",
+      "code": "C2651",
+      "http": 200,
+      "catalog": {
+        "outer": 260,
+        "height": 82
+      },
+      "live": {
+        "dims": [
+          260,
+          234,
+          222
+        ],
+        "h": 82
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32656",
+      "code": "C2656",
+      "http": 200,
+      "catalog": {
+        "outer": 256,
+        "height": 40
+      },
+      "live": {
+        "dims": [
+          256,
+          158
+        ],
+        "h": 40
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32754",
+      "code": "C612754",
+      "http": 200,
+      "catalog": {
+        "outer": 609.6,
+        "height": 495.3
+      },
+      "live": {
+        "dims": [
+          610,
+          486
+        ],
+        "h": 495
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32760",
+      "code": "C2760",
+      "http": 200,
+      "catalog": {
+        "outer": 265,
+        "height": 73
+      },
+      "live": {
+        "dims": [
+          265,
+          208
+        ],
+        "h": 73
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32821",
+      "code": "C2821",
+      "http": 200,
+      "catalog": {
+        "outer": 173,
+        "height": 44
+      },
+      "live": {
+        "dims": [
+          173,
+          140,
+          246,
+          275
+        ],
+        "h": 44
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32826",
+      "code": "C2826",
+      "http": 200,
+      "catalog": {
+        "outer": 278,
+        "height": 27
+      },
+      "live": {
+        "dims": [
+          278,
+          121
+        ],
+        "h": 27
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32943",
+      "code": "C2943",
+      "http": 200,
+      "catalog": {
+        "outer": 284,
+        "height": 46
+      },
+      "live": {
+        "dims": [
+          284,
+          231
+        ],
+        "h": 46
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA32957",
+      "code": "C2957",
+      "http": 200,
+      "catalog": {
+        "outer": 287,
+        "height": 62
+      },
+      "live": {
+        "dims": [
+          287,
+          230
+        ],
+        "h": 62
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA33017",
+      "code": "C33017",
+      "http": 200,
+      "catalog": {
+        "outer": 323,
+        "height": 58
+      },
+      "live": {
+        "dims": [
+          323,
+          240
+        ],
+        "h": 58
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA33044",
+      "code": "C3044",
+      "http": 200,
+      "catalog": {
+        "outer": 298,
+        "height": 44
+      },
+      "live": {
+        "dims": [
+          298,
+          238
+        ],
+        "h": 44
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA33050",
+      "code": "C33050",
+      "http": 200,
+      "catalog": {
+        "outer": 322.58,
+        "height": 50.8
+      },
+      "live": {
+        "dims": [
+          322,
+          226
+        ],
+        "h": 50
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA33131",
+      "code": "C13131",
+      "http": 200,
+      "catalog": {
+        "outer": 127,
+        "height": 236.22
+      },
+      "live": {
+        "dims": [
+          127,
+          64,
+          9
+        ],
+        "h": 235
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA33194",
+      "code": "C33194",
+      "http": 200,
+      "catalog": {
+        "outer": 327.66,
+        "height": 68.58
+      },
+      "live": {
+        "dims": [
+          327,
+          215,
+          151,
+          261
+        ],
+        "h": 68
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA33256",
+      "code": "C33256",
+      "http": 200,
+      "catalog": {
+        "outer": 329,
+        "height": 69
+      },
+      "live": {
+        "dims": [
+          329,
+          265
+        ],
+        "h": 69
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA33365",
+      "code": "C3365",
+      "http": 200,
+      "catalog": {
+        "outer": 330,
+        "height": 60
+      },
+      "live": {
+        "dims": [
+          330,
+          253
+        ],
+        "h": 60
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    },
+    {
+      "sku": "EA33534",
+      "code": "C3534",
+      "http": 200,
+      "catalog": {
+        "outer": 346,
+        "height": 51
+      },
+      "live": {
+        "dims": [
+          346,
+          280
+        ],
+        "h": 51
+      },
+      "outer_ok": true,
+      "height_ok": true,
+      "ok": true
+    }
+  ],
+  "generated_at": "2026-09-27T02:49:10.051Z"
+}

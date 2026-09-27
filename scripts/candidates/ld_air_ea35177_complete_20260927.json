@@ -1,0 +1,23 @@
+{
+  "sku": "EA35177",
+  "codigo_base": "C35177",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C35177",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 226.06,
+    "b_mm": 225,
+    "h_mm": 56,
+    "scope": "VOLVO (USA)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c35177_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

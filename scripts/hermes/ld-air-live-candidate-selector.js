@@ -48,22 +48,30 @@ function prepareOfficialLocal(candidate,patchMap){
  const sourceCode=norm(exact.mann_source),family_ok=sourceCode.startsWith('C')&&!sourceCode.startsWith('CU');
  const sourceSlug=String(exact.mann_source||'').toLowerCase().replace(/\s+/g,'').replace(/[^a-z0-9/]/g,'');
  const source_url='https://www.mann-filter.com/en/catalog/search-results/product.html/'+sourceSlug+'_mann-filter.html';
- const official={status:'MANN_PATCH_EXACT',mann_source:exact.mann_source,a_mm:exact.outer_diameter_mm,h_mm:exact.height_mm,geometry_complete,geometry_ok,shared_conflict,family_ok,source_url,http:0,url_ok:false};
+ const official={status:'MANN_PATCH_EXACT',mann_source:exact.mann_source,installation_type:exact.installation_type||null,patch_outer_mm:exact.outer_diameter_mm,patch_secondary_mm:exact.gasket_od_mm,a_mm:exact.outer_diameter_mm,h_mm:exact.height_mm,geometry_complete,geometry_ok,shared_conflict,family_ok,source_url,http:0,url_ok:false};
  return {...candidate,official};
 }
 function numText(v){if(v==null)return null;const n=Number(String(v).replace(',','.'));return Number.isFinite(n)?n:null}
 function parseLiveMannDimensions(html){
  const grab=(...patterns)=>{for(const p of patterns){const m=html.match(p);if(m)return numText(m[1])}return null};
+ const dimension_values_mm=[];
+ const dimension_labels=[];
+ const re=/(Length(?:\s+1)?|Width(?:\s+1)?|Inner diameter(?:\s+[12])?|Outer diameter|Diameter)\s*\(([A-D])\)\s*=\s*([0-9.,]+)\s*mm/gi;
+ for(const m of html.matchAll(re)){
+  const v=numText(m[3]);if(v==null)continue;
+  if(!dimension_values_mm.some(x=>close(x,v,0.01)))dimension_values_mm.push(v);
+  dimension_labels.push({label:`${m[1]} (${m[2]})`,value_mm:v});
+ }
  return {
   a_mm:grab(/Length \(A\)\s*=\s*([0-9.,]+)\s*mm/i,/Outer diameter \(A\)\s*=\s*([0-9.,]+)\s*mm/i,/Outer diameter \(D\)\s*=\s*([0-9.,]+)\s*mm/i,/Diameter \(A\)\s*=\s*([0-9.,]+)\s*mm/i),
   b_mm:grab(/Width \(B\)\s*=\s*([0-9.,]+)\s*mm/i,/Inner diameter \(B\)\s*=\s*([0-9.,]+)\s*mm/i,/Inner diameter \(C\)\s*=\s*([0-9.,]+)\s*mm/i),
-  h_mm:grab(/Height \(H\)\s*=\s*([0-9.,]+)\s*mm/i)
+  h_mm:grab(/Height \(H\)\s*=\s*([0-9.,]+)\s*mm/i),dimension_values_mm,dimension_labels
  };
 }
 async function enrichOfficial(candidate){
  let http=0,url_ok=false,live={a_mm:null,b_mm:null,h_mm:null};
  const base=candidate.official||{};
- if(base.family_ok===true&&base.shared_conflict!==true&&base.source_url){
+ if(base.family_ok===true&&base.source_url){
   try{
    const res=await fetch(base.source_url,{redirect:'follow',signal:AbortSignal.timeout(5000)});
    http=res.status;url_ok=res.ok;
@@ -71,19 +79,35 @@ async function enrichOfficial(candidate){
   }catch(_){}
  }
  const catalog=candidate.specs||{};
- const a_mm=hasNum(base.a_mm)?Number(base.a_mm):live.a_mm;
- const h_mm=hasNum(base.h_mm)?Number(base.h_mm):live.h_mm;
- const odConflict=hasNum(catalog.outer_diameter_mm)&&hasNum(a_mm)&&!close(catalog.outer_diameter_mm,a_mm);
+ const liveA=hasNum(live.a_mm)?Number(live.a_mm):null,liveB=hasNum(live.b_mm)?Number(live.b_mm):null;
+ const liveDims=(live.dimension_values_mm||[]).filter(hasNum).map(Number);
+ if(!liveDims.length){for(const v of [liveA,liveB])if(hasNum(v)&&!liveDims.some(x=>close(x,v,0.01)))liveDims.push(Number(v))}
+ const baseA=hasNum(base.patch_outer_mm)?Number(base.patch_outer_mm):(hasNum(base.a_mm)?Number(base.a_mm):null);
+ const baseB=hasNum(base.patch_secondary_mm)?Number(base.patch_secondary_mm):null;
+ const h_mm=hasNum(live.h_mm)?Number(live.h_mm):(hasNum(base.h_mm)?Number(base.h_mm):null);
+ const catalogOuter=hasNum(catalog.outer_diameter_mm)?Number(catalog.outer_diameter_mm):null;
+ const catalogOuterMatchesLive=catalogOuter!=null&&liveDims.some(v=>close(catalogOuter,v));
+ const patchOuterMatchesLive=baseA!=null&&liveDims.some(v=>close(baseA,v));
+ const patchSecondaryMatchesLive=baseB!=null&&liveDims.some(v=>close(baseB,v));
+ let schemaOuter=null;
+ if(catalogOuter!=null&&catalogOuterMatchesLive)schemaOuter=catalogOuter;
+ else if(catalogOuter==null&&patchOuterMatchesLive)schemaOuter=baseA;
+ else if(catalogOuter==null&&patchSecondaryMatchesLive)schemaOuter=baseB;
+ else if(catalogOuter==null&&liveA!=null)schemaOuter=liveA;
+ else if(catalogOuter==null&&liveDims.length)schemaOuter=liveDims[0];
+ else if(!url_ok&&baseA!=null)schemaOuter=baseA;
+ const odConflict=url_ok&&liveDims.length>0&&catalogOuter!=null&&!catalogOuterMatchesLive;
  const hConflict=hasNum(catalog.height_mm)&&hasNum(h_mm)&&!close(catalog.height_mm,h_mm);
- const shared_conflict=base.shared_conflict===true||odConflict||hConflict;
+ const shared_conflict=(url_ok?(odConflict||hConflict):base.shared_conflict===true||hConflict);
  const geometry_patch={};
- if(!shared_conflict&&!hasNum(catalog.outer_diameter_mm)&&hasNum(a_mm))geometry_patch.outer_diameter_mm=a_mm;
+ if(!shared_conflict&&catalogOuter==null&&hasNum(schemaOuter))geometry_patch.outer_diameter_mm=schemaOuter;
  if(!shared_conflict&&!hasNum(catalog.height_mm)&&hasNum(h_mm))geometry_patch.height_mm=h_mm;
- const finalA=hasNum(catalog.outer_diameter_mm)?Number(catalog.outer_diameter_mm):geometry_patch.outer_diameter_mm;
+ const finalOuter=catalogOuter!=null?catalogOuter:geometry_patch.outer_diameter_mm;
  const finalH=hasNum(catalog.height_mm)?Number(catalog.height_mm):geometry_patch.height_mm;
- const geometry_complete=hasNum(finalA)&&hasNum(finalH)&&hasNum(a_mm)&&hasNum(h_mm);
- const geometry_ok=geometry_complete&&!shared_conflict&&close(finalA,a_mm)&&close(finalH,h_mm);
- const official={...base,a_mm,h_mm,b_mm:live.b_mm,live_dimensions:live,geometry_complete,geometry_ok,shared_conflict,http,url_ok};
+ const outerOk=liveDims.length?hasNum(finalOuter)&&liveDims.some(v=>close(finalOuter,v)):close(finalOuter,schemaOuter);
+ const geometry_complete=hasNum(finalOuter)&&hasNum(finalH)&&outerOk&&hasNum(h_mm);
+ const geometry_ok=geometry_complete&&!shared_conflict&&outerOk&&close(finalH,h_mm);
+ const official={...base,a_mm:schemaOuter,b_mm:liveB,h_mm,live_dimensions:live,schema_dimension_candidates_mm:liveDims,geometry_complete,geometry_ok,shared_conflict,http,url_ok};
  const out={...candidate,official,geometry_patch:Object.keys(geometry_patch).length?geometry_patch:null};
  return {...out,lane:laneFor(out)};
 }

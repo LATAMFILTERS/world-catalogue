@@ -1,0 +1,317 @@
+{
+  "batch": "LD_AIR_B31",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 50,
+    "BLOCKED_WITH_REASON": 0,
+    "REVERIFY": 0
+  },
+  "catalog_writes": [
+    "EA33576",
+    "EA33873",
+    "EA34028",
+    "EA34106",
+    "EA34177",
+    "EA34476",
+    "EA35130",
+    "EA35177",
+    "EA35215",
+    "EA35740",
+    "EA36145",
+    "EA36182",
+    "EA37108",
+    "EA37148",
+    "EA37157",
+    "EA37187",
+    "EA38143",
+    "EA38155",
+    "EA38193",
+    "EA39012",
+    "EA39226",
+    "EA32049",
+    "EA32483",
+    "EA32678",
+    "EA32994",
+    "EA33060",
+    "EA33327",
+    "EA33471",
+    "EA30131",
+    "EA31146",
+    "EA31396",
+    "EA31417",
+    "EA31699",
+    "EA31882",
+    "EA31932",
+    "EA32223",
+    "EA32267",
+    "EA32332",
+    "EA32436",
+    "EA32438",
+    "EA32477",
+    "EA32564",
+    "EA32626",
+    "EA32637",
+    "EA32650",
+    "EA32766",
+    "EA32942",
+    "EA32950",
+    "EA32975",
+    "EA33136"
+  ],
+  "candidates": [
+    {
+      "sku": "EA33576",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C3576"
+    },
+    {
+      "sku": "EA33873",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C3873"
+    },
+    {
+      "sku": "EA34028",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C24028"
+    },
+    {
+      "sku": "EA34106",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C24106"
+    },
+    {
+      "sku": "EA34177",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C14177"
+    },
+    {
+      "sku": "EA34476",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C4476"
+    },
+    {
+      "sku": "EA35130",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C15130"
+    },
+    {
+      "sku": "EA35177",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C35177"
+    },
+    {
+      "sku": "EA35215",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C35215"
+    },
+    {
+      "sku": "EA35740",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C25740"
+    },
+    {
+      "sku": "EA36145",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C36145"
+    },
+    {
+      "sku": "EA36182",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C16182"
+    },
+    {
+      "sku": "EA37108",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C27108"
+    },
+    {
+      "sku": "EA37148",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C37148"
+    },
+    {
+      "sku": "EA37157",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C37157"
+    },
+    {
+      "sku": "EA37187",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C27187"
+    },
+    {
+      "sku": "EA38143",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C18143"
+    },
+    {
+      "sku": "EA38155",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C28155"
+    },
+    {
+      "sku": "EA38193",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C18193"
+    },
+    {
+      "sku": "EA39012",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C29012"
+    },
+    {
+      "sku": "EA39226",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C69226"
+    },
+    {
+      "sku": "EA32049",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2049"
+    },
+    {
+      "sku": "EA32483",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2483"
+    },
+    {
+      "sku": "EA32678",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2678"
+    },
+    {
+      "sku": "EA32994",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2994"
+    },
+    {
+      "sku": "EA33060",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C3060"
+    },
+    {
+      "sku": "EA33327",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C3327"
+    },
+    {
+      "sku": "EA33471",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C3471"
+    },
+    {
+      "sku": "EA30131",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C20131"
+    },
+    {
+      "sku": "EA31146",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C21146"
+    },
+    {
+      "sku": "EA31396",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C1396"
+    },
+    {
+      "sku": "EA31417",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C1417"
+    },
+    {
+      "sku": "EA31699",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C1699"
+    },
+    {
+      "sku": "EA31882",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C1882"
+    },
+    {
+      "sku": "EA31932",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C1932"
+    },
+    {
+      "sku": "EA32223",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2223"
+    },
+    {
+      "sku": "EA32267",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C22267"
+    },
+    {
+      "sku": "EA32332",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2332"
+    },
+    {
+      "sku": "EA32436",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2436"
+    },
+    {
+      "sku": "EA32438",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2438"
+    },
+    {
+      "sku": "EA32477",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2477"
+    },
+    {
+      "sku": "EA32564",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2564"
+    },
+    {
+      "sku": "EA32626",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2626"
+    },
+    {
+      "sku": "EA32637",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2637"
+    },
+    {
+      "sku": "EA32650",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2650"
+    },
+    {
+      "sku": "EA32766",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2766"
+    },
+    {
+      "sku": "EA32942",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2942"
+    },
+    {
+      "sku": "EA32950",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2950"
+    },
+    {
+      "sku": "EA32975",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2975"
+    },
+    {
+      "sku": "EA33136",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C3136"
+    }
+  ],
+  "reverify": [],
+  "closed_at": "2026-09-27"
+}

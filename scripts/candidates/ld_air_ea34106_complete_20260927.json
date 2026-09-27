@@ -1,0 +1,23 @@
+{
+  "sku": "EA34106",
+  "codigo_base": "C24106",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C24106",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 236.22,
+    "b_mm": 201,
+    "h_mm": 46,
+    "scope": "MERCEDES-BENZ (USA)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c24106_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

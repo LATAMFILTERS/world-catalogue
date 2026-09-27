@@ -1,0 +1,23 @@
+{
+  "sku": "EA39226",
+  "codigo_base": "C69226",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C69226",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 685.8,
+    "b_mm": 123,
+    "h_mm": 58,
+    "scope": "PORSCHE (USA)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c69226_mann-filter.html",
+  "closed_at": "2026-09-27"
+}
