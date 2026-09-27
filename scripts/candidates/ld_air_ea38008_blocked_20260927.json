@@ -1,0 +1,9 @@
+{
+  "sku": "EA38008",
+  "codigo_base": "C18008",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_APPLICATION_CONFLICT_BMW_MOTORCYCLE_VS_MIXED_VALTRA",
+  "closed_at": "2026-09-27"
+}

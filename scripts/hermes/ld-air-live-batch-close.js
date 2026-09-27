@@ -17,6 +17,8 @@ const searchPath=path.join(ROOT,'candidates',`ld_air_${slug}_part_search_validat
 const terminalPath=path.join(ROOT,'candidates',`ld_air_${slug}_terminal_${DATE}.json`);
 const hasNum=v=>v!==null&&v!==undefined&&String(v).trim()!==''&&Number.isFinite(Number(v));
 const close=(a,b,t=1.5)=>hasNum(a)&&hasNum(b)&&Math.abs(Number(a)-Number(b))<=t;
+const norm=v=>String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+const isMann=v=>['MANN','MANNFILTER','MANNHUMMEL'].includes(norm(v));
 
 function buildManifest(){
  const current=JSON.parse(fs.readFileSync(CURRENT,'utf8'));
@@ -28,9 +30,10 @@ function buildManifest(){
    throw new Error('INVALID_AUTO_CLOSE:'+x.sku);
   const authorityBrand=x.authority_brand||x.identity?.canonical_brand||x.identity_patch?.canonical_brand||x.governance?.approved_manufacturer||'MANN-FILTER';
   const originGroup=x.origin_group||x.identity?.origin_group||x.identity_patch?.origin_group||x.governance?.origin_group||'EUROPEAN';
-  return {sku:x.sku,code:x.identity?.canonical_part_number||x.identity_patch?.canonical_part_number||x.codigo_base,
+  return {sku:x.sku,code:x.canonical_promotion?.approved_codigo_base||x.identity?.canonical_part_number||x.identity_patch?.canonical_part_number||x.codigo_base,
    authority_brand:authorityBrand,origin_group:originGroup,
    source_url:x.official.source_url,geometry_patch:x.geometry_patch||null,identity_patch:x.identity_patch||null,
+   canonical_promotion:x.canonical_promotion||null,
    official:{a_mm:x.official.a_mm,b_mm:x.official.b_mm||null,h_mm:x.official.h_mm,scope:(x.makes||[]).join(' / ')}};
  });
  const manifest={batch:'LD_AIR_'+BATCH+'_LIVE',
@@ -52,6 +55,65 @@ async function syncCatalog(manifest){
     let identity=(await db.query('select * from ld_catalog.ld_canonical_product_identity where elimfilters_sku=$1',[item.sku])).rows[0];
     let identityCreated=false;
     if(!row) throw new Error('ROW_MISSING');
+    if(item.canonical_promotion){
+     const promo=item.canonical_promotion;
+     if(row.duty!=='LIGHT_DUTY'||row.filter_type!=='air'||row.catalog_active!==true) throw new Error('SCOPE_MISMATCH');
+     if(item.origin_group!=='EUROPEAN'||item.authority_brand!=='MANN-FILTER') throw new Error('PROMOTION_AUTHORITY_MISMATCH');
+     if(norm(promo.approved_codigo_base)!==norm(item.code)) throw new Error('PROMOTION_CODE_MISMATCH');
+     if(!close(row.outer_diameter_mm,item.official.a_mm)||!close(row.height_mm,item.official.h_mm)) throw new Error('OFFICIAL_GEOMETRY_MISMATCH');
+     const baseConflicts=await db.query("select sku from public.elimfilters_catalog where regexp_replace(upper(codigo_base),'[^A-Z0-9]','','g')=regexp_replace(upper($1),'[^A-Z0-9]','','g') and sku<>$2",[item.code,item.sku]);
+     if(baseConflicts.rowCount) throw new Error('PROMOTION_BASE_COLLISION');
+     const idConflicts=await db.query("select elimfilters_sku from ld_catalog.ld_canonical_product_identity where status='ACTIVE' and regexp_replace(upper(canonical_part_number),'[^A-Z0-9]','','g')=regexp_replace(upper($1),'[^A-Z0-9]','','g') and elimfilters_sku<>$2",[item.code,item.sku]);
+     if(idConflicts.rowCount) throw new Error('PROMOTION_IDENTITY_COLLISION');
+     if(identity&&!(identity.status==='ACTIVE'&&identity.origin_group===item.origin_group&&identity.canonical_brand===item.authority_brand&&norm(identity.canonical_part_number)===norm(item.code))) throw new Error('PROMOTION_TARGET_IDENTITY_CONFLICT');
+     const beforeCompetitors=Array.isArray(row.competitor_codes)?row.competitor_codes:[];
+     const nextCompetitors=beforeCompetitors.filter(ref=>!(isMann(ref?.manufacturer||ref?.brand)&&norm(ref?.code||ref?.reference)===norm(item.code)));
+     if(nextCompetitors.length===beforeCompetitors.length) throw new Error('PROMOTION_MANN_REFERENCE_NOT_PRESENT');
+     const oldGov=row.enrichment_data?.codigo_base_governance||{};
+     const nextGov={...oldGov,
+      origin_group:'EUROPEAN',approved_manufacturer:'MANN-FILTER',approved_codigo_base:item.code,
+      approved_source_column:'CANONICAL_POLICY',primary_manufacturer_verified:true,
+      governance_state:'CANONICAL_VERIFIED',state:'CANONICAL_VERIFIED',current_codigo_base:item.code,
+      required_authority:'MANN_FILTER_REGIONAL_CANONICAL',policy_version:promo.policy_version||'2026-09-27-ld-air-promotion-v1',
+      evidence_note:promo.evidence_note||'Official MANN product page, geometry and applications verified before canonical promotion.',
+      evidence_url:item.source_url,verified_at:new Date().toISOString()
+     };
+     const nextEnrichment={...(row.enrichment_data||{}),codigo_base_governance:nextGov};
+     const patch={codigo_base:item.code,competitor_codes:nextCompetitors,enrichment_data:nextEnrichment,
+      canonical_source_brand:item.authority_brand,canonical_source_code:item.code,canonical_source_url:item.source_url,canonical_source_status:'VERIFIED'};
+     const gateway=assertGovernedCatalogPatch(row,patch,{skipApplicationValidation:true});
+     if(!gateway.valid) throw new Error('GATEWAY_BLOCKED:'+gateway.reasons.join(','));
+     const previous={codigo_base:row.codigo_base,competitor_codes:beforeCompetitors,enrichment_data:row.enrichment_data,
+      canonical_source_brand:row.canonical_source_brand,canonical_source_code:row.canonical_source_code,
+      canonical_source_url:row.canonical_source_url,canonical_source_status:row.canonical_source_status,
+      canonical_verified_at:row.canonical_verified_at,canonical_evidence:row.canonical_evidence,
+      outer_diameter_mm:row.outer_diameter_mm,height_mm:row.height_mm};
+     let identityCreated=false;
+     if(APPLY){
+      if(!identity){
+       const evidenceSource=promo.identity_evidence_source||'LD_AIR_MANN_CANONICAL_PROMOTION';
+       const ins=await db.query(`insert into ld_catalog.ld_canonical_product_identity
+        (elimfilters_sku,origin_group,canonical_brand,canonical_part_number,filter_type,status,evidence_source,created_at,updated_at)
+        values ($1,'EUROPEAN','MANN-FILTER',$2,'air','ACTIVE',$3,now(),now())
+        on conflict (elimfilters_sku) do nothing`,[item.sku,item.code,evidenceSource]);
+       identityCreated=ins.rowCount===1;
+      }
+      await db.query(`update public.elimfilters_catalog
+       set codigo_base=$1,competitor_codes=$2::jsonb,enrichment_data=$3::jsonb,
+           canonical_source_brand='MANN-FILTER',canonical_source_code=$4,canonical_source_url=$5,
+           canonical_source_status='VERIFIED',canonical_verified_at=now(),canonical_evidence=$6::jsonb
+       where sku=$7`,[item.code,JSON.stringify(nextCompetitors),JSON.stringify(nextEnrichment),item.code,item.source_url,
+        JSON.stringify({authority:'MANN-FILTER',code:item.code,source_url:item.source_url,official:item.official,
+          selection_model:manifest.selection_model,promotion:true,previous_codigo_base:row.codigo_base}),item.sku]);
+      const audit=(await db.query("select sku,codigo_base,canonical_source_brand,canonical_source_code,canonical_source_status from public.elimfilters_catalog where sku=$1",[item.sku])).rows[0];
+      if(!audit||norm(audit.codigo_base)!==norm(item.code)||audit.canonical_source_brand!=='MANN-FILTER'||norm(audit.canonical_source_code)!==norm(item.code)||audit.canonical_source_status!=='VERIFIED') throw new Error('PROMOTION_POST_WRITE_AUDIT_FAILED');
+      const resolver=await db.query("select count(distinct sku)::int n,min(sku) only_sku from public.v_api_resolver_v6 where code=regexp_replace(upper($1),'[^A-Z0-9]','','g') and status='RESOLVED_CANONICAL'",[item.code]);
+      if(resolver.rows[0].n!==1||resolver.rows[0].only_sku!==item.sku) throw new Error('PROMOTION_RESOLVER_NOT_UNIQUE');
+      await db.query('COMMIT');
+     }else await db.query('ROLLBACK');
+     report.complete.push({sku:item.sku,code:item.code,authority_brand:item.authority_brand,origin_group:item.origin_group,gateway,previous,identity_created:identityCreated,canonical_promotion:true});
+     continue;
+    }
     if(!identity&&item.identity_patch){
      const conflicts=await db.query("select elimfilters_sku from ld_catalog.ld_canonical_product_identity where status='ACTIVE' and regexp_replace(upper(canonical_part_number),'[^A-Z0-9]','','g')=regexp_replace(upper($1),'[^A-Z0-9]','','g') and elimfilters_sku<>$2",[item.code,item.sku]);
      if(conflicts.rowCount) throw new Error('IDENTITY_CODE_COLLISION');
@@ -136,7 +198,8 @@ async function restorePartSearchFailures(syncReport,failed){
  try{
   for(const x of syncReport.complete.filter(x=>failedSet.has(x.sku))){
    const p=x.previous||{};
-   await db.query(`update public.elimfilters_catalog set canonical_source_brand=$1,canonical_source_code=$2,canonical_source_url=$3,canonical_source_status=$4,canonical_verified_at=$5,canonical_evidence=$6::jsonb,outer_diameter_mm=$7,height_mm=$8 where sku=$9`,[
+   await db.query(`update public.elimfilters_catalog set codigo_base=coalesce($1,codigo_base),competitor_codes=coalesce($2::jsonb,competitor_codes),enrichment_data=coalesce($3::jsonb,enrichment_data),canonical_source_brand=$4,canonical_source_code=$5,canonical_source_url=$6,canonical_source_status=$7,canonical_verified_at=$8,canonical_evidence=$9::jsonb,outer_diameter_mm=$10,height_mm=$11 where sku=$12`,[
+    p.codigo_base??null,p.competitor_codes?JSON.stringify(p.competitor_codes):null,p.enrichment_data?JSON.stringify(p.enrichment_data):null,
     p.canonical_source_brand||null,p.canonical_source_code||null,p.canonical_source_url||null,p.canonical_source_status||null,p.canonical_verified_at||null,p.canonical_evidence?JSON.stringify(p.canonical_evidence):null,p.outer_diameter_mm??null,p.height_mm??null,x.sku]);
    if(x.identity_created) await db.query("delete from ld_catalog.ld_canonical_product_identity where elimfilters_sku=$1 and canonical_brand=$2 and canonical_part_number=$3",[x.sku,x.authority_brand,x.code]);
   }

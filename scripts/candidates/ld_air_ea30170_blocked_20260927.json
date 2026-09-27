@@ -1,0 +1,9 @@
+{
+  "sku": "EA30170",
+  "codigo_base": "C30170",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CANONICAL_RESOLVER_COLLISION_EA39646",
+  "closed_at": "2026-09-27"
+}

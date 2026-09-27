@@ -1,0 +1,23 @@
+{
+  "sku": "EA30135",
+  "codigo_base": "C30135",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C30135",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LD_AIR_MANN_CANONICAL_PROMOTION_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 299,
+    "b_mm": 234,
+    "h_mm": 60,
+    "scope": "BMW (USA)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c30135_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

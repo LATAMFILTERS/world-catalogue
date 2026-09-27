@@ -1,0 +1,49 @@
+{
+  "batch": "LD_AIR_B52_LIVE",
+  "selection_model": "LD_AIR_MANN_CANONICAL_PROMOTION_V1",
+  "candidates": [
+    {
+      "sku": "EA30135",
+      "code": "C30135",
+      "authority_brand": "MANN-FILTER",
+      "origin_group": "EUROPEAN",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c30135_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": null,
+      "canonical_promotion": {
+        "approved_codigo_base": "C30135",
+        "policy_version": "2026-09-27-ld-air-promotion-v1",
+        "identity_evidence_source": "LD_AIR_MANN_OFFICIAL_CANONICAL_PROMOTION",
+        "evidence_note": "Official MANN C 30 135 Air Filter page matches BMW applications and catalog geometry; unique MANN candidate and no canonical/base collision."
+      },
+      "official": {
+        "a_mm": 299,
+        "b_mm": 234,
+        "h_mm": 60,
+        "scope": "BMW (USA)"
+      }
+    }
+  ],
+  "preblocked": [
+    {
+      "sku": "EA30170",
+      "code": "C30170",
+      "reason": "CANONICAL_RESOLVER_COLLISION_EA39646"
+    },
+    {
+      "sku": "EA38008",
+      "code": "C18008",
+      "reason": "OFFICIAL_APPLICATION_CONFLICT_BMW_MOTORCYCLE_VS_MIXED_VALTRA"
+    },
+    {
+      "sku": "EA31144",
+      "code": "C31144",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA36302",
+      "code": "C16302",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    }
+  ]
+}

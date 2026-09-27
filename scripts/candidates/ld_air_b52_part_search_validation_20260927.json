@@ -1,0 +1,19 @@
+{
+  "batch": "LD_AIR_B52",
+  "total": 1,
+  "passed": 1,
+  "retryable": 0,
+  "failed": [],
+  "results": [
+    {
+      "sku": "EA30135",
+      "code": "C30135",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA30135"
+      ]
+    }
+  ]
+}
