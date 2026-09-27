@@ -1,0 +1,25 @@
+{
+  "sku": "EA31820",
+  "codigo_base": "C1820",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C1820",
+    "installation_type": "Panel",
+    "patch_outer_mm": 174,
+    "patch_secondary_mm": 128,
+    "a_mm": 174,
+    "h_mm": 58,
+    "geometry_complete": true,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1820_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

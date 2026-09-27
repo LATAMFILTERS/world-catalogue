@@ -1,0 +1,25 @@
+{
+  "sku": "EA31122",
+  "codigo_base": "C11122",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C1112/2",
+    "installation_type": "Panel",
+    "patch_outer_mm": 98,
+    "patch_secondary_mm": 60,
+    "a_mm": 98,
+    "h_mm": 74,
+    "geometry_complete": true,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1112/2_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

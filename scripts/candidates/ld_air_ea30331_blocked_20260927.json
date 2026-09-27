@@ -1,0 +1,25 @@
+{
+  "sku": "EA30331",
+  "codigo_base": "C220331",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C22033/1",
+    "installation_type": "Panel",
+    "patch_outer_mm": 214,
+    "patch_secondary_mm": 136,
+    "a_mm": 214,
+    "h_mm": 53,
+    "geometry_complete": true,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c22033/1_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

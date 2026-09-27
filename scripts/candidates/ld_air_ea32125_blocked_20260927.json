@@ -1,0 +1,25 @@
+{
+  "sku": "EA32125",
+  "codigo_base": "C32125",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C32125",
+    "installation_type": "Panel",
+    "patch_outer_mm": 299.72,
+    "patch_secondary_mm": 320.04,
+    "a_mm": 299.72,
+    "h_mm": 35.56,
+    "geometry_complete": true,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c32125_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}
