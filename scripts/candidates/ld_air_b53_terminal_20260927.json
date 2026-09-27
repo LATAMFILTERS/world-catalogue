@@ -1,0 +1,25 @@
+{
+  "batch": "LD_AIR_B53",
+  "selection_model": "LD_AIR_MANN_CANONICAL_PROMOTION_V1",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 1,
+    "BLOCKED_WITH_REASON": 0,
+    "REVERIFY": 0,
+    "RETRYABLE": 0
+  },
+  "catalog_writes": [
+    "EA33874"
+  ],
+  "candidates": [
+    {
+      "sku": "EA33874",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C3874"
+    }
+  ],
+  "reverify": [],
+  "retryable": [],
+  "closed_at": "2026-09-27"
+}

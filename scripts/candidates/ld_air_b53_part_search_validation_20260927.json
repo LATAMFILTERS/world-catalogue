@@ -1,0 +1,19 @@
+{
+  "batch": "LD_AIR_B53",
+  "total": 1,
+  "passed": 1,
+  "retryable": 0,
+  "failed": [],
+  "results": [
+    {
+      "sku": "EA33874",
+      "code": "C3874",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA33874"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "batch": "LD_AIR_B53_LIVE",
+  "selection_model": "LD_AIR_MANN_CANONICAL_PROMOTION_V1",
+  "candidates": [
+    {
+      "sku": "EA33874",
+      "code": "C3874",
+      "authority_brand": "MANN-FILTER",
+      "origin_group": "EUROPEAN",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3874_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": null,
+      "canonical_promotion": {
+        "approved_codigo_base": "C3874",
+        "policy_version": "2026-09-27-ld-air-promotion-v1",
+        "identity_evidence_source": "LD_AIR_MANN_OFFICIAL_CANONICAL_PROMOTION",
+        "evidence_note": "Official MANN C 38 74 Air Filter page matches FIAT Punto I / LANCIA Y applications and catalog geometry; unique MANN candidate and no canonical/base collision."
+      },
+      "official": {
+        "a_mm": 379,
+        "b_mm": 140,
+        "h_mm": 38,
+        "scope": "FIAT / LANCIA (LANCIA AUTOBIANCHI)"
+      }
+    }
+  ],
+  "preblocked": []
+}

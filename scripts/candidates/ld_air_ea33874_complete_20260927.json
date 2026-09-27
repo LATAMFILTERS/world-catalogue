@@ -1,0 +1,23 @@
+{
+  "sku": "EA33874",
+  "codigo_base": "C3874",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C3874",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LD_AIR_MANN_CANONICAL_PROMOTION_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 379,
+    "b_mm": 140,
+    "h_mm": 38,
+    "scope": "FIAT / LANCIA (LANCIA AUTOBIANCHI)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3874_mann-filter.html",
+  "closed_at": "2026-09-27"
+}
