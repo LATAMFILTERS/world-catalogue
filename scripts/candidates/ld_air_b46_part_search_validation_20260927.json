@@ -1,0 +1,119 @@
+{
+  "batch": "LD_AIR_B46",
+  "total": 11,
+  "passed": 11,
+  "retryable": 0,
+  "failed": [],
+  "results": [
+    {
+      "sku": "EA30085",
+      "code": "CA10085",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA30085"
+      ]
+    },
+    {
+      "sku": "EA30262",
+      "code": "CA10262",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA30262"
+      ]
+    },
+    {
+      "sku": "EA30755",
+      "code": "CA10755",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA30755"
+      ]
+    },
+    {
+      "sku": "EA30785",
+      "code": "CA10785",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA30785"
+      ]
+    },
+    {
+      "sku": "EA31010",
+      "code": "CA11010",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA31010"
+      ]
+    },
+    {
+      "sku": "EA31118",
+      "code": "CA11118",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA31118"
+      ]
+    },
+    {
+      "sku": "EA31227",
+      "code": "CA11227",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA31227"
+      ]
+    },
+    {
+      "sku": "EA31413",
+      "code": "CA11413",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA31413"
+      ]
+    },
+    {
+      "sku": "EA31877",
+      "code": "CA11877",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA31877"
+      ]
+    },
+    {
+      "sku": "EA35058",
+      "code": "CA5058",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA35058"
+      ]
+    },
+    {
+      "sku": "EA37094",
+      "code": "CA7094",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA37094"
+      ]
+    }
+  ]
+}

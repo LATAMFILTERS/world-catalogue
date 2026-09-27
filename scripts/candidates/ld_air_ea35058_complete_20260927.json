@@ -1,0 +1,23 @@
+{
+  "sku": "EA35058",
+  "codigo_base": "CA5058",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "FRAM",
+    "code": "CA5058",
+    "origin_group": "NON_EUROPEAN"
+  },
+  "resolution": "LD_AIR_FRAM_OFFICIAL_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 284.93719999999996,
+    "b_mm": 155.956,
+    "h_mm": 30.175199999999997,
+    "scope": "KIA / TOYOTA"
+  },
+  "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca5058",
+  "closed_at": "2026-09-27"
+}

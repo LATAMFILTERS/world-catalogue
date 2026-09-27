@@ -1,0 +1,9 @@
+{
+  "sku": "EA31941",
+  "codigo_base": "CA11941",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT",
+  "closed_at": "2026-09-27"
+}

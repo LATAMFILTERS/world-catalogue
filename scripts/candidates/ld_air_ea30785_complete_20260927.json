@@ -1,0 +1,23 @@
+{
+  "sku": "EA30785",
+  "codigo_base": "CA10785",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "FRAM",
+    "code": "CA10785",
+    "origin_group": "NON_EUROPEAN"
+  },
+  "resolution": "LD_AIR_FRAM_OFFICIAL_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 229.28579999999997,
+    "b_mm": 218.4908,
+    "h_mm": 72.2884,
+    "scope": "KIA / TOYOTA"
+  },
+  "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca10785",
+  "closed_at": "2026-09-27"
+}

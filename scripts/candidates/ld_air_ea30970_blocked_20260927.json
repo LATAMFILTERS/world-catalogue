@@ -1,0 +1,9 @@
+{
+  "sku": "EA30970",
+  "codigo_base": "CA970",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "closed_at": "2026-09-27"
+}

@@ -1,0 +1,23 @@
+{
+  "sku": "EA31877",
+  "codigo_base": "CA11877",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "FRAM",
+    "code": "CA11877",
+    "origin_group": "NON_EUROPEAN"
+  },
+  "resolution": "LD_AIR_FRAM_OFFICIAL_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 265.98879999999997,
+    "b_mm": 183.4896,
+    "h_mm": 48.4886,
+    "scope": "BECKER-KOMPRESSOREN"
+  },
+  "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca11877",
+  "closed_at": "2026-09-27"
+}

@@ -1,0 +1,23 @@
+{
+  "sku": "EA31010",
+  "codigo_base": "CA11010",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "FRAM",
+    "code": "CA11010",
+    "origin_group": "NON_EUROPEAN"
+  },
+  "resolution": "LD_AIR_FRAM_OFFICIAL_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 280.21279999999996,
+    "b_mm": 180.1368,
+    "h_mm": 56.032399999999996,
+    "scope": "KIA / TOYOTA"
+  },
+  "source_url": "https://www.fram.com/fram-extra-guard-air-filter-rigid-panel-ca11010",
+  "closed_at": "2026-09-27"
+}

@@ -1,0 +1,280 @@
+{
+  "batch": "LD_AIR_B46",
+  "selection_model": "LD_AIR_FRAM_OFFICIAL_V1",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 11,
+    "BLOCKED_WITH_REASON": 39,
+    "REVERIFY": 0,
+    "RETRYABLE": 0
+  },
+  "catalog_writes": [
+    "EA30085",
+    "EA30262",
+    "EA30755",
+    "EA30785",
+    "EA31010",
+    "EA31118",
+    "EA31227",
+    "EA31413",
+    "EA31877",
+    "EA35058",
+    "EA37094"
+  ],
+  "candidates": [
+    {
+      "sku": "EA30085",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA10085"
+    },
+    {
+      "sku": "EA30262",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA10262"
+    },
+    {
+      "sku": "EA30755",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA10755"
+    },
+    {
+      "sku": "EA30785",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA10785"
+    },
+    {
+      "sku": "EA31010",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA11010"
+    },
+    {
+      "sku": "EA31118",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA11118"
+    },
+    {
+      "sku": "EA31227",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA11227"
+    },
+    {
+      "sku": "EA31413",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA11413"
+    },
+    {
+      "sku": "EA31877",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA11877"
+    },
+    {
+      "sku": "EA35058",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA5058"
+    },
+    {
+      "sku": "EA37094",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "CA7094"
+    },
+    {
+      "sku": "EA30084",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30112",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30163",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA30171",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30220",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30271",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA30321",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30361",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30510",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30522",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30581",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30600",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30701",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30762",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA30800",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30840",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30881",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA30903",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30923",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30924",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30970",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30972",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31003",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31004",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31005",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31007",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31011",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31012",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31033",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31034",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31062",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31070",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31251",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31273",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31422",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31570",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31941",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32050",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32057",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    }
+  ],
+  "reverify": [],
+  "retryable": [],
+  "closed_at": "2026-09-27"
+}

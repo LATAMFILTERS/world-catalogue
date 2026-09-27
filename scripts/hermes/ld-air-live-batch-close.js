@@ -26,12 +26,15 @@ function buildManifest(){
  const candidates=rows.map(x=>{
   if(!x.official?.family_ok||!x.official?.geometry_complete||!x.official?.geometry_ok||!x.official?.url_ok)
    throw new Error('INVALID_AUTO_CLOSE:'+x.sku);
+  const authorityBrand=x.authority_brand||x.identity?.canonical_brand||x.identity_patch?.canonical_brand||x.governance?.approved_manufacturer||'MANN-FILTER';
+  const originGroup=x.origin_group||x.identity?.origin_group||x.identity_patch?.origin_group||x.governance?.origin_group||'EUROPEAN';
   return {sku:x.sku,code:x.identity?.canonical_part_number||x.identity_patch?.canonical_part_number||x.codigo_base,
+   authority_brand:authorityBrand,origin_group:originGroup,
    source_url:x.official.source_url,geometry_patch:x.geometry_patch||null,identity_patch:x.identity_patch||null,
    official:{a_mm:x.official.a_mm,b_mm:x.official.b_mm||null,h_mm:x.official.h_mm,scope:(x.makes||[]).join(' / ')}};
  });
  const manifest={batch:'LD_AIR_'+BATCH+'_LIVE',
-  selection_model:'LD_AIR_LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY',
+  selection_model:current.selection_model||'LD_AIR_LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY',
   candidates,preblocked};
  fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2)+'\n');
  return manifest;
@@ -52,10 +55,11 @@ async function syncCatalog(manifest){
     if(!identity&&item.identity_patch){
      const conflicts=await db.query("select elimfilters_sku from ld_catalog.ld_canonical_product_identity where status='ACTIVE' and regexp_replace(upper(canonical_part_number),'[^A-Z0-9]','','g')=regexp_replace(upper($1),'[^A-Z0-9]','','g') and elimfilters_sku<>$2",[item.code,item.sku]);
      if(conflicts.rowCount) throw new Error('IDENTITY_CODE_COLLISION');
+     const evidenceSource=item.identity_patch?.evidence_source||'LD_AIR_LIVE_IDENTITY_REPAIR';
      const ins=await db.query(`insert into ld_catalog.ld_canonical_product_identity
       (elimfilters_sku,origin_group,canonical_brand,canonical_part_number,filter_type,status,evidence_source,created_at,updated_at)
-      values ($1,'EUROPEAN','MANN-FILTER',$2,'air','ACTIVE','LD_AIR_LIVE_IDENTITY_REPAIR',now(),now())
-      on conflict (elimfilters_sku) do nothing`,[item.sku,item.code]);
+      values ($1,$2,$3,$4,'air','ACTIVE',$5,now(),now())
+      on conflict (elimfilters_sku) do nothing`,[item.sku,item.origin_group,item.authority_brand,item.code,evidenceSource]);
      identityCreated=ins.rowCount===1;
      identity=(await db.query('select * from ld_catalog.ld_canonical_product_identity where elimfilters_sku=$1',[item.sku])).rows[0];
     }
@@ -69,26 +73,26 @@ async function syncCatalog(manifest){
     const gov=row.enrichment_data?.codigo_base_governance||{};
     if(row.duty!=='LIGHT_DUTY'||row.filter_type!=='air'||row.catalog_active!==true) throw new Error('SCOPE_MISMATCH');
     if(row.codigo_base!==item.code) throw new Error('BASE_MISMATCH');
-    if(identity.status!=='ACTIVE'||identity.origin_group!=='EUROPEAN'||identity.canonical_brand!=='MANN-FILTER'||identity.canonical_part_number!==item.code) throw new Error('IDENTITY_MISMATCH');
-    if(gov.state!=='CANONICAL_VERIFIED'||gov.primary_manufacturer_verified!==true||gov.approved_manufacturer!=='MANN-FILTER'||gov.approved_codigo_base!==item.code) throw new Error('GOVERNANCE_MISMATCH');
-    const patch={canonical_source_brand:'MANN-FILTER',canonical_source_code:item.code,canonical_source_url:item.source_url,canonical_source_status:'VERIFIED',...(hasNum(gp.outer_diameter_mm)?{outer_diameter_mm:Number(gp.outer_diameter_mm)}:{}),...(hasNum(gp.height_mm)?{height_mm:Number(gp.height_mm)}:{})};
+    if(identity.status!=='ACTIVE'||identity.origin_group!==item.origin_group||identity.canonical_brand!==item.authority_brand||identity.canonical_part_number!==item.code) throw new Error('IDENTITY_MISMATCH');
+    if(gov.primary_manufacturer_verified!==true||gov.approved_manufacturer!==item.authority_brand||gov.approved_codigo_base!==item.code||gov.origin_group!==item.origin_group) throw new Error('GOVERNANCE_MISMATCH');
+    const patch={canonical_source_brand:item.authority_brand,canonical_source_code:item.code,canonical_source_url:item.source_url,canonical_source_status:'VERIFIED',...(hasNum(gp.outer_diameter_mm)?{outer_diameter_mm:Number(gp.outer_diameter_mm)}:{}),...(hasNum(gp.height_mm)?{height_mm:Number(gp.height_mm)}:{})};
     const gateway=assertGovernedCatalogPatch(row,patch,{skipApplicationValidation:true});
     if(!gateway.valid) throw new Error('GATEWAY_BLOCKED:'+gateway.reasons.join(','));
 
     const previous={canonical_source_brand:row.canonical_source_brand,canonical_source_code:row.canonical_source_code,canonical_source_url:row.canonical_source_url,canonical_source_status:row.canonical_source_status,canonical_verified_at:row.canonical_verified_at,canonical_evidence:row.canonical_evidence,outer_diameter_mm:row.outer_diameter_mm,height_mm:row.height_mm};
     if(APPLY){
      await db.query(`update public.elimfilters_catalog
-      set canonical_source_brand='MANN-FILTER',canonical_source_code=$1,canonical_source_url=$2,
-          canonical_source_status='VERIFIED',canonical_verified_at=now(),canonical_evidence=$3::jsonb,
-          outer_diameter_mm=coalesce(outer_diameter_mm,$4),height_mm=coalesce(height_mm,$5)
-      where sku=$6`,[item.code,item.source_url,JSON.stringify({
-        authority:'MANN-FILTER',code:item.code,source_url:item.source_url,official:item.official,geometry_patch:gp,
+      set canonical_source_brand=$1,canonical_source_code=$2,canonical_source_url=$3,
+          canonical_source_status='VERIFIED',canonical_verified_at=now(),canonical_evidence=$4::jsonb,
+          outer_diameter_mm=coalesce(outer_diameter_mm,$5),height_mm=coalesce(height_mm,$6)
+      where sku=$7`,[item.authority_brand,item.code,item.source_url,JSON.stringify({
+        authority:item.authority_brand,code:item.code,source_url:item.source_url,official:item.official,geometry_patch:gp,
         selection_model:manifest.selection_model}),hasNum(gp.outer_diameter_mm)?Number(gp.outer_diameter_mm):null,hasNum(gp.height_mm)?Number(gp.height_mm):null,item.sku]);
      const a=(await db.query('select sku,codigo_base,canonical_source_brand,canonical_source_code,canonical_source_status,outer_diameter_mm,height_mm from public.elimfilters_catalog where sku=$1',[item.sku])).rows[0];
-     if(!a||a.codigo_base!==item.code||a.canonical_source_brand!=='MANN-FILTER'||a.canonical_source_code!==item.code||a.canonical_source_status!=='VERIFIED'||!close(a.outer_diameter_mm,item.official.a_mm)||!close(a.height_mm,item.official.h_mm)) throw new Error('POST_WRITE_AUDIT_FAILED');
+     if(!a||a.codigo_base!==item.code||a.canonical_source_brand!==item.authority_brand||a.canonical_source_code!==item.code||a.canonical_source_status!=='VERIFIED'||!close(a.outer_diameter_mm,item.official.a_mm)||!close(a.height_mm,item.official.h_mm)) throw new Error('POST_WRITE_AUDIT_FAILED');
      await db.query('COMMIT');
     }else await db.query('ROLLBACK');
-    report.complete.push({sku:item.sku,code:item.code,gateway,previous,identity_created:identityCreated});
+    report.complete.push({sku:item.sku,code:item.code,authority_brand:item.authority_brand,origin_group:item.origin_group,gateway,previous,identity_created:identityCreated});
    }catch(e){
     try{await db.query('ROLLBACK')}catch(_){}
     report.blocked.push({sku:item.sku,code:item.code,reason:e.message});
@@ -134,7 +138,7 @@ async function restorePartSearchFailures(syncReport,failed){
    const p=x.previous||{};
    await db.query(`update public.elimfilters_catalog set canonical_source_brand=$1,canonical_source_code=$2,canonical_source_url=$3,canonical_source_status=$4,canonical_verified_at=$5,canonical_evidence=$6::jsonb,outer_diameter_mm=$7,height_mm=$8 where sku=$9`,[
     p.canonical_source_brand||null,p.canonical_source_code||null,p.canonical_source_url||null,p.canonical_source_status||null,p.canonical_verified_at||null,p.canonical_evidence?JSON.stringify(p.canonical_evidence):null,p.outer_diameter_mm??null,p.height_mm??null,x.sku]);
-   if(x.identity_created) await db.query("delete from ld_catalog.ld_canonical_product_identity where elimfilters_sku=$1 and evidence_source='LD_AIR_LIVE_IDENTITY_REPAIR'",[x.sku]);
+   if(x.identity_created) await db.query("delete from ld_catalog.ld_canonical_product_identity where elimfilters_sku=$1 and canonical_brand=$2 and canonical_part_number=$3",[x.sku,x.authority_brand,x.code]);
   }
  }finally{await db.end()}
 }
@@ -142,8 +146,8 @@ async function restorePartSearchFailures(syncReport,failed){
 function writeTerminals(manifest,blocked=[],reverify=[],retryable=[]){
  for(const x of manifest.candidates){
   const out={sku:x.sku,codigo_base:x.code,filter_type:'air',duty:'LIGHT_DUTY',terminal_state:'COMPLETE',
-   canonical_identity:{brand:'MANN-FILTER',code:x.code,origin_group:'EUROPEAN'},
-   resolution:'LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY',
+   canonical_identity:{brand:x.authority_brand||'MANN-FILTER',code:x.code,origin_group:x.origin_group||'EUROPEAN'},
+   resolution:manifest.selection_model,
    catalog_action:'CANONICAL_METADATA_SYNC_COMMIT',part_search_validated:true,
    official:x.official,source_url:x.source_url,closed_at:CLOSED_AT};
   fs.writeFileSync(path.join(ROOT,'candidates',`ld_air_${x.sku.toLowerCase()}_complete_${DATE}.json`),JSON.stringify(out,null,2)+'\n');

@@ -1,0 +1,23 @@
+{
+  "sku": "EA37094",
+  "codigo_base": "CA7094",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "FRAM",
+    "code": "CA7094",
+    "origin_group": "NON_EUROPEAN"
+  },
+  "resolution": "LD_AIR_FRAM_OFFICIAL_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 250.03759999999997,
+    "b_mm": 138.12519999999998,
+    "h_mm": 52.4002,
+    "scope": "KIA / TOYOTA"
+  },
+  "source_url": "https://www.fram.com/fram-extra-guard-air-filter-rigid-panel-ca7094",
+  "closed_at": "2026-09-27"
+}

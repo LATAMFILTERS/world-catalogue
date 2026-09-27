@@ -1,0 +1,478 @@
+{
+  "batch": "LD_AIR_B46_LIVE",
+  "selection_model": "LD_AIR_FRAM_OFFICIAL_V1",
+  "candidates": [
+    {
+      "sku": "EA30085",
+      "code": "CA10085",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca10085",
+      "geometry_patch": {
+        "outer_diameter_mm": 414.7819999999999,
+        "height_mm": 38.2524
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA10085",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 414.7819999999999,
+        "b_mm": 129.286,
+        "h_mm": 38.2524,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA30262",
+      "code": "CA10262",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca10262",
+      "geometry_patch": {
+        "outer_diameter_mm": 265.938,
+        "height_mm": 47.5488
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA10262",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 265.938,
+        "b_mm": 252.1966,
+        "h_mm": 47.5488,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA30755",
+      "code": "CA10755",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca10755",
+      "geometry_patch": {
+        "outer_diameter_mm": 242.31599999999997,
+        "height_mm": 55.88
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA10755",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 242.31599999999997,
+        "b_mm": 219.456,
+        "h_mm": 55.88,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA30785",
+      "code": "CA10785",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca10785",
+      "geometry_patch": {
+        "outer_diameter_mm": 229.28579999999997,
+        "height_mm": 72.2884
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA10785",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 229.28579999999997,
+        "b_mm": 218.4908,
+        "h_mm": 72.2884,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA31010",
+      "code": "CA11010",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-rigid-panel-ca11010",
+      "geometry_patch": {
+        "outer_diameter_mm": 280.21279999999996,
+        "height_mm": 56.032399999999996
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA11010",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 280.21279999999996,
+        "b_mm": 180.1368,
+        "h_mm": 56.032399999999996,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA31118",
+      "code": "CA11118",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca11118",
+      "geometry_patch": {
+        "outer_diameter_mm": 280.21279999999996,
+        "height_mm": 34.036
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA11118",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 280.21279999999996,
+        "b_mm": 261.1882,
+        "h_mm": 34.036,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA31227",
+      "code": "CA11227",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca11227",
+      "geometry_patch": {
+        "outer_diameter_mm": 298.22139999999996,
+        "height_mm": 57.5564
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA11227",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 298.22139999999996,
+        "b_mm": 29.743399999999998,
+        "h_mm": 57.5564,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA31413",
+      "code": "CA11413",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-rigid-panel-ca11413",
+      "geometry_patch": {
+        "outer_diameter_mm": 309.245,
+        "height_mm": 55.041799999999995
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA11413",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 309.245,
+        "b_mm": 203.1492,
+        "h_mm": 55.041799999999995,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA31877",
+      "code": "CA11877",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca11877",
+      "geometry_patch": {
+        "outer_diameter_mm": 265.98879999999997,
+        "height_mm": 48.4886
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA11877",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 265.98879999999997,
+        "b_mm": 183.4896,
+        "h_mm": 48.4886,
+        "scope": "BECKER-KOMPRESSOREN"
+      }
+    },
+    {
+      "sku": "EA35058",
+      "code": "CA5058",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca5058",
+      "geometry_patch": {
+        "outer_diameter_mm": 284.93719999999996,
+        "height_mm": 30.175199999999997
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA5058",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 284.93719999999996,
+        "b_mm": 155.956,
+        "h_mm": 30.175199999999997,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA37094",
+      "code": "CA7094",
+      "authority_brand": "FRAM",
+      "origin_group": "NON_EUROPEAN",
+      "source_url": "https://www.fram.com/fram-extra-guard-air-filter-rigid-panel-ca7094",
+      "geometry_patch": {
+        "outer_diameter_mm": 250.03759999999997,
+        "height_mm": 52.4002
+      },
+      "identity_patch": {
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CA7094",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_FRAM_OFFICIAL_IDENTITY"
+      },
+      "official": {
+        "a_mm": 250.03759999999997,
+        "b_mm": 138.12519999999998,
+        "h_mm": 52.4002,
+        "scope": "KIA / TOYOTA"
+      }
+    }
+  ],
+  "preblocked": [
+    {
+      "sku": "EA30084",
+      "code": "CA10084",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30112",
+      "code": "CA112",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30163",
+      "code": "CA10163",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA30171",
+      "code": "CA10171",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30220",
+      "code": "PH8842FP",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30271",
+      "code": "CA10271",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA30321",
+      "code": "CA321",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30361",
+      "code": "CA361",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30510",
+      "code": "CAK510",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30522",
+      "code": "CA10522",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30581",
+      "code": "CA10581",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30600",
+      "code": "CA600",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30701",
+      "code": "CA701",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30762",
+      "code": "CA10762",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA30800",
+      "code": "CA10800",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30840",
+      "code": "CA840",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30881",
+      "code": "CA10881",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA30903",
+      "code": "CA903",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30923",
+      "code": "CH9462ECO",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30924",
+      "code": "CA924",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30970",
+      "code": "CA970",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA30972",
+      "code": "CA160972",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31003",
+      "code": "CA11003",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31004",
+      "code": "CA11004",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31005",
+      "code": "CA11005",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31007",
+      "code": "CA8918",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31011",
+      "code": "CA11011",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31012",
+      "code": "CA11012",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31033",
+      "code": "CA11033",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31034",
+      "code": "CA11034",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31062",
+      "code": "CA11062",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31070",
+      "code": "CA11070",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31251",
+      "code": "CA11251",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31273",
+      "code": "PH9460",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31422",
+      "code": "CA11422",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31570",
+      "code": "CA1570S",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    },
+    {
+      "sku": "EA31941",
+      "code": "CA11941",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32050",
+      "code": "CA12050",
+      "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32057",
+      "code": "CA12057",
+      "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE"
+    }
+  ]
+}
