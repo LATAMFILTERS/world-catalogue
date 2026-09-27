@@ -1,0 +1,321 @@
+{
+  "batch": "PREMIUM_GUARD_FUEL_B10",
+  "scope": "LIGHT_DUTY_FUEL",
+  "counts": {
+    "COMPLETE": 5,
+    "BLOCKED_WITH_REASON": 41
+  },
+  "complete": [
+    {
+      "premium_guard_code": "PF9163",
+      "canonical_sku": "EF33724"
+    },
+    {
+      "premium_guard_code": "PF9279",
+      "canonical_sku": "EF39279"
+    },
+    {
+      "premium_guard_code": "PF9343",
+      "canonical_sku": "EF39343"
+    },
+    {
+      "premium_guard_code": "PF99181",
+      "canonical_sku": "EF39014"
+    },
+    {
+      "premium_guard_code": "PF99598",
+      "canonical_sku": "EF33427"
+    }
+  ],
+  "blocked": [
+    {
+      "premium_guard_code": "PF9173",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF941",
+      "reason": "RESOLVER_TARGET_CONFLICT",
+      "reasons": [
+        "EXISTING_PUBLIC_COMPETITOR",
+        "RESOLVER_TOP:EH60387"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99075",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99140",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99141",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99161",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99162",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99166",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99167",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99169",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99170",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99176",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99198",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99258",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF9955",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF9956",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99597",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99636",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "MANN-FILTER_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99704",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99706",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "MANN-FILTER_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99708",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99709",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99710",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99713",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99716",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99719",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "MANN-FILTER_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99726",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99730",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99731",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99733",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99734",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99736",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99739",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99740",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99894",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99925",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99928",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF99953",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "MANN-FILTER_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PL1/4",
+      "reason": "PRODUCT_CODE_NOT_PRESENT_IN_PAGE",
+      "reasons": [
+        "PRODUCT_CODE_NOT_PRESENT_IN_PAGE"
+      ]
+    },
+    {
+      "premium_guard_code": "PL3/8",
+      "reason": "PRODUCT_CODE_NOT_PRESENT_IN_PAGE",
+      "reasons": [
+        "PRODUCT_CODE_NOT_PRESENT_IN_PAGE"
+      ]
+    },
+    {
+      "premium_guard_code": "PL5/16",
+      "reason": "PRODUCT_CODE_NOT_PRESENT_IN_PAGE",
+      "reasons": [
+        "PRODUCT_CODE_NOT_PRESENT_IN_PAGE"
+      ]
+    }
+  ],
+  "closed_at": "2026-09-27"
+}
