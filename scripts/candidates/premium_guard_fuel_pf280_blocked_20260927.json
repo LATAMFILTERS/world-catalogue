@@ -1,0 +1,11 @@
+{
+  "premium_guard_code": "PF280",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "RESOLVER_TARGET_CONFLICT",
+  "reasons": [
+    "EXISTING_CANONICAL_IDENTITY",
+    "RESOLVER_TOP:EF90541"
+  ],
+  "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf280/",
+  "closed_at": "2026-09-27"
+}

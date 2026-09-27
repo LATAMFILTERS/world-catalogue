@@ -1,0 +1,10 @@
+{
+  "premium_guard_code": "PF1/4",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "PRODUCT_CODE_NOT_PRESENT_IN_PAGE",
+  "reasons": [
+    "PRODUCT_CODE_NOT_PRESENT_IN_PAGE"
+  ],
+  "source_page": null,
+  "closed_at": "2026-09-27"
+}

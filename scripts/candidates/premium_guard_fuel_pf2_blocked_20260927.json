@@ -1,0 +1,11 @@
+{
+  "premium_guard_code": "PF2",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "RELATIONAL_OWNER_CONFLICT",
+  "reasons": [
+    "EXISTING_CANONICAL_IDENTITY",
+    "EXISTING_RELATIONAL_OWNER_DIFFERENT_SKU"
+  ],
+  "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf2/",
+  "closed_at": "2026-09-27"
+}

@@ -1,0 +1,340 @@
+{
+  "batch": "PREMIUM_GUARD_FUEL_B5",
+  "scope": "LIGHT_DUTY_FUEL",
+  "counts": {
+    "COMPLETE": 11,
+    "BLOCKED_WITH_REASON": 39
+  },
+  "complete": [
+    {
+      "premium_guard_code": "DW30265",
+      "canonical_sku": "EF30602"
+    },
+    {
+      "premium_guard_code": "DW30279",
+      "canonical_sku": "EF31060"
+    },
+    {
+      "premium_guard_code": "PF1124",
+      "canonical_sku": "EF34164"
+    },
+    {
+      "premium_guard_code": "PF131",
+      "canonical_sku": "EF30022"
+    },
+    {
+      "premium_guard_code": "PF247",
+      "canonical_sku": "EF30032"
+    },
+    {
+      "premium_guard_code": "PF251",
+      "canonical_sku": "EF34776"
+    },
+    {
+      "premium_guard_code": "PF265",
+      "canonical_sku": "EF30042"
+    },
+    {
+      "premium_guard_code": "PF2939",
+      "canonical_sku": "EF30830"
+    },
+    {
+      "premium_guard_code": "PF3153",
+      "canonical_sku": "EF36440"
+    },
+    {
+      "premium_guard_code": "PF3162",
+      "canonical_sku": "EF36436"
+    },
+    {
+      "premium_guard_code": "PF3168",
+      "canonical_sku": "EF30614"
+    }
+  ],
+  "blocked": [
+    {
+      "premium_guard_code": "DW30178",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30179",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30180",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30182",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30186",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30188",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30202",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30245",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30250",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30275",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30276",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "DW30374",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF1",
+      "reason": "MIXED_ORIGIN_REVIEW",
+      "reasons": [
+        "APPLICATIONS_SPAN_MULTIPLE_ORIGIN_GROUPS"
+      ]
+    },
+    {
+      "premium_guard_code": "PF11",
+      "reason": "RESOLVER_TARGET_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "RESOLVER_TOP:EL80035"
+      ]
+    },
+    {
+      "premium_guard_code": "PF1117",
+      "reason": "RESOLVER_TARGET_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "RESOLVER_TOP:EH61222"
+      ]
+    },
+    {
+      "premium_guard_code": "PF119",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF120",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF126",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF13",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF1/4",
+      "reason": "PRODUCT_CODE_NOT_PRESENT_IN_PAGE",
+      "reasons": [
+        "PRODUCT_CODE_NOT_PRESENT_IN_PAGE"
+      ]
+    },
+    {
+      "premium_guard_code": "PF153",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "MANN-FILTER_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF154",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "MANN-FILTER_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF155",
+      "reason": "CONFLICT_EXISTING_REFERENCE",
+      "reasons": [
+        "MULTIPLE_EXISTING_SAME_FAMILY_SKUS",
+        "MATCH_SOURCE_CANONICAL_IDENTITY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF157",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF158",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF162",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF163",
+      "reason": "RELATIONAL_OWNER_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "EXISTING_RELATIONAL_OWNER_DIFFERENT_SKU"
+      ]
+    },
+    {
+      "premium_guard_code": "PF2",
+      "reason": "RELATIONAL_OWNER_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "EXISTING_RELATIONAL_OWNER_DIFFERENT_SKU"
+      ]
+    },
+    {
+      "premium_guard_code": "PF21",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF24",
+      "reason": "RELATIONAL_OWNER_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "EXISTING_RELATIONAL_OWNER_DIFFERENT_SKU"
+      ]
+    },
+    {
+      "premium_guard_code": "PF252",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF28",
+      "reason": "RELATIONAL_OWNER_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "EXISTING_RELATIONAL_OWNER_DIFFERENT_SKU"
+      ]
+    },
+    {
+      "premium_guard_code": "PF280",
+      "reason": "RESOLVER_TARGET_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "RESOLVER_TOP:EF90541"
+      ]
+    },
+    {
+      "premium_guard_code": "PF30",
+      "reason": "RELATIONAL_OWNER_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "EXISTING_RELATIONAL_OWNER_DIFFERENT_SKU"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3014",
+      "reason": "CANONICAL_SOURCE_CANDIDATE",
+      "reasons": [
+        "REQUIRES_OFFICIAL_CANONICAL_SOURCE_VERIFICATION"
+      ]
+    },
+    {
+      "premium_guard_code": "PF305",
+      "reason": "MULTIPLE_AUTHORITY_REFS_REVIEW",
+      "reasons": [
+        "MULTIPLE_FRAM_INTERCHANGES"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3146",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "FRAM_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3160",
+      "reason": "RESOLVER_TARGET_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "RESOLVER_TOP:EF90012"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3165",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    }
+  ],
+  "closed_at": "2026-09-27"
+}
