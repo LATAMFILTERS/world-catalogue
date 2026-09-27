@@ -1,0 +1,20 @@
+{
+  "batch": "LD_AIR_B29_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "candidates": [
+    {
+      "sku": "EA34114",
+      "code": "C14114",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c14114_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 133
+      },
+      "official": {
+        "a_mm": 133,
+        "b_mm": 77,
+        "h_mm": 248.92,
+        "scope": "MERCEDES-BENZ (USA)"
+      }
+    }
+  ]
+}

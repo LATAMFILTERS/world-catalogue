@@ -55,8 +55,8 @@ function numText(v){if(v==null)return null;const n=Number(String(v).replace(',',
 function parseLiveMannDimensions(html){
  const grab=(...patterns)=>{for(const p of patterns){const m=html.match(p);if(m)return numText(m[1])}return null};
  return {
-  a_mm:grab(/Length \(A\)\s*=\s*([0-9.,]+)\s*mm/i,/Outer diameter \(A\)\s*=\s*([0-9.,]+)\s*mm/i),
-  b_mm:grab(/Width \(B\)\s*=\s*([0-9.,]+)\s*mm/i,/Inner diameter \(B\)\s*=\s*([0-9.,]+)\s*mm/i),
+  a_mm:grab(/Length \(A\)\s*=\s*([0-9.,]+)\s*mm/i,/Outer diameter \(A\)\s*=\s*([0-9.,]+)\s*mm/i,/Outer diameter \(D\)\s*=\s*([0-9.,]+)\s*mm/i,/Diameter \(A\)\s*=\s*([0-9.,]+)\s*mm/i),
+  b_mm:grab(/Width \(B\)\s*=\s*([0-9.,]+)\s*mm/i,/Inner diameter \(B\)\s*=\s*([0-9.,]+)\s*mm/i,/Inner diameter \(C\)\s*=\s*([0-9.,]+)\s*mm/i),
   h_mm:grab(/Height \(H\)\s*=\s*([0-9.,]+)\s*mm/i)
  };
 }

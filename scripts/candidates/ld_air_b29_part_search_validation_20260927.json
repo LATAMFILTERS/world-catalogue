@@ -1,0 +1,17 @@
+{
+  "batch": "LD_AIR_B29",
+  "total": 1,
+  "passed": 1,
+  "failed": [],
+  "results": [
+    {
+      "sku": "EA34114",
+      "code": "C14114",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA34114"
+      ]
+    }
+  ]
+}
