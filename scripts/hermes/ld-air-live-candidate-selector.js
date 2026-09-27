@@ -88,9 +88,11 @@ async function enrichOfficial(candidate){
  return {...out,lane:laneFor(out)};
 }
 function laneFor(candidate){
- const reasons=candidate.reasons||[],official=candidate.official||{},identity=candidate.identity||{},gov=candidate.governance||{};
- const code=norm(candidate.codigo_base),core_ok=reasons.includes('ACTIVE_IDENTITY')&&reasons.includes('GOVERNANCE_VERIFIED')
-  &&identity.origin_group==='EUROPEAN'&&identity.canonical_brand==='MANN-FILTER'&&norm(identity.canonical_part_number)===code
+ const reasons=candidate.reasons||[],official=candidate.official||{},identity=candidate.identity||{},gov=candidate.governance||{},identityPatch=candidate.identity_patch||null;
+ const code=norm(candidate.codigo_base);
+ const activeIdentityOk=reasons.includes('ACTIVE_IDENTITY')&&identity.origin_group==='EUROPEAN'&&identity.canonical_brand==='MANN-FILTER'&&norm(identity.canonical_part_number)===code;
+ const repairIdentityOk=!!identityPatch&&identityPatch.origin_group==='EUROPEAN'&&identityPatch.canonical_brand==='MANN-FILTER'&&norm(identityPatch.canonical_part_number)===code;
+ const core_ok=reasons.includes('GOVERNANCE_VERIFIED')&&(activeIdentityOk||repairIdentityOk)
   &&gov.primary_manufacturer_verified===true&&gov.approved_manufacturer==='MANN-FILTER'&&norm(gov.approved_codigo_base)===code;
  if(!core_ok) return 'REVERIFY';
  if(reasons.includes('HEAVY_SEGMENT_SIGNAL')||reasons.includes('CONTAMINATION_FLAG')) return 'BLOCKED';
@@ -131,13 +133,20 @@ async function main(){
   const q=await db.query("select * from public.elimfilters_catalog where duty='LIGHT_DUTY' and filter_type='air' and catalog_active=true and coalesce(canonical_source_status,'')<>'VERIFIED' and not (sku=any($1::text[]))",[terms]);
   const ids=await db.query("select * from ld_catalog.ld_canonical_product_identity where status='ACTIVE' and filter_type='air'");
   const idMap=new Map(ids.rows.map(x=>[x.elimfilters_sku,x]));
+  const codeOwners=new Map();
+  for(const x of ids.rows){const k=norm(x.canonical_part_number);if(!codeOwners.has(k))codeOwners.set(k,[]);codeOwners.get(k).push(x.elimfilters_sku)}
   const ranked=q.rows.map(row=>{
     const identity=idMap.get(row.sku)||null;
     const s=score(row,identity);
     return {sku:row.sku,codigo_base:row.codigo_base,score:s.score,reasons:s.reasons,identity:identity?{origin_group:identity.origin_group,canonical_brand:identity.canonical_brand,canonical_part_number:identity.canonical_part_number,evidence_source:identity.evidence_source}:null,governance:row.enrichment_data?.codigo_base_governance||null,authority_refs:s.refs,makes:s.makes,specs:{height_mm:row.height_mm,outer_diameter_mm:row.outer_diameter_mm,inner_diameter_mm:row.inner_diameter_mm,product_length_mm:row.product_length_mm}};
   }).sort((a,b)=>b.score-a.score||a.sku.localeCompare(b.sku));
   const patchMap=loadMannPatch();
-  const prepared=ranked.map(x=>prepareOfficialLocal(x,patchMap));
+  const prepared=ranked.map(x=>{
+   const p=prepareOfficialLocal(x,patchMap),g=x.governance||{},owners=codeOwners.get(norm(x.codigo_base))||[];
+   const identity_patch=!x.identity&&owners.length===0&&g.state==='CANONICAL_VERIFIED'&&g.primary_manufacturer_verified===true&&g.approved_manufacturer==='MANN-FILTER'&&norm(g.approved_codigo_base)===norm(x.codigo_base)
+    ?{origin_group:'EUROPEAN',canonical_brand:'MANN-FILTER',canonical_part_number:x.codigo_base,filter_type:'air',status:'ACTIVE',evidence_source:'LD_AIR_LIVE_IDENTITY_REPAIR'}:null;
+   return {...p,identity_patch};
+  });
   const localReady=prepared.filter(x=>{
    const o=x.official||{};
    const r=x.reasons||[];

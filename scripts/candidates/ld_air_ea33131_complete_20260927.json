@@ -1,0 +1,23 @@
+{
+  "sku": "EA33131",
+  "codigo_base": "C13131",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C13131",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 127,
+    "b_mm": 64,
+    "h_mm": 236.22,
+    "scope": "NISSAN"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c13131_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

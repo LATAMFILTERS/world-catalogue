@@ -1,0 +1,23 @@
+{
+  "sku": "EA33365",
+  "codigo_base": "C3365",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C3365",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 330,
+    "b_mm": 253,
+    "h_mm": 60,
+    "scope": "MITSUBISHI"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3365_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

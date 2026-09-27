@@ -25,8 +25,8 @@ function buildManifest(){
  const candidates=rows.map(x=>{
   if(!x.official?.family_ok||!x.official?.geometry_complete||!x.official?.geometry_ok||!x.official?.url_ok)
    throw new Error('INVALID_AUTO_CLOSE:'+x.sku);
-  return {sku:x.sku,code:x.identity?.canonical_part_number||x.codigo_base,
-   source_url:x.official.source_url,geometry_patch:x.geometry_patch||null,
+  return {sku:x.sku,code:x.identity?.canonical_part_number||x.identity_patch?.canonical_part_number||x.codigo_base,
+   source_url:x.official.source_url,geometry_patch:x.geometry_patch||null,identity_patch:x.identity_patch||null,
    official:{a_mm:x.official.a_mm,b_mm:x.official.b_mm||null,h_mm:x.official.h_mm,scope:(x.makes||[]).join(' / ')}};
  });
  const manifest={batch:'LD_AIR_'+BATCH+'_LIVE',
@@ -45,8 +45,20 @@ async function syncCatalog(manifest){
    await db.query('BEGIN');
    try{
     const row=(await db.query('select * from public.elimfilters_catalog where sku=$1 for update',[item.sku])).rows[0];
-    const identity=(await db.query('select * from ld_catalog.ld_canonical_product_identity where elimfilters_sku=$1',[item.sku])).rows[0];
-    if(!row||!identity) throw new Error('ROW_OR_IDENTITY_MISSING');
+    let identity=(await db.query('select * from ld_catalog.ld_canonical_product_identity where elimfilters_sku=$1',[item.sku])).rows[0];
+    let identityCreated=false;
+    if(!row) throw new Error('ROW_MISSING');
+    if(!identity&&item.identity_patch){
+     const conflicts=await db.query("select elimfilters_sku from ld_catalog.ld_canonical_product_identity where status='ACTIVE' and regexp_replace(upper(canonical_part_number),'[^A-Z0-9]','','g')=regexp_replace(upper($1),'[^A-Z0-9]','','g') and elimfilters_sku<>$2",[item.code,item.sku]);
+     if(conflicts.rowCount) throw new Error('IDENTITY_CODE_COLLISION');
+     const ins=await db.query(`insert into ld_catalog.ld_canonical_product_identity
+      (elimfilters_sku,origin_group,canonical_brand,canonical_part_number,filter_type,status,evidence_source,created_at,updated_at)
+      values ($1,'EUROPEAN','MANN-FILTER',$2,'air','ACTIVE','LD_AIR_LIVE_IDENTITY_REPAIR',now(),now())
+      on conflict (elimfilters_sku) do nothing`,[item.sku,item.code]);
+     identityCreated=ins.rowCount===1;
+     identity=(await db.query('select * from ld_catalog.ld_canonical_product_identity where elimfilters_sku=$1',[item.sku])).rows[0];
+    }
+    if(!identity) throw new Error('IDENTITY_MISSING');
     const gp=item.geometry_patch||{};
     if(hasNum(gp.outer_diameter_mm)&&hasNum(row.outer_diameter_mm)) throw new Error('GEOMETRY_PATCH_WOULD_OVERWRITE_OUTER');
     if(hasNum(gp.height_mm)&&hasNum(row.height_mm)) throw new Error('GEOMETRY_PATCH_WOULD_OVERWRITE_HEIGHT');
@@ -75,7 +87,7 @@ async function syncCatalog(manifest){
      if(!a||a.codigo_base!==item.code||a.canonical_source_brand!=='MANN-FILTER'||a.canonical_source_code!==item.code||a.canonical_source_status!=='VERIFIED'||!close(a.outer_diameter_mm,item.official.a_mm)||!close(a.height_mm,item.official.h_mm)) throw new Error('POST_WRITE_AUDIT_FAILED');
      await db.query('COMMIT');
     }else await db.query('ROLLBACK');
-    report.complete.push({sku:item.sku,code:item.code,gateway,previous});
+    report.complete.push({sku:item.sku,code:item.code,gateway,previous,identity_created:identityCreated});
    }catch(e){
     try{await db.query('ROLLBACK')}catch(_){}
     report.blocked.push({sku:item.sku,code:item.code,reason:e.message});
@@ -112,6 +124,7 @@ async function restorePartSearchFailures(syncReport,failed){
    const p=x.previous||{};
    await db.query(`update public.elimfilters_catalog set canonical_source_brand=$1,canonical_source_code=$2,canonical_source_url=$3,canonical_source_status=$4,canonical_verified_at=$5,canonical_evidence=$6::jsonb,outer_diameter_mm=$7,height_mm=$8 where sku=$9`,[
     p.canonical_source_brand||null,p.canonical_source_code||null,p.canonical_source_url||null,p.canonical_source_status||null,p.canonical_verified_at||null,p.canonical_evidence?JSON.stringify(p.canonical_evidence):null,p.outer_diameter_mm??null,p.height_mm??null,x.sku]);
+   if(x.identity_created) await db.query("delete from ld_catalog.ld_canonical_product_identity where elimfilters_sku=$1 and evidence_source='LD_AIR_LIVE_IDENTITY_REPAIR'",[x.sku]);
   }
  }finally{await db.end()}
 }
@@ -146,9 +159,11 @@ function writeCycleAudit(){
  const n=Number(BATCH.replace(/\D/g,''));
  if(!n||n%10!==0)return null;
  const rows=[];
+ const candidateDir=path.join(ROOT,'candidates'),names=fs.readdirSync(candidateDir);
  for(let i=n-9;i<=n;i++){
-  const fp=path.join(ROOT,'candidates',`ld_air_b${String(i).padStart(2,'0')}_terminal_${DATE}.json`);
-  if(fs.existsSync(fp)){try{rows.push(JSON.parse(fs.readFileSync(fp,'utf8')))}catch(_){}}
+  const prefix=`ld_air_b${String(i).padStart(2,'0')}_terminal_`;
+  const matches=names.filter(name=>name.startsWith(prefix)&&name.endsWith('.json')).sort();
+  if(matches.length){const fp=path.join(candidateDir,matches[matches.length-1]);try{rows.push(JSON.parse(fs.readFileSync(fp,'utf8')))}catch(_){}}
  }
  const totals=rows.reduce((a,x)=>{a.complete+=x.counts?.COMPLETE||0;a.blocked+=x.counts?.BLOCKED_WITH_REASON||0;a.reverify+=x.counts?.REVERIFY||0;return a},{complete:0,blocked:0,reverify:0});
  const audit={cycle_end:BATCH,batches_found:rows.length,totals,audit_state:rows.length===10?'PASS':'REVIEW_REQUIRED',generated_at:new Date().toISOString()};

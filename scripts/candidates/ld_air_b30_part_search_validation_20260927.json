@@ -1,0 +1,458 @@
+{
+  "batch": "LD_AIR_B30",
+  "total": 50,
+  "passed": 50,
+  "failed": [],
+  "results": [
+    {
+      "sku": "EA30063",
+      "code": "C63",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA30063"
+      ]
+    },
+    {
+      "sku": "EA30824",
+      "code": "C824",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA30824"
+      ]
+    },
+    {
+      "sku": "EA30944",
+      "code": "C944",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA30944"
+      ]
+    },
+    {
+      "sku": "EA31157",
+      "code": "C1157",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA31157"
+      ]
+    },
+    {
+      "sku": "EA31189",
+      "code": "C1189",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA31189"
+      ]
+    },
+    {
+      "sku": "EA31213",
+      "code": "C1213",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA31213"
+      ]
+    },
+    {
+      "sku": "EA31247",
+      "code": "C1247",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA31247"
+      ]
+    },
+    {
+      "sku": "EA31368",
+      "code": "C1368",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA31368"
+      ]
+    },
+    {
+      "sku": "EA31427",
+      "code": "C1427",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA31427"
+      ]
+    },
+    {
+      "sku": "EA31449",
+      "code": "C1449",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA31449"
+      ]
+    },
+    {
+      "sku": "EA31826",
+      "code": "C1826",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA31826"
+      ]
+    },
+    {
+      "sku": "EA32033",
+      "code": "C22033",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32033"
+      ]
+    },
+    {
+      "sku": "EA32041",
+      "code": "C22041",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32041"
+      ]
+    },
+    {
+      "sku": "EA32053",
+      "code": "C2053",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32053"
+      ]
+    },
+    {
+      "sku": "EA32056",
+      "code": "C2056",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32056"
+      ]
+    },
+    {
+      "sku": "EA32068",
+      "code": "C2068",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32068"
+      ]
+    },
+    {
+      "sku": "EA32074",
+      "code": "C2074",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32074"
+      ]
+    },
+    {
+      "sku": "EA32115",
+      "code": "C22115",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32115"
+      ]
+    },
+    {
+      "sku": "EA32130",
+      "code": "C32130",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32130"
+      ]
+    },
+    {
+      "sku": "EA32150",
+      "code": "C2150",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32150"
+      ]
+    },
+    {
+      "sku": "EA32181",
+      "code": "C2181",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32181"
+      ]
+    },
+    {
+      "sku": "EA32233",
+      "code": "C2233",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32233"
+      ]
+    },
+    {
+      "sku": "EA32281",
+      "code": "C2281",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32281"
+      ]
+    },
+    {
+      "sku": "EA32287",
+      "code": "C2287",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32287"
+      ]
+    },
+    {
+      "sku": "EA32353",
+      "code": "C2353",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32353"
+      ]
+    },
+    {
+      "sku": "EA32354",
+      "code": "C2354",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32354"
+      ]
+    },
+    {
+      "sku": "EA32360",
+      "code": "C2360",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32360"
+      ]
+    },
+    {
+      "sku": "EA32428",
+      "code": "C2428",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32428"
+      ]
+    },
+    {
+      "sku": "EA32445",
+      "code": "C2445",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32445"
+      ]
+    },
+    {
+      "sku": "EA32460",
+      "code": "C2460",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32460"
+      ]
+    },
+    {
+      "sku": "EA32498",
+      "code": "C2498",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32498"
+      ]
+    },
+    {
+      "sku": "EA32524",
+      "code": "C2524",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32524"
+      ]
+    },
+    {
+      "sku": "EA32596",
+      "code": "C2596",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32596"
+      ]
+    },
+    {
+      "sku": "EA32619",
+      "code": "C2619",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32619"
+      ]
+    },
+    {
+      "sku": "EA32651",
+      "code": "C2651",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32651"
+      ]
+    },
+    {
+      "sku": "EA32656",
+      "code": "C2656",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32656"
+      ]
+    },
+    {
+      "sku": "EA32754",
+      "code": "C612754",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32754"
+      ]
+    },
+    {
+      "sku": "EA32760",
+      "code": "C2760",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32760"
+      ]
+    },
+    {
+      "sku": "EA32821",
+      "code": "C2821",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32821"
+      ]
+    },
+    {
+      "sku": "EA32826",
+      "code": "C2826",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32826"
+      ]
+    },
+    {
+      "sku": "EA32943",
+      "code": "C2943",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32943"
+      ]
+    },
+    {
+      "sku": "EA32957",
+      "code": "C2957",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA32957"
+      ]
+    },
+    {
+      "sku": "EA33017",
+      "code": "C33017",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA33017"
+      ]
+    },
+    {
+      "sku": "EA33044",
+      "code": "C3044",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA33044"
+      ]
+    },
+    {
+      "sku": "EA33050",
+      "code": "C33050",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA33050"
+      ]
+    },
+    {
+      "sku": "EA33131",
+      "code": "C13131",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA33131"
+      ]
+    },
+    {
+      "sku": "EA33194",
+      "code": "C33194",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA33194"
+      ]
+    },
+    {
+      "sku": "EA33256",
+      "code": "C33256",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA33256"
+      ]
+    },
+    {
+      "sku": "EA33365",
+      "code": "C3365",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA33365"
+      ]
+    },
+    {
+      "sku": "EA33534",
+      "code": "C3534",
+      "http": 200,
+      "ok": true,
+      "results": [
+        "EA33534"
+      ]
+    }
+  ]
+}

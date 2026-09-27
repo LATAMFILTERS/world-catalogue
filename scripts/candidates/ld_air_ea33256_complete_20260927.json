@@ -1,0 +1,23 @@
+{
+  "sku": "EA33256",
+  "codigo_base": "C33256",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C33256",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 329,
+    "b_mm": 265,
+    "h_mm": 69,
+    "scope": "MERCEDES-BENZ"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c33256_mann-filter.html",
+  "closed_at": "2026-09-27"
+}
