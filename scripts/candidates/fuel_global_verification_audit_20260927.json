@@ -1,0 +1,61 @@
+{
+  "audit": "FUEL_GLOBAL_VERIFICATION_AUDIT",
+  "generated_at": "2026-09-27",
+  "scope": "ALL_ACTIVE_FUEL_CATALOG",
+  "total_rows": 2262,
+  "active_rows": 2262,
+  "canonical_verified_rows": 101,
+  "canonical_unverified_rows": 2161,
+  "canonical_code_present_rows": 2262,
+  "by_duty": {
+    "LIGHT_DUTY": {
+      "rows": 1179,
+      "distinct_codes": 1179,
+      "verified": 100,
+      "unverified": 1079,
+      "verified_brand_breakdown": {
+        "FRAM": 100
+      }
+    },
+    "HEAVY_DUTY": {
+      "rows": 1083,
+      "distinct_codes": 1054,
+      "verified": 1,
+      "unverified": 1082,
+      "verified_brand_breakdown": {
+        "FLEETGUARD": 1
+      },
+      "duplicate_code_groups": 11,
+      "rows_in_duplicate_groups": 40,
+      "extra_duplicate_rows": 29
+    }
+  },
+  "donaldson_20260917": {
+    "source_verified_codes": 499,
+    "source_verified_unique_skus": 499,
+    "strict_audit_pass": 499,
+    "strict_audit_fail": 0,
+    "current_rows_matching_source_codigo_base": 469,
+    "current_distinct_source_codes_present": 446,
+    "source_codes_absent_as_current_codigo_base": 53,
+    "original_source_skus_still_present_exact": 241,
+    "original_source_skus_missing_or_remapped": 258,
+    "exact_current_sku_and_codigo_base_safe_restore_candidates": 241,
+    "current_rows_sharing_verified_donaldson_codes_but_not_original_source_sku": 228,
+    "currently_marked_verified_donaldson": 0,
+    "current_rows_with_original_embedded_donaldson_dataset_evidence": 0,
+    "finding": "Historical Donaldson verification was later degraded/overwritten in canonical metadata; do not bulk rerun migration 103 without remap review."
+  },
+  "premium_guard_fuel_20260927": {
+    "discovered_references": 496,
+    "live_remaining": 0,
+    "note": "Terminalization/enrichment of Premium Guard references does not by itself canonically verify every Fuel SKU."
+  },
+  "conclusion": "GLOBAL_FUEL_NOT_FULLY_VERIFIED",
+  "next_actions": [
+    "Restore canonical DONALDSON verification only for the 241 exact SKU+codigo_base matches using preserved official source evidence.",
+    "Reconcile 228 current rows that share Donaldson-verified base codes under different SKUs and 53 Donaldson source codes no longer present as current codigo_base.",
+    "Resolve the 11 HEAVY_DUTY duplicate codigo_base groups before global verification closure.",
+    "Build and execute canonical verification queues for the remaining LIGHT_DUTY and HEAVY_DUTY rows by governed authority."
+  ]
+}
