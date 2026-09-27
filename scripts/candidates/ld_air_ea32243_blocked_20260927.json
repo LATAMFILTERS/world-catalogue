@@ -1,0 +1,9 @@
+{
+  "sku": "EA32243",
+  "codigo_base": "C2243/1",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CANONICAL_CODE_COLLISION_NORMALIZED",
+  "closed_at": "2026-09-27"
+}

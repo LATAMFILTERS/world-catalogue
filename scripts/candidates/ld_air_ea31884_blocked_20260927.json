@@ -1,0 +1,9 @@
+{
+  "sku": "EA31884",
+  "codigo_base": "C1884",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS",
+  "closed_at": "2026-09-27"
+}

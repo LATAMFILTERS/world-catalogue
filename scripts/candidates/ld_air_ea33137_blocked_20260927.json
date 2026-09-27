@@ -1,0 +1,9 @@
+{
+  "sku": "EA33137",
+  "codigo_base": "C13137",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "LEGACY_GEOMETRY_INVALID_OFFICIAL_DIMENSIONS_UNAVAILABLE",
+  "closed_at": "2026-09-27"
+}

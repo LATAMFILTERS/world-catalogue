@@ -129,7 +129,9 @@ async function enrichOfficial(candidate){
  return {...out,lane:laneFor(out)};
 }
 function blockReason(candidate){
- const o=candidate.official||{},s=candidate.specs||{};
+ const o=candidate.official||{},s=candidate.specs||{},reasons=candidate.reasons||[];
+ if(reasons.includes('CONTAMINATION_FLAG'))return 'CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY';
+ if(reasons.includes('HEAVY_SEGMENT_SIGNAL'))return 'HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE';
  if((candidate.identity_collision_owners||[]).length)return 'CANONICAL_CODE_COLLISION_NORMALIZED';
  if(o.family_ok===false)return 'NON_AIR_MANN_FAMILY';
  if(o.shared_conflict===true)return 'OFFICIAL_GEOMETRY_CONFLICT';

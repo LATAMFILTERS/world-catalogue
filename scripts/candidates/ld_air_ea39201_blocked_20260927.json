@@ -1,0 +1,9 @@
+{
+  "sku": "EA39201",
+  "codigo_base": "C39201",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CONTAMINATION_FLAG_HIGH_REFERENCE_CARDINALITY",
+  "closed_at": "2026-09-27"
+}

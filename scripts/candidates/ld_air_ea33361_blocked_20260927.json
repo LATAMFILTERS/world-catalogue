@@ -1,0 +1,9 @@
+{
+  "sku": "EA33361",
+  "codigo_base": "C3361-2",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_GEOMETRY_CONFLICT",
+  "closed_at": "2026-09-27"
+}
