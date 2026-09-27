@@ -1,0 +1,9 @@
+{
+  "sku": "EA30781",
+  "codigo_base": "CA10781",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH",
+  "closed_at": "2026-09-27"
+}

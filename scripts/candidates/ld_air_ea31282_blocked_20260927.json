@@ -1,0 +1,9 @@
+{
+  "sku": "EA31282",
+  "codigo_base": "PH9763",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR",
+  "closed_at": "2026-09-27"
+}
