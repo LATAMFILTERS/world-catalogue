@@ -1,0 +1,13 @@
+{
+  "sku": "EA39041",
+  "codigo_base": "C249041",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "REVERIFY",
+  "reason": "PART_SEARCH_FAILED",
+  "part_search": {
+    "http": 200,
+    "returned_skus": ["EA18905"]
+  },
+  "closed_at": "2026-09-27"
+}

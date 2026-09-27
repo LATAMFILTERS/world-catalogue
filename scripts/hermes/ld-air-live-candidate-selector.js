@@ -35,19 +35,57 @@ function refsFor(row){
 function authorityRefs(row){
  return refsFor(row).filter(x=>['MANN','MANNFILTER','MANNHUMMEL','FRAM'].includes(norm(x.manufacturer||x.brand)));
 }
-async function enrichOfficial(candidate,patchMap){
+function prepareOfficialLocal(candidate,patchMap){
  const code=candidate.identity?.canonical_part_number||candidate.codigo_base;
  const exact=(patchMap.get(candidate.sku)||[]).find(x=>norm(x.mann_source)===norm(code));
- if(!exact)return {...candidate,official:{status:'MANN_PATCH_MISSING',geometry_ok:false,url_ok:false},lane:'REVERIFY'};
- const geometry_complete=hasNum(candidate.specs?.outer_diameter_mm)&&hasNum(candidate.specs?.height_mm)&&hasNum(exact.outer_diameter_mm)&&hasNum(exact.height_mm);
- const geometry_ok=geometry_complete&&close(candidate.specs.outer_diameter_mm,exact.outer_diameter_mm)&&close(candidate.specs.height_mm,exact.height_mm);
+ if(!exact)return {...candidate,official:{status:'MANN_PATCH_MISSING',geometry_complete:false,geometry_ok:false,shared_conflict:false,url_ok:false}};
+ const catalog=candidate.specs||{};
+ const odShared=hasNum(catalog.outer_diameter_mm)&&hasNum(exact.outer_diameter_mm);
+ const hShared=hasNum(catalog.height_mm)&&hasNum(exact.height_mm);
+ const shared_conflict=(odShared&&!close(catalog.outer_diameter_mm,exact.outer_diameter_mm))||(hShared&&!close(catalog.height_mm,exact.height_mm));
+ const geometry_complete=hasNum(catalog.outer_diameter_mm)&&hasNum(catalog.height_mm)&&hasNum(exact.outer_diameter_mm)&&hasNum(exact.height_mm);
+ const geometry_ok=geometry_complete&&!shared_conflict&&close(catalog.outer_diameter_mm,exact.outer_diameter_mm)&&close(catalog.height_mm,exact.height_mm);
  const sourceCode=norm(exact.mann_source),family_ok=sourceCode.startsWith('C')&&!sourceCode.startsWith('CU');
  const sourceSlug=String(exact.mann_source||'').toLowerCase().replace(/\s+/g,'').replace(/[^a-z0-9/]/g,'');
  const source_url='https://www.mann-filter.com/en/catalog/search-results/product.html/'+sourceSlug+'_mann-filter.html';
- let http=0,url_ok=false;
- if(geometry_ok){try{const res=await fetch(source_url,{redirect:'follow',signal:AbortSignal.timeout(5000)});http=res.status;url_ok=res.ok}catch(_){}}
- const official={status:'MANN_PATCH_EXACT',mann_source:exact.mann_source,a_mm:exact.outer_diameter_mm,h_mm:exact.height_mm,geometry_complete,geometry_ok,family_ok,source_url,http,url_ok};
- return {...candidate,official,lane:laneFor({...candidate,official})};
+ const official={status:'MANN_PATCH_EXACT',mann_source:exact.mann_source,a_mm:exact.outer_diameter_mm,h_mm:exact.height_mm,geometry_complete,geometry_ok,shared_conflict,family_ok,source_url,http:0,url_ok:false};
+ return {...candidate,official};
+}
+function numText(v){if(v==null)return null;const n=Number(String(v).replace(',','.'));return Number.isFinite(n)?n:null}
+function parseLiveMannDimensions(html){
+ const grab=(...patterns)=>{for(const p of patterns){const m=html.match(p);if(m)return numText(m[1])}return null};
+ return {
+  a_mm:grab(/Length \(A\)\s*=\s*([0-9.,]+)\s*mm/i,/Outer diameter \(A\)\s*=\s*([0-9.,]+)\s*mm/i),
+  b_mm:grab(/Width \(B\)\s*=\s*([0-9.,]+)\s*mm/i,/Inner diameter \(B\)\s*=\s*([0-9.,]+)\s*mm/i),
+  h_mm:grab(/Height \(H\)\s*=\s*([0-9.,]+)\s*mm/i)
+ };
+}
+async function enrichOfficial(candidate){
+ let http=0,url_ok=false,live={a_mm:null,b_mm:null,h_mm:null};
+ const base=candidate.official||{};
+ if(base.family_ok===true&&base.shared_conflict!==true&&base.source_url){
+  try{
+   const res=await fetch(base.source_url,{redirect:'follow',signal:AbortSignal.timeout(5000)});
+   http=res.status;url_ok=res.ok;
+   if(res.ok)live=parseLiveMannDimensions(await res.text());
+  }catch(_){}
+ }
+ const catalog=candidate.specs||{};
+ const a_mm=hasNum(base.a_mm)?Number(base.a_mm):live.a_mm;
+ const h_mm=hasNum(base.h_mm)?Number(base.h_mm):live.h_mm;
+ const odConflict=hasNum(catalog.outer_diameter_mm)&&hasNum(a_mm)&&!close(catalog.outer_diameter_mm,a_mm);
+ const hConflict=hasNum(catalog.height_mm)&&hasNum(h_mm)&&!close(catalog.height_mm,h_mm);
+ const shared_conflict=base.shared_conflict===true||odConflict||hConflict;
+ const geometry_patch={};
+ if(!shared_conflict&&!hasNum(catalog.outer_diameter_mm)&&hasNum(a_mm))geometry_patch.outer_diameter_mm=a_mm;
+ if(!shared_conflict&&!hasNum(catalog.height_mm)&&hasNum(h_mm))geometry_patch.height_mm=h_mm;
+ const finalA=hasNum(catalog.outer_diameter_mm)?Number(catalog.outer_diameter_mm):geometry_patch.outer_diameter_mm;
+ const finalH=hasNum(catalog.height_mm)?Number(catalog.height_mm):geometry_patch.height_mm;
+ const geometry_complete=hasNum(finalA)&&hasNum(finalH)&&hasNum(a_mm)&&hasNum(h_mm);
+ const geometry_ok=geometry_complete&&!shared_conflict&&close(finalA,a_mm)&&close(finalH,h_mm);
+ const official={...base,a_mm,h_mm,b_mm:live.b_mm,live_dimensions:live,geometry_complete,geometry_ok,shared_conflict,http,url_ok};
+ const out={...candidate,official,geometry_patch:Object.keys(geometry_patch).length?geometry_patch:null};
+ return {...out,lane:laneFor(out)};
 }
 function laneFor(candidate){
  const reasons=candidate.reasons||[],official=candidate.official||{},identity=candidate.identity||{},gov=candidate.governance||{};
@@ -57,6 +95,7 @@ function laneFor(candidate){
  if(!core_ok) return 'REVERIFY';
  if(reasons.includes('HEAVY_SEGMENT_SIGNAL')||reasons.includes('CONTAMINATION_FLAG')) return 'BLOCKED';
  if(official.status==='MANN_PATCH_EXACT'&&official.family_ok===false) return 'BLOCKED';
+ if(official.status==='MANN_PATCH_EXACT'&&official.shared_conflict===true) return 'BLOCKED';
  if(official.status==='MANN_PATCH_EXACT'&&official.geometry_complete===false) return 'REVERIFY';
  if(official.status==='MANN_PATCH_EXACT'&&official.geometry_complete===true&&official.geometry_ok===false) return 'BLOCKED';
  if(official.status==='MANN_PATCH_EXACT'&&official.family_ok===true&&official.geometry_complete===true&&official.geometry_ok===true&&official.url_ok===true) return 'AUTO_CLOSE';
@@ -98,11 +137,20 @@ async function main(){
     return {sku:row.sku,codigo_base:row.codigo_base,score:s.score,reasons:s.reasons,identity:identity?{origin_group:identity.origin_group,canonical_brand:identity.canonical_brand,canonical_part_number:identity.canonical_part_number,evidence_source:identity.evidence_source}:null,governance:row.enrichment_data?.codigo_base_governance||null,authority_refs:s.refs,makes:s.makes,specs:{height_mm:row.height_mm,outer_diameter_mm:row.outer_diameter_mm,inner_diameter_mm:row.inner_diameter_mm,product_length_mm:row.product_length_mm}};
   }).sort((a,b)=>b.score-a.score||a.sku.localeCompare(b.sku));
   const patchMap=loadMannPatch();
-  const poolLimit=Math.min(ranked.length,BATCH_LIMIT*4),selected=ranked.slice(0,poolLimit),enriched=[];
-  for(let i=0;i<selected.length;i+=10)enriched.push(...await Promise.all(selected.slice(i,i+10).map(x=>enrichOfficial(x,patchMap))));
+  const prepared=ranked.map(x=>prepareOfficialLocal(x,patchMap));
+  const localReady=prepared.filter(x=>{
+   const o=x.official||{};
+   const r=x.reasons||[];
+   return o.status==='MANN_PATCH_EXACT'&&o.family_ok===true&&o.shared_conflict!==true
+    &&!r.includes('HEAVY_SEGMENT_SIGNAL')&&!r.includes('CONTAMINATION_FLAG');
+  });
+  const verifyPool=localReady.slice(0,Math.min(localReady.length,BATCH_LIMIT*3)),verified=[];
+  for(let i=0;i<verifyPool.length;i+=20)verified.push(...await Promise.all(verifyPool.slice(i,i+20).map(enrichOfficial)));
+  const verifiedMap=new Map(verified.map(x=>[x.sku,x]));
+  const classified=prepared.map(x=>verifiedMap.get(x.sku)||({...x,lane:laneFor(x)}));
   const lanePriority={AUTO_CLOSE:0,REVERIFY:1,BLOCKED:2};
-  enriched.sort((a,b)=>lanePriority[a.lane]-lanePriority[b.lane]||b.score-a.score||a.sku.localeCompare(b.sku));
-  const batch=enriched.slice(0,BATCH_LIMIT);
+  classified.sort((a,b)=>lanePriority[a.lane]-lanePriority[b.lane]||b.score-a.score||a.sku.localeCompare(b.sku));
+  const batch=classified.slice(0,BATCH_LIMIT);
   const lanes={AUTO_CLOSE:batch.filter(x=>x.lane==='AUTO_CLOSE'),REVERIFY:batch.filter(x=>x.lane==='REVERIFY'),BLOCKED:batch.filter(x=>x.lane==='BLOCKED')};
   const outPath=path.join(DIR,'ld_air_live_candidates_current.json');
   const payload={selection_model:'LD_AIR_LIVE_PRIORITY_V2_BATCH_LANES',generated_at:new Date().toISOString(),eligible_count:ranked.length,batch_limit:BATCH_LIMIT,summary:{selected:batch.length,auto_close:lanes.AUTO_CLOSE.length,reverify:lanes.REVERIFY.length,blocked:lanes.BLOCKED.length},lanes,candidates:batch};
