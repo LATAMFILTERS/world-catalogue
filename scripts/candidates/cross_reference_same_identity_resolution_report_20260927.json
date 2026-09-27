@@ -1,0 +1,7943 @@
+{
+  "mode": "apply",
+  "skus": 1631,
+  "identities": 44926,
+  "pass": 375,
+  "updated": 375,
+  "blocked": [
+    {
+      "sku": "EA12031",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12043",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12044",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12106",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12449",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60311",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12502",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12587",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA132510",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13347",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA133703",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13703",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13706",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13713",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13765",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14353",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL85680",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA25007",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14767",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14837",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14860",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14868",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80671",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15099",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA151028",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15109",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA151098",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60320",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15217",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA15298",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80777",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15510",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15703",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15704",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15755",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80973",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA15835",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15838",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15859",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16092",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA16158",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82007",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82008",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA16219",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16255",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16279",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA282526",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82063",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA16318",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16390",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16401",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16405",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16406",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16407",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16410",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16428",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16432",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16433",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16446",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16481",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16498",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16501",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16504",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16505",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80580",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA16509",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16510",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90026",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90043",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90048",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90049",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90054",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90057",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90060",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16511",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90061",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90090",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90094",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90104",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16555",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90106",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16577",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90120",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90126",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16613",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16614",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90201",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16648",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90218",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16694",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90345",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16695",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16696",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16697",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16720",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90349",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90405",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90410",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90440",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16762",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16765",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16801",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90495",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF90522",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90529",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90552",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90632",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90678",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90686",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90690",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90711",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90729",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90757",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90848",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90860",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90861",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90901",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90936",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90958",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90959",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90967",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91052",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF91081",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF91082",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF91103",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL89128",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91167",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18043",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA182052",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91317",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF91329",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91351",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91433",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA18785",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91437",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91605",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91624",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91760",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91770",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91847",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF92134",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92166",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92167",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92251",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92387",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92398",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92420",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92564",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92603",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF93080",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF93261",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF93855",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF94620",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF95095",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF95627",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF96245",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF96287",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF96915",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF96917",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC12811",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC13229",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC16227",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC16490",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC16965",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF97440",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC17109",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC17243",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC17333",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EC12775",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC18333",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EC18619",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF97917",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF98000",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF98600",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF99624",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF99803",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC38010",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC13407",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60138",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60222",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60386",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60387",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60388",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60648",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60693",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60694",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60699",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60700",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF37041",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF37162",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61094",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61160",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61183",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61200",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61210",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61215",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF90012",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90047",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90105",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90365",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90385",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90390",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90391",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61323",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61324",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF90463",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90467",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61348",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61354",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61365",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF90587",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90588",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61369",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90673",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90683",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90685",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90736",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF90737",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61413",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF90966",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90974",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90811",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90540",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91311",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91335",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61525",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61526",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61527",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61528",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61529",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61530",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61531",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61532",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61535",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF91615",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61551",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61552",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61553",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61556",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92020",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91130",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61557",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92142",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92157",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92161",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92216",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF92599",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF93004",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61756",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61758",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91712",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF99100",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60082",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61828",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61834",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61836",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61837",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61839",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61840",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60128",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60140",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60079",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60223",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60274",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60275",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60276",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61969",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60309",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF96916",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH62170",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH62178",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH62184",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60416",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60427",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60445",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60486",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60487",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60523",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60527",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60576",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60593",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60083",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60653",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60698",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60705",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH62463",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH62464",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60816",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60830",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF96745",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH62756",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61013",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61054",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61142",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61158",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61222",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61276",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61290",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61347",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61334",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61521",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61539",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61555",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61567",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61569",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61575",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61635",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61663",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61755",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61810",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61814",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61820",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60637",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61843",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61846",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61534",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH62459",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH62466",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH62461",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH62766",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63018",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63055",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63060",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63065",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63081",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63098",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63943",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH63996",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH63172",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63207",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61558",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64056",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64059",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64164",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64166",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64170",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64172",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EC17281",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH63293",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63301",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH63439",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH63448",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH63483",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63485",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63577",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64203",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64205",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64225",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64229",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH61813",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63751",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63761",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH63789",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH63903",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63910",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64348",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64000",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64375",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64378",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64381",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64524",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64174",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64176",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64178",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64241",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64266",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64296",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64703",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64707",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64351",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64352",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64384",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64468",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64552",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64574",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64594",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64699",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63299",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64853",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64904",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH63437",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH64906",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH650308",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65041",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65062",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65136",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65150",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65151",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65238",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65243",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65251",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65461",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65332",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65335",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65338",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65675",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65354",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65878",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65378",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65569",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65603",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65659",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65672",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65705",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH65744",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65762",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65876",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65877",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65879",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65880",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH65935",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH66001",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH66005",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66064",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH660694",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH66206",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH66208",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66210",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66211",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66212",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66213",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66218",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH66219",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66220",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66223",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH64967",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH650084",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66230",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66232",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66237",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH650700",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66446",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH662921",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH663542",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66385",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66461",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH66922",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66511",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH665875",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH666220",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH666221",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH666222",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH66652",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH66700",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH66959",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH66984",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH670949",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90248",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90316",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67162",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67182",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH67185",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67186",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67188",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH67184",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH68467",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67410",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67425",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67514",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH676670",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67796",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH650309",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67841",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH67843",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30017",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67944",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67945",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30067",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30761",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30825",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH68599",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH69075",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31223",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31263",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31275",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH69279",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH69383",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH69444",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH69518",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH69528",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH69740",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH69763",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30004",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31881",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30013",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30015",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30016",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30020",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL32001",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL32003",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30068",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30077",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL32103",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30087",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL32575",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30205",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30215",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL32021",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30672",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30712",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30718",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30721",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL36111",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30917",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30920",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30931",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30940",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30945",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30950",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30951",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37030",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37032",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30960",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL30962",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31004",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31008",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31102",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL38010",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31151",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31169",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61275",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31180",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31183",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31201",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31215",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL38006",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31228",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39003",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39011",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31241",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31243",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31254",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31283",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31294",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31302",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL31374",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31480",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31502",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80068",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80059",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80383",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80400",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80422",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80490",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80507",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL31911",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31921",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL32007",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80750",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80769",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL32045",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80935",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL32180",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL81343",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL32300",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL32308",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82231",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82433",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL32610",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82562",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL83315",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL33004",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL33011",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL33015",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL33021",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL33145",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL33742",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL84005",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL33749",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL84105",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL34011",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL34013",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL84925",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL34022",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL34024",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL34030",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL34034",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL34047",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL34051",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL34055",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL87670",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL87780",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL88250",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL88616",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL88329",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL36101",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL36103",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL36219",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EW72076",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37003",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL37008",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37010",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37035",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37050",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37053",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37172",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37194",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37233",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37241",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL37245",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL37301",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL38402",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39050",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39071",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39072",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39084",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39142",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39161",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39207",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39251",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39265",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39307",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39324",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39331",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39352",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39362",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39402",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39404",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39507",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39515",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39803",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39807",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39808",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80006",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80008",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80010",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80015",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80018",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80020",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80021",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80024",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80025",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80034",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80035",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80041",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80047",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80050",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80051",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80052",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80058",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80062",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80066",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80067",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80073",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80078",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80080",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80087",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80092",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80117",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80132",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80141",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80147",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80152",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80154",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80157",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80162",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80165",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80166",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80183",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80184",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80188",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80203",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80226",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80227",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80242",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80286",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80299",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80315",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80318",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80319",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80335",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80341",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80342",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80356",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80362",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80367",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80371",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80378",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80380",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80389",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80396",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80409",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80412",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80420",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80425",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80428",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80484",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80485",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80493",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80505",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80512",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80516",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80519",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80520",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80528",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80564",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80596",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80597",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80598",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80599",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80613",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80636",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80707",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80710",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80712",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80719",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80726",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80761",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80766",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80768",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80776",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80779",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80780",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80794",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80812",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80820",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80909",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80939",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80947",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL80963",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80964",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81005",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL81014",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81018",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL81102",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81263",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL81267",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81285",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81297",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL81352",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81381",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL81400",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81603",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81604",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81670",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL81763",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81784",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81807",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL81808",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82009",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82015",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82017",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82019",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82020",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82022",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82024",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82039",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82042",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82043",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82049",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82050",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82051",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82057",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82058",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82060",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82067",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82069",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82076",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82093",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82100",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82107",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82186",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82194",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82206",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82222",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82223",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82225",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82361",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82451",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL82518",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82819",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL82849",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL83000",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL83191",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL83335",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL83411",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL83548",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL83634",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL83712",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL83771",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL84004",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL84136",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL84206",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL84403",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL84407",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL84408",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL84770",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL85616",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL87207",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL87300",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL87349",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL87405",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL88425",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL88462",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL88615",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL89000",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL89071",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL89126",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL89196",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL89206",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EL89418",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EW72055",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EW74072",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH61533",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80965",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA181028",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EF90541",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90762",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90928",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91318",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60229",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EH60230",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA19036",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10692",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA11071",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11068",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11594",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17787",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18404",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11397",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA20161",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14382",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA21006",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA22404",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15365",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15457",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "ED41413",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16835",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16839",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16873",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11136",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11278",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11531",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16948",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA245001",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16952",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12034",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17042",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14047",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17075",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11065",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19778",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA171073",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA171511",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF90127",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA265002",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11228",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11283",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11523",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA172506",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18113",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF91772",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10063",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60213",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10103",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10132",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10397",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10511",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10621",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA10635",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11033",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11037",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11040",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11041",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11052",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11063",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11070",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11080",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11090",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11092",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11099",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA11113",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11114",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11118",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA11191",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11240",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11337",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11359",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11529",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA11534",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11561",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11593",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11598",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12002",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12040",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12096",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13781",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14354",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14723",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10770",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15500",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16512",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16837",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16840",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17040",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA171575",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17234",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA172507",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17288",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17293",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17309",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17313",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17327",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17377",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA17409",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18668",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18702",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18736",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA200003",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11015",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA20076",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA20206",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA20219",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA20022",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA205004",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11042",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11055",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA225004",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA22503",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA22504",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA25004",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA270088",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA27449",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA27512",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA285002",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17483",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA28722",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17484",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11097",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA17523",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17524",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17551",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11331",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11338",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11343",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17578",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11395",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11398",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11516",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17638",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17639",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17641",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA176497",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17653",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17665",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17682",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA177152",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17781",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17869",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10642",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11054",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15070",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11767",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11774",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18044",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17776",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12514",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA181039",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11922",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA181097",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11938",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11951",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67024",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12000",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12001",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12008",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12014",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12015",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12016",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA18157",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12028",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12032",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12033",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12035",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12036",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12037",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA18215",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12038",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12039",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12041",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18216",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18219",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12045",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12046",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH67380",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12048",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18220",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18225",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18231",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18235",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12049",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12050",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12052",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12054",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12055",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12059",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12062",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12063",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12068",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18343",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12070",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12071",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12072",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12082",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17868",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18408",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11017",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11031",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA121055",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18462",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12095",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12099",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA13702",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12104",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12064",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA121575",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12212",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12343",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12345",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12410",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12425",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12450",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17236",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12452",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12473",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18509",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12042",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12503",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12504",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12505",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12509",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12510",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA125129",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10012",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10131",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12520",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10760",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11032",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11163",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12522",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12523",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12524",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12529",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12530",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12531",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12535",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12536",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12545",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12549",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12550",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18573",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12553",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12555",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12556",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12564",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18586",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12578",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12579",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12657",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA12686",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12745",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12768",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12769",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12810",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA128216",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC10450",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC11036",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12858",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC16680",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL31130",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EC17595",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18666",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12935",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA12966",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13138",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA131520",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13159",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13160",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13179",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13232",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13343",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13395",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18781",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10764",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17871",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17875",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13551",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18336",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA18885",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18889",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18905",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18906",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13701",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18966",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18968",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18969",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13720",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18970",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18972",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19135",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA13930",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA19240",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19241",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19293",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19332",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60250",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19333",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60251",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA19370",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EH60252",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18932",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18984",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19371",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19374",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19375",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18989",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14241",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA18994",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19472",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19473",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19474",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14344",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19486",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19539",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14355",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14357",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14362",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19548",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19595",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19596",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19458",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14390",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14391",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EF30044",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14500",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14523",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19720",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19791",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14575",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA181038",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA20009",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14738",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA20017",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA20023",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA14931",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19372",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19373",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15362",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA20317",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15687",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19410",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15701",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15702",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15749",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA19417",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA15889",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10006",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10017",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10020",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10024",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10030",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10181",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10207",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10307",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10398",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10484",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL39451",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10622",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA10633",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10643",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10645",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10678",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10693",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10694",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10761",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10766",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10776",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10815",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10822",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA10866",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA10911",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA11000",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11001",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11002",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11004",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11005",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11007",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA11008",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA11010",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11013",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11014",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA11016",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA11021",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11023",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11024",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11030",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11034",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11035",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11036",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11038",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11039",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11043",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11044",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11045",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11046",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11047",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11049",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11050",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11059",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11062",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11064",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11072",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11073",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11078",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11079",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11082",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11087",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11088",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11089",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11091",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11093",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11095",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    },
+    {
+      "sku": "EA11096",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA16828",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11100",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11105",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11137",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11139",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11185",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11187",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11188",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11204",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11205",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11208",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11280",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11319",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11335",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11336",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11339",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11348",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11404",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11424",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES",
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11505",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11508",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11520",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11522",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11527",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11546",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11549",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11557",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11558",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11559",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11573",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA17308",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EA11592",
+      "reason": [
+        "OEM_IN_COMPETITOR_CODES"
+      ]
+    },
+    {
+      "sku": "EL80379",
+      "reason": [
+        "AFTERMARKET_IN_OEM_CODES"
+      ]
+    }
+  ],
+  "transaction": "COMMIT"
+}

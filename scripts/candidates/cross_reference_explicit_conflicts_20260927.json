@@ -1,0 +1,1528 @@
+[
+  {
+    "sku": "EH64592",
+    "code": "7051",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "7051",
+        "manufacturer": "FILTRAUTO-UK"
+      },
+      {
+        "code": "7051",
+        "manufacturer": "CROSLAND",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH64592",
+    "code": "7054",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "7054",
+        "manufacturer": "FILTRAUTO-UK"
+      },
+      {
+        "code": "7054",
+        "manufacturer": "CROSLAND",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH65043",
+    "code": "M4A03HA",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MICHIGAN-FLUID-POWER"
+      },
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH65239",
+    "code": "492",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "492",
+        "manufacturer": "FILTRAUTO-UK"
+      },
+      {
+        "code": "492",
+        "manufacturer": "CROSLAND",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH61540",
+    "code": "CR1801",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CR1801",
+        "manufacturer": "FBO"
+      },
+      {
+        "code": "CR1801",
+        "manufacturer": "JURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EA15056",
+    "code": "136833",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "136833",
+        "manufacturer": "NELSON-WINSLOW"
+      },
+      {
+        "code": "136833",
+        "manufacturer": "NELSON",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL30671",
+    "code": "11930535151",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "119305-35151",
+        "brand": "YANMAR",
+        "manufacturer": "KOMATSU",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "119305-35151",
+        "brand": "YANMAR",
+        "manufacturer": "YANMAR"
+      }
+    ]
+  },
+  {
+    "sku": "EL30671",
+    "code": "YM11930535151",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "YM11930535151",
+        "manufacturer": "KOMATSU",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "YM11930535151",
+        "manufacturer": "YANMAR"
+      }
+    ]
+  },
+  {
+    "sku": "EL31915",
+    "code": "93892090",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "93892090",
+        "brand": "GENERAL-MOTORS",
+        "manufacturer": "GENERAL-MOTORS",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "93892090",
+        "brand": "GENERAL-MOTORS",
+        "manufacturer": "VAUXHALL"
+      }
+    ]
+  },
+  {
+    "sku": "EL31915",
+    "code": "9975233",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "9975233",
+        "brand": "GENERAL-MOTORS",
+        "manufacturer": "GENERAL-MOTORS",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "9975233",
+        "brand": "GENERAL-MOTORS",
+        "manufacturer": "VAUXHALL"
+      }
+    ]
+  },
+  {
+    "sku": "EA12007",
+    "code": "57MD26",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "57MD26",
+        "manufacturer": "MACK",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "57MD26",
+        "manufacturer": "MAXI-BILT"
+      }
+    ]
+  },
+  {
+    "sku": "EA17791",
+    "code": "220055064",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "22005-5064",
+        "manufacturer": "VOLVO",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "22-0055064",
+        "manufacturer": "WHITE"
+      }
+    ]
+  },
+  {
+    "sku": "EA18050",
+    "code": "9035428",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "9035428",
+        "manufacturer": "GENERAL-MOTORS",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "9035428",
+        "manufacturer": "EUCLID"
+      }
+    ]
+  },
+  {
+    "sku": "EA18050",
+    "code": "V30927",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "V30927",
+        "manufacturer": "NEW-HOLLAND",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "V30927",
+        "manufacturer": "VERSATILE"
+      }
+    ]
+  },
+  {
+    "sku": "EA15218",
+    "code": "SFA0273P",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "SFA0273P",
+        "manufacturer": "AMC"
+      },
+      {
+        "code": "SFA0273P",
+        "manufacturer": "AMERICAN MOTORS CORPORATION"
+      },
+      {
+        "code": "SFA0273P",
+        "manufacturer": "EXMAN"
+      },
+      {
+        "code": "SFA0273P",
+        "manufacturer": "SURE",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH60308",
+    "code": "6003026",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "6003026",
+        "manufacturer": "MP PRODUCTS"
+      },
+      {
+        "code": "6003026",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EA15522",
+    "code": "9383",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "9383",
+        "manufacturer": "FILTRAUTO-UK"
+      },
+      {
+        "code": "9383",
+        "manufacturer": "CROSLAND",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EA16278",
+    "code": "6486919",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "6486919",
+        "manufacturer": "GENERAL-MOTORS",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "6486919",
+        "manufacturer": "CHEVROLET"
+      }
+    ]
+  },
+  {
+    "sku": "EF93200",
+    "code": "LFF1021",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "LFF1021",
+        "manufacturer": "CHAMPION-LABORATORIES"
+      },
+      {
+        "code": "LFF1021",
+        "manufacturer": "LUBER-FINER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EC30002",
+    "code": "87300044",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "87300044",
+        "brand": "CASE CONSTRUCTION",
+        "manufacturer": "CASE",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "87300-044",
+        "brand": "CASE CONSTRUCTION",
+        "manufacturer": "KUBOTA"
+      }
+    ]
+  },
+  {
+    "sku": "EH60926",
+    "code": "SFH0670",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "SFH0670",
+        "manufacturer": "AMC"
+      },
+      {
+        "code": "SFH0670",
+        "manufacturer": "EXMAN"
+      },
+      {
+        "code": "SFH0670",
+        "manufacturer": "SURE",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EF90937",
+    "code": "LFF1021",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "LFF1021",
+        "manufacturer": "CHAMPION-LABORATORIES"
+      },
+      {
+        "code": "LFF1021",
+        "manufacturer": "LUBER-FINER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH61536",
+    "code": "CR1801",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CR1801",
+        "manufacturer": "FBO"
+      },
+      {
+        "code": "CR1801",
+        "manufacturer": "JURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH61537",
+    "code": "CR1801",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CR1801",
+        "manufacturer": "FBO"
+      },
+      {
+        "code": "CR1801",
+        "manufacturer": "JURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH61538",
+    "code": "CR1801",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CR1801",
+        "manufacturer": "FBO"
+      },
+      {
+        "code": "CR1801",
+        "manufacturer": "JURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH61541",
+    "code": "CR1801",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CR1801",
+        "manufacturer": "FBO"
+      },
+      {
+        "code": "CR1801",
+        "manufacturer": "JURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH61830",
+    "code": "CR403",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CR403",
+        "manufacturer": "FBO"
+      },
+      {
+        "code": "CR403",
+        "manufacturer": "JURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH61833",
+    "code": "CR403",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CR403",
+        "manufacturer": "FBO"
+      },
+      {
+        "code": "CR403",
+        "manufacturer": "JURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH61842",
+    "code": "CR403",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CR403",
+        "manufacturer": "FBO"
+      },
+      {
+        "code": "CR403",
+        "manufacturer": "JURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH61845",
+    "code": "CR403",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CR403",
+        "manufacturer": "FBO"
+      },
+      {
+        "code": "CR403",
+        "manufacturer": "JURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH63993",
+    "code": "SFH0670",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "SFH0670",
+        "manufacturer": "AMC"
+      },
+      {
+        "code": "SFH0670",
+        "manufacturer": "EXMAN"
+      },
+      {
+        "code": "SFH0670",
+        "manufacturer": "SURE",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH64247",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH64249",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH64260",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH64168",
+    "code": "HY20664",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "HY20664",
+        "manufacturer": "SF"
+      },
+      {
+        "code": "HY20664",
+        "manufacturer": "SCHUPP",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH64200",
+    "code": "301",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "301",
+        "manufacturer": "FILTRAUTO-UK"
+      },
+      {
+        "code": "301",
+        "manufacturer": "CROSLAND",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH64243",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH64596",
+    "code": "HY20664",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "HY20664",
+        "manufacturer": "SF"
+      },
+      {
+        "code": "HY20664",
+        "manufacturer": "SCHUPP",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH65138",
+    "code": "M4A03HA",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MICHIGAN-FLUID-POWER"
+      },
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66195",
+    "code": "CH152FC11",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MODINA"
+      },
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66196",
+    "code": "CH152FC11",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MODINA"
+      },
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66197",
+    "code": "CH152FC11",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MODINA"
+      },
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66198",
+    "code": "CH152FC11",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MODINA"
+      },
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66200",
+    "code": "M4A03HA",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MICHIGAN-FLUID-POWER"
+      },
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66201",
+    "code": "M4A03HA",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MICHIGAN-FLUID-POWER"
+      },
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66203",
+    "code": "M4A03HA",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MICHIGAN-FLUID-POWER"
+      },
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66214",
+    "code": "HY20664",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "HY20664",
+        "manufacturer": "SF"
+      },
+      {
+        "code": "HY20664",
+        "manufacturer": "SCHUPP",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66215",
+    "code": "HY20664",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "HY20664",
+        "manufacturer": "SF"
+      },
+      {
+        "code": "HY20664",
+        "manufacturer": "SCHUPP",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66217",
+    "code": "HY20664",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "HY20664",
+        "manufacturer": "SF"
+      },
+      {
+        "code": "HY20664",
+        "manufacturer": "SCHUPP",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66231",
+    "code": "7053",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "7053",
+        "manufacturer": "FILTRAUTO-UK"
+      },
+      {
+        "code": "7053",
+        "manufacturer": "CROSLAND",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66270",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66271",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66272",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66273",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66274",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66275",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66276",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66277",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH66597",
+    "code": "CH152FC11",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MODINA"
+      },
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH666207",
+    "code": "7051",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "7051",
+        "manufacturer": "FILTRAUTO-UK"
+      },
+      {
+        "code": "7051",
+        "manufacturer": "CROSLAND",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH666207",
+    "code": "7054",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "7054",
+        "manufacturer": "FILTRAUTO-UK"
+      },
+      {
+        "code": "7054",
+        "manufacturer": "CROSLAND",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH67180",
+    "code": "CH152FC11",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MODINA"
+      },
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH67181",
+    "code": "CH152FC11",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MODINA"
+      },
+      {
+        "code": "CH152FC11",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH67183",
+    "code": "M4A03HA",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MICHIGAN-FLUID-POWER"
+      },
+      {
+        "code": "M4A03HA",
+        "manufacturer": "MP-FILTRI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH67888",
+    "code": "H890013003BN",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "H890013003BN",
+        "manufacturer": "HYCON"
+      },
+      {
+        "code": "H890013003BN",
+        "manufacturer": "HYDAC",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH67890",
+    "code": "H890013003BN",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "H890013003BN",
+        "manufacturer": "HYCON"
+      },
+      {
+        "code": "H890013003BN",
+        "manufacturer": "HYDAC",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH69344",
+    "code": "925779",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "925779",
+        "manufacturer": "CARBOCOL"
+      },
+      {
+        "code": "925779",
+        "manufacturer": "PARKER",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EH69529",
+    "code": "HY20664",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "HY20664",
+        "manufacturer": "SF"
+      },
+      {
+        "code": "HY20664",
+        "manufacturer": "SCHUPP",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL30980",
+    "code": "1346028C1",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "1346028C1",
+        "brand": "CASE",
+        "manufacturer": "CASE",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "1346028C1",
+        "brand": "CASE",
+        "manufacturer": "IHC-CASE"
+      }
+    ]
+  },
+  {
+    "sku": "EL31268",
+    "code": "0707000000",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "0707000000",
+        "manufacturer": "TEREX",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "07.0700.0000",
+        "manufacturer": "GENIE"
+      }
+    ]
+  },
+  {
+    "sku": "EL31707",
+    "code": "504082382",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "504082382",
+        "brand": "84346773",
+        "manufacturer": "NEW-HOLLAND",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "504082382",
+        "brand": "84346773",
+        "manufacturer": "ASTRA"
+      }
+    ]
+  },
+  {
+    "sku": "EL31913",
+    "code": "93156747",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "93156747",
+        "manufacturer": "GENERAL-MOTORS",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "93156747",
+        "manufacturer": "VAUXHALL"
+      }
+    ]
+  },
+  {
+    "sku": "EL34029",
+    "code": "FT4653",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "FT4653",
+        "manufacturer": "COOPERS-FIAAM"
+      },
+      {
+        "code": "FT4653",
+        "manufacturer": "FIAAM",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL35026",
+    "code": "84228510",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "84228510",
+        "manufacturer": "NEW-HOLLAND",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "84228510",
+        "manufacturer": "KOBELCO"
+      }
+    ]
+  },
+  {
+    "sku": "EL39136",
+    "code": "140516130",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "140516130",
+        "brand": "CUSHMAN",
+        "manufacturer": "PERKINS",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "140516130",
+        "brand": "CUSHMAN",
+        "manufacturer": "SHIBAURA"
+      }
+    ]
+  },
+  {
+    "sku": "EL39136",
+    "code": "1560025010",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "1560025010",
+        "brand": "DAIHATSU",
+        "manufacturer": "TOYOTA",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "1560025010",
+        "brand": "DAIHATSU",
+        "manufacturer": "DAIHATSU"
+      }
+    ]
+  },
+  {
+    "sku": "EL39452",
+    "code": "87707948",
+    "target": "OEM",
+    "refs": [
+      {
+        "code": "87707948",
+        "manufacturer": "CASE-IH",
+        "classification": "OEM",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      },
+      {
+        "code": "87707948",
+        "manufacturer": "STEYR-DAIMLER-PUCH"
+      }
+    ]
+  },
+  {
+    "sku": "EL80406",
+    "code": "C2906",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "C2906",
+        "manufacturer": "FSA"
+      },
+      {
+        "code": "C2906",
+        "manufacturer": "SAKURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL80406",
+    "code": "C8024",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "C8024",
+        "manufacturer": "FSA"
+      },
+      {
+        "code": "C8024",
+        "manufacturer": "SAKURA",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL80406",
+    "code": "SFO9782ML",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "SFO9782ML",
+        "manufacturer": "AMC"
+      },
+      {
+        "code": "SFO9782ML",
+        "manufacturer": "AMERICAN MOTORS CORPORATION"
+      },
+      {
+        "code": "SFO9782ML",
+        "manufacturer": "EXMAN"
+      },
+      {
+        "code": "SFO9782ML",
+        "manufacturer": "SURE",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL80406",
+    "code": "T7317",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "T7317",
+        "manufacturer": "MICROPORE"
+      },
+      {
+        "code": "T7317",
+        "manufacturer": "HIFI",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL81017",
+    "code": "2120",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "2120",
+        "manufacturer": "FILTRAUTO-UK"
+      },
+      {
+        "code": "2120",
+        "manufacturer": "CROSLAND",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL81017",
+    "code": "SFO3345",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "SFO3345",
+        "manufacturer": "AMC"
+      },
+      {
+        "code": "SFO3345",
+        "manufacturer": "AMERICAN MOTORS CORPORATION"
+      },
+      {
+        "code": "SFO3345",
+        "manufacturer": "EXMAN"
+      },
+      {
+        "code": "SFO3345",
+        "manufacturer": "SURE",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL87505",
+    "code": "9334",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "9334",
+        "manufacturer": "FILTRAUTO-UK"
+      },
+      {
+        "code": "9334",
+        "manufacturer": "CROSLAND",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL87505",
+    "code": "SFO0691",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "SFO0691",
+        "manufacturer": "AMC"
+      },
+      {
+        "code": "SFO0691",
+        "manufacturer": "AMERICAN MOTORS CORPORATION"
+      },
+      {
+        "code": "SFO0691",
+        "manufacturer": "EXMAN"
+      },
+      {
+        "code": "SFO0691",
+        "manufacturer": "SURE",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  },
+  {
+    "sku": "EL87505",
+    "code": "SFO4005",
+    "target": "AFTERMARKET",
+    "refs": [
+      {
+        "code": "SFO4005",
+        "manufacturer": "AMC"
+      },
+      {
+        "code": "SFO4005",
+        "manufacturer": "AMERICAN MOTORS CORPORATION"
+      },
+      {
+        "code": "SFO4005",
+        "manufacturer": "EXMAN"
+      },
+      {
+        "code": "SFO4005",
+        "manufacturer": "SURE",
+        "classification": "AFTERMARKET",
+        "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+      }
+    ]
+  }
+]

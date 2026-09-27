@@ -1,0 +1,9 @@
+{
+  "mode": "apply",
+  "skus": 12,
+  "pass": 12,
+  "updated": 12,
+  "quarantined": 35,
+  "blocked": [],
+  "transaction": "COMMIT"
+}

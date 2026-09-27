@@ -1,0 +1,104 @@
+{
+  "mode": "apply",
+  "scanned": 13312,
+  "changed": 3597,
+  "pass": 3585,
+  "updated": 3585,
+  "blocked": [
+    {
+      "sku": "EA14046",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    },
+    {
+      "sku": "EL83993",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    },
+    {
+      "sku": "EF37233",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    },
+    {
+      "sku": "EA31211",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    },
+    {
+      "sku": "ES91844",
+      "reason": [
+        "REFERENCE_RECLASSIFICATION_REMOVED_REFERENCE"
+      ]
+    },
+    {
+      "sku": "EA18375",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    },
+    {
+      "sku": "EA10464",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    },
+    {
+      "sku": "EA14088",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    },
+    {
+      "sku": "EA19511",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    },
+    {
+      "sku": "EA16486",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    },
+    {
+      "sku": "EA10591",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    },
+    {
+      "sku": "EA10641",
+      "reason": [
+        "CROSS_COLUMN_DUPLICATE_COUNT_INCREASE"
+      ],
+      "old_cross": 0,
+      "new_cross": 1
+    }
+  ],
+  "transaction": "COMMIT"
+}
