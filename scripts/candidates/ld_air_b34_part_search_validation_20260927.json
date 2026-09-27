@@ -1,0 +1,59 @@
+{
+  "batch": "LD_AIR_B34",
+  "total": 5,
+  "passed": 5,
+  "retryable": 0,
+  "failed": [],
+  "results": [
+    {
+      "sku": "EA33002",
+      "code": "C2813002",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA33002"
+      ]
+    },
+    {
+      "sku": "EA32328",
+      "code": "C32328",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA32328"
+      ]
+    },
+    {
+      "sku": "EA37331",
+      "code": "C27331",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA37331"
+      ]
+    },
+    {
+      "sku": "EA38126",
+      "code": "C28126",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA38126"
+      ]
+    },
+    {
+      "sku": "EA38952",
+      "code": "C28952",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA38952"
+      ]
+    }
+  ]
+}

@@ -69,14 +69,18 @@ function parseLiveMannDimensions(html){
  };
 }
 async function enrichOfficial(candidate){
- let http=0,url_ok=false,live={a_mm:null,b_mm:null,h_mm:null};
+ let http=0,url_ok=false,live={a_mm:null,b_mm:null,h_mm:null},resolvedSourceUrl=candidate.official?.source_url||null;
  const base=candidate.official||{};
  if(base.family_ok===true&&base.source_url){
-  try{
-   const res=await fetch(base.source_url,{redirect:'follow',signal:AbortSignal.timeout(5000)});
-   http=res.status;url_ok=res.ok;
-   if(res.ok)live=parseLiveMannDimensions(await res.text());
-  }catch(_){}
+  const urls=[base.source_url,...['us-en','ca-en','sg-en'].map(loc=>base.source_url.replace('/en/','/'+loc+'/'))].filter((u,i,a)=>u&&a.indexOf(u)===i);
+  for(const url of urls){
+   try{
+    const res=await fetch(url,{redirect:'follow',signal:AbortSignal.timeout(5000)});
+    http=res.status;
+    if(res.ok){url_ok=true;resolvedSourceUrl=url;live=parseLiveMannDimensions(await res.text());break}
+    if(res.status!==404)break;
+   }catch(_){}
+  }
  }
  const catalog=candidate.specs||{};
  const liveA=hasNum(live.a_mm)?Number(live.a_mm):null,liveB=hasNum(live.b_mm)?Number(live.b_mm):null;
@@ -107,7 +111,7 @@ async function enrichOfficial(candidate){
  const outerOk=liveDims.length?hasNum(finalOuter)&&liveDims.some(v=>close(finalOuter,v)):close(finalOuter,schemaOuter);
  const geometry_complete=hasNum(finalOuter)&&hasNum(finalH)&&outerOk&&hasNum(h_mm);
  const geometry_ok=geometry_complete&&!shared_conflict&&outerOk&&close(finalH,h_mm);
- const official={...base,a_mm:schemaOuter,b_mm:liveB,h_mm,live_dimensions:live,schema_dimension_candidates_mm:liveDims,geometry_complete,geometry_ok,shared_conflict,http,url_ok};
+ const official={...base,source_url:resolvedSourceUrl,a_mm:schemaOuter,b_mm:liveB,h_mm,live_dimensions:live,schema_dimension_candidates_mm:liveDims,geometry_complete,geometry_ok,shared_conflict,http,url_ok};
  const out={...candidate,official,geometry_patch:Object.keys(geometry_patch).length?geometry_patch:null};
  return {...out,lane:laneFor(out)};
 }

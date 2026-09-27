@@ -1,0 +1,23 @@
+{
+  "sku": "EA32328",
+  "codigo_base": "C32328",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C32328",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 315,
+    "b_mm": 249,
+    "h_mm": 36,
+    "scope": "BMW / 宝马(华晨宝马) / BMW (BR.BMW)"
+  },
+  "source_url": "https://www.mann-filter.com/sg-en/catalog/search-results/product.html/c32328_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

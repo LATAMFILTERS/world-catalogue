@@ -1,0 +1,79 @@
+{
+  "batch": "LD_AIR_B34_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "candidates": [
+    {
+      "sku": "EA33002",
+      "code": "C2813002",
+      "source_url": "https://www.mann-filter.com/sg-en/catalog/search-results/product.html/c281300/2_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": null,
+      "official": {
+        "a_mm": 281,
+        "b_mm": 189,
+        "h_mm": 563,
+        "scope": "MERCEDES-BENZ / CLAAS"
+      }
+    },
+    {
+      "sku": "EA32328",
+      "code": "C32328",
+      "source_url": "https://www.mann-filter.com/sg-en/catalog/search-results/product.html/c32328_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 315
+      },
+      "identity_patch": null,
+      "official": {
+        "a_mm": 315,
+        "b_mm": 249,
+        "h_mm": 36,
+        "scope": "BMW / 宝马(华晨宝马) / BMW (BR.BMW)"
+      }
+    },
+    {
+      "sku": "EA37331",
+      "code": "C27331",
+      "source_url": "https://www.mann-filter.com/sg-en/catalog/search-results/product.html/c27331_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 269
+      },
+      "identity_patch": null,
+      "official": {
+        "a_mm": 269,
+        "b_mm": 213,
+        "h_mm": 63,
+        "scope": "BMW ALPINA B. BOVENSIEPEN / BMW"
+      }
+    },
+    {
+      "sku": "EA38126",
+      "code": "C28126",
+      "source_url": "https://www.mann-filter.com/sg-en/catalog/search-results/product.html/c28126_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 281
+      },
+      "identity_patch": null,
+      "official": {
+        "a_mm": 281,
+        "b_mm": 197,
+        "h_mm": 62,
+        "scope": "BMW / 宝马(华晨宝马) / BMW (BR.BMW)"
+      }
+    },
+    {
+      "sku": "EA38952",
+      "code": "C28952",
+      "source_url": "https://www.mann-filter.com/sg-en/catalog/search-results/product.html/c28952_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 276
+      },
+      "identity_patch": null,
+      "official": {
+        "a_mm": 276,
+        "b_mm": 194,
+        "h_mm": 48,
+        "scope": "PORSCHE (USA) / PORSCHE"
+      }
+    }
+  ]
+}

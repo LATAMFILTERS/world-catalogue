@@ -1,0 +1,49 @@
+{
+  "batch": "LD_AIR_B34",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 5,
+    "BLOCKED_WITH_REASON": 0,
+    "REVERIFY": 0,
+    "RETRYABLE": 0
+  },
+  "catalog_writes": [
+    "EA33002",
+    "EA32328",
+    "EA37331",
+    "EA38126",
+    "EA38952"
+  ],
+  "candidates": [
+    {
+      "sku": "EA33002",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C2813002"
+    },
+    {
+      "sku": "EA32328",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C32328"
+    },
+    {
+      "sku": "EA37331",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C27331"
+    },
+    {
+      "sku": "EA38126",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C28126"
+    },
+    {
+      "sku": "EA38952",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C28952"
+    }
+  ],
+  "reverify": [],
+  "retryable": [],
+  "closed_at": "2026-09-27"
+}
