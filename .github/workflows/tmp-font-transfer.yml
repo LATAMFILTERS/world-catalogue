@@ -1,0 +1,19 @@
+name: tmp-font-transfer
+on:
+  push:
+    branches:
+      - tmp/font-embed-transfer-20260926
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode PowerPoint
+        run: |
+          base64 -d tmp-transfer/ELIMFILTERS_Lamina_01_Fonts_Embedded.pptx.b64 > ELIMFILTERS_Lamina_01_Fonts_Embedded.pptx
+          test "$(stat -c%s ELIMFILTERS_Lamina_01_Fonts_Embedded.pptx)" -eq 329596
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ELIMFILTERS_Lamina_01_Fonts_Embedded
+          path: ELIMFILTERS_Lamina_01_Fonts_Embedded.pptx
+          if-no-files-found: error
