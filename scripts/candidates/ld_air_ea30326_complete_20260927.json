@@ -1,0 +1,23 @@
+{
+  "sku": "EA30326",
+  "codigo_base": "C20326",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C20326",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 200.66,
+    "b_mm": 134.61999999999998,
+    "h_mm": 266.7,
+    "scope": "ISUZU"
+  },
+  "source_url": "https://www.mann-filter.com/us-en/catalog/search-results/product.html/c20326_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

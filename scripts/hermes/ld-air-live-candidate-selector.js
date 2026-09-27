@@ -53,19 +53,20 @@ function prepareOfficialLocal(candidate,patchMap){
 }
 function numText(v){if(v==null)return null;const n=Number(String(v).replace(',','.'));return Number.isFinite(n)?n:null}
 function parseLiveMannDimensions(html){
- const grab=(...patterns)=>{for(const p of patterns){const m=html.match(p);if(m)return numText(m[1])}return null};
- const dimension_values_mm=[];
- const dimension_labels=[];
- const re=/(Length(?:\s+1)?|Width(?:\s+1)?|Inner diameter(?:\s+[12])?|Outer diameter|Diameter)\s*\(([A-D])\)\s*=\s*([0-9.,]+)\s*mm/gi;
+ const toMm=(v,u)=>{const n=numText(v);return n==null?null:(String(u||'').toLowerCase()==='in'?n*25.4:n)};
+ const dimension_values_mm=[],dimension_labels=[];
+ const re=/(Length(?:\s+1)?|Width(?:\s+1)?|Inner diameter(?:\s+[12])?|Outer diameter|Diameter|Height(?:\s+1)?)\s*\(([A-H])\)\s*=\s*([0-9.,]+)\s*(mm|in)/gi;
  for(const m of html.matchAll(re)){
-  const v=numText(m[3]);if(v==null)continue;
-  if(!dimension_values_mm.some(x=>close(x,v,0.01)))dimension_values_mm.push(v);
-  dimension_labels.push({label:`${m[1]} (${m[2]})`,value_mm:v});
+  const v=toMm(m[3],m[4]);if(v==null)continue;
+  dimension_labels.push({label:`${m[1]} (${m[2]})`,value_mm:v,source_value:numText(m[3]),source_unit:String(m[4]).toLowerCase()});
+  if(!/^Height/i.test(m[1])&&!dimension_values_mm.some(x=>close(x,v,0.01)))dimension_values_mm.push(v);
  }
+ const by=(name,label)=>dimension_labels.find(x=>x.label.toLowerCase()===`${name} (${label})`.toLowerCase())?.value_mm??null;
+ const first=(tests)=>dimension_labels.find(x=>tests.some(t=>t.test(x.label)))?.value_mm??null;
  return {
-  a_mm:grab(/Length \(A\)\s*=\s*([0-9.,]+)\s*mm/i,/Outer diameter \(A\)\s*=\s*([0-9.,]+)\s*mm/i,/Outer diameter \(D\)\s*=\s*([0-9.,]+)\s*mm/i,/Diameter \(A\)\s*=\s*([0-9.,]+)\s*mm/i),
-  b_mm:grab(/Width \(B\)\s*=\s*([0-9.,]+)\s*mm/i,/Inner diameter \(B\)\s*=\s*([0-9.,]+)\s*mm/i,/Inner diameter \(C\)\s*=\s*([0-9.,]+)\s*mm/i),
-  h_mm:grab(/Height \(H\)\s*=\s*([0-9.,]+)\s*mm/i),dimension_values_mm,dimension_labels
+  a_mm:first([/^Length \(A\)$/i,/^Outer diameter \(A\)$/i,/^Outer diameter \(D\)$/i,/^Diameter \(A\)$/i]),
+  b_mm:first([/^Width \(B\)$/i,/^Inner diameter \(B\)$/i,/^Inner diameter \(C\)$/i]),
+  h_mm:by('Height','H'),dimension_values_mm,dimension_labels
  };
 }
 async function enrichOfficial(candidate){
