@@ -1,0 +1,25 @@
+{
+  "sku": "EA33125",
+  "codigo_base": "C33125",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C33125",
+    "installation_type": "Panel",
+    "patch_outer_mm": 321,
+    "patch_secondary_mm": 177,
+    "a_mm": 321,
+    "h_mm": 50,
+    "geometry_complete": true,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c33125_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

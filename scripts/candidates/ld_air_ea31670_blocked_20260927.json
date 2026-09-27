@@ -1,0 +1,25 @@
+{
+  "sku": "EA31670",
+  "codigo_base": "C311670",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C311670",
+    "installation_type": "Panel",
+    "patch_outer_mm": 307.34,
+    "patch_secondary_mm": null,
+    "a_mm": 307.34,
+    "h_mm": 558.8,
+    "geometry_complete": true,
+    "geometry_ok": true,
+    "shared_conflict": false,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c311670_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

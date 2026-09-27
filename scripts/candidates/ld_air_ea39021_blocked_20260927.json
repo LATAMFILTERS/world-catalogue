@@ -1,0 +1,25 @@
+{
+  "sku": "EA39021",
+  "codigo_base": "C29021",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C29021",
+    "installation_type": "Panel",
+    "patch_outer_mm": 284.48,
+    "patch_secondary_mm": 233.68,
+    "a_mm": 284.48,
+    "h_mm": 60.96,
+    "geometry_complete": true,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c29021_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

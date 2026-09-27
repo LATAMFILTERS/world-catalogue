@@ -1,0 +1,25 @@
+{
+  "sku": "EA35900",
+  "codigo_base": "C25900",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C25900",
+    "installation_type": "Panel",
+    "patch_outer_mm": 250,
+    "patch_secondary_mm": 160,
+    "a_mm": 250,
+    "h_mm": 465,
+    "geometry_complete": true,
+    "geometry_ok": true,
+    "shared_conflict": false,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c25900_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}
