@@ -1,0 +1,291 @@
+[
+  {
+    "premium_guard_code": "PG111EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg111ex/",
+    "source_html_sha256": "59517a0bcfd84d28598bcd39ac799b1d9fa2ceaba63407c82e0c91c24b09fb79",
+    "interchanges_count": 92,
+    "applications_count": 341,
+    "fram_refs": [
+      "TG3387A",
+      "FS3387A"
+    ],
+    "mann_refs": [],
+    "inferred_origin_group": "MIXED",
+    "mapped_makes": [
+      "Buick",
+      "Cadillac",
+      "Chevrolet",
+      "Daewoo",
+      "Fiat",
+      "GMC",
+      "Isuzu",
+      "Jeep",
+      "Saab",
+      "Suzuki"
+    ],
+    "unmapped_makes": [
+      "American Motors",
+      "Asuna",
+      "Checker",
+      "Oldsmobile",
+      "Pontiac",
+      "Saturn"
+    ],
+    "expected_canonical_brand": null,
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EL33387",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "TG3387A",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "TG3387A"
+      },
+      {
+        "elimfilters_sku": "EL33387",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "FS3387A",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM Titanium",
+        "interchange_code": "FS3387A"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EL33387",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "TG3387A",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "TG3387A"
+      },
+      {
+        "elimfilters_sku": "EL31215",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "TG3387A",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "TG3387A"
+      },
+      {
+        "elimfilters_sku": "EL32047",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "TG3387A",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "TG3387A"
+      },
+      {
+        "elimfilters_sku": "EL33387",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "TG3387A",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "TG3387A"
+      },
+      {
+        "elimfilters_sku": "EL33387",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "FS3387A",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM Titanium",
+        "interchange_code": "FS3387A"
+      },
+      {
+        "elimfilters_sku": "EL33387",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "FS3387A",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM Titanium",
+        "interchange_code": "FS3387A"
+      }
+    ],
+    "preferred_match_source": "RELATIONAL_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EL33387",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "TG3387A",
+    "reasons": [
+      "EXISTING_RELATIONAL_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PG5610",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5610/",
+    "source_html_sha256": "499ce51ccc1d5a5311dd0b557adc3862df9ab99f0edc7f418197057069ffb96b",
+    "interchanges_count": 85,
+    "applications_count": 10,
+    "fram_refs": [
+      "CH9999",
+      "DL9999",
+      "FD9999",
+      "FF9999"
+    ],
+    "mann_refs": [
+      "ML 1037",
+      "HU 824x"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Hyundai",
+      "Kia"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EL39999",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CH9999",
+        "identity_filter_type": "oil",
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "CH9999"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EL39999",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CH9999",
+        "identity_filter_type": "oil",
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "CH9999"
+      },
+      {
+        "elimfilters_sku": "EL39999",
+        "origin_group": null,
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "ML 1037",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "ML 1037"
+      },
+      {
+        "elimfilters_sku": "EL39999",
+        "origin_group": null,
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "ML 1037",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "ML 1037"
+      },
+      {
+        "elimfilters_sku": "EL39999",
+        "origin_group": null,
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "HU824X",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "HU 824x"
+      },
+      {
+        "elimfilters_sku": "EL30824",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "HU824X",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "HU 824x"
+      },
+      {
+        "elimfilters_sku": "EL39999",
+        "origin_group": null,
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "HU824X",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "HU 824x"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EL39999",
+    "canonical_brand": "FRAM",
+    "canonical_code": "CH9999",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "CH9999",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "premium_guard_code": "PG193EX",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "MIXED_ORIGIN_REVIEW",
+  "reasons": [
+    "APPLICATIONS_SPAN_MULTIPLE_ORIGIN_GROUPS"
+  ],
+  "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg193ex/",
+  "closed_at": "2026-09-27"
+}

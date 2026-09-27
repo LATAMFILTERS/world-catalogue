@@ -1,0 +1,10 @@
+{
+  "premium_guard_code": "PG5495",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "MULTIPLE_AUTHORITY_REFS_REVIEW",
+  "reasons": [
+    "MULTIPLE_FRAM_INTERCHANGES"
+  ],
+  "source_page": "https://www.pgfilters.com/product-catalog/product-page/pg5495/",
+  "closed_at": "2026-09-27"
+}

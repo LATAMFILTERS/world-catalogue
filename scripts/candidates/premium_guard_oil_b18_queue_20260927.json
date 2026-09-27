@@ -1,0 +1,521 @@
+[
+  {
+    "premium_guard_code": "HG50167",
+    "normalized_code": "HG50167",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "HG50168",
+    "normalized_code": "HG50168",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "HG50172",
+    "normalized_code": "HG50172",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "HG50177",
+    "normalized_code": "HG50177",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "HG50182",
+    "normalized_code": "HG50182",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "HH60042",
+    "normalized_code": "HH60042",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "HT80007",
+    "normalized_code": "HT80007",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG111EX",
+    "normalized_code": "PG111EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG193",
+    "normalized_code": "PG193",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG193EX",
+    "normalized_code": "PG193EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG1A",
+    "normalized_code": "PG1A",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG2500EX",
+    "normalized_code": "PG2500EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG252",
+    "normalized_code": "PG252",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG257",
+    "normalized_code": "PG257",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG257EX",
+    "normalized_code": "PG257EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG33EX",
+    "normalized_code": "PG33EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG381",
+    "normalized_code": "PG381",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG381EX",
+    "normalized_code": "PG381EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4006",
+    "normalized_code": "PG4006",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4006EX",
+    "normalized_code": "PG4006EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4008",
+    "normalized_code": "PG4008",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4460",
+    "normalized_code": "PG4460",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4466",
+    "normalized_code": "PG4466",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4484EX",
+    "normalized_code": "PG4484EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4612",
+    "normalized_code": "PG4612",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4612EX",
+    "normalized_code": "PG4612EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4615",
+    "normalized_code": "PG4615",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4615EX",
+    "normalized_code": "PG4615EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4619",
+    "normalized_code": "PG4619",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4670",
+    "normalized_code": "PG4670",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4670EX",
+    "normalized_code": "PG4670EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG4758",
+    "normalized_code": "PG4758",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5126",
+    "normalized_code": "PG5126",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5195",
+    "normalized_code": "PG5195",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5247EX",
+    "normalized_code": "PG5247EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5276",
+    "normalized_code": "PG5276",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5288",
+    "normalized_code": "PG5288",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5288EX",
+    "normalized_code": "PG5288EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5308",
+    "normalized_code": "PG5308",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5315EX",
+    "normalized_code": "PG5315EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5317",
+    "normalized_code": "PG5317",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5465",
+    "normalized_code": "PG5465",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5465EX",
+    "normalized_code": "PG5465EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5495",
+    "normalized_code": "PG5495",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5505",
+    "normalized_code": "PG5505",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5505EX",
+    "normalized_code": "PG5505EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5581",
+    "normalized_code": "PG5581",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5607EX",
+    "normalized_code": "PG5607EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PG5609EX",
+    "normalized_code": "PG5609EX",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "CONFLICT_PG_MULTI",
+    "matches": [
+      {
+        "sku": "EL30158",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "PREMIUM GUARD",
+        "raw_code": "PG5609EX"
+      },
+      {
+        "sku": "EL37009",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "PREMIUM GUARD",
+        "raw_code": "PG5609EX"
+      },
+      {
+        "sku": "EL30158",
+        "match_kind": "LD_COMPETITOR",
+        "brand": "PREMIUM GUARD",
+        "raw_code": "PG5609EX"
+      }
+    ]
+  },
+  {
+    "premium_guard_code": "PG5610",
+    "normalized_code": "PG5610",
+    "part_types": [
+      "Oil Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  }
+]
