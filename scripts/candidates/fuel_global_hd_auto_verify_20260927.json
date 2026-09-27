@@ -1,0 +1,56 @@
+[
+  {
+    "sku": "EF98960",
+    "codigo_base": "3608960",
+    "status": "UNVERIFIED",
+    "gov": {
+      "state": "REVIEW_PRIMARY_CANDIDATE",
+      "verified_at": "2026-08-23T16:42:20.028Z",
+      "approved_code": "3608960",
+      "oem_code_count": 6,
+      "policy_version": "2026-08-19-v3.1",
+      "verification_note": "Marine engine fuel filter (CAT 3608960). Donaldson does not manufacture an equivalent per ELIMFILTERS team confirmation; Caterpillar OEM part number used as codigo_base. The earlier \"Donaldson P506132\" candidate from a third-party aggregator could not be confirmed against the official shop.donaldson.com index and was not used.",
+      "required_authority": "VERIFY_DONALDSON_MANUFACTURING_AUTHORITY",
+      "contamination_flags": [],
+      "current_codigo_base": "3608960",
+      "verification_method": "ELIMFILTERS_TEAM_MANUFACTURER_CONFIRMATION",
+      "alternate_code_model": "OEM_CODES_AND_COMPETITOR_CODES_ARE_ALTERNATES_ONLY",
+      "approved_codigo_base": "3608960",
+      "approved_manufacturer": "CATERPILLAR",
+      "competitor_code_count": 5,
+      "approved_source_column": "OEM_CODES",
+      "donaldson_absence_note": "Confirmed by ELIMFILTERS team: Donaldson does not manufacture this marine engine fuel filter; Caterpillar is the OEM manufacturer for this application.",
+      "donaldson_absence_verified": true,
+      "observed_primary_candidates": [
+        "P506132"
+      ],
+      "fallback_manufacturer_verified": true,
+      "fallback_commercial_code_verified": true
+    },
+    "reasons": []
+  },
+  {
+    "sku": "ET93223",
+    "codigo_base": "3223",
+    "status": "UNVERIFIED",
+    "gov": {
+      "state": "CANONICAL_VERIFIED",
+      "oem_code_count": 0,
+      "policy_version": "2026-08-19-v3.1",
+      "evidence_authority": "RACOR_PRODUCT_CATALOG",
+      "required_authority": "VERIFIED_OEM_FALLBACK",
+      "contamination_flags": [],
+      "current_codigo_base": "3223",
+      "alternate_code_model": "OEM_CODES_AND_COMPETITOR_CODES_ARE_ALTERNATES_ONLY",
+      "approved_codigo_base": "3223",
+      "approved_manufacturer": "RACOR",
+      "competitor_code_count": 0,
+      "approved_source_column": "OEM_CODES",
+      "donaldson_absence_verified": true,
+      "observed_primary_candidates": [],
+      "fallback_manufacturer_verified": true,
+      "fallback_commercial_code_verified": true
+    },
+    "reasons": []
+  }
+]
