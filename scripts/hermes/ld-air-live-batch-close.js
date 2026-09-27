@@ -99,17 +99,26 @@ async function syncCatalog(manifest){
 }
 
 async function validatePartSearch(manifest){
- const results=[];
+ const results=[],sleep=ms=>new Promise(r=>setTimeout(r,ms));
  async function one(x){
   const url='https://part-search.elimfilters.com/api/search?q='+encodeURIComponent(x.code);
-  try{const r=await fetch(url);const o=await r.json();const skus=(o.results||[]).map(y=>y.elimfilters_sku);
-   return {sku:x.sku,code:x.code,http:r.status,ok:r.ok&&skus.includes(x.sku),results:skus};}
-  catch(e){return {sku:x.sku,code:x.code,http:0,ok:false,error:e.message}}
+  for(let attempt=1;attempt<=4;attempt++){
+   try{
+    const r=await fetch(url,{signal:AbortSignal.timeout(8000)});
+    if(r.status===429){if(attempt<4){await sleep(400*2**(attempt-1));continue}return {sku:x.sku,code:x.code,http:429,ok:false,retryable:true,reason:'RATE_LIMIT_429',results:[]}}
+    if(r.status>=500&&attempt<4){await sleep(400*2**(attempt-1));continue}
+    const o=await r.json();const skus=(o.results||[]).map(y=>y.elimfilters_sku);
+    return {sku:x.sku,code:x.code,http:r.status,ok:r.ok&&skus.includes(x.sku),retryable:false,results:skus};
+   }catch(e){if(attempt<4){await sleep(400*2**(attempt-1));continue}return {sku:x.sku,code:x.code,http:0,ok:false,retryable:true,reason:'NETWORK_RETRY_EXHAUSTED',error:e.message,results:[]}}
+  }
  }
- for(let i=0;i<manifest.candidates.length;i+=10)
-  results.push(...await Promise.all(manifest.candidates.slice(i,i+10).map(one)));
+ for(let i=0;i<manifest.candidates.length;i+=3){
+  results.push(...await Promise.all(manifest.candidates.slice(i,i+3).map(one)));
+  if(i+3<manifest.candidates.length)await sleep(250);
+ }
+ const failed=results.filter(x=>!x.ok);
  const report={batch:'LD_AIR_'+BATCH,total:results.length,passed:results.filter(x=>x.ok).length,
-  failed:results.filter(x=>!x.ok),results};
+  retryable:failed.filter(x=>x.retryable).length,failed,results};
  fs.writeFileSync(searchPath,JSON.stringify(report,null,2)+'\n');
  return report;
 }
@@ -129,7 +138,7 @@ async function restorePartSearchFailures(syncReport,failed){
  }finally{await db.end()}
 }
 
-function writeTerminals(manifest,blocked=[],reverify=[]){
+function writeTerminals(manifest,blocked=[],reverify=[],retryable=[]){
  for(const x of manifest.candidates){
   const out={sku:x.sku,codigo_base:x.code,filter_type:'air',duty:'LIGHT_DUTY',terminal_state:'COMPLETE',
    canonical_identity:{brand:'MANN-FILTER',code:x.code,origin_group:'EUROPEAN'},
@@ -147,11 +156,12 @@ function writeTerminals(manifest,blocked=[],reverify=[]){
   fs.writeFileSync(path.join(ROOT,'candidates',`ld_air_${x.sku.toLowerCase()}_reverify_${DATE}.json`),JSON.stringify(out,null,2)+'\n');
  }
  const out={batch:'LD_AIR_'+BATCH,selection_model:manifest.selection_model,scope:'LIGHT_DUTY_AIR',
-  terminal_state:'COMPLETE',counts:{COMPLETE:manifest.candidates.length,BLOCKED_WITH_REASON:blocked.length,REVERIFY:reverify.length},
+  terminal_state:'COMPLETE',counts:{COMPLETE:manifest.candidates.length,BLOCKED_WITH_REASON:blocked.length,REVERIFY:reverify.length,RETRYABLE:retryable.length},
   catalog_writes:manifest.candidates.map(x=>x.sku),
   candidates:[...manifest.candidates.map(x=>({sku:x.sku,terminal_state:'COMPLETE',canonical_code:x.code})),
    ...blocked.map(x=>({sku:x.sku,terminal_state:'BLOCKED_WITH_REASON',reason:x.reason}))],
-  reverify:reverify.map(x=>({sku:x.sku,code:x.code,reason:'PART_SEARCH_FAILED'})),closed_at:CLOSED_AT};
+  reverify:reverify.map(x=>({sku:x.sku,code:x.code,reason:'PART_SEARCH_FAILED'})),
+  retryable:retryable.map(x=>({sku:x.sku,code:x.code,reason:x.reason||'RETRYABLE_PART_SEARCH',http:x.http||0})),closed_at:CLOSED_AT};
  fs.writeFileSync(terminalPath,JSON.stringify(out,null,2)+'\n');
 }
 
@@ -181,8 +191,9 @@ async function main(){
  await restorePartSearchFailures(sync,partSearch.failed);
  const passed=new Set(partSearch.results.filter(x=>x.ok).map(x=>x.sku));
  const closed={...manifest,candidates:committed.candidates.filter(x=>passed.has(x.sku))};
- writeTerminals(closed,sync.blocked,partSearch.failed);
+ const semanticFailed=partSearch.failed.filter(x=>!x.retryable),retryableFailed=partSearch.failed.filter(x=>x.retryable);
+ writeTerminals(closed,sync.blocked,semanticFailed,retryableFailed);
  const cycleAudit=writeCycleAudit();
- console.log(JSON.stringify({batch:BATCH,candidates:manifest.candidates.length,sync:{transaction:sync.transaction,complete:sync.complete.length,blocked:sync.blocked.length},part_search:{passed:partSearch.passed,failed:partSearch.failed.length},closed:closed.candidates.length,cycle_audit:cycleAudit,manifest:manifestPath,terminal:terminalPath},null,2));
+ console.log(JSON.stringify({batch:BATCH,candidates:manifest.candidates.length,sync:{transaction:sync.transaction,complete:sync.complete.length,blocked:sync.blocked.length},part_search:{passed:partSearch.passed,failed:partSearch.failed.length,retryable:retryableFailed.length,semantic_failed:semanticFailed.length},closed:closed.candidates.length,cycle_audit:cycleAudit,manifest:manifestPath,terminal:terminalPath},null,2));
 }
 main().catch(e=>{console.error('[ld-air-live-batch-close]',JSON.stringify({error:e.message,report:e.report||null},null,2));process.exit(1)});

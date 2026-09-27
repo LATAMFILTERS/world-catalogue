@@ -1,0 +1,23 @@
+{
+  "sku": "EA32859",
+  "codigo_base": "C2859",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C2859",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 282,
+    "b_mm": 99,
+    "h_mm": 60,
+    "scope": "ALFA ROMEO / LANCIA (LANCIA AUTOBIANCHI) / FIAT / CHRYSLER / FORD"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2859_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

@@ -1,0 +1,23 @@
+{
+  "sku": "EA32694",
+  "codigo_base": "C2694",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C2694",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 252,
+    "b_mm": 224,
+    "h_mm": 38,
+    "scope": "CHEVROLET / NISSAN / OPEL / VAUXHALL / GENERAL MOTORS"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2694_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

@@ -1,0 +1,1047 @@
+{
+  "batch": "LD_AIR_B32_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "candidates": [
+    {
+      "sku": "EA33185",
+      "code": "C23185",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c23185_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C23185",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 228,
+        "b_mm": 161,
+        "h_mm": 200,
+        "scope": "MAHLE COMPRESSORS / RENNER KOMPRESSOREN / ROTORCOMP"
+      }
+    },
+    {
+      "sku": "EA33261",
+      "code": "C3261",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3261_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C3261",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 320,
+        "b_mm": 150,
+        "h_mm": 42,
+        "scope": "FORD / FORD USA"
+      }
+    },
+    {
+      "sku": "EA33366",
+      "code": "C3366",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3366_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C3366",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 355,
+        "b_mm": 81,
+        "h_mm": 59,
+        "scope": "RENAULT / DACIA (RENAULT GROUP) / NISSAN"
+      }
+    },
+    {
+      "sku": "EA33498",
+      "code": "C3498",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3498_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C3498",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 340,
+        "b_mm": 143,
+        "h_mm": 50,
+        "scope": "FORD / 福特(长安福特) / FORD (CHANG.FORD) / LONDON TAXI INTERNATIONAL"
+      }
+    },
+    {
+      "sku": "EA33766",
+      "code": "C3766",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3766_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C3766",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 361,
+        "b_mm": 236,
+        "h_mm": 52,
+        "scope": "MITSUBISHI / 三菱 (广汽三菱) / MITSUBISHI (GMMC)"
+      }
+    },
+    {
+      "sku": "EA34171",
+      "code": "C14171",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c14171_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C14171",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 132,
+        "b_mm": 65,
+        "h_mm": 292,
+        "scope": "TOYOTA / SUZUKI"
+      }
+    },
+    {
+      "sku": "EA34176",
+      "code": "C14176",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c14176_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C14176",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 136,
+        "b_mm": 70,
+        "h_mm": 234,
+        "scope": "FORD / NISSAN"
+      }
+    },
+    {
+      "sku": "EA34393",
+      "code": "C24393",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c24393_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C24393",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 241,
+        "b_mm": 132,
+        "h_mm": 298,
+        "scope": "IVECO / DOPPSTADT"
+      }
+    },
+    {
+      "sku": "EA34553",
+      "code": "C24553",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c24553_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C24553",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 236.22,
+        "b_mm": 130,
+        "h_mm": 371,
+        "scope": "HITACHI / 住友 / SUMITOMO / CASE CONSTRUCTION"
+      }
+    },
+    {
+      "sku": "EA35020",
+      "code": "C15020",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c15020_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C15020",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 156,
+        "b_mm": 108,
+        "h_mm": 353,
+        "scope": "猎豹 (中国) / LIEBAO (CN) / MITSUBISHI / ATLAS WEYCOR (ATLAS WEYHAUSEN)"
+      }
+    },
+    {
+      "sku": "EA35156",
+      "code": "C35156",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c35156_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C35156",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 343,
+        "b_mm": 169,
+        "h_mm": 58,
+        "scope": "MITSUBISHI / VOLVO CARS"
+      }
+    },
+    {
+      "sku": "EA36108",
+      "code": "C26108",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c26108_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C26108",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 256.54,
+        "b_mm": 250,
+        "h_mm": 45,
+        "scope": "CHEVROLET (USA) / BUICK (USA)"
+      }
+    },
+    {
+      "sku": "EA36127",
+      "code": "C16127",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c16127_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C16127",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 154,
+        "b_mm": 109,
+        "h_mm": 202,
+        "scope": "OPEL / ISUZU / VAUXHALL"
+      }
+    },
+    {
+      "sku": "EA36176",
+      "code": "C26176",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c26176_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C26176",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 250,
+        "b_mm": 151,
+        "h_mm": 134,
+        "scope": "SULLAIR / SCHULZ (Compressors)"
+      }
+    },
+    {
+      "sku": "EA38037",
+      "code": "C28037",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c28037_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C28037",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 271.78,
+        "b_mm": 219,
+        "h_mm": 67,
+        "scope": "BMW (USA) / NISSAN / RENAULT"
+      }
+    },
+    {
+      "sku": "EA39145",
+      "code": "C29145",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c29145_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C29145",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 289.56,
+        "b_mm": 258,
+        "h_mm": 43,
+        "scope": "BUICK (USA) / CHEVROLET (USA) / SAAB (USA)"
+      }
+    },
+    {
+      "sku": "EA31126",
+      "code": "C31126",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c31126_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C31126",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 310,
+        "b_mm": 185,
+        "h_mm": 43,
+        "scope": "EL DETALLE / TOYOTA / HOLDEN AUTOMOTIVE / LEXUS"
+      }
+    },
+    {
+      "sku": "EA32039",
+      "code": "C2039",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2039_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2039",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 200,
+        "b_mm": 94,
+        "h_mm": 49,
+        "scope": "AUDI / VW (VOLKSWAGEN) / MITSUBISHI / FIAT / LEXUS / TOYOTA / 丰田(广汽丰田) / TOYOTA (GAC. TOY) / JEEP / CHRYSLER / DODGE"
+      }
+    },
+    {
+      "sku": "EA32119",
+      "code": "C32119",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c32119_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C32119",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 314,
+        "b_mm": 112,
+        "h_mm": 67,
+        "scope": "SUZUKI / 雪铁龙(东风雪铁龙) / CITROEN (DF.C) / CITROEN / PEUGEOT / CHEVROLET EUROPE / DAEWOO (GM) / CHERY / 雪佛兰(上海通用) / CHEVROLET (SGM) / PONTIAC / 东风风神 / FENGSHEN"
+      }
+    },
+    {
+      "sku": "EA32129",
+      "code": "C2129",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2129_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2129",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 208,
+        "b_mm": 152,
+        "h_mm": 37,
+        "scope": "SUZUKI / CITROEN / KIA MOTORS / MAZDA / FORD"
+      }
+    },
+    {
+      "sku": "EA32262",
+      "code": "C2262",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2262_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2262",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 203,
+        "b_mm": 28,
+        "h_mm": 71,
+        "scope": "ISUZU / TOYOTA / CHEVROLET / HOLDEN AUTOMOTIVE / OPEL"
+      }
+    },
+    {
+      "sku": "EA32326",
+      "code": "C2326",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2326_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2326",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 226,
+        "b_mm": 168,
+        "h_mm": 43,
+        "scope": "TOYOTA / SUZUKI / OPEL / VAUXHALL / SUBARU"
+      }
+    },
+    {
+      "sku": "EA32329",
+      "code": "C2329",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2329_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2329",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 227,
+        "b_mm": 170,
+        "h_mm": 34,
+        "scope": "HONDA / INFINITI / NISSAN / RENAULT / SUBARU / NISSAN (USA) / CHRYSLER"
+      }
+    },
+    {
+      "sku": "EA32452",
+      "code": "C2452",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2452_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2452",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 234,
+        "b_mm": 177,
+        "h_mm": 41,
+        "scope": "GENERAL MOTORS / OPEL / VAUXHALL / 别克(上海通用) / BUICK (SGM) / PONTIAC / CHEVROLET / CHEVROLET EUROPE / DAEWOO (GM) / OLDSMOBILE / BUICK / CADILLAC"
+      }
+    },
+    {
+      "sku": "EA32559",
+      "code": "C2559",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2559_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2559",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 250,
+        "b_mm": 160,
+        "h_mm": 37,
+        "scope": "HYUNDAI / TAGAZ / PEUGEOT / FORD / 福特(长安福特) / FORD (CHANG.FORD)"
+      }
+    },
+    {
+      "sku": "EA32620",
+      "code": "C2620",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2620_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2620",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 287.02,
+        "b_mm": 149,
+        "h_mm": 61,
+        "scope": "PONTIAC (USA) / RENAULT / SCION (USA) / TOYOTA (USA) / SUBARU (USA) / 日产(东风日产) / NISSAN (DF.N) / 启辰(东风) / VENUCIA (DF.N)"
+      }
+    },
+    {
+      "sku": "EA32694",
+      "code": "C2694",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2694_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2694",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 252,
+        "b_mm": 224,
+        "h_mm": 38,
+        "scope": "CHEVROLET / NISSAN / OPEL / VAUXHALL / GENERAL MOTORS"
+      }
+    },
+    {
+      "sku": "EA32730",
+      "code": "C2730",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2730_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 266
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2730",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 266,
+        "b_mm": 224,
+        "h_mm": 51,
+        "scope": "ACURA / HONDA"
+      }
+    },
+    {
+      "sku": "EA32739",
+      "code": "C2739",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2739_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 265
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2739",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 265,
+        "b_mm": 251,
+        "h_mm": 51,
+        "scope": "ACURA / HONDA"
+      }
+    },
+    {
+      "sku": "EA32747",
+      "code": "C2747",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2747_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2747",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 263,
+        "b_mm": 197,
+        "h_mm": 43,
+        "scope": "LAND ROVER (USA) / HONDA / ROVER (MG ROVER GROUP LTD) / LAND ROVER"
+      }
+    },
+    {
+      "sku": "EA32859",
+      "code": "C2859",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2859_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2859",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 282,
+        "b_mm": 99,
+        "h_mm": 60,
+        "scope": "ALFA ROMEO / LANCIA (LANCIA AUTOBIANCHI) / FIAT / CHRYSLER / FORD"
+      }
+    },
+    {
+      "sku": "EA32874",
+      "code": "C2874",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2874_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 271
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2874",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 271,
+        "b_mm": 118,
+        "h_mm": 57,
+        "scope": "ROVER (MG ROVER GROUP LTD) / HONDA / LAND ROVER"
+      }
+    },
+    {
+      "sku": "EA32974",
+      "code": "C2974",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2974_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C2974",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 285,
+        "b_mm": 166,
+        "h_mm": 34,
+        "scope": "NISSAN / VAUXHALL-BEDFORD (LCV) / ISUZU / OPEL / VAUXHALL / CHEVROLET"
+      }
+    },
+    {
+      "sku": "EA33178",
+      "code": "C3178",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c3178_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C3178",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 309,
+        "b_mm": 230,
+        "h_mm": 25,
+        "scope": "CHEVROLET / VAUXHALL-BEDFORD (LCV) / HOLDEN AUTOMOTIVE / OPEL / VAUXHALL / IRMSCHER"
+      }
+    },
+    {
+      "sku": "EA35102",
+      "code": "C55102",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c55102_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 559
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C55102",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 559,
+        "b_mm": 76,
+        "h_mm": 70,
+        "scope": "DEUTZ-FAHR (SAME DEUTZ-FAHR) / SAME (SAME DEUTZ-FAHR) / LAMBORGHINI"
+      }
+    },
+    {
+      "sku": "EA35128",
+      "code": "C25128",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c25128_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C25128",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 248,
+        "b_mm": 198,
+        "h_mm": 53,
+        "scope": "MAZDA / FORD / DONGNAN / 三菱 (东南) / MITSUBISHI (DONGNAN) / MITSUBISHI"
+      }
+    },
+    {
+      "sku": "EA36136",
+      "code": "C16136",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c16136_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C16136",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 155,
+        "b_mm": 88,
+        "h_mm": 197,
+        "scope": "TOYOTA / VAUXHALL-BEDFORD (LCV) / LEXUS / ISUZU"
+      }
+    },
+    {
+      "sku": "EA37237",
+      "code": "C17237",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c17237_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C17237",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 169,
+        "b_mm": 97,
+        "h_mm": 303,
+        "scope": "FIAT / PEUGEOT / CITROEN / OPEL / VAUXHALL-BEDFORD (LCV)"
+      }
+    },
+    {
+      "sku": "EA39108",
+      "code": "C39108",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c39108_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C39108",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 381,
+        "b_mm": 115,
+        "h_mm": 58,
+        "scope": "ARO / DACIA (RENAULT GROUP) / VAUXHALL-BEDFORD (LCV) / VAUXHALL / RENAULT / VOLVO CARS / OPEL"
+      }
+    },
+    {
+      "sku": "EA30149",
+      "code": "C149",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c149_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 131,
+        "height_mm": 36
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C149",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 131,
+        "b_mm": 85,
+        "h_mm": 36,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA30375",
+      "code": "C30375",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c30375_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 302,
+        "height_mm": 196
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C30375",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 302,
+        "b_mm": 191,
+        "h_mm": 196,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA30411",
+      "code": "C411",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c411_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 39,
+        "height_mm": 130
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C411",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 39,
+        "b_mm": 12.8,
+        "h_mm": 130,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA30420",
+      "code": "C420",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c420_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 37,
+        "height_mm": 30
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C420",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 37,
+        "b_mm": 16.3,
+        "h_mm": 30,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA30712",
+      "code": "C712",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c712_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 65,
+        "height_mm": 101
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C712",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 65,
+        "b_mm": 38,
+        "h_mm": 101,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA30873",
+      "code": "C30873",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c30873_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 303,
+        "height_mm": 341
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C30873",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 303,
+        "b_mm": 191,
+        "h_mm": 341,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA31344",
+      "code": "C1344",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1344_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 127,
+        "height_mm": 119
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C1344",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 127,
+        "b_mm": 64,
+        "h_mm": 119,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA31392",
+      "code": "C1392",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1392_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 127,
+        "height_mm": 175
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C1392",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 127,
+        "b_mm": 64,
+        "h_mm": 175,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA31725",
+      "code": "C1725",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1725_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 166,
+        "height_mm": 55
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C1725",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 166,
+        "b_mm": 114,
+        "h_mm": 55,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA31815",
+      "code": "C1815",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c1815_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 175,
+        "height_mm": 43
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C1815",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 175,
+        "b_mm": 129,
+        "h_mm": 43,
+        "scope": "KIA / TOYOTA"
+      }
+    },
+    {
+      "sku": "EA32148",
+      "code": "C12148",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c12148_mann-filter.html",
+      "geometry_patch": {
+        "outer_diameter_mm": 112,
+        "height_mm": 342
+      },
+      "identity_patch": {
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "C12148",
+        "filter_type": "air",
+        "status": "ACTIVE",
+        "evidence_source": "LD_AIR_LIVE_IDENTITY_REPAIR"
+      },
+      "official": {
+        "a_mm": 112,
+        "b_mm": 8.5,
+        "h_mm": 342,
+        "scope": "KIA / TOYOTA"
+      }
+    }
+  ]
+}

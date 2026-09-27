@@ -1,0 +1,23 @@
+{
+  "sku": "EA32119",
+  "codigo_base": "C32119",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C32119",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 314,
+    "b_mm": 112,
+    "h_mm": 67,
+    "scope": "SUZUKI / 雪铁龙(东风雪铁龙) / CITROEN (DF.C) / CITROEN / PEUGEOT / CHEVROLET EUROPE / DAEWOO (GM) / CHERY / 雪佛兰(上海通用) / CHEVROLET (SGM) / PONTIAC / 东风风神 / FENGSHEN"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c32119_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

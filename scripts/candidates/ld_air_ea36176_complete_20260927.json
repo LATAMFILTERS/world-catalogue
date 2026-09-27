@@ -1,0 +1,23 @@
+{
+  "sku": "EA36176",
+  "codigo_base": "C26176",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C26176",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 250,
+    "b_mm": 151,
+    "h_mm": 134,
+    "scope": "SULLAIR / SCHULZ (Compressors)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c26176_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

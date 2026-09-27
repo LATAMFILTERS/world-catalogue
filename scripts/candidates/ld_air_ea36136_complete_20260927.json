@@ -1,0 +1,23 @@
+{
+  "sku": "EA36136",
+  "codigo_base": "C16136",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C16136",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 155,
+    "b_mm": 88,
+    "h_mm": 197,
+    "scope": "TOYOTA / VAUXHALL-BEDFORD (LCV) / LEXUS / ISUZU"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c16136_mann-filter.html",
+  "closed_at": "2026-09-27"
+}
