@@ -1,0 +1,8 @@
+{
+  "batch": "PREMIUM_GUARD_OIL_B20",
+  "scope": "LIGHT_DUTY_OIL",
+  "counts": {"COMPLETE": 1, "BLOCKED_WITH_REASON": 0},
+  "complete": [{"premium_guard_code": "PG99955EX", "canonical_sku": "EL30200"}],
+  "blocked": [],
+  "closed_at": "2026-09-27"
+}
