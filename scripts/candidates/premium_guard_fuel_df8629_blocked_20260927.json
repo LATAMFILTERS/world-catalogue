@@ -1,0 +1,10 @@
+{
+  "premium_guard_code": "DF8629",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "ORIGIN_PARTIAL_REVIEW",
+  "reasons": [
+    "UNMAPPED_APPLICATION_MAKES_PRESENT"
+  ],
+  "source_page": "https://www.pgfilters.com/product-catalog/product-page/df8629/",
+  "closed_at": "2026-09-27"
+}
