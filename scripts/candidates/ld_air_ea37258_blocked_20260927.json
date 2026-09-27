@@ -1,0 +1,9 @@
+{
+  "sku": "EA37258",
+  "codigo_base": "CA9332",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "OFFICIAL_FRAM_GEOMETRY_CONFLICT",
+  "closed_at": "2026-09-27"
+}
