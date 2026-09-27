@@ -1,0 +1,452 @@
+[
+  {
+    "sku": "ET91000",
+    "codigo_base": "1000FH",
+    "technology": "TURBOCORE™",
+    "sub_type": null,
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET91002",
+    "codigo_base": "1002FH",
+    "technology": "TURBOCORE™",
+    "sub_type": null,
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET92010P",
+    "codigo_base": "2010PM-OR",
+    "technology": "TURBOCORE™",
+    "sub_type": "Aquabloc® II",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET92010S",
+    "codigo_base": "2010SM-OR",
+    "technology": "TURBOCORE™",
+    "sub_type": "Aquabloc® II",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET92010T",
+    "codigo_base": "2010TM-OR",
+    "technology": "TURBOCORE™",
+    "sub_type": "Aquabloc® II",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET92020P",
+    "codigo_base": "2020PM-OR",
+    "technology": "TURBOCORE™",
+    "sub_type": "Aquabloc® II",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET92020S",
+    "codigo_base": "2020SM-OR",
+    "technology": "TURBOCORE™",
+    "sub_type": "Aquabloc® II",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET92020T",
+    "codigo_base": "2020TM-OR",
+    "technology": "TURBOCORE™",
+    "sub_type": "Aquabloc® II",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET92040P",
+    "codigo_base": "2040PM-OR",
+    "technology": "TURBOCORE™",
+    "sub_type": "Aquabloc® II",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET92040S",
+    "codigo_base": "2040SM-OR",
+    "technology": "TURBOCORE™",
+    "sub_type": "Aquabloc® II",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET92040T",
+    "codigo_base": "2040TM-OR",
+    "technology": "TURBOCORE™",
+    "sub_type": "Aquabloc® II",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET93223",
+    "codigo_base": "3223",
+    "technology": "HYDROCORE™",
+    "sub_type": "Fuel/Water Separator Replacement Element",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF98960",
+    "codigo_base": "3608960",
+    "technology": "SYNTAPORE™",
+    "sub_type": null,
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF94697",
+    "codigo_base": "3944697",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF96056",
+    "codigo_base": "3946056S",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET95010",
+    "codigo_base": "500FG10",
+    "technology": "TURBOCORE™",
+    "sub_type": null,
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET95002",
+    "codigo_base": "500FG2",
+    "technology": "TURBOCORE™",
+    "sub_type": null,
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET95030",
+    "codigo_base": "500FG30",
+    "technology": "TURBOCORE™",
+    "sub_type": null,
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF98465",
+    "codigo_base": "88465A",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF99719",
+    "codigo_base": "89719K",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET90900",
+    "codigo_base": "900FH",
+    "technology": "TURBOCORE™",
+    "sub_type": null,
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "ET90902",
+    "codigo_base": "902FH",
+    "technology": "TURBOCORE™",
+    "sub_type": null,
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF92911",
+    "codigo_base": "AA2911",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard air-housings",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF92926",
+    "codigo_base": "AA2926",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF92981",
+    "codigo_base": "AA2981",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90149",
+    "codigo_base": "AA90149",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91100",
+    "codigo_base": "CH41100",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91101",
+    "codigo_base": "CH41101",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91102",
+    "codigo_base": "CH41102",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF94110",
+    "codigo_base": "CH44110",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91000",
+    "codigo_base": "CS41000",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard lube-centrifuge",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91002",
+    "codigo_base": "CS41002",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91003",
+    "codigo_base": "CS41003",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91009",
+    "codigo_base": "CS41009",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91016",
+    "codigo_base": "CS41016",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91018",
+    "codigo_base": "CS41018",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91042",
+    "codigo_base": "CS41042",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91046",
+    "codigo_base": "CS41046",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF91047",
+    "codigo_base": "CS41047",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90304",
+    "codigo_base": "CV50304",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard crankcase-ventilation",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90840",
+    "codigo_base": "CV50840",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard crankcase-ventilation",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90841",
+    "codigo_base": "CV50841",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard crankcase-ventilation",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90842",
+    "codigo_base": "CV50842",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard crankcase-ventilation",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90843",
+    "codigo_base": "CV50843",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard crankcase-ventilation",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90847",
+    "codigo_base": "CV50847",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard crankcase-ventilation",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90848",
+    "codigo_base": "CV50848",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard crankcase-ventilation",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90850",
+    "codigo_base": "CV50850",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard crankcase-ventilation",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90854",
+    "codigo_base": "CV50854",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard crankcase-ventilation",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF90855",
+    "codigo_base": "CV50855",
+    "technology": "SYNTAPORE™",
+    "sub_type": "Fleetguard crankcase-ventilation",
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  },
+  {
+    "sku": "EF984001",
+    "codigo_base": "EF984001",
+    "technology": "SYNTAPORE™",
+    "sub_type": null,
+    "canonical_source_brand": null,
+    "canonical_source_status": "UNVERIFIED",
+    "donaldson_url": null
+  }
+]
