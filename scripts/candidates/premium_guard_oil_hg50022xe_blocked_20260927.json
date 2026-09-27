@@ -1,0 +1,11 @@
+{
+  "premium_guard_code": "HG50022XE",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CONFLICT_EXISTING_REFERENCE",
+  "reasons": [
+    "MULTIPLE_EXISTING_SAME_FAMILY_SKUS",
+    "MATCH_SOURCE_RELATIONAL_COMPETITOR"
+  ],
+  "source_page": "https://www.pgfilters.com/product-catalog/product-page/hg50022xe/",
+  "closed_at": "2026-09-27"
+}

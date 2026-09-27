@@ -1,0 +1,10 @@
+{
+  "premium_guard_code": "HG50092",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "ORIGIN_EVIDENCE_REQUIRED",
+  "reasons": [
+    "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+  ],
+  "source_page": "https://www.pgfilters.com/product-catalog/product-page/hg50092/",
+  "closed_at": "2026-09-27"
+}
