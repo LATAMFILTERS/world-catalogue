@@ -1,0 +1,25 @@
+{
+  "sku": "EA32339",
+  "codigo_base": "C2339",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C2339",
+    "installation_type": "Panel",
+    "patch_outer_mm": 231.14,
+    "patch_secondary_mm": 172.72,
+    "a_mm": 231.14,
+    "h_mm": 50.8,
+    "geometry_complete": false,
+    "geometry_ok": false,
+    "shared_conflict": true,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c2339_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}

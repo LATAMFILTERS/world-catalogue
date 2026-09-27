@@ -1,0 +1,25 @@
+{
+  "sku": "EA38107",
+  "codigo_base": "C28107",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "HEAVY_SEGMENT_SIGNAL_OUT_OF_LD_SCOPE",
+  "official": {
+    "status": "MANN_PATCH_EXACT",
+    "mann_source": "C28107",
+    "installation_type": "Panel",
+    "patch_outer_mm": null,
+    "patch_secondary_mm": null,
+    "a_mm": null,
+    "h_mm": 41,
+    "geometry_complete": false,
+    "geometry_ok": false,
+    "shared_conflict": false,
+    "family_ok": true,
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c28107_mann-filter.html",
+    "http": 0,
+    "url_ok": false
+  },
+  "closed_at": "2026-09-27"
+}
