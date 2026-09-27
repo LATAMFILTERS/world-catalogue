@@ -21,7 +21,8 @@ const close=(a,b,t=1.5)=>hasNum(a)&&hasNum(b)&&Math.abs(Number(a)-Number(b))<=t;
 function buildManifest(){
  const current=JSON.parse(fs.readFileSync(CURRENT,'utf8'));
  const rows=current?.lanes?.AUTO_CLOSE||[];
- if(!rows.length) throw new Error('NO_AUTO_CLOSE_CANDIDATES');
+ const preblocked=(current?.lanes?.BLOCKED||[]).map(x=>({sku:x.sku,code:x.identity?.canonical_part_number||x.codigo_base,reason:x.block_reason||'BLOCKED_BY_SELECTOR'}));
+ if(!rows.length&&!preblocked.length) throw new Error('NO_ACTIONABLE_CANDIDATES');
  const candidates=rows.map(x=>{
   if(!x.official?.family_ok||!x.official?.geometry_complete||!x.official?.geometry_ok||!x.official?.url_ok)
    throw new Error('INVALID_AUTO_CLOSE:'+x.sku);
@@ -31,7 +32,7 @@ function buildManifest(){
  });
  const manifest={batch:'LD_AIR_'+BATCH+'_LIVE',
   selection_model:'LD_AIR_LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY',
-  candidates};
+  candidates,preblocked};
  fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2)+'\n');
  return manifest;
 }
@@ -184,7 +185,7 @@ function writeCycleAudit(){
 async function main(){
  const manifest=buildManifest();
  const sync=await syncCatalog(manifest);
- if(!APPLY){console.log(JSON.stringify({batch:BATCH,candidates:manifest.candidates.length,sync},null,2));return}
+ if(!APPLY){console.log(JSON.stringify({batch:BATCH,candidates:manifest.candidates.length,preblocked:manifest.preblocked.length,sync},null,2));return}
  const synced=new Set(sync.complete.map(x=>x.sku));
  const committed={...manifest,candidates:manifest.candidates.filter(x=>synced.has(x.sku))};
  const partSearch=await validatePartSearch(committed);
@@ -192,7 +193,7 @@ async function main(){
  const passed=new Set(partSearch.results.filter(x=>x.ok).map(x=>x.sku));
  const closed={...manifest,candidates:committed.candidates.filter(x=>passed.has(x.sku))};
  const semanticFailed=partSearch.failed.filter(x=>!x.retryable),retryableFailed=partSearch.failed.filter(x=>x.retryable);
- writeTerminals(closed,sync.blocked,semanticFailed,retryableFailed);
+ writeTerminals(closed,[...(manifest.preblocked||[]),...sync.blocked],semanticFailed,retryableFailed);
  const cycleAudit=writeCycleAudit();
  console.log(JSON.stringify({batch:BATCH,candidates:manifest.candidates.length,sync:{transaction:sync.transaction,complete:sync.complete.length,blocked:sync.blocked.length},part_search:{passed:partSearch.passed,failed:partSearch.failed.length,retryable:retryableFailed.length,semantic_failed:semanticFailed.length},closed:closed.candidates.length,cycle_audit:cycleAudit,manifest:manifestPath,terminal:terminalPath},null,2));
 }

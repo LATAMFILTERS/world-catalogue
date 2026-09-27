@@ -1,0 +1,257 @@
+{
+  "batch": "LD_AIR_B37_LIVE",
+  "selection_model": "LD_AIR_LIVE_PRIORITY_V2_POOL200_AUTO_FIRST_STRICT_GEOMETRY",
+  "candidates": [],
+  "preblocked": [
+    {
+      "sku": "EA31091",
+      "code": "C251091",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31911",
+      "code": "C321911",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA33260",
+      "code": "C3260",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA33465",
+      "code": "C3465",
+      "reason": "OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS"
+    },
+    {
+      "sku": "EA38022",
+      "code": "C28022",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA38541",
+      "code": "C18541",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31143",
+      "code": "C131143",
+      "reason": "OFFICIAL_MANN_CODE_NOT_FOUND_ALL_REGIONS"
+    },
+    {
+      "sku": "EA31521",
+      "code": "C311521",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32146",
+      "code": "C2146",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32341",
+      "code": "C22341",
+      "reason": "LEGACY_GEOMETRY_INVALID_OFFICIAL_DIMENSIONS_UNAVAILABLE"
+    },
+    {
+      "sku": "EA32861",
+      "code": "C12861",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA33383",
+      "code": "C13383",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA33448",
+      "code": "FP3448",
+      "reason": "NON_AIR_MANN_FAMILY"
+    },
+    {
+      "sku": "EA34436",
+      "code": "FP4436",
+      "reason": "NON_AIR_MANN_FAMILY"
+    },
+    {
+      "sku": "EA35111",
+      "code": "C25111",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA36721",
+      "code": "C26721",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA37100",
+      "code": "C17100",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA38161",
+      "code": "C18161",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA35204",
+      "code": "CS35204",
+      "reason": "NONSTANDARD_OR_UNRESOLVED_MANN_CODE"
+    },
+    {
+      "sku": "EA30105",
+      "code": "C105",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31051",
+      "code": "C151051",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31121",
+      "code": "C1320",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31172",
+      "code": "C221172",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31231",
+      "code": "C241231",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31362",
+      "code": "C1362",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31531",
+      "code": "C301531",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31632",
+      "code": "C1632",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31671",
+      "code": "C31671",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA31921",
+      "code": "C271921",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32061",
+      "code": "C262061",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32178",
+      "code": "C12178",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32192",
+      "code": "C2192",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32443",
+      "code": "C2443",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32544",
+      "code": "FP2544",
+      "reason": "NON_AIR_MANN_FAMILY"
+    },
+    {
+      "sku": "EA32757",
+      "code": "FP2757",
+      "reason": "NON_AIR_MANN_FAMILY"
+    },
+    {
+      "sku": "EA32872",
+      "code": "C2872",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA33172",
+      "code": "FP3172",
+      "reason": "NON_AIR_MANN_FAMILY"
+    },
+    {
+      "sku": "EA33993",
+      "code": "C13993",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA34008",
+      "code": "C34008",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA34361",
+      "code": "C184361X",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA34651",
+      "code": "C3314651",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA34681",
+      "code": "C14681",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA35104",
+      "code": "C15104",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA36221",
+      "code": "C36221",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA36724",
+      "code": "FP6724",
+      "reason": "NON_AIR_MANN_FAMILY"
+    },
+    {
+      "sku": "EA37192",
+      "code": "C17192",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA38003",
+      "code": "C18003",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA38471",
+      "code": "FP28471",
+      "reason": "NON_AIR_MANN_FAMILY"
+    },
+    {
+      "sku": "EA31071",
+      "code": "C121071",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    },
+    {
+      "sku": "EA32431",
+      "code": "C22431",
+      "reason": "OFFICIAL_GEOMETRY_CONFLICT"
+    }
+  ]
+}

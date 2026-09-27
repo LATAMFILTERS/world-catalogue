@@ -1,0 +1,9 @@
+{
+  "sku": "EA35204",
+  "codigo_base": "CS35204",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "NONSTANDARD_OR_UNRESOLVED_MANN_CODE",
+  "closed_at": "2026-09-27"
+}

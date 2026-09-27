@@ -79,14 +79,21 @@ async function enrichOfficial(candidate){
  const base=candidate.official||{};
  if(base.family_ok===true&&base.source_url){
   const urls=[base.source_url,...['us-en','ca-en','sg-en'].map(loc=>base.source_url.replace('/en/','/'+loc+'/'))].filter((u,i,a)=>u&&a.indexOf(u)===i);
+  let firstOk=null;
   for(const url of urls){
    try{
     const res=await fetch(url,{redirect:'follow',signal:AbortSignal.timeout(5000)});
     http=res.status;
-    if(res.ok){url_ok=true;resolvedSourceUrl=url;live=parseLiveMannDimensions(await res.text());break}
-    if(res.status!==404)break;
+    if(res.ok){
+     const parsed=parseLiveMannDimensions(await res.text());
+     if(!firstOk)firstOk={url,parsed,http:res.status};
+     const hasDims=(parsed.dimension_values_mm||[]).length>0||hasNum(parsed.h_mm);
+     if(hasDims){url_ok=true;resolvedSourceUrl=url;live=parsed;break}
+     url_ok=true;
+    }
    }catch(_){}
   }
+  if(url_ok&&(live.dimension_values_mm||[]).length===0&&!hasNum(live.h_mm)&&firstOk){resolvedSourceUrl=firstOk.url;live=firstOk.parsed;http=firstOk.http}
  }
  const catalog=candidate.specs||{};
  const liveA=hasNum(live.a_mm)?Number(live.a_mm):null,liveB=hasNum(live.b_mm)?Number(live.b_mm):null;
@@ -121,6 +128,19 @@ async function enrichOfficial(candidate){
  const out={...candidate,official,geometry_patch:Object.keys(geometry_patch).length?geometry_patch:null};
  return {...out,lane:laneFor(out)};
 }
+function blockReason(candidate){
+ const o=candidate.official||{},s=candidate.specs||{};
+ if((candidate.identity_collision_owners||[]).length)return 'CANONICAL_CODE_COLLISION_NORMALIZED';
+ if(o.family_ok===false)return 'NON_AIR_MANN_FAMILY';
+ if(o.shared_conflict===true)return 'OFFICIAL_GEOMETRY_CONFLICT';
+ if(o.status==='MANN_DIRECT_CODE_PROBE'&&o.url_ok===false)return 'OFFICIAL_MANN_CODE_NOT_FOUND_ALL_REGIONS';
+ if(o.status==='MANN_PATCH_MISSING')return 'NONSTANDARD_OR_UNRESOLVED_MANN_CODE';
+ if(o.url_ok===true&&(!o.live_dimensions?.dimension_values_mm||o.live_dimensions.dimension_values_mm.length===0)&&!hasNum(o.live_dimensions?.h_mm)){
+  if(Number(s.outer_diameter_mm)>1000||Number(s.height_mm)>1000)return 'LEGACY_GEOMETRY_INVALID_OFFICIAL_DIMENSIONS_UNAVAILABLE';
+  return 'OFFICIAL_MANN_GEOMETRY_UNAVAILABLE_ALL_REGIONS';
+ }
+ return 'MANUAL_REVERIFY_REQUIRED';
+}
 function laneFor(candidate){
  const reasons=candidate.reasons||[],official=candidate.official||{},identity=candidate.identity||{},gov=candidate.governance||{},identityPatch=candidate.identity_patch||null;
  const code=norm(candidate.codigo_base);
@@ -128,12 +148,18 @@ function laneFor(candidate){
  const repairIdentityOk=!!identityPatch&&identityPatch.origin_group==='EUROPEAN'&&identityPatch.canonical_brand==='MANN-FILTER'&&norm(identityPatch.canonical_part_number)===code;
  const core_ok=reasons.includes('GOVERNANCE_VERIFIED')&&(activeIdentityOk||repairIdentityOk)
   &&gov.primary_manufacturer_verified===true&&gov.approved_manufacturer==='MANN-FILTER'&&norm(gov.approved_codigo_base)===code;
+ if((candidate.identity_collision_owners||[]).length)return 'BLOCKED';
  if(!core_ok) return 'REVERIFY';
  if(reasons.includes('HEAVY_SEGMENT_SIGNAL')||reasons.includes('CONTAMINATION_FLAG')) return 'BLOCKED';
  const officialMann=['MANN_PATCH_EXACT','MANN_DIRECT_CODE_PROBE'].includes(official.status);
+ if(official.status==='MANN_PATCH_MISSING')return 'BLOCKED';
  if(officialMann&&official.family_ok===false) return 'BLOCKED';
  if(officialMann&&official.shared_conflict===true) return 'BLOCKED';
- if(officialMann&&official.geometry_complete===false) return 'REVERIFY';
+ if(officialMann&&official.geometry_complete===false){
+  if(official.status==='MANN_DIRECT_CODE_PROBE'&&official.url_ok===false)return 'BLOCKED';
+  if(official.url_ok===true&&(!official.live_dimensions?.dimension_values_mm||official.live_dimensions.dimension_values_mm.length===0)&&!hasNum(official.live_dimensions?.h_mm))return 'BLOCKED';
+  return 'REVERIFY';
+ }
  if(officialMann&&official.geometry_complete===true&&official.geometry_ok===false) return 'BLOCKED';
  if(officialMann&&official.family_ok===true&&official.geometry_complete===true&&official.geometry_ok===true&&official.url_ok===true) return 'AUTO_CLOSE';
  return 'REVERIFY';
@@ -165,7 +191,7 @@ async function main(){
  const db=new Client({connectionString:process.env.CATALOG_DATABASE_URL||process.env.DATABASE_URL,ssl:false});await db.connect();
  try{
   const terms=[...terminalSkus()];
-  const q=await db.query("select * from public.elimfilters_catalog where duty='LIGHT_DUTY' and filter_type='air' and catalog_active=true and coalesce(canonical_source_status,'')<>'VERIFIED' and not (sku=any($1::text[]))",[terms]);
+  const q=await db.query("select * from public.elimfilters_catalog where duty='LIGHT_DUTY' and filter_type='air' and catalog_active=true and coalesce(canonical_source_status,'')<>'VERIFIED' and coalesce(enrichment_data->'codigo_base_governance'->>'approved_manufacturer','')='MANN-FILTER' and not (sku=any($1::text[]))",[terms]);
   const ids=await db.query("select * from ld_catalog.ld_canonical_product_identity where status='ACTIVE' and filter_type='air'");
   const idMap=new Map(ids.rows.map(x=>[x.elimfilters_sku,x]));
   const codeOwners=new Map();
@@ -180,7 +206,8 @@ async function main(){
    const p=prepareOfficialLocal(x,patchMap),g=x.governance||{},owners=codeOwners.get(norm(x.codigo_base))||[];
    const identity_patch=!x.identity&&owners.length===0&&g.state==='CANONICAL_VERIFIED'&&g.primary_manufacturer_verified===true&&g.approved_manufacturer==='MANN-FILTER'&&norm(g.approved_codigo_base)===norm(x.codigo_base)
     ?{origin_group:'EUROPEAN',canonical_brand:'MANN-FILTER',canonical_part_number:x.codigo_base,filter_type:'air',status:'ACTIVE',evidence_source:'LD_AIR_LIVE_IDENTITY_REPAIR'}:null;
-   return {...p,identity_patch};
+   const identity_collision_owners=!x.identity&&owners.length?owners:[];
+   return {...p,identity_patch,identity_collision_owners};
   });
   const localReady=prepared.filter(x=>{
    const o=x.official||{};
@@ -191,8 +218,8 @@ async function main(){
   const verifyPool=localReady.slice(0,Math.min(localReady.length,BATCH_LIMIT*3)),verified=[];
   for(let i=0;i<verifyPool.length;i+=20)verified.push(...await Promise.all(verifyPool.slice(i,i+20).map(enrichOfficial)));
   const verifiedMap=new Map(verified.map(x=>[x.sku,x]));
-  const classified=prepared.map(x=>verifiedMap.get(x.sku)||({...x,lane:laneFor(x)}));
-  const lanePriority={AUTO_CLOSE:0,REVERIFY:1,BLOCKED:2};
+  const classified=prepared.map(x=>verifiedMap.get(x.sku)||({...x,lane:laneFor(x)})).map(x=>x.lane==='BLOCKED'?({...x,block_reason:blockReason(x)}):x);
+  const lanePriority={AUTO_CLOSE:0,BLOCKED:1,REVERIFY:2};
   classified.sort((a,b)=>lanePriority[a.lane]-lanePriority[b.lane]||b.score-a.score||a.sku.localeCompare(b.sku));
   const batch=classified.slice(0,BATCH_LIMIT);
   const lanes={AUTO_CLOSE:batch.filter(x=>x.lane==='AUTO_CLOSE'),REVERIFY:batch.filter(x=>x.lane==='REVERIFY'),BLOCKED:batch.filter(x=>x.lane==='BLOCKED')};

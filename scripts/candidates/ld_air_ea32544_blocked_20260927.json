@@ -1,0 +1,9 @@
+{
+  "sku": "EA32544",
+  "codigo_base": "FP2544",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "NON_AIR_MANN_FAMILY",
+  "closed_at": "2026-09-27"
+}
