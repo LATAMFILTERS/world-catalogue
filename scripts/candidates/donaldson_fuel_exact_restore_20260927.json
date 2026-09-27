@@ -1,0 +1,5545 @@
+[
+  {
+    "sku": "EF90047",
+    "codigo_base": "DBF0047",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF0047",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF0047",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF0047/11879",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF0047/11879",
+      "scraped_at": "2026-09-16T15:54:20.801Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90256",
+    "codigo_base": "DBF0256",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF0256",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF0256",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF0256/prod420202",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF0256/prod420202",
+      "scraped_at": "2026-09-16T15:53:54.754Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94245",
+    "codigo_base": "DBF4245",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF4245",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF4245",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF4245/prod420294",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF4245/prod420294",
+      "scraped_at": "2026-09-16T15:53:49.608Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94457",
+    "codigo_base": "DBF4457",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF4457",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF4457",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF4457/68162",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF4457/68162",
+      "scraped_at": "2026-09-16T15:53:43.367Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95782",
+    "codigo_base": "DBF5782",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF5782",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF5782",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF5782/68745",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF5782/68745",
+      "scraped_at": "2026-09-16T15:54:09.507Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95811",
+    "codigo_base": "DBF5811",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF5811",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF5811",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF5811/69971",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF5811/69971",
+      "scraped_at": "2026-09-16T15:55:01.774Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95812",
+    "codigo_base": "DBF5812",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF5812",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF5812",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF5812/75732",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF5812/75732",
+      "scraped_at": "2026-09-16T15:54:32.483Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95814",
+    "codigo_base": "DBF5814",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF5814",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF5814",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF5814/75730",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF5814/75730",
+      "scraped_at": "2026-09-16T15:54:43.146Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95816",
+    "codigo_base": "DBF5816",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF5816",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF5816",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF5816/75733",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF5816/75733",
+      "scraped_at": "2026-09-16T15:54:31.438Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95817",
+    "codigo_base": "DBF5817",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF5817",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF5817",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF5817/75728",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF5817/75728",
+      "scraped_at": "2026-09-16T15:54:37.630Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95967",
+    "codigo_base": "DBF5967",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF5967",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF5967",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF5967/prod1840046",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF5967/prod1840046",
+      "scraped_at": "2026-09-16T15:54:18.273Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96776",
+    "codigo_base": "DBF6776",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF6776",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF6776",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF6776/75196",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF6776/75196",
+      "scraped_at": "2026-09-16T15:55:01.243Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96823",
+    "codigo_base": "DBF6823",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF6823",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF6823",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF6823/75734",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF6823/75734",
+      "scraped_at": "2026-09-16T15:54:25.948Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF97917",
+    "codigo_base": "DBF7917",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF7917",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF7917",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF7917/38304",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF7917/38304",
+      "scraped_at": "2026-09-16T15:55:53.769Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF98727",
+    "codigo_base": "DBF8727",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "DBF8727",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "DBF8727",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/DBF8727/prod610062",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/DBF8727/prod610062",
+      "scraped_at": "2026-09-16T15:55:08.057Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91108",
+    "codigo_base": "P501108",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P501108",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P501108",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P501108/prod1010012",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P501108/prod1010012",
+      "scraped_at": "2026-09-16T15:55:27.827Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92131",
+    "codigo_base": "P502131",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502131",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502131",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502131/18845",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502131/18845",
+      "scraped_at": "2026-09-16T15:55:04.638Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92132",
+    "codigo_base": "P502132",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502132",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502132",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502132/18846",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502132/18846",
+      "scraped_at": "2026-09-16T15:54:44.703Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92134",
+    "codigo_base": "P502134",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502134",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502134",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502134/18847",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502134/18847",
+      "scraped_at": "2026-09-16T15:55:39.221Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92135",
+    "codigo_base": "P502135",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502135",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502135",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502135/18848",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502135/18848",
+      "scraped_at": "2026-09-16T15:54:47.533Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92136",
+    "codigo_base": "P502136",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502136",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502136",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502136/18849",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502136/18849",
+      "scraped_at": "2026-09-16T15:56:19.995Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92138",
+    "codigo_base": "P502138",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502138",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502138",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502138/18850",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502138/18850",
+      "scraped_at": "2026-09-16T15:55:55.446Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92143",
+    "codigo_base": "P502143",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502143",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502143",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502143/18852",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502143/18852",
+      "scraped_at": "2026-09-16T15:55:32.200Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92161",
+    "codigo_base": "P502161",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502161",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502161",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502161/18858",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502161/18858",
+      "scraped_at": "2026-09-16T15:56:04.351Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92163",
+    "codigo_base": "P502163",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502163",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502163",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502163/18859",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502163/18859",
+      "scraped_at": "2026-09-16T15:56:51.987Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92166",
+    "codigo_base": "P502166",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502166",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502166",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502166/18860",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502166/18860",
+      "scraped_at": "2026-09-16T15:56:53.172Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92226",
+    "codigo_base": "P502226",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502226",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502226",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502226/18890",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502226/18890",
+      "scraped_at": "2026-09-16T15:56:10.564Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92378",
+    "codigo_base": "P502378",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502378",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502378",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502378/39758",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502378/39758",
+      "scraped_at": "2026-09-16T15:55:38.119Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92381",
+    "codigo_base": "P502381",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502381",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502381",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502381/40004",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502381/40004",
+      "scraped_at": "2026-09-16T15:56:35.839Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92392",
+    "codigo_base": "P502392",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502392",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502392",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502392/37194",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502392/37194",
+      "scraped_at": "2026-09-16T15:57:48.573Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92406",
+    "codigo_base": "P502406",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502406",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502406",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502406/38143",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502406/38143",
+      "scraped_at": "2026-09-16T15:57:23.450Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92420",
+    "codigo_base": "P502420",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502420",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502420",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502420/41536",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502420/41536",
+      "scraped_at": "2026-09-16T15:57:30.614Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92427",
+    "codigo_base": "P502427",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502427",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502427",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502427/41156",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502427/41156",
+      "scraped_at": "2026-09-16T15:57:08.702Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92463",
+    "codigo_base": "P502463",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502463",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502463",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502463/63064",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502463/63064",
+      "scraped_at": "2026-09-16T15:58:38.575Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92478",
+    "codigo_base": "P502478",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502478",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502478",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502478/37765",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502478/37765",
+      "scraped_at": "2026-09-16T15:57:38.960Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92479",
+    "codigo_base": "P502479",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502479",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502479",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502479/37766",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502479/37766",
+      "scraped_at": "2026-09-16T15:57:47.483Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92480",
+    "codigo_base": "P502480",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502480",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502480",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502480/64452",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502480/64452",
+      "scraped_at": "2026-09-16T15:57:58.316Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92504",
+    "codigo_base": "P502504",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502504",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502504",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502504/68083",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502504/68083",
+      "scraped_at": "2026-09-16T15:56:59.445Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92512",
+    "codigo_base": "P502512",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502512",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502512",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502512/38249",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502512/38249",
+      "scraped_at": "2026-09-16T15:57:34.401Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92599",
+    "codigo_base": "P502599",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P502599",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P502599",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P502599/prod100107",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P502599/prod100107",
+      "scraped_at": "2026-09-16T15:58:11.750Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96154",
+    "codigo_base": "P506154",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P506154",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P506154",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P506154/prod1380152",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P506154/prod1380152",
+      "scraped_at": "2026-09-16T15:57:45.745Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96197",
+    "codigo_base": "P506197",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P506197",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P506197",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P506197/prod1150013",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P506197/prod1150013",
+      "scraped_at": "2026-09-16T15:57:28.315Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90004",
+    "codigo_base": "P550004",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550004",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550004",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550004/20014",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550004/20014",
+      "scraped_at": "2026-09-16T15:57:35.776Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90026",
+    "codigo_base": "P550026",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550026",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550026",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550026/20032",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550026/20032",
+      "scraped_at": "2026-09-16T16:00:19.600Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90028",
+    "codigo_base": "P550028",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550028",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550028",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550028/20033",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550028/20033",
+      "scraped_at": "2026-09-16T15:58:49.406Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90040",
+    "codigo_base": "P550040",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550040",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550040",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550040/20042",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550040/20042",
+      "scraped_at": "2026-09-16T15:58:50.945Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90042",
+    "codigo_base": "P550042",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550042",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550042",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550042/20044",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550042/20044",
+      "scraped_at": "2026-09-16T15:59:07.438Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90043",
+    "codigo_base": "P550043",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550043",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550043",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550043/20045",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550043/20045",
+      "scraped_at": "2026-09-16T15:58:43.816Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90048",
+    "codigo_base": "P550048",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550048",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550048",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550048/20050",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550048/20050",
+      "scraped_at": "2026-09-16T15:59:02.463Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90049",
+    "codigo_base": "P550049",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550049",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550049",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550049/20051",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550049/20051",
+      "scraped_at": "2026-09-16T15:58:15.796Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90054",
+    "codigo_base": "P550054",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550054",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550054",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550054/20056",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550054/20056",
+      "scraped_at": "2026-09-16T16:00:16.227Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90055",
+    "codigo_base": "P550055",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550055",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550055",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550055/20057",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550055/20057",
+      "scraped_at": "2026-09-16T16:01:05.201Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90056",
+    "codigo_base": "P550056",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550056",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550056",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550056/20058",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550056/20058",
+      "scraped_at": "2026-09-16T15:59:23.116Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90057",
+    "codigo_base": "P550057",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550057",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550057",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550057/20059",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550057/20059",
+      "scraped_at": "2026-09-16T16:07:22.816Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90060",
+    "codigo_base": "P550060",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550060",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550060",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550060/20062",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550060/20062",
+      "scraped_at": "2026-09-16T16:02:30.083Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90061",
+    "codigo_base": "P550061",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550061",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550061",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550061/20063",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550061/20063",
+      "scraped_at": "2026-09-16T16:00:19.470Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90090",
+    "codigo_base": "P550090",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550090",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550090",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550090/20091",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550090/20091",
+      "scraped_at": "2026-09-16T16:00:07.740Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90094",
+    "codigo_base": "P550094",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550094",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550094",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550094/20095",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550094/20095",
+      "scraped_at": "2026-09-16T15:59:17.061Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90104",
+    "codigo_base": "P550104",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550104",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550104",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550104/20104",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550104/20104",
+      "scraped_at": "2026-09-16T16:04:38.680Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90105",
+    "codigo_base": "P550105",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550105",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550105",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550105/20105",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550105/20105",
+      "scraped_at": "2026-09-16T16:11:18.791Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90115",
+    "codigo_base": "P550115",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550115",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550115",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550115/20115",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550115/20115",
+      "scraped_at": "2026-09-16T16:00:49.365Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90120",
+    "codigo_base": "P550120",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550120",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550120",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550120/20120",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550120/20120",
+      "scraped_at": "2026-09-16T16:01:30.710Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90126",
+    "codigo_base": "P550126",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550126",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550126",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550126/20126",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550126/20126",
+      "scraped_at": "2026-09-16T15:59:56.806Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90127",
+    "codigo_base": "P550127",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550127",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550127",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550127/20127",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550127/20127",
+      "scraped_at": "2026-09-16T16:06:37.245Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90201",
+    "codigo_base": "P550201",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550201",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550201",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550201/20199",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550201/20199",
+      "scraped_at": "2026-09-16T16:11:57.113Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90218",
+    "codigo_base": "P550218",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550218",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550218",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550218/20214",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550218/20214",
+      "scraped_at": "2026-09-16T16:01:25.837Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90219",
+    "codigo_base": "P550219",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550219",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550219",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550219/20215",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550219/20215",
+      "scraped_at": "2026-09-16T16:02:10.508Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90225",
+    "codigo_base": "P550225",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550225",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550225",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550225/20220",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550225/20220",
+      "scraped_at": "2026-09-16T16:00:50.937Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90345",
+    "codigo_base": "P550345",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550345",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550345",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550345/20292",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550345/20292",
+      "scraped_at": "2026-09-16T16:11:00.691Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90349",
+    "codigo_base": "P550349",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550349",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550349",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550349/20296",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550349/20296",
+      "scraped_at": "2026-09-16T16:04:45.416Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90364",
+    "codigo_base": "P550364",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550364",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550364",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550364/20310",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550364/20310",
+      "scraped_at": "2026-09-17T03:21:05.108Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90372",
+    "codigo_base": "P550372",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550372",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550372",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550372/20317",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550372/20317",
+      "scraped_at": "2026-09-16T16:13:36.899Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90392",
+    "codigo_base": "P550392",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550392",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550392",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550392/20332",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550392/20332",
+      "scraped_at": "2026-09-17T03:21:05.109Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90405",
+    "codigo_base": "P550405",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550405",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550405",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550405/20343",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550405/20343",
+      "scraped_at": "2026-09-16T16:01:47.563Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90410",
+    "codigo_base": "P550410",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550410",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550410",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550410/20348",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550410/20348",
+      "scraped_at": "2026-09-16T16:11:32.127Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90431",
+    "codigo_base": "P550431",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550431",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550431",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550431/20368",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550431/20368",
+      "scraped_at": "2026-09-16T16:14:05.209Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90433",
+    "codigo_base": "P550433",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550433",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550433",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550433/20370",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550433/20370",
+      "scraped_at": "2026-09-16T16:12:50.185Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90437",
+    "codigo_base": "P550437",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550437",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550437",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550437/20374",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550437/20374",
+      "scraped_at": "2026-09-16T16:10:45.965Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90440",
+    "codigo_base": "P550440",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550440",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550440",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550440/20376",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550440/20376",
+      "scraped_at": "2026-09-16T16:16:41.985Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90446",
+    "codigo_base": "P550446",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550446",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550446",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550446/20378",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550446/20378",
+      "scraped_at": "2026-09-16T16:03:12.817Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90448",
+    "codigo_base": "P550448",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550448",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550448",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550448/20380",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550448/20380",
+      "scraped_at": "2026-09-16T16:02:12.877Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90460",
+    "codigo_base": "P550460",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550460",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550460",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550460/20389",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550460/20389",
+      "scraped_at": "2026-09-16T16:11:55.788Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90472",
+    "codigo_base": "P550472",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550472",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550472",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550472/20397",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550472/20397",
+      "scraped_at": "2026-09-16T16:11:21.258Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90481",
+    "codigo_base": "P550481",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550481",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550481",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550481/20405",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550481/20405",
+      "scraped_at": "2026-09-16T16:17:25.330Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90489",
+    "codigo_base": "P550489",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550489",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550489",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550489/20411",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550489/20411",
+      "scraped_at": "2026-09-16T16:04:25.722Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90491",
+    "codigo_base": "P550491",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550491",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550491",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550491/20413",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550491/20413",
+      "scraped_at": "2026-09-16T16:04:43.613Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90494",
+    "codigo_base": "P550494",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550494",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550494",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550494/20416",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550494/20416",
+      "scraped_at": "2026-09-16T16:02:50.781Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90495",
+    "codigo_base": "P550495",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550495",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550495",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550495/20417",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550495/20417",
+      "scraped_at": "2026-09-16T16:12:21.883Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90501",
+    "codigo_base": "P550501",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550501",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550501",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550501/20423",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550501/20423",
+      "scraped_at": "2026-09-16T16:15:20.782Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90515",
+    "codigo_base": "P550515",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550515",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550515",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550515/20434",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550515/20434",
+      "scraped_at": "2026-09-16T16:11:47.822Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90522",
+    "codigo_base": "P550522",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550522",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550522",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550522/20441",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550522/20441",
+      "scraped_at": "2026-09-16T16:20:53.069Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90527",
+    "codigo_base": "P550527",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550527",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550527",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550527/20444",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550527/20444",
+      "scraped_at": "2026-09-16T16:04:55.421Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90529",
+    "codigo_base": "P550529",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550529",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550529",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550529/20446",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550529/20446",
+      "scraped_at": "2026-09-16T16:07:38.934Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90540",
+    "codigo_base": "P550540",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550540",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550540",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550540/20448",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550540/20448",
+      "scraped_at": "2026-09-16T16:07:41.734Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90541",
+    "codigo_base": "P550541",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550541",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550541",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550541/20449",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550541/20449",
+      "scraped_at": "2026-09-16T16:13:07.995Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90552",
+    "codigo_base": "P550552",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550552",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550552",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550552/20450",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550552/20450",
+      "scraped_at": "2026-09-16T16:12:41.425Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90632",
+    "codigo_base": "P550632",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550632",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550632",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550632/23096",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550632/23096",
+      "scraped_at": "2026-09-16T16:13:56.903Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90643",
+    "codigo_base": "P550643",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550643",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550643",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550643/33466",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550643/33466",
+      "scraped_at": "2026-09-16T16:16:10.674Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90662",
+    "codigo_base": "P550662",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550662",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550662",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550662/37218",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550662/37218",
+      "scraped_at": "2026-09-16T16:13:07.078Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90673",
+    "codigo_base": "P550673",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550673",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550673",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550673/20465",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550673/20465",
+      "scraped_at": "2026-09-16T16:19:46.245Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90677",
+    "codigo_base": "P550677",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550677",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550677",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550677/20468",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550677/20468",
+      "scraped_at": "2026-09-16T16:09:29.142Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90678",
+    "codigo_base": "P550678",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550678",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550678",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550678/20469",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550678/20469",
+      "scraped_at": "2026-09-16T16:14:22.567Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90757",
+    "codigo_base": "P550757",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550757",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550757",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550757/35538",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550757/35538",
+      "scraped_at": "2026-09-16T16:28:19.930Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90762",
+    "codigo_base": "P550762",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550762",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550762",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550762/20522",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550762/20522",
+      "scraped_at": "2026-09-16T16:21:21.132Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90774",
+    "codigo_base": "P550774",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550774",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550774",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550774/35636",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550774/35636",
+      "scraped_at": "2026-09-16T16:10:14.123Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90782",
+    "codigo_base": "P550782",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550782",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550782",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550782/37796",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550782/37796",
+      "scraped_at": "2026-09-16T16:10:25.890Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90783",
+    "codigo_base": "P550783",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550783",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550783",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550783/37797",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550783/37797",
+      "scraped_at": "2026-09-16T16:15:26.323Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90811",
+    "codigo_base": "P550811",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550811",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550811",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550811/20531",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550811/20531",
+      "scraped_at": "2026-09-16T16:14:26.865Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90821",
+    "codigo_base": "P550821",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550821",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550821",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550821/38602",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550821/38602",
+      "scraped_at": "2026-09-16T16:28:51.567Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90837",
+    "codigo_base": "P550837",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550837",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550837",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550837/37195",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550837/37195",
+      "scraped_at": "2026-09-16T16:18:33.616Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90839",
+    "codigo_base": "P550839",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550839",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550839",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550839/36120",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550839/36120",
+      "scraped_at": "2026-09-16T16:17:09.584Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90860",
+    "codigo_base": "P550860",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550860",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550860",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550860/20535",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550860/20535",
+      "scraped_at": "2026-09-16T16:16:30.790Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90861",
+    "codigo_base": "P550861",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550861",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550861",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550861/20536",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550861/20536",
+      "scraped_at": "2026-09-16T16:23:07.056Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90879",
+    "codigo_base": "P550879",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550879",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550879",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550879/37955",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550879/37955",
+      "scraped_at": "2026-09-16T16:15:48.902Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90880",
+    "codigo_base": "P550880",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550880",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550880",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550880/38453",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550880/38453",
+      "scraped_at": "2026-09-16T16:31:26.878Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90881",
+    "codigo_base": "P550881",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550881",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550881",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550881/39312",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550881/39312",
+      "scraped_at": "2026-09-16T16:25:45.449Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90912",
+    "codigo_base": "P550912",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550912",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550912",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550912/36752",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550912/36752",
+      "scraped_at": "2026-09-16T16:16:14.061Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90928",
+    "codigo_base": "P550928",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550928",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550928",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550928/20543",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550928/20543",
+      "scraped_at": "2026-09-16T16:26:23.807Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90932",
+    "codigo_base": "P550932",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550932",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550932",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550932/62266",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550932/62266",
+      "scraped_at": "2026-09-16T16:24:56.423Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90936",
+    "codigo_base": "P550936",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550936",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550936",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550936/20544",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550936/20544",
+      "scraped_at": "2026-09-16T16:18:55.409Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90943",
+    "codigo_base": "P550943",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550943",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550943",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550943/20545",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550943/20545",
+      "scraped_at": "2026-09-16T16:32:42.534Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90958",
+    "codigo_base": "P550958",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550958",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550958",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550958/20552",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550958/20552",
+      "scraped_at": "2026-09-16T16:14:03.611Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90959",
+    "codigo_base": "P550959",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550959",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550959",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550959/20553",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550959/20553",
+      "scraped_at": "2026-09-16T16:14:39.213Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90967",
+    "codigo_base": "P550967",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550967",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550967",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550967/20561",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550967/20561",
+      "scraped_at": "2026-09-16T16:25:30.664Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90974",
+    "codigo_base": "P550974",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550974",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550974",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P550974/20567",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P550974/20567",
+      "scraped_at": "2026-09-16T16:19:40.347Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91004",
+    "codigo_base": "P551004",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551004",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551004",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551004/62868",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551004/62868",
+      "scraped_at": "2026-09-16T16:27:23.859Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91062",
+    "codigo_base": "P551062",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551062",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551062",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551062/40181",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551062/40181",
+      "scraped_at": "2026-09-16T16:30:30.070Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91081",
+    "codigo_base": "P551081",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551081",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551081",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551081/74225",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551081/74225",
+      "scraped_at": "2026-09-16T16:36:02.811Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91082",
+    "codigo_base": "P551082",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551082",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551082",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551082/74226",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551082/74226",
+      "scraped_at": "2026-09-16T16:30:57.349Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91130",
+    "codigo_base": "P551130",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551130",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551130",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551130/20583",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551130/20583",
+      "scraped_at": "2026-09-16T16:37:45.840Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91131",
+    "codigo_base": "P551131",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551131",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551131",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551131/64438",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551131/64438",
+      "scraped_at": "2026-09-16T16:31:27.434Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91162",
+    "codigo_base": "P551162",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551162",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551162",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551162/20589",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551162/20589",
+      "scraped_at": "2026-09-16T16:18:00.223Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91167",
+    "codigo_base": "P551167",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551167",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551167",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551167/20593",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551167/20593",
+      "scraped_at": "2026-09-16T16:20:54.888Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91168",
+    "codigo_base": "P551168",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551168",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551168",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551168/20594",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551168/20594",
+      "scraped_at": "2026-09-16T16:26:17.395Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91178",
+    "codigo_base": "P551178",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551178",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551178",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551178/20603",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551178/20603",
+      "scraped_at": "2026-09-16T16:28:37.970Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91312",
+    "codigo_base": "P551312",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551312",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551312",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551312/20729",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551312/20729",
+      "scraped_at": "2026-09-16T16:38:25.032Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91313",
+    "codigo_base": "P551313",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551313",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551313",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551313/20730",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551313/20730",
+      "scraped_at": "2026-09-16T16:33:55.127Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91315",
+    "codigo_base": "P551315",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551315",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551315",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551315/20732",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551315/20732",
+      "scraped_at": "2026-09-16T16:19:33.203Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91316",
+    "codigo_base": "P551316",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551316",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551316",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551316/20733",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551316/20733",
+      "scraped_at": "2026-09-16T16:21:33.521Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91317",
+    "codigo_base": "P551317",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551317",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551317",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551317/20734",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551317/20734",
+      "scraped_at": "2026-09-16T16:26:46.078Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91318",
+    "codigo_base": "P551318",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551318",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551318",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551318/20735",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551318/20735",
+      "scraped_at": "2026-09-16T16:29:03.945Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91319",
+    "codigo_base": "P551319",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551319",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551319",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551319/63017",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551319/63017",
+      "scraped_at": "2026-09-16T16:24:19.538Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91337",
+    "codigo_base": "P551337",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551337",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551337",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551337/20750",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551337/20750",
+      "scraped_at": "2026-09-16T16:34:21.427Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91338",
+    "codigo_base": "P551338",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551338",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551338",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551338/20751",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551338/20751",
+      "scraped_at": "2026-09-16T16:19:58.244Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91605",
+    "codigo_base": "P551605",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551605",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551605",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551605/20772",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551605/20772",
+      "scraped_at": "2026-09-16T16:38:47.991Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91624",
+    "codigo_base": "P551624",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551624",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551624",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551624/20773",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551624/20773",
+      "scraped_at": "2026-09-16T16:38:19.646Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91712",
+    "codigo_base": "P551712",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551712",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551712",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551712/20775",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551712/20775",
+      "scraped_at": "2026-09-16T16:23:27.110Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91740",
+    "codigo_base": "P551740",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551740",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551740",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551740/20777",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551740/20777",
+      "scraped_at": "2026-09-16T16:24:41.794Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91760",
+    "codigo_base": "P551760",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551760",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551760",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551760/20795",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551760/20795",
+      "scraped_at": "2026-09-16T16:39:13.262Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91770",
+    "codigo_base": "P551770",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551770",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551770",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551770/23239",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551770/23239",
+      "scraped_at": "2026-09-16T16:38:49.240Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91772",
+    "codigo_base": "P551772",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551772",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551772",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551772/23105",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551772/23105",
+      "scraped_at": "2026-09-16T16:23:57.964Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91773",
+    "codigo_base": "P551773",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551773",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551773",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551773/23241",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551773/23241",
+      "scraped_at": "2026-09-16T16:25:07.817Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91844",
+    "codigo_base": "P551844",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551844",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551844",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551844/75207",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551844/75207",
+      "scraped_at": "2026-09-16T16:32:47.318Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91851",
+    "codigo_base": "P551851",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551851",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551851",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551851/prod100230",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551851/prod100230",
+      "scraped_at": "2026-09-16T16:43:33.752Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91852",
+    "codigo_base": "P551852",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551852",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551852",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551852/74424",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551852/74424",
+      "scraped_at": "2026-09-16T16:40:18.688Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91853",
+    "codigo_base": "P551853",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551853",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551853",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551853/74425",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551853/74425",
+      "scraped_at": "2026-09-16T16:25:33.436Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91854",
+    "codigo_base": "P551854",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551854",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551854",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551854/prod100231",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551854/prod100231",
+      "scraped_at": "2026-09-16T16:26:19.121Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91855",
+    "codigo_base": "P551855",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551855",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551855",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551855/74418",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551855/74418",
+      "scraped_at": "2026-09-16T16:32:20.254Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91856",
+    "codigo_base": "P551856",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551856",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551856",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551856/74419",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551856/74419",
+      "scraped_at": "2026-09-16T16:34:29.936Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91857",
+    "codigo_base": "P551857",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551857",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551857",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551857/prod100232",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551857/prod100232",
+      "scraped_at": "2026-09-16T16:28:50.351Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91858",
+    "codigo_base": "P551858",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551858",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551858",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551858/74421",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551858/74421",
+      "scraped_at": "2026-09-16T16:42:14.465Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "ES91859",
+    "codigo_base": "P551859",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551859",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551859",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551859/74422",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551859/74422",
+      "scraped_at": "2026-09-16T16:44:07.061Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF91915",
+    "codigo_base": "P551915",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P551915",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551915",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P551915/20800",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P551915/20800",
+      "scraped_at": "2026-09-16T16:25:57.035Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92200",
+    "codigo_base": "P552200",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P552200",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P552200",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P552200/23246",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P552200/23246",
+      "scraped_at": "2026-09-16T16:35:41.506Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92203",
+    "codigo_base": "P552203",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P552203",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P552203",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P552203/1553",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P552203/1553",
+      "scraped_at": "2026-09-16T16:29:59.573Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92251",
+    "codigo_base": "P552251",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P552251",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P552251",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P552251/20832",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P552251/20832",
+      "scraped_at": "2026-09-16T16:45:34.196Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92341",
+    "codigo_base": "P552341",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P552341",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P552341",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P552341/20837",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P552341/20837",
+      "scraped_at": "2026-09-16T16:42:59.626Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92387",
+    "codigo_base": "P552387",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P552387",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P552387",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P552387/24077",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P552387/24077",
+      "scraped_at": "2026-09-16T16:33:44.978Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92398",
+    "codigo_base": "P552398",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P552398",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P552398",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P552398/24028",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P552398/24028",
+      "scraped_at": "2026-09-16T16:36:17.507Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92403",
+    "codigo_base": "P552403",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P552403",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P552403",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P552403/24033",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P552403/24033",
+      "scraped_at": "2026-09-16T16:30:23.598Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92564",
+    "codigo_base": "P552564",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P552564",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P552564",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P552564/20842",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P552564/20842",
+      "scraped_at": "2026-09-16T16:43:54.050Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92603",
+    "codigo_base": "P552603",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P552603",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P552603",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P552603/20844",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P552603/20844",
+      "scraped_at": "2026-09-16T16:27:37.215Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93009",
+    "codigo_base": "P553009",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553009",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553009",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553009/70170",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553009/70170",
+      "scraped_at": "2026-09-16T16:45:55.588Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93014",
+    "codigo_base": "P553014",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553014",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553014",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553014/74827",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553014/74827",
+      "scraped_at": "2026-09-16T16:47:23.565Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93015",
+    "codigo_base": "P553015",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553015",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553015",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553015/prod1410061",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553015/prod1410061",
+      "scraped_at": "2026-09-16T16:45:14.688Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93080",
+    "codigo_base": "P553080",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553080",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553080",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553080/20850",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553080/20850",
+      "scraped_at": "2026-09-16T16:47:52.048Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93261",
+    "codigo_base": "P553261",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553261",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553261",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553261/20854",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553261/20854",
+      "scraped_at": "2026-09-16T16:43:20.957Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93500",
+    "codigo_base": "P553500",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553500",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553500",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553500/38604",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553500/38604",
+      "scraped_at": "2026-09-16T16:47:39.944Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93693",
+    "codigo_base": "P553693",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553693",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553693",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553693/20866",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553693/20866",
+      "scraped_at": "2026-09-16T16:49:14.929Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93854",
+    "codigo_base": "P553854",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553854",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553854",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553854/20872",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553854/20872",
+      "scraped_at": "2026-09-16T16:47:47.557Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93855",
+    "codigo_base": "P553855",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553855",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553855",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553855/20873",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553855/20873",
+      "scraped_at": "2026-09-16T16:31:02.136Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93890",
+    "codigo_base": "P553890",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553890",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553890",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553890/40254",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553890/40254",
+      "scraped_at": "2026-09-16T16:37:28.303Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93995",
+    "codigo_base": "P553995",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553995",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P553995",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P553995/64820",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P553995/64820",
+      "scraped_at": "2026-09-16T16:43:50.173Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94000",
+    "codigo_base": "P554000",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P554000",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P554000",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P554000/64400",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P554000/64400",
+      "scraped_at": "2026-09-17T03:18:53.601Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94056",
+    "codigo_base": "P554056",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P554056",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P554056",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P554056/20883",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P554056/20883",
+      "scraped_at": "2026-09-16T16:48:06.027Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94347",
+    "codigo_base": "P554347",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P554347",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P554347",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P554347/20892",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P554347/20892",
+      "scraped_at": "2026-09-16T16:49:40.475Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94471",
+    "codigo_base": "P554471",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P554471",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P554471",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P554471/20899",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P554471/20899",
+      "scraped_at": "2026-09-16T16:31:34.093Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94476",
+    "codigo_base": "P554476",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P554476",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P554476",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P554476/35178",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P554476/35178",
+      "scraped_at": "2026-09-16T16:32:57.205Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94620",
+    "codigo_base": "P554620",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P554620",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P554620",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P554620/20900",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P554620/20900",
+      "scraped_at": "2026-09-16T16:38:27.525Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95095",
+    "codigo_base": "P555095",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P555095",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P555095",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P555095/20924",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P555095/20924",
+      "scraped_at": "2026-09-16T16:32:51.344Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95627",
+    "codigo_base": "P555627",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P555627",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P555627",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P555627/20937",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P555627/20937",
+      "scraped_at": "2026-09-16T16:34:27.456Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95686",
+    "codigo_base": "P555686",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P555686",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P555686",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P555686/62285",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P555686/62285",
+      "scraped_at": "2026-09-16T16:39:11.748Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95706",
+    "codigo_base": "P555706",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P555706",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P555706",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P555706/67967",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P555706/67967",
+      "scraped_at": "2026-09-16T16:45:02.575Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95823",
+    "codigo_base": "P555823",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P555823",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P555823",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P555823/20939",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P555823/20939",
+      "scraped_at": "2026-09-16T16:49:15.913Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96245",
+    "codigo_base": "P556245",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P556245",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P556245",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P556245/20948?_requestid=4430957",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P556245/20948?_requestid=4430957",
+      "scraped_at": "2026-09-16T17:58:21.976Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96285",
+    "codigo_base": "P556285",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P556285",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P556285",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P556285/20949",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P556285/20949",
+      "scraped_at": "2026-09-16T16:49:06.790Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96287",
+    "codigo_base": "P556287",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P556287",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P556287",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P556287/20951",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P556287/20951",
+      "scraped_at": "2026-09-16T16:34:16.274Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96745",
+    "codigo_base": "P556745",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P556745",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P556745",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P556745/20953",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P556745/20953",
+      "scraped_at": "2026-09-16T16:35:13.000Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96915",
+    "codigo_base": "P556915",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P556915",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P556915",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P556915/20954",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P556915/20954",
+      "scraped_at": "2026-09-16T16:42:18.770Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96916",
+    "codigo_base": "P556916",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P556916",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P556916",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P556916/20955",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P556916/20955",
+      "scraped_at": "2026-09-16T16:49:14.630Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96917",
+    "codigo_base": "P556917",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P556917",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P556917",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P556917/23122",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P556917/23122",
+      "scraped_at": "2026-09-17T03:19:37.520Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF97440",
+    "codigo_base": "P557440",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P557440",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P557440",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P557440/20976",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P557440/20976",
+      "scraped_at": "2026-09-16T16:45:24.843Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF98600",
+    "codigo_base": "P558600",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P558600",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P558600",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P558600/20994",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P558600/20994",
+      "scraped_at": "2026-09-16T16:49:45.347Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF98792",
+    "codigo_base": "P558792",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P558792",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P558792",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P558792/20998",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P558792/20998",
+      "scraped_at": "2026-09-16T16:50:48.513Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99100",
+    "codigo_base": "P559100",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P559100",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P559100",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P559100/21079",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P559100/21079",
+      "scraped_at": "2026-09-17T03:06:29.210Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99125",
+    "codigo_base": "P559125",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P559125",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P559125",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P559125/62805",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P559125/62805",
+      "scraped_at": "2026-09-16T16:50:00.203Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99624",
+    "codigo_base": "P559624",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P559624",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P559624",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P559624/21263",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P559624/21263",
+      "scraped_at": "2026-09-16T16:46:00.441Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99803",
+    "codigo_base": "P559803",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P559803",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P559803",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P559803/21265",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P559803/21265",
+      "scraped_at": "2026-09-16T16:48:09.680Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99850",
+    "codigo_base": "P559850",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P559850",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P559850",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P559850/21266",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P559850/21266",
+      "scraped_at": "2026-09-16T16:43:32.288Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96310",
+    "codigo_base": "P566310",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P566310",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P566310",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P566310/37726",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P566310/37726",
+      "scraped_at": "2026-09-16T16:46:31.414Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99940",
+    "codigo_base": "P579940",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P579940",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P579940",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P579940/prod520661",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P579940/prod520661",
+      "scraped_at": "2026-09-16T17:06:15.005Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90299",
+    "codigo_base": "P580299",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P580299",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P580299",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P580299/72547",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P580299/72547",
+      "scraped_at": "2026-09-16T16:51:39.354Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF92388",
+    "codigo_base": "P582388",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P582388",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P582388",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P582388/prod1900238",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P582388/prod1900238",
+      "scraped_at": "2026-09-16T17:06:28.463Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93176",
+    "codigo_base": "P583176",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P583176",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P583176",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P583176/prod1600145",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P583176/prod1600145",
+      "scraped_at": "2026-09-16T16:51:41.755Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93177",
+    "codigo_base": "P583177",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P583177",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P583177",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P583177/prod1600146",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P583177/prod1600146",
+      "scraped_at": "2026-09-16T17:06:40.695Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93544",
+    "codigo_base": "P583544",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P583544",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P583544",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P583544/prod2510092",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P583544/prod2510092",
+      "scraped_at": "2026-09-16T16:53:13.738Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93545",
+    "codigo_base": "P583545",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P583545",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P583545",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P583545/prod2510093",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P583545/prod2510093",
+      "scraped_at": "2026-09-17T03:06:27.390Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93763",
+    "codigo_base": "P583763",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P583763",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P583763",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P583763/prod2640019",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P583763/prod2640019",
+      "scraped_at": "2026-09-16T16:48:04.154Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF93999",
+    "codigo_base": "P583999",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P583999",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P583999",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P583999/71517",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P583999/71517",
+      "scraped_at": "2026-09-17T03:20:47.734Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94001",
+    "codigo_base": "P584001",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P584001",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P584001",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P584001/prod550099",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P584001/prod550099",
+      "scraped_at": "2026-09-16T17:06:54.027Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94292",
+    "codigo_base": "P584292",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P584292",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P584292",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P584292/prod2170034",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P584292/prod2170034",
+      "scraped_at": "2026-09-16T16:52:45.377Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94293",
+    "codigo_base": "P584293",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P584293",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P584293",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P584293/prod2001174",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P584293/prod2001174",
+      "scraped_at": "2026-09-16T16:48:39.764Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94294",
+    "codigo_base": "P584294",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P584294",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P584294",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P584294/70171",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P584294/70171",
+      "scraped_at": "2026-09-16T16:50:53.196Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94945",
+    "codigo_base": "P584945",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P584945",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P584945",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P584945/prod590790",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P584945/prod590790",
+      "scraped_at": "2026-09-16T16:53:08.212Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94947",
+    "codigo_base": "P584947",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P584947",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P584947",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P584947/74822",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P584947/74822",
+      "scraped_at": "2026-09-16T16:49:10.930Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95199",
+    "codigo_base": "P765199",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P765199",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P765199",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P765199/38712",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P765199/38712",
+      "scraped_at": "2026-09-17T03:07:33.549Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95325",
+    "codigo_base": "P765325",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P765325",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P765325",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P765325/39483",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P765325/39483",
+      "scraped_at": "2026-09-16T16:54:48.399Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF98298",
+    "codigo_base": "P768298",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P768298",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P768298",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P768298/prod2960014",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P768298/prod2960014",
+      "scraped_at": "2026-09-16T17:07:17.684Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF95373",
+    "codigo_base": "P785373",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P785373",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P785373",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P785373/35503",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P785373/35503",
+      "scraped_at": "2026-09-16T16:54:33.059Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94601",
+    "codigo_base": "P954601",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P954601",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P954601",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P954601/67892",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P954601/67892",
+      "scraped_at": "2026-09-16T16:54:23.261Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94604",
+    "codigo_base": "P954604",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P954604",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P954604",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P954604/40185",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P954604/40185",
+      "scraped_at": "2026-09-16T17:07:40.006Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF94970",
+    "codigo_base": "P954970",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P954970",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P954970",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P954970/prod460138",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P954970/prod460138",
+      "scraped_at": "2026-09-16T16:55:03.837Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF96054",
+    "codigo_base": "P956054",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P956054",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P956054",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P956054/prod150339",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P956054/prod150339",
+      "scraped_at": "2026-09-16T16:52:29.659Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99111",
+    "codigo_base": "P959111",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P959111",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P959111",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P959111/prod1160044",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P959111/prod1160044",
+      "scraped_at": "2026-09-16T16:47:50.701Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99195",
+    "codigo_base": "P959195",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P959195",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P959195",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P959195/prod2490156",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P959195/prod2490156",
+      "scraped_at": "2026-09-16T16:55:38.815Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99236",
+    "codigo_base": "P959236",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P959236",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P959236",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P959236/prod590754",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P959236/prod590754",
+      "scraped_at": "2026-09-16T17:07:49.412Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99291",
+    "codigo_base": "P959291",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P959291",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P959291",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P959291/prod1540942",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P959291/prod1540942",
+      "scraped_at": "2026-09-16T16:55:28.322Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99294",
+    "codigo_base": "P959294",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P959294",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P959294",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P959294/74648",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P959294/74648",
+      "scraped_at": "2026-09-16T16:53:06.512Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99849",
+    "codigo_base": "P959849",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P959849",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P959849",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P959849/prod2180064",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P959849/prod2180064",
+      "scraped_at": "2026-09-16T16:55:28.335Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF99889",
+    "codigo_base": "P959889",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "P959889",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P959889",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/P959889/prod2550021",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/P959889/prod2550021",
+      "scraped_at": "2026-09-16T17:08:03.743Z",
+      "source_status": "OK"
+    }
+  },
+  {
+    "sku": "EF90019",
+    "codigo_base": "R010019",
+    "current": {
+      "canonical_source_brand": null,
+      "canonical_source_code": "R010019",
+      "canonical_source_url": null,
+      "canonical_source_status": "UNVERIFIED",
+      "canonical_verified_at": null
+    },
+    "restore": {
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "R010019",
+      "canonical_source_url": "https://shop.donaldson.com/store/en-us/product/R010019/62804",
+      "canonical_source_status": "VERIFIED"
+    },
+    "evidence": {
+      "dataset": "donaldson_fuel_final_results_20260917.json",
+      "source_url": "https://shop.donaldson.com/store/en-us/product/R010019/62804",
+      "scraped_at": "2026-09-16T16:56:10.054Z",
+      "source_status": "OK"
+    }
+  }
+]
