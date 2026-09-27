@@ -1,0 +1,2250 @@
+[
+  {
+    "premium_guard_code": "PF6827",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf6827/",
+    "source_html_sha256": "504a730eb6aca7f76e3556c11926564d3a719b3e862c74c69dad22a8b0b3debe",
+    "interchanges_count": 66,
+    "applications_count": 22,
+    "fram_refs": [
+      "G6827"
+    ],
+    "mann_refs": [
+      "WK 711",
+      "MF 1030"
+    ],
+    "inferred_origin_group": "MIXED",
+    "mapped_makes": [
+      "Saab",
+      "Subaru"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": null,
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF30711",
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "WK711",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK 711"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF30711",
+        "origin_group": "EUROPEAN",
+        "canonical_brand": "MANN-FILTER",
+        "canonical_part_number": "WK711",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK 711"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF30711",
+    "canonical_brand": "MANN-FILTER",
+    "canonical_code": "WK711",
+    "matched_reference_brand": "MANN-FILTER",
+    "matched_reference_code": "WK711",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF6895",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf6895/",
+    "source_html_sha256": "2dc024e1dad0bb546c298a894192aff9fa1754591798f2e86a15dc5bb80dc92e",
+    "interchanges_count": 49,
+    "applications_count": 2,
+    "fram_refs": [
+      "G6895",
+      "FL-0118"
+    ],
+    "mann_refs": [
+      "WK614"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Mazda"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK614"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK614"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF30614",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "MANN",
+    "matched_reference_code": "WK614",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF6896",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf6896/",
+    "source_html_sha256": "055c3878ebdaab6dadb1092a1890ec9c84c779d3b7146452baa5dda6e7c434b6",
+    "interchanges_count": 46,
+    "applications_count": 1,
+    "fram_refs": [
+      "G6896"
+    ],
+    "mann_refs": [],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Acura"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF36896",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G6896",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G6896"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF36896",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G6896",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G6896"
+      },
+      {
+        "elimfilters_sku": "EF36896",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G6896",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G6896"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF36896",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G6896",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G6896",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF6901",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf6901/",
+    "source_html_sha256": "6bd3850f85b802b0c27a3eabfc1d3eb2b1d9df816599ce5dc1dba8e6e2c634b0",
+    "interchanges_count": 46,
+    "applications_count": 8,
+    "fram_refs": [
+      "G6901"
+    ],
+    "mann_refs": [
+      "WK 612/5",
+      "WK 612/3"
+    ],
+    "inferred_origin_group": "MIXED",
+    "mapped_makes": [
+      "Isuzu",
+      "Land Rover"
+    ],
+    "unmapped_makes": [
+      "Asuna",
+      "Geo"
+    ],
+    "expected_canonical_brand": null,
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF30612",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK612/3",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK 612/3"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF30612",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK612/3",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK 612/3"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF30612",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "MANN",
+    "matched_reference_code": "WK612/3",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7146",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7146/",
+    "source_html_sha256": "4749d509b2d023ae9c446a851c4b3ac4f60c5cb9e9358dfea39baa7eacbea208",
+    "interchanges_count": 62,
+    "applications_count": 9,
+    "fram_refs": [
+      "G7146"
+    ],
+    "mann_refs": [
+      "MF 1074",
+      "WK 614/9"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Kia",
+      "Mazda"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/9",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK 614/9"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/9",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK 614/9"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF30614",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "MANN",
+    "matched_reference_code": "WK614/9",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7150",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7150/",
+    "source_html_sha256": "f62200ee35503f7630c84ef27c13acc4a255ee790c4e335f271a4f84e9bba019",
+    "interchanges_count": 65,
+    "applications_count": 4,
+    "fram_refs": [
+      "FL-0132",
+      "G3986",
+      "G7150"
+    ],
+    "mann_refs": [
+      "WK6143x",
+      "WK614/3"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Hyundai",
+      "Mitsubishi"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/3X",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK6143x"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/3X",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK6143x"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF30614",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "MANN",
+    "matched_reference_code": "WK614/3X",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7296",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7296/",
+    "source_html_sha256": "dfdd1a643a325d74e792217e95ec337b4e726f466c58e4f555c72fec0cc76460",
+    "interchanges_count": 48,
+    "applications_count": 1,
+    "fram_refs": [
+      "G7296DP",
+      "G7296",
+      "FL-0153"
+    ],
+    "mann_refs": [],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Mazda"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF37296",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7296",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7296"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF37296",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7296DP",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7296DP"
+      },
+      {
+        "elimfilters_sku": "EF37296",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7296",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7296"
+      },
+      {
+        "elimfilters_sku": "EF37296",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7296",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7296"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF37296",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G7296",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7296",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7315",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7315/",
+    "source_html_sha256": "0c616155ed48a6374ec3eb87e02d038db44c1f2d2dcdf0a16c3f59f0fd120dd9",
+    "interchanges_count": 74,
+    "applications_count": 98,
+    "fram_refs": [
+      "G7315DP",
+      "G7315"
+    ],
+    "mann_refs": [
+      "MF 1001"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Buick",
+      "Cadillac",
+      "Chevrolet",
+      "GMC"
+    ],
+    "unmapped_makes": [
+      "Oldsmobile",
+      "Pontiac"
+    ],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF37315",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7315DP",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7315DP"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF37315",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7315DP",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7315DP"
+      },
+      {
+        "elimfilters_sku": "EF37315",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7315DP",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7315DP"
+      },
+      {
+        "elimfilters_sku": "EF36006",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7315",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7315"
+      },
+      {
+        "elimfilters_sku": "EF37315",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7315",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7315"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF37315",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G7315DP",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7315DP",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7333",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7333/",
+    "source_html_sha256": "23d9cb42df36c19ffca7f219819b63e5765160128d64bb855875f0a134314b89",
+    "interchanges_count": 78,
+    "applications_count": 104,
+    "fram_refs": [
+      "G7603",
+      "G7333"
+    ],
+    "mann_refs": [
+      "MF 1008"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Buick",
+      "Cadillac",
+      "Chevrolet",
+      "GMC"
+    ],
+    "unmapped_makes": [
+      "Chinook Motor Coach",
+      "Fleetwood",
+      "Forest River",
+      "Itasca",
+      "Jayco",
+      "Oldsmobile",
+      "Pontiac",
+      "R-Vision",
+      "Saturn",
+      "Winnebago"
+    ],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF37333",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7333",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7333"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF37333",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7333",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7333"
+      },
+      {
+        "elimfilters_sku": "EF37333",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7333",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7333"
+      },
+      {
+        "elimfilters_sku": "EF37333",
+        "origin_group": null,
+        "canonical_brand": "Mann-Filter",
+        "canonical_part_number": "MF 1008",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "MF 1008"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF37333",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G7333",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7333",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7355",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7355/",
+    "source_html_sha256": "5e7f73248847c4760b2d494f99653963c1e7940bfad54e6230dc8a10b5ee400b",
+    "interchanges_count": 52,
+    "applications_count": 15,
+    "fram_refs": [
+      "G5260",
+      "G7355",
+      "G7768"
+    ],
+    "mann_refs": [
+      "WK614/30"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Dodge",
+      "Mitsubishi",
+      "Toyota"
+    ],
+    "unmapped_makes": [
+      "Eagle",
+      "Plymouth"
+    ],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/30",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK614/30"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/30",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK614/30"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF30614",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "MANN",
+    "matched_reference_code": "WK614/30",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7396",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7396/",
+    "source_html_sha256": "010005e3ec91933c5ad3b1de7abd7c254c68b2f31498958441de5068aac87582",
+    "interchanges_count": 52,
+    "applications_count": 3,
+    "fram_refs": [
+      "G7396"
+    ],
+    "mann_refs": [
+      "MF 1077",
+      "WK614/15",
+      "WK61415"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Mazda"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/15",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK614/15"
+      },
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/15",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK61415"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/15",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK614/15"
+      },
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/15",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK61415"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF30614",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "MANN",
+    "matched_reference_code": "WK614/15",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7399",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7399/",
+    "source_html_sha256": "16ae6325de67edc945db48f3aef473939b89bf4cf3e5c70a01301fad1e8c859e",
+    "interchanges_count": 51,
+    "applications_count": 7,
+    "fram_refs": [
+      "CH18",
+      "G7399",
+      "G7399DP"
+    ],
+    "mann_refs": [
+      "MF 1046"
+    ],
+    "inferred_origin_group": "MIXED",
+    "mapped_makes": [
+      "Dodge",
+      "Jaguar",
+      "Jeep"
+    ],
+    "unmapped_makes": [
+      "Eagle"
+    ],
+    "expected_canonical_brand": null,
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF37399",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7399",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7399"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF37399",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7399",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7399"
+      },
+      {
+        "elimfilters_sku": "EF37399",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7399",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7399"
+      },
+      {
+        "elimfilters_sku": "EF37399",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7399DP",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7399DP"
+      },
+      {
+        "elimfilters_sku": "EF37399",
+        "origin_group": null,
+        "canonical_brand": "Mann-Filter",
+        "canonical_part_number": "MF 1046",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "MF 1046"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF37399",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G7399",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7399",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7416",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7416/",
+    "source_html_sha256": "49f96a47ca7a31ba0c61f8e585eadaed9cfed34d5e1663317615fce4d8fc578d",
+    "interchanges_count": 53,
+    "applications_count": 10,
+    "fram_refs": [
+      "G7416DP",
+      "G7416",
+      "CH12"
+    ],
+    "mann_refs": [
+      "MF 1047"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Chrysler",
+      "Dodge"
+    ],
+    "unmapped_makes": [
+      "Eagle"
+    ],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF37416",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7416",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7416"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF37416",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7416DP",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7416DP"
+      },
+      {
+        "elimfilters_sku": "EF37416",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7416",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7416"
+      },
+      {
+        "elimfilters_sku": "EF37416",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7416",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7416"
+      },
+      {
+        "elimfilters_sku": "EL30012",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CH12",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "CH12"
+      },
+      {
+        "elimfilters_sku": "EF37416",
+        "origin_group": null,
+        "canonical_brand": "Mann-Filter",
+        "canonical_part_number": "MF 1047",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "MF 1047"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [
+      {
+        "elimfilters_sku": "EL30012",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "CH12",
+        "identity_filter_type": null,
+        "catalog_filter_type": "oil",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "CH12"
+      }
+    ],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF37416",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G7416",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7416",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7428",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7428/",
+    "source_html_sha256": "2a77a4579c10845c96f14ea0a2d0e2c7dc70e137cf4709adc24118e16bd3d97e",
+    "interchanges_count": 55,
+    "applications_count": 6,
+    "fram_refs": [
+      "G7428"
+    ],
+    "mann_refs": [
+      "MF 1054"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Ford",
+      "Mazda"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF35008",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7428",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7428"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF35008",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7428",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7428"
+      }
+    ],
+    "preferred_match_source": "RELATIONAL_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF35008",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7428",
+    "reasons": [
+      "EXISTING_RELATIONAL_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7596",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7596/",
+    "source_html_sha256": "8fc0f63153e0ccb2121587887d01ab01fc1e9be25f59e266d0631cb324540656",
+    "interchanges_count": 53,
+    "applications_count": 7,
+    "fram_refs": [
+      "G7596",
+      "G7596DP"
+    ],
+    "mann_refs": [
+      "MF 1056"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Ford",
+      "Lincoln",
+      "Mercury"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF37596",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7596",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7596"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF37596",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7596",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7596"
+      },
+      {
+        "elimfilters_sku": "EF37596",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7596",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7596"
+      },
+      {
+        "elimfilters_sku": "EF37596",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7596DP",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7596DP"
+      },
+      {
+        "elimfilters_sku": "EF37596",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7596DP",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7596DP"
+      },
+      {
+        "elimfilters_sku": "EF37596",
+        "origin_group": null,
+        "canonical_brand": "Mann-Filter",
+        "canonical_part_number": "MF 1056",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "MF 1056"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF37596",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G7596",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7596",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7599",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7599/",
+    "source_html_sha256": "ff64f46941b1c4d4cfe66a7056192dd643228ac6392faf876e6b26d718f441eb",
+    "interchanges_count": 70,
+    "applications_count": 23,
+    "fram_refs": [
+      "G7599"
+    ],
+    "mann_refs": [
+      "WK 68/1",
+      "MF 1009"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Acura",
+      "Honda",
+      "Isuzu",
+      "Toyota"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF37599",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7599",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7599"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF37599",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7599",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7599"
+      },
+      {
+        "elimfilters_sku": "EF37599",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7599",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7599"
+      },
+      {
+        "elimfilters_sku": "EF37599",
+        "origin_group": null,
+        "canonical_brand": "Mann-Filter",
+        "canonical_part_number": "WK68/1",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK 68/1"
+      },
+      {
+        "elimfilters_sku": "EF37599",
+        "origin_group": null,
+        "canonical_brand": "Mann-Filter",
+        "canonical_part_number": "MF 1009",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "MF 1009"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF37599",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G7599",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7599",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7609",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7609/",
+    "source_html_sha256": "3bbf0739b3e77759eb8e12eedac3b8a7d127c8dd4ce331a05ba4e206989aee1b",
+    "interchanges_count": 51,
+    "applications_count": 26,
+    "fram_refs": [
+      "G7609"
+    ],
+    "mann_refs": [
+      "MF 1031"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Chrysler",
+      "Dodge"
+    ],
+    "unmapped_makes": [
+      "Plymouth"
+    ],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF37609",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7609",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7609"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF37609",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7609",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7609"
+      },
+      {
+        "elimfilters_sku": "EF37609",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7609",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7609"
+      },
+      {
+        "elimfilters_sku": "EF37609",
+        "origin_group": null,
+        "canonical_brand": "Mann-Filter",
+        "canonical_part_number": "MF 1031",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "MF 1031"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF37609",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G7609",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7609",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7612",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7612/",
+    "source_html_sha256": "7510ac002a459bdbea3887fd6183e0e18a1068c28e7c3bb0b999d48ab91a0ea6",
+    "interchanges_count": 57,
+    "applications_count": 1,
+    "fram_refs": [
+      "G7612"
+    ],
+    "mann_refs": [
+      "WK 614/37",
+      "WK614/36",
+      "MF 1037"
+    ],
+    "inferred_origin_group": "UNKNOWN",
+    "mapped_makes": [],
+    "unmapped_makes": [
+      "Geo"
+    ],
+    "expected_canonical_brand": null,
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF31436",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7612",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7612"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF31436",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7612",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7612"
+      },
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/37",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK 614/37"
+      },
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/36",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK614/36"
+      }
+    ],
+    "preferred_match_source": "RELATIONAL_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF31436",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7612",
+    "reasons": [
+      "EXISTING_RELATIONAL_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7736",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7736/",
+    "source_html_sha256": "a739a31f6493f235153bb4c6727b42b54a4823f4a226a1f71c06b8f742e2c0dd",
+    "interchanges_count": 54,
+    "applications_count": 8,
+    "fram_refs": [
+      "G7736",
+      "G5404"
+    ],
+    "mann_refs": [
+      "WK 849"
+    ],
+    "inferred_origin_group": "UNKNOWN",
+    "mapped_makes": [],
+    "unmapped_makes": [
+      "Volvo"
+    ],
+    "expected_canonical_brand": null,
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF37736",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7736",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7736"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF37736",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7736",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7736"
+      },
+      {
+        "elimfilters_sku": "EF37736",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7736",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7736"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF37736",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G7736",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7736",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7740",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7740/",
+    "source_html_sha256": "4f6d85e408b56754968bd75368544f657f7ea556ae41f53bd067b7fd14590998",
+    "interchanges_count": 49,
+    "applications_count": 7,
+    "fram_refs": [
+      "G7740"
+    ],
+    "mann_refs": [
+      "MF 1024"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Buick",
+      "Chevrolet"
+    ],
+    "unmapped_makes": [
+      "Oldsmobile",
+      "Pontiac"
+    ],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF37740",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7740",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7740"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF37740",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7740",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7740"
+      },
+      {
+        "elimfilters_sku": "EF37740",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G7740",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G7740"
+      },
+      {
+        "elimfilters_sku": "EF37740",
+        "origin_group": null,
+        "canonical_brand": "Mann-Filter",
+        "canonical_part_number": "MF 1024",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "MF 1024"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF37740",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G7740",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G7740",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF7767",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf7767/",
+    "source_html_sha256": "9e5df444cfcece0b47553a05907d8e6aa5aeb537d956b617c84964e5e720310b",
+    "interchanges_count": 60,
+    "applications_count": 7,
+    "fram_refs": [
+      "G7767"
+    ],
+    "mann_refs": [
+      "MF 1015",
+      "WK61424x"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Lexus",
+      "Toyota"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/24X",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK61424x"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF30614",
+        "origin_group": null,
+        "canonical_brand": "MANN",
+        "canonical_part_number": "WK614/24X",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "WK61424x"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF30614",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "MANN",
+    "matched_reference_code": "WK614/24X",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF8008",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf8008/",
+    "source_html_sha256": "702d7591dea1eb7677071cbe0ce2b79d4d6d2ab0aea425c5b02127475dc0d8e3",
+    "interchanges_count": 14,
+    "applications_count": 6,
+    "fram_refs": [
+      "G8008"
+    ],
+    "mann_refs": [],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Chevrolet",
+      "Suzuki"
+    ],
+    "unmapped_makes": [
+      "Geo",
+      "Pontiac"
+    ],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF38008",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8008",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8008"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF38008",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8008",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8008"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF38008",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G8008",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF8015",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf8015/",
+    "source_html_sha256": "ea804107bdd24e590768251d1f036a32485b3168b4b15ee505eb93587a5e6dc1",
+    "interchanges_count": 37,
+    "applications_count": 1,
+    "fram_refs": [
+      "G8015"
+    ],
+    "mann_refs": [],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Lexus"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF38015",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8015",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8015"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF38015",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8015",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8015"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF38015",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G8015",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF8075",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf8075/",
+    "source_html_sha256": "51dd79fa8f3e492dbbad0b4579edd5f1030ab39bd72fea990495ba73c54d7ca6",
+    "interchanges_count": 55,
+    "applications_count": 3,
+    "fram_refs": [
+      "G8075"
+    ],
+    "mann_refs": [
+      "MF 1064"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Mitsubishi",
+      "Toyota"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF38075",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8075",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8075"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF38075",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8075",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8075"
+      },
+      {
+        "elimfilters_sku": "EF38075",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8075",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8075"
+      },
+      {
+        "elimfilters_sku": "EF38075",
+        "origin_group": null,
+        "canonical_brand": "Mann-Filter",
+        "canonical_part_number": "MF 1064",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "MF 1064"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF38075",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G8075",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G8075",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF8122",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf8122/",
+    "source_html_sha256": "772a14d1bfd7cfb7bfcfb889dc7e1b9179c7b6296494c3e12211449578a0d4be",
+    "interchanges_count": 29,
+    "applications_count": 2,
+    "fram_refs": [
+      "G8122"
+    ],
+    "mann_refs": [],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Suzuki"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF38122",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8122",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8122"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF38122",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8122",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTAPORE™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8122"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF38122",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G8122",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  },
+  {
+    "premium_guard_code": "PF8757",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf8757/",
+    "source_html_sha256": "d7f10e09e84a1b8aa94ded51714ef2b4ed3abaddbf4983f06535c997e953b6b5",
+    "interchanges_count": 69,
+    "applications_count": 8,
+    "fram_refs": [
+      "G8757"
+    ],
+    "mann_refs": [
+      "MF 1022"
+    ],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Ford",
+      "Mazda"
+    ],
+    "unmapped_makes": [],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF38757",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8757",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8757"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF38757",
+        "origin_group": "NON_EUROPEAN",
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8757",
+        "identity_filter_type": "fuel",
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "CANONICAL_IDENTITY",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8757"
+      },
+      {
+        "elimfilters_sku": "EF38757",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G8757",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G8757"
+      },
+      {
+        "elimfilters_sku": "EF38757",
+        "origin_group": null,
+        "canonical_brand": "Mann-Filter",
+        "canonical_part_number": "MF 1022",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "RELATIONAL_COMPETITOR",
+        "interchange_brand": "Mann-Filter",
+        "interchange_code": "MF 1022"
+      }
+    ],
+    "preferred_match_source": "CANONICAL_IDENTITY",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF38757",
+    "canonical_brand": "FRAM",
+    "canonical_code": "G8757",
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G8757",
+    "reasons": [
+      "EXISTING_CANONICAL_IDENTITY"
+    ]
+  },
+  {
+    "premium_guard_code": "PF9160",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf9160/",
+    "source_html_sha256": "29ba60421e09054e0833ef582d1e1e8c5175dc891d4f9aea35e207eeac9662d9",
+    "interchanges_count": 61,
+    "applications_count": 34,
+    "fram_refs": [
+      "G3606"
+    ],
+    "mann_refs": [],
+    "inferred_origin_group": "NON_EUROPEAN",
+    "mapped_makes": [
+      "Chevrolet",
+      "Chrysler",
+      "Dodge",
+      "GMC"
+    ],
+    "unmapped_makes": [
+      "Plymouth",
+      "Yugo"
+    ],
+    "expected_canonical_brand": "FRAM",
+    "existing_canonical_matches": [
+      {
+        "elimfilters_sku": "EF33606",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G3606",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G3606"
+      }
+    ],
+    "existing_reference_matches_all": [
+      {
+        "elimfilters_sku": "EF33606",
+        "origin_group": null,
+        "canonical_brand": "FRAM",
+        "canonical_part_number": "G3606",
+        "identity_filter_type": null,
+        "catalog_filter_type": "fuel",
+        "duty": "LIGHT_DUTY",
+        "technology": "SYNTRAX™",
+        "match_source": "PUBLIC_COMPETITOR",
+        "interchange_brand": "FRAM",
+        "interchange_code": "G3606"
+      }
+    ],
+    "preferred_match_source": "PUBLIC_COMPETITOR",
+    "ignored_wrong_family_matches": [],
+    "state": "ENRICH_EXISTING_READY",
+    "target_sku": "EF33606",
+    "canonical_brand": null,
+    "canonical_code": null,
+    "matched_reference_brand": "FRAM",
+    "matched_reference_code": "G3606",
+    "reasons": [
+      "EXISTING_PUBLIC_COMPETITOR"
+    ]
+  }
+]

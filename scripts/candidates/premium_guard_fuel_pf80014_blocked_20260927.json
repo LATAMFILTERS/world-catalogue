@@ -1,0 +1,10 @@
+{
+  "premium_guard_code": "PF80014",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "CANONICAL_SOURCE_CANDIDATE",
+  "reasons": [
+    "REQUIRES_OFFICIAL_CANONICAL_SOURCE_VERIFICATION"
+  ],
+  "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf80014/",
+  "closed_at": "2026-09-27"
+}
