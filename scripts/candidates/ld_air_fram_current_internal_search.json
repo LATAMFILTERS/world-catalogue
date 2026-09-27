@@ -1,0 +1,352 @@
+[
+  {
+    "sku": "EA32072",
+    "code": "CA12072",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32315",
+    "code": "CA12315",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32320",
+    "code": "CA2320",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32372",
+    "code": "CA12372",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32376",
+    "code": "CA12376",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32402",
+    "code": "CA2402",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32511",
+    "code": "CA2511",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32513",
+    "code": "CA2513S",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32516",
+    "code": "CA2516",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32548",
+    "code": "CA2548S",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32554",
+    "code": "CA2554",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32561",
+    "code": "CA2561",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32601",
+    "code": "CA2601",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32722",
+    "code": "CA2722",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32735",
+    "code": "CA2735",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32881",
+    "code": "PH6355",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32904",
+    "code": "CA72904",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32941",
+    "code": "CA12941",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32952",
+    "code": "CA12952",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA32987",
+    "code": "CA12987",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33080",
+    "code": "CA3080",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33138",
+    "code": "CA3138",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33146",
+    "code": "CA3146",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33192",
+    "code": "CA3192",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33273",
+    "code": "CA3273S",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33371",
+    "code": "CA3371",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33423",
+    "code": "CA3423",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33518",
+    "code": "CA3518AF584",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33554",
+    "code": "CA3554",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33566",
+    "code": "CA3566",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33588",
+    "code": "CA3588",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33621",
+    "code": "CA3621",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33649",
+    "code": "CA3649",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33710",
+    "code": "CA3710",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33725",
+    "code": "CA3725",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33780",
+    "code": "CA3780",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA33943",
+    "code": "CA3943",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34018",
+    "code": "PH2842",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34030",
+    "code": "CA54030",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34041",
+    "code": "P11167",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34069",
+    "code": "PH10267",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34070",
+    "code": "CA4070",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34080",
+    "code": "CA4080",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34090",
+    "code": "CA24090",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34120",
+    "code": "CA4120",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34136",
+    "code": "CA1194136",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34567",
+    "code": "CA4567",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34727",
+    "code": "CA4727",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA34852",
+    "code": "CA4852",
+    "http": 200,
+    "exact": [],
+    "air": []
+  },
+  {
+    "sku": "EA35013",
+    "code": "PH2829",
+    "http": 200,
+    "exact": [],
+    "air": []
+  }
+]

@@ -1,0 +1,268 @@
+{
+  "batch": "LD_AIR_B49",
+  "selection_model": "LD_AIR_FRAM_OFFICIAL_V1",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 0,
+    "BLOCKED_WITH_REASON": 50,
+    "REVERIFY": 0,
+    "RETRYABLE": 0
+  },
+  "catalog_writes": [],
+  "candidates": [
+    {
+      "sku": "EA32072",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32315",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32320",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32372",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32376",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32402",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32511",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32513",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32516",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32548",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32554",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32561",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32601",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32722",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32735",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32881",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA32904",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32941",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32952",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA32987",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33080",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33138",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33146",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33192",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33273",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33371",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33423",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33518",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33554",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33566",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33588",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33621",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33649",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33710",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33725",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33780",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA33943",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA34018",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA34030",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA34041",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA34069",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    },
+    {
+      "sku": "EA34070",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA34080",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA34090",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA34120",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA34136",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA34567",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA34727",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA34852",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_FRAM_CODE_NOT_FOUND_DIRECT_AND_SEARCH"
+    },
+    {
+      "sku": "EA35013",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "FRAM_WRONG_FILTER_FAMILY_FOR_AIR"
+    }
+  ],
+  "reverify": [],
+  "retryable": [],
+  "closed_at": "2026-09-27"
+}
