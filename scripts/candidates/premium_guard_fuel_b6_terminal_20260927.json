@@ -1,0 +1,304 @@
+{
+  "batch": "PREMIUM_GUARD_FUEL_B6",
+  "scope": "LIGHT_DUTY_FUEL",
+  "counts": {
+    "COMPLETE": 22,
+    "BLOCKED_WITH_REASON": 28
+  },
+  "complete": [
+    {
+      "premium_guard_code": "PF3176",
+      "canonical_sku": "EF33941"
+    },
+    {
+      "premium_guard_code": "PF3177",
+      "canonical_sku": "EF30834"
+    },
+    {
+      "premium_guard_code": "PF3187",
+      "canonical_sku": "EF36429"
+    },
+    {
+      "premium_guard_code": "PF36",
+      "canonical_sku": "EF33587"
+    },
+    {
+      "premium_guard_code": "PF3641",
+      "canonical_sku": "EF33641"
+    },
+    {
+      "premium_guard_code": "PF3692",
+      "canonical_sku": "EF33692"
+    },
+    {
+      "premium_guard_code": "PF3727",
+      "canonical_sku": "EF33802"
+    },
+    {
+      "premium_guard_code": "PF3744",
+      "canonical_sku": "EF30834"
+    },
+    {
+      "premium_guard_code": "PF3746",
+      "canonical_sku": "EF38531"
+    },
+    {
+      "premium_guard_code": "PF3802",
+      "canonical_sku": "EF33802"
+    },
+    {
+      "premium_guard_code": "PF3831",
+      "canonical_sku": "EF30830"
+    },
+    {
+      "premium_guard_code": "PF3833",
+      "canonical_sku": "EF30692"
+    },
+    {
+      "premium_guard_code": "PF3841",
+      "canonical_sku": "EF33841"
+    },
+    {
+      "premium_guard_code": "PF3850",
+      "canonical_sku": "EF33850"
+    },
+    {
+      "premium_guard_code": "PF4191",
+      "canonical_sku": "EF34191"
+    },
+    {
+      "premium_guard_code": "PF4493",
+      "canonical_sku": "EF36442"
+    },
+    {
+      "premium_guard_code": "PF4602",
+      "canonical_sku": "EF34926"
+    },
+    {
+      "premium_guard_code": "PF4617",
+      "canonical_sku": "EF36567"
+    },
+    {
+      "premium_guard_code": "PF4637",
+      "canonical_sku": "EF36535"
+    },
+    {
+      "premium_guard_code": "PF4658",
+      "canonical_sku": "EF36897"
+    },
+    {
+      "premium_guard_code": "PF4672",
+      "canonical_sku": "EF36348"
+    },
+    {
+      "premium_guard_code": "PF4707",
+      "canonical_sku": "EF37398"
+    }
+  ],
+  "blocked": [
+    {
+      "premium_guard_code": "PF3170",
+      "reason": "RESOLVER_TARGET_CONFLICT",
+      "reasons": [
+        "EXISTING_PUBLIC_COMPETITOR",
+        "RESOLVER_TOP:EF90012"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3171",
+      "reason": "CANONICAL_SOURCE_CANDIDATE",
+      "reasons": [
+        "REQUIRES_OFFICIAL_CANONICAL_SOURCE_VERIFICATION"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3175",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "MANN-FILTER_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3185",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3190",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3191",
+      "reason": "CONFLICT_EXISTING_REFERENCE",
+      "reasons": [
+        "MULTIPLE_EXISTING_SAME_FAMILY_SKUS",
+        "MATCH_SOURCE_CANONICAL_IDENTITY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF35",
+      "reason": "RESOLVER_TARGET_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "RESOLVER_TOP:EL80035"
+      ]
+    },
+    {
+      "premium_guard_code": "PF359",
+      "reason": "RESOLVER_TARGET_CONFLICT",
+      "reasons": [
+        "EXISTING_CANONICAL_IDENTITY",
+        "RESOLVER_TOP:EH65603"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3601",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "MANN-FILTER_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3728",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3/8",
+      "reason": "PRODUCT_CODE_NOT_PRESENT_IN_PAGE",
+      "reasons": [
+        "PRODUCT_CODE_NOT_PRESENT_IN_PAGE"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3814",
+      "reason": "CONFLICT_EXISTING_REFERENCE",
+      "reasons": [
+        "MULTIPLE_EXISTING_SAME_FAMILY_SKUS",
+        "MATCH_SOURCE_CANONICAL_IDENTITY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3829",
+      "reason": "CONFLICT_EXISTING_REFERENCE",
+      "reasons": [
+        "MULTIPLE_EXISTING_SAME_FAMILY_SKUS",
+        "MATCH_SOURCE_CANONICAL_IDENTITY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF3835",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "MANN-FILTER_INTERCHANGE_NOT_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4194",
+      "reason": "MIXED_ORIGIN_REVIEW",
+      "reasons": [
+        "APPLICATIONS_SPAN_MULTIPLE_ORIGIN_GROUPS"
+      ]
+    },
+    {
+      "premium_guard_code": "PF423",
+      "reason": "CANONICAL_SOURCE_CANDIDATE",
+      "reasons": [
+        "REQUIRES_OFFICIAL_CANONICAL_SOURCE_VERIFICATION"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4400",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4469",
+      "reason": "CONFLICT_EXISTING_REFERENCE",
+      "reasons": [
+        "MULTIPLE_EXISTING_SAME_FAMILY_SKUS",
+        "MATCH_SOURCE_PUBLIC_COMPETITOR"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4495",
+      "reason": "CANONICAL_SOURCE_CANDIDATE",
+      "reasons": [
+        "REQUIRES_OFFICIAL_CANONICAL_SOURCE_VERIFICATION"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4605",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4611",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4641",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4666",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4673",
+      "reason": "ORIGIN_EVIDENCE_REQUIRED",
+      "reasons": [
+        "NO_APPLICATION_MAKE_MATCHED_ORIGIN_POLICY"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4704",
+      "reason": "ORIGIN_PARTIAL_REVIEW",
+      "reasons": [
+        "UNMAPPED_APPLICATION_MAKES_PRESENT"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4706",
+      "reason": "MULTIPLE_AUTHORITY_REFS_REVIEW",
+      "reasons": [
+        "MULTIPLE_FRAM_INTERCHANGES"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4718",
+      "reason": "MULTIPLE_AUTHORITY_REFS_REVIEW",
+      "reasons": [
+        "MULTIPLE_FRAM_INTERCHANGES"
+      ]
+    },
+    {
+      "premium_guard_code": "PF4738",
+      "reason": "AUTHORITY_REFERENCE_REQUIRED",
+      "reasons": [
+        "MANN-FILTER_INTERCHANGE_NOT_PRESENT"
+      ]
+    }
+  ],
+  "closed_at": "2026-09-27"
+}

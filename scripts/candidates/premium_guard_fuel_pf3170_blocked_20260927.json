@@ -1,0 +1,11 @@
+{
+  "premium_guard_code": "PF3170",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "RESOLVER_TARGET_CONFLICT",
+  "reasons": [
+    "EXISTING_PUBLIC_COMPETITOR",
+    "RESOLVER_TOP:EF90012"
+  ],
+  "source_page": "https://www.pgfilters.com/product-catalog/product-page/pf3170/",
+  "closed_at": "2026-09-27"
+}

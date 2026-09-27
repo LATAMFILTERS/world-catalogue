@@ -1,0 +1,602 @@
+[
+  {
+    "premium_guard_code": "PF3170",
+    "normalized_code": "PF3170",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "REFERENCE_CANDIDATE_EXISTING_SKU",
+    "matches": [
+      {
+        "sku": "EF90012",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "PUROLATOR",
+        "raw_code": "PF3170"
+      }
+    ]
+  },
+  {
+    "premium_guard_code": "PF3171",
+    "normalized_code": "PF3171",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3175",
+    "normalized_code": "PF3175",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3176",
+    "normalized_code": "PF3176",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3177",
+    "normalized_code": "PF3177",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3185",
+    "normalized_code": "PF3185",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3187",
+    "normalized_code": "PF3187",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3190",
+    "normalized_code": "PF3190",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3191",
+    "normalized_code": "PF3191",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF35",
+    "normalized_code": "PF35",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "CONFLICT_EXISTING_REFERENCE",
+    "matches": [
+      {
+        "sku": "EL39365",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "AC-DELCO",
+        "raw_code": "PF35"
+      },
+      {
+        "sku": "EL80035",
+        "match_kind": "PUBLIC_OEM",
+        "brand": "UNION-76",
+        "raw_code": "PF35"
+      },
+      {
+        "sku": "EL80035",
+        "match_kind": "PUBLIC_OEM",
+        "brand": "UNOCAL",
+        "raw_code": "PF35"
+      },
+      {
+        "sku": "EL80035",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "AC-DELCO",
+        "raw_code": "PF35"
+      },
+      {
+        "sku": "EL80035",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "UNION-76",
+        "raw_code": "PF35"
+      },
+      {
+        "sku": "EL80035",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "UNOCAL",
+        "raw_code": "PF35"
+      },
+      {
+        "sku": "EL80964",
+        "match_kind": "PUBLIC_OEM",
+        "brand": "UNOCAL",
+        "raw_code": "PF35"
+      },
+      {
+        "sku": "EL80964",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "UNOCAL",
+        "raw_code": "PF35"
+      }
+    ]
+  },
+  {
+    "premium_guard_code": "PF359",
+    "normalized_code": "PF359",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "REFERENCE_CANDIDATE_EXISTING_SKU",
+    "matches": [
+      {
+        "sku": "EH65603",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "AC-DELCO",
+        "raw_code": "PF359"
+      }
+    ]
+  },
+  {
+    "premium_guard_code": "PF36",
+    "normalized_code": "PF36",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3601",
+    "normalized_code": "PF3601",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3641",
+    "normalized_code": "PF3641",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3692",
+    "normalized_code": "PF3692",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3727",
+    "normalized_code": "PF3727",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3728",
+    "normalized_code": "PF3728",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3744",
+    "normalized_code": "PF3744",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3746",
+    "normalized_code": "PF3746",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3/8",
+    "normalized_code": "PF38",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "CONFLICT_EXISTING_REFERENCE",
+    "matches": [
+      {
+        "sku": "EC30962",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "AC-DELCO",
+        "raw_code": "PF38"
+      },
+      {
+        "sku": "EL30962",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "AC-DELCO",
+        "raw_code": "PF38"
+      },
+      {
+        "sku": "EL31701",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "AC-DELCO",
+        "raw_code": "PF38"
+      },
+      {
+        "sku": "EL39626",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "AC-DELCO",
+        "raw_code": "PF38"
+      },
+      {
+        "sku": "EL88250",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "AC-DELCO",
+        "raw_code": "PF38"
+      },
+      {
+        "sku": "EA31701",
+        "match_kind": "PUBLIC_COMPETITOR",
+        "brand": "AC-DELCO",
+        "raw_code": "PF38"
+      }
+    ]
+  },
+  {
+    "premium_guard_code": "PF3802",
+    "normalized_code": "PF3802",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3814",
+    "normalized_code": "PF3814",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3829",
+    "normalized_code": "PF3829",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3831",
+    "normalized_code": "PF3831",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3833",
+    "normalized_code": "PF3833",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3835",
+    "normalized_code": "PF3835",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3841",
+    "normalized_code": "PF3841",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF3850",
+    "normalized_code": "PF3850",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4191",
+    "normalized_code": "PF4191",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4194",
+    "normalized_code": "PF4194",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF423",
+    "normalized_code": "PF423",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4400",
+    "normalized_code": "PF4400",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4469",
+    "normalized_code": "PF4469",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4493",
+    "normalized_code": "PF4493",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4495",
+    "normalized_code": "PF4495",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4602",
+    "normalized_code": "PF4602",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4605",
+    "normalized_code": "PF4605",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4611",
+    "normalized_code": "PF4611",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4617",
+    "normalized_code": "PF4617",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4637",
+    "normalized_code": "PF4637",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4641",
+    "normalized_code": "PF4641",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4658",
+    "normalized_code": "PF4658",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4666",
+    "normalized_code": "PF4666",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4672",
+    "normalized_code": "PF4672",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4673",
+    "normalized_code": "PF4673",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4704",
+    "normalized_code": "PF4704",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4706",
+    "normalized_code": "PF4706",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4707",
+    "normalized_code": "PF4707",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4718",
+    "normalized_code": "PF4718",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  },
+  {
+    "premium_guard_code": "PF4738",
+    "normalized_code": "PF4738",
+    "part_types": [
+      "Fuel Filter"
+    ],
+    "discovered_makes": [],
+    "status": "GAP_NO_DIRECT_REFERENCE",
+    "matches": []
+  }
+]
