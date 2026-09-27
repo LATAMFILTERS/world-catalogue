@@ -1,0 +1,55 @@
+{
+  "batch": "LD_AIR_B55_LIVE",
+  "selection_model": "LD_AIR_MANN_OE_DISAMBIGUATION_V1",
+  "candidates": [
+    {
+      "sku": "EA34128",
+      "code": "C24128",
+      "authority_brand": "MANN-FILTER",
+      "origin_group": "EUROPEAN",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c24128_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": null,
+      "canonical_promotion": {
+        "approved_codigo_base": "C24128",
+        "policy_version": "2026-09-27-ld-air-promotion-v1",
+        "identity_evidence_source": "LD_AIR_MANN_OFFICIAL_OE_PROMOTION",
+        "evidence_note": "Official MANN C 24 128 uniquely matches all eight recorded OE numbers plus catalog geometry and Opel/Vauxhall applications among candidate variants."
+      },
+      "official": {
+        "a_mm": 242,
+        "b_mm": 188,
+        "h_mm": 58,
+        "scope": "OPEL / VAUXHALL"
+      }
+    },
+    {
+      "sku": "EA37137",
+      "code": "C17137X",
+      "authority_brand": "MANN-FILTER",
+      "origin_group": "EUROPEAN",
+      "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c17137x_mann-filter.html",
+      "geometry_patch": null,
+      "identity_patch": null,
+      "canonical_promotion": {
+        "approved_codigo_base": "C17137X",
+        "policy_version": "2026-09-27-ld-air-promotion-v1",
+        "identity_evidence_source": "LD_AIR_MANN_OFFICIAL_OE_PROMOTION",
+        "evidence_note": "Official MANN C 17 137 x uniquely matches OE 059 133 843 B plus catalog geometry and Audi applications; alternate C 17 137/1 x does not match the recorded OE."
+      },
+      "official": {
+        "a_mm": 166,
+        "b_mm": null,
+        "h_mm": 192,
+        "scope": "AUDI / AUDI (FAW.AUDI)"
+      }
+    }
+  ],
+  "preblocked": [
+    {
+      "sku": "EA35122",
+      "code": "C25122",
+      "reason": "OFFICIAL_OE_MATCH_BUT_GEOMETRY_CONFLICT"
+    }
+  ]
+}

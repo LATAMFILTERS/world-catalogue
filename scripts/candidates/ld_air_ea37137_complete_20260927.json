@@ -1,0 +1,23 @@
+{
+  "sku": "EA37137",
+  "codigo_base": "C17137X",
+  "filter_type": "air",
+  "duty": "LIGHT_DUTY",
+  "terminal_state": "COMPLETE",
+  "canonical_identity": {
+    "brand": "MANN-FILTER",
+    "code": "C17137X",
+    "origin_group": "EUROPEAN"
+  },
+  "resolution": "LD_AIR_MANN_OE_DISAMBIGUATION_V1",
+  "catalog_action": "CANONICAL_METADATA_SYNC_COMMIT",
+  "part_search_validated": true,
+  "official": {
+    "a_mm": 166,
+    "b_mm": null,
+    "h_mm": 192,
+    "scope": "AUDI / AUDI (FAW.AUDI)"
+  },
+  "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/c17137x_mann-filter.html",
+  "closed_at": "2026-09-27"
+}

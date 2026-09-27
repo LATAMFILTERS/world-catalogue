@@ -1,0 +1,36 @@
+{
+  "batch": "LD_AIR_B55",
+  "selection_model": "LD_AIR_MANN_OE_DISAMBIGUATION_V1",
+  "scope": "LIGHT_DUTY_AIR",
+  "terminal_state": "COMPLETE",
+  "counts": {
+    "COMPLETE": 2,
+    "BLOCKED_WITH_REASON": 1,
+    "REVERIFY": 0,
+    "RETRYABLE": 0
+  },
+  "catalog_writes": [
+    "EA34128",
+    "EA37137"
+  ],
+  "candidates": [
+    {
+      "sku": "EA34128",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C24128"
+    },
+    {
+      "sku": "EA37137",
+      "terminal_state": "COMPLETE",
+      "canonical_code": "C17137X"
+    },
+    {
+      "sku": "EA35122",
+      "terminal_state": "BLOCKED_WITH_REASON",
+      "reason": "OFFICIAL_OE_MATCH_BUT_GEOMETRY_CONFLICT"
+    }
+  ],
+  "reverify": [],
+  "retryable": [],
+  "closed_at": "2026-09-27"
+}

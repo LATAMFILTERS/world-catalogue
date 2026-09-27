@@ -1,0 +1,29 @@
+{
+  "batch": "LD_AIR_B55",
+  "total": 2,
+  "passed": 2,
+  "retryable": 0,
+  "failed": [],
+  "results": [
+    {
+      "sku": "EA34128",
+      "code": "C24128",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA34128"
+      ]
+    },
+    {
+      "sku": "EA37137",
+      "code": "C17137X",
+      "http": 200,
+      "ok": true,
+      "retryable": false,
+      "results": [
+        "EA37137"
+      ]
+    }
+  ]
+}
