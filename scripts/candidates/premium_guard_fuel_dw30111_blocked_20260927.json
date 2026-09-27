@@ -1,0 +1,10 @@
+{
+  "premium_guard_code": "DW30111",
+  "terminal_state": "BLOCKED_WITH_REASON",
+  "reason": "ORIGIN_PARTIAL_REVIEW",
+  "reasons": [
+    "UNMAPPED_APPLICATION_MAKES_PRESENT"
+  ],
+  "source_page": "https://www.pgfilters.com/product-catalog/product-page/dw30111/",
+  "closed_at": "2026-09-27"
+}
