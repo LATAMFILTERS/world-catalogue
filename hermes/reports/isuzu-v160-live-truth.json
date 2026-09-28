@@ -1,0 +1,2099 @@
+{
+  "generated_at": "2026-09-28T14:18:37.209Z",
+  "tally": {
+    "SATISFIED -> TARGET_MISSING": 63,
+    "SATISFIED -> NOT_PRESENT": 107,
+    "HOLD -> NOT_PRESENT": 69,
+    "HOLD -> TARGET_MISSING": 21
+  },
+  "rows": [
+    {
+      "id": "ISUZU-0001",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0002",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0003",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0004",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0005",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0006",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0007",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0008",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0009",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0010",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0011",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0012",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0013",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0014",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0015",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0016",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0017",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0018",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0019",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0020",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0021",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0022",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0023",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0024",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0025",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0026",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0027",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0028",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0029",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0030",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0031",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0032",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0033",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0034",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0035",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0036",
+      "ledger": "SATISFIED",
+      "target": "EL88076",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0037",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2006,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0038",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2007,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0039",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0040",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0041",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0042",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2011,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0043",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2012,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0044",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2013,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0045",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2014,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0046",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2015,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0047",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2016,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0048",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2017,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0049",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2018,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0050",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2019,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0051",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2020,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0052",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2021,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0053",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0054",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0055",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0056",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0057",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0058",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2015,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0059",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2016,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0060",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2017,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0061",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2018,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0062",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2019,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0063",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2020,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0064",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2021,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0065",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0066",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0067",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0068",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0069",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0070",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NRR DERATE",
+      "engine": "4HK1-TC",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0071",
+      "ledger": "SATISFIED",
+      "target": "EA13614",
+      "model": "NRR DERATE",
+      "engine": "4HK1-TC",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0072",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "FTR",
+      "engine": "4HK1-TC",
+      "year": 2018,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0073",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "FTR",
+      "engine": "4HK1-TC",
+      "year": 2019,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0074",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "FTR",
+      "engine": "4HK1-TC",
+      "year": 2020,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0075",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "FTR",
+      "engine": "4HK1-TC",
+      "year": 2021,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0076",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4HK1-TC",
+      "year": 2007,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0077",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0078",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0079",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4JJ1-TC",
+      "year": 2011,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0080",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4JJ1-TC",
+      "year": 2012,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0081",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4JJ1-TC",
+      "year": 2013,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0082",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4JJ1-TC",
+      "year": 2014,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0083",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4JJ1-TC",
+      "year": 2015,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0084",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4JJ1-TC",
+      "year": 2016,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0085",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4JJ1-TC",
+      "year": 2017,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0086",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR",
+      "engine": "4JJ1-TC",
+      "year": 2018,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0087",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0088",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0089",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0090",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NQR",
+      "engine": "4HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0091",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NQR",
+      "engine": "4HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0092",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NQR",
+      "engine": "4HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0093",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NQR",
+      "engine": "4HK1-TC",
+      "year": 2021,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0094",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NQR",
+      "engine": "4HK1-TC",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0095",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NQR",
+      "engine": "4HK1-TC",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0096",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NQR",
+      "engine": "4HK1-TC",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0097",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NRR",
+      "engine": "4HK1-TC",
+      "year": 2004,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0098",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NRR",
+      "engine": "4HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0099",
+      "ledger": "SATISFIED",
+      "target": "EF90390",
+      "model": "NRR",
+      "engine": "4HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0100",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NRR",
+      "engine": "4HK1-TC",
+      "year": 2020,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0101",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NRR",
+      "engine": "4HK1-TC",
+      "year": 2021,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0102",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NRR",
+      "engine": "4HK1-TC",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0103",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NRR",
+      "engine": "4HK1-TC",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0104",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NRR",
+      "engine": "4HK1-TC",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0105",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NRR",
+      "engine": "4HK1-TC",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0106",
+      "ledger": "HOLD",
+      "target": "EF90390",
+      "model": "NRR",
+      "engine": "4HK1-TC",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0107",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FTR",
+      "engine": "Cummins B6.7",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0108",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FTR",
+      "engine": "Cummins B6.7",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0109",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FTR",
+      "engine": "Cummins B6.7",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0110",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FTR",
+      "engine": "Cummins B6.7",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0111",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FTR",
+      "engine": "Cummins B6.7",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0112",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FVR",
+      "engine": "Cummins B6.7",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0113",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FVR",
+      "engine": "Cummins B6.7",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0114",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FVR",
+      "engine": "Cummins B6.7",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0115",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FVR",
+      "engine": "Cummins B6.7",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0116",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FVR",
+      "engine": "Cummins B6.7",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0117",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0118",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0119",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0120",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0121",
+      "ledger": "SATISFIED",
+      "target": "EA13930",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0122",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "FTR",
+      "engine": "6HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0123",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "FTR",
+      "engine": "6HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0124",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "FTR",
+      "engine": "6HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0125",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0126",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0127",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0128",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "HTR",
+      "engine": "6HK1-TC",
+      "year": 2005,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0129",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "HTR",
+      "engine": "6HK1-TC",
+      "year": 2006,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0130",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "HTR",
+      "engine": "6HK1-TC",
+      "year": 2007,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0131",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "HVR",
+      "engine": "6HK1-TC",
+      "year": 2005,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0132",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "HVR",
+      "engine": "6HK1-TC",
+      "year": 2006,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0133",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "HVR",
+      "engine": "6HK1-TC",
+      "year": 2007,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0134",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "HXR",
+      "engine": "6HK1-TC",
+      "year": 2005,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0135",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "HXR",
+      "engine": "6HK1-TC",
+      "year": 2006,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0136",
+      "ledger": "HOLD",
+      "target": "EF91840",
+      "model": "HXR",
+      "engine": "6HK1-TC",
+      "year": 2007,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0137",
+      "ledger": "SATISFIED",
+      "target": "EF92427",
+      "model": "FTR",
+      "engine": "6HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0138",
+      "ledger": "SATISFIED",
+      "target": "EF92427",
+      "model": "FTR",
+      "engine": "6HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0139",
+      "ledger": "SATISFIED",
+      "target": "EF92427",
+      "model": "FTR",
+      "engine": "6HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0140",
+      "ledger": "SATISFIED",
+      "target": "EF92427",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0141",
+      "ledger": "SATISFIED",
+      "target": "EF92427",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0142",
+      "ledger": "SATISFIED",
+      "target": "EF92427",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0143",
+      "ledger": "HOLD",
+      "target": "EF92427",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2004,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0144",
+      "ledger": "HOLD",
+      "target": "EF92427",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2005,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0145",
+      "ledger": "HOLD",
+      "target": "EF92427",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2006,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0146",
+      "ledger": "HOLD",
+      "target": "EF92427",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2007,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0147",
+      "ledger": "HOLD",
+      "target": "EF92427",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0148",
+      "ledger": "HOLD",
+      "target": "EF92427",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0149",
+      "ledger": "HOLD",
+      "target": "EF92427",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0150",
+      "ledger": "HOLD",
+      "target": "EF92427",
+      "model": "NPR",
+      "engine": "4JJ1-TC",
+      "year": 2011,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0151",
+      "ledger": "HOLD",
+      "target": "EF92427",
+      "model": "NPR",
+      "engine": "4JJ1-TC",
+      "year": 2012,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0152",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FTR",
+      "engine": "Cummins B6.7",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0153",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FTR",
+      "engine": "Cummins B6.7",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0154",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FTR",
+      "engine": "Cummins B6.7",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0155",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FTR",
+      "engine": "Cummins B6.7",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0156",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FTR",
+      "engine": "Cummins B6.7",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0157",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR",
+      "engine": "Cummins B6.7",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0158",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR",
+      "engine": "Cummins B6.7",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0159",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR",
+      "engine": "Cummins B6.7",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0160",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR",
+      "engine": "Cummins B6.7",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0161",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR",
+      "engine": "Cummins B6.7",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0162",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0163",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0164",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0165",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0166",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0167",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0168",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0169",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0170",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0171",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0172",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0173",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0174",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0175",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0176",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0177",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0178",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0179",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0180",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0181",
+      "ledger": "HOLD",
+      "target": "ES91098",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0182",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2000,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0183",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2001,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0184",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2002,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0185",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2003,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0186",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2004,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0187",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2005,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0188",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2006,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0189",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2007,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0190",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0191",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0192",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FVR",
+      "engine": "6HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0193",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0194",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0195",
+      "ledger": "HOLD",
+      "target": "EA33930",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0196",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0197",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0198",
+      "ledger": "SATISFIED",
+      "target": "ES90128",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0199",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0200",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0201",
+      "ledger": "HOLD",
+      "target": "EF98204",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0202",
+      "ledger": "HOLD",
+      "target": "EF98204",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0203",
+      "ledger": "SATISFIED",
+      "target": "ES90128",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0204",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0205",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0206",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0207",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0208",
+      "ledger": "SATISFIED",
+      "target": "EF92599",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0209",
+      "ledger": "HOLD",
+      "target": "EF92599",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0210",
+      "ledger": "HOLD",
+      "target": "EF92599",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0211",
+      "ledger": "HOLD",
+      "target": "EF92599",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0212",
+      "ledger": "HOLD",
+      "target": "EF92599",
+      "model": "NPR-HD",
+      "engine": "4HK1-TC",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0213",
+      "ledger": "HOLD",
+      "target": "EF92599",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0214",
+      "ledger": "HOLD",
+      "target": "EF92599",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0215",
+      "ledger": "HOLD",
+      "target": "EF92599",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0216",
+      "ledger": "HOLD",
+      "target": "EF92599",
+      "model": "NPR-XD",
+      "engine": "4HK1-TC",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0217",
+      "ledger": "SATISFIED",
+      "target": "EF92599",
+      "model": "NQR",
+      "engine": "4HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0218",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0219",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0220",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0221",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0222",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0223",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0224",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0225",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0226",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0227",
+      "ledger": "SATISFIED",
+      "target": "EF93410",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0228",
+      "ledger": "HOLD",
+      "target": "EF92564",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2004,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0229",
+      "ledger": "HOLD",
+      "target": "EF92564",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2005,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0230",
+      "ledger": "HOLD",
+      "target": "EF92564",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2006,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0231",
+      "ledger": "HOLD",
+      "target": "EF92564",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2007,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0232",
+      "ledger": "SATISFIED",
+      "target": "EF92564",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2008,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0233",
+      "ledger": "SATISFIED",
+      "target": "EF92564",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2009,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0234",
+      "ledger": "HOLD",
+      "target": "EF92564",
+      "model": "FXR",
+      "engine": "6HK1-TC",
+      "year": 2010,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0235",
+      "ledger": "HOLD",
+      "target": "EA14353",
+      "model": "FRR",
+      "engine": "6HK1-TC",
+      "year": 2000,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0236",
+      "ledger": "HOLD",
+      "target": "EA14353",
+      "model": "FRR",
+      "engine": "6HK1-TC",
+      "year": 2001,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0237",
+      "ledger": "HOLD",
+      "target": "EA14353",
+      "model": "FRR",
+      "engine": "6HK1-TC",
+      "year": 2002,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0238",
+      "ledger": "HOLD",
+      "target": "EA14353",
+      "model": "FRR",
+      "engine": "6HK1-TC",
+      "year": 2003,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0239",
+      "ledger": "HOLD",
+      "target": "EA14353",
+      "model": "FRR",
+      "engine": "6HK1-TC",
+      "year": 2004,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0240",
+      "ledger": "SATISFIED",
+      "target": "EF93009",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0241",
+      "ledger": "SATISFIED",
+      "target": "EF93009",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0242",
+      "ledger": "SATISFIED",
+      "target": "EF93009",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0243",
+      "ledger": "SATISFIED",
+      "target": "EF93009",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0244",
+      "ledger": "SATISFIED",
+      "target": "EF93009",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0245",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2022,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0246",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2023,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0247",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2024,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0248",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2025,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0249",
+      "ledger": "SATISFIED",
+      "target": "EL80428",
+      "model": "FVR DERATE",
+      "engine": "Cummins B6.7",
+      "year": 2026,
+      "live": "NOT_PRESENT"
+    },
+    {
+      "id": "ISUZU-0250",
+      "ledger": "HOLD",
+      "target": "EA21938",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0251",
+      "ledger": "HOLD",
+      "target": "EA21938",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0252",
+      "ledger": "HOLD",
+      "target": "EA21938",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0253",
+      "ledger": "HOLD",
+      "target": "EA21938",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0254",
+      "ledger": "SATISFIED",
+      "target": "ES90128",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0255",
+      "ledger": "SATISFIED",
+      "target": "ES90128",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0256",
+      "ledger": "SATISFIED",
+      "target": "ES90128",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0257",
+      "ledger": "SATISFIED",
+      "target": "ES90128",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0258",
+      "ledger": "SATISFIED",
+      "target": "EL80408",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0259",
+      "ledger": "SATISFIED",
+      "target": "EL80408",
+      "live": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0260",
+      "ledger": "SATISFIED",
+      "target": "EL80408",
+      "live": "TARGET_MISSING"
+    }
+  ]
+}
