@@ -26,7 +26,13 @@ for (const o of p2.oen_rows) {
     if (!b) continue;
     const years = m[2] ? b.model_years.filter((y) => y >= +m[2] && y <= +(m[3] || m[2])) : b.model_years;
     const r = res[o.row_id] || {};
-    for (const model of b.models) for (const year of years) {
+    // Respect Isuzu's published model scope: "N-SERIES ..." is series-level (part number, not per-model fitment);
+    // an explicit list ("NPR", "NPR-HD / NQR / NRR") restricts the models.
+    const scope = String(o.isuzu_published_model_scope || '');
+    const seriesLevel = /SERIES/i.test(scope);
+    const listed = seriesLevel ? null : new Set(scope.split('/').map((x) => x.trim().toUpperCase()).filter(Boolean));
+    const models = listed ? b.models.filter((m) => listed.has(m.toUpperCase())) : b.models;
+    for (const model of models) for (const year of years) {
       const sku = r.elimfilters_existing_sku || null;
       const liveBase = sku ? bases.get(sku) : undefined;
       let status, reason;
@@ -35,12 +41,13 @@ for (const o of p2.oen_rows) {
         if (!sku) { status = 'BLOQUEADA'; reason = 'BASE_VERIFICADA_SIN_SKU'; }
         else if (liveBase === undefined) { status = 'DEBIL'; reason = 'SKU_NO_EXISTE_EN_BASE_OFICIAL'; }
         else if (norm(liveBase) !== norm(r.base_source_part)) { status = 'BLOQUEADA'; reason = `CODIGO_BASE_DISTINTO:${liveBase}`; }
-        else { status = 'VALIDADA'; reason = 'CADENA_OFICIAL_COMPLETA'; }
+        else if (seriesLevel) { status = 'VALIDADA_NIVEL_SERIE'; reason = 'ISUZU_PUBLICA_POR_SERIE_NO_POR_MODELO'; }
+        else { status = 'VALIDADA'; reason = 'CADENA_OFICIAL_COMPLETA_POR_MODELO'; }
       } else if (r.decision_status === 'PARTIAL') { status = 'DEBIL'; reason = 'FASE3_PARTIAL'; }
       else { status = 'BLOQUEADA'; reason = 'FASE3_' + r.decision_status; }
       chain.push({ model, engine: b.engine_code, year, position: o.filter_position, isuzu_oem: (o.isuzu_oe_oen || []).join(' '),
         base: r.base_source_part ? `${r.base_source_brand} ${r.base_source_part}` : null, sku, status, reason,
-        evidence_url: r.donaldson_source || r.fleetguard_source || null, phase2_row: o.row_id });
+        evidence_url: r.donaldson_source || r.fleetguard_source || null, phase2_row: o.row_id, isuzu_scope: scope, isuzu_source: o.source });
     }
   }
 }
