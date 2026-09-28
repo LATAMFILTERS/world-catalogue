@@ -1,0 +1,5940 @@
+{
+ "scope": "FUEL_LD_EVIDENCE_FINAL",
+ "generated_at": "2026-09-28T05:18:15.404Z",
+ "original_pool": 721,
+ "rows_final": 721,
+ "new_verified": 43,
+ "mann_verified": 43,
+ "fram_verified": 0,
+ "by_source": {
+  "LD-E1": 2,
+  "LD-OE1": 28,
+  "LD-E4": 3,
+  "LD-OE2": 7,
+  "LD-E5": 2,
+  "LD-E8": 1
+ },
+ "blockers": {
+  "BLOCKED_APPLICATION_CONFLICT | ORIGIN_GROUP_MIXED": 65,
+  "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED | MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY__MANN_OE_SEARCH_NO_FUEL_MATCH": 6,
+  "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED | FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY": 43,
+  "BLOCKED_APPLICATION_CONFLICT | ORIGIN_GROUP_UNKNOWN": 9,
+  "BLOCKED_EVIDENCE_REQUIRED | NO_MANN_OR_FRAM_REFERENCE_ON_FILE": 478,
+  "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED | MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY": 21,
+  "BLOCKED_EVIDENCE_REQUIRED | NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH": 27,
+  "BLOCKED_APPLICATION_CONFLICT | ORIGIN_GROUP_NOT_FULLY_DETERMINED": 5,
+  "BLOCKED_APPLICATION_CONFLICT | ORIGIN_GROUP_PARTIAL_NON_EUROPEAN": 16,
+  "BLOCKED_RESOLVER_CONFLICT | MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE": 6,
+  "BLOCKED_RESOLVER_CONFLICT | SKU_SUFFIX_DOES_NOT_MATCH_APPROVED_CODE": 2
+ },
+ "ld_verified_total": 501,
+ "ld_total": 1179,
+ "notes": [
+  "MIXED/UNKNOWN/PARTIAL origin fails closed by policy.",
+  "NON_EUROPEAN rows need FRAM; FRAM refs on file are contaminated (see fuel_global_ld_fram_recheck_20260928.json) and fram.com exposes no OE search.",
+  "shop.donaldson.com is HTTP 403 from this runtime; HD fallback cannot demonstrate Donaldson absence (see fuel_global_hd_e_audit_20260927.json)."
+ ],
+ "tests": "tests/catalog-write-gateway.test.js 18/18 pass on every batch",
+ "records": [
+  {
+   "sku": "EF30001",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30003",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF30004",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30005",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30006",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30007",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30008",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30011",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30012",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30013",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30015",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30019",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30020",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30021",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF30022",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30023",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30026",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30029",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30030",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF30031",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30032",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK32",
+   "source": "LD-E1"
+  },
+  {
+   "sku": "EF30040",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30042",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30043",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30044",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER MWK44",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF30045",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30049",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30050",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_NOT_FULLY_DETERMINED",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30051",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30053",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30054",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30056",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30057",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30060",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30062",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30065",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30066",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30068",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30076",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30078",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK78",
+   "source": "LD-E1"
+  },
+  {
+   "sku": "EF30079",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30082",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30084",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30102",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30121",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30132",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30162",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30191",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30201",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E1 (origin v2)"
+  },
+  {
+   "sku": "EF30210",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF30211",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30212",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30213",
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF30214",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30217",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30219",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30221",
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF30223",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30228",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30271",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30281",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30289",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30301",
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "SKU_SUFFIX_DOES_NOT_MATCH_APPROVED_CODE",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF30302",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30311",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30312",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF30313",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30315",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF30316",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30318",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30319",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30321",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30322",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30324",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30326",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30362",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30382",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30392",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30408",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30421",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30422",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30424",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF30425",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30426",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30429",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30431",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30435",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30446",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30447",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30451",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30461",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30478",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30509",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30510",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30513",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30521",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30551",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30552",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30553",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30554",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E2 (origin v2)"
+  },
+  {
+   "sku": "EF30563",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30581",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30582",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30584",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30592",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30593",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30605",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30606",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)",
+   "oe_search": {
+    "queried": 1,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF30612",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_NOT_FULLY_DETERMINED",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30614",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30661",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30681",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30682",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30683",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30685",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30686",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30701",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30702",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30710",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30719",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF30720",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30721",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30722",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30723",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30724",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30728",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30729",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30730",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30731",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30733",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30736",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30761",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30762",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30763",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30764",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30765",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30781",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30782",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30783",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30785",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30806",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30807",
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF30810",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30811",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)",
+   "oe_search": {
+    "queried": 35,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF30814",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30815",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30817",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30819",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30820",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30828",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E3 (origin v2)"
+  },
+  {
+   "sku": "EF30830",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30834",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30835",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30840",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30841",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30842",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30845",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK845",
+   "source": "LD-E4"
+  },
+  {
+   "sku": "EF30850",
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF30853",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK853",
+   "source": "LD-E4"
+  },
+  {
+   "sku": "EF30854",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30855",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_NOT_FULLY_DETERMINED",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30868",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30911",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30917",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30918",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30919",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30921",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30922",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30925",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WDK925",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF30927",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30929",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30930",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30931",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30932",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30935",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30936",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30939",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30941",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER PU941X",
+   "source": "LD-E4"
+  },
+  {
+   "sku": "EF30950",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WDK950",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF30953",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30954",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30956",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30957",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30962",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30965",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30966",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30980",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF30999",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF31003",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF31006",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF31009",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)",
+   "oe_search": {
+    "queried": 1,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF31014",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF31015",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF31016",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK11016Z",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF31017",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF31018",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_NOT_FULLY_DETERMINED",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF31019",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E4 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF31020",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF31021",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E4 (origin v2)"
+  },
+  {
+   "sku": "EF31023",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF31025",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31027",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31028",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31029",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31038",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK11038Z",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF31039",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31040",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31042",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK11042Z",
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF31045",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31046",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31051",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK11051",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF31052",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK11052",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF31055",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK11055",
+   "source": "LD-E5"
+  },
+  {
+   "sku": "EF31056",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31057",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK11057Z",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF31058",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER PU1058X",
+   "source": "LD-E5"
+  },
+  {
+   "sku": "EF31059",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31071",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31073",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31075",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31076",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31077",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31090",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31110",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31111",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31126",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31142",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31144",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF31148",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31149",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK1149",
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF31150",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31157",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31163",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31165",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31166",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31168",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31170",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31270",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31310",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31410",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31411",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31412",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31413",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31414",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31415",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31416",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31417",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31418",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31419",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31421",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E5 (origin v2)"
+  },
+  {
+   "sku": "EF31422",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31423",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31424",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31426",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31427",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31429",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31430",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31431",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31432",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31433",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31434",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31435",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31436",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31439",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31441",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31442",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31444",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31445",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31446",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK614/46",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF31447",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31448",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31451",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31452",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31502",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31510",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF31580",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31651",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF31880",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32004",
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF32005",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)",
+   "oe_search": {
+    "queried": 2,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF32006",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32007",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER PU12007Z",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF32008",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32009",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32011",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32012",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32021",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32024",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32100",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32110",
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "SKU_SUFFIX_DOES_NOT_MATCH_APPROVED_CODE",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF32210",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32310",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF32410",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF32501",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF33002",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF33003",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF33005",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF33006",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF33011",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF33111",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E6 (origin v2)"
+  },
+  {
+   "sku": "EF33145",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF33180",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF33280",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF33802",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF33910",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF33911",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK939/11X",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF33913",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF33914",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF33915",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF33916",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF33917",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF34001",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34002",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34011",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34016",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34019",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_NOT_FULLY_DETERMINED",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34022",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34023",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF34024",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34026",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF34030",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34032",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34033",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK940/33X",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF34036",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34037",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34038",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK940/38X",
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF34110",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34210",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34211",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34214",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34216",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34217",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK842/17",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF34219",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34224",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34226",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34228",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF34229",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34280",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34281",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34282",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34283",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34312",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34313",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF34510",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK845/10",
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF34598",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF35005",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF35008",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF35009",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF35012",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF35013",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E7 (origin v2)"
+  },
+  {
+   "sku": "EF35016",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35018",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35019",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35020",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35021",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35022",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35023",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35024",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35025",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK5025",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF35026",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35027",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35028",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35029",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35036",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35112",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35121",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35211",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35311",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35313",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35314",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35316",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35318",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35321",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF35610",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36006",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF36010",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36013",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36030",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK6030",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF36031",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK6031",
+   "source": "LD-E8"
+  },
+  {
+   "sku": "EF36032",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF36034",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36039",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36040",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36043",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36044",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF36047",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36054",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36056",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36116",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36122",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36123",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36124",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36125",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36126",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF36133",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36141",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36142",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36143",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36147",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36148",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E8 (origin v2)"
+  },
+  {
+   "sku": "EF36149",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36183",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36184",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36210",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36211",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36212",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36213",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36214",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36215",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36216",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36217",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WDK962/17",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF36218",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36220",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36881",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36882",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF36883",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37001",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37005",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37006",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37007",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37009",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37010",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37011",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37012",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37022",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37023",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)",
+   "oe_search": {
+    "queried": 13,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF37041",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37101",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37102",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37105",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37122",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37123",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37124",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)",
+   "oe_search": {
+    "queried": 12,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF37125",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37126",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)",
+   "oe_search": {
+    "queried": 15,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF37151",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37162",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37174",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37184",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37187",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37192",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37195",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF37196",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37202",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37221",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37231",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37232",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37235",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37236",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E9 (origin v2)"
+  },
+  {
+   "sku": "EF37241",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF37243",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF37244",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF37245",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WDK724/5",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF37264",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF37302",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF37305",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF37311",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF37313",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF37331",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF34421",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF37980",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38001",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38003",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38009",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38013",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38014",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38018",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38019",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38020",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF38023",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38025",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38026",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38027",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38029",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38030",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38031",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38034",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38039",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38040",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38041",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38046",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38047",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38048",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38051",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38052",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38053",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38055",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38059",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38060",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38065",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38066",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38069",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38070",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38079",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38080",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38082",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38087",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38088",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38091",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38096",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E10 (origin v2)"
+  },
+  {
+   "sku": "EF38097",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38103",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38104",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38113",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK8113",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF38114",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38115",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38117",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38119",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38122",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38123",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38125",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38127",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38129",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38130",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38132",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38133",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38134",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38135",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38136",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38137",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38139",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38143",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF38150",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38151",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38152",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38153",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38154",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38157",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38160",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38163",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38165",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38167",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38170",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38172",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38179",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38181",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38182",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF38184",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38185",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38187",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38188",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38189",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38191",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF38192",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38194",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38195",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF38203",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38205",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38206",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38208",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E11 (origin v2)"
+  },
+  {
+   "sku": "EF38217",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38218",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38220",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38221",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38222",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38224",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38225",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38226",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38227",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38241",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38242",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38243",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38244",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK824/4",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF38293",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38296",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38297",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38302",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38304",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38309",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38322",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF38343",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER PU834/3X",
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF38351",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38421",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38422",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38425",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38426",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38427",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38452",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF38453",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38500",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38502",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38503",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38535",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38536",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38537",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38541",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38542",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF38546",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38547",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38602",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF38704",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF39001",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF39002",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39003",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF39005",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF39006",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF39008",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF39009",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF39010",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF39012",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E12 (origin v2)"
+  },
+  {
+   "sku": "EF39015",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39017",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39018",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39019",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39020",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39021",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39023",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39025",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39026",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39027",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39028",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39031",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF39032",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)",
+   "oe_search": {
+    "queried": 4,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF39033",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39034",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39036",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK9036",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39037",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39039",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39040",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39042",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39043",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39046",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39047",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39048",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39052",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39054",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39055",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39056",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39057",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39058",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39059",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39065",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39066",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39067",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39079",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39080",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39081",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39083",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39087",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39093",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39095",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39096",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39098",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39099",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39100",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E13 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF39102",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39103",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39104",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39105",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39106",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E13 (origin v2)"
+  },
+  {
+   "sku": "EF39107",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39108",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39109",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39110",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39111",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39112",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39113",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39114",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39150",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39182",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK918/2X",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39191",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK919/1",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39203",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39205",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK920/5",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39206",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39207",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39211",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39232",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39236",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39241",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39252",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39283",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39304",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK930/4",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39305",
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF39306",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39308",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39309",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39321",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39322",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39323",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39362",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF39364",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER PU936/4X",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39392",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39393",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK939/3",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39394",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39395",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39396",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39398",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39399",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39402",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39403",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39404",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39405",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39406",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39407",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WDK940/7",
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF39408",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF39409",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39411",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER PU941/1X",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39501",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39503",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E14 (origin v2)"
+  },
+  {
+   "sku": "EF39504",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E14 (origin v2)",
+   "oe_search": {
+    "queried": 2,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF39506",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39521",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39523",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39531",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39551",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39621",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39624",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39625",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39627",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER WK962/7",
+   "source": "LD-OE1"
+  },
+  {
+   "sku": "EF39628",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF39652",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "UNKNOWN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39654",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39661",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "PARTIAL_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39662",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE__MANN_OE_SEARCH_NO_FUEL_MATCH",
+   "origin": "EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)",
+   "oe_search": {
+    "queried": 0,
+    "errors": 0
+   }
+  },
+  {
+   "sku": "EF39702",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39801",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39991",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF39992",
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "origin": "EUROPEAN",
+   "approved": "MANN-FILTER PU999/2X",
+   "source": "LD-OE2"
+  },
+  {
+   "sku": "EF39993",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF30404",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "origin": "NON_EUROPEAN",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  },
+  {
+   "sku": "EF31070",
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE",
+   "origin": "MIXED",
+   "approved": null,
+   "source": "LD-E15 (origin v2)"
+  }
+ ]
+}
