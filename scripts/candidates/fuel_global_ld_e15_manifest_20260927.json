@@ -1,0 +1,589 @@
+{
+ "batch": "LD-E15",
+ "generated_at": "2026-09-28T04:57:50.272Z",
+ "counts": {
+  "BLOCKED_EVIDENCE_REQUIRED": 19,
+  "BLOCKED_APPLICATION_CONFLICT": 1,
+  "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED": 1
+ },
+ "records": [
+  {
+   "sku": "EF39506",
+   "current_codigo_base": "9506",
+   "origin_group_derived": "PARTIAL_EUROPEAN",
+   "makes": [
+    "AIFO (IVECO-AIFO/OM/SOFIM)",
+    "IVECO",
+    "FIAT-ALLIS/GEOTECH/HITACHI",
+    "HEULIEZ BUS (IVECO BUS)",
+    "GINAF",
+    "ASTRA (IVECO GROUP)"
+   ],
+   "row_geometry_mm": {
+    "od": 96.52,
+    "h": 195.58
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39521",
+   "current_codigo_base": "9521",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "CATERPILLAR"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 171
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39523",
+   "current_codigo_base": "9523",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "THERMO KING"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 176
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39531",
+   "current_codigo_base": "9531",
+   "origin_group_derived": "PARTIAL_NON_EUROPEAN",
+   "makes": [
+    "HYUNDAI CONSTRUCTION",
+    "KOBELCO",
+    "MITSUBISHI FUSO (DAIMLER)",
+    "KUBOTA",
+    "SUNWARD",
+    "DIECI",
+    "EUROCOMACH",
+    "GIANT (TOBROCO MACHINES)"
+   ],
+   "row_geometry_mm": {
+    "od": 90,
+    "h": 128
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39551",
+   "current_codigo_base": "9551",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "MITSUBISHI"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39621",
+   "current_codigo_base": "9621",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "DEUTZ AG (ENGINES)",
+    "VOEGELE (WIRTGEN GROUP)",
+    "DEUTZ-FAHR (SAME DEUTZ-FAHR)",
+    "BOMAG",
+    "FENDT (AGCO)",
+    "TEREX",
+    "ABG (VOLVO CE)"
+   ],
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 210.82
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED"
+  },
+  {
+   "sku": "EF39624",
+   "current_codigo_base": "9624",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "BAUDOUIN",
+    "DAF BUS (VDL BUS GROUP)",
+    "DAF ENGINES",
+    "JCB (J.C. BAMFORD)",
+    "LEYLAND",
+    "NEOPLAN (NEOMAN)",
+    "NEW HOLLAND",
+    "DAF TRUCKS",
+    "IKARUS",
+    "CLAAS",
+    "LEYLAND-DAF",
+    "VDL BUS + COACH"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 210
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39625",
+   "current_codigo_base": "9625",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "MITSUBISHI"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39627",
+   "current_codigo_base": "9627",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO PENTA",
+    "VOLVO TRUCKS",
+    "VOLVO BUS",
+    "VOLVO CONSTRUCTION EQUIPMENT"
+   ],
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 210.82
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39628",
+   "current_codigo_base": "9628",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "DEUTZ AG (ENGINES)"
+   ],
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 215.9
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39652",
+   "current_codigo_base": "9652",
+   "origin_group_derived": "UNKNOWN",
+   "makes": [
+    "AKSA"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39654",
+   "current_codigo_base": "9654",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "CUMMINS"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 249
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39661",
+   "current_codigo_base": "9661",
+   "origin_group_derived": "PARTIAL_EUROPEAN",
+   "makes": [
+    "DAF TRUCKS",
+    "SOLARIS BUS",
+    "TEMSA BUS",
+    "VDL BUS + COACH",
+    "TATRA",
+    "VAN HOOL",
+    "GINAF"
+   ],
+   "row_geometry_mm": {
+    "od": 90,
+    "h": 250
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39662",
+   "current_codigo_base": "9662",
+   "origin_group_derived": "PARTIAL_EUROPEAN",
+   "makes": [
+    "VAN HOOL",
+    "DAF TRUCKS",
+    "GINAF",
+    "SOLARIS BUS",
+    "VDL BUS + COACH",
+    "DAF BUS (VDL BUS GROUP)"
+   ],
+   "row_geometry_mm": {
+    "od": 88.9,
+    "h": 248.92
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39702",
+   "current_codigo_base": "9702",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "CATERPILLAR"
+   ],
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 231.14
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39801",
+   "current_codigo_base": "9801",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "CATERPILLAR",
+    "FODEN",
+    "FREIGHTLINER",
+    "CLAAS",
+    "DOOSAN COMPRESSORS"
+   ],
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 238.76
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39991",
+   "current_codigo_base": "9991",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "一汽解放 / FAW JIEFANG",
+    "EVOBUS (MERCEDES-BENZ/SETRA)",
+    "FREIGHTLINER",
+    "CLAAS",
+    "FAUN (TADANO FAUN)",
+    "GROVE",
+    "BELL EQUIPMENT",
+    "DEMAG MOBILE CRANES"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 143
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39992",
+   "current_codigo_base": "9992",
+   "origin_group_derived": "PARTIAL_EUROPEAN",
+   "makes": [
+    "DAF TRUCKS",
+    "GINAF",
+    "SOLARIS BUS",
+    "VAN HOOL"
+   ],
+   "row_geometry_mm": {
+    "od": 88.9,
+    "h": 205.74
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39993",
+   "current_codigo_base": "9993",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "MITSUBISHI"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF30404",
+   "current_codigo_base": "P550404",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "MITSUBISHI"
+   ],
+   "row_geometry_mm": {
+    "od": 56.39,
+    "h": 50
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK42/10",
+      "oe": 1,
+      "geometry": "CONFLICT"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF31070",
+   "current_codigo_base": "WK1070X",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "BERGMANN",
+    "DEUTZ AG (ENGINES)",
+    "DEUTZ-FAHR (SAME DEUTZ-FAHR)",
+    "DOOSAN",
+    "FENDT (AGCO)",
+    "HYUNDAI CONSTRUCTION",
+    "CLAAS",
+    "ABG (VOLVO CE)",
+    "FUCHS (TEREX)",
+    "BOMAG",
+    "EVOBUS (MERCEDES-BENZ/SETRA)",
+    "FAST CONCEPT CAR"
+   ],
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 158
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  }
+ ]
+}
