@@ -15,17 +15,7 @@ const close = (a, b, t = 3) => a != null && b != null && Math.abs(a - b) <= t;
 const FRAM_CACHE = S + '/fram_pages.json';
 const framCache = fs.existsSync(FRAM_CACHE) ? JSON.parse(fs.readFileSync(FRAM_CACHE, 'utf8')) : {};
 
-const EU = ['AUDI', 'VW', 'VOLKSWAGEN', 'SEAT', 'SKODA', 'PORSCHE', 'BMW', 'MINI', 'MERCEDES', 'SMART', 'OPEL', 'VAUXHALL', 'PEUGEOT', 'CITROEN', 'RENAULT', 'DACIA', 'FIAT', 'ALFA', 'LANCIA', 'IVECO', 'VOLVO', 'SAAB', 'SCANIA', 'MAN ', 'MAN TRUCK', 'MAN BUS', 'DAF', 'LAND ROVER', 'JAGUAR', 'ROVER', 'MWM', 'DEUTZ', 'CLAAS', 'FENDT', 'LIEBHERR', 'HATZ', 'BOMAG', 'DYNAPAC', 'JCB', 'EVOBUS', 'SETRA', 'NEOPLAN', 'MTU', 'LOMBARDINI', 'SAME', 'LAMBORGHINI', 'LANDINI', 'STEYR', 'MAGIRUS', 'ASTON MARTIN', 'BENTLEY', 'ROLLS', 'FERRARI', 'MASERATI', 'LOTUS', 'MORGAN', 'TRIUMPH', 'MG ', 'LDV', 'ALPINE', 'CUPRA', 'POLESTAR', 'LIGIER', 'MANITOU', 'MERLO', 'WACKER', 'KRAMER', 'KRONE', 'AMAZONE', 'PRINOTH', 'ROPA', 'LAVERDA', 'DEUTZ-FAHR', 'VM MOTORI', 'PERKINS'];
-const NON_EU = ['FORD (USA)', 'CHEVROLET (USA)', 'GMC', 'CHEVROLET', 'CHRYSLER', 'DODGE', 'JEEP', 'RAM', 'CADILLAC', 'BUICK', 'LINCOLN', 'PONTIAC', 'OLDSMOBILE', 'PLYMOUTH', 'HUMMER', 'TOYOTA', 'LEXUS', 'NISSAN', 'INFINITI', 'DATSUN', 'HONDA', 'ACURA', 'MAZDA', 'MITSUBISHI', 'SUBARU', 'SUZUKI', 'ISUZU', 'DAIHATSU', 'HINO', 'HYUNDAI', 'KIA', 'GENESIS', 'SSANGYONG', 'DAEWOO', 'KUBOTA', 'YANMAR', 'KOMATSU', 'KOBELCO', 'HITACHI', 'TAKEUCHI', 'SUMITOMO', 'CATERPILLAR', 'CUMMINS', 'JOHN DEERE', 'JOHN-DEERE', 'CASE', 'NEW HOLLAND', 'KENWORTH', 'PETERBILT', 'FREIGHTLINER', 'STERLING', 'INTERNATIONAL', 'NAVISTAR', 'MACK', 'DETROIT', 'BOBCAT', 'DOOSAN', 'GEHL', 'SANY', 'BYD', 'GREAT WALL', 'CHERY', 'GEELY', 'HOLDEN', 'TATA', 'MAHINDRA', 'PROTON', 'PERODUA', 'WESTERN STAR', 'BLUE BIRD', 'THOMAS', 'ONAN', 'KOHLER', 'BRIGGS', 'ONAN', 'THERMO KING', 'CARRIER', 'CLARK', 'DITCH WITCH', 'AGCO', 'CHALLENGER', 'MASSEY', 'AG-CHEM', 'TEREX', 'GROVE', 'TESLA'];
-function origin(make) {
-  const m = ` ${String(make || '').toUpperCase()} `;
-  // Explicit USA variants of European makes are still European marques (e.g. "VW (USA)").
-  const eu = EU.some((k) => m.includes(` ${k.trim()}`));
-  const non = NON_EU.some((k) => m.includes(` ${k.trim()}`));
-  if (eu && !non) return 'EUROPEAN';
-  if (non && !eu) return 'NON_EUROPEAN';
-  return 'UNKNOWN';
-}
+const { origin } = require('./origin');
 function makesOf(row) {
   const va = Array.isArray(row.vehicle_applications) ? row.vehicle_applications : [];
   return [...new Set(va.map((v) => String(v.make || v.brand || v.marca || '').toUpperCase().trim()).filter(Boolean))];
