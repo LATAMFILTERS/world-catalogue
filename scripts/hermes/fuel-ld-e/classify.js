@@ -70,9 +70,9 @@ async function fram(code) {
       const geometry = p.row_od_mm != null && p.row_h_mm != null && f.od_mm != null && f.height_mm != null ? (close(p.row_od_mm, f.od_mm) && close(p.row_h_mm, f.height_mm) ? 'MATCH' : 'CONFLICT') : 'INCOMPLETE';
       const rowMakes = makesOf(row).map((m) => m.split(/[ (]/)[0]);
       const makeOverlap = rowMakes.filter((m) => f.makes.includes(m));
-      framProbes.push({ code: c, found: true, url: f.url, sku: f.sku, fuel_type: f.fuel_type, od_mm: f.od_mm, height_mm: f.height_mm, geometry, make_overlap: [...new Set(makeOverlap)] });
+      framProbes.push({ code: c, found: true, url: f.url, sku: f.sku, title: f.title, fuel: f.fuel === true, makes_available: f.makes_available === true, fuel_type: f.fuel_type, od_mm: f.od_mm, height_mm: f.height_mm, geometry, make_overlap: [...new Set(makeOverlap)] });
     }
-    const framPass = framProbes.filter((x) => x.found && x.geometry === 'MATCH' && x.make_overlap.length > 0);
+    const framPass = framProbes.filter((x) => x.found && x.fuel && x.geometry === 'MATCH' && x.make_overlap.length > 0);
     rec.fram = { refs: framRefs.length, probes: framProbes, passing: framPass.map((x) => x.code) };
 
     let state, reason, approved = null, authority = null, evidence = null;

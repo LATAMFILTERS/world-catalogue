@@ -1,0 +1,1483 @@
+{
+ "scope": "FUEL_LD_FRAM_RECHECK",
+ "generated_at": "2026-09-28T05:12:00.900Z",
+ "method": "Exact SKU lookup on fram.com catalog GraphQL (identity, fuel type, height, outside diameter); product page only for vehicle makes (rate-limited HTML => makes unavailable => fail-closed).",
+ "rows_with_fram_refs": 56,
+ "fram_refs": 133,
+ "found": 38,
+ "found_fuel": 18,
+ "geometry_match": 0,
+ "new_verified": 0,
+ "rows": [
+  {
+   "sku": "EF30001",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 75
+   },
+   "fram": [
+    {
+     "code": "G01",
+     "found": false
+    },
+    {
+     "code": "G1",
+     "title": "FRAM Fuel Filter In-Line",
+     "fuel": true,
+     "od_mm": 48.4,
+     "h_mm": 93.3,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-filter-g1"
+    },
+    {
+     "code": "G1D",
+     "found": false
+    },
+    {
+     "code": "G1DP",
+     "title": "FRAM Fuel Filter",
+     "fuel": true,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": true,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fram-fuel-filter-g1dp"
+    },
+    {
+     "code": "G1M",
+     "found": false
+    },
+    {
+     "code": "G1M24056",
+     "found": false
+    },
+    {
+     "code": "G1MDP",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30003",
+   "origin": "EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 170
+   },
+   "fram": [
+    {
+     "code": "C3",
+     "title": "FRAM HD Oil Filter Cartridge",
+     "fuel": false,
+     "od_mm": 94.5,
+     "h_mm": 111.5,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/h-d-oil-filter-c3"
+    },
+    {
+     "code": "C3P",
+     "title": "FRAM HD Oil Filter Cartridge",
+     "fuel": false,
+     "od_mm": 94.5,
+     "h_mm": 111.5,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/h-d-oil-filter-c3p"
+    },
+    {
+     "code": "G3",
+     "title": "FRAM Fuel Filter In-Line",
+     "fuel": true,
+     "od_mm": 44.4,
+     "h_mm": 93.3,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-filter-g3"
+    },
+    {
+     "code": "G3D",
+     "found": false
+    },
+    {
+     "code": "G3DP",
+     "found": false
+    },
+    {
+     "code": "G3GFC",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30004",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 97
+   },
+   "fram": [
+    {
+     "code": "C4",
+     "title": "FRAM HD Oil Filter Cartridge",
+     "fuel": false,
+     "od_mm": 106.8,
+     "h_mm": 123.8,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/h-d-oil-filter-c4"
+    },
+    {
+     "code": "C4P",
+     "title": "FRAM HD Oil Filter Cartridge",
+     "fuel": false,
+     "od_mm": 106.9,
+     "h_mm": 123.8,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/h-d-oil-filter-c4p"
+    },
+    {
+     "code": "P11291",
+     "title": "FRAM HD Oil Filter Spin-On",
+     "fuel": false,
+     "od_mm": 95.3,
+     "h_mm": 156,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/hydraulic-filter-p11291"
+    },
+    {
+     "code": "G4",
+     "found": false
+    },
+    {
+     "code": "G4AEL",
+     "found": false
+    },
+    {
+     "code": "G4G6351",
+     "found": false
+    },
+    {
+     "code": "G4GFD",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30005",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 140
+   },
+   "fram": [
+    {
+     "code": "P4637",
+     "found": false
+    },
+    {
+     "code": "P4638",
+     "found": false
+    },
+    {
+     "code": "P8576",
+     "title": "Hydraulic",
+     "fuel": false,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/hydraulic-p8576"
+    },
+    {
+     "code": "G5",
+     "found": false
+    },
+    {
+     "code": "G5GF876",
+     "found": false
+    },
+    {
+     "code": "G5M",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30006",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 109.22,
+    "h": 129.54
+   },
+   "fram": [
+    {
+     "code": "G6",
+     "found": false
+    },
+    {
+     "code": "G6Y0",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30007",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "G7",
+     "found": false
+    },
+    {
+     "code": "G7B6BF",
+     "found": false
+    },
+    {
+     "code": "G7G6386",
+     "found": false
+    },
+    {
+     "code": "G7G8",
+     "found": false
+    },
+    {
+     "code": "G7GF854",
+     "found": false
+    },
+    {
+     "code": "G7P6",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30008",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 95,
+    "h": 173.5
+   },
+   "fram": [
+    {
+     "code": "P3755",
+     "found": false
+    },
+    {
+     "code": "P3959",
+     "title": "FRAM Hyd. Filter Spin-On",
+     "fuel": false,
+     "od_mm": 95.3,
+     "h_mm": 203.6,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/hydraulic-filter-p3959"
+    },
+    {
+     "code": "P8024",
+     "title": "FRAM Hyd. Filter Spin-On",
+     "fuel": false,
+     "od_mm": 96,
+     "h_mm": 204.8,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/hydraulic-filter-p8024"
+    },
+    {
+     "code": "G8",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30011",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 155,
+    "h": 151
+   },
+   "fram": [
+    {
+     "code": "FP11",
+     "found": false
+    },
+    {
+     "code": "G11",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30012",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 203
+   },
+   "fram": [
+    {
+     "code": "FP12",
+     "found": false
+    },
+    {
+     "code": "G12",
+     "title": "FRAM Fuel Filter In-Line",
+     "fuel": true,
+     "od_mm": 54.6,
+     "h_mm": 106.2,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-filter-g12"
+    },
+    {
+     "code": "G12D",
+     "found": false
+    },
+    {
+     "code": "G12DP",
+     "title": "FRAM Fuel Filter",
+     "fuel": true,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fram-fuel-filter-g12dp"
+    }
+   ]
+  },
+  {
+   "sku": "EF30015",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "G15",
+     "found": false
+    },
+    {
+     "code": "G15D",
+     "found": false
+    },
+    {
+     "code": "G15DP",
+     "found": false
+    },
+    {
+     "code": "G15M",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30019",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 112
+   },
+   "fram": [
+    {
+     "code": "P11403",
+     "found": false
+    },
+    {
+     "code": "P7722",
+     "found": false
+    },
+    {
+     "code": "FP19",
+     "found": false
+    },
+    {
+     "code": "G19",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30020",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 107
+   },
+   "fram": [
+    {
+     "code": "P3403",
+     "found": false
+    },
+    {
+     "code": "FP20",
+     "found": false
+    },
+    {
+     "code": "FP20HD",
+     "found": false
+    },
+    {
+     "code": "G20",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30022",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 176
+   },
+   "fram": [
+    {
+     "code": "FP22A",
+     "found": false
+    },
+    {
+     "code": "G22",
+     "found": false
+    },
+    {
+     "code": "G22A",
+     "found": false
+    },
+    {
+     "code": "G22ADP",
+     "title": "FRAM Fuel Filter",
+     "fuel": true,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fram-fuel-filter-g22adp"
+    }
+   ]
+  },
+  {
+   "sku": "EF30023",
+   "origin": "UNKNOWN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "G23",
+     "title": "FRAM Fuel Filter",
+     "fuel": true,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fram-fuel-filter-g23"
+    },
+    {
+     "code": "G23D",
+     "found": false
+    },
+    {
+     "code": "G23DP",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30031",
+   "origin": "UNKNOWN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "row_geometry_mm": {
+    "od": 106,
+    "h": 165
+   },
+   "fram": [
+    {
+     "code": "C31P",
+     "title": "FRAM HD Oil Filter Cartridge",
+     "fuel": false,
+     "od_mm": 114.3,
+     "h_mm": 203.2,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/h-d-oil-filter-c31p"
+    },
+    {
+     "code": "C31PL",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30060",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "FP10060BP",
+     "title": "FRAM Engine Oil Filter",
+     "fuel": false,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fram-engine-oil-filter-fp10060bp"
+    }
+   ]
+  },
+  {
+   "sku": "EF30066",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "row_geometry_mm": {
+    "od": null,
+    "h": 125
+   },
+   "fram": [
+    {
+     "code": "C66",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30219",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": 22,
+    "h": 142
+   },
+   "fram": [
+    {
+     "code": "FP219",
+     "found": false
+    },
+    {
+     "code": "FP219F",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30478",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "G478",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30510",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 52,
+    "h": 175
+   },
+   "fram": [
+    {
+     "code": "G510",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30513",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "G513",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30720",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": null,
+    "h": 160.02
+   },
+   "fram": [
+    {
+     "code": "G720",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30815",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 76.2,
+    "h": 121.92
+   },
+   "fram": [
+    {
+     "code": "FP815F",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30819",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "FP10819",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30840",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 83,
+    "h": 185
+   },
+   "fram": [
+    {
+     "code": "G840",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30855",
+   "origin": "PARTIAL_EUROPEAN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_NOT_FULLY_DETERMINED",
+   "row_geometry_mm": {
+    "od": 76.2,
+    "h": 231.14
+   },
+   "fram": [
+    {
+     "code": "FP10855",
+     "found": false
+    },
+    {
+     "code": "FP10855BP",
+     "title": "FRAM Engine Oil Filter",
+     "fuel": false,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fram-engine-oil-filter-fp10855bp"
+    },
+    {
+     "code": "G855",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30939",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 134
+   },
+   "fram": [
+    {
+     "code": "G939",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF30965",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 245
+   },
+   "fram": [
+    {
+     "code": "CS10965",
+     "title": "FRAM HD Fuel Filter Cartridge",
+     "fuel": true,
+     "od_mm": 109.6,
+     "h_mm": 226.2,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-water-separator-cs10965"
+    }
+   ]
+  },
+  {
+   "sku": "EF30999",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "FP999HD",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF31023",
+   "origin": "EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 216
+   },
+   "fram": [
+    {
+     "code": "CS11023",
+     "title": "FRAM HD Fuel Filter Cartridge",
+     "fuel": true,
+     "od_mm": 106.7,
+     "h_mm": 178.8,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-water-separator-cs11023"
+    },
+    {
+     "code": "P3555",
+     "found": false
+    },
+    {
+     "code": "P3555A",
+     "title": "FRAM HD Oil Filter Spin-On",
+     "fuel": false,
+     "od_mm": 116.1,
+     "h_mm": 249.2,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/h-d-oil-filter-p3555a"
+    },
+    {
+     "code": "P3555PL",
+     "title": "FRAM HD Oil Filter Spin-On",
+     "fuel": false,
+     "od_mm": 118.4,
+     "h_mm": 252.2,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/h-d-oil-filter-p3555pl"
+    },
+    {
+     "code": "P5465",
+     "found": false
+    },
+    {
+     "code": "P5786",
+     "found": false
+    },
+    {
+     "code": "P9407",
+     "title": "FRAM HD Oil Filter Spin-On",
+     "fuel": false,
+     "od_mm": 109,
+     "h_mm": 258,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/h-d-oil-filter-p9407"
+    }
+   ]
+  },
+  {
+   "sku": "EF31056",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "G1056",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF31059",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 95,
+    "h": 174
+   },
+   "fram": [
+    {
+     "code": "G1059",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF31163",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "C1163PL",
+     "title": "FRAM Fuel Filter Cartridge",
+     "fuel": true,
+     "od_mm": 88.5,
+     "h_mm": 115.5,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-filter-c1163pl"
+    }
+   ]
+  },
+  {
+   "sku": "EF31166",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 204.5
+   },
+   "fram": [
+    {
+     "code": "C1166PL",
+     "title": "FRAM Fuel Filter Cartridge",
+     "fuel": true,
+     "od_mm": 85.7,
+     "h_mm": 165.1,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-filter-c1166pl"
+    }
+   ]
+  },
+  {
+   "sku": "EF31270",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 118,
+    "h": 289
+   },
+   "fram": [
+    {
+     "code": "P5465",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF33005",
+   "origin": "UNKNOWN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "row_geometry_mm": {
+    "od": 132,
+    "h": 266
+   },
+   "fram": [
+    {
+     "code": "P7039",
+     "found": false
+    },
+    {
+     "code": "P7542",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF33006",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "P7559",
+     "found": false
+    },
+    {
+     "code": "P7254",
+     "title": "FRAM HD Hyd. Filter Spin-On",
+     "fuel": false,
+     "od_mm": 127.4,
+     "h_mm": 270.7,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/hydraulic-filter-p7254"
+    }
+   ]
+  },
+  {
+   "sku": "EF33011",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 75,
+    "h": 165
+   },
+   "fram": [
+    {
+     "code": "P4532",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF33802",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "row_geometry_mm": {
+    "od": 55,
+    "h": 125
+   },
+   "fram": [
+    {
+     "code": "G3802",
+     "found": false
+    },
+    {
+     "code": "G3802A",
+     "title": "FRAM Fuel Filter In-Line",
+     "fuel": true,
+     "od_mm": 77.8,
+     "h_mm": 147.1,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-filter-g3802a"
+    },
+    {
+     "code": "G3802ADP",
+     "title": "FRAM Fuel Filter In-Line",
+     "fuel": true,
+     "od_mm": 77.8,
+     "h_mm": 147.1,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-filter-g3802adp"
+    },
+    {
+     "code": "G3802AFP",
+     "title": "FRAM Fuel Filter In-Line Fleet Pack",
+     "fuel": true,
+     "od_mm": 77.8,
+     "h_mm": 147.1,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-filter-g3802afp"
+    },
+    {
+     "code": "G3802D",
+     "found": false
+    },
+    {
+     "code": "G3802DP",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF34019",
+   "origin": "PARTIAL_EUROPEAN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_NOT_FULLY_DETERMINED",
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 142.24
+   },
+   "fram": [
+    {
+     "code": "P4101",
+     "found": false
+    },
+    {
+     "code": "P4101A",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF34038",
+   "origin": "PARTIAL_EUROPEAN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_NOT_FULLY_DETERMINED",
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 141
+   },
+   "fram": [
+    {
+     "code": "P1653A",
+     "title": "FRAM HD Oil Filter Spin-On",
+     "fuel": false,
+     "od_mm": 93.3,
+     "h_mm": 137.8,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/hydraulic-filter-p1653a"
+    },
+    {
+     "code": "P3509",
+     "found": false
+    },
+    {
+     "code": "P3760",
+     "found": false
+    },
+    {
+     "code": "P7037",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF37196",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "row_geometry_mm": {
+    "od": 1930.4,
+    "h": 2971.8
+   },
+   "fram": [
+    {
+     "code": "G7196",
+     "found": false
+    },
+    {
+     "code": "G7196D",
+     "found": false
+    },
+    {
+     "code": "G7196DP",
+     "title": "FRAM Fuel Filter,Fuel Filter-Universal",
+     "fuel": true,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fram-fuel-filterfuel-filter-universal-g7196dp"
+    }
+   ]
+  },
+  {
+   "sku": "EF38009",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "P9264",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF38018",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 76,
+    "h": 24
+   },
+   "fram": [
+    {
+     "code": "G8018",
+     "title": "FRAM Fuel Filter In-Line",
+     "fuel": true,
+     "od_mm": 54,
+     "h_mm": 181.8,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-filter-g8018"
+    },
+    {
+     "code": "G8018DP",
+     "title": "FRAM Fuel Filter",
+     "fuel": true,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fram-fuel-filter-g8018dp"
+    }
+   ]
+  },
+  {
+   "sku": "EF38119",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "row_geometry_mm": {
+    "od": 83.82,
+    "h": 195.58
+   },
+   "fram": [
+    {
+     "code": "G8119",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF38122",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": 83.82,
+    "h": 134.62
+   },
+   "fram": [
+    {
+     "code": "G8122",
+     "title": "FRAM Fuel Filter In-Line",
+     "fuel": true,
+     "od_mm": 60.3,
+     "h_mm": 104,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fuel-filter-g8122"
+    }
+   ]
+  },
+  {
+   "sku": "EF38123",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 83,
+    "h": 196
+   },
+   "fram": [
+    {
+     "code": "G8123",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF38154",
+   "origin": "UNKNOWN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_UNKNOWN",
+   "row_geometry_mm": {
+    "od": 88,
+    "h": 197
+   },
+   "fram": [
+    {
+     "code": "G8154",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF38160",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "NON_EUROPEAN_ROW_MANN_ONLY_FRAM_NOT_CONFIRMED",
+   "row_geometry_mm": {
+    "od": 83.82,
+    "h": 198.12
+   },
+   "fram": [
+    {
+     "code": "G8160",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF38453",
+   "origin": "PARTIAL_NON_EUROPEAN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN",
+   "row_geometry_mm": {
+    "od": 77,
+    "h": 146
+   },
+   "fram": [
+    {
+     "code": "C8453",
+     "title": "Hydraulic",
+     "fuel": false,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": true,
+     "make_overlap": [],
+     "url": "https://www.fram.com/hydraulic-c8453"
+    }
+   ]
+  },
+  {
+   "sku": "EF39002",
+   "origin": "EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 216
+   },
+   "fram": [
+    {
+     "code": "P8485",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF39018",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 93.8,
+    "h": 146
+   },
+   "fram": [
+    {
+     "code": "FP9018BP",
+     "title": "FRAM Engine Oil Filter",
+     "fuel": false,
+     "od_mm": null,
+     "h_mm": null,
+     "geometry": "INCOMPLETE",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/fram-engine-oil-filter-fp9018bp"
+    }
+   ]
+  },
+  {
+   "sku": "EF39031",
+   "origin": "EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "C9031",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF39402",
+   "origin": "PARTIAL_EUROPEAN",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_NOT_FULLY_DETERMINED",
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 142.24
+   },
+   "fram": [
+    {
+     "code": "P1654",
+     "found": false
+    },
+    {
+     "code": "P1654A",
+     "title": "FRAM Hyd. Filter Spin-On",
+     "fuel": false,
+     "od_mm": 93.3,
+     "h_mm": 137.8,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/hydraulic-filter-p1654a"
+    },
+    {
+     "code": "P7531",
+     "title": "FRAM Hyd. Filter Spin-On",
+     "fuel": false,
+     "od_mm": 94.5,
+     "h_mm": 145.3,
+     "geometry": "CONFLICT",
+     "makes_available": false,
+     "make_overlap": [],
+     "url": "https://www.fram.com/hydraulic-filter-p7531"
+    }
+   ]
+  },
+  {
+   "sku": "EF39404",
+   "origin": "NON_EUROPEAN",
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY",
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "fram": [
+    {
+     "code": "P8552",
+     "found": false
+    },
+    {
+     "code": "P8883",
+     "found": false
+    }
+   ]
+  },
+  {
+   "sku": "EF39405",
+   "origin": "MIXED",
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED",
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 142.24
+   },
+   "fram": [
+    {
+     "code": "P1655",
+     "found": false
+    },
+    {
+     "code": "P16552A",
+     "found": false
+    }
+   ]
+  }
+ ]
+}
