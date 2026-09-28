@@ -1,0 +1,1449 @@
+{
+ "batch": "LD-E13",
+ "generated_at": "2026-09-28T04:56:48.964Z",
+ "counts": {
+  "BLOCKED_EVIDENCE_REQUIRED": 45,
+  "BLOCKED_APPLICATION_CONFLICT": 2,
+  "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED": 3
+ },
+ "records": [
+  {
+   "sku": "EF39015",
+   "current_codigo_base": "9015",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "KALMAR LMV",
+    "VOLVO PENTA",
+    "GRADALL",
+    "SANDVIK",
+    "MAGNI",
+    "CITROEN",
+    "PEUGEOT",
+    "TOYOTA",
+    "FORD",
+    "MAZDA"
+   ],
+   "row_geometry_mm": {
+    "od": 85,
+    "h": 126
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39017",
+   "current_codigo_base": "9017",
+   "origin_group_derived": "PARTIAL_NON_EUROPEAN",
+   "makes": [
+    "KENWORTH",
+    "PETERBILT",
+    "CUMMINS",
+    "DOOSAN COMPRESSORS",
+    "GROVE",
+    "HYUNDAI CONSTRUCTION",
+    "KALMAR LMV",
+    "WIRTGEN (WIRTGEN GROUP)",
+    "FAST CONCEPT CAR",
+    "OTOKAR",
+    "DENNIS BUS / ALEXANDER DENNIS",
+    "ROSTSELMASH"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 249
+   },
+   "mann": {
+    "candidates": 2,
+    "passing": [
+     "WK9017X"
+    ],
+    "competing_oe": [
+     {
+      "code": "WK9017Z",
+      "oe": 1,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_PARTIAL_NON_EUROPEAN"
+  },
+  {
+   "sku": "EF39018",
+   "current_codigo_base": "9018",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "CASE CONSTRUCTION",
+    "CUMMINS",
+    "HYUNDAI CONSTRUCTION",
+    "JCB (J.C. BAMFORD)",
+    "康明斯发动机 / CUMMINS ENGINE",
+    "MCCORMICK (ARGO)",
+    "AG-CHEM (AGCO)",
+    "MASSEY-FERGUSON TRAKTOREN (AGCO)",
+    "PETERBILT"
+   ],
+   "row_geometry_mm": {
+    "od": 93.8,
+    "h": 146
+   },
+   "mann": {
+    "candidates": 2,
+    "passing": [
+     "WK9018X"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 1,
+    "probes": [
+     {
+      "code": "FP9018BP",
+      "found": false
+     }
+    ],
+    "passing": []
+   },
+   "state": "BLOCKED_APPLICATION_CONFLICT",
+   "reason": "ORIGIN_GROUP_MIXED"
+  },
+  {
+   "sku": "EF39019",
+   "current_codigo_base": "9019",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "KENWORTH",
+    "PETERBILT"
+   ],
+   "row_geometry_mm": {
+    "od": 97,
+    "h": 189
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK9019Z",
+      "oe": 1,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "FRAM_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF39020",
+   "current_codigo_base": "9020",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "AMMANN",
+    "CHETRA",
+    "CUMMINS",
+    "HYSTER",
+    "HYUNDAI CONSTRUCTION",
+    "JCB (J.C. BAMFORD)",
+    "WINGET / DYNAPAC",
+    "BOMAG",
+    "HITACHI",
+    "KAWASAKI",
+    "ABG (VOLVO CE)",
+    "GROVE"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 193
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39021",
+   "current_codigo_base": "9021",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "MITSUBISHI"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39023",
+   "current_codigo_base": "9023",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "TOYOTA",
+    "MITSUBISHI"
+   ],
+   "row_geometry_mm": {
+    "od": 90,
+    "h": 106.7
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39025",
+   "current_codigo_base": "9025",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "NISSAN",
+    "RENAULT",
+    "FORD"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 120
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39026",
+   "current_codigo_base": "9026",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "NISSAN"
+   ],
+   "row_geometry_mm": {
+    "od": 104,
+    "h": 142
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39027",
+   "current_codigo_base": "9027",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "CITROEN",
+    "FIAT",
+    "OPEL",
+    "PEUGEOT",
+    "TOYOTA",
+    "VAUXHALL",
+    "VAUXHALL-BEDFORD (LCV)",
+    "NISSAN",
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": 84,
+    "h": 88
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39028",
+   "current_codigo_base": "9028",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "RENAULT",
+    "NISSAN"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 186
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39031",
+   "current_codigo_base": "9031",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "DAF TRUCKS"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 1,
+    "probes": [
+     {
+      "code": "C9031",
+      "found": false
+     }
+    ],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF39032",
+   "current_codigo_base": "9032",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "DAF TRUCKS"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF39033",
+   "current_codigo_base": "9033",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "MITSUBISHI"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39034",
+   "current_codigo_base": "9034",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "PEUGEOT",
+    "CITROEN",
+    "DS AUTOMOBILES",
+    "MITSUBISHI",
+    "FIAT",
+    "TOYOTA"
+   ],
+   "row_geometry_mm": {
+    "od": 96,
+    "h": 139
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39036",
+   "current_codigo_base": "9036",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "JCB (J.C. BAMFORD)",
+    "VOLVO CONSTRUCTION EQUIPMENT",
+    "DAF TRUCKS"
+   ],
+   "row_geometry_mm": {
+    "od": 80,
+    "h": 176
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39037",
+   "current_codigo_base": "9037",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "CLAAS",
+    "CUMMINS",
+    "DOOSAN COMPRESSORS",
+    "GROVE",
+    "HYSTER",
+    "HYUNDAI CONSTRUCTION",
+    "KALMAR LMV",
+    "SENNEBOGEN",
+    "VOEGELE (WIRTGEN GROUP)",
+    "DOOSAN",
+    "康明斯发动机 / CUMMINS ENGINE",
+    "DIECI"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 202
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39039",
+   "current_codigo_base": "9039",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "NISSAN"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 158
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39040",
+   "current_codigo_base": "9040",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "HYSTER",
+    "YALE",
+    "AMMANN",
+    "EVOBUS (MERCEDES-BENZ/SETRA)",
+    "MANITOU",
+    "MERCEDES-BENZ",
+    "DOPPSTADT",
+    "KAESSBOHRER PISTEN BULLY",
+    "MAZ",
+    "CLAAS",
+    "LIEBHERR-MOBILKRANE",
+    "BELL EQUIPMENT"
+   ],
+   "row_geometry_mm": {
+    "od": 95,
+    "h": 179
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39042",
+   "current_codigo_base": "9042",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "CASE-IH (CNH GLOBAL)",
+    "CASE-STEYR (CNH GLOBAL)",
+    "CLAAS"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 184
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39043",
+   "current_codigo_base": "9043",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "NISSAN",
+    "RENAULT TRUCKS (RVI)"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 138
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39046",
+   "current_codigo_base": "9046",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "FORD",
+    "VOLVO CARS",
+    "MAZDA"
+   ],
+   "row_geometry_mm": {
+    "od": 96,
+    "h": 139
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39047",
+   "current_codigo_base": "9047",
+   "origin_group_derived": "PARTIAL_EUROPEAN",
+   "makes": [
+    "DAF TRUCKS",
+    "KAMAZ",
+    "AVIA ASHOK LEYLAND MOTORS",
+    "BMC (TR)",
+    "TERBERG",
+    "OPTARE",
+    "ERF (E.R.F.)",
+    "SOLARIS BUS",
+    "VDL BUS + COACH"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 184
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39048",
+   "current_codigo_base": "9048",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "CASE-IH (CNH GLOBAL)",
+    "CASE-STEYR (CNH GLOBAL)",
+    "NEW HOLLAND",
+    "NEW HOLLAND CONSTRUCTION",
+    "LANDINI (ARGO)"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 184
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39052",
+   "current_codigo_base": "9052",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "KOMATSU",
+    "HYUNDAI CONSTRUCTION",
+    "KOBELCO"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 219
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39054",
+   "current_codigo_base": "9054",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "NISSAN",
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 159
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39055",
+   "current_codigo_base": "9055",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "JEEP",
+    "CHRYSLER"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 103
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39056",
+   "current_codigo_base": "9056",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "AMMANN",
+    "CASE-IH (CNH GLOBAL)",
+    "CLAAS",
+    "CASE-STEYR (CNH GLOBAL)"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 190
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39057",
+   "current_codigo_base": "9057",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "MITSUBISHI",
+    "MITSUBISHI (JP)",
+    "CITROEN",
+    "SUBARU",
+    "PEUGEOT",
+    "TOYOTA"
+   ],
+   "row_geometry_mm": {
+    "od": 88,
+    "h": 132
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39058",
+   "current_codigo_base": "9058",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "AGCO",
+    "CATERPILLAR",
+    "CHALLENGER (AGCO)",
+    "CLAAS"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 238
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39059",
+   "current_codigo_base": "9059",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "HITACHI",
+    "JCB (J.C. BAMFORD)",
+    "JOHN DEERE",
+    "HELI",
+    "KOBELCO",
+    "徐工 / XCMG"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 133
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39065",
+   "current_codigo_base": "9065",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "AEBI TRAKTOREN (CH)",
+    "AUSA",
+    "DIECI",
+    "DOOSAN",
+    "HITACHI",
+    "KOMATSU",
+    "KRAMER ALLRAD (WACKER NEUSON)",
+    "MANITOU",
+    "TAKEUCHI",
+    "THWAITES",
+    "VOLVO CONSTRUCTION EQUIPMENT",
+    "NEW HOLLAND"
+   ],
+   "row_geometry_mm": {
+    "od": 90,
+    "h": 161
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39066",
+   "current_codigo_base": "9066",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "NISSAN"
+   ],
+   "row_geometry_mm": {
+    "od": 87,
+    "h": 120
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39067",
+   "current_codigo_base": "9067",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "NISSAN"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 138
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39079",
+   "current_codigo_base": "9079",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "NISSAN",
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": 98,
+    "h": 159
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39080",
+   "current_codigo_base": "9080",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "NISSAN",
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 159
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39081",
+   "current_codigo_base": "9081",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "NISSAN"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 97
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39083",
+   "current_codigo_base": "9083",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "NISSAN"
+   ],
+   "row_geometry_mm": {
+    "od": 98,
+    "h": 159
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39087",
+   "current_codigo_base": "9087",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "MITSUBISHI"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39093",
+   "current_codigo_base": "9093",
+   "origin_group_derived": "NON_EUROPEAN",
+   "makes": [
+    "MITSUBISHI"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": null
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39095",
+   "current_codigo_base": "9095",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "AMMANN",
+    "CHETRA",
+    "CUMMINS",
+    "HYSTER",
+    "HYUNDAI CONSTRUCTION",
+    "JCB (J.C. BAMFORD)",
+    "WINGET / DYNAPAC",
+    "BOMAG",
+    "HITACHI",
+    "KAWASAKI",
+    "ABG (VOLVO CE)",
+    "GROVE"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 193
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39096",
+   "current_codigo_base": "9096",
+   "origin_group_derived": "PARTIAL_NON_EUROPEAN",
+   "makes": [
+    "CATERPILLAR",
+    "HYUNDAI CONSTRUCTION",
+    "KOBELCO",
+    "MITSUBISHI",
+    "三一重工 / SANY",
+    "KUBOTA",
+    "DIECI"
+   ],
+   "row_geometry_mm": {
+    "od": 90,
+    "h": 125
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39098",
+   "current_codigo_base": "9098",
+   "origin_group_derived": "PARTIAL_NON_EUROPEAN",
+   "makes": [
+    "ALBARET",
+    "AVELING BARFORD",
+    "BARBER GREENE (CATERPILLAR)",
+    "BLAW KNOX (VOLVO CE)",
+    "BROEYT (BROEDR SOYLAND AS)",
+    "CATERPILLAR",
+    "CASE CONSTRUCTION",
+    "AG-CHEM (AGCO)"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 172
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39099",
+   "current_codigo_base": "9099",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "AG-CHEM (AGCO)",
+    "AGCO",
+    "BIG BUD",
+    "CASE CONSTRUCTION",
+    "CASE-IH (CNH GLOBAL)",
+    "CLARK EQUIPMENT",
+    "DENNIS TRUCKS / DENNIS EAGLE",
+    "DOOSAN COMPRESSORS",
+    "ERF (E.R.F.)",
+    "FIAT-ALLIS/GEOTECH/HITACHI",
+    "FODEN",
+    "BEDFORD"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 203
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39100",
+   "current_codigo_base": "9100",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "HATZ"
+   ],
+   "row_geometry_mm": {
+    "od": 96,
+    "h": 144
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39102",
+   "current_codigo_base": "9102",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "AG-CHEM (AGCO)",
+    "AGCO",
+    "BOBCAT",
+    "CASE CONSTRUCTION",
+    "CASE-IH (CNH GLOBAL)",
+    "CATERPILLAR",
+    "CHALLENGER (AGCO)",
+    "CUMMINS",
+    "DOOSAN COMPRESSORS",
+    "DYNAPAC-WINGET",
+    "GROVE",
+    "HITACHI"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 162
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39103",
+   "current_codigo_base": "9103",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "CASE-IH (CNH GLOBAL)",
+    "CUMMINS",
+    "DOOSAN COMPRESSORS",
+    "INGERSOLL-RAND",
+    "JCB (J.C. BAMFORD)",
+    "KENWORTH",
+    "KOMATSU",
+    "WIRTGEN (WIRTGEN GROUP)",
+    "VW (VOLKSWAGEN) BUS",
+    "DYNAPAC-WINGET",
+    "柳工 / LIUGONG",
+    "NEW HOLLAND"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 176
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39104",
+   "current_codigo_base": "9104",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "BOMAG",
+    "ERF (E.R.F.)",
+    "HYUNDAI CONSTRUCTION",
+    "INGERSOLL-RAND",
+    "KOBELCO",
+    "KOMATSU",
+    "LIEBHERR",
+    "TEREX",
+    "THERMO KING",
+    "LEYLAND",
+    "NEW HOLLAND CONSTRUCTION",
+    "IVECO BUS"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 169
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39105",
+   "current_codigo_base": "9105",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "AVANT",
+    "JCB (J.C. BAMFORD)",
+    "KRAMER ALLRAD (WACKER NEUSON)",
+    "LANDINI (ARGO)",
+    "MANITOU",
+    "MAZDA",
+    "MERLO",
+    "TOYOTA",
+    "ARBOS",
+    "FORD",
+    "MITSUBISHI",
+    "NISSAN"
+   ],
+   "row_geometry_mm": {
+    "od": 87,
+    "h": 139
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  },
+  {
+   "sku": "EF39106",
+   "current_codigo_base": "9106",
+   "origin_group_derived": "MIXED",
+   "makes": [
+    "KOMATSU",
+    "BERGMANN",
+    "DYNAPAC-WINGET"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 131
+   },
+   "mann": {
+    "candidates": 0,
+    "passing": [],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_EVIDENCE_REQUIRED",
+   "reason": "NO_MANN_OR_FRAM_REFERENCE_ON_FILE"
+  }
+ ]
+}
