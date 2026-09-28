@@ -1,0 +1,2930 @@
+{
+  "source_positions": 885,
+  "released_positions": 573,
+  "pending_positions": 312,
+  "pending_skus": 19,
+  "rows": [
+    {
+      "sku": "EL88076",
+      "exact_positions": 36,
+      "items": [
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2017
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2017
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2017
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EL88076",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "sku": "EA13614",
+      "exact_positions": 35,
+      "items": [
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2007
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2011
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2012
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2013
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2014
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2015
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2016
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2017
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2015
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2016
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2017
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NRR DERATE",
+          "equipment": "NRR DERATE",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EA13614",
+          "make": "ISUZU",
+          "model": "NRR DERATE",
+          "equipment": "NRR DERATE",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "sku": "EF90390",
+      "exact_positions": 35,
+      "items": [
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2007
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year": 2011
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year": 2012
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year": 2013
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year": 2014
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year": 2015
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year": 2016
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year": 2017
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2004
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EF90390",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "sku": "ES90128",
+      "exact_positions": 33,
+      "items": [
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2011
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2012
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2013
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2014
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2015
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2016
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2017
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2015
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2016
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2017
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2011
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2012
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2013
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2014
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2015
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2016
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2017
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2011
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2012
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2013
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2014
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2015
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2016
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2017
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "ES90128",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        }
+      ]
+    },
+    {
+      "sku": "EL80420",
+      "exact_positions": 22,
+      "items": [
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2004
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "HTR",
+          "equipment": "HTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "HTR",
+          "equipment": "HTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "HTR",
+          "equipment": "HTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "HVR",
+          "equipment": "HVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "HVR",
+          "equipment": "HVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "HVR",
+          "equipment": "HVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "HXR",
+          "equipment": "HXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "HXR",
+          "equipment": "HXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EL80420",
+          "make": "ISUZU",
+          "model": "HXR",
+          "equipment": "HXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        }
+      ]
+    },
+    {
+      "sku": "EA33655",
+      "exact_positions": 15,
+      "items": [
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "EA33655",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "sku": "EF91840",
+      "exact_positions": 15,
+      "items": [
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "HTR",
+          "equipment": "HTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "HTR",
+          "equipment": "HTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "HTR",
+          "equipment": "HTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "HVR",
+          "equipment": "HVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "HVR",
+          "equipment": "HVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "HVR",
+          "equipment": "HVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "HXR",
+          "equipment": "HXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "HXR",
+          "equipment": "HXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EF91840",
+          "make": "ISUZU",
+          "model": "HXR",
+          "equipment": "HXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        }
+      ]
+    },
+    {
+      "sku": "EF92427",
+      "exact_positions": 15,
+      "items": [
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2004
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year": 2011
+        },
+        {
+          "sku": "EF92427",
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year": 2012
+        }
+      ]
+    },
+    {
+      "sku": "EL80606",
+      "exact_positions": 15,
+      "items": [
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "EL80606",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "sku": "ES91098",
+      "exact_positions": 15,
+      "items": [
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "ES91098",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "sku": "EA33930",
+      "exact_positions": 14,
+      "items": [
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2000
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2001
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2002
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2003
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2004
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EA33930",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        }
+      ]
+    },
+    {
+      "sku": "EF98204",
+      "exact_positions": 12,
+      "items": [
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EF98204",
+          "make": "ISUZU",
+          "model": "NRR",
+          "equipment": "NRR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "sku": "EF92599",
+      "exact_positions": 10,
+      "items": [
+        {
+          "sku": "EF92599",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2010
+        },
+        {
+          "sku": "EF92599",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EF92599",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EF92599",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EF92599",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EF92599",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EF92599",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EF92599",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EF92599",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EF92599",
+          "make": "ISUZU",
+          "model": "NQR",
+          "equipment": "NQR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2010
+        }
+      ]
+    },
+    {
+      "sku": "EF93410",
+      "exact_positions": 10,
+      "items": [
+        {
+          "sku": "EF93410",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EF93410",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EF93410",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EF93410",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EF93410",
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        },
+        {
+          "sku": "EF93410",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2022
+        },
+        {
+          "sku": "EF93410",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2023
+        },
+        {
+          "sku": "EF93410",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2024
+        },
+        {
+          "sku": "EF93410",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2025
+        },
+        {
+          "sku": "EF93410",
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "sku": "EA14353",
+      "exact_positions": 9,
+      "items": [
+        {
+          "sku": "EA14353",
+          "make": "ISUZU",
+          "model": "FRR",
+          "equipment": "FRR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2000
+        },
+        {
+          "sku": "EA14353",
+          "make": "ISUZU",
+          "model": "FRR",
+          "equipment": "FRR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2001
+        },
+        {
+          "sku": "EA14353",
+          "make": "ISUZU",
+          "model": "FRR",
+          "equipment": "FRR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2002
+        },
+        {
+          "sku": "EA14353",
+          "make": "ISUZU",
+          "model": "FRR",
+          "equipment": "FRR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2003
+        },
+        {
+          "sku": "EA14353",
+          "make": "ISUZU",
+          "model": "FRR",
+          "equipment": "FRR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2004
+        },
+        {
+          "sku": "EA14353",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2004
+        },
+        {
+          "sku": "EA14353",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EA14353",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EA14353",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        }
+      ]
+    },
+    {
+      "sku": "EF92564",
+      "exact_positions": 7,
+      "items": [
+        {
+          "sku": "EF92564",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2004
+        },
+        {
+          "sku": "EF92564",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2005
+        },
+        {
+          "sku": "EF92564",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2006
+        },
+        {
+          "sku": "EF92564",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2007
+        },
+        {
+          "sku": "EF92564",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2008
+        },
+        {
+          "sku": "EF92564",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2009
+        },
+        {
+          "sku": "EF92564",
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year": 2010
+        }
+      ]
+    },
+    {
+      "sku": "EF93009",
+      "exact_positions": 5,
+      "items": [
+        {
+          "sku": "EF93009",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "EF93009",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "EF93009",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "EF93009",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "EF93009",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "sku": "EL80428",
+      "exact_positions": 5,
+      "items": [
+        {
+          "sku": "EL80428",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2022
+        },
+        {
+          "sku": "EL80428",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2023
+        },
+        {
+          "sku": "EL80428",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2024
+        },
+        {
+          "sku": "EL80428",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2025
+        },
+        {
+          "sku": "EL80428",
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year": 2026
+        }
+      ]
+    },
+    {
+      "sku": "EA21938",
+      "exact_positions": 4,
+      "items": [
+        {
+          "sku": "EA21938",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2018
+        },
+        {
+          "sku": "EA21938",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2019
+        },
+        {
+          "sku": "EA21938",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2020
+        },
+        {
+          "sku": "EA21938",
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year": 2021
+        }
+      ]
+    }
+  ]
+}

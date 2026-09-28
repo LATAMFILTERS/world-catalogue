@@ -1,0 +1,20 @@
+sku,pending_positions,current_state,canonical_base,implementation_lane,next_action,write_allowed,notes
+EL88076,36,HD_EXISTING,P848076,EVIDENCE_REQUIRED,Revalidate official Isuzu/Donaldson application chain,false,Product canonical; no sufficient model-engine evidence yet
+EA13614,35,HD_EXISTING,P543614,EVIDENCE_REQUIRED,Revalidate excluded NPR-HD/NPR-XD/NRR-DERATE positions,false,53 positions already closed in v153
+EF90390,35,HD_EXISTING,P550390,EVIDENCE_REQUIRED,Cross official OEM/Donaldson year windows against remaining tuples,false,Product evidence exists but application proof incomplete
+EA33655,15,MISSING,,REMAP_REQUIRED,Resolve canonical owner/base then materialize only if governance passes,false,Missing product in PostgreSQL
+EF91840,15,HD_EXISTING,P551840,EVIDENCE_REQUIRED,Find official OEM/application window,false,Canonical product exists
+EF92427,15,HD_EXISTING,P502427,PARTIAL_REVALIDATION,Revalidate pre-2013 6HK1 and NPR 2011-2012 remainder,false,4 positions closed in v158
+EL80606,15,HD_EXISTING,LF606,EVIDENCE_REQUIRED,Validate Fleetguard/Isuzu application chain,false,Fleetguard base; no sufficient local application proof
+ES91098,15,MISSING,,REMAP_REQUIRED,Resolve canonical owner/base then materialize only if governance passes,false,Missing product in PostgreSQL
+EA33930,14,NON_HD,CA3930,ALIAS_REMAP_REVIEW,Resolve remaining source rows against corrected EA13930 HD owner,false,Do not write EA33930 into HD applications
+EF98204,12,MISSING,,RETIRE_REMAP,Resolve remaining rows to correct canonical owner; never materialize EF98204,false,Known wrong-chain SKU; v152 reassigned subset to ES90128
+EF92599,10,HD_EXISTING,P502599,PARTIAL_REVALIDATION,Resolve 2010 and 2022-2025 rows outside official v158 window,false,15 positions closed in v158
+EF93410,10,MISSING,,REMAP_REQUIRED,Resolve canonical owner/base for NPR-HD/NPR-XD 2022-2026,false,Missing product in PostgreSQL
+EF92564,7,HD_EXISTING,P552564,PARTIAL_REVALIDATION,Resolve FXR 6HK1 2004-2010 remainder,false,15 4HE positions closed in v158
+EA14353,5,HD_EXISTING,AF4353,PARTIAL_REVALIDATION,Resolve FRR 6HK1 2000-2004 remainder,false,4 FXR positions closed in v159
+EF93009,5,HD_EXISTING,P553009,PARTIAL_REVALIDATION,Resolve FVR DERATE Cummins B6.7 2022-2026,false,FTR/FVR closed in v157
+EL80428,5,HD_EXISTING,P550428,PARTIAL_REVALIDATION,Resolve FVR DERATE Cummins B6.7 2022-2026,false,FTR/FVR closed in v157
+EA21938,4,MISSING,,REMAP_REQUIRED,Resolve canonical owner/base for FTR 4HK1 2018-2021,false,Missing product in PostgreSQL
+ES90128,4,HD_EXISTING,FS20128,PARTIAL_REVALIDATION,Resolve remaining source tuples with Fleetguard/Isuzu evidence,false,Other ES90128 positions already released
+EL80420,3,HD_EXISTING,P550420,PARTIAL_REVALIDATION,Resolve FVR 6HK1 2008-2010 remainder,false,19 positions closed in v159

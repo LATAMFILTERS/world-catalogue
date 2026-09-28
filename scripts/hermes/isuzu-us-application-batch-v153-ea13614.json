@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "source": "ISUZU_US_V153_EA13614_REVALIDATION",
+  "evidence": {
+    "donaldson": "P543614",
+    "fleetguard": "AF27693",
+    "isuzu_oem": "8970622940",
+    "wix": "46932",
+    "review_scope": "53 REVIEWED_V91 exact positions only"
+  },
+  "skus": [
+    {
+      "sku": "EA13614",
+      "applications": [
+        {"make":"ISUZU","model":"NPR","equipment":"NPR","type":"TRUCK","engine":"4HK1-TC","year_from":"2006","year_to":"2010"},
+        {"make":"ISUZU","model":"NPR","equipment":"NPR","type":"TRUCK","engine":"4JJ1-TC","year_from":"2011","year_to":"2018"},
+        {"make":"ISUZU","model":"NQR","equipment":"NQR","type":"TRUCK","engine":"4HK1-TC","year_from":"2006","year_to":"2024"},
+        {"make":"ISUZU","model":"NRR","equipment":"NRR","type":"TRUCK","engine":"4HK1-TC","year_from":"2006","year_to":"2026"}
+      ]
+    }
+  ]
+}

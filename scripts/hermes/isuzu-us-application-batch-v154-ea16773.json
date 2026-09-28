@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "source": "ISUZU_US_V154_EA16773_REVALIDATION",
+  "evidence": {
+    "donaldson": "P636773",
+    "fleetguard": "AF4739",
+    "isuzu_oem": ["8944302500","2906469100"],
+    "scope": "Isuzu N-Series pre-2006 Air Primary"
+  },
+  "skus": [
+    {
+      "sku": "EA16773",
+      "applications": [
+        {"make":"ISUZU","model":"NPR","equipment":"NPR","type":"TRUCK","engine":"4HE1-TC","year_from":"2000","year_to":"2004"},
+        {"make":"ISUZU","model":"NPR","equipment":"NPR","type":"TRUCK","engine":"4HK1-TC","year":"2005"},
+        {"make":"ISUZU","model":"NPR-HD","equipment":"NPR-HD","type":"TRUCK","engine":"4HE1-TC","year_from":"2000","year_to":"2004"},
+        {"make":"ISUZU","model":"NPR-HD","equipment":"NPR-HD","type":"TRUCK","engine":"4HK1-TC","year":"2005"},
+        {"make":"ISUZU","model":"NQR","equipment":"NQR","type":"TRUCK","engine":"4HE1-TC","year_from":"2000","year_to":"2004"},
+        {"make":"ISUZU","model":"NQR","equipment":"NQR","type":"TRUCK","engine":"4HK1-TC","year":"2005"},
+        {"make":"ISUZU","model":"NRR","equipment":"NRR","type":"TRUCK","engine":"4HK1-TC","year_from":"2004","year_to":"2005"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "phase": "ISUZU_V160_MATRIX_RELEASE",
+  "apply": false,
+  "database_write": false,
+  "rows": [
+    {
+      "sku": "EA13930",
+      "status": "READY",
+      "exact_positions": 15,
+      "added_ranges": 15
+    }
+  ],
+  "summary": {
+    "skus": 1,
+    "exact_positions": 15,
+    "database_write": false
+  }
+}

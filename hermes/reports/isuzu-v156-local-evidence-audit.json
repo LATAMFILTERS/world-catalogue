@@ -1,0 +1,377 @@
+{
+  "summary": {
+    "hd_candidates": 14,
+    "evidence_present": 11,
+    "hold_evidence": 3,
+    "remap_required": 6,
+    "positions_evidence_present": 220,
+    "positions_hold_evidence": 84,
+    "positions_remap_required": 70
+  },
+  "rows": [
+    {
+      "sku": "EL88076",
+      "pending_positions": 36,
+      "codigo_base": "P848076",
+      "technology": "SYNTRAX™",
+      "filter_type": "oil",
+      "approved_manufacturer": "DONALDSON",
+      "approved_codigo_base": "P848076",
+      "primary_manufacturer_verified": true,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 0,
+      "hits": [],
+      "provisional_class": "HOLD_EVIDENCE"
+    },
+    {
+      "sku": "EA13614",
+      "pending_positions": 35,
+      "codigo_base": "P543614",
+      "technology": "MACROCORE™",
+      "filter_type": "air",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 2,
+      "hits": [
+        {
+          "file": "scripts/donaldson_air_results.json",
+          "tokens": [
+            "EA13614",
+            "P543614"
+          ]
+        },
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EA13614",
+            "P543614"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    },
+    {
+      "sku": "EF90390",
+      "pending_positions": 35,
+      "codigo_base": "P550390",
+      "technology": "SYNTAPORE™",
+      "filter_type": "fuel",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 1,
+      "hits": [
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EF90390",
+            "P550390"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    },
+    {
+      "sku": "ES90128",
+      "pending_positions": 33,
+      "codigo_base": "FS20128",
+      "technology": "HYDROCORE™",
+      "filter_type": "fuel",
+      "approved_manufacturer": "FLEETGUARD",
+      "approved_codigo_base": "FS20128",
+      "primary_manufacturer_verified": false,
+      "donaldson_absence_verified": true,
+      "fallback_manufacturer_verified": true,
+      "fallback_commercial_code_verified": true,
+      "local_evidence_files": 0,
+      "hits": [],
+      "provisional_class": "HOLD_EVIDENCE"
+    },
+    {
+      "sku": "EF92599",
+      "pending_positions": 25,
+      "codigo_base": "P502599",
+      "technology": "SYNTAPORE™",
+      "filter_type": "fuel",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 1,
+      "hits": [
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EF92599",
+            "P502599"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    },
+    {
+      "sku": "EF92564",
+      "pending_positions": 22,
+      "codigo_base": "P552564",
+      "technology": "SYNTAPORE™",
+      "filter_type": "fuel",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 1,
+      "hits": [
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EF92564",
+            "P552564"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    },
+    {
+      "sku": "EL80420",
+      "pending_positions": 22,
+      "codigo_base": "P550420",
+      "technology": "SYNTRAX™",
+      "filter_type": "oil",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 1,
+      "hits": [
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EL80420",
+            "P550420"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    },
+    {
+      "sku": "EF92427",
+      "pending_positions": 19,
+      "codigo_base": "P502427",
+      "technology": "SYNTAPORE™",
+      "filter_type": "fuel",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 1,
+      "hits": [
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EF92427",
+            "P502427"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    },
+    {
+      "sku": "EF91840",
+      "pending_positions": 15,
+      "codigo_base": "P551840",
+      "technology": "SYNTAPORE™",
+      "filter_type": "fuel",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 1,
+      "hits": [
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EF91840",
+            "P551840"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    },
+    {
+      "sku": "EF93009",
+      "pending_positions": 15,
+      "codigo_base": "P553009",
+      "technology": "SYNTAPORE™",
+      "filter_type": "fuel",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 1,
+      "hits": [
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EF93009",
+            "P553009"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    },
+    {
+      "sku": "EL80428",
+      "pending_positions": 15,
+      "codigo_base": "P550428",
+      "technology": "SYNTRAX™",
+      "filter_type": "oil",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 1,
+      "hits": [
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EL80428",
+            "P550428"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    },
+    {
+      "sku": "EL80606",
+      "pending_positions": 15,
+      "codigo_base": "LF606",
+      "technology": "SYNTRAX™",
+      "filter_type": "oil",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 0,
+      "hits": [],
+      "provisional_class": "HOLD_EVIDENCE"
+    },
+    {
+      "sku": "EA14353",
+      "pending_positions": 9,
+      "codigo_base": "AF4353",
+      "technology": "MACROCORE™",
+      "filter_type": "air",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 3,
+      "hits": [
+        {
+          "file": "scripts/donaldson_air_results.json",
+          "tokens": [
+            "EA14353"
+          ]
+        },
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EA14353"
+          ]
+        },
+        {
+          "file": "fleetguard_air_942.txt",
+          "tokens": [
+            "AF4353"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    },
+    {
+      "sku": "EL82597",
+      "pending_positions": 8,
+      "codigo_base": "P502597",
+      "technology": "SYNTRAX™",
+      "filter_type": "oil",
+      "approved_manufacturer": null,
+      "approved_codigo_base": null,
+      "primary_manufacturer_verified": null,
+      "donaldson_absence_verified": null,
+      "fallback_manufacturer_verified": null,
+      "fallback_commercial_code_verified": null,
+      "local_evidence_files": 1,
+      "hits": [
+        {
+          "file": "scripts/donaldson_import_ready.jsonl",
+          "tokens": [
+            "EL82597",
+            "P502597"
+          ]
+        }
+      ],
+      "provisional_class": "EVIDENCE_PRESENT"
+    }
+  ],
+  "remap_required": [
+    {
+      "sku": "EA33655",
+      "pending_positions": 15,
+      "provisional_class": "REMAP_REQUIRED"
+    },
+    {
+      "sku": "ES91098",
+      "pending_positions": 15,
+      "provisional_class": "REMAP_REQUIRED"
+    },
+    {
+      "sku": "EF98204",
+      "pending_positions": 12,
+      "provisional_class": "REMAP_REQUIRED"
+    },
+    {
+      "sku": "EF93410",
+      "pending_positions": 10,
+      "provisional_class": "REMAP_REQUIRED"
+    },
+    {
+      "sku": "EA21938",
+      "pending_positions": 4,
+      "provisional_class": "REMAP_REQUIRED"
+    },
+    {
+      "sku": "EA33930",
+      "pending_positions": 14,
+      "codigo_base": "CA3930",
+      "duty": "LIGHT_DUTY",
+      "provisional_class": "REMAP_REQUIRED"
+    }
+  ]
+}

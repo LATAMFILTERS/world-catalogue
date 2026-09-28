@@ -1,0 +1,64 @@
+{
+  "phase": "ISUZU_V151_RELEASE_AUDIT",
+  "rows": [
+    {
+      "sku": "ED41466",
+      "equipment_count": 3,
+      "vehicle_count": 0,
+      "missing_batch_apps": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EF96095",
+      "equipment_count": 1,
+      "vehicle_count": 0,
+      "missing_batch_apps": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EL80408",
+      "equipment_count": 4,
+      "vehicle_count": 0,
+      "missing_batch_apps": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "ES90128",
+      "equipment_count": 4,
+      "vehicle_count": 0,
+      "missing_batch_apps": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "ok": 4,
+    "errors": 0,
+    "total_missing": 0,
+    "vehicle_rows": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "phase": "ISUZU_V160_MATRIX_RELEASE",
+  "apply": true,
+  "database_write": true,
+  "rows": [
+    {
+      "sku": "EL88076",
+      "status": "READY",
+      "exact_positions": 36,
+      "added_ranges": 36
+    },
+    {
+      "sku": "EA13614",
+      "status": "READY",
+      "exact_positions": 32,
+      "added_ranges": 32
+    }
+  ],
+  "backup_path": "hermes/backups/isuzu-v160/prewrite-2026-09-28T12-50-08-042Z.json",
+  "summary": {
+    "skus": 2,
+    "exact_positions": 68,
+    "database_write": true
+  }
+}

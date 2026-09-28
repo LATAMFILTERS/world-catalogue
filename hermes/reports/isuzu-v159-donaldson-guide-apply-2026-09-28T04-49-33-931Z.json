@@ -1,0 +1,27 @@
+{
+  "phase": "ISUZU_V159_DONALDSON_APPLICATION_GUIDE",
+  "apply": true,
+  "database_write": true,
+  "rows": [
+    {
+      "sku": "EL80420",
+      "status": "READY",
+      "added_ranges": 5,
+      "exact_positions": 19
+    },
+    {
+      "sku": "EA14353",
+      "status": "READY",
+      "added_ranges": 1,
+      "exact_positions": 4
+    }
+  ],
+  "backup_path": "hermes/backups/isuzu-v159/prewrite-2026-09-28T04-49-33-927Z.json",
+  "summary": {
+    "total": 2,
+    "ready": 2,
+    "added_ranges": 6,
+    "exact_positions": 23,
+    "database_write": true
+  }
+}

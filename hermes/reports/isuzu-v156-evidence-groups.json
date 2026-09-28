@@ -1,0 +1,182 @@
+[
+  {
+    "class": "MISSING",
+    "codigo_base": null,
+    "technology": null,
+    "filter_type": null,
+    "sub_type": null,
+    "skus": [
+      "EA33655",
+      "ES91098",
+      "EF98204",
+      "EF93410",
+      "EA21938"
+    ],
+    "positions": 56
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P848076",
+    "technology": "SYNTRAX™",
+    "filter_type": "oil",
+    "sub_type": "Spin-On Combination",
+    "skus": [
+      "EL88076"
+    ],
+    "positions": 36
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P543614",
+    "technology": "MACROCORE™",
+    "filter_type": "air",
+    "sub_type": "Cellulose",
+    "skus": [
+      "EA13614"
+    ],
+    "positions": 35
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P550390",
+    "technology": "SYNTAPORE™",
+    "filter_type": "fuel",
+    "sub_type": "Cellulose",
+    "skus": [
+      "EF90390"
+    ],
+    "positions": 35
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "FS20128",
+    "technology": "HYDROCORE™",
+    "filter_type": "fuel",
+    "sub_type": "Fuel Water Separator",
+    "skus": [
+      "ES90128"
+    ],
+    "positions": 33
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P502599",
+    "technology": "SYNTAPORE™",
+    "filter_type": "fuel",
+    "sub_type": "Cellulose",
+    "skus": [
+      "EF92599"
+    ],
+    "positions": 25
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P552564",
+    "technology": "SYNTAPORE™",
+    "filter_type": "fuel",
+    "sub_type": "Cellulose",
+    "skus": [
+      "EF92564"
+    ],
+    "positions": 22
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P550420",
+    "technology": "SYNTRAX™",
+    "filter_type": "oil",
+    "sub_type": "Cellulose",
+    "skus": [
+      "EL80420"
+    ],
+    "positions": 22
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P502427",
+    "technology": "SYNTAPORE™",
+    "filter_type": "fuel",
+    "sub_type": null,
+    "skus": [
+      "EF92427"
+    ],
+    "positions": 19
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P551840",
+    "technology": "SYNTAPORE™",
+    "filter_type": "fuel",
+    "sub_type": null,
+    "skus": [
+      "EF91840"
+    ],
+    "positions": 15
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P553009",
+    "technology": "SYNTAPORE™",
+    "filter_type": "fuel",
+    "sub_type": null,
+    "skus": [
+      "EF93009"
+    ],
+    "positions": 15
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P550428",
+    "technology": "SYNTRAX™",
+    "filter_type": "oil",
+    "sub_type": "Cellulose",
+    "skus": [
+      "EL80428"
+    ],
+    "positions": 15
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "LF606",
+    "technology": "SYNTRAX™",
+    "filter_type": "oil",
+    "sub_type": "Fleetguard",
+    "skus": [
+      "EL80606"
+    ],
+    "positions": 15
+  },
+  {
+    "class": "NON_HD",
+    "codigo_base": "CA3930",
+    "technology": "MACROCORE™",
+    "filter_type": "air",
+    "sub_type": "Round Plastisol Air Filter",
+    "skus": [
+      "EA33930"
+    ],
+    "positions": 14
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "AF4353",
+    "technology": "MACROCORE™",
+    "filter_type": "air",
+    "sub_type": "Fleetguard",
+    "skus": [
+      "EA14353"
+    ],
+    "positions": 9
+  },
+  {
+    "class": "HD_EXISTING",
+    "codigo_base": "P502597",
+    "technology": "SYNTRAX™",
+    "filter_type": "oil",
+    "sub_type": "Cellulose",
+    "skus": [
+      "EL82597"
+    ],
+    "positions": 8
+  }
+]

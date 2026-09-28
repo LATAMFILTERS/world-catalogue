@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+import {createRequire} from 'node:module';const require=createRequire(import.meta.url);const {Pool}=require('pg');
+const cs=process.env.CATALOG_DATABASE_URL||process.env.DATABASE_URL;const pool=new Pool({connectionString:cs,ssl:false,max:1});const db=await pool.connect();
+const skus=['EL88076','EA13614','EF90390','EF91840','EF92427','EL80606','EF92599','EF92564','EA14353','EF93009','EL80428','ES90128','EL80420','EA33930'];
+try{for(const sku of skus){const q=await db.query(`select sku,codigo_base,filter_type,technology,brand_crossrefs,canonical_source_brand,canonical_source_code,canonical_source_status from elimfilters_catalog where sku=$1`,[sku]);const r=q.rows[0];console.log(JSON.stringify({sku:r?.sku,base:r?.codigo_base,type:r?.filter_type,tech:r?.technology,canonical:[r?.canonical_source_brand,r?.canonical_source_code,r?.canonical_source_status],fleetguard:r?.brand_crossrefs?.FLEETGUARD||[],donaldson:r?.brand_crossrefs?.DONALDSON||[],fram:r?.brand_crossrefs?.FRAM||[],isuzu:r?.brand_crossrefs?.ISUZU||[]}));}}finally{db.release();await pool.end();}

@@ -1,0 +1,21 @@
+{
+  "total": 1,
+  "ok": 1,
+  "errors": 0,
+  "total_missing": 0,
+  "vehicle_rows": 0,
+  "rows": [
+    {
+      "sku": "EF93410",
+      "ok": true,
+      "missing_positions": 0,
+      "vehicle_rows": 0,
+      "hash_ok": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "equipment_count": 16
+    }
+  ]
+}

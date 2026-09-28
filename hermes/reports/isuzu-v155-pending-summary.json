@@ -1,0 +1,336 @@
+{
+  "total_skus": 10,
+  "total_positions": 151,
+  "rows": [
+    {
+      "sku": "EA21938",
+      "exact_positions": 4,
+      "applications": [
+        {
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year_from": "2018",
+          "year_to": "2021"
+        }
+      ]
+    },
+    {
+      "sku": "EA33655",
+      "exact_positions": 15,
+      "applications": [
+        {
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        }
+      ]
+    },
+    {
+      "sku": "EA33930",
+      "exact_positions": 28,
+      "applications": [
+        {
+          "make": "ISUZU",
+          "model": "FSR",
+          "equipment": "FSR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2000",
+          "year_to": "2002"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2000",
+          "year_to": "2010"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2000",
+          "year_to": "2010"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2008",
+          "year_to": "2010"
+        }
+      ]
+    },
+    {
+      "sku": "EF92427",
+      "exact_positions": 19,
+      "applications": [
+        {
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2008",
+          "year_to": "2010"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2008",
+          "year_to": "2010"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2004",
+          "year_to": "2010"
+        },
+        {
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year_from": "2011",
+          "year_to": "2016"
+        }
+      ]
+    },
+    {
+      "sku": "EF93009",
+      "exact_positions": 15,
+      "applications": [
+        {
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        }
+      ]
+    },
+    {
+      "sku": "EF93410",
+      "exact_positions": 10,
+      "applications": [
+        {
+          "make": "ISUZU",
+          "model": "NPR-HD",
+          "equipment": "NPR-HD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year_from": "2022",
+          "year_to": "2026"
+        },
+        {
+          "make": "ISUZU",
+          "model": "NPR-XD",
+          "equipment": "NPR-XD",
+          "type": "TRUCK",
+          "engine": "4HK1-TC",
+          "year_from": "2022",
+          "year_to": "2026"
+        }
+      ]
+    },
+    {
+      "sku": "EL80420",
+      "exact_positions": 22,
+      "applications": [
+        {
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2008",
+          "year_to": "2010"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2008",
+          "year_to": "2010"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FXR",
+          "equipment": "FXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2004",
+          "year_to": "2010"
+        },
+        {
+          "make": "ISUZU",
+          "model": "HTR",
+          "equipment": "HTR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2005",
+          "year_to": "2007"
+        },
+        {
+          "make": "ISUZU",
+          "model": "HVR",
+          "equipment": "HVR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2005",
+          "year_to": "2007"
+        },
+        {
+          "make": "ISUZU",
+          "model": "HXR",
+          "equipment": "HXR",
+          "type": "TRUCK",
+          "engine": "6HK1-TC",
+          "year_from": "2005",
+          "year_to": "2007"
+        }
+      ]
+    },
+    {
+      "sku": "EL80428",
+      "exact_positions": 15,
+      "applications": [
+        {
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        }
+      ]
+    },
+    {
+      "sku": "EL82597",
+      "exact_positions": 8,
+      "applications": [
+        {
+          "make": "ISUZU",
+          "model": "NPR",
+          "equipment": "NPR",
+          "type": "TRUCK",
+          "engine": "4JJ1-TC",
+          "year_from": "2011",
+          "year_to": "2018"
+        }
+      ]
+    },
+    {
+      "sku": "ES91098",
+      "exact_positions": 15,
+      "applications": [
+        {
+          "make": "ISUZU",
+          "model": "FTR",
+          "equipment": "FTR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR",
+          "equipment": "FVR",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        },
+        {
+          "make": "ISUZU",
+          "model": "FVR DERATE",
+          "equipment": "FVR DERATE",
+          "type": "TRUCK",
+          "engine": "Cummins B6.7",
+          "year_from": "2022",
+          "year_to": "2026"
+        }
+      ]
+    }
+  ]
+}

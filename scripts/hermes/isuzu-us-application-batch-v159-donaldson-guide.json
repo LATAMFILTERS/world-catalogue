@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "source": "ISUZU_US_V159_DONALDSON_APPLICATION_GUIDE",
+  "evidence": {
+    "EL80420": {
+      "codigo_base": "P550420",
+      "source": "Donaldson Worldwide Vehicle & Engine Filter Application Guide",
+      "scope": "Isuzu 6HK1-TC: FTR, FXR, HTR, HVR, HXR; FVR excluded from this release"
+    },
+    "EA14353": {
+      "codigo_base": "AF4353",
+      "source_part": "P134353",
+      "source": "Donaldson Worldwide Vehicle & Engine Filter Application Guide",
+      "scope": "Isuzu 6HK1-TC: FXR only; FRR excluded from this release"
+    }
+  },
+  "skus": [
+    {
+      "sku": "EL80420",
+      "applications": [
+        {"make":"ISUZU","model":"FTR","equipment":"FTR","type":"TRUCK","engine":"6HK1-TC","year_from":"2008","year_to":"2010"},
+        {"make":"ISUZU","model":"FXR","equipment":"FXR","type":"TRUCK","engine":"6HK1-TC","year_from":"2004","year_to":"2010"},
+        {"make":"ISUZU","model":"HTR","equipment":"HTR","type":"TRUCK","engine":"6HK1-TC","year_from":"2005","year_to":"2007"},
+        {"make":"ISUZU","model":"HVR","equipment":"HVR","type":"TRUCK","engine":"6HK1-TC","year_from":"2005","year_to":"2007"},
+        {"make":"ISUZU","model":"HXR","equipment":"HXR","type":"TRUCK","engine":"6HK1-TC","year_from":"2005","year_to":"2007"}
+      ]
+    },
+    {
+      "sku": "EA14353",
+      "applications": [
+        {"make":"ISUZU","model":"FXR","equipment":"FXR","type":"TRUCK","engine":"6HK1-TC","year_from":"2004","year_to":"2007"}
+      ]
+    }
+  ]
+}

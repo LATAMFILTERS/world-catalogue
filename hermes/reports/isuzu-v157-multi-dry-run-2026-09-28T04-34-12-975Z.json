@@ -1,0 +1,39 @@
+{
+  "phase": "ISUZU_V157_MULTI_SKU_REVALIDATION",
+  "source": "ISUZU_US_V157_MULTI_SKU_REVALIDATION",
+  "apply": false,
+  "database_write": false,
+  "rows": [
+    {
+      "sku": "EL80428",
+      "status": "READY",
+      "before": 13,
+      "after": 15,
+      "added_ranges": 2,
+      "exact_positions": 10
+    },
+    {
+      "sku": "EF93009",
+      "status": "READY",
+      "before": 95,
+      "after": 97,
+      "added_ranges": 2,
+      "exact_positions": 10
+    },
+    {
+      "sku": "EL82597",
+      "status": "READY",
+      "before": 24,
+      "after": 25,
+      "added_ranges": 1,
+      "exact_positions": 8
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "ready": 3,
+    "added_ranges": 5,
+    "exact_positions": 28,
+    "database_write": false
+  }
+}

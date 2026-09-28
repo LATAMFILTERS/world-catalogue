@@ -1,0 +1,24 @@
+{
+  "phase": "ISUZU_V154_EA16773_REVALIDATION",
+  "source": "ISUZU_US_V154_EA16773_REVALIDATION",
+  "apply": true,
+  "database_write": true,
+  "rows": [
+    {
+      "sku": "EA16773",
+      "status": "READY",
+      "before": 52,
+      "after": 59,
+      "added_ranges": 7,
+      "exact_positions": 20
+    }
+  ],
+  "backup_path": "hermes/backups/isuzu-v154/prewrite-2026-09-28T04-10-57-182Z.json",
+  "summary": {
+    "total": 1,
+    "ready": 1,
+    "added_ranges": 7,
+    "exact_positions": 20,
+    "database_write": true
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "phase": "ISUZU_V158_OFFICIAL_OEM_WINDOW_REVALIDATION",
+  "apply": false,
+  "database_write": false,
+  "rows": [
+    {
+      "sku": "EF92599",
+      "status": "READY",
+      "added_ranges": 5,
+      "exact_positions": 15
+    },
+    {
+      "sku": "EF92564",
+      "status": "READY",
+      "added_ranges": 3,
+      "exact_positions": 15
+    },
+    {
+      "sku": "EF92427",
+      "status": "READY",
+      "added_ranges": 1,
+      "exact_positions": 4
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "ready": 3,
+    "added_ranges": 9,
+    "exact_positions": 34,
+    "database_write": false
+  }
+}

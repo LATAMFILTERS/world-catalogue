@@ -1,0 +1,31 @@
+{
+  "phase": "ISUZU_V160_MATRIX_RELEASE",
+  "apply": true,
+  "database_write": true,
+  "rows": [
+    {
+      "sku": "EF90390",
+      "status": "READY",
+      "exact_positions": 19,
+      "added_ranges": 19
+    },
+    {
+      "sku": "EF92564",
+      "status": "READY",
+      "exact_positions": 2,
+      "added_ranges": 2
+    },
+    {
+      "sku": "ES90128",
+      "status": "READY",
+      "exact_positions": 6,
+      "added_ranges": 6
+    }
+  ],
+  "backup_path": "hermes/backups/isuzu-v160/prewrite-2026-09-28T12-53-04-346Z.json",
+  "summary": {
+    "skus": 3,
+    "exact_positions": 27,
+    "database_write": true
+  }
+}
