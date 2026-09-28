@@ -1,0 +1,2233 @@
+{
+ "batch": "LD-Eoe1",
+ "oe_search_candidates_used": true,
+ "generated_at": "2026-09-28T05:08:05.331Z",
+ "counts": {
+  "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED": 18,
+  "COMPLETE_VERIFIED": 28,
+  "BLOCKED_RESOLVER_CONFLICT": 5
+ },
+ "records": [
+  {
+   "sku": "EF30021",
+   "current_codigo_base": "0021",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "DYNAPAC-WINGET",
+    "LIGIER AUTOMOBILES",
+    "IVECO",
+    "MAN TRUCK"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 50
+   },
+   "mann": {
+    "candidates": 6,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK21",
+      "oe": 5,
+      "geometry": "INCOMPLETE"
+     },
+     {
+      "code": "WK21(10)",
+      "oe": 5,
+      "geometry": "INCOMPLETE"
+     },
+     {
+      "code": "PU9002/1Z",
+      "oe": 4,
+      "geometry": "INCOMPLETE"
+     },
+     {
+      "code": "PU10021Z",
+      "oe": 2,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF30044",
+   "current_codigo_base": "0044",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "BMW"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 94
+   },
+   "mann": {
+    "candidates": 3,
+    "passing": [
+     "MWK44"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "MWK44",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/mwk44_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "MWK44_MANN-FILTER Fuel Filter MWK 44",
+     "official_mm": {
+      "a": 50,
+      "h": 94
+     },
+     "geometry": "INCOMPLETE",
+     "oe_matches": [
+      "1240850",
+      "13321460453",
+      "13321461265",
+      "16142325859"
+     ],
+     "row_oe_count": 4,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "b955e991853e61e44b359903b33bc641a7f1962064608ec5d616c6efc027735f"
+   }
+  },
+  {
+   "sku": "EF30210",
+   "current_codigo_base": "0210",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO TRUCKS",
+    "ROPA",
+    "MTU",
+    "LIEBHERR"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 60
+   },
+   "mann": {
+    "candidates": 2,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK3002(10)",
+      "oe": 3,
+      "geometry": "INCOMPLETE"
+     },
+     {
+      "code": "WDK11102/10",
+      "oe": 1,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF30213",
+   "current_codigo_base": "0213",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO CONSTRUCTION EQUIPMENT",
+    "VOLVO PENTA",
+    "VOLVO BUS",
+    "ROPA"
+   ],
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 263
+   },
+   "mann": {
+    "candidates": 2,
+    "passing": [
+     "WDK11102/13"
+    ],
+    "competing_oe": [
+     {
+      "code": "WDK11102/28",
+      "oe": 2,
+      "geometry": "MATCH"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE"
+  },
+  {
+   "sku": "EF30221",
+   "current_codigo_base": "0221",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO TRUCKS",
+    "RENAULT TRUCKS (RVI)",
+    "VOLVO BUS",
+    "MTU"
+   ],
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 131
+   },
+   "mann": {
+    "candidates": 2,
+    "passing": [
+     "WK11022/1Z"
+    ],
+    "competing_oe": [
+     {
+      "code": "WDK11102/21",
+      "oe": 3,
+      "geometry": "CONFLICT"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE"
+  },
+  {
+   "sku": "EF30312",
+   "current_codigo_base": "0312",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "RENAULT (USA)"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 104.14
+   },
+   "mann": {
+    "candidates": 5,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK31/2(10)",
+      "oe": 2,
+      "geometry": "INCOMPLETE"
+     },
+     {
+      "code": "WK31/2",
+      "oe": 2,
+      "geometry": "INCOMPLETE"
+     },
+     {
+      "code": "WK31/2(100)",
+      "oe": 2,
+      "geometry": "INCOMPLETE"
+     },
+     {
+      "code": "WK31/4",
+      "oe": 1,
+      "geometry": "INCOMPLETE"
+     },
+     {
+      "code": "WK31/4(10)",
+      "oe": 1,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF30719",
+   "current_codigo_base": "0719",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "MAN TRUCK"
+   ],
+   "row_geometry_mm": {
+    "od": 1930.4,
+    "h": null
+   },
+   "mann": {
+    "candidates": 6,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WDK719",
+      "oe": 2,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF30850",
+   "current_codigo_base": "0850",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO (USA)",
+    "MAN TRUCK",
+    "STEYR (MAN-STEYR AG)",
+    "MAN BUS (NEOMAN)",
+    "NEOPLAN (NEOMAN)"
+   ],
+   "row_geometry_mm": {
+    "od": 76.2,
+    "h": 231.14
+   },
+   "mann": {
+    "candidates": 4,
+    "passing": [
+     "PU850X"
+    ],
+    "competing_oe": [
+     {
+      "code": "WK850",
+      "oe": 1,
+      "geometry": "CONFLICT"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE"
+  },
+  {
+   "sku": "EF30925",
+   "current_codigo_base": "0925",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "DAF TRUCKS"
+   ],
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 144.78
+   },
+   "mann": {
+    "candidates": 7,
+    "passing": [
+     "WDK925"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WDK925",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wdk925_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WDK925_MANN-FILTER Fuel Filter WDK 925",
+     "official_mm": {
+      "a": 93,
+      "h": 144
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "1345335"
+     ],
+     "row_oe_count": 1,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "63988a3ec5603f9a8f466c4a073dafaba26848997a10b3a5e3733a59e8937408"
+   }
+  },
+  {
+   "sku": "EF30950",
+   "current_codigo_base": "0950",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "MTU"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 172
+   },
+   "mann": {
+    "candidates": 11,
+    "passing": [
+     "WDK950"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WDK950",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wdk950_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WDK950_MANN-FILTER Fuel Filter WDK 950",
+     "official_mm": {
+      "a": 93,
+      "h": 172
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "X51108300001"
+     ],
+     "row_oe_count": 1,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "9bbed69fd01ba6ed129b56b3ef1e65878fbb497c8a3f2bf5dd555b8f35af20ba"
+   }
+  },
+  {
+   "sku": "EF31003",
+   "current_codigo_base": "1003",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO TRUCKS"
+   ],
+   "row_geometry_mm": {
+    "od": 250,
+    "h": null
+   },
+   "mann": {
+    "candidates": 2,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK11003Z",
+      "oe": 4,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF31016",
+   "current_codigo_base": "1016",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "IVECO"
+   ],
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 216
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK11016Z"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK11016Z",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk11016z_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK11016Z_MANN-FILTER Fuel Filter WK 11 016 z",
+     "official_mm": {
+      "a": 108,
+      "h": 216
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "2997378",
+      "42554067",
+      "504166113"
+     ],
+     "row_oe_count": 3,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "ac85e5f53ede77e29d349828f22863f7875e91096cad1285fc567533659f402f"
+   }
+  },
+  {
+   "sku": "EF31020",
+   "current_codigo_base": "1020",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO TRUCKS"
+   ],
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 86
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK1020X",
+      "oe": 2,
+      "geometry": "MATCH"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF31023",
+   "current_codigo_base": "1023",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "IVECO",
+    "IVECO BUS"
+   ],
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 216
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK11023Z",
+      "oe": 2,
+      "geometry": "MATCH"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 7,
+    "probes": [
+     {
+      "code": "CS11023",
+      "found": false
+     },
+     {
+      "code": "P3555",
+      "found": false
+     },
+     {
+      "code": "P3555A",
+      "found": false
+     },
+     {
+      "code": "P3555PL",
+      "found": false
+     },
+     {
+      "code": "P5465",
+      "found": false
+     },
+     {
+      "code": "P5786",
+      "found": false
+     },
+     {
+      "code": "P9407",
+      "found": false
+     }
+    ],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF31038",
+   "current_codigo_base": "1038",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO PENTA"
+   ],
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 158
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK11038Z"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK11038Z",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk11038z_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK11038Z_MANN-FILTER Fuel Filter WK 11 038 z",
+     "official_mm": {
+      "a": 108,
+      "h": 158
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "21538975",
+      "21817175",
+      "VOE21538975"
+     ],
+     "row_oe_count": 3,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "c36c8bed62da316a0fcf88853cd44360597109c33ca0898c4373d42d7de86a1d"
+   }
+  },
+  {
+   "sku": "EF31051",
+   "current_codigo_base": "1051",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO TRUCKS",
+    "RENAULT TRUCKS (RVI)",
+    "VOLVO BUS"
+   ],
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 169
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK11051"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK11051",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk11051_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK11051_MANN-FILTER Fuel Filter WK 11 051",
+     "official_mm": {
+      "a": 108,
+      "h": 169
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "21764937",
+      "21764952",
+      "21764961",
+      "22253547",
+      "22474709",
+      "23843835",
+      "23861998",
+      "23880105",
+      "54315791",
+      "54315795",
+      "60350687",
+      "7421764958",
+      "7421764961",
+      "7422253506",
+      "7422636234",
+      "7423843831",
+      "7423880097",
+      "7423889561"
+     ],
+     "row_oe_count": 18,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "2f9747c5b7d6b0f811b7d4d0b80603d07ece6fa7b1aa92c13b485ad2be6c1c9e"
+   }
+  },
+  {
+   "sku": "EF31052",
+   "current_codigo_base": "1052",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO TRUCKS",
+    "RENAULT TRUCKS (RVI)",
+    "VOLVO BUS"
+   ],
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 226
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK11052"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK11052",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk11052_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK11052_MANN-FILTER Fuel Filter WK 11 052",
+     "official_mm": {
+      "a": 108,
+      "h": 226
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "23843839",
+      "23856895",
+      "7423843833",
+      "7423880101",
+      "23843837",
+      "23856886",
+      "23861995",
+      "23880111",
+      "23901172",
+      "7423889567"
+     ],
+     "row_oe_count": 10,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "d01c31f5dbb5804ccef503a6fbdf274f8a123a8e2b35d0cad78a230526d0c810"
+   }
+  },
+  {
+   "sku": "EF31057",
+   "current_codigo_base": "1057",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "IVECO"
+   ],
+   "row_geometry_mm": {
+    "od": 108,
+    "h": 159
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK11057Z"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK11057Z",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk11057z_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK11057Z_MANN-FILTER Fuel Filter WK 11 057 z",
+     "official_mm": {
+      "a": 108,
+      "h": 159
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "2997374",
+      "500041214",
+      "0004772516"
+     ],
+     "row_oe_count": 3,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "a83a7141bcb87cbce11217152f78787e5d68ef2cadefecfd29473025a7983d53"
+   }
+  },
+  {
+   "sku": "EF31144",
+   "current_codigo_base": "1144",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO PENTA"
+   ],
+   "row_geometry_mm": {
+    "od": 109.22,
+    "h": 144.78
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK1144",
+      "oe": 1,
+      "geometry": "MATCH"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF31446",
+   "current_codigo_base": "1446",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO (USA)"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 182.88
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK614/46"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK614/46",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk614/46_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK614/46_MANN-FILTER Fuel Filter WK 614/46",
+     "official_mm": {
+      "a": 55,
+      "h": 183
+     },
+     "geometry": "INCOMPLETE",
+     "oe_matches": [
+      "31261059",
+      "31271607",
+      "8616804"
+     ],
+     "row_oe_count": 3,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "babf2dfd3e79beaacea9105be716f47e8f90dde03074e89f24aa8052608638af"
+   }
+  },
+  {
+   "sku": "EF32004",
+   "current_codigo_base": "2004",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "CITROEN",
+    "PEUGEOT",
+    "MERCEDES-BENZ",
+    "EVOBUS (MERCEDES-BENZ/SETRA)"
+   ],
+   "row_geometry_mm": {
+    "od": 115,
+    "h": 224
+   },
+   "mann": {
+    "candidates": 2,
+    "passing": [
+     "PU12004Z"
+    ],
+    "competing_oe": [
+     {
+      "code": "WK12004",
+      "oe": 1,
+      "geometry": "CONFLICT"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "MULTIPLE_MANN_PRODUCTS_SHARE_ROW_OE_EVIDENCE"
+  },
+  {
+   "sku": "EF32007",
+   "current_codigo_base": "2007",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "MERCEDES-BENZ",
+    "EVOBUS (MERCEDES-BENZ/SETRA)"
+   ],
+   "row_geometry_mm": {
+    "od": 115,
+    "h": 224
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "PU12007Z"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "PU12007Z",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/pu12007z_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "PU12007Z_MANN-FILTER Fuel Filter PU 12 007 z New included in PU 12 013-2 z &nbsp",
+     "official_mm": {
+      "a": 115,
+      "h": 224
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "0000900155",
+      "4700920005",
+      "A0000900155",
+      "A4700920005"
+     ],
+     "row_oe_count": 7,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "661afa06480c2d6774e48500eb9b7450a1ab9b2f8d42a724517f64c83555d927"
+   }
+  },
+  {
+   "sku": "EF32110",
+   "current_codigo_base": "2110",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "DYNAPAC-WINGET",
+    "LIGIER AUTOMOBILES"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 50
+   },
+   "mann": {
+    "candidates": 2,
+    "passing": [
+     "WK21"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_RESOLVER_CONFLICT",
+   "reason": "SKU_SUFFIX_DOES_NOT_MATCH_APPROVED_CODE"
+  },
+  {
+   "sku": "EF33910",
+   "current_codigo_base": "3910",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 187
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK939/10X",
+      "oe": 2,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF33911",
+   "current_codigo_base": "3911",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 182
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK939/11X"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK939/11X",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk939/11x_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK939/11X_MANN-FILTER Fuel Filter WK 939/11 x",
+     "official_mm": {
+      "a": 135,
+      "h": 182
+     },
+     "geometry": "INCOMPLETE",
+     "oe_matches": [
+      "7701061578",
+      "7701062072",
+      "7701479151",
+      "8200290182",
+      "8200447199"
+     ],
+     "row_oe_count": 5,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "778003d85caccd03581fe5ac0d6ed73a4bac7b0c3aa78af11abbf8b93350435a"
+   }
+  },
+  {
+   "sku": "EF33917",
+   "current_codigo_base": "3917",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 187
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK939/17X",
+      "oe": 2,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF34033",
+   "current_codigo_base": "4033",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO TRUCKS",
+    "VOLVO BUS"
+   ],
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 139.7
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK940/33X"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK940/33X",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk940/33x_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK940/33X_MANN-FILTER Fuel Filter WK 940/33 x",
+     "official_mm": {
+      "a": 93,
+      "h": 140
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "20514654"
+     ],
+     "row_oe_count": 1,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "2eb2e60b393575a609cbf5019ad8c18d652aee8a8320a6ba2e40fef514282bdb"
+   }
+  },
+  {
+   "sku": "EF34217",
+   "current_codigo_base": "4217",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "MERCEDES-BENZ"
+   ],
+   "row_geometry_mm": {
+    "od": 87,
+    "h": 127
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK842/17"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK842/17",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk842/17_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK842/17_MANN-FILTER Fuel Filter WK 842/17",
+     "official_mm": {
+      "a": 87,
+      "h": 127
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "6110920201",
+      "6680920101",
+      "6680920201",
+      "A6110920201",
+      "A6680920101",
+      "A6680920201"
+     ],
+     "row_oe_count": 6,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "3fce8d820d0bd363990fe29b359fee4a3cbe50af509338a770144f6f54ea2d51"
+   }
+  },
+  {
+   "sku": "EF35025",
+   "current_codigo_base": "5025",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO CARS"
+   ],
+   "row_geometry_mm": {
+    "od": 55,
+    "h": 246
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK5025"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK5025",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk5025_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK5025_MANN-FILTER Fuel Filter WK 5025 New",
+     "official_mm": {
+      "a": 57,
+      "h": 246
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "31355461",
+      "31432250",
+      "31432807",
+      "31478692",
+      "31669471",
+      "31669472",
+      "32312225",
+      "32312226"
+     ],
+     "row_oe_count": 8,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "bd1465488a20ce27dfbbd96b8e6b0386884064ec2fcb91112374df00636391b3"
+   }
+  },
+  {
+   "sku": "EF36030",
+   "current_codigo_base": "6030",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "BMW"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 250
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK6030"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK6030",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk6030_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK6030_MANN-FILTER Fuel Filter WK 6030",
+     "official_mm": {
+      "a": null,
+      "h": 250
+     },
+     "geometry": "INCOMPLETE",
+     "oe_matches": [
+      "161272218469",
+      "16127233840",
+      "16127451424",
+      "7451424"
+     ],
+     "row_oe_count": 4,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "6803558694cb923ee34d68225b5fb5cfa195c95b033401fe8412b3cce246c35f"
+   }
+  },
+  {
+   "sku": "EF36032",
+   "current_codigo_base": "6032",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "SMART (DAIMLER AG)"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 158
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK6032",
+      "oe": 1,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF36126",
+   "current_codigo_base": "6126",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "SMART (USA)"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 137.16
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK612/6",
+      "oe": 2,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF36217",
+   "current_codigo_base": "6217",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "DAF TRUCKS"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 212
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WDK962/17"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WDK962/17",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wdk962/17_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WDK962/17_MANN-FILTER Fuel Filter WDK 962/17",
+     "official_mm": {
+      "a": 93,
+      "h": 212
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "1328177",
+      "K117963",
+      "K117963N50"
+     ],
+     "row_oe_count": 3,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "7b29b367eac607ce86a94cc2a75ded167cb81a6d8ff98190cf8693e9101cfadc"
+   }
+  },
+  {
+   "sku": "EF37241",
+   "current_codigo_base": "7241",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "MAN ENGINES",
+    "MAN BUS (NEOMAN)"
+   ],
+   "row_geometry_mm": {
+    "od": 76.2,
+    "h": 152.4
+   },
+   "mann": {
+    "candidates": 2,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WDK724/1",
+      "oe": 2,
+      "geometry": "MATCH"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF37245",
+   "current_codigo_base": "7245",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "HATZ"
+   ],
+   "row_geometry_mm": {
+    "od": 76.2,
+    "h": 162.56
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WDK724/5"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WDK724/5",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wdk724/5_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WDK724/5_MANN-FILTER Fuel Filter WDK 724/5",
+     "official_mm": {
+      "a": 76,
+      "h": 163
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "2057140"
+     ],
+     "row_oe_count": 1,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "35b0f99b1fc9913adf2d403ea72576c3133821b7a67d808c55f6392eff8016dd"
+   }
+  },
+  {
+   "sku": "EF37302",
+   "current_codigo_base": "7302",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "LAND ROVER"
+   ],
+   "row_geometry_mm": {
+    "od": 81,
+    "h": 134
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK824/4",
+      "oe": 3,
+      "geometry": "CONFLICT"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF38113",
+   "current_codigo_base": "8113",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "JCB (J.C. BAMFORD)",
+    "VOLVO CONSTRUCTION EQUIPMENT"
+   ],
+   "row_geometry_mm": {
+    "od": 83,
+    "h": 134
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK8113"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK8113",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk8113_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK8113_MANN-FILTER Fuel Filter WK 8113",
+     "official_mm": {
+      "a": 83,
+      "h": 134
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "320A7128",
+      "32925694",
+      "32925765"
+     ],
+     "row_oe_count": 3,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "feb6ea5b0e2b1e6d9278152a2c8524dc32162a2ffdcceff2a964f2a6d9480e2f"
+   }
+  },
+  {
+   "sku": "EF38244",
+   "current_codigo_base": "8244",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "LAND ROVER"
+   ],
+   "row_geometry_mm": {
+    "od": 81,
+    "h": 152
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK824/4"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK824/4",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk824/4_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK824/4_MANN-FILTER Fuel Filter WK 824/4",
+     "official_mm": {
+      "a": 81,
+      "h": 152
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "BF8T9155AA",
+      "XL5E9155AB",
+      "ESR4686"
+     ],
+     "row_oe_count": 3,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "25c9e829b5368a5af7b0edd3a54be07807f445a4e2a3032dea2cafb3faa9c138"
+   }
+  },
+  {
+   "sku": "EF38322",
+   "current_codigo_base": "8322",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO (USA)"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 175.26
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK832/2",
+      "oe": 1,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF39002",
+   "current_codigo_base": "9002",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "MTU"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 216
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WDK9002",
+      "oe": 1,
+      "geometry": "MATCH"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 1,
+    "probes": [
+     {
+      "code": "P8485",
+      "found": false
+     }
+    ],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF39036",
+   "current_codigo_base": "9036",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "JCB (J.C. BAMFORD)",
+    "VOLVO CONSTRUCTION EQUIPMENT",
+    "DAF TRUCKS"
+   ],
+   "row_geometry_mm": {
+    "od": 80,
+    "h": 176
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK9036"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK9036",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk9036_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK9036_MANN-FILTER Fuel Filter WK 9036",
+     "official_mm": {
+      "a": 80,
+      "h": 176
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "32007057",
+      "32007155",
+      "32007394",
+      "32020044",
+      "320A7170"
+     ],
+     "row_oe_count": 5,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "595a46a022f863164f7c61c0f1e0f52fad2e5f7f72a07b7bb0f51a49082c74ec"
+   }
+  },
+  {
+   "sku": "EF39182",
+   "current_codigo_base": "9182",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": 90,
+    "h": 109
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK918/2X"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK918/2X",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk918/2x_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK918/2X_MANN-FILTER Fuel Filter WK 918/2 x",
+     "official_mm": {
+      "a": 90,
+      "h": 109
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "7701069023",
+      "7701478277",
+      "8200732749"
+     ],
+     "row_oe_count": 3,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "9d99038e3ebaaa25c1405b39db4150a60e8b37cba11ebd8e1d47662058b920e6"
+   }
+  },
+  {
+   "sku": "EF39191",
+   "current_codigo_base": "9191",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 127
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK919/1"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK919/1",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk919/1_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK919/1_MANN-FILTER Fuel Filter WK 919/1",
+     "official_mm": {
+      "a": 94,
+      "h": 127
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "7701062436",
+      "7701067123",
+      "8200462325",
+      "8200506051",
+      "8200550971",
+      "8200564930",
+      "8200697876"
+     ],
+     "row_oe_count": 7,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "060558663bec86b922e9837a67aeb2f4294dfb76053ea4abe0458526c7df1f7e"
+   }
+  },
+  {
+   "sku": "EF39205",
+   "current_codigo_base": "9205",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": 94,
+    "h": 99
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK920/5"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK920/5",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk920/5_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK920/5_MANN-FILTER Fuel Filter WK 920/5",
+     "official_mm": {
+      "a": 94,
+      "h": 99
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "164005190R",
+      "8200506046",
+      "8200564638",
+      "8200651777",
+      "8200697875"
+     ],
+     "row_oe_count": 5,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "e787b12ed2d0fed9490860b9358558c9aa75e98a69a04b1f309b9bc4e5318c99"
+   }
+  },
+  {
+   "sku": "EF39304",
+   "current_codigo_base": "9304",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "IVECO (FIAT-OM)",
+    "IVECO",
+    "IVECO BUS",
+    "IVECO (FIAT)"
+   ],
+   "row_geometry_mm": {
+    "od": 93,
+    "h": 114
+   },
+   "mann": {
+    "candidates": 2,
+    "passing": [
+     "WK930/4"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK930/4",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk930/4_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK930/4_MANN-FILTER Fuel Filter WK 930/4",
+     "official_mm": {
+      "a": 93,
+      "h": 114
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "1901607",
+      "8830319",
+      "2060883031900",
+      "4780270",
+      "4780271",
+      "68190213",
+      "8827122",
+      "8827279",
+      "8827287",
+      "8830819"
+     ],
+     "row_oe_count": 18,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "6861e8c1e81b475b2c0e726c3ead1c76a5115ea5e0013f2744700464fecf663c"
+   }
+  },
+  {
+   "sku": "EF39364",
+   "current_codigo_base": "9364",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VW (VOLKSWAGEN) (USA)",
+    "AUDI (USA)"
+   ],
+   "row_geometry_mm": {
+    "od": 83.82,
+    "h": 142.24
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "PU936/4X"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "PU936/4X",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/pu936/4x_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "PU936/4X_MANN-FILTER Fuel Filter PU 936/4 x",
+     "official_mm": {
+      "a": 83,
+      "h": 142
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "1K0127177A",
+      "1K0127434",
+      "1K0127434A"
+     ],
+     "row_oe_count": 17,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "6f4ace839fd07f11f0e03d450be348f3ca7b105e17367af12c7ce791f81c06bb"
+   }
+  },
+  {
+   "sku": "EF39393",
+   "current_codigo_base": "9393",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 182
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK939/3"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK939/3",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk939/3_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK939/3_MANN-FILTER Fuel Filter WK 939/3",
+     "official_mm": {
+      "a": 135,
+      "h": 182
+     },
+     "geometry": "INCOMPLETE",
+     "oe_matches": [
+      "164000890R",
+      "8200294143",
+      "8200447197",
+      "8200926014"
+     ],
+     "row_oe_count": 4,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "253ac45fc9c690945239ccf8cd455a6a3013f5e8b6c2da59f75213c16b4b2860"
+   }
+  },
+  {
+   "sku": "EF39394",
+   "current_codigo_base": "9394",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 186
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK939/4",
+      "oe": 1,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF39395",
+   "current_codigo_base": "9395",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "RENAULT"
+   ],
+   "row_geometry_mm": {
+    "od": null,
+    "h": 187
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [],
+    "competing_oe": [
+     {
+      "code": "WK939/5",
+      "oe": 1,
+      "geometry": "INCOMPLETE"
+     }
+    ]
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "BLOCKED_PRIMARY_AUTHORITY_NOT_CONFIRMED",
+   "reason": "MANN_OFFICIAL_EVIDENCE_DOES_NOT_CONFIRM_ROW_IDENTITY"
+  },
+  {
+   "sku": "EF39411",
+   "current_codigo_base": "9411",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "SCANIA",
+    "SCANIA BUS / SCANIA-IRIZAR"
+   ],
+   "row_geometry_mm": {
+    "od": 83.82,
+    "h": 187.96
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "PU941/1X"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "PU941/1X",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/pu941/1x_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "PU941/1X_MANN-FILTER Fuel Filter PU 941/1 x",
+     "official_mm": {
+      "a": 84,
+      "h": 187
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "1459762",
+      "1873016"
+     ],
+     "row_oe_count": 2,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "9fab21a4236726b3ede746d86b9095226a619b49f46d649bc14d30ad55f21ecb"
+   }
+  },
+  {
+   "sku": "EF39627",
+   "current_codigo_base": "9627",
+   "origin_group_derived": "EUROPEAN",
+   "makes": [
+    "VOLVO PENTA",
+    "VOLVO TRUCKS",
+    "VOLVO BUS",
+    "VOLVO CONSTRUCTION EQUIPMENT"
+   ],
+   "row_geometry_mm": {
+    "od": 93.98,
+    "h": 210.82
+   },
+   "mann": {
+    "candidates": 1,
+    "passing": [
+     "WK962/7"
+    ],
+    "competing_oe": []
+   },
+   "fram": {
+    "refs": 0,
+    "probes": [],
+    "passing": []
+   },
+   "state": "COMPLETE_VERIFIED",
+   "reason": null,
+   "approved": {
+    "manufacturer": "MANN-FILTER",
+    "codigo_base": "WK962/7",
+    "origin_group": "EUROPEAN",
+    "source_url": "https://www.mann-filter.com/en/catalog/search-results/product.html/wk962/7_mann-filter.html",
+    "evidence": {
+     "method": "MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY",
+     "product_type": "WK962/7_MANN-FILTER Fuel Filter WK 962/7",
+     "official_mm": {
+      "a": 93,
+      "h": 212
+     },
+     "geometry": "MATCH",
+     "oe_matches": [
+      "420799",
+      "4207999",
+      "8193841"
+     ],
+     "row_oe_count": 3,
+     "oe_search_sourced": true
+    },
+    "evidence_hash": "a6e370f36b7b4f5034a697e75b640c1d66dfd848c6d6aee9fc539d470598cdaf"
+   }
+  }
+ ]
+}

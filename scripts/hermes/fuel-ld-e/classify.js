@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const { framPage } = require('./fram_page');
 // Work dir holds ld721.json (export.js), allbases.json (query.js) and page caches.
 const S = process.env.FUEL_LD_E_WORK || __dirname;
-const BATCH = Number(process.argv[2]);
+const BATCH = process.argv[2];
 const probe = require(`${S}/ld_e${BATCH}_probe.json`);
 const rows = new Map(require(S + '/ld721.json').map((r) => [r.sku, r]));
 const allBases = require(S + '/allbases.json');
@@ -38,7 +38,8 @@ function originGroup(row) {
 }
 const packBase = (code) => String(code).replace(/\(\d+\)$/, '').trim();
 const mainDigits = (code) => (String(code).match(/\d+/) || [''])[0];
-const suffixOk = (sku, code) => { const d = mainDigits(code); return d && String(sku).slice(-4) === d.padStart(4, '0').slice(-4); };
+// SKU suffix follows either the main MANN number (WK52/1 -> 0052) or all digits (WK939/10X -> 3910, gateway lastFourNumeric).
+const suffixOk = (sku, code) => { const s = String(sku).slice(-4); const d = mainDigits(code); const all = String(code).replace(/\D/g, ''); return Boolean((d && s === d.padStart(4, '0').slice(-4)) || (all.length >= 4 && s === all.slice(-4))); };
 const collision = (sku, code) => allBases.filter((r) => r.sku !== sku && norm(r.codigo_base) === norm(code)).map((r) => r.sku);
 
 async function fram(code) {
@@ -99,6 +100,7 @@ async function fram(code) {
         evidence: authority === 'MANN-FILTER'
           ? { method: 'MANN_OFFICIAL_PRODUCT_PAGE_OE_AND_GEOMETRY', product_type: evidence.product_type, official_mm: { a: evidence.mann_a_mm, h: evidence.mann_h_mm }, geometry: evidence.geometry, oe_matches: evidence.oe_matches, row_oe_count: p.oem_count }
           : { method: 'FRAM_OFFICIAL_PRODUCT_PAGE_GEOMETRY_AND_APPLICATION', fuel_type: evidence.fuel_type, official_mm: { od: evidence.od_mm, h: evidence.height_mm }, geometry: evidence.geometry, make_overlap: evidence.make_overlap } };
+      if (authority === 'MANN-FILTER' && (p.oe_search_candidates || []).map(packBase).includes(approved)) rec.approved.evidence.oe_search_sourced = true;
       rec.approved.evidence_hash = crypto.createHash('sha256').update(JSON.stringify(rec.approved)).digest('hex');
     }
     out.push(rec);
@@ -106,7 +108,7 @@ async function fram(code) {
   }
   fs.writeFileSync(FRAM_CACHE, JSON.stringify(framCache));
   const counts = out.reduce((a, r) => ((a[r.state] = (a[r.state] || 0) + 1), a), {});
-  fs.writeFileSync(`${S}/ld_e${BATCH}_manifest.json`, JSON.stringify({ batch: `LD-E${BATCH}`, generated_at: new Date().toISOString(), counts, records: out }, null, 1));
+  fs.writeFileSync(`${S}/ld_e${BATCH}_manifest.json`, JSON.stringify({ batch: `LD-E${BATCH}`, oe_search_candidates_used: probe.some((p) => (p.oe_search_candidates || []).length), generated_at: new Date().toISOString(), counts, records: out }, null, 1));
   console.log('\n' + JSON.stringify(counts));
   for (const r of out) if (r.state === 'COMPLETE_VERIFIED') console.log(r.sku, r.current_codigo_base, '->', r.approved.manufacturer, r.approved.codigo_base, r.origin_group_derived, JSON.stringify(r.approved.evidence).slice(0, 200));
 })();

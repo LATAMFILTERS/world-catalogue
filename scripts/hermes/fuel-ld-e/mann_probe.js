@@ -1,11 +1,15 @@
 'use strict';
-// LD-E MANN official probe: node mann_probe.js <batchNo> -> ld_e<batch>_probe.json
+// LD-E MANN official probe: node mann_probe.js <batchNo|label> -> ld_e<batch>_probe.json
+// With FUEL_LD_E_OE_CANDIDATES=<oe_*_candidates.json> it probes those SKUs, adding the OE-search candidates.
 const fs = require('fs');
 // Work dir holds ld721.json (export.js), allbases.json (query.js) and page caches.
 const S = process.env.FUEL_LD_E_WORK || __dirname;
-const BATCH = Number(process.argv[2]);
-const terminal = require('../../candidates/fuel_global_ld_terminal_20260927.json').terminals
-  .filter((r) => r.terminal_state === 'BLOCKED_EVIDENCE_REQUIRED').slice((BATCH - 1) * 50, BATCH * 50);
+const BATCH = process.argv[2];
+const OE = process.env.FUEL_LD_E_OE_CANDIDATES ? JSON.parse(fs.readFileSync(process.env.FUEL_LD_E_OE_CANDIDATES, 'utf8')) : null;
+const terminal = OE
+  ? Object.keys(OE).filter((sku) => Object.keys(OE[sku].candidates).length).map((sku) => ({ sku }))
+  : require('../../candidates/fuel_global_ld_terminal_20260927.json').terminals
+    .filter((r) => r.terminal_state === 'BLOCKED_EVIDENCE_REQUIRED').slice((BATCH - 1) * 50, BATCH * 50);
 const rows = new Map(require(S + '/ld721.json').map((r) => [r.sku, r]));
 const norm = (v) => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 const num = (v) => (v == null || v === '' || !Number.isFinite(Number(v)) ? null : Number(v));
@@ -56,7 +60,8 @@ async function page(code) {
   for (const t of terminal) {
     const row = rows.get(t.sku);
     const refs = [...(row.competitor_codes || []), ...(row.oem_codes || [])];
-    const candidates = [...new Map(refs.filter(isMann).map((i) => [norm(i.code), String(i.code).trim()])).values()];
+    const oeSearch = OE ? Object.keys(OE[t.sku].candidates) : [];
+    const candidates = [...new Map([...refs.filter(isMann).map((i) => [norm(i.code), String(i.code).trim()]), ...oeSearch.map((c) => [norm(c), c])]).values()];
     const oem = [...new Set((row.oem_codes || []).map((o) => norm(o.code)).filter((c) => c.length >= 6))];
     const od = num(row.outer_diameter_mm), h = num(row.height_mm);
     const probes = [];
@@ -68,7 +73,7 @@ async function page(code) {
       probes.push({ code, url: p.url, found: p.found, fuel: p.fuel === true, product_type: p.product_type || null, main_application: p.main_application || null,
         mann_a_mm: pa, mann_h_mm: ph, geometry, oe_matches: oeMatches });
     }
-    out.push({ sku: t.sku, codigo_base: row.codigo_base, row_od_mm: od, row_h_mm: h, oem_count: oem.length, mann_candidates: candidates, probes });
+    out.push({ sku: t.sku, codigo_base: row.codigo_base, row_od_mm: od, row_h_mm: h, oem_count: oem.length, mann_candidates: candidates, oe_search_candidates: oeSearch, probes });
     process.stderr.write('.');
   }
   fs.writeFileSync(CACHE_FILE, JSON.stringify(Object.fromEntries(cache)));

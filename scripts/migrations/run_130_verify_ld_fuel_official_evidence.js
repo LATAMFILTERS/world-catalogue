@@ -25,7 +25,9 @@ async function applyRecord(db, rec, manifestName) {
   const identity = await db.query("select elimfilters_sku from ld_catalog.ld_canonical_product_identity where status='ACTIVE' and ld_catalog.norm_part(canonical_part_number)=ld_catalog.norm_part($1) and elimfilters_sku<>$2", [a.codigo_base, sku]);
   if (identity.rowCount) throw new Error('IDENTITY_COLLISION');
   const traceable = [...(row.competitor_codes || []), ...(row.oem_codes || [])].some((x) => norm(refCode(x)) === norm(a.codigo_base) && isBrand(x, a.manufacturer));
-  if (!traceable) throw new Error('TRACEABLE_REFERENCE_MISSING');
+  // OE-search candidates are traceable through the official MANN OE search plus OE numbers confirmed on the product page.
+  const oeTraceable = a.evidence?.oe_search_sourced === true && (a.evidence.oe_matches || []).length > 0;
+  if (!traceable && !oeTraceable) throw new Error('TRACEABLE_REFERENCE_MISSING');
 
   const mann = a.manufacturer === 'MANN-FILTER';
   const old = row.enrichment_data || {};
